@@ -1,0 +1,77 @@
+=== SpanishWordsViewer.txt ===
+PROJECT: LPH - Spanish Language Learning Platform
+COMPONENT: Interactive Spanish Vocabulary Pack Viewer
+CREATED: 2025-11-19
+LAST UPDATED: 2025-11-19 - Initial documentation created
+
+DATA SOURCES:
+- CSV Files (Local): 251 CSV files in the SpanishWords directory
+  * SpanishWordsOverview.csv - Master index with pack metadata
+  * SpanishWords1.csv through SpanishWords250.csv - Individual vocabulary packs
+- File Structure:
+  * Headers: spanish, english, chinese, pinyin, portuguese
+  * Each pack contains 24-45 translation entries
+  * Total: ~10,685 vocabulary entries across all packs
+
+FUNCTIONALITY:
+- Main Purpose: Browse and study all 250 Spanish vocabulary packs with multi-language translations
+- Key Functions:
+  * populateDropdown() - Generates 251 options (1 overview + 250 packs)
+  * parseCSV(text) - Converts CSV text into structured data
+  * parseCSVLine(line) - Handles quoted fields, commas, and escaped quotes
+  * createTable(headers, rows, isOverview) - Generates HTML table from CSV data
+  * loadCSV(filename) - Fetches and displays selected CSV file
+  * updateInfoBar(packName, wordCount) - Shows pack statistics
+  * escapeHtml(text) - Prevents XSS attacks
+- Event Handlers:
+  * DOMContentLoaded - Initializes app and loads overview
+  * Dropdown change - Loads selected pack
+- Display Features:
+  * Sticky table headers for easy scrolling
+  * Alternating row colors for readability
+  * Hover effects on table rows
+  * Loading spinner during fetch
+  * Error messages for missing files
+  * Responsive design for mobile devices
+
+DEPENDENCIES:
+- External Libraries: None (pure vanilla JavaScript)
+- Project Files:
+  * SpanishWordsOverview.csv (required)
+  * SpanishWords1.csv through SpanishWords250.csv (required)
+  * All must follow the format rules in "000 SPANISH TRANSLATION FORMAT RULES.txt"
+- APIs Required: None (uses Fetch API for local files)
+
+INTEGRATION:
+- Receives data from: Local CSV files in SpanishWords directory
+- Sends data to: None (read-only viewer)
+- Triggers: User dropdown selection
+- Related Components:
+  * CsvViewerForManuallyBuildingCSV.html - Used to create the source CSV files
+  * 000 SPANISH TRANSLATION FORMAT RULES.txt - Defines data structure requirements
+  * SpanishWordsPythonHelperScripts/ - Validates CSV data integrity
+
+CORRECTIONS & CLARIFICATIONS:
+- Initially thought: Files might be fetched from an external server
+- Actually: Uses client-side Fetch API to load local CSV files from same directory
+- Why this matters: Requires proper file paths when deployed; BASE_PATH variable may need adjustment for GitHub Pages vs local testing
+
+NOTES:
+- BASE_PATH constant set to './' - adjust for different deployment environments
+- TOTAL_PACKS constant set to 250 - update if more packs are added
+- Overview table has special styling for the third column (pack arrays in monospace)
+- Works offline once files are loaded
+- File naming convention must be exact: SpanishWords[1-250].csv
+- CSV parsing handles edge cases:
+  * Quoted fields with commas inside
+  * Escaped quotes (double quotes)
+  * Empty lines are filtered out
+- Future improvements could include:
+  * Search/filter functionality
+  * Flashcard mode for studying
+  * Progress tracking (mark words as learned)
+  * Audio pronunciation integration
+  * Random word quiz generator
+  * Export selected words to study list
+  * Dark mode toggle
+===

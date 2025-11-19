@@ -1,0 +1,65 @@
+=== CsvViewerForManuallyBuildingCSV.txt ===
+PROJECT: LPH - Spanish Language Learning Platform
+COMPONENT: CSV Parser, Viewer, and Downloader Tool
+CREATED: 2025-11-19
+LAST UPDATED: 2025-11-19 - Initial documentation created
+
+DATA SOURCES:
+- User Input: Pasted CSV text in textarea
+- Form Fields:
+  * Has Header Row checkbox (default: checked)
+  * Count Mode checkbox (default: unchecked)
+  * Filename input field (default: "data")
+
+FUNCTIONALITY:
+- Main Purpose: Manually build, view, and download CSV files with live preview
+- Key Functions:
+  * parseCSV() - Parses pasted CSV text handling quoted fields with commas
+  * displayTable(data, hasHeader) - Renders CSV data as HTML table
+  * downloadCSV() - Generates and downloads CSV file with proper escaping
+  * openNewTab() - Opens duplicate tool instance in new browser tab
+  * showStatus(message, type) - Displays success/error messages
+  * escapeHtml(text) - Prevents XSS attacks in displayed content
+- Event Handlers:
+  * Parse CSV button - Manually trigger CSV parsing
+  * Download CSV button - Generate downloadable .csv file
+  * New Tab button - Open tool in new window
+  * Auto-parse on paste - Automatically parses CSV when data is pasted
+  * Has Header Row checkbox change - Redraws table with/without header
+  * Count Mode checkbox - Enables auto-increment filename feature
+- Special Features:
+  * Count Mode: Auto-increments filename on each paste (data → data1 → data2...)
+  * Handles quoted CSV fields with embedded commas and newlines
+  * Proper CSV escaping on download (quotes, commas, newlines)
+  * Responsive table display with hover effects
+
+DEPENDENCIES:
+- External Libraries: None (pure vanilla JavaScript)
+- Project Files: None (standalone tool)
+- APIs Required: None (client-side only)
+
+INTEGRATION:
+- Receives data from: User manual input via paste/typing
+- Sends data to: Browser downloads folder (CSV file)
+- Triggers: User-initiated actions (paste, button clicks)
+- Likely Used For: Creating the 250 SpanishWords*.csv files in this project
+
+CORRECTIONS & CLARIFICATIONS:
+- Initially thought: This might integrate with the Spanish words data
+- Actually: Standalone tool for general CSV creation/editing
+- Why this matters: Generic utility that can be used for any CSV data, not specific to Spanish words
+
+NOTES:
+- The "Count Mode" feature is particularly useful for batch CSV creation
+- Auto-parse on paste makes workflow very efficient for rapid CSV building
+- Download button stays disabled until CSV is successfully parsed
+- Table alternates row colors for better readability
+- Works entirely offline - no server required
+- Perfect for quickly prototyping CSV data structures
+- Future improvements could include:
+  * Column sorting functionality
+  * Row editing/deletion
+  * Import from file button
+  * CSV validation rules
+  * Export to other formats (JSON, TSV)
+===
