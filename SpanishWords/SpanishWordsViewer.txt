@@ -27,7 +27,7 @@ FUNCTIONALITY:
   * calculateOverviewStats(rows) - Computes totals and detects discrepancies across all packs
   * calculatePackStats(rows) - Validates individual pack word counts
   * renderStatsSummary(stats, isOverview) - Displays comprehensive statistics with discrepancy alerts
-  * createOverviewChart(rows) - Generates Chart.js bar chart showing base words vs total words per pack
+  * createOverviewChart(rows) - Generates Chart.js pie chart grouping packs by base word count ranges (0-10, 10-20, etc.)
   * toggleCharts() - Shows/hides data visualization charts
   * toggleColumn(columnIndex) - Hides/shows individual table columns
 - Event Handlers:
@@ -46,7 +46,9 @@ FUNCTIONALITY:
     - Yellow background: Discrepancies found
     - Green background: All packs valid
   * ✅ Chart Visualization (Chart.js):
-    - Bar chart showing base words vs total words distribution across all packs
+    - Pie chart showing distribution of packs by base word count ranges
+    - Ranges grouped in increments of 10 (0-10, 10-20, 20-30, etc.)
+    - Shows number and percentage of packs in each range
     - Toggle on/off with "Show Charts" button
 - Previous Display Features:
   * Sticky table headers for easy scrolling
@@ -95,7 +97,7 @@ NOTES:
   * Column visibility toggles solve the problem of overly wide tables
   * Statistics section provides instant validation feedback
   * Green/red color coding makes discrepancies immediately visible
-  * Chart visualization shows word distribution patterns across all 250 packs
+  * Pie chart visualization groups packs by base word ranges for easy pattern recognition
   * Total base words and total words are calculated and displayed for both individual packs and overview
   * Expected word count (base words × 3) is shown and validated
 - Data Validation Rules:
