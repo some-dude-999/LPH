@@ -644,13 +644,24 @@
 
         // Create charts for overview data
         function createOverviewChart(rows) {
-            // Group packs by base word count ranges (0-10, 10-20, 20-30, etc.)
-            const ranges = {};
+            // Find min and max base word counts
+            let minBaseWords = Infinity;
+            let maxBaseWords = -Infinity;
 
             rows.forEach(row => {
                 const baseWordCount = parseInt(row[4]) || 0;
-                const rangeStart = Math.floor(baseWordCount / 10) * 10;
-                const rangeEnd = rangeStart + 10;
+                minBaseWords = Math.min(minBaseWords, baseWordCount);
+                maxBaseWords = Math.max(maxBaseWords, baseWordCount);
+            });
+
+            // Group packs by base word count ranges in increments of 2, starting from min
+            const ranges = {};
+            const INCREMENT = 2;
+
+            rows.forEach(row => {
+                const baseWordCount = parseInt(row[4]) || 0;
+                const rangeStart = Math.floor((baseWordCount - minBaseWords) / INCREMENT) * INCREMENT + minBaseWords;
+                const rangeEnd = rangeStart + INCREMENT;
                 const rangeLabel = `${rangeStart}-${rangeEnd}`;
 
                 if (!ranges[rangeLabel]) {
@@ -672,8 +683,8 @@
             const labels = sortedRanges;
             const data = sortedRanges.map(range => ranges[range].count);
 
-            // Generate distinct colors for each slice
-            const backgroundColors = [
+            // Generate more colors for higher resolution
+            const baseColors = [
                 'rgba(102, 126, 234, 0.8)',
                 'rgba(118, 75, 162, 0.8)',
                 'rgba(255, 99, 132, 0.8)',
@@ -683,8 +694,24 @@
                 'rgba(54, 162, 235, 0.8)',
                 'rgba(153, 102, 255, 0.8)',
                 'rgba(201, 203, 207, 0.8)',
-                'rgba(255, 99, 71, 0.8)'
+                'rgba(255, 99, 71, 0.8)',
+                'rgba(46, 204, 113, 0.8)',
+                'rgba(52, 152, 219, 0.8)',
+                'rgba(155, 89, 182, 0.8)',
+                'rgba(230, 126, 34, 0.8)',
+                'rgba(231, 76, 60, 0.8)',
+                'rgba(149, 165, 166, 0.8)',
+                'rgba(26, 188, 156, 0.8)',
+                'rgba(241, 196, 15, 0.8)',
+                'rgba(52, 73, 94, 0.8)',
+                'rgba(189, 195, 199, 0.8)'
             ];
+
+            // Generate enough colors by cycling through the base colors
+            const backgroundColors = [];
+            for (let i = 0; i < labels.length; i++) {
+                backgroundColors.push(baseColors[i % baseColors.length]);
+            }
 
             const borderColors = backgroundColors.map(color => color.replace('0.8', '1'));
 
