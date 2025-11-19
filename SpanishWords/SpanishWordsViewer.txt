@@ -27,7 +27,7 @@ FUNCTIONALITY:
   * calculateOverviewStats(rows) - Computes totals and detects discrepancies across all packs
   * calculatePackStats(rows) - Validates individual pack word counts
   * renderStatsSummary(stats, isOverview) - Displays comprehensive statistics with discrepancy alerts
-  * createOverviewChart(rows) - Generates Chart.js pie chart grouping packs by base word count ranges in increments of 2
+  * createOverviewChart(rows) - Generates Chart.js histogram (bar chart) grouping packs by base word count ranges in increments of 2
   * toggleCharts() - Shows/hides data visualization charts
   * toggleColumn(columnIndex) - Hides/shows individual table columns
 - Event Handlers:
@@ -46,10 +46,11 @@ FUNCTIONALITY:
     - Yellow background: Discrepancies found
     - Green background: All packs valid
   * ✅ Chart Visualization (Chart.js):
-    - Pie chart showing distribution of packs by base word count ranges
+    - Histogram (bar chart) showing distribution of packs by base word count ranges
     - Ranges grouped in increments of 2 (starting from minimum base word count)
     - High-resolution view for detailed distribution analysis
-    - Shows number and percentage of packs in each range
+    - Y-axis shows number of packs, X-axis shows base word count ranges
+    - Tooltips display count and percentage
     - Toggle on/off with "Show Charts" button
 - Previous Display Features:
   * Sticky table headers for easy scrolling
@@ -98,7 +99,7 @@ NOTES:
   * Column visibility toggles solve the problem of overly wide tables
   * Statistics section provides instant validation feedback
   * Green/red color coding makes discrepancies immediately visible
-  * Pie chart visualization uses increment of 2 for high-resolution distribution analysis, starting from lowest base word count
+  * Histogram visualization uses increment of 2 for high-resolution distribution analysis, starting from lowest base word count
   * Total base words and total words are calculated and displayed for both individual packs and overview
   * Expected word count (base words × 3) is shown and validated
 - Data Validation Rules:
