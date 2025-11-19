@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spanish Words Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
             margin: 0;
@@ -84,6 +85,116 @@
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
+        .controls button {
+            padding: 12px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .controls button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .stats-summary {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .stats-summary.has-discrepancies {
+            background: #fff3cd;
+            border-bottom: 2px solid #ffc107;
+        }
+
+        .stats-summary.all-good {
+            background: #d4edda;
+            border-bottom: 2px solid #28a745;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .stat-value.success {
+            color: #28a745;
+        }
+
+        .stat-value.error {
+            color: #dc3545;
+        }
+
+        .discrepancy-alert {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+            margin-top: 15px;
+        }
+
+        .discrepancy-alert h3 {
+            color: #dc3545;
+            margin-bottom: 5px;
+        }
+
+        .success-alert {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin-top: 15px;
+        }
+
+        .success-alert h3 {
+            color: #28a745;
+            margin-bottom: 5px;
+        }
+
+        .chart-container {
+            padding: 30px;
+            background: white;
+            border-bottom: 2px solid #e9ecef;
+            display: none;
+        }
+
+        .chart-container.visible {
+            display: block;
+        }
+
+        .chart-wrapper {
+            max-width: 100%;
+            height: 400px;
+            margin: 20px auto;
+        }
+
         .info-bar {
             padding: 15px 30px;
             background: #e7f3ff;
@@ -144,11 +255,48 @@
             letter-spacing: 0.5px;
         }
 
+        .th-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .column-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .column-toggle input[type="checkbox"] {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+        }
+
         td {
             padding: 14px 12px;
             border-bottom: 1px solid #e9ecef;
             color: #495057;
             line-height: 1.5;
+        }
+
+        td.hidden-column {
+            display: none;
+        }
+
+        td.count-match {
+            background: #d4edda;
+            color: #155724;
+            font-weight: 600;
+        }
+
+        td.count-mismatch {
+            background: #f8d7da;
+            color: #721c24;
+            font-weight: 600;
         }
 
         tbody tr {
@@ -237,6 +385,10 @@
             th, td {
                 padding: 10px 8px;
             }
+
+            .chart-wrapper {
+                height: 300px;
+            }
         }
 
         /* Special styling for overview table */
@@ -260,6 +412,16 @@
             <select id="csvSelector">
                 <option value="SpanishWordsOverview.csv">Overview (All Packs)</option>
             </select>
+            <button id="toggleCharts" onclick="toggleCharts()">Show Charts</button>
+        </div>
+
+        <div id="statsContainer"></div>
+
+        <div id="chartContainer" class="chart-container">
+            <h2 style="text-align: center; margin-bottom: 20px;">📊 Word Distribution Analysis</h2>
+            <div class="chart-wrapper">
+                <canvas id="wordChart"></canvas>
+            </div>
         </div>
 
         <div class="info-bar" id="infoBar" style="display: none;">
@@ -285,6 +447,8 @@
         // Configuration
         const BASE_PATH = './'; // Adjust if needed for GitHub Pages
         const TOTAL_PACKS = 250;
+        let currentChart = null;
+        let currentData = { headers: [], rows: [], filename: '' };
 
         // Populate dropdown with all pack options
         function populateDropdown() {
@@ -338,14 +502,264 @@
             return result;
         }
 
+        // Calculate statistics for overview data
+        function calculateOverviewStats(rows) {
+            let totalBaseWords = 0;
+            let totalWords = 0;
+            let discrepancies = [];
+
+            rows.forEach((row, index) => {
+                const packNum = row[0];
+                const autoWordCount = parseInt(row[3]) || 0;
+                const manualBaseCount = parseInt(row[4]) || 0;
+                const autoBaseChecker = parseInt(row[5]) || 0;
+
+                totalWords += autoWordCount;
+                totalBaseWords += manualBaseCount;
+
+                // Check for discrepancies
+                const expectedWords = manualBaseCount * 3;
+                if (autoWordCount !== expectedWords) {
+                    discrepancies.push({
+                        pack: packNum,
+                        issue: `Pack ${packNum}: auto_word_count (${autoWordCount}) ≠ manual_base_word_count × 3 (${expectedWords})`
+                    });
+                }
+
+                if (autoWordCount !== autoBaseChecker) {
+                    discrepancies.push({
+                        pack: packNum,
+                        issue: `Pack ${packNum}: auto_word_count (${autoWordCount}) ≠ auto_base_word_checker (${autoBaseChecker})`
+                    });
+                }
+            });
+
+            return {
+                totalBaseWords,
+                totalWords,
+                expectedTotalWords: totalBaseWords * 3,
+                discrepancies,
+                hasDiscrepancies: discrepancies.length > 0
+            };
+        }
+
+        // Calculate statistics for individual pack
+        function calculatePackStats(rows) {
+            const totalWords = rows.length;
+            const baseWords = Math.floor(totalWords / 3);
+            const expectedWords = baseWords * 3;
+            const isValid = totalWords === expectedWords;
+
+            return {
+                totalWords,
+                baseWords,
+                expectedWords,
+                isValid,
+                hasDiscrepancies: !isValid
+            };
+        }
+
+        // Render statistics summary
+        function renderStatsSummary(stats, isOverview) {
+            const container = document.getElementById('statsContainer');
+
+            if (isOverview) {
+                const statusClass = stats.hasDiscrepancies ? 'has-discrepancies' : 'all-good';
+                const alertClass = stats.hasDiscrepancies ? 'discrepancy-alert' : 'success-alert';
+                const alertTitle = stats.hasDiscrepancies ? '⚠️ Discrepancies Found' : '✅ All Packs Valid';
+                const alertMessage = stats.hasDiscrepancies
+                    ? `Found ${stats.discrepancies.length} discrepancy issue(s) across packs.`
+                    : 'All word counts match expected values (base words × 3).';
+
+                container.innerHTML = `
+                    <div class="stats-summary ${statusClass}">
+                        <div class="${alertClass}">
+                            <h3>${alertTitle}</h3>
+                            <p>${alertMessage}</p>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-label">Total Base Words (All Packs)</div>
+                                <div class="stat-value">${stats.totalBaseWords.toLocaleString()}</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Total Words (All Packs)</div>
+                                <div class="stat-value ${stats.totalWords === stats.expectedTotalWords ? 'success' : 'error'}">
+                                    ${stats.totalWords.toLocaleString()}
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Expected Total Words (Base × 3)</div>
+                                <div class="stat-value">${stats.expectedTotalWords.toLocaleString()}</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Validation Status</div>
+                                <div class="stat-value ${stats.hasDiscrepancies ? 'error' : 'success'}">
+                                    ${stats.hasDiscrepancies ? 'ISSUES FOUND' : 'ALL VALID'}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                const statusClass = stats.hasDiscrepancies ? 'has-discrepancies' : 'all-good';
+                const alertClass = stats.hasDiscrepancies ? 'discrepancy-alert' : 'success-alert';
+                const alertTitle = stats.hasDiscrepancies ? '⚠️ Pack Has Issues' : '✅ Pack Valid';
+                const alertMessage = stats.hasDiscrepancies
+                    ? `Word count (${stats.totalWords}) does not equal base words × 3 (${stats.expectedWords}).`
+                    : `Word count matches expected value (${stats.baseWords} base words × 3).`;
+
+                container.innerHTML = `
+                    <div class="stats-summary ${statusClass}">
+                        <div class="${alertClass}">
+                            <h3>${alertTitle}</h3>
+                            <p>${alertMessage}</p>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-label">Base Words (This Pack)</div>
+                                <div class="stat-value">${stats.baseWords}</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Total Words (This Pack)</div>
+                                <div class="stat-value ${stats.isValid ? 'success' : 'error'}">
+                                    ${stats.totalWords}
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Expected Words (Base × 3)</div>
+                                <div class="stat-value">${stats.expectedWords}</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Validation Status</div>
+                                <div class="stat-value ${stats.isValid ? 'success' : 'error'}">
+                                    ${stats.isValid ? 'VALID' : 'INVALID'}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Create charts for overview data
+        function createOverviewChart(rows) {
+            const packNumbers = [];
+            const baseWords = [];
+            const totalWords = [];
+
+            rows.forEach(row => {
+                packNumbers.push(`Pack ${row[0]}`);
+                baseWords.push(parseInt(row[4]) || 0);
+                totalWords.push(parseInt(row[3]) || 0);
+            });
+
+            const ctx = document.getElementById('wordChart').getContext('2d');
+
+            if (currentChart) {
+                currentChart.destroy();
+            }
+
+            currentChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: packNumbers,
+                    datasets: [
+                        {
+                            label: 'Base Words',
+                            data: baseWords,
+                            backgroundColor: 'rgba(102, 126, 234, 0.6)',
+                            borderColor: 'rgba(102, 126, 234, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Total Words',
+                            data: totalWords,
+                            backgroundColor: 'rgba(118, 75, 162, 0.6)',
+                            borderColor: 'rgba(118, 75, 162, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Base Words vs Total Words per Pack',
+                            font: { size: 16 }
+                        },
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Word Count'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Pack Number'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Toggle chart visibility
+        function toggleCharts() {
+            const chartContainer = document.getElementById('chartContainer');
+            const button = document.getElementById('toggleCharts');
+
+            if (chartContainer.classList.contains('visible')) {
+                chartContainer.classList.remove('visible');
+                button.textContent = 'Show Charts';
+            } else {
+                chartContainer.classList.add('visible');
+                button.textContent = 'Hide Charts';
+
+                // Create chart if viewing overview
+                if (currentData.filename === 'SpanishWordsOverview.csv') {
+                    createOverviewChart(currentData.rows);
+                }
+            }
+        }
+
+        // Toggle column visibility
+        function toggleColumn(columnIndex) {
+            const table = document.querySelector('table');
+            if (!table) return;
+
+            const cells = table.querySelectorAll(`td:nth-child(${columnIndex + 1}), th:nth-child(${columnIndex + 1})`);
+            cells.forEach(cell => {
+                if (cell.tagName === 'TH') return; // Don't hide header
+                cell.classList.toggle('hidden-column');
+            });
+        }
+
         // Create HTML table from CSV data
         function createTable(headers, rows, isOverview = false) {
             let html = '<table>';
 
-            // Headers
+            // Headers with checkboxes
             html += '<thead><tr>';
-            headers.forEach(header => {
-                html += `<th>${escapeHtml(header)}</th>`;
+            headers.forEach((header, index) => {
+                html += `<th>
+                    <div class="th-content">
+                        <span>${escapeHtml(header)}</span>
+                        <label class="column-toggle">
+                            <input type="checkbox" checked onchange="toggleColumn(${index})">
+                            <span>👁</span>
+                        </label>
+                    </div>
+                </th>`;
             });
             html += '</tr></thead>';
 
@@ -354,7 +768,38 @@
             rows.forEach(row => {
                 html += '<tr>';
                 row.forEach((cell, index) => {
-                    html += `<td>${escapeHtml(cell)}</td>`;
+                    let classes = '';
+                    let displayValue = escapeHtml(cell);
+
+                    // Apply conditional formatting for overview counts
+                    if (isOverview && (index === 3 || index === 4 || index === 5)) {
+                        const autoWordCount = parseInt(row[3]) || 0;
+                        const manualBaseCount = parseInt(row[4]) || 0;
+                        const autoBaseChecker = parseInt(row[5]) || 0;
+                        const expectedWords = manualBaseCount * 3;
+
+                        if (index === 3) { // auto_word_count
+                            if (autoWordCount === expectedWords && autoWordCount === autoBaseChecker) {
+                                classes = 'count-match';
+                            } else {
+                                classes = 'count-mismatch';
+                            }
+                        } else if (index === 4) { // manual_base_word_count
+                            if (expectedWords === autoWordCount) {
+                                classes = 'count-match';
+                            } else {
+                                classes = 'count-mismatch';
+                            }
+                        } else if (index === 5) { // auto_base_word_checker
+                            if (autoBaseChecker === autoWordCount) {
+                                classes = 'count-match';
+                            } else {
+                                classes = 'count-mismatch';
+                            }
+                        }
+                    }
+
+                    html += `<td class="${classes}">${displayValue}</td>`;
                 });
                 html += '</tr>';
             });
@@ -408,6 +853,18 @@
                 const text = await response.text();
                 const { headers, rows } = parseCSV(text);
 
+                // Store current data
+                currentData = { headers, rows, filename };
+
+                // Calculate and render statistics
+                if (isOverview) {
+                    const stats = calculateOverviewStats(rows);
+                    renderStatsSummary(stats, true);
+                } else {
+                    const stats = calculatePackStats(rows);
+                    renderStatsSummary(stats, false);
+                }
+
                 // Create and display table
                 const tableClass = isOverview ? 'overview-table' : '';
                 container.innerHTML = `<div class="${tableClass}">${createTable(headers, rows, isOverview)}</div>`;
@@ -418,6 +875,12 @@
                 } else {
                     const packNumber = filename.match(/\d+/)[0];
                     updateInfoBar(`Pack ${packNumber}`, rows.length);
+                }
+
+                // Update chart if visible
+                const chartContainer = document.getElementById('chartContainer');
+                if (chartContainer.classList.contains('visible') && isOverview) {
+                    createOverviewChart(rows);
                 }
 
             } catch (error) {
