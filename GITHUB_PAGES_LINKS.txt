@@ -1,0 +1,15 @@
+GitHub Pages URLs
+======================================================================
+Repository: some-dude-999/LPH
+Base URL: https://some-dude-999.github.io/LPH
+======================================================================
+
+File: Who Even Learns Languages Dude.html
+URL:  https://some-dude-999.github.io/LPH/Who%20Even%20Learns%20Languages%20Dude.html
+
+File: CsvViewerForManuallyBuildingCSV.html
+URL:  https://some-dude-999.github.io/LPH/CsvViewerForManuallyBuildingCSV.html
+
+File: SpanishWords/SpanishWordsViewer.html
+URL:  https://some-dude-999.github.io/LPH/SpanishWords/SpanishWordsViewer.html
+
