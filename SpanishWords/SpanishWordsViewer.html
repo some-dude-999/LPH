@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Words Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .controls {
+            padding: 25px 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .controls label {
+            font-weight: 600;
+            color: #495057;
+            font-size: 1rem;
+        }
+
+        .controls select {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            font-size: 1rem;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            background: white;
+            color: #495057;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .controls select:hover {
+            border-color: #667eea;
+        }
+
+        .controls select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .info-bar {
+            padding: 15px 30px;
+            background: #e7f3ff;
+            border-bottom: 1px solid #b3d9ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #004085;
+            font-size: 0.95rem;
+        }
+
+        .info-item strong {
+            font-weight: 600;
+        }
+
+        .badge {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .table-container {
+            padding: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        th {
+            padding: 16px 12px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #e9ecef;
+            color: #495057;
+            line-height: 1.5;
+        }
+
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:nth-child(even):hover {
+            background-color: #e9ecef;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 30px;
+            color: #6c757d;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            margin: 30px;
+            border-radius: 8px;
+            border: 1px solid #f5c6cb;
+        }
+
+        .error h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 0.95rem;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .controls select {
+                width: 100%;
+            }
+
+            .info-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .table-container {
+                padding: 15px;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 10px 8px;
+            }
+        }
+
+        /* Special styling for overview table */
+        .overview-table td:nth-child(3) {
+            font-family: monospace;
+            font-size: 0.85rem;
+            max-width: 600px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Spanish Words Viewer</h1>
+            <p>Browse all 250 Spanish word packs and their translations</p>
+        </div>
+
+        <div class="controls">
+            <label for="csvSelector">Select Pack:</label>
+            <select id="csvSelector">
+                <option value="SpanishWordsOverview.csv">Overview (All Packs)</option>
+            </select>
+        </div>
+
+        <div class="info-bar" id="infoBar" style="display: none;">
+            <div class="info-item">
+                <strong>Pack:</strong>
+                <span id="packName">-</span>
+            </div>
+            <div class="info-item">
+                <strong>Words:</strong>
+                <span class="badge" id="wordCount">0</span>
+            </div>
+        </div>
+
+        <div class="table-container" id="tableContainer">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading Spanish words data...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const BASE_PATH = './'; // Adjust if needed for GitHub Pages
+        const TOTAL_PACKS = 250;
+
+        // Populate dropdown with all pack options
+        function populateDropdown() {
+            const selector = document.getElementById('csvSelector');
+
+            for (let i = 1; i <= TOTAL_PACKS; i++) {
+                const option = document.createElement('option');
+                option.value = `SpanishWords${i}.csv`;
+                option.textContent = `Pack ${i}`;
+                selector.appendChild(option);
+            }
+        }
+
+        // Parse CSV data
+        function parseCSV(text) {
+            const lines = text.split('\n').filter(line => line.trim());
+            if (lines.length === 0) return { headers: [], rows: [] };
+
+            const headers = parseCSVLine(lines[0]);
+            const rows = lines.slice(1).map(line => parseCSVLine(line));
+
+            return { headers, rows };
+        }
+
+        // Parse a single CSV line (handles quoted fields)
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                const nextChar = line[i + 1];
+
+                if (char === '"') {
+                    if (inQuotes && nextChar === '"') {
+                        current += '"';
+                        i++; // Skip next quote
+                    } else {
+                        inQuotes = !inQuotes;
+                    }
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+
+            result.push(current.trim());
+            return result;
+        }
+
+        // Create HTML table from CSV data
+        function createTable(headers, rows, isOverview = false) {
+            let html = '<table>';
+
+            // Headers
+            html += '<thead><tr>';
+            headers.forEach(header => {
+                html += `<th>${escapeHtml(header)}</th>`;
+            });
+            html += '</tr></thead>';
+
+            // Rows
+            html += '<tbody>';
+            rows.forEach(row => {
+                html += '<tr>';
+                row.forEach((cell, index) => {
+                    html += `<td>${escapeHtml(cell)}</td>`;
+                });
+                html += '</tr>';
+            });
+            html += '</tbody>';
+
+            html += '</table>';
+            return html;
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Update info bar
+        function updateInfoBar(packName, wordCount) {
+            const infoBar = document.getElementById('infoBar');
+            const packNameEl = document.getElementById('packName');
+            const wordCountEl = document.getElementById('wordCount');
+
+            if (packName === 'Overview') {
+                infoBar.style.display = 'none';
+            } else {
+                infoBar.style.display = 'flex';
+                packNameEl.textContent = packName;
+                wordCountEl.textContent = wordCount;
+            }
+        }
+
+        // Load and display CSV
+        async function loadCSV(filename) {
+            const container = document.getElementById('tableContainer');
+            const isOverview = filename === 'SpanishWordsOverview.csv';
+
+            // Show loading
+            container.innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading ${filename}...</p>
+                </div>
+            `;
+
+            try {
+                const response = await fetch(BASE_PATH + filename);
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${filename}: ${response.statusText}`);
+                }
+
+                const text = await response.text();
+                const { headers, rows } = parseCSV(text);
+
+                // Create and display table
+                const tableClass = isOverview ? 'overview-table' : '';
+                container.innerHTML = `<div class="${tableClass}">${createTable(headers, rows, isOverview)}</div>`;
+
+                // Update info bar
+                if (isOverview) {
+                    updateInfoBar('Overview', rows.length);
+                } else {
+                    const packNumber = filename.match(/\d+/)[0];
+                    updateInfoBar(`Pack ${packNumber}`, rows.length);
+                }
+
+            } catch (error) {
+                container.innerHTML = `
+                    <div class="error">
+                        <h3>Error Loading CSV</h3>
+                        <p>${error.message}</p>
+                        <p>Make sure the CSV file exists at: <code>${BASE_PATH}${filename}</code></p>
+                    </div>
+                `;
+                updateInfoBar('-', 0);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Populate dropdown
+            populateDropdown();
+
+            // Load default (Overview)
+            loadCSV('SpanishWordsOverview.csv');
+
+            // Add change event listener
+            document.getElementById('csvSelector').addEventListener('change', (e) => {
+                loadCSV(e.target.value);
+            });
+        });
+    </script>
+</body>
+</html>
