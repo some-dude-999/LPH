@@ -644,15 +644,49 @@
 
         // Create charts for overview data
         function createOverviewChart(rows) {
-            const packNumbers = [];
-            const baseWords = [];
-            const totalWords = [];
+            // Group packs by base word count ranges (0-10, 10-20, 20-30, etc.)
+            const ranges = {};
 
             rows.forEach(row => {
-                packNumbers.push(`Pack ${row[0]}`);
-                baseWords.push(parseInt(row[4]) || 0);
-                totalWords.push(parseInt(row[3]) || 0);
+                const baseWordCount = parseInt(row[4]) || 0;
+                const rangeStart = Math.floor(baseWordCount / 10) * 10;
+                const rangeEnd = rangeStart + 10;
+                const rangeLabel = `${rangeStart}-${rangeEnd}`;
+
+                if (!ranges[rangeLabel]) {
+                    ranges[rangeLabel] = {
+                        count: 0,
+                        rangeStart: rangeStart,
+                        packs: []
+                    };
+                }
+                ranges[rangeLabel].count++;
+                ranges[rangeLabel].packs.push(row[0]);
             });
+
+            // Sort ranges by range start value
+            const sortedRanges = Object.keys(ranges).sort((a, b) => {
+                return ranges[a].rangeStart - ranges[b].rangeStart;
+            });
+
+            const labels = sortedRanges;
+            const data = sortedRanges.map(range => ranges[range].count);
+
+            // Generate distinct colors for each slice
+            const backgroundColors = [
+                'rgba(102, 126, 234, 0.8)',
+                'rgba(118, 75, 162, 0.8)',
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(255, 159, 64, 0.8)',
+                'rgba(255, 205, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(201, 203, 207, 0.8)',
+                'rgba(255, 99, 71, 0.8)'
+            ];
+
+            const borderColors = backgroundColors.map(color => color.replace('0.8', '1'));
 
             const ctx = document.getElementById('wordChart').getContext('2d');
 
@@ -661,25 +695,16 @@
             }
 
             currentChart = new Chart(ctx, {
-                type: 'bar',
+                type: 'pie',
                 data: {
-                    labels: packNumbers,
-                    datasets: [
-                        {
-                            label: 'Base Words',
-                            data: baseWords,
-                            backgroundColor: 'rgba(102, 126, 234, 0.6)',
-                            borderColor: 'rgba(102, 126, 234, 1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Total Words',
-                            data: totalWords,
-                            backgroundColor: 'rgba(118, 75, 162, 0.6)',
-                            borderColor: 'rgba(118, 75, 162, 1)',
-                            borderWidth: 1
-                        }
-                    ]
+                    labels: labels.map(label => `${label} base words`),
+                    datasets: [{
+                        label: 'Number of Packs',
+                        data: data,
+                        backgroundColor: backgroundColors.slice(0, labels.length),
+                        borderColor: borderColors.slice(0, labels.length),
+                        borderWidth: 2
+                    }]
                 },
                 options: {
                     responsive: true,
@@ -687,25 +712,24 @@
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Base Words vs Total Words per Pack',
-                            font: { size: 16 }
+                            text: 'Distribution of Packs by Base Word Count',
+                            font: { size: 16, weight: 'bold' }
                         },
                         legend: {
-                            position: 'top'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Word Count'
+                            position: 'right',
+                            labels: {
+                                padding: 15,
+                                font: { size: 12 }
                             }
                         },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Pack Number'
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed || 0;
+                                    const percentage = ((value / rows.length) * 100).toFixed(1);
+                                    return `${label}: ${value} packs (${percentage}%)`;
+                                }
                             }
                         }
                     }
