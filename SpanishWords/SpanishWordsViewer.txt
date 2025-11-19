@@ -1,32 +1,54 @@
 === SpanishWordsViewer.txt ===
 PROJECT: LPH - Spanish Language Learning Platform
-COMPONENT: Interactive Spanish Vocabulary Pack Viewer
+COMPONENT: Interactive Spanish Vocabulary Pack Viewer with Analytics
 CREATED: 2025-11-19
-LAST UPDATED: 2025-11-19 - Initial documentation created
+LAST UPDATED: 2025-11-19 - Added advanced features: column toggles, statistics, conditional formatting, and charts
 
 DATA SOURCES:
 - CSV Files (Local): 251 CSV files in the SpanishWords directory
-  * SpanishWordsOverview.csv - Master index with pack metadata
+  * SpanishWordsOverview.csv - Master index with pack metadata (Pack_Number, Pack_Title, Spanish_Words, auto_word_count, manual_base_word_count, auto_base_word_checker)
   * SpanishWords1.csv through SpanishWords250.csv - Individual vocabulary packs
 - File Structure:
-  * Headers: spanish, english, chinese, pinyin, portuguese
-  * Each pack contains 24-45 translation entries
+  * Overview CSV: Pack_Number, Pack_Title, Spanish_Words (array), auto_word_count, manual_base_word_count, auto_base_word_checker
+  * Pack CSV: spanish, english, chinese, pinyin, portuguese
+  * Each pack contains 24-45 translation entries (must be divisible by 3)
   * Total: ~10,685 vocabulary entries across all packs
 
 FUNCTIONALITY:
-- Main Purpose: Browse and study all 250 Spanish vocabulary packs with multi-language translations
+- Main Purpose: Browse and study all 250 Spanish vocabulary packs with multi-language translations, data validation, and visual analytics
 - Key Functions:
   * populateDropdown() - Generates 251 options (1 overview + 250 packs)
   * parseCSV(text) - Converts CSV text into structured data
   * parseCSVLine(line) - Handles quoted fields, commas, and escaped quotes
-  * createTable(headers, rows, isOverview) - Generates HTML table from CSV data
+  * createTable(headers, rows, isOverview) - Generates HTML table with conditional formatting and column toggles
   * loadCSV(filename) - Fetches and displays selected CSV file
   * updateInfoBar(packName, wordCount) - Shows pack statistics
   * escapeHtml(text) - Prevents XSS attacks
+  * calculateOverviewStats(rows) - Computes totals and detects discrepancies across all packs
+  * calculatePackStats(rows) - Validates individual pack word counts
+  * renderStatsSummary(stats, isOverview) - Displays comprehensive statistics with discrepancy alerts
+  * createOverviewChart(rows) - Generates Chart.js bar chart showing base words vs total words per pack
+  * toggleCharts() - Shows/hides data visualization charts
+  * toggleColumn(columnIndex) - Hides/shows individual table columns
 - Event Handlers:
   * DOMContentLoaded - Initializes app and loads overview
   * Dropdown change - Loads selected pack
-- Display Features:
+  * Column checkbox toggle - Shows/hides columns
+  * Show Charts button - Toggles chart visibility
+- NEW Display Features:
+  * ✅ Column Toggle Checkboxes (👁️ icon) - Hide/show columns to manage long word lists
+  * ✅ Statistics Summary Section - Shows totals and validation status at a glance
+  * ✅ Conditional Color Formatting:
+    - GREEN (count-match): Values that match expected calculations
+    - RED (count-mismatch): Discrepancies detected (auto_word_count ≠ manual_base_word_count × 3)
+  * ✅ Discrepancy Detection - Automatic validation that auto_word_count === manual_base_word_count × 3
+  * ✅ Visual Alerts:
+    - Yellow background: Discrepancies found
+    - Green background: All packs valid
+  * ✅ Chart Visualization (Chart.js):
+    - Bar chart showing base words vs total words distribution across all packs
+    - Toggle on/off with "Show Charts" button
+- Previous Display Features:
   * Sticky table headers for easy scrolling
   * Alternating row colors for readability
   * Hover effects on table rows
@@ -35,7 +57,7 @@ FUNCTIONALITY:
   * Responsive design for mobile devices
 
 DEPENDENCIES:
-- External Libraries: None (pure vanilla JavaScript)
+- External Libraries: Chart.js v3+ (CDN: https://cdn.jsdelivr.net/npm/chart.js)
 - Project Files:
   * SpanishWordsOverview.csv (required)
   * SpanishWords1.csv through SpanishWords250.csv (required)
@@ -52,6 +74,9 @@ INTEGRATION:
   * SpanishWordsPythonHelperScripts/ - Validates CSV data integrity
 
 CORRECTIONS & CLARIFICATIONS:
+- Initially thought: Simple table viewer without validation
+- Actually: Full-featured analytics tool with data validation, conditional formatting, and visualization
+- Why this matters: Now catches data quality issues immediately with visual indicators, making it easy to spot packs that need correction
 - Initially thought: Files might be fetched from an external server
 - Actually: Uses client-side Fetch API to load local CSV files from same directory
 - Why this matters: Requires proper file paths when deployed; BASE_PATH variable may need adjustment for GitHub Pages vs local testing
@@ -66,6 +91,17 @@ NOTES:
   * Quoted fields with commas inside
   * Escaped quotes (double quotes)
   * Empty lines are filtered out
+- NEW FEATURES ADDED (2025-11-19):
+  * Column visibility toggles solve the problem of overly wide tables
+  * Statistics section provides instant validation feedback
+  * Green/red color coding makes discrepancies immediately visible
+  * Chart visualization shows word distribution patterns across all 250 packs
+  * Total base words and total words are calculated and displayed for both individual packs and overview
+  * Expected word count (base words × 3) is shown and validated
+- Data Validation Rules:
+  * For Overview: auto_word_count should equal manual_base_word_count × 3
+  * For Overview: auto_word_count should equal auto_base_word_checker
+  * For Individual Packs: Total words should be divisible by 3 (each base word has 3 examples)
 - Future improvements could include:
   * Search/filter functionality
   * Flashcard mode for studying
@@ -74,4 +110,6 @@ NOTES:
   * Random word quiz generator
   * Export selected words to study list
   * Dark mode toggle
+  * Download discrepancy report as CSV
+  * Sort packs by word count or discrepancy status
 ===
