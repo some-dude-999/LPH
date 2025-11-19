@@ -1,0 +1,190 @@
+SPANISH WORDS COMPREHENSIVE VALIDATION PROMPT
+==============================================
+
+Use this prompt to validate all Spanish word packs for correctness and quality.
+
+TASK: Perform a comprehensive validation of all 250 Spanish word packs in the SpanishWords folder.
+
+FILES TO CHECK:
+- SpanishWords/SpanishWordsOverview.csv (master file)
+- SpanishWords/SpanishWords1.csv through SpanishWords250.csv (word pack files)
+- SpanishWords/000 SPANISH TRANSLATION FORMAT RULES.txt (format rules)
+
+VALIDATION STEPS:
+==================
+
+1. WORD COUNT VALIDATION
+   -----------------------
+   For each pack in SpanishWordsOverview.csv:
+
+   a) Verify auto_word_count (column 4) equals the actual count of words in Spanish_Words array (column 3)
+   b) Verify auto_word_count is divisible by 3 (each base word must have exactly 3 examples)
+   c) Verify manual_base_word_count (column 5) = auto_word_count ÷ 3
+   d) Verify auto_base_word_checker (column 6) = manual_base_word_count × 3
+   e) Verify auto_word_count = auto_base_word_checker (if not, pack needs fixing)
+
+   Use helper script: python3 SpanishWordsPythonHelperScripts/check_divisible_by_3.py
+
+2. CSV FILE MATCHING
+   ------------------
+   For each pack:
+
+   a) Verify SpanishWords{N}.csv exists for pack N
+   b) Verify the Spanish words in the CSV file exactly match the Spanish_Words array in overview
+   c) Verify words are in the exact same order
+   d) Verify CSV has exactly auto_word_count rows (excluding header)
+
+   Use helper script: python3 SpanishWordsPythonHelperScripts/verify_csv_matches_overview.py
+
+3. BASE WORD STRUCTURE VALIDATION
+   -------------------------------
+   For each pack's word array:
+
+   a) Check if words are grouped in sets of 3
+   b) Identify the base word for each group of 3
+   c) Verify all 3 examples use the same base word appropriately
+   d) Look at Pack_Title (column 2) to understand what the pack should contain
+
+   Example from Pack 1 (Greetings & Goodbyes):
+   - Group 1: "hola amigo", "hola señor", "hola todos" → base: "hola"
+   - Group 2: "adiós amigos", "adiós señora", "adiós hasta luego" → base: "adiós"
+
+   Use helper script: python3 SpanishWordsPythonHelperScripts/examine_pack_structure.py {pack_number}
+
+4. WORD QUALITY AND USEFULNESS CHECK
+   -----------------------------------
+   For each group of 3 words in a pack:
+
+   a) Are the 3 examples MAXIMALLY USEFUL and COMMON?
+      - Do they use high-frequency vocabulary?
+      - Are they practical phrases a learner would actually use?
+      - Do they cover different contexts/situations?
+
+   b) Do the examples follow natural Spanish usage?
+      - Not overly formal or archaic
+      - Not too colloquial or slang
+      - Appropriate for general Spanish learning
+
+   c) Do the 3 examples provide good variety?
+      - Different objects/subjects where appropriate
+      - Different contexts (e.g., "hola amigo", "hola señor", "hola todos")
+      - Maximize learning value
+
+   d) Check against Pack_Title - do the words fit the theme?
+      - Pack 1 "Greetings & Goodbyes" should only have greetings/goodbyes
+      - Pack 8 "Having & Age (tener)" should focus on "tener" expressions
+      - etc.
+
+5. TRANSLATION FORMAT VALIDATION
+   ------------------------------
+   For each word in the CSV files, verify:
+
+   a) NO slashes in Spanish column (combining alternatives like "gato/gatos" is FORBIDDEN)
+   b) English uses ONLY allowed markers: (masculine), (feminine), (formal), (plural), (singular)
+   c) NO disallowed markers like: (infinitive), (preterite), (NOT...), (permanent), etc.
+   d) Chinese translations are natural and idiomatic (not word-for-word)
+   e) Chinese uses appropriate particles (了, 一下, 吗, etc.) where needed
+   f) Pinyin exactly matches Chinese characters with proper tone marks
+   g) Portuguese is natural Brazilian Portuguese (not literal from Spanish)
+
+   Reference: SpanishWords/000 SPANISH TRANSLATION FORMAT RULES.txt
+
+6. VERB PACK PATTERN VALIDATION
+   -----------------------------
+   For verb-focused packs (like Pack 8 "tener", Pack 20 "hacer", etc.):
+
+   Expected structure (30 words = 10 base words × 3):
+   - Groups 1-6: Conjugations (yo, tú, él/ella, nosotros, vosotros, ellos) = 18 words
+   - Group 7: Infinitive forms = 3 words
+   - Group 8: Noun forms = 3 words
+   - Group 9-10: Related verbs or expressions = 6 words
+
+   Verify this pattern is followed consistently.
+
+COMMON ISSUES TO LOOK FOR:
+===========================
+
+1. Word count not divisible by 3
+2. Extra word in a group (e.g., 31 words instead of 30)
+3. Missing word in a group (e.g., 29 words instead of 30)
+4. Base word changes within a group of 3
+5. Low-frequency or overly academic vocabulary
+6. Repetitive examples (not enough variety)
+7. Examples that don't fit the pack theme
+8. Format rule violations (slashes, wrong markers, etc.)
+
+HELPER SCRIPTS:
+===============
+
+All scripts are in SpanishWords/SpanishWordsPythonHelperScripts/
+
+1. check_divisible_by_3.py - Finds packs with counts not divisible by 3
+2. examine_pack_structure.py <pack_number> - Shows pack structure with groupings
+3. verify_word_counts.py - Checks Word_Count column accuracy
+4. verify_csv_matches_overview.py - Checks CSV files match overview
+
+See SpanishWordsPythonHelperScripts/README.txt for full documentation.
+
+OUTPUT REQUIRED:
+================
+
+After validation, provide:
+
+1. Summary statistics:
+   - Total packs checked: 250
+   - Packs with word count errors: X
+   - Packs with quality issues: Y
+   - Packs with format violations: Z
+
+2. Detailed list of issues found:
+   - Pack N: Description of issue
+   - Pack M: Description of issue
+   - etc.
+
+3. For each issue, provide:
+   - What's wrong
+   - Which specific words/groups are problematic
+   - Suggested fix (what to add/remove/change)
+
+4. Verification that fixes maintain:
+   - Word count divisibility by 3
+   - Maximum usefulness of vocabulary
+   - Compliance with all format rules
+
+EXAMPLE VALIDATION:
+===================
+
+Pack 208: Increasing (aumentar)
+- Word count: 30 ✓ (divisible by 3)
+- Base words: 10 ✓ (30 ÷ 3 = 10)
+- Structure: Conjugations (18) + Infinitives (3) + Nouns (3) + Related (6) ✓
+- Quality check:
+  - "aumento precios" - common, useful ✓
+  - "aumento peso" - common, useful ✓
+  - "aumento velocidad" - common, useful ✓
+  - All examples use high-frequency vocabulary ✓
+- CSV match: SpanishWords208.csv has 30 rows matching overview ✓
+- Format: All translations follow rules ✓
+
+STATUS: PASS ✓
+
+HOW TO USE THIS PROMPT:
+========================
+
+1. Copy this entire prompt
+2. Provide it to an LLM with access to the SpanishWords folder
+3. The LLM will systematically validate all 250 packs
+4. Review the output for any issues
+5. Fix issues as recommended
+6. Re-run validation to confirm fixes
+
+MAINTENANCE:
+============
+
+Run this validation:
+- After adding new packs
+- After modifying existing packs
+- Before releasing updates
+- Periodically to catch any inconsistencies
+
+Last updated: 2025-11-19
