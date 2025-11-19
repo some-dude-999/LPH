@@ -26,7 +26,7 @@ with open('SpanishWordsOverview.csv', 'r', encoding='utf-8') as f:
     
     for row in reader:
         pack_num = row['Pack_Number']
-        word_count = int(row['Word_Count'])
+        word_count = int(row['auto_word_count'])
         
         divisible = word_count % 3 == 0
         quotient = word_count // 3
