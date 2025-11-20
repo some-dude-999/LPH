@@ -32,7 +32,7 @@ VALIDATION STEPS:
    a) Verify SpanishWords{N}.csv exists for pack N
    b) Verify the Spanish words in the CSV file exactly match the Spanish_Words array in overview
    c) Verify words are in the exact same order
-   d) Verify CSV has exactly auto_word_count rows (excluding header)
+   d) Verify CSV has exactly total_words_actual rows (excluding header)
 
    Use helper script: python3 SpanishWordsPythonHelperScripts/verify_csv_matches_overview.py
 
