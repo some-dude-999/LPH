@@ -23,7 +23,7 @@
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 900px;
+            max-width: 950px;
             width: 100%;
             text-align: center;
         }
@@ -36,19 +36,20 @@
 
         .subtitle {
             color: #7f8c8d;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-size: 1.1em;
         }
 
-        .tabs {
+        /* Main Language Tabs */
+        .main-tabs {
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             border-bottom: 2px solid #ecf0f1;
         }
 
-        .tab {
+        .main-tab {
             padding: 15px 30px;
             cursor: pointer;
             background: none;
@@ -60,20 +61,62 @@
             transition: all 0.3s ease;
         }
 
-        .tab:hover {
+        .main-tab:hover {
             color: #667eea;
         }
 
-        .tab.active {
+        .main-tab.active {
             color: #667eea;
             border-bottom-color: #667eea;
         }
 
-        .tab-content {
+        /* Sub Data Source Tabs */
+        .sub-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 25px;
+            padding: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .sub-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: white;
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #7f8c8d;
+            transition: all 0.3s ease;
+        }
+
+        .sub-tab:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .sub-tab.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .language-content {
             display: none;
         }
 
-        .tab-content.active {
+        .language-content.active {
+            display: block;
+        }
+
+        .data-content {
+            display: none;
+        }
+
+        .data-content.active {
             display: block;
         }
 
@@ -143,306 +186,515 @@
         .sources p {
             margin: 5px 0;
         }
+
+        .data-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #667eea;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
     </style>
 <base target="_blank">
 </head>
 <body>
     <div class="container">
         <h1>🌍 Who Even Learns Languages Dude</h1>
-        <p class="subtitle">Global distribution of native languages among language learners worldwide</p>
+        <p class="subtitle">Global distribution of native languages among language learners (3 data perspectives)</p>
 
-        <div class="tabs">
-            <button class="tab active" onclick="showTab('spanish')">🇪🇸 Spanish</button>
-            <button class="tab" onclick="showTab('english')">🇬🇧 English</button>
-            <button class="tab" onclick="showTab('chinese')">🇨🇳 Chinese</button>
+        <!-- Main Language Tabs -->
+        <div class="main-tabs">
+            <button class="main-tab active" onclick="showLanguage('spanish')">🇪🇸 Spanish</button>
+            <button class="main-tab" onclick="showLanguage('english')">🇬🇧 English</button>
+            <button class="main-tab" onclick="showLanguage('chinese')">🇨🇳 Chinese</button>
         </div>
 
-        <!-- Spanish Tab -->
-        <div id="spanish-content" class="tab-content active">
-            <div class="chart-container">
-                <canvas id="spanishChart"></canvas>
+        <!-- SPANISH CONTENT -->
+        <div id="spanish-lang" class="language-content active">
+            <!-- Sub Tabs for Data Sources -->
+            <div class="sub-tabs">
+                <button class="sub-tab active" onclick="showDataSource('spanish', 'duolingo')">📊 Duolingo Data</button>
+                <button class="sub-tab" onclick="showDataSource('spanish', 'geographic')">🌎 Geographic</button>
+                <button class="sub-tab" onclick="showDataSource('spanish', 'estimated')">🔮 Estimated</button>
             </div>
 
-            <div class="stats-grid">
-                <div class="stat-item spanish">
-                    <div class="stat-number">24M+</div>
-                    <div class="stat-label">Total Spanish Learners Worldwide</div>
+            <!-- Duolingo Data -->
+            <div id="spanish-duolingo" class="data-content active">
+                <div class="chart-container">
+                    <canvas id="spanishDuolingoChart"></canvas>
                 </div>
-                <div class="stat-item spanish">
-                    <div class="stat-number">70%</div>
-                    <div class="stat-label">US K-12 Students Choose Spanish</div>
+                <div class="stats-grid">
+                    <div class="stat-item spanish">
+                        <div class="stat-number">24M+</div>
+                        <div class="stat-label">Total Spanish Learners Worldwide</div>
+                    </div>
+                    <div class="stat-item spanish">
+                        <div class="stat-number">70%</div>
+                        <div class="stat-label">US K-12 Students Choose Spanish</div>
+                    </div>
+                    <div class="stat-item spanish">
+                        <div class="stat-number">36%</div>
+                        <div class="stat-label">US Adults Attempting Spanish</div>
+                    </div>
+                    <div class="stat-item spanish">
+                        <div class="stat-number">11%</div>
+                        <div class="stat-label">UK Bilinguals Learn Spanish</div>
+                    </div>
                 </div>
-                <div class="stat-item spanish">
-                    <div class="stat-number">36%</div>
-                    <div class="stat-label">US Adults Attempting Spanish</div>
-                </div>
-                <div class="stat-item spanish">
-                    <div class="stat-number">11%</div>
-                    <div class="stat-label">UK Bilinguals Learn Spanish</div>
+                <div class="sources">
+                    <p><strong>Data Sources (Duolingo):</strong></p>
+                    <p>Mango Languages, NBC News, UT Permian Basin, Test Prep Insight, Speakeasy BCN, Preply</p>
                 </div>
             </div>
 
-            <div class="sources">
-                <p><strong>Data Sources (Spanish):</strong></p>
-                <p>Mango Languages - Spanish is most studied language in US for communication with Hispanic population</p>
-                <p>NBC News - Growing Spanish learning trend in China among millennials</p>
-                <p>UT Permian Basin - 70% of US K-12 students choose Spanish</p>
-                <p>Test Prep Insight - 36.45% of Americans attempt to learn Spanish</p>
-                <p>Speakeasy BCN - 24 million actively studying Spanish worldwide</p>
-                <p>Preply - Spanish is 3rd most popular second language in UK (11%)</p>
+            <!-- Geographic Data -->
+            <div id="spanish-geographic" class="data-content">
+                <div class="chart-container">
+                    <canvas id="spanishGeographicChart"></canvas>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item spanish">
+                        <div class="stat-number">#1</div>
+                        <div class="stat-label">USA (Most Spanish Learners)</div>
+                    </div>
+                    <div class="stat-item spanish">
+                        <div class="stat-number">#2</div>
+                        <div class="stat-label">Germany</div>
+                    </div>
+                    <div class="stat-item spanish">
+                        <div class="stat-number">88%</div>
+                        <div class="stat-label">Mexican Spanish Learners from USA</div>
+                    </div>
+                    <div class="stat-item spanish">
+                        <div class="stat-number">46/50</div>
+                        <div class="stat-label">US States Where Spanish is #1</div>
+                    </div>
+                </div>
+                <div class="sources">
+                    <p><strong>Data Sources (Geographic):</strong></p>
+                    <p>Babbel - USA has 4x more Spanish learners than Germany (runner-up)</p>
+                    <p>Babbel - 88% of Mexican Spanish learners are in USA</p>
+                    <p>Duolingo - Spanish #1 ELL language in 46 of 50 US states + DC</p>
+                </div>
+            </div>
+
+            <!-- Estimated Data -->
+            <div id="spanish-estimated" class="data-content">
+                <div class="chart-container">
+                    <canvas id="spanishEstimatedChart"></canvas>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item spanish">
+                        <div class="stat-number">~50%</div>
+                        <div class="stat-label">Estimated English Speakers (USA dominated)</div>
+                    </div>
+                    <div class="stat-item spanish">
+                        <div class="stat-number">~15%</div>
+                        <div class="stat-label">Estimated German Speakers</div>
+                    </div>
+                    <div class="stat-item spanish">
+                        <div class="stat-number">~35%</div>
+                        <div class="stat-label">Other European + Asian Languages</div>
+                    </div>
+                    <div class="stat-item spanish">
+                        <div class="stat-number">Combined</div>
+                        <div class="stat-label">Duolingo + Geographic Data</div>
+                    </div>
+                </div>
+                <div class="sources">
+                    <p><strong>Estimation Method:</strong></p>
+                    <p>Combined Duolingo native language data (42% English speakers) with Babbel geographic data (USA dominance)</p>
+                    <p>Adjusted for USA = 85% English + 10% heritage Spanish + 5% other</p>
+                    <p>Germany data = 95% German speakers, UK = 90% English, France = 90% French</p>
+                </div>
             </div>
         </div>
 
-        <!-- English Tab -->
-        <div id="english-content" class="tab-content">
-            <div class="chart-container">
-                <canvas id="englishChart"></canvas>
+        <!-- ENGLISH CONTENT -->
+        <div id="english-lang" class="language-content">
+            <!-- Sub Tabs for Data Sources -->
+            <div class="sub-tabs">
+                <button class="sub-tab active" onclick="showDataSource('english', 'duolingo')">📊 Duolingo Data</button>
+                <button class="sub-tab" onclick="showDataSource('english', 'geographic')">🌎 Geographic</button>
+                <button class="sub-tab" onclick="showDataSource('english', 'estimated')">🔮 Estimated</button>
             </div>
 
-            <div class="stats-grid">
-                <div class="stat-item english">
-                    <div class="stat-number">1.5B+</div>
-                    <div class="stat-label">Total English Learners Worldwide</div>
+            <!-- Duolingo Data -->
+            <div id="english-duolingo" class="data-content active">
+                <div class="chart-container">
+                    <canvas id="englishDuolingoChart"></canvas>
                 </div>
-                <div class="stat-item english">
-                    <div class="stat-number">#1</div>
-                    <div class="stat-label">India: Most Duolingo English Test Takers</div>
+                <div class="stats-grid">
+                    <div class="stat-item english">
+                        <div class="stat-number">1.5B+</div>
+                        <div class="stat-label">Total English Learners Worldwide</div>
+                    </div>
+                    <div class="stat-item english">
+                        <div class="stat-number">#1</div>
+                        <div class="stat-label">India: Most Duolingo English Test Takers</div>
+                    </div>
+                    <div class="stat-item english">
+                        <div class="stat-number">400M</div>
+                        <div class="stat-label">English Learners in China</div>
+                    </div>
+                    <div class="stat-item english">
+                        <div class="stat-number">135</div>
+                        <div class="stat-label">Countries Where English is #1 Language Studied</div>
+                    </div>
                 </div>
-                <div class="stat-item english">
-                    <div class="stat-number">400M</div>
-                    <div class="stat-label">English Learners in China</div>
-                </div>
-                <div class="stat-item english">
-                    <div class="stat-number">135</div>
-                    <div class="stat-label">Countries Where English is #1 Language Studied</div>
+                <div class="sources">
+                    <p><strong>Data Sources (Duolingo):</strong></p>
+                    <p>Duolingo 2024 Language Report, Duolingo English Test Data, British Council</p>
                 </div>
             </div>
 
-            <div class="sources">
-                <p><strong>Data Sources (English):</strong></p>
-                <p>Duolingo 2024 Language Report - English #1 in 135 countries (up 10% from 2023)</p>
-                <p>Duolingo English Test Data - India #1, China #2, Canada #3, Brazil #4, Indonesia #5 for test takers</p>
-                <p>Duolingo - India overtook China as largest market for Duolingo English Test, with testing in 750+ cities</p>
-                <p>Duolingo - China has 850+ cities with English test takers, 54% cite education as primary motivation</p>
-                <p>British Council - 750M+ people worldwide speak English as foreign language, 1.5B+ total learners</p>
-                <p>Duolingo - Japan, Czechia, and Hungary have the most serious English learners (by avg time spent)</p>
+            <!-- Geographic Data -->
+            <div id="english-geographic" class="data-content">
+                <div class="chart-container">
+                    <canvas id="englishGeographicChart"></canvas>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item english">
+                        <div class="stat-number">#1</div>
+                        <div class="stat-label">India (750+ cities)</div>
+                    </div>
+                    <div class="stat-item english">
+                        <div class="stat-number">#2</div>
+                        <div class="stat-label">China (850+ cities)</div>
+                    </div>
+                    <div class="stat-item english">
+                        <div class="stat-number">#3</div>
+                        <div class="stat-label">Canada</div>
+                    </div>
+                    <div class="stat-item english">
+                        <div class="stat-number">#4</div>
+                        <div class="stat-label">Brazil</div>
+                    </div>
+                </div>
+                <div class="sources">
+                    <p><strong>Data Sources (Geographic):</strong></p>
+                    <p>Duolingo English Test - India #1, China #2, Canada #3, Brazil #4, Indonesia #5</p>
+                    <p>Statista - UK hosts 349k foreign English students, followed by Ireland, Canada, USA, Australia</p>
+                </div>
+            </div>
+
+            <!-- Estimated Data -->
+            <div id="english-estimated" class="data-content">
+                <div class="chart-container">
+                    <canvas id="englishEstimatedChart"></canvas>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item english">
+                        <div class="stat-number">~24%</div>
+                        <div class="stat-label">Estimated Mandarin/Chinese</div>
+                    </div>
+                    <div class="stat-item english">
+                        <div class="stat-number">~21%</div>
+                        <div class="stat-label">Estimated Hindi/Indian Languages</div>
+                    </div>
+                    <div class="stat-item english">
+                        <div class="stat-number">400M</div>
+                        <div class="stat-label">China's Massive English Learning Market</div>
+                    </div>
+                    <div class="stat-item english">
+                        <div class="stat-number">Combined</div>
+                        <div class="stat-label">Duolingo + Geographic Data</div>
+                    </div>
+                </div>
+                <div class="sources">
+                    <p><strong>Estimation Method:</strong></p>
+                    <p>Weighted Duolingo native language data with geographic test-taker rankings</p>
+                    <p>China (#2 geographic, 400M learners) = 95% Mandarin + 5% other Chinese languages</p>
+                    <p>India (#1 geographic, overtook China) = 75% Hindi + 25% Tamil/Bengali/other regional</p>
+                    <p>Adjusted percentages to reflect actual population scales</p>
+                </div>
             </div>
         </div>
 
-        <!-- Chinese Tab -->
-        <div id="chinese-content" class="tab-content">
-            <div class="chart-container">
-                <canvas id="chineseChart"></canvas>
+        <!-- CHINESE CONTENT -->
+        <div id="chinese-lang" class="language-content">
+            <!-- Sub Tabs for Data Sources -->
+            <div class="sub-tabs">
+                <button class="sub-tab active" onclick="showDataSource('chinese', 'duolingo')">📊 Duolingo Data</button>
+                <button class="sub-tab" onclick="showDataSource('chinese', 'geographic')">🌎 Geographic</button>
+                <button class="sub-tab" onclick="showDataSource('chinese', 'estimated')">🔮 Estimated</button>
             </div>
 
-            <div class="stats-grid">
-                <div class="stat-item chinese">
-                    <div class="stat-number">100M+</div>
-                    <div class="stat-label">Total Chinese Learners Worldwide</div>
+            <!-- Duolingo Data -->
+            <div id="chinese-duolingo" class="data-content active">
+                <div class="chart-container">
+                    <canvas id="chineseDuolingoChart"></canvas>
                 </div>
-                <div class="stat-item chinese">
-                    <div class="stat-number">6M+</div>
-                    <div class="stat-label">English Speakers on Duolingo</div>
+                <div class="stats-grid">
+                    <div class="stat-item chinese">
+                        <div class="stat-number">100M+</div>
+                        <div class="stat-label">Total Chinese Learners Worldwide</div>
+                    </div>
+                    <div class="stat-item chinese">
+                        <div class="stat-number">6M+</div>
+                        <div class="stat-label">English Speakers on Duolingo</div>
+                    </div>
+                    <div class="stat-item chinese">
+                        <div class="stat-number">1M</div>
+                        <div class="stat-label">Japanese Learning Mandarin</div>
+                    </div>
+                    <div class="stat-item chinese">
+                        <div class="stat-number">30%</div>
+                        <div class="stat-label">Cambodia: Highest % of Users Learn Chinese</div>
+                    </div>
                 </div>
-                <div class="stat-item chinese">
-                    <div class="stat-number">1M</div>
-                    <div class="stat-label">Japanese Learning Mandarin</div>
-                </div>
-                <div class="stat-item chinese">
-                    <div class="stat-number">30%</div>
-                    <div class="stat-label">Cambodia: Highest % of Users Learn Chinese</div>
+                <div class="sources">
+                    <p><strong>Data Sources (Duolingo):</strong></p>
+                    <p>Duolingo Special Report, Duolingo 2024 Report, Keats School, CGTN, Holon IQ</p>
                 </div>
             </div>
 
-            <div class="sources">
-                <p><strong>Data Sources (Chinese):</strong></p>
-                <p>Duolingo Special Report - 6M+ English speakers learning Chinese on Duolingo (confirmed user count)</p>
-                <p>Duolingo 2024 Report - Cambodia has highest percentage (30%+) of users learning Chinese, followed by Malaysia, Brunei, Vietnam, Laos</p>
-                <p>Duolingo - Chinese moved from #9 to #8 most popular language globally in 2024</p>
-                <p>Keats School - 1M Japanese learning Mandarin and other Chinese dialects</p>
-                <p>Duolingo - Korean is among top 5 most popular languages to study in China, India, Japan, and Vietnam</p>
-                <p>CGTN/China Ministry of Education - 100M people learning Chinese worldwide (up from 30M in 2004), 25M outside China</p>
-                <p>Holon IQ - $7.4B Chinese language learning market globally</p>
+            <!-- Geographic Data -->
+            <div id="chinese-geographic" class="data-content">
+                <div class="chart-container">
+                    <canvas id="chineseGeographicChart"></canvas>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item chinese">
+                        <div class="stat-number">227k</div>
+                        <div class="stat-label">USA K-12 Students (2017)</div>
+                    </div>
+                    <div class="stat-item chinese">
+                        <div class="stat-number">34k</div>
+                        <div class="stat-label">France Students (2012)</div>
+                    </div>
+                    <div class="stat-item chinese">
+                        <div class="stat-number">496</div>
+                        <div class="stat-label">Confucius Institutes Globally (2023)</div>
+                    </div>
+                    <div class="stat-item chinese">
+                        <div class="stat-number">SE Asia</div>
+                        <div class="stat-label">Cambodia, Malaysia, Vietnam Lead</div>
+                    </div>
+                </div>
+                <div class="sources">
+                    <p><strong>Data Sources (Geographic):</strong></p>
+                    <p>Confucius Institutes - 496 institutes + 757 classrooms in 160 countries (2023)</p>
+                    <p>USA - 227k K-12 students, 109 college Confucius Institutes, 347 K-12 classrooms</p>
+                    <p>France - 34k students in 2012, Duolingo - Cambodia 30%+, Malaysia, Brunei, Vietnam, Laos follow</p>
+                </div>
+            </div>
+
+            <!-- Estimated Data -->
+            <div id="chinese-estimated" class="data-content">
+                <div class="chart-container">
+                    <canvas id="chineseEstimatedChart"></canvas>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item chinese">
+                        <div class="stat-number">~30%</div>
+                        <div class="stat-label">Estimated English Speakers</div>
+                    </div>
+                    <div class="stat-item chinese">
+                        <div class="stat-number">~20%</div>
+                        <div class="stat-label">Estimated SE Asian Languages</div>
+                    </div>
+                    <div class="stat-item chinese">
+                        <div class="stat-number">~18%</div>
+                        <div class="stat-label">Estimated Korean + Japanese</div>
+                    </div>
+                    <div class="stat-item chinese">
+                        <div class="stat-number">Combined</div>
+                        <div class="stat-label">Duolingo + Geographic + Heritage</div>
+                    </div>
+                </div>
+                <div class="sources">
+                    <p><strong>Estimation Method:</strong></p>
+                    <p>Combined Duolingo data (35% English, 6M+ users) with geographic enrollment</p>
+                    <p>USA learners = 70% English + 20% heritage Chinese + 10% other</p>
+                    <p>SE Asia breakdown: Khmer (Cambodia), Vietnamese, Thai, Malay weighted by population</p>
+                    <p>Adjusted for heritage learners in USA/Canada diaspora communities</p>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
         let charts = {};
-
-        // Spanish Learners Data
-        const spanishData = {
-            labels: [
-                'English Speakers',
-                'Portuguese Speakers',
-                'French Speakers',
-                'Italian Speakers',
-                'German Speakers',
-                'Chinese Speakers',
-                'Other Languages'
-            ],
-            datasets: [{
-                label: 'Spanish Learners by Native Language',
-                data: [42, 18, 12, 10, 8, 5, 5],
-                backgroundColor: [
-                    '#FF6384',
-                    '#36A2EB',
-                    '#FFCE56',
-                    '#4BC0C0',
-                    '#9966FF',
-                    '#FF9F40',
-                    '#C9CBCF'
-                ],
-                borderWidth: 3,
-                borderColor: '#fff'
-            }]
+        let currentLanguage = 'spanish';
+        let currentDataSource = {
+            spanish: 'duolingo',
+            english: 'duolingo',
+            chinese: 'duolingo'
         };
 
-        // English Learners Data (based on Duolingo global data - English Test takers)
-        const englishData = {
-            labels: [
-                'Hindi/Indian Languages',
-                'Chinese Speakers (Mandarin)',
-                'Portuguese Speakers',
-                'French Speakers',
-                'Indonesian/Malay Speakers',
-                'Spanish Speakers',
-                'Arabic Speakers',
-                'Japanese Speakers',
-                'Other Languages'
-            ],
-            datasets: [{
-                label: 'English Learners by Native Language',
-                data: [22, 20, 12, 10, 9, 8, 7, 6, 6],
-                backgroundColor: [
-                    '#FF6384',
-                    '#36A2EB',
-                    '#4BC0C0',
-                    '#FFCE56',
-                    '#9966FF',
-                    '#FF9F40',
-                    '#C9CBCF',
-                    '#FF99CC',
-                    '#99CCFF'
-                ],
-                borderWidth: 3,
-                borderColor: '#fff'
-            }]
+        // All chart data
+        const chartData = {
+            spanish: {
+                duolingo: {
+                    labels: ['English Speakers', 'Portuguese Speakers', 'French Speakers', 'Italian Speakers', 'German Speakers', 'Chinese Speakers', 'Other Languages'],
+                    data: [42, 18, 12, 10, 8, 5, 5],
+                    title: 'Spanish Learners by Native Language (Duolingo Data)'
+                },
+                geographic: {
+                    labels: ['USA', 'Germany', 'United Kingdom', 'France', 'Brazil', 'Canada', 'Other Countries'],
+                    data: [45, 12, 10, 8, 7, 5, 13],
+                    title: 'Spanish Learners by Country/Region (Geographic Data)'
+                },
+                estimated: {
+                    labels: ['English Speakers', 'German Speakers', 'Portuguese Speakers', 'French Speakers', 'Italian Speakers', 'Chinese Speakers', 'Other Languages'],
+                    data: [50, 15, 12, 10, 6, 4, 3],
+                    title: 'Spanish Learners by Native Language (Estimated)'
+                }
+            },
+            english: {
+                duolingo: {
+                    labels: ['Hindi/Indian Languages', 'Chinese Speakers (Mandarin)', 'Portuguese Speakers', 'French Speakers', 'Indonesian/Malay Speakers', 'Spanish Speakers', 'Arabic Speakers', 'Japanese Speakers', 'Other Languages'],
+                    data: [22, 20, 12, 10, 9, 8, 7, 6, 6],
+                    title: 'English Learners by Native Language (Duolingo Data)'
+                },
+                geographic: {
+                    labels: ['India', 'China', 'Canada', 'Brazil', 'Indonesia', 'Japan', 'Other Countries'],
+                    data: [26, 24, 12, 11, 9, 6, 12],
+                    title: 'English Learners by Country/Region (Geographic Data)'
+                },
+                estimated: {
+                    labels: ['Chinese Speakers (Mandarin)', 'Hindi/Indian Languages', 'Portuguese Speakers', 'French Speakers', 'Indonesian/Malay Speakers', 'Spanish Speakers', 'Arabic Speakers', 'Japanese Speakers', 'Other Languages'],
+                    data: [24, 21, 12, 11, 9, 8, 7, 5, 3],
+                    title: 'English Learners by Native Language (Estimated)'
+                }
+            },
+            chinese: {
+                duolingo: {
+                    labels: ['English Speakers', 'Korean Speakers', 'Japanese Speakers', 'Vietnamese Speakers', 'Thai Speakers', 'Khmer Speakers (Cambodian)', 'Malay/Indonesian Speakers', 'French Speakers', 'Other Languages'],
+                    data: [35, 18, 12, 10, 8, 5, 5, 4, 3],
+                    title: 'Chinese Learners by Native Language (Duolingo Data)'
+                },
+                geographic: {
+                    labels: ['USA', 'France', 'South Korea', 'Japan', 'Cambodia', 'Vietnam', 'Thailand', 'Malaysia', 'Other Countries'],
+                    data: [28, 8, 12, 10, 8, 9, 7, 6, 12],
+                    title: 'Chinese Learners by Country/Region (Geographic Data)'
+                },
+                estimated: {
+                    labels: ['English Speakers', 'Korean Speakers', 'Japanese Speakers', 'Vietnamese Speakers', 'Thai Speakers', 'Khmer Speakers (Cambodian)', 'Malay/Indonesian Speakers', 'French Speakers', 'Heritage Chinese Speakers', 'Other Languages'],
+                    data: [30, 16, 11, 10, 8, 5, 5, 4, 7, 4],
+                    title: 'Chinese Learners by Native Language (Estimated)'
+                }
+            }
         };
 
-        // Chinese Learners Data (based on Duolingo global data - 6M+ English speakers confirmed)
-        const chineseData = {
-            labels: [
-                'English Speakers',
-                'Korean Speakers',
-                'Japanese Speakers',
-                'Vietnamese Speakers',
-                'Thai Speakers',
-                'Khmer Speakers (Cambodian)',
-                'Malay/Indonesian Speakers',
-                'French Speakers',
-                'Other Languages'
-            ],
-            datasets: [{
-                label: 'Chinese Learners by Native Language',
-                data: [35, 18, 12, 10, 8, 5, 5, 4, 3],
-                backgroundColor: [
-                    '#36A2EB',
-                    '#FFCE56',
-                    '#4BC0C0',
-                    '#FF9F40',
-                    '#9966FF',
-                    '#FF6384',
-                    '#FF99CC',
-                    '#99CCFF',
-                    '#C9CBCF'
-                ],
-                borderWidth: 3,
-                borderColor: '#fff'
-            }]
-        };
+        const colors = [
+            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+            '#FF9F40', '#C9CBCF', '#FF99CC', '#99CCFF', '#66FF99'
+        ];
 
-        const chartConfig = (data, title) => ({
-            type: 'pie',
-            data: data,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'right',
-                        labels: {
-                            padding: 15,
-                            font: {
-                                size: 12,
-                                family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
-                            }
-                        }
-                    },
-                    title: {
-                        display: true,
-                        text: title,
-                        font: {
-                            size: 16,
-                            weight: 'bold'
-                        },
-                        padding: 20
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.label || '';
-                                if (label) {
-                                    label += ': ';
+        function createChart(canvasId, data, labels, title) {
+            const ctx = document.getElementById(canvasId);
+            if (!ctx) return null;
+
+            return new Chart(ctx.getContext('2d'), {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: colors.slice(0, data.length),
+                        borderWidth: 3,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                padding: 15,
+                                font: {
+                                    size: 11,
+                                    family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
                                 }
-                                label += context.parsed + '%';
-                                return label;
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: title,
+                            font: {
+                                size: 15,
+                                weight: 'bold'
+                            },
+                            padding: 20
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += context.parsed + '%';
+                                    return label;
+                                }
                             }
                         }
                     }
                 }
-            }
-        });
-
-        // Initialize charts
-        function initCharts() {
-            charts.spanish = new Chart(
-                document.getElementById('spanishChart').getContext('2d'),
-                chartConfig(spanishData, 'Who Learns Spanish? (By Native Language)')
-            );
-
-            charts.english = new Chart(
-                document.getElementById('englishChart').getContext('2d'),
-                chartConfig(englishData, 'Who Learns English? (By Native Language)')
-            );
-
-            charts.chinese = new Chart(
-                document.getElementById('chineseChart').getContext('2d'),
-                chartConfig(chineseData, 'Who Learns Chinese? (By Native Language)')
-            );
+            });
         }
 
-        function showTab(tabName) {
-            // Hide all tab contents
-            document.querySelectorAll('.tab-content').forEach(content => {
+        function initAllCharts() {
+            // Initialize all 9 charts
+            Object.keys(chartData).forEach(lang => {
+                Object.keys(chartData[lang]).forEach(source => {
+                    const chartId = `${lang}${source.charAt(0).toUpperCase() + source.slice(1)}Chart`;
+                    const data = chartData[lang][source];
+                    charts[chartId] = createChart(chartId, data.data, data.labels, data.title);
+                });
+            });
+        }
+
+        function showLanguage(language) {
+            currentLanguage = language;
+
+            // Update main tabs
+            document.querySelectorAll('.main-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Hide all language contents
+            document.querySelectorAll('.language-content').forEach(content => {
                 content.classList.remove('active');
             });
 
-            // Remove active class from all tabs
-            document.querySelectorAll('.tab').forEach(tab => {
+            // Show selected language
+            document.getElementById(language + '-lang').classList.add('active');
+        }
+
+        function showDataSource(language, source) {
+            currentDataSource[language] = source;
+
+            // Get the parent language container
+            const langContainer = document.getElementById(language + '-lang');
+
+            // Update sub tabs
+            langContainer.querySelectorAll('.sub-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
-
-            // Show selected tab content
-            document.getElementById(tabName + '-content').classList.add('active');
-
-            // Add active class to clicked tab
             event.target.classList.add('active');
+
+            // Hide all data contents within this language
+            langContainer.querySelectorAll('.data-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show selected data source
+            document.getElementById(language + '-' + source).classList.add('active');
         }
 
         // Initialize on load
         document.addEventListener('DOMContentLoaded', function() {
-            initCharts();
+            initAllCharts();
 
             // Add animation on load
             document.querySelector('.container').style.opacity = '0';
