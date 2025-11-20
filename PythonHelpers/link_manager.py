@@ -120,7 +120,6 @@ def update_link_txt(owner, repo, html_files, link_file='LINK.txt'):
         if url in existing_descriptions:
             description = existing_descriptions[url]
         else:
-            # Create a descriptive placeholder based on filename
             filename = os.path.basename(file_path)
             description = f"[Add description for {filename}]"
 
@@ -131,7 +130,7 @@ def update_link_txt(owner, repo, html_files, link_file='LINK.txt'):
         with open(link_file, 'w', encoding='utf-8') as f:
             f.write('\n'.join(lines) + '\n')
 
-        print(f"✓ Successfully updated {link_file}")
+        print(f"[SUCCESS] Successfully updated {link_file}")
         print(f"  - Found {len(html_files)} HTML files")
         print(f"  - Preserved {len([d for d in existing_descriptions.values() if not d.startswith('[Add description')])} existing descriptions")
         print(f"  - Added {len([url for file_path in html_files if generate_github_pages_url(owner, repo, file_path) not in existing_descriptions])} new entries")
@@ -175,7 +174,7 @@ def main():
     success = update_link_txt(owner, repo, html_files)
 
     if success:
-        print("\n✓ Link management complete!")
+        print("\n[SUCCESS] Link management complete!")
         print("\nNext steps:")
         print("  1. Review LINK.txt for entries marked '[Add description for ...]'")
         print("  2. Update those placeholders with meaningful descriptions")
