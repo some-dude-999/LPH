@@ -595,7 +595,8 @@
         // Extract act number from act string (e.g., "Act I: Foundation" -> 1)
         function getActNumber(actString) {
             if (!actString) return 0;
-            const match = actString.match(/Act\s+(I{1,3}|IV|V|VI{0,2})/i);
+            // Order matters! Longer patterns must come first to avoid partial matches
+            const match = actString.match(/Act\s+(VII|VI|IV|III|II|I|V)(?:\s|:)/i);
             if (!match) return 0;
 
             const romanNumerals = {
