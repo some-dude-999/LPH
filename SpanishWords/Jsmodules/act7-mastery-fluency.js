@@ -1,12 +1,12 @@
 // Clean version for development
 // This file is readable and intended for LLM-assisted coding
 
-export const past_subjunctive_forms = {
+export const p7_221_past__subjunctive__forms = {
   meta: {
     en: "Past Subjunctive Forms",
-    zh: "Past Subjunctive Forms",
-    pinyin: "Past Subjunctive Forms",
-    pt: "Past Subjunctive Forms"
+    zh: "过去虚拟语气",
+    pinyin: "Guòqù Xūnǐ Yǔqì",
+    pt: "Formas do Subjuntivo Passado"
   },
   words: [
     ["si tuviera dinero", "if I had money", "如果我有钱", "rúguǒ wǒ yǒu qián", "se eu tivesse dinheiro"],
@@ -72,12 +72,12 @@ export const past_subjunctive_forms = {
   ]
 };
 
-export const dreaming_soar = {
+export const p7_222_dreaming__soar = {
   meta: {
     en: "Dreaming (soñar)",
-    zh: "Dreaming (soñar)",
-    pinyin: "Dreaming (soñar)",
-    pt: "Dreaming (soñar)"
+    zh: "梦想 (soñar)",
+    pinyin: "Mèngxiǎng (soñar)",
+    pt: "Sonhar"
   },
   words: [
     ["sueño mucho", "I dream a lot", "我做很多梦", "wǒ zuò hěn duō mèng", "eu sonho muito"],
@@ -113,12 +113,12 @@ export const dreaming_soar = {
   ]
 };
 
-export const agreeing_acordar = {
+export const p7_223_agreeing__acordar = {
   meta: {
     en: "Agreeing (acordar)",
-    zh: "Agreeing (acordar)",
-    pinyin: "Agreeing (acordar)",
-    pt: "Agreeing (acordar)"
+    zh: "同意 (acordar)",
+    pinyin: "Tóngyì (acordar)",
+    pt: "Concordar"
   },
   words: [
     ["acuerdo todo", "I agree to everything", "我同意一切", "wǒ tóngyì yīqiè", "eu concordo com tudo"],
@@ -154,12 +154,12 @@ export const agreeing_acordar = {
   ]
 };
 
-export const robotics__ai_terms = {
+export const p7_224_robotics__ai__terms = {
   meta: {
     en: "Robotics & AI Terms",
-    zh: "Robotics & AI Terms",
-    pinyin: "Robotics & AI Terms",
-    pt: "Robotics & AI Terms"
+    zh: "机器人与人工智能术语",
+    pinyin: "Jīqìrén yǔ Réngōng Zhìnéng Shùyǔ",
+    pt: "Termos de Robótica e IA"
   },
   words: [
     ["la inteligencia artificial", "artificial intelligence", "人工智能", "réngōng zhìnéng", "a inteligência artificial"],
@@ -225,12 +225,12 @@ export const robotics__ai_terms = {
   ]
 };
 
-export const warming_calentar = {
+export const p7_225_warming__calentar = {
   meta: {
     en: "Warming (calentar)",
-    zh: "Warming (calentar)",
-    pinyin: "Warming (calentar)",
-    pt: "Warming (calentar)"
+    zh: "加热 (calentar)",
+    pinyin: "Jiārè (calentar)",
+    pt: "Aquecer"
   },
   words: [
     ["caliento agua", "I heat water", "我加热水", "wǒ jiārè shuǐ", "eu esquento água"],
@@ -266,12 +266,12 @@ export const warming_calentar = {
   ]
 };
 
-export const cooling_enfriar = {
+export const p7_226_cooling__enfriar = {
   meta: {
     en: "Cooling (enfriar)",
-    zh: "Cooling (enfriar)",
-    pinyin: "Cooling (enfriar)",
-    pt: "Cooling (enfriar)"
+    zh: "冷却 (enfriar)",
+    pinyin: "Lěngquè (enfriar)",
+    pt: "Esfriar"
   },
   words: [
     ["enfrío bebidas", "I cool drinks", "我冷却饮料", "wǒ lěngquè yǐnliào", "eu resfrio bebidas"],
@@ -307,12 +307,12 @@ export const cooling_enfriar = {
   ]
 };
 
-export const alternative_medicine = {
+export const p7_227_alternative__medicine = {
   meta: {
     en: "Alternative Medicine",
-    zh: "Alternative Medicine",
-    pinyin: "Alternative Medicine",
-    pt: "Alternative Medicine"
+    zh: "替代医学",
+    pinyin: "Tìdài Yīxué",
+    pt: "Medicina Alternativa"
   },
   words: [
     ["la medicina alternativa", "alternative medicine", "替代医学", "tìdài yīxué", "a medicina alternativa"],
@@ -375,12 +375,12 @@ export const alternative_medicine = {
   ]
 };
 
-export const hiding_esconder = {
+export const p7_228_hiding__esconder = {
   meta: {
     en: "Hiding (esconder)",
-    zh: "Hiding (esconder)",
-    pinyin: "Hiding (esconder)",
-    pt: "Hiding (esconder)"
+    zh: "隐藏 (esconder)",
+    pinyin: "Yǐncáng (esconder)",
+    pt: "Esconder"
   },
   words: [
     ["escondo cosas", "I hide things", "我藏东西", "wǒ cáng dōngxi", "eu escondo coisas"],
@@ -416,12 +416,12 @@ export const hiding_esconder = {
   ]
 };
 
-export const showing_mostrar = {
+export const p7_229_showing__mostrar = {
   meta: {
     en: "Showing (mostrar)",
-    zh: "Showing (mostrar)",
-    pinyin: "Showing (mostrar)",
-    pt: "Showing (mostrar)"
+    zh: "展示 (mostrar)",
+    pinyin: "Zhǎnshì (mostrar)",
+    pt: "Mostrar"
   },
   words: [
     ["muestro fotos", "I show photos", "我展示照片", "wǒ zhǎnshì zhàopiàn", "eu mostro fotos"],
@@ -457,12 +457,12 @@ export const showing_mostrar = {
   ]
 };
 
-export const virtual_reality_terms = {
+export const p7_230_virtual__reality__terms = {
   meta: {
     en: "Virtual Reality Terms",
-    zh: "Virtual Reality Terms",
-    pinyin: "Virtual Reality Terms",
-    pt: "Virtual Reality Terms"
+    zh: "虚拟现实术语",
+    pinyin: "Xūnǐ Xiànshí Shùyǔ",
+    pt: "Termos de Realidade Virtual"
   },
   words: [
     ["la realidad virtual", "virtual reality", "虚拟现实", "xūnǐ xiànshí", "a realidade virtual"],
@@ -528,12 +528,12 @@ export const virtual_reality_terms = {
   ]
 };
 
-export const measuring_medir = {
+export const p7_231_measuring__medir = {
   meta: {
     en: "Measuring (medir)",
-    zh: "Measuring (medir)",
-    pinyin: "Measuring (medir)",
-    pt: "Measuring (medir)"
+    zh: "测量 (medir)",
+    pinyin: "Cèliáng (medir)",
+    pt: "Medir"
   },
   words: [
     ["mido distancias", "I measure distances", "我测量距离", "wǒ cèliáng jùlí", "eu meço distâncias"],
@@ -569,12 +569,12 @@ export const measuring_medir = {
   ]
 };
 
-export const weighing_pesar = {
+export const p7_232_weighing__pesar = {
   meta: {
     en: "Weighing (pesar)",
-    zh: "Weighing (pesar)",
-    pinyin: "Weighing (pesar)",
-    pt: "Weighing (pesar)"
+    zh: "称重 (pesar)",
+    pinyin: "Chēngzhòng (pesar)",
+    pt: "Pesar"
   },
   words: [
     ["peso mucho", "I weigh a lot", "我体重很重", "wǒ tǐzhòng hěn zhòng", "eu peso muito"],
@@ -610,12 +610,12 @@ export const weighing_pesar = {
   ]
 };
 
-export const cryptocurrency_terms = {
+export const p7_233_cryptocurrency__terms = {
   meta: {
     en: "Cryptocurrency Terms",
-    zh: "Cryptocurrency Terms",
-    pinyin: "Cryptocurrency Terms",
-    pt: "Cryptocurrency Terms"
+    zh: "加密货币术语",
+    pinyin: "Jiāmì Huòbì Shùyǔ",
+    pt: "Termos de Criptomoeda"
   },
   words: [
     ["la criptomoneda popular", "popular cryptocurrency", "流行加密货币", "liúxíng jiāmì huòbì", "a criptomoeda popular"],
@@ -675,12 +675,12 @@ export const cryptocurrency_terms = {
   ]
 };
 
-export const opening_abrir = {
+export const p7_234_opening__abrir = {
   meta: {
     en: "Opening (abrir)",
-    zh: "Opening (abrir)",
-    pinyin: "Opening (abrir)",
-    pt: "Opening (abrir)"
+    zh: "打开 (abrir)",
+    pinyin: "Dǎkāi (abrir)",
+    pt: "Abrir"
   },
   words: [
     ["abro puertas", "I open doors", "我开门", "wǒ kāimén", "eu abro portas"],
@@ -716,12 +716,12 @@ export const opening_abrir = {
   ]
 };
 
-export const closing_cerrar = {
+export const p7_235_closing__cerrar = {
   meta: {
     en: "Closing (cerrar)",
-    zh: "Closing (cerrar)",
-    pinyin: "Closing (cerrar)",
-    pt: "Closing (cerrar)"
+    zh: "关闭 (cerrar)",
+    pinyin: "Guānbì (cerrar)",
+    pt: "Fechar"
   },
   words: [
     ["cierro puertas", "I close doors", "我关门", "wǒ guānmén", "eu fecho portas"],
@@ -757,12 +757,12 @@ export const closing_cerrar = {
   ]
 };
 
-export const sustainable_living = {
+export const p7_236_sustainable__living = {
   meta: {
     en: "Sustainable Living",
-    zh: "Sustainable Living",
-    pinyin: "Sustainable Living",
-    pt: "Sustainable Living"
+    zh: "可持续生活",
+    pinyin: "Kě Chíxù Shēnghuó",
+    pt: "Vida Sustentável"
   },
   words: [
     ["la vida sostenible", "sustainable life", "可持续生活", "kě chíxù shēnghuó", "a vida sustentável"],
@@ -822,12 +822,12 @@ export const sustainable_living = {
   ]
 };
 
-export const pushing_empujar = {
+export const p7_237_pushing__empujar = {
   meta: {
     en: "Pushing (empujar)",
-    zh: "Pushing (empujar)",
-    pinyin: "Pushing (empujar)",
-    pt: "Pushing (empujar)"
+    zh: "推 (empujar)",
+    pinyin: "Tuī (empujar)",
+    pt: "Empurrar"
   },
   words: [
     ["empujo fuerte", "I push hard", "我用力推", "wǒ yònglì tuī", "eu empurro forte"],
@@ -863,12 +863,12 @@ export const pushing_empujar = {
   ]
 };
 
-export const pulling_tirar = {
+export const p7_238_pulling__tirar = {
   meta: {
     en: "Pulling (tirar)",
-    zh: "Pulling (tirar)",
-    pinyin: "Pulling (tirar)",
-    pt: "Pulling (tirar)"
+    zh: "拉 (tirar)",
+    pinyin: "Lā (tirar)",
+    pt: "Puxar"
   },
   words: [
     ["tiro fuerte", "I pull hard", "我用力拉", "wǒ yònglì lā", "eu puxo forte"],
@@ -904,12 +904,12 @@ export const pulling_tirar = {
   ]
 };
 
-export const combining_combinar = {
+export const p7_239_combining__combinar = {
   meta: {
     en: "Combining (combinar)",
-    zh: "Combining (combinar)",
-    pinyin: "Combining (combinar)",
-    pt: "Combining (combinar)"
+    zh: "组合 (combinar)",
+    pinyin: "Zǔhé (combinar)",
+    pt: "Combinar"
   },
   words: [
     ["combino colores", "I combine colors", "我搭配颜色", "wǒ dāpèi yánsè", "eu combino cores"],
@@ -945,12 +945,12 @@ export const combining_combinar = {
   ]
 };
 
-export const separating_separar = {
+export const p7_240_separating__separar = {
   meta: {
     en: "Separating (separar)",
-    zh: "Separating (separar)",
-    pinyin: "Separating (separar)",
-    pt: "Separating (separar)"
+    zh: "分离 (separar)",
+    pinyin: "Fēnlí (separar)",
+    pt: "Separar"
   },
   words: [
     ["separo cosas", "I separate things", "我分开东西", "wǒ fēnkāi dōngxi", "eu separo coisas"],
@@ -986,12 +986,12 @@ export const separating_separar = {
   ]
 };
 
-export const dying_morir = {
+export const p7_241_dying__morir = {
   meta: {
     en: "Dying (morir)",
-    zh: "Dying (morir)",
-    pinyin: "Dying (morir)",
-    pt: "Dying (morir)"
+    zh: "死亡 (morir)",
+    pinyin: "Sǐwáng (morir)",
+    pt: "Morrer"
   },
   words: [
     ["muero de hambre", "I'm dying of hunger", "我饿死了", "wǒ è sǐ le", "estou morrendo de fome"],
@@ -1027,12 +1027,12 @@ export const dying_morir = {
   ]
 };
 
-export const irregular_past_forms = {
+export const p7_242_irregular__past__forms = {
   meta: {
     en: "Irregular Past Forms",
-    zh: "Irregular Past Forms",
-    pinyin: "Irregular Past Forms",
-    pt: "Irregular Past Forms"
+    zh: "不规则过去式",
+    pinyin: "Bù Guīzé Guòqùshì",
+    pt: "Formas Irregulares do Passado"
   },
   words: [
     ["fui al cine", "I went to the cinema", "我去了电影院", "wǒ qùle diànyǐngyuàn", "eu fui ao cinema"],
@@ -1092,12 +1092,12 @@ export const irregular_past_forms = {
   ]
 };
 
-export const growing_crecer = {
+export const p7_243_growing__crecer = {
   meta: {
     en: "Growing (crecer)",
-    zh: "Growing (crecer)",
-    pinyin: "Growing (crecer)",
-    pt: "Growing (crecer)"
+    zh: "成长 (crecer)",
+    pinyin: "Chéngzhǎng (crecer)",
+    pt: "Crescer"
   },
   words: [
     ["crezco rápido", "I grow fast", "我长得很快", "wǒ zhǎng de hěn kuài", "eu cresço rápido"],
@@ -1133,12 +1133,12 @@ export const growing_crecer = {
   ]
 };
 
-export const aging_envejecer = {
+export const p7_244_aging__envejecer = {
   meta: {
     en: "Aging (envejecer)",
-    zh: "Aging (envejecer)",
-    pinyin: "Aging (envejecer)",
-    pt: "Aging (envejecer)"
+    zh: "衰老 (envejecer)",
+    pinyin: "Shuāilǎo (envejecer)",
+    pt: "Envelhecer"
   },
   words: [
     ["envejezco bien", "I age well", "我老得很好", "wǒ lǎo de hěn hǎo", "eu envelheço bem"],
@@ -1174,12 +1174,12 @@ export const aging_envejecer = {
   ]
 };
 
-export const command_forms = {
+export const p7_245_command__forms = {
   meta: {
     en: "Command Forms",
-    zh: "Command Forms",
-    pinyin: "Command Forms",
-    pt: "Command Forms"
+    zh: "命令式",
+    pinyin: "Mìnglìng Shì",
+    pt: "Formas Imperativas"
   },
   words: [
     ["ven aquí", "come here", "过来这里", "guòlái zhèlǐ", "venha aqui"],
@@ -1245,12 +1245,12 @@ export const command_forms = {
   ]
 };
 
-export const reflexive_pronouns = {
+export const p7_246_reflexive__pronouns = {
   meta: {
     en: "Reflexive Pronouns",
-    zh: "Reflexive Pronouns",
-    pinyin: "Reflexive Pronouns",
-    pt: "Reflexive Pronouns"
+    zh: "反身代词",
+    pinyin: "Fǎnshēn Dàicí",
+    pt: "Pronomes Reflexivos"
   },
   words: [
     ["me lavo las manos", "I wash my hands", "我洗手", "wǒ xǐ shǒu", "eu lavo minhas mãos"],
@@ -1310,12 +1310,12 @@ export const reflexive_pronouns = {
   ]
 };
 
-export const gerund_forms = {
+export const p7_247_gerund__forms = {
   meta: {
     en: "Gerund Forms",
-    zh: "Gerund Forms",
-    pinyin: "Gerund Forms",
-    pt: "Gerund Forms"
+    zh: "动名词形式",
+    pinyin: "Dòng Míngcí Xíngshì",
+    pt: "Formas de Gerúndio"
   },
   words: [
     ["estoy trabajando", "I'm working", "我在工作", "wǒ zài gōngzuò", "estou trabalhando"],
@@ -1375,12 +1375,12 @@ export const gerund_forms = {
   ]
 };
 
-export const perfect_tenses = {
+export const p7_248_perfect__tenses = {
   meta: {
     en: "Perfect Tenses",
-    zh: "Perfect Tenses",
-    pinyin: "Perfect Tenses",
-    pt: "Perfect Tenses"
+    zh: "完成时态",
+    pinyin: "Wánchéng Shítài",
+    pt: "Tempos Perfeitos"
   },
   words: [
     ["he comido", "I have eaten", "我吃了", "wǒ chīle", "eu comi"],
@@ -1440,12 +1440,12 @@ export const perfect_tenses = {
   ]
 };
 
-export const future_forms = {
+export const p7_249_future__forms = {
   meta: {
     en: "Future Forms",
-    zh: "Future Forms",
-    pinyin: "Future Forms",
-    pt: "Future Forms"
+    zh: "将来时态",
+    pinyin: "Jiānglái Shítài",
+    pt: "Formas do Futuro"
   },
   words: [
     ["vendré mañana", "I will come tomorrow", "我明天会来", "wǒ míngtiān huì lái", "eu virei amanhã"],
@@ -1505,12 +1505,12 @@ export const future_forms = {
   ]
 };
 
-export const common_idioms = {
+export const p7_250_common__idioms = {
   meta: {
     en: "Common Idioms",
-    zh: "Common Idioms",
-    pinyin: "Common Idioms",
-    pt: "Common Idioms"
+    zh: "常用习语",
+    pinyin: "Chángyòng Xíyǔ",
+    pt: "Expressões Idiomáticas Comuns"
   },
   words: [
     ["estar en las nubes", "to have one's head in the clouds", "心不在焉", "xīn bù zài yān", "estar nas nuvens"],

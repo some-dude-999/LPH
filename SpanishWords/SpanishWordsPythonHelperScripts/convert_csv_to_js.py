@@ -29,6 +29,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent.parent  # SpanishWords/
 CSV_DIR = BASE_DIR
 OVERVIEW_CSV = CSV_DIR / "SpanishWordsOverview.csv"
+META_CSV = CSV_DIR / "SpanishWordsMeta.csv"
 OUTPUT_CLEAN = BASE_DIR / "Jsmodules"
 OUTPUT_OBFUSCATED = BASE_DIR / "Jsmodules-js"
 
@@ -43,28 +44,46 @@ ACT_NAMES = {
     "Act VII: Mastery & Fluency": "act7-mastery-fluency"
 }
 
-# Pack title translations
-def generate_pack_titles(pack_title):
-    """Generate pack titles in all learner languages (en, zh, pinyin, pt)"""
-    # This is a simplified version - in production, you'd want proper translations
-    # For now, we'll use English as baseline and placeholder for others
-    titles = {
-        "en": pack_title,  # English title from CSV
-        "zh": pack_title,  # TODO: Add proper Chinese translations
-        "pinyin": pack_title,  # TODO: Add proper Pinyin
-        "pt": pack_title   # TODO: Add proper Portuguese translations
-    }
-    return titles
+# Act number mapping (for variable names)
+ACT_TO_NUMBER = {
+    "Act I: Foundation": 1,
+    "Act II: Building Blocks": 2,
+    "Act III: Daily Life": 3,
+    "Act IV: Expanding Expression": 4,
+    "Act V: Intermediate Mastery": 5,
+    "Act VI: Advanced Constructs": 6,
+    "Act VII: Mastery & Fluency": 7
+}
 
 
-def camel_case_to_snake(name):
-    """Convert 'Greetings & Goodbyes' to 'greetings_and_goodbyes'"""
+def sanitize_for_variable_name(name):
+    """Convert 'Greetings & Goodbyes' to 'greetings__goodbyes'"""
     import re
-    # Remove special characters and convert to lowercase
+    # Remove special characters (keep letters, numbers, spaces)
     name = re.sub(r'[^a-zA-Z0-9\s]', '', name)
-    # Replace spaces with underscores
-    name = name.replace(' ', '_').lower()
+    # Replace spaces with double underscores
+    name = name.replace(' ', '__').lower()
+    # Replace multiple underscores with double underscores
+    name = re.sub(r'_+', '__', name)
     return name
+
+
+def read_meta_csv():
+    """Read meta CSV and return pack metadata with translations"""
+    pack_meta = {}
+
+    with open(META_CSV, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            pack_num = int(row['Pack_Number'])
+            pack_meta[pack_num] = {
+                'en': row['Title_EN'],
+                'zh': row['Title_ZH'],
+                'pinyin': row['Title_Pinyin'],
+                'pt': row['Title_PT']
+            }
+
+    return pack_meta
 
 
 def read_overview_csv():
@@ -177,12 +196,17 @@ def main():
     print("=" * 80)
 
     # Read overview to get pack-to-act mapping
-    print("\n[1/5] Reading overview CSV...")
+    print("\n[1/6] Reading overview CSV...")
     pack_to_act, pack_titles = read_overview_csv()
     print(f"      Found {len(pack_to_act)} packs across {len(set(pack_to_act.values()))} acts")
 
+    # Read meta CSV to get proper translations
+    print("\n[2/6] Reading meta CSV for translations...")
+    pack_meta = read_meta_csv()
+    print(f"      Loaded translations for {len(pack_meta)} packs")
+
     # Group packs by act
-    print("\n[2/5] Reading individual pack CSVs and grouping by act...")
+    print("\n[3/6] Reading individual pack CSVs and grouping by act...")
     acts_data = {}  # act_name -> {pack_var_name: {meta, words}}
 
     for pack_num in range(1, 251):
@@ -193,9 +217,10 @@ def main():
         difficulty_act = pack_to_act[pack_num]
         pack_title = pack_titles[pack_num]
 
-        # Get act filename
+        # Get act filename and number
         act_filename = ACT_NAMES.get(difficulty_act)
-        if not act_filename:
+        act_number = ACT_TO_NUMBER.get(difficulty_act)
+        if not act_filename or not act_number:
             print(f"      WARNING: Unknown act '{difficulty_act}' for pack {pack_num}")
             continue
 
@@ -204,11 +229,22 @@ def main():
         if not words:
             continue
 
-        # Create pack variable name (e.g., "greetings_and_goodbyes")
-        pack_var_name = camel_case_to_snake(pack_title)
+        # Create pack variable name: p{actNum}_{packNum}_{sanitizedTitle}
+        # e.g., "p1_1_greetings__goodbyes" (p prefix for valid JS variable name)
+        sanitized_title = sanitize_for_variable_name(pack_title)
+        pack_var_name = f"p{act_number}_{pack_num}_{sanitized_title}"
 
-        # Generate meta titles
-        meta_titles = generate_pack_titles(pack_title)
+        # Get meta titles from meta CSV (with proper translations)
+        if pack_num in pack_meta:
+            meta_titles = pack_meta[pack_num]
+        else:
+            print(f"      WARNING: Pack {pack_num} not in meta CSV, using placeholder")
+            meta_titles = {
+                'en': pack_title,
+                'zh': pack_title,
+                'pinyin': pack_title,
+                'pt': pack_title
+            }
 
         # Store pack data
         if act_filename not in acts_data:
@@ -219,17 +255,17 @@ def main():
             'words': words
         }
 
-        print(f"      Pack {pack_num:3d}: {pack_title:40s} -> {act_filename}")
+        print(f"      Pack {pack_num:3d}: {pack_title:40s} -> {pack_var_name}")
 
     # Create output directories
-    print("\n[3/5] Creating output directories...")
+    print("\n[4/6] Creating output directories...")
     OUTPUT_CLEAN.mkdir(exist_ok=True)
     OUTPUT_OBFUSCATED.mkdir(exist_ok=True)
     print(f"      Clean: {OUTPUT_CLEAN}")
     print(f"      Obfuscated: {OUTPUT_OBFUSCATED}")
 
     # Generate clean files
-    print("\n[4/5] Generating clean JavaScript files...")
+    print("\n[5/6] Generating clean JavaScript files...")
     clean_files = []
     for act_name, packs_data in sorted(acts_data.items()):
         filepath = create_clean_js_file(act_name, packs_data)
@@ -238,7 +274,7 @@ def main():
         print(f"      Created: {filepath.name:40s} ({size_kb:7.2f} KB)")
 
     # Generate obfuscated files
-    print("\n[5/5] Generating obfuscated JavaScript files...")
+    print("\n[6/6] Generating obfuscated JavaScript files...")
     obfuscated_files = []
     for act_name, packs_data in sorted(acts_data.items()):
         filepath = create_obfuscated_js_file(act_name, packs_data)
