@@ -15,10 +15,16 @@ Key Concepts:
 - Python script: Reads CSVs, generates both versions
 - Game decoder: Only in production game, decodes obfuscated version at runtime
 
-File Naming Convention:
-- Clean version: act1-foundation.js (readable name)
-- Obfuscated version: act1-foundation-min.js (adds -min suffix)
+File Naming Convention (IMPORTANT):
+- Clean version: basename.js (e.g., act1-foundation.js)
+- Obfuscated version: basename-js.js (e.g., act1-foundation-js.js)
+- Pattern: If clean is "actX-name.js", obfuscated is "actX-name-js.js"
+- The "-js" suffix denotes the obfuscated/production version
 - Simple, predictable, easy to maintain
+
+File Locations:
+- Clean files: SpanishWords/Jsmodules/
+- Obfuscated files: SpanishWords/Jsmodules-js/
 
 CRITICAL: Obfuscation Method Choice
 - Method: LZ-String Compression + Reverse Transform
@@ -137,7 +143,7 @@ When to Use:
 - When testing import/export pipelines
 
 Example Usage in Game (Dev Mode):
-  import { greetings, yesNo } from './packs/act1-foundation.js';
+  import { greetings, yesNo } from './SpanishWords/Jsmodules/act1-foundation.js';
 
   // Direct access - no decoding needed
   console.log(greetings.meta.en);        // "Greetings and Goodbyes"
@@ -232,31 +238,31 @@ Attack Time Estimate:
   - For $7/month content: Not worth the effort ✓
 
 Obfuscated Output Structure:
-  // act1-foundation-min.js (production version)
+  // act1-foundation-js.js (production version)
   export const w="N4IgdghgtgpiBcIDCAVAhgQwE4HsBGEANCAMYBO0A7ALQCMADGQJQBM...";
 
 Changes from Clean Version:
 - Entire module compressed to single string
 - Variable name: 'w' (for 'words data')
-- Filename: Original name + '-min.js' suffix
+- Filename: Original name + '-js.js' suffix
 - One line, no whitespace
 
 File Naming Convention (Simple & Maintainable):
 - Clean: act1-foundation.js
-- Obfuscated: act1-foundation-min.js
+- Obfuscated: act1-foundation-js.js
 - Clean: act2-building-blocks.js
-- Obfuscated: act2-building-blocks-min.js
+- Obfuscated: act2-building-blocks-js.js
 
 Why This Naming:
-✓ Predictable: Just add '-min' suffix
-✓ Familiar: Standard convention (like .min.js for minified files)
+✓ Predictable: Just add '-js' suffix
+✓ Clear marker: '-js' denotes obfuscated JavaScript version
 ✓ Easy to script: Simple string replacement
 ✓ Easy to debug: Can tell what each file is
-✓ Git-friendly: Easy to gitignore *-min.js pattern
+✓ Git-friendly: Easy to gitignore *-js.js pattern
 
 Using Obfuscated Version (Production):
   // In production game code only
-  import { w } from './packs/act1-foundation-min.js';
+  import { w } from './SpanishWords/Jsmodules-js/act1-foundation-js.js';
 
   // Must decompress and reverse
   const decompressed = LZString.decompressFromBase64(w);
@@ -276,35 +282,39 @@ Every Act Produces TWO Files:
 
 File Naming Convention (Example):
   Clean:       act1-foundation.js
-  Obfuscated:  act1-foundation-min.js
+  Obfuscated:  act1-foundation-js.js
 
   Clean:       act2-building-blocks.js
-  Obfuscated:  act2-building-blocks-min.js
+  Obfuscated:  act2-building-blocks-js.js
 
   Clean:       act7-mastery-fluency.js
-  Obfuscated:  act7-mastery-fluency-min.js
+  Obfuscated:  act7-mastery-fluency-js.js
 
 Storage Structure:
-  SpanishWords/packs/
-    ├── act1-foundation.js          (clean)
-    ├── act1-foundation-min.js      (production)
-    ├── act2-building-blocks.js     (clean)
-    ├── act2-building-blocks-min.js (production)
-    └── ... (14 files total: 7 clean + 7 obfuscated)
+  SpanishWords/
+    ├── Jsmodules/
+    │   ├── act1-foundation.js
+    │   ├── act2-building-blocks.js
+    │   └── ... (7 clean files)
+    └── Jsmodules-js/
+        ├── act1-foundation-js.js
+        ├── act2-building-blocks-js.js
+        └── ... (7 obfuscated files)
 
 Development Workflow:
   1. Run Python script
-  2. Script reads CSVs
-  3. Script outputs BOTH versions to same folder
-  4. Import from clean files during development
-  5. Deploy obfuscated (-min.js) files to production
+  2. Script reads CSVs from SpanishWords/
+  3. Script outputs clean files to Jsmodules/
+  4. Script outputs obfuscated files to Jsmodules-js/
+  5. Import from clean files during development
+  6. Deploy obfuscated (-js.js) files to production
 
 Why Both Versions:
 - Clean: LLM can read/understand/debug during development
 - Obfuscated: 60% smaller files + deterrence in production
 - Same folder: No need to manage separate directories
-- Easy switching: Change import from .js to -min.js
-- Git pattern: Can .gitignore *-min.js if desired
+- Easy switching: Change import from .js to -js.js
+- Git pattern: Can .gitignore *-js.js if desired
 
 
 ================================================================================
@@ -369,21 +379,25 @@ Example Implementation:
       output = f'export const w="{compressed}";'
 
       # Step 5: Write file
-      filename = f"{act_name}-min.js"
-      with open(f"packs/{filename}", 'w', encoding='utf-8') as f:
+      filename = f"{act_name}-js.js"
+      filepath = OUTPUT_OBFUSCATED / filename
+      with open(filepath, 'w', encoding='utf-8') as f:
           f.write(output)
 
 Configurable Parameters:
   - INPUT_DIR: Path to CSV files
-  - OUTPUT_DIR: Path for JS files (both clean and obfuscated)
+  - OUTPUT_CLEAN: SpanishWords/Jsmodules/
+  - OUTPUT_OBFUSCATED: SpanishWords/Jsmodules-js/
   - ACT_NAMES: Mapping of act numbers to readable names
 
 Output Files:
-  SpanishWords/packs/act1-foundation.js
-  SpanishWords/packs/act1-foundation-min.js
-  SpanishWords/packs/act2-building-blocks.js
-  SpanishWords/packs/act2-building-blocks-min.js
-  ... (14 files total)
+  SpanishWords/Jsmodules/act1-foundation.js
+  SpanishWords/Jsmodules/act2-building-blocks.js
+  ... (7 clean files)
+
+  SpanishWords/Jsmodules-js/act1-foundation-js.js
+  SpanishWords/Jsmodules-js/act2-building-blocks-js.js
+  ... (7 obfuscated files)
 
 
 ================================================================================
@@ -423,14 +437,14 @@ Decoder Implementation:
    async function loadAct(actNumber) {
      // Map act number to filename
      const actFiles = {
-       1: 'act1-foundation-min.js',
-       2: 'act2-building-blocks-min.js',
-       3: 'act3-daily-life-min.js',
+       1: 'act1-foundation-js.js',
+       2: 'act2-building-blocks-js.js',
+       3: 'act3-daily-life-js.js',
        // ... etc
      };
 
      const filename = actFiles[actNumber];
-     const url = `./packs/${filename}`;
+     const url = `./SpanishWords/Jsmodules-js/${filename}`;
 
      // Dynamic import
      const module = await import(url);
@@ -485,7 +499,7 @@ LZ-String + Reverse Benefits:
   ✓ Standard Library: Well-tested, battle-hardened compression
   ✓ Fast Decode: ~65ms total (imperceptible)
   ✓ Zero Data Loss: Lossless compression, 100% safe
-  ✓ Simple Maintenance: Standard naming convention (-min.js suffix)
+  ✓ Simple Maintenance: Standard naming convention (-js.js suffix)
   ✓ Easy Debugging: Filenames tell you what they are
 
 Why LZ-String Wins Over Other Methods:
@@ -507,10 +521,10 @@ Why LZ-String Wins Over Other Methods:
     ✓ LZ-String = self-contained, no server needed
 
 Simple Filename Benefits:
-  ✓ Predictable: act1-foundation.js → act1-foundation-min.js
+  ✓ Predictable: act1-foundation.js → act1-foundation-js.js
   ✓ Debuggable: Can tell what each file contains
   ✓ Scriptable: Easy to generate programmatically
-  ✓ Git-friendly: Easy to ignore with *-min.js pattern
+  ✓ Git-friendly: Easy to ignore with *-js.js pattern
   ✓ No mapping needed: Name tells you everything
 
 Array Structure Rationale:
@@ -527,12 +541,12 @@ PART 7: DEPLOYMENT & USAGE
 
 Development Phase:
   1. Work with clean files in IDE/LLM
-  2. Import from act1-foundation.js (no -min suffix)
+  2. Import from act1-foundation.js (no -js suffix)
   3. Test with readable data
   4. Iterate rapidly
 
 Production Build:
-  1. Change imports to -min.js versions
+  1. Change imports to -js.js versions
   2. Include lz-string library in game bundle
   3. Include decoder functions
   4. Deploy to GitHub Pages
@@ -540,18 +554,21 @@ Production Build:
 GitHub Pages Deployment:
   Repository Structure:
     your-repo/
-      └── SpanishWords/packs/
-          ├── act1-foundation.js
-          ├── act1-foundation-min.js
-          ├── act2-building-blocks.js
-          ├── act2-building-blocks-min.js
-          └── ... (14 files)
+      └── SpanishWords/
+          ├── Jsmodules/
+          │   ├── act1-foundation.js
+          │   ├── act2-building-blocks.js
+          │   └── ... (7 clean files)
+          └── Jsmodules-js/
+              ├── act1-foundation-js.js
+              ├── act2-building-blocks-js.js
+              └── ... (7 obfuscated files)
 
   Public URLs:
-    https://yourusername.github.io/your-repo/SpanishWords/packs/act1-foundation-min.js
+    https://yourusername.github.io/your-repo/SpanishWords/Jsmodules-js/act1-foundation-js.js
 
   Access in Game:
-    const url = './packs/act1-foundation-min.js';
+    const url = './SpanishWords/Jsmodules-js/act1-foundation-js.js';
     const module = await import(url);
     const decoded = decodeActData(module.w);
 
@@ -574,13 +591,13 @@ Rules for Script Implementation:
   4. Meta languages are FIXED: en, zh, pinyin, pt (NO Spanish - it's the content, not interface)
   5. Property names in clean version: 'meta' and 'words' (standard)
   6. Variable name in obfuscated version: 'w' (for compressed data)
-  7. Obfuscated filenames: original name + '-min.js' suffix
+  7. Obfuscated filenames: original name + '-js.js' suffix
   8. Always produce BOTH versions from single script run
   9. Output files to same directory
 
 Rules for Game Integration:
   1. Development: Import from .js files (clean), no decoder needed
-  2. Production: Import from -min.js files, use LZ-String decoder
+  2. Production: Import from -js.js files, use LZ-String decoder
   3. Include lz-string library in production build (~3KB)
   4. Cache decoded data (don't decompress multiple times)
   5. Handle decompression errors gracefully
@@ -591,7 +608,7 @@ PART 9: SECURITY ANALYSIS
 ================================================================================
 
 What Attacker Sees:
-  // act1-foundation-min.js
+  // act1-foundation-js.js
   export const w="N4IgdghgtgpiBcIDCAVAhgQwE4HsBGEANCAMYBO0A7ALQCMADGQJQBM...";
 
   Observations:
@@ -683,19 +700,19 @@ SUMMARY: ONE PARAGRAPH VERSION
 ================================================================================
 
 System converts 250 Spanish word pack CSVs into 7 JavaScript act files, producing
-TWO versions of each: clean (.js) for LLM development and obfuscated (-min.js) for
+TWO versions of each: clean (.js) for LLM development and obfuscated (-js.js) for
 production. Clean version has readable structure {meta, words} with plain strings.
 Obfuscated version uses LZ-String compression (Lempel-Ziv algorithm) with string
 reversal: JSON is stringified, reversed, then compressed to base64 output, resulting
 in 60% smaller files. Python script reads CSVs, groups by difficulty act, outputs
-both versions with simple naming (act1-foundation.js and act1-foundation-min.js).
+both versions with simple naming (act1-foundation.js and act1-foundation-js.js).
 Game uses clean version during dev (direct imports, no decoder) and compressed
 version in production (includes lz-string library, ~3KB). Decompression takes ~65ms
 (decompress + reverse + parse), but files are 60% smaller so total load time is
 faster than uncompressed. Attackers see compressed gibberish, standard decompressors
 produce backwards JSON that fails to parse, requiring understanding of two-step
 decode (decompress THEN reverse), taking 30-45 minutes for determined users - good
-enough deterrence for $7/month educational content. Simple -min.js naming convention
+enough deterrence for $7/month educational content. Simple -js.js naming convention
 makes maintenance trivial.
 
 
