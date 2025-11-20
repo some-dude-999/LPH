@@ -205,27 +205,27 @@
                     <div class="stat-label">Total English Learners Worldwide</div>
                 </div>
                 <div class="stat-item english">
-                    <div class="stat-number">76%</div>
-                    <div class="stat-label">Spanish Speakers in US Schools</div>
+                    <div class="stat-number">#1</div>
+                    <div class="stat-label">India: Most Duolingo English Test Takers</div>
                 </div>
                 <div class="stat-item english">
                     <div class="stat-number">400M</div>
                     <div class="stat-label">English Learners in China</div>
                 </div>
                 <div class="stat-item english">
-                    <div class="stat-number">5.3M</div>
-                    <div class="stat-label">ELL Students in US Schools (2021)</div>
+                    <div class="stat-number">135</div>
+                    <div class="stat-label">Countries Where English is #1 Language Studied</div>
                 </div>
             </div>
 
             <div class="sources">
                 <p><strong>Data Sources (English):</strong></p>
-                <p>NCES - 5.3M English learner students in US public schools (Fall 2021)</p>
-                <p>NCES - Spanish most commonly reported home language (76.4% of all ELs)</p>
-                <p>British Council - 750M+ people worldwide speak English as foreign language</p>
-                <p>Migration Policy Institute - Arabic (2-3%), Chinese (2-4%), Vietnamese (2-3%) of ELLs</p>
-                <p>EC English - 400M English language learners in China</p>
-                <p>EdWeek - Top ELL languages: Spanish, Arabic, Chinese, Vietnamese, Portuguese</p>
+                <p>Duolingo 2024 Language Report - English #1 in 135 countries (up 10% from 2023)</p>
+                <p>Duolingo English Test Data - India #1, China #2, Canada #3, Brazil #4, Indonesia #5 for test takers</p>
+                <p>Duolingo - India overtook China as largest market for Duolingo English Test, with testing in 750+ cities</p>
+                <p>Duolingo - China has 850+ cities with English test takers, 54% cite education as primary motivation</p>
+                <p>British Council - 750M+ people worldwide speak English as foreign language, 1.5B+ total learners</p>
+                <p>Duolingo - Japan, Czechia, and Hungary have the most serious English learners (by avg time spent)</p>
             </div>
         </div>
 
@@ -241,28 +241,28 @@
                     <div class="stat-label">Total Chinese Learners Worldwide</div>
                 </div>
                 <div class="stat-item chinese">
-                    <div class="stat-number">30%</div>
-                    <div class="stat-label">Cambodia's Duolingo Users Learn Chinese</div>
+                    <div class="stat-number">6M+</div>
+                    <div class="stat-label">English Speakers on Duolingo</div>
                 </div>
                 <div class="stat-item chinese">
                     <div class="stat-number">1M</div>
                     <div class="stat-label">Japanese Learning Mandarin</div>
                 </div>
                 <div class="stat-item chinese">
-                    <div class="stat-number">6M+</div>
-                    <div class="stat-label">English Speakers on Duolingo</div>
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">Cambodia: Highest % of Users Learn Chinese</div>
                 </div>
             </div>
 
             <div class="sources">
                 <p><strong>Data Sources (Chinese):</strong></p>
-                <p>Holon IQ - $7.4B market with 8M+ learners globally</p>
-                <p>CGTN - 100M people learning Chinese worldwide (up from 30M in 2004)</p>
-                <p>Duolingo Guides - 6M+ English speakers learning Chinese on Duolingo</p>
-                <p>Language Magazine - Cambodia leads with 30%+ of Duolingo users learning Chinese</p>
+                <p>Duolingo Special Report - 6M+ English speakers learning Chinese on Duolingo (confirmed user count)</p>
+                <p>Duolingo 2024 Report - Cambodia has highest percentage (30%+) of users learning Chinese, followed by Malaysia, Brunei, Vietnam, Laos</p>
+                <p>Duolingo - Chinese moved from #9 to #8 most popular language globally in 2024</p>
                 <p>Keats School - 1M Japanese learning Mandarin and other Chinese dialects</p>
-                <p>China Ministry of Education - 25M people learning Chinese outside China</p>
-                <p>Regional data - Highest concentrations in SE Asia (Cambodia, Malaysia, Brunei, Vietnam, Laos)</p>
+                <p>Duolingo - Korean is among top 5 most popular languages to study in China, India, Japan, and Vietnam</p>
+                <p>CGTN/China Ministry of Education - 100M people learning Chinese worldwide (up from 30M in 2004), 25M outside China</p>
+                <p>Holon IQ - $7.4B Chinese language learning market globally</p>
             </div>
         </div>
     </div>
@@ -298,27 +298,27 @@
             }]
         };
 
-        // English Learners Data (based on US ELL statistics and global trends)
+        // English Learners Data (based on Duolingo global data - English Test takers)
         const englishData = {
             labels: [
-                'Spanish Speakers',
-                'Chinese Speakers',
-                'Arabic Speakers',
-                'Vietnamese Speakers',
+                'Hindi/Indian Languages',
+                'Chinese Speakers (Mandarin)',
                 'Portuguese Speakers',
-                'Russian Speakers',
-                'Hindi/Urdu Speakers',
-                'Korean/Japanese Speakers',
+                'French Speakers',
+                'Indonesian/Malay Speakers',
+                'Spanish Speakers',
+                'Arabic Speakers',
+                'Japanese Speakers',
                 'Other Languages'
             ],
             datasets: [{
                 label: 'English Learners by Native Language',
-                data: [45, 12, 8, 6, 5, 4, 5, 5, 10],
+                data: [22, 20, 12, 10, 9, 8, 7, 6, 6],
                 backgroundColor: [
                     '#FF6384',
                     '#36A2EB',
-                    '#FFCE56',
                     '#4BC0C0',
+                    '#FFCE56',
                     '#9966FF',
                     '#FF9F40',
                     '#C9CBCF',
@@ -330,29 +330,29 @@
             }]
         };
 
-        // Chinese Learners Data (based on regional and country data)
+        // Chinese Learners Data (based on Duolingo global data - 6M+ English speakers confirmed)
         const chineseData = {
             labels: [
                 'English Speakers',
                 'Korean Speakers',
-                'Khmer Speakers (Cambodian)',
                 'Japanese Speakers',
-                'Thai Speakers',
                 'Vietnamese Speakers',
+                'Thai Speakers',
+                'Khmer Speakers (Cambodian)',
                 'Malay/Indonesian Speakers',
                 'French Speakers',
                 'Other Languages'
             ],
             datasets: [{
                 label: 'Chinese Learners by Native Language',
-                data: [25, 15, 12, 10, 10, 8, 6, 5, 9],
+                data: [35, 18, 12, 10, 8, 5, 5, 4, 3],
                 backgroundColor: [
                     '#36A2EB',
                     '#FFCE56',
-                    '#FF6384',
                     '#4BC0C0',
-                    '#9966FF',
                     '#FF9F40',
+                    '#9966FF',
+                    '#FF6384',
                     '#FF99CC',
                     '#99CCFF',
                     '#C9CBCF'
