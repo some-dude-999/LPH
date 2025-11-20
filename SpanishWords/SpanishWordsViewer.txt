@@ -2,7 +2,7 @@
 PROJECT: LPH - Spanish Language Learning Platform
 COMPONENT: Interactive Spanish Vocabulary Pack Viewer with Analytics
 CREATED: 2025-11-19
-LAST UPDATED: 2025-11-20 - Added Difficulty_Act column to overview CSV for game progression system
+LAST UPDATED: 2025-11-20 - Added act color coding and continuous act checker to ensure proper progression
 
 DATA SOURCES:
 - CSV Files (Local): 251 CSV files in the SpanishWords directory
@@ -16,18 +16,21 @@ DATA SOURCES:
   * Difficulty Acts: Act I through Act VII representing progressive difficulty levels
 
 FUNCTIONALITY:
-- Main Purpose: Browse and study all 250 Spanish vocabulary packs with multi-language translations, data validation, and visual analytics
+- Main Purpose: Browse and study all 250 Spanish vocabulary packs with multi-language translations, data validation, visual analytics, and act progression tracking
 - Key Functions:
   * populateDropdown() - Generates 251 options (1 overview + 250 packs)
   * parseCSV(text) - Converts CSV text into structured data
   * parseCSVLine(line) - Handles quoted fields, commas, and escaped quotes
-  * createTable(headers, rows, isOverview) - Generates HTML table with conditional formatting and column toggles
+  * createTable(headers, rows, isOverview, continuityErrors) - Generates HTML table with conditional formatting, act color coding, and column toggles
   * loadCSV(filename) - Fetches and displays selected CSV file
   * updateInfoBar(packName, wordCount) - Shows pack statistics
   * escapeHtml(text) - Prevents XSS attacks
-  * calculateOverviewStats(rows) - Computes totals and detects discrepancies across all packs
+  * getActNumber(actString) - Extracts numeric act value from act string (e.g., "Act I: Foundation" → 1)
+  * romanize(num) - Converts numbers to Roman numerals (1 → I, 2 → II, etc.)
+  * checkActContinuity(rows) - Validates that acts progress continuously without jumping backward
+  * calculateOverviewStats(rows) - Computes totals, detects discrepancies, and validates act continuity across all packs
   * calculatePackStats(rows) - Validates individual pack word counts
-  * renderStatsSummary(stats, isOverview) - Displays comprehensive statistics with discrepancy alerts
+  * renderStatsSummary(stats, isOverview) - Displays comprehensive statistics with discrepancy and continuity alerts
   * createOverviewChart(rows) - Generates Chart.js histogram (bar chart) grouping packs by base word count ranges in increments of 2
   * toggleCharts() - Shows/hides data visualization charts
   * toggleColumn(columnIndex) - Hides/shows individual table columns
@@ -36,7 +39,21 @@ FUNCTIONALITY:
   * Dropdown change - Loads selected pack
   * Column checkbox toggle - Shows/hides columns
   * Show Charts button - Toggles chart visibility
-- NEW Display Features:
+- NEW Display Features (2025-11-20):
+  * ✅ Act Color Coding - Each row is color-coded by difficulty act (7 distinct colors):
+    - Act I: Light Blue (#e3f2fd with blue left border)
+    - Act II: Light Purple (#f3e5f5 with purple left border)
+    - Act III: Light Green (#e8f5e9 with green left border)
+    - Act IV: Light Orange (#fff3e0 with orange left border)
+    - Act V: Light Pink (#fce4ec with pink left border)
+    - Act VI: Light Yellow (#fff9c4 with yellow left border)
+    - Act VII: Light Red (#ffebee with red left border)
+  * ✅ Act Legend - Visual legend showing all act colors above the overview table
+  * ✅ Continuous Act Checker - Validates that acts progress sequentially without jumping backward:
+    - Detects when a word pack jumps to a lower act (e.g., Act II → Act I)
+    - Highlights continuity errors with pulsing red border animation
+    - Displays detailed error messages in continuity alert section
+    - New stat card showing "Act Continuity" status (CONTINUOUS or ERRORS FOUND)
   * ✅ Column Toggle Checkboxes (👁️ icon) - Hide/show columns to manage long word lists
   * ✅ Statistics Summary Section - Shows totals and validation status at a glance
   * ✅ Conditional Color Formatting:
@@ -46,6 +63,7 @@ FUNCTIONALITY:
   * ✅ Visual Alerts:
     - Yellow background: Discrepancies found
     - Green background: All packs valid
+    - Red alert box: Act continuity errors found
   * ✅ Chart Visualization (Chart.js):
     - Histogram (bar chart) showing distribution of packs by base word count ranges
     - Ranges grouped in increments of 2 (starting from minimum base word count)
@@ -98,6 +116,11 @@ NOTES:
   * Empty lines are filtered out
 - NEW FEATURES ADDED (2025-11-20):
   * Difficulty_Act column added to overview for game progression (Act I through Act VII)
+  * Act color coding system implemented with 7 distinct colors for visual differentiation
+  * Continuous act checker validates sequential progression (prevents Act II → Act I jumps)
+  * Act legend displays all available acts and their colors
+  * Continuity errors highlighted with pulsing red border animation
+  * Act Continuity stat card added to summary section
 - FEATURES ADDED (2025-11-19):
   * Column visibility toggles solve the problem of overly wide tables
   * Statistics section provides instant validation feedback
@@ -109,6 +132,8 @@ NOTES:
   * For Overview: auto_word_count should equal manual_base_word_count × 3
   * For Overview: auto_word_count should equal auto_base_word_checker
   * For Individual Packs: Total words should be divisible by 3 (each base word has 3 examples)
+  * For Overview: Acts must progress continuously without jumping backward (Act I → Act II → Act III, NOT Act I → Act II → Act I)
+  * Invalid act designations are flagged (missing or malformed act strings)
 - Future improvements could include:
   * Search/filter functionality
   * Flashcard mode for studying

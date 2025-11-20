@@ -398,6 +398,96 @@
             max-width: 600px;
             word-wrap: break-word;
         }
+
+        /* Act color coding */
+        .act-1 {
+            background-color: #e3f2fd !important; /* Light Blue */
+            border-left: 4px solid #2196f3 !important;
+        }
+
+        .act-2 {
+            background-color: #f3e5f5 !important; /* Light Purple */
+            border-left: 4px solid #9c27b0 !important;
+        }
+
+        .act-3 {
+            background-color: #e8f5e9 !important; /* Light Green */
+            border-left: 4px solid #4caf50 !important;
+        }
+
+        .act-4 {
+            background-color: #fff3e0 !important; /* Light Orange */
+            border-left: 4px solid #ff9800 !important;
+        }
+
+        .act-5 {
+            background-color: #fce4ec !important; /* Light Pink */
+            border-left: 4px solid #e91e63 !important;
+        }
+
+        .act-6 {
+            background-color: #fff9c4 !important; /* Light Yellow */
+            border-left: 4px solid #fdd835 !important;
+        }
+
+        .act-7 {
+            background-color: #ffebee !important; /* Light Red */
+            border-left: 4px solid #f44336 !important;
+        }
+
+        .act-continuity-error {
+            background-color: #ffcdd2 !important; /* Red warning */
+            border: 3px solid #c62828 !important;
+            animation: pulse-error 2s infinite;
+        }
+
+        @keyframes pulse-error {
+            0%, 100% { box-shadow: 0 0 5px #c62828; }
+            50% { box-shadow: 0 0 20px #c62828; }
+        }
+
+        .act-legend {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .act-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .continuity-alert {
+            padding: 15px;
+            background: #ffcdd2;
+            border-radius: 8px;
+            border-left: 4px solid #c62828;
+            margin-top: 15px;
+        }
+
+        .continuity-alert h3 {
+            color: #c62828;
+            margin-bottom: 5px;
+        }
+
+        .continuity-alert ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .continuity-alert li {
+            color: #b71c1c;
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -502,6 +592,61 @@
             return result;
         }
 
+        // Extract act number from act string (e.g., "Act I: Foundation" -> 1)
+        function getActNumber(actString) {
+            if (!actString) return 0;
+            const match = actString.match(/Act\s+(I{1,3}|IV|V|VI{0,2})/i);
+            if (!match) return 0;
+
+            const romanNumerals = {
+                'I': 1, 'II': 2, 'III': 3, 'IV': 4,
+                'V': 5, 'VI': 6, 'VII': 7
+            };
+
+            return romanNumerals[match[1].toUpperCase()] || 0;
+        }
+
+        // Check for continuous act progression
+        function checkActContinuity(rows) {
+            const continuityErrors = [];
+            let currentAct = 0;
+
+            rows.forEach((row, index) => {
+                const packNum = row[0];
+                const actString = row[2]; // Difficulty_Act column
+                const actNum = getActNumber(actString);
+
+                if (actNum === 0) {
+                    continuityErrors.push({
+                        pack: packNum,
+                        issue: `Pack ${packNum}: Invalid or missing act designation "${actString}"`
+                    });
+                    return;
+                }
+
+                // Check if act jumped backward
+                if (actNum < currentAct) {
+                    continuityErrors.push({
+                        pack: packNum,
+                        rowIndex: index,
+                        issue: `Pack ${packNum}: Act continuity broken! Jumped from Act ${romanize(currentAct)} back to ${actString}`,
+                        actNum: actNum,
+                        expectedAct: currentAct
+                    });
+                }
+
+                currentAct = actNum;
+            });
+
+            return continuityErrors;
+        }
+
+        // Convert number to Roman numeral
+        function romanize(num) {
+            const lookup = {7: 'VII', 6: 'VI', 5: 'V', 4: 'IV', 3: 'III', 2: 'II', 1: 'I'};
+            return lookup[num] || num.toString();
+        }
+
         // Calculate statistics for overview data
         function calculateOverviewStats(rows) {
             let totalBaseWords = 0;
@@ -534,12 +679,17 @@
                 }
             });
 
+            // Check act continuity
+            const continuityErrors = checkActContinuity(rows);
+
             return {
                 totalBaseWords,
                 totalWords,
                 expectedTotalWords: totalBaseWords * 3,
                 discrepancies,
-                hasDiscrepancies: discrepancies.length > 0
+                continuityErrors,
+                hasDiscrepancies: discrepancies.length > 0,
+                hasContinuityErrors: continuityErrors.length > 0
             };
         }
 
@@ -564,12 +714,34 @@
             const container = document.getElementById('statsContainer');
 
             if (isOverview) {
-                const statusClass = stats.hasDiscrepancies ? 'has-discrepancies' : 'all-good';
-                const alertClass = stats.hasDiscrepancies ? 'discrepancy-alert' : 'success-alert';
-                const alertTitle = stats.hasDiscrepancies ? '⚠️ Discrepancies Found' : '✅ All Packs Valid';
-                const alertMessage = stats.hasDiscrepancies
-                    ? `Found ${stats.discrepancies.length} discrepancy issue(s) across packs.`
-                    : 'All word counts match expected values (base words × 3).';
+                const hasAnyIssues = stats.hasDiscrepancies || stats.hasContinuityErrors;
+                const statusClass = hasAnyIssues ? 'has-discrepancies' : 'all-good';
+                const alertClass = hasAnyIssues ? 'discrepancy-alert' : 'success-alert';
+                const alertTitle = hasAnyIssues ? '⚠️ Issues Found' : '✅ All Packs Valid';
+
+                let alertMessage = '';
+                if (stats.hasDiscrepancies && stats.hasContinuityErrors) {
+                    alertMessage = `Found ${stats.discrepancies.length} word count discrepancy issue(s) and ${stats.continuityErrors.length} act continuity issue(s).`;
+                } else if (stats.hasDiscrepancies) {
+                    alertMessage = `Found ${stats.discrepancies.length} word count discrepancy issue(s) across packs.`;
+                } else if (stats.hasContinuityErrors) {
+                    alertMessage = `Found ${stats.continuityErrors.length} act continuity issue(s) across packs.`;
+                } else {
+                    alertMessage = 'All word counts match expected values (base words × 3) and acts progress continuously.';
+                }
+
+                let continuityHTML = '';
+                if (stats.hasContinuityErrors) {
+                    continuityHTML = `
+                        <div class="continuity-alert">
+                            <h3>🚨 Act Continuity Errors Detected</h3>
+                            <p>Acts should progress continuously without jumping backward (e.g., Act I → Act II → Act III, not Act I → Act II → Act I)</p>
+                            <ul>
+                                ${stats.continuityErrors.map(err => `<li>${escapeHtml(err.issue)}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
 
                 container.innerHTML = `
                     <div class="stats-summary ${statusClass}">
@@ -577,6 +749,7 @@
                             <h3>${alertTitle}</h3>
                             <p>${alertMessage}</p>
                         </div>
+                        ${continuityHTML}
                         <div class="stats-grid">
                             <div class="stat-card">
                                 <div class="stat-label">Total Base Words (All Packs)</div>
@@ -593,9 +766,9 @@
                                 <div class="stat-value">${stats.expectedTotalWords.toLocaleString()}</div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-label">Validation Status</div>
-                                <div class="stat-value ${stats.hasDiscrepancies ? 'error' : 'success'}">
-                                    ${stats.hasDiscrepancies ? 'ISSUES FOUND' : 'ALL VALID'}
+                                <div class="stat-label">Act Continuity</div>
+                                <div class="stat-value ${stats.hasContinuityErrors ? 'error' : 'success'}">
+                                    ${stats.hasContinuityErrors ? 'ERRORS FOUND' : 'CONTINUOUS'}
                                 </div>
                             </div>
                         </div>
@@ -779,8 +952,29 @@
         }
 
         // Create HTML table from CSV data
-        function createTable(headers, rows, isOverview = false) {
-            let html = '<table>';
+        function createTable(headers, rows, isOverview = false, continuityErrors = []) {
+            // Create act legend for overview
+            let legendHtml = '';
+            if (isOverview) {
+                legendHtml = `
+                    <div class="act-legend">
+                        <strong style="margin-right: 10px;">Act Color Legend:</strong>
+                        <div class="act-legend-item act-1">Act I</div>
+                        <div class="act-legend-item act-2">Act II</div>
+                        <div class="act-legend-item act-3">Act III</div>
+                        <div class="act-legend-item act-4">Act IV</div>
+                        <div class="act-legend-item act-5">Act V</div>
+                        <div class="act-legend-item act-6">Act VI</div>
+                        <div class="act-legend-item act-7">Act VII</div>
+                        <div class="act-legend-item act-continuity-error" style="animation: none; border: 2px solid #c62828;">Continuity Error</div>
+                    </div>
+                `;
+            }
+
+            // Build error lookup for quick access
+            const errorRowIndices = new Set(continuityErrors.map(err => err.rowIndex));
+
+            let html = legendHtml + '<table>';
 
             // Headers with checkboxes
             html += '<thead><tr>';
@@ -799,8 +993,22 @@
 
             // Rows
             html += '<tbody>';
-            rows.forEach(row => {
-                html += '<tr>';
+            rows.forEach((row, rowIndex) => {
+                // Get act number for color coding
+                let rowClass = '';
+                if (isOverview) {
+                    const actString = row[2]; // Difficulty_Act column
+                    const actNum = getActNumber(actString);
+
+                    // Check if this row has a continuity error
+                    if (errorRowIndices.has(rowIndex)) {
+                        rowClass = 'act-continuity-error';
+                    } else if (actNum > 0) {
+                        rowClass = `act-${actNum}`;
+                    }
+                }
+
+                html += `<tr class="${rowClass}">`;
                 row.forEach((cell, index) => {
                     let classes = '';
                     let displayValue = escapeHtml(cell);
@@ -891,17 +1099,19 @@
                 currentData = { headers, rows, filename };
 
                 // Calculate and render statistics
+                let stats;
                 if (isOverview) {
-                    const stats = calculateOverviewStats(rows);
+                    stats = calculateOverviewStats(rows);
                     renderStatsSummary(stats, true);
                 } else {
-                    const stats = calculatePackStats(rows);
+                    stats = calculatePackStats(rows);
                     renderStatsSummary(stats, false);
                 }
 
                 // Create and display table
                 const tableClass = isOverview ? 'overview-table' : '';
-                container.innerHTML = `<div class="${tableClass}">${createTable(headers, rows, isOverview)}</div>`;
+                const continuityErrors = isOverview ? (stats.continuityErrors || []) : [];
+                container.innerHTML = `<div class="${tableClass}">${createTable(headers, rows, isOverview, continuityErrors)}</div>`;
 
                 // Update info bar
                 if (isOverview) {
