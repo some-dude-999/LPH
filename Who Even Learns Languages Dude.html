@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Native Languages of Spanish Learners</title>
+    <title>Who Even Learns Languages Dude</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -17,60 +17,120 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .container {
             background: white;
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             text-align: center;
         }
-        
+
         h1 {
             color: #2c3e50;
             margin-bottom: 10px;
             font-size: 2.5em;
         }
-        
+
         .subtitle {
             color: #7f8c8d;
             margin-bottom: 30px;
             font-size: 1.1em;
         }
-        
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .tab {
+            padding: 15px 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #7f8c8d;
+            transition: all 0.3s ease;
+        }
+
+        .tab:hover {
+            color: #667eea;
+        }
+
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         .chart-container {
             position: relative;
             height: 400px;
             margin: 30px auto;
         }
-        
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
             margin-top: 30px;
         }
-        
+
         .stat-item {
             background: #f8f9fa;
             padding: 15px;
             border-radius: 10px;
             border-left: 4px solid #e74c3c;
         }
-        
+
+        .stat-item.spanish {
+            border-left-color: #e74c3c;
+        }
+
+        .stat-item.english {
+            border-left-color: #3498db;
+        }
+
+        .stat-item.chinese {
+            border-left-color: #e67e22;
+        }
+
         .stat-number {
             font-size: 1.5em;
             font-weight: bold;
+        }
+
+        .stat-item.spanish .stat-number {
             color: #e74c3c;
         }
-        
+
+        .stat-item.english .stat-number {
+            color: #3498db;
+        }
+
+        .stat-item.chinese .stat-number {
+            color: #e67e22;
+        }
+
         .stat-label {
             color: #7f8c8d;
             font-size: 0.9em;
         }
-        
+
         .sources {
             margin-top: 30px;
             padding-top: 20px;
@@ -79,7 +139,7 @@
             color: #95a5a6;
             text-align: left;
         }
-        
+
         .sources p {
             margin: 5px 0;
         }
@@ -88,48 +148,130 @@
 </head>
 <body>
     <div class="container">
-        <h1>🌍 Native Languages of Spanish Learners</h1>
-        <p class="subtitle">Global distribution of native languages among Spanish second-language learners</p>
-        
-        <div class="chart-container">
-            <canvas id="spanishLearnersChart"></canvas>
+        <h1>🌍 Who Even Learns Languages Dude</h1>
+        <p class="subtitle">Global distribution of native languages among language learners worldwide</p>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('spanish')">🇪🇸 Spanish</button>
+            <button class="tab" onclick="showTab('english')">🇬🇧 English</button>
+            <button class="tab" onclick="showTab('chinese')">🇨🇳 Chinese</button>
         </div>
-        
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">24M+</div>
-                <div class="stat-label">Total Spanish Learners Worldwide</div>
+
+        <!-- Spanish Tab -->
+        <div id="spanish-content" class="tab-content active">
+            <div class="chart-container">
+                <canvas id="spanishChart"></canvas>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">70%</div>
-                <div class="stat-label">US K-12 Students Choose Spanish</div>
+
+            <div class="stats-grid">
+                <div class="stat-item spanish">
+                    <div class="stat-number">24M+</div>
+                    <div class="stat-label">Total Spanish Learners Worldwide</div>
+                </div>
+                <div class="stat-item spanish">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">US K-12 Students Choose Spanish</div>
+                </div>
+                <div class="stat-item spanish">
+                    <div class="stat-number">36%</div>
+                    <div class="stat-label">US Adults Attempting Spanish</div>
+                </div>
+                <div class="stat-item spanish">
+                    <div class="stat-number">11%</div>
+                    <div class="stat-label">UK Bilinguals Learn Spanish</div>
+                </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">36%</div>
-                <div class="stat-label">US Adults Attempting Spanish</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">11%</div>
-                <div class="stat-label">UK Bilinguals Learn Spanish</div>
+
+            <div class="sources">
+                <p><strong>Data Sources (Spanish):</strong></p>
+                <p>Mango Languages - Spanish is most studied language in US for communication with Hispanic population</p>
+                <p>NBC News - Growing Spanish learning trend in China among millennials</p>
+                <p>UT Permian Basin - 70% of US K-12 students choose Spanish</p>
+                <p>Test Prep Insight - 36.45% of Americans attempt to learn Spanish</p>
+                <p>Speakeasy BCN - 24 million actively studying Spanish worldwide</p>
+                <p>Preply - Spanish is 3rd most popular second language in UK (11%)</p>
             </div>
         </div>
-        
-        <div class="sources">
-            <p><strong>Data Sources:</strong></p>
-            <p>[^6^] Mango Languages - Spanish is most studied language in US for communication with Hispanic population</p>
-            <p>[^7^] NBC News - Growing Spanish learning trend in China among millennials</p>
-            <p>[^8^] UT Permian Basin - 70% of US K-12 students choose Spanish</p>
-            <p>[^10^] Test Prep Insight - 36.45% of Americans attempt to learn Spanish</p>
-            <p>[^11^] Speakeasy BCN - 24 million actively studying Spanish worldwide</p>
-            <p>[^13^] Preply - Spanish is 3rd most popular second language in UK (11%)</p>
+
+        <!-- English Tab -->
+        <div id="english-content" class="tab-content">
+            <div class="chart-container">
+                <canvas id="englishChart"></canvas>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item english">
+                    <div class="stat-number">1.5B+</div>
+                    <div class="stat-label">Total English Learners Worldwide</div>
+                </div>
+                <div class="stat-item english">
+                    <div class="stat-number">76%</div>
+                    <div class="stat-label">Spanish Speakers in US Schools</div>
+                </div>
+                <div class="stat-item english">
+                    <div class="stat-number">400M</div>
+                    <div class="stat-label">English Learners in China</div>
+                </div>
+                <div class="stat-item english">
+                    <div class="stat-number">5.3M</div>
+                    <div class="stat-label">ELL Students in US Schools (2021)</div>
+                </div>
+            </div>
+
+            <div class="sources">
+                <p><strong>Data Sources (English):</strong></p>
+                <p>NCES - 5.3M English learner students in US public schools (Fall 2021)</p>
+                <p>NCES - Spanish most commonly reported home language (76.4% of all ELs)</p>
+                <p>British Council - 750M+ people worldwide speak English as foreign language</p>
+                <p>Migration Policy Institute - Arabic (2-3%), Chinese (2-4%), Vietnamese (2-3%) of ELLs</p>
+                <p>EC English - 400M English language learners in China</p>
+                <p>EdWeek - Top ELL languages: Spanish, Arabic, Chinese, Vietnamese, Portuguese</p>
+            </div>
+        </div>
+
+        <!-- Chinese Tab -->
+        <div id="chinese-content" class="tab-content">
+            <div class="chart-container">
+                <canvas id="chineseChart"></canvas>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item chinese">
+                    <div class="stat-number">100M+</div>
+                    <div class="stat-label">Total Chinese Learners Worldwide</div>
+                </div>
+                <div class="stat-item chinese">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">Cambodia's Duolingo Users Learn Chinese</div>
+                </div>
+                <div class="stat-item chinese">
+                    <div class="stat-number">1M</div>
+                    <div class="stat-label">Japanese Learning Mandarin</div>
+                </div>
+                <div class="stat-item chinese">
+                    <div class="stat-number">6M+</div>
+                    <div class="stat-label">English Speakers on Duolingo</div>
+                </div>
+            </div>
+
+            <div class="sources">
+                <p><strong>Data Sources (Chinese):</strong></p>
+                <p>Holon IQ - $7.4B market with 8M+ learners globally</p>
+                <p>CGTN - 100M people learning Chinese worldwide (up from 30M in 2004)</p>
+                <p>Duolingo Guides - 6M+ English speakers learning Chinese on Duolingo</p>
+                <p>Language Magazine - Cambodia leads with 30%+ of Duolingo users learning Chinese</p>
+                <p>Keats School - 1M Japanese learning Mandarin and other Chinese dialects</p>
+                <p>China Ministry of Education - 25M people learning Chinese outside China</p>
+                <p>Regional data - Highest concentrations in SE Asia (Cambodia, Malaysia, Brunei, Vietnam, Laos)</p>
+            </div>
         </div>
     </div>
 
     <script>
-        const ctx = document.getElementById('spanishLearnersChart').getContext('2d');
-        
-        // Data based on global language learning demographics and search results
-        const data = {
+        let charts = {};
+
+        // Spanish Learners Data
+        const spanishData = {
             labels: [
                 'English Speakers',
                 'Portuguese Speakers',
@@ -155,8 +297,68 @@
                 borderColor: '#fff'
             }]
         };
-        
-        const config = {
+
+        // English Learners Data (based on US ELL statistics and global trends)
+        const englishData = {
+            labels: [
+                'Spanish Speakers',
+                'Chinese Speakers',
+                'Arabic Speakers',
+                'Vietnamese Speakers',
+                'Portuguese Speakers',
+                'Russian Speakers',
+                'Hindi/Urdu Speakers',
+                'Korean/Japanese Speakers',
+                'Other Languages'
+            ],
+            datasets: [{
+                label: 'English Learners by Native Language',
+                data: [45, 12, 8, 6, 5, 4, 5, 5, 10],
+                backgroundColor: [
+                    '#FF6384',
+                    '#36A2EB',
+                    '#FFCE56',
+                    '#4BC0C0',
+                    '#9966FF',
+                    '#FF9F40',
+                    '#C9CBCF',
+                    '#FF99CC',
+                    '#99CCFF'
+                ],
+                borderWidth: 3,
+                borderColor: '#fff'
+            }]
+        };
+
+        // Chinese Learners Data (based on regional and country data)
+        const chineseData = {
+            labels: [
+                'Southeast Asian Languages',
+                'English Speakers',
+                'Korean Speakers',
+                'Japanese Speakers',
+                'Thai Speakers',
+                'French Speakers',
+                'Other Languages'
+            ],
+            datasets: [{
+                label: 'Chinese Learners by Native Language/Region',
+                data: [30, 25, 15, 10, 8, 5, 7],
+                backgroundColor: [
+                    '#FF6384',
+                    '#36A2EB',
+                    '#FFCE56',
+                    '#4BC0C0',
+                    '#9966FF',
+                    '#FF9F40',
+                    '#C9CBCF'
+                ],
+                borderWidth: 3,
+                borderColor: '#fff'
+            }]
+        };
+
+        const chartConfig = (data, title) => ({
             type: 'pie',
             data: data,
             options: {
@@ -175,7 +377,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Estimated Distribution of Native Languages Among Spanish Learners',
+                        text: title,
                         font: {
                             size: 16,
                             weight: 'bold'
@@ -196,15 +398,52 @@
                     }
                 }
             }
-        };
-        
-        new Chart(ctx, config);
-        
-        // Add animation on load
+        });
+
+        // Initialize charts
+        function initCharts() {
+            charts.spanish = new Chart(
+                document.getElementById('spanishChart').getContext('2d'),
+                chartConfig(spanishData, 'Who Learns Spanish? (By Native Language)')
+            );
+
+            charts.english = new Chart(
+                document.getElementById('englishChart').getContext('2d'),
+                chartConfig(englishData, 'Who Learns English? (By Native Language)')
+            );
+
+            charts.chinese = new Chart(
+                document.getElementById('chineseChart').getContext('2d'),
+                chartConfig(chineseData, 'Who Learns Chinese? (By Native Language/Region)')
+            );
+        }
+
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName + '-content').classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // Initialize on load
         document.addEventListener('DOMContentLoaded', function() {
+            initCharts();
+
+            // Add animation on load
             document.querySelector('.container').style.opacity = '0';
             document.querySelector('.container').style.transform = 'translateY(20px)';
-            
+
             setTimeout(() => {
                 document.querySelector('.container').style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 document.querySelector('.container').style.opacity = '1';
