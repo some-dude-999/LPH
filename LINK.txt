@@ -4,7 +4,7 @@
 ## HTML Pages
 https://some-dude-999.github.io/LPH/CsvViewerForManuallyBuildingCSV.html - CSV parser, viewer, and downloader tool with auto-increment filename feature
 https://some-dude-999.github.io/LPH/SpanishWords/SpanishWordsViewer.html - Interactive Spanish vocabulary pack viewer with analytics, word count validation, and act progression tracking
-https://some-dude-999.github.io/LPH/Who%20Even%20Learns%20Languages%20Dude.html - Demographics visualization showing native languages of Spanish learners worldwide
+https://some-dude-999.github.io/LPH/Who%20Even%20Learns%20Languages%20Dude.html - Demographics visualization with 3 tabs showing native languages of Spanish, English, and Chinese learners worldwide
 
 ## JavaScript Modules (Clean - Development)
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js - Act I Foundation vocabulary module (packs 1-30) - readable development version
