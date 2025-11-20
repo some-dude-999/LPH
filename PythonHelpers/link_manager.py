@@ -2,7 +2,7 @@
 """
 Link Manager for GitHub Pages URLs
 Automatically generates and maintains LINK.txt with proper GitHub Pages URLs
-for all HTML files in the repository.
+for all web-accessible files (.html, .js, .json, .css) in the repository.
 """
 
 import os
@@ -52,17 +52,51 @@ def get_repo_info():
         return None, None
 
 
-def find_html_files(root_dir='.'):
-    """Find all .html files in the repository."""
-    html_files = []
+def find_web_files(root_dir='.'):
+    """Find all web-accessible files (.html, .js, .json, .css) in the repository."""
+    web_files = {
+        'html': [],
+        'js_clean': [],      # Jsmodules/*.js - readable development versions
+        'js_obfuscated': [], # Jsmodules-js/*-js.js - compressed production versions
+        'json': [],
+        'css': []
+    }
     root_path = Path(root_dir).resolve()
 
+    # Find HTML files
     for file_path in root_path.rglob('*.html'):
-        # Get relative path from root
         rel_path = file_path.relative_to(root_path)
-        html_files.append(str(rel_path))
+        web_files['html'].append(str(rel_path))
 
-    return sorted(html_files)
+    # Find JavaScript files (categorize by directory)
+    for file_path in root_path.rglob('*.js'):
+        rel_path = file_path.relative_to(root_path)
+        rel_path_str = str(rel_path)
+
+        # Categorize JS files
+        if 'Jsmodules-js/' in rel_path_str or '/Jsmodules-js/' in rel_path_str:
+            web_files['js_obfuscated'].append(rel_path_str)
+        elif 'Jsmodules/' in rel_path_str or '/Jsmodules/' in rel_path_str:
+            web_files['js_clean'].append(rel_path_str)
+        else:
+            # Other JS files go to clean category
+            web_files['js_clean'].append(rel_path_str)
+
+    # Find JSON files
+    for file_path in root_path.rglob('*.json'):
+        rel_path = file_path.relative_to(root_path)
+        web_files['json'].append(str(rel_path))
+
+    # Find CSS files
+    for file_path in root_path.rglob('*.css'):
+        rel_path = file_path.relative_to(root_path)
+        web_files['css'].append(str(rel_path))
+
+    # Sort all lists
+    for key in web_files:
+        web_files[key].sort()
+
+    return web_files
 
 
 def generate_github_pages_url(owner, repo, file_path):
@@ -100,8 +134,8 @@ def load_existing_descriptions(link_file='LINK.txt'):
     return descriptions
 
 
-def update_link_txt(owner, repo, html_files, link_file='LINK.txt'):
-    """Update LINK.txt with all HTML file URLs."""
+def update_link_txt(owner, repo, web_files, link_file='LINK.txt'):
+    """Update LINK.txt with all web file URLs organized by type."""
     # Load existing descriptions
     existing_descriptions = load_existing_descriptions(link_file)
 
@@ -112,28 +146,99 @@ def update_link_txt(owner, repo, html_files, link_file='LINK.txt'):
         ""
     ]
 
-    # Generate entries for each HTML file
-    for file_path in html_files:
-        url = generate_github_pages_url(owner, repo, file_path)
+    new_entries = 0
+    preserved_descriptions = 0
 
-        # Use existing description if available, otherwise create placeholder
-        if url in existing_descriptions:
-            description = existing_descriptions[url]
-        else:
-            filename = os.path.basename(file_path)
-            description = f"[Add description for {filename}]"
+    # HTML Pages Section
+    if web_files['html']:
+        lines.append("## HTML Pages")
+        for file_path in web_files['html']:
+            url = generate_github_pages_url(owner, repo, file_path)
+            if url in existing_descriptions:
+                description = existing_descriptions[url]
+                preserved_descriptions += 1
+            else:
+                filename = os.path.basename(file_path)
+                description = f"[Add description for {filename}]"
+                new_entries += 1
+            lines.append(f"{url} - {description}")
+        lines.append("")
 
-        lines.append(f"{url} - {description}")
+    # JavaScript Modules (Clean - Development) Section
+    if web_files['js_clean']:
+        lines.append("## JavaScript Modules (Clean - Development)")
+        for file_path in web_files['js_clean']:
+            url = generate_github_pages_url(owner, repo, file_path)
+            if url in existing_descriptions:
+                description = existing_descriptions[url]
+                preserved_descriptions += 1
+            else:
+                filename = os.path.basename(file_path)
+                description = f"[Add description for {filename}]"
+                new_entries += 1
+            lines.append(f"{url} - {description}")
+        lines.append("")
+
+    # JavaScript Modules (Obfuscated - Production) Section
+    if web_files['js_obfuscated']:
+        lines.append("## JavaScript Modules (Obfuscated - Production)")
+        for file_path in web_files['js_obfuscated']:
+            url = generate_github_pages_url(owner, repo, file_path)
+            if url in existing_descriptions:
+                description = existing_descriptions[url]
+                preserved_descriptions += 1
+            else:
+                filename = os.path.basename(file_path)
+                description = f"[Add description for {filename}]"
+                new_entries += 1
+            lines.append(f"{url} - {description}")
+        lines.append("")
+
+    # JSON Data Files Section
+    if web_files['json']:
+        lines.append("## JSON Data Files")
+        for file_path in web_files['json']:
+            url = generate_github_pages_url(owner, repo, file_path)
+            if url in existing_descriptions:
+                description = existing_descriptions[url]
+                preserved_descriptions += 1
+            else:
+                filename = os.path.basename(file_path)
+                description = f"[Add description for {filename}]"
+                new_entries += 1
+            lines.append(f"{url} - {description}")
+        lines.append("")
+
+    # CSS Files Section
+    if web_files['css']:
+        lines.append("## CSS Files")
+        for file_path in web_files['css']:
+            url = generate_github_pages_url(owner, repo, file_path)
+            if url in existing_descriptions:
+                description = existing_descriptions[url]
+                preserved_descriptions += 1
+            else:
+                filename = os.path.basename(file_path)
+                description = f"[Add description for {filename}]"
+                new_entries += 1
+            lines.append(f"{url} - {description}")
+        lines.append("")
 
     # Write to file
     try:
         with open(link_file, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(lines) + '\n')
+            f.write('\n'.join(lines))
 
+        total_files = sum(len(files) for files in web_files.values())
         print(f"[SUCCESS] Successfully updated {link_file}")
-        print(f"  - Found {len(html_files)} HTML files")
-        print(f"  - Preserved {len([d for d in existing_descriptions.values() if not d.startswith('[Add description')])} existing descriptions")
-        print(f"  - Added {len([url for file_path in html_files if generate_github_pages_url(owner, repo, file_path) not in existing_descriptions])} new entries")
+        print(f"  - Total files tracked: {total_files}")
+        print(f"    * HTML: {len(web_files['html'])}")
+        print(f"    * JS (Clean): {len(web_files['js_clean'])}")
+        print(f"    * JS (Obfuscated): {len(web_files['js_obfuscated'])}")
+        print(f"    * JSON: {len(web_files['json'])}")
+        print(f"    * CSS: {len(web_files['css'])}")
+        print(f"  - Preserved {preserved_descriptions} existing descriptions")
+        print(f"  - Added {new_entries} new entries")
 
         return True
 
@@ -157,21 +262,30 @@ def main():
 
     print(f"   Repository: {owner}/{repo}")
 
-    # Find HTML files
-    print("\n2. Searching for HTML files...")
-    html_files = find_html_files()
+    # Find web files
+    print("\n2. Searching for web-accessible files...")
+    web_files = find_web_files()
 
-    if not html_files:
-        print("   No HTML files found in repository")
+    total_files = sum(len(files) for files in web_files.values())
+    if total_files == 0:
+        print("   No web files found in repository")
         return 0
 
-    print(f"   Found {len(html_files)} HTML files:")
-    for file_path in html_files:
-        print(f"     - {file_path}")
+    print(f"   Found {total_files} web files:")
+    if web_files['html']:
+        print(f"     - HTML: {len(web_files['html'])} files")
+    if web_files['js_clean']:
+        print(f"     - JavaScript (Clean): {len(web_files['js_clean'])} files")
+    if web_files['js_obfuscated']:
+        print(f"     - JavaScript (Obfuscated): {len(web_files['js_obfuscated'])} files")
+    if web_files['json']:
+        print(f"     - JSON: {len(web_files['json'])} files")
+    if web_files['css']:
+        print(f"     - CSS: {len(web_files['css'])} files")
 
     # Update LINK.txt
     print("\n3. Updating LINK.txt...")
-    success = update_link_txt(owner, repo, html_files)
+    success = update_link_txt(owner, repo, web_files)
 
     if success:
         print("\n[SUCCESS] Link management complete!")
