@@ -510,9 +510,9 @@
 
             rows.forEach((row, index) => {
                 const packNum = row[0];
-                const autoWordCount = parseInt(row[3]) || 0;
-                const manualBaseCount = parseInt(row[4]) || 0;
-                const autoBaseChecker = parseInt(row[5]) || 0;
+                const autoWordCount = parseInt(row[4]) || 0;
+                const manualBaseCount = parseInt(row[5]) || 0;
+                const autoBaseChecker = parseInt(row[6]) || 0;
 
                 totalWords += autoWordCount;
                 totalBaseWords += manualBaseCount;
@@ -649,7 +649,7 @@
             let maxBaseWords = -Infinity;
 
             rows.forEach(row => {
-                const baseWordCount = parseInt(row[4]) || 0;
+                const baseWordCount = parseInt(row[5]) || 0;
                 minBaseWords = Math.min(minBaseWords, baseWordCount);
                 maxBaseWords = Math.max(maxBaseWords, baseWordCount);
             });
@@ -659,7 +659,7 @@
             const INCREMENT = 2;
 
             rows.forEach(row => {
-                const baseWordCount = parseInt(row[4]) || 0;
+                const baseWordCount = parseInt(row[5]) || 0;
                 const rangeStart = Math.floor((baseWordCount - minBaseWords) / INCREMENT) * INCREMENT + minBaseWords;
                 const rangeEnd = rangeStart + INCREMENT;
                 const rangeLabel = `${rangeStart}-${rangeEnd}`;
@@ -806,25 +806,25 @@
                     let displayValue = escapeHtml(cell);
 
                     // Apply conditional formatting for overview counts
-                    if (isOverview && (index === 3 || index === 4 || index === 5)) {
-                        const autoWordCount = parseInt(row[3]) || 0;
-                        const manualBaseCount = parseInt(row[4]) || 0;
-                        const autoBaseChecker = parseInt(row[5]) || 0;
+                    if (isOverview && (index === 4 || index === 5 || index === 6)) {
+                        const autoWordCount = parseInt(row[4]) || 0;
+                        const manualBaseCount = parseInt(row[5]) || 0;
+                        const autoBaseChecker = parseInt(row[6]) || 0;
                         const expectedWords = manualBaseCount * 3;
 
-                        if (index === 3) { // auto_word_count
+                        if (index === 4) { // auto_word_count
                             if (autoWordCount === expectedWords && autoWordCount === autoBaseChecker) {
                                 classes = 'count-match';
                             } else {
                                 classes = 'count-mismatch';
                             }
-                        } else if (index === 4) { // manual_base_word_count
+                        } else if (index === 5) { // manual_base_word_count
                             if (expectedWords === autoWordCount) {
                                 classes = 'count-match';
                             } else {
                                 classes = 'count-mismatch';
                             }
-                        } else if (index === 5) { // auto_base_word_checker
+                        } else if (index === 6) { // auto_base_word_checker
                             if (autoBaseChecker === autoWordCount) {
                                 classes = 'count-match';
                             } else {

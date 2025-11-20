@@ -2,17 +2,18 @@
 PROJECT: LPH - Spanish Language Learning Platform
 COMPONENT: Interactive Spanish Vocabulary Pack Viewer with Analytics
 CREATED: 2025-11-19
-LAST UPDATED: 2025-11-19 - Added advanced features: column toggles, statistics, conditional formatting, and charts
+LAST UPDATED: 2025-11-20 - Added Difficulty_Act column to overview CSV for game progression system
 
 DATA SOURCES:
 - CSV Files (Local): 251 CSV files in the SpanishWords directory
-  * SpanishWordsOverview.csv - Master index with pack metadata (Pack_Number, Pack_Title, Spanish_Words, auto_word_count, manual_base_word_count, auto_base_word_checker)
+  * SpanishWordsOverview.csv - Master index with pack metadata (Pack_Number, Pack_Title, Difficulty_Act, Spanish_Words, auto_word_count, manual_base_word_count, auto_base_word_checker)
   * SpanishWords1.csv through SpanishWords250.csv - Individual vocabulary packs
 - File Structure:
-  * Overview CSV: Pack_Number, Pack_Title, Spanish_Words (array), auto_word_count, manual_base_word_count, auto_base_word_checker
+  * Overview CSV: Pack_Number, Pack_Title, Difficulty_Act, Spanish_Words (array), auto_word_count, manual_base_word_count, auto_base_word_checker
   * Pack CSV: spanish, english, chinese, pinyin, portuguese
   * Each pack contains 24-45 translation entries (must be divisible by 3)
   * Total: ~10,685 vocabulary entries across all packs
+  * Difficulty Acts: Act I through Act VII representing progressive difficulty levels
 
 FUNCTIONALITY:
 - Main Purpose: Browse and study all 250 Spanish vocabulary packs with multi-language translations, data validation, and visual analytics
@@ -95,7 +96,9 @@ NOTES:
   * Quoted fields with commas inside
   * Escaped quotes (double quotes)
   * Empty lines are filtered out
-- NEW FEATURES ADDED (2025-11-19):
+- NEW FEATURES ADDED (2025-11-20):
+  * Difficulty_Act column added to overview for game progression (Act I through Act VII)
+- FEATURES ADDED (2025-11-19):
   * Column visibility toggles solve the problem of overly wide tables
   * Statistics section provides instant validation feedback
   * Green/red color coding makes discrepancies immediately visible
