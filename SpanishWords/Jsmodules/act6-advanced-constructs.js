@@ -1,12 +1,12 @@
 // Clean version for development
 // This file is readable and intended for LLM-assisted coding
 
-export const disappearing_desaparecer = {
+export const p6_181_disappearing__desaparecer = {
   meta: {
     en: "Disappearing (desaparecer)",
-    zh: "Disappearing (desaparecer)",
-    pinyin: "Disappearing (desaparecer)",
-    pt: "Disappearing (desaparecer)"
+    zh: "消失 (desaparecer)",
+    pinyin: "Xiāoshī (desaparecer)",
+    pt: "Desaparecer"
   },
   words: [
     ["desaparezco rápido", "I disappear quickly", "我消失得很快", "wǒ xiāoshī de hěn kuài", "eu desapareço rápido"],
@@ -42,12 +42,12 @@ export const disappearing_desaparecer = {
   ]
 };
 
-export const telecommunications = {
+export const p6_182_telecommunications = {
   meta: {
     en: "Telecommunications",
-    zh: "Telecommunications",
-    pinyin: "Telecommunications",
-    pt: "Telecommunications"
+    zh: "电信",
+    pinyin: "Diànxìn",
+    pt: "Telecomunicações"
   },
   words: [
     ["las telecomunicaciones modernas", "modern telecommunications", "现代电信", "xiàndài diànxìn", "as telecomunicações modernas"],
@@ -113,12 +113,12 @@ export const telecommunications = {
   ]
 };
 
-export const birthdays__fulfilling_cumplir = {
+export const p6_183_birthdays__fulfilling__cumplir = {
   meta: {
     en: "Birthdays & Fulfilling (cumplir)",
-    zh: "Birthdays & Fulfilling (cumplir)",
-    pinyin: "Birthdays & Fulfilling (cumplir)",
-    pt: "Birthdays & Fulfilling (cumplir)"
+    zh: "生日与实现 (cumplir)",
+    pinyin: "Shēngrì yǔ Shíxiàn (cumplir)",
+    pt: "Aniversários e Cumprir"
   },
   words: [
     ["cumplo años", "I have a birthday", "我过生日", "wǒ guò shēngrì", "eu faço aniversário"],
@@ -154,12 +154,12 @@ export const birthdays__fulfilling_cumplir = {
   ]
 };
 
-export const missing__lacking_faltar = {
+export const p6_184_missing__lacking__faltar = {
   meta: {
     en: "Missing & Lacking (faltar)",
-    zh: "Missing & Lacking (faltar)",
-    pinyin: "Missing & Lacking (faltar)",
-    pt: "Missing & Lacking (faltar)"
+    zh: "缺少 (faltar)",
+    pinyin: "Quēshǎo (faltar)",
+    pt: "Faltar"
   },
   words: [
     ["falto mucho", "I'm absent a lot", "我经常缺席", "wǒ jīngcháng quēxí", "eu falto muito"],
@@ -195,12 +195,12 @@ export const missing__lacking_faltar = {
   ]
 };
 
-export const tourism_terms = {
+export const p6_185_tourism__terms = {
   meta: {
     en: "Tourism Terms",
-    zh: "Tourism Terms",
-    pinyin: "Tourism Terms",
-    pt: "Tourism Terms"
+    zh: "旅游术语",
+    pinyin: "Lǚyóu Shùyǔ",
+    pt: "Termos de Turismo"
   },
   words: [
     ["el turismo nacional", "domestic tourism", "国内旅游", "guónèi lǚyóu", "o turismo nacional"],
@@ -266,12 +266,12 @@ export const tourism_terms = {
   ]
 };
 
-export const noticing_notar = {
+export const p6_186_noticing__notar = {
   meta: {
     en: "Noticing (notar)",
-    zh: "Noticing (notar)",
-    pinyin: "Noticing (notar)",
-    pt: "Noticing (notar)"
+    zh: "注意到 (notar)",
+    pinyin: "Zhùyìdào (notar)",
+    pt: "Notar"
   },
   words: [
     ["noto cambios", "I notice changes", "我注意到变化", "wǒ zhùyì dào biànhuà", "eu noto mudanças"],
@@ -307,12 +307,12 @@ export const noticing_notar = {
   ]
 };
 
-export const allowing_permitir = {
+export const p6_187_allowing__permitir = {
   meta: {
     en: "Allowing (permitir)",
-    zh: "Allowing (permitir)",
-    pinyin: "Allowing (permitir)",
-    pt: "Allowing (permitir)"
+    zh: "允许 (permitir)",
+    pinyin: "Yǔnxǔ (permitir)",
+    pt: "Permitir"
   },
   words: [
     ["permito todo", "I allow everything", "我允许一切", "wǒ yǔnxǔ yīqiè", "eu permito tudo"],
@@ -348,12 +348,12 @@ export const allowing_permitir = {
   ]
 };
 
-export const manufacturing_terms = {
+export const p6_188_manufacturing__terms = {
   meta: {
     en: "Manufacturing Terms",
-    zh: "Manufacturing Terms",
-    pinyin: "Manufacturing Terms",
-    pt: "Manufacturing Terms"
+    zh: "制造术语",
+    pinyin: "Zhìzào Shùyǔ",
+    pt: "Termos de Manufatura"
   },
   words: [
     ["la fabricación industrial", "industrial manufacturing", "工业制造", "gōngyè zhìzào", "a fabricação industrial"],
@@ -419,12 +419,12 @@ export const manufacturing_terms = {
   ]
 };
 
-export const achieving_lograr = {
+export const p6_189_achieving__lograr = {
   meta: {
     en: "Achieving (lograr)",
-    zh: "Achieving (lograr)",
-    pinyin: "Achieving (lograr)",
-    pt: "Achieving (lograr)"
+    zh: "实现 (lograr)",
+    pinyin: "Shíxiàn (lograr)",
+    pt: "Alcançar"
   },
   words: [
     ["logro éxito", "I achieve success", "我取得成功", "wǒ qǔdé chénggōng", "eu alcanço sucesso"],
@@ -460,12 +460,12 @@ export const achieving_lograr = {
   ]
 };
 
-export const performing_realizar = {
+export const p6_190_performing__realizar = {
   meta: {
     en: "Performing (realizar)",
-    zh: "Performing (realizar)",
-    pinyin: "Performing (realizar)",
-    pt: "Performing (realizar)"
+    zh: "执行 (realizar)",
+    pinyin: "Zhíxíng (realizar)",
+    pt: "Realizar"
   },
   words: [
     ["realizo tareas", "I perform tasks", "我执行任务", "wǒ zhíxíng rènwù", "eu realizo tarefas"],
@@ -501,12 +501,12 @@ export const performing_realizar = {
   ]
 };
 
-export const economics_terms = {
+export const p6_191_economics__terms = {
   meta: {
     en: "Economics Terms",
-    zh: "Economics Terms",
-    pinyin: "Economics Terms",
-    pt: "Economics Terms"
+    zh: "经济学术语",
+    pinyin: "Jīngjìxué Shùyǔ",
+    pt: "Termos de Economia"
   },
   words: [
     ["la economía global", "the global economy", "全球经济", "quánqiú jīngjì", "a economia global"],
@@ -572,12 +572,12 @@ export const economics_terms = {
   ]
 };
 
-export const existing_existir = {
+export const p6_192_existing__existir = {
   meta: {
     en: "Existing (existir)",
-    zh: "Existing (existir)",
-    pinyin: "Existing (existir)",
-    pt: "Existing (existir)"
+    zh: "存在 (existir)",
+    pinyin: "Cúnzài (existir)",
+    pt: "Existir"
   },
   words: [
     ["existo siempre", "I always exist", "我永远存在", "wǒ yǒngyuǎn cúnzài", "eu sempre existo"],
@@ -613,12 +613,12 @@ export const existing_existir = {
   ]
 };
 
-export const depending_depender = {
+export const p6_193_depending__depender = {
   meta: {
     en: "Depending (depender)",
-    zh: "Depending (depender)",
-    pinyin: "Depending (depender)",
-    pt: "Depending (depender)"
+    zh: "依赖 (depender)",
+    pinyin: "Yīlài (depender)",
+    pt: "Depender"
   },
   words: [
     ["dependo mucho", "I depend a lot", "我非常依赖", "wǒ fēicháng yīlài", "eu dependo muito"],
@@ -654,12 +654,12 @@ export const depending_depender = {
   ]
 };
 
-export const retail__sales = {
+export const p6_194_retail__sales = {
   meta: {
     en: "Retail & Sales",
-    zh: "Retail & Sales",
-    pinyin: "Retail & Sales",
-    pt: "Retail & Sales"
+    zh: "零售与销售",
+    pinyin: "Língshòu yǔ Xiāoshòu",
+    pt: "Varejo e Vendas"
   },
   words: [
     ["el comercio local", "local trade", "本地贸易", "běndì màoyì", "o comércio local"],
@@ -725,12 +725,12 @@ export const retail__sales = {
   ]
 };
 
-export const belonging_pertenecer = {
+export const p6_195_belonging__pertenecer = {
   meta: {
     en: "Belonging (pertenecer)",
-    zh: "Belonging (pertenecer)",
-    pinyin: "Belonging (pertenecer)",
-    pt: "Belonging (pertenecer)"
+    zh: "属于 (pertenecer)",
+    pinyin: "Shǔyú (pertenecer)",
+    pt: "Pertencer"
   },
   words: [
     ["pertenezco aquí", "I belong here", "我属于这里", "wǒ shǔyú zhèlǐ", "eu pertenço aqui"],
@@ -766,12 +766,12 @@ export const belonging_pertenecer = {
   ]
 };
 
-export const deserving_merecer = {
+export const p6_196_deserving__merecer = {
   meta: {
     en: "Deserving (merecer)",
-    zh: "Deserving (merecer)",
-    pinyin: "Deserving (merecer)",
-    pt: "Deserving (merecer)"
+    zh: "值得 (merecer)",
+    pinyin: "Zhídé (merecer)",
+    pt: "Merecer"
   },
   words: [
     ["merezco más", "I deserve more", "我应得更多", "wǒ yīngdé gèng duō", "eu mereço mais"],
@@ -807,12 +807,12 @@ export const deserving_merecer = {
   ]
 };
 
-export const insurance_terms = {
+export const p6_197_insurance__terms = {
   meta: {
     en: "Insurance Terms",
-    zh: "Insurance Terms",
-    pinyin: "Insurance Terms",
-    pt: "Insurance Terms"
+    zh: "保险术语",
+    pinyin: "Bǎoxiǎn Shùyǔ",
+    pt: "Termos de Seguro"
   },
   words: [
     ["el seguro médico", "the health insurance", "医疗保险", "yīliáo bǎoxiǎn", "o seguro médico"],
@@ -878,12 +878,12 @@ export const insurance_terms = {
   ]
 };
 
-export const suffering_sufrir = {
+export const p6_198_suffering__sufrir = {
   meta: {
     en: "Suffering (sufrir)",
-    zh: "Suffering (sufrir)",
-    pinyin: "Suffering (sufrir)",
-    pt: "Suffering (sufrir)"
+    zh: "遭受 (sufrir)",
+    pinyin: "Zāoshòu (sufrir)",
+    pt: "Sofrer"
   },
   words: [
     ["sufro mucho", "I suffer a lot", "我受很多苦", "wǒ shòu hěn duō kǔ", "eu sofro muito"],
@@ -919,12 +919,12 @@ export const suffering_sufrir = {
   ]
 };
 
-export const enjoying_disfrutar = {
+export const p6_199_enjoying__disfrutar = {
   meta: {
     en: "Enjoying (disfrutar)",
-    zh: "Enjoying (disfrutar)",
-    pinyin: "Enjoying (disfrutar)",
-    pt: "Enjoying (disfrutar)"
+    zh: "享受 (disfrutar)",
+    pinyin: "Xiǎngshòu (disfrutar)",
+    pt: "Desfrutar"
   },
   words: [
     ["disfruto mucho", "I enjoy a lot", "我非常享受", "wǒ fēicháng xiǎngshòu", "eu aproveito muito"],
@@ -960,12 +960,12 @@ export const enjoying_disfrutar = {
   ]
 };
 
-export const real_estate_terms = {
+export const p6_200_real__estate__terms = {
   meta: {
     en: "Real Estate Terms",
-    zh: "Real Estate Terms",
-    pinyin: "Real Estate Terms",
-    pt: "Real Estate Terms"
+    zh: "房地产术语",
+    pinyin: "Fángdìchǎn Shùyǔ",
+    pt: "Termos Imobiliários"
   },
   words: [
     ["los bienes raíces", "real estate", "不动产", "bùdòngchǎn", "os bens imóveis"],
@@ -1031,12 +1031,12 @@ export const real_estate_terms = {
   ]
 };
 
-export const occurring_ocurrir = {
+export const p6_201_occurring__ocurrir = {
   meta: {
     en: "Occurring (ocurrir)",
-    zh: "Occurring (ocurrir)",
-    pinyin: "Occurring (ocurrir)",
-    pt: "Occurring (ocurrir)"
+    zh: "发生 (ocurrir)",
+    pinyin: "Fāshēng (ocurrir)",
+    pt: "Ocorrer"
   },
   words: [
     ["ocurre algo", "something happens", "发生了什么事", "fāshēng le shénme shì", "ocorre algo"],
@@ -1072,12 +1072,12 @@ export const occurring_ocurrir = {
   ]
 };
 
-export const happening_suceder = {
+export const p6_202_happening__suceder = {
   meta: {
     en: "Happening (suceder)",
-    zh: "Happening (suceder)",
-    pinyin: "Happening (suceder)",
-    pt: "Happening (suceder)"
+    zh: "发生 (suceder)",
+    pinyin: "Fāshēng (suceder)",
+    pt: "Suceder"
   },
   words: [
     ["sucede algo", "something happens", "发生了某事", "fāshēng le mǒushì", "sucede algo"],
@@ -1113,12 +1113,12 @@ export const happening_suceder = {
   ]
 };
 
-export const aviation_terms = {
+export const p6_203_aviation__terms = {
   meta: {
     en: "Aviation Terms",
-    zh: "Aviation Terms",
-    pinyin: "Aviation Terms",
-    pt: "Aviation Terms"
+    zh: "航空术语",
+    pinyin: "Hángkōng Shùyǔ",
+    pt: "Termos de Aviação"
   },
   words: [
     ["la aviación civil", "civil aviation", "民用航空", "mínyòng hángkōng", "a aviação civil"],
@@ -1184,12 +1184,12 @@ export const aviation_terms = {
   ]
 };
 
-export const protecting_proteger = {
+export const p6_204_protecting__proteger = {
   meta: {
     en: "Protecting (proteger)",
-    zh: "Protecting (proteger)",
-    pinyin: "Protecting (proteger)",
-    pt: "Protecting (proteger)"
+    zh: "保护 (proteger)",
+    pinyin: "Bǎohù (proteger)",
+    pt: "Proteger"
   },
   words: [
     ["protejo todo", "I protect everything", "我保护一切", "wǒ bǎohù yīqiè", "eu protejo tudo"],
@@ -1228,12 +1228,12 @@ export const protecting_proteger = {
   ]
 };
 
-export const defending_defender = {
+export const p6_205_defending__defender = {
   meta: {
     en: "Defending (defender)",
-    zh: "Defending (defender)",
-    pinyin: "Defending (defender)",
-    pt: "Defending (defender)"
+    zh: "防御 (defender)",
+    pinyin: "Fángyù (defender)",
+    pt: "Defender"
   },
   words: [
     ["defiendo ideas", "I defend ideas", "我捍卫理念", "wǒ hànwèi lǐniàn", "eu defendo ideias"],
@@ -1272,12 +1272,12 @@ export const defending_defender = {
   ]
 };
 
-export const logistics__shipping = {
+export const p6_206_logistics__shipping = {
   meta: {
     en: "Logistics & Shipping",
-    zh: "Logistics & Shipping",
-    pinyin: "Logistics & Shipping",
-    pt: "Logistics & Shipping"
+    zh: "物流与运输",
+    pinyin: "Wùliú yǔ Yùnshū",
+    pt: "Logística e Transporte"
   },
   words: [
     ["la logística internacional", "international logistics", "国际物流", "guójì wùliú", "a logística internacional"],
@@ -1343,12 +1343,12 @@ export const logistics__shipping = {
   ]
 };
 
-export const reducing_reducir = {
+export const p6_207_reducing__reducir = {
   meta: {
     en: "Reducing (reducir)",
-    zh: "Reducing (reducir)",
-    pinyin: "Reducing (reducir)",
-    pt: "Reducing (reducir)"
+    zh: "减少 (reducir)",
+    pinyin: "Jiǎnshǎo (reducir)",
+    pt: "Reduzir"
   },
   words: [
     ["reduzco costos", "I reduce costs", "我降低成本", "wǒ jiàngdī chéngběn", "eu reduzo custos"],
@@ -1384,12 +1384,12 @@ export const reducing_reducir = {
   ]
 };
 
-export const increasing_aumentar = {
+export const p6_208_increasing__aumentar = {
   meta: {
     en: "Increasing (aumentar)",
-    zh: "Increasing (aumentar)",
-    pinyin: "Increasing (aumentar)",
-    pt: "Increasing (aumentar)"
+    zh: "增加 (aumentar)",
+    pinyin: "Zēngjiā (aumentar)",
+    pt: "Aumentar"
   },
   words: [
     ["aumento precios", "I increase prices", "我提高价格", "wǒ tígāo jiàgé", "eu aumento preços"],
@@ -1425,12 +1425,12 @@ export const increasing_aumentar = {
   ]
 };
 
-export const pharmaceutical_terms = {
+export const p6_209_pharmaceutical__terms = {
   meta: {
     en: "Pharmaceutical Terms",
-    zh: "Pharmaceutical Terms",
-    pinyin: "Pharmaceutical Terms",
-    pt: "Pharmaceutical Terms"
+    zh: "制药术语",
+    pinyin: "Zhìyào Shùyǔ",
+    pt: "Termos Farmacêuticos"
   },
   words: [
     ["muy farmacéutico", "very pharmaceutical", "非常制药的", "fēicháng zhìyào de", "muito farmacêutico"],
@@ -1493,12 +1493,12 @@ export const pharmaceutical_terms = {
   ]
 };
 
-export const demonstrating_demostrar = {
+export const p6_210_demonstrating__demostrar = {
   meta: {
     en: "Demonstrating (demostrar)",
-    zh: "Demonstrating (demostrar)",
-    pinyin: "Demonstrating (demostrar)",
-    pt: "Demonstrating (demostrar)"
+    zh: "演示 (demostrar)",
+    pinyin: "Yǎnshì (demostrar)",
+    pt: "Demonstrar"
   },
   words: [
     ["demuestro amor", "I show love", "我表现爱意", "wǒ biǎoxiàn àiyì", "eu demonstro amor"],
@@ -1534,12 +1534,12 @@ export const demonstrating_demostrar = {
   ]
 };
 
-export const checking_comprobar = {
+export const p6_211_checking__comprobar = {
   meta: {
     en: "Checking (comprobar)",
-    zh: "Checking (comprobar)",
-    pinyin: "Checking (comprobar)",
-    pt: "Checking (comprobar)"
+    zh: "检查 (comprobar)",
+    pinyin: "Jiǎnchá (comprobar)",
+    pt: "Verificar"
   },
   words: [
     ["compruebo datos", "I check data", "我检查数据", "wǒ jiǎnchá shùjù", "eu verifico dados"],
@@ -1575,12 +1575,12 @@ export const checking_comprobar = {
   ]
 };
 
-export const energy__power = {
+export const p6_212_energy__power = {
   meta: {
     en: "Energy & Power",
-    zh: "Energy & Power",
-    pinyin: "Energy & Power",
-    pt: "Energy & Power"
+    zh: "能源与电力",
+    pinyin: "Néngyuán yǔ Diànlì",
+    pt: "Energia e Poder"
   },
   words: [
     ["la energía limpia", "clean energy", "清洁能源", "qīngjié néngyuán", "a energia limpa"],
@@ -1643,12 +1643,12 @@ export const energy__power = {
   ]
 };
 
-export const thanking_agradecer = {
+export const p6_213_thanking__agradecer = {
   meta: {
     en: "Thanking (agradecer)",
-    zh: "Thanking (agradecer)",
-    pinyin: "Thanking (agradecer)",
-    pt: "Thanking (agradecer)"
+    zh: "感谢 (agradecer)",
+    pinyin: "Gǎnxiè (agradecer)",
+    pt: "Agradecer"
   },
   words: [
     ["agradezco mucho", "I thank a lot", "我非常感谢", "wǒ fēicháng gǎnxiè", "eu agradeço muito"],
@@ -1684,12 +1684,12 @@ export const thanking_agradecer = {
   ]
 };
 
-export const congratulating_felicitar = {
+export const p6_214_congratulating__felicitar = {
   meta: {
     en: "Congratulating (felicitar)",
-    zh: "Congratulating (felicitar)",
-    pinyin: "Congratulating (felicitar)",
-    pt: "Congratulating (felicitar)"
+    zh: "祝贺 (felicitar)",
+    pinyin: "Zhùhè (felicitar)",
+    pt: "Felicitar"
   },
   words: [
     ["felicito mucho", "I congratulate a lot", "我祝贺很多", "wǒ zhùhè hěn duō", "eu parabenizo muito"],
@@ -1725,12 +1725,12 @@ export const congratulating_felicitar = {
   ]
 };
 
-export const automotive_terms = {
+export const p6_215_automotive__terms = {
   meta: {
     en: "Automotive Terms",
-    zh: "Automotive Terms",
-    pinyin: "Automotive Terms",
-    pt: "Automotive Terms"
+    zh: "汽车术语",
+    pinyin: "Qìchē Shùyǔ",
+    pt: "Termos Automotivos"
   },
   words: [
     ["muy automotriz", "very automotive", "非常汽车的", "fēicháng qìchē de", "muito automotivo"],
@@ -1796,12 +1796,12 @@ export const automotive_terms = {
   ]
 };
 
-export const suggesting_sugerir = {
+export const p6_216_suggesting__sugerir = {
   meta: {
     en: "Suggesting (sugerir)",
-    zh: "Suggesting (sugerir)",
-    pinyin: "Suggesting (sugerir)",
-    pt: "Suggesting (sugerir)"
+    zh: "建议 (sugerir)",
+    pinyin: "Jiànyì (sugerir)",
+    pt: "Sugerir"
   },
   words: [
     ["sugiero algo", "I suggest something", "我建议一些事", "wǒ jiànyì yīxiē shì", "eu sugiro algo"],
@@ -1837,12 +1837,12 @@ export const suggesting_sugerir = {
   ]
 };
 
-export const recommending_recomendar = {
+export const p6_217_recommending__recomendar = {
   meta: {
     en: "Recommending (recomendar)",
-    zh: "Recommending (recomendar)",
-    pinyin: "Recommending (recomendar)",
-    pt: "Recommending (recomendar)"
+    zh: "推荐 (recomendar)",
+    pinyin: "Tuījiàn (recomendar)",
+    pt: "Recomendar"
   },
   words: [
     ["recomiendo mucho", "I recommend a lot", "我强烈推荐", "wǒ qiángliè tuījiàn", "eu recomendo muito"],
@@ -1878,12 +1878,12 @@ export const recommending_recomendar = {
   ]
 };
 
-export const subjunctive_triggers = {
+export const p6_218_subjunctive__triggers = {
   meta: {
     en: "Subjunctive Triggers",
-    zh: "Subjunctive Triggers",
-    pinyin: "Subjunctive Triggers",
-    pt: "Subjunctive Triggers"
+    zh: "虚拟语气触发词",
+    pinyin: "Xūnǐ Yǔqì Chùfā Cí",
+    pt: "Gatilhos do Subjuntivo"
   },
   words: [
     ["quiero que vengas", "I want you to come", "我想让你来", "wǒ xiǎng ràng nǐ lái", "eu quero que você venha"],
@@ -1949,12 +1949,12 @@ export const subjunctive_triggers = {
   ]
 };
 
-export const convincing_convencer = {
+export const p6_219_convincing__convencer = {
   meta: {
     en: "Convincing (convencer)",
-    zh: "Convincing (convencer)",
-    pinyin: "Convincing (convencer)",
-    pt: "Convincing (convencer)"
+    zh: "说服 (convencer)",
+    pinyin: "Shuōfú (convencer)",
+    pt: "Convencer"
   },
   words: [
     ["convenzo fácil", "I convince easily", "我很容易说服", "wǒ hěn róngyì shuōfú", "eu convenço facilmente"],
@@ -1990,12 +1990,12 @@ export const convincing_convencer = {
   ]
 };
 
-export const trusting_confiar = {
+export const p6_220_trusting__confiar = {
   meta: {
     en: "Trusting (confiar)",
-    zh: "Trusting (confiar)",
-    pinyin: "Trusting (confiar)",
-    pt: "Trusting (confiar)"
+    zh: "信任 (confiar)",
+    pinyin: "Xìnrèn (confiar)",
+    pt: "Confiar"
   },
   words: [
     ["confío mucho", "I trust a lot", "我非常信任", "wǒ fēicháng xìnrèn", "eu confio muito"],
