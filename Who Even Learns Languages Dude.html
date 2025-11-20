@@ -333,24 +333,28 @@
         // Chinese Learners Data (based on regional and country data)
         const chineseData = {
             labels: [
-                'Southeast Asian Languages',
                 'English Speakers',
                 'Korean Speakers',
+                'Khmer Speakers (Cambodian)',
                 'Japanese Speakers',
                 'Thai Speakers',
+                'Vietnamese Speakers',
+                'Malay/Indonesian Speakers',
                 'French Speakers',
                 'Other Languages'
             ],
             datasets: [{
-                label: 'Chinese Learners by Native Language/Region',
-                data: [30, 25, 15, 10, 8, 5, 7],
+                label: 'Chinese Learners by Native Language',
+                data: [25, 15, 12, 10, 10, 8, 6, 5, 9],
                 backgroundColor: [
-                    '#FF6384',
                     '#36A2EB',
                     '#FFCE56',
+                    '#FF6384',
                     '#4BC0C0',
                     '#9966FF',
                     '#FF9F40',
+                    '#FF99CC',
+                    '#99CCFF',
                     '#C9CBCF'
                 ],
                 borderWidth: 3,
@@ -414,7 +418,7 @@
 
             charts.chinese = new Chart(
                 document.getElementById('chineseChart').getContext('2d'),
-                chartConfig(chineseData, 'Who Learns Chinese? (By Native Language/Region)')
+                chartConfig(chineseData, 'Who Learns Chinese? (By Native Language)')
             );
         }
 
