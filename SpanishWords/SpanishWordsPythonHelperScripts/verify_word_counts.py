@@ -24,7 +24,7 @@ with open('SpanishWordsOverview.csv', 'r', encoding='utf-8') as f:
     
     for row in reader:
         pack_num = row['Pack_Number']
-        stated_count = int(row['Word_Count'])
+        stated_count = int(row['total_words_actual'])
         spanish_words_str = row['Spanish_Words']
         
         # Extract array content between [ and ]
@@ -36,7 +36,7 @@ with open('SpanishWordsOverview.csv', 'r', encoding='utf-8') as f:
         words = array_content.split(',')
         actual_count = len(words)
         
-        match = "✓" if stated_count == actual_count else "✗ MISMATCH"
+        match = "[OK]" if stated_count == actual_count else "[MISMATCH]"
         
         if stated_count != actual_count:
             mismatches.append({
@@ -59,4 +59,4 @@ if mismatches:
     for m in mismatches:
         print(f"  Pack {m['pack']}: Word_Count={m['stated']}, Array has {m['actual']} words (diff: {m['diff']})")
 else:
-    print("\n✓ All Word_Count values match their arrays!")
+    print("\n[OK] All Word_Count values match their arrays!")

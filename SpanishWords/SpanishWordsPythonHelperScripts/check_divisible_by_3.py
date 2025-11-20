@@ -26,12 +26,12 @@ with open('SpanishWordsOverview.csv', 'r', encoding='utf-8') as f:
     
     for row in reader:
         pack_num = row['Pack_Number']
-        word_count = int(row['auto_word_count'])
+        word_count = int(row['total_words_actual'])
         
         divisible = word_count % 3 == 0
         quotient = word_count // 3
         
-        status = "✓ OK" if divisible else "✗ ERROR"
+        status = "[OK]" if divisible else "[ERROR]"
         
         if not divisible:
             issues.append({
@@ -45,8 +45,8 @@ with open('SpanishWordsOverview.csv', 'r', encoding='utf-8') as f:
 
 print("-" * 40)
 print(f"\nResults:")
-print(f"  ✓ Divisible by 3: {len(good)} packs")
-print(f"  ✗ NOT divisible by 3: {len(issues)} packs")
+print(f"  [OK] Divisible by 3: {len(good)} packs")
+print(f"  [ERROR] NOT divisible by 3: {len(issues)} packs")
 
 if issues:
     print(f"\nPacks with issues:")

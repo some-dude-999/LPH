@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,7 +130,7 @@
             padding: 15px;
             border-radius: 8px;
             border-left: 4px solid #667eea;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .stat-label {
@@ -332,8 +333,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .error {
@@ -382,7 +388,8 @@
                 font-size: 0.85rem;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 10px 8px;
             }
 
@@ -401,49 +408,64 @@
 
         /* Act color coding */
         .act-1 {
-            background-color: #e3f2fd !important; /* Light Blue */
+            background-color: #e3f2fd !important;
+            /* Light Blue */
             border-left: 4px solid #2196f3 !important;
         }
 
         .act-2 {
-            background-color: #f3e5f5 !important; /* Light Purple */
+            background-color: #f3e5f5 !important;
+            /* Light Purple */
             border-left: 4px solid #9c27b0 !important;
         }
 
         .act-3 {
-            background-color: #e8f5e9 !important; /* Light Green */
+            background-color: #e8f5e9 !important;
+            /* Light Green */
             border-left: 4px solid #4caf50 !important;
         }
 
         .act-4 {
-            background-color: #fff3e0 !important; /* Light Orange */
+            background-color: #fff3e0 !important;
+            /* Light Orange */
             border-left: 4px solid #ff9800 !important;
         }
 
         .act-5 {
-            background-color: #fce4ec !important; /* Light Pink */
+            background-color: #fce4ec !important;
+            /* Light Pink */
             border-left: 4px solid #e91e63 !important;
         }
 
         .act-6 {
-            background-color: #fff9c4 !important; /* Light Yellow */
+            background-color: #fff9c4 !important;
+            /* Light Yellow */
             border-left: 4px solid #fdd835 !important;
         }
 
         .act-7 {
-            background-color: #ffebee !important; /* Light Red */
+            background-color: #ffebee !important;
+            /* Light Red */
             border-left: 4px solid #f44336 !important;
         }
 
         .act-continuity-error {
-            background-color: #ffcdd2 !important; /* Red warning */
+            background-color: #ffcdd2 !important;
+            /* Red warning */
             border: 3px solid #c62828 !important;
             animation: pulse-error 2s infinite;
         }
 
         @keyframes pulse-error {
-            0%, 100% { box-shadow: 0 0 5px #c62828; }
-            50% { box-shadow: 0 0 20px #c62828; }
+
+            0%,
+            100% {
+                box-shadow: 0 0 5px #c62828;
+            }
+
+            50% {
+                box-shadow: 0 0 20px #c62828;
+            }
         }
 
         .act-legend {
@@ -488,8 +510,28 @@
             color: #b71c1c;
             margin: 5px 0;
         }
+
+        .base-count-cell {
+            font-weight: bold;
+            color: #4a5568;
+        }
+
+        .expected-count-cell {
+            color: #718096;
+        }
+
+        .error-cell {
+            background-color: #fed7d7;
+            color: #c53030;
+            font-weight: bold;
+        }
+
+        .success-cell {
+            color: #2f855a;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -644,7 +686,7 @@
 
         // Convert number to Roman numeral
         function romanize(num) {
-            const lookup = {7: 'VII', 6: 'VI', 5: 'V', 4: 'IV', 3: 'III', 2: 'II', 1: 'I'};
+            const lookup = { 7: 'VII', 6: 'VI', 5: 'V', 4: 'IV', 3: 'III', 2: 'II', 1: 'I' };
             return lookup[num] || num.toString();
         }
 
@@ -654,34 +696,26 @@
             let totalWords = 0;
             let discrepancies = [];
 
+            // Check continuity once for all rows
+            const continuityErrors = checkActContinuity(rows);
+
             rows.forEach((row, index) => {
-                const packNum = row[0];
-                const autoWordCount = parseInt(row[4]) || 0;
-                const manualBaseCount = parseInt(row[5]) || 0;
-                const autoBaseChecker = parseInt(row[6]) || 0;
+                // Columns: 0:Pack, 1:Title, 2:Act, 3:Words, 4:ManualBase, 5:Expected, 6:Actual
+                const manualBase = parseInt(row[4]) || 0;
+                const expected = parseInt(row[5]) || 0;
+                const actual = parseInt(row[6]) || 0;
 
-                totalWords += autoWordCount;
-                totalBaseWords += manualBaseCount;
+                totalBaseWords += manualBase;
+                totalWords += actual;
 
-                // Check for discrepancies
-                const expectedWords = manualBaseCount * 3;
-                if (autoWordCount !== expectedWords) {
+                if (expected !== actual) {
                     discrepancies.push({
-                        pack: packNum,
-                        issue: `Pack ${packNum}: auto_word_count (${autoWordCount}) ≠ manual_base_word_count × 3 (${expectedWords})`
-                    });
-                }
-
-                if (autoWordCount !== autoBaseChecker) {
-                    discrepancies.push({
-                        pack: packNum,
-                        issue: `Pack ${packNum}: auto_word_count (${autoWordCount}) ≠ auto_base_word_checker (${autoBaseChecker})`
+                        pack: row[0],
+                        expected: expected,
+                        actual: actual
                     });
                 }
             });
-
-            // Check act continuity
-            const continuityErrors = checkActContinuity(rows);
 
             return {
                 totalBaseWords,
@@ -717,8 +751,6 @@
             if (isOverview) {
                 const hasAnyIssues = stats.hasDiscrepancies || stats.hasContinuityErrors;
                 const statusClass = hasAnyIssues ? 'has-discrepancies' : 'all-good';
-                const alertClass = hasAnyIssues ? 'discrepancy-alert' : 'success-alert';
-                const alertTitle = hasAnyIssues ? '⚠️ Issues Found' : '✅ All Packs Valid';
 
                 let alertMessage = '';
                 if (stats.hasDiscrepancies && stats.hasContinuityErrors) {
@@ -746,69 +778,43 @@
 
                 container.innerHTML = `
                     <div class="stats-summary ${statusClass}">
-                        <div class="${alertClass}">
-                            <h3>${alertTitle}</h3>
-                            <p>${alertMessage}</p>
+                        <div class="stat-card">
+                            <div class="stat-label">Total Words (Actual)</div>
+                            <div class="stat-value">${stats.totalWords.toLocaleString()}</div>
                         </div>
-                        ${continuityHTML}
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <div class="stat-label">Total Base Words (All Packs)</div>
-                                <div class="stat-value">${stats.totalBaseWords.toLocaleString()}</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Total Words (All Packs)</div>
-                                <div class="stat-value ${stats.totalWords === stats.expectedTotalWords ? 'success' : 'error'}">
-                                    ${stats.totalWords.toLocaleString()}
-                                </div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Expected Total Words (Base × 3)</div>
-                                <div class="stat-value">${stats.expectedTotalWords.toLocaleString()}</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Act Continuity</div>
-                                <div class="stat-value ${stats.hasContinuityErrors ? 'error' : 'success'}">
-                                    ${stats.hasContinuityErrors ? 'ERRORS FOUND' : 'CONTINUOUS'}
-                                </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Expected Total Words (Base × 3)</div>
+                            <div class="stat-value">${stats.expectedTotalWords.toLocaleString()}</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Act Continuity</div>
+                            <div class="stat-value ${stats.hasContinuityErrors ? 'error' : 'success'}">
+                                ${stats.hasContinuityErrors ? 'ERRORS FOUND' : 'CONTINUOUS'}
                             </div>
                         </div>
                     </div>
+                    ${continuityHTML}
+                    <div class="alert ${stats.hasDiscrepancies ? 'alert-danger' : 'alert-success'}" style="margin-top: 20px; padding: 15px; border-radius: 8px; background-color: ${stats.hasDiscrepancies ? '#fed7d7' : '#c6f6d5'}; color: ${stats.hasDiscrepancies ? '#c53030' : '#2f855a'};">
+                        <strong>${stats.hasDiscrepancies ? '⚠️ Issues Found:' : '✅ Status:'}</strong> ${alertMessage}
+                    </div>
                 `;
             } else {
-                const statusClass = stats.hasDiscrepancies ? 'has-discrepancies' : 'all-good';
-                const alertClass = stats.hasDiscrepancies ? 'discrepancy-alert' : 'success-alert';
-                const alertTitle = stats.hasDiscrepancies ? '⚠️ Pack Has Issues' : '✅ Pack Valid';
-                const alertMessage = stats.hasDiscrepancies
-                    ? `Word count (${stats.totalWords}) does not equal base words × 3 (${stats.expectedWords}).`
-                    : `Word count matches expected value (${stats.baseWords} base words × 3).`;
-
                 container.innerHTML = `
-                    <div class="stats-summary ${statusClass}">
-                        <div class="${alertClass}">
-                            <h3>${alertTitle}</h3>
-                            <p>${alertMessage}</p>
+                    <div class="stats-summary ${stats.hasDiscrepancies ? 'has-discrepancies' : 'all-good'}">
+                        <div class="stat-card">
+                            <div class="stat-label">Total Words (This Pack)</div>
+                            <div class="stat-value ${stats.isValid ? 'success' : 'error'}">
+                                ${stats.totalWords}
+                            </div>
                         </div>
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <div class="stat-label">Base Words (This Pack)</div>
-                                <div class="stat-value">${stats.baseWords}</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Total Words (This Pack)</div>
-                                <div class="stat-value ${stats.isValid ? 'success' : 'error'}">
-                                    ${stats.totalWords}
-                                </div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Expected Words (Base × 3)</div>
-                                <div class="stat-value">${stats.expectedWords}</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-label">Validation Status</div>
-                                <div class="stat-value ${stats.isValid ? 'success' : 'error'}">
-                                    ${stats.isValid ? 'VALID' : 'INVALID'}
-                                </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Expected Words (Base × 3)</div>
+                            <div class="stat-value">${stats.expectedWords}</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Validation Status</div>
+                            <div class="stat-value ${stats.isValid ? 'success' : 'error'}">
+                                ${stats.isValid ? 'VALID' : 'INVALID'}
                             </div>
                         </div>
                     </div>
@@ -823,7 +829,7 @@
             let maxBaseWords = -Infinity;
 
             rows.forEach(row => {
-                const baseWordCount = parseInt(row[5]) || 0;
+                const baseWordCount = parseInt(row[4]) || 0; // Manual Base is index 4
                 minBaseWords = Math.min(minBaseWords, baseWordCount);
                 maxBaseWords = Math.max(maxBaseWords, baseWordCount);
             });
@@ -833,7 +839,7 @@
             const INCREMENT = 2;
 
             rows.forEach(row => {
-                const baseWordCount = parseInt(row[5]) || 0;
+                const baseWordCount = parseInt(row[4]) || 0;
                 const rangeStart = Math.floor((baseWordCount - minBaseWords) / INCREMENT) * INCREMENT + minBaseWords;
                 const rangeEnd = rangeStart + INCREMENT;
                 const rangeLabel = `${rangeStart}-${rangeEnd}`;
@@ -889,7 +895,7 @@
                         },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     const value = context.parsed.y || 0;
                                     const percentage = ((value / rows.length) * 100).toFixed(1);
                                     return `${value} packs (${percentage}%)`;
@@ -950,6 +956,18 @@
                 if (cell.tagName === 'TH') return; // Don't hide header
                 cell.classList.toggle('hidden-column');
             });
+        }
+
+        // Helper to escape HTML
+        function escapeHtml(text) {
+            if (!text) return '';
+            return text
+                .toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
         }
 
         // Create HTML table from CSV data
@@ -1015,29 +1033,22 @@
                     let displayValue = escapeHtml(cell);
 
                     // Apply conditional formatting for overview counts
+                    // 4: Manual Base, 5: Expected, 6: Actual
                     if (isOverview && (index === 4 || index === 5 || index === 6)) {
-                        const autoWordCount = parseInt(row[4]) || 0;
-                        const manualBaseCount = parseInt(row[5]) || 0;
-                        const autoBaseChecker = parseInt(row[6]) || 0;
-                        const expectedWords = manualBaseCount * 3;
+                        const manualBase = parseInt(row[4]) || 0;
+                        const expected = parseInt(row[5]) || 0;
+                        const actual = parseInt(row[6]) || 0;
 
-                        if (index === 4) { // auto_word_count
-                            if (autoWordCount === expectedWords && autoWordCount === autoBaseChecker) {
-                                classes = 'count-match';
+                        if (index === 4) { // Manual Base
+                            classes = 'base-count-cell';
+                        } else if (index === 5) { // Expected
+                            classes = 'expected-count-cell';
+                        } else if (index === 6) { // Actual
+                            if (actual !== expected) {
+                                classes = 'error-cell';
+                                displayValue += ` ⚠️ (Exp: ${expected})`;
                             } else {
-                                classes = 'count-mismatch';
-                            }
-                        } else if (index === 5) { // manual_base_word_count
-                            if (expectedWords === autoWordCount) {
-                                classes = 'count-match';
-                            } else {
-                                classes = 'count-mismatch';
-                            }
-                        } else if (index === 6) { // auto_base_word_checker
-                            if (autoBaseChecker === autoWordCount) {
-                                classes = 'count-match';
-                            } else {
-                                classes = 'count-mismatch';
+                                classes = 'success-cell';
                             }
                         }
                     }
@@ -1050,13 +1061,6 @@
 
             html += '</table>';
             return html;
-        }
-
-        // Escape HTML to prevent XSS
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
         }
 
         // Update info bar
@@ -1155,4 +1159,5 @@
         });
     </script>
 </body>
+
 </html>

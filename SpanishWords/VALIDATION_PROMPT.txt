@@ -17,11 +17,11 @@ VALIDATION STEPS:
    -----------------------
    For each pack in SpanishWordsOverview.csv:
 
-   a) Verify auto_word_count (column 4) equals the actual count of words in Spanish_Words array (column 3)
-   b) Verify auto_word_count is divisible by 3 (each base word must have exactly 3 examples)
-   c) Verify manual_base_word_count (column 5) = auto_word_count ÷ 3
-   d) Verify auto_base_word_checker (column 6) = manual_base_word_count × 3
-   e) Verify auto_word_count = auto_base_word_checker (if not, pack needs fixing)
+   a) Verify total_words_actual (column 6) equals the actual count of words in Spanish_Words array (column 3)
+   b) Verify total_words_actual is divisible by 3 (each base word must have exactly 3 examples)
+   c) Verify manual_base_word_count (column 4) = total_words_expected (column 5) ÷ 3
+   d) Verify total_words_expected = manual_base_word_count × 3
+   e) Verify total_words_actual = total_words_expected (if not, pack needs fixing)
 
    Use helper script: python3 SpanishWordsPythonHelperScripts/check_divisible_by_3.py
 

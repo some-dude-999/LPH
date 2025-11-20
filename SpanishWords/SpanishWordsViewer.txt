@@ -6,10 +6,10 @@ LAST UPDATED: 2025-11-20 - Added act color coding and continuous act checker to 
 
 DATA SOURCES:
 - CSV Files (Local): 251 CSV files in the SpanishWords directory
-  * SpanishWordsOverview.csv - Master index with pack metadata (Pack_Number, Pack_Title, Difficulty_Act, Spanish_Words, auto_word_count, manual_base_word_count, auto_base_word_checker)
+  * SpanishWordsOverview.csv - Master index with pack metadata (Pack_Number, Pack_Title, Difficulty_Act, Spanish_Words, manual_base_word_count, total_words_expected, total_words_actual)
   * SpanishWords1.csv through SpanishWords250.csv - Individual vocabulary packs
 - File Structure:
-  * Overview CSV: Pack_Number, Pack_Title, Difficulty_Act, Spanish_Words (array), auto_word_count, manual_base_word_count, auto_base_word_checker
+  * Overview CSV: Pack_Number, Pack_Title, Difficulty_Act, Spanish_Words (array), manual_base_word_count, total_words_expected, total_words_actual
   * Pack CSV: spanish, english, chinese, pinyin, portuguese
   * Each pack contains 24-45 translation entries (must be divisible by 3)
   * Total: ~10,685 vocabulary entries across all packs
@@ -58,8 +58,8 @@ FUNCTIONALITY:
   * ✅ Statistics Summary Section - Shows totals and validation status at a glance
   * ✅ Conditional Color Formatting:
     - GREEN (count-match): Values that match expected calculations
-    - RED (count-mismatch): Discrepancies detected (auto_word_count ≠ manual_base_word_count × 3)
-  * ✅ Discrepancy Detection - Automatic validation that auto_word_count === manual_base_word_count × 3
+    - RED (count-mismatch): Discrepancies detected (total_words_actual ≠ total_words_expected)
+  * ✅ Discrepancy Detection - Automatic validation that total_words_actual === total_words_expected
   * ✅ Visual Alerts:
     - Yellow background: Discrepancies found
     - Green background: All packs valid
@@ -129,8 +129,8 @@ NOTES:
   * Total base words and total words are calculated and displayed for both individual packs and overview
   * Expected word count (base words × 3) is shown and validated
 - Data Validation Rules:
-  * For Overview: auto_word_count should equal manual_base_word_count × 3
-  * For Overview: auto_word_count should equal auto_base_word_checker
+  * For Overview: total_words_expected should equal manual_base_word_count × 3
+  * For Overview: total_words_actual should equal total_words_expected
   * For Individual Packs: Total words should be divisible by 3 (each base word has 3 examples)
   * For Overview: Acts must progress continuously without jumping backward (Act I → Act II → Act III, NOT Act I → Act II → Act I)
   * Invalid act designations are flagged (missing or malformed act strings)
