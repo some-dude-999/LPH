@@ -114,6 +114,11 @@ https://some-dude-999.github.io/LPH/ChineseWords/Jsmodules/pack96-describing_pro
 https://some-dude-999.github.io/LPH/ChineseWords/Jsmodules/pack97-solutions_and_methods.js - [Add description for pack97-solutions_and_methods.js]
 https://some-dude-999.github.io/LPH/ChineseWords/Jsmodules/pack98-education_and_learning.js - [Add description for pack98-education_and_learning.js]
 https://some-dude-999.github.io/LPH/ChineseWords/Jsmodules/pack99-career_development.js - [Add description for pack99-career_development.js]
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act1-foundation.js - Act I Foundation English vocabulary module (packs 1-49) - clean readable version
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act2-building-blocks.js - Act II Building Blocks English vocabulary module (packs 50-86) - clean readable version
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act3-everyday-life.js - Act III Everyday Life English vocabulary module (packs 87-117) - clean readable version
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act4-expanding-horizons.js - Act IV Expanding Horizons English vocabulary module (packs 118-135) - clean readable version
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act5-advanced-mastery.js - Act V Advanced Mastery English vocabulary module (packs 136-160) - clean readable version
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js - Act I Foundation vocabulary module (packs 1-30) - readable development version
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act2-building-blocks.js - Act II Building Blocks vocabulary module (packs 31-60) - readable development version
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act3-daily-life.js - Act III Daily Life vocabulary module (packs 61-100) - readable development version
@@ -231,6 +236,11 @@ https://some-dude-999.github.io/LPH/ChineseWords/Jsmodules-js/pack96-describing_
 https://some-dude-999.github.io/LPH/ChineseWords/Jsmodules-js/pack97-solutions_and_methods-js.js - [Add description for pack97-solutions_and_methods-js.js]
 https://some-dude-999.github.io/LPH/ChineseWords/Jsmodules-js/pack98-education_and_learning-js.js - [Add description for pack98-education_and_learning-js.js]
 https://some-dude-999.github.io/LPH/ChineseWords/Jsmodules-js/pack99-career_development-js.js - [Add description for pack99-career_development-js.js]
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act1-foundation-js.js - Act I Foundation English vocabulary module (packs 1-49) - compressed production version
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act2-building-blocks-js.js - Act II Building Blocks English vocabulary module (packs 50-86) - compressed production version
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act3-everyday-life-js.js - Act III Everyday Life English vocabulary module (packs 87-117) - compressed production version
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js - Act IV Expanding Horizons English vocabulary module (packs 118-135) - compressed production version
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js - Act V Advanced Mastery English vocabulary module (packs 136-160) - compressed production version
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules-js/act1-foundation-js.js - Act I Foundation vocabulary module (packs 1-30) - compressed production version
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules-js/act2-building-blocks-js.js - Act II Building Blocks vocabulary module (packs 31-60) - compressed production version
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules-js/act3-daily-life-js.js - Act III Daily Life vocabulary module (packs 61-100) - compressed production version
