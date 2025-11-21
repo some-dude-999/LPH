@@ -1,0 +1,480 @@
+ENGLISH VOCABULARY PACK TRANSLATION RULES - ENHANCED VERSION
+=============================================================
+
+OVERVIEW
+--------
+
+This document defines the rules for translating English vocabulary packs into 4 target languages to produce files named EnglishWords1.csv, EnglishWords2.csv, etc.
+
+Source Language: English
+Target Languages: Chinese (Simplified), Pinyin, Spanish, Portuguese (Brazilian)
+
+================================================================================
+
+CSV COLUMN ORDER
+----------------
+
+english,chinese,pinyin,spanish,portuguese
+
+================================================================================
+
+CRITICAL FORMAT RULE
+--------------------
+
+ONE English entry per row. This entry can be:
+- A phrase: "thank you"
+- A sentence chunk: "I'm sorry"
+- An expression: "nice to meet you"
+
+NEVER combine alternatives with slashes in any column.
+
+WRONG:  hello,你好,nǐ hǎo,hola/buenos días,olá
+RIGHT:  hello,你好,nǐ hǎo,hola,olá
+
+================================================================================
+
+GENDER HANDLING
+---------------
+
+English has minimal grammatical gender (only pronouns: he/she/it).
+However, two target languages have grammatical gender:
+- Spanish
+- Portuguese
+
+DEFAULT RULE: Use masculine form as the default.
+
+English         Spanish         Portuguese
+-------         -------         ----------
+welcome         bienvenido      bem-vindo
+friend          amigo           amigo
+teacher         maestro         professor
+
+EXCEPTION - When English specifies gender:
+
+When the English source specifies gender, translate accordingly:
+
+English         Spanish         Portuguese
+-------         -------         ----------
+boyfriend       novio           namorado
+girlfriend      novia           namorada
+actress         actriz          atriz
+waiter          mesero          garçom
+waitress        mesera          garçonete
+
+================================================================================
+
+FORMALITY HANDLING
+------------------
+
+SPANISH FORMALITY (tú vs usted)
+
+Default: Use informal "tú" forms unless English implies formality.
+Formal indicators in English: "sir," "ma'am," "Mr.," "Mrs.," formal context
+
+English                 Spanish (informal)      Spanish (formal)
+-------                 -----------------       ----------------
+how are you             ¿cómo estás?            ¿cómo está usted?
+thank you sir           -                       gracias señor
+please sit down         siéntate                siéntese
+
+PORTUGUESE FORMALITY (você vs o senhor)
+
+Default: Use "você" (standard Brazilian Portuguese)
+Use "o senhor/a senhora" for formal contexts
+
+English                 Portuguese (default)    Portuguese (formal)
+-------                 -------------------     -------------------
+how are you             como vai você?          como vai o senhor?
+please sit down         sente-se                sente-se por favor
+
+CHINESE FORMALITY (你 vs 您)
+
+Default: Use 你 (nǐ)
+Use 您 (nín) when English has formal markers
+
+English                 Chinese (default)       Chinese (formal)
+-------                 ----------------        ----------------
+how are you             你好吗                   您好吗
+thank you sir           -                       谢谢您，先生
+
+================================================================================
+
+PINYIN RULES - CRITICAL
+-----------------------
+
+Pinyin is the romanization of Chinese. These rules are NON-NEGOTIABLE.
+
+1. TONE MARKS ARE REQUIRED
+
+WRONG:  ni hao
+RIGHT:  nǐ hǎo
+
+Use standard tone marks:
+- First tone (flat): ā ē ī ō ū ǖ (macron)
+- Second tone (rising): á é í ó ú ǘ (acute)
+- Third tone (dip): ǎ ě ǐ ǒ ǔ ǚ (caron)
+- Fourth tone (falling): à è ì ò ù ǜ (grave)
+- Neutral tone: no mark
+
+2. TONE SANDHI RULES
+
+不 (bù) changes to bú before 4th tone:
+
+Chinese     WRONG       RIGHT
+-------     -----       -----
+不要        bù yào      bú yào
+不对        bù duì      bú duì
+不客气      bù kèqi     bú kèqi
+
+一 (yī) changes based on following tone:
+
+Following Tone      一 Becomes      Example     Pinyin
+--------------      ----------      -------     ------
+4th tone            yí              一个        yí gè
+1st/2nd/3rd tone    yì              一天        yì tiān
+Counting/alone      yī              一二三      yī èr sān
+
+3. NEUTRAL TONE IN REDUPLICATION
+
+Chinese     WRONG       RIGHT
+-------     -----       -----
+谢谢        xiè xiè     xièxie
+妈妈        mā mā       māma
+看看        kàn kàn     kànkan
+
+4. COMPOUND WORD SPACING
+
+Compound words - NO space:
+
+Chinese     WRONG       RIGHT
+-------     -----       -----
+再见        zài jiàn    zàijiàn
+谢谢        xiè xie     xièxie
+朋友        péng you    péngyou
+
+Phrases - space between words:
+
+Chinese     Pinyin
+-------     ------
+早上好      zǎoshang hǎo
+你好吗      nǐ hǎo ma
+
+5. APOSTROPHE FOR SYLLABLE BOUNDARIES
+
+Use apostrophe when syllable starting with a/o/e follows another syllable:
+
+Chinese     WRONG       RIGHT
+-------     -----       -----
+女儿        nǚer        nǚ'ér
+西安        xian        Xī'ān
+
+================================================================================
+
+NATURALNESS IS PARAMOUNT
+------------------------
+
+NATURAL TRANSLATIONS ARE ALWAYS BETTER THAN LITERAL ONES.
+
+When choosing between translations, always ask: "Would a native speaker actually say this?"
+
+If a translation is grammatically correct but sounds awkward, stiff, or textbook-like, DO NOT USE IT. Find the natural equivalent.
+
+WRONG APPROACH:  Translate word-by-word, then check if it's grammatically correct
+RIGHT APPROACH:  Think "how would a native speaker express this idea?"
+
+Examples:
+
+English             Literal (BAD)           Natural (GOOD)
+-------             -------------           --------------
+yes please          好的请                   好的 / 好啊
+thanks anyway       感谢无论如何              还是谢谢 / 谢谢啦
+excuse me (passing) 原谅我                   借过 / 让一下
+okay then           好的那么                  那好吧 / 行吧
+my bad              我的坏                   我的错 / 是我不好
+
+This principle applies to ALL target languages. When in doubt, choose the phrase that sounds like everyday speech, not a textbook.
+
+================================================================================
+
+TRANSLATION AMBIGUITY RULES
+---------------------------
+
+VERB FORM RULE
+
+English phrases often have conjugated verbs. Match the conjugation in target languages.
+
+English             Chinese         Spanish             Portuguese
+-------             -------         -------             ----------
+I'm coming          我来了          estoy viniendo      estou chegando
+he's here           他在这里        él está aquí        ele está aqui
+they're leaving     他们走了        se van              eles estão saindo
+
+For standalone verbs or infinitives, use these defaults:
+
+English (base form)     Chinese         Spanish (infinitive)    Portuguese (infinitive)
+-------------------     -------         -------------------     ----------------------
+eat                     吃              comer                   comer
+speak                   说              hablar                  falar
+go                      去              ir                      ir
+
+PLURAL RULE
+
+Match the plurality of the English source.
+
+English             Chinese         Spanish             Portuguese
+-------             -------         -------             ----------
+one apple           一个苹果        una manzana         uma maçã
+two hands           两只手          dos manos           duas mãos
+many people         很多人          mucha gente         muitas pessoas
+
+MULTIPLE VALID TRANSLATIONS RULE
+
+When multiple translations are valid, pick the MOST COMMON AND NEUTRAL option.
+
+Criteria for selection (in order of priority):
+1. Most frequently used by native speakers
+2. Most universally understood (avoid regional variants)
+3. Most neutral in register (not too formal, not too casual)
+4. Shortest/simplest if all else equal
+
+English     Options                     Pick            Why
+-------     -------                     ----            ---
+hello       hola/buenos días/qué tal    hola            Most common, neutral
+sorry       lo siento/perdón/disculpa   lo siento       Most common
+okay        vale/está bien/de acuerdo   está bien       Most universal
+
+================================================================================
+
+HANDLING CONTRACTIONS
+---------------------
+
+English contractions should be translated as their expanded meaning, matching tense and person.
+
+English         Expansion           Chinese         Spanish             Portuguese
+-------         ---------           -------         -------             ----------
+I'm fine        I am fine           我很好          estoy bien          estou bem
+you're right    you are right       你说得对        tienes razón        você está certo
+he's coming     he is coming        他来了          él viene            ele está vindo
+it's okay       it is okay          没关系          está bien           está bem
+we're here      we are here         我们在这里      estamos aquí        estamos aqui
+they're nice    they are nice       他们很好        son amables         eles são legais
+I've seen it    I have seen it      我看过了        lo he visto         eu vi
+I'll do it      I will do it        我会做的        lo haré             eu vou fazer
+I'd love to     I would love to     我很愿意        me encantaría       eu adoraria
+
+================================================================================
+
+HANDLING ENGLISH PHRASES & CHUNKS
+---------------------------------
+
+The English word packs contain phrases and chunks, not just single words.
+Translate the MEANING, not word-for-word.
+
+IDIOMATIC EXPRESSIONS
+
+English                     Chinese         Spanish                 Portuguese
+-------                     -------         -------                 ----------
+see you later alligator     回头见          hasta luego             até mais
+nice to meet you            很高兴认识你     mucho gusto             prazer em conhecê-lo
+no way                      不可能          de ninguna manera       de jeito nenhum
+my bad                      我的错          fue mi culpa            foi mal meu
+
+POLITE EXPRESSIONS
+
+Keep the politeness level consistent across all languages:
+
+English                 Chinese         Spanish                 Portuguese
+-------                 -------         -------                 ----------
+please help me          请帮帮我        por favor ayúdame       por favor me ajude
+thank you so much       非常感谢        muchas gracias          muito obrigado
+sorry to bother you     抱歉打扰您      perdón por molestar     desculpe incomodar
+
+================================================================================
+
+LANGUAGE-SPECIFIC GUIDELINES
+----------------------------
+
+CHINESE:
+- Use Simplified Chinese characters (简体中文)
+- Natural, idiomatic expressions
+- Add appropriate particles (了, 吗, 呢, 吧) for completeness
+- Match formality level of English
+
+SPANISH:
+- Use neutral Latin American Spanish as default
+- Avoid regional slang (no "vosotros," use "ustedes" for plural you)
+- Masculine as default for gendered words
+- Use appropriate accent marks (á, é, í, ó, ú, ñ, ü)
+
+PORTUGUESE:
+- Use Brazilian Portuguese as default
+- "Você" as default for "you" (not "tu")
+- Masculine as default for gendered words
+- Use appropriate accent marks (á, à, ã, â, é, ê, í, ó, ô, õ, ú, ç)
+
+================================================================================
+
+PARENTHESIS MARKERS - LIMITED OPTIONS
+-------------------------------------
+
+You may ONLY use these exact markers inside parentheses:
+
+ALLOWED:
+(formal)        - for formal forms
+(informal)      - only when distinguishing from formal
+(plural)        - when translation is ambiguous
+(singular)      - when translation is ambiguous
+
+NO OTHER MARKERS. No grammar terms, no regional labels, no usage notes.
+
+WRONG:  goodbye,再见,zàijiàn,adiós (casual),tchau
+RIGHT:  goodbye,再见,zàijiàn,adiós,tchau
+
+================================================================================
+
+COMMON MISTAKES TO AVOID
+------------------------
+
+SCRIPT ERRORS
+
+Chinese WRONG:    ni hao (romanized in Chinese column)
+Chinese RIGHT:    你好
+
+Pinyin WRONG:     ni hao (no tones)
+Pinyin RIGHT:     nǐ hǎo
+
+OVER-LITERAL TRANSLATIONS
+
+English: "see you later alligator"
+WRONG:   回头见鳄鱼 / hasta luego cocodrilo
+RIGHT:   回头见 / hasta luego (translate meaning, not literal words)
+
+English: "break a leg"
+WRONG:   打断一条腿 / rómpete una pierna
+RIGHT:   祝你好运 / buena suerte (translate meaning)
+
+English: "it's raining cats and dogs"
+WRONG:   下猫和狗 (literal)
+RIGHT:   下大雨 / está lloviendo mucho
+
+REGISTER MISMATCH
+
+English "hi guys" is casual. All translations should match:
+WRONG:  你们好 (neutral) / buenos días señores (too formal)
+RIGHT:  嗨大家 / hola chicos / oi galera
+
+English "good morning sir" is formal. All translations should match:
+WRONG:  早上好 (neutral) / buenos días (too casual)
+RIGHT:  早上好，先生 / buenos días señor / bom dia senhor
+
+INCONSISTENT PLURALITY
+
+English "two hands" - all must be plural:
+WRONG:  两只手,dos mano,duas mão
+RIGHT:  两只手,dos manos,duas mãos
+
+================================================================================
+
+VERIFICATION PROTOCOL
+---------------------
+
+WHEN TO VERIFY
+
+Verify translations via search when:
+1. Idiomatic expressions - phrases that don't translate literally
+2. Slang or informal expressions
+3. Any uncertainty - if not 90%+ confident, verify
+
+HOW TO VERIFY
+
+1. Search for "[phrase] in [language]" or "[language] translation [phrase]"
+2. Cross-reference with reputable sources:
+   - Language learning sites
+   - Official dictionaries
+   - Native speaker forums
+3. Check multiple sources for agreement
+
+WHAT TO DO IF UNCERTAIN
+
+If verification doesn't yield a confident answer:
+1. Use the most common/standard translation
+2. Flag the entry for future review
+3. Prefer simpler, more universal phrasing
+
+================================================================================
+
+EXAMPLES BY PACK TYPE
+---------------------
+
+PACK 1: Greetings & Basics
+
+english,chinese,pinyin,spanish,portuguese
+hello there,你好,nǐ hǎo,hola,olá
+goodbye my friend,再见朋友,zàijiàn péngyou,adiós amigo,tchau amigo
+thank you so much,非常感谢,fēicháng gǎnxiè,muchas gracias,muito obrigado
+sorry about that,对不起,duìbuqǐ,lo siento,desculpe por isso
+
+PACK 2: Numbers
+
+english,chinese,pinyin,spanish,portuguese
+one apple,一个苹果,yí gè píngguǒ,una manzana,uma maçã
+two hands,两只手,liǎng zhī shǒu,dos manos,duas mãos
+three times,三次,sān cì,tres veces,três vezes
+
+PACK 6: Contractions
+
+english,chinese,pinyin,spanish,portuguese
+I'm fine,我很好,wǒ hěn hǎo,estoy bien,estou bem
+you're right,你说得对,nǐ shuō de duì,tienes razón,você está certo
+he's coming,他来了,tā lái le,él viene,ele está vindo
+
+================================================================================
+
+FINAL CHECKLIST FOR EACH ROW
+----------------------------
+
+[ ] ONE English entry per row
+[ ] Chinese uses Simplified characters (not romanized)
+[ ] Pinyin EXACTLY matches Chinese characters
+[ ] Pinyin includes ALL tone marks
+[ ] Tone sandhi applied correctly (不 -> bú, 一 -> yí/yì)
+[ ] Spanish uses appropriate accent marks
+[ ] Spanish uses masculine default
+[ ] Spanish uses Latin American neutral form
+[ ] Portuguese uses Brazilian Portuguese
+[ ] Portuguese uses appropriate accent marks
+[ ] Portuguese uses masculine default
+[ ] Contractions translated with correct tense/person
+[ ] Idioms translated by meaning, not literally
+[ ] Register/formality consistent across all languages
+[ ] Plurality matches English source
+[ ] Most common/neutral translation chosen
+[ ] Uncertain translations verified
+
+================================================================================
+
+QUICK REFERENCE: Column Order
+-----------------------------
+
+Column  Language            Script              Notes
+------  --------            ------              -----
+1       English             Latin               Source language
+2       Chinese             简体中文             Simplified characters only
+3       Pinyin              Romanized           Tone marks required
+4       Spanish             Latin               Latin American, masculine default
+5       Portuguese          Latin               Brazilian, masculine default
+
+================================================================================
+
+FILE NAMING CONVENTION
+----------------------
+
+Files should be named:
+EnglishWords1.csv   - Pack 1: Greetings & Basics
+EnglishWords2.csv   - Pack 2: Numbers 1-20
+EnglishWords3.csv   - Pack 3: Numbers & Counting
+...
+
+Each file corresponds to one row in EnglishWordsOverview.csv.
+
+================================================================================
