@@ -1,0 +1,37 @@
+// ChineseWords Pack 86: Cause & Effect
+// Clean version for development - readable and LLM-friendly
+
+export const pack86_cause_and_effect = {
+  meta: {
+    packNumber: 86,
+    title: "Cause & Effect",
+    act: "Act V: Refinement",
+    wordCount: 24
+  },
+  words: [
+    ["因为这个原因", "yīnwèi zhège yuányīn", "because of this reason", "por esta razón", "pour cette raison", "por esta razão", "vì lý do này", "เพราะเหตุผลนี้", "ព្រោះហេតុផលនេះ", "karena alasan ini", "kerana sebab ini", "dahil sa dahilang ito"],
+    ["就是因为这个", "jiùshì yīnwèi zhège", "it's because of this", "es por esto", "c'est à cause de ça", "é por causa disso", "chính là vì cái này", "ก็เพราะอันนี้", "គឺដោយសារតែនេះ", "memang karena ini", "memang kerana ini", "dahil nga dito"],
+    ["是因为这样的", "shì yīnwèi zhèyàng de", "it's because of this", "es por esto", "c'est à cause de ça", "é por causa disso", "là vì như vậy đó", "เป็นเพราะแบบนี้", "គឺដោយសារតែបែបនេះ", "karena seperti ini", "kerana begini", "dahil ganito"],
+    ["所以才会这样", "suǒyǐ cái huì zhèyàng", "that's why it's like this", "por eso es así", "c'est pourquoi c'est comme ça", "por isso é assim", "vì vậy mới như vậy", "เพราะฉะนั้นจึงเป็นแบบนี้", "ដូច្នេះទើបយ៉ាងនេះ", "makanya begini", "sebab itu begini", "kaya ganito"],
+    ["因此才这样做", "yīncǐ cái zhèyàng zuò", "therefore do it this way", "por lo tanto hágalo así", "c'est pourquoi le faire ainsi", "portanto faça assim", "vì vậy mới làm thế này", "ดังนั้นจึงทำแบบนี้", "ដូច្នេះទើបធ្វើយ៉ាងនេះ", "karena itu melakukannya begini", "oleh itu buat begini", "kaya ginagawa ito"],
+    ["所以说呢就是", "suǒyǐ shuō ne jiùshì", "so that's what it is", "así que eso es", "donc c'est ça", "então é isso", "vì vậy nói là", "ดังนั้นก็คือว่า", "ដូច្នេះនិយាយគឺ", "jadi begitulah", "jadi begitulah", "kaya ganun nga"],
+    ["由于时间关系", "yóuyú shíjiān guānxi", "due to time constraints", "debido a limitaciones de tiempo", "en raison de contraintes de temps", "devido a restrições de tempo", "do thời gian có hạn", "เนื่องจากข้อจำกัดด้านเวลา", "ដោយសារតែពេលវេលា", "karena keterbatasan waktu", "kerana kekangan masa", "dahil sa limitadong oras"],
+    ["由于这个原因", "yóuyú zhège yuányīn", "due to this reason", "debido a esta razón", "en raison de cette raison", "devido a esta razão", "do lý do này", "เนื่องจากเหตุผลนี้", "ដោយសារតែហេតុផលនេះ", "karena alasan ini", "kerana sebab ini", "dahil sa dahilang ito"],
+    ["是由于那个", "shì yóuyú nàge", "it's due to that", "es debido a eso", "c'est dû à ça", "é devido a isso", "là do cái đó", "เป็นเพราะสิ่งนั้น", "គឺដោយសារតែនោះ", "karena itu", "adalah kerana itu", "dahil doon"],
+    ["导致了这个问题", "dǎozhì le zhège wèntí", "led to this problem", "llevó a este problema", "a conduit à ce problème", "levou a este problema", "dẫn đến vấn đề này", "นำไปสู่ปัญหานี้", "នាំឱ្យមានបញ្ហានេះ", "menyebabkan masalah ini", "membawa kepada masalah ini", "nagdulot ng problemang ito"],
+    ["导致结果这样", "dǎozhì jiéguǒ zhèyàng", "led to this result", "llevó a este resultado", "a conduit à ce résultat", "levou a este resultado", "dẫn đến kết quả thế này", "นำไปสู่ผลลัพธ์แบบนี้", "នាំឱ្យលទ្ធផលយ៉ាងនេះ", "menyebabkan hasil seperti ini", "membawa kepada hasil begini", "nagresulta nito"],
+    ["这样导致的呀", "zhèyàng dǎozhì de ya", "this is what caused it", "esto es lo que lo causó", "c'est ce qui l'a causé", "foi isso que causou", "như vậy dẫn đến đấy", "สิ่งนี้เป็นสาเหตุ", "បែបនេះនាំឱ្យ", "inilah penyebabnya", "ini yang menyebabkan", "ito ang nagdulot"],
+    ["造成了很大影响", "zàochéng le hěn dà yǐngxiǎng", "caused great impact", "causó gran impacto", "a causé un grand impact", "causou grande impacto", "gây ảnh hưởng rất lớn", "ก่อให้เกิดผลกระทบมาก", "បង្កឥទ្ធិពលយ៉ាងខ្លាំង", "menyebabkan dampak besar", "menyebabkan kesan besar", "nagdulot ng malaking epekto"],
+    ["造成不好的结果", "zàochéng bù hǎo de jiéguǒ", "caused bad result", "causó mal resultado", "a causé un mauvais résultat", "causou resultado ruim", "gây ra kết quả không tốt", "ทำให้เกิดผลลัพธ์ที่ไม่ดี", "បង្កលទ្ធផលមិនល្អ", "menyebabkan hasil buruk", "menyebabkan hasil yang buruk", "nagdulot ng masamang resulta"],
+    ["造成这个局面", "zàochéng zhège júmiàn", "caused this situation", "causó esta situación", "a causé cette situation", "causou esta situação", "gây ra tình huống này", "ทำให้เกิดสถานการณ์นี้", "បង្កស្ថានភាពនេះ", "menyebabkan situasi ini", "menyebabkan keadaan ini", "nagdulot ng sitwasyong ito"],
+    ["产生了影响了", "chǎnshēng le yǐngxiǎng le", "produced an impact", "produjo un impacto", "a produit un impact", "produziu um impacto", "sản sinh ảnh hưởng rồi", "เกิดผลกระทบแล้ว", "បង្កឥទ្ធិពលហើយ", "menghasilkan dampak", "menghasilkan kesan", "nagkaroon ng epekto"],
+    ["产生了一定影响", "chǎnshēng le yīdìng yǐngxiǎng", "produced certain impact", "produjo cierto impacto", "a produit un certain impact", "produziu certo impacto", "sản sinh ảnh hưởng nhất định", "เกิดผลกระทบบางอย่าง", "បង្កឥទ្ធិពលមួយចំនួន", "menghasilkan dampak tertentu", "menghasilkan kesan tertentu", "nagkaroon ng tiyak na epekto"],
+    ["对此产生影响", "duì cǐ chǎnshēng yǐngxiǎng", "have an impact on this", "tener un impacto en esto", "avoir un impact sur cela", "ter um impacto nisso", "đối với điều này có ảnh hưởng", "มีผลกระทบต่อสิ่งนี้", "មានឥទ្ធិពលលើនេះ", "berdampak pada ini", "memberi kesan kepada ini", "magkaroon ng epekto dito"],
+    ["与此有关系的", "yǔ cǐ yǒu guānxi de", "related to this", "relacionado con esto", "lié à cela", "relacionado a isso", "có quan hệ với việc này", "เกี่ยวข้องกับสิ่งนี้", "មានទំនាក់ទំនងជាមួយនេះ", "berkaitan dengan ini", "berkaitan dengan ini", "may kaugnayan dito"],
+    ["和这个有关系", "hé zhège yǒu guānxi", "related to this", "relacionado con esto", "lié à cela", "relacionado a isso", "có quan hệ với cái này", "เกี่ยวข้องกับสิ่งนี้", "មានទំនាក់ទំនងជាមួយនេះ", "ada hubungannya dengan ini", "ada kaitan dengan ini", "may kaugnayan dito"],
+    ["跟这件事有关", "gēn zhè jiàn shì yǒuguān", "related to this matter", "relacionado con este asunto", "lié à cette affaire", "relacionado a este assunto", "có liên quan đến chuyện này", "เกี่ยวข้องกับเรื่องนี้", "ទាក់ទងនឹងរឿងនេះ", "ada kaitannya dengan hal ini", "berkaitan dengan perkara ini", "may kaugnayan sa bagay na ito"],
+    ["是根据情况而定", "shì gēnjù qíngkuàng ér dìng", "depends on the situation", "depende de la situación", "dépend de la situation", "depende da situação", "căn cứ vào tình huống mà định", "ขึ้นอยู่กับสถานการณ์", "អាស្រ័យលើស្ថានភាព", "tergantung pada situasi", "bergantung kepada keadaan", "depende sa sitwasyon"],
+    ["根据实际情况", "gēnjù shíjì qíngkuàng", "according to actual situation", "según la situación real", "selon la situation réelle", "de acordo com a situação real", "căn cứ vào tình hình thực tế", "ตามสถานการณ์จริง", "ទៅតាមស្ថានភាពជាក់ស្តែង", "menurut situasi sebenarnya", "mengikut keadaan sebenar", "ayon sa aktwal na sitwasyon"],
+    ["要根据这个来", "yào gēnjù zhège lái", "based on this", "basado en esto", "basé sur cela", "baseado nisso", "phải căn cứ vào cái này", "ต้องตามสิ่งนี้", "ត្រូវផ្អែកលើនេះ", "harus berdasarkan ini", "mesti berdasarkan ini", "batay dito"]
+  ]
+};

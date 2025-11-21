@@ -1,0 +1,34 @@
+// ChineseWords Pack 72: Expressing Certainty
+// Clean version for development - readable and LLM-friendly
+
+export const pack72_expressing_certainty = {
+  meta: {
+    packNumber: 72,
+    title: "Expressing Certainty",
+    act: "Act IV: Mastery",
+    wordCount: 21
+  },
+  words: [
+    ["我很确定", "wǒ hěn quèdìng", "I'm very sure", "estoy muy seguro", "je suis très sûr", "tenho muita certeza", "tôi rất chắc chắn", "ฉันแน่ใจมาก", "ខ្ញុំប្រាកដច្បាស់ណាស់", "saya sangat yakin", "saya sangat pasti", "napakatiyak ako"],
+    ["我非常肯定", "wǒ fēicháng kěndìng", "I'm very certain", "estoy muy seguro", "je suis très certain", "tenho muita certeza", "tôi rất khẳng định", "ฉันมั่นใจมาก", "ខ្ញុំច្បាស់ជាខ្លាំង", "saya sangat pasti", "saya amat yakin", "napakatiyak ako"],
+    ["百分之百确定", "bǎifēnzhībǎi quèdìng", "100% sure", "100% seguro", "100% sûr", "100% certo", "chắc chắn 100%", "แน่ใจ 100%", "ប្រាកដ 100%", "100% yakin", "100% pasti", "100% sigurado"],
+    ["我不太确定", "wǒ bú tài quèdìng", "I'm not very sure", "no estoy muy seguro", "je ne suis pas très sûr", "não tenho muita certeza", "tôi không chắc lắm", "ฉันไม่ค่อยแน่ใจ", "ខ្ញុំមិនសូវប្រាកដទេ", "saya kurang yakin", "saya kurang pasti", "hindi ako masyadong sigurado"],
+    ["不是很确定", "bú shì hěn quèdìng", "not very sure", "no muy seguro", "pas très sûr", "não muito certo", "không chắc lắm", "ไม่ค่อยแน่ใจ", "មិនសូវប្រាកដទេ", "tidak terlalu yakin", "tidak begitu pasti", "hindi masyadong sigurado"],
+    ["我也不太清楚", "wǒ yě bú tài qīngchu", "I'm not very clear either", "tampoco estoy muy claro", "je ne suis pas très clair non plus", "também não tenho muita clareza", "tôi cũng không rõ lắm", "ฉันก็ไม่ค่อยชัดเจน", "ខ្ញុំក៏មិនសូវច្បាស់ដែរ", "saya juga kurang jelas", "saya pun kurang jelas", "hindi rin ako masyadong malinaw"],
+    ["可能是这样", "kěnéng shì zhèyàng", "it might be like this", "podría ser así", "ça pourrait être comme ça", "pode ser assim", "có thể là như vậy", "อาจจะเป็นอย่างนั้น", "អាចជាបែបនេះ", "mungkin seperti ini", "mungkin begini", "maaaring ganito"],
+    ["大概是的吧", "dàgài shì de ba", "probably so", "probablemente sí", "probablement oui", "provavelmente sim", "có lẽ là vậy", "น่าจะใช่", "ប្រហែលជាដូច្នេះ", "mungkin begitu", "mungkin begitu", "marahil nga"],
+    ["也许是吧", "yěxǔ shì ba", "maybe so", "quizás sí", "peut-être", "talvez sim", "có thể vậy", "บางทีอาจจะใช่", "ប្រហែលជាបាទ", "mungkin ya", "mungkin ya", "siguro nga"],
+    ["应该是的", "yīnggāi shì de", "it should be", "debería ser", "ça devrait être", "deveria ser", "nên là vậy", "น่าจะใช่", "គួរតែជាបាទ", "seharusnya begitu", "sepatutnya begitu", "dapat nga"],
+    ["应该没错的", "yīnggāi méicuò de", "should be correct", "debería ser correcto", "devrait être correct", "deveria estar correto", "nên là đúng", "น่าจะถูกต้อง", "គួរតែត្រឹមត្រូវ", "seharusnya benar", "sepatutnya betul", "dapat tama"],
+    ["应该是这样", "yīnggāi shì zhèyàng", "it should be like this", "debería ser así", "ça devrait être comme ça", "deveria ser assim", "nên là như vậy", "น่าจะเป็นอย่างนี้", "គួរតែបែបនេះ", "seharusnya seperti ini", "sepatutnya begini", "dapat ganito"],
+    ["肯定是的", "kěndìng shì de", "it's definitely so", "definitivamente sí", "c'est certainement ça", "definitivamente é", "chắc chắn là vậy", "แน่นอนว่าใช่", "ច្បាស់ជាបាទ", "pasti begitu", "pasti begitu", "tiyak nga"],
+    ["一定是的", "yídìng shì de", "it must be so", "debe ser así", "ça doit être ça", "deve ser assim", "nhất định là vậy", "ต้องเป็นแน่", "ច្បាស់ជាបាទ", "pasti begitu", "mesti begitu", "kailangan nga"],
+    ["毫无疑问是", "háowú yíwèn shì", "no doubt it is", "sin duda es", "sans aucun doute c'est", "sem dúvida é", "không nghi ngờ gì là", "ไม่ต้องสงสัยเลยว่าใช่", "គ្មានសង្ស័យថាជា", "tidak diragukan lagi", "tidak syak lagi", "walang dudang ito"],
+    ["绝对不可能", "juéduì bù kěnéng", "absolutely impossible", "absolutamente imposible", "absolument impossible", "absolutamente impossível", "tuyệt đối không thể", "เป็นไปไม่ได้อย่างแน่นอน", "មិនអាចទេឡើយ", "sama sekali tidak mungkin", "sama sekali mustahil", "talagang imposible"],
+    ["肯定不是的", "kěndìng bú shì de", "definitely not", "definitivamente no", "certainement pas", "definitivamente não", "chắc chắn không phải", "แน่นอนว่าไม่ใช่", "ច្បាស់ជាមិនមែនទេ", "pasti bukan", "pasti bukan", "tiyak na hindi"],
+    ["不可能的事", "bù kěnéng de shì", "impossible thing", "cosa imposible", "chose impossible", "coisa impossível", "điều không thể", "เรื่องที่เป็นไปไม่ได้", "រឿងមិនអាច", "hal yang tidak mungkin", "perkara yang mustahil", "imposibleng bagay"],
+    ["也许不是吧", "yěxǔ bú shì ba", "maybe not", "quizás no", "peut-être pas", "talvez não", "có thể không phải", "บางทีอาจจะไม่ใช่", "ប្រហែលជាមិនមែនទេ", "mungkin bukan", "mungkin bukan", "siguro hindi"],
+    ["可能不对吧", "kěnéng bú duì ba", "might not be right", "podría no ser correcto", "ça pourrait ne pas être correct", "pode não estar certo", "có thể không đúng", "อาจจะไม่ถูกต้อง", "អាចជាមិនត្រឹមត្រូវទេ", "mungkin tidak benar", "mungkin tidak betul", "maaaring mali"],
+    ["我觉得不是", "wǒ juéde bú shì", "I don't think so", "no lo creo", "je ne pense pas", "acho que não", "tôi nghĩ là không", "ฉันคิดว่าไม่ใช่", "ខ្ញុំគិតថាមិនមែនទេ", "saya rasa bukan", "saya rasa bukan", "sa palagay ko ay hindi"]
+  ]
+};

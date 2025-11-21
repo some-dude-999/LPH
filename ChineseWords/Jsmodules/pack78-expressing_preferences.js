@@ -1,0 +1,34 @@
+// ChineseWords Pack 78: Expressing Preferences
+// Clean version for development - readable and LLM-friendly
+
+export const pack78_expressing_preferences = {
+  meta: {
+    packNumber: 78,
+    title: "Expressing Preferences",
+    act: "Act IV: Mastery",
+    wordCount: 21
+  },
+  words: [
+    ["我比较喜欢", "wǒ bǐjiào xǐhuan", "I prefer", "prefiero", "je préfère", "eu prefiro", "tôi thích hơn", "ฉันชอบมากกว่า", "ខ្ញុំចូលចិត្តជាង", "saya lebih suka", "saya lebih suka", "mas gusto ko"],
+    ["我更喜欢这个", "wǒ gèng xǐhuan zhège", "I prefer this", "prefiero este", "je préfère celui-ci", "eu prefiro este", "tôi thích cái này hơn", "ฉันชอบอันนี้มากกว่า", "ខ្ញុំចូលចិត្តនេះជាង", "saya lebih suka yang ini", "saya lebih suka yang ini", "mas gusto ko ito"],
+    ["我偏爱这种", "wǒ piān'ài zhèzhǒng", "I favor this kind", "prefiero este tipo", "j'ai une préférence pour ce genre", "eu favoreço esse tipo", "tôi thiên vị loại này", "ฉันชอบแบบนี้มากกว่า", "ខ្ញុំពេញចិត្តប្រភេទនេះ", "saya lebih suka jenis ini", "saya lebih gemar jenis ini", "mas gusto ko ang ganitong uri"],
+    ["我不太喜欢", "wǒ bú tài xǐhuan", "I don't really like", "no me gusta mucho", "je n'aime pas trop", "não gosto muito", "tôi không thích lắm", "ฉันไม่ค่อยชอบ", "ខ្ញុំមិនសូវចូលចិត្តទេ", "saya kurang suka", "saya kurang suka", "hindi ko masyadong gusto"],
+    ["不是很喜欢", "bú shì hěn xǐhuan", "don't really like", "no me gusta mucho", "n'aime pas beaucoup", "não gosto muito", "không thích lắm", "ไม่ค่อยชอบ", "មិនសូវចូលចិត្តទេ", "tidak terlalu suka", "tidak begitu suka", "hindi masyadong gusto"],
+    ["我不感兴趣", "wǒ bù gǎn xìngqù", "I'm not interested", "no me interesa", "je ne suis pas intéressé", "não estou interessado", "tôi không hứng thú", "ฉันไม่สนใจ", "ខ្ញុំមិនចាប់អារម្មណ៍", "saya tidak tertarik", "saya tidak berminat", "hindi ako interesado"],
+    ["我最喜欢的", "wǒ zuì xǐhuan de", "my favorite", "mi favorito", "mon préféré", "meu favorito", "thứ tôi thích nhất", "ที่ฉันชอบที่สุด", "អ្វីដែលខ្ញុំចូលចិត្តបំផុត", "favorit saya", "kegemaran saya", "paborito ko"],
+    ["我的最爱是", "wǒ de zuì'ài shì", "my favorite is", "mi favorito es", "mon préféré est", "meu favorito é", "thứ tôi yêu thích nhất là", "ที่รักของฉันคือ", "សេចក្តីស្រឡាញ់របស់ខ្ញុំគឺ", "favorit saya adalah", "kegemaran saya ialah", "ang paborito ko ay"],
+    ["最喜欢这个", "zuì xǐhuan zhège", "like this best", "me gusta más este", "j'aime le plus celui-ci", "gosto mais deste", "thích cái này nhất", "ชอบอันนี้ที่สุด", "ចូលចិត្តនេះបំផុត", "paling suka yang ini", "paling suka yang ini", "pinakagusto ko ito"],
+    ["我都喜欢啊", "wǒ dōu xǐhuan a", "I like both!", "¡me gustan ambos!", "j'aime les deux!", "gosto dos dois!", "tôi đều thích cả!", "ฉันชอบทั้งคู่", "ខ្ញុំចូលចិត្តទាំងពីរ", "saya suka semua!", "saya suka semua!", "gusto ko pareho!"],
+    ["两个都不错", "liǎng ge dōu búcuò", "both are good", "ambos están bien", "les deux sont bien", "ambos são bons", "cả hai đều tốt", "ทั้งสองก็ดี", "ទាំងពីរល្អ", "keduanya bagus", "kedua-duanya baik", "pareho ay mabuti"],
+    ["都挺好的嘛", "dōu tǐng hǎo de ma", "both are quite good", "ambos son bastante buenos", "les deux sont plutôt bien", "ambos são bem bons", "đều khá tốt", "ทั้งคู่ก็ดีนะ", "ទាំងពីរល្អណាស់", "keduanya cukup bagus", "kedua-duanya bagus", "pareho ay mabuti naman"],
+    ["无所谓的", "wúsuǒwèi de", "doesn't matter", "no importa", "peu importe", "tanto faz", "không sao cả", "ไม่เป็นไร", "មិនអីទេ", "tidak masalah", "tak mengapa", "walang problema"],
+    ["都可以接受", "dōu kěyǐ jiēshòu", "both are acceptable", "ambos son aceptables", "les deux sont acceptables", "ambos são aceitáveis", "đều có thể chấp nhận", "ทั้งคู่ยอมรับได้", "ទាំងពីរអាចទទួលយកបាន", "keduanya bisa diterima", "kedua-duanya boleh diterima", "pareho ay tanggap"],
+    ["随便都行啊", "suíbiàn dōu xíng a", "either is fine!", "¡cualquiera está bien!", "les deux conviennent!", "tanto faz!", "cái nào cũng được!", "อะไรก็ได้", "ណាក៏បាន", "apa saja boleh!", "apa-apa pun boleh!", "kahit ano ay okay!"],
+    ["我讨厌这个", "wǒ tǎoyàn zhège", "I hate this", "odio esto", "je déteste ça", "eu odeio isso", "tôi ghét cái này", "ฉันเกลียดอันนี้", "ខ្ញុំស្អប់នេះ", "saya benci ini", "saya benci ini", "kinamumuhian ko ito"],
+    ["真的很讨厌", "zhēnde hěn tǎoyàn", "really hate it", "realmente lo odio", "je le déteste vraiment", "realmente odeio", "thật sự rất ghét", "เกลียดจริงๆ", "ពិតជាស្អប់ខ្លាំង", "benar-benar benci", "memang benci", "talagang kinamumuhian"],
+    ["我很反感的", "wǒ hěn fǎngǎn de", "I'm very averse", "me repugna mucho", "je suis très réticent", "sou muito avesso", "tôi rất phản cảm", "ฉันรังเกียจมาก", "ខ្ញុំស្អប់ខ្លាំង", "saya sangat tidak suka", "saya sangat tidak suka", "napakayamot ko"],
+    ["还好吧一般", "háihǎo ba yìbān", "it's okay I guess", "está bien supongo", "c'est bien je suppose", "está bom eu acho", "cũng được", "ก็โอเคนะ", "ធម្មតា", "ya lumayan", "okay lah", "pwede na siguro"],
+    ["不好也不坏", "bù hǎo yě bù huài", "not good not bad", "ni bueno ni malo", "ni bon ni mauvais", "nem bom nem ruim", "không tốt không xấu", "ไม่ดีไม่เลว", "មិនល្អក៏មិនអាក្រក់", "tidak bagus tidak buruk", "tidak baik tidak buruk", "hindi maganda hindi masama"],
+    ["说不上喜欢", "shuō bù shang xǐhuan", "can't say I like it", "no puedo decir que me guste", "je ne peux pas dire que j'aime", "não posso dizer que gosto", "không thể nói là thích", "พูดไม่ได้ว่าชอบ", "មិនអាចនិយាយថាចូលចិត្តទេ", "tidak bisa bilang suka", "tak boleh kata suka", "hindi masasabing gusto ko"]
+  ]
+};

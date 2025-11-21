@@ -1,0 +1,43 @@
+// ChineseWords Pack 55: Making Plans
+// Clean version for development - readable and LLM-friendly
+
+export const pack55_making_plans = {
+  meta: {
+    packNumber: 55,
+    title: "Making Plans",
+    act: "Act IV: Mastery",
+    wordCount: 30
+  },
+  words: [
+    ["我打算", "wǒ dǎsuàn", "I plan to", "planeo", "je prévois de", "pretendo", "tôi dự định", "ฉันวางแผนจะ", "ខ្ញុំគ្រោងនឹង", "saya berencana", "saya merancang", "plano ko"],
+    ["我计划", "wǒ jìhuà", "I plan", "planifico", "je planifie", "planejo", "tôi lên kế hoạch", "ฉันวางแผน", "ខ្ញុំធ្វើផែនការ", "saya merencanakan", "saya merancang", "nagpaplano ako"],
+    ["我准备要", "wǒ zhǔnbèi yào", "I'm preparing to", "me estoy preparando para", "je me prépare à", "estou me preparando para", "tôi chuẩn bị", "ฉันกำลังเตรียมจะ", "ខ្ញុំកំពុងរៀបចំនឹង", "saya bersiap untuk", "saya bersedia untuk", "naghahanda ako"],
+    ["你打算吗", "nǐ dǎsuàn ma", "do you plan to?", "¿planeas?", "tu prévois?", "você pretende?", "bạn dự định không?", "คุณวางแผนจะไหม", "តើអ្នកគ្រោងទេ?", "apakah kamu berencana?", "awak merancang ke?", "plano mo ba?"],
+    ["你有计划吗", "nǐ yǒu jìhuà ma", "do you have a plan?", "¿tienes un plan?", "tu as un plan?", "você tem um plano?", "bạn có kế hoạch không?", "คุณมีแผนไหม", "តើអ្នកមានផែនការទេ?", "apakah kamu punya rencana?", "awak ada rancangan ke?", "may plano ka ba?"],
+    ["你准备好了吗", "nǐ zhǔnbèi hǎo le ma", "are you ready?", "¿estás listo?", "tu es prêt?", "você está pronto?", "bạn sẵn sàng chưa?", "คุณพร้อมแล้วหรือยัง", "តើអ្នករៀបចំរួចហើយឬនៅ?", "apakah kamu sudah siap?", "awak sudah bersedia ke?", "handa ka na ba?"],
+    ["我们决定", "wǒmen juédìng", "we decide", "decidimos", "nous décidons", "decidimos", "chúng tôi quyết định", "เราตัดสินใจ", "យើងសម្រេច", "kami memutuskan", "kami memutuskan", "nagpasya kami"],
+    ["大家商量", "dàjiā shāngliáng", "everyone discuss", "todos discuten", "tout le monde discute", "todos discutem", "mọi người bàn bạc", "ทุกคนปรึกษา", "គ្រប់គ្នាពិភាក្សា", "semua membahas", "semua berbincang", "lahat ay pag-usapan"],
+    ["一起计划", "yìqǐ jìhuà", "plan together", "planear juntos", "planifier ensemble", "planejar juntos", "lên kế hoạch cùng nhau", "วางแผนด้วยกัน", "រៀបចំផែនការជាមួយគ្នា", "merencanakan bersama", "merancang bersama", "magplano nang sama-sama"],
+    ["安排时间", "ānpái shíjiān", "arrange time", "organizar el tiempo", "organiser le temps", "organizar o tempo", "sắp xếp thời gian", "จัดเวลา", "រៀបចំពេលវេលា", "mengatur waktu", "aturkan masa", "ayusin ang oras"],
+    ["安排一下", "ānpái yíxià", "arrange it", "organízalo", "organise-le", "organize", "sắp xếp một chút", "จัดการหน่อย", "រៀបចំមើល", "atur saja", "aturkan sedikit", "ayusin mo"],
+    ["做好安排", "zuòhǎo ānpái", "make arrangements", "hacer arreglos", "faire des arrangements", "fazer os arranjos", "sắp xếp chu đáo", "จัดการให้เรียบร้อย", "រៀបចំឱ្យបានល្អ", "membuat pengaturan", "buat pengaturan", "gumawa ng ayos"],
+    ["订好日期", "dìnghǎo rìqī", "set the date", "fijar la fecha", "fixer la date", "definir a data", "đặt ngày", "กำหนดวันที่", "កំណត់កាលបរិច្ឆេទ", "tentukan tanggalnya", "tetapkan tarikh", "itakda ang petsa"],
+    ["确定日期", "quèdìng rìqī", "confirm the date", "confirmar la fecha", "confirmer la date", "confirmar a data", "xác định ngày", "ยืนยันวันที่", "បញ្ជាក់កាលបរិច្ឆេទ", "konfirmasi tanggalnya", "sahkan tarikh", "kumpirmahin ang petsa"],
+    ["选好日子", "xuǎnhǎo rìzi", "choose a date", "elegir una fecha", "choisir une date", "escolher uma data", "chọn ngày", "เลือกวัน", "ជ្រើសរើសថ្ងៃ", "pilih tanggalnya", "pilih tarikh", "pumili ng petsa"],
+    ["定好时间", "dìnghǎo shíjiān", "set the time", "fijar la hora", "fixer l'heure", "definir o horário", "đặt giờ", "กำหนดเวลา", "កំណត់ម៉ោង", "tentukan waktunya", "tetapkan masa", "itakda ang oras"],
+    ["把时间定了", "bǎ shíjiān dìng le", "finalize the time", "finalizar la hora", "finaliser l'heure", "finalizar o horário", "ấn định thời gian", "กำหนดเวลาเรียบร้อย", "កំណត់ពេលវេលាហើយ", "waktu sudah ditentukan", "masa sudah ditetapkan", "naayos na ang oras"],
+    ["时间敲定", "shíjiān qiāodìng", "time is confirmed", "la hora está confirmada", "l'heure est confirmée", "o horário está confirmado", "thời gian đã xác định", "เวลายืนยันแล้ว", "ម៉ោងបញ្ជាក់រួច", "waktu sudah disepakati", "masa sudah dipersetujui", "nakumpirma na ang oras"],
+    ["有空的时候", "yǒu kòng de shíhou", "when free", "cuando estés libre", "quand tu es libre", "quando estiver livre", "khi rảnh", "เมื่อมีเวลาว่าง", "នៅពេលទំនេរ", "ketika ada waktu", "bila ada masa", "kapag may panahon"],
+    ["有时间的话", "yǒu shíjiān de huà", "if you have time", "si tienes tiempo", "si tu as le temps", "se você tiver tempo", "nếu có thời gian", "ถ้ามีเวลา", "បើមានពេលវេលា", "kalau ada waktu", "kalau ada masa", "kung may oras ka"],
+    ["抽空来", "chōu kòng lái", "make time to come", "saca tiempo para venir", "trouve le temps de venir", "arranje tempo para vir", "dành thời gian đến", "หาเวลามา", "រកពេលមក", "sempatkan datang", "cari masa untuk datang", "maglaan ng oras para pumunta"],
+    ["没空去", "méi kòng qù", "no time to go", "no tengo tiempo para ir", "pas le temps d'y aller", "sem tempo para ir", "không có thời gian đi", "ไม่มีเวลาไป", "គ្មានពេលទៅ", "tidak ada waktu pergi", "tak ada masa pergi", "walang oras pumunta"],
+    ["抽不出时间", "chōubuchū shíjiān", "can't make time", "no puedo sacar tiempo", "ne peux pas trouver le temps", "não consigo arrumar tempo", "không thể dành thời gian", "หาเวลาไม่ได้", "រកពេលមិនបាន", "tidak bisa menyempatkan", "tidak dapat luangkan masa", "hindi makapaglaan ng oras"],
+    ["实在没时间", "shízài méi shíjiān", "really no time", "de verdad no tengo tiempo", "vraiment pas le temps", "realmente sem tempo", "thực sự không có thời gian", "ไม่มีเวลาจริงๆ", "ពិតជាគ្មានពេល", "benar-benar tidak ada waktu", "betul-betul tiada masa", "talagang walang oras"],
+    ["改天再说", "gǎitiān zàishuō", "talk about it another day", "hablemos otro día", "on en parle un autre jour", "falamos outro dia", "hôm khác nói lại", "คุยกันวันหลังนะ", "ថ្ងៃក្រោយនិយាយម្តងទៀត", "bicarakan lain hari", "cakap lain hari", "pag-usapan sa ibang araw"],
+    ["另找时间", "lìng zhǎo shíjiān", "find another time", "buscar otro momento", "trouver un autre moment", "encontrar outro horário", "tìm thời gian khác", "หาเวลาอื่น", "ស្វែងរកពេលផ្សេង", "cari waktu lain", "cari masa lain", "humanap ng ibang oras"],
+    ["择日再议", "zérì zàiyì", "discuss on another date", "discutir en otra fecha", "discuter à une autre date", "discutir em outra data", "chọn ngày bàn lại", "คุยกันในวันอื่น", "ពិភាក្សានៅថ្ងៃផ្សេង", "bahas di hari lain", "bincang pada tarikh lain", "pag-usapan sa ibang petsa"],
+    ["约好见面", "yuēhǎo jiànmiàn", "arrange to meet", "quedar para verse", "convenir de se voir", "combinar de se encontrar", "hẹn gặp mặt", "นัดเจอกัน", "ណាត់ជួបគ្នា", "janjian bertemu", "buat janji bertemu", "magkasundo na magkita"],
+    ["定好时间见", "dìnghǎo shíjiān jiàn", "set time to meet", "fijar la hora para verse", "fixer l'heure de rencontre", "marcar horário para se encontrar", "hẹn giờ gặp mặt", "กำหนดเวลาเจอ", "កំណត់ម៉ោងជួប", "tentukan waktu bertemu", "tetapkan masa bertemu", "itakda ang oras ng pagkikita"],
+    ["到时候见", "dào shíhou jiàn", "see you then", "nos vemos entonces", "on se voit à ce moment-là", "te vejo lá", "hẹn gặp lúc đó", "เจอกันตอนนั้น", "ជួបគ្នានៅពេលនោះ", "sampai jumpa nanti", "jumpa lagi nanti", "kita na lang noon"]
+  ]
+};

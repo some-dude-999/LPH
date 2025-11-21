@@ -1,0 +1,37 @@
+// ChineseWords Pack 90: Structural Particles
+// Clean version for development - readable and LLM-friendly
+
+export const pack90_structural_particles = {
+  meta: {
+    packNumber: 90,
+    title: "Structural Particles",
+    act: "Act V: Refinement",
+    wordCount: 24
+  },
+  words: [
+    ["这是我的东西", "zhè shì wǒ de dōngxi", "this is my thing", "esto es mío", "c'est à moi", "isto é meu", "đây là đồ của tôi", "นี่เป็นของฉัน", "នេះគឺរបស់ខ្ញុំ", "ini milik saya", "ini barang saya", "ito ay akin"],
+    ["那是你的东西", "nà shì nǐ de dōngxi", "that is your thing", "eso es tuyo", "c'est à toi", "isso é seu", "đó là đồ của bạn", "นั่นเป็นของคุณ", "នោះគឺរបស់អ្នក", "itu milikmu", "itu barang awak", "iyan ay sayo"],
+    ["属于他的东西", "shǔyú tā de dōngxi", "belongs to him", "pertenece a él", "appartient à lui", "pertence a ele", "thuộc về anh ấy", "เป็นของเขา", "ជាកម្មសិទ្ធិរបស់គាត់", "milik dia", "milik dia", "pag-aari niya"],
+    ["慢慢地走过来", "mànmàn de zǒuguòlái", "walk over slowly", "ven caminando despacio", "viens lentement", "venha andando devagar", "từ từ đi lại đây", "เดินมาช้า ๆ", "មកយឺត ៗ", "datang berjalan pelan-pelan", "datang berjalan perlahan-lahan", "dahan-dahan lumapit"],
+    ["快快地跑过去", "kuàikuài de pǎoguòqù", "run over quickly", "corre rápido", "cours vite", "corra rápido", "nhanh chóng chạy qua đó", "วิ่งไปเร็ว ๆ", "រត់ទៅលឿន", "lari pergi cepat-cepat", "lari pergi cepat-cepat", "mabilis na tumakbo doon"],
+    ["认真地做事情", "rènzhēn de zuò shìqing", "do things seriously", "hacer las cosas seriamente", "faire les choses sérieusement", "fazer as coisas seriamente", "làm việc một cách nghiêm túc", "ทำงานอย่างจริงจัง", "ធ្វើការយ៉ាងច្បាស់លាស់", "mengerjakan dengan serius", "buat kerja dengan serius", "gumawa ng seryoso"],
+    ["做得非常好呀", "zuò de fēicháng hǎo ya", "did it very well", "lo hizo muy bien", "l'a très bien fait", "fez muito bem", "làm rất tốt đấy", "ทำได้ดีมาก", "ធ្វើបានល្អណាស់", "dikerjakan sangat baik", "buat dengan sangat baik", "ginawa ng napakaganda"],
+    ["说得很对呢", "shuō de hěn duì ne", "said it right", "lo dijo correctamente", "l'a bien dit", "disse certo", "nói đúng lắm", "พูดถูกมาก", "និយាយត្រឹមត្រូវណាស់", "dikatakan dengan benar", "cakap dengan betul", "sinabi ng tama"],
+    ["跑得真的很快", "pǎo de zhēnde hěn kuài", "runs really fast", "corre muy rápido", "court vraiment vite", "corre muito rápido", "chạy thực sự rất nhanh", "วิ่งเร็วจริง ๆ", "រត់លឿនពិតប្រាកដ", "lari benar-benar cepat", "lari memang sangat laju", "tumakbo talaga ng mabilis"],
+    ["事情做好了呢", "shìqing zuòhǎo le ne", "the thing is done", "el trabajo está hecho", "le travail est fait", "o trabalho está feito", "việc đã làm xong rồi", "เรื่องทำเสร็จแล้ว", "រឿងធ្វើរួចហើយ", "pekerjaannya sudah selesai", "kerja sudah siap", "tapos na ang gawain"],
+    ["准备好了没有", "zhǔnbèihǎo le méiyǒu", "are you ready?", "¿estás listo?", "tu es prêt?", "está pronto?", "đã chuẩn bị xong chưa?", "เตรียมพร้อมแล้วหรือยัง", "រៀបចំរួចហើយទេ?", "sudah siap belum?", "dah bersedia belum?", "handa na ba?"],
+    ["一切都准备好了", "yīqiè dōu zhǔnbèihǎo le", "everything is ready", "todo está listo", "tout est prêt", "tudo está pronto", "mọi thứ đã sẵn sàng", "ทุกอย่างพร้อมแล้ว", "អ្វីៗទាំងអស់រួចរាល់", "semuanya sudah siap", "semuanya sudah bersedia", "lahat ay handa na"],
+    ["正在做着呢", "zhèngzài zuò zhe ne", "currently doing it", "está haciéndolo", "en train de le faire", "está fazendo", "đang làm đây", "กำลังทำอยู่", "កំពុងធ្វើនៅ", "sedang dikerjakan", "sedang buat", "ginagawa pa"],
+    ["一直拿着呢", "yìzhí ná zhe ne", "holding it all along", "lo tiene todo el tiempo", "le tient depuis tout à l'heure", "está segurando o tempo todo", "cứ cầm đấy", "ถืออยู่ตลอด", "កំពុងកាន់នៅ", "terus dipegang", "sedang pegang", "hawak pa rin"],
+    ["眼睛看着呢", "yǎnjing kàn zhe ne", "eyes are watching", "los ojos están mirando", "les yeux regardent", "os olhos estão olhando", "mắt đang nhìn đấy", "ตากำลังดูอยู่", "ភ្នែកកំពុងមើល", "mata sedang melihat", "mata sedang tengok", "mata ay nakatingin"],
+    ["曾经去过那里", "céngjīng qùguò nàlǐ", "have been there before", "he estado allí antes", "y suis déjà allé", "já esteve lá", "từng đi đó rồi", "เคยไปที่นั่นแล้ว", "ធ្លាប់ទៅទីនោះ", "pernah pergi ke sana", "pernah pergi ke sana", "nakapunta na doon"],
+    ["以前来过这里", "yǐqián láiguò zhèlǐ", "have come here before", "he venido aquí antes", "suis déjà venu ici", "já veio aqui", "trước đây đã đến đây rồi", "เคยมาที่นี่แล้ว", "ធ្លាប់មកទីនេះ", "pernah datang ke sini", "pernah datang ke sini", "nakapunta na dito"],
+    ["以前吃过这个", "yǐqián chīguò zhège", "have eaten this before", "he comido esto antes", "ai déjà mangé ça", "já comeu isto", "trước đây đã ăn cái này rồi", "เคยกินอันนี้แล้ว", "ធ្លាប់ញ៉ាំរបស់នេះ", "pernah makan ini", "pernah makan ni", "nakakain na nito"],
+    ["站起来吧快点", "zhàn qǐlái ba kuàidiǎn", "stand up quickly", "levántate rápido", "lève-toi vite", "levante-se rápido", "đứng dậy đi nhanh lên", "ลุกขึ้นเร็ว ๆ", "ក្រោកឈរឡើងលឿន", "berdiri cepat", "bangun cepat-cepat", "tumayo na mabilis"],
+    ["看起来很不错", "kàn qǐlái hěn búcuò", "looks pretty good", "se ve muy bien", "ça a l'air bien", "parece muito bom", "nhìn có vẻ rất tốt", "ดูดีมาก", "មើលទៅល្អណាស់", "terlihat sangat bagus", "nampak sangat baik", "mukhang maganda"],
+    ["说起来很容易", "shuō qǐlái hěn róngyì", "easy to say", "es fácil decirlo", "c'est facile à dire", "é fácil dizer", "nói thì dễ", "พูดง่าย", "និយាយងាយ", "gampang ngomongnya", "cakap mudah", "madali lang sabihin"],
+    ["继续做下去吧", "jìxù zuò xiàqù ba", "keep doing it", "sigue haciéndolo", "continue à le faire", "continue fazendo", "cứ tiếp tục làm đi", "ทำต่อไปเถอะ", "បន្តធ្វើទៅ", "terus lakukan", "terus buat", "ipagpatuloy mo"],
+    ["坚持走下去呀", "jiānchí zǒu xiàqù ya", "keep going", "sigue adelante", "continue d'avancer", "continue indo", "cứ kiên trì đi tiếp đi", "เดินต่อไปเถอะ", "ក្តោបក្តាបដើរទៅ", "terus berjalan", "terus berjalan", "magpatuloy"],
+    ["这样说下去呢", "zhèyàng shuō xiàqù ne", "keep talking like this", "sigue hablando así", "continue à parler ainsi", "continue falando assim", "cứ nói tiếp như vậy đi", "พูดแบบนี้ต่อไป", "និយាយបែបនេះទៀត", "terus bicara begini", "terus cakap macam ni", "magsalita pa ng ganito"]
+  ]
+};

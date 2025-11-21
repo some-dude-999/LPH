@@ -1,0 +1,37 @@
+// ChineseWords Pack 66: Making Appointments
+// Clean version for development - readable and LLM-friendly
+
+export const pack66_making_appointments = {
+  meta: {
+    packNumber: 66,
+    title: "Making Appointments",
+    act: "Act IV: Mastery",
+    wordCount: 24
+  },
+  words: [
+    ["我想预约", "wǒ xiǎng yùyuē", "I want to make an appointment", "quiero hacer una cita", "je veux prendre rendez-vous", "quero marcar um compromisso", "tôi muốn đặt lịch hẹn", "ฉันอยากนัดหมาย", "ខ្ញុំចង់ណាត់ជួប", "saya ingin membuat janji", "saya ingin buat temujanji", "gusto kong mag-appointment"],
+    ["能预约吗", "néng yùyuē ma", "can I make an appointment?", "¿puedo hacer una cita?", "puis-je prendre rendez-vous?", "posso marcar?", "có thể đặt lịch không?", "นัดหมายได้ไหม", "អាចណាត់ជួបបានទេ?", "bisa membuat janji?", "boleh buat temujanji?", "pwede ba mag-appointment?"],
+    ["怎么预约", "zěnme yùyuē", "how to make an appointment?", "¿cómo hacer una cita?", "comment prendre rendez-vous?", "como marcar?", "làm thế nào để đặt lịch?", "นัดหมายยังไง", "តើណាត់ជួបយ៉ាងដូចម្តេច?", "bagaimana cara membuat janji?", "bagaimana cara buat temujanji?", "paano mag-appointment?"],
+    ["约什么时间", "yuē shénme shíjiān", "what time to schedule?", "¿qué hora te viene bien?", "quel horaire?", "que horário?", "hẹn lúc mấy giờ?", "นัดเวลาไหน", "ណាត់ពេលវេលាអ្វី?", "jam berapa mau buat janji?", "masa apa nak buat temujanji?", "anong oras ang schedule?"],
+    ["您想约几点", "nín xiǎng yuē jǐ diǎn", "what time would you like? (formal)", "¿a qué hora quiere la cita? (formal)", "à quelle heure souhaitez-vous? (formal)", "que horas o senhor prefere? (formal)", "quý khách muốn hẹn mấy giờ? (formal)", "คุณอยากนัดกี่โมง (formal)", "អ្នកចង់ណាត់ម៉ោងប៉ុន្មាន (formal)", "Anda ingin janji jam berapa? (formal)", "puan ingin temujanji pukul berapa? (formal)", "anong oras po ninyo gusto? (formal)"],
+    ["哪天方便", "nǎ tiān fāngbiàn", "which day is convenient?", "¿qué día te viene bien?", "quel jour vous convient?", "que dia é conveniente?", "ngày nào tiện?", "วันไหนสะดวก", "ថ្ងៃណាងាយស្រួល?", "hari apa yang cocok?", "hari mana sesuai?", "anong araw ay maginhawa?"],
+    ["明天可以吗", "míngtiān kěyǐ ma", "is tomorrow okay?", "¿mañana está bien?", "demain ça va?", "amanhã pode ser?", "ngày mai được không?", "พรุ่งนี้ได้ไหม", "ថ្ងៃស្អែកបានទេ?", "besok bisa?", "esok boleh?", "bukas pwede ba?"],
+    ["明天有空吗", "míngtiān yǒu kòng ma", "are you free tomorrow?", "¿estás libre mañana?", "êtes-vous libre demain?", "está livre amanhã?", "ngày mai rảnh không?", "พรุ่งนี้ว่างไหม", "ថ្ងៃស្អែកទំនេរទេ?", "besok ada waktu luang?", "esok ada masa lapang?", "may oras ka ba bukas?"],
+    ["明天行不行", "míngtiān xíng bu xíng", "will tomorrow work?", "¿mañana te va bien?", "demain ça marche?", "amanhã serve?", "ngày mai được không?", "พรุ่งนี้ได้ไหม", "ថ្ងៃស្អែកបានឬអត់?", "besok boleh tidak?", "esok boleh tak?", "bukas pwede ba o hindi?"],
+    ["下周见面吧", "xià zhōu jiànmiàn ba", "let's meet next week", "nos vemos la semana que viene", "rencontrons-nous la semaine prochaine", "vamos nos encontrar na próxima semana", "tuần sau gặp nhau nhé", "สัปดาห์หน้าเจอกันนะ", "សប្ដាហ៍ក្រោយជួបគ្នា", "minggu depan ketemu ya", "minggu depan jumpa", "magkita tayo next week"],
+    ["下周约一下", "xià zhōu yuē yīxià", "schedule for next week", "hagamos una cita la próxima semana", "prenons rendez-vous la semaine prochaine", "marcar para a próxima semana", "tuần sau hẹn nhau", "สัปดาห์หน้านัดกัน", "សប្ដាហ៍ក្រោយណាត់ជួបគ្នា", "buat janji minggu depan", "buat temujanji minggu depan", "mag-schedule next week"],
+    ["下周怎么样", "xià zhōu zěnmeyàng", "how about next week?", "¿qué tal la semana que viene?", "que diriez-vous de la semaine prochaine?", "que tal na próxima semana?", "tuần sau thế nào?", "สัปดาห์หน้าเป็นไง", "សប្ដាហ៍ក្រោយយ៉ាងណា?", "minggu depan bagaimana?", "minggu depan macam mana?", "paano ang next week?"],
+    ["要改时间吗", "yào gǎi shíjiān ma", "need to change the time?", "¿necesitas cambiar la hora?", "besoin de changer l'heure?", "precisa mudar o horário?", "có cần đổi giờ không?", "ต้องเปลี่ยนเวลาไหม", "ត្រូវប្តូរពេលវេលាទេ?", "perlu ganti waktu?", "perlu tukar masa?", "kailangan bang baguhin ang oras?"],
+    ["能改个时间吗", "néng gǎi gè shíjiān ma", "can we change the time?", "¿podemos cambiar la hora?", "peut-on changer l'heure?", "podemos mudar o horário?", "có thể đổi giờ được không?", "เปลี่ยนเวลาได้ไหม", "អាចប្តូរពេលវេលាបានទេ?", "bisa ganti waktu?", "boleh tukar masa?", "pwede bang baguhin ang oras?"],
+    ["换个时间吧", "huàn gè shíjiān ba", "let's change the time", "cambiemos la hora", "changeons l'heure", "vamos mudar o horário", "đổi giờ đi", "เปลี่ยนเวลากันเถอะ", "ប្តូរពេលវេលាទៅ", "ganti waktu saja", "tukar masa sahaja", "palitan natin ang oras"],
+    ["取消预约了", "qǔxiāo yùyuē le", "cancelled the appointment", "cancelé la cita", "j'ai annulé le rendez-vous", "cancelei o compromisso", "hủy lịch hẹn rồi", "ยกเลิกนัดหมายแล้ว", "លុបចោលការណាត់ជួបហើយ", "membatalkan janji", "batalkan temujanji", "kinansela ang appointment"],
+    ["不去了", "bú qù le", "not going anymore", "ya no voy", "je n'y vais plus", "não vou mais", "không đi nữa", "ไม่ไปแล้ว", "មិនទៅហើយ", "tidak jadi pergi", "tidak jadi pergi", "hindi na pupunta"],
+    ["我来不了了", "wǒ lái buliǎo le", "I can't make it", "no puedo ir", "je ne peux pas venir", "não posso ir", "tôi không đến được rồi", "ฉันมาไม่ได้แล้ว", "ខ្ញុំមកមិនបានហើយ", "saya tidak bisa datang", "saya tidak boleh datang", "hindi ako makakapunta"],
+    ["确认一下时间", "quèrèn yīxià shíjiān", "confirm the time", "confirmar la hora", "confirmer l'heure", "confirmar o horário", "xác nhận giờ một chút", "ยืนยันเวลาหน่อย", "បញ្ជាក់ពេលវេលា", "konfirmasi waktu", "sahkan masa", "kumpirmahin ang oras"],
+    ["再确认一遍", "zài quèrèn yī biàn", "confirm again", "confirmar de nuevo", "confirmer à nouveau", "confirmar novamente", "xác nhận lại một lần", "ยืนยันอีกครั้ง", "បញ្ជាក់ម្ដងទៀត", "konfirmasi lagi", "sahkan sekali lagi", "kumpirmahin ulit"],
+    ["时间没变吧", "shíjiān méi biàn ba", "the time hasn't changed right?", "la hora no ha cambiado ¿verdad?", "l'heure n'a pas changé?", "o horário não mudou né?", "giờ không đổi chứ?", "เวลาไม่เปลี่ยนใช่ไหม", "ពេលវេលាមិនប្តូរទេបាទ?", "waktunya tidak berubah kan?", "masa tidak berubah kan?", "hindi naman nagbago ang oras diba?"],
+    ["准时到哦", "zhǔnshí dào o", "arrive on time", "llega puntual", "arrivez à l'heure", "chegue pontualmente", "đến đúng giờ nhé", "มาตรงเวลานะ", "មកទាន់ពេលណា", "datang tepat waktu ya", "sampai tepat pada masanya", "dumating on time ha"],
+    ["别迟到了", "bié chídào le", "don't be late", "no llegues tarde", "ne soyez pas en retard", "não se atrase", "đừng đến muộn", "อย่ามาสาย", "កុំមកយឺត", "jangan terlambat", "jangan lewat", "huwag malate"],
+    ["按时来啊", "ànshí lái a", "come on time", "ven a tiempo", "venez à l'heure", "venha no horário", "đến đúng giờ nhé", "มาตรงเวลานะ", "មកទាន់ពេលណា", "datang tepat waktu ya", "datang mengikut masa", "dumating on time"]
+  ]
+};
