@@ -1,0 +1,61 @@
+english,chinese,pinyin,spanish,portuguese
+major airline,大型航空公司,dàxíng hángkōng gōngsī,aerolínea importante,companhia aérea importante
+budget airline,廉价航空,liánjià hángkōng,aerolínea económica,companhia aérea econômica
+airline ticket,机票,jīpiào,boleto de aerolínea,passagem aérea
+airport terminal,机场航站楼,jīchǎng hángzhàn lóu,terminal del aeropuerto,terminal do aeroporto
+terminal building,航站楼,hángzhàn lóu,edificio de terminal,prédio do terminal
+which terminal,哪个航站楼,nǎge hángzhàn lóu,cuál terminal,qual terminal
+flight delay,航班延误,hángbān yánwù,retraso de vuelo,atraso de voo
+long delay,长时间延误,cháng shíjiān yánwù,retraso largo,atraso longo
+delay announcement,延误通知,yánwù tōngzhī,anuncio de retraso,aviso de atraso
+flight cancel,航班取消,hángbān qǔxiāo,vuelo cancelado,voo cancelado
+cancel flight,取消航班,qǔxiāo hángbān,cancelar vuelo,cancelar voo
+cancel reservation,取消预订,qǔxiāo yùdìng,cancelar reserva,cancelar reserva
+now boarding,现在登机,xiànzài dēngjī,abordando ahora,embarcando agora
+boarding time,登机时间,dēngjī shíjiān,hora de abordar,horário de embarque
+boarding gate,登机口,dēngjī kǒu,puerta de embarque,portão de embarque
+smooth takeoff,平稳起飞,píngwěn qǐfēi,despegue suave,decolagem suave
+prepare for takeoff,准备起飞,zhǔnbèi qǐfēi,prepararse para despegue,preparar para decolagem
+after takeoff,起飞后,qǐfēi hòu,después del despegue,depois da decolagem
+safe landing,安全降落,ānquán jiàngluò,aterrizaje seguro,aterrissagem segura
+smooth landing,平稳降落,píngwěn jiàngluò,aterrizaje suave,aterrissagem suave
+emergency landing,紧急降落,jǐnjí jiàngluò,aterrizaje de emergencia,pouso de emergência
+airplane cabin,机舱,jīcāng,cabina del avión,cabine do avião
+cabin crew,机组人员,jīzǔ rényuán,tripulación de cabina,tripulação de cabine
+cabin pressure,机舱压力,jīcāng yālì,presión de cabina,pressão da cabine
+window aisle,靠窗过道,kào chuāng guòdào,ventana o pasillo,janela ou corredor
+aisle seat,靠过道座位,kào guòdào zuòwèi,asiento de pasillo,assento de corredor
+down the aisle,沿着过道,yánzhe guòdào,por el pasillo,pelo corredor
+fasten seat belt,系安全带,jì ānquándài,abrochar cinturón,apertar cinto de segurança
+seat belt sign,安全带指示灯,ānquándài zhǐshìdēng,señal de cinturón,sinal de cinto de segurança
+unbuckle seat belt,解开安全带,jiěkāi ānquándài,desabrochar cinturón,desapertar cinto
+overhead bin,头顶行李舱,tóudǐng xínglǐ cāng,compartimiento superior,compartimento superior
+overhead compartment,头顶舱,tóudǐng cāng,compartimento superior,compartimento superior
+overhead light,头顶灯,tóudǐng dēng,luz superior,luz superior
+mild turbulence,轻微颠簸,qīngwēi diānbǒ,turbulencia leve,turbulência leve
+severe turbulence,严重颠簸,yánzhòng diānbǒ,turbulencia severa,turbulência severa
+turbulence ahead,前方有颠簸,qiánfāng yǒu diānbǒ,turbulencia adelante,turbulência à frente
+cabin crew,机组人员,jīzǔ rényuán,tripulación de cabina,tripulação de cabine
+flight crew,飞行机组,fēixíng jīzǔ,tripulación de vuelo,tripulação de voo
+crew member,机组成员,jīzǔ chéngyuán,miembro de la tripulación,membro da tripulação
+final announcement,最后通知,zuìhòu tōngzhī,anuncio final,aviso final
+gate announcement,登机口广播,dēngjī kǒu guǎngbō,anuncio de puerta,aviso do portão
+make announcement,发布通知,fābù tōngzhī,hacer anuncio,fazer anúncio
+baggage claim,行李提取处,xínglǐ tíqǔ chù,reclamo de equipaje,retirada de bagagem
+baggage claim area,行李提取区,xínglǐ tíqǔ qū,área de reclamo de equipaje,área de retirada de bagagem
+wait at baggage claim,在行李处等待,zài xínglǐ chù děngdài,esperar en reclamo de equipaje,esperar na retirada de bagagem
+carry on bag,随身包,suíshēn bāo,bolso de mano,bolsa de mão
+carry on size,随身行李尺寸,suíshēn xínglǐ chǐcùn,tamaño de equipaje de mano,tamanho de bagagem de mão
+carry on luggage,随身行李,suíshēn xínglǐ,equipaje de mano,bagagem de mão
+check in counter,值机柜台,zhíjī guìtái,mostrador de check in,balcão de check in
+online check in,网上值机,wǎngshàng zhíjī,check in en línea,check in online
+check in time,值机时间,zhíjī shíjiān,hora de check in,horário de check in
+airport security,机场安检,jīchǎng ānjiǎn,seguridad del aeropuerto,segurança do aeroporto
+security check,安检,ānjiǎn,control de seguridad,controle de segurança
+pass security,通过安检,tōngguò ānjiǎn,pasar seguridad,passar pela segurança
+customs immigration,海关移民,hǎiguān yímín,aduana e inmigración,alfândega e imigração
+immigration officer,移民官员,yímín guānyuán,oficial de inmigración,oficial de imigração
+immigration control,入境检查,rùjìng jiǎnchá,control de inmigración,controle de imigração
+connecting flight,转机航班,zhuǎnjī hángbān,vuelo de conexión,voo de conexão
+miss connecting flight,误了转机,wù le zhuǎnjī,perder vuelo de conexión,perder voo de conexão
+long connecting flight,长时间转机,cháng shíjiān zhuǎnjī,conexión larga,conexão longa
