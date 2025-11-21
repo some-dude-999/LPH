@@ -3,6 +3,7 @@
 
 export const pack100_banking_and_finance = {
   meta: {
+    wordpack: 100,
     packNumber: 100,
     title: "Banking & Finance",
     act: "Act V: Refinement",

@@ -3,6 +3,7 @@
 
 export const pack13_core_radicals_and_components = {
   meta: {
+    wordpack: 13,
     packNumber: 13,
     title: "Core Radicals & Components",
     act: "Act I: Foundation",

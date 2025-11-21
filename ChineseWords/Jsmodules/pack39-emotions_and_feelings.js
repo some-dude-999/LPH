@@ -3,6 +3,7 @@
 
 export const pack39_emotions_and_feelings = {
   meta: {
+    wordpack: 39,
     packNumber: 39,
     title: "Emotions & Feelings",
     act: "Act III: Expansion",

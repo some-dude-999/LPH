@@ -3,6 +3,7 @@
 
 export const pack86_cause_and_effect = {
   meta: {
+    wordpack: 86,
     packNumber: 86,
     title: "Cause & Effect",
     act: "Act V: Refinement",

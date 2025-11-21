@@ -3,6 +3,7 @@
 
 export const pack64_at_the_airport = {
   meta: {
+    wordpack: 64,
     packNumber: 64,
     title: "At the Airport",
     act: "Act IV: Mastery",

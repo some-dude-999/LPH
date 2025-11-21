@@ -3,6 +3,7 @@
 
 export const pack18_years_and_calendar = {
   meta: {
+    wordpack: 18,
     packNumber: 18,
     title: "Years & Calendar",
     act: "Act II: Development",

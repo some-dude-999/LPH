@@ -3,6 +3,7 @@
 
 export const pack69_social_situations = {
   meta: {
+    wordpack: 69,
     packNumber: 69,
     title: "Social Situations",
     act: "Act IV: Mastery",

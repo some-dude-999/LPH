@@ -3,6 +3,7 @@
 
 export const p2_31_liking__things__gustar = {
   meta: {
+    wordpack: 31,
     en: "Liking Things (gustar)",
     zh: "喜欢 (gustar)",
     pinyin: "Xǐhuan (gustar)",
@@ -50,6 +51,7 @@ export const p2_31_liking__things__gustar = {
 
 export const p2_32_weather__talk = {
   meta: {
+    wordpack: 32,
     en: "Weather Talk",
     zh: "天气",
     pinyin: "Tiānqì",
@@ -103,6 +105,7 @@ export const p2_32_weather__talk = {
 
 export const p2_33_can__able__poder = {
   meta: {
+    wordpack: 33,
     en: "Can & Able (poder)",
     zh: "能够 (poder)",
     pinyin: "Nénggòu (poder)",
@@ -144,6 +147,7 @@ export const p2_33_can__able__poder = {
 
 export const p2_34_want__desire__querer = {
   meta: {
+    wordpack: 34,
     en: "Want & Desire (querer)",
     zh: "想要 (querer)",
     pinyin: "Xiǎng Yào (querer)",
@@ -185,6 +189,7 @@ export const p2_34_want__desire__querer = {
 
 export const p2_35_school__supplies = {
   meta: {
+    wordpack: 35,
     en: "School Supplies",
     zh: "学习用品",
     pinyin: "Xuéxí Yòngpǐn",
@@ -256,6 +261,7 @@ export const p2_35_school__supplies = {
 
 export const p2_36_office__work = {
   meta: {
+    wordpack: 36,
     en: "Office & Work",
     zh: "办公室与工作",
     pinyin: "Bàngōngshì yǔ Gōngzuò",
@@ -327,6 +333,7 @@ export const p2_36_office__work = {
 
 export const p2_37_animals = {
   meta: {
+    wordpack: 37,
     en: "Animals",
     zh: "动物",
     pinyin: "Dòngwù",
@@ -398,6 +405,7 @@ export const p2_37_animals = {
 
 export const p2_38_thinking__pensar = {
   meta: {
+    wordpack: 38,
     en: "Thinking (pensar)",
     zh: "思考 (pensar)",
     pinyin: "Sīkǎo (pensar)",
@@ -439,6 +447,7 @@ export const p2_38_thinking__pensar = {
 
 export const p2_39_feeling__sentir = {
   meta: {
+    wordpack: 39,
     en: "Feeling (sentir)",
     zh: "感觉 (sentir)",
     pinyin: "Gǎnjué (sentir)",
@@ -480,6 +489,7 @@ export const p2_39_feeling__sentir = {
 
 export const p2_40_meals__food__details = {
   meta: {
+    wordpack: 40,
     en: "Meals & Food Details",
     zh: "餐食详情",
     pinyin: "Cānshí Xiángqíng",
@@ -551,6 +561,7 @@ export const p2_40_meals__food__details = {
 
 export const p2_41_drinks__beverages = {
   meta: {
+    wordpack: 41,
     en: "Drinks & Beverages",
     zh: "饮料",
     pinyin: "Yǐnliào",
@@ -604,6 +615,7 @@ export const p2_41_drinks__beverages = {
 
 export const p2_42_vegetables = {
   meta: {
+    wordpack: 42,
     en: "Vegetables",
     zh: "蔬菜",
     pinyin: "Shūcài",
@@ -660,6 +672,7 @@ export const p2_42_vegetables = {
 
 export const p2_43_fruits = {
   meta: {
+    wordpack: 43,
     en: "Fruits",
     zh: "水果",
     pinyin: "Shuǐguǒ",
@@ -716,6 +729,7 @@ export const p2_43_fruits = {
 
 export const p2_44_need__necessity__necesitar = {
   meta: {
+    wordpack: 44,
     en: "Need & Necessity (necesitar)",
     zh: "需要 (necesitar)",
     pinyin: "Xūyào (necesitar)",
@@ -751,6 +765,7 @@ export const p2_44_need__necessity__necesitar = {
 
 export const p2_45_looking__for__buscar = {
   meta: {
+    wordpack: 45,
     en: "Looking For (buscar)",
     zh: "寻找 (buscar)",
     pinyin: "Xúnzhǎo (buscar)",
@@ -786,6 +801,7 @@ export const p2_45_looking__for__buscar = {
 
 export const p2_46_telling__time = {
   meta: {
+    wordpack: 46,
     en: "Telling Time",
     zh: "报时",
     pinyin: "Bàoshí",
@@ -842,6 +858,7 @@ export const p2_46_telling__time = {
 
 export const p2_47_directions__position = {
   meta: {
+    wordpack: 47,
     en: "Directions & Position",
     zh: "方向与位置",
     pinyin: "Fāngxiàng yǔ Wèizhì",
@@ -898,6 +915,7 @@ export const p2_47_directions__position = {
 
 export const p2_48_prepositions__en__con__sin__para = {
   meta: {
+    wordpack: 48,
     en: "Prepositions",
     zh: "介词",
     pinyin: "Jiècí",
@@ -954,6 +972,7 @@ export const p2_48_prepositions__en__con__sin__para = {
 
 export const p2_49_comparing__things = {
   meta: {
+    wordpack: 49,
     en: "Comparing Things",
     zh: "比较事物",
     pinyin: "Bǐjiào Shìwù",
@@ -1010,6 +1029,7 @@ export const p2_49_comparing__things = {
 
 export const p2_50_physical__actions = {
   meta: {
+    wordpack: 50,
     en: "Physical Actions",
     zh: "身体动作",
     pinyin: "Shēntǐ Dòngzuò",
@@ -1066,6 +1086,7 @@ export const p2_50_physical__actions = {
 
 export const p2_51_names__calling__llamar = {
   meta: {
+    wordpack: 51,
     en: "Names & Calling (llamar)",
     zh: "名字与称呼 (llamar)",
     pinyin: "Míngzi yǔ Chēnghu (llamar)",
@@ -1104,6 +1125,7 @@ export const p2_51_names__calling__llamar = {
 
 export const p2_52_giving__dar = {
   meta: {
+    wordpack: 52,
     en: "Giving (dar)",
     zh: "给予 (dar)",
     pinyin: "Jǐyǔ (dar)",
@@ -1145,6 +1167,7 @@ export const p2_52_giving__dar = {
 
 export const p2_53_seeing__watching__ver = {
   meta: {
+    wordpack: 53,
     en: "Seeing & Watching (ver)",
     zh: "看 (ver)",
     pinyin: "Kàn (ver)",
@@ -1186,6 +1209,7 @@ export const p2_53_seeing__watching__ver = {
 
 export const p2_54_restaurant__vocabulary = {
   meta: {
+    wordpack: 54,
     en: "Restaurant Vocabulary",
     zh: "餐厅词汇",
     pinyin: "Cāntīng Cíhuì",
@@ -1248,6 +1272,7 @@ export const p2_54_restaurant__vocabulary = {
 
 export const p2_55_shopping__buying = {
   meta: {
+    wordpack: 55,
     en: "Shopping & Buying",
     zh: "购物",
     pinyin: "Gòuwù",
@@ -1316,6 +1341,7 @@ export const p2_55_shopping__buying = {
 
 export const p2_56_beginning__empezar = {
   meta: {
+    wordpack: 56,
     en: "Beginning (empezar)",
     zh: "开始 (empezar)",
     pinyin: "Kāishǐ (empezar)",
@@ -1357,6 +1383,7 @@ export const p2_56_beginning__empezar = {
 
 export const p2_57_continuing__seguir = {
   meta: {
+    wordpack: 57,
     en: "Continuing (seguir)",
     zh: "继续 (seguir)",
     pinyin: "Jìxù (seguir)",
@@ -1398,6 +1425,7 @@ export const p2_57_continuing__seguir = {
 
 export const p2_58_furniture__objects = {
   meta: {
+    wordpack: 58,
     en: "Furniture & Objects",
     zh: "家具与物品",
     pinyin: "Jiājù yǔ Wùpǐn",
@@ -1463,6 +1491,7 @@ export const p2_58_furniture__objects = {
 
 export const p2_59_bathroom__items = {
   meta: {
+    wordpack: 59,
     en: "Bathroom Items",
     zh: "浴室用品",
     pinyin: "Yùshì Yòngpǐn",
@@ -1519,6 +1548,7 @@ export const p2_59_bathroom__items = {
 
 export const p2_60_health__medical = {
   meta: {
+    wordpack: 60,
     en: "Health & Medical",
     zh: "健康与医疗",
     pinyin: "Jiànkāng yǔ Yīliáo",

@@ -3,6 +3,7 @@
 
 export const pack27_colors = {
   meta: {
+    wordpack: 27,
     packNumber: 27,
     title: "Colors",
     act: "Act II: Development",

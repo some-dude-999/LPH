@@ -3,6 +3,7 @@
 
 export const pack63_at_the_hotel = {
   meta: {
+    wordpack: 63,
     packNumber: 63,
     title: "At the Hotel",
     act: "Act IV: Mastery",

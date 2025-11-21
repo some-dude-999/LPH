@@ -53,6 +53,7 @@ def create_clean_js(pack_num, metadata, words):
 
 export const {var_name} = {{
   meta: {{
+    wordpack: {pack_num},
     packNumber: {pack_num},
     title: "{title}",
     act: "{metadata[pack_num]['act']}",
@@ -79,6 +80,7 @@ def create_obfuscated_js(pack_num, metadata, words):
 
     # Minified version - single line, no spaces
     meta_json = json.dumps({
+        "wordpack": pack_num,
         "packNumber": pack_num,
         "title": title,
         "act": metadata[pack_num]['act'],
@@ -109,8 +111,8 @@ def convert_pack(pack_num, metadata):
                 words.append(row)
 
     # Create output directories
-    clean_dir = BASE_DIR / 'ChineseWords' / 'Jsmodules'
-    obfuscated_dir = BASE_DIR / 'ChineseWords' / 'Jsmodules-js'
+    clean_dir = BASE_DIR / 'Jsmodules'
+    obfuscated_dir = BASE_DIR / 'Jsmodules-js'
     clean_dir.mkdir(exist_ok=True)
     obfuscated_dir.mkdir(exist_ok=True)
 
@@ -158,8 +160,8 @@ def main():
     print(f"✅ COMPLETED: {success_count}/107 packs converted")
     print()
     print("Output directories:")
-    print(f"  - ChineseWords/Jsmodules/ (clean .js files)")
-    print(f"  - ChineseWords/Jsmodules-js/ (obfuscated -js.js files)")
+    print(f"  - Jsmodules/ (clean .js files)")
+    print(f"  - Jsmodules-js/ (obfuscated -js.js files)")
     print("=" * 80)
 
 if __name__ == '__main__':

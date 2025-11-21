@@ -3,6 +3,7 @@
 
 export const pack9_basic_question_words = {
   meta: {
+    wordpack: 9,
     packNumber: 9,
     title: "Basic Question Words",
     act: "Act I: Foundation",

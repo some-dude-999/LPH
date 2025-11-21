@@ -3,6 +3,7 @@
 
 export const p6_181_disappearing__desaparecer = {
   meta: {
+    wordpack: 181,
     en: "Disappearing (desaparecer)",
     zh: "消失 (desaparecer)",
     pinyin: "Xiāoshī (desaparecer)",
@@ -44,6 +45,7 @@ export const p6_181_disappearing__desaparecer = {
 
 export const p6_182_telecommunications = {
   meta: {
+    wordpack: 182,
     en: "Telecommunications",
     zh: "电信",
     pinyin: "Diànxìn",
@@ -115,6 +117,7 @@ export const p6_182_telecommunications = {
 
 export const p6_183_birthdays__fulfilling__cumplir = {
   meta: {
+    wordpack: 183,
     en: "Birthdays & Fulfilling (cumplir)",
     zh: "生日与实现 (cumplir)",
     pinyin: "Shēngrì yǔ Shíxiàn (cumplir)",
@@ -156,6 +159,7 @@ export const p6_183_birthdays__fulfilling__cumplir = {
 
 export const p6_184_missing__lacking__faltar = {
   meta: {
+    wordpack: 184,
     en: "Missing & Lacking (faltar)",
     zh: "缺少 (faltar)",
     pinyin: "Quēshǎo (faltar)",
@@ -197,6 +201,7 @@ export const p6_184_missing__lacking__faltar = {
 
 export const p6_185_tourism__terms = {
   meta: {
+    wordpack: 185,
     en: "Tourism Terms",
     zh: "旅游术语",
     pinyin: "Lǚyóu Shùyǔ",
@@ -268,6 +273,7 @@ export const p6_185_tourism__terms = {
 
 export const p6_186_noticing__notar = {
   meta: {
+    wordpack: 186,
     en: "Noticing (notar)",
     zh: "注意到 (notar)",
     pinyin: "Zhùyìdào (notar)",
@@ -309,6 +315,7 @@ export const p6_186_noticing__notar = {
 
 export const p6_187_allowing__permitir = {
   meta: {
+    wordpack: 187,
     en: "Allowing (permitir)",
     zh: "允许 (permitir)",
     pinyin: "Yǔnxǔ (permitir)",
@@ -350,6 +357,7 @@ export const p6_187_allowing__permitir = {
 
 export const p6_188_manufacturing__terms = {
   meta: {
+    wordpack: 188,
     en: "Manufacturing Terms",
     zh: "制造术语",
     pinyin: "Zhìzào Shùyǔ",
@@ -421,6 +429,7 @@ export const p6_188_manufacturing__terms = {
 
 export const p6_189_achieving__lograr = {
   meta: {
+    wordpack: 189,
     en: "Achieving (lograr)",
     zh: "实现 (lograr)",
     pinyin: "Shíxiàn (lograr)",
@@ -462,6 +471,7 @@ export const p6_189_achieving__lograr = {
 
 export const p6_190_performing__realizar = {
   meta: {
+    wordpack: 190,
     en: "Performing (realizar)",
     zh: "执行 (realizar)",
     pinyin: "Zhíxíng (realizar)",
@@ -503,6 +513,7 @@ export const p6_190_performing__realizar = {
 
 export const p6_191_economics__terms = {
   meta: {
+    wordpack: 191,
     en: "Economics Terms",
     zh: "经济学术语",
     pinyin: "Jīngjìxué Shùyǔ",
@@ -574,6 +585,7 @@ export const p6_191_economics__terms = {
 
 export const p6_192_existing__existir = {
   meta: {
+    wordpack: 192,
     en: "Existing (existir)",
     zh: "存在 (existir)",
     pinyin: "Cúnzài (existir)",
@@ -615,6 +627,7 @@ export const p6_192_existing__existir = {
 
 export const p6_193_depending__depender = {
   meta: {
+    wordpack: 193,
     en: "Depending (depender)",
     zh: "依赖 (depender)",
     pinyin: "Yīlài (depender)",
@@ -656,6 +669,7 @@ export const p6_193_depending__depender = {
 
 export const p6_194_retail__sales = {
   meta: {
+    wordpack: 194,
     en: "Retail & Sales",
     zh: "零售与销售",
     pinyin: "Língshòu yǔ Xiāoshòu",
@@ -727,6 +741,7 @@ export const p6_194_retail__sales = {
 
 export const p6_195_belonging__pertenecer = {
   meta: {
+    wordpack: 195,
     en: "Belonging (pertenecer)",
     zh: "属于 (pertenecer)",
     pinyin: "Shǔyú (pertenecer)",
@@ -768,6 +783,7 @@ export const p6_195_belonging__pertenecer = {
 
 export const p6_196_deserving__merecer = {
   meta: {
+    wordpack: 196,
     en: "Deserving (merecer)",
     zh: "值得 (merecer)",
     pinyin: "Zhídé (merecer)",
@@ -809,6 +825,7 @@ export const p6_196_deserving__merecer = {
 
 export const p6_197_insurance__terms = {
   meta: {
+    wordpack: 197,
     en: "Insurance Terms",
     zh: "保险术语",
     pinyin: "Bǎoxiǎn Shùyǔ",
@@ -880,6 +897,7 @@ export const p6_197_insurance__terms = {
 
 export const p6_198_suffering__sufrir = {
   meta: {
+    wordpack: 198,
     en: "Suffering (sufrir)",
     zh: "遭受 (sufrir)",
     pinyin: "Zāoshòu (sufrir)",
@@ -921,6 +939,7 @@ export const p6_198_suffering__sufrir = {
 
 export const p6_199_enjoying__disfrutar = {
   meta: {
+    wordpack: 199,
     en: "Enjoying (disfrutar)",
     zh: "享受 (disfrutar)",
     pinyin: "Xiǎngshòu (disfrutar)",
@@ -962,6 +981,7 @@ export const p6_199_enjoying__disfrutar = {
 
 export const p6_200_real__estate__terms = {
   meta: {
+    wordpack: 200,
     en: "Real Estate Terms",
     zh: "房地产术语",
     pinyin: "Fángdìchǎn Shùyǔ",
@@ -1033,6 +1053,7 @@ export const p6_200_real__estate__terms = {
 
 export const p6_201_occurring__ocurrir = {
   meta: {
+    wordpack: 201,
     en: "Occurring (ocurrir)",
     zh: "发生 (ocurrir)",
     pinyin: "Fāshēng (ocurrir)",
@@ -1074,6 +1095,7 @@ export const p6_201_occurring__ocurrir = {
 
 export const p6_202_happening__suceder = {
   meta: {
+    wordpack: 202,
     en: "Happening (suceder)",
     zh: "发生 (suceder)",
     pinyin: "Fāshēng (suceder)",
@@ -1115,6 +1137,7 @@ export const p6_202_happening__suceder = {
 
 export const p6_203_aviation__terms = {
   meta: {
+    wordpack: 203,
     en: "Aviation Terms",
     zh: "航空术语",
     pinyin: "Hángkōng Shùyǔ",
@@ -1186,6 +1209,7 @@ export const p6_203_aviation__terms = {
 
 export const p6_204_protecting__proteger = {
   meta: {
+    wordpack: 204,
     en: "Protecting (proteger)",
     zh: "保护 (proteger)",
     pinyin: "Bǎohù (proteger)",
@@ -1230,6 +1254,7 @@ export const p6_204_protecting__proteger = {
 
 export const p6_205_defending__defender = {
   meta: {
+    wordpack: 205,
     en: "Defending (defender)",
     zh: "防御 (defender)",
     pinyin: "Fángyù (defender)",
@@ -1274,6 +1299,7 @@ export const p6_205_defending__defender = {
 
 export const p6_206_logistics__shipping = {
   meta: {
+    wordpack: 206,
     en: "Logistics & Shipping",
     zh: "物流与运输",
     pinyin: "Wùliú yǔ Yùnshū",
@@ -1345,6 +1371,7 @@ export const p6_206_logistics__shipping = {
 
 export const p6_207_reducing__reducir = {
   meta: {
+    wordpack: 207,
     en: "Reducing (reducir)",
     zh: "减少 (reducir)",
     pinyin: "Jiǎnshǎo (reducir)",
@@ -1386,6 +1413,7 @@ export const p6_207_reducing__reducir = {
 
 export const p6_208_increasing__aumentar = {
   meta: {
+    wordpack: 208,
     en: "Increasing (aumentar)",
     zh: "增加 (aumentar)",
     pinyin: "Zēngjiā (aumentar)",
@@ -1427,6 +1455,7 @@ export const p6_208_increasing__aumentar = {
 
 export const p6_209_pharmaceutical__terms = {
   meta: {
+    wordpack: 209,
     en: "Pharmaceutical Terms",
     zh: "制药术语",
     pinyin: "Zhìyào Shùyǔ",
@@ -1495,6 +1524,7 @@ export const p6_209_pharmaceutical__terms = {
 
 export const p6_210_demonstrating__demostrar = {
   meta: {
+    wordpack: 210,
     en: "Demonstrating (demostrar)",
     zh: "演示 (demostrar)",
     pinyin: "Yǎnshì (demostrar)",
@@ -1536,6 +1566,7 @@ export const p6_210_demonstrating__demostrar = {
 
 export const p6_211_checking__comprobar = {
   meta: {
+    wordpack: 211,
     en: "Checking (comprobar)",
     zh: "检查 (comprobar)",
     pinyin: "Jiǎnchá (comprobar)",
@@ -1577,6 +1608,7 @@ export const p6_211_checking__comprobar = {
 
 export const p6_212_energy__power = {
   meta: {
+    wordpack: 212,
     en: "Energy & Power",
     zh: "能源与电力",
     pinyin: "Néngyuán yǔ Diànlì",
@@ -1645,6 +1677,7 @@ export const p6_212_energy__power = {
 
 export const p6_213_thanking__agradecer = {
   meta: {
+    wordpack: 213,
     en: "Thanking (agradecer)",
     zh: "感谢 (agradecer)",
     pinyin: "Gǎnxiè (agradecer)",
@@ -1686,6 +1719,7 @@ export const p6_213_thanking__agradecer = {
 
 export const p6_214_congratulating__felicitar = {
   meta: {
+    wordpack: 214,
     en: "Congratulating (felicitar)",
     zh: "祝贺 (felicitar)",
     pinyin: "Zhùhè (felicitar)",
@@ -1727,6 +1761,7 @@ export const p6_214_congratulating__felicitar = {
 
 export const p6_215_automotive__terms = {
   meta: {
+    wordpack: 215,
     en: "Automotive Terms",
     zh: "汽车术语",
     pinyin: "Qìchē Shùyǔ",
@@ -1798,6 +1833,7 @@ export const p6_215_automotive__terms = {
 
 export const p6_216_suggesting__sugerir = {
   meta: {
+    wordpack: 216,
     en: "Suggesting (sugerir)",
     zh: "建议 (sugerir)",
     pinyin: "Jiànyì (sugerir)",
@@ -1839,6 +1875,7 @@ export const p6_216_suggesting__sugerir = {
 
 export const p6_217_recommending__recomendar = {
   meta: {
+    wordpack: 217,
     en: "Recommending (recomendar)",
     zh: "推荐 (recomendar)",
     pinyin: "Tuījiàn (recomendar)",
@@ -1880,6 +1917,7 @@ export const p6_217_recommending__recomendar = {
 
 export const p6_218_subjunctive__triggers = {
   meta: {
+    wordpack: 218,
     en: "Subjunctive Triggers",
     zh: "虚拟语气触发词",
     pinyin: "Xūnǐ Yǔqì Chùfā Cí",
@@ -1951,6 +1989,7 @@ export const p6_218_subjunctive__triggers = {
 
 export const p6_219_convincing__convencer = {
   meta: {
+    wordpack: 219,
     en: "Convincing (convencer)",
     zh: "说服 (convencer)",
     pinyin: "Shuōfú (convencer)",
@@ -1992,6 +2031,7 @@ export const p6_219_convincing__convencer = {
 
 export const p6_220_trusting__confiar = {
   meta: {
+    wordpack: 220,
     en: "Trusting (confiar)",
     zh: "信任 (confiar)",
     pinyin: "Xìnrèn (confiar)",

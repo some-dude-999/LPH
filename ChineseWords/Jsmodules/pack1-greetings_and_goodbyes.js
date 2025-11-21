@@ -3,6 +3,7 @@
 
 export const pack1_greetings_and_goodbyes = {
   meta: {
+    wordpack: 1,
     packNumber: 1,
     title: "Greetings & Goodbyes",
     act: "Act I: Foundation",

@@ -3,6 +3,7 @@
 
 export const pack14_emergency_and_survival = {
   meta: {
+    wordpack: 14,
     packNumber: 14,
     title: "Emergency & Survival",
     act: "Act I: Foundation",

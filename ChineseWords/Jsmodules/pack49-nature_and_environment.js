@@ -3,6 +3,7 @@
 
 export const pack49_nature_and_environment = {
   meta: {
+    wordpack: 49,
     packNumber: 49,
     title: "Nature & Environment",
     act: "Act III: Expansion",

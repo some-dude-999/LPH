@@ -3,6 +3,7 @@
 
 export const pack33_clothing_items = {
   meta: {
+    wordpack: 33,
     packNumber: 33,
     title: "Clothing Items",
     act: "Act III: Expansion",

@@ -3,6 +3,7 @@
 
 export const pack50_animals = {
   meta: {
+    wordpack: 50,
     packNumber: 50,
     title: "Animals",
     act: "Act III: Expansion",

@@ -3,6 +3,7 @@
 
 export const pack95_emphasis_and_intensifiers = {
   meta: {
+    wordpack: 95,
     packNumber: 95,
     title: "Emphasis & Intensifiers",
     act: "Act V: Refinement",

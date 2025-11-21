@@ -3,6 +3,7 @@
 
 export const pack40_health_and_sickness = {
   meta: {
+    wordpack: 40,
     packNumber: 40,
     title: "Health & Sickness",
     act: "Act III: Expansion",

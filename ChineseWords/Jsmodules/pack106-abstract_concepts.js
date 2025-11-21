@@ -3,6 +3,7 @@
 
 export const pack106_abstract_concepts = {
   meta: {
+    wordpack: 106,
     packNumber: 106,
     title: "Abstract Concepts",
     act: "Act V: Refinement",

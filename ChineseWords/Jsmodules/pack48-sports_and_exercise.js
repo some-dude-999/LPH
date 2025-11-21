@@ -3,6 +3,7 @@
 
 export const pack48_sports_and_exercise = {
   meta: {
+    wordpack: 48,
     packNumber: 48,
     title: "Sports & Exercise",
     act: "Act III: Expansion",

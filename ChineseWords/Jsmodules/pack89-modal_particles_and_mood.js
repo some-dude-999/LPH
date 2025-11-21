@@ -3,6 +3,7 @@
 
 export const pack89_modal_particles_and_mood = {
   meta: {
+    wordpack: 89,
     packNumber: 89,
     title: "Modal Particles & Mood",
     act: "Act V: Refinement",

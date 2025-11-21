@@ -3,6 +3,7 @@
 
 export const pack82_chinese_arts_and_heritage = {
   meta: {
+    wordpack: 82,
     packNumber: 82,
     title: "Chinese Arts & Heritage",
     act: "Act V: Refinement",

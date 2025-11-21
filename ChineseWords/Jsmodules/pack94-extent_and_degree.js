@@ -3,6 +3,7 @@
 
 export const pack94_extent_and_degree = {
   meta: {
+    wordpack: 94,
     packNumber: 94,
     title: "Extent & Degree",
     act: "Act V: Refinement",

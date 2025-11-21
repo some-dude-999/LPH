@@ -3,6 +3,7 @@
 
 export const p5_141_accepting__aceptar = {
   meta: {
+    wordpack: 141,
     en: "Accepting (aceptar)",
     zh: "接受 (aceptar)",
     pinyin: "Jiēshòu (aceptar)",
@@ -44,6 +45,7 @@ export const p5_141_accepting__aceptar = {
 
 export const p5_142_rejecting__rechazar = {
   meta: {
+    wordpack: 142,
     en: "Rejecting (rechazar)",
     zh: "拒绝 (rechazar)",
     pinyin: "Jùjué (rechazar)",
@@ -85,6 +87,7 @@ export const p5_142_rejecting__rechazar = {
 
 export const p5_143_space__universe = {
   meta: {
+    wordpack: 143,
     en: "Space & Universe",
     zh: "太空与宇宙",
     pinyin: "Tàikōng yǔ Yǔzhòu",
@@ -156,6 +159,7 @@ export const p5_143_space__universe = {
 
 export const p5_144_offering__ofrecer = {
   meta: {
+    wordpack: 144,
     en: "Offering (ofrecer)",
     zh: "提供 (ofrecer)",
     pinyin: "Tígōng (ofrecer)",
@@ -197,6 +201,7 @@ export const p5_144_offering__ofrecer = {
 
 export const p5_145_promising__prometer = {
   meta: {
+    wordpack: 145,
     en: "Promising (prometer)",
     zh: "承诺 (prometer)",
     pinyin: "Chéngnuò (prometer)",
@@ -238,6 +243,7 @@ export const p5_145_promising__prometer = {
 
 export const p5_146_chemistry__terms = {
   meta: {
+    wordpack: 146,
     en: "Chemistry Terms",
     zh: "化学术语",
     pinyin: "Huàxué Shùyǔ",
@@ -309,6 +315,7 @@ export const p5_146_chemistry__terms = {
 
 export const p5_147_moving__mover = {
   meta: {
+    wordpack: 147,
     en: "Moving (mover)",
     zh: "移动 (mover)",
     pinyin: "Yídòng (mover)",
@@ -350,6 +357,7 @@ export const p5_147_moving__mover = {
 
 export const p5_148_stopping__detener = {
   meta: {
+    wordpack: 148,
     en: "Stopping (detener)",
     zh: "停止 (detener)",
     pinyin: "Tíngzhǐ (detener)",
@@ -391,6 +399,7 @@ export const p5_148_stopping__detener = {
 
 export const p5_149_military__terms = {
   meta: {
+    wordpack: 149,
     en: "Military Terms",
     zh: "军事术语",
     pinyin: "Jūnshì Shùyǔ",
@@ -462,6 +471,7 @@ export const p5_149_military__terms = {
 
 export const p5_150_continuing__continuar = {
   meta: {
+    wordpack: 150,
     en: "Continuing (continuar)",
     zh: "继续 (continuar)",
     pinyin: "Jìxù (continuar)",
@@ -503,6 +513,7 @@ export const p5_150_continuing__continuar = {
 
 export const p5_151_finishing__terminar = {
   meta: {
+    wordpack: 151,
     en: "Finishing (terminar)",
     zh: "完成 (terminar)",
     pinyin: "Wánchéng (terminar)",
@@ -544,6 +555,7 @@ export const p5_151_finishing__terminar = {
 
 export const p5_152_literature__books = {
   meta: {
+    wordpack: 152,
     en: "Literature & Books",
     zh: "文学与书籍",
     pinyin: "Wénxué yǔ Shūjí",
@@ -615,6 +627,7 @@ export const p5_152_literature__books = {
 
 export const p5_153_developing__desarrollar = {
   meta: {
+    wordpack: 153,
     en: "Developing (desarrollar)",
     zh: "发展 (desarrollar)",
     pinyin: "Fāzhǎn (desarrollar)",
@@ -656,6 +669,7 @@ export const p5_153_developing__desarrollar = {
 
 export const p5_154_producing__producir = {
   meta: {
+    wordpack: 154,
     en: "Producing (producir)",
     zh: "生产 (producir)",
     pinyin: "Shēngchǎn (producir)",
@@ -697,6 +711,7 @@ export const p5_154_producing__producir = {
 
 export const p5_155_construction = {
   meta: {
+    wordpack: 155,
     en: "Construction",
     zh: "建筑",
     pinyin: "Jiànzhù",
@@ -768,6 +783,7 @@ export const p5_155_construction = {
 
 export const p5_156_directing__dirigir = {
   meta: {
+    wordpack: 156,
     en: "Directing (dirigir)",
     zh: "指导 (dirigir)",
     pinyin: "Zhǐdǎo (dirigir)",
@@ -809,6 +825,7 @@ export const p5_156_directing__dirigir = {
 
 export const p5_157_organizing__organizar = {
   meta: {
+    wordpack: 157,
     en: "Organizing (organizar)",
     zh: "组织 (organizar)",
     pinyin: "Zǔzhī (organizar)",
@@ -850,6 +867,7 @@ export const p5_157_organizing__organizar = {
 
 export const p5_158_theater__acting = {
   meta: {
+    wordpack: 158,
     en: "Theater & Acting",
     zh: "戏剧与表演",
     pinyin: "Xìjù yǔ Biǎoyǎn",
@@ -921,6 +939,7 @@ export const p5_158_theater__acting = {
 
 export const p5_159_traveling__viajar = {
   meta: {
+    wordpack: 159,
     en: "Traveling (viajar)",
     zh: "旅行 (viajar)",
     pinyin: "Lǚxíng (viajar)",
@@ -962,6 +981,7 @@ export const p5_159_traveling__viajar = {
 
 export const p5_160_resting__descansar = {
   meta: {
+    wordpack: 160,
     en: "Resting (descansar)",
     zh: "休息 (descansar)",
     pinyin: "Xiūxi (descansar)",
@@ -1003,6 +1023,7 @@ export const p5_160_resting__descansar = {
 
 export const p5_161_philosophy__terms = {
   meta: {
+    wordpack: 161,
     en: "Philosophy Terms",
     zh: "哲学术语",
     pinyin: "Zhéxué Shùyǔ",
@@ -1074,6 +1095,7 @@ export const p5_161_philosophy__terms = {
 
 export const p5_162_practicing__practicar = {
   meta: {
+    wordpack: 162,
     en: "Practicing (practicar)",
     zh: "练习 (practicar)",
     pinyin: "Liànxí (practicar)",
@@ -1115,6 +1137,7 @@ export const p5_162_practicing__practicar = {
 
 export const p5_163_winning__earning__ganar = {
   meta: {
+    wordpack: 163,
     en: "Winning & Earning (ganar)",
     zh: "赢得 (ganar)",
     pinyin: "Yíngdé (ganar)",
@@ -1156,6 +1179,7 @@ export const p5_163_winning__earning__ganar = {
 
 export const p5_164_dance__dancing = {
   meta: {
+    wordpack: 164,
     en: "Dance & Dancing",
     zh: "舞蹈",
     pinyin: "Wǔdǎo",
@@ -1227,6 +1251,7 @@ export const p5_164_dance__dancing = {
 
 export const p5_165_losing__perder = {
   meta: {
+    wordpack: 165,
     en: "Losing (perder)",
     zh: "失去 (perder)",
     pinyin: "Shīqù (perder)",
@@ -1268,6 +1293,7 @@ export const p5_165_losing__perder = {
 
 export const p5_166_forming__formar = {
   meta: {
+    wordpack: 166,
     en: "Forming (formar)",
     zh: "形成 (formar)",
     pinyin: "Xíngchéng (formar)",
@@ -1309,6 +1335,7 @@ export const p5_166_forming__formar = {
 
 export const p5_167_fashion__style = {
   meta: {
+    wordpack: 167,
     en: "Fashion & Style",
     zh: "时尚与风格",
     pinyin: "Shíshàng yǔ Fēnggé",
@@ -1377,6 +1404,7 @@ export const p5_167_fashion__style = {
 
 export const p5_168_reaching__alcanzar = {
   meta: {
+    wordpack: 168,
     en: "Reaching (alcanzar)",
     zh: "达到 (alcanzar)",
     pinyin: "Dádào (alcanzar)",
@@ -1418,6 +1446,7 @@ export const p5_168_reaching__alcanzar = {
 
 export const p5_169_maintaining__mantener = {
   meta: {
+    wordpack: 169,
     en: "Maintaining (mantener)",
     zh: "维持 (mantener)",
     pinyin: "Wéichí (mantener)",
@@ -1459,6 +1488,7 @@ export const p5_169_maintaining__mantener = {
 
 export const p5_170_psychology__terms = {
   meta: {
+    wordpack: 170,
     en: "Psychology Terms",
     zh: "心理学术语",
     pinyin: "Xīnlǐxué Shùyǔ",
@@ -1530,6 +1560,7 @@ export const p5_170_psychology__terms = {
 
 export const p5_171_solving__resolver = {
   meta: {
+    wordpack: 171,
     en: "Solving (resolver)",
     zh: "解决 (resolver)",
     pinyin: "Jiějué (resolver)",
@@ -1571,6 +1602,7 @@ export const p5_171_solving__resolver = {
 
 export const p5_172_avoiding__evitar = {
   meta: {
+    wordpack: 172,
     en: "Avoiding (evitar)",
     zh: "避免 (evitar)",
     pinyin: "Bìmiǎn (evitar)",
@@ -1612,6 +1644,7 @@ export const p5_172_avoiding__evitar = {
 
 export const p5_173_journalism__terms = {
   meta: {
+    wordpack: 173,
     en: "Journalism Terms",
     zh: "新闻术语",
     pinyin: "Xīnwén Shùyǔ",
@@ -1683,6 +1716,7 @@ export const p5_173_journalism__terms = {
 
 export const p5_174_supposing__suponer = {
   meta: {
+    wordpack: 174,
     en: "Supposing (suponer)",
     zh: "假设 (suponer)",
     pinyin: "Jiǎshè (suponer)",
@@ -1724,6 +1758,7 @@ export const p5_174_supposing__suponer = {
 
 export const p5_175_meaning__significar = {
   meta: {
+    wordpack: 175,
     en: "Meaning (significar)",
     zh: "意味 (significar)",
     pinyin: "Yìwèi (significar)",
@@ -1765,6 +1800,7 @@ export const p5_175_meaning__significar = {
 
 export const p5_176_photography__terms = {
   meta: {
+    wordpack: 176,
     en: "Photography Terms",
     zh: "摄影术语",
     pinyin: "Shèyǐng Shùyǔ",
@@ -1836,6 +1872,7 @@ export const p5_176_photography__terms = {
 
 export const p5_177_choosing__elegir = {
   meta: {
+    wordpack: 177,
     en: "Choosing (elegir)",
     zh: "选择 (elegir)",
     pinyin: "Xuǎnzé (elegir)",
@@ -1877,6 +1914,7 @@ export const p5_177_choosing__elegir = {
 
 export const p5_178_deciding__decidir = {
   meta: {
+    wordpack: 178,
     en: "Deciding (decidir)",
     zh: "决定 (decidir)",
     pinyin: "Juédìng (decidir)",
@@ -1918,6 +1956,7 @@ export const p5_178_deciding__decidir = {
 
 export const p5_179_marketing__advertising = {
   meta: {
+    wordpack: 179,
     en: "Marketing & Advertising",
     zh: "营销与广告",
     pinyin: "Yíngxiāo yǔ Guǎnggào",
@@ -1989,6 +2028,7 @@ export const p5_179_marketing__advertising = {
 
 export const p5_180_appearing__aparecer = {
   meta: {
+    wordpack: 180,
     en: "Appearing (aparecer)",
     zh: "出现 (aparecer)",
     pinyin: "Chūxiàn (aparecer)",

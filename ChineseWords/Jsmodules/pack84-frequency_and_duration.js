@@ -3,6 +3,7 @@
 
 export const pack84_frequency_and_duration = {
   meta: {
+    wordpack: 84,
     packNumber: 84,
     title: "Frequency & Duration",
     act: "Act V: Refinement",

@@ -3,6 +3,7 @@
 
 export const pack15_family_members = {
   meta: {
+    wordpack: 15,
     packNumber: 15,
     title: "Family Members",
     act: "Act II: Development",

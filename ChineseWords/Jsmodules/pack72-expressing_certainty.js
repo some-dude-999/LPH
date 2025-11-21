@@ -3,6 +3,7 @@
 
 export const pack72_expressing_certainty = {
   meta: {
+    wordpack: 72,
     packNumber: 72,
     title: "Expressing Certainty",
     act: "Act IV: Mastery",

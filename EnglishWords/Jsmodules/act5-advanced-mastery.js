@@ -3,6 +3,7 @@
 
 export const p136_academic_adjectives = {
   meta: {
+    wordpack: 136,
     en: "Academic Adjectives",
     packNumber: 136
   },
@@ -72,6 +73,7 @@ export const p136_academic_adjectives = {
 
 export const p137_academic_adjectives_2 = {
   meta: {
+    wordpack: 137,
     en: "Academic Adjectives 2",
     packNumber: 137
   },
@@ -141,6 +143,7 @@ export const p137_academic_adjectives_2 = {
 
 export const p138_everyday_legal = {
   meta: {
+    wordpack: 138,
     en: "Everyday Legal",
     packNumber: 138
   },
@@ -213,6 +216,7 @@ export const p138_everyday_legal = {
 
 export const p139_everyday_medical = {
   meta: {
+    wordpack: 139,
     en: "Everyday Medical",
     packNumber: 139
   },
@@ -282,6 +286,7 @@ export const p139_everyday_medical = {
 
 export const p140_everyday_finance = {
   meta: {
+    wordpack: 140,
     en: "Everyday Finance",
     packNumber: 140
   },
@@ -354,6 +359,7 @@ export const p140_everyday_finance = {
 
 export const p141_research__statistics = {
   meta: {
+    wordpack: 141,
     en: "Research & Statistics",
     packNumber: 141
   },
@@ -420,6 +426,7 @@ export const p141_research__statistics = {
 
 export const p142_psychology_basics = {
   meta: {
+    wordpack: 142,
     en: "Psychology Basics",
     packNumber: 142
   },
@@ -486,6 +493,7 @@ export const p142_psychology_basics = {
 
 export const p143_sociology_basics = {
   meta: {
+    wordpack: 143,
     en: "Sociology Basics",
     packNumber: 143
   },
@@ -555,6 +563,7 @@ export const p143_sociology_basics = {
 
 export const p144_critical_thinking = {
   meta: {
+    wordpack: 144,
     en: "Critical Thinking",
     packNumber: 144
   },
@@ -624,6 +633,7 @@ export const p144_critical_thinking = {
 
 export const p145_debate__argument = {
   meta: {
+    wordpack: 145,
     en: "Debate & Argument",
     packNumber: 145
   },
@@ -693,6 +703,7 @@ export const p145_debate__argument = {
 
 export const p146_negotiation = {
   meta: {
+    wordpack: 146,
     en: "Negotiation",
     packNumber: 146
   },
@@ -762,6 +773,7 @@ export const p146_negotiation = {
 
 export const p147_project_management = {
   meta: {
+    wordpack: 147,
     en: "Project Management",
     packNumber: 147
   },
@@ -831,6 +843,7 @@ export const p147_project_management = {
 
 export const p148_business_advanced = {
   meta: {
+    wordpack: 148,
     en: "Business Advanced",
     packNumber: 148
   },
@@ -900,6 +913,7 @@ export const p148_business_advanced = {
 
 export const p149_environmental_science = {
   meta: {
+    wordpack: 149,
     en: "Environmental Science",
     packNumber: 149
   },
@@ -969,6 +983,7 @@ export const p149_environmental_science = {
 
 export const p150_literary_devices = {
   meta: {
+    wordpack: 150,
     en: "Literary Devices",
     packNumber: 150
   },
@@ -1038,6 +1053,7 @@ export const p150_literary_devices = {
 
 export const p151_advanced_idioms = {
   meta: {
+    wordpack: 151,
     en: "Advanced Idioms",
     packNumber: 151
   },
@@ -1092,6 +1108,7 @@ export const p151_advanced_idioms = {
 
 export const p152_business_idioms = {
   meta: {
+    wordpack: 152,
     en: "Business Idioms",
     packNumber: 152
   },
@@ -1146,6 +1163,7 @@ export const p152_business_idioms = {
 
 export const p153_formal_connectors = {
   meta: {
+    wordpack: 153,
     en: "Formal Connectors",
     packNumber: 153
   },
@@ -1215,6 +1233,7 @@ export const p153_formal_connectors = {
 
 export const p154_advanced_verbs = {
   meta: {
+    wordpack: 154,
     en: "Advanced Verbs",
     packNumber: 154
   },
@@ -1284,6 +1303,7 @@ export const p154_advanced_verbs = {
 
 export const p155_nuanced_adjectives = {
   meta: {
+    wordpack: 155,
     en: "Nuanced Adjectives",
     packNumber: 155
   },
@@ -1353,6 +1373,7 @@ export const p155_nuanced_adjectives = {
 
 export const p156_question_patterns = {
   meta: {
+    wordpack: 156,
     en: "Question Patterns",
     packNumber: 156
   },
@@ -1422,6 +1443,7 @@ export const p156_question_patterns = {
 
 export const p157_response_patterns = {
   meta: {
+    wordpack: 157,
     en: "Response Patterns",
     packNumber: 157
   },
@@ -1491,6 +1513,7 @@ export const p157_response_patterns = {
 
 export const p158_negative_patterns = {
   meta: {
+    wordpack: 158,
     en: "Negative Patterns",
     packNumber: 158
   },
@@ -1560,6 +1583,7 @@ export const p158_negative_patterns = {
 
 export const p159_agreement__disagreement = {
   meta: {
+    wordpack: 159,
     en: "Agreement & Disagreement",
     packNumber: 159
   },
@@ -1629,6 +1653,7 @@ export const p159_agreement__disagreement = {
 
 export const p160_apology__excuse_patterns = {
   meta: {
+    wordpack: 160,
     en: "Apology & Excuse Patterns",
     packNumber: 160
   },

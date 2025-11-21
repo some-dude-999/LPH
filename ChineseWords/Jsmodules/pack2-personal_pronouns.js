@@ -3,6 +3,7 @@
 
 export const pack2_personal_pronouns = {
   meta: {
+    wordpack: 2,
     packNumber: 2,
     title: "Personal Pronouns",
     act: "Act I: Foundation",

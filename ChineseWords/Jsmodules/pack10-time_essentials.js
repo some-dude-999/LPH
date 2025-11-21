@@ -3,6 +3,7 @@
 
 export const pack10_time_essentials = {
   meta: {
+    wordpack: 10,
     packNumber: 10,
     title: "Time Essentials",
     act: "Act I: Foundation",

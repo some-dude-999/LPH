@@ -3,6 +3,7 @@
 
 export const pack81_culture_and_traditions = {
   meta: {
+    wordpack: 81,
     packNumber: 81,
     title: "Culture & Traditions",
     act: "Act V: Refinement",

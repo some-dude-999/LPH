@@ -3,6 +3,7 @@
 
 export const pack77_making_comparisons = {
   meta: {
+    wordpack: 77,
     packNumber: 77,
     title: "Making Comparisons",
     act: "Act IV: Mastery",

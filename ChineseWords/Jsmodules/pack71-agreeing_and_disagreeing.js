@@ -3,6 +3,7 @@
 
 export const pack71_agreeing_and_disagreeing = {
   meta: {
+    wordpack: 71,
     packNumber: 71,
     title: "Agreeing & Disagreeing",
     act: "Act IV: Mastery",

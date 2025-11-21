@@ -3,6 +3,7 @@
 
 export const pack103_logical_relations = {
   meta: {
+    wordpack: 103,
     packNumber: 103,
     title: "Logical Relations",
     act: "Act V: Refinement",

@@ -3,6 +3,7 @@
 
 export const pack51_numbers_and_math = {
   meta: {
+    wordpack: 51,
     packNumber: 51,
     title: "Numbers & Math",
     act: "Act III: Expansion",

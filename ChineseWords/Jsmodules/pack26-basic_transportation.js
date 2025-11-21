@@ -3,6 +3,7 @@
 
 export const pack26_basic_transportation = {
   meta: {
+    wordpack: 26,
     packNumber: 26,
     title: "Basic Transportation",
     act: "Act II: Development",

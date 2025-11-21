@@ -3,6 +3,7 @@
 
 export const pack22_more_action_verbs = {
   meta: {
+    wordpack: 22,
     packNumber: 22,
     title: "More Action Verbs",
     act: "Act II: Development",

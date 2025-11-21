@@ -3,6 +3,7 @@
 
 export const p3_61_knowing__facts__saber = {
   meta: {
+    wordpack: 61,
     en: "Knowing Facts (saber)",
     zh: "知道事实 (saber)",
     pinyin: "Zhīdào Shìshí (saber)",
@@ -44,6 +45,7 @@ export const p3_61_knowing__facts__saber = {
 
 export const p3_62_knowing__peopleplaces__conocer = {
   meta: {
+    wordpack: 62,
     en: "Knowing People/Places (conocer)",
     zh: "认识人地 (conocer)",
     pinyin: "Rènshi Réndì (conocer)",
@@ -82,6 +84,7 @@ export const p3_62_knowing__peopleplaces__conocer = {
 
 export const p3_63_technology__internet = {
   meta: {
+    wordpack: 63,
     en: "Technology & Internet",
     zh: "技术与网络",
     pinyin: "Jìshù yǔ Wǎngluò",
@@ -153,6 +156,7 @@ export const p3_63_technology__internet = {
 
 export const p3_64_asking__for__things__pedir = {
   meta: {
+    wordpack: 64,
     en: "Asking For Things (pedir)",
     zh: "请求 (pedir)",
     pinyin: "Qǐngqiú (pedir)",
@@ -194,6 +198,7 @@ export const p3_64_asking__for__things__pedir = {
 
 export const p3_65_asking__questions__preguntar = {
   meta: {
+    wordpack: 65,
     en: "Asking Questions (preguntar)",
     zh: "提问 (preguntar)",
     pinyin: "Tíwèn (preguntar)",
@@ -232,6 +237,7 @@ export const p3_65_asking__questions__preguntar = {
 
 export const p3_66_nature__outdoors = {
   meta: {
+    wordpack: 66,
     en: "Nature & Outdoors",
     zh: "自然与户外",
     pinyin: "Zìrán yǔ Hùwài",
@@ -303,6 +309,7 @@ export const p3_66_nature__outdoors = {
 
 export const p3_67_sleeping__dormir = {
   meta: {
+    wordpack: 67,
     en: "Sleeping (dormir)",
     zh: "睡觉 (dormir)",
     pinyin: "Shuìjiào (dormir)",
@@ -344,6 +351,7 @@ export const p3_67_sleeping__dormir = {
 
 export const p3_68_playing__jugar = {
   meta: {
+    wordpack: 68,
     en: "Playing (jugar)",
     zh: "玩 (jugar)",
     pinyin: "Wán (jugar)",
@@ -385,6 +393,7 @@ export const p3_68_playing__jugar = {
 
 export const p3_69_sports = {
   meta: {
+    wordpack: 69,
     en: "Sports",
     zh: "体育运动",
     pinyin: "Tǐyù Yùndòng",
@@ -456,6 +465,7 @@ export const p3_69_sports = {
 
 export const p3_70_hobbies__interests = {
   meta: {
+    wordpack: 70,
     en: "Hobbies & Interests",
     zh: "爱好",
     pinyin: "Àihào",
@@ -509,6 +519,7 @@ export const p3_70_hobbies__interests = {
 
 export const p3_71_leaving__salir = {
   meta: {
+    wordpack: 71,
     en: "Leaving (salir)",
     zh: "离开 (salir)",
     pinyin: "Líkāi (salir)",
@@ -550,6 +561,7 @@ export const p3_71_leaving__salir = {
 
 export const p3_72_returning__volver = {
   meta: {
+    wordpack: 72,
     en: "Returning (volver)",
     zh: "返回 (volver)",
     pinyin: "Fǎnhuí (volver)",
@@ -591,6 +603,7 @@ export const p3_72_returning__volver = {
 
 export const p3_73_music__songs = {
   meta: {
+    wordpack: 73,
     en: "Music & Songs",
     zh: "音乐与歌曲",
     pinyin: "Yīnyuè yǔ Gēqǔ",
@@ -662,6 +675,7 @@ export const p3_73_music__songs = {
 
 export const p3_74_wearing__carrying__llevar = {
   meta: {
+    wordpack: 74,
     en: "Wearing & Carrying (llevar)",
     zh: "穿戴与携带 (llevar)",
     pinyin: "Chuāndài yǔ Xiédài (llevar)",
@@ -703,6 +717,7 @@ export const p3_74_wearing__carrying__llevar = {
 
 export const p3_75_bringing__traer = {
   meta: {
+    wordpack: 75,
     en: "Bringing (traer)",
     zh: "带来 (traer)",
     pinyin: "Dài Lái (traer)",
@@ -744,6 +759,7 @@ export const p3_75_bringing__traer = {
 
 export const p3_76_school__education = {
   meta: {
+    wordpack: 76,
     en: "School & Education",
     zh: "学校与教育",
     pinyin: "Xuéxiào yǔ Jiàoyù",
@@ -827,6 +843,7 @@ export const p3_76_school__education = {
 
 export const p3_77_deep__emotions = {
   meta: {
+    wordpack: 77,
     en: "Deep Emotions",
     zh: "深层情感",
     pinyin: "Shēncéng Qínggǎn",
@@ -898,6 +915,7 @@ export const p3_77_deep__emotions = {
 
 export const p3_78_saying__telling__decir = {
   meta: {
+    wordpack: 78,
     en: "Saying & Telling (decir)",
     zh: "说 (decir)",
     pinyin: "Shuō (decir)",
@@ -939,6 +957,7 @@ export const p3_78_saying__telling__decir = {
 
 export const p3_79_putting__placing__poner = {
   meta: {
+    wordpack: 79,
     en: "Putting & Placing (poner)",
     zh: "放置 (poner)",
     pinyin: "Fàngzhì (poner)",
@@ -980,6 +999,7 @@ export const p3_79_putting__placing__poner = {
 
 export const p3_80_travel__tourism = {
   meta: {
+    wordpack: 80,
     en: "Travel & Tourism",
     zh: "旅行与旅游",
     pinyin: "Lǚxíng yǔ Lǚyóu",
@@ -1051,6 +1071,7 @@ export const p3_80_travel__tourism = {
 
 export const p3_81_banking__money = {
   meta: {
+    wordpack: 81,
     en: "Banking & Money",
     zh: "银行与金钱",
     pinyin: "Yínháng yǔ Jīnqián",
@@ -1122,6 +1143,7 @@ export const p3_81_banking__money = {
 
 export const p3_82_finding__encontrar = {
   meta: {
+    wordpack: 82,
     en: "Finding (encontrar)",
     zh: "找到 (encontrar)",
     pinyin: "Zhǎodào (encontrar)",
@@ -1163,6 +1185,7 @@ export const p3_82_finding__encontrar = {
 
 export const p3_83_waiting__hoping__esperar = {
   meta: {
+    wordpack: 83,
     en: "Waiting & Hoping (esperar)",
     zh: "等待与希望 (esperar)",
     pinyin: "Děngdài yǔ Xīwàng (esperar)",
@@ -1204,6 +1227,7 @@ export const p3_83_waiting__hoping__esperar = {
 
 export const p3_84_business__terms = {
   meta: {
+    wordpack: 84,
     en: "Business Terms",
     zh: "商业术语",
     pinyin: "Shāngyè Shùyǔ",
@@ -1275,6 +1299,7 @@ export const p3_84_business__terms = {
 
 export const p3_85_believing__creer = {
   meta: {
+    wordpack: 85,
     en: "Believing (creer)",
     zh: "相信 (creer)",
     pinyin: "Xiāngxìn (creer)",
@@ -1316,6 +1341,7 @@ export const p3_85_believing__creer = {
 
 export const p3_86_living__vivir = {
   meta: {
+    wordpack: 86,
     en: "Living (vivir)",
     zh: "生活 (vivir)",
     pinyin: "Shēnghuó (vivir)",
@@ -1357,6 +1383,7 @@ export const p3_86_living__vivir = {
 
 export const p3_87_cooking__verbs = {
   meta: {
+    wordpack: 87,
     en: "Cooking Verbs",
     zh: "烹饪动词",
     pinyin: "Pēngrèn Dòngcí",
@@ -1428,6 +1455,7 @@ export const p3_87_cooking__verbs = {
 
 export const p3_88_physical__appearance = {
   meta: {
+    wordpack: 88,
     en: "Physical Appearance",
     zh: "外貌",
     pinyin: "Wàimào",
@@ -1499,6 +1527,7 @@ export const p3_88_physical__appearance = {
 
 export const p3_89_receiving__recibir = {
   meta: {
+    wordpack: 89,
     en: "Receiving (recibir)",
     zh: "接收 (recibir)",
     pinyin: "Jiēshōu (recibir)",
@@ -1540,6 +1569,7 @@ export const p3_89_receiving__recibir = {
 
 export const p3_90_sending__enviar = {
   meta: {
+    wordpack: 90,
     en: "Sending (enviar)",
     zh: "发送 (enviar)",
     pinyin: "Fāsòng (enviar)",
@@ -1581,6 +1611,7 @@ export const p3_90_sending__enviar = {
 
 export const p3_91_personal__qualities = {
   meta: {
+    wordpack: 91,
     en: "Personal Qualities",
     zh: "个人品质",
     pinyin: "Gèrén Pǐnzhì",
@@ -1652,6 +1683,7 @@ export const p3_91_personal__qualities = {
 
 export const p3_92_opening__abrir = {
   meta: {
+    wordpack: 92,
     en: "Opening (abrir)",
     zh: "打开 (abrir)",
     pinyin: "Dǎkāi (abrir)",
@@ -1693,6 +1725,7 @@ export const p3_92_opening__abrir = {
 
 export const p3_93_closing__cerrar = {
   meta: {
+    wordpack: 93,
     en: "Closing (cerrar)",
     zh: "关闭 (cerrar)",
     pinyin: "Guānbì (cerrar)",
@@ -1734,6 +1767,7 @@ export const p3_93_closing__cerrar = {
 
 export const p3_94_internet__web = {
   meta: {
+    wordpack: 94,
     en: "Internet & Web",
     zh: "互联网",
     pinyin: "Hùliánwǎng",
@@ -1805,6 +1839,7 @@ export const p3_94_internet__web = {
 
 export const p3_95_relationships = {
   meta: {
+    wordpack: 95,
     en: "Relationships",
     zh: "关系",
     pinyin: "Guānxi",
@@ -1876,6 +1911,7 @@ export const p3_95_relationships = {
 
 export const p3_96_reading__leer = {
   meta: {
+    wordpack: 96,
     en: "Reading (leer)",
     zh: "阅读 (leer)",
     pinyin: "Yuèdú (leer)",
@@ -1917,6 +1953,7 @@ export const p3_96_reading__leer = {
 
 export const p3_97_writing__escribir = {
   meta: {
+    wordpack: 97,
     en: "Writing (escribir)",
     zh: "写作 (escribir)",
     pinyin: "Xiězuò (escribir)",
@@ -1958,6 +1995,7 @@ export const p3_97_writing__escribir = {
 
 export const p3_98_government__politics = {
   meta: {
+    wordpack: 98,
     en: "Government & Politics",
     zh: "政府与政治",
     pinyin: "Zhèngfǔ yǔ Zhèngzhì",
@@ -2029,6 +2067,7 @@ export const p3_98_government__politics = {
 
 export const p3_99_showing__mostrar = {
   meta: {
+    wordpack: 99,
     en: "Showing (mostrar)",
     zh: "展示 (mostrar)",
     pinyin: "Zhǎnshì (mostrar)",
@@ -2070,6 +2109,7 @@ export const p3_99_showing__mostrar = {
 
 export const p3_100_explaining__explicar = {
   meta: {
+    wordpack: 100,
     en: "Explaining (explicar)",
     zh: "解释 (explicar)",
     pinyin: "Jiěshì (explicar)",

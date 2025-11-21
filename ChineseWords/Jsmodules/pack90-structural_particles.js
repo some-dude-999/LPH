@@ -3,6 +3,7 @@
 
 export const pack90_structural_particles = {
   meta: {
+    wordpack: 90,
     packNumber: 90,
     title: "Structural Particles",
     act: "Act V: Refinement",

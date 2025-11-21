@@ -3,6 +3,7 @@
 
 export const p7_221_past__subjunctive__forms = {
   meta: {
+    wordpack: 221,
     en: "Past Subjunctive Forms",
     zh: "过去虚拟语气",
     pinyin: "Guòqù Xūnǐ Yǔqì",
@@ -74,6 +75,7 @@ export const p7_221_past__subjunctive__forms = {
 
 export const p7_222_dreaming__soar = {
   meta: {
+    wordpack: 222,
     en: "Dreaming (soñar)",
     zh: "梦想 (soñar)",
     pinyin: "Mèngxiǎng (soñar)",
@@ -115,6 +117,7 @@ export const p7_222_dreaming__soar = {
 
 export const p7_223_agreeing__acordar = {
   meta: {
+    wordpack: 223,
     en: "Agreeing (acordar)",
     zh: "同意 (acordar)",
     pinyin: "Tóngyì (acordar)",
@@ -156,6 +159,7 @@ export const p7_223_agreeing__acordar = {
 
 export const p7_224_robotics__ai__terms = {
   meta: {
+    wordpack: 224,
     en: "Robotics & AI Terms",
     zh: "机器人与人工智能术语",
     pinyin: "Jīqìrén yǔ Réngōng Zhìnéng Shùyǔ",
@@ -227,6 +231,7 @@ export const p7_224_robotics__ai__terms = {
 
 export const p7_225_warming__calentar = {
   meta: {
+    wordpack: 225,
     en: "Warming (calentar)",
     zh: "加热 (calentar)",
     pinyin: "Jiārè (calentar)",
@@ -268,6 +273,7 @@ export const p7_225_warming__calentar = {
 
 export const p7_226_cooling__enfriar = {
   meta: {
+    wordpack: 226,
     en: "Cooling (enfriar)",
     zh: "冷却 (enfriar)",
     pinyin: "Lěngquè (enfriar)",
@@ -309,6 +315,7 @@ export const p7_226_cooling__enfriar = {
 
 export const p7_227_alternative__medicine = {
   meta: {
+    wordpack: 227,
     en: "Alternative Medicine",
     zh: "替代医学",
     pinyin: "Tìdài Yīxué",
@@ -377,6 +384,7 @@ export const p7_227_alternative__medicine = {
 
 export const p7_228_hiding__esconder = {
   meta: {
+    wordpack: 228,
     en: "Hiding (esconder)",
     zh: "隐藏 (esconder)",
     pinyin: "Yǐncáng (esconder)",
@@ -418,6 +426,7 @@ export const p7_228_hiding__esconder = {
 
 export const p7_229_showing__mostrar = {
   meta: {
+    wordpack: 229,
     en: "Showing (mostrar)",
     zh: "展示 (mostrar)",
     pinyin: "Zhǎnshì (mostrar)",
@@ -459,6 +468,7 @@ export const p7_229_showing__mostrar = {
 
 export const p7_230_virtual__reality__terms = {
   meta: {
+    wordpack: 230,
     en: "Virtual Reality Terms",
     zh: "虚拟现实术语",
     pinyin: "Xūnǐ Xiànshí Shùyǔ",
@@ -530,6 +540,7 @@ export const p7_230_virtual__reality__terms = {
 
 export const p7_231_measuring__medir = {
   meta: {
+    wordpack: 231,
     en: "Measuring (medir)",
     zh: "测量 (medir)",
     pinyin: "Cèliáng (medir)",
@@ -571,6 +582,7 @@ export const p7_231_measuring__medir = {
 
 export const p7_232_weighing__pesar = {
   meta: {
+    wordpack: 232,
     en: "Weighing (pesar)",
     zh: "称重 (pesar)",
     pinyin: "Chēngzhòng (pesar)",
@@ -612,6 +624,7 @@ export const p7_232_weighing__pesar = {
 
 export const p7_233_cryptocurrency__terms = {
   meta: {
+    wordpack: 233,
     en: "Cryptocurrency Terms",
     zh: "加密货币术语",
     pinyin: "Jiāmì Huòbì Shùyǔ",
@@ -677,6 +690,7 @@ export const p7_233_cryptocurrency__terms = {
 
 export const p7_234_opening__abrir = {
   meta: {
+    wordpack: 234,
     en: "Opening (abrir)",
     zh: "打开 (abrir)",
     pinyin: "Dǎkāi (abrir)",
@@ -718,6 +732,7 @@ export const p7_234_opening__abrir = {
 
 export const p7_235_closing__cerrar = {
   meta: {
+    wordpack: 235,
     en: "Closing (cerrar)",
     zh: "关闭 (cerrar)",
     pinyin: "Guānbì (cerrar)",
@@ -759,6 +774,7 @@ export const p7_235_closing__cerrar = {
 
 export const p7_236_sustainable__living = {
   meta: {
+    wordpack: 236,
     en: "Sustainable Living",
     zh: "可持续生活",
     pinyin: "Kě Chíxù Shēnghuó",
@@ -824,6 +840,7 @@ export const p7_236_sustainable__living = {
 
 export const p7_237_pushing__empujar = {
   meta: {
+    wordpack: 237,
     en: "Pushing (empujar)",
     zh: "推 (empujar)",
     pinyin: "Tuī (empujar)",
@@ -865,6 +882,7 @@ export const p7_237_pushing__empujar = {
 
 export const p7_238_pulling__tirar = {
   meta: {
+    wordpack: 238,
     en: "Pulling (tirar)",
     zh: "拉 (tirar)",
     pinyin: "Lā (tirar)",
@@ -906,6 +924,7 @@ export const p7_238_pulling__tirar = {
 
 export const p7_239_combining__combinar = {
   meta: {
+    wordpack: 239,
     en: "Combining (combinar)",
     zh: "组合 (combinar)",
     pinyin: "Zǔhé (combinar)",
@@ -947,6 +966,7 @@ export const p7_239_combining__combinar = {
 
 export const p7_240_separating__separar = {
   meta: {
+    wordpack: 240,
     en: "Separating (separar)",
     zh: "分离 (separar)",
     pinyin: "Fēnlí (separar)",
@@ -988,6 +1008,7 @@ export const p7_240_separating__separar = {
 
 export const p7_241_dying__morir = {
   meta: {
+    wordpack: 241,
     en: "Dying (morir)",
     zh: "死亡 (morir)",
     pinyin: "Sǐwáng (morir)",
@@ -1029,6 +1050,7 @@ export const p7_241_dying__morir = {
 
 export const p7_242_irregular__past__forms = {
   meta: {
+    wordpack: 242,
     en: "Irregular Past Forms",
     zh: "不规则过去式",
     pinyin: "Bù Guīzé Guòqùshì",
@@ -1094,6 +1116,7 @@ export const p7_242_irregular__past__forms = {
 
 export const p7_243_growing__crecer = {
   meta: {
+    wordpack: 243,
     en: "Growing (crecer)",
     zh: "成长 (crecer)",
     pinyin: "Chéngzhǎng (crecer)",
@@ -1135,6 +1158,7 @@ export const p7_243_growing__crecer = {
 
 export const p7_244_aging__envejecer = {
   meta: {
+    wordpack: 244,
     en: "Aging (envejecer)",
     zh: "衰老 (envejecer)",
     pinyin: "Shuāilǎo (envejecer)",
@@ -1176,6 +1200,7 @@ export const p7_244_aging__envejecer = {
 
 export const p7_245_command__forms = {
   meta: {
+    wordpack: 245,
     en: "Command Forms",
     zh: "命令式",
     pinyin: "Mìnglìng Shì",
@@ -1247,6 +1272,7 @@ export const p7_245_command__forms = {
 
 export const p7_246_reflexive__pronouns = {
   meta: {
+    wordpack: 246,
     en: "Reflexive Pronouns",
     zh: "反身代词",
     pinyin: "Fǎnshēn Dàicí",
@@ -1312,6 +1338,7 @@ export const p7_246_reflexive__pronouns = {
 
 export const p7_247_gerund__forms = {
   meta: {
+    wordpack: 247,
     en: "Gerund Forms",
     zh: "动名词形式",
     pinyin: "Dòng Míngcí Xíngshì",
@@ -1377,6 +1404,7 @@ export const p7_247_gerund__forms = {
 
 export const p7_248_perfect__tenses = {
   meta: {
+    wordpack: 248,
     en: "Perfect Tenses",
     zh: "完成时态",
     pinyin: "Wánchéng Shítài",
@@ -1442,6 +1470,7 @@ export const p7_248_perfect__tenses = {
 
 export const p7_249_future__forms = {
   meta: {
+    wordpack: 249,
     en: "Future Forms",
     zh: "将来时态",
     pinyin: "Jiānglái Shítài",
@@ -1507,6 +1536,7 @@ export const p7_249_future__forms = {
 
 export const p7_250_common__idioms = {
   meta: {
+    wordpack: 250,
     en: "Common Idioms",
     zh: "常用习语",
     pinyin: "Chángyòng Xíyǔ",

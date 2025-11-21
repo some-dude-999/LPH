@@ -3,6 +3,7 @@
 
 export const pack56_expressing_needs = {
   meta: {
+    wordpack: 56,
     packNumber: 56,
     title: "Expressing Needs",
     act: "Act IV: Mastery",

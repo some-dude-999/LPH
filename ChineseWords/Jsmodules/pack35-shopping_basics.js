@@ -3,6 +3,7 @@
 
 export const pack35_shopping_basics = {
   meta: {
+    wordpack: 35,
     packNumber: 35,
     title: "Shopping Basics",
     act: "Act III: Expansion",

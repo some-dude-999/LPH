@@ -3,6 +3,7 @@
 
 export const pack74_frequency_expressions = {
   meta: {
+    wordpack: 74,
     packNumber: 74,
     title: "Frequency Expressions",
     act: "Act IV: Mastery",

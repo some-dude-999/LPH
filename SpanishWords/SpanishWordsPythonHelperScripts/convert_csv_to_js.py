@@ -135,7 +135,11 @@ def create_clean_js_file(act_name, packs_data):
 
         # Meta titles in multiple languages
         for lang, title in pack_data['meta'].items():
-            output_lines.append(f'    {lang}: "{title}",')
+            if lang == 'wordpack':
+                # Output wordpack as a number, not a string
+                output_lines.append(f'    {lang}: {title},')
+            else:
+                output_lines.append(f'    {lang}: "{title}",')
 
         output_lines[-1] = output_lines[-1].rstrip(',')  # Remove trailing comma
         output_lines.append("  },")
@@ -251,7 +255,7 @@ def main():
             acts_data[act_filename] = {}
 
         acts_data[act_filename][pack_var_name] = {
-            'meta': meta_titles,
+            'meta': {'wordpack': pack_num, **meta_titles},
             'words': words
         }
 

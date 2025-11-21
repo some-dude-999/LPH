@@ -3,6 +3,7 @@
 
 export const pack60_talking_about_problems = {
   meta: {
+    wordpack: 60,
     packNumber: 60,
     title: "Talking About Problems",
     act: "Act IV: Mastery",

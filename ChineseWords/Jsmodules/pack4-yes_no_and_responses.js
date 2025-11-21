@@ -3,6 +3,7 @@
 
 export const pack4_yes_no_and_responses = {
   meta: {
+    wordpack: 4,
     packNumber: 4,
     title: "Yes No & Responses",
     act: "Act I: Foundation",

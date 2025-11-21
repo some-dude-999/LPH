@@ -3,6 +3,7 @@
 
 export const pack25_directions_and_positions = {
   meta: {
+    wordpack: 25,
     packNumber: 25,
     title: "Directions & Positions",
     act: "Act II: Development",

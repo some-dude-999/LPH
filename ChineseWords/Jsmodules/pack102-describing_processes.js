@@ -3,6 +3,7 @@
 
 export const pack102_describing_processes = {
   meta: {
+    wordpack: 102,
     packNumber: 102,
     title: "Describing Processes",
     act: "Act V: Refinement",

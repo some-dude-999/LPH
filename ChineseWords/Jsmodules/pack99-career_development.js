@@ -3,6 +3,7 @@
 
 export const pack99_career_development = {
   meta: {
+    wordpack: 99,
     packNumber: 99,
     title: "Career Development",
     act: "Act V: Refinement",

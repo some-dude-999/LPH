@@ -3,6 +3,7 @@
 
 export const pack87_conditions_and_assumptions = {
   meta: {
+    wordpack: 87,
     packNumber: 87,
     title: "Conditions & Assumptions",
     act: "Act V: Refinement",

@@ -3,6 +3,7 @@
 
 export const pack31_common_foods = {
   meta: {
+    wordpack: 31,
     packNumber: 31,
     title: "Common Foods",
     act: "Act III: Expansion",

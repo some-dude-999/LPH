@@ -3,6 +3,7 @@
 
 export const pack57_asking_for_help = {
   meta: {
+    wordpack: 57,
     packNumber: 57,
     title: "Asking for Help",
     act: "Act IV: Mastery",

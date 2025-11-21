@@ -130,6 +130,7 @@ def generate_js_for_act(act_name, act_info, overview):
 
         js_lines.append(f"export const {var_name} = {{")
         js_lines.append("  meta: {")
+        js_lines.append(f"    wordpack: {pack['number']},")
         js_lines.append(f"    en: \"{pack['title']}\",")
         js_lines.append(f"    packNumber: {pack['number']}")
         js_lines.append("  },")
