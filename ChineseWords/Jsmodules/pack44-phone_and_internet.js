@@ -3,6 +3,7 @@
 
 export const pack44_phone_and_internet = {
   meta: {
+    wordpack: 44,
     packNumber: 44,
     title: "Phone & Internet",
     act: "Act III: Expansion",

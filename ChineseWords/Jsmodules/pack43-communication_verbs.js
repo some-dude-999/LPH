@@ -3,6 +3,7 @@
 
 export const pack43_communication_verbs = {
   meta: {
+    wordpack: 43,
     packNumber: 43,
     title: "Communication Verbs",
     act: "Act III: Expansion",

@@ -3,6 +3,7 @@
 
 export const pack41_school_life = {
   meta: {
+    wordpack: 41,
     packNumber: 41,
     title: "School Life",
     act: "Act III: Expansion",

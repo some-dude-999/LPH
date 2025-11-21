@@ -3,6 +3,7 @@
 
 export const pack54_opinions_and_views = {
   meta: {
+    wordpack: 54,
     packNumber: 54,
     title: "Opinions & Views",
     act: "Act IV: Mastery",

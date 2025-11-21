@@ -3,6 +3,7 @@
 
 export const pack8_core_measure_words = {
   meta: {
+    wordpack: 8,
     packNumber: 8,
     title: "Core Measure Words",
     act: "Act I: Foundation",

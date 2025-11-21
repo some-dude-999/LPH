@@ -3,6 +3,7 @@
 
 export const pack93_quantities_and_amounts = {
   meta: {
+    wordpack: 93,
     packNumber: 93,
     title: "Quantities & Amounts",
     act: "Act V: Refinement",

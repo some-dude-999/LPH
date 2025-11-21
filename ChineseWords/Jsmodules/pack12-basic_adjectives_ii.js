@@ -3,6 +3,7 @@
 
 export const pack12_basic_adjectives_ii = {
   meta: {
+    wordpack: 12,
     packNumber: 12,
     title: "Basic Adjectives II",
     act: "Act I: Foundation",

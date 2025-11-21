@@ -3,6 +3,7 @@
 
 export const pack76_quality_descriptions = {
   meta: {
+    wordpack: 76,
     packNumber: 76,
     title: "Quality Descriptions",
     act: "Act IV: Mastery",

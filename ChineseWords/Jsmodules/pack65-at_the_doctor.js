@@ -3,6 +3,7 @@
 
 export const pack65_at_the_doctor = {
   meta: {
+    wordpack: 65,
     packNumber: 65,
     title: "At the Doctor",
     act: "Act IV: Mastery",

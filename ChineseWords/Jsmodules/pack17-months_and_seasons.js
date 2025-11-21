@@ -3,6 +3,7 @@
 
 export const pack17_months_and_seasons = {
   meta: {
+    wordpack: 17,
     packNumber: 17,
     title: "Months & Seasons",
     act: "Act II: Development",

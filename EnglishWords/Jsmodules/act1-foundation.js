@@ -3,6 +3,7 @@
 
 export const p1_greetings__basics = {
   meta: {
+    wordpack: 1,
     en: "Greetings & Basics",
     packNumber: 1
   },
@@ -72,6 +73,7 @@ export const p1_greetings__basics = {
 
 export const p2_numbers_1_20 = {
   meta: {
+    wordpack: 2,
     en: "Numbers 1-20",
     packNumber: 2
   },
@@ -141,6 +143,7 @@ export const p2_numbers_1_20 = {
 
 export const p3_numbers__counting = {
   meta: {
+    wordpack: 3,
     en: "Numbers & Counting",
     packNumber: 3
   },
@@ -210,6 +213,7 @@ export const p3_numbers__counting = {
 
 export const p4_articles__determiners = {
   meta: {
+    wordpack: 4,
     en: "Articles & Determiners",
     packNumber: 4
   },
@@ -279,6 +283,7 @@ export const p4_articles__determiners = {
 
 export const p5_quantifiers = {
   meta: {
+    wordpack: 5,
     en: "Quantifiers",
     packNumber: 5
   },
@@ -348,6 +353,7 @@ export const p5_quantifiers = {
 
 export const p6_contractions = {
   meta: {
+    wordpack: 6,
     en: "Contractions",
     packNumber: 6
   },
@@ -417,6 +423,7 @@ export const p6_contractions = {
 
 export const p7_contractions_2 = {
   meta: {
+    wordpack: 7,
     en: "Contractions 2",
     packNumber: 7
   },
@@ -486,6 +493,7 @@ export const p7_contractions_2 = {
 
 export const p8_common_expressions = {
   meta: {
+    wordpack: 8,
     en: "Common Expressions",
     packNumber: 8
   },
@@ -555,6 +563,7 @@ export const p8_common_expressions = {
 
 export const p9_colors = {
   meta: {
+    wordpack: 9,
     en: "Colors",
     packNumber: 9
   },
@@ -624,6 +633,7 @@ export const p9_colors = {
 
 export const p10_days__time = {
   meta: {
+    wordpack: 10,
     en: "Days & Time",
     packNumber: 10
   },
@@ -693,6 +703,7 @@ export const p10_days__time = {
 
 export const p11_months__seasons = {
   meta: {
+    wordpack: 11,
     en: "Months & Seasons",
     packNumber: 11
   },
@@ -762,6 +773,7 @@ export const p11_months__seasons = {
 
 export const p12_family = {
   meta: {
+    wordpack: 12,
     en: "Family",
     packNumber: 12
   },
@@ -831,6 +843,7 @@ export const p12_family = {
 
 export const p13_body_parts = {
   meta: {
+    wordpack: 13,
     en: "Body Parts",
     packNumber: 13
   },
@@ -900,6 +913,7 @@ export const p13_body_parts = {
 
 export const p14_personal_pronouns = {
   meta: {
+    wordpack: 14,
     en: "Personal Pronouns",
     packNumber: 14
   },
@@ -969,6 +983,7 @@ export const p14_personal_pronouns = {
 
 export const p15_possessives__relatives = {
   meta: {
+    wordpack: 15,
     en: "Possessives & Relatives",
     packNumber: 15
   },
@@ -1038,6 +1053,7 @@ export const p15_possessives__relatives = {
 
 export const p16_question_words = {
   meta: {
+    wordpack: 16,
     en: "Question Words",
     packNumber: 16
   },
@@ -1107,6 +1123,7 @@ export const p16_question_words = {
 
 export const p17_modal_verbs = {
   meta: {
+    wordpack: 17,
     en: "Modal Verbs",
     packNumber: 17
   },
@@ -1176,6 +1193,7 @@ export const p17_modal_verbs = {
 
 export const p18_essential_verbs:_be__have = {
   meta: {
+    wordpack: 18,
     en: "Essential Verbs: Be & Have",
     packNumber: 18
   },
@@ -1245,6 +1263,7 @@ export const p18_essential_verbs:_be__have = {
 
 export const p19_essential_verbs:_go__come = {
   meta: {
+    wordpack: 19,
     en: "Essential Verbs: Go & Come",
     packNumber: 19
   },
@@ -1314,6 +1333,7 @@ export const p19_essential_verbs:_go__come = {
 
 export const p20_essential_verbs:_common_actions = {
   meta: {
+    wordpack: 20,
     en: "Essential Verbs: Common Actions",
     packNumber: 20
   },
@@ -1383,6 +1403,7 @@ export const p20_essential_verbs:_common_actions = {
 
 export const p21_essential_verbs:_daily_actions = {
   meta: {
+    wordpack: 21,
     en: "Essential Verbs: Daily Actions",
     packNumber: 21
   },
@@ -1452,6 +1473,7 @@ export const p21_essential_verbs:_daily_actions = {
 
 export const p22_essential_verbs:_communication = {
   meta: {
+    wordpack: 22,
     en: "Essential Verbs: Communication",
     packNumber: 22
   },
@@ -1521,6 +1543,7 @@ export const p22_essential_verbs:_communication = {
 
 export const p23_irregular_verbs_1 = {
   meta: {
+    wordpack: 23,
     en: "Irregular Verbs 1",
     packNumber: 23
   },
@@ -1590,6 +1613,7 @@ export const p23_irregular_verbs_1 = {
 
 export const p24_irregular_verbs_2 = {
   meta: {
+    wordpack: 24,
     en: "Irregular Verbs 2",
     packNumber: 24
   },
@@ -1659,6 +1683,7 @@ export const p24_irregular_verbs_2 = {
 
 export const p25_irregular_verbs_3 = {
   meta: {
+    wordpack: 25,
     en: "Irregular Verbs 3",
     packNumber: 25
   },
@@ -1728,6 +1753,7 @@ export const p25_irregular_verbs_3 = {
 
 export const p26_irregular_verbs_4 = {
   meta: {
+    wordpack: 26,
     en: "Irregular Verbs 4",
     packNumber: 26
   },
@@ -1797,6 +1823,7 @@ export const p26_irregular_verbs_4 = {
 
 export const p27_essential_adjectives_1 = {
   meta: {
+    wordpack: 27,
     en: "Essential Adjectives 1",
     packNumber: 27
   },
@@ -1866,6 +1893,7 @@ export const p27_essential_adjectives_1 = {
 
 export const p28_essential_adjectives_2 = {
   meta: {
+    wordpack: 28,
     en: "Essential Adjectives 2",
     packNumber: 28
   },
@@ -1935,6 +1963,7 @@ export const p28_essential_adjectives_2 = {
 
 export const p29_basic_emotions = {
   meta: {
+    wordpack: 29,
     en: "Basic Emotions",
     packNumber: 29
   },
@@ -2004,6 +2033,7 @@ export const p29_basic_emotions = {
 
 export const p30_common_animals = {
   meta: {
+    wordpack: 30,
     en: "Common Animals",
     packNumber: 30
   },
@@ -2073,6 +2103,7 @@ export const p30_common_animals = {
 
 export const p31_home__rooms = {
   meta: {
+    wordpack: 31,
     en: "Home & Rooms",
     packNumber: 31
   },
@@ -2142,6 +2173,7 @@ export const p31_home__rooms = {
 
 export const p32_food_basics = {
   meta: {
+    wordpack: 32,
     en: "Food Basics",
     packNumber: 32
   },
@@ -2211,6 +2243,7 @@ export const p32_food_basics = {
 
 export const p33_drinks__meals = {
   meta: {
+    wordpack: 33,
     en: "Drinks & Meals",
     packNumber: 33
   },
@@ -2280,6 +2313,7 @@ export const p33_drinks__meals = {
 
 export const p34_clothing = {
   meta: {
+    wordpack: 34,
     en: "Clothing",
     packNumber: 34
   },
@@ -2349,6 +2383,7 @@ export const p34_clothing = {
 
 export const p35_weather = {
   meta: {
+    wordpack: 35,
     en: "Weather",
     packNumber: 35
   },
@@ -2418,6 +2453,7 @@ export const p35_weather = {
 
 export const p36_prepositions_of_place = {
   meta: {
+    wordpack: 36,
     en: "Prepositions of Place",
     packNumber: 36
   },
@@ -2487,6 +2523,7 @@ export const p36_prepositions_of_place = {
 
 export const p37_prepositions_of_time__other = {
   meta: {
+    wordpack: 37,
     en: "Prepositions of Time & Other",
     packNumber: 37
   },
@@ -2556,6 +2593,7 @@ export const p37_prepositions_of_time__other = {
 
 export const p38_time_expressions = {
   meta: {
+    wordpack: 38,
     en: "Time Expressions",
     packNumber: 38
   },
@@ -2625,6 +2663,7 @@ export const p38_time_expressions = {
 
 export const p39_negatives__limits = {
   meta: {
+    wordpack: 39,
     en: "Negatives & Limits",
     packNumber: 39
   },
@@ -2694,6 +2733,7 @@ export const p39_negatives__limits = {
 
 export const p40_basic_transportation = {
   meta: {
+    wordpack: 40,
     en: "Basic Transportation",
     packNumber: 40
   },
@@ -2763,6 +2803,7 @@ export const p40_basic_transportation = {
 
 export const p41_common_nouns = {
   meta: {
+    wordpack: 41,
     en: "Common Nouns",
     packNumber: 41
   },
@@ -2832,6 +2873,7 @@ export const p41_common_nouns = {
 
 export const p42_more_common_nouns = {
   meta: {
+    wordpack: 42,
     en: "More Common Nouns",
     packNumber: 42
   },
@@ -2901,6 +2943,7 @@ export const p42_more_common_nouns = {
 
 export const p43_places_in_town = {
   meta: {
+    wordpack: 43,
     en: "Places in Town",
     packNumber: 43
   },
@@ -2970,6 +3013,7 @@ export const p43_places_in_town = {
 
 export const p44_casual__informal_english = {
   meta: {
+    wordpack: 44,
     en: "Casual & Informal English",
     packNumber: 44
   },
@@ -3039,6 +3083,7 @@ export const p44_casual__informal_english = {
 
 export const p45_filler_words__reactions = {
   meta: {
+    wordpack: 45,
     en: "Filler Words & Reactions",
     packNumber: 45
   },
@@ -3108,6 +3153,7 @@ export const p45_filler_words__reactions = {
 
 export const p46_directions = {
   meta: {
+    wordpack: 46,
     en: "Directions",
     packNumber: 46
   },
@@ -3177,6 +3223,7 @@ export const p46_directions = {
 
 export const p47_more_transportation = {
   meta: {
+    wordpack: 47,
     en: "More Transportation",
     packNumber: 47
   },
@@ -3246,6 +3293,7 @@ export const p47_more_transportation = {
 
 export const p48_furniture = {
   meta: {
+    wordpack: 48,
     en: "Furniture",
     packNumber: 48
   },
@@ -3315,6 +3363,7 @@ export const p48_furniture = {
 
 export const p49_kitchen_items = {
   meta: {
+    wordpack: 49,
     en: "Kitchen Items",
     packNumber: 49
   },

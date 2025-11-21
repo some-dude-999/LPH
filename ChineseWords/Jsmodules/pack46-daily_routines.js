@@ -3,6 +3,7 @@
 
 export const pack46_daily_routines = {
   meta: {
+    wordpack: 46,
     packNumber: 46,
     title: "Daily Routines",
     act: "Act III: Expansion",

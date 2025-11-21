@@ -3,6 +3,7 @@
 
 export const pack101_government_and_society = {
   meta: {
+    wordpack: 101,
     packNumber: 101,
     title: "Government & Society",
     act: "Act V: Refinement",

@@ -3,6 +3,7 @@
 
 export const pack53_location_words = {
   meta: {
+    wordpack: 53,
     packNumber: 53,
     title: "Location Words",
     act: "Act III: Expansion",

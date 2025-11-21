@@ -3,6 +3,7 @@
 
 export const pack97_solutions_and_methods = {
   meta: {
+    wordpack: 97,
     packNumber: 97,
     title: "Solutions & Methods",
     act: "Act V: Refinement",

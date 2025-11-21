@@ -3,6 +3,7 @@
 
 export const pack19_telling_time = {
   meta: {
+    wordpack: 19,
     packNumber: 19,
     title: "Telling Time",
     act: "Act II: Development",

@@ -3,6 +3,7 @@
 
 export const pack61_money_and_payments = {
   meta: {
+    wordpack: 61,
     packNumber: 61,
     title: "Money & Payments",
     act: "Act IV: Mastery",

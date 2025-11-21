@@ -3,6 +3,7 @@
 
 export const pack107_success_and_achievement = {
   meta: {
+    wordpack: 107,
     packNumber: 107,
     title: "Success & Achievement",
     act: "Act V: Refinement",

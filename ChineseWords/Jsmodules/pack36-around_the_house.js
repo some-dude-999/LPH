@@ -3,6 +3,7 @@
 
 export const pack36_around_the_house = {
   meta: {
+    wordpack: 36,
     packNumber: 36,
     title: "Around the House",
     act: "Act III: Expansion",

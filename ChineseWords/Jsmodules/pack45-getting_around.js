@@ -3,6 +3,7 @@
 
 export const pack45_getting_around = {
   meta: {
+    wordpack: 45,
     packNumber: 45,
     title: "Getting Around",
     act: "Act III: Expansion",

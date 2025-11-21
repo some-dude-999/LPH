@@ -3,6 +3,7 @@
 
 export const pack47_hobbies_and_leisure = {
   meta: {
+    wordpack: 47,
     packNumber: 47,
     title: "Hobbies & Leisure",
     act: "Act III: Expansion",

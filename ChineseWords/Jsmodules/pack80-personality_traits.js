@@ -3,6 +3,7 @@
 
 export const pack80_personality_traits = {
   meta: {
+    wordpack: 80,
     packNumber: 80,
     title: "Personality Traits",
     act: "Act V: Refinement",

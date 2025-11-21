@@ -3,6 +3,7 @@
 
 export const pack3_demonstratives_and_pointers = {
   meta: {
+    wordpack: 3,
     packNumber: 3,
     title: "Demonstratives & Pointers",
     act: "Act I: Foundation",

@@ -3,6 +3,7 @@
 
 export const pack38_describing_people = {
   meta: {
+    wordpack: 38,
     packNumber: 38,
     title: "Describing People",
     act: "Act III: Expansion",

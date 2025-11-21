@@ -3,6 +3,7 @@
 
 export const pack83_time_expressions_advanced = {
   meta: {
+    wordpack: 83,
     packNumber: 83,
     title: "Time Expressions Advanced",
     act: "Act V: Refinement",

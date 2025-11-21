@@ -3,6 +3,7 @@
 
 export const pack21_more_measure_words = {
   meta: {
+    wordpack: 21,
     packNumber: 21,
     title: "More Measure Words",
     act: "Act II: Development",

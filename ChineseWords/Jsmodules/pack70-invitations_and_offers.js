@@ -3,6 +3,7 @@
 
 export const pack70_invitations_and_offers = {
   meta: {
+    wordpack: 70,
     packNumber: 70,
     title: "Invitations & Offers",
     act: "Act IV: Mastery",

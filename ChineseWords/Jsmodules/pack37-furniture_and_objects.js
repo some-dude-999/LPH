@@ -3,6 +3,7 @@
 
 export const pack37_furniture_and_objects = {
   meta: {
+    wordpack: 37,
     packNumber: 37,
     title: "Furniture & Objects",
     act: "Act III: Expansion",

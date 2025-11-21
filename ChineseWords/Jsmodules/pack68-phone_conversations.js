@@ -3,6 +3,7 @@
 
 export const pack68_phone_conversations = {
   meta: {
+    wordpack: 68,
     packNumber: 68,
     title: "Phone Conversations",
     act: "Act IV: Mastery",

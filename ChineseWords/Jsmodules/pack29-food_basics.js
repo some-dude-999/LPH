@@ -3,6 +3,7 @@
 
 export const pack29_food_basics = {
   meta: {
+    wordpack: 29,
     packNumber: 29,
     title: "Food Basics",
     act: "Act III: Expansion",

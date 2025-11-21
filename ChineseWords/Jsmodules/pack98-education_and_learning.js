@@ -3,6 +3,7 @@
 
 export const pack98_education_and_learning = {
   meta: {
+    wordpack: 98,
     packNumber: 98,
     title: "Education & Learning",
     act: "Act V: Refinement",

@@ -3,6 +3,7 @@
 
 export const pack16_days_of_week = {
   meta: {
+    wordpack: 16,
     packNumber: 16,
     title: "Days of Week",
     act: "Act II: Development",

@@ -3,6 +3,7 @@
 
 export const pack5_essential_verbs_i = {
   meta: {
+    wordpack: 5,
     packNumber: 5,
     title: "Essential Verbs I",
     act: "Act I: Foundation",

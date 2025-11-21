@@ -3,6 +3,7 @@
 
 export const pack96_describing_problems = {
   meta: {
+    wordpack: 96,
     packNumber: 96,
     title: "Describing Problems",
     act: "Act V: Refinement",

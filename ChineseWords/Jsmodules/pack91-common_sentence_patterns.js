@@ -3,6 +3,7 @@
 
 export const pack91_common_sentence_patterns = {
   meta: {
+    wordpack: 91,
     packNumber: 91,
     title: "Common Sentence Patterns",
     act: "Act V: Refinement",

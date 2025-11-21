@@ -3,6 +3,7 @@
 
 export const pack58_giving_directions = {
   meta: {
+    wordpack: 58,
     packNumber: 58,
     title: "Giving Directions",
     act: "Act IV: Mastery",

@@ -3,6 +3,7 @@
 
 export const pack34_weather_words = {
   meta: {
+    wordpack: 34,
     packNumber: 34,
     title: "Weather Words",
     act: "Act III: Expansion",

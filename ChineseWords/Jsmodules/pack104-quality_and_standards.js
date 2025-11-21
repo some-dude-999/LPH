@@ -3,6 +3,7 @@
 
 export const pack104_quality_and_standards = {
   meta: {
+    wordpack: 104,
     packNumber: 104,
     title: "Quality & Standards",
     act: "Act V: Refinement",

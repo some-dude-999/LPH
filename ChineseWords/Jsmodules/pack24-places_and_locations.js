@@ -3,6 +3,7 @@
 
 export const pack24_places_and_locations = {
   meta: {
+    wordpack: 24,
     packNumber: 24,
     title: "Places & Locations",
     act: "Act II: Development",

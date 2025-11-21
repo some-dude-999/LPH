@@ -3,6 +3,7 @@
 
 export const pack23_daily_actions = {
   meta: {
+    wordpack: 23,
     packNumber: 23,
     title: "Daily Actions",
     act: "Act II: Development",

@@ -3,6 +3,7 @@
 
 export const pack32_eating_and_drinking = {
   meta: {
+    wordpack: 32,
     packNumber: 32,
     title: "Eating & Drinking",
     act: "Act III: Expansion",

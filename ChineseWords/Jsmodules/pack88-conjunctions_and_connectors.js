@@ -3,6 +3,7 @@
 
 export const pack88_conjunctions_and_connectors = {
   meta: {
+    wordpack: 88,
     packNumber: 88,
     title: "Conjunctions & Connectors",
     act: "Act V: Refinement",

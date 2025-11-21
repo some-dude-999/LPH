@@ -3,6 +3,7 @@
 
 export const pack55_making_plans = {
   meta: {
+    wordpack: 55,
     packNumber: 55,
     title: "Making Plans",
     act: "Act IV: Mastery",

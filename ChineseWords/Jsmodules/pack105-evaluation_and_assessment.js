@@ -3,6 +3,7 @@
 
 export const pack105_evaluation_and_assessment = {
   meta: {
+    wordpack: 105,
     packNumber: 105,
     title: "Evaluation & Assessment",
     act: "Act V: Refinement",

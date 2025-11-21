@@ -3,6 +3,7 @@
 
 export const pack28_body_parts = {
   meta: {
+    wordpack: 28,
     packNumber: 28,
     title: "Body Parts",
     act: "Act III: Expansion",

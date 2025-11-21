@@ -3,6 +3,7 @@
 
 export const pack52_time_words_advanced = {
   meta: {
+    wordpack: 52,
     packNumber: 52,
     title: "Time Words Advanced",
     act: "Act III: Expansion",

@@ -3,6 +3,7 @@
 
 export const pack73_time_expressions = {
   meta: {
+    wordpack: 73,
     packNumber: 73,
     title: "Time Expressions",
     act: "Act IV: Mastery",

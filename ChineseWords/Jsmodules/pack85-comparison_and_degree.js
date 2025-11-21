@@ -3,6 +3,7 @@
 
 export const pack85_comparison_and_degree = {
   meta: {
+    wordpack: 85,
     packNumber: 85,
     title: "Comparison & Degree",
     act: "Act V: Refinement",

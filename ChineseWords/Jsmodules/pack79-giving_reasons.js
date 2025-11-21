@@ -3,6 +3,7 @@
 
 export const pack79_giving_reasons = {
   meta: {
+    wordpack: 79,
     packNumber: 79,
     title: "Giving Reasons",
     act: "Act IV: Mastery",

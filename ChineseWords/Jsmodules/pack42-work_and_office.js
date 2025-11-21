@@ -3,6 +3,7 @@
 
 export const pack42_work_and_office = {
   meta: {
+    wordpack: 42,
     packNumber: 42,
     title: "Work & Office",
     act: "Act III: Expansion",
