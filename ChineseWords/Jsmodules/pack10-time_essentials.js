@@ -1,0 +1,58 @@
+// ChineseWords Pack 10: Time Essentials
+// Clean version for development - readable and LLM-friendly
+
+export const pack10_time_essentials = {
+  meta: {
+    packNumber: 10,
+    title: "Time Essentials",
+    act: "Act I: Foundation",
+    wordCount: 45
+  },
+  words: [
+    ["现在", "xiànzài", "now", "ahora", "maintenant", "agora", "bây giờ", "ตอนนี้", "ឥឡូវនេះ", "sekarang", "sekarang", "ngayon"],
+    ["此刻", "cǐkè", "at this moment", "en este momento", "en ce moment", "neste momento", "lúc này", "เวลานี้", "នៅពេលនេះ", "saat ini", "ketika ini", "sa sandaling ito"],
+    ["目前", "mùqián", "currently", "actualmente", "actuellement", "atualmente", "hiện tại", "ปัจจุบัน", "បច្ចុប្បន្ន", "saat ini", "pada masa ini", "kasalukuyan"],
+    ["今天", "jīntiān", "today", "hoy", "aujourd'hui", "hoje", "hôm nay", "วันนี้", "ថ្ងៃនេះ", "hari ini", "hari ini", "ngayong araw"],
+    ["今日", "jīnrì", "today", "hoy", "aujourd'hui", "hoje", "hôm nay", "วันนี้", "ថ្ងៃនេះ", "hari ini", "hari ini", "ngayong araw"],
+    ["就今天", "jiù jīntiān", "just today", "justo hoy", "justement aujourd'hui", "justo hoje", "chỉ hôm nay", "แค่วันนี้", "គ្រាន់ថ្ងៃនេះ", "hanya hari ini", "hanya hari ini", "ngayong araw lang"],
+    ["明天", "míngtiān", "tomorrow", "mañana", "demain", "amanhã", "ngày mai", "พรุ่งนี้", "ថ្ងៃស្អែក", "besok", "esok", "bukas"],
+    ["明日", "míngrì", "tomorrow", "mañana", "demain", "amanhã", "ngày mai", "พรุ่งนี้", "ថ្ងៃស្អែក", "besok", "esok", "bukas"],
+    ["后一天", "hòu yì tiān", "the next day", "el día siguiente", "le jour suivant", "o dia seguinte", "ngày hôm sau", "วันหลังจากนั้น", "ថ្ងៃបន្ទាប់", "hari berikutnya", "hari berikutnya", "kinabukasan"],
+    ["昨天", "zuótiān", "yesterday", "ayer", "hier", "ontem", "hôm qua", "เมื่อวาน", "ម្សិលមិញ", "kemarin", "semalam", "kahapon"],
+    ["昨日", "zuórì", "yesterday", "ayer", "hier", "ontem", "hôm qua", "เมื่อวาน", "ម្សិលមិញ", "kemarin", "semalam", "kahapon"],
+    ["前一天", "qián yì tiān", "the previous day", "el día anterior", "le jour précédent", "o dia anterior", "ngày hôm trước", "วันก่อนหน้า", "ថ្ងៃមុន", "hari sebelumnya", "hari sebelumnya", "nakaraang araw"],
+    ["早上", "zǎoshang", "morning", "mañana", "matin", "manhã", "buổi sáng", "ตอนเช้า", "ពេលព្រឹក", "pagi", "pagi", "umaga"],
+    ["上午", "shàngwǔ", "morning", "por la mañana", "matinée", "de manhã", "buổi sáng", "ช่วงเช้า", "ពេលព្រឹក", "pagi hari", "pagi", "umaga"],
+    ["清晨", "qīngchén", "early morning", "madrugada", "petit matin", "madrugada", "sáng sớm", "เช้าตรู่", "ព្រឹកព្រលឹម", "pagi-pagi", "pagi awal", "madaling araw"],
+    ["中午", "zhōngwǔ", "noon", "mediodía", "midi", "meio-dia", "trưa", "เที่ยง", "ថ្ងៃត្រង់", "siang", "tengah hari", "tanghali"],
+    ["正午", "zhèngwǔ", "noon", "mediodía", "midi", "meio-dia", "giữa trưa", "เที่ยงตรง", "រសៀលត្រង់", "tengah hari", "tengah hari tepat", "tanghaling tapat"],
+    ["午间", "wǔjiān", "lunchtime", "hora de almuerzo", "heure du déjeuner", "hora do almoço", "giờ trưa", "ช่วงเที่ยง", "ពេលថ្ងៃត្រង់", "waktu siang", "waktu tengah hari", "oras ng tanghalian"],
+    ["下午", "xiàwǔ", "afternoon", "tarde", "après-midi", "tarde", "buổi chiều", "ตอนบ่าย", "រសៀល", "sore", "petang", "hapon"],
+    ["午后", "wǔhòu", "afternoon", "tarde", "après-midi", "tarde", "sau giờ trưa", "หลังเที่ยง", "រសៀល", "sore hari", "selepas tengah hari", "hapon"],
+    ["傍晚", "bàngwǎn", "dusk", "atardecer", "crépuscule", "anoitecer", "chiều tối", "ค่ำ", "ល្ងាច", "senja", "senja", "takipsilim"],
+    ["晚上", "wǎnshang", "evening", "noche", "soir", "noite", "buổi tối", "ตอนเย็น", "យប់", "malam", "malam", "gabi"],
+    ["夜里", "yèlǐ", "at night", "por la noche", "dans la nuit", "à noite", "ban đêm", "ตอนกลางคืน", "ពេលយប់", "di malam hari", "pada waktu malam", "sa gabi"],
+    ["夜晚", "yèwǎn", "night", "noche", "nuit", "noite", "đêm", "กลางคืน", "យប់", "malam", "malam", "gabi"],
+    ["时间", "shíjiān", "time", "tiempo", "temps", "tempo", "thời gian", "เวลา", "ពេលវេលា", "waktu", "masa", "oras"],
+    ["时候", "shíhou", "time", "momento", "moment", "momento", "lúc", "เวลา", "ពេល", "waktu", "masa", "panahon"],
+    ["时光", "shíguāng", "time", "tiempo", "temps", "tempo", "thời gian", "เวลา", "ពេលវេលា", "waktu", "masa", "panahon"],
+    ["以前", "yǐqián", "before", "antes", "avant", "antes", "trước đây", "ก่อนหน้า", "មុន", "sebelumnya", "sebelum", "noon"],
+    ["之前", "zhīqián", "before", "antes", "avant", "antes", "trước", "ก่อน", "មុន", "sebelum", "sebelum", "bago"],
+    ["从前", "cóngqián", "in the past", "en el pasado", "autrefois", "no passado", "ngày xưa", "แต่ก่อน", "កាលពីមុន", "dahulu kala", "dahulu", "noong araw"],
+    ["以后", "yǐhòu", "after", "después", "après", "depois", "sau này", "หลังจากนี้", "ក្រោយ", "setelah", "selepas", "pagkatapos"],
+    ["之后", "zhīhòu", "after", "después", "après", "depois", "sau đó", "หลังจากนั้น", "បន្ទាប់ពី", "setelah itu", "selepas itu", "pagkatapos"],
+    ["日后", "rìhòu", "in the future", "en el futuro", "à l'avenir", "no futuro", "sau này", "ในอนาคต", "នាពេលខាងមុខ", "kelak", "pada masa hadapan", "sa hinaharap"],
+    ["每天", "měitiān", "every day", "todos los días", "chaque jour", "todos os dias", "mỗi ngày", "ทุกวัน", "រាល់ថ្ងៃ", "setiap hari", "setiap hari", "araw-araw"],
+    ["天天", "tiāntiān", "every day", "todos los días", "tous les jours", "todos os dias", "ngày nào cũng", "ทุกวัน", "ថ្ងៃទាំងអស់", "setiap hari", "setiap hari", "araw-araw"],
+    ["每日", "měirì", "every day", "cada día", "chaque jour", "cada dia", "mỗi ngày", "ทุกวัน", "រាល់ថ្ងៃ", "tiap hari", "setiap hari", "araw-araw"],
+    ["刚才", "gāngcái", "just now", "recién", "tout à l'heure", "agora mesmo", "vừa rồi", "เมื่อกี้", "ទើបតែ", "tadi", "tadi", "kanina"],
+    ["刚刚", "gānggāng", "just now", "justo ahora", "à l'instant", "acabou de", "vừa mới", "เพิ่งจะ", "ទើបតែ", "baru saja", "baru sahaja", "kaka lang"],
+    ["刚刚的", "gānggāng de", "just now", "recién", "tout à l'heure", "agora mesmo", "vừa rồi", "เมื่อกี้นี้", "ទើបតែ", "yang baru saja", "yang baru tadi", "kanina lang"],
+    ["马上", "mǎshàng", "right away", "enseguida", "tout de suite", "já", "ngay lập tức", "เดี๋ยวนี้", "ភ្លាមៗ", "segera", "sebentar lagi", "agad"],
+    ["立刻", "lìkè", "immediately", "inmediatamente", "immédiatement", "imediatamente", "lập tức", "ทันที", "ភ្លាម", "segera", "serta-merta", "agad"],
+    ["即刻", "jíkè", "immediately", "inmediatamente", "immédiatement", "imediatamente", "ngay lập tức", "ทันที", "ភ្លាម", "segera", "serta-merta", "agad-agad"],
+    ["一会儿", "yíhuǐr", "a moment", "un momento", "un moment", "um momento", "một lát", "สักครู่", "មួយសន្ទុះ", "sebentar", "seketika", "sandali"],
+    ["待会", "dāihuì", "later", "más tarde", "tout à l'heure", "daqui a pouco", "đợi chút", "เดี๋ยว", "សន្ទុះក្រោយ", "nanti", "sebentar lagi", "mamaya"],
+    ["稍后", "shāohòu", "shortly", "dentro de poco", "sous peu", "em breve", "sau đó", "อีกสักครู่", "មួយសន្ទុះ", "sebentar lagi", "sebentar lagi", "maya-maya"]
+  ]
+};

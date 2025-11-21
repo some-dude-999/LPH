@@ -1,0 +1,37 @@
+// ChineseWords Pack 74: Frequency Expressions
+// Clean version for development - readable and LLM-friendly
+
+export const pack74_frequency_expressions = {
+  meta: {
+    packNumber: 74,
+    title: "Frequency Expressions",
+    act: "Act IV: Mastery",
+    wordCount: 24
+  },
+  words: [
+    ["每天都做", "měitiān dōu zuò", "do it every day", "hacerlo todos los días", "le faire tous les jours", "fazer todo dia", "làm mỗi ngày", "ทำทุกวัน", "ធ្វើរាល់ថ្ងៃ", "melakukan setiap hari", "buat setiap hari", "gawin araw-araw"],
+    ["天天都有", "tiāntiān dōu yǒu", "have it every day", "tenerlo todos los días", "en avoir tous les jours", "ter todo dia", "có mỗi ngày", "มีทุกวัน", "មានរាល់ថ្ងៃ", "ada setiap hari", "ada setiap hari", "mayroon araw-araw"],
+    ["每日必做", "měirì bì zuò", "must do daily", "hay que hacerlo a diario", "il faut le faire quotidiennement", "deve fazer diariamente", "phải làm hàng ngày", "ต้องทำทุกวัน", "ត្រូវធ្វើរាល់ថ្ងៃ", "harus dilakukan setiap hari", "mesti buat setiap hari", "dapat gawin araw-araw"],
+    ["经常去那里", "jīngcháng qù nàlǐ", "often go there", "ir allí a menudo", "y aller souvent", "ir lá frequentemente", "thường đến đó", "ไปที่นั่นบ่อยๆ", "ទៅទីនោះញឹកញាប់", "sering pergi ke sana", "selalu pergi ke sana", "madalas pumunta doon"],
+    ["常常会去的", "chángcháng huì qù de", "often will go", "irá a menudo", "ira souvent", "vai com frequência", "thường sẽ đi", "จะไปบ่อยๆ", "តែងតែនឹងទៅ", "sering akan pergi", "selalunya akan pergi", "madalas pupunta"],
+    ["时不时去", "shíbúshí qù", "go from time to time", "ir de vez en cuando", "y aller de temps en temps", "ir de vez em quando", "đi thỉnh thoảng", "ไปเป็นครั้งคราว", "ទៅម្តងម្កាល", "pergi sesekali", "pergi sekali-sekala", "pumunta paminsan-minsan"],
+    ["有时候会去", "yǒushíhou huì qù", "sometimes will go", "a veces irá", "ira parfois", "às vezes vai", "đôi khi sẽ đi", "บางครั้งจะไป", "ពេលខ្លះនឹងទៅ", "kadang akan pergi", "kadang-kadang akan pergi", "minsan pupunta"],
+    ["偶尔去一趟", "ǒu'ěr qù yí tàng", "occasionally go once", "ir ocasionalmente", "y aller occasionnellement", "ir ocasionalmente", "thỉnh thoảng đi một lần", "ไปบ้างเป็นครั้งคราว", "ទៅម្តងម្កាល", "sesekali pergi sekali", "sekali-sekala pergi", "paminsan-minsang pumunta"],
+    ["偶尔会的", "ǒu'ěr huì de", "occasionally will", "ocasionalmente lo hará", "le fera occasionnellement", "ocasionalmente fará", "thỉnh thoảng sẽ", "บางครั้งจะทำ", "ពេលខ្លះនឹងធ្វើ", "kadang-kadang akan", "sekali-sekala akan", "paminsan-minsan gagawin"],
+    ["很少去那里", "hěnshǎo qù nàlǐ", "rarely go there", "rara vez voy allí", "j'y vais rarement", "raramente vou lá", "hiếm khi đến đó", "ไปที่นั่นน้อยมาก", "ទៅទីនោះកម្រ", "jarang pergi ke sana", "jarang pergi ke sana", "bihirang pumunta doon"],
+    ["不怎么去的", "bù zěnme qù de", "don't really go", "realmente no voy", "n'y vais pas vraiment", "não vou muito", "không mấy khi đi", "ไม่ค่อยไป", "មិនសូវទៅទេ", "tidak terlalu pergi", "tidak begitu pergi", "hindi talaga pumupunta"],
+    ["几乎不去了", "jīhū bú qù le", "almost never go", "casi nunca voy", "n'y vais presque jamais", "quase nunca vou", "hầu như không đi", "แทบจะไม่ไปแล้ว", "ស្ទើរតែមិនទៅទៀតហើយ", "hampir tidak pernah pergi", "hampir tidak pergi", "halos hindi na pumupunta"],
+    ["从来不去的", "cónglái bú qù de", "never go", "nunca voy", "n'y vais jamais", "nunca vou", "chẳng bao giờ đi", "ไม่เคยไปเลย", "មិនដែលទៅទេ", "tidak pernah pergi", "tidak pernah pergi", "hindi kailanman pumupunta"],
+    ["从来没去过", "cónglái méi qù guò", "have never gone", "nunca he ido", "ne suis jamais allé", "nunca fui", "chưa bao giờ đi", "ไม่เคยไปมาก่อน", "មិនដែលទៅសោះ", "belum pernah pergi", "tidak pernah pergi", "hindi pa kailanman pumunta"],
+    ["从不会去的", "cóngbú huì qù de", "will never go", "nunca iré", "n'irai jamais", "nunca irei", "sẽ chẳng bao giờ đi", "จะไม่มีทางไป", "មិនដែលនឹងទៅទេ", "tidak akan pernah pergi", "tidak akan pergi", "hindi kailanman pupunta"],
+    ["总是这样子", "zǒngshì zhèyàngzi", "always like this", "siempre así", "toujours comme ça", "sempre assim", "luôn như vậy", "เป็นอย่างนี้เสมอ", "តែងតែបែបនេះ", "selalu seperti ini", "sentiasa begini", "laging ganito"],
+    ["一直都这样", "yìzhí dōu zhèyàng", "always like this", "siempre así", "toujours comme ça", "sempre assim", "cứ như vậy", "เป็นอย่างนี้มาตลอด", "តែងតែបែបនេះ", "selalu seperti ini", "sentiasa begini", "laging ganito"],
+    ["向来都这样", "xiànglái dōu zhèyàng", "has always been like this", "siempre ha sido así", "a toujours été comme ça", "sempre foi assim", "vốn dĩ như vậy", "เป็นอย่างนี้มาโดยตลอด", "តាំងពីមុនមកបែបនេះ", "memang selalu seperti ini", "sememangnya begini", "laging ganito na"],
+    ["第一次来", "dì-yī cì lái", "first time coming", "primera vez que vengo", "première fois que je viens", "primeira vez que venho", "lần đầu tiên đến", "มาครั้งแรก", "មកលើកដំបូង", "pertama kali datang", "kali pertama datang", "unang pagdating"],
+    ["头一回去", "tóu yì huí qù", "first time going", "primera vez que voy", "première fois que j'y vais", "primeira vez que vou", "lần đầu tiên đi", "ไปครั้งแรก", "ទៅលើកដំបូង", "pertama kali pergi", "kali pertama pergi", "unang pagpunta"],
+    ["从没来过啊", "cóng méi lái guò a", "have never been here!", "¡nunca he estado aquí!", "ne suis jamais venu!", "nunca estive aqui!", "chưa bao giờ đến đây!", "ไม่เคยมาที่นี่เลย", "មិនដែលមកទីនេះសោះ", "belum pernah ke sini!", "tidak pernah datang!", "hindi pa kailanman narito!"],
+    ["最后一次了", "zuìhòu yí cì le", "last time", "última vez", "dernière fois", "última vez", "lần cuối cùng rồi", "ครั้งสุดท้ายแล้ว", "ជាលើកចុងក្រោយហើយ", "terakhir kali", "kali terakhir", "huling beses na"],
+    ["这是最后一次", "zhè shì zuìhòu yí cì", "this is the last time", "esta es la última vez", "c'est la dernière fois", "esta é a última vez", "đây là lần cuối cùng", "นี่คือครั้งสุดท้าย", "នេះជាលើកចុងក្រោយ", "ini terakhir kalinya", "ini kali terakhir", "ito ang huling beses"],
+    ["下不为例了", "xià bú wéi lì le", "won't happen again", "no volverá a pasar", "ça ne se reproduira plus", "não vai acontecer de novo", "lần sau không làm nữa", "จะไม่มีครั้งหน้า", "ពេលក្រោយមិនឱ្យកើតឡើងម្តងទៀត", "tidak akan terulang lagi", "tidak akan berlaku lagi", "hindi na uulitin"]
+  ]
+};

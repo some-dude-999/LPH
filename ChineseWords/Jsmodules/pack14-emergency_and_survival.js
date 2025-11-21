@@ -1,0 +1,58 @@
+// ChineseWords Pack 14: Emergency & Survival
+// Clean version for development - readable and LLM-friendly
+
+export const pack14_emergency_and_survival = {
+  meta: {
+    packNumber: 14,
+    title: "Emergency & Survival",
+    act: "Act I: Foundation",
+    wordCount: 45
+  },
+  words: [
+    ["救命", "jiùmìng", "help!", "¡socorro!", "au secours!", "socorro!", "cứu tôi!", "ช่วยด้วย", "ជួយផង", "tolong!", "tolong!", "saklolo!"],
+    ["救我", "jiù wǒ", "save me", "sálvame", "sauve-moi", "salve-me", "cứu tôi", "ช่วยฉันด้วย", "សង្គ្រោះខ្ញុំ", "selamatkan saya", "selamatkan saya", "iligtas mo ako"],
+    ["快救", "kuài jiù", "quick save", "salva rápido", "vite sauve", "salve rápido", "cứu nhanh", "ช่วยเร็ว", "ជួយរហ័ស", "cepat tolong", "cepat tolong", "bilisan mo"],
+    ["帮忙", "bāngmáng", "to help", "ayudar", "aider", "ajudar", "giúp đỡ", "ช่วยเหลือ", "ជួយ", "membantu", "bantu", "tumulong"],
+    ["帮我", "bāng wǒ", "help me", "ayúdame", "aide-moi", "ajude-me", "giúp tôi", "ช่วยฉัน", "ជួយខ្ញុំ", "bantu saya", "tolong saya", "tulungan mo ako"],
+    ["帮帮", "bāngbang", "help", "ayuda", "aide", "ajuda", "giúp một tay", "ช่วยหน่อย", "ជួយបន្តិច", "tolong", "tolong", "tulungan"],
+    ["紧急", "jǐnjí", "emergency", "emergencia", "urgence", "emergência", "khẩn cấp", "ฉุกเฉิน", "បន្ទាន់", "darurat", "kecemasan", "emerhensya"],
+    ["急事", "jíshì", "urgent matter", "asunto urgente", "affaire urgente", "assunto urgente", "việc gấp", "เรื่องด่วน", "ការបន្ទាន់", "urusan mendesak", "perkara penting", "mahalaga"],
+    ["急了", "jí le", "urgent", "urgente", "urgent", "urgente", "gấp rồi", "รีบแล้ว", "បន្ទាន់ហើយ", "mendesak", "genting", "kailangan na"],
+    ["危险", "wēixiǎn", "danger", "peligro", "danger", "perigo", "nguy hiểm", "อันตราย", "គ្រោះថ្នាក់", "bahaya", "bahaya", "delikado"],
+    ["有危险", "yǒu wēixiǎn", "there is danger", "hay peligro", "il y a danger", "há perigo", "có nguy hiểm", "มีอันตราย", "មានគ្រោះថ្នាក់", "ada bahaya", "ada bahaya", "may delikado"],
+    ["小心", "xiǎoxīn", "be careful", "cuidado", "attention", "cuidado", "cẩn thận", "ระวัง", "ប្រុងប្រយ័ត្ន", "hati-hati", "berhati-hati", "mag-ingat"],
+    ["警察", "jǐngchá", "police", "policía", "police", "polícia", "cảnh sát", "ตำรวจ", "ប៉ូលីស", "polisi", "polis", "pulis"],
+    ["报警", "bàojǐng", "to call police", "llamar a policía", "appeler police", "chamar polícia", "báo cảnh sát", "แจ้งตำรวจ", "ជូនដំណឹងប៉ូលីស", "lapor polisi", "panggil polis", "tumawag ng pulis"],
+    ["叫警察", "jiào jǐngchá", "call police", "llama a policía", "appelle police", "chame a polícia", "gọi cảnh sát", "เรียกตำรวจ", "ហៅប៉ូលីស", "panggil polisi", "panggil polis", "tawagin ang pulis"],
+    ["注意", "zhùyì", "pay attention", "prestar atención", "faire attention", "prestar atenção", "chú ý", "ระวัง", "ចំណាំ", "perhatian", "perhatian", "pansinin"],
+    ["当心", "dāngxīn", "watch out", "ten cuidado", "fais attention", "tenha cuidado", "đề phòng", "ระมัดระวัง", "ប្រយ័ត្នខ្លួន", "awas", "berjaga-jaga", "mag-ingat"],
+    ["留神", "liúshén", "be alert", "estar alerta", "être vigilant", "estar alerta", "cảnh giác", "ระวังตัว", "ប្រយ័ត្ន", "waspada", "berwaspada", "magtanda"],
+    ["医院", "yīyuàn", "hospital", "hospital", "hôpital", "hospital", "bệnh viện", "โรงพยาบาล", "មន្ទីរពេទ្យ", "rumah sakit", "hospital", "ospital"],
+    ["看病", "kànbìng", "to see doctor", "ver al médico", "voir le médecin", "consultar médico", "khám bệnh", "ไปหาหมอ", "ទៅពេទ្យ", "periksa dokter", "jumpa doktor", "magpatingin"],
+    ["就医", "jiùyī", "to seek treatment", "buscar tratamiento", "consulter", "buscar tratamento", "đi khám", "รับการรักษา", "ទៅពេទ្យ", "berobat", "berjumpa doktor", "magpagamot"],
+    ["厕所", "cèsuǒ", "toilet", "baño", "toilettes", "banheiro", "nhà vệ sinh", "ห้องน้ำ", "បង្គន់", "toilet", "tandas", "palikuran"],
+    ["卫生间", "wèishēngjiān", "bathroom", "baño", "salle de bain", "banheiro", "phòng vệ sinh", "ห้องสุขา", "បន្ទប់ទឹក", "kamar mandi", "bilik air", "banyo"],
+    ["洗手间", "xǐshǒujiān", "restroom", "baño", "toilettes", "banheiro", "phòng tắm", "ห้องน้ำ", "បន្ទប់ទឹក", "kamar kecil", "bilik air", "CR"],
+    ["出口", "chūkǒu", "exit", "salida", "sortie", "saída", "lối ra", "ทางออก", "ច្រកចេញ", "pintu keluar", "pintu keluar", "labasan"],
+    ["门口", "ménkǒu", "doorway", "entrada", "entrée", "entrada", "cửa", "ประตู", "ទ្វារ", "pintu masuk", "pintu", "pintuan"],
+    ["逃生口", "táoshēngkǒu", "emergency exit", "salida de emergencia", "sortie de secours", "saída de emergência", "lối thoát hiểm", "ทางหนีไฟ", "ច្រកសង្គ្រោះបន្ទាន់", "pintu darurat", "pintu kecemasan", "emergency exit"],
+    ["丢了", "diū le", "lost", "perdido", "perdu", "perdido", "mất rồi", "หายแล้ว", "បាត់ហើយ", "hilang", "hilang", "nawala"],
+    ["丢失", "diūshī", "to lose", "perder", "perdre", "perder", "thất lạc", "สูญหาย", "បាត់បង់", "kehilangan", "kehilangan", "mawala"],
+    ["遗失", "yíshī", "to lose", "extraviar", "égarer", "extraviar", "thất lạc", "ทำหาย", "បាត់", "hilang", "kehilangan", "mawala"],
+    ["迷路", "mílù", "to get lost", "perderse", "se perdre", "perder-se", "lạc đường", "หลงทาง", "វង្វេង", "tersesat", "sesat", "maligaw"],
+    ["走丢", "zǒudiū", "to get lost", "perderse", "se perdre", "perder-se", "đi lạc", "หลงทาง", "ដើរវង្វេង", "tersesat", "sesat", "maligaw"],
+    ["找不到", "zhǎo bú dào", "cannot find", "no puedo encontrar", "ne peux pas trouver", "não consigo encontrar", "không tìm thấy", "หาไม่เจอ", "រកមិនឃើញ", "tidak bisa menemukan", "tak jumpa", "hindi mahanap"],
+    ["安全", "ānquán", "safe", "seguro", "sûr", "seguro", "an toàn", "ปลอดภัย", "សុវត្ថិភាព", "aman", "selamat", "ligtas"],
+    ["平安", "píng'ān", "safe", "a salvo", "en sécurité", "em segurança", "bình an", "สวัสดิภาพ", "សុខសាន្ត", "selamat", "selamat", "ligtas"],
+    ["很安全", "hěn ānquán", "very safe", "muy seguro", "très sûr", "muito seguro", "rất an toàn", "ปลอดภัยมาก", "សុវត្ថិភាពខ្លាំង", "sangat aman", "sangat selamat", "napakalikas"],
+    ["疼", "téng", "hurt", "doler", "avoir mal", "doer", "đau", "เจ็บ", "ឈឺ", "sakit", "sakit", "masakit"],
+    ["好疼", "hǎo téng", "it hurts", "duele mucho", "ça fait mal", "dói muito", "đau quá", "เจ็บมาก", "ឈឺណាស់", "sakit sekali", "sakit betul", "masakit talaga"],
+    ["痛", "tòng", "pain", "dolor", "douleur", "dor", "đau đớn", "ปวด", "ឈឺចាប់", "sakit", "sakit", "sakit"],
+    ["难受", "nánshòu", "uncomfortable", "incómodo", "mal à l'aise", "desconfortável", "khó chịu", "รู้สึกไม่สบาย", "មិនស្រួល", "tidak nyaman", "tidak selesa", "hindi komportable"],
+    ["不适", "búshì", "unwell", "indispuesto", "indisposé", "indisposto", "không khỏe", "ไม่สบาย", "មិនស្រួល", "tidak enak badan", "kurang sihat", "hindi mabuti"],
+    ["不舒服", "bù shūfu", "not feeling well", "no me siento bien", "pas bien", "não estou bem", "không thoải mái", "ไม่สบาย", "មិនស្រួលខ្លួន", "tidak enak badan", "tidak selesa", "hindi maganda ang pakiramdam"],
+    ["求助", "qiúzhù", "to ask for help", "pedir ayuda", "demander aide", "pedir ajuda", "cầu cứu", "ขอความช่วยเหลือ", "សុំជំនួយ", "minta bantuan", "meminta bantuan", "humingi ng tulong"],
+    ["呼救", "hūjiù", "to call for help", "pedir auxilio", "appeler au secours", "chamar socorro", "kêu cứu", "ร้องขอความช่วยเหลือ", "ស្រែកសុំជំនួយ", "panggil tolong", "panggil pertolongan", "sumigaw ng tulong"],
+    ["喊人", "hǎnrén", "to call someone", "llamar a alguien", "appeler quelqu'un", "chamar alguém", "gọi người", "เรียกคน", "ហៅមនុស្ស", "panggil orang", "panggil orang", "tumawag ng tao"]
+  ]
+};

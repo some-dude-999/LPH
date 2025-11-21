@@ -1,0 +1,58 @@
+// ChineseWords Pack 35: Shopping Basics
+// Clean version for development - readable and LLM-friendly
+
+export const pack35_shopping_basics = {
+  meta: {
+    packNumber: 35,
+    title: "Shopping Basics",
+    act: "Act III: Expansion",
+    wordCount: 45
+  },
+  words: [
+    ["买", "mǎi", "buy", "comprar", "acheter", "comprar", "mua", "ซื้อ", "ទិញ", "beli", "beli", "bumili"],
+    ["购买", "gòumǎi", "purchase", "comprar", "acheter", "comprar", "mua", "ซื้อ", "ទិញ", "membeli", "membeli", "bumili"],
+    ["买东西", "mǎi dōngxi", "buy things", "comprar cosas", "acheter des choses", "comprar coisas", "mua đồ", "ซื้อของ", "ទិញរបស់", "beli barang", "beli barang", "bumili ng gamit"],
+    ["卖", "mài", "sell", "vender", "vendre", "vender", "bán", "ขาย", "លក់", "jual", "jual", "magbenta"],
+    ["出售", "chūshòu", "sell", "vender", "vendre", "vender", "bán", "ขาย", "លក់", "menjual", "menjual", "magbenta"],
+    ["售卖", "shòumài", "sell", "vender", "vendre", "vender", "bán hàng", "ขาย", "លក់", "menjual", "menjual", "magbenta"],
+    ["商店", "shāngdiàn", "shop", "tienda", "magasin", "loja", "cửa hàng", "ร้านค้า", "ហាង", "toko", "kedai", "tindahan"],
+    ["店铺", "diànpù", "store", "tienda", "boutique", "loja", "cửa hiệu", "ร้าน", "ហាង", "toko", "kedai", "tindahan"],
+    ["小店", "xiǎodiàn", "small shop", "tienda pequeña", "petit magasin", "loja pequena", "cửa hàng nhỏ", "ร้านเล็ก", "ហាងតូច", "toko kecil", "kedai kecil", "maliit na tindahan"],
+    ["商场", "shāngchǎng", "shopping mall", "centro comercial", "centre commercial", "shopping", "trung tâm mua sắm", "ห้างสรรพสินค้า", "មជ្ឈមណ្ឌលទំនិញ", "mal", "pusat membeli-belah", "mall"],
+    ["购物中心", "gòuwù zhōngxīn", "shopping center", "centro comercial", "centre commercial", "centro comercial", "trung tâm thương mại", "ศูนย์การค้า", "មជ្ឈមណ្ឌលទិញទំនិញ", "pusat perbelanjaan", "pusat membeli-belah", "sentro ng pamimili"],
+    ["百货商场", "bǎihuò shāngchǎng", "department store", "grandes almacenes", "grand magasin", "loja de departamentos", "trung tâm bách hóa", "ห้างสรรพสินค้า", "ផ្សារទំនើប", "toko serba ada", "gedung serbaneka", "department store"],
+    ["超市", "chāoshì", "supermarket", "supermercado", "supermarché", "supermercado", "siêu thị", "ซูเปอร์มาร์เก็ต", "ផ្សារទំនើប", "supermarket", "pasar raya", "supermarket"],
+    ["大超市", "dà chāoshì", "big supermarket", "supermercado grande", "grand supermarché", "supermercado grande", "siêu thị lớn", "ซูเปอร์มาร์เก็ตใหญ่", "ផ្សារទំនើបធំ", "supermarket besar", "pasar raya besar", "malaking supermarket"],
+    ["逛超市", "guàng chāoshì", "go to supermarket", "ir al supermercado", "aller au supermarché", "ir ao supermercado", "đi siêu thị", "ไปซูเปอร์มาร์เก็ต", "ទៅផ្សារទំនើប", "pergi ke supermarket", "pergi ke pasar raya", "pumunta sa supermarket"],
+    ["价格", "jiàgé", "price", "precio", "prix", "preço", "giá cả", "ราคา", "តម្លៃ", "harga", "harga", "presyo"],
+    ["价钱", "jiàqian", "price", "precio", "prix", "preço", "giá", "ราคา", "តម្លៃ", "harga", "harga", "presyo"],
+    ["多少钱", "duōshao qián", "how much", "cuánto cuesta", "combien", "quanto custa", "bao nhiêu tiền", "เท่าไร", "ថ្លៃប៉ុន្មាន", "berapa harga", "berapa harga", "magkano"],
+    ["便宜", "piányi", "cheap", "barato", "pas cher", "barato", "rẻ", "ถูก", "ថោក", "murah", "murah", "mura"],
+    ["很便宜", "hěn piányi", "very cheap", "muy barato", "très bon marché", "muito barato", "rất rẻ", "ถูกมาก", "ថោកណាស់", "sangat murah", "sangat murah", "sobrang mura"],
+    ["太便宜", "tài piányi", "too cheap", "demasiado barato", "trop bon marché", "barato demais", "quá rẻ", "ถูกเกินไป", "ថោកពេក", "terlalu murah", "terlalu murah", "napakamura"],
+    ["贵", "guì", "expensive", "caro", "cher", "caro", "đắt", "แพง", "ថ្លៃ", "mahal", "mahal", "mahal"],
+    ["很贵", "hěn guì", "very expensive", "muy caro", "très cher", "muito caro", "rất đắt", "แพงมาก", "ថ្លៃណាស់", "sangat mahal", "sangat mahal", "sobrang mahal"],
+    ["太贵了", "tài guì le", "too expensive", "demasiado caro", "trop cher", "caro demais", "quá đắt", "แพงเกินไป", "ថ្លៃពេក", "terlalu mahal", "terlalu mahal", "napakamahal"],
+    ["打折", "dǎzhé", "discount", "descuento", "réduction", "desconto", "giảm giá", "ลดราคา", "បញ្ចុះតម្លៃ", "diskon", "diskaun", "diskwento"],
+    ["折扣", "zhékòu", "discount", "descuento", "remise", "desconto", "chiết khấu", "ส่วนลด", "ការបញ្ចុះតម្លៃ", "potongan harga", "diskaun", "diskwento"],
+    ["有折扣", "yǒu zhékòu", "have discount", "hay descuento", "il y a une réduction", "tem desconto", "có giảm giá", "มีส่วนลด", "មានការបញ្ចុះតម្លៃ", "ada diskon", "ada diskaun", "may diskwento"],
+    ["付钱", "fùqián", "pay", "pagar", "payer", "pagar", "trả tiền", "จ่ายเงิน", "បង់ប្រាក់", "bayar", "bayar", "magbayad"],
+    ["付款", "fùkuǎn", "make payment", "pagar", "payer", "pagar", "thanh toán", "ชำระเงิน", "ទូទាត់", "membayar", "membayar", "magbayad"],
+    ["结账", "jiézhàng", "settle bill", "pagar la cuenta", "régler", "acertar contas", "tính tiền", "จ่ายบิล", "គិតលុយ", "bayar tagihan", "bayar", "magbayad ng bill"],
+    ["现金", "xiànjīn", "cash", "efectivo", "espèces", "dinheiro", "tiền mặt", "เงินสด", "ប្រាក់ផ្ទាល់", "uang tunai", "wang tunai", "cash"],
+    ["用现金", "yòng xiànjīn", "use cash", "usar efectivo", "payer en espèces", "usar dinheiro", "dùng tiền mặt", "ใช้เงินสด", "ប្រើប្រាក់ផ្ទាល់", "pakai uang tunai", "guna wang tunai", "gumamit ng cash"],
+    ["付现金", "fù xiànjīn", "pay cash", "pagar en efectivo", "payer en espèces", "pagar em dinheiro", "trả tiền mặt", "จ่ายเงินสด", "បង់ប្រាក់ផ្ទាល់", "bayar tunai", "bayar tunai", "magbayad ng cash"],
+    ["刷卡", "shuākǎ", "swipe card", "pagar con tarjeta", "payer par carte", "pagar com cartão", "quẹt thẻ", "รูดบัตร", "អូសប័ណ្ណ", "gesek kartu", "leret kad", "mag-swipe ng card"],
+    ["银行卡", "yínhángkǎ", "bank card", "tarjeta bancaria", "carte bancaire", "cartão bancário", "thẻ ngân hàng", "บัตรธนาคาร", "ប័ណ្ណធនាគារ", "kartu bank", "kad bank", "bank card"],
+    ["信用卡", "xìnyòngkǎ", "credit card", "tarjeta de crédito", "carte de crédit", "cartão de crédito", "thẻ tín dụng", "บัตรเครดิต", "ប័ណ្ណឥណទាន", "kartu kredit", "kad kredit", "credit card"],
+    ["找零", "zhǎolíng", "give change", "dar cambio", "rendre la monnaie", "dar troco", "trả lại tiền thừa", "ทอนเงิน", "សងលុយនៅសល់", "kembalian", "bagi balik", "magbigay ng sukli"],
+    ["找钱", "zhǎoqián", "give change", "dar cambio", "rendre la monnaie", "dar troco", "trả tiền thừa", "ทอนเงิน", "សងលុយ", "kembalian", "bagi duit balik", "magbigay ng sukli"],
+    ["找您钱", "zhǎo nín qián", "give you change", "su cambio", "votre monnaie", "seu troco", "trả lại tiền cho bạn", "ทอนเงินของคุณ", "សងលុយអ្នក", "kembalian Anda", "kembalian awak", "sukli ninyo"],
+    ["收据", "shōujù", "receipt", "recibo", "reçu", "recibo", "biên lai", "ใบเสร็จ", "បង្កាន់ដៃ", "kuitansi", "resit", "resibo"],
+    ["发票", "fāpiào", "invoice", "factura", "facture", "nota fiscal", "hóa đơn", "ใบกำกับภาษี", "វិក័យប័ត្រ", "faktur", "invois", "invoice"],
+    ["要发票", "yào fāpiào", "want invoice", "quiero factura", "je veux une facture", "quero nota fiscal", "lấy hóa đơn", "ต้องการใบกำกับภาษี", "ចង់បានវិក័យប័ត្រ", "minta faktur", "mahu invois", "gusto ng invoice"],
+    ["退货", "tuìhuò", "return goods", "devolver", "retourner", "devolver", "trả hàng", "คืนสินค้า", "ត្រឡប់ទំនិញវិញ", "tukar barang", "pulangkan barang", "ibalik ang produkto"],
+    ["换货", "huànhuò", "exchange goods", "cambiar", "échanger", "trocar", "đổi hàng", "เปลี่ยนสินค้า", "ប្តូរទំនិញ", "tukar barang", "tukar barang", "palitan ang produkto"],
+    ["退换", "tuìhuàn", "return or exchange", "devolver o cambiar", "retourner ou échanger", "devolver ou trocar", "đổi trả", "คืนหรือเปลี่ยน", "ត្រឡប់ឬប្តូរ", "tukar atau kembali", "pulang atau tukar", "ibalik o palitan"]
+  ]
+};

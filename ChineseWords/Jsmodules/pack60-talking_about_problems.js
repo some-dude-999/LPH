@@ -1,0 +1,37 @@
+// ChineseWords Pack 60: Talking About Problems
+// Clean version for development - readable and LLM-friendly
+
+export const pack60_talking_about_problems = {
+  meta: {
+    packNumber: 60,
+    title: "Talking About Problems",
+    act: "Act IV: Mastery",
+    wordCount: 24
+  },
+  words: [
+    ["出问题了", "chū wèntí le", "there's a problem", "hay un problema", "il y a un problème", "há um problema", "có vấn đề rồi", "มีปัญหาแล้ว", "មានបញ្ហាហើយ", "ada masalah", "ada masalah", "may problema na"],
+    ["有问题发生", "yǒu wèntí fāshēng", "a problem occurred", "ocurrió un problema", "un problème est survenu", "ocorreu um problema", "có vấn đề xảy ra", "มีปัญหาเกิดขึ้น", "មានបញ្ហាកើតឡើង", "ada masalah terjadi", "ada masalah berlaku", "may problemang nangyari"],
+    ["遇到麻烦了", "yùdào máfan le", "encountered trouble", "encontré problemas", "j'ai eu des ennuis", "encontrei problemas", "gặp rắc rối rồi", "เจอปัญหาแล้ว", "ជួបបញ្ហាហើយ", "mengalami masalah", "menghadapi masalah", "nakatagpo ng problema"],
+    ["什么问题", "shénme wèntí", "what problem?", "¿qué problema?", "quel problème?", "que problema?", "vấn đề gì?", "ปัญหาอะไร", "បញ្ហាអ្វី?", "masalah apa?", "masalah apa?", "anong problema?"],
+    ["发生什么事", "fāshēng shénme shì", "what happened?", "¿qué pasó?", "que s'est-il passé?", "o que aconteceu?", "chuyện gì xảy ra?", "เกิดอะไรขึ้น", "មានរឿងអ្វីកើតឡើង?", "ada apa?", "apa yang berlaku?", "ano ang nangyari?"],
+    ["怎么回事", "zěnme huíshì", "what's going on?", "¿qué pasa?", "qu'est-ce qui se passe?", "o que está acontecendo?", "chuyện gì vậy?", "เป็นอะไร", "មានរឿងអី", "ada apa ini?", "apa ceritanya?", "ano ba ang nangyayari?"],
+    ["问题严重吗", "wèntí yánzhòng ma", "is the problem serious?", "¿es grave el problema?", "le problème est-il grave?", "o problema é grave?", "vấn đề nghiêm trọng không?", "ปัญหาร้ายแรงไหม", "តើបញ្ហាធ្ងន់ធ្ងរទេ?", "apakah masalahnya serius?", "adakah masalahnya serius?", "malubha ba ang problema?"],
+    ["严不严重", "yán bu yánzhòng", "is it serious?", "¿es grave?", "c'est grave?", "é grave?", "nghiêm trọng không?", "ร้ายแรงไหม", "ធ្ងន់ធ្ងរទេ?", "serius tidak?", "serius ke tak?", "malubha ba?"],
+    ["要不要紧", "yào bu yàojǐn", "is it serious?", "¿es grave?", "c'est grave?", "é grave?", "có quan trọng không?", "เป็นไรหรือเปล่า", "សំខាន់ទេ?", "penting tidak?", "penting ke tidak?", "mahalaga ba?"],
+    ["不太严重", "bú tài yánzhòng", "not too serious", "no muy grave", "pas trop grave", "não muito grave", "không nghiêm trọng lắm", "ไม่ร้ายแรงมาก", "មិនសូវធ្ងន់ធ្ងរ", "tidak terlalu serius", "tak begitu serius", "hindi gaanong malubha"],
+    ["问题不大", "wèntí bú dà", "problem is not big", "el problema no es grande", "le problème n'est pas grave", "o problema não é grande", "vấn đề không lớn", "ปัญหาไม่ใหญ่", "បញ្ហាមិនធំ", "masalahnya tidak besar", "masalahnya tak besar", "hindi malaking problema"],
+    ["没什么大碍", "méi shénme dà'ài", "no big deal", "no es gran cosa", "pas grand-chose", "não é grande coisa", "không có trở ngại lớn", "ไม่เป็นไรมาก", "គ្មានបញ្ហាធំធេងអ្វី", "tidak ada masalah besar", "tiada halangan besar", "walang malaking problema"],
+    ["挺严重的", "tǐng yánzhòng de", "quite serious", "bastante grave", "assez grave", "bem grave", "khá nghiêm trọng", "ร้ายแรงพอสมควร", "ធ្ងន់ធ្ងរណាស់", "cukup serius", "agak serius", "medyo malubha"],
+    ["问题很大", "wèntí hěn dà", "problem is big", "el problema es grande", "le problème est grave", "o problema é grande", "vấn đề lớn lắm", "ปัญหาใหญ่มาก", "បញ្ហាធំណាស់", "masalahnya besar", "masalahnya besar", "malaking problema"],
+    ["比较棘手", "bǐjiào jíshǒu", "rather tricky", "bastante difícil", "assez délicat", "bem complicado", "khá khó xử", "ค่อนข้างยุ่งยาก", "ស្មុគស្មាញណាស់", "cukup rumit", "agak sukar", "medyo mahirap"],
+    ["能解决吗", "néng jiějué ma", "can it be solved?", "¿se puede resolver?", "ça peut se résoudre?", "pode ser resolvido?", "có thể giải quyết không?", "แก้ไขได้ไหม", "អាចដោះស្រាយបានទេ?", "bisa diselesaikan?", "boleh diselesaikan?", "pwede bang malutas?"],
+    ["有办法吗", "yǒu bànfǎ ma", "is there a solution?", "¿hay solución?", "il y a une solution?", "tem solução?", "có cách không?", "มีวิธีไหม", "មានវិធីទេ?", "ada cara?", "ada cara?", "may solusyon ba?"],
+    ["能处理好吗", "néng chǔlǐ hǎo ma", "can it be handled?", "¿se puede manejar?", "ça peut se gérer?", "pode ser resolvido?", "có thể xử lý tốt không?", "จัดการได้ไหม", "អាចដោះស្រាយបានទេ?", "bisa ditangani?", "boleh diuruskan?", "kaya bang ayusin?"],
+    ["想办法解决", "xiǎng bànfǎ jiějué", "find a way to solve", "buscar una solución", "trouver une solution", "encontrar uma solução", "tìm cách giải quyết", "หาทางแก้ไข", "ស្វែងរកមធ្យោបាយដោះស្រាយ", "cari cara menyelesaikan", "cari jalan selesaikan", "maghanap ng solusyon"],
+    ["找到解决方案", "zhǎodào jiějué fāng'àn", "find a solution", "encontrar una solución", "trouver une solution", "encontrar uma solução", "tìm ra giải pháp", "หาวิธีแก้ไขเจอ", "រកឃើញដំណោះស្រាយ", "menemukan solusi", "jumpa penyelesaian", "makahanap ng solusyon"],
+    ["把问题解决掉", "bǎ wèntí jiějué diào", "solve the problem", "resolver el problema", "résoudre le problème", "resolver o problema", "giải quyết vấn đề", "แก้ปัญหาให้เรียบร้อย", "ដោះស្រាយបញ្ហា", "selesaikan masalahnya", "selesaikan masalahnya", "lutasin ang problema"],
+    ["没办法了", "méi bànfǎ le", "there's no way", "no hay manera", "il n'y a pas moyen", "não tem jeito", "không còn cách", "ไม่มีทางแล้ว", "គ្មានវិធីហើយ", "tidak ada cara lagi", "tiada cara lagi", "wala nang paraan"],
+    ["实在没招了", "shízài méi zhāo le", "really no solution", "de verdad no hay solución", "vraiment aucune solution", "realmente não tem solução", "thực sự không còn cách", "ไม่มีวิธีจริงๆ", "ពិតជាអស់វិធីហើយ", "benar-benar tidak ada cara", "betul-betul tiada jalan", "talaga walang solusyon"],
+    ["没有解决方案", "méiyǒu jiějué fāng'àn", "no solution", "no hay solución", "pas de solution", "não tem solução", "không có giải pháp", "ไม่มีวิธีแก้ไข", "គ្មានដំណោះស្រាយ", "tidak ada solusi", "tiada penyelesaian", "walang solusyon"]
+  ]
+};
