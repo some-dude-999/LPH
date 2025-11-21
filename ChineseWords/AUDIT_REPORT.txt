@@ -1,0 +1,357 @@
+================================================================================
+COMPREHENSIVE QUALITY AUDIT REPORT
+ChineseWords CSV Files (Packs 1-107)
+================================================================================
+
+## SUMMARY STATISTICS
+Total entries checked: 3846
+Total pinyin spacing errors: 46
+Total 不 tone sandhi errors: 0
+Total 一 tone sandhi errors: 33
+Total missing tone marks: 8
+Total Vietnamese diacritic issues: 104
+
+================================================================================
+## CRITICAL ISSUES: PINYIN SPACING IN COMPOUND WORDS
+================================================================================
+
+Packs affected: 3 out of 107
+Affected packs: [23, 24, 26]
+
+### Sample Errors (first 20):
+Pack 23, Row 2: 起床
+  Current:  qǐ chuáng
+  Expected: qǐchuáng
+  Type: spacing
+
+Pack 23, Row 2: 起床
+  Current:  qǐ chuáng
+  Expected: qǐchuáng
+  Type: verb-object compound should have no space
+
+Pack 23, Row 5: 睡觉
+  Current:  shuì jiào
+  Expected: shuìjiào
+  Type: spacing
+
+Pack 23, Row 5: 睡觉
+  Current:  shuì jiào
+  Expected: shuìjiào
+  Type: verb-object compound should have no space
+
+Pack 23, Row 8: 洗脸
+  Current:  xǐ liǎn
+  Expected: xǐliǎn
+  Type: spacing
+
+Pack 23, Row 8: 洗脸
+  Current:  xǐ liǎn
+  Expected: xǐliǎn
+  Type: verb-object compound should have no space
+
+Pack 23, Row 10: 洁面
+  Current:  jié miàn
+  Expected: jiémiàn
+  Type: spacing
+
+Pack 23, Row 11: 刷牙
+  Current:  shuā yá
+  Expected: shuāyá
+  Type: spacing
+
+Pack 23, Row 11: 刷牙
+  Current:  shuā yá
+  Expected: shuāyá
+  Type: verb-object compound should have no space
+
+Pack 23, Row 12: 漱口
+  Current:  shù kǒu
+  Expected: shùkǒu
+  Type: spacing
+
+Pack 23, Row 14: 洗澡
+  Current:  xǐ zǎo
+  Expected: xǐzǎo
+  Type: spacing
+
+Pack 23, Row 14: 洗澡
+  Current:  xǐ zǎo
+  Expected: xǐzǎo
+  Type: verb-object compound should have no space
+
+Pack 23, Row 16: 冲澡
+  Current:  chōng zǎo
+  Expected: chōngzǎo
+  Type: spacing
+
+Pack 23, Row 17: 洗手
+  Current:  xǐ shǒu
+  Expected: xǐshǒu
+  Type: spacing
+
+Pack 23, Row 17: 洗手
+  Current:  xǐ shǒu
+  Expected: xǐshǒu
+  Type: verb-object compound should have no space
+
+Pack 23, Row 18: 净手
+  Current:  jìng shǒu
+  Expected: jìngshǒu
+  Type: spacing
+
+Pack 23, Row 26: 吃饭
+  Current:  chī fàn
+  Expected: chīfàn
+  Type: spacing
+
+Pack 23, Row 26: 吃饭
+  Current:  chī fàn
+  Expected: chīfàn
+  Type: verb-object compound should have no space
+
+Pack 23, Row 27: 用餐
+  Current:  yòng cān
+  Expected: yòngcān
+  Type: spacing
+
+Pack 23, Row 28: 进食
+  Current:  jìn shí
+  Expected: jìnshí
+  Type: spacing
+
+================================================================================
+## PACK 23 DETAILED ANALYSIS
+================================================================================
+
+### Pinyin Spacing Errors in Pack 23:
+Total errors: 38
+
+Row 2: 起床
+  Current:  qǐ chuáng
+  Expected: qǐchuáng
+
+Row 2: 起床
+  Current:  qǐ chuáng
+  Expected: qǐchuáng
+
+Row 5: 睡觉
+  Current:  shuì jiào
+  Expected: shuìjiào
+
+Row 5: 睡觉
+  Current:  shuì jiào
+  Expected: shuìjiào
+
+Row 8: 洗脸
+  Current:  xǐ liǎn
+  Expected: xǐliǎn
+
+Row 8: 洗脸
+  Current:  xǐ liǎn
+  Expected: xǐliǎn
+
+Row 10: 洁面
+  Current:  jié miàn
+  Expected: jiémiàn
+
+Row 11: 刷牙
+  Current:  shuā yá
+  Expected: shuāyá
+
+Row 11: 刷牙
+  Current:  shuā yá
+  Expected: shuāyá
+
+Row 12: 漱口
+  Current:  shù kǒu
+  Expected: shùkǒu
+
+Row 14: 洗澡
+  Current:  xǐ zǎo
+  Expected: xǐzǎo
+
+Row 14: 洗澡
+  Current:  xǐ zǎo
+  Expected: xǐzǎo
+
+Row 16: 冲澡
+  Current:  chōng zǎo
+  Expected: chōngzǎo
+
+Row 17: 洗手
+  Current:  xǐ shǒu
+  Expected: xǐshǒu
+
+Row 17: 洗手
+  Current:  xǐ shǒu
+  Expected: xǐshǒu
+
+Row 18: 净手
+  Current:  jìng shǒu
+  Expected: jìngshǒu
+
+Row 26: 吃饭
+  Current:  chī fàn
+  Expected: chīfàn
+
+Row 26: 吃饭
+  Current:  chī fàn
+  Expected: chīfàn
+
+Row 27: 用餐
+  Current:  yòng cān
+  Expected: yòngcān
+
+Row 28: 进食
+  Current:  jìn shí
+  Expected: jìnshí
+
+Row 29: 喝水
+  Current:  hē shuǐ
+  Expected: hēshuǐ
+
+Row 29: 喝水
+  Current:  hē shuǐ
+  Expected: hēshuǐ
+
+Row 30: 饮水
+  Current:  yǐn shuǐ
+  Expected: yǐnshuǐ
+
+Row 32: 上班
+  Current:  shàng bān
+  Expected: shàngbān
+
+Row 32: 上班
+  Current:  shàng bān
+  Expected: shàngbān
+
+Row 35: 下班
+  Current:  xià bān
+  Expected: xiàbān
+
+Row 35: 下班
+  Current:  xià bān
+  Expected: xiàbān
+
+Row 36: 收工
+  Current:  shōu gōng
+  Expected: shōugōng
+
+Row 38: 上学
+  Current:  shàng xué
+  Expected: shàngxué
+
+Row 38: 上学
+  Current:  shàng xué
+  Expected: shàngxué
+
+Row 40: 求学
+  Current:  qiú xué
+  Expected: qiúxué
+
+Row 41: 放学
+  Current:  fàng xué
+  Expected: fàngxué
+
+Row 41: 放学
+  Current:  fàng xué
+  Expected: fàngxué
+
+Row 44: 回家
+  Current:  huí jiā
+  Expected: huíjiā
+
+Row 44: 回家
+  Current:  huí jiā
+  Expected: huíjiā
+
+Row 47: 出门
+  Current:  chū mén
+  Expected: chūmén
+
+Row 47: 出门
+  Current:  chū mén
+  Expected: chūmén
+
+Row 48: 外出
+  Current:  wài chū
+  Expected: wàichū
+
+================================================================================
+## TONE SANDHI ERRORS: 一 (yī)
+================================================================================
+
+Packs affected: [6, 51, 65, 67, 69, 70, 71, 74, 77, 84, 85, 86, 95, 96, 97, 100, 103, 105]
+
+Pack 6, Row 21: 一 before 4th tone should be 'yí' not 'yī' in: 一定
+Pack 51, Row 19: 一 before 1st/2nd/3rd tone should be 'yì' not 'yī' in: 多一些
+Pack 51, Row 22: 一 before 1st/2nd/3rd tone should be 'yì' not 'yī' in: 少一些
+Pack 65, Row 10: 一 before 1st/2nd/3rd tone should be 'yì' not 'yī' in: 头一直疼
+Pack 67, Row 25: 一 before 1st/2nd/3rd tone should be 'yì' not 'yī' in: 穿厚一点
+Pack 69, Row 6: 一 before 4th tone should be 'yí' not 'yī' in: 第一次见面
+Pack 70, Row 8: 一 before 4th tone should be 'yí' not 'yī' in: 一起去吧
+Pack 70, Row 9: 一 before 4th tone should be 'yí' not 'yī' in: 我们一起去
+Pack 70, Row 10: 一 before 4th tone should be 'yí' not 'yī' in: 要不一起来
+Pack 70, Row 16: 一 before 4th tone should be 'yí' not 'yī' in: 我一定参加
+
+================================================================================
+## MISSING TONE MARKS
+================================================================================
+
+Packs affected: [89]
+
+Pack 89, Row 35: 吗 -> ma
+Pack 89, Row 36: 呢 -> ne
+Pack 89, Row 37: 吧 -> ba
+Pack 89, Row 38: 啊 -> a
+Pack 89, Row 39: 呀 -> ya
+Pack 89, Row 41: 嘛 -> ma
+Pack 89, Row 42: 啦 -> la
+Pack 89, Row 43: 呗 -> bei
+
+================================================================================
+## VIETNAMESE DIACRITIC ISSUES
+================================================================================
+
+Packs affected: [1, 2, 5, 7, 8, 9, 11, 13, 15, 17, 22, 25, 27, 28, 29, 30, 31, 32, 35, 37, 38, 39, 40, 41, 43, 44, 45, 47, 48, 49, 50, 51, 53, 89]
+
+Pack 1, Row 16: 拜拜 -> bai bai
+Pack 2, Row 32: 谁 -> ai
+Pack 2, Row 34: 哪位 -> ai
+Pack 5, Row 24: 看看 -> xem xem
+Pack 5, Row 25: 观看 -> xem
+Pack 5, Row 26: 听 -> nghe
+Pack 5, Row 27: 听听 -> nghe xem
+Pack 5, Row 35: 给 -> cho
+Pack 7, Row 8: 二 -> hai
+Pack 7, Row 9: 两 -> hai
+
+================================================================================
+## PACKS RANKED BY ERROR COUNT
+================================================================================
+
+Pack 23: 38 errors
+Pack 15: 11 errors
+Pack 89: 9 errors
+Pack 26: 7 errors
+Pack 13: 7 errors
+Pack 28: 7 errors
+Pack 32: 7 errors
+Pack 96: 5 errors
+Pack 5: 5 errors
+Pack 44: 5 errors
+Pack 53: 5 errors
+Pack 51: 4 errors
+Pack 70: 4 errors
+Pack 77: 4 errors
+Pack 11: 4 errors
+Pack 29: 4 errors
+Pack 30: 4 errors
+Pack 43: 4 errors
+Pack 45: 4 errors
+Pack 85: 3 errors
+
+================================================================================
+END OF REPORT
+================================================================================
