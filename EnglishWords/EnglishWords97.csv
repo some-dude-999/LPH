@@ -1,0 +1,61 @@
+english,chinese,pinyin,spanish,portuguese
+cozy cafe,温馨咖啡馆,wēnxīn kāfēiguǎn,café acogedor,café aconchegante
+internet cafe,网吧,wǎngbā,café internet,lan house
+sidewalk cafe,路边咖啡馆,lùbiān kāfēiguǎn,café en la acera,café na calçada
+local diner,本地餐馆,běndì cānguǎn,comedor local,restaurante local
+all night diner,通宵餐馆,tōngxiāo cānguǎn,comedor toda la noche,restaurante 24 horas
+diner food,餐馆食物,cānguǎn shíwù,comida de comedor,comida de restaurante
+restaurant menu,餐厅菜单,cāntīng càidān,menú del restaurante,cardápio do restaurante
+dinner menu,晚餐菜单,wǎncān càidān,menú de cena,cardápio de jantar
+menu item,菜单项目,càidān xiàngmù,elemento del menú,item do cardápio
+make reservation,预订,yùdìng,hacer reserva,fazer reserva
+dinner reservation,晚餐预订,wǎncān yùdìng,reserva para cena,reserva de jantar
+reservation for two,两人预订,liǎng rén yùdìng,reserva para dos,reserva para dois
+friendly waiter,友好的服务员,yǒuhǎo de fúwù yuán,mesero amable,garçom simpático
+waiter service,服务员服务,fúwù yuán fúwù,servicio de mesero,serviço de garçom
+call waiter,叫服务员,jiào fúwù yuán,llamar al mesero,chamar o garçom
+friendly waitress,友好的女服务员,yǒuhǎo de nǚ fúwù yuán,mesera amable,garçonete simpática
+waitress tip,给女服务员小费,gěi nǚ fúwù yuán xiǎofèi,propina para mesera,gorjeta para garçonete
+experienced waitress,有经验的女服务员,yǒu jīngyàn de nǚ fúwù yuán,mesera experimentada,garçonete experiente
+our server,我们的服务员,wǒmen de fúwù yuán,nuestro mesero,nosso garçom
+server tip,给服务员小费,gěi fúwù yuán xiǎofèi,propina para mesero,gorjeta para garçom
+call server,叫服务员,jiào fúwù yuán,llamar al mesero,chamar o garçom
+light appetizer,清淡开胃菜,qīngdàn kāiwèi cài,aperitivo ligero,aperitivo leve
+appetizer menu,开胃菜菜单,kāiwèi cài càidān,menú de aperitivos,cardápio de aperitivos
+share appetizer,分享开胃菜,fēnxiǎng kāiwèi cài,compartir aperitivo,compartilhar aperitivo
+main course,主菜,zhǔcài,plato principal,prato principal
+order main course,点主菜,diǎn zhǔcài,ordenar plato principal,pedir prato principal
+main course option,主菜选项,zhǔcài xuǎnxiàng,opción de plato principal,opção de prato principal
+cold beverage,冷饮,lěngyǐn,bebida fría,bebida fria
+hot beverage,热饮,rèyǐn,bebida caliente,bebida quente
+alcoholic beverage,含酒精饮料,hán jiǔjīng yǐnliào,bebida alcohólica,bebida alcoólica
+pay bill,付账,fùzhàng,pagar la cuenta,pagar a conta
+split bill,分账,fēnzhàng,dividir la cuenta,dividir a conta
+bill please,请结账,qǐng jiézhàng,la cuenta por favor,a conta por favor
+check please,请买单,qǐng mǎidān,la cuenta por favor,a conta por favor
+waiting for check,等着买单,děng zhe mǎidān,esperando la cuenta,esperando a conta
+pay by check,用支票支付,yòng zhīpiào zhīfù,pagar con cheque,pagar com cheque
+leave tip,留小费,liú xiǎofèi,dejar propina,deixar gorjeta
+big tip,大额小费,dà'é xiǎofèi,propina grande,gorjeta grande
+tip well,给小费大方,gěi xiǎofèi dàfāng,dar buena propina,dar boa gorjeta
+order takeout,点外卖,diǎn wàimài,ordenar para llevar,pedir para viagem
+takeout menu,外卖菜单,wàimài càidān,menú para llevar,cardápio para viagem
+takeout container,外卖盒,wàimài hé,contenedor para llevar,embalagem para viagem
+food delivery,送餐,sòng cān,entrega de comida,entrega de comida
+pizza delivery,披萨外送,pīsà wàisòng,entrega de pizza,entrega de pizza
+delivery driver,送餐司机,sòng cān sījī,conductor de entrega,entregador
+all you can eat buffet,自助餐,zìzhù cān,buffet libre,buffet à vontade
+breakfast buffet,早餐自助,zǎocān zìzhù,buffet de desayuno,buffet de café da manhã
+hotel buffet,酒店自助餐,jiǔdiàn zìzhù cān,buffet del hotel,buffet do hotel
+house specialty,招牌菜,zhāopái cài,especialidad de la casa,especialidade da casa
+chef specialty,主厨特色菜,zhǔchú tèsè cài,especialidad del chef,especialidade do chef
+today's specialty,今日特色,jīnrì tèsè,especialidad del día,especialidade do dia
+vegetarian option,素食选项,sùshí xuǎnxiàng,opción vegetariana,opção vegetariana
+vegetarian menu,素食菜单,sùshí càidān,menú vegetariano,cardápio vegetariano
+strict vegetarian,严格素食者,yángé sùshí zhě,vegetariano estricto,vegetariano estrito
+vegan option,纯素食选项,chún sùshí xuǎnxiàng,opción vegana,opção vegana
+vegan menu,纯素食菜单,chún sùshí càidān,menú vegano,cardápio vegano
+go vegan,改吃纯素,gǎi chī chún sù,volverse vegano,tornar-se vegano
+food allergy,食物过敏,shíwù guòmǐn,alergia alimentaria,alergia alimentar
+allergy warning,过敏警告,guòmǐn jǐnggào,advertencia de alergia,aviso de alergia
+nut allergy,坚果过敏,jiānguǒ guòmǐn,alergia a las nueces,alergia a nozes
