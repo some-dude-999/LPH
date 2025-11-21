@@ -4,10 +4,17 @@
 export const pack33_clothing_items = {
   meta: {
     wordpack: 33,
-    packNumber: 33,
-    title: "Clothing Items",
-    act: "Act III: Expansion",
-    wordCount: 45
+    pinyin: "Clothing Items",
+    english: "Clothing Items",
+    spanish: "Clothing Items",
+    french: "Clothing Items",
+    portuguese: "Clothing Items",
+    vietnamese: "Clothing Items",
+    thai: "Clothing Items",
+    khmer: "Clothing Items",
+    indonesian: "Clothing Items",
+    malay: "Clothing Items",
+    filipino: "Clothing Items"
   },
   words: [
     ["衣服", "yīfu", "clothes", "ropa", "vêtements", "roupa", "quần áo", "เสื้อผ้า", "សម្លៀកបំពាក់", "pakaian", "pakaian", "damit"],

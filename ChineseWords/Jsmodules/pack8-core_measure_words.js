@@ -4,10 +4,17 @@
 export const pack8_core_measure_words = {
   meta: {
     wordpack: 8,
-    packNumber: 8,
-    title: "Core Measure Words",
-    act: "Act I: Foundation",
-    wordCount: 51
+    pinyin: "Core Measure Words",
+    english: "Core Measure Words",
+    spanish: "Core Measure Words",
+    french: "Core Measure Words",
+    portuguese: "Core Measure Words",
+    vietnamese: "Core Measure Words",
+    thai: "Core Measure Words",
+    khmer: "Core Measure Words",
+    indonesian: "Core Measure Words",
+    malay: "Core Measure Words",
+    filipino: "Core Measure Words"
   },
   words: [
     ["个", "gè", "measure word", "medida", "mesure", "medida", "từ chỉ số lượng", "ลักษณนาม", "ទម្រង់", "kata pengukur", "kata pengira", "panukат"],

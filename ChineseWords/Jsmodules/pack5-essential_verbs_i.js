@@ -4,10 +4,17 @@
 export const pack5_essential_verbs_i = {
   meta: {
     wordpack: 5,
-    packNumber: 5,
-    title: "Essential Verbs I",
-    act: "Act I: Foundation",
-    wordCount: 57
+    pinyin: "Essential Verbs I",
+    english: "Essential Verbs I",
+    spanish: "Essential Verbs I",
+    french: "Essential Verbs I",
+    portuguese: "Essential Verbs I",
+    vietnamese: "Essential Verbs I",
+    thai: "Essential Verbs I",
+    khmer: "Essential Verbs I",
+    indonesian: "Essential Verbs I",
+    malay: "Essential Verbs I",
+    filipino: "Essential Verbs I"
   },
   words: [
     ["是", "shì", "be", "ser", "être", "ser", "là", "เป็น", "ជា", "adalah", "adalah", "ay"],

@@ -4,10 +4,17 @@
 export const pack67_weather_conversations = {
   meta: {
     wordpack: 67,
-    packNumber: 67,
-    title: "Weather Conversations",
-    act: "Act IV: Mastery",
-    wordCount: 27
+    pinyin: "Weather Conversations",
+    english: "Weather Conversations",
+    spanish: "Weather Conversations",
+    french: "Weather Conversations",
+    portuguese: "Weather Conversations",
+    vietnamese: "Weather Conversations",
+    thai: "Weather Conversations",
+    khmer: "Weather Conversations",
+    indonesian: "Weather Conversations",
+    malay: "Weather Conversations",
+    filipino: "Weather Conversations"
   },
   words: [
     ["今天天气好", "jīntiān tiānqì hǎo", "the weather is good today", "el clima está bueno hoy", "il fait beau aujourd'hui", "o tempo está bom hoje", "hôm nay thời tiết tốt", "วันนี้อากาศดี", "ថ្ងៃនេះអាកាសធាតុល្អ", "cuaca hari ini bagus", "cuaca hari ini baik", "maganda ang panahon ngayon"],

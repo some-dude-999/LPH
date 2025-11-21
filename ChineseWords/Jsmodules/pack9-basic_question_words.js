@@ -4,10 +4,17 @@
 export const pack9_basic_question_words = {
   meta: {
     wordpack: 9,
-    packNumber: 9,
-    title: "Basic Question Words",
-    act: "Act I: Foundation",
-    wordCount: 36
+    pinyin: "Basic Question Words",
+    english: "Basic Question Words",
+    spanish: "Basic Question Words",
+    french: "Basic Question Words",
+    portuguese: "Basic Question Words",
+    vietnamese: "Basic Question Words",
+    thai: "Basic Question Words",
+    khmer: "Basic Question Words",
+    indonesian: "Basic Question Words",
+    malay: "Basic Question Words",
+    filipino: "Basic Question Words"
   },
   words: [
     ["什么", "shénme", "what", "qué", "quoi", "o que", "cái gì", "อะไร", "អ្វី", "apa", "apa", "ano"],

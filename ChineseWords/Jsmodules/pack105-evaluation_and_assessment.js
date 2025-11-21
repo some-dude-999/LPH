@@ -4,10 +4,17 @@
 export const pack105_evaluation_and_assessment = {
   meta: {
     wordpack: 105,
-    packNumber: 105,
-    title: "Evaluation & Assessment",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Evaluation & Assessment",
+    english: "Evaluation & Assessment",
+    spanish: "Evaluation & Assessment",
+    french: "Evaluation & Assessment",
+    portuguese: "Evaluation & Assessment",
+    vietnamese: "Evaluation & Assessment",
+    thai: "Evaluation & Assessment",
+    khmer: "Evaluation & Assessment",
+    indonesian: "Evaluation & Assessment",
+    malay: "Evaluation & Assessment",
+    filipino: "Evaluation & Assessment"
   },
   words: [
     ["对此给予很高评价", "duìcǐ jǐyǔ hěn gāo píngjià", "give high evaluation to this", "dar alta evaluación a esto", "donner une haute évaluation à ceci", "dar alta avaliação a isso", "đưa ra đánh giá rất cao về điều này", "ให้คะแนนสูงมากสำหรับเรื่องนี้", "ផ្តល់ការវាយតម្លៃខ្ពស់សម្រាប់នេះ", "memberikan evaluasi tinggi untuk ini", "beri penilaian tinggi untuk ini", "magbigay ng mataas na pagtatasa sa ito"],

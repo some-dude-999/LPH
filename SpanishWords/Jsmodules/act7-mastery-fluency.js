@@ -4,10 +4,10 @@
 export const p7_221_past__subjunctive__forms = {
   meta: {
     wordpack: 221,
-    en: "Past Subjunctive Forms",
-    zh: "过去虚拟语气",
+    english: "Past Subjunctive Forms",
+    chinese: "过去虚拟语气",
     pinyin: "Guòqù Xūnǐ Yǔqì",
-    pt: "Formas do Subjuntivo Passado"
+    portuguese: "Formas do Subjuntivo Passado"
   },
   words: [
     ["si tuviera dinero", "if I had money", "如果我有钱", "rúguǒ wǒ yǒu qián", "se eu tivesse dinheiro"],
@@ -76,10 +76,10 @@ export const p7_221_past__subjunctive__forms = {
 export const p7_222_dreaming__soar = {
   meta: {
     wordpack: 222,
-    en: "Dreaming (soñar)",
-    zh: "梦想 (soñar)",
+    english: "Dreaming (soñar)",
+    chinese: "梦想 (soñar)",
     pinyin: "Mèngxiǎng (soñar)",
-    pt: "Sonhar"
+    portuguese: "Sonhar"
   },
   words: [
     ["sueño mucho", "I dream a lot", "我做很多梦", "wǒ zuò hěn duō mèng", "eu sonho muito"],
@@ -118,10 +118,10 @@ export const p7_222_dreaming__soar = {
 export const p7_223_agreeing__acordar = {
   meta: {
     wordpack: 223,
-    en: "Agreeing (acordar)",
-    zh: "同意 (acordar)",
+    english: "Agreeing (acordar)",
+    chinese: "同意 (acordar)",
     pinyin: "Tóngyì (acordar)",
-    pt: "Concordar"
+    portuguese: "Concordar"
   },
   words: [
     ["acuerdo todo", "I agree to everything", "我同意一切", "wǒ tóngyì yīqiè", "eu concordo com tudo"],
@@ -160,10 +160,10 @@ export const p7_223_agreeing__acordar = {
 export const p7_224_robotics__ai__terms = {
   meta: {
     wordpack: 224,
-    en: "Robotics & AI Terms",
-    zh: "机器人与人工智能术语",
+    english: "Robotics & AI Terms",
+    chinese: "机器人与人工智能术语",
     pinyin: "Jīqìrén yǔ Réngōng Zhìnéng Shùyǔ",
-    pt: "Termos de Robótica e IA"
+    portuguese: "Termos de Robótica e IA"
   },
   words: [
     ["la inteligencia artificial", "artificial intelligence", "人工智能", "réngōng zhìnéng", "a inteligência artificial"],
@@ -232,10 +232,10 @@ export const p7_224_robotics__ai__terms = {
 export const p7_225_warming__calentar = {
   meta: {
     wordpack: 225,
-    en: "Warming (calentar)",
-    zh: "加热 (calentar)",
+    english: "Warming (calentar)",
+    chinese: "加热 (calentar)",
     pinyin: "Jiārè (calentar)",
-    pt: "Aquecer"
+    portuguese: "Aquecer"
   },
   words: [
     ["caliento agua", "I heat water", "我加热水", "wǒ jiārè shuǐ", "eu esquento água"],
@@ -274,10 +274,10 @@ export const p7_225_warming__calentar = {
 export const p7_226_cooling__enfriar = {
   meta: {
     wordpack: 226,
-    en: "Cooling (enfriar)",
-    zh: "冷却 (enfriar)",
+    english: "Cooling (enfriar)",
+    chinese: "冷却 (enfriar)",
     pinyin: "Lěngquè (enfriar)",
-    pt: "Esfriar"
+    portuguese: "Esfriar"
   },
   words: [
     ["enfrío bebidas", "I cool drinks", "我冷却饮料", "wǒ lěngquè yǐnliào", "eu resfrio bebidas"],
@@ -316,10 +316,10 @@ export const p7_226_cooling__enfriar = {
 export const p7_227_alternative__medicine = {
   meta: {
     wordpack: 227,
-    en: "Alternative Medicine",
-    zh: "替代医学",
+    english: "Alternative Medicine",
+    chinese: "替代医学",
     pinyin: "Tìdài Yīxué",
-    pt: "Medicina Alternativa"
+    portuguese: "Medicina Alternativa"
   },
   words: [
     ["la medicina alternativa", "alternative medicine", "替代医学", "tìdài yīxué", "a medicina alternativa"],
@@ -385,10 +385,10 @@ export const p7_227_alternative__medicine = {
 export const p7_228_hiding__esconder = {
   meta: {
     wordpack: 228,
-    en: "Hiding (esconder)",
-    zh: "隐藏 (esconder)",
+    english: "Hiding (esconder)",
+    chinese: "隐藏 (esconder)",
     pinyin: "Yǐncáng (esconder)",
-    pt: "Esconder"
+    portuguese: "Esconder"
   },
   words: [
     ["escondo cosas", "I hide things", "我藏东西", "wǒ cáng dōngxi", "eu escondo coisas"],
@@ -427,10 +427,10 @@ export const p7_228_hiding__esconder = {
 export const p7_229_showing__mostrar = {
   meta: {
     wordpack: 229,
-    en: "Showing (mostrar)",
-    zh: "展示 (mostrar)",
+    english: "Showing (mostrar)",
+    chinese: "展示 (mostrar)",
     pinyin: "Zhǎnshì (mostrar)",
-    pt: "Mostrar"
+    portuguese: "Mostrar"
   },
   words: [
     ["muestro fotos", "I show photos", "我展示照片", "wǒ zhǎnshì zhàopiàn", "eu mostro fotos"],
@@ -469,10 +469,10 @@ export const p7_229_showing__mostrar = {
 export const p7_230_virtual__reality__terms = {
   meta: {
     wordpack: 230,
-    en: "Virtual Reality Terms",
-    zh: "虚拟现实术语",
+    english: "Virtual Reality Terms",
+    chinese: "虚拟现实术语",
     pinyin: "Xūnǐ Xiànshí Shùyǔ",
-    pt: "Termos de Realidade Virtual"
+    portuguese: "Termos de Realidade Virtual"
   },
   words: [
     ["la realidad virtual", "virtual reality", "虚拟现实", "xūnǐ xiànshí", "a realidade virtual"],
@@ -541,10 +541,10 @@ export const p7_230_virtual__reality__terms = {
 export const p7_231_measuring__medir = {
   meta: {
     wordpack: 231,
-    en: "Measuring (medir)",
-    zh: "测量 (medir)",
+    english: "Measuring (medir)",
+    chinese: "测量 (medir)",
     pinyin: "Cèliáng (medir)",
-    pt: "Medir"
+    portuguese: "Medir"
   },
   words: [
     ["mido distancias", "I measure distances", "我测量距离", "wǒ cèliáng jùlí", "eu meço distâncias"],
@@ -583,10 +583,10 @@ export const p7_231_measuring__medir = {
 export const p7_232_weighing__pesar = {
   meta: {
     wordpack: 232,
-    en: "Weighing (pesar)",
-    zh: "称重 (pesar)",
+    english: "Weighing (pesar)",
+    chinese: "称重 (pesar)",
     pinyin: "Chēngzhòng (pesar)",
-    pt: "Pesar"
+    portuguese: "Pesar"
   },
   words: [
     ["peso mucho", "I weigh a lot", "我体重很重", "wǒ tǐzhòng hěn zhòng", "eu peso muito"],
@@ -625,10 +625,10 @@ export const p7_232_weighing__pesar = {
 export const p7_233_cryptocurrency__terms = {
   meta: {
     wordpack: 233,
-    en: "Cryptocurrency Terms",
-    zh: "加密货币术语",
+    english: "Cryptocurrency Terms",
+    chinese: "加密货币术语",
     pinyin: "Jiāmì Huòbì Shùyǔ",
-    pt: "Termos de Criptomoeda"
+    portuguese: "Termos de Criptomoeda"
   },
   words: [
     ["la criptomoneda popular", "popular cryptocurrency", "流行加密货币", "liúxíng jiāmì huòbì", "a criptomoeda popular"],
@@ -691,10 +691,10 @@ export const p7_233_cryptocurrency__terms = {
 export const p7_234_opening__abrir = {
   meta: {
     wordpack: 234,
-    en: "Opening (abrir)",
-    zh: "打开 (abrir)",
+    english: "Opening (abrir)",
+    chinese: "打开 (abrir)",
     pinyin: "Dǎkāi (abrir)",
-    pt: "Abrir"
+    portuguese: "Abrir"
   },
   words: [
     ["abro puertas", "I open doors", "我开门", "wǒ kāimén", "eu abro portas"],
@@ -733,10 +733,10 @@ export const p7_234_opening__abrir = {
 export const p7_235_closing__cerrar = {
   meta: {
     wordpack: 235,
-    en: "Closing (cerrar)",
-    zh: "关闭 (cerrar)",
+    english: "Closing (cerrar)",
+    chinese: "关闭 (cerrar)",
     pinyin: "Guānbì (cerrar)",
-    pt: "Fechar"
+    portuguese: "Fechar"
   },
   words: [
     ["cierro puertas", "I close doors", "我关门", "wǒ guānmén", "eu fecho portas"],
@@ -775,10 +775,10 @@ export const p7_235_closing__cerrar = {
 export const p7_236_sustainable__living = {
   meta: {
     wordpack: 236,
-    en: "Sustainable Living",
-    zh: "可持续生活",
+    english: "Sustainable Living",
+    chinese: "可持续生活",
     pinyin: "Kě Chíxù Shēnghuó",
-    pt: "Vida Sustentável"
+    portuguese: "Vida Sustentável"
   },
   words: [
     ["la vida sostenible", "sustainable life", "可持续生活", "kě chíxù shēnghuó", "a vida sustentável"],
@@ -841,10 +841,10 @@ export const p7_236_sustainable__living = {
 export const p7_237_pushing__empujar = {
   meta: {
     wordpack: 237,
-    en: "Pushing (empujar)",
-    zh: "推 (empujar)",
+    english: "Pushing (empujar)",
+    chinese: "推 (empujar)",
     pinyin: "Tuī (empujar)",
-    pt: "Empurrar"
+    portuguese: "Empurrar"
   },
   words: [
     ["empujo fuerte", "I push hard", "我用力推", "wǒ yònglì tuī", "eu empurro forte"],
@@ -883,10 +883,10 @@ export const p7_237_pushing__empujar = {
 export const p7_238_pulling__tirar = {
   meta: {
     wordpack: 238,
-    en: "Pulling (tirar)",
-    zh: "拉 (tirar)",
+    english: "Pulling (tirar)",
+    chinese: "拉 (tirar)",
     pinyin: "Lā (tirar)",
-    pt: "Puxar"
+    portuguese: "Puxar"
   },
   words: [
     ["tiro fuerte", "I pull hard", "我用力拉", "wǒ yònglì lā", "eu puxo forte"],
@@ -925,10 +925,10 @@ export const p7_238_pulling__tirar = {
 export const p7_239_combining__combinar = {
   meta: {
     wordpack: 239,
-    en: "Combining (combinar)",
-    zh: "组合 (combinar)",
+    english: "Combining (combinar)",
+    chinese: "组合 (combinar)",
     pinyin: "Zǔhé (combinar)",
-    pt: "Combinar"
+    portuguese: "Combinar"
   },
   words: [
     ["combino colores", "I combine colors", "我搭配颜色", "wǒ dāpèi yánsè", "eu combino cores"],
@@ -967,10 +967,10 @@ export const p7_239_combining__combinar = {
 export const p7_240_separating__separar = {
   meta: {
     wordpack: 240,
-    en: "Separating (separar)",
-    zh: "分离 (separar)",
+    english: "Separating (separar)",
+    chinese: "分离 (separar)",
     pinyin: "Fēnlí (separar)",
-    pt: "Separar"
+    portuguese: "Separar"
   },
   words: [
     ["separo cosas", "I separate things", "我分开东西", "wǒ fēnkāi dōngxi", "eu separo coisas"],
@@ -1009,10 +1009,10 @@ export const p7_240_separating__separar = {
 export const p7_241_dying__morir = {
   meta: {
     wordpack: 241,
-    en: "Dying (morir)",
-    zh: "死亡 (morir)",
+    english: "Dying (morir)",
+    chinese: "死亡 (morir)",
     pinyin: "Sǐwáng (morir)",
-    pt: "Morrer"
+    portuguese: "Morrer"
   },
   words: [
     ["muero de hambre", "I'm dying of hunger", "我饿死了", "wǒ è sǐ le", "estou morrendo de fome"],
@@ -1051,10 +1051,10 @@ export const p7_241_dying__morir = {
 export const p7_242_irregular__past__forms = {
   meta: {
     wordpack: 242,
-    en: "Irregular Past Forms",
-    zh: "不规则过去式",
+    english: "Irregular Past Forms",
+    chinese: "不规则过去式",
     pinyin: "Bù Guīzé Guòqùshì",
-    pt: "Formas Irregulares do Passado"
+    portuguese: "Formas Irregulares do Passado"
   },
   words: [
     ["fui al cine", "I went to the cinema", "我去了电影院", "wǒ qùle diànyǐngyuàn", "eu fui ao cinema"],
@@ -1117,10 +1117,10 @@ export const p7_242_irregular__past__forms = {
 export const p7_243_growing__crecer = {
   meta: {
     wordpack: 243,
-    en: "Growing (crecer)",
-    zh: "成长 (crecer)",
+    english: "Growing (crecer)",
+    chinese: "成长 (crecer)",
     pinyin: "Chéngzhǎng (crecer)",
-    pt: "Crescer"
+    portuguese: "Crescer"
   },
   words: [
     ["crezco rápido", "I grow fast", "我长得很快", "wǒ zhǎng de hěn kuài", "eu cresço rápido"],
@@ -1159,10 +1159,10 @@ export const p7_243_growing__crecer = {
 export const p7_244_aging__envejecer = {
   meta: {
     wordpack: 244,
-    en: "Aging (envejecer)",
-    zh: "衰老 (envejecer)",
+    english: "Aging (envejecer)",
+    chinese: "衰老 (envejecer)",
     pinyin: "Shuāilǎo (envejecer)",
-    pt: "Envelhecer"
+    portuguese: "Envelhecer"
   },
   words: [
     ["envejezco bien", "I age well", "我老得很好", "wǒ lǎo de hěn hǎo", "eu envelheço bem"],
@@ -1201,10 +1201,10 @@ export const p7_244_aging__envejecer = {
 export const p7_245_command__forms = {
   meta: {
     wordpack: 245,
-    en: "Command Forms",
-    zh: "命令式",
+    english: "Command Forms",
+    chinese: "命令式",
     pinyin: "Mìnglìng Shì",
-    pt: "Formas Imperativas"
+    portuguese: "Formas Imperativas"
   },
   words: [
     ["ven aquí", "come here", "过来这里", "guòlái zhèlǐ", "venha aqui"],
@@ -1273,10 +1273,10 @@ export const p7_245_command__forms = {
 export const p7_246_reflexive__pronouns = {
   meta: {
     wordpack: 246,
-    en: "Reflexive Pronouns",
-    zh: "反身代词",
+    english: "Reflexive Pronouns",
+    chinese: "反身代词",
     pinyin: "Fǎnshēn Dàicí",
-    pt: "Pronomes Reflexivos"
+    portuguese: "Pronomes Reflexivos"
   },
   words: [
     ["me lavo las manos", "I wash my hands", "我洗手", "wǒ xǐ shǒu", "eu lavo minhas mãos"],
@@ -1339,10 +1339,10 @@ export const p7_246_reflexive__pronouns = {
 export const p7_247_gerund__forms = {
   meta: {
     wordpack: 247,
-    en: "Gerund Forms",
-    zh: "动名词形式",
+    english: "Gerund Forms",
+    chinese: "动名词形式",
     pinyin: "Dòng Míngcí Xíngshì",
-    pt: "Formas de Gerúndio"
+    portuguese: "Formas de Gerúndio"
   },
   words: [
     ["estoy trabajando", "I'm working", "我在工作", "wǒ zài gōngzuò", "estou trabalhando"],
@@ -1405,10 +1405,10 @@ export const p7_247_gerund__forms = {
 export const p7_248_perfect__tenses = {
   meta: {
     wordpack: 248,
-    en: "Perfect Tenses",
-    zh: "完成时态",
+    english: "Perfect Tenses",
+    chinese: "完成时态",
     pinyin: "Wánchéng Shítài",
-    pt: "Tempos Perfeitos"
+    portuguese: "Tempos Perfeitos"
   },
   words: [
     ["he comido", "I have eaten", "我吃了", "wǒ chīle", "eu comi"],
@@ -1471,10 +1471,10 @@ export const p7_248_perfect__tenses = {
 export const p7_249_future__forms = {
   meta: {
     wordpack: 249,
-    en: "Future Forms",
-    zh: "将来时态",
+    english: "Future Forms",
+    chinese: "将来时态",
     pinyin: "Jiānglái Shítài",
-    pt: "Formas do Futuro"
+    portuguese: "Formas do Futuro"
   },
   words: [
     ["vendré mañana", "I will come tomorrow", "我明天会来", "wǒ míngtiān huì lái", "eu virei amanhã"],
@@ -1537,10 +1537,10 @@ export const p7_249_future__forms = {
 export const p7_250_common__idioms = {
   meta: {
     wordpack: 250,
-    en: "Common Idioms",
-    zh: "常用习语",
+    english: "Common Idioms",
+    chinese: "常用习语",
     pinyin: "Chángyòng Xíyǔ",
-    pt: "Expressões Idiomáticas Comuns"
+    portuguese: "Expressões Idiomáticas Comuns"
   },
   words: [
     ["estar en las nubes", "to have one's head in the clouds", "心不在焉", "xīn bù zài yān", "estar nas nuvens"],

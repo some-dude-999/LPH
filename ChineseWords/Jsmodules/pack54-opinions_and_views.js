@@ -4,10 +4,17 @@
 export const pack54_opinions_and_views = {
   meta: {
     wordpack: 54,
-    packNumber: 54,
-    title: "Opinions & Views",
-    act: "Act IV: Mastery",
-    wordCount: 33
+    pinyin: "Opinions & Views",
+    english: "Opinions & Views",
+    spanish: "Opinions & Views",
+    french: "Opinions & Views",
+    portuguese: "Opinions & Views",
+    vietnamese: "Opinions & Views",
+    thai: "Opinions & Views",
+    khmer: "Opinions & Views",
+    indonesian: "Opinions & Views",
+    malay: "Opinions & Views",
+    filipino: "Opinions & Views"
   },
   words: [
     ["我觉得", "wǒ juéde", "I think", "creo que", "je pense que", "eu acho que", "tôi nghĩ", "ฉันคิดว่า", "ខ្ញុំគិតថា", "saya rasa", "saya rasa", "sa tingin ko"],

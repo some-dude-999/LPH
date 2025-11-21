@@ -4,10 +4,17 @@
 export const pack6_essential_verbs_ii = {
   meta: {
     wordpack: 6,
-    packNumber: 6,
-    title: "Essential Verbs II",
-    act: "Act I: Foundation",
-    wordCount: 57
+    pinyin: "Essential Verbs II",
+    english: "Essential Verbs II",
+    spanish: "Essential Verbs II",
+    french: "Essential Verbs II",
+    portuguese: "Essential Verbs II",
+    vietnamese: "Essential Verbs II",
+    thai: "Essential Verbs II",
+    khmer: "Essential Verbs II",
+    indonesian: "Essential Verbs II",
+    malay: "Essential Verbs II",
+    filipino: "Essential Verbs II"
   },
   words: [
     ["要", "yào", "want", "querer", "vouloir", "querer", "muốn", "ต้องการ", "ចង់", "mau", "mahu", "gusto"],

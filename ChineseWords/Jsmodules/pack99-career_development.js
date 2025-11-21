@@ -4,10 +4,17 @@
 export const pack99_career_development = {
   meta: {
     wordpack: 99,
-    packNumber: 99,
-    title: "Career Development",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Career Development",
+    english: "Career Development",
+    spanish: "Career Development",
+    french: "Career Development",
+    portuguese: "Career Development",
+    vietnamese: "Career Development",
+    thai: "Career Development",
+    khmer: "Career Development",
+    indonesian: "Career Development",
+    malay: "Career Development",
+    filipino: "Career Development"
   },
   words: [
     ["正在找工作当中", "zhèngzài zhǎo gōngzuò dāngzhōng", "currently looking for work", "actualmente buscando trabajo", "actuellement à la recherche de travail", "atualmente procurando trabalho", "đang tìm việc làm", "กำลังหางานอยู่", "កំពុងរកការងារ", "sedang mencari pekerjaan", "sedang mencari kerja", "kasalukuyang naghahanap ng trabaho"],

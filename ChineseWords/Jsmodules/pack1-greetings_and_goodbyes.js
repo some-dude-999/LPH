@@ -4,10 +4,17 @@
 export const pack1_greetings_and_goodbyes = {
   meta: {
     wordpack: 1,
-    packNumber: 1,
-    title: "Greetings & Goodbyes",
-    act: "Act I: Foundation",
-    wordCount: 51
+    pinyin: "Greetings & Goodbyes",
+    english: "Greetings & Goodbyes",
+    spanish: "Greetings & Goodbyes",
+    french: "Greetings & Goodbyes",
+    portuguese: "Greetings & Goodbyes",
+    vietnamese: "Greetings & Goodbyes",
+    thai: "Greetings & Goodbyes",
+    khmer: "Greetings & Goodbyes",
+    indonesian: "Greetings & Goodbyes",
+    malay: "Greetings & Goodbyes",
+    filipino: "Greetings & Goodbyes"
   },
   words: [
     ["你好", "nǐ hǎo", "hello", "hola", "bonjour", "olá", "xin chào", "สวัสดี", "ជំរាបសួរ", "halo", "halo", "kumusta"],

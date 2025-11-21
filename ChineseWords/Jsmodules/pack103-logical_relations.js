@@ -4,10 +4,17 @@
 export const pack103_logical_relations = {
   meta: {
     wordpack: 103,
-    packNumber: 103,
-    title: "Logical Relations",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Logical Relations",
+    english: "Logical Relations",
+    spanish: "Logical Relations",
+    french: "Logical Relations",
+    portuguese: "Logical Relations",
+    vietnamese: "Logical Relations",
+    thai: "Logical Relations",
+    khmer: "Logical Relations",
+    indonesian: "Logical Relations",
+    malay: "Logical Relations",
+    filipino: "Logical Relations"
   },
   words: [
     ["因此得出这结论", "yīncǐ déchū zhè jiélùn", "therefore reach this conclusion", "por lo tanto llegar a esta conclusión", "donc arriver à cette conclusion", "portanto chegar a esta conclusão", "do đó rút ra kết luận này", "ดังนั้นจึงสรุปได้ว่า", "ដូច្នេះសន្និដ្ឋានថា", "karena itu sampai pada kesimpulan ini", "oleh itu dapat kesimpulan ini", "kaya naman nakaabot sa konklusyon na ito"],

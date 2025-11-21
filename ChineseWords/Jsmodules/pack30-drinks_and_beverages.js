@@ -4,10 +4,17 @@
 export const pack30_drinks_and_beverages = {
   meta: {
     wordpack: 30,
-    packNumber: 30,
-    title: "Drinks & Beverages",
-    act: "Act III: Expansion",
-    wordCount: 42
+    pinyin: "Drinks & Beverages",
+    english: "Drinks & Beverages",
+    spanish: "Drinks & Beverages",
+    french: "Drinks & Beverages",
+    portuguese: "Drinks & Beverages",
+    vietnamese: "Drinks & Beverages",
+    thai: "Drinks & Beverages",
+    khmer: "Drinks & Beverages",
+    indonesian: "Drinks & Beverages",
+    malay: "Drinks & Beverages",
+    filipino: "Drinks & Beverages"
   },
   words: [
     ["水", "shuǐ", "water", "agua", "eau", "água", "nước", "น้ำ", "ទឹក", "air", "air", "tubig"],

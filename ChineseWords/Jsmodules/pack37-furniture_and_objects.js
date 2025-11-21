@@ -4,10 +4,17 @@
 export const pack37_furniture_and_objects = {
   meta: {
     wordpack: 37,
-    packNumber: 37,
-    title: "Furniture & Objects",
-    act: "Act III: Expansion",
-    wordCount: 48
+    pinyin: "Furniture & Objects",
+    english: "Furniture & Objects",
+    spanish: "Furniture & Objects",
+    french: "Furniture & Objects",
+    portuguese: "Furniture & Objects",
+    vietnamese: "Furniture & Objects",
+    thai: "Furniture & Objects",
+    khmer: "Furniture & Objects",
+    indonesian: "Furniture & Objects",
+    malay: "Furniture & Objects",
+    filipino: "Furniture & Objects"
   },
   words: [
     ["桌子", "zhuōzi", "table", "mesa", "table", "mesa", "bàn", "โต๊ะ", "តុ", "meja", "meja", "lamesa"],

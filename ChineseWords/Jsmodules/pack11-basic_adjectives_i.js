@@ -4,10 +4,17 @@
 export const pack11_basic_adjectives_i = {
   meta: {
     wordpack: 11,
-    packNumber: 11,
-    title: "Basic Adjectives I",
-    act: "Act I: Foundation",
-    wordCount: 54
+    pinyin: "Basic Adjectives I",
+    english: "Basic Adjectives I",
+    spanish: "Basic Adjectives I",
+    french: "Basic Adjectives I",
+    portuguese: "Basic Adjectives I",
+    vietnamese: "Basic Adjectives I",
+    thai: "Basic Adjectives I",
+    khmer: "Basic Adjectives I",
+    indonesian: "Basic Adjectives I",
+    malay: "Basic Adjectives I",
+    filipino: "Basic Adjectives I"
   },
   words: [
     ["大", "dà", "big", "grande", "grand", "grande", "to", "ใหญ่", "ធំ", "besar", "besar", "malaki"],

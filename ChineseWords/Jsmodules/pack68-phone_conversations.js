@@ -4,10 +4,17 @@
 export const pack68_phone_conversations = {
   meta: {
     wordpack: 68,
-    packNumber: 68,
-    title: "Phone Conversations",
-    act: "Act IV: Mastery",
-    wordCount: 27
+    pinyin: "Phone Conversations",
+    english: "Phone Conversations",
+    spanish: "Phone Conversations",
+    french: "Phone Conversations",
+    portuguese: "Phone Conversations",
+    vietnamese: "Phone Conversations",
+    thai: "Phone Conversations",
+    khmer: "Phone Conversations",
+    indonesian: "Phone Conversations",
+    malay: "Phone Conversations",
+    filipino: "Phone Conversations"
   },
   words: [
     ["喂你好", "wèi nǐ hǎo", "hello", "hola", "allô", "alô", "a lô xin chào", "ฮัลโหล", "អាឡូជំរាបសួរ", "halo", "halo", "hello"],

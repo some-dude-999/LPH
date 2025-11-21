@@ -4,10 +4,17 @@
 export const pack20_numbers_11_100 = {
   meta: {
     wordpack: 20,
-    packNumber: 20,
-    title: "Numbers 11-100",
-    act: "Act II: Development",
-    wordCount: 48
+    pinyin: "Numbers 11-100",
+    english: "Numbers 11-100",
+    spanish: "Numbers 11-100",
+    french: "Numbers 11-100",
+    portuguese: "Numbers 11-100",
+    vietnamese: "Numbers 11-100",
+    thai: "Numbers 11-100",
+    khmer: "Numbers 11-100",
+    indonesian: "Numbers 11-100",
+    malay: "Numbers 11-100",
+    filipino: "Numbers 11-100"
   },
   words: [
     ["十一", "shíyī", "eleven", "once", "onze", "onze", "mười một", "สิบเอ็ด", "ដប់មួយ", "sebelas", "sebelas", "labing-isa"],

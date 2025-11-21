@@ -4,10 +4,17 @@
 export const pack45_getting_around = {
   meta: {
     wordpack: 45,
-    packNumber: 45,
-    title: "Getting Around",
-    act: "Act III: Expansion",
-    wordCount: 51
+    pinyin: "Getting Around",
+    english: "Getting Around",
+    spanish: "Getting Around",
+    french: "Getting Around",
+    portuguese: "Getting Around",
+    vietnamese: "Getting Around",
+    thai: "Getting Around",
+    khmer: "Getting Around",
+    indonesian: "Getting Around",
+    malay: "Getting Around",
+    filipino: "Getting Around"
   },
   words: [
     ["去", "qù", "go", "ir", "aller", "ir", "đi", "ไป", "ទៅ", "pergi", "pergi", "pumunta"],

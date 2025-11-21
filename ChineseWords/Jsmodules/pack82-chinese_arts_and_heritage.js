@@ -4,10 +4,17 @@
 export const pack82_chinese_arts_and_heritage = {
   meta: {
     wordpack: 82,
-    packNumber: 82,
-    title: "Chinese Arts & Heritage",
-    act: "Act V: Refinement",
-    wordCount: 27
+    pinyin: "Chinese Arts & Heritage",
+    english: "Chinese Arts & Heritage",
+    spanish: "Chinese Arts & Heritage",
+    french: "Chinese Arts & Heritage",
+    portuguese: "Chinese Arts & Heritage",
+    vietnamese: "Chinese Arts & Heritage",
+    thai: "Chinese Arts & Heritage",
+    khmer: "Chinese Arts & Heritage",
+    indonesian: "Chinese Arts & Heritage",
+    malay: "Chinese Arts & Heritage",
+    filipino: "Chinese Arts & Heritage"
   },
   words: [
     ["中国龙的文化", "Zhōngguó lóng de wénhuà", "Chinese dragon culture", "cultura del dragón chino", "culture du dragon chinois", "cultura do dragão chinês", "văn hóa rồng Trung Quốc", "วัฒนธรรมมังกรจีน", "វប្បធម៌នាគចិន", "budaya naga Tiongkok", "budaya naga China", "kultura ng dragon ng Tsina"],

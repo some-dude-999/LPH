@@ -4,10 +4,17 @@
 export const pack46_daily_routines = {
   meta: {
     wordpack: 46,
-    packNumber: 46,
-    title: "Daily Routines",
-    act: "Act III: Expansion",
-    wordCount: 45
+    pinyin: "Daily Routines",
+    english: "Daily Routines",
+    spanish: "Daily Routines",
+    french: "Daily Routines",
+    portuguese: "Daily Routines",
+    vietnamese: "Daily Routines",
+    thai: "Daily Routines",
+    khmer: "Daily Routines",
+    indonesian: "Daily Routines",
+    malay: "Daily Routines",
+    filipino: "Daily Routines"
   },
   words: [
     ["醒", "xǐng", "wake", "despertar", "se réveiller", "acordar", "tỉnh", "ตื่น", "ភ្ញាក់", "bangun", "bangun", "gumising"],

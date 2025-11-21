@@ -4,10 +4,17 @@
 export const pack10_time_essentials = {
   meta: {
     wordpack: 10,
-    packNumber: 10,
-    title: "Time Essentials",
-    act: "Act I: Foundation",
-    wordCount: 45
+    pinyin: "Time Essentials",
+    english: "Time Essentials",
+    spanish: "Time Essentials",
+    french: "Time Essentials",
+    portuguese: "Time Essentials",
+    vietnamese: "Time Essentials",
+    thai: "Time Essentials",
+    khmer: "Time Essentials",
+    indonesian: "Time Essentials",
+    malay: "Time Essentials",
+    filipino: "Time Essentials"
   },
   words: [
     ["现在", "xiànzài", "now", "ahora", "maintenant", "agora", "bây giờ", "ตอนนี้", "ឥឡូវនេះ", "sekarang", "sekarang", "ngayon"],

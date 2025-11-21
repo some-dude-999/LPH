@@ -4,10 +4,17 @@
 export const pack22_more_action_verbs = {
   meta: {
     wordpack: 22,
-    packNumber: 22,
-    title: "More Action Verbs",
-    act: "Act II: Development",
-    wordCount: 57
+    pinyin: "More Action Verbs",
+    english: "More Action Verbs",
+    spanish: "More Action Verbs",
+    french: "More Action Verbs",
+    portuguese: "More Action Verbs",
+    vietnamese: "More Action Verbs",
+    thai: "More Action Verbs",
+    khmer: "More Action Verbs",
+    indonesian: "More Action Verbs",
+    malay: "More Action Verbs",
+    filipino: "More Action Verbs"
   },
   words: [
     ["放", "fàng", "put", "poner", "mettre", "colocar", "để", "วาง", "ដាក់", "taruh", "letak", "ilagay"],

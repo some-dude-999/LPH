@@ -4,10 +4,17 @@
 export const pack100_banking_and_finance = {
   meta: {
     wordpack: 100,
-    packNumber: 100,
-    title: "Banking & Finance",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Banking & Finance",
+    english: "Banking & Finance",
+    spanish: "Banking & Finance",
+    french: "Banking & Finance",
+    portuguese: "Banking & Finance",
+    vietnamese: "Banking & Finance",
+    thai: "Banking & Finance",
+    khmer: "Banking & Finance",
+    indonesian: "Banking & Finance",
+    malay: "Banking & Finance",
+    filipino: "Banking & Finance"
   },
   words: [
     ["去银行办理业务", "qù yínháng bànlǐ yèwù", "go to bank to handle business", "ir al banco a hacer trámites", "aller à la banque pour faire des opérations", "ir ao banco fazer transações", "đi ngân hàng làm thủ tục", "ไปธนาคารทำธุรกรรม", "ទៅធនាគារធ្វើប្រតិបត្តិការ", "pergi ke bank mengurus transaksi", "pergi ke bank uruskan urusan", "pumunta sa bangko para mag-transaksyon"],

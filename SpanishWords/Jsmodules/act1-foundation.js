@@ -4,10 +4,10 @@
 export const p1_1_greetings__goodbyes = {
   meta: {
     wordpack: 1,
-    en: "Greetings & Goodbyes",
-    zh: "问候与告别",
+    english: "Greetings & Goodbyes",
+    chinese: "问候与告别",
     pinyin: "Wènhòu yǔ Gàobié",
-    pt: "Cumprimentos e Despedidas"
+    portuguese: "Cumprimentos e Despedidas"
   },
   words: [
     ["hola amigo", "hello friend (masculine)", "你好朋友 (男性)", "nǐ hǎo péngyou (nánxìng)", "olá amigo (masculino)"],
@@ -61,10 +61,10 @@ export const p1_1_greetings__goodbyes = {
 export const p1_2_yes__no__agreement = {
   meta: {
     wordpack: 2,
-    en: "Yes No & Agreement",
-    zh: "是非与同意",
+    english: "Yes No & Agreement",
+    chinese: "是非与同意",
     pinyin: "Shìfēi yǔ Tóngyì",
-    pt: "Sim Não e Acordo"
+    portuguese: "Sim Não e Acordo"
   },
   words: [
     ["sí señor", "yes sir", "是的先生", "shì de xiānsheng", "sim senhor"],
@@ -103,10 +103,10 @@ export const p1_2_yes__no__agreement = {
 export const p1_3_numbers__010 = {
   meta: {
     wordpack: 3,
-    en: "Numbers 0-10",
-    zh: "数字 0-10",
+    english: "Numbers 0-10",
+    chinese: "数字 0-10",
     pinyin: "Shùzì 0-10",
-    pt: "Números 0-10"
+    portuguese: "Números 0-10"
   },
   words: [
     ["cero problemas", "zero problems", "没有问题", "méiyǒu wèntí", "zero problemas"],
@@ -148,10 +148,10 @@ export const p1_3_numbers__010 = {
 export const p1_4_asking__questions__qu__cundo__dnde = {
   meta: {
     wordpack: 4,
-    en: "Asking Questions",
-    zh: "提问",
+    english: "Asking Questions",
+    chinese: "提问",
     pinyin: "Tíwèn",
-    pt: "Fazer Perguntas"
+    portuguese: "Fazer Perguntas"
   },
   words: [
     ["¿qué hora es?", "what time is it?", "几点了？", "jǐ diǎn le?", "que horas são?"],
@@ -193,10 +193,10 @@ export const p1_4_asking__questions__qu__cundo__dnde = {
 export const p1_5_referring__to__people__yo__t__l__ella = {
   meta: {
     wordpack: 5,
-    en: "Referring to People",
-    zh: "称呼人",
+    english: "Referring to People",
+    chinese: "称呼人",
     pinyin: "Chēnghu Rén",
-    pt: "Referir-se a Pessoas"
+    portuguese: "Referir-se a Pessoas"
   },
   words: [
     ["yo soy", "I am", "我是", "wǒ shì", "eu sou"],
@@ -241,10 +241,10 @@ export const p1_5_referring__to__people__yo__t__l__ella = {
 export const p1_6_being__permanent__ser = {
   meta: {
     wordpack: 6,
-    en: "Being Permanent (ser)",
-    zh: "永久状态 (ser)",
+    english: "Being Permanent (ser)",
+    chinese: "永久状态 (ser)",
     pinyin: "Yǒngjiǔ Zhuàngtài (ser)",
-    pt: "Ser Permanente"
+    portuguese: "Ser Permanente"
   },
   words: [
     ["soy estudiante", "I am a student", "我是学生", "wǒ shì xuésheng", "eu sou estudante"],
@@ -283,10 +283,10 @@ export const p1_6_being__permanent__ser = {
 export const p1_7_being__temporary__estar = {
   meta: {
     wordpack: 7,
-    en: "Being Temporary (estar)",
-    zh: "临时状态 (estar)",
+    english: "Being Temporary (estar)",
+    chinese: "临时状态 (estar)",
     pinyin: "Línshí Zhuàngtài (estar)",
-    pt: "Estar Temporário"
+    portuguese: "Estar Temporário"
   },
   words: [
     ["estoy bien", "I am fine", "我很好", "wǒ hěn hǎo", "estou bem"],
@@ -325,10 +325,10 @@ export const p1_7_being__temporary__estar = {
 export const p1_8_having__age__tener = {
   meta: {
     wordpack: 8,
-    en: "Having & Age (tener)",
-    zh: "拥有与年龄 (tener)",
+    english: "Having & Age (tener)",
+    chinese: "拥有与年龄 (tener)",
     pinyin: "Yǒngyǒu yǔ Niánlíng (tener)",
-    pt: "Ter e Idade"
+    portuguese: "Ter e Idade"
   },
   words: [
     ["tengo hambre", "I am hungry", "我饿了", "wǒ è le", "estou com fome"],
@@ -379,10 +379,10 @@ export const p1_8_having__age__tener = {
 export const p1_9_the__a__articles__el__la__un__una = {
   meta: {
     wordpack: 9,
-    en: "The & A Articles",
-    zh: "冠词",
+    english: "The & A Articles",
+    chinese: "冠词",
     pinyin: "Guàncí",
-    pt: "Artigos"
+    portuguese: "Artigos"
   },
   words: [
     ["el baño", "the bathroom", "洗手间", "xǐshǒujiān", "o banheiro"],
@@ -415,10 +415,10 @@ export const p1_9_the__a__articles__el__la__un__una = {
 export const p1_10_connecting__words__y__pero__porque = {
   meta: {
     wordpack: 10,
-    en: "Connecting Words",
-    zh: "连接词",
+    english: "Connecting Words",
+    chinese: "连接词",
     pinyin: "Liánjiē Cí",
-    pt: "Palavras de Conexão"
+    portuguese: "Palavras de Conexão"
   },
   words: [
     ["y también", "and also", "还有", "hái yǒu", "e também"],
@@ -457,10 +457,10 @@ export const p1_10_connecting__words__y__pero__porque = {
 export const p1_11_days__of__the__week = {
   meta: {
     wordpack: 11,
-    en: "Days of the Week",
-    zh: "星期几",
+    english: "Days of the Week",
+    chinese: "星期几",
     pinyin: "Xīngqī Jǐ",
-    pt: "Dias da Semana"
+    portuguese: "Dias da Semana"
   },
   words: [
     ["el lunes", "Monday", "星期一", "xīngqī yī", "a segunda-feira"],
@@ -499,10 +499,10 @@ export const p1_11_days__of__the__week = {
 export const p1_12_months__of__the__year = {
   meta: {
     wordpack: 12,
-    en: "Months of the Year",
-    zh: "月份",
+    english: "Months of the Year",
+    chinese: "月份",
     pinyin: "Yuèfèn",
-    pt: "Meses do Ano"
+    portuguese: "Meses do Ano"
   },
   words: [
     ["en enero", "in January", "在一月", "zài yī yuè", "em janeiro"],
@@ -553,10 +553,10 @@ export const p1_12_months__of__the__year = {
 export const p1_13_family__members = {
   meta: {
     wordpack: 13,
-    en: "Family Members",
-    zh: "家庭成员",
+    english: "Family Members",
+    chinese: "家庭成员",
     pinyin: "Jiātíng Chéngyuán",
-    pt: "Membros da Família"
+    portuguese: "Membros da Família"
   },
   words: [
     ["mi familia es grande", "my family is big", "我的家庭很大", "wǒ de jiātíng hěn dà", "minha família é grande"],
@@ -610,10 +610,10 @@ export const p1_13_family__members = {
 export const p1_14_body__parts = {
   meta: {
     wordpack: 14,
-    en: "Body Parts",
-    zh: "身体部位",
+    english: "Body Parts",
+    chinese: "身体部位",
     pinyin: "Shēntǐ Bùwèi",
-    pt: "Partes do Corpo"
+    portuguese: "Partes do Corpo"
   },
   words: [
     ["me duele la cabeza", "my head hurts", "我头疼", "wǒ tóuténg", "minha cabeça dói"],
@@ -667,10 +667,10 @@ export const p1_14_body__parts = {
 export const p1_15_colors = {
   meta: {
     wordpack: 15,
-    en: "Colors",
-    zh: "颜色",
+    english: "Colors",
+    chinese: "颜色",
     pinyin: "Yánsè",
-    pt: "Cores"
+    portuguese: "Cores"
   },
   words: [
     ["color rojo", "red color", "红色", "hóngsè", "cor vermelha"],
@@ -718,10 +718,10 @@ export const p1_15_colors = {
 export const p1_16_describing__things__grande__pequeo__bueno = {
   meta: {
     wordpack: 16,
-    en: "Describing Things",
-    zh: "描述事物",
+    english: "Describing Things",
+    chinese: "描述事物",
     pinyin: "Miáoshù Shìwù",
-    pt: "Descrever Coisas"
+    portuguese: "Descrever Coisas"
   },
   words: [
     ["más grande", "bigger", "更大", "gèng dà", "maior"],
@@ -790,10 +790,10 @@ export const p1_16_describing__things__grande__pequeo__bueno = {
 export const p1_17_basic__action__verbs = {
   meta: {
     wordpack: 17,
-    en: "Basic Action Verbs",
-    zh: "基本动词",
+    english: "Basic Action Verbs",
+    chinese: "基本动词",
     pinyin: "Jīběn Dòngcí",
-    pt: "Verbos de Ação Básicos"
+    portuguese: "Verbos de Ação Básicos"
   },
   words: [
     ["puedo hacer", "I can do", "我能做", "wǒ néng zuò", "posso fazer"],
@@ -847,10 +847,10 @@ export const p1_17_basic__action__verbs = {
 export const p1_18_common__foods = {
   meta: {
     wordpack: 18,
-    en: "Common Foods",
-    zh: "常见食物",
+    english: "Common Foods",
+    chinese: "常见食物",
     pinyin: "Chángjiàn Shíwù",
-    pt: "Alimentos Comuns"
+    portuguese: "Alimentos Comuns"
   },
   words: [
     ["la comida está rica", "the food is delicious", "食物很好吃", "shíwù hěn hǎochī", "a comida está gostosa"],
@@ -919,10 +919,10 @@ export const p1_18_common__foods = {
 export const p1_19_house__rooms = {
   meta: {
     wordpack: 19,
-    en: "House Rooms",
-    zh: "房间",
+    english: "House Rooms",
+    chinese: "房间",
     pinyin: "Fángjiān",
-    pt: "Cômodos da Casa"
+    portuguese: "Cômodos da Casa"
   },
   words: [
     ["la casa", "the house", "房子", "fángzi", "a casa"],
@@ -976,10 +976,10 @@ export const p1_19_house__rooms = {
 export const p1_20_making__doing__hacer = {
   meta: {
     wordpack: 20,
-    en: "Making & Doing (hacer)",
-    zh: "制作与做 (hacer)",
+    english: "Making & Doing (hacer)",
+    chinese: "制作与做 (hacer)",
     pinyin: "Zhìzuò yǔ Zuò (hacer)",
-    pt: "Fazer"
+    portuguese: "Fazer"
   },
   words: [
     ["hago la cama", "I make the bed", "我铺床", "wǒ pū chuáng", "faço a cama"],
@@ -1018,10 +1018,10 @@ export const p1_20_making__doing__hacer = {
 export const p1_21_going__places__ir = {
   meta: {
     wordpack: 21,
-    en: "Going Places (ir)",
-    zh: "去地方 (ir)",
+    english: "Going Places (ir)",
+    chinese: "去地方 (ir)",
     pinyin: "Qù Dìfang (ir)",
-    pt: "Ir a Lugares"
+    portuguese: "Ir a Lugares"
   },
   words: [
     ["voy a casa", "I'm going home", "我回家", "wǒ huí jiā", "vou para casa"],
@@ -1060,10 +1060,10 @@ export const p1_21_going__places__ir = {
 export const p1_22_numbers__1120 = {
   meta: {
     wordpack: 22,
-    en: "Numbers 11-20",
-    zh: "数字 11-20",
+    english: "Numbers 11-20",
+    chinese: "数字 11-20",
     pinyin: "Shùzì 11-20",
-    pt: "Números 11-20"
+    portuguese: "Números 11-20"
   },
   words: [
     ["once horas", "eleven hours", "十一个小时", "shíyī gè xiǎoshí", "onze horas"],
@@ -1102,10 +1102,10 @@ export const p1_22_numbers__1120 = {
 export const p1_23_extended__family = {
   meta: {
     wordpack: 23,
-    en: "Extended Family",
-    zh: "大家庭",
+    english: "Extended Family",
+    chinese: "大家庭",
     pinyin: "Dà Jiātíng",
-    pt: "Família Estendida"
+    portuguese: "Família Estendida"
   },
   words: [
     ["mi novio", "my boyfriend", "我男朋友", "wǒ nán péngyou", "meu namorado"],
@@ -1159,10 +1159,10 @@ export const p1_23_extended__family = {
 export const p1_24_emotions__feelings = {
   meta: {
     wordpack: 24,
-    en: "Emotions & Feelings",
-    zh: "情感",
+    english: "Emotions & Feelings",
+    chinese: "情感",
     pinyin: "Qínggǎn",
-    pt: "Emoções e Sentimentos"
+    portuguese: "Emoções e Sentimentos"
   },
   words: [
     ["más feliz", "happier", "更快乐", "gèng kuàilè", "mais feliz"],
@@ -1219,10 +1219,10 @@ export const p1_24_emotions__feelings = {
 export const p1_25_time__words__hoy__ayer__maana = {
   meta: {
     wordpack: 25,
-    en: "Time Words",
-    zh: "时间词",
+    english: "Time Words",
+    chinese: "时间词",
     pinyin: "Shíjiān Cí",
-    pt: "Palavras de Tempo"
+    portuguese: "Palavras de Tempo"
   },
   words: [
     ["hoy es lunes", "today is Monday", "今天是星期一", "jīntiān shì xīngqī yī", "hoje é segunda-feira"],
@@ -1276,10 +1276,10 @@ export const p1_25_time__words__hoy__ayer__maana = {
 export const p1_26_clothing = {
   meta: {
     wordpack: 26,
-    en: "Clothing",
-    zh: "衣服",
+    english: "Clothing",
+    chinese: "衣服",
     pinyin: "Yīfu",
-    pt: "Roupas"
+    portuguese: "Roupas"
   },
   words: [
     ["la ropa", "the clothes", "衣服", "yīfu", "a roupa"],
@@ -1333,10 +1333,10 @@ export const p1_26_clothing = {
 export const p1_27_daily__activities = {
   meta: {
     wordpack: 27,
-    en: "Daily Activities",
-    zh: "日常活动",
+    english: "Daily Activities",
+    chinese: "日常活动",
     pinyin: "Rìcháng Huódòng",
-    pt: "Atividades Diárias"
+    portuguese: "Atividades Diárias"
   },
   words: [
     ["como pizza", "I eat pizza", "我吃披萨", "wǒ chī pīsà", "como pizza"],
@@ -1390,10 +1390,10 @@ export const p1_27_daily__activities = {
 export const p1_28_city__places = {
   meta: {
     wordpack: 28,
-    en: "City Places",
-    zh: "城市地点",
+    english: "City Places",
+    chinese: "城市地点",
     pinyin: "Chéngshì Dìdiǎn",
-    pt: "Lugares da Cidade"
+    portuguese: "Lugares da Cidade"
   },
   words: [
     ["la ciudad", "the city", "城市", "chéngshì", "a cidade"],
@@ -1462,10 +1462,10 @@ export const p1_28_city__places = {
 export const p1_29_transportation = {
   meta: {
     wordpack: 29,
-    en: "Transportation",
-    zh: "交通",
+    english: "Transportation",
+    chinese: "交通",
     pinyin: "Jiāotōng",
-    pt: "Transporte"
+    portuguese: "Transporte"
   },
   words: [
     ["el coche", "the car", "汽车", "qìchē", "o carro"],
@@ -1519,10 +1519,10 @@ export const p1_29_transportation = {
 export const p1_30_numbers__21100 = {
   meta: {
     wordpack: 30,
-    en: "Numbers 21-100",
-    zh: "数字 21-100",
+    english: "Numbers 21-100",
+    chinese: "数字 21-100",
     pinyin: "Shùzì 21-100",
-    pt: "Números 21-100"
+    portuguese: "Números 21-100"
   },
   words: [
     ["veintiún días", "twenty-one days", "二十一天", "èrshíyī tiān", "vinte e um dias"],

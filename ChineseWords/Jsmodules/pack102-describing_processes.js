@@ -4,10 +4,17 @@
 export const pack102_describing_processes = {
   meta: {
     wordpack: 102,
-    packNumber: 102,
-    title: "Describing Processes",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Describing Processes",
+    english: "Describing Processes",
+    spanish: "Describing Processes",
+    french: "Describing Processes",
+    portuguese: "Describing Processes",
+    vietnamese: "Describing Processes",
+    thai: "Describing Processes",
+    khmer: "Describing Processes",
+    indonesian: "Describing Processes",
+    malay: "Describing Processes",
+    filipino: "Describing Processes"
   },
   words: [
     ["整个过程很顺利呢", "zhěng gè guòchéng hěn shùnlì ne", "the whole process went smoothly", "todo el proceso fue fluido", "tout le processus s'est bien déroulé", "todo o processo correu bem", "toàn bộ quá trình rất thuận lợi", "กระบวนการทั้งหมดราบรื่นมาก", "ដំណើរការទាំងមូលរលូន", "seluruh proses berjalan lancar", "keseluruhan proses sangat lancar", "maayos ang buong proseso"],

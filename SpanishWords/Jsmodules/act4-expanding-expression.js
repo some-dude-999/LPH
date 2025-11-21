@@ -4,10 +4,10 @@
 export const p4_101_law__legal = {
   meta: {
     wordpack: 101,
-    en: "Law & Legal",
-    zh: "法律",
+    english: "Law & Legal",
+    chinese: "法律",
     pinyin: "Fǎlǜ",
-    pt: "Lei e Jurídico"
+    portuguese: "Lei e Jurídico"
   },
   words: [
     ["la ley es clara", "the law is clear", "法律很明确", "fǎlǜ hěn míngquè", "a lei é clara"],
@@ -76,10 +76,10 @@ export const p4_101_law__legal = {
 export const p4_102_remembering__recordar = {
   meta: {
     wordpack: 102,
-    en: "Remembering (recordar)",
-    zh: "记得 (recordar)",
+    english: "Remembering (recordar)",
+    chinese: "记得 (recordar)",
     pinyin: "Jìde (recordar)",
-    pt: "Lembrar"
+    portuguese: "Lembrar"
   },
   words: [
     ["recuerdo todo", "I remember everything", "我记得所有", "wǒ jìde suǒyǒu", "lembro tudo"],
@@ -118,10 +118,10 @@ export const p4_102_remembering__recordar = {
 export const p4_103_forgetting__olvidar = {
   meta: {
     wordpack: 103,
-    en: "Forgetting (olvidar)",
-    zh: "忘记 (olvidar)",
+    english: "Forgetting (olvidar)",
+    chinese: "忘记 (olvidar)",
     pinyin: "Wàngjì (olvidar)",
-    pt: "Esquecer"
+    portuguese: "Esquecer"
   },
   words: [
     ["olvido todo", "I forget everything", "我忘记所有", "wǒ wàngjì suǒyǒu", "esqueço tudo"],
@@ -160,10 +160,10 @@ export const p4_103_forgetting__olvidar = {
 export const p4_104_science__terms = {
   meta: {
     wordpack: 104,
-    en: "Science Terms",
-    zh: "科学术语",
+    english: "Science Terms",
+    chinese: "科学术语",
     pinyin: "Kēxué Shùyǔ",
-    pt: "Termos Científicos"
+    portuguese: "Termos Científicos"
   },
   words: [
     ["la ciencia avanza", "science advances", "科学进步", "kēxué jìnbù", "a ciência avança"],
@@ -232,10 +232,10 @@ export const p4_104_science__terms = {
 export const p4_105_learning__aprender = {
   meta: {
     wordpack: 105,
-    en: "Learning (aprender)",
-    zh: "学习 (aprender)",
+    english: "Learning (aprender)",
+    chinese: "学习 (aprender)",
     pinyin: "Xuéxí (aprender)",
-    pt: "Aprender"
+    portuguese: "Aprender"
   },
   words: [
     ["aprendo español", "I learn Spanish", "我学西班牙语", "wǒ xué xībānyáyǔ", "aprendo espanhol"],
@@ -274,10 +274,10 @@ export const p4_105_learning__aprender = {
 export const p4_106_teaching__ensear = {
   meta: {
     wordpack: 106,
-    en: "Teaching (enseñar)",
-    zh: "教学 (enseñar)",
+    english: "Teaching (enseñar)",
+    chinese: "教学 (enseñar)",
     pinyin: "Jiàoxué (enseñar)",
-    pt: "Ensinar"
+    portuguese: "Ensinar"
   },
   words: [
     ["enseño español", "I teach Spanish", "我教西班牙语", "wǒ jiāo xībānyáyǔ", "ensino espanhol"],
@@ -316,10 +316,10 @@ export const p4_106_teaching__ensear = {
 export const p4_107_environment__nature = {
   meta: {
     wordpack: 107,
-    en: "Environment & Nature",
-    zh: "环境与自然",
+    english: "Environment & Nature",
+    chinese: "环境与自然",
     pinyin: "Huánjìng yǔ Zìrán",
-    pt: "Meio Ambiente e Natureza"
+    portuguese: "Meio Ambiente e Natureza"
   },
   words: [
     ["el medio ambiente importa", "the environment matters", "环境很重要", "huánjìng hěn zhòngyào", "o meio ambiente importa"],
@@ -388,10 +388,10 @@ export const p4_107_environment__nature = {
 export const p4_108_changing__cambiar = {
   meta: {
     wordpack: 108,
-    en: "Changing (cambiar)",
-    zh: "改变 (cambiar)",
+    english: "Changing (cambiar)",
+    chinese: "改变 (cambiar)",
     pinyin: "Gǎibiàn (cambiar)",
-    pt: "Mudar"
+    portuguese: "Mudar"
   },
   words: [
     ["cambio de opinión", "change of opinion", "改变主意", "gǎibiàn zhǔyi", "mudança de opinião"],
@@ -430,10 +430,10 @@ export const p4_108_changing__cambiar = {
 export const p4_109_improving__mejorar = {
   meta: {
     wordpack: 109,
-    en: "Improving (mejorar)",
-    zh: "改进 (mejorar)",
+    english: "Improving (mejorar)",
+    chinese: "改进 (mejorar)",
     pinyin: "Gǎijìn (mejorar)",
-    pt: "Melhorar"
+    portuguese: "Melhorar"
   },
   words: [
     ["mejoro cada día", "I improve every day", "我每天进步", "wǒ měitiān jìnbù", "melhoro a cada dia"],
@@ -472,10 +472,10 @@ export const p4_109_improving__mejorar = {
 export const p4_110_media__news = {
   meta: {
     wordpack: 110,
-    en: "Media & News",
-    zh: "媒体与新闻",
+    english: "Media & News",
+    chinese: "媒体与新闻",
     pinyin: "Méitǐ yǔ Xīnwén",
-    pt: "Mídia e Notícias"
+    portuguese: "Mídia e Notícias"
   },
   words: [
     ["los medios informan", "the media reports", "媒体报道", "méitǐ bàodào", "os meios informam"],
@@ -544,10 +544,10 @@ export const p4_110_media__news = {
 export const p4_111_trying__intentar = {
   meta: {
     wordpack: 111,
-    en: "Trying (intentar)",
-    zh: "尝试 (intentar)",
+    english: "Trying (intentar)",
+    chinese: "尝试 (intentar)",
     pinyin: "Chángshì (intentar)",
-    pt: "Tentar"
+    portuguese: "Tentar"
   },
   words: [
     ["intento todo", "I try everything", "我尝试一切", "wǒ chángshì yīqiè", "tento tudo"],
@@ -586,10 +586,10 @@ export const p4_111_trying__intentar = {
 export const p4_112_getting__achieving__conseguir = {
   meta: {
     wordpack: 112,
-    en: "Getting & Achieving (conseguir)",
-    zh: "获得 (conseguir)",
+    english: "Getting & Achieving (conseguir)",
+    chinese: "获得 (conseguir)",
     pinyin: "Huòdé (conseguir)",
-    pt: "Conseguir"
+    portuguese: "Conseguir"
   },
   words: [
     ["consigo trabajo", "I get work", "我找到工作", "wǒ zhǎodào gōngzuò", "consigo trabalho"],
@@ -628,10 +628,10 @@ export const p4_112_getting__achieving__conseguir = {
 export const p4_113_geography = {
   meta: {
     wordpack: 113,
-    en: "Geography",
-    zh: "地理",
+    english: "Geography",
+    chinese: "地理",
     pinyin: "Dìlǐ",
-    pt: "Geografia"
+    portuguese: "Geografia"
   },
   words: [
     ["la geografía mundial", "world geography", "世界地理", "shìjiè dìlǐ", "a geografia mundial"],
@@ -703,10 +703,10 @@ export const p4_113_geography = {
 export const p4_114_seeming__appearing__parecer = {
   meta: {
     wordpack: 114,
-    en: "Seeming & Appearing (parecer)",
-    zh: "似乎 (parecer)",
+    english: "Seeming & Appearing (parecer)",
+    chinese: "似乎 (parecer)",
     pinyin: "Sìhū (parecer)",
-    pt: "Parecer"
+    portuguese: "Parecer"
   },
   words: [
     ["parece fácil", "it seems easy", "看起来很容易", "kànqǐlái hěn róngyì", "parece fácil"],
@@ -745,10 +745,10 @@ export const p4_114_seeming__appearing__parecer = {
 export const p4_115_staying__meeting__quedar = {
   meta: {
     wordpack: 115,
-    en: "Staying & Meeting (quedar)",
-    zh: "留下与见面 (quedar)",
+    english: "Staying & Meeting (quedar)",
+    chinese: "留下与见面 (quedar)",
     pinyin: "Liúxià yǔ Jiànmiàn (quedar)",
-    pt: "Ficar e Encontrar"
+    portuguese: "Ficar e Encontrar"
   },
   words: [
     ["quedo en casa", "I stay at home", "我待在家", "wǒ dāi zài jiā", "fico em casa"],
@@ -787,10 +787,10 @@ export const p4_115_staying__meeting__quedar = {
 export const p4_116_art__culture = {
   meta: {
     wordpack: 116,
-    en: "Art & Culture",
-    zh: "艺术与文化",
+    english: "Art & Culture",
+    chinese: "艺术与文化",
     pinyin: "Yìshù yǔ Wénhuà",
-    pt: "Arte e Cultura"
+    portuguese: "Arte e Cultura"
   },
   words: [
     ["el arte moderno", "modern art", "现代艺术", "xiàndài yìshù", "a arte moderna"],
@@ -856,10 +856,10 @@ export const p4_116_art__culture = {
 export const p4_117_arriving__llegar = {
   meta: {
     wordpack: 117,
-    en: "Arriving (llegar)",
-    zh: "到达 (llegar)",
+    english: "Arriving (llegar)",
+    chinese: "到达 (llegar)",
     pinyin: "Dàodá (llegar)",
-    pt: "Chegar"
+    portuguese: "Chegar"
   },
   words: [
     ["llego tarde", "I arrive late", "我迟到了", "wǒ chídào le", "chego tarde"],
@@ -898,10 +898,10 @@ export const p4_117_arriving__llegar = {
 export const p4_118_happening__pasar = {
   meta: {
     wordpack: 118,
-    en: "Happening (pasar)",
-    zh: "发生 (pasar)",
+    english: "Happening (pasar)",
+    chinese: "发生 (pasar)",
     pinyin: "Fāshēng (pasar)",
-    pt: "Acontecer"
+    portuguese: "Acontecer"
   },
   words: [
     ["pasa algo", "something happens", "发生了什么", "fāshēng le shénme", "acontece algo"],
@@ -940,10 +940,10 @@ export const p4_118_happening__pasar = {
 export const p4_119_religion__faith = {
   meta: {
     wordpack: 119,
-    en: "Religion & Faith",
-    zh: "宗教与信仰",
+    english: "Religion & Faith",
+    chinese: "宗教与信仰",
     pinyin: "Zōngjiào yǔ Xìnyǎng",
-    pt: "Religião e Fé"
+    portuguese: "Religião e Fé"
   },
   words: [
     ["la religión católica", "the Catholic religion", "天主教", "tiānzhǔjiào", "a religião católica"],
@@ -1012,10 +1012,10 @@ export const p4_119_religion__faith = {
 export const p4_120_letting__leaving__dejar = {
   meta: {
     wordpack: 120,
-    en: "Letting & Leaving (dejar)",
-    zh: "让与留下 (dejar)",
+    english: "Letting & Leaving (dejar)",
+    chinese: "让与留下 (dejar)",
     pinyin: "Ràng yǔ Liúxià (dejar)",
-    pt: "Deixar"
+    portuguese: "Deixar"
   },
   words: [
     ["dejo todo", "I leave everything", "我留下一切", "wǒ liúxià yīqiè", "deixo tudo"],
@@ -1054,10 +1054,10 @@ export const p4_120_letting__leaving__dejar = {
 export const p4_121_using__usar = {
   meta: {
     wordpack: 121,
-    en: "Using (usar)",
-    zh: "使用 (usar)",
+    english: "Using (usar)",
+    chinese: "使用 (usar)",
     pinyin: "Shǐyòng (usar)",
-    pt: "Usar"
+    portuguese: "Usar"
   },
   words: [
     ["uso mucho", "I use a lot", "我用很多", "wǒ yòng hěn duō", "eu uso muito"],
@@ -1096,10 +1096,10 @@ export const p4_121_using__usar = {
 export const p4_122_tools__building = {
   meta: {
     wordpack: 122,
-    en: "Tools & Building",
-    zh: "工具与建筑",
+    english: "Tools & Building",
+    chinese: "工具与建筑",
     pinyin: "Gōngjù yǔ Jiànzhù",
-    pt: "Ferramentas e Construção"
+    portuguese: "Ferramentas e Construção"
   },
   words: [
     ["la herramienta nueva", "the new tool", "新工具", "xīn gōngjù", "a ferramenta nova"],
@@ -1168,10 +1168,10 @@ export const p4_122_tools__building = {
 export const p4_123_telling__counting__contar = {
   meta: {
     wordpack: 123,
-    en: "Telling & Counting (contar)",
-    zh: "讲述与计数 (contar)",
+    english: "Telling & Counting (contar)",
+    chinese: "讲述与计数 (contar)",
     pinyin: "Jiǎngshù yǔ Jìshù (contar)",
-    pt: "Contar"
+    portuguese: "Contar"
   },
   words: [
     ["cuento historias", "I tell stories", "我讲故事", "wǒ jiǎng gùshi", "eu conto histórias"],
@@ -1210,10 +1210,10 @@ export const p4_123_telling__counting__contar = {
 export const p4_124_creating__crear = {
   meta: {
     wordpack: 124,
-    en: "Creating (crear)",
-    zh: "创造 (crear)",
+    english: "Creating (crear)",
+    chinese: "创造 (crear)",
     pinyin: "Chuàngzào (crear)",
-    pt: "Criar"
+    portuguese: "Criar"
   },
   words: [
     ["creo arte", "I create art", "我创作艺术", "wǒ chuàngzuò yìshù", "eu crio arte"],
@@ -1252,10 +1252,10 @@ export const p4_124_creating__crear = {
 export const p4_125_personality__types = {
   meta: {
     wordpack: 125,
-    en: "Personality Types",
-    zh: "性格类型",
+    english: "Personality Types",
+    chinese: "性格类型",
     pinyin: "Xìnggé Lèixíng",
-    pt: "Tipos de Personalidade"
+    portuguese: "Tipos de Personalidade"
   },
   words: [
     ["la personalidad fuerte", "the strong personality", "强势的性格", "qiángshì de xìnggé", "a personalidade forte"],
@@ -1324,10 +1324,10 @@ export const p4_125_personality__types = {
 export const p4_126_going__up__subir = {
   meta: {
     wordpack: 126,
-    en: "Going Up (subir)",
-    zh: "上升 (subir)",
+    english: "Going Up (subir)",
+    chinese: "上升 (subir)",
     pinyin: "Shàngshēng (subir)",
-    pt: "Subir"
+    portuguese: "Subir"
   },
   words: [
     ["subo escaleras", "I go up stairs", "我上楼梯", "wǒ shàng lóutī", "eu subo escadas"],
@@ -1366,10 +1366,10 @@ export const p4_126_going__up__subir = {
 export const p4_127_going__down__bajar = {
   meta: {
     wordpack: 127,
-    en: "Going Down (bajar)",
-    zh: "下降 (bajar)",
+    english: "Going Down (bajar)",
+    chinese: "下降 (bajar)",
     pinyin: "Xiàjiàng (bajar)",
-    pt: "Descer"
+    portuguese: "Descer"
   },
   words: [
     ["bajo escaleras", "I go down stairs", "我下楼梯", "wǒ xià lóutī", "eu desço escadas"],
@@ -1408,10 +1408,10 @@ export const p4_127_going__down__bajar = {
 export const p4_128_emergency__safety = {
   meta: {
     wordpack: 128,
-    en: "Emergency & Safety",
-    zh: "紧急与安全",
+    english: "Emergency & Safety",
+    chinese: "紧急与安全",
     pinyin: "Jǐnjí yǔ Ānquán",
-    pt: "Emergência e Segurança"
+    portuguese: "Emergência e Segurança"
   },
   words: [
     ["la emergencia médica", "the medical emergency", "医疗急症", "yīliáo jízhèng", "a emergência médica"],
@@ -1477,10 +1477,10 @@ export const p4_128_emergency__safety = {
 export const p4_129_falling__caer = {
   meta: {
     wordpack: 129,
-    en: "Falling (caer)",
-    zh: "跌落 (caer)",
+    english: "Falling (caer)",
+    chinese: "跌落 (caer)",
     pinyin: "Diēluò (caer)",
-    pt: "Cair"
+    portuguese: "Cair"
   },
   words: [
     ["caigo mucho", "I fall a lot", "我经常摔倒", "wǒ jīngcháng shuāidǎo", "eu caio muito"],
@@ -1519,10 +1519,10 @@ export const p4_129_falling__caer = {
 export const p4_130_lifting__waking__levantar = {
   meta: {
     wordpack: 130,
-    en: "Lifting & Waking (levantar)",
-    zh: "抬起与醒来 (levantar)",
+    english: "Lifting & Waking (levantar)",
+    chinese: "抬起与醒来 (levantar)",
     pinyin: "Táiqǐ yǔ Xǐnglái (levantar)",
-    pt: "Levantar"
+    portuguese: "Levantar"
   },
   words: [
     ["levanto pesas", "I lift weights", "我举重", "wǒ jǔzhòng", "eu levanto pesos"],
@@ -1561,10 +1561,10 @@ export const p4_130_lifting__waking__levantar = {
 export const p4_131_materials = {
   meta: {
     wordpack: 131,
-    en: "Materials",
-    zh: "材料",
+    english: "Materials",
+    chinese: "材料",
     pinyin: "Cáiliào",
-    pt: "Materiais"
+    portuguese: "Materiais"
   },
   words: [
     ["el material resistente", "the resistant material", "耐用的材料", "nàiyòng de cáiliào", "o material resistente"],
@@ -1633,10 +1633,10 @@ export const p4_131_materials = {
 export const p4_132_touching__playing__music__tocar = {
   meta: {
     wordpack: 132,
-    en: "Touching & Playing Music (tocar)",
-    zh: "触摸与演奏 (tocar)",
+    english: "Touching & Playing Music (tocar)",
+    chinese: "触摸与演奏 (tocar)",
     pinyin: "Chùmō yǔ Yǎnzòu (tocar)",
-    pt: "Tocar"
+    portuguese: "Tocar"
   },
   words: [
     ["toco la guitarra", "I play the guitar", "我弹吉他", "wǒ tán jítā", "eu toco violão"],
@@ -1675,10 +1675,10 @@ export const p4_132_touching__playing__music__tocar = {
 export const p4_133_breaking__romper = {
   meta: {
     wordpack: 133,
-    en: "Breaking (romper)",
-    zh: "打破 (romper)",
+    english: "Breaking (romper)",
+    chinese: "打破 (romper)",
     pinyin: "Dǎpò (romper)",
-    pt: "Quebrar"
+    portuguese: "Quebrar"
   },
   words: [
     ["rompo todo", "I break everything", "我打破一切", "wǒ dǎpò yīqiè", "eu quebro tudo"],
@@ -1717,10 +1717,10 @@ export const p4_133_breaking__romper = {
 export const p4_134_farming__agriculture = {
   meta: {
     wordpack: 134,
-    en: "Farming & Agriculture",
-    zh: "农业",
+    english: "Farming & Agriculture",
+    chinese: "农业",
     pinyin: "Nóngyè",
-    pt: "Agricultura"
+    portuguese: "Agricultura"
   },
   words: [
     ["la agricultura moderna", "modern agriculture", "现代农业", "xiàndài nóngyè", "a agricultura moderna"],
@@ -1789,10 +1789,10 @@ export const p4_134_farming__agriculture = {
 export const p4_135_sharing__compartir = {
   meta: {
     wordpack: 135,
-    en: "Sharing (compartir)",
-    zh: "分享 (compartir)",
+    english: "Sharing (compartir)",
+    chinese: "分享 (compartir)",
     pinyin: "Fēnxiǎng (compartir)",
-    pt: "Compartilhar"
+    portuguese: "Compartilhar"
   },
   words: [
     ["comparto comida", "I share food", "我分享食物", "wǒ fēnxiǎng shíwù", "eu compartilho comida"],
@@ -1831,10 +1831,10 @@ export const p4_135_sharing__compartir = {
 export const p4_136_participating__participar = {
   meta: {
     wordpack: 136,
-    en: "Participating (participar)",
-    zh: "参与 (participar)",
+    english: "Participating (participar)",
+    chinese: "参与 (participar)",
     pinyin: "Cānyù (participar)",
-    pt: "Participar"
+    portuguese: "Participar"
   },
   words: [
     ["participo mucho", "I participate a lot", "我积极参与", "wǒ jījí cānyù", "eu participo muito"],
@@ -1873,10 +1873,10 @@ export const p4_136_participating__participar = {
 export const p4_137_math__operations = {
   meta: {
     wordpack: 137,
-    en: "Math Operations",
-    zh: "数学运算",
+    english: "Math Operations",
+    chinese: "数学运算",
     pinyin: "Shùxué Yùnsuàn",
-    pt: "Operações Matemáticas"
+    portuguese: "Operações Matemáticas"
   },
   words: [
     ["las matemáticas básicas", "basic mathematics", "基础数学", "jīchǔ shùxué", "a matemática básica"],
@@ -1945,10 +1945,10 @@ export const p4_137_math__operations = {
 export const p4_138_preparing__preparar = {
   meta: {
     wordpack: 138,
-    en: "Preparing (preparar)",
-    zh: "准备 (preparar)",
+    english: "Preparing (preparar)",
+    chinese: "准备 (preparar)",
     pinyin: "Zhǔnbèi (preparar)",
-    pt: "Preparar"
+    portuguese: "Preparar"
   },
   words: [
     ["preparo comida", "I prepare food", "我准备食物", "wǒ zhǔnbèi shíwù", "eu preparo comida"],
@@ -1987,10 +1987,10 @@ export const p4_138_preparing__preparar = {
 export const p4_139_cooking__cocinar = {
   meta: {
     wordpack: 139,
-    en: "Cooking (cocinar)",
-    zh: "烹饪 (cocinar)",
+    english: "Cooking (cocinar)",
+    chinese: "烹饪 (cocinar)",
     pinyin: "Pēngrèn (cocinar)",
-    pt: "Cozinhar"
+    portuguese: "Cozinhar"
   },
   words: [
     ["cocino bien", "I cook well", "我做饭做得好", "wǒ zuòfàn zuò de hǎo", "eu cozinho bem"],
@@ -2029,10 +2029,10 @@ export const p4_139_cooking__cocinar = {
 export const p4_140_history__terms = {
   meta: {
     wordpack: 140,
-    en: "History Terms",
-    zh: "历史术语",
+    english: "History Terms",
+    chinese: "历史术语",
     pinyin: "Lìshǐ Shùyǔ",
-    pt: "Termos Históricos"
+    portuguese: "Termos Históricos"
   },
   words: [
     ["la historia universal", "world history", "世界历史", "shìjiè lìshǐ", "a história universal"],

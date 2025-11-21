@@ -4,10 +4,17 @@
 export const pack66_making_appointments = {
   meta: {
     wordpack: 66,
-    packNumber: 66,
-    title: "Making Appointments",
-    act: "Act IV: Mastery",
-    wordCount: 24
+    pinyin: "Making Appointments",
+    english: "Making Appointments",
+    spanish: "Making Appointments",
+    french: "Making Appointments",
+    portuguese: "Making Appointments",
+    vietnamese: "Making Appointments",
+    thai: "Making Appointments",
+    khmer: "Making Appointments",
+    indonesian: "Making Appointments",
+    malay: "Making Appointments",
+    filipino: "Making Appointments"
   },
   words: [
     ["我想预约", "wǒ xiǎng yùyuē", "I want to make an appointment", "quiero hacer una cita", "je veux prendre rendez-vous", "quero marcar um compromisso", "tôi muốn đặt lịch hẹn", "ฉันอยากนัดหมาย", "ខ្ញុំចង់ណាត់ជួប", "saya ingin membuat janji", "saya ingin buat temujanji", "gusto kong mag-appointment"],

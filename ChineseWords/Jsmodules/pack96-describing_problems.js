@@ -4,10 +4,17 @@
 export const pack96_describing_problems = {
   meta: {
     wordpack: 96,
-    packNumber: 96,
-    title: "Describing Problems",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Describing Problems",
+    english: "Describing Problems",
+    spanish: "Describing Problems",
+    french: "Describing Problems",
+    portuguese: "Describing Problems",
+    vietnamese: "Describing Problems",
+    thai: "Describing Problems",
+    khmer: "Describing Problems",
+    indonesian: "Describing Problems",
+    malay: "Describing Problems",
+    filipino: "Describing Problems"
   },
   words: [
     ["出现问题了怎么办", "chūxiàn wèntí le zěnmebàn", "what to do when problems appear", "qué hacer cuando surgen problemas", "que faire quand les problèmes surviennent", "o que fazer quando surgem problemas", "xuất hiện vấn đề rồi làm sao đây", "เมื่อเกิดปัญหาจะทำยังไง", "នៅពេលមានបញ្ហាធ្វើយ៉ាងម៉េច", "bagaimana jika muncul masalah", "apa nak buat bila ada masalah", "ano gagawin pag may problema"],

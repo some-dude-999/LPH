@@ -4,10 +4,17 @@
 export const pack43_communication_verbs = {
   meta: {
     wordpack: 43,
-    packNumber: 43,
-    title: "Communication Verbs",
-    act: "Act III: Expansion",
-    wordCount: 48
+    pinyin: "Communication Verbs",
+    english: "Communication Verbs",
+    spanish: "Communication Verbs",
+    french: "Communication Verbs",
+    portuguese: "Communication Verbs",
+    vietnamese: "Communication Verbs",
+    thai: "Communication Verbs",
+    khmer: "Communication Verbs",
+    indonesian: "Communication Verbs",
+    malay: "Communication Verbs",
+    filipino: "Communication Verbs"
   },
   words: [
     ["说", "shuō", "speak", "hablar", "parler", "falar", "nói", "พูด", "និយាយ", "berbicara", "bercakap", "magsalita"],

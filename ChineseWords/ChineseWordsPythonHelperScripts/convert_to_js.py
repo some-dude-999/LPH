@@ -54,10 +54,17 @@ def create_clean_js(pack_num, metadata, words):
 export const {var_name} = {{
   meta: {{
     wordpack: {pack_num},
-    packNumber: {pack_num},
-    title: "{title}",
-    act: "{metadata[pack_num]['act']}",
-    wordCount: {len(words)}
+    pinyin: "{title}",
+    english: "{title}",
+    spanish: "{title}",
+    french: "{title}",
+    portuguese: "{title}",
+    vietnamese: "{title}",
+    thai: "{title}",
+    khmer: "{title}",
+    indonesian: "{title}",
+    malay: "{title}",
+    filipino: "{title}"
   }},
   words: [
 """
@@ -81,10 +88,17 @@ def create_obfuscated_js(pack_num, metadata, words):
     # Minified version - single line, no spaces
     meta_json = json.dumps({
         "wordpack": pack_num,
-        "packNumber": pack_num,
-        "title": title,
-        "act": metadata[pack_num]['act'],
-        "wordCount": len(words)
+        "pinyin": title,
+        "english": title,
+        "spanish": title,
+        "french": title,
+        "portuguese": title,
+        "vietnamese": title,
+        "thai": title,
+        "khmer": title,
+        "indonesian": title,
+        "malay": title,
+        "filipino": title
     }, ensure_ascii=False, separators=(',', ':'))
 
     words_json = json.dumps(words, ensure_ascii=False, separators=(',', ':'))

@@ -4,10 +4,17 @@
 export const pack70_invitations_and_offers = {
   meta: {
     wordpack: 70,
-    packNumber: 70,
-    title: "Invitations & Offers",
-    act: "Act IV: Mastery",
-    wordCount: 24
+    pinyin: "Invitations & Offers",
+    english: "Invitations & Offers",
+    spanish: "Invitations & Offers",
+    french: "Invitations & Offers",
+    portuguese: "Invitations & Offers",
+    vietnamese: "Invitations & Offers",
+    thai: "Invitations & Offers",
+    khmer: "Invitations & Offers",
+    indonesian: "Invitations & Offers",
+    malay: "Invitations & Offers",
+    filipino: "Invitations & Offers"
   },
   words: [
     ["要不要来", "yào bu yào lái", "do you want to come?", "¿quieres venir?", "tu veux venir?", "quer vir?", "có muốn đến không?", "อยากมาไหม", "តើចង់មកទេ?", "mau datang tidak?", "nak datang tak?", "gusto mong pumunta?"],

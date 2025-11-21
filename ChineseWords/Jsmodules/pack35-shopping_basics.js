@@ -4,10 +4,17 @@
 export const pack35_shopping_basics = {
   meta: {
     wordpack: 35,
-    packNumber: 35,
-    title: "Shopping Basics",
-    act: "Act III: Expansion",
-    wordCount: 45
+    pinyin: "Shopping Basics",
+    english: "Shopping Basics",
+    spanish: "Shopping Basics",
+    french: "Shopping Basics",
+    portuguese: "Shopping Basics",
+    vietnamese: "Shopping Basics",
+    thai: "Shopping Basics",
+    khmer: "Shopping Basics",
+    indonesian: "Shopping Basics",
+    malay: "Shopping Basics",
+    filipino: "Shopping Basics"
   },
   words: [
     ["买", "mǎi", "buy", "comprar", "acheter", "comprar", "mua", "ซื้อ", "ទិញ", "beli", "beli", "bumili"],

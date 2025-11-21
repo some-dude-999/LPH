@@ -4,10 +4,17 @@
 export const pack69_social_situations = {
   meta: {
     wordpack: 69,
-    packNumber: 69,
-    title: "Social Situations",
-    act: "Act IV: Mastery",
-    wordCount: 24
+    pinyin: "Social Situations",
+    english: "Social Situations",
+    spanish: "Social Situations",
+    french: "Social Situations",
+    portuguese: "Social Situations",
+    vietnamese: "Social Situations",
+    thai: "Social Situations",
+    khmer: "Social Situations",
+    indonesian: "Social Situations",
+    malay: "Social Situations",
+    filipino: "Social Situations"
   },
   words: [
     ["很高兴认识你", "hěn gāoxìng rènshi nǐ", "very pleased to meet you", "mucho gusto en conocerte", "enchanté de te rencontrer", "muito prazer em conhecê-lo", "rất vui được biết bạn", "ยินดีที่ได้รู้จัก", "រីករាយណាស់ដែលបានស្គាល់អ្នក", "senang berkenalan dengan Anda", "gembira berkenalan dengan awak", "natutuwa akong makilala ka"],

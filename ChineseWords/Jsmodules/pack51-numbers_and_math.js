@@ -4,10 +4,17 @@
 export const pack51_numbers_and_math = {
   meta: {
     wordpack: 51,
-    packNumber: 51,
-    title: "Numbers & Math",
-    act: "Act III: Expansion",
-    wordCount: 45
+    pinyin: "Numbers & Math",
+    english: "Numbers & Math",
+    spanish: "Numbers & Math",
+    french: "Numbers & Math",
+    portuguese: "Numbers & Math",
+    vietnamese: "Numbers & Math",
+    thai: "Numbers & Math",
+    khmer: "Numbers & Math",
+    indonesian: "Numbers & Math",
+    malay: "Numbers & Math",
+    filipino: "Numbers & Math"
   },
   words: [
     ["加", "jiā", "add", "sumar", "additionner", "somar", "cộng", "บวก", "បូក", "tambah", "tambah", "dagdagan"],

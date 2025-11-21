@@ -4,10 +4,17 @@
 export const pack107_success_and_achievement = {
   meta: {
     wordpack: 107,
-    packNumber: 107,
-    title: "Success & Achievement",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Success & Achievement",
+    english: "Success & Achievement",
+    spanish: "Success & Achievement",
+    french: "Success & Achievement",
+    portuguese: "Success & Achievement",
+    vietnamese: "Success & Achievement",
+    thai: "Success & Achievement",
+    khmer: "Success & Achievement",
+    indonesian: "Success & Achievement",
+    malay: "Success & Achievement",
+    filipino: "Success & Achievement"
   },
   words: [
     ["终于成功做到了呢", "zhōngyú chénggōng zuòdào le ne", "finally succeeded in doing it", "finalmente logró hacerlo", "finalement réussi à le faire", "finalmente conseguiu fazer", "cuối cùng thành công làm được rồi", "ในที่สุดก็ทำสำเร็จแล้ว", "ទីបំផុតធ្វើបានជោគជ័យ", "akhirnya berhasil melakukannya", "akhirnya berjaya melakukannya", "sa wakas ay nagtagumpay"],

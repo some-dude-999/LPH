@@ -4,10 +4,17 @@
 export const pack34_weather_words = {
   meta: {
     wordpack: 34,
-    packNumber: 34,
-    title: "Weather Words",
-    act: "Act III: Expansion",
-    wordCount: 48
+    pinyin: "Weather Words",
+    english: "Weather Words",
+    spanish: "Weather Words",
+    french: "Weather Words",
+    portuguese: "Weather Words",
+    vietnamese: "Weather Words",
+    thai: "Weather Words",
+    khmer: "Weather Words",
+    indonesian: "Weather Words",
+    malay: "Weather Words",
+    filipino: "Weather Words"
   },
   words: [
     ["天气", "tiānqì", "weather", "clima", "temps", "clima", "thời tiết", "สภาพอากาศ", "អាកាសធាតុ", "cuaca", "cuaca", "panahon"],

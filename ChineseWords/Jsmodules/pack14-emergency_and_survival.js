@@ -4,10 +4,17 @@
 export const pack14_emergency_and_survival = {
   meta: {
     wordpack: 14,
-    packNumber: 14,
-    title: "Emergency & Survival",
-    act: "Act I: Foundation",
-    wordCount: 45
+    pinyin: "Emergency & Survival",
+    english: "Emergency & Survival",
+    spanish: "Emergency & Survival",
+    french: "Emergency & Survival",
+    portuguese: "Emergency & Survival",
+    vietnamese: "Emergency & Survival",
+    thai: "Emergency & Survival",
+    khmer: "Emergency & Survival",
+    indonesian: "Emergency & Survival",
+    malay: "Emergency & Survival",
+    filipino: "Emergency & Survival"
   },
   words: [
     ["救命", "jiùmìng", "help!", "¡socorro!", "au secours!", "socorro!", "cứu tôi!", "ช่วยด้วย", "ជួយផង", "tolong!", "tolong!", "saklolo!"],

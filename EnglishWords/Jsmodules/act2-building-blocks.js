@@ -4,8 +4,10 @@
 export const p50_bathroom_items = {
   meta: {
     wordpack: 50,
-    en: "Bathroom Items",
-    packNumber: 50
+    chinese: "Bathroom Items",
+    pinyin: "Bathroom Items",
+    spanish: "Bathroom Items",
+    portuguese: "Bathroom Items"
   },
   words: [
     ["flush the toilet please", "\u8bf7\u51b2\u5395\u6240", "q\u01d0ng ch\u014dng c\u00e8su\u01d2", "jala el inodoro por favor", "d\u00e1 descarga por favor"],
@@ -74,8 +76,10 @@ export const p50_bathroom_items = {
 export const p51_household_chores = {
   meta: {
     wordpack: 51,
-    en: "Household Chores",
-    packNumber: 51
+    chinese: "Household Chores",
+    pinyin: "Household Chores",
+    spanish: "Household Chores",
+    portuguese: "Household Chores"
   },
   words: [
     ["clean house", "\u6253\u626b\u623f\u5b50", "d\u01ces\u01ceo f\u00e1ngzi", "limpiar la casa", "limpar a casa"],
@@ -144,8 +148,10 @@ export const p51_household_chores = {
 export const p52_more_food = {
   meta: {
     wordpack: 52,
-    en: "More Food",
-    packNumber: 52
+    chinese: "More Food",
+    pinyin: "More Food",
+    spanish: "More Food",
+    portuguese: "More Food"
   },
   words: [
     ["ground beef", "\u788e\u725b\u8089", "su\u00ec ni\u00far\u00f2u", "carne molida", "carne mo\u00edda"],
@@ -214,8 +220,10 @@ export const p52_more_food = {
 export const p53_fruits = {
   meta: {
     wordpack: 53,
-    en: "Fruits",
-    packNumber: 53
+    chinese: "Fruits",
+    pinyin: "Fruits",
+    spanish: "Fruits",
+    portuguese: "Fruits"
   },
   words: [
     ["fresh orange", "\u65b0\u9c9c\u6a59\u5b50", "x\u012bnxi\u0101n ch\u00e9ngzi", "naranja fresca", "laranja fresca"],
@@ -284,8 +292,10 @@ export const p53_fruits = {
 export const p54_vegetables = {
   meta: {
     wordpack: 54,
-    en: "Vegetables",
-    packNumber: 54
+    chinese: "Vegetables",
+    pinyin: "Vegetables",
+    spanish: "Vegetables",
+    portuguese: "Vegetables"
   },
   words: [
     ["fresh carrot", "\u65b0\u9c9c\u80e1\u841d\u535c", "x\u012bnxi\u0101n h\u00falu\u00f3bo", "zanahoria fresca", "cenoura fresca"],
@@ -354,8 +364,10 @@ export const p54_vegetables = {
 export const p55_more_clothing = {
   meta: {
     wordpack: 55,
-    en: "More Clothing",
-    packNumber: 55
+    chinese: "More Clothing",
+    pinyin: "More Clothing",
+    spanish: "More Clothing",
+    portuguese: "More Clothing"
   },
   words: [
     ["business suit", "\u897f\u88c5", "x\u012bzhu\u0101ng", "traje de negocios", "terno"],
@@ -424,8 +436,10 @@ export const p55_more_clothing = {
 export const p56_jobs_1 = {
   meta: {
     wordpack: 56,
-    en: "Jobs 1",
-    packNumber: 56
+    chinese: "Jobs 1",
+    pinyin: "Jobs 1",
+    spanish: "Jobs 1",
+    portuguese: "Jobs 1"
   },
   words: [
     ["family doctor", "\u5bb6\u5ead\u533b\u751f", "ji\u0101t\u00edng y\u012bsh\u0113ng", "m\u00e9dico de familia", "m\u00e9dico de fam\u00edlia"],
@@ -494,8 +508,10 @@ export const p56_jobs_1 = {
 export const p57_jobs_2 = {
   meta: {
     wordpack: 57,
-    en: "Jobs 2",
-    packNumber: 57
+    chinese: "Jobs 2",
+    pinyin: "Jobs 2",
+    spanish: "Jobs 2",
+    portuguese: "Jobs 2"
   },
   words: [
     ["famous actor", "\u8457\u540d\u6f14\u5458", "zh\u00f9m\u00edng y\u01cenyu\u00e1n", "actor famoso", "ator famoso"],
@@ -564,8 +580,10 @@ export const p57_jobs_2 = {
 export const p58_more_animals = {
   meta: {
     wordpack: 58,
-    en: "More Animals",
-    packNumber: 58
+    chinese: "More Animals",
+    pinyin: "More Animals",
+    spanish: "More Animals",
+    portuguese: "More Animals"
   },
   words: [
     ["wild tiger", "\u91ce\u751f\u8001\u864e", "y\u011bsh\u0113ng l\u01ceoh\u01d4", "tigre salvaje", "tigre selvagem"],
@@ -634,8 +652,10 @@ export const p58_more_animals = {
 export const p59_nature = {
   meta: {
     wordpack: 59,
-    en: "Nature",
-    packNumber: 59
+    chinese: "Nature",
+    pinyin: "Nature",
+    spanish: "Nature",
+    portuguese: "Nature"
   },
   words: [
     ["tall tree", "\u9ad8\u5927\u7684\u6811", "g\u0101od\u00e0 de sh\u00f9", "\u00e1rbol alto", "\u00e1rvore alta"],
@@ -704,8 +724,10 @@ export const p59_nature = {
 export const p60_geography = {
   meta: {
     wordpack: 60,
-    en: "Geography",
-    packNumber: 60
+    chinese: "Geography",
+    pinyin: "Geography",
+    spanish: "Geography",
+    portuguese: "Geography"
   },
   words: [
     ["walk on dry land", "\u5728\u9646\u5730\u4e0a\u8d70", "z\u00e0i l\u00f9d\u00ec sh\u00e0ng z\u01d2u", "caminar en tierra seca", "caminhar em terra firme"],
@@ -774,8 +796,10 @@ export const p60_geography = {
 export const p61_school__education = {
   meta: {
     wordpack: 61,
-    en: "School & Education",
-    packNumber: 61
+    chinese: "School & Education",
+    pinyin: "School & Education",
+    spanish: "School & Education",
+    portuguese: "School & Education"
   },
   words: [
     ["history class", "\u5386\u53f2\u8bfe", "l\u00ecsh\u01d0 k\u00e8", "clase de historia", "aula de hist\u00f3ria"],
@@ -844,8 +868,10 @@ export const p61_school__education = {
 export const p62_sports = {
   meta: {
     wordpack: 62,
-    en: "Sports",
-    packNumber: 62
+    chinese: "Sports",
+    pinyin: "Sports",
+    spanish: "Sports",
+    portuguese: "Sports"
   },
   words: [
     ["play soccer", "\u8e22\u8db3\u7403", "t\u012b z\u00faqi\u00fa", "jugar f\u00fatbol", "jogar futebol"],
@@ -910,8 +936,10 @@ export const p62_sports = {
 export const p63_more_sports = {
   meta: {
     wordpack: 63,
-    en: "More Sports",
-    packNumber: 63
+    chinese: "More Sports",
+    pinyin: "More Sports",
+    spanish: "More Sports",
+    portuguese: "More Sports"
   },
   words: [
     ["play golf", "\u6253\u9ad8\u5c14\u592b", "d\u01ce g\u0101o'\u011brf\u016b", "jugar golf", "jogar golfe"],
@@ -980,8 +1008,10 @@ export const p63_more_sports = {
 export const p64_entertainment = {
   meta: {
     wordpack: 64,
-    en: "Entertainment",
-    packNumber: 64
+    chinese: "Entertainment",
+    pinyin: "Entertainment",
+    spanish: "Entertainment",
+    portuguese: "Entertainment"
   },
   words: [
     ["watch a movie", "\u770b\u7535\u5f71", "k\u00e0n di\u00e0ny\u01d0ng", "ver una pel\u00edcula", "assistir um filme"],
@@ -1050,8 +1080,10 @@ export const p64_entertainment = {
 export const p65_more_emotions = {
   meta: {
     wordpack: 65,
-    en: "More Emotions",
-    packNumber: 65
+    chinese: "More Emotions",
+    pinyin: "More Emotions",
+    spanish: "More Emotions",
+    portuguese: "More Emotions"
   },
   words: [
     ["so frustrated", "\u592a\u6cae\u4e27\u4e86", "t\u00e0i j\u01d4s\u00e0ng le", "muy frustrado", "muito frustrado"],
@@ -1120,8 +1152,10 @@ export const p65_more_emotions = {
 export const p66_personality = {
   meta: {
     wordpack: 66,
-    en: "Personality",
-    packNumber: 66
+    chinese: "Personality",
+    pinyin: "Personality",
+    spanish: "Personality",
+    portuguese: "Personality"
   },
   words: [
     ["very kind", "\u975e\u5e38\u5584\u826f", "f\u0113ich\u00e1ng sh\u00e0nli\u00e1ng", "muy amable", "muito gentil"],
@@ -1190,8 +1224,10 @@ export const p66_personality = {
 export const p67_physical_appearance = {
   meta: {
     wordpack: 67,
-    en: "Physical Appearance",
-    packNumber: 67
+    chinese: "Physical Appearance",
+    pinyin: "Physical Appearance",
+    spanish: "Physical Appearance",
+    portuguese: "Physical Appearance"
   },
   words: [
     ["very thin", "\u5f88\u7626", "h\u011bn sh\u00f2u", "muy delgado", "muito magro"],
@@ -1260,8 +1296,10 @@ export const p67_physical_appearance = {
 export const p68_shopping = {
   meta: {
     wordpack: 68,
-    en: "Shopping",
-    packNumber: 68
+    chinese: "Shopping",
+    pinyin: "Shopping",
+    spanish: "Shopping",
+    portuguese: "Shopping"
   },
   words: [
     ["buy online", "\u7f51\u4e0a\u8d2d\u4e70", "w\u01cengsh\u00e0ng g\u00f2um\u01cei", "comprar en l\u00ednea", "comprar online"],
@@ -1329,8 +1367,10 @@ export const p68_shopping = {
 export const p69_money__banking = {
   meta: {
     wordpack: 69,
-    en: "Money & Banking",
-    packNumber: 69
+    chinese: "Money & Banking",
+    pinyin: "Money & Banking",
+    spanish: "Money & Banking",
+    portuguese: "Money & Banking"
   },
   words: [
     ["exchange to American dollar", "\u5151\u6362\u6210\u7f8e\u5143", "du\u00echu\u00e0n ch\u00e9ng m\u011biyu\u00e1n", "cambiar a d\u00f3lares americanos", "trocar por d\u00f3lares americanos"],
@@ -1399,8 +1439,10 @@ export const p69_money__banking = {
 export const p70_health = {
   meta: {
     wordpack: 70,
-    en: "Health",
-    packNumber: 70
+    chinese: "Health",
+    pinyin: "Health",
+    spanish: "Health",
+    portuguese: "Health"
   },
   words: [
     ["stay healthy", "\u4fdd\u6301\u5065\u5eb7", "b\u01ceoch\u00ed ji\u00e0nk\u0101ng", "mantenerse saludable", "manter-se saud\u00e1vel"],
@@ -1468,8 +1510,10 @@ export const p70_health = {
 export const p71_technology = {
   meta: {
     wordpack: 71,
-    en: "Technology",
-    packNumber: 71
+    chinese: "Technology",
+    pinyin: "Technology",
+    spanish: "Technology",
+    portuguese: "Technology"
   },
   words: [
     ["personal computer", "\u4e2a\u4eba\u7535\u8111", "g\u00e8r\u00e9n di\u00e0nn\u01ceo", "computadora personal", "computador pessoal"],
@@ -1537,8 +1581,10 @@ export const p71_technology = {
 export const p72_verbs_of_motion = {
   meta: {
     wordpack: 72,
-    en: "Verbs of Motion",
-    packNumber: 72
+    chinese: "Verbs of Motion",
+    pinyin: "Verbs of Motion",
+    spanish: "Verbs of Motion",
+    portuguese: "Verbs of Motion"
   },
   words: [
     ["move forward", "\u524d\u8fdb", "qi\u00e1nj\u00ecn", "avanzar", "avan\u00e7ar"],
@@ -1607,8 +1653,10 @@ export const p72_verbs_of_motion = {
 export const p73_verbs_of_change = {
   meta: {
     wordpack: 73,
-    en: "Verbs of Change",
-    packNumber: 73
+    chinese: "Verbs of Change",
+    pinyin: "Verbs of Change",
+    spanish: "Verbs of Change",
+    portuguese: "Verbs of Change"
   },
   words: [
     ["change mind", "\u6539\u53d8\u4e3b\u610f", "g\u01ceibi\u00e0n zh\u01d4yi", "cambiar de opini\u00f3n", "mudar de ideia"],
@@ -1677,8 +1725,10 @@ export const p73_verbs_of_change = {
 export const p74_communication_verbs = {
   meta: {
     wordpack: 74,
-    en: "Communication Verbs",
-    packNumber: 74
+    chinese: "Communication Verbs",
+    pinyin: "Communication Verbs",
+    spanish: "Communication Verbs",
+    portuguese: "Communication Verbs"
   },
   words: [
     ["explain clearly", "\u6e05\u695a\u5730\u89e3\u91ca", "q\u012bngchu de ji\u011bsh\u00ec", "explicar claramente", "explicar claramente"],
@@ -1747,8 +1797,10 @@ export const p74_communication_verbs = {
 export const p75_mental_verbs = {
   meta: {
     wordpack: 75,
-    en: "Mental Verbs",
-    packNumber: 75
+    chinese: "Mental Verbs",
+    pinyin: "Mental Verbs",
+    spanish: "Mental Verbs",
+    portuguese: "Mental Verbs"
   },
   words: [
     ["think about", "\u8003\u8651", "k\u01ceol\u01dc", "pensar en", "pensar sobre"],
@@ -1817,8 +1869,10 @@ export const p75_mental_verbs = {
 export const p76_adverbs_of_manner = {
   meta: {
     wordpack: 76,
-    en: "Adverbs of Manner",
-    packNumber: 76
+    chinese: "Adverbs of Manner",
+    pinyin: "Adverbs of Manner",
+    spanish: "Adverbs of Manner",
+    portuguese: "Adverbs of Manner"
   },
   words: [
     ["move quickly", "\u5feb\u901f\u79fb\u52a8", "ku\u00e0is\u00f9 y\u00edd\u00f2ng", "moverse r\u00e1pidamente", "mover-se rapidamente"],
@@ -1887,8 +1941,10 @@ export const p76_adverbs_of_manner = {
 export const p77_adverbs_of_degree = {
   meta: {
     wordpack: 77,
-    en: "Adverbs of Degree",
-    packNumber: 77
+    chinese: "Adverbs of Degree",
+    pinyin: "Adverbs of Degree",
+    spanish: "Adverbs of Degree",
+    portuguese: "Adverbs of Degree"
   },
   words: [
     ["thank you very much", "\u975e\u5e38\u611f\u8c22", "f\u0113ich\u00e1ng g\u01cenxi\u00e8", "muchas gracias", "muito obrigado"],
@@ -1957,8 +2013,10 @@ export const p77_adverbs_of_degree = {
 export const p78_conjunctions = {
   meta: {
     wordpack: 78,
-    en: "Conjunctions",
-    packNumber: 78
+    chinese: "Conjunctions",
+    pinyin: "Conjunctions",
+    spanish: "Conjunctions",
+    portuguese: "Conjunctions"
   },
   words: [
     ["you and me", "\u4f60\u548c\u6211", "n\u01d0 h\u00e9 w\u01d2", "t\u00fa y yo", "voc\u00ea e eu"],
@@ -2027,8 +2085,10 @@ export const p78_conjunctions = {
 export const p79_connectors = {
   meta: {
     wordpack: 79,
-    en: "Connectors",
-    packNumber: 79
+    chinese: "Connectors",
+    pinyin: "Connectors",
+    spanish: "Connectors",
+    portuguese: "Connectors"
   },
   words: [
     ["however small", "\u65e0\u8bba\u591a\u5c0f", "w\u00fal\u00f9n du\u014d xi\u01ceo", "por peque\u00f1o que sea", "por menor que seja"],
@@ -2097,8 +2157,10 @@ export const p79_connectors = {
 export const p80_phrasal_verbs_1 = {
   meta: {
     wordpack: 80,
-    en: "Phrasal Verbs 1",
-    packNumber: 80
+    chinese: "Phrasal Verbs 1",
+    pinyin: "Phrasal Verbs 1",
+    spanish: "Phrasal Verbs 1",
+    portuguese: "Phrasal Verbs 1"
   },
   words: [
     ["wake up early", "\u65e9\u8d77", "z\u01ceoq\u01d0", "despertarse temprano", "acordar cedo"],
@@ -2167,8 +2229,10 @@ export const p80_phrasal_verbs_1 = {
 export const p81_phrasal_verbs_2 = {
   meta: {
     wordpack: 81,
-    en: "Phrasal Verbs 2",
-    packNumber: 81
+    chinese: "Phrasal Verbs 2",
+    pinyin: "Phrasal Verbs 2",
+    spanish: "Phrasal Verbs 2",
+    portuguese: "Phrasal Verbs 2"
   },
   words: [
     ["look up word", "\u67e5\u5355\u8bcd", "ch\u00e1 d\u0101nc\u00ed", "buscar palabra", "procurar palavra"],
@@ -2237,8 +2301,10 @@ export const p81_phrasal_verbs_2 = {
 export const p82_travel = {
   meta: {
     wordpack: 82,
-    en: "Travel",
-    packNumber: 82
+    chinese: "Travel",
+    pinyin: "Travel",
+    spanish: "Travel",
+    portuguese: "Travel"
   },
   words: [
     ["summer vacation", "\u6691\u5047", "sh\u01d4ji\u00e0", "vacaciones de verano", "f\u00e9rias de ver\u00e3o"],
@@ -2307,8 +2373,10 @@ export const p82_travel = {
 export const p83_airport__flying = {
   meta: {
     wordpack: 83,
-    en: "Airport & Flying",
-    packNumber: 83
+    chinese: "Airport & Flying",
+    pinyin: "Airport & Flying",
+    spanish: "Airport & Flying",
+    portuguese: "Airport & Flying"
   },
   words: [
     ["major airline", "\u5927\u578b\u822a\u7a7a\u516c\u53f8", "d\u00e0x\u00edng h\u00e1ngk\u014dng g\u014dngs\u012b", "aerol\u00ednea importante", "companhia a\u00e9rea importante"],
@@ -2377,8 +2445,10 @@ export const p83_airport__flying = {
 export const p84_hotel = {
   meta: {
     wordpack: 84,
-    en: "Hotel",
-    packNumber: 84
+    chinese: "Hotel",
+    pinyin: "Hotel",
+    spanish: "Hotel",
+    portuguese: "Hotel"
   },
   words: [
     ["cheap motel", "\u4fbf\u5b9c\u7684\u6c7d\u8f66\u65c5\u9986", "pi\u00e1nyi de q\u00ecch\u0113 l\u01dagu\u01cen", "motel barato", "motel barato"],
@@ -2447,8 +2517,10 @@ export const p84_hotel = {
 export const p85_work__office = {
   meta: {
     wordpack: 85,
-    en: "Work & Office",
-    packNumber: 85
+    chinese: "Work & Office",
+    pinyin: "Work & Office",
+    spanish: "Work & Office",
+    portuguese: "Work & Office"
   },
   words: [
     ["big company", "\u5927\u516c\u53f8", "d\u00e0 g\u014dngs\u012b", "empresa grande", "empresa grande"],
@@ -2517,8 +2589,10 @@ export const p85_work__office = {
 export const p86_workplace_actions = {
   meta: {
     wordpack: 86,
-    en: "Workplace Actions",
-    packNumber: 86
+    chinese: "Workplace Actions",
+    pinyin: "Workplace Actions",
+    spanish: "Workplace Actions",
+    portuguese: "Workplace Actions"
   },
   words: [
     ["hire someone", "\u96c7\u4eba", "g\u00f9 r\u00e9n", "contratar a alguien", "contratar algu\u00e9m"],

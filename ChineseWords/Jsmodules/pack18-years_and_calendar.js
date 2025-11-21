@@ -4,10 +4,17 @@
 export const pack18_years_and_calendar = {
   meta: {
     wordpack: 18,
-    packNumber: 18,
-    title: "Years & Calendar",
-    act: "Act II: Development",
-    wordCount: 45
+    pinyin: "Years & Calendar",
+    english: "Years & Calendar",
+    spanish: "Years & Calendar",
+    french: "Years & Calendar",
+    portuguese: "Years & Calendar",
+    vietnamese: "Years & Calendar",
+    thai: "Years & Calendar",
+    khmer: "Years & Calendar",
+    indonesian: "Years & Calendar",
+    malay: "Years & Calendar",
+    filipino: "Years & Calendar"
   },
   words: [
     ["今年", "jīnnián", "this year", "este año", "cette année", "este ano", "năm nay", "ปีนี้", "ឆ្នាំនេះ", "tahun ini", "tahun ini", "ngayong taon"],

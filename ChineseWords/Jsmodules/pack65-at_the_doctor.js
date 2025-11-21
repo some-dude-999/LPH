@@ -4,10 +4,17 @@
 export const pack65_at_the_doctor = {
   meta: {
     wordpack: 65,
-    packNumber: 65,
-    title: "At the Doctor",
-    act: "Act IV: Mastery",
-    wordCount: 27
+    pinyin: "At the Doctor",
+    english: "At the Doctor",
+    spanish: "At the Doctor",
+    french: "At the Doctor",
+    portuguese: "At the Doctor",
+    vietnamese: "At the Doctor",
+    thai: "At the Doctor",
+    khmer: "At the Doctor",
+    indonesian: "At the Doctor",
+    malay: "At the Doctor",
+    filipino: "At the Doctor"
   },
   words: [
     ["我不舒服", "wǒ bù shūfu", "I don't feel well", "no me siento bien", "je ne me sens pas bien", "não me sinto bem", "tôi không khỏe", "ฉันไม่สบาย", "ខ្ញុំមិនសុខសប្បាយ", "saya tidak enak badan", "saya tidak sihat", "hindi ako mabuti"],

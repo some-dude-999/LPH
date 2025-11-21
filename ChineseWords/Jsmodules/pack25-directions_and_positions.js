@@ -4,10 +4,17 @@
 export const pack25_directions_and_positions = {
   meta: {
     wordpack: 25,
-    packNumber: 25,
-    title: "Directions & Positions",
-    act: "Act II: Development",
-    wordCount: 51
+    pinyin: "Directions & Positions",
+    english: "Directions & Positions",
+    spanish: "Directions & Positions",
+    french: "Directions & Positions",
+    portuguese: "Directions & Positions",
+    vietnamese: "Directions & Positions",
+    thai: "Directions & Positions",
+    khmer: "Directions & Positions",
+    indonesian: "Directions & Positions",
+    malay: "Directions & Positions",
+    filipino: "Directions & Positions"
   },
   words: [
     ["前面", "qiánmian", "front", "frente", "devant", "frente", "phía trước", "ข้างหน้า", "ខាងមុខ", "depan", "hadapan", "harap"],

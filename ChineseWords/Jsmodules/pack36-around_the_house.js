@@ -4,10 +4,17 @@
 export const pack36_around_the_house = {
   meta: {
     wordpack: 36,
-    packNumber: 36,
-    title: "Around the House",
-    act: "Act III: Expansion",
-    wordCount: 48
+    pinyin: "Around the House",
+    english: "Around the House",
+    spanish: "Around the House",
+    french: "Around the House",
+    portuguese: "Around the House",
+    vietnamese: "Around the House",
+    thai: "Around the House",
+    khmer: "Around the House",
+    indonesian: "Around the House",
+    malay: "Around the House",
+    filipino: "Around the House"
   },
   words: [
     ["房子", "fángzi", "house", "casa", "maison", "casa", "nhà", "บ้าน", "ផ្ទះ", "rumah", "rumah", "bahay"],

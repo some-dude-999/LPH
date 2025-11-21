@@ -4,10 +4,17 @@
 export const pack60_talking_about_problems = {
   meta: {
     wordpack: 60,
-    packNumber: 60,
-    title: "Talking About Problems",
-    act: "Act IV: Mastery",
-    wordCount: 24
+    pinyin: "Talking About Problems",
+    english: "Talking About Problems",
+    spanish: "Talking About Problems",
+    french: "Talking About Problems",
+    portuguese: "Talking About Problems",
+    vietnamese: "Talking About Problems",
+    thai: "Talking About Problems",
+    khmer: "Talking About Problems",
+    indonesian: "Talking About Problems",
+    malay: "Talking About Problems",
+    filipino: "Talking About Problems"
   },
   words: [
     ["出问题了", "chū wèntí le", "there's a problem", "hay un problema", "il y a un problème", "há um problema", "có vấn đề rồi", "มีปัญหาแล้ว", "មានបញ្ហាហើយ", "ada masalah", "ada masalah", "may problema na"],

@@ -4,10 +4,17 @@
 export const pack49_nature_and_environment = {
   meta: {
     wordpack: 49,
-    packNumber: 49,
-    title: "Nature & Environment",
-    act: "Act III: Expansion",
-    wordCount: 51
+    pinyin: "Nature & Environment",
+    english: "Nature & Environment",
+    spanish: "Nature & Environment",
+    french: "Nature & Environment",
+    portuguese: "Nature & Environment",
+    vietnamese: "Nature & Environment",
+    thai: "Nature & Environment",
+    khmer: "Nature & Environment",
+    indonesian: "Nature & Environment",
+    malay: "Nature & Environment",
+    filipino: "Nature & Environment"
   },
   words: [
     ["天", "tiān", "sky", "cielo", "ciel", "céu", "trời", "ท้องฟ้า", "មេឃ", "langit", "langit", "langit"],

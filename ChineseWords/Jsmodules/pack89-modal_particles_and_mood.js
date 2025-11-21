@@ -4,10 +4,17 @@
 export const pack89_modal_particles_and_mood = {
   meta: {
     wordpack: 89,
-    packNumber: 89,
-    title: "Modal Particles & Mood",
-    act: "Act V: Refinement",
-    wordCount: 42
+    pinyin: "Modal Particles & Mood",
+    english: "Modal Particles & Mood",
+    spanish: "Modal Particles & Mood",
+    french: "Modal Particles & Mood",
+    portuguese: "Modal Particles & Mood",
+    vietnamese: "Modal Particles & Mood",
+    thai: "Modal Particles & Mood",
+    khmer: "Modal Particles & Mood",
+    indonesian: "Modal Particles & Mood",
+    malay: "Modal Particles & Mood",
+    filipino: "Modal Particles & Mood"
   },
   words: [
     ["好吗", "hǎo ma", "okay?", "¿está bien?", "d'accord?", "tudo bem?", "được không?", "ได้ไหม", "បានទេ?", "boleh?", "boleh?", "okay ba?"],

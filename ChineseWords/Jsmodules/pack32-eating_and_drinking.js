@@ -4,10 +4,17 @@
 export const pack32_eating_and_drinking = {
   meta: {
     wordpack: 32,
-    packNumber: 32,
-    title: "Eating & Drinking",
-    act: "Act III: Expansion",
-    wordCount: 48
+    pinyin: "Eating & Drinking",
+    english: "Eating & Drinking",
+    spanish: "Eating & Drinking",
+    french: "Eating & Drinking",
+    portuguese: "Eating & Drinking",
+    vietnamese: "Eating & Drinking",
+    thai: "Eating & Drinking",
+    khmer: "Eating & Drinking",
+    indonesian: "Eating & Drinking",
+    malay: "Eating & Drinking",
+    filipino: "Eating & Drinking"
   },
   words: [
     ["吃", "chī", "eat", "comer", "manger", "comer", "ăn", "กิน", "ញ៉ាំ", "makan", "makan", "kumain"],

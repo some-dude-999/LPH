@@ -4,10 +4,10 @@
 export const p5_141_accepting__aceptar = {
   meta: {
     wordpack: 141,
-    en: "Accepting (aceptar)",
-    zh: "接受 (aceptar)",
+    english: "Accepting (aceptar)",
+    chinese: "接受 (aceptar)",
     pinyin: "Jiēshòu (aceptar)",
-    pt: "Aceitar"
+    portuguese: "Aceitar"
   },
   words: [
     ["acepto todo", "I accept everything", "我接受一切", "wǒ jiēshòu yīqiè", "eu aceito tudo"],
@@ -46,10 +46,10 @@ export const p5_141_accepting__aceptar = {
 export const p5_142_rejecting__rechazar = {
   meta: {
     wordpack: 142,
-    en: "Rejecting (rechazar)",
-    zh: "拒绝 (rechazar)",
+    english: "Rejecting (rechazar)",
+    chinese: "拒绝 (rechazar)",
     pinyin: "Jùjué (rechazar)",
-    pt: "Rejeitar"
+    portuguese: "Rejeitar"
   },
   words: [
     ["rechazo todo", "I reject everything", "我拒绝一切", "wǒ jùjué yīqiè", "eu rejeito tudo"],
@@ -88,10 +88,10 @@ export const p5_142_rejecting__rechazar = {
 export const p5_143_space__universe = {
   meta: {
     wordpack: 143,
-    en: "Space & Universe",
-    zh: "太空与宇宙",
+    english: "Space & Universe",
+    chinese: "太空与宇宙",
     pinyin: "Tàikōng yǔ Yǔzhòu",
-    pt: "Espaço e Universo"
+    portuguese: "Espaço e Universo"
   },
   words: [
     ["el espacio exterior", "outer space", "外太空", "wài tàikōng", "o espaço sideral"],
@@ -160,10 +160,10 @@ export const p5_143_space__universe = {
 export const p5_144_offering__ofrecer = {
   meta: {
     wordpack: 144,
-    en: "Offering (ofrecer)",
-    zh: "提供 (ofrecer)",
+    english: "Offering (ofrecer)",
+    chinese: "提供 (ofrecer)",
     pinyin: "Tígōng (ofrecer)",
-    pt: "Oferecer"
+    portuguese: "Oferecer"
   },
   words: [
     ["ofrezco ayuda", "I offer help", "我提供帮助", "wǒ tígōng bāngzhù", "eu ofereço ajuda"],
@@ -202,10 +202,10 @@ export const p5_144_offering__ofrecer = {
 export const p5_145_promising__prometer = {
   meta: {
     wordpack: 145,
-    en: "Promising (prometer)",
-    zh: "承诺 (prometer)",
+    english: "Promising (prometer)",
+    chinese: "承诺 (prometer)",
     pinyin: "Chéngnuò (prometer)",
-    pt: "Prometer"
+    portuguese: "Prometer"
   },
   words: [
     ["prometo todo", "I promise everything", "我保证一切", "wǒ bǎozhèng yīqiè", "eu prometo tudo"],
@@ -244,10 +244,10 @@ export const p5_145_promising__prometer = {
 export const p5_146_chemistry__terms = {
   meta: {
     wordpack: 146,
-    en: "Chemistry Terms",
-    zh: "化学术语",
+    english: "Chemistry Terms",
+    chinese: "化学术语",
     pinyin: "Huàxué Shùyǔ",
-    pt: "Termos de Química"
+    portuguese: "Termos de Química"
   },
   words: [
     ["la química orgánica", "organic chemistry", "有机化学", "yǒujī huàxué", "a química orgânica"],
@@ -316,10 +316,10 @@ export const p5_146_chemistry__terms = {
 export const p5_147_moving__mover = {
   meta: {
     wordpack: 147,
-    en: "Moving (mover)",
-    zh: "移动 (mover)",
+    english: "Moving (mover)",
+    chinese: "移动 (mover)",
     pinyin: "Yídòng (mover)",
-    pt: "Mover"
+    portuguese: "Mover"
   },
   words: [
     ["muevo cosas", "I move things", "我搬东西", "wǒ bān dōngxi", "eu movo coisas"],
@@ -358,10 +358,10 @@ export const p5_147_moving__mover = {
 export const p5_148_stopping__detener = {
   meta: {
     wordpack: 148,
-    en: "Stopping (detener)",
-    zh: "停止 (detener)",
+    english: "Stopping (detener)",
+    chinese: "停止 (detener)",
     pinyin: "Tíngzhǐ (detener)",
-    pt: "Parar"
+    portuguese: "Parar"
   },
   words: [
     ["detengo coches", "I stop cars", "我拦车", "wǒ lánchē", "eu paro carros"],
@@ -400,10 +400,10 @@ export const p5_148_stopping__detener = {
 export const p5_149_military__terms = {
   meta: {
     wordpack: 149,
-    en: "Military Terms",
-    zh: "军事术语",
+    english: "Military Terms",
+    chinese: "军事术语",
     pinyin: "Jūnshì Shùyǔ",
-    pt: "Termos Militares"
+    portuguese: "Termos Militares"
   },
   words: [
     ["el ejército nacional", "national army", "国家军队", "guójiā jūnduì", "o exército nacional"],
@@ -472,10 +472,10 @@ export const p5_149_military__terms = {
 export const p5_150_continuing__continuar = {
   meta: {
     wordpack: 150,
-    en: "Continuing (continuar)",
-    zh: "继续 (continuar)",
+    english: "Continuing (continuar)",
+    chinese: "继续 (continuar)",
     pinyin: "Jìxù (continuar)",
-    pt: "Continuar"
+    portuguese: "Continuar"
   },
   words: [
     ["continúo trabajando", "I continue working", "我继续工作", "wǒ jìxù gōngzuò", "eu continuo trabalhando"],
@@ -514,10 +514,10 @@ export const p5_150_continuing__continuar = {
 export const p5_151_finishing__terminar = {
   meta: {
     wordpack: 151,
-    en: "Finishing (terminar)",
-    zh: "完成 (terminar)",
+    english: "Finishing (terminar)",
+    chinese: "完成 (terminar)",
     pinyin: "Wánchéng (terminar)",
-    pt: "Terminar"
+    portuguese: "Terminar"
   },
   words: [
     ["termino trabajo", "I finish work", "我完成工作", "wǒ wánchéng gōngzuò", "eu termino o trabalho"],
@@ -556,10 +556,10 @@ export const p5_151_finishing__terminar = {
 export const p5_152_literature__books = {
   meta: {
     wordpack: 152,
-    en: "Literature & Books",
-    zh: "文学与书籍",
+    english: "Literature & Books",
+    chinese: "文学与书籍",
     pinyin: "Wénxué yǔ Shūjí",
-    pt: "Literatura e Livros"
+    portuguese: "Literatura e Livros"
   },
   words: [
     ["la literatura clásica", "classical literature", "古典文学", "gǔdiǎn wénxué", "a literatura clássica"],
@@ -628,10 +628,10 @@ export const p5_152_literature__books = {
 export const p5_153_developing__desarrollar = {
   meta: {
     wordpack: 153,
-    en: "Developing (desarrollar)",
-    zh: "发展 (desarrollar)",
+    english: "Developing (desarrollar)",
+    chinese: "发展 (desarrollar)",
     pinyin: "Fāzhǎn (desarrollar)",
-    pt: "Desenvolver"
+    portuguese: "Desenvolver"
   },
   words: [
     ["desarrollo proyectos", "I develop projects", "我开发项目", "wǒ kāifā xiàngmù", "eu desenvolvo projetos"],
@@ -670,10 +670,10 @@ export const p5_153_developing__desarrollar = {
 export const p5_154_producing__producir = {
   meta: {
     wordpack: 154,
-    en: "Producing (producir)",
-    zh: "生产 (producir)",
+    english: "Producing (producir)",
+    chinese: "生产 (producir)",
     pinyin: "Shēngchǎn (producir)",
-    pt: "Produzir"
+    portuguese: "Produzir"
   },
   words: [
     ["produzco mucho", "I produce a lot", "我生产很多", "wǒ shēngchǎn hěn duō", "eu produzo muito"],
@@ -712,10 +712,10 @@ export const p5_154_producing__producir = {
 export const p5_155_construction = {
   meta: {
     wordpack: 155,
-    en: "Construction",
-    zh: "建筑",
+    english: "Construction",
+    chinese: "建筑",
     pinyin: "Jiànzhù",
-    pt: "Construção"
+    portuguese: "Construção"
   },
   words: [
     ["la construcción nueva", "new construction", "新建筑", "xīn jiànzhú", "a construção nova"],
@@ -784,10 +784,10 @@ export const p5_155_construction = {
 export const p5_156_directing__dirigir = {
   meta: {
     wordpack: 156,
-    en: "Directing (dirigir)",
-    zh: "指导 (dirigir)",
+    english: "Directing (dirigir)",
+    chinese: "指导 (dirigir)",
     pinyin: "Zhǐdǎo (dirigir)",
-    pt: "Dirigir"
+    portuguese: "Dirigir"
   },
   words: [
     ["dirijo empresas", "I run companies", "我管理公司", "wǒ guǎnlǐ gōngsī", "eu dirijo empresas"],
@@ -826,10 +826,10 @@ export const p5_156_directing__dirigir = {
 export const p5_157_organizing__organizar = {
   meta: {
     wordpack: 157,
-    en: "Organizing (organizar)",
-    zh: "组织 (organizar)",
+    english: "Organizing (organizar)",
+    chinese: "组织 (organizar)",
     pinyin: "Zǔzhī (organizar)",
-    pt: "Organizar"
+    portuguese: "Organizar"
   },
   words: [
     ["organizo eventos", "I organize events", "我组织活动", "wǒ zǔzhī huódòng", "eu organizo eventos"],
@@ -868,10 +868,10 @@ export const p5_157_organizing__organizar = {
 export const p5_158_theater__acting = {
   meta: {
     wordpack: 158,
-    en: "Theater & Acting",
-    zh: "戏剧与表演",
+    english: "Theater & Acting",
+    chinese: "戏剧与表演",
     pinyin: "Xìjù yǔ Biǎoyǎn",
-    pt: "Teatro e Atuação"
+    portuguese: "Teatro e Atuação"
   },
   words: [
     ["el teatro nacional", "national theater", "国家剧院", "guójiā jùyuàn", "o teatro nacional"],
@@ -940,10 +940,10 @@ export const p5_158_theater__acting = {
 export const p5_159_traveling__viajar = {
   meta: {
     wordpack: 159,
-    en: "Traveling (viajar)",
-    zh: "旅行 (viajar)",
+    english: "Traveling (viajar)",
+    chinese: "旅行 (viajar)",
     pinyin: "Lǚxíng (viajar)",
-    pt: "Viajar"
+    portuguese: "Viajar"
   },
   words: [
     ["viajo mucho", "I travel a lot", "我经常旅行", "wǒ jīngcháng lǚxíng", "eu viajo muito"],
@@ -982,10 +982,10 @@ export const p5_159_traveling__viajar = {
 export const p5_160_resting__descansar = {
   meta: {
     wordpack: 160,
-    en: "Resting (descansar)",
-    zh: "休息 (descansar)",
+    english: "Resting (descansar)",
+    chinese: "休息 (descansar)",
     pinyin: "Xiūxi (descansar)",
-    pt: "Descansar"
+    portuguese: "Descansar"
   },
   words: [
     ["descanso bien", "I rest well", "我休息得很好", "wǒ xiūxí de hěn hǎo", "eu descanso bem"],
@@ -1024,10 +1024,10 @@ export const p5_160_resting__descansar = {
 export const p5_161_philosophy__terms = {
   meta: {
     wordpack: 161,
-    en: "Philosophy Terms",
-    zh: "哲学术语",
+    english: "Philosophy Terms",
+    chinese: "哲学术语",
     pinyin: "Zhéxué Shùyǔ",
-    pt: "Termos Filosóficos"
+    portuguese: "Termos Filosóficos"
   },
   words: [
     ["la filosofía antigua", "ancient philosophy", "古代哲学", "gǔdài zhéxué", "a filosofia antiga"],
@@ -1096,10 +1096,10 @@ export const p5_161_philosophy__terms = {
 export const p5_162_practicing__practicar = {
   meta: {
     wordpack: 162,
-    en: "Practicing (practicar)",
-    zh: "练习 (practicar)",
+    english: "Practicing (practicar)",
+    chinese: "练习 (practicar)",
     pinyin: "Liànxí (practicar)",
-    pt: "Praticar"
+    portuguese: "Praticar"
   },
   words: [
     ["practico deporte", "I practice sports", "我练习运动", "wǒ liànxí yùndòng", "eu pratico esportes"],
@@ -1138,10 +1138,10 @@ export const p5_162_practicing__practicar = {
 export const p5_163_winning__earning__ganar = {
   meta: {
     wordpack: 163,
-    en: "Winning & Earning (ganar)",
-    zh: "赢得 (ganar)",
+    english: "Winning & Earning (ganar)",
+    chinese: "赢得 (ganar)",
     pinyin: "Yíngdé (ganar)",
-    pt: "Ganhar"
+    portuguese: "Ganhar"
   },
   words: [
     ["gano dinero", "I earn money", "我赚钱", "wǒ zhuànqián", "eu ganho dinheiro"],
@@ -1180,10 +1180,10 @@ export const p5_163_winning__earning__ganar = {
 export const p5_164_dance__dancing = {
   meta: {
     wordpack: 164,
-    en: "Dance & Dancing",
-    zh: "舞蹈",
+    english: "Dance & Dancing",
+    chinese: "舞蹈",
     pinyin: "Wǔdǎo",
-    pt: "Dança"
+    portuguese: "Dança"
   },
   words: [
     ["el baile moderno", "modern dance", "现代舞", "xiàndài wǔ", "a dança moderna"],
@@ -1252,10 +1252,10 @@ export const p5_164_dance__dancing = {
 export const p5_165_losing__perder = {
   meta: {
     wordpack: 165,
-    en: "Losing (perder)",
-    zh: "失去 (perder)",
+    english: "Losing (perder)",
+    chinese: "失去 (perder)",
     pinyin: "Shīqù (perder)",
-    pt: "Perder"
+    portuguese: "Perder"
   },
   words: [
     ["pierdo todo", "I lose everything", "我失去一切", "wǒ shīqù yīqiè", "eu perco tudo"],
@@ -1294,10 +1294,10 @@ export const p5_165_losing__perder = {
 export const p5_166_forming__formar = {
   meta: {
     wordpack: 166,
-    en: "Forming (formar)",
-    zh: "形成 (formar)",
+    english: "Forming (formar)",
+    chinese: "形成 (formar)",
     pinyin: "Xíngchéng (formar)",
-    pt: "Formar"
+    portuguese: "Formar"
   },
   words: [
     ["formo grupos", "I form groups", "我组建小组", "wǒ zǔjiàn xiǎozú", "eu formo grupos"],
@@ -1336,10 +1336,10 @@ export const p5_166_forming__formar = {
 export const p5_167_fashion__style = {
   meta: {
     wordpack: 167,
-    en: "Fashion & Style",
-    zh: "时尚与风格",
+    english: "Fashion & Style",
+    chinese: "时尚与风格",
     pinyin: "Shíshàng yǔ Fēnggé",
-    pt: "Moda e Estilo"
+    portuguese: "Moda e Estilo"
   },
   words: [
     ["la moda actual", "current fashion", "当前时尚", "dāngqián shíshàng", "a moda atual"],
@@ -1405,10 +1405,10 @@ export const p5_167_fashion__style = {
 export const p5_168_reaching__alcanzar = {
   meta: {
     wordpack: 168,
-    en: "Reaching (alcanzar)",
-    zh: "达到 (alcanzar)",
+    english: "Reaching (alcanzar)",
+    chinese: "达到 (alcanzar)",
     pinyin: "Dádào (alcanzar)",
-    pt: "Alcançar"
+    portuguese: "Alcançar"
   },
   words: [
     ["alcanzo metas", "I reach goals", "我达到目标", "wǒ dádào mùbiāo", "eu alcanço metas"],
@@ -1447,10 +1447,10 @@ export const p5_168_reaching__alcanzar = {
 export const p5_169_maintaining__mantener = {
   meta: {
     wordpack: 169,
-    en: "Maintaining (mantener)",
-    zh: "维持 (mantener)",
+    english: "Maintaining (mantener)",
+    chinese: "维持 (mantener)",
     pinyin: "Wéichí (mantener)",
-    pt: "Manter"
+    portuguese: "Manter"
   },
   words: [
     ["mantengo limpio", "I keep clean", "我保持干净", "wǒ bǎochí gānjìng", "eu mantenho limpo"],
@@ -1489,10 +1489,10 @@ export const p5_169_maintaining__mantener = {
 export const p5_170_psychology__terms = {
   meta: {
     wordpack: 170,
-    en: "Psychology Terms",
-    zh: "心理学术语",
+    english: "Psychology Terms",
+    chinese: "心理学术语",
     pinyin: "Xīnlǐxué Shùyǔ",
-    pt: "Termos de Psicologia"
+    portuguese: "Termos de Psicologia"
   },
   words: [
     ["la psicología clínica", "clinical psychology", "临床心理学", "línchuáng xīnlǐxué", "a psicologia clínica"],
@@ -1561,10 +1561,10 @@ export const p5_170_psychology__terms = {
 export const p5_171_solving__resolver = {
   meta: {
     wordpack: 171,
-    en: "Solving (resolver)",
-    zh: "解决 (resolver)",
+    english: "Solving (resolver)",
+    chinese: "解决 (resolver)",
     pinyin: "Jiějué (resolver)",
-    pt: "Resolver"
+    portuguese: "Resolver"
   },
   words: [
     ["resuelvo problemas", "I solve problems", "我解决问题", "wǒ jiějué wèntí", "eu resolvo problemas"],
@@ -1603,10 +1603,10 @@ export const p5_171_solving__resolver = {
 export const p5_172_avoiding__evitar = {
   meta: {
     wordpack: 172,
-    en: "Avoiding (evitar)",
-    zh: "避免 (evitar)",
+    english: "Avoiding (evitar)",
+    chinese: "避免 (evitar)",
     pinyin: "Bìmiǎn (evitar)",
-    pt: "Evitar"
+    portuguese: "Evitar"
   },
   words: [
     ["evito problemas", "I avoid problems", "我避免问题", "wǒ bìmiǎn wèntí", "eu evito problemas"],
@@ -1645,10 +1645,10 @@ export const p5_172_avoiding__evitar = {
 export const p5_173_journalism__terms = {
   meta: {
     wordpack: 173,
-    en: "Journalism Terms",
-    zh: "新闻术语",
+    english: "Journalism Terms",
+    chinese: "新闻术语",
     pinyin: "Xīnwén Shùyǔ",
-    pt: "Termos de Jornalismo"
+    portuguese: "Termos de Jornalismo"
   },
   words: [
     ["el periodismo digital", "digital journalism", "数字新闻业", "shùzì xīnwényè", "o jornalismo digital"],
@@ -1717,10 +1717,10 @@ export const p5_173_journalism__terms = {
 export const p5_174_supposing__suponer = {
   meta: {
     wordpack: 174,
-    en: "Supposing (suponer)",
-    zh: "假设 (suponer)",
+    english: "Supposing (suponer)",
+    chinese: "假设 (suponer)",
     pinyin: "Jiǎshè (suponer)",
-    pt: "Supor"
+    portuguese: "Supor"
   },
   words: [
     ["supongo bien", "I suppose correctly", "我猜对了", "wǒ cāi duìle", "eu suponho certo"],
@@ -1759,10 +1759,10 @@ export const p5_174_supposing__suponer = {
 export const p5_175_meaning__significar = {
   meta: {
     wordpack: 175,
-    en: "Meaning (significar)",
-    zh: "意味 (significar)",
+    english: "Meaning (significar)",
+    chinese: "意味 (significar)",
     pinyin: "Yìwèi (significar)",
-    pt: "Significar"
+    portuguese: "Significar"
   },
   words: [
     ["significa mucho", "it means a lot", "意义重大", "yìyì zhòngdà", "significa muito"],
@@ -1801,10 +1801,10 @@ export const p5_175_meaning__significar = {
 export const p5_176_photography__terms = {
   meta: {
     wordpack: 176,
-    en: "Photography Terms",
-    zh: "摄影术语",
+    english: "Photography Terms",
+    chinese: "摄影术语",
     pinyin: "Shèyǐng Shùyǔ",
-    pt: "Termos de Fotografia"
+    portuguese: "Termos de Fotografia"
   },
   words: [
     ["la fotografía digital", "digital photography", "数码摄影", "shùmǎ shèyǐng", "a fotografia digital"],
@@ -1873,10 +1873,10 @@ export const p5_176_photography__terms = {
 export const p5_177_choosing__elegir = {
   meta: {
     wordpack: 177,
-    en: "Choosing (elegir)",
-    zh: "选择 (elegir)",
+    english: "Choosing (elegir)",
+    chinese: "选择 (elegir)",
     pinyin: "Xuǎnzé (elegir)",
-    pt: "Escolher"
+    portuguese: "Escolher"
   },
   words: [
     ["elijo bien", "I choose well", "我选得好", "wǒ xuǎn de hǎo", "eu escolho bem"],
@@ -1915,10 +1915,10 @@ export const p5_177_choosing__elegir = {
 export const p5_178_deciding__decidir = {
   meta: {
     wordpack: 178,
-    en: "Deciding (decidir)",
-    zh: "决定 (decidir)",
+    english: "Deciding (decidir)",
+    chinese: "决定 (decidir)",
     pinyin: "Juédìng (decidir)",
-    pt: "Decidir"
+    portuguese: "Decidir"
   },
   words: [
     ["decido rápido", "I decide quickly", "我快速决定", "wǒ kuàisù juédìng", "eu decido rápido"],
@@ -1957,10 +1957,10 @@ export const p5_178_deciding__decidir = {
 export const p5_179_marketing__advertising = {
   meta: {
     wordpack: 179,
-    en: "Marketing & Advertising",
-    zh: "营销与广告",
+    english: "Marketing & Advertising",
+    chinese: "营销与广告",
     pinyin: "Yíngxiāo yǔ Guǎnggào",
-    pt: "Marketing e Publicidade"
+    portuguese: "Marketing e Publicidade"
   },
   words: [
     ["el marketing digital", "digital marketing", "数字营销", "shùzì yíngxiāo", "o marketing digital"],
@@ -2029,10 +2029,10 @@ export const p5_179_marketing__advertising = {
 export const p5_180_appearing__aparecer = {
   meta: {
     wordpack: 180,
-    en: "Appearing (aparecer)",
-    zh: "出现 (aparecer)",
+    english: "Appearing (aparecer)",
+    chinese: "出现 (aparecer)",
     pinyin: "Chūxiàn (aparecer)",
-    pt: "Aparecer"
+    portuguese: "Aparecer"
   },
   words: [
     ["aparezco tarde", "I appear late", "我出现得晚", "wǒ chūxiàn de wǎn", "eu apareço tarde"],

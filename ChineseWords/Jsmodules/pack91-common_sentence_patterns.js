@@ -4,10 +4,17 @@
 export const pack91_common_sentence_patterns = {
   meta: {
     wordpack: 91,
-    packNumber: 91,
-    title: "Common Sentence Patterns",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Common Sentence Patterns",
+    english: "Common Sentence Patterns",
+    spanish: "Common Sentence Patterns",
+    french: "Common Sentence Patterns",
+    portuguese: "Common Sentence Patterns",
+    vietnamese: "Common Sentence Patterns",
+    thai: "Common Sentence Patterns",
+    khmer: "Common Sentence Patterns",
+    indonesian: "Common Sentence Patterns",
+    malay: "Common Sentence Patterns",
+    filipino: "Common Sentence Patterns"
   },
   words: [
     ["把这个拿过来", "bǎ zhège náguòlái", "bring this over", "trae esto", "apporte ça", "traga isto", "lấy cái này qua đây", "เอาอันนี้มา", "យករបស់នេះមក", "bawa ini ke sini", "bawa ni ke mari", "dalhin mo ito dito"],

@@ -4,10 +4,17 @@
 export const pack71_agreeing_and_disagreeing = {
   meta: {
     wordpack: 71,
-    packNumber: 71,
-    title: "Agreeing & Disagreeing",
-    act: "Act IV: Mastery",
-    wordCount: 24
+    pinyin: "Agreeing & Disagreeing",
+    english: "Agreeing & Disagreeing",
+    spanish: "Agreeing & Disagreeing",
+    french: "Agreeing & Disagreeing",
+    portuguese: "Agreeing & Disagreeing",
+    vietnamese: "Agreeing & Disagreeing",
+    thai: "Agreeing & Disagreeing",
+    khmer: "Agreeing & Disagreeing",
+    indonesian: "Agreeing & Disagreeing",
+    malay: "Agreeing & Disagreeing",
+    filipino: "Agreeing & Disagreeing"
   },
   words: [
     ["我同意你的", "wǒ tóngyì nǐ de", "I agree with you", "estoy de acuerdo contigo", "je suis d'accord avec toi", "concordo com você", "tôi đồng ý với bạn", "ฉันเห็นด้วยกับคุณ", "ខ្ញុំយល់ស្របជាមួយអ្នក", "saya setuju dengan kamu", "saya setuju dengan awak", "sumasang-ayon ako sa iyo"],

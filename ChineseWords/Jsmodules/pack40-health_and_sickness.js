@@ -4,10 +4,17 @@
 export const pack40_health_and_sickness = {
   meta: {
     wordpack: 40,
-    packNumber: 40,
-    title: "Health & Sickness",
-    act: "Act III: Expansion",
-    wordCount: 45
+    pinyin: "Health & Sickness",
+    english: "Health & Sickness",
+    spanish: "Health & Sickness",
+    french: "Health & Sickness",
+    portuguese: "Health & Sickness",
+    vietnamese: "Health & Sickness",
+    thai: "Health & Sickness",
+    khmer: "Health & Sickness",
+    indonesian: "Health & Sickness",
+    malay: "Health & Sickness",
+    filipino: "Health & Sickness"
   },
   words: [
     ["健康", "jiànkāng", "healthy", "saludable", "en bonne santé", "saudável", "khỏe mạnh", "แข็งแรง", "មានសុខភាពល្អ", "sehat", "sihat", "malusog"],

@@ -4,10 +4,17 @@
 export const pack101_government_and_society = {
   meta: {
     wordpack: 101,
-    packNumber: 101,
-    title: "Government & Society",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Government & Society",
+    english: "Government & Society",
+    spanish: "Government & Society",
+    french: "Government & Society",
+    portuguese: "Government & Society",
+    vietnamese: "Government & Society",
+    thai: "Government & Society",
+    khmer: "Government & Society",
+    indonesian: "Government & Society",
+    malay: "Government & Society",
+    filipino: "Government & Society"
   },
   words: [
     ["政府部门办事效率", "zhèngfǔ bùmén bànshì xiàolǜ", "government department efficiency", "eficiencia de departamentos gubernamentales", "efficacité des départements gouvernementaux", "eficiência dos departamentos governamentais", "hiệu quả làm việc của cơ quan chính phủ", "ประสิทธิภาพการทำงานของหน่วยงานรัฐ", "ប្រសិទ្ធភាពការងារនៃនាយកដ្ឋានរដ្ឋាភិបាល", "efisiensi departemen pemerintah", "kecekapan jabatan kerajaan", "kahusayan ng kagawaran ng gobyerno"],

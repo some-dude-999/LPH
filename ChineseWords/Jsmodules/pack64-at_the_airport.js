@@ -4,10 +4,17 @@
 export const pack64_at_the_airport = {
   meta: {
     wordpack: 64,
-    packNumber: 64,
-    title: "At the Airport",
-    act: "Act IV: Mastery",
-    wordCount: 27
+    pinyin: "At the Airport",
+    english: "At the Airport",
+    spanish: "At the Airport",
+    french: "At the Airport",
+    portuguese: "At the Airport",
+    vietnamese: "At the Airport",
+    thai: "At the Airport",
+    khmer: "At the Airport",
+    indonesian: "At the Airport",
+    malay: "At the Airport",
+    filipino: "At the Airport"
   },
   words: [
     ["办理登机", "bànlǐ dēngjī", "to check in", "hacer el check-in", "faire l'enregistrement", "fazer check-in", "làm thủ tục lên máy bay", "เช็คอิน", "ចុះឈ្មោះឡើងយន្តហោះ", "check-in", "daftar masuk", "mag-check in"],

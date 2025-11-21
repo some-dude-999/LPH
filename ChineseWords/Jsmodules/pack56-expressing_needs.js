@@ -4,10 +4,17 @@
 export const pack56_expressing_needs = {
   meta: {
     wordpack: 56,
-    packNumber: 56,
-    title: "Expressing Needs",
-    act: "Act IV: Mastery",
-    wordCount: 24
+    pinyin: "Expressing Needs",
+    english: "Expressing Needs",
+    spanish: "Expressing Needs",
+    french: "Expressing Needs",
+    portuguese: "Expressing Needs",
+    vietnamese: "Expressing Needs",
+    thai: "Expressing Needs",
+    khmer: "Expressing Needs",
+    indonesian: "Expressing Needs",
+    malay: "Expressing Needs",
+    filipino: "Expressing Needs"
   },
   words: [
     ["我需要", "wǒ xūyào", "I need", "necesito", "j'ai besoin de", "preciso", "tôi cần", "ฉันต้องการ", "ខ្ញុំត្រូវការ", "saya perlu", "saya perlukan", "kailangan ko"],

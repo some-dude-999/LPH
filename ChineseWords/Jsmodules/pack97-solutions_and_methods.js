@@ -4,10 +4,17 @@
 export const pack97_solutions_and_methods = {
   meta: {
     wordpack: 97,
-    packNumber: 97,
-    title: "Solutions & Methods",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Solutions & Methods",
+    english: "Solutions & Methods",
+    spanish: "Solutions & Methods",
+    french: "Solutions & Methods",
+    portuguese: "Solutions & Methods",
+    vietnamese: "Solutions & Methods",
+    thai: "Solutions & Methods",
+    khmer: "Solutions & Methods",
+    indonesian: "Solutions & Methods",
+    malay: "Solutions & Methods",
+    filipino: "Solutions & Methods"
   },
   words: [
     ["问题已经解决了", "wèntí yǐjīng jiějué le", "the problem has been solved", "el problema ya se resolvió", "le problème a été résolu", "o problema já foi resolvido", "vấn đề đã được giải quyết rồi", "ปัญหาได้รับการแก้ไขแล้ว", "បញ្ហាត្រូវបានដោះស្រាយហើយ", "masalahnya sudah dipecahkan", "masalahnya sudah diselesaikan", "nalutas na ang problema"],

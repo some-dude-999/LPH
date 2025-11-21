@@ -4,10 +4,17 @@
 export const pack44_phone_and_internet = {
   meta: {
     wordpack: 44,
-    packNumber: 44,
-    title: "Phone & Internet",
-    act: "Act III: Expansion",
-    wordCount: 42
+    pinyin: "Phone & Internet",
+    english: "Phone & Internet",
+    spanish: "Phone & Internet",
+    french: "Phone & Internet",
+    portuguese: "Phone & Internet",
+    vietnamese: "Phone & Internet",
+    thai: "Phone & Internet",
+    khmer: "Phone & Internet",
+    indonesian: "Phone & Internet",
+    malay: "Phone & Internet",
+    filipino: "Phone & Internet"
   },
   words: [
     ["电话", "diànhuà", "phone", "teléfono", "téléphone", "telefone", "điện thoại", "โทรศัพท์", "ទូរស័ព្ទ", "telepon", "telefon", "telepono"],

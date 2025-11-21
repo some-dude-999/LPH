@@ -4,10 +4,17 @@
 export const pack84_frequency_and_duration = {
   meta: {
     wordpack: 84,
-    packNumber: 84,
-    title: "Frequency & Duration",
-    act: "Act V: Refinement",
-    wordCount: 24
+    pinyin: "Frequency & Duration",
+    english: "Frequency & Duration",
+    spanish: "Frequency & Duration",
+    french: "Frequency & Duration",
+    portuguese: "Frequency & Duration",
+    vietnamese: "Frequency & Duration",
+    thai: "Frequency & Duration",
+    khmer: "Frequency & Duration",
+    indonesian: "Frequency & Duration",
+    malay: "Frequency & Duration",
+    filipino: "Frequency & Duration"
   },
   words: [
     ["每天都会做的", "měitiān dōu huì zuò de", "do every day", "hacer todos los días", "faire tous les jours", "fazer todos os dias", "hàng ngày đều làm", "ทำทุกวัน", "ធ្វើរាល់ថ្ងៃ", "dilakukan setiap hari", "buat setiap hari", "ginagawa araw-araw"],

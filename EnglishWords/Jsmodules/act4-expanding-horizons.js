@@ -4,8 +4,10 @@
 export const p118_basic_chemistry__physics = {
   meta: {
     wordpack: 118,
-    en: "Basic Chemistry & Physics",
-    packNumber: 118
+    chinese: "Basic Chemistry & Physics",
+    pinyin: "Basic Chemistry & Physics",
+    spanish: "Basic Chemistry & Physics",
+    portuguese: "Basic Chemistry & Physics"
   },
   words: [
     ["chemical reaction", "\u5316\u5b66\u53cd\u5e94", "hu\u00e0xu\u00e9 f\u01ceny\u00ecng", "reacci\u00f3n qu\u00edmica", "rea\u00e7\u00e3o qu\u00edmica"],
@@ -74,8 +76,10 @@ export const p118_basic_chemistry__physics = {
 export const p119_health__wellness = {
   meta: {
     wordpack: 119,
-    en: "Health & Wellness",
-    packNumber: 119
+    chinese: "Health & Wellness",
+    pinyin: "Health & Wellness",
+    spanish: "Health & Wellness",
+    portuguese: "Health & Wellness"
   },
   words: [
     ["common symptom", "\u5e38\u89c1\u75c7\u72b6", "ch\u00e1ngji\u00e0n zh\u00e8ngzhu\u00e0ng", "s\u00edntoma com\u00fan", "sintoma comum"],
@@ -144,8 +148,10 @@ export const p119_health__wellness = {
 export const p120_mental_health_basics = {
   meta: {
     wordpack: 120,
-    en: "Mental Health Basics",
-    packNumber: 120
+    chinese: "Mental Health Basics",
+    pinyin: "Mental Health Basics",
+    spanish: "Mental Health Basics",
+    portuguese: "Mental Health Basics"
   },
   words: [
     ["mental health", "\u5fc3\u7406\u5065\u5eb7", "x\u012bnl\u01d0 ji\u00e0nk\u0101ng", "salud mental", "sa\u00fade mental"],
@@ -214,8 +220,10 @@ export const p120_mental_health_basics = {
 export const p121_technology_advanced = {
   meta: {
     wordpack: 121,
-    en: "Technology Advanced",
-    packNumber: 121
+    chinese: "Technology Advanced",
+    pinyin: "Technology Advanced",
+    spanish: "Technology Advanced",
+    portuguese: "Technology Advanced"
   },
   words: [
     ["artificial intelligence", "\u4eba\u5de5\u667a\u80fd", "r\u00e9ng\u014dng zh\u00ecn\u00e9ng", "inteligencia artificial", "intelig\u00eancia artificial"],
@@ -287,8 +295,10 @@ export const p121_technology_advanced = {
 export const p122_academic_writing = {
   meta: {
     wordpack: 122,
-    en: "Academic Writing",
-    packNumber: 122
+    chinese: "Academic Writing",
+    pinyin: "Academic Writing",
+    spanish: "Academic Writing",
+    portuguese: "Academic Writing"
   },
   words: [
     ["main thesis", "\u4e3b\u8981\u8bba\u70b9", "zh\u01d4y\u00e0o l\u00f9ndi\u01cen", "tesis principal", "tese principal"],
@@ -357,8 +367,10 @@ export const p122_academic_writing = {
 export const p123_philosophy__ethics = {
   meta: {
     wordpack: 123,
-    en: "Philosophy & Ethics",
-    packNumber: 123
+    chinese: "Philosophy & Ethics",
+    pinyin: "Philosophy & Ethics",
+    spanish: "Philosophy & Ethics",
+    portuguese: "Philosophy & Ethics"
   },
   words: [
     ["study philosophy", "\u5b66\u4e60\u54f2\u5b66", "xu\u00e9x\u00ed zh\u00e9xu\u00e9", "estudiar filosof\u00eda", "estudar filosofia"],
@@ -427,8 +439,10 @@ export const p123_philosophy__ethics = {
 export const p124_abstract_concepts = {
   meta: {
     wordpack: 124,
-    en: "Abstract Concepts",
-    packNumber: 124
+    chinese: "Abstract Concepts",
+    pinyin: "Abstract Concepts",
+    spanish: "Abstract Concepts",
+    portuguese: "Abstract Concepts"
   },
   words: [
     ["understand concept", "\u7406\u89e3\u6982\u5ff5", "l\u01d0ji\u011b g\u00e0ini\u00e0n", "entender concepto", "entender conceito"],
@@ -500,8 +514,10 @@ export const p124_abstract_concepts = {
 export const p125_cause__effect = {
   meta: {
     wordpack: 125,
-    en: "Cause & Effect",
-    packNumber: 125
+    chinese: "Cause & Effect",
+    pinyin: "Cause & Effect",
+    spanish: "Cause & Effect",
+    portuguese: "Cause & Effect"
   },
   words: [
     ["serious consequence", "\u4e25\u91cd\u540e\u679c", "y\u00e1nzh\u00f2ng h\u00f2ugu\u01d2", "consecuencia grave", "consequ\u00eancia grave"],
@@ -570,8 +586,10 @@ export const p125_cause__effect = {
 export const p126_certainty__probability = {
   meta: {
     wordpack: 126,
-    en: "Certainty & Probability",
-    packNumber: 126
+    chinese: "Certainty & Probability",
+    pinyin: "Certainty & Probability",
+    spanish: "Certainty & Probability",
+    portuguese: "Certainty & Probability"
   },
   words: [
     ["absolutely certain", "\u7edd\u5bf9\u786e\u5b9a", "ju\u00e9du\u00ec qu\u00e8d\u00ecng", "absolutamente seguro", "absolutamente certo"],
@@ -643,8 +661,10 @@ export const p126_certainty__probability = {
 export const p127_social_issues = {
   meta: {
     wordpack: 127,
-    en: "Social Issues",
-    packNumber: 127
+    chinese: "Social Issues",
+    pinyin: "Social Issues",
+    spanish: "Social Issues",
+    portuguese: "Social Issues"
   },
   words: [
     ["modern society", "\u73b0\u4ee3\u793e\u4f1a", "xi\u00e0nd\u00e0i sh\u00e8hu\u00ec", "sociedad moderna", "sociedade moderna"],
@@ -713,8 +733,10 @@ export const p127_social_issues = {
 export const p128_international_relations = {
   meta: {
     wordpack: 128,
-    en: "International Relations",
-    packNumber: 128
+    chinese: "International Relations",
+    pinyin: "International Relations",
+    spanish: "International Relations",
+    portuguese: "International Relations"
   },
   words: [
     ["international law", "\u56fd\u9645\u6cd5", "gu\u00f3j\u00ecf\u01ce", "derecho internacional", "direito internacional"],
@@ -789,8 +811,10 @@ export const p128_international_relations = {
 export const p129_literature = {
   meta: {
     wordpack: 129,
-    en: "Literature",
-    packNumber: 129
+    chinese: "Literature",
+    pinyin: "Literature",
+    spanish: "Literature",
+    portuguese: "Literature"
   },
   words: [
     ["literary analysis", "\u6587\u5b66\u5206\u6790", "w\u00e9nxu\u00e9 f\u0113nx\u012b", "an\u00e1lisis literario", "an\u00e1lise liter\u00e1ria"],
@@ -859,8 +883,10 @@ export const p129_literature = {
 export const p130_art__culture = {
   meta: {
     wordpack: 130,
-    en: "Art & Culture",
-    packNumber: 130
+    chinese: "Art & Culture",
+    pinyin: "Art & Culture",
+    spanish: "Art & Culture",
+    portuguese: "Art & Culture"
   },
   words: [
     ["popular culture", "\u6d41\u884c\u6587\u5316", "li\u00fax\u00edng w\u00e9nhu\u00e0", "cultura popular", "cultura popular"],
@@ -932,8 +958,10 @@ export const p130_art__culture = {
 export const p131_formal_vocabulary_1 = {
   meta: {
     wordpack: 131,
-    en: "Formal Vocabulary 1",
-    packNumber: 131
+    chinese: "Formal Vocabulary 1",
+    pinyin: "Formal Vocabulary 1",
+    spanish: "Formal Vocabulary 1",
+    portuguese: "Formal Vocabulary 1"
   },
   words: [
     ["acquire knowledge", "\u83b7\u5f97\u77e5\u8bc6", "hu\u00f2d\u00e9 zh\u012bshi", "adquirir conocimiento", "adquirir conhecimento"],
@@ -1002,8 +1030,10 @@ export const p131_formal_vocabulary_1 = {
 export const p132_formal_vocabulary_2 = {
   meta: {
     wordpack: 132,
-    en: "Formal Vocabulary 2",
-    packNumber: 132
+    chinese: "Formal Vocabulary 2",
+    pinyin: "Formal Vocabulary 2",
+    spanish: "Formal Vocabulary 2",
+    portuguese: "Formal Vocabulary 2"
   },
   words: [
     ["initiate process", "\u542f\u52a8\u6d41\u7a0b", "q\u01d0d\u00f2ng li\u00fach\u00e9ng", "iniciar proceso", "iniciar processo"],
@@ -1072,8 +1102,10 @@ export const p132_formal_vocabulary_2 = {
 export const p133_formal_vocabulary_3 = {
   meta: {
     wordpack: 133,
-    en: "Formal Vocabulary 3",
-    packNumber: 133
+    chinese: "Formal Vocabulary 3",
+    pinyin: "Formal Vocabulary 3",
+    spanish: "Formal Vocabulary 3",
+    portuguese: "Formal Vocabulary 3"
   },
   words: [
     ["substantial evidence", "\u5927\u91cf\u8bc1\u636e", "d\u00e0li\u00e0ng zh\u00e8ngj\u00f9", "evidencia sustancial", "evid\u00eancia substancial"],
@@ -1142,8 +1174,10 @@ export const p133_formal_vocabulary_3 = {
 export const p134_formal_vocabulary_4 = {
   meta: {
     wordpack: 134,
-    en: "Formal Vocabulary 4",
-    packNumber: 134
+    chinese: "Formal Vocabulary 4",
+    pinyin: "Formal Vocabulary 4",
+    spanish: "Formal Vocabulary 4",
+    portuguese: "Formal Vocabulary 4"
   },
   words: [
     ["meet criteria", "\u7b26\u5408\u6807\u51c6", "f\u00fah\u00e9 bi\u0101ozh\u01d4n", "cumplir criterios", "atender crit\u00e9rios"],
@@ -1212,8 +1246,10 @@ export const p134_formal_vocabulary_4 = {
 export const p135_academic_nouns = {
   meta: {
     wordpack: 135,
-    en: "Academic Nouns",
-    packNumber: 135
+    chinese: "Academic Nouns",
+    pinyin: "Academic Nouns",
+    spanish: "Academic Nouns",
+    portuguese: "Academic Nouns"
   },
   words: [
     ["basic assumption", "\u57fa\u672c\u5047\u8bbe", "j\u012bb\u011bn ji\u01cesh\u00e8", "suposici\u00f3n b\u00e1sica", "suposi\u00e7\u00e3o b\u00e1sica"],

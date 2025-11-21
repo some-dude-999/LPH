@@ -4,10 +4,17 @@
 export const pack23_daily_actions = {
   meta: {
     wordpack: 23,
-    packNumber: 23,
-    title: "Daily Actions",
-    act: "Act II: Development",
-    wordCount: 51
+    pinyin: "Daily Actions",
+    english: "Daily Actions",
+    spanish: "Daily Actions",
+    french: "Daily Actions",
+    portuguese: "Daily Actions",
+    vietnamese: "Daily Actions",
+    thai: "Daily Actions",
+    khmer: "Daily Actions",
+    indonesian: "Daily Actions",
+    malay: "Daily Actions",
+    filipino: "Daily Actions"
   },
   words: [
     ["起床", "qǐchuáng", "get up", "levantarse", "se lever", "levantar-se", "thức dậy", "ตื่นนอน", "ក្រោកពីគេង", "bangun", "bangun", "bumangon"],

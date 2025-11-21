@@ -4,10 +4,17 @@
 export const pack48_sports_and_exercise = {
   meta: {
     wordpack: 48,
-    packNumber: 48,
-    title: "Sports & Exercise",
-    act: "Act III: Expansion",
-    wordCount: 42
+    pinyin: "Sports & Exercise",
+    english: "Sports & Exercise",
+    spanish: "Sports & Exercise",
+    french: "Sports & Exercise",
+    portuguese: "Sports & Exercise",
+    vietnamese: "Sports & Exercise",
+    thai: "Sports & Exercise",
+    khmer: "Sports & Exercise",
+    indonesian: "Sports & Exercise",
+    malay: "Sports & Exercise",
+    filipino: "Sports & Exercise"
   },
   words: [
     ["跑步", "pǎobù", "run", "correr", "courir", "correr", "chạy bộ", "วิ่ง", "រត់", "berlari", "berlari", "tumakbo"],

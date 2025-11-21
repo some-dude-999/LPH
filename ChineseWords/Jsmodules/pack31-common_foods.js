@@ -4,10 +4,17 @@
 export const pack31_common_foods = {
   meta: {
     wordpack: 31,
-    packNumber: 31,
-    title: "Common Foods",
-    act: "Act III: Expansion",
-    wordCount: 48
+    pinyin: "Common Foods",
+    english: "Common Foods",
+    spanish: "Common Foods",
+    french: "Common Foods",
+    portuguese: "Common Foods",
+    vietnamese: "Common Foods",
+    thai: "Common Foods",
+    khmer: "Common Foods",
+    indonesian: "Common Foods",
+    malay: "Common Foods",
+    filipino: "Common Foods"
   },
   words: [
     ["豆腐", "dòufu", "tofu", "tofu", "tofu", "tofu", "đậu hũ", "เต้าหู้", "តៅហ៊ូ", "tahu", "tauhu", "tokwa"],

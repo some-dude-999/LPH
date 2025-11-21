@@ -4,10 +4,17 @@
 export const pack39_emotions_and_feelings = {
   meta: {
     wordpack: 39,
-    packNumber: 39,
-    title: "Emotions & Feelings",
-    act: "Act III: Expansion",
-    wordCount: 48
+    pinyin: "Emotions & Feelings",
+    english: "Emotions & Feelings",
+    spanish: "Emotions & Feelings",
+    french: "Emotions & Feelings",
+    portuguese: "Emotions & Feelings",
+    vietnamese: "Emotions & Feelings",
+    thai: "Emotions & Feelings",
+    khmer: "Emotions & Feelings",
+    indonesian: "Emotions & Feelings",
+    malay: "Emotions & Feelings",
+    filipino: "Emotions & Feelings"
   },
   words: [
     ["高兴", "gāoxìng", "happy", "feliz", "heureux", "feliz", "vui", "มีความสุข", "រីករាយ", "senang", "gembira", "masaya"],

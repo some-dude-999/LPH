@@ -4,10 +4,17 @@
 export const pack81_culture_and_traditions = {
   meta: {
     wordpack: 81,
-    packNumber: 81,
-    title: "Culture & Traditions",
-    act: "Act V: Refinement",
-    wordCount: 27
+    pinyin: "Culture & Traditions",
+    english: "Culture & Traditions",
+    spanish: "Culture & Traditions",
+    french: "Culture & Traditions",
+    portuguese: "Culture & Traditions",
+    vietnamese: "Culture & Traditions",
+    thai: "Culture & Traditions",
+    khmer: "Culture & Traditions",
+    indonesian: "Culture & Traditions",
+    malay: "Culture & Traditions",
+    filipino: "Culture & Traditions"
   },
   words: [
     ["中国传统文化", "Zhōngguó chuántǒng wénhuà", "Chinese traditional culture", "cultura tradicional china", "culture traditionnelle chinoise", "cultura tradicional chinesa", "văn hóa truyền thống Trung Quốc", "วัฒนธรรมจีนดั้งเดิม", "វប្បធម៌ប្រពៃណីចិន", "budaya tradisional Tiongkok", "budaya tradisional China", "kultura ng Tsina"],

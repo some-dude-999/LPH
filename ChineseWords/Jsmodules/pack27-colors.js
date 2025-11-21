@@ -4,10 +4,17 @@
 export const pack27_colors = {
   meta: {
     wordpack: 27,
-    packNumber: 27,
-    title: "Colors",
-    act: "Act II: Development",
-    wordCount: 51
+    pinyin: "Colors",
+    english: "Colors",
+    spanish: "Colors",
+    french: "Colors",
+    portuguese: "Colors",
+    vietnamese: "Colors",
+    thai: "Colors",
+    khmer: "Colors",
+    indonesian: "Colors",
+    malay: "Colors",
+    filipino: "Colors"
   },
   words: [
     ["红", "hóng", "red", "rojo", "rouge", "vermelho", "đỏ", "สีแดง", "ក្រហម", "merah", "merah", "pula"],
