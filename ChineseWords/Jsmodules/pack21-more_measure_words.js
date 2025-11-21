@@ -4,10 +4,17 @@
 export const pack21_more_measure_words = {
   meta: {
     wordpack: 21,
-    packNumber: 21,
-    title: "More Measure Words",
-    act: "Act II: Development",
-    wordCount: 54
+    pinyin: "More Measure Words",
+    english: "More Measure Words",
+    spanish: "More Measure Words",
+    french: "More Measure Words",
+    portuguese: "More Measure Words",
+    vietnamese: "More Measure Words",
+    thai: "More Measure Words",
+    khmer: "More Measure Words",
+    indonesian: "More Measure Words",
+    malay: "More Measure Words",
+    filipino: "More Measure Words"
   },
   words: [
     ["包", "bāo", "package", "paquete", "paquet", "pacote", "gói", "ห่อ", "កញ្ចប់", "bungkus", "bungkus", "pakete"],

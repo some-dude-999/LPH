@@ -4,10 +4,17 @@
 export const pack106_abstract_concepts = {
   meta: {
     wordpack: 106,
-    packNumber: 106,
-    title: "Abstract Concepts",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Abstract Concepts",
+    english: "Abstract Concepts",
+    spanish: "Abstract Concepts",
+    french: "Abstract Concepts",
+    portuguese: "Abstract Concepts",
+    vietnamese: "Abstract Concepts",
+    thai: "Abstract Concepts",
+    khmer: "Abstract Concepts",
+    indonesian: "Abstract Concepts",
+    malay: "Abstract Concepts",
+    filipino: "Abstract Concepts"
   },
   words: [
     ["这个想法非常不错", "zhè ge xiǎngfǎ fēicháng búcuò", "this idea is very good", "esta idea es muy buena", "cette idée est très bonne", "esta ideia é muito boa", "ý tưởng này rất hay", "ความคิดนี้ดีมาก", "គំនិតនេះល្អណាស់", "ide ini sangat bagus", "idea ini sangat baik", "napakaganda ng ideyang ito"],

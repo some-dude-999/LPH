@@ -4,10 +4,17 @@
 export const pack42_work_and_office = {
   meta: {
     wordpack: 42,
-    packNumber: 42,
-    title: "Work & Office",
-    act: "Act III: Expansion",
-    wordCount: 45
+    pinyin: "Work & Office",
+    english: "Work & Office",
+    spanish: "Work & Office",
+    french: "Work & Office",
+    portuguese: "Work & Office",
+    vietnamese: "Work & Office",
+    thai: "Work & Office",
+    khmer: "Work & Office",
+    indonesian: "Work & Office",
+    malay: "Work & Office",
+    filipino: "Work & Office"
   },
   words: [
     ["工作", "gōngzuò", "work", "trabajo", "travail", "trabalho", "công việc", "งาน", "ការងារ", "pekerjaan", "kerja", "trabaho"],

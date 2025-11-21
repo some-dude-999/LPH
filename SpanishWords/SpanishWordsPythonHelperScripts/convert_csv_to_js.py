@@ -77,10 +77,10 @@ def read_meta_csv():
         for row in reader:
             pack_num = int(row['Pack_Number'])
             pack_meta[pack_num] = {
-                'en': row['Title_EN'],
-                'zh': row['Title_ZH'],
+                'english': row['Title_EN'],
+                'chinese': row['Title_ZH'],
                 'pinyin': row['Title_Pinyin'],
-                'pt': row['Title_PT']
+                'portuguese': row['Title_PT']
             }
 
     return pack_meta
@@ -244,10 +244,10 @@ def main():
         else:
             print(f"      WARNING: Pack {pack_num} not in meta CSV, using placeholder")
             meta_titles = {
-                'en': pack_title,
-                'zh': pack_title,
+                'english': pack_title,
+                'chinese': pack_title,
                 'pinyin': pack_title,
-                'pt': pack_title
+                'portuguese': pack_title
             }
 
         # Store pack data

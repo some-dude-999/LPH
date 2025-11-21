@@ -4,10 +4,17 @@
 export const pack12_basic_adjectives_ii = {
   meta: {
     wordpack: 12,
-    packNumber: 12,
-    title: "Basic Adjectives II",
-    act: "Act I: Foundation",
-    wordCount: 54
+    pinyin: "Basic Adjectives II",
+    english: "Basic Adjectives II",
+    spanish: "Basic Adjectives II",
+    french: "Basic Adjectives II",
+    portuguese: "Basic Adjectives II",
+    vietnamese: "Basic Adjectives II",
+    thai: "Basic Adjectives II",
+    khmer: "Basic Adjectives II",
+    indonesian: "Basic Adjectives II",
+    malay: "Basic Adjectives II",
+    filipino: "Basic Adjectives II"
   },
   words: [
     ["热", "rè", "hot", "caliente", "chaud", "quente", "nóng", "ร้อน", "ក្តៅ", "panas", "panas", "mainit"],

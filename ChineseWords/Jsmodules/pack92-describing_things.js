@@ -4,10 +4,17 @@
 export const pack92_describing_things = {
   meta: {
     wordpack: 92,
-    packNumber: 92,
-    title: "Describing Things",
-    act: "Act V: Refinement",
-    wordCount: 24
+    pinyin: "Describing Things",
+    english: "Describing Things",
+    spanish: "Describing Things",
+    french: "Describing Things",
+    portuguese: "Describing Things",
+    vietnamese: "Describing Things",
+    thai: "Describing Things",
+    khmer: "Describing Things",
+    indonesian: "Describing Things",
+    malay: "Describing Things",
+    filipino: "Describing Things"
   },
   words: [
     ["这是什么东西呀", "zhè shì shénme dōngxi ya", "what is this?", "¿qué es esto?", "qu'est-ce que c'est?", "o que é isto?", "đây là cái gì vậy?", "นี่อะไร", "នេះជាអ្វី?", "ini apa?", "ini apa?", "ano ito?"],

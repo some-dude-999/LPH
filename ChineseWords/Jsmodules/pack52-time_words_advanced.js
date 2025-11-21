@@ -4,10 +4,17 @@
 export const pack52_time_words_advanced = {
   meta: {
     wordpack: 52,
-    packNumber: 52,
-    title: "Time Words Advanced",
-    act: "Act III: Expansion",
-    wordCount: 45
+    pinyin: "Time Words Advanced",
+    english: "Time Words Advanced",
+    spanish: "Time Words Advanced",
+    french: "Time Words Advanced",
+    portuguese: "Time Words Advanced",
+    vietnamese: "Time Words Advanced",
+    thai: "Time Words Advanced",
+    khmer: "Time Words Advanced",
+    indonesian: "Time Words Advanced",
+    malay: "Time Words Advanced",
+    filipino: "Time Words Advanced"
   },
   words: [
     ["秒", "miǎo", "second", "segundo", "seconde", "segundo", "giây", "วินาที", "វិនាទី", "detik", "saat", "segundo"],

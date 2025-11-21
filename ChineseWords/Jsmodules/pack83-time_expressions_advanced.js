@@ -4,10 +4,17 @@
 export const pack83_time_expressions_advanced = {
   meta: {
     wordpack: 83,
-    packNumber: 83,
-    title: "Time Expressions Advanced",
-    act: "Act V: Refinement",
-    wordCount: 27
+    pinyin: "Time Expressions Advanced",
+    english: "Time Expressions Advanced",
+    spanish: "Time Expressions Advanced",
+    french: "Time Expressions Advanced",
+    portuguese: "Time Expressions Advanced",
+    vietnamese: "Time Expressions Advanced",
+    thai: "Time Expressions Advanced",
+    khmer: "Time Expressions Advanced",
+    indonesian: "Time Expressions Advanced",
+    malay: "Time Expressions Advanced",
+    filipino: "Time Expressions Advanced"
   },
   words: [
     ["刚才发生的事", "gāngcái fāshēng de shì", "what just happened", "lo que acaba de pasar", "ce qui vient de se passer", "o que acabou de acontecer", "chuyện vừa xảy ra", "สิ่งที่เพิ่งเกิดขึ้น", "រឿងដែលទើបតែកើតឡើង", "yang baru saja terjadi", "yang baru berlaku", "ang nangyari lang"],

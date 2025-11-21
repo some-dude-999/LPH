@@ -4,10 +4,17 @@
 export const pack55_making_plans = {
   meta: {
     wordpack: 55,
-    packNumber: 55,
-    title: "Making Plans",
-    act: "Act IV: Mastery",
-    wordCount: 30
+    pinyin: "Making Plans",
+    english: "Making Plans",
+    spanish: "Making Plans",
+    french: "Making Plans",
+    portuguese: "Making Plans",
+    vietnamese: "Making Plans",
+    thai: "Making Plans",
+    khmer: "Making Plans",
+    indonesian: "Making Plans",
+    malay: "Making Plans",
+    filipino: "Making Plans"
   },
   words: [
     ["我打算", "wǒ dǎsuàn", "I plan to", "planeo", "je prévois de", "pretendo", "tôi dự định", "ฉันวางแผนจะ", "ខ្ញុំគ្រោងនឹង", "saya berencana", "saya merancang", "plano ko"],

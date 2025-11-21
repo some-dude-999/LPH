@@ -4,10 +4,17 @@
 export const pack41_school_life = {
   meta: {
     wordpack: 41,
-    packNumber: 41,
-    title: "School Life",
-    act: "Act III: Expansion",
-    wordCount: 45
+    pinyin: "School Life",
+    english: "School Life",
+    spanish: "School Life",
+    french: "School Life",
+    portuguese: "School Life",
+    vietnamese: "School Life",
+    thai: "School Life",
+    khmer: "School Life",
+    indonesian: "School Life",
+    malay: "School Life",
+    filipino: "School Life"
   },
   words: [
     ["学校", "xuéxiào", "school", "escuela", "école", "escola", "trường học", "โรงเรียน", "សាលារៀន", "sekolah", "sekolah", "paaralan"],

@@ -4,10 +4,17 @@
 export const pack59_describing_situations = {
   meta: {
     wordpack: 59,
-    packNumber: 59,
-    title: "Describing Situations",
-    act: "Act IV: Mastery",
-    wordCount: 27
+    pinyin: "Describing Situations",
+    english: "Describing Situations",
+    spanish: "Describing Situations",
+    french: "Describing Situations",
+    portuguese: "Describing Situations",
+    vietnamese: "Describing Situations",
+    thai: "Describing Situations",
+    khmer: "Describing Situations",
+    indonesian: "Describing Situations",
+    malay: "Describing Situations",
+    filipino: "Describing Situations"
   },
   words: [
     ["情况怎么样", "qíngkuàng zěnmeyàng", "how's the situation?", "¿cómo está la situación?", "comment est la situation?", "como está a situação?", "tình hình thế nào?", "สถานการณ์เป็นอย่างไร", "ស្ថានការណ៍យ៉ាងណា?", "bagaimana situasinya?", "bagaimana keadaannya?", "kumusta ang sitwasyon?"],

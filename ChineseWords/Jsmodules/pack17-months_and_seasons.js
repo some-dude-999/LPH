@@ -4,10 +4,17 @@
 export const pack17_months_and_seasons = {
   meta: {
     wordpack: 17,
-    packNumber: 17,
-    title: "Months & Seasons",
-    act: "Act II: Development",
-    wordCount: 54
+    pinyin: "Months & Seasons",
+    english: "Months & Seasons",
+    spanish: "Months & Seasons",
+    french: "Months & Seasons",
+    portuguese: "Months & Seasons",
+    vietnamese: "Months & Seasons",
+    thai: "Months & Seasons",
+    khmer: "Months & Seasons",
+    indonesian: "Months & Seasons",
+    malay: "Months & Seasons",
+    filipino: "Months & Seasons"
   },
   words: [
     ["月", "yuè", "month", "mes", "mois", "mês", "tháng", "เดือน", "ខែ", "bulan", "bulan", "buwan"],

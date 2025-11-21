@@ -4,10 +4,17 @@
 export const pack74_frequency_expressions = {
   meta: {
     wordpack: 74,
-    packNumber: 74,
-    title: "Frequency Expressions",
-    act: "Act IV: Mastery",
-    wordCount: 24
+    pinyin: "Frequency Expressions",
+    english: "Frequency Expressions",
+    spanish: "Frequency Expressions",
+    french: "Frequency Expressions",
+    portuguese: "Frequency Expressions",
+    vietnamese: "Frequency Expressions",
+    thai: "Frequency Expressions",
+    khmer: "Frequency Expressions",
+    indonesian: "Frequency Expressions",
+    malay: "Frequency Expressions",
+    filipino: "Frequency Expressions"
   },
   words: [
     ["每天都做", "měitiān dōu zuò", "do it every day", "hacerlo todos los días", "le faire tous les jours", "fazer todo dia", "làm mỗi ngày", "ทำทุกวัน", "ធ្វើរាល់ថ្ងៃ", "melakukan setiap hari", "buat setiap hari", "gawin araw-araw"],

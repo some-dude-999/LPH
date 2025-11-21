@@ -4,10 +4,17 @@
 export const pack26_basic_transportation = {
   meta: {
     wordpack: 26,
-    packNumber: 26,
-    title: "Basic Transportation",
-    act: "Act II: Development",
-    wordCount: 51
+    pinyin: "Basic Transportation",
+    english: "Basic Transportation",
+    spanish: "Basic Transportation",
+    french: "Basic Transportation",
+    portuguese: "Basic Transportation",
+    vietnamese: "Basic Transportation",
+    thai: "Basic Transportation",
+    khmer: "Basic Transportation",
+    indonesian: "Basic Transportation",
+    malay: "Basic Transportation",
+    filipino: "Basic Transportation"
   },
   words: [
     ["坐车", "zuòchē", "take a vehicle", "tomar un vehículo", "prendre un véhicule", "pegar um veículo", "đi xe", "นั่งรถ", "ជិះរថយន្ត", "naik kendaraan", "naik kereta", "sumakay"],

@@ -4,8 +4,10 @@
 export const p136_academic_adjectives = {
   meta: {
     wordpack: 136,
-    en: "Academic Adjectives",
-    packNumber: 136
+    chinese: "Academic Adjectives",
+    pinyin: "Academic Adjectives",
+    spanish: "Academic Adjectives",
+    portuguese: "Academic Adjectives"
   },
   words: [
     ["abstract concept", "\u62bd\u8c61\u6982\u5ff5", "ch\u014duxi\u00e0ng g\u00e0ini\u00e0n", "concepto abstracto", "conceito abstrato"],
@@ -74,8 +76,10 @@ export const p136_academic_adjectives = {
 export const p137_academic_adjectives_2 = {
   meta: {
     wordpack: 137,
-    en: "Academic Adjectives 2",
-    packNumber: 137
+    chinese: "Academic Adjectives 2",
+    pinyin: "Academic Adjectives 2",
+    spanish: "Academic Adjectives 2",
+    portuguese: "Academic Adjectives 2"
   },
   words: [
     ["indigenous people", "\u539f\u4f4f\u6c11", "yu\u00e1nzh\u00f9m\u00edn", "pueblos ind\u00edgenas", "povos ind\u00edgenas"],
@@ -144,8 +148,10 @@ export const p137_academic_adjectives_2 = {
 export const p138_everyday_legal = {
   meta: {
     wordpack: 138,
-    en: "Everyday Legal",
-    packNumber: 138
+    chinese: "Everyday Legal",
+    pinyin: "Everyday Legal",
+    spanish: "Everyday Legal",
+    portuguese: "Everyday Legal"
   },
   words: [
     ["sign contract", "\u7b7e\u5408\u540c", "qi\u0101n h\u00e9tong", "firmar contrato", "assinar contrato"],
@@ -217,8 +223,10 @@ export const p138_everyday_legal = {
 export const p139_everyday_medical = {
   meta: {
     wordpack: 139,
-    en: "Everyday Medical",
-    packNumber: 139
+    chinese: "Everyday Medical",
+    pinyin: "Everyday Medical",
+    spanish: "Everyday Medical",
+    portuguese: "Everyday Medical"
   },
   words: [
     ["see doctor", "\u770b\u533b\u751f", "k\u00e0n y\u012bsh\u0113ng", "ver m\u00e9dico", "ver m\u00e9dico"],
@@ -287,8 +295,10 @@ export const p139_everyday_medical = {
 export const p140_everyday_finance = {
   meta: {
     wordpack: 140,
-    en: "Everyday Finance",
-    packNumber: 140
+    chinese: "Everyday Finance",
+    pinyin: "Everyday Finance",
+    spanish: "Everyday Finance",
+    portuguese: "Everyday Finance"
   },
   words: [
     ["bank account", "\u94f6\u884c\u8d26\u6237", "y\u00ednh\u00e1ng zh\u00e0ngh\u00f9", "cuenta bancaria", "conta banc\u00e1ria"],
@@ -360,8 +370,10 @@ export const p140_everyday_finance = {
 export const p141_research__statistics = {
   meta: {
     wordpack: 141,
-    en: "Research & Statistics",
-    packNumber: 141
+    chinese: "Research & Statistics",
+    pinyin: "Research & Statistics",
+    spanish: "Research & Statistics",
+    portuguese: "Research & Statistics"
   },
   words: [
     ["qualitative research", "\u5b9a\u6027\u7814\u7a76", "d\u00ecngx\u00ecng y\u00e1nji\u016b", "investigaci\u00f3n cualitativa", "pesquisa qualitativa"],
@@ -427,8 +439,10 @@ export const p141_research__statistics = {
 export const p142_psychology_basics = {
   meta: {
     wordpack: 142,
-    en: "Psychology Basics",
-    packNumber: 142
+    chinese: "Psychology Basics",
+    pinyin: "Psychology Basics",
+    spanish: "Psychology Basics",
+    portuguese: "Psychology Basics"
   },
   words: [
     ["cognitive development", "\u8ba4\u77e5\u53d1\u5c55", "r\u00e8nzh\u012b f\u0101zh\u01cen", "desarrollo cognitivo", "desenvolvimento cognitivo"],
@@ -494,8 +508,10 @@ export const p142_psychology_basics = {
 export const p143_sociology_basics = {
   meta: {
     wordpack: 143,
-    en: "Sociology Basics",
-    packNumber: 143
+    chinese: "Sociology Basics",
+    pinyin: "Sociology Basics",
+    spanish: "Sociology Basics",
+    portuguese: "Sociology Basics"
   },
   words: [
     ["study society", "\u7814\u7a76\u793e\u4f1a", "y\u00e1nji\u016b sh\u00e8hu\u00ec", "estudiar sociedad", "estudar sociedade"],
@@ -564,8 +580,10 @@ export const p143_sociology_basics = {
 export const p144_critical_thinking = {
   meta: {
     wordpack: 144,
-    en: "Critical Thinking",
-    packNumber: 144
+    chinese: "Critical Thinking",
+    pinyin: "Critical Thinking",
+    spanish: "Critical Thinking",
+    portuguese: "Critical Thinking"
   },
   words: [
     ["scrutinize carefully", "\u4ed4\u7ec6\u5ba1\u67e5", "z\u01d0x\u00ec sh\u011bnch\u00e1", "escrutar cuidadosamente", "examinar cuidadosamente"],
@@ -634,8 +652,10 @@ export const p144_critical_thinking = {
 export const p145_debate__argument = {
   meta: {
     wordpack: 145,
-    en: "Debate & Argument",
-    packNumber: 145
+    chinese: "Debate & Argument",
+    pinyin: "Debate & Argument",
+    spanish: "Debate & Argument",
+    portuguese: "Debate & Argument"
   },
   words: [
     ["strong argument", "\u6709\u529b\u8bba\u70b9", "y\u01d2ul\u00ec l\u00f9ndi\u01cen", "argumento fuerte", "argumento forte"],
@@ -704,8 +724,10 @@ export const p145_debate__argument = {
 export const p146_negotiation = {
   meta: {
     wordpack: 146,
-    en: "Negotiation",
-    packNumber: 146
+    chinese: "Negotiation",
+    pinyin: "Negotiation",
+    spanish: "Negotiation",
+    portuguese: "Negotiation"
   },
   words: [
     ["negotiate deal", "\u8c08\u5224\u4ea4\u6613", "t\u00e1np\u00e0n ji\u0101oy\u00ec", "negociar acuerdo", "negociar acordo"],
@@ -774,8 +796,10 @@ export const p146_negotiation = {
 export const p147_project_management = {
   meta: {
     wordpack: 147,
-    en: "Project Management",
-    packNumber: 147
+    chinese: "Project Management",
+    pinyin: "Project Management",
+    spanish: "Project Management",
+    portuguese: "Project Management"
   },
   words: [
     ["project scope", "\u9879\u76ee\u8303\u56f4", "xi\u00e0ngm\u00f9 f\u00e0nw\u00e9i", "alcance del proyecto", "escopo do projeto"],
@@ -844,8 +868,10 @@ export const p147_project_management = {
 export const p148_business_advanced = {
   meta: {
     wordpack: 148,
-    en: "Business Advanced",
-    packNumber: 148
+    chinese: "Business Advanced",
+    pinyin: "Business Advanced",
+    spanish: "Business Advanced",
+    portuguese: "Business Advanced"
   },
   words: [
     ["successful entrepreneur", "\u6210\u529f\u7684\u4f01\u4e1a\u5bb6", "ch\u00e9ngg\u014dng de q\u01d0y\u00e8ji\u0101", "empresario exitoso", "empres\u00e1rio bem-sucedido"],
@@ -914,8 +940,10 @@ export const p148_business_advanced = {
 export const p149_environmental_science = {
   meta: {
     wordpack: 149,
-    en: "Environmental Science",
-    packNumber: 149
+    chinese: "Environmental Science",
+    pinyin: "Environmental Science",
+    spanish: "Environmental Science",
+    portuguese: "Environmental Science"
   },
   words: [
     ["protect biodiversity", "\u4fdd\u62a4\u751f\u7269\u591a\u6837\u6027", "b\u01ceoh\u00f9 sh\u0113ngw\u00f9 du\u014dy\u00e0ngx\u00ecng", "proteger biodiversidad", "proteger biodiversidade"],
@@ -984,8 +1012,10 @@ export const p149_environmental_science = {
 export const p150_literary_devices = {
   meta: {
     wordpack: 150,
-    en: "Literary Devices",
-    packNumber: 150
+    chinese: "Literary Devices",
+    pinyin: "Literary Devices",
+    spanish: "Literary Devices",
+    portuguese: "Literary Devices"
   },
   words: [
     ["use alliteration", "\u4f7f\u7528\u5934\u97f5", "sh\u01d0y\u00f2ng t\u00f3uy\u00f9n", "usar aliteraci\u00f3n", "usar alitera\u00e7\u00e3o"],
@@ -1054,8 +1084,10 @@ export const p150_literary_devices = {
 export const p151_advanced_idioms = {
   meta: {
     wordpack: 151,
-    en: "Advanced Idioms",
-    packNumber: 151
+    chinese: "Advanced Idioms",
+    pinyin: "Advanced Idioms",
+    spanish: "Advanced Idioms",
+    portuguese: "Advanced Idioms"
   },
   words: [
     ["the ball is in your court now", "\u73b0\u5728\u8be5\u4f60\u505a\u51b3\u5b9a\u4e86", "xi\u00e0nz\u00e0i g\u0101i n\u01d0 zu\u00f2 ju\u00e9d\u00ecng le", "la pelota est\u00e1 en tu cancha ahora", "a bola est\u00e1 com voc\u00ea agora"],
@@ -1109,8 +1141,10 @@ export const p151_advanced_idioms = {
 export const p152_business_idioms = {
   meta: {
     wordpack: 152,
-    en: "Business Idioms",
-    packNumber: 152
+    chinese: "Business Idioms",
+    pinyin: "Business Idioms",
+    spanish: "Business Idioms",
+    portuguese: "Business Idioms"
   },
   words: [
     ["back to the drawing board again", "\u53c8\u8981\u91cd\u65b0\u5f00\u59cb\u4e86", "y\u00f2u y\u00e0o ch\u00f3ngx\u012bn k\u0101ish\u01d0 le", "de vuelta a la mesa de dibujo otra vez", "de volta \u00e0 prancheta de novo"],
@@ -1164,8 +1198,10 @@ export const p152_business_idioms = {
 export const p153_formal_connectors = {
   meta: {
     wordpack: 153,
-    en: "Formal Connectors",
-    packNumber: 153
+    chinese: "Formal Connectors",
+    pinyin: "Formal Connectors",
+    spanish: "Formal Connectors",
+    portuguese: "Formal Connectors"
   },
   words: [
     ["furthermore we", "\u800c\u4e14\u6211\u4eec", "\u00e9rqi\u011b w\u01d2men", "adem\u00e1s nosotros", "al\u00e9m disso n\u00f3s"],
@@ -1234,8 +1270,10 @@ export const p153_formal_connectors = {
 export const p154_advanced_verbs = {
   meta: {
     wordpack: 154,
-    en: "Advanced Verbs",
-    packNumber: 154
+    chinese: "Advanced Verbs",
+    pinyin: "Advanced Verbs",
+    spanish: "Advanced Verbs",
+    portuguese: "Advanced Verbs"
   },
   words: [
     ["constitute majority", "\u6784\u6210\u591a\u6570", "g\u00f2uch\u00e9ng du\u014dsh\u00f9", "constituir mayor\u00eda", "constituir maioria"],
@@ -1304,8 +1342,10 @@ export const p154_advanced_verbs = {
 export const p155_nuanced_adjectives = {
   meta: {
     wordpack: 155,
-    en: "Nuanced Adjectives",
-    packNumber: 155
+    chinese: "Nuanced Adjectives",
+    pinyin: "Nuanced Adjectives",
+    spanish: "Nuanced Adjectives",
+    portuguese: "Nuanced Adjectives"
   },
   words: [
     ["meticulous attention", "\u7ec6\u81f4\u5165\u5fae\u7684\u5173\u6ce8", "x\u00eczh\u00ec r\u00f9w\u0113i de gu\u0101nzh\u00f9", "atenci\u00f3n meticulosa", "aten\u00e7\u00e3o meticulosa"],
@@ -1374,8 +1414,10 @@ export const p155_nuanced_adjectives = {
 export const p156_question_patterns = {
   meta: {
     wordpack: 156,
-    en: "Question Patterns",
-    packNumber: 156
+    chinese: "Question Patterns",
+    pinyin: "Question Patterns",
+    spanish: "Question Patterns",
+    portuguese: "Question Patterns"
   },
   words: [
     ["do you want some", "\u4f60\u8981\u6765\u4e00\u4e9b\u5417", "n\u01d0 y\u00e0o l\u00e1i y\u00ecxi\u0113 ma", "\u00bfquieres algo?", "voc\u00ea quer um pouco?"],
@@ -1444,8 +1486,10 @@ export const p156_question_patterns = {
 export const p157_response_patterns = {
   meta: {
     wordpack: 157,
-    en: "Response Patterns",
-    packNumber: 157
+    chinese: "Response Patterns",
+    pinyin: "Response Patterns",
+    spanish: "Response Patterns",
+    portuguese: "Response Patterns"
   },
   words: [
     ["that makes sense now", "\u73b0\u5728\u8bf4\u5f97\u901a\u4e86", "xi\u00e0nz\u00e0i shu\u014d de t\u014dng le", "eso tiene sentido ahora", "isso faz sentido agora"],
@@ -1514,8 +1558,10 @@ export const p157_response_patterns = {
 export const p158_negative_patterns = {
   meta: {
     wordpack: 158,
-    en: "Negative Patterns",
-    packNumber: 158
+    chinese: "Negative Patterns",
+    pinyin: "Negative Patterns",
+    spanish: "Negative Patterns",
+    portuguese: "Negative Patterns"
   },
   words: [
     ["I don't think so honestly", "\u8001\u5b9e\u8bf4\u6211\u4e0d\u8fd9\u4e48\u8ba4\u4e3a", "l\u01ceosh\u00edshu\u014d w\u01d2 b\u00f9 zh\u00e8me r\u00e8nw\u00e9i", "honestamente no lo creo", "sinceramente n\u00e3o acho"],
@@ -1584,8 +1630,10 @@ export const p158_negative_patterns = {
 export const p159_agreement__disagreement = {
   meta: {
     wordpack: 159,
-    en: "Agreement & Disagreement",
-    packNumber: 159
+    chinese: "Agreement & Disagreement",
+    pinyin: "Agreement & Disagreement",
+    spanish: "Agreement & Disagreement",
+    portuguese: "Agreement & Disagreement"
   },
   words: [
     ["I totally agree with you", "\u6211\u5b8c\u5168\u540c\u610f\u4f60", "w\u01d2 w\u00e1nqu\u00e1n t\u00f3ngy\u00ec n\u01d0", "estoy totalmente de acuerdo contigo", "concordo totalmente com voc\u00ea"],
@@ -1654,8 +1702,10 @@ export const p159_agreement__disagreement = {
 export const p160_apology__excuse_patterns = {
   meta: {
     wordpack: 160,
-    en: "Apology & Excuse Patterns",
-    packNumber: 160
+    chinese: "Apology & Excuse Patterns",
+    pinyin: "Apology & Excuse Patterns",
+    spanish: "Apology & Excuse Patterns",
+    portuguese: "Apology & Excuse Patterns"
   },
   words: [
     ["sorry I'm late again", "\u62b1\u6b49\u6211\u53c8\u8fdf\u5230\u4e86", "b\u00e0oqi\u00e0n w\u01d2 y\u00f2u ch\u00edd\u00e0o le", "perd\u00f3n llego tarde otra vez", "desculpe estou atrasado de novo"],

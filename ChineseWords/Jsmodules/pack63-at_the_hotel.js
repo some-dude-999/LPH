@@ -4,10 +4,17 @@
 export const pack63_at_the_hotel = {
   meta: {
     wordpack: 63,
-    packNumber: 63,
-    title: "At the Hotel",
-    act: "Act IV: Mastery",
-    wordCount: 27
+    pinyin: "At the Hotel",
+    english: "At the Hotel",
+    spanish: "At the Hotel",
+    french: "At the Hotel",
+    portuguese: "At the Hotel",
+    vietnamese: "At the Hotel",
+    thai: "At the Hotel",
+    khmer: "At the Hotel",
+    indonesian: "At the Hotel",
+    malay: "At the Hotel",
+    filipino: "At the Hotel"
   },
   words: [
     ["我要订房", "wǒ yào dìng fáng", "I want to book a room", "quiero reservar una habitación", "je veux réserver une chambre", "quero reservar um quarto", "tôi muốn đặt phòng", "ฉันต้องการจองห้อง", "ខ្ញុំចង់ទុកបន្ទប់", "saya mau pesan kamar", "saya mau tempah bilik", "gusto kong mag-book ng kwarto"],

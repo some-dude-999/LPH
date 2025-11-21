@@ -4,10 +4,17 @@
 export const pack75_describing_amounts = {
   meta: {
     wordpack: 75,
-    packNumber: 75,
-    title: "Describing Amounts",
-    act: "Act IV: Mastery",
-    wordCount: 24
+    pinyin: "Describing Amounts",
+    english: "Describing Amounts",
+    spanish: "Describing Amounts",
+    french: "Describing Amounts",
+    portuguese: "Describing Amounts",
+    vietnamese: "Describing Amounts",
+    thai: "Describing Amounts",
+    khmer: "Describing Amounts",
+    indonesian: "Describing Amounts",
+    malay: "Describing Amounts",
+    filipino: "Describing Amounts"
   },
   words: [
     ["很多东西啊", "hěnduō dōngxi a", "so many things!", "¡tantas cosas!", "tant de choses!", "tantas coisas!", "nhiều thứ quá!", "ของเยอะมาก", "របស់រាយច្រើនណាស់", "banyak sekali barang!", "banyak benda!", "ang daming bagay!"],

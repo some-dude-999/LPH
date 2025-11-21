@@ -4,8 +4,10 @@
 export const p1_greetings__basics = {
   meta: {
     wordpack: 1,
-    en: "Greetings & Basics",
-    packNumber: 1
+    chinese: "Greetings & Basics",
+    pinyin: "Greetings & Basics",
+    spanish: "Greetings & Basics",
+    portuguese: "Greetings & Basics"
   },
   words: [
     ["hello there", "\u4f60\u597d", "n\u01d0 h\u01ceo", "hola", "ol\u00e1"],
@@ -74,8 +76,10 @@ export const p1_greetings__basics = {
 export const p2_numbers_1_20 = {
   meta: {
     wordpack: 2,
-    en: "Numbers 1-20",
-    packNumber: 2
+    chinese: "Numbers 1-20",
+    pinyin: "Numbers 1-20",
+    spanish: "Numbers 1-20",
+    portuguese: "Numbers 1-20"
   },
   words: [
     ["one apple", "\u4e00\u4e2a\u82f9\u679c", "y\u00ed g\u00e8 p\u00ednggu\u01d2", "una manzana", "uma ma\u00e7\u00e3"],
@@ -144,8 +148,10 @@ export const p2_numbers_1_20 = {
 export const p3_numbers__counting = {
   meta: {
     wordpack: 3,
-    en: "Numbers & Counting",
-    packNumber: 3
+    chinese: "Numbers & Counting",
+    pinyin: "Numbers & Counting",
+    spanish: "Numbers & Counting",
+    portuguese: "Numbers & Counting"
   },
   words: [
     ["thirty days", "\u4e09\u5341\u5929", "s\u0101nsh\u00ed ti\u0101n", "treinta d\u00edas", "trinta dias"],
@@ -214,8 +220,10 @@ export const p3_numbers__counting = {
 export const p4_articles__determiners = {
   meta: {
     wordpack: 4,
-    en: "Articles & Determiners",
-    packNumber: 4
+    chinese: "Articles & Determiners",
+    pinyin: "Articles & Determiners",
+    spanish: "Articles & Determiners",
+    portuguese: "Articles & Determiners"
   },
   words: [
     ["a book", "\u4e00\u672c\u4e66", "y\u00ec b\u011bn sh\u016b", "un libro", "um livro"],
@@ -284,8 +292,10 @@ export const p4_articles__determiners = {
 export const p5_quantifiers = {
   meta: {
     wordpack: 5,
-    en: "Quantifiers",
-    packNumber: 5
+    chinese: "Quantifiers",
+    pinyin: "Quantifiers",
+    spanish: "Quantifiers",
+    portuguese: "Quantifiers"
   },
   words: [
     ["many people", "\u5f88\u591a\u4eba", "h\u011bn du\u014d r\u00e9n", "mucha gente", "muitas pessoas"],
@@ -354,8 +364,10 @@ export const p5_quantifiers = {
 export const p6_contractions = {
   meta: {
     wordpack: 6,
-    en: "Contractions",
-    packNumber: 6
+    chinese: "Contractions",
+    pinyin: "Contractions",
+    spanish: "Contractions",
+    portuguese: "Contractions"
   },
   words: [
     ["I'm fine", "\u6211\u5f88\u597d", "w\u01d2 h\u011bn h\u01ceo", "estoy bien", "estou bem"],
@@ -424,8 +436,10 @@ export const p6_contractions = {
 export const p7_contractions_2 = {
   meta: {
     wordpack: 7,
-    en: "Contractions 2",
-    packNumber: 7
+    chinese: "Contractions 2",
+    pinyin: "Contractions 2",
+    spanish: "Contractions 2",
+    portuguese: "Contractions 2"
   },
   words: [
     ["don't worry", "\u522b\u62c5\u5fc3", "bi\u00e9 d\u0101nx\u012bn", "no te preocupes", "n\u00e3o se preocupe"],
@@ -494,8 +508,10 @@ export const p7_contractions_2 = {
 export const p8_common_expressions = {
   meta: {
     wordpack: 8,
-    en: "Common Expressions",
-    packNumber: 8
+    chinese: "Common Expressions",
+    pinyin: "Common Expressions",
+    spanish: "Common Expressions",
+    portuguese: "Common Expressions"
   },
   words: [
     ["I don't know why", "\u6211\u4e0d\u77e5\u9053\u4e3a\u4ec0\u4e48", "w\u01d2 b\u00f9 zh\u012bd\u00e0o w\u00e8ish\u00e9nme", "no s\u00e9 por qu\u00e9", "n\u00e3o sei por qu\u00ea"],
@@ -564,8 +580,10 @@ export const p8_common_expressions = {
 export const p9_colors = {
   meta: {
     wordpack: 9,
-    en: "Colors",
-    packNumber: 9
+    chinese: "Colors",
+    pinyin: "Colors",
+    spanish: "Colors",
+    portuguese: "Colors"
   },
   words: [
     ["red car", "\u7ea2\u8272\u8f66", "h\u00f3ngs\u00e8 ch\u0113", "carro rojo", "carro vermelho"],
@@ -634,8 +652,10 @@ export const p9_colors = {
 export const p10_days__time = {
   meta: {
     wordpack: 10,
-    en: "Days & Time",
-    packNumber: 10
+    chinese: "Days & Time",
+    pinyin: "Days & Time",
+    spanish: "Days & Time",
+    portuguese: "Days & Time"
   },
   words: [
     ["Monday morning", "\u5468\u4e00\u65e9\u4e0a", "zh\u014duy\u012b z\u01ceoshang", "lunes por la ma\u00f1ana", "segunda de manh\u00e3"],
@@ -704,8 +724,10 @@ export const p10_days__time = {
 export const p11_months__seasons = {
   meta: {
     wordpack: 11,
-    en: "Months & Seasons",
-    packNumber: 11
+    chinese: "Months & Seasons",
+    pinyin: "Months & Seasons",
+    spanish: "Months & Seasons",
+    portuguese: "Months & Seasons"
   },
   words: [
     ["January first", "\u4e00\u6708\u4e00\u65e5", "y\u012byu\u00e8 y\u012b r\u00ec", "primero de enero", "primeiro de janeiro"],
@@ -774,8 +796,10 @@ export const p11_months__seasons = {
 export const p12_family = {
   meta: {
     wordpack: 12,
-    en: "Family",
-    packNumber: 12
+    chinese: "Family",
+    pinyin: "Family",
+    spanish: "Family",
+    portuguese: "Family"
   },
   words: [
     ["my mother", "\u6211\u5988\u5988", "w\u01d2 m\u0101ma", "mi madre", "minha m\u00e3e"],
@@ -844,8 +868,10 @@ export const p12_family = {
 export const p13_body_parts = {
   meta: {
     wordpack: 13,
-    en: "Body Parts",
-    packNumber: 13
+    chinese: "Body Parts",
+    pinyin: "Body Parts",
+    spanish: "Body Parts",
+    portuguese: "Body Parts"
   },
   words: [
     ["my head", "\u6211\u7684\u5934", "w\u01d2 de t\u00f3u", "mi cabeza", "minha cabe\u00e7a"],
@@ -914,8 +940,10 @@ export const p13_body_parts = {
 export const p14_personal_pronouns = {
   meta: {
     wordpack: 14,
-    en: "Personal Pronouns",
-    packNumber: 14
+    chinese: "Personal Pronouns",
+    pinyin: "Personal Pronouns",
+    spanish: "Personal Pronouns",
+    portuguese: "Personal Pronouns"
   },
   words: [
     ["I know", "\u6211\u77e5\u9053", "w\u01d2 zh\u012bd\u00e0o", "lo s\u00e9", "eu sei"],
@@ -984,8 +1012,10 @@ export const p14_personal_pronouns = {
 export const p15_possessives__relatives = {
   meta: {
     wordpack: 15,
-    en: "Possessives & Relatives",
-    packNumber: 15
+    chinese: "Possessives & Relatives",
+    pinyin: "Possessives & Relatives",
+    spanish: "Possessives & Relatives",
+    portuguese: "Possessives & Relatives"
   },
   words: [
     ["my book is here", "\u6211\u7684\u4e66\u5728\u8fd9\u91cc", "w\u01d2 de sh\u016b z\u00e0i zh\u00e8l\u01d0", "mi libro est\u00e1 aqu\u00ed", "meu livro est\u00e1 aqui"],
@@ -1054,8 +1084,10 @@ export const p15_possessives__relatives = {
 export const p16_question_words = {
   meta: {
     wordpack: 16,
-    en: "Question Words",
-    packNumber: 16
+    chinese: "Question Words",
+    pinyin: "Question Words",
+    spanish: "Question Words",
+    portuguese: "Question Words"
   },
   words: [
     ["what is this", "\u8fd9\u662f\u4ec0\u4e48", "zh\u00e8 sh\u00ec sh\u00e9nme", "\u00bfqu\u00e9 es esto?", "o que \u00e9 isto?"],
@@ -1124,8 +1156,10 @@ export const p16_question_words = {
 export const p17_modal_verbs = {
   meta: {
     wordpack: 17,
-    en: "Modal Verbs",
-    packNumber: 17
+    chinese: "Modal Verbs",
+    pinyin: "Modal Verbs",
+    spanish: "Modal Verbs",
+    portuguese: "Modal Verbs"
   },
   words: [
     ["I can help", "\u6211\u53ef\u4ee5\u5e2e\u5fd9", "w\u01d2 k\u011by\u01d0 b\u0101ngm\u00e1ng", "puedo ayudar", "eu posso ajudar"],
@@ -1194,8 +1228,10 @@ export const p17_modal_verbs = {
 export const p18_essential_verbs:_be__have = {
   meta: {
     wordpack: 18,
-    en: "Essential Verbs: Be & Have",
-    packNumber: 18
+    chinese: "Essential Verbs: Be & Have",
+    pinyin: "Essential Verbs: Be & Have",
+    spanish: "Essential Verbs: Be & Have",
+    portuguese: "Essential Verbs: Be & Have"
   },
   words: [
     ["be careful", "\u5c0f\u5fc3", "xi\u01ceox\u012bn", "ten cuidado", "tenha cuidado"],
@@ -1264,8 +1300,10 @@ export const p18_essential_verbs:_be__have = {
 export const p19_essential_verbs:_go__come = {
   meta: {
     wordpack: 19,
-    en: "Essential Verbs: Go & Come",
-    packNumber: 19
+    chinese: "Essential Verbs: Go & Come",
+    pinyin: "Essential Verbs: Go & Come",
+    spanish: "Essential Verbs: Go & Come",
+    portuguese: "Essential Verbs: Go & Come"
   },
   words: [
     ["let's go home", "\u6211\u4eec\u56de\u5bb6\u5427", "w\u01d2men hu\u00edji\u0101 ba", "vamos a casa", "vamos para casa"],
@@ -1334,8 +1372,10 @@ export const p19_essential_verbs:_go__come = {
 export const p20_essential_verbs:_common_actions = {
   meta: {
     wordpack: 20,
-    en: "Essential Verbs: Common Actions",
-    packNumber: 20
+    chinese: "Essential Verbs: Common Actions",
+    pinyin: "Essential Verbs: Common Actions",
+    spanish: "Essential Verbs: Common Actions",
+    portuguese: "Essential Verbs: Common Actions"
   },
   words: [
     ["make breakfast for me", "\u7ed9\u6211\u505a\u65e9\u9910", "g\u011bi w\u01d2 zu\u00f2 z\u01ceoc\u0101n", "hazme el desayuno", "fa\u00e7a caf\u00e9 da manh\u00e3 para mim"],
@@ -1404,8 +1444,10 @@ export const p20_essential_verbs:_common_actions = {
 export const p21_essential_verbs:_daily_actions = {
   meta: {
     wordpack: 21,
-    en: "Essential Verbs: Daily Actions",
-    packNumber: 21
+    chinese: "Essential Verbs: Daily Actions",
+    pinyin: "Essential Verbs: Daily Actions",
+    spanish: "Essential Verbs: Daily Actions",
+    portuguese: "Essential Verbs: Daily Actions"
   },
   words: [
     ["eat breakfast", "\u5403\u65e9\u9910", "ch\u012b z\u01ceoc\u0101n", "desayunar", "tomar caf\u00e9 da manh\u00e3"],
@@ -1474,8 +1516,10 @@ export const p21_essential_verbs:_daily_actions = {
 export const p22_essential_verbs:_communication = {
   meta: {
     wordpack: 22,
-    en: "Essential Verbs: Communication",
-    packNumber: 22
+    chinese: "Essential Verbs: Communication",
+    pinyin: "Essential Verbs: Communication",
+    spanish: "Essential Verbs: Communication",
+    portuguese: "Essential Verbs: Communication"
   },
   words: [
     ["speak slowly", "\u6162\u6162\u8bf4", "m\u00e0nman shu\u014d", "habla despacio", "fale devagar"],
@@ -1544,8 +1588,10 @@ export const p22_essential_verbs:_communication = {
 export const p23_irregular_verbs_1 = {
   meta: {
     wordpack: 23,
-    en: "Irregular Verbs 1",
-    packNumber: 23
+    chinese: "Irregular Verbs 1",
+    pinyin: "Irregular Verbs 1",
+    spanish: "Irregular Verbs 1",
+    portuguese: "Irregular Verbs 1"
   },
   words: [
     ["buy groceries", "\u4e70\u83dc", "m\u01cei c\u00e0i", "compra comestibles", "compra mantimentos"],
@@ -1614,8 +1660,10 @@ export const p23_irregular_verbs_1 = {
 export const p24_irregular_verbs_2 = {
   meta: {
     wordpack: 24,
-    en: "Irregular Verbs 2",
-    packNumber: 24
+    chinese: "Irregular Verbs 2",
+    pinyin: "Irregular Verbs 2",
+    spanish: "Irregular Verbs 2",
+    portuguese: "Irregular Verbs 2"
   },
   words: [
     ["fall down", "\u6454\u5012", "shu\u0101i d\u01ceo", "cae", "cai"],
@@ -1684,8 +1732,10 @@ export const p24_irregular_verbs_2 = {
 export const p25_irregular_verbs_3 = {
   meta: {
     wordpack: 25,
-    en: "Irregular Verbs 3",
-    packNumber: 25
+    chinese: "Irregular Verbs 3",
+    pinyin: "Irregular Verbs 3",
+    spanish: "Irregular Verbs 3",
+    portuguese: "Irregular Verbs 3"
   },
   words: [
     ["hold on", "\u7b49\u4e00\u4e0b", "d\u011bng y\u012bxi\u00e0", "espera", "espera"],
@@ -1754,8 +1804,10 @@ export const p25_irregular_verbs_3 = {
 export const p26_irregular_verbs_4 = {
   meta: {
     wordpack: 26,
-    en: "Irregular Verbs 4",
-    packNumber: 26
+    chinese: "Irregular Verbs 4",
+    pinyin: "Irregular Verbs 4",
+    spanish: "Irregular Verbs 4",
+    portuguese: "Irregular Verbs 4"
   },
   words: [
     ["sing along with me", "\u8ddf\u6211\u4e00\u8d77\u5531", "g\u0113n w\u01d2 y\u00ecq\u01d0 ch\u00e0ng", "canta conmigo", "cante comigo"],
@@ -1824,8 +1876,10 @@ export const p26_irregular_verbs_4 = {
 export const p27_essential_adjectives_1 = {
   meta: {
     wordpack: 27,
-    en: "Essential Adjectives 1",
-    packNumber: 27
+    chinese: "Essential Adjectives 1",
+    pinyin: "Essential Adjectives 1",
+    spanish: "Essential Adjectives 1",
+    portuguese: "Essential Adjectives 1"
   },
   words: [
     ["very good", "\u975e\u5e38\u597d", "f\u0113ich\u00e1ng h\u01ceo", "muy bueno", "muito bom"],
@@ -1894,8 +1948,10 @@ export const p27_essential_adjectives_1 = {
 export const p28_essential_adjectives_2 = {
   meta: {
     wordpack: 28,
-    en: "Essential Adjectives 2",
-    packNumber: 28
+    chinese: "Essential Adjectives 2",
+    pinyin: "Essential Adjectives 2",
+    spanish: "Essential Adjectives 2",
+    portuguese: "Essential Adjectives 2"
   },
   words: [
     ["very nice", "\u975e\u5e38\u597d", "f\u0113ich\u00e1ng h\u01ceo", "muy lindo", "muito legal"],
@@ -1964,8 +2020,10 @@ export const p28_essential_adjectives_2 = {
 export const p29_basic_emotions = {
   meta: {
     wordpack: 29,
-    en: "Basic Emotions",
-    packNumber: 29
+    chinese: "Basic Emotions",
+    pinyin: "Basic Emotions",
+    spanish: "Basic Emotions",
+    portuguese: "Basic Emotions"
   },
   words: [
     ["very happy", "\u975e\u5e38\u5f00\u5fc3", "f\u0113ich\u00e1ng k\u0101ix\u012bn", "muy feliz", "muito feliz"],
@@ -2034,8 +2092,10 @@ export const p29_basic_emotions = {
 export const p30_common_animals = {
   meta: {
     wordpack: 30,
-    en: "Common Animals",
-    packNumber: 30
+    chinese: "Common Animals",
+    pinyin: "Common Animals",
+    spanish: "Common Animals",
+    portuguese: "Common Animals"
   },
   words: [
     ["pet dog", "\u5ba0\u7269\u72d7", "ch\u01d2ngw\u00f9 g\u01d2u", "perro mascota", "cachorro de estima\u00e7\u00e3o"],
@@ -2104,8 +2164,10 @@ export const p30_common_animals = {
 export const p31_home__rooms = {
   meta: {
     wordpack: 31,
-    en: "Home & Rooms",
-    packNumber: 31
+    chinese: "Home & Rooms",
+    pinyin: "Home & Rooms",
+    spanish: "Home & Rooms",
+    portuguese: "Home & Rooms"
   },
   words: [
     ["big house", "\u5927\u623f\u5b50", "d\u00e0 f\u00e1ngzi", "casa grande", "casa grande"],
@@ -2174,8 +2236,10 @@ export const p31_home__rooms = {
 export const p32_food_basics = {
   meta: {
     wordpack: 32,
-    en: "Food Basics",
-    packNumber: 32
+    chinese: "Food Basics",
+    pinyin: "Food Basics",
+    spanish: "Food Basics",
+    portuguese: "Food Basics"
   },
   words: [
     ["delicious food", "\u7f8e\u5473\u98df\u7269", "m\u011biw\u00e8i sh\u00edw\u00f9", "comida deliciosa", "comida deliciosa"],
@@ -2244,8 +2308,10 @@ export const p32_food_basics = {
 export const p33_drinks__meals = {
   meta: {
     wordpack: 33,
-    en: "Drinks & Meals",
-    packNumber: 33
+    chinese: "Drinks & Meals",
+    pinyin: "Drinks & Meals",
+    spanish: "Drinks & Meals",
+    portuguese: "Drinks & Meals"
   },
   words: [
     ["black coffee", "\u9ed1\u5496\u5561", "h\u0113i k\u0101f\u0113i", "caf\u00e9 negro", "caf\u00e9 puro"],
@@ -2314,8 +2380,10 @@ export const p33_drinks__meals = {
 export const p34_clothing = {
   meta: {
     wordpack: 34,
-    en: "Clothing",
-    packNumber: 34
+    chinese: "Clothing",
+    pinyin: "Clothing",
+    spanish: "Clothing",
+    portuguese: "Clothing"
   },
   words: [
     ["new clothes", "\u65b0\u8863\u670d", "x\u012bn y\u012bfu", "ropa nueva", "roupa nova"],
@@ -2384,8 +2452,10 @@ export const p34_clothing = {
 export const p35_weather = {
   meta: {
     wordpack: 35,
-    en: "Weather",
-    packNumber: 35
+    chinese: "Weather",
+    pinyin: "Weather",
+    spanish: "Weather",
+    portuguese: "Weather"
   },
   words: [
     ["nice weather", "\u597d\u5929\u6c14", "h\u01ceo ti\u0101nq\u00ec", "buen clima", "tempo bom"],
@@ -2454,8 +2524,10 @@ export const p35_weather = {
 export const p36_prepositions_of_place = {
   meta: {
     wordpack: 36,
-    en: "Prepositions of Place",
-    packNumber: 36
+    chinese: "Prepositions of Place",
+    pinyin: "Prepositions of Place",
+    spanish: "Prepositions of Place",
+    portuguese: "Prepositions of Place"
   },
   words: [
     ["in the box", "\u5728\u76d2\u5b50\u91cc", "z\u00e0i h\u00e9zi l\u01d0", "en la caja", "na caixa"],
@@ -2524,8 +2596,10 @@ export const p36_prepositions_of_place = {
 export const p37_prepositions_of_time__other = {
   meta: {
     wordpack: 37,
-    en: "Prepositions of Time & Other",
-    packNumber: 37
+    chinese: "Prepositions of Time & Other",
+    pinyin: "Prepositions of Time & Other",
+    spanish: "Prepositions of Time & Other",
+    portuguese: "Prepositions of Time & Other"
   },
   words: [
     ["let's eat before lunch", "\u5348\u996d\u524d\u5403\u5427", "w\u01d4f\u00e0n qi\u00e1n ch\u012b ba", "comamos antes del almuerzo", "vamos comer antes do almo\u00e7o"],
@@ -2594,8 +2668,10 @@ export const p37_prepositions_of_time__other = {
 export const p38_time_expressions = {
   meta: {
     wordpack: 38,
-    en: "Time Expressions",
-    packNumber: 38
+    chinese: "Time Expressions",
+    pinyin: "Time Expressions",
+    spanish: "Time Expressions",
+    portuguese: "Time Expressions"
   },
   words: [
     ["right now", "\u73b0\u5728", "xi\u00e0nz\u00e0i", "ahora mismo", "agora mesmo"],
@@ -2664,8 +2740,10 @@ export const p38_time_expressions = {
 export const p39_negatives__limits = {
   meta: {
     wordpack: 39,
-    en: "Negatives & Limits",
-    packNumber: 39
+    chinese: "Negatives & Limits",
+    pinyin: "Negatives & Limits",
+    spanish: "Negatives & Limits",
+    portuguese: "Negatives & Limits"
   },
   words: [
     ["not now", "\u73b0\u5728\u4e0d\u884c", "xi\u00e0nz\u00e0i b\u00f9x\u00edng", "ahora no", "agora n\u00e3o"],
@@ -2734,8 +2812,10 @@ export const p39_negatives__limits = {
 export const p40_basic_transportation = {
   meta: {
     wordpack: 40,
-    en: "Basic Transportation",
-    packNumber: 40
+    chinese: "Basic Transportation",
+    pinyin: "Basic Transportation",
+    spanish: "Basic Transportation",
+    portuguese: "Basic Transportation"
   },
   words: [
     ["I got a new car", "\u6211\u4e70\u4e86\u8f86\u65b0\u8f66", "w\u01d2 m\u01cei le li\u00e0ng x\u012bn ch\u0113", "consegu\u00ed un carro nuevo", "eu comprei um carro novo"],
@@ -2804,8 +2884,10 @@ export const p40_basic_transportation = {
 export const p41_common_nouns = {
   meta: {
     wordpack: 41,
-    en: "Common Nouns",
-    packNumber: 41
+    chinese: "Common Nouns",
+    pinyin: "Common Nouns",
+    spanish: "Common Nouns",
+    portuguese: "Common Nouns"
   },
   words: [
     ["there's one thing I know", "\u6709\u4e00\u4ef6\u4e8b\u6211\u77e5\u9053", "y\u01d2u y\u00ed ji\u00e0n sh\u00ec w\u01d2 zh\u012bd\u00e0o", "hay una cosa que s\u00e9", "tem uma coisa que eu sei"],
@@ -2874,8 +2956,10 @@ export const p41_common_nouns = {
 export const p42_more_common_nouns = {
   meta: {
     wordpack: 42,
-    en: "More Common Nouns",
-    packNumber: 42
+    chinese: "More Common Nouns",
+    pinyin: "More Common Nouns",
+    spanish: "More Common Nouns",
+    portuguese: "More Common Nouns"
   },
   words: [
     ["that's the right answer", "\u90a3\u662f\u6b63\u786e\u7b54\u6848", "n\u00e0 sh\u00ec zh\u00e8ngqu\u00e8 d\u00e1'\u00e0n", "esa es la respuesta correcta", "essa \u00e9 a resposta certa"],
@@ -2944,8 +3028,10 @@ export const p42_more_common_nouns = {
 export const p43_places_in_town = {
   meta: {
     wordpack: 43,
-    en: "Places in Town",
-    packNumber: 43
+    chinese: "Places in Town",
+    pinyin: "Places in Town",
+    spanish: "Places in Town",
+    portuguese: "Places in Town"
   },
   words: [
     ["small town", "\u5c0f\u9547", "xi\u01ceozh\u00e8n", "pueblo peque\u00f1o", "cidade pequena"],
@@ -3014,8 +3100,10 @@ export const p43_places_in_town = {
 export const p44_casual__informal_english = {
   meta: {
     wordpack: 44,
-    en: "Casual & Informal English",
-    packNumber: 44
+    chinese: "Casual & Informal English",
+    pinyin: "Casual & Informal English",
+    spanish: "Casual & Informal English",
+    portuguese: "Casual & Informal English"
   },
   words: [
     ["yeah right as if", "\u662f\u554a\u624d\u602a", "sh\u00ec a c\u00e1i gu\u00e0i", "s\u00ed claro como si", "\u00e9 claro n\u00e9"],
@@ -3084,8 +3172,10 @@ export const p44_casual__informal_english = {
 export const p45_filler_words__reactions = {
   meta: {
     wordpack: 45,
-    en: "Filler Words & Reactions",
-    packNumber: 45
+    chinese: "Filler Words & Reactions",
+    pinyin: "Filler Words & Reactions",
+    spanish: "Filler Words & Reactions",
+    portuguese: "Filler Words & Reactions"
   },
   words: [
     ["like you know", "\u4f60\u77e5\u9053\u7684", "n\u01d0 zh\u012bd\u00e0o de", "como sabes", "tipo voc\u00ea sabe"],
@@ -3154,8 +3244,10 @@ export const p45_filler_words__reactions = {
 export const p46_directions = {
   meta: {
     wordpack: 46,
-    en: "Directions",
-    packNumber: 46
+    chinese: "Directions",
+    pinyin: "Directions",
+    spanish: "Directions",
+    portuguese: "Directions"
   },
   words: [
     ["turn left", "\u5de6\u8f6c", "zu\u01d2 zhu\u01cen", "gira a la izquierda", "vira \u00e0 esquerda"],
@@ -3224,8 +3316,10 @@ export const p46_directions = {
 export const p47_more_transportation = {
   meta: {
     wordpack: 47,
-    en: "More Transportation",
-    packNumber: 47
+    chinese: "More Transportation",
+    pinyin: "More Transportation",
+    spanish: "More Transportation",
+    portuguese: "More Transportation"
   },
   words: [
     ["subway station", "\u5730\u94c1\u7ad9", "d\u00ecti\u011b zh\u00e0n", "estaci\u00f3n de metro", "esta\u00e7\u00e3o de metr\u00f4"],
@@ -3294,8 +3388,10 @@ export const p47_more_transportation = {
 export const p48_furniture = {
   meta: {
     wordpack: 48,
-    en: "Furniture",
-    packNumber: 48
+    chinese: "Furniture",
+    pinyin: "Furniture",
+    spanish: "Furniture",
+    portuguese: "Furniture"
   },
   words: [
     ["kitchen table", "\u9910\u684c", "c\u0101nzhu\u014d", "mesa de cocina", "mesa de cozinha"],
@@ -3364,8 +3460,10 @@ export const p48_furniture = {
 export const p49_kitchen_items = {
   meta: {
     wordpack: 49,
-    en: "Kitchen Items",
-    packNumber: 49
+    chinese: "Kitchen Items",
+    pinyin: "Kitchen Items",
+    spanish: "Kitchen Items",
+    portuguese: "Kitchen Items"
   },
   words: [
     ["gas stove", "\u7164\u6c14\u7089", "m\u00e9iq\u00ec l\u00fa", "estufa de gas", "fog\u00e3o a g\u00e1s"],

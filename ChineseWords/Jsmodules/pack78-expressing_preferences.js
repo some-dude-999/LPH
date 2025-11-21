@@ -4,10 +4,17 @@
 export const pack78_expressing_preferences = {
   meta: {
     wordpack: 78,
-    packNumber: 78,
-    title: "Expressing Preferences",
-    act: "Act IV: Mastery",
-    wordCount: 21
+    pinyin: "Expressing Preferences",
+    english: "Expressing Preferences",
+    spanish: "Expressing Preferences",
+    french: "Expressing Preferences",
+    portuguese: "Expressing Preferences",
+    vietnamese: "Expressing Preferences",
+    thai: "Expressing Preferences",
+    khmer: "Expressing Preferences",
+    indonesian: "Expressing Preferences",
+    malay: "Expressing Preferences",
+    filipino: "Expressing Preferences"
   },
   words: [
     ["我比较喜欢", "wǒ bǐjiào xǐhuan", "I prefer", "prefiero", "je préfère", "eu prefiro", "tôi thích hơn", "ฉันชอบมากกว่า", "ខ្ញុំចូលចិត្តជាង", "saya lebih suka", "saya lebih suka", "mas gusto ko"],

@@ -4,10 +4,17 @@
 export const pack72_expressing_certainty = {
   meta: {
     wordpack: 72,
-    packNumber: 72,
-    title: "Expressing Certainty",
-    act: "Act IV: Mastery",
-    wordCount: 21
+    pinyin: "Expressing Certainty",
+    english: "Expressing Certainty",
+    spanish: "Expressing Certainty",
+    french: "Expressing Certainty",
+    portuguese: "Expressing Certainty",
+    vietnamese: "Expressing Certainty",
+    thai: "Expressing Certainty",
+    khmer: "Expressing Certainty",
+    indonesian: "Expressing Certainty",
+    malay: "Expressing Certainty",
+    filipino: "Expressing Certainty"
   },
   words: [
     ["我很确定", "wǒ hěn quèdìng", "I'm very sure", "estoy muy seguro", "je suis très sûr", "tenho muita certeza", "tôi rất chắc chắn", "ฉันแน่ใจมาก", "ខ្ញុំប្រាកដច្បាស់ណាស់", "saya sangat yakin", "saya sangat pasti", "napakatiyak ako"],

@@ -4,10 +4,17 @@
 export const pack58_giving_directions = {
   meta: {
     wordpack: 58,
-    packNumber: 58,
-    title: "Giving Directions",
-    act: "Act IV: Mastery",
-    wordCount: 27
+    pinyin: "Giving Directions",
+    english: "Giving Directions",
+    spanish: "Giving Directions",
+    french: "Giving Directions",
+    portuguese: "Giving Directions",
+    vietnamese: "Giving Directions",
+    thai: "Giving Directions",
+    khmer: "Giving Directions",
+    indonesian: "Giving Directions",
+    malay: "Giving Directions",
+    filipino: "Giving Directions"
   },
   words: [
     ["往前直走", "wǎng qián zhí zǒu", "go straight ahead", "sigue recto", "va tout droit", "siga em frente", "đi thẳng về phía trước", "เดินตรงไป", "ដើរត្រង់ទៅមុខ", "jalan lurus ke depan", "jalan lurus ke hadapan", "dumiretso"],

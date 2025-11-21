@@ -4,10 +4,17 @@
 export const pack38_describing_people = {
   meta: {
     wordpack: 38,
-    packNumber: 38,
-    title: "Describing People",
-    act: "Act III: Expansion",
-    wordCount: 48
+    pinyin: "Describing People",
+    english: "Describing People",
+    spanish: "Describing People",
+    french: "Describing People",
+    portuguese: "Describing People",
+    vietnamese: "Describing People",
+    thai: "Describing People",
+    khmer: "Describing People",
+    indonesian: "Describing People",
+    malay: "Describing People",
+    filipino: "Describing People"
   },
   words: [
     ["漂亮", "piàoliang", "pretty", "bonito", "joli", "bonito", "đẹp", "สวย", "ស្អាត", "cantik", "cantik", "maganda"],

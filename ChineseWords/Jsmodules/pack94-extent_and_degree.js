@@ -4,10 +4,17 @@
 export const pack94_extent_and_degree = {
   meta: {
     wordpack: 94,
-    packNumber: 94,
-    title: "Extent & Degree",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Extent & Degree",
+    english: "Extent & Degree",
+    spanish: "Extent & Degree",
+    french: "Extent & Degree",
+    portuguese: "Extent & Degree",
+    vietnamese: "Extent & Degree",
+    thai: "Extent & Degree",
+    khmer: "Extent & Degree",
+    indonesian: "Extent & Degree",
+    malay: "Extent & Degree",
+    filipino: "Extent & Degree"
   },
   words: [
     ["非常非常感谢你", "fēicháng fēicháng gǎnxiè nǐ", "thank you very very much", "muchísimas gracias", "merci infiniment", "muito muito obrigado", "cảm ơn bạn rất rất nhiều", "ขอบคุณมาก ๆ", "អរគុណច្រើនណាស់", "terima kasih banyak-banyak", "terima kasih sangat-sangat", "maraming maraming salamat"],

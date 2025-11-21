@@ -4,10 +4,10 @@
 export const p2_31_liking__things__gustar = {
   meta: {
     wordpack: 31,
-    en: "Liking Things (gustar)",
-    zh: "喜欢 (gustar)",
+    english: "Liking Things (gustar)",
+    chinese: "喜欢 (gustar)",
     pinyin: "Xǐhuan (gustar)",
-    pt: "Gostar de Coisas"
+    portuguese: "Gostar de Coisas"
   },
   words: [
     ["me gusta el café", "I like coffee", "我喜欢咖啡", "wǒ xǐhuan kāfēi", "gosto de café"],
@@ -52,10 +52,10 @@ export const p2_31_liking__things__gustar = {
 export const p2_32_weather__talk = {
   meta: {
     wordpack: 32,
-    en: "Weather Talk",
-    zh: "天气",
+    english: "Weather Talk",
+    chinese: "天气",
     pinyin: "Tiānqì",
-    pt: "Conversa sobre Clima"
+    portuguese: "Conversa sobre Clima"
   },
   words: [
     ["¿qué tiempo hace?", "what's the weather like?", "天气怎么样？", "tiānqì zěnmeyàng?", "como está o tempo?"],
@@ -106,10 +106,10 @@ export const p2_32_weather__talk = {
 export const p2_33_can__able__poder = {
   meta: {
     wordpack: 33,
-    en: "Can & Able (poder)",
-    zh: "能够 (poder)",
+    english: "Can & Able (poder)",
+    chinese: "能够 (poder)",
     pinyin: "Nénggòu (poder)",
-    pt: "Poder"
+    portuguese: "Poder"
   },
   words: [
     ["puedo ayudarte", "I can help you", "我能帮你", "wǒ néng bāng nǐ", "posso te ajudar"],
@@ -148,10 +148,10 @@ export const p2_33_can__able__poder = {
 export const p2_34_want__desire__querer = {
   meta: {
     wordpack: 34,
-    en: "Want & Desire (querer)",
-    zh: "想要 (querer)",
+    english: "Want & Desire (querer)",
+    chinese: "想要 (querer)",
     pinyin: "Xiǎng Yào (querer)",
-    pt: "Querer"
+    portuguese: "Querer"
   },
   words: [
     ["quiero comer", "I want to eat", "我想吃", "wǒ xiǎng chī", "quero comer"],
@@ -190,10 +190,10 @@ export const p2_34_want__desire__querer = {
 export const p2_35_school__supplies = {
   meta: {
     wordpack: 35,
-    en: "School Supplies",
-    zh: "学习用品",
+    english: "School Supplies",
+    chinese: "学习用品",
     pinyin: "Xuéxí Yòngpǐn",
-    pt: "Material Escolar"
+    portuguese: "Material Escolar"
   },
   words: [
     ["el libro", "the book", "书", "shū", "o livro"],
@@ -262,10 +262,10 @@ export const p2_35_school__supplies = {
 export const p2_36_office__work = {
   meta: {
     wordpack: 36,
-    en: "Office & Work",
-    zh: "办公室与工作",
+    english: "Office & Work",
+    chinese: "办公室与工作",
     pinyin: "Bàngōngshì yǔ Gōngzuò",
-    pt: "Escritório e Trabalho"
+    portuguese: "Escritório e Trabalho"
   },
   words: [
     ["el trabajo", "the job", "工作", "gōngzuò", "o trabalho"],
@@ -334,10 +334,10 @@ export const p2_36_office__work = {
 export const p2_37_animals = {
   meta: {
     wordpack: 37,
-    en: "Animals",
-    zh: "动物",
+    english: "Animals",
+    chinese: "动物",
     pinyin: "Dòngwù",
-    pt: "Animais"
+    portuguese: "Animais"
   },
   words: [
     ["el perro", "the dog", "狗", "gǒu", "o cachorro"],
@@ -406,10 +406,10 @@ export const p2_37_animals = {
 export const p2_38_thinking__pensar = {
   meta: {
     wordpack: 38,
-    en: "Thinking (pensar)",
-    zh: "思考 (pensar)",
+    english: "Thinking (pensar)",
+    chinese: "思考 (pensar)",
     pinyin: "Sīkǎo (pensar)",
-    pt: "Pensar"
+    portuguese: "Pensar"
   },
   words: [
     ["pienso que sí", "I think so", "我认为是", "wǒ rènwéi shì", "acho que sim"],
@@ -448,10 +448,10 @@ export const p2_38_thinking__pensar = {
 export const p2_39_feeling__sentir = {
   meta: {
     wordpack: 39,
-    en: "Feeling (sentir)",
-    zh: "感觉 (sentir)",
+    english: "Feeling (sentir)",
+    chinese: "感觉 (sentir)",
     pinyin: "Gǎnjué (sentir)",
-    pt: "Sentir"
+    portuguese: "Sentir"
   },
   words: [
     ["siento dolor", "I feel pain", "我感觉疼", "wǒ gǎnjué téng", "sinto dor"],
@@ -490,10 +490,10 @@ export const p2_39_feeling__sentir = {
 export const p2_40_meals__food__details = {
   meta: {
     wordpack: 40,
-    en: "Meals & Food Details",
-    zh: "餐食详情",
+    english: "Meals & Food Details",
+    chinese: "餐食详情",
     pinyin: "Cānshí Xiángqíng",
-    pt: "Refeições e Detalhes"
+    portuguese: "Refeições e Detalhes"
   },
   words: [
     ["el desayuno", "the breakfast", "早餐", "zǎocān", "o café da manhã"],
@@ -562,10 +562,10 @@ export const p2_40_meals__food__details = {
 export const p2_41_drinks__beverages = {
   meta: {
     wordpack: 41,
-    en: "Drinks & Beverages",
-    zh: "饮料",
+    english: "Drinks & Beverages",
+    chinese: "饮料",
     pinyin: "Yǐnliào",
-    pt: "Bebidas"
+    portuguese: "Bebidas"
   },
   words: [
     ["el agua", "the water", "水", "shuǐ", "a água"],
@@ -616,10 +616,10 @@ export const p2_41_drinks__beverages = {
 export const p2_42_vegetables = {
   meta: {
     wordpack: 42,
-    en: "Vegetables",
-    zh: "蔬菜",
+    english: "Vegetables",
+    chinese: "蔬菜",
     pinyin: "Shūcài",
-    pt: "Vegetais"
+    portuguese: "Vegetais"
   },
   words: [
     ["la verdura", "the vegetable", "蔬菜", "shūcài", "o legume"],
@@ -673,10 +673,10 @@ export const p2_42_vegetables = {
 export const p2_43_fruits = {
   meta: {
     wordpack: 43,
-    en: "Fruits",
-    zh: "水果",
+    english: "Fruits",
+    chinese: "水果",
     pinyin: "Shuǐguǒ",
-    pt: "Frutas"
+    portuguese: "Frutas"
   },
   words: [
     ["la fruta", "the fruit", "水果", "shuǐguǒ", "a fruta"],
@@ -730,10 +730,10 @@ export const p2_43_fruits = {
 export const p2_44_need__necessity__necesitar = {
   meta: {
     wordpack: 44,
-    en: "Need & Necessity (necesitar)",
-    zh: "需要 (necesitar)",
+    english: "Need & Necessity (necesitar)",
+    chinese: "需要 (necesitar)",
     pinyin: "Xūyào (necesitar)",
-    pt: "Necessidade"
+    portuguese: "Necessidade"
   },
   words: [
     ["necesito ayuda", "I need help", "我需要帮助", "wǒ xūyào bāngzhù", "preciso de ajuda"],
@@ -766,10 +766,10 @@ export const p2_44_need__necessity__necesitar = {
 export const p2_45_looking__for__buscar = {
   meta: {
     wordpack: 45,
-    en: "Looking For (buscar)",
-    zh: "寻找 (buscar)",
+    english: "Looking For (buscar)",
+    chinese: "寻找 (buscar)",
     pinyin: "Xúnzhǎo (buscar)",
-    pt: "Procurar"
+    portuguese: "Procurar"
   },
   words: [
     ["busco trabajo", "I'm looking for work", "我找工作", "wǒ zhǎo gōngzuò", "procuro trabalho"],
@@ -802,10 +802,10 @@ export const p2_45_looking__for__buscar = {
 export const p2_46_telling__time = {
   meta: {
     wordpack: 46,
-    en: "Telling Time",
-    zh: "报时",
+    english: "Telling Time",
+    chinese: "报时",
     pinyin: "Bàoshí",
-    pt: "Dizer as Horas"
+    portuguese: "Dizer as Horas"
   },
   words: [
     ["¿qué hora es?", "what time is it?", "几点了？", "jǐ diǎn le?", "que horas são?"],
@@ -859,10 +859,10 @@ export const p2_46_telling__time = {
 export const p2_47_directions__position = {
   meta: {
     wordpack: 47,
-    en: "Directions & Position",
-    zh: "方向与位置",
+    english: "Directions & Position",
+    chinese: "方向与位置",
     pinyin: "Fāngxiàng yǔ Wèizhì",
-    pt: "Direções e Posição"
+    portuguese: "Direções e Posição"
   },
   words: [
     ["el norte", "the north", "北方", "běifāng", "o norte"],
@@ -916,10 +916,10 @@ export const p2_47_directions__position = {
 export const p2_48_prepositions__en__con__sin__para = {
   meta: {
     wordpack: 48,
-    en: "Prepositions",
-    zh: "介词",
+    english: "Prepositions",
+    chinese: "介词",
     pinyin: "Jiècí",
-    pt: "Preposições"
+    portuguese: "Preposições"
   },
   words: [
     ["en casa", "at home", "在家", "zài jiā", "em casa"],
@@ -973,10 +973,10 @@ export const p2_48_prepositions__en__con__sin__para = {
 export const p2_49_comparing__things = {
   meta: {
     wordpack: 49,
-    en: "Comparing Things",
-    zh: "比较事物",
+    english: "Comparing Things",
+    chinese: "比较事物",
     pinyin: "Bǐjiào Shìwù",
-    pt: "Comparar Coisas"
+    portuguese: "Comparar Coisas"
   },
   words: [
     ["más que eso", "more than that", "比那更多", "bǐ nà gèng duō", "mais que isso"],
@@ -1030,10 +1030,10 @@ export const p2_49_comparing__things = {
 export const p2_50_physical__actions = {
   meta: {
     wordpack: 50,
-    en: "Physical Actions",
-    zh: "身体动作",
+    english: "Physical Actions",
+    chinese: "身体动作",
     pinyin: "Shēntǐ Dòngzuò",
-    pt: "Ações Físicas"
+    portuguese: "Ações Físicas"
   },
   words: [
     ["caminar rápido", "to walk fast", "走得快", "zǒu de kuài", "caminhar rápido"],
@@ -1087,10 +1087,10 @@ export const p2_50_physical__actions = {
 export const p2_51_names__calling__llamar = {
   meta: {
     wordpack: 51,
-    en: "Names & Calling (llamar)",
-    zh: "名字与称呼 (llamar)",
+    english: "Names & Calling (llamar)",
+    chinese: "名字与称呼 (llamar)",
     pinyin: "Míngzi yǔ Chēnghu (llamar)",
-    pt: "Nomes e Chamar"
+    portuguese: "Nomes e Chamar"
   },
   words: [
     ["me llamo Juan", "my name is Juan", "我叫胡安", "wǒ jiào Hú'ān", "me chamo Juan"],
@@ -1126,10 +1126,10 @@ export const p2_51_names__calling__llamar = {
 export const p2_52_giving__dar = {
   meta: {
     wordpack: 52,
-    en: "Giving (dar)",
-    zh: "给予 (dar)",
+    english: "Giving (dar)",
+    chinese: "给予 (dar)",
     pinyin: "Jǐyǔ (dar)",
-    pt: "Dar"
+    portuguese: "Dar"
   },
   words: [
     ["doy las gracias", "I give thanks", "我感谢", "wǒ gǎnxiè", "dou as graças"],
@@ -1168,10 +1168,10 @@ export const p2_52_giving__dar = {
 export const p2_53_seeing__watching__ver = {
   meta: {
     wordpack: 53,
-    en: "Seeing & Watching (ver)",
-    zh: "看 (ver)",
+    english: "Seeing & Watching (ver)",
+    chinese: "看 (ver)",
     pinyin: "Kàn (ver)",
-    pt: "Ver"
+    portuguese: "Ver"
   },
   words: [
     ["veo la tele", "I watch TV", "我看电视", "wǒ kàn diànshì", "vejo TV"],
@@ -1210,10 +1210,10 @@ export const p2_53_seeing__watching__ver = {
 export const p2_54_restaurant__vocabulary = {
   meta: {
     wordpack: 54,
-    en: "Restaurant Vocabulary",
-    zh: "餐厅词汇",
+    english: "Restaurant Vocabulary",
+    chinese: "餐厅词汇",
     pinyin: "Cāntīng Cíhuì",
-    pt: "Vocabulário de Restaurante"
+    portuguese: "Vocabulário de Restaurante"
   },
   words: [
     ["el restaurante", "the restaurant", "餐厅", "cāntīng", "o restaurante"],
@@ -1273,10 +1273,10 @@ export const p2_54_restaurant__vocabulary = {
 export const p2_55_shopping__buying = {
   meta: {
     wordpack: 55,
-    en: "Shopping & Buying",
-    zh: "购物",
+    english: "Shopping & Buying",
+    chinese: "购物",
     pinyin: "Gòuwù",
-    pt: "Compras"
+    portuguese: "Compras"
   },
   words: [
     ["comprar algo", "to buy something", "买东西", "mǎi dōngxi", "comprar algo"],
@@ -1342,10 +1342,10 @@ export const p2_55_shopping__buying = {
 export const p2_56_beginning__empezar = {
   meta: {
     wordpack: 56,
-    en: "Beginning (empezar)",
-    zh: "开始 (empezar)",
+    english: "Beginning (empezar)",
+    chinese: "开始 (empezar)",
     pinyin: "Kāishǐ (empezar)",
-    pt: "Começar"
+    portuguese: "Começar"
   },
   words: [
     ["empiezo ahora", "I start now", "我现在开始", "wǒ xiànzài kāishǐ", "começo agora"],
@@ -1384,10 +1384,10 @@ export const p2_56_beginning__empezar = {
 export const p2_57_continuing__seguir = {
   meta: {
     wordpack: 57,
-    en: "Continuing (seguir)",
-    zh: "继续 (seguir)",
+    english: "Continuing (seguir)",
+    chinese: "继续 (seguir)",
     pinyin: "Jìxù (seguir)",
-    pt: "Continuar"
+    portuguese: "Continuar"
   },
   words: [
     ["sigo trabajando", "I continue working", "我继续工作", "wǒ jìxù gōngzuò", "sigo trabalhando"],
@@ -1426,10 +1426,10 @@ export const p2_57_continuing__seguir = {
 export const p2_58_furniture__objects = {
   meta: {
     wordpack: 58,
-    en: "Furniture & Objects",
-    zh: "家具与物品",
+    english: "Furniture & Objects",
+    chinese: "家具与物品",
     pinyin: "Jiājù yǔ Wùpǐn",
-    pt: "Móveis e Objetos"
+    portuguese: "Móveis e Objetos"
   },
   words: [
     ["la cama", "the bed", "床", "chuáng", "a cama"],
@@ -1492,10 +1492,10 @@ export const p2_58_furniture__objects = {
 export const p2_59_bathroom__items = {
   meta: {
     wordpack: 59,
-    en: "Bathroom Items",
-    zh: "浴室用品",
+    english: "Bathroom Items",
+    chinese: "浴室用品",
     pinyin: "Yùshì Yòngpǐn",
-    pt: "Itens de Banheiro"
+    portuguese: "Itens de Banheiro"
   },
   words: [
     ["el baño", "the bathroom", "浴室", "yùshì", "o banheiro"],
@@ -1549,10 +1549,10 @@ export const p2_59_bathroom__items = {
 export const p2_60_health__medical = {
   meta: {
     wordpack: 60,
-    en: "Health & Medical",
-    zh: "健康与医疗",
+    english: "Health & Medical",
+    chinese: "健康与医疗",
     pinyin: "Jiànkāng yǔ Yīliáo",
-    pt: "Saúde e Medicina"
+    portuguese: "Saúde e Medicina"
   },
   words: [
     ["la salud", "the health", "健康", "jiànkāng", "a saúde"],

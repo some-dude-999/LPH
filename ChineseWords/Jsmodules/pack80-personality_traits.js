@@ -4,10 +4,17 @@
 export const pack80_personality_traits = {
   meta: {
     wordpack: 80,
-    packNumber: 80,
-    title: "Personality Traits",
-    act: "Act V: Refinement",
-    wordCount: 27
+    pinyin: "Personality Traits",
+    english: "Personality Traits",
+    spanish: "Personality Traits",
+    french: "Personality Traits",
+    portuguese: "Personality Traits",
+    vietnamese: "Personality Traits",
+    thai: "Personality Traits",
+    khmer: "Personality Traits",
+    indonesian: "Personality Traits",
+    malay: "Personality Traits",
+    filipino: "Personality Traits"
   },
   words: [
     ["性格很开朗的", "xìnggé hěn kāilǎng de", "cheerful personality", "personalidad alegre", "personnalité joyeuse", "personalidade alegre", "tính cách rất vui vẻ", "มีบุคลิกร่าเริง", "មានចរិតរីករាយ", "kepribadian yang ceria", "personaliti yang ceria", "masayang personalidad"],

@@ -4,10 +4,17 @@
 export const pack62_at_the_restaurant = {
   meta: {
     wordpack: 62,
-    packNumber: 62,
-    title: "At the Restaurant",
-    act: "Act IV: Mastery",
-    wordCount: 27
+    pinyin: "At the Restaurant",
+    english: "At the Restaurant",
+    spanish: "At the Restaurant",
+    french: "At the Restaurant",
+    portuguese: "At the Restaurant",
+    vietnamese: "At the Restaurant",
+    thai: "At the Restaurant",
+    khmer: "At the Restaurant",
+    indonesian: "At the Restaurant",
+    malay: "At the Restaurant",
+    filipino: "At the Restaurant"
   },
   words: [
     ["点菜吧", "diǎn cài ba", "let's order", "pidamos", "commandons", "vamos pedir", "gọi món đi", "สั่งอาหารกันเถอะ", "បញ្ជាម្ហូបទៅ", "pesan makanan yuk", "order makanan", "mag-order na tayo"],

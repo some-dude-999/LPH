@@ -4,10 +4,17 @@
 export const pack95_emphasis_and_intensifiers = {
   meta: {
     wordpack: 95,
-    packNumber: 95,
-    title: "Emphasis & Intensifiers",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Emphasis & Intensifiers",
+    english: "Emphasis & Intensifiers",
+    spanish: "Emphasis & Intensifiers",
+    french: "Emphasis & Intensifiers",
+    portuguese: "Emphasis & Intensifiers",
+    vietnamese: "Emphasis & Intensifiers",
+    thai: "Emphasis & Intensifiers",
+    khmer: "Emphasis & Intensifiers",
+    indonesian: "Emphasis & Intensifiers",
+    malay: "Emphasis & Intensifiers",
+    filipino: "Emphasis & Intensifiers"
   },
   words: [
     ["就是这个没错呀", "jiùshì zhè ge méicuò ya", "this is the one exactly", "este es exactamente", "c'est exactement ça", "é exatamente este", "đúng là cái này đây", "นี่แหละไม่ผิด", "នេះហើយមិនខុសទេ", "ini dia yang benar", "ini lah yang betul", "ito nga yan tama"],

@@ -4,10 +4,10 @@
 export const p6_181_disappearing__desaparecer = {
   meta: {
     wordpack: 181,
-    en: "Disappearing (desaparecer)",
-    zh: "消失 (desaparecer)",
+    english: "Disappearing (desaparecer)",
+    chinese: "消失 (desaparecer)",
     pinyin: "Xiāoshī (desaparecer)",
-    pt: "Desaparecer"
+    portuguese: "Desaparecer"
   },
   words: [
     ["desaparezco rápido", "I disappear quickly", "我消失得很快", "wǒ xiāoshī de hěn kuài", "eu desapareço rápido"],
@@ -46,10 +46,10 @@ export const p6_181_disappearing__desaparecer = {
 export const p6_182_telecommunications = {
   meta: {
     wordpack: 182,
-    en: "Telecommunications",
-    zh: "电信",
+    english: "Telecommunications",
+    chinese: "电信",
     pinyin: "Diànxìn",
-    pt: "Telecomunicações"
+    portuguese: "Telecomunicações"
   },
   words: [
     ["las telecomunicaciones modernas", "modern telecommunications", "现代电信", "xiàndài diànxìn", "as telecomunicações modernas"],
@@ -118,10 +118,10 @@ export const p6_182_telecommunications = {
 export const p6_183_birthdays__fulfilling__cumplir = {
   meta: {
     wordpack: 183,
-    en: "Birthdays & Fulfilling (cumplir)",
-    zh: "生日与实现 (cumplir)",
+    english: "Birthdays & Fulfilling (cumplir)",
+    chinese: "生日与实现 (cumplir)",
     pinyin: "Shēngrì yǔ Shíxiàn (cumplir)",
-    pt: "Aniversários e Cumprir"
+    portuguese: "Aniversários e Cumprir"
   },
   words: [
     ["cumplo años", "I have a birthday", "我过生日", "wǒ guò shēngrì", "eu faço aniversário"],
@@ -160,10 +160,10 @@ export const p6_183_birthdays__fulfilling__cumplir = {
 export const p6_184_missing__lacking__faltar = {
   meta: {
     wordpack: 184,
-    en: "Missing & Lacking (faltar)",
-    zh: "缺少 (faltar)",
+    english: "Missing & Lacking (faltar)",
+    chinese: "缺少 (faltar)",
     pinyin: "Quēshǎo (faltar)",
-    pt: "Faltar"
+    portuguese: "Faltar"
   },
   words: [
     ["falto mucho", "I'm absent a lot", "我经常缺席", "wǒ jīngcháng quēxí", "eu falto muito"],
@@ -202,10 +202,10 @@ export const p6_184_missing__lacking__faltar = {
 export const p6_185_tourism__terms = {
   meta: {
     wordpack: 185,
-    en: "Tourism Terms",
-    zh: "旅游术语",
+    english: "Tourism Terms",
+    chinese: "旅游术语",
     pinyin: "Lǚyóu Shùyǔ",
-    pt: "Termos de Turismo"
+    portuguese: "Termos de Turismo"
   },
   words: [
     ["el turismo nacional", "domestic tourism", "国内旅游", "guónèi lǚyóu", "o turismo nacional"],
@@ -274,10 +274,10 @@ export const p6_185_tourism__terms = {
 export const p6_186_noticing__notar = {
   meta: {
     wordpack: 186,
-    en: "Noticing (notar)",
-    zh: "注意到 (notar)",
+    english: "Noticing (notar)",
+    chinese: "注意到 (notar)",
     pinyin: "Zhùyìdào (notar)",
-    pt: "Notar"
+    portuguese: "Notar"
   },
   words: [
     ["noto cambios", "I notice changes", "我注意到变化", "wǒ zhùyì dào biànhuà", "eu noto mudanças"],
@@ -316,10 +316,10 @@ export const p6_186_noticing__notar = {
 export const p6_187_allowing__permitir = {
   meta: {
     wordpack: 187,
-    en: "Allowing (permitir)",
-    zh: "允许 (permitir)",
+    english: "Allowing (permitir)",
+    chinese: "允许 (permitir)",
     pinyin: "Yǔnxǔ (permitir)",
-    pt: "Permitir"
+    portuguese: "Permitir"
   },
   words: [
     ["permito todo", "I allow everything", "我允许一切", "wǒ yǔnxǔ yīqiè", "eu permito tudo"],
@@ -358,10 +358,10 @@ export const p6_187_allowing__permitir = {
 export const p6_188_manufacturing__terms = {
   meta: {
     wordpack: 188,
-    en: "Manufacturing Terms",
-    zh: "制造术语",
+    english: "Manufacturing Terms",
+    chinese: "制造术语",
     pinyin: "Zhìzào Shùyǔ",
-    pt: "Termos de Manufatura"
+    portuguese: "Termos de Manufatura"
   },
   words: [
     ["la fabricación industrial", "industrial manufacturing", "工业制造", "gōngyè zhìzào", "a fabricação industrial"],
@@ -430,10 +430,10 @@ export const p6_188_manufacturing__terms = {
 export const p6_189_achieving__lograr = {
   meta: {
     wordpack: 189,
-    en: "Achieving (lograr)",
-    zh: "实现 (lograr)",
+    english: "Achieving (lograr)",
+    chinese: "实现 (lograr)",
     pinyin: "Shíxiàn (lograr)",
-    pt: "Alcançar"
+    portuguese: "Alcançar"
   },
   words: [
     ["logro éxito", "I achieve success", "我取得成功", "wǒ qǔdé chénggōng", "eu alcanço sucesso"],
@@ -472,10 +472,10 @@ export const p6_189_achieving__lograr = {
 export const p6_190_performing__realizar = {
   meta: {
     wordpack: 190,
-    en: "Performing (realizar)",
-    zh: "执行 (realizar)",
+    english: "Performing (realizar)",
+    chinese: "执行 (realizar)",
     pinyin: "Zhíxíng (realizar)",
-    pt: "Realizar"
+    portuguese: "Realizar"
   },
   words: [
     ["realizo tareas", "I perform tasks", "我执行任务", "wǒ zhíxíng rènwù", "eu realizo tarefas"],
@@ -514,10 +514,10 @@ export const p6_190_performing__realizar = {
 export const p6_191_economics__terms = {
   meta: {
     wordpack: 191,
-    en: "Economics Terms",
-    zh: "经济学术语",
+    english: "Economics Terms",
+    chinese: "经济学术语",
     pinyin: "Jīngjìxué Shùyǔ",
-    pt: "Termos de Economia"
+    portuguese: "Termos de Economia"
   },
   words: [
     ["la economía global", "the global economy", "全球经济", "quánqiú jīngjì", "a economia global"],
@@ -586,10 +586,10 @@ export const p6_191_economics__terms = {
 export const p6_192_existing__existir = {
   meta: {
     wordpack: 192,
-    en: "Existing (existir)",
-    zh: "存在 (existir)",
+    english: "Existing (existir)",
+    chinese: "存在 (existir)",
     pinyin: "Cúnzài (existir)",
-    pt: "Existir"
+    portuguese: "Existir"
   },
   words: [
     ["existo siempre", "I always exist", "我永远存在", "wǒ yǒngyuǎn cúnzài", "eu sempre existo"],
@@ -628,10 +628,10 @@ export const p6_192_existing__existir = {
 export const p6_193_depending__depender = {
   meta: {
     wordpack: 193,
-    en: "Depending (depender)",
-    zh: "依赖 (depender)",
+    english: "Depending (depender)",
+    chinese: "依赖 (depender)",
     pinyin: "Yīlài (depender)",
-    pt: "Depender"
+    portuguese: "Depender"
   },
   words: [
     ["dependo mucho", "I depend a lot", "我非常依赖", "wǒ fēicháng yīlài", "eu dependo muito"],
@@ -670,10 +670,10 @@ export const p6_193_depending__depender = {
 export const p6_194_retail__sales = {
   meta: {
     wordpack: 194,
-    en: "Retail & Sales",
-    zh: "零售与销售",
+    english: "Retail & Sales",
+    chinese: "零售与销售",
     pinyin: "Língshòu yǔ Xiāoshòu",
-    pt: "Varejo e Vendas"
+    portuguese: "Varejo e Vendas"
   },
   words: [
     ["el comercio local", "local trade", "本地贸易", "běndì màoyì", "o comércio local"],
@@ -742,10 +742,10 @@ export const p6_194_retail__sales = {
 export const p6_195_belonging__pertenecer = {
   meta: {
     wordpack: 195,
-    en: "Belonging (pertenecer)",
-    zh: "属于 (pertenecer)",
+    english: "Belonging (pertenecer)",
+    chinese: "属于 (pertenecer)",
     pinyin: "Shǔyú (pertenecer)",
-    pt: "Pertencer"
+    portuguese: "Pertencer"
   },
   words: [
     ["pertenezco aquí", "I belong here", "我属于这里", "wǒ shǔyú zhèlǐ", "eu pertenço aqui"],
@@ -784,10 +784,10 @@ export const p6_195_belonging__pertenecer = {
 export const p6_196_deserving__merecer = {
   meta: {
     wordpack: 196,
-    en: "Deserving (merecer)",
-    zh: "值得 (merecer)",
+    english: "Deserving (merecer)",
+    chinese: "值得 (merecer)",
     pinyin: "Zhídé (merecer)",
-    pt: "Merecer"
+    portuguese: "Merecer"
   },
   words: [
     ["merezco más", "I deserve more", "我应得更多", "wǒ yīngdé gèng duō", "eu mereço mais"],
@@ -826,10 +826,10 @@ export const p6_196_deserving__merecer = {
 export const p6_197_insurance__terms = {
   meta: {
     wordpack: 197,
-    en: "Insurance Terms",
-    zh: "保险术语",
+    english: "Insurance Terms",
+    chinese: "保险术语",
     pinyin: "Bǎoxiǎn Shùyǔ",
-    pt: "Termos de Seguro"
+    portuguese: "Termos de Seguro"
   },
   words: [
     ["el seguro médico", "the health insurance", "医疗保险", "yīliáo bǎoxiǎn", "o seguro médico"],
@@ -898,10 +898,10 @@ export const p6_197_insurance__terms = {
 export const p6_198_suffering__sufrir = {
   meta: {
     wordpack: 198,
-    en: "Suffering (sufrir)",
-    zh: "遭受 (sufrir)",
+    english: "Suffering (sufrir)",
+    chinese: "遭受 (sufrir)",
     pinyin: "Zāoshòu (sufrir)",
-    pt: "Sofrer"
+    portuguese: "Sofrer"
   },
   words: [
     ["sufro mucho", "I suffer a lot", "我受很多苦", "wǒ shòu hěn duō kǔ", "eu sofro muito"],
@@ -940,10 +940,10 @@ export const p6_198_suffering__sufrir = {
 export const p6_199_enjoying__disfrutar = {
   meta: {
     wordpack: 199,
-    en: "Enjoying (disfrutar)",
-    zh: "享受 (disfrutar)",
+    english: "Enjoying (disfrutar)",
+    chinese: "享受 (disfrutar)",
     pinyin: "Xiǎngshòu (disfrutar)",
-    pt: "Desfrutar"
+    portuguese: "Desfrutar"
   },
   words: [
     ["disfruto mucho", "I enjoy a lot", "我非常享受", "wǒ fēicháng xiǎngshòu", "eu aproveito muito"],
@@ -982,10 +982,10 @@ export const p6_199_enjoying__disfrutar = {
 export const p6_200_real__estate__terms = {
   meta: {
     wordpack: 200,
-    en: "Real Estate Terms",
-    zh: "房地产术语",
+    english: "Real Estate Terms",
+    chinese: "房地产术语",
     pinyin: "Fángdìchǎn Shùyǔ",
-    pt: "Termos Imobiliários"
+    portuguese: "Termos Imobiliários"
   },
   words: [
     ["los bienes raíces", "real estate", "不动产", "bùdòngchǎn", "os bens imóveis"],
@@ -1054,10 +1054,10 @@ export const p6_200_real__estate__terms = {
 export const p6_201_occurring__ocurrir = {
   meta: {
     wordpack: 201,
-    en: "Occurring (ocurrir)",
-    zh: "发生 (ocurrir)",
+    english: "Occurring (ocurrir)",
+    chinese: "发生 (ocurrir)",
     pinyin: "Fāshēng (ocurrir)",
-    pt: "Ocorrer"
+    portuguese: "Ocorrer"
   },
   words: [
     ["ocurre algo", "something happens", "发生了什么事", "fāshēng le shénme shì", "ocorre algo"],
@@ -1096,10 +1096,10 @@ export const p6_201_occurring__ocurrir = {
 export const p6_202_happening__suceder = {
   meta: {
     wordpack: 202,
-    en: "Happening (suceder)",
-    zh: "发生 (suceder)",
+    english: "Happening (suceder)",
+    chinese: "发生 (suceder)",
     pinyin: "Fāshēng (suceder)",
-    pt: "Suceder"
+    portuguese: "Suceder"
   },
   words: [
     ["sucede algo", "something happens", "发生了某事", "fāshēng le mǒushì", "sucede algo"],
@@ -1138,10 +1138,10 @@ export const p6_202_happening__suceder = {
 export const p6_203_aviation__terms = {
   meta: {
     wordpack: 203,
-    en: "Aviation Terms",
-    zh: "航空术语",
+    english: "Aviation Terms",
+    chinese: "航空术语",
     pinyin: "Hángkōng Shùyǔ",
-    pt: "Termos de Aviação"
+    portuguese: "Termos de Aviação"
   },
   words: [
     ["la aviación civil", "civil aviation", "民用航空", "mínyòng hángkōng", "a aviação civil"],
@@ -1210,10 +1210,10 @@ export const p6_203_aviation__terms = {
 export const p6_204_protecting__proteger = {
   meta: {
     wordpack: 204,
-    en: "Protecting (proteger)",
-    zh: "保护 (proteger)",
+    english: "Protecting (proteger)",
+    chinese: "保护 (proteger)",
     pinyin: "Bǎohù (proteger)",
-    pt: "Proteger"
+    portuguese: "Proteger"
   },
   words: [
     ["protejo todo", "I protect everything", "我保护一切", "wǒ bǎohù yīqiè", "eu protejo tudo"],
@@ -1255,10 +1255,10 @@ export const p6_204_protecting__proteger = {
 export const p6_205_defending__defender = {
   meta: {
     wordpack: 205,
-    en: "Defending (defender)",
-    zh: "防御 (defender)",
+    english: "Defending (defender)",
+    chinese: "防御 (defender)",
     pinyin: "Fángyù (defender)",
-    pt: "Defender"
+    portuguese: "Defender"
   },
   words: [
     ["defiendo ideas", "I defend ideas", "我捍卫理念", "wǒ hànwèi lǐniàn", "eu defendo ideias"],
@@ -1300,10 +1300,10 @@ export const p6_205_defending__defender = {
 export const p6_206_logistics__shipping = {
   meta: {
     wordpack: 206,
-    en: "Logistics & Shipping",
-    zh: "物流与运输",
+    english: "Logistics & Shipping",
+    chinese: "物流与运输",
     pinyin: "Wùliú yǔ Yùnshū",
-    pt: "Logística e Transporte"
+    portuguese: "Logística e Transporte"
   },
   words: [
     ["la logística internacional", "international logistics", "国际物流", "guójì wùliú", "a logística internacional"],
@@ -1372,10 +1372,10 @@ export const p6_206_logistics__shipping = {
 export const p6_207_reducing__reducir = {
   meta: {
     wordpack: 207,
-    en: "Reducing (reducir)",
-    zh: "减少 (reducir)",
+    english: "Reducing (reducir)",
+    chinese: "减少 (reducir)",
     pinyin: "Jiǎnshǎo (reducir)",
-    pt: "Reduzir"
+    portuguese: "Reduzir"
   },
   words: [
     ["reduzco costos", "I reduce costs", "我降低成本", "wǒ jiàngdī chéngběn", "eu reduzo custos"],
@@ -1414,10 +1414,10 @@ export const p6_207_reducing__reducir = {
 export const p6_208_increasing__aumentar = {
   meta: {
     wordpack: 208,
-    en: "Increasing (aumentar)",
-    zh: "增加 (aumentar)",
+    english: "Increasing (aumentar)",
+    chinese: "增加 (aumentar)",
     pinyin: "Zēngjiā (aumentar)",
-    pt: "Aumentar"
+    portuguese: "Aumentar"
   },
   words: [
     ["aumento precios", "I increase prices", "我提高价格", "wǒ tígāo jiàgé", "eu aumento preços"],
@@ -1456,10 +1456,10 @@ export const p6_208_increasing__aumentar = {
 export const p6_209_pharmaceutical__terms = {
   meta: {
     wordpack: 209,
-    en: "Pharmaceutical Terms",
-    zh: "制药术语",
+    english: "Pharmaceutical Terms",
+    chinese: "制药术语",
     pinyin: "Zhìyào Shùyǔ",
-    pt: "Termos Farmacêuticos"
+    portuguese: "Termos Farmacêuticos"
   },
   words: [
     ["muy farmacéutico", "very pharmaceutical", "非常制药的", "fēicháng zhìyào de", "muito farmacêutico"],
@@ -1525,10 +1525,10 @@ export const p6_209_pharmaceutical__terms = {
 export const p6_210_demonstrating__demostrar = {
   meta: {
     wordpack: 210,
-    en: "Demonstrating (demostrar)",
-    zh: "演示 (demostrar)",
+    english: "Demonstrating (demostrar)",
+    chinese: "演示 (demostrar)",
     pinyin: "Yǎnshì (demostrar)",
-    pt: "Demonstrar"
+    portuguese: "Demonstrar"
   },
   words: [
     ["demuestro amor", "I show love", "我表现爱意", "wǒ biǎoxiàn àiyì", "eu demonstro amor"],
@@ -1567,10 +1567,10 @@ export const p6_210_demonstrating__demostrar = {
 export const p6_211_checking__comprobar = {
   meta: {
     wordpack: 211,
-    en: "Checking (comprobar)",
-    zh: "检查 (comprobar)",
+    english: "Checking (comprobar)",
+    chinese: "检查 (comprobar)",
     pinyin: "Jiǎnchá (comprobar)",
-    pt: "Verificar"
+    portuguese: "Verificar"
   },
   words: [
     ["compruebo datos", "I check data", "我检查数据", "wǒ jiǎnchá shùjù", "eu verifico dados"],
@@ -1609,10 +1609,10 @@ export const p6_211_checking__comprobar = {
 export const p6_212_energy__power = {
   meta: {
     wordpack: 212,
-    en: "Energy & Power",
-    zh: "能源与电力",
+    english: "Energy & Power",
+    chinese: "能源与电力",
     pinyin: "Néngyuán yǔ Diànlì",
-    pt: "Energia e Poder"
+    portuguese: "Energia e Poder"
   },
   words: [
     ["la energía limpia", "clean energy", "清洁能源", "qīngjié néngyuán", "a energia limpa"],
@@ -1678,10 +1678,10 @@ export const p6_212_energy__power = {
 export const p6_213_thanking__agradecer = {
   meta: {
     wordpack: 213,
-    en: "Thanking (agradecer)",
-    zh: "感谢 (agradecer)",
+    english: "Thanking (agradecer)",
+    chinese: "感谢 (agradecer)",
     pinyin: "Gǎnxiè (agradecer)",
-    pt: "Agradecer"
+    portuguese: "Agradecer"
   },
   words: [
     ["agradezco mucho", "I thank a lot", "我非常感谢", "wǒ fēicháng gǎnxiè", "eu agradeço muito"],
@@ -1720,10 +1720,10 @@ export const p6_213_thanking__agradecer = {
 export const p6_214_congratulating__felicitar = {
   meta: {
     wordpack: 214,
-    en: "Congratulating (felicitar)",
-    zh: "祝贺 (felicitar)",
+    english: "Congratulating (felicitar)",
+    chinese: "祝贺 (felicitar)",
     pinyin: "Zhùhè (felicitar)",
-    pt: "Felicitar"
+    portuguese: "Felicitar"
   },
   words: [
     ["felicito mucho", "I congratulate a lot", "我祝贺很多", "wǒ zhùhè hěn duō", "eu parabenizo muito"],
@@ -1762,10 +1762,10 @@ export const p6_214_congratulating__felicitar = {
 export const p6_215_automotive__terms = {
   meta: {
     wordpack: 215,
-    en: "Automotive Terms",
-    zh: "汽车术语",
+    english: "Automotive Terms",
+    chinese: "汽车术语",
     pinyin: "Qìchē Shùyǔ",
-    pt: "Termos Automotivos"
+    portuguese: "Termos Automotivos"
   },
   words: [
     ["muy automotriz", "very automotive", "非常汽车的", "fēicháng qìchē de", "muito automotivo"],
@@ -1834,10 +1834,10 @@ export const p6_215_automotive__terms = {
 export const p6_216_suggesting__sugerir = {
   meta: {
     wordpack: 216,
-    en: "Suggesting (sugerir)",
-    zh: "建议 (sugerir)",
+    english: "Suggesting (sugerir)",
+    chinese: "建议 (sugerir)",
     pinyin: "Jiànyì (sugerir)",
-    pt: "Sugerir"
+    portuguese: "Sugerir"
   },
   words: [
     ["sugiero algo", "I suggest something", "我建议一些事", "wǒ jiànyì yīxiē shì", "eu sugiro algo"],
@@ -1876,10 +1876,10 @@ export const p6_216_suggesting__sugerir = {
 export const p6_217_recommending__recomendar = {
   meta: {
     wordpack: 217,
-    en: "Recommending (recomendar)",
-    zh: "推荐 (recomendar)",
+    english: "Recommending (recomendar)",
+    chinese: "推荐 (recomendar)",
     pinyin: "Tuījiàn (recomendar)",
-    pt: "Recomendar"
+    portuguese: "Recomendar"
   },
   words: [
     ["recomiendo mucho", "I recommend a lot", "我强烈推荐", "wǒ qiángliè tuījiàn", "eu recomendo muito"],
@@ -1918,10 +1918,10 @@ export const p6_217_recommending__recomendar = {
 export const p6_218_subjunctive__triggers = {
   meta: {
     wordpack: 218,
-    en: "Subjunctive Triggers",
-    zh: "虚拟语气触发词",
+    english: "Subjunctive Triggers",
+    chinese: "虚拟语气触发词",
     pinyin: "Xūnǐ Yǔqì Chùfā Cí",
-    pt: "Gatilhos do Subjuntivo"
+    portuguese: "Gatilhos do Subjuntivo"
   },
   words: [
     ["quiero que vengas", "I want you to come", "我想让你来", "wǒ xiǎng ràng nǐ lái", "eu quero que você venha"],
@@ -1990,10 +1990,10 @@ export const p6_218_subjunctive__triggers = {
 export const p6_219_convincing__convencer = {
   meta: {
     wordpack: 219,
-    en: "Convincing (convencer)",
-    zh: "说服 (convencer)",
+    english: "Convincing (convencer)",
+    chinese: "说服 (convencer)",
     pinyin: "Shuōfú (convencer)",
-    pt: "Convencer"
+    portuguese: "Convencer"
   },
   words: [
     ["convenzo fácil", "I convince easily", "我很容易说服", "wǒ hěn róngyì shuōfú", "eu convenço facilmente"],
@@ -2032,10 +2032,10 @@ export const p6_219_convincing__convencer = {
 export const p6_220_trusting__confiar = {
   meta: {
     wordpack: 220,
-    en: "Trusting (confiar)",
-    zh: "信任 (confiar)",
+    english: "Trusting (confiar)",
+    chinese: "信任 (confiar)",
     pinyin: "Xìnrèn (confiar)",
-    pt: "Confiar"
+    portuguese: "Confiar"
   },
   words: [
     ["confío mucho", "I trust a lot", "我非常信任", "wǒ fēicháng xìnrèn", "eu confio muito"],

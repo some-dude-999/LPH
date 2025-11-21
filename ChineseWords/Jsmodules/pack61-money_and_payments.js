@@ -4,10 +4,17 @@
 export const pack61_money_and_payments = {
   meta: {
     wordpack: 61,
-    packNumber: 61,
-    title: "Money & Payments",
-    act: "Act IV: Mastery",
-    wordCount: 27
+    pinyin: "Money & Payments",
+    english: "Money & Payments",
+    spanish: "Money & Payments",
+    french: "Money & Payments",
+    portuguese: "Money & Payments",
+    vietnamese: "Money & Payments",
+    thai: "Money & Payments",
+    khmer: "Money & Payments",
+    indonesian: "Money & Payments",
+    malay: "Money & Payments",
+    filipino: "Money & Payments"
   },
   words: [
     ["多少钱啊", "duōshao qián a", "how much is it?", "¿cuánto cuesta?", "combien ça coûte?", "quanto custa?", "giá bao nhiêu?", "เท่าไหร่", "តម្លៃប៉ុន្មាន?", "berapa harganya?", "berapa harganya?", "magkano?"],

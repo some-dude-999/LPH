@@ -4,10 +4,17 @@
 export const pack13_core_radicals_and_components = {
   meta: {
     wordpack: 13,
-    packNumber: 13,
-    title: "Core Radicals & Components",
-    act: "Act I: Foundation",
-    wordCount: 57
+    pinyin: "Core Radicals & Components",
+    english: "Core Radicals & Components",
+    spanish: "Core Radicals & Components",
+    french: "Core Radicals & Components",
+    portuguese: "Core Radicals & Components",
+    vietnamese: "Core Radicals & Components",
+    thai: "Core Radicals & Components",
+    khmer: "Core Radicals & Components",
+    indonesian: "Core Radicals & Components",
+    malay: "Core Radicals & Components",
+    filipino: "Core Radicals & Components"
   },
   words: [
     ["口", "kǒu", "mouth", "boca", "bouche", "boca", "miệng", "ปาก", "មាត់", "mulut", "mulut", "bibig"],

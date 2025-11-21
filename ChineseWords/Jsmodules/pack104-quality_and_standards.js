@@ -4,10 +4,17 @@
 export const pack104_quality_and_standards = {
   meta: {
     wordpack: 104,
-    packNumber: 104,
-    title: "Quality & Standards",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Quality & Standards",
+    english: "Quality & Standards",
+    spanish: "Quality & Standards",
+    french: "Quality & Standards",
+    portuguese: "Quality & Standards",
+    vietnamese: "Quality & Standards",
+    thai: "Quality & Standards",
+    khmer: "Quality & Standards",
+    indonesian: "Quality & Standards",
+    malay: "Quality & Standards",
+    filipino: "Quality & Standards"
   },
   words: [
     ["品质非常好的产品", "pǐnzhì fēicháng hǎo de chǎnpǐn", "product with excellent quality", "producto con excelente calidad", "produit d'excellente qualité", "produto com excelente qualidade", "sản phẩm có chất lượng rất tốt", "ผลิตภัณฑ์ที่มีคุณภาพดีมาก", "ផលិតផលដែលមានគុណភាពល្អណាស់", "produk dengan kualitas sangat baik", "produk berkualiti sangat baik", "produktong napakahusay ang kalidad"],

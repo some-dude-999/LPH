@@ -4,10 +4,17 @@
 export const pack3_demonstratives_and_pointers = {
   meta: {
     wordpack: 3,
-    packNumber: 3,
-    title: "Demonstratives & Pointers",
-    act: "Act I: Foundation",
-    wordCount: 33
+    pinyin: "Demonstratives & Pointers",
+    english: "Demonstratives & Pointers",
+    spanish: "Demonstratives & Pointers",
+    french: "Demonstratives & Pointers",
+    portuguese: "Demonstratives & Pointers",
+    vietnamese: "Demonstratives & Pointers",
+    thai: "Demonstratives & Pointers",
+    khmer: "Demonstratives & Pointers",
+    indonesian: "Demonstratives & Pointers",
+    malay: "Demonstratives & Pointers",
+    filipino: "Demonstratives & Pointers"
   },
   words: [
     ["这", "zhè", "this", "este", "ce", "este", "này", "นี้", "នេះ", "ini", "ini", "ito"],

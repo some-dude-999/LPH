@@ -4,10 +4,17 @@
 export const pack4_yes_no_and_responses = {
   meta: {
     wordpack: 4,
-    packNumber: 4,
-    title: "Yes No & Responses",
-    act: "Act I: Foundation",
-    wordCount: 42
+    pinyin: "Yes No & Responses",
+    english: "Yes No & Responses",
+    spanish: "Yes No & Responses",
+    french: "Yes No & Responses",
+    portuguese: "Yes No & Responses",
+    vietnamese: "Yes No & Responses",
+    thai: "Yes No & Responses",
+    khmer: "Yes No & Responses",
+    indonesian: "Yes No & Responses",
+    malay: "Yes No & Responses",
+    filipino: "Yes No & Responses"
   },
   words: [
     ["是", "shì", "yes", "sí", "oui", "sim", "đúng", "ใช่", "បាទ", "ya", "ya", "oo"],

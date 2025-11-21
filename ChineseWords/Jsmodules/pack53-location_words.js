@@ -4,10 +4,17 @@
 export const pack53_location_words = {
   meta: {
     wordpack: 53,
-    packNumber: 53,
-    title: "Location Words",
-    act: "Act III: Expansion",
-    wordCount: 48
+    pinyin: "Location Words",
+    english: "Location Words",
+    spanish: "Location Words",
+    french: "Location Words",
+    portuguese: "Location Words",
+    vietnamese: "Location Words",
+    thai: "Location Words",
+    khmer: "Location Words",
+    indonesian: "Location Words",
+    malay: "Location Words",
+    filipino: "Location Words"
   },
   words: [
     ["东", "dōng", "east", "este", "est", "leste", "đông", "ทิศตะวันออก", "ខាងកើត", "timur", "timur", "silangan"],

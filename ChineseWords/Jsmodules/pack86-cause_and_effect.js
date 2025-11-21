@@ -4,10 +4,17 @@
 export const pack86_cause_and_effect = {
   meta: {
     wordpack: 86,
-    packNumber: 86,
-    title: "Cause & Effect",
-    act: "Act V: Refinement",
-    wordCount: 24
+    pinyin: "Cause & Effect",
+    english: "Cause & Effect",
+    spanish: "Cause & Effect",
+    french: "Cause & Effect",
+    portuguese: "Cause & Effect",
+    vietnamese: "Cause & Effect",
+    thai: "Cause & Effect",
+    khmer: "Cause & Effect",
+    indonesian: "Cause & Effect",
+    malay: "Cause & Effect",
+    filipino: "Cause & Effect"
   },
   words: [
     ["因为这个原因", "yīnwèi zhège yuányīn", "because of this reason", "por esta razón", "pour cette raison", "por esta razão", "vì lý do này", "เพราะเหตุผลนี้", "ព្រោះហេតុផលនេះ", "karena alasan ini", "kerana sebab ini", "dahil sa dahilang ito"],

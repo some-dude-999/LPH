@@ -4,10 +4,17 @@
 export const pack28_body_parts = {
   meta: {
     wordpack: 28,
-    packNumber: 28,
-    title: "Body Parts",
-    act: "Act III: Expansion",
-    wordCount: 57
+    pinyin: "Body Parts",
+    english: "Body Parts",
+    spanish: "Body Parts",
+    french: "Body Parts",
+    portuguese: "Body Parts",
+    vietnamese: "Body Parts",
+    thai: "Body Parts",
+    khmer: "Body Parts",
+    indonesian: "Body Parts",
+    malay: "Body Parts",
+    filipino: "Body Parts"
   },
   words: [
     ["头", "tóu", "head", "cabeza", "tête", "cabeça", "đầu", "หัว", "ក្បាល", "kepala", "kepala", "ulo"],

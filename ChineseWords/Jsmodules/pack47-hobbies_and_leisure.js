@@ -4,10 +4,17 @@
 export const pack47_hobbies_and_leisure = {
   meta: {
     wordpack: 47,
-    packNumber: 47,
-    title: "Hobbies & Leisure",
-    act: "Act III: Expansion",
-    wordCount: 45
+    pinyin: "Hobbies & Leisure",
+    english: "Hobbies & Leisure",
+    spanish: "Hobbies & Leisure",
+    french: "Hobbies & Leisure",
+    portuguese: "Hobbies & Leisure",
+    vietnamese: "Hobbies & Leisure",
+    thai: "Hobbies & Leisure",
+    khmer: "Hobbies & Leisure",
+    indonesian: "Hobbies & Leisure",
+    malay: "Hobbies & Leisure",
+    filipino: "Hobbies & Leisure"
   },
   words: [
     ["看书", "kànshū", "read books", "leer libros", "lire des livres", "ler livros", "đọc sách", "อ่านหนังสือ", "អានសៀវភៅ", "membaca buku", "membaca buku", "magbasa ng libro"],

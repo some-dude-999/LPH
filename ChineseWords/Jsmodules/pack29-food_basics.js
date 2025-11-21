@@ -4,10 +4,17 @@
 export const pack29_food_basics = {
   meta: {
     wordpack: 29,
-    packNumber: 29,
-    title: "Food Basics",
-    act: "Act III: Expansion",
-    wordCount: 48
+    pinyin: "Food Basics",
+    english: "Food Basics",
+    spanish: "Food Basics",
+    french: "Food Basics",
+    portuguese: "Food Basics",
+    vietnamese: "Food Basics",
+    thai: "Food Basics",
+    khmer: "Food Basics",
+    indonesian: "Food Basics",
+    malay: "Food Basics",
+    filipino: "Food Basics"
   },
   words: [
     ["米饭", "mǐfàn", "rice", "arroz", "riz", "arroz", "cơm", "ข้าว", "បាយ", "nasi", "nasi", "kanin"],

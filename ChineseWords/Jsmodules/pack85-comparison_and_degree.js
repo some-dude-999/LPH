@@ -4,10 +4,17 @@
 export const pack85_comparison_and_degree = {
   meta: {
     wordpack: 85,
-    packNumber: 85,
-    title: "Comparison & Degree",
-    act: "Act V: Refinement",
-    wordCount: 24
+    pinyin: "Comparison & Degree",
+    english: "Comparison & Degree",
+    spanish: "Comparison & Degree",
+    french: "Comparison & Degree",
+    portuguese: "Comparison & Degree",
+    vietnamese: "Comparison & Degree",
+    thai: "Comparison & Degree",
+    khmer: "Comparison & Degree",
+    indonesian: "Comparison & Degree",
+    malay: "Comparison & Degree",
+    filipino: "Comparison & Degree"
   },
   words: [
     ["比较起来更好", "bǐjiào qǐlái gèng hǎo", "better in comparison", "mejor en comparación", "mieux en comparaison", "melhor em comparação", "so sánh thì tốt hơn", "เปรียบเทียบแล้วดีกว่า", "ប្រៀបធៀបហើយល្អជាង", "lebih baik dibandingkan", "lebih baik berbanding", "mas mabuti kung ikukumpara"],

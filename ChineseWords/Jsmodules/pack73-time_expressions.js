@@ -4,10 +4,17 @@
 export const pack73_time_expressions = {
   meta: {
     wordpack: 73,
-    packNumber: 73,
-    title: "Time Expressions",
-    act: "Act IV: Mastery",
-    wordCount: 24
+    pinyin: "Time Expressions",
+    english: "Time Expressions",
+    spanish: "Time Expressions",
+    french: "Time Expressions",
+    portuguese: "Time Expressions",
+    vietnamese: "Time Expressions",
+    thai: "Time Expressions",
+    khmer: "Time Expressions",
+    indonesian: "Time Expressions",
+    malay: "Time Expressions",
+    filipino: "Time Expressions"
   },
   words: [
     ["刚才发生的", "gāngcái fāshēng de", "what just happened", "lo que acaba de pasar", "ce qui vient de se passer", "o que acabou de acontecer", "điều vừa xảy ra", "สิ่งที่เพิ่งเกิดขึ้น", "អ្វីដែលទើបកើតឡើង", "yang baru saja terjadi", "yang baru berlaku", "ang bagong nangyari"],

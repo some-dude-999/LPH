@@ -4,10 +4,17 @@
 export const pack88_conjunctions_and_connectors = {
   meta: {
     wordpack: 88,
-    packNumber: 88,
-    title: "Conjunctions & Connectors",
-    act: "Act V: Refinement",
-    wordCount: 24
+    pinyin: "Conjunctions & Connectors",
+    english: "Conjunctions & Connectors",
+    spanish: "Conjunctions & Connectors",
+    french: "Conjunctions & Connectors",
+    portuguese: "Conjunctions & Connectors",
+    vietnamese: "Conjunctions & Connectors",
+    thai: "Conjunctions & Connectors",
+    khmer: "Conjunctions & Connectors",
+    indonesian: "Conjunctions & Connectors",
+    malay: "Conjunctions & Connectors",
+    filipino: "Conjunctions & Connectors"
   },
   words: [
     ["和你一起去吧", "hé nǐ yìqǐ qù ba", "let's go together with you", "vamos juntos contigo", "allons-y ensemble avec toi", "vamos juntos com você", "đi cùng với bạn đi", "ไปกับคุณกันเถอะ", "ទៅជាមួយអ្នកទៅ", "ayo pergi bersama kamu", "jom pergi sama awak", "tara sabay tayo"],

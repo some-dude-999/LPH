@@ -4,10 +4,17 @@
 export const pack98_education_and_learning = {
   meta: {
     wordpack: 98,
-    packNumber: 98,
-    title: "Education & Learning",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Education & Learning",
+    english: "Education & Learning",
+    spanish: "Education & Learning",
+    french: "Education & Learning",
+    portuguese: "Education & Learning",
+    vietnamese: "Education & Learning",
+    thai: "Education & Learning",
+    khmer: "Education & Learning",
+    indonesian: "Education & Learning",
+    malay: "Education & Learning",
+    filipino: "Education & Learning"
   },
   words: [
     ["接受良好的教育", "jiēshòu liánghǎo de jiàoyù", "receive good education", "recibir buena educación", "recevoir une bonne éducation", "receber boa educação", "nhận được giáo dục tốt", "ได้รับการศึกษาที่ดี", "ទទួលការអប់រំល្អ", "menerima pendidikan yang baik", "terima pendidikan yang baik", "tumanggap ng magandang edukasyon"],

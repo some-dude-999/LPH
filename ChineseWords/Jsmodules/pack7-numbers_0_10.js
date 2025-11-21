@@ -4,10 +4,17 @@
 export const pack7_numbers_0_10 = {
   meta: {
     wordpack: 7,
-    packNumber: 7,
-    title: "Numbers 0-10",
-    act: "Act I: Foundation",
-    wordCount: 42
+    pinyin: "Numbers 0-10",
+    english: "Numbers 0-10",
+    spanish: "Numbers 0-10",
+    french: "Numbers 0-10",
+    portuguese: "Numbers 0-10",
+    vietnamese: "Numbers 0-10",
+    thai: "Numbers 0-10",
+    khmer: "Numbers 0-10",
+    indonesian: "Numbers 0-10",
+    malay: "Numbers 0-10",
+    filipino: "Numbers 0-10"
   },
   words: [
     ["零", "líng", "zero", "cero", "zéro", "zero", "không", "ศูนย์", "សូន្យ", "nol", "kosong", "sero"],

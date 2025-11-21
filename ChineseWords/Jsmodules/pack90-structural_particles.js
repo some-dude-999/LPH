@@ -4,10 +4,17 @@
 export const pack90_structural_particles = {
   meta: {
     wordpack: 90,
-    packNumber: 90,
-    title: "Structural Particles",
-    act: "Act V: Refinement",
-    wordCount: 24
+    pinyin: "Structural Particles",
+    english: "Structural Particles",
+    spanish: "Structural Particles",
+    french: "Structural Particles",
+    portuguese: "Structural Particles",
+    vietnamese: "Structural Particles",
+    thai: "Structural Particles",
+    khmer: "Structural Particles",
+    indonesian: "Structural Particles",
+    malay: "Structural Particles",
+    filipino: "Structural Particles"
   },
   words: [
     ["这是我的东西", "zhè shì wǒ de dōngxi", "this is my thing", "esto es mío", "c'est à moi", "isto é meu", "đây là đồ của tôi", "นี่เป็นของฉัน", "នេះគឺរបស់ខ្ញុំ", "ini milik saya", "ini barang saya", "ito ay akin"],

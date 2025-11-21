@@ -4,10 +4,17 @@
 export const pack50_animals = {
   meta: {
     wordpack: 50,
-    packNumber: 50,
-    title: "Animals",
-    act: "Act III: Expansion",
-    wordCount: 51
+    pinyin: "Animals",
+    english: "Animals",
+    spanish: "Animals",
+    french: "Animals",
+    portuguese: "Animals",
+    vietnamese: "Animals",
+    thai: "Animals",
+    khmer: "Animals",
+    indonesian: "Animals",
+    malay: "Animals",
+    filipino: "Animals"
   },
   words: [
     ["狗", "gǒu", "dog", "perro", "chien", "cachorro", "chó", "สุนัข", "ឆ្កែ", "anjing", "anjing", "aso"],

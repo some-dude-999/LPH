@@ -4,10 +4,17 @@
 export const pack87_conditions_and_assumptions = {
   meta: {
     wordpack: 87,
-    packNumber: 87,
-    title: "Conditions & Assumptions",
-    act: "Act V: Refinement",
-    wordCount: 24
+    pinyin: "Conditions & Assumptions",
+    english: "Conditions & Assumptions",
+    spanish: "Conditions & Assumptions",
+    french: "Conditions & Assumptions",
+    portuguese: "Conditions & Assumptions",
+    vietnamese: "Conditions & Assumptions",
+    thai: "Conditions & Assumptions",
+    khmer: "Conditions & Assumptions",
+    indonesian: "Conditions & Assumptions",
+    malay: "Conditions & Assumptions",
+    filipino: "Conditions & Assumptions"
   },
   words: [
     ["如果是这样的话", "rúguǒ shì zhèyàng dehuà", "if it's like this", "si es así", "si c'est comme ça", "se for assim", "nếu như vậy", "ถ้าเป็นอย่างนี้", "បើវាដូចនេះ", "kalau begitu", "jika begini", "kung ganito"],

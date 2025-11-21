@@ -4,10 +4,17 @@
 export const pack77_making_comparisons = {
   meta: {
     wordpack: 77,
-    packNumber: 77,
-    title: "Making Comparisons",
-    act: "Act IV: Mastery",
-    wordCount: 21
+    pinyin: "Making Comparisons",
+    english: "Making Comparisons",
+    spanish: "Making Comparisons",
+    french: "Making Comparisons",
+    portuguese: "Making Comparisons",
+    vietnamese: "Making Comparisons",
+    thai: "Making Comparisons",
+    khmer: "Making Comparisons",
+    indonesian: "Making Comparisons",
+    malay: "Making Comparisons",
+    filipino: "Making Comparisons"
   },
   words: [
     ["这个比较好", "zhège bǐjiào hǎo", "this one is better", "este es mejor", "celui-ci est mieux", "este é melhor", "cái này tốt hơn", "อันนี้ดีกว่า", "អាននេះល្អជាង", "yang ini lebih baik", "yang ini lebih baik", "ito ay mas maganda"],

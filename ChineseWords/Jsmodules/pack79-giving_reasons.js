@@ -4,10 +4,17 @@
 export const pack79_giving_reasons = {
   meta: {
     wordpack: 79,
-    packNumber: 79,
-    title: "Giving Reasons",
-    act: "Act IV: Mastery",
-    wordCount: 21
+    pinyin: "Giving Reasons",
+    english: "Giving Reasons",
+    spanish: "Giving Reasons",
+    french: "Giving Reasons",
+    portuguese: "Giving Reasons",
+    vietnamese: "Giving Reasons",
+    thai: "Giving Reasons",
+    khmer: "Giving Reasons",
+    indonesian: "Giving Reasons",
+    malay: "Giving Reasons",
+    filipino: "Giving Reasons"
   },
   words: [
     ["因为太忙了", "yīnwèi tài máng le", "because I'm too busy", "porque estoy muy ocupado", "parce que je suis trop occupé", "porque estou muito ocupado", "vì quá bận", "เพราะยุ่งเกินไป", "ព្រោះរវល់ពេក", "karena terlalu sibuk", "sebab terlalu sibuk", "dahil masyadong abala"],

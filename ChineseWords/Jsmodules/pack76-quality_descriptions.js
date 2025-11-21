@@ -4,10 +4,17 @@
 export const pack76_quality_descriptions = {
   meta: {
     wordpack: 76,
-    packNumber: 76,
-    title: "Quality Descriptions",
-    act: "Act IV: Mastery",
-    wordCount: 21
+    pinyin: "Quality Descriptions",
+    english: "Quality Descriptions",
+    spanish: "Quality Descriptions",
+    french: "Quality Descriptions",
+    portuguese: "Quality Descriptions",
+    vietnamese: "Quality Descriptions",
+    thai: "Quality Descriptions",
+    khmer: "Quality Descriptions",
+    indonesian: "Quality Descriptions",
+    malay: "Quality Descriptions",
+    filipino: "Quality Descriptions"
   },
   words: [
     ["质量很好的", "zhìliàng hěn hǎo de", "very good quality", "muy buena calidad", "très bonne qualité", "qualidade muito boa", "chất lượng rất tốt", "คุณภาพดีมาก", "គុណភាពល្អខ្លាំង", "kualitas sangat baik", "kualiti sangat baik", "napakagandang kalidad"],

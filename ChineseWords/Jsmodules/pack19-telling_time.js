@@ -4,10 +4,17 @@
 export const pack19_telling_time = {
   meta: {
     wordpack: 19,
-    packNumber: 19,
-    title: "Telling Time",
-    act: "Act II: Development",
-    wordCount: 42
+    pinyin: "Telling Time",
+    english: "Telling Time",
+    spanish: "Telling Time",
+    french: "Telling Time",
+    portuguese: "Telling Time",
+    vietnamese: "Telling Time",
+    thai: "Telling Time",
+    khmer: "Telling Time",
+    indonesian: "Telling Time",
+    malay: "Telling Time",
+    filipino: "Telling Time"
   },
   words: [
     ["几点", "jǐ diǎn", "what time", "qué hora", "quelle heure", "que horas", "mấy giờ", "กี่โมง", "ម៉ោងប៉ុន្មាន", "jam berapa", "pukul berapa", "anong oras"],

@@ -4,10 +4,17 @@
 export const pack93_quantities_and_amounts = {
   meta: {
     wordpack: 93,
-    packNumber: 93,
-    title: "Quantities & Amounts",
-    act: "Act V: Refinement",
-    wordCount: 21
+    pinyin: "Quantities & Amounts",
+    english: "Quantities & Amounts",
+    spanish: "Quantities & Amounts",
+    french: "Quantities & Amounts",
+    portuguese: "Quantities & Amounts",
+    vietnamese: "Quantities & Amounts",
+    thai: "Quantities & Amounts",
+    khmer: "Quantities & Amounts",
+    indonesian: "Quantities & Amounts",
+    malay: "Quantities & Amounts",
+    filipino: "Quantities & Amounts"
   },
   words: [
     ["全部都是这样的", "quánbù dōu shì zhèyàng de", "all are like this", "todos son así", "tous sont comme ça", "todos são assim", "tất cả đều như vậy", "ทั้งหมดเป็นอย่างนี้", "ទាំងអស់ដូចនេះ", "semuanya seperti ini", "semuanya macam ni", "lahat ay ganito"],

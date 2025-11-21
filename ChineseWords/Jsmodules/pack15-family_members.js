@@ -4,10 +4,17 @@
 export const pack15_family_members = {
   meta: {
     wordpack: 15,
-    packNumber: 15,
-    title: "Family Members",
-    act: "Act II: Development",
-    wordCount: 54
+    pinyin: "Family Members",
+    english: "Family Members",
+    spanish: "Family Members",
+    french: "Family Members",
+    portuguese: "Family Members",
+    vietnamese: "Family Members",
+    thai: "Family Members",
+    khmer: "Family Members",
+    indonesian: "Family Members",
+    malay: "Family Members",
+    filipino: "Family Members"
   },
   words: [
     ["家人", "jiārén", "family", "familia", "famille", "família", "gia đình", "ครอบครัว", "គ្រួសារ", "keluarga", "keluarga", "pamilya"],

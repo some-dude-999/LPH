@@ -4,10 +4,17 @@
 export const pack16_days_of_week = {
   meta: {
     wordpack: 16,
-    packNumber: 16,
-    title: "Days of Week",
-    act: "Act II: Development",
-    wordCount: 42
+    pinyin: "Days of Week",
+    english: "Days of Week",
+    spanish: "Days of Week",
+    french: "Days of Week",
+    portuguese: "Days of Week",
+    vietnamese: "Days of Week",
+    thai: "Days of Week",
+    khmer: "Days of Week",
+    indonesian: "Days of Week",
+    malay: "Days of Week",
+    filipino: "Days of Week"
   },
   words: [
     ["星期", "xīngqī", "week", "semana", "semaine", "semana", "tuần", "สัปดาห์", "សប្តាហ៍", "minggu", "minggu", "linggo"],

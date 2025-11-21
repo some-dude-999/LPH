@@ -4,10 +4,17 @@
 export const pack57_asking_for_help = {
   meta: {
     wordpack: 57,
-    packNumber: 57,
-    title: "Asking for Help",
-    act: "Act IV: Mastery",
-    wordCount: 24
+    pinyin: "Asking for Help",
+    english: "Asking for Help",
+    spanish: "Asking for Help",
+    french: "Asking for Help",
+    portuguese: "Asking for Help",
+    vietnamese: "Asking for Help",
+    thai: "Asking for Help",
+    khmer: "Asking for Help",
+    indonesian: "Asking for Help",
+    malay: "Asking for Help",
+    filipino: "Asking for Help"
   },
   words: [
     ["请帮帮我", "qǐng bāngbang wǒ", "please help me", "por favor ayúdame", "s'il te plaît aide-moi", "por favor me ajude", "làm ơn giúp tôi", "ช่วยฉันหน่อย", "សូមជួយខ្ញុំផង", "tolong bantu saya", "tolong bantu saya", "tulungan mo ako"],

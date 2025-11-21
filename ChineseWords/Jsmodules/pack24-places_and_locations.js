@@ -4,10 +4,17 @@
 export const pack24_places_and_locations = {
   meta: {
     wordpack: 24,
-    packNumber: 24,
-    title: "Places & Locations",
-    act: "Act II: Development",
-    wordCount: 54
+    pinyin: "Places & Locations",
+    english: "Places & Locations",
+    spanish: "Places & Locations",
+    french: "Places & Locations",
+    portuguese: "Places & Locations",
+    vietnamese: "Places & Locations",
+    thai: "Places & Locations",
+    khmer: "Places & Locations",
+    indonesian: "Places & Locations",
+    malay: "Places & Locations",
+    filipino: "Places & Locations"
   },
   words: [
     ["地方", "dìfang", "place", "lugar", "endroit", "lugar", "nơi", "สถานที่", "កន្លែង", "tempat", "tempat", "lugar"],

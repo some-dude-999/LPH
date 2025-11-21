@@ -4,10 +4,17 @@
 export const pack2_personal_pronouns = {
   meta: {
     wordpack: 2,
-    packNumber: 2,
-    title: "Personal Pronouns",
-    act: "Act I: Foundation",
-    wordCount: 42
+    pinyin: "Personal Pronouns",
+    english: "Personal Pronouns",
+    spanish: "Personal Pronouns",
+    french: "Personal Pronouns",
+    portuguese: "Personal Pronouns",
+    vietnamese: "Personal Pronouns",
+    thai: "Personal Pronouns",
+    khmer: "Personal Pronouns",
+    indonesian: "Personal Pronouns",
+    malay: "Personal Pronouns",
+    filipino: "Personal Pronouns"
   },
   words: [
     ["我", "wǒ", "I / me", "yo", "je", "eu", "tôi", "ฉัน", "ខ្ញុំ", "saya", "saya", "ako"],
