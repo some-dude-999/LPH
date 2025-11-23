@@ -1186,6 +1186,56 @@
         transform: scale(1.02);
       }
     }
+
+    /* Stamp overlays */
+    .card-stamp {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-15deg);
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding: 20px 40px;
+      border: 6px solid;
+      border-radius: 8px;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 100;
+      text-align: center;
+      white-space: nowrap;
+      transition: opacity 0.3s ease;
+    }
+
+    .removed-stamp {
+      color: rgba(180, 30, 30, 0.85);
+      border-color: rgba(180, 30, 30, 0.85);
+      background: rgba(255, 255, 255, 0.2);
+      text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(180, 30, 30, 0.4);
+      box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.3) inset,
+        0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .added-stamp {
+      color: rgba(30, 100, 180, 0.85);
+      border-color: rgba(30, 100, 180, 0.85);
+      background: rgba(255, 255, 255, 0.2);
+      text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(30, 100, 180, 0.4);
+      box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.3) inset,
+        0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-stamp.visible {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -1375,8 +1425,12 @@
           <button class="feedback-close" id="close-back">Got it</button>
         </div>
       </div>
+
+      <!-- Stamp overlays for visual feedback -->
+      <div class="card-stamp removed-stamp" id="removed-stamp">Card Removed</div>
+      <div class="card-stamp added-stamp" id="added-stamp">Extra Practice Added</div>
     </div>
-    
+
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
   </div>
 
@@ -1461,7 +1515,9 @@
     const soundBtnFront = document.getElementById('sound-btn-front');
     const soundBtnBack = document.getElementById('sound-btn-back');
     const speedBtns = document.querySelectorAll('.speed-btn'); // Includes both setup and menu buttons
-    
+    const removedStamp = document.getElementById('removed-stamp');
+    const addedStamp = document.getElementById('added-stamp');
+
     // Modal elements
     const helpBtn = document.getElementById('help-btn');
     const helpModal = document.getElementById('help-modal');
@@ -1868,11 +1924,15 @@
       // Play sound
       playCardFlipSound();
 
+      // Show "Card Removed" stamp
+      removedStamp.classList.add('visible');
+
       // Fade out animation
       flashcard.classList.add('removing');
 
       setTimeout(() => {
         flashcard.classList.remove('removing');
+        removedStamp.classList.remove('visible');
 
         // Remove card from deck
         currentDeck.splice(currentIndex, 1);
@@ -1894,10 +1954,14 @@
       playCardFlipSound();
       setTimeout(() => playCardFlipSound(), 200);
 
+      // Show "Extra Practice Added" stamp
+      addedStamp.classList.add('visible');
+
       // Bounce animation
       flashcard.classList.add('adding');
       setTimeout(() => {
         flashcard.classList.remove('adding');
+        addedStamp.classList.remove('visible');
       }, 500);
 
       // Add 2 copies to random positions in deck
@@ -1912,6 +1976,9 @@
           currentIndex++;
         }
       }
+
+      // Update card counter immediately
+      cardCounter.textContent = `Card ${currentIndex + 1} of ${currentDeck.length}`;
 
       saveState();
     }
