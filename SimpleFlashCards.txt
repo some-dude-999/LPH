@@ -2,7 +2,7 @@
 PROJECT: LPH Spanish Learning
 COMPONENT: Simple Flashcards - Interactive Spanish vocabulary practice
 CREATED: 2025-11-23
-LAST UPDATED: 2025-11-23 - Updated card animations (slide-off removal, multi-card insertion)
+LAST UPDATED: 2025-11-23 - Removed animations, redesigned stamps with realistic ink effects
 
 DATA SOURCES:
 - Module: https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js
@@ -45,13 +45,22 @@ INTEGRATION:
 
 ANIMATIONS:
 - Card Flip: Soft audio cue with visual flip transition
-- Card Remove: Slide-off animation (0.5s) - card slides right with 25° rotation when mastered
-  * JavaScript timeout: 500ms to match animation duration
-- Card Add: Multi-card insertion animation (0.6s) - 2 extra cards slide in from behind using ::before and ::after pseudo-elements
-  * Cards slide from left and right (-60px/+60px) with scale and opacity transitions
-  * JavaScript timeout: 600ms to match animation duration
-  * Main card does subtle pop effect (scale 1.03 → 0.98 → 1.0)
-- Stamps: "Card Removed" and "Extra Practice" overlays with realistic ink effect (1s display before animation)
+- Card Remove/Add: No animations - stamps only
+  * Show stamp for 1 second, then immediately change to next card
+  * No slide-off or insertion effects
+
+STAMPS (REALISTIC RUBBER STAMP EFFECT):
+- "Card Removed" (red) and "Extra Practice" (green) overlays
+- Realistic ink simulation with randomized imperfections:
+  * Opacity variation: Vibrant (0.85-1.0) or Faint (0.25-0.6)
+  * Corner gaps: Random missing corners (0-60% of corners affected)
+  * Edge gaps: Uneven pressure creates missing edges
+  * Uses CSS mask-image with radial/linear gradients for gaps
+  * mix-blend-mode: multiply for realistic ink-on-paper effect
+- randomizeStamp() function: Sets CSS variables for each stamp instance
+  * --stamp-opacity: Overall intensity
+  * --corner-tl/tr/bl/br: Corner cutout sizes (0-0.8 * 25px)
+  * --edge-top/right/bottom/left: Edge gap sizes (0-0.6 * 8px)
 
 AUDIO FEATURES:
 - Card Flip Sound: Muffled paper-like sound (Cloud Nine Ultra Soft)

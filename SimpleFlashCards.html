@@ -1155,105 +1155,9 @@
       }
     }
 
-    /* Card removal - slide off to the right */
-    .flashcard.removing {
-      animation: slideOffCard 0.5s ease forwards;
-    }
+    /* No animations - stamps only */
 
-    @keyframes slideOffCard {
-      0% {
-        transform: translateX(0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(150%) rotate(25deg);
-        opacity: 0;
-      }
-    }
-
-    /* Card add - show 2 extra cards sliding in behind */
-    .flashcard.adding {
-      position: relative;
-      animation: cardAddPop 0.6s ease;
-    }
-
-    /* Create 2 extra cards behind using pseudo-elements */
-    .flashcard.adding::before,
-    .flashcard.adding::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      background:
-        var(--paper-texture),
-        linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--paper-texture-size), 100%;
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.4),
-        0 0 0 1px rgba(139, 115, 85, 0.3),
-        inset 0 0 50px rgba(139, 115, 85, 0.1);
-      border: 3px solid #A08567;
-      z-index: -1;
-    }
-
-    .flashcard.adding::before {
-      animation: slideInCard1 0.6s ease;
-    }
-
-    .flashcard.adding::after {
-      animation: slideInCard2 0.6s ease;
-    }
-
-    /* Main card pops slightly */
-    @keyframes cardAddPop {
-      0%, 100% {
-        transform: scale(1);
-      }
-      30% {
-        transform: scale(1.03);
-      }
-      60% {
-        transform: scale(0.98);
-      }
-    }
-
-    /* First card slides in from behind-left */
-    @keyframes slideInCard1 {
-      0% {
-        transform: translate(-60px, -20px) scale(0.95);
-        opacity: 0;
-      }
-      50% {
-        transform: translate(-30px, -10px) scale(0.97);
-        opacity: 0.7;
-      }
-      100% {
-        transform: translate(-12px, -6px) scale(0.98);
-        opacity: 0.4;
-      }
-    }
-
-    /* Second card slides in from behind-right */
-    @keyframes slideInCard2 {
-      0% {
-        transform: translate(60px, -25px) scale(0.94);
-        opacity: 0;
-      }
-      50% {
-        transform: translate(30px, -12px) scale(0.96);
-        opacity: 0.6;
-      }
-      100% {
-        transform: translate(-8px, -4px) scale(0.99);
-        opacity: 0.3;
-      }
-    }
-
-    /* Stamp overlays */
+    /* Stamp overlays - realistic rubber stamp effect */
     .card-stamp {
       position: absolute;
       top: 25px;
@@ -1281,44 +1185,100 @@
 
       /* Realistic stamp blending with paper */
       mix-blend-mode: multiply;
-      filter: contrast(1.15);
+      filter: contrast(1.2);
+
+      /* CSS variables for randomness - set by JavaScript */
+      --stamp-opacity: 0.85;
+      --corner-tl: 0;
+      --corner-tr: 0;
+      --corner-bl: 0;
+      --corner-br: 0;
+      --edge-top: 0;
+      --edge-right: 0;
+      --edge-bottom: 0;
+      --edge-left: 0;
     }
 
     .removed-stamp {
       color: #A82828;
       border-color: #A82828;
-      background:
-        /* Uneven ink texture - dark splotches */
-        radial-gradient(circle at 15% 25%, transparent 0%, rgba(0, 0, 0, 0.12) 45%, transparent 100%),
-        radial-gradient(circle at 85% 75%, transparent 0%, rgba(0, 0, 0, 0.18) 40%, transparent 100%),
-        radial-gradient(ellipse at 50% 10%, transparent 50%, rgba(0, 0, 0, 0.08) 100%),
-        radial-gradient(circle at 60% 80%, transparent 30%, rgba(0, 0, 0, 0.1) 70%, transparent 100%),
-        /* Base stamp ink - semi-transparent for incomplete coverage */
-        rgba(168, 40, 40, 0.75);
+      /* Solid base color - masking creates gaps */
+      background: rgba(168, 40, 40, var(--stamp-opacity));
+      text-shadow: 0.5px 0.5px 1px rgba(168, 40, 40, 0.5);
 
-      /* Subtle ink spread */
-      text-shadow: 0.5px 0.5px 1px rgba(168, 40, 40, 0.4);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+      /* Mask to create missing ink areas */
+      -webkit-mask-image:
+        /* Corner cutouts - missing ink */
+        radial-gradient(circle at 0% 0%, transparent calc(var(--corner-tl) * 25px), black calc(var(--corner-tl) * 25px + 1px)),
+        radial-gradient(circle at 100% 0%, transparent calc(var(--corner-tr) * 25px), black calc(var(--corner-tr) * 25px + 1px)),
+        radial-gradient(circle at 0% 100%, transparent calc(var(--corner-bl) * 25px), black calc(var(--corner-bl) * 25px + 1px)),
+        radial-gradient(circle at 100% 100%, transparent calc(var(--corner-br) * 25px), black calc(var(--corner-br) * 25px + 1px)),
+        /* Edge gaps - uneven pressure */
+        linear-gradient(to bottom, transparent calc(var(--edge-top) * 8px), black calc(var(--edge-top) * 8px + 1px)),
+        linear-gradient(to left, transparent calc(var(--edge-right) * 8px), black calc(var(--edge-right) * 8px + 1px)),
+        linear-gradient(to top, transparent calc(var(--edge-bottom) * 8px), black calc(var(--edge-bottom) * 8px + 1px)),
+        linear-gradient(to right, transparent calc(var(--edge-left) * 8px), black calc(var(--edge-left) * 8px + 1px)),
+        /* Random splotches - ink variations */
+        radial-gradient(ellipse 30px 40px at 20% 30%, transparent 30%, black 60%),
+        radial-gradient(ellipse 25px 35px at 75% 65%, transparent 25%, black 55%),
+        radial-gradient(ellipse 20px 30px at 50% 85%, transparent 35%, black 65%);
+      -webkit-mask-composite: source-in;
+      -webkit-mask-size: 100% 100%;
+      mask-image:
+        radial-gradient(circle at 0% 0%, transparent calc(var(--corner-tl) * 25px), black calc(var(--corner-tl) * 25px + 1px)),
+        radial-gradient(circle at 100% 0%, transparent calc(var(--corner-tr) * 25px), black calc(var(--corner-tr) * 25px + 1px)),
+        radial-gradient(circle at 0% 100%, transparent calc(var(--corner-bl) * 25px), black calc(var(--corner-bl) * 25px + 1px)),
+        radial-gradient(circle at 100% 100%, transparent calc(var(--corner-br) * 25px), black calc(var(--corner-br) * 25px + 1px)),
+        linear-gradient(to bottom, transparent calc(var(--edge-top) * 8px), black calc(var(--edge-top) * 8px + 1px)),
+        linear-gradient(to left, transparent calc(var(--edge-right) * 8px), black calc(var(--edge-right) * 8px + 1px)),
+        linear-gradient(to top, transparent calc(var(--edge-bottom) * 8px), black calc(var(--edge-bottom) * 8px + 1px)),
+        linear-gradient(to right, transparent calc(var(--edge-left) * 8px), black calc(var(--edge-left) * 8px + 1px)),
+        radial-gradient(ellipse 30px 40px at 20% 30%, transparent 30%, black 60%),
+        radial-gradient(ellipse 25px 35px at 75% 65%, transparent 25%, black 55%),
+        radial-gradient(ellipse 20px 30px at 50% 85%, transparent 35%, black 65%);
+      mask-composite: intersect;
+      mask-size: 100% 100%;
     }
 
     .added-stamp {
       color: #2A6E45;
       border-color: #2A6E45;
-      background:
-        /* Same texture pattern for uniform stamp behavior */
-        radial-gradient(circle at 15% 25%, transparent 0%, rgba(0, 0, 0, 0.12) 45%, transparent 100%),
-        radial-gradient(circle at 85% 75%, transparent 0%, rgba(0, 0, 0, 0.18) 40%, transparent 100%),
-        radial-gradient(ellipse at 50% 10%, transparent 50%, rgba(0, 0, 0, 0.08) 100%),
-        radial-gradient(circle at 60% 80%, transparent 30%, rgba(0, 0, 0, 0.1) 70%, transparent 100%),
-        /* Base stamp ink */
-        rgba(42, 110, 69, 0.75);
+      background: rgba(42, 110, 69, var(--stamp-opacity));
+      text-shadow: 0.5px 0.5px 1px rgba(42, 110, 69, 0.5);
 
-      text-shadow: 0.5px 0.5px 1px rgba(42, 110, 69, 0.4);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+      /* Same mask pattern for consistency */
+      -webkit-mask-image:
+        radial-gradient(circle at 0% 0%, transparent calc(var(--corner-tl) * 25px), black calc(var(--corner-tl) * 25px + 1px)),
+        radial-gradient(circle at 100% 0%, transparent calc(var(--corner-tr) * 25px), black calc(var(--corner-tr) * 25px + 1px)),
+        radial-gradient(circle at 0% 100%, transparent calc(var(--corner-bl) * 25px), black calc(var(--corner-bl) * 25px + 1px)),
+        radial-gradient(circle at 100% 100%, transparent calc(var(--corner-br) * 25px), black calc(var(--corner-br) * 25px + 1px)),
+        linear-gradient(to bottom, transparent calc(var(--edge-top) * 8px), black calc(var(--edge-top) * 8px + 1px)),
+        linear-gradient(to left, transparent calc(var(--edge-right) * 8px), black calc(var(--edge-right) * 8px + 1px)),
+        linear-gradient(to top, transparent calc(var(--edge-bottom) * 8px), black calc(var(--edge-bottom) * 8px + 1px)),
+        linear-gradient(to right, transparent calc(var(--edge-left) * 8px), black calc(var(--edge-left) * 8px + 1px)),
+        radial-gradient(ellipse 30px 40px at 20% 30%, transparent 30%, black 60%),
+        radial-gradient(ellipse 25px 35px at 75% 65%, transparent 25%, black 55%),
+        radial-gradient(ellipse 20px 30px at 50% 85%, transparent 35%, black 65%);
+      -webkit-mask-composite: source-in;
+      -webkit-mask-size: 100% 100%;
+      mask-image:
+        radial-gradient(circle at 0% 0%, transparent calc(var(--corner-tl) * 25px), black calc(var(--corner-tl) * 25px + 1px)),
+        radial-gradient(circle at 100% 0%, transparent calc(var(--corner-tr) * 25px), black calc(var(--corner-tr) * 25px + 1px)),
+        radial-gradient(circle at 0% 100%, transparent calc(var(--corner-bl) * 25px), black calc(var(--corner-bl) * 25px + 1px)),
+        radial-gradient(circle at 100% 100%, transparent calc(var(--corner-br) * 25px), black calc(var(--corner-br) * 25px + 1px)),
+        linear-gradient(to bottom, transparent calc(var(--edge-top) * 8px), black calc(var(--edge-top) * 8px + 1px)),
+        linear-gradient(to left, transparent calc(var(--edge-right) * 8px), black calc(var(--edge-right) * 8px + 1px)),
+        linear-gradient(to top, transparent calc(var(--edge-bottom) * 8px), black calc(var(--edge-bottom) * 8px + 1px)),
+        linear-gradient(to right, transparent calc(var(--edge-left) * 8px), black calc(var(--edge-left) * 8px + 1px)),
+        radial-gradient(ellipse 30px 40px at 20% 30%, transparent 30%, black 60%),
+        radial-gradient(ellipse 25px 35px at 75% 65%, transparent 25%, black 55%),
+        radial-gradient(ellipse 20px 30px at 50% 85%, transparent 35%, black 65%);
+      mask-composite: intersect;
+      mask-size: 100% 100%;
     }
 
     .card-stamp.visible {
-      opacity: 0.9;
+      opacity: 1;
     }
   </style>
 </head>
@@ -1996,6 +1956,40 @@
       isFlipped = false;
     }
 
+    // Randomize stamp appearance for realistic ink effect
+    function randomizeStamp(stampElement) {
+      // Overall stamp opacity - some vibrant (0.9-1.0), some barely there (0.3-0.5)
+      const isVibrant = Math.random() > 0.5;
+      const opacity = isVibrant
+        ? 0.85 + Math.random() * 0.15  // 0.85-1.0 for vibrant
+        : 0.25 + Math.random() * 0.35; // 0.25-0.6 for faint
+
+      // Corner gaps - 0 to 1 (multiplied by 25px in CSS)
+      // Stamps often miss corners
+      const cornerTL = Math.random() > 0.6 ? Math.random() * 0.8 : 0;
+      const cornerTR = Math.random() > 0.6 ? Math.random() * 0.8 : 0;
+      const cornerBL = Math.random() > 0.6 ? Math.random() * 0.8 : 0;
+      const cornerBR = Math.random() > 0.6 ? Math.random() * 0.8 : 0;
+
+      // Edge gaps - 0 to 1 (multiplied by 8px in CSS)
+      // Uneven pressure creates edge gaps
+      const edgeTop = Math.random() > 0.5 ? Math.random() * 0.6 : 0;
+      const edgeRight = Math.random() > 0.5 ? Math.random() * 0.6 : 0;
+      const edgeBottom = Math.random() > 0.5 ? Math.random() * 0.6 : 0;
+      const edgeLeft = Math.random() > 0.5 ? Math.random() * 0.6 : 0;
+
+      // Apply CSS variables
+      stampElement.style.setProperty('--stamp-opacity', opacity);
+      stampElement.style.setProperty('--corner-tl', cornerTL);
+      stampElement.style.setProperty('--corner-tr', cornerTR);
+      stampElement.style.setProperty('--corner-bl', cornerBL);
+      stampElement.style.setProperty('--corner-br', cornerBR);
+      stampElement.style.setProperty('--edge-top', edgeTop);
+      stampElement.style.setProperty('--edge-right', edgeRight);
+      stampElement.style.setProperty('--edge-bottom', edgeBottom);
+      stampElement.style.setProperty('--edge-left', edgeLeft);
+    }
+
     // Remove current card (Got it!)
     function removeCurrentCard() {
       if (currentDeck.length <= 1) {
@@ -2008,27 +2002,24 @@
       // Play sound
       playCardFlipSound();
 
+      // Randomize stamp appearance
+      randomizeStamp(removedStamp);
+
       // Show "Card Removed" stamp for 1 second
       removedStamp.classList.add('visible');
 
       setTimeout(() => {
-        // Start slide off animation (stamp stays visible, slides with card)
-        flashcard.classList.add('removing');
+        removedStamp.classList.remove('visible');
 
-        setTimeout(() => {
-          flashcard.classList.remove('removing');
-          removedStamp.classList.remove('visible');
+        // Remove card from deck
+        currentDeck.splice(currentIndex, 1);
+        if (currentIndex >= currentDeck.length) {
+          currentIndex = 0;
+        }
 
-          // Remove card from deck
-          currentDeck.splice(currentIndex, 1);
-          if (currentIndex >= currentDeck.length) {
-            currentIndex = 0;
-          }
-
-          // Show next card
-          updateDisplay();
-          saveState();
-        }, 500);
+        // Show next card
+        updateDisplay();
+        saveState();
       }, 1000);
     }
 
@@ -2040,35 +2031,32 @@
       playCardFlipSound();
       setTimeout(() => playCardFlipSound(), 200);
 
+      // Randomize stamp appearance
+      randomizeStamp(addedStamp);
+
       // Show "Extra Practice" stamp for 1 second
       addedStamp.classList.add('visible');
 
       setTimeout(() => {
-        // Start multi-card insertion animation (stamp stays visible, animates with cards)
-        flashcard.classList.add('adding');
+        addedStamp.classList.remove('visible');
 
-        setTimeout(() => {
-          flashcard.classList.remove('adding');
-          addedStamp.classList.remove('visible');
+        // Add 2 copies to random positions in deck
+        const card = { ...currentDeck[currentIndex] };
 
-          // Add 2 copies to random positions in deck
-          const card = { ...currentDeck[currentIndex] };
+        for (let n = 0; n < 2; n++) {
+          const randomPos = Math.floor(Math.random() * (currentDeck.length + 1));
+          currentDeck.splice(randomPos, 0, { ...card, id: `${card.id}-copy-${Date.now()}-${n}` });
 
-          for (let n = 0; n < 2; n++) {
-            const randomPos = Math.floor(Math.random() * (currentDeck.length + 1));
-            currentDeck.splice(randomPos, 0, { ...card, id: `${card.id}-copy-${Date.now()}-${n}` });
-
-            // Adjust current index if we inserted before it
-            if (randomPos <= currentIndex) {
-              currentIndex++;
-            }
+          // Adjust current index if we inserted before it
+          if (randomPos <= currentIndex) {
+            currentIndex++;
           }
+        }
 
-          // Move to next card and update display
-          currentIndex = (currentIndex + 1) % currentDeck.length;
-          updateDisplay();
-          saveState();
-        }, 600);
+        // Move to next card and update display
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        updateDisplay();
+        saveState();
       }, 1000);
     }
 
