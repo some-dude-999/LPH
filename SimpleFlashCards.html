@@ -91,16 +91,25 @@
       color: #D4C4A8;
     }
 
-    /* Wordpack Title */
+    /* Wordpack Title - Real gold appearance */
     .wordpack-title {
-      color: #F5E6D3;
+      background: linear-gradient(180deg, #FFD700 0%, #FFA500 40%, #FF8C00 60%, #B8860B 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
       font-family: 'Cinzel', serif;
       font-size: 1.5rem;
+      font-weight: 600;
       margin-bottom: 8px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      text-shadow:
+        0 1px 2px rgba(255, 215, 0, 0.5),
+        0 2px 4px rgba(255, 140, 0, 0.3),
+        0 -1px 1px rgba(255, 255, 255, 0.2),
+        0 3px 6px rgba(0, 0, 0, 0.4);
       opacity: 0;
       transition: opacity 0.3s ease;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      filter: drop-shadow(0 2px 3px rgba(184, 134, 11, 0.4));
     }
 
     body.game-started .wordpack-title {
@@ -1886,46 +1895,54 @@
     }
 
     // ===================================================================================
-    // FELT PEN SCRIBBLE SOUND - Muffled, soft, tactile writing sound with variation
+    // FELT PEN SCRIBBLE SOUND - Deep, satisfying scratching sound like felt pen writing
     // ===================================================================================
     function playScribbleSound() {
       const ctx = getAudioContext();
       const now = ctx.currentTime;
 
-      // Random variation for each scribble (0.02-0.035 seconds - quick!)
-      const duration = 0.02 + Math.random() * 0.015;
+      // Longer duration for more satisfying scratch (0.04-0.06 seconds)
+      const duration = 0.04 + Math.random() * 0.02;
       const bufferSize = ctx.sampleRate * duration;
       const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
       const data = buffer.getChannelData(0);
 
-      // Generate noise with fast decay for tactile "scratch" feel
+      // Generate noise with moderate decay for scratchy texture
       for (let i = 0; i < bufferSize; i++) {
-        const envelope = Math.pow(1 - i/bufferSize, 8); // Very fast decay
-        data[i] = (Math.random() * 2 - 1) * envelope;
+        const envelope = Math.pow(1 - i/bufferSize, 4); // Moderate decay for longer scratch
+        // Add pink noise character for more natural scratch sound
+        const noise = (Math.random() * 2 - 1);
+        data[i] = noise * envelope;
       }
 
       const source = ctx.createBufferSource();
       source.buffer = buffer;
 
-      // Lowpass filter for muffled, deep sound (felt on paper)
-      const lp = ctx.createBiquadFilter();
-      lp.type = 'lowpass';
-      lp.frequency.value = 400 + Math.random() * 200; // 400-600 Hz variation
-      lp.Q.value = 0.5;
+      // Bandpass for scratchy mid-range texture (not too muffled!)
+      const bp1 = ctx.createBiquadFilter();
+      bp1.type = 'bandpass';
+      bp1.frequency.value = 800 + Math.random() * 400; // 800-1200 Hz - scratchy range
+      bp1.Q.value = 2.5; // Higher Q for more pronounced scratchy character
 
-      // Slight bandpass for tactile "texture"
-      const bp = ctx.createBiquadFilter();
-      bp.type = 'bandpass';
-      bp.frequency.value = 250 + Math.random() * 150; // 250-400 Hz variation
-      bp.Q.value = 1.5;
+      // Second bandpass for depth
+      const bp2 = ctx.createBiquadFilter();
+      bp2.type = 'bandpass';
+      bp2.frequency.value = 300 + Math.random() * 200; // 300-500 Hz - deep undertone
+      bp2.Q.value = 1.5;
 
-      // Gain with slight variation
+      // Highpass to remove muddiness
+      const hp = ctx.createBiquadFilter();
+      hp.type = 'highpass';
+      hp.frequency.value = 200; // Remove very low frequencies
+
+      // Much louder gain with variation
       const gain = ctx.createGain();
-      gain.gain.value = 0.15 + Math.random() * 0.1; // 0.15-0.25 volume variation
+      gain.gain.value = 0.4 + Math.random() * 0.15; // 0.4-0.55 volume - much louder!
 
-      source.connect(lp);
-      lp.connect(bp);
-      bp.connect(gain);
+      source.connect(hp);
+      hp.connect(bp1);
+      bp1.connect(bp2);
+      bp2.connect(gain);
       gain.connect(ctx.destination);
       source.start();
     }
@@ -2645,12 +2662,12 @@
       // Display counter with pending change indicator
       let counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
       if (pendingDeckChange !== 0) {
-        // Add mini stamp indicator (uses same .stamp-base styling as card stamps, just smaller and semi-transparent)
+        // Add mini stamp indicator (uses same .stamp-base styling as card stamps, fully opaque for visibility)
         const changeSign = pendingDeckChange > 0 ? '+' : '';
         const changeColor = pendingDeckChange > 0 ? 'rgba(211, 47, 47, 0.7)' : 'rgba(56, 142, 60, 0.7)'; // red for +, green for -
         const rotateVar = -2 + Math.random() * 4; // -2deg to +2deg (subtle rotation)
         // Using inline class reference to .stamp-base properties
-        cardCounter.innerHTML = `${counterText} <span class="stamp-base" style="display: inline-block; font-size: 1.3rem; color: transparent; border-color: ${changeColor}; -webkit-text-stroke: 2px ${changeColor}; text-stroke: 2px ${changeColor}; transform: rotate(${rotateVar}deg); margin-left: 8px; padding: 4px 12px; opacity: 0.8;">${changeSign}${pendingDeckChange}</span>`;
+        cardCounter.innerHTML = `${counterText} <span class="stamp-base" style="display: inline-block; font-size: 1.3rem; color: transparent; border-color: ${changeColor}; -webkit-text-stroke: 2px ${changeColor}; text-stroke: 2px ${changeColor}; transform: rotate(${rotateVar}deg); margin-left: 8px; padding: 4px 12px; opacity: 1;">${changeSign}${pendingDeckChange}</span>`;
       } else {
         cardCounter.textContent = counterText;
       }
@@ -2769,6 +2786,12 @@
       isFlipped = false;
     }
 
+    // ============================================================
+    // KEY FEATURE: Auto-pronounce Spanish word in listening mode
+    // - On card navigation (prev/next): auto-pronounce
+    // - Helps users learn pronunciation through repetition
+    // ============================================================
+
     // Navigate to previous card (with wrap-around)
     function goToPrevious() {
       if (currentDeck.length === 0) return;
@@ -2780,6 +2803,11 @@
       }
       updateDisplay();
       saveState();
+
+      // Auto-read in listening mode (helps learn pronunciation)
+      if (currentMode === 'listening') {
+        setTimeout(() => speakSpanish(), 300);
+      }
     }
 
     // Navigate to next card (with wrap-around)
@@ -2794,7 +2822,7 @@
       updateDisplay();
       saveState();
 
-      // Auto-read in listening mode only (not writing - user needs to translate)
+      // Auto-read in listening mode (helps learn pronunciation)
       if (currentMode === 'listening') {
         setTimeout(() => speakSpanish(), 300);
       }
@@ -2817,6 +2845,12 @@
       }
     }
 
+    // ============================================================
+    // KEY FEATURE: Auto-pronounce Spanish word on back reveal
+    // - When flipping to back (arrow down): pronounce in ALL modes
+    // - Helps users associate written word with pronunciation
+    // ============================================================
+
     // Flip card
     function flipCard() {
       // Don't stop speech - let it continue while viewing back
@@ -2824,8 +2858,8 @@
       flashcard.classList.add('flipped');
       isFlipped = true;
 
-      // Auto-pronounce in listening mode when flipping to back
-      if (currentMode === 'listening' && currentDeck.length > 0) {
+      // Auto-pronounce when flipping to back (ALL modes)
+      if (currentDeck.length > 0) {
         setTimeout(() => speakSpanish(), 300);
       }
     }
