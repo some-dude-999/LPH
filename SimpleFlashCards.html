@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spanish Flashcards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: 
+        radial-gradient(ellipse at center, #8B7355 0%, #5D4E37 50%, #3D2E1F 100%);
+      font-family: 'IM Fell English', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      color: #2C1810;
+    }
+
+    /* Wordpack Selector */
+    .selector-container {
+      background: rgba(60, 46, 31, 0.6);
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border: 1px solid rgba(139, 115, 85, 0.3);
+    }
+
+    .selector-container label {
+      font-size: 1rem;
+      margin-right: 10px;
+      color: #A89888;
+    }
+
+    #wordpack-select {
+      font-family: 'IM Fell English', serif;
+      font-size: 1rem;
+      padding: 8px 15px;
+      border: 1px solid rgba(139, 115, 85, 0.4);
+      border-radius: 5px;
+      background: rgba(45, 35, 25, 0.8);
+      color: #D4C4A8;
+      cursor: pointer;
+      min-width: 200px;
+    }
+
+    #wordpack-select:focus {
+      outline: none;
+      border-color: #8B7355;
+      box-shadow: 0 0 5px rgba(139, 115, 85, 0.3);
+    }
+
+    #wordpack-select option {
+      background: #3D2E1F;
+      color: #D4C4A8;
+    }
+
+    /* Card Counter */
+    .card-counter {
+      color: #F5E6D3;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    body.game-started .card-counter {
+      opacity: 1;
+    }
+
+    /* Flashcard Container */
+    .flashcard-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    /* Navigation Arrows - Flat Cardboard Style */
+    .nav-btn {
+      background-color: #8B7355;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      border: 3px solid #4A3828;
+      color: #2C1810;
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    body.game-started .nav-btn {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-btn:hover {
+      background-color: #9B8365;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+    }
+
+    .nav-btn:active {
+      background-color: #7A6347;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+    }
+
+    /* Flashcard */
+    .flashcard {
+      width: 650px;
+      height: 420px;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+      
+      /* Old paper texture */
+      background: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%);
+      background-blend-mode: soft-light;
+      
+      box-shadow: 
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(139, 115, 85, 0.3),
+        inset 0 0 50px rgba(139, 115, 85, 0.1);
+      
+      border: 3px solid #A08567;
+    }
+
+    .card-face::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(101, 67, 33, 0.1) 0%, transparent 50%);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+
+    /* Torn edge effect */
+    .card-face::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      border: 1px dashed rgba(139, 115, 85, 0.3);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .card-front {
+      z-index: 2;
+    }
+
+    .card-back {
+      z-index: 1;
+      background: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #EDE0CC 0%, #DFD2BE 30%, #D1C4B0 60%, #C8BBA7 100%);
+      background-blend-mode: soft-light;
+    }
+
+    .flashcard.flipped .card-front {
+      z-index: 1;
+      opacity: 0;
+    }
+
+    .flashcard.flipped .card-back {
+      z-index: 2;
+      opacity: 1;
+    }
+
+    .card-back {
+      opacity: 0;
+    }
+
+    .card-label {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: #8B7355;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .card-word {
+      font-size: 3.2rem;
+      color: #2C1810;
+      line-height: 1.3;
+      font-style: italic;
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      max-width: 90%;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+
+    /* Sound Button */
+    .sound-btn {
+      position: absolute;
+      bottom: 25px;
+      right: 25px;
+      background: rgba(139, 115, 85, 0.2);
+      border: 3px solid #4A3828;
+      color: #5D4E37;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      z-index: 10;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .flashcard.game-started .sound-btn {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .sound-btn:hover {
+      background: rgba(139, 115, 85, 0.4);
+      transform: scale(1.1);
+    }
+
+    /* Mic Button */
+    .mic-btn {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      background: rgba(139, 115, 85, 0.2);
+      border: 3px solid #4A3828;
+      color: #5D4E37;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      z-index: 10;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .flashcard.game-started .mic-btn {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mic-btn:hover {
+      background: rgba(139, 115, 85, 0.4);
+      transform: scale(1.1);
+    }
+
+    .mic-btn.listening {
+      background: rgba(180, 60, 60, 0.4);
+      border-color: #B43C3C;
+      animation: pulse-mic 1s infinite;
+    }
+
+    @keyframes pulse-mic {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(180, 60, 60, 0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(180, 60, 60, 0); }
+    }
+
+    /* Pronunciation Feedback Overlay */
+    .pronunciation-feedback {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .pronunciation-feedback.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .feedback-score {
+      font-family: 'Cinzel', serif;
+      font-size: 3.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .feedback-score.excellent {
+      color: #4ADE80;
+    }
+
+    .feedback-score.good {
+      color: #A3E635;
+    }
+
+    .feedback-score.okay {
+      color: #FACC15;
+    }
+
+    .feedback-score.poor {
+      color: #F87171;
+    }
+
+    .feedback-message {
+      font-size: 1.3rem;
+      color: #F5E6D3;
+      margin-bottom: 8px;
+    }
+
+    .feedback-heard {
+      font-size: 0.95rem;
+      color: #A89888;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .feedback-close {
+      background: rgba(139, 115, 85, 0.4);
+      border: 1px solid #8B7355;
+      color: #D4C4A8;
+      padding: 8px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'IM Fell English', serif;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .feedback-close:hover {
+      background: rgba(139, 115, 85, 0.6);
+    }
+
+    /* Unsupported browser message */
+    .mic-unsupported {
+      display: none;
+    }
+
+    /* Setup Overlay */
+    .setup-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%);
+      background-blend-mode: soft-light;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      z-index: 30;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .setup-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.95);
+    }
+
+    .setup-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      color: #4A3728;
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+    }
+
+    .setup-field {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .setup-field label {
+      font-size: 0.85rem;
+      color: #6B5B4B;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .setup-field select {
+      font-family: 'IM Fell English', serif;
+      font-size: 1rem;
+      padding: 10px 15px;
+      border: 2px solid #8B7355;
+      border-radius: 6px;
+      background: rgba(60, 46, 31, 0.85);
+      color: #D4C4A8;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      text-align-last: left;
+    }
+
+    .setup-field select:focus {
+      outline: none;
+      border-color: #A08567;
+      box-shadow: 0 0 8px rgba(139, 115, 85, 0.4);
+    }
+
+    .setup-field select option {
+      background: #3D2E1F;
+      color: #D4C4A8;
+      text-align: left;
+    }
+
+    .setup-start-btn {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      padding: 12px 30px;
+      margin-top: 15px;
+      background-color: #7A6347;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      border: 3px solid #4A3828;
+      border-radius: 8px;
+      color: #F5E6D3;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .setup-start-btn:hover:not(:disabled) {
+      background-color: #8A7357;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #9B8365 0%, #8A7357 30%, #7B6550 60%, #6D5E47 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+    }
+
+    .setup-start-btn:disabled {
+      background-color: #5A5A4A;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #7A7A6A 0%, #6A6A5A 30%, #5A5A4A 60%, #4A4A3A 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      border-color: #3A3A2A;
+      color: #9A9A8A;
+      cursor: not-allowed;
+      text-shadow: none;
+    }
+
+    /* Hide card buttons when setup is visible - handled by opacity rules above */
+
+    /* Hide card content when setup is visible */
+    .flashcard:not(.game-started) .card-word {
+      opacity: 0;
+    }
+
+    .flashcard:not(.game-started) .card-label {
+      opacity: 0;
+    }
+
+    /* Speed Controls */
+    .speed-controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    body.game-started .speed-controls {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .speed-label {
+      color: #D4C4A8;
+      font-size: 0.9rem;
+      margin-right: 5px;
+    }
+
+    .speed-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 3px solid #4A3828;
+      background-color: #6A5A4A;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #7A6A5A 0%, #6A5A4A 30%, #5A4A3A 60%, #4A3A2A 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      color: #8A7A6A;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      filter: grayscale(30%);
+      opacity: 0.6;
+    }
+
+    .speed-btn:hover {
+      background-color: #7A6A5A;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #8A7A6A 0%, #7A6A5A 30%, #6A5A4A 60%, #5A4A3A 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      filter: grayscale(15%);
+      opacity: 0.8;
+    }
+
+    .speed-btn.active {
+      background-color: #8B7355;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      border-color: #4A3828;
+      color: #2C1810;
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    /* Action Buttons - Flat Cardboard Style (same color for all) */
+    .action-buttons {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    body.game-started .action-buttons {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .action-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #4A3828;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background-color: #8B7355;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      color: #2C1810;
+    }
+
+    .action-btn:hover {
+      background-color: #9B8365;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+    }
+
+    .action-btn:active {
+      background-color: #7A6347;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+    }
+
+    /* Tooltip */
+    .action-btn {
+      position: relative;
+    }
+
+    .action-btn::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2C1810;
+      color: #F5E6D3;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      font-family: 'IM Fell English', serif;
+    }
+
+    .action-btn:hover::after {
+      opacity: 1;
+    }
+
+    /* Top Corner Buttons - Flat Cardboard Style */
+    .top-btn {
+      position: fixed;
+      top: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid #4A3828;
+      background-color: #8B7355;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      color: #2C1810;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      z-index: 100;
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+    }
+
+    .top-btn:hover {
+      background-color: #9B8365;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+    }
+
+    .top-btn:active {
+      background-color: #7A6347;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+    }
+
+    .help-btn {
+      right: 20px;
+    }
+
+    .menu-btn {
+      right: 80px;
+    }
+
+    .reset-top-btn {
+      right: 140px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    body.game-started .reset-top-btn {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Modal Card */
+    .modal-card {
+      width: 90%;
+      max-width: 450px;
+      max-height: 80vh;
+      overflow-y: auto;
+      border-radius: 12px;
+      padding: 30px;
+      position: relative;
+      background: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%);
+      background-blend-mode: soft-light;
+      box-shadow: 
+        0 10px 30px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(139, 115, 85, 0.3),
+        inset 0 0 50px rgba(139, 115, 85, 0.1);
+      border: 3px solid #A08567;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(101, 67, 33, 0.1) 0%, transparent 50%);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+
+    .modal-card::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      border: 1px dashed rgba(139, 115, 85, 0.3);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .modal-overlay.visible .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      color: #4A3728;
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: 2px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .modal-content {
+      color: #4A3728;
+      line-height: 1.7;
+      position: relative;
+      z-index: 5;
+    }
+
+    .modal-content h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: #6B5344;
+      margin: 15px 0 8px;
+    }
+
+    .modal-content p {
+      margin-bottom: 10px;
+    }
+
+    .modal-content ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .modal-content li {
+      margin-bottom: 5px;
+    }
+
+    .modal-close-btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 25px;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      background-color: #7A6347;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      border: 3px solid #4A3828;
+      border-radius: 6px;
+      color: #F5E6D3;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+      position: relative;
+      z-index: 5;
+    }
+
+    .modal-close-btn:hover {
+      background-color: #8A7357;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #9B8365 0%, #8A7357 30%, #7B6550 60%, #6D5E47 100%);
+      background-blend-mode: soft-light;
+      background-size: cover;
+    }
+
+    /* Menu Modal Specific */
+    .menu-field {
+      margin-bottom: 18px;
+    }
+
+    .menu-field label {
+      display: block;
+      font-size: 0.85rem;
+      color: #6B5B4B;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .menu-field select {
+      font-family: 'IM Fell English', serif;
+      font-size: 1rem;
+      padding: 10px 15px;
+      border: 2px solid #8B7355;
+      border-radius: 6px;
+      background: rgba(60, 46, 31, 0.85);
+      color: #D4C4A8;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .menu-field select:focus {
+      outline: none;
+      border-color: #A08567;
+      box-shadow: 0 0 8px rgba(139, 115, 85, 0.4);
+    }
+
+    .menu-field select option {
+      background: #3D2E1F;
+      color: #D4C4A8;
+    }
+
+    /* Empty State */
+    .empty-state {
+      color: #F5E6D3;
+      font-size: 1.3rem;
+      text-align: center;
+      padding: 50px;
+    }
+
+    /* Loading State */
+    .loading {
+      color: #F5E6D3;
+      font-size: 1.2rem;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .flashcard {
+        width: 340px;
+        height: 260px;
+      }
+
+      .card-word {
+        font-size: 1.5rem;
+      }
+
+      .nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+      }
+
+      .action-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Card removed animation */
+    .flashcard.removed {
+      animation: slideOut 0.4s ease forwards;
+    }
+
+    @keyframes slideOut {
+      to {
+        transform: translateX(100px) rotate(10deg);
+        opacity: 0;
+      }
+    }
+
+    /* Card confused animation */
+    .flashcard.confused {
+      animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-10px); }
+      40% { transform: translateX(10px); }
+      60% { transform: translateX(-10px); }
+      80% { transform: translateX(10px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Corner Buttons (all on right side) -->
+  <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
+  <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+  <button class="top-btn help-btn" id="help-btn" aria-label="Help">?</button>
+
+  <!-- Help Modal -->
+  <div class="modal-overlay" id="help-modal">
+    <div class="modal-card">
+      <div class="modal-title">How to Use</div>
+      <div class="modal-content">
+        <h3>📚 Getting Started</h3>
+        <p>Select a wordpack and your native language, then click Start to begin practicing!</p>
+        
+        <h3>🎴 Flashcard Controls</h3>
+        <ul>
+          <li><strong>◀ / ▶</strong> — Navigate between cards</li>
+          <li><strong>Click card</strong> — Flip to see translation</li>
+          <li><strong>Arrow keys</strong> — Left/Right to navigate, Up/Down to flip</li>
+        </ul>
+        
+        <h3>😊 / 😕 Buttons</h3>
+        <ul>
+          <li><strong>😊 Got it!</strong> — Remove card from deck (you know it!)</li>
+          <li><strong>😕 Confused</strong> — Add extra practice (card appears more often)</li>
+          <li><strong>↺ Reset</strong> — Restore all cards to deck</li>
+        </ul>
+        
+        <h3>🔊 Audio Features</h3>
+        <ul>
+          <li><strong>🔊</strong> — Hear pronunciation</li>
+          <li><strong>🎤</strong> — Practice speaking (get scored!)</li>
+          <li><strong>Speed</strong> — Adjust speech rate</li>
+        </ul>
+        
+        <h3>💾 Progress Saved</h3>
+        <p>Your progress is automatically saved! Come back anytime and pick up where you left off.</p>
+      </div>
+      <button class="modal-close-btn" id="help-close">Got it!</button>
+    </div>
+  </div>
+
+  <!-- Menu Modal -->
+  <div class="modal-overlay" id="menu-modal">
+    <div class="modal-card">
+      <div class="modal-title">Settings</div>
+      <div class="modal-content">
+        <div class="menu-field">
+          <label for="menu-wordpack">Wordpack</label>
+          <select id="menu-wordpack">
+            <option value="">-- Loading... --</option>
+          </select>
+        </div>
+        
+        <div class="menu-field">
+          <label for="menu-language">I speak</label>
+          <select id="menu-language">
+            <option value="english">English</option>
+            <option value="chinese">中文</option>
+            <option value="portuguese">Português</option>
+          </select>
+        </div>
+        
+        <div class="menu-field">
+          <label for="menu-voice">Spanish Voice</label>
+          <select id="menu-voice">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+      <button class="modal-close-btn" id="menu-close">Done</button>
+    </div>
+  </div>
+
+  <div class="card-counter" id="card-counter">Card 0 of 0</div>
+
+  <div class="speed-controls">
+    <span class="speed-label">Speed:</span>
+    <button class="speed-btn" id="speed-slow" data-speed="0.2" data-tooltip="Slow" title="Slow">🐢</button>
+    <button class="speed-btn active" id="speed-normal" data-speed="0.6" data-tooltip="Normal" title="Normal">🚶</button>
+    <button class="speed-btn" id="speed-fast" data-speed="1.0" data-tooltip="Fast" title="Fast">🐇</button>
+  </div>
+
+  <div class="flashcard-container">
+    <button class="nav-btn" id="prev-btn" aria-label="Previous card">◀</button>
+    
+    <div class="flashcard" id="flashcard">
+      <!-- Setup Overlay -->
+      <div class="setup-overlay" id="setup-overlay">
+        <div class="setup-title">Get Started</div>
+        
+        <div class="setup-field">
+          <label for="wordpack-select">Wordpack</label>
+          <select id="wordpack-select">
+            <option value="">-- Loading... --</option>
+          </select>
+        </div>
+        
+        <div class="setup-field">
+          <label for="language-select">I speak</label>
+          <select id="language-select">
+            <option value="">-- Select --</option>
+            <option value="english">English</option>
+            <option value="chinese">中文</option>
+            <option value="portuguese">Português</option>
+          </select>
+        </div>
+        
+        <button class="setup-start-btn" id="start-btn" disabled>Start Practice</button>
+      </div>
+
+      <div class="card-face card-front">
+        <span class="card-label">Español</span>
+        <span class="card-word" id="spanish-word"></span>
+        <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
+        <button class="sound-btn" id="sound-btn-front" aria-label="Play pronunciation">🔊</button>
+        <div class="pronunciation-feedback" id="feedback-front">
+          <div class="feedback-score" id="score-front">0%</div>
+          <div class="feedback-message" id="message-front">Try again!</div>
+          <div class="feedback-heard" id="heard-front">Heard: ""</div>
+          <button class="feedback-close" id="close-front">Got it</button>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <span class="card-label" id="back-label">English</span>
+        <span class="card-word" id="english-word"></span>
+        <button class="mic-btn" id="mic-btn-back" aria-label="Practice pronunciation">🎤</button>
+        <button class="sound-btn" id="sound-btn-back" aria-label="Play pronunciation">🔊</button>
+        <div class="pronunciation-feedback" id="feedback-back">
+          <div class="feedback-score" id="score-back">0%</div>
+          <div class="feedback-message" id="message-back">Try again!</div>
+          <div class="feedback-heard" id="heard-back">Heard: ""</div>
+          <button class="feedback-close" id="close-back">Got it</button>
+        </div>
+      </div>
+    </div>
+    
+    <button class="nav-btn" id="next-btn" aria-label="Next card">▶</button>
+  </div>
+
+  <div class="action-buttons">
+    <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I got this! Remove card">😊</button>
+    <button class="action-btn confused-btn" id="confused-btn" data-tooltip="Need more practice">😕</button>
+  </div>
+
+  <script type="module">
+    // Import the wordpack module
+    const MODULE_URL = 'https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js';
+    
+    let wordpacks = {};
+    let currentDeck = [];
+    let originalDeck = [];
+    let currentIndex = 0;
+    let isFlipped = false;
+    let holdTimeout = null;
+    let currentSpeed = 0.4; // Default to normal speed
+    let nativeLanguage = 'english'; // Default native language
+    let gameStarted = false;
+    let currentWordpackKey = '';
+    let currentVoice = null;
+    let spanishVoices = [];
+
+    // ===================================================================================
+    // LOCAL STORAGE - Save and restore user progress
+    // ===================================================================================
+    const STORAGE_KEY = 'spanishFlashcardState';
+
+    function saveState() {
+      try {
+        const state = {
+          wordpackKey: currentWordpackKey,
+          language: nativeLanguage,
+          voiceURI: currentVoice ? currentVoice.voiceURI : null,
+          speed: currentSpeed,
+          currentDeck: currentDeck,
+          originalDeck: originalDeck,
+          currentIndex: currentIndex,
+          gameStarted: gameStarted
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        console.warn('Could not save state:', e);
+      }
+    }
+
+    function loadState() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          return JSON.parse(stored);
+        }
+      } catch (e) {
+        console.warn('Could not load state:', e);
+      }
+      return null;
+    }
+
+    // DOM Elements
+    const wordpackSelect = document.getElementById('wordpack-select');
+    const languageSelect = document.getElementById('language-select');
+    const setupOverlay = document.getElementById('setup-overlay');
+    const startBtn = document.getElementById('start-btn');
+    const backLabel = document.getElementById('back-label');
+    const flashcard = document.getElementById('flashcard');
+    const spanishWord = document.getElementById('spanish-word');
+    const englishWord = document.getElementById('english-word');
+    const cardCounter = document.getElementById('card-counter');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const gotItBtn = document.getElementById('got-it-btn');
+    const confusedBtn = document.getElementById('confused-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const soundBtnFront = document.getElementById('sound-btn-front');
+    const soundBtnBack = document.getElementById('sound-btn-back');
+    const speedBtns = document.querySelectorAll('.speed-btn');
+    
+    // Modal elements
+    const helpBtn = document.getElementById('help-btn');
+    const helpModal = document.getElementById('help-modal');
+    const helpClose = document.getElementById('help-close');
+    const menuBtn = document.getElementById('menu-btn');
+    const menuModal = document.getElementById('menu-modal');
+    const menuClose = document.getElementById('menu-close');
+    const menuWordpack = document.getElementById('menu-wordpack');
+    const menuLanguage = document.getElementById('menu-language');
+    const menuVoice = document.getElementById('menu-voice');
+    
+    // Mic and feedback elements
+    const micBtnFront = document.getElementById('mic-btn-front');
+    const micBtnBack = document.getElementById('mic-btn-back');
+    const feedbackFront = document.getElementById('feedback-front');
+    const feedbackBack = document.getElementById('feedback-back');
+    const scoreFront = document.getElementById('score-front');
+    const scoreBack = document.getElementById('score-back');
+    const messageFront = document.getElementById('message-front');
+    const messageBack = document.getElementById('message-back');
+    const heardFront = document.getElementById('heard-front');
+    const heardBack = document.getElementById('heard-back');
+    const closeFront = document.getElementById('close-front');
+    const closeBack = document.getElementById('close-back');
+    
+    // Speech Recognition setup
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition = null;
+    let isListening = false;
+
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.lang = 'es-ES';
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 5;
+    }
+
+    // Audio context for sounds
+    let audioContext = null;
+    
+    function getAudioContext() {
+      if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      return audioContext;
+    }
+    
+    // ===================================================================================
+    // CARD FLIP SOUND - "Cloud Nine" (Ultra Soft 10)
+    // We worked REALLY hard on this sound. Tested dozens of variants to get this perfect.
+    // It's soft, muffled, satisfying - like floating on clouds.
+    // DO NOT DELETE THIS CODE EVER. SERIOUSLY. NEVER DELETE THIS.
+    // ===================================================================================
+    function playCardFlipSound() {
+      const ctx = getAudioContext();
+      const now = ctx.currentTime;
+      
+      const bufferSize = ctx.sampleRate * 0.23;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      
+      for (let i = 0; i < bufferSize; i++) {
+        const t = i / bufferSize;
+        const env = Math.sin(t * Math.PI) * Math.sin(t * Math.PI * 0.38) * 0.26;
+        data[i] = (Math.random() * 2 - 1) * env;
+      }
+      
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+      
+      const lp = ctx.createBiquadFilter();
+      lp.type = 'lowpass';
+      lp.frequency.value = 400;
+      
+      const lp2 = ctx.createBiquadFilter();
+      lp2.type = 'lowpass';
+      lp2.frequency.value = 580;
+      
+      const gain = ctx.createGain();
+      gain.gain.value = 0.9;
+      
+      source.connect(lp);
+      lp.connect(lp2);
+      lp2.connect(gain);
+      gain.connect(ctx.destination);
+      source.start();
+    }
+    
+    // ===================================================================================
+    // BUTTON CLICK SOUND - "Click Snap J - Satisfying"
+    // This is the perfect UI click sound. Balanced, satisfying snap with subtle low end.
+    // DO NOT DELETE THIS SOUND ASSET. NEVER. WE MEAN IT.
+    // ===================================================================================
+    function playButtonClickSound() {
+      const ctx = getAudioContext();
+      const now = ctx.currentTime;
+      
+      const bufferSize = ctx.sampleRate * 0.03;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i/bufferSize, 4.5);
+      }
+      
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+      
+      const bp = ctx.createBiquadFilter();
+      bp.type = 'bandpass';
+      bp.frequency.value = 2800;
+      bp.Q.value = 1.8;
+      
+      // Subtle low end
+      const osc = ctx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(150, now);
+      osc.frequency.exponentialRampToValueAtTime(80, now + 0.025);
+      
+      const oscGain = ctx.createGain();
+      oscGain.gain.setValueAtTime(0.1, now);
+      oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
+      
+      const gain = ctx.createGain();
+      gain.gain.value = 0.5;
+      
+      source.connect(bp);
+      bp.connect(gain);
+      gain.connect(ctx.destination);
+      osc.connect(oscGain);
+      oscGain.connect(ctx.destination);
+      
+      source.start();
+      osc.start();
+      osc.stop(now + 0.04);
+    }
+
+    // Load Spanish voices
+    function loadVoices() {
+      spanishVoices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
+      populateVoiceSelector();
+    }
+
+    function populateVoiceSelector() {
+      menuVoice.innerHTML = '<option value="">Default</option>';
+      spanishVoices.forEach((voice, idx) => {
+        const option = document.createElement('option');
+        option.value = voice.voiceURI;
+        option.textContent = `${voice.name} (${voice.lang})`;
+        menuVoice.appendChild(option);
+      });
+      
+      // Restore saved voice
+      const savedState = loadState();
+      if (savedState && savedState.voiceURI) {
+        menuVoice.value = savedState.voiceURI;
+        currentVoice = spanishVoices.find(v => v.voiceURI === savedState.voiceURI) || null;
+      }
+    }
+
+    // Load voices when available
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = loadVoices;
+    }
+    loadVoices();
+
+    // Load the module dynamically
+    async function loadWordpacks() {
+      try {
+        const module = await import(MODULE_URL);
+        wordpacks = module;
+        populateWordpackSelector();
+        restoreSavedState();
+      } catch (error) {
+        console.error('Failed to load wordpacks:', error);
+        wordpackSelect.innerHTML = '<option value="">Failed to load wordpacks</option>';
+      }
+    }
+
+    // Populate the dropdown with wordpack options
+    function populateWordpackSelector() {
+      // Setup page dropdowns
+      wordpackSelect.innerHTML = '';
+      menuWordpack.innerHTML = '';
+      
+      // Collect and sort wordpacks by their wordpack number
+      const sortedPacks = Object.entries(wordpacks)
+        .filter(([key, pack]) => pack.meta && pack.words && pack.meta.wordpack)
+        .sort((a, b) => a[1].meta.wordpack - b[1].meta.wordpack);
+      
+      for (const [key, pack] of sortedPacks) {
+        const option1 = document.createElement('option');
+        option1.value = key;
+        option1.textContent = `${pack.meta.wordpack}. ${pack.meta.english}`;
+        wordpackSelect.appendChild(option1);
+        
+        const option2 = document.createElement('option');
+        option2.value = key;
+        option2.textContent = `${pack.meta.wordpack}. ${pack.meta.english}`;
+        menuWordpack.appendChild(option2);
+      }
+      
+      // Auto-select first wordpack
+      if (sortedPacks.length > 0) {
+        wordpackSelect.value = sortedPacks[0][0];
+        menuWordpack.value = sortedPacks[0][0];
+      }
+      
+      // Auto-select first language (English)
+      languageSelect.value = 'english';
+      menuLanguage.value = 'english';
+      
+      checkSetupValid();
+    }
+
+    // Restore saved state from localStorage
+    function restoreSavedState() {
+      const savedState = loadState();
+      if (!savedState) return;
+      
+      // Restore selections
+      if (savedState.wordpackKey && wordpacks[savedState.wordpackKey]) {
+        wordpackSelect.value = savedState.wordpackKey;
+        menuWordpack.value = savedState.wordpackKey;
+        currentWordpackKey = savedState.wordpackKey;
+      }
+      
+      if (savedState.language) {
+        languageSelect.value = savedState.language;
+        menuLanguage.value = savedState.language;
+        nativeLanguage = savedState.language;
+        updateBackLabel();
+      }
+      
+      if (savedState.speed) {
+        currentSpeed = savedState.speed;
+        speedBtns.forEach(btn => {
+          btn.classList.toggle('active', parseFloat(btn.dataset.speed) === currentSpeed);
+        });
+      }
+      
+      // If game was started, restore deck state
+      if (savedState.gameStarted && savedState.currentDeck && savedState.currentDeck.length > 0) {
+        currentDeck = savedState.currentDeck;
+        originalDeck = savedState.originalDeck || [];
+        currentIndex = savedState.currentIndex || 0;
+        gameStarted = true;
+        
+        setupOverlay.classList.add('hidden');
+        flashcard.classList.add('game-started');
+        document.body.classList.add('game-started');
+        updateDisplay();
+      }
+      
+      checkSetupValid();
+    }
+
+    function updateBackLabel() {
+      const labels = {
+        'english': 'English',
+        'chinese': '中文',
+        'portuguese': 'Português'
+      };
+      backLabel.textContent = labels[nativeLanguage] || 'English';
+    }
+
+    // Shuffle array (Fisher-Yates algorithm)
+    function shuffleArray(array) {
+      const shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+
+    // Initialize deck from selected wordpack
+    function initializeDeck(packKey) {
+      if (!packKey || !wordpacks[packKey]) {
+        currentDeck = [];
+        originalDeck = [];
+        updateDisplay();
+        return;
+      }
+
+      const pack = wordpacks[packKey];
+      // Language index mapping: spanish=0, english=1, chinese=2, pinyin=3, portuguese=4
+      const langIndex = {
+        'english': 1,
+        'chinese': 2,
+        'portuguese': 4
+      };
+      const nativeIndex = langIndex[nativeLanguage] || 1;
+      
+      // Create card objects with spanish (index 0) and native language translation
+      originalDeck = pack.words.map((word, idx) => ({
+        id: `${packKey}-${idx}`,
+        spanish: word[0],
+        translation: word[nativeIndex]
+      }));
+      
+      currentDeck = shuffleArray([...originalDeck]);
+      currentIndex = 0;
+      updateDisplay();
+    }
+
+    // Update the card display
+    function updateDisplay() {
+      if (currentDeck.length === 0) {
+        spanishWord.textContent = '';
+        englishWord.textContent = '';
+        cardCounter.textContent = 'Card 0 of 0';
+        return;
+      }
+
+      const card = currentDeck[currentIndex];
+      spanishWord.textContent = card.spanish;
+      englishWord.textContent = card.translation;
+      cardCounter.textContent = `Card ${currentIndex + 1} of ${currentDeck.length}`;
+      
+      // Reset flip state
+      flashcard.classList.remove('flipped');
+      isFlipped = false;
+    }
+
+    // Navigate to previous card (with wrap-around)
+    function goToPrevious() {
+      if (currentDeck.length === 0) return;
+      playCardFlipSound();
+      currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+      updateDisplay();
+      saveState();
+    }
+
+    // Navigate to next card (with wrap-around)
+    function goToNext() {
+      if (currentDeck.length === 0) return;
+      playCardFlipSound();
+      currentIndex = (currentIndex + 1) % currentDeck.length;
+      updateDisplay();
+      saveState();
+    }
+
+    // Flip card
+    function flipCard() {
+      playCardFlipSound();
+      flashcard.classList.add('flipped');
+      isFlipped = true;
+    }
+
+    // Unflip card
+    function unflipCard() {
+      playCardFlipSound();
+      flashcard.classList.remove('flipped');
+      isFlipped = false;
+    }
+
+    // Remove current card (Got it!)
+    function removeCurrentCard() {
+      if (currentDeck.length <= 1) {
+        currentDeck = [];
+        updateDisplay();
+        saveState();
+        return;
+      }
+
+      flashcard.classList.add('removed');
+      setTimeout(() => {
+        flashcard.classList.remove('removed');
+        currentDeck.splice(currentIndex, 1);
+        if (currentIndex >= currentDeck.length) {
+          currentIndex = 0;
+        }
+        updateDisplay();
+        saveState();
+      }, 400);
+    }
+
+    // Add extra copies of current card (Confused)
+    function addConfusedCards() {
+      if (currentDeck.length === 0) return;
+
+      flashcard.classList.add('confused');
+      setTimeout(() => {
+        flashcard.classList.remove('confused');
+      }, 500);
+
+      const card = { ...currentDeck[currentIndex] };
+      
+      // Find valid positions (not immediately before or after current)
+      const validPositions = [];
+      for (let i = 0; i <= currentDeck.length; i++) {
+        // Skip positions adjacent to current index
+        if (i !== currentIndex && i !== currentIndex + 1) {
+          validPositions.push(i);
+        }
+      }
+
+      // Insert 2 copies at random valid positions
+      for (let n = 0; n < 2; n++) {
+        if (validPositions.length > 0) {
+          const randomIdx = Math.floor(Math.random() * validPositions.length);
+          let insertPos = validPositions[randomIdx];
+          
+          // Adjust current index if inserting before it
+          if (insertPos <= currentIndex) {
+            currentIndex++;
+          }
+          
+          currentDeck.splice(insertPos, 0, { ...card, id: `${card.id}-copy-${Date.now()}-${n}` });
+          
+          // Update valid positions after insertion
+          validPositions.splice(randomIdx, 1);
+          for (let i = 0; i < validPositions.length; i++) {
+            if (validPositions[i] >= insertPos) {
+              validPositions[i]++;
+            }
+          }
+        }
+      }
+
+      updateDisplay();
+      saveState();
+    }
+
+    // Reset deck to original shuffled state
+    function resetDeck() {
+      if (originalDeck.length === 0) return;
+      playButtonClickSound();
+      currentDeck = shuffleArray([...originalDeck]);
+      currentIndex = 0;
+      updateDisplay();
+      saveState();
+    }
+
+    // Speak the Spanish word
+    function speakSpanish() {
+      if (currentDeck.length === 0) return;
+      
+      const utterance = new SpeechSynthesisUtterance(currentDeck[currentIndex].spanish);
+      utterance.lang = 'es-ES';
+      utterance.rate = currentSpeed;
+      if (currentVoice) {
+        utterance.voice = currentVoice;
+      }
+      speechSynthesis.cancel(); // Stop any current speech
+      speechSynthesis.speak(utterance);
+    }
+
+    // Set speech speed
+    function setSpeed(speed, btn) {
+      currentSpeed = speed;
+      speedBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      saveState();
+    }
+
+    // Levenshtein distance for string similarity
+    function levenshteinDistance(str1, str2) {
+      const m = str1.length;
+      const n = str2.length;
+      const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
+
+      for (let i = 0; i <= m; i++) dp[i][0] = i;
+      for (let j = 0; j <= n; j++) dp[0][j] = j;
+
+      for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+          if (str1[i - 1] === str2[j - 1]) {
+            dp[i][j] = dp[i - 1][j - 1];
+          } else {
+            dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+          }
+        }
+      }
+      return dp[m][n];
+    }
+
+    // Calculate similarity percentage
+    function calculateSimilarity(expected, heard) {
+      const exp = expected.toLowerCase().trim();
+      const hrd = heard.toLowerCase().trim();
+      
+      if (exp === hrd) return 100;
+      if (hrd.length === 0) return 0;
+      
+      const distance = levenshteinDistance(exp, hrd);
+      const maxLen = Math.max(exp.length, hrd.length);
+      const similarity = Math.max(0, ((maxLen - distance) / maxLen) * 100);
+      
+      return Math.round(similarity);
+    }
+
+    // Get feedback message based on score
+    function getFeedbackMessage(score) {
+      if (score >= 90) return "¡Excelente! Perfect!";
+      if (score >= 75) return "¡Muy bien! Great job!";
+      if (score >= 50) return "¡Bien! Keep practicing!";
+      if (score >= 25) return "Getting there...";
+      return "Try again!";
+    }
+
+    // Get score class for coloring
+    function getScoreClass(score) {
+      if (score >= 90) return "excellent";
+      if (score >= 75) return "good";
+      if (score >= 50) return "okay";
+      return "poor";
+    }
+
+    // Show pronunciation feedback
+    function showFeedback(score, heard, isFront = true) {
+      const feedback = isFront ? feedbackFront : feedbackBack;
+      const scoreEl = isFront ? scoreFront : scoreBack;
+      const messageEl = isFront ? messageFront : messageBack;
+      const heardEl = isFront ? heardFront : heardBack;
+      
+      scoreEl.textContent = `${score}%`;
+      scoreEl.className = `feedback-score ${getScoreClass(score)}`;
+      messageEl.textContent = getFeedbackMessage(score);
+      heardEl.textContent = `Heard: "${heard}"`;
+      
+      feedback.classList.add('visible');
+    }
+
+    // Hide feedback
+    function hideFeedback() {
+      feedbackFront.classList.remove('visible');
+      feedbackBack.classList.remove('visible');
+    }
+
+    // Start listening for pronunciation
+    function startListening(isFront = true) {
+      if (!recognition) {
+        alert('Speech recognition is not supported in your browser. Try Chrome or Edge.');
+        return;
+      }
+      
+      if (currentDeck.length === 0) return;
+      if (isListening) return;
+      
+      isListening = true;
+      const micBtn = isFront ? micBtnFront : micBtnBack;
+      micBtn.classList.add('listening');
+      
+      recognition.onresult = (event) => {
+        const results = event.results[0];
+        let bestMatch = results[0].transcript;
+        let bestScore = 0;
+        
+        const expected = currentDeck[currentIndex].spanish;
+        
+        // Check all alternatives for best match
+        for (let i = 0; i < results.length; i++) {
+          const transcript = results[i].transcript;
+          const score = calculateSimilarity(expected, transcript);
+          if (score > bestScore) {
+            bestScore = score;
+            bestMatch = transcript;
+          }
+        }
+        
+        showFeedback(bestScore, bestMatch, isFront);
+      };
+      
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        isListening = false;
+        micBtn.classList.remove('listening');
+        
+        if (event.error === 'no-speech') {
+          showFeedback(0, '(no speech detected)', isFront);
+        } else if (event.error === 'not-allowed') {
+          alert('Microphone access denied. Please allow microphone access to use this feature.');
+        }
+      };
+      
+      recognition.onend = () => {
+        isListening = false;
+        micBtnFront.classList.remove('listening');
+        micBtnBack.classList.remove('listening');
+      };
+      
+      recognition.start();
+    }
+
+    // Check if setup is valid and enable start button
+    function checkSetupValid() {
+      const hasWordpack = wordpackSelect.value !== '';
+      const hasLanguage = languageSelect.value !== '';
+      startBtn.disabled = !(hasWordpack && hasLanguage);
+    }
+
+    // Start the game
+    function startGame() {
+      nativeLanguage = languageSelect.value;
+      currentWordpackKey = wordpackSelect.value;
+      
+      // Update back label based on language
+      updateBackLabel();
+      
+      // Initialize deck and hide setup
+      initializeDeck(wordpackSelect.value);
+      setupOverlay.classList.add('hidden');
+      flashcard.classList.add('game-started');
+      document.body.classList.add('game-started');
+      gameStarted = true;
+      saveState();
+    }
+
+    // Event Listeners for setup (no sounds on dropdowns)
+    wordpackSelect.addEventListener('change', checkSetupValid);
+    languageSelect.addEventListener('change', checkSetupValid);
+    startBtn.addEventListener('click', () => {
+      playButtonClickSound();
+      startGame();
+    });
+
+    // Event Listeners
+
+    prevBtn.addEventListener('click', goToPrevious);
+    nextBtn.addEventListener('click', goToNext);
+    gotItBtn.addEventListener('click', () => {
+      playButtonClickSound();
+      removeCurrentCard();
+    });
+    confusedBtn.addEventListener('click', () => {
+      playButtonClickSound();
+      addConfusedCards();
+    });
+    resetBtn.addEventListener('click', resetDeck);
+
+    // Sound buttons
+    soundBtnFront.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playButtonClickSound();
+      speakSpanish();
+    });
+    soundBtnBack.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playButtonClickSound();
+      speakSpanish();
+    });
+
+    // Speed buttons
+    speedBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        playButtonClickSound();
+        const speed = parseFloat(btn.dataset.speed);
+        setSpeed(speed, btn);
+      });
+    });
+
+    // Mic buttons
+    micBtnFront.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playButtonClickSound();
+      startListening(true);
+    });
+    micBtnBack.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playButtonClickSound();
+      startListening(false);
+    });
+
+    // Close feedback buttons
+    closeFront.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playButtonClickSound();
+      hideFeedback();
+    });
+    closeBack.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playButtonClickSound();
+      hideFeedback();
+    });
+
+    // Help Modal
+    helpBtn.addEventListener('click', () => {
+      playButtonClickSound();
+      helpModal.classList.add('visible');
+    });
+    
+    helpClose.addEventListener('click', () => {
+      playButtonClickSound();
+      helpModal.classList.remove('visible');
+    });
+    
+    helpModal.addEventListener('click', (e) => {
+      if (e.target === helpModal) {
+        helpModal.classList.remove('visible');
+      }
+    });
+
+    // Menu Modal
+    menuBtn.addEventListener('click', () => {
+      playButtonClickSound();
+      menuModal.classList.add('visible');
+    });
+    
+    menuClose.addEventListener('click', () => {
+      playButtonClickSound();
+      
+      // Apply changes from menu
+      const newWordpack = menuWordpack.value;
+      const newLanguage = menuLanguage.value;
+      const newVoiceURI = menuVoice.value;
+      
+      // Update voice
+      currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+      
+      // Check if wordpack or language changed
+      const wordpackChanged = newWordpack !== currentWordpackKey;
+      const languageChanged = newLanguage !== nativeLanguage;
+      
+      if (wordpackChanged || languageChanged) {
+        currentWordpackKey = newWordpack;
+        nativeLanguage = newLanguage;
+        wordpackSelect.value = newWordpack;
+        languageSelect.value = newLanguage;
+        updateBackLabel();
+        
+        // Re-initialize deck if game has started
+        if (gameStarted) {
+          initializeDeck(currentWordpackKey);
+        }
+      }
+      
+      saveState();
+      menuModal.classList.remove('visible');
+    });
+    
+    menuModal.addEventListener('click', (e) => {
+      if (e.target === menuModal) {
+        menuModal.classList.remove('visible');
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      // Close modals with Escape
+      if (e.key === 'Escape') {
+        helpModal.classList.remove('visible');
+        menuModal.classList.remove('visible');
+        return;
+      }
+      
+      // Don't handle navigation if modal is open
+      if (helpModal.classList.contains('visible') || menuModal.classList.contains('visible')) {
+        return;
+      }
+      
+      if (e.key === 'ArrowLeft') {
+        goToPrevious();
+      } else if (e.key === 'ArrowRight') {
+        goToNext();
+      } else if (e.key === ' ') {
+        e.preventDefault();
+        speakSpanish();
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        flipCard();
+      }
+    });
+
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        unflipCard();
+      }
+    });
+
+    // Initialize
+    loadWordpacks();
+  </script>
+</body>
+</html>
