@@ -453,7 +453,7 @@
       display: none;
     }
 
-    /* Setup Overlay */
+    /* Setup Card - Front (Settings) */
     .setup-overlay {
       position: absolute;
       top: 0;
@@ -472,7 +472,7 @@
       justify-content: center;
       padding: 30px;
       z-index: 30;
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      transition: opacity 0.4s ease;
 
       /* Match card styling */
       box-shadow:
@@ -511,7 +511,80 @@
     .setup-overlay.hidden {
       opacity: 0;
       pointer-events: none;
-      transform: scale(0.95);
+    }
+
+    /* Setup Card - Back (How To) */
+    .setup-help {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        var(--paper-texture),
+        linear-gradient(135deg, #EDE0CC 0%, #DFD2BE 30%, #D1C4B0 60%, #C8BBA7 100%);
+      background-blend-mode: soft-light;
+      background-size: var(--paper-texture-size), 100%;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      z-index: 29;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      overflow-y: auto;
+
+      /* Match card styling */
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(139, 115, 85, 0.3),
+        inset 0 0 50px rgba(139, 115, 85, 0.1);
+      border: 3px solid #A08567;
+    }
+
+    .setup-help::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(101, 67, 33, 0.1) 0%, transparent 50%);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+
+    .setup-help::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      border: 1px dashed rgba(139, 115, 85, 0.3);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .flashcard.setup-flipped .setup-overlay {
+      opacity: 0;
+      pointer-events: none;
+      z-index: 29;
+    }
+
+    .flashcard.setup-flipped .setup-help {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 30;
+    }
+
+    .flashcard.game-started .setup-overlay,
+    .flashcard.game-started .setup-help {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .setup-title {
@@ -567,6 +640,60 @@
       background: #3D2E1F;
       color: #D4C4A8;
       text-align: left;
+    }
+
+    /* Setup flip button */
+    .setup-flip-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 2px solid rgba(139, 115, 85, 0.5);
+      background: rgba(60, 46, 31, 0.6);
+      color: #D4C4A8;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 10;
+    }
+
+    .setup-flip-btn:hover {
+      background: rgba(139, 115, 85, 0.8);
+      transform: scale(1.1);
+    }
+
+    /* Help content styling */
+    .help-content {
+      color: #4A3728;
+      line-height: 1.7;
+      position: relative;
+      z-index: 5;
+      font-size: 0.9rem;
+    }
+
+    .help-content h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      color: #6B5344;
+      margin: 12px 0 6px;
+    }
+
+    .help-content p {
+      margin-bottom: 8px;
+    }
+
+    .help-content ul {
+      margin-left: 18px;
+      margin-bottom: 12px;
+    }
+
+    .help-content li {
+      margin-bottom: 4px;
     }
 
     .setup-start-btn {
@@ -1144,17 +1271,17 @@
     <button class="nav-btn" id="prev-btn" aria-label="Previous card">‹</button>
     
     <div class="flashcard" id="flashcard">
-      <!-- Setup Overlay -->
+      <!-- Setup Overlay (Front - Settings) -->
       <div class="setup-overlay" id="setup-overlay">
-        <div class="setup-title">Get Started</div>
-        
+        <div class="setup-title">Settings</div>
+
         <div class="setup-field">
           <label for="wordpack-select">Wordpack</label>
           <select id="wordpack-select">
             <option value="">-- Loading... --</option>
           </select>
         </div>
-        
+
         <div class="setup-field">
           <label for="language-select">I speak</label>
           <select id="language-select">
@@ -1164,8 +1291,55 @@
             <option value="portuguese">Português</option>
           </select>
         </div>
-        
+
+        <div class="setup-field">
+          <label for="setup-voice">Spanish Voice</label>
+          <select id="setup-voice">
+            <option value="">Default</option>
+          </select>
+        </div>
+
+        <div class="setup-field">
+          <label>Speech Speed</label>
+          <div class="speed-controls-menu">
+            <button class="speed-btn setup-speed-btn" data-speed="0.2">🐢 Slow</button>
+            <button class="speed-btn setup-speed-btn active" data-speed="0.6">🚶 Normal</button>
+            <button class="speed-btn setup-speed-btn" data-speed="1.0">🐇 Fast</button>
+          </div>
+        </div>
+
         <button class="setup-start-btn" id="start-btn" disabled>Start Practice</button>
+        <button class="setup-flip-btn" id="setup-to-help" title="How to Use">?</button>
+      </div>
+
+      <!-- Setup Help (Back - How To) -->
+      <div class="setup-help" id="setup-help">
+        <div class="setup-title">How to Use</div>
+        <div class="help-content">
+          <h3>📚 Getting Started</h3>
+          <p>Select a wordpack and language, then click Start!</p>
+
+          <h3>🎴 Controls</h3>
+          <ul>
+            <li><strong>‹ / ›</strong> — Navigate between cards</li>
+            <li><strong>Click card</strong> — Flip to see translation</li>
+            <li><strong>Arrow keys</strong> — Left/Right navigate, Up/Down flip</li>
+          </ul>
+
+          <h3>👌 / 😕 Buttons</h3>
+          <ul>
+            <li><strong>👌 Got it!</strong> — Remove this card from deck</li>
+            <li><strong>😕 Confused</strong> — Add 2 copies for extra practice</li>
+            <li><strong>↺ Reset</strong> — Restore all cards</li>
+          </ul>
+
+          <h3>🔊 Audio</h3>
+          <ul>
+            <li><strong>🔊</strong> — Hear pronunciation</li>
+            <li><strong>🎤</strong> — Practice speaking (get scored!)</li>
+          </ul>
+        </div>
+        <button class="setup-flip-btn" id="help-to-setup" title="Back to Settings">⚙</button>
       </div>
 
       <div class="card-face card-front">
@@ -1258,6 +1432,11 @@
     const wordpackSelect = document.getElementById('wordpack-select');
     const languageSelect = document.getElementById('language-select');
     const setupOverlay = document.getElementById('setup-overlay');
+    const setupHelp = document.getElementById('setup-help');
+    const setupToHelp = document.getElementById('setup-to-help');
+    const helpToSetup = document.getElementById('help-to-setup');
+    const setupVoice = document.getElementById('setup-voice');
+    const setupSpeedBtns = document.querySelectorAll('.setup-speed-btn');
     const startBtn = document.getElementById('start-btn');
     const backLabel = document.getElementById('back-label');
     const flashcard = document.getElementById('flashcard');
@@ -1274,7 +1453,7 @@
     const resetBtn = document.getElementById('reset-btn');
     const soundBtnFront = document.getElementById('sound-btn-front');
     const soundBtnBack = document.getElementById('sound-btn-back');
-    const speedBtns = document.querySelectorAll('.speed-btn');
+    const speedBtns = document.querySelectorAll('.speed-btn'); // Includes both setup and menu buttons
     
     // Modal elements
     const helpBtn = document.getElementById('help-btn');
@@ -1428,18 +1607,25 @@
     }
 
     function populateVoiceSelector() {
-      menuVoice.innerHTML = '<option value="">Default</option>';
-      spanishVoices.forEach((voice, idx) => {
-        const option = document.createElement('option');
-        option.value = voice.voiceURI;
-        option.textContent = `${voice.name} (${voice.lang})`;
-        menuVoice.appendChild(option);
+      // Populate both setup and menu voice selectors
+      const voiceSelectors = [setupVoice];
+      if (menuVoice) voiceSelectors.push(menuVoice);
+
+      voiceSelectors.forEach(selector => {
+        selector.innerHTML = '<option value="">Default</option>';
+        spanishVoices.forEach((voice, idx) => {
+          const option = document.createElement('option');
+          option.value = voice.voiceURI;
+          option.textContent = `${voice.name} (${voice.lang})`;
+          selector.appendChild(option);
+        });
       });
-      
+
       // Restore saved voice
       const savedState = loadState();
       if (savedState && savedState.voiceURI) {
-        menuVoice.value = savedState.voiceURI;
+        setupVoice.value = savedState.voiceURI;
+        if (menuVoice) menuVoice.value = savedState.voiceURI;
         currentVoice = spanishVoices.find(v => v.voiceURI === savedState.voiceURI) || null;
       }
     }
@@ -1507,7 +1693,11 @@
       // Only restore voice and speed preferences
       if (savedState.speed) {
         currentSpeed = savedState.speed;
+        // Restore speed to all speed buttons (setup and menu)
         speedBtns.forEach(btn => {
+          btn.classList.toggle('active', parseFloat(btn.dataset.speed) === currentSpeed);
+        });
+        setupSpeedBtns.forEach(btn => {
           btn.classList.toggle('active', parseFloat(btn.dataset.speed) === currentSpeed);
         });
       }
@@ -1917,6 +2107,44 @@
       gameStarted = true;
       saveState();
     }
+
+    // Setup card flip handlers
+    setupToHelp.addEventListener('click', () => {
+      playButtonClickSound();
+      flashcard.classList.add('setup-flipped');
+    });
+
+    helpToSetup.addEventListener('click', () => {
+      playButtonClickSound();
+      flashcard.classList.remove('setup-flipped');
+    });
+
+    // Setup voice change handler
+    setupVoice.addEventListener('change', () => {
+      const newVoiceURI = setupVoice.value;
+      currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+      // Play sample if game has started
+      if (gameStarted && currentDeck.length > 0) {
+        speakSpanish();
+      }
+      saveState();
+    });
+
+    // Setup speed button handlers
+    setupSpeedBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        playButtonClickSound();
+        const speed = parseFloat(btn.dataset.speed);
+        currentSpeed = speed;
+        setupSpeedBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // Play sample at new speed if game has started
+        if (gameStarted && currentDeck.length > 0) {
+          speakSpanish();
+        }
+        saveState();
+      });
+    });
 
     // Event Listeners for setup (no sounds on dropdowns)
     wordpackSelect.addEventListener('change', checkSetupValid);
