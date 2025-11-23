@@ -808,6 +808,32 @@
       color: #F5E6D3;
     }
 
+    /* Speed buttons on starting card */
+    .speed-btn-start {
+      flex: 1;
+      padding: 12px;
+      border-radius: 6px;
+      border: 2px solid #8B7355;
+      background-color: rgba(139, 115, 85, 0.2);
+      color: #2C1810;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .speed-btn-start:hover {
+      background-color: rgba(139, 115, 85, 0.3);
+      border-color: #7A6347;
+    }
+
+    .speed-btn-start.active {
+      background-color: #8B7355;
+      border-color: #7A6347;
+      color: #F5E6D3;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+    }
+
     /* Action Buttons - Flat Cardboard Style (same color for all) */
     .action-buttons {
       display: flex;
@@ -1551,6 +1577,10 @@
     let typingDisplay = []; // Array of characters to display (original chars or '_')
     let wrongAttempts = 0; // Track wrong keypresses in typing modes
 
+    // Starting card state (menu/help card)
+    let isOnStartingCard = false;
+    let savedIndex = 0; // Save current index when navigating to starting card
+
     // Track key states to prevent repeated actions when holding keys
     let keysPressed = {};
 
@@ -1808,6 +1838,35 @@
     // Normalize character for comparison (remove accents, lowercase)
     function normalizeChar(char) {
       return char.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }
+
+    // Navigate to starting card (menu/help card)
+    function showStartingCard(showBack = false) {
+      if (!isOnStartingCard && currentDeck.length > 0) {
+        savedIndex = currentIndex;
+      }
+      isOnStartingCard = true;
+
+      // Unflip if currently flipped
+      if (isFlipped) {
+        flashcard.classList.remove('flipped');
+        isFlipped = false;
+      }
+
+      updateDisplay();
+
+      // Flip to back if help was requested
+      if (showBack) {
+        setTimeout(() => flipCard(), 100);
+      }
+    }
+
+    // Return from starting card to saved position
+    function exitStartingCard() {
+      if (!isOnStartingCard) return;
+      isOnStartingCard = false;
+      currentIndex = savedIndex;
+      updateDisplay();
     }
 
     // Switch to a different learning mode
@@ -2140,8 +2199,120 @@
       return gradients.join(', ');
     }
 
+    // Render the starting card (menu on front, help on back)
+    function renderStartingCard() {
+      cardCounter.textContent = 'Menu / Help';
+
+      // Front: Menu options
+      spanishWord.innerHTML = `
+        <div style="font-size: 2rem; margin-bottom: 20px; color: #2C1810;">⚙️ Settings</div>
+        <div style="font-size: 1.2rem; text-align: left; max-width: 500px; margin: 0 auto;">
+          <div style="margin: 15px 0;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Wordpack:</label>
+            <select id="start-card-wordpack" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355;">
+              <option value="">Loading...</option>
+            </select>
+          </div>
+          <div style="margin: 15px 0;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">I speak:</label>
+            <select id="start-card-language" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355;">
+              <option value="english">English</option>
+              <option value="chinese">中文</option>
+              <option value="portuguese">Português</option>
+            </select>
+          </div>
+          <div style="margin: 15px 0;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Speed:</label>
+            <div style="display: flex; gap: 10px;">
+              <button class="speed-btn-start" data-speed="0.2">🐢</button>
+              <button class="speed-btn-start active" data-speed="0.6">🚶</button>
+              <button class="speed-btn-start" data-speed="1.0">🐇</button>
+            </div>
+          </div>
+          <button onclick="exitStartingCard()" style="width: 100%; padding: 12px; margin-top: 20px; font-size: 1.3rem; background: #8B7355; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+            ← Back to Cards
+          </button>
+        </div>
+      `;
+      spanishWord.className = 'card-word';
+
+      // Back: Shortened help text
+      englishWord.innerHTML = `
+        <div style="font-size: 1.8rem; margin-bottom: 15px; color: #2C1810;">❓ Quick Help</div>
+        <div style="font-size: 1rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 1.6;">
+          <p style="margin: 10px 0;"><strong>📖 Reading:</strong> Spanish → English</p>
+          <p style="margin: 10px 0;"><strong>👂 Listening:</strong> Hear → Type Spanish</p>
+          <p style="margin: 10px 0;"><strong>✏️ Writing:</strong> English → Type Spanish</p>
+          <p style="margin: 10px 0; font-size: 0.9rem; opacity: 0.8;">⚠️ Mistakes add 2 practice cards</p>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(139, 115, 85, 0.3);">
+            <p style="margin: 5px 0;"><strong>↑</strong> Pronounce | <strong>↓</strong> Flip | <strong>←→</strong> Navigate</p>
+            <p style="margin: 5px 0;"><strong>Space</strong> Pronounce (reading) | <strong>Letters</strong> Type</p>
+          </div>
+        </div>
+      `;
+      englishWord.className = 'card-word';
+
+      // Reset flip state
+      flashcard.classList.remove('flipped');
+      isFlipped = false;
+
+      // Populate wordpack selector
+      setTimeout(() => {
+        const startCardWordpack = document.getElementById('start-card-wordpack');
+        const startCardLanguage = document.getElementById('start-card-language');
+
+        if (startCardWordpack && wordpackSelect) {
+          startCardWordpack.innerHTML = wordpackSelect.innerHTML;
+          startCardWordpack.value = currentWordpackKey;
+          startCardLanguage.value = nativeLanguage;
+
+          // Add change handlers
+          startCardWordpack.addEventListener('change', (e) => {
+            currentWordpackKey = e.target.value;
+            wordpackSelect.value = e.target.value;
+            updateBackLabel();
+            updateWordpackTitle();
+            if (gameStarted) {
+              initializeDeck(currentWordpackKey);
+            }
+            saveState();
+          });
+
+          startCardLanguage.addEventListener('change', (e) => {
+            nativeLanguage = e.target.value;
+            languageSelect.value = e.target.value;
+            updateBackLabel();
+            if (gameStarted) {
+              initializeDeck(currentWordpackKey);
+            }
+            saveState();
+          });
+        }
+
+        // Speed buttons
+        const speedBtns = document.querySelectorAll('.speed-btn-start');
+        speedBtns.forEach(btn => {
+          if (parseFloat(btn.dataset.speed) === currentSpeed) {
+            btn.classList.add('active');
+          }
+          btn.addEventListener('click', () => {
+            currentSpeed = parseFloat(btn.dataset.speed);
+            speedBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            saveState();
+          });
+        });
+      }, 0);
+    }
+
     // Update the card display
     function updateDisplay() {
+      // Show starting card (menu/help) if in that state
+      if (isOnStartingCard) {
+        renderStartingCard();
+        return;
+      }
+
       if (currentDeck.length === 0) {
         spanishWord.textContent = '';
         englishWord.textContent = '';
@@ -2626,7 +2797,7 @@
     // Help Modal
     helpBtn.addEventListener('click', () => {
       playButtonClickSound();
-      helpModal.classList.add('visible');
+      showStartingCard(true); // true = show back (help text)
     });
     
     helpClose.addEventListener('click', () => {
@@ -2643,7 +2814,7 @@
     // Menu Modal
     menuBtn.addEventListener('click', () => {
       playButtonClickSound();
-      menuModal.classList.add('visible');
+      showStartingCard(false); // false = show front (menu)
     });
     
     menuClose.addEventListener('click', () => {
