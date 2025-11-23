@@ -1216,11 +1216,14 @@
       opacity: 1;
     }
 
-    /* Mode Selector */
+    /* Mode Selector - Top Left */
     .mode-selector {
+      position: fixed;
+      top: 20px;
+      left: 20px;
       display: flex;
-      gap: 15px;
-      margin-bottom: 20px;
+      gap: 10px;
+      z-index: 100;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -1232,8 +1235,8 @@
     }
 
     .mode-btn {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       border: 3px solid rgba(74, 56, 40, 0.6);
       background-color: #8B7355;
@@ -1248,7 +1251,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       line-height: 1;
     }
 
@@ -1318,30 +1321,37 @@
       <div class="modal-content">
         <h3>📚 Getting Started</h3>
         <p>Select a wordpack and your native language, then click Start to begin practicing!</p>
-        
-        <h3>🎴 Flashcard Controls</h3>
+
+        <h3>🎯 Learning Modes</h3>
         <ul>
-          <li><strong>‹ / ›</strong> — Navigate between cards</li>
-          <li><strong>Click card</strong> — Flip to see translation</li>
-          <li><strong>Arrow keys</strong> — Left/Right to navigate, Up/Down to flip</li>
+          <li><strong>📖 Reading</strong> — See Spanish word, flip to see translation</li>
+          <li><strong>👂 Listening</strong> — See "?", flip to see Spanish | Translation (auto-pronounces)</li>
+          <li><strong>✏️ Writing</strong> — Type the Spanish word letter-by-letter (auto-pronounces)</li>
         </ul>
-        
+
+        <h3>⌨️ Keyboard Controls</h3>
+        <ul>
+          <li><strong>←/→ Arrows</strong> — Navigate between cards</li>
+          <li><strong>↑ Arrow</strong> — Pronounce Spanish word (always)</li>
+          <li><strong>↓ Arrow</strong> — Flip card to see back (always)</li>
+          <li><strong>Space</strong> — Pronounce (Reading/Listening modes only)</li>
+          <li><strong>Letters</strong> — Type answer (Writing mode only)</li>
+          <li><strong>Enter</strong> — Next card if correct (Writing mode)</li>
+        </ul>
+
         <h3>👌 / 😕 Buttons</h3>
         <ul>
           <li><strong>👌 Got it!</strong> — Remove this card from deck</li>
-          <li><strong>😕 Confused</strong> — Add 2 copies of this card for extra practice</li>
+          <li><strong>😕 Confused</strong> — Add 2 copies for extra practice</li>
           <li><strong>↺ Reset</strong> — Restore all cards to deck</li>
         </ul>
-        
+
         <h3>🔊 Audio Features</h3>
         <ul>
           <li><strong>🔊</strong> — Hear pronunciation</li>
           <li><strong>🎤</strong> — Practice speaking (get scored!)</li>
           <li><strong>Speed</strong> — Adjust speech rate</li>
         </ul>
-        
-        <h3>💾 Progress Saved</h3>
-        <p>Your progress is automatically saved! Come back anytime and pick up where you left off.</p>
       </div>
       <button class="modal-close-btn" id="help-close">Got it!</button>
     </div>
@@ -1530,6 +1540,11 @@
     let currentVoice = null;
     let spanishVoices = [];
 
+    // Learning modes
+    let currentMode = 'reading'; // 'reading', 'listening', 'writing'
+    let typingInput = ''; // User's current typing input for writing mode
+    let typingDisplay = []; // Array of characters to display (original chars or '_')
+
     // Track key states to prevent repeated actions when holding keys
     let keysPressed = {};
 
@@ -1591,6 +1606,12 @@
     const speedBtns = document.querySelectorAll('.speed-btn'); // Includes both setup and menu buttons
     const removedStamp = document.getElementById('removed-stamp');
     const addedStamp = document.getElementById('added-stamp');
+
+    // Mode selector elements
+    const modeBtns = document.querySelectorAll('.mode-btn');
+    const modeReading = document.getElementById('mode-reading');
+    const modeListening = document.getElementById('mode-listening');
+    const modeWriting = document.getElementById('mode-writing');
 
     // Modal elements
     const helpBtn = document.getElementById('help-btn');
@@ -1735,6 +1756,152 @@
       source.start();
       osc.start();
       osc.stop(now + 0.04);
+    }
+
+    // ===================================================================================
+    // MECHANICAL KEYBOARD SOUND - Satisfying tactile click
+    // ===================================================================================
+    function playKeyboardSound() {
+      const ctx = getAudioContext();
+      const now = ctx.currentTime;
+
+      const bufferSize = ctx.sampleRate * 0.04;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i/bufferSize, 5);
+      }
+
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+
+      const hp = ctx.createBiquadFilter();
+      hp.type = 'highpass';
+      hp.frequency.value = 2000;
+
+      const bp = ctx.createBiquadFilter();
+      bp.type = 'bandpass';
+      bp.frequency.value = 4500;
+      bp.Q.value = 2;
+
+      const gain = ctx.createGain();
+      gain.gain.value = 0.3;
+
+      source.connect(hp);
+      hp.connect(bp);
+      bp.connect(gain);
+      gain.connect(ctx.destination);
+      source.start();
+    }
+
+    // ===================================================================================
+    // MODE SWITCHING AND DISPLAY FUNCTIONS
+    // ===================================================================================
+
+    // Normalize character for comparison (remove accents, lowercase)
+    function normalizeChar(char) {
+      return char.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }
+
+    // Switch to a different learning mode
+    function switchMode(newMode) {
+      if (currentMode === newMode) return;
+
+      currentMode = newMode;
+
+      // Update active button
+      modeBtns.forEach(btn => btn.classList.remove('active'));
+      if (newMode === 'reading') modeReading.classList.add('active');
+      if (newMode === 'listening') modeListening.classList.add('active');
+      if (newMode === 'writing') modeWriting.classList.add('active');
+
+      // Reset state
+      if (isFlipped) {
+        flashcard.classList.remove('flipped');
+        isFlipped = false;
+      }
+
+      // Reset writing mode state
+      typingInput = '';
+      typingDisplay = [];
+
+      updateDisplay();
+
+      // Auto-read in listening mode
+      if (newMode === 'listening' && currentDeck.length > 0) {
+        setTimeout(() => speakSpanish(), 300);
+      }
+
+      // Auto-pronounce in writing mode
+      if (newMode === 'writing' && currentDeck.length > 0) {
+        setTimeout(() => speakSpanish(), 300);
+      }
+    }
+
+    // Initialize typing display for writing mode
+    function initializeTypingDisplay() {
+      const word = currentDeck[currentIndex].spanish;
+      typingInput = '';
+      typingDisplay = word.split('').map(char => {
+        if (char === ' ') return ' ';
+        return '_';
+      });
+    }
+
+    // Handle typing input for writing mode
+    function handleTypingInput(key) {
+      if (currentMode !== 'writing' || currentDeck.length === 0) return;
+
+      const word = currentDeck[currentIndex].spanish;
+      const targetChars = word.split('');
+
+      // Find next unfilled position
+      let nextPos = 0;
+      for (let i = 0; i < typingDisplay.length; i++) {
+        if (typingDisplay[i] === '_') {
+          nextPos = i;
+          break;
+        }
+        if (i === typingDisplay.length - 1) {
+          // Already completed
+          return;
+        }
+      }
+
+      // Skip spaces
+      while (nextPos < targetChars.length && targetChars[nextPos] === ' ') {
+        typingDisplay[nextPos] = ' ';
+        nextPos++;
+      }
+
+      if (nextPos >= targetChars.length) return;
+
+      // Check if key matches (case and accent insensitive)
+      const normalizedKey = normalizeChar(key);
+      const normalizedTarget = normalizeChar(targetChars[nextPos]);
+
+      if (normalizedKey === normalizedTarget) {
+        // Show the ORIGINAL character from the word
+        typingDisplay[nextPos] = targetChars[nextPos];
+        playKeyboardSound();
+        updateDisplay();
+
+        // Check if word is complete
+        if (!typingDisplay.includes('_')) {
+          // Word completed! Auto-advance after a brief delay
+          setTimeout(() => {
+            if (currentMode === 'writing') {
+              moveToNextCard();
+            }
+          }, 500);
+        }
+      }
+    }
+
+    // Check if current word is complete in writing mode
+    function isWritingComplete() {
+      return !typingDisplay.includes('_');
     }
 
     // Load Spanish voices
@@ -1949,9 +2116,32 @@
       }
 
       const card = currentDeck[currentIndex];
-      spanishWord.textContent = card.spanish;
-      englishWord.textContent = card.translation;
       cardCounter.textContent = `Card ${currentIndex + 1} of ${currentDeck.length}`;
+
+      // Mode-specific display
+      if (currentMode === 'reading') {
+        // Reading mode: Spanish on front, translation on back
+        spanishWord.textContent = card.spanish;
+        spanishWord.className = 'word';
+        englishWord.textContent = card.translation;
+        englishWord.className = 'word';
+      } else if (currentMode === 'listening') {
+        // Listening mode: "?" on front, "Spanish | Translation" on back
+        spanishWord.textContent = '?';
+        spanishWord.className = 'word';
+        englishWord.innerHTML = `${card.spanish}<div class="listening-divider"></div>${card.translation}`;
+        englishWord.className = 'word';
+      } else if (currentMode === 'writing') {
+        // Writing mode: typing display on front, translation on back
+        initializeTypingDisplay();
+        spanishWord.innerHTML = `<div class="typing-display">${typingDisplay.map(char =>
+          char === ' ' ? '<span class="typing-space"> </span>' :
+          `<span class="typing-char">${char}</span>`
+        ).join('')}</div>`;
+        spanishWord.className = 'word';
+        englishWord.textContent = card.translation;
+        englishWord.className = 'word';
+      }
 
       // Apply random weathering based on card ID
       const seed = card.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
@@ -1979,6 +2169,25 @@
       currentIndex = (currentIndex + 1) % currentDeck.length;
       updateDisplay();
       saveState();
+
+      // Auto-read in listening/writing modes
+      if (currentMode === 'listening' || currentMode === 'writing') {
+        setTimeout(() => speakSpanish(), 300);
+      }
+    }
+
+    // Move to next card (for writing mode completion)
+    function moveToNextCard() {
+      if (currentDeck.length === 0) return;
+      playCardFlipSound();
+      currentIndex = (currentIndex + 1) % currentDeck.length;
+      updateDisplay();
+      saveState();
+
+      // Auto-read in listening/writing modes
+      if (currentMode === 'listening' || currentMode === 'writing') {
+        setTimeout(() => speakSpanish(), 300);
+      }
     }
 
     // Flip card
@@ -2454,6 +2663,22 @@
         return;
       }
 
+      // Handle writing mode typing
+      if (currentMode === 'writing' && e.key.length === 1 && /[a-zA-ZáéíóúñÁÉÍÓÚÑüÜ ]/.test(e.key)) {
+        e.preventDefault();
+        handleTypingInput(e.key);
+        return;
+      }
+
+      // Enter in writing mode
+      if (currentMode === 'writing' && e.key === 'Enter') {
+        e.preventDefault();
+        if (isWritingComplete()) {
+          moveToNextCard();
+        }
+        return;
+      }
+
       // Prevent repeated actions when holding key down
       if (keysPressed[e.key]) {
         e.preventDefault();
@@ -2465,12 +2690,20 @@
         goToPrevious();
       } else if (e.key === 'ArrowRight') {
         goToNext();
-      } else if (e.key === ' ') {
+      } else if (e.key === 'ArrowUp') {
+        // Up arrow: ALWAYS pronounce
         e.preventDefault();
         speakSpanish();
-      } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+      } else if (e.key === 'ArrowDown') {
+        // Down arrow: ALWAYS flip
         e.preventDefault();
         flipCard();
+      } else if (e.key === ' ') {
+        // Space: only pronounce in reading/listening mode
+        if (currentMode === 'reading' || currentMode === 'listening') {
+          e.preventDefault();
+          speakSpanish();
+        }
       }
     });
 
@@ -2478,9 +2711,18 @@
       // Clear key state
       keysPressed[e.key] = false;
 
-      if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+      if (e.key === 'ArrowDown') {
         unflipCard();
       }
+    });
+
+    // Mode selector event listeners
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        playButtonClickSound();
+        const mode = btn.dataset.mode;
+        switchMode(mode);
+      });
     });
 
     // Initialize
