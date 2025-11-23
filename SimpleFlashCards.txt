@@ -2,7 +2,7 @@
 PROJECT: LPH Spanish Learning
 COMPONENT: Simple Flashcards - Interactive Spanish vocabulary practice
 CREATED: 2025-11-23
-LAST UPDATED: 2025-11-23 - Updated stamps with hollow text and Impact font
+LAST UPDATED: 2025-11-23 - Realistic stamps, enhanced card weathering, grid pattern back
 
 DATA SOURCES:
 - Module: https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js
@@ -49,14 +49,15 @@ ANIMATIONS:
   * Show stamp for 1 second, then immediately change to next card
   * No slide-off or insertion effects
 
-STAMPS (SIMPLE DESIGN):
+STAMPS (REALISTIC DESIGN):
 - "Card Removed" (red) and "Extra Practice" (green) overlays
-- Clean, iconic stamp styling:
+- Realistic stamp styling:
   * Centered on card with -15° rotation
-  * Impact font (bold, condensed) for classic stamp look
+  * Georgia Bold serif font for classic stamp look
   * Hollow text (transparent fill with 3px stroke outline)
   * Large text (2.5rem) with solid border (4px)
-  * Transparent background
+  * Semi-transparent (70% opacity) with multiply blend mode
+  * Blends into paper like real rubber stamp
   * Red (#D32F2F) for removed, Green (#388E3C) for added
 
 AUDIO FEATURES:
@@ -69,8 +70,16 @@ AUDIO FEATURES:
 VISUAL DESIGN:
 - Theme: Old paper/parchment aesthetic with cardboard buttons
 - Textures: Procedural SVG noise for paper and cardboard
-- Weathering: Random edge fading for each card
-- Stamps: Realistic ink-on-paper blend mode effects
+- Card Weathering (Front):
+  * Stronger sun-faded edges (15-25% fade depth)
+  * Overall color variations with subtle splotches across entire card
+  * Random positions and intensities for natural aging effect
+  * Dashed border inset for torn paper effect
+- Card Back Design:
+  * Pale background with subtle color variations
+  * Criss-crossing grid pattern (20px spacing, subtle brown)
+  * Different visual pattern to distinguish from front
+  * Subconsciously pleasing rustic paper feel
 
 CORRECTIONS & CLARIFICATIONS:
 [None yet - initial documentation]
