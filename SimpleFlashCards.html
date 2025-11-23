@@ -146,23 +146,22 @@
       height: 100%;
       border-radius: 12px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 30px;
       text-align: center;
-      
+
       /* Old paper texture */
-      background: 
+      background:
         url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
         linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%);
       background-blend-mode: soft-light;
-      
-      box-shadow: 
+
+      box-shadow:
         0 10px 30px rgba(0,0,0,0.4),
         0 0 0 1px rgba(139, 115, 85, 0.3),
         inset 0 0 50px rgba(139, 115, 85, 0.1);
-      
+
       border: 3px solid #A08567;
     }
 
@@ -225,9 +224,12 @@
       color: #8B7355;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 20px;
-      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, calc(-50% - 80px)); /* Position above the word */
       z-index: 5;
+      white-space: nowrap;
     }
 
     .card-word {
@@ -1160,6 +1162,9 @@
     let currentVoice = null;
     let spanishVoices = [];
 
+    // Track key states to prevent repeated actions when holding keys
+    let keysPressed = {};
+
     // ===================================================================================
     // LOCAL STORAGE - Save and restore user progress
     // ===================================================================================
@@ -1167,15 +1172,10 @@
 
     function saveState() {
       try {
+        // Only save voice and speed preferences, not deck state
         const state = {
-          wordpackKey: currentWordpackKey,
-          language: nativeLanguage,
           voiceURI: currentVoice ? currentVoice.voiceURI : null,
-          speed: currentSpeed,
-          currentDeck: currentDeck,
-          originalDeck: originalDeck,
-          currentIndex: currentIndex,
-          gameStarted: gameStarted
+          speed: currentSpeed
         };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       } catch (e) {
@@ -1294,8 +1294,8 @@
       lp2.frequency.value = 580;
       
       const gain = ctx.createGain();
-      gain.gain.value = 0.9;
-      
+      gain.gain.value = 0.35; // Quieter (was 0.9)
+
       source.connect(lp);
       lp.connect(lp2);
       lp2.connect(gain);
@@ -1322,31 +1322,38 @@
       
       const source = ctx.createBufferSource();
       source.buffer = buffer;
-      
-      const bp = ctx.createBiquadFilter();
-      bp.type = 'bandpass';
-      bp.frequency.value = 2800;
-      bp.Q.value = 1.8;
-      
+
+      // More muffled - lower frequency lowpass filter instead of bandpass
+      const lp = ctx.createBiquadFilter();
+      lp.type = 'lowpass';
+      lp.frequency.value = 800; // Much lower for muffled sound (was 2800 bandpass)
+      lp.Q.value = 0.7;
+
+      // Add second lowpass for extra muffling
+      const lp2 = ctx.createBiquadFilter();
+      lp2.type = 'lowpass';
+      lp2.frequency.value = 1200;
+
       // Subtle low end
       const osc = ctx.createOscillator();
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(150, now);
-      osc.frequency.exponentialRampToValueAtTime(80, now + 0.025);
-      
+      osc.frequency.setValueAtTime(120, now); // Lower frequency
+      osc.frequency.exponentialRampToValueAtTime(60, now + 0.025);
+
       const oscGain = ctx.createGain();
-      oscGain.gain.setValueAtTime(0.1, now);
+      oscGain.gain.setValueAtTime(0.05, now); // Quieter (was 0.1)
       oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
-      
+
       const gain = ctx.createGain();
-      gain.gain.value = 0.5;
-      
-      source.connect(bp);
-      bp.connect(gain);
+      gain.gain.value = 0.2; // Much quieter (was 0.5)
+
+      source.connect(lp);
+      lp.connect(lp2);
+      lp2.connect(gain);
       gain.connect(ctx.destination);
       osc.connect(oscGain);
       oscGain.connect(ctx.destination);
-      
+
       source.start();
       osc.start();
       osc.stop(now + 0.04);
@@ -1434,42 +1441,16 @@
     function restoreSavedState() {
       const savedState = loadState();
       if (!savedState) return;
-      
-      // Restore selections
-      if (savedState.wordpackKey && wordpacks[savedState.wordpackKey]) {
-        wordpackSelect.value = savedState.wordpackKey;
-        menuWordpack.value = savedState.wordpackKey;
-        currentWordpackKey = savedState.wordpackKey;
-      }
-      
-      if (savedState.language) {
-        languageSelect.value = savedState.language;
-        menuLanguage.value = savedState.language;
-        nativeLanguage = savedState.language;
-        updateBackLabel();
-      }
-      
+
+      // Only restore voice and speed preferences
       if (savedState.speed) {
         currentSpeed = savedState.speed;
         speedBtns.forEach(btn => {
           btn.classList.toggle('active', parseFloat(btn.dataset.speed) === currentSpeed);
         });
       }
-      
-      // If game was started, restore deck state
-      if (savedState.gameStarted && savedState.currentDeck && savedState.currentDeck.length > 0) {
-        currentDeck = savedState.currentDeck;
-        originalDeck = savedState.originalDeck || [];
-        currentIndex = savedState.currentIndex || 0;
-        gameStarted = true;
-        
-        setupOverlay.classList.add('hidden');
-        flashcard.classList.add('game-started');
-        document.body.classList.add('game-started');
-        updateDisplay();
-      }
-      
-      checkSetupValid();
+
+      // Voice will be restored in populateVoiceSelector
     }
 
     function updateBackLabel() {
@@ -1961,12 +1942,19 @@
         menuModal.classList.remove('visible');
         return;
       }
-      
+
       // Don't handle navigation if modal is open
       if (helpModal.classList.contains('visible') || menuModal.classList.contains('visible')) {
         return;
       }
-      
+
+      // Prevent repeated actions when holding key down
+      if (keysPressed[e.key]) {
+        e.preventDefault();
+        return;
+      }
+      keysPressed[e.key] = true;
+
       if (e.key === 'ArrowLeft') {
         goToPrevious();
       } else if (e.key === 'ArrowRight') {
@@ -1981,6 +1969,9 @@
     });
 
     document.addEventListener('keyup', (e) => {
+      // Clear key state
+      keysPressed[e.key] = false;
+
       if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
         unflipCard();
       }
