@@ -1167,51 +1167,49 @@
       }
     }
 
-    /* Card confused animation - shows cards being inserted behind */
-    .flashcard.confused {
-      animation: cardsInsertBehind 0.6s ease;
+    /* Card confused animation - shows 2 cards sliding in behind */
+    .flashcard.confused::before,
+    .flashcard.confused::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        var(--paper-texture),
+        linear-gradient(135deg, #EDE0CC 0%, #DFD2BE 30%, #D1C4B0 60%, #C8BBA7 100%);
+      background-blend-mode: soft-light;
+      background-size: var(--paper-texture-size), 100%;
+      border-radius: 12px;
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(139, 115, 85, 0.3),
+        inset 0 0 50px rgba(139, 115, 85, 0.1);
+      border: 3px solid #A08567;
+      z-index: -1;
+      pointer-events: none;
     }
 
-    @keyframes cardsInsertBehind {
-      0% {
-        transform: translateZ(0) scale(1);
-        box-shadow:
-          0 10px 30px rgba(0,0,0,0.4),
-          0 0 0 1px rgba(139, 115, 85, 0.3),
-          inset 0 0 50px rgba(139, 115, 85, 0.1);
+    /* First card slides in immediately */
+    .flashcard.confused::before {
+      animation: slideInBehind 0.4s ease-out;
+    }
+
+    /* Second card slides in after 150ms delay */
+    .flashcard.confused::after {
+      animation: slideInBehind 0.4s ease-out 0.15s;
+      animation-fill-mode: backwards;
+    }
+
+    @keyframes slideInBehind {
+      from {
+        transform: translateX(-120px) rotate(-10deg);
+        opacity: 0;
       }
-      15% {
-        transform: translateZ(20px) scale(1.03) translateY(-8px);
-        box-shadow:
-          0 20px 50px rgba(0,0,0,0.5),
-          4px 4px 0 0 rgba(139, 115, 85, 0.4),
-          8px 8px 0 0 rgba(139, 115, 85, 0.3),
-          0 0 0 1px rgba(139, 115, 85, 0.3),
-          inset 0 0 50px rgba(139, 115, 85, 0.1);
-      }
-      40% {
-        transform: translateZ(20px) scale(1.03) translateY(-8px);
-        box-shadow:
-          0 20px 50px rgba(0,0,0,0.5),
-          4px 4px 0 0 rgba(139, 115, 85, 0.4),
-          8px 8px 0 0 rgba(139, 115, 85, 0.3),
-          0 0 0 1px rgba(139, 115, 85, 0.3),
-          inset 0 0 50px rgba(139, 115, 85, 0.1);
-      }
-      70% {
-        transform: translateZ(0) scale(1.01) translateY(-2px);
-        box-shadow:
-          0 12px 35px rgba(0,0,0,0.45),
-          2px 2px 0 0 rgba(139, 115, 85, 0.2),
-          0 0 0 1px rgba(139, 115, 85, 0.3),
-          inset 0 0 50px rgba(139, 115, 85, 0.1);
-      }
-      100% {
-        transform: translateZ(0) scale(1);
-        box-shadow:
-          0 10px 30px rgba(0,0,0,0.4),
-          0 0 0 1px rgba(139, 115, 85, 0.3),
-          inset 0 0 50px rgba(139, 115, 85, 0.1);
+      to {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
       }
     }
   </style>
