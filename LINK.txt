@@ -3,6 +3,7 @@
 
 ## HTML Pages
 https://some-dude-999.github.io/LPH/CsvViewerForManuallyBuildingCSV.html - CSV parser, viewer, and downloader tool with auto-increment filename feature
+https://some-dude-999.github.io/LPH/SimpleFlashCards.html - [Add description for SimpleFlashCards.html]
 https://some-dude-999.github.io/LPH/SpanishWords/SpanishWordsViewer.html - Interactive Spanish vocabulary pack viewer with analytics, word count validation, and act progression tracking
 https://some-dude-999.github.io/LPH/Who%20Even%20Learns%20Languages%20Dude.html - Demographics visualization with 3 tabs showing native languages of Spanish, English, and Chinese learners worldwide
 
