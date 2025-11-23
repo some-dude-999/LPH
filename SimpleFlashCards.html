@@ -1167,17 +1167,52 @@
       }
     }
 
-    /* Card confused animation */
+    /* Card confused animation - shows cards being inserted behind */
     .flashcard.confused {
-      animation: shake 0.5s ease;
+      animation: cardsInsertBehind 0.6s ease;
     }
 
-    @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      20% { transform: translateX(-10px); }
-      40% { transform: translateX(10px); }
-      60% { transform: translateX(-10px); }
-      80% { transform: translateX(10px); }
+    @keyframes cardsInsertBehind {
+      0% {
+        transform: translateZ(0) scale(1);
+        box-shadow:
+          0 10px 30px rgba(0,0,0,0.4),
+          0 0 0 1px rgba(139, 115, 85, 0.3),
+          inset 0 0 50px rgba(139, 115, 85, 0.1);
+      }
+      15% {
+        transform: translateZ(20px) scale(1.03) translateY(-8px);
+        box-shadow:
+          0 20px 50px rgba(0,0,0,0.5),
+          4px 4px 0 0 rgba(139, 115, 85, 0.4),
+          8px 8px 0 0 rgba(139, 115, 85, 0.3),
+          0 0 0 1px rgba(139, 115, 85, 0.3),
+          inset 0 0 50px rgba(139, 115, 85, 0.1);
+      }
+      40% {
+        transform: translateZ(20px) scale(1.03) translateY(-8px);
+        box-shadow:
+          0 20px 50px rgba(0,0,0,0.5),
+          4px 4px 0 0 rgba(139, 115, 85, 0.4),
+          8px 8px 0 0 rgba(139, 115, 85, 0.3),
+          0 0 0 1px rgba(139, 115, 85, 0.3),
+          inset 0 0 50px rgba(139, 115, 85, 0.1);
+      }
+      70% {
+        transform: translateZ(0) scale(1.01) translateY(-2px);
+        box-shadow:
+          0 12px 35px rgba(0,0,0,0.45),
+          2px 2px 0 0 rgba(139, 115, 85, 0.2),
+          0 0 0 1px rgba(139, 115, 85, 0.3),
+          inset 0 0 50px rgba(139, 115, 85, 0.1);
+      }
+      100% {
+        transform: translateZ(0) scale(1);
+        box-shadow:
+          0 10px 30px rgba(0,0,0,0.4),
+          0 0 0 1px rgba(139, 115, 85, 0.3),
+          inset 0 0 50px rgba(139, 115, 85, 0.1);
+      }
     }
   </style>
 </head>
@@ -1870,7 +1905,7 @@
       flashcard.classList.add('confused');
       setTimeout(() => {
         flashcard.classList.remove('confused');
-      }, 500);
+      }, 600);
 
       const card = { ...currentDeck[currentIndex] };
 
