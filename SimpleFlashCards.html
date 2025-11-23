@@ -77,6 +77,22 @@
       color: #D4C4A8;
     }
 
+    /* Wordpack Title */
+    .wordpack-title {
+      color: #F5E6D3;
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      letter-spacing: 1px;
+    }
+
+    body.game-started .wordpack-title {
+      opacity: 1;
+    }
+
     /* Card Counter */
     .card-counter {
       color: #F5E6D3;
@@ -118,6 +134,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      line-height: 1;
+      text-align: center;
       opacity: 0;
       pointer-events: none;
     }
@@ -279,6 +297,8 @@
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
+      line-height: 1;
+      text-align: center;
       z-index: 10;
       opacity: 0;
       pointer-events: none;
@@ -311,6 +331,8 @@
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
+      line-height: 1;
+      text-align: center;
       z-index: 10;
       opacity: 0;
       pointer-events: none;
@@ -648,6 +670,8 @@
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
+      line-height: 1;
+      text-align: center;
       background-color: #8B7355;
       background-image:
         var(--cardboard-texture),
@@ -723,6 +747,8 @@
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
+      line-height: 1;
+      text-align: center;
       z-index: 100;
       font-family: 'Cinzel', serif;
       font-weight: 600;
@@ -1031,15 +1057,15 @@
         
         <h3>🎴 Flashcard Controls</h3>
         <ul>
-          <li><strong>◀ / ▶</strong> — Navigate between cards</li>
+          <li><strong>‹ / ›</strong> — Navigate between cards</li>
           <li><strong>Click card</strong> — Flip to see translation</li>
           <li><strong>Arrow keys</strong> — Left/Right to navigate, Up/Down to flip</li>
         </ul>
         
-        <h3>😊 / 😕 Buttons</h3>
+        <h3>👌 / 😕 Buttons</h3>
         <ul>
-          <li><strong>😊 Got it!</strong> — Remove card from deck (you know it!)</li>
-          <li><strong>😕 Confused</strong> — Add extra practice (card appears more often)</li>
+          <li><strong>👌 Got it!</strong> — Remove this card from deck</li>
+          <li><strong>😕 Confused</strong> — Add 2 copies of this card for extra practice</li>
           <li><strong>↺ Reset</strong> — Restore all cards to deck</li>
         </ul>
         
@@ -1098,10 +1124,11 @@
     </div>
   </div>
 
+  <div class="wordpack-title" id="wordpack-title"></div>
   <div class="card-counter" id="card-counter">Card 0 of 0</div>
 
   <div class="flashcard-container">
-    <button class="nav-btn" id="prev-btn" aria-label="Previous card">◀</button>
+    <button class="nav-btn" id="prev-btn" aria-label="Previous card">‹</button>
     
     <div class="flashcard" id="flashcard">
       <!-- Setup Overlay -->
@@ -1154,11 +1181,11 @@
       </div>
     </div>
     
-    <button class="nav-btn" id="next-btn" aria-label="Next card">▶</button>
+    <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
   </div>
 
   <div class="action-buttons">
-    <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I got this! Remove card">😊</button>
+    <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I got this! Remove card">👌</button>
     <button class="action-btn confused-btn" id="confused-btn" data-tooltip="Need more practice">😕</button>
   </div>
 
@@ -1221,6 +1248,7 @@
     const flashcard = document.getElementById('flashcard');
     const spanishWord = document.getElementById('spanish-word');
     const englishWord = document.getElementById('english-word');
+    const wordpackTitle = document.getElementById('wordpack-title');
     const cardCounter = document.getElementById('card-counter');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
@@ -1311,7 +1339,7 @@
       lp2.frequency.value = 580;
       
       const gain = ctx.createGain();
-      gain.gain.value = 0.35; // Quieter (was 0.9)
+      gain.gain.value = 0.7; // Louder - balanced volume
 
       source.connect(lp);
       lp.connect(lp2);
@@ -1362,7 +1390,7 @@
       oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
 
       const gain = ctx.createGain();
-      gain.gain.value = 0.2; // Much quieter (was 0.5)
+      gain.gain.value = 0.45; // Louder - balanced volume
 
       source.connect(lp);
       lp.connect(lp2);
@@ -1806,14 +1834,27 @@
       startBtn.disabled = !(hasWordpack && hasLanguage);
     }
 
+    // Update wordpack title display
+    function updateWordpackTitle() {
+      if (currentWordpackKey && wordpacks[currentWordpackKey]) {
+        const pack = wordpacks[currentWordpackKey];
+        wordpackTitle.textContent = `${pack.meta.wordpack}. ${pack.meta.english}`;
+      } else {
+        wordpackTitle.textContent = '';
+      }
+    }
+
     // Start the game
     function startGame() {
       nativeLanguage = languageSelect.value;
       currentWordpackKey = wordpackSelect.value;
-      
+
       // Update back label based on language
       updateBackLabel();
-      
+
+      // Update wordpack title
+      updateWordpackTitle();
+
       // Initialize deck and hide setup
       initializeDeck(wordpackSelect.value);
       setupOverlay.classList.add('hidden');
@@ -1934,7 +1975,8 @@
         wordpackSelect.value = newWordpack;
         languageSelect.value = newLanguage;
         updateBackLabel();
-        
+        updateWordpackTitle();
+
         // Re-initialize deck if game has started
         if (gameStarted) {
           initializeDeck(currentWordpackKey);
@@ -1948,6 +1990,16 @@
     menuModal.addEventListener('click', (e) => {
       if (e.target === menuModal) {
         menuModal.classList.remove('visible');
+      }
+    });
+
+    // Voice change - play sample pronunciation
+    menuVoice.addEventListener('change', () => {
+      const newVoiceURI = menuVoice.value;
+      currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+      // Play sample if game has started and there's a current card
+      if (gameStarted && currentDeck.length > 0) {
+        speakSpanish();
       }
     });
 
