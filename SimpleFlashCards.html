@@ -1602,6 +1602,9 @@
     let wrongPositions = []; // Track which positions had wrong attempts (for red underlines)
     let wrongLetters = []; // Track actual letters that were typed wrong (for crossed-out display)
 
+    // Deck change tracking (for visual indicator next to counter)
+    let pendingDeckChange = 0; // +N for added cards, -N for removed cards
+
     // Starting card state (menu/help card)
     let isOnStartingCard = false;
     let savedIndex = 0; // Save current index when navigating to starting card
@@ -2112,6 +2115,9 @@
         }
       }
 
+      // Track deck change for visual indicator
+      pendingDeckChange += count;
+
       // Show "Extra Practice" stamp
       const addedStamp = document.getElementById('added-stamp');
       addedStamp.classList.add('visible');
@@ -2168,6 +2174,7 @@
           if (wrongAttempts <= 1) {
             // Correct! Show green stamp and remove card automatically
             playCardFlipSound();
+            pendingDeckChange = -1; // Track deck change for visual indicator
             removedStamp.classList.add('visible');
 
             setTimeout(() => {
@@ -2524,7 +2531,21 @@
       }
 
       const card = currentDeck[currentIndex];
-      cardCounter.textContent = `Card ${currentIndex + 1} of ${currentDeck.length}`;
+
+      // Display counter with pending change indicator
+      let counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
+      if (pendingDeckChange !== 0) {
+        // Add handwritten indicator showing deck change
+        const changeSign = pendingDeckChange > 0 ? '+' : '';
+        const changeColor = pendingDeckChange > 0 ? '#D32F2F' : '#4ADE80'; // red for +, green for -
+        const rotateVar = -3 + Math.random() * 6; // -3deg to +3deg
+        const scaleVar = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
+        cardCounter.innerHTML = `${counterText} <span style="display: inline-block; font-family: 'IM Fell English', serif; font-style: italic; color: ${changeColor}; transform: rotate(${rotateVar}deg) scale(${scaleVar}); margin-left: 8px;">${changeSign}${pendingDeckChange}</span>`;
+        // Clear pending change after showing it
+        pendingDeckChange = 0;
+      } else {
+        cardCounter.textContent = counterText;
+      }
 
       // Get indicator elements (positioned at card corners, not inside card-word)
       const wrongLettersFront = document.getElementById('wrong-letters-front');
@@ -2704,6 +2725,9 @@
 
       // Play sound
       playCardFlipSound();
+
+      // Track deck change for visual indicator
+      pendingDeckChange = -1;
 
       // Show "Card Removed" stamp for 1 second
       removedStamp.classList.add('visible');
