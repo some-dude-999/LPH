@@ -1157,13 +1157,19 @@
 
     /* Card removed animation */
     .flashcard.removed {
-      animation: slideOut 0.4s ease forwards;
+      animation: slideOut 1.2s linear forwards;
     }
 
     @keyframes slideOut {
       to {
         transform: translateX(5000px);
       }
+    }
+
+    /* Temporary card for removal animation */
+    .temp-card-removing {
+      position: absolute;
+      pointer-events: none;
     }
 
     /* Card confused animation - shows 2 cards sliding in behind */
@@ -1888,50 +1894,57 @@
         return;
       }
 
-      // Calculate next card index
-      const nextIndex = currentIndex >= currentDeck.length - 1 ? 0 : currentIndex + 1;
-      const nextCard = currentDeck[nextIndex];
+      // Store current card content
+      const currentSpanish = spanishWord.textContent;
+      const currentEnglish = englishWord.textContent;
+      const currentFlipped = flashcard.classList.contains('flipped');
 
-      // Update display to show next card underneath (before animation)
+      // Get card position and size
+      const cardRect = flashcard.getBoundingClientRect();
+      const containerRect = flashcard.parentElement.getBoundingClientRect();
+
+      // Remove from deck and update to next card
       currentDeck.splice(currentIndex, 1);
       if (currentIndex >= currentDeck.length) {
         currentIndex = 0;
       }
-
-      // Store current card content to animate
-      const currentSpanish = spanishWord.textContent;
-      const currentEnglish = englishWord.textContent;
-      const currentWeatheringFront = weatheringFront.style.background;
-      const currentWeatheringBack = weatheringBack.style.background;
-
-      // Update to next card immediately (shows underneath)
       updateDisplay();
 
-      // Create temporary overlay with old card content
-      const tempCard = flashcard.cloneNode(true);
+      // Create simple temporary div (not a clone)
+      const tempCard = document.createElement('div');
+      tempCard.className = 'flashcard temp-card-removing' + (currentFlipped ? ' flipped' : '');
       tempCard.style.position = 'absolute';
-      tempCard.style.top = '0';
-      tempCard.style.left = '0';
-      tempCard.style.width = '100%';
-      tempCard.style.height = '100%';
+      tempCard.style.top = (cardRect.top - containerRect.top) + 'px';
+      tempCard.style.left = (cardRect.left - containerRect.left) + 'px';
+      tempCard.style.width = cardRect.width + 'px';
+      tempCard.style.height = cardRect.height + 'px';
       tempCard.style.zIndex = '100';
-      tempCard.querySelector('#spanish-word').textContent = currentSpanish;
-      tempCard.querySelector('#english-word').textContent = currentEnglish;
-      tempCard.querySelector('#weathering-front').style.background = currentWeatheringFront;
-      tempCard.querySelector('#weathering-back').style.background = currentWeatheringBack;
+
+      // Copy card structure (without IDs to avoid conflicts)
+      tempCard.innerHTML = `
+        <div class="card-face card-front">
+          <div class="card-weathering"></div>
+          <span class="card-label">Español</span>
+          <span class="card-word">${currentSpanish}</span>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-weathering"></div>
+          <span class="card-label">${backLabel.textContent}</span>
+          <span class="card-word">${currentEnglish}</span>
+        </div>
+      `;
+
       flashcard.parentElement.appendChild(tempCard);
 
-      // Play card removal sound
+      // Play sound and animate
       playCardFlipSound();
-
-      // Animate temporary card off screen
       tempCard.classList.add('removed');
 
-      // Remove temporary card when animation completes
+      // Remove after animation (1200ms)
       setTimeout(() => {
         tempCard.remove();
         saveState();
-      }, 400);
+      }, 1200);
     }
 
     // Add extra copies of current card (Confused)
