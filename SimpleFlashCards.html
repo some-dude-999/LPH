@@ -1190,47 +1190,56 @@
     /* Stamp overlays */
     .card-stamp {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-15deg);
-      font-family: 'Cinzel', serif;
-      font-size: 3rem;
-      font-weight: bold;
+      top: 25px;
+      right: 25px;
+      transform: rotate(-8deg);
+      font-family: 'Courier New', monospace;
+      font-size: 2rem;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      padding: 20px 40px;
-      border: 6px solid;
-      border-radius: 8px;
+      letter-spacing: 4px;
+      padding: 12px 25px;
+      border: 4px double;
+      border-radius: 3px;
       opacity: 0;
       pointer-events: none;
       z-index: 100;
       text-align: center;
       white-space: nowrap;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.2s ease;
+      filter: contrast(1.2);
     }
 
     .removed-stamp {
-      color: rgba(180, 30, 30, 0.85);
-      border-color: rgba(180, 30, 30, 0.85);
-      background: rgba(255, 255, 255, 0.2);
+      color: rgba(200, 20, 20, 0.9);
+      border-color: rgba(200, 20, 20, 0.9);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 60%),
+        rgba(255, 240, 240, 0.15);
       text-shadow:
-        2px 2px 4px rgba(0, 0, 0, 0.3),
-        0 0 20px rgba(180, 30, 30, 0.4);
+        1px 1px 0 rgba(200, 20, 20, 0.5),
+        -1px -1px 0 rgba(200, 20, 20, 0.3),
+        2px 2px 8px rgba(200, 20, 20, 0.4);
       box-shadow:
-        0 0 0 2px rgba(255, 255, 255, 0.3) inset,
-        0 4px 10px rgba(0, 0, 0, 0.3);
+        0 0 0 1px rgba(200, 20, 20, 0.4) inset,
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        inset 2px 2px 3px rgba(255, 255, 255, 0.2);
     }
 
     .added-stamp {
-      color: rgba(30, 100, 180, 0.85);
-      border-color: rgba(30, 100, 180, 0.85);
-      background: rgba(255, 255, 255, 0.2);
+      color: rgba(20, 150, 40, 0.9);
+      border-color: rgba(20, 150, 40, 0.9);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 60%),
+        rgba(240, 255, 240, 0.15);
       text-shadow:
-        2px 2px 4px rgba(0, 0, 0, 0.3),
-        0 0 20px rgba(30, 100, 180, 0.4);
+        1px 1px 0 rgba(20, 150, 40, 0.5),
+        -1px -1px 0 rgba(20, 150, 40, 0.3),
+        2px 2px 8px rgba(20, 150, 40, 0.4);
       box-shadow:
-        0 0 0 2px rgba(255, 255, 255, 0.3) inset,
-        0 4px 10px rgba(0, 0, 0, 0.3);
+        0 0 0 1px rgba(20, 150, 40, 0.4) inset,
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        inset 2px 2px 3px rgba(255, 255, 255, 0.2);
     }
 
     .card-stamp.visible {
@@ -1428,7 +1437,7 @@
 
       <!-- Stamp overlays for visual feedback -->
       <div class="card-stamp removed-stamp" id="removed-stamp">Card Removed</div>
-      <div class="card-stamp added-stamp" id="added-stamp">Extra Practice Added</div>
+      <div class="card-stamp added-stamp" id="added-stamp">Extra Practice</div>
     </div>
 
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
@@ -1924,26 +1933,28 @@
       // Play sound
       playCardFlipSound();
 
-      // Show "Card Removed" stamp
+      // Show "Card Removed" stamp for 1 second
       removedStamp.classList.add('visible');
 
-      // Fade out animation
-      flashcard.classList.add('removing');
-
       setTimeout(() => {
-        flashcard.classList.remove('removing');
+        // Hide stamp and start fade out animation
         removedStamp.classList.remove('visible');
+        flashcard.classList.add('removing');
 
-        // Remove card from deck
-        currentDeck.splice(currentIndex, 1);
-        if (currentIndex >= currentDeck.length) {
-          currentIndex = 0;
-        }
+        setTimeout(() => {
+          flashcard.classList.remove('removing');
 
-        // Show next card
-        updateDisplay();
-        saveState();
-      }, 300);
+          // Remove card from deck
+          currentDeck.splice(currentIndex, 1);
+          if (currentIndex >= currentDeck.length) {
+            currentIndex = 0;
+          }
+
+          // Show next card
+          updateDisplay();
+          saveState();
+        }, 300);
+      }, 1000);
     }
 
     // Add extra copies of current card (Confused)
@@ -1954,33 +1965,36 @@
       playCardFlipSound();
       setTimeout(() => playCardFlipSound(), 200);
 
-      // Show "Extra Practice Added" stamp
+      // Show "Extra Practice" stamp for 1 second
       addedStamp.classList.add('visible');
 
-      // Bounce animation
-      flashcard.classList.add('adding');
       setTimeout(() => {
-        flashcard.classList.remove('adding');
+        // Hide stamp and start bounce animation
         addedStamp.classList.remove('visible');
-      }, 500);
+        flashcard.classList.add('adding');
 
-      // Add 2 copies to random positions in deck
-      const card = { ...currentDeck[currentIndex] };
+        setTimeout(() => {
+          flashcard.classList.remove('adding');
 
-      for (let n = 0; n < 2; n++) {
-        const randomPos = Math.floor(Math.random() * (currentDeck.length + 1));
-        currentDeck.splice(randomPos, 0, { ...card, id: `${card.id}-copy-${Date.now()}-${n}` });
+          // Add 2 copies to random positions in deck
+          const card = { ...currentDeck[currentIndex] };
 
-        // Adjust current index if we inserted before it
-        if (randomPos <= currentIndex) {
-          currentIndex++;
-        }
-      }
+          for (let n = 0; n < 2; n++) {
+            const randomPos = Math.floor(Math.random() * (currentDeck.length + 1));
+            currentDeck.splice(randomPos, 0, { ...card, id: `${card.id}-copy-${Date.now()}-${n}` });
 
-      // Update card counter immediately
-      cardCounter.textContent = `Card ${currentIndex + 1} of ${currentDeck.length}`;
+            // Adjust current index if we inserted before it
+            if (randomPos <= currentIndex) {
+              currentIndex++;
+            }
+          }
 
-      saveState();
+          // Move to next card and update display
+          currentIndex = (currentIndex + 1) % currentDeck.length;
+          updateDisplay();
+          saveState();
+        }, 500);
+      }, 1000);
     }
 
     // Reset deck to original shuffled state
