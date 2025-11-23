@@ -1,0 +1,77 @@
+=== SimpleFlashCards.txt ===
+PROJECT: LPH Spanish Learning
+COMPONENT: Simple Flashcards - Interactive Spanish vocabulary practice
+CREATED: 2025-11-23
+LAST UPDATED: 2025-11-23 - Updated card animations (slide-off removal, multi-card insertion)
+
+DATA SOURCES:
+- Module: https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js
+  Provides wordpacks with Spanish vocabulary and translations (english, chinese, portuguese)
+- LocalStorage: Saves user preferences (voice selection, speech speed)
+- Web Speech API: Text-to-speech and speech recognition for pronunciation
+
+FUNCTIONALITY:
+- Main Purpose: Spanish vocabulary flashcard practice with interactive features
+- Key Functions:
+  * loadWordpacks() - Dynamically imports vocabulary modules
+  * initializeDeck(packKey) - Creates shuffled deck from selected wordpack
+  * updateDisplay() - Renders current card with weathering effects
+  * removeCurrentCard() - Removes mastered card with slide-off animation
+  * addConfusedCards() - Adds 2 copies of difficult card with visual feedback
+  * speakSpanish() - Text-to-speech pronunciation
+  * startListening() - Speech recognition for pronunciation practice
+  * calculateSimilarity() - Levenshtein distance for pronunciation scoring
+
+- Event Handlers:
+  * Card flip - Click card or up/down arrows
+  * Navigation - Arrow buttons or left/right arrows
+  * Got it (👌) - Remove current card from deck
+  * Confused (😕) - Add 2 extra practice copies
+  * Sound (🔊) - Play pronunciation
+  * Microphone (🎤) - Practice pronunciation with feedback
+
+DEPENDENCIES:
+- External Libraries: None (vanilla JavaScript)
+- Fonts: Google Fonts (Cinzel, IM Fell English)
+- APIs:
+  * Web Speech API (speechSynthesis for TTS)
+  * SpeechRecognition API for pronunciation practice
+- Module Imports: act1-foundation.js (wordpack data)
+
+INTEGRATION:
+- Receives data from: Wordpack modules loaded dynamically
+- Sends data to: LocalStorage for preference persistence
+- Triggers: User interactions (clicks, keyboard, voice)
+
+ANIMATIONS:
+- Card Flip: Soft audio cue with visual flip transition
+- Card Remove: Slide-off animation (0.5s) - card slides right with 25° rotation when mastered
+  * JavaScript timeout: 500ms to match animation duration
+- Card Add: Multi-card insertion animation (0.6s) - 2 extra cards slide in from behind using ::before and ::after pseudo-elements
+  * Cards slide from left and right (-60px/+60px) with scale and opacity transitions
+  * JavaScript timeout: 600ms to match animation duration
+  * Main card does subtle pop effect (scale 1.03 → 0.98 → 1.0)
+- Stamps: "Card Removed" and "Extra Practice" overlays with realistic ink effect (1s display before animation)
+
+AUDIO FEATURES:
+- Card Flip Sound: Muffled paper-like sound (Cloud Nine Ultra Soft)
+- Button Click: Satisfying snap sound (Click Snap J)
+- Speech Speed: Adjustable (Slow, Normal, Fast)
+- Voice Selection: Multiple Spanish voices available
+- Pronunciation Scoring: Real-time feedback with similarity percentage
+
+VISUAL DESIGN:
+- Theme: Old paper/parchment aesthetic with cardboard buttons
+- Textures: Procedural SVG noise for paper and cardboard
+- Weathering: Random edge fading for each card
+- Stamps: Realistic ink-on-paper blend mode effects
+
+CORRECTIONS & CLARIFICATIONS:
+[None yet - initial documentation]
+
+NOTES:
+- Audio code has important comments about preservation - DO NOT DELETE sound generation code
+- State persistence only saves preferences (voice, speed), not deck progress
+- Card removal and addition have stamp overlays with 1-second display before animation
+- Future LLMs: Read this documentation before making changes to understand the system
+===
