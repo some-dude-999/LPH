@@ -1539,7 +1539,7 @@
       <div class="card-face card-front">
         <div class="card-weathering" id="weathering-front"></div>
         <!-- Wrong answer indicators (positioned at card corners) -->
-        <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20; max-width: 450px; line-height: 0.9;"></div>
+        <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20; max-width: 550px; line-height: 0.9; text-align: left;"></div>
         <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
         <span class="card-word" id="spanish-word"></span>
         <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
@@ -2223,7 +2223,13 @@
           wrongPositions.push(nextPos);
         }
         wrongAttempts++;
-        wrongLetters.push(key); // Track the actual wrong letter typed
+        // Store wrong letter with its style (lowercase, random rotation/scale - set once, never changes)
+        wrongLetters.push({
+          letter: key.toLowerCase(), // Case-insensitive
+          rotation: -8 + Math.random() * 16, // -8deg to +8deg
+          scale: 0.95 + Math.random() * 0.1, // 0.95 to 1.05
+          xRotation: -5 + Math.random() * 10 // -5deg to +5deg for X mark
+        });
         updateDisplay(); // Update to show red color and wrong indicators
       }
     }
@@ -2563,14 +2569,20 @@
         wrongCountFront.innerHTML = '';
       } else if (currentMode === 'listening') {
         // Listening mode: typing interface on front (hear and type Spanish), Spanish | Translation on back
-        // Update wrong indicators (positioned at card corners) with handwritten variations
-        const uniqueWrongLetters = [...new Set(wrongLetters)];
+        // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
+        // Get unique letters (by letter property, case-insensitive)
+        const seenLetters = new Set();
+        const uniqueWrongLetters = wrongLetters.filter(item => {
+          if (seenLetters.has(item.letter)) {
+            return false;
+          }
+          seenLetters.add(item.letter);
+          return true;
+        });
         wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
-          ? uniqueWrongLetters.map(l => {
-              const sizeVar = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-              const rotateVar = -8 + Math.random() * 16; // -8deg to +8deg (more variation)
-              const xRotateVar = -5 + Math.random() * 10; // -5deg to +5deg for X mark
-              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${sizeVar}) rotate(${rotateVar}deg);"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${xRotateVar}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+          ? uniqueWrongLetters.map(item => {
+              // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
+              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
             }).join('')
           : '';
         const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
@@ -2585,14 +2597,20 @@
         englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
         // Writing mode: English + typing on front, Spanish on back
-        // Update wrong indicators (positioned at card corners) with handwritten variations
-        const uniqueWrongLetters = [...new Set(wrongLetters)];
+        // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
+        // Get unique letters (by letter property, case-insensitive)
+        const seenLetters = new Set();
+        const uniqueWrongLetters = wrongLetters.filter(item => {
+          if (seenLetters.has(item.letter)) {
+            return false;
+          }
+          seenLetters.add(item.letter);
+          return true;
+        });
         wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
-          ? uniqueWrongLetters.map(l => {
-              const sizeVar = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-              const rotateVar = -8 + Math.random() * 16; // -8deg to +8deg (more variation)
-              const xRotateVar = -5 + Math.random() * 10; // -5deg to +5deg for X mark
-              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${sizeVar}) rotate(${rotateVar}deg);"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${xRotateVar}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+          ? uniqueWrongLetters.map(item => {
+              // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
+              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
             }).join('')
           : '';
         const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
