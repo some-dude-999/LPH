@@ -1584,6 +1584,7 @@
     let typingDisplay = []; // Array of characters to display (original chars or '_')
     let wrongAttempts = 0; // Track wrong keypresses in typing modes
     let wrongPositions = []; // Track which positions had wrong attempts (for red underlines)
+    let wrongLetters = []; // Track actual letters that were typed wrong (for crossed-out display)
 
     // Starting card state (menu/help card)
     let isOnStartingCard = false;
@@ -2054,6 +2055,7 @@
       });
       wrongAttempts = 0; // Reset wrong attempts counter
       wrongPositions = []; // Reset wrong positions array
+      wrongLetters = []; // Reset wrong letters array
     }
 
     // Add duplicate cards to current deck for extra practice
@@ -2147,12 +2149,13 @@
           }, 500);
         }
       } else {
-        // Wrong key pressed - mark position as wrong and increment counter
+        // Wrong key pressed - mark position as wrong, increment counter, and track wrong letter
         if (!wrongPositions.includes(nextPos)) {
           wrongPositions.push(nextPos);
         }
         wrongAttempts++;
-        updateDisplay(); // Update to show red underline
+        wrongLetters.push(key); // Track the actual wrong letter typed
+        updateDisplay(); // Update to show red color and wrong indicators
       }
     }
 
@@ -2429,7 +2432,14 @@
         englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
         // Writing mode: English + typing on front, Spanish on back
-        spanishWord.innerHTML = `<div class="translation-text">${card.translation}</div><br><div class="typing-display">${renderTypingDisplay()}</div>`;
+        // Show wrong letters (top left) and wrong count (top right)
+        const wrongLettersDisplay = wrongLetters.length > 0
+          ? `<div style="position: absolute; top: 20px; left: 20px; font-size: 1.5rem; color: #D32F2F;">${wrongLetters.map(l => `<span style="text-decoration: line-through;">${l}</span>`).join(' ')}</div>`
+          : '';
+        const wrongCountDisplay = wrongAttempts > 0
+          ? `<div style="position: absolute; top: 20px; right: 20px; font-size: 1.8rem; font-weight: bold; color: #D32F2F;">-${wrongAttempts}</div>`
+          : '';
+        spanishWord.innerHTML = `${wrongLettersDisplay}${wrongCountDisplay}<div class="translation-text">${card.translation}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
         englishWord.textContent = card.spanish;
         englishWord.className = 'card-word';
@@ -3004,12 +3014,15 @@
         e.preventDefault();
         flipCard();
       } else if (e.key === ' ') {
-        // Space: only pronounce in reading mode (typing modes ignore space)
+        // Space: pronounce in reading mode, play sound in writing mode, ignore in listening
         if (currentMode === 'reading') {
           e.preventDefault();
           speakSpanish();
-        } else if (currentMode === 'listening' || currentMode === 'writing') {
-          e.preventDefault(); // Ignore space in typing modes
+        } else if (currentMode === 'writing') {
+          e.preventDefault();
+          playKeyboardSound(); // Play typing sound but don't register input
+        } else if (currentMode === 'listening') {
+          e.preventDefault(); // Ignore space in listening mode
         }
       }
     });
