@@ -1162,7 +1162,7 @@
 
     @keyframes slideOut {
       to {
-        transform: translateX(200px) rotate(10deg);
+        transform: translateX(500px) rotate(10deg);
       }
     }
 
@@ -1888,17 +1888,48 @@
         return;
       }
 
+      // Calculate next card index
+      const nextIndex = currentIndex >= currentDeck.length - 1 ? 0 : currentIndex + 1;
+      const nextCard = currentDeck[nextIndex];
+
+      // Update display to show next card underneath (before animation)
+      currentDeck.splice(currentIndex, 1);
+      if (currentIndex >= currentDeck.length) {
+        currentIndex = 0;
+      }
+
+      // Store current card content to animate
+      const currentSpanish = spanishWord.textContent;
+      const currentEnglish = englishWord.textContent;
+      const currentWeatheringFront = weatheringFront.style.background;
+      const currentWeatheringBack = weatheringBack.style.background;
+
+      // Update to next card immediately (shows underneath)
+      updateDisplay();
+
+      // Create temporary overlay with old card content
+      const tempCard = flashcard.cloneNode(true);
+      tempCard.style.position = 'absolute';
+      tempCard.style.top = '0';
+      tempCard.style.left = '0';
+      tempCard.style.width = '100%';
+      tempCard.style.height = '100%';
+      tempCard.style.zIndex = '100';
+      tempCard.querySelector('#spanish-word').textContent = currentSpanish;
+      tempCard.querySelector('#english-word').textContent = currentEnglish;
+      tempCard.querySelector('#weathering-front').style.background = currentWeatheringFront;
+      tempCard.querySelector('#weathering-back').style.background = currentWeatheringBack;
+      flashcard.parentElement.appendChild(tempCard);
+
       // Play card removal sound
       playCardFlipSound();
 
-      flashcard.classList.add('removed');
+      // Animate temporary card off screen
+      tempCard.classList.add('removed');
+
+      // Remove temporary card when animation completes
       setTimeout(() => {
-        flashcard.classList.remove('removed');
-        currentDeck.splice(currentIndex, 1);
-        if (currentIndex >= currentDeck.length) {
-          currentIndex = 0;
-        }
-        updateDisplay();
+        tempCard.remove();
         saveState();
       }, 400);
     }
