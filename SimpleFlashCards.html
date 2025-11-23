@@ -1318,8 +1318,8 @@
       text-align: center;
       word-spacing: 20px;
       word-break: keep-all;
-      white-space: nowrap;
-      overflow-wrap: normal;
+      white-space: normal;
+      overflow-wrap: break-word;
     }
 
     .typing-char {
@@ -2040,8 +2040,8 @@
 
       updateDisplay();
 
-      // Auto-pronounce Spanish in listening and writing modes
-      if ((newMode === 'listening' || newMode === 'writing') && currentDeck.length > 0) {
+      // Auto-pronounce Spanish in listening mode only (not writing - user needs to translate)
+      if (newMode === 'listening' && currentDeck.length > 0) {
         setTimeout(() => speakSpanish(), 300);
       }
     }
@@ -2444,8 +2444,8 @@
       updateDisplay();
       saveState();
 
-      // Auto-read in listening/writing modes
-      if (currentMode === 'listening' || currentMode === 'writing') {
+      // Auto-read in listening mode only (not writing - user needs to translate)
+      if (currentMode === 'listening') {
         setTimeout(() => speakSpanish(), 300);
       }
     }
@@ -2461,8 +2461,8 @@
       updateDisplay();
       saveState();
 
-      // Auto-read in listening/writing modes
-      if (currentMode === 'listening' || currentMode === 'writing') {
+      // Auto-read in listening mode only (not writing - user needs to translate)
+      if (currentMode === 'listening') {
         setTimeout(() => speakSpanish(), 300);
       }
     }
