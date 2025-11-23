@@ -293,6 +293,13 @@
       }
     }
 
+    // Column headers for each language (matches CSV structure)
+    const columnHeaders = {
+      'Chinese': ['Chinese', 'Pinyin', 'English', 'Spanish', 'French', 'Portuguese', 'Vietnamese', 'Thai', 'Khmer', 'Indonesian', 'Malay', 'Filipino'],
+      'Spanish': ['Spanish', 'English', 'Chinese', 'Pinyin', 'Portuguese'],
+      'English': ['English', 'Chinese', 'Pinyin', 'Spanish', 'Portuguese']
+    };
+
     // Test configuration
     const tests = [
       { lang: 'Chinese', files: [
@@ -366,7 +373,8 @@
           packCount,
           wordCount,
           data,
-          samplePack: data[packs[0]]
+          samplePack: data[packs[0]],
+          langName
         };
       } catch (error) {
         return {
@@ -423,6 +431,7 @@
 
         if (result.success) {
           const sampleWords = result.samplePack.words.slice(0, 5);
+          const headers = columnHeaders[result.langName];
 
           moduleDiv.innerHTML = `
             <h4>✅ ${result.fileName}</h4>
@@ -452,7 +461,7 @@
                   <table>
                     <thead>
                       <tr>
-                        ${sampleWords[0].map((_, i) => `<th>Column ${i + 1}</th>`).join('')}
+                        ${headers.map(header => `<th>${header}</th>`).join('')}
                       </tr>
                     </thead>
                     <tbody>
