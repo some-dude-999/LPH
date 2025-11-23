@@ -1317,18 +1317,20 @@
       z-index: 5;
       text-align: center;
       word-spacing: 20px;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow-wrap: normal;
     }
 
     .typing-char {
       display: inline-block;
       min-width: 0.6em;
       text-align: center;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.2s ease;
+      transition: color 0.2s ease;
     }
 
     .typing-char.wrong {
-      border-bottom: 2px solid #D32F2F;
+      color: #D32F2F;
     }
 
     .typing-space {
@@ -1342,14 +1344,6 @@
       color: #2C1810;
       font-family: 'Courier New', monospace;
       font-style: normal;
-    }
-
-    /* Divider line */
-    .listening-divider {
-      width: 95%;
-      height: 1px;
-      background: #2C1810;
-      margin: 20px auto;
     }
   </style>
 </head>
@@ -1944,15 +1938,20 @@
 
       const currentCard = currentDeck[currentIndex];
 
-      // Insert cards randomly in the remaining deck for spaced practice
+      // Insert cards randomly in the remaining deck, skipping next 2 cards if possible
       for (let i = 0; i < count; i++) {
         const duplicate = { ...currentCard };
 
-        // Random position in remaining deck (after current card)
+        // Calculate remaining cards after current card
         const remainingCards = currentDeck.length - (currentIndex + 1);
-        if (remainingCards > 0) {
-          const randomOffset = Math.floor(Math.random() * remainingCards) + 1;
+
+        if (remainingCards > 2) {
+          // If more than 2 cards remaining, insert randomly after the next 2 cards
+          const randomOffset = Math.floor(Math.random() * (remainingCards - 2)) + 3;
           currentDeck.splice(currentIndex + randomOffset, 0, duplicate);
+        } else if (remainingCards > 0) {
+          // If 1-2 cards remaining, insert right after current card
+          currentDeck.splice(currentIndex + 1, 0, duplicate);
         } else {
           // If no cards remaining, add to end
           currentDeck.push(duplicate);
@@ -2274,11 +2273,11 @@
           `<span class="typing-char ${wrongPositions.includes(idx) ? 'wrong' : ''}">${char}</span>`
         ).join('')}</div>`;
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `${card.spanish}<div class="listening-divider"></div><div class="translation-text">${card.translation}</div>`;
+        englishWord.innerHTML = `${card.spanish}<br><div class="translation-text">${card.translation}</div>`;
         englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
-        // Writing mode: English + divider + typing on front, Spanish on back
-        spanishWord.innerHTML = `<div class="translation-text">${card.translation}</div><div class="listening-divider"></div><div class="typing-display">${typingDisplay.map((char, idx) =>
+        // Writing mode: English + typing on front, Spanish on back
+        spanishWord.innerHTML = `<div class="translation-text">${card.translation}</div><br><div class="typing-display">${typingDisplay.map((char, idx) =>
           char === ' ' ? '<span class="typing-space"> </span>' :
           `<span class="typing-char ${wrongPositions.includes(idx) ? 'wrong' : ''}">${char}</span>`
         ).join('')}</div>`;
@@ -2819,8 +2818,8 @@
         return;
       }
 
-      // Handle typing in listening and writing modes
-      if ((currentMode === 'listening' || currentMode === 'writing') && e.key.length === 1 && /[a-zA-ZáéíóúñÁÉÍÓÚÑüÜ ]/.test(e.key)) {
+      // Handle typing in listening and writing modes (space is ignored)
+      if ((currentMode === 'listening' || currentMode === 'writing') && e.key.length === 1 && /[a-zA-ZáéíóúñÁÉÍÓÚÑüÜ]/.test(e.key)) {
         e.preventDefault();
         handleTypingInput(e.key);
         return;
@@ -2855,10 +2854,12 @@
         e.preventDefault();
         flipCard();
       } else if (e.key === ' ') {
-        // Space: only pronounce in reading mode (typing modes handle space as input)
+        // Space: only pronounce in reading mode (typing modes ignore space)
         if (currentMode === 'reading') {
           e.preventDefault();
           speakSpanish();
+        } else if (currentMode === 'listening' || currentMode === 'writing') {
+          e.preventDefault(); // Ignore space in typing modes
         }
       }
     });
