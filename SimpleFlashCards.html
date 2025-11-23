@@ -1539,8 +1539,8 @@
       <div class="card-face card-front">
         <div class="card-weathering" id="weathering-front"></div>
         <!-- Wrong answer indicators (positioned at card corners) -->
-        <div id="wrong-letters-front" style="position: absolute; top: 5px; left: 5px; font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
-        <div id="wrong-count-front" style="position: absolute; top: 5px; right: 5px; font-size: 1.5rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
+        <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
+        <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
         <span class="card-word" id="spanish-word"></span>
         <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
         <button class="sound-btn" id="sound-btn-front" aria-label="Play pronunciation">🔊</button>
@@ -2542,12 +2542,20 @@
         wrongCountFront.innerHTML = '';
       } else if (currentMode === 'listening') {
         // Listening mode: typing interface on front (hear and type Spanish), Spanish | Translation on back
-        // Update wrong indicators (positioned at card corners)
+        // Update wrong indicators (positioned at card corners) with handwritten variations
         const uniqueWrongLetters = [...new Set(wrongLetters)];
         wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
-          ? uniqueWrongLetters.map(l => `<span style="position: relative; display: inline-block; margin-right: 8px;"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #D32F2F; font-size: 1.2rem; font-weight: bold; opacity: 0.7;">✗</span></span>`).join('')
+          ? uniqueWrongLetters.map(l => {
+              const sizeVar = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
+              const rotateVar = -3 + Math.random() * 6; // -3deg to +3deg
+              return `<span style="position: relative; display: inline-block; margin-right: 8px; transform: scale(${sizeVar}) rotate(${rotateVar}deg);"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${-rotateVar}deg); color: #D32F2F; font-size: 1em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+            }).join('')
           : '';
-        wrongCountFront.innerHTML = wrongAttempts > 0 ? `-${wrongAttempts}` : '';
+        const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
+        const countScale = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
+        wrongCountFront.innerHTML = wrongAttempts > 0
+          ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
+          : '';
         // Update card content (no indicators embedded here)
         spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
@@ -2555,12 +2563,20 @@
         englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
         // Writing mode: English + typing on front, Spanish on back
-        // Update wrong indicators (positioned at card corners)
+        // Update wrong indicators (positioned at card corners) with handwritten variations
         const uniqueWrongLetters = [...new Set(wrongLetters)];
         wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
-          ? uniqueWrongLetters.map(l => `<span style="position: relative; display: inline-block; margin-right: 8px;"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #D32F2F; font-size: 1.2rem; font-weight: bold; opacity: 0.7;">✗</span></span>`).join('')
+          ? uniqueWrongLetters.map(l => {
+              const sizeVar = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
+              const rotateVar = -3 + Math.random() * 6; // -3deg to +3deg
+              return `<span style="position: relative; display: inline-block; margin-right: 8px; transform: scale(${sizeVar}) rotate(${rotateVar}deg);"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${-rotateVar}deg); color: #D32F2F; font-size: 1em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+            }).join('')
           : '';
-        wrongCountFront.innerHTML = wrongAttempts > 0 ? `-${wrongAttempts}` : '';
+        const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
+        const countScale = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
+        wrongCountFront.innerHTML = wrongAttempts > 0
+          ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
+          : '';
         // Update card content (no indicators embedded here)
         spanishWord.innerHTML = `<div class="translation-text">${card.translation}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
