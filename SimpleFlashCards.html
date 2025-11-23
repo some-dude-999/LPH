@@ -1310,8 +1310,9 @@
     .typing-display {
       font-size: 4rem;
       color: #2C1810;
-      font-family: 'Courier New', monospace;
-      letter-spacing: 8px;
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      letter-spacing: 4px;
       position: relative;
       z-index: 5;
       text-align: center;
@@ -1322,6 +1323,12 @@
       display: inline-block;
       min-width: 0.6em;
       text-align: center;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .typing-char.wrong {
+      border-bottom: 2px solid #D32F2F;
     }
 
     .typing-space {
@@ -1329,11 +1336,19 @@
       width: 0.8em;
     }
 
-    /* Listening mode divider */
+    /* Translation text (native language) */
+    .translation-text {
+      font-size: 3rem;
+      color: #2C1810;
+      font-family: 'Courier New', monospace;
+      font-style: normal;
+    }
+
+    /* Divider line */
     .listening-divider {
       width: 95%;
       height: 1px;
-      background: rgba(139, 115, 85, 0.4);
+      background: #2C1810;
       margin: 20px auto;
     }
   </style>
@@ -1576,6 +1591,7 @@
     let typingInput = ''; // User's current typing input for typing modes
     let typingDisplay = []; // Array of characters to display (original chars or '_')
     let wrongAttempts = 0; // Track wrong keypresses in typing modes
+    let wrongPositions = []; // Track which positions had wrong attempts (for red underlines)
 
     // Starting card state (menu/help card)
     let isOnStartingCard = false;
@@ -1909,21 +1925,29 @@
         return '_';
       });
       wrongAttempts = 0; // Reset wrong attempts counter
+      wrongPositions = []; // Reset wrong positions array
     }
 
     // Add duplicate cards to current deck for extra practice
     function addDuplicateCards(count) {
-      if (currentDeck.length === 0) return;
+      if (currentDeck.length === 0 || count === 0) return;
 
       const currentCard = currentDeck[currentIndex];
-      const duplicates = [];
 
+      // Insert cards randomly in the remaining deck for spaced practice
       for (let i = 0; i < count; i++) {
-        duplicates.push({ ...currentCard });
-      }
+        const duplicate = { ...currentCard };
 
-      // Insert duplicates after the current card
-      currentDeck.splice(currentIndex + 1, 0, ...duplicates);
+        // Random position in remaining deck (after current card)
+        const remainingCards = currentDeck.length - (currentIndex + 1);
+        if (remainingCards > 0) {
+          const randomOffset = Math.floor(Math.random() * remainingCards) + 1;
+          currentDeck.splice(currentIndex + randomOffset, 0, duplicate);
+        } else {
+          // If no cards remaining, add to end
+          currentDeck.push(duplicate);
+        }
+      }
 
       // Show "Extra Practice" stamp
       const addedStamp = document.getElementById('added-stamp');
@@ -1973,10 +1997,13 @@
 
         // Check if word is complete
         if (!typingDisplay.includes('_')) {
-          // Word completed!
-          if (wrongAttempts > 0) {
-            // Had wrong attempts - add 2 duplicate cards for extra practice
-            addDuplicateCards(2);
+          // Word completed! Calculate smart penalty
+          // 1 wrong = pass (0 cards), 2 wrong = 1 card, 3+ wrong = 2 cards
+          // Formula: max(0, min(wrongAttempts - 1, 2))
+          const penaltyCards = wrongAttempts > 1 ? Math.min(wrongAttempts - 1, 2) : 0;
+
+          if (penaltyCards > 0) {
+            addDuplicateCards(penaltyCards);
           }
 
           // Auto-advance after a brief delay
@@ -1987,8 +2014,12 @@
           }, 500);
         }
       } else {
-        // Wrong key pressed - increment wrong attempts
+        // Wrong key pressed - mark position as wrong and increment counter
+        if (!wrongPositions.includes(nextPos)) {
+          wrongPositions.push(nextPos);
+        }
         wrongAttempts++;
+        updateDisplay(); // Update to show red underline
       }
     }
 
@@ -2328,26 +2359,26 @@
         // Reading mode: Spanish on front, English translation on back
         spanishWord.textContent = card.spanish;
         spanishWord.className = 'card-word';
-        englishWord.textContent = card.translation;
+        englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
         englishWord.className = 'card-word';
       } else if (currentMode === 'listening') {
         // Listening mode: typing interface on front (hear and type Spanish), Spanish | Translation on back
         // Don't reinitialize - preserve typing progress
-        spanishWord.innerHTML = `<div class="typing-display">${typingDisplay.map(char =>
+        spanishWord.innerHTML = `<div class="typing-display">${typingDisplay.map((char, idx) =>
           char === ' ' ? '<span class="typing-space"> </span>' :
-          `<span class="typing-char">${char}</span>`
+          `<span class="typing-char ${wrongPositions.includes(idx) ? 'wrong' : ''}">${char}</span>`
         ).join('')}</div>`;
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `${card.spanish}<div class="listening-divider"></div>${card.translation}`;
+        englishWord.innerHTML = `${card.spanish}<div class="listening-divider"></div><div class="translation-text">${card.translation}</div>`;
         englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
-        // Writing mode: English on front, typing interface + Spanish answer on back
-        spanishWord.textContent = card.translation;
-        spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="typing-display">${typingDisplay.map(char =>
+        // Writing mode: English + divider + typing on front, Spanish on back
+        spanishWord.innerHTML = `<div class="translation-text">${card.translation}</div><div class="listening-divider"></div><div class="typing-display">${typingDisplay.map((char, idx) =>
           char === ' ' ? '<span class="typing-space"> </span>' :
-          `<span class="typing-char">${char}</span>`
-        ).join('')}</div><div class="listening-divider"></div>${card.spanish}`;
+          `<span class="typing-char ${wrongPositions.includes(idx) ? 'wrong' : ''}">${char}</span>`
+        ).join('')}</div>`;
+        spanishWord.className = 'card-word';
+        englishWord.textContent = card.spanish;
         englishWord.className = 'card-word';
       }
 
@@ -2361,10 +2392,9 @@
       isFlipped = false;
     }
 
-    // Navigate to previous card (with wrap-around)
+    // Navigate to previous card (with wrap-around) - no sound
     function goToPrevious() {
       if (currentDeck.length === 0) return;
-      playCardFlipSound();
       currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
       if (currentMode === 'listening' || currentMode === 'writing') {
         initializeTypingDisplay();
