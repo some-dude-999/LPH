@@ -2,7 +2,7 @@
 PROJECT: LPH Spanish Learning
 COMPONENT: Simple Flashcards - Interactive Spanish vocabulary practice
 CREATED: 2025-11-23
-LAST UPDATED: 2025-11-23 - Realistic stamps, enhanced card weathering, grid pattern back
+LAST UPDATED: 2025-11-23 - Added three learning modes with typing game and updated controls
 
 DATA SOURCES:
 - Module: https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js
@@ -11,20 +11,33 @@ DATA SOURCES:
 - Web Speech API: Text-to-speech and speech recognition for pronunciation
 
 FUNCTIONALITY:
-- Main Purpose: Spanish vocabulary flashcard practice with interactive features
+- Main Purpose: Spanish vocabulary flashcard practice with three interactive learning modes
+- Learning Modes:
+  * 📖 Reading Mode - Traditional flashcards (Spanish on front, translation on back)
+  * 👂 Listening Mode - Audio focus (? on front, Spanish | Translation on back, auto-pronounces)
+  * ✏️ Writing Mode - Typing game (type Spanish word letter-by-letter with mechanical keyboard sound)
+
 - Key Functions:
   * loadWordpacks() - Dynamically imports vocabulary modules
   * initializeDeck(packKey) - Creates shuffled deck from selected wordpack
-  * updateDisplay() - Renders current card with weathering effects
-  * removeCurrentCard() - Removes mastered card with slide-off animation
-  * addConfusedCards() - Adds 2 copies of difficult card with visual feedback
+  * updateDisplay() - Renders current card based on active mode
+  * switchMode(mode) - Changes between reading/listening/writing modes
+  * handleTypingInput(key) - Processes typed letters in writing mode (case/accent insensitive)
+  * normalizeChar(char) - Removes accents and lowercases for matching (á→a, é→e)
+  * playKeyboardSound() - Mechanical keyboard click sound for each correct letter
+  * removeCurrentCard() - Removes mastered card from deck
+  * addConfusedCards() - Adds 2 copies of difficult card
   * speakSpanish() - Text-to-speech pronunciation
   * startListening() - Speech recognition for pronunciation practice
   * calculateSimilarity() - Levenshtein distance for pronunciation scoring
 
 - Event Handlers:
-  * Card flip - Click card or up/down arrows
-  * Navigation - Arrow buttons or left/right arrows
+  * Mode buttons (top left) - Switch between reading/listening/writing modes
+  * Card flip - Click card or down arrow
+  * Navigation - Left/right arrows
+  * Pronunciation - Up arrow (always) or Space (reading/listening only)
+  * Typing - Letter keys in writing mode
+  * Enter - Advance to next card if word complete (writing mode)
   * Got it (👌) - Remove current card from deck
   * Confused (😕) - Add 2 extra practice copies
   * Sound (🔊) - Play pronunciation
@@ -63,9 +76,11 @@ STAMPS (REALISTIC DESIGN):
 AUDIO FEATURES:
 - Card Flip Sound: Muffled paper-like sound (Cloud Nine Ultra Soft)
 - Button Click: Satisfying snap sound (Click Snap J)
+- Mechanical Keyboard Sound: Tactile click for each correct letter typed (Writing mode)
 - Speech Speed: Adjustable (Slow, Normal, Fast)
 - Voice Selection: Multiple Spanish voices available
 - Pronunciation Scoring: Real-time feedback with similarity percentage
+- Auto-Pronounce: Automatic pronunciation in Listening and Writing modes
 
 VISUAL DESIGN:
 - Theme: Old paper/parchment aesthetic with cardboard buttons
