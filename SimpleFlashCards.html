@@ -1281,12 +1281,15 @@
       height: 50px;
       border-radius: 50%;
       border: 3px solid rgba(74, 56, 40, 0.6);
-      background-color: #8B7355;
+      /* Inactive: darker, more recessed (old active style) */
+      background-color: #7A6347;
       background-image:
         var(--cardboard-texture),
-        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
+      border-color: #4A3828;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
       color: #2C1810;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -1295,6 +1298,7 @@
       justify-content: center;
       font-size: 1.5rem;
       line-height: 1;
+      opacity: 0.6; /* Lower opacity for inactive to blend into background */
     }
 
     .mode-btn:hover {
@@ -1305,17 +1309,20 @@
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
       transform: scale(1.05);
+      opacity: 0.8; /* Slightly higher on hover */
     }
 
     .mode-btn.active {
-      background-color: #7A6347;
+      /* Active: lighter, more prominent (old default style) */
+      background-color: #8B7355;
       background-image:
         var(--cardboard-texture),
-        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
-      border-color: #4A3828;
-      box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+      border: 3px solid rgba(74, 56, 40, 0.6);
+      box-shadow: none; /* No inset shadow - more prominent */
+      opacity: 1; /* Full opacity for active */
     }
 
     /* Typing mode display (listening and writing) */
@@ -1619,10 +1626,11 @@
 
     function saveState() {
       try {
-        // Only save voice and speed preferences, not deck state
+        // Only save speech rate and last card pack selected, NOT deck progress
         const state = {
           voiceURI: currentVoice ? currentVoice.voiceURI : null,
-          speed: currentSpeed
+          speed: currentSpeed,
+          wordpackKey: currentWordpackKey
         };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       } catch (e) {
@@ -2051,17 +2059,21 @@
       if (newMode === 'speaking') modeSpeaking.classList.add('active');
       if (newMode === 'writing') modeWriting.classList.add('active');
 
-      // Reshuffle deck and reset to random position on mode change
-      if (currentDeck.length > 0) {
-        currentDeck = shuffleArray([...currentDeck]);
+      // Completely reset pack as if starting new game in this mode
+      // (Reset from original deck, not modified current deck)
+      if (originalDeck.length > 0) {
+        currentDeck = shuffleArray([...originalDeck]);
         currentIndex = 0;
       }
 
-      // Reset state
+      // Reset flip state
       if (isFlipped) {
         flashcard.classList.remove('flipped');
         isFlipped = false;
       }
+
+      // Reset deck change indicator
+      pendingDeckChange = 0;
 
       // Initialize typing display for listening and writing modes
       if ((newMode === 'listening' || newMode === 'writing') && currentDeck.length > 0) {
@@ -2074,6 +2086,9 @@
       if (newMode === 'listening' && currentDeck.length > 0) {
         setTimeout(() => speakSpanish(), 300);
       }
+
+      // Save state (only saves speech rate and pack selection, not deck progress)
+      saveState();
     }
 
     // Initialize typing display for listening and writing modes
@@ -2337,7 +2352,7 @@
       const savedState = loadState();
       if (!savedState) return;
 
-      // Only restore voice and speed preferences
+      // Only restore speech rate and last card pack selected (NOT deck progress)
       if (savedState.speed) {
         currentSpeed = savedState.speed;
         // Restore speed to all speed buttons (setup and menu)
@@ -2347,6 +2362,15 @@
         setupSpeedBtns.forEach(btn => {
           btn.classList.toggle('active', parseFloat(btn.dataset.speed) === currentSpeed);
         });
+      }
+
+      // Restore last selected wordpack
+      if (savedState.wordpackKey && wordpacks[savedState.wordpackKey]) {
+        currentWordpackKey = savedState.wordpackKey;
+        wordpackSelect.value = savedState.wordpackKey;
+        if (menuWordpack) {
+          menuWordpack.value = savedState.wordpackKey;
+        }
       }
 
       // Voice will be restored in populateVoiceSelector
@@ -2810,13 +2834,36 @@
       }, 1000);
     }
 
-    // Reset deck to original shuffled state
+    // Reset deck to original shuffled state (fresh start in current mode)
     function resetDeck() {
       if (originalDeck.length === 0) return;
       playButtonClickSound();
+
+      // Completely reset as if we just started this pack in this mode
       currentDeck = shuffleArray([...originalDeck]);
       currentIndex = 0;
+
+      // Reset typing state for typing modes
+      if (currentMode === 'listening' || currentMode === 'writing') {
+        initializeTypingDisplay();
+      }
+
+      // Reset flip state
+      if (isFlipped) {
+        flashcard.classList.remove('flipped');
+        isFlipped = false;
+      }
+
+      // Reset deck change indicator
+      pendingDeckChange = 0;
+
       updateDisplay();
+
+      // Auto-pronounce in listening mode
+      if (currentMode === 'listening' && currentDeck.length > 0) {
+        setTimeout(() => speakSpanish(), 300);
+      }
+
       saveState();
     }
 
