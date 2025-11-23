@@ -38,6 +38,20 @@
       color: #2C1810;
     }
 
+    /* Remove focus outline from all interactive elements */
+    button:focus,
+    button:active,
+    select:focus,
+    input:focus,
+    .mode-btn:focus,
+    .mode-btn:active,
+    .action-btn:focus,
+    .action-btn:active,
+    .nav-btn:focus,
+    .nav-btn:active {
+      outline: none !important;
+    }
+
     /* Wordpack Selector */
     .selector-container {
       background: rgba(60, 46, 31, 0.6);
