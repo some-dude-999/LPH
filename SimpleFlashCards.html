@@ -1278,7 +1278,7 @@
 
     /* Writing mode typing display */
     .typing-display {
-      font-size: 4rem;
+      font-size: 5.5rem;
       color: #2C1810;
       font-family: 'Courier New', monospace;
       letter-spacing: 8px;
@@ -1301,10 +1301,10 @@
 
     /* Listening mode divider */
     .listening-divider {
-      width: 80%;
-      height: 2px;
+      width: 95%;
+      height: 1px;
       background: rgba(139, 115, 85, 0.4);
-      margin: 20px 0;
+      margin: 20px auto;
     }
   </style>
 </head>
@@ -1822,9 +1822,10 @@
         isFlipped = false;
       }
 
-      // Reset writing mode state
-      typingInput = '';
-      typingDisplay = [];
+      // Initialize writing mode if switching to it
+      if (newMode === 'writing' && currentDeck.length > 0) {
+        initializeTypingDisplay();
+      }
 
       updateDisplay();
 
@@ -2122,25 +2123,25 @@
       if (currentMode === 'reading') {
         // Reading mode: Spanish on front, translation on back
         spanishWord.textContent = card.spanish;
-        spanishWord.className = 'word';
+        spanishWord.className = 'card-word';
         englishWord.textContent = card.translation;
-        englishWord.className = 'word';
+        englishWord.className = 'card-word';
       } else if (currentMode === 'listening') {
         // Listening mode: "?" on front, "Spanish | Translation" on back
         spanishWord.textContent = '?';
-        spanishWord.className = 'word';
+        spanishWord.className = 'card-word';
         englishWord.innerHTML = `${card.spanish}<div class="listening-divider"></div>${card.translation}`;
-        englishWord.className = 'word';
+        englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
         // Writing mode: typing display on front, translation on back
-        initializeTypingDisplay();
+        // Don't reinitialize - preserve typing progress
         spanishWord.innerHTML = `<div class="typing-display">${typingDisplay.map(char =>
           char === ' ' ? '<span class="typing-space"> </span>' :
           `<span class="typing-char">${char}</span>`
         ).join('')}</div>`;
-        spanishWord.className = 'word';
+        spanishWord.className = 'card-word';
         englishWord.textContent = card.translation;
-        englishWord.className = 'word';
+        englishWord.className = 'card-word';
       }
 
       // Apply random weathering based on card ID
@@ -2158,6 +2159,9 @@
       if (currentDeck.length === 0) return;
       playCardFlipSound();
       currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+      if (currentMode === 'writing') {
+        initializeTypingDisplay();
+      }
       updateDisplay();
       saveState();
     }
@@ -2167,6 +2171,9 @@
       if (currentDeck.length === 0) return;
       playCardFlipSound();
       currentIndex = (currentIndex + 1) % currentDeck.length;
+      if (currentMode === 'writing') {
+        initializeTypingDisplay();
+      }
       updateDisplay();
       saveState();
 
@@ -2181,6 +2188,9 @@
       if (currentDeck.length === 0) return;
       playCardFlipSound();
       currentIndex = (currentIndex + 1) % currentDeck.length;
+      if (currentMode === 'writing') {
+        initializeTypingDisplay();
+      }
       updateDisplay();
       saveState();
 
