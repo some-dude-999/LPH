@@ -3,6 +3,46 @@
 ## 🚨 FIRST PRIORITY: DOCUMENTATION
 **No docs? CREATE THEM FIRST.** Understand the system before coding. Update when understanding changes.
 
+## 🔑 KEY FEATURES - SACRED AND IMMUTABLE
+**CRITICAL: Key features are high-level user requirements that MUST be preserved across all code changes.**
+
+### The Key Features Rule
+1. **When user makes a request**, first identify the KEY FEATURE at a high level
+2. **Document the key feature in code comments** using this format:
+   ```javascript
+   // ============================================================
+   // KEY FEATURE: [High-level description of what this does]
+   // [Additional details about the feature]
+   // ============================================================
+   ```
+3. **Key features CANNOT be removed** unless user explicitly asks
+4. **Code can change, key features cannot** - refactor freely but preserve functionality
+5. **Before editing code**, read existing KEY FEATURE comments and ensure changes preserve them
+
+### Example
+```javascript
+// ============================================================
+// KEY FEATURE: Auto-pronounce Spanish word in listening mode
+// - On card navigation (prev/next): auto-pronounce
+// - On flip to back: auto-pronounce
+// - Helps users learn pronunciation through repetition
+// ============================================================
+function goToNext() {
+  // ... navigation code ...
+  if (currentMode === 'listening') {
+    setTimeout(() => speakSpanish(), 300);
+  }
+}
+```
+
+**Why This Matters:**
+- User specifies features at high level, refining over time
+- Future AI assistants see KEY FEATURE comments and preserve them
+- Prevents accidental removal of important functionality during refactoring
+- Creates institutional memory of user's intent
+
+---
+
 ## 🔗 AUTOMATED LINK MANAGEMENT
 **Check for `PythonHelpers/link_manager.py` first**
 - If it exists → Use it
