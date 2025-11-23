@@ -2436,12 +2436,14 @@
         englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
         // Writing mode: English + typing on front, Spanish on back
-        // Show wrong letters (top left) and wrong count (top right)
-        const wrongLettersDisplay = wrongLetters.length > 0
-          ? `<div style="position: absolute; top: 20px; left: 20px; font-size: 1.5rem; color: #D32F2F;">${wrongLetters.map(l => `<span style="text-decoration: line-through;">${l}</span>`).join(' ')}</div>`
+        // Show wrong letters (top left) and wrong count (top right) - positioned relative to card
+        // Make wrong letters unique (only show each letter once)
+        const uniqueWrongLetters = [...new Set(wrongLetters)];
+        const wrongLettersDisplay = uniqueWrongLetters.length > 0
+          ? `<div style="position: absolute; top: 10px; left: 10px; font-size: 2.5rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">${uniqueWrongLetters.map(l => `${l}<span style="font-size: 2rem;">✗</span>`).join(' ')}</div>`
           : '';
         const wrongCountDisplay = wrongAttempts > 0
-          ? `<div style="position: absolute; top: 20px; right: 20px; font-size: 1.8rem; font-weight: bold; color: #D32F2F;">-${wrongAttempts}</div>`
+          ? `<div style="position: absolute; top: 10px; right: 10px; font-size: 3rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">-${wrongAttempts}</div>`
           : '';
         spanishWord.innerHTML = `${wrongLettersDisplay}${wrongCountDisplay}<div class="translation-text">${card.translation}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
