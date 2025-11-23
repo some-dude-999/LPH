@@ -13,16 +13,18 @@ DATA SOURCES:
 FUNCTIONALITY:
 - Main Purpose: Spanish vocabulary flashcard practice with three interactive learning modes
 - Learning Modes:
-  * 📖 Reading Mode - Traditional flashcards (Spanish on front, translation on back)
-  * 👂 Listening Mode - Audio focus (? on front, Spanish | Translation on back, auto-pronounces)
-  * ✏️ Writing Mode - Typing game (type Spanish word letter-by-letter with mechanical keyboard sound)
+  * 📖 Reading Mode - Traditional flashcards (Spanish on front, English on back)
+  * 👂 Listening Mode - Hearing practice (hear Spanish, type it, back shows Spanish | English, auto-pronounces)
+  * ✏️ Writing Mode - Translation practice (English on front, type Spanish, back shows correct Spanish, auto-pronounces)
 
 - Key Functions:
   * loadWordpacks() - Dynamically imports vocabulary modules
   * initializeDeck(packKey) - Creates shuffled deck from selected wordpack
   * updateDisplay() - Renders current card based on active mode
   * switchMode(mode) - Changes between reading/listening/writing modes
-  * handleTypingInput(key) - Processes typed letters in writing mode (case/accent insensitive)
+  * initializeTypingDisplay() - Creates underscore display for typing modes, resets wrong attempts
+  * handleTypingInput(key) - Processes typed letters in listening/writing modes (case/accent insensitive, tracks wrong attempts)
+  * addDuplicateCards(count) - Adds duplicate cards for wrong answers (auto-practice penalty)
   * normalizeChar(char) - Removes accents and lowercases for matching (á→a, é→e)
   * playKeyboardSound() - Mechanical keyboard click sound for each correct letter
   * removeCurrentCard() - Removes mastered card from deck
@@ -35,13 +37,14 @@ FUNCTIONALITY:
   * Mode buttons (top left) - Switch between reading/listening/writing modes
   * Card flip - Click card or down arrow
   * Navigation - Left/right arrows
-  * Pronunciation - Up arrow (always) or Space (reading/listening only)
-  * Typing - Letter keys in writing mode
-  * Enter - Advance to next card if word complete (writing mode)
-  * Got it (👌) - Remove current card from deck
-  * Confused (😕) - Add 2 extra practice copies
+  * Pronunciation - Up arrow (always) or Space (reading mode only)
+  * Typing - Letter keys in listening/writing modes (case/accent insensitive)
+  * Enter - Advance to next card when complete (listening/writing modes)
+  * Got it (👌) - Remove current card from deck (green stamp)
+  * Confused (😕) - Add 2 extra practice copies (red stamp)
   * Sound (🔊) - Play pronunciation
   * Microphone (🎤) - Practice pronunciation with feedback
+  * Wrong typing - Automatically adds 2 practice cards on mistakes
 
 DEPENDENCIES:
 - External Libraries: None (vanilla JavaScript)
@@ -97,6 +100,16 @@ VISUAL DESIGN:
   * Subconsciously pleasing rustic paper feel
 
 CORRECTIONS & CLARIFICATIONS:
+- 2025-11-23: MAJOR MODE REDESIGN - Completely changed listening and writing mode behavior
+  * Listening mode: Changed from "show ?, flip to see Spanish | English" to "hear Spanish, type it, flip to see Spanish | English"
+  * Writing mode: Changed from "type Spanish on front, see English on back" to "see English on front, type Spanish, see Spanish on back"
+  * Both typing modes now have mechanical keyboard sounds and auto-advance on completion
+  * Added wrong answer penalty: typing modes automatically add 2 duplicate cards when user makes mistakes
+- 2025-11-23: Font and styling updates
+  * Reduced card-word and typing-display font sizes from 6.4rem/5.5rem to 4rem for better fit
+  * Changed word-break behavior to never break mid-word (word-break: normal, hyphens: none)
+  * Made backside whiter (#FFFEF9 to #EAE7E2) with reduced edge weathering (opacity: 0.3) for distinction from front
+  * Swapped stamp colors: remove card = green (good), add card = red (bad)
 - 2025-11-23: Fixed critical typing mechanic bug - updateDisplay() was resetting progress on every keystroke
   * Root cause: initializeTypingDisplay() being called in updateDisplay() for writing mode
   * Solution: Only initialize typing display when switching modes or navigating to new cards
