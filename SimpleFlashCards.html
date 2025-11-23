@@ -365,20 +365,17 @@
       border-radius: 50%;
       cursor: pointer;
       transition: all 0.3s ease;
-      display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
       line-height: 1;
       text-align: center;
       z-index: 10;
-      opacity: 0;
-      pointer-events: none;
+      display: none; /* Hidden by default, shown only in speaking mode */
     }
 
     .flashcard.game-started .mic-btn {
-      opacity: 1;
-      pointer-events: auto;
+      /* Mic button visibility controlled by JavaScript based on mode */
     }
 
     .mic-btn:hover {
@@ -1375,7 +1372,7 @@
           <li><strong>←/→ Arrows</strong> — Navigate between cards</li>
           <li><strong>↑ Arrow</strong> — Pronounce Spanish word (always)</li>
           <li><strong>↓ Arrow</strong> — Flip card to see back (always)</li>
-          <li><strong>Space</strong> — Pronounce (Reading mode only)</li>
+          <li><strong>Space</strong> — Pronounce (Reading) / Record speech (Speaking)</li>
           <li><strong>Letters</strong> — Type answer (Listening & Writing modes)</li>
           <li><strong>Enter</strong> — Next card when complete (Listening & Writing modes)</li>
         </ul>
@@ -1446,6 +1443,7 @@
   <div class="mode-selector">
     <button class="mode-btn active" id="mode-reading" data-mode="reading" title="Reading Mode">📖</button>
     <button class="mode-btn" id="mode-listening" data-mode="listening" title="Listening Mode">👂</button>
+    <button class="mode-btn" id="mode-speaking" data-mode="speaking" title="Speaking Mode">💬</button>
     <button class="mode-btn" id="mode-writing" data-mode="writing" title="Writing Mode">✏️</button>
   </div>
 
@@ -1580,7 +1578,7 @@
     let spanishVoices = [];
 
     // Learning modes
-    let currentMode = 'reading'; // 'reading', 'listening', 'writing'
+    let currentMode = 'reading'; // 'reading', 'listening', 'speaking', 'writing'
     let typingInput = ''; // User's current typing input for typing modes
     let typingDisplay = []; // Array of characters to display (original chars or '_')
     let wrongAttempts = 0; // Track wrong keypresses in typing modes
@@ -1657,6 +1655,7 @@
     const modeBtns = document.querySelectorAll('.mode-btn');
     const modeReading = document.getElementById('mode-reading');
     const modeListening = document.getElementById('mode-listening');
+    const modeSpeaking = document.getElementById('mode-speaking');
     const modeWriting = document.getElementById('mode-writing');
 
     // Modal elements
@@ -1940,6 +1939,10 @@
           </div>
 
           <div style="margin-bottom: 15px;">
+            <strong>💬 Speaking Mode:</strong> See Spanish → say it out loud (Space to record)
+          </div>
+
+          <div style="margin-bottom: 15px;">
             <strong>✏️ Writing Mode:</strong> See English → type Spanish translation
           </div>
 
@@ -1947,7 +1950,7 @@
             <strong>Controls:</strong><br>
             • Click card or ↓ to flip<br>
             • ← → to navigate<br>
-            • ↑ or Space to hear pronunciation<br>
+            • Space: Hear pronunciation (reading) / Record speech (speaking) / Type practice (listening/writing)<br>
             • Type letters in listening/writing modes
           </div>
 
@@ -2025,6 +2028,7 @@
       modeBtns.forEach(btn => btn.classList.remove('active'));
       if (newMode === 'reading') modeReading.classList.add('active');
       if (newMode === 'listening') modeListening.classList.add('active');
+      if (newMode === 'speaking') modeSpeaking.classList.add('active');
       if (newMode === 'writing') modeWriting.classList.add('active');
 
       // Reshuffle deck and reset to random position on mode change
@@ -2517,7 +2521,7 @@
         // Show wrong letters (very top left) and wrong count (very top right)
         const uniqueWrongLetters = [...new Set(wrongLetters)];
         const wrongLettersDisplay = uniqueWrongLetters.length > 0
-          ? `<div style="position: absolute; top: 5px; left: 5px; font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">${uniqueWrongLetters.map(l => `${l}<span style="font-size: 1rem;">✗</span>`).join(' ')}</div>`
+          ? `<div style="position: absolute; top: 5px; left: 5px; font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">${uniqueWrongLetters.map(l => `<span style="position: relative; display: inline-block; margin-right: 8px;"><span>${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #D32F2F; font-size: 1.2rem; font-weight: bold;">✗</span></span>`).join('')}</div>`
           : '';
         const wrongCountDisplay = wrongAttempts > 0
           ? `<div style="position: absolute; top: 5px; right: 5px; font-size: 1.5rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">-${wrongAttempts}</div>`
@@ -2532,7 +2536,7 @@
         // Make wrong letters unique (only show each letter once)
         const uniqueWrongLetters = [...new Set(wrongLetters)];
         const wrongLettersDisplay = uniqueWrongLetters.length > 0
-          ? `<div style="position: absolute; top: 5px; left: 5px; font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">${uniqueWrongLetters.map(l => `${l}<span style="font-size: 1rem;">✗</span>`).join(' ')}</div>`
+          ? `<div style="position: absolute; top: 5px; left: 5px; font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">${uniqueWrongLetters.map(l => `<span style="position: relative; display: inline-block; margin-right: 8px;"><span>${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #D32F2F; font-size: 1.2rem; font-weight: bold;">✗</span></span>`).join('')}</div>`
           : '';
         const wrongCountDisplay = wrongAttempts > 0
           ? `<div style="position: absolute; top: 5px; right: 5px; font-size: 1.5rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">-${wrongAttempts}</div>`
@@ -2541,6 +2545,23 @@
         spanishWord.className = 'card-word';
         englishWord.textContent = card.spanish;
         englishWord.className = 'card-word';
+      } else if (currentMode === 'speaking') {
+        // Speaking mode: Spanish on front (with mic), translation on back
+        spanishWord.textContent = card.spanish;
+        spanishWord.className = 'card-word';
+        englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
+        englishWord.className = 'card-word';
+      }
+
+      // Show/hide mic button based on mode
+      const micBtnFrontEl = document.getElementById('mic-btn-front');
+      const micBtnBackEl = document.getElementById('mic-btn-back');
+      if (currentMode === 'speaking') {
+        micBtnFrontEl.style.display = 'block';
+        micBtnBackEl.style.display = 'block';
+      } else {
+        micBtnFrontEl.style.display = 'none';
+        micBtnBackEl.style.display = 'none';
       }
 
       // Apply random weathering based on card ID
@@ -3119,10 +3140,15 @@
         e.preventDefault();
         flipCard();
       } else if (e.key === ' ') {
-        // Space: pronounce in reading mode, play sound in writing mode, ignore in listening
+        // Space: pronounce in reading mode, record in speaking mode, play sound in writing mode, ignore in listening
         if (currentMode === 'reading') {
           e.preventDefault();
           speakSpanish();
+        } else if (currentMode === 'speaking') {
+          e.preventDefault();
+          // Trigger mic button based on which side of card is showing
+          const isFront = !isFlipped;
+          startListening(isFront);
         } else if (currentMode === 'writing') {
           e.preventDefault();
           playKeyboardSound(); // Play typing sound but don't register input
