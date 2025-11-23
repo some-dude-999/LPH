@@ -1161,7 +1161,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(-15deg);
-      font-family: 'Courier New', monospace;
+      font-family: Impact, 'Arial Black', sans-serif;
       font-size: 2.5rem;
       font-weight: 900;
       text-transform: uppercase;
@@ -1174,18 +1174,21 @@
       z-index: 100;
       text-align: center;
       transition: opacity 0.2s ease;
+      background: transparent;
     }
 
     .removed-stamp {
-      color: #D32F2F;
+      color: transparent;
       border-color: #D32F2F;
-      background: rgba(211, 47, 47, 0.1);
+      -webkit-text-stroke: 3px #D32F2F;
+      text-stroke: 3px #D32F2F;
     }
 
     .added-stamp {
-      color: #388E3C;
+      color: transparent;
       border-color: #388E3C;
-      background: rgba(56, 142, 60, 0.1);
+      -webkit-text-stroke: 3px #388E3C;
+      text-stroke: 3px #388E3C;
     }
 
     .card-stamp.visible {

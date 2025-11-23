@@ -2,7 +2,7 @@
 PROJECT: LPH Spanish Learning
 COMPONENT: Simple Flashcards - Interactive Spanish vocabulary practice
 CREATED: 2025-11-23
-LAST UPDATED: 2025-11-23 - Simplified stamps to clean, basic design
+LAST UPDATED: 2025-11-23 - Updated stamps with hollow text and Impact font
 
 DATA SOURCES:
 - Module: https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js
@@ -51,10 +51,12 @@ ANIMATIONS:
 
 STAMPS (SIMPLE DESIGN):
 - "Card Removed" (red) and "Extra Practice" (green) overlays
-- Clean, simple styling:
+- Clean, iconic stamp styling:
   * Centered on card with -15° rotation
+  * Impact font (bold, condensed) for classic stamp look
+  * Hollow text (transparent fill with 3px stroke outline)
   * Large text (2.5rem) with solid border (4px)
-  * Slight background tint (10% opacity)
+  * Transparent background
   * Red (#D32F2F) for removed, Green (#388E3C) for added
 
 AUDIO FEATURES:
