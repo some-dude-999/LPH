@@ -1155,126 +1155,37 @@
       }
     }
 
-    /* No animations - stamps only */
-
-    /* Stamp overlays - realistic rubber stamp effect */
+    /* Simple stamp overlays */
     .card-stamp {
       position: absolute;
-      top: 25px;
-      right: 25px;
-      transform: rotate(-8deg);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-15deg);
       font-family: 'Courier New', monospace;
-      font-size: 1.3rem;
+      font-size: 2.5rem;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      padding: 8px 16px;
-      min-width: 170px;
-      min-height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 3px double;
-      border-radius: 2px;
+      letter-spacing: 4px;
+      padding: 15px 30px;
+      border: 4px solid;
+      border-radius: 8px;
       opacity: 0;
       pointer-events: none;
       z-index: 100;
       text-align: center;
-      white-space: nowrap;
       transition: opacity 0.2s ease;
-
-      /* Realistic stamp blending with paper */
-      mix-blend-mode: multiply;
-      filter: contrast(1.2);
-
-      /* CSS variables for randomness - set by JavaScript */
-      --stamp-opacity: 0.85;
-      --corner-tl: 0;
-      --corner-tr: 0;
-      --corner-bl: 0;
-      --corner-br: 0;
-      --edge-top: 0;
-      --edge-right: 0;
-      --edge-bottom: 0;
-      --edge-left: 0;
     }
 
     .removed-stamp {
-      color: #A82828;
-      border-color: #A82828;
-      /* Solid base color - masking creates gaps */
-      background: rgba(168, 40, 40, var(--stamp-opacity));
-      text-shadow: 0.5px 0.5px 1px rgba(168, 40, 40, 0.5);
-
-      /* Mask to create missing ink areas */
-      -webkit-mask-image:
-        /* Corner cutouts - missing ink */
-        radial-gradient(circle at 0% 0%, transparent calc(var(--corner-tl) * 25px), black calc(var(--corner-tl) * 25px + 1px)),
-        radial-gradient(circle at 100% 0%, transparent calc(var(--corner-tr) * 25px), black calc(var(--corner-tr) * 25px + 1px)),
-        radial-gradient(circle at 0% 100%, transparent calc(var(--corner-bl) * 25px), black calc(var(--corner-bl) * 25px + 1px)),
-        radial-gradient(circle at 100% 100%, transparent calc(var(--corner-br) * 25px), black calc(var(--corner-br) * 25px + 1px)),
-        /* Edge gaps - uneven pressure */
-        linear-gradient(to bottom, transparent calc(var(--edge-top) * 8px), black calc(var(--edge-top) * 8px + 1px)),
-        linear-gradient(to left, transparent calc(var(--edge-right) * 8px), black calc(var(--edge-right) * 8px + 1px)),
-        linear-gradient(to top, transparent calc(var(--edge-bottom) * 8px), black calc(var(--edge-bottom) * 8px + 1px)),
-        linear-gradient(to right, transparent calc(var(--edge-left) * 8px), black calc(var(--edge-left) * 8px + 1px)),
-        /* Random splotches - ink variations */
-        radial-gradient(ellipse 30px 40px at 20% 30%, transparent 30%, black 60%),
-        radial-gradient(ellipse 25px 35px at 75% 65%, transparent 25%, black 55%),
-        radial-gradient(ellipse 20px 30px at 50% 85%, transparent 35%, black 65%);
-      -webkit-mask-composite: source-in;
-      -webkit-mask-size: 100% 100%;
-      mask-image:
-        radial-gradient(circle at 0% 0%, transparent calc(var(--corner-tl) * 25px), black calc(var(--corner-tl) * 25px + 1px)),
-        radial-gradient(circle at 100% 0%, transparent calc(var(--corner-tr) * 25px), black calc(var(--corner-tr) * 25px + 1px)),
-        radial-gradient(circle at 0% 100%, transparent calc(var(--corner-bl) * 25px), black calc(var(--corner-bl) * 25px + 1px)),
-        radial-gradient(circle at 100% 100%, transparent calc(var(--corner-br) * 25px), black calc(var(--corner-br) * 25px + 1px)),
-        linear-gradient(to bottom, transparent calc(var(--edge-top) * 8px), black calc(var(--edge-top) * 8px + 1px)),
-        linear-gradient(to left, transparent calc(var(--edge-right) * 8px), black calc(var(--edge-right) * 8px + 1px)),
-        linear-gradient(to top, transparent calc(var(--edge-bottom) * 8px), black calc(var(--edge-bottom) * 8px + 1px)),
-        linear-gradient(to right, transparent calc(var(--edge-left) * 8px), black calc(var(--edge-left) * 8px + 1px)),
-        radial-gradient(ellipse 30px 40px at 20% 30%, transparent 30%, black 60%),
-        radial-gradient(ellipse 25px 35px at 75% 65%, transparent 25%, black 55%),
-        radial-gradient(ellipse 20px 30px at 50% 85%, transparent 35%, black 65%);
-      mask-composite: intersect;
-      mask-size: 100% 100%;
+      color: #D32F2F;
+      border-color: #D32F2F;
+      background: rgba(211, 47, 47, 0.1);
     }
 
     .added-stamp {
-      color: #2A6E45;
-      border-color: #2A6E45;
-      background: rgba(42, 110, 69, var(--stamp-opacity));
-      text-shadow: 0.5px 0.5px 1px rgba(42, 110, 69, 0.5);
-
-      /* Same mask pattern for consistency */
-      -webkit-mask-image:
-        radial-gradient(circle at 0% 0%, transparent calc(var(--corner-tl) * 25px), black calc(var(--corner-tl) * 25px + 1px)),
-        radial-gradient(circle at 100% 0%, transparent calc(var(--corner-tr) * 25px), black calc(var(--corner-tr) * 25px + 1px)),
-        radial-gradient(circle at 0% 100%, transparent calc(var(--corner-bl) * 25px), black calc(var(--corner-bl) * 25px + 1px)),
-        radial-gradient(circle at 100% 100%, transparent calc(var(--corner-br) * 25px), black calc(var(--corner-br) * 25px + 1px)),
-        linear-gradient(to bottom, transparent calc(var(--edge-top) * 8px), black calc(var(--edge-top) * 8px + 1px)),
-        linear-gradient(to left, transparent calc(var(--edge-right) * 8px), black calc(var(--edge-right) * 8px + 1px)),
-        linear-gradient(to top, transparent calc(var(--edge-bottom) * 8px), black calc(var(--edge-bottom) * 8px + 1px)),
-        linear-gradient(to right, transparent calc(var(--edge-left) * 8px), black calc(var(--edge-left) * 8px + 1px)),
-        radial-gradient(ellipse 30px 40px at 20% 30%, transparent 30%, black 60%),
-        radial-gradient(ellipse 25px 35px at 75% 65%, transparent 25%, black 55%),
-        radial-gradient(ellipse 20px 30px at 50% 85%, transparent 35%, black 65%);
-      -webkit-mask-composite: source-in;
-      -webkit-mask-size: 100% 100%;
-      mask-image:
-        radial-gradient(circle at 0% 0%, transparent calc(var(--corner-tl) * 25px), black calc(var(--corner-tl) * 25px + 1px)),
-        radial-gradient(circle at 100% 0%, transparent calc(var(--corner-tr) * 25px), black calc(var(--corner-tr) * 25px + 1px)),
-        radial-gradient(circle at 0% 100%, transparent calc(var(--corner-bl) * 25px), black calc(var(--corner-bl) * 25px + 1px)),
-        radial-gradient(circle at 100% 100%, transparent calc(var(--corner-br) * 25px), black calc(var(--corner-br) * 25px + 1px)),
-        linear-gradient(to bottom, transparent calc(var(--edge-top) * 8px), black calc(var(--edge-top) * 8px + 1px)),
-        linear-gradient(to left, transparent calc(var(--edge-right) * 8px), black calc(var(--edge-right) * 8px + 1px)),
-        linear-gradient(to top, transparent calc(var(--edge-bottom) * 8px), black calc(var(--edge-bottom) * 8px + 1px)),
-        linear-gradient(to right, transparent calc(var(--edge-left) * 8px), black calc(var(--edge-left) * 8px + 1px)),
-        radial-gradient(ellipse 30px 40px at 20% 30%, transparent 30%, black 60%),
-        radial-gradient(ellipse 25px 35px at 75% 65%, transparent 25%, black 55%),
-        radial-gradient(ellipse 20px 30px at 50% 85%, transparent 35%, black 65%);
-      mask-composite: intersect;
-      mask-size: 100% 100%;
+      color: #388E3C;
+      border-color: #388E3C;
+      background: rgba(56, 142, 60, 0.1);
     }
 
     .card-stamp.visible {
@@ -1956,40 +1867,6 @@
       isFlipped = false;
     }
 
-    // Randomize stamp appearance for realistic ink effect
-    function randomizeStamp(stampElement) {
-      // Overall stamp opacity - some vibrant (0.9-1.0), some barely there (0.3-0.5)
-      const isVibrant = Math.random() > 0.5;
-      const opacity = isVibrant
-        ? 0.85 + Math.random() * 0.15  // 0.85-1.0 for vibrant
-        : 0.25 + Math.random() * 0.35; // 0.25-0.6 for faint
-
-      // Corner gaps - 0 to 1 (multiplied by 25px in CSS)
-      // Stamps often miss corners
-      const cornerTL = Math.random() > 0.6 ? Math.random() * 0.8 : 0;
-      const cornerTR = Math.random() > 0.6 ? Math.random() * 0.8 : 0;
-      const cornerBL = Math.random() > 0.6 ? Math.random() * 0.8 : 0;
-      const cornerBR = Math.random() > 0.6 ? Math.random() * 0.8 : 0;
-
-      // Edge gaps - 0 to 1 (multiplied by 8px in CSS)
-      // Uneven pressure creates edge gaps
-      const edgeTop = Math.random() > 0.5 ? Math.random() * 0.6 : 0;
-      const edgeRight = Math.random() > 0.5 ? Math.random() * 0.6 : 0;
-      const edgeBottom = Math.random() > 0.5 ? Math.random() * 0.6 : 0;
-      const edgeLeft = Math.random() > 0.5 ? Math.random() * 0.6 : 0;
-
-      // Apply CSS variables
-      stampElement.style.setProperty('--stamp-opacity', opacity);
-      stampElement.style.setProperty('--corner-tl', cornerTL);
-      stampElement.style.setProperty('--corner-tr', cornerTR);
-      stampElement.style.setProperty('--corner-bl', cornerBL);
-      stampElement.style.setProperty('--corner-br', cornerBR);
-      stampElement.style.setProperty('--edge-top', edgeTop);
-      stampElement.style.setProperty('--edge-right', edgeRight);
-      stampElement.style.setProperty('--edge-bottom', edgeBottom);
-      stampElement.style.setProperty('--edge-left', edgeLeft);
-    }
-
     // Remove current card (Got it!)
     function removeCurrentCard() {
       if (currentDeck.length <= 1) {
@@ -2001,9 +1878,6 @@
 
       // Play sound
       playCardFlipSound();
-
-      // Randomize stamp appearance
-      randomizeStamp(removedStamp);
 
       // Show "Card Removed" stamp for 1 second
       removedStamp.classList.add('visible');
@@ -2030,9 +1904,6 @@
       // Play 2 sounds
       playCardFlipSound();
       setTimeout(() => playCardFlipSound(), 200);
-
-      // Randomize stamp appearance
-      randomizeStamp(addedStamp);
 
       // Show "Extra Practice" stamp for 1 second
       addedStamp.classList.add('visible');
