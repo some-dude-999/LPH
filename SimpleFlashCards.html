@@ -177,6 +177,7 @@
       width: 100%;
       height: 100%;
       border-radius: 12px;
+      overflow: hidden; /* Clip content to border-radius */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2026,6 +2027,12 @@
       if (newMode === 'listening') modeListening.classList.add('active');
       if (newMode === 'writing') modeWriting.classList.add('active');
 
+      // Reshuffle deck and reset to random position on mode change
+      if (currentDeck.length > 0) {
+        currentDeck = shuffleArray([...currentDeck]);
+        currentIndex = 0;
+      }
+
       // Reset state
       if (isFlipped) {
         flashcard.classList.remove('flipped');
@@ -2356,6 +2363,37 @@
       updateDisplay();
     }
 
+    // Restart current wordpack
+    function restartCurrentPack() {
+      playButtonClickSound();
+      if (originalDeck.length > 0) {
+        currentDeck = shuffleArray([...originalDeck]);
+        currentIndex = 0;
+        if (currentMode === 'listening' || currentMode === 'writing') {
+          initializeTypingDisplay();
+        }
+        updateDisplay();
+        saveState();
+      }
+    }
+
+    // Go to next wordpack
+    function goToNextPack() {
+      playButtonClickSound();
+      const packs = Object.keys(wordpacks);
+      if (packs.length === 0) return;
+
+      const currentPackIndex = packs.indexOf(currentWordpackKey);
+      const nextPackIndex = (currentPackIndex + 1) % packs.length;
+      const nextPackKey = packs[nextPackIndex];
+
+      currentWordpackKey = nextPackKey;
+      wordpackSelect.value = nextPackKey;
+      initializeDeck(nextPackKey);
+      updateWordpackTitle();
+      saveState();
+    }
+
     // Generate random weathering pattern for a card
     function generateWeathering(seed) {
       // Use card ID as seed for consistent random pattern per card
@@ -2445,9 +2483,22 @@
       }
 
       if (currentDeck.length === 0) {
-        spanishWord.textContent = '';
+        // Show completion screen
+        cardCounter.textContent = 'Pack Complete!';
+        spanishWord.innerHTML = `
+          <div style="font-size: 3rem; margin-bottom: 30px;">🎉 Good Job! 🎉</div>
+          <div style="font-size: 1.5rem; margin-bottom: 40px;">You've completed this wordpack!</div>
+          <div style="display: flex; gap: 20px; justify-content: center;">
+            <button onclick="restartCurrentPack()" style="padding: 15px 30px; font-size: 1.3rem; background: #8B7355; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+              ↺ Study Again
+            </button>
+            <button onclick="goToNextPack()" style="padding: 15px 30px; font-size: 1.3rem; background: #7A6347; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+              → Next Pack
+            </button>
+          </div>
+        `;
+        spanishWord.className = 'card-word';
         englishWord.textContent = '';
-        cardCounter.textContent = 'Card 0 of 0';
         return;
       }
 
@@ -2505,6 +2556,7 @@
     // Navigate to previous card (with wrap-around)
     function goToPrevious() {
       if (currentDeck.length === 0) return;
+      speechSynthesis.cancel(); // Stop speech on card navigation
       playCardFlipSound();
       currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
       if (currentMode === 'listening' || currentMode === 'writing') {
@@ -2517,6 +2569,7 @@
     // Navigate to next card (with wrap-around)
     function goToNext() {
       if (currentDeck.length === 0) return;
+      speechSynthesis.cancel(); // Stop speech on card navigation
       playCardFlipSound();
       currentIndex = (currentIndex + 1) % currentDeck.length;
       if (currentMode === 'listening' || currentMode === 'writing') {
@@ -2550,7 +2603,7 @@
 
     // Flip card
     function flipCard() {
-      speechSynthesis.cancel(); // Stop any current speech
+      // Don't stop speech - let it continue while viewing back
       playCardFlipSound();
       flashcard.classList.add('flipped');
       isFlipped = true;
@@ -2563,7 +2616,7 @@
 
     // Unflip card
     function unflipCard() {
-      speechSynthesis.cancel(); // Stop any current speech
+      // Don't stop speech - let it continue while viewing front
       playCardFlipSound();
       flashcard.classList.remove('flipped');
       isFlipped = false;
