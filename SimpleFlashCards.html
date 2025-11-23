@@ -272,9 +272,9 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       position: absolute;
-      top: 50%;
+      top: 20px;
       left: 50%;
-      transform: translate(-50%, calc(-50% - 80px)); /* Position above the word */
+      transform: translateX(-50%);
       z-index: 5;
       white-space: nowrap;
     }
@@ -282,7 +282,7 @@
     .card-word {
       font-size: 6.4rem;
       color: #2C1810;
-      line-height: 1.3;
+      line-height: 0.65;
       font-style: italic;
       position: relative;
       z-index: 5;
@@ -1162,8 +1162,7 @@
 
     @keyframes slideOut {
       to {
-        transform: translateX(100px) rotate(10deg);
-        opacity: 0;
+        transform: translateX(200px) rotate(10deg);
       }
     }
 
@@ -1204,12 +1203,10 @@
 
     @keyframes slideInBehind {
       from {
-        transform: translateX(-120px) rotate(-10deg);
-        opacity: 0;
+        transform: translateX(-200px) rotate(-10deg);
       }
       to {
         transform: translateX(0) rotate(0deg);
-        opacity: 1;
       }
     }
   </style>
@@ -1795,15 +1792,34 @@
         return x - Math.floor(x);
       };
 
-      // Generate 3-5 random weathering spots
-      const numSpots = 3 + Math.floor(random(seed) * 3);
+      // Generate 4-6 random weathering spots on edges only
+      const numSpots = 4 + Math.floor(random(seed) * 3);
       const spots = [];
 
       for (let i = 0; i < numSpots; i++) {
-        const x = random(seed + i * 2) * 100;
-        const y = random(seed + i * 2 + 1) * 100;
-        const size = 10 + random(seed + i * 3) * 30;
-        const opacity = 0.05 + random(seed + i * 4) * 0.15;
+        let x, y;
+        const edgeType = Math.floor(random(seed + i * 5) * 4); // 0=left, 1=right, 2=top, 3=bottom
+
+        if (edgeType === 0) {
+          // Left edge
+          x = random(seed + i * 2) * 15; // 0-15%
+          y = random(seed + i * 2 + 1) * 100; // Any vertical position
+        } else if (edgeType === 1) {
+          // Right edge
+          x = 85 + random(seed + i * 2) * 15; // 85-100%
+          y = random(seed + i * 2 + 1) * 100;
+        } else if (edgeType === 2) {
+          // Top edge
+          x = random(seed + i * 2) * 100;
+          y = random(seed + i * 2 + 1) * 15; // 0-15%
+        } else {
+          // Bottom edge
+          x = random(seed + i * 2) * 100;
+          y = 85 + random(seed + i * 2 + 1) * 15; // 85-100%
+        }
+
+        const size = 15 + random(seed + i * 3) * 25;
+        const opacity = 0.08 + random(seed + i * 4) * 0.18;
         spots.push(`radial-gradient(circle at ${x}% ${y}%, rgba(101, 67, 33, ${opacity}) 0%, transparent ${size}%)`);
       }
 
