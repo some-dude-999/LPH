@@ -91,9 +91,16 @@
       color: #D4C4A8;
     }
 
-    /* Wordpack Title - Real gold appearance */
+    /* Wordpack Title - Elegant weathered antique gold leaf appearance */
     .wordpack-title {
-      background: linear-gradient(180deg, #FFD700 0%, #FFA500 40%, #FF8C00 60%, #B8860B 100%);
+      /* Muted, sophisticated gold gradient with greenish/brownish tints like aged gold */
+      background: linear-gradient(180deg,
+        #D4AF37 0%,      /* Muted gold */
+        #C9A961 25%,     /* Aged gold with greenish tint */
+        #B8963C 50%,     /* Deep antique gold */
+        #A67C38 75%,     /* Bronzed gold */
+        #8B7355 100%     /* Dark weathered gold-brown */
+      );
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -101,15 +108,17 @@
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 8px;
+      /* Subtle, refined shadows for depth without cartoon effect */
       text-shadow:
-        0 1px 2px rgba(255, 215, 0, 0.5),
-        0 2px 4px rgba(255, 140, 0, 0.3),
-        0 -1px 1px rgba(255, 255, 255, 0.2),
-        0 3px 6px rgba(0, 0, 0, 0.4);
+        0 1px 1px rgba(212, 175, 55, 0.3),
+        0 2px 3px rgba(139, 115, 85, 0.2),
+        0 -0.5px 0.5px rgba(255, 250, 230, 0.15),
+        0 3px 5px rgba(0, 0, 0, 0.25);
       opacity: 0;
       transition: opacity 0.3s ease;
       letter-spacing: 2px;
-      filter: drop-shadow(0 2px 3px rgba(184, 134, 11, 0.4));
+      /* Gentle drop shadow for elegance */
+      filter: drop-shadow(0 1px 2px rgba(139, 115, 85, 0.3));
     }
 
     body.game-started .wordpack-title {
@@ -2214,13 +2223,13 @@
       // Update display to show indicator while stamp is visible
       updateDisplay();
 
-      // Show "Extra Practice" stamp
+      // Show "Extra Practice" stamp (2 seconds so user can read it)
       const addedStamp = document.getElementById('added-stamp');
       addedStamp.classList.add('visible');
       setTimeout(() => {
         addedStamp.classList.remove('visible');
         pendingDeckChange = 0; // Clear indicator after stamp
-      }, 1500);
+      }, 2000);
     }
 
     // Handle typing input for listening and writing modes
@@ -2303,7 +2312,7 @@
               if (currentMode === 'listening' && currentDeck.length > 0) {
                 setTimeout(() => speakSpanish(), 300);
               }
-            }, 1000);
+            }, 2000); // 2 seconds so user can read stamp
           } else {
             // Wrong - add penalty cards
             const penaltyCards = Math.min(wrongAttempts - 1, 2);
@@ -2311,12 +2320,12 @@
               addDuplicateCards(penaltyCards);
             }
 
-            // Auto-advance after stamp duration (1600ms > 1500ms stamp)
+            // Auto-advance after stamp duration (2100ms > 2000ms stamp)
             setTimeout(() => {
               if (currentMode === 'listening' || currentMode === 'writing') {
                 moveToNextCard();
               }
-            }, 1600);
+            }, 2100);
           }
         }
       } else {
@@ -2603,7 +2612,8 @@
             html += `<span style="white-space: nowrap;">${currentWord.join('')}</span>`;
             currentWord = [];
           }
-          html += '<span class="typing-space"> </span>';
+          // Add space between words (browser handles line breaks naturally without trailing/leading spaces)
+          html += ' ';
           currentWordStartIdx = idx + 1;
         } else {
           // Always render actual character to preserve layout
@@ -2776,6 +2786,17 @@
         actionButtonsEl.style.display = 'none';
       }
 
+      // Show/hide navigation arrows based on mode (only show in reading mode - others auto-advance)
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      if (currentMode === 'reading') {
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+      } else {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+      }
+
       // Apply random weathering based on card ID
       const seed = card.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
       weatheringFront.style.background = generateWeathering(seed);
@@ -2890,7 +2911,7 @@
       // Update display to show indicator while stamp is visible
       updateDisplay();
 
-      // Show "Card Removed" stamp for 1 second
+      // Show "Card Removed" stamp for 2 seconds (so user can read it)
       removedStamp.classList.add('visible');
 
       setTimeout(() => {
@@ -2908,7 +2929,7 @@
         // Show next card
         updateDisplay();
         saveState();
-      }, 1000);
+      }, 2000);
     }
 
     // Add extra copies of current card (Confused)
@@ -2942,7 +2963,7 @@
         currentIndex = (currentIndex + 1) % currentDeck.length;
         updateDisplay();
         saveState();
-      }, 1000);
+      }, 2000); // 2 seconds so user can read stamp
     }
 
     // Reset deck to original shuffled state (fresh start in current mode)
