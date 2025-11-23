@@ -2,7 +2,7 @@
 PROJECT: LPH Spanish Learning
 COMPONENT: Simple Flashcards - Interactive Spanish vocabulary practice
 CREATED: 2025-11-23
-LAST UPDATED: 2025-11-23 - Removed animations, redesigned stamps with realistic ink effects
+LAST UPDATED: 2025-11-23 - Simplified stamps to clean, basic design
 
 DATA SOURCES:
 - Module: https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js
@@ -49,18 +49,13 @@ ANIMATIONS:
   * Show stamp for 1 second, then immediately change to next card
   * No slide-off or insertion effects
 
-STAMPS (REALISTIC RUBBER STAMP EFFECT):
+STAMPS (SIMPLE DESIGN):
 - "Card Removed" (red) and "Extra Practice" (green) overlays
-- Realistic ink simulation with randomized imperfections:
-  * Opacity variation: Vibrant (0.85-1.0) or Faint (0.25-0.6)
-  * Corner gaps: Random missing corners (0-60% of corners affected)
-  * Edge gaps: Uneven pressure creates missing edges
-  * Uses CSS mask-image with radial/linear gradients for gaps
-  * mix-blend-mode: multiply for realistic ink-on-paper effect
-- randomizeStamp() function: Sets CSS variables for each stamp instance
-  * --stamp-opacity: Overall intensity
-  * --corner-tl/tr/bl/br: Corner cutout sizes (0-0.8 * 25px)
-  * --edge-top/right/bottom/left: Edge gap sizes (0-0.6 * 8px)
+- Clean, simple styling:
+  * Centered on card with -15° rotation
+  * Large text (2.5rem) with solid border (4px)
+  * Slight background tint (10% opacity)
+  * Red (#D32F2F) for removed, Green (#388E3C) for added
 
 AUDIO FEATURES:
 - Card Flip Sound: Muffled paper-like sound (Cloud Nine Ultra Soft)
