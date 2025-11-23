@@ -1857,15 +1857,12 @@
       }
       isOnStartingCard = true;
 
-      // Show the actual setup overlay (same as initial game screen)
-      setupOverlay.classList.remove('hidden');
+      // Update titles
+      wordpackTitle.textContent = 'Spanish Flashcards';
+      cardCounter.textContent = 'Choose Lesson to Begin Studying';
 
-      // Show help (back) or settings (front) based on parameter
-      if (showBack) {
-        flashcard.classList.add('setup-flipped');
-      } else {
-        flashcard.classList.remove('setup-flipped');
-      }
+      // Render menu card (looks identical to a flashcard)
+      renderMenuCard();
 
       // Unflip card face if currently flipped
       if (isFlipped) {
@@ -1873,7 +1870,10 @@
         isFlipped = false;
       }
 
-      cardCounter.textContent = 'Menu / Help';
+      // Flip to back if help was requested
+      if (showBack) {
+        setTimeout(() => flipCard(), 100);
+      }
     }
 
     // Return from starting card to saved position
@@ -1881,12 +1881,138 @@
       if (!isOnStartingCard) return;
       isOnStartingCard = false;
 
-      // Hide the setup overlay and return to game
-      setupOverlay.classList.add('hidden');
-      flashcard.classList.remove('setup-flipped');
-
       currentIndex = savedIndex;
+      updateWordpackTitle(); // Restore wordpack title
       updateDisplay();
+    }
+
+    // Render the menu card (looks like a regular flashcard)
+    function renderMenuCard() {
+      // Front: Menu/Settings (styled like Spanish side)
+      spanishWord.innerHTML = `
+        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 30px;">⚙️ Settings</div>
+
+        <div style="font-size: 1.3rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 2;">
+          <div style="margin: 20px 0;">
+            <div style="font-weight: bold; margin-bottom: 8px;">Wordpack</div>
+            <select id="menu-wordpack" style="width: 100%; padding: 10px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
+              <option value="">-- Select --</option>
+            </select>
+          </div>
+
+          <div style="margin: 20px 0;">
+            <div style="font-weight: bold; margin-bottom: 8px;">I speak</div>
+            <select id="menu-language" style="width: 100%; padding: 10px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
+              <option value="">-- Select --</option>
+              <option value="english">English</option>
+              <option value="chinese">中文</option>
+              <option value="portuguese">Português</option>
+            </select>
+          </div>
+
+          <div style="margin: 20px 0;">
+            <div style="font-weight: bold; margin-bottom: 8px;">Speech Speed</div>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+              <button class="menu-speed-btn" data-speed="0.2" style="padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐢</button>
+              <button class="menu-speed-btn active" data-speed="0.6" style="padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; border: 2px solid #8B7355; background: #8B7355; color: #F5E6D3; cursor: pointer;">🚶</button>
+              <button class="menu-speed-btn" data-speed="1.0" style="padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐇</button>
+            </div>
+          </div>
+
+          <button onclick="exitStartingCard()" style="width: 100%; padding: 15px; margin-top: 30px; font-size: 1.5rem; background: #8B7355; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+            ← Back to Practice
+          </button>
+        </div>
+      `;
+      spanishWord.className = 'card-word';
+
+      // Back: Help/Instructions (styled like English translation side)
+      englishWord.innerHTML = `
+        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 20px;">❓ How to Use</div>
+
+        <div style="font-size: 1.1rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 1.8;">
+          <div style="margin-bottom: 15px;">
+            <strong>📖 Reading Mode:</strong> Spanish word → flip to see translation
+          </div>
+
+          <div style="margin-bottom: 15px;">
+            <strong>👂 Listening Mode:</strong> Hear Spanish → type what you heard
+          </div>
+
+          <div style="margin-bottom: 15px;">
+            <strong>✏️ Writing Mode:</strong> See English → type Spanish translation
+          </div>
+
+          <div style="margin-bottom: 15px;">
+            <strong>Controls:</strong><br>
+            • Click card or ↓ to flip<br>
+            • ← → to navigate<br>
+            • ↑ or Space to hear pronunciation<br>
+            • Type letters in listening/writing modes
+          </div>
+
+          <div style="margin-bottom: 15px;">
+            <strong>Buttons:</strong><br>
+            • 👌 Remove mastered card<br>
+            • 😕 Add 2 practice copies<br>
+            • ↺ Reset all cards
+          </div>
+        </div>
+      `;
+      englishWord.className = 'card-word';
+
+      // Populate selectors after render
+      setTimeout(() => {
+        const menuWordpack = document.getElementById('menu-wordpack');
+        const menuLanguage = document.getElementById('menu-language');
+
+        if (menuWordpack && wordpackSelect) {
+          menuWordpack.innerHTML = wordpackSelect.innerHTML;
+          menuWordpack.value = currentWordpackKey;
+
+          menuWordpack.addEventListener('change', (e) => {
+            currentWordpackKey = e.target.value;
+            wordpackSelect.value = e.target.value;
+            if (gameStarted) {
+              initializeDeck(currentWordpackKey);
+            }
+            saveState();
+          });
+        }
+
+        if (menuLanguage) {
+          menuLanguage.value = nativeLanguage;
+
+          menuLanguage.addEventListener('change', (e) => {
+            nativeLanguage = e.target.value;
+            languageSelect.value = e.target.value;
+            updateBackLabel();
+            if (gameStarted) {
+              initializeDeck(currentWordpackKey);
+            }
+            saveState();
+          });
+        }
+
+        // Speed buttons
+        const speedBtns = document.querySelectorAll('.menu-speed-btn');
+        speedBtns.forEach(btn => {
+          if (parseFloat(btn.dataset.speed) === currentSpeed) {
+            btn.style.background = '#8B7355';
+            btn.style.color = '#F5E6D3';
+          }
+          btn.addEventListener('click', () => {
+            currentSpeed = parseFloat(btn.dataset.speed);
+            speedBtns.forEach(b => {
+              b.style.background = '#F5E6D3';
+              b.style.color = '#2C1810';
+            });
+            btn.style.background = '#8B7355';
+            btn.style.color = '#F5E6D3';
+            saveState();
+          });
+        });
+      }, 0);
     }
 
     // Switch to a different learning mode
