@@ -262,13 +262,17 @@
       z-index: 1;
       background:
         var(--paper-texture),
-        /* Subtle color variations across back card */
-        radial-gradient(ellipse 70% 60% at 30% 35%, rgba(237, 224, 204, 0.5) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 55% at 70% 65%, rgba(223, 210, 190, 0.4) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 70% at 50% 80%, rgba(209, 196, 176, 0.3) 0%, transparent 60%),
-        linear-gradient(135deg, #EDE0CC 0%, #DFD2BE 30%, #D1C4B0 60%, #C8BBA7 100%);
+        /* Lighter, whiter back card for distinction */
+        radial-gradient(ellipse 70% 60% at 30% 35%, rgba(255, 250, 245, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 55% at 70% 65%, rgba(250, 245, 240, 0.2) 0%, transparent 65%),
+        linear-gradient(135deg, #FFFEF9 0%, #F8F5F0 30%, #F0EDE8 60%, #EAE7E2 100%);
       background-blend-mode: soft-light;
-      background-size: var(--paper-texture-size), 100%, 100%, 100%, 100%;
+      background-size: var(--paper-texture-size), 100%, 100%, 100%;
+    }
+
+    /* Reduce edge weathering on back card for distinction */
+    .card-back::before {
+      opacity: 0.3;
     }
 
     .flashcard.flipped .card-front {
@@ -300,17 +304,17 @@
     }
 
     .card-word {
-      font-size: 6.4rem;
+      font-size: 4rem;
       color: #2C1810;
-      line-height: 1;
+      line-height: 1.2;
       font-style: italic;
       position: relative;
       z-index: 5;
       text-align: center;
       max-width: 90%;
-      word-wrap: break-word;
+      word-break: normal;
       overflow-wrap: break-word;
-      hyphens: auto;
+      hyphens: none;
     }
 
     /* Sound Button */
@@ -1200,16 +1204,16 @@
 
     .removed-stamp {
       color: transparent;
-      border-color: rgba(211, 47, 47, 0.7);
-      -webkit-text-stroke: 3px rgba(211, 47, 47, 0.7);
-      text-stroke: 3px rgba(211, 47, 47, 0.7);
+      border-color: rgba(56, 142, 60, 0.7);
+      -webkit-text-stroke: 3px rgba(56, 142, 60, 0.7);
+      text-stroke: 3px rgba(56, 142, 60, 0.7);
     }
 
     .added-stamp {
       color: transparent;
-      border-color: rgba(56, 142, 60, 0.7);
-      -webkit-text-stroke: 3px rgba(56, 142, 60, 0.7);
-      text-stroke: 3px rgba(56, 142, 60, 0.7);
+      border-color: rgba(211, 47, 47, 0.7);
+      -webkit-text-stroke: 3px rgba(211, 47, 47, 0.7);
+      text-stroke: 3px rgba(211, 47, 47, 0.7);
     }
 
     .card-stamp.visible {
@@ -1276,9 +1280,9 @@
       box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
     }
 
-    /* Writing mode typing display */
+    /* Typing mode display (listening and writing) */
     .typing-display {
-      font-size: 5.5rem;
+      font-size: 4rem;
       color: #2C1810;
       font-family: 'Courier New', monospace;
       letter-spacing: 8px;
@@ -1324,19 +1328,20 @@
 
         <h3>🎯 Learning Modes</h3>
         <ul>
-          <li><strong>📖 Reading</strong> — See Spanish word, flip to see translation</li>
-          <li><strong>👂 Listening</strong> — See "?", flip to see Spanish | Translation (auto-pronounces)</li>
-          <li><strong>✏️ Writing</strong> — Type the Spanish word letter-by-letter (auto-pronounces)</li>
+          <li><strong>📖 Reading</strong> — Read Spanish word mentally, flip to see English translation</li>
+          <li><strong>👂 Listening</strong> — Hear Spanish word, type it out, flip to see Spanish | English (auto-pronounces)</li>
+          <li><strong>✏️ Writing</strong> — See English, type Spanish translation, flip to see correct Spanish (auto-pronounces)</li>
         </ul>
+        <p><em>⚠️ Typing modes: Wrong attempts add 2 practice cards automatically!</em></p>
 
         <h3>⌨️ Keyboard Controls</h3>
         <ul>
           <li><strong>←/→ Arrows</strong> — Navigate between cards</li>
           <li><strong>↑ Arrow</strong> — Pronounce Spanish word (always)</li>
           <li><strong>↓ Arrow</strong> — Flip card to see back (always)</li>
-          <li><strong>Space</strong> — Pronounce (Reading/Listening modes only)</li>
-          <li><strong>Letters</strong> — Type answer (Writing mode only)</li>
-          <li><strong>Enter</strong> — Next card if correct (Writing mode)</li>
+          <li><strong>Space</strong> — Pronounce (Reading mode only)</li>
+          <li><strong>Letters</strong> — Type answer (Listening & Writing modes)</li>
+          <li><strong>Enter</strong> — Next card when complete (Listening & Writing modes)</li>
         </ul>
 
         <h3>👌 / 😕 Buttons</h3>
@@ -1542,8 +1547,9 @@
 
     // Learning modes
     let currentMode = 'reading'; // 'reading', 'listening', 'writing'
-    let typingInput = ''; // User's current typing input for writing mode
+    let typingInput = ''; // User's current typing input for typing modes
     let typingDisplay = []; // Array of characters to display (original chars or '_')
+    let wrongAttempts = 0; // Track wrong keypresses in typing modes
 
     // Track key states to prevent repeated actions when holding keys
     let keysPressed = {};
@@ -1822,25 +1828,20 @@
         isFlipped = false;
       }
 
-      // Initialize writing mode if switching to it
-      if (newMode === 'writing' && currentDeck.length > 0) {
+      // Initialize typing display for listening and writing modes
+      if ((newMode === 'listening' || newMode === 'writing') && currentDeck.length > 0) {
         initializeTypingDisplay();
       }
 
       updateDisplay();
 
-      // Auto-read in listening mode
-      if (newMode === 'listening' && currentDeck.length > 0) {
-        setTimeout(() => speakSpanish(), 300);
-      }
-
-      // Auto-pronounce in writing mode
-      if (newMode === 'writing' && currentDeck.length > 0) {
+      // Auto-pronounce Spanish in listening and writing modes
+      if ((newMode === 'listening' || newMode === 'writing') && currentDeck.length > 0) {
         setTimeout(() => speakSpanish(), 300);
       }
     }
 
-    // Initialize typing display for writing mode
+    // Initialize typing display for listening and writing modes
     function initializeTypingDisplay() {
       const word = currentDeck[currentIndex].spanish;
       typingInput = '';
@@ -1848,11 +1849,34 @@
         if (char === ' ') return ' ';
         return '_';
       });
+      wrongAttempts = 0; // Reset wrong attempts counter
     }
 
-    // Handle typing input for writing mode
+    // Add duplicate cards to current deck for extra practice
+    function addDuplicateCards(count) {
+      if (currentDeck.length === 0) return;
+
+      const currentCard = currentDeck[currentIndex];
+      const duplicates = [];
+
+      for (let i = 0; i < count; i++) {
+        duplicates.push({ ...currentCard });
+      }
+
+      // Insert duplicates after the current card
+      currentDeck.splice(currentIndex + 1, 0, ...duplicates);
+
+      // Show "Extra Practice" stamp
+      const addedStamp = document.getElementById('added-stamp');
+      addedStamp.classList.add('visible');
+      setTimeout(() => {
+        addedStamp.classList.remove('visible');
+      }, 1500);
+    }
+
+    // Handle typing input for listening and writing modes
     function handleTypingInput(key) {
-      if (currentMode !== 'writing' || currentDeck.length === 0) return;
+      if ((currentMode !== 'listening' && currentMode !== 'writing') || currentDeck.length === 0) return;
 
       const word = currentDeck[currentIndex].spanish;
       const targetChars = word.split('');
@@ -1883,20 +1907,29 @@
       const normalizedTarget = normalizeChar(targetChars[nextPos]);
 
       if (normalizedKey === normalizedTarget) {
-        // Show the ORIGINAL character from the word
+        // Correct! Show the ORIGINAL character from the word
         typingDisplay[nextPos] = targetChars[nextPos];
         playKeyboardSound();
         updateDisplay();
 
         // Check if word is complete
         if (!typingDisplay.includes('_')) {
-          // Word completed! Auto-advance after a brief delay
+          // Word completed!
+          if (wrongAttempts > 0) {
+            // Had wrong attempts - add 2 duplicate cards for extra practice
+            addDuplicateCards(2);
+          }
+
+          // Auto-advance after a brief delay
           setTimeout(() => {
-            if (currentMode === 'writing') {
+            if (currentMode === 'listening' || currentMode === 'writing') {
               moveToNextCard();
             }
           }, 500);
         }
+      } else {
+        // Wrong key pressed - increment wrong attempts
+        wrongAttempts++;
       }
     }
 
@@ -2121,26 +2154,29 @@
 
       // Mode-specific display
       if (currentMode === 'reading') {
-        // Reading mode: Spanish on front, translation on back
+        // Reading mode: Spanish on front, English translation on back
         spanishWord.textContent = card.spanish;
         spanishWord.className = 'card-word';
         englishWord.textContent = card.translation;
         englishWord.className = 'card-word';
       } else if (currentMode === 'listening') {
-        // Listening mode: "?" on front, "Spanish | Translation" on back
-        spanishWord.textContent = '?';
-        spanishWord.className = 'card-word';
-        englishWord.innerHTML = `${card.spanish}<div class="listening-divider"></div>${card.translation}`;
-        englishWord.className = 'card-word';
-      } else if (currentMode === 'writing') {
-        // Writing mode: typing display on front, translation on back
+        // Listening mode: typing interface on front (hear and type Spanish), Spanish | Translation on back
         // Don't reinitialize - preserve typing progress
         spanishWord.innerHTML = `<div class="typing-display">${typingDisplay.map(char =>
           char === ' ' ? '<span class="typing-space"> </span>' :
           `<span class="typing-char">${char}</span>`
         ).join('')}</div>`;
         spanishWord.className = 'card-word';
-        englishWord.textContent = card.translation;
+        englishWord.innerHTML = `${card.spanish}<div class="listening-divider"></div>${card.translation}`;
+        englishWord.className = 'card-word';
+      } else if (currentMode === 'writing') {
+        // Writing mode: English on front, typing interface + Spanish answer on back
+        spanishWord.textContent = card.translation;
+        spanishWord.className = 'card-word';
+        englishWord.innerHTML = `<div class="typing-display">${typingDisplay.map(char =>
+          char === ' ' ? '<span class="typing-space"> </span>' :
+          `<span class="typing-char">${char}</span>`
+        ).join('')}</div><div class="listening-divider"></div>${card.spanish}`;
         englishWord.className = 'card-word';
       }
 
@@ -2159,7 +2195,7 @@
       if (currentDeck.length === 0) return;
       playCardFlipSound();
       currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
-      if (currentMode === 'writing') {
+      if (currentMode === 'listening' || currentMode === 'writing') {
         initializeTypingDisplay();
       }
       updateDisplay();
@@ -2171,7 +2207,7 @@
       if (currentDeck.length === 0) return;
       playCardFlipSound();
       currentIndex = (currentIndex + 1) % currentDeck.length;
-      if (currentMode === 'writing') {
+      if (currentMode === 'listening' || currentMode === 'writing') {
         initializeTypingDisplay();
       }
       updateDisplay();
@@ -2183,12 +2219,12 @@
       }
     }
 
-    // Move to next card (for writing mode completion)
+    // Move to next card (for typing mode completion)
     function moveToNextCard() {
       if (currentDeck.length === 0) return;
       playCardFlipSound();
       currentIndex = (currentIndex + 1) % currentDeck.length;
-      if (currentMode === 'writing') {
+      if (currentMode === 'listening' || currentMode === 'writing') {
         initializeTypingDisplay();
       }
       updateDisplay();
@@ -2673,15 +2709,15 @@
         return;
       }
 
-      // Handle writing mode typing
-      if (currentMode === 'writing' && e.key.length === 1 && /[a-zA-ZáéíóúñÁÉÍÓÚÑüÜ ]/.test(e.key)) {
+      // Handle typing in listening and writing modes
+      if ((currentMode === 'listening' || currentMode === 'writing') && e.key.length === 1 && /[a-zA-ZáéíóúñÁÉÍÓÚÑüÜ ]/.test(e.key)) {
         e.preventDefault();
         handleTypingInput(e.key);
         return;
       }
 
-      // Enter in writing mode
-      if (currentMode === 'writing' && e.key === 'Enter') {
+      // Enter in typing modes (listening/writing)
+      if ((currentMode === 'listening' || currentMode === 'writing') && e.key === 'Enter') {
         e.preventDefault();
         if (isWritingComplete()) {
           moveToNextCard();
@@ -2709,8 +2745,8 @@
         e.preventDefault();
         flipCard();
       } else if (e.key === ' ') {
-        // Space: only pronounce in reading/listening mode
-        if (currentMode === 'reading' || currentMode === 'listening') {
+        // Space: only pronounce in reading mode (typing modes handle space as input)
+        if (currentMode === 'reading') {
           e.preventDefault();
           speakSpanish();
         }
