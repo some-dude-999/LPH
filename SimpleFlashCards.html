@@ -2270,6 +2270,10 @@
     }
 
     function updateBackLabel() {
+      // Card labels have been removed, this function is no longer needed
+      // Kept for compatibility with existing code that calls it
+      if (!backLabel) return;
+
       const labels = {
         'english': 'English',
         'chinese': '中文',
