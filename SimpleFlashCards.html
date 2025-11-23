@@ -1217,27 +1217,31 @@
       }
     }
 
+    /* Shared stamp styling - used by card stamps and deck change indicator */
+    .stamp-base {
+      font-family: Georgia, serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      border: 4px solid;
+      border-radius: 8px;
+      background: transparent;
+      mix-blend-mode: multiply;
+      text-align: center;
+    }
+
     /* Simple stamp overlays */
     .card-stamp {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(-15deg);
-      font-family: Georgia, serif;
       font-size: 2.5rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 4px;
       padding: 15px 30px;
-      border: 4px solid;
-      border-radius: 8px;
       opacity: 0;
       pointer-events: none;
       z-index: 100;
-      text-align: center;
       transition: opacity 0.2s ease;
-      background: transparent;
-      mix-blend-mode: multiply;
     }
 
     .removed-stamp {
@@ -1572,8 +1576,8 @@
       </div>
 
       <!-- Stamp overlays for visual feedback -->
-      <div class="card-stamp removed-stamp" id="removed-stamp">Card Removed</div>
-      <div class="card-stamp added-stamp" id="added-stamp">Extra Practice</div>
+      <div class="stamp-base card-stamp removed-stamp" id="removed-stamp">Card Removed</div>
+      <div class="stamp-base card-stamp added-stamp" id="added-stamp">Extra Practice</div>
     </div>
 
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
@@ -1604,7 +1608,8 @@
     // Learning modes
     let currentMode = 'reading'; // 'reading', 'listening', 'speaking', 'writing'
     let typingInput = ''; // User's current typing input for typing modes
-    let typingDisplay = []; // Array of characters to display (original chars or '_')
+    let typingDisplay = []; // Array of actual characters (always contains real word, not underscores)
+    let typedPositions = new Set(); // Track which positions have been successfully typed
     let wrongAttempts = 0; // Track wrong keypresses in typing modes
     let wrongPositions = []; // Track which positions had wrong attempts (for red underlines)
     let wrongLetters = []; // Track actual letters that were typed wrong (for crossed-out display)
@@ -2095,10 +2100,9 @@
     function initializeTypingDisplay() {
       const word = currentDeck[currentIndex].spanish;
       typingInput = '';
-      typingDisplay = word.split('').map(char => {
-        if (char === ' ') return ' ';
-        return '_';
-      });
+      // Store actual characters (not underscores) to preserve natural layout
+      typingDisplay = word.split('');
+      typedPositions = new Set(); // Reset typed positions (starts empty)
       wrongAttempts = 0; // Reset wrong attempts counter
       wrongPositions = []; // Reset wrong positions array
       wrongLetters = []; // Reset wrong letters array
@@ -2152,10 +2156,10 @@
       const word = currentDeck[currentIndex].spanish;
       const targetChars = word.split('');
 
-      // Find next unfilled position
+      // Find next unfilled position (first position not in typedPositions)
       let nextPos = 0;
       for (let i = 0; i < typingDisplay.length; i++) {
-        if (typingDisplay[i] === '_') {
+        if (!typedPositions.has(i) && typingDisplay[i] !== ' ') {
           nextPos = i;
           break;
         }
@@ -2165,9 +2169,9 @@
         }
       }
 
-      // Skip spaces
+      // Skip spaces and mark them as typed
       while (nextPos < targetChars.length && targetChars[nextPos] === ' ') {
-        typingDisplay[nextPos] = ' ';
+        typedPositions.add(nextPos);
         nextPos++;
       }
 
@@ -2178,13 +2182,14 @@
       const normalizedTarget = normalizeChar(targetChars[nextPos]);
 
       if (normalizedKey === normalizedTarget) {
-        // Correct! Show the ORIGINAL character from the word
-        typingDisplay[nextPos] = targetChars[nextPos];
+        // Correct! Mark position as typed
+        typedPositions.add(nextPos);
         playKeyboardSound();
         updateDisplay();
 
-        // Check if word is complete
-        if (!typingDisplay.includes('_')) {
+        // Check if word is complete (all non-space positions typed)
+        const totalNonSpaceChars = targetChars.filter(c => c !== ' ').length;
+        if (typedPositions.size >= totalNonSpaceChars) {
           // Word completed!
           // 0-1 wrong = correct (show green stamp and remove card)
           // 2 wrong = 1 penalty card
@@ -2515,9 +2520,9 @@
       let currentWordStartIdx = 0;
 
       for (let idx = 0; idx < typingDisplay.length; idx++) {
-        const char = typingDisplay[idx];
+        const actualChar = typingDisplay[idx]; // Always the real character
 
-        if (char === ' ') {
+        if (actualChar === ' ') {
           // End of word - wrap accumulated chars in nowrap span
           if (currentWord.length > 0) {
             html += `<span style="white-space: nowrap;">${currentWord.join('')}</span>`;
@@ -2526,9 +2531,18 @@
           html += '<span class="typing-space"> </span>';
           currentWordStartIdx = idx + 1;
         } else {
-          // Add character to current word
+          // Always render actual character to preserve layout
+          // For untyped positions, show underscore overlay (character is invisible but takes space)
+          const isTyped = typedPositions.has(idx);
           const wrongClass = wrongPositions.includes(idx) ? 'wrong' : '';
-          currentWord.push(`<span class="typing-char ${wrongClass}">${char}</span>`);
+
+          if (isTyped) {
+            // Typed: show actual character
+            currentWord.push(`<span class="typing-char ${wrongClass}">${actualChar}</span>`);
+          } else {
+            // Untyped: invisible character with underscore overlay (preserves natural spacing)
+            currentWord.push(`<span class="typing-char ${wrongClass}" style="position: relative; display: inline-block;"><span style="opacity: 0;">${actualChar}</span><span style="position: absolute; top: 0; left: 0;">_</span></span>`);
+          }
         }
       }
 
@@ -2573,11 +2587,12 @@
       // Display counter with pending change indicator
       let counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
       if (pendingDeckChange !== 0) {
-        // Add mini stamp indicator showing deck change (bigger, stamp-like, no drop shadow)
+        // Add mini stamp indicator (uses same .stamp-base styling as card stamps, just smaller and semi-transparent)
         const changeSign = pendingDeckChange > 0 ? '+' : '';
-        const changeColor = pendingDeckChange > 0 ? '#D32F2F' : '#4ADE80'; // red for +, green for -
+        const changeColor = pendingDeckChange > 0 ? 'rgba(211, 47, 47, 0.7)' : 'rgba(56, 142, 60, 0.7)'; // red for +, green for -
         const rotateVar = -2 + Math.random() * 4; // -2deg to +2deg (subtle rotation)
-        cardCounter.innerHTML = `${counterText} <span style="display: inline-block; font-family: 'Cinzel', serif; font-weight: bold; font-size: 1.8rem; color: ${changeColor}; transform: rotate(${rotateVar}deg); margin-left: 10px; padding: 2px 8px; border: 2px solid ${changeColor}; border-radius: 4px; background: rgba(255,255,255,0.9);">${changeSign}${pendingDeckChange}</span>`;
+        // Using inline class reference to .stamp-base properties
+        cardCounter.innerHTML = `${counterText} <span class="stamp-base" style="display: inline-block; font-size: 1.3rem; color: transparent; border-color: ${changeColor}; -webkit-text-stroke: 2px ${changeColor}; text-stroke: 2px ${changeColor}; transform: rotate(${rotateVar}deg); margin-left: 8px; padding: 4px 12px; opacity: 0.8;">${changeSign}${pendingDeckChange}</span>`;
       } else {
         cardCounter.textContent = counterText;
       }
@@ -2588,7 +2603,8 @@
 
       // Mode-specific display
       if (currentMode === 'reading') {
-        // Reading mode: Spanish on front, English translation on back
+        // READING MODE - Purpose: Learn to read Spanish and understand meaning
+        // Front: Spanish word | Back: English translation
         spanishWord.textContent = card.spanish;
         spanishWord.className = 'card-word';
         englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
@@ -2597,7 +2613,8 @@
         wrongLettersFront.innerHTML = '';
         wrongCountFront.innerHTML = '';
       } else if (currentMode === 'listening') {
-        // Listening mode: typing interface on front (hear and type Spanish), Spanish | Translation on back
+        // LISTENING MODE - Purpose: Learn to understand spoken Spanish and spell it
+        // Front: Hear Spanish audio + type what you hear | Back: Spanish word + English translation
         // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
         // Get unique letters (by letter property, case-insensitive)
         const seenLetters = new Set();
@@ -2625,7 +2642,8 @@
         englishWord.innerHTML = `${card.spanish}<br><div class="translation-text">${card.translation}</div>`;
         englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
-        // Writing mode: English + typing on front, Spanish on back
+        // WRITING MODE - Purpose: Learn to write/spell Spanish from English
+        // Front: English word + type Spanish translation | Back: Correct Spanish word
         // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
         // Get unique letters (by letter property, case-insensitive)
         const seenLetters = new Set();
@@ -2653,7 +2671,8 @@
         englishWord.textContent = card.spanish;
         englishWord.className = 'card-word';
       } else if (currentMode === 'speaking') {
-        // Speaking mode: Spanish on front (with mic), translation on back
+        // SPEAKING MODE - Purpose: Learn to pronounce Spanish correctly
+        // Front: Spanish word + microphone button | Back: English translation
         spanishWord.textContent = card.spanish;
         spanishWord.className = 'card-word';
         englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
