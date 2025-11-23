@@ -6,6 +6,20 @@
   <title>Spanish Flashcards</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
   <style>
+    /* =================================================================
+       TEXTURE DEFINITIONS - Single source of truth for all textures
+       Fixed grain size that doesn't change with zoom
+       ================================================================= */
+    :root {
+      /* Paper texture (for cards) - 200x200 viewBox */
+      --paper-texture: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)'/%3E%3C/svg%3E");
+      --paper-texture-size: 200px 200px;
+
+      /* Cardboard texture (for buttons) - Same 200x200 viewBox for consistency */
+      --cardboard-texture: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)'/%3E%3C/svg%3E");
+      --cardboard-texture-size: 200px 200px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -89,10 +103,10 @@
     .nav-btn {
       background-color: #8B7355;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
       background-blend-mode: soft-light;
-      background-size: 60px 60px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
       color: #2C1810;
       font-size: 2rem;
@@ -116,19 +130,19 @@
     .nav-btn:hover {
       background-color: #9B8365;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
       background-blend-mode: soft-light;
-      background-size: 60px 60px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
     }
 
     .nav-btn:active {
       background-color: #7A6347;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
       background-blend-mode: soft-light;
-      background-size: 60px 60px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
     }
 
     /* Flashcard */
@@ -151,11 +165,12 @@
       padding: 30px;
       text-align: center;
 
-      /* Old paper texture */
+      /* Old paper texture - using CSS variable for consistency */
       background:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--paper-texture),
         linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%);
       background-blend-mode: soft-light;
+      background-size: var(--paper-texture-size), 100%;
 
       box-shadow:
         0 10px 30px rgba(0,0,0,0.4),
@@ -198,10 +213,11 @@
 
     .card-back {
       z-index: 1;
-      background: 
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+      background:
+        var(--paper-texture),
         linear-gradient(135deg, #EDE0CC 0%, #DFD2BE 30%, #D1C4B0 60%, #C8BBA7 100%);
       background-blend-mode: soft-light;
+      background-size: var(--paper-texture-size), 100%;
     }
 
     .flashcard.flipped .card-front {
@@ -410,9 +426,10 @@
       right: 0;
       bottom: 0;
       background:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--paper-texture),
         linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%);
       background-blend-mode: soft-light;
+      background-size: var(--paper-texture-size), 100%;
       border-radius: 12px;
       display: flex;
       flex-direction: column;
@@ -524,10 +541,10 @@
       margin-top: 15px;
       background-color: #7A6347;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
       background-blend-mode: soft-light;
-      background-size: cover;
+      background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
       border-radius: 8px;
       color: #F5E6D3;
@@ -542,19 +559,19 @@
     .setup-start-btn:hover:not(:disabled) {
       background-color: #8A7357;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #9B8365 0%, #8A7357 30%, #7B6550 60%, #6D5E47 100%);
       background-blend-mode: soft-light;
-      background-size: 60px 60px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
     }
 
     .setup-start-btn:disabled {
       background-color: #5A5A4A;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #7A7A6A 0%, #6A6A5A 30%, #5A5A4A 60%, #4A4A3A 100%);
       background-blend-mode: soft-light;
-      background-size: 60px 60px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
       border-color: #3A3A2A;
       color: #9A9A8A;
       cursor: not-allowed;
@@ -633,29 +650,29 @@
       font-size: 1.5rem;
       background-color: #8B7355;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
       background-blend-mode: soft-light;
-      background-size: 60px 60px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
       color: #2C1810;
     }
 
     .action-btn:hover {
       background-color: #9B8365;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
       background-blend-mode: soft-light;
-      background-size: 60px 60px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
     }
 
     .action-btn:active {
       background-color: #7A6347;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
       background-blend-mode: soft-light;
-      background-size: 60px 60px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
     }
 
     /* Tooltip */
@@ -695,10 +712,10 @@
       border: 3px solid rgba(74, 56, 40, 0.6);
       background-color: #8B7355;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
       background-blend-mode: soft-light;
-      background-size: 50px 50px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
       color: #2C1810;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -714,19 +731,19 @@
     .top-btn:hover {
       background-color: #9B8365;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
       background-blend-mode: soft-light;
-      background-size: 50px 50px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
     }
 
     .top-btn:active {
       background-color: #7A6347;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
       background-blend-mode: soft-light;
-      background-size: 50px 50px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
     }
 
     .help-btn {
@@ -868,10 +885,10 @@
       font-size: 1rem;
       background-color: #7A6347;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
       background-blend-mode: soft-light;
-      background-size: 60px 60px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
       border-radius: 6px;
       color: #F5E6D3;
@@ -885,10 +902,10 @@
     .modal-close-btn:hover {
       background-color: #8A7357;
       background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        var(--cardboard-texture),
         linear-gradient(135deg, #9B8365 0%, #8A7357 30%, #7B6550 60%, #6D5E47 100%);
       background-blend-mode: soft-light;
-      background-size: 60px 60px, 100%;
+      background-size: var(--cardboard-texture-size), 100%;
     }
 
     /* Menu Modal Specific */
