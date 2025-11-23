@@ -6,40 +6,81 @@
 ## 🔑 KEY FEATURES - SACRED AND IMMUTABLE
 **CRITICAL: Key features are high-level user requirements that MUST be preserved across all code changes.**
 
-### The Key Features Rule
+### The Sacred Rules of Key Features
+
+**YOU MUST:**
+1. ✅ **START commenting key features immediately** - Don't code without documenting what it does at a high level
+2. ✅ **ALWAYS keep track of key features in comments** - Every important feature needs a KEY FEATURE comment block
+3. ✅ **NEVER edit code in a way that breaks key features** - Refactor freely but preserve functionality
+4. ✅ **THINK VERY HARD before making changes** - Understand the core features and objectives
+5. ✅ **BE CRYSTAL CLEAR** about what we're building and why
+
+### Before You Code - STOP AND THINK:
+- **What is the CORE OBJECTIVE of this feature?**
+- **What problem does it solve for the user?**
+- **What are the KEY BEHAVIORS that must be preserved?**
+- **How does this fit into the overall system?**
+
+### The Key Features Workflow
 1. **When user makes a request**, first identify the KEY FEATURE at a high level
-2. **Document the key feature in code comments** using this format:
+2. **Think deeply** about the core objective - don't just code blindly
+3. **Document the key feature in code comments** using this format:
    ```javascript
    // ============================================================
    // KEY FEATURE: [High-level description of what this does]
-   // [Additional details about the feature]
+   // Core Objective: [Why this feature exists - the user's goal]
+   // Key Behaviors:
+   //   - [Specific behavior that must be preserved]
+   //   - [Another critical behavior]
    // ============================================================
    ```
-3. **Key features CANNOT be removed** unless user explicitly asks
-4. **Code can change, key features cannot** - refactor freely but preserve functionality
-5. **Before editing code**, read existing KEY FEATURE comments and ensure changes preserve them
+4. **Key features CANNOT be removed** unless user explicitly asks
+5. **Code can change, features cannot** - refactor freely but preserve functionality
+6. **Before editing ANY code**, read existing KEY FEATURE comments and ensure changes preserve them
+7. **If you're unsure** whether a change breaks a key feature - DON'T DO IT. Ask the user first.
 
-### Example
+### Example - Good KEY FEATURE Documentation
 ```javascript
 // ============================================================
 // KEY FEATURE: Auto-pronounce Spanish word in listening mode
-// - On card navigation (prev/next): auto-pronounce
-// - On flip to back: auto-pronounce
-// - Helps users learn pronunciation through repetition
+// Core Objective: Help users learn pronunciation through repetition
+// Key Behaviors:
+//   - Auto-pronounce on card navigation (prev/next)
+//   - Auto-pronounce on flip to back (arrow down)
+//   - Only in listening mode (not writing - user translates)
 // ============================================================
 function goToNext() {
-  // ... navigation code ...
+  currentIndex = (currentIndex + 1) % currentDeck.length;
+  updateDisplay();
+
+  // Preserve key feature: auto-pronounce in listening mode
   if (currentMode === 'listening') {
     setTimeout(() => speakSpanish(), 300);
   }
 }
 ```
 
+### What Needs KEY FEATURE Comments?
+- ✅ Core user-facing functionality
+- ✅ Critical behaviors that define how the app works
+- ✅ Features that have been refined through user feedback
+- ✅ Anything that would be bad if accidentally removed
+- ❌ Simple helper functions or utilities
+- ❌ Obvious implementation details
+
+### WARNING: Breaking Key Features
+**If you break a key feature, you've failed.** The user is building and refining features over time. Every request adds or refines a key feature. Your job is to:
+1. Understand what already exists (read KEY FEATURE comments)
+2. Understand what the user wants (their current request)
+3. Implement it WITHOUT breaking existing key features
+4. Document the new or updated key feature
+
 **Why This Matters:**
 - User specifies features at high level, refining over time
 - Future AI assistants see KEY FEATURE comments and preserve them
 - Prevents accidental removal of important functionality during refactoring
 - Creates institutional memory of user's intent
+- **You are building something lasting - treat it with care**
 
 ---
 
