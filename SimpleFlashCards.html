@@ -2531,7 +2531,7 @@
         // Update wrong indicators (positioned at card corners)
         const uniqueWrongLetters = [...new Set(wrongLetters)];
         wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
-          ? uniqueWrongLetters.map(l => `<span style="position: relative; display: inline-block; margin-right: 8px;"><span>${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #D32F2F; font-size: 1.2rem; font-weight: bold;">✗</span></span>`).join('')
+          ? uniqueWrongLetters.map(l => `<span style="position: relative; display: inline-block; margin-right: 8px;"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #D32F2F; font-size: 1.2rem; font-weight: bold; opacity: 0.7;">✗</span></span>`).join('')
           : '';
         wrongCountFront.innerHTML = wrongAttempts > 0 ? `-${wrongAttempts}` : '';
         // Update card content (no indicators embedded here)
@@ -2544,7 +2544,7 @@
         // Update wrong indicators (positioned at card corners)
         const uniqueWrongLetters = [...new Set(wrongLetters)];
         wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
-          ? uniqueWrongLetters.map(l => `<span style="position: relative; display: inline-block; margin-right: 8px;"><span>${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #D32F2F; font-size: 1.2rem; font-weight: bold;">✗</span></span>`).join('')
+          ? uniqueWrongLetters.map(l => `<span style="position: relative; display: inline-block; margin-right: 8px;"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #D32F2F; font-size: 1.2rem; font-weight: bold; opacity: 0.7;">✗</span></span>`).join('')
           : '';
         wrongCountFront.innerHTML = wrongAttempts > 0 ? `-${wrongAttempts}` : '';
         // Update card content (no indicators embedded here)
@@ -2572,6 +2572,14 @@
       } else {
         micBtnFrontEl.style.display = 'none';
         micBtnBackEl.style.display = 'none';
+      }
+
+      // Show/hide action buttons based on mode (only show in reading mode)
+      const actionButtonsEl = document.querySelector('.action-buttons');
+      if (currentMode === 'reading') {
+        actionButtonsEl.style.display = 'flex';
+      } else {
+        actionButtonsEl.style.display = 'none';
       }
 
       // Apply random weathering based on card ID
@@ -2808,13 +2816,18 @@
       const scoreEl = isFront ? scoreFront : scoreBack;
       const messageEl = isFront ? messageFront : messageBack;
       const heardEl = isFront ? heardFront : heardBack;
-      
+
       scoreEl.textContent = `${score}%`;
       scoreEl.className = `feedback-score ${getScoreClass(score)}`;
       messageEl.textContent = getFeedbackMessage(score);
       heardEl.textContent = `Heard: "${heard}"`;
-      
+
       feedback.classList.add('visible');
+
+      // Speaking mode: Add penalty cards if wrong (score < 70%)
+      if (currentMode === 'speaking' && score < 70) {
+        addDuplicateCards(2); // Add 2 penalty cards for wrong pronunciation
+      }
     }
 
     // Hide feedback
@@ -3114,8 +3127,8 @@
         return;
       }
 
-      // Handle typing in listening and writing modes (space is ignored)
-      if ((currentMode === 'listening' || currentMode === 'writing') && e.key.length === 1 && /[a-zA-ZáéíóúñÁÉÍÓÚÑüÜ]/.test(e.key)) {
+      // Handle typing in listening and writing modes (accept letters, numbers, symbols - not space)
+      if ((currentMode === 'listening' || currentMode === 'writing') && e.key.length === 1 && e.key !== ' ') {
         e.preventDefault();
         handleTypingInput(e.key);
         return;
