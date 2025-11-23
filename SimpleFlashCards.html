@@ -1863,24 +1863,34 @@
       }
       isOnStartingCard = true;
 
-      // Unflip if currently flipped
+      // Show the actual setup overlay (same as initial game screen)
+      setupOverlay.classList.remove('hidden');
+
+      // Show help (back) or settings (front) based on parameter
+      if (showBack) {
+        flashcard.classList.add('setup-flipped');
+      } else {
+        flashcard.classList.remove('setup-flipped');
+      }
+
+      // Unflip card face if currently flipped
       if (isFlipped) {
         flashcard.classList.remove('flipped');
         isFlipped = false;
       }
 
-      updateDisplay();
-
-      // Flip to back if help was requested
-      if (showBack) {
-        setTimeout(() => flipCard(), 100);
-      }
+      cardCounter.textContent = 'Menu / Help';
     }
 
     // Return from starting card to saved position
     function exitStartingCard() {
       if (!isOnStartingCard) return;
       isOnStartingCard = false;
+
+      // Hide the setup overlay and return to game
+      setupOverlay.classList.add('hidden');
+      flashcard.classList.remove('setup-flipped');
+
       currentIndex = savedIndex;
       updateDisplay();
     }
@@ -2230,117 +2240,12 @@
       return gradients.join(', ');
     }
 
-    // Render the starting card (menu on front, help on back)
-    function renderStartingCard() {
-      cardCounter.textContent = 'Menu / Help';
-
-      // Front: Menu options
-      spanishWord.innerHTML = `
-        <div style="font-size: 2rem; margin-bottom: 20px; color: #2C1810;">⚙️ Settings</div>
-        <div style="font-size: 1.2rem; text-align: left; max-width: 500px; margin: 0 auto;">
-          <div style="margin: 15px 0;">
-            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Wordpack:</label>
-            <select id="start-card-wordpack" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355;">
-              <option value="">Loading...</option>
-            </select>
-          </div>
-          <div style="margin: 15px 0;">
-            <label style="display: block; font-weight: bold; margin-bottom: 5px;">I speak:</label>
-            <select id="start-card-language" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355;">
-              <option value="english">English</option>
-              <option value="chinese">中文</option>
-              <option value="portuguese">Português</option>
-            </select>
-          </div>
-          <div style="margin: 15px 0;">
-            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Speed:</label>
-            <div style="display: flex; gap: 10px;">
-              <button class="speed-btn-start" data-speed="0.2">🐢</button>
-              <button class="speed-btn-start active" data-speed="0.6">🚶</button>
-              <button class="speed-btn-start" data-speed="1.0">🐇</button>
-            </div>
-          </div>
-          <button onclick="exitStartingCard()" style="width: 100%; padding: 12px; margin-top: 20px; font-size: 1.3rem; background: #8B7355; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
-            ← Back to Cards
-          </button>
-        </div>
-      `;
-      spanishWord.className = 'card-word';
-
-      // Back: Shortened help text
-      englishWord.innerHTML = `
-        <div style="font-size: 1.8rem; margin-bottom: 15px; color: #2C1810;">❓ Quick Help</div>
-        <div style="font-size: 1rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 1.6;">
-          <p style="margin: 10px 0;"><strong>📖 Reading:</strong> Spanish → English</p>
-          <p style="margin: 10px 0;"><strong>👂 Listening:</strong> Hear → Type Spanish</p>
-          <p style="margin: 10px 0;"><strong>✏️ Writing:</strong> English → Type Spanish</p>
-          <p style="margin: 10px 0; font-size: 0.9rem; opacity: 0.8;">⚠️ Mistakes add 2 practice cards</p>
-          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(139, 115, 85, 0.3);">
-            <p style="margin: 5px 0;"><strong>↑</strong> Pronounce | <strong>↓</strong> Flip | <strong>←→</strong> Navigate</p>
-            <p style="margin: 5px 0;"><strong>Space</strong> Pronounce (reading) | <strong>Letters</strong> Type</p>
-          </div>
-        </div>
-      `;
-      englishWord.className = 'card-word';
-
-      // Reset flip state
-      flashcard.classList.remove('flipped');
-      isFlipped = false;
-
-      // Populate wordpack selector
-      setTimeout(() => {
-        const startCardWordpack = document.getElementById('start-card-wordpack');
-        const startCardLanguage = document.getElementById('start-card-language');
-
-        if (startCardWordpack && wordpackSelect) {
-          startCardWordpack.innerHTML = wordpackSelect.innerHTML;
-          startCardWordpack.value = currentWordpackKey;
-          startCardLanguage.value = nativeLanguage;
-
-          // Add change handlers
-          startCardWordpack.addEventListener('change', (e) => {
-            currentWordpackKey = e.target.value;
-            wordpackSelect.value = e.target.value;
-            updateBackLabel();
-            updateWordpackTitle();
-            if (gameStarted) {
-              initializeDeck(currentWordpackKey);
-            }
-            saveState();
-          });
-
-          startCardLanguage.addEventListener('change', (e) => {
-            nativeLanguage = e.target.value;
-            languageSelect.value = e.target.value;
-            updateBackLabel();
-            if (gameStarted) {
-              initializeDeck(currentWordpackKey);
-            }
-            saveState();
-          });
-        }
-
-        // Speed buttons
-        const speedBtns = document.querySelectorAll('.speed-btn-start');
-        speedBtns.forEach(btn => {
-          if (parseFloat(btn.dataset.speed) === currentSpeed) {
-            btn.classList.add('active');
-          }
-          btn.addEventListener('click', () => {
-            currentSpeed = parseFloat(btn.dataset.speed);
-            speedBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            saveState();
-          });
-        });
-      }, 0);
-    }
 
     // Update the card display
     function updateDisplay() {
-      // Show starting card (menu/help) if in that state
+      // Starting card is shown/hidden by showStartingCard/exitStartingCard
+      // Don't update card content when on starting card
       if (isOnStartingCard) {
-        renderStartingCard();
         return;
       }
 
@@ -2706,9 +2611,13 @@
       // Update wordpack title
       updateWordpackTitle();
 
+      // Exit starting card state if we're on it
+      isOnStartingCard = false;
+
       // Initialize deck and hide setup
       initializeDeck(wordpackSelect.value);
       setupOverlay.classList.add('hidden');
+      flashcard.classList.remove('setup-flipped');
       flashcard.classList.add('game-started');
       document.body.classList.add('game-started');
       gameStarted = true;
