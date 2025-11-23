@@ -1155,64 +1155,35 @@
       }
     }
 
-    /* Card removed animation */
-    .flashcard.removed {
-      animation: slideOut 1.2s linear forwards;
+    /* Simple card removal - fade out */
+    .flashcard.removing {
+      animation: fadeOutCard 0.3s ease forwards;
     }
 
-    @keyframes slideOut {
+    @keyframes fadeOutCard {
       to {
-        transform: translateX(5000px);
+        opacity: 0;
+        transform: scale(0.95);
       }
     }
 
-    /* Temporary card for removal animation */
-    .temp-card-removing {
-      position: absolute;
-      pointer-events: none;
+    /* Simple card add - bounce effect */
+    .flashcard.adding {
+      animation: bounceAdd 0.5s ease;
     }
 
-    /* Card confused animation - shows 2 cards sliding in behind */
-    .flashcard.confused::before,
-    .flashcard.confused::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background:
-        var(--paper-texture),
-        linear-gradient(135deg, #EDE0CC 0%, #DFD2BE 30%, #D1C4B0 60%, #C8BBA7 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--paper-texture-size), 100%;
-      border-radius: 12px;
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.4),
-        0 0 0 1px rgba(139, 115, 85, 0.3),
-        inset 0 0 50px rgba(139, 115, 85, 0.1);
-      border: 3px solid #A08567;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* First card slides in immediately */
-    .flashcard.confused::before {
-      animation: slideInBehind 0.4s ease-out;
-    }
-
-    /* Second card slides in after 150ms delay */
-    .flashcard.confused::after {
-      animation: slideInBehind 0.4s ease-out 0.15s;
-      animation-fill-mode: backwards;
-    }
-
-    @keyframes slideInBehind {
-      from {
-        transform: translateX(-200px) rotate(-10deg);
+    @keyframes bounceAdd {
+      0%, 100% {
+        transform: scale(1);
       }
-      to {
-        transform: translateX(0) rotate(0deg);
+      25% {
+        transform: scale(1.05);
+      }
+      50% {
+        transform: scale(0.98);
+      }
+      75% {
+        transform: scale(1.02);
       }
     }
   </style>
@@ -1894,107 +1865,54 @@
         return;
       }
 
-      // Store current card content
-      const currentSpanish = spanishWord.textContent;
-      const currentEnglish = englishWord.textContent;
-      const currentFlipped = flashcard.classList.contains('flipped');
-
-      // Get card position and size
-      const cardRect = flashcard.getBoundingClientRect();
-      const containerRect = flashcard.parentElement.getBoundingClientRect();
-
-      // Remove from deck and update to next card
-      currentDeck.splice(currentIndex, 1);
-      if (currentIndex >= currentDeck.length) {
-        currentIndex = 0;
-      }
-      updateDisplay();
-
-      // Create simple temporary div (not a clone)
-      const tempCard = document.createElement('div');
-      tempCard.className = 'flashcard temp-card-removing' + (currentFlipped ? ' flipped' : '');
-      tempCard.style.position = 'absolute';
-      tempCard.style.top = (cardRect.top - containerRect.top) + 'px';
-      tempCard.style.left = (cardRect.left - containerRect.left) + 'px';
-      tempCard.style.width = cardRect.width + 'px';
-      tempCard.style.height = cardRect.height + 'px';
-      tempCard.style.zIndex = '100';
-
-      // Copy card structure (without IDs to avoid conflicts)
-      tempCard.innerHTML = `
-        <div class="card-face card-front">
-          <div class="card-weathering"></div>
-          <span class="card-label">Español</span>
-          <span class="card-word">${currentSpanish}</span>
-        </div>
-        <div class="card-face card-back">
-          <div class="card-weathering"></div>
-          <span class="card-label">${backLabel.textContent}</span>
-          <span class="card-word">${currentEnglish}</span>
-        </div>
-      `;
-
-      flashcard.parentElement.appendChild(tempCard);
-
-      // Play sound and animate
+      // Play sound
       playCardFlipSound();
-      tempCard.classList.add('removed');
 
-      // Remove after animation (1200ms)
+      // Fade out animation
+      flashcard.classList.add('removing');
+
       setTimeout(() => {
-        tempCard.remove();
+        flashcard.classList.remove('removing');
+
+        // Remove card from deck
+        currentDeck.splice(currentIndex, 1);
+        if (currentIndex >= currentDeck.length) {
+          currentIndex = 0;
+        }
+
+        // Show next card
+        updateDisplay();
         saveState();
-      }, 1200);
+      }, 300);
     }
 
     // Add extra copies of current card (Confused)
     function addConfusedCards() {
       if (currentDeck.length === 0) return;
 
-      // Play 2 card insertion sounds with slight delay
+      // Play 2 sounds
       playCardFlipSound();
-      setTimeout(() => playCardFlipSound(), 150);
+      setTimeout(() => playCardFlipSound(), 200);
 
-      flashcard.classList.add('confused');
+      // Bounce animation
+      flashcard.classList.add('adding');
       setTimeout(() => {
-        flashcard.classList.remove('confused');
-      }, 600);
+        flashcard.classList.remove('adding');
+      }, 500);
 
+      // Add 2 copies to random positions in deck
       const card = { ...currentDeck[currentIndex] };
 
-      // Find valid positions (not immediately before or after current)
-      const validPositions = [];
-      for (let i = 0; i <= currentDeck.length; i++) {
-        // Skip positions adjacent to current index
-        if (i !== currentIndex && i !== currentIndex + 1) {
-          validPositions.push(i);
-        }
-      }
-
-      // Insert 2 copies at random valid positions
       for (let n = 0; n < 2; n++) {
-        if (validPositions.length > 0) {
-          const randomIdx = Math.floor(Math.random() * validPositions.length);
-          let insertPos = validPositions[randomIdx];
+        const randomPos = Math.floor(Math.random() * (currentDeck.length + 1));
+        currentDeck.splice(randomPos, 0, { ...card, id: `${card.id}-copy-${Date.now()}-${n}` });
 
-          // Adjust current index if inserting before it
-          if (insertPos <= currentIndex) {
-            currentIndex++;
-          }
-
-          currentDeck.splice(insertPos, 0, { ...card, id: `${card.id}-copy-${Date.now()}-${n}` });
-
-          // Update valid positions after insertion
-          validPositions.splice(randomIdx, 1);
-          for (let i = 0; i < validPositions.length; i++) {
-            if (validPositions[i] >= insertPos) {
-              validPositions[i]++;
-            }
-          }
+        // Adjust current index if we inserted before it
+        if (randomPos <= currentIndex) {
+          currentIndex++;
         }
       }
 
-      updateDisplay();
       saveState();
     }
 
