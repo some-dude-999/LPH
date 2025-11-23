@@ -20,7 +20,10 @@ FUNCTIONALITY:
 - Key Functions:
   * loadWordpacks() - Dynamically imports vocabulary modules
   * initializeDeck(packKey) - Creates shuffled deck from selected wordpack
-  * updateDisplay() - Renders current card based on active mode
+  * updateDisplay() - Renders current card based on active mode (or starting card)
+  * renderStartingCard() - Displays menu/help card (menu on front, help on back)
+  * showStartingCard(showBack) - Navigate to starting card (menu/help)
+  * exitStartingCard() - Return to saved card position from starting card
   * switchMode(mode) - Changes between reading/listening/writing modes
   * initializeTypingDisplay() - Creates underscore display for typing modes, resets wrong attempts
   * handleTypingInput(key) - Processes typed letters in listening/writing modes (case/accent insensitive, tracks wrong attempts)
@@ -35,6 +38,8 @@ FUNCTIONALITY:
 
 - Event Handlers:
   * Mode buttons (top left) - Switch between reading/listening/writing modes
+  * Menu button (☰) - Show starting card with settings (front side)
+  * Help button (?) - Show starting card with quick help (back side)
   * Card flip - Click card or down arrow
   * Navigation - Left/right arrows
   * Pronunciation - Up arrow (always) or Space (reading mode only)
@@ -100,6 +105,13 @@ VISUAL DESIGN:
   * Subconsciously pleasing rustic paper feel
 
 CORRECTIONS & CLARIFICATIONS:
+- 2025-11-23: Replaced modals with starting card navigation
+  * Menu button (☰) now shows starting card front (settings: wordpack, language, speed)
+  * Help button (?) now shows starting card back (shortened quick help guide)
+  * Starting card acts like a regular flashcard - can flip between menu (front) and help (back)
+  * "Back to Cards" button returns to saved card position
+  * Settings are functional on the starting card and sync with main settings
+  * Help text shortened to fit on card without scrolling/cropping
 - 2025-11-23: MAJOR MODE REDESIGN - Completely changed listening and writing mode behavior
   * Listening mode: Changed from "show ?, flip to see Spanish | English" to "hear Spanish, type it, flip to see Spanish | English"
   * Writing mode: Changed from "type Spanish on front, see English on back" to "see English on front, type Spanish, see Spanish on back"
