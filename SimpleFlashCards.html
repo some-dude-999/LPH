@@ -191,12 +191,12 @@
       background-blend-mode: soft-light;
       background-size: var(--paper-texture-size), 100%;
 
+      /* Use box-shadow for border to avoid corner radius gaps */
       box-shadow:
         0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 3px #A08567,
         0 0 0 1px rgba(139, 115, 85, 0.3),
         inset 0 0 50px rgba(139, 115, 85, 0.1);
-
-      border: 3px solid #A08567;
     }
 
     .card-face::before {
