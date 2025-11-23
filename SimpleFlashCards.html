@@ -1539,7 +1539,7 @@
       <div class="card-face card-front">
         <div class="card-weathering" id="weathering-front"></div>
         <!-- Wrong answer indicators (positioned at card corners) -->
-        <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
+        <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20; max-width: 450px; line-height: 0.9;"></div>
         <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
         <span class="card-word" id="spanish-word"></span>
         <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
@@ -2547,8 +2547,9 @@
         wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
           ? uniqueWrongLetters.map(l => {
               const sizeVar = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-              const rotateVar = -3 + Math.random() * 6; // -3deg to +3deg
-              return `<span style="position: relative; display: inline-block; margin-right: 8px; transform: scale(${sizeVar}) rotate(${rotateVar}deg);"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${-rotateVar}deg); color: #D32F2F; font-size: 1em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+              const rotateVar = -8 + Math.random() * 16; // -8deg to +8deg (more variation)
+              const xRotateVar = -5 + Math.random() * 10; // -5deg to +5deg for X mark
+              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${sizeVar}) rotate(${rotateVar}deg);"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${xRotateVar}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
             }).join('')
           : '';
         const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
@@ -2568,8 +2569,9 @@
         wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
           ? uniqueWrongLetters.map(l => {
               const sizeVar = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-              const rotateVar = -3 + Math.random() * 6; // -3deg to +3deg
-              return `<span style="position: relative; display: inline-block; margin-right: 8px; transform: scale(${sizeVar}) rotate(${rotateVar}deg);"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${-rotateVar}deg); color: #D32F2F; font-size: 1em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+              const rotateVar = -8 + Math.random() * 16; // -8deg to +8deg (more variation)
+              const xRotateVar = -5 + Math.random() * 10; // -5deg to +5deg for X mark
+              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${sizeVar}) rotate(${rotateVar}deg);"><span style="color: #2C1810;">${l}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${xRotateVar}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
             }).join('')
           : '';
         const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
