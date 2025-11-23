@@ -112,23 +112,44 @@ SpanishWords/Jsmodules/
 └── act3-daily-life.js (171KB - contains packs 101-150)
 ```
 
-### ❌ INCORRECT Structure (Chinese - needs fixing)
-- **Individual pack files**: One file per wordpack
+### Data Structure (ALL Languages)
+Each language module exports multiple pack constants with **identical structure**:
+
+```javascript
+export const p{act}_{pack}_{name} = {
+  meta: {
+    wordpack: 1,           // Pack number (integer)
+    english: "Title",      // Pack title in English
+    chinese: "标题",        // Pack title in Chinese (if supported)
+    pinyin: "biāotí",      // Pack title in Pinyin (if supported)
+    spanish: "Título",     // Pack title in Spanish (if supported)
+    portuguese: "Título"   // Pack title in Portuguese (if supported)
+    // ... other languages as supported by that language's dataset
+  },
+  words: [
+    ["word1_col1", "word1_col2", "word1_col3", ...],  // Array of strings
+    ["word2_col1", "word2_col2", "word2_col3", ...],
+    // ... each word is an array of translations/data
+  ]
+}
+```
+
+**Key Points:**
+- ✅ Structure is **identical** across all languages (meta object + words array)
+- ✅ Each language has **different columns** based on supported translations
+- ✅ Spanish: 5 columns (spanish, english, chinese, pinyin, portuguese)
+- ✅ Chinese: 12 columns (chinese, pinyin, english, spanish, french, portuguese, vietnamese, thai, khmer, indonesian, malay, filipino)
+- ✅ English: 5 columns (english, chinese, pinyin, spanish, portuguese)
+- ✅ Words array is **always** an array of arrays of strings
+
+### ❌ INCORRECT Structure (Pack-Based - DEPRECATED)
+**NEVER use individual pack files:**
 - **File naming**: `pack1-greetings.js`, `pack2-pronouns.js`, etc.
 - **Problems**:
   - 107+ separate HTTP requests
   - Poor performance
   - Harder to manage
   - Defeats obfuscation purpose
-
-**Wrong example:**
-```
-ChineseWords/Jsmodules/
-├── pack1-greetings_and_goodbyes.js (13KB)
-├── pack2-personal_pronouns.js (11KB)
-└── pack3-demonstratives.js (9KB)
-... (107 files total - BAD!)
-```
 
 ### Conversion Scripts
 - **Location**: `[Language]Words/[Language]WordsPythonHelperScripts/convert_csv_to_js.py`
@@ -145,6 +166,75 @@ ChineseWords/Jsmodules/
 - After changing act groupings in Overview.csv
 - After updating meta translations
 - Run: `python [Language]Words/[Language]WordsPythonHelperScripts/convert_csv_to_js.py`
+
+---
+
+## 🔓 DECODER: How to Use Obfuscated Files
+
+### Obfuscation Method
+Obfuscated files (`*-js.js`) use **3-layer protection**:
+1. **Base64 encoding** - Safe transport in JavaScript strings
+2. **Zlib compression** - 60%+ file size reduction
+3. **String reversal** - Salt to prevent casual JSON parsing
+
+### Decoder Implementation (Used in game.js)
+
+**Dependencies:**
+```html
+<!-- Required: pako.js for zlib decompression -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+```
+
+**Decoder Function:**
+```javascript
+async function decodeObfuscatedModule(url) {
+  try {
+    // 1. Import the obfuscated module (contains base64 string in 'w' export)
+    const module = await import(url);
+    const compressedB64 = module.w;
+
+    // 2. Decode base64 to binary
+    const compressedBinary = Uint8Array.from(atob(compressedB64), c => c.charCodeAt(0));
+
+    // 3. Decompress with pako (zlib)
+    const decompressedBinary = pako.inflate(compressedBinary);
+
+    // 4. Convert binary to string
+    const reversedJson = new TextDecoder('utf-8').decode(decompressedBinary);
+
+    // 5. Reverse the string (undo the salt)
+    const jsonStr = reversedJson.split('').reverse().join('');
+
+    // 6. Parse JSON to get the original data
+    const data = JSON.parse(jsonStr);
+
+    return data;  // Returns object with all packs: { p1_1_name: {meta, words}, ... }
+  } catch (error) {
+    console.error('Failed to decode module:', error);
+    throw error;
+  }
+}
+```
+
+**Usage Example:**
+```javascript
+// Load Spanish Act 1
+const spanishAct1 = await decodeObfuscatedModule(
+  './SpanishWords/Jsmodules-js/act1-foundation-js.js'
+);
+
+// Access individual packs
+const greetings = spanishAct1.p1_1_greetings__goodbyes;
+console.log(greetings.meta.wordpack);  // 1
+console.log(greetings.words[0]);       // ["hola amigo", "hello friend (masculine)", ...]
+```
+
+### Testing Decoder
+Use **DecoderTest.html** to verify all obfuscated files decode correctly:
+- Located at: `/DecoderTest.html`
+- Tests all three languages (Chinese, Spanish, English)
+- Displays decoded data in tables
+- GitHub Pages: `https://some-dude-999.github.io/LPH/DecoderTest.html`
 
 ---
 
