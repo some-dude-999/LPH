@@ -107,11 +107,19 @@
       opacity: 1;
     }
 
+    /* Card Counter Wrapper - fixed height prevents layout shift when stamp appears */
+    .card-counter-wrapper {
+      min-height: 2.5rem; /* Accommodate counter + stamp indicator */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
     /* Card Counter */
     .card-counter {
       color: #F5E6D3;
       font-size: 1.2rem;
-      margin-bottom: 15px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -1302,7 +1310,7 @@
       justify-content: center;
       font-size: 1.5rem;
       line-height: 1;
-      opacity: 0.6; /* Lower opacity for inactive to blend into background */
+      opacity: 0.45; /* Very low opacity for inactive to blend into background */
     }
 
     .mode-btn:hover {
@@ -1313,7 +1321,7 @@
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
       transform: scale(1.05);
-      opacity: 0.8; /* Slightly higher on hover */
+      opacity: 0.7; /* Medium opacity on hover */
     }
 
     .mode-btn.active {
@@ -1462,7 +1470,11 @@
   </div>
 
   <div class="wordpack-title" id="wordpack-title"></div>
-  <div class="card-counter" id="card-counter">Card 0 of 0</div>
+
+  <!-- Fixed-height wrapper prevents card from shifting when stamp indicator appears -->
+  <div class="card-counter-wrapper">
+    <div class="card-counter" id="card-counter">Card 0 of 0</div>
+  </div>
 
   <!-- Mode Selector -->
   <div class="mode-selector">
@@ -1837,7 +1849,7 @@
     }
 
     // ===================================================================================
-    // MECHANICAL KEYBOARD SOUND - Satisfying tactile click
+    // MECHANICAL KEYBOARD SOUND - Satisfying tactile click (kept for future reference)
     // ===================================================================================
     function playKeyboardSound() {
       const ctx = getAudioContext();
@@ -1868,6 +1880,51 @@
 
       source.connect(hp);
       hp.connect(bp);
+      bp.connect(gain);
+      gain.connect(ctx.destination);
+      source.start();
+    }
+
+    // ===================================================================================
+    // FELT PEN SCRIBBLE SOUND - Muffled, soft, tactile writing sound with variation
+    // ===================================================================================
+    function playScribbleSound() {
+      const ctx = getAudioContext();
+      const now = ctx.currentTime;
+
+      // Random variation for each scribble (0.02-0.035 seconds - quick!)
+      const duration = 0.02 + Math.random() * 0.015;
+      const bufferSize = ctx.sampleRate * duration;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+
+      // Generate noise with fast decay for tactile "scratch" feel
+      for (let i = 0; i < bufferSize; i++) {
+        const envelope = Math.pow(1 - i/bufferSize, 8); // Very fast decay
+        data[i] = (Math.random() * 2 - 1) * envelope;
+      }
+
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+
+      // Lowpass filter for muffled, deep sound (felt on paper)
+      const lp = ctx.createBiquadFilter();
+      lp.type = 'lowpass';
+      lp.frequency.value = 400 + Math.random() * 200; // 400-600 Hz variation
+      lp.Q.value = 0.5;
+
+      // Slight bandpass for tactile "texture"
+      const bp = ctx.createBiquadFilter();
+      bp.type = 'bandpass';
+      bp.frequency.value = 250 + Math.random() * 150; // 250-400 Hz variation
+      bp.Q.value = 1.5;
+
+      // Gain with slight variation
+      const gain = ctx.createGain();
+      gain.gain.value = 0.15 + Math.random() * 0.1; // 0.15-0.25 volume variation
+
+      source.connect(lp);
+      lp.connect(bp);
       bp.connect(gain);
       gain.connect(ctx.destination);
       source.start();
@@ -2184,7 +2241,7 @@
       if (normalizedKey === normalizedTarget) {
         // Correct! Mark position as typed
         typedPositions.add(nextPos);
-        playKeyboardSound();
+        playScribbleSound(); // Felt pen writing sound
         updateDisplay();
 
         // Check if word is complete (all non-space positions typed)
@@ -2247,6 +2304,7 @@
         }
       } else {
         // Wrong key pressed - mark position as wrong, increment counter, and track wrong letter
+        playScribbleSound(); // Play scribble sound for any key press
         if (!wrongPositions.includes(nextPos)) {
           wrongPositions.push(nextPos);
         }
@@ -3325,7 +3383,7 @@
           startListening(isFront);
         } else if (currentMode === 'writing') {
           e.preventDefault();
-          playKeyboardSound(); // Play typing sound but don't register input
+          playScribbleSound(); // Play scribble sound but don't register input
         } else if (currentMode === 'listening') {
           e.preventDefault(); // Ignore space in listening mode
         }
