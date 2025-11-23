@@ -282,7 +282,7 @@
     .card-word {
       font-size: 6.4rem;
       color: #2C1810;
-      line-height: 0.65;
+      line-height: 1;
       font-style: italic;
       position: relative;
       z-index: 5;
@@ -1792,38 +1792,33 @@
         return x - Math.floor(x);
       };
 
-      // Generate 4-6 random weathering spots on edges only
-      const numSpots = 4 + Math.floor(random(seed) * 3);
-      const spots = [];
+      // Generate subtle variations for sun-faded edges
+      const topFade = 8 + random(seed) * 4; // 8-12%
+      const rightFade = 8 + random(seed + 1) * 4;
+      const bottomFade = 8 + random(seed + 2) * 4;
+      const leftFade = 8 + random(seed + 3) * 4;
 
-      for (let i = 0; i < numSpots; i++) {
-        let x, y;
-        const edgeType = Math.floor(random(seed + i * 5) * 4); // 0=left, 1=right, 2=top, 3=bottom
+      // Vary the color tint slightly (brownish/sepia tones)
+      const redTint = 101 + Math.floor(random(seed + 4) * 20); // 101-120
+      const greenTint = 67 + Math.floor(random(seed + 5) * 15); // 67-82
+      const blueTint = 33 + Math.floor(random(seed + 6) * 10); // 33-43
 
-        if (edgeType === 0) {
-          // Left edge
-          x = random(seed + i * 2) * 15; // 0-15%
-          y = random(seed + i * 2 + 1) * 100; // Any vertical position
-        } else if (edgeType === 1) {
-          // Right edge
-          x = 85 + random(seed + i * 2) * 15; // 85-100%
-          y = random(seed + i * 2 + 1) * 100;
-        } else if (edgeType === 2) {
-          // Top edge
-          x = random(seed + i * 2) * 100;
-          y = random(seed + i * 2 + 1) * 15; // 0-15%
-        } else {
-          // Bottom edge
-          x = random(seed + i * 2) * 100;
-          y = 85 + random(seed + i * 2 + 1) * 15; // 85-100%
-        }
+      // Vary the overall intensity
+      const intensity = 0.12 + random(seed + 7) * 0.08; // 0.12-0.20
 
-        const size = 15 + random(seed + i * 3) * 25;
-        const opacity = 0.08 + random(seed + i * 4) * 0.18;
-        spots.push(`radial-gradient(circle at ${x}% ${y}%, rgba(101, 67, 33, ${opacity}) 0%, transparent ${size}%)`);
-      }
+      // Create uniform faded edges (like sun-bleached paper)
+      const gradients = [
+        // Top edge fade
+        `linear-gradient(to bottom, rgba(${redTint}, ${greenTint}, ${blueTint}, ${intensity}) 0%, transparent ${topFade}%)`,
+        // Right edge fade
+        `linear-gradient(to left, rgba(${redTint}, ${greenTint}, ${blueTint}, ${intensity}) 0%, transparent ${rightFade}%)`,
+        // Bottom edge fade
+        `linear-gradient(to top, rgba(${redTint}, ${greenTint}, ${blueTint}, ${intensity}) 0%, transparent ${bottomFade}%)`,
+        // Left edge fade
+        `linear-gradient(to right, rgba(${redTint}, ${greenTint}, ${blueTint}, ${intensity}) 0%, transparent ${leftFade}%)`
+      ];
 
-      return spots.join(', ');
+      return gradients.join(', ');
     }
 
     // Update the card display
