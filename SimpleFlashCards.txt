@@ -2,7 +2,7 @@
 PROJECT: LPH Spanish Learning
 COMPONENT: Simple Flashcards - Interactive Spanish vocabulary practice
 CREATED: 2025-11-23
-LAST UPDATED: 2025-11-23 - Added three learning modes with typing game and updated controls
+LAST UPDATED: 2025-11-23 - Fixed starting card to match initial setup screen exactly
 
 DATA SOURCES:
 - Module: https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js
@@ -20,10 +20,9 @@ FUNCTIONALITY:
 - Key Functions:
   * loadWordpacks() - Dynamically imports vocabulary modules
   * initializeDeck(packKey) - Creates shuffled deck from selected wordpack
-  * updateDisplay() - Renders current card based on active mode (or starting card)
-  * renderStartingCard() - Displays menu/help card (menu on front, help on back)
-  * showStartingCard(showBack) - Navigate to starting card (menu/help)
-  * exitStartingCard() - Return to saved card position from starting card
+  * updateDisplay() - Renders current card based on active mode (returns early if on starting card)
+  * showStartingCard(showBack) - Shows actual setup overlay (menu) or setup help by toggling .hidden and .setup-flipped classes
+  * exitStartingCard() - Hides setup overlays and returns to saved card position
   * switchMode(mode) - Changes between reading/listening/writing modes
   * initializeTypingDisplay() - Creates underscore display for typing modes, resets wrong attempts
   * handleTypingInput(key) - Processes typed letters in listening/writing modes (case/accent insensitive, tracks wrong attempts)
@@ -38,8 +37,8 @@ FUNCTIONALITY:
 
 - Event Handlers:
   * Mode buttons (top left) - Switch between reading/listening/writing modes
-  * Menu button (☰) - Show starting card with settings (front side)
-  * Help button (?) - Show starting card with quick help (back side)
+  * Menu button (☰) - Show actual setup overlay (same as initial game setup screen)
+  * Help button (?) - Show actual setup help (back of initial setup screen)
   * Card flip - Click card or down arrow
   * Navigation - Left/right arrows
   * Pronunciation - Up arrow (always) or Space (reading mode only)
@@ -105,6 +104,13 @@ VISUAL DESIGN:
   * Subconsciously pleasing rustic paper feel
 
 CORRECTIONS & CLARIFICATIONS:
+- 2025-11-23: FIXED starting card to match initial setup screen exactly
+  * Initially thought: Starting card should show custom-designed menu/help with inline styles
+  * Actually: Starting card should reuse EXACT same HTML as initial game setup screen
+  * Implementation: showStartingCard() now toggles .hidden and .setup-flipped classes on actual .setup-overlay and .setup-help elements
+  * Removed: renderStartingCard() function no longer needed (was creating custom HTML)
+  * Result: Menu (☰) and Help (?) buttons now show identical screen as game start
+  * Why this matters: Visual consistency - user sees the same settings screen throughout the app
 - 2025-11-23: Replaced modals with starting card navigation
   * Menu button (☰) now shows starting card front (settings: wordpack, language, speed)
   * Help button (?) now shows starting card back (shortened quick help guide)
