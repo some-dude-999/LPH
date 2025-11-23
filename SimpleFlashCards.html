@@ -2514,13 +2514,13 @@
         englishWord.className = 'card-word';
       } else if (currentMode === 'listening') {
         // Listening mode: typing interface on front (hear and type Spanish), Spanish | Translation on back
-        // Show wrong letters (top left) and wrong count (top right)
+        // Show wrong letters (very top left) and wrong count (very top right)
         const uniqueWrongLetters = [...new Set(wrongLetters)];
         const wrongLettersDisplay = uniqueWrongLetters.length > 0
-          ? `<div style="position: absolute; top: 10px; left: 10px; font-size: 2.5rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">${uniqueWrongLetters.map(l => `${l}<span style="font-size: 2rem;">✗</span>`).join(' ')}</div>`
+          ? `<div style="position: absolute; top: 5px; left: 5px; font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">${uniqueWrongLetters.map(l => `${l}<span style="font-size: 1rem;">✗</span>`).join(' ')}</div>`
           : '';
         const wrongCountDisplay = wrongAttempts > 0
-          ? `<div style="position: absolute; top: 10px; right: 10px; font-size: 3rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">-${wrongAttempts}</div>`
+          ? `<div style="position: absolute; top: 5px; right: 5px; font-size: 1.5rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">-${wrongAttempts}</div>`
           : '';
         spanishWord.innerHTML = `${wrongLettersDisplay}${wrongCountDisplay}<div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
@@ -2528,14 +2528,14 @@
         englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
         // Writing mode: English + typing on front, Spanish on back
-        // Show wrong letters (top left) and wrong count (top right) - positioned relative to card
+        // Show wrong letters (very top left) and wrong count (very top right) - positioned at card corners
         // Make wrong letters unique (only show each letter once)
         const uniqueWrongLetters = [...new Set(wrongLetters)];
         const wrongLettersDisplay = uniqueWrongLetters.length > 0
-          ? `<div style="position: absolute; top: 10px; left: 10px; font-size: 2.5rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">${uniqueWrongLetters.map(l => `${l}<span style="font-size: 2rem;">✗</span>`).join(' ')}</div>`
+          ? `<div style="position: absolute; top: 5px; left: 5px; font-size: 1.2rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">${uniqueWrongLetters.map(l => `${l}<span style="font-size: 1rem;">✗</span>`).join(' ')}</div>`
           : '';
         const wrongCountDisplay = wrongAttempts > 0
-          ? `<div style="position: absolute; top: 10px; right: 10px; font-size: 3rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">-${wrongAttempts}</div>`
+          ? `<div style="position: absolute; top: 5px; right: 5px; font-size: 1.5rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">-${wrongAttempts}</div>`
           : '';
         spanishWord.innerHTML = `${wrongLettersDisplay}${wrongCountDisplay}<div class="translation-text">${card.translation}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';

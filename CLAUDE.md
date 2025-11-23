@@ -31,7 +31,21 @@ Update docs with EVERY change. If wrong, fix immediately.
 ---
 
 ## 🔄 Git Rules
-**Not on main = didn't happen.** Always work on main. Commit & push immediately after changes. End every response with PR link.
+**Not on main = didn't happen.** Always work on main. Commit & push immediately after changes.
+
+**CRITICAL: ALWAYS end every response with a clickable PR link in this exact format:**
+```
+**Create PR to main:**
+https://github.com/[owner]/[repo]/compare/main...[branch-name]
+```
+
+Example:
+```
+**Create PR to main:**
+https://github.com/some-dude-999/LPH/compare/main...claude/review-simple-01Hi34DFZG28EfSBWgy5C6gP
+```
+
+This link is MANDATORY at the end of EVERY response where code changes are made.
 
 ---
 
@@ -250,7 +264,7 @@ Use **DecoderTest.html** to verify all obfuscated files decode correctly:
    - **Run `python PythonHelpers/link_manager.py`** (auto-updates LINK.txt for all web files)
    - Review and update descriptions in LINK.txt
    - Git add, commit, push to main
-   - Provide pull request link in response
+   - **ALWAYS end response with clickable PR link:** `https://github.com/[owner]/[repo]/compare/main...[branch]`
 6. **Documentation is a message to your future self - make it count!**
 
 ## 🎯 Quick Start Checklist for New Sessions
