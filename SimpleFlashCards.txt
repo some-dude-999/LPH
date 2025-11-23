@@ -97,7 +97,17 @@ VISUAL DESIGN:
   * Subconsciously pleasing rustic paper feel
 
 CORRECTIONS & CLARIFICATIONS:
-[None yet - initial documentation]
+- 2025-11-23: Fixed critical typing mechanic bug - updateDisplay() was resetting progress on every keystroke
+  * Root cause: initializeTypingDisplay() being called in updateDisplay() for writing mode
+  * Solution: Only initialize typing display when switching modes or navigating to new cards
+  * Added initialization calls in switchMode(), goToNext(), goToPrevious(), moveToNextCard()
+- 2025-11-23: Fixed font size issues - reading/listening modes had wrong CSS class
+  * Changed className from 'word' to 'card-word' to preserve 6.4rem font size
+  * Increased typing display from 4rem to 5.5rem for better readability
+- 2025-11-23: Fixed listening mode divider styling
+  * Changed from 80% width to 95% (wider)
+  * Changed from 2px to 1px height (thinner)
+  * Added margin: 20px auto for proper centering
 
 NOTES:
 - Audio code has important comments about preservation - DO NOT DELETE sound generation code
