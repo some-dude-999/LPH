@@ -92,6 +92,62 @@ https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules-js/act1-foundation-js
 
 ---
 
+## 📦 JAVASCRIPT MODULE STRUCTURE (CRITICAL!)
+**JS modules are ACT-BASED, NOT pack-based!**
+
+### ✅ CORRECT Structure (Spanish, English)
+- **Group by Acts**: Multiple wordpacks combined into act files
+- **File naming**: `act1-foundation.js`, `act2-building-blocks.js`, etc.
+- **Benefits**:
+  - Fewer HTTP requests (7 act files vs 250 pack files)
+  - Better performance and caching
+  - Cleaner import structure
+  - Obfuscation works better on larger files
+
+**Example (Spanish):**
+```
+SpanishWords/Jsmodules/
+├── act1-foundation.js (116KB - contains packs 1-50)
+├── act2-building-blocks.js (119KB - contains packs 51-100)
+└── act3-daily-life.js (171KB - contains packs 101-150)
+```
+
+### ❌ INCORRECT Structure (Chinese - needs fixing)
+- **Individual pack files**: One file per wordpack
+- **File naming**: `pack1-greetings.js`, `pack2-pronouns.js`, etc.
+- **Problems**:
+  - 107+ separate HTTP requests
+  - Poor performance
+  - Harder to manage
+  - Defeats obfuscation purpose
+
+**Wrong example:**
+```
+ChineseWords/Jsmodules/
+├── pack1-greetings_and_goodbyes.js (13KB)
+├── pack2-personal_pronouns.js (11KB)
+└── pack3-demonstratives.js (9KB)
+... (107 files total - BAD!)
+```
+
+### Conversion Scripts
+- **Location**: `[Language]Words/[Language]WordsPythonHelperScripts/convert_csv_to_js.py`
+- **Input files needed**:
+  - `[Language]WordsOverview.csv` - Maps packs to acts
+  - `[Language]WordsMeta.csv` - Translations for pack titles (optional)
+  - `[Language]Words{1-250}.csv` - Individual wordpack data
+- **Output**:
+  - Clean: `Jsmodules/act{N}-{name}.js` (readable for development)
+  - Obfuscated: `Jsmodules-js/act{N}-{name}-js.js` (compressed for production)
+
+### When to regenerate modules
+- After editing any CSV file
+- After changing act groupings in Overview.csv
+- After updating meta translations
+- Run: `python [Language]Words/[Language]WordsPythonHelperScripts/convert_csv_to_js.py`
+
+---
+
 ## ⚠️ Remember
 1. **NO DOCUMENTATION = STOP! Create it first before ANY other work**
 2. **Check for PythonHelpers/link_manager.py first - use it if it exists!**
