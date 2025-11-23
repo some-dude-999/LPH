@@ -2132,21 +2132,55 @@
 
         // Check if word is complete
         if (!typingDisplay.includes('_')) {
-          // Word completed! Calculate smart penalty
-          // 1 wrong = pass (0 cards), 2 wrong = 1 card, 3+ wrong = 2 cards
-          // Formula: max(0, min(wrongAttempts - 1, 2))
-          const penaltyCards = wrongAttempts > 1 ? Math.min(wrongAttempts - 1, 2) : 0;
+          // Word completed!
+          // 0-1 wrong = correct (show green stamp and remove card)
+          // 2 wrong = 1 penalty card
+          // 3+ wrong = 2 penalty cards (capped)
 
-          if (penaltyCards > 0) {
-            addDuplicateCards(penaltyCards);
-          }
+          if (wrongAttempts <= 1) {
+            // Correct! Show green stamp and remove card automatically
+            playCardFlipSound();
+            removedStamp.classList.add('visible');
 
-          // Auto-advance after a brief delay
-          setTimeout(() => {
-            if (currentMode === 'listening' || currentMode === 'writing') {
-              moveToNextCard();
+            setTimeout(() => {
+              removedStamp.classList.remove('visible');
+
+              // Remove card from deck
+              if (currentDeck.length <= 1) {
+                currentDeck = [];
+              } else {
+                currentDeck.splice(currentIndex, 1);
+                if (currentIndex >= currentDeck.length) {
+                  currentIndex = 0;
+                }
+              }
+
+              // Re-initialize typing for next card
+              if (currentMode === 'listening' || currentMode === 'writing') {
+                initializeTypingDisplay();
+              }
+              updateDisplay();
+              saveState();
+
+              // Auto-pronounce in listening mode
+              if (currentMode === 'listening' && currentDeck.length > 0) {
+                setTimeout(() => speakSpanish(), 300);
+              }
+            }, 1000);
+          } else {
+            // Wrong - add penalty cards
+            const penaltyCards = Math.min(wrongAttempts - 1, 2);
+            if (penaltyCards > 0) {
+              addDuplicateCards(penaltyCards);
             }
-          }, 500);
+
+            // Auto-advance after stamp duration (1600ms > 1500ms stamp)
+            setTimeout(() => {
+              if (currentMode === 'listening' || currentMode === 'writing') {
+                moveToNextCard();
+              }
+            }, 1600);
+          }
         }
       } else {
         // Wrong key pressed - mark position as wrong, increment counter, and track wrong letter
@@ -2429,8 +2463,15 @@
         englishWord.className = 'card-word';
       } else if (currentMode === 'listening') {
         // Listening mode: typing interface on front (hear and type Spanish), Spanish | Translation on back
-        // Don't reinitialize - preserve typing progress
-        spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplay()}</div>`;
+        // Show wrong letters (top left) and wrong count (top right)
+        const uniqueWrongLetters = [...new Set(wrongLetters)];
+        const wrongLettersDisplay = uniqueWrongLetters.length > 0
+          ? `<div style="position: absolute; top: 10px; left: 10px; font-size: 2.5rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">${uniqueWrongLetters.map(l => `${l}<span style="font-size: 2rem;">✗</span>`).join(' ')}</div>`
+          : '';
+        const wrongCountDisplay = wrongAttempts > 0
+          ? `<div style="position: absolute; top: 10px; right: 10px; font-size: 3rem; font-family: 'Courier New', monospace; font-weight: bold; color: #D32F2F;">-${wrongAttempts}</div>`
+          : '';
+        spanishWord.innerHTML = `${wrongLettersDisplay}${wrongCountDisplay}<div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
         englishWord.innerHTML = `${card.spanish}<br><div class="translation-text">${card.translation}</div>`;
         englishWord.className = 'card-word';
@@ -2513,6 +2554,11 @@
       playCardFlipSound();
       flashcard.classList.add('flipped');
       isFlipped = true;
+
+      // Auto-pronounce in listening mode when flipping to back
+      if (currentMode === 'listening' && currentDeck.length > 0) {
+        setTimeout(() => speakSpanish(), 300);
+      }
     }
 
     // Unflip card
