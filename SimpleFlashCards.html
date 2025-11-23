@@ -2118,11 +2118,15 @@
       // Track deck change for visual indicator
       pendingDeckChange += count;
 
+      // Update display to show indicator while stamp is visible
+      updateDisplay();
+
       // Show "Extra Practice" stamp
       const addedStamp = document.getElementById('added-stamp');
       addedStamp.classList.add('visible');
       setTimeout(() => {
         addedStamp.classList.remove('visible');
+        pendingDeckChange = 0; // Clear indicator after stamp
       }, 1500);
     }
 
@@ -2175,6 +2179,7 @@
             // Correct! Show green stamp and remove card automatically
             playCardFlipSound();
             pendingDeckChange = -1; // Track deck change for visual indicator
+            updateDisplay(); // Show indicator while stamp is visible
             removedStamp.classList.add('visible');
 
             setTimeout(() => {
@@ -2189,6 +2194,9 @@
                   currentIndex = 0;
                 }
               }
+
+              // Clear pending change
+              pendingDeckChange = 0;
 
               // Re-initialize typing for next card
               if (currentMode === 'listening' || currentMode === 'writing') {
@@ -2541,14 +2549,11 @@
       // Display counter with pending change indicator
       let counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
       if (pendingDeckChange !== 0) {
-        // Add handwritten indicator showing deck change
+        // Add mini stamp indicator showing deck change (bigger, stamp-like, no drop shadow)
         const changeSign = pendingDeckChange > 0 ? '+' : '';
         const changeColor = pendingDeckChange > 0 ? '#D32F2F' : '#4ADE80'; // red for +, green for -
-        const rotateVar = -3 + Math.random() * 6; // -3deg to +3deg
-        const scaleVar = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-        cardCounter.innerHTML = `${counterText} <span style="display: inline-block; font-family: 'IM Fell English', serif; font-style: italic; color: ${changeColor}; transform: rotate(${rotateVar}deg) scale(${scaleVar}); margin-left: 8px;">${changeSign}${pendingDeckChange}</span>`;
-        // Clear pending change after showing it
-        pendingDeckChange = 0;
+        const rotateVar = -2 + Math.random() * 4; // -2deg to +2deg (subtle rotation)
+        cardCounter.innerHTML = `${counterText} <span style="display: inline-block; font-family: 'Cinzel', serif; font-weight: bold; font-size: 1.8rem; color: ${changeColor}; transform: rotate(${rotateVar}deg); margin-left: 10px; padding: 2px 8px; border: 2px solid ${changeColor}; border-radius: 4px; background: rgba(255,255,255,0.9);">${changeSign}${pendingDeckChange}</span>`;
       } else {
         cardCounter.textContent = counterText;
       }
@@ -2747,6 +2752,9 @@
       // Track deck change for visual indicator
       pendingDeckChange = -1;
 
+      // Update display to show indicator while stamp is visible
+      updateDisplay();
+
       // Show "Card Removed" stamp for 1 second
       removedStamp.classList.add('visible');
 
@@ -2758,6 +2766,9 @@
         if (currentIndex >= currentDeck.length) {
           currentIndex = 0;
         }
+
+        // Clear pending change and show next card with updated count
+        pendingDeckChange = 0;
 
         // Show next card
         updateDisplay();
