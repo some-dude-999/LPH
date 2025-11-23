@@ -205,10 +205,10 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
+      background:
         radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 80%, rgba(101, 67, 33, 0.1) 0%, transparent 50%);
-      border-radius: 10px;
+      border-radius: 12px;
       pointer-events: none;
     }
 
@@ -1215,6 +1215,94 @@
     .card-stamp.visible {
       opacity: 1;
     }
+
+    /* Mode Selector */
+    .mode-selector {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    body.game-started .mode-selector {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mode-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid rgba(74, 56, 40, 0.6);
+      background-color: #8B7355;
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+      background-blend-mode: soft-light;
+      background-size: var(--cardboard-texture-size), 100%;
+      color: #2C1810;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .mode-btn:hover {
+      background-color: #9B8365;
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
+      background-blend-mode: soft-light;
+      background-size: var(--cardboard-texture-size), 100%;
+      transform: scale(1.05);
+    }
+
+    .mode-btn.active {
+      background-color: #7A6347;
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
+      background-blend-mode: soft-light;
+      background-size: var(--cardboard-texture-size), 100%;
+      border-color: #4A3828;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Writing mode typing display */
+    .typing-display {
+      font-size: 4rem;
+      color: #2C1810;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 8px;
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      word-spacing: 20px;
+    }
+
+    .typing-char {
+      display: inline-block;
+      min-width: 0.6em;
+      text-align: center;
+    }
+
+    .typing-space {
+      display: inline-block;
+      width: 0.8em;
+    }
+
+    /* Listening mode divider */
+    .listening-divider {
+      width: 80%;
+      height: 2px;
+      background: rgba(139, 115, 85, 0.4);
+      margin: 20px 0;
+    }
   </style>
 </head>
 <body>
@@ -1302,6 +1390,13 @@
 
   <div class="wordpack-title" id="wordpack-title"></div>
   <div class="card-counter" id="card-counter">Card 0 of 0</div>
+
+  <!-- Mode Selector -->
+  <div class="mode-selector">
+    <button class="mode-btn active" id="mode-reading" data-mode="reading" title="Reading Mode">📖</button>
+    <button class="mode-btn" id="mode-listening" data-mode="listening" title="Listening Mode">👂</button>
+    <button class="mode-btn" id="mode-writing" data-mode="writing" title="Writing Mode">✏️</button>
+  </div>
 
   <div class="flashcard-container">
     <button class="nav-btn" id="prev-btn" aria-label="Previous card">‹</button>
