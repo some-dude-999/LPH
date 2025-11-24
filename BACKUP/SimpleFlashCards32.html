@@ -8,36 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
   <style>
     /* =================================================================
-       DESIGN SYSTEM - Single source of truth for fonts, colors, textures
+       TEXTURE DEFINITIONS - Single source of truth for all textures
+       Fixed grain size that doesn't change with zoom
        ================================================================= */
     :root {
-      /* ===========================================
-         FONTS - Only 3 fonts used in entire project
-         =========================================== */
-      /* 1. Handwriting font - main card text (Spanish words) */
-      --font-card: 'IM Fell English', serif;
-
-      /* 2. Monospace font - answer/back of card, tooltips */
-      --font-answer: 'Courier New', monospace;
-
-      /* 3. UI font - buttons, titles, labels, everything else */
-      --font-ui: 'Cinzel', serif;
-
-      /* ===========================================
-         COLORS - Only 3 text colors used
-         =========================================== */
-      /* 1. Dark brown - main text on light backgrounds */
-      --color-text-dark: #2C1810;
-
-      /* 2. Off-white/cream - text on dark backgrounds (card counter, etc) */
-      --color-text-light: #F5E6D3;
-
-      /* 3. Gold - accent for titles and special elements */
-      --color-text-gold: #D4C4A8;
-
-      /* ===========================================
-         TEXTURES - Paper and cardboard effects
-         =========================================== */
       /* Paper texture (for cards) - 200x200 viewBox */
       --paper-texture: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)'/%3E%3C/svg%3E");
       --paper-texture-size: 200px 200px;
@@ -55,14 +29,14 @@
 
     body {
       min-height: 100vh;
-      background:
+      background: 
         radial-gradient(ellipse at center, #8B7355 0%, #5D4E37 50%, #3D2E1F 100%);
-      font-family: var(--font-card);
+      font-family: 'IM Fell English', serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 20px;
-      color: var(--color-text-dark);
+      color: #2C1810;
     }
 
     /* Remove focus outline from all interactive elements */
@@ -92,17 +66,17 @@
     .selector-container label {
       font-size: 1rem;
       margin-right: 10px;
-      color: var(--color-text-gold);
+      color: #A89888;
     }
 
     #wordpack-select {
-      font-family: var(--font-ui);
+      font-family: 'IM Fell English', serif;
       font-size: 1rem;
       padding: 8px 15px;
       border: 1px solid rgba(139, 115, 85, 0.4);
       border-radius: 5px;
       background: rgba(45, 35, 25, 0.8);
-      color: var(--color-text-gold);
+      color: #D4C4A8;
       cursor: pointer;
       min-width: 200px;
     }
@@ -115,7 +89,7 @@
 
     #wordpack-select option {
       background: #3D2E1F;
-      color: var(--color-text-gold);
+      color: #D4C4A8;
     }
 
     /* Wordpack Title - Realistic dark gold with noise texture */
@@ -136,7 +110,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-family: var(--font-ui);
+      font-family: 'Cinzel', serif;
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 8px;
@@ -172,7 +146,7 @@
 
     /* Card Counter */
     .card-counter {
-      color: var(--color-text-light);
+      color: #F5E6D3;
       font-size: 1.2rem;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
       opacity: 0;
@@ -205,7 +179,7 @@
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
-      color: var(--color-text-dark);
+      color: #2C1810;
       font-size: 2rem;
       width: 60px;
       height: 60px;
@@ -378,7 +352,7 @@
     }
 
     .card-label {
-      font-family: var(--font-ui);
+      font-family: 'Cinzel', serif;
       font-size: 1.1rem;
       color: #8B7355;
       text-transform: uppercase;
@@ -393,7 +367,7 @@
 
     .card-word {
       font-size: 4rem;
-      color: var(--color-text-dark);
+      color: #2C1810;
       line-height: 1.2;
       font-style: italic;
       position: relative;
@@ -412,7 +386,7 @@
       right: 25px;
       background: rgba(139, 115, 85, 0.2);
       border: 3px solid rgba(160, 133, 103, 0.5);
-      color: var(--color-text-dark);
+      color: #5D4E37;
       width: 55px;
       height: 55px;
       border-radius: 50%;
@@ -458,7 +432,7 @@
       left: 25px;
       background: rgba(139, 115, 85, 0.2);
       border: 3px solid rgba(160, 133, 103, 0.5);
-      color: var(--color-text-dark);
+      color: #5D4E37;
       width: 55px;
       height: 55px;
       border-radius: 50%;
@@ -519,7 +493,7 @@
     }
 
     .feedback-score {
-      font-family: var(--font-ui);
+      font-family: 'Cinzel', serif;
       font-size: 3.5rem;
       font-weight: 600;
       margin-bottom: 10px;
@@ -543,13 +517,13 @@
 
     .feedback-message {
       font-size: 1.3rem;
-      color: var(--color-text-light);
+      color: #F5E6D3;
       margin-bottom: 8px;
     }
 
     .feedback-heard {
       font-size: 0.95rem;
-      color: var(--color-text-gold);
+      color: #A89888;
       font-style: italic;
       margin-bottom: 15px;
     }
@@ -557,11 +531,11 @@
     .feedback-close {
       background: rgba(139, 115, 85, 0.4);
       border: 1px solid #8B7355;
-      color: var(--color-text-gold);
+      color: #D4C4A8;
       padding: 8px 20px;
       border-radius: 5px;
       cursor: pointer;
-      font-family: var(--font-ui);
+      font-family: 'IM Fell English', serif;
       font-size: 0.9rem;
       transition: all 0.2s ease;
     }
@@ -720,9 +694,9 @@
     }
 
     .setup-title {
-      font-family: var(--font-ui);
+      font-family: 'Courier New', monospace;
       font-size: 1.5rem;
-      color: var(--color-text-dark);
+      color: #2C1810;
       margin-bottom: 25px;
       letter-spacing: 2px;
       position: relative;
@@ -759,20 +733,20 @@
 
     .setup-field label {
       font-size: 0.85rem;
-      color: var(--color-text-dark);
+      color: #6B5B4B;
       margin-bottom: 6px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
     .setup-field select {
-      font-family: var(--font-ui);
+      font-family: 'IM Fell English', serif;
       font-size: 1rem;
       padding: 10px 15px;
       border: 2px solid #8B7355;
       border-radius: 6px;
       background: rgba(60, 46, 31, 0.85);
-      color: var(--color-text-gold);
+      color: #D4C4A8;
       cursor: pointer;
       width: 100%;
       text-align: left;
@@ -787,7 +761,7 @@
 
     .setup-field select option {
       background: #3D2E1F;
-      color: var(--color-text-gold);
+      color: #D4C4A8;
       text-align: left;
     }
 
@@ -801,7 +775,7 @@
       border-radius: 50%;
       border: 2px solid rgba(139, 115, 85, 0.5);
       background: rgba(60, 46, 31, 0.6);
-      color: var(--color-text-gold);
+      color: #D4C4A8;
       cursor: pointer;
       transition: all 0.2s ease;
       display: flex;
@@ -817,18 +791,18 @@
 
     /* Help content styling - matches card-back with Courier font */
     .help-content {
-      color: var(--color-text-dark);
+      color: #2C1810;
       line-height: 1.7;
       position: relative;
       z-index: 5;
       font-size: 0.9rem;
-      font-family: var(--font-answer);
+      font-family: 'Courier New', monospace;
     }
 
     .help-content h3 {
-      font-family: var(--font-answer);
+      font-family: 'Courier New', monospace;
       font-size: 1rem;
-      color: var(--color-text-dark);
+      color: #2C1810;
       margin: 12px 0 6px;
       font-weight: bold;
     }
@@ -847,7 +821,7 @@
     }
 
     .setup-start-btn {
-      font-family: var(--font-ui);
+      font-family: 'Cinzel', serif;
       font-size: 1.1rem;
       padding: 12px 30px;
       margin-top: 15px;
@@ -859,7 +833,7 @@
       background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
       border-radius: 8px;
-      color: var(--color-text-light);
+      color: #F5E6D3;
       cursor: pointer;
       transition: all 0.2s ease;
       letter-spacing: 1px;
@@ -925,10 +899,10 @@
         linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
-      color: var(--color-text-dark);
+      color: #2C1810;
       cursor: pointer;
       transition: all 0.2s ease;
-      font-family: var(--font-ui);
+      font-family: 'IM Fell English', serif;
       font-size: 1.2rem;
       text-align: center;
       opacity: 0.6;
@@ -968,7 +942,7 @@
         linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
-      color: var(--color-text-dark);
+      color: #2C1810;
       cursor: pointer;
       transition: all 0.2s ease;
       font-size: 1.5rem;
@@ -1030,7 +1004,7 @@
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
-      color: var(--color-text-dark);
+      color: #2C1810;
       width: 55px;
       height: 55px;
       border-radius: 50%;
@@ -1089,7 +1063,7 @@
         linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
-      color: var(--color-text-dark);
+      color: #2C1810;
       cursor: pointer;
       transition: all 0.2s ease;
       display: flex;
@@ -1099,7 +1073,7 @@
       line-height: 1;
       text-align: center;
       z-index: 100;
-      font-family: var(--font-ui);
+      font-family: 'Cinzel', serif;
       font-weight: 600;
     }
 
@@ -1217,9 +1191,9 @@
     }
 
     .modal-title {
-      font-family: var(--font-ui);
+      font-family: 'Cinzel', serif;
       font-size: 1.5rem;
-      color: var(--color-text-dark);
+      color: #4A3728;
       margin-bottom: 20px;
       text-align: center;
       letter-spacing: 2px;
@@ -1228,16 +1202,16 @@
     }
 
     .modal-content {
-      color: var(--color-text-dark);
+      color: #4A3728;
       line-height: 1.7;
       position: relative;
       z-index: 5;
     }
 
     .modal-content h3 {
-      font-family: var(--font-ui);
+      font-family: 'Cinzel', serif;
       font-size: 1.1rem;
-      color: var(--color-text-dark);
+      color: #6B5344;
       margin: 15px 0 8px;
     }
 
@@ -1258,7 +1232,7 @@
       display: block;
       margin: 20px auto 0;
       padding: 10px 25px;
-      font-family: var(--font-ui);
+      font-family: 'Cinzel', serif;
       font-size: 1rem;
       background-color: #7A6347;
       background-image:
@@ -1268,7 +1242,7 @@
       background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
       border-radius: 6px;
-      color: var(--color-text-light);
+      color: #F5E6D3;
       cursor: pointer;
       transition: all 0.2s ease;
       text-shadow: 0 1px 2px rgba(0,0,0,0.4);
@@ -1293,14 +1267,14 @@
     .menu-field label {
       display: block;
       font-size: 0.85rem;
-      color: var(--color-text-dark);
+      color: #6B5B4B;
       margin-bottom: 6px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
     .menu-field select {
-      font-family: var(--font-ui);
+      font-family: 'IM Fell English', serif;
       font-size: 1rem;
       padding: 10px 15px;
       border: 3px solid rgba(74, 56, 40, 0.6);
@@ -1312,7 +1286,7 @@
         linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
-      color: var(--color-text-dark);
+      color: #2C1810;
       cursor: pointer;
       width: 100%;
       /* Custom dropdown arrow */
@@ -1347,13 +1321,13 @@
 
     .menu-field select option {
       background: #8B7355;
-      color: var(--color-text-dark);
+      color: #2C1810;
       padding: 8px;
     }
 
     /* Empty State */
     .empty-state {
-      color: var(--color-text-light);
+      color: #F5E6D3;
       font-size: 1.3rem;
       text-align: center;
       padding: 50px;
@@ -1361,7 +1335,7 @@
 
     /* Loading State */
     .loading {
-      color: var(--color-text-light);
+      color: #F5E6D3;
       font-size: 1.2rem;
       animation: pulse 1.5s infinite;
     }
@@ -1397,7 +1371,7 @@
 
     /* Shared stamp styling - used by card stamps and deck change indicator */
     .stamp-base {
-      font-family: var(--font-ui);
+      font-family: Georgia, serif;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 4px;
@@ -1442,7 +1416,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-family: var(--font-ui);
+      font-family: Georgia, serif;
       font-weight: bold;
       font-size: 3rem;
       padding: 8px 16px;
@@ -1518,7 +1492,7 @@
       background-size: var(--cardboard-texture-size), 100%;
       border-color: #4A3828;
       box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
-      color: var(--color-text-dark);
+      color: #2C1810;
       cursor: pointer;
       transition: all 0.2s ease;
       display: flex;
@@ -1556,8 +1530,8 @@
     /* Typing mode display (listening and writing) */
     .typing-display {
       font-size: 4rem;
-      color: var(--color-text-dark);
-      font-family: var(--font-card);
+      color: #2C1810;
+      font-family: 'IM Fell English', serif;
       font-style: italic;
       letter-spacing: 4px;
       position: relative;
@@ -1588,8 +1562,8 @@
     /* Translation text (native language) */
     .translation-text {
       font-size: 3rem;
-      color: var(--color-text-dark);
-      font-family: var(--font-answer);
+      color: #2C1810;
+      font-family: 'Courier New', monospace;
       font-style: normal;
     }
 
@@ -1613,7 +1587,7 @@
         radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
         /* Soft cream parchment gradient */
         linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
-      color: var(--color-text-dark);
+      color: #3D2E1F;
       padding: 10px 14px;
       border-radius: 8px;
       overflow: hidden;
@@ -1628,7 +1602,7 @@
       white-space: nowrap;
       pointer-events: none;
       transition: opacity 0.2s ease, visibility 0.2s ease;
-      font-family: var(--font-answer);
+      font-family: 'Courier New', monospace;
     }
 
     /* No grid pattern - clean paper look */
@@ -1683,30 +1657,30 @@
       /* Mode title - centered, LARGER, bold */
       display: block;
       text-align: center;
-      color: var(--color-text-dark);
+      color: #3D2E1F;
       font-weight: bold;
       font-size: 1.3rem;
       margin-bottom: 2px;
       position: relative;
       z-index: 2;
-      font-family: var(--font-answer);
+      font-family: 'Courier New', monospace;
     }
 
     /* Bold steps - numbered list in tooltips */
     .tooltip b {
-      color: var(--color-text-dark);
+      color: #2C1810;
       font-weight: bold;
       position: relative;
       z-index: 2;
       display: inline;
       font-size: 1rem;
       line-height: 1.8;
-      font-family: var(--font-answer);
+      font-family: 'Courier New', monospace;
     }
 
     .tooltip em {
       /* Instructions text - SAME COLOR as everything else */
-      color: var(--color-text-dark);
+      color: #3D2E1F;
       font-style: normal;
       position: relative;
       z-index: 2;
@@ -1714,15 +1688,15 @@
       margin-top: 2px;
       font-size: 0.9rem;
       line-height: 1.5;
-      font-family: var(--font-answer);
+      font-family: 'Courier New', monospace;
     }
 
     /* Bold action words within em (CLICK, PRESS, HOLD, TYPE) */
     .tooltip em b {
-      color: var(--color-text-dark);
+      color: #2C1810;
       font-weight: bold;
       text-transform: uppercase;
-      font-family: var(--font-answer);
+      font-family: 'Courier New', monospace;
     }
 
     /* Make all tooltip content appear above grid */
@@ -1744,7 +1718,7 @@
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
       border: 2px solid rgba(74, 56, 40, 0.6);
-      color: var(--color-text-dark);
+      color: #2C1810;
       font-size: 0.75rem;
       line-height: 20px;
       text-align: center;
@@ -1764,14 +1738,14 @@
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
       border: 2px solid rgba(74, 56, 40, 0.6);
-      color: var(--color-text-dark);
+      color: #2C1810;
       font-size: 0.7rem;
       font-weight: bold;
       line-height: 1.2;
       text-align: center;
       vertical-align: middle;
       margin: 0 2px;
-      font-family: var(--font-ui);
+      font-family: 'IM Fell English', serif;
     }
 
     /* Tooltip instructions container - minimal gap from title */
@@ -1798,7 +1772,7 @@
       background:
         radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
         linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
-      color: var(--color-text-dark);
+      color: #3D2E1F;
       padding: 8px 12px;
       border-radius: 8px;
       box-shadow:
@@ -1811,7 +1785,7 @@
       pointer-events: none;
       /* 1 second delay before showing */
       transition: opacity 0.2s ease 0s, visibility 0.2s ease 0s;
-      font-family: var(--font-answer);
+      font-family: 'Courier New', monospace;
       font-weight: normal;
       z-index: 100;
     }
@@ -1876,8 +1850,8 @@
       <div class="card-face card-front">
         <div class="card-weathering" id="weathering-front"></div>
         <!-- Wrong answer indicators (positioned at card corners) -->
-        <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: var(--font-card); font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20; max-width: 550px; line-height: 0.9; text-align: left;"></div>
-        <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: var(--font-card); font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
+        <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20; max-width: 550px; line-height: 0.9; text-align: left;"></div>
+        <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
         <span class="card-word" id="spanish-word"></span>
         <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation" data-tooltip="Record Pronunciation">🎤</button>
         <button class="peek-btn" id="peek-btn-front" aria-label="Peek at back">🤔</button>
@@ -3377,10 +3351,10 @@
           <div style="font-size: 3rem; margin-bottom: 30px;">🎉 Good Job! 🎉</div>
           <div style="font-size: 1.5rem; margin-bottom: 40px;">You've completed this wordpack!</div>
           <div style="display: flex; gap: 20px; justify-content: center;">
-            <button onclick="restartCurrentPack()" style="padding: 15px 30px; font-size: 1.3rem; background: #8B7355; color: var(--color-text-light); border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+            <button onclick="restartCurrentPack()" style="padding: 15px 30px; font-size: 1.3rem; background: #8B7355; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
               ↺ Study Again
             </button>
-            <button onclick="goToNextPack()" style="padding: 15px 30px; font-size: 1.3rem; background: #7A6347; color: var(--color-text-light); border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+            <button onclick="goToNextPack()" style="padding: 15px 30px; font-size: 1.3rem; background: #7A6347; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
               → Next Pack
             </button>
           </div>
@@ -3431,7 +3405,7 @@
         wrongLettersFront.innerHTML = wrongLetters.length > 0
           ? wrongLetters.map(item => {
               // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
-              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: var(--color-text-dark);">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
             }).join('')
           : '';
         const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
@@ -3452,7 +3426,7 @@
         wrongLettersFront.innerHTML = wrongLetters.length > 0
           ? wrongLetters.map(item => {
               // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
-              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: var(--color-text-dark);">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
             }).join('')
           : '';
         const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
