@@ -3,528 +3,741 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Decoder Test - Obfuscated Module Verification</title>
+  <title>Wordpack Data Structure Debugger</title>
+
+  <!--
+    ============================================================
+    PAKO.JS DEPENDENCY - Required for decompressing obfuscated modules
+    ============================================================
+    Our obfuscated modules use zlib compression (via pako library).
+    This CDN script provides the pako.inflate() function for decompression.
+  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-      padding: 30px;
-    }
-
-    h1 {
-      color: #333;
-      text-align: center;
-      margin-bottom: 10px;
-      font-size: 2.5em;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 30px;
-      font-size: 1.1em;
-    }
-
-    .stats {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-
-    .stat-card {
-      flex: 1;
-      min-width: 200px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .stat-card h3 {
-      font-size: 0.9em;
-      opacity: 0.9;
-      margin-bottom: 8px;
-    }
-
-    .stat-card .value {
-      font-size: 2em;
-      font-weight: bold;
-    }
-
-    .language-section {
-      margin-bottom: 40px;
-      border: 2px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 20px;
-      background: #fafafa;
-    }
-
-    .language-section h2 {
-      color: #333;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .status-badge {
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.8em;
-      font-weight: normal;
-    }
-
-    .status-badge.success {
-      background: #4caf50;
-      color: white;
-    }
-
-    .status-badge.error {
-      background: #f44336;
-      color: white;
-    }
-
-    .status-badge.loading {
-      background: #ff9800;
-      color: white;
-    }
-
-    .module-info {
-      margin: 15px 0;
-      padding: 15px;
-      background: white;
-      border-radius: 6px;
-      border-left: 4px solid #667eea;
-    }
-
-    .module-info h4 {
-      color: #667eea;
-      margin-bottom: 10px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .info-item {
-      display: flex;
-      gap: 8px;
-    }
-
-    .info-label {
-      font-weight: 600;
-      color: #555;
-    }
-
-    .info-value {
-      color: #333;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      background: white;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    thead {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-    }
-
-    th, td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    th {
-      font-weight: 600;
-      font-size: 0.9em;
-    }
-
-    tbody tr:hover {
-      background: #f5f5f5;
-    }
-
-    .error-message {
-      background: #ffebee;
-      color: #c62828;
-      padding: 15px;
-      border-radius: 6px;
-      border-left: 4px solid #c62828;
-      margin-top: 10px;
-    }
-
-    .pack-preview {
-      max-height: 300px;
-      overflow-y: auto;
-      margin-top: 10px;
-    }
-
-    code {
-      background: #f5f5f5;
-      padding: 2px 6px;
-      border-radius: 3px;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9em;
-    }
-
-    .loading-spinner {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 3px solid rgba(255,255,255,.3);
-      border-radius: 50%;
-      border-top-color: #fff;
-      animation: spin 1s ease-in-out infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .btn {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1em;
-      margin: 10px 5px;
-      transition: transform 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .controls {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🔓 Decoder Test</h1>
-    <p class="subtitle">Obfuscated Module Verification Tool</p>
 
-    <div class="stats">
-      <div class="stat-card">
-        <h3>Total Modules Tested</h3>
-        <div class="value" id="totalModules">0</div>
-      </div>
-      <div class="stat-card">
-        <h3>Successfully Decoded</h3>
-        <div class="value" id="successCount">0</div>
-      </div>
-      <div class="stat-card">
-        <h3>Total Packs</h3>
-        <div class="value" id="totalPacks">0</div>
-      </div>
-      <div class="stat-card">
-        <h3>Total Words</h3>
-        <div class="value" id="totalWords">0</div>
-      </div>
-    </div>
+  <!--
+    ============================================================
+    WORDPACK DATA STRUCTURE DEBUGGER
+    ============================================================
 
-    <div class="controls">
-      <button class="btn" onclick="runAllTests()">🔄 Run All Tests</button>
-      <button class="btn" onclick="clearResults()">🗑️ Clear Results</button>
-    </div>
+    PURPOSE:
+    This document serves as a technical reference and debugging tool for our
+    language learning game's wordpack data structure. It demonstrates how to:
+    - Load obfuscated JavaScript modules containing wordpack data
+    - Extract and display vocabulary for language learning
+    - Navigate through acts and packs
+    - Map columns to different languages
 
-    <div id="results"></div>
-  </div>
+    TARGET LANGUAGES WE TEACH:
+    - Spanish (7 acts, 5 column structure)
+    - Chinese (5 acts, 12 column structure)
+    - English (5 acts, 5 column structure)
 
+    DATA STRUCTURE OVERVIEW:
+    Each language has multiple "acts" (learning stages), and each act contains
+    multiple "wordpacks" (vocabulary sets).
+
+    OBFUSCATED MODULE STRUCTURE:
+    Each module exports a dictionary of wordpacks with this structure:
+
+    {
+      "p{act}_{pack}_{name}": {
+        "meta": {
+          "wordpack": 1,                    // Pack number (integer)
+          "english": "Greetings & Goodbyes", // Pack title in English
+          "chinese": "问候语",                // Pack title in Chinese
+          "spanish": "Saludos y Despedidas", // Pack title in Spanish
+          ... // Other language translations as supported
+        },
+        "words": [
+          ["word1_col1", "word1_col2", "word1_col3", ...],  // Each word is an array
+          ["word2_col1", "word2_col2", "word2_col3", ...],
+          ["word3_col1", "word3_col2", "word3_col3", ...]
+        ]
+      },
+      "p{act}_{pack}_{name}": { ... },
+      ...
+    }
+
+    COLUMN MAPPING BY LANGUAGE:
+    The words array contains arrays where each index maps to a specific language:
+
+    SPANISH (5 columns):
+      [0] = Spanish (language being learned)
+      [1] = English
+      [2] = Chinese
+      [3] = Pinyin
+      [4] = Portuguese
+
+    CHINESE (12 columns):
+      [0] = Chinese (language being learned)
+      [1] = Pinyin
+      [2] = English
+      [3] = Spanish
+      [4] = French
+      [5] = Portuguese
+      [6] = Vietnamese
+      [7] = Thai
+      [8] = Khmer
+      [9] = Indonesian
+      [10] = Malay
+      [11] = Filipino
+
+    ENGLISH (5 columns):
+      [0] = English (language being learned)
+      [1] = Chinese
+      [2] = Pinyin
+      [3] = Spanish
+      [4] = Portuguese
+
+    HOW TO USE THIS DATA IN A GAME:
+    1. Import the obfuscated module using decodeObfuscatedModule()
+    2. Select a wordpack from the returned dictionary
+    3. Access wordpack.meta for pack information
+    4. Access wordpack.words for the vocabulary array
+    5. Each word is wordpack.words[i], where i is the word index
+    6. Each column is wordpack.words[i][columnIndex]
+    7. Column 0 is always the language being learned
+    8. Other columns provide translations in various languages
+
+    ============================================================
+  -->
+
+  <h1>Wordpack Data Structure Debugger</h1>
+  <p>Technical reference for language learning game data architecture</p>
+
+  <hr>
+
+  <!--
+    ============================================================
+    LANGUAGE SELECTION - Radio Buttons
+    ============================================================
+    Choose which target language's wordpacks to load.
+    Default: Spanish
+  -->
+  <h2>1. Select Target Language</h2>
+  <p>Which language are you learning?</p>
+  <label>
+    <input type="radio" name="language" value="Spanish" checked>
+    Spanish
+  </label>
+  <label>
+    <input type="radio" name="language" value="Chinese">
+    Chinese
+  </label>
+  <label>
+    <input type="radio" name="language" value="English">
+    English
+  </label>
+
+  <hr>
+
+  <!--
+    ============================================================
+    ACT SELECTION - Dropdown
+    ============================================================
+    Acts are learning stages. Each language has different numbers of acts:
+    - Spanish: 7 acts
+    - Chinese: 5 acts
+    - English: 5 acts
+  -->
+  <h2>2. Select Act (Learning Stage)</h2>
+  <p>Acts are grouped learning stages containing multiple wordpacks.</p>
+  <select id="actSelect">
+    <option value="">Loading...</option>
+  </select>
+
+  <hr>
+
+  <!--
+    ============================================================
+    WORDPACK SELECTION - Dropdown
+    ============================================================
+    Each act contains multiple wordpacks (vocabulary sets).
+    This dropdown populates based on the selected act.
+  -->
+  <h2>3. Select Wordpack</h2>
+  <p>Individual vocabulary set within the selected act.</p>
+  <select id="packSelect">
+    <option value="">First select an act</option>
+  </select>
+
+  <hr>
+
+  <!--
+    ============================================================
+    NATIVE LANGUAGE SELECTION - "I Speak" Dropdown
+    ============================================================
+    This determines which column to display in the right column of the table.
+    Column 0 (left) is always the target language being learned.
+    Column N (right) is the native language the user speaks.
+
+    Available options depend on the target language's column structure.
+  -->
+  <h2>4. Select Your Native Language (I Speak)</h2>
+  <p>Which language do you speak? This determines the translation column shown.</p>
+  <select id="nativeLanguageSelect">
+    <option value="">Loading...</option>
+  </select>
+
+  <hr>
+
+  <!--
+    ============================================================
+    VOCABULARY TABLE - 2 Column Display
+    ============================================================
+    Displays the selected wordpack's vocabulary in a simple 2-column table:
+    - Left column: Target language (column 0) - "I am learning"
+    - Right column: Native language (selected column) - "I speak"
+  -->
+  <h2>5. Vocabulary Table</h2>
+  <p><strong>Pack Title:</strong> <span id="packTitle">Select a wordpack to view</span></p>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th id="col1Header">I am learning</th>
+        <th id="col2Header">I speak</th>
+      </tr>
+    </thead>
+    <tbody id="vocabularyTable">
+      <tr>
+        <td colspan="2">Loading data...</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!--
+    ============================================================
+    DEBUG INFORMATION
+    ============================================================
+    Shows technical details about loaded data for debugging purposes.
+  -->
+  <h2>6. Debug Information</h2>
+  <pre id="debugInfo">Initializing...</pre>
+
+  <!--
+    ============================================================
+    JAVASCRIPT MODULE - Main Logic
+    ============================================================
+    This section contains all the JavaScript logic for:
+    1. Decoding obfuscated modules (3-layer: base64 + zlib + string reversal)
+    2. Loading language data automatically on page load
+    3. Populating dropdowns dynamically
+    4. Displaying vocabulary in 2-column table
+    5. Handling user interactions (language/act/pack/native language changes)
+  -->
   <script type="module">
-    // Decoder function (same as used in game.js)
+
+    // ============================================================
+    // CONFIGURATION: Language Module Paths and Column Structures
+    // ============================================================
+
+    /*
+      This configuration maps each target language to:
+      1. Module file paths (obfuscated .js files for each act)
+      2. Column structure (what each column index represents)
+      3. Available native languages (for "I speak" dropdown)
+    */
+    const LANGUAGE_CONFIG = {
+      'Spanish': {
+        modules: [
+          { act: 1, name: 'Foundation', path: './SpanishWords/Jsmodules-js/act1-foundation-js.js' },
+          { act: 2, name: 'Building Blocks', path: './SpanishWords/Jsmodules-js/act2-building-blocks-js.js' },
+          { act: 3, name: 'Daily Life', path: './SpanishWords/Jsmodules-js/act3-daily-life-js.js' },
+          { act: 4, name: 'Expanding Expression', path: './SpanishWords/Jsmodules-js/act4-expanding-expression-js.js' },
+          { act: 5, name: 'Intermediate Mastery', path: './SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js' },
+          { act: 6, name: 'Advanced Constructs', path: './SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js' },
+          { act: 7, name: 'Mastery Fluency', path: './SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js' }
+        ],
+        columns: ['Spanish', 'English', 'Chinese', 'Pinyin', 'Portuguese'],
+        nativeLanguages: {
+          'English': 1,
+          'Chinese': 2,
+          'Pinyin': 3,
+          'Portuguese': 4
+        }
+      },
+      'Chinese': {
+        modules: [
+          { act: 1, name: 'Foundation', path: './ChineseWords/Jsmodules-js/act1-foundation-js.js' },
+          { act: 2, name: 'Development', path: './ChineseWords/Jsmodules-js/act2-development-js.js' },
+          { act: 3, name: 'Expansion', path: './ChineseWords/Jsmodules-js/act3-expansion-js.js' },
+          { act: 4, name: 'Mastery', path: './ChineseWords/Jsmodules-js/act4-mastery-js.js' },
+          { act: 5, name: 'Refinement', path: './ChineseWords/Jsmodules-js/act5-refinement-js.js' }
+        ],
+        columns: ['Chinese', 'Pinyin', 'English', 'Spanish', 'French', 'Portuguese', 'Vietnamese', 'Thai', 'Khmer', 'Indonesian', 'Malay', 'Filipino'],
+        nativeLanguages: {
+          'English': 2,
+          'Spanish': 3,
+          'French': 4,
+          'Portuguese': 5,
+          'Vietnamese': 6,
+          'Thai': 7,
+          'Khmer': 8,
+          'Indonesian': 9,
+          'Malay': 10,
+          'Filipino': 11
+        }
+      },
+      'English': {
+        modules: [
+          { act: 1, name: 'Foundation', path: './EnglishWords/Jsmodules-js/act1-foundation-js.js' },
+          { act: 2, name: 'Building Blocks', path: './EnglishWords/Jsmodules-js/act2-building-blocks-js.js' },
+          { act: 3, name: 'Everyday Life', path: './EnglishWords/Jsmodules-js/act3-everyday-life-js.js' },
+          { act: 4, name: 'Expanding Horizons', path: './EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js' },
+          { act: 5, name: 'Advanced Mastery', path: './EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js' }
+        ],
+        columns: ['English', 'Chinese', 'Pinyin', 'Spanish', 'Portuguese'],
+        nativeLanguages: {
+          'Chinese': 1,
+          'Pinyin': 2,
+          'Spanish': 3,
+          'Portuguese': 4
+        }
+      }
+    };
+
+    // ============================================================
+    // GLOBAL STATE: Stores loaded data and current selections
+    // ============================================================
+
+    /*
+      Global state object tracks:
+      - currentLanguage: Which target language is selected
+      - loadedData: Dictionary mapping act numbers to decoded wordpack data
+      - currentAct: Currently selected act number
+      - currentPack: Currently selected wordpack key
+      - currentNativeLanguage: Column index for native language
+    */
+    let state = {
+      currentLanguage: 'Spanish',  // Default language
+      loadedData: {},               // { actNumber: { packKey: {meta, words}, ... } }
+      currentAct: null,
+      currentPack: null,
+      currentNativeLanguage: 1      // Default to English column (index 1 for Spanish)
+    };
+
+    // ============================================================
+    // DECODER FUNCTION: Decodes Obfuscated Modules
+    // ============================================================
+
+    /*
+      Our wordpack modules are obfuscated using 3 layers of protection:
+      1. Base64 encoding - Allows safe transport as JavaScript string
+      2. Zlib compression (via pako) - Reduces file size by ~60%
+      3. String reversal - Simple salt to prevent casual JSON parsing
+
+      This function reverses all 3 steps to extract the original JSON data.
+
+      INPUT: URL path to obfuscated module (e.g., './SpanishWords/Jsmodules-js/act1-foundation-js.js')
+      OUTPUT: JavaScript object containing all wordpacks in that act
+
+      EXAMPLE OUTPUT STRUCTURE:
+      {
+        "p1_1_greetings__goodbyes": {
+          meta: { wordpack: 1, english: "Greetings & Goodbyes", ... },
+          words: [
+            ["hola amigo", "hello friend (masculine)", "你好朋友", "nǐ hǎo péngyǒu", "olá amigo"],
+            ["hola amiga", "hello friend (feminine)", "你好朋友", "nǐ hǎo péngyǒu", "olá amiga"],
+            ...
+          ]
+        },
+        "p1_2_another_pack": { ... },
+        ...
+      }
+    */
     async function decodeObfuscatedModule(url) {
       try {
-        // 1. Import the obfuscated module (contains base64 string in 'w' export)
+        // STEP 1: Import the obfuscated module
+        // The module exports a single variable 'w' containing the base64 string
         const module = await import(url);
         const compressedB64 = module.w;
 
-        // 2. Decode base64 to binary
+        // STEP 2: Decode base64 to binary
+        // atob() converts base64 string to binary string
+        // We then convert to Uint8Array for pako
         const compressedBinary = Uint8Array.from(atob(compressedB64), c => c.charCodeAt(0));
 
-        // 3. Decompress with pako (zlib)
+        // STEP 3: Decompress with pako (zlib decompression)
+        // This inflates the compressed data back to original size
         const decompressedBinary = pako.inflate(compressedBinary);
 
-        // 4. Convert binary to string
+        // STEP 4: Convert binary to UTF-8 string
         const reversedJson = new TextDecoder('utf-8').decode(decompressedBinary);
 
-        // 5. Reverse the string (undo the salt)
+        // STEP 5: Reverse the string (undo the salt)
+        // Original was reversed character-by-character
         const jsonStr = reversedJson.split('').reverse().join('');
 
-        // 6. Parse JSON to get the original data
+        // STEP 6: Parse JSON to get the original JavaScript object
         const data = JSON.parse(jsonStr);
 
-        return data;  // Returns object with all packs: { p1_1_name: {meta, words}, ... }
+        return data;
       } catch (error) {
-        console.error('Failed to decode module:', error);
+        console.error('Failed to decode module:', url, error);
         throw error;
       }
     }
 
-    // Column headers for each language (matches CSV structure)
-    const columnHeaders = {
-      'Chinese': ['Chinese', 'Pinyin', 'English', 'Spanish', 'French', 'Portuguese', 'Vietnamese', 'Thai', 'Khmer', 'Indonesian', 'Malay', 'Filipino'],
-      'Spanish': ['Spanish', 'English', 'Chinese', 'Pinyin', 'Portuguese'],
-      'English': ['English', 'Chinese', 'Pinyin', 'Spanish', 'Portuguese']
-    };
+    // ============================================================
+    // INITIALIZATION: Load Data on Page Load
+    // ============================================================
 
-    // Test configuration
-    const tests = [
-      { lang: 'Chinese', files: [
-        './ChineseWords/Jsmodules-js/act1-foundation-js.js',
-        './ChineseWords/Jsmodules-js/act2-development-js.js',
-        './ChineseWords/Jsmodules-js/act3-expansion-js.js',
-        './ChineseWords/Jsmodules-js/act4-mastery-js.js',
-        './ChineseWords/Jsmodules-js/act5-refinement-js.js'
-      ]},
-      { lang: 'Spanish', files: [
-        './SpanishWords/Jsmodules-js/act1-foundation-js.js',
-        './SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
-        './SpanishWords/Jsmodules-js/act3-daily-life-js.js',
-        './SpanishWords/Jsmodules-js/act4-expanding-expression-js.js',
-        './SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js',
-        './SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js',
-        './SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js'
-      ]},
-      { lang: 'English', files: [
-        './EnglishWords/Jsmodules-js/act1-foundation-js.js',
-        './EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
-        './EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
-        './EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
-        './EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
-      ]}
-    ];
+    /*
+      This function runs automatically when the page loads.
+      It loads the default language (Spanish) data and populates UI.
 
-    // Global stats
-    let stats = {
-      totalModules: 0,
-      successCount: 0,
-      totalPacks: 0,
-      totalWords: 0
-    };
+      WORKFLOW:
+      1. Load all acts for the default language
+      2. Populate act dropdown
+      3. Populate native language dropdown
+      4. Auto-select first act
+      5. Display vocabulary
+    */
+    async function initialize() {
+      updateDebugInfo('Initializing... Loading Spanish data (default)');
 
-    function updateStats() {
-      document.getElementById('totalModules').textContent = stats.totalModules;
-      document.getElementById('successCount').textContent = stats.successCount;
-      document.getElementById('totalPacks').textContent = stats.totalPacks;
-      document.getElementById('totalWords').textContent = stats.totalWords;
-    }
+      // Load data for default language (Spanish)
+      await loadLanguageData('Spanish');
 
-    async function testModule(url, langName) {
-      const fileName = url.split('/').pop();
-      const startTime = performance.now();
+      // Setup UI
+      setupLanguageRadioButtons();
+      populateActDropdown();
+      populateNativeLanguageDropdown();
 
-      try {
-        const data = await decodeObfuscatedModule(url);
-        const endTime = performance.now();
-        const decodeTime = (endTime - startTime).toFixed(2);
+      // Auto-select first act
+      if (state.loadedData && Object.keys(state.loadedData).length > 0) {
+        const firstAct = Math.min(...Object.keys(state.loadedData).map(Number));
+        state.currentAct = firstAct;
+        document.getElementById('actSelect').value = firstAct;
 
-        // Count packs and words
-        const packs = Object.keys(data);
-        const packCount = packs.length;
-        let wordCount = 0;
+        // Populate pack dropdown for first act
+        populatePackDropdown();
 
-        packs.forEach(packKey => {
-          if (data[packKey].words) {
-            wordCount += data[packKey].words.length;
-          }
-        });
+        // Auto-select first pack
+        const firstActData = state.loadedData[firstAct];
+        if (firstActData) {
+          const firstPackKey = Object.keys(firstActData)[0];
+          state.currentPack = firstPackKey;
+          document.getElementById('packSelect').value = firstPackKey;
 
-        stats.successCount++;
-        stats.totalPacks += packCount;
-        stats.totalWords += wordCount;
-
-        return {
-          success: true,
-          fileName,
-          decodeTime,
-          packCount,
-          wordCount,
-          data,
-          samplePack: data[packs[0]],
-          langName
-        };
-      } catch (error) {
-        return {
-          success: false,
-          fileName,
-          error: error.message
-        };
-      }
-    }
-
-    async function testLanguage(langConfig) {
-      const resultsDiv = document.getElementById('results');
-
-      const section = document.createElement('div');
-      section.className = 'language-section';
-      section.id = `section-${langConfig.lang}`;
-
-      const header = document.createElement('h2');
-      header.innerHTML = `
-        ${langConfig.lang}
-        <span class="status-badge loading">
-          <span class="loading-spinner"></span> Testing...
-        </span>
-      `;
-      section.appendChild(header);
-
-      resultsDiv.appendChild(section);
-
-      const results = [];
-      for (const file of langConfig.files) {
-        stats.totalModules++;
-        updateStats();
-        const result = await testModule(file, langConfig.lang);
-        results.push(result);
-      }
-
-      // Update section with results
-      section.innerHTML = '';
-
-      const successCount = results.filter(r => r.success).length;
-      const allSuccess = successCount === results.length;
-
-      header.innerHTML = `
-        ${langConfig.lang}
-        <span class="status-badge ${allSuccess ? 'success' : 'error'}">
-          ${successCount}/${results.length} modules decoded
-        </span>
-      `;
-      section.appendChild(header);
-
-      results.forEach(result => {
-        const moduleDiv = document.createElement('div');
-        moduleDiv.className = 'module-info';
-
-        if (result.success) {
-          const sampleWords = result.samplePack.words.slice(0, 5);
-          const headers = columnHeaders[result.langName];
-
-          moduleDiv.innerHTML = `
-            <h4>✅ ${result.fileName}</h4>
-            <div class="info-grid">
-              <div class="info-item">
-                <span class="info-label">Decode Time:</span>
-                <span class="info-value">${result.decodeTime}ms</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Packs:</span>
-                <span class="info-value">${result.packCount}</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Total Words:</span>
-                <span class="info-value">${result.wordCount}</span>
-              </div>
-            </div>
-            <details>
-              <summary style="cursor: pointer; font-weight: 600; margin: 10px 0;">
-                📋 Sample Pack: <code>${Object.keys(result.data)[0]}</code>
-              </summary>
-              <div style="margin-top: 10px;">
-                <strong>Meta:</strong>
-                <pre style="background: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto;">${JSON.stringify(result.samplePack.meta, null, 2)}</pre>
-                <strong>Sample Words (first 5):</strong>
-                <div class="pack-preview">
-                  <table>
-                    <thead>
-                      <tr>
-                        ${headers.map(header => `<th>${header}</th>`).join('')}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      ${sampleWords.map(word => `
-                        <tr>
-                          ${word.map(col => `<td>${col}</td>`).join('')}
-                        </tr>
-                      `).join('')}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </details>
-          `;
-        } else {
-          moduleDiv.innerHTML = `
-            <h4>❌ ${result.fileName}</h4>
-            <div class="error-message">
-              <strong>Error:</strong> ${result.error}
-            </div>
-          `;
+          // Display vocabulary
+          displayVocabulary();
         }
+      }
 
-        section.appendChild(moduleDiv);
+      updateDebugInfo('Initialization complete. Ready to use.');
+    }
+
+    // ============================================================
+    // LOAD LANGUAGE DATA: Fetches and Decodes All Acts
+    // ============================================================
+
+    /*
+      Loads all act modules for the specified language.
+
+      INPUT: languageName (string) - 'Spanish', 'Chinese', or 'English'
+      OUTPUT: Populates state.loadedData with decoded wordpacks
+
+      PROCESS:
+      1. Get module list from LANGUAGE_CONFIG
+      2. Loop through each act module
+      3. Decode the obfuscated module
+      4. Store in state.loadedData[actNumber]
+    */
+    async function loadLanguageData(languageName) {
+      updateDebugInfo(`Loading ${languageName} data...`);
+
+      const config = LANGUAGE_CONFIG[languageName];
+      state.loadedData = {};  // Clear previous data
+
+      // Load each act module
+      for (const moduleInfo of config.modules) {
+        updateDebugInfo(`Loading Act ${moduleInfo.act}: ${moduleInfo.name}...`);
+
+        try {
+          const actData = await decodeObfuscatedModule(moduleInfo.path);
+          state.loadedData[moduleInfo.act] = actData;
+          updateDebugInfo(`✓ Act ${moduleInfo.act} loaded (${Object.keys(actData).length} packs)`);
+        } catch (error) {
+          updateDebugInfo(`✗ Failed to load Act ${moduleInfo.act}: ${error.message}`);
+        }
+      }
+
+      updateDebugInfo(`${languageName} data loading complete.`);
+    }
+
+    // ============================================================
+    // SETUP LANGUAGE RADIO BUTTONS: Event Listeners
+    // ============================================================
+
+    /*
+      Attaches change event listeners to language radio buttons.
+      When user changes language, reload all data for that language.
+    */
+    function setupLanguageRadioButtons() {
+      const radios = document.querySelectorAll('input[name="language"]');
+      radios.forEach(radio => {
+        radio.addEventListener('change', async (e) => {
+          const newLanguage = e.target.value;
+          state.currentLanguage = newLanguage;
+          state.currentAct = null;
+          state.currentPack = null;
+
+          // Reset native language to first available option
+          const nativeLanguages = LANGUAGE_CONFIG[newLanguage].nativeLanguages;
+          state.currentNativeLanguage = Object.values(nativeLanguages)[0];
+
+          // Reload data for new language
+          await loadLanguageData(newLanguage);
+
+          // Update UI
+          populateActDropdown();
+          populateNativeLanguageDropdown();
+          populatePackDropdown();
+          displayVocabulary();
+        });
+      });
+    }
+
+    // ============================================================
+    // POPULATE ACT DROPDOWN: Based on Loaded Data
+    // ============================================================
+
+    /*
+      Populates the act dropdown with available acts for current language.
+
+      PROCESS:
+      1. Get acts from state.loadedData
+      2. Get act names from LANGUAGE_CONFIG
+      3. Create option elements
+      4. Add change event listener
+    */
+    function populateActDropdown() {
+      const actSelect = document.getElementById('actSelect');
+      actSelect.innerHTML = '<option value="">Select an act</option>';
+
+      const acts = Object.keys(state.loadedData).map(Number).sort((a, b) => a - b);
+      const config = LANGUAGE_CONFIG[state.currentLanguage];
+
+      acts.forEach(actNum => {
+        const moduleInfo = config.modules.find(m => m.act === actNum);
+        const option = document.createElement('option');
+        option.value = actNum;
+        option.textContent = `Act ${actNum}: ${moduleInfo.name}`;
+        actSelect.appendChild(option);
       });
 
-      updateStats();
+      // Event listener for act change
+      actSelect.addEventListener('change', (e) => {
+        state.currentAct = parseInt(e.target.value);
+        state.currentPack = null;
+        populatePackDropdown();
+        displayVocabulary();
+      });
     }
 
-    window.runAllTests = async function() {
-      // Reset stats
-      stats = {
-        totalModules: 0,
-        successCount: 0,
-        totalPacks: 0,
-        totalWords: 0
-      };
+    // ============================================================
+    // POPULATE PACK DROPDOWN: Based on Selected Act
+    // ============================================================
 
-      document.getElementById('results').innerHTML = '<p style="text-align: center; color: #666;">Running tests...</p>';
-      updateStats();
+    /*
+      Populates the pack dropdown with wordpacks from selected act.
 
-      for (const test of tests) {
-        await testLanguage(test);
+      PROCESS:
+      1. Get pack keys from state.loadedData[currentAct]
+      2. Extract pack metadata (title in English)
+      3. Create option elements
+      4. Add change event listener
+    */
+    function populatePackDropdown() {
+      const packSelect = document.getElementById('packSelect');
+
+      if (!state.currentAct) {
+        packSelect.innerHTML = '<option value="">First select an act</option>';
+        return;
       }
 
-      console.log('All tests completed!', stats);
-    };
+      packSelect.innerHTML = '<option value="">Select a wordpack</option>';
 
-    window.clearResults = function() {
-      document.getElementById('results').innerHTML = '';
-      stats = {
-        totalModules: 0,
-        successCount: 0,
-        totalPacks: 0,
-        totalWords: 0
-      };
-      updateStats();
-    };
+      const actData = state.loadedData[state.currentAct];
+      if (!actData) return;
 
-    // Auto-run on load
-    window.addEventListener('load', () => {
-      console.log('DecoderTest.html loaded. Click "Run All Tests" to start.');
-    });
+      // Get all pack keys and sort by wordpack number
+      const packKeys = Object.keys(actData);
+      packKeys.sort((a, b) => {
+        const numA = actData[a].meta.wordpack;
+        const numB = actData[b].meta.wordpack;
+        return numA - numB;
+      });
+
+      packKeys.forEach(packKey => {
+        const pack = actData[packKey];
+        const option = document.createElement('option');
+        option.value = packKey;
+        option.textContent = `Pack ${pack.meta.wordpack}: ${pack.meta.english}`;
+        packSelect.appendChild(option);
+      });
+
+      // Event listener for pack change
+      packSelect.addEventListener('change', (e) => {
+        state.currentPack = e.target.value;
+        displayVocabulary();
+      });
+    }
+
+    // ============================================================
+    // POPULATE NATIVE LANGUAGE DROPDOWN: Based on Current Language
+    // ============================================================
+
+    /*
+      Populates the "I speak" dropdown with available native languages.
+      Available options depend on the column structure of target language.
+
+      EXAMPLE:
+      If learning Spanish, can choose: English, Chinese, Pinyin, Portuguese
+      If learning Chinese, can choose: English, Spanish, French, Portuguese, etc.
+    */
+    function populateNativeLanguageDropdown() {
+      const nativeSelect = document.getElementById('nativeLanguageSelect');
+      nativeSelect.innerHTML = '';
+
+      const config = LANGUAGE_CONFIG[state.currentLanguage];
+      const nativeLanguages = config.nativeLanguages;
+
+      Object.entries(nativeLanguages).forEach(([langName, columnIndex]) => {
+        const option = document.createElement('option');
+        option.value = columnIndex;
+        option.textContent = langName;
+        if (columnIndex === state.currentNativeLanguage) {
+          option.selected = true;
+        }
+        nativeSelect.appendChild(option);
+      });
+
+      // Event listener for native language change
+      nativeSelect.addEventListener('change', (e) => {
+        state.currentNativeLanguage = parseInt(e.target.value);
+        displayVocabulary();
+      });
+    }
+
+    // ============================================================
+    // DISPLAY VOCABULARY: Show 2-Column Table
+    // ============================================================
+
+    /*
+      Displays vocabulary for the selected wordpack in a 2-column table.
+
+      TABLE STRUCTURE:
+      - Left column (column 0): Target language being learned
+      - Right column (selected): Native language for translation
+
+      PROCESS:
+      1. Get selected wordpack from state.loadedData
+      2. Update table headers with language names
+      3. Loop through words array
+      4. Create table row for each word
+      5. Display word[0] in left column, word[nativeLanguageIndex] in right column
+    */
+    function displayVocabulary() {
+      const tableBody = document.getElementById('vocabularyTable');
+      const packTitleEl = document.getElementById('packTitle');
+      const col1Header = document.getElementById('col1Header');
+      const col2Header = document.getElementById('col2Header');
+
+      // Clear table
+      tableBody.innerHTML = '';
+
+      // Validate selection
+      if (!state.currentAct || !state.currentPack) {
+        tableBody.innerHTML = '<tr><td colspan="2">Please select an act and wordpack</td></tr>';
+        packTitleEl.textContent = 'No pack selected';
+        return;
+      }
+
+      // Get wordpack data
+      const actData = state.loadedData[state.currentAct];
+      if (!actData) {
+        tableBody.innerHTML = '<tr><td colspan="2">Act data not loaded</td></tr>';
+        return;
+      }
+
+      const pack = actData[state.currentPack];
+      if (!pack) {
+        tableBody.innerHTML = '<tr><td colspan="2">Pack not found</td></tr>';
+        return;
+      }
+
+      // Update pack title
+      packTitleEl.textContent = `Pack ${pack.meta.wordpack}: ${pack.meta.english}`;
+
+      // Update table headers
+      const config = LANGUAGE_CONFIG[state.currentLanguage];
+      const targetLanguage = config.columns[0];  // Column 0 is always target language
+      const nativeLanguage = config.columns[state.currentNativeLanguage];
+
+      col1Header.textContent = `I am learning (${targetLanguage})`;
+      col2Header.textContent = `I speak (${nativeLanguage})`;
+
+      // Populate table with vocabulary
+      pack.words.forEach((word, index) => {
+        const row = document.createElement('tr');
+
+        // Left column: Target language (column 0)
+        const cell1 = document.createElement('td');
+        cell1.textContent = word[0];
+        row.appendChild(cell1);
+
+        // Right column: Native language (selected column)
+        const cell2 = document.createElement('td');
+        cell2.textContent = word[state.currentNativeLanguage];
+        row.appendChild(cell2);
+
+        tableBody.appendChild(row);
+      });
+
+      // Update debug info
+      updateDebugInfo(`Displaying Pack ${pack.meta.wordpack}: ${pack.meta.english}\n` +
+                      `Total words: ${pack.words.length}\n` +
+                      `Target language: ${targetLanguage} (column 0)\n` +
+                      `Native language: ${nativeLanguage} (column ${state.currentNativeLanguage})`);
+    }
+
+    // ============================================================
+    // UPDATE DEBUG INFO: Display Technical Details
+    // ============================================================
+
+    /*
+      Updates the debug information section with current state and messages.
+      Useful for developers/LLMs to understand what's happening.
+    */
+    function updateDebugInfo(message) {
+      const debugInfo = document.getElementById('debugInfo');
+      const timestamp = new Date().toLocaleTimeString();
+      debugInfo.textContent = `[${timestamp}] ${message}\n\n` +
+        `Current State:\n` +
+        `- Language: ${state.currentLanguage}\n` +
+        `- Act: ${state.currentAct || 'None'}\n` +
+        `- Pack: ${state.currentPack || 'None'}\n` +
+        `- Native Language Column: ${state.currentNativeLanguage}\n` +
+        `- Loaded Acts: ${Object.keys(state.loadedData).join(', ') || 'None'}`;
+    }
+
+    // ============================================================
+    // AUTO-RUN ON PAGE LOAD
+    // ============================================================
+
+    /*
+      Automatically initialize when DOM is ready.
+      This removes the need for a "Run Test" button.
+    */
+    window.addEventListener('DOMContentLoaded', initialize);
+
   </script>
+
 </body>
 </html>
