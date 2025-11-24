@@ -130,11 +130,6 @@
       opacity: 1;
     }
 
-    /* Show wordpack title when menu is visible */
-    body.showing-menu .wordpack-title {
-      opacity: 1;
-    }
-
     /* Card Counter Wrapper - fixed height prevents layout shift when stamp appears */
     .card-counter-wrapper {
       min-height: 2.5rem; /* Accommodate counter + stamp indicator */
@@ -154,11 +149,6 @@
     }
 
     body.game-started .card-counter {
-      opacity: 1;
-    }
-
-    /* Show card counter when menu is visible */
-    body.showing-menu .card-counter {
       opacity: 1;
     }
 
@@ -2154,9 +2144,8 @@
       }
       isOnStartingCard = true;
 
-      // Add showing-menu class so menu content and UI elements are visible
+      // Add showing-menu class so menu content is visible (not hidden by opacity:0 rule)
       flashcard.classList.add('showing-menu');
-      document.body.classList.add('showing-menu');
 
       // Update titles
       wordpackTitle.textContent = 'Spanish Flashcards';
@@ -2184,7 +2173,6 @@
 
       // Remove showing-menu class
       flashcard.classList.remove('showing-menu');
-      document.body.classList.remove('showing-menu');
 
       currentIndex = savedIndex;
       updateWordpackTitle(); // Restore wordpack title
@@ -3523,7 +3511,6 @@
       // Exit starting card state if we're on it
       isOnStartingCard = false;
       flashcard.classList.remove('showing-menu');
-      document.body.classList.remove('showing-menu');
 
       // Initialize deck
       initializeDeck(currentWordpackKey);
