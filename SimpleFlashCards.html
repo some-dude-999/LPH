@@ -1000,16 +1000,12 @@
       background-size: var(--cardboard-texture-size), 100%;
     }
 
-    .help-btn {
+    .menu-btn {
       right: 20px;
     }
 
-    .menu-btn {
-      right: 80px;
-    }
-
     .reset-top-btn {
-      right: 140px;
+      right: 80px;
       opacity: 0;
       pointer-events: none;
     }
@@ -1394,57 +1390,94 @@
       font-family: 'Courier New', monospace;
       font-style: normal;
     }
+
+    /* =============================================== */
+    /* CUSTOM TOOLTIPS - Hover Explanations */
+    /* =============================================== */
+
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      z-index: 300;
+      background: rgba(44, 24, 16, 0.95);
+      color: #F5E6D3;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      font-family: 'IM Fell English', serif;
+    }
+
+    /* Position tooltip below mode buttons */
+    .mode-btn .tooltip {
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Position tooltip above flashcard */
+    .flashcard .tooltip {
+      bottom: calc(100% + 15px);
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 400px;
+      white-space: normal;
+      text-align: center;
+    }
+
+    /* Show tooltip on hover */
+    .tooltip-container:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Small arrow pointing to element */
+    .tooltip::after {
+      content: '';
+      position: absolute;
+      border: 6px solid transparent;
+    }
+
+    /* Arrow pointing up (for tooltips below element) */
+    .mode-btn .tooltip::after {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-color: rgba(44, 24, 16, 0.95);
+    }
+
+    /* Arrow pointing down (for tooltips above element) */
+    .flashcard .tooltip::after {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top-color: rgba(44, 24, 16, 0.95);
+    }
+
+    .tooltip strong {
+      color: #FFD700;
+    }
+
+    .tooltip em {
+      color: #D4AF37;
+      font-style: normal;
+    }
   </style>
 </head>
 <body>
   <!-- Top Corner Buttons (all on right side) -->
   <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
   <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
-  <button class="top-btn help-btn" id="help-btn" aria-label="Help">?</button>
-
-  <!-- Help Modal -->
-  <div class="modal-overlay" id="help-modal">
-    <div class="modal-card">
-      <div class="modal-title">How to Use</div>
-      <div class="modal-content">
-        <h3>📚 Getting Started</h3>
-        <p>Select a wordpack and your native language, then click Start to begin practicing!</p>
-
-        <h3>🎯 Learning Modes</h3>
-        <ul>
-          <li><strong>📖 Reading</strong> — Read Spanish word mentally, flip to see English translation</li>
-          <li><strong>👂 Listening</strong> — Hear Spanish word, type it out, flip to see Spanish | English (auto-pronounces)</li>
-          <li><strong>✏️ Writing</strong> — See English, type Spanish translation, flip to see correct Spanish (auto-pronounces)</li>
-        </ul>
-        <p><em>⚠️ Typing modes: Wrong attempts add 2 practice cards automatically!</em></p>
-
-        <h3>⌨️ Keyboard Controls</h3>
-        <ul>
-          <li><strong>←/→ Arrows</strong> — Navigate between cards</li>
-          <li><strong>↑ Arrow</strong> — Pronounce Spanish word (always)</li>
-          <li><strong>↓ Arrow</strong> — Flip card to see back (always)</li>
-          <li><strong>Space</strong> — Pronounce (Reading) / Record speech (Speaking)</li>
-          <li><strong>Letters</strong> — Type answer (Listening & Writing modes)</li>
-          <li><strong>Enter</strong> — Next card when complete (Listening & Writing modes)</li>
-        </ul>
-
-        <h3>👌 / 😕 Buttons</h3>
-        <ul>
-          <li><strong>👌 Got it!</strong> — Remove this card from deck</li>
-          <li><strong>😕 Confused</strong> — Add 2 copies for extra practice</li>
-          <li><strong>↺ Reset</strong> — Restore all cards to deck</li>
-        </ul>
-
-        <h3>🔊 Audio Features</h3>
-        <ul>
-          <li><strong>🔊</strong> — Hear pronunciation</li>
-          <li><strong>🎤</strong> — Practice speaking (get scored!)</li>
-          <li><strong>Speed</strong> — Adjust speech rate</li>
-        </ul>
-      </div>
-      <button class="modal-close-btn" id="help-close">Got it!</button>
-    </div>
-  </div>
 
   <!-- Menu Modal -->
   <div class="modal-overlay" id="menu-modal">
@@ -1496,16 +1529,29 @@
 
   <!-- Mode Selector -->
   <div class="mode-selector">
-    <button class="mode-btn active" id="mode-reading" data-mode="reading" title="Reading Mode">📖</button>
-    <button class="mode-btn" id="mode-listening" data-mode="listening" title="Listening Mode">👂</button>
-    <button class="mode-btn" id="mode-speaking" data-mode="speaking" title="Speaking Mode">💬</button>
-    <button class="mode-btn" id="mode-writing" data-mode="writing" title="Writing Mode">✏️</button>
+    <span class="tooltip-container">
+      <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br>Read Spanish mentally, flip to see English<br><em>Keys: ↓ flip | ← → navigate</em></span>
+    </span>
+    <span class="tooltip-container">
+      <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br>Hear Spanish, type it out<br><em>Auto-pronounces | Wrong = +2 cards</em></span>
+    </span>
+    <span class="tooltip-container">
+      <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br>See Spanish, speak it aloud<br><em>Get pronunciation score!</em></span>
+    </span>
+    <span class="tooltip-container">
+      <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br>See English, type Spanish<br><em>Auto-pronounces | Wrong = +2 cards</em></span>
+    </span>
   </div>
 
   <div class="flashcard-container">
     <button class="nav-btn" id="prev-btn" aria-label="Previous card">‹</button>
-    
-    <div class="flashcard" id="flashcard">
+
+    <span class="tooltip-container">
+      <div class="flashcard" id="flashcard">
       <!-- Setup Overlay (Front - Settings) -->
       <div class="setup-overlay" id="setup-overlay">
         <div class="setup-title">Settings</div>
@@ -1544,7 +1590,6 @@
         </div>
 
         <button class="setup-start-btn" id="start-btn" disabled>Start Practice</button>
-        <button class="setup-flip-btn" id="setup-to-help" title="How to Use">?</button>
       </div>
 
       <!-- Setup Help (Back - How To) -->
@@ -1574,7 +1619,6 @@
             <li><strong>🎤</strong> — Practice speaking (get scored!)</li>
           </ul>
         </div>
-        <button class="setup-flip-btn" id="help-to-setup" title="Back to Settings">⚙</button>
       </div>
 
       <div class="card-face card-front">
@@ -1608,7 +1652,13 @@
       <!-- Stamp overlays for visual feedback -->
       <div class="stamp-base card-stamp removed-stamp" id="removed-stamp">Card Removed</div>
       <div class="stamp-base card-stamp added-stamp" id="added-stamp">Extra Practice</div>
-    </div>
+      </div>
+      <span class="tooltip" id="card-tooltip">
+        <strong>📖 Reading Mode</strong><br>
+        Read Spanish word mentally, flip to see English<br>
+        <em>↓ flip | ← → navigate | 👌 remove | 😕 practice</em>
+      </span>
+    </span>
 
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
   </div>
@@ -1690,8 +1740,6 @@
     const languageSelect = document.getElementById('language-select');
     const setupOverlay = document.getElementById('setup-overlay');
     const setupHelp = document.getElementById('setup-help');
-    const setupToHelp = document.getElementById('setup-to-help');
-    const helpToSetup = document.getElementById('help-to-setup');
     const setupVoice = document.getElementById('setup-voice');
     const setupSpeedBtns = document.querySelectorAll('.setup-speed-btn');
     const startBtn = document.getElementById('start-btn');
@@ -1720,11 +1768,9 @@
     const modeListening = document.getElementById('mode-listening');
     const modeSpeaking = document.getElementById('mode-speaking');
     const modeWriting = document.getElementById('mode-writing');
+    const cardTooltip = document.getElementById('card-tooltip');
 
     // Modal elements
-    const helpBtn = document.getElementById('help-btn');
-    const helpModal = document.getElementById('help-modal');
-    const helpClose = document.getElementById('help-close');
     const menuBtn = document.getElementById('menu-btn');
     const menuModal = document.getElementById('menu-modal');
     const menuClose = document.getElementById('menu-close');
@@ -2134,11 +2180,28 @@
       }, 0);
     }
 
+    // Update flashcard hover tooltip based on current mode
+    function updateCardTooltip(mode) {
+      const tooltips = {
+        reading: `<strong>📖 Reading Mode</strong><br>Read Spanish word mentally, flip to see English<br><em>↓ flip | ← → navigate | 👌 remove | 😕 practice</em>`,
+        listening: `<strong>👂 Listening Mode</strong><br>Hear Spanish, type it out<br><em>Type letters | Enter next | Wrong = +2 cards</em>`,
+        speaking: `<strong>💬 Speaking Mode</strong><br>See Spanish, speak it aloud<br><em>Space record | Get pronunciation score!</em>`,
+        writing: `<strong>✏️ Writing Mode</strong><br>See English, type Spanish translation<br><em>Type letters | Enter next | Wrong = +2 cards</em>`
+      };
+
+      if (cardTooltip && tooltips[mode]) {
+        cardTooltip.innerHTML = tooltips[mode];
+      }
+    }
+
     // Switch to a different learning mode
     function switchMode(newMode) {
       if (currentMode === newMode) return;
 
       currentMode = newMode;
+
+      // Update flashcard tooltip
+      updateCardTooltip(newMode);
 
       // Update active button
       modeBtns.forEach(btn => btn.classList.remove('active'));
@@ -2223,13 +2286,13 @@
       // Update display to show indicator while stamp is visible
       updateDisplay();
 
-      // Show "Extra Practice" stamp (2 seconds so user can read it)
+      // Show "Extra Practice" stamp (1.5 seconds)
       const addedStamp = document.getElementById('added-stamp');
       addedStamp.classList.add('visible');
       setTimeout(() => {
         addedStamp.classList.remove('visible');
         pendingDeckChange = 0; // Clear indicator after stamp
-      }, 2000);
+      }, 1500);
     }
 
     // Handle typing input for listening and writing modes
@@ -2312,7 +2375,7 @@
               if (currentMode === 'listening' && currentDeck.length > 0) {
                 setTimeout(() => speakSpanish(), 300);
               }
-            }, 2000); // 2 seconds so user can read stamp
+            }, 1500); // 1.5 seconds
           } else {
             // Wrong - add penalty cards
             const penaltyCards = Math.min(wrongAttempts - 1, 2);
@@ -2320,12 +2383,12 @@
               addDuplicateCards(penaltyCards);
             }
 
-            // Auto-advance after stamp duration (2100ms > 2000ms stamp)
+            // Auto-advance after stamp duration (1600ms > 1500ms stamp)
             setTimeout(() => {
               if (currentMode === 'listening' || currentMode === 'writing') {
                 moveToNextCard();
               }
-            }, 2100);
+            }, 1600);
           }
         }
       } else {
@@ -2879,8 +2942,8 @@
       flashcard.classList.add('flipped');
       isFlipped = true;
 
-      // Auto-pronounce when flipping to back (ALL modes)
-      if (currentDeck.length > 0) {
+      // Auto-pronounce when flipping to back (ALL modes, except help/tutorial card)
+      if (currentDeck.length > 0 && !isOnStartingCard) {
         setTimeout(() => speakSpanish(), 300);
       }
     }
@@ -2929,7 +2992,7 @@
         // Show next card
         updateDisplay();
         saveState();
-      }, 2000);
+      }, 1500); // 1.5 seconds
     }
 
     // Add extra copies of current card (Confused)
@@ -2963,7 +3026,7 @@
         currentIndex = (currentIndex + 1) % currentDeck.length;
         updateDisplay();
         saveState();
-      }, 2000); // 2 seconds so user can read stamp
+      }, 1500); // 1.5 seconds
     }
 
     // Reset deck to original shuffled state (fresh start in current mode)
@@ -3197,16 +3260,6 @@
     }
 
     // Setup card flip handlers
-    setupToHelp.addEventListener('click', () => {
-      playButtonClickSound();
-      flashcard.classList.add('setup-flipped');
-    });
-
-    helpToSetup.addEventListener('click', () => {
-      playButtonClickSound();
-      flashcard.classList.remove('setup-flipped');
-    });
-
     // Setup voice change handler
     setupVoice.addEventListener('change', () => {
       const newVoiceURI = setupVoice.value;
@@ -3305,23 +3358,6 @@
       hideFeedback();
     });
 
-    // Help Modal
-    helpBtn.addEventListener('click', () => {
-      playButtonClickSound();
-      showStartingCard(true); // true = show back (help text)
-    });
-    
-    helpClose.addEventListener('click', () => {
-      playButtonClickSound();
-      helpModal.classList.remove('visible');
-    });
-    
-    helpModal.addEventListener('click', (e) => {
-      if (e.target === helpModal) {
-        helpModal.classList.remove('visible');
-      }
-    });
-
     // Menu Modal
     menuBtn.addEventListener('click', () => {
       playButtonClickSound();
@@ -3381,13 +3417,12 @@
     document.addEventListener('keydown', (e) => {
       // Close modals with Escape
       if (e.key === 'Escape') {
-        helpModal.classList.remove('visible');
         menuModal.classList.remove('visible');
         return;
       }
 
       // Don't handle navigation if modal is open
-      if (helpModal.classList.contains('visible') || menuModal.classList.contains('visible')) {
+      if (menuModal.classList.contains('visible')) {
         return;
       }
 
