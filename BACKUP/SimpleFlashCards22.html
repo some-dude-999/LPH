@@ -2764,14 +2764,13 @@
           await loadAct(currentAct);
         }
 
-        // Remember which act we initially loaded
-        const firstAct = currentAct;
-
         // Restore any saved state (may change currentAct and currentWordpackKey)
         restoreSavedState();
 
-        // If saved act is different from the first act we loaded, load it
-        if (currentAct !== firstAct) {
+        // If restored act is different, load it
+        const savedState = loadState();
+        if (savedState && savedState.act && savedState.act !== currentAct) {
+          currentAct = savedState.act;
           await loadAct(currentAct);
         }
 
