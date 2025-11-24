@@ -1558,8 +1558,8 @@
 </head>
 <body>
   <!-- Top Corner Buttons (all on right side) -->
-  <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck (R key)">↺</button>
-  <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu (M key)">☰</button>
+  <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
+  <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
 
   <!-- Menu Modal -->
   <div class="modal-overlay" id="menu-modal">
@@ -1706,8 +1706,8 @@
 
           <h3>⚙️ Settings</h3>
           <ul>
-            <li><strong>↺ Button</strong> or <strong>R Key</strong> — Reset deck</li>
-            <li><strong>☰ Button</strong> or <strong>M Key</strong> — Open menu</li>
+            <li><strong>↺ Button</strong> — Reset deck</li>
+            <li><strong>☰ Button</strong> — Open menu</li>
           </ul>
         </div>
       </div>
@@ -3594,18 +3594,6 @@
           playScribbleSound(); // Play scribble sound but don't register input
         } else if (currentMode === 'listening') {
           e.preventDefault(); // Ignore space in listening mode
-        }
-      } else if (e.key === 'r' || e.key === 'R') {
-        // R key: Reset deck
-        e.preventDefault();
-        resetDeck();
-      } else if (e.key === 'm' || e.key === 'M') {
-        // M key: Toggle menu
-        e.preventDefault();
-        if (menuModal.classList.contains('visible')) {
-          menuModal.classList.remove('visible');
-        } else {
-          menuModal.classList.add('visible');
         }
       }
     });
