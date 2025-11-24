@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decoder Test - Obfuscated Module Verification</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      padding: 30px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+
+    .stats {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .stat-card {
+      flex: 1;
+      min-width: 200px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .stat-card h3 {
+      font-size: 0.9em;
+      opacity: 0.9;
+      margin-bottom: 8px;
+    }
+
+    .stat-card .value {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .language-section {
+      margin-bottom: 40px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      background: #fafafa;
+    }
+
+    .language-section h2 {
+      color: #333;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-badge {
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+
+    .status-badge.success {
+      background: #4caf50;
+      color: white;
+    }
+
+    .status-badge.error {
+      background: #f44336;
+      color: white;
+    }
+
+    .status-badge.loading {
+      background: #ff9800;
+      color: white;
+    }
+
+    .module-info {
+      margin: 15px 0;
+      padding: 15px;
+      background: white;
+      border-radius: 6px;
+      border-left: 4px solid #667eea;
+    }
+
+    .module-info h4 {
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 8px;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #555;
+    }
+
+    .info-value {
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    thead {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    th {
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+
+    tbody tr:hover {
+      background: #f5f5f5;
+    }
+
+    .error-message {
+      background: #ffebee;
+      color: #c62828;
+      padding: 15px;
+      border-radius: 6px;
+      border-left: 4px solid #c62828;
+      margin-top: 10px;
+    }
+
+    .pack-preview {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-top: 10px;
+    }
+
+    code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      margin: 10px 5px;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔓 Decoder Test</h1>
+    <p class="subtitle">Obfuscated Module Verification Tool</p>
+
+    <div class="stats">
+      <div class="stat-card">
+        <h3>Total Modules Tested</h3>
+        <div class="value" id="totalModules">0</div>
+      </div>
+      <div class="stat-card">
+        <h3>Successfully Decoded</h3>
+        <div class="value" id="successCount">0</div>
+      </div>
+      <div class="stat-card">
+        <h3>Total Packs</h3>
+        <div class="value" id="totalPacks">0</div>
+      </div>
+      <div class="stat-card">
+        <h3>Total Words</h3>
+        <div class="value" id="totalWords">0</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn" onclick="runAllTests()">🔄 Run All Tests</button>
+      <button class="btn" onclick="clearResults()">🗑️ Clear Results</button>
+    </div>
+
+    <div id="results"></div>
+  </div>
+
+  <script type="module">
+    // Decoder function (same as used in game.js)
+    async function decodeObfuscatedModule(url) {
+      try {
+        // 1. Import the obfuscated module (contains base64 string in 'w' export)
+        const module = await import(url);
+        const compressedB64 = module.w;
+
+        // 2. Decode base64 to binary
+        const compressedBinary = Uint8Array.from(atob(compressedB64), c => c.charCodeAt(0));
+
+        // 3. Decompress with pako (zlib)
+        const decompressedBinary = pako.inflate(compressedBinary);
+
+        // 4. Convert binary to string
+        const reversedJson = new TextDecoder('utf-8').decode(decompressedBinary);
+
+        // 5. Reverse the string (undo the salt)
+        const jsonStr = reversedJson.split('').reverse().join('');
+
+        // 6. Parse JSON to get the original data
+        const data = JSON.parse(jsonStr);
+
+        return data;  // Returns object with all packs: { p1_1_name: {meta, words}, ... }
+      } catch (error) {
+        console.error('Failed to decode module:', error);
+        throw error;
+      }
+    }
+
+    // Column headers for each language (matches CSV structure)
+    const columnHeaders = {
+      'Chinese': ['Chinese', 'Pinyin', 'English', 'Spanish', 'French', 'Portuguese', 'Vietnamese', 'Thai', 'Khmer', 'Indonesian', 'Malay', 'Filipino'],
+      'Spanish': ['Spanish', 'English', 'Chinese', 'Pinyin', 'Portuguese'],
+      'English': ['English', 'Chinese', 'Pinyin', 'Spanish', 'Portuguese']
+    };
+
+    // Test configuration
+    const tests = [
+      { lang: 'Chinese', files: [
+        './ChineseWords/Jsmodules-js/act1-foundation-js.js',
+        './ChineseWords/Jsmodules-js/act2-development-js.js',
+        './ChineseWords/Jsmodules-js/act3-expansion-js.js',
+        './ChineseWords/Jsmodules-js/act4-mastery-js.js',
+        './ChineseWords/Jsmodules-js/act5-refinement-js.js'
+      ]},
+      { lang: 'Spanish', files: [
+        './SpanishWords/Jsmodules-js/act1-foundation-js.js',
+        './SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
+        './SpanishWords/Jsmodules-js/act3-daily-life-js.js',
+        './SpanishWords/Jsmodules-js/act4-expanding-expression-js.js',
+        './SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js',
+        './SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js',
+        './SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js'
+      ]},
+      { lang: 'English', files: [
+        './EnglishWords/Jsmodules-js/act1-foundation-js.js',
+        './EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
+        './EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
+        './EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
+        './EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
+      ]}
+    ];
+
+    // Global stats
+    let stats = {
+      totalModules: 0,
+      successCount: 0,
+      totalPacks: 0,
+      totalWords: 0
+    };
+
+    function updateStats() {
+      document.getElementById('totalModules').textContent = stats.totalModules;
+      document.getElementById('successCount').textContent = stats.successCount;
+      document.getElementById('totalPacks').textContent = stats.totalPacks;
+      document.getElementById('totalWords').textContent = stats.totalWords;
+    }
+
+    async function testModule(url, langName) {
+      const fileName = url.split('/').pop();
+      const startTime = performance.now();
+
+      try {
+        const data = await decodeObfuscatedModule(url);
+        const endTime = performance.now();
+        const decodeTime = (endTime - startTime).toFixed(2);
+
+        // Count packs and words
+        const packs = Object.keys(data);
+        const packCount = packs.length;
+        let wordCount = 0;
+
+        packs.forEach(packKey => {
+          if (data[packKey].words) {
+            wordCount += data[packKey].words.length;
+          }
+        });
+
+        stats.successCount++;
+        stats.totalPacks += packCount;
+        stats.totalWords += wordCount;
+
+        return {
+          success: true,
+          fileName,
+          decodeTime,
+          packCount,
+          wordCount,
+          data,
+          samplePack: data[packs[0]],
+          langName
+        };
+      } catch (error) {
+        return {
+          success: false,
+          fileName,
+          error: error.message
+        };
+      }
+    }
+
+    async function testLanguage(langConfig) {
+      const resultsDiv = document.getElementById('results');
+
+      const section = document.createElement('div');
+      section.className = 'language-section';
+      section.id = `section-${langConfig.lang}`;
+
+      const header = document.createElement('h2');
+      header.innerHTML = `
+        ${langConfig.lang}
+        <span class="status-badge loading">
+          <span class="loading-spinner"></span> Testing...
+        </span>
+      `;
+      section.appendChild(header);
+
+      resultsDiv.appendChild(section);
+
+      const results = [];
+      for (const file of langConfig.files) {
+        stats.totalModules++;
+        updateStats();
+        const result = await testModule(file, langConfig.lang);
+        results.push(result);
+      }
+
+      // Update section with results
+      section.innerHTML = '';
+
+      const successCount = results.filter(r => r.success).length;
+      const allSuccess = successCount === results.length;
+
+      header.innerHTML = `
+        ${langConfig.lang}
+        <span class="status-badge ${allSuccess ? 'success' : 'error'}">
+          ${successCount}/${results.length} modules decoded
+        </span>
+      `;
+      section.appendChild(header);
+
+      results.forEach(result => {
+        const moduleDiv = document.createElement('div');
+        moduleDiv.className = 'module-info';
+
+        if (result.success) {
+          const sampleWords = result.samplePack.words.slice(0, 5);
+          const headers = columnHeaders[result.langName];
+
+          moduleDiv.innerHTML = `
+            <h4>✅ ${result.fileName}</h4>
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">Decode Time:</span>
+                <span class="info-value">${result.decodeTime}ms</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Packs:</span>
+                <span class="info-value">${result.packCount}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Total Words:</span>
+                <span class="info-value">${result.wordCount}</span>
+              </div>
+            </div>
+            <details>
+              <summary style="cursor: pointer; font-weight: 600; margin: 10px 0;">
+                📋 Sample Pack: <code>${Object.keys(result.data)[0]}</code>
+              </summary>
+              <div style="margin-top: 10px;">
+                <strong>Meta:</strong>
+                <pre style="background: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto;">${JSON.stringify(result.samplePack.meta, null, 2)}</pre>
+                <strong>Sample Words (first 5):</strong>
+                <div class="pack-preview">
+                  <table>
+                    <thead>
+                      <tr>
+                        ${headers.map(header => `<th>${header}</th>`).join('')}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${sampleWords.map(word => `
+                        <tr>
+                          ${word.map(col => `<td>${col}</td>`).join('')}
+                        </tr>
+                      `).join('')}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          `;
+        } else {
+          moduleDiv.innerHTML = `
+            <h4>❌ ${result.fileName}</h4>
+            <div class="error-message">
+              <strong>Error:</strong> ${result.error}
+            </div>
+          `;
+        }
+
+        section.appendChild(moduleDiv);
+      });
+
+      updateStats();
+    }
+
+    window.runAllTests = async function() {
+      // Reset stats
+      stats = {
+        totalModules: 0,
+        successCount: 0,
+        totalPacks: 0,
+        totalWords: 0
+      };
+
+      document.getElementById('results').innerHTML = '<p style="text-align: center; color: #666;">Running tests...</p>';
+      updateStats();
+
+      for (const test of tests) {
+        await testLanguage(test);
+      }
+
+      console.log('All tests completed!', stats);
+    };
+
+    window.clearResults = function() {
+      document.getElementById('results').innerHTML = '';
+      stats = {
+        totalModules: 0,
+        successCount: 0,
+        totalPacks: 0,
+        totalWords: 0
+      };
+      updateStats();
+    };
+
+    // Auto-run on load
+    window.addEventListener('load', () => {
+      console.log('DecoderTest.html loaded. Click "Run All Tests" to start.');
+    });
+  </script>
+</body>
+</html>

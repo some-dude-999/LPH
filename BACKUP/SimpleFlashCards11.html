@@ -2698,7 +2698,7 @@
         }
 
         // Show menu modal on first load
-        menuModal.classList.add('visible');
+        menuModal.classList.add('active');
       } catch (error) {
         console.error('Failed to initialize app:', error);
         actSelect.innerHTML = '<option value="">Failed to load acts</option>';
@@ -3656,7 +3656,7 @@
     // Menu Modal
     menuBtn.addEventListener('click', () => {
       playButtonClickSound();
-      menuModal.classList.add('visible');
+      menuModal.classList.add('active');
     });
     
     menuClose.addEventListener('click', () => {
@@ -3694,12 +3694,12 @@
       }
 
       saveState();
-      menuModal.classList.remove('visible');
+      menuModal.classList.remove('active');
     });
-
+    
     menuModal.addEventListener('click', (e) => {
       if (e.target === menuModal) {
-        menuModal.classList.remove('visible');
+        menuModal.classList.remove('active');
       }
     });
 
@@ -3717,12 +3717,12 @@
     document.addEventListener('keydown', (e) => {
       // Close modals with Escape
       if (e.key === 'Escape') {
-        menuModal.classList.remove('visible');
+        menuModal.classList.remove('active');
         return;
       }
 
       // Don't handle navigation if modal is open
-      if (menuModal.classList.contains('visible')) {
+      if (menuModal.classList.contains('active')) {
         return;
       }
 
