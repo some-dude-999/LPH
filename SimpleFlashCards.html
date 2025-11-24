@@ -872,30 +872,25 @@
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
     }
 
-    /* Action Buttons - Positioned in lower left of card like mic button */
+    /* Action Buttons - Styled exactly like mic button */
     .action-btn {
       position: absolute;
       bottom: 25px;
-      width: 60px;
-      height: 60px;
+      background: rgba(139, 115, 85, 0.2);
+      border: 3px solid rgba(160, 133, 103, 0.5);
+      color: #5D4E37;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
-      border: 3px solid rgba(74, 56, 40, 0.6);
       cursor: pointer;
-      transition: all 0.2s ease;
-      display: none; /* Hidden by default, shown when game started */
+      transition: all 0.3s ease;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       line-height: 1;
       text-align: center;
-      background-color: #8B7355;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--cardboard-texture-size), 100%;
-      color: #2C1810;
       z-index: 10;
+      display: none; /* Hidden by default, shown when game started */
     }
 
     body.game-started .action-btn {
@@ -908,25 +903,12 @@
     }
 
     .confused-btn {
-      left: 100px; /* 25px + 60px width + 15px gap */
+      left: 95px; /* 25px + 55px width + 15px gap */
     }
 
     .action-btn:hover {
-      background-color: #9B8365;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--cardboard-texture-size), 100%;
-    }
-
-    .action-btn:active {
-      background-color: #7A6347;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--cardboard-texture-size), 100%;
+      background: rgba(139, 115, 85, 0.4);
+      transform: scale(1.1);
     }
 
     /* Tooltip */
@@ -1474,6 +1456,49 @@
       color: #D4AF37;
       font-style: normal;
     }
+
+    /* Visual button representations in tooltips */
+    .tooltip-btn {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #8B7355;
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+      background-blend-mode: soft-light;
+      background-size: var(--cardboard-texture-size), 100%;
+      border: 2px solid rgba(74, 56, 40, 0.6);
+      color: #2C1810;
+      font-size: 0.75rem;
+      line-height: 20px;
+      text-align: center;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+
+    .tooltip-key {
+      display: inline-block;
+      min-width: 28px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background-color: #8B7355;
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+      background-blend-mode: soft-light;
+      background-size: var(--cardboard-texture-size), 100%;
+      border: 2px solid rgba(74, 56, 40, 0.6);
+      color: #2C1810;
+      font-size: 0.7rem;
+      font-weight: bold;
+      line-height: 1.2;
+      text-align: center;
+      vertical-align: middle;
+      margin: 0 2px;
+      font-family: 'IM Fell English', serif;
+    }
   </style>
 </head>
 <body>
@@ -1533,19 +1558,19 @@
   <div class="mode-selector">
     <span class="tooltip-container">
       <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br>1. Read Spanish word<br>2. Flip to see English<br>3. Mark if you got it<br><em>Click 🗣️ or Press ↑ to Pronounce<br>Press ↓ to Flip Card<br>Click ‹ or Press ← to Previous Card<br>Click › or Press → to Next Card<br>Click 👌 or Press 1 to Remove Card<br>Click 😕 or Press 2 to Add Practice</em></span>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br>1. Read Spanish word<br>2. Flip to see English<br>3. Mark if you got it<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑ Key</span> to Pronounce<br><span class="tooltip-key">↓ Key</span> to Flip Card<br>Click <span class="tooltip-btn">‹</span> or Press <span class="tooltip-key">← Key</span> to Previous Card<br>Click <span class="tooltip-btn">›</span> or Press <span class="tooltip-key">→ Key</span> to Next Card<br>Click <span class="tooltip-btn">👌</span> or Press <span class="tooltip-key">1 Key</span> to Remove Card<br>Click <span class="tooltip-btn">😕</span> or Press <span class="tooltip-key">2 Key</span> to Add Practice</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br>1. Hear Spanish word<br>2. Type what you hear<br>3. Flip to check answer<br><em>Click 🗣️ or Press ↑ to Pronounce<br>Type letters to spell word<br>Press ↓ to Flip Card<br>Press Enter to Next Card</em></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br>1. Hear Spanish word<br>2. Type what you hear<br>3. Flip to check answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑ Key</span> to Pronounce<br>Type letters to spell word<br><span class="tooltip-key">↓ Key</span> to Flip Card<br><span class="tooltip-key">Enter Key</span> to Next Card</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br>1. See Spanish word<br>2. Say it aloud<br>3. Get pronunciation score<br><em>Click 🎤 or Press Space to Record<br>Click 🗣️ or Press ↑ to Pronounce<br>Press ↓ to Flip Card</em></span>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br>1. See Spanish word<br>2. Say it aloud<br>3. Get pronunciation score<br><em>Click <span class="tooltip-btn">🎤</span> or Press <span class="tooltip-key">Space Key</span> to Record<br>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑ Key</span> to Pronounce<br><span class="tooltip-key">↓ Key</span> to Flip Card</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br>1. See English translation<br>2. Type Spanish word<br>3. Flip to check answer<br><em>Click 🗣️ or Press ↑ to Pronounce<br>Type letters to spell word<br>Press ↓ to Flip Card<br>Press Enter to Next Card</em></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br>1. See English translation<br>2. Type Spanish word<br>3. Flip to check answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑ Key</span> to Pronounce<br>Type letters to spell word<br><span class="tooltip-key">↓ Key</span> to Flip Card<br><span class="tooltip-key">Enter Key</span> to Next Card</em></span>
     </span>
   </div>
 
@@ -1943,22 +1968,21 @@
     }
 
     // ===================================================================================
-    // PEN SCRATCHING ON PAPER SOUND - Realistic pen scraping against paper texture
+    // MECHANICAL KEYBOARD TYPING SOUND - Satisfying clicky mechanical keyboard
     // ===================================================================================
     function playScribbleSound() {
       const ctx = getAudioContext();
       const now = ctx.currentTime;
 
-      // Short, crisp scratch sound (0.03-0.05 seconds)
-      const duration = 0.03 + Math.random() * 0.02;
+      // Very short duration for crisp mechanical click (0.015-0.025 seconds)
+      const duration = 0.015 + Math.random() * 0.01;
       const bufferSize = ctx.sampleRate * duration;
       const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
       const data = buffer.getChannelData(0);
 
-      // Generate gritty noise for paper texture
+      // Generate sharp click noise
       for (let i = 0; i < bufferSize; i++) {
-        const envelope = Math.pow(1 - i/bufferSize, 3); // Quick decay for sharp scratch
-        // Gritty pink noise for paper texture
+        const envelope = Math.pow(1 - i/bufferSize, 8); // Very sharp decay for crisp click
         const noise = (Math.random() * 2 - 1);
         data[i] = noise * envelope;
       }
@@ -1966,26 +1990,26 @@
       const source = ctx.createBufferSource();
       source.buffer = buffer;
 
-      // Lower frequency for realistic paper scratch (400-800 Hz)
+      // High frequency for mechanical click (2000-3500 Hz)
       const bp1 = ctx.createBiquadFilter();
       bp1.type = 'bandpass';
-      bp1.frequency.value = 400 + Math.random() * 400; // 400-800 Hz - paper scratch range
-      bp1.Q.value = 3.0; // High Q for crisp, defined scratch
+      bp1.frequency.value = 2000 + Math.random() * 1500; // 2000-3500 Hz - clicky range
+      bp1.Q.value = 4.0; // Very high Q for sharp, defined click
 
-      // Low frequency rumble for paper resonance (150-300 Hz)
+      // Mid frequency for body (1000-1500 Hz)
       const bp2 = ctx.createBiquadFilter();
       bp2.type = 'bandpass';
-      bp2.frequency.value = 150 + Math.random() * 150; // 150-300 Hz - paper resonance
-      bp2.Q.value = 2.0;
+      bp2.frequency.value = 1000 + Math.random() * 500; // 1000-1500 Hz - body
+      bp2.Q.value = 2.5;
 
-      // Remove very low mud
+      // Remove low mud
       const hp = ctx.createBiquadFilter();
       hp.type = 'highpass';
-      hp.frequency.value = 100;
+      hp.frequency.value = 400;
 
-      // Louder for audibility
+      // Moderate volume for satisfying click
       const gain = ctx.createGain();
-      gain.gain.value = 0.5 + Math.random() * 0.15; // 0.5-0.65 volume - clear and audible
+      gain.gain.value = 0.35 + Math.random() * 0.1; // 0.35-0.45 volume
 
       source.connect(hp);
       hp.connect(bp1);
