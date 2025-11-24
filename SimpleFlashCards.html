@@ -1533,19 +1533,19 @@
   <div class="mode-selector">
     <span class="tooltip-container">
       <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br>Read Spanish mentally, flip to see English<br><em>Keys: ↓ flip | ← → navigate</em></span>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br>1. Read Spanish word<br>2. Flip to see English<br>3. Mark if you got it<br><em>Click 🗣️ or Press ↑ to Pronounce<br>Press ↓ to Flip Card<br>Click ‹ or Press ← to Previous Card<br>Click › or Press → to Next Card<br>Click 👌 or Press 1 to Remove Card<br>Click 😕 or Press 2 to Add Practice</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br>Hear Spanish, type it out<br><em>Auto-pronounces | Wrong = +2 cards</em></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br>1. Hear Spanish word<br>2. Type what you hear<br>3. Flip to check answer<br><em>Click 🗣️ or Press ↑ to Pronounce<br>Type letters to spell word<br>Press ↓ to Flip Card<br>Press Enter to Next Card</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br>See Spanish, speak it aloud<br><em>Get pronunciation score!</em></span>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br>1. See Spanish word<br>2. Say it aloud<br>3. Get pronunciation score<br><em>Click 🎤 or Press Space to Record<br>Click 🗣️ or Press ↑ to Pronounce<br>Press ↓ to Flip Card</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br>See English, type Spanish<br><em>Auto-pronounces | Wrong = +2 cards</em></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br>1. See English translation<br>2. Type Spanish word<br>3. Flip to check answer<br><em>Click 🗣️ or Press ↑ to Pronounce<br>Type letters to spell word<br>Press ↓ to Flip Card<br>Press Enter to Next Card</em></span>
     </span>
   </div>
 
@@ -3446,6 +3446,18 @@
         // Down arrow: ALWAYS flip
         e.preventDefault();
         flipCard();
+      } else if (e.key === '1') {
+        // Key 1: Remove card (Got it!) - only in reading mode
+        if (currentMode === 'reading') {
+          e.preventDefault();
+          removeCurrentCard();
+        }
+      } else if (e.key === '2') {
+        // Key 2: Add practice cards (Confused) - only in reading mode
+        if (currentMode === 'reading') {
+          e.preventDefault();
+          addConfusedCards();
+        }
       } else if (e.key === ' ') {
         // Space: pronounce in reading mode, record in speaking mode, play sound in writing mode, ignore in listening
         if (currentMode === 'reading') {
