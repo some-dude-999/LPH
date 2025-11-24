@@ -455,7 +455,39 @@
       background: rgba(139, 115, 85, 0.4);
     }
 
-    /* Mic button tooltips now use .btn-tooltip elements (see BUTTON TOOLTIPS section) */
+    /* Mic button tooltip - fancy parchment style with 1.5s hover delay */
+    .mic-btn::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      /* Fancy parchment/aged paper feel */
+      background:
+        radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
+        linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
+      color: #3D2E1F;
+      padding: 8px 12px;
+      border-radius: 8px;
+      box-shadow:
+        0 4px 16px rgba(0,0,0,0.25),
+        0 0 0 1px rgba(139, 115, 85, 0.4),
+        inset 0 1px 0 rgba(255,255,255,0.5),
+        inset 0 -1px 0 rgba(139, 115, 85, 0.1);
+      font-size: 0.85rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease 0s;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      z-index: 100;
+    }
+
+    .mic-btn:hover::after {
+      opacity: 1;
+      transition-delay: 1.5s;
+    }
 
     .mic-btn.listening {
       background: rgba(180, 60, 60, 0.4);
@@ -1037,8 +1069,41 @@
       background-size: var(--cardboard-texture-size), 100%;
     }
 
-    /* Control button tooltips now use .btn-tooltip elements (see BUTTON TOOLTIPS section below) */
-    /* This allows HTML content with styled buttons/keys */
+    /* Control button tooltip - fancy parchment style with 1.5s hover delay */
+    .control-btn::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      /* Fancy parchment/aged paper feel */
+      background:
+        radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
+        linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
+      color: #3D2E1F;
+      padding: 8px 12px;
+      border-radius: 8px;
+      box-shadow:
+        0 4px 16px rgba(0,0,0,0.25),
+        0 0 0 1px rgba(139, 115, 85, 0.4),
+        inset 0 1px 0 rgba(255,255,255,0.5),
+        inset 0 -1px 0 rgba(139, 115, 85, 0.1);
+      font-size: 0.85rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      /* Hide immediately (0s delay) when not hovering */
+      transition: opacity 0.2s ease 0s;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      z-index: 100;
+    }
+
+    .control-btn:hover::after {
+      opacity: 1;
+      /* Show with 1.5s delay - user must hold hover to see tooltip */
+      transition-delay: 1.5s;
+    }
 
     /* Separator between button groups */
     .control-separator {
@@ -1747,67 +1812,6 @@
       margin: 0 2px;
       font-family: 'IM Fell English', serif;
     }
-
-    /* Tooltip instructions container - minimal gap from title */
-    .tooltip-instructions {
-      margin-top: 4px;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    /* =============================================== */
-    /* BUTTON TOOLTIPS - HTML-enabled hover tooltips */
-    /* =============================================== */
-    /* These are actual DOM elements (not ::after pseudo) so they can render HTML */
-
-    .btn-tooltip {
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      bottom: calc(100% + 8px);
-      left: 50%;
-      transform: translateX(-50%);
-      /* Fancy parchment/aged paper feel */
-      background:
-        radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
-        linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
-      color: #3D2E1F;
-      padding: 8px 12px;
-      border-radius: 8px;
-      box-shadow:
-        0 4px 16px rgba(0,0,0,0.25),
-        0 0 0 1px rgba(139, 115, 85, 0.4),
-        inset 0 1px 0 rgba(255,255,255,0.5),
-        inset 0 -1px 0 rgba(139, 115, 85, 0.1);
-      font-size: 0.85rem;
-      white-space: nowrap;
-      pointer-events: none;
-      /* 1 second delay before showing */
-      transition: opacity 0.2s ease 0s, visibility 0.2s ease 0s;
-      font-family: 'Courier New', monospace;
-      font-weight: normal;
-      z-index: 100;
-    }
-
-    .control-btn:hover .btn-tooltip,
-    .mic-btn:hover .btn-tooltip {
-      visibility: visible;
-      opacity: 1;
-      /* 1 second delay - user must hold hover to see tooltip */
-      transition-delay: 1s;
-    }
-
-    /* Arrow pointing up for button tooltips */
-    .btn-tooltip::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 6px solid transparent;
-      border-top-color: #FDF8F0;
-    }
   </style>
 </head>
 <body>
@@ -1823,23 +1827,22 @@
   </div>
 
   <!-- Mode Selector -->
-  <!-- Tooltips are populated dynamically via initializeTooltips() using TOOLTIP_MESSAGES -->
   <div class="mode-selector">
     <span class="tooltip-container">
       <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip" id="tooltip-reading"></span>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br><em><b>PRESS</b> <span class="tooltip-key">1</span> to Remove Card<br><b>PRESS</b> <span class="tooltip-key">2</span> to Add Extra Practice<br><b>PRESS</b> <span class="tooltip-key">←</span> to Previous Card<br><b>PRESS</b> <span class="tooltip-key">→</span> to Next Card<br><b>PRESS</b> <span class="tooltip-key">↑</span> to Pronounce<br><b>PRESS</b> <span class="tooltip-key">↓</span> to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip" id="tooltip-listening"></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word<br><b>PRESS</b> <span class="tooltip-key">↑</span> to Pronounce<br><b>PRESS</b> <span class="tooltip-key">↓</span> to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip" id="tooltip-speaking"></span>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><em><b>PRESS</b> <span class="tooltip-key">Space</span> to Record<br><b>PRESS</b> <span class="tooltip-key">↑</span> to Pronounce<br><b>PRESS</b> <span class="tooltip-key">↓</span> to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip" id="tooltip-writing"></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word<br><b>PRESS</b> <span class="tooltip-key">↑</span> to Pronounce<br><b>PRESS</b> <span class="tooltip-key">↓</span> to Peek at Back</em></span>
     </span>
   </div>
 
@@ -2035,34 +2038,18 @@
     }
 
     // ============================================================
-    // TOOLTIP MESSAGES - Single source of truth for ALL tooltip text
-    // ============================================================
-    // Convention: CLICK (round cardboard button) or PRESS [rectangular key] to simple_action
-    //
-    // These SAME messages are displayed in TWO places:
-    //   1. Mode tooltips (hover over 📖 Reading Mode) - shows list of all actions
-    //   2. Button hover tooltips (hover over ✓ button) - shows that single action
-    //
-    // HTML classes used:
-    //   .tooltip-btn  = round cardboard circle for clickable buttons
-    //   .tooltip-key  = rectangular cardboard key for keyboard keys
+    // TOOLTIP MESSAGES - Single source of truth for all button tooltips
+    // Convention: PRESS [key] Key to Action
     // ============================================================
     const TOOLTIP_MESSAGES = {
-      // Reading mode actions
-      gotIt: 'CLICK <span class="tooltip-btn">✓</span> or PRESS <span class="tooltip-key">1</span> to Remove Card',
-      confused: 'CLICK <span class="tooltip-btn">✗</span> or PRESS <span class="tooltip-key">2</span> to Add Extra Practice',
-      prevCard: 'CLICK <span class="tooltip-btn">‹</span> or PRESS <span class="tooltip-key">←</span> to Previous Card',
-      nextCard: 'CLICK <span class="tooltip-btn">›</span> or PRESS <span class="tooltip-key">→</span> to Next Card',
-
-      // All modes actions
-      pronounce: 'CLICK <span class="tooltip-btn">🗣️</span> or PRESS <span class="tooltip-key">↑</span> to Pronounce',
-      peek: 'CLICK <span class="tooltip-btn">❓</span> or PRESS <span class="tooltip-key">↓</span> to Peek at Back',
-
-      // Speaking mode
-      record: 'CLICK <span class="tooltip-btn">🎤</span> or PRESS <span class="tooltip-key">Space</span> to Record',
-
-      // Typing modes (listening/writing)
-      typeLetters: 'TYPE <span class="tooltip-key">Letters</span> to Spell Word'
+      gotIt: 'PRESS [1] Key to Remove Card',
+      confused: 'PRESS [2] Key to Add Extra Practice',
+      pronounce: 'PRESS [↑] Key to Pronounce',
+      peek: 'PRESS [↓] Key to Peek at Back',
+      prevCard: 'PRESS [←] Key to Previous Card',
+      nextCard: 'PRESS [→] Key to Next Card',
+      record: 'PRESS [Space] Key to Record',
+      typeLetters: 'TYPE [Letters] to Spell Word'
     };
 
     // DOM Elements - menu elements are created dynamically in renderMenuCard()
@@ -2943,116 +2930,19 @@
       }
     }
 
-    // ============================================================
     // Initialize tooltips from TOOLTIP_MESSAGES (single source of truth)
-    // ============================================================
-    // This function populates BOTH:
-    //   1. Mode tooltips (the big instruction lists under each mode button)
-    //   2. Control bar button tooltips (hover text for individual buttons)
-    // All using the SAME TOOLTIP_MESSAGES, ensuring consistency.
-    // ============================================================
     function initializeTooltips() {
-      // ---------------------------------------------------------
-      // MODE TOOLTIPS - Build instruction lists for each mode
-      // ---------------------------------------------------------
-
-      // Reading Mode: gotIt, confused, prevCard, nextCard, pronounce, peek
-      const readingTooltip = document.getElementById('tooltip-reading');
-      if (readingTooltip) {
-        readingTooltip.innerHTML = `
-          <strong>📖 Reading Mode</strong>
-          <div class="tooltip-instructions">
-            ${TOOLTIP_MESSAGES.gotIt}<br>
-            ${TOOLTIP_MESSAGES.confused}<br>
-            ${TOOLTIP_MESSAGES.prevCard}<br>
-            ${TOOLTIP_MESSAGES.nextCard}<br>
-            ${TOOLTIP_MESSAGES.pronounce}<br>
-            ${TOOLTIP_MESSAGES.peek}
-          </div>
-        `;
-      }
-
-      // Listening Mode: typeLetters, pronounce, peek
-      const listeningTooltip = document.getElementById('tooltip-listening');
-      if (listeningTooltip) {
-        listeningTooltip.innerHTML = `
-          <strong>👂 Listening Mode</strong>
-          <div class="tooltip-instructions">
-            ${TOOLTIP_MESSAGES.typeLetters}<br>
-            ${TOOLTIP_MESSAGES.pronounce}<br>
-            ${TOOLTIP_MESSAGES.peek}
-          </div>
-        `;
-      }
-
-      // Speaking Mode: record, pronounce, peek
-      const speakingTooltip = document.getElementById('tooltip-speaking');
-      if (speakingTooltip) {
-        speakingTooltip.innerHTML = `
-          <strong>💬 Speaking Mode</strong>
-          <div class="tooltip-instructions">
-            ${TOOLTIP_MESSAGES.record}<br>
-            ${TOOLTIP_MESSAGES.pronounce}<br>
-            ${TOOLTIP_MESSAGES.peek}
-          </div>
-        `;
-      }
-
-      // Writing Mode: typeLetters, pronounce, peek
-      const writingTooltip = document.getElementById('tooltip-writing');
-      if (writingTooltip) {
-        writingTooltip.innerHTML = `
-          <strong>✏️ Writing Mode</strong>
-          <div class="tooltip-instructions">
-            ${TOOLTIP_MESSAGES.typeLetters}<br>
-            ${TOOLTIP_MESSAGES.pronounce}<br>
-            ${TOOLTIP_MESSAGES.peek}
-          </div>
-        `;
-      }
-
-      // ---------------------------------------------------------
-      // CONTROL BAR BUTTON TOOLTIPS - Same messages as mode tooltips
-      // ---------------------------------------------------------
-      // Note: These use innerHTML because messages contain HTML (styled spans)
-      gotItBtn.innerHTML = '✓';
-      gotItBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.gotIt);
-      confusedBtn.innerHTML = '✗';
-      confusedBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.confused);
-      pronounceBtn.innerHTML = '🗣️';
-      pronounceBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.pronounce);
-      peekBtn.innerHTML = '❓';
-      peekBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.peek);
+      // Control bar button tooltips
+      gotItBtn.setAttribute('data-tooltip', TOOLTIP_MESSAGES.gotIt);
+      confusedBtn.setAttribute('data-tooltip', TOOLTIP_MESSAGES.confused);
+      pronounceBtn.setAttribute('data-tooltip', TOOLTIP_MESSAGES.pronounce);
+      peekBtn.setAttribute('data-tooltip', TOOLTIP_MESSAGES.peek);
 
       // Mic button tooltips
       const micBtnFrontEl = document.getElementById('mic-btn-front');
       const micBtnBackEl = document.getElementById('mic-btn-back');
-      if (micBtnFrontEl) micBtnFrontEl.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.record);
-      if (micBtnBackEl) micBtnBackEl.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.record);
-
-      // ---------------------------------------------------------
-      // Create tooltip elements for control bar buttons
-      // ---------------------------------------------------------
-      // Since data-tooltip with ::after can't render HTML, we need actual tooltip elements
-      createButtonTooltip(gotItBtn, TOOLTIP_MESSAGES.gotIt);
-      createButtonTooltip(confusedBtn, TOOLTIP_MESSAGES.confused);
-      createButtonTooltip(pronounceBtn, TOOLTIP_MESSAGES.pronounce);
-      createButtonTooltip(peekBtn, TOOLTIP_MESSAGES.peek);
-      if (micBtnFrontEl) createButtonTooltip(micBtnFrontEl, TOOLTIP_MESSAGES.record);
-      if (micBtnBackEl) createButtonTooltip(micBtnBackEl, TOOLTIP_MESSAGES.record);
-    }
-
-    // Helper: Create a tooltip element for a button (allows HTML content)
-    function createButtonTooltip(button, htmlContent) {
-      // Remove any existing tooltip
-      const existing = button.querySelector('.btn-tooltip');
-      if (existing) existing.remove();
-
-      // Create tooltip element
-      const tooltip = document.createElement('span');
-      tooltip.className = 'btn-tooltip';
-      tooltip.innerHTML = htmlContent;
-      button.appendChild(tooltip);
+      if (micBtnFrontEl) micBtnFrontEl.setAttribute('data-tooltip', TOOLTIP_MESSAGES.record);
+      if (micBtnBackEl) micBtnBackEl.setAttribute('data-tooltip', TOOLTIP_MESSAGES.record);
     }
 
     // Initialize on page load
