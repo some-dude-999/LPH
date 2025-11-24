@@ -853,18 +853,13 @@
 
     /* Hide card buttons when setup is visible - handled by opacity rules above */
 
-    /* Hide card content when setup is visible (but NOT when showing menu/starting card) */
-    .flashcard:not(.game-started):not(.showing-menu) .card-word {
+    /* Hide card content when setup is visible */
+    .flashcard:not(.game-started) .card-word {
       opacity: 0;
     }
 
-    .flashcard:not(.game-started):not(.showing-menu) .card-label {
+    .flashcard:not(.game-started) .card-label {
       opacity: 0;
-    }
-
-    /* Ensure menu card content is always visible */
-    .flashcard.showing-menu .card-word {
-      opacity: 1 !important;
     }
 
     /* Speed Controls in Menu */
@@ -2144,9 +2139,6 @@
       }
       isOnStartingCard = true;
 
-      // Add showing-menu class so menu content is visible (not hidden by opacity:0 rule)
-      flashcard.classList.add('showing-menu');
-
       // Update titles
       wordpackTitle.textContent = 'Spanish Flashcards';
       cardCounter.textContent = 'Choose Lesson to Begin Studying';
@@ -2170,9 +2162,6 @@
     function exitStartingCard() {
       if (!isOnStartingCard) return;
       isOnStartingCard = false;
-
-      // Remove showing-menu class
-      flashcard.classList.remove('showing-menu');
 
       currentIndex = savedIndex;
       updateWordpackTitle(); // Restore wordpack title
@@ -3510,7 +3499,6 @@
 
       // Exit starting card state if we're on it
       isOnStartingCard = false;
-      flashcard.classList.remove('showing-menu');
 
       // Initialize deck
       initializeDeck(currentWordpackKey);
