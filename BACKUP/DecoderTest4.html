@@ -239,35 +239,6 @@
     </label>
   </p>
 
-  <!--
-    TYPING MODE CHECKBOX
-    When enabled, adds 3 columns for interactive typing practice:
-    - Column 3: Typing input box with masked placeholders (X for each letter)
-    - Column 4: Wrong letters attempted (crossed out display)
-    - Column 5: Wrong attempt count
-
-    This demonstrates the CORE TYPING MECHANIC used in language learning games
-    like SimpleFlashCards.html. The mechanic includes:
-    - Character-by-character input validation
-    - Accent-insensitive comparison (á = a, ñ = n, etc.)
-    - Case-insensitive matching
-    - Satisfying typing sound on every keypress (correct or wrong)
-    - Automatic space handling (spaces ignored, auto-advanced)
-    - Wrong letter tracking for feedback
-
-    IMPROVEMENTS OVER SimpleFlashCards.html:
-    - Simpler state management (per-row instead of global)
-    - More modular code structure (easier to copy to other games)
-    - Cleaner normalization logic
-    - Better commented for human/LLM understanding
-  -->
-  <p>
-    <label>
-      <input type="checkbox" id="typingMode">
-      Typing Mode (adds typing practice columns - game mechanics demo)
-    </label>
-  </p>
-
   <table border="1" cellpadding="8" cellspacing="0">
     <thead>
       <tr id="tableHeaderRow">
@@ -387,8 +358,6 @@
       - currentPack: Currently selected wordpack key
       - currentNativeLanguage: Column index for native language
       - multipleChoiceMode: Boolean flag for showing wrong answer columns
-      - typingMode: Boolean flag for showing typing practice columns
-      - typingStates: Map tracking typing state for each word (wordIndex -> state object)
     */
     let state = {
       currentLanguage: 'Spanish',  // Default language
@@ -396,9 +365,7 @@
       currentAct: null,
       currentPack: null,
       currentNativeLanguage: 1,     // Default to English column (index 1 for Spanish)
-      multipleChoiceMode: false,    // Default to basic 2-column mode
-      typingMode: false,            // Default to typing mode off
-      typingStates: new Map()       // Per-word typing state { typed: Set(), wrongLetters: [], wrongCount: 0 }
+      multipleChoiceMode: false     // Default to basic 2-column mode
     };
 
     // ============================================================
@@ -487,7 +454,6 @@
       // Setup UI
       setupLanguageRadioButtons();
       setupMultipleChoiceCheckbox();
-      setupTypingModeCheckbox();
       populateActDropdown();
       populateNativeLanguageDropdown();
 
@@ -600,152 +566,6 @@
         state.multipleChoiceMode = e.target.checked;
         displayVocabulary();  // Refresh table with new mode
       });
-    }
-
-    // ============================================================
-    // SETUP TYPING MODE CHECKBOX: Event Listener
-    // ============================================================
-
-    /*
-      Attaches change event listener to typing mode checkbox.
-      When toggled, refreshes the vocabulary table to show/hide typing columns.
-      Also resets all typing states when enabled.
-    */
-    function setupTypingModeCheckbox() {
-      const checkbox = document.getElementById('typingMode');
-      checkbox.addEventListener('change', (e) => {
-        state.typingMode = e.target.checked;
-
-        // Reset typing states when toggling mode
-        state.typingStates.clear();
-
-        displayVocabulary();  // Refresh table with new mode
-      });
-    }
-
-    // ============================================================
-    // AUDIO CONTEXT: For Typing Sound Generation
-    // ============================================================
-
-    /*
-      Creates and returns the Web Audio API context for sound generation.
-      This is used for the satisfying typing/scribble sound.
-    */
-    let audioContext = null;
-
-    function getAudioContext() {
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      return audioContext;
-    }
-
-    // ============================================================
-    // TYPING SOUND: Mechanical Click (Improved from SimpleFlashCards)
-    // ============================================================
-
-    /*
-      Plays a satisfying mechanical keyboard click sound on every keypress.
-      This sound plays for BOTH correct and wrong keypress (instant feedback).
-
-      SOUND CHARACTERISTICS:
-      - Very short duration (0.015-0.025 seconds) for crisp click
-      - High frequency (2000-3500 Hz) for mechanical feel
-      - Random variation in frequency and volume for natural typing feel
-      - Sharp decay envelope for crisp, defined click
-
-      USAGE IN GAMES:
-      This sound provides immediate tactile feedback that makes typing feel
-      satisfying and responsive. It's crucial for engagement - even wrong
-      keypresses should "feel good" to maintain flow state.
-
-      IMPROVEMENT OVER SimpleFlashCards.html:
-      - Slightly cleaner filter chain
-      - Better commented for understanding
-    */
-    function playTypingSound() {
-      const ctx = getAudioContext();
-
-      // Very short duration for crisp mechanical click
-      const duration = 0.015 + Math.random() * 0.01;  // 0.015-0.025 seconds
-      const bufferSize = ctx.sampleRate * duration;
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-
-      // Generate sharp click noise with very fast decay
-      for (let i = 0; i < bufferSize; i++) {
-        const envelope = Math.pow(1 - i/bufferSize, 8);  // Very sharp decay
-        const noise = (Math.random() * 2 - 1);
-        data[i] = noise * envelope;
-      }
-
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-
-      // High frequency bandpass for mechanical click (2000-3500 Hz)
-      const bp1 = ctx.createBiquadFilter();
-      bp1.type = 'bandpass';
-      bp1.frequency.value = 2000 + Math.random() * 1500;  // Random variation
-      bp1.Q.value = 4.0;  // High Q for sharp, defined click
-
-      // Mid frequency for body (1000-1500 Hz)
-      const bp2 = ctx.createBiquadFilter();
-      bp2.type = 'bandpass';
-      bp2.frequency.value = 1000 + Math.random() * 500;
-      bp2.Q.value = 2.5;
-
-      // Remove low mud
-      const hp = ctx.createBiquadFilter();
-      hp.type = 'highpass';
-      hp.frequency.value = 400;
-
-      // Moderate volume for satisfying click
-      const gain = ctx.createGain();
-      gain.gain.value = 0.35 + Math.random() * 0.1;  // 0.35-0.45 with random variation
-
-      // Connect audio chain
-      source.connect(hp);
-      hp.connect(bp1);
-      bp1.connect(bp2);
-      bp2.connect(gain);
-      gain.connect(ctx.destination);
-
-      source.start();
-    }
-
-    // ============================================================
-    // CHARACTER NORMALIZATION: For Typing Comparison
-    // ============================================================
-
-    /*
-      Normalizes a character for typing comparison.
-
-      NORMALIZATION RULES:
-      1. Convert to lowercase
-      2. Remove accents/diacritics (á → a, ñ → n, ü → u, etc.)
-
-      EXAMPLES:
-      - 'Á' → 'a'
-      - 'ñ' → 'n'
-      - 'Ü' → 'u'
-      - 'É' → 'e'
-
-      WHY THIS MATTERS FOR GAMES:
-      Most English keyboards don't have accent keys, so learners type
-      'hola' instead of 'hóla'. We want to accept their answer as correct.
-
-      IMPROVEMENT OVER SimpleFlashCards.html:
-      - Same logic, but more clearly documented
-      - Explains the "why" for future game developers
-
-      INPUT: Single character string
-      OUTPUT: Normalized single character (lowercase, no accents)
-    */
-    function normalizeCharForTyping(char) {
-      return char
-        .normalize('NFD')                    // Decompose accents (á → a + ´)
-        .replace(/[\u0300-\u036f]/g, '')    // Remove accent marks
-        .toLowerCase();                      // Convert to lowercase
     }
 
     // ============================================================
@@ -997,158 +817,7 @@
     }
 
     // ============================================================
-    // HANDLE TYPING INPUT: Process Key Presses for Typing Mode
-    // ============================================================
-
-    /*
-      Handles typing input for a specific word in the vocabulary table.
-      This is the CORE TYPING MECHANIC that can be reused in any language game.
-
-      TYPING ALGORITHM (IMPROVED over SimpleFlashCards.html):
-      1. Get or initialize typing state for this word
-      2. Find next position to type (first untyped non-space character)
-      3. Normalize both the typed key and target character (remove accents, lowercase)
-      4. Compare:
-         - If match: Mark position as typed, play sound
-         - If mismatch: Track wrong letter, increment counter, play sound
-      5. Update the display (shows X→letter progressively)
-
-      STATE MANAGEMENT (PER-ROW):
-      Each word has its own typing state stored in state.typingStates Map:
-      {
-        typed: Set(),          // Set of character positions successfully typed
-        wrongLetters: [],      // Array of wrong letters attempted
-        wrongCount: 0          // Total wrong attempts
-      }
-
-      KEY IMPROVEMENTS OVER SimpleFlashCards.html:
-      - Per-row state instead of global state (more modular)
-      - Simpler state structure (easier to understand)
-      - Inline in table (no separate card flipping)
-      - Better for debugging/testing multiple words at once
-
-      PARAMETERS:
-      - wordIndex: Index of the word in the pack (used as state key)
-      - correctWord: The correct answer string (target language)
-      - key: The key that was pressed
-      - inputElement: The input element to update
-
-      RETURNS: Nothing (updates state and DOM directly)
-    */
-    function handleTypingInput(wordIndex, correctWord, key, inputElement) {
-      // STEP 1: Get or create typing state for this word
-      if (!state.typingStates.has(wordIndex)) {
-        state.typingStates.set(wordIndex, {
-          typed: new Set(),
-          wrongLetters: [],
-          wrongCount: 0
-        });
-      }
-
-      const typingState = state.typingStates.get(wordIndex);
-      const chars = correctWord.split('');
-
-      // STEP 2: Find next unfilled position (skip already typed and spaces)
-      let nextPos = 0;
-      for (let i = 0; i < chars.length; i++) {
-        if (chars[i] === ' ') {
-          typingState.typed.add(i);  // Auto-mark spaces as typed
-          continue;
-        }
-        if (!typingState.typed.has(i)) {
-          nextPos = i;
-          break;
-        }
-        if (i === chars.length - 1) {
-          // Already completed
-          return;
-        }
-      }
-
-      // STEP 3: Normalize characters for comparison (remove accents, lowercase)
-      const normalizedKey = normalizeCharForTyping(key);
-      const normalizedTarget = normalizeCharForTyping(chars[nextPos]);
-
-      // STEP 4: Play sound for ANY keypress (instant feedback)
-      playTypingSound();
-
-      // STEP 5: Check if correct
-      if (normalizedKey === normalizedTarget) {
-        // CORRECT! Mark position as typed
-        typingState.typed.add(nextPos);
-      } else {
-        // WRONG! Track the wrong letter and increment counter
-        typingState.wrongLetters.push(key.toLowerCase());
-        typingState.wrongCount++;
-      }
-
-      // STEP 6: Update display to show progress
-      updateTypingDisplay(wordIndex, correctWord, inputElement);
-    }
-
-    // ============================================================
-    // UPDATE TYPING DISPLAY: Show Progress in Input Box
-    // ============================================================
-
-    /*
-      Updates the typing input box to show current progress.
-
-      DISPLAY FORMAT:
-      - Untyped characters: Shown as 'X'
-      - Typed characters: Shown as actual letter
-      - Spaces: Shown as space (auto-typed)
-
-      EXAMPLE PROGRESSION for "hola amigo":
-      Initial:  "XXXX XXXXX"
-      After 'h': "hXXX XXXXX"
-      After 'o': "hoXX XXXXX"
-      After 'l': "holX XXXXX"
-      After 'a': "hola XXXXX"
-      After 'a': "hola aXXXX"
-      ... etc ...
-      Final:    "hola amigo"
-
-      PARAMETERS:
-      - wordIndex: Index of word (to get state)
-      - correctWord: The correct answer
-      - inputElement: The input element to update
-    */
-    function updateTypingDisplay(wordIndex, correctWord, inputElement) {
-      const typingState = state.typingStates.get(wordIndex);
-      if (!typingState) return;
-
-      const chars = correctWord.split('');
-      const display = chars.map((char, i) => {
-        if (typingState.typed.has(i)) {
-          return char;  // Show actual character if typed
-        } else {
-          return char === ' ' ? ' ' : 'X';  // Show X for untyped, preserve spaces
-        }
-      }).join('');
-
-      inputElement.value = display;
-
-      // Also update the wrong letters and count columns
-      const row = inputElement.closest('tr');
-      if (row) {
-        const wrongLettersCell = row.cells[row.cells.length - 2];  // Second to last column
-        const wrongCountCell = row.cells[row.cells.length - 1];     // Last column
-
-        if (wrongLettersCell) {
-          // Display wrong letters with strikethrough
-          wrongLettersCell.innerHTML = typingState.wrongLetters
-            .map(letter => `<del>${letter}</del>`)
-            .join(' ');
-        }
-
-        if (wrongCountCell) {
-          wrongCountCell.textContent = typingState.wrongCount;
-        }
-      }
-    }
-
-    // ============================================================
-    // DISPLAY VOCABULARY: Show 2-Column or Multi-Column Table
+    // DISPLAY VOCABULARY: Show 2-Column or 6-Column Table
     // ============================================================
 
     /*
@@ -1156,7 +825,7 @@
 
       TABLE MODES:
 
-      BASIC MODE (multipleChoiceMode = false, typingMode = false):
+      BASIC MODE (multipleChoiceMode = false):
       - 2 columns: Target language (column 0) and Native language (selected)
 
       MULTIPLE CHOICE MODE (multipleChoiceMode = true):
@@ -1164,20 +833,15 @@
       - Wrong answers are randomly selected from ALL packs in current act
       - Duplicate filtering applied (normalized string comparison)
 
-      TYPING MODE (typingMode = true):
-      - 5 columns: Target language, Native language, Typing input, Wrong letters, Wrong count
-      - Interactive typing practice with instant feedback
-
       PROCESS:
       1. Get selected wordpack from state.loadedData
-      2. Check which modes are enabled
+      2. Check if multiple choice mode is enabled
       3. Update table headers accordingly
       4. Loop through words array
       5. For each word:
          - Display word[0] in column 1 (target language - correct answer)
          - Display word[nativeLanguageIndex] in column 2 (translation)
          - If multiple choice mode: Generate and display 4 wrong answers
-         - If typing mode: Add typing input box and tracking columns
     */
     function displayVocabulary() {
       const tableBody = document.getElementById('vocabularyTable');
