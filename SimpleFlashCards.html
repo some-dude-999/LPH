@@ -579,7 +579,7 @@
       pointer-events: none;
     }
 
-    /* Setup Card - Back (How To) */
+    /* Setup Card - Back (How To) - Matches card-back styling */
     .setup-help {
       position: absolute;
       top: 0;
@@ -588,9 +588,12 @@
       bottom: 0;
       background:
         var(--paper-texture),
-        linear-gradient(135deg, #EDE0CC 0%, #DFD2BE 30%, #D1C4B0 60%, #C8BBA7 100%);
+        /* Lighter, whiter back card for distinction - matches card-back */
+        radial-gradient(ellipse 70% 60% at 30% 35%, rgba(255, 250, 245, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 55% at 70% 65%, rgba(250, 245, 240, 0.2) 0%, transparent 65%),
+        linear-gradient(135deg, #FFFEF9 0%, #F8F5F0 30%, #F0EDE8 60%, #EAE7E2 100%);
       background-blend-mode: soft-light;
-      background-size: var(--paper-texture-size), 100%;
+      background-size: var(--paper-texture-size), 100%, 100%, 100%;
       border-radius: 12px;
       display: flex;
       flex-direction: column;
@@ -604,11 +607,12 @@
       /* Match card styling */
       box-shadow:
         0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 3px #A08567,
         0 0 0 1px rgba(139, 115, 85, 0.3),
         inset 0 0 50px rgba(139, 115, 85, 0.1);
-      border: 3px solid #A08567;
     }
 
+    /* Edge weathering - reduced opacity like card-back */
     .setup-help::before {
       content: '';
       position: absolute;
@@ -619,20 +623,25 @@
       background:
         radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 80%, rgba(101, 67, 33, 0.1) 0%, transparent 50%);
-      border-radius: 10px;
+      border-radius: 12px;
       pointer-events: none;
+      opacity: 0.3;
     }
 
+    /* Subtle grid pattern - matches card-back */
     .setup-help::after {
       content: '';
       position: absolute;
-      top: 8px;
-      left: 8px;
-      right: 8px;
-      bottom: 8px;
-      border: 1px dashed rgba(139, 115, 85, 0.3);
-      border-radius: 4px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px);
+      border-radius: 12px;
       pointer-events: none;
+      opacity: 0.7;
     }
 
     .flashcard.setup-flipped .setup-overlay {
@@ -654,13 +663,14 @@
     }
 
     .setup-title {
-      font-family: 'Cinzel', serif;
+      font-family: 'Courier New', monospace;
       font-size: 1.5rem;
-      color: #4A3728;
+      color: #2C1810;
       margin-bottom: 25px;
       letter-spacing: 2px;
       position: relative;
       z-index: 5;
+      font-weight: bold;
     }
 
     .setup-field {
@@ -733,20 +743,22 @@
       transform: scale(1.1);
     }
 
-    /* Help content styling */
+    /* Help content styling - matches card-back with Courier font */
     .help-content {
-      color: #4A3728;
+      color: #2C1810;
       line-height: 1.7;
       position: relative;
       z-index: 5;
       font-size: 0.9rem;
+      font-family: 'Courier New', monospace;
     }
 
     .help-content h3 {
-      font-family: 'Cinzel', serif;
+      font-family: 'Courier New', monospace;
       font-size: 1rem;
-      color: #6B5344;
+      color: #2C1810;
       margin: 12px 0 6px;
+      font-weight: bold;
     }
 
     .help-content p {
