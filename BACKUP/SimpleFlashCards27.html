@@ -2363,7 +2363,7 @@
           });
         }
 
-        // Voice selector - use saved state (currentVoice or savedVoiceURI)
+        // Voice selector
         if (menuVoice && spanishVoices.length > 0) {
           menuVoice.innerHTML = '<option value="">Default</option>';
           spanishVoices.forEach((voice) => {
@@ -2372,21 +2372,13 @@
             option.textContent = `${voice.name} (${voice.lang})`;
             menuVoice.appendChild(option);
           });
-
-          // Use currentVoice if set, otherwise use savedVoiceURI from state
-          const voiceURIToRestore = currentVoice ? currentVoice.voiceURI : savedVoiceURI;
-          if (voiceURIToRestore) {
-            menuVoice.value = voiceURIToRestore;
-            // Also set currentVoice if we have the URI but not the voice object
-            if (!currentVoice && savedVoiceURI) {
-              currentVoice = spanishVoices.find(v => v.voiceURI === savedVoiceURI) || null;
-            }
+          if (currentVoice) {
+            menuVoice.value = currentVoice.voiceURI;
           }
 
           menuVoice.addEventListener('change', (e) => {
             const newVoiceURI = e.target.value;
             currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
-            savedVoiceURI = newVoiceURI; // Also update savedVoiceURI
             saveState();
           });
         }
