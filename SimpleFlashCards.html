@@ -1554,15 +1554,16 @@
     }
 
     .tooltip strong {
-      /* Mode title - centered, larger, bold */
+      /* Mode title - centered, LARGER, bold */
       display: block;
       text-align: center;
       color: #2C1810;
       font-weight: bold;
-      font-size: 1.15rem;
-      margin-bottom: 8px;
+      font-size: 1.4rem;
+      margin-bottom: 4px;
       position: relative;
       z-index: 2;
+      font-family: 'Courier New', monospace;
     }
 
     /* Bold steps - numbered list in tooltips */
@@ -1574,18 +1575,20 @@
       display: inline;
       font-size: 1rem;
       line-height: 1.8;
+      font-family: 'Courier New', monospace;
     }
 
     .tooltip em {
-      /* Instructions text */
-      color: #5D4E37;
+      /* Instructions text - SAME COLOR as everything else */
+      color: #2C1810;
       font-style: normal;
       position: relative;
       z-index: 2;
       display: block;
-      margin-top: 8px;
+      margin-top: 6px;
       font-size: 0.9rem;
       line-height: 1.8;
+      font-family: 'Courier New', monospace;
     }
 
     /* Bold action words within em (CLICK, PRESS, HOLD, TYPE) */
@@ -1593,6 +1596,7 @@
       color: #2C1810;
       font-weight: bold;
       text-transform: uppercase;
+      font-family: 'Courier New', monospace;
     }
 
     /* Make all tooltip content appear above grid */
