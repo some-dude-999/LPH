@@ -1350,9 +1350,17 @@
       opacity: 1;
     }
 
-    /* Mode Selector - HIDDEN (single-mode game) */
+    /* Mode Selector - Top Left */
     .mode-selector {
-      display: none !important;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
     }
 
     body.game-started .mode-selector {
@@ -1705,28 +1713,8 @@
     <div class="card-counter" id="card-counter">Card 0 of 0</div>
   </div>
 
-  <!-- Mode Selector -->
-  <div class="mode-selector">
-    <span class="tooltip-container">
-      <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br><b>1. Read Spanish Word<br>2. Flip to See English<br>3. Mark If You Got It Right or Wrong!</b><br><em><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back<br><b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> Key to Previous Card<br><b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> Key to Next Card<br><b>CLICK</b> <span class="tooltip-btn">👌</span> or <b>PRESS</b> <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br><b>CLICK</b> <span class="tooltip-btn">😕</span> or <b>PRESS</b> <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)</em></span>
-    </span>
-    <span class="tooltip-container">
-      <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br><b>1. Hear Spanish Word<br>2. Type What You Hear<br>3. Flip to Check Answer</b><br><em><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>TYPE</b> Letters to Spell Word<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back<br><b>PRESS</b> <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
-    </span>
-    <span class="tooltip-container">
-      <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><b>1. See Spanish Word<br>2. Say It Aloud<br>3. Get Pronunciation Score</b><br><em><b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> Key to Record<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
-    </span>
-    <span class="tooltip-container">
-      <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><b>1. See English Translation<br>2. Type Spanish Word<br>3. Flip to Check Answer</b><br><em><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>TYPE</b> Letters to Spell Word<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back<br><b>PRESS</b> <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
-    </span>
-  </div>
-
-  <div class="flashcard-container">
-    <button class="nav-btn" id="prev-btn" aria-label="Previous card">‹</button>
+    <div class="flashcard-container">
+    
 
     <div class="flashcard" id="flashcard">
       <!-- Setup Overlay (Front - Settings) -->
@@ -1814,42 +1802,22 @@
         <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20; max-width: 550px; line-height: 0.9; text-align: left;"></div>
         <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
         <span class="card-word" id="spanish-word"></span>
-        <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
+        
         <button class="peek-btn" id="peek-btn-front" aria-label="Peek at back">🤔</button>
-        <div class="pronunciation-feedback" id="feedback-front">
-          <div class="feedback-score" id="score-front">0%</div>
-          <div class="feedback-message" id="message-front">Try again!</div>
-          <div class="feedback-heard" id="heard-front">Heard: ""</div>
-          <button class="feedback-close" id="close-front">Got it</button>
         </div>
-      </div>
       <div class="card-face card-back">
         <div class="card-weathering" id="weathering-back"></div>
         <span class="card-word" id="english-word"></span>
-        <button class="mic-btn" id="mic-btn-back" aria-label="Practice pronunciation">🎤</button>
-        <div class="pronunciation-feedback" id="feedback-back">
-          <div class="feedback-score" id="score-back">0%</div>
-          <div class="feedback-message" id="message-back">Try again!</div>
-          <div class="feedback-heard" id="heard-back">Heard: ""</div>
-          <button class="feedback-close" id="close-back">Got it</button>
+        
         </div>
-      </div>
 
       <!-- Stamp overlays for visual feedback -->
       <div class="stamp-base card-stamp removed-stamp" id="removed-stamp">Card Removed</div>
       <div class="stamp-base card-stamp added-stamp" id="added-stamp">Extra Practice</div>
 
-      <!-- Action buttons (positioned above card faces like stamps, visible on both sides) -->
-      <!-- Bottom Left: Got It + Confused -->
-      <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I Got It Right! (Remove Card)">👌</button>
-      <button class="action-btn confused-btn-left" id="confused-btn-left" data-tooltip="I Got It Wrong (Need Extra Practice)">😕</button>
+      </div>
 
-      <!-- Bottom Right: Pronounce + Confused -->
-      <button class="action-btn pronounce-btn" id="pronounce-btn" data-tooltip="Play Pronunciation">🗣️</button>
-      <button class="action-btn confused-btn-right" id="confused-btn-right" data-tooltip="I Got It Wrong (Need Extra Practice)">😕</button>
-    </div>
-
-    <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
+    
   </div>
 
   <script type="module">
@@ -1870,7 +1838,7 @@
     let spanishVoices = [];
 
     // Learning modes
-    const currentMode = 'listening'; // Locked to listening mode only
+    let currentMode = 'listening'; // 'reading', 'listening', 'speaking', 'writing'
     let typingInput = ''; // User's current typing input for typing modes
     let typingDisplay = []; // Array of actual characters (always contains real word, not underscores)
     let typedPositions = new Set(); // Track which positions have been successfully typed
@@ -2364,51 +2332,7 @@
     }
 
     // Switch to a different learning mode
-    function switchMode(newMode) {
-      if (currentMode === newMode) return;
-
-      currentMode = newMode;
-
-      // Update active button
-      modeBtns.forEach(btn => btn.classList.remove('active'));
-      if (newMode === 'reading') modeReading.classList.add('active');
-      if (newMode === 'listening') modeListening.classList.add('active');
-      if (newMode === 'speaking') modeSpeaking.classList.add('active');
-      if (newMode === 'writing') modeWriting.classList.add('active');
-
-      // Completely reset pack as if starting new game in this mode
-      // (Reset from original deck, not modified current deck)
-      if (originalDeck.length > 0) {
-        currentDeck = shuffleArray([...originalDeck]);
-        currentIndex = 0;
-      }
-
-      // Reset flip state
-      if (isFlipped) {
-        flashcard.classList.remove('flipped');
-        isFlipped = false;
-      }
-
-      // Reset deck change indicator
-      pendingDeckChange = 0;
-
-      // Initialize typing display for listening and writing modes
-      if ((newMode === 'listening' || newMode === 'writing') && currentDeck.length > 0) {
-        initializeTypingDisplay();
-      }
-
-      updateDisplay();
-
-      // Auto-pronounce Spanish in listening mode only (not writing - user needs to translate)
-      if (newMode === 'listening' && currentDeck.length > 0) {
-        setTimeout(() => speakSpanish(), 300);
-      }
-
-      // Save state (only saves speech rate and pack selection, not deck progress)
-      saveState();
-    }
-
-    // Initialize typing display for listening and writing modes
+        // Initialize typing display for listening and writing modes
     function initializeTypingDisplay() {
       const word = currentDeck[currentIndex].spanish;
       typingInput = '';
@@ -2931,80 +2855,30 @@
       const wrongCountFront = document.getElementById('wrong-count-front');
 
       // Mode-specific display
-      if (currentMode === 'reading') {
-        // READING MODE - Purpose: Learn to read Spanish and understand meaning
-        // Front: Spanish word | Back: English translation
-        spanishWord.textContent = card.spanish;
-        spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
-        englishWord.className = 'card-word';
-        // Clear indicators
-        wrongLettersFront.innerHTML = '';
-        wrongCountFront.innerHTML = '';
-      } else if (currentMode === 'listening') {
-        // LISTENING MODE - Purpose: Learn to understand spoken Spanish and spell it
-        // Front: Hear Spanish audio + type what you hear | Back: Spanish word + English translation
-        // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
-        // Get unique letters (by letter property, case-insensitive)
-        const seenLetters = new Set();
-        const uniqueWrongLetters = wrongLetters.filter(item => {
-          if (seenLetters.has(item.letter)) {
-            return false;
-          }
-          seenLetters.add(item.letter);
-          return true;
-        });
-        wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
-          ? uniqueWrongLetters.map(item => {
-              // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
-              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
-            }).join('')
-          : '';
-        const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
-        const countScale = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-        wrongCountFront.innerHTML = wrongAttempts > 0
-          ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
-          : '';
-        // Update card content (no indicators embedded here)
-        spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplay()}</div>`;
-        spanishWord.className = 'card-word';
-        englishWord.innerHTML = `${card.spanish}<br><div class="translation-text">${card.translation}</div>`;
-        englishWord.className = 'card-word';
-      } else if (currentMode === 'writing') {
-        // WRITING MODE - Purpose: Learn to write/spell Spanish from English
-        // Front: English word + type Spanish translation | Back: Correct Spanish word
-        // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
-        // Get unique letters (by letter property, case-insensitive)
-        const seenLetters = new Set();
-        const uniqueWrongLetters = wrongLetters.filter(item => {
-          if (seenLetters.has(item.letter)) {
-            return false;
-          }
-          seenLetters.add(item.letter);
-          return true;
-        });
-        wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
-          ? uniqueWrongLetters.map(item => {
-              // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
-              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
-            }).join('')
-          : '';
-        const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
-        const countScale = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-        wrongCountFront.innerHTML = wrongAttempts > 0
-          ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
-          : '';
-        // Update card content (no indicators embedded here)
-        spanishWord.innerHTML = `<div class="translation-text">${card.translation}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
-        spanishWord.className = 'card-word';
-        englishWord.textContent = card.spanish;
-        englishWord.className = 'card-word';
-      } else if (currentMode === 'speaking') {
-        // SPEAKING MODE - Purpose: Learn to pronounce Spanish correctly
-        // Front: Spanish word + microphone button | Back: English translation
-        spanishWord.textContent = card.spanish;
-        spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
+      // LISTENING MODE - Hear Spanish, type what you hear
+      // Update wrong indicators
+      const seenLetters = new Set();
+      const uniqueWrongLetters = wrongLetters.filter(item => {
+        if (seenLetters.has(item.letter)) {
+          return false;
+        }
+        seenLetters.add(item.letter);
+        return true;
+      });
+      wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
+        ? uniqueWrongLetters.map(item => {
+            return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+          }).join('')
+        : '';
+      const countRotate = -2 + Math.random() * 4;
+      const countScale = 0.95 + Math.random() * 0.1;
+      wrongCountFront.innerHTML = wrongAttempts > 0
+        ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
+        : '';
+      spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplay()}</div>`;
+      spanishWord.className = 'card-word';
+      englishWord.innerHTML = `${card.spanish}<br><div class="translation-text">${card.translation}</div>`;
+      englishWord.className = 'card-word';</div>`;
         englishWord.className = 'card-word';
         // Clear indicators
         wrongLettersFront.innerHTML = '';
@@ -3076,7 +2950,7 @@
       saveState();
 
       // Auto-read in listening mode (helps learn pronunciation)
-      if (currentMode === 'listening') {
+      if (true) {  // Auto-pronounce in listening mode
         setTimeout(() => speakSpanish(), 300);
       }
     }
@@ -3094,7 +2968,7 @@
       saveState();
 
       // Auto-read in listening mode (helps learn pronunciation)
-      if (currentMode === 'listening') {
+      if (true) {  // Auto-pronounce in listening mode
         setTimeout(() => speakSpanish(), 300);
       }
     }
@@ -3111,7 +2985,7 @@
       saveState();
 
       // Auto-read in listening mode only (not writing - user needs to translate)
-      if (currentMode === 'listening') {
+      if (true) {  // Auto-pronounce in listening mode
         setTimeout(() => speakSpanish(), 300);
       }
     }
@@ -3142,79 +3016,8 @@
     }
 
     // Remove current card (Got it!)
-    function removeCurrentCard() {
-      if (currentDeck.length <= 1) {
-        currentDeck = [];
-        updateDisplay();
-        saveState();
-        return;
-      }
-
-      // Play sound
-      playCardFlipSound();
-
-      // Track deck change for visual indicator
-      pendingDeckChange = -1;
-
-      // Update display to show indicator while stamp is visible
-      updateDisplay();
-
-      // Show "Card Removed" stamp for 2 seconds (so user can read it)
-      removedStamp.classList.add('visible');
-
-      setTimeout(() => {
-        removedStamp.classList.remove('visible');
-
-        // Remove card from deck
-        currentDeck.splice(currentIndex, 1);
-        if (currentIndex >= currentDeck.length) {
-          currentIndex = 0;
-        }
-
-        // Clear pending change and show next card with updated count
-        pendingDeckChange = 0;
-
-        // Show next card
-        updateDisplay();
-        saveState();
-      }, 1500); // 1.5 seconds
-    }
-
-    // Add extra copies of current card (Confused)
-    function addConfusedCards() {
-      if (currentDeck.length === 0) return;
-
-      // Play 2 sounds
-      playCardFlipSound();
-      setTimeout(() => playCardFlipSound(), 200);
-
-      // Show "Extra Practice" stamp for 1 second
-      addedStamp.classList.add('visible');
-
-      setTimeout(() => {
-        addedStamp.classList.remove('visible');
-
-        // Add 2 copies to random positions in deck
-        const card = { ...currentDeck[currentIndex] };
-
-        for (let n = 0; n < 2; n++) {
-          const randomPos = Math.floor(Math.random() * (currentDeck.length + 1));
-          currentDeck.splice(randomPos, 0, { ...card, id: `${card.id}-copy-${Date.now()}-${n}` });
-
-          // Adjust current index if we inserted before it
-          if (randomPos <= currentIndex) {
-            currentIndex++;
-          }
-        }
-
-        // Move to next card and update display
-        currentIndex = (currentIndex + 1) % currentDeck.length;
-        updateDisplay();
-        saveState();
-      }, 1500); // 1.5 seconds
-    }
-
-    // Reset deck to original shuffled state (fresh start in current mode)
+        // Add extra copies of current card (Confused)
+        // Reset deck to original shuffled state (fresh start in current mode)
     function resetDeck() {
       if (originalDeck.length === 0) return;
       playButtonClickSound();
@@ -3291,21 +3094,7 @@
     }
 
     // Calculate similarity percentage
-    function calculateSimilarity(expected, heard) {
-      const exp = expected.toLowerCase().trim();
-      const hrd = heard.toLowerCase().trim();
-      
-      if (exp === hrd) return 100;
-      if (hrd.length === 0) return 0;
-      
-      const distance = levenshteinDistance(exp, hrd);
-      const maxLen = Math.max(exp.length, hrd.length);
-      const similarity = Math.max(0, ((maxLen - distance) / maxLen) * 100);
-      
-      return Math.round(similarity);
-    }
-
-    // Get feedback message based on score
+        // Get feedback message based on score
     function getFeedbackMessage(score) {
       if (score >= 90) return "¡Excelente! Perfect!";
       if (score >= 75) return "¡Muy bien! Great job!";
@@ -3349,61 +3138,7 @@
     }
 
     // Start listening for pronunciation
-    function startListening(isFront = true) {
-      if (!recognition) {
-        alert('Speech recognition is not supported in your browser. Try Chrome or Edge.');
-        return;
-      }
-      
-      if (currentDeck.length === 0) return;
-      if (isListening) return;
-      
-      isListening = true;
-      const micBtn = isFront ? micBtnFront : micBtnBack;
-      micBtn.classList.add('listening');
-      
-      recognition.onresult = (event) => {
-        const results = event.results[0];
-        let bestMatch = results[0].transcript;
-        let bestScore = 0;
-        
-        const expected = currentDeck[currentIndex].spanish;
-        
-        // Check all alternatives for best match
-        for (let i = 0; i < results.length; i++) {
-          const transcript = results[i].transcript;
-          const score = calculateSimilarity(expected, transcript);
-          if (score > bestScore) {
-            bestScore = score;
-            bestMatch = transcript;
-          }
-        }
-        
-        showFeedback(bestScore, bestMatch, isFront);
-      };
-      
-      recognition.onerror = (event) => {
-        console.error('Speech recognition error:', event.error);
-        isListening = false;
-        micBtn.classList.remove('listening');
-        
-        if (event.error === 'no-speech') {
-          showFeedback(0, '(no speech detected)', isFront);
-        } else if (event.error === 'not-allowed') {
-          alert('Microphone access denied. Please allow microphone access to use this feature.');
-        }
-      };
-      
-      recognition.onend = () => {
-        isListening = false;
-        micBtnFront.classList.remove('listening');
-        micBtnBack.classList.remove('listening');
-      };
-      
-      recognition.start();
-    }
-
-    // Check if setup is valid and enable start button
+        // Check if setup is valid and enable start button
     function checkSetupValid() {
       const hasWordpack = wordpackSelect.value !== '';
       const hasLanguage = languageSelect.value !== '';
@@ -3708,7 +3443,7 @@
         } else if (currentMode === 'writing') {
           e.preventDefault();
           playScribbleSound(); // Play scribble sound but don't register input
-        } else if (currentMode === 'listening') {
+        } else if (true) {  // Auto-pronounce in listening mode
           e.preventDefault(); // Ignore space in listening mode
         }
       }
@@ -3723,14 +3458,14 @@
       }
     });
 
-    // Mode selector event listeners - DISABLED (locked to listening mode)
-    // modeBtns.forEach(btn => {
-    //   btn.addEventListener('click', () => {
-    //     playButtonClickSound();
-    //     const mode = btn.dataset.mode;
-    //     switchMode(mode);
-    //   });
-    // });
+    // Mode selector event listeners
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        playButtonClickSound();
+        const mode = btn.dataset.mode;
+        switchMode(mode);
+      });
+    });
 
     // Initialize
     loadWordpacks();
