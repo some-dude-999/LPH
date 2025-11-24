@@ -1876,13 +1876,11 @@
 
     function saveState() {
       try {
-        // Save user settings and last selected pack/act (NOT deck progress)
+        // Only save speech rate and last card pack selected, NOT deck progress
         const state = {
           voiceURI: currentVoice ? currentVoice.voiceURI : null,
           speed: currentSpeed,
-          wordpackKey: currentWordpackKey,
-          act: currentAct,
-          language: nativeLanguage
+          wordpackKey: currentWordpackKey
         };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       } catch (e) {
@@ -2749,8 +2747,7 @@
     }
 
     // Initialize on page load
-    // KEY FEATURE: Loads act data, preloads deck from saved state (or pack 1), then displays menu overlay
-    // Core Objective: User sees content under the menu when toggling, state is preserved across sessions
+    // KEY FEATURE: Loads first act data and displays the starting menu card
     async function initializeApp() {
       try {
         // First, determine the first act from language modules
@@ -2764,38 +2761,17 @@
           await loadAct(currentAct);
         }
 
-        // Restore any saved state (may change currentAct and currentWordpackKey)
+        // Restore any saved state (may change currentAct)
         restoreSavedState();
 
         // If restored act is different, load it
-        const savedState = loadState();
-        if (savedState && savedState.act && savedState.act !== currentAct) {
+        const savedState = JSON.parse(localStorage.getItem('flashcardState') || '{}');
+        if (savedState.act && savedState.act !== currentAct) {
           currentAct = savedState.act;
           await loadAct(currentAct);
         }
 
-        // KEY FEATURE: Preload deck so there's content under the menu
-        // If no saved wordpack, default to first pack in current act
-        if (!currentWordpackKey && loadedActs[currentAct]) {
-          const packKeys = Object.keys(loadedActs[currentAct]);
-          if (packKeys.length > 0) {
-            currentWordpackKey = packKeys[0];
-          }
-        }
-
-        // Initialize the deck silently (content will be under the menu)
-        if (currentWordpackKey && wordpacks[currentWordpackKey]) {
-          initializeDeck(currentWordpackKey);
-          updateWordpackTitle();
-          updateBackLabel();
-
-          // Set game-started state so card content is visible under menu
-          flashcard.classList.add('game-started');
-          document.body.classList.add('game-started');
-          gameStarted = true;
-        }
-
-        // Show menu on card as overlay - this renders the menu and populates selectors
+        // Show menu on card - this renders the menu and populates selectors
         showStartingCard(false);
       } catch (error) {
         console.error('Failed to initialize app:', error);
