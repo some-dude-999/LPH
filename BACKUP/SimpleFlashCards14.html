@@ -3536,6 +3536,30 @@
       saveState();
     }
 
+    // Event Listeners for menu (no sounds on dropdowns)
+    actSelect.addEventListener('change', async () => {
+      const selectedAct = parseInt(actSelect.value);
+      currentAct = selectedAct;
+
+      // Show loading in wordpack select
+      wordpackSelect.innerHTML = '<option value="">-- Loading... --</option>';
+      wordpackSelect.disabled = true;
+
+      try {
+        // Load the selected act
+        await loadAct(selectedAct);
+
+        // Populate wordpack selector with packs from this act
+        populateWordpackSelector(selectedAct);
+
+        wordpackSelect.disabled = false;
+      } catch (error) {
+        console.error('Failed to load act:', error);
+        wordpackSelect.innerHTML = '<option value="">Failed to load act</option>';
+        wordpackSelect.disabled = false;
+      }
+    });
+
     // Event Listeners
 
     prevBtn.addEventListener('click', goToPrevious);
