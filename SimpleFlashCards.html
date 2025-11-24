@@ -362,7 +362,7 @@
       hyphens: none;
     }
 
-    /* Sound Button */
+    /* Sound Button (pronounce - bottom right) */
     .sound-btn {
       position: absolute;
       bottom: 25px;
@@ -394,6 +394,46 @@
     .sound-btn:hover {
       background: rgba(139, 115, 85, 0.4);
       transform: scale(1.1);
+    }
+
+    /* Peek Button (flip/peek at back - top right) */
+    .peek-btn {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      background: rgba(139, 115, 85, 0.2);
+      border: 3px solid rgba(160, 133, 103, 0.5);
+      color: #5D4E37;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      line-height: 1;
+      text-align: center;
+      z-index: 10;
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .flashcard.game-started .peek-btn {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .peek-btn:hover {
+      background: rgba(139, 115, 85, 0.4);
+      transform: scale(1.1);
+    }
+
+    .peek-btn:active {
+      background: rgba(139, 115, 85, 0.6);
+      transform: scale(1.05);
     }
 
     /* Mic Button */
@@ -579,7 +619,7 @@
       pointer-events: none;
     }
 
-    /* Setup Card - Back (How To) */
+    /* Setup Card - Back (How To) - Matches card-back styling */
     .setup-help {
       position: absolute;
       top: 0;
@@ -588,9 +628,12 @@
       bottom: 0;
       background:
         var(--paper-texture),
-        linear-gradient(135deg, #EDE0CC 0%, #DFD2BE 30%, #D1C4B0 60%, #C8BBA7 100%);
+        /* Lighter, whiter back card for distinction - matches card-back */
+        radial-gradient(ellipse 70% 60% at 30% 35%, rgba(255, 250, 245, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 55% at 70% 65%, rgba(250, 245, 240, 0.2) 0%, transparent 65%),
+        linear-gradient(135deg, #FFFEF9 0%, #F8F5F0 30%, #F0EDE8 60%, #EAE7E2 100%);
       background-blend-mode: soft-light;
-      background-size: var(--paper-texture-size), 100%;
+      background-size: var(--paper-texture-size), 100%, 100%, 100%;
       border-radius: 12px;
       display: flex;
       flex-direction: column;
@@ -604,11 +647,12 @@
       /* Match card styling */
       box-shadow:
         0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 3px #A08567,
         0 0 0 1px rgba(139, 115, 85, 0.3),
         inset 0 0 50px rgba(139, 115, 85, 0.1);
-      border: 3px solid #A08567;
     }
 
+    /* Edge weathering - reduced opacity like card-back */
     .setup-help::before {
       content: '';
       position: absolute;
@@ -619,20 +663,25 @@
       background:
         radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 80%, rgba(101, 67, 33, 0.1) 0%, transparent 50%);
-      border-radius: 10px;
+      border-radius: 12px;
       pointer-events: none;
+      opacity: 0.3;
     }
 
+    /* Subtle grid pattern - matches card-back */
     .setup-help::after {
       content: '';
       position: absolute;
-      top: 8px;
-      left: 8px;
-      right: 8px;
-      bottom: 8px;
-      border: 1px dashed rgba(139, 115, 85, 0.3);
-      border-radius: 4px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px);
+      border-radius: 12px;
       pointer-events: none;
+      opacity: 0.7;
     }
 
     .flashcard.setup-flipped .setup-overlay {
@@ -654,13 +703,14 @@
     }
 
     .setup-title {
-      font-family: 'Cinzel', serif;
+      font-family: 'Courier New', monospace;
       font-size: 1.5rem;
-      color: #4A3728;
+      color: #2C1810;
       margin-bottom: 25px;
       letter-spacing: 2px;
       position: relative;
       z-index: 5;
+      font-weight: bold;
     }
 
     .setup-field {
@@ -733,20 +783,22 @@
       transform: scale(1.1);
     }
 
-    /* Help content styling */
+    /* Help content styling - matches card-back with Courier font */
     .help-content {
-      color: #4A3728;
+      color: #2C1810;
       line-height: 1.7;
       position: relative;
       z-index: 5;
       font-size: 0.9rem;
+      font-family: 'Courier New', monospace;
     }
 
     .help-content h3 {
-      font-family: 'Cinzel', serif;
+      font-family: 'Courier New', monospace;
       font-size: 1rem;
-      color: #6B5344;
+      color: #2C1810;
       margin: 12px 0 6px;
+      font-weight: bold;
     }
 
     .help-content p {
@@ -1506,8 +1558,8 @@
 </head>
 <body>
   <!-- Top Corner Buttons (all on right side) -->
-  <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
-  <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+  <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck (R key)">↺</button>
+  <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu (M key)">☰</button>
 
   <!-- Menu Modal -->
   <div class="modal-overlay" id="menu-modal">
@@ -1561,19 +1613,19 @@
   <div class="mode-selector">
     <span class="tooltip-container">
       <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br>1. Read Spanish Word<br>2. Flip to See English<br>3. Mark If You Got It Right or Wrong!<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Press <span class="tooltip-key">↓</span> Key to Flip Card<br>Click <span class="tooltip-btn">‹</span> or Press <span class="tooltip-key">←</span> Key to Previous Card<br>Click <span class="tooltip-btn">›</span> or Press <span class="tooltip-key">→</span> Key to Next Card<br>Click <span class="tooltip-btn">👌</span> or Press <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br>Click <span class="tooltip-btn">😕</span> or Press <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)</em></span>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br>1. Read Spanish Word<br>2. Flip to See English<br>3. Mark If You Got It Right or Wrong!<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Hold <span class="tooltip-btn">🤔</span> or Hold <span class="tooltip-key">↓</span> Key to Peek at Back<br>Click <span class="tooltip-btn">‹</span> or Press <span class="tooltip-key">←</span> Key to Previous Card<br>Click <span class="tooltip-btn">›</span> or Press <span class="tooltip-key">→</span> Key to Next Card<br>Click <span class="tooltip-btn">👌</span> or Press <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br>Click <span class="tooltip-btn">😕</span> or Press <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br>1. Hear Spanish Word<br>2. Type What You Hear<br>3. Flip to Check Answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Type Letters to Spell Word<br>Press <span class="tooltip-key">↓</span> Key to Flip Card<br>Press <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br>1. Hear Spanish Word<br>2. Type What You Hear<br>3. Flip to Check Answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Type Letters to Spell Word<br>Hold <span class="tooltip-btn">🤔</span> or Hold <span class="tooltip-key">↓</span> Key to Peek at Back<br>Press <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br>1. See Spanish Word<br>2. Say It Aloud<br>3. Get Pronunciation Score<br><em>Click <span class="tooltip-btn">🎤</span> or Press <span class="tooltip-key">Space</span> Key to Record<br>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Press <span class="tooltip-key">↓</span> Key to Flip Card</em></span>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br>1. See Spanish Word<br>2. Say It Aloud<br>3. Get Pronunciation Score<br><em>Click <span class="tooltip-btn">🎤</span> or Press <span class="tooltip-key">Space</span> Key to Record<br>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Hold <span class="tooltip-btn">🤔</span> or Hold <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br>1. See English Translation<br>2. Type Spanish Word<br>3. Flip to Check Answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Type Letters to Spell Word<br>Press <span class="tooltip-key">↓</span> Key to Flip Card<br>Press <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br>1. See English Translation<br>2. Type Spanish Word<br>3. Flip to Check Answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Type Letters to Spell Word<br>Hold <span class="tooltip-btn">🤔</span> or Hold <span class="tooltip-key">↓</span> Key to Peek at Back<br>Press <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
     </span>
   </div>
 
@@ -1628,24 +1680,34 @@
           <h3>📚 Getting Started</h3>
           <p>Select a wordpack and language, then click Start!</p>
 
-          <h3>🎴 Controls</h3>
+          <h3>🎴 Navigation</h3>
           <ul>
-            <li><strong>‹ / ›</strong> — Navigate between cards</li>
-            <li><strong>Click card</strong> — Flip to see translation</li>
-            <li><strong>Arrow keys</strong> — Left/Right navigate, Up/Down flip</li>
+            <li><strong>‹ Button</strong> or <strong>← Key</strong> — Previous card</li>
+            <li><strong>› Button</strong> or <strong>→ Key</strong> — Next card</li>
           </ul>
 
-          <h3>👌 / 😕 Buttons</h3>
+          <h3>👁️ Viewing</h3>
           <ul>
-            <li><strong>👌 Got it!</strong> — Remove this card from deck</li>
-            <li><strong>😕 Confused</strong> — Add 2 copies for extra practice</li>
-            <li><strong>↺ Reset</strong> — Restore all cards</li>
+            <li><strong>Hold 🤔 Button</strong> or <strong>Hold ↓ Key</strong> — Peek at back</li>
+            <li><strong>Click card</strong> — Flip to see other side</li>
           </ul>
 
           <h3>🔊 Audio</h3>
           <ul>
-            <li><strong>🔊</strong> — Hear pronunciation</li>
-            <li><strong>🎤</strong> — Practice speaking (get scored!)</li>
+            <li><strong>🗣️ Button</strong> or <strong>↑ Key</strong> — Hear pronunciation</li>
+            <li><strong>🎤 Button</strong> or <strong>Space Key</strong> — Record & score (speaking mode)</li>
+          </ul>
+
+          <h3>✅ Learning Progress</h3>
+          <ul>
+            <li><strong>👌 Button</strong> or <strong>1 Key</strong> — I got it right! (remove card)</li>
+            <li><strong>😕 Button</strong> or <strong>2 Key</strong> — I got it wrong (add practice)</li>
+          </ul>
+
+          <h3>⚙️ Settings</h3>
+          <ul>
+            <li><strong>↺ Button</strong> or <strong>R Key</strong> — Reset deck</li>
+            <li><strong>☰ Button</strong> or <strong>M Key</strong> — Open menu</li>
           </ul>
         </div>
       </div>
@@ -1658,6 +1720,7 @@
         <span class="card-word" id="spanish-word"></span>
         <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
         <button class="sound-btn" id="sound-btn-front" aria-label="Play pronunciation">🗣️</button>
+        <button class="peek-btn" id="peek-btn-front" aria-label="Peek at back">🤔</button>
         <div class="pronunciation-feedback" id="feedback-front">
           <div class="feedback-score" id="score-front">0%</div>
           <div class="feedback-message" id="message-front">Try again!</div>
@@ -1780,6 +1843,7 @@
     const resetBtn = document.getElementById('reset-btn');
     const soundBtnFront = document.getElementById('sound-btn-front');
     const soundBtnBack = document.getElementById('sound-btn-back');
+    const peekBtnFront = document.getElementById('peek-btn-front');
     const speedBtns = document.querySelectorAll('.speed-btn'); // Includes both setup and menu buttons
     const removedStamp = document.getElementById('removed-stamp');
     const addedStamp = document.getElementById('added-stamp');
@@ -3325,6 +3389,38 @@
       speakSpanish();
     });
 
+    // Peek button (hold to flip, release to unflip)
+    peekBtnFront.addEventListener('mousedown', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      flipCard();
+    });
+    peekBtnFront.addEventListener('mouseup', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      unflipCard();
+    });
+    peekBtnFront.addEventListener('mouseleave', (e) => {
+      // If user moves mouse off button while holding, unflip
+      unflipCard();
+    });
+    // Touch support for mobile
+    peekBtnFront.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      flipCard();
+    });
+    peekBtnFront.addEventListener('touchend', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      unflipCard();
+    });
+    peekBtnFront.addEventListener('touchcancel', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      unflipCard();
+    });
+
     // Speed buttons
     speedBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -3498,6 +3594,18 @@
           playScribbleSound(); // Play scribble sound but don't register input
         } else if (currentMode === 'listening') {
           e.preventDefault(); // Ignore space in listening mode
+        }
+      } else if (e.key === 'r' || e.key === 'R') {
+        // R key: Reset deck
+        e.preventDefault();
+        resetDeck();
+      } else if (e.key === 'm' || e.key === 'M') {
+        // M key: Toggle menu
+        e.preventDefault();
+        if (menuModal.classList.contains('visible')) {
+          menuModal.classList.remove('visible');
+        } else {
+          menuModal.classList.add('visible');
         }
       }
     });
