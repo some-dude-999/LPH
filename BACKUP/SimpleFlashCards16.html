@@ -853,18 +853,13 @@
 
     /* Hide card buttons when setup is visible - handled by opacity rules above */
 
-    /* Hide card content when setup is visible (but NOT when showing menu/starting card) */
-    .flashcard:not(.game-started):not(.showing-menu) .card-word {
+    /* Hide card content when setup is visible */
+    .flashcard:not(.game-started) .card-word {
       opacity: 0;
     }
 
-    .flashcard:not(.game-started):not(.showing-menu) .card-label {
+    .flashcard:not(.game-started) .card-label {
       opacity: 0;
-    }
-
-    /* Ensure menu card content is always visible */
-    .flashcard.showing-menu .card-word {
-      opacity: 1 !important;
     }
 
     /* Speed Controls in Menu */
@@ -1673,19 +1668,19 @@
   <div class="mode-selector">
     <span class="tooltip-container">
       <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">✓</span> or <b>PRESS</b> <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br><b>CLICK</b> <span class="tooltip-btn">✗</span> or <b>PRESS</b> <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)<br><b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> Key to Previous Card<br><b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> Key to Next Card<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">✓</span> or <b>PRESS</b> <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br><b>CLICK</b> <span class="tooltip-btn">✗</span> or <b>PRESS</b> <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)<br><b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> Key to Previous Card<br><b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> Key to Next Card<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> Key to Record<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> Key to Record<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
   </div>
 
@@ -2144,9 +2139,6 @@
       }
       isOnStartingCard = true;
 
-      // Add showing-menu class so menu content is visible (not hidden by opacity:0 rule)
-      flashcard.classList.add('showing-menu');
-
       // Update titles
       wordpackTitle.textContent = 'Spanish Flashcards';
       cardCounter.textContent = 'Choose Lesson to Begin Studying';
@@ -2170,9 +2162,6 @@
     function exitStartingCard() {
       if (!isOnStartingCard) return;
       isOnStartingCard = false;
-
-      // Remove showing-menu class
-      flashcard.classList.remove('showing-menu');
 
       currentIndex = savedIndex;
       updateWordpackTitle(); // Restore wordpack title
@@ -3510,7 +3499,6 @@
 
       // Exit starting card state if we're on it
       isOnStartingCard = false;
-      flashcard.classList.remove('showing-menu');
 
       // Initialize deck
       initializeDeck(currentWordpackKey);
@@ -3532,15 +3520,36 @@
       playButtonClickSound();
       addConfusedCards();
     });
-    // Peek button (bottom right - toggle flip on press)
-    peekBtnAction.addEventListener('click', (e) => {
+    // Peek button (bottom right - hold to flip, release to unflip)
+    peekBtnAction.addEventListener('mousedown', (e) => {
       e.stopPropagation();
       e.preventDefault();
-      if (isFlipped) {
-        unflipCard();
-      } else {
-        flipCard();
-      }
+      flipCard();
+    });
+    peekBtnAction.addEventListener('mouseup', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      unflipCard();
+    });
+    peekBtnAction.addEventListener('mouseleave', (e) => {
+      // If user moves mouse off button while holding, unflip
+      unflipCard();
+    });
+    // Touch support for mobile
+    peekBtnAction.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      flipCard();
+    });
+    peekBtnAction.addEventListener('touchend', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      unflipCard();
+    });
+    peekBtnAction.addEventListener('touchcancel', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      unflipCard();
     });
     resetBtn.addEventListener('click', resetDeck);
 
@@ -3664,13 +3673,9 @@
         e.preventDefault();
         speakSpanish();
       } else if (e.key === 'ArrowDown') {
-        // Down arrow: Toggle flip (press to flip, press again to unflip)
+        // Down arrow: ALWAYS flip
         e.preventDefault();
-        if (isFlipped) {
-          unflipCard();
-        } else {
-          flipCard();
-        }
+        flipCard();
       } else if (e.key === '1') {
         // Key 1: Remove card (Got it!) - only in reading mode
         if (currentMode === 'reading') {
@@ -3705,6 +3710,10 @@
     document.addEventListener('keyup', (e) => {
       // Clear key state
       keysPressed[e.key] = false;
+
+      if (e.key === 'ArrowDown') {
+        unflipCard();
+      }
     });
 
     // Mode selector event listeners

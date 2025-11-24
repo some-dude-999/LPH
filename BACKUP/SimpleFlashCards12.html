@@ -853,18 +853,13 @@
 
     /* Hide card buttons when setup is visible - handled by opacity rules above */
 
-    /* Hide card content when setup is visible (but NOT when showing menu/starting card) */
-    .flashcard:not(.game-started):not(.showing-menu) .card-word {
+    /* Hide card content when setup is visible */
+    .flashcard:not(.game-started) .card-word {
       opacity: 0;
     }
 
-    .flashcard:not(.game-started):not(.showing-menu) .card-label {
+    .flashcard:not(.game-started) .card-label {
       opacity: 0;
-    }
-
-    /* Ensure menu card content is always visible */
-    .flashcard.showing-menu .card-word {
-      opacity: 1 !important;
     }
 
     /* Speed Controls in Menu */
@@ -1662,30 +1657,85 @@
   <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
   <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
 
-  <div class="wordpack-title" id="wordpack-title">Spanish Flashcard Typing Game</div>
+  <!-- Menu Modal -->
+  <div class="modal-overlay" id="menu-modal">
+    <div class="modal-card">
+      <div class="modal-title">Choose Lesson to Begin Studying</div>
+      <div class="modal-content">
+        <!-- Row 1: Act and Wordpack Selection -->
+        <div class="setup-row">
+          <div class="menu-field">
+            <label for="menu-act">Choose Act</label>
+            <select id="menu-act">
+              <option value="">-- Loading... --</option>
+            </select>
+          </div>
+
+          <div class="menu-field">
+            <label for="menu-wordpack">Choose Wordpack</label>
+            <select id="menu-wordpack">
+              <option value="">-- Select Act First --</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row 2: Language and Speed Selection -->
+        <div class="setup-row">
+          <div class="menu-field">
+            <label for="menu-language">I speak</label>
+            <select id="menu-language">
+              <option value="english">English</option>
+              <option value="chinese">中文</option>
+              <option value="portuguese">Português</option>
+            </select>
+          </div>
+
+          <div class="menu-field">
+            <label for="menu-speed">Pronunciation Speed</label>
+            <div class="speed-controls-menu">
+              <button class="speed-btn" id="speed-slow" data-speed="0.2" title="Slow">🐢 Slow</button>
+              <button class="speed-btn active" id="speed-normal" data-speed="0.6" title="Normal">🚶 Normal</button>
+              <button class="speed-btn" id="speed-fast" data-speed="1.0" title="Fast">🐇 Fast</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: Voice Selection -->
+        <div class="menu-field">
+          <label for="menu-voice">Spanish Voice</label>
+          <select id="menu-voice">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+      <button class="modal-close-btn" id="menu-close">Done</button>
+    </div>
+  </div>
+
+  <div class="wordpack-title" id="wordpack-title"></div>
 
   <!-- Fixed-height wrapper prevents card from shifting when stamp indicator appears -->
   <div class="card-counter-wrapper">
-    <div class="card-counter" id="card-counter">Choose Wordpack to Begin Studying</div>
+    <div class="card-counter" id="card-counter">Card 0 of 0</div>
   </div>
 
   <!-- Mode Selector -->
   <div class="mode-selector">
     <span class="tooltip-container">
       <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">✓</span> or <b>PRESS</b> <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br><b>CLICK</b> <span class="tooltip-btn">✗</span> or <b>PRESS</b> <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)<br><b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> Key to Previous Card<br><b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> Key to Next Card<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">✓</span> or <b>PRESS</b> <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br><b>CLICK</b> <span class="tooltip-btn">✗</span> or <b>PRESS</b> <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)<br><b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> Key to Previous Card<br><b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> Key to Next Card<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> Key to Record<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> Key to Record<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
   </div>
 
@@ -1873,8 +1923,10 @@
       return null;
     }
 
-    // DOM Elements - menu elements are created dynamically in renderMenuCard()
-    // and accessed via document.getElementById('menu-act'), etc.
+    // DOM Elements (now all in menu modal)
+    const actSelect = document.getElementById('menu-act');
+    const wordpackSelect = document.getElementById('menu-wordpack');
+    const languageSelect = document.getElementById('menu-language');
     const backLabel = document.getElementById('back-label');
     const flashcard = document.getElementById('flashcard');
     const spanishWord = document.getElementById('spanish-word');
@@ -1902,8 +1954,13 @@
     const modeSpeaking = document.getElementById('mode-speaking');
     const modeWriting = document.getElementById('mode-writing');
 
-    // Menu button
+    // Modal elements
     const menuBtn = document.getElementById('menu-btn');
+    const menuModal = document.getElementById('menu-modal');
+    const menuClose = document.getElementById('menu-close');
+    const menuWordpack = document.getElementById('menu-wordpack');
+    const menuLanguage = document.getElementById('menu-language');
+    const menuVoice = document.getElementById('menu-voice');
     
     // Mic and feedback elements
     const micBtnFront = document.getElementById('mic-btn-front');
@@ -2144,9 +2201,6 @@
       }
       isOnStartingCard = true;
 
-      // Add showing-menu class so menu content is visible (not hidden by opacity:0 rule)
-      flashcard.classList.add('showing-menu');
-
       // Update titles
       wordpackTitle.textContent = 'Spanish Flashcards';
       cardCounter.textContent = 'Choose Lesson to Begin Studying';
@@ -2171,9 +2225,6 @@
       if (!isOnStartingCard) return;
       isOnStartingCard = false;
 
-      // Remove showing-menu class
-      flashcard.classList.remove('showing-menu');
-
       currentIndex = savedIndex;
       updateWordpackTitle(); // Restore wordpack title
       updateDisplay();
@@ -2183,55 +2234,37 @@
     function renderMenuCard() {
       // Front: Menu/Settings (styled like Spanish side)
       spanishWord.innerHTML = `
-        <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 20px;">⚙️ Settings</div>
+        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 30px;">⚙️ Settings</div>
 
-        <div style="font-size: 1.1rem; text-align: left; max-width: 550px; margin: 0 auto; line-height: 1.8;">
-          <!-- Row 1: Act and Wordpack -->
-          <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-            <div style="flex: 1;">
-              <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">Choose Act</div>
-              <select id="menu-act" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
-                <option value="">-- Loading... --</option>
-              </select>
-            </div>
-            <div style="flex: 1;">
-              <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">Choose Wordpack</div>
-              <select id="menu-wordpack" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
-                <option value="">-- Select Act First --</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Row 2: Language and Speed -->
-          <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-            <div style="flex: 1;">
-              <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">I speak</div>
-              <select id="menu-language" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
-                <option value="english">English</option>
-                <option value="chinese">中文</option>
-                <option value="portuguese">Português</option>
-              </select>
-            </div>
-            <div style="flex: 1;">
-              <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">Pronunciation Speed</div>
-              <div style="display: flex; gap: 8px; justify-content: center;">
-                <button class="menu-speed-btn" data-speed="0.2" style="padding: 8px 16px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐢</button>
-                <button class="menu-speed-btn active" data-speed="0.6" style="padding: 8px 16px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #8B7355; color: #F5E6D3; cursor: pointer;">🚶</button>
-                <button class="menu-speed-btn" data-speed="1.0" style="padding: 8px 16px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐇</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 3: Voice -->
-          <div style="margin-bottom: 25px;">
-            <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">Spanish Voice</div>
-            <select id="menu-voice" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
-              <option value="">Default</option>
+        <div style="font-size: 1.3rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 2;">
+          <div style="margin: 20px 0;">
+            <div style="font-weight: bold; margin-bottom: 8px;">Wordpack</div>
+            <select id="menu-wordpack" style="width: 100%; padding: 10px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
+              <option value="">-- Select --</option>
             </select>
           </div>
 
-          <button id="start-practice-btn" style="width: 100%; padding: 15px; font-size: 1.4rem; background: #8B7355; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
-            ▶ Start Practice
+          <div style="margin: 20px 0;">
+            <div style="font-weight: bold; margin-bottom: 8px;">I speak</div>
+            <select id="menu-language" style="width: 100%; padding: 10px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
+              <option value="">-- Select --</option>
+              <option value="english">English</option>
+              <option value="chinese">中文</option>
+              <option value="portuguese">Português</option>
+            </select>
+          </div>
+
+          <div style="margin: 20px 0;">
+            <div style="font-weight: bold; margin-bottom: 8px;">Pronunciation Speed</div>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+              <button class="menu-speed-btn" data-speed="0.2" style="padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐢</button>
+              <button class="menu-speed-btn active" data-speed="0.6" style="padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; border: 2px solid #8B7355; background: #8B7355; color: #F5E6D3; cursor: pointer;">🚶</button>
+              <button class="menu-speed-btn" data-speed="1.0" style="padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐇</button>
+            </div>
+          </div>
+
+          <button onclick="exitStartingCard()" style="width: 100%; padding: 15px; margin-top: 30px; font-size: 1.5rem; background: #8B7355; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+            ← Back to Practice
           </button>
         </div>
       `;
@@ -2278,77 +2311,33 @@
 
       // Populate selectors after render
       setTimeout(() => {
-        const menuAct = document.getElementById('menu-act');
         const menuWordpack = document.getElementById('menu-wordpack');
         const menuLanguage = document.getElementById('menu-language');
-        const menuVoice = document.getElementById('menu-voice');
-        const startPracticeBtn = document.getElementById('start-practice-btn');
 
-        // Populate act selector
-        if (menuAct) {
-          populateActSelector(menuAct);
-          if (currentAct) {
-            menuAct.value = currentAct;
-          }
-
-          menuAct.addEventListener('change', async (e) => {
-            const selectedAct = parseInt(e.target.value);
-            currentAct = selectedAct;
-            menuWordpack.innerHTML = '<option value="">-- Loading... --</option>';
-            menuWordpack.disabled = true;
-
-            try {
-              await loadAct(selectedAct);
-              populateWordpackSelectorOnCard(selectedAct);
-              menuWordpack.disabled = false;
-            } catch (error) {
-              console.error('Failed to load act:', error);
-              menuWordpack.innerHTML = '<option value="">Failed to load act</option>';
-            }
-          });
-        }
-
-        // Populate wordpack selector
-        if (menuWordpack) {
-          populateWordpackSelectorOnCard(currentAct);
-          // Restore saved wordpack selection if available
-          if (currentWordpackKey && loadedActs[currentAct] && loadedActs[currentAct][currentWordpackKey]) {
-            menuWordpack.value = currentWordpackKey;
-          }
+        if (menuWordpack && wordpackSelect) {
+          menuWordpack.innerHTML = wordpackSelect.innerHTML;
+          menuWordpack.value = currentWordpackKey;
 
           menuWordpack.addEventListener('change', (e) => {
             currentWordpackKey = e.target.value;
+            wordpackSelect.value = e.target.value;
+            if (gameStarted) {
+              initializeDeck(currentWordpackKey);
+            }
             saveState();
           });
         }
 
-        // Language selector
         if (menuLanguage) {
           menuLanguage.value = nativeLanguage;
 
           menuLanguage.addEventListener('change', (e) => {
             nativeLanguage = e.target.value;
+            languageSelect.value = e.target.value;
             updateBackLabel();
-            saveState();
-          });
-        }
-
-        // Voice selector
-        if (menuVoice && spanishVoices.length > 0) {
-          menuVoice.innerHTML = '<option value="">Default</option>';
-          spanishVoices.forEach((voice) => {
-            const option = document.createElement('option');
-            option.value = voice.voiceURI;
-            option.textContent = `${voice.name} (${voice.lang})`;
-            menuVoice.appendChild(option);
-          });
-          if (currentVoice) {
-            menuVoice.value = currentVoice.voiceURI;
-          }
-
-          menuVoice.addEventListener('change', (e) => {
-            const newVoiceURI = e.target.value;
-            currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+            if (gameStarted) {
+              initializeDeck(currentWordpackKey);
+            }
             saveState();
           });
         }
@@ -2371,49 +2360,7 @@
             saveState();
           });
         });
-
-        // Start Practice button
-        if (startPracticeBtn) {
-          startPracticeBtn.addEventListener('click', () => {
-            if (currentWordpackKey && nativeLanguage) {
-              playButtonClickSound();
-              startGame();
-            }
-          });
-        }
       }, 0);
-    }
-
-    // Helper function to populate wordpack selector on card
-    function populateWordpackSelectorOnCard(actNumber) {
-      const menuWordpack = document.getElementById('menu-wordpack');
-      if (!menuWordpack || !actNumber) return;
-
-      menuWordpack.innerHTML = '<option value="">-- Select Wordpack --</option>';
-
-      const actData = loadedActs[actNumber];
-      if (!actData) return;
-
-      const packKeys = Object.keys(actData);
-      packKeys.sort((a, b) => {
-        const numA = actData[a].meta.wordpack;
-        const numB = actData[b].meta.wordpack;
-        return numA - numB;
-      });
-
-      packKeys.forEach(packKey => {
-        const pack = actData[packKey];
-        const option = document.createElement('option');
-        option.value = packKey;
-        option.textContent = `${pack.meta.wordpack}. ${pack.meta.english}`;
-        menuWordpack.appendChild(option);
-      });
-
-      // Auto-select first pack
-      if (packKeys.length > 0) {
-        menuWordpack.value = packKeys[0];
-        currentWordpackKey = packKeys[0];
-      }
     }
 
     // Switch to a different learning mode
@@ -2638,12 +2585,27 @@
     // Load Spanish voices
     function loadVoices() {
       spanishVoices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
-      // Voice selector is now populated in renderMenuCard() when menu is created
+      populateVoiceSelector();
     }
 
     function populateVoiceSelector() {
-      // DEPRECATED: Voice selector is now populated inside renderMenuCard()
-      // This function kept for compatibility but does nothing
+      // Populate menu voice selector
+      if (!menuVoice) return;
+
+      menuVoice.innerHTML = '<option value="">Default</option>';
+      spanishVoices.forEach((voice, idx) => {
+        const option = document.createElement('option');
+        option.value = voice.voiceURI;
+        option.textContent = `${voice.name} (${voice.lang})`;
+        menuVoice.appendChild(option);
+      });
+
+      // Restore saved voice
+      const savedState = loadState();
+      if (savedState && savedState.voiceURI) {
+        menuVoice.value = savedState.voiceURI;
+        currentVoice = spanishVoices.find(v => v.voiceURI === savedState.voiceURI) || null;
+      }
     }
 
     // Load voices when available
@@ -2693,97 +2655,127 @@
     }
 
     // Populate act selector dropdown
-    // KEY FEATURE: Populates act dropdown with available acts for current language
-    function populateActSelector(targetElement = null) {
-      // Use provided element or find menu-act element
-      const selectElement = targetElement || document.getElementById('menu-act');
-      if (!selectElement) {
-        console.warn('[populateActSelector] No target element found');
-        return;
-      }
-
-      selectElement.innerHTML = '';
+    function populateActSelector() {
+      actSelect.innerHTML = '';
       const modules = LANGUAGE_MODULES[CURRENT_LANGUAGE];
 
       modules.forEach(actConfig => {
         const option = document.createElement('option');
         option.value = actConfig.act;
         option.textContent = `Act ${actConfig.act}: ${actConfig.name}`;
-        selectElement.appendChild(option);
+        actSelect.appendChild(option);
       });
 
       // Auto-select first act
       if (modules.length > 0) {
-        selectElement.value = modules[0].act;
+        actSelect.value = modules[0].act;
         currentAct = modules[0].act;
       }
     }
 
     // Initialize on page load
-    // KEY FEATURE: Loads first act data and displays the starting menu card
     async function initializeApp() {
       try {
-        // First, determine the first act from language modules
-        const modules = LANGUAGE_MODULES[CURRENT_LANGUAGE];
-        if (modules.length > 0) {
-          currentAct = modules[0].act;
-        }
+        // Populate act selector
+        populateActSelector();
 
-        // Load first act data BEFORE rendering menu
+        // Load first act automatically
         if (currentAct) {
           await loadAct(currentAct);
+          populateWordpackSelector(currentAct);
         }
 
-        // Restore any saved state (may change currentAct)
         restoreSavedState();
 
-        // If restored act is different, load it
-        const savedState = JSON.parse(localStorage.getItem('flashcardState') || '{}');
-        if (savedState.act && savedState.act !== currentAct) {
-          currentAct = savedState.act;
-          await loadAct(currentAct);
+        // Set defaults but don't auto-start
+        if (!wordpackSelect.value) {
+          const firstPack = Object.keys(wordpacks)[0];
+          if (firstPack) wordpackSelect.value = firstPack;
+        }
+        if (!languageSelect.value) {
+          languageSelect.value = 'english';
+          menuLanguage.value = 'english';
         }
 
-        // Show menu on card - this renders the menu and populates selectors
-        showStartingCard(false);
+        // Show menu modal on first load
+        menuModal.classList.add('visible');
       } catch (error) {
         console.error('Failed to initialize app:', error);
-        // Show error in menu if it exists
-        const menuAct = document.getElementById('menu-act');
-        const menuWordpack = document.getElementById('menu-wordpack');
-        if (menuAct) menuAct.innerHTML = '<option value="">Failed to load acts</option>';
-        if (menuWordpack) menuWordpack.innerHTML = '<option value="">Failed to load wordpacks</option>';
+        actSelect.innerHTML = '<option value="">Failed to load acts</option>';
+        wordpackSelect.innerHTML = '<option value="">Failed to load wordpacks</option>';
       }
     }
 
-    // NOTE: populateWordpackSelector was removed - functionality moved to populateWordpackSelectorOnCard()
-    // which is called from renderMenuCard() and properly handles the menu-wordpack element
+    // Populate the dropdown with wordpack options (from specific act or all)
+    function populateWordpackSelector(actNumber = null) {
+      // Setup page dropdowns
+      wordpackSelect.innerHTML = '';
+      menuWordpack.innerHTML = '';
+
+      let packsToShow;
+
+      if (actNumber) {
+        // Show only packs from the specified act
+        const actData = loadedActs[actNumber];
+        if (!actData) {
+          wordpackSelect.innerHTML = '<option value="">-- Load Act First --</option>';
+          return;
+        }
+        packsToShow = Object.entries(actData);
+      } else {
+        // Show all loaded packs
+        packsToShow = Object.entries(wordpacks);
+      }
+
+      // Filter and sort wordpacks by their wordpack number
+      const sortedPacks = packsToShow
+        .filter(([key, pack]) => pack.meta && pack.words && pack.meta.wordpack)
+        .sort((a, b) => a[1].meta.wordpack - b[1].meta.wordpack);
+
+      for (const [key, pack] of sortedPacks) {
+        const option1 = document.createElement('option');
+        option1.value = key;
+        option1.textContent = `${pack.meta.wordpack}. ${pack.meta.english}`;
+        wordpackSelect.appendChild(option1);
+
+        const option2 = document.createElement('option');
+        option2.value = key;
+        option2.textContent = `${pack.meta.wordpack}. ${pack.meta.english}`;
+        menuWordpack.appendChild(option2);
+      }
+
+      // Auto-select first wordpack
+      if (sortedPacks.length > 0) {
+        wordpackSelect.value = sortedPacks[0][0];
+        menuWordpack.value = sortedPacks[0][0];
+      }
+
+      // Auto-select first language (English)
+      languageSelect.value = 'english';
+      menuLanguage.value = 'english';
+    }
 
     // Restore saved state from localStorage
-    // KEY FEATURE: Restores user's last session settings (speed, wordpack, act)
     function restoreSavedState() {
       const savedState = loadState();
       if (!savedState) return;
 
-      // Restore speech rate
+      // Only restore speech rate and last card pack selected (NOT deck progress)
       if (savedState.speed) {
         currentSpeed = savedState.speed;
-        // Speed buttons UI will be updated when menu renders
+        // Restore speed to all speed buttons in menu
+        speedBtns.forEach(btn => {
+          btn.classList.toggle('active', parseFloat(btn.dataset.speed) === currentSpeed);
+        });
       }
 
-      // Restore last selected act
-      if (savedState.act) {
-        currentAct = savedState.act;
-      }
-
-      // Restore last selected wordpack (value only - UI updated when menu renders)
-      if (savedState.wordpackKey) {
+      // Restore last selected wordpack
+      if (savedState.wordpackKey && wordpacks[savedState.wordpackKey]) {
         currentWordpackKey = savedState.wordpackKey;
-      }
-
-      // Restore native language
-      if (savedState.language) {
-        nativeLanguage = savedState.language;
+        wordpackSelect.value = savedState.wordpackKey;
+        if (menuWordpack) {
+          menuWordpack.value = savedState.wordpackKey;
+        }
       }
 
       // Voice will be restored in populateVoiceSelector
@@ -2867,9 +2859,7 @@
       const nextPackKey = packs[nextPackIndex];
 
       currentWordpackKey = nextPackKey;
-      // Update menu selector if visible
-      const menuWordpack = document.getElementById('menu-wordpack');
-      if (menuWordpack) menuWordpack.value = nextPackKey;
+      wordpackSelect.value = nextPackKey;
       initializeDeck(nextPackKey);
       updateWordpackTitle();
       saveState();
@@ -3497,10 +3487,9 @@
     }
 
     // Start the game
-    // KEY FEATURE: Initializes deck and starts practice session
     function startGame() {
-      // Values are already set via menu selectors or restored state
-      // nativeLanguage and currentWordpackKey are already set
+      nativeLanguage = languageSelect.value;
+      currentWordpackKey = wordpackSelect.value;
 
       // Update back label based on language
       updateBackLabel();
@@ -3510,15 +3499,38 @@
 
       // Exit starting card state if we're on it
       isOnStartingCard = false;
-      flashcard.classList.remove('showing-menu');
 
       // Initialize deck
-      initializeDeck(currentWordpackKey);
+      initializeDeck(wordpackSelect.value);
       flashcard.classList.add('game-started');
       document.body.classList.add('game-started');
       gameStarted = true;
       saveState();
     }
+
+    // Event Listeners for menu (no sounds on dropdowns)
+    actSelect.addEventListener('change', async () => {
+      const selectedAct = parseInt(actSelect.value);
+      currentAct = selectedAct;
+
+      // Show loading in wordpack select
+      wordpackSelect.innerHTML = '<option value="">-- Loading... --</option>';
+      wordpackSelect.disabled = true;
+
+      try {
+        // Load the selected act
+        await loadAct(selectedAct);
+
+        // Populate wordpack selector with packs from this act
+        populateWordpackSelector(selectedAct);
+
+        wordpackSelect.disabled = false;
+      } catch (error) {
+        console.error('Failed to load act:', error);
+        wordpackSelect.innerHTML = '<option value="">Failed to load act</option>';
+        wordpackSelect.disabled = false;
+      }
+    });
 
     // Event Listeners
 
@@ -3532,15 +3544,36 @@
       playButtonClickSound();
       addConfusedCards();
     });
-    // Peek button (bottom right - toggle flip on press)
-    peekBtnAction.addEventListener('click', (e) => {
+    // Peek button (bottom right - hold to flip, release to unflip)
+    peekBtnAction.addEventListener('mousedown', (e) => {
       e.stopPropagation();
       e.preventDefault();
-      if (isFlipped) {
-        unflipCard();
-      } else {
-        flipCard();
-      }
+      flipCard();
+    });
+    peekBtnAction.addEventListener('mouseup', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      unflipCard();
+    });
+    peekBtnAction.addEventListener('mouseleave', (e) => {
+      // If user moves mouse off button while holding, unflip
+      unflipCard();
+    });
+    // Touch support for mobile
+    peekBtnAction.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      flipCard();
+    });
+    peekBtnAction.addEventListener('touchend', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      unflipCard();
+    });
+    peekBtnAction.addEventListener('touchcancel', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      unflipCard();
     });
     resetBtn.addEventListener('click', resetDeck);
 
@@ -3620,16 +3653,76 @@
       hideFeedback();
     });
 
-    // Menu button - show menu on card
+    // Menu Modal
     menuBtn.addEventListener('click', () => {
       playButtonClickSound();
-      showStartingCard(false); // Show menu on card
+      menuModal.classList.add('visible');
+    });
+    
+    menuClose.addEventListener('click', () => {
+      playButtonClickSound();
+
+      // Apply changes from menu
+      const newWordpack = menuWordpack.value;
+      const newLanguage = menuLanguage.value;
+      const newVoiceURI = menuVoice.value;
+
+      // Update voice
+      currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+
+      // Check if wordpack or language changed
+      const wordpackChanged = newWordpack !== currentWordpackKey;
+      const languageChanged = newLanguage !== nativeLanguage;
+
+      if (wordpackChanged || languageChanged) {
+        currentWordpackKey = newWordpack;
+        nativeLanguage = newLanguage;
+        wordpackSelect.value = newWordpack;
+        languageSelect.value = newLanguage;
+        updateBackLabel();
+        updateWordpackTitle();
+
+        // Re-initialize deck if game has started
+        if (gameStarted) {
+          initializeDeck(currentWordpackKey);
+        }
+      }
+
+      // Start game if not started yet
+      if (!gameStarted) {
+        startGame();
+      }
+
+      saveState();
+      menuModal.classList.remove('visible');
+    });
+
+    menuModal.addEventListener('click', (e) => {
+      if (e.target === menuModal) {
+        menuModal.classList.remove('visible');
+      }
+    });
+
+    // Voice change - play sample pronunciation
+    menuVoice.addEventListener('change', () => {
+      const newVoiceURI = menuVoice.value;
+      currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+      // Play sample if game has started and there's a current card
+      if (gameStarted && currentDeck.length > 0) {
+        speakSpanish();
+      }
     });
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
-      // Don't handle navigation if on starting card (menu)
-      if (isOnStartingCard) {
+      // Close modals with Escape
+      if (e.key === 'Escape') {
+        menuModal.classList.remove('visible');
+        return;
+      }
+
+      // Don't handle navigation if modal is open
+      if (menuModal.classList.contains('visible')) {
         return;
       }
 
@@ -3664,13 +3757,9 @@
         e.preventDefault();
         speakSpanish();
       } else if (e.key === 'ArrowDown') {
-        // Down arrow: Toggle flip (press to flip, press again to unflip)
+        // Down arrow: ALWAYS flip
         e.preventDefault();
-        if (isFlipped) {
-          unflipCard();
-        } else {
-          flipCard();
-        }
+        flipCard();
       } else if (e.key === '1') {
         // Key 1: Remove card (Got it!) - only in reading mode
         if (currentMode === 'reading') {
@@ -3705,6 +3794,10 @@
     document.addEventListener('keyup', (e) => {
       // Clear key state
       keysPressed[e.key] = false;
+
+      if (e.key === 'ArrowDown') {
+        unflipCard();
+      }
     });
 
     // Mode selector event listeners
