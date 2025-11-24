@@ -91,16 +91,21 @@
       color: #D4C4A8;
     }
 
-    /* Wordpack Title - Elegant weathered antique gold leaf appearance */
+    /* Wordpack Title - Realistic dark gold with noise texture */
     .wordpack-title {
-      /* Muted, sophisticated gold gradient with greenish/brownish tints like aged gold */
-      background: linear-gradient(180deg,
-        #D4AF37 0%,      /* Muted gold */
-        #C9A961 25%,     /* Aged gold with greenish tint */
-        #B8963C 50%,     /* Deep antique gold */
-        #A67C38 75%,     /* Bronzed gold */
-        #8B7355 100%     /* Dark weathered gold-brown */
-      );
+      /* Dark gold to dark brown gradient - realistic gold appearance */
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(180deg,
+          #B8860B 0%,      /* Dark goldenrod */
+          #A67C38 20%,     /* Bronzed gold */
+          #8B6914 40%,     /* Dark gold */
+          #7A5C1A 60%,     /* Deep brown-gold */
+          #5D4E37 80%,     /* Dark brown */
+          #4A3728 100%     /* Very dark brown */
+        );
+      background-blend-mode: overlay;
+      background-size: var(--cardboard-texture-size), 100%;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -108,17 +113,16 @@
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 8px;
-      /* Subtle, refined shadows for depth without cartoon effect */
+      /* Realistic shadows for metallic depth */
       text-shadow:
-        0 1px 1px rgba(212, 175, 55, 0.3),
-        0 2px 3px rgba(139, 115, 85, 0.2),
-        0 -0.5px 0.5px rgba(255, 250, 230, 0.15),
-        0 3px 5px rgba(0, 0, 0, 0.25);
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 1px 1px rgba(139, 105, 20, 0.3),
+        0 -1px 0 rgba(184, 134, 11, 0.2);
       opacity: 0;
       transition: opacity 0.3s ease;
       letter-spacing: 2px;
-      /* Gentle drop shadow for elegance */
-      filter: drop-shadow(0 1px 2px rgba(139, 115, 85, 0.3));
+      /* Drop shadow for depth */
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
     }
 
     body.game-started .wordpack-title {
@@ -1387,12 +1391,13 @@
       z-index: 300;
       background: rgba(44, 24, 16, 0.95);
       color: #F5E6D3;
-      padding: 12px 16px;
+      padding: 16px 20px;
       border-radius: 8px;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      border: 3px solid #8B6914;
+      font-size: 1.1rem;
+      line-height: 1.6;
       white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.3);
       pointer-events: none;
       transition: opacity 0.2s ease, visibility 0.2s ease;
       font-family: 'IM Fell English', serif;
@@ -1445,12 +1450,14 @@
     }
 
     .tooltip strong {
-      color: #FFD700;
+      color: #C9A961;
+      text-shadow: 0 1px 2px rgba(139, 105, 20, 0.4);
     }
 
     .tooltip em {
-      color: #D4AF37;
+      color: #A67C38;
       font-style: normal;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     }
 
     /* Visual button representations in tooltips */
@@ -1554,19 +1561,19 @@
   <div class="mode-selector">
     <span class="tooltip-container">
       <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br>1. Read Spanish word<br>2. Flip to see English<br>3. Mark if you got it<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑ Key</span> to Pronounce<br><span class="tooltip-key">↓ Key</span> to Flip Card<br>Click <span class="tooltip-btn">‹</span> or Press <span class="tooltip-key">← Key</span> to Previous Card<br>Click <span class="tooltip-btn">›</span> or Press <span class="tooltip-key">→ Key</span> to Next Card<br>Click <span class="tooltip-btn">👌</span> or Press <span class="tooltip-key">1 Key</span> to Remove Card<br>Click <span class="tooltip-btn">😕</span> or Press <span class="tooltip-key">2 Key</span> to Add Practice</em></span>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br>1. Read Spanish Word<br>2. Flip to See English<br>3. Mark If You Got It Right or Wrong!<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Press <span class="tooltip-key">↓</span> Key to Flip Card<br>Click <span class="tooltip-btn">‹</span> or Press <span class="tooltip-key">←</span> Key to Previous Card<br>Click <span class="tooltip-btn">›</span> or Press <span class="tooltip-key">→</span> Key to Next Card<br>Click <span class="tooltip-btn">👌</span> or Press <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br>Click <span class="tooltip-btn">😕</span> or Press <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br>1. Hear Spanish word<br>2. Type what you hear<br>3. Flip to check answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑ Key</span> to Pronounce<br>Type letters to spell word<br><span class="tooltip-key">↓ Key</span> to Flip Card<br><span class="tooltip-key">Enter Key</span> to Next Card</em></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br>1. Hear Spanish Word<br>2. Type What You Hear<br>3. Flip to Check Answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Type Letters to Spell Word<br>Press <span class="tooltip-key">↓</span> Key to Flip Card<br>Press <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br>1. See Spanish word<br>2. Say it aloud<br>3. Get pronunciation score<br><em>Click <span class="tooltip-btn">🎤</span> or Press <span class="tooltip-key">Space Key</span> to Record<br>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑ Key</span> to Pronounce<br><span class="tooltip-key">↓ Key</span> to Flip Card</em></span>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br>1. See Spanish Word<br>2. Say It Aloud<br>3. Get Pronunciation Score<br><em>Click <span class="tooltip-btn">🎤</span> or Press <span class="tooltip-key">Space</span> Key to Record<br>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Press <span class="tooltip-key">↓</span> Key to Flip Card</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br>1. See English translation<br>2. Type Spanish word<br>3. Flip to check answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑ Key</span> to Pronounce<br>Type letters to spell word<br><span class="tooltip-key">↓ Key</span> to Flip Card<br><span class="tooltip-key">Enter Key</span> to Next Card</em></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br>1. See English Translation<br>2. Type Spanish Word<br>3. Flip to Check Answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Type Letters to Spell Word<br>Press <span class="tooltip-key">↓</span> Key to Flip Card<br>Press <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
     </span>
   </div>
 
@@ -1676,8 +1683,8 @@
       <div class="stamp-base card-stamp added-stamp" id="added-stamp">Extra Practice</div>
 
       <!-- Action buttons (positioned above card faces like stamps, visible on both sides) -->
-      <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I got this! Remove card">👌</button>
-      <button class="action-btn confused-btn" id="confused-btn" data-tooltip="Need more practice">😕</button>
+      <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I Got It Right! (Remove Card)">👌</button>
+      <button class="action-btn confused-btn" id="confused-btn" data-tooltip="I Got It Wrong (Need Extra Practice)">😕</button>
     </div>
 
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
@@ -2937,7 +2944,6 @@
     // Flip card
     function flipCard() {
       // Don't stop speech - let it continue while viewing back
-      playCardFlipSound();
       flashcard.classList.add('flipped');
       isFlipped = true;
 
@@ -2950,7 +2956,6 @@
     // Unflip card
     function unflipCard() {
       // Don't stop speech - let it continue while viewing front
-      playCardFlipSound();
       flashcard.classList.remove('flipped');
       isFlipped = false;
     }
