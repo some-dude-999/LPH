@@ -967,23 +967,37 @@
       transform: scale(1.1);
     }
 
-    /* Tooltip */
+    /* Tooltip - styled like card-back */
     .action-btn::after {
       content: attr(data-tooltip);
       position: absolute;
-      bottom: -35px;
+      bottom: calc(100% + 10px);
       left: 50%;
       transform: translateX(-50%);
-      background: #2C1810;
-      color: #F5E6D3;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.75rem;
+      /* EXACT card-back background */
+      background:
+        var(--paper-texture),
+        radial-gradient(ellipse 70% 60% at 30% 35%, rgba(255, 250, 245, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 55% at 70% 65%, rgba(250, 245, 240, 0.2) 0%, transparent 65%),
+        linear-gradient(135deg, #FFFEF9 0%, #F8F5F0 30%, #F0EDE8 60%, #EAE7E2 100%);
+      background-blend-mode: soft-light;
+      background-size: var(--paper-texture-size), 100%, 100%, 100%;
+      color: #2C1810;
+      padding: 8px 12px;
+      border-radius: 8px;
+      /* EXACT box-shadow as card-face */
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 3px #A08567,
+        0 0 0 1px rgba(139, 115, 85, 0.3),
+        inset 0 0 50px rgba(139, 115, 85, 0.1);
+      font-size: 0.85rem;
       white-space: nowrap;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s;
-      font-family: 'IM Fell English', serif;
+      font-family: 'Courier New', monospace;
+      z-index: 100;
     }
 
     .action-btn:hover::after {
@@ -1441,33 +1455,47 @@
       opacity: 0;
       position: absolute;
       z-index: 300;
-      /* Card-back style: white paper texture with grid */
+      /* EXACT card-back background - same as .card-back */
       background:
         var(--paper-texture),
-        /* Grid pattern - same as card-back */
-        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px),
-        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px),
-        /* Light white background - same as card-back */
         radial-gradient(ellipse 70% 60% at 30% 35%, rgba(255, 250, 245, 0.3) 0%, transparent 70%),
         radial-gradient(ellipse 60% 55% at 70% 65%, rgba(250, 245, 240, 0.2) 0%, transparent 65%),
         linear-gradient(135deg, #FFFEF9 0%, #F8F5F0 30%, #F0EDE8 60%, #EAE7E2 100%);
       background-blend-mode: soft-light;
-      background-size: var(--paper-texture-size), 100%, 100%, 100%, 100%, 100%;
+      background-size: var(--paper-texture-size), 100%, 100%, 100%;
       color: #2C1810;
       padding: 16px 20px;
-      border-radius: 8px;
-      /* Edge burn texture - same as card border */
-      border: 3px solid #A08567;
+      border-radius: 12px;
+      overflow: hidden;
+      /* EXACT box-shadow as card-face */
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 3px #A08567,
+        0 0 0 1px rgba(139, 115, 85, 0.3),
+        inset 0 0 50px rgba(139, 115, 85, 0.1);
       font-size: 1.1rem;
       line-height: 1.6;
       white-space: nowrap;
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.4),
-        0 0 0 1px rgba(139, 115, 85, 0.3),
-        inset 0 0 50px rgba(139, 115, 85, 0.1);
       pointer-events: none;
       transition: opacity 0.2s ease, visibility 0.2s ease;
       font-family: 'Courier New', monospace;
+    }
+
+    /* Grid pattern - same as card-back::after (using ::before since ::after is for arrow) */
+    .tooltip::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px);
+      border-radius: 12px;
+      pointer-events: none;
+      opacity: 0.7;
+      z-index: 1;
     }
 
     /* Position tooltip below mode buttons */
@@ -1517,14 +1545,23 @@
     }
 
     .tooltip strong {
-      color: #C9A961;
-      text-shadow: 0 1px 2px rgba(139, 105, 20, 0.4);
+      color: #8B6914;
+      font-weight: bold;
+      position: relative;
+      z-index: 2;
     }
 
     .tooltip em {
-      color: #A67C38;
+      color: #6B5B4B;
       font-style: normal;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Make all tooltip content appear above grid */
+    .tooltip > * {
+      position: relative;
+      z-index: 2;
     }
 
     /* Visual button representations in tooltips */
