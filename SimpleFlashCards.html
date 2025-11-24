@@ -1655,6 +1655,9 @@
         <span class="card-word" id="spanish-word"></span>
         <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
         <button class="sound-btn" id="sound-btn-front" aria-label="Play pronunciation">🗣️</button>
+        <!-- Action buttons in lower left (reading mode only) -->
+        <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I got this! Remove card">👌</button>
+        <button class="action-btn confused-btn" id="confused-btn" data-tooltip="Need more practice">😕</button>
         <div class="pronunciation-feedback" id="feedback-front">
           <div class="feedback-score" id="score-front">0%</div>
           <div class="feedback-message" id="message-front">Try again!</div>
@@ -1678,10 +1681,6 @@
       <!-- Stamp overlays for visual feedback -->
       <div class="stamp-base card-stamp removed-stamp" id="removed-stamp">Card Removed</div>
       <div class="stamp-base card-stamp added-stamp" id="added-stamp">Extra Practice</div>
-
-      <!-- Action buttons (positioned in lower left like mic button) -->
-      <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I got this! Remove card">👌</button>
-      <button class="action-btn confused-btn" id="confused-btn" data-tooltip="Need more practice">😕</button>
     </div>
 
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
