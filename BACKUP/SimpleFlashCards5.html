@@ -2517,6 +2517,7 @@
 
           if (wrongAttempts <= 1) {
             // Correct! Show green stamp and remove card automatically
+            playCardFlipSound();
             pendingDeckChange = -1; // Track deck change for visual indicator
             updateDisplay(); // Show indicator while stamp is visible
             removedStamp.classList.add('visible');
@@ -2536,9 +2537,6 @@
 
               // Clear pending change
               pendingDeckChange = 0;
-
-              // Play sound on page change (consistent timing)
-              playCardFlipSound();
 
               // Re-initialize typing for next card
               if (currentMode === 'listening' || currentMode === 'writing') {
@@ -3160,6 +3158,9 @@
         return;
       }
 
+      // Play sound
+      playCardFlipSound();
+
       // Track deck change for visual indicator
       pendingDeckChange = -1;
 
@@ -3181,9 +3182,6 @@
         // Clear pending change and show next card with updated count
         pendingDeckChange = 0;
 
-        // Play sound on page change (consistent timing)
-        playCardFlipSound();
-
         // Show next card
         updateDisplay();
         saveState();
@@ -3193,6 +3191,10 @@
     // Add extra copies of current card (Confused)
     function addConfusedCards() {
       if (currentDeck.length === 0) return;
+
+      // Play 2 sounds
+      playCardFlipSound();
+      setTimeout(() => playCardFlipSound(), 200);
 
       // Show "Extra Practice" stamp for 1 second
       addedStamp.classList.add('visible');
@@ -3212,10 +3214,6 @@
             currentIndex++;
           }
         }
-
-        // Play 2 sounds on page change (consistent timing)
-        playCardFlipSound();
-        setTimeout(() => playCardFlipSound(), 200);
 
         // Move to next card and update display
         currentIndex = (currentIndex + 1) % currentDeck.length;
