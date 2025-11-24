@@ -953,13 +953,23 @@
       display: flex;
     }
 
-    /* Position the two buttons horizontally */
+    /* Position the four buttons - two on left, two on right */
+    /* Bottom Left Corner */
     .got-it-btn {
       left: 25px;
     }
 
-    .confused-btn {
-      right: 95px; /* 25px + 55px width + 15px gap (positioned to left of sound button) */
+    .confused-btn-left {
+      left: 95px; /* 25px + 55px width + 15px gap */
+    }
+
+    /* Bottom Right Corner */
+    .pronounce-btn {
+      right: 25px;
+    }
+
+    .confused-btn-right {
+      right: 95px; /* 25px + 55px width + 15px gap */
     }
 
     .action-btn:hover {
@@ -1808,7 +1818,6 @@
         <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
         <span class="card-word" id="spanish-word"></span>
         <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
-        <button class="sound-btn" id="sound-btn-front" aria-label="Play pronunciation">🗣️</button>
         <button class="peek-btn" id="peek-btn-front" aria-label="Peek at back">🤔</button>
         <div class="pronunciation-feedback" id="feedback-front">
           <div class="feedback-score" id="score-front">0%</div>
@@ -1821,7 +1830,6 @@
         <div class="card-weathering" id="weathering-back"></div>
         <span class="card-word" id="english-word"></span>
         <button class="mic-btn" id="mic-btn-back" aria-label="Practice pronunciation">🎤</button>
-        <button class="sound-btn" id="sound-btn-back" aria-label="Play pronunciation">🗣️</button>
         <div class="pronunciation-feedback" id="feedback-back">
           <div class="feedback-score" id="score-back">0%</div>
           <div class="feedback-message" id="message-back">Try again!</div>
@@ -1835,8 +1843,13 @@
       <div class="stamp-base card-stamp added-stamp" id="added-stamp">Extra Practice</div>
 
       <!-- Action buttons (positioned above card faces like stamps, visible on both sides) -->
+      <!-- Bottom Left: Got It + Confused -->
       <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I Got It Right! (Remove Card)">👌</button>
-      <button class="action-btn confused-btn" id="confused-btn" data-tooltip="I Got It Wrong (Need Extra Practice)">😕</button>
+      <button class="action-btn confused-btn-left" id="confused-btn-left" data-tooltip="I Got It Wrong (Need Extra Practice)">😕</button>
+
+      <!-- Bottom Right: Pronounce + Confused -->
+      <button class="action-btn pronounce-btn" id="pronounce-btn" data-tooltip="Play Pronunciation">🗣️</button>
+      <button class="action-btn confused-btn-right" id="confused-btn-right" data-tooltip="I Got It Wrong (Need Extra Practice)">😕</button>
     </div>
 
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
@@ -1928,10 +1941,10 @@
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const gotItBtn = document.getElementById('got-it-btn');
-    const confusedBtn = document.getElementById('confused-btn');
+    const confusedBtnLeft = document.getElementById('confused-btn-left');
+    const confusedBtnRight = document.getElementById('confused-btn-right');
+    const pronounceBtn = document.getElementById('pronounce-btn');
     const resetBtn = document.getElementById('reset-btn');
-    const soundBtnFront = document.getElementById('sound-btn-front');
-    const soundBtnBack = document.getElementById('sound-btn-back');
     const peekBtnFront = document.getElementById('peek-btn-front');
     const speedBtns = document.querySelectorAll('.speed-btn'); // Includes both setup and menu buttons
     const removedStamp = document.getElementById('removed-stamp');
@@ -3460,19 +3473,18 @@
       playButtonClickSound();
       removeCurrentCard();
     });
-    confusedBtn.addEventListener('click', () => {
+    confusedBtnLeft.addEventListener('click', () => {
+      playButtonClickSound();
+      addConfusedCards();
+    });
+    confusedBtnRight.addEventListener('click', () => {
       playButtonClickSound();
       addConfusedCards();
     });
     resetBtn.addEventListener('click', resetDeck);
 
-    // Sound buttons
-    soundBtnFront.addEventListener('click', (e) => {
-      e.stopPropagation();
-      playButtonClickSound();
-      speakSpanish();
-    });
-    soundBtnBack.addEventListener('click', (e) => {
+    // Pronounce button
+    pronounceBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       playButtonClickSound();
       speakSpanish();
