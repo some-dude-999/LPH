@@ -580,27 +580,8 @@
           // Update UI
           populateActDropdown();
           populateNativeLanguageDropdown();
-
-          // Auto-select first act and pack (same as initialize())
-          if (state.loadedData && Object.keys(state.loadedData).length > 0) {
-            const firstAct = Math.min(...Object.keys(state.loadedData).map(Number));
-            state.currentAct = firstAct;
-            document.getElementById('actSelect').value = firstAct;
-
-            // Populate pack dropdown for first act
-            populatePackDropdown();
-
-            // Auto-select first pack
-            const firstActData = state.loadedData[firstAct];
-            if (firstActData) {
-              const firstPackKey = Object.keys(firstActData)[0];
-              state.currentPack = firstPackKey;
-              document.getElementById('packSelect').value = firstPackKey;
-
-              // Display vocabulary
-              displayVocabulary();
-            }
-          }
+          populatePackDropdown();
+          displayVocabulary();
         });
       });
     }
@@ -1206,14 +1187,10 @@
       // Clear table
       tableBody.innerHTML = '';
 
-      // Calculate colspan based on active modes
-      let totalColumns = 2;  // Base: target language + native language
-      if (state.multipleChoiceMode) totalColumns += 4;  // Add 4 wrong answer columns
-      if (state.typingMode) totalColumns += 3;  // Add typing input + wrong letters + wrong count
-
       // Validate selection
       if (!state.currentAct || !state.currentPack) {
-        tableBody.innerHTML = `<tr><td colspan="${totalColumns}">Please select an act and wordpack</td></tr>`;
+        const colspan = state.multipleChoiceMode ? 6 : 2;
+        tableBody.innerHTML = `<tr><td colspan="${colspan}">Please select an act and wordpack</td></tr>`;
         packTitleEl.textContent = 'No pack selected';
         return;
       }
@@ -1221,13 +1198,15 @@
       // Get wordpack data
       const actData = state.loadedData[state.currentAct];
       if (!actData) {
-        tableBody.innerHTML = `<tr><td colspan="${totalColumns}">Act data not loaded</td></tr>`;
+        const colspan = state.multipleChoiceMode ? 6 : 2;
+        tableBody.innerHTML = `<tr><td colspan="${colspan}">Act data not loaded</td></tr>`;
         return;
       }
 
       const pack = actData[state.currentPack];
       if (!pack) {
-        tableBody.innerHTML = `<tr><td colspan="${totalColumns}">Pack not found</td></tr>`;
+        const colspan = state.multipleChoiceMode ? 6 : 2;
+        tableBody.innerHTML = `<tr><td colspan="${colspan}">Pack not found</td></tr>`;
         return;
       }
 
@@ -1243,41 +1222,26 @@
       // UPDATE TABLE HEADERS: Based on Mode
       // ============================================================
       /*
-        Build headers dynamically based on enabled modes:
-        - Base: Target language + Native language (2 columns)
-        - Multiple Choice: + 4 wrong answer columns
-        - Typing: + Typing input + Wrong letters + Wrong count (3 columns)
+        In basic mode: 2 columns (Target language, Native language)
+        In multiple choice mode: 6 columns (Target, Native, 4 wrong answers)
       */
-      let headers = [];
-
-      // Base columns (always present)
       if (state.multipleChoiceMode) {
-        headers.push(`<th>Correct Answer (${targetLanguage})</th>`);
-        headers.push(`<th>Translation (${nativeLanguage})</th>`);
-      } else if (state.typingMode) {
-        headers.push(`<th>Target Word (${targetLanguage})</th>`);
-        headers.push(`<th>Translation (${nativeLanguage})</th>`);
+        // Multiple choice mode: 6 columns
+        tableHeaderRow.innerHTML = `
+          <th>Correct Answer (${targetLanguage})</th>
+          <th>Translation (${nativeLanguage})</th>
+          <th>Wrong Answer 1</th>
+          <th>Wrong Answer 2</th>
+          <th>Wrong Answer 3</th>
+          <th>Wrong Answer 4</th>
+        `;
       } else {
-        headers.push(`<th>I am learning (${targetLanguage})</th>`);
-        headers.push(`<th>I speak (${nativeLanguage})</th>`);
+        // Basic mode: 2 columns
+        tableHeaderRow.innerHTML = `
+          <th>I am learning (${targetLanguage})</th>
+          <th>I speak (${nativeLanguage})</th>
+        `;
       }
-
-      // Multiple choice columns (if enabled)
-      if (state.multipleChoiceMode) {
-        headers.push('<th>Wrong Answer 1</th>');
-        headers.push('<th>Wrong Answer 2</th>');
-        headers.push('<th>Wrong Answer 3</th>');
-        headers.push('<th>Wrong Answer 4</th>');
-      }
-
-      // Typing mode columns (if enabled)
-      if (state.typingMode) {
-        headers.push('<th>Type Here (X = letter)</th>');
-        headers.push('<th>Wrong Letters</th>');
-        headers.push('<th>Wrong Count</th>');
-      }
-
-      tableHeaderRow.innerHTML = headers.join('\n');
 
       // ============================================================
       // POPULATE TABLE ROWS: Generate vocabulary with optional wrong answers
@@ -1324,67 +1288,11 @@
           }
         }
 
-        // TYPING MODE COLUMNS: Input box + Wrong letters + Wrong count
-        if (state.typingMode) {
-          /*
-            Add typing practice columns for this word:
-            1. Typing input box (initialized with "XXXX XXXXX" format)
-            2. Wrong letters column (displays struck-through wrong attempts)
-            3. Wrong count column (displays total wrong attempts)
-          */
-          const correctWord = word[0];
-
-          // COLUMN: Typing input box
-          const typingCell = document.createElement('td');
-          const typingInput = document.createElement('input');
-          typingInput.type = 'text';
-          typingInput.readOnly = true;  // Prevent direct editing
-          typingInput.style.width = '100%';
-          typingInput.style.fontFamily = 'monospace';
-          typingInput.style.fontSize = '1em';
-          typingInput.style.padding = '4px';
-
-          // Initialize display with X's for each letter (preserve spaces)
-          const initialDisplay = correctWord.split('').map(char => char === ' ' ? ' ' : 'X').join('');
-          typingInput.value = initialDisplay;
-
-          // Add keypress listener to this specific input
-          typingInput.addEventListener('keydown', (e) => {
-            // Only handle single character keys (not arrow keys, backspace, etc.)
-            if (e.key.length === 1) {
-              e.preventDefault();  // Prevent default input behavior
-              handleTypingInput(index, correctWord, e.key, typingInput);
-            }
-          });
-
-          // Make input focusable by clicking
-          typingInput.addEventListener('click', () => {
-            typingInput.focus();
-          });
-
-          typingCell.appendChild(typingInput);
-          row.appendChild(typingCell);
-
-          // COLUMN: Wrong letters (initially empty)
-          const wrongLettersCell = document.createElement('td');
-          wrongLettersCell.style.fontFamily = 'monospace';
-          row.appendChild(wrongLettersCell);
-
-          // COLUMN: Wrong count (initially 0)
-          const wrongCountCell = document.createElement('td');
-          wrongCountCell.textContent = '0';
-          wrongCountCell.style.textAlign = 'center';
-          row.appendChild(wrongCountCell);
-        }
-
         tableBody.appendChild(row);
       });
 
-      // Update debug info with active modes
-      let modeParts = [];
-      if (state.multipleChoiceMode) modeParts.push('Multiple Choice (act-wide pool)');
-      if (state.typingMode) modeParts.push('Typing Practice');
-      const modeText = modeParts.length > 0 ? modeParts.join(' + ') : 'Basic (2 columns)';
+      // Update debug info
+      const modeText = state.multipleChoiceMode ? 'Multiple Choice (6 columns, act-wide pool)' : 'Basic (2 columns)';
 
       // Count total words in act for debug info
       let totalActWords = 0;
@@ -1396,7 +1304,6 @@
                       `Words in this pack: ${pack.words.length}\n` +
                       `Total words in Act ${state.currentAct}: ${totalActWords}\n` +
                       `Mode: ${modeText}\n` +
-                      `Total columns: ${totalColumns}\n` +
                       `Target language: ${targetLanguage} (column 0)\n` +
                       `Native language: ${nativeLanguage} (column ${state.currentNativeLanguage})`);
     }
@@ -1419,8 +1326,6 @@
         `- Pack: ${state.currentPack || 'None'}\n` +
         `- Native Language Column: ${state.currentNativeLanguage}\n` +
         `- Multiple Choice Mode: ${state.multipleChoiceMode ? 'Enabled' : 'Disabled'}\n` +
-        `- Typing Mode: ${state.typingMode ? 'Enabled' : 'Disabled'}\n` +
-        `- Active Typing States: ${state.typingStates.size}\n` +
         `- Loaded Acts: ${Object.keys(state.loadedData).join(', ') || 'None'}`;
     }
 
