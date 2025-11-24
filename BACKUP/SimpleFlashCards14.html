@@ -1868,10 +1868,10 @@
       return null;
     }
 
-    // DOM Elements - menu elements created dynamically in renderMenuCard()
-    let actSelect = null;  // Created in renderMenuCard()
-    let wordpackSelect = null;  // Created in renderMenuCard()
-    let languageSelect = null;  // Created in renderMenuCard()
+    // DOM Elements (now all in menu modal)
+    const actSelect = document.getElementById('menu-act');
+    const wordpackSelect = document.getElementById('menu-wordpack');
+    const languageSelect = document.getElementById('menu-language');
     const backLabel = document.getElementById('back-label');
     const flashcard = document.getElementById('flashcard');
     const spanishWord = document.getElementById('spanish-word');
@@ -3535,6 +3535,30 @@
       gameStarted = true;
       saveState();
     }
+
+    // Event Listeners for menu (no sounds on dropdowns)
+    actSelect.addEventListener('change', async () => {
+      const selectedAct = parseInt(actSelect.value);
+      currentAct = selectedAct;
+
+      // Show loading in wordpack select
+      wordpackSelect.innerHTML = '<option value="">-- Loading... --</option>';
+      wordpackSelect.disabled = true;
+
+      try {
+        // Load the selected act
+        await loadAct(selectedAct);
+
+        // Populate wordpack selector with packs from this act
+        populateWordpackSelector(selectedAct);
+
+        wordpackSelect.disabled = false;
+      } catch (error) {
+        console.error('Failed to load act:', error);
+        wordpackSelect.innerHTML = '<option value="">Failed to load act</option>';
+        wordpackSelect.disabled = false;
+      }
+    });
 
     // Event Listeners
 
