@@ -1868,10 +1868,10 @@
       return null;
     }
 
-    // DOM Elements (now all in menu modal)
-    const actSelect = document.getElementById('menu-act');
-    const wordpackSelect = document.getElementById('menu-wordpack');
-    const languageSelect = document.getElementById('menu-language');
+    // DOM Elements - menu elements created dynamically in renderMenuCard()
+    let actSelect = null;  // Created in renderMenuCard()
+    let wordpackSelect = null;  // Created in renderMenuCard()
+    let languageSelect = null;  // Created in renderMenuCard()
     const backLabel = document.getElementById('back-label');
     const flashcard = document.getElementById('flashcard');
     const spanishWord = document.getElementById('spanish-word');
