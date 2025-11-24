@@ -967,24 +967,28 @@
       transform: scale(1.1);
     }
 
-    /* Tooltip - styled like card-back */
+    /* Tooltip - styled like card-back with edge burn */
     .action-btn::after {
       content: attr(data-tooltip);
       position: absolute;
       bottom: calc(100% + 10px);
       left: 50%;
       transform: translateX(-50%);
-      /* EXACT card-back background */
+      /* EXACT card-back background with edge burn weathering */
       background:
+        /* Edge burn weathering */
+        radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(101, 67, 33, 0.03) 0%, transparent 50%),
+        /* Paper texture and base colors */
         var(--paper-texture),
         radial-gradient(ellipse 70% 60% at 30% 35%, rgba(255, 250, 245, 0.3) 0%, transparent 70%),
         radial-gradient(ellipse 60% 55% at 70% 65%, rgba(250, 245, 240, 0.2) 0%, transparent 65%),
         linear-gradient(135deg, #FFFEF9 0%, #F8F5F0 30%, #F0EDE8 60%, #EAE7E2 100%);
       background-blend-mode: soft-light;
-      background-size: var(--paper-texture-size), 100%, 100%, 100%;
+      background-size: 100%, 100%, var(--paper-texture-size), 100%, 100%, 100%;
       color: #2C1810;
       padding: 8px 12px;
-      border-radius: 8px;
+      border-radius: 12px;
       /* EXACT box-shadow as card-face */
       box-shadow:
         0 10px 30px rgba(0,0,0,0.4),
@@ -997,6 +1001,7 @@
       pointer-events: none;
       transition: opacity 0.3s;
       font-family: 'Courier New', monospace;
+      font-weight: bold;
       z-index: 100;
     }
 
@@ -1455,14 +1460,18 @@
       opacity: 0;
       position: absolute;
       z-index: 300;
-      /* EXACT card-back background - same as .card-back */
+      /* EXACT card-back background with edge burn weathering */
       background:
+        /* Edge burn weathering (reduced opacity like card-back) */
+        radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(101, 67, 33, 0.03) 0%, transparent 50%),
+        /* Paper texture and base colors */
         var(--paper-texture),
         radial-gradient(ellipse 70% 60% at 30% 35%, rgba(255, 250, 245, 0.3) 0%, transparent 70%),
         radial-gradient(ellipse 60% 55% at 70% 65%, rgba(250, 245, 240, 0.2) 0%, transparent 65%),
         linear-gradient(135deg, #FFFEF9 0%, #F8F5F0 30%, #F0EDE8 60%, #EAE7E2 100%);
       background-blend-mode: soft-light;
-      background-size: var(--paper-texture-size), 100%, 100%, 100%;
+      background-size: 100%, 100%, var(--paper-texture-size), 100%, 100%, 100%;
       color: #2C1810;
       padding: 16px 20px;
       border-radius: 12px;
@@ -1473,7 +1482,7 @@
         0 0 0 3px #A08567,
         0 0 0 1px rgba(139, 115, 85, 0.3),
         inset 0 0 50px rgba(139, 115, 85, 0.1);
-      font-size: 1.1rem;
+      font-size: 1rem;
       line-height: 1.6;
       white-space: nowrap;
       pointer-events: none;
@@ -1481,7 +1490,7 @@
       font-family: 'Courier New', monospace;
     }
 
-    /* Grid pattern - same as card-back::after (using ::before since ::after is for arrow) */
+    /* Grid pattern - same as card-back::after */
     .tooltip::before {
       content: '';
       position: absolute;
@@ -1545,17 +1554,45 @@
     }
 
     .tooltip strong {
-      color: #8B6914;
+      /* Mode title - centered, larger, bold */
+      display: block;
+      text-align: center;
+      color: #2C1810;
       font-weight: bold;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
       position: relative;
       z-index: 2;
     }
 
+    /* Bold steps - numbered list in tooltips */
+    .tooltip b {
+      color: #2C1810;
+      font-weight: bold;
+      position: relative;
+      z-index: 2;
+      display: inline;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
     .tooltip em {
-      color: #6B5B4B;
+      /* Instructions text */
+      color: #5D4E37;
       font-style: normal;
       position: relative;
       z-index: 2;
+      display: block;
+      margin-top: 8px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    /* Bold action words within em (CLICK, PRESS, HOLD, TYPE) */
+    .tooltip em b {
+      color: #2C1810;
+      font-weight: bold;
+      text-transform: uppercase;
     }
 
     /* Make all tooltip content appear above grid */
@@ -1665,19 +1702,19 @@
   <div class="mode-selector">
     <span class="tooltip-container">
       <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br>1. Read Spanish Word<br>2. Flip to See English<br>3. Mark If You Got It Right or Wrong!<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Hold <span class="tooltip-btn">🤔</span> or Hold <span class="tooltip-key">↓</span> Key to Peek at Back<br>Click <span class="tooltip-btn">‹</span> or Press <span class="tooltip-key">←</span> Key to Previous Card<br>Click <span class="tooltip-btn">›</span> or Press <span class="tooltip-key">→</span> Key to Next Card<br>Click <span class="tooltip-btn">👌</span> or Press <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br>Click <span class="tooltip-btn">😕</span> or Press <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)</em></span>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br><b>1. Read Spanish Word<br>2. Flip to See English<br>3. Mark If You Got It Right or Wrong!</b><br><em><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back<br><b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> Key to Previous Card<br><b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> Key to Next Card<br><b>CLICK</b> <span class="tooltip-btn">👌</span> or <b>PRESS</b> <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br><b>CLICK</b> <span class="tooltip-btn">😕</span> or <b>PRESS</b> <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br>1. Hear Spanish Word<br>2. Type What You Hear<br>3. Flip to Check Answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Type Letters to Spell Word<br>Hold <span class="tooltip-btn">🤔</span> or Hold <span class="tooltip-key">↓</span> Key to Peek at Back<br>Press <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br><b>1. Hear Spanish Word<br>2. Type What You Hear<br>3. Flip to Check Answer</b><br><em><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>TYPE</b> Letters to Spell Word<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back<br><b>PRESS</b> <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br>1. See Spanish Word<br>2. Say It Aloud<br>3. Get Pronunciation Score<br><em>Click <span class="tooltip-btn">🎤</span> or Press <span class="tooltip-key">Space</span> Key to Record<br>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Hold <span class="tooltip-btn">🤔</span> or Hold <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><b>1. See Spanish Word<br>2. Say It Aloud<br>3. Get Pronunciation Score</b><br><em><b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> Key to Record<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br>1. See English Translation<br>2. Type Spanish Word<br>3. Flip to Check Answer<br><em>Click <span class="tooltip-btn">🗣️</span> or Press <span class="tooltip-key">↑</span> Key to Pronounce<br>Type Letters to Spell Word<br>Hold <span class="tooltip-btn">🤔</span> or Hold <span class="tooltip-key">↓</span> Key to Peek at Back<br>Press <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><b>1. See English Translation<br>2. Type Spanish Word<br>3. Flip to Check Answer</b><br><em><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>TYPE</b> Letters to Spell Word<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back<br><b>PRESS</b> <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
     </span>
   </div>
 
