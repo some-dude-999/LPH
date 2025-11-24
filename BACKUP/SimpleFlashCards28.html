@@ -455,40 +455,6 @@
       background: rgba(139, 115, 85, 0.4);
     }
 
-    /* Mic button tooltip - fancy parchment style with 1.5s hover delay */
-    .mic-btn::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: calc(100% + 8px);
-      left: 50%;
-      transform: translateX(-50%);
-      /* Fancy parchment/aged paper feel */
-      background:
-        radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
-        linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
-      color: #3D2E1F;
-      padding: 8px 12px;
-      border-radius: 8px;
-      box-shadow:
-        0 4px 16px rgba(0,0,0,0.25),
-        0 0 0 1px rgba(139, 115, 85, 0.4),
-        inset 0 1px 0 rgba(255,255,255,0.5),
-        inset 0 -1px 0 rgba(139, 115, 85, 0.1);
-      font-size: 0.85rem;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease 0s;
-      font-family: 'Courier New', monospace;
-      font-weight: bold;
-      z-index: 100;
-    }
-
-    .mic-btn:hover::after {
-      opacity: 1;
-      transition-delay: 1.5s;
-    }
-
     .mic-btn.listening {
       background: rgba(180, 60, 60, 0.4);
       border-color: #B43C3C;
@@ -1024,34 +990,39 @@
       background: rgba(139, 115, 85, 0.4);
     }
 
-    /* Tooltip - fancy parchment paper style with 1.5s hover delay */
+    /* Tooltip - styled like card-back with edge burn */
     .action-btn::after {
       content: attr(data-tooltip);
       position: absolute;
-      bottom: calc(100% + 8px);
+      bottom: calc(100% + 10px);
       left: 50%;
       transform: translateX(-50%);
-      /* Fancy parchment/aged paper feel - elegant, no grid */
+      /* EXACT card-back background with edge burn weathering */
       background:
-        /* Subtle vignette for depth */
-        radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
-        /* Soft cream parchment gradient */
-        linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
-      color: #3D2E1F;
+        /* Edge burn weathering */
+        radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(101, 67, 33, 0.03) 0%, transparent 50%),
+        /* Paper texture and base colors */
+        var(--paper-texture),
+        radial-gradient(ellipse 70% 60% at 30% 35%, rgba(255, 250, 245, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 55% at 70% 65%, rgba(250, 245, 240, 0.2) 0%, transparent 65%),
+        linear-gradient(135deg, #FFFEF9 0%, #F8F5F0 30%, #F0EDE8 60%, #EAE7E2 100%);
+      background-blend-mode: soft-light;
+      background-size: 100%, 100%, var(--paper-texture-size), 100%, 100%, 100%;
+      color: #2C1810;
       padding: 8px 12px;
-      border-radius: 8px;
-      /* Softer, more elegant shadow */
+      border-radius: 12px;
+      /* EXACT box-shadow as card-face */
       box-shadow:
-        0 4px 16px rgba(0,0,0,0.25),
-        0 0 0 1px rgba(139, 115, 85, 0.4),
-        inset 0 1px 0 rgba(255,255,255,0.5),
-        inset 0 -1px 0 rgba(139, 115, 85, 0.1);
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 3px #A08567,
+        0 0 0 1px rgba(139, 115, 85, 0.3),
+        inset 0 0 50px rgba(139, 115, 85, 0.1);
       font-size: 0.85rem;
       white-space: nowrap;
       opacity: 0;
       pointer-events: none;
-      /* Hide immediately (0s delay) when not hovering */
-      transition: opacity 0.2s ease 0s;
+      transition: opacity 0.3s;
       font-family: 'Courier New', monospace;
       font-weight: bold;
       z-index: 100;
@@ -1059,8 +1030,6 @@
 
     .action-btn:hover::after {
       opacity: 1;
-      /* Show with 1.5s delay - user must hold hover to see tooltip */
-      transition-delay: 1.5s;
     }
 
     /* Top Corner Buttons - Flat Cardboard Style */
@@ -1395,46 +1364,6 @@
       text-stroke: 3px rgba(211, 47, 47, 0.7);
     }
 
-    /* Deck change indicator stamp - overlays on card text without shifting */
-    .deck-change-stamp {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: Georgia, serif;
-      font-weight: bold;
-      font-size: 3rem;
-      padding: 8px 16px;
-      border: 4px solid;
-      border-radius: 8px;
-      background: transparent;
-      mix-blend-mode: multiply;
-      text-align: center;
-      letter-spacing: 2px;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 90;
-      transition: opacity 0.2s ease;
-    }
-
-    .deck-change-stamp.visible {
-      opacity: 1;
-    }
-
-    .deck-change-stamp.positive {
-      color: transparent;
-      border-color: rgba(211, 47, 47, 0.7);
-      -webkit-text-stroke: 3px rgba(211, 47, 47, 0.7);
-      text-stroke: 3px rgba(211, 47, 47, 0.7);
-    }
-
-    .deck-change-stamp.negative {
-      color: transparent;
-      border-color: rgba(56, 142, 60, 0.7);
-      -webkit-text-stroke: 3px rgba(56, 142, 60, 0.7);
-      text-stroke: 3px rgba(56, 142, 60, 0.7);
-    }
-
     .card-stamp.visible {
       opacity: 1;
     }
@@ -1495,7 +1424,7 @@
         linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
-      /* No scale transform - buttons should not grow on hover */
+      transform: scale(1.05);
       opacity: 0.7; /* Medium opacity on hover */
     }
 
@@ -1566,35 +1495,56 @@
       opacity: 0;
       position: absolute;
       z-index: 300;
-      /* Fancy parchment/aged paper feel - elegant, no grid */
+      /* EXACT card-back background with edge burn weathering */
       background:
-        /* Subtle vignette for depth */
-        radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
-        /* Soft cream parchment gradient */
-        linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
-      color: #3D2E1F;
-      padding: 10px 14px;
-      border-radius: 8px;
+        /* Edge burn weathering (reduced opacity like card-back) */
+        radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(101, 67, 33, 0.03) 0%, transparent 50%),
+        /* Paper texture and base colors */
+        var(--paper-texture),
+        radial-gradient(ellipse 70% 60% at 30% 35%, rgba(255, 250, 245, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 55% at 70% 65%, rgba(250, 245, 240, 0.2) 0%, transparent 65%),
+        linear-gradient(135deg, #FFFEF9 0%, #F8F5F0 30%, #F0EDE8 60%, #EAE7E2 100%);
+      background-blend-mode: soft-light;
+      background-size: 100%, 100%, var(--paper-texture-size), 100%, 100%, 100%;
+      color: #2C1810;
+      padding: 16px 20px;
+      border-radius: 12px;
       overflow: hidden;
-      /* Softer, more elegant shadow */
+      /* EXACT box-shadow as card-face */
       box-shadow:
-        0 4px 16px rgba(0,0,0,0.25),
-        0 0 0 1px rgba(139, 115, 85, 0.4),
-        inset 0 1px 0 rgba(255,255,255,0.5),
-        inset 0 -1px 0 rgba(139, 115, 85, 0.1);
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 3px #A08567,
+        0 0 0 1px rgba(139, 115, 85, 0.3),
+        inset 0 0 50px rgba(139, 115, 85, 0.1);
       font-size: 1rem;
-      line-height: 1.4;
+      line-height: 1.6;
       white-space: nowrap;
       pointer-events: none;
       transition: opacity 0.2s ease, visibility 0.2s ease;
       font-family: 'Courier New', monospace;
     }
 
-    /* No grid pattern - clean paper look */
+    /* Grid pattern - same as card-back::after */
+    .tooltip::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px);
+      border-radius: 12px;
+      pointer-events: none;
+      opacity: 0.7;
+      z-index: 1;
+    }
 
     /* Position tooltip below mode buttons */
     .mode-btn .tooltip {
-      top: calc(100% + 6px);
+      top: calc(100% + 10px);
       left: 50%;
       transform: translateX(-50%);
     }
@@ -1627,7 +1577,7 @@
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
-      border-bottom-color: #FDF8F0;
+      border-bottom-color: #EAE7E2;
     }
 
     /* Arrow pointing down (for tooltips above element) */
@@ -1635,17 +1585,17 @@
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
-      border-top-color: #FDF8F0;
+      border-top-color: #EAE7E2;
     }
 
     .tooltip strong {
       /* Mode title - centered, LARGER, bold */
       display: block;
       text-align: center;
-      color: #3D2E1F;
+      color: #2C1810;
       font-weight: bold;
-      font-size: 1.3rem;
-      margin-bottom: 2px;
+      font-size: 1.4rem;
+      margin-bottom: 4px;
       position: relative;
       z-index: 2;
       font-family: 'Courier New', monospace;
@@ -1665,14 +1615,14 @@
 
     .tooltip em {
       /* Instructions text - SAME COLOR as everything else */
-      color: #3D2E1F;
+      color: #2C1810;
       font-style: normal;
       position: relative;
       z-index: 2;
       display: block;
-      margin-top: 2px;
+      margin-top: 6px;
       font-size: 0.9rem;
-      line-height: 1.5;
+      line-height: 1.8;
       font-family: 'Courier New', monospace;
     }
 
@@ -1754,7 +1704,7 @@
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
@@ -1762,7 +1712,7 @@
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
     </span>
   </div>
 
@@ -1776,7 +1726,7 @@
         <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20; max-width: 550px; line-height: 0.9; text-align: left;"></div>
         <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
         <span class="card-word" id="spanish-word"></span>
-        <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation" data-tooltip="Record Pronunciation">🎤</button>
+        <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
         <button class="peek-btn" id="peek-btn-front" aria-label="Peek at back">🤔</button>
         <div class="pronunciation-feedback" id="feedback-front">
           <div class="feedback-score" id="score-front">0%</div>
@@ -1788,7 +1738,7 @@
       <div class="card-face card-back">
         <div class="card-weathering" id="weathering-back"></div>
         <span class="card-word" id="english-word"></span>
-        <button class="mic-btn" id="mic-btn-back" aria-label="Practice pronunciation" data-tooltip="Record Pronunciation">🎤</button>
+        <button class="mic-btn" id="mic-btn-back" aria-label="Practice pronunciation">🎤</button>
         <div class="pronunciation-feedback" id="feedback-back">
           <div class="feedback-score" id="score-back">0%</div>
           <div class="feedback-message" id="message-back">Try again!</div>
@@ -1800,8 +1750,6 @@
       <!-- Stamp overlays for visual feedback -->
       <div class="stamp-base card-stamp removed-stamp" id="removed-stamp">Card Removed</div>
       <div class="stamp-base card-stamp added-stamp" id="added-stamp">Extra Practice</div>
-      <!-- Deck change indicator stamp - overlays on card text -->
-      <div class="deck-change-stamp" id="deck-change-stamp"></div>
 
       <!-- Action buttons (positioned above card faces like stamps, visible on both sides) -->
       <!-- Bottom Left: Got It + Don't Got It -->
@@ -3140,20 +3088,17 @@
 
       const card = currentDeck[currentIndex];
 
-      // Display counter (deck change indicator now shown as overlay stamp on card)
+      // Display counter with pending change indicator
       let counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
-      cardCounter.textContent = counterText;
-
-      // Show deck change stamp overlay on card (doesn't shift text)
-      const deckChangeStamp = document.getElementById('deck-change-stamp');
       if (pendingDeckChange !== 0) {
+        // Add mini stamp indicator (uses same .stamp-base styling as card stamps, fully opaque for visibility)
         const changeSign = pendingDeckChange > 0 ? '+' : '';
-        const rotateVar = -8 + Math.random() * 16; // -8deg to +8deg rotation like other stamps
-        deckChangeStamp.textContent = `${changeSign}${pendingDeckChange}`;
-        deckChangeStamp.style.transform = `translate(-50%, -50%) rotate(${rotateVar}deg)`;
-        deckChangeStamp.className = `deck-change-stamp visible ${pendingDeckChange > 0 ? 'positive' : 'negative'}`;
+        const changeColor = pendingDeckChange > 0 ? 'rgba(211, 47, 47, 0.7)' : 'rgba(56, 142, 60, 0.7)'; // red for +, green for -
+        const rotateVar = -2 + Math.random() * 4; // -2deg to +2deg (subtle rotation)
+        // Using inline class reference to .stamp-base properties
+        cardCounter.innerHTML = `${counterText} <span class="stamp-base" style="display: inline-block; font-size: 1.3rem; color: transparent; border-color: ${changeColor}; -webkit-text-stroke: 2px ${changeColor}; text-stroke: 2px ${changeColor}; transform: rotate(${rotateVar}deg); margin-left: 8px; padding: 4px 12px; opacity: 1;">${changeSign}${pendingDeckChange}</span>`;
       } else {
-        deckChangeStamp.className = 'deck-change-stamp';
+        cardCounter.textContent = counterText;
       }
 
       // Get indicator elements (positioned at card corners, not inside card-word)
