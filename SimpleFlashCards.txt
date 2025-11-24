@@ -2,7 +2,7 @@
 PROJECT: LPH Spanish Learning
 COMPONENT: Simple Flashcards - Interactive Spanish vocabulary practice
 CREATED: 2025-11-23
-LAST UPDATED: 2025-11-23 - Fixed starting card to match initial setup screen exactly
+LAST UPDATED: 2025-11-24 - Removed setup screen, game auto-starts with pack 1 and English
 
 DATA SOURCES:
 - Module: https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js
@@ -12,13 +12,14 @@ DATA SOURCES:
 
 FUNCTIONALITY:
 - Main Purpose: Spanish vocabulary flashcard practice with three interactive learning modes
+- Auto-Start: Game automatically starts with Pack 1 and English language on page load
 - Learning Modes:
   * 📖 Reading Mode - Traditional flashcards (Spanish on front, English on back)
   * 👂 Listening Mode - Hearing practice (hear Spanish, type it, back shows Spanish | English, auto-pronounces)
   * ✏️ Writing Mode - Translation practice (English on front, type Spanish, back shows correct Spanish, auto-pronounces)
 
 - Key Functions:
-  * loadWordpacks() - Dynamically imports vocabulary modules
+  * loadWordpacks() - Dynamically imports vocabulary modules and auto-starts game
   * initializeDeck(packKey) - Creates shuffled deck from selected wordpack
   * updateDisplay() - Renders current card based on active mode (returns early if on starting card)
   * showStartingCard(showBack) - Shows actual setup overlay (menu) or setup help by toggling .hidden and .setup-flipped classes
@@ -37,8 +38,6 @@ FUNCTIONALITY:
 
 - Event Handlers:
   * Mode buttons (top left) - Switch between reading/listening/writing modes
-  * Menu button (☰) - Show actual setup overlay (same as initial game setup screen)
-  * Help button (?) - Show actual setup help (back of initial setup screen)
   * Card flip - Click card or down arrow
   * Navigation - Left/right arrows
   * Pronunciation - Up arrow (always) or Space (reading mode only)
@@ -104,6 +103,12 @@ VISUAL DESIGN:
   * Subconsciously pleasing rustic paper feel
 
 CORRECTIONS & CLARIFICATIONS:
+- 2025-11-24: REMOVED setup screen - game now auto-starts
+  * Initially thought: Setup screen needed to select pack and language
+  * Actually: User wants immediate gameplay without setup screen
+  * Implementation: Hidden setup-overlay and setup-help with display:none, added auto-start in loadWordpacks()
+  * Result: Game starts immediately on page load with Pack 1 and English language
+  * Why this matters: Faster user experience, no barriers to starting practice
 - 2025-11-23: FIXED starting card to match initial setup screen exactly
   * Initially thought: Starting card should show custom-designed menu/help with inline styles
   * Actually: Starting card should reuse EXACT same HTML as initial game setup screen
