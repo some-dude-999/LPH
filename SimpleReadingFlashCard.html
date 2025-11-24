@@ -43,8 +43,6 @@
     button:active,
     select:focus,
     input:focus,
-    .mode-btn:focus,
-    .mode-btn:active,
     .action-btn:focus,
     .action-btn:active,
     .nav-btn:focus,
@@ -436,128 +434,7 @@
       transform: scale(1.05);
     }
 
-    /* Mic Button */
-    .mic-btn {
-      position: absolute;
-      bottom: 25px;
-      left: 25px;
-      background: rgba(139, 115, 85, 0.2);
-      border: 3px solid rgba(160, 133, 103, 0.5);
-      color: #5D4E37;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      line-height: 1;
-      text-align: center;
-      z-index: 10;
-      display: none; /* Hidden by default, shown only in speaking mode */
-    }
-
-    .flashcard.game-started .mic-btn {
-      /* Mic button visibility controlled by JavaScript based on mode */
-    }
-
-    .mic-btn:hover {
-      background: rgba(139, 115, 85, 0.4);
-      transform: scale(1.1);
-    }
-
-    .mic-btn.listening {
-      background: rgba(180, 60, 60, 0.4);
-      border-color: #B43C3C;
-      animation: pulse-mic 1s infinite;
-    }
-
-    @keyframes pulse-mic {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(180, 60, 60, 0.4); }
-      50% { box-shadow: 0 0 0 10px rgba(180, 60, 60, 0); }
-    }
-
-    /* Pronunciation Feedback Overlay */
-    .pronunciation-feedback {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.85);
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 20;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-
-    .pronunciation-feedback.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .feedback-score {
-      font-family: 'Cinzel', serif;
-      font-size: 3.5rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .feedback-score.excellent {
-      color: #4ADE80;
-    }
-
-    .feedback-score.good {
-      color: #A3E635;
-    }
-
-    .feedback-score.okay {
-      color: #FACC15;
-    }
-
-    .feedback-score.poor {
-      color: #F87171;
-    }
-
-    .feedback-message {
-      font-size: 1.3rem;
-      color: #F5E6D3;
-      margin-bottom: 8px;
-    }
-
-    .feedback-heard {
-      font-size: 0.95rem;
-      color: #A89888;
-      font-style: italic;
-      margin-bottom: 15px;
-    }
-
-    .feedback-close {
-      background: rgba(139, 115, 85, 0.4);
-      border: 1px solid #8B7355;
-      color: #D4C4A8;
-      padding: 8px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-family: 'IM Fell English', serif;
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-    }
-
-    .feedback-close:hover {
-      background: rgba(139, 115, 85, 0.6);
-    }
-
-    /* Unsupported browser message */
-    .mic-unsupported {
-      display: none;
-    }
+    /* Mic Button and Pronunciation Feedback CSS REMOVED - Reading mode only */
 
     /* Setup Card - Front (Settings) */
     .setup-overlay {
@@ -1350,73 +1227,7 @@
       opacity: 1;
     }
 
-    /* Mode Selector - HIDDEN (locked to Reading mode) */
-    .mode-selector {
-      display: none !important; /* Hidden - single mode game */
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      display: flex;
-      gap: 10px;
-      z-index: 100;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-
-    body.game-started .mode-selector {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .mode-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 3px solid rgba(74, 56, 40, 0.6);
-      /* Inactive: darker, more recessed (old active style) */
-      background-color: #7A6347;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--cardboard-texture-size), 100%;
-      border-color: #4A3828;
-      box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
-      color: #2C1810;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      line-height: 1;
-      opacity: 0.45; /* Very low opacity for inactive to blend into background */
-    }
-
-    .mode-btn:hover {
-      background-color: #9B8365;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--cardboard-texture-size), 100%;
-      transform: scale(1.05);
-      opacity: 0.7; /* Medium opacity on hover */
-    }
-
-    .mode-btn.active {
-      /* Active: lighter, more prominent (old default style) */
-      background-color: #8B7355;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--cardboard-texture-size), 100%;
-      border: 3px solid rgba(74, 56, 40, 0.6);
-      box-shadow: none; /* No inset shadow - more prominent */
-      opacity: 1; /* Full opacity for active */
-    }
+    /* Mode Selector CSS REMOVED - Reading mode only */
 
     /* Typing mode display (listening and writing) */
     .typing-display {
@@ -1714,25 +1525,7 @@
     <div class="card-counter" id="card-counter">Card 0 of 0</div>
   </div>
 
-  <!-- Mode Selector -->
-  <div class="mode-selector">
-    <span class="tooltip-container">
-      <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br><b>1. Read Spanish Word<br>2. Flip to See English<br>3. Mark If You Got It Right or Wrong!</b><br><em><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back<br><b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> Key to Previous Card<br><b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> Key to Next Card<br><b>CLICK</b> <span class="tooltip-btn">👌</span> or <b>PRESS</b> <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br><b>CLICK</b> <span class="tooltip-btn">😕</span> or <b>PRESS</b> <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)</em></span>
-    </span>
-    <span class="tooltip-container">
-      <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br><b>1. Hear Spanish Word<br>2. Type What You Hear<br>3. Flip to Check Answer</b><br><em><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>TYPE</b> Letters to Spell Word<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back<br><b>PRESS</b> <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
-    </span>
-    <span class="tooltip-container">
-      <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><b>1. See Spanish Word<br>2. Say It Aloud<br>3. Get Pronunciation Score</b><br><em><b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> Key to Record<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
-    </span>
-    <span class="tooltip-container">
-      <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><b>1. See English Translation<br>2. Type Spanish Word<br>3. Flip to Check Answer</b><br><em><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>TYPE</b> Letters to Spell Word<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back<br><b>PRESS</b> <span class="tooltip-key">Enter</span> Key to Next Card</em></span>
-    </span>
-  </div>
+  <!-- Mode Selector REMOVED - Reading mode only -->
 
   <div class="flashcard-container">
     <button class="nav-btn" id="prev-btn" aria-label="Previous card">‹</button>
@@ -1819,29 +1612,14 @@
 
       <div class="card-face card-front">
         <div class="card-weathering" id="weathering-front"></div>
-        <!-- Wrong answer indicators (positioned at card corners) -->
-        <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20; max-width: 550px; line-height: 0.9; text-align: left;"></div>
-        <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
+        <!-- Wrong letters, mic button, and pronunciation feedback REMOVED - Reading mode only -->
         <span class="card-word" id="spanish-word"></span>
-        <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
         <button class="peek-btn" id="peek-btn-front" aria-label="Peek at back">🤔</button>
-        <div class="pronunciation-feedback" id="feedback-front">
-          <div class="feedback-score" id="score-front">0%</div>
-          <div class="feedback-message" id="message-front">Try again!</div>
-          <div class="feedback-heard" id="heard-front">Heard: ""</div>
-          <button class="feedback-close" id="close-front">Got it</button>
-        </div>
       </div>
       <div class="card-face card-back">
         <div class="card-weathering" id="weathering-back"></div>
         <span class="card-word" id="english-word"></span>
-        <button class="mic-btn" id="mic-btn-back" aria-label="Practice pronunciation">🎤</button>
-        <div class="pronunciation-feedback" id="feedback-back">
-          <div class="feedback-score" id="score-back">0%</div>
-          <div class="feedback-message" id="message-back">Try again!</div>
-          <div class="feedback-heard" id="heard-back">Heard: ""</div>
-          <button class="feedback-close" id="close-back">Got it</button>
-        </div>
+        <!-- Mic button and pronunciation feedback REMOVED - Reading mode only -->
       </div>
 
       <!-- Stamp overlays for visual feedback -->
@@ -1878,14 +1656,8 @@
     let currentVoice = null;
     let spanishVoices = [];
 
-    // Learning modes
-    const currentMode = 'reading'; // LOCKED to Reading mode - cannot be changed
-    let typingInput = ''; // User's current typing input for typing modes
-    let typingDisplay = []; // Array of actual characters (always contains real word, not underscores)
-    let typedPositions = new Set(); // Track which positions have been successfully typed
-    let wrongAttempts = 0; // Track wrong keypresses in typing modes
-    let wrongPositions = []; // Track which positions had wrong attempts (for red underlines)
-    let wrongLetters = []; // Track actual letters that were typed wrong (for crossed-out display)
+    // Learning mode - LOCKED to reading only
+    const currentMode = 'reading'; // Locked to reading mode (single-mode game)
 
     // Deck change tracking (for visual indicator next to counter)
     let pendingDeckChange = 0; // +N for added cards, -N for removed cards
@@ -1956,12 +1728,7 @@
     const removedStamp = document.getElementById('removed-stamp');
     const addedStamp = document.getElementById('added-stamp');
 
-    // Mode selector elements
-    const modeBtns = document.querySelectorAll('.mode-btn');
-    const modeReading = document.getElementById('mode-reading');
-    const modeListening = document.getElementById('mode-listening');
-    const modeSpeaking = document.getElementById('mode-speaking');
-    const modeWriting = document.getElementById('mode-writing');
+    // Mode selector, mic, and feedback elements REMOVED - Reading mode only
 
     // Modal elements
     const menuBtn = document.getElementById('menu-btn');
@@ -1971,32 +1738,7 @@
     const menuLanguage = document.getElementById('menu-language');
     const menuVoice = document.getElementById('menu-voice');
     
-    // Mic and feedback elements
-    const micBtnFront = document.getElementById('mic-btn-front');
-    const micBtnBack = document.getElementById('mic-btn-back');
-    const feedbackFront = document.getElementById('feedback-front');
-    const feedbackBack = document.getElementById('feedback-back');
-    const scoreFront = document.getElementById('score-front');
-    const scoreBack = document.getElementById('score-back');
-    const messageFront = document.getElementById('message-front');
-    const messageBack = document.getElementById('message-back');
-    const heardFront = document.getElementById('heard-front');
-    const heardBack = document.getElementById('heard-back');
-    const closeFront = document.getElementById('close-front');
-    const closeBack = document.getElementById('close-back');
-    
-    // Speech Recognition setup
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    let recognition = null;
-    let isListening = false;
-
-    if (SpeechRecognition) {
-      recognition = new SpeechRecognition();
-      recognition.lang = 'es-ES';
-      recognition.continuous = false;
-      recognition.interimResults = false;
-      recognition.maxAlternatives = 5;
-    }
+    // Speech Recognition REMOVED - Reading mode only
 
     // Audio context for sounds
     let audioContext = null;
@@ -2935,126 +2677,12 @@
         cardCounter.textContent = counterText;
       }
 
-      // Get indicator elements (positioned at card corners, not inside card-word)
-      const wrongLettersFront = document.getElementById('wrong-letters-front');
-      const wrongCountFront = document.getElementById('wrong-count-front');
-
-      // Mode-specific display
-      if (currentMode === 'reading') {
-        // READING MODE - Purpose: Learn to read Spanish and understand meaning
-        // Front: Spanish word | Back: English translation
-        spanishWord.textContent = card.spanish;
-        spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
-        englishWord.className = 'card-word';
-        // Clear indicators
-        wrongLettersFront.innerHTML = '';
-        wrongCountFront.innerHTML = '';
-      } else if (currentMode === 'listening') {
-        // LISTENING MODE - Purpose: Learn to understand spoken Spanish and spell it
-        // Front: Hear Spanish audio + type what you hear | Back: Spanish word + English translation
-        // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
-        // Get unique letters (by letter property, case-insensitive)
-        const seenLetters = new Set();
-        const uniqueWrongLetters = wrongLetters.filter(item => {
-          if (seenLetters.has(item.letter)) {
-            return false;
-          }
-          seenLetters.add(item.letter);
-          return true;
-        });
-        wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
-          ? uniqueWrongLetters.map(item => {
-              // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
-              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
-            }).join('')
-          : '';
-        const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
-        const countScale = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-        wrongCountFront.innerHTML = wrongAttempts > 0
-          ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
-          : '';
-        // Update card content (no indicators embedded here)
-        spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplay()}</div>`;
-        spanishWord.className = 'card-word';
-        englishWord.innerHTML = `${card.spanish}<br><div class="translation-text">${card.translation}</div>`;
-        englishWord.className = 'card-word';
-      } else if (currentMode === 'writing') {
-        // WRITING MODE - Purpose: Learn to write/spell Spanish from English
-        // Front: English word + type Spanish translation | Back: Correct Spanish word
-        // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
-        // Get unique letters (by letter property, case-insensitive)
-        const seenLetters = new Set();
-        const uniqueWrongLetters = wrongLetters.filter(item => {
-          if (seenLetters.has(item.letter)) {
-            return false;
-          }
-          seenLetters.add(item.letter);
-          return true;
-        });
-        wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
-          ? uniqueWrongLetters.map(item => {
-              // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
-              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
-            }).join('')
-          : '';
-        const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
-        const countScale = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-        wrongCountFront.innerHTML = wrongAttempts > 0
-          ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
-          : '';
-        // Update card content (no indicators embedded here)
-        spanishWord.innerHTML = `<div class="translation-text">${card.translation}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
-        spanishWord.className = 'card-word';
-        englishWord.textContent = card.spanish;
-        englishWord.className = 'card-word';
-      } else if (currentMode === 'speaking') {
-        // SPEAKING MODE - Purpose: Learn to pronounce Spanish correctly
-        // Front: Spanish word + microphone button | Back: English translation
-        spanishWord.textContent = card.spanish;
-        spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
-        englishWord.className = 'card-word';
-        // Clear indicators
-        wrongLettersFront.innerHTML = '';
-        wrongCountFront.innerHTML = '';
-      }
-
-      // Show/hide mic button based on mode
-      const micBtnFrontEl = document.getElementById('mic-btn-front');
-      const micBtnBackEl = document.getElementById('mic-btn-back');
-      if (currentMode === 'speaking') {
-        micBtnFrontEl.style.display = 'block';
-        micBtnBackEl.style.display = 'block';
-      } else {
-        micBtnFrontEl.style.display = 'none';
-        micBtnBackEl.style.display = 'none';
-      }
-
-      // Show/hide action buttons based on mode (only show in reading mode)
-      const gotItBtnEl = document.getElementById('got-it-btn');
-      const confusedBtnLeftEl = document.getElementById('confused-btn-left');
-      const confusedBtnRightEl = document.getElementById('confused-btn-right');
-      if (currentMode === 'reading') {
-        gotItBtnEl.style.display = 'flex';
-        confusedBtnLeftEl.style.display = 'flex';
-        confusedBtnRightEl.style.display = 'flex';
-      } else {
-        gotItBtnEl.style.display = 'none';
-        confusedBtnLeftEl.style.display = 'none';
-        confusedBtnRightEl.style.display = 'none';
-      }
-
-      // Show/hide navigation arrows based on mode (only show in reading mode - others auto-advance)
-      const prevBtn = document.getElementById('prev-btn');
-      const nextBtn = document.getElementById('next-btn');
-      if (currentMode === 'reading') {
-        prevBtn.style.display = 'flex';
-        nextBtn.style.display = 'flex';
-      } else {
-        prevBtn.style.display = 'none';
-        nextBtn.style.display = 'none';
-      }
+      // READING MODE ONLY - Simplified
+      // Front: Spanish word | Back: English translation
+      spanishWord.textContent = card.spanish;
+      spanishWord.className = 'card-word';
+      englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
+      englishWord.className = 'card-word';
 
       // Apply random weathering based on card ID
       const seed = card.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
@@ -3072,40 +2700,24 @@
     // - Helps users learn pronunciation through repetition
     // ============================================================
 
-    // Navigate to previous card (with wrap-around)
+    // Navigate to previous card (with wrap-around) - READING MODE ONLY
     function goToPrevious() {
       if (currentDeck.length === 0) return;
-      speechSynthesis.cancel(); // Stop speech on card navigation
+      speechSynthesis.cancel();
       playCardFlipSound();
       currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
-      if (currentMode === 'listening' || currentMode === 'writing') {
-        initializeTypingDisplay();
-      }
       updateDisplay();
       saveState();
-
-      // Auto-read in listening mode (helps learn pronunciation)
-      if (currentMode === 'listening') {
-        setTimeout(() => speakSpanish(), 300);
-      }
     }
 
-    // Navigate to next card (with wrap-around)
+    // Navigate to next card (with wrap-around) - READING MODE ONLY
     function goToNext() {
       if (currentDeck.length === 0) return;
-      speechSynthesis.cancel(); // Stop speech on card navigation
+      speechSynthesis.cancel();
       playCardFlipSound();
       currentIndex = (currentIndex + 1) % currentDeck.length;
-      if (currentMode === 'listening' || currentMode === 'writing') {
-        initializeTypingDisplay();
-      }
       updateDisplay();
       saveState();
-
-      // Auto-read in listening mode (helps learn pronunciation)
-      if (currentMode === 'listening') {
-        setTimeout(() => speakSpanish(), 300);
-      }
     }
 
     // Move to next card (for typing mode completion)
@@ -3559,29 +3171,7 @@
       });
     });
 
-    // Mic buttons
-    micBtnFront.addEventListener('click', (e) => {
-      e.stopPropagation();
-      playButtonClickSound();
-      startListening(true);
-    });
-    micBtnBack.addEventListener('click', (e) => {
-      e.stopPropagation();
-      playButtonClickSound();
-      startListening(false);
-    });
-
-    // Close feedback buttons
-    closeFront.addEventListener('click', (e) => {
-      e.stopPropagation();
-      playButtonClickSound();
-      hideFeedback();
-    });
-    closeBack.addEventListener('click', (e) => {
-      e.stopPropagation();
-      playButtonClickSound();
-      hideFeedback();
-    });
+    // Mic and feedback button event listeners REMOVED - Reading mode only
 
     // Menu Modal
     menuBtn.addEventListener('click', () => {
@@ -3638,7 +3228,7 @@
       }
     });
 
-    // Keyboard navigation
+    // Keyboard navigation - READING MODE ONLY
     document.addEventListener('keydown', (e) => {
       // Close modals with Escape
       if (e.key === 'Escape') {
@@ -3651,22 +3241,6 @@
         return;
       }
 
-      // Handle typing in listening and writing modes (accept letters, numbers, symbols - not space)
-      if ((currentMode === 'listening' || currentMode === 'writing') && e.key.length === 1 && e.key !== ' ') {
-        e.preventDefault();
-        handleTypingInput(e.key);
-        return;
-      }
-
-      // Enter in typing modes (listening/writing)
-      if ((currentMode === 'listening' || currentMode === 'writing') && e.key === 'Enter') {
-        e.preventDefault();
-        if (isWritingComplete()) {
-          moveToNextCard();
-        }
-        return;
-      }
-
       // Prevent repeated actions when holding key down
       if (keysPressed[e.key]) {
         e.preventDefault();
@@ -3675,51 +3249,24 @@
       keysPressed[e.key] = true;
 
       if (e.key === 'ArrowLeft') {
-        // Only allow left arrow in reading mode
-        if (currentMode === 'reading') {
-          goToPrevious();
-        }
+        goToPrevious();
       } else if (e.key === 'ArrowRight') {
-        // Only allow right arrow in reading mode
-        if (currentMode === 'reading') {
-          goToNext();
-        }
+        goToNext();
       } else if (e.key === 'ArrowUp') {
-        // Up arrow: ALWAYS pronounce
         e.preventDefault();
         speakSpanish();
       } else if (e.key === 'ArrowDown') {
-        // Down arrow: ALWAYS flip
         e.preventDefault();
         flipCard();
       } else if (e.key === '1') {
-        // Key 1: Remove card (Got it!) - only in reading mode
-        if (currentMode === 'reading') {
-          e.preventDefault();
-          removeCurrentCard();
-        }
+        e.preventDefault();
+        removeCurrentCard();
       } else if (e.key === '2') {
-        // Key 2: Add practice cards (Confused) - only in reading mode
-        if (currentMode === 'reading') {
-          e.preventDefault();
-          addConfusedCards();
-        }
+        e.preventDefault();
+        addConfusedCards();
       } else if (e.key === ' ') {
-        // Space: pronounce in reading mode, record in speaking mode, play sound in writing mode, ignore in listening
-        if (currentMode === 'reading') {
-          e.preventDefault();
-          speakSpanish();
-        } else if (currentMode === 'speaking') {
-          e.preventDefault();
-          // Trigger mic button based on which side of card is showing
-          const isFront = !isFlipped;
-          startListening(isFront);
-        } else if (currentMode === 'writing') {
-          e.preventDefault();
-          playScribbleSound(); // Play scribble sound but don't register input
-        } else if (currentMode === 'listening') {
-          e.preventDefault(); // Ignore space in listening mode
-        }
+        e.preventDefault();
+        speakSpanish();
       }
     });
 
@@ -3732,14 +3279,7 @@
       }
     });
 
-    // Mode selector event listeners - DISABLED (Reading mode only)
-    // modeBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        playButtonClickSound();
-        const mode = btn.dataset.mode;
-//        switchMode(mode);
-//      }});
-//    });
+    // Mode selector event listeners REMOVED - Reading mode only
 
     // Initialize
     loadWordpacks();

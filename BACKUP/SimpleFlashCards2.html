@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spanish Listening Flashcards</title>
+  <title>Spanish Flashcards</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
   <style>
     /* =================================================================
@@ -1350,9 +1350,8 @@
       opacity: 1;
     }
 
-    /* Mode Selector - HIDDEN (locked to Listening mode) */
+    /* Mode Selector - Top Left */
     .mode-selector {
-      display: none !important; /* Hidden - single mode game */
       position: fixed;
       top: 20px;
       left: 20px;
@@ -1879,7 +1878,7 @@
     let spanishVoices = [];
 
     // Learning modes
-    const currentMode = 'listening'; // LOCKED to Listening mode - cannot be changed
+    let currentMode = 'reading'; // 'reading', 'listening', 'speaking', 'writing'
     let typingInput = ''; // User's current typing input for typing modes
     let typingDisplay = []; // Array of actual characters (always contains real word, not underscores)
     let typedPositions = new Set(); // Track which positions have been successfully typed
@@ -3732,14 +3731,14 @@
       }
     });
 
-    // Mode selector event listeners - DISABLED (Listening mode only)
-    // modeBtns.forEach(btn => {
+    // Mode selector event listeners
+    modeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         playButtonClickSound();
         const mode = btn.dataset.mode;
-//        switchMode(mode);
-//      }});
-//    });
+        switchMode(mode);
+      });
+    });
 
     // Initialize
     loadWordpacks();
