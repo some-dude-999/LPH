@@ -3044,13 +3044,16 @@
 
       // Show/hide action buttons based on mode (only show in reading mode)
       const gotItBtnEl = document.getElementById('got-it-btn');
-      const confusedBtnEl = document.getElementById('confused-btn');
+      const confusedBtnLeftEl = document.getElementById('confused-btn-left');
+      const confusedBtnRightEl = document.getElementById('confused-btn-right');
       if (currentMode === 'reading') {
         gotItBtnEl.style.display = 'flex';
-        confusedBtnEl.style.display = 'flex';
+        confusedBtnLeftEl.style.display = 'flex';
+        confusedBtnRightEl.style.display = 'flex';
       } else {
         gotItBtnEl.style.display = 'none';
-        confusedBtnEl.style.display = 'none';
+        confusedBtnLeftEl.style.display = 'none';
+        confusedBtnRightEl.style.display = 'none';
       }
 
       // Show/hide navigation arrows based on mode (only show in reading mode - others auto-advance)
