@@ -451,15 +451,41 @@
       background: rgba(139, 115, 85, 0.6);
     }
 
-    /* Mic Button - HIDDEN, moved to card-controls below card */
+    /* Mic Button */
     .mic-btn {
-      display: none !important; /* Hidden - mic button moved to control bar */
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      background: rgba(139, 115, 85, 0.2);
+      border: 3px solid rgba(160, 133, 103, 0.5);
+      color: var(--color-text-dark);
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      line-height: 1;
+      text-align: center;
+      z-index: 10;
+      display: none; /* Hidden by default, shown only in speaking mode */
     }
 
-    /* Mic button listening state - applied to control-btn when recording */
-    .control-btn.listening {
-      background: rgba(180, 60, 60, 0.4) !important;
-      border-color: #B43C3C !important;
+    .flashcard.game-started .mic-btn {
+      /* Mic button visibility controlled by JavaScript based on mode */
+    }
+
+    .mic-btn:hover {
+      background: rgba(139, 115, 85, 0.4);
+    }
+
+    /* Mic button tooltips now use .btn-tooltip elements (see BUTTON TOOLTIPS section) */
+
+    .mic-btn.listening {
+      background: rgba(180, 60, 60, 0.4);
+      border-color: #B43C3C;
       animation: pulse-mic 1s infinite;
     }
 
@@ -978,7 +1004,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 25px; /* Increased spacing between buttons */
+      gap: 15px;
       margin-top: 20px;
       opacity: 0;
       pointer-events: none;
@@ -1581,15 +1607,12 @@
       opacity: 0;
       position: absolute;
       z-index: 300;
-      /* Fancy paper with subtle fiber/dot pattern */
+      /* Fancy parchment/aged paper feel - elegant, no grid */
       background:
-        /* Fine noise texture for paper feel */
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E"),
         /* Subtle vignette for depth */
-        radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.06) 100%),
+        radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
         /* Soft cream parchment gradient */
         linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
-      background-size: 150px 150px, 100% 100%, 100% 100%;
       color: var(--color-text-dark);
       padding: 10px 14px;
       border-radius: 8px;
@@ -1607,6 +1630,8 @@
       transition: opacity 0.2s ease, visibility 0.2s ease;
       font-family: var(--font-answer);
     }
+
+    /* No grid pattern - clean paper look */
 
     /* Position tooltip below mode buttons */
     .mode-btn .tooltip {
@@ -1631,7 +1656,28 @@
       opacity: 1;
     }
 
-    /* Arrow removed - using simple div style instead of speech bubble */
+    /* Small arrow pointing to element */
+    .tooltip::after {
+      content: '';
+      position: absolute;
+      border: 6px solid transparent;
+    }
+
+    /* Arrow pointing up (for tooltips below element) */
+    .mode-btn .tooltip::after {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-color: #FDF8F0;
+    }
+
+    /* Arrow pointing down (for tooltips above element) */
+    .flashcard .tooltip::after {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top-color: #FDF8F0;
+    }
 
     .tooltip strong {
       /* Mode title - centered, LARGER, bold */
@@ -1748,15 +1794,10 @@
       bottom: calc(100% + 8px);
       left: 50%;
       transform: translateX(-50%);
-      /* Fancy paper with subtle fiber/dot pattern */
+      /* Fancy parchment/aged paper feel */
       background:
-        /* Fine noise texture for paper feel */
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E"),
-        /* Subtle vignette for depth */
-        radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.06) 100%),
-        /* Soft cream parchment gradient */
+        radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
         linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
-      background-size: 150px 150px, 100% 100%, 100% 100%;
       color: var(--color-text-dark);
       padding: 8px 12px;
       border-radius: 8px;
@@ -1775,14 +1816,24 @@
       z-index: 100;
     }
 
-    .control-btn:hover .btn-tooltip {
+    .control-btn:hover .btn-tooltip,
+    .mic-btn:hover .btn-tooltip {
       visibility: visible;
       opacity: 1;
       /* 1 second delay - user must hold hover to see tooltip */
       transition-delay: 1s;
     }
 
-    /* Arrow removed - using simple div style instead of speech bubble */
+    /* Arrow pointing up for button tooltips */
+    .btn-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: #FDF8F0;
+    }
   </style>
 </head>
 <body>
@@ -1865,8 +1916,6 @@
     <button class="control-btn" id="got-it-btn" data-tooltip="">✓</button>
     <button class="control-btn" id="confused-btn" data-tooltip="">✗</button>
     <div class="control-separator" id="control-separator"></div>
-    <!-- Mic button (speaking mode only) -->
-    <button class="control-btn" id="mic-btn-control" data-tooltip="" style="display: none;">🎤</button>
     <!-- Right group: Pronounce / Peek (all modes) -->
     <button class="control-btn" id="pronounce-btn" data-tooltip="">🗣️</button>
     <button class="control-btn" id="peek-btn" data-tooltip="">❓</button>
@@ -2025,21 +2074,21 @@
     //   .tooltip-key  = rectangular cardboard key for keyboard keys
     // ============================================================
     const TOOLTIP_MESSAGES = {
-      // Reading mode actions - action words (CLICK, PRESS, TYPE) are bolded
-      gotIt: '<b>CLICK</b> <span class="tooltip-btn">✓</span> or <b>PRESS</b> <span class="tooltip-key">1</span> to Remove Card',
-      confused: '<b>CLICK</b> <span class="tooltip-btn">✗</span> or <b>PRESS</b> <span class="tooltip-key">2</span> to Add Extra Practice',
-      prevCard: '<b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> to Previous Card',
-      nextCard: '<b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> to Next Card',
+      // Reading mode actions
+      gotIt: 'CLICK <span class="tooltip-btn">✓</span> or PRESS <span class="tooltip-key">1</span> to Remove Card',
+      confused: 'CLICK <span class="tooltip-btn">✗</span> or PRESS <span class="tooltip-key">2</span> to Add Extra Practice',
+      prevCard: 'CLICK <span class="tooltip-btn">‹</span> or PRESS <span class="tooltip-key">←</span> to Previous Card',
+      nextCard: 'CLICK <span class="tooltip-btn">›</span> or PRESS <span class="tooltip-key">→</span> to Next Card',
 
       // All modes actions
-      pronounce: '<b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> to Pronounce',
-      peek: '<b>CLICK</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> to Peek at Back',
+      pronounce: 'CLICK <span class="tooltip-btn">🗣️</span> or PRESS <span class="tooltip-key">↑</span> to Pronounce',
+      peek: 'CLICK <span class="tooltip-btn">❓</span> or PRESS <span class="tooltip-key">↓</span> to Peek at Back',
 
       // Speaking mode
-      record: '<b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> to Record',
+      record: 'CLICK <span class="tooltip-btn">🎤</span> or PRESS <span class="tooltip-key">Space</span> to Record',
 
       // Typing modes (listening/writing)
-      typeLetters: '<b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word'
+      typeLetters: 'TYPE <span class="tooltip-key">Letters</span> to Spell Word'
     };
 
     // DOM Elements - menu elements are created dynamically in renderMenuCard()
@@ -2076,9 +2125,8 @@
     const menuBtn = document.getElementById('menu-btn');
     
     // Mic and feedback elements
-    const micBtnFront = document.getElementById('mic-btn-front'); // Deprecated - kept for compatibility
-    const micBtnBack = document.getElementById('mic-btn-back'); // Deprecated - kept for compatibility
-    const micBtnControl = document.getElementById('mic-btn-control'); // New control bar mic button
+    const micBtnFront = document.getElementById('mic-btn-front');
+    const micBtnBack = document.getElementById('mic-btn-back');
     const feedbackFront = document.getElementById('feedback-front');
     const feedbackBack = document.getElementById('feedback-back');
     const scoreFront = document.getElementById('score-front');
@@ -3005,12 +3053,11 @@
       peekBtn.innerHTML = '❓';
       peekBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.peek);
 
-      // Mic button tooltip (control bar)
-      const micBtnControlEl = document.getElementById('mic-btn-control');
-      if (micBtnControlEl) {
-        micBtnControlEl.innerHTML = '🎤';
-        micBtnControlEl.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.record);
-      }
+      // Mic button tooltips
+      const micBtnFrontEl = document.getElementById('mic-btn-front');
+      const micBtnBackEl = document.getElementById('mic-btn-back');
+      if (micBtnFrontEl) micBtnFrontEl.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.record);
+      if (micBtnBackEl) micBtnBackEl.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.record);
 
       // ---------------------------------------------------------
       // Create tooltip elements for control bar buttons
@@ -3020,7 +3067,8 @@
       createButtonTooltip(confusedBtn, TOOLTIP_MESSAGES.confused);
       createButtonTooltip(pronounceBtn, TOOLTIP_MESSAGES.pronounce);
       createButtonTooltip(peekBtn, TOOLTIP_MESSAGES.peek);
-      if (micBtnControlEl) createButtonTooltip(micBtnControlEl, TOOLTIP_MESSAGES.record);
+      if (micBtnFrontEl) createButtonTooltip(micBtnFrontEl, TOOLTIP_MESSAGES.record);
+      if (micBtnBackEl) createButtonTooltip(micBtnBackEl, TOOLTIP_MESSAGES.record);
     }
 
     // Helper: Create a tooltip element for a button (allows HTML content)
@@ -3432,12 +3480,15 @@
         wrongCountFront.innerHTML = '';
       }
 
-      // Show/hide mic button based on mode (now in control bar, not on card)
-      const micBtnControlEl = document.getElementById('mic-btn-control');
+      // Show/hide mic button based on mode
+      const micBtnFrontEl = document.getElementById('mic-btn-front');
+      const micBtnBackEl = document.getElementById('mic-btn-back');
       if (currentMode === 'speaking') {
-        micBtnControlEl.style.display = 'flex';
+        micBtnFrontEl.style.display = 'block';
+        micBtnBackEl.style.display = 'block';
       } else {
-        micBtnControlEl.style.display = 'none';
+        micBtnFrontEl.style.display = 'none';
+        micBtnBackEl.style.display = 'none';
       }
 
       // Show/hide control bar buttons based on mode
@@ -3772,21 +3823,21 @@
         alert('Speech recognition is not supported in your browser. Try Chrome or Edge.');
         return;
       }
-
+      
       if (currentDeck.length === 0) return;
       if (isListening) return;
-
+      
       isListening = true;
-      // Use control bar mic button for listening animation
-      micBtnControl.classList.add('listening');
-
+      const micBtn = isFront ? micBtnFront : micBtnBack;
+      micBtn.classList.add('listening');
+      
       recognition.onresult = (event) => {
         const results = event.results[0];
         let bestMatch = results[0].transcript;
         let bestScore = 0;
-
+        
         const expected = currentDeck[currentIndex].spanish;
-
+        
         // Check all alternatives for best match
         for (let i = 0; i < results.length; i++) {
           const transcript = results[i].transcript;
@@ -3796,27 +3847,28 @@
             bestMatch = transcript;
           }
         }
-
+        
         showFeedback(bestScore, bestMatch, isFront);
       };
-
+      
       recognition.onerror = (event) => {
         console.error('Speech recognition error:', event.error);
         isListening = false;
-        micBtnControl.classList.remove('listening');
-
+        micBtn.classList.remove('listening');
+        
         if (event.error === 'no-speech') {
           showFeedback(0, '(no speech detected)', isFront);
         } else if (event.error === 'not-allowed') {
           alert('Microphone access denied. Please allow microphone access to use this feature.');
         }
       };
-
+      
       recognition.onend = () => {
         isListening = false;
-        micBtnControl.classList.remove('listening');
+        micBtnFront.classList.remove('listening');
+        micBtnBack.classList.remove('listening');
       };
-
+      
       recognition.start();
     }
 
@@ -3945,12 +3997,16 @@
       });
     });
 
-    // Mic button in control bar (speaking mode)
-    micBtnControl.addEventListener('click', (e) => {
+    // Mic buttons
+    micBtnFront.addEventListener('click', (e) => {
       e.stopPropagation();
       playButtonClickSound();
-      // Use current card side (front or back) for feedback display
-      startListening(!isFlipped);
+      startListening(true);
+    });
+    micBtnBack.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playButtonClickSound();
+      startListening(false);
     });
 
     // Close feedback buttons
