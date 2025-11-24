@@ -872,29 +872,17 @@
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
     }
 
-    /* Action Buttons - Flat Cardboard Style (same color for all) */
-    .action-buttons {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 20px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-
-    body.game-started .action-buttons {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
+    /* Action Buttons - Positioned in lower left of card like mic button */
     .action-btn {
+      position: absolute;
+      bottom: 25px;
       width: 60px;
       height: 60px;
       border-radius: 50%;
       border: 3px solid rgba(74, 56, 40, 0.6);
       cursor: pointer;
       transition: all 0.2s ease;
-      display: flex;
+      display: none; /* Hidden by default, shown when game started */
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
@@ -907,6 +895,20 @@
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
       color: #2C1810;
+      z-index: 10;
+    }
+
+    body.game-started .action-btn {
+      display: flex;
+    }
+
+    /* Position the two buttons horizontally */
+    .got-it-btn {
+      left: 25px;
+    }
+
+    .confused-btn {
+      left: 100px; /* 25px + 60px width + 15px gap */
     }
 
     .action-btn:hover {
@@ -1550,8 +1552,7 @@
   <div class="flashcard-container">
     <button class="nav-btn" id="prev-btn" aria-label="Previous card">‹</button>
 
-    <span class="tooltip-container">
-      <div class="flashcard" id="flashcard">
+    <div class="flashcard" id="flashcard">
       <!-- Setup Overlay (Front - Settings) -->
       <div class="setup-overlay" id="setup-overlay">
         <div class="setup-title">Settings</div>
@@ -1628,7 +1629,7 @@
         <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: 'IM Fell English', serif; font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
         <span class="card-word" id="spanish-word"></span>
         <button class="mic-btn" id="mic-btn-front" aria-label="Practice pronunciation">🎤</button>
-        <button class="sound-btn" id="sound-btn-front" aria-label="Play pronunciation">🔊</button>
+        <button class="sound-btn" id="sound-btn-front" aria-label="Play pronunciation">🗣️</button>
         <div class="pronunciation-feedback" id="feedback-front">
           <div class="feedback-score" id="score-front">0%</div>
           <div class="feedback-message" id="message-front">Try again!</div>
@@ -1640,7 +1641,7 @@
         <div class="card-weathering" id="weathering-back"></div>
         <span class="card-word" id="english-word"></span>
         <button class="mic-btn" id="mic-btn-back" aria-label="Practice pronunciation">🎤</button>
-        <button class="sound-btn" id="sound-btn-back" aria-label="Play pronunciation">🔊</button>
+        <button class="sound-btn" id="sound-btn-back" aria-label="Play pronunciation">🗣️</button>
         <div class="pronunciation-feedback" id="feedback-back">
           <div class="feedback-score" id="score-back">0%</div>
           <div class="feedback-message" id="message-back">Try again!</div>
@@ -1652,20 +1653,13 @@
       <!-- Stamp overlays for visual feedback -->
       <div class="stamp-base card-stamp removed-stamp" id="removed-stamp">Card Removed</div>
       <div class="stamp-base card-stamp added-stamp" id="added-stamp">Extra Practice</div>
-      </div>
-      <span class="tooltip" id="card-tooltip">
-        <strong>📖 Reading Mode</strong><br>
-        Read Spanish word mentally, flip to see English<br>
-        <em>↓ flip | ← → navigate | 👌 remove | 😕 practice</em>
-      </span>
-    </span>
+
+      <!-- Action buttons (positioned in lower left like mic button) -->
+      <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I got this! Remove card">👌</button>
+      <button class="action-btn confused-btn" id="confused-btn" data-tooltip="Need more practice">😕</button>
+    </div>
 
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
-  </div>
-
-  <div class="action-buttons">
-    <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I got this! Remove card">👌</button>
-    <button class="action-btn confused-btn" id="confused-btn" data-tooltip="Need more practice">😕</button>
   </div>
 
   <script type="module">
@@ -1768,7 +1762,6 @@
     const modeListening = document.getElementById('mode-listening');
     const modeSpeaking = document.getElementById('mode-speaking');
     const modeWriting = document.getElementById('mode-writing');
-    const cardTooltip = document.getElementById('card-tooltip');
 
     // Modal elements
     const menuBtn = document.getElementById('menu-btn');
@@ -1847,7 +1840,7 @@
       lp2.frequency.value = 580;
       
       const gain = ctx.createGain();
-      gain.gain.value = 0.7; // Louder - balanced volume
+      gain.gain.value = 1.2; // Much louder - increased from 0.7
 
       source.connect(lp);
       lp.connect(lp2);
@@ -1898,7 +1891,7 @@
       oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
 
       const gain = ctx.createGain();
-      gain.gain.value = 0.45; // Louder - balanced volume
+      gain.gain.value = 0.75; // Much louder - increased from 0.45
 
       source.connect(lp);
       lp.connect(lp2);
@@ -1950,22 +1943,22 @@
     }
 
     // ===================================================================================
-    // FELT PEN SCRIBBLE SOUND - Deep, satisfying scratching sound like felt pen writing
+    // PEN SCRATCHING ON PAPER SOUND - Realistic pen scraping against paper texture
     // ===================================================================================
     function playScribbleSound() {
       const ctx = getAudioContext();
       const now = ctx.currentTime;
 
-      // Longer duration for more satisfying scratch (0.04-0.06 seconds)
-      const duration = 0.04 + Math.random() * 0.02;
+      // Short, crisp scratch sound (0.03-0.05 seconds)
+      const duration = 0.03 + Math.random() * 0.02;
       const bufferSize = ctx.sampleRate * duration;
       const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
       const data = buffer.getChannelData(0);
 
-      // Generate noise with moderate decay for scratchy texture
+      // Generate gritty noise for paper texture
       for (let i = 0; i < bufferSize; i++) {
-        const envelope = Math.pow(1 - i/bufferSize, 4); // Moderate decay for longer scratch
-        // Add pink noise character for more natural scratch sound
+        const envelope = Math.pow(1 - i/bufferSize, 3); // Quick decay for sharp scratch
+        // Gritty pink noise for paper texture
         const noise = (Math.random() * 2 - 1);
         data[i] = noise * envelope;
       }
@@ -1973,26 +1966,26 @@
       const source = ctx.createBufferSource();
       source.buffer = buffer;
 
-      // Bandpass for scratchy mid-range texture (not too muffled!)
+      // Lower frequency for realistic paper scratch (400-800 Hz)
       const bp1 = ctx.createBiquadFilter();
       bp1.type = 'bandpass';
-      bp1.frequency.value = 800 + Math.random() * 400; // 800-1200 Hz - scratchy range
-      bp1.Q.value = 2.5; // Higher Q for more pronounced scratchy character
+      bp1.frequency.value = 400 + Math.random() * 400; // 400-800 Hz - paper scratch range
+      bp1.Q.value = 3.0; // High Q for crisp, defined scratch
 
-      // Second bandpass for depth
+      // Low frequency rumble for paper resonance (150-300 Hz)
       const bp2 = ctx.createBiquadFilter();
       bp2.type = 'bandpass';
-      bp2.frequency.value = 300 + Math.random() * 200; // 300-500 Hz - deep undertone
-      bp2.Q.value = 1.5;
+      bp2.frequency.value = 150 + Math.random() * 150; // 150-300 Hz - paper resonance
+      bp2.Q.value = 2.0;
 
-      // Highpass to remove muddiness
+      // Remove very low mud
       const hp = ctx.createBiquadFilter();
       hp.type = 'highpass';
-      hp.frequency.value = 200; // Remove very low frequencies
+      hp.frequency.value = 100;
 
-      // Much louder gain with variation
+      // Louder for audibility
       const gain = ctx.createGain();
-      gain.gain.value = 0.4 + Math.random() * 0.15; // 0.4-0.55 volume - much louder!
+      gain.gain.value = 0.5 + Math.random() * 0.15; // 0.5-0.65 volume - clear and audible
 
       source.connect(hp);
       hp.connect(bp1);
@@ -2180,28 +2173,11 @@
       }, 0);
     }
 
-    // Update flashcard hover tooltip based on current mode
-    function updateCardTooltip(mode) {
-      const tooltips = {
-        reading: `<strong>📖 Reading Mode</strong><br>Read Spanish word mentally, flip to see English<br><em>↓ flip | ← → navigate | 👌 remove | 😕 practice</em>`,
-        listening: `<strong>👂 Listening Mode</strong><br>Hear Spanish, type it out<br><em>Type letters | Enter next | Wrong = +2 cards</em>`,
-        speaking: `<strong>💬 Speaking Mode</strong><br>See Spanish, speak it aloud<br><em>Space record | Get pronunciation score!</em>`,
-        writing: `<strong>✏️ Writing Mode</strong><br>See English, type Spanish translation<br><em>Type letters | Enter next | Wrong = +2 cards</em>`
-      };
-
-      if (cardTooltip && tooltips[mode]) {
-        cardTooltip.innerHTML = tooltips[mode];
-      }
-    }
-
     // Switch to a different learning mode
     function switchMode(newMode) {
       if (currentMode === newMode) return;
 
       currentMode = newMode;
-
-      // Update flashcard tooltip
-      updateCardTooltip(newMode);
 
       // Update active button
       modeBtns.forEach(btn => btn.classList.remove('active'));
@@ -2842,11 +2818,14 @@
       }
 
       // Show/hide action buttons based on mode (only show in reading mode)
-      const actionButtonsEl = document.querySelector('.action-buttons');
+      const gotItBtnEl = document.getElementById('got-it-btn');
+      const confusedBtnEl = document.getElementById('confused-btn');
       if (currentMode === 'reading') {
-        actionButtonsEl.style.display = 'flex';
+        gotItBtnEl.style.display = 'flex';
+        confusedBtnEl.style.display = 'flex';
       } else {
-        actionButtonsEl.style.display = 'none';
+        gotItBtnEl.style.display = 'none';
+        confusedBtnEl.style.display = 'none';
       }
 
       // Show/hide navigation arrows based on mode (only show in reading mode - others auto-advance)
@@ -3450,9 +3429,15 @@
       keysPressed[e.key] = true;
 
       if (e.key === 'ArrowLeft') {
-        goToPrevious();
+        // Only allow left arrow in reading mode
+        if (currentMode === 'reading') {
+          goToPrevious();
+        }
       } else if (e.key === 'ArrowRight') {
-        goToNext();
+        // Only allow right arrow in reading mode
+        if (currentMode === 'reading') {
+          goToNext();
+        }
       } else if (e.key === 'ArrowUp') {
         // Up arrow: ALWAYS pronounce
         e.preventDefault();
