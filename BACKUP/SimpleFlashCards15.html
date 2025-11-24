@@ -1868,8 +1868,10 @@
       return null;
     }
 
-    // DOM Elements - menu elements are created dynamically in renderMenuCard()
-    // and accessed via document.getElementById('menu-act'), etc.
+    // DOM Elements - menu elements created dynamically in renderMenuCard()
+    let actSelect = null;  // Created in renderMenuCard()
+    let wordpackSelect = null;  // Created in renderMenuCard()
+    let languageSelect = null;  // Created in renderMenuCard()
     const backLabel = document.getElementById('back-label');
     const flashcard = document.getElementById('flashcard');
     const spanishWord = document.getElementById('spanish-word');
@@ -2275,8 +2277,9 @@
 
         // Populate act selector
         if (menuAct) {
-          populateActSelector(menuAct);
-          if (currentAct) {
+          populateActSelector();
+          if (actSelect) {
+            menuAct.innerHTML = actSelect.innerHTML;
             menuAct.value = currentAct;
           }
 
@@ -2300,13 +2303,10 @@
         // Populate wordpack selector
         if (menuWordpack) {
           populateWordpackSelectorOnCard(currentAct);
-          // Restore saved wordpack selection if available
-          if (currentWordpackKey && loadedActs[currentAct] && loadedActs[currentAct][currentWordpackKey]) {
-            menuWordpack.value = currentWordpackKey;
-          }
 
           menuWordpack.addEventListener('change', (e) => {
             currentWordpackKey = e.target.value;
+            wordpackSelect.value = e.target.value;
             saveState();
           });
         }
@@ -2317,6 +2317,7 @@
 
           menuLanguage.addEventListener('change', (e) => {
             nativeLanguage = e.target.value;
+            languageSelect.value = e.target.value;
             updateBackLabel();
             saveState();
           });
@@ -2682,97 +2683,127 @@
     }
 
     // Populate act selector dropdown
-    // KEY FEATURE: Populates act dropdown with available acts for current language
-    function populateActSelector(targetElement = null) {
-      // Use provided element or find menu-act element
-      const selectElement = targetElement || document.getElementById('menu-act');
-      if (!selectElement) {
-        console.warn('[populateActSelector] No target element found');
-        return;
-      }
-
-      selectElement.innerHTML = '';
+    function populateActSelector() {
+      actSelect.innerHTML = '';
       const modules = LANGUAGE_MODULES[CURRENT_LANGUAGE];
 
       modules.forEach(actConfig => {
         const option = document.createElement('option');
         option.value = actConfig.act;
         option.textContent = `Act ${actConfig.act}: ${actConfig.name}`;
-        selectElement.appendChild(option);
+        actSelect.appendChild(option);
       });
 
       // Auto-select first act
       if (modules.length > 0) {
-        selectElement.value = modules[0].act;
+        actSelect.value = modules[0].act;
         currentAct = modules[0].act;
       }
     }
 
     // Initialize on page load
-    // KEY FEATURE: Loads first act data and displays the starting menu card
     async function initializeApp() {
       try {
-        // First, determine the first act from language modules
-        const modules = LANGUAGE_MODULES[CURRENT_LANGUAGE];
-        if (modules.length > 0) {
-          currentAct = modules[0].act;
-        }
+        // Populate act selector
+        populateActSelector();
 
-        // Load first act data BEFORE rendering menu
+        // Load first act automatically
         if (currentAct) {
           await loadAct(currentAct);
+          populateWordpackSelector(currentAct);
         }
 
-        // Restore any saved state (may change currentAct)
         restoreSavedState();
 
-        // If restored act is different, load it
-        const savedState = JSON.parse(localStorage.getItem('flashcardState') || '{}');
-        if (savedState.act && savedState.act !== currentAct) {
-          currentAct = savedState.act;
-          await loadAct(currentAct);
+        // Set defaults but don't auto-start
+        if (!wordpackSelect.value) {
+          const firstPack = Object.keys(wordpacks)[0];
+          if (firstPack) wordpackSelect.value = firstPack;
+        }
+        if (!languageSelect.value) {
+          languageSelect.value = 'english';
+          menuLanguage.value = 'english';
         }
 
-        // Show menu on card - this renders the menu and populates selectors
+        // Show menu on card on first load
         showStartingCard(false);
       } catch (error) {
         console.error('Failed to initialize app:', error);
-        // Show error in menu if it exists
-        const menuAct = document.getElementById('menu-act');
-        const menuWordpack = document.getElementById('menu-wordpack');
-        if (menuAct) menuAct.innerHTML = '<option value="">Failed to load acts</option>';
-        if (menuWordpack) menuWordpack.innerHTML = '<option value="">Failed to load wordpacks</option>';
+        actSelect.innerHTML = '<option value="">Failed to load acts</option>';
+        wordpackSelect.innerHTML = '<option value="">Failed to load wordpacks</option>';
       }
     }
 
-    // NOTE: populateWordpackSelector was removed - functionality moved to populateWordpackSelectorOnCard()
-    // which is called from renderMenuCard() and properly handles the menu-wordpack element
+    // Populate the dropdown with wordpack options (from specific act or all)
+    function populateWordpackSelector(actNumber = null) {
+      // Setup page dropdowns
+      wordpackSelect.innerHTML = '';
+      menuWordpack.innerHTML = '';
+
+      let packsToShow;
+
+      if (actNumber) {
+        // Show only packs from the specified act
+        const actData = loadedActs[actNumber];
+        if (!actData) {
+          wordpackSelect.innerHTML = '<option value="">-- Load Act First --</option>';
+          return;
+        }
+        packsToShow = Object.entries(actData);
+      } else {
+        // Show all loaded packs
+        packsToShow = Object.entries(wordpacks);
+      }
+
+      // Filter and sort wordpacks by their wordpack number
+      const sortedPacks = packsToShow
+        .filter(([key, pack]) => pack.meta && pack.words && pack.meta.wordpack)
+        .sort((a, b) => a[1].meta.wordpack - b[1].meta.wordpack);
+
+      for (const [key, pack] of sortedPacks) {
+        const option1 = document.createElement('option');
+        option1.value = key;
+        option1.textContent = `${pack.meta.wordpack}. ${pack.meta.english}`;
+        wordpackSelect.appendChild(option1);
+
+        const option2 = document.createElement('option');
+        option2.value = key;
+        option2.textContent = `${pack.meta.wordpack}. ${pack.meta.english}`;
+        menuWordpack.appendChild(option2);
+      }
+
+      // Auto-select first wordpack
+      if (sortedPacks.length > 0) {
+        wordpackSelect.value = sortedPacks[0][0];
+        menuWordpack.value = sortedPacks[0][0];
+      }
+
+      // Auto-select first language (English)
+      languageSelect.value = 'english';
+      menuLanguage.value = 'english';
+    }
 
     // Restore saved state from localStorage
-    // KEY FEATURE: Restores user's last session settings (speed, wordpack, act)
     function restoreSavedState() {
       const savedState = loadState();
       if (!savedState) return;
 
-      // Restore speech rate
+      // Only restore speech rate and last card pack selected (NOT deck progress)
       if (savedState.speed) {
         currentSpeed = savedState.speed;
-        // Speed buttons UI will be updated when menu renders
+        // Restore speed to all speed buttons in menu
+        speedBtns.forEach(btn => {
+          btn.classList.toggle('active', parseFloat(btn.dataset.speed) === currentSpeed);
+        });
       }
 
-      // Restore last selected act
-      if (savedState.act) {
-        currentAct = savedState.act;
-      }
-
-      // Restore last selected wordpack (value only - UI updated when menu renders)
-      if (savedState.wordpackKey) {
+      // Restore last selected wordpack
+      if (savedState.wordpackKey && wordpacks[savedState.wordpackKey]) {
         currentWordpackKey = savedState.wordpackKey;
-      }
-
-      // Restore native language
-      if (savedState.language) {
-        nativeLanguage = savedState.language;
+        wordpackSelect.value = savedState.wordpackKey;
+        if (menuWordpack) {
+          menuWordpack.value = savedState.wordpackKey;
+        }
       }
 
       // Voice will be restored in populateVoiceSelector
@@ -2856,9 +2887,7 @@
       const nextPackKey = packs[nextPackIndex];
 
       currentWordpackKey = nextPackKey;
-      // Update menu selector if visible
-      const menuWordpack = document.getElementById('menu-wordpack');
-      if (menuWordpack) menuWordpack.value = nextPackKey;
+      wordpackSelect.value = nextPackKey;
       initializeDeck(nextPackKey);
       updateWordpackTitle();
       saveState();
@@ -3486,10 +3515,9 @@
     }
 
     // Start the game
-    // KEY FEATURE: Initializes deck and starts practice session
     function startGame() {
-      // Values are already set via menu selectors or restored state
-      // nativeLanguage and currentWordpackKey are already set
+      nativeLanguage = languageSelect.value;
+      currentWordpackKey = wordpackSelect.value;
 
       // Update back label based on language
       updateBackLabel();
@@ -3501,7 +3529,7 @@
       isOnStartingCard = false;
 
       // Initialize deck
-      initializeDeck(currentWordpackKey);
+      initializeDeck(wordpackSelect.value);
       flashcard.classList.add('game-started');
       document.body.classList.add('game-started');
       gameStarted = true;
