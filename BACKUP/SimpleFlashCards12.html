@@ -1657,11 +1657,66 @@
   <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
   <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
 
-  <div class="wordpack-title" id="wordpack-title">Spanish Flashcard Typing Game</div>
+  <!-- Menu Modal -->
+  <div class="modal-overlay" id="menu-modal">
+    <div class="modal-card">
+      <div class="modal-title">Choose Lesson to Begin Studying</div>
+      <div class="modal-content">
+        <!-- Row 1: Act and Wordpack Selection -->
+        <div class="setup-row">
+          <div class="menu-field">
+            <label for="menu-act">Choose Act</label>
+            <select id="menu-act">
+              <option value="">-- Loading... --</option>
+            </select>
+          </div>
+
+          <div class="menu-field">
+            <label for="menu-wordpack">Choose Wordpack</label>
+            <select id="menu-wordpack">
+              <option value="">-- Select Act First --</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row 2: Language and Speed Selection -->
+        <div class="setup-row">
+          <div class="menu-field">
+            <label for="menu-language">I speak</label>
+            <select id="menu-language">
+              <option value="english">English</option>
+              <option value="chinese">中文</option>
+              <option value="portuguese">Português</option>
+            </select>
+          </div>
+
+          <div class="menu-field">
+            <label for="menu-speed">Pronunciation Speed</label>
+            <div class="speed-controls-menu">
+              <button class="speed-btn" id="speed-slow" data-speed="0.2" title="Slow">🐢 Slow</button>
+              <button class="speed-btn active" id="speed-normal" data-speed="0.6" title="Normal">🚶 Normal</button>
+              <button class="speed-btn" id="speed-fast" data-speed="1.0" title="Fast">🐇 Fast</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: Voice Selection -->
+        <div class="menu-field">
+          <label for="menu-voice">Spanish Voice</label>
+          <select id="menu-voice">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+      <button class="modal-close-btn" id="menu-close">Done</button>
+    </div>
+  </div>
+
+  <div class="wordpack-title" id="wordpack-title"></div>
 
   <!-- Fixed-height wrapper prevents card from shifting when stamp indicator appears -->
   <div class="card-counter-wrapper">
-    <div class="card-counter" id="card-counter">Choose Wordpack to Begin Studying</div>
+    <div class="card-counter" id="card-counter">Card 0 of 0</div>
   </div>
 
   <!-- Mode Selector -->
@@ -1899,8 +1954,13 @@
     const modeSpeaking = document.getElementById('mode-speaking');
     const modeWriting = document.getElementById('mode-writing');
 
-    // Menu button
+    // Modal elements
     const menuBtn = document.getElementById('menu-btn');
+    const menuModal = document.getElementById('menu-modal');
+    const menuClose = document.getElementById('menu-close');
+    const menuWordpack = document.getElementById('menu-wordpack');
+    const menuLanguage = document.getElementById('menu-language');
+    const menuVoice = document.getElementById('menu-voice');
     
     // Mic and feedback elements
     const micBtnFront = document.getElementById('mic-btn-front');
@@ -2174,55 +2234,37 @@
     function renderMenuCard() {
       // Front: Menu/Settings (styled like Spanish side)
       spanishWord.innerHTML = `
-        <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 20px;">⚙️ Settings</div>
+        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 30px;">⚙️ Settings</div>
 
-        <div style="font-size: 1.1rem; text-align: left; max-width: 550px; margin: 0 auto; line-height: 1.8;">
-          <!-- Row 1: Act and Wordpack -->
-          <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-            <div style="flex: 1;">
-              <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">Choose Act</div>
-              <select id="menu-act" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
-                <option value="">-- Loading... --</option>
-              </select>
-            </div>
-            <div style="flex: 1;">
-              <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">Choose Wordpack</div>
-              <select id="menu-wordpack" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
-                <option value="">-- Select Act First --</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Row 2: Language and Speed -->
-          <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-            <div style="flex: 1;">
-              <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">I speak</div>
-              <select id="menu-language" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
-                <option value="english">English</option>
-                <option value="chinese">中文</option>
-                <option value="portuguese">Português</option>
-              </select>
-            </div>
-            <div style="flex: 1;">
-              <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">Pronunciation Speed</div>
-              <div style="display: flex; gap: 8px; justify-content: center;">
-                <button class="menu-speed-btn" data-speed="0.2" style="padding: 8px 16px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐢</button>
-                <button class="menu-speed-btn active" data-speed="0.6" style="padding: 8px 16px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #8B7355; color: #F5E6D3; cursor: pointer;">🚶</button>
-                <button class="menu-speed-btn" data-speed="1.0" style="padding: 8px 16px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐇</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 3: Voice -->
-          <div style="margin-bottom: 25px;">
-            <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">Spanish Voice</div>
-            <select id="menu-voice" style="width: 100%; padding: 8px; font-size: 1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
-              <option value="">Default</option>
+        <div style="font-size: 1.3rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 2;">
+          <div style="margin: 20px 0;">
+            <div style="font-weight: bold; margin-bottom: 8px;">Wordpack</div>
+            <select id="menu-wordpack" style="width: 100%; padding: 10px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
+              <option value="">-- Select --</option>
             </select>
           </div>
 
-          <button id="start-practice-btn" style="width: 100%; padding: 15px; font-size: 1.4rem; background: #8B7355; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
-            ▶ Start Practice
+          <div style="margin: 20px 0;">
+            <div style="font-weight: bold; margin-bottom: 8px;">I speak</div>
+            <select id="menu-language" style="width: 100%; padding: 10px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3;">
+              <option value="">-- Select --</option>
+              <option value="english">English</option>
+              <option value="chinese">中文</option>
+              <option value="portuguese">Português</option>
+            </select>
+          </div>
+
+          <div style="margin: 20px 0;">
+            <div style="font-weight: bold; margin-bottom: 8px;">Pronunciation Speed</div>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+              <button class="menu-speed-btn" data-speed="0.2" style="padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐢</button>
+              <button class="menu-speed-btn active" data-speed="0.6" style="padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; border: 2px solid #8B7355; background: #8B7355; color: #F5E6D3; cursor: pointer;">🚶</button>
+              <button class="menu-speed-btn" data-speed="1.0" style="padding: 10px 20px; font-size: 1.2rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐇</button>
+            </div>
+          </div>
+
+          <button onclick="exitStartingCard()" style="width: 100%; padding: 15px; margin-top: 30px; font-size: 1.5rem; background: #8B7355; color: #F5E6D3; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+            ← Back to Practice
           </button>
         </div>
       `;
@@ -2269,49 +2311,23 @@
 
       // Populate selectors after render
       setTimeout(() => {
-        const menuAct = document.getElementById('menu-act');
         const menuWordpack = document.getElementById('menu-wordpack');
         const menuLanguage = document.getElementById('menu-language');
-        const menuVoice = document.getElementById('menu-voice');
-        const startPracticeBtn = document.getElementById('start-practice-btn');
 
-        // Populate act selector
-        if (menuAct) {
-          populateActSelector();
-          if (actSelect) {
-            menuAct.innerHTML = actSelect.innerHTML;
-            menuAct.value = currentAct;
-          }
-
-          menuAct.addEventListener('change', async (e) => {
-            const selectedAct = parseInt(e.target.value);
-            currentAct = selectedAct;
-            menuWordpack.innerHTML = '<option value="">-- Loading... --</option>';
-            menuWordpack.disabled = true;
-
-            try {
-              await loadAct(selectedAct);
-              populateWordpackSelectorOnCard(selectedAct);
-              menuWordpack.disabled = false;
-            } catch (error) {
-              console.error('Failed to load act:', error);
-              menuWordpack.innerHTML = '<option value="">Failed to load act</option>';
-            }
-          });
-        }
-
-        // Populate wordpack selector
-        if (menuWordpack) {
-          populateWordpackSelectorOnCard(currentAct);
+        if (menuWordpack && wordpackSelect) {
+          menuWordpack.innerHTML = wordpackSelect.innerHTML;
+          menuWordpack.value = currentWordpackKey;
 
           menuWordpack.addEventListener('change', (e) => {
             currentWordpackKey = e.target.value;
             wordpackSelect.value = e.target.value;
+            if (gameStarted) {
+              initializeDeck(currentWordpackKey);
+            }
             saveState();
           });
         }
 
-        // Language selector
         if (menuLanguage) {
           menuLanguage.value = nativeLanguage;
 
@@ -2319,26 +2335,9 @@
             nativeLanguage = e.target.value;
             languageSelect.value = e.target.value;
             updateBackLabel();
-            saveState();
-          });
-        }
-
-        // Voice selector
-        if (menuVoice && spanishVoices.length > 0) {
-          menuVoice.innerHTML = '<option value="">Default</option>';
-          spanishVoices.forEach((voice) => {
-            const option = document.createElement('option');
-            option.value = voice.voiceURI;
-            option.textContent = `${voice.name} (${voice.lang})`;
-            menuVoice.appendChild(option);
-          });
-          if (currentVoice) {
-            menuVoice.value = currentVoice.voiceURI;
-          }
-
-          menuVoice.addEventListener('change', (e) => {
-            const newVoiceURI = e.target.value;
-            currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+            if (gameStarted) {
+              initializeDeck(currentWordpackKey);
+            }
             saveState();
           });
         }
@@ -2361,49 +2360,7 @@
             saveState();
           });
         });
-
-        // Start Practice button
-        if (startPracticeBtn) {
-          startPracticeBtn.addEventListener('click', () => {
-            if (currentWordpackKey && nativeLanguage) {
-              playButtonClickSound();
-              startGame();
-            }
-          });
-        }
       }, 0);
-    }
-
-    // Helper function to populate wordpack selector on card
-    function populateWordpackSelectorOnCard(actNumber) {
-      const menuWordpack = document.getElementById('menu-wordpack');
-      if (!menuWordpack || !actNumber) return;
-
-      menuWordpack.innerHTML = '<option value="">-- Select Wordpack --</option>';
-
-      const actData = loadedActs[actNumber];
-      if (!actData) return;
-
-      const packKeys = Object.keys(actData);
-      packKeys.sort((a, b) => {
-        const numA = actData[a].meta.wordpack;
-        const numB = actData[b].meta.wordpack;
-        return numA - numB;
-      });
-
-      packKeys.forEach(packKey => {
-        const pack = actData[packKey];
-        const option = document.createElement('option');
-        option.value = packKey;
-        option.textContent = `${pack.meta.wordpack}. ${pack.meta.english}`;
-        menuWordpack.appendChild(option);
-      });
-
-      // Auto-select first pack
-      if (packKeys.length > 0) {
-        menuWordpack.value = packKeys[0];
-        currentWordpackKey = packKeys[0];
-      }
     }
 
     // Switch to a different learning mode
@@ -2740,8 +2697,8 @@
           menuLanguage.value = 'english';
         }
 
-        // Show menu on card on first load
-        showStartingCard(false);
+        // Show menu modal on first load
+        menuModal.classList.add('visible');
       } catch (error) {
         console.error('Failed to initialize app:', error);
         actSelect.innerHTML = '<option value="">Failed to load acts</option>';
@@ -3696,16 +3653,76 @@
       hideFeedback();
     });
 
-    // Menu button - show menu on card
+    // Menu Modal
     menuBtn.addEventListener('click', () => {
       playButtonClickSound();
-      showStartingCard(false); // Show menu on card
+      menuModal.classList.add('visible');
+    });
+    
+    menuClose.addEventListener('click', () => {
+      playButtonClickSound();
+
+      // Apply changes from menu
+      const newWordpack = menuWordpack.value;
+      const newLanguage = menuLanguage.value;
+      const newVoiceURI = menuVoice.value;
+
+      // Update voice
+      currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+
+      // Check if wordpack or language changed
+      const wordpackChanged = newWordpack !== currentWordpackKey;
+      const languageChanged = newLanguage !== nativeLanguage;
+
+      if (wordpackChanged || languageChanged) {
+        currentWordpackKey = newWordpack;
+        nativeLanguage = newLanguage;
+        wordpackSelect.value = newWordpack;
+        languageSelect.value = newLanguage;
+        updateBackLabel();
+        updateWordpackTitle();
+
+        // Re-initialize deck if game has started
+        if (gameStarted) {
+          initializeDeck(currentWordpackKey);
+        }
+      }
+
+      // Start game if not started yet
+      if (!gameStarted) {
+        startGame();
+      }
+
+      saveState();
+      menuModal.classList.remove('visible');
+    });
+
+    menuModal.addEventListener('click', (e) => {
+      if (e.target === menuModal) {
+        menuModal.classList.remove('visible');
+      }
+    });
+
+    // Voice change - play sample pronunciation
+    menuVoice.addEventListener('change', () => {
+      const newVoiceURI = menuVoice.value;
+      currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+      // Play sample if game has started and there's a current card
+      if (gameStarted && currentDeck.length > 0) {
+        speakSpanish();
+      }
     });
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
-      // Don't handle navigation if on starting card (menu)
-      if (isOnStartingCard) {
+      // Close modals with Escape
+      if (e.key === 'Escape') {
+        menuModal.classList.remove('visible');
+        return;
+      }
+
+      // Don't handle navigation if modal is open
+      if (menuModal.classList.contains('visible')) {
         return;
       }
 
