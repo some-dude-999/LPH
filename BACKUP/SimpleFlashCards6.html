@@ -396,9 +396,34 @@
       transform: scale(1.1);
     }
 
-    /* Peek Button (flip/peek at back - top right) - HIDDEN, moved to bottom right */
+    /* Peek Button (flip/peek at back - top right) */
     .peek-btn {
-      display: none !important; /* Hidden - peek button moved to bottom right as action button */
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      background: rgba(139, 115, 85, 0.2);
+      border: 3px solid rgba(160, 133, 103, 0.5);
+      color: #5D4E37;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      line-height: 1;
+      text-align: center;
+      z-index: 10;
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .flashcard.game-started .peek-btn {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .peek-btn:hover {
@@ -1692,19 +1717,19 @@
   <div class="mode-selector">
     <span class="tooltip-container">
       <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">✓</span> or <b>PRESS</b> <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br><b>CLICK</b> <span class="tooltip-btn">✗</span> or <b>PRESS</b> <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)<br><b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> Key to Previous Card<br><b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> Key to Next Card<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">✓</span> or <b>PRESS</b> <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br><b>CLICK</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)<br><b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> Key to Previous Card<br><b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> Key to Next Card<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> Key to Record<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> Key to Record<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> Letters to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>HOLD</b> <span class="tooltip-btn">🤔</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> Key to Peek at Back</em></span>
     </span>
   </div>
 
@@ -1825,11 +1850,11 @@
       <!-- Action buttons (positioned above card faces like stamps, visible on both sides) -->
       <!-- Bottom Left: Got It + Don't Got It -->
       <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I Got It Right! (Remove Card)">✓</button>
-      <button class="action-btn confused-btn-left" id="confused-btn-left" data-tooltip="I Got It Wrong (Need Extra Practice)">✗</button>
+      <button class="action-btn confused-btn-left" id="confused-btn-left" data-tooltip="I Got It Wrong (Need Extra Practice)">❓</button>
 
       <!-- Bottom Right: Pronounce + Peek -->
       <button class="action-btn pronounce-btn" id="pronounce-btn" data-tooltip="Play Pronunciation">🗣️</button>
-      <button class="action-btn peek-btn-action" id="peek-btn-action" data-tooltip="Peek at Back">❓</button>
+      <button class="action-btn peek-btn-action" id="peek-btn-action" data-tooltip="Peek at Back">🤔</button>
     </div>
 
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
