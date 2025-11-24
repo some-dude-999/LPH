@@ -964,7 +964,7 @@
 
     /* Hide action buttons when menu is visible (menu content replaces card content) */
     body.showing-menu .action-btn {
-      display: none !important;
+      display: none;
     }
 
     /* Position the four buttons - two on left, two on right */
@@ -1847,7 +1847,6 @@
     let gameStarted = false;
     let currentWordpackKey = '';
     let currentVoice = null;
-    let savedVoiceURI = null; // Store saved voice URI until voices are loaded
     let spanishVoices = [];
     let currentAct = 1; // Track currently selected act
 
@@ -2674,11 +2673,6 @@
     // Load Spanish voices
     function loadVoices() {
       spanishVoices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
-
-      // Restore saved voice if we have a saved URI and voices are now available
-      if (savedVoiceURI && spanishVoices.length > 0 && !currentVoice) {
-        currentVoice = spanishVoices.find(v => v.voiceURI === savedVoiceURI) || null;
-      }
       // Voice selector is now populated in renderMenuCard() when menu is created
     }
 
@@ -2830,13 +2824,13 @@
     // which is called from renderMenuCard() and properly handles the menu-wordpack element
 
     // Restore saved state from localStorage
-    // KEY FEATURE: Restores user's last session settings (speed, wordpack, act, language, voice)
+    // KEY FEATURE: Restores user's last session settings (speed, wordpack, act)
     function restoreSavedState() {
       const savedState = loadState();
       if (!savedState) return;
 
       // Restore speech rate
-      if (savedState.speed !== undefined && savedState.speed !== null) {
+      if (savedState.speed) {
         currentSpeed = savedState.speed;
         // Speed buttons UI will be updated when menu renders
       }
@@ -2856,10 +2850,7 @@
         nativeLanguage = savedState.language;
       }
 
-      // Store saved voice URI - will be applied when voices are loaded
-      if (savedState.voiceURI) {
-        savedVoiceURI = savedState.voiceURI;
-      }
+      // Voice will be restored in populateVoiceSelector
     }
 
     function updateBackLabel() {
