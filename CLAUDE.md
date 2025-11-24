@@ -3,6 +3,57 @@
 ## 🚨 FIRST PRIORITY: DOCUMENTATION
 **No docs? CREATE THEM FIRST.** Understand the system before coding. Update when understanding changes.
 
+---
+
+## 💾 BACKUP BEFORE EDITING - MANDATORY
+**CRITICAL: ALWAYS create a backup before editing ANY file!**
+
+### The Backup Workflow
+**Before making ANY edit to a file:**
+
+1. **Run the backup script:**
+   ```bash
+   python PythonHelpers/backup_file.py <filename>
+   ```
+
+2. **Examples:**
+   ```bash
+   # Before editing SimpleFlashCards.html
+   python PythonHelpers/backup_file.py SimpleFlashCards.html
+
+   # Before editing a JavaScript module
+   python PythonHelpers/backup_file.py SpanishWords/Jsmodules/act1-foundation.js
+
+   # Before editing any other file
+   python PythonHelpers/backup_file.py path/to/file.ext
+   ```
+
+3. **What the script does:**
+   - Creates numbered backups in `BACKUP/` folder
+   - First backup: `BACKUP/SimpleFlashCards1.html`
+   - Second backup: `BACKUP/SimpleFlashCards2.html`
+   - Third backup: `BACKUP/SimpleFlashCards3.html`
+   - And so on...
+
+4. **After backup is created:**
+   - Proceed with editing the file
+   - Make your changes
+   - Test thoroughly
+   - Commit and push
+
+### Why This Matters
+- **Safety net**: Easy rollback if changes break something
+- **Version history**: Track evolution of files
+- **Peace of mind**: Always have a working version to reference
+- **Required**: This is NOT optional - backup EVERY time before editing
+
+**If you forget to backup:**
+- STOP immediately
+- Create the backup before proceeding
+- Never edit without a backup
+
+---
+
 ## 🔑 KEY FEATURES - SACRED AND IMMUTABLE
 **CRITICAL: Key features are high-level user requirements that MUST be preserved across all code changes.**
 

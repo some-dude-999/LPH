@@ -1,0 +1,70 @@
+=== SimpleReadingFlashCard.txt ===
+PROJECT: LPH Spanish Learning
+COMPONENT: Simple Reading Flashcards - Spanish → English translation practice
+CREATED: 2025-11-24
+LAST UPDATED: 2025-11-24 - Created from SimpleFlashCards.html, reading mode only
+
+MODE: 📖 READING MODE ONLY
+This is a single-mode game locked to reading mode. Mode selector is hidden.
+
+DATA SOURCES:
+- Module: https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js
+  Provides wordpacks with Spanish vocabulary and translations (english, chinese, portuguese)
+- LocalStorage: Saves user preferences (voice selection, speech speed)
+- Web Speech API: Text-to-speech for pronunciation
+
+FUNCTIONALITY:
+- Main Purpose: Traditional flashcard practice - read Spanish, see English translation
+- Auto-Start: Game automatically starts with Pack 1 and English language on page load
+- Game Flow:
+  1. Spanish word appears on front of card
+  2. Click card or press Down arrow to flip
+  3. English translation appears on back
+  4. Mark card as "Got it right" (👌) or "Need practice" (😕)
+  5. Navigate with left/right arrows
+  6. Remove mastered cards from deck
+
+- Key Features:
+  * Spanish word on FRONT
+  * English translation on BACK
+  * Got it button (👌) - Removes card from deck
+  * Need practice button (😕) - Adds 2 duplicate cards
+  * Pronunciation button (🗣️) - Hear Spanish pronunciation
+  * Navigation arrows (‹ ›) - Move between cards
+  * Card counter - Shows progress (Card X of Y)
+
+- Key Functions:
+  * loadWordpacks() - Dynamically imports vocabulary modules and auto-starts game
+  * initializeDeck(packKey) - Creates shuffled deck from selected wordpack
+  * updateDisplay() - Renders Spanish word on front, English on back
+  * removeCurrentCard() - Removes mastered card from deck (green stamp)
+  * addConfusedCards() - Adds 2 copies of difficult card (red stamp)
+  * speakSpanish() - Text-to-speech pronunciation
+  * goToNext() / goToPrevious() - Navigate between cards
+
+CONTROLS:
+- Click card or Down arrow - Flip card
+- Left arrow or ‹ button - Previous card
+- Right arrow or › button - Next card
+- Up arrow or 🗣️ button - Pronounce Spanish word
+- 1 key or 👌 button - Mark as mastered (remove from deck)
+- 2 key or 😕 button - Mark as difficult (add practice copies)
+- Hold Down arrow or 🤔 button - Peek at back without flipping
+
+VISUAL DESIGN:
+- Old paper/parchment aesthetic
+- Cardboard-style buttons
+- Weathered edges on cards
+- Stamp overlays for feedback ("Card Removed", "Extra Practice")
+
+DIFFERENCES FROM MULTI-MODE VERSION:
+- Mode selector is HIDDEN (display: none !important)
+- currentMode is locked to 'reading' (const instead of let)
+- Mode switching event listeners are disabled
+- Simpler, focused experience for reading practice only
+
+NOTES:
+- This is a specialized version for users who only want reading practice
+- For full multi-mode experience, use SimpleFlashCards.html
+- Card removal and addition have stamp overlays with 1-second display
+===
