@@ -1660,52 +1660,38 @@
   <!-- Menu Modal -->
   <div class="modal-overlay" id="menu-modal">
     <div class="modal-card">
-      <div class="modal-title">Choose Lesson to Begin Studying</div>
+      <div class="modal-title">Settings</div>
       <div class="modal-content">
-        <!-- Row 1: Act and Wordpack Selection -->
-        <div class="setup-row">
-          <div class="menu-field">
-            <label for="menu-act">Choose Act</label>
-            <select id="menu-act">
-              <option value="">-- Loading... --</option>
-            </select>
-          </div>
-
-          <div class="menu-field">
-            <label for="menu-wordpack">Choose Wordpack</label>
-            <select id="menu-wordpack">
-              <option value="">-- Select Act First --</option>
-            </select>
-          </div>
+        <div class="menu-field">
+          <label for="menu-wordpack">Wordpack</label>
+          <select id="menu-wordpack">
+            <option value="">-- Loading... --</option>
+          </select>
         </div>
-
-        <!-- Row 2: Language and Speed Selection -->
-        <div class="setup-row">
-          <div class="menu-field">
-            <label for="menu-language">I speak</label>
-            <select id="menu-language">
-              <option value="english">English</option>
-              <option value="chinese">中文</option>
-              <option value="portuguese">Português</option>
-            </select>
-          </div>
-
-          <div class="menu-field">
-            <label for="menu-speed">Pronunciation Speed</label>
-            <div class="speed-controls-menu">
-              <button class="speed-btn" id="speed-slow" data-speed="0.2" title="Slow">🐢 Slow</button>
-              <button class="speed-btn active" id="speed-normal" data-speed="0.6" title="Normal">🚶 Normal</button>
-              <button class="speed-btn" id="speed-fast" data-speed="1.0" title="Fast">🐇 Fast</button>
-            </div>
-          </div>
+        
+        <div class="menu-field">
+          <label for="menu-language">I speak</label>
+          <select id="menu-language">
+            <option value="english">English</option>
+            <option value="chinese">中文</option>
+            <option value="portuguese">Português</option>
+          </select>
         </div>
-
-        <!-- Row 3: Voice Selection -->
+        
         <div class="menu-field">
           <label for="menu-voice">Spanish Voice</label>
           <select id="menu-voice">
             <option value="">Default</option>
           </select>
+        </div>
+
+        <div class="menu-field">
+          <label for="menu-speed">Pronunciation Speed</label>
+          <div class="speed-controls-menu">
+            <button class="speed-btn" id="speed-slow" data-speed="0.2" title="Slow">🐢 Slow</button>
+            <button class="speed-btn active" id="speed-normal" data-speed="0.6" title="Normal">🚶 Normal</button>
+            <button class="speed-btn" id="speed-fast" data-speed="1.0" title="Fast">🐇 Fast</button>
+          </div>
         </div>
       </div>
       <button class="modal-close-btn" id="menu-close">Done</button>
@@ -1743,6 +1729,99 @@
     <button class="nav-btn" id="prev-btn" aria-label="Previous card">‹</button>
 
     <div class="flashcard" id="flashcard">
+      <!-- Setup Overlay (Front - Settings) -->
+      <div class="setup-overlay" id="setup-overlay">
+        <div class="setup-title">Choose Lesson to Begin Studying</div>
+
+        <!-- Row 1: Act and Wordpack Selection -->
+        <div class="setup-row">
+          <div class="setup-field">
+            <label for="act-select">Choose Act</label>
+            <select id="act-select">
+              <option value="">-- Loading... --</option>
+            </select>
+          </div>
+
+          <div class="setup-field">
+            <label for="wordpack-select">Choose Wordpack</label>
+            <select id="wordpack-select">
+              <option value="">-- Select Act First --</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row 2: Language and Speed Selection -->
+        <div class="setup-row">
+          <div class="setup-field">
+            <label for="language-select">I speak</label>
+            <select id="language-select">
+              <option value="">-- Select --</option>
+              <option value="english">English</option>
+              <option value="chinese">中文</option>
+              <option value="portuguese">Português</option>
+            </select>
+          </div>
+
+          <div class="setup-field">
+            <label>Pronunciation Speed</label>
+            <div class="speed-controls-menu">
+              <button class="speed-btn setup-speed-btn" data-speed="0.2">🐢 Slow</button>
+              <button class="speed-btn setup-speed-btn active" data-speed="0.6">🚶 Normal</button>
+              <button class="speed-btn setup-speed-btn" data-speed="1.0">🐇 Fast</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: Voice Selection -->
+        <div class="setup-field">
+          <label for="setup-voice">Spanish Voice</label>
+          <select id="setup-voice">
+            <option value="">Default</option>
+          </select>
+        </div>
+
+        <button class="setup-start-btn" id="start-btn" disabled>Start Practice</button>
+      </div>
+
+      <!-- Setup Help (Back - How To) -->
+      <div class="setup-help" id="setup-help">
+        <div class="setup-title">How to Use</div>
+        <div class="help-content">
+          <h3>📚 Getting Started</h3>
+          <p>Select a wordpack and language, then click Start!</p>
+
+          <h3>🎴 Navigation</h3>
+          <ul>
+            <li><strong>‹ Button</strong> or <strong>← Key</strong> — Previous card</li>
+            <li><strong>› Button</strong> or <strong>→ Key</strong> — Next card</li>
+          </ul>
+
+          <h3>👁️ Viewing</h3>
+          <ul>
+            <li><strong>Hold 🤔 Button</strong> or <strong>Hold ↓ Key</strong> — Peek at back</li>
+            <li><strong>Click card</strong> — Flip to see other side</li>
+          </ul>
+
+          <h3>🔊 Audio</h3>
+          <ul>
+            <li><strong>🗣️ Button</strong> or <strong>↑ Key</strong> — Hear pronunciation</li>
+            <li><strong>🎤 Button</strong> or <strong>Space Key</strong> — Record & score (speaking mode)</li>
+          </ul>
+
+          <h3>✅ Learning Progress</h3>
+          <ul>
+            <li><strong>👌 Button</strong> or <strong>1 Key</strong> — I got it right! (remove card)</li>
+            <li><strong>😕 Button</strong> or <strong>2 Key</strong> — I got it wrong (add practice)</li>
+          </ul>
+
+          <h3>⚙️ Settings</h3>
+          <ul>
+            <li><strong>↺ Button</strong> — Reset deck</li>
+            <li><strong>☰ Button</strong> — Open menu</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="card-face card-front">
         <div class="card-weathering" id="weathering-front"></div>
         <!-- Wrong answer indicators (positioned at card corners) -->
@@ -1923,10 +2002,15 @@
       return null;
     }
 
-    // DOM Elements (now all in menu modal)
-    const actSelect = document.getElementById('menu-act');
-    const wordpackSelect = document.getElementById('menu-wordpack');
-    const languageSelect = document.getElementById('menu-language');
+    // DOM Elements
+    const actSelect = document.getElementById('act-select');
+    const wordpackSelect = document.getElementById('wordpack-select');
+    const languageSelect = document.getElementById('language-select');
+    const setupOverlay = document.getElementById('setup-overlay');
+    const setupHelp = document.getElementById('setup-help');
+    const setupVoice = document.getElementById('setup-voice');
+    const setupSpeedBtns = document.querySelectorAll('.setup-speed-btn');
+    const startBtn = document.getElementById('start-btn');
     const backLabel = document.getElementById('back-label');
     const flashcard = document.getElementById('flashcard');
     const spanishWord = document.getElementById('spanish-word');
@@ -2589,21 +2673,25 @@
     }
 
     function populateVoiceSelector() {
-      // Populate menu voice selector
-      if (!menuVoice) return;
+      // Populate both setup and menu voice selectors
+      const voiceSelectors = [setupVoice];
+      if (menuVoice) voiceSelectors.push(menuVoice);
 
-      menuVoice.innerHTML = '<option value="">Default</option>';
-      spanishVoices.forEach((voice, idx) => {
-        const option = document.createElement('option');
-        option.value = voice.voiceURI;
-        option.textContent = `${voice.name} (${voice.lang})`;
-        menuVoice.appendChild(option);
+      voiceSelectors.forEach(selector => {
+        selector.innerHTML = '<option value="">Default</option>';
+        spanishVoices.forEach((voice, idx) => {
+          const option = document.createElement('option');
+          option.value = voice.voiceURI;
+          option.textContent = `${voice.name} (${voice.lang})`;
+          selector.appendChild(option);
+        });
       });
 
       // Restore saved voice
       const savedState = loadState();
       if (savedState && savedState.voiceURI) {
-        menuVoice.value = savedState.voiceURI;
+        setupVoice.value = savedState.voiceURI;
+        if (menuVoice) menuVoice.value = savedState.voiceURI;
         currentVoice = spanishVoices.find(v => v.voiceURI === savedState.voiceURI) || null;
       }
     }
@@ -2687,18 +2775,18 @@
 
         restoreSavedState();
 
-        // Set defaults but don't auto-start
-        if (!wordpackSelect.value) {
-          const firstPack = Object.keys(wordpacks)[0];
-          if (firstPack) wordpackSelect.value = firstPack;
-        }
-        if (!languageSelect.value) {
-          languageSelect.value = 'english';
-          menuLanguage.value = 'english';
-        }
+        // Auto-start the game with first pack and English
+        setTimeout(() => {
+          if (!wordpackSelect.value) {
+            const firstPack = Object.keys(wordpacks)[0];
+            if (firstPack) wordpackSelect.value = firstPack;
+          }
+          if (!languageSelect.value) {
+            languageSelect.value = 'english';
+          }
 
-        // Show menu modal on first load
-        menuModal.classList.add('active');
+          startGame();
+        }, 200);
       } catch (error) {
         console.error('Failed to initialize app:', error);
         actSelect.innerHTML = '<option value="">Failed to load acts</option>';
@@ -2753,6 +2841,8 @@
       // Auto-select first language (English)
       languageSelect.value = 'english';
       menuLanguage.value = 'english';
+
+      checkSetupValid();
     }
 
     // Restore saved state from localStorage
@@ -2763,8 +2853,11 @@
       // Only restore speech rate and last card pack selected (NOT deck progress)
       if (savedState.speed) {
         currentSpeed = savedState.speed;
-        // Restore speed to all speed buttons in menu
+        // Restore speed to all speed buttons (setup and menu)
         speedBtns.forEach(btn => {
+          btn.classList.toggle('active', parseFloat(btn.dataset.speed) === currentSpeed);
+        });
+        setupSpeedBtns.forEach(btn => {
           btn.classList.toggle('active', parseFloat(btn.dataset.speed) === currentSpeed);
         });
       }
@@ -3476,6 +3569,13 @@
       recognition.start();
     }
 
+    // Check if setup is valid and enable start button
+    function checkSetupValid() {
+      const hasWordpack = wordpackSelect.value !== '';
+      const hasLanguage = languageSelect.value !== '';
+      startBtn.disabled = !(hasWordpack && hasLanguage);
+    }
+
     // Update wordpack title display
     function updateWordpackTitle() {
       if (currentWordpackKey && wordpacks[currentWordpackKey]) {
@@ -3500,15 +3600,45 @@
       // Exit starting card state if we're on it
       isOnStartingCard = false;
 
-      // Initialize deck
+      // Initialize deck and hide setup
       initializeDeck(wordpackSelect.value);
+      setupOverlay.classList.add('hidden');
+      flashcard.classList.remove('setup-flipped');
       flashcard.classList.add('game-started');
       document.body.classList.add('game-started');
       gameStarted = true;
       saveState();
     }
 
-    // Event Listeners for menu (no sounds on dropdowns)
+    // Setup card flip handlers
+    // Setup voice change handler
+    setupVoice.addEventListener('change', () => {
+      const newVoiceURI = setupVoice.value;
+      currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+      // Play sample if game has started
+      if (gameStarted && currentDeck.length > 0) {
+        speakSpanish();
+      }
+      saveState();
+    });
+
+    // Setup speed button handlers
+    setupSpeedBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        playButtonClickSound();
+        const speed = parseFloat(btn.dataset.speed);
+        currentSpeed = speed;
+        setupSpeedBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // Play sample at new speed if game has started
+        if (gameStarted && currentDeck.length > 0) {
+          speakSpanish();
+        }
+        saveState();
+      });
+    });
+
+    // Event Listeners for setup (no sounds on dropdowns)
     actSelect.addEventListener('change', async () => {
       const selectedAct = parseInt(actSelect.value);
       currentAct = selectedAct;
@@ -3530,6 +3660,13 @@
         wordpackSelect.innerHTML = '<option value="">Failed to load act</option>';
         wordpackSelect.disabled = false;
       }
+    });
+
+    wordpackSelect.addEventListener('change', checkSetupValid);
+    languageSelect.addEventListener('change', checkSetupValid);
+    startBtn.addEventListener('click', () => {
+      playButtonClickSound();
+      startGame();
     });
 
     // Event Listeners
@@ -3656,24 +3793,24 @@
     // Menu Modal
     menuBtn.addEventListener('click', () => {
       playButtonClickSound();
-      menuModal.classList.add('active');
+      showStartingCard(false); // false = show front (menu)
     });
     
     menuClose.addEventListener('click', () => {
       playButtonClickSound();
-
+      
       // Apply changes from menu
       const newWordpack = menuWordpack.value;
       const newLanguage = menuLanguage.value;
       const newVoiceURI = menuVoice.value;
-
+      
       // Update voice
       currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
-
+      
       // Check if wordpack or language changed
       const wordpackChanged = newWordpack !== currentWordpackKey;
       const languageChanged = newLanguage !== nativeLanguage;
-
+      
       if (wordpackChanged || languageChanged) {
         currentWordpackKey = newWordpack;
         nativeLanguage = newLanguage;
@@ -3687,19 +3824,14 @@
           initializeDeck(currentWordpackKey);
         }
       }
-
-      // Start game if not started yet
-      if (!gameStarted) {
-        startGame();
-      }
-
+      
       saveState();
-      menuModal.classList.remove('active');
+      menuModal.classList.remove('visible');
     });
     
     menuModal.addEventListener('click', (e) => {
       if (e.target === menuModal) {
-        menuModal.classList.remove('active');
+        menuModal.classList.remove('visible');
       }
     });
 
@@ -3717,12 +3849,12 @@
     document.addEventListener('keydown', (e) => {
       // Close modals with Escape
       if (e.key === 'Escape') {
-        menuModal.classList.remove('active');
+        menuModal.classList.remove('visible');
         return;
       }
 
       // Don't handle navigation if modal is open
-      if (menuModal.classList.contains('active')) {
+      if (menuModal.classList.contains('visible')) {
         return;
       }
 
