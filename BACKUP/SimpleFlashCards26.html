@@ -2246,7 +2246,7 @@
               <div style="font-weight: bold; margin-bottom: 6px; font-size: 0.95rem;">Pronunciation Speed</div>
               <div style="display: flex; gap: 8px; justify-content: center;">
                 <button class="menu-speed-btn" data-speed="0.2" style="padding: 8px 16px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐢</button>
-                <button class="menu-speed-btn" data-speed="0.4" style="padding: 8px 16px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🚶</button>
+                <button class="menu-speed-btn active" data-speed="0.6" style="padding: 8px 16px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #8B7355; color: #F5E6D3; cursor: pointer;">🚶</button>
                 <button class="menu-speed-btn" data-speed="1.0" style="padding: 8px 16px; font-size: 1.1rem; border-radius: 5px; border: 2px solid #8B7355; background: #F5E6D3; cursor: pointer;">🐇</button>
               </div>
             </div>
@@ -2383,14 +2383,8 @@
           });
         }
 
-        // Speed buttons - always set from saved state, never auto-select
+        // Speed buttons
         const speedBtns = document.querySelectorAll('.menu-speed-btn');
-        // First reset ALL buttons to default state
-        speedBtns.forEach(b => {
-          b.style.background = '#F5E6D3';
-          b.style.color = '#2C1810';
-        });
-        // Then highlight the one matching saved currentSpeed
         speedBtns.forEach(btn => {
           if (parseFloat(btn.dataset.speed) === currentSpeed) {
             btn.style.background = '#8B7355';
@@ -2837,15 +2831,9 @@
 
     // Restore saved state from localStorage
     // KEY FEATURE: Restores user's last session settings (speed, wordpack, act, language, voice)
-    // If no saved state exists, creates one with current defaults
     function restoreSavedState() {
       const savedState = loadState();
-
-      // If no saved state, save current defaults and return
-      if (!savedState) {
-        saveState(); // Save defaults so they persist
-        return;
-      }
+      if (!savedState) return;
 
       // Restore speech rate
       if (savedState.speed !== undefined && savedState.speed !== null) {
