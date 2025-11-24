@@ -2414,7 +2414,6 @@
     }
 
     // Helper function to populate wordpack selector on card
-    // KEY FEATURE: Uses saved state first, only defaults to first pack if no saved state
     function populateWordpackSelectorOnCard(actNumber) {
       const menuWordpack = document.getElementById('menu-wordpack');
       if (!menuWordpack || !actNumber) return;
@@ -2439,15 +2438,10 @@
         menuWordpack.appendChild(option);
       });
 
-      // Use saved wordpack if valid for this act, otherwise default to first pack
-      if (currentWordpackKey && actData[currentWordpackKey]) {
-        // Saved wordpack exists in this act - use it
-        menuWordpack.value = currentWordpackKey;
-      } else if (packKeys.length > 0) {
-        // No saved wordpack or not valid for this act - default to first
+      // Auto-select first pack
+      if (packKeys.length > 0) {
         menuWordpack.value = packKeys[0];
         currentWordpackKey = packKeys[0];
-        saveState(); // Save the default
       }
     }
 
@@ -2728,7 +2722,7 @@
     }
 
     // Populate act selector dropdown
-    // KEY FEATURE: Uses saved state first, only defaults to first act if no saved state
+    // KEY FEATURE: Populates act dropdown with available acts for current language
     function populateActSelector(targetElement = null) {
       // Use provided element or find menu-act element
       const selectElement = targetElement || document.getElementById('menu-act');
@@ -2747,16 +2741,10 @@
         selectElement.appendChild(option);
       });
 
-      // Use saved act if valid, otherwise default to first act
-      const validActs = modules.map(m => m.act);
-      if (currentAct && validActs.includes(currentAct)) {
-        // Saved act is valid - use it
-        selectElement.value = currentAct;
-      } else if (modules.length > 0) {
-        // No saved act or invalid - default to first
+      // Auto-select first act
+      if (modules.length > 0) {
         selectElement.value = modules[0].act;
         currentAct = modules[0].act;
-        saveState(); // Save the default
       }
     }
 
