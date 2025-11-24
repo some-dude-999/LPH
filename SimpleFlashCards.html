@@ -572,7 +572,7 @@
       background-blend-mode: soft-light;
       background-size: var(--paper-texture-size), 100%;
       border-radius: 12px;
-      display: none; /* Hidden by default - game auto-starts */
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -635,7 +635,7 @@
       background-blend-mode: soft-light;
       background-size: var(--paper-texture-size), 100%, 100%, 100%;
       border-radius: 12px;
-      display: none; /* Hidden by default - game auto-starts */
+      display: flex;
       flex-direction: column;
       padding: 30px;
       z-index: 29;
@@ -861,7 +861,14 @@
 
     /* Hide card buttons when setup is visible - handled by opacity rules above */
 
-    /* Card content always visible now since game auto-starts */
+    /* Hide card content when setup is visible */
+    .flashcard:not(.game-started) .card-word {
+      opacity: 0;
+    }
+
+    .flashcard:not(.game-started) .card-label {
+      opacity: 0;
+    }
 
     /* Speed Controls in Menu */
     .speed-controls-menu {
@@ -2626,9 +2633,19 @@
         restoreSavedState();
 
         // Auto-start the game with first pack and English
+        // Use setTimeout to ensure DOM is fully ready
         setTimeout(() => {
+          // Force set values to ensure they're correct
+          if (!wordpackSelect.value) {
+            const firstPack = Object.keys(wordpacks)[0];
+            if (firstPack) wordpackSelect.value = firstPack;
+          }
+          if (!languageSelect.value) {
+            languageSelect.value = 'english';
+          }
+
           startGame();
-        }, 100);
+        }, 200);
       } catch (error) {
         console.error('Failed to load wordpacks:', error);
         wordpackSelect.innerHTML = '<option value="">Failed to load wordpacks</option>';
