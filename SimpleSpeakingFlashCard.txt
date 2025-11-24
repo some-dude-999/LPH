@@ -1,0 +1,92 @@
+=== SimpleSpeakingFlashCard.txt ===
+PROJECT: LPH Spanish Learning
+COMPONENT: Simple Speaking Flashcards - Pronunciation practice with feedback
+CREATED: 2025-11-24
+LAST UPDATED: 2025-11-24 - Created from SimpleFlashCards.html, speaking mode only
+
+MODE: 💬 SPEAKING MODE ONLY
+This is a single-mode game locked to speaking mode. Mode selector is hidden.
+
+DATA SOURCES:
+- Module: https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act1-foundation.js
+  Provides wordpacks with Spanish vocabulary and translations (english, chinese, portuguese)
+- LocalStorage: Saves user preferences (voice selection, speech speed)
+- Web Speech API: Text-to-speech and speech recognition for pronunciation
+
+FUNCTIONALITY:
+- Main Purpose: Pronunciation practice - see Spanish, say it aloud, get scored
+- Auto-Start: Game automatically starts with Pack 1 and English language on page load
+- Game Flow:
+  1. Spanish word appears on front
+  2. Click microphone (🎤) or press Space to record
+  3. Say the Spanish word aloud
+  4. Speech recognition analyzes pronunciation
+  5. Similarity score shows how close you got
+  6. Feedback displays: score %, message, what was heard
+  7. Flip card to see English translation
+  8. Navigate to next card
+
+- Key Features:
+  * Spanish word prominently displayed on FRONT
+  * English translation on BACK
+  * Microphone button (🎤) - Record pronunciation
+  * Real-time speech recognition via Web Speech API
+  * Similarity scoring using Levenshtein distance
+  * Feedback overlay with score and suggestions
+  * Pronunciation playback (🗣️) - Hear correct pronunciation
+
+- Key Functions:
+  * loadWordpacks() - Dynamically imports vocabulary modules and auto-starts game
+  * initializeDeck(packKey) - Creates shuffled deck from selected wordpack
+  * updateDisplay() - Shows Spanish word with microphone button
+  * startListening() - Activates speech recognition
+  * calculateSimilarity() - Computes Levenshtein distance for scoring
+  * speakSpanish() - Text-to-speech pronunciation model
+  * showFeedback() - Displays pronunciation feedback overlay
+
+CONTROLS:
+- Space bar or 🎤 button - Start recording pronunciation
+- Up arrow or 🗣️ button - Hear correct pronunciation
+- Down arrow or click card - Flip to English translation
+- Left/Right arrows or ‹ › buttons - Navigate between cards
+- Hold Down arrow or 🤔 button - Peek at translation
+
+PRONUNCIATION SCORING:
+- Uses Levenshtein distance algorithm
+- Compares what you said to the Spanish word
+- Displays percentage similarity (0-100%)
+- Feedback messages:
+  * 90%+ = "Perfect!" or "Excellent!"
+  * 70-89% = "Good!" or "Pretty close!"
+  * 50-69% = "Not bad, keep trying!"
+  * <50% = "Try again!"
+- Shows exactly what was heard for debugging
+
+SPEECH RECOGNITION:
+- Requires browser support for Web Speech API
+- Works best in Chrome/Edge
+- May require microphone permissions
+- Spanish language recognition (es-ES)
+- Real-time processing
+
+VISUAL DESIGN:
+- Old paper/parchment aesthetic
+- Spanish word prominently displayed
+- Microphone button on front of card
+- Feedback overlay with score and message
+- Clean, focused interface for speaking practice
+
+DIFFERENCES FROM MULTI-MODE VERSION:
+- Mode selector is HIDDEN (display: none !important)
+- currentMode is locked to 'speaking' (const instead of let)
+- Mode switching event listeners are disabled
+- Simplified UI focused on pronunciation only
+- Microphone button always visible on front
+
+NOTES:
+- This is a specialized version for users who only want pronunciation practice
+- For full multi-mode experience, use SimpleFlashCards.html
+- Requires microphone access and Web Speech API support
+- Best for testing and improving Spanish pronunciation
+- Provides measurable feedback for improvement tracking
+===
