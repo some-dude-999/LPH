@@ -185,47 +185,17 @@
 
   <!--
     ============================================================
-    VOCABULARY TABLE - With Optional Multiple Choice Mode
+    VOCABULARY TABLE - 2 Column Display
     ============================================================
-    Displays the selected wordpack's vocabulary.
-
-    BASIC MODE (Default):
-    - 2 columns: Target language (column 0) and Native language (selected)
-
-    MULTIPLE CHOICE MODE (Checkbox enabled):
-    - 6 columns total:
-      1. Target language (correct answer, column 0)
-      2. Native language translation (column N)
-      3-6. Four wrong answers (randomly selected from same wordpack)
-
-    This demonstrates the CORE LOGIC for generating multiple choice questions
-    used in language learning games. Different game mechanics require different
-    numbers of choices:
-    - Temple Run style: 3 choices (1 correct + 2 wrong)
-    - Quiz games: 4 choices (1 correct + 3 wrong)
-    - This demo: 6 choices (1 correct + 4 wrong) to show extensibility
-
-    The algorithm works for ANY target language (Spanish, Chinese, English, etc.)
-    and ANY future language packs we add to the system.
+    Displays the selected wordpack's vocabulary in a simple 2-column table:
+    - Left column: Target language (column 0) - "I am learning"
+    - Right column: Native language (selected column) - "I speak"
   -->
   <h2>5. Vocabulary Table</h2>
   <p><strong>Pack Title:</strong> <span id="packTitle">Select a wordpack to view</span></p>
-
-  <!--
-    MULTIPLE CHOICE MODE CHECKBOX
-    When enabled, adds 4 columns of wrong answers randomly selected from
-    the same wordpack. This shows how game mechanics generate distractors.
-  -->
-  <p>
-    <label>
-      <input type="checkbox" id="multipleChoiceMode">
-      Multiple Choice Mode (adds 4 wrong answer columns for game mechanics demonstration)
-    </label>
-  </p>
-
   <table border="1" cellpadding="8" cellspacing="0">
     <thead>
-      <tr id="tableHeaderRow">
+      <tr>
         <th id="col1Header">I am learning</th>
         <th id="col2Header">I speak</th>
       </tr>
@@ -341,15 +311,13 @@
       - currentAct: Currently selected act number
       - currentPack: Currently selected wordpack key
       - currentNativeLanguage: Column index for native language
-      - multipleChoiceMode: Boolean flag for showing wrong answer columns
     */
     let state = {
       currentLanguage: 'Spanish',  // Default language
       loadedData: {},               // { actNumber: { packKey: {meta, words}, ... } }
       currentAct: null,
       currentPack: null,
-      currentNativeLanguage: 1,     // Default to English column (index 1 for Spanish)
-      multipleChoiceMode: false     // Default to basic 2-column mode
+      currentNativeLanguage: 1      // Default to English column (index 1 for Spanish)
     };
 
     // ============================================================
@@ -437,7 +405,6 @@
 
       // Setup UI
       setupLanguageRadioButtons();
-      setupMultipleChoiceCheckbox();
       populateActDropdown();
       populateNativeLanguageDropdown();
 
@@ -533,22 +500,6 @@
           populatePackDropdown();
           displayVocabulary();
         });
-      });
-    }
-
-    // ============================================================
-    // SETUP MULTIPLE CHOICE CHECKBOX: Event Listener
-    // ============================================================
-
-    /*
-      Attaches change event listener to multiple choice mode checkbox.
-      When toggled, refreshes the vocabulary table to show/hide wrong answer columns.
-    */
-    function setupMultipleChoiceCheckbox() {
-      const checkbox = document.getElementById('multipleChoiceMode');
-      checkbox.addEventListener('change', (e) => {
-        state.multipleChoiceMode = e.target.checked;
-        displayVocabulary();  // Refresh table with new mode
       });
     }
 
@@ -675,108 +626,35 @@
     }
 
     // ============================================================
-    // GENERATE WRONG ANSWERS: Random Selection Algorithm
+    // DISPLAY VOCABULARY: Show 2-Column Table
     // ============================================================
 
     /*
-      Generates random wrong answers for multiple choice mode.
+      Displays vocabulary for the selected wordpack in a 2-column table.
 
-      ALGORITHM:
-      For a wordpack with N words, when displaying word at index currentIndex:
-      1. Create array of all other word indices (N-1 words remaining)
-      2. Shuffle this array randomly
-      3. Take first K elements as wrong answers (K=4 in this demo)
-      4. Extract target language text (column 0) from these words
-
-      EXAMPLE:
-      - Wordpack has 50 words
-      - Currently displaying word at index 5
-      - Available wrong answer pool: indices 0-4, 6-49 (49 words total)
-      - Randomly select 4 indices from this pool
-      - Wrong Answer 1: words[selectedIndex1][0]
-      - Wrong Answer 2: words[selectedIndex2][0]
-      - Wrong Answer 3: words[selectedIndex3][0]
-      - Wrong Answer 4: words[selectedIndex4][0]
-
-      GAME USAGE:
-      Different games need different numbers of wrong answers:
-      - Temple Run (3-lane runner): Need 2 wrong answers (3 total choices)
-      - Quiz game (4 options): Need 3 wrong answers (4 total choices)
-      - This demo: 4 wrong answers to show extensibility
-
-      This algorithm works for ANY language (Spanish, Chinese, English, etc.)
-      because it always uses column 0 (target language) from the words array.
-
-      INPUT:
-        - words: Array of word arrays (full wordpack vocabulary)
-        - currentIndex: Index of current word (the correct answer)
-        - count: Number of wrong answers to generate (default 4)
-
-      OUTPUT:
-        - Array of wrong answer strings from column 0 (target language)
-    */
-    function generateWrongAnswers(words, currentIndex, count = 4) {
-      // STEP 1: Create array of all indices except the current word
-      const availableIndices = [];
-      for (let i = 0; i < words.length; i++) {
-        if (i !== currentIndex) {
-          availableIndices.push(i);
-        }
-      }
-
-      // STEP 2: Shuffle using Fisher-Yates algorithm for uniform randomness
-      for (let i = availableIndices.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [availableIndices[i], availableIndices[j]] = [availableIndices[j], availableIndices[i]];
-      }
-
-      // STEP 3: Take first 'count' indices (or fewer if wordpack is small)
-      const wrongIndices = availableIndices.slice(0, Math.min(count, availableIndices.length));
-
-      // STEP 4: Extract target language text (column 0) from selected words
-      const wrongAnswers = wrongIndices.map(index => words[index][0]);
-
-      return wrongAnswers;
-    }
-
-    // ============================================================
-    // DISPLAY VOCABULARY: Show 2-Column or 6-Column Table
-    // ============================================================
-
-    /*
-      Displays vocabulary for the selected wordpack.
-
-      TABLE MODES:
-
-      BASIC MODE (multipleChoiceMode = false):
-      - 2 columns: Target language (column 0) and Native language (selected)
-
-      MULTIPLE CHOICE MODE (multipleChoiceMode = true):
-      - 6 columns: Target language, Native language, + 4 wrong answers
-      - Wrong answers are randomly selected from same wordpack
+      TABLE STRUCTURE:
+      - Left column (column 0): Target language being learned
+      - Right column (selected): Native language for translation
 
       PROCESS:
       1. Get selected wordpack from state.loadedData
-      2. Check if multiple choice mode is enabled
-      3. Update table headers accordingly
-      4. Loop through words array
-      5. For each word:
-         - Display word[0] in column 1 (target language - correct answer)
-         - Display word[nativeLanguageIndex] in column 2 (translation)
-         - If multiple choice mode: Generate and display 4 wrong answers
+      2. Update table headers with language names
+      3. Loop through words array
+      4. Create table row for each word
+      5. Display word[0] in left column, word[nativeLanguageIndex] in right column
     */
     function displayVocabulary() {
       const tableBody = document.getElementById('vocabularyTable');
       const packTitleEl = document.getElementById('packTitle');
-      const tableHeaderRow = document.getElementById('tableHeaderRow');
+      const col1Header = document.getElementById('col1Header');
+      const col2Header = document.getElementById('col2Header');
 
       // Clear table
       tableBody.innerHTML = '';
 
       // Validate selection
       if (!state.currentAct || !state.currentPack) {
-        const colspan = state.multipleChoiceMode ? 6 : 2;
-        tableBody.innerHTML = `<tr><td colspan="${colspan}">Please select an act and wordpack</td></tr>`;
+        tableBody.innerHTML = '<tr><td colspan="2">Please select an act and wordpack</td></tr>';
         packTitleEl.textContent = 'No pack selected';
         return;
       }
@@ -784,103 +662,47 @@
       // Get wordpack data
       const actData = state.loadedData[state.currentAct];
       if (!actData) {
-        const colspan = state.multipleChoiceMode ? 6 : 2;
-        tableBody.innerHTML = `<tr><td colspan="${colspan}">Act data not loaded</td></tr>`;
+        tableBody.innerHTML = '<tr><td colspan="2">Act data not loaded</td></tr>';
         return;
       }
 
       const pack = actData[state.currentPack];
       if (!pack) {
-        const colspan = state.multipleChoiceMode ? 6 : 2;
-        tableBody.innerHTML = `<tr><td colspan="${colspan}">Pack not found</td></tr>`;
+        tableBody.innerHTML = '<tr><td colspan="2">Pack not found</td></tr>';
         return;
       }
 
       // Update pack title
       packTitleEl.textContent = `Pack ${pack.meta.wordpack}: ${pack.meta.english}`;
 
-      // Get language names
+      // Update table headers
       const config = LANGUAGE_CONFIG[state.currentLanguage];
       const targetLanguage = config.columns[0];  // Column 0 is always target language
       const nativeLanguage = config.columns[state.currentNativeLanguage];
 
-      // ============================================================
-      // UPDATE TABLE HEADERS: Based on Mode
-      // ============================================================
-      /*
-        In basic mode: 2 columns (Target language, Native language)
-        In multiple choice mode: 6 columns (Target, Native, 4 wrong answers)
-      */
-      if (state.multipleChoiceMode) {
-        // Multiple choice mode: 6 columns
-        tableHeaderRow.innerHTML = `
-          <th>Correct Answer (${targetLanguage})</th>
-          <th>Translation (${nativeLanguage})</th>
-          <th>Wrong Answer 1</th>
-          <th>Wrong Answer 2</th>
-          <th>Wrong Answer 3</th>
-          <th>Wrong Answer 4</th>
-        `;
-      } else {
-        // Basic mode: 2 columns
-        tableHeaderRow.innerHTML = `
-          <th>I am learning (${targetLanguage})</th>
-          <th>I speak (${nativeLanguage})</th>
-        `;
-      }
+      col1Header.textContent = `I am learning (${targetLanguage})`;
+      col2Header.textContent = `I speak (${nativeLanguage})`;
 
-      // ============================================================
-      // POPULATE TABLE ROWS: Generate vocabulary with optional wrong answers
-      // ============================================================
+      // Populate table with vocabulary
       pack.words.forEach((word, index) => {
         const row = document.createElement('tr');
 
-        // COLUMN 1: Target language (correct answer, column 0 from words array)
+        // Left column: Target language (column 0)
         const cell1 = document.createElement('td');
         cell1.textContent = word[0];
         row.appendChild(cell1);
 
-        // COLUMN 2: Native language translation (selected column from words array)
+        // Right column: Native language (selected column)
         const cell2 = document.createElement('td');
         cell2.textContent = word[state.currentNativeLanguage];
         row.appendChild(cell2);
-
-        // COLUMNS 3-6: Wrong answers (only in multiple choice mode)
-        if (state.multipleChoiceMode) {
-          /*
-            Generate 4 random wrong answers from the same wordpack.
-            - Current word index: 'index'
-            - Total words in pack: pack.words.length
-            - Wrong answers selected from: all other words in pack (N-1 words)
-            - Each wrong answer is from column 0 (target language)
-          */
-          const wrongAnswers = generateWrongAnswers(pack.words, index, 4);
-
-          // Add each wrong answer as a table cell
-          wrongAnswers.forEach(wrongAnswer => {
-            const wrongCell = document.createElement('td');
-            wrongCell.textContent = wrongAnswer;
-            row.appendChild(wrongCell);
-          });
-
-          // Handle edge case: If wordpack has fewer than 5 words total,
-          // we might have fewer than 4 wrong answers. Fill remaining cells.
-          const wrongAnswerCount = wrongAnswers.length;
-          for (let i = wrongAnswerCount; i < 4; i++) {
-            const emptyCell = document.createElement('td');
-            emptyCell.textContent = '(Not enough words in pack)';
-            row.appendChild(emptyCell);
-          }
-        }
 
         tableBody.appendChild(row);
       });
 
       // Update debug info
-      const modeText = state.multipleChoiceMode ? 'Multiple Choice (6 columns)' : 'Basic (2 columns)';
       updateDebugInfo(`Displaying Pack ${pack.meta.wordpack}: ${pack.meta.english}\n` +
                       `Total words: ${pack.words.length}\n` +
-                      `Mode: ${modeText}\n` +
                       `Target language: ${targetLanguage} (column 0)\n` +
                       `Native language: ${nativeLanguage} (column ${state.currentNativeLanguage})`);
     }
@@ -902,7 +724,6 @@
         `- Act: ${state.currentAct || 'None'}\n` +
         `- Pack: ${state.currentPack || 'None'}\n` +
         `- Native Language Column: ${state.currentNativeLanguage}\n` +
-        `- Multiple Choice Mode: ${state.multipleChoiceMode ? 'Enabled' : 'Disabled'}\n` +
         `- Loaded Acts: ${Object.keys(state.loadedData).join(', ') || 'None'}`;
     }
 
