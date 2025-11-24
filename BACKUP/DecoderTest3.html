@@ -196,22 +196,7 @@
     - 6 columns total:
       1. Target language (correct answer, column 0)
       2. Native language translation (column N)
-      3-6. Four wrong answers (randomly selected from ENTIRE ACT, ~2,500 words)
-
-    WRONG ANSWER POOL:
-    Wrong answers are now pulled from ALL wordpacks in the current act,
-    not just the current wordpack. This provides:
-    - Greater variety (2,500 options vs 50)
-    - Less predictable patterns
-    - Better simulation of real game mechanics
-    - Zero performance cost (all data already loaded in memory)
-
-    DUPLICATE FILTERING:
-    Uses normalized string comparison (lowercase, no spaces/symbols)
-    to avoid showing essentially identical words:
-    - "hola" vs "Hola" (case difference) - filtered
-    - "hello friend" vs "hellofriend" (spacing) - filtered
-    - "hello!" vs "hello" (punctuation) - filtered
+      3-6. Four wrong answers (randomly selected from same wordpack)
 
     This demonstrates the CORE LOGIC for generating multiple choice questions
     used in language learning games. Different game mechanics require different
@@ -229,13 +214,12 @@
   <!--
     MULTIPLE CHOICE MODE CHECKBOX
     When enabled, adds 4 columns of wrong answers randomly selected from
-    ALL wordpacks in the current act (~2,500 words). This shows how game
-    mechanics generate distractors with variety and duplicate filtering.
+    the same wordpack. This shows how game mechanics generate distractors.
   -->
   <p>
     <label>
       <input type="checkbox" id="multipleChoiceMode">
-      Multiple Choice Mode (adds 4 wrong answer columns from entire act - game mechanics demo)
+      Multiple Choice Mode (adds 4 wrong answer columns for game mechanics demonstration)
     </label>
   </p>
 
@@ -691,74 +675,28 @@
     }
 
     // ============================================================
-    // STRING NORMALIZATION: For Duplicate Detection
-    // ============================================================
-
-    /*
-      Normalizes strings for comparison to detect duplicates across wordpacks.
-
-      NORMALIZATION PROCESS:
-      1. Convert to lowercase
-      2. Remove all spaces
-      3. Remove all symbols/punctuation
-
-      EXAMPLES:
-      - "Hola Amigo" → "holaamigo"
-      - "hello, friend!" → "hellofriend"
-      - "你好 朋友" → "你好朋友"
-
-      This catches duplicates that may appear with slight variations:
-      - "hola" and "Hola" (case difference)
-      - "hello friend" and "hellofriend" (spacing difference)
-      - "hello!" and "hello" (punctuation difference)
-
-      INPUT: String to normalize
-      OUTPUT: Normalized string (lowercase, no spaces, no symbols)
-    */
-    function normalizeString(str) {
-      return str
-        .toLowerCase()
-        .replace(/[\s\.,!?;:'"()\[\]{}\-_]/g, '');  // Remove spaces and common symbols
-    }
-
-    // ============================================================
-    // GENERATE WRONG ANSWERS: Random Selection from Entire Act
+    // GENERATE WRONG ANSWERS: Random Selection Algorithm
     // ============================================================
 
     /*
       Generates random wrong answers for multiple choice mode.
 
-      UPDATED ALGORITHM (Act-Wide Selection):
-      Instead of pulling from just the current wordpack (50 words),
-      we now pull from the ENTIRE ACT (all wordpacks, ~2,500 words).
-
-      BENEFITS:
-      ✓ More variety (2,500 options vs 50)
-      ✓ Less predictable for players
-      ✓ Better for advanced learners
-      ✓ No additional performance cost (data already in memory)
-
-      PROCESS:
-      1. Collect all words from all packs in the current act
-      2. Filter out the correct answer (exact match)
-      3. Filter out normalized duplicates (case/space/symbol variations)
-      4. Shuffle remaining pool using Fisher-Yates
-      5. Take first K words as wrong answers (K=4 in this demo)
+      ALGORITHM:
+      For a wordpack with N words, when displaying word at index currentIndex:
+      1. Create array of all other word indices (N-1 words remaining)
+      2. Shuffle this array randomly
+      3. Take first K elements as wrong answers (K=4 in this demo)
+      4. Extract target language text (column 0) from these words
 
       EXAMPLE:
-      - Act 1 has 50 packs with 50 words each = 2,500 total words
-      - Current correct answer: "hola amigo"
-      - Normalized: "holaamigo"
-      - Filter out: "hola amigo", "Hola Amigo", "hola-amigo" (all normalize to same)
-      - Remaining pool: ~2,499 words
-      - Randomly select 4 from this pool
-
-      DUPLICATE DETECTION:
-      We use normalized string comparison to avoid showing essentially
-      the same word with minor variations:
-      - "hello" vs "Hello" (different case)
-      - "hello friend" vs "hellofriend" (different spacing)
-      - "hello!" vs "hello" (different punctuation)
+      - Wordpack has 50 words
+      - Currently displaying word at index 5
+      - Available wrong answer pool: indices 0-4, 6-49 (49 words total)
+      - Randomly select 4 indices from this pool
+      - Wrong Answer 1: words[selectedIndex1][0]
+      - Wrong Answer 2: words[selectedIndex2][0]
+      - Wrong Answer 3: words[selectedIndex3][0]
+      - Wrong Answer 4: words[selectedIndex4][0]
 
       GAME USAGE:
       Different games need different numbers of wrong answers:
@@ -770,48 +708,33 @@
       because it always uses column 0 (target language) from the words array.
 
       INPUT:
-        - actData: Dictionary of all wordpacks in the current act
-        - correctAnswer: The correct answer string (to filter out)
+        - words: Array of word arrays (full wordpack vocabulary)
+        - currentIndex: Index of current word (the correct answer)
         - count: Number of wrong answers to generate (default 4)
 
       OUTPUT:
         - Array of wrong answer strings from column 0 (target language)
     */
-    function generateWrongAnswers(actData, correctAnswer, count = 4) {
-      // STEP 1: Normalize the correct answer for comparison
-      const normalizedCorrect = normalizeString(correctAnswer);
-
-      // STEP 2: Collect all words from all packs in the act
-      const allWords = [];
-
-      // Loop through each pack in the act
-      Object.keys(actData).forEach(packKey => {
-        const pack = actData[packKey];
-
-        // Loop through each word in this pack
-        pack.words.forEach(word => {
-          const targetLanguageWord = word[0];  // Column 0 is always target language
-
-          // Filter out the correct answer and normalized duplicates
-          if (targetLanguageWord !== correctAnswer) {
-            const normalizedWord = normalizeString(targetLanguageWord);
-
-            // Only add if normalized version is different from correct answer
-            if (normalizedWord !== normalizedCorrect) {
-              allWords.push(targetLanguageWord);
-            }
-          }
-        });
-      });
-
-      // STEP 3: Shuffle using Fisher-Yates algorithm for uniform randomness
-      for (let i = allWords.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [allWords[i], allWords[j]] = [allWords[j], allWords[i]];
+    function generateWrongAnswers(words, currentIndex, count = 4) {
+      // STEP 1: Create array of all indices except the current word
+      const availableIndices = [];
+      for (let i = 0; i < words.length; i++) {
+        if (i !== currentIndex) {
+          availableIndices.push(i);
+        }
       }
 
-      // STEP 4: Take first 'count' words (or fewer if pool is small)
-      const wrongAnswers = allWords.slice(0, Math.min(count, allWords.length));
+      // STEP 2: Shuffle using Fisher-Yates algorithm for uniform randomness
+      for (let i = availableIndices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [availableIndices[i], availableIndices[j]] = [availableIndices[j], availableIndices[i]];
+      }
+
+      // STEP 3: Take first 'count' indices (or fewer if wordpack is small)
+      const wrongIndices = availableIndices.slice(0, Math.min(count, availableIndices.length));
+
+      // STEP 4: Extract target language text (column 0) from selected words
+      const wrongAnswers = wrongIndices.map(index => words[index][0]);
 
       return wrongAnswers;
     }
@@ -830,8 +753,7 @@
 
       MULTIPLE CHOICE MODE (multipleChoiceMode = true):
       - 6 columns: Target language, Native language, + 4 wrong answers
-      - Wrong answers are randomly selected from ALL packs in current act
-      - Duplicate filtering applied (normalized string comparison)
+      - Wrong answers are randomly selected from same wordpack
 
       PROCESS:
       1. Get selected wordpack from state.loadedData
@@ -926,14 +848,13 @@
         // COLUMNS 3-6: Wrong answers (only in multiple choice mode)
         if (state.multipleChoiceMode) {
           /*
-            Generate 4 random wrong answers from ALL wordpacks in the current act.
-            - Current correct answer: word[0] (target language, column 0)
-            - Pool: All words from all packs in the current act (~2,500 words)
-            - Filtering: Exclude correct answer and normalized duplicates
+            Generate 4 random wrong answers from the same wordpack.
+            - Current word index: 'index'
+            - Total words in pack: pack.words.length
+            - Wrong answers selected from: all other words in pack (N-1 words)
             - Each wrong answer is from column 0 (target language)
           */
-          const correctAnswer = word[0];
-          const wrongAnswers = generateWrongAnswers(actData, correctAnswer, 4);
+          const wrongAnswers = generateWrongAnswers(pack.words, index, 4);
 
           // Add each wrong answer as a table cell
           wrongAnswers.forEach(wrongAnswer => {
@@ -942,12 +863,12 @@
             row.appendChild(wrongCell);
           });
 
-          // Handle edge case: If act has fewer than 5 words total,
+          // Handle edge case: If wordpack has fewer than 5 words total,
           // we might have fewer than 4 wrong answers. Fill remaining cells.
           const wrongAnswerCount = wrongAnswers.length;
           for (let i = wrongAnswerCount; i < 4; i++) {
             const emptyCell = document.createElement('td');
-            emptyCell.textContent = '(Not enough words in act)';
+            emptyCell.textContent = '(Not enough words in pack)';
             row.appendChild(emptyCell);
           }
         }
@@ -956,17 +877,9 @@
       });
 
       // Update debug info
-      const modeText = state.multipleChoiceMode ? 'Multiple Choice (6 columns, act-wide pool)' : 'Basic (2 columns)';
-
-      // Count total words in act for debug info
-      let totalActWords = 0;
-      Object.keys(actData).forEach(packKey => {
-        totalActWords += actData[packKey].words.length;
-      });
-
+      const modeText = state.multipleChoiceMode ? 'Multiple Choice (6 columns)' : 'Basic (2 columns)';
       updateDebugInfo(`Displaying Pack ${pack.meta.wordpack}: ${pack.meta.english}\n` +
-                      `Words in this pack: ${pack.words.length}\n` +
-                      `Total words in Act ${state.currentAct}: ${totalActWords}\n` +
+                      `Total words: ${pack.words.length}\n` +
                       `Mode: ${modeText}\n` +
                       `Target language: ${targetLanguage} (column 0)\n` +
                       `Native language: ${nativeLanguage} (column ${state.currentNativeLanguage})`);
