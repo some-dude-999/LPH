@@ -971,86 +971,76 @@
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
     }
 
-    /* ============================================
-       CARD CONTROL BAR - Below the flashcard
-       ============================================ */
-    .card-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      margin-top: 20px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-
-    body.game-started .card-controls {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    body.showing-menu .card-controls {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    /* Control buttons - cardboard style like nav buttons */
-    .control-btn {
-      background-color: #8B7355;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--cardboard-texture-size), 100%;
-      border: 3px solid rgba(74, 56, 40, 0.6);
-      color: #2C1810;
+    /* Action Buttons - Styled exactly like mic button */
+    .action-btn {
+      position: absolute;
+      bottom: 25px;
+      background: rgba(139, 115, 85, 0.2);
+      border: 3px solid rgba(160, 133, 103, 0.5);
+      color: #5D4E37;
       width: 55px;
       height: 55px;
       border-radius: 50%;
       cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
+      transition: all 0.3s ease;
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
       line-height: 1;
       text-align: center;
-      position: relative;
+      z-index: 50; /* Higher z-index to appear above card faces (mic is 10, stamps are 100) */
+      display: none; /* Hidden by default, shown when game started */
     }
 
-    .control-btn:hover {
-      background-color: #9B8365;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--cardboard-texture-size), 100%;
+    body.game-started .action-btn {
+      display: flex;
     }
 
-    .control-btn:active {
-      background-color: #7A6347;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--cardboard-texture-size), 100%;
+    /* Hide action buttons when menu is visible (menu content replaces card content) */
+    body.showing-menu .action-btn {
+      display: none !important;
     }
 
-    /* Control button tooltip - fancy parchment style with 1.5s hover delay */
-    .control-btn::after {
+    /* Position the four buttons - two on left, two on right */
+    /* Bottom Left Corner */
+    .got-it-btn {
+      left: 25px;
+    }
+
+    .confused-btn-left {
+      left: 95px; /* 25px + 55px width + 15px gap */
+    }
+
+    /* Bottom Right Corner */
+    .peek-btn-action {
+      right: 25px; /* Rightmost - peek button */
+    }
+
+    .pronounce-btn {
+      right: 95px; /* 25px + 55px width + 15px gap - to the left of peek */
+    }
+
+    .action-btn:hover {
+      background: rgba(139, 115, 85, 0.4);
+    }
+
+    /* Tooltip - fancy parchment paper style with 1.5s hover delay */
+    .action-btn::after {
       content: attr(data-tooltip);
       position: absolute;
       bottom: calc(100% + 8px);
       left: 50%;
       transform: translateX(-50%);
-      /* Fancy parchment/aged paper feel */
+      /* Fancy parchment/aged paper feel - elegant, no grid */
       background:
+        /* Subtle vignette for depth */
         radial-gradient(ellipse at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%),
+        /* Soft cream parchment gradient */
         linear-gradient(145deg, #FDF8F0 0%, #F5EDE0 25%, #EDE4D3 50%, #E8DCC8 75%, #E0D4BE 100%);
       color: #3D2E1F;
       padding: 8px 12px;
       border-radius: 8px;
+      /* Softer, more elegant shadow */
       box-shadow:
         0 4px 16px rgba(0,0,0,0.25),
         0 0 0 1px rgba(139, 115, 85, 0.4),
@@ -1067,19 +1057,10 @@
       z-index: 100;
     }
 
-    .control-btn:hover::after {
+    .action-btn:hover::after {
       opacity: 1;
       /* Show with 1.5s delay - user must hold hover to see tooltip */
       transition-delay: 1.5s;
-    }
-
-    /* Separator between button groups */
-    .control-separator {
-      width: 2px;
-      height: 35px;
-      background: rgba(139, 115, 85, 0.4);
-      border-radius: 1px;
-      margin: 0 5px;
     }
 
     /* Top Corner Buttons - Flat Cardboard Style */
@@ -1769,19 +1750,19 @@
   <div class="mode-selector">
     <span class="tooltip-container">
       <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-      <span class="tooltip"><strong>📖 Reading Mode</strong><br><em><b>PRESS</b> <span class="tooltip-key">1</span> to Remove Card<br><b>PRESS</b> <span class="tooltip-key">2</span> to Add Extra Practice<br><b>PRESS</b> <span class="tooltip-key">←</span> to Previous Card<br><b>PRESS</b> <span class="tooltip-key">→</span> to Next Card<br><b>PRESS</b> <span class="tooltip-key">↑</span> to Pronounce<br><b>PRESS</b> <span class="tooltip-key">↓</span> to Peek at Back</em></span>
+      <span class="tooltip"><strong>📖 Reading Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">✓</span> or <b>PRESS</b> <span class="tooltip-key">1</span> Key to I Got It Right! (Remove Card)<br><b>CLICK</b> <span class="tooltip-btn">✗</span> or <b>PRESS</b> <span class="tooltip-key">2</span> Key to I Got It Wrong (Need Extra Practice)<br><b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> Key to Previous Card<br><b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> Key to Next Card<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word<br><b>PRESS</b> <span class="tooltip-key">↑</span> to Pronounce<br><b>PRESS</b> <span class="tooltip-key">↓</span> to Peek at Back</em></span>
+      <span class="tooltip"><strong>👂 Listening Mode</strong><br><em><b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><em><b>PRESS</b> <span class="tooltip-key">Space</span> to Record<br><b>PRESS</b> <span class="tooltip-key">↑</span> to Pronounce<br><b>PRESS</b> <span class="tooltip-key">↓</span> to Peek at Back</em></span>
+      <span class="tooltip"><strong>💬 Speaking Mode</strong><br><em><b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> Key to Record<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
     </span>
     <span class="tooltip-container">
       <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word<br><b>PRESS</b> <span class="tooltip-key">↑</span> to Pronounce<br><b>PRESS</b> <span class="tooltip-key">↓</span> to Peek at Back</em></span>
+      <span class="tooltip"><strong>✏️ Writing Mode</strong><br><em><b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word<br><b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> Key to Pronounce<br><b>PRESS</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> Key to Toggle Peek at Back</em></span>
     </span>
   </div>
 
@@ -1821,20 +1802,18 @@
       <div class="stamp-base card-stamp added-stamp" id="added-stamp">Extra Practice</div>
       <!-- Deck change indicator stamp - overlays on card text -->
       <div class="deck-change-stamp" id="deck-change-stamp"></div>
+
+      <!-- Action buttons (positioned above card faces like stamps, visible on both sides) -->
+      <!-- Bottom Left: Got It + Don't Got It -->
+      <button class="action-btn got-it-btn" id="got-it-btn" data-tooltip="I Got It Right! (Remove Card)">✓</button>
+      <button class="action-btn confused-btn-left" id="confused-btn-left" data-tooltip="I Got It Wrong (Need Extra Practice)">✗</button>
+
+      <!-- Bottom Right: Pronounce + Peek -->
+      <button class="action-btn pronounce-btn" id="pronounce-btn" data-tooltip="Play Pronunciation">🗣️</button>
+      <button class="action-btn peek-btn-action" id="peek-btn-action" data-tooltip="Peek at Back">❓</button>
     </div>
 
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
-  </div>
-
-  <!-- Card Controls - Below the flashcard -->
-  <div class="card-controls" id="card-controls">
-    <!-- Left group: Got It / Don't Got It (reading mode only) -->
-    <button class="control-btn" id="got-it-btn" data-tooltip="">✓</button>
-    <button class="control-btn" id="confused-btn" data-tooltip="">✗</button>
-    <div class="control-separator" id="control-separator"></div>
-    <!-- Right group: Pronounce / Peek (all modes) -->
-    <button class="control-btn" id="pronounce-btn" data-tooltip="">🗣️</button>
-    <button class="control-btn" id="peek-btn" data-tooltip="">❓</button>
   </div>
 
   <script type="module">
@@ -1976,21 +1955,6 @@
       return null;
     }
 
-    // ============================================================
-    // TOOLTIP MESSAGES - Single source of truth for all button tooltips
-    // Convention: PRESS [key] Key to Action
-    // ============================================================
-    const TOOLTIP_MESSAGES = {
-      gotIt: 'PRESS [1] Key to Remove Card',
-      confused: 'PRESS [2] Key to Add Extra Practice',
-      pronounce: 'PRESS [↑] Key to Pronounce',
-      peek: 'PRESS [↓] Key to Peek at Back',
-      prevCard: 'PRESS [←] Key to Previous Card',
-      nextCard: 'PRESS [→] Key to Next Card',
-      record: 'PRESS [Space] Key to Record',
-      typeLetters: 'TYPE [Letters] to Spell Word'
-    };
-
     // DOM Elements - menu elements are created dynamically in renderMenuCard()
     // and accessed via document.getElementById('menu-act'), etc.
     const backLabel = document.getElementById('back-label');
@@ -2004,12 +1968,11 @@
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const gotItBtn = document.getElementById('got-it-btn');
-    const confusedBtn = document.getElementById('confused-btn');
-    const peekBtn = document.getElementById('peek-btn');
+    const confusedBtnLeft = document.getElementById('confused-btn-left');
+    const peekBtnAction = document.getElementById('peek-btn-action');
     const pronounceBtn = document.getElementById('pronounce-btn');
     const resetBtn = document.getElementById('reset-btn');
     const peekBtnFront = document.getElementById('peek-btn-front');
-    const controlSeparator = document.getElementById('control-separator');
     const speedBtns = document.querySelectorAll('.speed-btn'); // Includes both setup and menu buttons
     const removedStamp = document.getElementById('removed-stamp');
     const addedStamp = document.getElementById('added-stamp');
@@ -2869,28 +2832,10 @@
       }
     }
 
-    // Initialize tooltips from TOOLTIP_MESSAGES (single source of truth)
-    function initializeTooltips() {
-      // Control bar button tooltips
-      gotItBtn.setAttribute('data-tooltip', TOOLTIP_MESSAGES.gotIt);
-      confusedBtn.setAttribute('data-tooltip', TOOLTIP_MESSAGES.confused);
-      pronounceBtn.setAttribute('data-tooltip', TOOLTIP_MESSAGES.pronounce);
-      peekBtn.setAttribute('data-tooltip', TOOLTIP_MESSAGES.peek);
-
-      // Mic button tooltips
-      const micBtnFrontEl = document.getElementById('mic-btn-front');
-      const micBtnBackEl = document.getElementById('mic-btn-back');
-      if (micBtnFrontEl) micBtnFrontEl.setAttribute('data-tooltip', TOOLTIP_MESSAGES.record);
-      if (micBtnBackEl) micBtnBackEl.setAttribute('data-tooltip', TOOLTIP_MESSAGES.record);
-    }
-
     // Initialize on page load
     // KEY FEATURE: Loads act data, preloads deck from saved state (or pack 1), then displays menu overlay
     // Core Objective: User sees content under the menu when toggling, state is preserved across sessions
     async function initializeApp() {
-      // Initialize tooltips from single source of truth
-      initializeTooltips();
-
       try {
         // First, determine the first act from language modules
         const modules = LANGUAGE_MODULES[CURRENT_LANGUAGE];
@@ -3291,16 +3236,23 @@
         micBtnBackEl.style.display = 'none';
       }
 
-      // Show/hide control bar buttons based on mode
-      // Got It and Confused buttons + separator: only in reading mode
+      // Show/hide action buttons based on mode
+      const gotItBtnEl = document.getElementById('got-it-btn');
+      const confusedBtnLeftEl = document.getElementById('confused-btn-left');
+      const peekBtnActionEl = document.getElementById('peek-btn-action');
+      const pronounceBtnEl = document.getElementById('pronounce-btn');
+
+      // Pronounce and Peek buttons: ALWAYS visible in all modes
+      pronounceBtnEl.style.display = 'flex';
+      peekBtnActionEl.style.display = 'flex';
+
+      // Got It and Don't Got It buttons: only in reading mode
       if (currentMode === 'reading') {
-        gotItBtn.style.display = 'flex';
-        confusedBtn.style.display = 'flex';
-        controlSeparator.style.display = 'block';
+        gotItBtnEl.style.display = 'flex';
+        confusedBtnLeftEl.style.display = 'flex';
       } else {
-        gotItBtn.style.display = 'none';
-        confusedBtn.style.display = 'none';
-        controlSeparator.style.display = 'none';
+        gotItBtnEl.style.display = 'none';
+        confusedBtnLeftEl.style.display = 'none';
       }
 
       // Show/hide navigation arrows based on mode (only show in reading mode - others auto-advance)
@@ -3721,12 +3673,12 @@
       playButtonClickSound();
       removeCurrentCard();
     });
-    confusedBtn.addEventListener('click', () => {
+    confusedBtnLeft.addEventListener('click', () => {
       playButtonClickSound();
       addConfusedCards();
     });
-    // Peek button (control bar - toggle flip on press)
-    peekBtn.addEventListener('click', (e) => {
+    // Peek button (bottom right - toggle flip on press)
+    peekBtnAction.addEventListener('click', (e) => {
       e.stopPropagation();
       e.preventDefault();
       playButtonClickSound();
