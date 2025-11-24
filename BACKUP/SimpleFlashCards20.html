@@ -2212,6 +2212,8 @@
     function renderMenuCard() {
       // Front: Menu/Settings (styled like Spanish side)
       spanishWord.innerHTML = `
+        <div style="font-size: 1.8rem; font-weight: bold; margin-bottom: 20px;">⚙️ Settings</div>
+
         <div style="font-size: 1.1rem; text-align: left; max-width: 550px; margin: 0 auto; line-height: 1.8;">
           <!-- Row 1: Act and Wordpack -->
           <div style="display: flex; gap: 15px; margin-bottom: 20px;">
@@ -3278,11 +3280,7 @@
     function addConfusedCards() {
       if (currentDeck.length === 0) return;
 
-      // Track deck change for visual indicator (+2 cards)
-      pendingDeckChange += 2;
-      updateDisplay();
-
-      // Show "Extra Practice" stamp for 1.5 seconds
+      // Show "Extra Practice" stamp for 1 second
       addedStamp.classList.add('visible');
 
       setTimeout(() => {
@@ -3301,11 +3299,9 @@
           }
         }
 
-        // Clear pending change indicator
-        pendingDeckChange = 0;
-
-        // Play sound on page change
+        // Play 2 sounds on page change (consistent timing)
         playCardFlipSound();
+        setTimeout(() => playCardFlipSound(), 200);
 
         // Move to next card and update display
         currentIndex = (currentIndex + 1) % currentDeck.length;
