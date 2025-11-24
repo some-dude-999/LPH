@@ -90,7 +90,6 @@
     }
 
     .selector-container label {
-      font-family: var(--font-ui);
       font-size: 1rem;
       margin-right: 10px;
       color: var(--color-text-gold);
@@ -733,12 +732,10 @@
     }
 
     .setup-field label {
-      font-family: var(--font-ui);
       font-size: 0.85rem;
-      font-weight: bold;
       color: var(--color-text-dark);
       margin-bottom: 6px;
-      text-transform: capitalize;
+      text-transform: uppercase;
       letter-spacing: 1px;
     }
 
@@ -826,21 +823,21 @@
     .setup-start-btn {
       font-family: var(--font-ui);
       font-size: 1.1rem;
-      font-weight: bold;
       padding: 12px 30px;
       margin-top: 15px;
-      background-color: #8B7355;
+      background-color: #7A6347;
       background-image:
         var(--cardboard-texture),
-        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
-      border-radius: 25px;
-      color: var(--color-text-dark);
+      border-radius: 8px;
+      color: var(--color-text-light);
       cursor: pointer;
       transition: all 0.2s ease;
       letter-spacing: 1px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
       position: relative;
       z-index: 5;
     }
@@ -855,16 +852,16 @@
     }
 
     .setup-start-btn:disabled {
-      background-color: #7A6347;
+      background-color: #5A5A4A;
       background-image:
         var(--cardboard-texture),
-        linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
+        linear-gradient(135deg, #7A7A6A 0%, #6A6A5A 30%, #5A5A4A 60%, #4A4A3A 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
-      border-color: #4A3828;
-      color: var(--color-text-dark);
+      border-color: #3A3A2A;
+      color: #9A9A8A;
       cursor: not-allowed;
-      opacity: 0.45;
+      text-shadow: none;
     }
 
     /* Hide card buttons when setup is visible - handled by opacity rules above */
@@ -932,51 +929,45 @@
       opacity: 1;
     }
 
-    /* Speed buttons on starting card (menu) - round like mode buttons */
+    /* Speed buttons on starting card (menu) */
     .speed-btn-start, .menu-speed-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
+      flex: 1;
+      padding: 12px;
+      border-radius: 6px;
       border: 3px solid rgba(74, 56, 40, 0.6);
-      /* Inactive: darker, more recessed (like mode-btn) */
+      /* Cardboard texture */
       background-color: #7A6347;
       background-image:
         var(--cardboard-texture),
         linear-gradient(135deg, #8B7355 0%, #7A6347 30%, #6B5540 60%, #5D4E37 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
-      border-color: #4A3828;
-      box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
       color: var(--color-text-dark);
       cursor: pointer;
       transition: all 0.2s ease;
       font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.45; /* Very low opacity for inactive to blend into background */
+      text-align: center;
+      opacity: 0.6;
     }
 
     .speed-btn-start:hover, .menu-speed-btn:hover {
-      background-color: #9B8365;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--cardboard-texture-size), 100%;
-      opacity: 0.7; /* Medium opacity on hover */
-    }
-
-    .speed-btn-start.active, .menu-speed-btn.active {
-      /* Active: lighter, more prominent (like mode-btn.active) */
       background-color: #8B7355;
       background-image:
         var(--cardboard-texture),
         linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
-      border-color: rgba(74, 56, 40, 0.6);
-      box-shadow: none;
+      opacity: 0.8;
+    }
+
+    .speed-btn-start.active, .menu-speed-btn.active {
+      background-color: #8B7355;
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+      background-blend-mode: soft-light;
+      background-size: var(--cardboard-texture-size), 100%;
+      border-color: rgba(74, 56, 40, 0.8);
       opacity: 1;
     }
 
@@ -1275,12 +1266,10 @@
 
     .menu-field label {
       display: block;
-      font-family: var(--font-ui);
       font-size: 0.85rem;
-      font-weight: bold;
       color: var(--color-text-dark);
       margin-bottom: 6px;
-      text-transform: capitalize;
+      text-transform: uppercase;
       letter-spacing: 1px;
     }
 
