@@ -2626,24 +2626,36 @@
 
     // Load the module dynamically
     async function loadWordpacks() {
+      console.log('>>> loadWordpacks() called');
       try {
+        console.log('>>> Importing module from:', MODULE_URL);
         const module = await import(MODULE_URL);
         wordpacks = module;
+        console.log('>>> Module loaded, wordpack count:', Object.keys(wordpacks).length);
+
         populateWordpackSelector();
+        console.log('>>> Wordpack selector populated');
+
         restoreSavedState();
+        console.log('>>> Saved state restored');
 
         // Auto-start the game with first pack and English
         // Use setTimeout to ensure DOM is fully ready
+        console.log('>>> Setting 200ms timeout for auto-start...');
         setTimeout(() => {
+          console.log('>>> Timeout fired, preparing to start game');
           // Force set values to ensure they're correct
           if (!wordpackSelect.value) {
             const firstPack = Object.keys(wordpacks)[0];
+            console.log('>>> No wordpack selected, using first:', firstPack);
             if (firstPack) wordpackSelect.value = firstPack;
           }
           if (!languageSelect.value) {
+            console.log('>>> No language selected, setting to english');
             languageSelect.value = 'english';
           }
 
+          console.log('>>> About to call startGame()');
           startGame();
         }, 200);
       } catch (error) {
@@ -3427,6 +3439,11 @@
 
     // Start the game
     function startGame() {
+      console.log('=== START GAME CALLED ===');
+      console.log('wordpackSelect.value:', wordpackSelect.value);
+      console.log('languageSelect.value:', languageSelect.value);
+      console.log('wordpacks keys:', Object.keys(wordpacks).slice(0, 5));
+
       nativeLanguage = languageSelect.value;
       currentWordpackKey = wordpackSelect.value;
 
@@ -3440,12 +3457,23 @@
       isOnStartingCard = false;
 
       // Initialize deck and hide setup
+      console.log('About to initialize deck...');
       initializeDeck(wordpackSelect.value);
+      console.log('Deck initialized. currentDeck.length:', currentDeck.length);
+
       setupOverlay.classList.add('hidden');
       flashcard.classList.remove('setup-flipped');
       flashcard.classList.add('game-started');
       document.body.classList.add('game-started');
       gameStarted = true;
+
+      console.log('Classes after startGame:');
+      console.log('  setupOverlay.classList:', Array.from(setupOverlay.classList));
+      console.log('  flashcard.classList:', Array.from(flashcard.classList));
+      console.log('  body.classList:', Array.from(document.body.classList));
+      console.log('  gameStarted:', gameStarted);
+      console.log('=== END START GAME ===');
+
       saveState();
     }
 
