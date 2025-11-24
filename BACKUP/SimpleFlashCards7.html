@@ -3007,23 +3007,18 @@
         micBtnBackEl.style.display = 'none';
       }
 
-      // Show/hide action buttons based on mode
+      // Show/hide action buttons based on mode (only show in reading mode)
       const gotItBtnEl = document.getElementById('got-it-btn');
       const confusedBtnLeftEl = document.getElementById('confused-btn-left');
       const peekBtnActionEl = document.getElementById('peek-btn-action');
-      const pronounceBtnEl = document.getElementById('pronounce-btn');
-
-      // Pronounce and Peek buttons: ALWAYS visible in all modes
-      pronounceBtnEl.style.display = 'flex';
-      peekBtnActionEl.style.display = 'flex';
-
-      // Got It and Don't Got It buttons: only in reading mode
       if (currentMode === 'reading') {
         gotItBtnEl.style.display = 'flex';
         confusedBtnLeftEl.style.display = 'flex';
+        peekBtnActionEl.style.display = 'none'; // Peek button not shown in reading mode
       } else {
         gotItBtnEl.style.display = 'none';
         confusedBtnLeftEl.style.display = 'none';
+        peekBtnActionEl.style.display = 'flex'; // Peek button shown in non-reading modes
       }
 
       // Show/hide navigation arrows based on mode (only show in reading mode - others auto-advance)
