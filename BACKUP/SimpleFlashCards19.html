@@ -410,6 +410,7 @@
 
     .sound-btn:hover {
       background: rgba(139, 115, 85, 0.4);
+      transform: scale(1.1);
     }
 
     /* Peek Button (flip/peek at back - top right) - HIDDEN, moved to bottom right */
@@ -419,10 +420,12 @@
 
     .peek-btn:hover {
       background: rgba(139, 115, 85, 0.4);
+      transform: scale(1.1);
     }
 
     .peek-btn:active {
       background: rgba(139, 115, 85, 0.6);
+      transform: scale(1.05);
     }
 
     /* Mic Button */
@@ -453,6 +456,7 @@
 
     .mic-btn:hover {
       background: rgba(139, 115, 85, 0.4);
+      transform: scale(1.1);
     }
 
     .mic-btn.listening {
@@ -785,6 +789,7 @@
 
     .setup-flip-btn:hover {
       background: rgba(139, 115, 85, 0.8);
+      transform: scale(1.1);
     }
 
     /* Help content styling - matches card-back with Courier font */
@@ -988,6 +993,7 @@
 
     .action-btn:hover {
       background: rgba(139, 115, 85, 0.4);
+      transform: scale(1.1);
     }
 
     /* Tooltip - styled like card-back with edge burn */
@@ -3056,9 +3062,17 @@
         // LISTENING MODE - Purpose: Learn to understand spoken Spanish and spell it
         // Front: Hear Spanish audio + type what you hear | Back: Spanish word + English translation
         // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
-        // Show all wrong letters including repeats (user can see each wrong attempt)
-        wrongLettersFront.innerHTML = wrongLetters.length > 0
-          ? wrongLetters.map(item => {
+        // Get unique letters (by letter property, case-insensitive)
+        const seenLetters = new Set();
+        const uniqueWrongLetters = wrongLetters.filter(item => {
+          if (seenLetters.has(item.letter)) {
+            return false;
+          }
+          seenLetters.add(item.letter);
+          return true;
+        });
+        wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
+          ? uniqueWrongLetters.map(item => {
               // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
               return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
             }).join('')
@@ -3077,9 +3091,17 @@
         // WRITING MODE - Purpose: Learn to write/spell Spanish from English
         // Front: English word + type Spanish translation | Back: Correct Spanish word
         // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
-        // Show all wrong letters including repeats (user can see each wrong attempt)
-        wrongLettersFront.innerHTML = wrongLetters.length > 0
-          ? wrongLetters.map(item => {
+        // Get unique letters (by letter property, case-insensitive)
+        const seenLetters = new Set();
+        const uniqueWrongLetters = wrongLetters.filter(item => {
+          if (seenLetters.has(item.letter)) {
+            return false;
+          }
+          seenLetters.add(item.letter);
+          return true;
+        });
+        wrongLettersFront.innerHTML = uniqueWrongLetters.length > 0
+          ? uniqueWrongLetters.map(item => {
               // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
               return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: #2C1810;">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
             }).join('')
@@ -3536,14 +3558,8 @@
 
     // Event Listeners
 
-    prevBtn.addEventListener('click', () => {
-      playButtonClickSound();
-      goToPrevious();
-    });
-    nextBtn.addEventListener('click', () => {
-      playButtonClickSound();
-      goToNext();
-    });
+    prevBtn.addEventListener('click', goToPrevious);
+    nextBtn.addEventListener('click', goToNext);
     gotItBtn.addEventListener('click', () => {
       playButtonClickSound();
       removeCurrentCard();
@@ -3556,21 +3572,18 @@
     peekBtnAction.addEventListener('click', (e) => {
       e.stopPropagation();
       e.preventDefault();
-      playButtonClickSound();
       if (isFlipped) {
         unflipCard();
       } else {
         flipCard();
       }
     });
-    resetBtn.addEventListener('click', () => {
-      playButtonClickSound();
-      resetDeck();
-    });
+    resetBtn.addEventListener('click', resetDeck);
 
-    // Pronounce button (no button click sound per user request)
+    // Pronounce button
     pronounceBtn.addEventListener('click', (e) => {
       e.stopPropagation();
+      playButtonClickSound();
       speakSpanish();
     });
 
@@ -3643,14 +3656,10 @@
       hideFeedback();
     });
 
-    // Menu button - toggle menu on/off
+    // Menu button - show menu on card
     menuBtn.addEventListener('click', () => {
       playButtonClickSound();
-      if (isOnStartingCard) {
-        exitStartingCard(); // Close menu if already showing
-      } else {
-        showStartingCard(false); // Show menu on card
-      }
+      showStartingCard(false); // Show menu on card
     });
 
     // Keyboard navigation
