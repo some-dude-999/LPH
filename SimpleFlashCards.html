@@ -959,7 +959,7 @@
     }
 
     .confused-btn {
-      left: 95px; /* 25px + 55px width + 15px gap */
+      right: 95px; /* 25px + 55px width + 15px gap (positioned to left of sound button) */
     }
 
     .action-btn:hover {
@@ -1441,18 +1441,33 @@
       opacity: 0;
       position: absolute;
       z-index: 300;
-      background: rgba(44, 24, 16, 0.95);
-      color: #F5E6D3;
+      /* Card-back style: white paper texture with grid */
+      background:
+        var(--paper-texture),
+        /* Grid pattern - same as card-back */
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(139, 115, 85, 0.08) 19px, rgba(139, 115, 85, 0.08) 20px),
+        /* Light white background - same as card-back */
+        radial-gradient(ellipse 70% 60% at 30% 35%, rgba(255, 250, 245, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 55% at 70% 65%, rgba(250, 245, 240, 0.2) 0%, transparent 65%),
+        linear-gradient(135deg, #FFFEF9 0%, #F8F5F0 30%, #F0EDE8 60%, #EAE7E2 100%);
+      background-blend-mode: soft-light;
+      background-size: var(--paper-texture-size), 100%, 100%, 100%, 100%, 100%;
+      color: #2C1810;
       padding: 16px 20px;
       border-radius: 8px;
-      border: 3px solid #8B6914;
+      /* Edge burn texture - same as card border */
+      border: 3px solid #A08567;
       font-size: 1.1rem;
       line-height: 1.6;
       white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.3);
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(139, 115, 85, 0.3),
+        inset 0 0 50px rgba(139, 115, 85, 0.1);
       pointer-events: none;
       transition: opacity 0.2s ease, visibility 0.2s ease;
-      font-family: 'IM Fell English', serif;
+      font-family: 'Courier New', monospace;
     }
 
     /* Position tooltip below mode buttons */
@@ -1490,7 +1505,7 @@
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
-      border-bottom-color: rgba(44, 24, 16, 0.95);
+      border-bottom-color: #EAE7E2;
     }
 
     /* Arrow pointing down (for tooltips above element) */
@@ -1498,7 +1513,7 @@
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
-      border-top-color: rgba(44, 24, 16, 0.95);
+      border-top-color: #EAE7E2;
     }
 
     .tooltip strong {
