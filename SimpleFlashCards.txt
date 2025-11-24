@@ -103,10 +103,17 @@ VISUAL DESIGN:
   * Subconsciously pleasing rustic paper feel
 
 CORRECTIONS & CLARIFICATIONS:
+- 2025-11-24: FIXED critical null reference bug in updateDisplay()
+  * Initially thought: Setup screen visibility was the issue
+  * Actually: updateDisplay() was looking for getElementById('confused-btn') which doesn't exist
+  * Root cause: HTML has TWO confused buttons (confused-btn-left, confused-btn-right) but code looked for single 'confused-btn'
+  * Result: Null reference error crashed startGame() and prevented all UI elements from appearing
+  * Fix: Updated updateDisplay() to reference both confused button IDs correctly
+  * Why this matters: Game now works - all UI elements visible, cards display properly
 - 2025-11-24: REMOVED setup screen - game now auto-starts
   * Initially thought: Setup screen needed to select pack and language
   * Actually: User wants immediate gameplay without setup screen
-  * Implementation: Hidden setup-overlay and setup-help with display:none, added auto-start in loadWordpacks()
+  * Implementation: Added auto-start in loadWordpacks(), setup overlay hidden via CSS opacity/z-index
   * Result: Game starts immediately on page load with Pack 1 and English language
   * Why this matters: Faster user experience, no barriers to starting practice
 - 2025-11-23: FIXED starting card to match initial setup screen exactly
