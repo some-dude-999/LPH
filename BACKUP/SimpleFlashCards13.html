@@ -2628,12 +2628,27 @@
     // Load Spanish voices
     function loadVoices() {
       spanishVoices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('es'));
-      // Voice selector is now populated in renderMenuCard() when menu is created
+      populateVoiceSelector();
     }
 
     function populateVoiceSelector() {
-      // DEPRECATED: Voice selector is now populated inside renderMenuCard()
-      // This function kept for compatibility but does nothing
+      // Populate menu voice selector
+      if (!menuVoice) return;
+
+      menuVoice.innerHTML = '<option value="">Default</option>';
+      spanishVoices.forEach((voice, idx) => {
+        const option = document.createElement('option');
+        option.value = voice.voiceURI;
+        option.textContent = `${voice.name} (${voice.lang})`;
+        menuVoice.appendChild(option);
+      });
+
+      // Restore saved voice
+      const savedState = loadState();
+      if (savedState && savedState.voiceURI) {
+        menuVoice.value = savedState.voiceURI;
+        currentVoice = spanishVoices.find(v => v.voiceURI === savedState.voiceURI) || null;
+      }
     }
 
     // Load voices when available
