@@ -3107,8 +3107,9 @@
     }
 
     // ============================================================
-    // REMOVED FEATURE: Auto-pronounce on peek/flip removed per user request
-    // User prefers manual control via pronounce button
+    // KEY FEATURE: Auto-pronounce Spanish word on back reveal
+    // - When flipping to back (arrow down): pronounce in ALL modes
+    // - Helps users associate written word with pronunciation
     // ============================================================
 
     // Flip card
@@ -3117,7 +3118,10 @@
       flashcard.classList.add('flipped');
       isFlipped = true;
 
-      // Auto-pronounce removed - users can manually click pronounce button if needed
+      // Auto-pronounce when flipping to back (ALL modes, except help/tutorial card)
+      if (currentDeck.length > 0 && !isOnStartingCard) {
+        setTimeout(() => speakSpanish(), 300);
+      }
     }
 
     // Unflip card

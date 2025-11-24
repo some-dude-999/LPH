@@ -3007,23 +3007,18 @@
         micBtnBackEl.style.display = 'none';
       }
 
-      // Show/hide action buttons based on mode
+      // Show/hide action buttons based on mode (only show in reading mode)
       const gotItBtnEl = document.getElementById('got-it-btn');
       const confusedBtnLeftEl = document.getElementById('confused-btn-left');
       const peekBtnActionEl = document.getElementById('peek-btn-action');
-      const pronounceBtnEl = document.getElementById('pronounce-btn');
-
-      // Pronounce and Peek buttons: ALWAYS visible in all modes
-      pronounceBtnEl.style.display = 'flex';
-      peekBtnActionEl.style.display = 'flex';
-
-      // Got It and Don't Got It buttons: only in reading mode
       if (currentMode === 'reading') {
         gotItBtnEl.style.display = 'flex';
         confusedBtnLeftEl.style.display = 'flex';
+        peekBtnActionEl.style.display = 'none'; // Peek button not shown in reading mode
       } else {
         gotItBtnEl.style.display = 'none';
         confusedBtnLeftEl.style.display = 'none';
+        peekBtnActionEl.style.display = 'flex'; // Peek button shown in non-reading modes
       }
 
       // Show/hide navigation arrows based on mode (only show in reading mode - others auto-advance)
@@ -3107,8 +3102,9 @@
     }
 
     // ============================================================
-    // REMOVED FEATURE: Auto-pronounce on peek/flip removed per user request
-    // User prefers manual control via pronounce button
+    // KEY FEATURE: Auto-pronounce Spanish word on back reveal
+    // - When flipping to back (arrow down): pronounce in ALL modes
+    // - Helps users associate written word with pronunciation
     // ============================================================
 
     // Flip card
@@ -3117,7 +3113,10 @@
       flashcard.classList.add('flipped');
       isFlipped = true;
 
-      // Auto-pronounce removed - users can manually click pronounce button if needed
+      // Auto-pronounce when flipping to back (ALL modes, except help/tutorial card)
+      if (currentDeck.length > 0 && !isOnStartingCard) {
+        setTimeout(() => speakSpanish(), 300);
+      }
     }
 
     // Unflip card
