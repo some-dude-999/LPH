@@ -2445,7 +2445,7 @@
           <div class="menu-field" style="margin-bottom: 25px;">
             <label>Spanish Voice</label>
             <select id="menu-voice">
-              <option value="">Loading voices...</option>
+              <option value="">Default</option>
             </select>
           </div>
 
@@ -2553,9 +2553,8 @@
         }
 
         // Voice selector - use saved state (currentVoice or savedVoiceURI)
-        // No "Default" placeholder - always show actual voice name
         if (menuVoice && spanishVoices.length > 0) {
-          menuVoice.innerHTML = ''; // Clear - no placeholder
+          menuVoice.innerHTML = '<option value="">Default</option>';
           spanishVoices.forEach((voice) => {
             const option = document.createElement('option');
             option.value = voice.voiceURI;
@@ -2563,20 +2562,14 @@
             menuVoice.appendChild(option);
           });
 
-          // Use currentVoice if set, otherwise use savedVoiceURI from state, otherwise first voice
+          // Use currentVoice if set, otherwise use savedVoiceURI from state
           const voiceURIToRestore = currentVoice ? currentVoice.voiceURI : savedVoiceURI;
-          if (voiceURIToRestore && spanishVoices.find(v => v.voiceURI === voiceURIToRestore)) {
+          if (voiceURIToRestore) {
             menuVoice.value = voiceURIToRestore;
             // Also set currentVoice if we have the URI but not the voice object
             if (!currentVoice && savedVoiceURI) {
               currentVoice = spanishVoices.find(v => v.voiceURI === savedVoiceURI) || null;
             }
-          } else {
-            // No saved voice or saved voice not found - default to first voice
-            const firstVoice = spanishVoices[0];
-            menuVoice.value = firstVoice.voiceURI;
-            currentVoice = firstVoice;
-            savedVoiceURI = firstVoice.voiceURI;
           }
 
           menuVoice.addEventListener('change', (e) => {
@@ -2587,23 +2580,27 @@
           });
         }
 
-        // Speed buttons - use CSS classes for cardboard styling
+        // Speed buttons - always set from saved state, never auto-select
         const speedBtns = document.querySelectorAll('.menu-speed-btn');
-        // First reset ALL buttons to default state (remove active class)
+        // First reset ALL buttons to default state
         speedBtns.forEach(b => {
-          b.classList.remove('active');
+          b.style.background = '#F5E6D3';
+          b.style.color = '#2C1810';
         });
         // Then highlight the one matching saved currentSpeed
         speedBtns.forEach(btn => {
           if (parseFloat(btn.dataset.speed) === currentSpeed) {
-            btn.classList.add('active');
+            btn.style.background = '#8B7355';
+            btn.style.color = '#F5E6D3';
           }
           btn.addEventListener('click', () => {
             currentSpeed = parseFloat(btn.dataset.speed);
             speedBtns.forEach(b => {
-              b.classList.remove('active');
+              b.style.background = '#F5E6D3';
+              b.style.color = '#2C1810';
             });
-            btn.classList.add('active');
+            btn.style.background = '#8B7355';
+            btn.style.color = '#F5E6D3';
             saveState();
           });
         });
@@ -2626,7 +2623,7 @@
       const menuWordpack = document.getElementById('menu-wordpack');
       if (!menuWordpack || !actNumber) return;
 
-      menuWordpack.innerHTML = ''; // Clear existing options - no placeholder
+      menuWordpack.innerHTML = '<option value="">-- Select Wordpack --</option>';
 
       const actData = loadedActs[actNumber];
       if (!actData) return;
@@ -3936,13 +3933,8 @@
         flipCard();
       }
     });
-    // Reset/Refresh button - closes menu if open, then resets deck
     resetBtn.addEventListener('click', () => {
       playButtonClickSound();
-      // Close menu if open
-      if (isOnStartingCard) {
-        exitStartingCard();
-      }
       resetDeck();
     });
 
@@ -4031,21 +4023,6 @@
       }
     });
 
-    // KEY FEATURE: Click outside menu to close it
-    // Clicking anywhere outside the flashcard area closes the menu
-    document.addEventListener('click', (e) => {
-      if (!isOnStartingCard) return; // Only when menu is open
-
-      // Check if click is outside the flashcard
-      const flashcardEl = document.querySelector('.flashcard');
-      if (!flashcardEl.contains(e.target)) {
-        // Also check it's not the menu button itself (handled separately)
-        if (!menuBtn.contains(e.target)) {
-          exitStartingCard();
-        }
-      }
-    });
-
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
       // Don't handle navigation if on starting card (menu)
@@ -4128,15 +4105,10 @@
     });
 
     // Mode selector event listeners
-    // KEY FEATURE: Clicking mode while menu open closes menu and switches to that mode
     modeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         playButtonClickSound();
         const mode = btn.dataset.mode;
-        // Close menu if open, then switch mode
-        if (isOnStartingCard) {
-          exitStartingCard();
-        }
         switchMode(mode);
       });
     });
