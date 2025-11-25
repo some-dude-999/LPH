@@ -2603,10 +2603,6 @@
             currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
             savedVoiceURI = newVoiceURI; // Also update savedVoiceURI
             saveState();
-            // Preview the new voice by speaking the current word
-            if (currentDeck.length > 0) {
-              setTimeout(() => speakSpanish(), 100);
-            }
           });
         }
 
