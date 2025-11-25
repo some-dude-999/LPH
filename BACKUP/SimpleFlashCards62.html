@@ -2137,7 +2137,7 @@
       lp2.frequency.value = 580;
       
       const gain = ctx.createGain();
-      gain.gain.value = 2.5; // Page turn volume
+      gain.gain.value = 3.5; // Louder page turn - increased from 2.0
 
       source.connect(lp);
       lp.connect(lp2);
@@ -2166,8 +2166,8 @@
         osc.type = 'sine';
         osc.frequency.value = freq;
 
-        // Volume decreases for each note in chord (0.2, 0.16, 0.12)
-        const vol = 0.2 - i * 0.04;
+        // Volume decreases for each note in chord (0.35, 0.28, 0.21)
+        const vol = 0.35 - i * 0.07;
         gain.gain.setValueAtTime(0, now);
         gain.gain.linearRampToValueAtTime(vol, now + 0.01);
         gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
@@ -2203,7 +2203,7 @@
 
         const startTime = now + i * 0.12; // Stagger the two notes
         gain.gain.setValueAtTime(0, startTime);
-        gain.gain.linearRampToValueAtTime(0.2, startTime + 0.01);
+        gain.gain.linearRampToValueAtTime(0.3, startTime + 0.01);
         gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.15);
 
         osc.connect(filter);
@@ -2350,7 +2350,7 @@
 
       // Moderate volume for satisfying click
       const gain = ctx.createGain();
-      gain.gain.value = 0.8; // Keyboard click volume
+      gain.gain.value = 0.35 + Math.random() * 0.1; // 0.35-0.45 volume
 
       source.connect(hp);
       hp.connect(bp1);
