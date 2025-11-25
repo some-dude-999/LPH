@@ -1855,9 +1855,9 @@
     <!-- Left group: Got It / Don't Got It (reading mode only) -->
     <button class="control-btn" id="got-it-btn" data-tooltip="">✓</button>
     <button class="control-btn" id="confused-btn" data-tooltip="">✗</button>
-    <!-- Mic button (speaking mode only) - before separator so divider shows in speaking mode -->
-    <button class="control-btn" id="mic-btn-control" data-tooltip="" style="display: none;">🎤</button>
     <div class="control-separator" id="control-separator"></div>
+    <!-- Mic button (speaking mode only) -->
+    <button class="control-btn" id="mic-btn-control" data-tooltip="" style="display: none;">🎤</button>
     <!-- Right group: Pronounce / Peek (all modes) -->
     <button class="control-btn" id="pronounce-btn" data-tooltip="">🗣️</button>
     <button class="control-btn" id="peek-btn" data-tooltip="">❓</button>
@@ -3521,19 +3521,14 @@
       }
 
       // Show/hide control bar buttons based on mode
-      // Got It and Confused buttons: only in reading mode
+      // Got It and Confused buttons + separator: only in reading mode
       if (currentMode === 'reading') {
         gotItBtn.style.display = 'flex';
         confusedBtn.style.display = 'flex';
+        controlSeparator.style.display = 'block';
       } else {
         gotItBtn.style.display = 'none';
         confusedBtn.style.display = 'none';
-      }
-
-      // Separator: show in reading mode (after ✓/✗) and speaking mode (after 🎤)
-      if (currentMode === 'reading' || currentMode === 'speaking') {
-        controlSeparator.style.display = 'block';
-      } else {
         controlSeparator.style.display = 'none';
       }
 
