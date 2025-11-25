@@ -268,33 +268,6 @@
     </label>
   </p>
 
-  <!--
-    PRONUNCIATION MODE CHECKBOX
-    When enabled, adds 2 columns for speech recognition practice:
-    - Column 3: Record button (🎤) to capture user's pronunciation
-    - Column 4: Percentage correct (similarity score using Levenshtein distance)
-
-    This demonstrates the CORE PRONUNCIATION MECHANIC used in language learning games
-    like SimpleFlashCards.html. The mechanic includes:
-    - Web Speech API for speech recognition
-    - Levenshtein distance for fuzzy string matching
-    - Percentage similarity calculation
-    - Visual feedback with color-coded scores
-    - Language-specific recognition (Spanish, Chinese, English)
-
-    SPEECH RECOGNITION NOTES:
-    - Uses webkitSpeechRecognition (Chrome) or SpeechRecognition (standard)
-    - Recognition language matches target language (es-ES, zh-CN, en-US)
-    - Multiple alternatives checked for best match
-    - Works best in Chrome/Edge browsers
-  -->
-  <p>
-    <label>
-      <input type="checkbox" id="pronunciationMode">
-      Pronunciation Mode (adds record button and accuracy percentage - speech recognition demo)
-    </label>
-  </p>
-
   <table border="1" cellpadding="8" cellspacing="0">
     <thead>
       <tr id="tableHeaderRow">
@@ -416,8 +389,6 @@
       - multipleChoiceMode: Boolean flag for showing wrong answer columns
       - typingMode: Boolean flag for showing typing practice columns
       - typingStates: Map tracking typing state for each word (wordIndex -> state object)
-      - pronunciationMode: Boolean flag for showing pronunciation practice columns
-      - pronunciationStates: Map tracking pronunciation state for each word (wordIndex -> { score, heard, attempted })
     */
     let state = {
       currentLanguage: 'Spanish',  // Default language
@@ -427,49 +398,8 @@
       currentNativeLanguage: 1,     // Default to English column (index 1 for Spanish)
       multipleChoiceMode: false,    // Default to basic 2-column mode
       typingMode: false,            // Default to typing mode off
-      typingStates: new Map(),      // Per-word typing state { typed: Set(), wrongLetters: [], wrongCount: 0 }
-      pronunciationMode: false,     // Default to pronunciation mode off
-      pronunciationStates: new Map() // Per-word pronunciation state { score: null, heard: '', attempted: false }
+      typingStates: new Map()       // Per-word typing state { typed: Set(), wrongLetters: [], wrongCount: 0 }
     };
-
-    // ============================================================
-    // SPEECH RECOGNITION SETUP
-    // ============================================================
-
-    /*
-      Web Speech API setup for pronunciation recognition.
-
-      BROWSER SUPPORT:
-      - Chrome: Full support (webkitSpeechRecognition)
-      - Edge: Full support (SpeechRecognition)
-      - Firefox: Partial support
-      - Safari: Limited support
-
-      CONFIGURATION:
-      - continuous: false (single utterance recognition)
-      - interimResults: false (only final results)
-      - maxAlternatives: 5 (check multiple interpretations for best match)
-      - lang: Dynamic based on target language
-    */
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    let recognition = null;
-    let isListening = false;
-    let currentListeningWordIndex = null;  // Track which word is being recorded
-
-    // Language code mapping for speech recognition
-    const SPEECH_LANG_CODES = {
-      'Spanish': 'es-ES',
-      'Chinese': 'zh-CN',
-      'English': 'en-US'
-    };
-
-    if (SpeechRecognition) {
-      recognition = new SpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = false;
-      recognition.maxAlternatives = 5;
-      // Language will be set dynamically based on currentLanguage
-    }
 
     // ============================================================
     // DECODER FUNCTION: Decodes Obfuscated Modules
@@ -558,7 +488,6 @@
       setupLanguageRadioButtons();
       setupMultipleChoiceCheckbox();
       setupTypingModeCheckbox();
-      setupPronunciationModeCheckbox();
       populateActDropdown();
       populateNativeLanguageDropdown();
 
@@ -714,167 +643,6 @@
     }
 
     // ============================================================
-    // SETUP PRONUNCIATION MODE CHECKBOX: Event Listener
-    // ============================================================
-
-    /*
-      Attaches change event listener to pronunciation mode checkbox.
-      When toggled, refreshes the vocabulary table to show/hide pronunciation columns.
-      Also resets all pronunciation states when enabled.
-    */
-    function setupPronunciationModeCheckbox() {
-      const checkbox = document.getElementById('pronunciationMode');
-      checkbox.addEventListener('change', (e) => {
-        state.pronunciationMode = e.target.checked;
-
-        // Reset pronunciation states when toggling mode
-        state.pronunciationStates.clear();
-
-        displayVocabulary();  // Refresh table with new mode
-      });
-    }
-
-    // ============================================================
-    // START LISTENING: Begin Speech Recognition for a Word
-    // ============================================================
-
-    /*
-      Starts speech recognition for a specific word in the vocabulary table.
-
-      PROCESS:
-      1. Check if speech recognition is available
-      2. Set recognition language based on target language
-      3. Start listening
-      4. On result: Calculate similarity, update state, refresh display
-      5. On error: Handle gracefully (no-speech, permission denied)
-
-      PARAMETERS:
-      - wordIndex: Index of word in the pack (for state tracking)
-      - correctWord: The expected word (target language)
-      - recordButton: The button element to update visual state
-
-      VISUAL FEEDBACK:
-      - Button shows "🔴" while recording
-      - Button shows "🎤" when idle
-    */
-    function startListeningForPronunciation(wordIndex, correctWord, recordButton) {
-      if (!recognition) {
-        alert('Speech recognition is not supported in your browser. Try Chrome or Edge.');
-        return;
-      }
-
-      if (isListening) {
-        // Already listening, ignore
-        return;
-      }
-
-      isListening = true;
-      currentListeningWordIndex = wordIndex;
-
-      // Set language based on current target language
-      recognition.lang = SPEECH_LANG_CODES[state.currentLanguage] || 'en-US';
-
-      // Visual feedback - show recording state
-      recordButton.textContent = '🔴';
-      recordButton.style.backgroundColor = '#fee2e2';  // Light red background
-
-      // Handle successful recognition
-      recognition.onresult = (event) => {
-        const results = event.results[0];
-        let bestMatch = results[0].transcript;
-        let bestScore = 0;
-
-        // Check all alternatives for best match
-        for (let i = 0; i < results.length; i++) {
-          const transcript = results[i].transcript;
-          const score = calculateSimilarity(correctWord, transcript);
-          if (score > bestScore) {
-            bestScore = score;
-            bestMatch = transcript;
-          }
-        }
-
-        // Update state with results
-        state.pronunciationStates.set(wordIndex, {
-          score: bestScore,
-          heard: bestMatch,
-          attempted: true
-        });
-
-        // Reset button state
-        recordButton.textContent = '🎤';
-        recordButton.style.backgroundColor = '';
-
-        // Update the display to show score
-        updatePronunciationDisplay(wordIndex, recordButton);
-      };
-
-      // Handle errors
-      recognition.onerror = (event) => {
-        console.error('Speech recognition error:', event.error);
-        isListening = false;
-        currentListeningWordIndex = null;
-
-        // Reset button state
-        recordButton.textContent = '🎤';
-        recordButton.style.backgroundColor = '';
-
-        if (event.error === 'no-speech') {
-          // Update state to show 0%
-          state.pronunciationStates.set(wordIndex, {
-            score: 0,
-            heard: '(no speech detected)',
-            attempted: true
-          });
-          updatePronunciationDisplay(wordIndex, recordButton);
-        } else if (event.error === 'not-allowed') {
-          alert('Microphone access denied. Please allow microphone access to use this feature.');
-        }
-      };
-
-      // Handle end of recognition
-      recognition.onend = () => {
-        isListening = false;
-        currentListeningWordIndex = null;
-
-        // Ensure button is reset
-        recordButton.textContent = '🎤';
-        recordButton.style.backgroundColor = '';
-      };
-
-      // Start listening
-      recognition.start();
-    }
-
-    // ============================================================
-    // UPDATE PRONUNCIATION DISPLAY: Show Score in Table Cell
-    // ============================================================
-
-    /*
-      Updates the score column for a word after pronunciation attempt.
-
-      PARAMETERS:
-      - wordIndex: Index of word in pack
-      - recordButton: The button element (to find the row)
-    */
-    function updatePronunciationDisplay(wordIndex, recordButton) {
-      const pronState = state.pronunciationStates.get(wordIndex);
-      if (!pronState) return;
-
-      // Find the score cell (next sibling of button's parent cell)
-      const row = recordButton.closest('tr');
-      if (!row) return;
-
-      // Score cell is the last cell in the row when pronunciation mode is on
-      const scoreCell = row.cells[row.cells.length - 1];
-      if (scoreCell) {
-        const score = pronState.score;
-        scoreCell.innerHTML = `<span style="${getScoreStyle(score)}">${score}%</span>`;
-        scoreCell.title = `Heard: "${pronState.heard}"`;
-      }
-    }
-
-    // ============================================================
     // AUDIO CONTEXT: For Typing Sound Generation
     // ============================================================
 
@@ -962,125 +730,6 @@
       gain.connect(ctx.destination);
 
       source.start();
-    }
-
-    // ============================================================
-    // LEVENSHTEIN DISTANCE: For Pronunciation Similarity
-    // ============================================================
-
-    /*
-      Calculates the Levenshtein (edit) distance between two strings.
-      This is the minimum number of single-character edits (insertions,
-      deletions, or substitutions) required to change one string into another.
-
-      ALGORITHM: Dynamic Programming approach
-      - Time complexity: O(m * n) where m and n are string lengths
-      - Space complexity: O(m * n) for the DP table
-
-      EXAMPLE:
-      - "hola" vs "hola" = 0 (identical)
-      - "hola" vs "hole" = 1 (one substitution)
-      - "hola" vs "hol" = 1 (one deletion)
-      - "hola" vs "holaa" = 1 (one insertion)
-
-      INPUT: Two strings to compare
-      OUTPUT: Integer distance (0 = identical, higher = more different)
-    */
-    function levenshteinDistance(str1, str2) {
-      const m = str1.length;
-      const n = str2.length;
-
-      // Create DP table
-      const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
-
-      // Initialize base cases
-      for (let i = 0; i <= m; i++) dp[i][0] = i;
-      for (let j = 0; j <= n; j++) dp[0][j] = j;
-
-      // Fill DP table
-      for (let i = 1; i <= m; i++) {
-        for (let j = 1; j <= n; j++) {
-          if (str1[i - 1] === str2[j - 1]) {
-            dp[i][j] = dp[i - 1][j - 1];  // No edit needed
-          } else {
-            dp[i][j] = 1 + Math.min(
-              dp[i - 1][j],     // Deletion
-              dp[i][j - 1],     // Insertion
-              dp[i - 1][j - 1]  // Substitution
-            );
-          }
-        }
-      }
-
-      return dp[m][n];
-    }
-
-    // ============================================================
-    // SIMILARITY PERCENTAGE: Convert Distance to Percentage
-    // ============================================================
-
-    /*
-      Converts Levenshtein distance to a percentage similarity score.
-
-      FORMULA: ((maxLen - distance) / maxLen) * 100
-      - Perfect match = 100%
-      - Completely different = 0%
-
-      NORMALIZATION:
-      - Both strings are lowercased for comparison
-      - Trimmed of whitespace
-
-      EXAMPLES:
-      - "hola" vs "hola" = 100%
-      - "hola" vs "hole" = 75% (3 of 4 chars match concept)
-      - "hello" vs "hola" = 40% (2 edits on length 5)
-
-      INPUT: expected (correct answer), heard (speech recognition result)
-      OUTPUT: Integer percentage 0-100
-    */
-    function calculateSimilarity(expected, heard) {
-      const exp = expected.toLowerCase().trim();
-      const hrd = heard.toLowerCase().trim();
-
-      if (exp === hrd) return 100;
-      if (hrd.length === 0) return 0;
-
-      const distance = levenshteinDistance(exp, hrd);
-      const maxLen = Math.max(exp.length, hrd.length);
-      const similarity = Math.max(0, ((maxLen - distance) / maxLen) * 100);
-
-      return Math.round(similarity);
-    }
-
-    // ============================================================
-    // SCORE STYLING: Color-code percentage scores
-    // ============================================================
-
-    /*
-      Returns CSS class name based on pronunciation score.
-
-      THRESHOLDS:
-      - 90%+ = Excellent (green)
-      - 75%+ = Good (blue)
-      - 50%+ = Okay (orange)
-      - Below 50% = Poor (red)
-    */
-    function getScoreClass(score) {
-      if (score >= 90) return 'excellent';
-      if (score >= 75) return 'good';
-      if (score >= 50) return 'okay';
-      return 'poor';
-    }
-
-    /*
-      Returns inline style for score coloring.
-      Used since we don't have a separate CSS file.
-    */
-    function getScoreStyle(score) {
-      if (score >= 90) return 'color: #22c55e; font-weight: bold;';  // Green
-      if (score >= 75) return 'color: #3b82f6; font-weight: bold;';  // Blue
-      if (score >= 50) return 'color: #f97316; font-weight: bold;';  // Orange
-      return 'color: #ef4444; font-weight: bold;';                   // Red
     }
 
     // ============================================================
@@ -1526,7 +1175,7 @@
 
       TABLE MODES:
 
-      BASIC MODE (all modes off):
+      BASIC MODE (multipleChoiceMode = false, typingMode = false):
       - 2 columns: Target language (column 0) and Native language (selected)
 
       MULTIPLE CHOICE MODE (multipleChoiceMode = true):
@@ -1538,16 +1187,6 @@
       - 5 columns: Target language, Native language, Typing input, Wrong letters, Wrong count
       - Interactive typing practice with instant feedback
 
-      PRONUNCIATION MODE (pronunciationMode = true):
-      - 4 columns: Target language, Native language, Record button, Score percentage
-      - Speech recognition using Web Speech API
-      - Levenshtein distance for fuzzy string matching
-      - Color-coded percentage scores (green/blue/orange/red)
-
-      MODES CAN BE COMBINED:
-      - Multiple modes can be enabled simultaneously
-      - Columns are added in order: base → multiple choice → typing → pronunciation
-
       PROCESS:
       1. Get selected wordpack from state.loadedData
       2. Check which modes are enabled
@@ -1558,7 +1197,6 @@
          - Display word[nativeLanguageIndex] in column 2 (translation)
          - If multiple choice mode: Generate and display 4 wrong answers
          - If typing mode: Add typing input box and tracking columns
-         - If pronunciation mode: Add record button and score columns
     */
     function displayVocabulary() {
       const tableBody = document.getElementById('vocabularyTable');
@@ -1572,7 +1210,6 @@
       let totalColumns = 2;  // Base: target language + native language
       if (state.multipleChoiceMode) totalColumns += 4;  // Add 4 wrong answer columns
       if (state.typingMode) totalColumns += 3;  // Add typing input + wrong letters + wrong count
-      if (state.pronunciationMode) totalColumns += 2;  // Add record button + percentage score
 
       // Validate selection
       if (!state.currentAct || !state.currentPack) {
@@ -1620,9 +1257,6 @@
       } else if (state.typingMode) {
         headers.push(`<th>Target Word (${targetLanguage})</th>`);
         headers.push(`<th>Translation (${nativeLanguage})</th>`);
-      } else if (state.pronunciationMode) {
-        headers.push(`<th>Say This (${targetLanguage})</th>`);
-        headers.push(`<th>Meaning (${nativeLanguage})</th>`);
       } else {
         headers.push(`<th>I am learning (${targetLanguage})</th>`);
         headers.push(`<th>I speak (${nativeLanguage})</th>`);
@@ -1641,12 +1275,6 @@
         headers.push('<th>Type Here (X = letter)</th>');
         headers.push('<th>Wrong Letters</th>');
         headers.push('<th>Wrong Count</th>');
-      }
-
-      // Pronunciation mode columns (if enabled)
-      if (state.pronunciationMode) {
-        headers.push('<th>Record 🎤</th>');
-        headers.push('<th>Score %</th>');
       }
 
       tableHeaderRow.innerHTML = headers.join('\n');
@@ -1749,56 +1377,6 @@
           row.appendChild(wrongCountCell);
         }
 
-        // PRONUNCIATION MODE COLUMNS: Record button + Score percentage
-        if (state.pronunciationMode) {
-          /*
-            Add pronunciation practice columns for this word:
-            1. Record button (🎤) - Click to start speech recognition
-            2. Score column - Shows percentage similarity after recording
-          */
-          const correctWord = word[0];
-
-          // COLUMN: Record button
-          const recordCell = document.createElement('td');
-          recordCell.style.textAlign = 'center';
-
-          const recordButton = document.createElement('button');
-          recordButton.textContent = '🎤';
-          recordButton.style.fontSize = '1.5em';
-          recordButton.style.padding = '4px 12px';
-          recordButton.style.cursor = 'pointer';
-          recordButton.style.border = '1px solid #ccc';
-          recordButton.style.borderRadius = '4px';
-          recordButton.style.backgroundColor = '#f9f9f9';
-          recordButton.title = 'Click to record your pronunciation';
-
-          // Add click listener to start speech recognition
-          recordButton.addEventListener('click', () => {
-            startListeningForPronunciation(index, correctWord, recordButton);
-          });
-
-          recordCell.appendChild(recordButton);
-          row.appendChild(recordCell);
-
-          // COLUMN: Score percentage (initially shows "-")
-          const scoreCell = document.createElement('td');
-          scoreCell.style.textAlign = 'center';
-          scoreCell.style.fontSize = '1.1em';
-
-          // Check if we have a previous result for this word
-          const pronState = state.pronunciationStates.get(index);
-          if (pronState && pronState.attempted) {
-            const score = pronState.score;
-            scoreCell.innerHTML = `<span style="${getScoreStyle(score)}">${score}%</span>`;
-            scoreCell.title = `Heard: "${pronState.heard}"`;
-          } else {
-            scoreCell.textContent = '-';
-            scoreCell.title = 'Click record to test pronunciation';
-          }
-
-          row.appendChild(scoreCell);
-        }
-
         tableBody.appendChild(row);
       });
 
@@ -1806,7 +1384,6 @@
       let modeParts = [];
       if (state.multipleChoiceMode) modeParts.push('Multiple Choice (act-wide pool)');
       if (state.typingMode) modeParts.push('Typing Practice');
-      if (state.pronunciationMode) modeParts.push('Pronunciation Practice');
       const modeText = modeParts.length > 0 ? modeParts.join(' + ') : 'Basic (2 columns)';
 
       // Count total words in act for debug info
@@ -1843,10 +1420,7 @@
         `- Native Language Column: ${state.currentNativeLanguage}\n` +
         `- Multiple Choice Mode: ${state.multipleChoiceMode ? 'Enabled' : 'Disabled'}\n` +
         `- Typing Mode: ${state.typingMode ? 'Enabled' : 'Disabled'}\n` +
-        `- Pronunciation Mode: ${state.pronunciationMode ? 'Enabled' : 'Disabled'}\n` +
         `- Active Typing States: ${state.typingStates.size}\n` +
-        `- Active Pronunciation States: ${state.pronunciationStates.size}\n` +
-        `- Speech Recognition: ${recognition ? 'Available' : 'Not Available'}\n` +
         `- Loaded Acts: ${Object.keys(state.loadedData).join(', ') || 'None'}`;
     }
 
