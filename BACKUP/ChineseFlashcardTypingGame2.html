@@ -2430,14 +2430,7 @@
               <select id="menu-language">
                 <option value="english">English</option>
                 <option value="spanish">Español</option>
-                <option value="french">Français</option>
                 <option value="portuguese">Português</option>
-                <option value="vietnamese">Tiếng Việt</option>
-                <option value="thai">ภาษาไทย</option>
-                <option value="khmer">ភាសាខ្មែរ</option>
-                <option value="indonesian">Bahasa Indonesia</option>
-                <option value="malay">Bahasa Melayu</option>
-                <option value="filipino">Filipino</option>
               </select>
             </div>
             <div class="menu-field" style="flex: 1; margin-bottom: 0;">
@@ -3215,14 +3208,7 @@
       const labels = {
         'english': 'English',
         'spanish': 'Español',
-        'french': 'Français',
-        'portuguese': 'Português',
-        'vietnamese': 'Tiếng Việt',
-        'thai': 'ภาษาไทย',
-        'khmer': 'ភាសាខ្មែរ',
-        'indonesian': 'Bahasa Indonesia',
-        'malay': 'Bahasa Melayu',
-        'filipino': 'Filipino'
+        'portuguese': 'Português'
       };
       backLabel.textContent = labels[nativeLanguage] || 'English';
     }
@@ -3256,18 +3242,11 @@
       }
 
       const pack = wordpacks[packKey];
-      // Language index mapping for Chinese data: chinese=0, pinyin=1, english=2, spanish=3, french=4, portuguese=5, vietnamese=6, thai=7, khmer=8, indonesian=9, malay=10, filipino=11
+      // Language index mapping for Chinese data: chinese=0, pinyin=1, english=2, spanish=3, french=4, portuguese=5
       const langIndex = {
         'english': 2,
         'spanish': 3,
-        'french': 4,
-        'portuguese': 5,
-        'vietnamese': 6,
-        'thai': 7,
-        'khmer': 8,
-        'indonesian': 9,
-        'malay': 10,
-        'filipino': 11
+        'portuguese': 5
       };
       const nativeIndex = langIndex[nativeLanguage] || 2;
 
