@@ -145,7 +145,6 @@
   <h2>2. Select Act (Learning Stage)</h2>
   <p>Acts are grouped learning stages containing multiple wordpacks.</p>
   <select id="actSelect">
-    <option value="">Loading...</option>
   </select>
 
   <hr>
@@ -160,7 +159,6 @@
   <h2>3. Select Wordpack</h2>
   <p>Individual vocabulary set within the selected act.</p>
   <select id="packSelect">
-    <option value="">First select an act</option>
   </select>
 
   <hr>
@@ -178,7 +176,6 @@
   <h2>4. Select Your Native Language (I Speak)</h2>
   <p>Which language do you speak? This determines the translation column shown.</p>
   <select id="nativeLanguageSelect">
-    <option value="">Loading...</option>
   </select>
 
   <hr>
@@ -1067,7 +1064,7 @@
     */
     function populateActDropdown() {
       const actSelect = document.getElementById('actSelect');
-      actSelect.innerHTML = '<option value="">Select an act</option>';
+      actSelect.innerHTML = '';
 
       const acts = Object.keys(state.loadedData).map(Number).sort((a, b) => a - b);
       const config = LANGUAGE_CONFIG[state.currentLanguage];
@@ -1106,11 +1103,11 @@
       const packSelect = document.getElementById('packSelect');
 
       if (!state.currentAct) {
-        packSelect.innerHTML = '<option value="">First select an act</option>';
+        packSelect.innerHTML = '';
         return;
       }
 
-      packSelect.innerHTML = '<option value="">Select a wordpack</option>';
+      packSelect.innerHTML = '';
 
       const actData = state.loadedData[state.currentAct];
       if (!actData) return;
