@@ -1147,13 +1147,6 @@
       pointer-events: auto;
     }
 
-    /* Header Controls Wrapper - groups mode selector and top buttons */
-    /* On desktop: wrapper is invisible (children use fixed positioning) */
-    /* On tablet/mobile: wrapper becomes a flex row for proper stacking */
-    .header-controls {
-      display: contents; /* Desktop: wrapper doesn't affect layout, children flow normally */
-    }
-
     /* Modal Overlay */
     .modal-overlay {
       position: fixed;
@@ -1404,27 +1397,24 @@
         margin-bottom: 10px;
       }
 
-      /* Header controls wrapper becomes a flex row */
-      .header-controls {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        order: 2;
-        margin-bottom: 10px;
-        width: 100%;
-      }
-
-      /* Mode selector: move to flow inside header-controls */
+      /* Mode selector: move to flow, center it */
       .mode-selector {
         position: static;
+        order: 2;
         justify-content: center;
-        margin-bottom: 0;
+        margin-bottom: 10px;
       }
 
-      /* Top buttons: move to flow inside header-controls */
+      /* Top buttons: move to flow, create a row with mode selector */
       .top-btn {
         position: static;
+        order: 2;
+      }
+
+      /* Create a header controls row */
+      body::before {
+        content: '';
+        display: none;
       }
 
       /* Card counter wrapper */
@@ -1538,12 +1528,6 @@
 
       .mode-selector {
         gap: 8px;
-      }
-
-      /* Tighter header controls gap on mobile */
-      .header-controls {
-        gap: 10px;
-        margin-bottom: 8px;
       }
 
       /* Even smaller top buttons */
@@ -1961,38 +1945,36 @@
   </style>
 </head>
 <body>
-  <div class="wordpack-title" id="wordpack-title">Spanish Flashcard Typing Game</div>
+  <!-- Top Corner Buttons (all on right side) -->
+  <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
+  <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
 
-  <!-- Header Controls: Mode selector + Reset + Menu (stacks horizontally on tablet/mobile) -->
-  <div class="header-controls">
-    <!-- Mode Selector -->
-    <!-- Tooltips are populated dynamically via initializeTooltips() using TOOLTIP_MESSAGES -->
-    <div class="mode-selector">
-      <span class="tooltip-container">
-        <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
-        <span class="tooltip" id="tooltip-reading"></span>
-      </span>
-      <span class="tooltip-container">
-        <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
-        <span class="tooltip" id="tooltip-listening"></span>
-      </span>
-      <span class="tooltip-container">
-        <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
-        <span class="tooltip" id="tooltip-speaking"></span>
-      </span>
-      <span class="tooltip-container">
-        <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
-        <span class="tooltip" id="tooltip-writing"></span>
-      </span>
-    </div>
-    <!-- Top Buttons -->
-    <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
-    <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
-  </div>
+  <div class="wordpack-title" id="wordpack-title">Spanish Flashcard Typing Game</div>
 
   <!-- Fixed-height wrapper prevents card from shifting when stamp indicator appears -->
   <div class="card-counter-wrapper">
     <div class="card-counter" id="card-counter">Choose Wordpack to Begin Studying</div>
+  </div>
+
+  <!-- Mode Selector -->
+  <!-- Tooltips are populated dynamically via initializeTooltips() using TOOLTIP_MESSAGES -->
+  <div class="mode-selector">
+    <span class="tooltip-container">
+      <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
+      <span class="tooltip" id="tooltip-reading"></span>
+    </span>
+    <span class="tooltip-container">
+      <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
+      <span class="tooltip" id="tooltip-listening"></span>
+    </span>
+    <span class="tooltip-container">
+      <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
+      <span class="tooltip" id="tooltip-speaking"></span>
+    </span>
+    <span class="tooltip-container">
+      <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
+      <span class="tooltip" id="tooltip-writing"></span>
+    </span>
   </div>
 
   <div class="flashcard-container">
@@ -3289,9 +3271,14 @@
       }
 
       // ---------------------------------------------------------
-      // Control bar button tooltips REMOVED per user request
-      // Only mode selector buttons have hover tooltips now
+      // Create tooltip elements for control bar buttons
       // ---------------------------------------------------------
+      // Since data-tooltip with ::after can't render HTML, we need actual tooltip elements
+      createButtonTooltip(gotItBtn, TOOLTIP_MESSAGES.gotIt);
+      createButtonTooltip(confusedBtn, TOOLTIP_MESSAGES.confused);
+      createButtonTooltip(pronounceBtn, TOOLTIP_MESSAGES.pronounce);
+      createButtonTooltip(peekBtn, TOOLTIP_MESSAGES.peek);
+      if (micBtnControlEl) createButtonTooltip(micBtnControlEl, TOOLTIP_MESSAGES.record);
     }
 
     // Helper: Create a tooltip element for a button (allows HTML content)
