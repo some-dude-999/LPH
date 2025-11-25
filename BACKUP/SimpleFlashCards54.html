@@ -63,36 +63,7 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      padding-top: 80px; /* Space for fixed header */
       color: var(--color-text-dark);
-    }
-
-    /* ============================================================
-       KEY FEATURE: Fixed Page Header
-       Core Objective: Keep mode buttons, title, and UI buttons
-       always visible at the top of the page
-       Key Behaviors:
-         - Fixed position at top of viewport
-         - Contains mode selector (left), title (center), UI buttons (right)
-         - Always visible even when scrolling/fullscreen
-       ============================================================ */
-    .page-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-      z-index: 100;
-      background: linear-gradient(180deg, rgba(61, 46, 31, 0.85) 0%, rgba(61, 46, 31, 0) 100%);
-    }
-
-    .header-buttons {
-      display: flex;
-      gap: 10px;
     }
 
     /* Remove focus outline from all interactive elements */
@@ -152,21 +123,16 @@
     }
 
     /* Wordpack Title - Warm gold with subtle texture */
-    /* ============================================================
-       KEY FEATURE: Subtle Page Title in Header
-       Core Objective: Show context without distracting from card
-       Key Behaviors:
-         - Faded appearance so card remains focal point
-         - Still visible but not competing for attention
-       ============================================================ */
     .wordpack-title {
-      /* Faded gold gradient - subtle, not the focal point */
+      /* Balanced gold gradient - visible but not toy-like */
       background-image:
         var(--cardboard-texture),
         linear-gradient(180deg,
-          #C4A03A 0%,      /* Muted gold */
-          #B08C28 30%,     /* Faded gold */
-          #9A7B1F 60%,     /* Amber */
+          #D4AF37 0%,      /* Classic gold */
+          #C9A227 20%,     /* Medium gold */
+          #B8960B 40%,     /* Goldenrod */
+          #A67C38 60%,     /* Bronze gold */
+          #8B6914 80%,     /* Dark gold */
           #7A5C1A 100%     /* Deep brown-gold */
         );
       background-blend-mode: overlay;
@@ -175,24 +141,27 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
       font-family: var(--font-ui);
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       font-weight: 600;
+      margin-bottom: 8px;
+      /* Subtle shadows for depth */
       text-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.2);
+        0 2px 4px rgba(0, 0, 0, 0.35),
+        0 1px 1px rgba(184, 134, 11, 0.3);
       opacity: 0;
       transition: opacity 0.3s ease;
-      letter-spacing: 1px;
-      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
-      white-space: nowrap;
+      letter-spacing: 2px;
+      /* Drop shadow for depth */
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
     }
 
     body.game-started .wordpack-title {
-      opacity: 0.65;
+      opacity: 1;
     }
 
     /* Show wordpack title when menu is visible */
     body.showing-menu .wordpack-title {
-      opacity: 0.65;
+      opacity: 1;
     }
 
     /* Card Counter Wrapper - fixed height prevents layout shift when stamp appears */
@@ -1111,8 +1080,10 @@
       margin: 0 5px;
     }
 
-    /* Top Corner Buttons - Flat Cardboard Style (in page header) */
+    /* Top Corner Buttons - Flat Cardboard Style */
     .top-btn {
+      position: fixed;
+      top: 20px;
       width: 50px;
       height: 50px;
       border-radius: 50%;
@@ -1132,6 +1103,7 @@
       font-size: 1.4rem;
       line-height: 1;
       text-align: center;
+      z-index: 100;
       font-family: var(--font-ui);
       font-weight: 600;
     }
@@ -1154,7 +1126,16 @@
       background-size: var(--cardboard-texture-size), 100%;
     }
 
+    .menu-btn {
+      right: 20px;
+    }
+
+    .fullscreen-btn {
+      right: 80px;
+    }
+
     .reset-top-btn {
+      right: 140px;
       opacity: 0;
       pointer-events: none;
     }
@@ -1168,6 +1149,13 @@
     body.showing-menu .reset-top-btn {
       opacity: 1;
       pointer-events: auto;
+    }
+
+    /* Header Controls Wrapper - groups mode selector and top buttons */
+    /* On desktop: wrapper is invisible (children use fixed positioning) */
+    /* On tablet/mobile: wrapper becomes a flex row for proper stacking */
+    .header-controls {
+      display: contents; /* Desktop: wrapper doesn't affect layout, children flow normally */
     }
 
     /* Modal Overlay */
@@ -1445,10 +1433,14 @@
       opacity: 1;
     }
 
-    /* Mode Selector - in page header */
+    /* Mode Selector - Top Left */
     .mode-selector {
+      position: fixed;
+      top: 20px;
+      left: 20px;
       display: flex;
       gap: 10px;
+      z-index: 100;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -1772,8 +1764,10 @@
   </style>
 </head>
 <body>
-  <!-- Fixed Page Header: Mode selector (left) + Title (center) + UI buttons (right) -->
-  <div class="page-header">
+  <div class="wordpack-title" id="wordpack-title">Spanish Flashcard Typing Game</div>
+
+  <!-- Header Controls: Mode selector + Reset + Menu (stacks horizontally on tablet/mobile) -->
+  <div class="header-controls">
     <!-- Mode Selector -->
     <!-- Tooltips are populated dynamically via initializeTooltips() using TOOLTIP_MESSAGES -->
     <div class="mode-selector">
@@ -1794,16 +1788,10 @@
         <span class="tooltip" id="tooltip-writing"></span>
       </span>
     </div>
-
-    <!-- Title - centered, subtle -->
-    <div class="wordpack-title" id="wordpack-title">Spanish Flashcard Typing Game</div>
-
     <!-- Top Buttons -->
-    <div class="header-buttons">
-      <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
-      <button class="top-btn fullscreen-btn" id="fullscreen-btn" aria-label="Toggle fullscreen">⛶</button>
-      <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
-    </div>
+    <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
+    <button class="top-btn fullscreen-btn" id="fullscreen-btn" aria-label="Toggle fullscreen">⛶</button>
+    <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
   </div>
 
   <!-- Fixed-height wrapper prevents card from shifting when stamp indicator appears -->
