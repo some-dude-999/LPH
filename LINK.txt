@@ -5,10 +5,13 @@
 ═══════════════════════════════════════════════════════════════
 ██ HTML PAGES
 ═══════════════════════════════════════════════════════════════
+https://some-dude-999.github.io/LPH/ChineseFlashcardTypingGame.html - [Add description for ChineseFlashcardTypingGame.html]
 https://some-dude-999.github.io/LPH/CsvViewerForManuallyBuildingCSV.html - CSV parser, viewer, and downloader tool with auto-increment filename feature
 https://some-dude-999.github.io/LPH/DecoderTest.html - Test utility for verifying obfuscated JavaScript module decoding
+https://some-dude-999.github.io/LPH/EnglishFlashcardTypingGame.html - [Add description for EnglishFlashcardTypingGame.html]
 https://some-dude-999.github.io/LPH/SimpleFlashCards.html - Multi-mode Spanish flashcard game (Reading, Listening, Writing, Speaking modes in one)
 https://some-dude-999.github.io/LPH/SimpleReadingFlashCard.html - Spanish Reading flashcards - Spanish → English translation practice (single-mode, stripped down)
+https://some-dude-999.github.io/LPH/SpanishFlashcardTypingGame.html - [Add description for SpanishFlashcardTypingGame.html]
 https://some-dude-999.github.io/LPH/SpanishWords/SpanishWordsViewer.html - Interactive Spanish vocabulary pack viewer with analytics, word count validation, and act progression tracking
 https://some-dude-999.github.io/LPH/Who%20Even%20Learns%20Languages%20Dude.html - Demographics visualization with 3 tabs showing native languages of Spanish, English, and Chinese learners worldwide
 
