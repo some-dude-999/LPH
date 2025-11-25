@@ -7,10 +7,10 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 太冷了,tài lěng le,too cold,demasiado frío,trop froid,frio demais,quá lạnh rồi,หนาวเกินไป,ត្រជាក់ពេក,terlalu dingin,terlalu sejuk,sobrang lamig
 暖,nuǎn,warm,cálido,chaud,quente,ấm,อุ่น,កក់,hangat,suam,mainit
 很暖,hěn nuǎn,very warm,muy cálido,très chaud,muito quente,rất ấm,อุ่นมาก,កក់ណាស់,sangat hangat,sangat suam,napaka-init
-暖暖的,nuǎnnuǎn de,warm,calientito,bien chaud,quentinho,ấm áp,อุ่นๆ,កក់ៗ,hangat,suam-suam,mainit-init
+暖暖的,nuǎn nuǎn de,warm,calientito,bien chaud,quentinho,ấm áp,อุ่นๆ,កក់ៗ,hangat,suam-suam,mainit-init
 凉,liáng,cool,fresco,frais,fresco,mát,เย็น,ត្រជាក់,sejuk,sejuk,malamig
 很凉,hěn liáng,very cool,muy fresco,très frais,muito fresco,rất mát,เย็นมาก,ត្រជាក់ណាស់,sangat sejuk,sangat sejuk,napakalaмig
-凉凉的,liángliáng de,cool,fresquito,bien frais,fresquinho,mát mẻ,เย็นๆ,ត្រជាក់ៗ,sejuk,sejuk-sejuk,malamig-lamig
+凉凉的,liáng liáng de,cool,fresquito,bien frais,fresquinho,mát mẻ,เย็นๆ,ត្រជាក់ៗ,sejuk,sejuk-sejuk,malamig-lamig
 干,gān,dry,seco,sec,seco,khô,แห้ง,ស្ងួត,kering,kering,tuyo
 很干,hěn gān,very dry,muy seco,très sec,muito seco,rất khô,แห้งมาก,ស្ងួតណាស់,sangat kering,sangat kering,napakatuyo
 太干了,tài gān le,too dry,demasiado seco,trop sec,seco demais,quá khô rồi,แห้งเกินไป,ស្ងួតពេក,terlalu kering,terlalu kering,sobrang tuyo
@@ -47,9 +47,9 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 重,zhòng,heavy,pesado,lourd,pesado,nặng,หนัก,ធ្ងន់,berat,berat,mabigat
 很重,hěn zhòng,very heavy,muy pesado,très lourd,muito pesado,rất nặng,หนักมาก,ធ្ងន់ណាស់,sangat berat,sangat berat,napakabigat
 太重了,tài zhòng le,too heavy,demasiado pesado,trop lourd,pesado demais,quá nặng rồi,หนักเกินไป,ធ្ងន់ពេក,terlalu berat,terlalu berat,sobrang bigat
-干净,gānjìng,clean,limpio,propre,limpo,sạch,สะอาด,ស្អាត,bersih,bersih,malinis
-很干净,hěn gānjìng,very clean,muy limpio,très propre,muito limpo,rất sạch,สะอาดมาก,ស្អាតណាស់,sangat bersih,sangat bersih,napakalinis
-真干净,zhēn gānjìng,really clean,muy limpio,vraiment propre,muito limpo,thật sạch,สะอาดจริงๆ,ស្អាតណាស់,benar-benar bersih,betul-betul bersih,talagang malinis
+干净,gān jìng,clean,limpio,propre,limpo,sạch,สะอาด,ស្អាត,bersih,bersih,malinis
+很干净,hěn gān jìng,very clean,muy limpio,très propre,muito limpo,rất sạch,สะอาดมาก,ស្អាតណាស់,sangat bersih,sangat bersih,napakalinis
+真干净,zhēn gān jìng,really clean,muy limpio,vraiment propre,muito limpo,thật sạch,สะอาดจริงๆ,ស្អាតណាស់,benar-benar bersih,betul-betul bersih,talagang malinis
 脏,zāng,dirty,sucio,sale,sujo,bẩn,สกปรก,កខ្វក់,kotor,kotor,marumi
 很脏,hěn zāng,very dirty,muy sucio,très sale,muito sujo,rất bẩn,สกปรกมาก,កខ្វក់ណាស់,sangat kotor,sangat kotor,napakarumi
 太脏了,tài zāng le,too dirty,demasiado sucio,trop sale,sujo demais,quá bẩn rồi,สกปรกเกินไป,កខ្វក់ពេក,terlalu kotor,terlalu kotor,sobrang dumi
