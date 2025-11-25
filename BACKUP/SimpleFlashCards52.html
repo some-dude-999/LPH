@@ -122,18 +122,18 @@
       color: var(--color-text-gold);
     }
 
-    /* Wordpack Title - Warm gold with subtle texture */
+    /* Wordpack Title - Light gold with subtle texture */
     .wordpack-title {
-      /* Balanced gold gradient - visible but not toy-like */
+      /* Lighter gold gradient - more visible against dark background */
       background-image:
         var(--cardboard-texture),
         linear-gradient(180deg,
-          #D4AF37 0%,      /* Classic gold */
-          #C9A227 20%,     /* Medium gold */
-          #B8960B 40%,     /* Goldenrod */
-          #A67C38 60%,     /* Bronze gold */
-          #8B6914 80%,     /* Dark gold */
-          #7A5C1A 100%     /* Deep brown-gold */
+          #F0D060 0%,      /* Bright gold */
+          #E8C84C 20%,     /* Light gold */
+          #D4AF37 40%,     /* Classic gold */
+          #C9A227 60%,     /* Medium gold */
+          #B8960B 80%,     /* Goldenrod */
+          #A67C38 100%     /* Bronze gold */
         );
       background-blend-mode: overlay;
       background-size: var(--cardboard-texture-size), 100%;
@@ -146,13 +146,13 @@
       margin-bottom: 8px;
       /* Subtle shadows for depth */
       text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.35),
-        0 1px 1px rgba(184, 134, 11, 0.3);
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 1px 1px rgba(212, 175, 55, 0.3);
       opacity: 0;
       transition: opacity 0.3s ease;
       letter-spacing: 2px;
-      /* Drop shadow for depth */
-      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
+      /* Lighter drop shadow */
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
     }
 
     body.game-started .wordpack-title {
@@ -1564,17 +1564,17 @@
       background-image:
         /* Subtle edge burn/vignette - reduced for smaller card */
         radial-gradient(ellipse at center, transparent 60%, rgba(139, 115, 85, 0.06) 90%, rgba(100, 75, 50, 0.1) 100%),
-        /* Fine dot pattern for fancy paper texture - slightly sharper */
-        radial-gradient(circle, rgba(0,0,0,0.045) 0.5px, transparent 0.5px);
+        /* Fine dot pattern for fancy paper texture */
+        radial-gradient(circle, rgba(0,0,0,0.03) 0.5px, transparent 0.5px);
       background-size: 100% 100%, 4px 4px;
       color: var(--color-text-dark);
       padding: 10px 14px;
       border-radius: 8px;
       overflow: hidden;
-      /* Border and shadow matching card-face style */
+      /* Softer shadow with subtle inset edge burn */
       box-shadow:
-        0 4px 16px rgba(0,0,0,0.3),
-        0 0 0 3px #A08567,
+        0 4px 16px rgba(0,0,0,0.25),
+        0 0 0 1px rgba(139, 115, 85, 0.4),
         inset 0 0 12px rgba(139, 115, 85, 0.06),
         inset 0 0 25px rgba(100, 75, 50, 0.03);
       font-size: 1rem;
