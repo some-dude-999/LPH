@@ -6,40 +6,132 @@
   <title>Wordpack Data Structure Debugger</title>
 
   <!--
-    ============================================================
-    PAKO.JS DEPENDENCY - Required for decompressing obfuscated modules
-    ============================================================
-    Our obfuscated modules use zlib compression (via pako library).
-    This CDN script provides the pako.inflate() function for decompression.
-  -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
-</head>
-<body>
+    ╔══════════════════════════════════════════════════════════════════════════════╗
+    ║                                                                              ║
+    ║   🎮 LANGUAGE LEARNING GAME - REFERENCE TEMPLATE IMPLEMENTATION 🎮           ║
+    ║                                                                              ║
+    ║   This file serves as the CANONICAL REFERENCE for all language learning     ║
+    ║   games in this project. It demonstrates 100% compliance with our design    ║
+    ║   principles and should be used as a template for building new games.       ║
+    ║                                                                              ║
+    ╚══════════════════════════════════════════════════════════════════════════════╝
 
-  <!--
     ============================================================
-    WORDPACK DATA STRUCTURE DEBUGGER
+    TABLE OF CONTENTS
+    ============================================================
+    1. DESIGN PRINCIPLES OVERVIEW
+    2. DATA STRUCTURE ARCHITECTURE
+    3. STATE PERSISTENCE (localStorage)
+    4. DRY (Don't Repeat Yourself) PATTERNS
+    5. KEY FEATURES DOCUMENTATION
+    6. COLUMN MAPPING BY LANGUAGE
+    7. HOW TO USE THIS TEMPLATE
+
+    ============================================================
+    1. DESIGN PRINCIPLES OVERVIEW
     ============================================================
 
-    PURPOSE:
-    This document serves as a technical reference and debugging tool for our
-    language learning game's wordpack data structure. It demonstrates how to:
-    - Load obfuscated JavaScript modules containing wordpack data
-    - Extract and display vocabulary for language learning
-    - Navigate through acts and packs
-    - Map columns to different languages
+    This project follows strict design principles to ensure maintainability,
+    consistency, and ease of development. ALL games must follow these rules:
 
-    TARGET LANGUAGES WE TEACH:
-    - Spanish (7 acts, 5 column structure)
-    - Chinese (5 acts, 12 column structure)
-    - English (5 acts, 5 column structure)
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ PRINCIPLE 1: KEY FEATURES ARE SACRED                                   │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ - Every important feature MUST have a KEY FEATURE comment block        │
+    │ - KEY FEATURES document: Core Objective + Key Behaviors                │
+    │ - KEY FEATURES can NEVER be removed without explicit user request      │
+    │ - Code can change, but the FEATURE must be preserved                   │
+    │                                                                        │
+    │ FORMAT:                                                                │
+    │   // ============================================================     │
+    │   // KEY FEATURE: [High-level description]                            │
+    │   // Core Objective: [Why this feature exists]                        │
+    │   // Key Behaviors:                                                   │
+    │   //   - [Behavior 1 that must be preserved]                          │
+    │   //   - [Behavior 2 that must be preserved]                          │
+    │   // ============================================================     │
+    └─────────────────────────────────────────────────────────────────────────┘
 
-    DATA STRUCTURE OVERVIEW:
-    Each language has multiple "acts" (learning stages), and each act contains
-    multiple "wordpacks" (vocabulary sets).
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ PRINCIPLE 2: DRY (Don't Repeat Yourself) - ENCAPSULATION               │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ - NEVER copy-paste the same code in multiple places                    │
+    │ - If something happens together, put it in ONE function                │
+    │ - Ask: "If I needed to change this, how many places would I update?"   │
+    │ - If answer > 1, you need to encapsulate                               │
+    │                                                                        │
+    │ EXAMPLES IN THIS FILE:                                                 │
+    │   - autoSelectFirstActAndPack(): Called from 2 places                  │
+    │   - setupModeCheckboxes(): Config-driven, not 3 separate functions     │
+    │   - resetListeningState(): Used in 3 event handlers                    │
+    │   - normalizeCharForTyping(): Single function for accent removal       │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ PRINCIPLE 3: STATE PERSISTENCE (localStorage) - MANDATORY              │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ - ALL user-configurable settings MUST be saved to localStorage         │
+    │ - On page load, restore saved state (or use sensible defaults)         │
+    │ - User should return to EXACTLY where they left off                    │
+    │ - Validate saved values against current valid options                  │
+    │                                                                        │
+    │ WHAT MUST BE SAVED:                                                    │
+    │   - Language selection (Spanish, Chinese, English)                     │
+    │   - Act selection                                                      │
+    │   - Pack selection                                                     │
+    │   - Native language ("I speak") selection                              │
+    │   - Mode toggles (multiple choice, typing, pronunciation)              │
+    │   - Any other user preference                                          │
+    │                                                                        │
+    │ WHEN TO SAVE:                                                          │
+    │   - On ANY menu/setting change                                         │
+    │   - Call saveState() immediately after state change                    │
+    │                                                                        │
+    │ VALIDATION RULE:                                                       │
+    │   - Always validate saved values against current valid options         │
+    │   - If saved value is invalid, fall back to default                    │
+    │   - This prevents bugs when options change between versions            │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ PRINCIPLE 4: SINGLE SOURCE OF TRUTH (Configuration Objects)            │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ - All configuration lives in JavaScript objects, NOT hardcoded HTML    │
+    │ - Dropdowns are EMPTY in HTML, populated from config                   │
+    │ - If you delete the config, NOTHING should work                        │
+    │                                                                        │
+    │ IN THIS FILE:                                                          │
+    │   - LANGUAGE_CONFIG: All module paths, columns, native languages       │
+    │   - VALID_MODES: List of valid mode options for validation             │
+    │   - HTML dropdowns: Empty <select></select> elements                   │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+    ============================================================
+    2. DATA STRUCTURE ARCHITECTURE
+    ============================================================
+
+    Our language learning data follows a hierarchical structure:
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │                         DATA HIERARCHY                                  │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │                                                                        │
+    │   LANGUAGE (Spanish, Chinese, English)                                 │
+    │       │                                                                │
+    │       └── ACT (Learning Stage - e.g., "Foundation", "Daily Life")      │
+    │             │                                                          │
+    │             └── WORDPACK (Vocabulary Set - e.g., "Greetings")          │
+    │                   │                                                    │
+    │                   ├── META (Pack metadata: number, titles)             │
+    │                   │                                                    │
+    │                   └── WORDS (Array of word arrays)                     │
+    │                         │                                              │
+    │                         └── WORD (Array of translations by column)     │
+    │                                                                        │
+    └─────────────────────────────────────────────────────────────────────────┘
 
     OBFUSCATED MODULE STRUCTURE:
-    Each module exports a dictionary of wordpacks with this structure:
+    Each .js module exports a dictionary of wordpacks:
 
     {
       "p{act}_{pack}_{name}": {
@@ -51,27 +143,120 @@
           ... // Other language translations as supported
         },
         "words": [
-          ["word1_col1", "word1_col2", "word1_col3", ...],  // Each word is an array
-          ["word2_col1", "word2_col2", "word2_col3", ...],
-          ["word3_col1", "word3_col2", "word3_col3", ...]
+          ["word1_col0", "word1_col1", "word1_col2", ...],  // Each word = array
+          ["word2_col0", "word2_col1", "word2_col2", ...],
+          ["word3_col0", "word3_col1", "word3_col2", ...]
         ]
       },
       "p{act}_{pack}_{name}": { ... },
       ...
     }
 
-    COLUMN MAPPING BY LANGUAGE:
-    The words array contains arrays where each index maps to a specific language:
+    CRITICAL: Column 0 is ALWAYS the target language being learned!
+
+    ============================================================
+    3. STATE PERSISTENCE (localStorage) - IMPLEMENTATION
+    ============================================================
+
+    Every game MUST implement these functions:
+
+    const STORAGE_KEY = 'uniqueGameNameState';  // Unique per game
+
+    function saveState() {
+      const stateToSave = {
+        language: state.currentLanguage,
+        act: state.currentAct,
+        pack: state.currentPack,
+        nativeLanguage: state.currentNativeLanguage,
+        // ... all other user settings
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(stateToSave));
+    }
+
+    function loadState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        return saved ? JSON.parse(saved) : null;
+      } catch (e) {
+        console.error('Failed to load state:', e);
+        return null;
+      }
+    }
+
+    function restoreSavedState() {
+      const saved = loadState();
+      if (!saved) return;
+
+      // ALWAYS validate before restoring!
+      if (saved.language && VALID_LANGUAGES.includes(saved.language)) {
+        state.currentLanguage = saved.language;
+      }
+      // ... validate and restore other settings
+    }
+
+    ============================================================
+    4. DRY PATTERNS - EXAMPLES IN THIS FILE
+    ============================================================
+
+    PATTERN 1: Encapsulated Helper Functions
+    ─────────────────────────────────────────
+    PROBLEM: Same 5 lines of code in 2+ places
+    SOLUTION: Extract to named function, call from both places
+
+    Example: autoSelectFirstActAndPack()
+    - Used in: initialize(), setupLanguageRadioButtons()
+    - Benefit: Change logic in ONE place
+
+    PATTERN 2: Configuration-Driven Loops
+    ─────────────────────────────────────────
+    PROBLEM: 3 separate functions doing almost the same thing
+    SOLUTION: One function with config array
+
+    Example: setupModeCheckboxes()
+    - Config: [{ id, stateKey, statesToClear }, ...]
+    - One loop handles all checkboxes identically
+    - Add new checkbox = add to config array
+
+    PATTERN 3: Callback Parameters
+    ─────────────────────────────────────────
+    PROBLEM: Same action with different follow-up
+    SOLUTION: Function takes callback parameter
+
+    Example: showSuccessStamp(onComplete)
+    - Stamp + sound + delay always happen together
+    - What happens AFTER varies
+    - Pass the variation as callback
+
+    ============================================================
+    5. KEY FEATURES IN THIS FILE
+    ============================================================
+
+    Search for "KEY FEATURE:" to find all documented features:
+
+    1. Global State Management - Single source of truth for UI state
+    2. State Persistence (localStorage) - Save/restore user settings
+    3. Module Decoding - 3-layer obfuscation (base64 + zlib + reverse)
+    4. Auto-Select First Act/Pack - DRY encapsulated function
+    5. Language Selection - Switch between target languages
+    6. Mode Checkboxes - DRY config-driven setup
+    7. Speech Recognition - Pronunciation practice with scoring
+    8. Multiple Choice Generation - Act-wide pool, duplicate filtering
+    9. Typing Practice - Character-by-character with accent tolerance
+    10. Vocabulary Table Display - Multi-mode rendering
+
+    ============================================================
+    6. COLUMN MAPPING BY LANGUAGE
+    ============================================================
 
     SPANISH (5 columns):
-      [0] = Spanish (language being learned)
+      [0] = Spanish (TARGET - language being learned)
       [1] = English
       [2] = Chinese
       [3] = Pinyin
       [4] = Portuguese
 
     CHINESE (12 columns):
-      [0] = Chinese (language being learned)
+      [0] = Chinese (TARGET - language being learned)
       [1] = Pinyin
       [2] = English
       [3] = Spanish
@@ -85,24 +270,49 @@
       [11] = Filipino
 
     ENGLISH (5 columns):
-      [0] = English (language being learned)
+      [0] = English (TARGET - language being learned)
       [1] = Chinese
       [2] = Pinyin
       [3] = Spanish
       [4] = Portuguese
 
-    HOW TO USE THIS DATA IN A GAME:
-    1. Import the obfuscated module using decodeObfuscatedModule()
-    2. Select a wordpack from the returned dictionary
-    3. Access wordpack.meta for pack information
-    4. Access wordpack.words for the vocabulary array
-    5. Each word is wordpack.words[i], where i is the word index
-    6. Each column is wordpack.words[i][columnIndex]
-    7. Column 0 is always the language being learned
-    8. Other columns provide translations in various languages
+    ============================================================
+    7. HOW TO USE THIS TEMPLATE
+    ============================================================
+
+    To create a new game based on this template:
+
+    1. Copy this file as your starting point
+    2. Change STORAGE_KEY to unique value for your game
+    3. Keep all KEY FEATURE implementations
+    4. Keep all DRY helper functions
+    5. Keep localStorage save/restore pattern
+    6. Add your game-specific features with KEY FEATURE comments
+    7. Follow the same documentation style
+
+    CHECKLIST FOR NEW GAMES:
+    □ Unique STORAGE_KEY defined
+    □ saveState() called on every setting change
+    □ loadState() called during initialization
+    □ Saved values validated against valid options
+    □ All KEY FEATURES documented with comment blocks
+    □ No copy-pasted code (use encapsulated functions)
+    □ Configuration objects as single source of truth
+    □ Empty HTML dropdowns, populated from JS config
 
     ============================================================
   -->
+
+  <!--
+    ============================================================
+    PAKO.JS DEPENDENCY - Required for decompressing obfuscated modules
+    ============================================================
+    Our obfuscated modules use zlib compression (via pako library).
+    This CDN script provides the pako.inflate() function for decompression.
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+</head>
+<body>
 
   <h1>Wordpack Data Structure Debugger</h1>
   <p>Technical reference for language learning game data architecture</p>
@@ -323,6 +533,44 @@
   <script type="module">
 
     // ============================================================
+    // KEY FEATURE: State Persistence (localStorage)
+    // Core Objective: Save and restore ALL user settings across sessions
+    // Key Behaviors:
+    //   - Save state on EVERY setting change (language, act, pack, modes)
+    //   - Restore state on page load with validation
+    //   - Validate saved values against current valid options
+    //   - Fall back to defaults if saved values are invalid
+    // ============================================================
+
+    /*
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │ STORAGE_KEY - Unique identifier for this game's localStorage           │
+      ├─────────────────────────────────────────────────────────────────────────┤
+      │ IMPORTANT: Each game MUST have a unique STORAGE_KEY!                   │
+      │                                                                        │
+      │ When creating a new game from this template:                           │
+      │   1. Change this value to something unique (e.g., 'myNewGameState')    │
+      │   2. This prevents different games from overwriting each other's data  │
+      └─────────────────────────────────────────────────────────────────────────┘
+    */
+    const STORAGE_KEY = 'decoderTestState';
+
+    /*
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │ VALID OPTIONS - Used for validating saved state                        │
+      ├─────────────────────────────────────────────────────────────────────────┤
+      │ These arrays define what values are acceptable for each setting.       │
+      │ When restoring saved state, we check if the saved value is in these.   │
+      │ If not, we fall back to the default value.                             │
+      │                                                                        │
+      │ WHY THIS MATTERS:                                                      │
+      │ If you change valid options (e.g., add/remove a language), users with  │
+      │ old saved state won't have invalid values restored.                    │
+      └─────────────────────────────────────────────────────────────────────────┘
+    */
+    const VALID_LANGUAGES = ['Spanish', 'Chinese', 'English'];
+
+    // ============================================================
     // CONFIGURATION: Language Module Paths and Column Structures
     // ============================================================
 
@@ -425,6 +673,179 @@
       pronunciationMode: false,     // Default to pronunciation mode off
       pronunciationStates: new Map() // Per-word pronunciation state { score: null, heard: '', attempted: false }
     };
+
+    // ============================================================
+    // STATE PERSISTENCE FUNCTIONS (localStorage)
+    // ============================================================
+
+    /*
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │ saveState() - Save ALL user-configurable settings to localStorage      │
+      ├─────────────────────────────────────────────────────────────────────────┤
+      │ WHEN TO CALL:                                                          │
+      │   - On language change                                                 │
+      │   - On act change                                                      │
+      │   - On pack change                                                     │
+      │   - On native language change                                          │
+      │   - On any mode toggle (multiple choice, typing, pronunciation)        │
+      │                                                                        │
+      │ WHAT WE SAVE:                                                          │
+      │   - currentLanguage: Target language being learned                     │
+      │   - currentAct: Selected act number                                    │
+      │   - currentPack: Selected pack key                                     │
+      │   - currentNativeLanguage: Column index for "I speak" language         │
+      │   - multipleChoiceMode: Boolean for wrong answers mode                 │
+      │   - typingMode: Boolean for typing practice mode                       │
+      │   - pronunciationMode: Boolean for speech recognition mode             │
+      │                                                                        │
+      │ WHAT WE DON'T SAVE:                                                    │
+      │   - loadedData: Too large, will be reloaded on page load               │
+      │   - typingStates: Per-session progress, not persistent                 │
+      │   - pronunciationStates: Per-session progress, not persistent          │
+      └─────────────────────────────────────────────────────────────────────────┘
+    */
+    function saveState() {
+      const stateToSave = {
+        currentLanguage: state.currentLanguage,
+        currentAct: state.currentAct,
+        currentPack: state.currentPack,
+        currentNativeLanguage: state.currentNativeLanguage,
+        multipleChoiceMode: state.multipleChoiceMode,
+        typingMode: state.typingMode,
+        pronunciationMode: state.pronunciationMode
+      };
+
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(stateToSave));
+      } catch (e) {
+        console.error('Failed to save state to localStorage:', e);
+      }
+    }
+
+    /*
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │ loadState() - Load saved state from localStorage                       │
+      ├─────────────────────────────────────────────────────────────────────────┤
+      │ RETURNS:                                                               │
+      │   - Parsed state object if found and valid JSON                        │
+      │   - null if no saved state or invalid JSON                             │
+      │                                                                        │
+      │ NOTE: This just loads the raw data. Validation happens in              │
+      │ restoreSavedState() to separate concerns.                              │
+      └─────────────────────────────────────────────────────────────────────────┘
+    */
+    function loadState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        return saved ? JSON.parse(saved) : null;
+      } catch (e) {
+        console.error('Failed to load state from localStorage:', e);
+        return null;
+      }
+    }
+
+    /*
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │ restoreSavedState() - Restore and VALIDATE saved state                 │
+      ├─────────────────────────────────────────────────────────────────────────┤
+      │ CRITICAL: Always validate saved values before restoring!               │
+      │                                                                        │
+      │ WHY VALIDATE?                                                          │
+      │   - User might have saved state from an older version                  │
+      │   - Options might have changed (languages added/removed)               │
+      │   - Corrupted data should not crash the app                            │
+      │                                                                        │
+      │ VALIDATION RULES:                                                      │
+      │   - currentLanguage: Must be in VALID_LANGUAGES array                  │
+      │   - currentAct: Must exist in loaded data (validated after load)       │
+      │   - currentPack: Must exist in act data (validated after load)         │
+      │   - currentNativeLanguage: Must be valid column for language           │
+      │   - Mode booleans: Just need to be boolean type                        │
+      │                                                                        │
+      │ RETURNS: true if state was restored, false if no saved state           │
+      └─────────────────────────────────────────────────────────────────────────┘
+    */
+    function restoreSavedState() {
+      const saved = loadState();
+      if (!saved) {
+        console.log('No saved state found, using defaults');
+        return false;
+      }
+
+      console.log('Restoring saved state:', saved);
+
+      // Validate and restore language
+      if (saved.currentLanguage && VALID_LANGUAGES.includes(saved.currentLanguage)) {
+        state.currentLanguage = saved.currentLanguage;
+      }
+
+      // Validate and restore act (will be validated against loaded data later)
+      if (saved.currentAct !== null && saved.currentAct !== undefined) {
+        state.currentAct = saved.currentAct;
+      }
+
+      // Validate and restore pack (will be validated against act data later)
+      if (saved.currentPack) {
+        state.currentPack = saved.currentPack;
+      }
+
+      // Validate and restore native language column
+      // Must be a valid column index for the current language
+      if (saved.currentNativeLanguage !== null && saved.currentNativeLanguage !== undefined) {
+        const config = LANGUAGE_CONFIG[state.currentLanguage];
+        const validColumns = Object.values(config.nativeLanguages);
+        if (validColumns.includes(saved.currentNativeLanguage)) {
+          state.currentNativeLanguage = saved.currentNativeLanguage;
+        } else {
+          // Fall back to first available native language for this target language
+          state.currentNativeLanguage = validColumns[0];
+        }
+      }
+
+      // Restore mode booleans (simple validation: just check type)
+      if (typeof saved.multipleChoiceMode === 'boolean') {
+        state.multipleChoiceMode = saved.multipleChoiceMode;
+      }
+      if (typeof saved.typingMode === 'boolean') {
+        state.typingMode = saved.typingMode;
+      }
+      if (typeof saved.pronunciationMode === 'boolean') {
+        state.pronunciationMode = saved.pronunciationMode;
+      }
+
+      return true;
+    }
+
+    /*
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │ validateAndFixState() - Validate state against loaded data             │
+      ├─────────────────────────────────────────────────────────────────────────┤
+      │ CALLED AFTER data is loaded to ensure act/pack are valid.              │
+      │                                                                        │
+      │ This is separate from restoreSavedState() because we can't validate    │
+      │ act/pack until the data is loaded from the modules.                    │
+      │                                                                        │
+      │ VALIDATION:                                                            │
+      │   - If saved act doesn't exist in loaded data → use first act          │
+      │   - If saved pack doesn't exist in act → use first pack                │
+      └─────────────────────────────────────────────────────────────────────────┘
+    */
+    function validateAndFixState() {
+      // Validate act exists in loaded data
+      if (state.currentAct !== null && !state.loadedData[state.currentAct]) {
+        console.log(`Saved act ${state.currentAct} not found, falling back to first act`);
+        state.currentAct = null;  // Will be set by autoSelectFirstActAndPack
+      }
+
+      // Validate pack exists in act data
+      if (state.currentAct && state.currentPack) {
+        const actData = state.loadedData[state.currentAct];
+        if (actData && !actData[state.currentPack]) {
+          console.log(`Saved pack ${state.currentPack} not found in act ${state.currentAct}, falling back to first pack`);
+          state.currentPack = null;  // Will be set by autoSelectFirstActAndPack
+        }
+      }
+    }
 
     // ============================================================
     // SPEECH RECOGNITION SETUP
@@ -572,6 +993,11 @@
 
         // Display vocabulary
         displayVocabulary();
+
+        // ════════════════════════════════════════════════════════════════════════
+        // SAVE STATE: Persist auto-selected act/pack to localStorage
+        // ════════════════════════════════════════════════════════════════════════
+        saveState();
       }
     }
 
@@ -580,32 +1006,109 @@
     // ============================================================
 
     /*
-      This function runs automatically when the page loads.
-      It loads the default language (Spanish) data and populates UI.
-
-      WORKFLOW:
-      1. Load all acts for the default language
-      2. Populate act dropdown
-      3. Populate native language dropdown
-      4. Auto-select first act (via encapsulated function)
-      5. Display vocabulary
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │ initialize() - Main initialization function                            │
+      ├─────────────────────────────────────────────────────────────────────────┤
+      │ WORKFLOW (with state persistence):                                     │
+      │   1. Restore saved state from localStorage (if any)                    │
+      │   2. Load data for restored language (or default Spanish)              │
+      │   3. Validate restored state against loaded data                       │
+      │   4. Setup UI event listeners                                          │
+      │   5. Sync UI to reflect restored state                                 │
+      │   6. Auto-select first act/pack if needed                              │
+      │   7. Display vocabulary                                                │
+      │                                                                        │
+      │ KEY PRINCIPLE: User returns to EXACTLY where they left off             │
+      └─────────────────────────────────────────────────────────────────────────┘
     */
     async function initialize() {
-      updateDebugInfo('Initializing... Loading Spanish data (default)');
+      updateDebugInfo('Initializing...');
 
-      // Load data for default language (Spanish)
-      await loadLanguageData('Spanish');
+      // ════════════════════════════════════════════════════════════════════════
+      // STEP 1: Restore saved state from localStorage
+      // ════════════════════════════════════════════════════════════════════════
+      // This sets state.currentLanguage, state.currentAct, state.currentPack,
+      // state.currentNativeLanguage, and mode flags if they were saved.
+      const hadSavedState = restoreSavedState();
 
-      // Setup UI
+      updateDebugInfo(`Loading ${state.currentLanguage} data...`);
+
+      // ════════════════════════════════════════════════════════════════════════
+      // STEP 2: Load data for the restored language (or default)
+      // ════════════════════════════════════════════════════════════════════════
+      await loadLanguageData(state.currentLanguage);
+
+      // ════════════════════════════════════════════════════════════════════════
+      // STEP 3: Validate restored state against loaded data
+      // ════════════════════════════════════════════════════════════════════════
+      // This ensures saved act/pack still exist in the loaded data.
+      // If not, they'll be set to null and auto-selected below.
+      if (hadSavedState) {
+        validateAndFixState();
+      }
+
+      // ════════════════════════════════════════════════════════════════════════
+      // STEP 4: Setup UI event listeners
+      // ════════════════════════════════════════════════════════════════════════
       setupLanguageRadioButtons();
       setupModeCheckboxes();  // ENCAPSULATED: Single function for all mode checkboxes
       populateActDropdown();
       populateNativeLanguageDropdown();
 
-      // Auto-select first act and pack (ENCAPSULATED - DRY)
-      autoSelectFirstActAndPack();
+      // ════════════════════════════════════════════════════════════════════════
+      // STEP 5: Sync UI to reflect restored state
+      // ════════════════════════════════════════════════════════════════════════
+      // The UI elements need to be updated to match the restored state
+      syncUIToState();
+
+      // ════════════════════════════════════════════════════════════════════════
+      // STEP 6: Auto-select or restore act/pack
+      // ════════════════════════════════════════════════════════════════════════
+      if (state.currentAct && state.currentPack) {
+        // We have valid restored state - just update dropdowns and display
+        document.getElementById('actSelect').value = state.currentAct;
+        populatePackDropdown();
+        document.getElementById('packSelect').value = state.currentPack;
+        displayVocabulary();
+      } else {
+        // No valid saved state - auto-select first act and pack (ENCAPSULATED - DRY)
+        autoSelectFirstActAndPack();
+      }
 
       updateDebugInfo('Initialization complete. Ready to use.');
+    }
+
+    /*
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │ syncUIToState() - Update all UI elements to match current state        │
+      ├─────────────────────────────────────────────────────────────────────────┤
+      │ ENCAPSULATED FUNCTION (DRY PRINCIPLE)                                  │
+      │ This function syncs ALL UI elements to match the current state.        │
+      │ Called during initialization to reflect restored localStorage state.   │
+      │                                                                        │
+      │ WHAT IT SYNCS:                                                         │
+      │   - Language radio buttons                                             │
+      │   - Mode checkboxes (multiple choice, typing, pronunciation)           │
+      │   - Native language dropdown                                           │
+      └─────────────────────────────────────────────────────────────────────────┘
+    */
+    function syncUIToState() {
+      // Sync language radio buttons
+      const languageRadios = document.querySelectorAll('input[name="language"]');
+      languageRadios.forEach(radio => {
+        radio.checked = (radio.value === state.currentLanguage);
+      });
+
+      // Sync mode checkboxes
+      document.getElementById('multipleChoiceMode').checked = state.multipleChoiceMode;
+      document.getElementById('typingMode').checked = state.typingMode;
+      document.getElementById('pronunciationMode').checked = state.pronunciationMode;
+
+      // Sync native language dropdown
+      const nativeSelect = document.getElementById('nativeLanguageSelect');
+      if (nativeSelect) {
+        nativeSelect.value = state.currentNativeLanguage;
+      }
     }
 
     // ============================================================
@@ -658,6 +1161,8 @@
     /*
       Attaches change event listeners to language radio buttons.
       When user changes language, reload all data for that language.
+
+      STATE PERSISTENCE: Calls saveState() after language change.
     */
     function setupLanguageRadioButtons() {
       const radios = document.querySelectorAll('input[name="language"]');
@@ -682,6 +1187,11 @@
           // Auto-select first act and pack (ENCAPSULATED - DRY)
           // Previously this was 15+ lines of duplicated code
           autoSelectFirstActAndPack();
+
+          // ════════════════════════════════════════════════════════════════════════
+          // SAVE STATE: Persist language change to localStorage
+          // ════════════════════════════════════════════════════════════════════════
+          saveState();
         });
       });
     }
@@ -739,6 +1249,11 @@
 
           // Refresh table with new mode
           displayVocabulary();
+
+          // ════════════════════════════════════════════════════════════════════════
+          // SAVE STATE: Persist mode toggle to localStorage
+          // ════════════════════════════════════════════════════════════════════════
+          saveState();
         });
       });
     }
@@ -1121,6 +1636,11 @@
         state.currentPack = null;
         populatePackDropdown();
         displayVocabulary();
+
+        // ════════════════════════════════════════════════════════════════════════
+        // SAVE STATE: Persist act change to localStorage
+        // ════════════════════════════════════════════════════════════════════════
+        saveState();
       });
     }
 
@@ -1170,6 +1690,11 @@
       packSelect.addEventListener('change', (e) => {
         state.currentPack = e.target.value;
         displayVocabulary();
+
+        // ════════════════════════════════════════════════════════════════════════
+        // SAVE STATE: Persist pack change to localStorage
+        // ════════════════════════════════════════════════════════════════════════
+        saveState();
       });
     }
 
@@ -1206,6 +1731,11 @@
       nativeSelect.addEventListener('change', (e) => {
         state.currentNativeLanguage = parseInt(e.target.value);
         displayVocabulary();
+
+        // ════════════════════════════════════════════════════════════════════════
+        // SAVE STATE: Persist native language change to localStorage
+        // ════════════════════════════════════════════════════════════════════════
+        saveState();
       });
     }
 
@@ -1794,12 +2324,33 @@
     /*
       Updates the debug information section with current state and messages.
       Useful for developers/LLMs to understand what's happening.
+
+      INCLUDES: localStorage status to help debug state persistence.
     */
     function updateDebugInfo(message) {
       const debugInfo = document.getElementById('debugInfo');
       const timestamp = new Date().toLocaleTimeString();
+
+      // Check localStorage status
+      let localStorageStatus = 'Unknown';
+      let savedStatePreview = 'None';
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          localStorageStatus = 'Available (has saved state)';
+          const parsed = JSON.parse(saved);
+          savedStatePreview = `Language: ${parsed.currentLanguage}, Act: ${parsed.currentAct}, Pack: ${parsed.currentPack ? parsed.currentPack.substring(0, 20) + '...' : 'None'}`;
+        } else {
+          localStorageStatus = 'Available (no saved state)';
+        }
+      } catch (e) {
+        localStorageStatus = `Error: ${e.message}`;
+      }
+
       debugInfo.textContent = `[${timestamp}] ${message}\n\n` +
-        `Current State:\n` +
+        `══════════════════════════════════════════════════════════════════\n` +
+        `CURRENT STATE (in memory):\n` +
+        `══════════════════════════════════════════════════════════════════\n` +
         `- Language: ${state.currentLanguage}\n` +
         `- Act: ${state.currentAct || 'None'}\n` +
         `- Pack: ${state.currentPack || 'None'}\n` +
@@ -1809,6 +2360,15 @@
         `- Pronunciation Mode: ${state.pronunciationMode ? 'Enabled' : 'Disabled'}\n` +
         `- Active Typing States: ${state.typingStates.size}\n` +
         `- Active Pronunciation States: ${state.pronunciationStates.size}\n` +
+        `\n══════════════════════════════════════════════════════════════════\n` +
+        `PERSISTENCE (localStorage):\n` +
+        `══════════════════════════════════════════════════════════════════\n` +
+        `- Storage Key: ${STORAGE_KEY}\n` +
+        `- Status: ${localStorageStatus}\n` +
+        `- Saved: ${savedStatePreview}\n` +
+        `\n══════════════════════════════════════════════════════════════════\n` +
+        `SYSTEM:\n` +
+        `══════════════════════════════════════════════════════════════════\n` +
         `- Speech Recognition: ${recognition ? 'Available' : 'Not Available'}\n` +
         `- Loaded Acts: ${Object.keys(state.loadedData).join(', ') || 'None'}`;
     }
