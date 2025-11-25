@@ -2526,7 +2526,6 @@
           }
 
           menuAct.addEventListener('change', async (e) => {
-            playButtonClickSound();
             const selectedAct = parseInt(e.target.value);
             currentAct = selectedAct;
             menuWordpack.innerHTML = '<option value="">-- Loading... --</option>';
@@ -2552,7 +2551,6 @@
           }
 
           menuWordpack.addEventListener('change', (e) => {
-            playButtonClickSound();
             currentWordpackKey = e.target.value;
             saveState();
           });
@@ -2563,7 +2561,6 @@
           menuLanguage.value = nativeLanguage;
 
           menuLanguage.addEventListener('change', (e) => {
-            playButtonClickSound();
             nativeLanguage = e.target.value;
             updateBackLabel();
             saveState();
@@ -2598,7 +2595,6 @@
           }
 
           menuVoice.addEventListener('change', (e) => {
-            playButtonClickSound();
             const newVoiceURI = e.target.value;
             currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
             savedVoiceURI = newVoiceURI; // Also update savedVoiceURI
@@ -2618,17 +2614,12 @@
             btn.classList.add('active');
           }
           btn.addEventListener('click', () => {
-            playButtonClickSound();
             currentSpeed = parseFloat(btn.dataset.speed);
             speedBtns.forEach(b => {
               b.classList.remove('active');
             });
             btn.classList.add('active');
             saveState();
-            // Preview the new speed by speaking the current word
-            if (currentDeck.length > 0) {
-              setTimeout(() => speakSpanish(), 100);
-            }
           });
         });
 
