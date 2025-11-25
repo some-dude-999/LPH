@@ -1401,12 +1401,12 @@
 
     /* Shared stamp styling - used by card stamps and deck change indicator */
     .stamp-base {
-      font-family: 'Courier New', Courier, monospace; /* Typewriter/stamp font */
+      font-family: var(--font-ui);
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      border: 3px solid;
-      border-radius: 8px; /* More rounded corners */
+      letter-spacing: 3px;
+      border: 4px solid;
+      border-radius: 3px;
       mix-blend-mode: multiply; /* Blends ink into content beneath */
       text-align: center;
       line-height: 1.3;
@@ -1418,31 +1418,25 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(-12deg);
-      font-size: 1.1rem; /* Smaller for proper line breaks */
-      padding: 10px 18px;
+      font-size: 1.5rem;
+      padding: 12px 25px;
       opacity: 0;
       pointer-events: none;
       z-index: 100;
-      transition: opacity 0.2s ease;
-      /* Uneven border like a real rubber stamp */
-      border-width: 3px 4px 3px 3px;
-      border-style: solid;
+      transition: opacity 0.15s ease;
+      white-space: nowrap; /* Prevent text wrap - only break at <br> */
     }
 
     .removed-stamp {
-      color: transparent;
-      border-color: rgba(56, 142, 60, 0.85);
-      -webkit-text-stroke: 1.5px rgba(56, 142, 60, 0.85);
-      text-stroke: 1.5px rgba(56, 142, 60, 0.85);
-      /* No background - transparent like real stamp */
+      color: rgba(30, 110, 35, 0.9);
+      border-color: rgba(30, 110, 35, 0.9);
+      background: rgba(30, 110, 35, 0.06);
     }
 
     .added-stamp {
-      color: transparent;
-      border-color: rgba(211, 47, 47, 0.85);
-      -webkit-text-stroke: 1.5px rgba(211, 47, 47, 0.85);
-      text-stroke: 1.5px rgba(211, 47, 47, 0.85);
-      /* No background - transparent like real stamp */
+      color: rgba(170, 25, 25, 0.9);
+      border-color: rgba(170, 25, 25, 0.9);
+      background: rgba(170, 25, 25, 0.06);
     }
 
     .card-stamp.visible {
