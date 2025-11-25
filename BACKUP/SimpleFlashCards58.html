@@ -3236,16 +3236,7 @@
       return shuffled;
     }
 
-    // ============================================================
-    // KEY FEATURE: Deck Initialization with Linked Card Objects
-    // Core Objective: Create shuffled deck where front/back are ALWAYS synced
-    // Key Behaviors:
-    //   - Each card is a SINGLE object with both spanish and translation
-    //   - Front and back of card are NEVER separate - they are properties
-    //     of the same card object (currentDeck[currentIndex])
-    //   - Shuffling reorders cards but NEVER breaks the front/back link
-    //   - This function is ONLY called when starting fresh or changing wordpack
-    // ============================================================
+    // Initialize deck from selected wordpack
     function initializeDeck(packKey) {
       if (!packKey || !wordpacks[packKey]) {
         currentDeck = [];
@@ -3262,16 +3253,14 @@
         'portuguese': 4
       };
       const nativeIndex = langIndex[nativeLanguage] || 1;
-
-      // CRITICAL: Each card object contains BOTH front (spanish) and back (translation)
-      // These are NEVER stored separately - they are always linked as one object
+      
+      // Create card objects with spanish (index 0) and native language translation
       originalDeck = pack.words.map((word, idx) => ({
-        id: `${packKey}-${idx}`,      // Unique ID for this card
-        spanish: word[0],              // Front of card (Spanish word)
-        translation: word[nativeIndex] // Back of card (translation) - LINKED to spanish
+        id: `${packKey}-${idx}`,
+        spanish: word[0],
+        translation: word[nativeIndex]
       }));
-
-      // Shuffle the card OBJECTS - front and back stay linked because they're the same object
+      
       currentDeck = shuffleArray([...originalDeck]);
       currentIndex = 0;
       updateDisplay();
@@ -3400,15 +3389,7 @@
       return html;
     }
 
-    // ============================================================
-    // KEY FEATURE: Card Display - Front and Back Always Linked
-    // Core Objective: Display current card with guaranteed sync
-    // Key Behaviors:
-    //   - ALWAYS uses single card object: currentDeck[currentIndex]
-    //   - card.spanish = front of card
-    //   - card.translation = back of card
-    //   - These are NEVER from different sources - always same object
-    // ============================================================
+    // Update the card display
     function updateDisplay() {
       // Starting card is shown/hidden by showStartingCard/exitStartingCard
       // Don't update card content when on starting card
@@ -3436,7 +3417,6 @@
         return;
       }
 
-      // CRITICAL: Get SINGLE card object - front (spanish) and back (translation) are ALWAYS linked
       const card = currentDeck[currentIndex];
 
       // Display counter (deck change indicator now shown as overlay stamp on card)
@@ -3950,14 +3930,7 @@
     }
 
     // Start the game
-    // ============================================================
-    // KEY FEATURE: Start/Resume Practice Session
-    // Core Objective: Begin or continue studying flashcards
-    // Key Behaviors:
-    //   - If game already started with same wordpack, RESUME without reshuffling
-    //   - Only initialize/shuffle deck when starting fresh or changing wordpack
-    //   - Front and back of card are ALWAYS linked (same card object)
-    // ============================================================
+    // KEY FEATURE: Initializes deck and starts practice session
     function startGame() {
       // Values are already set via menu selectors or restored state
       // nativeLanguage and currentWordpackKey are already set
@@ -3973,23 +3946,8 @@
       flashcard.classList.remove('showing-menu');
       document.body.classList.remove('showing-menu');
 
-      // KEY BEHAVIOR: Only initialize deck if:
-      // 1. Game hasn't started yet (fresh start)
-      // 2. No deck exists
-      // 3. Wordpack changed (different from what's currently loaded)
-      const needsNewDeck = !gameStarted ||
-                           currentDeck.length === 0 ||
-                           (currentDeck.length > 0 && currentDeck[0] &&
-                            !currentDeck[0].id.startsWith(currentWordpackKey + '-'));
-
-      if (needsNewDeck) {
-        initializeDeck(currentWordpackKey);
-      } else {
-        // Resume: restore saved position and update display
-        currentIndex = savedIndex;
-        updateDisplay();
-      }
-
+      // Initialize deck
+      initializeDeck(currentWordpackKey);
       flashcard.classList.add('game-started');
       document.body.classList.add('game-started');
       gameStarted = true;
