@@ -2487,13 +2487,11 @@
             <div class="menu-field" style="flex: 1; margin-bottom: 0;">
               <label>Choose Act</label>
               <select id="menu-act">
-                <option value="">-- Loading... --</option>
               </select>
             </div>
             <div class="menu-field" style="flex: 1; margin-bottom: 0;">
               <label>Choose Wordpack</label>
               <select id="menu-wordpack">
-                <option value="">-- Select Act First --</option>
               </select>
             </div>
           </div>
@@ -2503,7 +2501,6 @@
             <div class="menu-field" style="flex: 1; margin-bottom: 0;">
               <label>I speak</label>
               <select id="menu-language">
-                <option value="">-- Loading... --</option>
               </select>
             </div>
             <div class="menu-field" style="flex: 1; margin-bottom: 0;">
@@ -2589,7 +2586,7 @@
             playButtonClickSound();
             const selectedAct = parseInt(e.target.value);
             currentAct = selectedAct;
-            menuWordpack.innerHTML = '<option value="">-- Loading... --</option>';
+            menuWordpack.innerHTML = '';
             menuWordpack.disabled = true;
 
             try {

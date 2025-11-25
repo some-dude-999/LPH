@@ -393,7 +393,7 @@ If you delete the external JS module URLs, NOTHING should load. There should be 
 
 **What goes in HTML:**
 - ❌ NOT hardcoded `<option>` elements with data
-- ✅ Only placeholder: `<option value="">-- Loading... --</option>`
+- ✅ Empty `<select></select>` - populated only after modules load
 
 **Implementation Pattern:**
 ```javascript
