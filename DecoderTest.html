@@ -274,18 +274,10 @@
     - Column 3: Record button (🎤) to capture user's pronunciation
     - Column 4: Percentage correct (similarity score using Levenshtein distance)
 
-    This demonstrates the CORE PRONUNCIATION MECHANIC used in language learning games
-    like SimpleFlashCards.html. The mechanic includes:
+    CORE LOGIC:
     - Web Speech API for speech recognition
     - Levenshtein distance for fuzzy string matching
-    - Percentage similarity calculation
-    - Visual feedback with color-coded scores
-    - Language-specific recognition (Spanish, Chinese, English)
-
-    SPEECH RECOGNITION NOTES:
-    - Uses webkitSpeechRecognition (Chrome) or SpeechRecognition (standard)
-    - Recognition language matches target language (es-ES, zh-CN, en-US)
-    - Multiple alternatives checked for best match
+    - Language-specific recognition (es-ES, zh-CN, en-US)
     - Works best in Chrome/Edge browsers
   -->
   <p>
@@ -763,28 +755,18 @@
         return;
       }
 
-      if (isListening) {
-        // Already listening, ignore
-        return;
-      }
+      if (isListening) return;
 
       isListening = true;
       currentListeningWordIndex = wordIndex;
-
-      // Set language based on current target language
       recognition.lang = SPEECH_LANG_CODES[state.currentLanguage] || 'en-US';
-
-      // Visual feedback - show recording state
       recordButton.textContent = '🔴';
-      recordButton.style.backgroundColor = '#fee2e2';  // Light red background
 
-      // Handle successful recognition
       recognition.onresult = (event) => {
         const results = event.results[0];
         let bestMatch = results[0].transcript;
         let bestScore = 0;
 
-        // Check all alternatives for best match
         for (let i = 0; i < results.length; i++) {
           const transcript = results[i].transcript;
           const score = calculateSimilarity(correctWord, transcript);
@@ -794,33 +776,23 @@
           }
         }
 
-        // Update state with results
         state.pronunciationStates.set(wordIndex, {
           score: bestScore,
           heard: bestMatch,
           attempted: true
         });
 
-        // Reset button state
         recordButton.textContent = '🎤';
-        recordButton.style.backgroundColor = '';
-
-        // Update the display to show score
         updatePronunciationDisplay(wordIndex, recordButton);
       };
 
-      // Handle errors
       recognition.onerror = (event) => {
         console.error('Speech recognition error:', event.error);
         isListening = false;
         currentListeningWordIndex = null;
-
-        // Reset button state
         recordButton.textContent = '🎤';
-        recordButton.style.backgroundColor = '';
 
         if (event.error === 'no-speech') {
-          // Update state to show 0%
           state.pronunciationStates.set(wordIndex, {
             score: 0,
             heard: '(no speech detected)',
@@ -832,17 +804,12 @@
         }
       };
 
-      // Handle end of recognition
       recognition.onend = () => {
         isListening = false;
         currentListeningWordIndex = null;
-
-        // Ensure button is reset
         recordButton.textContent = '🎤';
-        recordButton.style.backgroundColor = '';
       };
 
-      // Start listening
       recognition.start();
     }
 
@@ -861,15 +828,13 @@
       const pronState = state.pronunciationStates.get(wordIndex);
       if (!pronState) return;
 
-      // Find the score cell (next sibling of button's parent cell)
       const row = recordButton.closest('tr');
       if (!row) return;
 
       // Score cell is the last cell in the row when pronunciation mode is on
       const scoreCell = row.cells[row.cells.length - 1];
       if (scoreCell) {
-        const score = pronState.score;
-        scoreCell.innerHTML = `<span style="${getScoreStyle(score)}">${score}%</span>`;
+        scoreCell.textContent = `${pronState.score}%`;
         scoreCell.title = `Heard: "${pronState.heard}"`;
       }
     }
@@ -1050,37 +1015,6 @@
       const similarity = Math.max(0, ((maxLen - distance) / maxLen) * 100);
 
       return Math.round(similarity);
-    }
-
-    // ============================================================
-    // SCORE STYLING: Color-code percentage scores
-    // ============================================================
-
-    /*
-      Returns CSS class name based on pronunciation score.
-
-      THRESHOLDS:
-      - 90%+ = Excellent (green)
-      - 75%+ = Good (blue)
-      - 50%+ = Okay (orange)
-      - Below 50% = Poor (red)
-    */
-    function getScoreClass(score) {
-      if (score >= 90) return 'excellent';
-      if (score >= 75) return 'good';
-      if (score >= 50) return 'okay';
-      return 'poor';
-    }
-
-    /*
-      Returns inline style for score coloring.
-      Used since we don't have a separate CSS file.
-    */
-    function getScoreStyle(score) {
-      if (score >= 90) return 'color: #22c55e; font-weight: bold;';  // Green
-      if (score >= 75) return 'color: #3b82f6; font-weight: bold;';  // Blue
-      if (score >= 50) return 'color: #f97316; font-weight: bold;';  // Orange
-      return 'color: #ef4444; font-weight: bold;';                   // Red
     }
 
     // ============================================================
@@ -1542,7 +1476,6 @@
       - 4 columns: Target language, Native language, Record button, Score percentage
       - Speech recognition using Web Speech API
       - Levenshtein distance for fuzzy string matching
-      - Color-coded percentage scores (green/blue/orange/red)
 
       MODES CAN BE COMBINED:
       - Multiple modes can be enabled simultaneously
@@ -1751,51 +1684,27 @@
 
         // PRONUNCIATION MODE COLUMNS: Record button + Score percentage
         if (state.pronunciationMode) {
-          /*
-            Add pronunciation practice columns for this word:
-            1. Record button (🎤) - Click to start speech recognition
-            2. Score column - Shows percentage similarity after recording
-          */
           const correctWord = word[0];
 
           // COLUMN: Record button
           const recordCell = document.createElement('td');
-          recordCell.style.textAlign = 'center';
-
           const recordButton = document.createElement('button');
           recordButton.textContent = '🎤';
-          recordButton.style.fontSize = '1.5em';
-          recordButton.style.padding = '4px 12px';
-          recordButton.style.cursor = 'pointer';
-          recordButton.style.border = '1px solid #ccc';
-          recordButton.style.borderRadius = '4px';
-          recordButton.style.backgroundColor = '#f9f9f9';
-          recordButton.title = 'Click to record your pronunciation';
-
-          // Add click listener to start speech recognition
           recordButton.addEventListener('click', () => {
             startListeningForPronunciation(index, correctWord, recordButton);
           });
-
           recordCell.appendChild(recordButton);
           row.appendChild(recordCell);
 
-          // COLUMN: Score percentage (initially shows "-")
+          // COLUMN: Score percentage
           const scoreCell = document.createElement('td');
-          scoreCell.style.textAlign = 'center';
-          scoreCell.style.fontSize = '1.1em';
-
-          // Check if we have a previous result for this word
           const pronState = state.pronunciationStates.get(index);
           if (pronState && pronState.attempted) {
-            const score = pronState.score;
-            scoreCell.innerHTML = `<span style="${getScoreStyle(score)}">${score}%</span>`;
+            scoreCell.textContent = `${pronState.score}%`;
             scoreCell.title = `Heard: "${pronState.heard}"`;
           } else {
             scoreCell.textContent = '-';
-            scoreCell.title = 'Click record to test pronunciation';
           }
-
           row.appendChild(scoreCell);
         }
 
