@@ -153,21 +153,21 @@
 
     /* Wordpack Title - Warm gold with subtle texture */
     /* ============================================================
-       KEY FEATURE: Page Title in Header
-       Core Objective: Show context while keeping card as focal point
+       KEY FEATURE: Subtle Page Title in Header
+       Core Objective: Show context without distracting from card
        Key Behaviors:
-         - Visible but not overpowering
-         - Centered in header bar
+         - Faded appearance so card remains focal point
+         - Still visible but not competing for attention
        ============================================================ */
     .wordpack-title {
-      /* Bright gold gradient */
+      /* Faded gold gradient - subtle, not the focal point */
       background-image:
         var(--cardboard-texture),
         linear-gradient(180deg,
-          #E8C252 0%,      /* Bright gold */
-          #D4AF37 30%,     /* Classic gold */
-          #C9A227 60%,     /* Medium gold */
-          #A67C38 100%     /* Bronze gold */
+          #C4A03A 0%,      /* Muted gold */
+          #B08C28 30%,     /* Faded gold */
+          #9A7B1F 60%,     /* Amber */
+          #7A5C1A 100%     /* Deep brown-gold */
         );
       background-blend-mode: overlay;
       background-size: var(--cardboard-texture-size), 100%;
@@ -175,24 +175,24 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
       font-family: var(--font-ui);
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       font-weight: 600;
       text-shadow:
         0 1px 2px rgba(0, 0, 0, 0.2);
       opacity: 0;
       transition: opacity 0.3s ease;
-      letter-spacing: 1.5px;
-      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+      letter-spacing: 1px;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
       white-space: nowrap;
     }
 
     body.game-started .wordpack-title {
-      opacity: 0.9;
+      opacity: 0.65;
     }
 
     /* Show wordpack title when menu is visible */
     body.showing-menu .wordpack-title {
-      opacity: 0.9;
+      opacity: 0.65;
     }
 
     /* Card Counter Wrapper - fixed height prevents layout shift when stamp appears */
