@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spanish Flashcard Typing Game</title>
+  <title>Spanish Flashcards</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
   <style>
@@ -92,7 +92,6 @@
     .selector-container label {
       font-family: var(--font-ui);
       font-size: 1rem;
-      font-weight: bold;
       margin-right: 10px;
       color: var(--color-text-gold);
     }
@@ -100,7 +99,6 @@
     #wordpack-select {
       font-family: var(--font-ui);
       font-size: 1rem;
-      font-weight: bold;
       padding: 8px 15px;
       border: 1px solid rgba(139, 115, 85, 0.4);
       border-radius: 5px;
@@ -699,12 +697,12 @@
     .setup-title {
       font-family: var(--font-ui);
       font-size: 1.5rem;
-      font-weight: bold;
       color: var(--color-text-dark);
       margin-bottom: 25px;
       letter-spacing: 2px;
       position: relative;
       z-index: 5;
+      font-weight: bold;
     }
 
     .setup-row {
@@ -747,7 +745,6 @@
     .setup-field select {
       font-family: var(--font-ui);
       font-size: 1rem;
-      font-weight: bold;
       padding: 10px 15px;
       border: 2px solid #8B7355;
       border-radius: 6px;
@@ -840,7 +837,7 @@
       background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
       border-radius: 25px;
-      color: var(--color-text-gold);
+      color: var(--color-text-dark);
       cursor: pointer;
       transition: all 0.2s ease;
       letter-spacing: 1px;
@@ -1290,7 +1287,6 @@
     .menu-field select {
       font-family: var(--font-ui);
       font-size: 1rem;
-      font-weight: bold;
       padding: 10px 15px;
       border: 3px solid rgba(74, 56, 40, 0.6);
       border-radius: 6px;
@@ -2160,7 +2156,7 @@
       lp2.frequency.value = 580;
       
       const gain = ctx.createGain();
-      gain.gain.value = 2.0; // Louder - increased from 1.2
+      gain.gain.value = 1.2; // Much louder - increased from 0.7
 
       source.connect(lp);
       lp.connect(lp2);
@@ -2335,7 +2331,7 @@
       document.body.classList.add('showing-menu');
 
       // Update titles
-      wordpackTitle.textContent = 'Spanish Flashcard Typing Game';
+      wordpackTitle.textContent = 'Spanish Flashcards';
       cardCounter.textContent = 'Choose Lesson to Begin Studying';
 
       // Render menu card (looks identical to a flashcard)
@@ -2417,7 +2413,7 @@
           </div>
 
           <button id="start-practice-btn" class="setup-start-btn" style="width: 100%;">
-            ▶ Start Game
+            ▶ Start Practice
           </button>
         </div>
       `;
@@ -2628,9 +2624,6 @@
     // Switch to a different learning mode
     function switchMode(newMode) {
       if (currentMode === newMode) return;
-
-      // Stop all speech sounds - mode change is like a reset
-      speechSynthesis.cancel();
 
       currentMode = newMode;
 
