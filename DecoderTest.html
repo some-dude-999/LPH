@@ -243,6 +243,28 @@
     8. Multiple Choice Generation - Act-wide pool, duplicate filtering
     9. Typing Practice - Character-by-character with accent tolerance
     10. Vocabulary Table Display - Multi-mode rendering
+    11. Flashcard Mode - ANTI-DECOUPLING DEMONSTRATION (front/back always linked)
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ PRINCIPLE 5: ANTI-DECOUPLING (Critical for Flashcard Games)            │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ Related data must be stored as properties of the SAME object,          │
+    │ never in separate arrays that could get out of sync.                   │
+    │                                                                        │
+    │ ❌ WRONG (Decoupled - leads to bugs):                                  │
+    │    const fronts = ["hola", "adiós"];                                   │
+    │    const backs = ["hello", "goodbye"];                                 │
+    │    // Problem: Arrays can get out of sync!                             │
+    │                                                                        │
+    │ ✅ RIGHT (Anti-decoupled - always safe):                               │
+    │    const cards = [                                                     │
+    │      { front: "hola", back: "hello" },                                 │
+    │      { front: "adiós", back: "goodbye" }                               │
+    │    ];                                                                  │
+    │    // Benefit: front and back are ALWAYS linked!                       │
+    │                                                                        │
+    │ See "Flashcard Mode" for a live demonstration.                         │
+    └─────────────────────────────────────────────────────────────────────────┘
 
     ============================================================
     6. COLUMN MAPPING BY LANGUAGE
@@ -494,6 +516,91 @@
     </label>
   </p>
 
+  <!--
+    ============================================================
+    FLASHCARD MODE CHECKBOX
+    ============================================================
+    When enabled, shows a simple flashcard interface demonstrating
+    the CRITICAL anti-decoupling principle:
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ ANTI-DECOUPLING PRINCIPLE (CRITICAL FOR FLASHCARD GAMES)               │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │                                                                        │
+    │ ❌ WRONG WAY (Decoupled - leads to bugs):                              │
+    │    const fronts = ["hola", "adiós", "gracias"];                        │
+    │    const backs  = ["hello", "goodbye", "thank you"];                   │
+    │    // Problem: If arrays get out of sync, flipping shows WRONG answer  │
+    │    // Bug: fronts[2] might display backs[1] if something shifts        │
+    │                                                                        │
+    │ ✅ RIGHT WAY (Anti-decoupled - front/back ALWAYS linked):              │
+    │    const cards = [                                                     │
+    │      { front: "hola",    back: "hello" },      // Card 0               │
+    │      { front: "adiós",   back: "goodbye" },    // Card 1               │
+    │      { front: "gracias", back: "thank you" }   // Card 2               │
+    │    ];                                                                  │
+    │    // Benefit: cards[i].front and cards[i].back are ALWAYS paired      │
+    │    // Shuffling reorders cards but NEVER breaks the link               │
+    │                                                                        │
+    │ WHY THIS MATTERS:                                                      │
+    │   - Flipping a card ALWAYS shows the correct translation               │
+    │   - Shuffling the deck doesn't break anything                          │
+    │   - Adding/removing cards can't cause misalignment                     │
+    │   - The card is ONE OBJECT, not two separate arrays                    │
+    │                                                                        │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+    This mode demonstrates the principle with a minimal, no-CSS implementation.
+  -->
+  <p>
+    <label>
+      <input type="checkbox" id="flashcardMode">
+      Flashcard Mode (demonstrates anti-decoupling principle - front/back always linked)
+    </label>
+  </p>
+
+  <!--
+    ============================================================
+    FLASHCARD DISPLAY AREA (Simple, No CSS)
+    ============================================================
+    This is intentionally unstyled to focus on the DATA STRUCTURE,
+    not the visual presentation. The key teaching point is HOW
+    front and back are stored as ONE object, not two arrays.
+  -->
+  <div id="flashcardArea" style="display: none; margin: 20px 0; padding: 20px; border: 2px solid #333; background: #f9f9f9;">
+    <h3>Flashcard Demo (Anti-Decoupling Principle)</h3>
+    <p><em>Front and back are properties of the SAME card object - they can never get out of sync.</em></p>
+
+    <!-- Card display - simple border box -->
+    <div id="flashcardDisplay" style="border: 3px solid #666; padding: 40px; margin: 20px 0; text-align: center; min-height: 150px; background: white; cursor: pointer;" onclick="window.flipCard()">
+      <div id="flashcardContent" style="font-size: 24px;">Click to start</div>
+      <div id="flashcardSide" style="font-size: 12px; color: #999; margin-top: 10px;">(click card to flip)</div>
+    </div>
+
+    <!-- Navigation buttons - plain HTML buttons -->
+    <div style="text-align: center;">
+      <button onclick="window.prevCard()" style="padding: 10px 20px; margin: 5px;">← Previous</button>
+      <button onclick="window.flipCard()" style="padding: 10px 20px; margin: 5px;">Flip Card</button>
+      <button onclick="window.nextCard()" style="padding: 10px 20px; margin: 5px;">Next →</button>
+      <button onclick="window.shuffleDeck()" style="padding: 10px 20px; margin: 5px;">🔀 Shuffle</button>
+    </div>
+
+    <!-- Card counter -->
+    <p id="flashcardCounter" style="text-align: center; margin-top: 10px;">Card 0 of 0</p>
+
+    <!-- Debug: Show current card object structure -->
+    <details style="margin-top: 20px;">
+      <summary style="cursor: pointer; font-weight: bold;">🔍 View Current Card Object (Anti-Decoupling Proof)</summary>
+      <pre id="flashcardDebug" style="background: #eee; padding: 10px; overflow-x: auto; font-size: 12px;">
+// No card loaded yet
+      </pre>
+      <p style="font-size: 12px; color: #666;">
+        ↑ Notice: <code>front</code> and <code>back</code> are properties of the SAME object.<br>
+        They cannot get out of sync because they're not stored in separate arrays.
+      </p>
+    </details>
+  </div>
+
   <table border="1" cellpadding="8" cellspacing="0">
     <thead>
       <tr id="tableHeaderRow">
@@ -671,7 +778,11 @@
       typingMode: false,            // Default to typing mode off
       typingStates: new Map(),      // Per-word typing state { typed: Set(), wrongLetters: [], wrongCount: 0 }
       pronunciationMode: false,     // Default to pronunciation mode off
-      pronunciationStates: new Map() // Per-word pronunciation state { score: null, heard: '', attempted: false }
+      pronunciationStates: new Map(), // Per-word pronunciation state { score: null, heard: '', attempted: false }
+      flashcardMode: false,         // Default to flashcard mode off
+      flashcardDeck: [],            // Anti-decoupled deck: [{front, back, id}, ...] - NEVER separate arrays!
+      flashcardIndex: 0,            // Current card index in flashcardDeck
+      flashcardShowingFront: true   // true = showing front, false = showing back
     };
 
     // ============================================================
@@ -712,7 +823,8 @@
         currentNativeLanguage: state.currentNativeLanguage,
         multipleChoiceMode: state.multipleChoiceMode,
         typingMode: state.typingMode,
-        pronunciationMode: state.pronunciationMode
+        pronunciationMode: state.pronunciationMode,
+        flashcardMode: state.flashcardMode
       };
 
       try {
@@ -811,6 +923,9 @@
       }
       if (typeof saved.pronunciationMode === 'boolean') {
         state.pronunciationMode = saved.pronunciationMode;
+      }
+      if (typeof saved.flashcardMode === 'boolean') {
+        state.flashcardMode = saved.flashcardMode;
       }
 
       return true;
@@ -1103,6 +1218,13 @@
       document.getElementById('multipleChoiceMode').checked = state.multipleChoiceMode;
       document.getElementById('typingMode').checked = state.typingMode;
       document.getElementById('pronunciationMode').checked = state.pronunciationMode;
+      document.getElementById('flashcardMode').checked = state.flashcardMode;
+
+      // Show/hide flashcard area based on mode
+      const flashcardArea = document.getElementById('flashcardArea');
+      if (flashcardArea) {
+        flashcardArea.style.display = state.flashcardMode ? 'block' : 'none';
+      }
 
       // Sync native language dropdown
       const nativeSelect = document.getElementById('nativeLanguageSelect');
@@ -1225,14 +1347,16 @@
       Answer: 1 (this function)
     */
     function setupModeCheckboxes() {
-      // Configuration array: [checkboxId, stateKey, statesToClear]
+      // Configuration array: [checkboxId, stateKey, statesToClear, onChangeCallback]
+      // The onChangeCallback is optional - used for modes that need extra logic
       const checkboxConfig = [
         { id: 'multipleChoiceMode', stateKey: 'multipleChoiceMode', statesToClear: [] },
         { id: 'typingMode', stateKey: 'typingMode', statesToClear: ['typingStates'] },
-        { id: 'pronunciationMode', stateKey: 'pronunciationMode', statesToClear: ['pronunciationStates'] }
+        { id: 'pronunciationMode', stateKey: 'pronunciationMode', statesToClear: ['pronunciationStates'] },
+        { id: 'flashcardMode', stateKey: 'flashcardMode', statesToClear: [], onChangeCallback: handleFlashcardModeChange }
       ];
 
-      checkboxConfig.forEach(({ id, stateKey, statesToClear }) => {
+      checkboxConfig.forEach(({ id, stateKey, statesToClear, onChangeCallback }) => {
         const checkbox = document.getElementById(id);
         if (!checkbox) return;
 
@@ -1246,6 +1370,11 @@
               state[stateMapKey].clear();
             }
           });
+
+          // Call optional callback for modes that need extra logic
+          if (onChangeCallback) {
+            onChangeCallback(e.target.checked);
+          }
 
           // Refresh table with new mode
           displayVocabulary();
@@ -1690,6 +1819,12 @@
       packSelect.addEventListener('change', (e) => {
         state.currentPack = e.target.value;
         displayVocabulary();
+
+        // Re-initialize flashcard deck if flashcard mode is enabled
+        if (state.flashcardMode) {
+          initFlashcardDeck();
+          updateFlashcardDisplay();
+        }
 
         // ════════════════════════════════════════════════════════════════════════
         // SAVE STATE: Persist pack change to localStorage
@@ -2358,8 +2493,10 @@
         `- Multiple Choice Mode: ${state.multipleChoiceMode ? 'Enabled' : 'Disabled'}\n` +
         `- Typing Mode: ${state.typingMode ? 'Enabled' : 'Disabled'}\n` +
         `- Pronunciation Mode: ${state.pronunciationMode ? 'Enabled' : 'Disabled'}\n` +
+        `- Flashcard Mode: ${state.flashcardMode ? 'Enabled' : 'Disabled'}\n` +
         `- Active Typing States: ${state.typingStates.size}\n` +
         `- Active Pronunciation States: ${state.pronunciationStates.size}\n` +
+        `- Flashcard Deck Size: ${state.flashcardDeck.length} cards\n` +
         `\n══════════════════════════════════════════════════════════════════\n` +
         `PERSISTENCE (localStorage):\n` +
         `══════════════════════════════════════════════════════════════════\n` +
@@ -2372,6 +2509,250 @@
         `- Speech Recognition: ${recognition ? 'Available' : 'Not Available'}\n` +
         `- Loaded Acts: ${Object.keys(state.loadedData).join(', ') || 'None'}`;
     }
+
+    // ============================================================
+    // KEY FEATURE: Flashcard Mode (Anti-Decoupling Demonstration)
+    // Core Objective: Teach the CRITICAL principle that front/back
+    //                 must ALWAYS be stored as ONE object, never separate arrays
+    // Key Behaviors:
+    //   - Each card is { front, back, id } - properties of SAME object
+    //   - Flipping shows the OTHER property of the SAME card
+    //   - Shuffling reorders cards[] but NEVER breaks front/back link
+    //   - Navigation changes currentIndex but card[i] is always intact
+    // ============================================================
+
+    /*
+      ╔══════════════════════════════════════════════════════════════════════════════╗
+      ║                    ANTI-DECOUPLING PRINCIPLE                                 ║
+      ║                    (THE MOST IMPORTANT CONCEPT)                              ║
+      ╠══════════════════════════════════════════════════════════════════════════════╣
+      ║                                                                              ║
+      ║  ❌ THE BUG-PRONE WAY (Decoupled - DO NOT DO THIS):                          ║
+      ║  ─────────────────────────────────────────────────────────────────────────   ║
+      ║  const fronts = ["hola", "adiós", "gracias"];                                ║
+      ║  const backs  = ["hello", "goodbye", "thank you"];                           ║
+      ║  let currentIndex = 0;                                                       ║
+      ║                                                                              ║
+      ║  function showFront() { display(fronts[currentIndex]); }                     ║
+      ║  function showBack()  { display(backs[currentIndex]); }                      ║
+      ║                                                                              ║
+      ║  // PROBLEM: If fronts and backs get out of sync (different lengths,         ║
+      ║  // different order after separate operations), flipping shows WRONG answer! ║
+      ║  // This is a VERY common bug in flashcard apps.                             ║
+      ║                                                                              ║
+      ║  ✅ THE CORRECT WAY (Anti-Decoupled - ALWAYS DO THIS):                       ║
+      ║  ─────────────────────────────────────────────────────────────────────────   ║
+      ║  const cards = [                                                             ║
+      ║    { front: "hola",    back: "hello" },                                      ║
+      ║    { front: "adiós",   back: "goodbye" },                                    ║
+      ║    { front: "gracias", back: "thank you" }                                   ║
+      ║  ];                                                                          ║
+      ║  let currentIndex = 0;                                                       ║
+      ║                                                                              ║
+      ║  function showFront() { display(cards[currentIndex].front); }                ║
+      ║  function showBack()  { display(cards[currentIndex].back); }                 ║
+      ║                                                                              ║
+      ║  // BENEFIT: cards[i].front and cards[i].back are ALWAYS the same card!      ║
+      ║  // They are properties of ONE object - they CANNOT get out of sync.         ║
+      ║  // Shuffling reorders the cards[] array but each card stays intact.         ║
+      ║                                                                              ║
+      ╚══════════════════════════════════════════════════════════════════════════════╝
+    */
+
+    /*
+      handleFlashcardModeChange() - Called when flashcard checkbox is toggled
+      Shows/hides the flashcard area and initializes deck if enabling
+    */
+    function handleFlashcardModeChange(enabled) {
+      const flashcardArea = document.getElementById('flashcardArea');
+      if (!flashcardArea) return;
+
+      flashcardArea.style.display = enabled ? 'block' : 'none';
+
+      if (enabled) {
+        // Initialize flashcard deck from current wordpack
+        initFlashcardDeck();
+        updateFlashcardDisplay();
+      }
+    }
+
+    /*
+      initFlashcardDeck() - Creates the ANTI-DECOUPLED card array
+
+      CRITICAL IMPLEMENTATION DETAIL:
+      Each card is ONE OBJECT containing BOTH front and back.
+      We NEVER store fronts and backs in separate arrays.
+
+      INPUT: Uses state.currentPack to get words from current wordpack
+      OUTPUT: Populates state.flashcardDeck with card objects
+    */
+    function initFlashcardDeck() {
+      // Reset state
+      state.flashcardDeck = [];
+      state.flashcardIndex = 0;
+      state.flashcardShowingFront = true;
+
+      // Get current pack data
+      if (!state.currentAct || !state.currentPack) return;
+      const actData = state.loadedData[state.currentAct];
+      if (!actData) return;
+      const pack = actData[state.currentPack];
+      if (!pack || !pack.words) return;
+
+      // Get native language column index
+      const config = LANGUAGE_CONFIG[state.currentLanguage];
+      const nativeIndex = state.currentNativeLanguage;
+
+      // ════════════════════════════════════════════════════════════════════════
+      // ANTI-DECOUPLING: Create cards as SINGLE OBJECTS with front AND back
+      // ════════════════════════════════════════════════════════════════════════
+      // Each card object contains BOTH the front (target language) and back
+      // (native language translation). These are NEVER stored separately.
+      // This is the KEY PRINCIPLE that prevents flip-mismatch bugs.
+      // ════════════════════════════════════════════════════════════════════════
+      state.flashcardDeck = pack.words.map((word, index) => ({
+        id: `card-${index}`,           // Unique identifier for this card
+        front: word[0],                 // Target language (column 0) - FRONT of card
+        back: word[nativeIndex],        // Native language translation - BACK of card
+        // ↑ NOTICE: front and back are PROPERTIES OF THE SAME OBJECT
+        // They are linked forever. Shuffling moves the whole object.
+      }));
+
+      console.log(`Initialized flashcard deck with ${state.flashcardDeck.length} cards (anti-decoupled)`);
+    }
+
+    /*
+      updateFlashcardDisplay() - Updates the UI to show current card
+
+      This function demonstrates that we ALWAYS access front and back
+      from the SAME card object: cards[currentIndex].front or .back
+    */
+    function updateFlashcardDisplay() {
+      const contentEl = document.getElementById('flashcardContent');
+      const sideEl = document.getElementById('flashcardSide');
+      const counterEl = document.getElementById('flashcardCounter');
+      const debugEl = document.getElementById('flashcardDebug');
+
+      if (!contentEl || state.flashcardDeck.length === 0) {
+        if (contentEl) contentEl.textContent = 'No cards loaded. Select a wordpack first.';
+        if (sideEl) sideEl.textContent = '';
+        if (counterEl) counterEl.textContent = 'Card 0 of 0';
+        return;
+      }
+
+      // ════════════════════════════════════════════════════════════════════════
+      // ANTI-DECOUPLING IN ACTION: Access the SAME card object for both sides
+      // ════════════════════════════════════════════════════════════════════════
+      const currentCard = state.flashcardDeck[state.flashcardIndex];
+      // ↑ This is ONE object. currentCard.front and currentCard.back are ALWAYS
+      //   the correct pair because they're properties of the SAME object.
+
+      // Show front or back based on current side
+      if (state.flashcardShowingFront) {
+        contentEl.textContent = currentCard.front;
+        sideEl.textContent = '(FRONT - Target Language) - click to see translation';
+      } else {
+        contentEl.textContent = currentCard.back;
+        sideEl.textContent = '(BACK - Translation) - click to flip back';
+      }
+
+      // Update counter
+      if (counterEl) {
+        counterEl.textContent = `Card ${state.flashcardIndex + 1} of ${state.flashcardDeck.length}`;
+      }
+
+      // Update debug view - show the ACTUAL card object structure
+      if (debugEl) {
+        debugEl.textContent = `// Current card object (index ${state.flashcardIndex}):
+const currentCard = ${JSON.stringify(currentCard, null, 2)};
+
+// Accessing front: currentCard.front = "${currentCard.front}"
+// Accessing back:  currentCard.back  = "${currentCard.back}"
+
+// ↑ NOTICE: Both come from the SAME object!
+// They are LINKED - they cannot get out of sync.
+
+// The deck is an array of these objects:
+// state.flashcardDeck = [
+//   { id: "card-0", front: "...", back: "..." },
+//   { id: "card-1", front: "...", back: "..." },
+//   ...
+// ]`;
+      }
+    }
+
+    /*
+      flipCard() - Toggle between front and back of CURRENT card
+
+      ANTI-DECOUPLING BENEFIT:
+      We're just changing which PROPERTY of the same object to display.
+      The front and back are ALWAYS correct because they're on the same object.
+    */
+    function flipCard() {
+      if (state.flashcardDeck.length === 0) return;
+
+      state.flashcardShowingFront = !state.flashcardShowingFront;
+      updateFlashcardDisplay();
+    }
+    // Expose to window for onclick handlers
+    window.flipCard = flipCard;
+
+    /*
+      nextCard() - Move to next card in deck
+    */
+    function nextCard() {
+      if (state.flashcardDeck.length === 0) return;
+
+      state.flashcardIndex = (state.flashcardIndex + 1) % state.flashcardDeck.length;
+      state.flashcardShowingFront = true;  // Always show front when navigating
+      updateFlashcardDisplay();
+    }
+    window.nextCard = nextCard;
+
+    /*
+      prevCard() - Move to previous card in deck
+    */
+    function prevCard() {
+      if (state.flashcardDeck.length === 0) return;
+
+      state.flashcardIndex = (state.flashcardIndex - 1 + state.flashcardDeck.length) % state.flashcardDeck.length;
+      state.flashcardShowingFront = true;
+      updateFlashcardDisplay();
+    }
+    window.prevCard = prevCard;
+
+    /*
+      shuffleDeck() - Randomly reorder the cards using Fisher-Yates algorithm
+
+      ANTI-DECOUPLING BENEFIT:
+      When we shuffle, we're moving ENTIRE card objects, not just fronts or backs.
+      Each card's front and back stay linked because they're properties of
+      the same object that moves together.
+
+      ❌ With decoupled arrays, you'd have to shuffle both arrays identically
+         (same random seed, same swaps) - easy to get wrong!
+
+      ✅ With anti-decoupled objects, shuffle just works - the whole card moves.
+    */
+    function shuffleDeck() {
+      if (state.flashcardDeck.length === 0) return;
+
+      // Fisher-Yates shuffle - moves ENTIRE card objects
+      for (let i = state.flashcardDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        // Swap entire card objects - front and back stay linked!
+        [state.flashcardDeck[i], state.flashcardDeck[j]] =
+        [state.flashcardDeck[j], state.flashcardDeck[i]];
+      }
+
+      // Reset to first card
+      state.flashcardIndex = 0;
+      state.flashcardShowingFront = true;
+      updateFlashcardDisplay();
+
+      console.log('Deck shuffled. Cards reordered but front/back links preserved (anti-decoupling).');
+    }
+    window.shuffleDeck = shuffleDeck;
 
     // ============================================================
     // AUTO-RUN ON PAGE LOAD
