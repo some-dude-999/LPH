@@ -352,6 +352,33 @@ async function initializeApp() {
 - ✅ After any significant state change
 - ❌ NOT on every card flip or minor UI change (performance)
 
+### Validate Saved Values Against Valid Options
+**CRITICAL: When restoring saved state, ALWAYS validate values against current valid options.**
+
+The problem: If you change valid options (e.g., speed buttons from 0.2/0.4/0.7 to 0.3/0.6/0.9), users with old saved values will have invalid state that doesn't match any UI option.
+
+**Implementation Pattern:**
+```javascript
+// Define valid options as constants
+const VALID_SPEEDS = [0.3, 0.6, 0.9]; // Must match data-speed values in HTML
+let currentSpeed = 0.6; // Default
+
+// In restoreSavedState():
+if (savedState.speed !== undefined && savedState.speed !== null) {
+  // Only restore if it's a valid option, otherwise keep default
+  if (VALID_SPEEDS.includes(savedState.speed)) {
+    currentSpeed = savedState.speed;
+  }
+  // Invalid saved values silently fall back to default
+}
+```
+
+**When to validate:**
+- ✅ Speed options (discrete values like 0.3, 0.6, 0.9)
+- ✅ Mode selections (reading, listening, speaking, writing)
+- ✅ Any setting with a fixed set of valid values
+- ❌ Free-form values (voice URI, wordpack keys) - validate existence instead
+
 ---
 
 ## 🔗 AUTOMATED LINK MANAGEMENT

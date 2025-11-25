@@ -1929,6 +1929,7 @@
     let isFlipped = false;
     let holdTimeout = null;
     let currentSpeed = 0.6; // Default to normal speed
+    const VALID_SPEEDS = [0.3, 0.6, 0.9]; // Valid speed options (must match data-speed values in HTML)
     let nativeLanguage = 'chinese'; // Default native language (for English learners)
     let gameStarted = false;
     let currentWordpackKey = '';
@@ -3192,9 +3193,12 @@
         return;
       }
 
-      // Restore speech rate
+      // Restore speech rate (validate against valid options)
       if (savedState.speed !== undefined && savedState.speed !== null) {
-        currentSpeed = savedState.speed;
+        // Only restore if it's a valid speed option, otherwise keep default
+        if (VALID_SPEEDS.includes(savedState.speed)) {
+          currentSpeed = savedState.speed;
+        }
         // Speed buttons UI will be updated when menu renders
       }
 
