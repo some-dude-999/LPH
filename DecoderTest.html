@@ -395,7 +395,12 @@
     };
 
     // ============================================================
-    // GLOBAL STATE: Stores loaded data and current selections
+    // KEY FEATURE: Global State Management
+    // Core Objective: Single source of truth for all UI state
+    // Key Behaviors:
+    //   - Tracks current language, act, pack selections
+    //   - Tracks mode toggles (multiple choice, typing, pronunciation)
+    //   - Per-word state for interactive modes (typing progress, scores)
     // ============================================================
 
     /*
@@ -464,7 +469,12 @@
     }
 
     // ============================================================
-    // DECODER FUNCTION: Decodes Obfuscated Modules
+    // KEY FEATURE: Module Decoding (3-Layer Obfuscation)
+    // Core Objective: Load and decode compressed wordpack data
+    // Key Behaviors:
+    //   - Base64 decode → Zlib decompress → String reverse
+    //   - Returns parsed JSON with all wordpacks in an act
+    //   - Single function handles all decoding logic (DRY)
     // ============================================================
 
     /*
@@ -526,6 +536,49 @@
     }
 
     // ============================================================
+    // KEY FEATURE: Auto-Select First Act and Pack (DRY ENCAPSULATION)
+    // Core Objective: Automatically select first available act/pack
+    // Key Behaviors:
+    //   - Finds first act numerically
+    //   - Selects first pack in that act
+    //   - Updates UI dropdowns and displays vocabulary
+    //   - Used by: initialize(), setupLanguageRadioButtons()
+    // ============================================================
+
+    /*
+      ENCAPSULATED FUNCTION (DRY PRINCIPLE)
+      This logic was duplicated in initialize() and setupLanguageRadioButtons().
+      Now defined ONCE and called from both places.
+
+      "If I needed to change this behavior, how many places would I need to update?"
+      Answer: 1 (this function)
+    */
+    function autoSelectFirstActAndPack() {
+      if (!state.loadedData || Object.keys(state.loadedData).length === 0) {
+        return;
+      }
+
+      // Find first act numerically
+      const firstAct = Math.min(...Object.keys(state.loadedData).map(Number));
+      state.currentAct = firstAct;
+      document.getElementById('actSelect').value = firstAct;
+
+      // Populate pack dropdown for first act
+      populatePackDropdown();
+
+      // Auto-select first pack
+      const firstActData = state.loadedData[firstAct];
+      if (firstActData) {
+        const firstPackKey = Object.keys(firstActData)[0];
+        state.currentPack = firstPackKey;
+        document.getElementById('packSelect').value = firstPackKey;
+
+        // Display vocabulary
+        displayVocabulary();
+      }
+    }
+
+    // ============================================================
     // INITIALIZATION: Load Data on Page Load
     // ============================================================
 
@@ -537,7 +590,7 @@
       1. Load all acts for the default language
       2. Populate act dropdown
       3. Populate native language dropdown
-      4. Auto-select first act
+      4. Auto-select first act (via encapsulated function)
       5. Display vocabulary
     */
     async function initialize() {
@@ -548,32 +601,12 @@
 
       // Setup UI
       setupLanguageRadioButtons();
-      setupMultipleChoiceCheckbox();
-      setupTypingModeCheckbox();
-      setupPronunciationModeCheckbox();
+      setupModeCheckboxes();  // ENCAPSULATED: Single function for all mode checkboxes
       populateActDropdown();
       populateNativeLanguageDropdown();
 
-      // Auto-select first act
-      if (state.loadedData && Object.keys(state.loadedData).length > 0) {
-        const firstAct = Math.min(...Object.keys(state.loadedData).map(Number));
-        state.currentAct = firstAct;
-        document.getElementById('actSelect').value = firstAct;
-
-        // Populate pack dropdown for first act
-        populatePackDropdown();
-
-        // Auto-select first pack
-        const firstActData = state.loadedData[firstAct];
-        if (firstActData) {
-          const firstPackKey = Object.keys(firstActData)[0];
-          state.currentPack = firstPackKey;
-          document.getElementById('packSelect').value = firstPackKey;
-
-          // Display vocabulary
-          displayVocabulary();
-        }
-      }
+      // Auto-select first act and pack (ENCAPSULATED - DRY)
+      autoSelectFirstActAndPack();
 
       updateDebugInfo('Initialization complete. Ready to use.');
     }
@@ -617,7 +650,12 @@
     }
 
     // ============================================================
-    // SETUP LANGUAGE RADIO BUTTONS: Event Listeners
+    // KEY FEATURE: Language Selection (Radio Buttons)
+    // Core Objective: Switch between target languages (Spanish/Chinese/English)
+    // Key Behaviors:
+    //   - Reloads all act data for selected language
+    //   - Resets native language to first available option
+    //   - Auto-selects first act/pack via encapsulated function (DRY)
     // ============================================================
 
     /*
@@ -644,91 +682,92 @@
           populateActDropdown();
           populateNativeLanguageDropdown();
 
-          // Auto-select first act and pack (same as initialize())
-          if (state.loadedData && Object.keys(state.loadedData).length > 0) {
-            const firstAct = Math.min(...Object.keys(state.loadedData).map(Number));
-            state.currentAct = firstAct;
-            document.getElementById('actSelect').value = firstAct;
-
-            // Populate pack dropdown for first act
-            populatePackDropdown();
-
-            // Auto-select first pack
-            const firstActData = state.loadedData[firstAct];
-            if (firstActData) {
-              const firstPackKey = Object.keys(firstActData)[0];
-              state.currentPack = firstPackKey;
-              document.getElementById('packSelect').value = firstPackKey;
-
-              // Display vocabulary
-              displayVocabulary();
-            }
-          }
+          // Auto-select first act and pack (ENCAPSULATED - DRY)
+          // Previously this was 15+ lines of duplicated code
+          autoSelectFirstActAndPack();
         });
       });
     }
 
     // ============================================================
-    // SETUP MULTIPLE CHOICE CHECKBOX: Event Listener
+    // KEY FEATURE: Mode Checkboxes (DRY ENCAPSULATION)
+    // Core Objective: Toggle display modes (multiple choice, typing, pronunciation)
+    // Key Behaviors:
+    //   - Each checkbox toggles a state flag
+    //   - Some modes require state reset (typing, pronunciation)
+    //   - All modes refresh vocabulary display on change
+    //   - Single configuration-driven function (DRY)
     // ============================================================
 
     /*
-      Attaches change event listener to multiple choice mode checkbox.
-      When toggled, refreshes the vocabulary table to show/hide wrong answer columns.
+      ENCAPSULATED FUNCTION (DRY PRINCIPLE)
+      Previously we had THREE separate functions:
+      - setupMultipleChoiceCheckbox()
+      - setupTypingModeCheckbox()
+      - setupPronunciationModeCheckbox()
+
+      All followed the same pattern:
+      1. Get checkbox by ID
+      2. Add change listener
+      3. Update state property
+      4. (Optionally) Clear some states
+      5. Refresh display
+
+      Now we define this ONCE with a configuration array.
+      "If I needed to change the checkbox behavior, how many places would I need to update?"
+      Answer: 1 (this function)
     */
-    function setupMultipleChoiceCheckbox() {
-      const checkbox = document.getElementById('multipleChoiceMode');
-      checkbox.addEventListener('change', (e) => {
-        state.multipleChoiceMode = e.target.checked;
-        displayVocabulary();  // Refresh table with new mode
+    function setupModeCheckboxes() {
+      // Configuration array: [checkboxId, stateKey, statesToClear]
+      const checkboxConfig = [
+        { id: 'multipleChoiceMode', stateKey: 'multipleChoiceMode', statesToClear: [] },
+        { id: 'typingMode', stateKey: 'typingMode', statesToClear: ['typingStates'] },
+        { id: 'pronunciationMode', stateKey: 'pronunciationMode', statesToClear: ['pronunciationStates'] }
+      ];
+
+      checkboxConfig.forEach(({ id, stateKey, statesToClear }) => {
+        const checkbox = document.getElementById(id);
+        if (!checkbox) return;
+
+        checkbox.addEventListener('change', (e) => {
+          // Update the state flag
+          state[stateKey] = e.target.checked;
+
+          // Clear associated states if specified
+          statesToClear.forEach(stateMapKey => {
+            if (state[stateMapKey] && typeof state[stateMapKey].clear === 'function') {
+              state[stateMapKey].clear();
+            }
+          });
+
+          // Refresh table with new mode
+          displayVocabulary();
+        });
       });
     }
 
     // ============================================================
-    // SETUP TYPING MODE CHECKBOX: Event Listener
+    // KEY FEATURE: Speech Recognition (Pronunciation Practice)
+    // Core Objective: Allow users to practice pronunciation with feedback
+    // Key Behaviors:
+    //   - Uses Web Speech API for speech-to-text
+    //   - Calculates similarity using Levenshtein distance
+    //   - Visual feedback (🔴 recording, 🎤 idle)
+    //   - Reset state encapsulated for DRY
     // ============================================================
 
     /*
-      Attaches change event listener to typing mode checkbox.
-      When toggled, refreshes the vocabulary table to show/hide typing columns.
-      Also resets all typing states when enabled.
+      ENCAPSULATED FUNCTION (DRY PRINCIPLE)
+      Reset listening state appears in 3 places: onresult, onerror, onend
+      Now defined ONCE and called from all places.
     */
-    function setupTypingModeCheckbox() {
-      const checkbox = document.getElementById('typingMode');
-      checkbox.addEventListener('change', (e) => {
-        state.typingMode = e.target.checked;
-
-        // Reset typing states when toggling mode
-        state.typingStates.clear();
-
-        displayVocabulary();  // Refresh table with new mode
-      });
+    function resetListeningState(recordButton) {
+      isListening = false;
+      currentListeningWordIndex = null;
+      if (recordButton) {
+        recordButton.textContent = '🎤';
+      }
     }
-
-    // ============================================================
-    // SETUP PRONUNCIATION MODE CHECKBOX: Event Listener
-    // ============================================================
-
-    /*
-      Attaches change event listener to pronunciation mode checkbox.
-      When toggled, refreshes the vocabulary table to show/hide pronunciation columns.
-      Also resets all pronunciation states when enabled.
-    */
-    function setupPronunciationModeCheckbox() {
-      const checkbox = document.getElementById('pronunciationMode');
-      checkbox.addEventListener('change', (e) => {
-        state.pronunciationMode = e.target.checked;
-
-        // Reset pronunciation states when toggling mode
-        state.pronunciationStates.clear();
-
-        displayVocabulary();  // Refresh table with new mode
-      });
-    }
-
-    // ============================================================
-    // START LISTENING: Begin Speech Recognition for a Word
-    // ============================================================
 
     /*
       Starts speech recognition for a specific word in the vocabulary table.
@@ -747,7 +786,7 @@
 
       VISUAL FEEDBACK:
       - Button shows "🔴" while recording
-      - Button shows "🎤" when idle
+      - Button shows "🎤" when idle (via resetListeningState - DRY)
     */
     function startListeningForPronunciation(wordIndex, correctWord, recordButton) {
       if (!recognition) {
@@ -782,15 +821,15 @@
           attempted: true
         });
 
-        recordButton.textContent = '🎤';
+        // ENCAPSULATED - DRY: Reset state via helper function
+        resetListeningState(recordButton);
         updatePronunciationDisplay(wordIndex, recordButton);
       };
 
       recognition.onerror = (event) => {
         console.error('Speech recognition error:', event.error);
-        isListening = false;
-        currentListeningWordIndex = null;
-        recordButton.textContent = '🎤';
+        // ENCAPSULATED - DRY: Reset state via helper function
+        resetListeningState(recordButton);
 
         if (event.error === 'no-speech') {
           state.pronunciationStates.set(wordIndex, {
@@ -805,9 +844,8 @@
       };
 
       recognition.onend = () => {
-        isListening = false;
-        currentListeningWordIndex = null;
-        recordButton.textContent = '🎤';
+        // ENCAPSULATED - DRY: Reset state via helper function
+        resetListeningState(recordButton);
       };
 
       recognition.start();
@@ -1206,7 +1244,13 @@
     }
 
     // ============================================================
-    // GENERATE WRONG ANSWERS: Random Selection from Entire Act
+    // KEY FEATURE: Multiple Choice Wrong Answers (Act-Wide Pool)
+    // Core Objective: Generate diverse, non-duplicate wrong answers
+    // Key Behaviors:
+    //   - Pulls from ENTIRE ACT (~2,500 words) not just current pack
+    //   - Filters duplicates via normalized string comparison
+    //   - Uses Fisher-Yates shuffle for uniform randomness
+    //   - Works for ANY language (Spanish, Chinese, English)
     // ============================================================
 
     /*
@@ -1301,7 +1345,14 @@
     }
 
     // ============================================================
-    // HANDLE TYPING INPUT: Process Key Presses for Typing Mode
+    // KEY FEATURE: Typing Practice (Character-by-Character Input)
+    // Core Objective: Let users practice spelling with instant feedback
+    // Key Behaviors:
+    //   - Accent-insensitive comparison (á = a, ñ = n)
+    //   - Auto-skip spaces
+    //   - Track wrong letters with visual feedback
+    //   - Satisfying click sound on every keypress
+    //   - Per-row state (not global) - more modular than SimpleFlashCards
     // ============================================================
 
     /*
@@ -1452,7 +1503,13 @@
     }
 
     // ============================================================
-    // DISPLAY VOCABULARY: Show 2-Column or Multi-Column Table
+    // KEY FEATURE: Vocabulary Table Display (Multi-Mode)
+    // Core Objective: Render vocabulary with optional practice modes
+    // Key Behaviors:
+    //   - Dynamic column count based on enabled modes
+    //   - Supports: basic, multiple choice, typing, pronunciation
+    //   - Modes can be combined (columns stack)
+    //   - Headers update dynamically to match active modes
     // ============================================================
 
     /*
