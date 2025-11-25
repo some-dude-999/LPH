@@ -76,6 +76,20 @@ def validate_pack(pack_num, title, original, base, example, combined, language):
         examples = list(not_in_original)[:3]
         errors.append(f"FAIL #8: Examples not in Original: {examples}{'...' if len(not_in_original) > 3 else ''}")
 
+    # Condition 9: Each example must CONTAIN its corresponding base word
+    # Examples are paired: examples[0],examples[1] go with base[0], examples[2],examples[3] go with base[1], etc.
+    fail9_count = 0
+    for j, ex in enumerate(example):
+        base_idx = j // 2
+        if base_idx < len(base):
+            b = base[base_idx]
+            if b not in ex:
+                if fail9_count < 3:  # Show up to 3 failures per pack
+                    errors.append(f"FAIL #9: Example '{ex}' does not contain base '{b}' (base index {base_idx})")
+                fail9_count += 1
+    if fail9_count > 3:
+        errors.append(f"FAIL #9: ... and {fail9_count - 3} more examples missing base word")
+
     return errors
 
 def validate_language(language, filepath):
@@ -115,7 +129,7 @@ def validate_language(language, filepath):
         'total': len(rows),
         'passed': 0,
         'failed': 0,
-        'errors_by_condition': {i: 0 for i in range(1, 9)},
+        'errors_by_condition': {i: 0 for i in range(1, 10)},
         'failed_packs': []
     }
 
@@ -135,7 +149,7 @@ def validate_language(language, filepath):
             results['failed_packs'].append((pack_num, title, errors))
             # Count errors by condition
             for err in errors:
-                for i in range(1, 9):
+                for i in range(1, 10):
                     if f"FAIL #{i}:" in err:
                         results['errors_by_condition'][i] += 1
         else:
@@ -155,9 +169,10 @@ def validate_language(language, filepath):
         5: "No duplicates in Combined",
         6: "No duplicates in Original",
         7: "Base appears in trio",
-        8: "Examples subset of Original"
+        8: "Examples subset of Original",
+        9: "Examples contain base word"
     }
-    for i in range(1, 9):
+    for i in range(1, 10):
         count = results['errors_by_condition'][i]
         status = "✓" if count == 0 else f"✗ {count} packs"
         print(f"  #{i} {condition_names[i]}: {status}")
