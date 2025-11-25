@@ -1377,128 +1377,8 @@
       50% { opacity: 0.5; }
     }
 
-    /* ============================================
-       RESPONSIVE BREAKPOINTS
-       - Tablet: max-width 1000px
-       - Mobile: max-width 750px
-       ============================================ */
-
-    /* TABLET BREAKPOINT (1000px) */
-    @media (max-width: 1000px) {
-      /* Restructure layout: title -> controls -> card count (stacked) */
-      body {
-        padding-top: 20px;
-      }
-
-      /* Title: first item, centered */
-      .wordpack-title {
-        order: 1;
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-      }
-
-      /* Mode selector: move to flow, center it */
-      .mode-selector {
-        position: static;
-        order: 2;
-        justify-content: center;
-        margin-bottom: 10px;
-      }
-
-      /* Top buttons: move to flow, create a row with mode selector */
-      .top-btn {
-        position: static;
-        order: 2;
-      }
-
-      /* Create a header controls row */
-      body::before {
-        content: '';
-        display: none;
-      }
-
-      /* Card counter wrapper */
-      .card-counter-wrapper {
-        order: 3;
-        margin-bottom: 10px;
-      }
-
-      .card-counter {
-        font-size: 1rem;
-      }
-
-      /* Flashcard container */
-      .flashcard-container {
-        order: 4;
-      }
-
-      /* Smaller flashcard */
-      .flashcard {
-        width: 500px;
-        height: 350px;
-      }
-
-      .card-word {
-        font-size: 1.8rem;
-      }
-
-      /* Smaller nav buttons */
-      .nav-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.6rem;
-      }
-
-      /* Smaller mode buttons */
-      .mode-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
-      }
-
-      /* Smaller top buttons */
-      .top-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
-      }
-
-      /* Control buttons */
-      .control-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
-      }
-
-      .card-controls {
-        gap: 20px;
-      }
-    }
-
-    /* MOBILE BREAKPOINT (750px) */
-    @media (max-width: 750px) {
-      body {
-        padding-top: 15px;
-      }
-
-      /* Even smaller title */
-      .wordpack-title {
-        font-size: 1.1rem;
-        letter-spacing: 1px;
-        margin-bottom: 8px;
-      }
-
-      /* Smaller card counter */
-      .card-counter {
-        font-size: 0.9rem;
-      }
-
-      .card-counter-wrapper {
-        margin-bottom: 8px;
-        min-height: 2rem;
-      }
-
-      /* Even smaller flashcard */
+    /* Responsive */
+    @media (max-width: 600px) {
       .flashcard {
         width: 340px;
         height: 260px;
@@ -1508,62 +1388,16 @@
         font-size: 1.5rem;
       }
 
-      .card-face {
-        padding: 20px;
-      }
-
-      /* Smaller nav buttons */
       .nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.4rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
       }
 
-      /* Even smaller mode buttons */
-      .mode-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
-      }
-
-      .mode-selector {
-        gap: 8px;
-      }
-
-      /* Even smaller top buttons */
-      .top-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
-      }
-
-      /* Control buttons */
-      .control-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
-      }
-
-      .card-controls {
-        gap: 15px;
-      }
-
-      /* Flashcard container gap */
-      .flashcard-container {
-        gap: 10px;
-        margin-bottom: 6px;
-      }
-
-      /* Smaller stamps */
-      .card-stamp {
-        font-size: 1.1rem;
-        padding: 10px 15px;
-        border-width: 6px;
-      }
-
-      .stamp-base {
-        border-width: 6px;
-        letter-spacing: 2px;
+      .action-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
       }
     }
 
