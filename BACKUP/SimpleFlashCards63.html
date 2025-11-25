@@ -2021,8 +2021,8 @@
       nextCard: '<b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> to Next Card',
 
       // All modes actions
-      pronounce: '<b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> to Hear Pronunciation',
-      peek: '<b>CLICK</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> to See Translation',
+      pronounce: '<b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> to Pronounce',
+      peek: '<b>CLICK</b> <span class="tooltip-btn">❓</span> or <b>PRESS</b> <span class="tooltip-key">↓</span> to Peek at Back',
 
       // Speaking mode
       record: '<b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> to Record',
@@ -4194,9 +4194,13 @@
         e.preventDefault();
         speakSpanish();
       } else if (e.key === 'ArrowDown') {
-        // Down arrow: Hold to see translation (flip on keydown, unflip on keyup)
+        // Down arrow: Toggle flip (press to flip, press again to unflip)
         e.preventDefault();
-        flipCard();
+        if (isFlipped) {
+          unflipCard();
+        } else {
+          flipCard();
+        }
       } else if (e.key === '1') {
         // Key 1: Remove card (Got it!) - only in reading mode
         if (currentMode === 'reading') {
@@ -4231,11 +4235,6 @@
     document.addEventListener('keyup', (e) => {
       // Clear key state
       keysPressed[e.key] = false;
-
-      // Down arrow: Release to unflip (hold behavior)
-      if (e.key === 'ArrowDown') {
-        unflipCard();
-      }
     });
 
     // Mode selector event listeners
