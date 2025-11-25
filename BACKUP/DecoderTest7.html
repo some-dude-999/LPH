@@ -18,49 +18,7 @@
 
   <!--
     ============================================================
-    MASTER TEMPLATE: Language Learning Game Data Architecture
-    ============================================================
-
-    THIS IS THE MASTER TEMPLATE for all language learning games in this project.
-    All games (flashcards, quiz, typing practice, etc.) should follow the
-    patterns demonstrated here.
-
-    ============================================================
-    KEY FEATURE: CARD OBJECT ARCHITECTURE (CRITICAL!)
-    ============================================================
-    Core Objective: Prevent front/back desync in flashcard games
-    Key Behaviors:
-      - Words and translations are NEVER stored separately
-      - Each vocabulary item is accessed via index into SAME array
-      - word[0] = target language (front of card)
-      - word[nativeIndex] = translation (back of card)
-      - BOTH come from the SAME word array - NEVER from different sources
-
-    WHY THIS MATTERS:
-    If front and back are in separate arrays, they can get out of sync when:
-      - Shuffling for randomization
-      - Removing mastered cards
-      - Adding confused cards back
-      - Any array manipulation
-
-    THE SOLUTION (used throughout this codebase):
-    ```javascript
-    // Words array: Each word is ONE array containing ALL translations
-    const word = pack.words[wordIndex];
-    const targetLanguage = word[0];           // Front of card
-    const translation = word[nativeIndex];    // Back of card - SAME ARRAY
-
-    // When creating card objects for games:
-    const card = {
-      id: `${packKey}-${wordIndex}`,
-      spanish: word[0],              // Front - from word array
-      translation: word[nativeIndex] // Back - from SAME word array
-    };
-    // Now card.spanish and card.translation are GUARANTEED to match
-    ```
-
-    ============================================================
-    KEY FEATURE: WORDPACK DATA STRUCTURE
+    WORDPACK DATA STRUCTURE DEBUGGER
     ============================================================
 
     PURPOSE:
@@ -70,9 +28,6 @@
     - Extract and display vocabulary for language learning
     - Navigate through acts and packs
     - Map columns to different languages
-    - Generate multiple choice wrong answers
-    - Handle typing input with accent normalization
-    - Process speech recognition for pronunciation practice
 
     TARGET LANGUAGES WE TEACH:
     - Spanish (7 acts, 5 column structure)
@@ -83,9 +38,7 @@
     Each language has multiple "acts" (learning stages), and each act contains
     multiple "wordpacks" (vocabulary sets).
 
-    ============================================================
-    KEY FEATURE: OBFUSCATED MODULE STRUCTURE
-    ============================================================
+    OBFUSCATED MODULE STRUCTURE:
     Each module exports a dictionary of wordpacks with this structure:
 
     {
@@ -107,25 +60,20 @@
       ...
     }
 
-    CRITICAL: Each word is an ARRAY containing ALL translations.
-    This ensures front and back of card are ALWAYS from the same source.
-
-    ============================================================
-    KEY FEATURE: COLUMN MAPPING BY LANGUAGE
-    ============================================================
+    COLUMN MAPPING BY LANGUAGE:
     The words array contains arrays where each index maps to a specific language:
 
     SPANISH (5 columns):
-      [0] = Spanish (language being learned) <- ALWAYS use for front
-      [1] = English                          <- Use for back if user speaks English
+      [0] = Spanish (language being learned)
+      [1] = English
       [2] = Chinese
       [3] = Pinyin
       [4] = Portuguese
 
     CHINESE (12 columns):
-      [0] = Chinese (language being learned) <- ALWAYS use for front
+      [0] = Chinese (language being learned)
       [1] = Pinyin
-      [2] = English                          <- Use for back if user speaks English
+      [2] = English
       [3] = Spanish
       [4] = French
       [5] = Portuguese
@@ -137,60 +85,21 @@
       [11] = Filipino
 
     ENGLISH (5 columns):
-      [0] = English (language being learned) <- ALWAYS use for front
-      [1] = Chinese                          <- Use for back if user speaks Chinese
+      [0] = English (language being learned)
+      [1] = Chinese
       [2] = Pinyin
       [3] = Spanish
       [4] = Portuguese
 
-    ============================================================
-    KEY FEATURE: USING THIS DATA IN A GAME (Correct Pattern)
-    ============================================================
-    1. Load the obfuscated module using decodeObfuscatedModule()
+    HOW TO USE THIS DATA IN A GAME:
+    1. Import the obfuscated module using decodeObfuscatedModule()
     2. Select a wordpack from the returned dictionary
     3. Access wordpack.meta for pack information
     4. Access wordpack.words for the vocabulary array
-    5. For each word: word = wordpack.words[i]
-    6. Front of card: word[0] (target language)
-    7. Back of card: word[nativeLanguageIndex] (user's language)
-
-    CORRECT IMPLEMENTATION:
-    ```javascript
-    const word = pack.words[currentIndex];
-    frontOfCard.textContent = word[0];              // Target language
-    backOfCard.textContent = word[nativeIndex];    // Translation - SAME ARRAY
-    ```
-
-    WRONG IMPLEMENTATION (will cause desync bugs):
-    ```javascript
-    // DON'T DO THIS - separate arrays can get out of sync!
-    const spanishWords = pack.words.map(w => w[0]);
-    const englishWords = pack.words.map(w => w[1]);
-    // If you shuffle spanishWords, englishWords won't match!
-    ```
-
-    ============================================================
-    KEY FEATURE: GAME STATE PERSISTENCE
-    ============================================================
-    All games should save and restore settings via localStorage:
-    - Act selection
-    - Pack selection
-    - Native language ("I speak")
-    - Voice settings
-    - Speed settings
-    - Game mode (reading/listening/speaking/writing)
-
-    See CLAUDE.md for full implementation pattern.
-
-    ============================================================
-    KEY FEATURE: DECODER FOR OBFUSCATED MODULES
-    ============================================================
-    Obfuscated files use 3-layer protection:
-    1. Base64 encoding - Safe transport as JavaScript string
-    2. Zlib compression - 60%+ file size reduction
-    3. String reversal - Salt to prevent casual JSON parsing
-
-    The decodeObfuscatedModule() function reverses all 3 steps.
+    5. Each word is wordpack.words[i], where i is the word index
+    6. Each column is wordpack.words[i][columnIndex]
+    7. Column 0 is always the language being learned
+    8. Other columns provide translations in various languages
 
     ============================================================
   -->
@@ -1543,23 +1452,11 @@
     }
 
     // ============================================================
-    // KEY FEATURE: Display Vocabulary - Card Object Architecture Demo
-    // ============================================================
-    // Core Objective: Demonstrate correct pattern for displaying cards
-    // Key Behaviors:
-    //   - Front (word[0]) and back (word[nativeIndex]) are from SAME array
-    //   - NEVER stored separately - always accessed from same word object
-    //   - This prevents front/back desync when shuffling/manipulating
+    // DISPLAY VOCABULARY: Show 2-Column or Multi-Column Table
     // ============================================================
 
     /*
       Displays vocabulary for the selected wordpack.
-
-      CRITICAL ARCHITECTURE NOTE:
-      Each word in pack.words is an ARRAY containing ALL translations.
-      - word[0] = target language (front of card)
-      - word[nativeIndex] = translation (back of card)
-      Both come from the SAME word array, so they're ALWAYS linked.
 
       TABLE MODES:
 
@@ -1589,9 +1486,9 @@
       2. Check which modes are enabled
       3. Update table headers accordingly
       4. Loop through words array
-      5. For each word (CRITICAL - use SAME word object for both columns):
+      5. For each word:
          - Display word[0] in column 1 (target language - correct answer)
-         - Display word[nativeLanguageIndex] in column 2 (translation) - SAME ARRAY
+         - Display word[nativeLanguageIndex] in column 2 (translation)
          - If multiple choice mode: Generate and display 4 wrong answers
          - If typing mode: Add typing input box and tracking columns
          - If pronunciation mode: Add record button and score columns
@@ -1688,25 +1585,19 @@
       tableHeaderRow.innerHTML = headers.join('\n');
 
       // ============================================================
-      // KEY FEATURE: POPULATE TABLE ROWS - Card Object Pattern
-      // ============================================================
-      // CRITICAL: word[0] and word[nativeIndex] are from the SAME array.
-      // This is the correct pattern - never store front/back separately!
+      // POPULATE TABLE ROWS: Generate vocabulary with optional wrong answers
       // ============================================================
       pack.words.forEach((word, index) => {
         const row = document.createElement('tr');
 
-        // COLUMN 1: Target language (front of card)
-        // word[0] is ALWAYS the target language being learned
+        // COLUMN 1: Target language (correct answer, column 0 from words array)
         const cell1 = document.createElement('td');
-        cell1.textContent = word[0];  // Front of card - from word array
+        cell1.textContent = word[0];
         row.appendChild(cell1);
 
-        // COLUMN 2: Native language translation (back of card)
-        // word[nativeIndex] is from the SAME array as word[0]
-        // This ensures front and back are ALWAYS linked - no desync possible!
+        // COLUMN 2: Native language translation (selected column from words array)
         const cell2 = document.createElement('td');
-        cell2.textContent = word[state.currentNativeLanguage];  // Back of card - SAME array
+        cell2.textContent = word[state.currentNativeLanguage];
         row.appendChild(cell2);
 
         // COLUMNS 3-6: Wrong answers (only in multiple choice mode)
