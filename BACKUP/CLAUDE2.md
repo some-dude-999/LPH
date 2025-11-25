@@ -54,56 +54,6 @@
 
 ---
 
-## 📊 BEFORE/AFTER TABLES - MANDATORY FOR VALUE CHANGES
-**CRITICAL: When changing sizing, positioning, or volume values, ALWAYS display a before/after comparison table.**
-
-### When to Use Before/After Tables
-**ALWAYS** show a table when modifying:
-- **Sizing**: font-size, width, height, padding, margin, border-width, border-radius
-- **Positioning**: top, left, right, bottom, transform, z-index
-- **Volume/Audio**: gain.value, volume levels, audio settings
-- **Spacing**: gap, letter-spacing, line-height
-- **Any numeric CSS or audio property**
-
-### Required Table Format
-```markdown
-| Property | Before | After |
-|----------|--------|-------|
-| font-size | `1.1rem` | `1.6rem` |
-| top | `50%` | `28%` |
-| padding | `10px 18px` | `14px 28px` |
-```
-
-### Example - Good Change Communication
-```markdown
-Here's what I changed for the stamp CSS:
-
-| Property | Before | After |
-|----------|--------|-------|
-| Position (top) | `50%` (centered) | `28%` (upper portion) |
-| Font size | `1.1rem` | `1.6rem` (bigger) |
-| Padding | `10px 18px` | `14px 28px` (more spacious) |
-| Border radius | `3px` | `8px` (more rounded) |
-
-The stamp now sits in the top half of the card!
-```
-
-### Why This Matters
-- **Clarity**: User sees exactly what changed at a glance
-- **Reversibility**: Easy to revert if changes aren't right
-- **Documentation**: Creates a record of the change
-- **Communication**: Shows you understand what you're modifying
-- **Trust**: User can verify you made the intended changes
-
-### Rules
-1. ✅ **ALWAYS** show the table AFTER making changes
-2. ✅ Include brief description of WHY (in parentheses or after table)
-3. ✅ Use backticks for values to make them stand out
-4. ❌ Don't skip the table even for "small" changes
-5. ❌ Don't just say "I made it bigger" - show the exact values
-
----
-
 ## 🔑 KEY FEATURES - SACRED AND IMMUTABLE
 **CRITICAL: Key features are high-level user requirements that MUST be preserved across all code changes.**
 
