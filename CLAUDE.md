@@ -404,6 +404,67 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act1-foundation-js
 
 ---
 
+## 📋 OVERVIEW WORDPACK DATA STRUCTURE (CRITICAL!)
+**Understanding how wordpacks are organized in the Overview CSV files.**
+
+### The Base Word + 3 Variants Rule
+Each wordpack contains vocabulary organized around **base words**, where each base word has **exactly 3 example phrases/variants**.
+
+**Example (Spanish - "hola" base word):**
+```
+hola amigo      → hello friend (masculine)
+hola todos      → hello everyone
+hola señor      → hello sir
+```
+
+**Example (Chinese - "sometimes" base word):**
+```
+有时候会这样    → sometimes like this
+有的时候呢      → sometimes
+偶尔会这样子    → occasionally like this
+```
+
+### Validation Rules for Overview CSV Word Arrays
+
+| Rule | Description | Example |
+|------|-------------|---------|
+| **Divisible by 3** | Word count MUST be divisible by 3 | 30 words = 10 base words × 3 variants ✓ |
+| **No within-pack duplicates** | Same exact phrase CANNOT appear twice in one wordpack | `["hola amigo", "hola amigo", ...]` ❌ |
+| **Across-pack duplicates OK** | Same phrase CAN appear in different wordpacks | Pack 1: "hola amigo", Pack 5: "hola amigo" ✓ |
+
+### Why These Rules Matter
+- **Divisible by 3**: Ensures consistent learning structure (base word + 3 examples)
+- **No within-pack duplicates**: Each card in a pack should be unique for effective learning
+- **Across-pack duplicates OK**: Common phrases naturally appear in multiple contexts
+
+### Verification Scripts
+Located in `PythonHelpers/`:
+- `verify_words_integrity.py` - Verifies Overview arrays match breakout CSV files
+- `check_duplicates.py` - Checks for within-pack and across-pack duplicates
+
+**Run after any CSV changes:**
+```bash
+python PythonHelpers/verify_words_integrity.py
+python PythonHelpers/check_duplicates.py
+```
+
+### Data Flow
+```
+Overview CSV (source of truth)
+    ↓
+    Contains: Pack_Number, Pack_Title, [Language]_Words array
+    ↓
+Breakout CSVs ([Language]Words1.csv, etc.)
+    ↓
+    Must match Overview word arrays exactly
+    ↓
+JavaScript Modules (Jsmodules/)
+    ↓
+    Generated from CSVs via convert_csv_to_js.py
+```
+
+---
+
 ## 📦 JAVASCRIPT MODULE STRUCTURE (CRITICAL!)
 **JS modules are ACT-BASED, NOT pack-based!**
 
