@@ -6,6 +6,7 @@
   <title>Chinese Flashcard Typing Game</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@700&display=swap" rel="stylesheet">
   <style>
     /* =================================================================
        DESIGN SYSTEM - Single source of truth for fonts, colors, textures
@@ -22,6 +23,9 @@
 
       /* 3. UI font - buttons, titles, labels, everything else */
       --font-ui: 'Cinzel', serif;
+
+      /* 4. Chinese font - front card Chinese characters only */
+      --font-chinese: 'LXGW WenKai TC', serif;
 
       /* ===========================================
          COLORS - Only 3 text colors used
@@ -437,6 +441,13 @@
       word-break: normal;
       overflow-wrap: break-word;
       hyphens: none;
+    }
+
+    /* Chinese font for front card - LXGW WenKai TC Bold */
+    .card-front .card-word {
+      font-family: var(--font-chinese);
+      font-weight: 700;
+      font-style: normal;
     }
 
     /* Sound Button (pronounce - bottom right) */
