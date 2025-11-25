@@ -749,42 +749,25 @@
       font-size: 1rem;
       font-weight: bold;
       padding: 10px 15px;
-      border: 2px solid #A89078;
+      border: 2px solid #8B7355;
       border-radius: 6px;
-      /* Aged paper background */
-      background-color: #F5E6D3;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #FAF3E8 0%, #F5E6D3 30%, #E8D4B8 60%, #DCC8A8 100%);
-      background-blend-mode: multiply;
-      background-size: var(--cardboard-texture-size), 100%;
-      color: var(--color-text-dark);
+      background: rgba(60, 46, 31, 0.85);
+      color: var(--color-text-gold);
       cursor: pointer;
       width: 100%;
       text-align: left;
       text-align-last: left;
-      /* Custom dropdown arrow */
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(135deg, #FAF3E8 0%, #F5E6D3 30%, #E8D4B8 60%, #DCC8A8 100%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232C1810' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-      background-repeat: repeat, no-repeat, no-repeat;
-      background-position: 0 0, 0 0, calc(100% - 12px) center;
-      background-size: var(--cardboard-texture-size), 100%, 12px;
     }
 
     .setup-field select:focus {
       outline: none;
-      border-color: #8B7355;
+      border-color: #A08567;
       box-shadow: 0 0 8px rgba(139, 115, 85, 0.4);
     }
 
     .setup-field select option {
-      background: #F5E6D3;
-      color: var(--color-text-dark);
+      background: #3D2E1F;
+      color: var(--color-text-gold);
       text-align: left;
     }
 
@@ -856,36 +839,13 @@
       background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
-      border-radius: 8px;
+      border-radius: 25px;
+      color: var(--color-text-gold);
       cursor: pointer;
       transition: all 0.2s ease;
       letter-spacing: 1px;
       position: relative;
       z-index: 5;
-    }
-
-    /* Gold gradient text - matches wordpack-title styling */
-    .gold-text {
-      background-image:
-        var(--cardboard-texture),
-        linear-gradient(180deg,
-          #B8860B 0%,      /* Dark goldenrod */
-          #A67C38 20%,     /* Bronzed gold */
-          #8B6914 40%,     /* Dark gold */
-          #7A5C1A 60%,     /* Deep brown-gold */
-          #5D4E37 80%,     /* Dark brown */
-          #4A3728 100%     /* Very dark brown */
-        );
-      background-blend-mode: overlay;
-      background-size: var(--cardboard-texture-size), 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.4),
-        0 1px 1px rgba(139, 105, 20, 0.3),
-        0 -1px 0 rgba(184, 134, 11, 0.2);
-      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
     }
 
     .setup-start-btn:hover:not(:disabled) {
@@ -1332,14 +1292,14 @@
       font-size: 1rem;
       font-weight: bold;
       padding: 10px 15px;
-      border: 2px solid #A89078;
+      border: 3px solid rgba(74, 56, 40, 0.6);
       border-radius: 6px;
-      /* Aged paper background */
-      background-color: #F5E6D3;
+      /* Cardboard texture background */
+      background-color: #8B7355;
       background-image:
         var(--cardboard-texture),
-        linear-gradient(135deg, #FAF3E8 0%, #F5E6D3 30%, #E8D4B8 60%, #DCC8A8 100%);
-      background-blend-mode: multiply;
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%);
+      background-blend-mode: soft-light;
       background-size: var(--cardboard-texture-size), 100%;
       color: var(--color-text-dark);
       cursor: pointer;
@@ -1350,7 +1310,7 @@
       -moz-appearance: none;
       background-image:
         var(--cardboard-texture),
-        linear-gradient(135deg, #FAF3E8 0%, #F5E6D3 30%, #E8D4B8 60%, #DCC8A8 100%),
+        linear-gradient(135deg, #A08567 0%, #8B7355 30%, #7A6347 60%, #6B5540 100%),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232C1810' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
       background-repeat: repeat, no-repeat, no-repeat;
       background-position: 0 0, 0 0, calc(100% - 12px) center;
@@ -1358,10 +1318,10 @@
     }
 
     .menu-field select:hover {
-      background-color: #EBD9C3;
+      background-color: #9B8365;
       background-image:
         var(--cardboard-texture),
-        linear-gradient(135deg, #F5E6D3 0%, #EBD9C3 30%, #DCC8A8 60%, #D0BC98 100%),
+        linear-gradient(135deg, #B09577 0%, #9B8365 30%, #8A7357 60%, #7B6550 100%),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232C1810' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
       background-repeat: repeat, no-repeat, no-repeat;
       background-position: 0 0, 0 0, calc(100% - 12px) center;
@@ -1370,12 +1330,12 @@
 
     .menu-field select:focus {
       outline: none;
-      border-color: #8B7355;
-      box-shadow: 0 0 8px rgba(139, 115, 85, 0.4);
+      border-color: #5D4E37;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
     }
 
     .menu-field select option {
-      background: #F5E6D3;
+      background: #8B7355;
       color: var(--color-text-dark);
       padding: 8px;
     }
@@ -2415,7 +2375,7 @@
           </div>
 
           <button id="start-practice-btn" class="setup-start-btn" style="width: 100%;">
-            <span class="gold-text">▶ Start Game</span>
+            ▶ Start Game
           </button>
         </div>
       `;
