@@ -1874,7 +1874,7 @@
     // Key Behaviors:
     //   - Decoder function handles 3-layer deobfuscation (base64 + zlib + reversal)
     //   - Module configuration supports all languages (Chinese, Spanish, English)
-    //   - Currently loading English acts
+    //   - Currently only Spanish acts are loaded
     //   - Future: Can easily add other languages by uncommenting module URLs
     // ============================================================
 
@@ -2370,7 +2370,7 @@
       document.body.classList.add('showing-menu');
 
       // Update titles
-      wordpackTitle.textContent = 'English Flashcard Typing Game';
+      wordpackTitle.textContent = 'Spanish Flashcard Typing Game';
       cardCounter.textContent = 'Choose Lesson to Begin Studying';
 
       // Render menu card (looks identical to a flashcard)
@@ -2404,7 +2404,7 @@
 
     // Render the menu card (looks like a regular flashcard)
     function renderMenuCard() {
-      // Front: Menu/Settings (styled like front side)
+      // Front: Menu/Settings (styled like Spanish side)
       spanishWord.innerHTML = `
         <div style="font-size: 1.1rem; text-align: left; max-width: 550px; margin: 0 auto; line-height: 1.8;">
           <!-- Row 1: Act and Wordpack -->
@@ -2445,7 +2445,7 @@
 
           <!-- Row 3: Voice -->
           <div class="menu-field" style="margin-bottom: 25px;">
-            <label>English Voice</label>
+            <label>Spanish Voice</label>
             <select id="menu-voice">
               <option value="">Loading voices...</option>
             </select>
@@ -2712,7 +2712,7 @@
 
       updateDisplay();
 
-      // Auto-pronounce English in listening mode only (not writing - user needs to translate)
+      // Auto-pronounce Spanish in listening mode only (not writing - user needs to translate)
       if (newMode === 'listening' && currentDeck.length > 0) {
         setTimeout(() => speakEnglish(), 300);
       }
@@ -3227,7 +3227,7 @@
     // KEY FEATURE: Deck Initialization with Linked Card Objects
     // Core Objective: Create shuffled deck where front/back are ALWAYS synced
     // Key Behaviors:
-    //   - Each card is a SINGLE object with both english and translation
+    //   - Each card is a SINGLE object with both spanish and translation
     //   - Front and back of card are NEVER separate - they are properties
     //     of the same card object (currentDeck[currentIndex])
     //   - Shuffling reorders cards but NEVER breaks the front/back link
@@ -3423,7 +3423,7 @@
         return;
       }
 
-      // CRITICAL: Get SINGLE card object - front (english) and back (translation) are ALWAYS linked
+      // CRITICAL: Get SINGLE card object - front (spanish) and back (translation) are ALWAYS linked
       const card = currentDeck[currentIndex];
 
       // Display counter (deck change indicator now shown as overlay stamp on card)
