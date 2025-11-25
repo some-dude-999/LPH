@@ -1,13 +1,13 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-漂亮,piàoliang,pretty,bonito,joli,bonito,đẹp,สวย,ស្អាត,cantik,cantik,maganda
+漂亮,piào liang,pretty,bonito,joli,bonito,đẹp,สวย,ស្អាត,cantik,cantik,maganda
 很漂亮,hěn piàoliang,very pretty,muy bonito,très joli,muito bonito,rất đẹp,สวยมาก,ស្អាតណាស់,sangat cantik,sangat cantik,sobrang ganda
 真漂亮,zhēn piàoliang,really pretty,realmente bonito,vraiment joli,realmente bonito,đẹp thật,สวยจริง,ស្អាតពិតប្រាកដ,benar-benar cantik,cantik betul,talagang maganda
 帅,shuài,handsome,guapo,beau,bonito,đẹp trai,หล่อ,សង្ហា,ganteng,kacak,gwapo
 很帅,hěn shuài,very handsome,muy guapo,très beau,muito bonito,rất đẹp trai,หล่อมาก,សង្ហាណាស់,sangat ganteng,sangat kacak,sobrang gwapo
 真帅,zhēn shuài,really handsome,realmente guapo,vraiment beau,realmente bonito,đẹp trai thật,หล่อจริง,សង្ហាពិតប្រាកដ,benar-benar ganteng,memang kacak,talagang gwapo
 可爱,kě'ài,cute,lindo,mignon,fofo,dễ thương,น่ารัก,គួរឱ្យស្រឡាញ់,lucu,comel,cute
-很可爱,hěn kě'ài,very cute,muy lindo,très mignon,muito fofo,rất dễ thương,น่ารักมาก,គួរឱ្យស្រឡាញ់ណាស់,sangat lucu,sangat comel,sobrang cute
-真可爱,zhēn kě'ài,really cute,realmente lindo,vraiment mignon,realmente fofo,dễ thương thật,น่ารักจริง,គួរឱ្យស្រឡាញ់ពិតប្រាកដ,benar-benar lucu,memang comel,talagang cute
+很可爱,hěn kě ài,very cute,muy lindo,très mignon,muito fofo,rất dễ thương,น่ารักมาก,គួរឱ្យស្រឡាញ់ណាស់,sangat lucu,sangat comel,sobrang cute
+真可爱,zhēn kě ài,really cute,realmente lindo,vraiment mignon,realmente fofo,dễ thương thật,น่ารักจริง,គួរឱ្យស្រឡាញ់ពិតប្រាកដ,benar-benar lucu,memang comel,talagang cute
 丑,chǒu,ugly,feo,laid,feio,xấu,น่าเกลียด,អាក្រក់,jelek,hodoh,pangit
 很丑,hěn chǒu,very ugly,muy feo,très laid,muito feio,rất xấu,น่าเกลียดมาก,អាក្រក់ណាស់,sangat jelek,sangat hodoh,sobrang pangit
 太丑了,tài chǒu le,too ugly,demasiado feo,trop laid,feio demais,quá xấu,น่าเกลียดเกินไป,អាក្រក់ពេក,terlalu jelek,terlalu hodoh,napangit
@@ -41,7 +41,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 能干,nénggàn,capable,capaz,capable,capaz,có năng lực,มีความสามารถ,មានសមត្ថភាព,mampu,berkebolehan,may kakayahan
 很能干,hěn nénggàn,very capable,muy capaz,très capable,muito capaz,rất có năng lực,มีความสามารถมาก,មានសមត្ថភាពណាស់,sangat mampu,sangat berkebolehan,sobrang may kakayahan
 真能干,zhēn nénggàn,really capable,realmente capaz,vraiment capable,realmente capaz,có năng lực thật,มีความสามารถจริง,មានសមត្ថភាពពិតប្រាកដ,benar-benar mampu,memang berkebolehan,talagang may kakayahan
-友好,yǒuhǎo,friendly,amigable,amical,amigável,thân thiện,เป็นมิตร,រួសរាយរាក់ទាក់,ramah,mesra,palakaibigan
+友好,yǒu hǎo,friendly,amigable,amical,amigável,thân thiện,เป็นมิตร,រួសរាយរាក់ទាក់,ramah,mesra,palakaibigan
 很友好,hěn yǒuhǎo,very friendly,muy amigable,très amical,muito amigável,rất thân thiện,เป็นมิตรมาก,រួសរាយរាក់ទាក់ណាស់,sangat ramah,sangat mesra,sobrang palakaibigan
 真友好,zhēn yǒuhǎo,really friendly,realmente amigable,vraiment amical,realmente amigável,thân thiện thật,เป็นมิตรจริง,រួសរាយរាក់ទាក់ពិតប្រាកដ,benar-benar ramah,memang mesra,talagang palakaibigan
 安静,ānjìng,quiet,tranquilo,calme,quieto,yên tĩnh,เงียบ,ស្ងាត់,tenang,tenang,tahimik

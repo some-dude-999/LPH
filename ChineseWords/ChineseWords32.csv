@@ -12,7 +12,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 吃饱,chī bǎo,eat until full,comer hasta estar lleno,manger à satiété,comer até estar cheio,ăn no,กินอิ่ม,ញ៉ាំឆ្អែត,makan kenyang,makan kenyang,kumain ng busog
 饱了,bǎo le,full,estoy lleno,je suis rassasié,estou cheio,no rồi,อิ่มแล้ว,ឆ្អែតហើយ,sudah kenyang,dah kenyang,busog na
 渴,kě,thirsty,sediento,avoir soif,com sede,khát,หิวน้ำ,ស្រេកទឹក,haus,dahaga,uhaw
-口渴,kǒukě,thirsty,sediento,avoir soif,com sede,khát nước,กระหายน้ำ,ស្រេកទឹក,kehausan,dahaga,nauuhaw
+口渴,kǒu kě,thirsty,sediento,avoir soif,com sede,khát nước,กระหายน้ำ,ស្រេកទឹក,kehausan,dahaga,nauuhaw
 渴了,kě le,thirsty,tengo sed,j'ai soif,estou com sede,khát rồi,หิวน้ำแล้ว,ស្រេកទឹកហើយ,sudah haus,dah dahaga,uhaw na
 尝,cháng,taste,probar,goûter,provar,nếm,ลอง,ភ្លក,coba,rasa,tikman
 品尝,pǐncháng,taste,degustar,déguster,degustar,nếm thử,ชิม,ភ្លក,mencicipi,merasa,lasahan
@@ -23,12 +23,12 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 买单,mǎidān,pay the bill,pagar la cuenta,payer l'addition,pagar a conta,thanh toán,จ่ายเงิน,គិតលុយ,bayar,bayar,magbayad ng bill
 结账,jiézhàng,settle the bill,pagar,régler l'addition,acertar a conta,tính tiền,จ่ายบิล,គិតលុយ,bayar tagihan,bayar bil,magbayad
 付钱,fùqián,pay money,pagar,payer,pagar,trả tiền,จ่ายเงิน,បង់ប្រាក់,bayar uang,bayar wang,magbayad
-好吃,hǎochī,delicious,delicioso,délicieux,delicioso,ngon,อร่อย,ឆ្ងាញ់,enak,sedap,masarap
-美味,měiwèi,delicious,sabroso,délicieux,saboroso,ngon,อร่อย,ឆ្ងាញ់,lezat,lazat,masarap
-味道好,wèidào hǎo,tastes good,sabe bien,bon goût,tem gosto bom,vị ngon,รสชาติดี,រសជាតិល្អ,rasanya enak,rasa sedap,masarap ang lasa
+好吃,hǎo chī,delicious,delicioso,délicieux,delicioso,ngon,อร่อย,ឆ្ងាញ់,enak,sedap,masarap
+美味,měi wèi,delicious,sabroso,délicieux,saboroso,ngon,อร่อย,ឆ្ងាញ់,lezat,lazat,masarap
+味道好,wèi dào hǎo,tastes good,sabe bien,bon goût,tem gosto bom,vị ngon,รสชาติดี,រសជាតិល្អ,rasanya enak,rasa sedap,masarap ang lasa
 难吃,nánchī,not delicious,no está rico,pas bon,não está gostoso,dở,ไม่อร่อย,មិនឆ្ងាញ់,tidak enak,tidak sedap,hindi masarap
-不好吃,bù hǎochī,not tasty,no es rico,pas bon,não é gostoso,không ngon,ไม่อร่อย,មិនឆ្ងាញ់,tidak enak,tak sedap,hindi masarap
-味道差,wèidào chà,tastes bad,sabe mal,mauvais goût,tem gosto ruim,vị dở,รสชาติแย่,រសជាតិមិនល្អ,rasanya buruk,rasa teruk,pangit ang lasa
+不好吃,bù hǎo chī,not tasty,no es rico,pas bon,não é gostoso,không ngon,ไม่อร่อย,មិនឆ្ងាញ់,tidak enak,tak sedap,hindi masarap
+味道差,wèi dào chà,tastes bad,sabe mal,mauvais goût,tem gosto ruim,vị dở,รสชาติแย่,រសជាតិមិនល្អ,rasanya buruk,rasa teruk,pangit ang lasa
 甜,tián,sweet,dulce,sucré,doce,ngọt,หวาน,ផ្អែម,manis,manis,matamis
 甜的,tián de,sweet,dulce,sucré,doce,ngọt,หวาน,ផ្អែម,manis,manis,matamis
 甜味,tiánwèi,sweet taste,sabor dulce,goût sucré,sabor doce,vị ngọt,รสหวาน,រសផ្អែម,rasa manis,rasa manis,matamis na lasa
@@ -37,13 +37,13 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 酸味,suānwèi,sour taste,sabor ácido,goût acide,sabor azedo,vị chua,รสเปรี้ยว,រសជូរ,rasa asam,rasa masam,maasim na lasa
 辣,là,spicy,picante,épicé,picante,cay,เผ็ด,ហឹរ,pedas,pedas,maanghang
 辣的,là de,spicy,picante,épicé,picante,cay,เผ็ด,ហឹរ,pedas,pedas,maanghang
-辣味,làwèi,spicy taste,sabor picante,goût épicé,sabor picante,vị cay,รสเผ็ด,រសហឹរ,rasa pedas,rasa pedas,maanghang na lasa
+辣味,là wèi,spicy taste,sabor picante,goût épicé,sabor picante,vị cay,รสเผ็ด,រសហឹរ,rasa pedas,rasa pedas,maanghang na lasa
 咸,xián,salty,salado,salé,salgado,mặn,เค็ม,ប្រៃ,asin,masin,maalat
 咸的,xián de,salty,salado,salé,salgado,mặn,เค็ม,ប្រៃ,asin,masin,maalat
 咸味,xiánwèi,salty taste,sabor salado,goût salé,sabor salgado,vị mặn,รสเค็ม,រសប្រៃ,rasa asin,rasa masin,maalat na lasa
 苦,kǔ,bitter,amargo,amer,amargo,đắng,ขม,쓴맛,pahit,pahit,mapait
 苦的,kǔ de,bitter,amargo,amer,amargo,đắng,ขม,ជូរចត់,pahit,pahit,mapait
-苦味,kǔwèi,bitter taste,sabor amargo,goût amer,sabor amargo,vị đắng,รสขม,រសជូរចត់,rasa pahit,rasa pahit,mapait na lasa
+苦味,kǔ wèi,bitter taste,sabor amargo,goût amer,sabor amargo,vị đắng,รสขม,រសជូរចត់,rasa pahit,rasa pahit,mapait na lasa
 淡,dàn,bland,insípido,fade,sem sabor,nhạt,จืด,ស្រាល,hambar,hambar,walang lasa
 清淡,qīngdàn,light,ligero,léger,leve,thanh đạm,อ่อน,ស្រាល,ringan,ringan,magaan
 味道淡,wèidào dàn,bland taste,sabor insípido,goût fade,sabor sem graça,vị nhạt,รสจืด,រសជាតិស្រាល,rasanya hambar,rasa hambar,walang lasa
