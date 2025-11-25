@@ -735,23 +735,29 @@
     }
 
     .setup-field label {
-      font-family: var(--font-card);
-      font-size: 0.95rem;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      font-weight: bold;
       color: var(--color-text-dark);
       margin-bottom: 6px;
+      text-transform: capitalize;
+      letter-spacing: 1px;
     }
 
     .setup-field select {
-      font-family: var(--font-card);
+      font-family: var(--font-ui);
       font-size: 1rem;
+      font-weight: bold;
       padding: 10px 15px;
+      border: 2px solid #A89078;
       border-radius: 6px;
-      /* Paper card styling - matches card-face */
-      background:
-        var(--paper-texture),
-        linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--paper-texture-size), 100%;
+      /* Aged paper background */
+      background-color: #F5E6D3;
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(135deg, #FAF3E8 0%, #F5E6D3 30%, #E8D4B8 60%, #DCC8A8 100%);
+      background-blend-mode: multiply;
+      background-size: var(--cardboard-texture-size), 100%;
       color: var(--color-text-dark);
       cursor: pointer;
       width: 100%;
@@ -762,26 +768,18 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       background-image:
-        var(--paper-texture),
-        linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%),
+        var(--cardboard-texture),
+        linear-gradient(135deg, #FAF3E8 0%, #F5E6D3 30%, #E8D4B8 60%, #DCC8A8 100%),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232C1810' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
       background-repeat: repeat, no-repeat, no-repeat;
       background-position: 0 0, 0 0, calc(100% - 12px) center;
-      background-size: var(--paper-texture-size), 100%, 12px;
-      /* Box shadow for border and inner glow like card-face */
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.2),
-        0 0 0 2px #A08567,
-        inset 0 0 20px rgba(139, 115, 85, 0.1);
-      border: none;
+      background-size: var(--cardboard-texture-size), 100%, 12px;
     }
 
     .setup-field select:focus {
       outline: none;
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.3),
-        0 0 0 2px #8B7355,
-        inset 0 0 20px rgba(139, 115, 85, 0.15);
+      border-color: #8B7355;
+      box-shadow: 0 0 8px rgba(139, 115, 85, 0.4);
     }
 
     .setup-field select option {
@@ -859,12 +857,35 @@
       background-size: var(--cardboard-texture-size), 100%;
       border: 3px solid rgba(74, 56, 40, 0.6);
       border-radius: 8px;
-      color: var(--color-text-dark);
       cursor: pointer;
       transition: all 0.2s ease;
       letter-spacing: 1px;
       position: relative;
       z-index: 5;
+    }
+
+    /* Gold gradient text - matches wordpack-title styling */
+    .gold-text {
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(180deg,
+          #B8860B 0%,      /* Dark goldenrod */
+          #A67C38 20%,     /* Bronzed gold */
+          #8B6914 40%,     /* Dark gold */
+          #7A5C1A 60%,     /* Deep brown-gold */
+          #5D4E37 80%,     /* Dark brown */
+          #4A3728 100%     /* Very dark brown */
+        );
+      background-blend-mode: overlay;
+      background-size: var(--cardboard-texture-size), 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 1px 1px rgba(139, 105, 20, 0.3),
+        0 -1px 0 rgba(184, 134, 11, 0.2);
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
     }
 
     .setup-start-btn:hover:not(:disabled) {
@@ -1297,23 +1318,29 @@
 
     .menu-field label {
       display: block;
-      font-family: var(--font-card);
-      font-size: 0.95rem;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      font-weight: bold;
       color: var(--color-text-dark);
       margin-bottom: 6px;
+      text-transform: capitalize;
+      letter-spacing: 1px;
     }
 
     .menu-field select {
-      font-family: var(--font-card);
+      font-family: var(--font-ui);
       font-size: 1rem;
+      font-weight: bold;
       padding: 10px 15px;
+      border: 2px solid #A89078;
       border-radius: 6px;
-      /* Paper card styling - matches card-face */
-      background:
-        var(--paper-texture),
-        linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%);
-      background-blend-mode: soft-light;
-      background-size: var(--paper-texture-size), 100%;
+      /* Aged paper background */
+      background-color: #F5E6D3;
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(135deg, #FAF3E8 0%, #F5E6D3 30%, #E8D4B8 60%, #DCC8A8 100%);
+      background-blend-mode: multiply;
+      background-size: var(--cardboard-texture-size), 100%;
       color: var(--color-text-dark);
       cursor: pointer;
       width: 100%;
@@ -1322,33 +1349,29 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       background-image:
-        var(--paper-texture),
-        linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 30%, #DCC9A3 60%, #D4C4A8 100%),
+        var(--cardboard-texture),
+        linear-gradient(135deg, #FAF3E8 0%, #F5E6D3 30%, #E8D4B8 60%, #DCC8A8 100%),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232C1810' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
       background-repeat: repeat, no-repeat, no-repeat;
       background-position: 0 0, 0 0, calc(100% - 12px) center;
-      background-size: var(--paper-texture-size), 100%, 12px;
-      /* Box shadow for border and inner glow like card-face */
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.2),
-        0 0 0 2px #A08567,
-        inset 0 0 20px rgba(139, 115, 85, 0.1);
-      border: none;
+      background-size: var(--cardboard-texture-size), 100%, 12px;
     }
 
     .menu-field select:hover {
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.25),
-        0 0 0 2px #8B7355,
-        inset 0 0 20px rgba(139, 115, 85, 0.12);
+      background-color: #EBD9C3;
+      background-image:
+        var(--cardboard-texture),
+        linear-gradient(135deg, #F5E6D3 0%, #EBD9C3 30%, #DCC8A8 60%, #D0BC98 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232C1810' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: repeat, no-repeat, no-repeat;
+      background-position: 0 0, 0 0, calc(100% - 12px) center;
+      background-size: var(--cardboard-texture-size), 100%, 12px;
     }
 
     .menu-field select:focus {
       outline: none;
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.3),
-        0 0 0 2px #8B7355,
-        inset 0 0 20px rgba(139, 115, 85, 0.15);
+      border-color: #8B7355;
+      box-shadow: 0 0 8px rgba(139, 115, 85, 0.4);
     }
 
     .menu-field select option {
@@ -2392,7 +2415,7 @@
           </div>
 
           <button id="start-practice-btn" class="setup-start-btn" style="width: 100%;">
-            ▶ Start Game
+            <span class="gold-text">▶ Start Game</span>
           </button>
         </div>
       `;
