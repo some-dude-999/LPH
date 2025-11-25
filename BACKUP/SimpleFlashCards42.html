@@ -1406,13 +1406,12 @@
       font-family: var(--font-ui);
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      border: 8px solid;
-      border-radius: 10px;
+      letter-spacing: 4px;
+      border: 4px solid;
+      border-radius: 8px;
       background: transparent;
       mix-blend-mode: multiply;
       text-align: center;
-      line-height: 1.3;
     }
 
     /* Simple stamp overlays */
@@ -1420,9 +1419,9 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) rotate(-12deg);
-      font-size: 1.4rem;
-      padding: 12px 20px;
+      transform: translate(-50%, -50%) rotate(-15deg);
+      font-size: 2.5rem;
+      padding: 15px 30px;
       opacity: 0;
       pointer-events: none;
       z-index: 100;
@@ -1431,16 +1430,16 @@
 
     .removed-stamp {
       color: transparent;
-      border-color: rgba(56, 142, 60, 0.8);
-      -webkit-text-stroke: 2px rgba(56, 142, 60, 0.8);
-      text-stroke: 2px rgba(56, 142, 60, 0.8);
+      border-color: rgba(56, 142, 60, 0.7);
+      -webkit-text-stroke: 3px rgba(56, 142, 60, 0.7);
+      text-stroke: 3px rgba(56, 142, 60, 0.7);
     }
 
     .added-stamp {
       color: transparent;
-      border-color: rgba(211, 47, 47, 0.8);
-      -webkit-text-stroke: 2px rgba(211, 47, 47, 0.8);
-      text-stroke: 2px rgba(211, 47, 47, 0.8);
+      border-color: rgba(211, 47, 47, 0.7);
+      -webkit-text-stroke: 3px rgba(211, 47, 47, 0.7);
+      text-stroke: 3px rgba(211, 47, 47, 0.7);
     }
 
     .card-stamp.visible {
@@ -2136,7 +2135,7 @@
       lp2.frequency.value = 580;
       
       const gain = ctx.createGain();
-      gain.gain.value = 3.5; // Louder page turn - increased from 2.0
+      gain.gain.value = 2.0; // Louder - increased from 1.2
 
       source.connect(lp);
       lp.connect(lp2);
@@ -2144,107 +2143,7 @@
       gain.connect(ctx.destination);
       source.start();
     }
-
-    // ===================================================================================
-    // DING SOUND - Muffled, quiet bell for correct answers
-    // Soft and satisfying without being annoying
-    // ===================================================================================
-    function playDingSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-
-      // Main bell tone
-      const osc = ctx.createOscillator();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(880, now); // A5 note
-      osc.frequency.exponentialRampToValueAtTime(660, now + 0.15); // Slight pitch drop
-
-      // Harmonic overtone for richness
-      const osc2 = ctx.createOscillator();
-      osc2.type = 'sine';
-      osc2.frequency.setValueAtTime(1320, now); // E6 - perfect fifth
-      osc2.frequency.exponentialRampToValueAtTime(990, now + 0.1);
-
-      // Envelope for main tone
-      const gainMain = ctx.createGain();
-      gainMain.gain.setValueAtTime(0.15, now); // Quiet
-      gainMain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
-
-      // Envelope for overtone (quieter, shorter)
-      const gainOvertone = ctx.createGain();
-      gainOvertone.gain.setValueAtTime(0.05, now);
-      gainOvertone.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
-
-      // Lowpass filter for muffled sound
-      const lp = ctx.createBiquadFilter();
-      lp.type = 'lowpass';
-      lp.frequency.value = 1500; // Muffle the brightness
-      lp.Q.value = 0.5;
-
-      // Connect
-      osc.connect(gainMain);
-      osc2.connect(gainOvertone);
-      gainMain.connect(lp);
-      gainOvertone.connect(lp);
-      lp.connect(ctx.destination);
-
-      osc.start(now);
-      osc2.start(now);
-      osc.stop(now + 0.5);
-      osc2.stop(now + 0.3);
-    }
-
-    // ===================================================================================
-    // BUZZ SOUND - Muffled, quiet buzz for wrong answers
-    // Not harsh or annoying, just a gentle "nope"
-    // ===================================================================================
-    function playBuzzSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-
-      // Low buzzy tone
-      const osc = ctx.createOscillator();
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(110, now); // Low A
-      osc.frequency.setValueAtTime(100, now + 0.05);
-      osc.frequency.setValueAtTime(110, now + 0.1);
-
-      // Second detuned oscillator for buzz effect
-      const osc2 = ctx.createOscillator();
-      osc2.type = 'sawtooth';
-      osc2.frequency.setValueAtTime(113, now); // Slightly detuned
-      osc2.frequency.setValueAtTime(103, now + 0.05);
-      osc2.frequency.setValueAtTime(113, now + 0.1);
-
-      // Envelope - short and punchy
-      const gain = ctx.createGain();
-      gain.gain.setValueAtTime(0.12, now); // Quiet
-      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
-
-      // Heavy lowpass filter for very muffled sound
-      const lp = ctx.createBiquadFilter();
-      lp.type = 'lowpass';
-      lp.frequency.value = 400; // Very muffled
-      lp.Q.value = 1;
-
-      // Second lowpass for extra muffling
-      const lp2 = ctx.createBiquadFilter();
-      lp2.type = 'lowpass';
-      lp2.frequency.value = 600;
-
-      // Connect
-      osc.connect(gain);
-      osc2.connect(gain);
-      gain.connect(lp);
-      lp.connect(lp2);
-      lp2.connect(ctx.destination);
-
-      osc.start(now);
-      osc2.start(now);
-      osc.stop(now + 0.25);
-      osc2.stop(now + 0.25);
-    }
-
+    
     // ===================================================================================
     // BUTTON CLICK SOUND - "Click Snap J - Satisfying"
     // This is the perfect UI click sound. Balanced, satisfying snap with subtle low end.
@@ -2793,10 +2692,9 @@
       // Update display to show indicator while stamp is visible
       updateDisplay();
 
-      // Show "Extra Practice" stamp (1.5 seconds) with buzz sound
+      // Show "Extra Practice" stamp (1.5 seconds)
       const addedStamp = document.getElementById('added-stamp');
       addedStamp.classList.add('visible');
-      playBuzzSound(); // Wrong answer buzz
       setTimeout(() => {
         addedStamp.classList.remove('visible');
         pendingDeckChange = 0; // Clear indicator after stamp
@@ -2853,7 +2751,6 @@
             pendingDeckChange = -1; // Track deck change for visual indicator
             updateDisplay(); // Show indicator while stamp is visible
             removedStamp.classList.add('visible');
-            playDingSound(); // Correct answer ding
 
             setTimeout(() => {
               removedStamp.classList.remove('visible');
@@ -3834,7 +3731,6 @@
           pendingDeckChange = -1;
           updateDisplay();
           removedStamp.classList.add('visible');
-          playDingSound(); // Correct answer ding
 
           setTimeout(() => {
             removedStamp.classList.remove('visible');
