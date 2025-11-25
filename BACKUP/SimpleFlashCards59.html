@@ -3655,7 +3655,6 @@
 
       // Show "Card Removed" stamp for 2 seconds (so user can read it)
       removedStamp.classList.add('visible');
-      playDingSound(); // Correct answer ding - consistent with writing/speaking modes
 
       setTimeout(() => {
         removedStamp.classList.remove('visible');
@@ -3688,7 +3687,6 @@
 
       // Show "Extra Practice" stamp for 1.5 seconds
       addedStamp.classList.add('visible');
-      playBuzzSound(); // Wrong answer buzz - consistent with writing/speaking modes
 
       setTimeout(() => {
         addedStamp.classList.remove('visible');
