@@ -1419,13 +1419,12 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(-12deg);
-      font-size: 1.6rem;
+      font-size: 2.2rem;
       padding: 18px 35px;
       opacity: 0;
       pointer-events: none;
       z-index: 100;
       transition: opacity 0.2s ease;
-      white-space: nowrap; /* Prevent text wrap - only break at <br> */
     }
 
     .removed-stamp {
@@ -1845,7 +1844,7 @@
 
       <!-- Stamp overlays for visual feedback -->
       <div class="stamp-base card-stamp removed-stamp" id="removed-stamp">Great Job!<br>Card Removed</div>
-      <div class="stamp-base card-stamp added-stamp" id="added-stamp">Keep Learning!<br>Practice Added</div>
+      <div class="stamp-base card-stamp added-stamp" id="added-stamp">Keep Learning!<br>+2 Extra Practice</div>
     </div>
 
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
@@ -2640,8 +2639,8 @@
         // Start Practice button
         if (startPracticeBtn) {
           startPracticeBtn.addEventListener('click', () => {
-            playButtonClickSound(); // Always play sound for feedback
             if (currentWordpackKey && nativeLanguage) {
+              playButtonClickSound();
               startGame();
             }
           });
