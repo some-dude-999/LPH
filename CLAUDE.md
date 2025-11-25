@@ -379,6 +379,64 @@ if (savedState.speed !== undefined && savedState.speed !== null) {
 - ✅ Any setting with a fixed set of valid values
 - ❌ Free-form values (voice URI, wordpack keys) - validate existence instead
 
+### No Hardcoded Data in HTML - MANDATORY
+**CRITICAL: All dropdown options and display data MUST come from a centralized JavaScript config, NOT hardcoded HTML.**
+
+**The Principle:**
+If you delete the external JS module URLs, NOTHING should load. There should be zero pre-populated data in HTML dropdowns.
+
+**What MUST be in config (not HTML):**
+- ✅ Act names and URLs (the module paths)
+- ✅ Available "I speak" languages with column indices
+- ✅ Language display labels (English, 中文, Español, etc.)
+- ✅ Default selections
+
+**What goes in HTML:**
+- ❌ NOT hardcoded `<option>` elements with data
+- ✅ Only placeholder: `<option value="">-- Loading... --</option>`
+
+**Implementation Pattern:**
+```javascript
+// LANGUAGE_MODULES is the SINGLE SOURCE OF TRUTH
+const LANGUAGE_MODULES = {
+  spanish: {
+    acts: [
+      { act: 1, name: 'Foundation', url: './SpanishWords/Jsmodules-js/act1-foundation-js.js' },
+      // ... more acts
+    ],
+    // Translation column mapping: language code -> {index, display}
+    translations: {
+      english: { index: 1, display: 'English' },
+      chinese: { index: 2, display: '中文' },
+      portuguese: { index: 4, display: 'Português' }
+    },
+    defaultTranslation: 'english'
+  }
+};
+
+// Helper functions
+function getLanguageConfig() { return LANGUAGE_MODULES[CURRENT_LANGUAGE]; }
+function getValidLanguages() { return Object.keys(getLanguageConfig().translations); }
+
+// Populate dropdown from config (NOT from hardcoded HTML)
+function populateLanguageSelector(selectElement) {
+  selectElement.innerHTML = '';
+  const translations = getLanguageConfig().translations;
+  Object.entries(translations).forEach(([code, config]) => {
+    const option = document.createElement('option');
+    option.value = code;
+    option.textContent = config.display;
+    selectElement.appendChild(option);
+  });
+}
+```
+
+**Why This Matters:**
+- **Single source of truth**: Change language options in ONE place, applies everywhere
+- **No sync issues**: HTML and JS can't get out of sync
+- **Module dependency**: Game literally cannot work without modules loaded
+- **Easy to extend**: Add new languages by updating config only
+
 ---
 
 ## 🔗 AUTOMATED LINK MANAGEMENT

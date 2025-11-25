@@ -1907,36 +1907,45 @@
       }
     }
 
-    // Module configuration - supports all languages, currently loading Spanish only
+    // ============================================================
+    // MODULE CONFIGURATION - Single source of truth for all language data
+    // ============================================================
+    // This config defines:
+    //   1. acts: Module URLs to load (if deleted, nothing loads)
+    //   2. translations: Available "I speak" languages with column indices
+    //   3. defaultTranslation: Default "I speak" language
+    //
+    // IMPORTANT: All dropdown data comes from this config, NOT hardcoded HTML
+    // ============================================================
     const LANGUAGE_MODULES = {
-      spanish: [
-        { act: 1, name: 'Foundation', url: './SpanishWords/Jsmodules-js/act1-foundation-js.js' },
-        { act: 2, name: 'Building Blocks', url: './SpanishWords/Jsmodules-js/act2-building-blocks-js.js' },
-        { act: 3, name: 'Daily Life', url: './SpanishWords/Jsmodules-js/act3-daily-life-js.js' },
-        { act: 4, name: 'Expanding Expression', url: './SpanishWords/Jsmodules-js/act4-expanding-expression-js.js' },
-        { act: 5, name: 'Intermediate Mastery', url: './SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js' },
-        { act: 6, name: 'Advanced Constructs', url: './SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js' },
-        { act: 7, name: 'Mastery & Fluency', url: './SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js' }
-      ]
-      // Future language support - uncomment to enable:
-      // chinese: [
-      //   { act: 1, name: 'Foundation', url: './ChineseWords/Jsmodules-js/act1-foundation-js.js' },
-      //   { act: 2, name: 'Development', url: './ChineseWords/Jsmodules-js/act2-development-js.js' },
-      //   { act: 3, name: 'Expansion', url: './ChineseWords/Jsmodules-js/act3-expansion-js.js' },
-      //   { act: 4, name: 'Mastery', url: './ChineseWords/Jsmodules-js/act4-mastery-js.js' },
-      //   { act: 5, name: 'Refinement', url: './ChineseWords/Jsmodules-js/act5-refinement-js.js' }
-      // ],
-      // english: [
-      //   { act: 1, name: 'Foundation', url: './EnglishWords/Jsmodules-js/act1-foundation-js.js' },
-      //   { act: 2, name: 'Building Blocks', url: './EnglishWords/Jsmodules-js/act2-building-blocks-js.js' },
-      //   { act: 3, name: 'Everyday Life', url: './EnglishWords/Jsmodules-js/act3-everyday-life-js.js' },
-      //   { act: 4, name: 'Expanding Horizons', url: './EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js' },
-      //   { act: 5, name: 'Advanced Mastery', url: './EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js' }
-      // ]
+      spanish: {
+        acts: [
+          { act: 1, name: 'Foundation', url: './SpanishWords/Jsmodules-js/act1-foundation-js.js' },
+          { act: 2, name: 'Building Blocks', url: './SpanishWords/Jsmodules-js/act2-building-blocks-js.js' },
+          { act: 3, name: 'Daily Life', url: './SpanishWords/Jsmodules-js/act3-daily-life-js.js' },
+          { act: 4, name: 'Expanding Expression', url: './SpanishWords/Jsmodules-js/act4-expanding-expression-js.js' },
+          { act: 5, name: 'Intermediate Mastery', url: './SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js' },
+          { act: 6, name: 'Advanced Constructs', url: './SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js' },
+          { act: 7, name: 'Mastery & Fluency', url: './SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js' }
+        ],
+        // Translation column mapping: key=language code, index=column in word array, display=UI label
+        // Word array structure: [spanish, english, chinese, pinyin, portuguese]
+        translations: {
+          english: { index: 1, display: 'English' },
+          chinese: { index: 2, display: '中文' },
+          portuguese: { index: 4, display: 'Português' }
+        },
+        defaultTranslation: 'english'
+      }
     };
 
     // Current language (change this to switch between languages)
     const CURRENT_LANGUAGE = 'spanish';
+
+    // Helper to get current language config
+    function getLanguageConfig() {
+      return LANGUAGE_MODULES[CURRENT_LANGUAGE];
+    }
 
     let wordpacks = {}; // All loaded wordpacks
     let loadedActs = {}; // Track which acts have been loaded
@@ -1947,7 +1956,13 @@
     let holdTimeout = null;
     let currentSpeed = 0.6; // Default to normal speed
     const VALID_SPEEDS = [0.3, 0.6, 0.9]; // Valid speed options (must match data-speed values in HTML)
-    let nativeLanguage = 'english'; // Default native language
+
+    // Helper to get valid languages from config (for validation)
+    function getValidLanguages() {
+      return Object.keys(getLanguageConfig().translations);
+    }
+
+    let nativeLanguage = getLanguageConfig().defaultTranslation; // Default from config
     let gameStarted = false;
     let currentWordpackKey = '';
     let currentVoice = null;
@@ -2472,9 +2487,7 @@
             <div class="menu-field" style="flex: 1; margin-bottom: 0;">
               <label>I speak</label>
               <select id="menu-language">
-                <option value="english">English</option>
-                <option value="chinese">中文</option>
-                <option value="portuguese">Português</option>
+                <option value="">-- Loading... --</option>
               </select>
             </div>
             <div class="menu-field" style="flex: 1; margin-bottom: 0;">
@@ -2589,9 +2602,9 @@
           });
         }
 
-        // Language selector
+        // Language selector - populated from config, not hardcoded HTML
         if (menuLanguage) {
-          menuLanguage.value = nativeLanguage;
+          populateLanguageSelector(menuLanguage);
 
           menuLanguage.addEventListener('change', (e) => {
             playButtonClickSound();
@@ -2969,8 +2982,8 @@
         return loadedActs[actNumber];
       }
 
-      const modules = LANGUAGE_MODULES[CURRENT_LANGUAGE];
-      const actConfig = modules.find(m => m.act === actNumber);
+      const acts = getLanguageConfig().acts;
+      const actConfig = acts.find(m => m.act === actNumber);
 
       if (!actConfig) {
         throw new Error(`Act ${actNumber} not found for language ${CURRENT_LANGUAGE}`);
@@ -3003,9 +3016,9 @@
       }
 
       selectElement.innerHTML = '';
-      const modules = LANGUAGE_MODULES[CURRENT_LANGUAGE];
+      const acts = getLanguageConfig().acts;
 
-      modules.forEach(actConfig => {
+      acts.forEach(actConfig => {
         const option = document.createElement('option');
         option.value = actConfig.act;
         option.textContent = `Act ${actConfig.act}: ${actConfig.name}`;
@@ -3013,15 +3026,46 @@
       });
 
       // Use saved act if valid, otherwise default to first act
-      const validActs = modules.map(m => m.act);
+      const validActs = acts.map(m => m.act);
       if (currentAct && validActs.includes(currentAct)) {
         // Saved act is valid - use it
         selectElement.value = currentAct;
-      } else if (modules.length > 0) {
+      } else if (acts.length > 0) {
         // No saved act or invalid - default to first
-        selectElement.value = modules[0].act;
-        currentAct = modules[0].act;
+        selectElement.value = acts[0].act;
+        currentAct = acts[0].act;
         saveState(); // Save the default
+      }
+    }
+
+    // Populate "I speak" language selector from config
+    // KEY FEATURE: Languages come from LANGUAGE_MODULES config, not hardcoded HTML
+    function populateLanguageSelector(targetElement = null) {
+      const selectElement = targetElement || document.getElementById('menu-language');
+      if (!selectElement) {
+        console.warn('[populateLanguageSelector] No target element found');
+        return;
+      }
+
+      selectElement.innerHTML = '';
+      const translations = getLanguageConfig().translations;
+
+      Object.entries(translations).forEach(([langCode, langConfig]) => {
+        const option = document.createElement('option');
+        option.value = langCode;
+        option.textContent = langConfig.display;
+        selectElement.appendChild(option);
+      });
+
+      // Use saved language if valid, otherwise default
+      const validLanguages = getValidLanguages();
+      if (nativeLanguage && validLanguages.includes(nativeLanguage)) {
+        selectElement.value = nativeLanguage;
+      } else {
+        // Invalid or no saved language - use default from config
+        nativeLanguage = getLanguageConfig().defaultTranslation;
+        selectElement.value = nativeLanguage;
+        saveState();
       }
     }
 
@@ -3141,9 +3185,9 @@
 
       try {
         // First, determine the first act from language modules
-        const modules = LANGUAGE_MODULES[CURRENT_LANGUAGE];
-        if (modules.length > 0) {
-          currentAct = modules[0].act;
+        const acts = getLanguageConfig().acts;
+        if (acts.length > 0) {
+          currentAct = acts[0].act;
         }
 
         // Load first act data BEFORE rendering menu
@@ -3229,9 +3273,12 @@
         currentWordpackKey = savedState.wordpackKey;
       }
 
-      // Restore native language
+      // Restore native language (validate against valid options)
       if (savedState.language) {
-        nativeLanguage = savedState.language;
+        // Only restore if it's a valid language option, otherwise keep default
+        if (getValidLanguages().includes(savedState.language)) {
+          nativeLanguage = savedState.language;
+        }
       }
 
       // Store saved voice URI - will be applied when voices are loaded
@@ -3245,12 +3292,10 @@
       // Kept for compatibility with existing code that calls it
       if (!backLabel) return;
 
-      const labels = {
-        'english': 'English',
-        'chinese': '中文',
-        'portuguese': 'Português'
-      };
-      backLabel.textContent = labels[nativeLanguage] || 'English';
+      // Get display label from config
+      const translations = getLanguageConfig().translations;
+      const langConfig = translations[nativeLanguage];
+      backLabel.textContent = langConfig ? langConfig.display : translations[getLanguageConfig().defaultTranslation].display;
     }
 
     // Shuffle array (Fisher-Yates algorithm)
@@ -3282,13 +3327,10 @@
       }
 
       const pack = wordpacks[packKey];
-      // Language index mapping: spanish=0, english=1, chinese=2, pinyin=3, portuguese=4
-      const langIndex = {
-        'english': 1,
-        'chinese': 2,
-        'portuguese': 4
-      };
-      const nativeIndex = langIndex[nativeLanguage] || 1;
+      // Get translation column index from config
+      const translations = getLanguageConfig().translations;
+      const langConfig = translations[nativeLanguage];
+      const nativeIndex = langConfig ? langConfig.index : translations[getLanguageConfig().defaultTranslation].index;
 
       // CRITICAL: Each card object contains BOTH front (spanish) and back (translation)
       // These are NEVER stored separately - they are always linked as one object
