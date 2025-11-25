@@ -2350,6 +2350,32 @@
     }
 
     // ===================================================================================
+    // KEY FEATURE: Stamp Display Functions (Encapsulated)
+    // Core Objective: Visual feedback for correct/wrong answers - define ONCE, use everywhere
+    // Key Behaviors:
+    //   - showSuccessStamp: green "Card Removed" stamp + ding sound
+    //   - showFailureStamp: red "Extra Practice" stamp + buzz sound
+    //   - Both hide after 1.5 seconds and execute callback
+    // ===================================================================================
+    function showSuccessStamp(onComplete) {
+      removedStamp.classList.add('visible');
+      playDingSound();
+      setTimeout(() => {
+        removedStamp.classList.remove('visible');
+        if (onComplete) onComplete();
+      }, 1500);
+    }
+
+    function showFailureStamp(onComplete) {
+      addedStamp.classList.add('visible');
+      playBuzzSound();
+      setTimeout(() => {
+        addedStamp.classList.remove('visible');
+        if (onComplete) onComplete();
+      }, 1500);
+    }
+
+    // ===================================================================================
     // MODE SWITCHING AND DISPLAY FUNCTIONS
     // ===================================================================================
 
@@ -2772,14 +2798,10 @@
       // Update display to show indicator while stamp is visible
       updateDisplay();
 
-      // Show "Extra Practice" stamp (1.5 seconds) with buzz sound
-      const addedStamp = document.getElementById('added-stamp');
-      addedStamp.classList.add('visible');
-      playBuzzSound(); // Wrong answer buzz
-      setTimeout(() => {
-        addedStamp.classList.remove('visible');
+      // Show "Extra Practice" stamp with buzz sound (encapsulated)
+      showFailureStamp(() => {
         pendingDeckChange = 0; // Clear indicator after stamp
-      }, 1500);
+      });
     }
 
     // Handle typing input for listening and writing modes
@@ -2831,12 +2853,9 @@
             // Correct! Show green stamp and remove card automatically
             pendingDeckChange = -1; // Track deck change for visual indicator
             updateDisplay(); // Show indicator while stamp is visible
-            removedStamp.classList.add('visible');
-            playDingSound(); // Correct answer ding
 
-            setTimeout(() => {
-              removedStamp.classList.remove('visible');
-
+            // Show success stamp with ding sound (encapsulated)
+            showSuccessStamp(() => {
               // Remove card from deck
               if (currentDeck.length <= 1) {
                 currentDeck = [];
@@ -2864,7 +2883,7 @@
               if (currentMode === 'listening' && currentDeck.length > 0) {
                 setTimeout(() => speakChinese(), 300);
               }
-            }, 1500); // 1.5 seconds
+            });
           } else {
             // Wrong - always add 2 penalty cards
             addDuplicateCards(2);
@@ -3661,13 +3680,8 @@
       // Update display to show indicator while stamp is visible
       updateDisplay();
 
-      // Show "Card Removed" stamp for 2 seconds (so user can read it)
-      removedStamp.classList.add('visible');
-      playDingSound(); // Correct answer ding - consistent with writing/speaking modes
-
-      setTimeout(() => {
-        removedStamp.classList.remove('visible');
-
+      // Show success stamp with ding sound (encapsulated)
+      showSuccessStamp(() => {
         // Remove card from deck
         currentDeck.splice(currentIndex, 1);
         if (currentIndex >= currentDeck.length) {
@@ -3683,7 +3697,7 @@
         // Show next card
         updateDisplay();
         saveState();
-      }, 1500); // 1.5 seconds
+      });
     }
 
     // Add extra copies of current card (Confused)
@@ -3694,13 +3708,8 @@
       pendingDeckChange += 2;
       updateDisplay();
 
-      // Show "Extra Practice" stamp for 1.5 seconds
-      addedStamp.classList.add('visible');
-      playBuzzSound(); // Wrong answer buzz - consistent with writing/speaking modes
-
-      setTimeout(() => {
-        addedStamp.classList.remove('visible');
-
+      // Show failure stamp with buzz sound (encapsulated)
+      showFailureStamp(() => {
         // Add 2 copies to random positions in deck
         const card = { ...currentDeck[currentIndex] };
 
@@ -3724,7 +3733,7 @@
         currentIndex = (currentIndex + 1) % currentDeck.length;
         updateDisplay();
         saveState();
-      }, 1500); // 1.5 seconds
+      });
     }
 
     // Reset deck to original shuffled state (fresh start in current mode)
@@ -3848,12 +3857,9 @@
           // Pass! Remove card and advance
           pendingDeckChange = -1;
           updateDisplay();
-          removedStamp.classList.add('visible');
-          playDingSound(); // Correct answer ding
 
-          setTimeout(() => {
-            removedStamp.classList.remove('visible');
-
+          // Show success stamp with ding sound (encapsulated)
+          showSuccessStamp(() => {
             // Remove card from deck
             if (currentDeck.length <= 1) {
               currentDeck = [];
@@ -3868,7 +3874,7 @@
             playCardFlipSound();
             updateDisplay();
             saveState();
-          }, 1500);
+          });
         } else {
           // Below 70% - add 2 penalty cards and advance
           addDuplicateCards(2);
