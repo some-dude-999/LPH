@@ -63,7 +63,36 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
+      padding-top: 80px; /* Space for fixed header */
       color: var(--color-text-dark);
+    }
+
+    /* ============================================================
+       KEY FEATURE: Fixed Page Header
+       Core Objective: Keep mode buttons, title, and UI buttons
+       always visible at the top of the page
+       Key Behaviors:
+         - Fixed position at top of viewport
+         - Contains mode selector (left), title (center), UI buttons (right)
+         - Always visible even when scrolling/fullscreen
+       ============================================================ */
+    .page-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+      background: linear-gradient(180deg, rgba(61, 46, 31, 0.85) 0%, rgba(61, 46, 31, 0) 100%);
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 10px;
     }
 
     /* Remove focus outline from all interactive elements */
@@ -123,16 +152,21 @@
     }
 
     /* Wordpack Title - Warm gold with subtle texture */
+    /* ============================================================
+       KEY FEATURE: Subtle Page Title in Header
+       Core Objective: Show context without distracting from card
+       Key Behaviors:
+         - Faded appearance so card remains focal point
+         - Still visible but not competing for attention
+       ============================================================ */
     .wordpack-title {
-      /* Balanced gold gradient - visible but not toy-like */
+      /* Faded gold gradient - subtle, not the focal point */
       background-image:
         var(--cardboard-texture),
         linear-gradient(180deg,
-          #D4AF37 0%,      /* Classic gold */
-          #C9A227 20%,     /* Medium gold */
-          #B8960B 40%,     /* Goldenrod */
-          #A67C38 60%,     /* Bronze gold */
-          #8B6914 80%,     /* Dark gold */
+          #C4A03A 0%,      /* Muted gold */
+          #B08C28 30%,     /* Faded gold */
+          #9A7B1F 60%,     /* Amber */
           #7A5C1A 100%     /* Deep brown-gold */
         );
       background-blend-mode: overlay;
@@ -141,27 +175,24 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
       font-family: var(--font-ui);
-      font-size: 1.5rem;
+      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 8px;
-      /* Subtle shadows for depth */
       text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.35),
-        0 1px 1px rgba(184, 134, 11, 0.3);
+        0 1px 2px rgba(0, 0, 0, 0.2);
       opacity: 0;
       transition: opacity 0.3s ease;
-      letter-spacing: 2px;
-      /* Drop shadow for depth */
-      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
+      letter-spacing: 1px;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+      white-space: nowrap;
     }
 
     body.game-started .wordpack-title {
-      opacity: 1;
+      opacity: 0.65;
     }
 
     /* Show wordpack title when menu is visible */
     body.showing-menu .wordpack-title {
-      opacity: 1;
+      opacity: 0.65;
     }
 
     /* Card Counter Wrapper - fixed height prevents layout shift when stamp appears */
@@ -1080,10 +1111,8 @@
       margin: 0 5px;
     }
 
-    /* Top Corner Buttons - Flat Cardboard Style */
+    /* Top Corner Buttons - Flat Cardboard Style (in page header) */
     .top-btn {
-      position: fixed;
-      top: 20px;
       width: 50px;
       height: 50px;
       border-radius: 50%;
@@ -1103,7 +1132,6 @@
       font-size: 1.4rem;
       line-height: 1;
       text-align: center;
-      z-index: 100;
       font-family: var(--font-ui);
       font-weight: 600;
     }
@@ -1126,16 +1154,7 @@
       background-size: var(--cardboard-texture-size), 100%;
     }
 
-    .menu-btn {
-      right: 20px;
-    }
-
-    .fullscreen-btn {
-      right: 80px;
-    }
-
     .reset-top-btn {
-      right: 140px;
       opacity: 0;
       pointer-events: none;
     }
@@ -1149,13 +1168,6 @@
     body.showing-menu .reset-top-btn {
       opacity: 1;
       pointer-events: auto;
-    }
-
-    /* Header Controls Wrapper - groups mode selector and top buttons */
-    /* On desktop: wrapper is invisible (children use fixed positioning) */
-    /* On tablet/mobile: wrapper becomes a flex row for proper stacking */
-    .header-controls {
-      display: contents; /* Desktop: wrapper doesn't affect layout, children flow normally */
     }
 
     /* Modal Overlay */
@@ -1319,8 +1331,8 @@
       font-size: 1rem;
       padding: 10px 15px;
       border-radius: 6px;
-      /* Cardstock ivory styling - thick premium ivory cardstock */
-      background: linear-gradient(145deg, #fdf8ee 0%, #f4ead8 100%);
+      /* Cardstock ivory with dot texture and dark edge burn */
+      background-color: #f8f6f1;
       color: #5d4e37;
       cursor: pointer;
       width: 100%;
@@ -1329,17 +1341,20 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       background-image:
-        linear-gradient(145deg, #fdf8ee 0%, #f4ead8 100%),
+        /* Dark edge burn/vignette */
+        radial-gradient(ellipse at center, transparent 50%, rgba(139, 115, 85, 0.08) 80%, rgba(100, 75, 50, 0.15) 100%),
+        /* Fine dot pattern */
+        radial-gradient(circle, rgba(0,0,0,0.045) 0.5px, transparent 0.5px),
+        /* Dropdown arrow */
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235d4e37' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat, no-repeat;
-      background-position: 0 0, calc(100% - 12px) center;
-      background-size: 100%, 12px;
-      /* Cardstock ivory box shadow - subtle inner highlights */
+      background-repeat: no-repeat, repeat, no-repeat;
+      background-position: 0 0, 0 0, calc(100% - 12px) center;
+      background-size: 100%, 4px 4px, 12px;
+      /* Border matching card style with subtle inner shadow */
       box-shadow:
         0 2px 8px rgba(0,0,0,0.15),
         0 0 0 2px #A08567,
-        inset 0 2px 4px rgba(255,255,255,0.8),
-        inset 0 -2px 4px rgba(0,0,0,0.05);
+        inset 0 0 15px rgba(100, 75, 50, 0.08);
       border: none;
     }
 
@@ -1347,8 +1362,7 @@
       box-shadow:
         0 2px 8px rgba(0,0,0,0.2),
         0 0 0 2px #8B7355,
-        inset 0 2px 4px rgba(255,255,255,0.8),
-        inset 0 -2px 4px rgba(0,0,0,0.08);
+        inset 0 0 18px rgba(100, 75, 50, 0.1);
     }
 
     .menu-field select:focus {
@@ -1356,12 +1370,11 @@
       box-shadow:
         0 2px 8px rgba(0,0,0,0.25),
         0 0 0 2px #8B7355,
-        inset 0 2px 4px rgba(255,255,255,0.8),
-        inset 0 -2px 4px rgba(0,0,0,0.1);
+        inset 0 0 20px rgba(100, 75, 50, 0.12);
     }
 
     .menu-field select option {
-      background: #fdf8ee;
+      background: #f8f6f1;
       color: #5d4e37;
       padding: 8px;
     }
@@ -1432,14 +1445,10 @@
       opacity: 1;
     }
 
-    /* Mode Selector - Top Left */
+    /* Mode Selector - in page header */
     .mode-selector {
-      position: fixed;
-      top: 20px;
-      left: 20px;
       display: flex;
       gap: 10px;
-      z-index: 100;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -1763,10 +1772,8 @@
   </style>
 </head>
 <body>
-  <div class="wordpack-title" id="wordpack-title">Spanish Flashcard Typing Game</div>
-
-  <!-- Header Controls: Mode selector + Reset + Menu (stacks horizontally on tablet/mobile) -->
-  <div class="header-controls">
+  <!-- Fixed Page Header: Mode selector (left) + Title (center) + UI buttons (right) -->
+  <div class="page-header">
     <!-- Mode Selector -->
     <!-- Tooltips are populated dynamically via initializeTooltips() using TOOLTIP_MESSAGES -->
     <div class="mode-selector">
@@ -1787,10 +1794,16 @@
         <span class="tooltip" id="tooltip-writing"></span>
       </span>
     </div>
+
+    <!-- Title - centered, subtle -->
+    <div class="wordpack-title" id="wordpack-title">Spanish Flashcard Typing Game</div>
+
     <!-- Top Buttons -->
-    <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
-    <button class="top-btn fullscreen-btn" id="fullscreen-btn" aria-label="Toggle fullscreen">⛶</button>
-    <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+    <div class="header-buttons">
+      <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
+      <button class="top-btn fullscreen-btn" id="fullscreen-btn" aria-label="Toggle fullscreen">⛶</button>
+      <button class="top-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+    </div>
   </div>
 
   <!-- Fixed-height wrapper prevents card from shifting when stamp indicator appears -->
