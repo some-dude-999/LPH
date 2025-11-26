@@ -1136,7 +1136,14 @@ python PythonHelpers/validate_pinyin.py chinese
 
 Note any pinyin errors to fix.
 
-=== STEP 3: REVIEW ONE ACT AT A TIME, ONE PACK AT A TIME ===
+=== STEP 3: SCAN ALL PACKS - BUILD COMPREHENSIVE ISSUES TABLE ===
+
+╔══════════════════════════════════════════════════════════════════╗
+║  📋 BEFORE FIXING ANYTHING: DOCUMENT ALL ISSUES FIRST            ║
+║                                                                  ║
+║  Scan EVERY pack. Build a complete table of ALL problems.        ║
+║  This gives you the full picture before you start fixing.        ║
+╚══════════════════════════════════════════════════════════════════╝
 
 Chinese Acts:
 - Act I (Foundation): Packs 1-14
@@ -1145,12 +1152,7 @@ Chinese Acts:
 - Act IV (Mastery): Packs 58-85
 - Act V (Refinement): Packs 86-107
 
-START with Act I, Pack 1. Then Pack 2. Then Pack 3... through all of Act I.
-Then move to Act II, Pack 15. Then Pack 16...
-
-FOR EACH PACK:
-1. Read the CSV file: ChineseWords{N}.csv
-2. Check EVERY ROW:
+SCAN each pack and check EVERY ROW for issues:
    - Column 1 (chinese): READ ONLY - never touch
    - Column 2 (pinyin): 1 syllable per character? Correct tones? Spaces?
    - Column 3 (english): Accurate? Natural? Common usage?
@@ -1164,19 +1166,39 @@ FOR EACH PACK:
    - Column 11 (malay): Accurate? Natural?
    - Column 12 (filipino): Accurate? Natural?
 
-3. IF ANYTHING IS WRONG OR COULD BE BETTER:
-   → FIX IT IMMEDIATELY with Edit tool
-   → Show before/after:
+CREATE THIS TABLE (example):
+| Wordpack | What's Wrong |
+|----------|--------------|
+| ChineseWords1.csv | Row 5: pinyin missing space "nǐhǎo" → "nǐ hǎo" |
+| ChineseWords1.csv | Row 12: english awkward "greeting hello" → "hello there" |
+| ChineseWords3.csv | Row 8: spanish wrong "buenos dias" → "buenos días" |
+| ChineseWords7.csv | Row 3: pinyin wrong tone "hao3" → "hǎo" |
+| ChineseWords15.csv | No issues found ✓ |
+| ... | ... |
+
+=== STEP 4: FIX ONE WORDPACK AT A TIME - NEVER LEAVE WORK BEHIND ===
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🔥 TACKLE ALL PROBLEMS. NEVER LEAVE WORK FOR NEXT AGENT. 🔥    ║
+║                                                                  ║
+║  You found 47 issues? FIX ALL 47. One pack at a time.           ║
+║  Do NOT stop halfway. Do NOT say "I'll do more later."          ║
+║  COMPLETE EVERYTHING before finishing this task.                 ║
+╚══════════════════════════════════════════════════════════════════╝
+
+FOR EACH WORDPACK WITH ISSUES:
+1. Fix ALL issues in that pack using Edit tool
+2. Show before/after table:
 
    | File | Row | Column | Before | After |
    |------|-----|--------|--------|-------|
    | ChineseWords3.csv | 15 | pinyin | nǐhǎo | nǐ hǎo |
    | ChineseWords3.csv | 22 | english | hello friend | hi friend |
 
-4. After finishing each Act:
-   → COMMIT all fixes for that Act
-   → PR TO MAIN
-   → Report what you fixed
+3. COMMIT that pack's fixes
+4. PR TO MAIN
+5. Move to next wordpack with issues
+6. REPEAT until ALL issues from your table are fixed
 
 === BREAKOUT CSV COLUMNS (12 columns) ===
 | Col | Name       | Editable? | Notes                        |
@@ -1202,14 +1224,22 @@ INCORRECT: 猴子 → hóuzi (WRONG - no space!)
 === FINAL OUTPUT (REQUIRED) ===
 | Metric              | Value |
 |---------------------|-------|
-| Act Reviewed        | Act X |
-| Packs Reviewed      | X-Y   |
+| Total Packs Scanned | 107   |
 | Column 1 Valid      | YES/NO |
-| Issues Found        | X     |
-| Issues Fixed        | X     |
+| Total Issues Found  | X     |
+| Total Issues Fixed  | X     |
+| Packs PRed to Main  | X     |
 
-⚠️ YOU MUST COMMIT AND PR TO MAIN AFTER EACH ACT!
-Don't just review - FIX AND PR!</div>
+╔══════════════════════════════════════════════════════════════════╗
+║  ✅ SUCCESS CRITERIA: Issues Found = Issues Fixed                ║
+║                                                                  ║
+║  If you found 32 issues, you must have fixed 32 issues.         ║
+║  If Issues Fixed < Issues Found, YOU ARE NOT DONE.              ║
+║  NEVER finish with unfixed issues. NEVER leave work behind.      ║
+╚══════════════════════════════════════════════════════════════════╝
+
+⚠️ COMMIT AND PR AFTER EACH WORDPACK FIX!
+Don't just review - FIX EVERYTHING AND PR!</div>
 
 <h3>Spanish - Stage 3</h3>
 <div>Click to copy</div>
