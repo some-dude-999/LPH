@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordpack Stage Prompts</title>
+    <style>
+        body { font-family: monospace; max-width: 1200px; margin: 0 auto; padding: 20px; background: #1a1a1a; color: #eee; }
+        h1, h2, h3 { margin-top: 30px; }
+        h1 { color: #4CAF50; }
+        h2 { color: #2196F3; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        h3 { color: #FF9800; }
+        .prompt-box { background: #2d2d2d; border: 1px solid #444; padding: 15px; margin: 10px 0; cursor: pointer; white-space: pre-wrap; font-size: 12px; max-height: 300px; overflow-y: auto; }
+        .prompt-box:hover { border-color: #4CAF50; }
+        .copied { background: #1b5e20 !important; }
+        .label { background: #333; padding: 5px 10px; display: inline-block; margin-bottom: -1px; border: 1px solid #444; border-bottom: none; }
+    </style>
+</head>
+<body>
+    <h1>Wordpack Stage Prompts</h1>
+    <p>Click any box to copy the prompt to clipboard.</p>
+
+    <h2>Stage 1: Base Words Review</h2>
+
+    <h3>Chinese - Stage 1</h3>
+    <div class="label">Click to copy</div>
+    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Review and perfect Chinese_Base_Words in ChineseWordsOverview.csv
+
+WHAT ARE BASE WORDS?
+Base words are VOCABULARY ITEMS - single words or compound words that learners memorize.
+Examples of good base words: 你好, 星期六, 电脑, 谢谢, 早上好
+
+WHAT BASE WORDS ARE NOT:
+Base words are NOT phrases, sentences, or words with added context.
+- ✗ 我说你好 (this is a phrase/sentence - NOT a base word)
+- ✗ 他的电脑 (this adds context - NOT a base word)
+- ✓ 你好 (this is a vocabulary item - GOOD)
+- ✓ 电脑 (this is a vocabulary item - GOOD)
+
+CONTEXT COMES LATER - NOT NOW!
+In Stage 2, we will create Example_Words that show base words in context.
+Your job in Stage 1 is ONLY to ensure the base words themselves are good vocabulary items.
+
+WHAT TO EVALUATE (1-10 score):
+- Does each base word fit the pack's theme?
+- Are the base words useful vocabulary items learners should know?
+- Are there duplicates or too-similar words within the pack?
+- Are there obvious missing words for this theme?
+- Is the difficulty appropriate?
+
+DO NOT:
+- Turn base words into phrases or sentences
+- Add context to base words
+- Worry about "lack of context" - that's Stage 2's job
+
+CRITICAL RULES:
+- Use SIMPLIFIED CHINESE only (简体中文) - NEVER Traditional Chinese
+- Keep base words as vocabulary items
+- You CAN add/remove/replace base words
+- Roughly 15-20 words per pack is typical but very flexible
+
+NO DUPLICATES ACROSS PACKS:
+After making changes, run: python PythonHelpers/check_base_word_duplicates.py chinese
+Each base word should appear in ONLY ONE pack across the entire language.
+If a word appears in multiple packs, decide which pack it fits best and remove it from others.
+
+IDENTIFY GAPS - SUGGEST NEW PACKS:
+As you review, note if there are obvious theme gaps that deserve their own pack.
+If you identify a gap, suggest a new pack title and what base words it should contain.
+Example: "Gap identified: No pack for kitchen vocabulary. Suggest new Pack 'Kitchen Items' with base words: [锅, 碗, 筷子, 勺子, ...]"
+
+FILE: ChineseWordsOverview.csv
+COLUMN: Chinese_Base_Words
+
+WORKFLOW:
+1. BEFORE: Score the base words 1-10, list what could be better
+2. MAKE CHANGES: Add/remove/replace vocabulary items as needed
+3. RUN DUPLICATE CHECK: python PythonHelpers/check_base_word_duplicates.py chinese
+4. FIX any cross-pack duplicates
+5. IDENTIFY GAPS: Suggest new packs if obvious themes are missing
+6. AFTER: Score again, summarize improvements
+
+Create your own branch, commit, and PR to main.</div>
+
+    <h3>Spanish - Stage 1</h3>
+    <div class="label">Click to copy</div>
+    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Review and perfect Spanish_Base_Words in SpanishWordsOverview.csv
+
+WHAT ARE BASE WORDS?
+Base words are VOCABULARY ITEMS - single words or compound words that learners memorize.
+Examples of good base words: hola, buenos días, gracias, biblioteca, cumpleaños
+
+WHAT BASE WORDS ARE NOT:
+Base words are NOT phrases, sentences, or words with added context.
+- ✗ yo digo hola (this is a phrase/sentence - NOT a base word)
+- ✗ mi cumpleaños es (this adds context - NOT a base word)
+- ✓ hola (this is a vocabulary item - GOOD)
+- ✓ cumpleaños (this is a vocabulary item - GOOD)
+
+CONTEXT COMES LATER - NOT NOW!
+In Stage 2, we will create Example_Words that show base words in context.
+Your job in Stage 1 is ONLY to ensure the base words themselves are good vocabulary items.
+
+WHAT TO EVALUATE (1-10 score):
+- Does each base word fit the pack's theme?
+- Are the base words useful vocabulary items learners should know?
+- Are there duplicates or too-similar words within the pack?
+- Are there obvious missing words for this theme?
+- Is the difficulty appropriate?
+
+DO NOT:
+- Turn base words into phrases or sentences
+- Add context to base words
+- Worry about "lack of context" - that's Stage 2's job
+
+NO DUPLICATES ACROSS PACKS:
+After making changes, run: python PythonHelpers/check_base_word_duplicates.py spanish
+Each base word should appear in ONLY ONE pack across the entire language.
+If a word appears in multiple packs, decide which pack it fits best and remove it from others.
+
+IDENTIFY GAPS - SUGGEST NEW PACKS:
+As you review, note if there are obvious theme gaps that deserve their own pack.
+If you identify a gap, suggest a new pack title and what base words it should contain.
+Example: "Gap identified: No pack for office vocabulary. Suggest new Pack 'Office Items' with base words: [escritorio, computadora, impresora, ...]"
+
+FILE: SpanishWordsOverview.csv
+COLUMN: Spanish_Base_Words
+
+WORKFLOW:
+1. BEFORE: Score the base words 1-10, list what could be better
+2. MAKE CHANGES: Add/remove/replace vocabulary items as needed
+3. RUN DUPLICATE CHECK: python PythonHelpers/check_base_word_duplicates.py spanish
+4. FIX any cross-pack duplicates
+5. IDENTIFY GAPS: Suggest new packs if obvious themes are missing
+6. AFTER: Score again, summarize improvements
+
+Create your own branch, commit, and PR to main.</div>
+
+    <h3>English - Stage 1</h3>
+    <div class="label">Click to copy</div>
+    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Review and perfect English_Base_Words in EnglishWordsOverview.csv
+
+WHAT ARE BASE WORDS?
+Base words are VOCABULARY ITEMS - single words or compound words that learners memorize.
+Examples of good base words: hello, good morning, birthday, computer, beautiful
+
+WHAT BASE WORDS ARE NOT:
+Base words are NOT phrases, sentences, or words with added context.
+- ✗ I say hello (this is a phrase/sentence - NOT a base word)
+- ✗ my birthday is (this adds context - NOT a base word)
+- ✓ hello (this is a vocabulary item - GOOD)
+- ✓ birthday (this is a vocabulary item - GOOD)
+
+CONTEXT COMES LATER - NOT NOW!
+In Stage 2, we will create Example_Words that show base words in context.
+Your job in Stage 1 is ONLY to ensure the base words themselves are good vocabulary items.
+
+WHAT TO EVALUATE (1-10 score):
+- Does each base word fit the pack's theme?
+- Are the base words useful vocabulary items learners should know?
+- Are there duplicates or too-similar words within the pack?
+- Are there obvious missing words for this theme?
+- Is the difficulty appropriate?
+
+DO NOT:
+- Turn base words into phrases or sentences
+- Add context to base words
+- Worry about "lack of context" - that's Stage 2's job
+
+NO DUPLICATES ACROSS PACKS:
+After making changes, run: python PythonHelpers/check_base_word_duplicates.py english
+Each base word should appear in ONLY ONE pack across the entire language.
+If a word appears in multiple packs, decide which pack it fits best and remove it from others.
+
+IDENTIFY GAPS - SUGGEST NEW PACKS:
+As you review, note if there are obvious theme gaps that deserve their own pack.
+If you identify a gap, suggest a new pack title and what base words it should contain.
+Example: "Gap identified: No pack for medical vocabulary. Suggest new Pack 'Medical Terms' with base words: [doctor, nurse, hospital, medicine, ...]"
+
+FILE: EnglishWordsOverview.csv
+COLUMN: English_Base_Words
+
+WORKFLOW:
+1. BEFORE: Score the base words 1-10, list what could be better
+2. MAKE CHANGES: Add/remove/replace vocabulary items as needed
+3. RUN DUPLICATE CHECK: python PythonHelpers/check_base_word_duplicates.py english
+4. FIX any cross-pack duplicates
+5. IDENTIFY GAPS: Suggest new packs if obvious themes are missing
+6. AFTER: Score again, summarize improvements
+
+Create your own branch, commit, and PR to main.</div>
+
+    <h2>Stage 2: Create Example Words</h2>
+
+    <h3>Chinese - Stage 2</h3>
+    <div class="label">Click to copy</div>
+    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create Chinese_Example_Words column in ChineseWordsOverview.csv
+
+PREREQUISITE: Stage 1 must be complete. The Chinese_Base_Words column should already be finalized.
+
+YOUR GOAL: For each base word, create 2 example phrases/sentences that CONTAIN that base word. These examples help learners see the vocabulary in context.
+
+CRITICAL RULES:
+1. Use SIMPLIFIED CHINESE only (简体中文) - NEVER Traditional Chinese
+2. Each base word needs exactly 2 examples
+3. Each example MUST CONTAIN its corresponding base word as a substring
+4. Examples should be natural, useful phrases learners would actually use
+
+FILE: ChineseWordsOverview.csv
+COLUMN TO CREATE: Chinese_Example_Words
+
+STRUCTURE:
+If Base_Words = [词1, 词2, 词3]
+Then Example_Words = [词1的例子A, 词1的例子B, 词2的例子A, 词2的例子B, 词3的例子A, 词3的例子B]
+
+The pairing is:
+- examples[0], examples[1] → contain base_words[0]
+- examples[2], examples[3] → contain base_words[1]
+- examples[4], examples[5] → contain base_words[2]
+- And so on...
+
+EXAMPLE:
+Base_Words: [你好, 再见, 谢谢]
+Example_Words: [你好吗, 你好啊, 再见朋友, 再见了, 谢谢你, 谢谢啊]
+
+Notice: 你好吗 and 你好啊 both contain 你好
+
+VALIDATION REQUIREMENTS:
+After creating Example_Words, use Python to:
+1. Create Combined_Words = Base_Words + Example_Words (merged, no duplicates)
+2. Check that every example contains its base word
+3. Check for duplicate entries within the same pack
+4. Check that word count in Example_Words = 2 × word count in Base_Words
+
+Create a Python script to automate these checks. Save results to Chinese_Example_Words and Chinese_Combined_Words columns.
+
+WORKFLOW:
+1. Read the finalized Base_Words for each pack
+2. For each base word, create 2 natural example phrases containing that word
+3. Build the Example_Words array in correct order
+4. Run validation script
+5. Fix any issues
+6. Save to CSV
+
+Create your own branch, commit changes, and create a PR to main.</div>
+
+    <h3>Spanish - Stage 2</h3>
+    <div class="label">Click to copy</div>
+    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create Spanish_Example_Words column in SpanishWordsOverview.csv
+
+PREREQUISITE: Stage 1 must be complete. The Spanish_Base_Words column should already be finalized.
+
+YOUR GOAL: For each base word, create 2 example phrases/sentences that CONTAIN that base word. These examples help learners see the vocabulary in context.
+
+CRITICAL RULES:
+1. Each base word needs exactly 2 examples
+2. Each example MUST CONTAIN its corresponding base word as a substring
+3. Examples should be natural, useful phrases learners would actually use
+
+FILE: SpanishWordsOverview.csv
+COLUMN TO CREATE: Spanish_Example_Words
+
+STRUCTURE:
+If Base_Words = [word1, word2, word3]
+Then Example_Words = [word1_exampleA, word1_exampleB, word2_exampleA, word2_exampleB, word3_exampleA, word3_exampleB]
+
+The pairing is:
+- examples[0], examples[1] → contain base_words[0]
+- examples[2], examples[3] → contain base_words[1]
+- examples[4], examples[5] → contain base_words[2]
+- And so on...
+
+EXAMPLE:
+Base_Words: [hola, adiós, gracias]
+Example_Words: [hola amigo, hola señor, adiós amigos, adiós señora, gracias amigo, muchas gracias]
+
+Notice: "hola amigo" and "hola señor" both contain "hola"
+
+VALIDATION REQUIREMENTS:
+After creating Example_Words, use Python to:
+1. Create Combined_Words = Base_Words + Example_Words (merged, no duplicates)
+2. Check that every example contains its base word
+3. Check for duplicate entries within the same pack
+4. Check that word count in Example_Words = 2 × word count in Base_Words
+
+Create a Python script to automate these checks. Save results to Spanish_Example_Words and Spanish_Combined_Words columns.
+
+WORKFLOW:
+1. Read the finalized Base_Words for each pack
+2. For each base word, create 2 natural example phrases containing that word
+3. Build the Example_Words array in correct order
+4. Run validation script
+5. Fix any issues
+6. Save to CSV
+
+Create your own branch, commit changes, and create a PR to main.</div>
+
+    <h3>English - Stage 2</h3>
+    <div class="label">Click to copy</div>
+    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create English_Example_Words column in EnglishWordsOverview.csv
+
+PREREQUISITE: Stage 1 must be complete. The English_Base_Words column should already be finalized.
+
+YOUR GOAL: For each base word, create 2 example phrases/sentences that CONTAIN that base word. These examples help learners see the vocabulary in context.
+
+CRITICAL RULES:
+1. Each base word needs exactly 2 examples
+2. Each example MUST CONTAIN its corresponding base word as a substring
+3. Examples should be natural, useful phrases learners would actually use
+
+FILE: EnglishWordsOverview.csv
+COLUMN TO CREATE: English_Example_Words
+
+STRUCTURE:
+If Base_Words = [word1, word2, word3]
+Then Example_Words = [word1_exampleA, word1_exampleB, word2_exampleA, word2_exampleB, word3_exampleA, word3_exampleB]
+
+The pairing is:
+- examples[0], examples[1] → contain base_words[0]
+- examples[2], examples[3] → contain base_words[1]
+- examples[4], examples[5] → contain base_words[2]
+- And so on...
+
+EXAMPLE:
+Base_Words: [hello, goodbye, thanks]
+Example_Words: [hello there, hello everyone, goodbye friend, goodbye for now, thanks a lot, thanks for helping]
+
+Notice: "hello there" and "hello everyone" both contain "hello"
+
+VALIDATION REQUIREMENTS:
+After creating Example_Words, use Python to:
+1. Create Combined_Words = Base_Words + Example_Words (merged, no duplicates)
+2. Check that every example contains its base word
+3. Check for duplicate entries within the same pack
+4. Check that word count in Example_Words = 2 × word count in Base_Words
+
+Create a Python script to automate these checks. Save results to English_Example_Words and English_Combined_Words columns.
+
+WORKFLOW:
+1. Read the finalized Base_Words for each pack
+2. For each base word, create 2 natural example phrases containing that word
+3. Build the Example_Words array in correct order
+4. Run validation script
+5. Fix any issues
+6. Save to CSV
+
+Create your own branch, commit changes, and create a PR to main.</div>
+
+    <h2>Stage 3: Create Breakout CSVs</h2>
+
+    <h3>Chinese - Stage 3</h3>
+    <div class="label">Click to copy</div>
+    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create breakout CSV files (ChineseWords1.csv, ChineseWords2.csv, etc.) from ChineseWordsOverview.csv
+
+PREREQUISITE: Stage 2 must be complete. The Chinese_Combined_Words column should exist with all vocabulary.
+
+YOUR GOAL: For each pack, create a breakout CSV file with full translations for every word in Combined_Words.
+
+FILE TO READ: ChineseWordsOverview.csv (Chinese_Combined_Words column)
+FILES TO CREATE: ChineseWords/ChineseWords1.csv, ChineseWords/ChineseWords2.csv, ... ChineseWords/ChineseWords107.csv
+
+BREAKOUT CSV COLUMNS (12 columns, in this exact order):
+1. chinese - The Chinese word/phrase (Simplified only!)
+2. pinyin - Pinyin with tone marks
+3. english - English translation
+4. spanish - Spanish translation
+5. french - French translation
+6. portuguese - Portuguese translation
+7. vietnamese - Vietnamese translation
+8. thai - Thai translation
+9. khmer - Khmer/Cambodian translation
+10. indonesian - Indonesian translation
+11. malay - Malay translation
+12. filipino - Filipino/Tagalog translation
+
+CRITICAL PINYIN RULE:
+Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
+This is because our app displays pinyin directly under each character.
+
+CORRECT PINYIN FORMAT:
+- 猴子 → hóu zi (2 characters = 2 syllables with space)
+- 你好 → nǐ hǎo (2 characters = 2 syllables with space)
+- 星期六 → xīng qī liù (3 characters = 3 syllables with spaces)
+- 我爱你 → wǒ ài nǐ (3 characters = 3 syllables with spaces)
+
+INCORRECT PINYIN FORMAT:
+- 猴子 → hóuzi (WRONG - no space)
+- 你好 → nǐhǎo (WRONG - no space)
+- 星期六 → xīngqīliù (WRONG - no spaces)
+
+THE RULE: Count Chinese characters, count pinyin syllables - they MUST match!
+
+EXAMPLE ROW:
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+你好,nǐ hǎo,hello,hola,bonjour,olá,xin chào,สวัสดี,ជំរាបសួរ,halo,halo,kumusta
+
+WORKFLOW:
+1. Read Chinese_Combined_Words from each pack in the Overview
+2. For each word, create translations in all 12 languages
+3. Ensure pinyin has 1 syllable per character with spaces
+4. Save as ChineseWords{pack_number}.csv
+5. Run the pinyin validation script to verify character-syllable matching
+
+VALIDATION:
+Run: python PythonHelpers/validate_pinyin.py chinese
+
+Create your own branch, commit changes, and create a PR to main.</div>
+
+    <h3>Spanish - Stage 3</h3>
+    <div class="label">Click to copy</div>
+    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create breakout CSV files (SpanishWords1.csv, SpanishWords2.csv, etc.) from SpanishWordsOverview.csv
+
+PREREQUISITE: Stage 2 must be complete. The Spanish_Combined_Words column should exist with all vocabulary.
+
+YOUR GOAL: For each pack, create a breakout CSV file with translations for every word in Combined_Words.
+
+FILE TO READ: SpanishWordsOverview.csv (Spanish_Combined_Words column)
+FILES TO CREATE: SpanishWords/SpanishWords1.csv, SpanishWords/SpanishWords2.csv, ... SpanishWords/SpanishWords250.csv
+
+BREAKOUT CSV COLUMNS (5 columns, in this exact order):
+1. spanish - The Spanish word/phrase
+2. english - English translation
+3. chinese - Chinese translation (Simplified Chinese only!)
+4. pinyin - Pinyin with tone marks (1 syllable per character, separated by spaces)
+5. portuguese - Portuguese translation
+
+CRITICAL PINYIN RULE:
+Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
+
+CORRECT: 你好 → nǐ hǎo
+INCORRECT: 你好 → nǐhǎo
+
+EXAMPLE ROW:
+spanish,english,chinese,pinyin,portuguese
+hola amigo,hello friend,你好朋友,nǐ hǎo péng you,olá amigo
+
+WORKFLOW:
+1. Read Spanish_Combined_Words from each pack in the Overview
+2. For each word, create translations in all 5 columns
+3. Ensure Chinese is Simplified and pinyin has proper spacing
+4. Save as SpanishWords{pack_number}.csv
+
+Create your own branch, commit changes, and create a PR to main.</div>
+
+    <h3>English - Stage 3</h3>
+    <div class="label">Click to copy</div>
+    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create breakout CSV files (EnglishWords1.csv, EnglishWords2.csv, etc.) from EnglishWordsOverview.csv
+
+PREREQUISITE: Stage 2 must be complete. The English_Combined_Words column should exist with all vocabulary.
+
+YOUR GOAL: For each pack, create a breakout CSV file with translations for every word in Combined_Words.
+
+FILE TO READ: EnglishWordsOverview.csv (English_Combined_Words column)
+FILES TO CREATE: EnglishWords/EnglishWords1.csv, EnglishWords/EnglishWords2.csv, ... EnglishWords/EnglishWords160.csv
+
+BREAKOUT CSV COLUMNS (5 columns, in this exact order):
+1. english - The English word/phrase
+2. chinese - Chinese translation (Simplified Chinese only!)
+3. pinyin - Pinyin with tone marks (1 syllable per character, separated by spaces)
+4. spanish - Spanish translation
+5. portuguese - Portuguese translation
+
+CRITICAL PINYIN RULE:
+Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
+
+CORRECT: 你好 → nǐ hǎo
+INCORRECT: 你好 → nǐhǎo
+
+EXAMPLE ROW:
+english,chinese,pinyin,spanish,portuguese
+hello there,你好,nǐ hǎo,hola,olá
+
+WORKFLOW:
+1. Read English_Combined_Words from each pack in the Overview
+2. For each word, create translations in all 5 columns
+3. Ensure Chinese is Simplified and pinyin has proper spacing
+4. Save as EnglishWords{pack_number}.csv
+
+Create your own branch, commit changes, and create a PR to main.</div>
+
+    <h2>Stage 4: Cleanup Overview Columns</h2>
+
+    <h3>All Languages - Stage 4</h3>
+    <div class="label">Click to copy</div>
+    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Remove Example_Words and Combined_Words columns from all Overview CSVs
+
+PREREQUISITE: Run this AFTER Stage 1, 2, and 3 are all complete and merged to main.
+
+YOUR GOAL: Clean up the Overview CSVs by removing legacy columns that are no longer needed once breakout CSVs are generated.
+
+FILES TO EDIT:
+- ChineseWords/ChineseWordsOverview.csv
+- SpanishWords/SpanishWordsOverview.csv
+- EnglishWords/EnglishWordsOverview.csv
+
+COLUMNS TO KEEP (4 columns only):
+1. Pack_Number
+2. Pack_Title
+3. Difficulty_Act
+4. [Lang]_Base_Words (Chinese_Base_Words, Spanish_Base_Words, English_Base_Words)
+
+COLUMNS TO REMOVE:
+- [Lang]_Example_Words
+- [Lang]_Combined_Words
+
+You can use the existing script: python PythonHelpers/cleanup_overview_columns.py
+
+Or manually edit the CSVs to remove the columns.
+
+VERIFICATION:
+After cleanup, each Overview CSV should have exactly 4 columns:
+- Pack_Number,Pack_Title,Difficulty_Act,[Lang]_Base_Words
+
+Create your own branch, commit changes, and create a PR to main.</div>
+
+    <script>
+        function copyPrompt(element) {
+            const text = element.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                element.classList.add('copied');
+                setTimeout(() => element.classList.remove('copied'), 500);
+            });
+        }
+    </script>
+</body>
+</html>
