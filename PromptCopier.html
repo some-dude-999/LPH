@@ -1101,188 +1101,153 @@ Create your own branch, commit, and PR to main.</div>
 
 <h3>Chinese - Stage 3</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Create or critique breakout CSV files (ChineseWords1.csv, etc.)
+<div onclick="copyPrompt(this)">TASK: Critique Chinese breakout CSV files (ChineseWords1.csv through ChineseWords107.csv)
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🚫🚫🚫 ABSOLUTE RULE: NEVER EDIT THE OVERVIEW CSV 🚫🚫🚫        ║
 ║                                                                  ║
 ║  ChineseWordsOverview.csv is 100% READ-ONLY. NEVER touch it.     ║
-║  Do NOT edit it. Do NOT modify it. Do NOT change a single cell.  ║
-║  If you edit the Overview CSV for ANY reason = IMMEDIATE FAIL.   ║
-║                                                                  ║
-║  You are ONLY working with breakout files: ChineseWords1.csv...  ║
-╚══════════════════════════════════════════════════════════════════╝
-
-=== FIRST: DETERMINE YOUR MODE ===
-Run this check command:
-python PythonHelpers/construct_breakout_csvs.py chinese check
-
-This tells you:
-- How many breakout CSVs exist
-- Which packs are missing
-- Whether existing CSVs match Chinese_Combined_Words
-
-MODE A - CONSTRUCTION MODE (ANY CSVs missing):
-  → Use Python script with translation API to CREATE breakout CSVs
-  → Code-based generation is REQUIRED in this mode
-  → CONTINUE where previous agent left off!
-  → PR to main after creating CSVs
-
-MODE B - CRITIQUE MODE (ALL CSVs exist):
-  → Python is ONLY for validation checks (no editing!)
-  → Verify all Overview Combined_Words appear in breakout CSVs
-  → ⛔ ABSOLUTELY NO PYTHON to edit translations!
-
-=== MODE A: CONSTRUCTION WORKFLOW ===
-If ANY breakout CSVs are missing, you are in CONSTRUCTION MODE.
-
-╔══════════════════════════════════════════════════════════════════╗
-║  🔄 CONTINUE PREVIOUS WORK!                                      ║
-║                                                                  ║
-║  Previous agents may have created SOME CSVs before stopping.     ║
-║  Your job: CONTINUE where they left off!                         ║
-║                                                                  ║
-║  1. Run check to see which packs are MISSING                     ║
-║  2. Create the MISSING packs (don't redo existing ones)          ║
-║  3. Keep going until ALL packs exist or you must stop            ║
-║  4. PR your progress so next agent can continue                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  ✅ CONSTRUCTION MODE: USE PYTHON SCRIPT!                        ║
+║  🔒🔒🔒 SACRED RULE: NEVER EDIT COLUMN 1 (chinese) 🔒🔒🔒        ║
 ║                                                                  ║
-║  In this mode, you MUST use the translation script:              ║
-║  python PythonHelpers/construct_breakout_csvs.py chinese construct║
+║  Column 1 is the TARGET LANGUAGE being learned.                  ║
+║  These words are CAREFULLY CURATED from the Overview CSV.        ║
+║  They are the SOURCE OF TRUTH for what learners study.           ║
 ║                                                                  ║
-║  This uses Google Translate API to generate initial translations.║
-║  You can also specify a pack range:                              ║
-║  python PythonHelpers/construct_breakout_csvs.py chinese construct 1 25 ║
+║  ⛔ NEVER change, fix, or "improve" Column 1 values              ║
+║  ⛔ NEVER add/remove rows (word count must match Overview)       ║
+║  ✅ ONLY edit Columns 2-12 (translations/pinyin)                 ║
+║                                                                  ║
+║  If Column 1 has issues, they must be fixed in Stage 1/2,        ║
+║  NOT here in Stage 3!                                            ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-Construction workflow:
-1. Run: python PythonHelpers/construct_breakout_csvs.py chinese check
-2. Identify which packs are MISSING (previous agent may have done some!)
-3. Run: python PythonHelpers/construct_breakout_csvs.py chinese construct [start] [end]
-   → Start from the FIRST missing pack, not pack 1!
-4. Script creates CSVs with translations from Google Translate
-5. Run validation: python PythonHelpers/validate_pinyin.py chinese
-6. KEEP GOING until all packs done OR you must stop
-7. BEFORE STOPPING: Commit and PR to main (even partial progress!)
+=== CRITICAL VALIDATION: COLUMN 1 MUST MATCH OVERVIEW ===
+Before ANY critique work, verify:
+- Every word in Column 1 (chinese) of each breakout CSV
+- Must EXACTLY match the Chinese_Combined_Words array in Overview CSV
+- Same words, same order, same count
+
+Run this validation:
+python PythonHelpers/verify_words_integrity.py chinese
+
+If mismatch found: STOP and report. Do NOT fix it yourself.
+Column 1 is sacred - mismatches indicate a pipeline problem.
+
+=== USE SUB-AGENTS FOR PARALLEL PROCESSING ===
+This task MUST be done with sub-agents. Each sub-agent handles MAX 10 CSVs.
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔴 CRITICAL: DO MAXIMUM WORK & ALWAYS PR BEFORE STOPPING!       ║
+║  🤖 SUB-AGENT ARCHITECTURE (MANDATORY)                           ║
 ║                                                                  ║
-║  → Create as many packs as possible before stopping              ║
-║  → Don't stop after just a few packs if you can do more!         ║
-║  → If you need to stop for ANY reason:                           ║
-║    • Commit and PR whatever CSVs were created                    ║
-║    • Even if it's just 1 pack - PR IT!                           ║
-║    • NEVER stop without PR'ing your work to main                 ║
+║  You are the COORDINATOR. Spawn sub-agents to do the work:       ║
 ║                                                                  ║
-║  Next agent will continue where you left off.                    ║
+║  Sub-Agent 1:  Packs 1-10    (ChineseWords1.csv - ChineseWords10.csv)  ║
+║  Sub-Agent 2:  Packs 11-20   (ChineseWords11.csv - ChineseWords20.csv) ║
+║  Sub-Agent 3:  Packs 21-30   (ChineseWords21.csv - ChineseWords30.csv) ║
+║  Sub-Agent 4:  Packs 31-40   (ChineseWords31.csv - ChineseWords40.csv) ║
+║  Sub-Agent 5:  Packs 41-50   (ChineseWords41.csv - ChineseWords50.csv) ║
+║  Sub-Agent 6:  Packs 51-60   (ChineseWords51.csv - ChineseWords60.csv) ║
+║  Sub-Agent 7:  Packs 61-70   (ChineseWords61.csv - ChineseWords70.csv) ║
+║  Sub-Agent 8:  Packs 71-80   (ChineseWords71.csv - ChineseWords80.csv) ║
+║  Sub-Agent 9:  Packs 81-90   (ChineseWords81.csv - ChineseWords90.csv) ║
+║  Sub-Agent 10: Packs 91-100  (ChineseWords91.csv - ChineseWords100.csv)║
+║  Sub-Agent 11: Packs 101-107 (ChineseWords101.csv - ChineseWords107.csv)║
+║                                                                  ║
+║  Each sub-agent reports back:                                    ║
+║  - Column 1 validation (matches Overview? YES/NO)                ║
+║  - Issues found in columns 2-12                                  ║
+║  - Fixes made (with before/after)                                ║
+║  - Score for their assigned packs                                ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== MODE B: CRITIQUE WORKFLOW ===
-If ALL CSVs exist, enter CRITIQUE MODE.
+=== SUB-AGENT TASK TEMPLATE ===
+Give each sub-agent this task:
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ CRITIQUE MODE: PYTHON FOR CHECKING ONLY! ⛔⛔⛔            ║
-║                                                                  ║
-║  In CRITIQUE mode:                                               ║
-║  ✅ Python to CHECK if all Combined_Words are in breakout CSVs   ║
-║  ✅ Python to validate pinyin formatting                         ║
-║  ⛔ NO Python to edit or fix translations                        ║
-║  ⛔ NO scripts to batch-edit CSV files                           ║
-║                                                                  ║
-║  If you use ANY code to EDIT translations = TOTAL FAILURE!       ║
-║  Manual editing ONLY for fixes.                                  ║
-╚══════════════════════════════════════════════════════════════════╝
+"Review ChineseWords{START}.csv through ChineseWords{END}.csv
 
-╔══════════════════════════════════════════════════════════════════╗
-║  🔥 IF SCORE < 9.5: FIX AS MUCH AS POSSIBLE! 🔥                  ║
-║                                                                  ║
-║  Even if there are HUNDREDS of issues:                           ║
-║  → DO NOT give up or stop early!                                 ║
-║  → Fix as many issues as you can                                 ║
-║  → Every fix helps - chip away at the problem                    ║
-║  → PR your partial fixes so next agent can continue              ║
-║                                                                  ║
-║  "Too many issues" is NOT an excuse to do nothing!               ║
-║  Fix 10, 20, 50 issues - whatever you can manage.                ║
-║  Progress > Perfection. ALWAYS PR before stopping.               ║
-╚══════════════════════════════════════════════════════════════════╝
+1. VALIDATION (Column 1 - READ ONLY):
+   - Read each CSV's Column 1 (chinese)
+   - Verify words match Chinese_Combined_Words from Overview for that pack
+   - Report: MATCH or MISMATCH (if mismatch, list discrepancies)
+   - ⛔ DO NOT edit Column 1 under any circumstances
 
-=== IF INITIAL SCORE >= 9.5: STOP ===
-If your initial quality score is 9.5 or higher, the data is already excellent.
-DO NOT make changes. Report the score and move on.
+2. CRITIQUE (Columns 2-12 ONLY):
+   - Pinyin (Col 2): 1 syllable per character, correct tones, spaces between
+   - English (Col 3): accurate, natural translation
+   - Spanish (Col 4): accurate, natural translation
+   - French (Col 5): accurate, natural translation
+   - Portuguese (Col 6): accurate, natural translation
+   - Vietnamese (Col 7): accurate, natural translation
+   - Thai (Col 8): accurate, natural translation
+   - Khmer (Col 9): accurate, natural translation
+   - Indonesian (Col 10): accurate, natural translation
+   - Malay (Col 11): accurate, natural translation
+   - Filipino (Col 12): accurate, natural translation
 
-=== IF INITIAL SCORE < 9.5: FIX EVERYTHING YOU CAN ===
-If score is below 9.5, you MUST make fixes:
-1. Identify all issues you can find
-2. Fix AS MANY as possible (not just a few!)
-3. Don't stop just because there are "too many" issues
-4. PR your fixes even if you couldn't fix everything
-5. Report what you fixed and what remains for next agent
+3. FIX (Columns 2-12 ONLY):
+   - Manually fix pinyin errors
+   - Manually fix translation errors
+   - Show before/after for each fix
 
-Critique workflow (ONE ACT AT A TIME):
-1. Run: python PythonHelpers/construct_breakout_csvs.py chinese check
-2. Verify all CSVs exist and match Chinese_Combined_Words
-3. Pick ONE act to scrutinize (start with Act I if not specified)
-4. SCORE the current quality (1-10)
-5. IF score >= 9.5: Report and stop (no changes needed)
-6. IF score < 9.5: For EACH CSV in that act, MANUALLY review & fix:
-   - Is EVERY translation accurate and natural?
-   - Would a native speaker actually say this?
-   - Is pinyin correct (1 syllable per char, proper tones)?
-   - Are there awkward, overly formal, or rare translations?
-7. MANUALLY edit the CSV file to fix issues (NO CODE!)
-8. Run validation: python PythonHelpers/validate_pinyin.py chinese
-9. Score again (AFTER score)
-10. Commit and PR to main - EVEN IF NOT ALL ISSUES FIXED!
-11. Report: what you fixed, what remains, which act was critiqued
+4. REPORT BACK:
+   | Pack | Col1 Valid | Issues Found | Issues Fixed | Score |
+   |------|------------|--------------|--------------|-------|
+   | X    | YES/NO     | count        | count        | X/10  |
+"
 
-CRITIQUE MODE CHECKLIST:
-□ Read EVERY row in the CSV - don't skim!
-□ Check EACH language column for accuracy
-□ Verify pinyin: 1 syllable per character, correct tones
-□ Fix awkward translations (what would a native speaker say?)
-□ Ensure consistency across similar words
-□ Use the MOST COMMON translation, not obscure alternatives
+=== COORDINATOR WORKFLOW ===
+1. First, run validation to check Column 1 integrity:
+   python PythonHelpers/verify_words_integrity.py chinese
 
-Chinese Acts:
-- Act I (Foundation): Packs 1-25
-- Act II (Development): Packs 26-50
-- Act III (Expansion): Packs 51-75
-- Act IV (Mastery): Packs 76-95
-- Act V (Refinement): Packs 96-107
+2. Run pinyin validation:
+   python PythonHelpers/validate_pinyin.py chinese
 
-=== BREAKOUT CSV COLUMNS (12 columns, exact order) ===
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+3. Spawn sub-agents in parallel (max 10 CSVs each)
+
+4. Collect reports from all sub-agents
+
+5. Aggregate results:
+   - Total Column 1 validation status (all must be YES)
+   - Total issues found/fixed
+   - Overall score
+
+6. Commit all changes and PR to main
+
+=== BREAKOUT CSV COLUMNS (12 columns) ===
+| Col | Name       | Editable? | Notes                        |
+|-----|------------|-----------|------------------------------|
+| 1   | chinese    | 🔒 NEVER  | Sacred - matches Overview    |
+| 2   | pinyin     | ✅ YES    | 1 syllable per character     |
+| 3   | english    | ✅ YES    | Translation                  |
+| 4   | spanish    | ✅ YES    | Translation                  |
+| 5   | french     | ✅ YES    | Translation                  |
+| 6   | portuguese | ✅ YES    | Translation                  |
+| 7   | vietnamese | ✅ YES    | Translation                  |
+| 8   | thai       | ✅ YES    | Translation                  |
+| 9   | khmer      | ✅ YES    | Translation                  |
+| 10  | indonesian | ✅ YES    | Translation                  |
+| 11  | malay      | ✅ YES    | Translation                  |
+| 12  | filipino   | ✅ YES    | Translation                  |
 
 === CRITICAL PINYIN RULE ===
 Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
 CORRECT: 猴子 → hóu zi (2 chars = 2 syllables)
 INCORRECT: 猴子 → hóuzi (WRONG - no space!)
 
-=== VALIDATION SCRIPTS ===
-# Check if CSVs exist and match Combined_Words:
-python PythonHelpers/construct_breakout_csvs.py chinese check
-
-# Validate pinyin formatting:
-python PythonHelpers/validate_pinyin.py chinese
-
 === FINAL OUTPUT (REQUIRED) ===
-| Metric         | Value |
-|----------------|-------|
-| Mode           | Construction / Critique |
-| Packs Done     | [List specific packs, e.g., "1-25" or "Act I"] |
-| Packs Remaining| [What's left for next agent] |
-| BEFORE Score   | X/10 (Critique mode only) |
-| AFTER Score    | X/10 (Critique mode only) |
-| Reason         | [1-2 sentence explanation] |
+| Metric              | Value |
+|---------------------|-------|
+| Sub-Agents Used     | 11    |
+| Column 1 Valid      | All YES / X mismatches |
+| Total Issues Found  | X     |
+| Total Issues Fixed  | X     |
+| BEFORE Score        | X/10  |
+| AFTER Score         | X/10  |
 
-Create your own branch, commit, and PR to main.
-⚠️ ALWAYS PR BEFORE STOPPING!</div>
+Create your own branch, commit, and PR to main.</div>
 
 <h3>Spanish - Stage 3</h3>
 <div>Click to copy</div>
