@@ -619,25 +619,31 @@ hola señor      → hello sir
 
 | Rule | Description | Example |
 |------|-------------|---------|
-| **Divisible by 3** | Word count MUST be divisible by 3 | 30 words = 10 base words × 3 variants ✓ |
+| **Divisible by 3** | Combined_Words count MUST be divisible by 3 | 30 words = 10 base words × 3 (1 base + 2 examples) ✓ |
 | **No within-pack duplicates** | Same exact phrase CANNOT appear twice in one wordpack | `["hola amigo", "hola amigo", ...]` ❌ |
-| **Across-pack duplicates OK** | Same phrase CAN appear in different wordpacks | Pack 1: "hola amigo", Pack 5: "hola amigo" ✓ |
+| **⛔ NO across-pack duplicates** | Same phrase CANNOT appear in different packs' Combined_Words | Pack 1: "hola amigo", Pack 5: "hola amigo" ❌ |
 
 ### Why These Rules Matter
-- **Divisible by 3**: Ensures consistent learning structure (base word + 3 examples)
+- **Divisible by 3**: Each base word has exactly 2 examples (1 + 2 = 3 per base word)
 - **No within-pack duplicates**: Each card in a pack should be unique for effective learning
-- **Across-pack duplicates OK**: Common phrases naturally appear in multiple contexts
+- **⛔ NO across-pack duplicates**: Every word/phrase must be globally unique across ALL packs
 
 ### Verification Scripts
 Located in `PythonHelpers/`:
 - `verify_words_integrity.py` - Verifies Overview arrays match breakout CSV files
-- `check_duplicates.py` - Checks for within-pack and across-pack duplicates
+- `check_duplicates.py` - Checks for within-pack duplicates in Base_Words
+- `check_combined_duplicates.py` - Checks for within-pack duplicates in Combined_Words
+- `check_combined_across_packs.py` - ⛔ CRITICAL: Checks for duplicates ACROSS packs in Combined_Words
 
 **Run after any CSV changes:**
 ```bash
 python PythonHelpers/verify_words_integrity.py
 python PythonHelpers/check_duplicates.py
+python PythonHelpers/check_combined_duplicates.py
+python PythonHelpers/check_combined_across_packs.py [chinese|spanish|english|all]
 ```
+
+**⛔ The across-pack check MUST pass with ZERO duplicates before any PR to main.**
 
 ### Data Flow
 ```
