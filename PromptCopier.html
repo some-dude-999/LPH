@@ -1136,21 +1136,24 @@ python PythonHelpers/validate_pinyin.py chinese
 
 Note any pinyin errors to fix.
 
-=== STEP 3: SCORE EVERY WORDPACK (1-10) ===
+=== STEP 3: SCORE EVERY WORDPACK (1-10) - MANDATORY OUTPUT ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📊 SCORE EACH PACK INDIVIDUALLY BEFORE FIXING                   ║
+║  📊 PRODUCE THE FULL SCORECARD TABLE FIRST                       ║
 ║                                                                  ║
-║  Review EVERY pack. Give each a quality score from 1-10.        ║
-║  10 = Perfect (no issues)                                        ║
-║  9  = Excellent (trivial issues only, acceptable)               ║
-║  8  = Good (minor issues)                                        ║
-║  7  = Fair (several issues)                                      ║
-║  6 or below = Poor (significant issues, definitely needs work)  ║
-║                                                                  ║
-║  🎯 THRESHOLD: Only fix packs scoring BELOW 9                    ║
-║  Packs with 9 or 10 are acceptable - skip them.                 ║
+║  ⚠️ THIS TABLE IS MANDATORY. ALWAYS DISPLAY IT.                  ║
+║  Even if you don't fix anything, this table MUST appear.        ║
+║  Score ALL 107 packs BEFORE moving to Step 4.                   ║
 ╚══════════════════════════════════════════════════════════════════╝
+
+SCORING SCALE:
+  10 = Perfect (no issues)
+  9  = Excellent (trivial issues only, acceptable)
+  8  = Good (minor issues)
+  7  = Fair (several issues)
+  6 or below = Poor (significant issues, definitely needs work)
+
+🎯 THRESHOLD: Only fix packs scoring BELOW 9
 
 Chinese Acts:
 - Act I (Foundation): Packs 1-14
@@ -1173,16 +1176,29 @@ FOR EACH PACK, check EVERY ROW:
    - Column 11 (malay): Accurate? Natural?
    - Column 12 (filipino): Accurate? Natural?
 
-CREATE THIS SCORECARD TABLE (ALL 107 packs):
+╔══════════════════════════════════════════════════════════════════╗
+║  🚨 MANDATORY: DISPLAY THIS COMPLETE TABLE BEFORE FIXING 🚨      ║
+╚══════════════════════════════════════════════════════════════════╝
+
 | Pack | Wordpack | Score | Issues Found |
 |------|----------|-------|--------------|
-| 1 | ChineseWords1.csv | 7/10 | Row 5: pinyin "nǐhǎo" missing space; Row 12: english awkward |
-| 2 | ChineseWords2.csv | 10/10 | None ✓ |
-| 3 | ChineseWords3.csv | 6/10 | Row 8: spanish accent missing; Row 15: thai incorrect |
-| 4 | ChineseWords4.csv | 9/10 | Minor: Row 3 could be more natural (acceptable) ✓ |
-| 5 | ChineseWords5.csv | 8/10 | Row 7: vietnamese tone wrong |
+| 1 | ChineseWords1.csv | ?/10 | [list issues or "None ✓"] |
+| 2 | ChineseWords2.csv | ?/10 | [list issues or "None ✓"] |
+| 3 | ChineseWords3.csv | ?/10 | [list issues or "None ✓"] |
+| 4 | ChineseWords4.csv | ?/10 | [list issues or "None ✓"] |
+| 5 | ChineseWords5.csv | ?/10 | [list issues or "None ✓"] |
 | ... | ... | ... | ... |
-| 107 | ChineseWords107.csv | 10/10 | None ✓ |
+| 106 | ChineseWords106.csv | ?/10 | [list issues or "None ✓"] |
+| 107 | ChineseWords107.csv | ?/10 | [list issues or "None ✓"] |
+
+^^^ COMPLETE ALL 107 ROWS. DO NOT SKIP ANY. ^^^
+
+SUMMARY (after table):
+| Metric | Count |
+|--------|-------|
+| Packs scoring 10/10 | X |
+| Packs scoring 9/10 | X |
+| Packs scoring below 9 | X (these need fixing) |
 
 === STEP 4: FIX ALL PACKS SCORING BELOW 9 ===
 
