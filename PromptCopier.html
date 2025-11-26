@@ -18,6 +18,15 @@
         .docs h4 { color: #64B5F6; margin-top: 15px; }
         .docs code { background: #0d2137; padding: 2px 6px; }
         .stage-header { background: #2d2d2d; padding: 15px; margin: 20px 0 10px 0; border-left: 4px solid #4CAF50; }
+        .example-tables { background: #1a2a1a; border: 1px solid #4CAF50; padding: 15px; margin: 15px 0; }
+        .example-tables h4 { color: #81C784; margin: 10px 0 5px 0; }
+        .example-tables table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 11px; }
+        .example-tables th, .example-tables td { border: 1px solid #444; padding: 6px 8px; text-align: left; }
+        .example-tables th { background: #2d4a2d; color: #81C784; }
+        .example-tables td { background: #1a2a1a; }
+        .example-tables .bad { background: #4a2a2a; color: #f88; }
+        .example-tables .good { background: #2a4a2a; color: #8f8; }
+        .example-tables .note { color: #aaa; font-style: italic; margin: 5px 0; }
     </style>
 </head>
 <body>
@@ -241,6 +250,44 @@ seen this wordpack before) rate the quality. This prevents:
     <p><strong>Python check:</strong> <code>python PythonHelpers/check_base_word_duplicates.py [lang]</code></p>
 </div>
 
+<div class="example-tables">
+    <h4>STAGE 1 BEFORE/AFTER - Chinese Example</h4>
+    <p class="note">BEFORE: Contains phrases mixed with vocabulary (BAD)</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Difficulty_Act</th><th>Chinese_Base_Words</th></tr>
+        <tr><td>15</td><td>Animals</td><td>Act I</td><td class="bad">[猫,狗,我喜欢猫,鸟,他有狗]</td></tr>
+    </table>
+    <p class="note">AFTER: Only vocabulary items - single words or compound words (GOOD)</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Difficulty_Act</th><th>Chinese_Base_Words</th></tr>
+        <tr><td>15</td><td>Animals</td><td>Act I</td><td class="good">[猫,狗,鸟,鱼,兔子,老虎,狮子,熊猫]</td></tr>
+    </table>
+
+    <h4>STAGE 1 BEFORE/AFTER - Spanish Example</h4>
+    <p class="note">BEFORE: "yo como pan" and "ella bebe" are phrases (BAD)</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Difficulty_Act</th><th>Spanish_Base_Words</th></tr>
+        <tr><td>8</td><td>Food</td><td>Act I</td><td class="bad">[pan,queso,yo como pan,leche,ella bebe]</td></tr>
+    </table>
+    <p class="note">AFTER: All vocabulary items (GOOD)</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Difficulty_Act</th><th>Spanish_Base_Words</th></tr>
+        <tr><td>8</td><td>Food</td><td>Act I</td><td class="good">[pan,queso,leche,manzana,arroz,pollo]</td></tr>
+    </table>
+
+    <h4>STAGE 1 BEFORE/AFTER - English Example</h4>
+    <p class="note">BEFORE: "I like red" and "she has blue" are phrases (BAD)</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Difficulty_Act</th><th>English_Base_Words</th></tr>
+        <tr><td>5</td><td>Colors</td><td>Act I</td><td class="bad">[red,blue,I like red,green,she has blue]</td></tr>
+    </table>
+    <p class="note">AFTER: All vocabulary items (GOOD)</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Difficulty_Act</th><th>English_Base_Words</th></tr>
+        <tr><td>5</td><td>Colors</td><td>Act I</td><td class="good">[red,blue,green,yellow,orange,purple]</td></tr>
+    </table>
+</div>
+
 <h3>Chinese - Stage 1</h3>
 <div class="label">Click to copy</div>
 <div class="prompt-box" onclick="copyPrompt(this)">TASK: Review and perfect Chinese_Base_Words in ChineseWordsOverview.csv
@@ -306,6 +353,8 @@ Example: "Gap: No kitchen vocabulary. Suggest Pack 'Kitchen Items': [锅, 碗, �
 === FILE INFO ===
 FILE: ChineseWordsOverview.csv
 COLUMN: Chinese_Base_Words
+
+(See HTML tables above for before/after examples)
 
 === WORKFLOW ===
 1. BEFORE SCORE: Rate current base words 1-10, list what could be better
@@ -377,6 +426,8 @@ Note if obvious theme gaps deserve new packs.
 FILE: SpanishWordsOverview.csv
 COLUMN: Spanish_Base_Words
 
+(See HTML tables above for before/after examples)
+
 === WORKFLOW ===
 1. BEFORE SCORE: Rate current base words 1-10, list what could be better
 2. MAKE CHANGES: Add/remove/replace vocabulary items
@@ -447,6 +498,8 @@ Note if obvious theme gaps deserve new packs.
 FILE: EnglishWordsOverview.csv
 COLUMN: English_Base_Words
 
+(See HTML tables above for before/after examples)
+
 === WORKFLOW ===
 1. BEFORE SCORE: Rate current base words 1-10, list what could be better
 2. MAKE CHANGES: Add/remove/replace vocabulary items
@@ -466,6 +519,45 @@ Create your own branch, commit, and PR to main.</div>
     <h2>Stage 2: Create Example Words</h2>
     <p>Create contextual examples containing each base word. Target score: 9.0+</p>
     <p><strong>Python check:</strong> Validate examples contain base words, check duplicates</p>
+</div>
+
+<div class="example-tables">
+    <h4>STAGE 2 BEFORE/AFTER - Chinese Example</h4>
+    <p class="note">BEFORE: Only Base_Words column exists (after Stage 1)</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Chinese_Base_Words</th><th>Chinese_Example_Words</th><th>Chinese_Combined_Words</th></tr>
+        <tr><td>15</td><td>Animals</td><td>[猫,狗,鸟]</td><td class="bad">(empty)</td><td class="bad">(empty)</td></tr>
+    </table>
+    <p class="note">AFTER: Example_Words (2 per base) + Combined_Words created</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Chinese_Base_Words</th><th>Chinese_Example_Words</th><th>Chinese_Combined_Words</th></tr>
+        <tr><td>15</td><td>Animals</td><td>[猫,狗,鸟]</td><td class="good">[小猫,猫咪,小狗,狗狗,小鸟,鸟儿]</td><td class="good">[猫,狗,鸟,小猫,猫咪,小狗,狗狗,小鸟,鸟儿]</td></tr>
+    </table>
+    <p class="note">Notice: 小猫 & 猫咪 contain 猫 | 小狗 & 狗狗 contain 狗 | 小鸟 & 鸟儿 contain 鸟</p>
+
+    <h4>STAGE 2 BEFORE/AFTER - Spanish Example</h4>
+    <p class="note">BEFORE: Only Base_Words exists</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Spanish_Base_Words</th><th>Spanish_Example_Words</th><th>Spanish_Combined_Words</th></tr>
+        <tr><td>8</td><td>Food</td><td>[pan,queso,leche]</td><td class="bad">(empty)</td><td class="bad">(empty)</td></tr>
+    </table>
+    <p class="note">AFTER: 2 examples per base word, all examples CONTAIN their base word</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Spanish_Base_Words</th><th>Spanish_Example_Words</th><th>Spanish_Combined_Words</th></tr>
+        <tr><td>8</td><td>Food</td><td>[pan,queso,leche]</td><td class="good">[pan fresco,pan con mantequilla,queso fresco,con queso,leche fría,leche caliente]</td><td class="good">[pan,queso,leche,pan fresco,...]</td></tr>
+    </table>
+
+    <h4>STAGE 2 BEFORE/AFTER - English Example</h4>
+    <p class="note">BEFORE: Only Base_Words exists</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>English_Base_Words</th><th>English_Example_Words</th><th>English_Combined_Words</th></tr>
+        <tr><td>5</td><td>Colors</td><td>[red,blue,green]</td><td class="bad">(empty)</td><td class="bad">(empty)</td></tr>
+    </table>
+    <p class="note">AFTER: 2 examples per base word</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>English_Base_Words</th><th>English_Example_Words</th><th>English_Combined_Words</th></tr>
+        <tr><td>5</td><td>Colors</td><td>[red,blue,green]</td><td class="good">[red apple,bright red,blue sky,deep blue,green grass,dark green]</td><td class="good">[red,blue,green,red apple,...]</td></tr>
+    </table>
 </div>
 
 <h3>Chinese - Stage 2</h3>
@@ -520,6 +612,8 @@ Create/use a Python script to:
 FILE: ChineseWordsOverview.csv
 COLUMNS TO CREATE: Chinese_Example_Words, Chinese_Combined_Words
 
+(See HTML tables above for before/after examples)
+
 === WORKFLOW ===
 1. Read finalized Base_Words for each pack
 2. Create 2 natural examples per base word (containing that word)
@@ -569,6 +663,8 @@ Notice: "hola amigo" and "hola señor" both CONTAIN "hola"
 === FILE INFO ===
 FILE: SpanishWordsOverview.csv
 COLUMNS TO CREATE: Spanish_Example_Words, Spanish_Combined_Words
+
+(See HTML tables above for before/after examples)
 
 === WORKFLOW ===
 1. Read finalized Base_Words
@@ -633,6 +729,38 @@ Create your own branch, commit, and PR to main.</div>
     <h2>Stage 3: Create Breakout CSVs</h2>
     <p>Generate translation CSVs for each pack. Target score: 9.5+</p>
     <p><strong>Python check:</strong> <code>python PythonHelpers/validate_pinyin.py [lang]</code></p>
+</div>
+
+<div class="example-tables">
+    <h4>STAGE 3 INPUT - Combined_Words from Overview CSV</h4>
+    <p class="note">INPUT: Overview CSV with Combined_Words column (from Stage 2)</p>
+    <table>
+        <tr><th>Pack_Number</th><th>Pack_Title</th><th>Chinese_Combined_Words</th></tr>
+        <tr><td>15</td><td>Animals</td><td>[猫,狗,鸟,小猫,猫咪,小狗,狗狗,小鸟,鸟儿]</td></tr>
+    </table>
+
+    <h4>STAGE 3 OUTPUT - ChineseWords15.csv (Breakout CSV)</h4>
+    <p class="note">OUTPUT: Individual CSV file with ALL translations (12 columns for Chinese)</p>
+    <table>
+        <tr><th>chinese</th><th>pinyin</th><th>english</th><th>spanish</th><th>french</th><th>portuguese</th><th>vietnamese</th><th>thai</th><th>khmer</th><th>indonesian</th><th>malay</th><th>filipino</th></tr>
+        <tr><td>猫</td><td class="good">māo</td><td>cat</td><td>gato</td><td>chat</td><td>gato</td><td>con mèo</td><td>แมว</td><td>ឆ្មា</td><td>kucing</td><td>kucing</td><td>pusa</td></tr>
+        <tr><td>小猫</td><td class="good">xiǎo māo</td><td>kitten</td><td>gatito</td><td>chaton</td><td>gatinho</td><td>mèo con</td><td>ลูกแมว</td><td>កូនឆ្មា</td><td>anak kucing</td><td>anak kucing</td><td>kuting</td></tr>
+    </table>
+    <p class="note">CRITICAL: Pinyin must have 1 syllable per character with spaces! 小猫 = "xiǎo māo" (2 chars = 2 syllables)</p>
+
+    <h4>STAGE 3 OUTPUT - SpanishWords8.csv (5 columns for Spanish)</h4>
+    <table>
+        <tr><th>spanish</th><th>english</th><th>chinese</th><th>pinyin</th><th>portuguese</th></tr>
+        <tr><td>pan</td><td>bread</td><td>面包</td><td class="good">miàn bāo</td><td>pão</td></tr>
+        <tr><td>pan fresco</td><td>fresh bread</td><td>新鲜面包</td><td class="good">xīn xiān miàn bāo</td><td>pão fresco</td></tr>
+    </table>
+
+    <h4>STAGE 3 OUTPUT - EnglishWords5.csv (5 columns for English)</h4>
+    <table>
+        <tr><th>english</th><th>chinese</th><th>pinyin</th><th>spanish</th><th>portuguese</th></tr>
+        <tr><td>red</td><td>红色</td><td class="good">hóng sè</td><td>rojo</td><td>vermelho</td></tr>
+        <tr><td>red apple</td><td>红苹果</td><td class="good">hóng píng guǒ</td><td>manzana roja</td><td>maçã vermelha</td></tr>
+    </table>
 </div>
 
 <h3>Chinese - Stage 3</h3>
@@ -789,6 +917,45 @@ Create your own branch, commit, and PR to main.</div>
     <h2>Stage 4: Generate JavaScript Modules</h2>
     <p>Convert breakout CSVs to JS modules (clean + obfuscated). Final output for the game.</p>
     <p><strong>Script:</strong> <code>python [Lang]Words/[Lang]WordsPythonHelperScripts/convert_csv_to_js.py</code></p>
+</div>
+
+<div class="example-tables">
+    <h4>STAGE 4 INPUT - Breakout CSV (ChineseWords15.csv)</h4>
+    <table>
+        <tr><th>chinese</th><th>pinyin</th><th>english</th><th>spanish</th><th>french</th><th>...</th></tr>
+        <tr><td>猫</td><td>māo</td><td>cat</td><td>gato</td><td>chat</td><td>...</td></tr>
+        <tr><td>小猫</td><td>xiǎo māo</td><td>kitten</td><td>gatito</td><td>chaton</td><td>...</td></tr>
+    </table>
+
+    <h4>STAGE 4 OUTPUT - Clean JS Module (Jsmodules/act1-foundation.js)</h4>
+    <p class="note">Human-readable format for development</p>
+    <table>
+        <tr><th colspan="2">JavaScript ES6 Export</th></tr>
+        <tr><td colspan="2" class="good" style="font-family:monospace; white-space:pre;">export const p1_15_animals = {
+  meta: {
+    wordpack: 15,
+    chinese: "动物",
+    pinyin: "dòng wù",
+    english: "Animals",
+    spanish: "Animales"
+  },
+  words: [
+    ["猫", "māo", "cat", "gato", "chat", ...],
+    ["小猫", "xiǎo māo", "kitten", "gatito", ...]
+  ]
+};</td></tr>
+    </table>
+
+    <h4>STAGE 4 OUTPUT - Obfuscated JS (Jsmodules-js/act1-foundation-js.js)</h4>
+    <p class="note">Compressed + Base64 for production (smaller file size)</p>
+    <table>
+        <tr><th>Obfuscation Process</th><th>Result</th></tr>
+        <tr><td>1. JSON.stringify(data)</td><td>{"p1_15_animals":{"meta":...}}</td></tr>
+        <tr><td>2. Reverse string</td><td>}}...:"atem"{:"slamina_51_1p"{</td></tr>
+        <tr><td>3. zlib compress</td><td>[binary data]</td></tr>
+        <tr><td>4. Base64 encode</td><td class="good">export const w = "eJzLzs9N...";</td></tr>
+    </table>
+    <p class="note">Decode with pako.js: base64 → inflate → reverse → JSON.parse</p>
 </div>
 
 <h3>Chinese - Stage 4</h3>
