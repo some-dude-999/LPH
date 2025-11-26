@@ -1,0 +1,46 @@
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+宾馆,bīn guǎn,Hotel,Hoteles,Hôtel,Hotéis,Khách sạn,โรงแรม,សណ្ឋាគារ || បន្ទប់តែមួយ,Hotel,Hotel,Hotel
+单人间,dān rén jiān,Single room,Habitación individual,Chambre simple,Quarto individual,Phòng đơn,ห้องเดี่ยว,បន្ទប់គ្រែពីរ,Kamar tunggal,Bilik tunggal,Solong silid
+双人间,shuāng rén jiān,Double room,Habitación doble,Chambre double,Quarto duplo,Phòng đôi,ห้องเตียงคู่,ការកក់,Kamar ganda,Bilik Double,Double Room
+订房,dìng fáng,Reservation,Reserva,Réservation,Reserva,Đặt chỗ,สำรองห้องพัก,ការកក់,Reservasi,Tempahan,Reservation
+预订,yù dìng,Reservation,Reserva,Réservation,Reserva,Đặt chỗ,สำรองห้องพัก,ចុះឈ្មោះចូល,Reservasi,Tempahan,Reservation
+入住,rù zhù,Check-in,Registro,Enregistrement,Entrada,Nhận phòng,เช็คอิน,ការឆែកចេញ,Lapor masuk,Daftar masuk,Check-in
+退房,tuì fáng,Check-out,Salida,Départ,Saída,Trả phòng,เช็คเอาท์,ការដាក់ប្រាក់,Keluar,Daftar keluar,Pag-check-out
+押金,yā jīn,Deposit,Depósito,Dépôt,Depósito,Đặt cọc,ฝาก,ទឹកក្តៅ,Setoran,Deposit,Deposit
+热水,rè shuǐ,Hot water,Agua caliente,Eau chaude,Água quente,Nước nóng,น้ำร้อน,តុខាងមុខ,Air panas,Air panas,Mainit na tubig
+前台,qián tái,Front desk,Recepción,Réception,Recepção,Quầy lễ tân,แผนกต้อนรับ,សេវាកម្ម,Meja depan,Meja depan,Front Desk
+服务,fú wù,Service,Servicio,Service,Serviço,Dịch vụ,บริการ,បន្ទប់ភ្ញៀវ,Pelayanan,Perkhidmatan,Serbisyo
+客房,kè fáng,Guest room,Habitación de invitados,Chambre d'hôtes,Quarto de hóspedes,Phòng khách,ห้องพัก,ការិយាល័យជួរមុខ,Kamar tamu,Bilik Tetamu,Panauhin ang silid
+前厅,qián tīng,Front office,Oficina principal,Réception,Recepção,Văn phòng phía trước,แผนกต้อนรับ,ពិធីទទួលភ្ញៀវ,Kantor depan,Pejabat depan,Front Office
+接待,jiē dài,Reception,Recepción,Réception,Recepção,Lễ tân,แผนกต้อนรับ,Bellman,Penerimaan,Penerimaan,Pagtanggap
+行李员,xíng lǐ yuán,Bellman,botones,Bellman,Mensageiro,Người bán chuông,เบลล์แมน,ស្នាក់នៅសណ្ឋាគារ,Pelayan,Bellman,Bellman
+住宾馆,zhù bīn guǎn,Stay in hotel,Estancia en hotel,Séjour à l'hôtel,Hospedagem em hotel,Ở trong khách sạn,พักที่โรงแรม,ស្វែងរកសណ្ឋាគារ,Menginap di hotel,Menginap di Hotel,Manatili sa hotel
+找宾馆,zhǎo bīn guǎn,Find hotel,Encontrar hotel,Trouver un hôtel,Encontrar hotel,Tìm khách sạn,ค้นหาโรงแรม,ស្នើសុំបន្ទប់តែមួយ,Cari hotel,Cari Hotel,Maghanap ng hotel
+要单人间,yào dān rén jiān,Request a single room,Solicitar una habitación individual,Demander une chambre individuelle,Solicitar quarto individual,Yêu cầu phòng đơn,ขอห้องเดี่ยว,បញ្ជាទិញបន្ទប់មួយ,Minta kamar single,Minta bilik tunggal,Humiling ng isang solong silid
+订单人间,dìng dān rén jiān,Order a room,Solicitar una habitación,Commander une chambre,Encomende um quarto,Đặt phòng,สั่งจองห้อง,ស្នើសុំបន្ទប់ពីរជាន់,Pesan kamar,Perintahkan bilik,Mag -order ng isang silid
+要双人间,yào shuāng rén jiān,Request a double room,Solicitar habitación doble,Demander une chambre double,Solicite um quarto duplo,Yêu cầu phòng đôi,ขอห้องคู่,កក់បន្ទប់គ្រែពីរ,Minta kamar dobel,Minta bilik berganda,Humiling ng isang Double Room
+订双人间,dìng shuāng rén jiān,Book a double room,Reserva una habitación doble,Réservez une chambre double,Reserve um quarto duplo,Đặt phòng đôi,จองห้องพักคู่,ដើម្បីកក់បន្ទប់មួយ,Pesan kamar ganda,Tempah Bilik Double,Mag -book ng isang Double Room
+要订房,yào dìng fáng,To book a room,Para reservar una habitación,Pour réserver une chambre,Para reservar um quarto,Để đặt phòng,จองห้องพัก,ទៅកក់បន្ទប់បន្ទប់មួយ,Untuk memesan kamar,Untuk menempah bilik,Upang mag -book ng isang silid
+去订房,qù dìng fáng,Go to book a room,Ir a reservar una habitación,Aller réserver une chambre,Vá para reservar um quarto,Đi đặt phòng,ไปจองห้องพัก,បានកក់រួចហើយ,Pergi untuk memesan kamar,Pergi untuk menempah bilik,Pumunta sa libro ng isang silid
+已预订,yǐ yù dìng,Already booked,Ya reservado,Déjà réservé,Já reservado,Đã đặt trước,จองแล้ว,ដើម្បីកក់,Sudah dipesan,Sudah ditempah,Na -book na
+要预订,yào yù dìng,To book,Para reservar,Pour réserver,Para reservar,Để đặt chỗ,หากต้องการจอง,ពិនិត្យចូល,Untuk memesan,Untuk menempah,Upang mag -book
+办入住,bàn rù zhù,Check in,Registrarse,Arrivée,Check-in,Đăng ký,เช็คอิน,បានឆែកចូល,Lapor masuk,Daftar masuk,Mag -check in
+已入住,yǐ rù zhù,Checked in,Registrado,Enregistré,Check-in,Đã đăng ký,เช็คอินแล้ว,ដើម្បីពិនិត្យមើល,Sudah check in,Daftar masuk,Naka -check in
+要退房,yào tuì fáng,To check out,Para comprobar,À consulter,Para conferir,Để kiểm tra,หากต้องการตรวจสอบ,សូមពិនិត្យមើល,Untuk memeriksa,Untuk menyemak,Upang suriin ang
+办退房,bàn tuì fáng,Check out,Echa un vistazo,Découvrez,Confira,Kiểm tra,ลองดู,ប្រាក់បញ្ញើបង់ប្រាក់,Lihat,Lihat,Suriin ang
+交押金,jiāo yā jīn,Pay deposit,Pagar depósito,Payer l'acompte,Pagar depósito,Nộp tiền đặt cọc,จ่ายเงินมัดจำ,ការដាក់ប្រាក់ត្រឡប់,Bayar deposit,Deposit Bayar,Magbayad ng deposito
+退押金,tuì yā jīn,Return deposit,Depósito de devolución,Dépôt de retour,Depósito de devolução,Trả lại tiền đặt cọc,คืนเงินมัดจำ,ទឹកក្តៅ,Setoran pengembalian,Pulangan deposit,Return Deposit
+有热水,yǒu rè shuǐ,Hot water,Agua caliente,Eau chaude,Água quente,Nước nóng,น้ำร้อน,បើកទឹកក្តៅ,Air panas,Air panas,Mainit na tubig
+开热水,kāi rè shuǐ,Turn on hot water,Abrir el agua caliente,Allumez l’eau chaude,Ligue a água quente,Bật nước nóng,เปิดน้ำร้อน,ទៅតុខាងមុខ,Nyalakan air panas,Hidupkan air panas,I -on ang mainit na tubig
+去前台,qù qián tái,Go to the front desk,Ir a la recepción,Allez à la réception,Vá até a recepção,Đến quầy lễ tân,ไปที่แผนกต้อนรับ,នៅតុខាងមុខ,Pergi ke meja depan,Pergi ke meja depan,Pumunta sa front desk
+在前台,zài qián tái,At the front desk,En la recepción,À la réception,Na recepção,Tại quầy lễ tân,ที่แผนกต้อนรับ,សេវាកម្មល្អ,Di meja depan,Di meja depan,Sa front desk
+服务好,fú wù hǎo,Good service,Buen servicio,Bon service,Bom atendimento,Dịch vụ tốt,บริการดี,ចង់បានសេវាកម្ម,Pelayanan bagus,Perkhidmatan yang baik,Magandang serbisyo
+要服务,yào fú wù,Want service,Quiere servicio,Vous voulez du service,Quer atendimento,Muốn được phục vụ,ต้องการบริการ,ស្នាក់នៅក្នុងបន្ទប់មួយ,Ingin layanan,Mahu perkhidmatan,Gusto ng Serbisyo
+住客房,zhù kè fáng,Stay in a room,Quédate en una habitación,Séjourner dans une chambre,Fique em um quarto,Ở trong phòng,อยู่ในห้อง,សម្អាតបន្ទប់ភ្ញៀវ,Menginap di kamar,Tinggal di bilik,Manatili sa isang silid
+打扫客房,dǎ sǎo kè fáng,Clean the guest room,Limpiar la habitación de invitados,Nettoyer la chambre d'amis,Limpe o quarto de hóspedes,Dọn dẹp phòng khách,ทำความสะอาดห้องพัก,នៅតាមសាលប្រជុំ,Bersihkan kamar tamu,Bersihkan Bilik Tetamu,Linisin ang silid ng panauhin
+在前厅,zài qián tīng,In the front hall,En el vestíbulo,Dans le hall d'entrée,No hall de entrada,Ở sảnh trước,ณ ห้องโถงด้านหน้า,| តុបតែងសាលមុខ,Di aula depan,Di dewan depan,Sa front hall
+装修前厅,zhuāng xiū qián tīng,Decorate the front hall,Decora el recibidor,Décorez le hall d'entrée,Decore o hall de entrada,Trang trí sảnh trước,ตกแต่งห้องโถงหน้า,តុទទួលភ្ញៀវ,Hiasi aula depan,Hiaskan dewan depan,Palamutihan ang front hall
+接待处,jiē dài chù,Reception desk,Mostrador de recepción,Réception,Balcão de recepção,Bàn tiếp tân,แผนกต้อนรับ,ទទួលខុសត្រូវចំពោះការទទួលភ្ញៀវ,Meja resepsionis,Meja Penerimaan,Reception Desk
+负责接待,fù zé jiē dài,Responsible for the reception,Responsable de la recepción,Responsable de l'accueil,Responsável pela recepção,Chịu trách nhiệm lễ tân,รับผิดชอบงานต้อนรับ,ស្វែងរកលោក Bellman,Bertanggung jawab atas resepsi,Bertanggungjawab untuk Penerimaan,May pananagutan sa pagtanggap
+找行李员,zhǎo xíng lǐ yuán,Find the bellman,Encuentra al botones,Trouvez le chasseur,Encontre o mensageiro,Tìm người phục vụ,ตามหาคนเฝ้าประตู,ទូរស័ព្ទទៅប៊ិកមែន,Temukan pelayan,Cari Bellman,Hanapin ang Bellman
+叫行李员,jiào xíng lǐ yuán,Call the bellman,llamar al botones,Appelez le chasseur,Ligue para o mensageiro,Gọi người phục vụ chuông,โทรหาพนักงานยกกระเป๋า,[TRANSLATE_KM],Panggil pelayannya,Panggil Bellman,Tumawag sa Bellman

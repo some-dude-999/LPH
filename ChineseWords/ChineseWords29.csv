@@ -1,0 +1,55 @@
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+饭,fàn,Rice,Arroz,Riz,Arroz,Gạo,ข้าว --- ข้าว --- ก๋วยเตี๋ยว --- ก๋วยเตี๋ยว --- ซาลาเปานึ่ง --- ซาลาเปา --- เกี๊ยว --- ขนมปัง --- ไข่ --- เนื้อ --- ไก่ --- หมู --- เนื้อ --- ผัก --- ผลไม้ --- ซุป --- เนื้อแกะ --- อาหารทะเล --- ข้าวขาว --- ข้าวสวย --- ข้าวหอม --- ข้าวสวย - - --- หมูหอม --- หมูทอด --- เนื้อดี --- ผัดเนื้อ --- ผักสด --- กินผัก --- ผลไม้หวาน --- กินผลไม้ --- น้ำซุปอร่อย --- ดื่มน้ำซุป --- แกะหอม --- ชาบูชาบูเนื้อแกะ --- อาหารทะเลอร่อยมาก --- กินอาหารทะเล,ស្រូវ,Beras,Beras,Bigas
+米饭,mǐ fàn,Rice,Arroz,Riz,Arroz,Gạo,[TRANSLATE_TH],ស្រូវ,Beras,Beras,Bigas
+面,miàn,Noodles,Fideos,Nouilles,Macarrão,Mì,[TRANSLATE_TH],មី || មី || នំប៊ុនចំហុយ,Mie,Mi,Noodles
+面条,miàn tiáo,Noodles,Fideos,Nouilles,Macarrão,Mì,[TRANSLATE_TH],ប៊ុន,Mie,Mi,Noodles
+馒头,mán tou,Steamed buns,Bollos al vapor,Petits pains cuits à la vapeur,Pãezinhos no vapor,Bánh bao hấp,[TRANSLATE_TH],នំប៉ាវ,Roti kukus,Bun kukus,Steamed Buns
+包子,bāo zi,Buns,Bollos,Petits pains,Pãezinhos,Bánh bao,[TRANSLATE_TH],នំប៉័ង,Roti,Buns,Buns
+饺子,jiǎo zi,Dumplings,Albóndigas,Boulettes,Bolinhos,Bánh bao,[TRANSLATE_TH],ស៊ុត,Pangsit,Dumplings,Dumplings
+面包,miàn bāo,Bread,Pan,Pain,Pão,Bánh mì,[TRANSLATE_TH],សាច់,Roti,Roti,Tinapay
+鸡蛋,jī dàn,Eggs,Huevos,Oeufs,Ovos,Trứng,[TRANSLATE_TH],សាច់មាន់,Telur,Telur,Itlog
+肉,ròu,Meat,Carne,Viande,Carne,Thịt,[TRANSLATE_TH],សាច់ជ្រូក,Daging,Daging,Karne
+鸡肉,jī ròu,Chicken,Pollo,Poulet,Frango,Gà,[TRANSLATE_TH],សាច់គោ,Ayam,Ayam,Manok
+猪肉,zhū ròu,Pork,Cerdo,Porc,Carne de porco,Thịt lợn,[TRANSLATE_TH],បន្លែ,Babi,Pork,Baboy
+牛肉,niú ròu,Beef,Carne de res,Bœuf,Carne,Thịt bò,[TRANSLATE_TH],ផ្លែឈើ,Daging sapi,BEEF,Beef
+蔬菜,shū cài,Vegetables,Verduras,Légumes,Legumes,Rau,[TRANSLATE_TH],ស៊ុប,Sayuran,Sayur -sayuran,Gulay
+水果,shuǐ guǒ,Fruit,Fruta,Fruits,Fruta,Trái cây,[TRANSLATE_TH],mutton,Buah,Buah,Prutas
+汤,tāng,Soup,Sopa,Soupe,Sopa,Súp,[TRANSLATE_TH],អាហារសមុទ្រ,Sup,Sup,Sopas
+羊肉,yáng ròu,Mutton,Cordero,Mouton,Carneiro,Thịt Cừu,[TRANSLATE_TH],អង្ករស,Daging kambing,Mutton,Mutton
+海鲜,hǎi xiān,Seafood,Mariscos,Fruits de mer,Frutos do Mar,Hải sản,[TRANSLATE_TH],អង្ករក្តៅ,makanan laut,Makanan laut,Seafood
+白饭,bái fàn,White rice,Arroz blanco,Riz blanc,Arroz branco,Cơm trắng,[TRANSLATE_TH],អង្ករក្រអូប,Nasi putih,Nasi Putih,Puting bigas
+热饭,rè fàn,Hot rice,Arroz caliente,Riz chaud,Arroz quente,Cơm nóng,[TRANSLATE_TH],អង្ករឆ្អិន | |,Nasi panas,Nasi Panas,Mainit na bigas
+米饭香,mǐ fàn xiāng,Fragrant rice,Arroz fragante,Riz parfumé,Arroz perfumado,Gạo thơm,[TRANSLATE_TH],សាច់ជ្រូកក្រអូប,Nasi harum,Nasi wangi,Mabangong bigas
+煮米饭,zhǔ mǐ fàn,Cooked rice | |,Arroz cocido | |,Riz cuit | |,Arroz cozido | |,Cơm chín | |,[TRANSLATE_TH],សាច់ជ្រូកចៀន,Nasi yang dimasak | |,Nasi yang dimasak | |,Lutong bigas | |
+吃面,chī miàn,Pork fragrant,Cerdo fragante,Porc parfumé,Carne de porco perfumada,Thịt lợn thơm,[TRANSLATE_TH],សាច់គោគឺល្អ,Daging babi harum,Babi wangi,Babango ng baboy
+做面,zuò miàn,Fried pork,Cerdo frito,Porc frit,Porco frito,Thịt lợn chiên,[TRANSLATE_TH],| សាច់គោចៀន - សាច់គោ,Babi goreng,Fried Pork,Fried Pork
+面条好,miàn tiáo hǎo,Beef is good,La carne de res es buena,Le bœuf est bon,Carne é boa,Thịt bò ngon,[TRANSLATE_TH],បន្លែស្រស់,Daging sapi itu enak,Daging sapi baik,Ang karne ng baka ay mabuti
+煮面条,zhǔ miàn tiáo,Stir-fried beef,Carne de res salteada,Bœuf sauté,Carne salteada,Bò xào,[TRANSLATE_TH],បរិភោគបន្លែ,Daging sapi goreng tumis,Beef goreng,Stir-pritong baka
+馒头香,mán tou xiāng,Fresh vegetables,Verduras frescas,Légumes frais,Legumes frescos,Rau tươi,[TRANSLATE_TH],ផ្លែឈើផ្អែម,Sayuran segar,Sayuran Segar,Sariwang gulay
+蒸馒头,zhēng mán tou,Eat vegetables,Come verduras,Mangez des légumes,Coma vegetais,Ăn rau,[TRANSLATE_TH],បរិភោគផ្លែឈើ,Makan sayur,Makan Sayuran,Kumain ng mga gulay
+包子香,bāo zi xiāng,Sweet fruit,Fruta dulce,Fruits sucrés,Fruta doce,Quả ngọt,[TRANSLATE_TH],ស៊ុបមានរសជាតិឆ្ងាញ់,Buah manis,Buah manis,Matamis na prutas
+蒸包子,zhēng bāo zi,Eat fruit,Come fruta,Mangez des fruits,Coma frutas,Ăn trái cây,[TRANSLATE_TH],ផឹកស៊ុប,Makan buah,Makan buah,Kumain ng prutas
+饺子香,jiǎo zi xiāng,Soup is delicious,La sopa está deliciosa,La soupe est délicieuse,A sopa é uma delícia,Canh ngon quá,[TRANSLATE_TH],កូនចៀមមានក្លិនឈ្ងុយឆ្ងាញ់,Supnya enak,Sup adalah lazat,Masarap ang sopas
+包饺子,bāo jiǎo zi,Drink soup,Beber sopa,Boire de la soupe,Tomar sopa,Uống canh,[TRANSLATE_TH],Shabu-Shabu Mutton,Minum sup,Minuman sup,Uminom ng sopas
+面包香,miàn bāo xiāng,Lamb is fragrant,El cordero es fragante,L'agneau est parfumé,Cordeiro é perfumado,Thịt cừu thơm,[TRANSLATE_TH],អាហារសមុទ្រគឺល្អ,Domba harum,Domba adalah wangi,Ang Lamb ay mabango
+烤面包,kǎo miàn bāo,Shabu-shabu mutton,Cordero shabu-shabu,Mouton Shabu-shabu,Carneiro Shabu-shabu,Thịt cừu Shabu-shabu,[TRANSLATE_TH],បរិភោគអាហារសមុទ្រ,Daging kambing shabu-shabu,Shabu-Shabu Mutton,Shabu-Shabu Mutton
+鸡蛋好,jī dàn hǎo,Seafood is good,El marisco es bueno,Les fruits de mer sont bons,Frutos do mar são bons,Hải sản ngon,[TRANSLATE_TH],[TRANSLATE_KM],Makanan lautnya enak,Makanan laut baik,Maganda ang Seafood
+煎鸡蛋,jiān jī dàn,Eat seafood,comer mariscos,Mangez des fruits de mer,Coma frutos do mar,Ăn hải sản,[TRANSLATE_TH],[TRANSLATE_KM],Makan makanan laut,Makan makanan laut,Kumain ng pagkaing -dagat
+吃肉,chī ròu,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+买肉,mǎi ròu,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+鸡肉好,jī ròu hǎo,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+炒鸡肉,chǎo jī ròu,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+猪肉香,zhū ròu xiāng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+炒猪肉,chǎo zhū ròu,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+牛肉好,niú ròu hǎo,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+炒牛肉,chǎo niú ròu,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+蔬菜新鲜,shū cài xīn xiān,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+吃蔬菜,chī shū cài,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+水果甜,shuǐ guǒ tián,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+吃水果,chī shuǐ guǒ,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+汤好喝,tāng hǎo hē,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+喝汤,hē tāng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+羊肉香,yáng ròu xiāng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+涮羊肉,shuàn yáng ròu,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+海鲜好,hǎi xiān hǎo,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+吃海鲜,chī hǎi xiān,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]

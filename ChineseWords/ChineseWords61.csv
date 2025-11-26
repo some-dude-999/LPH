@@ -1,0 +1,46 @@
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+钱,qián,Money,Dinero,Argent,Dinheiro,Tiền,เงิน,លុយ,Uang,Wang,Pera
+价格,jià gé,Price,Precio,Prix ​​,Preço,Giá,ราคา,| តំលៃ,Harga,Harga,Presyo
+费用,fèi yòng,Fees,Tarifas,Honoraires,Taxas,Phí,ค่าธรรมเนียม,ថ្លៃឈ្នួល,Biaya,Yuran,Bayad
+优惠,yōu huì,Offers,Ofertas,Offres,Ofertas,Ưu đãi,ข้อเสนอ,ការផ្តល់ជូន,Penawaran,Tawaran,Alok
+现金,xiàn jīn,Cash,Efectivo,Espèces,Dinheiro,Tiền mặt,เงินสด,សាច់ប្រាក់,Tunai,Tunai,Cash
+刷卡,shuā kǎ,Card,Tarjeta,Carte,Cartão,Thẻ,การ์ด,កាត,Kartu,Kad,Card
+支付,zhī fù,Pay,Pagar,Payer,Pagar,Trả tiền,จ่าย,បង់,Bayar,Bayar,Magbayad
+付款,fù kuǎn,Payment,Pago,Paiement,Pagamento,Thanh toán,การชำระเงิน,ការទូទាត់,Pembayaran,Pembayaran,Pagbabayad
+零钱,líng qián,Change,Cambiar,Changer,Alterar,Thay đổi,เปลี่ยน,ផ្លាស់ប្តូរ,Ubah,Tukar,Baguhin
+找钱,zhǎo qián,Change,Cambiar,Changer,Alterar,Thay đổi,เปลี่ยน,ផ្លាស់ប្តូរ,Ubah,Tukar,Baguhin
+发票,fā piào,Invoice,Factura,Facture,Fatura,Hóa đơn,ใบแจ้งหนี้,វិក័យប័ត្រ || វិក័យប័ត្រ || ការប្រើប្រាស់,Faktur,Invois,Invoice
+收据,shōu jù,Receipt,Recibo,Reçu,Recibo,Biên nhận,ใบเสร็จรับเงิน,ការចំណាយ,Tanda terima,Resit,Resibo
+消费,xiāo fèi,Consumption,Consumo,Consommation,Consumo,Tiêu thụ,การบริโภค,ការចំណាយ,Konsumsi,Penggunaan,Pagkonsumo
+花费,huā fèi,Expenditure,Gasto,Dépenses,Despesas,Chi tiêu,ค่าใช้จ่าย,តើ,Pengeluaran,Perbelanjaan,Gastos
+开销,kāi xiāo,Expenditure,Gasto,Dépenses,Despesas,Chi tiêu,ค่าใช้จ่าย,ប៉ុន្មាន ផ្តល់ប្រាក់,Pengeluaran,Perbelanjaan,Gastos
+多少钱,duō shǎo qián,How much,¿Cuánto,Combien,Quanto,Bao nhiêu,เท่าไหร่,តម្លៃខ្ពស់,Berapa,Berapa banyak,Magkano
+给钱,gěi qián,Give money,Dar dinero,Donner de l'argent,Dê dinheiro,Đưa tiền,ให้เงิน,សូមក្រឡេកមើលតម្លៃ,Berikan uang,Beri wang,Magbigay ng pera
+价格高,jià gé gāo,High price,Precio alto,Prix ​​élevé,Preço alto,Giá cao,ราคาสูง,ថ្លៃសេវាខ្ពស់,Harga mahal,Harga Tinggi,Mataas na presyo
+看价格,kàn jià gé,Look at the price,Mira el precio,Regardez le prix,Olha o preço,Nhìn vào giá,ดูราคา,ថ្លៃសេវាបង់,Lihat harganya,Lihat harga,Tumingin sa presyo
+费用多,fèi yòng duō,High fee,Tarifa alta,Frais élevés,Taxa elevada,Phí cao,ค่าธรรมเนียมสูง,មានការបញ្ចុះតម្លៃ,Biaya tinggi,Yuran Tinggi,Mataas na bayad
+付费用,fù fèi yòng,Pay fee,Pagar tarifa,Payer des frais,Pagar taxa,Trả phí,ชำระค่าธรรมเนียม,ផ្តល់ការបញ្ចុះតំលៃ,Bayar biaya,Bayaran Bayar,Pay Fee
+有优惠,yǒu yōu huì,There are discounts,Hay descuentos,Il y a des réductions,Há descontos,Có giảm giá,มีส่วนลด,| បង់លុយសាច់ប្រាក់,Ada diskon,Terdapat diskaun,May mga diskwento
+给优惠,gěi yōu huì,Give a discount,Dar un descuento,Offrez une réduction,Dê um desconto,Giảm giá,ให้ส่วนลด,ប្រើសាច់ប្រាក់,Berikan diskon,Berikan diskaun,Bigyan ng diskwento
+付现金,fù xiàn jīn,Pay cash,Pagar en efectivo,Payer en espèces,Pagar em dinheiro,Trả tiền mặt,จ่ายเงินสด,អ្នកអាចអូសកាត,Bayar tunai,Bayar tunai,Magbayad ng cash
+用现金,yòng xiàn jīn,Use cash,Utilice efectivo,Utiliser de l'argent liquide,Usar dinheiro,Sử dụng tiền mặt,ใช้เงินสด,ប្រើកាតអូស,Gunakan uang tunai,Gunakan wang tunai,Gumamit ng cash
+可以刷卡,kě yǐ shuā kǎ,You can swipe a card,Puedes deslizar una tarjeta,Vous pouvez glisser une carte,Você pode passar um cartão,Bạn có thể quẹt thẻ,คุณสามารถรูดบัตร,Alipay,Anda dapat menggesek kartu,Anda boleh sapu kad,Maaari kang mag -swipe ng isang card
+用刷卡,yòng shuā kǎ,Use a swipe card,Utilice una tarjeta magnética,Utilisez une carte magnétique,Use um cartão magnético,Sử dụng thẻ quẹt,ใช้บัตรรูด,ទៅបង់ថ្លៃ,Gunakan kartu gesek,Gunakan kad sapu,Gumamit ng isang swipe card
+支付宝,zhī fù bǎo,Alipay,Alipay,Alipay,Alipay,Alipay,อาลีเพย์,ទៅបង់ថ្លៃ,Alipay,Alipay,Alipay
+去支付,qù zhī fù,Go to pay,Ir a pagar,Allez payer,Vá pagar,Đi thanh toán,ไปจ่ายเงิน,បានបង់ប្រាក់រួចហើយ,Pergi untuk membayar,Pergi ke Bayar,Pumunta sa Pay
+去付款,qù fù kuǎn,Go to pay,Ir a pagar,Allez payer,Vá pagar,Đi thanh toán,ไปจ่ายเงิน,មានការផ្លាស់ប្តូរ,Pergi untuk membayar,Pergi ke Bayar,Pumunta sa Pay
+已付款,yǐ fù kuǎn,Already paid,Ya pagado,Déjà payé,Já pago,Đã thanh toán,ชำระเงินแล้ว,ផ្លាស់ប្តូរការផ្លាស់ប្តូរ,Sudah dibayar,Sudah dibayar,Nagbayad na
+有零钱,yǒu líng qián,Have change,Tener cambio,Avoir du changement,Tem troco,Có thay đổi,มีการเปลี่ยนแปลง,ផ្លាស់ប្តូរសម្រាប់អ្នក,Ada perubahan,Mempunyai perubahan,May pagbabago
+换零钱,huàn líng qián,Change change,Cambiar cambio,Changer changement,Alterar mudança,Thay đổi thay đổi,เปลี่ยน เปลี่ยน,មិនចាំបាច់ផ្លាស់ប្តូរទេ,Ubah ubah,Tukar perubahan,Baguhin ang Pagbabago
+找钱给你,zhǎo qián gěi nǐ,Change for you,Cambia para ti,Changez pour vous,Mude para você,Thay đổi cho bạn,เปลี่ยนเพื่อคุณ,វិក័យប័ត្រ || ស្នើសុំវិក័យប័ត្រមួយ,Ubah untukmu,Tukar untuk anda,Baguhin para sa iyo
+不用找钱,bù yòng zhǎo qián,No change required,No se requieren cambios,Aucun changement requis,Nenhuma alteração necessária,Không cần thay đổi,ไม่ต้องเปลี่ยนแปลง,ស្នើសុំបង្កាន់ដៃ,Tidak diperlukan perubahan,Tiada perubahan diperlukan,Walang kinakailangang pagbabago
+开发票,kāi fā piào,Invoice,Factura,Facture,Fatura,Hóa đơn,ใบแจ้งหนี้,| ផ្តល់វិក័យប័ត្រ,Faktur,Invois,Invoice
+要发票,yào fā piào,Request an invoice,Solicitar una factura,Demander une facture,Solicite uma fatura,Yêu cầu hóa đơn,ขอใบแจ้งหนี้,| ការប្រើប្រាស់ខ្ពស់,Minta faktur,Minta invois,Humiling ng isang invoice
+要收据,yào shōu jù,Request a receipt,Solicitar un recibo,Demander un reçu,Solicite um recibo,Yêu cầu biên lai,ขอใบเสร็จรับเงิน,ទៅចំណាយ,Minta tanda terima,Minta resit,Humiling ng isang resibo
+给收据,gěi shōu jù,Give a receipt,Dar un recibo,Donner un reçu,Dê um recibo,Đưa biên nhận,ให้ใบเสร็จรับเงิน,ការចំណាយខ្ពស់,Berikan tanda terima,Beri resit,Magbigay ng isang resibo
+消费高,xiāo fèi gāo,High consumption,Alto consumo,Consommation élevée,Alto consumo,Mức tiêu thụ cao,การบริโภคสูง,ការចំណាយ,Konsumsi tinggi,Penggunaan Tinggi,Mataas na pagkonsumo
+去消费,qù xiāo fèi,Go to spend,Ir a gastar,Allez dépenser,Vá gastar,Đi tiêu,ไปใช้จ่าย,ការចំណាយខ្ពស់,Pergi berbelanja,Pergi ke belanja,Pumunta sa paggastos
+花费大,huā fèi dà,High cost,Alto costo,Coût élevé,Custo elevado,Chi phí cao,ต้นทุนสูง,កាត់បន្ថយការចំណាយ,Biaya tinggi,Kos tinggi,Mataas na gastos
+有花费,yǒu huā fèi,Expenditure,Gasto,Dépenses,Despesas,Chi tiêu,ค่าใช้จ่าย,[TRANSLATE_KM],Pengeluaran,Perbelanjaan,Gastos
+开销大,kāi xiāo dà,High cost,Alto costo,Coût élevé,Custo elevado,Chi phí cao,ต้นทุนสูง,[TRANSLATE_KM],Biaya tinggi,Kos tinggi,Mataas na gastos
+减少开销,jiǎn shǎo kāi xiāo,Reduce cost,Reducir costos,Réduire les coûts,Reduzir custos,Giảm chi phí,ลดต้นทุน,[TRANSLATE_KM],Mengurangi biaya,Mengurangkan kos,Bawasan ang gastos

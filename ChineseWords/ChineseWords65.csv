@@ -1,0 +1,49 @@
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+诊所,zhěn suǒ,Clinic,Clínica,Clinique,Clínica,Phòng khám,คลินิก - หมอ - พยาบาล - การลงทะเบียน - ไปพบแพทย์ - สอบ - ทดสอบ - ฟิล์ม - ไม่สบาย - ความเจ็บปวด - อาการ - กินยา - ฉีด - ใบสั่งยา - บริการผู้ป่วยนอก - ฉุกเฉิน - ไปที่คลินิก - ที่คลินิก - หาหมอ - ไปพบแพทย์ - หาพยาบาล - เรียกพยาบาล - ไปที่ลงทะเบียน - ลงทะเบียนแล้ว - ไปพบแพทย์ - อยากไปหาหมอ - ทำข้อสอบ - อยากสอบ - ทำแบบทดสอบ - ไปสอบ - ไปเอ็กซเรย์ || - อยากฉีด - ไปฉีดยา - เขียนใบสั่งยา - รับใบสั่งยา - ไปที่คลินิกผู้ป่วยนอก - ไปที่คลินิกผู้ป่วยนอก - ไปที่ห้องฉุกเฉิน - ไปที่ห้องฉุกเฉิน,គ្លីនិក || វេជ្ជបណ្ឌិត || គិលានុបដ្ឋាយិកា,Klinik,Klinik,Clinic
+医生,yī shēng,Doctor,Médico,Docteur,Doutor,Bác sĩ,[TRANSLATE_TH],ការចុះឈ្មោះ,Dokter,Doktor,Doctor
+护士,hù shì,Nurse,Enfermera,Infirmière,Enfermeira,Y tá,[TRANSLATE_TH],ជួបគ្រូពេទ្យ,Perawat,Jururawat,Nars
+挂号,guà hào,Registration,Registro,Inscription,Inscrições,Đăng ký,[TRANSLATE_TH],ការប្រឡង,Pendaftaran,Pendaftaran,Pagrehistro
+看病,kàn bìng,See a doctor,Ver a un médico,Consulter un médecin,Consulte um médico,Đi khám bác sĩ,[TRANSLATE_TH],សាកល្បង,Temui dokter,Lihat Doktor,Tingnan ang isang doktor
+检查,jiǎn chá,Examination,Examen,Examen,Exame,Kiểm tra,[TRANSLATE_TH],ខ្សែភាពយន្ត,Pemeriksaan,Peperiksaan,Examination
+化验,huà yàn,Test,Prueba,Tester,Teste,Kiểm tra,[TRANSLATE_TH],ភាពមិនស្រួល,Uji,Ujian,Pagsubok
+拍片,pāi piàn,Film,Película,Cinéma,Filme,Phim,[TRANSLATE_TH],ឈឺចាប់,Film,Filem,Pelikula
+不舒服,bù shū fú,Discomfort,Malestar,Inconfort,Desconforto,Khó chịu,[TRANSLATE_TH],រោគសញ្ញា,Ketidaknyamanan,Ketidakselesaan,Kakulangan sa ginhawa
+疼痛,téng tòng,Pain,Dolor,Douleur,Dor,Đau đớn,[TRANSLATE_TH],លេបថ្នាំ,Sakit,Sakit,Sakit
+症状,zhèng zhuàng,Symptoms,Síntomas,Symptômes,Sintomas,Triệu chứng,[TRANSLATE_TH],| ការចាក់,Gejala,Gejala,Mga Sintomas
+吃药,chī yào,Take medicine,Tomar medicamentos,Prendre des médicaments,Tome remédio,Uống thuốc,[TRANSLATE_TH],វេជ្ជបញ្ជា :|| សេវាកម្មក្រៅម៉ោង,Minum obat,Ambil Perubatan,Kumuha ng gamot
+打针,dǎ zhēn,Injection,Inyección,Injection,Injeção,Tiêm,[TRANSLATE_TH],បន្ទាន់,Injeksi,Suntikan,Iniksyon
+处方,chǔ fāng,Prescription,Prescripción,Ordonnance,Prescrição,Đơn thuốc,[TRANSLATE_TH],ទៅគ្លីនិក,Resep,Preskripsi,Reseta
+门诊,mén zhěn,Outpatient service,Servicio ambulatorio,Service ambulatoire,Atendimento ambulatorial,Dịch vụ ngoại trú,[TRANSLATE_TH],| នៅគ្លីនិក,Pelayanan rawat jalan,Perkhidmatan Pesakit Luar,Outpatient Service
+急诊,jí zhěn,Emergency,Emergencia,Urgence,Emergência,Khẩn cấp,[TRANSLATE_TH],ស្វែងរកវេជ្ជបណ្ឌិត,Darurat,Kecemasan,Emergency
+去诊所,qù zhěn suǒ,Go to clinic,Ir a la clínica,Aller à la clinique,Vá para a clínica,Đến phòng khám,[TRANSLATE_TH],ជួបគ្រូពេទ្យ,Pergi ke klinik,Pergi ke Klinik,Pumunta sa klinika
+在诊所,zài zhěn suǒ,At clinic,En la clínica,À la clinique,Na clínica,Tại phòng khám,[TRANSLATE_TH],ស្វែងរកគិលានុបដ្ឋាយិកា,Di klinik,Di Klinik,Sa klinika
+找医生,zhǎo yī shēng,Find a doctor,Encuentre un médico,Trouver un médecin,Encontre um médico,Tìm bác sĩ,[TRANSLATE_TH],ហៅគិលានុបដ្ឋាយិកា,Cari dokter,Cari doktor,Maghanap ng isang doktor
+看医生,kàn yī shēng,See a doctor,Ver a un médico,Consulter un médecin,Consulte um médico,Đi khám bác sĩ,[TRANSLATE_TH],ចូលទៅកាន់ចុះឈ្មោះ,Temui dokter,Lihat Doktor,Tingnan ang isang doktor
+找护士,zhǎo hù shì,Find a nurse,Encuentre una enfermera,Trouver une infirmière,Encontre uma enfermeira,Tìm y tá,[TRANSLATE_TH],បានចុះឈ្មោះរួចហើយ,Cari perawat,Cari jururawat,Maghanap ng isang nars
+叫护士,jiào hù shì,Call a nurse,Llame a una enfermera,Appeler une infirmière,Chame uma enfermeira,Gọi y tá,[TRANSLATE_TH],ទៅជួបគ្រូពេទ្យ,Panggil perawat,Hubungi jururawat,Tumawag sa isang nars
+去挂号,qù guà hào,Go to register,Ir a registrarse,Allez vous inscrire,Vá para registrar,Vào đăng ký,[TRANSLATE_TH],ចង់ទៅជួបគ្រូពេទ្យ,Pergi untuk mendaftar,Pergi ke Daftar,Pumunta sa Rehistro
+已挂号,yǐ guà hào,Already registered,Ya registrado,Déjà inscrit,Já cadastrado,Đã đăng ký,[TRANSLATE_TH],ធ្វើការពិនិត្យ,Sudah terdaftar,Sudah didaftarkan,Nakarehistro na
+去看病,qù kàn bìng,Go to see a doctor,Ir a ver a un médico,Aller voir un médecin,Vá ao médico,Đi khám bác sĩ,[TRANSLATE_TH],ចង់បានការប្រឡង,Pergi ke dokter,Pergi berjumpa doktor,Pumunta upang makita ang isang doktor
+要看病,yào kàn bìng,Want to see a doctor,Quiere ver a un médico,Vous voulez voir un médecin,Quer consultar um médico,Muốn đi khám bác sĩ,[TRANSLATE_TH],ធ្វើតេស្ត,Mau ke dokter,Mahu berjumpa doktor,Nais na makita ang isang doktor
+做检查,zuò jiǎn chá,Do an examination,Hacer un examen,Faire un examen,Faça um exame,Làm bài kiểm tra,[TRANSLATE_TH],ទៅរកការធ្វើតេស្តមួយ,Lakukan pemeriksaan,Adakah peperiksaan,Gumawa ng isang pagsusuri
+要检查,yào jiǎn chá,Want an examination,Quiere un examen,Vous voulez un examen,Quer um exame,Muốn khám,[TRANSLATE_TH],| ទៅរកកាំរស្មីអ៊ិច ||,Mau pemeriksaan,Mahukan peperiksaan,Gusto ng pagsusuri
+做化验,zuò huà yàn,Do a test,Haz una prueba,Faites un test,Faça um teste,Làm bài kiểm tra,[TRANSLATE_TH],ចង់បានការចាក់បញ្ចូលមួយ|| ទៅចាក់ថ្នាំ,Lakukan tes,Lakukan ujian,Gumawa ng isang pagsubok
+去化验,qù huà yàn,Go for a test,Hazte una prueba,Allez faire un test,Faça um teste,Đi kiểm tra,[TRANSLATE_TH],សរសេរវេជ្ជបញ្ជា,Ikuti tes,Pergi untuk ujian,Pumunta para sa isang pagsubok
+去拍片,qù pāi piàn,Go for a X-ray ||,Ve a hacerte una radiografía ||,Optez pour une radiographie ||,Faça um raio X ||,Đi chụp X-quang ||,[TRANSLATE_TH],ទទួលបានវេជ្ជបញ្ជា,Lakukan rontgen ||,Pergi untuk X-ray ||,Pumunta para sa isang X-ray ||
+要拍片,yào pāi piàn,Want an injection,Quieres una inyección,Vous voulez une injection,Quer uma injeção,Muốn tiêm,[TRANSLATE_TH],| ទៅកាន់គ្លីនិកខាងក្រៅ,Mau suntik,Mahukan suntikan,Gusto ng isang iniksyon
+不舒服啊,bù shū fú a,Go for an injection,Ir a ponerse una inyección,Faites une injection,Vai tomar uma injeção,Đi tiêm,[TRANSLATE_TH],ទៅកាន់គ្លីនិកខាងក្រៅ,Lakukan suntikan,Pergi untuk suntikan,Pumunta para sa isang iniksyon
+哪里不舒服,nǎ lǐ bù shū fú,Write a prescription,Escriba una receta,Rédiger une ordonnance,Passe uma receita,Viết đơn thuốc,[TRANSLATE_TH],ទៅបន្ទប់សង្គ្រោះបន្ទាន់,Tulis resep,Tulis preskripsi,Sumulat ng isang reseta
+有疼痛,yǒu téng tòng,Get a prescription,Obtener una receta,Obtenez une ordonnance,Obtenha uma receita,Nhận đơn thuốc,[TRANSLATE_TH],ទៅបន្ទប់សង្គ្រោះបន្ទាន់,Dapatkan resep,Dapatkan preskripsi,Kumuha ng isang reseta
+感到疼痛,gǎn dào téng tòng,Go to the outpatient clinic,Acude al ambulatorio,Se rendre à la clinique externe,Vá ao ambulatório,Đến phòng khám ngoại trú,[TRANSLATE_TH],[TRANSLATE_KM],Pergi ke klinik rawat jalan,Pergi ke Klinik Pesakit Luar,Pumunta sa klinika ng outpatient
+有症状,yǒu zhèng zhuàng,Go to the outpatient clinic,Acude al ambulatorio,Se rendre à la clinique externe,Vá ao ambulatório,Đến phòng khám ngoại trú,[TRANSLATE_TH],[TRANSLATE_KM],Pergi ke klinik rawat jalan,Pergi ke Klinik Pesakit Luar,Pumunta sa klinika ng outpatient
+什么症状,shén me zhèng zhuàng,Go to the emergency room,Ir a urgencias,Allez aux urgences,Vá para o pronto-socorro,Đi cấp cứu,[TRANSLATE_TH],[TRANSLATE_KM],Pergi ke ruang gawat darurat,Pergi ke Bilik Kecemasan,Pumunta sa emergency room
+要吃药,yào chī yào,Go to the emergency room,Ir a la sala de emergencias,Allez aux urgences,Vá para o pronto-socorro,Đi đến phòng cấp cứu,[TRANSLATE_TH],[TRANSLATE_KM],Pergi ke ruang gawat darurat,Pergi ke bilik kecemasan,Pumunta sa emergency room
+按时吃药,àn shí chī yào,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+要打针,yào dǎ zhēn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+去打针,qù dǎ zhēn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+开处方,kāi chǔ fāng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+拿处方,ná chǔ fāng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+看门诊,kān mén zhěn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+挂门诊,guà mén zhěn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+看急诊,kàn jí zhěn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+挂急诊,guà jí zhěn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]

@@ -1,0 +1,49 @@
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+同事,tóng shì,Colleagues,Colegas,Collègues,Colegas,Đồng nghiệp,เพื่อนร่วมงาน,សហការី,Kolega,Rakan sekerja,Mga kasamahan
+老板,lǎo bǎn,Boss,Jefe,Patron,Chefe,Ông chủ,บอส,ថៅកែ || និយោជិក,Bos,BOSS,Boss
+员工,yuán gōng,Employees,Empleados,Employés,Funcionários,Nhân viên,พนักงาน,ការប្រជុំ,Karyawan,Pekerja,Mga empleyado
+会议,huì yì,Meetings,Reuniones,Réunions,Reuniões,Cuộc họp,การประชุม,ប្រាក់ខែ,Rapat,Mesyuarat,Mga pagpupulong
+工资,gōng zī,Salary,Salario,Salaire,Salário,Mức lương,เงินเดือน,ថែមម៉ោង,Gaji,Gaji,Salary
+加班,jiā bān,Overtime,Horas extras,Heures supplémentaires,Horas extras,Làm thêm giờ,การต่อเวลา,ចាកចេញ,Lembur,Lebih masa,Overtime
+请假,qǐng jià,Leave,Salir,Quitter,Sair,Rời đi,ออก,វិស្សមកាល,Tinggalkan,Tinggalkan,Iwanan
+休假,xiū jià,Vacation,Vacaciones,Vacances,Férias,Kỳ nghỉ,วันหยุด,ដាល់ចូល,Liburan,Percutian,Bakasyon
+打卡,dǎ kǎ,Punch in,Perforar,Pointez,Dê um soco,Đấm vào,ต่อยเข้า,ការធ្វើដំណើរអាជីវកម្ម,Masuk,Punch di,Punch in
+出差,chū chāi,Business trip,Viaje de negocios,Voyage d'affaires,Viagem de negócios,Chuyến công tác,การเดินทางเพื่อธุรกิจ,កិច្ចប្រជុំ,Perjalanan bisnis,Perjalanan Perniagaan,Paglalakbay sa Negosyo
+开会,kāi huì,Meeting,Reunión,Réunion,Reunião,Cuộc họp,ประชุม,របាយការណ៍,Pertemuan,Mesyuarat,Pagpupulong
+汇报,huì bào,Report,Informe,Rapport,Relatório,Báo cáo,รายงาน,គម្រោង || សំណងឡើងវិញ,Laporkan,Laporan,Iulat
+项目,xiàng mù,Project,Proyecto,Projet,Projeto,Dự án,โครงการ,ការសម្តែង,Proyek,Projek,Proyekto
+报销,bào xiāo,Reimbursement,Reembolso,Remboursement,Reembolso,Hoàn trả,การคืนเงิน,ការវាយតម្លៃ,Penggantian biaya,Pembayaran balik,Reimbursement
+绩效,jì xiào,Performance,Rendimiento,Performances,Desempenho,Hiệu suất,ประสิทธิภาพ,មិត្តរួមការងារល្អ,Kinerja,Prestasi,Pagganap
+考核,kǎo hé,Appraisal,Tasación,Évaluation,Avaliação,Thẩm định,การประเมิน,មិត្តរួមការងាររបស់ខ្ញុំ,Penilaian,Penilaian,Pagtatasa
+好同事,hǎo tóng shì,Good colleague,Buen colega,Bon collègue,Bom colega,Đồng nghiệp tốt,เพื่อนร่วมงานที่ดี,Big Boss,Rekan yang baik,Rakan sekerja yang baik,Magandang kasamahan
+我同事,wǒ tóng shì,My colleague,Mi colega,Mon collègue,Meu colega,Đồng nghiệp của tôi,เพื่อนร่วมงานของฉัน,ថៅកែរបស់ខ្ញុំ,Rekan saya,Rakan sekerja saya,Ang aking kasamahan
+大老板,dà lǎo bǎn,Big boss,Gran jefe,Grand patron,Grande chefe,Ông chủ lớn,นายใหญ่,បុគ្គលិកល្អ,Bos besar,Big Boss,Big Boss
+我老板,wǒ lǎo bǎn,My boss,Mi jefe,Mon patron,Meu chefe,Sếp của tôi,เจ้านายของฉัน,បុគ្គលិកថ្មី,Bosku,Bos saya,Ang aking boss
+好员工,hǎo yuán gōng,Good employee,Buen empleado,Bon employé,Bom funcionário,Nhân viên giỏi,พนักงานที่ดี,កិច្ចប្រជុំ,Karyawan yang baik,Pekerja yang baik,Magandang empleyado
+新员工,xīn yuán gōng,New employee,Nuevo empleado,Nouvel employé,Novo funcionário,Nhân viên mới,พนักงานใหม่,ចូលរួមប្រជុំ,Karyawan baru,Pekerja Baru,Bagong empleyado
+开会议,kāi huì yì,Meeting,Reunión,Réunion,Reunião,Cuộc họp,ประชุม,បើកប្រាក់ខែ,Pertemuan,Mesyuarat,Pagpupulong
+参加会议,cān jiā huì yì,Attend meeting,Asistir a la reunión,Assister à la réunion,Participar da reunião,Tham dự cuộc họp,เข้าร่วมประชุม,| បង្កើនប្រាក់ខែ,Menghadiri pertemuan,Menghadiri Mesyuarat,Dumalo sa pagpupulong
+发工资,fā gōng zī,Pay salary,Pagar salario,Payer le salaire,Pagar salário,Trả lương,จ่ายเงินเดือน,| ត្រូវការធ្វើការថែមម៉ោង,Membayar gaji,Bayar gaji,Pay Salary
+涨工资,zhǎng gōng zī,Increase salary,Aumentar salario,Augmenter le salaire,Aumentar salário,Tăng lương,เพิ่มเงินเดือน,ធ្វើការលើសម៉ោង,Naikkan gaji,Meningkatkan gaji,Dagdagan ang suweldo
+要加班,yào jiā bān,Need to work overtime,Necesidad de trabajar horas extras,Besoin de faire des heures supplémentaires,Precisa fazer horas extras,Cần làm thêm giờ,ต้องทำงานล่วงเวลา,ទុកការស្នើសុំ,Perlu bekerja lembur,Perlu bekerja lebih masa,Kailangang magtrabaho nang overtime
+在加班,zài jiā bān,Working overtime,Trabajar horas extras,Faire des heures supplémentaires,Fazer horas extras,Làm thêm giờ,ทำงานล่วงเวลา,ស្នើសុំការឈប់សម្រាក,Bekerja lembur,Bekerja lebih masa,Paggawa ng Overtime
+请假条,qǐng jià tiáo,Leave request,Solicitud de salida,Demande de congé,Deixar pedido,Để lại yêu cầu,ออกจากคำขอ,ការធ្វើដំណើរទៅវិស្សមកាល,Tinggalkan permintaan,Tinggalkan permintaan,Iwanan ang kahilingan
+要请假,yào qǐng jià,Asking for leave,Pidiendo permiso,Demander un congé,Pedindo licença,Xin nghỉ phép,ขอลา,ការធ្វើដំណើរទៅវិស្សមកាល,Meminta cuti,Meminta cuti,Humihiling para sa Pag -iwan
+休假了,xiū jià le,Going on vacation,Ir de vacaciones,Partir en vacances,Saindo de férias,Đi nghỉ,ไปเที่ยวพักผ่อน,ម៉ាស៊ីនកាតដាល់ || ទៅនាឡិកាក្នុងមួយ,Pergi berlibur,Pergi bercuti,Pupunta sa bakasyon
+去休假,qù xiū jià,Going on vacation,Ir de vacaciones,Partir en vacances,Saindo de férias,Đi nghỉ,ไปเที่ยวพักผ่อน,ការធ្វើដំណើរអាជីវកម្ម,Pergi berlibur,Pergi bercuti,Pupunta sa bakasyon
+打卡机,dǎ kǎ jī,Punch card machine,Máquina de tarjetas perforadas,Machine à cartes perforées,Máquina de cartão perfurado,Máy đục lỗ thẻ,เครื่องตอกบัตร,ការធ្វើដំណើរអាជីវកម្ម,Mesin kartu punch,Mesin Kad Punch,Punch card machine
+去打卡,qù dǎ kǎ,Going to clock in,Voy a fichar,Je vais pointer,Vou marcar o ponto,Đi xem đồng hồ ở,กำลังจะนาฬิกาใน,នៅក្នុងការប្រជុំមួយ,Akan masuk jam,Pergi ke jam di,Pagpunta sa orasan sa
+出差了,chū chāi le,Going on a business trip,Ir de viaje de negocios,Partir en voyage d'affaires,Em viagem de negócios,Đi công tác,ไปเที่ยวทำธุรกิจ,កំពុងរៀបចំសម្រាប់កិច្ចប្រជុំ,Melakukan perjalanan bisnis,Melangkah Perjalanan Perniagaan,Pagpunta sa isang biyahe sa negosyo
+要出差,yào chū chāi,Going on a business trip,Ir de viaje de negocios,Partir en voyage d'affaires,Em viagem de negócios,Đi công tác,ไปเที่ยวทำธุรกิจ,ធ្វើរបាយការណ៍,Melakukan perjalanan bisnis,Melangkah Perjalanan Perniagaan,Pagpunta sa isang biyahe sa negosyo
+开会中,kāi huì zhōng,In a meeting,En una reunión,En réunion,Em uma reunião,Trong một cuộc họp,ในการประชุม,ការស្តាប់របាយការណ៍,Dalam sebuah pertemuan,Dalam mesyuarat,Sa isang pulong
+准备开会,zhǔn bèi kāi huì,Preparing for a meeting,Preparándose para una reunión,Préparation d'une réunion,Preparando-se para uma reunião,Chuẩn bị cho cuộc họp,การเตรียมการประชุม,គម្រោងថ្មី,Mempersiapkan rapat,Bersedia untuk Mesyuarat,Paghahanda para sa isang pulong
+做汇报,zuò huì bào,Making a report,Elaborar un informe,Faire un rapport,Fazendo um relatório,Lập báo cáo,การทำรายงาน,ធ្វើការលើគម្រោង,Membuat laporan,Membuat Laporan,Paggawa ng isang ulat
+听汇报,tīng huì bào,Listening to a report,Escuchando un informe,Ecouter un reportage,Ouvindo uma reportagem,Nghe báo cáo,กำลังฟังรายงาน,ទៅរកសំណងឡើងវិញ,Mendengarkan laporan,Mendengarkan laporan,Pakikinig sa isang ulat
+新项目,xīn xiàng mù,New project,Nuevo proyecto,Nouveau projet,Novo projeto,Dự án mới,โครงการใหม่,ចង់ត្រូវបានសងប្រាក់វិញ,Proyek baru,Projek Baru,Bagong proyekto
+做项目,zuò xiàng mù,Work on projects,Trabajar en proyectos,Travailler sur des projets,Trabalhar em projetos,Làm việc trên các dự án,ทำงานในโครงการ,មើលការសម្តែង,Mengerjakan proyek,Bekerja pada Projek,Magtrabaho sa mga proyekto
+去报销,qù bào xiāo,Go for reimbursement,Solicitar reembolso,Optez pour le remboursement,Ir para o reembolso,Đi đòi hoàn trả,ไปขอเงินคืน,ធ្វើឱ្យប្រសើរឡើងនូវការអនុវត្ត,Minta penggantian,Pergi untuk pembayaran balik,Pumunta para sa reimbursement
+要报销,yào bào xiāo,Want to be reimbursed,Quiere recibir un reembolso,Vous souhaitez être remboursé,Quer ser reembolsado,Muốn được hoàn tiền,ต้องการได้รับเงินคืน,ធ្វើការវាយតម្លៃ,Ingin diganti,Mahu dibayar balik,Nais na mabayaran
+看绩效,kàn jì xiào,View performance,Ver rendimiento,Afficher les performances,Ver desempenho,Xem hiệu suất,ดูประสิทธิภาพ,ចូលរួមក្នុងការវាយតម្លៃ,Lihat kinerja,Lihat Prestasi,Tingnan ang pagganap
+提绩效,tí jì xiào,Improve performance,Mejorar el rendimiento,Améliorer les performances,Melhorar o desempenho,Cải thiện hiệu suất,ปรับปรุงประสิทธิภาพ,[TRANSLATE_KM],Meningkatkan kinerja,Meningkatkan Prestasi,Pagbutihin ang pagganap
+做考核,zuò kǎo hé,Do assessment,Hacer evaluación,Faire une évaluation,Fazer avaliação,Thực hiện đánh giá,ทำการประเมิน,[TRANSLATE_KM],Lakukan penilaian,Adakah Penilaian,Gawin ang pagtatasa
+参加考核,cān jiā kǎo hé,Participate in assessment,participar en la evaluación,Participer à l'évaluation,Participe da avaliação,Tham gia đánh giá,มีส่วนร่วมในการประเมิน,[TRANSLATE_KM],Berpartisipasi dalam penilaian,Mengambil bahagian dalam penilaian,Lumahok sa pagtatasa
