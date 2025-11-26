@@ -3,12 +3,12 @@ libro,book,书,shū,livro
 cuaderno,notebook,笔记本,bǐ jì běn,caderno
 lápiz,pencil,铅笔,qiān bǐ,lápis
 bolígrafo,pen,笔,bǐ,caneta
-pluma,feather,羽毛,yǔ máo,pena
+pluma,pen,钢笔,gāng bǐ,caneta
 papel,paper,纸,zhǐ,papel
 mochila,backpack,背包,bēi bāo,mochila
 mesa,table,桌子,zhuō zi,mesa
 silla,chair,椅子,yǐ zi,cadeira
-pizarra,board,木板,mù bǎn,quadro
+pizarra,blackboard,黑板,hēi bǎn,quadro
 ordenador,computer,电脑,diàn nǎo,computador
 computadora,computer,电脑,diàn nǎo,computador
 estudiante,student,学生,xué shēng,estudante
@@ -18,7 +18,7 @@ clase,class,班级,bān jí,aula
 examen,exam,考试,kǎo shì,exame
 lección,lesson,课,kè,lição
 aula,classroom,课堂,kè táng,sala de aula
-regla,ruler,统治者,tǒng zhì zhě,governante
+regla,ruler,尺子,chǐ zi,régua
 el libro,the book,这本书,zhè běn shū,o livro
 mi libro,my book,我的书,wǒ de shū,meu livro
 el cuaderno,the notebook,笔记本,bǐ jì běn,o caderno
@@ -29,7 +29,7 @@ el bolígrafo,the pen,笔,bǐ,a caneta
 mi bolígrafo,my pen,我的笔,wǒ de bǐ,minha caneta
 la pluma,the pen,笔,bǐ,a caneta
 mi pluma,my pen,我的笔,wǒ de bǐ,minha caneta
-el papel,the paper,报纸,bào zhǐ,o papel
+el papel,the paper,纸,zhǐ,o papel
 hoja de papel,sheet of paper,一张纸,yī zhāng zhǐ,folha de papel
 la mochila,the backpack,背包,bēi bāo,a mochila
 mi mochila,my backpack,我的背包,wǒ de bēi bāo,minha mochila
@@ -53,9 +53,9 @@ la clase,the class,班级,bān jí,a aula
 en clase,in class,在课堂上,zài kè táng shàng,na aula
 el examen,the exam,考试,kǎo shì,o exame
 mi examen,my exam,我的考试,wǒ de kǎo shì,meu exame
-la lección,the lesson,教训,jiào xùn,a lição
+la lección,the lesson,课程,kè chéng,a lição
 esta lección,this lesson,这节课,zhè jié kè,esta lição
 el aula,the classroom,教室,jiào shì,a sala de aula
 en el aula,in the classroom,在教室里,zài jiào shì lǐ,na sala de aula
 la regla,the rule,规则,guī zé,a regra
-mi regla,my period,我的经期,wǒ de jīng qī,minha menstruação
+mi regla,my ruler,我的尺子,wǒ de chǐ zi,minha régua
