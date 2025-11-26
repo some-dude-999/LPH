@@ -16,20 +16,20 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 门诊,mén zhěn,Outpatient service,Servicio ambulatorio,Service ambulatoire,Atendimento ambulatorial,Dịch vụ ngoại trú,แผนกผู้ป่วยนอก,សេវាកម្មអ្នកជំងឺក្រៅ,Pelayanan rawat jalan,Perkhidmatan Pesakit Luar,Outpatient Service
 急诊,jí zhěn,Emergency,Emergencia,Urgence,Emergência,Khẩn cấp,ห้องฉุกเฉิน,បន្ទាន់,Darurat,Kecemasan,Emergency
 去诊所,qù zhěn suǒ,Go to clinic,Ir a la clínica,Aller à la clinique,Vá para a clínica,Đến phòng khám,ไปคลินิก,ទៅគ្លីនិក,Pergi ke klinik,Pergi ke Klinik,Pumunta sa klinika
-在诊所,zài zhěn suǒ,At clinic,En la clínica,À la clinique,Na clínica,Tại phòng khám,[TRANSLATE_TH],ស្វែងរកគិលានុបដ្ឋាយិកា,Di klinik,Di Klinik,Sa klinika
-找医生,zhǎo yī shēng,Find a doctor,Encuentre un médico,Trouver un médecin,Encontre um médico,Tìm bác sĩ,[TRANSLATE_TH],ហៅគិលានុបដ្ឋាយិកា,Cari dokter,Cari doktor,Maghanap ng isang doktor
-看医生,kàn yī shēng,See a doctor,Ver a un médico,Consulter un médecin,Consulte um médico,Đi khám bác sĩ,[TRANSLATE_TH],ចូលទៅកាន់ចុះឈ្មោះ,Temui dokter,Lihat Doktor,Tingnan ang isang doktor
-找护士,zhǎo hù shì,Find a nurse,Encuentre una enfermera,Trouver une infirmière,Encontre uma enfermeira,Tìm y tá,[TRANSLATE_TH],បានចុះឈ្មោះរួចហើយ,Cari perawat,Cari jururawat,Maghanap ng isang nars
-叫护士,jiào hù shì,Call a nurse,Llame a una enfermera,Appeler une infirmière,Chame uma enfermeira,Gọi y tá,[TRANSLATE_TH],ទៅជួបគ្រូពេទ្យ,Panggil perawat,Hubungi jururawat,Tumawag sa isang nars
-去挂号,qù guà hào,Go to register,Ir a registrarse,Allez vous inscrire,Vá para registrar,Vào đăng ký,[TRANSLATE_TH],ចង់ទៅជួបគ្រូពេទ្យ,Pergi untuk mendaftar,Pergi ke Daftar,Pumunta sa Rehistro
-已挂号,yǐ guà hào,Already registered,Ya registrado,Déjà inscrit,Já cadastrado,Đã đăng ký,[TRANSLATE_TH],ធ្វើការពិនិត្យ,Sudah terdaftar,Sudah didaftarkan,Nakarehistro na
-去看病,qù kàn bìng,Go to see a doctor,Ir a ver a un médico,Aller voir un médecin,Vá ao médico,Đi khám bác sĩ,[TRANSLATE_TH],ចង់បានការប្រឡង,Pergi ke dokter,Pergi berjumpa doktor,Pumunta upang makita ang isang doktor
-要看病,yào kàn bìng,Want to see a doctor,Quiere ver a un médico,Vous voulez voir un médecin,Quer consultar um médico,Muốn đi khám bác sĩ,[TRANSLATE_TH],ធ្វើតេស្ត,Mau ke dokter,Mahu berjumpa doktor,Nais na makita ang isang doktor
-做检查,zuò jiǎn chá,Do an examination,Hacer un examen,Faire un examen,Faça um exame,Làm bài kiểm tra,[TRANSLATE_TH],ទៅរកការធ្វើតេស្តមួយ,Lakukan pemeriksaan,Adakah peperiksaan,Gumawa ng isang pagsusuri
-要检查,yào jiǎn chá,Want an examination,Quiere un examen,Vous voulez un examen,Quer um exame,Muốn khám,[TRANSLATE_TH],| ទៅរកកាំរស្មីអ៊ិច ||,Mau pemeriksaan,Mahukan peperiksaan,Gusto ng pagsusuri
-做化验,zuò huà yàn,Do a test,Haz una prueba,Faites un test,Faça um teste,Làm bài kiểm tra,[TRANSLATE_TH],ចង់បានការចាក់បញ្ចូលមួយ|| ទៅចាក់ថ្នាំ,Lakukan tes,Lakukan ujian,Gumawa ng isang pagsubok
-去化验,qù huà yàn,Go for a test,Hazte una prueba,Allez faire un test,Faça um teste,Đi kiểm tra,[TRANSLATE_TH],សរសេរវេជ្ជបញ្ជា,Ikuti tes,Pergi untuk ujian,Pumunta para sa isang pagsubok
-去拍片,qù pāi piàn,Go for a X-ray ||,Ve a hacerte una radiografía ||,Optez pour une radiographie ||,Faça um raio X ||,Đi chụp X-quang ||,[TRANSLATE_TH],ទទួលបានវេជ្ជបញ្ជា,Lakukan rontgen ||,Pergi untuk X-ray ||,Pumunta para sa isang X-ray ||
+在诊所,zài zhěn suǒ,At the clinic,En la clínica,À la clinique,Na clínica,Tại phòng khám,ที่คลินิก,នៅគ្លីនិក,Di klinik,Di klinik,Sa klinika
+找医生,zhǎo yī shēng,Find a doctor,Buscar un médico,Trouver un médecin,Procurar um médico,Tìm bác sĩ,หาหมอ,រកវេជ្ជបណ្ឌិត,Cari dokter,Cari doktor,Maghanap ng doktor
+看医生,kàn yī shēng,See a doctor,Ver al médico,Voir un médecin,Ver um médico,Đi khám bác sĩ,พบหมอ,ជួបគ្រូពេទ្យ,Temui dokter,Jumpa doktor,Magpatingin sa doktor
+找护士,zhǎo hù shì,Find a nurse,Buscar una enfermera,Trouver une infirmière,Procurar uma enfermeira,Tìm y tá,หาพยาบาล,រកគិលានុបដ្ឋាយិកា,Cari perawat,Cari jururawat,Maghanap ng nars
+叫护士,jiào hù shì,Call a nurse,Llamar a una enfermera,Appeler une infirmière,Chamar uma enfermeira,Gọi y tá,เรียกพยาบาล,ហៅគិលានុបដ្ឋាយិកា,Panggil perawat,Panggil jururawat,Tumawag ng nars
+去挂号,qù guà hào,Go to register,Ir a registrarse,Aller s'inscrire,Ir para se registrar,Đi đăng ký,ไปลงทะเบียน,ទៅចុះឈ្មោះ,Pergi mendaftar,Pergi daftar,Pumunta magparehistro
+已挂号,yǐ guà hào,Already registered,Ya registrado,Déjà inscrit,Já registrado,Đã đăng ký,ลงทะเบียนแล้ว,បានចុះឈ្មោះរួចហើយ,Sudah terdaftar,Sudah didaftarkan,Nakarehistro na
+去看病,qù kàn bìng,Go to see a doctor,Ir al médico,Aller chez le médecin,Ir ao médico,Đi khám bệnh,ไปหาหมอ,ទៅជួបគ្រូពេទ្យ,Pergi ke dokter,Pergi jumpa doktor,Pumunta sa doktor
+要看病,yào kàn bìng,Need to see a doctor,Necesito ver al médico,Vouloir voir un médecin,Preciso ir ao médico,Cần đi khám,ต้องไปหาหมอ,ត្រូវជួបគ្រូពេទ្យ,Perlu ke dokter,Perlu jumpa doktor,Kailangang magpatingin
+做检查,zuò jiǎn chá,Get examined,Hacerse un examen,Faire un examen,Fazer um exame,Làm kiểm tra,ตรวจร่างกาย,ធ្វើការពិនិត្យ,Melakukan pemeriksaan,Buat pemeriksaan,Magpaeksamin
+要检查,yào jiǎn chá,Need examination,Necesito examen,Besoin d'un examen,Preciso de exame,Cần kiểm tra,ต้องตรวจ,ត្រូវការពិនិត្យ,Perlu pemeriksaan,Perlu pemeriksaan,Kailangan ng eksamin
+做化验,zuò huà yàn,Get tested,Hacer análisis,Faire un test,Fazer exame,Đi xét nghiệm,ตรวจเลือด,ធ្វើតេស្ត,Melakukan tes,Buat ujian,Magpaeksamin
+去化验,qù huà yàn,Go for a test,Ir a hacerse análisis,Aller faire un test,Ir fazer exame,Đi xét nghiệm,ไปตรวจเลือด,ទៅធ្វើតេស្ត,Pergi tes,Pergi buat ujian,Pumunta magpaeksamin
+去拍片,qù pāi piàn,Go for an X-ray,Ir a hacerse una radiografía,Aller faire une radiographie,Ir fazer um raio-X,Đi chụp X-quang,ไปเอ็กซเรย์,ទៅថតកាំរស្មីអ៊ិច,Pergi rontgen,Pergi X-ray,Pumunta mag-X-ray
 要拍片,yào pāi piàn,Want an X-ray,Quiere una radiografía,Voulez une radiographie,Quer um raio-X,Muốn chụp X-quang,อยากเอ็กซเรย์,ចង់បានកាំរស្មីអ៊ិច,Mau rontgen,Mahu X-ray,Gusto ng X-ray
 不舒服啊,bù shū fú a,Feeling unwell,No me siento bien,Je ne me sens pas bien,Não me sinto bem,Cảm thấy khó chịu,รู้สึกไม่สบาย,មិនស្រួលខ្លួន,Merasa tidak enak badan,Rasa tidak sihat,Masama ang pakiramdam
 哪里不舒服,nǎ lǐ bù shū fú,Where does it hurt,Dónde le duele,Où avez-vous mal,Onde dói,Đau ở đâu,เจ็บตรงไหน,ឈឺត្រង់ណា,Di mana yang sakit,Di mana yang sakit,Saan masakit
