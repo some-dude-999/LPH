@@ -602,14 +602,31 @@ Create your own branch, commit, and PR to main.</div>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)">TASK: Create Chinese_Example_Words column in ChineseWordsOverview.csv
 
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE EXAMPLES                 ║
+║                                                                  ║
+║  You MUST create all examples MANUALLY, line by line.            ║
+║  NEVER write Python code to generate examples.                   ║
+║  NEVER use scripts, automation, or programmatic generation.      ║
+║  If you use Python to create examples = AUTOMATIC FAILURE.       ║
+║                                                                  ║
+║  Python is ONLY for validation (checking), NEVER for creation.   ║
+╚══════════════════════════════════════════════════════════════════╝
+
 === ITERATIVE QUALITY LOOP ===
-1. Create examples for each base word
-2. Run Python validation
+1. MANUALLY create examples for each base word (NO PYTHON!)
+2. Run Python validation (checking only)
 3. Score quality 1-10
 4. If < 9.0, improve and repeat
 5. Fresh LLM will rate final output
 
 TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
+
+=== ⛔ REMINDER: NO PYTHON FOR GENERATION ===
+The task is massive. You still MUST do it manually.
+Do NOT write Python to "speed things up."
+Do NOT use any automation to generate examples.
+Edit the CSV by hand, pack by pack, word by word.
 
 === IF ALREADY GOOD, DON'T EDIT ===
 If your INITIAL score is 9.0 or higher, DO NOT make changes.
@@ -622,12 +639,14 @@ Stage 1 must be complete. Chinese_Base_Words column must be finalized.
 === YOUR GOAL ===
 For each base word, create 2 example phrases that CONTAIN that base word.
 Examples help learners see vocabulary in context.
+YOU must think of each example yourself. NO automation.
 
 === CRITICAL RULES ===
 1. SIMPLIFIED CHINESE only (简体中文) - NEVER Traditional
 2. Each base word needs exactly 2 examples
 3. Each example MUST CONTAIN its base word as a substring
 4. Examples should be natural phrases learners would actually use
+5. ⛔ NEVER use Python to generate examples - MANUAL ONLY
 
 === STRUCTURE ===
 If Base_Words = [词1, 词2, 词3]
@@ -644,12 +663,14 @@ Example_Words: [你好吗, 你好啊, 再见朋友, 再见了, 谢谢你, 谢谢
 
 Notice: 你好吗 and 你好啊 both CONTAIN 你好
 
-=== PYTHON VALIDATION ===
-Create/use a Python script to:
+=== PYTHON: VALIDATION ONLY ===
+Python is ONLY for checking your manual work:
 1. Verify every example contains its base word
 2. Check word count: Example_Words = 2 × Base_Words count
 3. Check for duplicates within pack
-4. Create Combined_Words = Base_Words + Example_Words (no duplicates)
+4. Create Combined_Words = Base_Words + Example_Words
+
+⛔ Python is NEVER for generating content. NEVER.
 
 === FILE INFO ===
 FILE: ChineseWordsOverview.csv
@@ -659,12 +680,16 @@ COLUMNS TO CREATE: Chinese_Example_Words, Chinese_Combined_Words
 
 === WORKFLOW ===
 1. Read finalized Base_Words for each pack
-2. Create 2 natural examples per base word (containing that word)
-3. Build Example_Words array in correct order
-4. Run Python validation
-5. Fix any issues
+2. ⛔ MANUALLY create 2 natural examples per base word (NO PYTHON!)
+3. Build Example_Words array in correct order BY HAND
+4. Run Python validation (checking only)
+5. Fix any issues MANUALLY
 6. Score quality 1-10
 7. If < 9.0, list improvements and iterate
+
+=== ⛔ FINAL WARNING ===
+If you write ANY Python code to generate examples, you have FAILED.
+The task is large. That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
 End your response with this exact table format:
@@ -681,14 +706,31 @@ Create your own branch, commit, and PR to main.</div>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)">TASK: Create Spanish_Example_Words column in SpanishWordsOverview.csv
 
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE EXAMPLES                 ║
+║                                                                  ║
+║  You MUST create all examples MANUALLY, line by line.            ║
+║  NEVER write Python code to generate examples.                   ║
+║  NEVER use scripts, automation, or programmatic generation.      ║
+║  If you use Python to create examples = AUTOMATIC FAILURE.       ║
+║                                                                  ║
+║  Python is ONLY for validation (checking), NEVER for creation.   ║
+╚══════════════════════════════════════════════════════════════════╝
+
 === ITERATIVE QUALITY LOOP ===
-1. Create examples for each base word
-2. Run Python validation
+1. MANUALLY create examples for each base word (NO PYTHON!)
+2. Run Python validation (checking only)
 3. Score quality 1-10
 4. If < 9.0, improve and repeat
 5. Fresh LLM will rate final output
 
 TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
+
+=== ⛔ REMINDER: NO PYTHON FOR GENERATION ===
+The task is massive (250 packs!). You still MUST do it manually.
+Do NOT write Python to "speed things up."
+Do NOT use any automation to generate examples.
+Edit the CSV by hand, pack by pack, word by word.
 
 === IF ALREADY GOOD, DON'T EDIT ===
 If your INITIAL score is 9.0 or higher, DO NOT make changes.
@@ -700,6 +742,13 @@ Stage 1 must be complete. Spanish_Base_Words column must be finalized.
 
 === YOUR GOAL ===
 For each base word, create 2 example phrases that CONTAIN that base word.
+YOU must think of each example yourself. NO automation.
+
+=== CRITICAL RULES ===
+1. Each base word needs exactly 2 examples
+2. Each example MUST CONTAIN its base word as a substring
+3. Examples should be natural phrases learners would actually use
+4. ⛔ NEVER use Python to generate examples - MANUAL ONLY
 
 === STRUCTURE ===
 If Base_Words = [word1, word2, word3]
@@ -711,11 +760,14 @@ Example_Words: [hola amigo, hola señor, adiós amigos, adiós señora, gracias 
 
 Notice: "hola amigo" and "hola señor" both CONTAIN "hola"
 
-=== PYTHON VALIDATION ===
+=== PYTHON: VALIDATION ONLY ===
+Python is ONLY for checking your manual work:
 1. Verify every example contains its base word
 2. Check word count: Example_Words = 2 × Base_Words count
 3. Check for duplicates
 4. Create Combined_Words = Base_Words + Example_Words
+
+⛔ Python is NEVER for generating content. NEVER.
 
 === FILE INFO ===
 FILE: SpanishWordsOverview.csv
@@ -725,9 +777,13 @@ COLUMNS TO CREATE: Spanish_Example_Words, Spanish_Combined_Words
 
 === WORKFLOW ===
 1. Read finalized Base_Words
-2. Create 2 natural examples per base word
-3. Run Python validation
-4. Fix issues, score, iterate until 9.0+
+2. ⛔ MANUALLY create 2 natural examples per base word (NO PYTHON!)
+3. Run Python validation (checking only)
+4. Fix issues MANUALLY, score, iterate until 9.0+
+
+=== ⛔ FINAL WARNING ===
+If you write ANY Python code to generate examples, you have FAILED.
+The task is large (250 packs). That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
 End your response with this exact table format:
@@ -744,14 +800,31 @@ Create your own branch, commit, and PR to main.</div>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)">TASK: Create English_Example_Words column in EnglishWordsOverview.csv
 
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE EXAMPLES                 ║
+║                                                                  ║
+║  You MUST create all examples MANUALLY, line by line.            ║
+║  NEVER write Python code to generate examples.                   ║
+║  NEVER use scripts, automation, or programmatic generation.      ║
+║  If you use Python to create examples = AUTOMATIC FAILURE.       ║
+║                                                                  ║
+║  Python is ONLY for validation (checking), NEVER for creation.   ║
+╚══════════════════════════════════════════════════════════════════╝
+
 === ITERATIVE QUALITY LOOP ===
-1. Create examples for each base word
-2. Run Python validation
+1. MANUALLY create examples for each base word (NO PYTHON!)
+2. Run Python validation (checking only)
 3. Score quality 1-10
 4. If < 9.0, improve and repeat
 5. Fresh LLM will rate final output
 
 TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
+
+=== ⛔ REMINDER: NO PYTHON FOR GENERATION ===
+The task is massive (160 packs!). You still MUST do it manually.
+Do NOT write Python to "speed things up."
+Do NOT use any automation to generate examples.
+Edit the CSV by hand, pack by pack, word by word.
 
 === IF ALREADY GOOD, DON'T EDIT ===
 If your INITIAL score is 9.0 or higher, DO NOT make changes.
@@ -763,6 +836,13 @@ Stage 1 must be complete. English_Base_Words column must be finalized.
 
 === YOUR GOAL ===
 For each base word, create 2 example phrases that CONTAIN that base word.
+YOU must think of each example yourself. NO automation.
+
+=== CRITICAL RULES ===
+1. Each base word needs exactly 2 examples
+2. Each example MUST CONTAIN its base word as a substring
+3. Examples should be natural phrases learners would actually use
+4. ⛔ NEVER use Python to generate examples - MANUAL ONLY
 
 === STRUCTURE ===
 If Base_Words = [word1, word2, word3]
@@ -774,11 +854,14 @@ Example_Words: [hello there, hello everyone, goodbye friend, goodbye for now, th
 
 Notice: "hello there" and "hello everyone" both CONTAIN "hello"
 
-=== PYTHON VALIDATION ===
+=== PYTHON: VALIDATION ONLY ===
+Python is ONLY for checking your manual work:
 1. Verify every example contains its base word
 2. Check word count: Example_Words = 2 × Base_Words count
 3. Check for duplicates
 4. Create Combined_Words = Base_Words + Example_Words
+
+⛔ Python is NEVER for generating content. NEVER.
 
 === FILE INFO ===
 FILE: EnglishWordsOverview.csv
@@ -786,9 +869,13 @@ COLUMNS TO CREATE: English_Example_Words, English_Combined_Words
 
 === WORKFLOW ===
 1. Read finalized Base_Words
-2. Create 2 natural examples per base word
-3. Run Python validation
-4. Fix issues, score, iterate until 9.0+
+2. ⛔ MANUALLY create 2 natural examples per base word (NO PYTHON!)
+3. Run Python validation (checking only)
+4. Fix issues MANUALLY, score, iterate until 9.0+
+
+=== ⛔ FINAL WARNING ===
+If you write ANY Python code to generate examples, you have FAILED.
+The task is large (160 packs). That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
 End your response with this exact table format:
@@ -847,13 +934,30 @@ Create your own branch, commit, and PR to main.</div>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)">TASK: Create breakout CSV files (ChineseWords1.csv, etc.) from ChineseWordsOverview.csv
 
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE TRANSLATIONS             ║
+║                                                                  ║
+║  You MUST create all translations MANUALLY, line by line.        ║
+║  NEVER write Python code to generate translations.               ║
+║  NEVER use scripts, automation, or programmatic generation.      ║
+║  If you use Python to create translations = AUTOMATIC FAILURE.   ║
+║                                                                  ║
+║  Python is ONLY for validation (checking), NEVER for creation.   ║
+╚══════════════════════════════════════════════════════════════════╝
+
 === ITERATIVE QUALITY LOOP ===
-1. Create translations for all words
-2. Run Python pinyin validation
+1. MANUALLY create translations for all words (NO PYTHON!)
+2. Run Python pinyin validation (checking only)
 3. Score quality 1-10
-4. Fix issues, iterate until 9.0+
+4. Fix issues MANUALLY, iterate until 9.0+
 
 TARGET SCORE: 9.0+ (translations accurate, pinyin perfectly formatted)
+
+=== ⛔ REMINDER: NO PYTHON FOR TRANSLATION ===
+The task is massive (107 packs × 12 languages!). You still MUST do it manually.
+Do NOT write Python to "speed things up."
+Do NOT use any automation to generate translations.
+Write each translation by hand, row by row, column by column.
 
 === IF ALREADY GOOD, DON'T EDIT ===
 If your INITIAL score is 9.0 or higher, DO NOT make changes.
@@ -865,6 +969,7 @@ Stage 2 complete. Chinese_Combined_Words column exists.
 
 === YOUR GOAL ===
 For each pack, create a breakout CSV with translations for every word in Combined_Words.
+YOU must write each translation yourself. NO automation.
 
 === FILES ===
 INPUT: ChineseWordsOverview.csv (Chinese_Combined_Words column)
@@ -883,6 +988,8 @@ OUTPUT: ChineseWords/ChineseWords1.csv through ChineseWords107.csv
 10. indonesian
 11. malay
 12. filipino
+
+⛔ You must MANUALLY translate into each of these 12 columns. NO PYTHON.
 
 === CRITICAL PINYIN RULE ===
 Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
@@ -903,18 +1010,25 @@ THE RULE: Count Chinese chars, count pinyin syllables - MUST match!
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 你好,nǐ hǎo,hello,hola,bonjour,olá,xin chào,สวัสดี,ជំរាបសួរ,halo,halo,kumusta
 
-=== PYTHON VALIDATION ===
+=== PYTHON: VALIDATION ONLY ===
+Python is ONLY for checking your manual work:
 Run: python PythonHelpers/validate_pinyin.py chinese
 Checks that character count matches syllable count for every row.
 
+⛔ Python is NEVER for generating translations. NEVER.
+
 === WORKFLOW ===
 1. Read Combined_Words from each pack
-2. Create translations in all 12 languages
-3. CAREFULLY format pinyin (1 syllable per char, spaces between)
+2. ⛔ MANUALLY create translations in all 12 languages (NO PYTHON!)
+3. CAREFULLY format pinyin BY HAND (1 syllable per char, spaces between)
 4. Save as ChineseWords{N}.csv
-5. Run pinyin validation
-6. Fix any mismatches
+5. Run pinyin validation (checking only)
+6. Fix any mismatches MANUALLY
 7. Score quality, iterate until 9.0+
+
+=== ⛔ FINAL WARNING ===
+If you write ANY Python code to generate translations, you have FAILED.
+The task is large (107 packs). That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
 End your response with this exact table format:
@@ -931,8 +1045,30 @@ Create your own branch, commit, and PR to main.</div>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)">TASK: Create breakout CSV files (SpanishWords1.csv, etc.) from SpanishWordsOverview.csv
 
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE TRANSLATIONS             ║
+║                                                                  ║
+║  You MUST create all translations MANUALLY, line by line.        ║
+║  NEVER write Python code to generate translations.               ║
+║  NEVER use scripts, automation, or programmatic generation.      ║
+║  If you use Python to create translations = AUTOMATIC FAILURE.   ║
+║                                                                  ║
+║  Python is ONLY for validation (checking), NEVER for creation.   ║
+╚══════════════════════════════════════════════════════════════════╝
+
 === ITERATIVE QUALITY LOOP ===
+1. MANUALLY create translations for all words (NO PYTHON!)
+2. Run Python validation (checking only)
+3. Score quality 1-10
+4. Fix issues MANUALLY, iterate until 9.0+
+
 TARGET SCORE: 9.0+ (translations accurate, pinyin correct)
+
+=== ⛔ REMINDER: NO PYTHON FOR TRANSLATION ===
+The task is massive (250 packs!). You still MUST do it manually.
+Do NOT write Python to "speed things up."
+Do NOT use any automation to generate translations.
+Write each translation by hand, row by row, column by column.
 
 === IF ALREADY GOOD, DON'T EDIT ===
 If your INITIAL score is 9.0 or higher, DO NOT make changes.
@@ -941,6 +1077,10 @@ Only make edits if the initial score is below 9.0.
 
 === PREREQUISITE ===
 Stage 2 complete. Spanish_Combined_Words column exists.
+
+=== YOUR GOAL ===
+For each pack, create a breakout CSV with translations for every word.
+YOU must write each translation yourself. NO automation.
 
 === FILES ===
 INPUT: SpanishWordsOverview.csv (Spanish_Combined_Words column)
@@ -953,6 +1093,8 @@ OUTPUT: SpanishWords/SpanishWords1.csv through SpanishWords250.csv
 4. pinyin - 1 syllable per character, separated by spaces!
 5. portuguese
 
+⛔ You must MANUALLY translate into each of these 5 columns. NO PYTHON.
+
 === CRITICAL PINYIN RULE ===
 CORRECT: 你好 → nǐ hǎo (space between syllables)
 INCORRECT: 你好 → nǐhǎo (no space - WRONG)
@@ -961,12 +1103,20 @@ INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 spanish,english,chinese,pinyin,portuguese
 hola amigo,hello friend,你好朋友,nǐ hǎo péng you,olá amigo
 
+=== PYTHON: VALIDATION ONLY ===
+Python is ONLY for checking your manual work.
+⛔ Python is NEVER for generating translations. NEVER.
+
 === WORKFLOW ===
 1. Read Combined_Words from each pack
-2. Create translations in all 5 columns
-3. Format pinyin correctly
+2. ⛔ MANUALLY create translations in all 5 columns (NO PYTHON!)
+3. Format pinyin correctly BY HAND
 4. Save as SpanishWords{N}.csv
-5. Validate, iterate until 9.0+
+5. Run validation (checking only), iterate until 9.0+
+
+=== ⛔ FINAL WARNING ===
+If you write ANY Python code to generate translations, you have FAILED.
+The task is large (250 packs). That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
 End your response with this exact table format:
@@ -983,8 +1133,30 @@ Create your own branch, commit, and PR to main.</div>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)">TASK: Create breakout CSV files (EnglishWords1.csv, etc.) from EnglishWordsOverview.csv
 
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE TRANSLATIONS             ║
+║                                                                  ║
+║  You MUST create all translations MANUALLY, line by line.        ║
+║  NEVER write Python code to generate translations.               ║
+║  NEVER use scripts, automation, or programmatic generation.      ║
+║  If you use Python to create translations = AUTOMATIC FAILURE.   ║
+║                                                                  ║
+║  Python is ONLY for validation (checking), NEVER for creation.   ║
+╚══════════════════════════════════════════════════════════════════╝
+
 === ITERATIVE QUALITY LOOP ===
+1. MANUALLY create translations for all words (NO PYTHON!)
+2. Run Python validation (checking only)
+3. Score quality 1-10
+4. Fix issues MANUALLY, iterate until 9.0+
+
 TARGET SCORE: 9.0+ (translations accurate, pinyin correct)
+
+=== ⛔ REMINDER: NO PYTHON FOR TRANSLATION ===
+The task is massive (160 packs!). You still MUST do it manually.
+Do NOT write Python to "speed things up."
+Do NOT use any automation to generate translations.
+Write each translation by hand, row by row, column by column.
 
 === IF ALREADY GOOD, DON'T EDIT ===
 If your INITIAL score is 9.0 or higher, DO NOT make changes.
@@ -993,6 +1165,10 @@ Only make edits if the initial score is below 9.0.
 
 === PREREQUISITE ===
 Stage 2 complete. English_Combined_Words column exists.
+
+=== YOUR GOAL ===
+For each pack, create a breakout CSV with translations for every word.
+YOU must write each translation yourself. NO automation.
 
 === FILES ===
 INPUT: EnglishWordsOverview.csv (English_Combined_Words column)
@@ -1005,6 +1181,8 @@ OUTPUT: EnglishWords/EnglishWords1.csv through EnglishWords160.csv
 4. spanish
 5. portuguese
 
+⛔ You must MANUALLY translate into each of these 5 columns. NO PYTHON.
+
 === CRITICAL PINYIN RULE ===
 CORRECT: 你好 → nǐ hǎo (space between syllables)
 INCORRECT: 你好 → nǐhǎo (no space - WRONG)
@@ -1013,12 +1191,20 @@ INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 english,chinese,pinyin,spanish,portuguese
 hello there,你好,nǐ hǎo,hola,olá
 
+=== PYTHON: VALIDATION ONLY ===
+Python is ONLY for checking your manual work.
+⛔ Python is NEVER for generating translations. NEVER.
+
 === WORKFLOW ===
 1. Read Combined_Words from each pack
-2. Create translations in all 5 columns
-3. Format pinyin correctly
+2. ⛔ MANUALLY create translations in all 5 columns (NO PYTHON!)
+3. Format pinyin correctly BY HAND
 4. Save as EnglishWords{N}.csv
-5. Validate, iterate until 9.0+
+5. Run validation (checking only), iterate until 9.0+
+
+=== ⛔ FINAL WARNING ===
+If you write ANY Python code to generate translations, you have FAILED.
+The task is large (160 packs). That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
 End your response with this exact table format:
