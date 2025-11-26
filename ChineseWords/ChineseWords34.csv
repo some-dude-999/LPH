@@ -13,7 +13,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 预报,yù bào,Forecast,Pronóstico,Prévisions,Previsão,Dự báo,พยากรณ์,ការព្យាករណ៍,Ramalan,Ramalan,Pagtataya
 气温,qì wēn,Temperature,Temperatura,Température,Temperatura,Nhiệt độ,อุณหภูมิ,សីតុណ្ហាភាព,Suhu,Suhu,Temperatura
 霜,shuāng,Frost,Escarcha,Givre,Geada,Sương giá,ฟรอสต์,សាយសត្វ || គោរព,Embun beku,Frost,Frost
-雹子,báo zi,Hail,Granizo,Je vous salue,Salve,Chào mừng,สวัสดี,សើម,Salam,Hail,Hail
+雹子,báo zi,Hail,Granizo,Grêle,Granizo,Mưa đá,ลูกเห็บ,ប្រឡាក់គ្រាប់ព្រិល,Hujan es,Hujan batu,Ulan ng yelo
 潮湿,cháo shī,Humid,Húmedo,Humide,Úmido,Ẩm ướt,ชื้น,អាកាសធាតុល្អ,Lembab,Lembap,Humid
 天气好,tiān qì hǎo,Good weather,Buen tiempo,Beau temps,Bom tempo,Thời tiết tốt,อากาศดี,ពិនិត្យមើលអាកាសធាតុ,Cuaca bagus,Cuaca yang baik,Magandang panahon
 看天气,kàn tiān qì,Check the weather,Consulta el tiempo,Consultez la météo,Verifique o tempo,Kiểm tra thời tiết,เช็คสภาพอากาศ,ថ្ងៃដែលមានពន្លឺថ្ងៃល្អ,Periksa cuaca,Periksa cuaca,Suriin ang panahon
@@ -43,7 +43,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 看气温,kàn qì wēn,Check the temperature,Comprobar la temperatura,Vérifiez la température,Verifique a temperatura,Kiểm tra nhiệt độ,เช็คอุณหภูมิ,| សាយសត្វ || សាយសត្វ || គោរព,Periksa suhu,Semak suhu,Suriin ang temperatura
 结霜了,jié shuāng le,Frost,Escarcha,Givre,Geada,Sương giá,ฟรอสต์,គោរព,Embun beku,Frost,Frost
 下霜,xià shuāng,Frost,Escarcha,Givre,Geada,Sương giá,ฟรอสต์,មានសើមណាស់,Embun beku,Frost,Frost
-下雹子,xià báo zi,Hail,Granizo,Je vous salue,Salve,Chào mừng,สวัสดี,អាកាសធាតុគឺសើម,Salam,Hail,Hail
+下雹子,xià báo zi,Hailing,Granizando,Il grêle,Está granizando,Mưa đá,ลูกเห็บตก,ភ្លៀងគ្រាប់ព្រិល,Hujan es,Hujan batu,Umuulan ng yelo
 有雹子,yǒu báo zi,Hail,Granizo,Grêle,Granizo,Mưa đá,ลูกเห็บ,ប្រឡាក់,Hujan es,Hujan batu,May ulan ng yelo
 很潮湿,hěn cháo shī,Very humid,Muy húmedo,Très humide,Muito úmido,Rất ẩm ướt,ชื้นมาก,សើមខ្លាំង,Sangat lembab,Sangat lembap,Napaka-halumigmig
 天气潮湿,tiān qì cháo shī,The weather is humid,El clima es húmedo,Le temps est humide,O clima está úmido,Thời tiết ẩm ướt,อากาศชื้น,អាកាសធាតុសើម,Cuacanya lembab,Cuaca lembap,Ang panahon ay mahalumigmig
