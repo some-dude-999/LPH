@@ -279,6 +279,11 @@ This is an iterative process. You will:
 
 TARGET SCORE: 9.0 or higher (as rated by a fresh LLM that hasn't seen this before)
 
+=== IF ALREADY GOOD, DON'T EDIT ===
+If your INITIAL score is 9.0 or higher, DO NOT make changes.
+A score of 9+ means the data is already excellent. Report the score and move on.
+Only make edits if the initial score is below 9.0.
+
 === WHAT ARE BASE WORDS? ===
 Base words are VOCABULARY ITEMS - single words or compound words that learners memorize.
 Examples of GOOD base words: 你好, 星期六, 电脑, 谢谢, 早上好
@@ -367,6 +372,11 @@ This is an iterative process. You will:
 
 TARGET SCORE: 9.0 or higher (as rated by a fresh LLM that hasn't seen this before)
 
+=== IF ALREADY GOOD, DON'T EDIT ===
+If your INITIAL score is 9.0 or higher, DO NOT make changes.
+A score of 9+ means the data is already excellent. Report the score and move on.
+Only make edits if the initial score is below 9.0.
+
 === WHAT ARE BASE WORDS? ===
 Base words are VOCABULARY ITEMS - single words or compound words that learners memorize.
 Examples of GOOD base words: hola, buenos días, gracias, biblioteca, cumpleaños
@@ -447,6 +457,11 @@ This is an iterative process. You will:
 7. If score < 9.0, your output will be reviewed by a fresh LLM instance
 
 TARGET SCORE: 9.0 or higher (as rated by a fresh LLM that hasn't seen this before)
+
+=== IF ALREADY GOOD, DON'T EDIT ===
+If your INITIAL score is 9.0 or higher, DO NOT make changes.
+A score of 9+ means the data is already excellent. Report the score and move on.
+Only make edits if the initial score is below 9.0.
 
 === WHAT ARE BASE WORDS? ===
 Base words are VOCABULARY ITEMS - single words or compound words that learners memorize.
@@ -575,6 +590,11 @@ Create your own branch, commit, and PR to main.</div>
 
 TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
 
+=== IF ALREADY GOOD, DON'T EDIT ===
+If your INITIAL score is 9.0 or higher, DO NOT make changes.
+A score of 9+ means the data is already excellent. Report the score and move on.
+Only make edits if the initial score is below 9.0.
+
 === PREREQUISITE ===
 Stage 1 must be complete. Chinese_Base_Words column must be finalized.
 
@@ -649,6 +669,11 @@ Create your own branch, commit, and PR to main.</div>
 
 TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
 
+=== IF ALREADY GOOD, DON'T EDIT ===
+If your INITIAL score is 9.0 or higher, DO NOT make changes.
+A score of 9+ means the data is already excellent. Report the score and move on.
+Only make edits if the initial score is below 9.0.
+
 === PREREQUISITE ===
 Stage 1 must be complete. Spanish_Base_Words column must be finalized.
 
@@ -706,6 +731,11 @@ Create your own branch, commit, and PR to main.</div>
 5. Fresh LLM will rate final output
 
 TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
+
+=== IF ALREADY GOOD, DON'T EDIT ===
+If your INITIAL score is 9.0 or higher, DO NOT make changes.
+A score of 9+ means the data is already excellent. Report the score and move on.
+Only make edits if the initial score is below 9.0.
 
 === PREREQUISITE ===
 Stage 1 must be complete. English_Base_Words column must be finalized.
@@ -804,6 +834,11 @@ Create your own branch, commit, and PR to main.</div>
 
 TARGET SCORE: 9.5+ (translations accurate, pinyin perfectly formatted)
 
+=== IF ALREADY GOOD, DON'T EDIT ===
+If your INITIAL score is 9.5 or higher, DO NOT make changes.
+A score of 9.5+ means the data is already excellent. Report the score and move on.
+Only make edits if the initial score is below 9.5.
+
 === PREREQUISITE ===
 Stage 2 complete. Chinese_Combined_Words column exists.
 
@@ -878,6 +913,11 @@ Create your own branch, commit, and PR to main.</div>
 === ITERATIVE QUALITY LOOP ===
 TARGET SCORE: 9.5+ (translations accurate, pinyin correct)
 
+=== IF ALREADY GOOD, DON'T EDIT ===
+If your INITIAL score is 9.5 or higher, DO NOT make changes.
+A score of 9.5+ means the data is already excellent. Report the score and move on.
+Only make edits if the initial score is below 9.5.
+
 === PREREQUISITE ===
 Stage 2 complete. Spanish_Combined_Words column exists.
 
@@ -924,6 +964,11 @@ Create your own branch, commit, and PR to main.</div>
 
 === ITERATIVE QUALITY LOOP ===
 TARGET SCORE: 9.5+ (translations accurate, pinyin correct)
+
+=== IF ALREADY GOOD, DON'T EDIT ===
+If your INITIAL score is 9.5 or higher, DO NOT make changes.
+A score of 9.5+ means the data is already excellent. Report the score and move on.
+Only make edits if the initial score is below 9.5.
 
 === PREREQUISITE ===
 Stage 2 complete. English_Combined_Words column exists.
@@ -1245,12 +1290,17 @@ The goal is quality, not politeness.</div>
     // ============================================================
     // When user clicks a prompt box, copy its text content to clipboard.
     // Flash green briefly to confirm the copy succeeded.
+    // Uses inline styles instead of CSS classes for visual feedback.
 
     function copyPrompt(element) {
         const text = element.innerText;
         navigator.clipboard.writeText(text).then(() => {
-            element.classList.add('copied');
-            setTimeout(() => element.classList.remove('copied'), 500);
+            // Visual feedback using inline styles (no CSS needed)
+            const originalBg = element.style.backgroundColor;
+            element.style.backgroundColor = '#90EE90';  // Light green
+            setTimeout(() => {
+                element.style.backgroundColor = originalBg;
+            }, 500);
         });
     }
 </script>
