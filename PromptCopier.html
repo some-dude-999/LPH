@@ -1136,13 +1136,20 @@ python PythonHelpers/validate_pinyin.py chinese
 
 Note any pinyin errors to fix.
 
-=== STEP 3: SCAN ALL PACKS - BUILD COMPREHENSIVE ISSUES TABLE ===
+=== STEP 3: SCORE EVERY WORDPACK (1-10) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📋 BEFORE FIXING ANYTHING: DOCUMENT ALL ISSUES FIRST            ║
+║  📊 SCORE EACH PACK INDIVIDUALLY BEFORE FIXING                   ║
 ║                                                                  ║
-║  Scan EVERY pack. Build a complete table of ALL problems.        ║
-║  This gives you the full picture before you start fixing.        ║
+║  Review EVERY pack. Give each a quality score from 1-10.        ║
+║  10 = Perfect (no issues)                                        ║
+║  9  = Excellent (trivial issues only, acceptable)               ║
+║  8  = Good (minor issues)                                        ║
+║  7  = Fair (several issues)                                      ║
+║  6 or below = Poor (significant issues, definitely needs work)  ║
+║                                                                  ║
+║  🎯 THRESHOLD: Only fix packs scoring BELOW 9                    ║
+║  Packs with 9 or 10 are acceptable - skip them.                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 Chinese Acts:
@@ -1152,7 +1159,7 @@ Chinese Acts:
 - Act IV (Mastery): Packs 58-85
 - Act V (Refinement): Packs 86-107
 
-SCAN each pack and check EVERY ROW for issues:
+FOR EACH PACK, check EVERY ROW:
    - Column 1 (chinese): READ ONLY - never touch
    - Column 2 (pinyin): 1 syllable per character? Correct tones? Spaces?
    - Column 3 (english): Accurate? Natural? Common usage?
@@ -1166,27 +1173,28 @@ SCAN each pack and check EVERY ROW for issues:
    - Column 11 (malay): Accurate? Natural?
    - Column 12 (filipino): Accurate? Natural?
 
-CREATE THIS TABLE (example):
-| Wordpack | What's Wrong |
-|----------|--------------|
-| ChineseWords1.csv | Row 5: pinyin missing space "nǐhǎo" → "nǐ hǎo" |
-| ChineseWords1.csv | Row 12: english awkward "greeting hello" → "hello there" |
-| ChineseWords3.csv | Row 8: spanish wrong "buenos dias" → "buenos días" |
-| ChineseWords7.csv | Row 3: pinyin wrong tone "hao3" → "hǎo" |
-| ChineseWords15.csv | No issues found ✓ |
-| ... | ... |
+CREATE THIS SCORECARD TABLE (ALL 107 packs):
+| Pack | Wordpack | Score | Issues Found |
+|------|----------|-------|--------------|
+| 1 | ChineseWords1.csv | 7/10 | Row 5: pinyin "nǐhǎo" missing space; Row 12: english awkward |
+| 2 | ChineseWords2.csv | 10/10 | None ✓ |
+| 3 | ChineseWords3.csv | 6/10 | Row 8: spanish accent missing; Row 15: thai incorrect |
+| 4 | ChineseWords4.csv | 9/10 | Minor: Row 3 could be more natural (acceptable) ✓ |
+| 5 | ChineseWords5.csv | 8/10 | Row 7: vietnamese tone wrong |
+| ... | ... | ... | ... |
+| 107 | ChineseWords107.csv | 10/10 | None ✓ |
 
-=== STEP 4: FIX ONE WORDPACK AT A TIME - NEVER LEAVE WORK BEHIND ===
+=== STEP 4: FIX ALL PACKS SCORING BELOW 9 ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔥 TACKLE ALL PROBLEMS. NEVER LEAVE WORK FOR NEXT AGENT. 🔥    ║
+║  🔥 FIX EVERY PACK WITH SCORE < 9. NO EXCEPTIONS. 🔥            ║
 ║                                                                  ║
-║  You found 47 issues? FIX ALL 47. One pack at a time.           ║
-║  Do NOT stop halfway. Do NOT say "I'll do more later."          ║
+║  Scored 45 packs below 9? FIX ALL 45. One pack at a time.       ║
+║  Do NOT stop halfway. Do NOT leave work for next agent.          ║
 ║  COMPLETE EVERYTHING before finishing this task.                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-FOR EACH WORDPACK WITH ISSUES:
+FOR EACH PACK SCORING BELOW 9:
 1. Fix ALL issues in that pack using Edit tool
 2. Show before/after table:
 
@@ -1197,8 +1205,8 @@ FOR EACH WORDPACK WITH ISSUES:
 
 3. COMMIT that pack's fixes
 4. PR TO MAIN
-5. Move to next wordpack with issues
-6. REPEAT until ALL issues from your table are fixed
+5. Move to next pack scoring below 9
+6. REPEAT until ALL low-scoring packs are fixed
 
 === BREAKOUT CSV COLUMNS (12 columns) ===
 | Col | Name       | Editable? | Notes                        |
@@ -1222,24 +1230,24 @@ CORRECT: 猴子 → hóu zi (2 chars = 2 syllables)
 INCORRECT: 猴子 → hóuzi (WRONG - no space!)
 
 === FINAL OUTPUT (REQUIRED) ===
-| Metric              | Value |
-|---------------------|-------|
-| Total Packs Scanned | 107   |
-| Column 1 Valid      | YES/NO |
-| Total Issues Found  | X     |
-| Total Issues Fixed  | X     |
-| Packs PRed to Main  | X     |
+| Metric                    | Value |
+|---------------------------|-------|
+| Total Packs Scored        | 107   |
+| Column 1 Valid            | YES/NO |
+| Packs Scoring 9-10        | X (no fix needed) |
+| Packs Scoring Below 9     | X (need fixing) |
+| Packs Fixed & PRed        | X     |
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  ✅ SUCCESS CRITERIA: Issues Found = Issues Fixed                ║
+║  ✅ SUCCESS CRITERIA: Packs Below 9 = Packs Fixed                ║
 ║                                                                  ║
-║  If you found 32 issues, you must have fixed 32 issues.         ║
-║  If Issues Fixed < Issues Found, YOU ARE NOT DONE.              ║
-║  NEVER finish with unfixed issues. NEVER leave work behind.      ║
+║  If 35 packs scored below 9, you must have fixed all 35.        ║
+║  If Packs Fixed < Packs Below 9, YOU ARE NOT DONE.              ║
+║  NEVER finish with unfixed low-scoring packs.                    ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ⚠️ COMMIT AND PR AFTER EACH WORDPACK FIX!
-Don't just review - FIX EVERYTHING AND PR!</div>
+Don't just score - FIX ALL PACKS BELOW 9 AND PR!</div>
 
 <h3>Spanish - Stage 3</h3>
 <div>Click to copy</div>
