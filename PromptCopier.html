@@ -600,7 +600,7 @@ Create your own branch, commit, and PR to main.</div>
 
 <h3>Chinese - Stage 2</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Create Chinese_Example_Words column in ChineseWordsOverview.csv
+<div onclick="copyPrompt(this)">TASK: Create Chinese_Example_Words for packs [START]-[END] in ChineseWordsOverview.csv
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE EXAMPLES                 ║
@@ -613,6 +613,15 @@ Create your own branch, commit, and PR to main.</div>
 ║  Python is ONLY for validation (checking), NEVER for creation.   ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+=== BATCH INSTRUCTIONS ===
+Work in batches of 50 packs. Replace [START] and [END] with pack numbers:
+- Batch 1: Packs 1-50
+- Batch 2: Packs 51-100
+- Batch 3: Packs 101-107 (final batch)
+
+After EACH batch: commit, push, and PR to main.
+Do NOT try to do all 107 packs at once!
+
 === ITERATIVE QUALITY LOOP ===
 1. MANUALLY create examples for each base word (NO PYTHON!)
 2. Run Python validation (checking only)
@@ -623,7 +632,6 @@ Create your own branch, commit, and PR to main.</div>
 TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
 
 === ⛔ REMINDER: NO PYTHON FOR GENERATION ===
-The task is massive. You still MUST do it manually.
 Do NOT write Python to "speed things up."
 Do NOT use any automation to generate examples.
 Edit the CSV by hand, pack by pack, word by word.
@@ -678,33 +686,32 @@ COLUMNS TO CREATE: Chinese_Example_Words, Chinese_Combined_Words
 
 (See HTML tables above for before/after examples)
 
-=== WORKFLOW ===
-1. Read finalized Base_Words for each pack
-2. ⛔ MANUALLY create 2 natural examples per base word (NO PYTHON!)
-3. Build Example_Words array in correct order BY HAND
+=== WORKFLOW FOR THIS BATCH ===
+1. Read Base_Words for packs [START] to [END] only
+2. ⛔ MANUALLY create 2 examples per base word (NO PYTHON!)
+3. Build Example_Words array BY HAND
 4. Run Python validation (checking only)
 5. Fix any issues MANUALLY
 6. Score quality 1-10
-7. If < 9.0, list improvements and iterate
+7. Commit, push, PR to main
+8. Next agent picks up the next batch
 
 === ⛔ FINAL WARNING ===
 If you write ANY Python code to generate examples, you have FAILED.
-The task is large. That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
-End your response with this exact table format:
-
 | Metric       | Value |
 |--------------|-------|
+| Batch        | Packs [START]-[END] |
 | BEFORE Score | X/10  |
 | AFTER Score  | X/10  |
-| Reason       | [1-2 sentence explanation of what improved] |
+| Reason       | [1-2 sentence explanation] |
 
-Create your own branch, commit, and PR to main.</div>
+Create your own branch, commit, and PR to main after this batch.</div>
 
 <h3>Spanish - Stage 2</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Create Spanish_Example_Words column in SpanishWordsOverview.csv
+<div onclick="copyPrompt(this)">TASK: Create Spanish_Example_Words for packs [START]-[END] in SpanishWordsOverview.csv
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE EXAMPLES                 ║
@@ -717,6 +724,17 @@ Create your own branch, commit, and PR to main.</div>
 ║  Python is ONLY for validation (checking), NEVER for creation.   ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+=== BATCH INSTRUCTIONS ===
+Work in batches of 50 packs. Replace [START] and [END] with pack numbers:
+- Batch 1: Packs 1-50
+- Batch 2: Packs 51-100
+- Batch 3: Packs 101-150
+- Batch 4: Packs 151-200
+- Batch 5: Packs 201-250 (final batch)
+
+After EACH batch: commit, push, and PR to main.
+Do NOT try to do all 250 packs at once!
+
 === ITERATIVE QUALITY LOOP ===
 1. MANUALLY create examples for each base word (NO PYTHON!)
 2. Run Python validation (checking only)
@@ -727,7 +745,6 @@ Create your own branch, commit, and PR to main.</div>
 TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
 
 === ⛔ REMINDER: NO PYTHON FOR GENERATION ===
-The task is massive (250 packs!). You still MUST do it manually.
 Do NOT write Python to "speed things up."
 Do NOT use any automation to generate examples.
 Edit the CSV by hand, pack by pack, word by word.
@@ -775,30 +792,32 @@ COLUMNS TO CREATE: Spanish_Example_Words, Spanish_Combined_Words
 
 (See HTML tables above for before/after examples)
 
-=== WORKFLOW ===
-1. Read finalized Base_Words
-2. ⛔ MANUALLY create 2 natural examples per base word (NO PYTHON!)
-3. Run Python validation (checking only)
-4. Fix issues MANUALLY, score, iterate until 9.0+
+=== WORKFLOW FOR THIS BATCH ===
+1. Read Base_Words for packs [START] to [END] only
+2. ⛔ MANUALLY create 2 examples per base word (NO PYTHON!)
+3. Build Example_Words array BY HAND
+4. Run Python validation (checking only)
+5. Fix any issues MANUALLY
+6. Score quality 1-10
+7. Commit, push, PR to main
+8. Next agent picks up the next batch
 
 === ⛔ FINAL WARNING ===
 If you write ANY Python code to generate examples, you have FAILED.
-The task is large (250 packs). That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
-End your response with this exact table format:
-
 | Metric       | Value |
 |--------------|-------|
+| Batch        | Packs [START]-[END] |
 | BEFORE Score | X/10  |
 | AFTER Score  | X/10  |
-| Reason       | [1-2 sentence explanation of what improved] |
+| Reason       | [1-2 sentence explanation] |
 
-Create your own branch, commit, and PR to main.</div>
+Create your own branch, commit, and PR to main after this batch.</div>
 
 <h3>English - Stage 2</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Create English_Example_Words column in EnglishWordsOverview.csv
+<div onclick="copyPrompt(this)">TASK: Create English_Example_Words for packs [START]-[END] in EnglishWordsOverview.csv
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE EXAMPLES                 ║
@@ -811,6 +830,16 @@ Create your own branch, commit, and PR to main.</div>
 ║  Python is ONLY for validation (checking), NEVER for creation.   ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+=== BATCH INSTRUCTIONS ===
+Work in batches of 50 packs. Replace [START] and [END] with pack numbers:
+- Batch 1: Packs 1-50
+- Batch 2: Packs 51-100
+- Batch 3: Packs 101-150
+- Batch 4: Packs 151-160 (final batch)
+
+After EACH batch: commit, push, and PR to main.
+Do NOT try to do all 160 packs at once!
+
 === ITERATIVE QUALITY LOOP ===
 1. MANUALLY create examples for each base word (NO PYTHON!)
 2. Run Python validation (checking only)
@@ -821,7 +850,6 @@ Create your own branch, commit, and PR to main.</div>
 TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
 
 === ⛔ REMINDER: NO PYTHON FOR GENERATION ===
-The task is massive (160 packs!). You still MUST do it manually.
 Do NOT write Python to "speed things up."
 Do NOT use any automation to generate examples.
 Edit the CSV by hand, pack by pack, word by word.
@@ -867,26 +895,28 @@ Python is ONLY for checking your manual work:
 FILE: EnglishWordsOverview.csv
 COLUMNS TO CREATE: English_Example_Words, English_Combined_Words
 
-=== WORKFLOW ===
-1. Read finalized Base_Words
-2. ⛔ MANUALLY create 2 natural examples per base word (NO PYTHON!)
-3. Run Python validation (checking only)
-4. Fix issues MANUALLY, score, iterate until 9.0+
+=== WORKFLOW FOR THIS BATCH ===
+1. Read Base_Words for packs [START] to [END] only
+2. ⛔ MANUALLY create 2 examples per base word (NO PYTHON!)
+3. Build Example_Words array BY HAND
+4. Run Python validation (checking only)
+5. Fix any issues MANUALLY
+6. Score quality 1-10
+7. Commit, push, PR to main
+8. Next agent picks up the next batch
 
 === ⛔ FINAL WARNING ===
 If you write ANY Python code to generate examples, you have FAILED.
-The task is large (160 packs). That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
-End your response with this exact table format:
-
 | Metric       | Value |
 |--------------|-------|
+| Batch        | Packs [START]-[END] |
 | BEFORE Score | X/10  |
 | AFTER Score  | X/10  |
-| Reason       | [1-2 sentence explanation of what improved] |
+| Reason       | [1-2 sentence explanation] |
 
-Create your own branch, commit, and PR to main.</div>
+Create your own branch, commit, and PR to main after this batch.</div>
 
 <!-- ============================================================ -->
 <!-- STAGE 3: BREAKOUT CSV CREATION                               -->
