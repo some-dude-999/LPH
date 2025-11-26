@@ -565,6 +565,36 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act1-foundation-js
 
 ---
 
+## 🇨🇳 CHINESE LANGUAGE RULES - CRITICAL!
+**All Chinese content in this project uses SIMPLIFIED CHINESE (简体中文) ONLY.**
+
+### ⛔ NEVER USE TRADITIONAL CHINESE
+- ❌ 繁體中文 (Traditional) - NEVER use this
+- ✅ 简体中文 (Simplified) - ALWAYS use this
+
+### Examples
+| Simplified (USE THIS) | Traditional (NEVER USE) | English |
+|-----------------------|-------------------------|---------|
+| 学习 | 學習 | study |
+| 中国 | 中國 | China |
+| 语言 | 語言 | language |
+| 汉字 | 漢字 | Chinese characters |
+| 说话 | 說話 | speak |
+
+### Why This Matters
+- Our target learners are studying Mainland Chinese (Simplified)
+- Mixing scripts confuses learners
+- All existing data is in Simplified - maintain consistency
+- If you're unsure, verify the characters are Simplified before committing
+
+### When Working on Chinese Data
+1. Always double-check characters are Simplified
+2. If you see Traditional characters, convert them to Simplified
+3. Use Simplified Chinese input methods/references
+4. When in doubt, look up the Simplified form
+
+---
+
 ## 📋 OVERVIEW WORDPACK DATA STRUCTURE (CRITICAL!)
 **Understanding how wordpacks are organized in the Overview CSV files.**
 
