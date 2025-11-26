@@ -1101,148 +1101,82 @@ Create your own branch, commit, and PR to main.</div>
 
 <h3>Chinese - Stage 3</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Critique Chinese breakout CSV files (ChineseWords1.csv through ChineseWords107.csv)
+<div onclick="copyPrompt(this)">TASK: Review and fix Chinese breakout CSVs - ONE PACK AT A TIME, ONE ACT AT A TIME
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚫🚫🚫 ABSOLUTE RULE: NEVER EDIT THE OVERVIEW CSV 🚫🚫🚫        ║
+║  🔥🔥🔥 MANDATORY: IF YOU FIND AN ERROR, YOU MUST FIX IT 🔥🔥🔥  ║
 ║                                                                  ║
-║  ChineseWordsOverview.csv is 100% READ-ONLY. NEVER touch it.     ║
+║  Do NOT just report issues. Do NOT just make a list.             ║
+║  If a translation is WRONG or COULD BE BETTER:                   ║
+║                                                                  ║
+║  → FIX IT IMMEDIATELY using the Edit tool                        ║
+║  → COMMIT your changes                                           ║
+║  → PR TO MAIN                                                    ║
+║                                                                  ║
+║  No excuses. No "I'll fix it later." FIX IT NOW AND PR.          ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔒🔒🔒 SACRED RULE: NEVER EDIT COLUMN 1 (chinese) 🔒🔒🔒        ║
-║                                                                  ║
-║  Column 1 is the TARGET LANGUAGE being learned.                  ║
-║  These words are CAREFULLY CURATED from the Overview CSV.        ║
-║  They are the SOURCE OF TRUTH for what learners study.           ║
-║                                                                  ║
-║  ⛔ NEVER change, fix, or "improve" Column 1 values              ║
-║  ⛔ NEVER add/remove rows (word count must match Overview)       ║
-║  ✅ ONLY edit Columns 2-12 (translations/pinyin)                 ║
-║                                                                  ║
-║  If Column 1 has issues, they must be fixed in Stage 1/2,        ║
-║  NOT here in Stage 3!                                            ║
+║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
+║  🔒 NEVER EDIT COLUMN 1 (chinese) - IT'S SACRED                  ║
+║  ⛔ NEVER USE PYTHON TO FIX TRANSLATIONS (auto-fail)             ║
+║  ✅ ONLY edit Columns 2-12 (pinyin + translations)               ║
+║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== CRITICAL VALIDATION: COLUMN 1 MUST MATCH OVERVIEW ===
-Before ANY critique work, verify:
-- Every word in Column 1 (chinese) of each breakout CSV
-- Must EXACTLY match the Chinese_Combined_Words array in Overview CSV
-- Same words, same order, same count
-
-Run this validation:
+=== STEP 1: VALIDATE COLUMN 1 MATCHES OVERVIEW ===
+Run this first:
 python PythonHelpers/verify_words_integrity.py chinese
 
-If mismatch found: STOP and report. Do NOT fix it yourself.
-Column 1 is sacred - mismatches indicate a pipeline problem.
+This checks that Column 1 in each breakout CSV matches Combined_Words in Overview.
+If mismatch found: STOP and report. Column 1 is sacred - don't touch it.
 
-=== USE SUB-AGENTS FOR PARALLEL PROCESSING ===
-This task MUST be done with sub-agents. Each sub-agent handles MAX 10 CSVs.
+=== STEP 2: CHECK PINYIN ERRORS ===
+python PythonHelpers/validate_pinyin.py chinese
 
-╔══════════════════════════════════════════════════════════════════╗
-║  🤖 SUB-AGENT ARCHITECTURE (MANDATORY)                           ║
-║                                                                  ║
-║  You are the COORDINATOR. Spawn sub-agents to do the work:       ║
-║                                                                  ║
-║  Sub-Agent 1:  Packs 1-10    (ChineseWords1.csv - ChineseWords10.csv)  ║
-║  Sub-Agent 2:  Packs 11-20   (ChineseWords11.csv - ChineseWords20.csv) ║
-║  Sub-Agent 3:  Packs 21-30   (ChineseWords21.csv - ChineseWords30.csv) ║
-║  Sub-Agent 4:  Packs 31-40   (ChineseWords31.csv - ChineseWords40.csv) ║
-║  Sub-Agent 5:  Packs 41-50   (ChineseWords41.csv - ChineseWords50.csv) ║
-║  Sub-Agent 6:  Packs 51-60   (ChineseWords51.csv - ChineseWords60.csv) ║
-║  Sub-Agent 7:  Packs 61-70   (ChineseWords61.csv - ChineseWords70.csv) ║
-║  Sub-Agent 8:  Packs 71-80   (ChineseWords71.csv - ChineseWords80.csv) ║
-║  Sub-Agent 9:  Packs 81-90   (ChineseWords81.csv - ChineseWords90.csv) ║
-║  Sub-Agent 10: Packs 91-100  (ChineseWords91.csv - ChineseWords100.csv)║
-║  Sub-Agent 11: Packs 101-107 (ChineseWords101.csv - ChineseWords107.csv)║
-║                                                                  ║
-║  Each sub-agent reports back:                                    ║
-║  - Column 1 validation (matches Overview? YES/NO)                ║
-║  - Issues found in columns 2-12                                  ║
-║  - Fixes made (with before/after)                                ║
-║  - Score for their assigned packs                                ║
-╚══════════════════════════════════════════════════════════════════╝
+Note any pinyin errors to fix.
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ SUB-AGENT AUTO-FAIL CONDITIONS ⛔⛔⛔                       ║
-║                                                                  ║
-║  Sub-agents AUTOMATICALLY FAIL if they:                          ║
-║                                                                  ║
-║  ❌ Use Python/scripts to fix translations = AUTO-FAIL           ║
-║  ❌ Use Python/scripts to edit CSV content = AUTO-FAIL           ║
-║  ❌ Edit Column 1 (chinese) for ANY reason = AUTO-FAIL           ║
-║  ❌ Add or remove rows from CSV = AUTO-FAIL                      ║
-║                                                                  ║
-║  ✅ Python is ONLY for validation/checking (read-only)           ║
-║  ✅ ALL fixes must be done MANUALLY using Edit tool              ║
-║  ✅ ONLY Columns 2-12 can be edited                              ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 3: REVIEW ONE ACT AT A TIME, ONE PACK AT A TIME ===
 
-=== SUB-AGENT TASK TEMPLATE ===
-Give each sub-agent this task:
+Chinese Acts:
+- Act I (Foundation): Packs 1-14
+- Act II (Development): Packs 15-27
+- Act III (Expansion): Packs 28-57
+- Act IV (Mastery): Packs 58-85
+- Act V (Refinement): Packs 86-107
 
-"TASK: Review and fix ChineseWords{START}.csv through ChineseWords{END}.csv
+START with Act I, Pack 1. Then Pack 2. Then Pack 3... through all of Act I.
+Then move to Act II, Pack 15. Then Pack 16...
 
-╔══════════════════════════════════════════════════════════════════╗
-║  🔒 COLUMN 1 IS SACRED - NEVER TOUCH IT 🔒                       ║
-║  ⛔ USING PYTHON TO FIX TRANSLATIONS = AUTO-FAIL ⛔              ║
-║  ✅ ALL FIXES MUST BE MANUAL (Edit tool only) ✅                 ║
-╚══════════════════════════════════════════════════════════════════╝
+FOR EACH PACK:
+1. Read the CSV file: ChineseWords{N}.csv
+2. Check EVERY ROW:
+   - Column 1 (chinese): READ ONLY - never touch
+   - Column 2 (pinyin): 1 syllable per character? Correct tones? Spaces?
+   - Column 3 (english): Accurate? Natural? Common usage?
+   - Column 4 (spanish): Accurate? Natural?
+   - Column 5 (french): Accurate? Natural?
+   - Column 6 (portuguese): Accurate? Natural?
+   - Column 7 (vietnamese): Accurate? Natural?
+   - Column 8 (thai): Accurate? Natural?
+   - Column 9 (khmer): Accurate? Natural?
+   - Column 10 (indonesian): Accurate? Natural?
+   - Column 11 (malay): Accurate? Natural?
+   - Column 12 (filipino): Accurate? Natural?
 
-STEP 1 - VALIDATE Column 1 (READ-ONLY CHECK):
-   - Read each CSV's Column 1 (chinese)
-   - Verify it matches Chinese_Combined_Words from Overview for that pack
-   - Report: MATCH or MISMATCH
-   - ⛔ If mismatch: STOP and report. Do NOT fix Column 1!
-
-STEP 2 - EVALUATE EVERY ROW (Columns 2-12):
-   You MUST review EVERY SINGLE ROW in your assigned CSVs.
-   For each row, check:
-   - Pinyin (Col 2): 1 syllable per character? Correct tones? Spaces between?
-   - English (Col 3): Accurate? Natural? Common usage?
-   - Spanish (Col 4): Accurate? Natural?
-   - French (Col 5): Accurate? Natural?
-   - Portuguese (Col 6): Accurate? Natural?
-   - Vietnamese (Col 7): Accurate? Natural?
-   - Thai (Col 8): Accurate? Natural?
-   - Khmer (Col 9): Accurate? Natural?
-   - Indonesian (Col 10): Accurate? Natural?
-   - Malay (Col 11): Accurate? Natural?
-   - Filipino (Col 12): Accurate? Natural?
-
-STEP 3 - FIX MANUALLY (Columns 2-12 ONLY):
-   ⛔ NEVER use Python to fix translations!
-   ⛔ NEVER use scripts to batch-edit!
-   ✅ Use the Edit tool to fix each error MANUALLY
-   ✅ Show before/after table for each fix:
+3. IF ANYTHING IS WRONG OR COULD BE BETTER:
+   → FIX IT IMMEDIATELY with Edit tool
+   → Show before/after:
 
    | File | Row | Column | Before | After |
    |------|-----|--------|--------|-------|
-   | ChineseWords5.csv | 12 | pinyin | hóuzi | hóu zi |
+   | ChineseWords3.csv | 15 | pinyin | nǐhǎo | nǐ hǎo |
+   | ChineseWords3.csv | 22 | english | hello friend | hi friend |
 
-STEP 4 - REPORT BACK:
-   | Pack | Col1 Valid | Rows Checked | Issues Found | Issues Fixed | Score |
-   |------|------------|--------------|--------------|--------------|-------|
-   | X    | YES/NO     | count        | count        | count        | X/10  |
-"
-
-=== COORDINATOR WORKFLOW ===
-1. First, run validation to check Column 1 integrity:
-   python PythonHelpers/verify_words_integrity.py chinese
-
-2. Run pinyin validation:
-   python PythonHelpers/validate_pinyin.py chinese
-
-3. Spawn sub-agents in parallel (max 10 CSVs each)
-
-4. Collect reports from all sub-agents
-
-5. Aggregate results:
-   - Total Column 1 validation status (all must be YES)
-   - Total issues found/fixed
-   - Overall score
-
-6. Commit all changes and PR to main
+4. After finishing each Act:
+   → COMMIT all fixes for that Act
+   → PR TO MAIN
+   → Report what you fixed
 
 === BREAKOUT CSV COLUMNS (12 columns) ===
 | Col | Name       | Editable? | Notes                        |
@@ -1268,14 +1202,14 @@ INCORRECT: 猴子 → hóuzi (WRONG - no space!)
 === FINAL OUTPUT (REQUIRED) ===
 | Metric              | Value |
 |---------------------|-------|
-| Sub-Agents Used     | 11    |
-| Column 1 Valid      | All YES / X mismatches |
-| Total Issues Found  | X     |
-| Total Issues Fixed  | X     |
-| BEFORE Score        | X/10  |
-| AFTER Score         | X/10  |
+| Act Reviewed        | Act X |
+| Packs Reviewed      | X-Y   |
+| Column 1 Valid      | YES/NO |
+| Issues Found        | X     |
+| Issues Fixed        | X     |
 
-Create your own branch, commit, and PR to main.</div>
+⚠️ YOU MUST COMMIT AND PR TO MAIN AFTER EACH ACT!
+Don't just review - FIX AND PR!</div>
 
 <h3>Spanish - Stage 3</h3>
 <div>Click to copy</div>
