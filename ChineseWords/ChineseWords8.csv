@@ -1,23 +1,23 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 个,gè,Individual,Individual,Individuel,Individual,Cá nhân,บุคคล,បុគ្គល,Individu,Individu,Indibidwal
 只,zhǐ,Only,Sólo,Seulement,Somente,Chỉ,เท่านั้น,តែ,Hanya,Hanya,Tanging
-条,tiáo,Strip,Tira,Bande,Tira,Dải,เปลื้องผ้า,ស្ទ្រីប || Zhang,Hapus,Strip,Strip
+条,tiáo,strip (MW),tira,bande,tira,dải,เส้น,បន្ទាត់,batang,jalur,piraso
 张,zhāng,Zhang,Zhang,Zhang,Zhang,Trương,จาง,ដុំ,Zhang,Zhang,Zhang
 件,jiàn,Piece,Pieza,Pièce,Peça,Mảnh,ชิ้น,នេះ,Sepotong,Sekeping,Piece
 本,běn,This,Esto,Ce,Isso,Cái này,นี้,ពែង,Ini,Ini,Ito
 杯,bēi,Cup,Copa,Coupe,Copa,Cốc,คัพ,ដប,Piala,Cawan,Tasa
 瓶,píng,Bottle,Botella,Bouteille,Garrafa,Chai,ขวด,ប្លុក,Botol,Botol,Bote
-块,kuài,Block,Bloquear,Bloquer,Bloquear,Chặn,บล็อก,ខ្លះ,Blokir,Blok,I -block
+块,kuài,piece (MW),pedazo,morceau,pedaço,miếng,ชิ้น,ដុំ,potong,ketul,piraso
 些,xiē,Some,Algunos,Certains,Alguns,Một số,บางส่วน,Times,Beberapa,Beberapa,Ang ilan
-次,cì,Times,Horarios,Horaires,Tempos,Lần,ครั้ง,ប៊ីត,Kali,Times,Times
-位,wèi,Bit,Poco,Peu,Pouco,Chút,บิต,ទ្វេ || មាត់ || កំណត់,Sedikit,Bit,Bit
-双,shuāng,Double,Doble,Double,Duplo,Đôi,ดับเบิ้ล,ប្រភេទ,Ganda,Double,Doble
+次,cì,time (MW),vez,fois,vez,lần,ครั้ง,ដង,kali,kali,beses
+位,wèi,person (MW),persona,personne,pessoa,vị,ท่าน,អ្នក,orang,orang,tao
+双,shuāng,pair (MW),par,paire,par,đôi,คู่,គូ,pasang,pasang,pares
 口,kǒu,Mouth,Boca,Bouche,Boca,Miệng,ปาก,ជួរខ្ពស់ || ក្រុម,Mulut,Mulut,Bibig
-套,tào,Set,Establecer,Définir,Definir,Đặt,ตั้ง,អនុប្រធាន || មនុស្សម្នាក់,Atur,Tetapkan,Itakda
-种,zhǒng,Species,Especies,Espèce,Espécies,Loài,สายพันธุ์,ទីមួយ,Spesies,Spesies,Species
+套,tào,set (MW),conjunto,ensemble,conjunto,bộ,ชุด,សំណុំ,set,set,hanay
+种,zhǒng,kind (MW),tipo,type,tipo,loại,ชนิด,ប្រភេទ,jenis,jenis,uri
 排,pái,Row,Fila,Ligne,Linha,Hàng,แถว,ឆ្មាមួយ,Baris,Baris,Hilera
 群,qún,Group,Grupo,Groupe,Grupo,Nhóm,กลุ่ม,ពីរ,Grup,Kumpulan,Pangkat
-副,fù,Deputy,Diputado,Adjoint,Deputado,Phó,รอง,ផ្លូវមួយ,Wakil,Timbalan,Deputy
+副,fù,pair (MW),par,paire,par,cặp,คู่,គូ,pasang,pasang,pares
 一个人,yí gè rén,One person,Una persona,Une personne,Uma pessoa,Một người,คนหนึ่ง,ពីរបី,Satu orang,Satu orang,Isang tao
 首个,shǒu gè,First,Primero,Premier,Primeiro,Đầu tiên,ครั้งแรก,បី,Pertama,Pertama,Una
 一只猫,yī zhī māo,One cat,Un gato,Un chat,Um gato,Một con mèo,แมวตัวหนึ่ง,ពីរ,Seekor kucing,Satu kucing,Isang pusa
@@ -51,8 +51,8 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 一种方法,yī zhǒng fāng fǎ,One way,Ida única,Aller simple,Uma maneira,Một chiều,ทางเดียว,ក្រុមមួយ,Satu arah,Satu cara,Isang paraan
 几种,jǐ zhǒng,Several,Varios,Plusieurs,Vários,Một số,หลาย,មួយគូវ៉ែនតា,Beberapa,Beberapa,Maraming
 一排座位,yī pái zuò wèi,A row of seats,Una fila de asientos,Une rangée de sièges,Uma fileira de assentos,Một dãy ghế,ที่นั่งแถวหนึ่ง,ពីរគូ,Deretan kursi,Barisan kerusi,Isang hilera ng mga upuan
-前排,qián pái,Front row,Primera fila,Première rangée,Primeira fila,Hàng trước,แถวหน้า,[TRANSLATE_KM],Barisan depan,Barisan depan,Hilera sa harap
-一群人,yī qún rén,A group of people,Un grupo de personas,Un groupe de personnes,Um grupo de pessoas,Một nhóm người,กลุ่มคน,[TRANSLATE_KM],Sekelompok orang,Sekumpulan orang,Isang pangkat ng mga tao
-成群,chéng qún,A group,Un grupo,Un groupe,Um grupo,Một nhóm,กลุ่ม,[TRANSLATE_KM],Grup,Kumpulan,Isang pangkat
-一副眼镜,yī fù yǎn jìng,A pair of glasses,Un par de gafas,Une paire de lunettes,Um par de óculos,Một cặp kính,แก้วหนึ่ง,[TRANSLATE_KM],Sepasang kacamata,Sepasang gelas,Isang pares ng baso
-两副,liǎng fù,Two pairs,dos pares,Deux paires,Dois pares,Hai cặp,สองคู่,[TRANSLATE_KM],Dua pasang,Dua pasang,Dalawang pares
+前排,qián pái,Front row,Primera fila,Première rangée,Primeira fila,Hàng trước,แถวหน้า,ជួរមុខ,Barisan depan,Barisan depan,Hilera sa harap
+一群人,yī qún rén,A group of people,Un grupo de personas,Un groupe de personnes,Um grupo de pessoas,Một nhóm người,กลุ่มคน,មនុស្សមួយក្រុម,Sekelompok orang,Sekumpulan orang,Isang pangkat ng mga tao
+成群,chéng qún,A group,Un grupo,Un groupe,Um grupo,Một nhóm,กลุ่ม,មួយក្រុម,Grup,Kumpulan,Isang pangkat
+一副眼镜,yī fù yǎn jìng,A pair of glasses,Un par de gafas,Une paire de lunettes,Um par de óculos,Một cặp kính,แว่นตาหนึ่งอัน,វ៉ែនតាមួយ,Sepasang kacamata,Sepasang cermin mata,Isang pares ng salamin
+两副,liǎng fù,Two pairs,Dos pares,Deux paires,Dois pares,Hai cặp,สองคู่,ពីរគូ,Dua pasang,Dua pasang,Dalawang pares
