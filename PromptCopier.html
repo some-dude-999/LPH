@@ -1134,9 +1134,9 @@ Check Act IV:  ls ChineseWords/ChineseWords{76..95}.csv 2>/dev/null | wc -l
 Check Act V:   ls ChineseWords/ChineseWords{96..107}.csv 2>/dev/null | wc -l
 
 MODE A - CONSTRUCTION MODE (CSVs missing for an act):
-  → Create breakout CSVs for ONE ACT only
-  → PR to main after completing that act
-  → Next agent handles the next act
+  → Create as many breakout CSVs as you can
+  → Do as much as possible in one session
+  → ALWAYS PR to main before stopping (even if just 1 pack!)
 
 MODE B - CRITIQUE MODE (ALL CSVs exist):
   → Scrutinize existing translations for maximum correctness
@@ -1144,15 +1144,28 @@ MODE B - CRITIQUE MODE (ALL CSVs exist):
   → Fix translation quality issues, pinyin errors, unnatural phrasing
 
 === MODE A: CONSTRUCTION WORKFLOW ===
-If any act is missing CSVs, work on the FIRST incomplete act only.
+If any act is missing CSVs, CREATE AS MANY AS YOU CAN.
 
-1. Identify which act to work on (first one missing CSVs)
+╔══════════════════════════════════════════════════════════════════╗
+║  🔴 CRITICAL: ALWAYS PR BEFORE STOPPING!                         ║
+║                                                                  ║
+║  If you need to stop for ANY reason:                             ║
+║  → Commit and PR whatever you have done SO FAR                   ║
+║  → Even if it's just 1 pack - PR IT!                             ║
+║  → Even if it's just 3 packs out of 25 - PR IT!                  ║
+║  → NEVER stop without PR'ing your work to main                   ║
+║                                                                  ║
+║  No work is too small to PR. Every pack counts.                  ║
+║  Next agent will continue where you left off.                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+1. Identify which packs still need CSVs created
 2. Read ChineseWordsOverview.csv to get Combined_Words for those packs
-3. Create breakout CSVs for ONLY that act's packs
+3. Create as many breakout CSVs as you can handle
 4. Run validation: python PythonHelpers/validate_pinyin.py chinese
 5. Fix any issues MANUALLY
-6. Commit and PR to main
-7. STOP - next agent handles next act
+6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
+7. Report exactly which packs you completed so next agent knows where to start
 
 Chinese Acts:
 - Act I (Foundation): Packs 1-25 → ChineseWords1.csv to ChineseWords25.csv
@@ -1225,17 +1238,19 @@ python PythonHelpers/validate_overview_csvs.py
 These scripts ONLY check for issues. They do NOT fix anything.
 
 === FINAL OUTPUT (REQUIRED) ===
-| Metric       | Value |
-|--------------|-------|
-| Mode         | Construction / Critique |
-| Act Worked   | Act [N]: [Name] |
-| Packs        | [X] to [Y] |
-| BEFORE Score | X/10  |
-| AFTER Score  | X/10  |
-| Reason       | [1-2 sentence explanation] |
+| Metric         | Value |
+|----------------|-------|
+| Mode           | Construction / Critique |
+| Packs Created  | [List specific packs, e.g., "1-5" or "1, 3, 7"] |
+| Packs Remaining| [What's left for next agent] |
+| BEFORE Score   | X/10  |
+| AFTER Score    | X/10  |
+| Reason         | [1-2 sentence explanation] |
 
 Create your own branch, commit, and PR to main.
-⚠️ REMEMBER: ONE ACT PER PR. Do not try to do everything at once.</div>
+
+⚠️ ALWAYS PR BEFORE STOPPING - even if you only completed 1 pack!
+Every CSV you create is progress. Don't let your work be lost.</div>
 
 <h3>Spanish - Stage 3</h3>
 <div>Click to copy</div>
@@ -1274,9 +1289,9 @@ Check Act VI:  ls SpanishWords/SpanishWords{211..235}.csv 2>/dev/null | wc -l
 Check Act VII: ls SpanishWords/SpanishWords{236..250}.csv 2>/dev/null | wc -l
 
 MODE A - CONSTRUCTION MODE (CSVs missing for an act):
-  → Create breakout CSVs for ONE ACT only
-  → PR to main after completing that act
-  → Next agent handles the next act
+  → Create as many breakout CSVs as you can
+  → Do as much as possible in one session
+  → ALWAYS PR to main before stopping (even if just 1 pack!)
 
 MODE B - CRITIQUE MODE (ALL CSVs exist):
   → Scrutinize existing translations for maximum correctness
@@ -1284,15 +1299,28 @@ MODE B - CRITIQUE MODE (ALL CSVs exist):
   → Fix translation quality issues, pinyin errors, unnatural phrasing
 
 === MODE A: CONSTRUCTION WORKFLOW ===
-If any act is missing CSVs, work on the FIRST incomplete act only.
+If any act is missing CSVs, CREATE AS MANY AS YOU CAN.
 
-1. Identify which act to work on (first one missing CSVs)
+╔══════════════════════════════════════════════════════════════════╗
+║  🔴 CRITICAL: ALWAYS PR BEFORE STOPPING!                         ║
+║                                                                  ║
+║  If you need to stop for ANY reason:                             ║
+║  → Commit and PR whatever you have done SO FAR                   ║
+║  → Even if it's just 1 pack - PR IT!                             ║
+║  → Even if it's just 3 packs out of 50 - PR IT!                  ║
+║  → NEVER stop without PR'ing your work to main                   ║
+║                                                                  ║
+║  No work is too small to PR. Every pack counts.                  ║
+║  Next agent will continue where you left off.                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+1. Identify which packs still need CSVs created
 2. Read SpanishWordsOverview.csv to get Combined_Words for those packs
-3. Create breakout CSVs for ONLY that act's packs
+3. Create as many breakout CSVs as you can handle
 4. Run validation: python PythonHelpers/validate_pinyin.py spanish
 5. Fix any issues MANUALLY
-6. Commit and PR to main
-7. STOP - next agent handles next act
+6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
+7. Report exactly which packs you completed so next agent knows where to start
 
 Spanish Acts (250 packs total):
 - Act I (Foundation): Packs 1-50 → SpanishWords1.csv to SpanishWords50.csv
@@ -1353,17 +1381,19 @@ python PythonHelpers/validate_overview_csvs.py
 These scripts ONLY check for issues. They do NOT fix anything.
 
 === FINAL OUTPUT (REQUIRED) ===
-| Metric       | Value |
-|--------------|-------|
-| Mode         | Construction / Critique |
-| Act Worked   | Act [N]: [Name] |
-| Packs        | [X] to [Y] |
-| BEFORE Score | X/10  |
-| AFTER Score  | X/10  |
-| Reason       | [1-2 sentence explanation] |
+| Metric         | Value |
+|----------------|-------|
+| Mode           | Construction / Critique |
+| Packs Created  | [List specific packs, e.g., "1-5" or "1, 3, 7"] |
+| Packs Remaining| [What's left for next agent] |
+| BEFORE Score   | X/10  |
+| AFTER Score    | X/10  |
+| Reason         | [1-2 sentence explanation] |
 
 Create your own branch, commit, and PR to main.
-⚠️ REMEMBER: ONE ACT PER PR. Do not try to do everything at once.</div>
+
+⚠️ ALWAYS PR BEFORE STOPPING - even if you only completed 1 pack!
+Every CSV you create is progress. Don't let your work be lost.</div>
 
 <h3>English - Stage 3</h3>
 <div>Click to copy</div>
@@ -1400,9 +1430,9 @@ Check Act IV:  ls EnglishWords/EnglishWords{116..140}.csv 2>/dev/null | wc -l
 Check Act V:   ls EnglishWords/EnglishWords{141..160}.csv 2>/dev/null | wc -l
 
 MODE A - CONSTRUCTION MODE (CSVs missing for an act):
-  → Create breakout CSVs for ONE ACT only
-  → PR to main after completing that act
-  → Next agent handles the next act
+  → Create as many breakout CSVs as you can
+  → Do as much as possible in one session
+  → ALWAYS PR to main before stopping (even if just 1 pack!)
 
 MODE B - CRITIQUE MODE (ALL CSVs exist):
   → Scrutinize existing translations for maximum correctness
@@ -1410,15 +1440,28 @@ MODE B - CRITIQUE MODE (ALL CSVs exist):
   → Fix translation quality issues, pinyin errors, unnatural phrasing
 
 === MODE A: CONSTRUCTION WORKFLOW ===
-If any act is missing CSVs, work on the FIRST incomplete act only.
+If any act is missing CSVs, CREATE AS MANY AS YOU CAN.
 
-1. Identify which act to work on (first one missing CSVs)
+╔══════════════════════════════════════════════════════════════════╗
+║  🔴 CRITICAL: ALWAYS PR BEFORE STOPPING!                         ║
+║                                                                  ║
+║  If you need to stop for ANY reason:                             ║
+║  → Commit and PR whatever you have done SO FAR                   ║
+║  → Even if it's just 1 pack - PR IT!                             ║
+║  → Even if it's just 3 packs out of 40 - PR IT!                  ║
+║  → NEVER stop without PR'ing your work to main                   ║
+║                                                                  ║
+║  No work is too small to PR. Every pack counts.                  ║
+║  Next agent will continue where you left off.                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+1. Identify which packs still need CSVs created
 2. Read EnglishWordsOverview.csv to get Combined_Words for those packs
-3. Create breakout CSVs for ONLY that act's packs
+3. Create as many breakout CSVs as you can handle
 4. Run validation: python PythonHelpers/validate_pinyin.py english
 5. Fix any issues MANUALLY
-6. Commit and PR to main
-7. STOP - next agent handles next act
+6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
+7. Report exactly which packs you completed so next agent knows where to start
 
 English Acts (160 packs total):
 - Act I (Foundation): Packs 1-40 → EnglishWords1.csv to EnglishWords40.csv
@@ -1477,17 +1520,19 @@ python PythonHelpers/validate_overview_csvs.py
 These scripts ONLY check for issues. They do NOT fix anything.
 
 === FINAL OUTPUT (REQUIRED) ===
-| Metric       | Value |
-|--------------|-------|
-| Mode         | Construction / Critique |
-| Act Worked   | Act [N]: [Name] |
-| Packs        | [X] to [Y] |
-| BEFORE Score | X/10  |
-| AFTER Score  | X/10  |
-| Reason       | [1-2 sentence explanation] |
+| Metric         | Value |
+|----------------|-------|
+| Mode           | Construction / Critique |
+| Packs Created  | [List specific packs, e.g., "1-5" or "1, 3, 7"] |
+| Packs Remaining| [What's left for next agent] |
+| BEFORE Score   | X/10  |
+| AFTER Score    | X/10  |
+| Reason         | [1-2 sentence explanation] |
 
 Create your own branch, commit, and PR to main.
-⚠️ REMEMBER: ONE ACT PER PR. Do not try to do everything at once.</div>
+
+⚠️ ALWAYS PR BEFORE STOPPING - even if you only completed 1 pack!
+Every CSV you create is progress. Don't let your work be lost.</div>
 
 <!-- ============================================================ -->
 <!-- STAGE 4: JAVASCRIPT MODULE GENERATION                        -->
