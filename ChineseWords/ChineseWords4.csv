@@ -1,5 +1,5 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-对,duì,right,bien,droite,certo,Phải,ขวา,ខាងស្ដាម,Kanan,betul,tama
+对,duì,right,correcto,correct,certo,Đúng,ถูกต้อง,ត្រឹមត្រូវ,benar,betul,tama
 好,hǎo,good,bien,bien,bom,Tốt,ดี,ល្អ,Bagus,baik,Mabuti
 行,xíng,OK,DE ACUERDO,D'ACCORD,OK,ĐƯỢC RỒI,ตกลง,យល់ព្រម,OKE,Ok,Ok
 没问题,méi wèn tí,no problem,ningún problema,aucun problème,sem problemas,Không vấn đề,ไม่มีปัญหา,គ្មានបញ្ហា,Tidak masalah,Tiada masalah,Walang problema
@@ -13,7 +13,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 好的,hǎo de,OK,DE ACUERDO,D'ACCORD,OK,ĐƯỢC RỒI,ตกลง,យល់ព្រម,OKE,Ok,Ok
 是的,shì de,Yes,Sí,Oui,Sim,Đúng,ใช่,បាត,Ya,Ya,Oo
 对的,duì de,Yes,Sí,Oui,Sim,Đúng,ใช่,បាត,Ya,Ya,Oo
-对了,duì le,Right,Bien,Droite,Certo,Phải,ขวา,ខាងស្ដាម,Benar,Betul,Tama
+对了,duì le,Right,Correcto,C'est exact,Certo,Đúng rồi,ถูกแล้ว,ត្រឹមត្រូវហើយ,Benar,Betul,Tama
 算了,suàn le,never mind,no importa,pas grave,deixa para lá,đừng bận tâm,ช่างเถอะ,មិនអីទេ,Sudahlah,tidak keberatan,Huwag alalahanin
 没事,méi shì,fine,bien,bien,multar,khỏe,ดี,ល្អ,Bagus,baik,Fine
 准确,zhǔn què,precise,preciso,précis,preciso,chính xác,แม่นยำ,ចាក់លាក់,tepat,tepat,tumpak
@@ -43,9 +43,9 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 真的好的,zhēn de hǎo de,really good,realmente bueno,vraiment bien,muito bom,thực sự tốt,ดีจริงๆ,ពិតជាល្អណាស់,sangat bagus,betul -betul bagus,Mabuti talaga
 是的呢,shì de ne,Yes,Sí,Oui,Sim,Đúng,ใช่,បាត,Ya,Ya,Oo
 真是的,zhēn shì de,Really,En realidad,Vraiment,Realmente,Thật sự,จริงหรือ,ដោយបិតរបាកដ,Benar-benar,Betul,Talaga
-对的呀,duì de ya,Right,Bien,Droite,Certo,Phải,ขวา,ខាងស្ដាម,Benar,Betul,Tama
+对的呀,duì de ya,Right,Correcto,C'est exact,Certo,Đúng mà,ถูกต้องนะ,ត្រឹមត្រូវហើយ,Benar,Betul,Tama
 完全对的,wán quán duì de,absolutely right,absolutamente correcto,tout à fait raison,absolutamente certo,hoàn toàn đúng,ถูกต้องอย่างแน่นอน,ពិតជាត្រឹមត្រូវ,benar sekali,betul -betul betul,Ganap na tama
-对了吧,duì le ba,Right?,¿Bien?,Droite?,Certo?,Phải?,ขวา?,ត្រូវ?,Benar?,Betul?,Di ba?
+对了吧,duì le ba,Right?,¿Correcto?,C'est exact?,Certo?,Đúng không?,ถูกไหม?,ត្រឹមត្រូវទេ?,Benar?,Betul?,Di ba?
 说对了,shuō duì le,That's right,Así es,C'est exact,Isso mesmo,Đúng rồi,ถูกต้องแล้ว,ត្រឹមត្រូវហើយ,Itu benar,Betul,Tama yan
 算了吧,suàn le ba,Forget it,Olvídalo,Oublie ça,Esqueça,Quên nó đi,ลืมมันซะ,ភ្លេចវា,Lupakan,Lupakannya,Kalimutan mo na
 就算了,jiù suàn le,Forget it,Olvídalo,Oublie ça,Esqueça,Quên nó đi,ลืมมันซะ,ភ្លេចវា,Lupakan,Lupakannya,Kalimutan mo na
