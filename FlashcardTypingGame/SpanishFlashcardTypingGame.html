@@ -1773,6 +1773,88 @@
     }
 
     /* Arrow removed - using simple div style instead of speech bubble */
+
+    /* =================================================================
+       CHINESE DISPLAY OPTIONS - Character + Pinyin Coupling
+       Design: Yellow/gold warning-style box to draw attention
+       Shows only when native language is Chinese
+       ================================================================= */
+    .chinese-display-options {
+      display: none;  /* Hidden by default, shown via JS when nativeLanguage is chinese */
+      margin: 10px 0;
+      padding: 10px 15px;
+      background: rgba(255, 243, 205, 0.9);
+      border: 1px solid #ffc107;
+      border-radius: 5px;
+      color: var(--color-text-dark);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+    }
+
+    .chinese-display-options strong {
+      color: var(--color-text-dark);
+      margin-right: 10px;
+    }
+
+    .chinese-display-options label {
+      margin-left: 15px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .chinese-display-options input[type="checkbox"] {
+      cursor: pointer;
+    }
+
+    /* =================================================================
+       CHINESE CHARACTER + PINYIN COUPLED DISPLAY
+       Core Objective: Render each Chinese character with its pinyin directly below
+
+       Structure:
+         .chinese-coupled (flex container, horizontal)
+           └─ .char-group (flex column for each character)
+               ├─ .chinese-char (the character)
+               └─ .pinyin (pinyin syllable)
+
+       This ensures char/pinyin are NEVER separated during display
+       ================================================================= */
+    .chinese-coupled {
+      display: inline-flex;
+      gap: 4px;
+      align-items: flex-end;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .char-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .chinese-char {
+      font-size: 1em;
+      line-height: 1.2;
+    }
+
+    .pinyin {
+      font-size: 0.6em;
+      color: #666;
+      line-height: 1;
+      font-family: var(--font-answer);
+    }
+
+    /* Adjust for card display - larger characters */
+    .card-word .chinese-coupled .chinese-char {
+      font-size: 1em;
+    }
+
+    .card-word .chinese-coupled .pinyin {
+      font-size: 0.4em;
+      color: #8B7355;
+    }
   </style>
 </head>
 <body>
@@ -1813,6 +1895,23 @@
   <!-- Fixed-height wrapper prevents card from shifting when stamp indicator appears -->
   <div class="card-counter-wrapper">
     <div class="card-counter" id="card-counter">Choose Wordpack to Begin Studying</div>
+  </div>
+
+  <!-- =================================================================
+       CHINESE DISPLAY OPTIONS
+       Shows only when nativeLanguage is 'chinese'
+       Controls whether to show characters, pinyin, or both
+       ================================================================= -->
+  <div class="chinese-display-options" id="chineseDisplayOptions">
+    <strong>Chinese Display:</strong>
+    <label>
+      <input type="checkbox" id="showChineseChars" checked>
+      Show Characters (汉字)
+    </label>
+    <label>
+      <input type="checkbox" id="showPinyin" checked>
+      Show Pinyin (pīnyīn)
+    </label>
   </div>
 
   <div class="flashcard-container">
@@ -1962,6 +2061,159 @@
       return Object.keys(getLanguageConfig().translations);
     }
 
+    // ===================================================================================
+    // CHINESE CHARACTER + PINYIN COUPLING SYSTEM
+    // Core Objective: Keep Chinese characters and their pinyin syllables coupled
+    //
+    // Anti-Decoupling Principle: Chinese characters and pinyin MUST stay together
+    // Example: "小猫" (xiǎo māo) → [{char:"小", pinyin:"xiǎo"}, {char:"猫", pinyin:"māo"}]
+    //
+    // This ensures when rendering Chinese, we can ALWAYS show:
+    //   小    猫      (characters on top)
+    //  xiǎo  māo     (pinyin below each character)
+    //
+    // Functions:
+    //   - coupleChineseWithPinyin(chinese, pinyin) → array of {char, pinyin}
+    //   - renderChineseWithPinyin(coupledArray) → HTML element with coupled display
+    //   - renderChineseText(chinese, pinyin) → convenience function combining both
+    // ===================================================================================
+
+    /**
+     * Couples each Chinese character with its corresponding pinyin syllable
+     * @param {string} chineseStr - Chinese characters (e.g., "小猫")
+     * @param {string} pinyinStr - Space-separated pinyin syllables (e.g., "xiǎo māo")
+     * @returns {Array<{char: string, pinyin: string}>} - Array of coupled char/pinyin objects
+     *
+     * Example: coupleChineseWithPinyin("小猫", "xiǎo māo")
+     *   → [{char: "小", pinyin: "xiǎo"}, {char: "猫", pinyin: "māo"}]
+     */
+    function coupleChineseWithPinyin(chineseStr, pinyinStr) {
+      // Handle null/empty Chinese input
+      if (!chineseStr) return [];
+
+      // If no pinyin provided, return characters with empty pinyin
+      if (!pinyinStr) {
+        return [...chineseStr].map(char => ({ char, pinyin: '' }));
+      }
+
+      // Split into individual characters and syllables
+      const chars = [...chineseStr];  // Spread handles multi-byte chars correctly
+      const syllables = pinyinStr.trim().split(/\s+/);  // Split on whitespace
+
+      // Warn if counts don't match (data quality issue)
+      if (chars.length !== syllables.length) {
+        console.warn(`PINYIN MISMATCH: "${chineseStr}" has ${chars.length} chars but "${pinyinStr}" has ${syllables.length} syllables. Data may need fixing.`);
+      }
+
+      // Create coupled array (use '?' for missing pinyin)
+      return chars.map((char, i) => ({
+        char: char,
+        pinyin: syllables[i] || '?'  // Use '?' to highlight missing data
+      }));
+    }
+
+    /**
+     * Renders a coupled Chinese array as an HTML element with char on top, pinyin below
+     * Respects showChineseChars and showPinyin global settings
+     * @param {Array<{char: string, pinyin: string}>} coupledArray - From coupleChineseWithPinyin()
+     * @returns {HTMLElement} - Span element with flex-column groups for each character
+     */
+    function renderChineseWithPinyin(coupledArray) {
+      // If neither chars nor pinyin should be shown, return empty span
+      if (!showChineseChars && !showPinyin) {
+        const empty = document.createElement('span');
+        empty.textContent = '(hidden)';
+        empty.style.cssText = 'color: #999; font-style: italic;';
+        return empty;
+      }
+
+      const container = document.createElement('span');
+      container.className = 'chinese-coupled';
+
+      coupledArray.forEach(({ char, pinyin }) => {
+        const charGroup = document.createElement('span');
+        charGroup.className = 'char-group';
+
+        // Chinese character (on top)
+        if (showChineseChars) {
+          const charSpan = document.createElement('span');
+          charSpan.className = 'chinese-char';
+          charSpan.textContent = char;
+          charGroup.appendChild(charSpan);
+        }
+
+        // Pinyin (below)
+        if (showPinyin) {
+          const pinyinSpan = document.createElement('span');
+          pinyinSpan.className = 'pinyin';
+          pinyinSpan.textContent = pinyin;
+          charGroup.appendChild(pinyinSpan);
+        }
+
+        container.appendChild(charGroup);
+      });
+
+      return container;
+    }
+
+    /**
+     * Convenience function: Couples and renders Chinese text in one call
+     * @param {string} chinese - Chinese characters
+     * @param {string} pinyin - Space-separated pinyin
+     * @returns {HTMLElement} - Ready-to-append HTML element
+     */
+    function renderChineseText(chinese, pinyin) {
+      const coupled = coupleChineseWithPinyin(chinese, pinyin);
+      return renderChineseWithPinyin(coupled);
+    }
+
+    /**
+     * Returns HTML string for Chinese text (useful for innerHTML assignments)
+     * @param {string} chinese - Chinese characters
+     * @param {string} pinyin - Space-separated pinyin
+     * @returns {string} - HTML string
+     */
+    function getChineseHtml(chinese, pinyin) {
+      const element = renderChineseText(chinese, pinyin);
+      return element.outerHTML;
+    }
+
+    /**
+     * Updates visibility of Chinese display options based on current language
+     * Called when language changes or on page load
+     */
+    function updateChineseOptionsVisibility() {
+      const optionsDiv = document.getElementById('chineseDisplayOptions');
+      if (optionsDiv) {
+        // Show only when learning with Chinese translations
+        optionsDiv.style.display = (nativeLanguage === 'chinese') ? 'block' : 'none';
+      }
+    }
+
+    /**
+     * Sets up event listeners for Chinese display option checkboxes
+     */
+    function setupChineseDisplayOptions() {
+      const showCharsCheckbox = document.getElementById('showChineseChars');
+      const showPinyinCheckbox = document.getElementById('showPinyin');
+
+      if (showCharsCheckbox) {
+        showCharsCheckbox.addEventListener('change', () => {
+          showChineseChars = showCharsCheckbox.checked;
+          saveState();
+          updateDisplay();
+        });
+      }
+
+      if (showPinyinCheckbox) {
+        showPinyinCheckbox.addEventListener('change', () => {
+          showPinyin = showPinyinCheckbox.checked;
+          saveState();
+          updateDisplay();
+        });
+      }
+    }
+
     let nativeLanguage = getLanguageConfig().defaultTranslation; // Default from config
     let gameStarted = false;
     let currentWordpackKey = '';
@@ -1990,6 +2242,14 @@
     let keysPressed = {};
 
     // ===================================================================================
+    // CHINESE DISPLAY OPTIONS (Global state)
+    // Controls how Chinese translations are rendered (character + pinyin coupling)
+    // These settings affect ALL Chinese text display across the app
+    // ===================================================================================
+    let showChineseChars = true;  // Show Chinese characters (汉字) - default ON
+    let showPinyin = true;        // Show pinyin under each character - default ON
+
+    // ===================================================================================
     // LOCAL STORAGE - Save and restore user progress
     // ===================================================================================
     const STORAGE_KEY = 'spanishFlashcardState';
@@ -2002,7 +2262,10 @@
           speed: currentSpeed,
           wordpackKey: currentWordpackKey,
           act: currentAct,
-          language: nativeLanguage
+          language: nativeLanguage,
+          // Chinese display options
+          showChineseChars: showChineseChars,
+          showPinyin: showPinyin
         };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       } catch (e) {
@@ -2607,6 +2870,12 @@
             playButtonClickSound();
             nativeLanguage = e.target.value;
             updateBackLabel();
+            // Update Chinese display options visibility
+            updateChineseOptionsVisibility();
+            // Reinitialize deck to include/exclude pinyin based on new language
+            if (currentWordpackKey) {
+              initializeDeck(currentWordpackKey);
+            }
             saveState();
           });
         }
@@ -3180,6 +3449,9 @@
       // Initialize tooltips from single source of truth
       initializeTooltips();
 
+      // Setup Chinese display options checkboxes
+      setupChineseDisplayOptions();
+
       try {
         // First, determine the first act from language modules
         const acts = getLanguageConfig().acts;
@@ -3197,6 +3469,9 @@
 
         // Restore any saved state (may change currentAct and currentWordpackKey)
         restoreSavedState();
+
+        // Update Chinese display options visibility based on restored language
+        updateChineseOptionsVisibility();
 
         // If saved act is different from the first act we loaded, load it
         if (currentAct !== firstAct) {
@@ -3282,6 +3557,20 @@
       if (savedState.voiceURI) {
         savedVoiceURI = savedState.voiceURI;
       }
+
+      // Restore Chinese display options (default to true if not saved)
+      if (savedState.showChineseChars !== undefined) {
+        showChineseChars = savedState.showChineseChars;
+      }
+      if (savedState.showPinyin !== undefined) {
+        showPinyin = savedState.showPinyin;
+      }
+
+      // Update checkbox states in UI
+      const showCharsCheckbox = document.getElementById('showChineseChars');
+      const showPinyinCheckbox = document.getElementById('showPinyin');
+      if (showCharsCheckbox) showCharsCheckbox.checked = showChineseChars;
+      if (showPinyinCheckbox) showPinyinCheckbox.checked = showPinyin;
     }
 
     function updateBackLabel() {
@@ -3329,13 +3618,34 @@
       const langConfig = translations[nativeLanguage];
       const nativeIndex = langConfig ? langConfig.index : translations[getLanguageConfig().defaultTranslation].index;
 
+      // ============================================================
+      // CHINESE PINYIN COUPLING
+      // When nativeLanguage is 'chinese', we also store the pinyin
+      // Spanish word array structure: [spanish, english, chinese, pinyin, portuguese]
+      // So pinyin is at index 3 when chinese is at index 2
+      // ============================================================
+      const isChinese = (nativeLanguage === 'chinese');
+      const pinyinIndex = 3; // Pinyin column in Spanish word arrays
+
       // CRITICAL: Each card object contains BOTH front (spanish) and back (translation)
       // These are NEVER stored separately - they are always linked as one object
-      originalDeck = pack.words.map((word, idx) => ({
-        id: `${packKey}-${idx}`,      // Unique ID for this card
-        spanish: word[0],              // Front of card (Spanish word)
-        translation: word[nativeIndex] // Back of card (translation) - LINKED to spanish
-      }));
+      // When translation is Chinese, we also store pinyin for coupling
+      originalDeck = pack.words.map((word, idx) => {
+        const card = {
+          id: `${packKey}-${idx}`,       // Unique ID for this card
+          spanish: word[0],               // Front of card (Spanish word)
+          translation: word[nativeIndex]  // Back of card (translation) - LINKED to spanish
+        };
+
+        // Add pinyin when translating to Chinese
+        // This enables the character+pinyin coupled display
+        if (isChinese) {
+          card.translationPinyin = word[pinyinIndex] || '';
+          card.translationIsChinese = true;
+        }
+
+        return card;
+      });
 
       // Shuffle the card OBJECTS - front and back stay linked because they're the same object
       currentDeck = shuffleArray([...originalDeck]);
@@ -3475,6 +3785,21 @@
     //   - card.translation = back of card
     //   - These are NEVER from different sources - always same object
     // ============================================================
+
+    /**
+     * Renders the translation text, using coupled Chinese+pinyin display when applicable
+     * @param {Object} card - Card object with translation and optionally translationPinyin
+     * @returns {string} - HTML string for the translation
+     */
+    function renderTranslation(card) {
+      // If translation is Chinese, use coupled rendering
+      if (card.translationIsChinese && card.translationPinyin) {
+        return getChineseHtml(card.translation, card.translationPinyin);
+      }
+      // Otherwise, plain text
+      return card.translation;
+    }
+
     function updateDisplay() {
       // Starting card is shown/hidden by showStartingCard/exitStartingCard
       // Don't update card content when on starting card
@@ -3516,10 +3841,11 @@
       // Mode-specific display
       if (currentMode === 'reading') {
         // READING MODE - Purpose: Learn to read Spanish and understand meaning
-        // Front: Spanish word | Back: English translation
+        // Front: Spanish word | Back: English/Chinese translation
+        // When translation is Chinese, renderTranslation() returns coupled char+pinyin HTML
         spanishWord.textContent = card.spanish;
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
+        englishWord.innerHTML = `<div class="translation-text">${renderTranslation(card)}</div>`;
         englishWord.className = 'card-word';
         // Clear indicators
         wrongLettersFront.innerHTML = '';
@@ -3543,7 +3869,8 @@
         // Update card content (no indicators embedded here)
         spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `${card.spanish}<br><div class="translation-text">${card.translation}</div>`;
+        // Back shows Spanish word + translation (with Chinese coupling if applicable)
+        englishWord.innerHTML = `${card.spanish}<br><div class="translation-text">${renderTranslation(card)}</div>`;
         englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
         // WRITING MODE - Purpose: Learn to write/spell Spanish from English
@@ -3562,16 +3889,18 @@
           ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
           : '';
         // Update card content (no indicators embedded here)
-        spanishWord.innerHTML = `<div class="translation-text">${card.translation}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
+        // WRITING MODE: Front shows translation (for user to translate FROM)
+        // When translation is Chinese, show with coupled char+pinyin
+        spanishWord.innerHTML = `<div class="translation-text">${renderTranslation(card)}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
         englishWord.textContent = card.spanish;
         englishWord.className = 'card-word';
       } else if (currentMode === 'speaking') {
         // SPEAKING MODE - Purpose: Learn to pronounce Spanish correctly
-        // Front: Spanish word + microphone button | Back: English translation
+        // Front: Spanish word + microphone button | Back: Translation (with Chinese coupling if applicable)
         spanishWord.textContent = card.spanish;
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
+        englishWord.innerHTML = `<div class="translation-text">${renderTranslation(card)}</div>`;
         englishWord.className = 'card-word';
         // Clear indicators
         wrongLettersFront.innerHTML = '';
