@@ -1,0 +1,43 @@
+spanish,english,chinese,pinyin,portuguese
+tiempo,weather,天气,tiān qì,tempo
+frío,cold,冷,lěng,frio
+calor,heat,热,rè,calor
+sol,sun,太阳,tài yáng,sol
+viento,wind,风,fēng,vento
+lluvia,rain,雨,yǔ,chuva
+nieve,snow,雪,xuě,neve
+nube,cloud,云,yún,nuvem
+niebla,fog,雾,wù,nevoeiro
+tormenta,storm,暴风雨,bào fēng yǔ,tempestade
+clima,climate,气候,qì hòu,clima
+temperatura,temperature,温度,wēn dù,temperatura
+pronóstico,forecast,预报,yù bào,previsão
+húmedo,humid,潮湿,cháo shī,húmido
+hace buen tiempo,the weather is nice,天气好,tiān qì hǎo,está bom tempo
+el tiempo,the weather,天气,tiān qì,o tempo
+hace frío,it's cold,天气冷,tiān qì lěng,está frio
+mucho frío,very cold,非常冷,fēi cháng lěng,muito frio
+hace calor,it's hot,天气热,tiān qì rè,está calor
+mucho calor,very hot,非常热,fēi cháng rè,muito calor
+hace sol,it's sunny,阳光明媚,yáng guāng míng mèi,está sol
+el sol,the sun,太阳,tài yáng,o sol
+hace viento,it's windy,刮风,guā fēng,está vento
+mucho viento,a lot of wind,风很大,fēng hěn dà,muito vento
+hay lluvia,there's rain,有雨,yǒu yǔ,há chuva
+la lluvia,the rain,雨,yǔ,a chuva
+hay nieve,there's snow,有雪,yǒu xuě,há neve
+la nieve,the snow,雪,xuě,a neve
+hay nubes,there are clouds,有云,yǒu yún,há nuvens
+una nube,a cloud,一朵云,yì duǒ yún,uma nuvem
+hay niebla,there's fog,有雾,yǒu wù,há nevoeiro
+la niebla,the fog,雾,wù,o nevoeiro
+hay tormenta,there's a storm,有暴风雨,yǒu bào fēng yǔ,há tempestade
+la tormenta,the storm,暴风雨,bào fēng yǔ,a tempestade
+el clima,the climate,气候,qì hòu,o clima
+buen clima,good climate,好气候,hǎo qì hòu,bom clima
+la temperatura,the temperature,温度,wēn dù,a temperatura
+alta temperatura,high temperature,高温,gāo wēn,alta temperatura
+el pronóstico,the forecast,预报,yù bào,a previsão
+mal pronóstico,bad forecast,坏预报,huài yù bào,má previsão
+muy húmedo,very humid,非常潮湿,fēi cháng cháo shī,muito húmido
+clima húmedo,humid climate,潮湿的气候,cháo shī de qì hòu,clima húmido
