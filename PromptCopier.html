@@ -1163,39 +1163,67 @@ This task MUST be done with sub-agents. Each sub-agent handles MAX 10 CSVs.
 ║  - Score for their assigned packs                                ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔⛔⛔ SUB-AGENT AUTO-FAIL CONDITIONS ⛔⛔⛔                       ║
+║                                                                  ║
+║  Sub-agents AUTOMATICALLY FAIL if they:                          ║
+║                                                                  ║
+║  ❌ Use Python/scripts to fix translations = AUTO-FAIL           ║
+║  ❌ Use Python/scripts to edit CSV content = AUTO-FAIL           ║
+║  ❌ Edit Column 1 (chinese) for ANY reason = AUTO-FAIL           ║
+║  ❌ Add or remove rows from CSV = AUTO-FAIL                      ║
+║                                                                  ║
+║  ✅ Python is ONLY for validation/checking (read-only)           ║
+║  ✅ ALL fixes must be done MANUALLY using Edit tool              ║
+║  ✅ ONLY Columns 2-12 can be edited                              ║
+╚══════════════════════════════════════════════════════════════════╝
+
 === SUB-AGENT TASK TEMPLATE ===
 Give each sub-agent this task:
 
-"Review ChineseWords{START}.csv through ChineseWords{END}.csv
+"TASK: Review and fix ChineseWords{START}.csv through ChineseWords{END}.csv
 
-1. VALIDATION (Column 1 - READ ONLY):
+╔══════════════════════════════════════════════════════════════════╗
+║  🔒 COLUMN 1 IS SACRED - NEVER TOUCH IT 🔒                       ║
+║  ⛔ USING PYTHON TO FIX TRANSLATIONS = AUTO-FAIL ⛔              ║
+║  ✅ ALL FIXES MUST BE MANUAL (Edit tool only) ✅                 ║
+╚══════════════════════════════════════════════════════════════════╝
+
+STEP 1 - VALIDATE Column 1 (READ-ONLY CHECK):
    - Read each CSV's Column 1 (chinese)
-   - Verify words match Chinese_Combined_Words from Overview for that pack
-   - Report: MATCH or MISMATCH (if mismatch, list discrepancies)
-   - ⛔ DO NOT edit Column 1 under any circumstances
+   - Verify it matches Chinese_Combined_Words from Overview for that pack
+   - Report: MATCH or MISMATCH
+   - ⛔ If mismatch: STOP and report. Do NOT fix Column 1!
 
-2. CRITIQUE (Columns 2-12 ONLY):
-   - Pinyin (Col 2): 1 syllable per character, correct tones, spaces between
-   - English (Col 3): accurate, natural translation
-   - Spanish (Col 4): accurate, natural translation
-   - French (Col 5): accurate, natural translation
-   - Portuguese (Col 6): accurate, natural translation
-   - Vietnamese (Col 7): accurate, natural translation
-   - Thai (Col 8): accurate, natural translation
-   - Khmer (Col 9): accurate, natural translation
-   - Indonesian (Col 10): accurate, natural translation
-   - Malay (Col 11): accurate, natural translation
-   - Filipino (Col 12): accurate, natural translation
+STEP 2 - EVALUATE EVERY ROW (Columns 2-12):
+   You MUST review EVERY SINGLE ROW in your assigned CSVs.
+   For each row, check:
+   - Pinyin (Col 2): 1 syllable per character? Correct tones? Spaces between?
+   - English (Col 3): Accurate? Natural? Common usage?
+   - Spanish (Col 4): Accurate? Natural?
+   - French (Col 5): Accurate? Natural?
+   - Portuguese (Col 6): Accurate? Natural?
+   - Vietnamese (Col 7): Accurate? Natural?
+   - Thai (Col 8): Accurate? Natural?
+   - Khmer (Col 9): Accurate? Natural?
+   - Indonesian (Col 10): Accurate? Natural?
+   - Malay (Col 11): Accurate? Natural?
+   - Filipino (Col 12): Accurate? Natural?
 
-3. FIX (Columns 2-12 ONLY):
-   - Manually fix pinyin errors
-   - Manually fix translation errors
-   - Show before/after for each fix
+STEP 3 - FIX MANUALLY (Columns 2-12 ONLY):
+   ⛔ NEVER use Python to fix translations!
+   ⛔ NEVER use scripts to batch-edit!
+   ✅ Use the Edit tool to fix each error MANUALLY
+   ✅ Show before/after table for each fix:
 
-4. REPORT BACK:
-   | Pack | Col1 Valid | Issues Found | Issues Fixed | Score |
-   |------|------------|--------------|--------------|-------|
-   | X    | YES/NO     | count        | count        | X/10  |
+   | File | Row | Column | Before | After |
+   |------|-----|--------|--------|-------|
+   | ChineseWords5.csv | 12 | pinyin | hóuzi | hóu zi |
+
+STEP 4 - REPORT BACK:
+   | Pack | Col1 Valid | Rows Checked | Issues Found | Issues Fixed | Score |
+   |------|------------|--------------|--------------|--------------|-------|
+   | X    | YES/NO     | count        | count        | count        | X/10  |
 "
 
 === COORDINATOR WORKFLOW ===
