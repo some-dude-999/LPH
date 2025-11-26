@@ -518,6 +518,50 @@
 
   <!--
     ============================================================
+    CHINESE DISPLAY OPTIONS - Global Controls (Show Char / Show Pinyin)
+    ============================================================
+    These checkboxes control how Chinese text is displayed EVERYWHERE:
+    - In the vocabulary table (column 0 when learning Chinese, or Chinese translation column)
+    - In flashcard front (when target language is Chinese)
+    - In multiple choice options (both correct and wrong answers when Chinese)
+    - In any context where Chinese needs to be displayed
+
+    WHY THIS MATTERS:
+    Chinese learners need to see BOTH characters AND pinyin together,
+    with pinyin positioned directly under each character. This allows
+    the brain to associate each character with its pronunciation.
+
+    ANTI-DECOUPLING APPLIED TO CHARACTERS:
+    Just as flashcard front/back must be stored together, each Chinese
+    character must be COUPLED with its pinyin syllable. We never store
+    characters and pinyin in separate arrays - they're paired at the
+    character level using the coupleChineseWithPinyin() function.
+
+    VISIBILITY LOGIC:
+    - This options panel is ONLY visible when Chinese is involved:
+      * Learning Chinese (state.currentLanguage === 'Chinese')
+      * OR native language includes Chinese/Pinyin translation
+    - Controlled by updateChineseOptionsVisibility() function
+
+    DEFAULT: Both checked (show characters AND pinyin)
+  -->
+  <div id="chineseDisplayOptions" style="display: none; margin: 10px 0; padding: 10px; background: #fff3cd; border: 1px solid #ffc107; border-radius: 5px;">
+    <strong>Chinese Display Options:</strong>
+    <label style="margin-left: 15px;">
+      <input type="checkbox" id="showChineseChars" checked>
+      Show Characters (汉字)
+    </label>
+    <label style="margin-left: 15px;">
+      <input type="checkbox" id="showPinyin" checked>
+      Show Pinyin (pīnyīn)
+    </label>
+    <span style="margin-left: 15px; color: #856404; font-size: 0.9em;">
+      (Affects all Chinese text: table, flashcards, multiple choice)
+    </span>
+  </div>
+
+  <!--
+    ============================================================
     FLASHCARD MODE CHECKBOX
     ============================================================
     When enabled, shows a simple flashcard interface demonstrating
@@ -767,6 +811,8 @@
       - typingStates: Map tracking typing state for each word (wordIndex -> state object)
       - pronunciationMode: Boolean flag for showing pronunciation practice columns
       - pronunciationStates: Map tracking pronunciation state for each word (wordIndex -> { score, heard, attempted })
+      - showChineseChars: Boolean flag for showing Chinese characters (global)
+      - showPinyin: Boolean flag for showing pinyin under characters (global)
     */
     let state = {
       currentLanguage: 'Spanish',  // Default language
@@ -782,7 +828,12 @@
       flashcardMode: false,         // Default to flashcard mode off
       flashcardDeck: [],            // Anti-decoupled deck: [{front, back, id}, ...] - NEVER separate arrays!
       flashcardIndex: 0,            // Current card index in flashcardDeck
-      flashcardShowingFront: true   // true = showing front, false = showing back
+      flashcardShowingFront: true,  // true = showing front, false = showing back
+      // ════════════════════════════════════════════════════════════════════════════
+      // CHINESE DISPLAY OPTIONS (Global - affects ALL Chinese text rendering)
+      // ════════════════════════════════════════════════════════════════════════════
+      showChineseChars: true,       // Show Chinese characters (汉字) - default ON
+      showPinyin: true              // Show pinyin under each character - default ON
     };
 
     // ============================================================
@@ -824,7 +875,10 @@
         multipleChoiceMode: state.multipleChoiceMode,
         typingMode: state.typingMode,
         pronunciationMode: state.pronunciationMode,
-        flashcardMode: state.flashcardMode
+        flashcardMode: state.flashcardMode,
+        // Chinese display options (saved so user preference persists)
+        showChineseChars: state.showChineseChars,
+        showPinyin: state.showPinyin
       };
 
       try {
@@ -926,6 +980,14 @@
       }
       if (typeof saved.flashcardMode === 'boolean') {
         state.flashcardMode = saved.flashcardMode;
+      }
+
+      // Restore Chinese display options (both default to true if not saved)
+      if (typeof saved.showChineseChars === 'boolean') {
+        state.showChineseChars = saved.showChineseChars;
+      }
+      if (typeof saved.showPinyin === 'boolean') {
+        state.showPinyin = saved.showPinyin;
       }
 
       return true;
@@ -1167,6 +1229,7 @@
       // ════════════════════════════════════════════════════════════════════════
       setupLanguageRadioButtons();
       setupModeCheckboxes();  // ENCAPSULATED: Single function for all mode checkboxes
+      setupChineseDisplayOptions();  // Chinese character + pinyin toggle handlers
       populateActDropdown();
       populateNativeLanguageDropdown();
 
@@ -1231,6 +1294,15 @@
       if (nativeSelect) {
         nativeSelect.value = state.currentNativeLanguage;
       }
+
+      // Sync Chinese display options checkboxes
+      const charsCheckbox = document.getElementById('showChineseChars');
+      const pinyinCheckbox = document.getElementById('showPinyin');
+      if (charsCheckbox) charsCheckbox.checked = state.showChineseChars;
+      if (pinyinCheckbox) pinyinCheckbox.checked = state.showPinyin;
+
+      // Show/hide Chinese options panel based on language context
+      updateChineseOptionsVisibility();
     }
 
     // ============================================================
@@ -1305,6 +1377,9 @@
           // Update UI
           populateActDropdown();
           populateNativeLanguageDropdown();
+
+          // Update Chinese display options visibility (show/hide based on language)
+          updateChineseOptionsVisibility();
 
           // Auto-select first act and pack (ENCAPSULATED - DRY)
           // Previously this was 15+ lines of duplicated code
@@ -1731,6 +1806,343 @@
         .toLowerCase();                      // Convert to lowercase
     }
 
+    // ╔══════════════════════════════════════════════════════════════════════════════╗
+    // ║                                                                              ║
+    // ║       CHINESE CHARACTER + PINYIN COUPLING SYSTEM                             ║
+    // ║       (Anti-Decoupling Applied to Character Level)                           ║
+    // ║                                                                              ║
+    // ╠══════════════════════════════════════════════════════════════════════════════╣
+    // ║                                                                              ║
+    // ║  PURPOSE:                                                                    ║
+    // ║  Ensure each Chinese character is PERMANENTLY LINKED to its pinyin.         ║
+    // ║  This is the SAME anti-decoupling principle as flashcard front/back,        ║
+    // ║  but applied at the character level instead of card level.                  ║
+    // ║                                                                              ║
+    // ║  THE PROBLEM:                                                                ║
+    // ║  Chinese: "小猫"     Pinyin: "xiǎo māo"                                      ║
+    // ║  If stored separately, they can get out of sync:                            ║
+    // ║    - Someone edits Chinese to "小猫咪" but forgets pinyin                   ║
+    // ║    - Pinyin syllables don't match character count                           ║
+    // ║    - User sees wrong pinyin under wrong character                           ║
+    // ║                                                                              ║
+    // ║  THE SOLUTION:                                                               ║
+    // ║  Transform at load time into COUPLED objects:                               ║
+    // ║  [                                                                           ║
+    // ║    { char: "小", pinyin: "xiǎo" },                                           ║
+    // ║    { char: "猫", pinyin: "māo" }                                             ║
+    // ║  ]                                                                           ║
+    // ║  Now they CANNOT get out of sync - they're properties of same object!       ║
+    // ║                                                                              ║
+    // ║  FUNCTIONS IN THIS SECTION:                                                  ║
+    // ║  1. coupleChineseWithPinyin() - Creates the coupled array                   ║
+    // ║  2. renderChineseWithPinyin() - Creates HTML with pinyin under chars        ║
+    // ║  3. setupChineseDisplayOptions() - Handles checkbox events                  ║
+    // ║  4. updateChineseOptionsVisibility() - Shows/hides options panel            ║
+    // ║                                                                              ║
+    // ╚══════════════════════════════════════════════════════════════════════════════╝
+
+    // ============================================================
+    // CHINESE COUPLING: Character + Pinyin Pairing
+    // ============================================================
+
+    /*
+      coupleChineseWithPinyin() - Creates anti-decoupled character-pinyin pairs
+
+      WHY THIS FUNCTION EXISTS:
+      Our CSV and JS modules store Chinese and Pinyin as separate strings:
+        - Chinese: "小猫" (column 0 for Chinese)
+        - Pinyin:  "xiǎo māo" (column 1 for Chinese)
+
+      This is fine for storage (human-readable), but DANGEROUS for display.
+      If we split them separately, they could get out of sync.
+
+      SOLUTION: Transform at load time into coupled objects.
+      Each character is paired with its pinyin syllable IN THE SAME OBJECT.
+
+      ALGORITHM:
+      1. Split Chinese string into individual characters (using [...str])
+      2. Split pinyin string by spaces into syllables
+      3. Validate: character count MUST equal syllable count
+      4. Zip together: char[i] pairs with syllable[i]
+      5. Return array of {char, pinyin} objects
+
+      ERROR HANDLING:
+      - If counts don't match, log warning and pad with '?'
+      - Never crash - always return something displayable
+      - Validation helps catch data errors early
+
+      EXAMPLE:
+      INPUT:  coupleChineseWithPinyin("小猫", "xiǎo māo")
+      OUTPUT: [{char: "小", pinyin: "xiǎo"}, {char: "猫", pinyin: "māo"}]
+
+      INPUT:  coupleChineseWithPinyin("你好世界", "nǐ hǎo shì jiè")
+      OUTPUT: [{char: "你", pinyin: "nǐ"}, {char: "好", pinyin: "hǎo"},
+               {char: "世", pinyin: "shì"}, {char: "界", pinyin: "jiè"}]
+
+      PARAMETERS:
+        - chineseStr: String of Chinese characters (e.g., "小猫")
+        - pinyinStr: Space-separated pinyin syllables (e.g., "xiǎo māo")
+
+      RETURNS: Array of {char, pinyin} objects
+    */
+    function coupleChineseWithPinyin(chineseStr, pinyinStr) {
+      // Handle empty/null inputs gracefully
+      if (!chineseStr) return [];
+      if (!pinyinStr) {
+        // No pinyin available - return chars with empty pinyin
+        return [...chineseStr].map(char => ({ char, pinyin: '' }));
+      }
+
+      // Split Chinese into individual characters
+      // Using [...str] handles multi-byte Unicode correctly
+      const chars = [...chineseStr];
+
+      // Split pinyin by spaces into syllables
+      const syllables = pinyinStr.trim().split(/\s+/);
+
+      // Validate: character count should match syllable count
+      // (Each Chinese character has exactly one pinyin syllable)
+      if (chars.length !== syllables.length) {
+        console.warn(
+          `PINYIN MISMATCH: "${chineseStr}" has ${chars.length} chars ` +
+          `but "${pinyinStr}" has ${syllables.length} syllables. ` +
+          `Data may be corrupted.`
+        );
+      }
+
+      // Create coupled array - each char paired with its syllable
+      // Use '?' for missing syllables to make errors visible
+      return chars.map((char, i) => ({
+        char: char,
+        pinyin: syllables[i] || '?'
+      }));
+    }
+
+    // ============================================================
+    // CHINESE RENDERING: Display Characters with Pinyin
+    // ============================================================
+
+    /*
+      renderChineseWithPinyin() - Creates HTML element showing chars with pinyin
+
+      WHAT IT RENDERS:
+      For each character, creates a vertical stack:
+        ┌─────┐
+        │ 小  │  ← Chinese character (larger font)
+        │xiǎo │  ← Pinyin syllable (smaller font)
+        └─────┘
+
+      Multiple characters are displayed side-by-side:
+        ┌─────┬─────┐
+        │ 小  │ 猫  │
+        │xiǎo │ māo │
+        └─────┴─────┘
+
+      DISPLAY OPTIONS (controlled by state.showChineseChars & state.showPinyin):
+      - Both checked:     Show characters AND pinyin (default)
+      - Only chars:       Show characters only (no pinyin)
+      - Only pinyin:      Show pinyin only (no characters)
+      - Neither checked:  Show empty (edge case)
+
+      WHY USE HTML ELEMENTS INSTEAD OF TEXT?
+      - Text can't position pinyin under each specific character
+      - With elements, pinyin is vertically aligned under its character
+      - CSS flexbox handles the horizontal layout automatically
+
+      EXAMPLE OUTPUT HTML:
+      <span class="chinese-coupled" style="display: inline-flex; gap: 2px;">
+        <span class="char-group" style="display: flex; flex-direction: column; align-items: center;">
+          <span class="chinese-char" style="font-size: 1.2em;">小</span>
+          <span class="pinyin" style="font-size: 0.7em; color: #666;">xiǎo</span>
+        </span>
+        <span class="char-group" style="...">
+          <span class="chinese-char" style="...">猫</span>
+          <span class="pinyin" style="...">māo</span>
+        </span>
+      </span>
+
+      PARAMETERS:
+        - coupledArray: Array from coupleChineseWithPinyin() - [{char, pinyin}, ...]
+
+      RETURNS: DOM element (span) ready to append to any container
+    */
+    function renderChineseWithPinyin(coupledArray) {
+      // Create container for the whole word
+      const container = document.createElement('span');
+      container.className = 'chinese-coupled';
+      container.style.cssText = 'display: inline-flex; gap: 2px; align-items: flex-end;';
+
+      // Handle empty array
+      if (!coupledArray || coupledArray.length === 0) {
+        container.textContent = '';
+        return container;
+      }
+
+      // Create a character group for each char-pinyin pair
+      coupledArray.forEach(({ char, pinyin }) => {
+        const charGroup = document.createElement('span');
+        charGroup.className = 'char-group';
+        charGroup.style.cssText = 'display: flex; flex-direction: column; align-items: center;';
+
+        // Character element (top)
+        if (state.showChineseChars) {
+          const charSpan = document.createElement('span');
+          charSpan.className = 'chinese-char';
+          charSpan.style.cssText = 'font-size: 1.2em; line-height: 1.2;';
+          charSpan.textContent = char;
+          charGroup.appendChild(charSpan);
+        }
+
+        // Pinyin element (bottom)
+        if (state.showPinyin) {
+          const pinyinSpan = document.createElement('span');
+          pinyinSpan.className = 'pinyin';
+          pinyinSpan.style.cssText = 'font-size: 0.7em; color: #666; line-height: 1;';
+          pinyinSpan.textContent = pinyin;
+          charGroup.appendChild(pinyinSpan);
+        }
+
+        container.appendChild(charGroup);
+      });
+
+      return container;
+    }
+
+    /*
+      renderChineseText() - High-level function to render Chinese with pinyin
+
+      This is the MAIN ENTRY POINT for rendering Chinese text anywhere in the app.
+      It handles the full pipeline: couple → render.
+
+      WHEN TO USE:
+      - Displaying Chinese vocabulary in table (target language column)
+      - Displaying Chinese translations (native language column when Chinese)
+      - Flashcard front when learning Chinese
+      - Multiple choice options when answers are Chinese
+      - ANY place where Chinese text needs the char+pinyin display
+
+      IMPORTANT: This function checks if we're dealing with Chinese.
+      If not Chinese, it returns a simple text span (no coupling needed).
+
+      PARAMETERS:
+        - text: The Chinese text string (e.g., "小猫")
+        - pinyin: The pinyin string (e.g., "xiǎo māo")
+        - isChinese: Boolean flag - true if this is Chinese text
+
+      RETURNS: DOM element (span) with appropriate rendering
+    */
+    function renderChineseText(text, pinyin, isChinese) {
+      // If not Chinese, just return plain text
+      if (!isChinese) {
+        const span = document.createElement('span');
+        span.textContent = text;
+        return span;
+      }
+
+      // Chinese: couple and render
+      const coupled = coupleChineseWithPinyin(text, pinyin);
+      return renderChineseWithPinyin(coupled);
+    }
+
+    // ============================================================
+    // CHINESE OPTIONS: Checkbox Setup and Visibility
+    // ============================================================
+
+    /*
+      setupChineseDisplayOptions() - Initialize checkbox event handlers
+
+      WHAT IT DOES:
+      - Adds change listeners to showChineseChars and showPinyin checkboxes
+      - When toggled: updates state, saves to localStorage, refreshes display
+
+      WHY GLOBAL REFRESH?
+      Chinese display affects multiple places:
+      - Vocabulary table
+      - Flashcard content
+      - Multiple choice options
+      All must update when display options change, hence full displayVocabulary() call.
+
+      CALLED FROM: initialize()
+    */
+    function setupChineseDisplayOptions() {
+      const charsCheckbox = document.getElementById('showChineseChars');
+      const pinyinCheckbox = document.getElementById('showPinyin');
+
+      if (charsCheckbox) {
+        charsCheckbox.addEventListener('change', (e) => {
+          state.showChineseChars = e.target.checked;
+          displayVocabulary();  // Refresh all displays
+
+          // Also refresh flashcard if visible
+          if (state.flashcardMode) {
+            updateFlashcardDisplay();
+          }
+
+          saveState();  // Persist preference
+        });
+      }
+
+      if (pinyinCheckbox) {
+        pinyinCheckbox.addEventListener('change', (e) => {
+          state.showPinyin = e.target.checked;
+          displayVocabulary();  // Refresh all displays
+
+          // Also refresh flashcard if visible
+          if (state.flashcardMode) {
+            updateFlashcardDisplay();
+          }
+
+          saveState();  // Persist preference
+        });
+      }
+    }
+
+    /*
+      updateChineseOptionsVisibility() - Show/hide Chinese options panel
+
+      LOGIC:
+      The Chinese display options panel should be visible when:
+      1. Learning Chinese (state.currentLanguage === 'Chinese')
+      2. OR when native language is Chinese/Pinyin (showing Chinese translations)
+
+      CALLED FROM:
+      - setupLanguageRadioButtons() when language changes
+      - populateNativeLanguageDropdown() when native language changes
+      - initialize() on page load
+    */
+    function updateChineseOptionsVisibility() {
+      const optionsDiv = document.getElementById('chineseDisplayOptions');
+      if (!optionsDiv) return;
+
+      // Determine if Chinese is involved
+      let showOptions = false;
+
+      // Case 1: Learning Chinese
+      if (state.currentLanguage === 'Chinese') {
+        showOptions = true;
+      }
+
+      // Case 2: Native language is Chinese (translation column shows Chinese)
+      // Check if the selected native language index corresponds to Chinese
+      // For Spanish: column 2 is Chinese, column 3 is Pinyin
+      // For English: columns vary
+      const config = LANGUAGE_CONFIG[state.currentLanguage];
+      if (config && config.nativeLanguages) {
+        const nativeEntries = Object.entries(config.nativeLanguages);
+        for (const [name, colIndex] of nativeEntries) {
+          if (colIndex === state.currentNativeLanguage) {
+            // Check if this native language is Chinese-related
+            if (name.toLowerCase().includes('chinese') || name.toLowerCase().includes('pinyin')) {
+              showOptions = true;
+            }
+            break;
+          }
+        }
+      }
+
+      optionsDiv.style.display = showOptions ? 'block' : 'none';
+    }
+
     // ============================================================
     // POPULATE ACT DROPDOWN: Based on Loaded Data
     // ============================================================
@@ -1867,6 +2279,16 @@
         state.currentNativeLanguage = parseInt(e.target.value);
         displayVocabulary();
 
+        // Update Chinese display options visibility
+        // (If user switches to Chinese translation, show the options)
+        updateChineseOptionsVisibility();
+
+        // Also refresh flashcard if visible (translation might be Chinese now)
+        if (state.flashcardMode) {
+          initFlashcardDeck();  // Rebuild deck with new native language
+          updateFlashcardDisplay();
+        }
+
         // ════════════════════════════════════════════════════════════════════════
         // SAVE STATE: Persist native language change to localStorage
         // ════════════════════════════════════════════════════════════════════════
@@ -1989,6 +2411,83 @@
             // Only add if normalized version is different from correct answer
             if (normalizedWord !== normalizedCorrect) {
               allWords.push(targetLanguageWord);
+            }
+          }
+        });
+      });
+
+      // STEP 3: Shuffle using Fisher-Yates algorithm for uniform randomness
+      for (let i = allWords.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [allWords[i], allWords[j]] = [allWords[j], allWords[i]];
+      }
+
+      // STEP 4: Take first 'count' words (or fewer if pool is small)
+      const wrongAnswers = allWords.slice(0, Math.min(count, allWords.length));
+
+      return wrongAnswers;
+    }
+
+    // ============================================================
+    // CHINESE WRONG ANSWERS: Include Pinyin for Coupled Display
+    // ============================================================
+
+    /*
+      generateWrongAnswersWithPinyin() - Generate wrong answers for Chinese with pinyin
+
+      SAME ALGORITHM as generateWrongAnswers(), but returns objects with BOTH
+      the Chinese text AND the pinyin. This enables proper coupled rendering.
+
+      WHY A SEPARATE FUNCTION?
+      - generateWrongAnswers() returns simple strings (for Spanish, English)
+      - Chinese needs BOTH text AND pinyin for each wrong answer
+      - We could modify the original, but keeping separate maintains clarity
+      - DRY is preserved: this function uses same filtering/shuffling logic
+
+      INPUT:
+        - actData: Dictionary of all wordpacks in the current act
+        - correctAnswer: The correct answer string (Chinese characters, to filter out)
+        - count: Number of wrong answers to generate (default 4)
+
+      OUTPUT:
+        - Array of objects: [{ text: "小猫", pinyin: "xiǎo māo" }, ...]
+        - Each object has both the Chinese text and its pinyin coupled together
+        - This enables renderChineseText() to display with pinyin underneath
+
+      EXAMPLE:
+      INPUT:  generateWrongAnswersWithPinyin(actData, "大狗", 2)
+      OUTPUT: [
+        { text: "小猫", pinyin: "xiǎo māo" },
+        { text: "老虎", pinyin: "lǎo hǔ" }
+      ]
+    */
+    function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) {
+      // STEP 1: Normalize the correct answer for comparison
+      const normalizedCorrect = normalizeString(correctAnswer);
+
+      // STEP 2: Collect all words WITH PINYIN from all packs in the act
+      const allWords = [];
+
+      // Loop through each pack in the act
+      Object.keys(actData).forEach(packKey => {
+        const pack = actData[packKey];
+
+        // Loop through each word in this pack
+        pack.words.forEach(word => {
+          const chineseText = word[0];  // Column 0 is Chinese characters
+          const pinyinText = word[1];   // Column 1 is Pinyin
+
+          // Filter out the correct answer and normalized duplicates
+          if (chineseText !== correctAnswer) {
+            const normalizedWord = normalizeString(chineseText);
+
+            // Only add if normalized version is different from correct answer
+            if (normalizedWord !== normalizedCorrect) {
+              // Store BOTH text and pinyin as coupled object
+              allWords.push({
+                text: chineseText,
+                pinyin: pinyinText
+              });
             }
           }
         });
@@ -2306,20 +2805,89 @@
       // ============================================================
       // POPULATE TABLE ROWS: Generate vocabulary with optional wrong answers
       // ============================================================
+
+      // ════════════════════════════════════════════════════════════════════════
+      // CHINESE RENDERING SETUP
+      // ════════════════════════════════════════════════════════════════════════
+      // Determine if we need Chinese character+pinyin rendering for:
+      // 1. Target language column (when learning Chinese)
+      // 2. Native language column (when translation is Chinese)
+      //
+      // COLUMN MAPPING FOR CHINESE:
+      // - Column 0: Chinese characters (汉字)
+      // - Column 1: Pinyin
+      // - Column 2+: Other translations (English, Spanish, etc.)
+      //
+      // COLUMN MAPPING FOR SPANISH/ENGLISH (when showing Chinese translation):
+      // - Spanish: Column 2 = Chinese, Column 3 = Pinyin
+      // - English: Check config for Chinese column indices
+      // ════════════════════════════════════════════════════════════════════════
+      const isLearningChinese = state.currentLanguage === 'Chinese';
+
+      // Determine if native language column shows Chinese (needs coupling)
+      const nativeConfig = LANGUAGE_CONFIG[state.currentLanguage];
+      let nativeIsChinese = false;
+      let nativePinyinColumn = null;
+      if (nativeConfig && nativeConfig.nativeLanguages) {
+        const entries = Object.entries(nativeConfig.nativeLanguages);
+        for (const [name, colIndex] of entries) {
+          if (colIndex === state.currentNativeLanguage && name.toLowerCase().includes('chinese')) {
+            nativeIsChinese = true;
+            // Find pinyin column (usually the next one)
+            const pinyinEntry = entries.find(([n]) => n.toLowerCase().includes('pinyin'));
+            if (pinyinEntry) {
+              nativePinyinColumn = pinyinEntry[1];
+            }
+            break;
+          }
+        }
+      }
+
       pack.words.forEach((word, index) => {
         const row = document.createElement('tr');
 
+        // ════════════════════════════════════════════════════════════════════════
         // COLUMN 1: Target language (correct answer, column 0 from words array)
+        // ════════════════════════════════════════════════════════════════════════
+        // CHINESE RENDERING: When learning Chinese, render with pinyin underneath
+        // For Chinese: word[0] = characters, word[1] = pinyin
+        // ════════════════════════════════════════════════════════════════════════
         const cell1 = document.createElement('td');
-        cell1.textContent = word[0];
+        if (isLearningChinese) {
+          // Chinese: Use coupled rendering (characters + pinyin)
+          const chineseText = word[0];
+          const pinyinText = word[1];  // For Chinese, column 1 is always pinyin
+          const renderedElement = renderChineseText(chineseText, pinyinText, true);
+          cell1.appendChild(renderedElement);
+        } else {
+          // Not Chinese: plain text
+          cell1.textContent = word[0];
+        }
         row.appendChild(cell1);
 
+        // ════════════════════════════════════════════════════════════════════════
         // COLUMN 2: Native language translation (selected column from words array)
+        // ════════════════════════════════════════════════════════════════════════
+        // CHINESE RENDERING: When native language is Chinese, render with pinyin
+        // ════════════════════════════════════════════════════════════════════════
         const cell2 = document.createElement('td');
-        cell2.textContent = word[state.currentNativeLanguage];
+        if (nativeIsChinese && nativePinyinColumn !== null) {
+          // Native language is Chinese: Use coupled rendering
+          const chineseText = word[state.currentNativeLanguage];
+          const pinyinText = word[nativePinyinColumn];
+          const renderedElement = renderChineseText(chineseText, pinyinText, true);
+          cell2.appendChild(renderedElement);
+        } else {
+          // Not Chinese: plain text
+          cell2.textContent = word[state.currentNativeLanguage];
+        }
         row.appendChild(cell2);
 
+        // ════════════════════════════════════════════════════════════════════════
         // COLUMNS 3-6: Wrong answers (only in multiple choice mode)
+        // ════════════════════════════════════════════════════════════════════════
+        // CHINESE RENDERING: When learning Chinese, wrong answers need pinyin too
+        // ════════════════════════════════════════════════════════════════════════
         if (state.multipleChoiceMode) {
           /*
             Generate 4 random wrong answers from ALL wordpacks in the current act.
@@ -2327,14 +2895,35 @@
             - Pool: All words from all packs in the current act (~2,500 words)
             - Filtering: Exclude correct answer and normalized duplicates
             - Each wrong answer is from column 0 (target language)
+
+            CHINESE MODE: We also need the pinyin for each wrong answer.
+            generateWrongAnswersWithPinyin() returns objects with {text, pinyin}.
           */
           const correctAnswer = word[0];
-          const wrongAnswers = generateWrongAnswers(actData, correctAnswer, 4);
+          let wrongAnswers;
+
+          if (isLearningChinese) {
+            // Chinese: Generate wrong answers WITH pinyin
+            wrongAnswers = generateWrongAnswersWithPinyin(actData, correctAnswer, 4);
+          } else {
+            // Other languages: Simple text array
+            wrongAnswers = generateWrongAnswers(actData, correctAnswer, 4);
+          }
 
           // Add each wrong answer as a table cell
           wrongAnswers.forEach(wrongAnswer => {
             const wrongCell = document.createElement('td');
-            wrongCell.textContent = wrongAnswer;
+            if (isLearningChinese && wrongAnswer.pinyin !== undefined) {
+              // Chinese: Render with pinyin
+              const renderedElement = renderChineseText(wrongAnswer.text, wrongAnswer.pinyin, true);
+              wrongCell.appendChild(renderedElement);
+            } else if (typeof wrongAnswer === 'string') {
+              // Non-Chinese: Plain text
+              wrongCell.textContent = wrongAnswer;
+            } else {
+              // Fallback for object without pinyin
+              wrongCell.textContent = wrongAnswer.text || wrongAnswer;
+            }
             row.appendChild(wrongCell);
           });
 
@@ -2583,6 +3172,10 @@
       Each card is ONE OBJECT containing BOTH front and back.
       We NEVER store fronts and backs in separate arrays.
 
+      CHINESE SUPPORT:
+      When learning Chinese, we also store pinyin for the front (target language).
+      This enables coupled character+pinyin rendering on the flashcard.
+
       INPUT: Uses state.currentPack to get words from current wordpack
       OUTPUT: Populates state.flashcardDeck with card objects
     */
@@ -2604,19 +3197,58 @@
       const nativeIndex = state.currentNativeLanguage;
 
       // ════════════════════════════════════════════════════════════════════════
+      // CHINESE RENDERING SETUP FOR FLASHCARDS
+      // ════════════════════════════════════════════════════════════════════════
+      const isLearningChinese = state.currentLanguage === 'Chinese';
+
+      // Check if native language is Chinese (for back of card)
+      let nativeIsChinese = false;
+      let nativePinyinColumn = null;
+      if (config && config.nativeLanguages) {
+        const entries = Object.entries(config.nativeLanguages);
+        for (const [name, colIndex] of entries) {
+          if (colIndex === nativeIndex && name.toLowerCase().includes('chinese')) {
+            nativeIsChinese = true;
+            const pinyinEntry = entries.find(([n]) => n.toLowerCase().includes('pinyin'));
+            if (pinyinEntry) nativePinyinColumn = pinyinEntry[1];
+            break;
+          }
+        }
+      }
+
+      // ════════════════════════════════════════════════════════════════════════
       // ANTI-DECOUPLING: Create cards as SINGLE OBJECTS with front AND back
       // ════════════════════════════════════════════════════════════════════════
       // Each card object contains BOTH the front (target language) and back
       // (native language translation). These are NEVER stored separately.
       // This is the KEY PRINCIPLE that prevents flip-mismatch bugs.
+      //
+      // CHINESE ADDITION: Also store pinyin for Chinese text to enable
+      // coupled rendering (characters + pinyin together).
       // ════════════════════════════════════════════════════════════════════════
-      state.flashcardDeck = pack.words.map((word, index) => ({
-        id: `card-${index}`,           // Unique identifier for this card
-        front: word[0],                 // Target language (column 0) - FRONT of card
-        back: word[nativeIndex],        // Native language translation - BACK of card
-        // ↑ NOTICE: front and back are PROPERTIES OF THE SAME OBJECT
-        // They are linked forever. Shuffling moves the whole object.
-      }));
+      state.flashcardDeck = pack.words.map((word, index) => {
+        const card = {
+          id: `card-${index}`,           // Unique identifier for this card
+          front: word[0],                 // Target language (column 0) - FRONT of card
+          back: word[nativeIndex],        // Native language translation - BACK of card
+          // ↑ NOTICE: front and back are PROPERTIES OF THE SAME OBJECT
+          // They are linked forever. Shuffling moves the whole object.
+        };
+
+        // Add pinyin for Chinese front (when learning Chinese)
+        if (isLearningChinese) {
+          card.frontPinyin = word[1];  // Column 1 is pinyin for Chinese
+          card.frontIsChinese = true;
+        }
+
+        // Add pinyin for Chinese back (when translation is Chinese)
+        if (nativeIsChinese && nativePinyinColumn !== null) {
+          card.backPinyin = word[nativePinyinColumn];
+          card.backIsChinese = true;
+        }
+
+        return card;
+      });
 
       console.log(`Initialized flashcard deck with ${state.flashcardDeck.length} cards (anti-decoupled)`);
     }
@@ -2626,6 +3258,10 @@
 
       This function demonstrates that we ALWAYS access front and back
       from the SAME card object: cards[currentIndex].front or .back
+
+      CHINESE SUPPORT:
+      When front or back is Chinese, renders with pinyin underneath each character
+      using the renderChineseText() function for coupled display.
     */
     function updateFlashcardDisplay() {
       const contentEl = document.getElementById('flashcardContent');
@@ -2647,12 +3283,37 @@
       // ↑ This is ONE object. currentCard.front and currentCard.back are ALWAYS
       //   the correct pair because they're properties of the SAME object.
 
+      // Clear previous content
+      contentEl.innerHTML = '';
+
       // Show front or back based on current side
+      // ════════════════════════════════════════════════════════════════════════
+      // CHINESE RENDERING: Use coupled char+pinyin display when applicable
+      // ════════════════════════════════════════════════════════════════════════
       if (state.flashcardShowingFront) {
-        contentEl.textContent = currentCard.front;
+        // FRONT of card (target language)
+        if (currentCard.frontIsChinese) {
+          // Chinese: Use coupled rendering with pinyin
+          const renderedElement = renderChineseText(currentCard.front, currentCard.frontPinyin, true);
+          // Make flashcard content larger for better visibility
+          renderedElement.style.fontSize = '2em';
+          contentEl.appendChild(renderedElement);
+        } else {
+          // Non-Chinese: Plain text
+          contentEl.textContent = currentCard.front;
+        }
         sideEl.textContent = '(FRONT - Target Language) - click to see translation';
       } else {
-        contentEl.textContent = currentCard.back;
+        // BACK of card (translation/native language)
+        if (currentCard.backIsChinese) {
+          // Chinese translation: Use coupled rendering with pinyin
+          const renderedElement = renderChineseText(currentCard.back, currentCard.backPinyin, true);
+          renderedElement.style.fontSize = '2em';
+          contentEl.appendChild(renderedElement);
+        } else {
+          // Non-Chinese: Plain text
+          contentEl.textContent = currentCard.back;
+        }
         sideEl.textContent = '(BACK - Translation) - click to flip back';
       }
 
@@ -2668,14 +3329,16 @@ const currentCard = ${JSON.stringify(currentCard, null, 2)};
 
 // Accessing front: currentCard.front = "${currentCard.front}"
 // Accessing back:  currentCard.back  = "${currentCard.back}"
+${currentCard.frontIsChinese ? `// frontPinyin: "${currentCard.frontPinyin}" (Chinese coupled rendering)` : ''}
+${currentCard.backIsChinese ? `// backPinyin: "${currentCard.backPinyin}" (Chinese coupled rendering)` : ''}
 
 // ↑ NOTICE: Both come from the SAME object!
 // They are LINKED - they cannot get out of sync.
 
 // The deck is an array of these objects:
 // state.flashcardDeck = [
-//   { id: "card-0", front: "...", back: "..." },
-//   { id: "card-1", front: "...", back: "..." },
+//   { id: "card-0", front: "...", back: "...", frontPinyin?: "...", ... },
+//   { id: "card-1", front: "...", back: "...", ... },
 //   ...
 // ]`;
       }
