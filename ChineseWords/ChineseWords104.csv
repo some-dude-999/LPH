@@ -1,0 +1,46 @@
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+品质,pǐn zhì,Quality,Calidad,Qualité,Qualidade,Chất lượng,คุณภาพ,គុណភាព,Kualitas,Kualiti,Kalidad
+质量,zhì liàng,Specification sheet,Hoja de especificaciones,Fiche technique,Ficha de especificações,Bảng thông số kỹ thuật,เอกสารข้อมูลจำเพาะ,សន្លឹកបញ្ជាក់,Lembar spesifikasi,Lembaran Spesifikasi,SPECIFICATION SHEET
+标准,biāo zhǔn,According to specifications,Según especificaciones,Selon cahier des charges,De acordo com as especificações,Theo thông số kỹ thuật,ตามข้อกำหนด,នេះបើយោងតាមការបញ្ជាក់,Sesuai spesifikasi,Menurut spesifikasi,Ayon sa mga pagtutukoy
+规格,guī gé,Inspector,Inspectora,Inspecteur,Inspetor,Thanh tra,สารวัตร,អធិការ,Inspektur,Inspektor,Inspektor
+检验,jiǎn yàn,Do inspection,Hacer inspección,Faire une inspection,Fazer inspeção,Kiểm tra,ทำการตรวจสอบ,ធ្វើការត្រួតពិនិត្យ,Lakukan pemeriksaan,Adakah pemeriksaan,Gawin inspeksyon
+检测,jiǎn cè,Test report,Informe de prueba,Rapport d'essai,Relatório de teste,Báo cáo thử nghiệm,รายงานการทดสอบ,របាយការណ៍តេស្ត,Laporan pengujian,Laporan Ujian,Ulat sa Pagsubok
+合格,hé gé,Do inspection,Hacer inspección,Faire une inspection,Fazer inspeção,Kiểm tra,ทำการตรวจสอบ,ធ្វើការត្រួតពិនិត្យ,Lakukan pemeriksaan,Adakah pemeriksaan,Gawin inspeksyon
+不合格,bù hé gé,Passed,Aprobado,Passé,Aprovado,Đã vượt qua,ผ่าน,បានអនុម័ត,Lulus,Lulus,Lumipas
+达标,dá biāo,Passed inspection,Inspección aprobada,Inspection réussie,Inspeção aprovada,Đã qua kiểm tra,ผ่านการตรวจสอบ,បានឆ្លងកាត់ការត្រួតពិនិត្យ,Lulus pemeriksaan,Lulus Pemeriksaan,Naipasa inspeksyon
+优质,yōu zhì,Unsatisfactory product,Producto insatisfactorio,Produit insatisfaisant,Produto insatisfatório,Sản phẩm không đạt yêu cầu,สินค้าไม่น่าพอใจ,ផលិតផលដែលមិនពេញចិត្ត,Produk kurang memuaskan,Produk yang tidak memuaskan,Hindi kasiya -siyang produkto
+优良,yōu liáng,Failed inspection,Inspección fallida,Échec de l'inspection,Inspeção falhada,Kiểm tra không thành công,การตรวจสอบล้มเหลว,ការត្រួតពិនិត្យបានបរាជ័យ,Inspeksi gagal,Pemeriksaan gagal,Nabigong inspeksyon
+次品,cì pǐn,Meet the standard,Cumplir con el estándar,Répondre à la norme,Atenda ao padrão,Đạt tiêu chuẩn,ได้มาตรฐาน,បំពេញតាមស្តង់ដារ,Memenuhi standar,Memenuhi standard,Kilalanin ang Pamantayan
+瑕疵,xiá cī,Reached the standard,Alcanzó el estándar,A atteint la norme,Atingiu o padrão,Đạt tiêu chuẩn,ถึงมาตรฐานแล้ว,| បានឈានដល់ស្តង់ដារ,Mencapai standar,Mencapai standard,Naabot ang pamantayan
+认证,rèn zhèng,High-quality product,Producto de alta calidad,Produit de haute qualité,Produto de alta qualidade,Sản phẩm chất lượng cao,สินค้าคุณภาพสูง,| ផលិតផលដែលមានគុណភាពខ្ពស់,Produk berkualitas tinggi,Produk berkualiti tinggi,Mataas na kalidad na produkto
+规范,guī fàn,Provide high quality,Proporcionar alta calidad,Fournir une haute qualité,Fornecer alta qualidade,Cung cấp chất lượng cao,ให้คุณภาพสูง,ផ្តល់ជូននូវគុណភាពខ្ពស់,Memberikan kualitas tinggi,Menyediakan Kualiti Tinggi,Magbigay ng mataas na kalidad
+品质好,pǐn zhì hǎo,Excellent variety,Excelente variedad,Excellente variété,Excelente variedade,Sự đa dạng tuyệt vời,ความหลากหลายที่ยอดเยี่ยม,ពូជល្អបំផុត,Variasi luar biasa,Variety yang sangat baik,Mahusay na iba't -ibang
+高品质,gāo pǐn zhì,Excellent quality,Excelente calidad,Excellente qualité,Excelente qualidade,Chất lượng tuyệt vời,คุณภาพดีเยี่ยม,គុណភាពល្អឥតខ្ចោះ,Kualitas luar biasa,Kualiti yang sangat baik,Mahusay na kalidad
+质量好,zhì liàng hǎo,It is a defective product,Es un producto defectuoso,C'est un produit défectueux,É um produto com defeito,Đó là sản phẩm bị lỗi,เป็นสินค้ามีตำหนิ,វាគឺជាផលិតផលដែលមានបញ្ហា,Ini adalah produk cacat,Ia adalah produk yang cacat,Ito ay isang depektibong produkto
+保证质量,bǎo zhèng zhì liàng,There is a defective product,Hay un producto defectuoso,Il y a un produit défectueux,Existe um produto com defeito,Có sản phẩm bị lỗi,มีสินค้าชำรุด,មានផលិតផលខ្វះចន្លោះមួយ,Ada produk cacat,Terdapat produk yang cacat,Mayroong isang may sira na produkto
+标准高,biāo zhǔn gāo,There are defects,Hay defectos,Il y a des défauts,Existem defeitos,Có khiếm khuyết,มีตำหนิ,មានពិការភាព,Ada cacat,Terdapat kecacatan,May mga depekto
+按标准,àn biāo zhǔn,Flawless,Impecable,Impeccable,Impecável,Hoàn hảo,ไร้ที่ติ,ខាំល្អ,Sempurna,Sempurna,Walang kamali -mali
+规格表,guī gé biǎo,Certified,Certificado,Certifié,Certificado,Được chứng nhận,ได้รับการรับรอง,វិញ្ញាបនប័ត្រ,Bersertifikat,Bersertifikat,Sertipikado
+按规格,àn guī gé,Certified,Certificado,Certifié,Certificado,Được chứng nhận,ได้รับการรับรอง,វិញ្ញាបនប័ត្រ,Bersertifikat,Bersertifikat,Sertipikado
+检验员,jiǎn yàn yuán,Standardized,Estandarizado,Standardisé,Padronizado,Chuẩn hóa,ได้มาตรฐาน,ស្តង់ដារ,Terstandar,Standardized,Standardized
+做检验,zuò jiǎn yàn,According to specifications,Según especificaciones,Selon cahier des charges,De acordo com especificações,Theo thông số kỹ thuật,ตามข้อกำหนด,នេះបើយោងតាមការបញ្ជាក់,Sesuai dengan spesifikasi,Mengikut spesifikasi,Ayon sa mga pagtutukoy
+检测报告,jiǎn cè bào gào,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+做检测,zuò jiǎn cè,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+合格了,hé gé le,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+检验合格,jiǎn yàn hé gé,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+不合格品,bù hé gé pǐn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+检验不合格,jiǎn yàn bù hé gé,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+达标了,dá biāo le,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+已达标,yǐ dá biāo,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+优质品,yōu zhì pǐn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+提供优质,tí gōng yōu zhì,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+优良品种,yōu liáng pǐn zhǒng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+品质优良,pǐn zhì yōu liáng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+是次品,shì cì pǐn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+有次品,yǒu cì pǐn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+有瑕疵,yǒu xiá cī,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+无瑕疵,wú xiá cī,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+通过认证,tōng guò rèn zhèng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+做认证,zuò rèn zhèng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+规范化,guī fàn huà,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+按规范,àn guī fàn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]

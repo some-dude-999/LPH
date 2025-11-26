@@ -1,0 +1,43 @@
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+星期,xīng qī,Week,Semana,Semaine,Semana,Tuần,สัปดาห์,សប្តាហ៍ || ថ្ងៃច័ន្ទ,Minggu,Minggu,Linggo
+星期一,xīng qī yī,Monday,Lunes,Lundi,Segunda-feira,Thứ Hai,วันจันทร์,ថ្ងៃអង្គារ,Senin,Isnin,Lunes
+星期二,xīng qī èr,Tuesday,Martes,mardi,Terça-feira,Thứ Ba,วันอังคาร,ថ្ងៃពុធ,Selasa,Selasa,Martes
+星期三,xīng qī sān,Wednesday,miércoles,Mercredi,Quarta-feira,Thứ Tư,วันพุธ,ថ្ងៃព្រហស្បតិ៍ || ថ្ងៃសុក្រ,Rabu,Rabu,Miyerkules
+星期四,xīng qī sì,Thursday,Jueves,jeudi,Quinta-feira,Thứ Năm,พฤหัสบดี,ថ្ងៃសៅរ៍,Kamis,Khamis,Huwebes
+星期五,xīng qī wǔ,Friday,Viernes,Vendredi,Sexta-feira,Thứ Sáu,วันศุกร์,ថ្ងៃអាទិត្យ,Jumat,Jumaat,Biyernes
+星期六,xīng qī liù,Saturday,Sábado,Samedi,Sábado,Thứ Bảy,วันเสาร์,សប្តាហ៍ || ថ្ងៃច័ន្ទ,Sabtu,Sabtu,Sabado
+星期日,xīng qī rì,Sunday,domingo,Dimanche,Domingo,Chủ Nhật,วันอาทิตย์,ចុងសប្តាហ៍,Minggu,Ahad,Linggo
+周,zhōu,week,semana,semaine,semana,tuần,สัปดาห์,ថ្ងៃធ្វើការ,minggu,Minggu,Linggo
+周一,zhōu yī,Monday,Lunes,Lundi,Segunda-feira,Thứ hai,วันจันทร์,សប្តាហ៍ || សប្តាហ៍ || ថ្ងៃនៃសប្តាហ៍,Senin,Isnin,Lunes
+周末,zhōu mò,weekend,fin de semana,week-end,fim de semana,cuối tuần,สุดสัปดาห์,មួយសប្តាហ៍,akhir pekan,Hujung minggu,Weekend
+工作日,gōng zuò rì,working day,jornada laboral,jour ouvrable,jornada de trabalho,ngày làm việc,วันทำงาน,ការងារថ្ងៃច័ន្ទ,hari kerja,Hari Kerja,Araw ng Paggawa
+礼拜,lǐ bài,week,semana,semaine,semana,tuần,สัปดาห์,កិច្ចប្រជុំថ្ងៃច័ន្ទ,minggu,Minggu,Linggo
+每周,měi zhōu,week,semana,semaine,semana,tuần,สัปดาห์,ថ្នាក់ថ្ងៃអង្គារ,minggu,Minggu,Linggo
+今天星期几,jīn tiān xīng qī jǐ,day of the week,día de la semana,jour de la semaine,dia da semana,ngày trong tuần,วันในสัปดาห์,ការប្រលងថ្ងៃអង្គារ,hari dalam seminggu,Hari dalam Minggu,Araw ng Linggo
+一个星期,yí gè xīng qī,one week,una semana,une semaine,uma semana,một tuần,หนึ่งสัปดาห์,រសៀលថ្ងៃពុធ,satu minggu,Satu minggu,Isang linggo
+星期一上班,xīng qī yī shàng bān,Monday work,Lunes trabajo,Travail du lundi,Trabalho de segunda-feira,Thứ hai làm việc,งานวันจันทร์,ថ្ងៃពុធឥតគិតថ្លៃ,Senin kerja,Isnin kerja,Lunes ng trabaho
+星期一开会,xīng qī yī kāi huì,Monday meeting,Reunión del lunes,Réunion du lundi,Reunião de segunda-feira,Cuộc họp thứ hai,ประชุมวันจันทร์,ទៅមន្ទីរពេទ្យនៅថ្ងៃព្រហស្បតិ៍,Pertemuan Senin,Mesyuarat Isnin,Lunes ng pagpupulong
+星期二上课,xīng qī èr shàng kè,Tuesday class,Clase del martes,Cours du mardi,Aula de terça-feira,Lớp thứ ba,คลาสวันอังคาร,ប្រាក់ខែនៅថ្ងៃព្រហស្បតិ៍,Kelas Selasa,Selasa Kelas,Martes Class
+星期二考试,xīng qī èr kǎo shì,Tuesday exam,Examen del martes,Examen du mardi,Exame de terça-feira,Kỳ thi thứ ba,สอบวันอังคาร,យប់ថ្ងៃសុក្រ,Ujian Selasa,Peperiksaan Selasa,Martes Exam
+星期三下午,xīng qī sān xià wǔ,Wednesday afternoon,Miércoles por la tarde,Mercredi après-midi,Quarta-feira à tarde,Chiều Thứ Tư,บ่ายวันพุธ,ពិធីជប់លៀងថ្ងៃសុក្រ,Rabu sore,Rabu petang,Miyerkules ng hapon
+星期三有空,xīng qī sān yǒu kòng,Wednesday free,Miércoles libre,Mercredi gratuit,Quarta-feira livre,Thứ tư miễn phí,วันพุธ ฟรี,ទិញទំនិញនៅថ្ងៃសៅរ៍,Rabu gratis,Rabu percuma,Miyerkules libre
+星期四去医院,xīng qī sì qù yī yuàn,Go to the hospital on Thursday,Ir al hospital el jueves,Allez à l'hôpital jeudi,Vá para o hospital na quinta-feira,Đến bệnh viện vào thứ năm,ไปโรงพยาบาลวันพฤหัสบดี,ដេកនៅថ្ងៃសៅរ៍,Pergi ke rumah sakit pada hari Kamis,Pergi ke hospital pada hari Khamis,Pumunta sa ospital sa Huwebes
+星期四发工资,xīng qī sì fā gōng zī,Paycheck on Thursday,Cheque de sueldo el jueves,Chèque de paie jeudi,Contracheque de quinta-feira,Tiền lương vào thứ Năm,เช็คเงินเดือนวันพฤหัสบดี,ថ្ងៃអាទិត្យនៅឯផ្ទះ,Gaji pada hari Kamis,Gaji pada hari Khamis,Paycheck sa Huwebes
+星期五晚上,xīng qī wǔ wǎn shàng,Friday night,Viernes por la noche,Vendredi soir,Sexta à noite,Tối thứ sáu,คืนวันศุกร์,អាហារពេលល្ងាចថ្ងៃអាទិត្យ,Jumat malam,Jumaat malam,Biyernes ng gabi
+星期五聚会,xīng qī wǔ jù huì,Friday party,Fiesta del viernes,Fête du vendredi,Festa de sexta-feira,Bữa tiệc thứ sáu,ปาร์ตี้วันศุกร์,សប្តាហ៍មុន,Pesta Jumat,Parti Jumaat,Biyernes Party
+星期六逛街,xīng qī liù guàng jiē,Shopping on Saturday,De compras el sábado,Shopping le samedi,Compras no sábado,Mua sắm vào thứ bảy,ชอปปิ้งวันเสาร์,រវល់ណាស់នៅសប្តាហ៍នេះ,Belanja di hari Sabtu,Membeli -belah pada hari Sabtu,Pamimili sa Sabado
+星期六睡懒觉,xīng qī liù shuì lǎn jiào,Sleeping in on Saturday,Dormir hasta tarde el sábado,Faire la grasse matinée samedi,Dormindo no sábado,Ngủ nướng vào thứ bảy,นอนวันเสาร์,ថ្ងៃច័ន្ទគឺមមាញឹកបំផុត,Tidur di hari Sabtu,Tidur pada hari Sabtu,Natutulog sa Sabado
+星期日在家,xīng qī rì zài jiā,Sunday at home,Domingo en casa,Dimanche à la maison,Domingo em casa,Chủ nhật ở nhà,วันอาทิตย์ อยู่บ้าน,ធ្វើការលើសម៉ោងនៅថ្ងៃច័ន្ទ,Minggu di rumah,Ahad di rumah,Linggo sa bahay
+星期日聚餐,xīng qī rì jù cān,Sunday dinner,Cena del domingo,Dîner du dimanche,Jantar de domingo,Bữa tối chủ nhật,มื้อเย็นวันอาทิตย์,មានចុងសប្តាហ៍ល្អ,Makan malam hari Minggu,Makan malam Ahad,Linggo ng hapunan
+上周,shàng zhōu,Last week,La semana pasada,La semaine dernière,Semana passada,Tuần trước,สัปดาห์ที่แล้ว,កន្លែងដែលត្រូវទៅនៅចុងសប្តាហ៍,Minggu lalu,Minggu lepas,Noong nakaraang linggo
+这周很忙,zhè zhōu hěn máng,Very busy this week,Muy ocupado esta semana,Très chargé cette semaine,Muito movimentada esta semana,Tuần này bận quá,สัปดาห์นี้ยุ่งมาก,ធ្វើការនៅថ្ងៃធ្វើការ 2012|| គ្មានពេលវេលានៅថ្ងៃធ្វើការ,Sangat sibuk minggu ini,Sangat sibuk minggu ini,Napaka abala sa linggong ito
+周一最忙,zhōu yī zuì máng,Monday is the busiest,El lunes es el más ocupado,Le lundi est le plus chargé,Segunda-feira é a mais movimentada,Thứ hai là bận rộn nhất,วันจันทร์เป็นวันที่ยุ่งที่สุด,សប្តាហ៍មុន,Senin adalah hari tersibuk,Isnin adalah yang paling sibuk,Lunes ang pinaka -abalang
+周一加班,zhōu yī jiā bān,Work overtime on Monday,Trabajar horas extras el lunes,Faire des heures supplémentaires le lundi,Fazer hora extra na segunda-feira,Làm thêm giờ vào thứ Hai,ทำงานล่วงเวลาในวันจันทร์,សប្តាហ៍ក្រោយ,Kerja lembur pada hari Senin,Bekerja lebih masa pada hari Isnin,Magtrabaho sa obertaym sa Lunes
+周末愉快,zhōu mò yú kuài,Have a good weekend,Que tengas un buen fin de semana,Bon week-end,Tenha um bom fim de semana,Chúc cuối tuần vui vẻ,สุขสันต์วันหยุดสุดสัปดาห์,ម្តងក្នុងមួយសប្តាហ៍,Selamat berakhir pekan,Selamat berhujung minggu,Magkaroon ng isang magandang katapusan ng linggo
+周末去哪,zhōu mò qù nǎ,Where to go on the weekend,Dónde ir el fin de semana,Où partir le week-end,Onde ir no fim de semana,Cuối tuần đi đâu,วันหยุดสุดสัปดาห์จะไปไหน,ការធ្វើលំហាត់ប្រាណប្រចាំសប្តាហ៍,Ke mana harus pergi di akhir pekan,Ke mana hendak pergi pada hujung minggu,Kung saan pupunta sa katapusan ng linggo
+工作日上班,gōng zuò rì shàng bān,Work on weekdays,Trabajar de lunes a viernes,Travailler en semaine,Trabalhar durante a semana,Làm việc các ngày trong tuần,ทำงานวันธรรมดา,[TRANSLATE_KM],Bekerja di hari kerja,Bekerja pada hari kerja,Magtrabaho sa mga araw ng linggo
+工作日没空,gōng zuò rì mò kōng,No time on weekdays,No hay tiempo entre semana,Pas d'heure en semaine,Não há horário durante a semana,Không có thời gian vào ngày thường,ไม่มีเวลาในวันธรรมดา,[TRANSLATE_KM],Tidak ada waktu di hari kerja,Tiada masa pada hari kerja,Walang Oras sa Linggo ng Linggo
+上礼拜,shàng lǐ bài,Last week,La semana pasada,La semaine dernière,Semana passada,Tuần trước,สัปดาห์ที่แล้ว,[TRANSLATE_KM],Minggu lalu,Minggu lepas,Noong nakaraang linggo
+下礼拜,xià lǐ bài,Next week,La próxima semana,La semaine prochaine,Semana que vem,Tuần tới,สัปดาห์หน้า,[TRANSLATE_KM],Minggu depan,Minggu depan,Sa susunod na linggo
+每周一次,měi zhōu yī cì,Once a week,Una vez por semana,Une fois par semaine,Uma vez por semana,Mỗi tuần một lần,สัปดาห์ละครั้ง,[TRANSLATE_KM],Seminggu sekali,Sekali seminggu,Isang beses sa isang linggo
+每周运动,měi zhōu yùn dòng,Weekly exercise,ejercicio semanal,Exercice hebdomadaire,Exercício semanal,Tập thể dục hàng tuần,ออกกำลังกายประจำสัปดาห์,[TRANSLATE_KM],Latihan mingguan,Latihan mingguan,Lingguhang ehersisyo

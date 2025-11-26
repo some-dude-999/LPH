@@ -1,0 +1,46 @@
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+健康,jiàn kāng,Health,Salud,Santé,Saúde,Sức khỏe,สุขภาพ,សុខភាព,Kesehatan,Kesihatan,Kalusugan
+生病,shēng bìng,Illness,Enfermedad,Maladie,Doença,Bệnh tật,การเจ็บป่วย,ជំងឺ,Penyakit,Penyakit,Sakit
+感冒,gǎn mào,Cold,Frío,Froid,Frio,Lạnh lùng,เย็น,ត្រជាក់,Dingin,Sejuk,Malamig
+发烧,fā shāo,Fever,Fiebre,Fièvre,Febre,Sốt,ไข้,គ្រុនក្ដក,Demam,Demam,Lagnat
+咳嗽,ké sòu,Cough,Tos,Toux,Tosse,Ho,ไอ,ក្អក,Batuk,Batuk,Ubo
+头疼,tóu téng,Headache,Dolor de cabeza,Maux de tête,Dor de cabeça,Đau đầu,ปวดหัว,ឈឺក្បាល,Sakit kepala,Sakit kepala,Sakit ng ulo
+肚子疼,dǔ zi téng,Stomachache,Dolor de estómago,Maux de ventre,Dor de estômago,Đau bụng,ปวดท้อง,ឈឺពោះ,Sakit perut,Sakit perut,Sakit sa tiyan
+受伤,shòu shāng,Injury,Lesión,Blessure,Lesão,Chấn thương,อาการบาดเจ็บ,| ការរងរបួស,Cedera,Kecederaan,Pinsala
+流血,liú xiě,Bleeding,Sangrado,Saignement,Sangramento,Chảy máu,เลือดออก,ការហូរឈាម,Pendarahan,Pendarahan,Pagdurugo
+康复,kāng fù,Recovery,Recuperación,Récupération,Recuperação,Phục hồi,การกู้คืน,ការងើបឡើងវិញ || ការងើបឡើងវិញ || តាមដាន,Pemulihan,Pemulihan,Pagbawi
+痊愈,quán yù,Recovery,Recuperación,Récupération,Recuperação,Phục hồi,การกู้คืน,ការចូលមន្ទីរពេទ្យ || ការហូរ,Pemulihan,Pemulihan,Pagbawi
+复诊,fù zhěn,Follow-up,Seguimiento,Suivi,Acompanhamento,Theo dõi,ติดตามผล,ការ resuper || សុខភាពល្អ,Tindak lanjut,Susulan,Follow-up
+住院,zhù yuàn,Hospitalization,Hospitalización,Hospitalisation,Hospitalização,Nhập viện,การเข้ารับการรักษาในโรงพยาบาล,មានសុខភាពល្អណាស់,Rawat Inap,Hospitalisasi,Pag -ospital
+出院,chū yuàn,Discharge,Alta,Décharge,Alta,Xả,ปลดประจำการ,ឈឺ,Keluaran,Pelepasan,Paglabas
+养病,yǎng bìng,Recuperation,Recuperación,Récupération,Recuperação,Phục hồi,การพักฟื้น,ឈឺដោយងាយ,Pemulihan,Pemulihan,Recuperation
+身体健康,shēn tǐ jiàn kāng,Good health,Buena salud,Bonne santé,Muita saúde,Chúc sức khỏe,สุขภาพแข็งแรง,| ត្រជាក់,Kesehatan yang baik,Kesihatan yang baik,Magandang Kalusugan
+很健康,hěn jiàn kāng,Very healthy,Muy saludable,Très sain,Muito saudável,Rất khỏe mạnh,สุขภาพแข็งแรงมากๆ,ទទួលបានជំងឺផ្តាសាយ,Sangat sehat,Sangat sihat,Napaka malusog
+生病了,shēng bìng le,Sick,Enfermo,Malade,Doente,Bị ốm,ป่วย,គ្រុនក្ដក,Sakit,Sakit,May sakit
+容易生病,róng yì shēng bìng,Easily sick,Se enferma fácilmente,Facilement malade,Facilmente doente,Dễ bị bệnh,ป่วยง่าย,នៅតែមានគ្រុនក្តៅ,Mudah sakit,Mudah sakit,Madaling may sakit
+感冒了,gǎn mào le,Cold,Frío,Froid,Frio,Lạnh lùng,เย็น,| ក្អក,Dingin,Sejuk,Malamig
+得感冒,dé gǎn mào,Getting a cold,Resfriarse,Attraper un rhume,Ficando resfriado,Bị cảm lạnh,เป็นหวัด,| រក្សាការក្អក,Masuk angin,Mendapatkan sejuk,Pagkuha ng isang malamig
+发烧了,fā shāo le,Fever,Fiebre,Fièvre,Febre,Sốt,ไข้,ឈឺក្បាល,Demam,Demam,Lagnat
+在发烧,zài fā shāo,Still having a fever,Todavía tengo fiebre,J'ai toujours de la fièvre,Ainda estou com febre,Vẫn còn sốt,ยังมีไข้,ឈឺក្បាលបន្តិច,Masih demam,Masih mengalami demam,May lagnat pa rin
+咳嗽了,ké sòu le,Coughing,Tos,Toux,Tosse,Ho,ไอ,ឈឺពោះ,Batuk,Batuk,Pag -ubo
+一直咳嗽,yì zhí ké sòu,Keep coughing,Sigue tosiendo,Continuez à tousser,Continue tossindo,Ho mãi,ไอต่อไป,ឈឺពោះបន្តិច,Batuk terus,Simpan batuk,Panatilihin ang pag -ubo
+头疼啊,tóu téng a,Headache,Dolor de cabeza,Maux de tête,Dor de cabeça,Đau đầu,ปวดหัว,រងរបួស,Sakit kepala,Sakit kepala,Sakit ng ulo
+有点头疼,yǒu diǎn tóu téng,A little headache,Un pequeño dolor de cabeza,Un petit mal de tête,Um pouco de dor de cabeça,Hơi nhức đầu,ปวดหัวนิดหน่อย,រងរបួសដោយចៃដន្យ,Sedikit sakit kepala,Sakit kepala kecil,Isang maliit na sakit ng ulo
+肚子疼啊,dǔ zi téng a,Stomach ache,Dolor de estómago,Maux de ventre,Dor de estômago,Đau bụng,ปวดท้อง,ការហូរឈាម,Sakit perut,Sakit perut,Sakit sa tiyan
+有点肚子疼,yǒu diǎn dǔ zi téng,A little stomach ache,Un pequeño dolor de estómago,Un petit mal de ventre,Um pouco de dor de estômago,Hơi đau bụng,ปวดท้องนิดหน่อย,ការហូរឈាម,Sedikit sakit perut,Ache perut sedikit,Isang maliit na sakit sa tiyan
+受伤了,shòu shāng le,Injured,Heridos,Blessé,Ferido,Bị thương,ได้รับบาดเจ็บ,ជាសះវិញឆាប់,Terluka,Cedera,Nasugatan
+不小心受伤,bù xiǎo xīn shòu shāng,Accidentally injured,Herido accidentalmente,Blessé accidentellement,Ferido acidentalmente,Vô tình bị thương,ได้รับบาดเจ็บ,បានរកឃើញវិញ,Terluka secara tidak sengaja,Cedera secara tidak sengaja,Hindi sinasadyang nasugatan
+流血了,liú xiě le,Bleeding,Sangrado,Saignement,Sangramento,Chảy máu,เลือดออก,ជាសះវិញឆាប់,Pendarahan,Pendarahan,Pagdurugo
+在流血,zài liú xiě,Bleeding,Sangrado,Saignement,Sangramento,Chảy máu,เลือดออก,បានរកឃើញវិញ,Pendarahan,Pendarahan,Pagdurugo
+快康复,kuài kāng fù,Recover soon,Recuperate pronto,Récupérez bientôt,Recupere logo,Sớm bình phục,ฟื้นตัวเร็วๆนะ,ទៅរកការតាមដាន,Segera pulih,Pulih tidak lama lagi,Mabawi kaagad
+已康复,yǐ kāng fù,Recovered,Recuperado,Récupéré,Recuperado,Đã phục hồi,กู้คืน,ត្រូវការតាមដាន,Sembuh,Pulih,Nabawi
+快痊愈,kuài quán yù,Recover soon,Recuperate pronto,Récupérez bientôt,Recupere logo,Sớm bình phục,ฟื้นตัวเร็วๆนะ,ចូលមន្ទីរពេទ្យ,Segera pulih,Pulih tidak lama lagi,Mabawi kaagad
+已痊愈,yǐ quán yù,Recovered,Recuperado,Récupéré,Recuperado,Đã phục hồi,กู้คืน,ចាំបាច់ត្រូវសម្រាកនៅមន្ទីរពេទ្យ,Sembuh,Pulih,Nabawi
+去复诊,qù fù zhěn,Go for follow-up,Ir para seguimiento,Optez pour un suivi,Vá para acompanhamento,Đi theo dõi,ติดตามชมได้เลย,ការរំញោច,Pergi untuk tindak lanjut,Pergi untuk susulan,Pumunta para sa pag-follow-up
+需要复诊,xū yào fù zhěn,Need follow-up,Necesita seguimiento,Besoin d'un suivi,Precisa de acompanhamento,Cần theo dõi,ต้องติดตาม,អាចត្រូវបានរំសាយចេញ,Perlu tindak lanjut,Perlu susulan,Kailangan ng follow-up
+住院了,zhù yuàn le,Hospitalized,Hospitalizado,Hospitalisé,Hospitalizado,Nhập viện,เข้าโรงพยาบาล,recuction,Dirawat di Rumah Sakit,Hospital,Ospital
+要住院,yào zhù yuàn,Need to be hospitalized,Necesita ser hospitalizado,Besoin d'être hospitalisé,Precisa ser internado,Phải nhập viện,ต้องเข้าโรงพยาบาล,| អណ្តូងឆ្អឹងបានពន្លឿន,Perlu dirawat di rumah sakit,Perlu dimasukkan ke hospital,Kailangang ma -ospital
+出院了,chū yuàn le,Discharged,Dado de alta,Déchargé,Alta,Đã giải ngũ,ปลดประจำการ,[TRANSLATE_KM],Habis,Dibebaskan,Pinalabas
+可以出院,kě yǐ chū yuàn,Can be discharged,Puede ser dado de alta,Peut être déchargé,Pode receber alta,Có thể xuất viện,สามารถออกได้,[TRANSLATE_KM],Dapat habis,Boleh dilepaskan,Maaaring mailabas
+养病中,yǎng bìng zhōng,Recuperating,Recuperando,Récupération,Recuperando,Đang hồi phục,กำลังพักฟื้น,[TRANSLATE_KM],Memulihkan,Pemulihan,Pag -recuperating
+好好养病,hǎo hǎo yǎng bìng,Recuperate well,Recuperarse bien,Bien récupérer,Recupere bem,Phục hồi tốt,ฟื้นตัวได้ดี,[TRANSLATE_KM],Pulihkan diri dengan baik,Pulih dengan baik,Mabawi nang maayos

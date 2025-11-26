@@ -1,0 +1,52 @@
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+加,jiā,addition,adición,ajout,adição,phép cộng,นอกจากนี้,បន្ថែម,tambahan,Tambahan,karagdagan
+减,jiǎn,subtraction,resta,soustraction,subtração,phép trừ,ลบ,ដកការដក,pengurangan,pengurangan,pagbabawas
+乘,chéng,Division,División,Division,Divisão,Phân chia,กอง,ផ្នែក,Divisi,Bahagian,Dibisyon
+除,chú,Divide by,Dividir por,Diviser par,Divida por,Chia cho,หารด้วย,ចែកដោយ,Bagilah dengan,Bahagikan dengan,Hatiin ng
+等于,děng yú,What is equal to,¿Qué es igual a,Qu'est-ce qui est égal à,O que é igual a,Bằng,เท่ากับ,អ្វីដែលស្មើនឹង,Apa yang sama dengan,Apa yang sama dengan,Ano ang katumbas ng
+第一,dì yī,Not equal to,No igual a,Différent de,Diferente de,Không bằng,ไม่เท่ากับ,មិនស្មើនឹង,Tidak sama dengan,Tidak sama dengan,Hindi katumbas ng
+第二,dì èr,First place,Primer lugar,Première place,Primeiro lugar,Vị trí đầu tiên,อันดับ 1,កន្លែងដំបូង,Tempat pertama,Tempat pertama,Unang lugar
+第三,dì sān,Second place,Segundo lugar,Deuxième place,Segundo lugar,Vị trí thứ hai,อันดับที่สอง,កន្លែងទីពីរ,Juara kedua,Tempat Kedua,Pangalawang lugar
+总共,zǒng gòng,Second place,Segundo lugar,Deuxième place,Segundo lugar,Vị trí thứ hai,อันดับที่สอง,កន្លែងទីពីរ,Juara kedua,Tempat Kedua,Pangalawang lugar
+倍,bèi,Third place,Tercer lugar,Troisième place,Terceiro lugar,Vị trí thứ ba,อันดับที่สาม,ចំណាត់ថ្នាក់លេខ 3,Tempat ketiga,Tempat Ketiga,Pangatlong lugar
+一半,yí bàn,How much in total,Cuánto en total,Combien au total,Quanto no total,Tổng cộng bao nhiêu,รวมเท่าไหร่,តើមានចំនួនសរុបប៉ុន្មាន,Berapa totalnya,Berapa jumlah,Magkano sa kabuuan
+算,suàn,Total total,Total total,Total total,Total total,Tổng cộng,รวมทั้งหมด,| សរុបសរុប,Jumlah total,Jumlah Jumlah,Kabuuang Kabuuan
+数学,shù xué,Double,Doble,Double,Duplo,Đôi,ดับเบิ้ล,ទ្វេ || បីដង,Ganda,Double,Doble
+余,yú,Three times,Tres veces,Trois fois,Três vezes,Ba lần,สามครั้ง,ពាក់កណ្តាល || ចែកពាក់កណ្តាល,Tiga kali,Tiga kali,Tatlong beses
+差,chà,Half,La mitad,La moitié,Metade,Một nửa,ครึ่ง,ធ្វើគណិតវិទ្យា,Setengah,Separuh,Kalahati
+积,jī,Divide half,Dividir la mitad,Diviser la moitié,Divida metade,Chia một nửa,หารครึ่ง,ធ្វើការវាចេញ,Bagilah setengah,Bahagikan separuh,Hatiin ang kalahati
+商,shāng,Do the math,Haz los cálculos,Faites le calcul,Faça as contas,Làm phép tính,ทำคณิตศาสตร์,រៀនគណិតវិទ្យា,Hitunglah,Adakah matematik,Gawin ang matematika
+加法,jiā fǎ,Work it out,Resuélvelo,Résolvez-le,Resolva,Hãy giải quyết,ทำงานออก,បង្រៀនគណិតវិទ្យា,Selesaikan,Bekerja keluar,GAWIN IT OUT
+加上,jiā shàng,Learn math,Aprende matemáticas,Apprendre les mathématiques,Aprenda matemática,Học toán,เรียนคณิต,នៅសល់,Belajar matematika,Belajar Matematik,Alamin ang matematika
+减法,jiǎn fǎ,Teach math,Enseñar matemáticas,Enseigner les mathématiques,Ensinar matemática,Dạy toán,สอนคณิตศาสตร์,| នៅសល់,Ajarkan matematika,Ajar Matematik,Turuan ang matematika
+减去,jiǎn qù,Remainder,Resto,Reste,Restante,Số dư,ส่วนที่เหลือ,| តើភាពខុសគ្នាប៉ុន្មាន :,Sisa,Sisa,Nalalabi
+乘法,chéng fǎ,Remainder,Resto,Reste,Restante,Số dư,ส่วนที่เหลือ,ភាពខុសគ្នា,Sisa,Sisa,Nalalabi
+乘以,chéng yǐ,How much is the difference,¿Cuánta es la diferencia,Quelle est la différence,Quanto é a diferença,Chênh lệch bao nhiêu,ต่างกันขนาดไหน,ផលិតផលគឺ,Berapa selisihnya,Berapa perbezaan,Magkano ang pagkakaiba
+除法,chú fǎ,Difference,Diferencia,Différence,Diferença,Sự khác biệt,ความแตกต่าง,ផលិតផល,Perbedaan,Perbezaan,Pagkakaiba
+除以,chú yǐ,The product is,El producto es,Le produit est,O produto é,Sản phẩm là,สินค้าคือ,quotient គឺ,Produknya adalah,Produknya adalah,Ang produkto ay
+等于多少,děng yú duō shǎo,The product,El producto,Le produit,O produto,Sản phẩm,สินค้า,រកចំណាប់អារម្មណ៍,Produk,Produk,Ang produkto
+不等于,bù děng yú,The quotient is,El cociente es,Le quotient est,O quociente é,Thương số là,ผลหารคือ,[TRANSLATE_KM],Hasil bagi adalah,Quotient adalah,Ang quotient ay
+第一名,dì yì míng,Find the quotient,Encuentra el cociente,Trouver le quotient,Encontre o quociente,Tìm thương,หาผลหาร,[TRANSLATE_KM],Temukan hasil bagi,Cari Quotient,Hanapin ang quient
+得第一,dé dì yī,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+第二名,dì èr míng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+得第二,dé dì èr,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+第三名,dì sān míng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+得第三,dé dì sān,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+总共多少,zǒng gòng duō shǎo,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+一共总共,yī gòng zǒng gòng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+两倍,liǎng bèi,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+三倍,sān bèi,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+一半的,yí bàn de,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+分一半,fēn yí bàn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+算一下,suàn yī xià,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+算出来,suàn chū lái,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+学数学,xué shù xué,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+教数学,jiào shù xué,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+余数,yú shù,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+剩余,shèng yú,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+差多少,chà duō shǎo,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+相差,xiāng chà,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+积是,jī shì,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+乘积,chéng jī,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+商是,shāng shì,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+求商,qiú shāng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]

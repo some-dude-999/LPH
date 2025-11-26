@@ -1,0 +1,55 @@
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+饿,è,Hungry,Hambriento,Faim,Com fome,Đói,หิว - เต็ม - หิวน้ำ - ลิ้มรส - อร่อย - ไม่อร่อย - หวาน - เปรี้ยว - เผ็ด - เค็ม - ขม - - ฉันหิวน้ำ - หิวน้ำจังเลย - ลองดู - กัดหน่อย - อร่อยจังเลย - อร่อยจังเลย - ไม่น่าอร่อยเลย - น่ากลัวจังเลย - หวาน - หวานเกินไป - เปรี้ยว - เปรี้ยวนิดหน่อย - เผ็ดเกินไป - เผ็ดเกินไป - เค็มไปหน่อย - เค็มไปหน่อย - มะระ - ยามีรสขม - อ่อนโยนเกินไป - รสชาติจืดชืด - กลิ่นหอมจังเลย - กลิ่น - มันมีกลิ่น - กลิ่นเหมือนนรก - สแกนรหัส QR เพื่อสั่งซื้อ - สั่งซื้อให้ฉัน - เวลารับประทานอาหาร - ค่อยๆกินนะ - เพิ่มเมนู - ต้องเพิ่มจานมั้ย - สั่งซื้อเลย - สั่งซื้อผ่านมือถือ,ឃ្លាន,Lapar,Lapar,Gutom
+饱,bǎo,Full,Completo,Complet,Completo,Đầy đủ,[TRANSLATE_TH],ពេញ,Penuh,Penuh,Buong
+渴,kě,Thirsty,Sediento,Soif,Com sede,Khát nước,[TRANSLATE_TH],ការស្រេកទឹក,Haus,Haus,Uhaw
+尝,cháng,Taste,Sabor,Goût,Prove,Hương vị,[TRANSLATE_TH],រសជាតិ,Rasa,Rasa,Tikman
+好吃,hǎo chī,Tasty,Sabroso,Savoureux,Saboroso,Ngon,[TRANSLATE_TH],| ហ៊ានណាស់,Enak,Lazat,Masarap
+难吃,nán chī,Unpalatable,Desagradable,Inappétent,Impalatável,Khó chịu,[TRANSLATE_TH],មិនអាចគ្រប់គ្រងបាន,Tidak enak,Tidak dapat dielakkan,Hindi masasalamin
+甜,tián,Sweet,Dulce,Doux,Doce,Ngọt ngào,[TRANSLATE_TH],ផ្អែមល្ហែម,Manis,Manis,Matamis
+酸,suān,Sour,Agrio,Aigre,Azedo,Chua,[TRANSLATE_TH],ជូរ,Asam,Sour,Maasim
+辣,là,Spicy,Picante,Épicé,Picante,Cay,[TRANSLATE_TH],ហឹរ,Pedas,Pedas,Spicy
+咸,xián,Salty,Salado,Salé,Salgado,Mặn,[TRANSLATE_TH],ប្រៃ,Asin,Salty,Salty
+苦,kǔ,Bitter,Amargo,Amer,Amargo,Đắng,[TRANSLATE_TH],ជូរចត់,Pahit,Pahit,Bitter
+淡,dàn,,,,,,[TRANSLATE_TH],,,,
+香,xiāng,I'm thirsty,Tengo sed,J'ai soif,Estou com sede,Tôi khát,[TRANSLATE_TH],ខ្ញុំស្រេកទឹក,aku haus,Saya dahaga,Nahuhaw ako
+臭,chòu,I'm so thirsty,Tengo mucha sed,J'ai tellement soif,Estou com muita sede,Tôi khát quá,[TRANSLATE_TH],ខ្ញុំពិតជាស្រេកទឹកណាស់,Aku haus sekali,Saya sangat dahaga,Nahuhaw ako
+点餐,diǎn cān,Try it,Pruébalo,Essayez-le,Experimente,Hãy thử,[TRANSLATE_TH],សាកល្បងវា,Cobalah,Cuba,Subukan ito
+用餐,yòng cān,Take a bite,Dale un mordisco,Prenez une bouchée,Dê uma mordida,Hãy cắn một miếng,[TRANSLATE_TH],យកខាំ,Cobalah,Ambil gigitan,Kumuha ng isang kagat
+加菜,jiā cài,It's delicious,Está delicioso,C'est délicieux,É uma delícia,Thật là ngon,[TRANSLATE_TH],| វាមានរសជាតិឆ្ងាញ់,Enak sekali,Ia lazat,Masarap ito
+下单,xià dān,It's delicious,Está delicioso,C'est délicieux,É uma delícia,Thật là ngon,[TRANSLATE_TH],វាមានរសជាតិឆ្ងាញ់,Enak sekali,Ia lazat,Masarap ito
+肚子饿,dù zi è,Too unpalatable,Demasiado desagradable,Trop désagréable,Muito intragável,Quá khó chịu,[TRANSLATE_TH],អ្នកមិនអាចគ្រប់គ្រងបានច្រើនពេក,Terlalu tidak enak,Terlalu tidak menyenangkan,Masyadong hindi masasalamin
+饿死了,è sǐ le,It's awful,Es horrible,C'est horrible,É horrível,Thật kinh khủng,[TRANSLATE_TH],វាគួរឱ្យខ្លាចណាស់,Mengerikan,Ia mengerikan,Ito ay kakila -kilabot
+吃饱了,chī bǎo le,Sweet,Dulce,Doux,Doce,Ngọt ngào,[TRANSLATE_TH],| ផ្អែមល្ហែម,Manis,Manis,Matamis
+饱得很,bǎo dé hěn,Too sweet,Demasiado dulce,Trop sucré,Muito fofo,Quá ngọt ngào,[TRANSLATE_TH],ផ្អែមពេក,Terlalu manis,Terlalu manis,Masyadong matamis
+口渴了,kǒu kě le,Sour,Agrio,Aigre,Azedo,Chua,[TRANSLATE_TH],| ជូរ,Asam,Sour,Maasim
+渴坏了,kě huài le,A little sour,Un poco amargo,Un peu aigre,Um pouco azedo,Có chút chua,[TRANSLATE_TH],ជូរបន្តិច,Sedikit asam,Sedikit masam,Isang maliit na maasim
+尝尝看,cháng cháng kàn,Too spicy,Demasiado picante,Trop épicé,Muito picante,Cay quá,[TRANSLATE_TH],ហឹរណាស់,Terlalu pedas,Terlalu pedas,Masyadong maanghang
+尝一口,cháng yī kǒu,Too spicy,Demasiado picante,Trop épicé,Muito picante,Cay quá,[TRANSLATE_TH],ហឹរណាស់,Terlalu pedas,Terlalu pedas,Masyadong maanghang
+真好吃,zhēn hǎo chī,A little salty,Un poco salado,Un peu salé,Um pouco salgado,Một chút mặn,[TRANSLATE_TH],អំបិលបន្តិច,Sedikit asin,Sedikit asin,Isang maliit na maalat
+好吃极了,hǎo chī jí le,A little salty,Un poco salado,Un peu salé,Um pouco salgado,Một chút mặn,[TRANSLATE_TH],អំបិលបន្តិច,Sedikit asin,Sedikit asin,Isang maliit na maalat
+太难吃,tài nán chī,Bitter melon,Melón amargo,Melon amer,Melão amargo,Mướp đắng,[TRANSLATE_TH],មែលខនជូរ,Pare,Melon pahit,Bitter melon
+难吃得很,nán chī dé hěn,The medicine is bitter,La medicina es amarga,Le médicament est amer,O remédio é amargo,Thuốc có vị đắng,[TRANSLATE_TH],ថ្នាំនេះជូរចត់ណាស់,Obatnya pahit,Ubat ini pahit,Ang gamot ay mapait
+甜甜的,tián tián de,Too bland,Demasiado insulso,Trop fade,Muito sem graça,Quá nhạt nhẽo,[TRANSLATE_TH],bland ពេក,Terlalu hambar,Terlalu Bland,Masyadong bland
+太甜了,tài tián le,The taste is bland,El sabor es suave,Le goût est fade,O sabor é insípido,Vị nhạt nhẽo,[TRANSLATE_TH],រសជាតិគឺ bland,Rasanya hambar,Rasanya hambar,Ang lasa ay bland
+酸酸的,suān suān de,It smells good,Huele bien,Ça sent bon,Cheira bem,Mùi thơm quá,[TRANSLATE_TH],វាមានក្លិនល្អ,Baunya enak,Ia berbau baik,Mabuti ang amoy
+有点酸,yǒu diǎn suān,Smells,Olores,Odeurs,Cheiros,Mùi,[TRANSLATE_TH],| ក្លិន,Bau,Bau,Amoy
+太辣了,tài là le,It stinks,Apesta,Ça pue,Isso fede,Nó bốc mùi,[TRANSLATE_TH],វាមានក្លិនស្អុយ,Baunya,Ia berbau,Stinks
+辣得够味,là dé gòu wèi,Smells like hell,Huele a infierno,Ça sent l’enfer,Cheira muito mal,Mùi như địa ngục,[TRANSLATE_TH],មានក្លិនដូចនរក,Baunya seperti neraka,Bau seperti neraka,Mga amoy tulad ng impiyerno
+有点咸,yǒu diǎn xián,Scan the QR code to order,Escanee el código QR para realizar su pedido,Scannez le code QR pour commander,Digitalize o código QR para fazer o pedido,Quét mã QR để đặt hàng,[TRANSLATE_TH],ស្កេនលេខកូដ QR ដើម្បីបញ្ជាទិញ,Pindai kode QR untuk memesan,Imbas kod QR untuk memesan,I -scan ang QR code upang mag -order
+咸了点,xián le diǎn,Order for me,Haz tu pedido para mí,Commandez pour moi,Encomende para mim,Đặt hàng cho tôi,[TRANSLATE_TH],បញ្ជាទិញសម្រាប់ខ្ញុំ,Pesan untuk saya,Pesanan untuk saya,Order para sa akin
+苦瓜苦,kǔ guā kǔ,Meal time,Hora de comer,Heure du repas,Hora da refeição,Giờ ăn,[TRANSLATE_TH],ម៉ោងទទួលទានអាហារ,Waktunya makan,Masa makan,Oras ng pagkain
+吃药苦,chī yào kǔ,Please eat slowly,Por favor come despacio,"S'il vous plaît, mangez lentement",Por favor coma devagar,Hãy ăn từ từ,[TRANSLATE_TH],សូមញ៉ាំយឺត ៗ,Silakan makan perlahan,Tolong makan perlahan,Mangyaring kumain ng dahan -dahan
+太淡了,tài dàn le,Add more dishes,Añadir más platos,Ajouter plus de plats,Adicione mais pratos,Thêm nhiều món ăn,[TRANSLATE_TH],បន្ថែមម្ហូបជាច្រើនទៀត,Tambahkan lebih banyak hidangan,Tambah lebih banyak hidangan,Magdagdag ng higit pang mga pinggan
+味道淡,wèi dào dàn,Do you need to add more dishes,¿Necesitas agregar más platos,Avez-vous besoin d'ajouter plus de plats,Você precisa adicionar mais pratos,Có cần bổ sung thêm món ăn không,[TRANSLATE_TH],តើអ្នកត្រូវការបន្ថែមចានទៀតទេ,Apakah Anda perlu menambahkan lebih banyak hidangan,Adakah anda perlu menambah lebih banyak hidangan,Kailangan mo bang magdagdag ng higit pang mga pinggan
+好香啊,hǎo xiāng a,Order now,Ordene ahora,Commandez maintenant,Encomende agora,Đặt hàng ngay,[TRANSLATE_TH],ការបញ្ជាទិញឥឡូវនេះ,Pesan sekarang,Pesanan sekarang,Mag -order ngayon
+闻着香,wén zhe xiāng,Order via mobile,Ordenar a través del móvil,Commande via mobile,Encomende pelo celular,Đặt hàng qua di động,[TRANSLATE_TH],បញ្ជាទិញតាមរយៈទូរស័ព្ទចល័ត,Pesan melalui ponsel,Pesanan melalui mudah alih,Order sa pamamagitan ng mobile
+好臭啊,hǎo chòu a,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+臭死了,chòu sǐ le,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+扫码点餐,sǎo mǎ diǎn cān,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+帮我点餐,bāng wǒ diǎn cān,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+用餐时间,yòng cān shí jiān,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+请慢用餐,qǐng màn yòng cān,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+再加菜,zài jiā cài,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+需要加菜吗,xū yào jiā cài ma,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+立即下单,lì jí xià dān,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+手机下单,shǒu jī xià dān,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
