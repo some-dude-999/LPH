@@ -17,21 +17,21 @@ LANGUAGES = {
         'base_dir': 'ChineseWords',
         'overview_file': 'ChineseWordsOverview.csv',
         'breakout_prefix': 'ChineseWords',
-        'words_column': 'Chinese_Words',
+        'words_column': 'Chinese_Combined_Words',
         'data_column': 0,  # Column index in breakout file for the word
     },
     'spanish': {
         'base_dir': 'SpanishWords',
         'overview_file': 'SpanishWordsOverview.csv',
         'breakout_prefix': 'SpanishWords',
-        'words_column': 'Spanish_Words',
+        'words_column': 'Spanish_Combined_Words',
         'data_column': 0,  # 'spanish' is first column
     },
     'english': {
         'base_dir': 'EnglishWords',
         'overview_file': 'EnglishWordsOverview.csv',
         'breakout_prefix': 'EnglishWords',
-        'words_column': 'English_Words',
+        'words_column': 'English_Combined_Words',
         'data_column': 0,  # 'english' is first column
     },
 }
