@@ -1202,9 +1202,14 @@ INCORRECT:
 
 THE RULE: Count Chinese chars, count pinyin syllables - MUST match!
 
-=== EXAMPLE ROW ===
+=== EXAMPLE CSV (ChineseWords1.csv) ===
+HEADER (first row - exact column names):
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
+
+DATA ROWS (one word per row):
 你好,nǐ hǎo,hello,hola,bonjour,olá,xin chào,สวัสดี,ជំរាបសួរ,halo,halo,kumusta
+谢谢,xiè xie,thank you,gracias,merci,obrigado,cảm ơn,ขอบคุณ,អរគុណ,terima kasih,terima kasih,salamat
+再见,zài jiàn,goodbye,adiós,au revoir,adeus,tạm biệt,ลาก่อน,លាហើយ,selamat tinggal,selamat tinggal,paalam
 
 === PYTHON VALIDATION (CHECKING ONLY) ===
 After creating translations, run:
@@ -1322,9 +1327,15 @@ OUTPUT: SpanishWords/SpanishWords1.csv through SpanishWords250.csv
 CORRECT: 你好 → nǐ hǎo (space between syllables)
 INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
-=== EXAMPLE ROW ===
+=== EXAMPLE CSV (SpanishWords1.csv) ===
+HEADER (first row - exact column names):
 spanish,english,chinese,pinyin,portuguese
+
+DATA ROWS (one word per row):
+hola,hello,你好,nǐ hǎo,olá
 hola amigo,hello friend,你好朋友,nǐ hǎo péng you,olá amigo
+hola señor,hello sir,你好先生,nǐ hǎo xiān sheng,olá senhor
+adiós,goodbye,再见,zài jiàn,adeus
 
 === PYTHON VALIDATION (CHECKING ONLY) ===
 After creating translations, run:
@@ -1442,9 +1453,15 @@ OUTPUT: EnglishWords/EnglishWords1.csv through EnglishWords160.csv
 CORRECT: 你好 → nǐ hǎo (space between syllables)
 INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
-=== EXAMPLE ROW ===
+=== EXAMPLE CSV (EnglishWords1.csv) ===
+HEADER (first row - exact column names):
 english,chinese,pinyin,spanish,portuguese
-hello there,你好,nǐ hǎo,hola,olá
+
+DATA ROWS (one word per row):
+hello,你好,nǐ hǎo,hola,olá
+hello there,你好啊,nǐ hǎo a,hola,olá
+hello everyone,大家好,dà jiā hǎo,hola a todos,olá a todos
+goodbye,再见,zài jiàn,adiós,adeus
 
 === PYTHON VALIDATION (CHECKING ONLY) ===
 After creating translations, run:
