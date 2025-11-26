@@ -736,11 +736,15 @@ Example_Words: [词1例A, 词1例B, 词2例A, 词2例B, 词3例A, 词3例B]
 Base_Words: [你好, 再见]
 Example_Words: [你好吗, 你好啊, 再见朋友, 再见了]
 
-=== COMBINED_WORDS DUPLICATE CHECK ===
+=== COMBINED_WORDS DUPLICATE CHECK (MANDATORY!) ===
 Combined_Words = Base_Words + Example_Words (created automatically by Python).
-You must ensure NO DUPLICATES exist in Combined_Words:
+
+⛔ ZERO DUPLICATES ALLOWED:
 - No duplicate within a single pack's Combined_Words
-- No duplicate across different packs' Combined_Words
+- No duplicate ACROSS different packs' Combined_Words
+- If Pack 1 has "你好吗", NO OTHER PACK can have "你好吗"
+
+This is NOT optional. Duplicates across packs = FAILED.
 
 Run these scripts to CHECK (not fix):
 python PythonHelpers/check_combined_duplicates.py
@@ -749,17 +753,20 @@ python PythonHelpers/validate_overview_csvs.py
 
 These scripts ONLY find issues. They do NOT fix anything.
 If duplicates found, YOU must MANUALLY fix your Example_Words.
+Keep iterating until the checker reports ZERO duplicates.
 
 === WORKFLOW ===
 1. BEFORE SCORE: Rate current examples 1-10, list what could be better
 2. MAKE CHANGES: ⛔ MANUALLY create/improve examples (NO PYTHON!)
 3. PYTHON CHECK: Run duplicate check scripts (checking only)
 4. FIX: MANUALLY fix any duplicates in Example_Words
-5. AFTER SCORE: Rate again, summarize improvements
+5. REPEAT steps 3-4 until ZERO duplicates across all packs
+6. AFTER SCORE: Rate again, summarize improvements
 
 === ⛔ FINAL WARNING ===
 - If you write Python to generate examples = FAILED.
 - If you edit Base_Words = FAILED.
+- If duplicates exist across packs after your changes = FAILED.
 
 === FINAL OUTPUT (REQUIRED) ===
 End your response with this exact table format:
@@ -868,11 +875,15 @@ Example_Words: [word1_exA, word1_exB, word2_exA, word2_exB, word3_exA, word3_exB
 Base_Words: [hola, adiós]
 Example_Words: [hola amigo, hola señor, adiós amigos, adiós señora]
 
-=== COMBINED_WORDS DUPLICATE CHECK ===
+=== COMBINED_WORDS DUPLICATE CHECK (MANDATORY!) ===
 Combined_Words = Base_Words + Example_Words (created automatically by Python).
-You must ensure NO DUPLICATES exist in Combined_Words:
+
+⛔ ZERO DUPLICATES ALLOWED:
 - No duplicate within a single pack's Combined_Words
-- No duplicate across different packs' Combined_Words
+- No duplicate ACROSS different packs' Combined_Words
+- If Pack 1 has "hola amigo", NO OTHER PACK can have "hola amigo"
+
+This is NOT optional. Duplicates across packs = FAILED.
 
 Run these scripts to CHECK (not fix):
 python PythonHelpers/check_combined_duplicates.py
@@ -881,17 +892,20 @@ python PythonHelpers/validate_overview_csvs.py
 
 These scripts ONLY find issues. They do NOT fix anything.
 If duplicates found, YOU must MANUALLY fix your Example_Words.
+Keep iterating until the checker reports ZERO duplicates.
 
 === WORKFLOW ===
 1. BEFORE SCORE: Rate current examples 1-10, list what could be better
 2. MAKE CHANGES: ⛔ MANUALLY create/improve examples (NO PYTHON!)
 3. PYTHON CHECK: Run duplicate check scripts (checking only)
 4. FIX: MANUALLY fix any duplicates in Example_Words
-5. AFTER SCORE: Rate again, summarize improvements
+5. REPEAT steps 3-4 until ZERO duplicates across all packs
+6. AFTER SCORE: Rate again, summarize improvements
 
 === ⛔ FINAL WARNING ===
 - If you write Python to generate examples = FAILED.
 - If you edit Base_Words = FAILED.
+- If duplicates exist across packs after your changes = FAILED.
 
 === FINAL OUTPUT (REQUIRED) ===
 End your response with this exact table format:
@@ -1000,11 +1014,15 @@ Example_Words: [word1_exA, word1_exB, word2_exA, word2_exB, word3_exA, word3_exB
 Base_Words: [hello, goodbye]
 Example_Words: [hello there, hello everyone, goodbye friend, goodbye for now]
 
-=== COMBINED_WORDS DUPLICATE CHECK ===
+=== COMBINED_WORDS DUPLICATE CHECK (MANDATORY!) ===
 Combined_Words = Base_Words + Example_Words (created automatically by Python).
-You must ensure NO DUPLICATES exist in Combined_Words:
+
+⛔ ZERO DUPLICATES ALLOWED:
 - No duplicate within a single pack's Combined_Words
-- No duplicate across different packs' Combined_Words
+- No duplicate ACROSS different packs' Combined_Words
+- If Pack 1 has "hello there", NO OTHER PACK can have "hello there"
+
+This is NOT optional. Duplicates across packs = FAILED.
 
 Run these scripts to CHECK (not fix):
 python PythonHelpers/check_combined_duplicates.py
@@ -1013,17 +1031,20 @@ python PythonHelpers/validate_overview_csvs.py
 
 These scripts ONLY find issues. They do NOT fix anything.
 If duplicates found, YOU must MANUALLY fix your Example_Words.
+Keep iterating until the checker reports ZERO duplicates.
 
 === WORKFLOW ===
 1. BEFORE SCORE: Rate current examples 1-10, list what could be better
 2. MAKE CHANGES: ⛔ MANUALLY create/improve examples (NO PYTHON!)
 3. PYTHON CHECK: Run duplicate check scripts (checking only)
 4. FIX: MANUALLY fix any duplicates in Example_Words
-5. AFTER SCORE: Rate again, summarize improvements
+5. REPEAT steps 3-4 until ZERO duplicates across all packs
+6. AFTER SCORE: Rate again, summarize improvements
 
 === ⛔ FINAL WARNING ===
 - If you write Python to generate examples = FAILED.
 - If you edit Base_Words = FAILED.
+- If duplicates exist across packs after your changes = FAILED.
 
 === FINAL OUTPUT (REQUIRED) ===
 End your response with this exact table format:
