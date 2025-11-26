@@ -1,49 +1,49 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 账户,zhàng hù,Account,Cuenta,Compte,Conta,Tài khoản,บัญชี,គណនី,Akun,Akaun,Account
-存款,cún kuǎn,Deposit,Depósito,Dépôt,Depósito,Đặt cọc,ฝาก,ការដាក់ប្រាក់,Setoran,Deposit,Deposit
-取款,qǔ kuǎn,Withdrawal,Retiro,Retrait,Retirada,Rút tiền,การถอนเงิน,ការដកប្រាក់,Penarikan,Pengeluaran,Pag -alis
-转账,zhuǎn zhàng,Transfer,Transferencia,Transfert,Transferência,Chuyển,โอน,ផ្ទេរ,Pemindahan,Pemindahan,Ilipat
-汇款,huì kuǎn,Remittance,Remesas,Remise de fonds,Remessa,Chuyển tiền,การโอนเงิน,| ការផ្ទេរប្រាក់| ប្រាក់កម្ចី,Pengiriman uang,Pengiriman wang,Remittance
-贷款,dài kuǎn,Loan,Préstamo,Prêt,Empréstimo,Khoản vay,เงินกู้,ចំណាប់អារម្មណ៍,Pinjaman,Pinjaman,Pautang
-利息,lì xī,Interest,Interés,Intérêt,Interesse,Tiền lãi,ดอกเบี้ย,កាតឥណទាន,Minat,Faedah,Interes
-信用卡,xìn yòng kǎ,Credit card,Tarjeta de crédito,Carte de crédit,Cartão de crédito,Thẻ tín dụng,บัตรเครดิต,កាតឥណពន្ធ,Kartu kredit,Kad Kredit,Credit card
-借记卡,jiè jì kǎ,Debit card,Tarjeta de débito,Carte de débit,Cartão de débito,Thẻ ghi nợ,บัตรเดบิต,តុល្យភាព,Kartu debit,Kad Debit,Debit card
-余额,yú é,Balance,Saldo,Solde,Equilíbrio,Số dư,ยอดคงเหลือ,វិក័យលូ,Saldo,Baki,Balanse
-账单,zhàng dān,Bill,Factura,Facture,Projeto de lei,Hóa đơn,บิล,កម្រៃសេវាដោះស្រាយ,tagihan,Bill,Bill
-手续费,shǒu xù fèi,Handling fee,Tarifa de gestión,Frais de traitement,Taxa de processamento,Phí xử lý,ค่าธรรมเนียมการจัดการ,ការគ្រប់គ្រងហិរញ្ញវត្ថុ,Biaya penanganan,Yuran pengendalian,Bayad sa paghawak
-理财,lǐ cái,Financial management,Gestión financiera,Gestion financière,Gestão financeira,Quản lý tài chính,การจัดการทางการเงิน,ការវិនិយោគ,Manajemen keuangan,Pengurusan Kewangan,Pamamahala sa pananalapi
-投资,tóu zī,Investment,Inversión,Investissement,Investimento,Đầu tư,การลงทุน,បញ្ជរ,Investasi,Pelaburan,Pamumuhunan
-柜台,guì tái,Counter,Contador,Compteur,Contador,Bộ đếm,เคาน์เตอร์,សន្សំ,Penghitung,Kaunter,Counter
-储蓄,chǔ xù,Savings,Ahorros,Économies,Poupança,Tiết kiệm,ออมทรัพย์,បើកគណនី,Tabungan,Penjimatan,Savings
-开账户,kāi zhàng hù,Open account,Abrir cuenta,Ouvrir un compte,Abrir conta,Mở tài khoản,เปิดบัญชี,គណនីធនាគារ,Buka akun,Buka Akaun,Buksan ang account
-银行账户,yín háng zhàng hù,Bank account,Cuenta bancaria,Compte bancaire,Conta bancária,Tài khoản ngân hàng,บัญชีธนาคาร,ចំនួនប្រាក់បញ្ញើ,Rekening bank,Akaun Bank,BANK ACCOUNT
-存款额,cún kuǎn é,Deposit amount,Monto del depósito,Montant du dépôt,Valor do depósito,Số tiền gửi,จำนวนเงินฝาก,ចូលទៅកាន់ការដាក់ប្រាក់,Jumlah setoran,Jumlah deposit,Halaga ng deposito
-去存款,qù cún kuǎn,Go to deposit,Ir al depósito,Aller au dépôt,Vá para o depósito,Đi tới gửi tiền,ไปที่การฝากเงิน,ម៉ាស៊ីនអេធីអឹម || ទៅដកប្រាក់,Pergi ke setoran,Pergi ke deposit,Pumunta sa deposito
-取款机,qǔ kuǎn jī,ATM machine,Cajero automático,Distributeur automatique de billets,Caixa eletrônico,Máy ATM,ตู้เอทีเอ็ม,ផ្ទេរប្រាក់,Mesin ATM,Mesin ATM,ATM machine
-去取款,qù qǔ kuǎn,Go to withdraw money,Ir a retirar dinero,Allez retirer de l'argent,Vá sacar dinheiro,Đi rút tiền,ไปถอนเงิน,ចូលទៅកាន់ផ្ទេរ,Pergi untuk menarik uang,Pergi untuk mengeluarkan wang,Pumunta sa pag -alis ng pera
-转账吧,zhuǎn zhàng ba,Transfer money,Transferir dinero,Transférer de l'argent,Transferir dinheiro,Chuyển tiền,โอนเงิน,ដីកាផ្ទោះផ្ទេរ,Transfer uang,Pemindahan wang,Maglipat ng pera
-去转账,qù zhuǎn zhàng,Go to transfer,Ir a transferencia,Aller au transfert,Vá para a transferência,Đi tới chuyển khoản,ไปที่การโอน,ចូលទៅកាន់ការផ្ទេរប្រាក់,Pergi untuk mentransfer,Pergi ke pemindahan,Pumunta sa paglipat
-汇款单,huì kuǎn dān,Remittance order,Orden de remesa,Ordre de remise,Ordem de remessa,Lệnh chuyển tiền,คำสั่งการโอนเงิน,| ចំនួនប្រាក់កម្ចី,Pesanan pengiriman uang,Perintah pengiriman wang,Order ng remittance
-去汇款,qù huì kuǎn,Go to remittance,Ir a remesas,Aller à la remise,Ir para remessa,Vào mục chuyển tiền,ไปที่การโอนเงิน,ដាក់ពាក្យសុំប្រាក់កម្ចី,Pergi ke pengiriman uang,Pergi ke Pengiriman Wang,Pumunta sa remittance
-贷款额,dài kuǎn é,Loan amount,Monto del préstamo,Montant du prêt,Montante do empréstimo,Số tiền vay,จำนวนเงินกู้,| ការចាប់អារម្មណ៍ខ្ពស់,Jumlah pinjaman,Jumlah pinjaman,Halaga ng Pautang
-申请贷款,shēn qǐng dài kuǎn,Apply for loan,Solicitar préstamo,Demander un prêt,Solicitar empréstimo,Đăng ký vay,สมัครสินเชื่อ,គណនាការប្រាក់,Ajukan pinjaman,Memohon pinjaman,Mag -apply para sa pautang
-利息高,lì xī gāo,High interest,Alto interés,Intérêt élevé,Juros elevados,Lãi suất cao,ดอกเบี้ยสูง,អូសកាតឥណទាន,Minat tinggi,Minat tinggi,Mataas na interes
-算利息,suàn lì xī,Calculate interest,Calcular el interés,Calculer les intérêts,Calcular juros,Tính lãi,คำนวณดอกเบี้ย,ដាក់ពាក្យសុំកាតឥណទាន,Hitung bunga,Kirakan minat,Kalkulahin ang interes
-刷信用卡,shuā xìn yòng kǎ,Swipe credit card,Deslizar tarjeta de crédito,Glisser la carte de crédit,Passe o cartão de crédito,Vuốt thẻ tín dụng,รูดบัตรเครดิต,បញ្ឈកាតធ័រកាតឥណពន្ធ || ថ្លៃគិតថ្លៃ,Gesek kartu kredit,Kad Kredit Leret,Mag -swipe credit card
-办信用卡,bàn xìn yòng kǎ,Apply for credit card,Solicitar tarjeta de crédito,Demander une carte de crédit,Solicitar cartão de crédito,Đăng ký thẻ tín dụng,สมัครบัตรเครดิต,| ផលិតផលហិរញ្ញវត្ថុ,Ajukan permohonan kartu kredit,Memohon Kad Kredit,Mag -apply para sa credit card
-刷借记卡,shuā jiè jì kǎ,Swipe debit card || Charge fees,Deslizar tarjeta de débito || Cobrar tarifas,Glisser la carte de débit || Frais de facturation,Passar cartão de débito || Cobrar taxas,Vuốt thẻ ghi nợ || Phí thu phí,รูดบัตรเดบิต || ค่าธรรมเนียมการเรียกเก็บ,រៀនពីការគ្រប់គ្រងហិរញ្ញវត្ថុ,Gesek kartu debit || Membebankan biaya,Kad debit leret || Yuran caj,Mag -swipe ng debit card || Mga bayarin sa singil
-办借记卡,bàn jiè jì kǎ,Financial products,Productos financieros,Produits financiers,Produtos financeiros,Sản phẩm tài chính,ผลิตภัณฑ์ทางการเงิน,វិនិយោគល្អ,Produk keuangan,Produk Kewangan,Mga produktong pampinansyal
-查余额,chá yú é,Learn financial management,Aprender gestión financiera,Apprendre la gestion financière,Aprenda gestão financeira,Học quản lý tài chính,เรียนรู้การจัดการทางการเงิน,ទៅវិនិយោគ,Pelajari manajemen keuangan,Belajar Pengurusan Kewangan,Alamin ang Pamamahala sa Pinansyal
-看余额,kàn yú é,Invest well,Invertir bien,Bien investir,Invista bem,Đầu tư tốt,ลงทุนให้ดี,ចូលទៅកាន់បញ្ជរ,Investasikan dengan baik,Melabur dengan baik,Mamuhunan nang maayos
-看账单,kàn zhàng dān,Go to invest,Ir a invertir,Allez investir,Vá investir,Đi đầu tư,ไปลงทุน,| នៅបញ្ជរ,Pergi berinvestasi,Pergi ke Invest,Pumunta sa Mamuhunan
-还账单,huán zhàng dān,Go to the counter,Ir al mostrador,Allez au comptoir,Vá até o balcão,Đến quầy,ไปที่เคาน์เตอร์,កាតដាក់ប្រាក់,Pergi ke konter,Pergi ke kaunter,Pumunta sa counter
-手续费高,shǒu xù fèi gāo,At the counter,En el mostrador,Au comptoir,No balcão,Tại quầy,ที่เคาน์เตอร์,ការសន្សំទៀងទាត់,Di konter,Di kaunter,Sa counter
-收手续费,shōu shǒu xù fèi,Deposit card,Tarjeta de depósito,Carte de dépôt,Cartão de depósito,Thẻ gửi tiền,บัตรฝากเงิน,[TRANSLATE_KM],Kartu setoran,Kad deposit,Deposit card
-理财产品,lǐ cái chǎn pǐn,Regular savings,Ahorros regulares,Des économies régulières,Economias regulares,Tiết kiệm thường xuyên,ออมทรัพย์เป็นประจำ,[TRANSLATE_KM],Tabungan rutin,Simpanan biasa,Regular na pagtitipid
-学理财,xué lǐ cái,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-投资好,tóu zī hǎo,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-去投资,qù tóu zī,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-去柜台,qù guì tái,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-在柜台,zài guì tái,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-储蓄卡,chǔ xù kǎ,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-定期储蓄,dìng qī chǔ xù,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+存款,cún kuǎn,Deposit,Depósito,Dépôt,Depósito,Tiền gửi,ฝากเงิน,ការដាក់ប្រាក់,Setoran,Deposit,Deposito
+取款,qǔ kuǎn,Withdrawal,Retiro,Retrait,Retirada,Rút tiền,ถอนเงิน,ការដកប្រាក់,Penarikan,Pengeluaran,Withdrawal
+转账,zhuǎn zhàng,Transfer,Transferencia,Transfert,Transferência,Chuyển khoản,โอนเงิน,ផ្ទេរប្រាក់,Transfer,Pemindahan,Transfer
+汇款,huì kuǎn,Remittance,Remesas,Remise de fonds,Remessa,Chuyển tiền,ส่งเงิน,ការផ្ញើប្រាក់,Pengiriman uang,Kiriman wang,Remittance
+贷款,dài kuǎn,Loan,Préstamo,Prêt,Empréstimo,Khoản vay,สินเชื่อ,ប្រាក់កម្ចី,Pinjaman,Pinjaman,Pautang
+利息,lì xī,Interest,Interés,Intérêt,Juros,Lãi suất,ดอกเบี้ย,ការប្រាក់,Bunga,Faedah,Interes
+信用卡,xìn yòng kǎ,Credit card,Tarjeta de crédito,Carte de crédit,Cartão de crédito,Thẻ tín dụng,บัตรเครดิต,កាតឥណទាន,Kartu kredit,Kad kredit,Credit card
+借记卡,jiè jì kǎ,Debit card,Tarjeta de débito,Carte de débit,Cartão de débito,Thẻ ghi nợ,บัตรเดบิต,កាតឥណពន្ធ,Kartu debit,Kad debit,Debit card
+余额,yú é,Balance,Saldo,Solde,Saldo,Số dư,ยอดเงินคงเหลือ,សមតុល្យ,Saldo,Baki,Balanse
+账单,zhàng dān,Bill,Factura,Facture,Fatura,Hóa đơn,บิล,វិក្កយបត្រ,Tagihan,Bil,Bill
+手续费,shǒu xù fèi,Handling fee,Tarifa de gestión,Frais de traitement,Taxa de processamento,Phí xử lý,ค่าธรรมเนียม,កម្រៃសេវា,Biaya layanan,Yuran,Bayad sa serbisyo
+理财,lǐ cái,Financial management,Gestión financiera,Gestion financière,Gestão financeira,Quản lý tài chính,การเงิน,ការគ្រប់គ្រងហិរញ្ញវត្ថុ,Manajemen keuangan,Pengurusan kewangan,Pamamahala ng pera
+投资,tóu zī,Investment,Inversión,Investissement,Investimento,Đầu tư,การลงทุน,ការវិនិយោគ,Investasi,Pelaburan,Pamumuhunan
+柜台,guì tái,Counter,Mostrador,Comptoir,Balcão,Quầy,เคาน์เตอร์,បញ្ជរ,Loket,Kaunter,Counter
+储蓄,chǔ xù,Savings,Ahorros,Épargne,Poupança,Tiết kiệm,ออมทรัพย์,ការសន្សំ,Tabungan,Simpanan,Savings
+开账户,kāi zhàng hù,Open account,Abrir cuenta,Ouvrir un compte,Abrir conta,Mở tài khoản,เปิดบัญชี,បើកគណនី,Buka akun,Buka akaun,Buksan ang account
+银行账户,yín háng zhàng hù,Bank account,Cuenta bancaria,Compte bancaire,Conta bancária,Tài khoản ngân hàng,บัญชีธนาคาร,គណនីធនាគារ,Rekening bank,Akaun bank,Bank account
+存款额,cún kuǎn é,Deposit amount,Monto del depósito,Montant du dépôt,Valor do depósito,Số tiền gửi,จำนวนเงินฝาก,ចំនួនប្រាក់បញ្ញើ,Jumlah setoran,Jumlah deposit,Halaga ng deposito
+去存款,qù cún kuǎn,Go to deposit,Ir a depositar,Aller déposer,Ir depositar,Đi gửi tiền,ไปฝากเงิน,ទៅដាក់ប្រាក់,Pergi menyetor,Pergi deposit,Magdeposito
+取款机,qǔ kuǎn jī,ATM machine,Cajero automático,Distributeur,Caixa eletrônico,Máy ATM,ตู้เอทีเอ็ม,ម៉ាស៊ីនអេធីអឹម,Mesin ATM,Mesin ATM,ATM machine
+去取款,qù qǔ kuǎn,Go to withdraw,Ir a retirar,Aller retirer,Ir sacar,Đi rút tiền,ไปถอนเงิน,ទៅដកប្រាក់,Pergi menarik,Pergi keluarkan wang,Mag-withdraw
+转账吧,zhuǎn zhàng ba,Let's transfer,Vamos a transferir,Transférons,Vamos transferir,Chuyển khoản đi,โอนเงินกันเถอะ,តោះផ្ទេរប្រាក់,Mari transfer,Jom transfer,Magtransfer
+去转账,qù zhuǎn zhàng,Go to transfer,Ir a transferir,Aller transférer,Ir transferir,Đi chuyển khoản,ไปโอนเงิน,ទៅផ្ទេរប្រាក់,Pergi transfer,Pergi transfer,Magtransfer
+汇款单,huì kuǎn dān,Remittance slip,Recibo de remesa,Bordereau de remise,Recibo de remessa,Phiếu chuyển tiền,ใบโอนเงิน,បង្កាន់ដៃផ្ញើប្រាក់,Slip pengiriman,Slip kiriman wang,Slip ng remittance
+去汇款,qù huì kuǎn,Go to remit,Ir a remitir,Aller envoyer,Ir enviar dinheiro,Đi chuyển tiền,ไปส่งเงิน,ទៅផ្ញើប្រាក់,Pergi kirim uang,Pergi kirim wang,Magpadala ng pera
+贷款额,dài kuǎn é,Loan amount,Monto del préstamo,Montant du prêt,Valor do empréstimo,Số tiền vay,จำนวนเงินกู้,ចំនួនប្រាក់កម្ចី,Jumlah pinjaman,Jumlah pinjaman,Halaga ng pautang
+申请贷款,shēn qǐng dài kuǎn,Apply for loan,Solicitar préstamo,Demander un prêt,Solicitar empréstimo,Đăng ký vay,สมัครสินเชื่อ,ដាក់ពាក្យខ្ចីប្រាក់,Ajukan pinjaman,Mohon pinjaman,Mag-apply para sa loan
+利息高,lì xī gāo,High interest,Alto interés,Intérêt élevé,Juros altos,Lãi suất cao,ดอกเบี้ยสูง,ការប្រាក់ខ្ពស់,Bunga tinggi,Faedah tinggi,Mataas na interes
+算利息,suàn lì xī,Calculate interest,Calcular interés,Calculer les intérêts,Calcular juros,Tính lãi suất,คำนวณดอกเบี้ย,គណនាការប្រាក់,Hitung bunga,Kira faedah,Kalkulahin ang interes
+刷信用卡,shuā xìn yòng kǎ,Swipe credit card,Pasar tarjeta de crédito,Passer la carte de crédit,Passar cartão de crédito,Quẹt thẻ tín dụng,รูดบัตรเครดิต,អូសកាតឥណទាន,Gesek kartu kredit,Leret kad kredit,Mag-swipe ng credit card
+办信用卡,bàn xìn yòng kǎ,Apply for credit card,Solicitar tarjeta de crédito,Demander une carte de crédit,Solicitar cartão de crédito,Đăng ký thẻ tín dụng,สมัครบัตรเครดิต,ដាក់ពាក្យសុំកាតឥណទាន,Ajukan kartu kredit,Mohon kad kredit,Mag-apply para sa credit card
+刷借记卡,shuā jiè jì kǎ,Swipe debit card,Pasar tarjeta de débito,Passer la carte de débit,Passar cartão de débito,Quẹt thẻ ghi nợ,รูดบัตรเดบิต,អូសកាតឥណពន្ធ,Gesek kartu debit,Leret kad debit,Mag-swipe ng debit card
+办借记卡,bàn jiè jì kǎ,Apply for debit card,Solicitar tarjeta de débito,Demander une carte de débit,Solicitar cartão de débito,Đăng ký thẻ ghi nợ,สมัครบัตรเดบิต,ដាក់ពាក្យសុំកាតឥណពន្ធ,Ajukan kartu debit,Mohon kad debit,Mag-apply para sa debit card
+查余额,chá yú é,Check balance,Verificar saldo,Vérifier le solde,Verificar saldo,Kiểm tra số dư,เช็คยอดเงิน,ពិនិត្យសមតុល្យ,Cek saldo,Semak baki,Tingnan ang balanse
+看余额,kàn yú é,View balance,Ver saldo,Voir le solde,Ver saldo,Xem số dư,ดูยอดเงิน,មើលសមតុល្យ,Lihat saldo,Lihat baki,Tingnan ang balanse
+看账单,kàn zhàng dān,View bill,Ver factura,Voir la facture,Ver fatura,Xem hóa đơn,ดูบิล,មើលវិក្កយបត្រ,Lihat tagihan,Lihat bil,Tingnan ang bill
+还账单,huán zhàng dān,Pay bill,Pagar factura,Payer la facture,Pagar fatura,Thanh toán hóa đơn,จ่ายบิล,បង់វិក្កយបត្រ,Bayar tagihan,Bayar bil,Bayaran ang bill
+手续费高,shǒu xù fèi gāo,High handling fee,Tarifa alta,Frais élevés,Taxa alta,Phí cao,ค่าธรรมเนียมสูง,កម្រៃសេវាខ្ពស់,Biaya tinggi,Yuran tinggi,Mataas na bayad
+收手续费,shōu shǒu xù fèi,Charge handling fee,Cobrar tarifa,Facturer des frais,Cobrar taxa,Thu phí,เก็บค่าธรรมเนียม,យកកម្រៃសេវា,Kenakan biaya,Caj yuran,Singilin ng bayad
+理财产品,lǐ cái chǎn pǐn,Financial products,Productos financieros,Produits financiers,Produtos financeiros,Sản phẩm tài chính,ผลิตภัณฑ์การเงิน,ផលិតផលហិរញ្ញវត្ថុ,Produk keuangan,Produk kewangan,Mga produktong pinansyal
+学理财,xué lǐ cái,Learn finance,Aprender finanzas,Apprendre la finance,Aprender finanças,Học tài chính,เรียนการเงิน,រៀនគ្រប់គ្រងហិរញ្ញវត្ថុ,Belajar keuangan,Belajar kewangan,Matuto ng finance
+投资好,tóu zī hǎo,Good investment,Buena inversión,Bon investissement,Bom investimento,Đầu tư tốt,ลงทุนดี,វិនិយោគល្អ,Investasi bagus,Pelaburan bagus,Magandang investment
+去投资,qù tóu zī,Go to invest,Ir a invertir,Aller investir,Ir investir,Đi đầu tư,ไปลงทุน,ទៅវិនិយោគ,Pergi investasi,Pergi melabur,Pumunta mag-invest
+去柜台,qù guì tái,Go to counter,Ir al mostrador,Aller au comptoir,Ir ao balcão,Đến quầy,ไปเคาน์เตอร์,ទៅបញ្ជរ,Pergi ke loket,Pergi ke kaunter,Pumunta sa counter
+在柜台,zài guì tái,At the counter,En el mostrador,Au comptoir,No balcão,Tại quầy,ที่เคาน์เตอร์,នៅបញ្ជរ,Di loket,Di kaunter,Sa counter
+储蓄卡,chǔ xù kǎ,Savings card,Tarjeta de ahorros,Carte d'épargne,Cartão de poupança,Thẻ tiết kiệm,บัตรออมทรัพย์,កាតសន្សំ,Kartu tabungan,Kad simpanan,Savings card
+定期储蓄,dìng qī chǔ xù,Fixed deposit,Depósito fijo,Dépôt à terme,Depósito a prazo,Tiết kiệm định kỳ,ฝากประจำ,ការសន្សំមានកាលកំណត់,Deposito berjangka,Simpanan tetap,Fixed deposit

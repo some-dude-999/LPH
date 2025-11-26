@@ -1,46 +1,46 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 品质,pǐn zhì,Quality,Calidad,Qualité,Qualidade,Chất lượng,คุณภาพ,គុណភាព,Kualitas,Kualiti,Kalidad
-质量,zhì liàng,Specification sheet,Hoja de especificaciones,Fiche technique,Ficha de especificações,Bảng thông số kỹ thuật,เอกสารข้อมูลจำเพาะ,សន្លឹកបញ្ជាក់,Lembar spesifikasi,Lembaran Spesifikasi,SPECIFICATION SHEET
-标准,biāo zhǔn,According to specifications,Según especificaciones,Selon cahier des charges,De acordo com as especificações,Theo thông số kỹ thuật,ตามข้อกำหนด,នេះបើយោងតាមការបញ្ជាក់,Sesuai spesifikasi,Menurut spesifikasi,Ayon sa mga pagtutukoy
-规格,guī gé,Inspector,Inspectora,Inspecteur,Inspetor,Thanh tra,สารวัตร,អធិការ,Inspektur,Inspektor,Inspektor
-检验,jiǎn yàn,Do inspection,Hacer inspección,Faire une inspection,Fazer inspeção,Kiểm tra,ทำการตรวจสอบ,ធ្វើការត្រួតពិនិត្យ,Lakukan pemeriksaan,Adakah pemeriksaan,Gawin inspeksyon
-检测,jiǎn cè,Test report,Informe de prueba,Rapport d'essai,Relatório de teste,Báo cáo thử nghiệm,รายงานการทดสอบ,របាយការណ៍តេស្ត,Laporan pengujian,Laporan Ujian,Ulat sa Pagsubok
-合格,hé gé,Do inspection,Hacer inspección,Faire une inspection,Fazer inspeção,Kiểm tra,ทำการตรวจสอบ,ធ្វើការត្រួតពិនិត្យ,Lakukan pemeriksaan,Adakah pemeriksaan,Gawin inspeksyon
-不合格,bù hé gé,Passed,Aprobado,Passé,Aprovado,Đã vượt qua,ผ่าน,បានអនុម័ត,Lulus,Lulus,Lumipas
-达标,dá biāo,Passed inspection,Inspección aprobada,Inspection réussie,Inspeção aprovada,Đã qua kiểm tra,ผ่านการตรวจสอบ,បានឆ្លងកាត់ការត្រួតពិនិត្យ,Lulus pemeriksaan,Lulus Pemeriksaan,Naipasa inspeksyon
-优质,yōu zhì,Unsatisfactory product,Producto insatisfactorio,Produit insatisfaisant,Produto insatisfatório,Sản phẩm không đạt yêu cầu,สินค้าไม่น่าพอใจ,ផលិតផលដែលមិនពេញចិត្ត,Produk kurang memuaskan,Produk yang tidak memuaskan,Hindi kasiya -siyang produkto
-优良,yōu liáng,Failed inspection,Inspección fallida,Échec de l'inspection,Inspeção falhada,Kiểm tra không thành công,การตรวจสอบล้มเหลว,ការត្រួតពិនិត្យបានបរាជ័យ,Inspeksi gagal,Pemeriksaan gagal,Nabigong inspeksyon
-次品,cì pǐn,Meet the standard,Cumplir con el estándar,Répondre à la norme,Atenda ao padrão,Đạt tiêu chuẩn,ได้มาตรฐาน,បំពេញតាមស្តង់ដារ,Memenuhi standar,Memenuhi standard,Kilalanin ang Pamantayan
-瑕疵,xiá cī,Reached the standard,Alcanzó el estándar,A atteint la norme,Atingiu o padrão,Đạt tiêu chuẩn,ถึงมาตรฐานแล้ว,| បានឈានដល់ស្តង់ដារ,Mencapai standar,Mencapai standard,Naabot ang pamantayan
-认证,rèn zhèng,High-quality product,Producto de alta calidad,Produit de haute qualité,Produto de alta qualidade,Sản phẩm chất lượng cao,สินค้าคุณภาพสูง,| ផលិតផលដែលមានគុណភាពខ្ពស់,Produk berkualitas tinggi,Produk berkualiti tinggi,Mataas na kalidad na produkto
-规范,guī fàn,Provide high quality,Proporcionar alta calidad,Fournir une haute qualité,Fornecer alta qualidade,Cung cấp chất lượng cao,ให้คุณภาพสูง,ផ្តល់ជូននូវគុណភាពខ្ពស់,Memberikan kualitas tinggi,Menyediakan Kualiti Tinggi,Magbigay ng mataas na kalidad
-品质好,pǐn zhì hǎo,Excellent variety,Excelente variedad,Excellente variété,Excelente variedade,Sự đa dạng tuyệt vời,ความหลากหลายที่ยอดเยี่ยม,ពូជល្អបំផុត,Variasi luar biasa,Variety yang sangat baik,Mahusay na iba't -ibang
-高品质,gāo pǐn zhì,Excellent quality,Excelente calidad,Excellente qualité,Excelente qualidade,Chất lượng tuyệt vời,คุณภาพดีเยี่ยม,គុណភាពល្អឥតខ្ចោះ,Kualitas luar biasa,Kualiti yang sangat baik,Mahusay na kalidad
-质量好,zhì liàng hǎo,It is a defective product,Es un producto defectuoso,C'est un produit défectueux,É um produto com defeito,Đó là sản phẩm bị lỗi,เป็นสินค้ามีตำหนิ,វាគឺជាផលិតផលដែលមានបញ្ហា,Ini adalah produk cacat,Ia adalah produk yang cacat,Ito ay isang depektibong produkto
-保证质量,bǎo zhèng zhì liàng,There is a defective product,Hay un producto defectuoso,Il y a un produit défectueux,Existe um produto com defeito,Có sản phẩm bị lỗi,มีสินค้าชำรุด,មានផលិតផលខ្វះចន្លោះមួយ,Ada produk cacat,Terdapat produk yang cacat,Mayroong isang may sira na produkto
-标准高,biāo zhǔn gāo,There are defects,Hay defectos,Il y a des défauts,Existem defeitos,Có khiếm khuyết,มีตำหนิ,មានពិការភាព,Ada cacat,Terdapat kecacatan,May mga depekto
-按标准,àn biāo zhǔn,Flawless,Impecable,Impeccable,Impecável,Hoàn hảo,ไร้ที่ติ,ខាំល្អ,Sempurna,Sempurna,Walang kamali -mali
-规格表,guī gé biǎo,Certified,Certificado,Certifié,Certificado,Được chứng nhận,ได้รับการรับรอง,វិញ្ញាបនប័ត្រ,Bersertifikat,Bersertifikat,Sertipikado
-按规格,àn guī gé,Certified,Certificado,Certifié,Certificado,Được chứng nhận,ได้รับการรับรอง,វិញ្ញាបនប័ត្រ,Bersertifikat,Bersertifikat,Sertipikado
-检验员,jiǎn yàn yuán,Standardized,Estandarizado,Standardisé,Padronizado,Chuẩn hóa,ได้มาตรฐาน,ស្តង់ដារ,Terstandar,Standardized,Standardized
-做检验,zuò jiǎn yàn,According to specifications,Según especificaciones,Selon cahier des charges,De acordo com especificações,Theo thông số kỹ thuật,ตามข้อกำหนด,នេះបើយោងតាមការបញ្ជាក់,Sesuai dengan spesifikasi,Mengikut spesifikasi,Ayon sa mga pagtutukoy
-检测报告,jiǎn cè bào gào,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-做检测,zuò jiǎn cè,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-合格了,hé gé le,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-检验合格,jiǎn yàn hé gé,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-不合格品,bù hé gé pǐn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-检验不合格,jiǎn yàn bù hé gé,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-达标了,dá biāo le,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-已达标,yǐ dá biāo,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-优质品,yōu zhì pǐn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-提供优质,tí gōng yōu zhì,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-优良品种,yōu liáng pǐn zhǒng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-品质优良,pǐn zhì yōu liáng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-是次品,shì cì pǐn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-有次品,yǒu cì pǐn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-有瑕疵,yǒu xiá cī,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-无瑕疵,wú xiá cī,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-通过认证,tōng guò rèn zhèng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-做认证,zuò rèn zhèng,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-规范化,guī fàn huà,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
-按规范,àn guī fàn,[TRANSLATE_EN],[TRANSLATE_ES],[TRANSLATE_FR],[TRANSLATE_PT],[TRANSLATE_VI],[TRANSLATE_TH],[TRANSLATE_KM],[TRANSLATE_ID],[TRANSLATE_MS],[TRANSLATE_TL]
+质量,zhì liàng,Quality,Calidad,Qualité,Qualidade,Chất lượng,คุณภาพ,គុណភាព,Kualitas,Kualiti,Kalidad
+标准,biāo zhǔn,Standard,Estándar,Norme,Padrão,Tiêu chuẩn,มาตรฐาน,ស្តង់ដារ,Standar,Standard,Pamantayan
+规格,guī gé,Specifications,Especificaciones,Spécifications,Especificações,Thông số kỹ thuật,ข้อมูลจำเพาะ,ការបញ្ជាក់,Spesifikasi,Spesifikasi,Mga pagtutukoy
+检验,jiǎn yàn,Inspection,Inspección,Inspection,Inspeção,Kiểm tra,การตรวจสอบ,ការត្រួតពិនិត្យ,Inspeksi,Pemeriksaan,Inspeksyon
+检测,jiǎn cè,Testing,Prueba,Test,Teste,Kiểm tra,การทดสอบ,ការធ្វើតេស្ត,Pengujian,Ujian,Pagsubok
+合格,hé gé,Qualified,Calificado,Qualifié,Qualificado,Đạt tiêu chuẩn,ผ่านเกณฑ์,មានសមត្ថភាព,Memenuhi syarat,Berkelayakan,Kwalipikado
+不合格,bù hé gé,Unqualified,No calificado,Non qualifié,Não qualificado,Không đạt tiêu chuẩn,ไม่ผ่านเกณฑ์,មិនមានសមត្ថភាព,Tidak memenuhi syarat,Tidak berkelayakan,Hindi kwalipikado
+达标,dá biāo,Meet standard,Cumplir estándar,Atteindre la norme,Atingir padrão,Đạt tiêu chuẩn,ได้มาตรฐาน,បានស្តង់ដារ,Memenuhi standar,Mencapai standard,Matugunan ang pamantayan
+优质,yōu zhì,High quality,Alta calidad,Haute qualité,Alta qualidade,Chất lượng cao,คุณภาพสูง,គុណភាពខ្ពស់,Kualitas tinggi,Kualiti tinggi,Mataas na kalidad
+优良,yōu liáng,Excellent,Excelente,Excellent,Excelente,Xuất sắc,ดีเยี่ยม,ល្អឥតខ្ចោះ,Sangat baik,Cemerlang,Mahusay
+次品,cì pǐn,Defective product,Producto defectuoso,Produit défectueux,Produto defeituoso,Sản phẩm lỗi,สินค้าชำรุด,ផលិតផលខូច,Produk cacat,Produk rosak,Depektibong produkto
+瑕疵,xiá cī,Flaw,Defecto,Défaut,Defeito,Khuyết điểm,ตำหนิ,កំហុស,Cacat,Kecacatan,Depekto
+认证,rèn zhèng,Certification,Certificación,Certification,Certificação,Chứng nhận,การรับรอง,វិញ្ញាបនប័ត្រ,Sertifikasi,Pensijilan,Sertipikasyon
+规范,guī fàn,Standards,Normas,Normes,Normas,Quy chuẩn,มาตรฐาน,ស្តង់ដារ,Standar,Piawaian,Pamantayan
+品质好,pǐn zhì hǎo,Good quality,Buena calidad,Bonne qualité,Boa qualidade,Chất lượng tốt,คุณภาพดี,គុណភាពល្អ,Kualitas bagus,Kualiti baik,Magandang kalidad
+高品质,gāo pǐn zhì,High quality,Alta calidad,Haute qualité,Alta qualidade,Chất lượng cao,คุณภาพสูง,គុណភាពខ្ពស់,Kualitas tinggi,Kualiti tinggi,Mataas na kalidad
+质量好,zhì liàng hǎo,Good quality,Buena calidad,Bonne qualité,Boa qualidade,Chất lượng tốt,คุณภาพดี,គុណភាពល្អ,Kualitas bagus,Kualiti baik,Magandang kalidad
+保证质量,bǎo zhèng zhì liàng,Guarantee quality,Garantizar calidad,Garantir la qualité,Garantir qualidade,Đảm bảo chất lượng,รับประกันคุณภาพ,ធានាគុណភាព,Jaminan kualitas,Jaminan kualiti,Garantiya ng kalidad
+标准高,biāo zhǔn gāo,High standards,Altos estándares,Normes élevées,Padrões elevados,Tiêu chuẩn cao,มาตรฐานสูง,ស្តង់ដារខ្ពស់,Standar tinggi,Standard tinggi,Mataas na pamantayan
+按标准,àn biāo zhǔn,According to standard,Según estándar,Selon la norme,Conforme padrão,Theo tiêu chuẩn,ตามมาตรฐาน,តាមស្តង់ដារ,Sesuai standar,Mengikut standard,Ayon sa pamantayan
+规格表,guī gé biǎo,Specification sheet,Hoja de especificaciones,Fiche technique,Ficha de especificações,Bảng thông số,เอกสารข้อมูลจำเพาะ,សន្លឹកបញ្ជាក់,Lembar spesifikasi,Lembaran spesifikasi,Sheet ng pagtutukoy
+按规格,àn guī gé,According to specifications,Según especificaciones,Selon les spécifications,Conforme especificações,Theo thông số kỹ thuật,ตามข้อกำหนด,តាមការបញ្ជាក់,Sesuai spesifikasi,Mengikut spesifikasi,Ayon sa mga pagtutukoy
+检验员,jiǎn yàn yuán,Inspector,Inspector,Inspecteur,Inspetor,Thanh tra viên,ผู้ตรวจสอบ,អ្នកត្រួតពិនិត្យ,Inspektur,Pemeriksa,Inspektor
+做检验,zuò jiǎn yàn,Do inspection,Hacer inspección,Faire une inspection,Fazer inspeção,Làm kiểm tra,ทำการตรวจสอบ,ធ្វើការត្រួតពិនិត្យ,Lakukan inspeksi,Buat pemeriksaan,Gumawa ng inspeksyon
+检测报告,jiǎn cè bào gào,Test report,Informe de prueba,Rapport de test,Relatório de teste,Báo cáo kiểm tra,รายงานการทดสอบ,របាយការណ៍តេស្ត,Laporan pengujian,Laporan ujian,Ulat ng pagsubok
+做检测,zuò jiǎn cè,Do testing,Hacer prueba,Faire un test,Fazer teste,Làm kiểm tra,ทำการทดสอบ,ធ្វើតេស្ត,Lakukan pengujian,Buat ujian,Gumawa ng pagsubok
+合格了,hé gé le,Passed,Aprobado,Approuvé,Aprovado,Đã đạt,ผ่านแล้ว,បានឆ្លងកាត់,Lulus,Lulus,Pumasa
+检验合格,jiǎn yàn hé gé,Passed inspection,Inspección aprobada,Inspection réussie,Inspeção aprovada,Đạt kiểm tra,ผ่านการตรวจสอบ,បានឆ្លងការត្រួតពិនិត្យ,Lulus inspeksi,Lulus pemeriksaan,Pumasa sa inspeksyon
+不合格品,bù hé gé pǐn,Unqualified product,Producto no calificado,Produit non qualifié,Produto não qualificado,Sản phẩm không đạt,สินค้าไม่ผ่านเกณฑ์,ផលិតផលមិនមានសមត្ថភាព,Produk tidak memenuhi syarat,Produk tidak berkelayakan,Hindi kwalipikadong produkto
+检验不合格,jiǎn yàn bù hé gé,Failed inspection,Inspección fallida,Inspection échouée,Inspeção reprovada,Không đạt kiểm tra,ไม่ผ่านการตรวจสอบ,បានបរាជ័យក្នុងការត្រួតពិនិត្យ,Gagal inspeksi,Gagal pemeriksaan,Nabigo sa inspeksyon
+达标了,dá biāo le,Met the standard,Cumplió el estándar,A atteint la norme,Atingiu o padrão,Đã đạt tiêu chuẩn,ได้มาตรฐานแล้ว,បានដល់ស្តង់ដារ,Memenuhi standar,Mencapai standard,Natugunan ang pamantayan
+已达标,yǐ dá biāo,Already met standard,Ya cumplió estándar,Déjà conforme,Já atingiu padrão,Đã đạt tiêu chuẩn,ได้มาตรฐานแล้ว,បានដល់ស្តង់ដាររួចហើយ,Sudah memenuhi standar,Sudah mencapai standard,Natugunan na ang pamantayan
+优质品,yōu zhì pǐn,Quality product,Producto de calidad,Produit de qualité,Produto de qualidade,Sản phẩm chất lượng,สินค้าคุณภาพ,ផលិតផលគុណភាព,Produk berkualitas,Produk berkualiti,Produktong may kalidad
+提供优质,tí gōng yōu zhì,Provide quality,Proporcionar calidad,Fournir la qualité,Fornecer qualidade,Cung cấp chất lượng,ให้คุณภาพ,ផ្តល់គុណភាព,Memberikan kualitas,Menyediakan kualiti,Magbigay ng kalidad
+优良品种,yōu liáng pǐn zhǒng,Excellent variety,Excelente variedad,Excellente variété,Excelente variedade,Giống xuất sắc,พันธุ์ดีเยี่ยม,ពូជល្អ,Varietas unggul,Varieti cemerlang,Mahusay na pagkakaiba-iba
+品质优良,pǐn zhì yōu liáng,Excellent quality,Excelente calidad,Excellente qualité,Excelente qualidade,Chất lượng xuất sắc,คุณภาพดีเยี่ยม,គុណភាពល្អឥតខ្ចោះ,Kualitas sangat baik,Kualiti cemerlang,Mahusay na kalidad
+是次品,shì cì pǐn,Is defective,Es defectuoso,Est défectueux,É defeituoso,Là hàng lỗi,เป็นสินค้าชำรุด,ជាផលិតផលខូច,Adalah produk cacat,Adalah produk rosak,Ay depektibo
+有次品,yǒu cì pǐn,Has defects,Tiene defectos,A des défauts,Tem defeitos,Có hàng lỗi,มีสินค้าชำรุด,មានផលិតផលខូច,Ada produk cacat,Ada produk rosak,May depekto
+有瑕疵,yǒu xiá cī,Has flaws,Tiene defectos,A des défauts,Tem defeitos,Có khuyết điểm,มีตำหนิ,មានកំហុស,Ada cacat,Ada kecacatan,May depekto
+无瑕疵,wú xiá cī,Flawless,Sin defectos,Sans défaut,Sem defeitos,Không có khuyết điểm,ไร้ตำหนิ,គ្មានកំហុស,Tanpa cacat,Tanpa kecacatan,Walang depekto
+通过认证,tōng guò rèn zhèng,Certified,Certificado,Certifié,Certificado,Được chứng nhận,ได้รับการรับรอง,បានវិញ្ញាបនប័ត្រ,Bersertifikat,Diperakui,Sertipikado
+做认证,zuò rèn zhèng,Do certification,Hacer certificación,Faire la certification,Fazer certificação,Làm chứng nhận,ทำการรับรอง,ធ្វើវិញ្ញាបនប័ត្រ,Lakukan sertifikasi,Buat pensijilan,Gumawa ng sertipikasyon
+规范化,guī fàn huà,Standardize,Estandarizar,Normaliser,Padronizar,Chuẩn hóa,ทำให้เป็นมาตรฐาน,ធ្វើស្តង់ដារ,Standarisasi,Menyeragamkan,I-standardize
+按规范,àn guī fàn,According to standards,Según normas,Selon les normes,Conforme normas,Theo quy chuẩn,ตามมาตรฐาน,តាមស្តង់ដារ,Sesuai standar,Mengikut piawaian,Ayon sa pamantayan
