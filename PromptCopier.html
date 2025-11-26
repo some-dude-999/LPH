@@ -66,7 +66,7 @@ Python validation scripts in PythonHelpers/:
 - validate_pinyin.py               - Stage 3+: 1 pinyin syllable per character
 - validate_overview_csvs.py        - General: CSV structure validation
 
-THE 5 STAGES:
+THE 4 STAGES:
 -------------
 Stage 1: BASE WORDS REVIEW
     - Input:  [Lang]_Base_Words column in Overview CSV
@@ -86,17 +86,21 @@ Stage 3: BREAKOUT CSV CREATION
     - Goal:   Full translations in all target languages
     - Check:  Pinyin syllable count matches Chinese character count
 
-Stage 4: OVERVIEW CLEANUP
-    - Input:  Overview CSVs with temporary columns
-    - Output: Clean Overview CSVs (only 4 columns)
-    - Goal:   Remove Example_Words and Combined_Words (now in breakout CSVs)
-
-Stage 5: JAVASCRIPT MODULE GENERATION
+Stage 4: JAVASCRIPT MODULE GENERATION
     - Input:  Breakout CSVs (ChineseWords1.csv, etc.)
     - Output: JS modules in two formats:
               * Clean: Jsmodules/act1-foundation.js (readable, for development)
               * Obfuscated: Jsmodules-js/act1-foundation-js.js (compressed, for production)
     - Goal:   Game-ready data that can be imported by the flashcard app
+
+CRITICAL RULE - PYTHON VS MANUAL EDITING:
+-----------------------------------------
+Python scripts are ONLY for FINDING issues, NEVER for fixing them.
+- Python: Detect duplicates, count mismatches, format errors
+- Manual: Actually edit the CSV to fix the issues
+
+Why? Python can make automated changes that cascade into bigger problems.
+Human/LLM must understand what they're changing and why.
 
 DATA FLOW DIAGRAM:
 ------------------
@@ -104,7 +108,7 @@ DATA FLOW DIAGRAM:
     Overview CSV                    Breakout CSVs                 JS Modules
     ┌──────────────┐               ┌──────────────┐              ┌──────────────┐
     │ Pack_Number  │               │ chinese      │              │ Clean JS     │
-    │ Pack_Title   │    Stage 3    │ pinyin       │   Stage 5    │ (readable)   │
+    │ Pack_Title   │    Stage 3    │ pinyin       │   Stage 4    │ (readable)   │
     │ Difficulty   │ ───────────►  │ english      │ ───────────► │              │
     │ Base_Words   │               │ spanish      │              │ Obfuscated   │
     │ Example_Words│               │ ...          │              │ (compressed) │
@@ -288,7 +292,12 @@ Your job in Stage 1 is ONLY to ensure base words are good vocabulary items.
 === NO DUPLICATES ACROSS PACKS ===
 After changes, run: python PythonHelpers/check_base_word_duplicates.py chinese
 Each base word must appear in ONLY ONE pack across all 107 packs.
-If duplicates found, decide which pack fits best and remove from others.
+If duplicates found, MANUALLY decide which pack fits best and MANUALLY remove from others.
+
+=== CRITICAL: PYTHON = FIND, MANUAL = FIX ===
+Python scripts ONLY find issues. They NEVER fix them.
+YOU must MANUALLY edit the CSV to fix any issues Python finds.
+NEVER use Python to automatically edit CSV files.
 
 === IDENTIFY GAPS ===
 Note if obvious theme gaps deserve new packs.
@@ -354,6 +363,12 @@ Your job in Stage 1 is ONLY to ensure base words are good vocabulary items.
 === NO DUPLICATES ACROSS PACKS ===
 After changes, run: python PythonHelpers/check_base_word_duplicates.py spanish
 Each base word must appear in ONLY ONE pack across all 250 packs.
+If duplicates found, MANUALLY decide which pack fits best and MANUALLY remove from others.
+
+=== CRITICAL: PYTHON = FIND, MANUAL = FIX ===
+Python scripts ONLY find issues. They NEVER fix them.
+YOU must MANUALLY edit the CSV to fix any issues Python finds.
+NEVER use Python to automatically edit CSV files.
 
 === IDENTIFY GAPS ===
 Note if obvious theme gaps deserve new packs.
@@ -418,6 +433,12 @@ Your job in Stage 1 is ONLY to ensure base words are good vocabulary items.
 === NO DUPLICATES ACROSS PACKS ===
 After changes, run: python PythonHelpers/check_base_word_duplicates.py english
 Each base word must appear in ONLY ONE pack across all 160 packs.
+If duplicates found, MANUALLY decide which pack fits best and MANUALLY remove from others.
+
+=== CRITICAL: PYTHON = FIND, MANUAL = FIX ===
+Python scripts ONLY find issues. They NEVER fix them.
+YOU must MANUALLY edit the CSV to fix any issues Python finds.
+NEVER use Python to automatically edit CSV files.
 
 === IDENTIFY GAPS ===
 Note if obvious theme gaps deserve new packs.
@@ -761,60 +782,16 @@ hello there,你好,nǐ hǎo,hola,olá
 Create your own branch, commit, and PR to main.</div>
 
 <!-- ============================================================ -->
-<!-- STAGE 4: OVERVIEW CLEANUP                                    -->
+<!-- STAGE 4: JAVASCRIPT MODULE GENERATION                        -->
 <!-- ============================================================ -->
 
 <div class="stage-header">
-    <h2>Stage 4: Cleanup Overview Columns</h2>
-    <p>Remove temporary columns after breakout CSVs are generated.</p>
-</div>
-
-<h3>All Languages - Stage 4</h3>
-<div class="label">Click to copy</div>
-<div class="prompt-box" onclick="copyPrompt(this)">TASK: Remove Example_Words and Combined_Words columns from all Overview CSVs
-
-=== PREREQUISITE ===
-Stages 1, 2, 3 complete and merged to main.
-Breakout CSVs exist with all translations.
-
-=== YOUR GOAL ===
-Clean up Overview CSVs by removing temporary columns no longer needed.
-
-=== FILES ===
-- ChineseWords/ChineseWordsOverview.csv
-- SpanishWords/SpanishWordsOverview.csv
-- EnglishWords/EnglishWordsOverview.csv
-
-=== COLUMNS TO KEEP (4 only) ===
-1. Pack_Number
-2. Pack_Title
-3. Difficulty_Act
-4. [Lang]_Base_Words
-
-=== COLUMNS TO REMOVE ===
-- [Lang]_Example_Words
-- [Lang]_Combined_Words
-
-=== METHOD ===
-Use: python PythonHelpers/cleanup_overview_columns.py
-Or manually edit CSVs.
-
-=== VERIFICATION ===
-After cleanup, each Overview CSV has exactly 4 columns.
-
-Create your own branch, commit, and PR to main.</div>
-
-<!-- ============================================================ -->
-<!-- STAGE 5: JAVASCRIPT MODULE GENERATION                        -->
-<!-- ============================================================ -->
-
-<div class="stage-header">
-    <h2>Stage 5: Generate JavaScript Modules</h2>
+    <h2>Stage 4: Generate JavaScript Modules</h2>
     <p>Convert breakout CSVs to JS modules (clean + obfuscated). Final output for the game.</p>
     <p><strong>Script:</strong> <code>python [Lang]Words/[Lang]WordsPythonHelperScripts/convert_csv_to_js.py</code></p>
 </div>
 
-<h3>Chinese - Stage 5</h3>
+<h3>Chinese - Stage 4</h3>
 <div class="label">Click to copy</div>
 <div class="prompt-box" onclick="copyPrompt(this)">TASK: Generate JavaScript modules from Chinese breakout CSVs
 
@@ -898,7 +875,7 @@ After generation:
 
 Create your own branch, commit, and PR to main.</div>
 
-<h3>Spanish - Stage 5</h3>
+<h3>Spanish - Stage 4</h3>
 <div class="label">Click to copy</div>
 <div class="prompt-box" onclick="copyPrompt(this)">TASK: Generate JavaScript modules from Spanish breakout CSVs
 
@@ -940,7 +917,7 @@ export const p1_1_greetings__goodbyes = {
 
 Create your own branch, commit, and PR to main.</div>
 
-<h3>English - Stage 5</h3>
+<h3>English - Stage 4</h3>
 <div class="label">Click to copy</div>
 <div class="prompt-box" onclick="copyPrompt(this)">TASK: Generate JavaScript modules from English breakout CSVs
 
