@@ -18,6 +18,27 @@
             background: #f5f5f5;
             cursor: pointer;
         }
+
+        /* Filter controls */
+        .filter-bar {
+            background: #e0e0e0;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .filter-bar label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .filter-bar select {
+            padding: 5px 10px;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
@@ -234,6 +255,26 @@ seen this wordpack before) rate the quality. This prevents:
     </ul>
 
     <h4>Click any prompt box to copy it to clipboard.</h4>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+    <label>Stage:</label>
+    <select id="stageFilter" onchange="applyFilters()">
+        <option value="all">All Stages</option>
+        <option value="1">Stage 1: Base Words</option>
+        <option value="2">Stage 2: Example Words</option>
+        <option value="3">Stage 3: Breakout CSVs</option>
+        <option value="4">Stage 4: JS Modules</option>
+        <option value="rating">Quality Rating</option>
+    </select>
+    <label>Language:</label>
+    <select id="langFilter" onchange="applyFilters()">
+        <option value="all">All Languages</option>
+        <option value="chinese">Chinese</option>
+        <option value="spanish">Spanish</option>
+        <option value="english">English</option>
+    </select>
 </div>
 
 <!-- ============================================================ -->
@@ -1422,19 +1463,95 @@ The goal is quality, not politeness.</div>
     // ============================================================
     // COPY TO CLIPBOARD FUNCTIONALITY
     // ============================================================
-    // When user clicks a prompt box, copy its text content to clipboard.
-    // Flash green briefly to confirm the copy succeeded.
-    // Uses inline styles instead of CSS classes for visual feedback.
-
     function copyPrompt(element) {
         const text = element.innerText;
         navigator.clipboard.writeText(text).then(() => {
-            // Visual feedback using inline styles (no CSS needed)
             const originalBg = element.style.backgroundColor;
-            element.style.backgroundColor = '#90EE90';  // Light green
+            element.style.backgroundColor = '#90EE90';
             setTimeout(() => {
                 element.style.backgroundColor = originalBg;
             }, 500);
+        });
+    }
+
+    // ============================================================
+    // FILTER FUNCTIONALITY
+    // ============================================================
+    function applyFilters() {
+        const stageFilter = document.getElementById('stageFilter').value;
+        const langFilter = document.getElementById('langFilter').value;
+
+        // Get all h3 elements (language-specific prompts)
+        const h3Elements = document.querySelectorAll('h3');
+
+        h3Elements.forEach(h3 => {
+            const text = h3.textContent.toLowerCase();
+
+            // Determine stage from h3 text
+            let stage = 'other';
+            if (text.includes('stage 1')) stage = '1';
+            else if (text.includes('stage 2')) stage = '2';
+            else if (text.includes('stage 3')) stage = '3';
+            else if (text.includes('stage 4')) stage = '4';
+            else if (text.includes('rating')) stage = 'rating';
+
+            // Determine language from h3 text
+            let lang = 'other';
+            if (text.includes('chinese')) lang = 'chinese';
+            else if (text.includes('spanish')) lang = 'spanish';
+            else if (text.includes('english')) lang = 'english';
+
+            // Check if this section should be visible
+            const stageMatch = (stageFilter === 'all' || stageFilter === stage);
+            const langMatch = (langFilter === 'all' || langFilter === lang);
+
+            // Find all siblings until next h3 or h2
+            let el = h3;
+            const elementsToToggle = [h3];
+            while (el.nextElementSibling && !['H2', 'H3'].includes(el.nextElementSibling.tagName)) {
+                el = el.nextElementSibling;
+                elementsToToggle.push(el);
+            }
+
+            // Show/hide
+            const shouldShow = stageMatch && langMatch;
+            elementsToToggle.forEach(elem => {
+                elem.classList.toggle('hidden', !shouldShow);
+            });
+        });
+
+        // Also handle h2 section headers (show if any child is visible)
+        const h2Elements = document.querySelectorAll('h2');
+        h2Elements.forEach(h2 => {
+            const text = h2.textContent.toLowerCase();
+
+            // Determine stage from h2
+            let stage = 'other';
+            if (text.includes('stage 1')) stage = '1';
+            else if (text.includes('stage 2')) stage = '2';
+            else if (text.includes('stage 3')) stage = '3';
+            else if (text.includes('stage 4')) stage = '4';
+            else if (text.includes('rating')) stage = 'rating';
+
+            const stageMatch = (stageFilter === 'all' || stageFilter === stage);
+
+            // Find section intro (siblings until next h3)
+            let el = h2.parentElement;
+            const elementsToToggle = [el];
+            let sibling = el.nextElementSibling;
+            while (sibling && !sibling.querySelector('h3') && sibling.tagName !== 'H3') {
+                if (!sibling.classList.contains('filter-bar')) {
+                    elementsToToggle.push(sibling);
+                }
+                sibling = sibling.nextElementSibling;
+                if (sibling && sibling.querySelector && sibling.querySelector('h2')) break;
+            }
+
+            elementsToToggle.forEach(elem => {
+                if (elem && elem.classList) {
+                    elem.classList.toggle('hidden', !stageMatch);
+                }
+            });
         });
     }
 </script>
