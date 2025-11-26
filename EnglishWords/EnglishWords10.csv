@@ -3,13 +3,13 @@ Monday,周一,zhōu yī,Lunes,Segunda-feira
 Tuesday,周二,zhōu èr,Martes,Terça-feira
 Wednesday,周三,zhōu sān,Miércoles,Quarta-feira
 Thursday,周四,zhōu sì,Jueves,Quinta-feira
-Friday,星期五,xīng qī wǔ,Viernes,Sexta-feira
+Friday,周五,zhōu wǔ,Viernes,Sexta-feira
 Saturday,周六,zhōu liù,Sábado,Sábado
-Sunday,星期日,xīng qī rì,Domingo,Domingo
+Sunday,周日,zhōu rì,Domingo,Domingo
 today,今天,jīn tiān,hoy,hoje
 tomorrow,明天,míng tiān,mañana,amanhã
 yesterday,昨天,zuó tiān,ayer,ontem
-week,星期,xīng qī,semana,semana
+week,周,zhōu,semana,semana
 weekend,周末,zhōu mò,fin de semana,fim de semana
 morning,早晨,zǎo chén,mañana,manhã
 afternoon,下午,xià wǔ,tarde,tarde
@@ -20,26 +20,26 @@ hour,小时,xiǎo shí,hora,hora
 minute,分钟,fēn zhōng,minuto,minuto
 second,秒,miǎo,segundo,segundo
 Monday morning,周一早上,zhōu yī zǎo shàng,lunes por la mañana,Segunda de manhã
-every Monday,每个星期一,měi gè xīng qī yī,todos los lunes,toda segunda-feira
+every Monday,每周一,měi zhōu yī,todos los lunes,toda segunda-feira
 Tuesday night,周二晚上,zhōu èr wǎn shàng,martes por la noche,Terça-feira à noite
 next Tuesday,下周二,xià zhōu èr,el martes próximo,próxima terça-feira
 Wednesday afternoon,周三下午,zhōu sān xià wǔ,miércoles por la tarde,Quarta-feira à tarde
 last Wednesday,上周三,shàng zhōu sān,miércoles pasado,última quarta-feira
 Thursday evening,周四晚上,zhōu sì wǎn shàng,jueves por la tarde,Quinta-feira à noite
-this Thursday,这个星期四,zhè ge xīng qī sì,este jueves,esta quinta-feira
+this Thursday,这周四,zhè zhōu sì,este jueves,esta quinta-feira
 Friday night,周五晚上,zhōu wǔ wǎn shàng,viernes por la noche,Sexta à noite
 every Friday,每周五,měi zhōu wǔ,todos los viernes,toda sexta-feira
-Saturday morning,星期六早上,xīng qī liù zǎo shàng,Sábado por la mañana,Sábado de manhã
+Saturday morning,周六早上,zhōu liù zǎo shàng,Sábado por la mañana,Sábado de manhã
 on Saturday,周六,zhōu liù,en sábado,no sábado
 Sunday brunch,周日早午餐,zhōu rì zǎo wǔ cān,brunch dominical,Almoço de domingo
-every Sunday,每个星期日,měi gè xīng qī rì,todos los domingos,todo domingo
+every Sunday,每周日,měi zhōu rì,todos los domingos,todo domingo
 today is good,今天很好,jīn tiān hěn hǎo,hoy es bueno,hoje está bom
 later today,今天晚些时候,jīn tiān wǎn xiē shí hòu,más tarde hoy,mais tarde hoje
 tomorrow morning,明天早上,míng tiān zǎo shàng,mañana por la mañana,amanhã de manhã
 see you tomorrow,明天见,míng tiān jiàn,nos vemos mañana,vejo você amanhã
 yesterday was great,昨天很棒,zuó tiān hěn bàng,ayer fue genial,ontem foi ótimo
 since yesterday,从昨天开始,cóng zuó tiān kāi shǐ,desde ayer,desde ontem
-this week,本星期,běn xīng qī,esta semana,essa semana
+this week,本周,běn zhōu,esta semana,essa semana
 next week,下周,xià zhōu,la próxima semana,próxima semana
 this weekend,这个周末,zhè ge zhōu mò,este fin de semana,este fim de semana
 long weekend,长周末,zhǎng zhōu mò,fin de semana largo,fim de semana prolongado
