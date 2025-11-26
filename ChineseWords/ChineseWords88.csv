@@ -1,49 +1,49 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 和,hé,and,y,et,e,và,และ,និង,dan,dan,at
-与,yǔ,and,y,et,e,và,[TRANSLATE_TH],និង,dan,dan,at
-跟,gēn,with,con,avec,com,với,[TRANSLATE_TH],ជាមួយ,dengan,dengan,kasama ang
-或者,huò zhě,or,o,ou,ou,hoặc,[TRANSLATE_TH],ឬ,atau,atau,o
-还是,hái shì,or,o,ou,ou,hoặc,[TRANSLATE_TH],ឬ,atau,atau,o
-但是,dàn shì,but,pero,mais,mas,nhưng,[TRANSLATE_TH],ប៉ុន្តែ,tapi,Tetapi,ngunit
-可是,kě shì,but,pero,mais,mas,nhưng,[TRANSLATE_TH],ប៉ុន្តែ,tapi,Tetapi,ngunit
-然而,rán ér,yet,todavía,encore,ainda,chưa,[TRANSLATE_TH],ប៉ុន្ដែ,belum,Namun,pa
-不过,bù guò,but,pero,mais,mas,nhưng,[TRANSLATE_TH],ប៉ុន្តែ,tapi,Tetapi,ngunit
-而且,ér qiě,and,y,et,e,và,[TRANSLATE_TH],និង,dan,dan,at
-并且,bìng qiě,and,y,et,e,và,[TRANSLATE_TH],និង,dan,dan,at
-况且,kuàng qiě,besides,además,en plus,além de,ngoài ra,[TRANSLATE_TH],ក្រៅពីនេះ,selain,Selain,bukod sa
-同时,tóng shí,at the same time,al mismo tiempo,en même temps,ao mesmo tempo,cùng lúc,[TRANSLATE_TH],ក្នុងពេលតែមួយ,pada saat yang sama,Pada masa yang sama,Kasabay nito
-另外,lìng wài,in addition,además,en plus,além disso,ngoài ra,[TRANSLATE_TH],លើសពីនេះទៀត,selain itu,Di samping itu,Bilang karagdagan
-此外,cǐ wài,in addition,además,en plus,além disso,ngoài ra,[TRANSLATE_TH],លើសពីនេះទៀត,selain itu,Di samping itu,Bilang karagdagan
-总之,zǒng zhī,in short,en resumen,en bref,em resumo,tóm lại,[TRANSLATE_TH],និយាយឱ្យខ្លី,singkatnya,Pendek kata,Sa madaling sabi
-我和你,wǒ hé nǐ,me and you,tu y yo,moi et toi,eu e você,tôi và bạn,[TRANSLATE_TH],ខ្ញុំនិងអ្នក,aku dan kamu,saya dan anda,Ako at ikaw
-和他,hé tā,and him,y él,et lui,e ele,và anh ấy,[TRANSLATE_TH],ហើយគាត់,dan dia,dan dia,at siya
-我与你,wǒ yǔ nǐ,me and you,tu y yo,moi et toi,eu e você,tôi và bạn,[TRANSLATE_TH],ខ្ញុំនិងអ្នក,aku dan kamu,saya dan anda,Ako at ikaw
-与他,yǔ tā,with him,con el,avec lui,com ele,với anh ấy,[TRANSLATE_TH],ជាមួយគាត់,bersamanya,dengan dia,kasama niya
-我跟你,wǒ gēn nǐ,me and you,tu y yo,moi et toi,eu e você,tôi và bạn,[TRANSLATE_TH],ខ្ញុំនិងអ្នក,aku dan kamu,saya dan anda,Ako at ikaw
-跟他,gēn tā,with him,con el,avec lui,com ele,với anh ấy,[TRANSLATE_TH],ជាមួយគាត់,bersamanya,dengan dia,kasama niya
-或者说,huò zhě shuō,or,o,ou,ou,hoặc,[TRANSLATE_TH],ឬ,atau,atau,o
-或者是,huò zhě shì,or,o,ou,ou,hoặc,[TRANSLATE_TH],ឬ,atau,atau,o
+与,yǔ,and,y,et,e,và,และ,និង,dan,dan,at
+跟,gēn,with,con,avec,com,với,กับ,ជាមួយ,dengan,dengan,kasama ang
+或者,huò zhě,or,o,ou,ou,hoặc,หรือ,ឬ,atau,atau,o
+还是,hái shì,or,o,ou,ou,hoặc,หรือ,ឬ,atau,atau,o
+但是,dàn shì,but,pero,mais,mas,nhưng,แต่,ប៉ុន្តែ,tapi,Tetapi,ngunit
+可是,kě shì,but,pero,mais,mas,nhưng,แต่,ប៉ុន្តែ,tapi,Tetapi,ngunit
+然而,rán ér,yet,todavía,encore,ainda,chưa,อย่างไรก็ตาม,ប៉ុន្ដែ,belum,Namun,pa
+不过,bù guò,but,pero,mais,mas,nhưng,แต่,ប៉ុន្តែ,tapi,Tetapi,ngunit
+而且,ér qiě,and,y,et,e,và,และ,និង,dan,dan,at
+并且,bìng qiě,and,y,et,e,và,และ,និង,dan,dan,at
+况且,kuàng qiě,besides,además,en plus,além de,ngoài ra,นอกจากนี้,ក្រៅពីនេះ,selain,Selain,bukod sa
+同时,tóng shí,at the same time,al mismo tiempo,en même temps,ao mesmo tempo,cùng lúc,ในเวลาเดียวกัน,ក្នុងពេលតែមួយ,pada saat yang sama,Pada masa yang sama,Kasabay nito
+另外,lìng wài,in addition,además,en plus,além disso,ngoài ra,นอกจากนี้,លើសពីនេះទៀត,selain itu,Di samping itu,Bilang karagdagan
+此外,cǐ wài,in addition,además,en plus,além disso,ngoài ra,นอกจากนี้,លើសពីនេះទៀត,selain itu,Di samping itu,Bilang karagdagan
+总之,zǒng zhī,in short,en resumen,en bref,em resumo,tóm lại,โดยสรุป,និយាយឱ្យខ្លី,singkatnya,Pendek kata,Sa madaling sabi
+我和你,wǒ hé nǐ,me and you,tu y yo,moi et toi,eu e você,tôi và bạn,ฉันและคุณ,ខ្ញុំនិងអ្នក,aku dan kamu,saya dan anda,Ako at ikaw
+和他,hé tā,and him,y él,et lui,e ele,và anh ấy,และเขา,ហើយគាត់,dan dia,dan dia,at siya
+我与你,wǒ yǔ nǐ,me and you,tu y yo,moi et toi,eu e você,tôi và bạn,ฉันและคุณ,ខ្ញុំនិងអ្នក,aku dan kamu,saya dan anda,Ako at ikaw
+与他,yǔ tā,with him,con el,avec lui,com ele,với anh ấy,กับเขา,ជាមួយគាត់,bersamanya,dengan dia,kasama niya
+我跟你,wǒ gēn nǐ,me and you,tu y yo,moi et toi,eu e você,tôi và bạn,ฉันและคุณ,ខ្ញុំនិងអ្នក,aku dan kamu,saya dan anda,Ako at ikaw
+跟他,gēn tā,with him,con el,avec lui,com ele,với anh ấy,กับเขา,ជាមួយគាត់,bersamanya,dengan dia,kasama niya
+或者说,huò zhě shuō,or,o,ou,ou,hoặc,หรือพูด,ឬ,atau,atau,o
+或者是,huò zhě shì,or,o,ou,ou,hoặc,หรือ,ឬ,atau,atau,o
 还是说,hái shì shuō,Or say,O decir,Ou dire,Ou dizer,Hay nói,หรือพูด,ឬនិយាយ,Atau berkata,Atau kata,O sabihin
-还是你,hái shì nǐ,Still you,Aún eres tú,Toujours toi,Ainda você,Vẫn là bạn,[TRANSLATE_TH],អ្នកនៅតែ,Masih kamu,Masih anda,Ikaw pa rin
-但是呢,dàn shì ne,But,Pero,Mais,Mas,Nhưng,[TRANSLATE_TH],ប៉ុន្តែ,Tapi,Tetapi,Ngunit
-但是说,dàn shì shuō,But say,Pero di,Mais dis,Mas diga,Nhưng nói,[TRANSLATE_TH],ប៉ុន្តែនិយាយ,Tapi katakan,Tetapi katakan,Ngunit sabihin
-可是呢,kě shì ne,But,Pero,Mais,Mas,Nhưng,[TRANSLATE_TH],ប៉ុន្តែ,Tapi,Tetapi,Ngunit
-可是说,kě shì shuō,But say,Pero di,Mais dis,Mas diga,Nhưng nói,[TRANSLATE_TH],ប៉ុន្តែនិយាយ,Tapi katakan,Tetapi katakan,Ngunit sabihin
-然而呢,rán ér ne,However,Sin embargo,Cependant,Porém,Tuy nhiên,[TRANSLATE_TH],ទោះយ៉ាងណា,Namun,Walau bagaimanapun,Gayunpaman
-然而是,rán ér shì,"However,","Sin embargo,","Cependant,","No entanto,","Tuy nhiên,",[TRANSLATE_TH],ទោះយ៉ាងណា,"Namun,","Walau bagaimanapun,","Gayunpaman,"
-不过呢,bù guò ne,But,Pero,Mais,Mas,Nhưng,[TRANSLATE_TH],ប៉ុន្តែ,Tapi,Tetapi,Ngunit
-不过说,bù guò shuō,But say,Pero di,Mais dis,Mas diga,Nhưng nói,[TRANSLATE_TH],ប៉ុន្តែនិយាយ,Tapi katakan,Tetapi katakan,Ngunit sabihin
-而且是,ér qiě shì,And it is,Y es,Et c'est,E é,Và đó là,[TRANSLATE_TH],ហើយវាគឺ,Dan itu adalah,Dan ia adalah,At ito ay
-而且还,ér qiě hái,And also,Y también,Et aussi,E também,Và cả,[TRANSLATE_TH],ហើយលោក,Dan juga,Dan juga,At din
-并且是,bìng qiě shì,And it is,Y es,Et c'est,E é,Và đó là,[TRANSLATE_TH],ហើយវាគឺ,Dan itu adalah,Dan ia adalah,At ito ay
-并且还,bìng qiě hái,And also,Y también,Et aussi,E também,Và cả,[TRANSLATE_TH],ហើយលោក,Dan juga,Dan juga,At din
-况且是,kuàng qiě shì,Besides,Además,En plus,Além,Ngoài ra,[TRANSLATE_TH],ក្រៅពីនេះ,Selain,Selain,Bukod sa
-况且说,kuàng qiě shuō,"Moreover,","Además,","De plus,","Além disso,","Hơn nữa,",[TRANSLATE_TH],"លើសពីនេះទៀត,",Apalagi,"Selain itu,","Bukod dito,"
-同时也,tóng shí yě,At the same time,Al mismo tiempo,En même temps,Ao mesmo tempo,Đồng thời,[TRANSLATE_TH],ក្នុងពេលតែមួយ,Pada saat yang sama,Pada masa yang sama,Kasabay nito
-同时是,tóng shí shì,At the same time,Al mismo tiempo,En même temps,Ao mesmo tempo,Đồng thời,[TRANSLATE_TH],ក្នុងពេលតែមួយ,Pada saat yang sama,Pada masa yang sama,Kasabay nito
-另外还,lìng wài hái,In addition,Además,De plus,Além disso,Ngoài ra,[TRANSLATE_TH],លើសពីនេះទៀត,Selain itu,Di samping itu,Bilang karagdagan
-另外说,lìng wài shuō,In addition,Además,De plus,Além disso,Ngoài ra,[TRANSLATE_TH],លើសពីនេះទៀត,Selain itu,Di samping itu,Bilang karagdagan
-此外还,cǐ wài hái,In addition,Además,De plus,Além disso,Ngoài ra,[TRANSLATE_TH],លើសពីនេះទៀត,Selain itu,Di samping itu,Bilang karagdagan
-此外是,cǐ wài shì,"In addition,","Además,","De plus,","Além disso,","Ngoài ra,",[TRANSLATE_TH],លើសពីនេះទៀត,"Selain itu,","Di samping itu,","Bilang karagdagan,"
-总之是,zǒng zhī shì,In short,En resumen,En bref,Resumindo,Tóm lại,[TRANSLATE_TH],និយាយឱ្យខ្លី,Singkatnya,Pendek kata,Sa madaling sabi
-总之说,zǒng zhī shuō,In short,En breve,En bref,Resumidamente,Tóm lại,[TRANSLATE_TH],និយាយឱ្យខ្លី,Pendeknya,Pendek kata,Sa madaling sabi
+还是你,hái shì nǐ,Still you,Aún eres tú,Toujours toi,Ainda você,Vẫn là bạn,ยังคงเป็นคุณ,អ្នកនៅតែ,Masih kamu,Masih anda,Ikaw pa rin
+但是呢,dàn shì ne,But,Pero,Mais,Mas,Nhưng,แต่ว่า,ប៉ុន្តែ,Tapi,Tetapi,Ngunit
+但是说,dàn shì shuō,But say,Pero di,Mais dis,Mas diga,Nhưng nói,แต่พูดว่า,ប៉ុន្តែនិយាយ,Tapi katakan,Tetapi katakan,Ngunit sabihin
+可是呢,kě shì ne,But,Pero,Mais,Mas,Nhưng,แต่ว่า,ប៉ុន្តែ,Tapi,Tetapi,Ngunit
+可是说,kě shì shuō,But say,Pero di,Mais dis,Mas diga,Nhưng nói,แต่พูดว่า,ប៉ុន្តែនិយាយ,Tapi katakan,Tetapi katakan,Ngunit sabihin
+然而呢,rán ér ne,However,Sin embargo,Cependant,Porém,Tuy nhiên,อย่างไรก็ตาม,ទោះយ៉ាងណា,Namun,Walau bagaimanapun,Gayunpaman
+然而是,rán ér shì,"However,","Sin embargo,","Cependant,","No entanto,","Tuy nhiên,",อย่างไรก็ตาม,ទោះយ៉ាងណា,"Namun,","Walau bagaimanapun,","Gayunpaman,"
+不过呢,bù guò ne,But,Pero,Mais,Mas,Nhưng,แต่ว่า,ប៉ុន្តែ,Tapi,Tetapi,Ngunit
+不过说,bù guò shuō,But say,Pero di,Mais dis,Mas diga,Nhưng nói,แต่พูดว่า,ប៉ុន្តែនិយាយ,Tapi katakan,Tetapi katakan,Ngunit sabihin
+而且是,ér qiě shì,And it is,Y es,Et c'est,E é,Và đó là,และมันคือ,ហើយវាគឺ,Dan itu adalah,Dan ia adalah,At ito ay
+而且还,ér qiě hái,And also,Y también,Et aussi,E também,Và cả,และยัง,ហើយលោក,Dan juga,Dan juga,At din
+并且是,bìng qiě shì,And it is,Y es,Et c'est,E é,Và đó là,และมันคือ,ហើយវាគឺ,Dan itu adalah,Dan ia adalah,At ito ay
+并且还,bìng qiě hái,And also,Y también,Et aussi,E também,Và cả,และยัง,ហើយលោក,Dan juga,Dan juga,At din
+况且是,kuàng qiě shì,Besides,Además,En plus,Além,Ngoài ra,นอกจากนี้,ក្រៅពីនេះ,Selain,Selain,Bukod sa
+况且说,kuàng qiě shuō,"Moreover,","Además,","De plus,","Além disso,","Hơn nữa,",นอกจากนี้,"លើសពីនេះទៀត,",Apalagi,"Selain itu,","Bukod dito,"
+同时也,tóng shí yě,At the same time,Al mismo tiempo,En même temps,Ao mesmo tempo,Đồng thời,ในเวลาเดียวกัน,ក្នុងពេលតែមួយ,Pada saat yang sama,Pada masa yang sama,Kasabay nito
+同时是,tóng shí shì,At the same time,Al mismo tiempo,En même temps,Ao mesmo tempo,Đồng thời,ในเวลาเดียวกัน,ក្នុងពេលតែមួយ,Pada saat yang sama,Pada masa yang sama,Kasabay nito
+另外还,lìng wài hái,In addition,Además,De plus,Além disso,Ngoài ra,นอกจากนี้,លើសពីនេះទៀត,Selain itu,Di samping itu,Bilang karagdagan
+另外说,lìng wài shuō,In addition,Además,De plus,Além disso,Ngoài ra,นอกจากนี้,លើសពីនេះទៀត,Selain itu,Di samping itu,Bilang karagdagan
+此外还,cǐ wài hái,In addition,Además,De plus,Além disso,Ngoài ra,นอกจากนี้,លើសពីនេះទៀត,Selain itu,Di samping itu,Bilang karagdagan
+此外是,cǐ wài shì,"In addition,","Además,","De plus,","Além disso,","Ngoài ra,",นอกจากนี้,លើសពីនេះទៀត,"Selain itu,","Di samping itu,","Bilang karagdagan,"
+总之是,zǒng zhī shì,In short,En resumen,En bref,Resumindo,Tóm lại,โดยสรุป,និយាយឱ្យខ្លី,Singkatnya,Pendek kata,Sa madaling sabi
+总之说,zǒng zhī shuō,In short,En breve,En bref,Resumidamente,Tóm lại,โดยสรุป,និយាយឱ្យខ្លី,Pendeknya,Pendek kata,Sa madaling sabi
