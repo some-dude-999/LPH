@@ -1703,169 +1703,77 @@ Create your own branch, commit, and PR to main.
     <p>Decode with pako.js: base64 → inflate → reverse → JSON.parse</p>
 </div>
 
-<h3>Chinese - Stage 4</h3>
+<h3>All Languages - Stage 4 (Single Prompt)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Generate JavaScript modules from Chinese breakout CSVs
+<div onclick="copyPrompt(this)">TASK: Generate JavaScript modules from ALL breakout CSVs (Chinese, Spanish, English)
 
-=== WHAT THIS STAGE PRODUCES ===
-Two versions of JS modules:
+=== THIS IS SIMPLE - JUST RUN THE SCRIPTS ===
+Stage 4 is straightforward: run Python scripts to convert CSVs to JS modules.
+No manual editing needed. Scripts do all the work.
 
-1. CLEAN VERSION (for development):
-   Location: ChineseWords/Jsmodules/act1-foundation.js, act2-development.js, etc.
-   Format: Human-readable ES6 exports
-   Purpose: LLM-assisted coding, debugging, understanding data structure
-
-2. OBFUSCATED VERSION (for production):
-   Location: ChineseWords/Jsmodules-js/act1-foundation-js.js, etc.
-   Format: Compressed + Base64 encoded
-   Purpose: Actual game deployment, smaller file size
-
-=== PREREQUISITE ===
-Stage 3 complete. All ChineseWords1.csv through ChineseWords107.csv exist.
-
-=== HOW TO RUN ===
+=== STEP 1: RUN ALL THREE CONVERSION SCRIPTS ===
 python ChineseWords/ChineseWordsPythonHelperScripts/convert_csv_to_js.py
-
-=== OUTPUT JS MODULE STRUCTURE ===
-Each act file exports multiple packs:
-
-export const p1_1_greetings__goodbyes = {
-  meta: {
-    wordpack: 1,                    // Pack number (integer)
-    chinese: "问候语",               // Title in Chinese
-    pinyin: "wèn hòu yǔ",           // Title pinyin
-    english: "Greetings & Goodbyes", // Title in English
-    spanish: "Saludos",              // etc.
-    // ... all supported languages
-  },
-  words: [
-    ["你好", "nǐ hǎo", "hello", "hola", "bonjour", "olá", "xin chào", "สวัสดี", "ជំរាបសួរ", "halo", "halo", "kumusta"],
-    ["再见", "zài jiàn", "goodbye", ...],
-    // Each row is [chinese, pinyin, english, spanish, french, portuguese, vietnamese, thai, khmer, indonesian, malay, filipino]
-  ]
-};
-
-=== OBFUSCATION METHOD (3 layers) ===
-1. JSON.stringify(allPacksData)
-2. Reverse the string (salt)
-3. zlib.compress()
-4. base64.encode()
-
-Result: export const w = "base64string...";
-
-=== TO DECODE IN BROWSER ===
-Uses pako.js for decompression:
-1. Import module (get 'w' export)
-2. base64 decode → Uint8Array
-3. pako.inflate()
-4. Reverse string
-5. JSON.parse() → original data
-
-See DecoderTest.html for working example.
-
-=== ACT MAPPING ===
-Chinese has 5 acts:
-- Act I: Foundation (act1-foundation.js)
-- Act II: Development (act2-development.js)
-- Act III: Expansion (act3-expansion.js)
-- Act IV: Mastery (act4-mastery.js)
-- Act V: Refinement (act5-refinement.js)
-
-The Overview CSV's Difficulty_Act column determines which act each pack belongs to.
-
-=== COLUMN INDICES FOR CHINESE (12 columns) ===
-[0] chinese, [1] pinyin, [2] english, [3] spanish, [4] french,
-[5] portuguese, [6] vietnamese, [7] thai, [8] khmer,
-[9] indonesian, [10] malay, [11] filipino
-
-=== VERIFICATION ===
-After generation:
-1. Check Jsmodules/ has all act files
-2. Check Jsmodules-js/ has obfuscated versions
-3. Load DecoderTest.html to verify decoding works
-4. Spot-check a few packs for correct data
-
-Create your own branch, commit, and PR to main.</div>
-
-<h3>Spanish - Stage 4</h3>
-<div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Generate JavaScript modules from Spanish breakout CSVs
-
-=== OUTPUT ===
-1. CLEAN: SpanishWords/Jsmodules/act1-foundation.js through act7-mastery-fluency.js
-2. OBFUSCATED: SpanishWords/Jsmodules-js/act1-foundation-js.js through act7-mastery-fluency-js.js
-
-=== HOW TO RUN ===
 python SpanishWords/SpanishWordsPythonHelperScripts/convert_csv_to_js.py
-
-=== ACT MAPPING ===
-Spanish has 7 acts (250 packs):
-- Act I: Foundation
-- Act II: Building Blocks
-- Act III: Daily Life
-- Act IV: Expanding Expression
-- Act V: Intermediate Mastery
-- Act VI: Advanced Constructs
-- Act VII: Mastery Fluency
-
-=== COLUMN INDICES FOR SPANISH (5 columns) ===
-[0] spanish, [1] english, [2] chinese, [3] pinyin, [4] portuguese
-
-=== JS MODULE STRUCTURE ===
-export const p1_1_greetings__goodbyes = {
-  meta: {
-    wordpack: 1,
-    spanish: "Saludos y Despedidas",
-    english: "Greetings & Goodbyes",
-    chinese: "问候语",
-    pinyin: "wèn hòu yǔ",
-    portuguese: "Saudações"
-  },
-  words: [
-    ["hola amigo", "hello friend", "你好朋友", "nǐ hǎo péng you", "olá amigo"],
-    // [spanish, english, chinese, pinyin, portuguese]
-  ]
-};
-
-Create your own branch, commit, and PR to main.</div>
-
-<h3>English - Stage 4</h3>
-<div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Generate JavaScript modules from English breakout CSVs
-
-=== OUTPUT ===
-1. CLEAN: EnglishWords/Jsmodules/act1-foundation.js through act5-advanced-mastery.js
-2. OBFUSCATED: EnglishWords/Jsmodules-js/act1-foundation-js.js through act5-advanced-mastery-js.js
-
-=== HOW TO RUN ===
 python EnglishWords/EnglishWordsPythonHelperScripts/convert_csv_to_js.py
 
-=== ACT MAPPING ===
-English has 5 acts (160 packs):
-- Act I: Foundation
-- Act II: Building Blocks
-- Act III: Everyday Life
-- Act IV: Expanding Horizons
-- Act V: Advanced Mastery
+Each script:
+- Reads breakout CSVs ([Lang]Words1.csv, [Lang]Words2.csv, ...)
+- Groups packs into acts based on Overview CSV
+- Outputs CLEAN JS: [Lang]Words/Jsmodules/act{N}-{name}.js
+- Outputs OBFUSCATED JS: [Lang]Words/Jsmodules-js/act{N}-{name}-js.js
 
-=== COLUMN INDICES FOR ENGLISH (5 columns) ===
-[0] english, [1] chinese, [2] pinyin, [3] spanish, [4] portuguese
+=== STEP 2: UPDATE LINK.txt ===
+python PythonHelpers/link_manager.py
 
-=== JS MODULE STRUCTURE ===
-export const p1_1_greetings__basics = {
+This updates LINK.txt with all the new JS module URLs.
+
+=== STEP 3: VERIFY (OPTIONAL) ===
+Open DecoderTest.html in browser to confirm modules decode correctly.
+
+=== STEP 4: COMMIT AND PR ===
+git add .
+git commit -m "Regenerate JS modules for all languages"
+git push
+
+=== WHAT THE SCRIPTS PRODUCE ===
+
+CHINESE (107 packs → 5 acts, 12 columns):
+- Jsmodules/act1-foundation.js ... act5-refinement.js
+- Columns: chinese, pinyin, english, spanish, french, portuguese, vietnamese, thai, khmer, indonesian, malay, filipino
+
+SPANISH (250 packs → 7 acts, 5 columns):
+- Jsmodules/act1-foundation.js ... act7-mastery-fluency.js
+- Columns: spanish, english, chinese, pinyin, portuguese
+
+ENGLISH (160 packs → 5 acts, 5 columns):
+- Jsmodules/act1-foundation.js ... act5-advanced-mastery.js
+- Columns: english, chinese, pinyin, spanish, portuguese
+
+=== JS MODULE STRUCTURE (all languages same format) ===
+export const p{act}_{pack}_{title} = {
   meta: {
-    wordpack: 1,
-    english: "Greetings & Basics",
-    chinese: "问候语",
-    pinyin: "wèn hòu yǔ",
-    spanish: "Saludos",
-    portuguese: "Saudações"
+    wordpack: 1,           // Pack number (integer)
+    english: "Title",      // Title translations
+    chinese: "标题",
+    // ... other languages
   },
   words: [
-    ["hello there", "你好", "nǐ hǎo", "hola", "olá"],
-    // [english, chinese, pinyin, spanish, portuguese]
+    ["word1_col1", "word1_col2", ...],
+    ["word2_col1", "word2_col2", ...],
   ]
 };
+
+=== OBFUSCATION (handled automatically) ===
+Obfuscated files use: JSON → reverse → zlib compress → base64
+Decoded in browser with pako.js (see DecoderTest.html)
+
+=== FINAL OUTPUT (REQUIRED) ===
+| Metric    | Value |
+|-----------|-------|
+| Chinese   | ✓ Generated (X acts) |
+| Spanish   | ✓ Generated (X acts) |
+| English   | ✓ Generated (X acts) |
+| LINK.txt  | ✓ Updated |
 
 Create your own branch, commit, and PR to main.</div>
 
