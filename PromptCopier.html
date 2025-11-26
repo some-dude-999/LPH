@@ -1122,18 +1122,31 @@ This tells you:
 - Which packs are missing
 - Whether existing CSVs match Chinese_Combined_Words
 
-MODE A - CONSTRUCTION MODE (CSVs missing):
+MODE A - CONSTRUCTION MODE (ANY CSVs missing):
   → Use Python script with translation API to CREATE breakout CSVs
   → Code-based generation is REQUIRED in this mode
+  → CONTINUE where previous agent left off!
   → PR to main after creating CSVs
 
 MODE B - CRITIQUE MODE (ALL CSVs exist):
-  → MANUALLY scrutinize and fix translations
-  → ⛔ ABSOLUTELY NO CODE for editing translations!
-  → If you use code to fix translations = TOTAL FAILURE
+  → Python is ONLY for validation checks (no editing!)
+  → Verify all Overview Combined_Words appear in breakout CSVs
+  → ⛔ ABSOLUTELY NO PYTHON to edit translations!
 
 === MODE A: CONSTRUCTION WORKFLOW ===
-If breakout CSVs are missing, use the construction script:
+If ANY breakout CSVs are missing, you are in CONSTRUCTION MODE.
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🔄 CONTINUE PREVIOUS WORK!                                      ║
+║                                                                  ║
+║  Previous agents may have created SOME CSVs before stopping.     ║
+║  Your job: CONTINUE where they left off!                         ║
+║                                                                  ║
+║  1. Run check to see which packs are MISSING                     ║
+║  2. Create the MISSING packs (don't redo existing ones)          ║
+║  3. Keep going until ALL packs exist or you must stop            ║
+║  4. PR your progress so next agent can continue                  ║
+╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ✅ CONSTRUCTION MODE: USE PYTHON SCRIPT!                        ║
@@ -1148,36 +1161,41 @@ If breakout CSVs are missing, use the construction script:
 
 Construction workflow:
 1. Run: python PythonHelpers/construct_breakout_csvs.py chinese check
-2. Identify which packs are missing
+2. Identify which packs are MISSING (previous agent may have done some!)
 3. Run: python PythonHelpers/construct_breakout_csvs.py chinese construct [start] [end]
+   → Start from the FIRST missing pack, not pack 1!
 4. Script creates CSVs with translations from Google Translate
 5. Run validation: python PythonHelpers/validate_pinyin.py chinese
-6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
+6. KEEP GOING until all packs done OR you must stop
+7. BEFORE STOPPING: Commit and PR to main (even partial progress!)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔴 CRITICAL: ALWAYS PR BEFORE STOPPING!                         ║
+║  🔴 CRITICAL: DO MAXIMUM WORK & ALWAYS PR BEFORE STOPPING!       ║
 ║                                                                  ║
-║  If you need to stop for ANY reason:                             ║
-║  → Commit and PR whatever CSVs were created                      ║
-║  → Even if it's just 1 pack - PR IT!                             ║
-║  → NEVER stop without PR'ing your work to main                   ║
+║  → Create as many packs as possible before stopping              ║
+║  → Don't stop after just a few packs if you can do more!         ║
+║  → If you need to stop for ANY reason:                           ║
+║    • Commit and PR whatever CSVs were created                    ║
+║    • Even if it's just 1 pack - PR IT!                           ║
+║    • NEVER stop without PR'ing your work to main                 ║
 ║                                                                  ║
 ║  Next agent will continue where you left off.                    ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 === MODE B: CRITIQUE WORKFLOW ===
-If ALL CSVs exist, enter CRITIQUE MODE for maximum translation quality.
+If ALL CSVs exist, enter CRITIQUE MODE.
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ CRITIQUE MODE: ABSOLUTELY NO CODE FOR EDITS! ⛔⛔⛔        ║
+║  ⛔⛔⛔ CRITIQUE MODE: PYTHON FOR CHECKING ONLY! ⛔⛔⛔            ║
 ║                                                                  ║
-║  In CRITIQUE mode, you MUST edit translations MANUALLY.          ║
-║  NEVER write Python code to fix or update translations.          ║
-║  NEVER use scripts to batch-edit CSV files.                      ║
-║  NEVER use automation of any kind to modify translations.        ║
+║  In CRITIQUE mode:                                               ║
+║  ✅ Python to CHECK if all Combined_Words are in breakout CSVs   ║
+║  ✅ Python to validate pinyin formatting                         ║
+║  ⛔ NO Python to edit or fix translations                        ║
+║  ⛔ NO scripts to batch-edit CSV files                           ║
 ║                                                                  ║
-║  If you use ANY code to edit translations = TOTAL FAILURE!       ║
-║  This is NON-NEGOTIABLE. Manual editing ONLY.                    ║
+║  If you use ANY code to EDIT translations = TOTAL FAILURE!       ║
+║  Manual editing ONLY for fixes.                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 Critique workflow (ONE ACT AT A TIME):
@@ -1261,18 +1279,31 @@ This tells you:
 - Which packs are missing
 - Whether existing CSVs match Spanish_Combined_Words
 
-MODE A - CONSTRUCTION MODE (CSVs missing):
+MODE A - CONSTRUCTION MODE (ANY CSVs missing):
   → Use Python script with translation API to CREATE breakout CSVs
   → Code-based generation is REQUIRED in this mode
+  → CONTINUE where previous agent left off!
   → PR to main after creating CSVs
 
 MODE B - CRITIQUE MODE (ALL CSVs exist):
-  → MANUALLY scrutinize and fix translations
-  → ⛔ ABSOLUTELY NO CODE for editing translations!
-  → If you use code to fix translations = TOTAL FAILURE
+  → Python is ONLY for validation checks (no editing!)
+  → Verify all Overview Combined_Words appear in breakout CSVs
+  → ⛔ ABSOLUTELY NO PYTHON to edit translations!
 
 === MODE A: CONSTRUCTION WORKFLOW ===
-If breakout CSVs are missing, use the construction script:
+If ANY breakout CSVs are missing, you are in CONSTRUCTION MODE.
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🔄 CONTINUE PREVIOUS WORK!                                      ║
+║                                                                  ║
+║  Previous agents may have created SOME CSVs before stopping.     ║
+║  Your job: CONTINUE where they left off!                         ║
+║                                                                  ║
+║  1. Run check to see which packs are MISSING                     ║
+║  2. Create the MISSING packs (don't redo existing ones)          ║
+║  3. Keep going until ALL packs exist or you must stop            ║
+║  4. PR your progress so next agent can continue                  ║
+╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ✅ CONSTRUCTION MODE: USE PYTHON SCRIPT!                        ║
@@ -1287,36 +1318,41 @@ If breakout CSVs are missing, use the construction script:
 
 Construction workflow:
 1. Run: python PythonHelpers/construct_breakout_csvs.py spanish check
-2. Identify which packs are missing
+2. Identify which packs are MISSING (previous agent may have done some!)
 3. Run: python PythonHelpers/construct_breakout_csvs.py spanish construct [start] [end]
+   → Start from the FIRST missing pack, not pack 1!
 4. Script creates CSVs with translations from Google Translate
 5. Run validation: python PythonHelpers/validate_pinyin.py spanish
-6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
+6. KEEP GOING until all packs done OR you must stop
+7. BEFORE STOPPING: Commit and PR to main (even partial progress!)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔴 CRITICAL: ALWAYS PR BEFORE STOPPING!                         ║
+║  🔴 CRITICAL: DO MAXIMUM WORK & ALWAYS PR BEFORE STOPPING!       ║
 ║                                                                  ║
-║  If you need to stop for ANY reason:                             ║
-║  → Commit and PR whatever CSVs were created                      ║
-║  → Even if it's just 1 pack - PR IT!                             ║
-║  → NEVER stop without PR'ing your work to main                   ║
+║  → Create as many packs as possible before stopping              ║
+║  → Don't stop after just a few packs if you can do more!         ║
+║  → If you need to stop for ANY reason:                           ║
+║    • Commit and PR whatever CSVs were created                    ║
+║    • Even if it's just 1 pack - PR IT!                           ║
+║    • NEVER stop without PR'ing your work to main                 ║
 ║                                                                  ║
 ║  Next agent will continue where you left off.                    ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 === MODE B: CRITIQUE WORKFLOW ===
-If ALL CSVs exist, enter CRITIQUE MODE for maximum translation quality.
+If ALL CSVs exist, enter CRITIQUE MODE.
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ CRITIQUE MODE: ABSOLUTELY NO CODE FOR EDITS! ⛔⛔⛔        ║
+║  ⛔⛔⛔ CRITIQUE MODE: PYTHON FOR CHECKING ONLY! ⛔⛔⛔            ║
 ║                                                                  ║
-║  In CRITIQUE mode, you MUST edit translations MANUALLY.          ║
-║  NEVER write Python code to fix or update translations.          ║
-║  NEVER use scripts to batch-edit CSV files.                      ║
-║  NEVER use automation of any kind to modify translations.        ║
+║  In CRITIQUE mode:                                               ║
+║  ✅ Python to CHECK if all Combined_Words are in breakout CSVs   ║
+║  ✅ Python to validate pinyin formatting                         ║
+║  ⛔ NO Python to edit or fix translations                        ║
+║  ⛔ NO scripts to batch-edit CSV files                           ║
 ║                                                                  ║
-║  If you use ANY code to edit translations = TOTAL FAILURE!       ║
-║  This is NON-NEGOTIABLE. Manual editing ONLY.                    ║
+║  If you use ANY code to EDIT translations = TOTAL FAILURE!       ║
+║  Manual editing ONLY for fixes.                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 Critique workflow (ONE ACT AT A TIME):
@@ -1401,18 +1437,31 @@ This tells you:
 - Which packs are missing
 - Whether existing CSVs match English_Combined_Words
 
-MODE A - CONSTRUCTION MODE (CSVs missing):
+MODE A - CONSTRUCTION MODE (ANY CSVs missing):
   → Use Python script with translation API to CREATE breakout CSVs
   → Code-based generation is REQUIRED in this mode
+  → CONTINUE where previous agent left off!
   → PR to main after creating CSVs
 
 MODE B - CRITIQUE MODE (ALL CSVs exist):
-  → MANUALLY scrutinize and fix translations
-  → ⛔ ABSOLUTELY NO CODE for editing translations!
-  → If you use code to fix translations = TOTAL FAILURE
+  → Python is ONLY for validation checks (no editing!)
+  → Verify all Overview Combined_Words appear in breakout CSVs
+  → ⛔ ABSOLUTELY NO PYTHON to edit translations!
 
 === MODE A: CONSTRUCTION WORKFLOW ===
-If breakout CSVs are missing, use the construction script:
+If ANY breakout CSVs are missing, you are in CONSTRUCTION MODE.
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🔄 CONTINUE PREVIOUS WORK!                                      ║
+║                                                                  ║
+║  Previous agents may have created SOME CSVs before stopping.     ║
+║  Your job: CONTINUE where they left off!                         ║
+║                                                                  ║
+║  1. Run check to see which packs are MISSING                     ║
+║  2. Create the MISSING packs (don't redo existing ones)          ║
+║  3. Keep going until ALL packs exist or you must stop            ║
+║  4. PR your progress so next agent can continue                  ║
+╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ✅ CONSTRUCTION MODE: USE PYTHON SCRIPT!                        ║
@@ -1427,36 +1476,41 @@ If breakout CSVs are missing, use the construction script:
 
 Construction workflow:
 1. Run: python PythonHelpers/construct_breakout_csvs.py english check
-2. Identify which packs are missing
+2. Identify which packs are MISSING (previous agent may have done some!)
 3. Run: python PythonHelpers/construct_breakout_csvs.py english construct [start] [end]
+   → Start from the FIRST missing pack, not pack 1!
 4. Script creates CSVs with translations from Google Translate
 5. Run validation: python PythonHelpers/validate_pinyin.py english
-6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
+6. KEEP GOING until all packs done OR you must stop
+7. BEFORE STOPPING: Commit and PR to main (even partial progress!)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔴 CRITICAL: ALWAYS PR BEFORE STOPPING!                         ║
+║  🔴 CRITICAL: DO MAXIMUM WORK & ALWAYS PR BEFORE STOPPING!       ║
 ║                                                                  ║
-║  If you need to stop for ANY reason:                             ║
-║  → Commit and PR whatever CSVs were created                      ║
-║  → Even if it's just 1 pack - PR IT!                             ║
-║  → NEVER stop without PR'ing your work to main                   ║
+║  → Create as many packs as possible before stopping              ║
+║  → Don't stop after just a few packs if you can do more!         ║
+║  → If you need to stop for ANY reason:                           ║
+║    • Commit and PR whatever CSVs were created                    ║
+║    • Even if it's just 1 pack - PR IT!                           ║
+║    • NEVER stop without PR'ing your work to main                 ║
 ║                                                                  ║
 ║  Next agent will continue where you left off.                    ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 === MODE B: CRITIQUE WORKFLOW ===
-If ALL CSVs exist, enter CRITIQUE MODE for maximum translation quality.
+If ALL CSVs exist, enter CRITIQUE MODE.
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ CRITIQUE MODE: ABSOLUTELY NO CODE FOR EDITS! ⛔⛔⛔        ║
+║  ⛔⛔⛔ CRITIQUE MODE: PYTHON FOR CHECKING ONLY! ⛔⛔⛔            ║
 ║                                                                  ║
-║  In CRITIQUE mode, you MUST edit translations MANUALLY.          ║
-║  NEVER write Python code to fix or update translations.          ║
-║  NEVER use scripts to batch-edit CSV files.                      ║
-║  NEVER use automation of any kind to modify translations.        ║
+║  In CRITIQUE mode:                                               ║
+║  ✅ Python to CHECK if all Combined_Words are in breakout CSVs   ║
+║  ✅ Python to validate pinyin formatting                         ║
+║  ⛔ NO Python to edit or fix translations                        ║
+║  ⛔ NO scripts to batch-edit CSV files                           ║
 ║                                                                  ║
-║  If you use ANY code to edit translations = TOTAL FAILURE!       ║
-║  This is NON-NEGOTIABLE. Manual editing ONLY.                    ║
+║  If you use ANY code to EDIT translations = TOTAL FAILURE!       ║
+║  Manual editing ONLY for fixes.                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 Critique workflow (ONE ACT AT A TIME):
