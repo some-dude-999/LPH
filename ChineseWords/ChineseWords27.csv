@@ -3,13 +3,13 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 红色,hóng sè,Red,Rojo,Rouge,Vermelho,Đỏ,แดง,ក្រហម,Merah,Merah,Pula
 黄色,huáng sè,Yellow,Amarillo,Jaune,Amarelo,Màu vàng,สีเหลือง,ពណ៌លឿង,Kuning,Kuning,Dilaw
 蓝色,lán sè,Blue,Azul,Bleu,Azul,Màu xanh,สีฟ้า,ខៀវ || បៃតង,Biru,Blue,Blue
-绿色,lǜ sè,Green,Verde,Vert,Verde,Xanh,เขียว,ស,Hijau,Hijau,Berde
-白色,bái sè,White,Blanco,Blanc,Branco,Trắng,ขาว,ខ្មៅ,Putih,Putih,Puti
-黑色,hēi sè,Black,Negro,Noir,Preto,Đen,ดำ,ពណ៌ប្រផេះ,Hitam,Hitam,Itim
-灰色,huī sè,Gray,Gris,Gris,Cinza,Xám,สีเทา,ពណ៌ស្វាយ,Abu-abu,Kelabu,Grey
-紫色,zǐ sè,Purple,Púrpura,Violet,Roxo,Màu tím,สีม่วง,ទឹកក្រូច,Ungu,Ungu,Lila
-橙色,chéng sè,Orange,Naranja,Orange,Laranja,Cam,ส้ม,ពណ៌ផ្កាឈូក,Oranye,Orange,Orange
-粉色,fěn sè,Pink,Rosa,Rose,Rosa,Hồng,สีชมพู,ប្រោន,Merah Jambu,Pink,Pink
+绿色,lǜ sè,Green,Verde,Vert,Verde,Xanh,เขียว,បៃតង,Hijau,Hijau,Berde
+白色,bái sè,White,Blanco,Blanc,Branco,Trắng,ขาว,ស,Putih,Putih,Puti
+黑色,hēi sè,Black,Negro,Noir,Preto,Đen,ดำ,ខ្មៅ,Hitam,Hitam,Itim
+灰色,huī sè,Gray,Gris,Gris,Cinza,Xám,สีเทา,ប្រផេះ,Abu-abu,Kelabu,Grey
+紫色,zǐ sè,Purple,Púrpura,Violet,Roxo,Màu tím,สีม่วง,ពណ៌ស្វាយ,Ungu,Ungu,Lila
+橙色,chéng sè,Orange,Naranja,Orange,Laranja,Cam,ส้ม,ទឹកក្រូច,Oranye,Orange,Orange
+粉色,fěn sè,Pink,Rosa,Rose,Rosa,Hồng,สีชมพู,ពណ៌ផ្កាឈូក,Merah Jambu,Pink,Pink
 棕色,zōng sè,Brown,Marrón,Marron,Marrom,Nâu,สีน้ำตาล,មាស || ប្រាក់ | ប្រាក់,Coklat,Brown,Kayumanggi
 金色,jīn sè,Gold,Oro,Or,Ouro,Vàng,ทอง,Bright,Emas,Emas,Ginto
 银色,yín sè,Silver,Plata,Argent,Prata,Bạc,เงิน,| ងងឹត,Perak,Perak,Silver
@@ -50,6 +50,6 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 天很暗,tiān hěn àn,The sky is dark,El cielo está oscuro,Le ciel est sombre,O céu está escuro,Bầu trời tối,ฟ้ามืดแล้ว,ភ្លឺនិងភ្លឺស្វាង,Langitnya gelap,Langit gelap,Madilim ang langit
 光线暗,guāng xiàn àn,The light is dim,La luz es tenue,La lumière est faible,A luz está fraca,Ánh sáng mờ nhạt,แสงสลัว,ពណ៌គឺស្រអាប់,Cahayanya redup,Cahaya redup,Ang ilaw ay dim
 颜色鲜艳,yán sè xiān yàn,The color is bright,El color es brillante,La couleur est vive,A cor é brilhante,Màu sắc tươi sáng,สีสดใส,| ពន្លឺគឺស្រអាប់,Warnanya cerah,Warna cerah,Ang kulay ay maliwanag
-鲜艳夺目,xiān yàn duó mù,Bright and dazzling,Brillante y deslumbrante,Lumineux et éblouissant,Brilhante e deslumbrante,Sáng và rực rỡ,สดใสเป็นประกาย,[TRANSLATE_KM],Cerah dan mempesona,Cerah dan mempesonakan,Maliwanag at nakasisilaw
-颜色暗淡,yán sè àn dàn,The color is dim,El color es tenue,La couleur est sombre,A cor está fraca,Màu sắc mờ,สีสลัว,[TRANSLATE_KM],Warnanya redup,Warna dim,Ang kulay ay malabo
-光线暗淡,guāng xiàn àn dàn,The light is dim,La luz es tenue,La lumière est faible,A luz está fraca,Ánh sáng mờ,แสงสลัว,[TRANSLATE_KM],Cahayanya redup,Cahaya redup,Ang ilaw ay malabo
+鲜艳夺目,xiān yàn duó mù,Bright and dazzling,Brillante y deslumbrante,Lumineux et éblouissant,Brilhante e deslumbrante,Sáng và rực rỡ,สดใสเป็นประกาย,ភ្លឺ និង រន្ទះ,Cerah dan mempesona,Cerah dan mempesonakan,Maliwanag at nakasisilaw
+颜色暗淡,yán sè àn dàn,The color is dim,El color es tenue,La couleur est sombre,A cor está fraca,Màu sắc mờ,สีสลัว,ពណ៌គឺស្រអាប់,Warnanya redup,Warna dim,Ang kulay ay malabo
+光线暗淡,guāng xiàn àn dàn,The light is dim,La luz es tenue,La lumière est faible,A luz está fraca,Ánh sáng mờ,แสงสลัว,ពន្លឺគឺស្រអាប់,Cahayanya redup,Cahaya redup,Ang ilaw ay malabo
