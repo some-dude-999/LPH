@@ -1198,20 +1198,48 @@ If ALL CSVs exist, enter CRITIQUE MODE.
 ║  Manual editing ONLY for fixes.                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+╔══════════════════════════════════════════════════════════════════╗
+║  🔥 IF SCORE < 9.5: FIX AS MUCH AS POSSIBLE! 🔥                  ║
+║                                                                  ║
+║  Even if there are HUNDREDS of issues:                           ║
+║  → DO NOT give up or stop early!                                 ║
+║  → Fix as many issues as you can                                 ║
+║  → Every fix helps - chip away at the problem                    ║
+║  → PR your partial fixes so next agent can continue              ║
+║                                                                  ║
+║  "Too many issues" is NOT an excuse to do nothing!               ║
+║  Fix 10, 20, 50 issues - whatever you can manage.                ║
+║  Progress > Perfection. ALWAYS PR before stopping.               ║
+╚══════════════════════════════════════════════════════════════════╝
+
+=== IF INITIAL SCORE >= 9.5: STOP ===
+If your initial quality score is 9.5 or higher, the data is already excellent.
+DO NOT make changes. Report the score and move on.
+
+=== IF INITIAL SCORE < 9.5: FIX EVERYTHING YOU CAN ===
+If score is below 9.5, you MUST make fixes:
+1. Identify all issues you can find
+2. Fix AS MANY as possible (not just a few!)
+3. Don't stop just because there are "too many" issues
+4. PR your fixes even if you couldn't fix everything
+5. Report what you fixed and what remains for next agent
+
 Critique workflow (ONE ACT AT A TIME):
 1. Run: python PythonHelpers/construct_breakout_csvs.py chinese check
 2. Verify all CSVs exist and match Chinese_Combined_Words
 3. Pick ONE act to scrutinize (start with Act I if not specified)
-4. For EACH CSV in that act, MANUALLY review:
+4. SCORE the current quality (1-10)
+5. IF score >= 9.5: Report and stop (no changes needed)
+6. IF score < 9.5: For EACH CSV in that act, MANUALLY review & fix:
    - Is EVERY translation accurate and natural?
    - Would a native speaker actually say this?
    - Is pinyin correct (1 syllable per char, proper tones)?
    - Are there awkward, overly formal, or rare translations?
-5. MANUALLY edit the CSV file to fix issues (NO CODE!)
-6. Run validation: python PythonHelpers/validate_pinyin.py chinese
-7. Score quality (target: 9.5+)
-8. Commit and PR to main
-9. Report which act was critiqued
+7. MANUALLY edit the CSV file to fix issues (NO CODE!)
+8. Run validation: python PythonHelpers/validate_pinyin.py chinese
+9. Score again (AFTER score)
+10. Commit and PR to main - EVEN IF NOT ALL ISSUES FIXED!
+11. Report: what you fixed, what remains, which act was critiqued
 
 CRITIQUE MODE CHECKLIST:
 □ Read EVERY row in the CSV - don't skim!
@@ -1355,20 +1383,48 @@ If ALL CSVs exist, enter CRITIQUE MODE.
 ║  Manual editing ONLY for fixes.                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+╔══════════════════════════════════════════════════════════════════╗
+║  🔥 IF SCORE < 9.5: FIX AS MUCH AS POSSIBLE! 🔥                  ║
+║                                                                  ║
+║  Even if there are HUNDREDS of issues:                           ║
+║  → DO NOT give up or stop early!                                 ║
+║  → Fix as many issues as you can                                 ║
+║  → Every fix helps - chip away at the problem                    ║
+║  → PR your partial fixes so next agent can continue              ║
+║                                                                  ║
+║  "Too many issues" is NOT an excuse to do nothing!               ║
+║  Fix 10, 20, 50 issues - whatever you can manage.                ║
+║  Progress > Perfection. ALWAYS PR before stopping.               ║
+╚══════════════════════════════════════════════════════════════════╝
+
+=== IF INITIAL SCORE >= 9.5: STOP ===
+If your initial quality score is 9.5 or higher, the data is already excellent.
+DO NOT make changes. Report the score and move on.
+
+=== IF INITIAL SCORE < 9.5: FIX EVERYTHING YOU CAN ===
+If score is below 9.5, you MUST make fixes:
+1. Identify all issues you can find
+2. Fix AS MANY as possible (not just a few!)
+3. Don't stop just because there are "too many" issues
+4. PR your fixes even if you couldn't fix everything
+5. Report what you fixed and what remains for next agent
+
 Critique workflow (ONE ACT AT A TIME):
 1. Run: python PythonHelpers/construct_breakout_csvs.py spanish check
 2. Verify all CSVs exist and match Spanish_Combined_Words
 3. Pick ONE act to scrutinize (start with Act I if not specified)
-4. For EACH CSV in that act, MANUALLY review:
+4. SCORE the current quality (1-10)
+5. IF score >= 9.5: Report and stop (no changes needed)
+6. IF score < 9.5: For EACH CSV in that act, MANUALLY review & fix:
    - Is EVERY translation accurate and natural?
    - Would a native speaker actually say this?
    - Is pinyin correct (1 syllable per char, proper tones)?
    - Are there awkward, overly formal, or rare translations?
-5. MANUALLY edit the CSV file to fix issues (NO CODE!)
-6. Run validation: python PythonHelpers/validate_pinyin.py spanish
-7. Score quality (target: 9.5+)
-8. Commit and PR to main
-9. Report which act was critiqued
+7. MANUALLY edit the CSV file to fix issues (NO CODE!)
+8. Run validation: python PythonHelpers/validate_pinyin.py spanish
+9. Score again (AFTER score)
+10. Commit and PR to main - EVEN IF NOT ALL ISSUES FIXED!
+11. Report: what you fixed, what remains, which act was critiqued
 
 CRITIQUE MODE CHECKLIST:
 □ Read EVERY row in the CSV - don't skim!
@@ -1513,20 +1569,48 @@ If ALL CSVs exist, enter CRITIQUE MODE.
 ║  Manual editing ONLY for fixes.                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+╔══════════════════════════════════════════════════════════════════╗
+║  🔥 IF SCORE < 9.5: FIX AS MUCH AS POSSIBLE! 🔥                  ║
+║                                                                  ║
+║  Even if there are HUNDREDS of issues:                           ║
+║  → DO NOT give up or stop early!                                 ║
+║  → Fix as many issues as you can                                 ║
+║  → Every fix helps - chip away at the problem                    ║
+║  → PR your partial fixes so next agent can continue              ║
+║                                                                  ║
+║  "Too many issues" is NOT an excuse to do nothing!               ║
+║  Fix 10, 20, 50 issues - whatever you can manage.                ║
+║  Progress > Perfection. ALWAYS PR before stopping.               ║
+╚══════════════════════════════════════════════════════════════════╝
+
+=== IF INITIAL SCORE >= 9.5: STOP ===
+If your initial quality score is 9.5 or higher, the data is already excellent.
+DO NOT make changes. Report the score and move on.
+
+=== IF INITIAL SCORE < 9.5: FIX EVERYTHING YOU CAN ===
+If score is below 9.5, you MUST make fixes:
+1. Identify all issues you can find
+2. Fix AS MANY as possible (not just a few!)
+3. Don't stop just because there are "too many" issues
+4. PR your fixes even if you couldn't fix everything
+5. Report what you fixed and what remains for next agent
+
 Critique workflow (ONE ACT AT A TIME):
 1. Run: python PythonHelpers/construct_breakout_csvs.py english check
 2. Verify all CSVs exist and match English_Combined_Words
 3. Pick ONE act to scrutinize (start with Act I if not specified)
-4. For EACH CSV in that act, MANUALLY review:
+4. SCORE the current quality (1-10)
+5. IF score >= 9.5: Report and stop (no changes needed)
+6. IF score < 9.5: For EACH CSV in that act, MANUALLY review & fix:
    - Is EVERY translation accurate and natural?
    - Would a native speaker actually say this?
    - Is pinyin correct (1 syllable per char, proper tones)?
    - Are there awkward, overly formal, or rare translations?
-5. MANUALLY edit the CSV file to fix issues (NO CODE!)
-6. Run validation: python PythonHelpers/validate_pinyin.py english
-7. Score quality (target: 9.5+)
-8. Commit and PR to main
-9. Report which act was critiqued
+7. MANUALLY edit the CSV file to fix issues (NO CODE!)
+8. Run validation: python PythonHelpers/validate_pinyin.py english
+9. Score again (AFTER score)
+10. Commit and PR to main - EVEN IF NOT ALL ISSUES FIXED!
+11. Report: what you fixed, what remains, which act was critiqued
 
 CRITIQUE MODE CHECKLIST:
 □ Read EVERY row in the CSV - don't skim!
