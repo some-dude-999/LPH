@@ -99,8 +99,13 @@ Python scripts are ONLY for FINDING issues, NEVER for fixing them.
 - Python: Detect duplicates, count mismatches, format errors
 - Manual: Actually edit the CSV to fix the issues
 
-Why? Python can make automated changes that cascade into bigger problems.
-Human/LLM must understand what they're changing and why.
+EXCEPTION: Combined_Words column is created by Python.
+Combined_Words = Base_Words + Example_Words (simple array concatenation).
+This is deterministic computation, not a "fix" - there's no judgment involved.
+
+Why manual fixes for everything else? Python can make automated changes
+that cascade into bigger problems. Human/LLM must understand what
+they're changing and why.
 
 DATA FLOW DIAGRAM:
 ------------------
