@@ -3,524 +3,1057 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordpack Stage Prompts</title>
+    <title>Wordpack Construction Pipeline - Prompt Copier</title>
     <style>
         body { font-family: monospace; max-width: 1200px; margin: 0 auto; padding: 20px; background: #1a1a1a; color: #eee; }
         h1, h2, h3 { margin-top: 30px; }
         h1 { color: #4CAF50; }
         h2 { color: #2196F3; border-bottom: 1px solid #333; padding-bottom: 5px; }
         h3 { color: #FF9800; }
-        .prompt-box { background: #2d2d2d; border: 1px solid #444; padding: 15px; margin: 10px 0; cursor: pointer; white-space: pre-wrap; font-size: 12px; max-height: 300px; overflow-y: auto; }
+        .prompt-box { background: #2d2d2d; border: 1px solid #444; padding: 15px; margin: 10px 0; cursor: pointer; white-space: pre-wrap; font-size: 12px; max-height: 400px; overflow-y: auto; }
         .prompt-box:hover { border-color: #4CAF50; }
         .copied { background: #1b5e20 !important; }
         .label { background: #333; padding: 5px 10px; display: inline-block; margin-bottom: -1px; border: 1px solid #444; border-bottom: none; }
+        .docs { background: #1e3a5f; border: 1px solid #2196F3; padding: 20px; margin: 20px 0; line-height: 1.6; }
+        .docs h4 { color: #64B5F6; margin-top: 15px; }
+        .docs code { background: #0d2137; padding: 2px 6px; }
+        .stage-header { background: #2d2d2d; padding: 15px; margin: 20px 0 10px 0; border-left: 4px solid #4CAF50; }
     </style>
 </head>
 <body>
-    <h1>Wordpack Stage Prompts</h1>
-    <p>Click any box to copy the prompt to clipboard.</p>
 
+<!--
+================================================================================
+WORDPACK CONSTRUCTION PIPELINE - DOCUMENTATION FOR LLMs AND HUMANS
+================================================================================
+
+PURPOSE OF THIS SYSTEM:
+-----------------------
+This is a multi-stage, iterative pipeline for constructing high-quality
+language learning flashcard data. The goal is to create vocabulary wordpacks
+for a flashcard game that teaches Chinese, Spanish, and English.
+
+THE ITERATIVE QUALITY LOOP:
+---------------------------
+Each stage follows the same iterative pattern:
+
+    ┌─────────────────────────────────────────────────────────────────┐
+    │                                                                 │
+    │   1. LLM Agent reviews current state                           │
+    │   2. LLM scores quality (1-10) and lists improvements          │
+    │   3. LLM makes changes                                         │
+    │   4. Python scripts validate (duplicates, format, etc.)        │
+    │   5. LLM fixes any Python-detected issues                      │
+    │   6. LLM scores again                                          │
+    │   7. If score < 9, feed to NEW LLM instance (unbiased)         │
+    │   8. New LLM rates, suggests improvements                      │
+    │   9. Repeat until score >= 9.0 or 9.5                          │
+    │                                                                 │
+    └─────────────────────────────────────────────────────────────────┘
+
+WHY USE PYTHON FOR VALIDATION?
+------------------------------
+Python scripts are used for simple logic checks because:
+- Code is faster than LLM for counting, string matching, duplicate detection
+- LLMs have limited attention and consume tokens on repetitive checks
+- Python catches 100% of format errors; LLMs might miss some
+- Frees LLM to focus on creative/semantic work (quality of content)
+
+Python validation scripts in PythonHelpers/:
+- check_base_word_duplicates.py    - Stage 1: No base word in multiple packs
+- check_combined_across_packs.py   - Stage 2+: Check combined array duplicates
+- check_combined_duplicates.py     - Stage 2: Within-pack duplicate check
+- validate_pinyin.py               - Stage 3+: 1 pinyin syllable per character
+- validate_overview_csvs.py        - General: CSV structure validation
+
+THE 5 STAGES:
+-------------
+Stage 1: BASE WORDS REVIEW
+    - Input:  [Lang]_Base_Words column in Overview CSV
+    - Output: Perfected base vocabulary items (single words/compound words)
+    - Goal:   Each pack has ~15-20 excellent themed vocabulary items
+    - Check:  No duplicates across packs (each word in ONE pack only)
+
+Stage 2: EXAMPLE WORDS CREATION
+    - Input:  Finalized Base_Words from Stage 1
+    - Output: [Lang]_Example_Words column (2 examples per base word)
+    - Goal:   Examples that CONTAIN the base word, showing context
+    - Check:  Every example contains its base word as substring
+
+Stage 3: BREAKOUT CSV CREATION
+    - Input:  Combined_Words (Base + Example merged)
+    - Output: Individual CSV files per pack (e.g., ChineseWords1.csv)
+    - Goal:   Full translations in all target languages
+    - Check:  Pinyin syllable count matches Chinese character count
+
+Stage 4: OVERVIEW CLEANUP
+    - Input:  Overview CSVs with temporary columns
+    - Output: Clean Overview CSVs (only 4 columns)
+    - Goal:   Remove Example_Words and Combined_Words (now in breakout CSVs)
+
+Stage 5: JAVASCRIPT MODULE GENERATION
+    - Input:  Breakout CSVs (ChineseWords1.csv, etc.)
+    - Output: JS modules in two formats:
+              * Clean: Jsmodules/act1-foundation.js (readable, for development)
+              * Obfuscated: Jsmodules-js/act1-foundation-js.js (compressed, for production)
+    - Goal:   Game-ready data that can be imported by the flashcard app
+
+DATA FLOW DIAGRAM:
+------------------
+
+    Overview CSV                    Breakout CSVs                 JS Modules
+    ┌──────────────┐               ┌──────────────┐              ┌──────────────┐
+    │ Pack_Number  │               │ chinese      │              │ Clean JS     │
+    │ Pack_Title   │    Stage 3    │ pinyin       │   Stage 5    │ (readable)   │
+    │ Difficulty   │ ───────────►  │ english      │ ───────────► │              │
+    │ Base_Words   │               │ spanish      │              │ Obfuscated   │
+    │ Example_Words│               │ ...          │              │ (compressed) │
+    │ Combined_    │               │              │              │              │
+    │   Words      │               │ One file per │              │ One file per │
+    └──────────────┘               │ pack (1-250) │              │ act (1-7)    │
+                                   └──────────────┘              └──────────────┘
+
+JAVASCRIPT MODULE STRUCTURE:
+----------------------------
+The final output is JavaScript modules organized by "Acts" (learning stages).
+
+CLEAN VERSION (for development, LLM-assisted coding):
+    Location: [Lang]Words/Jsmodules/act1-foundation.js
+    Format: Human-readable ES6 exports
+
+    export const p1_1_greetings__goodbyes = {
+      meta: {
+        wordpack: 1,
+        english: "Greetings & Goodbyes",
+        chinese: "问候语",
+        spanish: "Saludos y Despedidas",
+        // ... other language titles
+      },
+      words: [
+        ["你好", "nǐ hǎo", "hello", "hola", "bonjour", ...],
+        ["再见", "zài jiàn", "goodbye", "adiós", "au revoir", ...],
+        // ... more words
+      ]
+    };
+
+OBFUSCATED VERSION (for production deployment):
+    Location: [Lang]Words/Jsmodules-js/act1-foundation-js.js
+    Format: Compressed + Base64 encoded
+
+    Obfuscation method (3 layers):
+    1. JSON.stringify the data
+    2. Reverse the string (salt)
+    3. Zlib compress
+    4. Base64 encode
+
+    To decode (in browser):
+    - Import module (contains base64 string in 'w' export)
+    - Base64 decode → Uint8Array
+    - pako.inflate (zlib decompress)
+    - Reverse string
+    - JSON.parse → original data
+
+COLUMN STRUCTURE BY LANGUAGE:
+-----------------------------
+CHINESE (12 columns):
+    [0] chinese, [1] pinyin, [2] english, [3] spanish, [4] french,
+    [5] portuguese, [6] vietnamese, [7] thai, [8] khmer,
+    [9] indonesian, [10] malay, [11] filipino
+
+SPANISH (5 columns):
+    [0] spanish, [1] english, [2] chinese, [3] pinyin, [4] portuguese
+
+ENGLISH (5 columns):
+    [0] english, [1] chinese, [2] pinyin, [3] spanish, [4] portuguese
+
+PINYIN CRITICAL RULE:
+---------------------
+Each Chinese character must have exactly ONE pinyin syllable, separated by spaces.
+This allows the game UI to display pinyin directly under each character.
+
+    CORRECT:   猴子 → "hóu zi"    (2 chars = 2 syllables)
+    INCORRECT: 猴子 → "hóuzi"     (2 chars but 1 syllable - WRONG)
+
+ACTS (Learning Progression):
+----------------------------
+Words are grouped into "Acts" representing learning stages:
+    - Act I: Foundation (basic vocabulary)
+    - Act II: Building Blocks / Development
+    - Act III: Daily Life / Expansion
+    - Act IV: Expanding Expression / Mastery
+    - Act V: Advanced / Refinement
+    - Act VI: Advanced Constructs (Spanish only)
+    - Act VII: Mastery Fluency (Spanish only)
+
+Each act contains multiple wordpacks (e.g., Act I might have packs 1-50).
+
+QUALITY STANDARDS:
+------------------
+- Stage 1 score target: 9.0+ (base words are excellent vocabulary items)
+- Stage 2 score target: 9.0+ (examples naturally contain base words)
+- Stage 3 score target: 9.5+ (translations accurate, pinyin correct)
+- Overall: Keep iterating until a fresh LLM instance rates it highly
+
+THE FRESH LLM PRINCIPLE:
+------------------------
+After making improvements, always have a NEW LLM instance (one that has never
+seen this wordpack before) rate the quality. This prevents:
+- Confirmation bias (the editing LLM thinking its changes are good)
+- Anchoring (being influenced by previous versions)
+- Familiarity blindness (missing issues due to repeated exposure)
+
+================================================================================
+-->
+
+<h1>Wordpack Construction Pipeline</h1>
+
+<div class="docs">
+    <h4>What is this?</h4>
+    <p>A multi-stage, iterative pipeline for constructing high-quality flashcard data for language learning (Chinese, Spanish, English).</p>
+
+    <h4>The Iterative Quality Loop</h4>
+    <p>Each stage follows: <strong>LLM reviews → scores 1-10 → makes changes → Python validates → fixes issues → scores again → if &lt;9, new LLM rates → repeat until 9+</strong></p>
+
+    <h4>Why Python + LLM?</h4>
+    <p>Python handles mechanical checks (duplicates, format, counting) quickly and accurately. LLMs focus on creative/semantic work (is this a good vocabulary word for this theme?).</p>
+
+    <h4>Final Output</h4>
+    <p>JavaScript modules in 2 formats:</p>
+    <ul>
+        <li><code>Jsmodules/*.js</code> - Clean, readable (for development)</li>
+        <li><code>Jsmodules-js/*-js.js</code> - Obfuscated/compressed (for production)</li>
+    </ul>
+
+    <h4>Click any prompt box to copy it to clipboard.</h4>
+</div>
+
+<!-- ============================================================ -->
+<!-- STAGE 1: BASE WORDS REVIEW                                   -->
+<!-- ============================================================ -->
+
+<div class="stage-header">
     <h2>Stage 1: Base Words Review</h2>
+    <p>Perfect the core vocabulary items. Target score: 9.0+</p>
+    <p><strong>Python check:</strong> <code>python PythonHelpers/check_base_word_duplicates.py [lang]</code></p>
+</div>
 
-    <h3>Chinese - Stage 1</h3>
-    <div class="label">Click to copy</div>
-    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Review and perfect Chinese_Base_Words in ChineseWordsOverview.csv
+<h3>Chinese - Stage 1</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Review and perfect Chinese_Base_Words in ChineseWordsOverview.csv
 
-WHAT ARE BASE WORDS?
+=== ITERATIVE QUALITY LOOP ===
+This is an iterative process. You will:
+1. Score the current state (1-10)
+2. List specific improvements needed
+3. Make changes
+4. Run Python validation
+5. Fix any issues Python finds
+6. Score again
+7. If score < 9.0, your output will be reviewed by a fresh LLM instance
+
+TARGET SCORE: 9.0 or higher (as rated by a fresh LLM that hasn't seen this before)
+
+=== WHAT ARE BASE WORDS? ===
 Base words are VOCABULARY ITEMS - single words or compound words that learners memorize.
-Examples of good base words: 你好, 星期六, 电脑, 谢谢, 早上好
+Examples of GOOD base words: 你好, 星期六, 电脑, 谢谢, 早上好
 
-WHAT BASE WORDS ARE NOT:
 Base words are NOT phrases, sentences, or words with added context.
-- ✗ 我说你好 (this is a phrase/sentence - NOT a base word)
-- ✗ 他的电脑 (this adds context - NOT a base word)
-- ✓ 你好 (this is a vocabulary item - GOOD)
-- ✓ 电脑 (this is a vocabulary item - GOOD)
+- ✗ 我说你好 (phrase/sentence - NOT a base word)
+- ✗ 他的电脑 (adds context - NOT a base word)
+- ✓ 你好 (vocabulary item - GOOD)
+- ✓ 电脑 (vocabulary item - GOOD)
 
-CONTEXT COMES LATER - NOT NOW!
-In Stage 2, we will create Example_Words that show base words in context.
-Your job in Stage 1 is ONLY to ensure the base words themselves are good vocabulary items.
+=== CONTEXT COMES IN STAGE 2 - NOT NOW ===
+Stage 2 creates Example_Words showing base words in context.
+Your job in Stage 1 is ONLY to ensure base words are good vocabulary items.
 
-WHAT TO EVALUATE (1-10 score):
+=== SCORING CRITERIA (1-10) ===
 - Does each base word fit the pack's theme?
-- Are the base words useful vocabulary items learners should know?
+- Are these useful vocabulary items learners should know?
 - Are there duplicates or too-similar words within the pack?
 - Are there obvious missing words for this theme?
-- Is the difficulty appropriate?
+- Is the difficulty appropriate for the pack's Act?
 
-DO NOT:
+=== DO NOT ===
 - Turn base words into phrases or sentences
 - Add context to base words
 - Worry about "lack of context" - that's Stage 2's job
 
-CRITICAL RULES:
-- Use SIMPLIFIED CHINESE only (简体中文) - NEVER Traditional Chinese
-- Keep base words as vocabulary items
-- You CAN add/remove/replace base words
+=== CRITICAL RULES ===
+- SIMPLIFIED CHINESE only (简体中文) - NEVER Traditional Chinese
+- Keep base words as vocabulary items (not phrases)
+- You CAN add/remove/replace base words freely
 - Roughly 15-20 words per pack is typical but very flexible
 
-NO DUPLICATES ACROSS PACKS:
-After making changes, run: python PythonHelpers/check_base_word_duplicates.py chinese
-Each base word should appear in ONLY ONE pack across the entire language.
-If a word appears in multiple packs, decide which pack it fits best and remove it from others.
+=== NO DUPLICATES ACROSS PACKS ===
+After changes, run: python PythonHelpers/check_base_word_duplicates.py chinese
+Each base word must appear in ONLY ONE pack across all 107 packs.
+If duplicates found, decide which pack fits best and remove from others.
 
-IDENTIFY GAPS - SUGGEST NEW PACKS:
-As you review, note if there are obvious theme gaps that deserve their own pack.
-If you identify a gap, suggest a new pack title and what base words it should contain.
-Example: "Gap identified: No pack for kitchen vocabulary. Suggest new Pack 'Kitchen Items' with base words: [锅, 碗, 筷子, 勺子, ...]"
+=== IDENTIFY GAPS ===
+Note if obvious theme gaps deserve new packs.
+Example: "Gap: No kitchen vocabulary. Suggest Pack 'Kitchen Items': [锅, 碗, 筷子, 勺子, ...]"
 
+=== FILE INFO ===
 FILE: ChineseWordsOverview.csv
 COLUMN: Chinese_Base_Words
 
-WORKFLOW:
-1. BEFORE: Score the base words 1-10, list what could be better
-2. MAKE CHANGES: Add/remove/replace vocabulary items as needed
-3. RUN DUPLICATE CHECK: python PythonHelpers/check_base_word_duplicates.py chinese
-4. FIX any cross-pack duplicates
-5. IDENTIFY GAPS: Suggest new packs if obvious themes are missing
-6. AFTER: Score again, summarize improvements
+=== WORKFLOW ===
+1. BEFORE SCORE: Rate current base words 1-10, list what could be better
+2. MAKE CHANGES: Add/remove/replace vocabulary items
+3. PYTHON CHECK: python PythonHelpers/check_base_word_duplicates.py chinese
+4. FIX: Remove any cross-pack duplicates
+5. GAPS: Suggest new packs if themes missing
+6. AFTER SCORE: Rate again, summarize improvements
+7. If score < 9.0, explain what would make it 9.0+
 
 Create your own branch, commit, and PR to main.</div>
 
-    <h3>Spanish - Stage 1</h3>
-    <div class="label">Click to copy</div>
-    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Review and perfect Spanish_Base_Words in SpanishWordsOverview.csv
+<h3>Spanish - Stage 1</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Review and perfect Spanish_Base_Words in SpanishWordsOverview.csv
 
-WHAT ARE BASE WORDS?
+=== ITERATIVE QUALITY LOOP ===
+This is an iterative process. You will:
+1. Score the current state (1-10)
+2. List specific improvements needed
+3. Make changes
+4. Run Python validation
+5. Fix any issues Python finds
+6. Score again
+7. If score < 9.0, your output will be reviewed by a fresh LLM instance
+
+TARGET SCORE: 9.0 or higher (as rated by a fresh LLM that hasn't seen this before)
+
+=== WHAT ARE BASE WORDS? ===
 Base words are VOCABULARY ITEMS - single words or compound words that learners memorize.
-Examples of good base words: hola, buenos días, gracias, biblioteca, cumpleaños
+Examples of GOOD base words: hola, buenos días, gracias, biblioteca, cumpleaños
 
-WHAT BASE WORDS ARE NOT:
 Base words are NOT phrases, sentences, or words with added context.
-- ✗ yo digo hola (this is a phrase/sentence - NOT a base word)
-- ✗ mi cumpleaños es (this adds context - NOT a base word)
-- ✓ hola (this is a vocabulary item - GOOD)
-- ✓ cumpleaños (this is a vocabulary item - GOOD)
+- ✗ yo digo hola (phrase/sentence - NOT a base word)
+- ✗ mi cumpleaños es (adds context - NOT a base word)
+- ✓ hola (vocabulary item - GOOD)
+- ✓ cumpleaños (vocabulary item - GOOD)
 
-CONTEXT COMES LATER - NOT NOW!
-In Stage 2, we will create Example_Words that show base words in context.
-Your job in Stage 1 is ONLY to ensure the base words themselves are good vocabulary items.
+=== CONTEXT COMES IN STAGE 2 - NOT NOW ===
+Stage 2 creates Example_Words showing base words in context.
+Your job in Stage 1 is ONLY to ensure base words are good vocabulary items.
 
-WHAT TO EVALUATE (1-10 score):
+=== SCORING CRITERIA (1-10) ===
 - Does each base word fit the pack's theme?
-- Are the base words useful vocabulary items learners should know?
+- Are these useful vocabulary items learners should know?
 - Are there duplicates or too-similar words within the pack?
 - Are there obvious missing words for this theme?
-- Is the difficulty appropriate?
+- Is the difficulty appropriate for the pack's Act?
 
-DO NOT:
+=== DO NOT ===
 - Turn base words into phrases or sentences
 - Add context to base words
 - Worry about "lack of context" - that's Stage 2's job
 
-NO DUPLICATES ACROSS PACKS:
-After making changes, run: python PythonHelpers/check_base_word_duplicates.py spanish
-Each base word should appear in ONLY ONE pack across the entire language.
-If a word appears in multiple packs, decide which pack it fits best and remove it from others.
+=== NO DUPLICATES ACROSS PACKS ===
+After changes, run: python PythonHelpers/check_base_word_duplicates.py spanish
+Each base word must appear in ONLY ONE pack across all 250 packs.
 
-IDENTIFY GAPS - SUGGEST NEW PACKS:
-As you review, note if there are obvious theme gaps that deserve their own pack.
-If you identify a gap, suggest a new pack title and what base words it should contain.
-Example: "Gap identified: No pack for office vocabulary. Suggest new Pack 'Office Items' with base words: [escritorio, computadora, impresora, ...]"
+=== IDENTIFY GAPS ===
+Note if obvious theme gaps deserve new packs.
 
+=== FILE INFO ===
 FILE: SpanishWordsOverview.csv
 COLUMN: Spanish_Base_Words
 
-WORKFLOW:
-1. BEFORE: Score the base words 1-10, list what could be better
-2. MAKE CHANGES: Add/remove/replace vocabulary items as needed
-3. RUN DUPLICATE CHECK: python PythonHelpers/check_base_word_duplicates.py spanish
-4. FIX any cross-pack duplicates
-5. IDENTIFY GAPS: Suggest new packs if obvious themes are missing
-6. AFTER: Score again, summarize improvements
+=== WORKFLOW ===
+1. BEFORE SCORE: Rate current base words 1-10, list what could be better
+2. MAKE CHANGES: Add/remove/replace vocabulary items
+3. PYTHON CHECK: python PythonHelpers/check_base_word_duplicates.py spanish
+4. FIX: Remove any cross-pack duplicates
+5. GAPS: Suggest new packs if themes missing
+6. AFTER SCORE: Rate again, summarize improvements
+7. If score < 9.0, explain what would make it 9.0+
 
 Create your own branch, commit, and PR to main.</div>
 
-    <h3>English - Stage 1</h3>
-    <div class="label">Click to copy</div>
-    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Review and perfect English_Base_Words in EnglishWordsOverview.csv
+<h3>English - Stage 1</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Review and perfect English_Base_Words in EnglishWordsOverview.csv
 
-WHAT ARE BASE WORDS?
+=== ITERATIVE QUALITY LOOP ===
+This is an iterative process. You will:
+1. Score the current state (1-10)
+2. List specific improvements needed
+3. Make changes
+4. Run Python validation
+5. Fix any issues Python finds
+6. Score again
+7. If score < 9.0, your output will be reviewed by a fresh LLM instance
+
+TARGET SCORE: 9.0 or higher (as rated by a fresh LLM that hasn't seen this before)
+
+=== WHAT ARE BASE WORDS? ===
 Base words are VOCABULARY ITEMS - single words or compound words that learners memorize.
-Examples of good base words: hello, good morning, birthday, computer, beautiful
+Examples of GOOD base words: hello, good morning, birthday, computer, beautiful
 
-WHAT BASE WORDS ARE NOT:
 Base words are NOT phrases, sentences, or words with added context.
-- ✗ I say hello (this is a phrase/sentence - NOT a base word)
-- ✗ my birthday is (this adds context - NOT a base word)
-- ✓ hello (this is a vocabulary item - GOOD)
-- ✓ birthday (this is a vocabulary item - GOOD)
+- ✗ I say hello (phrase/sentence - NOT a base word)
+- ✗ my birthday is (adds context - NOT a base word)
+- ✓ hello (vocabulary item - GOOD)
+- ✓ birthday (vocabulary item - GOOD)
 
-CONTEXT COMES LATER - NOT NOW!
-In Stage 2, we will create Example_Words that show base words in context.
-Your job in Stage 1 is ONLY to ensure the base words themselves are good vocabulary items.
+=== CONTEXT COMES IN STAGE 2 - NOT NOW ===
+Stage 2 creates Example_Words showing base words in context.
+Your job in Stage 1 is ONLY to ensure base words are good vocabulary items.
 
-WHAT TO EVALUATE (1-10 score):
+=== SCORING CRITERIA (1-10) ===
 - Does each base word fit the pack's theme?
-- Are the base words useful vocabulary items learners should know?
+- Are these useful vocabulary items learners should know?
 - Are there duplicates or too-similar words within the pack?
 - Are there obvious missing words for this theme?
-- Is the difficulty appropriate?
+- Is the difficulty appropriate for the pack's Act?
 
-DO NOT:
+=== DO NOT ===
 - Turn base words into phrases or sentences
 - Add context to base words
 - Worry about "lack of context" - that's Stage 2's job
 
-NO DUPLICATES ACROSS PACKS:
-After making changes, run: python PythonHelpers/check_base_word_duplicates.py english
-Each base word should appear in ONLY ONE pack across the entire language.
-If a word appears in multiple packs, decide which pack it fits best and remove it from others.
+=== NO DUPLICATES ACROSS PACKS ===
+After changes, run: python PythonHelpers/check_base_word_duplicates.py english
+Each base word must appear in ONLY ONE pack across all 160 packs.
 
-IDENTIFY GAPS - SUGGEST NEW PACKS:
-As you review, note if there are obvious theme gaps that deserve their own pack.
-If you identify a gap, suggest a new pack title and what base words it should contain.
-Example: "Gap identified: No pack for medical vocabulary. Suggest new Pack 'Medical Terms' with base words: [doctor, nurse, hospital, medicine, ...]"
+=== IDENTIFY GAPS ===
+Note if obvious theme gaps deserve new packs.
 
+=== FILE INFO ===
 FILE: EnglishWordsOverview.csv
 COLUMN: English_Base_Words
 
-WORKFLOW:
-1. BEFORE: Score the base words 1-10, list what could be better
-2. MAKE CHANGES: Add/remove/replace vocabulary items as needed
-3. RUN DUPLICATE CHECK: python PythonHelpers/check_base_word_duplicates.py english
-4. FIX any cross-pack duplicates
-5. IDENTIFY GAPS: Suggest new packs if obvious themes are missing
-6. AFTER: Score again, summarize improvements
+=== WORKFLOW ===
+1. BEFORE SCORE: Rate current base words 1-10, list what could be better
+2. MAKE CHANGES: Add/remove/replace vocabulary items
+3. PYTHON CHECK: python PythonHelpers/check_base_word_duplicates.py english
+4. FIX: Remove any cross-pack duplicates
+5. GAPS: Suggest new packs if themes missing
+6. AFTER SCORE: Rate again, summarize improvements
+7. If score < 9.0, explain what would make it 9.0+
 
 Create your own branch, commit, and PR to main.</div>
 
+<!-- ============================================================ -->
+<!-- STAGE 2: EXAMPLE WORDS CREATION                              -->
+<!-- ============================================================ -->
+
+<div class="stage-header">
     <h2>Stage 2: Create Example Words</h2>
+    <p>Create contextual examples containing each base word. Target score: 9.0+</p>
+    <p><strong>Python check:</strong> Validate examples contain base words, check duplicates</p>
+</div>
 
-    <h3>Chinese - Stage 2</h3>
-    <div class="label">Click to copy</div>
-    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create Chinese_Example_Words column in ChineseWordsOverview.csv
+<h3>Chinese - Stage 2</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Create Chinese_Example_Words column in ChineseWordsOverview.csv
 
-PREREQUISITE: Stage 1 must be complete. The Chinese_Base_Words column should already be finalized.
+=== ITERATIVE QUALITY LOOP ===
+1. Create examples for each base word
+2. Run Python validation
+3. Score quality 1-10
+4. If < 9.0, improve and repeat
+5. Fresh LLM will rate final output
 
-YOUR GOAL: For each base word, create 2 example phrases/sentences that CONTAIN that base word. These examples help learners see the vocabulary in context.
+TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
 
-CRITICAL RULES:
-1. Use SIMPLIFIED CHINESE only (简体中文) - NEVER Traditional Chinese
+=== PREREQUISITE ===
+Stage 1 must be complete. Chinese_Base_Words column must be finalized.
+
+=== YOUR GOAL ===
+For each base word, create 2 example phrases that CONTAIN that base word.
+Examples help learners see vocabulary in context.
+
+=== CRITICAL RULES ===
+1. SIMPLIFIED CHINESE only (简体中文) - NEVER Traditional
 2. Each base word needs exactly 2 examples
-3. Each example MUST CONTAIN its corresponding base word as a substring
-4. Examples should be natural, useful phrases learners would actually use
+3. Each example MUST CONTAIN its base word as a substring
+4. Examples should be natural phrases learners would actually use
 
-FILE: ChineseWordsOverview.csv
-COLUMN TO CREATE: Chinese_Example_Words
-
-STRUCTURE:
+=== STRUCTURE ===
 If Base_Words = [词1, 词2, 词3]
-Then Example_Words = [词1的例子A, 词1的例子B, 词2的例子A, 词2的例子B, 词3的例子A, 词3的例子B]
+Then Example_Words = [词1例A, 词1例B, 词2例A, 词2例B, 词3例A, 词3例B]
 
-The pairing is:
+Pairing:
 - examples[0], examples[1] → contain base_words[0]
 - examples[2], examples[3] → contain base_words[1]
-- examples[4], examples[5] → contain base_words[2]
-- And so on...
+- etc.
 
-EXAMPLE:
+=== EXAMPLE ===
 Base_Words: [你好, 再见, 谢谢]
 Example_Words: [你好吗, 你好啊, 再见朋友, 再见了, 谢谢你, 谢谢啊]
 
-Notice: 你好吗 and 你好啊 both contain 你好
+Notice: 你好吗 and 你好啊 both CONTAIN 你好
 
-VALIDATION REQUIREMENTS:
-After creating Example_Words, use Python to:
-1. Create Combined_Words = Base_Words + Example_Words (merged, no duplicates)
-2. Check that every example contains its base word
-3. Check for duplicate entries within the same pack
-4. Check that word count in Example_Words = 2 × word count in Base_Words
+=== PYTHON VALIDATION ===
+Create/use a Python script to:
+1. Verify every example contains its base word
+2. Check word count: Example_Words = 2 × Base_Words count
+3. Check for duplicates within pack
+4. Create Combined_Words = Base_Words + Example_Words (no duplicates)
 
-Create a Python script to automate these checks. Save results to Chinese_Example_Words and Chinese_Combined_Words columns.
+=== FILE INFO ===
+FILE: ChineseWordsOverview.csv
+COLUMNS TO CREATE: Chinese_Example_Words, Chinese_Combined_Words
 
-WORKFLOW:
-1. Read the finalized Base_Words for each pack
-2. For each base word, create 2 natural example phrases containing that word
-3. Build the Example_Words array in correct order
-4. Run validation script
+=== WORKFLOW ===
+1. Read finalized Base_Words for each pack
+2. Create 2 natural examples per base word (containing that word)
+3. Build Example_Words array in correct order
+4. Run Python validation
 5. Fix any issues
-6. Save to CSV
+6. Score quality 1-10
+7. If < 9.0, list improvements and iterate
 
-Create your own branch, commit changes, and create a PR to main.</div>
+Create your own branch, commit, and PR to main.</div>
 
-    <h3>Spanish - Stage 2</h3>
-    <div class="label">Click to copy</div>
-    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create Spanish_Example_Words column in SpanishWordsOverview.csv
+<h3>Spanish - Stage 2</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Create Spanish_Example_Words column in SpanishWordsOverview.csv
 
-PREREQUISITE: Stage 1 must be complete. The Spanish_Base_Words column should already be finalized.
+=== ITERATIVE QUALITY LOOP ===
+1. Create examples for each base word
+2. Run Python validation
+3. Score quality 1-10
+4. If < 9.0, improve and repeat
+5. Fresh LLM will rate final output
 
-YOUR GOAL: For each base word, create 2 example phrases/sentences that CONTAIN that base word. These examples help learners see the vocabulary in context.
+TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
 
-CRITICAL RULES:
-1. Each base word needs exactly 2 examples
-2. Each example MUST CONTAIN its corresponding base word as a substring
-3. Examples should be natural, useful phrases learners would actually use
+=== PREREQUISITE ===
+Stage 1 must be complete. Spanish_Base_Words column must be finalized.
 
-FILE: SpanishWordsOverview.csv
-COLUMN TO CREATE: Spanish_Example_Words
+=== YOUR GOAL ===
+For each base word, create 2 example phrases that CONTAIN that base word.
 
-STRUCTURE:
+=== STRUCTURE ===
 If Base_Words = [word1, word2, word3]
-Then Example_Words = [word1_exampleA, word1_exampleB, word2_exampleA, word2_exampleB, word3_exampleA, word3_exampleB]
+Then Example_Words = [word1_exA, word1_exB, word2_exA, word2_exB, word3_exA, word3_exB]
 
-The pairing is:
-- examples[0], examples[1] → contain base_words[0]
-- examples[2], examples[3] → contain base_words[1]
-- examples[4], examples[5] → contain base_words[2]
-- And so on...
-
-EXAMPLE:
+=== EXAMPLE ===
 Base_Words: [hola, adiós, gracias]
 Example_Words: [hola amigo, hola señor, adiós amigos, adiós señora, gracias amigo, muchas gracias]
 
-Notice: "hola amigo" and "hola señor" both contain "hola"
+Notice: "hola amigo" and "hola señor" both CONTAIN "hola"
 
-VALIDATION REQUIREMENTS:
-After creating Example_Words, use Python to:
-1. Create Combined_Words = Base_Words + Example_Words (merged, no duplicates)
-2. Check that every example contains its base word
-3. Check for duplicate entries within the same pack
-4. Check that word count in Example_Words = 2 × word count in Base_Words
+=== PYTHON VALIDATION ===
+1. Verify every example contains its base word
+2. Check word count: Example_Words = 2 × Base_Words count
+3. Check for duplicates
+4. Create Combined_Words = Base_Words + Example_Words
 
-Create a Python script to automate these checks. Save results to Spanish_Example_Words and Spanish_Combined_Words columns.
+=== FILE INFO ===
+FILE: SpanishWordsOverview.csv
+COLUMNS TO CREATE: Spanish_Example_Words, Spanish_Combined_Words
 
-WORKFLOW:
-1. Read the finalized Base_Words for each pack
-2. For each base word, create 2 natural example phrases containing that word
-3. Build the Example_Words array in correct order
-4. Run validation script
-5. Fix any issues
-6. Save to CSV
+=== WORKFLOW ===
+1. Read finalized Base_Words
+2. Create 2 natural examples per base word
+3. Run Python validation
+4. Fix issues, score, iterate until 9.0+
 
-Create your own branch, commit changes, and create a PR to main.</div>
+Create your own branch, commit, and PR to main.</div>
 
-    <h3>English - Stage 2</h3>
-    <div class="label">Click to copy</div>
-    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create English_Example_Words column in EnglishWordsOverview.csv
+<h3>English - Stage 2</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Create English_Example_Words column in EnglishWordsOverview.csv
 
-PREREQUISITE: Stage 1 must be complete. The English_Base_Words column should already be finalized.
+=== ITERATIVE QUALITY LOOP ===
+1. Create examples for each base word
+2. Run Python validation
+3. Score quality 1-10
+4. If < 9.0, improve and repeat
+5. Fresh LLM will rate final output
 
-YOUR GOAL: For each base word, create 2 example phrases/sentences that CONTAIN that base word. These examples help learners see the vocabulary in context.
+TARGET SCORE: 9.0+ (examples are natural, useful, clearly contain base word)
 
-CRITICAL RULES:
-1. Each base word needs exactly 2 examples
-2. Each example MUST CONTAIN its corresponding base word as a substring
-3. Examples should be natural, useful phrases learners would actually use
+=== PREREQUISITE ===
+Stage 1 must be complete. English_Base_Words column must be finalized.
 
-FILE: EnglishWordsOverview.csv
-COLUMN TO CREATE: English_Example_Words
+=== YOUR GOAL ===
+For each base word, create 2 example phrases that CONTAIN that base word.
 
-STRUCTURE:
+=== STRUCTURE ===
 If Base_Words = [word1, word2, word3]
-Then Example_Words = [word1_exampleA, word1_exampleB, word2_exampleA, word2_exampleB, word3_exampleA, word3_exampleB]
+Then Example_Words = [word1_exA, word1_exB, word2_exA, word2_exB, word3_exA, word3_exB]
 
-The pairing is:
-- examples[0], examples[1] → contain base_words[0]
-- examples[2], examples[3] → contain base_words[1]
-- examples[4], examples[5] → contain base_words[2]
-- And so on...
-
-EXAMPLE:
+=== EXAMPLE ===
 Base_Words: [hello, goodbye, thanks]
 Example_Words: [hello there, hello everyone, goodbye friend, goodbye for now, thanks a lot, thanks for helping]
 
-Notice: "hello there" and "hello everyone" both contain "hello"
+Notice: "hello there" and "hello everyone" both CONTAIN "hello"
 
-VALIDATION REQUIREMENTS:
-After creating Example_Words, use Python to:
-1. Create Combined_Words = Base_Words + Example_Words (merged, no duplicates)
-2. Check that every example contains its base word
-3. Check for duplicate entries within the same pack
-4. Check that word count in Example_Words = 2 × word count in Base_Words
+=== PYTHON VALIDATION ===
+1. Verify every example contains its base word
+2. Check word count: Example_Words = 2 × Base_Words count
+3. Check for duplicates
+4. Create Combined_Words = Base_Words + Example_Words
 
-Create a Python script to automate these checks. Save results to English_Example_Words and English_Combined_Words columns.
+=== FILE INFO ===
+FILE: EnglishWordsOverview.csv
+COLUMNS TO CREATE: English_Example_Words, English_Combined_Words
 
-WORKFLOW:
-1. Read the finalized Base_Words for each pack
-2. For each base word, create 2 natural example phrases containing that word
-3. Build the Example_Words array in correct order
-4. Run validation script
-5. Fix any issues
-6. Save to CSV
+=== WORKFLOW ===
+1. Read finalized Base_Words
+2. Create 2 natural examples per base word
+3. Run Python validation
+4. Fix issues, score, iterate until 9.0+
 
-Create your own branch, commit changes, and create a PR to main.</div>
+Create your own branch, commit, and PR to main.</div>
 
+<!-- ============================================================ -->
+<!-- STAGE 3: BREAKOUT CSV CREATION                               -->
+<!-- ============================================================ -->
+
+<div class="stage-header">
     <h2>Stage 3: Create Breakout CSVs</h2>
+    <p>Generate translation CSVs for each pack. Target score: 9.5+</p>
+    <p><strong>Python check:</strong> <code>python PythonHelpers/validate_pinyin.py [lang]</code></p>
+</div>
 
-    <h3>Chinese - Stage 3</h3>
-    <div class="label">Click to copy</div>
-    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create breakout CSV files (ChineseWords1.csv, ChineseWords2.csv, etc.) from ChineseWordsOverview.csv
+<h3>Chinese - Stage 3</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Create breakout CSV files (ChineseWords1.csv, etc.) from ChineseWordsOverview.csv
 
-PREREQUISITE: Stage 2 must be complete. The Chinese_Combined_Words column should exist with all vocabulary.
+=== ITERATIVE QUALITY LOOP ===
+1. Create translations for all words
+2. Run Python pinyin validation
+3. Score quality 1-10
+4. Fix issues, iterate until 9.5+
 
-YOUR GOAL: For each pack, create a breakout CSV file with full translations for every word in Combined_Words.
+TARGET SCORE: 9.5+ (translations accurate, pinyin perfectly formatted)
 
-FILE TO READ: ChineseWordsOverview.csv (Chinese_Combined_Words column)
-FILES TO CREATE: ChineseWords/ChineseWords1.csv, ChineseWords/ChineseWords2.csv, ... ChineseWords/ChineseWords107.csv
+=== PREREQUISITE ===
+Stage 2 complete. Chinese_Combined_Words column exists.
 
-BREAKOUT CSV COLUMNS (12 columns, in this exact order):
-1. chinese - The Chinese word/phrase (Simplified only!)
-2. pinyin - Pinyin with tone marks
-3. english - English translation
-4. spanish - Spanish translation
-5. french - French translation
-6. portuguese - Portuguese translation
-7. vietnamese - Vietnamese translation
-8. thai - Thai translation
-9. khmer - Khmer/Cambodian translation
-10. indonesian - Indonesian translation
-11. malay - Malay translation
-12. filipino - Filipino/Tagalog translation
+=== YOUR GOAL ===
+For each pack, create a breakout CSV with translations for every word in Combined_Words.
 
-CRITICAL PINYIN RULE:
+=== FILES ===
+INPUT: ChineseWordsOverview.csv (Chinese_Combined_Words column)
+OUTPUT: ChineseWords/ChineseWords1.csv through ChineseWords107.csv
+
+=== BREAKOUT CSV COLUMNS (12 columns, exact order) ===
+1. chinese - Chinese word (Simplified only!)
+2. pinyin - Pinyin with tone marks (CRITICAL: 1 syllable per character!)
+3. english
+4. spanish
+5. french
+6. portuguese
+7. vietnamese
+8. thai
+9. khmer
+10. indonesian
+11. malay
+12. filipino
+
+=== CRITICAL PINYIN RULE ===
 Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
-This is because our app displays pinyin directly under each character.
+Our app displays pinyin directly under each character.
 
-CORRECT PINYIN FORMAT:
-- 猴子 → hóu zi (2 characters = 2 syllables with space)
-- 你好 → nǐ hǎo (2 characters = 2 syllables with space)
-- 星期六 → xīng qī liù (3 characters = 3 syllables with spaces)
-- 我爱你 → wǒ ài nǐ (3 characters = 3 syllables with spaces)
+CORRECT:
+- 猴子 → hóu zi (2 chars = 2 syllables)
+- 你好 → nǐ hǎo (2 chars = 2 syllables)
+- 星期六 → xīng qī liù (3 chars = 3 syllables)
 
-INCORRECT PINYIN FORMAT:
-- 猴子 → hóuzi (WRONG - no space)
-- 你好 → nǐhǎo (WRONG - no space)
-- 星期六 → xīngqīliù (WRONG - no spaces)
+INCORRECT:
+- 猴子 → hóuzi (WRONG - no space!)
+- 星期六 → xīngqīliù (WRONG - no spaces!)
 
-THE RULE: Count Chinese characters, count pinyin syllables - they MUST match!
+THE RULE: Count Chinese chars, count pinyin syllables - MUST match!
 
-EXAMPLE ROW:
+=== EXAMPLE ROW ===
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 你好,nǐ hǎo,hello,hola,bonjour,olá,xin chào,สวัสดี,ជំរាបសួរ,halo,halo,kumusta
 
-WORKFLOW:
-1. Read Chinese_Combined_Words from each pack in the Overview
-2. For each word, create translations in all 12 languages
-3. Ensure pinyin has 1 syllable per character with spaces
-4. Save as ChineseWords{pack_number}.csv
-5. Run the pinyin validation script to verify character-syllable matching
-
-VALIDATION:
+=== PYTHON VALIDATION ===
 Run: python PythonHelpers/validate_pinyin.py chinese
+Checks that character count matches syllable count for every row.
 
-Create your own branch, commit changes, and create a PR to main.</div>
+=== WORKFLOW ===
+1. Read Combined_Words from each pack
+2. Create translations in all 12 languages
+3. CAREFULLY format pinyin (1 syllable per char, spaces between)
+4. Save as ChineseWords{N}.csv
+5. Run pinyin validation
+6. Fix any mismatches
+7. Score quality, iterate until 9.5+
 
-    <h3>Spanish - Stage 3</h3>
-    <div class="label">Click to copy</div>
-    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create breakout CSV files (SpanishWords1.csv, SpanishWords2.csv, etc.) from SpanishWordsOverview.csv
+Create your own branch, commit, and PR to main.</div>
 
-PREREQUISITE: Stage 2 must be complete. The Spanish_Combined_Words column should exist with all vocabulary.
+<h3>Spanish - Stage 3</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Create breakout CSV files (SpanishWords1.csv, etc.) from SpanishWordsOverview.csv
 
-YOUR GOAL: For each pack, create a breakout CSV file with translations for every word in Combined_Words.
+=== ITERATIVE QUALITY LOOP ===
+TARGET SCORE: 9.5+ (translations accurate, pinyin correct)
 
-FILE TO READ: SpanishWordsOverview.csv (Spanish_Combined_Words column)
-FILES TO CREATE: SpanishWords/SpanishWords1.csv, SpanishWords/SpanishWords2.csv, ... SpanishWords/SpanishWords250.csv
+=== PREREQUISITE ===
+Stage 2 complete. Spanish_Combined_Words column exists.
 
-BREAKOUT CSV COLUMNS (5 columns, in this exact order):
-1. spanish - The Spanish word/phrase
-2. english - English translation
-3. chinese - Chinese translation (Simplified Chinese only!)
-4. pinyin - Pinyin with tone marks (1 syllable per character, separated by spaces)
-5. portuguese - Portuguese translation
+=== FILES ===
+INPUT: SpanishWordsOverview.csv (Spanish_Combined_Words column)
+OUTPUT: SpanishWords/SpanishWords1.csv through SpanishWords250.csv
 
-CRITICAL PINYIN RULE:
-Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
+=== BREAKOUT CSV COLUMNS (5 columns, exact order) ===
+1. spanish - Spanish word/phrase
+2. english
+3. chinese - Simplified Chinese only!
+4. pinyin - 1 syllable per character, separated by spaces!
+5. portuguese
 
-CORRECT: 你好 → nǐ hǎo
-INCORRECT: 你好 → nǐhǎo
+=== CRITICAL PINYIN RULE ===
+CORRECT: 你好 → nǐ hǎo (space between syllables)
+INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
-EXAMPLE ROW:
+=== EXAMPLE ROW ===
 spanish,english,chinese,pinyin,portuguese
 hola amigo,hello friend,你好朋友,nǐ hǎo péng you,olá amigo
 
-WORKFLOW:
-1. Read Spanish_Combined_Words from each pack in the Overview
-2. For each word, create translations in all 5 columns
-3. Ensure Chinese is Simplified and pinyin has proper spacing
-4. Save as SpanishWords{pack_number}.csv
+=== WORKFLOW ===
+1. Read Combined_Words from each pack
+2. Create translations in all 5 columns
+3. Format pinyin correctly
+4. Save as SpanishWords{N}.csv
+5. Validate, iterate until 9.5+
 
-Create your own branch, commit changes, and create a PR to main.</div>
+Create your own branch, commit, and PR to main.</div>
 
-    <h3>English - Stage 3</h3>
-    <div class="label">Click to copy</div>
-    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Create breakout CSV files (EnglishWords1.csv, EnglishWords2.csv, etc.) from EnglishWordsOverview.csv
+<h3>English - Stage 3</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Create breakout CSV files (EnglishWords1.csv, etc.) from EnglishWordsOverview.csv
 
-PREREQUISITE: Stage 2 must be complete. The English_Combined_Words column should exist with all vocabulary.
+=== ITERATIVE QUALITY LOOP ===
+TARGET SCORE: 9.5+ (translations accurate, pinyin correct)
 
-YOUR GOAL: For each pack, create a breakout CSV file with translations for every word in Combined_Words.
+=== PREREQUISITE ===
+Stage 2 complete. English_Combined_Words column exists.
 
-FILE TO READ: EnglishWordsOverview.csv (English_Combined_Words column)
-FILES TO CREATE: EnglishWords/EnglishWords1.csv, EnglishWords/EnglishWords2.csv, ... EnglishWords/EnglishWords160.csv
+=== FILES ===
+INPUT: EnglishWordsOverview.csv (English_Combined_Words column)
+OUTPUT: EnglishWords/EnglishWords1.csv through EnglishWords160.csv
 
-BREAKOUT CSV COLUMNS (5 columns, in this exact order):
-1. english - The English word/phrase
-2. chinese - Chinese translation (Simplified Chinese only!)
-3. pinyin - Pinyin with tone marks (1 syllable per character, separated by spaces)
-4. spanish - Spanish translation
-5. portuguese - Portuguese translation
+=== BREAKOUT CSV COLUMNS (5 columns, exact order) ===
+1. english - English word/phrase
+2. chinese - Simplified Chinese only!
+3. pinyin - 1 syllable per character, separated by spaces!
+4. spanish
+5. portuguese
 
-CRITICAL PINYIN RULE:
-Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
+=== CRITICAL PINYIN RULE ===
+CORRECT: 你好 → nǐ hǎo (space between syllables)
+INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
-CORRECT: 你好 → nǐ hǎo
-INCORRECT: 你好 → nǐhǎo
-
-EXAMPLE ROW:
+=== EXAMPLE ROW ===
 english,chinese,pinyin,spanish,portuguese
 hello there,你好,nǐ hǎo,hola,olá
 
-WORKFLOW:
-1. Read English_Combined_Words from each pack in the Overview
-2. For each word, create translations in all 5 columns
-3. Ensure Chinese is Simplified and pinyin has proper spacing
-4. Save as EnglishWords{pack_number}.csv
+=== WORKFLOW ===
+1. Read Combined_Words from each pack
+2. Create translations in all 5 columns
+3. Format pinyin correctly
+4. Save as EnglishWords{N}.csv
+5. Validate, iterate until 9.5+
 
-Create your own branch, commit changes, and create a PR to main.</div>
+Create your own branch, commit, and PR to main.</div>
 
+<!-- ============================================================ -->
+<!-- STAGE 4: OVERVIEW CLEANUP                                    -->
+<!-- ============================================================ -->
+
+<div class="stage-header">
     <h2>Stage 4: Cleanup Overview Columns</h2>
+    <p>Remove temporary columns after breakout CSVs are generated.</p>
+</div>
 
-    <h3>All Languages - Stage 4</h3>
-    <div class="label">Click to copy</div>
-    <div class="prompt-box" onclick="copyPrompt(this)">TASK: Remove Example_Words and Combined_Words columns from all Overview CSVs
+<h3>All Languages - Stage 4</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Remove Example_Words and Combined_Words columns from all Overview CSVs
 
-PREREQUISITE: Run this AFTER Stage 1, 2, and 3 are all complete and merged to main.
+=== PREREQUISITE ===
+Stages 1, 2, 3 complete and merged to main.
+Breakout CSVs exist with all translations.
 
-YOUR GOAL: Clean up the Overview CSVs by removing legacy columns that are no longer needed once breakout CSVs are generated.
+=== YOUR GOAL ===
+Clean up Overview CSVs by removing temporary columns no longer needed.
 
-FILES TO EDIT:
+=== FILES ===
 - ChineseWords/ChineseWordsOverview.csv
 - SpanishWords/SpanishWordsOverview.csv
 - EnglishWords/EnglishWordsOverview.csv
 
-COLUMNS TO KEEP (4 columns only):
+=== COLUMNS TO KEEP (4 only) ===
 1. Pack_Number
 2. Pack_Title
 3. Difficulty_Act
-4. [Lang]_Base_Words (Chinese_Base_Words, Spanish_Base_Words, English_Base_Words)
+4. [Lang]_Base_Words
 
-COLUMNS TO REMOVE:
+=== COLUMNS TO REMOVE ===
 - [Lang]_Example_Words
 - [Lang]_Combined_Words
 
-You can use the existing script: python PythonHelpers/cleanup_overview_columns.py
+=== METHOD ===
+Use: python PythonHelpers/cleanup_overview_columns.py
+Or manually edit CSVs.
 
-Or manually edit the CSVs to remove the columns.
+=== VERIFICATION ===
+After cleanup, each Overview CSV has exactly 4 columns.
 
-VERIFICATION:
-After cleanup, each Overview CSV should have exactly 4 columns:
-- Pack_Number,Pack_Title,Difficulty_Act,[Lang]_Base_Words
+Create your own branch, commit, and PR to main.</div>
 
-Create your own branch, commit changes, and create a PR to main.</div>
+<!-- ============================================================ -->
+<!-- STAGE 5: JAVASCRIPT MODULE GENERATION                        -->
+<!-- ============================================================ -->
 
-    <script>
-        function copyPrompt(element) {
-            const text = element.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                element.classList.add('copied');
-                setTimeout(() => element.classList.remove('copied'), 500);
-            });
-        }
-    </script>
+<div class="stage-header">
+    <h2>Stage 5: Generate JavaScript Modules</h2>
+    <p>Convert breakout CSVs to JS modules (clean + obfuscated). Final output for the game.</p>
+    <p><strong>Script:</strong> <code>python [Lang]Words/[Lang]WordsPythonHelperScripts/convert_csv_to_js.py</code></p>
+</div>
+
+<h3>Chinese - Stage 5</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Generate JavaScript modules from Chinese breakout CSVs
+
+=== WHAT THIS STAGE PRODUCES ===
+Two versions of JS modules:
+
+1. CLEAN VERSION (for development):
+   Location: ChineseWords/Jsmodules/act1-foundation.js, act2-development.js, etc.
+   Format: Human-readable ES6 exports
+   Purpose: LLM-assisted coding, debugging, understanding data structure
+
+2. OBFUSCATED VERSION (for production):
+   Location: ChineseWords/Jsmodules-js/act1-foundation-js.js, etc.
+   Format: Compressed + Base64 encoded
+   Purpose: Actual game deployment, smaller file size
+
+=== PREREQUISITE ===
+Stage 3 complete. All ChineseWords1.csv through ChineseWords107.csv exist.
+
+=== HOW TO RUN ===
+python ChineseWords/ChineseWordsPythonHelperScripts/convert_csv_to_js.py
+
+=== OUTPUT JS MODULE STRUCTURE ===
+Each act file exports multiple packs:
+
+export const p1_1_greetings__goodbyes = {
+  meta: {
+    wordpack: 1,                    // Pack number (integer)
+    chinese: "问候语",               // Title in Chinese
+    pinyin: "wèn hòu yǔ",           // Title pinyin
+    english: "Greetings & Goodbyes", // Title in English
+    spanish: "Saludos",              // etc.
+    // ... all supported languages
+  },
+  words: [
+    ["你好", "nǐ hǎo", "hello", "hola", "bonjour", "olá", "xin chào", "สวัสดี", "ជំរាបសួរ", "halo", "halo", "kumusta"],
+    ["再见", "zài jiàn", "goodbye", ...],
+    // Each row is [chinese, pinyin, english, spanish, french, portuguese, vietnamese, thai, khmer, indonesian, malay, filipino]
+  ]
+};
+
+=== OBFUSCATION METHOD (3 layers) ===
+1. JSON.stringify(allPacksData)
+2. Reverse the string (salt)
+3. zlib.compress()
+4. base64.encode()
+
+Result: export const w = "base64string...";
+
+=== TO DECODE IN BROWSER ===
+Uses pako.js for decompression:
+1. Import module (get 'w' export)
+2. base64 decode → Uint8Array
+3. pako.inflate()
+4. Reverse string
+5. JSON.parse() → original data
+
+See DecoderTest.html for working example.
+
+=== ACT MAPPING ===
+Chinese has 5 acts:
+- Act I: Foundation (act1-foundation.js)
+- Act II: Development (act2-development.js)
+- Act III: Expansion (act3-expansion.js)
+- Act IV: Mastery (act4-mastery.js)
+- Act V: Refinement (act5-refinement.js)
+
+The Overview CSV's Difficulty_Act column determines which act each pack belongs to.
+
+=== COLUMN INDICES FOR CHINESE (12 columns) ===
+[0] chinese, [1] pinyin, [2] english, [3] spanish, [4] french,
+[5] portuguese, [6] vietnamese, [7] thai, [8] khmer,
+[9] indonesian, [10] malay, [11] filipino
+
+=== VERIFICATION ===
+After generation:
+1. Check Jsmodules/ has all act files
+2. Check Jsmodules-js/ has obfuscated versions
+3. Load DecoderTest.html to verify decoding works
+4. Spot-check a few packs for correct data
+
+Create your own branch, commit, and PR to main.</div>
+
+<h3>Spanish - Stage 5</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Generate JavaScript modules from Spanish breakout CSVs
+
+=== OUTPUT ===
+1. CLEAN: SpanishWords/Jsmodules/act1-foundation.js through act7-mastery-fluency.js
+2. OBFUSCATED: SpanishWords/Jsmodules-js/act1-foundation-js.js through act7-mastery-fluency-js.js
+
+=== HOW TO RUN ===
+python SpanishWords/SpanishWordsPythonHelperScripts/convert_csv_to_js.py
+
+=== ACT MAPPING ===
+Spanish has 7 acts (250 packs):
+- Act I: Foundation
+- Act II: Building Blocks
+- Act III: Daily Life
+- Act IV: Expanding Expression
+- Act V: Intermediate Mastery
+- Act VI: Advanced Constructs
+- Act VII: Mastery Fluency
+
+=== COLUMN INDICES FOR SPANISH (5 columns) ===
+[0] spanish, [1] english, [2] chinese, [3] pinyin, [4] portuguese
+
+=== JS MODULE STRUCTURE ===
+export const p1_1_greetings__goodbyes = {
+  meta: {
+    wordpack: 1,
+    spanish: "Saludos y Despedidas",
+    english: "Greetings & Goodbyes",
+    chinese: "问候语",
+    pinyin: "wèn hòu yǔ",
+    portuguese: "Saudações"
+  },
+  words: [
+    ["hola amigo", "hello friend", "你好朋友", "nǐ hǎo péng you", "olá amigo"],
+    // [spanish, english, chinese, pinyin, portuguese]
+  ]
+};
+
+Create your own branch, commit, and PR to main.</div>
+
+<h3>English - Stage 5</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Generate JavaScript modules from English breakout CSVs
+
+=== OUTPUT ===
+1. CLEAN: EnglishWords/Jsmodules/act1-foundation.js through act5-advanced-mastery.js
+2. OBFUSCATED: EnglishWords/Jsmodules-js/act1-foundation-js.js through act5-advanced-mastery-js.js
+
+=== HOW TO RUN ===
+python EnglishWords/EnglishWordsPythonHelperScripts/convert_csv_to_js.py
+
+=== ACT MAPPING ===
+English has 5 acts (160 packs):
+- Act I: Foundation
+- Act II: Building Blocks
+- Act III: Everyday Life
+- Act IV: Expanding Horizons
+- Act V: Advanced Mastery
+
+=== COLUMN INDICES FOR ENGLISH (5 columns) ===
+[0] english, [1] chinese, [2] pinyin, [3] spanish, [4] portuguese
+
+=== JS MODULE STRUCTURE ===
+export const p1_1_greetings__basics = {
+  meta: {
+    wordpack: 1,
+    english: "Greetings & Basics",
+    chinese: "问候语",
+    pinyin: "wèn hòu yǔ",
+    spanish: "Saludos",
+    portuguese: "Saudações"
+  },
+  words: [
+    ["hello there", "你好", "nǐ hǎo", "hola", "olá"],
+    // [english, chinese, pinyin, spanish, portuguese]
+  ]
+};
+
+Create your own branch, commit, and PR to main.</div>
+
+<!-- ============================================================ -->
+<!-- RATING PROMPT (FOR FRESH LLM)                                -->
+<!-- ============================================================ -->
+
+<div class="stage-header">
+    <h2>Quality Rating Prompt (For Fresh LLM)</h2>
+    <p>Use this to have an unbiased LLM rate another LLM's work.</p>
+</div>
+
+<h3>Fresh LLM Rating Prompt</h3>
+<div class="label">Click to copy</div>
+<div class="prompt-box" onclick="copyPrompt(this)">TASK: Rate the quality of wordpack data (UNBIASED REVIEW)
+
+=== IMPORTANT ===
+You are rating work done by another LLM agent. You have NOT seen this data before.
+Provide an honest, unbiased assessment. Do not assume the work is good.
+
+=== WHAT TO RATE ===
+Rate each aspect 1-10 and provide an OVERALL score.
+
+For BASE WORDS (Stage 1):
+- Theme fit: Do words match the pack's stated theme?
+- Usefulness: Are these words learners should know?
+- Completeness: Are obvious words missing?
+- No phrases: Are all entries vocabulary items (not sentences)?
+- No duplicates: Each word appears in only one pack?
+
+For EXAMPLE WORDS (Stage 2):
+- Contains base word: Does each example contain its base word?
+- Natural usage: Are examples phrases people actually say?
+- Variety: Are the 2 examples per word different enough?
+- Correct count: Exactly 2 examples per base word?
+
+For TRANSLATIONS (Stage 3):
+- Accuracy: Are translations correct?
+- Pinyin format: 1 syllable per character, spaces between?
+- Simplified Chinese: No Traditional characters?
+- Consistency: Same quality across all rows?
+
+=== OUTPUT FORMAT ===
+Theme Fit: X/10 - [brief comment]
+Usefulness: X/10 - [brief comment]
+Completeness: X/10 - [brief comment]
+Format Correctness: X/10 - [brief comment]
+...
+
+OVERALL SCORE: X/10
+
+SPECIFIC ISSUES FOUND:
+1. [Issue and how to fix]
+2. [Issue and how to fix]
+...
+
+VERDICT: [PASS if >= 9.0] or [NEEDS IMPROVEMENT if < 9.0]
+
+=== BE HONEST ===
+If the work is excellent, say so. If it has problems, list them clearly.
+The goal is quality, not politeness.</div>
+
+<script>
+    // ============================================================
+    // COPY TO CLIPBOARD FUNCTIONALITY
+    // ============================================================
+    // When user clicks a prompt box, copy its text content to clipboard.
+    // Flash green briefly to confirm the copy succeeded.
+
+    function copyPrompt(element) {
+        const text = element.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            element.classList.add('copied');
+            setTimeout(() => element.classList.remove('copied'), 500);
+        });
+    }
+</script>
+
 </body>
 </html>
