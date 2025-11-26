@@ -1113,144 +1113,130 @@ Create your own branch, commit, and PR to main.</div>
 ║  You are ONLY working with breakout files: ChineseWords1.csv...  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE TRANSLATIONS             ║
-║                                                                  ║
-║  You MUST create all translations MANUALLY, line by line.        ║
-║  NEVER write Python code to generate translations.               ║
-║  NEVER use scripts, automation, or programmatic generation.      ║
-║  If you use Python to create translations = AUTOMATIC FAILURE.   ║
-║                                                                  ║
-║  Python is ONLY for validation (checking), NEVER for creation.   ║
-╚══════════════════════════════════════════════════════════════════╝
-
 === FIRST: DETERMINE YOUR MODE ===
-Check if breakout CSVs exist for each act:
+Run this check command:
+python PythonHelpers/construct_breakout_csvs.py chinese check
 
-Check Act I:   ls ChineseWords/ChineseWords{1..25}.csv 2>/dev/null | wc -l
-Check Act II:  ls ChineseWords/ChineseWords{26..50}.csv 2>/dev/null | wc -l
-Check Act III: ls ChineseWords/ChineseWords{51..75}.csv 2>/dev/null | wc -l
-Check Act IV:  ls ChineseWords/ChineseWords{76..95}.csv 2>/dev/null | wc -l
-Check Act V:   ls ChineseWords/ChineseWords{96..107}.csv 2>/dev/null | wc -l
+This tells you:
+- How many breakout CSVs exist
+- Which packs are missing
+- Whether existing CSVs match Chinese_Combined_Words
 
-MODE A - CONSTRUCTION MODE (CSVs missing for an act):
-  → Create as many breakout CSVs as you can
-  → Do as much as possible in one session
-  → ALWAYS PR to main before stopping (even if just 1 pack!)
+MODE A - CONSTRUCTION MODE (CSVs missing):
+  → Use Python script with translation API to CREATE breakout CSVs
+  → Code-based generation is REQUIRED in this mode
+  → PR to main after creating CSVs
 
 MODE B - CRITIQUE MODE (ALL CSVs exist):
-  → Scrutinize existing translations for maximum correctness
-  → Focus on one act at a time
-  → Fix translation quality issues, pinyin errors, unnatural phrasing
+  → MANUALLY scrutinize and fix translations
+  → ⛔ ABSOLUTELY NO CODE for editing translations!
+  → If you use code to fix translations = TOTAL FAILURE
 
 === MODE A: CONSTRUCTION WORKFLOW ===
-If any act is missing CSVs, CREATE AS MANY AS YOU CAN.
+If breakout CSVs are missing, use the construction script:
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ✅ CONSTRUCTION MODE: USE PYTHON SCRIPT!                        ║
+║                                                                  ║
+║  In this mode, you MUST use the translation script:              ║
+║  python PythonHelpers/construct_breakout_csvs.py chinese construct║
+║                                                                  ║
+║  This uses Google Translate API to generate initial translations.║
+║  You can also specify a pack range:                              ║
+║  python PythonHelpers/construct_breakout_csvs.py chinese construct 1 25 ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Construction workflow:
+1. Run: python PythonHelpers/construct_breakout_csvs.py chinese check
+2. Identify which packs are missing
+3. Run: python PythonHelpers/construct_breakout_csvs.py chinese construct [start] [end]
+4. Script creates CSVs with translations from Google Translate
+5. Run validation: python PythonHelpers/validate_pinyin.py chinese
+6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🔴 CRITICAL: ALWAYS PR BEFORE STOPPING!                         ║
 ║                                                                  ║
 ║  If you need to stop for ANY reason:                             ║
-║  → Commit and PR whatever you have done SO FAR                   ║
+║  → Commit and PR whatever CSVs were created                      ║
 ║  → Even if it's just 1 pack - PR IT!                             ║
-║  → Even if it's just 3 packs out of 25 - PR IT!                  ║
 ║  → NEVER stop without PR'ing your work to main                   ║
 ║                                                                  ║
-║  No work is too small to PR. Every pack counts.                  ║
 ║  Next agent will continue where you left off.                    ║
 ╚══════════════════════════════════════════════════════════════════╝
-
-1. Identify which packs still need CSVs created
-2. Read ChineseWordsOverview.csv to get Combined_Words for those packs
-3. Create as many breakout CSVs as you can handle
-4. Run validation: python PythonHelpers/validate_pinyin.py chinese
-5. Fix any issues MANUALLY
-6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
-7. Report exactly which packs you completed so next agent knows where to start
-
-Chinese Acts:
-- Act I (Foundation): Packs 1-25 → ChineseWords1.csv to ChineseWords25.csv
-- Act II (Development): Packs 26-50 → ChineseWords26.csv to ChineseWords50.csv
-- Act III (Expansion): Packs 51-75 → ChineseWords51.csv to ChineseWords75.csv
-- Act IV (Mastery): Packs 76-95 → ChineseWords76.csv to ChineseWords95.csv
-- Act V (Refinement): Packs 96-107 → ChineseWords96.csv to ChineseWords107.csv
 
 === MODE B: CRITIQUE WORKFLOW ===
 If ALL CSVs exist, enter CRITIQUE MODE for maximum translation quality.
 
-1. Pick ONE act to scrutinize (start with Act I if not specified)
-2. For each CSV in that act:
-   - Check EVERY translation for accuracy and naturalness
-   - Verify pinyin has correct tones and spacing
-   - Ensure translations are what native speakers actually say
-   - Look for awkward, overly formal, or rare translations
-3. Score current quality (1-10)
-4. Make improvements MANUALLY
-5. Run validation scripts
-6. Score again - target 9.5+
-7. Commit and PR to main
-8. Report which act was critiqued so next agent does another
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔⛔⛔ CRITIQUE MODE: ABSOLUTELY NO CODE FOR EDITS! ⛔⛔⛔        ║
+║                                                                  ║
+║  In CRITIQUE mode, you MUST edit translations MANUALLY.          ║
+║  NEVER write Python code to fix or update translations.          ║
+║  NEVER use scripts to batch-edit CSV files.                      ║
+║  NEVER use automation of any kind to modify translations.        ║
+║                                                                  ║
+║  If you use ANY code to edit translations = TOTAL FAILURE!       ║
+║  This is NON-NEGOTIABLE. Manual editing ONLY.                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Critique workflow (ONE ACT AT A TIME):
+1. Run: python PythonHelpers/construct_breakout_csvs.py chinese check
+2. Verify all CSVs exist and match Chinese_Combined_Words
+3. Pick ONE act to scrutinize (start with Act I if not specified)
+4. For EACH CSV in that act, MANUALLY review:
+   - Is EVERY translation accurate and natural?
+   - Would a native speaker actually say this?
+   - Is pinyin correct (1 syllable per char, proper tones)?
+   - Are there awkward, overly formal, or rare translations?
+5. MANUALLY edit the CSV file to fix issues (NO CODE!)
+6. Run validation: python PythonHelpers/validate_pinyin.py chinese
+7. Score quality (target: 9.5+)
+8. Commit and PR to main
+9. Report which act was critiqued
 
 CRITIQUE MODE CHECKLIST:
-□ Are ALL translations accurate (not just "close enough")?
-□ Would a native speaker of EACH language say it this way?
-□ Is pinyin PERFECTLY formatted (1 syllable per char, correct tones)?
-□ Are there any awkward or unnatural translations?
-□ Are translations consistent across similar words?
-□ Do translations match the MOST COMMON usage?
+□ Read EVERY row in the CSV - don't skim!
+□ Check EACH language column for accuracy
+□ Verify pinyin: 1 syllable per character, correct tones
+□ Fix awkward translations (what would a native speaker say?)
+□ Ensure consistency across similar words
+□ Use the MOST COMMON translation, not obscure alternatives
+
+Chinese Acts:
+- Act I (Foundation): Packs 1-25
+- Act II (Development): Packs 26-50
+- Act III (Expansion): Packs 51-75
+- Act IV (Mastery): Packs 76-95
+- Act V (Refinement): Packs 96-107
 
 === BREAKOUT CSV COLUMNS (12 columns, exact order) ===
-1. chinese - Chinese word (Simplified only!)
-2. pinyin - Pinyin with tone marks (CRITICAL: 1 syllable per character!)
-3. english
-4. spanish
-5. french
-6. portuguese
-7. vietnamese
-8. thai
-9. khmer
-10. indonesian
-11. malay
-12. filipino
+chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 
 === CRITICAL PINYIN RULE ===
 Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
+CORRECT: 猴子 → hóu zi (2 chars = 2 syllables)
+INCORRECT: 猴子 → hóuzi (WRONG - no space!)
 
-CORRECT:
-- 猴子 → hóu zi (2 chars = 2 syllables)
-- 你好 → nǐ hǎo (2 chars = 2 syllables)
-- 星期六 → xīng qī liù (3 chars = 3 syllables)
+=== VALIDATION SCRIPTS ===
+# Check if CSVs exist and match Combined_Words:
+python PythonHelpers/construct_breakout_csvs.py chinese check
 
-INCORRECT:
-- 猴子 → hóuzi (WRONG - no space!)
-- 星期六 → xīngqīliù (WRONG - no spaces!)
-
-=== EXAMPLE CSV FORMAT ===
-HEADER (first row - exact column names):
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-
-DATA ROWS:
-你好,nǐ hǎo,hello,hola,bonjour,olá,xin chào,สวัสดี,ជំរាបសួរ,halo,halo,kumusta
-
-=== PYTHON VALIDATION (CHECKING ONLY) ===
+# Validate pinyin formatting:
 python PythonHelpers/validate_pinyin.py chinese
-python PythonHelpers/validate_overview_csvs.py
-
-These scripts ONLY check for issues. They do NOT fix anything.
 
 === FINAL OUTPUT (REQUIRED) ===
 | Metric         | Value |
 |----------------|-------|
 | Mode           | Construction / Critique |
-| Packs Created  | [List specific packs, e.g., "1-5" or "1, 3, 7"] |
+| Packs Done     | [List specific packs, e.g., "1-25" or "Act I"] |
 | Packs Remaining| [What's left for next agent] |
-| BEFORE Score   | X/10  |
-| AFTER Score    | X/10  |
+| BEFORE Score   | X/10 (Critique mode only) |
+| AFTER Score    | X/10 (Critique mode only) |
 | Reason         | [1-2 sentence explanation] |
 
 Create your own branch, commit, and PR to main.
-
-⚠️ ALWAYS PR BEFORE STOPPING - even if you only completed 1 pack!
-Every CSV you create is progress. Don't let your work be lost.</div>
+⚠️ ALWAYS PR BEFORE STOPPING!</div>
 
 <h3>Spanish - Stage 3</h3>
 <div>Click to copy</div>
@@ -1266,134 +1252,131 @@ Every CSV you create is progress. Don't let your work be lost.</div>
 ║  You are ONLY working with breakout files: SpanishWords1.csv...  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE TRANSLATIONS             ║
-║                                                                  ║
-║  You MUST create all translations MANUALLY, line by line.        ║
-║  NEVER write Python code to generate translations.               ║
-║  NEVER use scripts, automation, or programmatic generation.      ║
-║  If you use Python to create translations = AUTOMATIC FAILURE.   ║
-║                                                                  ║
-║  Python is ONLY for validation (checking), NEVER for creation.   ║
-╚══════════════════════════════════════════════════════════════════╝
-
 === FIRST: DETERMINE YOUR MODE ===
-Check if breakout CSVs exist for each act:
+Run this check command:
+python PythonHelpers/construct_breakout_csvs.py spanish check
 
-Check Act I:   ls SpanishWords/SpanishWords{1..50}.csv 2>/dev/null | wc -l
-Check Act II:  ls SpanishWords/SpanishWords{51..100}.csv 2>/dev/null | wc -l
-Check Act III: ls SpanishWords/SpanishWords{101..150}.csv 2>/dev/null | wc -l
-Check Act IV:  ls SpanishWords/SpanishWords{151..180}.csv 2>/dev/null | wc -l
-Check Act V:   ls SpanishWords/SpanishWords{181..210}.csv 2>/dev/null | wc -l
-Check Act VI:  ls SpanishWords/SpanishWords{211..235}.csv 2>/dev/null | wc -l
-Check Act VII: ls SpanishWords/SpanishWords{236..250}.csv 2>/dev/null | wc -l
+This tells you:
+- How many breakout CSVs exist
+- Which packs are missing
+- Whether existing CSVs match Spanish_Combined_Words
 
-MODE A - CONSTRUCTION MODE (CSVs missing for an act):
-  → Create as many breakout CSVs as you can
-  → Do as much as possible in one session
-  → ALWAYS PR to main before stopping (even if just 1 pack!)
+MODE A - CONSTRUCTION MODE (CSVs missing):
+  → Use Python script with translation API to CREATE breakout CSVs
+  → Code-based generation is REQUIRED in this mode
+  → PR to main after creating CSVs
 
 MODE B - CRITIQUE MODE (ALL CSVs exist):
-  → Scrutinize existing translations for maximum correctness
-  → Focus on one act at a time
-  → Fix translation quality issues, pinyin errors, unnatural phrasing
+  → MANUALLY scrutinize and fix translations
+  → ⛔ ABSOLUTELY NO CODE for editing translations!
+  → If you use code to fix translations = TOTAL FAILURE
 
 === MODE A: CONSTRUCTION WORKFLOW ===
-If any act is missing CSVs, CREATE AS MANY AS YOU CAN.
+If breakout CSVs are missing, use the construction script:
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ✅ CONSTRUCTION MODE: USE PYTHON SCRIPT!                        ║
+║                                                                  ║
+║  In this mode, you MUST use the translation script:              ║
+║  python PythonHelpers/construct_breakout_csvs.py spanish construct║
+║                                                                  ║
+║  This uses Google Translate API to generate initial translations.║
+║  You can also specify a pack range:                              ║
+║  python PythonHelpers/construct_breakout_csvs.py spanish construct 1 50 ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Construction workflow:
+1. Run: python PythonHelpers/construct_breakout_csvs.py spanish check
+2. Identify which packs are missing
+3. Run: python PythonHelpers/construct_breakout_csvs.py spanish construct [start] [end]
+4. Script creates CSVs with translations from Google Translate
+5. Run validation: python PythonHelpers/validate_pinyin.py spanish
+6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🔴 CRITICAL: ALWAYS PR BEFORE STOPPING!                         ║
 ║                                                                  ║
 ║  If you need to stop for ANY reason:                             ║
-║  → Commit and PR whatever you have done SO FAR                   ║
+║  → Commit and PR whatever CSVs were created                      ║
 ║  → Even if it's just 1 pack - PR IT!                             ║
-║  → Even if it's just 3 packs out of 50 - PR IT!                  ║
 ║  → NEVER stop without PR'ing your work to main                   ║
 ║                                                                  ║
-║  No work is too small to PR. Every pack counts.                  ║
 ║  Next agent will continue where you left off.                    ║
 ╚══════════════════════════════════════════════════════════════════╝
-
-1. Identify which packs still need CSVs created
-2. Read SpanishWordsOverview.csv to get Combined_Words for those packs
-3. Create as many breakout CSVs as you can handle
-4. Run validation: python PythonHelpers/validate_pinyin.py spanish
-5. Fix any issues MANUALLY
-6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
-7. Report exactly which packs you completed so next agent knows where to start
-
-Spanish Acts (250 packs total):
-- Act I (Foundation): Packs 1-50 → SpanishWords1.csv to SpanishWords50.csv
-- Act II (Building Blocks): Packs 51-100 → SpanishWords51.csv to SpanishWords100.csv
-- Act III (Daily Life): Packs 101-150 → SpanishWords101.csv to SpanishWords150.csv
-- Act IV (Expanding Expression): Packs 151-180 → SpanishWords151.csv to SpanishWords180.csv
-- Act V (Intermediate Mastery): Packs 181-210 → SpanishWords181.csv to SpanishWords210.csv
-- Act VI (Advanced Constructs): Packs 211-235 → SpanishWords211.csv to SpanishWords235.csv
-- Act VII (Mastery Fluency): Packs 236-250 → SpanishWords236.csv to SpanishWords250.csv
 
 === MODE B: CRITIQUE WORKFLOW ===
 If ALL CSVs exist, enter CRITIQUE MODE for maximum translation quality.
 
-1. Pick ONE act to scrutinize (start with Act I if not specified)
-2. For each CSV in that act:
-   - Check EVERY translation for accuracy and naturalness
-   - Verify pinyin has correct tones and spacing
-   - Ensure translations are what native speakers actually say
-   - Look for awkward, overly formal, or rare translations
-3. Score current quality (1-10)
-4. Make improvements MANUALLY
-5. Run validation scripts
-6. Score again - target 9.5+
-7. Commit and PR to main
-8. Report which act was critiqued so next agent does another
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔⛔⛔ CRITIQUE MODE: ABSOLUTELY NO CODE FOR EDITS! ⛔⛔⛔        ║
+║                                                                  ║
+║  In CRITIQUE mode, you MUST edit translations MANUALLY.          ║
+║  NEVER write Python code to fix or update translations.          ║
+║  NEVER use scripts to batch-edit CSV files.                      ║
+║  NEVER use automation of any kind to modify translations.        ║
+║                                                                  ║
+║  If you use ANY code to edit translations = TOTAL FAILURE!       ║
+║  This is NON-NEGOTIABLE. Manual editing ONLY.                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Critique workflow (ONE ACT AT A TIME):
+1. Run: python PythonHelpers/construct_breakout_csvs.py spanish check
+2. Verify all CSVs exist and match Spanish_Combined_Words
+3. Pick ONE act to scrutinize (start with Act I if not specified)
+4. For EACH CSV in that act, MANUALLY review:
+   - Is EVERY translation accurate and natural?
+   - Would a native speaker actually say this?
+   - Is pinyin correct (1 syllable per char, proper tones)?
+   - Are there awkward, overly formal, or rare translations?
+5. MANUALLY edit the CSV file to fix issues (NO CODE!)
+6. Run validation: python PythonHelpers/validate_pinyin.py spanish
+7. Score quality (target: 9.5+)
+8. Commit and PR to main
+9. Report which act was critiqued
 
 CRITIQUE MODE CHECKLIST:
-□ Are ALL translations accurate (not just "close enough")?
-□ Would a native speaker of EACH language say it this way?
-□ Is pinyin PERFECTLY formatted (1 syllable per char, correct tones)?
-□ Are there any awkward or unnatural translations?
-□ Are translations consistent across similar words?
-□ Do translations match the MOST COMMON usage?
+□ Read EVERY row in the CSV - don't skim!
+□ Check EACH language column for accuracy
+□ Verify pinyin: 1 syllable per character, correct tones
+□ Fix awkward translations (what would a native speaker say?)
+□ Ensure consistency across similar words
+□ Use the MOST COMMON translation, not obscure alternatives
+
+Spanish Acts (250 packs total):
+- Act I (Foundation): Packs 1-50
+- Act II (Building Blocks): Packs 51-100
+- Act III (Daily Life): Packs 101-150
+- Act IV (Expanding Expression): Packs 151-180
+- Act V (Intermediate Mastery): Packs 181-210
+- Act VI (Advanced Constructs): Packs 211-235
+- Act VII (Mastery Fluency): Packs 236-250
 
 === BREAKOUT CSV COLUMNS (5 columns, exact order) ===
-1. spanish - Spanish word/phrase
-2. english
-3. chinese - Simplified Chinese only!
-4. pinyin - 1 syllable per character, separated by spaces!
-5. portuguese
+spanish,english,chinese,pinyin,portuguese
 
 === CRITICAL PINYIN RULE ===
 CORRECT: 你好 → nǐ hǎo (space between syllables)
 INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
-=== EXAMPLE CSV FORMAT ===
-HEADER (first row - exact column names):
-spanish,english,chinese,pinyin,portuguese
+=== VALIDATION SCRIPTS ===
+# Check if CSVs exist and match Combined_Words:
+python PythonHelpers/construct_breakout_csvs.py spanish check
 
-DATA ROWS:
-hola,hello,你好,nǐ hǎo,olá
-hola amigo,hello friend,你好朋友,nǐ hǎo péng you,olá amigo
-
-=== PYTHON VALIDATION (CHECKING ONLY) ===
+# Validate pinyin formatting:
 python PythonHelpers/validate_pinyin.py spanish
-python PythonHelpers/validate_overview_csvs.py
-
-These scripts ONLY check for issues. They do NOT fix anything.
 
 === FINAL OUTPUT (REQUIRED) ===
 | Metric         | Value |
 |----------------|-------|
 | Mode           | Construction / Critique |
-| Packs Created  | [List specific packs, e.g., "1-5" or "1, 3, 7"] |
+| Packs Done     | [List specific packs, e.g., "1-50" or "Act I"] |
 | Packs Remaining| [What's left for next agent] |
-| BEFORE Score   | X/10  |
-| AFTER Score    | X/10  |
+| BEFORE Score   | X/10 (Critique mode only) |
+| AFTER Score    | X/10 (Critique mode only) |
 | Reason         | [1-2 sentence explanation] |
 
 Create your own branch, commit, and PR to main.
-
-⚠️ ALWAYS PR BEFORE STOPPING - even if you only completed 1 pack!
-Every CSV you create is progress. Don't let your work be lost.</div>
+⚠️ ALWAYS PR BEFORE STOPPING!</div>
 
 <h3>English - Stage 3</h3>
 <div>Click to copy</div>
@@ -1409,130 +1392,129 @@ Every CSV you create is progress. Don't let your work be lost.</div>
 ║  You are ONLY working with breakout files: EnglishWords1.csv...  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE TRANSLATIONS             ║
-║                                                                  ║
-║  You MUST create all translations MANUALLY, line by line.        ║
-║  NEVER write Python code to generate translations.               ║
-║  NEVER use scripts, automation, or programmatic generation.      ║
-║  If you use Python to create translations = AUTOMATIC FAILURE.   ║
-║                                                                  ║
-║  Python is ONLY for validation (checking), NEVER for creation.   ║
-╚══════════════════════════════════════════════════════════════════╝
-
 === FIRST: DETERMINE YOUR MODE ===
-Check if breakout CSVs exist for each act:
+Run this check command:
+python PythonHelpers/construct_breakout_csvs.py english check
 
-Check Act I:   ls EnglishWords/EnglishWords{1..40}.csv 2>/dev/null | wc -l
-Check Act II:  ls EnglishWords/EnglishWords{41..80}.csv 2>/dev/null | wc -l
-Check Act III: ls EnglishWords/EnglishWords{81..115}.csv 2>/dev/null | wc -l
-Check Act IV:  ls EnglishWords/EnglishWords{116..140}.csv 2>/dev/null | wc -l
-Check Act V:   ls EnglishWords/EnglishWords{141..160}.csv 2>/dev/null | wc -l
+This tells you:
+- How many breakout CSVs exist
+- Which packs are missing
+- Whether existing CSVs match English_Combined_Words
 
-MODE A - CONSTRUCTION MODE (CSVs missing for an act):
-  → Create as many breakout CSVs as you can
-  → Do as much as possible in one session
-  → ALWAYS PR to main before stopping (even if just 1 pack!)
+MODE A - CONSTRUCTION MODE (CSVs missing):
+  → Use Python script with translation API to CREATE breakout CSVs
+  → Code-based generation is REQUIRED in this mode
+  → PR to main after creating CSVs
 
 MODE B - CRITIQUE MODE (ALL CSVs exist):
-  → Scrutinize existing translations for maximum correctness
-  → Focus on one act at a time
-  → Fix translation quality issues, pinyin errors, unnatural phrasing
+  → MANUALLY scrutinize and fix translations
+  → ⛔ ABSOLUTELY NO CODE for editing translations!
+  → If you use code to fix translations = TOTAL FAILURE
 
 === MODE A: CONSTRUCTION WORKFLOW ===
-If any act is missing CSVs, CREATE AS MANY AS YOU CAN.
+If breakout CSVs are missing, use the construction script:
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ✅ CONSTRUCTION MODE: USE PYTHON SCRIPT!                        ║
+║                                                                  ║
+║  In this mode, you MUST use the translation script:              ║
+║  python PythonHelpers/construct_breakout_csvs.py english construct║
+║                                                                  ║
+║  This uses Google Translate API to generate initial translations.║
+║  You can also specify a pack range:                              ║
+║  python PythonHelpers/construct_breakout_csvs.py english construct 1 40 ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Construction workflow:
+1. Run: python PythonHelpers/construct_breakout_csvs.py english check
+2. Identify which packs are missing
+3. Run: python PythonHelpers/construct_breakout_csvs.py english construct [start] [end]
+4. Script creates CSVs with translations from Google Translate
+5. Run validation: python PythonHelpers/validate_pinyin.py english
+6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🔴 CRITICAL: ALWAYS PR BEFORE STOPPING!                         ║
 ║                                                                  ║
 ║  If you need to stop for ANY reason:                             ║
-║  → Commit and PR whatever you have done SO FAR                   ║
+║  → Commit and PR whatever CSVs were created                      ║
 ║  → Even if it's just 1 pack - PR IT!                             ║
-║  → Even if it's just 3 packs out of 40 - PR IT!                  ║
 ║  → NEVER stop without PR'ing your work to main                   ║
 ║                                                                  ║
-║  No work is too small to PR. Every pack counts.                  ║
 ║  Next agent will continue where you left off.                    ║
 ╚══════════════════════════════════════════════════════════════════╝
-
-1. Identify which packs still need CSVs created
-2. Read EnglishWordsOverview.csv to get Combined_Words for those packs
-3. Create as many breakout CSVs as you can handle
-4. Run validation: python PythonHelpers/validate_pinyin.py english
-5. Fix any issues MANUALLY
-6. BEFORE STOPPING: Commit and PR to main (even partial progress!)
-7. Report exactly which packs you completed so next agent knows where to start
-
-English Acts (160 packs total):
-- Act I (Foundation): Packs 1-40 → EnglishWords1.csv to EnglishWords40.csv
-- Act II (Building Blocks): Packs 41-80 → EnglishWords41.csv to EnglishWords80.csv
-- Act III (Everyday Life): Packs 81-115 → EnglishWords81.csv to EnglishWords115.csv
-- Act IV (Expanding Horizons): Packs 116-140 → EnglishWords116.csv to EnglishWords140.csv
-- Act V (Advanced Mastery): Packs 141-160 → EnglishWords141.csv to EnglishWords160.csv
 
 === MODE B: CRITIQUE WORKFLOW ===
 If ALL CSVs exist, enter CRITIQUE MODE for maximum translation quality.
 
-1. Pick ONE act to scrutinize (start with Act I if not specified)
-2. For each CSV in that act:
-   - Check EVERY translation for accuracy and naturalness
-   - Verify pinyin has correct tones and spacing
-   - Ensure translations are what native speakers actually say
-   - Look for awkward, overly formal, or rare translations
-3. Score current quality (1-10)
-4. Make improvements MANUALLY
-5. Run validation scripts
-6. Score again - target 9.5+
-7. Commit and PR to main
-8. Report which act was critiqued so next agent does another
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔⛔⛔ CRITIQUE MODE: ABSOLUTELY NO CODE FOR EDITS! ⛔⛔⛔        ║
+║                                                                  ║
+║  In CRITIQUE mode, you MUST edit translations MANUALLY.          ║
+║  NEVER write Python code to fix or update translations.          ║
+║  NEVER use scripts to batch-edit CSV files.                      ║
+║  NEVER use automation of any kind to modify translations.        ║
+║                                                                  ║
+║  If you use ANY code to edit translations = TOTAL FAILURE!       ║
+║  This is NON-NEGOTIABLE. Manual editing ONLY.                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Critique workflow (ONE ACT AT A TIME):
+1. Run: python PythonHelpers/construct_breakout_csvs.py english check
+2. Verify all CSVs exist and match English_Combined_Words
+3. Pick ONE act to scrutinize (start with Act I if not specified)
+4. For EACH CSV in that act, MANUALLY review:
+   - Is EVERY translation accurate and natural?
+   - Would a native speaker actually say this?
+   - Is pinyin correct (1 syllable per char, proper tones)?
+   - Are there awkward, overly formal, or rare translations?
+5. MANUALLY edit the CSV file to fix issues (NO CODE!)
+6. Run validation: python PythonHelpers/validate_pinyin.py english
+7. Score quality (target: 9.5+)
+8. Commit and PR to main
+9. Report which act was critiqued
 
 CRITIQUE MODE CHECKLIST:
-□ Are ALL translations accurate (not just "close enough")?
-□ Would a native speaker of EACH language say it this way?
-□ Is pinyin PERFECTLY formatted (1 syllable per char, correct tones)?
-□ Are there any awkward or unnatural translations?
-□ Are translations consistent across similar words?
-□ Do translations match the MOST COMMON usage?
+□ Read EVERY row in the CSV - don't skim!
+□ Check EACH language column for accuracy
+□ Verify pinyin: 1 syllable per character, correct tones
+□ Fix awkward translations (what would a native speaker say?)
+□ Ensure consistency across similar words
+□ Use the MOST COMMON translation, not obscure alternatives
+
+English Acts (160 packs total):
+- Act I (Foundation): Packs 1-40
+- Act II (Building Blocks): Packs 41-80
+- Act III (Everyday Life): Packs 81-115
+- Act IV (Expanding Horizons): Packs 116-140
+- Act V (Advanced Mastery): Packs 141-160
 
 === BREAKOUT CSV COLUMNS (5 columns, exact order) ===
-1. english - English word/phrase
-2. chinese - Simplified Chinese only!
-3. pinyin - 1 syllable per character, separated by spaces!
-4. spanish
-5. portuguese
+english,chinese,pinyin,spanish,portuguese
 
 === CRITICAL PINYIN RULE ===
 CORRECT: 你好 → nǐ hǎo (space between syllables)
 INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
-=== EXAMPLE CSV FORMAT ===
-HEADER (first row - exact column names):
-english,chinese,pinyin,spanish,portuguese
+=== VALIDATION SCRIPTS ===
+# Check if CSVs exist and match Combined_Words:
+python PythonHelpers/construct_breakout_csvs.py english check
 
-DATA ROWS:
-hello,你好,nǐ hǎo,hola,olá
-hello there,你好啊,nǐ hǎo a,hola,olá
-
-=== PYTHON VALIDATION (CHECKING ONLY) ===
+# Validate pinyin formatting:
 python PythonHelpers/validate_pinyin.py english
-python PythonHelpers/validate_overview_csvs.py
-
-These scripts ONLY check for issues. They do NOT fix anything.
 
 === FINAL OUTPUT (REQUIRED) ===
 | Metric         | Value |
 |----------------|-------|
 | Mode           | Construction / Critique |
-| Packs Created  | [List specific packs, e.g., "1-5" or "1, 3, 7"] |
+| Packs Done     | [List specific packs, e.g., "1-40" or "Act I"] |
 | Packs Remaining| [What's left for next agent] |
-| BEFORE Score   | X/10  |
-| AFTER Score    | X/10  |
+| BEFORE Score   | X/10 (Critique mode only) |
+| AFTER Score    | X/10 (Critique mode only) |
 | Reason         | [1-2 sentence explanation] |
 
 Create your own branch, commit, and PR to main.
-
-⚠️ ALWAYS PR BEFORE STOPPING - even if you only completed 1 pack!
-Every CSV you create is progress. Don't let your work be lost.</div>
+⚠️ ALWAYS PR BEFORE STOPPING!</div>
 
 <!-- ============================================================ -->
 <!-- STAGE 4: JAVASCRIPT MODULE GENERATION                        -->
