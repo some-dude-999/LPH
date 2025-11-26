@@ -17,15 +17,15 @@ from collections import defaultdict
 LANGUAGES = {
     'chinese': {
         'overview_file': 'ChineseWords/ChineseWordsOverview.csv',
-        'words_column': 'Chinese_Words',
+        'words_column': 'Chinese_Combined_Words',
     },
     'spanish': {
         'overview_file': 'SpanishWords/SpanishWordsOverview.csv',
-        'words_column': 'Spanish_Words',
+        'words_column': 'Spanish_Combined_Words',
     },
     'english': {
         'overview_file': 'EnglishWords/EnglishWordsOverview.csv',
-        'words_column': 'English_Words',
+        'words_column': 'English_Combined_Words',
     },
 }
 
