@@ -1,58 +1,58 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 动物,dòng wù,Animals,Animales,Animaux,Animais,Động vật,สัตว์,សត្វ,Hewan,Haiwan,Mga Hayop
-狗,gǒu,Dog,Perro,Chien,Cachorro,Con Chó,หมา,ឆ្កែ,Anjing,Anjing,Aso
-猫,māo,Cat,Gato,Chat,Gato,Mèo,แมว,ឆ្មា,Kucing,Kucing,Cat
-鸟,niǎo,Bird,Pájaro,Oiseau,Pássaro,Chim,นก,បក្សី || ត្រី,Burung,Burung,Ibon
-鱼,yú,Fish,Pescado,Poisson,Peixe,Cá,ปลา,សាច់មាន់,Ikan,Ikan,Isda
-鸡,jī,Chicken,Pollo,Poulet,Frango,Gà,ไก่,ទា,Ayam,Ayam,Manok
-鸭,yā,Duck,Pato,Canard,Pato,Vịt,เป็ด,ជ្រូក,Bebek,Bebek,Pato
-猪,zhū,Pig,Cerdo,Cochon,Porco,Lợn,หมู,គោ || ចៀម || សេះ,Babi,Babi,Baboy
-牛,niú,Cow,Vaca,Vache,Vaca,Bò,วัว,ទន្សាយ,Sapi,Lembu,Baka
-羊,yáng,Sheep,Ovejas,Moutons,Ovelhas,Cừu,แกะ,ខ្លា,Domba,Domba,Tupa
-马,mǎ,Horse,Caballo,Cheval,Cavalo,Ngựa,ม้า,តោ || ខ្លាឃ្មុំ,Kuda,Kuda,Kabayo
-兔子,tù zi,Rabbit,Conejo,Lapin,Coelho,Thỏ,กระต่าย,ដំរី,Kelinci,Arnab,Kuneho
-老虎,lǎo hǔ,Tiger,Tigre,Tigre,Tigre,Hổ,เสือ,ស្វា,Harimau,Tiger,Tiger
-狮子,shī zi,Lion,León,Lion,Leão,Sư tử,สิงโต,ពស់ || ត្រីដូហ្វីន,Singa,Singa,Lion
-熊,xióng,Bear,Oso,Ours,Urso,Gấu,หมี,សត្វព្រៃ,Beruang,Beruang,Bear
-大象,dà xiàng,Elephant,Elefante,Éléphant,Elefante,Voi,ช้าง,សត្វការពារ,Gajah,Gajah,Elephant
-猴子,hóu zi,Monkey,Mono,Singe,Macaco,Khỉ,ลิง,ដើរឆ្កែ,Monyet,Monyet,Monkey
-蛇,shé,Snake,Serpiente,Serpent,Cobra,Rắn,งู,ឆ្កែព្រាប,Ular,Ular,Ahas
-海豚,hǎi tún,Dolphin,Delfín,Dauphin,Golfinho,Cá heo,โลมา,ឆ្មា,Lumba-lumba,Dolphin,Dolphin
-野生动物,yě shēng dòng wù,Wild animals,Animales salvajes,Animaux sauvages,Animais selvagens,Động vật hoang dã,สัตว์ป่า,ឆ្មា,Hewan liar,Haiwan liar,Mga ligaw na hayop
-保护动物,bǎo hù dòng wù,Protected animals,Animales protegidos,Animaux protégés,Animais protegidos,Động vật được bảo vệ,สัตว์คุ้มครอง,បក្សីហោះហើរ,Hewan yang dilindungi,Haiwan yang dilindungi,Protektadong Mga Hayop
-遛狗,liú gǒu,Walking the dog,Pasear al perro,Promener le chien,Passeando com o cachorro,Dắt chó đi dạo,พาหมาเดินเล่น,ស្តាប់បក្សី,Berjalan-jalan dengan anjing,Berjalan anjing,Naglalakad sa aso
-狗叫了,gǒu jiào le,The dog barks,El perro ladra,Le chien aboie,O cachorro late,Chó sủa,หมาเห่า,ការចិញ្ចឹមត្រី,Anjing menggonggong,The Barks Anjing,Ang mga barks ng aso
-猫咪,māo mī,Cat,Gato,Chat,Gato,Mèo,แมว,ធុងត្រី,Kucing,Kucing,Cat
-这只猫,zhè zhǐ māo,The cat,El gato,Le chat,O gato,Con mèo,แมว,Rooster Croster,Kucing,Kucing,Ang pusa
-鸟飞了,niǎo fēi le,Birds fly,Los pájaros vuelan,Les oiseaux volent,Os pássaros voam,Chim bay,นกบิน,មេមាន់ដាក់ពង,Burung terbang,Burung terbang,Lumipad ang mga ibon
-听鸟叫,tīng niǎo jiào,Listen to the birds,Escucha a los pájaros,Écoutez les oiseaux,Ouça os pássaros,Lắng nghe tiếng chim,ฟังเสียงนก,អំបោះអាំង,Dengarkan burung,Dengarkan burung,Makinig sa mga ibon
-养鱼,yǎng yú,Fish farming,Piscicultura,Pisciculture,Piscicultura,Nuôi cá,การเลี้ยงปลา,ហែលទឹកទា,Budidaya ikan,Ladang Ikan,Pagsasaka ng isda
-鱼缸,yú gāng,Fish tank,Pecera,Aquarium,Aquário,Bể cá,ตู้ปลา,ជ្រូកព្រៃ,Tangki ikan,Tangki Ikan,Tank ng Isda
-公鸡打鸣,gōng jī dǎ míng,Rooster crows,El gallo canta,Le coq chante,Galo canta,Gà trống gáy,ไก่ขัน,ការចិញ្ចឹមជ្រូក,Ayam berkokok,Rooster Crows,Rooster Crows
-母鸡下蛋,mǔ jī xià dàn,Hens lay eggs,Las gallinas ponen huevos,Les poules pondent des œufs,Galinhas botam ovos,Gà mái đẻ trứng,ไก่วางไข่,ក្របី || អួត,Ayam bertelur,Ayam bertelur,Hens Lay Egg
-烤鸭,kǎo yā,Roast duck,Pato asado,Canard rôti,Pato assado,Vịt quay,เป็ดย่าง,| ពពែ,Bebek panggang,Bebek panggang,Inihaw na pato
-鸭子游泳,yā zi yóu yǒng,Duck swimming,Pato nadando,Canard nageant,Natação de pato,Vịt bơi,เป็ดว่ายน้ำ,ចៀមឃ្វាល,Berenang bebek,Duck Swimming,Duck Swimming
-野猪,yě zhū,Wild boar,Jabalí,Sanglier,Javali,Lợn rừng,หมูป่า,ជិះសេះ,Babi hutan,Boar Wild,Wild Boar
-喂猪,wèi zhū,Feeding pigs,Alimentación de cerdos,Nourrir les porcs,Alimentação de suínos,Cho lợn ăn,ให้อาหารหมู,ការប្រណាំងសេះ,Memberi makan babi,Makan babi,Pagpapakain ng mga baboy
-水牛,shuǐ niú,Buffalo,Búfalo,Buffle,Búfalo,Trâu,ควาย,ទន្សាយពណ៌ស,Kerbau,Buffalo,Buffalo
-吹牛,chuī niú,Bragging,Alardear,Se vanter,Vangloriando-se,Khoe khoang,คุยโว,ទន្សាយហប,Membual,Bercakap,Bragging
-山羊,shān yáng,Goat,Cabra,Chèvre,Cabra,Dê,แพะ,ខ្លា,Kambing,Kambing,Kambing
-放羊,fàng yáng,Herding sheep,Pastoreando ovejas,Élevage de moutons,Pastorear ovelhas,Chăn cừu,ต้อนแกะ,ខ្លាយ៉ាងសាហាវ,Menggembala domba,Kambing Domba,Herding tupa
-骑马,qí mǎ,Horse riding,Equitación,Équitation,Passeios a cavalo,Cưỡi ngựa,ขี่ม้า,សត្វតោគ្រហឹម,Menunggang kuda,Menunggang kuda,Pagsakay sa kabayo
-赛马,sài mǎ,Horse racing,Carreras de caballos,Courses hippiques,Corridas de cavalos,Đua ngựa,การแข่งม้า,តោស្តេច || ខ្លាឃ្មុំខ្មៅ,Pacuan kuda,Perlumbaan Kuda,Karera ng kabayo
-白兔子,bái tù zi,White rabbit,Conejo blanco,Lapin blanc,Coelho branco,Thỏ trắng,กระต่ายขาว,ខ្លាឃ្មុំប៉ូឡា,Kelinci putih,White Rabbit,White Rabbit
-兔子跳,tù zi tiào,Rabbit hop,Salto de conejo,Saut de lapin,Salto de coelho,Nhảy thỏ,กระต่ายกระโดด,ដំរីអាហ្វ្រិក,Kelinci melompat,Hop Arnab,Kuneho hop
-属老虎,shǔ lǎo hǔ,Tiger,Tigre,Tigre,Tigre,Hổ,เสือ,ដើមដំរី,Harimau,Tiger,Tiger
-老虎凶,lǎo hǔ xiōng,Tiger fierce,Tigre feroz,Tigre féroce,Tigre feroz,Hổ dữ,เสือดุ,ស្វាឆ្លាត,Harimau ganas,Tiger Fierce,Tiger Fierce
-狮子吼,shī zi hǒu,Lion roar,Rugido de león,Rugissement du lion,Rugido do leão,Sư tử gầm,สิงโตคำราม,សត្វស្វាឡើងមែកធាងមែកធាង,Singa mengaum,Lion Roar,Lion Roar
-狮子王,shī zi wáng,Lion King,Rey León,Roi Lion,Rei Leão,Vua Sư Tử,ไลอ้อนคิง,ពស់ពិស្លាន,Raja Singa,Lion King,Lion King
-黑熊,hēi xióng,Black bear,Oso negro,Ours noir,Urso preto,Gấu đen,หมีดำ,ការភ័យខ្លាចនៃពស់,Beruang hitam,Black Bear,Itim na oso
-北极熊,běi jí xióng,Polar bear,Oso polar,Ours polaire,Urso polar,Gấu Bắc Cực,หมีขั้วโลก,ការបង្ហាញដូហ្វីន,Beruang kutub,Polar Bear,Polar Bear
-非洲大象,fēi zhōu dà xiàng,African elephant,Elefante africano,Éléphant d'Afrique,Elefante africano,Voi châu Phi,ช้างแอฟริกา,Dolphin Smart,Gajah Afrika,Gajah Afrika,African Elephant
-大象鼻子,dà xiàng bí zi,Elephant trunk,Trompa de elefante,Trompe d'éléphant,Tromba de elefante,Vòi voi,งวงช้าง,[TRANSLATE_KM],Belalai gajah,Gajah Trunk,Elephant trunk
-猴子聪明,hóu zi cōng míng,Monkey smart,Mono inteligente,Singe intelligent,Macaco esperto,Khỉ thông minh,ลิงฉลาด,[TRANSLATE_KM],Monyet pintar,Monyet pintar,Monkey Smart
-猴子爬树,hóu zi pá shù,Monkey climbing tree,Mono trepando al árbol,Singe grimpant à l'arbre,Macaco subindo em árvore,Khỉ leo cây,ลิงปีนต้นไม้,[TRANSLATE_KM],Monyet memanjat pohon,Monyet Climbing Tree,Monkey Climbing Tree
-毒蛇,dú shé,Venomous snakes,Serpientes venenosas,Serpents venimeux,Cobras venenosas,Rắn độc,งูพิษ,[TRANSLATE_KM],Ular berbisa,Ular Venomous,Venomous Snakes
-怕蛇,pà shé,Fear of snakes,Miedo a las serpientes,Peur des serpents,Medo de cobras,Sợ rắn,กลัวงู,[TRANSLATE_KM],Takut pada ular,Takut Ular,Takot sa mga ahas
-海豚表演,hǎi tún biǎo yǎn,Dolphin show,Espectáculo de delfines,Spectacle de dauphins,Show de golfinhos,Biểu diễn cá heo,การแสดงโลมา,[TRANSLATE_KM],Pertunjukan lumba-lumba,Dolphin Show,Dolphin Show
-海豚聪明,hǎi tún cōng míng,Dolphin smart,Delfín inteligente,Dauphin intelligent,Golfinho inteligente,Cá heo thông minh,ปลาโลมาฉลาด,[TRANSLATE_KM],Lumba-lumba pintar,Dolphin Smart,Dolphin Smart
+狗,gǒu,Dog,Perro,Chien,Cachorro,Chó,หมา,ឆ្កែ,Anjing,Anjing,Aso
+猫,māo,Cat,Gato,Chat,Gato,Mèo,แมว,ឆ្មា,Kucing,Kucing,Pusa
+鸟,niǎo,Bird,Pájaro,Oiseau,Pássaro,Chim,นก,បក្សី,Burung,Burung,Ibon
+鱼,yú,Fish,Pez,Poisson,Peixe,Cá,ปลา,ត្រី,Ikan,Ikan,Isda
+鸡,jī,Chicken,Pollo,Poulet,Frango,Gà,ไก่,មាន់,Ayam,Ayam,Manok
+鸭,yā,Duck,Pato,Canard,Pato,Vịt,เป็ด,ទា,Bebek,Itik,Pato
+猪,zhū,Pig,Cerdo,Cochon,Porco,Lợn,หมู,ជ្រូក,Babi,Babi,Baboy
+牛,niú,Cow,Vaca,Vache,Vaca,Bò,วัว,គោ,Sapi,Lembu,Baka
+羊,yáng,Sheep,Oveja,Mouton,Ovelha,Cừu,แกะ,ចៀម,Domba,Biri-biri,Tupa
+马,mǎ,Horse,Caballo,Cheval,Cavalo,Ngựa,ม้า,សេះ,Kuda,Kuda,Kabayo
+兔子,tù zi,Rabbit,Conejo,Lapin,Coelho,Thỏ,กระต่าย,ទន្សាយ,Kelinci,Arnab,Kuneho
+老虎,lǎo hǔ,Tiger,Tigre,Tigre,Tigre,Hổ,เสือ,ខ្លា,Harimau,Harimau,Tigre
+狮子,shī zi,Lion,León,Lion,Leão,Sư tử,สิงโต,តោ,Singa,Singa,Leon
+熊,xióng,Bear,Oso,Ours,Urso,Gấu,หมี,ខ្លាឃ្មុំ,Beruang,Beruang,Oso
+大象,dà xiàng,Elephant,Elefante,Éléphant,Elefante,Voi,ช้าง,ដំរី,Gajah,Gajah,Elepante
+猴子,hóu zi,Monkey,Mono,Singe,Macaco,Khỉ,ลิง,ស្វា,Monyet,Monyet,Unggoy
+蛇,shé,Snake,Serpiente,Serpent,Cobra,Rắn,งู,ពស់,Ular,Ular,Ahas
+海豚,hǎi tún,Dolphin,Delfín,Dauphin,Golfinho,Cá heo,โลมา,ដូហ្វីន,Lumba-lumba,Lumba-lumba,Dolphin
+野生动物,yě shēng dòng wù,Wild animals,Animales salvajes,Animaux sauvages,Animais selvagens,Động vật hoang dã,สัตว์ป่า,សត្វព្រៃ,Hewan liar,Haiwan liar,Mga ligaw na hayop
+保护动物,bǎo hù dòng wù,Protected animals,Animales protegidos,Animaux protégés,Animais protegidos,Động vật được bảo vệ,สัตว์คุ้มครอง,សត្វការពារ,Hewan yang dilindungi,Haiwan yang dilindungi,Protektadong mga hayop
+遛狗,liú gǒu,Walk the dog,Pasear al perro,Promener le chien,Passear com o cachorro,Dắt chó đi dạo,พาหมาเดินเล่น,ដើរឆ្កែ,Jalan-jalan dengan anjing,Berjalan dengan anjing,Maglakad ng aso
+狗叫了,gǒu jiào le,The dog barked,El perro ladró,Le chien a aboyé,O cachorro latiu,Chó sủa rồi,หมาเห่าแล้ว,ឆ្កែព្រូសហើយ,Anjing menggonggong,Anjing menyalak,Tumahol ang aso
+猫咪,māo mī,Kitty,Gatito,Chaton,Gatinho,Mèo con,แมวน้อย,កូនឆ្មា,Kucing kecil,Anak kucing,Kuting
+这只猫,zhè zhǐ māo,This cat,Este gato,Ce chat,Este gato,Con mèo này,แมวตัวนี้,ឆ្មានេះ,Kucing ini,Kucing ini,Ang pusang ito
+鸟飞了,niǎo fēi le,The bird flew,El pájaro voló,L'oiseau a volé,O pássaro voou,Chim bay rồi,นกบินไปแล้ว,បក្សីហើរហើយ,Burung terbang,Burung terbang,Lumipad ang ibon
+听鸟叫,tīng niǎo jiào,Listen to birds singing,Escuchar a los pájaros cantar,Écouter les oiseaux chanter,Ouvir os pássaros cantarem,Nghe chim hót,ฟังเสียงนกร้อง,ស្តាប់បក្សីច្រៀង,Dengarkan burung bernyanyi,Dengar burung bernyanyi,Makinig sa mga ibon
+养鱼,yǎng yú,Raise fish,Criar peces,Élever des poissons,Criar peixes,Nuôi cá,เลี้ยงปลา,ចិញ្ចឹមត្រី,Memelihara ikan,Memelihara ikan,Mag-alaga ng isda
+鱼缸,yú gāng,Fish tank,Pecera,Aquarium,Aquário,Bể cá,ตู้ปลา,អាងត្រី,Akuarium,Akuarium,Tangke ng isda
+公鸡打鸣,gōng jī dǎ míng,Rooster crows,El gallo canta,Le coq chante,O galo canta,Gà trống gáy,ไก่ขัน,មាន់ឈរក្រែក,Ayam jantan berkokok,Ayam jantan berkokok,Tumitilaok ang tandang
+母鸡下蛋,mǔ jī xià dàn,Hen lays eggs,La gallina pone huevos,La poule pond des œufs,A galinha põe ovos,Gà mái đẻ trứng,ไก่ออกไข่,មាន់ញីទំពង់,Ayam bertelur,Ayam bertelur,Nangingitlog ang inahin
+烤鸭,kǎo yā,Roast duck,Pato asado,Canard rôti,Pato assado,Vịt quay,เป็ดย่าง,ទាអាំង,Bebek panggang,Itik panggang,Pritong pato
+鸭子游泳,yā zi yóu yǒng,Duck swimming,El pato nada,Le canard nage,O pato nada,Vịt bơi,เป็ดว่ายน้ำ,ទាហែលទឹក,Bebek berenang,Itik berenang,Lumalangoy ang pato
+野猪,yě zhū,Wild boar,Jabalí,Sanglier,Javali,Lợn rừng,หมูป่า,ជ្រូកព្រៃ,Babi hutan,Babi hutan,Baboy-damo
+喂猪,wèi zhū,Feed pigs,Alimentar cerdos,Nourrir les cochons,Alimentar porcos,Cho lợn ăn,ให้อาหารหมู,ចិញ្ចឹមជ្រូក,Memberi makan babi,Beri makan babi,Pakainin ang baboy
+水牛,shuǐ niú,Water buffalo,Búfalo de agua,Buffle d'eau,Búfalo de água,Trâu nước,ควาย,ក្របី,Kerbau,Kerbau,Kalabaw
+吹牛,chuī niú,Brag,Presumir,Se vanter,Gabar-se,Khoe khoang,คุยโว,អួត,Membual,Bermegah,Magmayabang
+山羊,shān yáng,Goat,Cabra,Chèvre,Cabra,Dê,แพะ,ពពែ,Kambing,Kambing,Kambing
+放羊,fàng yáng,Herd sheep,Pastorear ovejas,Faire paître les moutons,Pastorear ovelhas,Chăn cừu,ต้อนแกะ,ឃ្វាលចៀម,Menggembala domba,Menggembalakan biri-biri,Mag-alaga ng tupa
+骑马,qí mǎ,Ride a horse,Montar a caballo,Monter à cheval,Andar a cavalo,Cưỡi ngựa,ขี่ม้า,ជិះសេះ,Menunggang kuda,Menunggang kuda,Sumakay sa kabayo
+赛马,sài mǎ,Horse racing,Carreras de caballos,Courses de chevaux,Corrida de cavalos,Đua ngựa,การแข่งม้า,ប្រណាំងសេះ,Pacuan kuda,Lumba kuda,Karera ng kabayo
+白兔子,bái tù zi,White rabbit,Conejo blanco,Lapin blanc,Coelho branco,Thỏ trắng,กระต่ายขาว,ទន្សាយស,Kelinci putih,Arnab putih,Puting kuneho
+兔子跳,tù zi tiào,Rabbit hops,El conejo salta,Le lapin saute,O coelho pula,Thỏ nhảy,กระต่ายกระโดด,ទន្សាយលោត,Kelinci melompat,Arnab melompat,Tumalon ang kuneho
+属老虎,shǔ lǎo hǔ,Born in tiger year,Nacido en año del tigre,Né l'année du tigre,Nascido no ano do tigre,Tuổi hổ,ปีเสือ,ឆ្នាំខ្លា,Shio macan,Tahun harimau,Ipinanganak sa taon ng tigre
+老虎凶,lǎo hǔ xiōng,Tiger is fierce,El tigre es feroz,Le tigre est féroce,O tigre é feroz,Hổ dữ,เสือดุ,ខ្លាសាហាវ,Harimau ganas,Harimau garang,Mabangis ang tigre
+狮子吼,shī zi hǒu,Lion roars,El león ruge,Le lion rugit,O leão ruge,Sư tử gầm,สิงโตคำราม,តោគ្រហឹម,Singa mengaum,Singa mengaum,Umuungal ang leon
+狮子王,shī zi wáng,Lion King,Rey León,Roi Lion,Rei Leão,Vua sư tử,ราชสีห์,ស្តេចតោ,Raja Singa,Raja Singa,Hari ng Leon
+黑熊,hēi xióng,Black bear,Oso negro,Ours noir,Urso preto,Gấu đen,หมีดำ,ខ្លាឃ្មុំខ្មៅ,Beruang hitam,Beruang hitam,Itim na oso
+北极熊,běi jí xióng,Polar bear,Oso polar,Ours polaire,Urso polar,Gấu Bắc Cực,หมีขาว,ខ្លាឃ្មុំប៉ូល,Beruang kutub,Beruang kutub,Polar bear
+非洲大象,fēi zhōu dà xiàng,African elephant,Elefante africano,Éléphant d'Afrique,Elefante africano,Voi châu Phi,ช้างแอฟริกา,ដំរីអាហ្វ្រិក,Gajah Afrika,Gajah Afrika,Elepanteng Aprikano
+大象鼻子,dà xiàng bí zi,Elephant trunk,Trompa de elefante,Trompe d'éléphant,Tromba de elefante,Vòi voi,งวงช้าง,ច្រមុះដំរី,Belalai gajah,Belalai gajah,Nguso ng elepante
+猴子聪明,hóu zi cōng míng,Monkey is smart,El mono es inteligente,Le singe est intelligent,O macaco é inteligente,Khỉ thông minh,ลิงฉลาด,ស្វាឆ្លាត,Monyet pintar,Monyet bijak,Matalino ang unggoy
+猴子爬树,hóu zi pá shù,Monkey climbs tree,El mono trepa el árbol,Le singe grimpe à l'arbre,O macaco sobe na árvore,Khỉ leo cây,ลิงปีนต้นไม้,ស្វាឡើងដើមឈើ,Monyet memanjat pohon,Monyet memanjat pokok,Umaakyat ng puno ang unggoy
+毒蛇,dú shé,Venomous snake,Serpiente venenosa,Serpent venimeux,Cobra venenosa,Rắn độc,งูพิษ,ពស់ពិស,Ular berbisa,Ular berbisa,Makamandag na ahas
+怕蛇,pà shé,Afraid of snakes,Miedo a las serpientes,Peur des serpents,Medo de cobras,Sợ rắn,กลัวงู,ខ្លាចពស់,Takut ular,Takut ular,Takot sa ahas
+海豚表演,hǎi tún biǎo yǎn,Dolphin show,Espectáculo de delfines,Spectacle de dauphins,Show de golfinhos,Biểu diễn cá heo,การแสดงโลมา,កម្មវិធីដូហ្វីន,Pertunjukan lumba-lumba,Pertunjukan lumba-lumba,Palabas ng dolphin
+海豚聪明,hǎi tún cōng míng,Dolphins are smart,Los delfines son inteligentes,Les dauphins sont intelligents,Golfinhos são inteligentes,Cá heo thông minh,โลมาฉลาด,ដូហ្វីនឆ្លាត,Lumba-lumba pintar,Lumba-lumba bijak,Matalino ang dolphin
