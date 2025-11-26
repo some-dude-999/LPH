@@ -1,11 +1,11 @@
 english,chinese,pinyin,spanish,portuguese
 weather,天气,tiān qì,clima,clima
 sun,太阳,tài yáng,sol,sol
-sunny,阳光明媚,yáng guāng míng mèi,soleado,ensolarado
+sunny,晴朗,qíng lǎng,soleado,ensolarado
 rain,雨,yǔ,lluvia,chuva
 rainy,下雨,xià yǔ,lluvioso,chuvoso
 snow,雪,xuě,nieve,neve
-snowy,白雪皑皑,bái xuě ái ái,nevado,nevado
+snowy,下雪的,xià xuě de,nevado,nevado
 cloud,云,yún,nube,nuvem
 cloudy,阴天,yīn tiān,nublado,nublado
 windy,有风,yǒu fēng,ventoso,ventoso
@@ -23,7 +23,7 @@ nice weather,天气好,tiān qì hǎo,buen tiempo,bom tempo
 weather report,天气预报,tiān qì yù bào,informe meteorológico,boletim meteorológico
 bright sun,灿烂的阳光,càn làn de yáng guāng,sol brillante,sol brilhante
 sun shine,阳光灿烂,yáng guāng càn làn,brillo del sol,brilho do sol
-sunny day,阳光灿烂的日子,yáng guāng càn làn de rì zi,día soleado,dia ensolarado
+sunny day,晴天,qíng tiān,día soleado,dia ensolarado
 sunny weather,天气晴朗,tiān qì qíng lǎng,clima soleado,tempo ensolarado
 heavy rain,大雨,dà yǔ,fuertes lluvias,chuva forte
 rain drops,雨滴,yǔ dī,gotas de lluvia,gotas de chuva
