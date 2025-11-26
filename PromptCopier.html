@@ -1101,7 +1101,17 @@ Create your own branch, commit, and PR to main.</div>
 
 <h3>Chinese - Stage 3</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Review and perfect breakout CSV files (ChineseWords1.csv, etc.)
+<div onclick="copyPrompt(this)">TASK: Create or critique breakout CSV files (ChineseWords1.csv, etc.)
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚫🚫🚫 ABSOLUTE RULE: NEVER EDIT THE OVERVIEW CSV 🚫🚫🚫        ║
+║                                                                  ║
+║  ChineseWordsOverview.csv is 100% READ-ONLY. NEVER touch it.     ║
+║  Do NOT edit it. Do NOT modify it. Do NOT change a single cell.  ║
+║  If you edit the Overview CSV for ANY reason = IMMEDIATE FAIL.   ║
+║                                                                  ║
+║  You are ONLY working with breakout files: ChineseWords1.csv...  ║
+╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE TRANSLATIONS             ║
@@ -1114,62 +1124,66 @@ Create your own branch, commit, and PR to main.</div>
 ║  Python is ONLY for validation (checking), NEVER for creation.   ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-╔══════════════════════════════════════════════════════════════════╗
-║  🚫 NEVER EDIT OVERVIEW CSV - IT IS READ-ONLY!                   ║
-║                                                                  ║
-║  ChineseWordsOverview.csv is your INPUT (read Combined_Words).   ║
-║  You are ONLY editing breakout files: ChineseWords1.csv, etc.    ║
-║  If you edit the Overview CSV for ANY reason = FAILED.           ║
-╚══════════════════════════════════════════════════════════════════╝
+=== FIRST: DETERMINE YOUR MODE ===
+Check if breakout CSVs exist for each act:
 
-=== ITERATIVE QUALITY LOOP ===
-This is an iterative process. You will:
-1. Score the current state (1-10)
-2. List specific improvements needed
-3. Make changes MANUALLY (⛔ NO PYTHON!)
-4. Run Python validation for pinyin/duplicates
+Check Act I:   ls ChineseWords/ChineseWords{1..25}.csv 2>/dev/null | wc -l
+Check Act II:  ls ChineseWords/ChineseWords{26..50}.csv 2>/dev/null | wc -l
+Check Act III: ls ChineseWords/ChineseWords{51..75}.csv 2>/dev/null | wc -l
+Check Act IV:  ls ChineseWords/ChineseWords{76..95}.csv 2>/dev/null | wc -l
+Check Act V:   ls ChineseWords/ChineseWords{96..107}.csv 2>/dev/null | wc -l
+
+MODE A - CONSTRUCTION MODE (CSVs missing for an act):
+  → Create breakout CSVs for ONE ACT only
+  → PR to main after completing that act
+  → Next agent handles the next act
+
+MODE B - CRITIQUE MODE (ALL CSVs exist):
+  → Scrutinize existing translations for maximum correctness
+  → Focus on one act at a time
+  → Fix translation quality issues, pinyin errors, unnatural phrasing
+
+=== MODE A: CONSTRUCTION WORKFLOW ===
+If any act is missing CSVs, work on the FIRST incomplete act only.
+
+1. Identify which act to work on (first one missing CSVs)
+2. Read ChineseWordsOverview.csv to get Combined_Words for those packs
+3. Create breakout CSVs for ONLY that act's packs
+4. Run validation: python PythonHelpers/validate_pinyin.py chinese
 5. Fix any issues MANUALLY
-6. Score again
-7. If score < 9.0, iterate until quality is excellent
+6. Commit and PR to main
+7. STOP - next agent handles next act
 
-TARGET SCORE: 9.0 or higher
+Chinese Acts:
+- Act I (Foundation): Packs 1-25 → ChineseWords1.csv to ChineseWords25.csv
+- Act II (Development): Packs 26-50 → ChineseWords26.csv to ChineseWords50.csv
+- Act III (Expansion): Packs 51-75 → ChineseWords51.csv to ChineseWords75.csv
+- Act IV (Mastery): Packs 76-95 → ChineseWords76.csv to ChineseWords95.csv
+- Act V (Refinement): Packs 96-107 → ChineseWords96.csv to ChineseWords107.csv
 
-=== IF ALREADY GOOD, DON'T EDIT ===
-If your INITIAL score is 9.0 or higher, DO NOT make changes.
-A score of 9+ means the data is already excellent. Report the score and move on.
-Only make edits if the initial score is below 9.0.
+=== MODE B: CRITIQUE WORKFLOW ===
+If ALL CSVs exist, enter CRITIQUE MODE for maximum translation quality.
 
-=== MOST IMPORTANT: BEST POSSIBLE TRANSLATIONS ===
-Translations are NOT just "any correct translation."
-Translations must be the BEST POSSIBLE for learners:
-- Use the MOST NATURAL way a native speaker would say it
-- Choose the translation learners will encounter most often
-- Avoid awkward, overly formal, or rarely-used translations
-- Think: "What's the BEST translation to help someone learn this?"
+1. Pick ONE act to scrutinize (start with Act I if not specified)
+2. For each CSV in that act:
+   - Check EVERY translation for accuracy and naturalness
+   - Verify pinyin has correct tones and spacing
+   - Ensure translations are what native speakers actually say
+   - Look for awkward, overly formal, or rare translations
+3. Score current quality (1-10)
+4. Make improvements MANUALLY
+5. Run validation scripts
+6. Score again - target 9.5+
+7. Commit and PR to main
+8. Report which act was critiqued so next agent does another
 
-=== SCORING CRITERIA (1-10) ===
-- Are translations the MOST NATURAL for each language?
-- Would a native speaker of each language say it this way?
-- Is pinyin correctly formatted (1 syllable per character, spaced)?
-- Are there any duplicates or inconsistencies?
-- Are translations useful for learners (not awkward/formal)?
-
-=== ⛔ REMINDER: NO PYTHON FOR TRANSLATION ===
-The task is massive (107 packs × 12 languages!). You still MUST do it manually.
-Do NOT write Python to "speed things up."
-Do NOT use any automation to generate translations.
-Write each translation by hand, row by row, column by column.
-
-=== PREREQUISITE ===
-Stage 2 complete. Chinese_Combined_Words column exists.
-
-=== YOUR GOAL ===
-For each pack, create a breakout CSV with THE BEST translations for every word.
-YOU must write each translation yourself. NO automation.
-
-=== FILES ===
-INPUT: ChineseWordsOverview.csv (Chinese_Combined_Words column)
-OUTPUT: ChineseWords/ChineseWords1.csv through ChineseWords107.csv
+CRITIQUE MODE CHECKLIST:
+□ Are ALL translations accurate (not just "close enough")?
+□ Would a native speaker of EACH language say it this way?
+□ Is pinyin PERFECTLY formatted (1 syllable per char, correct tones)?
+□ Are there any awkward or unnatural translations?
+□ Are translations consistent across similar words?
+□ Do translations match the MOST COMMON usage?
 
 === BREAKOUT CSV COLUMNS (12 columns, exact order) ===
 1. chinese - Chinese word (Simplified only!)
@@ -1185,11 +1199,8 @@ OUTPUT: ChineseWords/ChineseWords1.csv through ChineseWords107.csv
 11. malay
 12. filipino
 
-⛔ You must MANUALLY translate into each of these 12 columns. NO PYTHON.
-
 === CRITICAL PINYIN RULE ===
 Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
-Our app displays pinyin directly under each character.
 
 CORRECT:
 - 猴子 → hóu zi (2 chars = 2 syllables)
@@ -1200,51 +1211,45 @@ INCORRECT:
 - 猴子 → hóuzi (WRONG - no space!)
 - 星期六 → xīngqīliù (WRONG - no spaces!)
 
-THE RULE: Count Chinese chars, count pinyin syllables - MUST match!
-
-=== EXAMPLE CSV (ChineseWords1.csv) ===
+=== EXAMPLE CSV FORMAT ===
 HEADER (first row - exact column names):
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 
-DATA ROWS (one word per row):
+DATA ROWS:
 你好,nǐ hǎo,hello,hola,bonjour,olá,xin chào,สวัสดี,ជំរាបសួរ,halo,halo,kumusta
-谢谢,xiè xie,thank you,gracias,merci,obrigado,cảm ơn,ขอบคุณ,អរគុណ,terima kasih,terima kasih,salamat
-再见,zài jiàn,goodbye,adiós,au revoir,adeus,tạm biệt,ลาก่อน,លាហើយ,selamat tinggal,selamat tinggal,paalam
 
 === PYTHON VALIDATION (CHECKING ONLY) ===
-After creating translations, run:
 python PythonHelpers/validate_pinyin.py chinese
 python PythonHelpers/validate_overview_csvs.py
 
 These scripts ONLY check for issues. They do NOT fix anything.
-If issues found, YOU must MANUALLY decide how to fix them.
-
-=== WORKFLOW ===
-1. BEFORE SCORE: Rate current translations 1-10, list what could be better
-2. MAKE CHANGES: ⛔ MANUALLY create/improve translations (NO PYTHON!)
-3. CAREFULLY format pinyin BY HAND (1 syllable per char, spaces between)
-4. PYTHON CHECK: Run validation scripts (checking only)
-5. FIX: MANUALLY fix any issues found
-6. AFTER SCORE: Rate again, summarize improvements
-
-=== ⛔ FINAL WARNING ===
-If you write ANY Python code to generate translations, you have FAILED.
-The task is large (107 packs). That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
-End your response with this exact table format:
-
 | Metric       | Value |
 |--------------|-------|
+| Mode         | Construction / Critique |
+| Act Worked   | Act [N]: [Name] |
+| Packs        | [X] to [Y] |
 | BEFORE Score | X/10  |
 | AFTER Score  | X/10  |
-| Reason       | [1-2 sentence explanation of what improved] |
+| Reason       | [1-2 sentence explanation] |
 
-Create your own branch, commit, and PR to main.</div>
+Create your own branch, commit, and PR to main.
+⚠️ REMEMBER: ONE ACT PER PR. Do not try to do everything at once.</div>
 
 <h3>Spanish - Stage 3</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Review and perfect breakout CSV files (SpanishWords1.csv, etc.)
+<div onclick="copyPrompt(this)">TASK: Create or critique breakout CSV files (SpanishWords1.csv, etc.)
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚫🚫🚫 ABSOLUTE RULE: NEVER EDIT THE OVERVIEW CSV 🚫🚫🚫        ║
+║                                                                  ║
+║  SpanishWordsOverview.csv is 100% READ-ONLY. NEVER touch it.     ║
+║  Do NOT edit it. Do NOT modify it. Do NOT change a single cell.  ║
+║  If you edit the Overview CSV for ANY reason = IMMEDIATE FAIL.   ║
+║                                                                  ║
+║  You are ONLY working with breakout files: SpanishWords1.csv...  ║
+╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE TRANSLATIONS             ║
@@ -1257,62 +1262,70 @@ Create your own branch, commit, and PR to main.</div>
 ║  Python is ONLY for validation (checking), NEVER for creation.   ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-╔══════════════════════════════════════════════════════════════════╗
-║  🚫 NEVER EDIT OVERVIEW CSV - IT IS READ-ONLY!                   ║
-║                                                                  ║
-║  SpanishWordsOverview.csv is your INPUT (read Combined_Words).   ║
-║  You are ONLY editing breakout files: SpanishWords1.csv, etc.    ║
-║  If you edit the Overview CSV for ANY reason = FAILED.           ║
-╚══════════════════════════════════════════════════════════════════╝
+=== FIRST: DETERMINE YOUR MODE ===
+Check if breakout CSVs exist for each act:
 
-=== ITERATIVE QUALITY LOOP ===
-This is an iterative process. You will:
-1. Score the current state (1-10)
-2. List specific improvements needed
-3. Make changes MANUALLY (⛔ NO PYTHON!)
-4. Run Python validation for pinyin/duplicates
+Check Act I:   ls SpanishWords/SpanishWords{1..50}.csv 2>/dev/null | wc -l
+Check Act II:  ls SpanishWords/SpanishWords{51..100}.csv 2>/dev/null | wc -l
+Check Act III: ls SpanishWords/SpanishWords{101..150}.csv 2>/dev/null | wc -l
+Check Act IV:  ls SpanishWords/SpanishWords{151..180}.csv 2>/dev/null | wc -l
+Check Act V:   ls SpanishWords/SpanishWords{181..210}.csv 2>/dev/null | wc -l
+Check Act VI:  ls SpanishWords/SpanishWords{211..235}.csv 2>/dev/null | wc -l
+Check Act VII: ls SpanishWords/SpanishWords{236..250}.csv 2>/dev/null | wc -l
+
+MODE A - CONSTRUCTION MODE (CSVs missing for an act):
+  → Create breakout CSVs for ONE ACT only
+  → PR to main after completing that act
+  → Next agent handles the next act
+
+MODE B - CRITIQUE MODE (ALL CSVs exist):
+  → Scrutinize existing translations for maximum correctness
+  → Focus on one act at a time
+  → Fix translation quality issues, pinyin errors, unnatural phrasing
+
+=== MODE A: CONSTRUCTION WORKFLOW ===
+If any act is missing CSVs, work on the FIRST incomplete act only.
+
+1. Identify which act to work on (first one missing CSVs)
+2. Read SpanishWordsOverview.csv to get Combined_Words for those packs
+3. Create breakout CSVs for ONLY that act's packs
+4. Run validation: python PythonHelpers/validate_pinyin.py spanish
 5. Fix any issues MANUALLY
-6. Score again
-7. If score < 9.0, iterate until quality is excellent
+6. Commit and PR to main
+7. STOP - next agent handles next act
 
-TARGET SCORE: 9.0 or higher
+Spanish Acts (250 packs total):
+- Act I (Foundation): Packs 1-50 → SpanishWords1.csv to SpanishWords50.csv
+- Act II (Building Blocks): Packs 51-100 → SpanishWords51.csv to SpanishWords100.csv
+- Act III (Daily Life): Packs 101-150 → SpanishWords101.csv to SpanishWords150.csv
+- Act IV (Expanding Expression): Packs 151-180 → SpanishWords151.csv to SpanishWords180.csv
+- Act V (Intermediate Mastery): Packs 181-210 → SpanishWords181.csv to SpanishWords210.csv
+- Act VI (Advanced Constructs): Packs 211-235 → SpanishWords211.csv to SpanishWords235.csv
+- Act VII (Mastery Fluency): Packs 236-250 → SpanishWords236.csv to SpanishWords250.csv
 
-=== IF ALREADY GOOD, DON'T EDIT ===
-If your INITIAL score is 9.0 or higher, DO NOT make changes.
-A score of 9+ means the data is already excellent. Report the score and move on.
-Only make edits if the initial score is below 9.0.
+=== MODE B: CRITIQUE WORKFLOW ===
+If ALL CSVs exist, enter CRITIQUE MODE for maximum translation quality.
 
-=== MOST IMPORTANT: BEST POSSIBLE TRANSLATIONS ===
-Translations are NOT just "any correct translation."
-Translations must be the BEST POSSIBLE for learners:
-- Use the MOST NATURAL way a native speaker would say it
-- Choose the translation learners will encounter most often
-- Avoid awkward, overly formal, or rarely-used translations
-- Think: "What's the BEST translation to help someone learn this?"
+1. Pick ONE act to scrutinize (start with Act I if not specified)
+2. For each CSV in that act:
+   - Check EVERY translation for accuracy and naturalness
+   - Verify pinyin has correct tones and spacing
+   - Ensure translations are what native speakers actually say
+   - Look for awkward, overly formal, or rare translations
+3. Score current quality (1-10)
+4. Make improvements MANUALLY
+5. Run validation scripts
+6. Score again - target 9.5+
+7. Commit and PR to main
+8. Report which act was critiqued so next agent does another
 
-=== SCORING CRITERIA (1-10) ===
-- Are translations the MOST NATURAL for each language?
-- Would a native speaker of each language say it this way?
-- Is pinyin correctly formatted (1 syllable per character, spaced)?
-- Are there any duplicates or inconsistencies?
-- Are translations useful for learners (not awkward/formal)?
-
-=== ⛔ REMINDER: NO PYTHON FOR TRANSLATION ===
-The task is massive (250 packs!). You still MUST do it manually.
-Do NOT write Python to "speed things up."
-Do NOT use any automation to generate translations.
-Write each translation by hand, row by row, column by column.
-
-=== PREREQUISITE ===
-Stage 2 complete. Spanish_Combined_Words column exists.
-
-=== YOUR GOAL ===
-For each pack, create a breakout CSV with THE BEST translations for every word.
-YOU must write each translation yourself. NO automation.
-
-=== FILES ===
-INPUT: SpanishWordsOverview.csv (Spanish_Combined_Words column)
-OUTPUT: SpanishWords/SpanishWords1.csv through SpanishWords250.csv
+CRITIQUE MODE CHECKLIST:
+□ Are ALL translations accurate (not just "close enough")?
+□ Would a native speaker of EACH language say it this way?
+□ Is pinyin PERFECTLY formatted (1 syllable per char, correct tones)?
+□ Are there any awkward or unnatural translations?
+□ Are translations consistent across similar words?
+□ Do translations match the MOST COMMON usage?
 
 === BREAKOUT CSV COLUMNS (5 columns, exact order) ===
 1. spanish - Spanish word/phrase
@@ -1321,56 +1334,50 @@ OUTPUT: SpanishWords/SpanishWords1.csv through SpanishWords250.csv
 4. pinyin - 1 syllable per character, separated by spaces!
 5. portuguese
 
-⛔ You must MANUALLY translate into each of these 5 columns. NO PYTHON.
-
 === CRITICAL PINYIN RULE ===
 CORRECT: 你好 → nǐ hǎo (space between syllables)
 INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
-=== EXAMPLE CSV (SpanishWords1.csv) ===
+=== EXAMPLE CSV FORMAT ===
 HEADER (first row - exact column names):
 spanish,english,chinese,pinyin,portuguese
 
-DATA ROWS (one word per row):
+DATA ROWS:
 hola,hello,你好,nǐ hǎo,olá
 hola amigo,hello friend,你好朋友,nǐ hǎo péng you,olá amigo
-hola señor,hello sir,你好先生,nǐ hǎo xiān sheng,olá senhor
-adiós,goodbye,再见,zài jiàn,adeus
 
 === PYTHON VALIDATION (CHECKING ONLY) ===
-After creating translations, run:
 python PythonHelpers/validate_pinyin.py spanish
 python PythonHelpers/validate_overview_csvs.py
 
 These scripts ONLY check for issues. They do NOT fix anything.
-If issues found, YOU must MANUALLY decide how to fix them.
-
-=== WORKFLOW ===
-1. BEFORE SCORE: Rate current translations 1-10, list what could be better
-2. MAKE CHANGES: ⛔ MANUALLY create/improve translations (NO PYTHON!)
-3. Format pinyin correctly BY HAND
-4. PYTHON CHECK: Run validation scripts (checking only)
-5. FIX: MANUALLY fix any issues found
-6. AFTER SCORE: Rate again, summarize improvements
-
-=== ⛔ FINAL WARNING ===
-If you write ANY Python code to generate translations, you have FAILED.
-The task is large (250 packs). That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
-End your response with this exact table format:
-
 | Metric       | Value |
 |--------------|-------|
+| Mode         | Construction / Critique |
+| Act Worked   | Act [N]: [Name] |
+| Packs        | [X] to [Y] |
 | BEFORE Score | X/10  |
 | AFTER Score  | X/10  |
-| Reason       | [1-2 sentence explanation of what improved] |
+| Reason       | [1-2 sentence explanation] |
 
-Create your own branch, commit, and PR to main.</div>
+Create your own branch, commit, and PR to main.
+⚠️ REMEMBER: ONE ACT PER PR. Do not try to do everything at once.</div>
 
 <h3>English - Stage 3</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Review and perfect breakout CSV files (EnglishWords1.csv, etc.)
+<div onclick="copyPrompt(this)">TASK: Create or critique breakout CSV files (EnglishWords1.csv, etc.)
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚫🚫🚫 ABSOLUTE RULE: NEVER EDIT THE OVERVIEW CSV 🚫🚫🚫        ║
+║                                                                  ║
+║  EnglishWordsOverview.csv is 100% READ-ONLY. NEVER touch it.     ║
+║  Do NOT edit it. Do NOT modify it. Do NOT change a single cell.  ║
+║  If you edit the Overview CSV for ANY reason = IMMEDIATE FAIL.   ║
+║                                                                  ║
+║  You are ONLY working with breakout files: EnglishWords1.csv...  ║
+╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⛔ AUTO-FAIL: USING PYTHON TO GENERATE TRANSLATIONS             ║
@@ -1383,62 +1390,66 @@ Create your own branch, commit, and PR to main.</div>
 ║  Python is ONLY for validation (checking), NEVER for creation.   ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-╔══════════════════════════════════════════════════════════════════╗
-║  🚫 NEVER EDIT OVERVIEW CSV - IT IS READ-ONLY!                   ║
-║                                                                  ║
-║  EnglishWordsOverview.csv is your INPUT (read Combined_Words).   ║
-║  You are ONLY editing breakout files: EnglishWords1.csv, etc.    ║
-║  If you edit the Overview CSV for ANY reason = FAILED.           ║
-╚══════════════════════════════════════════════════════════════════╝
+=== FIRST: DETERMINE YOUR MODE ===
+Check if breakout CSVs exist for each act:
 
-=== ITERATIVE QUALITY LOOP ===
-This is an iterative process. You will:
-1. Score the current state (1-10)
-2. List specific improvements needed
-3. Make changes MANUALLY (⛔ NO PYTHON!)
-4. Run Python validation for pinyin/duplicates
+Check Act I:   ls EnglishWords/EnglishWords{1..40}.csv 2>/dev/null | wc -l
+Check Act II:  ls EnglishWords/EnglishWords{41..80}.csv 2>/dev/null | wc -l
+Check Act III: ls EnglishWords/EnglishWords{81..115}.csv 2>/dev/null | wc -l
+Check Act IV:  ls EnglishWords/EnglishWords{116..140}.csv 2>/dev/null | wc -l
+Check Act V:   ls EnglishWords/EnglishWords{141..160}.csv 2>/dev/null | wc -l
+
+MODE A - CONSTRUCTION MODE (CSVs missing for an act):
+  → Create breakout CSVs for ONE ACT only
+  → PR to main after completing that act
+  → Next agent handles the next act
+
+MODE B - CRITIQUE MODE (ALL CSVs exist):
+  → Scrutinize existing translations for maximum correctness
+  → Focus on one act at a time
+  → Fix translation quality issues, pinyin errors, unnatural phrasing
+
+=== MODE A: CONSTRUCTION WORKFLOW ===
+If any act is missing CSVs, work on the FIRST incomplete act only.
+
+1. Identify which act to work on (first one missing CSVs)
+2. Read EnglishWordsOverview.csv to get Combined_Words for those packs
+3. Create breakout CSVs for ONLY that act's packs
+4. Run validation: python PythonHelpers/validate_pinyin.py english
 5. Fix any issues MANUALLY
-6. Score again
-7. If score < 9.0, iterate until quality is excellent
+6. Commit and PR to main
+7. STOP - next agent handles next act
 
-TARGET SCORE: 9.0 or higher
+English Acts (160 packs total):
+- Act I (Foundation): Packs 1-40 → EnglishWords1.csv to EnglishWords40.csv
+- Act II (Building Blocks): Packs 41-80 → EnglishWords41.csv to EnglishWords80.csv
+- Act III (Everyday Life): Packs 81-115 → EnglishWords81.csv to EnglishWords115.csv
+- Act IV (Expanding Horizons): Packs 116-140 → EnglishWords116.csv to EnglishWords140.csv
+- Act V (Advanced Mastery): Packs 141-160 → EnglishWords141.csv to EnglishWords160.csv
 
-=== IF ALREADY GOOD, DON'T EDIT ===
-If your INITIAL score is 9.0 or higher, DO NOT make changes.
-A score of 9+ means the data is already excellent. Report the score and move on.
-Only make edits if the initial score is below 9.0.
+=== MODE B: CRITIQUE WORKFLOW ===
+If ALL CSVs exist, enter CRITIQUE MODE for maximum translation quality.
 
-=== MOST IMPORTANT: BEST POSSIBLE TRANSLATIONS ===
-Translations are NOT just "any correct translation."
-Translations must be the BEST POSSIBLE for learners:
-- Use the MOST NATURAL way a native speaker would say it
-- Choose the translation learners will encounter most often
-- Avoid awkward, overly formal, or rarely-used translations
-- Think: "What's the BEST translation to help someone learn this?"
+1. Pick ONE act to scrutinize (start with Act I if not specified)
+2. For each CSV in that act:
+   - Check EVERY translation for accuracy and naturalness
+   - Verify pinyin has correct tones and spacing
+   - Ensure translations are what native speakers actually say
+   - Look for awkward, overly formal, or rare translations
+3. Score current quality (1-10)
+4. Make improvements MANUALLY
+5. Run validation scripts
+6. Score again - target 9.5+
+7. Commit and PR to main
+8. Report which act was critiqued so next agent does another
 
-=== SCORING CRITERIA (1-10) ===
-- Are translations the MOST NATURAL for each language?
-- Would a native speaker of each language say it this way?
-- Is pinyin correctly formatted (1 syllable per character, spaced)?
-- Are there any duplicates or inconsistencies?
-- Are translations useful for learners (not awkward/formal)?
-
-=== ⛔ REMINDER: NO PYTHON FOR TRANSLATION ===
-The task is massive (160 packs!). You still MUST do it manually.
-Do NOT write Python to "speed things up."
-Do NOT use any automation to generate translations.
-Write each translation by hand, row by row, column by column.
-
-=== PREREQUISITE ===
-Stage 2 complete. English_Combined_Words column exists.
-
-=== YOUR GOAL ===
-For each pack, create a breakout CSV with THE BEST translations for every word.
-YOU must write each translation yourself. NO automation.
-
-=== FILES ===
-INPUT: EnglishWordsOverview.csv (English_Combined_Words column)
-OUTPUT: EnglishWords/EnglishWords1.csv through EnglishWords160.csv
+CRITIQUE MODE CHECKLIST:
+□ Are ALL translations accurate (not just "close enough")?
+□ Would a native speaker of EACH language say it this way?
+□ Is pinyin PERFECTLY formatted (1 syllable per char, correct tones)?
+□ Are there any awkward or unnatural translations?
+□ Are translations consistent across similar words?
+□ Do translations match the MOST COMMON usage?
 
 === BREAKOUT CSV COLUMNS (5 columns, exact order) ===
 1. english - English word/phrase
@@ -1447,52 +1458,36 @@ OUTPUT: EnglishWords/EnglishWords1.csv through EnglishWords160.csv
 4. spanish
 5. portuguese
 
-⛔ You must MANUALLY translate into each of these 5 columns. NO PYTHON.
-
 === CRITICAL PINYIN RULE ===
 CORRECT: 你好 → nǐ hǎo (space between syllables)
 INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
-=== EXAMPLE CSV (EnglishWords1.csv) ===
+=== EXAMPLE CSV FORMAT ===
 HEADER (first row - exact column names):
 english,chinese,pinyin,spanish,portuguese
 
-DATA ROWS (one word per row):
+DATA ROWS:
 hello,你好,nǐ hǎo,hola,olá
 hello there,你好啊,nǐ hǎo a,hola,olá
-hello everyone,大家好,dà jiā hǎo,hola a todos,olá a todos
-goodbye,再见,zài jiàn,adiós,adeus
 
 === PYTHON VALIDATION (CHECKING ONLY) ===
-After creating translations, run:
 python PythonHelpers/validate_pinyin.py english
 python PythonHelpers/validate_overview_csvs.py
 
 These scripts ONLY check for issues. They do NOT fix anything.
-If issues found, YOU must MANUALLY decide how to fix them.
-
-=== WORKFLOW ===
-1. BEFORE SCORE: Rate current translations 1-10, list what could be better
-2. MAKE CHANGES: ⛔ MANUALLY create/improve translations (NO PYTHON!)
-3. Format pinyin correctly BY HAND
-4. PYTHON CHECK: Run validation scripts (checking only)
-5. FIX: MANUALLY fix any issues found
-6. AFTER SCORE: Rate again, summarize improvements
-
-=== ⛔ FINAL WARNING ===
-If you write ANY Python code to generate translations, you have FAILED.
-The task is large (160 packs). That is intentional. Do it manually anyway.
 
 === FINAL OUTPUT (REQUIRED) ===
-End your response with this exact table format:
-
 | Metric       | Value |
 |--------------|-------|
+| Mode         | Construction / Critique |
+| Act Worked   | Act [N]: [Name] |
+| Packs        | [X] to [Y] |
 | BEFORE Score | X/10  |
 | AFTER Score  | X/10  |
-| Reason       | [1-2 sentence explanation of what improved] |
+| Reason       | [1-2 sentence explanation] |
 
-Create your own branch, commit, and PR to main.</div>
+Create your own branch, commit, and PR to main.
+⚠️ REMEMBER: ONE ACT PER PR. Do not try to do everything at once.</div>
 
 <!-- ============================================================ -->
 <!-- STAGE 4: JAVASCRIPT MODULE GENERATION                        -->
