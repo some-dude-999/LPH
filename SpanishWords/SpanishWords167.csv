@@ -1,27 +1,27 @@
 spanish,english,chinese,pinyin,portuguese
 diseñador,designer,设计师,shè jì shī,desenhista
 diseñadora,designer,设计师,shè jì shī,desenhista
-modelo,model,型号,xíng hào,modelo
+modelo,model,模特,mó tè,modelo
 pasarela,catwalk,走秀,zǒu xiù,passarela
 tendencia,trend,趋势,qū shì,tendência
 vintage,vintage,复古,fù gǔ,vintage
 marca,brand,品牌,pǐn pái,marca
 boutique,boutique,精品,jīng pǐn,boutique
-desfile,parade,游行,yóu xíng,desfile
-vestir,dress,连衣裙,lián yī qún,vestido
+desfile,fashion show,时装秀,shí zhuāng xiù,desfile
+vestir,dress,穿衣,chuān yī,vestir
 lucir,show off,炫耀,xuàn yào,se exibir
 accesorio,accessory,配件,pèi jiàn,acessório
 costura,sewing,缝纫,féng rèn,costura
 tejido,fabric,面料,miàn liào,tecido
-patrón,pattern,模式,mó shì,padrão
-hilo,thread,线程,xiàn chéng,tópico
+patrón,pattern,纸样,zhǐ yàng,molde
+hilo,thread,线,xiàn,linha
 aguja,needle,针,zhēn,agulha
 el diseñador,the designer,设计师,shè jì shī,o desenhista
 un diseñador,a designer,设计师,shè jì shī,um designer
 la diseñadora,the designer,设计师,shè jì shī,o desenhista
 una diseñadora,a designer,设计师,shè jì shī,um designer
-el modelo,the model,模型,mó xíng,o modelo
-un modelo,a model,模型,mó xíng,um modelo
+el modelo,the model,模特,mó tè,o modelo
+un modelo,a model,模特,mó tè,um modelo
 la pasarela,the catwalk,走秀,zǒu xiù,a passarela
 en la pasarela,on the catwalk,在T台上,zài T tái shàng,na passarela
 la tendencia,the trend,趋势,qū shì,a tendência
@@ -32,8 +32,8 @@ la marca,the brand,品牌,pǐn pái,a marca
 una marca,a brand,一个品牌,yí gè pǐn pái,uma marca
 la boutique,the boutique,精品店,jīng pǐn diàn,a boutique
 una boutique,a boutique,精品店,jīng pǐn diàn,uma boutique
-el desfile,the parade,游行,yóu xíng,o desfile
-un desfile,a parade,游行,yóu xíng,um desfile
+el desfile,the fashion show,时装秀,shí zhuāng xiù,o desfile
+un desfile,a fashion show,时装秀,shí zhuāng xiù,um desfile
 hay que vestir,you have to dress,你必须穿好衣服,nǐ bì xū chuān hǎo yī fú,você tem que se vestir
 voy a vestir,I'm going to dress,我要穿衣服,wǒ yào chuān yī fú,Vou me vestir
 hay que lucir,you have to show off,你必须炫耀,nǐ bì xū xuàn yào,você tem que se exibir
@@ -44,9 +44,9 @@ la costura,sewing,缝纫,féng rèn,costura
 de costura,sewing,缝纫,féng rèn,costura
 el tejido,the fabric,面料,miàn liào,o tecido
 un tejido,a fabric,布料,bù liào,um tecido
-el patrón,the pattern,模式,mó shì,o padrão
-un patrón,a pattern,一个模式,yí gè mó shì,um padrão
-el hilo,the thread,线程,xiàn chéng,o tópico
-un hilo,a thread,一个线程,yí gè xiàn chéng,um tópico
+el patrón,the pattern,纸样,zhǐ yàng,o molde
+un patrón,a pattern,一个纸样,yí gè zhǐ yàng,um molde
+el hilo,the thread,线,xiàn,a linha
+un hilo,a thread,一根线,yī gēn xiàn,uma linha
 la aguja,the needle,针,zhēn,a agulha
 una aguja,a needle,一根针,yī gēn zhēn,uma agulha
