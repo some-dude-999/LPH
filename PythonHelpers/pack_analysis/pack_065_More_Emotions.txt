@@ -1,0 +1,65 @@
+PACK 65: More Emotions
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | frustrated           | 沮丧              | jǔ sàng            | frustrado          | frustrado         
+  3 | disappointed         | 失望              | shī wàng           | decepcionado       | desapontado       
+  4 | embarrassed          | 尴尬              | gān gà             | avergonzado        | envergonhado      
+  5 | jealous              | 嫉妒              | jí dù              | celoso             | ciúmes            
+  6 | stressed             | 强调              | qiáng diào         | estresado          | estressado        
+  7 | relaxed              | 放松              | fàng sōng          | relajado           | relaxado          
+  8 | hopeful              | 充满希望            | chōng mǎn xī wàng  | esperanzado        | esperançoso       
+  9 | annoyed              | 生气              | shēng qì           | molesto            | irritado          
+ 10 | amazed               | 惊讶              | jīng yà            | asombrado          | maravilhado       
+ 11 | shocked              | 震惊              | zhèn jīng          | sorprendido        | chocado           
+ 12 | terrified            | 害怕              | hài pà             | aterrorizado       | apavorado         
+ 13 | delighted            | 很高兴             | hěn gāo xìng       | encantada          | encantado         
+ 14 | miserable            | 悲惨              | bēi cǎn            | miserable          | miserável         
+ 15 | cheerful             | 开朗              | kāi lǎng           | alegre             | alegre            
+ 16 | relieved             | 松了口气            | sōng le kǒu qì     | aliviado           | aliviado          
+ 17 | grateful             | 感激不尽            | gǎn jī bù jìn      | agradecido         | grato             
+ 18 | enthusiastic         | 热情              | rè qíng            | entusiasta         | entusiasmado      
+ 19 | overwhelmed          | 不知所措            | bù zhī suǒ cuò     | abrumado           | sobrecarregado    
+ 20 | nostalgic            | 怀旧              | huái jiù           | nostálgico         | nostálgico        
+ 21 | irritated            | 恼怒              | nǎo nù             | irritado           | irritado          
+ 22 | feel frustrated      | 感到沮丧            | gǎn dào jǔ sàng    | sentirse frustrado | me sinto frustrado
+ 23 | so frustrated        | 好沮丧             | hǎo jǔ sàng        | tan frustrado      | tão frustrado     
+ 24 | very disappointed    | 非常失望            | fēi cháng shī wàng | muy decepcionado   | muito decepcionado
+ 25 | disappointed in      | 失望              | shī wàng           | decepcionado       | decepcionado com  
+ 26 | feel embarrassed     | 感到尴尬            | gǎn dào gān gà     | sentirse avergonza | sinto vergonha    
+ 27 | embarrassed about    | 尴尬              | gān gà             | avergonzado por    | envergonhado com  
+ 28 | feel jealous         | 感到嫉妒            | gǎn dào jí dù      | sentir celos       | sinto ciúmes      
+ 29 | jealous of           | 嫉妒              | jí dù              | celoso de          | ciúmes de         
+ 30 | feel stressed        | 感到压力            | gǎn dào yā lì      | sentirse estresado | me sinto estressad
+ 31 | stressed out         | 压力重重            | yā lì chóng chóng  | estresado          | estressado        
+ 32 | feel relaxed         | 感觉轻松            | gǎn jué qīng sōng  | sentirse relajado  | sinta-se relaxado 
+ 33 | very relaxed         | 很放松             | hěn fàng sōng      | muy relajado       | muito relaxado    
+ 34 | feel hopeful         | 感到充满希望          | gǎn dào chōng mǎn  | sentir esperanza   | sinta-se esperanço
+ 35 | hopeful for          | 充满希望            | chōng mǎn xī wàng  | esperanzado para   | esperançoso para  
+ 36 | feel annoyed         | 感到恼火            | gǎn dào nǎo huǒ    | sentirse molesto   | me sinto irritado 
+ 37 | annoyed with         | 生气              | shēng qì           | molesto con        | irritado com      
+ 38 | feel amazed          | 感到惊讶            | gǎn dào jīng yà    | siéntete asombrado | fique maravilhado 
+ 39 | amazed by            | 惊讶于             | jīng yà yú         | asombrado por      | maravilhado com   
+ 40 | feel shocked         | 感到震惊            | gǎn dào zhèn jīng  | sentirme en shock  | sinto-me chocado  
+ 41 | shocked by           | 震惊              | zhèn jīng          | sorprendido por    | chocado com       
+ 42 | feel terrified       | 感到害怕            | gǎn dào hài pà     | sentirse aterroriz | sinto medo        
+ 43 | terrified of         | 害怕              | hài pà             | aterrorizado de    | com medo de       
+ 44 | feel delighted       | 感到高兴            | gǎn dào gāo xìng   | siéntete encantado | sinta-se encantado
+ 45 | absolutely delighted | 绝对高兴            | jué duì gāo xìng   | absolutamente enca | absolutamente enca
+ 46 | feel miserable       | 感觉很痛苦           | gǎn jué hěn tòng k | sentirme miserable | me sinto infeliz  
+ 47 | look miserable       | 看起来很惨           | kàn qǐ lái hěn cǎn | luce miserable     | parece miserável  
+ 48 | feel cheerful        | 心情愉悦            | xīn qíng yú yuè    | sentirme alegre    | sinta-se alegre   
+ 49 | cheerful mood        | 心情愉悦            | xīn qíng yú yuè    | humor alegre       | humor alegre      
+ 50 | feel relieved        | 放心              | fàng xīn           | sentirme aliviado  | sinta-se aliviado 
+ 51 | so relieved          | 如此释然            | rú cǐ shì rán      | tan aliviado       | tão aliviado      
+ 52 | feel grateful        | 心存感激            | xīn cún gǎn jī     | sentirte agradecid | sinta-se grato    
+ 53 | grateful for         | 感激              | gǎn jī             | agradecido por     | grato por         
+ 54 | feel enthusiastic    | 感到热情            | gǎn dào rè qíng    | sentir entusiasmo  | sinta-se entusiasm
+ 55 | enthusiastic about   | 热衷于             | rè zhōng yú        | entusiasmado con   | entusiasmado com  
+ 56 | feel overwhelmed     | 感到不知所措          | gǎn dào bù zhī suǒ | sentirse abrumado  | me sinto sobrecarr
+ 57 | overwhelmed by       | 不知所措            | bù zhī suǒ cuò     | abrumado por       | oprimido por      
+ 58 | feel nostalgic       | 怀旧的感觉           | huái jiù de gǎn ju | siento nostalgia   | sinto nostalgia   
+ 59 | nostalgic for        | 怀念              | huái niàn          | nostálgico por     | nostálgico por    
+ 60 | feel irritated       | 感到恼火            | gǎn dào nǎo huǒ    | sentirse irritado  | me sinto irritado 
+ 61 | irritated by         | 激怒了             | jī nù le           | irritado por       | irritado com      

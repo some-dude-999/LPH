@@ -1,0 +1,65 @@
+PACK 136: Academic Adjectives
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | salient              | 突出              | tū chū             | saliente           | saliente          
+  3 | tenuous              | 脆弱              | cuì ruò            | tenue              | tênue             
+  4 | arbitrary            | 任意              | rèn yì             | arbitrario         | arbitrário        
+  5 | coherent             | 连贯              | lián guàn          | coherente          | coerente          
+  6 | consistent           | 一致              | yí zhì             | consistente        | consistente       
+  7 | contrary             | 相反              | xiāng fǎn          | contrario          | contrário         
+  8 | conventional         | 常规              | cháng guī          | convencional       | convencional      
+  9 | cumulative           | 累计              | lěi jì             | acumulativo        | cumulativo        
+ 10 | decisive             | 果断              | guǒ duàn           | decisivo           | decisivo          
+ 11 | definitive           | 明确              | míng què           | definitivo         | definitivo        
+ 12 | discrete             | 离散              | lí sàn             | discreto           | discreto          
+ 13 | diverse              | 多样化             | duō yàng huà       | diversos           | diversos          
+ 14 | dominant             | 主导              | zhǔ dǎo            | dominante          | dominante         
+ 15 | empirical            | 经验              | jīng yàn           | empírico           | empírico          
+ 16 | explicit             | 显式              | xiǎn shì           | explícito          | explícito         
+ 17 | external             | 外部              | wài bù             | externo            | externo           
+ 18 | finite               | 有限              | yǒu xiàn           | finito             | finito            
+ 19 | holistic             | 整体              | zhěng tǐ           | holístico          | holístico         
+ 20 | implicit             | 隐式              | yǐn shì            | implícito          | implícito         
+ 21 | tangential           | 切向              | qiè xiàng          | tangencial         | tangencial        
+ 22 | salient point        | 突出点             | tū chū diǎn        | punto saliente     | ponto saliente    
+ 23 | salient feature      | 显着特点            | xiǎn zhe tè diǎn   | característica des | característica sal
+ 24 | tenuous connection   | 脆弱的连接           | cuì ruò de lián ji | conexión tenue     | conexão tênue     
+ 25 | tenuous link         | 脆弱的链接           | cuì ruò de liàn ji | vínculo tenue      | link tênue        
+ 26 | arbitrary decision   | 任意决定            | rèn yì jué dìng    | decisión arbitrari | decisão arbitrária
+ 27 | arbitrary rule       | 任意规则            | rèn yì guī zé      | regla arbitraria   | regra arbitrária  
+ 28 | coherent argument    | 连贯的论证           | lián guàn de lùn z | argumento coherent | argumento coerente
+ 29 | coherent plan        | 连贯的计划           | lián guàn de jì hu | plan coherente     | plano coerente    
+ 30 | consistent with      | 与               | yǔ                 | consistente con    | consistente com   
+ 31 | consistent performan | 一致一致的性能         | yí zhì yí zhì de x | rendimiento consis | desempenho consist
+ 32 | contrary to          | 与               | yǔ                 | contrario a        | contrário a       
+ 33 | contrary opinion     | 相反反对意见          | xiāng fǎn fǎn duì  | opinión contraria  | opinião contrária 
+ 34 | conventional wisdom  | 传统智慧            | chuán tǒng zhì huì | sabiduría convenci | sabedoria convenci
+ 35 | conventional approac | 传统方法            | chuán tǒng fāng fǎ | enfoque convencion | abordagem convenci
+ 36 | cumulative effect    | 累积效应            | lěi jī xiào yìng   | efecto acumulativo | efeito cumulativo 
+ 37 | cumulative total     | 累计总数            | lěi jì zǒng shù    | total acumulado    | total acumulado   
+ 38 | decisive action      | 果断行动            | guǒ duàn xíng dòng | acción decisiva    | ação decisiva     
+ 39 | decisive victory     | 决定性胜利           | jué dìng xìng shèn | victoria decisiva  | vitória decisiva  
+ 40 | definitive answer    | 明确答案            | míng què dá àn     | respuesta definiti | resposta definitiv
+ 41 | definitive guide     | 权威指南            | quán wēi zhǐ nán   | guía definitiva    | guia definitivo   
+ 42 | discrete categories  | 离散类别            | lí sàn lèi bié     | categorías discret | categorias discret
+ 43 | discrete units       | 离散单位            | lí sàn dān wèi     | unidades discretas | unidades discretas
+ 44 | diverse group        | 多元化群体           | duō yuán huà qún t | grupo diverso      | grupo diversificad
+ 45 | diverse range        | 多样化范围           | duō yàng huà fàn w | gama diversa       | gama diversificada
+ 46 | dominant player      | 主导者             | zhǔ dǎo zhě        | jugador dominante  | jogador dominante 
+ 47 | dominant force       | 主导力量            | zhǔ dǎo lì liàng   | fuerza dominante   | força dominante   
+ 48 | empirical evidence   | 经验证据            | jīng yàn zhèng jù  | evidencia empírica | evidência empírica
+ 49 | empirical research   | 实证研究            | shí zhèng yán jiū  | investigación empí | pesquisa empírica 
+ 50 | explicit instruction | 明确指示            | míng què zhǐ shì   | instrucciones expl | instruções explíci
+ 51 | explicit content     | 露骨内容            | lù gǔ nèi róng     | contenido explícit | conteúdo explícito
+ 52 | external factors     | 外部因素            | wài bù yīn sù      | factores externos  | fatores externos  
+ 53 | external source      | 外部来源            | wài bù lái yuán    | fuente externa     | fonte externa     
+ 54 | finite resources     | 有限资源            | yǒu xiàn zī yuán   | recursos finitos   | recursos finitos  
+ 55 | finite number        | 有限数             | yǒu xiàn shù       | número finito      | número finito     
+ 56 | holistic approach    | 整体方法            | zhěng tǐ fāng fǎ   | enfoque holístico  | abordagem holístic
+ 57 | holistic view        | 整体观             | zhěng tǐ guān      | visión holística   | visão holística   
+ 58 | implicit understandi | 隐性理解            | yǐn xìng lǐ jiě    | comprensión implíc | compreensão implíc
+ 59 | implicit bias        | 隐性偏见            | yǐn xìng piān jiàn | sesgo implícito    | viés implícito    
+ 60 | tangential issue     | 切线问题            | qiè xiàn wèn tí    | cuestión tangencia | questão tangencial
+ 61 | tangential to        | 相切于             | xiāng qiè yú       | tangencial a       | tangencial a      

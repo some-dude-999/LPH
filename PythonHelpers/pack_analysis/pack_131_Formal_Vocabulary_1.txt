@@ -1,0 +1,65 @@
+PACK 131: Formal Vocabulary 1
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | acquire              | 获取              | huò qǔ             | adquirir           | adquirir          
+  3 | allocate             | 分配              | fēn pèi            | asignar            | alocar            
+  4 | ascertain            | 确定              | què dìng           | determinar         | verificar         
+  5 | assess               | 评估              | píng gū            | evaluar            | avaliar           
+  6 | comprehensive        | 全面              | quán miàn          | integral           | abrangente        
+  7 | constitute           | 构成              | gòu chéng          | constituir         | constituem        
+  8 | demonstrate          | 演示              | yǎn shì            | demostrar          | demonstrar        
+  9 | diminish             | 减少              | jiǎn shǎo          | disminuir          | diminuir          
+ 10 | expedite             | 加快              | jiā kuài           | acelerar           | agilizar          
+ 11 | enhance              | 增强              | zēng qiáng         | mejorar            | melhorar          
+ 12 | establish            | 建立              | jiàn lì            | establecer         | estabelecer       
+ 13 | adjudicate           | 裁决              | cái jué            | adjudicar          | julgar            
+ 14 | discernible          | 可辨识             | kě biàn shí        | discernible        | discernível       
+ 15 | facilitate           | 方便              | fāng biàn          | facilitar          | facilitar         
+ 16 | fundamental          | 基本              | jī běn             | fundamentales      | fundamentais      
+ 17 | formulate            | 制定              | zhì dìng           | formular           | formular          
+ 18 | replicate            | 复制              | fù zhì             | replicar           | replicar          
+ 19 | indicate             | 表示              | biǎo shì           | indicar            | indicar           
+ 20 | inherent             | 固有              | gù yǒu             | inherente          | inerente          
+ 21 | attain               | 达到              | dá dào             | alcanzar           | atingir           
+ 22 | acquire knowledge    | 获取知识            | huò qǔ zhī shí     | adquirir conocimie | adquirir conhecime
+ 23 | acquire skills       | 获得技能            | huò dé jì néng     | adquirir habilidad | adquirir competênc
+ 24 | allocate resources   | 分配资源            | fēn pèi zī yuán    | asignar recursos   | alocar recursos   
+ 25 | allocate funds       | 分配资金            | fēn pèi zī jīn     | asignar fondos     | atribuir fundos   
+ 26 | ascertain facts      | 查明事实            | chá míng shì shí   | determinar los hec | apurar fatos      
+ 27 | ascertain whether    | 确定是否            | què dìng shì fǒu   | determinar si      | verifique se      
+ 28 | assess damage        | 评估损害            | píng gū sǔn hài    | evaluar los daños  | avaliar os danos  
+ 29 | assess needs         | 评估需求            | píng gū xū qiú     | evaluar las necesi | avaliar necessidad
+ 30 | comprehensive review | 全面审查            | quán miàn shěn chá | revisión exhaustiv | revisão abrangente
+ 31 | comprehensive plan   | 综合计划            | zōng hé jì huà     | plan integral      | plano abrangente  
+ 32 | constitute violation | 构成违法            | gòu chéng wéi fǎ   | constituye una vio | constituem violaçã
+ 33 | constitute grounds   | 构成理由            | gòu chéng lǐ yóu   | constituyen motivo | constituem motivos
+ 34 | demonstrate ability  | 展示能力            | zhǎn shì néng lì   | demostrar habilida | demonstrar habilid
+ 35 | demonstrate how      | 演示如何            | yǎn shì rú hé      | demostrar cómo     | demonstrar como   
+ 36 | gradually diminish   | 逐渐减少            | zhú jiàn jiǎn shǎo | disminuir gradualm | diminuir gradativa
+ 37 | diminish importance  | 降低重要性           | jiàng dī zhòng yào | disminuir la impor | diminuir importânc
+ 38 | expedite process     | 加快流程            | jiā kuài liú chéng | acelerar el proces | agilizar processo 
+ 39 | expedite delivery    | 加快交货            | jiā kuài jiāo huò  | acelerar la entreg | agilizar a entrega
+ 40 | enhance performance  | 提高性能            | tí gāo xìng néng   | mejorar el rendimi | melhorar o desempe
+ 41 | enhance quality      | 提升品质            | tí shēng pǐn zhì   | mejorar la calidad | melhorar a qualida
+ 42 | establish connection | 建立连接            | jiàn lì lián jiē   | establecer conexió | estabelecer conexã
+ 43 | establish guidelines | 建立指导方针          | jiàn lì zhǐ dǎo fā | establecer directr | estabelecer diretr
+ 44 | adjudicate dispute   | 裁决争议            | cái jué zhēng yì   | resolver disputa   | julgar disputa    
+ 45 | adjudicate claim     | 裁决索赔            | cái jué suǒ péi    | adjudicar reclamo  | julgar a reclamaçã
+ 46 | discernible differen | 明显的差异           | míng xiǎn de chā y | diferencia percept | diferença discerní
+ 47 | barely discernible   | 几乎看不出来          | jī hū kàn bù chū l | apenas perceptible | quase imperceptíve
+ 48 | facilitate communica | 方便沟通            | fāng biàn gōu tōng | facilitar la comun | facilitar a comuni
+ 49 | facilitate learning  | 方便学习            | fāng biàn xué xí   | facilitar el apren | facilitar a aprend
+ 50 | fundamental principl | 基本原则            | jī běn yuán zé     | principio fundamen | princípio fundamen
+ 51 | fundamental change   | 根本性的改变          | gēn běn xìng de gǎ | cambio fundamental | mudança fundamenta
+ 52 | formulate plan       | 制定计划            | zhì dìng jì huà    | formular plan      | formular plano    
+ 53 | formulate strategy   | 制定策略            | zhì dìng cè lüè    | formular estrategi | formular estratégi
+ 54 | replicate results    | 复制结果            | fù zhì jié guǒ     | replicar resultado | replicar resultado
+ 55 | replicate experiment | 重复实验            | chóng fù shí yàn   | replicar experimen | replicar experimen
+ 56 | indicate interest    | 表示兴趣            | biǎo shì xìng qù   | indicar interés    | indicar interesse 
+ 57 | indicate that        | 表明              | biǎo míng          | indicar que        | indique que       
+ 58 | inherent risk        | 固有风险            | gù yǒu fēng xiǎn   | riesgo inherente   | risco inerente    
+ 59 | inherent in          | 固有的             | gù yǒu de          | inherente a        | inerente a        
+ 60 | attain goal          | 达到目标            | dá dào mù biāo     | alcanzar la meta   | atingir a meta    
+ 61 | attain success       | 获得成功            | huò dé chéng gōng  | alcanzar el éxito  | alcançar o sucesso

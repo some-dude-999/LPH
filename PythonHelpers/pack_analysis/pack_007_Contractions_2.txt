@@ -1,0 +1,65 @@
+PACK 7: Contractions 2
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | don't                | 不               | bù                 | no                 | não               
+  3 | doesn't              | 不               | bù                 | no                 | não               
+  4 | didn't               | 没有              | méi yǒu            | no                 | não               
+  5 | can't                | 不能              | bù néng            | no poder           | não pode          
+  6 | couldn't             | 不能              | bù néng            | no pude            | não poderia       
+  7 | won't                | 不会              | bú huì             | no                 | não vai           
+  8 | wouldn't             | 不会              | bú huì             | no lo haría        | não iria          
+  9 | shouldn't            | 不应该             | bù yīng gāi        | no debería         | não deveria       
+ 10 | isn't                | 不是              | bú shì             | no es              | não é             
+ 11 | aren't               | 不是              | bú shì             | no lo son          | não são           
+ 12 | wasn't               | 不是              | bú shì             | no fue             | não foi           
+ 13 | weren't              | 不是              | bú shì             | no lo eran         | não eram          
+ 14 | hasn't               | 没有              | méi yǒu            | no lo ha hecho     | não tem           
+ 15 | haven't              | 没有              | méi yǒu            | no lo he hecho     | não tenho         
+ 16 | hadn't               | 没有              | méi yǒu            | no lo había hecho  | não tinha         
+ 17 | let's                | 让我们             | ràng wǒ men        | vamos              | vamos             
+ 18 | that's               | 那是              | nà shì             | eso es             | isso é            
+ 19 | there's              | 有               | yǒu                | hay                | há                
+ 20 | here's               | 这是              | zhè shì            | aquí está          | aqui está         
+ 21 | what's               | 什么是             | shén me shì        | qué                | o que é           
+ 22 | don't worry          | 不用担心            | bù yòng dān xīn    | no te preocupes    | não se preocupe   
+ 23 | I don't know         | 我不知道            | wǒ bù zhī dào      | No sé              | Não sei           
+ 24 | it doesn't matter    | 没关系             | méi guān xì        | no importa         | Não importa       
+ 25 | doesn't work         | 不起作用            | bù qǐ zuò yòng     | no funciona        | não funciona      
+ 26 | didn't know          | 不知道             | bù zhī dào         | no lo sabia        | não sabia         
+ 27 | didn't happen        | 没有发生            | méi yǒu fā shēng   | no sucedió         | não aconteceu     
+ 28 | can't wait           | 等不及了            | děng bù jí le      | no puedo esperar   | mal posso esperar 
+ 29 | can't believe it     | 不敢相信            | bù gǎn xiāng xìn   | no puedo creerlo   | não posso acredita
+ 30 | couldn't help it     | 忍不住             | rěn bú zhù         | no pude evitarlo   | não pude evitar   
+ 31 | couldn't care less   | 不在乎             | bù zài hū          | No podría importar | não poderia me imp
+ 32 | won't work           | 行不通             | xíng bù tōng       | no funcionará      | não vai funcionar 
+ 33 | won't happen         | 不会发生            | bú huì fā shēng    | no sucederá        | não vai acontecer 
+ 34 | wouldn't mind        | 不介意             | bù jiè yì          | no me importaría   | não me importaria 
+ 35 | wouldn't do it       | 不会这样做           | bú huì zhè yàng zu | no lo haría        | não faria isso    
+ 36 | shouldn't have       | 不应该有            | bù yīng gāi yǒu    | no debería haber   | não deveria ter   
+ 37 | shouldn't do that    | 不应该这样做          | bù yīng gāi zhè yà | no debería hacer e | não deveria fazer 
+ 38 | isn't it             | 不是吗             | bú shì ma          | ¿no es así?        | não é             
+ 39 | that isn't right     | 那是不对的           | nà shì bú duì de   | eso no esta bien   | isso não está cert
+ 40 | aren't you           | 你不是吗            | nǐ bú shì ma       | ¿No eres tú?       | você não é        
+ 41 | we aren't going      | 我们不会去           | wǒ men bú huì qù   | no vamos           | nós não vamos     
+ 42 | wasn't sure          | 不确定             | bù què dìng        | no estaba seguro   | não tinha certeza 
+ 43 | it wasn't me         | 这不是我            | zhè bú shì wǒ      | no fui yo          | não fui eu        
+ 44 | weren't there        | 不在那儿            | bù zài nà ér       | no estaban allí    | não estava lá     
+ 45 | if I weren't you     | 如果我不是你          | rú guǒ wǒ bú shì n | si yo no fuera tu  | se eu não fosse vo
+ 46 | hasn't been          | 还没有             | hái méi yǒu        | no ha sido         | não foi           
+ 47 | hasn't arrived       | 还没到             | hái méi dào        | no ha llegado      | não chegou        
+ 48 | haven't seen         | 没见过             | méi jiàn guò       | no he visto        | não vi            
+ 49 | I haven't decided    | 我还没决定           | wǒ hái méi jué dìn | no lo he decidido  | Eu não decidi     
+ 50 | hadn't thought       | 没想到             | méi xiǎng dào      | no habia pensado   | não tinha pensado 
+ 51 | if I hadn't done it  | 如果我没有这么做        | rú guǒ wǒ méi yǒu  | si no lo hubiera h | se eu não tivesse 
+ 52 | let's go             | 我们走吧            | wǒ men zǒu ba      | vamos              | vamos             
+ 53 | let's see            | 让我们来看看          | ràng wǒ men lái kà | vamos a ver        | vamos ver         
+ 54 | that's it            | 就是这样            | jiù shì zhè yàng   | eso es todo        | é isso            
+ 55 | that's all           | 就这样             | jiù zhè yàng       | eso es todo        | isso é tudo       
+ 56 | there's no way       | 没办法             | méi bàn fǎ         | no hay manera      | não há como       
+ 57 | there's nothing      | 没有什么            | méi yǒu shén me    | no hay nada        | não há nada       
+ 58 | here's the thing     | 事情是这样的          | shì qíng shì zhè y | aquí está la cosa  | aqui está a coisa 
+ 59 | here's what happened | 这就是发生的事情        | zhè jiù shì fā shē | esto es lo que pas | aqui está o que ac
+ 60 | what's up            | 这是怎么回事          | zhè shì zěn me huí | qué pasa           | e aí              
+ 61 | what's going on      | 这是怎么回事          | zhè shì zěn me huí | ¿qué está sucedien | o que está acontec

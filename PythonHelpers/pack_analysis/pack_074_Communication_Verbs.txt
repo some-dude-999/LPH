@@ -1,0 +1,65 @@
+PACK 74: Communication Verbs
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | explain              | 解释一下            | jiě shì yī xià     | explicar           | explicar          
+  3 | discuss              | 讨论              | tǎo lùn            | discutir           | discutir          
+  4 | agree                | 同意              | tóng yì            | de acuerdo         | concordo          
+  5 | disagree             | 不同意             | bù tóng yì         | en desacuerdo      | discordo          
+  6 | suggest              | 建议              | jiàn yì            | sugerir            | sugerir           
+  7 | complain             | 抱怨              | bào yuàn           | quejarse           | reclamar          
+  8 | promise              | 承诺              | chéng nuò          | promesa            | promessa          
+  9 | invite               | 邀请              | yāo qǐng           | invitar            | convidar          
+ 10 | introduce            | 介绍              | jiè shào           | presentar          | apresentar        
+ 11 | describe             | 描述              | miáo shù           | describir          | descrever         
+ 12 | mention              | 提及              | tí jí              | mencionar          | mencionar         
+ 13 | warn                 | 警告              | jǐng gào           | advertir           | avisar            
+ 14 | advise               | 建议              | jiàn yì            | aconsejar          | aconselhar        
+ 15 | inform               | 告知              | gào zhī            | informar           | informar          
+ 16 | convince             | 说服              | shuō fú            | convencer          | convencer         
+ 17 | narrate              | 叙述              | xù shù             | narrar             | narrar            
+ 18 | elaborate            | 详细说明            | xiáng xì shuō míng | elaborar           | elaborado         
+ 19 | summarize            | 总结              | zǒng jié           | resumir            | resumir           
+ 20 | articulate           | 清晰表达            | qīng xī biǎo dá    | articular          | articular         
+ 21 | recount              | 重述              | chóng shù          | recuento           | recontar          
+ 22 | please explain       | 请解释一下           | qǐng jiě shì yī xi | por favor explica  | por favor explique
+ 23 | explain why          | 解释一下为什么         | jiě shì yī xià wèi | explica por qué    | explique por que  
+ 24 | discuss later        | 稍后讨论            | shāo hòu tǎo lùn   | discutir más tarde | discutiremos mais 
+ 25 | discuss with         | 与               | yǔ                 | discutir con       | discutir com      
+ 26 | I agree              | 讨论我同意           | tǎo lùn wǒ tóng yì | Estoy de acuerdo   | Eu concordo       
+ 27 | agree to             | 同意              | tóng yì            | aceptar            | concordo em       
+ 28 | I disagree           | 我不同意            | wǒ bù tóng yì      | No estoy de acuerd | Eu discordo       
+ 29 | disagree with        | 不同意             | bù tóng yì         | no estoy de acuerd | discordo de       
+ 30 | I suggest            | 我建议             | wǒ jiàn yì         | Sugiero            | Eu sugiro         
+ 31 | suggest that         | 建议              | jiàn yì            | sugiere que        | sugiro que        
+ 32 | don't complain       | 不要抱怨            | bú yào bào yuàn    | no te quejes       | não reclame       
+ 33 | complain about       | 抱怨              | bào yuàn           | quejarse de        | reclamar          
+ 34 | I promise            | 我保证             | wǒ bǎo zhèng       | Lo prometo         | Eu prometo        
+ 35 | promise me           | 答应我             | dā yìng wǒ         | prométemelo        | me prometa        
+ 36 | please invite        | 请邀请             | qǐng yāo qǐng      | por favor invita   | por favor convide 
+ 37 | invite over          | 邀请过来            | yāo qǐng guò lái   | invitar            | convidar          
+ 38 | let me introduce     | 让我介绍一下          | ràng wǒ jiè shào y | déjame presentarte | deixe-me apresenta
+ 39 | introduce yourself   | 自我介绍            | zì wǒ jiè shào     | preséntate         | apresente-se      
+ 40 | describe it          | 描述一下            | miáo shù yī xià    | describirlo        | descreva          
+ 41 | describe as          | 描述为             | miáo shù wèi       | describir como     | descrever como    
+ 42 | don't mention it     | 别提了             | bié tí le          | no lo menciones    | não mencione isso 
+ 43 | mention that         | 提到              | tí dào             | menciona que       | mencione isso     
+ 44 | warn you             | 警告你             | jǐng gào nǐ        | avisarte           | te aviso          
+ 45 | warn against         | 警告              | jǐng gào           | advertir contra    | alertar contra    
+ 46 | advise you           | 给你建议            | gěi nǐ jiàn yì     | aconsejarte        | aconselho você    
+ 47 | advise on            | 提供建议            | tí gōng jiàn yì    | asesorar sobre     | aconselhar sobre  
+ 48 | inform you           | 通知您             | tōng zhī nín       | informarte         | informá-lo        
+ 49 | inform of            | 通知              | tōng zhī           | informar de        | informar de       
+ 50 | convince me          | 说服我             | shuō fú wǒ         | convencerme        | me convença       
+ 51 | convince yourself    | 说服自己            | shuō fú zì jǐ      | Convéncete tú mism | convença-se       
+ 52 | narrate story        | 讲故事             | jiǎng gù shì       | narrar una histori | narrar história   
+ 53 | narrate events       | 叙述事件            | xù shù shì jiàn    | narrar acontecimie | narrar acontecimen
+ 54 | elaborate on         | 详细说明            | xiáng xì shuō míng | profundizar en     | elaborar          
+ 55 | please elaborate     | 请详细说明           | qǐng xiáng xì shuō | por favor explique | por favor explique
+ 56 | summarize it         | 总结一下            | zǒng jié yī xià    | resumirlo          | resumir           
+ 57 | summarize briefly    | 简单总结一下          | jiǎn dān zǒng jié  | resumir brevemente | resumir brevemente
+ 58 | articulate clearly   | 表达清楚            | biǎo dá qīng chǔ   | articular claramen | articular claramen
+ 59 | well articulate      | 善于表达            | shàn yú biǎo dá    | bien articulado    | bem articulado    
+ 60 | recount events       | 重述事件            | chóng shù shì jiàn | relatar eventos    | recontar eventos  
+ 61 | recount story        | 重述故事            | chóng shù gù shì   | contar la historia | recontar história 

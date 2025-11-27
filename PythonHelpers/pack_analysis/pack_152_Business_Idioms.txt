@@ -1,0 +1,50 @@
+PACK 152: Business Idioms
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | back to the drawing  | 回到绘图板           | huí dào huì tú bǎn | de vuelta a la mes | de volta à pranche
+  3 | ballpark figure      | 大概数字            | dà gài shù zì      | cifra aproximada   | valor aproximado  
+  4 | bottom line          | 底线              | dǐ xiàn            | resultado final    | resultado final   
+  5 | corner the market    | 垄断市场            | lǒng duàn shì chǎn | acaparar el mercad | monopolizar o merc
+  6 | get the ball rolling | 让球滚起来           | ràng qiú gǔn qǐ lá | poner la pelota en | fazer a bola rolar
+  7 | in the red           | 红色              | hóng sè            | en números rojos   | no vermelho       
+  8 | in the black         | 黑色              | hēi sè             | en negro           | no preto          
+  9 | learn the ropes      | 学习诀窍            | xué xí jué qiào    | aprende los entres | aprenda o básico  
+ 10 | red tape             | 繁文缛节            | fán wén rù jié     | burocracia         | burocracia        
+ 11 | touch base           | 触摸底座            | chù mō dǐ zuò      | base táctil        | base de toque     
+ 12 | up in the air        | 在空中             | zài kōng zhōng     | en el aire         | no ar             
+ 13 | win-win situation    | 双赢              | shuāng yíng        | situación benefici | situação ganha-gan
+ 14 | ahead of the curve   | 领先于曲线           | lǐng xiān yú qū xi | por delante de la  | à frente da curva 
+ 15 | bring to the table   | 带到餐桌上           | dài dào cān zhuō s | traer a la mesa    | trazer para a mesa
+ 16 | move the needle      | 移动针             | yí dòng zhēn       | mueve la aguja     | mova a agulha     
+ 17 | go back to the drawi | 回到绘图板           | huí dào huì tú bǎn | volver a la mesa d | voltar para a pran
+ 18 | back to the drawing  | 再次回到绘图板         | zài cì huí dào huì | De vuelta a la mes | de volta à pranche
+ 19 | give me a ballpark f | 给我一个大概的数字       | gěi wǒ yí gè dà gà | dame una cifra apr | me dê um valor apr
+ 20 | just a ballpark figu | 只是一个大概数字        | zhǐ shì yí gè dà g | sólo una cifra apr | apenas um valor ap
+ 21 | the bottom line is   | 底线是             | dǐ xiàn shì        | la conclusión es   | o resultado final 
+ 22 | bottom line matters  | 底线很重要           | dǐ xiàn hěn zhòng  | el resultado final | o resultado final 
+ 23 | trying to corner the | 试图垄断市场          | shì tú lǒng duàn s | tratando de acapar | tentando monopoliz
+ 24 | corner the market on | 垄断市场            | lǒng duàn shì chǎn | acaparar el mercad | dominar o mercado 
+ 25 | let's get the ball r | 让我们开始吧          | ràng wǒ men kāi sh | pongámonos manos a | vamos fazer a bola
+ 26 | get the ball rolling | 现在开始吧           | xiàn zài kāi shǐ b | ponte manos a la o | faça a bola rolar 
+ 27 | company is in the re | 公司亏损            | gōng sī kuī sǔn    | la empresa está en | empresa está no ve
+ 28 | operating in the red | 亏损经营            | kuī sǔn jīng yíng  | operando en número | operando no vermel
+ 29 | finally in the black | 终于扭亏为盈          | zhōng yú niǔ kuī w | finalmente en núme | finalmente no pret
+ 30 | in the black this qu | 本季度实现盈利         | běn jì dù shí xiàn | en números negros  | no azul neste trim
+ 31 | I learn the ropes fa | 我很快就掌握了窍门       | wǒ hěn kuài jiù zh | Aprendo los entres | Aprendo o básico r
+ 32 | learn the ropes quic | 快速掌握窍门          | kuài sù zhǎng wò q | aprende lo básico  | aprenda o básico r
+ 33 | too much red tape    | 太多繁文缛节          | tài duō fán wén rù | demasiada burocrac | muita burocracia  
+ 34 | cut through red tape | 消除繁文缛节          | xiāo chú fán wén r | eliminar la burocr | eliminar a burocra
+ 35 | let's touch base tom | 让我们明天联系基地       | ràng wǒ men míng t | tocamos la base ma | vamos entrar em co
+ 36 | touch base with you  | 与您联系            | yǔ nín lián xì     | en contacto contig | entre em contato c
+ 37 | plans are up in the  | 计划悬而未决          | jì huà xuán ér wèi | los planes están e | planos estão no ar
+ 38 | still up in the air  | 仍然悬而未决          | réng rán xuán ér w | todavía en el aire | ainda está no ar  
+ 39 | create a win-win sit | 共创双赢            | gòng chuàng shuāng | crear una situació | criar uma situação
+ 40 | this is a win-win si | 这是一个双赢的局面       | zhè shì yí gè shuā | esta es una situac | esta é uma situaçã
+ 41 | stay ahead of the cu | 保持领先            | bǎo chí lǐng xiān  | manténgase a la va | fique à frente da 
+ 42 | ahead of the curve a | 始终领先            | shǐ zhōng lǐng xiā | siempre por delant | sempre à frente da
+ 43 | what you bring to th | 你带来什么           | nǐ dài lái shén me | lo que traes a la  | o que você traz pa
+ 44 | bring to the table s | 把一些东西带到餐桌上      | bǎ yī xiē dōng xī  | traer a la mesa al | trazer algo para a
+ 45 | really move the need | 真正推动针           | zhēn zhèng tuī dòn | realmente mueve la | realmente mova a a
+ 46 | move the needle on   | 将针移至            | jiāng zhēn yí zhì  | mueve la aguja     | mova a agulha     

@@ -1,0 +1,65 @@
+PACK 57: Jobs 2
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | actor                | 演员              | yǎn yuán           | actor              | ator              
+  3 | writer               | 作家              | zuò jiā            | escritor           | escritor          
+  4 | photographer         | 摄影师             | shè yǐng shī       | fotógrafo          | fotógrafo         
+  5 | designer             | 设计师             | shè jì shī         | diseñador          | desenhista        
+  6 | architect            | 建筑师             | jiàn zhù shī       | arquitecto         | arquiteto         
+  7 | mechanic             | 机械师             | jī xiè shī         | mecánico           | mecânico          
+  8 | electrician          | 电工              | diàn gōng          | electricista       | eletricista       
+  9 | plumber              | 水管工             | shuǐ guǎn gōng     | fontanero          | encanador         
+ 10 | carpenter            | 木匠              | mù jiàng           | carpintero         | carpinteiro       
+ 11 | dentist              | 牙医              | yá yī              | dentista           | dentista          
+ 12 | veterinarian         | 兽医              | shòu yī            | veterinario        | veterinário       
+ 13 | programmer           | 程序员             | chéng xù yuán      | programador        | programador       
+ 14 | consultant           | 顾问              | gù wèn             | consultor          | consultor         
+ 15 | musician             | 音乐家             | yīn yuè jiā        | músico             | músico            
+ 16 | salesperson          | 销售员             | xiāo shòu yuán     | vendedor           | vendedor          
+ 17 | guard                | 守卫              | shǒu wèi           | guardia            | guarda            
+ 18 | baker                | 面包师             | miàn bāo shī       | panadero           | padeiro           
+ 19 | butcher              | 屠夫              | tú fū              | carnicero          | açougueiro        
+ 20 | tailor               | 裁缝              | cái féng           | sastre             | alfaiate          
+ 21 | florist              | 花店              | huā diàn           | florista           | florista          
+ 22 | famous actor         | 著名演员            | zhù míng yǎn yuán  | actor famoso       | ator famoso       
+ 23 | actor role           | 演员角色            | yǎn yuán jué sè    | papel del actor    | papel de ator     
+ 24 | freelance writer     | 自由撰稿人           | zì yóu zhuàn gǎo r | escritor independi | escritor freelance
+ 25 | writer block         | 写入块             | xiě rù kuài        | bloqueo de escrito | bloqueio de escrit
+ 26 | wedding photographer | 婚礼摄影师           | hūn lǐ shè yǐng sh | fotógrafo de bodas | fotógrafo de casam
+ 27 | photographer studio  | 摄影师工作室          | shè yǐng shī gōng  | estudio de fotógra | estúdio fotográfic
+ 28 | fashion designer     | 时装设计师           | shí zhuāng shè jì  | diseñador de moda  | estilista         
+ 29 | interior designer    | 室内设计师           | shì nèi shè jì shī | diseñador de inter | designer de interi
+ 30 | building architect   | 建筑建筑师           | jiàn zhù jiàn zhù  | arquitecto de cons | arquiteto de const
+ 31 | architect design     | 建筑师设计           | jiàn zhù shī shè j | diseño arquitecto  | projeto de arquite
+ 32 | car mechanic         | 汽车修理工           | qì chē xiū lǐ gōng | mecánico de automó | mecânico de automó
+ 33 | mechanic shop        | 机械店             | jī xiè diàn        | taller mecánico    | oficina mecânica  
+ 34 | licensed electrician | 持证电工            | chí zhèng diàn gōn | electricista autor | eletricista licenc
+ 35 | electrician work     | 电工工作            | diàn gōng gōng zuò | trabajo de electri | trabalho de eletri
+ 36 | local plumber        | 当地水管工           | dāng dì shuǐ guǎn  | fontanero local    | encanador local   
+ 37 | plumber help         | 水管工帮助           | shuǐ guǎn gōng bān | ayuda de fontanero | ajuda de encanador
+ 38 | skilled carpenter    | 熟练的木匠           | shú liàn de mù jià | carpintero experto | carpinteiro qualif
+ 39 | carpenter tools      | 木匠工具            | mù jiàng gōng jù   | herramientas de ca | ferramentas de car
+ 40 | family dentist       | 家庭牙医            | jiā tíng yá yī     | dentista familiar  | dentista de famíli
+ 41 | dentist office       | 牙医办公室           | yá yī bàn gōng shì | consultorio del de | consultório odonto
+ 42 | local veterinarian   | 当地兽医            | dāng dì shòu yī    | veterinario local  | veterinário local 
+ 43 | veterinarian clinic  | 兽医诊所            | shòu yī zhěn suǒ   | clínica veterinari | clínica veterinári
+ 44 | computer programmer  | 计算机程序员          | jì suàn jī chéng x | programador inform | programador de com
+ 45 | programmer code      | 程序员代码           | chéng xù yuán dài  | código de programa | código do programa
+ 46 | business consultant  | 商业顾问            | shāng yè gù wèn    | consultor empresar | consultor de negóc
+ 47 | consultant fee       | 顾问费             | gù wèn fèi         | honorarios del con | honorários de cons
+ 48 | talented musician    | 才华横溢的音乐家        | cái huá héng yì de | músico talentoso   | músico talentoso  
+ 49 | musician band        | 音乐家乐队           | yīn yuè jiā yuè du | banda de músicos   | banda de músicos  
+ 50 | car salesperson      | 汽车销售员           | qì chē xiāo shòu y | vendedor de autos  | vendedor de carros
+ 51 | top salesperson      | 顶级销售员           | dǐng jí xiāo shòu  | mejor vendedor     | melhor vendedor   
+ 52 | security guard       | 保安              | bǎo ān             | guardia de segurid | segurança         
+ 53 | guard duty           | 值班              | zhí bān            | servicio de guardi | serviço de guarda 
+ 54 | local baker          | 当地面包师           | dāng dì miàn bāo s | panadero local     | padeiro local     
+ 55 | baker dozen          | 十三个             | shí sān gè         | docena de panadero | dúzia de padeiros 
+ 56 | local butcher        | 当地屠夫            | dāng dì tú fū      | carnicero local    | açougueiro local  
+ 57 | butcher shop         | 肉店              | ròu diàn           | carnicería         | açougue           
+ 58 | skilled tailor       | 熟练的裁缝           | shú liàn de cái fé | sastre experto     | alfaiate habilidos
+ 59 | tailor made          | 量身定制            | liàng shēn dìng zh | hecho a medida     | feito sob medida  
+ 60 | local florist        | 当地花店            | dāng dì huā diàn   | florista local     | florista local    
+ 61 | florist shop         | 花店              | huā diàn           | floristería        | floricultura      

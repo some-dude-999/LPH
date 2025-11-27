@@ -1,0 +1,65 @@
+PACK 160: Apology & Excuse Patterns
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | apology              | 道歉              | dào qiàn           | disculpa           | desculpas         
+  3 | excuse               | 借口              | jiè kǒu            | excusa             | desculpa          
+  4 | forgiveness          | 宽恕              | kuān shù           | perdón             | perdão            
+  5 | regret               | 遗憾              | yí hàn             | arrepentimiento    | arrependimento    
+  6 | pardon               | 原谅              | yuán liàng         | perdón             | perdão            
+  7 | fault                | 故障              | gù zhàng           | culpa              | culpa             
+  8 | blame                | 责怪              | zé guài            | culpar             | culpa             
+  9 | mistake              | 错误              | cuò wù             | error              | erro              
+ 10 | error                | 错误              | cuò wù             | error              | erro              
+ 11 | accident             | 事故              | shì gù             | accidente          | acidente          
+ 12 | misunderstanding     | 误会              | wù huì             | malentendido       | mal-entendido     
+ 13 | explanation          | 解释              | jiě shì            | explicación        | explicação        
+ 14 | exonerate            | 开脱              | kāi tuō            | exonerar           | exonerar          
+ 15 | forgive              | 原谅              | yuán liàng         | perdonar           | perdoar           
+ 16 | apologize            | 抱歉              | bào qiàn           | disculparte        | desculpe          
+ 17 | sincere              | 真诚              | zhēn chéng         | sincero            | sincero           
+ 18 | remorse              | 悔恨              | huǐ hèn            | remordimiento      | remorso           
+ 19 | atone                | 赎罪              | shú zuì            | expiar             | expiar            
+ 20 | repent               | 悔改              | huǐ gǎi            | arrepentirse       | arrepender-se     
+ 21 | amends               | 修正              | xiū zhèng          | modifica           | altera            
+ 22 | sincere apology      | 真诚的道歉           | zhēn chéng de dào  | sincera disculpa   | sincero pedido de 
+ 23 | apology for          | 为               | wèi                | disculpa por       | desculpas por     
+ 24 | no excuse            | 没有借口            | méi yǒu jiè kǒu    | sin excusa         | sem desculpa      
+ 25 | excuse for           | 借口              | jiè kǒu            | excusa para        | desculpa para     
+ 26 | ask forgiveness      | 请求原谅            | qǐng qiú yuán liàn | pedir perdon       | peça perdão       
+ 27 | forgiveness for      | 宽恕              | kuān shù           | perdón por         | perdão por        
+ 28 | deep regret          | 深深的遗憾           | shēn shēn de yí hà | profundo arrepenti | profundo pesar    
+ 29 | regret to            | 遗憾              | yí hàn             | lamento            | lamento           
+ 30 | I beg your pardon    | 对不起             | duì bù qǐ          | Le pido perdón     | Me desculpe       
+ 31 | pardon me            | 对不起             | duì bù qǐ          | perdóname          | me desculpe       
+ 32 | my fault             | 我的错             | wǒ de cuò          | mi culpa           | culpa minha       
+ 33 | fault of             | 过错的             | guò cuò de         | culpa de           | culpa de          
+ 34 | take blame           | 承担责任            | chéng dān zé rèn   | asumir la culpa    | assumir a culpa   
+ 35 | blame for            | 归咎于             | guī jiù yú         | culpa de           | culpa por         
+ 36 | make mistake         | 犯错误             | fàn cuò wù         | cometer un error   | cometer um erro   
+ 37 | mistake about        | 关于的错误           | guān yú de cuò wù  | error sobre        | erro sobre        
+ 38 | human error          | 人为错误            | rén wéi cuò wù     | error humano       | erro humano       
+ 39 | error in             | 错误于             | cuò wù yú          | error en           | erro em           
+ 40 | car accident         | 车祸              | chē huò            | accidente automovi | acidente de carro 
+ 41 | accident happened    | 意外发生了           | yì wài fā shēng le | ocurrió el acciden | acidente aconteceu
+ 42 | simple misunderstand | 简单的误会           | jiǎn dān de wù huì | simple malentendid | simples mal-entend
+ 43 | misunderstanding bet | 之间的误会           | zhī jiān de wù huì | malentendido entre | mal-entendido entr
+ 44 | give explanation     | 给个解释            | gěi gè jiě shì     | dar una explicació | dar explicação    
+ 45 | explanation for      | 的解释             | de jiě shì         | explicación para   | explicação para   
+ 46 | exonerate from       | 免除              | miǎn chú           | exonerar de        | exonerar de       
+ 47 | exonerate the        | 的责任开脱           | de zé rèn kāi tuō  | exonerar al        | exonerar o        
+ 48 | please forgive       | 请原谅             | qǐng yuán liàng    | por favor perdona  | por favor, perdoe 
+ 49 | forgive me           | 原谅我             | yuán liàng wǒ      | perdóname          | me perdoe         
+ 50 | I apologize          | 我道歉             | wǒ dào qiàn        | Pido disculpas     | Peço desculpas    
+ 51 | apologize for        | 抱歉              | bào qiàn           | disculpate por     | desculpe por      
+ 52 | sincere thanks       | 真诚的感谢           | zhēn chéng de gǎn  | sinceros agradecim | sincero obrigado  
+ 53 | sincere regret       | 真诚的遗憾           | zhēn chéng de yí h | sincero arrepentim | arrependimento sin
+ 54 | feel remorse         | 感到悔恨            | gǎn dào huǐ hèn    | sentir remordimien | sinto remorso     
+ 55 | remorse for          | 悔恨              | huǐ hèn            | remordimiento por  | remorso por       
+ 56 | atone for            | 赎罪              | shú zuì            | expiar             | expiar            
+ 57 | atone by             | 通过              | tōng guò           | expiar por         | expiar por        
+ 58 | repent for           | 赎罪为             | shú zuì wèi        | arrepiéntete por   | arrepender-se por 
+ 59 | repent of            | 悔改              | huǐ gǎi            | arrepiéntete de    | arrepender-se de  
+ 60 | make amends          | 弥补              | mí bǔ              | hacer las paces    | fazer as pazes    
+ 61 | amends for           | 的弥补             | de mí bǔ           | enmienda para      | reparações por    

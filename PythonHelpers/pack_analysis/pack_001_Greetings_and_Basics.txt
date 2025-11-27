@@ -1,0 +1,65 @@
+PACK 1: Greetings & Basics
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | hello                | 你好              | nǐ hǎo             | Hola               | olá               
+  3 | hi                   | 你好              | nǐ hǎo             | Hola               | oi                
+  4 | goodbye              | 再见              | zài jiàn           | adiós              | adeus             
+  5 | bye                  | 再见              | zài jiàn           | adiós              | tchau             
+  6 | good morning         | 早上好             | zǎo shàng hǎo      | buen día           | bom dia           
+  7 | good afternoon       | 下午好             | xià wǔ hǎo         | buenas tardes      | boa tarde         
+  8 | good evening         | 晚上好             | wǎn shàng hǎo      | buenas noches      | boa noite         
+  9 | good night           | 晚安              | wǎn ān             | buenas noches      | boa noite         
+ 10 | please               | 请               | qǐng               | por favor          | por favor         
+ 11 | thank you            | 谢谢              | xiè xiè            | gracias            | obrigado          
+ 12 | thanks               | 谢谢              | xiè xiè            | gracias            | obrigado          
+ 13 | sorry                | 对不起             | duì bù qǐ          | Lo siento          | desculpe          
+ 14 | excuse me            | 打扰一下            | dǎ rǎo yī xià      | disculpe           | com licença       
+ 15 | yes                  | 是的              | shì de             | Sí                 | sim               
+ 16 | no                   | 不               | bù                 | No                 | não               
+ 17 | okay                 | 好的              | hǎo de             | bueno              | OK                
+ 18 | welcome              | 欢迎              | huān yíng          | bienvenido         | Bem-vindo         
+ 19 | hey                  | 嘿               | hēi                | ey                 | ei                
+ 20 | cheers               | 干杯              | gān bēi            | salud              | saúde             
+ 21 | farewell             | 告别              | gào bié            | despedida          | até a próxima     
+ 22 | hello there          | 你好呀             | nǐ hǎo ya          | hola               | olá               
+ 23 | hello friend         | 朋友你好            | péng yǒu nǐ hǎo    | hola, amigo        | olá amigo         
+ 24 | hi there             | 你好呀             | nǐ hǎo ya          | hola               | olá               
+ 25 | hi everyone          | 大家好             | dà jiā hǎo         | hola a todos       | oi pessoal        
+ 26 | goodbye for now      | 暂时再见            | zàn shí zài jiàn   | adiós por ahora    | adeus por enquanto
+ 27 | say goodbye          | 告别              | gào bié            | decir adios        | diga adeus        
+ 28 | bye for now          | 暂时再见            | zàn shí zài jiàn   | adiós por ahora    | Adeus por agora   
+ 29 | bye bye              | 再见              | zài jiàn           | adiós              | tchau tchau       
+ 30 | good morning sunshin | 早上好阳光           | zǎo shàng hǎo yáng | buenos dias sol    | bom dia sol       
+ 31 | good morning to you  | 早上好             | zǎo shàng hǎo      | buenos dias para t | bom dia para você 
+ 32 | good afternoon sir   | 下午好先生           | xià wǔ hǎo xiān sh | buenas tardes seño | boa tarde senhor  
+ 33 | good afternoon every | 大家下午好           | dà jiā xià wǔ hǎo  | buenas tardes a to | boa tarde a todos 
+ 34 | good evening folks   | 晚上好伙计们          | wǎn shàng hǎo huǒ  | buenas noches amig | boa noite pessoal 
+ 35 | good evening to you  | 晚上好             | wǎn shàng hǎo      | buenas noches para | boa noite para voc
+ 36 | good night sleep wel | 晚安睡个好觉          | wǎn ān shuì gè hǎo | buenas noches que  | boa noite durma be
+ 37 | good night sweet dre | 晚安好梦            | wǎn ān hǎo mèng    | buenas noches dulc | boa noite bons son
+ 38 | please help me       | 请帮我             | qǐng bāng wǒ       | por favor, ayúdame | por favor me ajude
+ 39 | please come in       | 请进来             | qǐng jìn lái       | por favor entra    | por favor entre   
+ 40 | thank you so much    | 太感谢了            | tài gǎn xiè le     | muchas gracias     | muito obrigado    
+ 41 | thank you for everyt | 谢谢你所做的一切        | xiè xiè nǐ suǒ zuò | Gracias por todo   | Obrigado por tudo 
+ 42 | thanks a lot         | 多谢              | duō xiè            | muchas gracias     | muito obrigado    
+ 43 | many thanks          | 非常感谢            | fēi cháng gǎn xiè  | muchas gracias     | muito obrigado    
+ 44 | so sorry             | 很抱歉             | hěn bào qiàn       | lo siento mucho    | sinto muito       
+ 45 | sorry about that     | 对此感到抱歉          | duì cǐ gǎn dào bào | lo lamento         | desculpe por isso 
+ 46 | excuse me please     | 对不起请原谅          | duì bù qǐ qǐng yuá | Discúlpame, por fa | Desculpe-me, por f
+ 47 | excuse me sir        | 对不起先生           | duì bù qǐ xiān shē | disculpe señor     | desculpe-me senhor
+ 48 | yes please           | 好的请             | hǎo de qǐng        | sí, por favor      | sim, por favor    
+ 49 | yes of course        | 是的当然            | shì de dāng rán    | sí, claro          | sim claro         
+ 50 | say no               | 说不              | shuō bù            | decir que no       | diga não          
+ 51 | no thanks            | 不用谢谢            | bú yòng xiè xiè    | No, gracias        | não, obrigado     
+ 52 | okay then            | 那么好吧            | nà me hǎo ba       | esta bien entonces | ok então          
+ 53 | that sounds okay     | 听起来不错           | tīng qǐ lái bù cuò | eso suena bien     | isso parece bom   
+ 54 | welcome home         | 欢迎回家            | huān yíng huí jiā  | Bienvenido a casa  | bem vindo ao lar  
+ 55 | welcome aboard       | 欢迎登机            | huān yíng dēng jī  | bienvenido a bordo | bem vindo a bordo 
+ 56 | hey there            | 嘿               | hēi                | hola               | ei                
+ 57 | hey buddy            | 嘿伙计             | hēi huǒ jì         | hola amigo         | ei amigo          
+ 58 | cheers mate          | 干杯伙计            | gān bēi huǒ jì     | saludos amigo      | felicidades, compa
+ 59 | cheers to you        | 为你干杯            | wèi nǐ gān bēi     | saludos para ti    | felicidades para v
+ 60 | farewell friend      | 告别朋友            | gào bié péng yǒu   | adios amigo        | adeus amigo       
+ 61 | bid farewell         | 告别              | gào bié            | despedirse         | despedir-se       

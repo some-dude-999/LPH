@@ -1,0 +1,65 @@
+PACK 99: Books & Reading
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | novel                | 小说              | xiǎo shuō          | novela             | novela            
+  3 | fiction              | 小说              | xiǎo shuō          | ficción            | ficção            
+  4 | nonfiction           | 非小说类            | fēi xiǎo shuō lèi  | no ficción         | não ficção        
+  5 | author               | 作者              | zuò zhě            | autor              | autor             
+  6 | chapter              | 章               | zhāng              | capítulo           | capítulo          
+  7 | page                 | 页               | yè                 | página             | página            
+  8 | cover                | 封面              | fēng miàn          | portada            | capa              
+  9 | plot                 | 情节              | qíng jié           | trama              | enredo            
+ 10 | character            | 字符              | zì fú              | personaje          | personagem        
+ 11 | genre                | 流派              | liú pài            | género             | gênero            
+ 12 | bookstore            | 书店              | shū diàn           | librería           | livraria          
+ 13 | publish              | 发布              | fā bù              | publicar           | publicar          
+ 14 | bestseller           | 畅销书             | chàng xiāo shū     | bestseller         | best-seller       
+ 15 | paperback            | 平装本             | píng zhuāng běn    | rústica            | brochura          
+ 16 | hardcover            | 精装本             | jīng zhuāng běn    | tapa dura          | capa dura         
+ 17 | biography            | 传记              | zhuàn jì           | biografía          | biografia         
+ 18 | memoir               | 回忆录             | huí yì lù          | memorias           | livro de memórias 
+ 19 | bookmark             | 书签              | shū qiān           | marcador           | marcador          
+ 20 | manuscript           | 手稿              | shǒu gǎo           | manuscrito         | manuscrito        
+ 21 | edition              | 版               | bǎn                | edición            | edição            
+ 22 | read novel           | 读小说             | dú xiǎo shuō       | leer novela        | leia o romance    
+ 23 | novel idea           | 新颖的想法           | xīn yǐng de xiǎng  | idea novedosa      | ideia nova        
+ 24 | science fiction      | 科幻小说            | kē huàn xiǎo shuō  | ciencia ficción    | ficção científica 
+ 25 | fiction writer       | 小说作家            | xiǎo shuō zuò jiā  | escritor de ficció | escritor de ficção
+ 26 | nonfiction book      | 非小说类书籍          | fēi xiǎo shuō lèi  | libro de no ficció | livro de não ficçã
+ 27 | nonfiction author    | 非小说类作家          | fēi xiǎo shuō lèi  | autor de no ficció | autor de não ficçã
+ 28 | famous author        | 著名作家            | zhù míng zuò jiā   | autor famoso       | autor famoso      
+ 29 | author signed        | 作者签名            | zuò zhě qiān míng  | autor firmado      | autor assinado    
+ 30 | first chapter        | 第一章             | dì yī zhāng        | primer capítulo    | primeiro capítulo 
+ 31 | chapter one          | 第一章             | dì yī zhāng        | capítulo uno       | capítulo um       
+ 32 | turn page            | 翻页              | fān yè             | pasar página       | virar página      
+ 33 | page number          | 页码              | yè mǎ              | número de página   | número da página  
+ 34 | book cover           | 书籍封面            | shū jí fēng miàn   | portada del libro  | capa do livro     
+ 35 | cover design         | 封面设计            | fēng miàn shè jì   | diseño de portada  | design da capa    
+ 36 | main plot            | 主要剧情            | zhǔ yào jù qíng    | trama principal    | trama principal   
+ 37 | plot twist           | 剧情反转            | jù qíng fǎn zhuǎn  | giro de la trama   | reviravolta na his
+ 38 | main character       | 主角              | zhǔ jué            | personaje principa | personagem princip
+ 39 | character developmen | 角色发展            | jué sè fā zhǎn     | desarrollo del per | desenvolvimento do
+ 40 | book genre           | 书籍类型            | shū jí lèi xíng    | género del libro   | gênero de livro   
+ 41 | genre of             | 流派的             | liú pài de         | género de          | gênero de         
+ 42 | local bookstore      | 的流派当地书店         | de liú pài dāng dì | librería local     | livraria local    
+ 43 | bookstore sale       | 书店特卖            | shū diàn tè mài    | venta de librería  | venda de livraria 
+ 44 | publish book         | 出版书籍            | chū bǎn shū jí     | publicar libro     | publicar livro    
+ 45 | newly publish        | 新发布             | xīn fā bù          | recién publicado   | publicar recenteme
+ 46 | bestseller list      | 畅销书排行榜          | chàng xiāo shū pái | lista de los más v | lista dos mais ven
+ 47 | new bestseller       | 新畅销书            | xīn chàng xiāo shū | nuevo éxito de ven | novo best-seller  
+ 48 | paperback edition    | 平装本             | píng zhuāng běn    | edición de bolsill | edição em brochura
+ 49 | paperback book       | 平装书             | píng zhuāng shū    | libro de bolsillo  | livro de bolso    
+ 50 | hardcover book       | 精装书             | jīng zhuāng shū    | libro de tapa dura | livro de capa dura
+ 51 | hardcover edition    | 精装版             | jīng zhuāng bǎn    | edición de tapa du | edição de capa dur
+ 52 | celebrity biography  | 名人传记            | míng rén zhuàn jì  | biografía de celeb | biografia de celeb
+ 53 | write biography      | 写传记             | xiě zhuàn jì       | escribir biografía | escrever biografia
+ 54 | personal memoir      | 个人回忆录           | gè rén huí yì lù   | memorias personale | memórias pessoais 
+ 55 | memoir author        | 回忆录作者           | huí yì lù zuò zhě  | autor de memorias  | autor do livro de 
+ 56 | use bookmark         | 使用书签            | shǐ yòng shū qiān  | utilizar marcador  | usar marcador     
+ 57 | bookmark page        | 书签页             | shū qiān yè        | página de favorito | página de favorito
+ 58 | original manuscript  | 原创手稿            | yuán chuàng shǒu g | manuscrito origina | manuscrito origina
+ 59 | manuscript draft     | 手稿草稿            | shǒu gǎo cǎo gǎo   | borrador manuscrit | rascunho do manusc
+ 60 | first edition        | 第一版             | dì yī bǎn          | primera edición    | primeira edição   
+ 61 | limited edition      | 限量版             | xiàn liàng bǎn     | edición limitada   | edição limitada   

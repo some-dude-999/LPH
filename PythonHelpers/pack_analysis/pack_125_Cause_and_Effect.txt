@@ -1,0 +1,65 @@
+PACK 125: Cause & Effect
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | cause                | 原因              | yuán yīn           | causa              | causa             
+  3 | effect               | 效果              | xiào guǒ           | efecto             | efeito            
+  4 | result               | 结果              | jié guǒ            | resultado          | resultado         
+  5 | consequence          | 后果              | hòu guǒ            | consecuencia       | consequência      
+  6 | outcome              | 结果              | jié guǒ            | resultado          | resultado         
+  7 | contribute           | 贡献              | gòng xiàn          | contribuir         | contribuir        
+  8 | lead                 | 铅               | qiān               | plomo              | liderar           
+  9 | trigger              | 触发              | chù fā             | desencadenante     | gatilho           
+ 10 | produce              | 生产              | shēng chǎn         | producir           | produzir          
+ 11 | generate             | 生成              | shēng chéng        | generar            | gerar             
+ 12 | create               | 创建              | chuàng jiàn        | crear              | criar             
+ 13 | induce               | 诱导              | yòu dǎo            | inducir            | induzir           
+ 14 | stem                 | 茎               | jīng               | tallo              | haste             
+ 15 | originate            | 起源              | qǐ yuán            | originar           | originar          
+ 16 | due                  | 由于              | yóu yú             | debido             | devido            
+ 17 | elicit               | 引出              | yǐn chū            | provocar           | extrair           
+ 18 | provoke              | 挑衅              | tiǎo xìn           | provocar           | provocar          
+ 19 | initiate             | 发起              | fā qǐ              | iniciar            | iniciar           
+ 20 | catalyze             | 催化              | cuī huà            | catalizar          | catalisar         
+ 21 | spark                | 火花              | huǒ huā            | chispa             | faísca            
+ 22 | root cause           | 根本原因            | gēn běn yuán yīn   | causa raíz         | causa raiz        
+ 23 | cause of             | 的原因             | de yuán yīn        | causa de           | causa de          
+ 24 | visual effect        | 视觉效果            | shì jué xiào guǒ   | efecto visual      | efeito visual     
+ 25 | effect on            | 对某物的影响          | duì mǒu wù de yǐng | efecto sobre       | efeito em         
+ 26 | end result           | 最终结果            | zuì zhōng jié guǒ  | resultado final    | resultado final   
+ 27 | result in            | 结果              | jié guǒ            | resultado en       | resultar em       
+ 28 | negative consequence | 负面后果            | fù miàn hòu guǒ    | consecuencia negat | consequência negat
+ 29 | consequence of       | 的后果             | de hòu guǒ         | consecuencia de    | consequência de   
+ 30 | positive outcome     | 积极成果            | jī jí chéng guǒ    | resultado positivo | resultado positivo
+ 31 | outcome of           | 的结果             | de jié guǒ         | resultado de       | resultado de      
+ 32 | contribute to        | 贡献于             | gòng xiàn yú       | contribuir a       | contribuir para   
+ 33 | contribute money     | 捐款              | juān kuǎn          | aportar dinero     | contribuir com din
+ 34 | lead to              | 导致              | dǎo zhì            | conducir a         | levar a           
+ 35 | lead the way         | 带路              | dài lù             | lidera el camino   | mostre o caminho  
+ 36 | trigger warning      | 触发警告            | chù fā jǐng gào    | advertencia de act | aviso de gatilho  
+ 37 | trigger event        | 触发事件            | chù fā shì jiàn    | evento desencadena | evento desencadead
+ 38 | produce results      | 产生结果            | chǎn shēng jié guǒ | producir resultado | produzir resultado
+ 39 | produce goods        | 生产商品            | shēng chǎn shāng p | producir bienes    | produzir bens     
+ 40 | generate income      | 产生收入            | chǎn shēng shōu rù | generar ingresos   | gerar renda       
+ 41 | generate power       | 发电              | fā diàn            | generar energía    | gerar energia     
+ 42 | create jobs          | 创造就业机会          | chuàng zào jiù yè  | crear empleo       | criar empregos    
+ 43 | create opportunity   | 创造机会            | chuàng zào jī huì  | crear oportunidade | criar oportunidade
+ 44 | induce labor         | 引产              | yǐn chǎn           | inducir el parto   | induzir o parto   
+ 45 | induce sleep         | 诱导睡眠            | yòu dǎo shuì mián  | inducir el sueño   | induzir o sono    
+ 46 | stem from            | 源于              | yuán yú            | provienen de       | derivam de        
+ 47 | stem cell            | 干细胞             | gàn xì bāo         | célula madre       | célula-tronco     
+ 48 | originate from       | 源自              | yuán zì            | proceden de        | originam de       
+ 49 | originate in         | 起源于             | qǐ yuán yú         | se originan en     | tem origem em     
+ 50 | due to               | 由于              | yóu yú             | debido a           | devido a          
+ 51 | due date             | 截止日期            | jié zhǐ rì qī      | fecha de vencimien | data de vencimento
+ 52 | elicit response      | 引发回应            | yǐn fā huí yìng    | provocar respuesta | obter resposta    
+ 53 | elicit information   | 获取信息            | huò qǔ xìn xī      | obtener informació | obter informações 
+ 54 | provoke anger        | 激起愤怒            | jī qǐ fèn nù       | provocar ira       | provocar raiva    
+ 55 | provoke reaction     | 引起反应            | yǐn qǐ fǎn yìng    | provocar reacción  | provocar reação   
+ 56 | initiate contact     | 发起联系            | fā qǐ lián xì      | iniciar contacto   | iniciar contato   
+ 57 | initiate process     | 启动进程            | qǐ dòng jìn chéng  | iniciar proceso    | iniciar processo  
+ 58 | catalyze change      | 催化变革            | cuī huà biàn gé    | catalizar el cambi | catalisar a mudanç
+ 59 | catalyze reaction    | 催化反应            | cuī huà fǎn yìng   | catalizar la reacc | catalisar reação  
+ 60 | spark interest       | 激发兴趣            | jī fā xìng qù      | despertar interés  | despertar interess
+ 61 | spark debate         | 引发辩论            | yǐn fā biàn lùn    | provocar debate    | desencadear debate

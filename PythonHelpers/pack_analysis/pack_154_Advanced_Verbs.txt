@@ -1,0 +1,65 @@
+PACK 154: Advanced Verbs
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | comprise             | 包括              | bāo kuò            | comprenden         | compreende        
+  3 | encompass            | 包含              | bāo hán            | abarcar            | abranger          
+  4 | entail               | 需要              | xū yào             | implica            | implica           
+  5 | denote               | 表示              | biǎo shì           | denotar            | denotar           
+  6 | exemplify            | 举例              | jǔ lì              | ejemplificar       | exemplificar      
+  7 | embody               | 体现              | tǐ xiàn            | encarnar           | incorporar        
+  8 | manifest             | 明显              | míng xiǎn          | manifiesto         | manifestar        
+  9 | underscore           | 下划线             | xià huà xiàn       | guión bajo         | sublinhado        
+ 10 | substantiate         | 证实              | zhèng shí          | fundamentar        | fundamentar       
+ 11 | corroborate          | 证实              | zhèng shí          | corroborar         | corroborar        
+ 12 | elucidate            | 阐明              | chǎn míng          | dilucidar          | elucidar          
+ 13 | delineate            | 描绘              | miáo huì           | delinear           | delinear          
+ 14 | extrapolate          | 推断              | tuī duàn           | extrapolar         | extrapolar        
+ 15 | postulate            | 假设              | jiǎ shè            | postulado          | postulado         
+ 16 | stipulate            | 规定              | guī dìng           | estipular          | estipular         
+ 17 | supersede            | 取代              | qǔ dài             | reemplazar         | substituir        
+ 18 | preclude             | 排除              | pái chú            | excluir            | impedir           
+ 19 | exacerbate           | 加剧              | jiā jù             | exacerbar          | agravar           
+ 20 | ameliorate           | 改善              | gǎi shàn           | mejorar            | melhorar          
+ 21 | promulgate           | 颁布              | bān bù             | promulgar          | promulgar         
+ 22 | comprise of          | 包括              | bāo kuò            | forman parte de    | composto por      
+ 23 | comprise the         | 包括              | bāo kuò            | comprenden el      | compõem o         
+ 24 | encompass all        | 涵盖所有            | hán gài suǒ yǒu    | abarcar todo       | engloba todos     
+ 25 | encompass wide       | 涵盖广泛            | hán gài guǎng fàn  | abarcar ampliament | abranger amplament
+ 26 | entail risk          | 带来风险            | dài lái fēng xiǎn  | implican riesgo    | implica risco     
+ 27 | entail responsibilit | 承担责任            | chéng dān zé rèn   | entraña responsabi | implicam responsab
+ 28 | denote meaning       | 表示意义            | biǎo shì yì yì     | denotar significad | denotar significad
+ 29 | denote that          | 表示              | biǎo shì           | denota que         | denota que        
+ 30 | exemplify how        | 举例说明如何          | jǔ lì shuō míng rú | ejemplifique cómo  | exemplifique como 
+ 31 | exemplify the        | 举例说明            | jǔ lì shuō míng    | ejemplifique el    | exemplifique o    
+ 32 | embody spirit        | 体现精神            | tǐ xiàn jīng shén  | encarnar el espíri | encarnar o espírit
+ 33 | embody values        | 体现价值观           | tǐ xiàn jià zhí gu | encarnar valores   | incorporar valores
+ 34 | manifest itself      | 表现出来            | biǎo xiàn chū lái  | manifestarse       | manifestar-se     
+ 35 | manifest in          | 体现在             | tǐ xiàn zài        | manifiesto en      | manifestar em     
+ 36 | underscore importanc | 强调重要性           | qiáng diào zhòng y | subrayar la import | sublinhar a import
+ 37 | underscore need      | 下划线需要           | xià huà xiàn xū yà | subrayar necesidad | sublinhar necessid
+ 38 | substantiate claim   | 证实主张            | zhèng shí zhǔ zhān | fundamentar la afi | fundamentar a afir
+ 39 | substantiate with    | 用               | yòng               | fundamentar con    | fundamentar com   
+ 40 | corroborate story    | 证实证实故事          | zhèng shí zhèng sh | corroborar la hist | corroborar a histó
+ 41 | corroborate evidence | 证实证据            | zhèng shí zhèng jù | corroborar evidenc | corroborar evidênc
+ 42 | elucidate point      | 阐明一点            | chǎn míng yì diǎn  | dilucidar el punto | esclarecer o ponto
+ 43 | elucidate the        | 阐明              | chǎn míng          | dilucidar el       | elucidar o        
+ 44 | delineate between    | 划定              | huà dìng           | delimitar entre    | delinear entre    
+ 45 | delineate clearly    | 之间勾画清楚          | zhī jiān gōu huà q | delinear clarament | delinear clarament
+ 46 | extrapolate from     | 从               | cóng               | extrapolar de      | extrapolar de     
+ 47 | extrapolate data     | 推断推断数据          | tuī duàn tuī duàn  | extrapolar datos   | extrapolar dados  
+ 48 | postulate that       | 假设              | jiǎ shè            | postula que        | postular que      
+ 49 | postulate theory     | 假设理论            | jiǎ shè lǐ lùn     | teoría de postulad | teoria dos postula
+ 50 | stipulate that       | 规定              | guī dìng           | estipular que      | estipular que     
+ 51 | stipulate conditions | 规定条件            | guī dìng tiáo jiàn | estipular condicio | estipular condiçõe
+ 52 | supersede previous   | 取代之前的           | qǔ dài zhī qián de | reemplaza el anter | substituir o anter
+ 53 | supersede older      | 取代旧的            | qǔ dài jiù de      | reemplazar más ant | substituir o mais 
+ 54 | preclude possibility | 排除可能性           | pái chú kě néng xì | excluir la posibil | excluir possibilid
+ 55 | preclude from        | 排除              | pái chú            | excluir de         | impedir de        
+ 56 | exacerbate problem   | 加剧问题            | jiā jù wèn tí      | exacerbar el probl | agravar o problema
+ 57 | exacerbate situation | 加剧局势            | jiā jù jú shì      | exacerbar la situa | agravar a situação
+ 58 | ameliorate condition | 改善状况            | gǎi shàn zhuàng ku | mejorar la condici | melhorar a condiçã
+ 59 | ameliorate suffering | 减轻痛苦            | jiǎn qīng tòng kǔ  | mejorar el sufrimi | amenizar o sofrime
+ 60 | promulgate rules     | 颁布规则            | bān bù guī zé      | promulgar reglas   | promulgar regras  
+ 61 | promulgate law       | 颁布法律            | bān bù fǎ lǜ       | promulgar ley      | promulgar lei     

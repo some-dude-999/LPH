@@ -1,0 +1,65 @@
+PACK 80: Phrasal Verbs 1
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | wake up              | 醒来              | xǐng lái           | despierta          | acorde            
+  3 | get up               | 起来              | qǐ lái             | levántate          | levante-se        
+  4 | turn on              | 打开              | dǎ kāi             | encender           | ligar             
+  5 | turn off             | 关闭              | guān bì            | apagar             | desligar          
+  6 | put on               | 穿上              | chuān shàng        | ponerse            | colocar           
+  7 | take off             | 起飞              | qǐ fēi             | despegar           | decolar           
+  8 | pick up              | 拿起              | ná qǐ              | recoger            | pegar             
+  9 | put down             | 放下              | fàng xià           | dejar              | colocar para baixo
+ 10 | look for             | 寻找              | xún zhǎo           | buscar             | procure           
+ 11 | give up              | 放弃              | fàng qì            | rendirse           | desistir          
+ 12 | go on                | 继续              | jì xù              | continúa           | continue          
+ 13 | come back            | 回来              | huí lái            | vuelve             | volte             
+ 14 | get back             | 回来              | huí lái            | volver             | volte             
+ 15 | work out             | 锻炼              | duàn liàn          | hacer ejercicio    | malhar            
+ 16 | find out             | 找出              | zhǎo chū           | descubrir          | descubra          
+ 17 | figure out           | 弄清楚             | nòng qīng chǔ      | descubrir          | descobrir         
+ 18 | run out              | 用完              | yòng wán           | agotar             | acabou            
+ 19 | show up              | 出现              | chū xiàn           | aparecer           | aparecer          
+ 20 | set up               | 设置              | shè zhì            | configurar         | configurar        
+ 21 | break down           | 分解              | fēn jiě            | descomponerse      | quebrar           
+ 22 | wake up early        | 早起              | zǎo qǐ             | despierta temprano | acorde cedo       
+ 23 | time to wake up      | 是时候醒来了          | shì shí hòu xǐng l | hora de despertar  | hora de acordar   
+ 24 | get up now           | 现在起床            | xiàn zài qǐ chuáng | levántate ahora    | levante agora     
+ 25 | get up early         | 早起              | zǎo qǐ             | levantarse tempran | acordar cedo      
+ 26 | turn on the light    | 开灯              | kāi dēng           | enciende la luz    | acenda a luz      
+ 27 | turn on music        | 打开音乐            | dǎ kāi yīn yuè     | enciende la música | ligue a música    
+ 28 | turn off the light   | 关灯              | guān dēng          | apaga la luz       | apague a luz      
+ 29 | turn off now         | 立即关闭            | lì jí guān bì      | apagar ahora       | desligue agora    
+ 30 | put on clothes       | 穿上衣服            | chuān shàng yī fú  | ponerse ropa       | colocar roupas    
+ 31 | put on shoes         | 穿上鞋子            | chuān shàng xié zi | ponerse los zapato | calçar os sapatos 
+ 32 | take off shoes       | 脱掉鞋子            | tuō diào xié zi    | quitarse los zapat | tire os sapatos   
+ 33 | plane take off       | 飞机起飞            | fēi jī qǐ fēi      | despegue del avión | avião decola      
+ 34 | pick up the phone    | 拿起电话            | ná qǐ diàn huà     | levanta el teléfon | atende o telefone 
+ 35 | pick up later        | 稍后再接            | shāo hòu zài jiē   | recoger más tarde  | pegar mais tarde  
+ 36 | put down the phone   | 放下电话            | fàng xià diàn huà  | cuelga el teléfono | desligue o telefon
+ 37 | put down gently      | 轻轻放下            | qīng qīng fàng xià | dejar suavemente   | abaixe suavemente 
+ 38 | look for it          | 寻找它             | xún zhǎo tā        | búscalo            | procure           
+ 39 | look for help        | 寻求帮助            | xún qiú bāng zhù   | busca ayuda        | procure ajuda     
+ 40 | don't give up        | 不要放弃            | bú yào fàng qì     | no te rindas       | não desista       
+ 41 | never give up        | 永不放弃            | yǒng bù fàng qì    | nunca te rindas    | nunca desista     
+ 42 | go on please         | 请继续             | qǐng jì xù         | continúa por favor | continue por favor
+ 43 | go on ahead          | 继续前进            | jì xù qián jìn     | sigue adelante     | vá em frente      
+ 44 | come back soon       | 快回来             | kuài huí lái       | vuelve pronto      | volte logo        
+ 45 | come back later      | 稍后回来            | shāo hòu huí lái   | vuelve más tarde   | volte mais tarde  
+ 46 | get back home        | 回家              | huí jiā            | volver a casa      | voltar para casa  
+ 47 | get back to          | 回到              | huí dào            | volver a           | voltar para       
+ 48 | work out well        | 好好锻炼            | hǎo hǎo duàn liàn  | trabaja bien       | funciona bem      
+ 49 | work out daily       | 每天锻炼            | měi tiān duàn liàn | hacer ejercicio di | malhar diariamente
+ 50 | find out why         | 找出原因            | zhǎo chū yuán yīn  | descubre por qué   | descubra por que  
+ 51 | find out later       | 稍后了解            | shāo hòu liǎo jiě  | descúbrelo más tar | descubra mais tard
+ 52 | figure out how       | 弄清楚如何           | nòng qīng chǔ rú h | descubre cómo      | descubra como     
+ 53 | figure out the answe | 找出答案            | zhǎo chū dá àn     | descubre la respue | descubra a respost
+ 54 | run out of time      | 时间用完了           | shí jiān yòng wán  | se acaba el tiempo | ficou sem tempo   
+ 55 | run out of           | 用完              | yòng wán           | quedarse sin       | ficar sem         
+ 56 | show up late         | 迟到              | chí dào            | llegar tarde       | chegar tarde      
+ 57 | show up on time      | 准时出现            | zhǔn shí chū xiàn  | llegar a tiempo    | chegar na hora cer
+ 58 | set up meeting       | 安排会议            | ān pái huì yì      | organizar una reun | marcar reunião    
+ 59 | set up account       | 设置帐户            | shè zhì zhàng hù   | configurar cuenta  | configurar conta  
+ 60 | break down crying    | 崩溃哭泣            | bēng kuì kū qì     | romper a llorar    | começar a chorar  
+ 61 | machine break down   | 机器故障            | jī qì gù zhàng     | máquina averiada   | quebra de máquina 

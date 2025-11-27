@@ -1,0 +1,65 @@
+PACK 67: Physical Appearance
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | thin                 | 薄               | báo                | delgada            | fino              
+  3 | fat                  | 脂肪              | zhī fáng           | grasa              | gordura           
+  4 | slim                 | 苗条              | miáo tiáo          | delgado            | magro             
+  5 | muscular             | 肌肉发达            | jī ròu fā dá       | musculoso          | musculoso         
+  6 | fit                  | 适合              | shì hé             | encajar            | caber             
+  7 | handsome             | 帅气              | shuài qì           | guapo              | lindo             
+  8 | attractive           | 有吸引力            | yǒu xī yǐn lì      | atractivo          | atraente          
+  9 | curly                | 卷曲              | juǎn qū            | rizado             | cacheado          
+ 10 | blonde               | 金发女郎            | jīn fà nǚ láng     | rubia              | loira             
+ 11 | brunette             | 黑发              | hēi fà             | morena             | morena            
+ 12 | bald                 | 秃头              | tū tóu             | calvo              | careca            
+ 13 | beard                | 胡子              | hú zi              | barba              | barba             
+ 14 | mustache             | 小胡子             | xiǎo hú zi         | bigote             | bigode            
+ 15 | freckles             | 雀斑              | què bān            | pecas              | sardas            
+ 16 | wrinkles             | 皱纹              | zhòu wén           | arrugas            | rugas             
+ 17 | height               | 高度              | gāo dù             | altura             | altura            
+ 18 | weight               | 重量              | zhòng liàng        | peso               | peso              
+ 19 | figure               | 图               | tú                 | figura             | figura            
+ 20 | complexion           | 肤色              | fū sè              | complexión         | tez               
+ 21 | posture              | 姿势              | zī shì             | postura            | postura           
+ 22 | too thin             | 太薄              | tài báo            | demasiado delgada  | muito magro       
+ 23 | thin and tall        | 又瘦又高            | yòu shòu yòu gāo   | delgada y alta     | magro e alto      
+ 24 | too fat              | 太胖了             | tài pàng le        | demasiado gorda    | muito gordo       
+ 25 | fat chance           | 胖机会             | pàng jī huì        | gran oportunidad   | grande chance     
+ 26 | slim fit             | 修身版型            | xiū shēn bǎn xíng  | corte ajustado     | ajuste fino       
+ 27 | slim down            | 瘦身              | shòu shēn          | adelgazar          | emagrecer         
+ 28 | very muscular        | 非常肌肉            | fēi cháng jī ròu   | muy musculoso      | muito musculoso   
+ 29 | muscular build       | 肌肉发达            | jī ròu fā dá       | constitución muscu | construção muscula
+ 30 | stay fit             | 保持健康            | bǎo chí jiàn kāng  | mantente en forma  | fique em forma    
+ 31 | fit body             | 健美身材            | jiàn měi shēn cái  | cuerpo en forma    | corpo em forma    
+ 32 | very handsome        | 很帅              | hěn shuài          | muy guapo          | muito lindo       
+ 33 | handsome man         | 帅哥              | shuài gē           | hombre guapo       | homem bonito      
+ 34 | very attractive      | 非常有吸引力          | fēi cháng yǒu xī y | muy atractivo      | muito atraente    
+ 35 | attractive offer     | 有吸引力的报价         | yǒu xī yǐn lì de b | oferta atractiva   | oferta atraente   
+ 36 | curly hair           | 卷发              | juǎn fà            | pelo rizado        | cabelos cacheados 
+ 37 | curly fries          | 卷曲薯条            | juǎn qū shǔ tiáo   | patatas fritas riz | batatas fritas enc
+ 38 | blonde hair          | 金发              | jīn fà             | cabello rubio      | cabelo loiro      
+ 39 | go blonde            | 金发女郎            | jīn fà nǚ láng     | vuélvete rubia     | ficar loira       
+ 40 | dark brunette        | 深色黑发            | shēn sè hēi fà     | morena oscura      | morena morena     
+ 41 | brunette hair        | 黑发              | hēi fà             | cabello castaño    | cabelo moreno     
+ 42 | go bald              | 秃头              | tū tóu             | quedarse calvo     | ficar careca      
+ 43 | bald head            | 光头              | guāng tóu          | cabeza calva       | careca            
+ 44 | grow a beard         | 长胡子             | zhǎng hú zi        | dejarse barba      | deixar crescer a b
+ 45 | beard trim           | 胡须修剪            | hú xū xiū jiǎn     | recorte de barba   | corte de barba    
+ 46 | thick mustache       | 浓密的胡子           | nóng mì de hú zi   | bigote espeso      | bigode grosso     
+ 47 | mustache style       | 小胡子风格           | xiǎo hú zi fēng gé | estilo bigote      | estilo bigode     
+ 48 | small freckles       | 小雀斑             | xiǎo què bān       | pequeñas pecas     | pequenas sardas   
+ 49 | freckles on face     | 脸上有雀斑           | liǎn shàng yǒu què | pecas en la cara   | sardas no rosto   
+ 50 | fine wrinkles        | 细纹              | xì wén             | arrugas finas      | rugas finas       
+ 51 | wrinkles appear      | 出现皱纹            | chū xiàn zhòu wén  | aparecen arrugas   | aparecem rugas    
+ 52 | average height       | 平均身高            | píng jūn shēn gāo  | altura promedio    | altura média      
+ 53 | height difference    | 身高差             | shēn gāo chà       | diferencia de altu | diferença de altur
+ 54 | lose weight          | 减肥              | jiǎn féi           | perder peso        | perder peso       
+ 55 | weight loss          | 减肥              | jiǎn féi           | pérdida de peso    | perda de peso     
+ 56 | nice figure          | 身材不错            | shēn cái bù cuò    | bonita figura      | bela figura       
+ 57 | action figure        | 动作人物            | dòng zuò rén wù    | figura de acción   | figura de ação    
+ 58 | clear complexion     | 肤色清透            | fū sè qīng tòu     | tez clara          | tez clara         
+ 59 | fair complexion      | 肤色白皙            | fū sè bái xī       | tez clara          | pele clara        
+ 60 | good posture         | 良好的姿势           | liáng hǎo de zī sh | buena postura      | boa postura       
+ 61 | improve posture      | 改善姿势            | gǎi shàn zī shì    | mejorar la postura | melhorar a postura

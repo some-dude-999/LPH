@@ -1,0 +1,65 @@
+PACK 143: Sociology Basics
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | institution          | 机构              | jī gòu             | institución        | instituição       
+  3 | norm                 | 规范              | guī fàn            | norma              | norma             
+  4 | class                | 类               | lèi                | clase              | aula              
+  5 | status               | 状态              | zhuàng tài         | estado             | estado            
+  6 | socialization        | 社会化             | shè huì huà        | socialización      | socialização      
+  7 | group                | 组               | zǔ                 | grupo              | grupo             
+  8 | interaction          | 互动              | hù dòng            | interacción        | interação         
+  9 | structure            | 结构              | jié gòu            | estructura         | estrutura         
+ 10 | role                 | 角色              | jué sè             | rol                | papel             
+ 11 | deviance             | 偏差              | piān chā           | desviación         | desvio            
+ 12 | stratification       | 分层              | fēn céng           | estratificación    | estratificação    
+ 13 | demographic          | 人口统计            | rén kǒu tǒng jì    | demográfico        | demográfico       
+ 14 | urbanization         | 城市化             | chéng shì huà      | urbanización       | urbanização       
+ 15 | assimilation         | 同化              | tóng huà           | asimilación        | assimilação       
+ 16 | alienation           | 疏离              | shū lí             | alienación         | alienação         
+ 17 | bureaucracy          | 官僚主义            | guān liáo zhǔ yì   | burocracia         | burocracia        
+ 18 | collectivism         | 集体主义            | jí tǐ zhǔ yì       | colectivismo       | coletivismo       
+ 19 | individualism        | 个人主义            | gè rén zhǔ yì      | individualismo     | individualismo    
+ 20 | mobility             | 流动性             | liú dòng xìng      | movilidad          | mobilidade        
+ 21 | conformity           | 一致性             | yí zhì xìng        | conformidad        | conformidade      
+ 22 | social institution   | 社会机构            | shè huì jī gòu     | institución social | instituição social
+ 23 | institution of       | 的机构             | de jī gòu          | institución de     | instituição de    
+ 24 | social norm          | 社会规范            | shè huì guī fàn    | norma social       | norma social      
+ 25 | norm of              | 的规范             | de guī fàn         | norma de           | norma de          
+ 26 | social class         | 社会阶层            | shè huì jiē céng   | clase social       | classe social     
+ 27 | class system         | 等级制度            | děng jí zhì dù     | sistema de clases  | sistema de classes
+ 28 | social status        | 社会地位            | shè huì dì wèi     | estatus social     | situação social   
+ 29 | status symbol        | 身份象征            | shēn fèn xiàng zhē | símbolo de estado  | símbolo de status 
+ 30 | process of socializa | 社会化过程           | shè huì huà guò ch | proceso de sociali | processo de social
+ 31 | socialization into   | 社会化成            | shè huì huà chéng  | socialización en   | socialização em   
+ 32 | social group         | 社会团体            | shè huì tuán tǐ    | grupo social       | grupo social      
+ 33 | group dynamics       | 团体动态            | tuán tǐ dòng tài   | dinámica de grupo  | dinâmica de grupo 
+ 34 | social interaction   | 社交互动            | shè jiāo hù dòng   | interacción social | interação social  
+ 35 | interaction between  | 之间的互动           | zhī jiān de hù dòn | interacción entre  | interação entre   
+ 36 | social structure     | 社会结构            | shè huì jié gòu    | estructura social  | estrutura social  
+ 37 | structure of         | 的结构             | de jié gòu         | estructura de      | estrutura de      
+ 38 | gender role          | 性别角色            | xìng bié jué sè    | rol de género      | papel de gênero   
+ 39 | role model           | 榜样              | bǎng yàng          | modelo a seguir    | modelo            
+ 40 | social deviance      | 社会越轨            | shè huì yuè guǐ    | desviación social  | desvio social     
+ 41 | deviance from        | 偏离              | piān lí            | desviación de      | desvio de         
+ 42 | social stratificatio | 社会分层            | shè huì fēn céng   | estratificación so | estratificação soc
+ 43 | stratification in    | 中的分层            | zhōng de fēn céng  | estratificación en | estratificação em 
+ 44 | demographic data     | 人口统计数据          | rén kǒu tǒng jì sh | datos demográficos | dados demográficos
+ 45 | demographic shift    | 人口结构变化          | rén kǒu jié gòu bi | cambio demográfico | mudança demográfic
+ 46 | rapid urbanization   | 快速城市化           | kuài sù chéng shì  | rápida urbanizació | rápida urbanização
+ 47 | urbanization rate    | 城市化率            | chéng shì huà lǜ   | tasa de urbanizaci | taxa de urbanizaçã
+ 48 | cultural assimilatio | 文化同化            | wén huà tóng huà   | asimilación cultur | assimilação cultur
+ 49 | assimilation into    | 同化为             | tóng huà wèi       | asimilación en     | assimilação em    
+ 50 | social alienation    | 社会疏远            | shè huì shū yuǎn   | alienación social  | alienação social  
+ 51 | alienation from      | 疏远              | shū yuǎn           | alienación de      | alienação de      
+ 52 | government bureaucra | 政府官僚机构          | zhèng fǔ guān liáo | burocracia guberna | burocracia governa
+ 53 | bureaucracy in       | 中的官僚主义          | zhōng de guān liáo | burocracia en      | burocracia em     
+ 54 | cultural collectivis | 文化集体主义          | wén huà jí tǐ zhǔ  | colectivismo cultu | coletivismo cultur
+ 55 | collectivism vs      | 集体主义 vs         | jí tǐ zhǔ yì vs    | colectivismo vs    | coletivismo vs    
+ 56 | rugged individualism | 粗犷的个人主义         | cū guǎng de gè rén | individualismo rud | individualismo rob
+ 57 | individualism in     | 中的个人主义          | zhōng de gè rén zh | individualismo en  | individualismo em 
+ 58 | social mobility      | 社会流动性           | shè huì liú dòng x | movilidad social   | mobilidade social 
+ 59 | mobility between     | 之间的流动性          | zhī jiān de liú dò | movilidad entre    | mobilidade entre  
+ 60 | social conformity    | 社会整合            | shè huì zhěng hé   | conformidad social | conformidade socia
+ 61 | conformity to        | 符合              | fú hé              | conformidad con    | conformidade com  

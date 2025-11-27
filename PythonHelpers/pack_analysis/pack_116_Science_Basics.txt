@@ -1,0 +1,65 @@
+PACK 116: Science Basics
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | scientific           | 科学              | kē xué             | científico         | científico        
+  3 | experiment           | 实验              | shí yàn            | experimento        | experimentar      
+  4 | theory               | 理论              | lǐ lùn             | teoría             | teoria            
+  5 | research             | 研究              | yán jiū            | investigación      | pesquisa          
+  6 | discovery            | 发现              | fā xiàn            | descubrimiento     | descoberta        
+  7 | invention            | 发明              | fā míng            | invención          | invenção          
+  8 | laboratory           | 实验室             | shí yàn shì        | laboratorio        | laboratório       
+  9 | observe              | 观察              | guān chá           | observar           | observar          
+ 10 | hypothesis           | 假设              | jiǎ shè            | hipótesis          | hipótese          
+ 11 | data                 | 数据              | shù jù             | datos              | dados             
+ 12 | specimen             | 标本              | biāo běn           | espécimen          | espécime          
+ 13 | breakthrough         | 突破              | tū pò              | gran avance        | avanço            
+ 14 | phenomenon           | 现象              | xiàn xiàng         | fenómeno           | fenômeno          
+ 15 | variable             | 变量              | biàn liàng         | variables          | variável          
+ 16 | prove                | 证明              | zhèng míng         | probar             | provar            
+ 17 | postulation          | 假设              | jiǎ shè            | postulación        | postulação        
+ 18 | theorem              | 定理              | dìng lǐ            | teorema            | teorema           
+ 19 | proof                | 证明              | zhèng míng         | prueba             | prova             
+ 20 | method               | 方法              | fāng fǎ            | método             | método            
+ 21 | calibrate            | 校准              | jiào zhǔn          | calibrar           | calibrar          
+ 22 | scientific method    | 科学方法            | kē xué fāng fǎ     | método científico  | método científico 
+ 23 | scientific research  | 科学研究            | kē xué yán jiū     | investigación cien | investigação cient
+ 24 | conduct experiment   | 进行实验            | jìn xíng shí yàn   | realizar experimen | realizar experimen
+ 25 | experiment results   | 实验结果            | shí yàn jié guǒ    | resultados del exp | resultados do expe
+ 26 | scientific theory    | 科学理论            | kē xué lǐ lùn      | teoría científica  | teoria científica 
+ 27 | theory development   | 理论发展            | lǐ lùn fā zhǎn     | desarrollo teórico | desenvolvimento da
+ 28 | research project     | 研究项目            | yán jiū xiàng mù   | proyecto de invest | projeto de pesquis
+ 29 | research findings    | 研究成果            | yán jiū chéng guǒ  | resultados de la i | resultados da inve
+ 30 | new discovery        | 新发现             | xīn fā xiàn        | nuevo descubrimien | nova descoberta   
+ 31 | discovery of         | 发现              | fā xiàn            | descubrimiento de  | descoberta de     
+ 32 | great invention      | 伟大的发明           | wěi dà de fā míng  | gran invento       | grande invenção   
+ 33 | invention patent     | 发明专利            | fā míng zhuān lì   | patente de invenci | patente de invençã
+ 34 | research laboratory  | 研究实验室           | yán jiū shí yàn sh | laboratorio de inv | laboratório de pes
+ 35 | laboratory equipment | 实验室设备           | shí yàn shì shè bè | equipo de laborato | equipamento de lab
+ 36 | observe carefully    | 仔细观察            | zǐ xì guān chá     | observar atentamen | observe com atençã
+ 37 | observe behavior     | 观察行为            | guān chá xíng wéi  | observar el compor | observar o comport
+ 38 | test hypothesis      | 检验假设            | jiǎn yàn jiǎ shè   | hipótesis de prueb | hipótese de teste 
+ 39 | hypothesis testing   | 假设检验            | jiǎ shè jiǎn yàn   | prueba de hipótesi | teste de hipóteses
+ 40 | collect data         | 收集数据            | shōu jí shù jù     | recopilar datos    | coletar dados     
+ 41 | data collection      | 数据收集            | shù jù shōu jí     | recopilación de da | coleta de dados   
+ 42 | test specimen        | 测试样本            | cè shì yàng běn    | muestra de prueba  | corpo de prova    
+ 43 | specimen collection  | 标本采集            | biāo běn cǎi jí    | recogida de muestr | coleta de amostras
+ 44 | major breakthrough   | 重大突破            | zhòng dà tū pò     | gran avance        | grande avanço     
+ 45 | breakthrough discove | 突破性发现           | tū pò xìng fā xiàn | descubrimiento rev | descoberta revoluc
+ 46 | natural phenomenon   | 自然现象            | zì rán xiàn xiàng  | fenómeno natural   | fenômeno natural  
+ 47 | phenomenon explained | 现象解释            | xiàn xiàng jiě shì | fenómeno explicado | fenômeno explicado
+ 48 | control variable     | 控制变量            | kòng zhì biàn liàn | variable de contro | variável de contro
+ 49 | variable factor      | 可变因素            | kě biàn yīn sù     | factor variable    | fator variável    
+ 50 | prove wrong          | 证明错误            | zhèng míng cuò wù  | demostrar que está | provar que estava 
+ 51 | prove correct        | 证明正确            | zhèng míng zhèng q | demostrar que es c | provar que está co
+ 52 | scientific postulati | 科学假设            | kē xué jiǎ shè     | postulado científi | postulação científ
+ 53 | postulation theory   | 假设理论            | jiǎ shè lǐ lùn     | teoría de la postu | teoria da postulaç
+ 54 | mathematical theorem | 数学定理            | shù xué dìng lǐ    | teorema matemático | teorema matemático
+ 55 | theorem proof        | 定理证明            | dìng lǐ zhèng míng | prueba del teorema | prova do teorema  
+ 56 | scientific proof     | 科学证明            | kē xué zhèng míng  | prueba científica  | comprovação cientí
+ 57 | proof required       | 需要证明            | xū yào zhèng míng  | se requiere prueba | prova necessária  
+ 58 | research method      | 研究方法            | yán jiū fāng fǎ    | método de investig | método de pesquisa
+ 59 | method used          | 使用方法            | shǐ yòng fāng fǎ   | método utilizado   | método utilizado  
+ 60 | calibrate equipment  | 校准设备            | jiào zhǔn shè bèi  | calibrar equipos   | calibrar equipamen
+ 61 | calibrate carefully  | 仔细校准            | zǐ xì jiào zhǔn    | calibrar cuidadosa | calibre cuidadosam

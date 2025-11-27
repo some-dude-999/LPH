@@ -1,0 +1,65 @@
+PACK 108: Phrasal Verbs 3
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | point out            | 指出              | zhǐ chū            | señalar            | destacar          
+  3 | rule out             | 排除              | pái chú            | descartar          | descartar         
+  4 | sort out             | 整理              | zhěng lǐ           | ordenar            | resolver          
+  5 | turn out             | 结果              | jié guǒ            | salir              | acabar            
+  6 | carry out            | 执行              | zhí xíng           | llevar a cabo      | realizar          
+  7 | bring about          | 带来              | dài lái            | provocar           | provocar          
+  8 | come across          | 遇到              | yù dào             | encontrarse        | me deparei        
+  9 | cut down             | 减少              | jiǎn shǎo          | reducir            | reduzir           
+ 10 | cut off              | 切断              | qiē duàn           | cortar             | cortado           
+ 11 | drop out             | 退学              | tuì xué            | abandonar          | desistir          
+ 12 | end up               | 最终              | zuì zhōng          | terminar           | acabar            
+ 13 | get away             | 走开              | zǒu kāi            | alejarse           | ir embora         
+ 14 | get over             | 克服              | kè fú              | superar            | superar           
+ 15 | go through           | 经历              | jīng lì            | pasar              | passar            
+ 16 | hand in              | 上交              | shàng jiāo         | entregar           | entregar          
+ 17 | leave out            | 省略              | shěng lüè          | dejar de lado      | deixar de fora    
+ 18 | let down             | 失望              | shī wàng           | decepcionar        | decepcionar       
+ 19 | look into            | 调查              | diào chá           | investigar         | dê uma olhada em  
+ 20 | pass out             | 昏倒              | hūn dào            | desmayarse         | desmaiar          
+ 21 | make up for          | 弥补              | mí bǔ              | compensar          | compensar         
+ 22 | point out mistake    | 指出错误            | zhǐ chū cuò wù     | señalar el error   | apontar erro      
+ 23 | let me point out     | 让我指出            | ràng wǒ zhǐ chū    | déjame señalar     | deixe-me ressaltar
+ 24 | rule out possibility | 排除可能性           | pái chú kě néng xì | descartar posibili | descarta possibili
+ 25 | can't rule out       | 不能排除            | bù néng pái chú    | no lo puedo descar | não posso descarta
+ 26 | sort out problem     | 解决问题            | jiě jué wèn tí     | solucionar el prob | resolver o problem
+ 27 | sort out the issue   | 解决问题            | jiě jué wèn tí     | solucionar el prob | resolver o problem
+ 28 | turn out well        | 结果很好            | jié guǒ hěn hǎo    | salir bien         | acabou bem        
+ 29 | turn out to be       | 原来是             | yuán lái shì       | resulta ser        | acabou sendo      
+ 30 | carry out plan       | 执行计划            | zhí xíng jì huà    | llevar a cabo el p | executar o plano  
+ 31 | carry out research   | 开展研究            | kāi zhǎn yán jiū   | realizar investiga | realizar pesquisas
+ 32 | bring about change   | 带来改变            | dài lái gǎi biàn   | provocar cambios   | trazer mudanças   
+ 33 | bring about improvem | 带来改善            | dài lái gǎi shàn   | lograr mejoras     | trazer melhorias  
+ 34 | come across somethin | 遇到一些事情          | yù dào yī xiē shì  | encontrar algo     | me deparei com alg
+ 35 | come across as       | 给人的印象是          | gěi rén de yìn xià | parecer            | parece            
+ 36 | cut down on          | 减少              | jiǎn shǎo          | reducir            | reduzir           
+ 37 | cut down expenses    | 削减开支            | xuē jiǎn kāi zhī   | reducir gastos     | reduzir despesas  
+ 38 | cut off power        | 切断电源            | qiē duàn diàn yuán | cortar la energía  | corte a energia   
+ 39 | get cut off          | 被切断             | bèi qiē duàn       | ser cortado        | ser cortado       
+ 40 | drop out of school   | 退学              | tuì xué            | abandonar la escue | abandonar a escola
+ 41 | drop out early       | 早退              | zǎo tuì            | abandonar temprano | desistir mais cedo
+ 42 | end up doing         | 最终做             | zuì zhōng zuò      | terminar haciendo  | acaba fazendo     
+ 43 | end up somewhere     | 最终到达某个地方        | zuì zhōng dào dá m | terminar en alguna | acabar em algum lu
+ 44 | get away from        | 远离              | yuǎn lí            | alejarse de        | fugir de          
+ 45 | get away with        | 摆脱              | bǎi tuō            | salirse con la suy | fugir             
+ 46 | get over it          | 克服它             | kè fú tā           | supéralo           | supere isso       
+ 47 | get over quickly     | 快点过去            | kuài diǎn guò qù   | superarlo rápidame | supere rapidamente
+ 48 | go through process   | 经历流程            | jīng lì liú chéng  | pasar por el proce | passar pelo proces
+ 49 | go through hard time | 度过艰难时期          | dù guò jiān nán sh | pasar por tiempos  | passar por momento
+ 50 | hand in assignment   | 交作业             | jiāo zuò yè        | entregar la tarea  | entregar tarefa   
+ 51 | hand in homework     | 交作业             | jiāo zuò yè        | entregar la tarea  | entregar o dever d
+ 52 | leave out details    | 省略细节            | shěng lüè xì jié   | omitir detalles    | omitir detalhes   
+ 53 | don't leave out      | 不要遗漏            | bú yào yí lòu      | no lo dejes fuera  | não deixe de fora 
+ 54 | let down by          | 让人失望            | ràng rén shī wàng  | decepcionado por   | decepcionado por  
+ 55 | feel let down        | 感到失望            | gǎn dào shī wàng   | me siento decepcio | me sinto decepcion
+ 56 | look into matter     | 探究事物            | tàn jiū shì wù     | investigar la mate | olhar para o assun
+ 57 | look into it         | 看看吧             | kàn kàn ba         | míralo             | dê uma olhada niss
+ 58 | pass out from        | 从               | cóng               | desmayarse de      | desmaiar de       
+ 59 | almost pass out      | 传出差点昏过去         | chuán chū chāi diǎ | casi me desmayo    | quase desmaiei    
+ 60 | make up for lost tim | 弥补失去的时间         | mí bǔ shī qù de sh | recuperar el tiemp | compensar o tempo 
+ 61 | make up for it       | 弥补它             | mí bǔ tā           | compensarlo        | compensar isso    

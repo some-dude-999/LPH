@@ -1,0 +1,65 @@
+PACK 103: Opinions & Arguments
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | opinion              | 意见              | yì jiàn            | opinión            | opinião           
+  3 | oppose               | 反对              | fǎn duì            | oponerse           | opor-se           
+  4 | view                 | 查看              | chá kàn            | ver                | ver               
+  5 | perspective          | 观点              | guān diǎn          | perspectiva        | perspectiva       
+  6 | argument             | 论点              | lùn diǎn           | argumento          | argumento         
+  7 | debate               | 辩论              | biàn lùn           | debate             | debate            
+  8 | claim                | 索赔              | suǒ péi            | reclamar           | reivindicação     
+  9 | assert               | 断言              | duàn yán           | afirmar            | afirmar           
+ 10 | contend              | 竞争              | jìng zhēng         | contender          | contender         
+ 11 | maintain             | 维持              | wéi chí            | mantener           | manter            
+ 12 | stance               | 立场              | lì chǎng           | postura            | postura           
+ 13 | standpoint           | 立场              | lì chǎng           | punto de vista     | ponto de vista    
+ 14 | viewpoint            | 观点              | guān diǎn          | punto de vista     | ponto de vista    
+ 15 | outlook              | 展望              | zhǎn wàng          | perspectiva        | perspectiva       
+ 16 | notion               | 概念              | gài niàn           | noción             | noção             
+ 17 | judgment             | 判断              | pàn duàn           | sentencia          | julgamento        
+ 18 | conviction           | 信念              | xìn niàn           | convicción         | convicção         
+ 19 | sentiment            | 情绪              | qíng xù            | sentimiento        | sentimento        
+ 20 | attitude             | 态度              | tài dù             | actitud            | atitude           
+ 21 | belief               | 信念              | xìn niàn           | creencia           | crença            
+ 22 | my opinion           | 我的意见            | wǒ de yì jiàn      | mi opinión         | minha opinião     
+ 23 | opinion on           | 对               | duì                | opinión sobre      | opinião sobre     
+ 24 | strongly oppose      | 的意见强烈反对         | de yì jiàn qiáng l | oponerse firmement | opor-se fortemente
+ 25 | oppose the idea      | 反对这个想法          | fǎn duì zhè ge xiǎ | oponerse a la idea | opor-se à ideia   
+ 26 | my view              | 我的看法            | wǒ de kàn fǎ       | mi punto de vista  | minha opinião     
+ 27 | point of view        | 观点              | guān diǎn          | punto de vista     | ponto de vista    
+ 28 | different perspectiv | 不同的视角           | bù tóng de shì jiǎ | perspectiva difere | perspectiva difere
+ 29 | from this perspectiv | 从这个角度看          | cóng zhè ge jiǎo d | desde esta perspec | nesta perspectiva 
+ 30 | strong argument      | 强有力的论据          | qiáng yǒu lì de lù | argumento fuerte   | argumento forte   
+ 31 | argument against     | 反对              | fǎn duì            | argumento en contr | argumento contra  
+ 32 | great debate         | 的论据伟大的辩论        | de lùn jù wěi dà d | gran debate        | grande debate     
+ 33 | debate about         | 辩论              | biàn lùn           | debate sobre       | debate sobre      
+ 34 | make a claim         | 提出索赔            | tí chū suǒ péi     | hacer un reclamo   | fazer uma reclamaç
+ 35 | claim that           | 声称              | shēng chēng        | afirmar que        | afirmam que       
+ 36 | I assert             | 我断言             | wǒ duàn yán        | Afirmo             | Eu afirmo         
+ 37 | assert that          | 断言              | duàn yán           | afirmar que        | afirmar que       
+ 38 | I contend            | 我认为             | wǒ rèn wéi         | Yo sostengo        | Eu afirmo         
+ 39 | contend that         | 认为              | rèn wéi            | sostiene que       | afirmam que       
+ 40 | maintain that        | 坚持认为            | jiān chí rèn wéi   | mantener que       | mantenha isso     
+ 41 | maintain position    | 维持立场            | wéi chí lì chǎng   | mantener la posici | manter posição    
+ 42 | firm stance          | 立场坚定            | lì chǎng jiān dìng | postura firme      | postura firme     
+ 43 | stance on            | 对               | duì                | postura sobre      | posição sobre     
+ 44 | from my standpoint   | 的立场从我的角度来看      | de lì chǎng cóng w | desde mi punto de  | do meu ponto de vi
+ 45 | standpoint of        | 立场的             | lì chǎng de        | punto de vista de  | ponto de vista de 
+ 46 | different viewpoint  | 的立场不同观点         | de lì chǎng bù tón | punto de vista dif | ponto de vista dif
+ 47 | viewpoint on         | 对               | duì                | punto de vista sob | ponto de vista sob
+ 48 | positive outlook     | 的观点积极的前景        | de guān diǎn jī jí | perspectiva positi | perspectiva positi
+ 49 | outlook on           | 展望              | zhǎn wàng          | perspectivas sobre | perspectivas sobre
+ 50 | general notion       | 一般概念            | yì bān gài niàn    | noción general     | noção geral       
+ 51 | notion that          | 认为              | rèn wéi            | noción de que      | noção de que      
+ 52 | good judgment        | 良好的判断力          | liáng hǎo de pàn d | buen juicio        | bom senso         
+ 53 | judgment call        | 判断力             | pàn duàn lì        | decisión judicial  | chamada de julgame
+ 54 | strong conviction    | 坚定的信念           | jiān dìng de xìn n | fuerte convicción  | forte convicção   
+ 55 | conviction that      | 坚信              | jiān xìn           | convicción de que  | convicção de que  
+ 56 | public sentiment     | 舆论              | yú lùn             | sentimiento públic | sentimento público
+ 57 | sentiment toward     | 对               | duì                | sentimiento hacia  | sentimento em rela
+ 58 | positive attitude    | 的情绪积极的态度        | de qíng xù jī jí d | actitud positiva   | atitude positiva  
+ 59 | attitude toward      | 对               | duì                | actitud hacia      | atitude em relação
+ 60 | strong belief        | 的态度坚定的信念        | de tài dù jiān dìn | creencia fuerte    | crença forte      
+ 61 | belief in            | 相信              | xiāng xìn          | creencia en        | crença em         

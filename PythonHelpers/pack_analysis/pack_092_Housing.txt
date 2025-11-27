@@ -1,0 +1,65 @@
+PACK 92: Housing
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | rent                 | 租金              | zū jīn             | alquiler           | alugar            
+  3 | lease                | 租赁              | zū lìn             | arrendamiento      | arrendamento      
+  4 | landlord             | 楼主              | lóu zhǔ            | propietario        | senhorio          
+  5 | tenant               | 租户              | zū hù              | inquilino          | inquilino         
+  6 | apartment            | 公寓              | gōng yù            | apartamento        | apartamento       
+  7 | mortgage             | 抵押贷款            | dǐ yā dài kuǎn     | hipoteca           | hipoteca          
+  8 | property             | 财产              | cái chǎn           | propiedad          | propriedade       
+  9 | neighborhood         | 邻里              | lín lǐ             | barrio             | bairro            
+ 10 | utilities            | 公用事业            | gōng yòng shì yè   | utilidades         | utilidades        
+ 11 | maintenance          | 维护              | wéi hù             | mantenimiento      | manutenção        
+ 12 | furnished            | 家具齐全            | jiā jù qí quán     | amueblado          | mobiliado         
+ 13 | unfurnished          | 不带家具            | bù dài jiā jù      | sin muebles        | sem mobília       
+ 14 | eviction             | 驱逐              | qū zhú             | desalojo           | despejo           
+ 15 | renovate             | 翻新              | fān xīn            | renovar            | renovar           
+ 16 | inspect              | 检查              | jiǎn chá           | inspeccionar       | inspecionar       
+ 17 | heating              | 供暖              | gōng nuǎn          | calefacción        | aquecimento       
+ 18 | cooling              | 冷却              | lěng què           | enfriamiento       | resfriamento      
+ 19 | relocate             | 搬迁              | bān qiān           | reubicar           | realocar          
+ 20 | dwelling             | 住宅              | zhù zhái           | vivienda           | habitação         
+ 21 | sublet               | 转租              | zhuǎn zū           | subarrendar        | sublocar          
+ 22 | pay rent             | 支付租金            | zhī fù zū jīn      | pagar el alquiler  | pagar aluguel     
+ 23 | rent increase        | 租金上涨            | zū jīn shàng zhǎng | aumento del alquil | aumento de aluguel
+ 24 | sign lease           | 签订租约            | qiān dìng zū yuē   | firmar contrato de | assinar contrato d
+ 25 | lease agreement      | 租赁协议            | zū lìn xié yì      | contrato de arrend | contrato de locaçã
+ 26 | contact landlord     | 联系楼主            | lián xì lóu zhǔ    | contactar al propi | contactar o senhor
+ 27 | landlord approval    | 楼主同意            | lóu zhǔ tóng yì    | aprobación del pro | aprovação do senho
+ 28 | new tenant           | 新租户             | xīn zū hù          | nuevo inquilino    | novo inquilino    
+ 29 | tenant rights        | 租户权利            | zū hù quán lì      | derechos del inqui | direitos do inquil
+ 30 | studio apartment     | 单间公寓            | dān jiān gōng yù   | apartamento tipo e | apartamento estúdi
+ 31 | apartment complex    | 公寓大楼            | gōng yù dà lóu     | complejo de aparta | complexo de aparta
+ 32 | pay mortgage         | 支付抵押贷款          | zhī fù dǐ yā dài k | pagar la hipoteca  | pagar hipoteca    
+ 33 | mortgage payment     | 按揭付款            | àn jiē fù kuǎn     | pago de la hipotec | pagamento de hipot
+ 34 | private property     | 私有财产            | sī yǒu cái chǎn    | propiedad privada  | propriedade privad
+ 35 | property value       | 财产价值            | cái chǎn jià zhí   | valor de la propie | valor da proprieda
+ 36 | nice neighborhood    | 不错的邻居           | bù cuò de lín jū   | bonito barrio      | bairro legal      
+ 37 | neighborhood watch   | 邻里守望            | lín lǐ shǒu wàng   | vigilancia vecinal | vigilância de bair
+ 38 | pay utilities        | 支付水电费           | zhī fù shuǐ diàn f | pagar servicios pú | pagar serviços púb
+ 39 | utilities included   | 包括实用程序          | bāo kuò shí yòng c | servicios públicos | utilidades incluíd
+ 40 | regular maintenance  | 定期保养            | dìng qī bǎo yǎng   | mantenimiento regu | manutenção regular
+ 41 | maintenance fee      | 维护费             | wéi hù fèi         | cuota de mantenimi | taxa de manutenção
+ 42 | fully furnished      | 家具齐全            | jiā jù qí quán     | completamente amue | totalmente mobilia
+ 43 | furnished apartment  | 带家具的公寓          | dài jiā jù de gōng | apartamento amuebl | apartamento mobili
+ 44 | unfurnished unit     | 不带家具的单位         | bù dài jiā jù de d | unidad sin muebles | unidade não mobili
+ 45 | unfurnished rental   | 不带家具出租          | bù dài jiā jù chū  | alquiler sin muebl | aluguel sem mobíli
+ 46 | facing eviction      | 面临驱逐            | miàn lín qū zhú    | enfrentando el des | enfrentando despej
+ 47 | eviction notice      | 驱逐通知            | qū zhú tōng zhī    | aviso de desalojo  | aviso de despejo  
+ 48 | renovate house       | 装修房子            | zhuāng xiū fáng zi | renovar casa       | reformar casa     
+ 49 | renovate kitchen     | 装修厨房            | zhuāng xiū chú fán | renovar la cocina  | renovar cozinha   
+ 50 | inspect property     | 检查财产            | jiǎn chá cái chǎn  | inspeccionar la pr | fiscalizar imóvel 
+ 51 | home inspect         | 上门检查            | shàng mén jiǎn chá | inspeccionar la ca | inspeção residenci
+ 52 | central heating      | 中央供暖            | zhōng yāng gōng nu | calefacción centra | aquecimento centra
+ 53 | heating system       | 供暖系统            | gōng nuǎn xì tǒng  | sistema de calefac | sistema de aquecim
+ 54 | air cooling          | 风冷              | fēng lěng          | refrigeración por  | refrigeração a ar 
+ 55 | cooling system       | 冷却系统            | lěng què xì tǒng   | sistema de refrige | sistema de refrige
+ 56 | relocate to          | 搬迁至             | bān qiān zhì       | trasladarse a      | mudar para        
+ 57 | relocate office      | 搬迁办公室           | bān qiān bàn gōng  | reubicar la oficin | mudar de escritóri
+ 58 | small dwelling       | 小住宅             | xiǎo zhù zhái      | vivienda pequeña   | pequena habitação 
+ 59 | dwelling place       | 居住地             | jū zhù dì          | lugar de residenci | morada            
+ 60 | sublet apartment     | 转租公寓            | zhuǎn zū gōng yù   | apartamento subarr | apartamento subloc
+ 61 | sublet room          | 转租房间            | zhuǎn zū fáng jiān | habitación subarre | quarto de sublocaç

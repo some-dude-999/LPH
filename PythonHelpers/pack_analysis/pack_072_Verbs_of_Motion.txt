@@ -1,0 +1,65 @@
+PACK 72: Verbs of Motion
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | jump                 | 跳               | tiào               | saltar             | pular             
+  3 | leap                 | 飞跃              | fēi yuè            | salto              | salto             
+  4 | lift                 | 电梯              | diàn tī            | ascensor           | levantar          
+  5 | push                 | 推               | tuī                | empujar            | empurrar          
+  6 | pull                 | 拉               | lā                 | tirar              | puxar             
+  7 | carry                | 携带              | xié dài            | llevar             | carregar          
+  8 | roll                 | 卷               | juǎn               | rodar              | rolar             
+  9 | crawl                | 爬行              | pá xíng            | gatear             | rastejar          
+ 10 | reach                | 到达              | dào dá             | alcance            | alcance           
+ 11 | bend                 | 弯曲              | wān qū             | doblar             | dobrar            
+ 12 | dash                 | 破折号             | pò zhé hào         | guión              | traço             
+ 13 | ascend               | 提升              | tí shēng           | ascender           | ascender          
+ 14 | descend              | 下降              | xià jiàng          | descender          | descer            
+ 15 | hover                | 悬停              | xuán tíng          | flotar             | pairar            
+ 16 | glide                | 滑翔              | huá xiáng          | deslizarse         | deslizar          
+ 17 | drift                | 漂移              | piāo yí            | deriva             | deriva            
+ 18 | tumble               | 翻滚              | fān gǔn            | caer               | tombo             
+ 19 | gallop               | 驰骋              | chí chěng          | galopar            | galope            
+ 20 | sprint               | 冲刺              | chōng cì           | carrera de velocid | corrida           
+ 21 | waddle               | 摇摇晃晃            | yáo yáo huàng huǎn | contonearse        | gingado           
+ 22 | jump up              | 跳起来             | tiào qǐ lái        | saltar             | pular             
+ 23 | jump high            | 跳高              | tiào gāo           | saltar alto        | pular alto        
+ 24 | leap forward         | 飞跃              | fēi yuè            | salto adelante     | salto em frente   
+ 25 | leap of faith        | 信仰之跃            | xìn yǎng zhī yuè   | acto de fe         | salto de fé       
+ 26 | lift up              | 举起              | jǔ qǐ              | levantar           | levante           
+ 27 | lift heavy           | 举起重物            | jǔ qǐ zhòng wù     | levantar objetos p | levantar peso     
+ 28 | push forward         | 向前推进            | xiàng qián tuī jìn | seguir adelante    | avançar           
+ 29 | push back            | 推回              | tuī huí            | empujar hacia atrá | recuar            
+ 30 | pull out             | 拉出来             | lā chū lái         | sacar              | retirar           
+ 31 | pull up              | 拉起              | lā qǐ              | levantarse         | puxe para cima    
+ 32 | carry forward        | 发扬光大            | fā yáng guāng dà   | llevar adelante    | levar adiante     
+ 33 | carry over           | 结转              | jié zhuǎn          | transferir         | transportar       
+ 34 | roll over            | 翻滚              | fān gǔn            | darse la vuelta    | rolar             
+ 35 | roll out             | 推出              | tuī chū            | desplegar          | lançar            
+ 36 | crawl around         | 爬行              | pá xíng            | gatear             | rastejar          
+ 37 | crawl through        | 爬过              | pá guò             | gatear             | rastejar          
+ 38 | reach out            | 伸出手             | shēn chū shǒu      | llegar             | entre em contato  
+ 39 | reach for            | 伸手去拿            | shēn shǒu qù ná    | alcanzar           | alcançar          
+ 40 | bend over            | 弯腰              | wān yāo            | inclinarse         | curvar-se         
+ 41 | bend down            | 弯下腰             | wān xià yāo        | agacharse          | abaixe-se         
+ 42 | make a dash          | 破折号             | pò zhé hào         | haz una carrera    | faça um traço     
+ 43 | dash away            | 冲走              | chōng zǒu          | huye               | sair correndo     
+ 44 | ascend slowly        | 缓慢上升            | huǎn màn shàng shē | ascender lentament | subir lentamente  
+ 45 | ascend the stairs    | 爬楼梯             | pá lóu tī          | subir las escalera | subir as escadas  
+ 46 | descend quickly      | 快速下降            | kuài sù xià jiàng  | descender rápidame | desça rapidamente 
+ 47 | descend the mountain | 下山              | xià shān           | descender la monta | descer a montanha 
+ 48 | hover over           | 将鼠标悬停在          | jiāng shǔ biāo xuá | pasa el cursor sob | passe o mouse sobr
+ 49 | hover around         | 上悬停在            | shàng xuán tíng zà | flotar alrededor   | passe o mouse     
+ 50 | glide through        | 周围滑过            | zhōu wéi huá guò   | deslizarse         | deslizar          
+ 51 | glide across         | 滑过              | huá guò            | deslizarse         | deslizar          
+ 52 | drift away           | 渐行渐远            | jiàn xíng jiàn yuǎ | alejarse           | se afastar        
+ 53 | drift off            | 渐行渐远            | jiàn xíng jiàn yuǎ | quedarse dormido   | adormecer         
+ 54 | tumble down          | 跌倒              | diē dǎo            | caer               | desabar           
+ 55 | tumble over          | 翻倒              | fān dǎo            | caerse             | tombar            
+ 56 | gallop away          | 驰骋远方            | chí chěng yuǎn fān | galopar            | galopar           
+ 57 | horse gallop         | 马驰骋             | mǎ chí chěng       | galope del caballo | galope do cavalo  
+ 58 | sprint fast          | 快速冲刺            | kuài sù chōng cì   | corre rápido       | correr rápido     
+ 59 | sprint to            | 冲刺到             | chōng cì dào       | correr a           | correr para       
+ 60 | waddle around        | 摇摇晃晃            | yáo yáo huàng huǎn | contonearse        | andar por aí      
+ 61 | waddle like          | 像摇摇晃晃地          | xiàng yáo yáo huàn | contonearse como   | gingar como       

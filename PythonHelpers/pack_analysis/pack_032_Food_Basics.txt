@@ -1,0 +1,65 @@
+PACK 32: Food Basics
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | food                 | 食物              | shí wù             | comida             | comida            
+  3 | water                | 水               | shuǐ               | agua               | água              
+  4 | bread                | 面包              | miàn bāo           | pan                | pão               
+  5 | rice                 | 米饭              | mǐ fàn             | arroz              | arroz             
+  6 | meat                 | 肉               | ròu                | carne              | carne             
+  7 | egg                  | 鸡蛋              | jī dàn             | huevo              | ovo               
+  8 | milk                 | 牛奶              | niú nǎi            | leche              | leite             
+  9 | cheese               | 奶酪              | nǎi lào            | queso              | queijo            
+ 10 | fruit                | 水果              | shuǐ guǒ           | fruta              | fruta             
+ 11 | apple                | 苹果              | píng guǒ           | manzana            | maçã              
+ 12 | banana               | 香蕉              | xiāng jiāo         | plátano            | banana            
+ 13 | vegetable            | 蔬菜              | shū cài            | vegetal            | vegetal           
+ 14 | potato               | 马铃薯             | mǎ líng shǔ        | patata             | batata            
+ 15 | salad                | 沙拉              | shā lā             | ensalada           | salada            
+ 16 | soup                 | 汤               | tāng               | sopa               | sopa              
+ 17 | sugar                | 糖               | táng               | azúcar             | açúcar            
+ 18 | salt                 | 盐               | yán                | sal                | sal               
+ 19 | oil                  | 油               | yóu                | petróleo           | óleo              
+ 20 | snack                | 小吃              | xiǎo chī           | merienda           | lanche            
+ 21 | meal                 | 餐               | cān                | comida             | refeição          
+ 22 | junk food            | 垃圾食品            | lā jī shí pǐn      | comida chatarra    | comida lixo       
+ 23 | food court           | 美食广场            | měi shí guǎng chǎn | patio de comidas   | praça de alimentaç
+ 24 | drinking water       | 饮用水             | yǐn yòng shuǐ      | agua potable       | água potável      
+ 25 | hot water            | 热水              | rè shuǐ            | agua caliente      | água quente       
+ 26 | fresh bread          | 新鲜面包            | xīn xiān miàn bāo  | pan fresco         | pão fresco        
+ 27 | bread and butter     | 面包和黄油           | miàn bāo hé huáng  | pan y mantequilla  | pão com manteiga  
+ 28 | fried rice           | 炒饭              | chǎo fàn           | arroz frito        | arroz frito       
+ 29 | rice bowl            | 饭碗              | fàn wǎn            | cuenco de arroz    | tigela de arroz   
+ 30 | red meat             | 红肉              | hóng ròu           | carne roja         | carne vermelha    
+ 31 | meat ball            | 肉丸              | ròu wán            | bola de carne      | bolinho de carne  
+ 32 | fried egg            | 煎蛋              | jiān dàn           | huevo frito        | ovo frito         
+ 33 | egg white            | 蛋清              | dàn qīng           | clara de huevo     | clara de ovo      
+ 34 | whole milk           | 全脂牛奶            | quán zhī niú nǎi   | leche entera       | leite integral    
+ 35 | milk shake           | 奶昔              | nǎi xī             | batido de leche    | milk-shake        
+ 36 | cream cheese         | 奶油奶酪            | nǎi yóu nǎi lào    | queso crema        | queijo cremoso    
+ 37 | grilled cheese       | 烤奶酪             | kǎo nǎi lào        | queso asado        | queijo grelhado   
+ 38 | fresh fruit          | 新鲜水果            | xīn xiān shuǐ guǒ  | fruta fresca       | fruta fresca      
+ 39 | fruit salad          | 水果沙拉            | shuǐ guǒ shā lā    | ensalada de frutas | salada de frutas  
+ 40 | red apple            | 红苹果             | hóng píng guǒ      | manzana roja       | maçã vermelha     
+ 41 | apple pie            | 苹果派             | píng guǒ pài       | tarta de manzana   | torta de maçã     
+ 42 | ripe banana          | 成熟的香蕉           | chéng shú de xiāng | plátano maduro     | banana madura     
+ 43 | banana split         | 香蕉船             | xiāng jiāo chuán   | banana split       | banana split      
+ 44 | fresh vegetable      | 新鲜蔬菜            | xīn xiān shū cài   | verdura fresca     | legumes frescos   
+ 45 | vegetable soup       | 蔬菜汤             | shū cài tāng       | sopa de verduras   | sopa de legumes   
+ 46 | baked potato         | 烤土豆             | kǎo tǔ dòu         | patata al horno    | batata assada     
+ 47 | potato chips         | 薯片              | shǔ piàn           | patatas fritas     | batatas fritas    
+ 48 | green salad          | 绿色沙拉            | lǜ sè shā lā       | ensalada verde     | salada verde      
+ 49 | salad bar            | 沙拉吧             | shā lā ba          | barra de ensaladas | buffet de saladas 
+ 50 | hot soup             | 热汤              | rè tāng            | sopa caliente      | sopa quente       
+ 51 | soup kitchen         | 汤厨房             | tāng chú fáng      | comedor social     | cozinha comunitári
+ 52 | white sugar          | 白糖              | bái táng           | azúcar blanca      | açúcar branco     
+ 53 | sugar free           | 无糖              | wú táng            | sin azúcar         | sem açúcar        
+ 54 | table salt           | 食盐              | shí yán            | sal de mesa        | sal de cozinha    
+ 55 | sea salt             | 海盐              | hǎi yán            | sal marina         | sal marinho       
+ 56 | olive oil            | 橄榄油             | gǎn lǎn yóu        | aceite de oliva    | azeite            
+ 57 | cooking oil          | 食用油             | shí yòng yóu       | aceite de cocina   | óleo de cozinha   
+ 58 | quick snack          | 快餐              | kuài cān           | merienda rápida    | lanche rápido     
+ 59 | snack bar            | 小吃店             | xiǎo chī diàn      | cafetería          | lanchonete        
+ 60 | big meal             | 大餐              | dà cān             | gran comida        | grande refeição   
+ 61 | meal time            | 用餐时间            | yòng cān shí jiān  | hora de comer      | hora da refeição  

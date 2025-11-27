@@ -1,0 +1,65 @@
+PACK 150: Literary Devices
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | alliteration         | 头韵              | tóu yùn            | aliteración        | aliteração        
+  3 | hyperbole            | 夸张              | kuā zhāng          | hipérbole          | hipérbole         
+  4 | sarcasm              | 讽刺              | fěng cì            | sarcasmo           | sarcasmo          
+  5 | personification      | 拟人化             | nǐ rén huà         | personificación    | personificação    
+  6 | oxymoron             | 矛盾修饰法           | máo dùn xiū shì fǎ | oxímoron           | oxímoro           
+  7 | paradox              | 悖论              | bèi lùn            | paradoja           | paradoxo          
+  8 | foreshadowing        | 预示              | yù shì             | presagio           | prenúncio         
+  9 | flashback            | 闪回              | shǎn huí           | flashback          | retrospectiva     
+ 10 | allusion             | 典故              | diǎn gù            | alusión            | alusão            
+ 11 | symbolism            | 象征意义            | xiàng zhēng yì yì  | simbolismo         | simbolismo        
+ 12 | motif                | 主题              | zhǔ tí             | motivo             | motivo            
+ 13 | archetype            | 原型              | yuán xíng          | arquetipo          | arquétipo         
+ 14 | euphemism            | 委婉说法            | wěi wǎn shuō fǎ    | eufemismo          | eufemismo         
+ 15 | connotation          | 内涵              | nèi hán            | connotación        | conotação         
+ 16 | juxtaposition        | 并置              | bìng zhì           | yuxtaposición      | justaposição      
+ 17 | analogy              | 类比              | lèi bǐ             | analogía           | analogia          
+ 18 | understatement       | 轻描淡写            | qīng miáo dàn xiě  | eufemismo          | eufemismo         
+ 19 | onomatopoeia         | 象声词             | xiàng shēng cí     | onomatopeya        | onomatopeia       
+ 20 | assonance            | 协和              | xié hé             | asonancia          | assonância        
+ 21 | synecdoche           | 提喻              | tí yù              | sinécdoque         | sinédoque         
+ 22 | use alliteration     | 使用头韵            | shǐ yòng tóu yùn   | utilizar aliteraci | usar aliteração   
+ 23 | alliteration example | 头韵示例            | tóu yùn shì lì     | ejemplo de alitera | exemplo de alitera
+ 24 | obvious hyperbole    | 明显夸张            | míng xiǎn kuā zhān | hipérbole obvia    | hipérbole óbvia   
+ 25 | hyperbole for        | 夸张用于            | kuā zhāng yòng yú  | hipérbole para     | hipérbole para    
+ 26 | dripping sarcasm     | 满是讽刺            | mǎn shì fěng cì    | goteando sarcasmo  | pingando sarcasmo 
+ 27 | sarcasm intended     | 讽刺的意思           | fěng cì de yì si   | sarcasmo intencion | sarcasmo pretendid
+ 28 | use personification  | 使用拟人化           | shǐ yòng nǐ rén hu | usar personificaci | usar personificaçã
+ 29 | personification of   | 拟人化的            | nǐ rén huà de      | personificación de | personificação de 
+ 30 | classic oxymoron     | 经典矛盾修辞          | jīng diǎn máo dùn  | oxímoron clásico   | oxímoro clássico  
+ 31 | oxymoron like        | 矛盾修辞如           | máo dùn xiū cí rú  | oxímoron como      | oxímoro como      
+ 32 | apparent paradox     | 明显的悖论           | míng xiǎn de bèi l | aparente paradoja  | aparente paradoxo 
+ 33 | paradox of           | 悖论的             | bèi lùn de         | paradoja de        | paradoxo de       
+ 34 | use foreshadowing    | 使用伏笔            | shǐ yòng fú bǐ     | utilizar presagio  | usar prenúncio    
+ 35 | foreshadowing events | 预示事件            | yù shì shì jiàn    | presagios de event | prenunciando event
+ 36 | narrative flashback  | 叙事闪回            | xù shì shǎn huí    | flashback narrativ | flashback narrativ
+ 37 | flashback to         | 闪回              | shǎn huí           | flashback a        | flashback de      
+ 38 | literary allusion    | 文学典故            | wén xué diǎn gù    | alusión literaria  | alusão literária  
+ 39 | allusion to          | 暗示              | àn shì             | alusión a          | alusão a          
+ 40 | rich symbolism       | 丰富的象征意义         | fēng fù de xiàng z | rico simbolismo    | rico simbolismo   
+ 41 | symbolism in         | 象征于             | xiàng zhēng yú     | simbolismo en      | simbolismo em     
+ 42 | recurring motif      | 重复出现的主题         | chóng fù chū xiàn  | motivo recurrente  | motivo recorrente 
+ 43 | motif of             | 主题的             | zhǔ tí de          | motivo de          | motivo de         
+ 44 | hero archetype       | 英雄原型            | yīng xióng yuán xí | arquetipo de héroe | arquétipo do herói
+ 45 | archetype of         | 原型的             | yuán xíng de       | arquetipo de       | arquétipo de      
+ 46 | polite euphemism     | 礼貌委婉语           | lǐ mào wěi wǎn yǔ  | eufemismo cortés   | eufemismo educado 
+ 47 | euphemism for        | 委婉说法用于          | wěi wǎn shuō fǎ yò | eufemismo para     | eufemismo para    
+ 48 | negative connotation | 负面含义            | fù miàn hán yì     | connotación negati | conotação negativa
+ 49 | connotation of       | 内涵的             | nèi hán de         | connotación de     | conotação de      
+ 50 | stark juxtaposition  | 鲜明对比            | xiān míng duì bǐ   | yuxtaposición marc | justaposição total
+ 51 | juxtaposition of     | 并置的             | bìng zhì de        | yuxtaposición de   | justaposição de   
+ 52 | useful analogy       | 有用的类比           | yǒu yòng de lèi bǐ | analogía útil      | analogia útil     
+ 53 | analogy between      | 之间的类比           | zhī jiān de lèi bǐ | analogía entre     | analogia entre    
+ 54 | deliberate understat | 故意轻描淡写          | gù yì qīng miáo dà | subestimación deli | eufemismo delibera
+ 55 | understatement of    | 轻描淡写            | qīng miáo dàn xiě  | subestimación de   | eufemismo de      
+ 56 | use onomatopoeia     | 使用象声词           | shǐ yòng xiàng shē | utilizar onomatope | usar onomatopeia  
+ 57 | onomatopoeia like    | 象声词如            | xiàng shēng cí rú  | onomatopeya como   | onomatopeia como  
+ 58 | vowel assonance      | 元音协和            | yuán yīn xié hé    | asonancia vocal    | assonância vocálic
+ 59 | assonance in         | 谐音于             | xié yīn yú         | asonancia en       | assonância em     
+ 60 | use synecdoche       | 使用提喻法           | shǐ yòng tí yù fǎ  | utilizar sinécdoqu | usar sinédoque    
+ 61 | synecdoche for       | 提喻              | tí yù              | sinécdoque para    | sinédoque para    

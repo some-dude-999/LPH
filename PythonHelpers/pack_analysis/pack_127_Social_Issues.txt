@@ -1,0 +1,65 @@
+PACK 127: Social Issues
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | society              | 社会              | shè huì            | sociedad           | sociedade         
+  3 | social               | 社交              | shè jiāo           | sociales           | sociais           
+  4 | community            | 社区              | shè qū             | comunidad          | comunidade        
+  5 | equality             | 平等              | píng děng          | igualdad           | igualdade         
+  6 | inequality           | 不平等             | bù píng děng       | desigualdad        | desigualdade      
+  7 | discrimination       | 歧视              | qí shì             | discriminación     | discriminação     
+  8 | prejudice            | 偏见              | piān jiàn          | prejuicio          | preconceito       
+  9 | poverty              | 贫穷              | pín qióng          | pobreza            | pobreza           
+ 10 | wealth               | 财富              | cái fù             | riqueza            | riqueza           
+ 11 | disparity            | 差距              | chā jù             | disparidad         | disparidade       
+ 12 | oppression           | 压迫              | yā pò              | opresión           | opressão          
+ 13 | diversity            | 多样性             | duō yàng xìng      | diversidad         | diversidade       
+ 14 | inclusion            | 包含              | bāo hán            | inclusión          | inclusão          
+ 15 | minority             | 少数派             | shǎo shù pài       | minoría            | minoria           
+ 16 | activism             | 行动主义            | xíng dòng zhǔ yì   | activismo          | ativismo          
+ 17 | protest              | 抗议              | kàng yì            | protesta           | protesto          
+ 18 | reform               | 改革              | gǎi gé             | reforma            | reforma           
+ 19 | welfare              | 福利              | fú lì              | bienestar          | bem-estar         
+ 20 | segregation          | 隔离              | gé lí              | segregación        | segregação        
+ 21 | marginalization      | 边缘化             | biān yuán huà      | marginación        | marginalização    
+ 22 | modern society       | 现代社会            | xiàn dài shè huì   | sociedad moderna   | sociedade moderna 
+ 23 | society as a whole   | 整个社会            | zhěng gè shè huì   | la sociedad en su  | sociedade como um 
+ 24 | social life          | 社交生活            | shè jiāo shēng huó | vida social        | vida social       
+ 25 | social issue         | 社会问题            | shè huì wèn tí     | cuestión social    | questão social    
+ 26 | local community      | 当地社区            | dāng dì shè qū     | comunidad local    | comunidade local  
+ 27 | community service    | 社区服务            | shè qū fú wù       | servicio comunitar | serviço comunitári
+ 28 | gender equality      | 性别平等            | xìng bié píng děng | igualdad de género | igualdade de géner
+ 29 | equality for all     | 人人平等            | rén rén píng děng  | igualdad para todo | igualdade para tod
+ 30 | income inequality    | 收入不平等           | shōu rù bù píng dě | desigualdad de ing | desigualdade de re
+ 31 | inequality gap       | 不平等差距           | bù píng děng chà j | brecha de desigual | lacuna de desigual
+ 32 | racial discriminatio | 种族歧视            | zhǒng zú qí shì    | discriminación rac | discriminação raci
+ 33 | discrimination again | 对某群体的歧视         | duì mǒu qún tǐ de  | discriminación con | discriminação cont
+ 34 | personal prejudice   | 个人偏见            | gè rén piān jiàn   | prejuicio personal | preconceito pessoa
+ 35 | prejudice toward     | 对某群体的偏见         | duì mǒu qún tǐ de  | prejuicio hacia    | preconceito em rel
+ 36 | extreme poverty      | 赤贫              | chì pín            | pobreza extrema    | pobreza extrema   
+ 37 | poverty level        | 贫困水平            | pín kùn shuǐ píng  | nivel de pobreza   | nível de pobreza  
+ 38 | accumulate wealth    | 积累财富            | jī lěi cái fù      | acumular riqueza   | acumular riqueza  
+ 39 | wealth distribution  | 财富分配            | cái fù fēn pèi     | distribución de la | distribuição de ri
+ 40 | wage disparity       | 工资差距            | gōng zī chā jù     | disparidad salaria | disparidade salari
+ 41 | disparity between    | 之间的差距           | zhī jiān de chā jù | disparidad entre   | disparidade entre 
+ 42 | fight oppression     | 反抗压迫            | fǎn kàng yā pò     | luchar contra la o | combater a opressã
+ 43 | oppression of        | 的压迫             | de yā pò           | opresión de        | opressão de       
+ 44 | cultural diversity   | 文化多样性           | wén huà duō yàng x | diversidad cultura | diversidade cultur
+ 45 | diversity training   | 多元化培训           | duō yuán huà péi x | formación en diver | formação em divers
+ 46 | promote inclusion    | 促进包容            | cù jìn bāo róng    | promover la inclus | promover a inclusã
+ 47 | inclusion policy     | 包容政策            | bāo róng zhèng cè  | política de inclus | política de inclus
+ 48 | ethnic minority      | 少数民族            | shǎo shù mín zú    | minoría étnica     | minoria étnica    
+ 49 | minority group       | 少数群体            | shǎo shù qún tǐ    | grupo minoritario  | grupo minoritário 
+ 50 | political activism   | 政治活动主义          | zhèng zhì huó dòng | activismo político | ativismo político 
+ 51 | activism movement    | 激进主义运动          | jī jìn zhǔ yì yùn  | movimiento de acti | movimento de ativi
+ 52 | peaceful protest     | 和平抗议            | hé píng kàng yì    | protesta pacífica  | protesto pacífico 
+ 53 | protest march        | 抗议游行            | kàng yì yóu xíng   | marcha de protesta | marcha de protesto
+ 54 | social reform        | 社会改革            | shè huì gǎi gé     | reforma social     | reforma social    
+ 55 | reform policy        | 改革政策            | gǎi gé zhèng cè    | política de reform | política de reform
+ 56 | social welfare       | 社会福利            | shè huì fú lì      | bienestar social   | bem-estar social  
+ 57 | welfare program      | 福利计划            | fú lì jì huà       | programa de bienes | programa de bem-es
+ 58 | racial segregation   | 种族隔离            | zhǒng zú gé lí     | segregación racial | segregação racial 
+ 59 | segregation era      | 种族隔离时代          | zhǒng zú gé lí shí | era de la segregac | era da segregação 
+ 60 | social marginalizati | 社会边缘化           | shè huì biān yuán  | marginación social | marginalização soc
+ 61 | marginalization of   | 边缘化             | biān yuán huà      | marginalización de | marginalização de 

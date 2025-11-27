@@ -1,0 +1,65 @@
+PACK 60: Geography
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | land                 | 土地              | tǔ dì              | tierra             | terreno           
+  3 | sea                  | 海               | hǎi                | mar                | mar               
+  4 | coast                | 海岸              | hǎi àn             | costa              | costa             
+  5 | shore                | 岸边              | àn biān            | orilla             | costa             
+  6 | hill                 | 山               | shān               | colina             | colina            
+  7 | cliff                | 悬崖              | xuán yá            | acantilado         | penhasco          
+  8 | cave                 | 洞穴              | dòng xué           | cueva              | caverna           
+  9 | waterfall            | 瀑布              | pù bù              | cascada            | cachoeira         
+ 10 | jungle               | 丛林              | cóng lín           | selva              | selva             
+ 11 | field                | 领域              | lǐng yù            | campo              | campo             
+ 12 | farm                 | 农场              | nóng chǎng         | granja             | fazenda           
+ 13 | trail                | 踪迹              | zōng jì            | sendero            | trilha            
+ 14 | pond                 | 池塘              | chí táng           | estanque           | lagoa             
+ 15 | bay                  | 湾               | wān                | bahía              | baía              
+ 16 | continent            | 大陆              | dà lù              | continente         | continente        
+ 17 | region               | 地区              | dì qū              | región             | região            
+ 18 | landscape            | 风景              | fēng jǐng          | paisaje            | paisagem          
+ 19 | horizon              | 地平线             | dì píng xiàn       | horizonte          | horizonte         
+ 20 | border               | 边框              | biān kuāng         | frontera           | fronteira         
+ 21 | terrain              | 地形              | dì xíng            | terreno            | terreno           
+ 22 | dry land             | 旱地              | hàn dì             | tierra seca        | terra seca        
+ 23 | land owner           | 土地所有者           | tǔ dì suǒ yǒu zhě  | propietario de la  | proprietário do te
+ 24 | open sea             | 公海              | gōng hǎi           | mar abierto        | mar aberto        
+ 25 | sea level            | 海平面             | hǎi píng miàn      | nivel del mar      | nível do mar      
+ 26 | west coast           | 西海岸             | xī hǎi àn          | costa oeste        | costa oeste       
+ 27 | coast line           | 海岸线             | hǎi àn xiàn        | línea costera      | linha costeira    
+ 28 | lake shore           | 湖岸              | hú àn              | orilla del lago    | margem do lago    
+ 29 | shore line           | 海岸线             | hǎi àn xiàn        | línea costera      | linha costeira    
+ 30 | green hill           | 青山              | qīng shān          | colina verde       | colina verde      
+ 31 | hill top             | 山顶              | shān dǐng          | cima de la colina  | topo da colina    
+ 32 | steep cliff          | 陡峭的悬崖           | dǒu qiào de xuán y | acantilado escarpa | penhasco íngreme  
+ 33 | cliff edge           | 悬崖边缘            | xuán yá biān yuán  | borde del acantila | beira do penhasco 
+ 34 | dark cave            | 黑暗的洞穴           | hēi àn de dòng xué | cueva oscura       | caverna escura    
+ 35 | cave entrance        | 洞穴入口            | dòng xué rù kǒu    | entrada a la cueva | entrada da caverna
+ 36 | big waterfall        | 大瀑布             | dà pù bù           | gran cascada       | grande cachoeira  
+ 37 | waterfall view       | 瀑布景观            | pù bù jǐng guān    | vista de la cascad | vista da cachoeira
+ 38 | dense jungle         | 茂密的丛林           | mào mì de cóng lín | selva densa        | selva densa       
+ 39 | jungle animal        | 丛林动物            | cóng lín dòng wù   | animal de la selva | animal da selva   
+ 40 | open field           | 开放领域            | kāi fàng lǐng yù   | campo abierto      | campo aberto      
+ 41 | field trip           | 实地考察            | shí dì kǎo chá     | excursión          | visita de campo   
+ 42 | family farm          | 家庭农场            | jiā tíng nóng chǎn | granja familiar    | fazenda familiar  
+ 43 | farm land            | 农田              | nóng tián          | tierras agrícolas  | terras agrícolas  
+ 44 | hiking trail         | 远足径             | yuǎn zú jìng       | ruta de senderismo | trilha de caminhad
+ 45 | trail mix            | 混合干果            | hùn hé gān guǒ     | mezcla de frutos s | mistura de trilhas
+ 46 | small pond           | 小池塘             | xiǎo chí táng      | estanque pequeño   | pequeno lago      
+ 47 | fish pond            | 鱼池              | yú chí             | estanque de peces  | viveiro de peixes 
+ 48 | calm bay             | 平静的海湾           | píng jìng de hǎi w | bahía tranquila    | baía calma        
+ 49 | bay area             | 湾区              | wān qū             | zona de la bahía   | área da baía      
+ 50 | large continent      | 大大陆             | dà dà lù           | gran continente    | grande continente 
+ 51 | continent map        | 大陆地图            | dà lù dì tú        | mapa del continent | mapa do continente
+ 52 | local region         | 当地              | dāng dì            | región local       | região local      
+ 53 | region wide          | 区域范围            | qū yù fàn wéi      | toda la región     | em toda a região  
+ 54 | beautiful landscape  | 美丽的风景           | měi lì de fēng jǐn | hermoso paisaje    | bela paisagem     
+ 55 | landscape painting   | 山水画             | shān shuǐ huà      | pintura de paisaje | pintura de paisage
+ 56 | distant horizon      | 遥远的地平线          | yáo yuǎn de dì pín | horizonte lejano   | horizonte distante
+ 57 | horizon line         | 地平线             | dì píng xiàn       | línea del horizont | linha do horizonte
+ 58 | country border       | 国家边界            | guó jiā biān jiè   | frontera del país  | fronteira do país 
+ 59 | border crossing      | 过境              | guò jìng           | cruce fronterizo   | passagem de fronte
+ 60 | rough terrain        | 地形崎岖            | dì xíng qí qū      | terreno accidentad | terreno acidentado
+ 61 | mountain terrain     | 山地地形            | shān dì dì xíng    | terreno de montaña | terreno montanhoso

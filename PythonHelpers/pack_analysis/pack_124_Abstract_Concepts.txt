@@ -1,0 +1,65 @@
+PACK 124: Abstract Concepts
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | concept              | 概念              | gài niàn           | concepto           | conceito          
+  3 | idea                 | 想法              | xiǎng fǎ           | ideas              | ideia             
+  4 | rationale            | 基本原理            | jī běn yuán lǐ     | justificación      | justificativa     
+  5 | aspect               | 方面              | fāng miàn          | aspecto            | aspecto           
+  6 | factor               | 因素              | yīn sù             | factores           | fator             
+  7 | magnitude            | 幅度              | fú dù              | magnitud           | magnitude         
+  8 | component            | 组件              | zǔ jiàn            | componente         | componente        
+  9 | feature              | 功能              | gōng néng          | característica     | recurso           
+ 10 | quality              | 质量              | zhì liàng          | calidad            | qualidade         
+ 11 | characteristic       | 特点              | tè diǎn            | característica     | característica    
+ 12 | context              | 上下文             | shàng xià wén      | contexto           | contexto          
+ 13 | connection           | 连接              | lián jiē           | conexión           | conexão           
+ 14 | influence            | 影响              | yǐng xiǎng         | influencia         | influência        
+ 15 | impact               | 影响              | yǐng xiǎng         | impacto            | impacto           
+ 16 | interplay            | 相互作用            | xiāng hù zuò yòng  | interacción        | interação         
+ 17 | mechanism            | 机制              | jī zhì             | mecanismo          | mecanismo         
+ 18 | purpose              | 目的              | mù dì              | propósito          | propósito         
+ 19 | function             | 功能              | gōng néng          | función            | função            
+ 20 | dimension            | 尺寸              | chǐ cùn            | dimensión          | dimensão          
+ 21 | essence              | 本质              | běn zhì            | esencia            | essência          
+ 22 | basic concept        | 基本概念            | jī běn gài niàn    | concepto básico    | conceito básico   
+ 23 | concept of           | 的概念             | de gài niàn        | concepto de        | conceito de       
+ 24 | good idea            | 好主意             | hǎo zhǔ yì         | buena idea         | boa ideia         
+ 25 | idea for             | 的想法             | de xiǎng fǎ        | idea para          | ideia para        
+ 26 | underlying rationale | 深层理由            | shēn céng lǐ yóu   | justificación suby | justificativa subj
+ 27 | rationale behind     | 背后的理由           | bèi hòu de lǐ yóu  | justificación detr | justificativa por 
+ 28 | key aspect           | 关键方面            | guān jiàn fāng mià | aspecto clave      | aspecto chave     
+ 29 | aspect of            | 的方面             | de fāng miàn       | aspecto de         | aspecto de        
+ 30 | key factor           | 关键因素            | guān jiàn yīn sù   | factor clave       | fator chave       
+ 31 | risk factor          | 风险因素            | fēng xiǎn yīn sù   | factor de riesgo   | fator de risco    
+ 32 | order of magnitude   | 数量级             | shù liàng jí       | orden de magnitud  | ordem de grandeza 
+ 33 | magnitude of         | 的大小             | de dà xiǎo         | magnitud de        | magnitude de      
+ 34 | main component       | 主要成分            | zhǔ yào chéng fèn  | componente princip | componente princip
+ 35 | component part       | 组成部分            | zǔ chéng bù fèn    | componente         | parte componente  
+ 36 | new feature          | 新功能             | xīn gōng néng      | nueva característi | novo recurso      
+ 37 | feature request      | 功能请求            | gōng néng qǐng qiú | solicitud de funci | solicitação de rec
+ 38 | high quality         | 高品质             | gāo pǐn zhì        | alta calidad       | alta qualidade    
+ 39 | quality control      | 质量控制            | zhì liàng kòng zhì | control de calidad | controle de qualid
+ 40 | main characteristic  | 主要特点            | zhǔ yào tè diǎn    | característica pri | característica pri
+ 41 | characteristic of    | 的特点             | de tè diǎn         | característica de  | característica de 
+ 42 | in context           | 在上下文中           | zài shàng xià wén  | en contexto        | no contexto       
+ 43 | context matters      | 上下文很重要          | shàng xià wén hěn  | el contexto import | o contexto é impor
+ 44 | strong connection    | 强连接             | qiáng lián jiē     | conexión fuerte    | conexão forte     
+ 45 | connection between   | 之间的联系           | zhī jiān de lián x | conexión entre     | conexão entre     
+ 46 | major influence      | 主要影响            | zhǔ yào yǐng xiǎng | gran influencia    | grande influência 
+ 47 | influence on         | 对某物的影响          | duì mǒu wù de yǐng | influencia en      | influência em     
+ 48 | positive impact      | 积极影响            | jī jí yǐng xiǎng   | impacto positivo   | impacto positivo  
+ 49 | impact of            | 的影响             | de yǐng xiǎng      | impacto de         | impacto de        
+ 50 | complex interplay    | 复杂的相互作用         | fù zá de xiāng hù  | interacción comple | interação complexa
+ 51 | interplay between    | 之间的相互作用         | zhī jiān de xiāng  | interacción entre  | interação entre   
+ 52 | defense mechanism    | 防御机制            | fáng yù jī zhì     | mecanismo de defen | mecanismo de defes
+ 53 | mechanism for        | 的机制             | de jī zhì          | mecanismo para     | mecanismo para    
+ 54 | main purpose         | 主要用途            | zhǔ yào yòng tú    | objetivo principal | objetivo principal
+ 55 | purpose of           | 的目的             | de mù dì           | propósito de       | propósito de      
+ 56 | brain function       | 大脑功能            | dà nǎo gōng néng   | función cerebral   | função cerebral   
+ 57 | function properly    | 功能正常            | gōng néng zhèng ch | funcionar correcta | funcionar corretam
+ 58 | new dimension        | 新维度             | xīn wéi dù         | nueva dimensión    | nova dimensão     
+ 59 | dimension of         | 的维度             | de wéi dù          | dimensión de       | dimensão de       
+ 60 | true essence         | 真正的本质           | zhēn zhèng de běn  | verdadera esencia  | verdadeira essênci
+ 61 | essence of           | 的本质             | de běn zhì         | esencia de         | essência de       

@@ -1,0 +1,65 @@
+PACK 69: Money & Banking
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | dollar               | 美元              | měi yuán           | dólar              | dólar             
+  3 | cent                 | 分               | fēn                | centavo            | centavo           
+  4 | coin                 | 硬币              | yìng bì            | moneda             | moeda             
+  5 | wallet               | 钱包              | qián bāo           | billetera          | carteira          
+  6 | borrow               | 借用              | jiè yòng           | pedir prestado     | pedir emprestado  
+  7 | owe                  | 欠               | qiàn               | deber              | devo              
+  8 | debt                 | 债务              | zhài wù            | deuda              | dívida            
+  9 | income               | 收入              | shōu rù            | ingresos           | renda             
+ 10 | expense              | 费用              | fèi yòng           | gastos             | despesa           
+ 11 | withdraw             | 撤回              | chè huí            | retirar            | retirar           
+ 12 | transfer             | 转移              | zhuǎn yí           | transferencia      | transferir        
+ 13 | interest             | 兴趣              | xìng qù            | interés            | interesse         
+ 14 | balance              | 平衡              | píng héng          | saldo              | equilíbrio        
+ 15 | currency             | 货币              | huò bì             | moneda             | moeda             
+ 16 | finance              | 金融              | jīn róng           | finanzas           | finanças          
+ 17 | credit card          | 信用卡             | xìn yòng kǎ        | tarjeta de crédito | cartão de crédito 
+ 18 | debit                | 借方              | jiè fāng           | débito             | débito            
+ 19 | ATM                  | 自动提款机           | zì dòng tí kuǎn jī | Cajero automático  | Caixa eletrônico  
+ 20 | teller               | 出纳员             | chū nà yuán        | cajero             | caixa             
+ 21 | savings              | 储蓄              | chǔ xù             | ahorro             | poupança          
+ 22 | one dollar           | 一美元             | yī měi yuán        | un dólar           | um dólar          
+ 23 | dollar bill          | 美元钞票            | měi yuán chāo piào | billete de un dóla | nota de dólar     
+ 24 | fifty cent           | 五十美分            | wǔ shí měi fēn     | cincuenta centavos | cinquenta centavos
+ 25 | cent coin            | 分硬币             | fēn yìng bì        | moneda de céntimos | moeda de centavo  
+ 26 | gold coin            | 金币              | jīn bì             | moneda de oro      | moeda de ouro     
+ 27 | coin flip            | 抛硬币             | pāo yìng bì        | lanzamiento de mon | lançamento de moed
+ 28 | leather wallet       | 皮革钱包            | pí gé qián bāo     | cartera de cuero   | carteira de couro 
+ 29 | wallet full          | 钱包满了            | qián bāo mǎn le    | billetera llena    | carteira cheia    
+ 30 | borrow money         | 借钱              | jiè qián           | pedir dinero prest | pedir dinheiro emp
+ 31 | borrow from          | 借自              | jiè zì             | pedir prestado     | pedir emprestado d
+ 32 | owe money            | 欠钱              | qiàn qián          | debe dinero        | devo dinheiro     
+ 33 | owe you              | 欠你              | qiàn nǐ            | te lo debo         | devo a você       
+ 34 | in debt              | 欠债              | qiàn zhài          | endeudado          | endividado        
+ 35 | debt free            | 无债              | wú zhài            | libre de deudas    | livre de dívidas  
+ 36 | monthly income       | 月收入             | yuè shōu rù        | ingresos mensuales | renda mensal      
+ 37 | income tax           | 所得税             | suǒ dé shuì        | impuesto sobre la  | imposto de renda  
+ 38 | daily expense        | 日常开支            | rì cháng kāi zhī   | gasto diario       | despesa diária    
+ 39 | expense report       | 费用报告            | fèi yòng bào gào   | informe de gastos  | relatório de despe
+ 40 | withdraw money       | 提款              | tí kuǎn            | retirar dinero     | sacar dinheiro    
+ 41 | withdraw cash        | 提取现金            | tí qǔ xiàn jīn     | retirar efectivo   | sacar dinheiro    
+ 42 | money transfer       | 汇款              | huì kuǎn           | transferencia de d | transferência de d
+ 43 | bank transfer        | 银行转账            | yín háng zhuǎn zhà | transferencia banc | transferência banc
+ 44 | interest free        | 无息              | wú xī              | sin intereses      | sem juros         
+ 45 | no interest          | 没有兴趣            | méi yǒu xìng qù    | sin interés        | sem interesse     
+ 46 | account balance      | 账户余额            | zhàng hù yú é      | saldo de cuenta    | saldo da conta    
+ 47 | balance due          | 应付余额            | yìng fù yú é       | saldo adeudado     | saldo devedor     
+ 48 | foreign currency     | 外币              | wài bì             | moneda extranjera  | moeda estrangeira 
+ 49 | local currency       | 当地货币            | dāng dì huò bì     | moneda local       | moeda local       
+ 50 | personal finance     | 个人理财            | gè rén lǐ cái      | finanzas personale | finanças pessoais 
+ 51 | finance department   | 财务部             | cái wù bù          | departamento de fi | departamento finan
+ 52 | credit card payment  | 信用卡付款           | xìn yòng kǎ fù kuǎ | pago con tarjeta d | pagamento com cart
+ 53 | credit card debt     | 信用卡债务           | xìn yòng kǎ zhài w | deuda de tarjeta d | dívida de cartão d
+ 54 | debit card           | 借记卡             | jiè jì kǎ          | tarjeta de débito  | cartão de débito  
+ 55 | debit account        | 借方账户            | jiè fāng zhàng hù  | cuenta de débito   | conta de débito   
+ 56 | ATM machine          | ATM机            | ATM jī             | Cajero automático  | Caixa eletrônico  
+ 57 | find ATM             | 查找 ATM          | chá zhǎo ATM       | encontrar cajero a | encontrar caixa el
+ 58 | bank teller          | 银行柜员            | yín háng guì yuán  | cajero de banco    | caixa de banco    
+ 59 | teller window        | 柜员窗口            | guì yuán chuāng kǒ | ventanilla del caj | janela do caixa   
+ 60 | savings account      | 储蓄账户            | chǔ xù zhàng hù    | cuenta de ahorros  | conta poupança    
+ 61 | personal savings     | 个人储蓄            | gè rén chǔ xù      | ahorros personales | poupança pessoal  

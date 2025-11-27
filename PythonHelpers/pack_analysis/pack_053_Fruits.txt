@@ -1,0 +1,65 @@
+PACK 53: Fruits
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | fig                  | 无花果             | wú huā guǒ         | higo               | figo              
+  3 | grape                | 葡萄              | pú táo             | uva                | uva               
+  4 | strawberry           | 草莓              | cǎo méi            | fresa              | morango           
+  5 | watermelon           | 西瓜              | xī guā             | sandía             | melancia          
+  6 | pineapple            | 菠萝              | bō luó             | piña               | abacaxi           
+  7 | mango                | 芒果              | máng guǒ           | mango              | manga             
+  8 | peach                | 桃子              | táo zi             | melocotón          | pêssego           
+  9 | lemon                | 柠檬              | níng méng          | limón              | limão             
+ 10 | cherry               | 樱桃              | yīng táo           | cereza             | cereja            
+ 11 | pear                 | 梨               | lí                 | pera               | pêra              
+ 12 | lime                 | 石灰              | shí huī            | lima               | limão             
+ 13 | coconut              | 椰子              | yē zi              | coco               | coco              
+ 14 | blueberry            | 蓝莓              | lán méi            | arándano           | mirtilo           
+ 15 | raspberry            | 覆盆子             | fù pén zǐ          | frambuesa          | framboesa         
+ 16 | kiwi                 | 猕猴桃             | mí hóu táo         | kiwi               | kiwi              
+ 17 | melon                | 瓜               | guā                | melón              | melão             
+ 18 | plum                 | 梅子              | méi zi             | ciruela            | ameixa            
+ 19 | grapefruit           | 柚子              | yòu zi             | pomelo             | toranja           
+ 20 | berry                | 浆果              | jiāng guǒ          | baya               | baga              
+ 21 | avocado              | 鳄梨              | è lí               | aguacate           | abacate           
+ 22 | dried fig            | 无花果干            | wú huā guǒ gàn     | higo seco          | figo seco         
+ 23 | fig tree             | 无花果树            | wú huā guǒ shù     | higuera            | figueira          
+ 24 | red grape            | 红葡萄             | hóng pú táo        | uva tinta          | uva vermelha      
+ 25 | grape juice          | 葡萄汁             | pú táo zhī         | zumo de uva        | suco de uva       
+ 26 | fresh strawberry     | 新鲜草莓            | xīn xiān cǎo méi   | fresa fresca       | morango fresco    
+ 27 | strawberry jam       | 草莓酱             | cǎo méi jiàng      | mermelada de fresa | geléia de morango 
+ 28 | sweet watermelon     | 甜甜的西瓜           | tián tián de xī gu | sandía dulce       | melancia doce     
+ 29 | watermelon slice     | 西瓜片             | xī guā piàn        | rodaja de sandía   | fatia de melancia 
+ 30 | fresh pineapple      | 新鲜菠萝            | xīn xiān bō luó    | piña fresca        | abacaxi fresco    
+ 31 | pineapple juice      | 菠萝汁             | bō luó zhī         | jugo de piña       | suco de abacaxi   
+ 32 | ripe mango           | 成熟的芒果           | chéng shú de máng  | mango maduro       | manga madura      
+ 33 | mango smoothie       | 芒果冰沙            | máng guǒ bīng shā  | batido de mango    | smoothie de manga 
+ 34 | juicy peach          | 多汁的桃子           | duō zhī de táo zi  | melocotón jugoso   | pêssego suculento 
+ 35 | peach cobbler        | 桃子馅饼            | táo zi xiàn bǐng   | zapatero de meloco | torta de pêssego  
+ 36 | fresh lemon          | 新鲜柠檬            | xīn xiān níng méng | limón fresco       | limão fresco      
+ 37 | lemon juice          | 柠檬汁             | níng méng zhī      | jugo de limón      | suco de limão     
+ 38 | sweet cherry         | 甜樱桃             | tián yīng táo      | cereza dulce       | cereja doce       
+ 39 | cherry pie           | 樱桃派             | yīng táo pài       | pastel de cerezas  | torta de cereja   
+ 40 | ripe pear            | 熟梨              | shú lí             | pera madura        | pêra madura       
+ 41 | pear tree            | 梨树              | lí shù             | peral              | pereira           
+ 42 | fresh lime           | 新鲜酸橙            | xīn xiān suān chén | lima fresca        | limão fresco      
+ 43 | lime juice           | 酸橙汁             | suān chéng zhī     | jugo de lima       | suco de limão     
+ 44 | coconut milk         | 椰奶              | yē nǎi             | leche de coco      | leite de coco     
+ 45 | coconut oil          | 椰子油             | yē zi yóu          | aceite de coco     | óleo de coco      
+ 46 | fresh blueberry      | 新鲜蓝莓            | xīn xiān lán méi   | arándano fresco    | mirtilo fresco    
+ 47 | blueberry muffin     | 蓝莓松饼            | lán méi sōng bǐng  | muffin de arándano | muffin de mirtilo 
+ 48 | fresh raspberry      | 新鲜覆盆子           | xīn xiān fù pén zǐ | frambuesa fresca   | framboesa fresca  
+ 49 | raspberry jam        | 覆盆子果酱           | fù pén zǐ guǒ jiàn | mermelada de framb | geléia de framboes
+ 50 | fresh kiwi           | 新鲜猕猴桃           | xīn xiān mí hóu tá | kiwi fresco        | kiwi fresco       
+ 51 | kiwi fruit           | 猕猴桃             | mí hóu táo         | kiwi               | kiwi              
+ 52 | honey melon          | 蜜瓜              | mì guā             | melón miel         | melão             
+ 53 | melon slice          | 冬瓜片             | dōng guā piàn      | rodaja de melón    | fatia de melão    
+ 54 | ripe plum            | 成熟的李子           | chéng shú de lǐ zi | ciruela madura     | ameixa madura     
+ 55 | plum tree            | 李子树             | lǐ zi shù          | ciruelo            | ameixeira         
+ 56 | pink grapefruit      | 粉红西柚            | fěn hóng xī yòu    | pomelo rosado      | toranja rosa      
+ 57 | grapefruit juice     | 柚子汁             | yòu zi zhī         | zumo de pomelo     | suco de toranja   
+ 58 | mixed berry          | 混合浆果            | hùn hé jiāng guǒ   | bayas mixtas       | frutas mistas     
+ 59 | berry smoothie       | 浆果冰沙            | jiāng guǒ bīng shā | batido de frutos r | smoothie de frutas
+ 60 | ripe avocado         | 成熟的鳄梨           | chéng shú de è lí  | aguacate maduro    | abacate maduro    
+ 61 | avocado toast        | 鳄梨吐司            | è lí tǔ sī         | tostada de aguacat | torrada de abacate

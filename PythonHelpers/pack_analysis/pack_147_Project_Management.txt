@@ -1,0 +1,65 @@
+PACK 147: Project Management
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | scope                | 范围              | fàn wéi            | alcance            | escopo            
+  3 | timeline             | 时间线             | shí jiān xiàn      | línea de tiempo    | linha do tempo    
+  4 | deliverable          | 可交付成果           | kě jiāo fù chéng g | entregable         | entregável        
+  5 | resource             | 资源              | zī yuán            | recurso            | recurso           
+  6 | allocation           | 分配              | fēn pèi            | asignación         | alocação          
+  7 | dependency           | 依赖              | yī lài             | dependencia        | dependência       
+  8 | risk                 | 风险              | fēng xiǎn          | riesgo             | risco             
+  9 | contingency          | 意外事件            | yì wài shì jiàn    | contingencia       | contingência      
+ 10 | execution            | 执行              | zhí xíng           | ejecución          | execução          
+ 11 | monitoring           | 监控              | jiān kòng          | seguimiento        | monitoramento     
+ 12 | implementation       | 实施              | shí shī            | implementación     | implementação     
+ 13 | feasibility          | 可行性             | kě xíng xìng       | viabilidad         | viabilidade       
+ 14 | benchmark            | 基准              | jī zhǔn            | punto de referenci | referência        
+ 15 | scalable             | 可扩展             | kě kuò zhǎn        | escalable          | escalável         
+ 16 | optimize             | 优化              | yōu huà            | optimizar          | otimizar          
+ 17 | prioritize           | 优先考虑            | yōu xiān kǎo lǜ    | priorizar          | priorizar         
+ 18 | agile                | 敏捷              | mǐn jié            | ágil               | ágil              
+ 19 | iterate              | 迭代              | dié dài            | iterar             | iterar            
+ 20 | roadmap              | 路线图             | lù xiàn tú         | hoja de ruta       | roteiro           
+ 21 | backlog              | 积压              | jī yā              | atrasos            | atraso            
+ 22 | project scope        | 项目范围            | xiàng mù fàn wéi   | alcance del proyec | escopo do projeto 
+ 23 | scope creep          | 范围蔓延            | fàn wéi màn yán    | desplazamiento del | aumento de escopo 
+ 24 | project timeline     | 项目时间表           | xiàng mù shí jiān  | cronograma del pro | cronograma do proj
+ 25 | timeline for         | 时间表用于           | shí jiān biǎo yòng | cronograma para    | cronograma para   
+ 26 | key deliverable      | 的时间表关键交付成果      | de shí jiān biǎo g | entregable clave   | principal produto 
+ 27 | deliverable due      | 可交付成果           | kě jiāo fù chéng g | entrega vencida    | entrega vencida   
+ 28 | allocate resource    | 分配资源            | fēn pèi zī yuán    | asignar recursos   | alocar recurso    
+ 29 | resource management  | 资源管理            | zī yuán guǎn lǐ    | gestión de recurso | gestão de recursos
+ 30 | budget allocation    | 预算分配            | yù suàn fēn pèi    | asignación presupu | dotação orçamental
+ 31 | allocation of        | 分配的             | fēn pèi de         | asignación de      | alocação de       
+ 32 | task dependency      | 的分配任务依赖         | de fēn pèi rèn wù  | dependencia de tar | dependência de tar
+ 33 | dependency on        | 依赖              | yī lài             | dependencia de     | dependência de    
+ 34 | assess risk          | 评估风险            | píng gū fēng xiǎn  | evaluar el riesgo  | avaliar o risco   
+ 35 | risk management      | 风险管理            | fēng xiǎn guǎn lǐ  | gestión de riesgos | gestão de risco   
+ 36 | contingency plan     | 应急计划            | yìng jí jì huà     | plan de contingenc | plano de contingên
+ 37 | contingency fund     | 应急基金            | yìng jí jī jīn     | fondo de contingen | fundo de contingên
+ 38 | project execution    | 项目执行            | xiàng mù zhí xíng  | ejecución del proy | execução do projet
+ 39 | execution phase      | 执行阶段            | zhí xíng jiē duàn  | fase de ejecución  | fase de execução  
+ 40 | project monitoring   | 项目监控            | xiàng mù jiān kòng | seguimiento del pr | acompanhamento do 
+ 41 | monitoring progress  | 监控进度            | jiān kòng jìn dù   | seguimiento del pr | monitorar o progre
+ 42 | successful implement | 成功实施            | chéng gōng shí shī | implementación exi | implementação bem 
+ 43 | implementation of    | 实施              | shí shī            | implementación de  | implementação de  
+ 44 | feasibility study    | 可行性研究           | kě xíng xìng yán j | estudio de viabili | estudo de viabilid
+ 45 | feasibility analysis | 可行性分析           | kě xíng xìng fēn x | análisis de viabil | análise de viabili
+ 46 | industry benchmark   | 行业标杆            | háng yè biāo gān   | punto de referenci | referência da indú
+ 47 | benchmark against    | 基准              | jī zhǔn            | punto de referenci | referência em rela
+ 48 | scalable solution    | 可扩展的解决方案        | kě kuò zhǎn de jiě | solución escalable | solução escalável 
+ 49 | scalable system      | 可扩展系统           | kě kuò zhǎn xì tǒn | sistema escalable  | sistema escalável 
+ 50 | optimize performance | 优化性能            | yōu huà xìng néng  | optimizar el rendi | otimizar o desempe
+ 51 | optimize for         | 优化              | yōu huà            | optimizar para     | otimizar para     
+ 52 | prioritize tasks     | 确定任务的优先顺序       | què dìng rèn wù de | priorizar tareas   | priorizar tarefas 
+ 53 | prioritize work      | 优先考虑工作          | yōu xiān kǎo lǜ gō | priorizar el traba | priorizar o trabal
+ 54 | agile methodology    | 敏捷方法            | mǐn jié fāng fǎ    | metodología ágil   | metodologia ágil  
+ 55 | agile development    | 敏捷开发            | mǐn jié kāi fā     | desarrollo ágil    | desenvolvimento ág
+ 56 | iterate on           | 迭代              | dié dài            | iterar             | iterar em         
+ 57 | iterate quickly      | 快速迭代            | kuài sù dié dài    | iterar rápidamente | iterar rapidamente
+ 58 | product roadmap      | 产品路线图           | chǎn pǐn lù xiàn t | hoja de ruta del p | roteiro do produto
+ 59 | roadmap for          | 路线图用于           | lù xiàn tú yòng yú | hoja de ruta para  | roteiro para      
+ 60 | product backlog      | 的路线图产品积压        | de lù xiàn tú chǎn | cartera de product | carteira de produt
+ 61 | backlog items        | 积压项目            | jī yā xiàng mù     | elementos pendient | itens do backlog  

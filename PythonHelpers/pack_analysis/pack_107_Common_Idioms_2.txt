@@ -1,0 +1,50 @@
+PACK 107: Common Idioms 2
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | cold feet            | 临阵退缩            | lín zhèn tuì suō   | pies fríos         | pés frios         
+  3 | keep an eye on       | 关注              | guān zhù           | mantente atento    | fique de olho     
+  4 | give a hand          | 伸出援助之手          | shēn chū yuán zhù  | echa una mano      | dê uma mão        
+  5 | head over heels      | 神魂颠倒            | shén hún diān dǎo  | perdidamente enamo | de ponta-cabeça   
+  6 | pain in the neck     | 麻烦事             | má fán shì         | dolor en el cuello | dor no pescoço    
+  7 | know by heart        | 熟记于心            | shú jì yú xīn      | lo sé de memoria   | sei de cor        
+  8 | let the cat out of t | 泄露秘密            | xiè lòu mì mì      | deja que el gato s | deixe o gato sair 
+  9 | kill two birds with  | 一石二鸟            | yī shí èr niǎo     | matar dos pájaros  | matar dois coelhos
+ 10 | elephant in the room | 房间里的大象          | fáng jiān lǐ de dà | elefante en la hab | elefante na sala  
+ 11 | hold your horses     | 牵住你的马           | qiān zhù nǐ de mǎ  | sujeta tus caballo | segure seus cavalo
+ 12 | straight from the ho | 直接从马口中出来        | zhí jiē cóng mǎ kǒ | directamente de la | direto da boca do 
+ 13 | when pigs fly        | 当猪飞的时候          | dāng zhū fēi de sh | cuando los cerdos  | quando os porcos v
+ 14 | raining cats and dog | 下着猫狗雨           | xià zhe māo gǒu yǔ | lloviendo a cántar | chovendo cães e ga
+ 15 | bite off more than y | 贪多嚼不烂           | tān duō jiáo bù là | muerde más de lo q | morda mais do que 
+ 16 | better late than nev | 迟到总比不到好         | chí dào zǒng bǐ bú | más vale tarde que | antes tarde do que
+ 17 | I got cold feet      | 我临阵退缩           | wǒ lín zhèn tuì su | Tengo los pies frí | Fiquei com medo   
+ 18 | getting cold feet ab | 临阵退缩            | lín zhèn tuì suō   | tener miedo de eso | ficando com medo  
+ 19 | keep an eye on the k | 留意孩子们           | liú yì hái zi men  | vigila a los niños | fique de olho nas 
+ 20 | keep an eye on it    | 密切关注            | mì qiè guān zhù    | mantenlo atento    | fique de olho     
+ 21 | can you give a hand  | 你能帮忙吗           | nǐ néng bāng máng  | puedes echar una m | você pode dar uma 
+ 22 | give a hand with thi | 伸出援助之手          | shēn chū yuán zhù  | echa una mano con  | dê uma ajuda nisso
+ 23 | head over heels in l | 为爱神魂颠倒          | wèi ài shén hún di | perdidamente enamo | perdidamente apaix
+ 24 | falling head over he | 神魂颠倒            | shén hún diān dǎo  | cayendo perdidamen | caindo de ponta-ca
+ 25 | that's a pain in the | 真麻烦             | zhēn má fán        | eso es un dolor de | isso é uma dor de 
+ 26 | such a pain in the n | 真讨厌             | zhēn tǎo yàn       | que dolor en el cu | que dor no pescoço
+ 27 | I know by heart it   | 我记在心里           | wǒ jì zài xīn lǐ   | Me lo sé de memori | Eu sei de cor     
+ 28 | I know by heart ever | 每个字我都熟记         | měi gè zì wǒ dōu s | Me sé de memoria c | Sei de cor cada pa
+ 29 | don't let the cat ou | 不要泄露秘密          | bú yào xiè lòu mì  | no dejes que el ga | não deixe o gato s
+ 30 | he let the cat out o | 他泄露了秘密          | tā xiè lòu le mì m | dejó salir al gato | ele deixou o gato 
+ 31 | kill two birds with  | 这里一石二鸟          | zhè lǐ yī shí èr n | mata dos pájaros d | mate dois coelhos 
+ 32 | trying to kill two b | 一石二鸟            | yī shí èr niǎo     | intentando matar d | tentando matar doi
+ 33 | ignore the elephant  | 忽略房间里的大象        | hū lüè fáng jiān l | ignora al elefante | ignore o elefante 
+ 34 | there's an elephant  | 房间里有一头大象        | fáng jiān lǐ yǒu y | hay un elefante en | tem um elefante na
+ 35 | hold your horses ple | 请放马             | qǐng fàng mǎ       | sostengan sus caba | segurem seus caval
+ 36 | just hold your horse | 只要牵着你的马         | zhǐ yào qiān zhe n | solo sujeta tus ca | apenas segure seus
+ 37 | heard it straight fr | 直接从马口中听到的       | zhí jiē cóng mǎ kǒ | lo escuché directa | ouvi direto da boc
+ 38 | I got it straight fr | 我是直接从马嘴里得到的     | wǒ shì zhí jiē cón | Lo saqué directame | Tirei direto da bo
+ 39 | that will happen whe | 当猪飞起来时就会发生这种情况  | dāng zhū fēi qǐ lá | eso pasara cuando  | isso vai acontecer
+ 40 | sure when pigs fly   | 当然，猪什么时候会飞      | dāng rán， zhū shén | seguro cuando los  | claro quando os po
+ 41 | it's raining cats an | 外面下着倾盆大雨        | wài miàn xià zhe q | afuera está llovie | está chovendo muit
+ 42 | raining cats and dog | 今天下着倾盆大雨        | jīn tiān xià zhe q | Hoy llueve a cánta | chovendo muito hoj
+ 43 | don't bite off more  | 不要贪多嚼不烂         | bú yào tān duō jiá | no muerdas más de  | não morda mais do 
+ 44 | you bite off more th | 你经常咬得比你能咀嚼的多    | nǐ jīng cháng yǎo  | muerdes más de lo  | você morde mais do
+ 45 | well better late tha | 迟到总比不到好         | chí dào zǒng bǐ bú | bueno, más vale ta | bem, antes tarde d
+ 46 | I guess better late  | 我想迟到总比不到好       | wǒ xiǎng chí dào z | Supongo que más va | Acho que antes tar

@@ -1,0 +1,65 @@
+PACK 34: Clothing
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | clothes              | 衣服              | yī fú              | ropa               | roupas            
+  3 | shirt                | 衬衫              | chèn shān          | camisa             | camisa            
+  4 | pants                | 裤子              | kù zi              | pantalones         | calças            
+  5 | dress                | 连衣裙             | lián yī qún        | vestido            | vestido           
+  6 | jacket               | 夹克              | jiá kè             | chaqueta           | jaqueta           
+  7 | coat                 | 外套              | wài tào            | abrigo             | casaco            
+  8 | shoes                | 鞋               | xié                | zapatos            | sapatos           
+  9 | socks                | 袜子              | wà zi              | calcetines         | meias             
+ 10 | hat                  | 帽子              | mào zi             | sombrero           | chapéu            
+ 11 | bag                  | 包               | bāo                | bolsa              | bolsa             
+ 12 | size                 | 尺寸              | chǐ cùn            | tamaño             | tamanho           
+ 13 | pocket               | 口袋              | kǒu dài            | bolsillo           | bolso             
+ 14 | jeans                | 牛仔裤             | niú zǎi kù         | vaqueros           | jeans             
+ 15 | sweater              | 毛衣              | máo yī             | suéter             | suéter            
+ 16 | boots                | 靴子              | xuē zi             | botas              | botas             
+ 17 | glasses              | 眼镜              | yǎn jìng           | gafas              | óculos            
+ 18 | comfortable          | 舒适              | shū shì            | cómodo             | confortável       
+ 19 | button               | 按钮              | àn niǔ             | botón              | botão             
+ 20 | fashion              | 时尚              | shí shàng          | moda               | moda              
+ 21 | outfit               | 服装              | fú zhuāng          | traje              | roupa             
+ 22 | new clothes          | 新衣服             | xīn yī fú          | ropa nueva         | roupas novas      
+ 23 | clothes shopping     | 买衣服             | mǎi yī fú          | compras de ropa    | compras de roupas 
+ 24 | white shirt          | 白衬衫             | bái chèn shān      | camisa blanca      | camisa branca     
+ 25 | shirt size           | 衬衫尺码            | chèn shān chǐ mǎ   | talla de camisa    | tamanho da camisa 
+ 26 | long pants           | 长裤              | cháng kù           | pantalones largos  | calças compridas  
+ 27 | pants pocket         | 裤子口袋            | kù zi kǒu dài      | bolsillo del panta | bolso da calça    
+ 28 | nice dress           | 漂亮的衣服           | piào liàng de yī f | bonito vestido     | lindo vestido     
+ 29 | dress up             | 打扮              | dǎ bàn             | vestirse           | vestir-se         
+ 30 | leather jacket       | 皮夹克             | pí jiā kè          | chaqueta de cuero  | jaqueta de couro  
+ 31 | jacket pocket        | 夹克口袋            | jiá kè kǒu dài     | bolsillo de la cha | bolso da jaqueta  
+ 32 | winter coat          | 冬季外套            | dōng jì wài tào    | abrigo de invierno | casaco de inverno 
+ 33 | coat hanger          | 衣架              | yī jià             | perchero           | cabide            
+ 34 | new shoes            | 新鞋              | xīn xié            | zapatos nuevos     | sapatos novos     
+ 35 | dress shoes          | 正装鞋             | zhèng zhuāng xié   | zapatos de vestir  | sapatos sociais   
+ 36 | white socks          | 白袜子             | bái wà zi          | calcetines blancos | meias brancas     
+ 37 | dirty socks          | 脏袜子             | zàng wà zi         | calcetines sucios  | meias sujas       
+ 38 | sun hat              | 太阳帽             | tài yáng mào       | sombrero para el s | chapéu de sol     
+ 39 | hat size             | 帽子尺寸            | mào zi chǐ cùn     | talla de sombrero  | tamanho do chapéu 
+ 40 | hand bag             | 手提包             | shǒu tí bāo        | bolso de mano      | bolsa de mão      
+ 41 | shopping bag         | 购物袋             | gòu wù dài         | bolsa de compras   | sacola de compras 
+ 42 | what size            | 什么尺寸            | shén me chǐ cùn    | que talla          | qual tamanho      
+ 43 | size matters         | 尺寸很重要           | chǐ cùn hěn zhòng  | el tamaño importa  | o tamanho importa 
+ 44 | back pocket          | 后袋              | hòu dài            | bolsillo trasero   | bolso traseiro    
+ 45 | pocket money         | 零用钱             | líng yòng qián     | dinero de bolsillo | dinheiro de bolso 
+ 46 | blue jeans           | 蓝色牛仔裤           | lán sè niú zǎi kù  | vaqueros azules    | calça jeans       
+ 47 | jeans jacket         | 牛仔外套            | niú zǎi wài tào    | chaqueta vaquera   | jaqueta jeans     
+ 48 | warm sweater         | 保暖毛衣            | bǎo nuǎn máo yī    | suéter cálido      | suéter quentinho  
+ 49 | sweater weather      | 毛衣天气            | máo yī tiān qì     | clima del suéter   | clima de suéter   
+ 50 | rain boots           | 雨鞋              | yǔ xié             | botas de lluvia    | botas de chuva    
+ 51 | hiking boots         | 登山靴             | dēng shān xuē      | botas de montaña   | botas de caminhada
+ 52 | reading glasses      | 老花镜             | lǎo huā jìng       | gafas de lectura   | óculos de leitura 
+ 53 | sun glasses          | 太阳镜             | tài yáng jìng      | gafas de sol       | óculos de sol     
+ 54 | very comfortable     | 很舒服             | hěn shū fú         | muy comodo         | muito confortável 
+ 55 | comfortable shoes    | 舒适的鞋子           | shū shì de xié zi  | zapatos cómodos    | sapatos confortáve
+ 56 | shirt button         | 衬衫纽扣            | chèn shān niǔ kòu  | botón de la camisa | botão de camisa   
+ 57 | button up            | 按钮向上            | àn niǔ xiàng shàng | abotonar           | abotoe            
+ 58 | high fashion         | 高级时装            | gāo jí shí zhuāng  | alta costura       | alta moda         
+ 59 | fashion show         | 时装秀             | shí zhuāng xiù     | desfile de moda    | desfile de moda   
+ 60 | nice outfit          | 漂亮的衣服           | piào liàng de yī f | bonito traje       | roupa bonita      
+ 61 | outfit of the day    | 当天的服装           | dàng tiān de fú zh | traje del dia      | roupa do dia      

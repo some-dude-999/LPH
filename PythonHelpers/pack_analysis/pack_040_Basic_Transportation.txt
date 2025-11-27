@@ -1,0 +1,65 @@
+PACK 40: Basic Transportation
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | car                  | 汽车              | qì chē             | coche              | carro             
+  3 | bus                  | 巴士              | bā shì             | autobús            | ônibus            
+  4 | train                | 火车              | huǒ chē            | tren               | trem              
+  5 | taxi                 | 出租车             | chū zū chē         | taxi               | táxi              
+  6 | bicycle              | 自行车             | zì xíng chē        | bicicleta          | bicicleta         
+  7 | bike                 | 自行车             | zì xíng chē        | bicicleta          | bicicleta         
+  8 | boat                 | 船               | chuán              | barco              | barco             
+  9 | street               | 街道              | jiē dào            | calle              | rua               
+ 10 | road                 | 道路              | dào lù             | camino             | estrada           
+ 11 | traffic              | 交通              | jiāo tōng          | tráfico            | tráfego           
+ 12 | passenger            | 乘客              | chéng kè           | pasajero           | passageiro        
+ 13 | station              | 站               | zhàn               | estación           | estação           
+ 14 | commute              | 通勤              | tōng qín           | viajar             | deslocamento diári
+ 15 | transit              | 过境              | guò jìng           | tránsito           | trânsito          
+ 16 | transport            | 运输              | yùn shū            | transporte         | transporte        
+ 17 | vehicle              | 车辆              | chē liàng          | vehículo           | veículo           
+ 18 | ferry                | 渡轮              | dù lún             | ferry              | balsa             
+ 19 | tram                 | 电车              | diàn chē           | tranvía            | bonde             
+ 20 | cab                  | 出租车             | chū zū chē         | taxi               | táxi              
+ 21 | scooter              | 滑板车             | huá bǎn chē        | scooter            | scooter           
+ 22 | rent a car           | 租车              | zū chē             | alquilar un coche  | alugar um carro   
+ 23 | car park             | 停车场             | tíng chē chǎng     | aparcamiento       | parque de estacion
+ 24 | by bus               | 乘巴士             | chéng bā shì       | en autobús         | de ônibus         
+ 25 | bus stop             | 巴士站             | bā shì zhàn        | parada de autobús  | ponto de ônibus   
+ 26 | by train             | 乘火车             | chéng huǒ chē      | en tren            | de trem           
+ 27 | train station        | 火车站             | huǒ chē zhàn       | estación de tren   | estação ferroviári
+ 28 | take a taxi          | 乘坐出租车           | chéng zuò chū zū c | tomar un taxi      | pegar um táxi     
+ 29 | call a taxi          | 叫出租车            | jiào chū zū chē    | llamar a un taxi   | chame um táxi     
+ 30 | ride a bicycle       | 骑自行车            | qí zì xíng chē     | andar en bicicleta | andar de bicicleta
+ 31 | bicycle lane         | 自行车道            | zì xíng chē dào    | carril bici        | ciclovia          
+ 32 | my bike              | 我的自行车           | wǒ de zì xíng chē  | mi bicicleta       | minha bicicleta   
+ 33 | bike path            | 自行车道            | zì xíng chē dào    | carril bici        | ciclovia          
+ 34 | by boat              | 乘船              | chéng chuán        | en barco           | de barco          
+ 35 | boat ride            | 乘船              | chéng chuán        | paseo en barco     | passeio de barco  
+ 36 | main street          | 主要街道            | zhǔ yào jiē dào    | calle principal    | rua principal     
+ 37 | busy street          | 繁忙的街道           | fán máng de jiē dà | calle muy transita | rua movimentada   
+ 38 | on the road          | 在路上             | zài lù shàng       | en el camino       | na estrada        
+ 39 | road trip            | 公路旅行            | gōng lù lǚ xíng    | viaje por carreter | viagem            
+ 40 | heavy traffic        | 交通繁忙            | jiāo tōng fán máng | tráfico intenso    | tráfego intenso   
+ 41 | traffic jam          | 交通堵塞            | jiāo tōng dǔ sè    | atasco de tráfico  | engarrafamento    
+ 42 | bus passenger        | 巴士乘客            | bā shì chéng kè    | pasajero de autobú | passageiro de ônib
+ 43 | passenger seat       | 乘客座椅            | chéng kè zuò yǐ    | asiento del pasaje | assento do passage
+ 44 | central station      | 中央车站            | zhōng yāng chē zhà | estación central   | estação central   
+ 45 | bus station          | 公交车站            | gōng jiāo chē zhàn | estación de autobu | estação rodoviária
+ 46 | daily commute        | 日常通勤            | rì cháng tōng qín  | desplazamiento dia | deslocamento diári
+ 47 | commute to work      | 上班通勤            | shàng bān tōng qín | viajar al trabajo  | deslocamento para 
+ 48 | public transit       | 公共交通            | gōng gòng jiāo tōn | transporte público | transporte público
+ 49 | transit system       | 交通系统            | jiāo tōng xì tǒng  | sistema de tránsit | sistema de trânsit
+ 50 | transport goods      | 运输货物            | yùn shū huò wù     | transportar mercan | transporte de merc
+ 51 | public transport     | 公共交通            | gōng gòng jiāo tōn | transporte público | transporte público
+ 52 | motor vehicle        | 机动车辆            | jī dòng chē liàng  | vehículo de motor  | veículo motorizado
+ 53 | vehicle registration | 车辆登记            | chē liàng dēng jì  | matriculación de v | matrícula do veícu
+ 54 | by ferry             | 乘渡轮             | chéng dù lún       | en ferry           | de balsa          
+ 55 | ferry ride           | 乘坐渡轮            | chéng zuò dù lún   | viaje en ferry     | passeio de balsa  
+ 56 | by tram              | 乘电车             | chéng diàn chē     | en tranvía         | de bonde          
+ 57 | tram stop            | 电车站             | diàn chē zhàn      | parada de tranvía  | parada de bonde   
+ 58 | hail a cab           | 叫辆出租车           | jiào liàng chū zū  | pide un taxi       | chamar um táxi    
+ 59 | cab fare             | 出租车费            | chū zū chē fèi     | tarifa de taxi     | tarifa de táxi    
+ 60 | electric scooter     | 电动滑板车           | diàn dòng huá bǎn  | scooter eléctrico  | patinete elétrico 
+ 61 | scooter ride         | 骑踏板车            | qí tà bǎn chē      | paseo en scooter   | passeio de scooter

@@ -1,0 +1,65 @@
+PACK 70: Health
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | healthy              | 健康              | jiàn kāng          | saludable          | saudável          
+  3 | pain                 | 疼痛              | téng tòng          | dolor              | dor               
+  4 | headache             | 头痛              | tóu tòng           | dolor de cabeza    | dor de cabeça     
+  5 | fever                | 发烧              | fā shāo            | fiebre             | febre             
+  6 | chills               | 发冷              | fā lěng            | escalofríos        | arrepios          
+  7 | flu                  | 流感              | liú gǎn            | gripe              | gripe             
+  8 | cough                | 咳嗽              | ké sòu             | tos                | tosse             
+  9 | medicine             | 医学              | yī xué             | medicina           | medicina          
+ 10 | pill                 | 丸               | wán                | pastilla           | pílula            
+ 11 | appointment          | 预约              | yù yuē             | cita               | nomeação          
+ 12 | prescription         | 处方              | chǔ fāng           | prescripción       | prescrição        
+ 13 | diet                 | 饮食              | yǐn shí            | dieta              | dieta             
+ 14 | vitamin              | 维生素             | wéi shēng sù       | vitamina           | vitamina          
+ 15 | injury               | 伤害              | shāng hài          | lesión             | lesão             
+ 16 | bandage              | 绷带              | bēng dài           | vendaje            | curativo          
+ 17 | sore                 | 疼痛              | téng tòng          | dolorido           | dolorido          
+ 18 | ailment              | 疾病              | jí bìng            | dolencia           | doença            
+ 19 | nausea               | 恶心              | ě xīn              | náuseas            | náusea            
+ 20 | fatigue              | 疲劳              | pí láo             | fatiga             | fadiga            
+ 21 | swelling             | 肿胀              | zhǒng zhàng        | hinchazón          | inchaço           
+ 22 | stay healthy         | 保持健康            | bǎo chí jiàn kāng  | mantente saludable | mantenha-se saudáv
+ 23 | healthy food         | 健康食品            | jiàn kāng shí pǐn  | comida sana        | alimentação saudáv
+ 24 | back pain            | 背痛              | bèi tòng           | dolor de espalda   | dor nas costas    
+ 25 | pain relief          | 缓解疼痛            | huǎn jiě téng tòng | alivio del dolor   | alívio da dor     
+ 26 | bad headache         | 头痛得厉害           | tóu tòng dé lì hài | fuerte dolor de ca | forte dor de cabeç
+ 27 | headache medicine    | 头痛药             | tóu tòng yào       | medicamento para e | remédio para dor d
+ 28 | high fever           | 高烧              | gāo shāo           | fiebre alta        | febre alta        
+ 29 | fever broke          | 发烧退了            | fā shāo tuì le     | la fiebre desapare | a febre baixou    
+ 30 | cold chills          | 寒意袭来            | hán yì xí lái      | escalofríos        | calafrios         
+ 31 | chills and fever     | 发冷和发烧           | fā lěng hé fā shāo | escalofríos y fieb | calafrios e febre 
+ 32 | catch the flu        | 感染流感            | gǎn rǎn liú gǎn    | coger la gripe     | pegar gripe       
+ 33 | flu season           | 流感季节            | liú gǎn jì jié     | temporada de gripe | temporada de gripe
+ 34 | dry cough            | 干咳              | gān ké             | tos seca           | tosse seca        
+ 35 | cough medicine       | 止咳药             | zhǐ ké yào         | medicamento para l | remédio para tosse
+ 36 | take medicine        | 吃药              | chī yào            | tomar medicamentos | tomar remédio     
+ 37 | medicine cabinet     | 医药柜             | yī yào guì         | botiquín           | armário de remédio
+ 38 | take a pill          | 吃一颗药            | chī yī kē yào      | toma una pastilla  | tome um comprimido
+ 39 | sleeping pill        | 安眠药             | ān mián yào        | pastilla para dorm | comprimido para do
+ 40 | doctor appointment   | 预约医生            | yù yuē yī shēng    | cita con el médico | consulta médica   
+ 41 | appointment time     | 预约时间            | yù yuē shí jiān    | hora de la cita    | hora marcada      
+ 42 | need a prescription  | 需要处方            | xū yào chǔ fāng    | necesito una recet | preciso de receita
+ 43 | prescription drug    | 处方药             | chǔ fāng yào       | medicamento receta | medicamento prescr
+ 44 | healthy diet         | 健康饮食            | jiàn kāng yǐn shí  | dieta saludable    | alimentação saudáv
+ 45 | diet plan            | 饮食计划            | yǐn shí jì huà     | plan de dieta      | plano de dieta    
+ 46 | take vitamin         | 服用维生素           | fú yòng wéi shēng  | tomar vitamina     | tomar vitamina    
+ 47 | vitamin supplement   | 补充维生素           | bǔ chōng wéi shēng | suplemento vitamín | suplemento vitamín
+ 48 | minor injury         | 轻伤              | qīng shāng         | lesión menor       | lesão leve        
+ 49 | injury report        | 受伤报告            | shòu shāng bào gào | informe de lesione | relatório de lesõe
+ 50 | apply bandage        | 包扎绷带            | bāo zā bēng dài    | aplicar vendaje    | aplicar curativo  
+ 51 | bandage wound        | 包扎伤口            | bāo zā shāng kǒu   | herida de vendaje  | ferida de curativo
+ 52 | sore throat          | 喉咙痛             | hóu lóng tòng      | dolor de garganta  | dor de garganta   
+ 53 | sore muscle          | 肌肉酸痛            | jī ròu suān tòng   | dolor muscular     | músculo dolorido  
+ 54 | common ailment       | 常见病             | cháng jiàn bìng    | dolencia común     | doença comum      
+ 55 | minor ailment        | 小病              | xiǎo bìng          | dolencia menor     | doença leve       
+ 56 | feel nausea          | 感到恶心            | gǎn dào ě xīn      | siente náuseas     | sinto náusea      
+ 57 | nausea medicine      | 恶心药             | ě xīn yào          | medicamento para l | remédio para náuse
+ 58 | chronic fatigue      | 慢性疲劳            | màn xìng pí láo    | fatiga crónica     | fadiga crônica    
+ 59 | fatigue syndrome     | 疲劳综合症           | pí láo zōng hé zhè | síndrome de fatiga | síndrome da fadiga
+ 60 | reduce swelling      | 减少肿胀            | jiǎn shǎo zhǒng zh | reducir la hinchaz | reduzir o inchaço 
+ 61 | swelling down        | 肿胀              | zhǒng zhàng        | hinchandose        | inchando          

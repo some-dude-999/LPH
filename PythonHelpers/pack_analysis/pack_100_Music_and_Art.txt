@@ -1,0 +1,65 @@
+PACK 100: Music & Art
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | singer               | 歌手              | gē shǒu            | cantante           | cantor            
+  3 | band                 | 乐队              | yuè duì            | banda              | banda             
+  4 | album                | 专辑              | zhuān jí           | álbum              | álbum             
+  5 | instrument           | 乐器              | yuè qì             | instrumento        | instrumento       
+  6 | guitar               | 吉他              | jí tā              | guitarra           | guitarra          
+  7 | piano                | 钢琴              | gāng qín           | piano              | piano             
+  8 | drum                 | 鼓               | gǔ                 | tambor             | tambor            
+  9 | violin               | 小提琴             | xiǎo tí qín        | violín             | violino           
+ 10 | lyrics               | 歌词              | gē cí              | letras             | letras            
+ 11 | melody               | 旋律              | xuán lǜ            | melodía            | melodia           
+ 12 | rhythm               | 节奏              | jié zòu            | ritmo              | ritmo             
+ 13 | beat                 | 节拍              | jié pāi            | ritmo              | batida            
+ 14 | artist               | 艺术家             | yì shù jiā         | artista            | artista           
+ 15 | painting             | 绘画              | huì huà            | pintura            | pintura           
+ 16 | drawing              | 绘图              | huì tú             | dibujo             | desenho           
+ 17 | sculpture            | 雕塑              | diāo sù            | escultura          | escultura         
+ 18 | gallery              | 画廊              | huà láng           | galería            | galeria           
+ 19 | exhibition           | 展览              | zhǎn lǎn           | exposición         | exposição         
+ 20 | composer             | 作曲家             | zuò qǔ jiā         | compositor         | compositor        
+ 21 | orchestra            | 乐团              | yuè tuán           | orquesta           | orquestra         
+ 22 | lead singer          | 主唱              | zhǔ chàng          | cantante principal | vocalista         
+ 23 | singer voice         | 歌手声音            | gē shǒu shēng yīn  | voz de cantante    | voz do cantor     
+ 24 | rock band            | 摇滚乐队            | yáo gǔn yuè duì    | banda de rock      | banda de rock     
+ 25 | band member          | 乐队成员            | yuè duì chéng yuán | miembro de la band | membro da banda   
+ 26 | new album            | 新专辑             | xīn zhuān jí       | nuevo álbum        | novo álbum        
+ 27 | album release        | 专辑发行            | zhuān jí fā xíng   | lanzamiento del ál | lançamento do álbu
+ 28 | play instrument      | 演奏乐器            | yǎn zòu yuè qì     | tocar instrumento  | tocar instrumento 
+ 29 | musical instrument   | 乐器              | yuè qì             | instrumento musica | instrumento musica
+ 30 | play guitar          | 弹吉他             | dàn jí tā          | tocar la guitarra  | tocar violão      
+ 31 | guitar solo          | 吉他独奏            | jí tā dú zòu       | solo de guitarra   | solo de guitarra  
+ 32 | play piano           | 弹钢琴             | tán gāng qín       | tocar el piano     | tocar piano       
+ 33 | piano music          | 钢琴音乐            | gāng qín yīn yuè   | música de piano    | música de piano   
+ 34 | drum beat            | 鼓声              | gǔ shēng           | ritmo de tambor    | batida de tambor  
+ 35 | drum set             | 架子鼓             | jià zi gǔ          | batería            | bateria           
+ 36 | play violin          | 拉小提琴            | lā xiǎo tí qín     | tocar el violín    | tocar violino     
+ 37 | violin music         | 小提琴音乐           | xiǎo tí qín yīn yu | música de violín   | música de violino 
+ 38 | song lyrics          | 歌词              | gē cí              | letras de cancione | letras de músicas 
+ 39 | lyrics meaning       | 歌词含义            | gē cí hán yì       | significado de la  | significado da let
+ 40 | beautiful melody     | 优美的旋律           | yōu měi de xuán lǜ | hermosa melodía    | linda melodia     
+ 41 | melody line          | 旋律线             | xuán lǜ xiàn       | línea melódica     | linha melódica    
+ 42 | steady rhythm        | 节奏稳定            | jié zòu wěn dìng   | ritmo constante    | ritmo constante   
+ 43 | rhythm section       | 节奏部分            | jié zòu bù fèn     | sección rítmica    | seção rítmica     
+ 44 | heart beat           | 心跳              | xīn tiào           | latido del corazón | batimento cardíaco
+ 45 | beat drop            | 掉拍              | diào pāi           | caída del ritmo    | queda de batida   
+ 46 | famous artist        | 著名艺术家           | zhù míng yì shù ji | artista famoso     | artista famoso    
+ 47 | artist studio        | 艺术家工作室          | yì shù jiā gōng zu | estudio de artista | estúdio de artista
+ 48 | oil painting         | 油画              | yóu huà            | pintura al óleo    | pintura a óleo    
+ 49 | painting style       | 绘画风格            | huì huà fēng gé    | estilo de pintura  | estilo de pintura 
+ 50 | pencil drawing       | 铅笔画             | qiān bǐ huà        | dibujo a lápiz     | desenho a lápis   
+ 51 | drawing skills       | 绘画技巧            | huì huà jì qiǎo    | habilidades de dib | habilidades de des
+ 52 | bronze sculpture     | 青铜雕塑            | qīng tóng diāo sù  | escultura de bronc | escultura em bronz
+ 53 | sculpture art        | 雕塑艺术            | diāo sù yì shù     | arte escultórico   | arte escultural   
+ 54 | art gallery          | 艺术画廊            | yì shù huà láng    | galería de arte    | galeria de arte   
+ 55 | gallery opening      | 画廊开幕            | huà láng kāi mù    | inauguración de la | inauguração da gal
+ 56 | art exhibition       | 艺术展             | yì shù zhǎn        | exposición de arte | exposição de arte 
+ 57 | exhibition hall      | 展厅              | zhǎn tīng          | sala de exposicion | sala de exposições
+ 58 | classical composer   | 古典作曲家           | gǔ diǎn zuò qǔ jiā | compositor clásico | compositor clássic
+ 59 | composer music       | 作曲家音乐           | zuò qǔ jiā yīn yuè | música del composi | música do composit
+ 60 | symphony orchestra   | 交响乐团            | jiāo xiǎng yuè tuá | orquesta sinfónica | orquestra sinfônic
+ 61 | orchestra conductor  | 乐团指挥            | yuè tuán zhǐ huī   | director de orques | maestro de orquest

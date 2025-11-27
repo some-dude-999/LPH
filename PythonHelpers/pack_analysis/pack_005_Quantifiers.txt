@@ -1,0 +1,65 @@
+PACK 5: Quantifiers
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | many                 | 许多              | xǔ duō             | muchos             | muitos            
+  3 | much                 | 很多              | hěn duō            | mucho              | muito             
+  4 | more                 | 更多的             | gèng duō de        | más                | mais              
+  5 | most                 | 最多              | zuì duō            | mayoría            | maioria           
+  6 | few                  | 很少              | hěn shǎo           | pocos              | alguns            
+  7 | little               | 小的              | xiǎo de            | pequeño            | pequeno           
+  8 | less                 | 较少的             | jiào shǎo de       | menos              | menos             
+  9 | least                | 最少              | zuì shǎo           | el menos           | o mínimo          
+ 10 | several              | 一些              | yī xiē             | varios             | diversos          
+ 11 | plenty               | 足够              | zú gòu             | infinidad          | bastante          
+ 12 | amount               | 数量              | shù liàng          | cantidad           | quantia           
+ 13 | half                 | 一半              | yí bàn             | medio              | metade            
+ 14 | total                | 全部的             | quán bù de         | total              | total             
+ 15 | dozen                | 打               | dǎ                 | docena             | dúzia             
+ 16 | majority             | 多数              | duō shù            | mayoría            | maioria           
+ 17 | quantity             | 数量              | shù liàng          | cantidad           | quantidade        
+ 18 | numerous             | 很多的             | hěn duō de         | numeroso           | numerosos         
+ 19 | ample                | 充足              | chōng zú           | amplio             | amplo             
+ 20 | meager               | 微薄              | wēi bó             | pobre              | escasso           
+ 21 | scant                | 很少              | hěn shǎo           | escaso             | escasso           
+ 22 | many times           | 很多次             | hěn duō cì         | muchas veces       | muitas vezes      
+ 23 | so many              | 这么多             | zhè me duō         | tantos             | tantos            
+ 24 | too much             | 太多了             | tài duō le         | demasiado          | demais            
+ 25 | so much              | 这么多             | zhè me duō         | mucho              | muito             
+ 26 | more than            | 多于              | duō yú             | más que            | mais do que       
+ 27 | more or less         | 或多或少            | huò duō huò shǎo   | más o menos        | mais ou menos     
+ 28 | most of the time     | 大部分时间           | dà bù fèn shí jiān | la mayor parte del | na maioria das vez
+ 29 | the most important   | 最重要的            | zuì zhòng yào de   | lo mas importante  | o mais importante 
+ 30 | quite few            | 相当少             | xiāng dāng shǎo    | bastantes pocos    | muito poucos      
+ 31 | few days ago         | 几天前             | jǐ tiān qián       | hace unos dias     | alguns dias atrás 
+ 32 | a little             | 一点              | yì diǎn            | un poco            | um pouco          
+ 33 | little bit           | 一点              | yì diǎn            | un poco            | um pouquinho      
+ 34 | less than            | 少于              | shǎo yú            | menos que          | menor que         
+ 35 | less and less        | 越来越少            | yuè lái yuè shǎo   | cada vez menos     | cada vez menos    
+ 36 | least expected       | 最不期望的           | zuì bù qī wàng de  | lo menos esperado  | menos esperado    
+ 37 | the least            | 最少的             | zuì shǎo de        | lo menos           | o mínimo          
+ 38 | several times        | 几次              | jǐ cì              | varias veces       | várias vezes      
+ 39 | several days         | 几天              | jǐ tiān            | varios dias        | vários dias       
+ 40 | plenty of            | 大量的             | dà liàng de        | mucho              | bastante          
+ 41 | plenty more          | 还有更多            | hái yǒu gèng duō   | mucho más          | muito mais        
+ 42 | large amount         | 大量              | dà liàng           | gran cantidad      | grande quantidade 
+ 43 | amount of time       | 时间量             | shí jiān liàng     | cantidad de tiempo | quantidade de temp
+ 44 | half an hour         | 半小时             | bàn xiǎo shí       | media hora         | meia hora         
+ 45 | half way             | 一半              | yí bàn             | a mitad de camino  | meio caminho      
+ 46 | in total             | 总共              | zǒng gòng          | en total           | no total          
+ 47 | total amount         | 总金额             | zǒng jīn é         | cantidad total     | montante total    
+ 48 | a dozen              | 十几个             | shí jǐ gè          | una docena         | uma dúzia         
+ 49 | dozen times          | 十几次             | shí jǐ cì          | docenas de veces   | dúzia de vezes    
+ 50 | the majority         | 大多数             | dà duō shù         | la mayoría         | a maioria         
+ 51 | vast majority        | 绝大多数            | jué dà duō shù     | gran mayoría       | grande maioria    
+ 52 | large quantity       | 大量              | dà liàng           | gran cantidad      | grande quantidade 
+ 53 | quantity of          | 数量              | shù liàng          | cantidad de        | quantidade de     
+ 54 | numerous times       | 无数次             | wú shù cì          | numerosas veces    | inúmeras vezes    
+ 55 | numerous occasions   | 无数次             | wú shù cì          | numerosas ocasione | inúmeras ocasiões 
+ 56 | ample time           | 充足的时间           | chōng zú de shí ji | tiempo suficiente  | bastante tempo    
+ 57 | ample opportunity    | 充足的机会           | chōng zú de jī huì | amplia oportunidad | ampla oportunidade
+ 58 | meager income        | 收入微薄            | shōu rù wēi bó     | escasos ingresos   | renda escassa     
+ 59 | meager portion       | 微薄的部分           | wēi bó de bù fèn   | porción escasa     | porção escassa    
+ 60 | scant attention      | 缺乏关注            | quē fá guān zhù    | escasa atención    | pouca atenção     
+ 61 | scant evidence       | 证据不足            | zhèng jù bù zú     | escasa evidencia   | escassa evidência 

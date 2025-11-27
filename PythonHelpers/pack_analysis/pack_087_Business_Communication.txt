@@ -1,0 +1,65 @@
+PACK 87: Business Communication
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | memo                 | 备忘录             | bèi wàng lù        | nota               | memorando         
+  3 | letter               | 信               | xìn                | carta              | carta             
+  4 | voicemail            | 语音信箱            | yǔ yīn xìn xiāng   | correo de voz      | correio de voz    
+  5 | conference           | 会议              | huì yì             | conferencia        | conferência       
+  6 | agenda               | 议程              | yì chéng           | agenda             | agenda            
+  7 | proposal             | 提案              | tí àn              | propuesta          | proposta          
+  8 | feedback             | 反馈              | fǎn kuì            | retroalimentación  | comentários       
+  9 | brief                | 简介              | jiǎn jiè           | breve              | breve             
+ 10 | notify               | 通知              | tōng zhī           | notificar          | notificar         
+ 11 | circulate            | 流通              | liú tōng           | circular           | circular          
+ 12 | correspond           | 对应              | duì yìng           | corresponder       | corresponder      
+ 13 | consult              | 咨询              | zī xún             | consultar          | consulte          
+ 14 | collaborate          | 合作              | hé zuò             | colaborar          | colaborar         
+ 15 | liaise               | 联络              | lián luò           | enlace             | contato           
+ 16 | formalize            | 形式化             | xíng shì huà       | formalizar         | formalizar        
+ 17 | outline              | 大纲              | dà gāng            | esquema            | esboço            
+ 18 | draft                | 草稿              | cǎo gǎo            | borrador           | rascunho          
+ 19 | attach               | 附上              | fù shàng           | adjuntar           | anexar            
+ 20 | forward              | 转发              | zhuǎn fā           | adelante           | avançar           
+ 21 | distribute           | 分发              | fēn fā             | distribuir         | distribuir        
+ 22 | office memo          | 办公室备忘录          | bàn gōng shì bèi w | nota de oficina    | memorando de escri
+ 23 | memo to staff        | 给员工的备忘录         | gěi yuán gōng de b | memorando al perso | memorando para a e
+ 24 | cover letter         | 求职信             | qiú zhí xìn        | carta de presentac | carta de apresenta
+ 25 | letter of recommenda | 推荐信             | tuī jiàn xìn       | carta de recomenda | carta de recomenda
+ 26 | leave voicemail      | 留下语音信箱          | liú xià yǔ yīn xìn | dejar mensaje de v | deixar correio de 
+ 27 | check voicemail      | 检查语音信箱          | jiǎn chá yǔ yīn xì | revisar el correo  | verificar correio 
+ 28 | video conference     | 视频会议            | shì pín huì yì     | videoconferencia   | videoconferência  
+ 29 | conference call      | 电话会议            | diàn huà huì yì    | conferencia telefó | teleconferência   
+ 30 | meeting agenda       | 会议议程            | huì yì yì chéng    | agenda de la reuni | agenda da reunião 
+ 31 | agenda item          | 议程项目            | yì chéng xiàng mù  | punto del orden de | item da agenda    
+ 32 | business proposal    | 商业提案            | shāng yè tí àn     | propuesta de negoc | proposta comercial
+ 33 | proposal meeting     | 提案会议            | tí àn huì yì       | reunión de propues | reunião de propost
+ 34 | give feedback        | 提供反馈            | tí gōng fǎn kuì    | dar tu opinión     | dar feedback      
+ 35 | receive feedback     | 接收反馈            | jiē shōu fǎn kuì   | recibir comentario | receber feedback  
+ 36 | brief meeting        | 简短会议            | jiǎn duǎn huì yì   | breve reunión      | breve reunião     
+ 37 | quick brief          | 快速简介            | kuài sù jiǎn jiè   | resumen rápido     | resumo rápido     
+ 38 | notify me            | 通知我             | tōng zhī wǒ        | avísame            | me avise          
+ 39 | notify in advance    | 提前通知            | tí qián tōng zhī   | notificar con ante | avisar com anteced
+ 40 | circulate document   | 传阅文件            | chuán yuè wén jiàn | circular documento | circular documento
+ 41 | circulate informatio | 传播信息            | chuán bō xìn xī    | circular informaci | circular informaçõ
+ 42 | correspond with      | 对应              | duì yìng           | corresponder con   | corresponde com   
+ 43 | correspond by email  | 通过电子邮件通讯        | tōng guò diàn zi y | corresponder por c | corresponder por e
+ 44 | consult with         | 咨询              | zī xún             | consultar con      | consulte          
+ 45 | consult expert       | 请教专家            | qǐng jiào zhuān ji | consultar experto  | consulte especiali
+ 46 | collaborate on       | 合作              | hé zuò             | colaborar en       | colaborar em      
+ 47 | collaborate together | 一起协作            | yì qǐ xié zuò      | colaborar juntos   | colaborar juntos  
+ 48 | liaise with          | 联络              | lián luò           | establecer enlace  | entre em contato c
+ 49 | liaise between       | 之间联络            | zhī jiān lián luò  | enlace entre       | ligação entre     
+ 50 | formalize agreement  | 之间的联络正式协议       | zhī jiān de lián l | formalizar acuerdo | formalizar acordo 
+ 51 | formalize process    | 正式化流程           | zhèng shì huà liú  | formalizar proceso | formalizar process
+ 52 | outline plan         | 概要计划            | gài yào jì huà     | plan general       | plano geral       
+ 53 | outline steps        | 概述步骤            | gài shù bù zhòu    | describir los paso | delinear as etapas
+ 54 | first draft          | 第一稿             | dì yī gǎo          | primer borrador    | primeiro rascunho 
+ 55 | draft document       | 文件草稿            | wén jiàn cǎo gǎo   | borrador de docume | projeto de documen
+ 56 | attach file          | 附加文件            | fù jiā wén jiàn    | adjuntar archivo   | anexar arquivo    
+ 57 | please attach        | 请附上             | qǐng fù shàng      | por favor adjunte  | anexe             
+ 58 | forward email        | 转发电子邮件          | zhuǎn fā diàn zi y | reenviar correo el | encaminhar e-mail 
+ 59 | forward to           | 转发至             | zhuǎn fā zhì       | reenviar a         | encaminhar para   
+ 60 | distribute copies    | 分发副本            | fēn fā fù běn      | distribuir copias  | distribuir cópias 
+ 61 | distribute evenly    | 均匀分布            | jūn yún fēn bù     | distribuir uniform | distribuir uniform

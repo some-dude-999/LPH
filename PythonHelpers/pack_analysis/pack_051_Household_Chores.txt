@@ -1,0 +1,65 @@
+PACK 51: Household Chores
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | wash                 | 洗               | xǐ                 | lavar              | lavar             
+  3 | dry                  | 干燥              | gān zào            | seco               | seco              
+  4 | sweep                | 扫一扫             | sǎo yī sǎo         | barrer             | varrer            
+  5 | mop                  | 拖把              | tuō bǎ             | fregona            | esfregão          
+  6 | vacuum               | 真空              | zhēn kōng          | vacío              | vácuo             
+  7 | dust                 | 灰尘              | huī chén           | polvo              | poeira            
+  8 | wipe                 | 擦拭              | cā shì             | limpiar            | limpar            
+  9 | scrub                | 磨砂              | mó shā             | fregar             | esfregar          
+ 10 | polish               | 波兰              | bō lán             | polaco             | polonês           
+ 11 | fold                 | 折叠              | zhé dié            | doblar             | dobrar            
+ 12 | iron                 | 铁               | tiě                | hierro             | ferro             
+ 13 | tidy                 | 整洁              | zhěng jié          | ordenado           | arrumado          
+ 14 | repair               | 修复              | xiū fù             | reparar            | reparar           
+ 15 | pick                 | 选择              | xuǎn zé            | elegir             | escolher          
+ 16 | sort                 | 排序              | pái xù             | ordenar            | classificar       
+ 17 | rinse                | 冲洗              | chōng xǐ           | enjuagar           | enxaguar          
+ 18 | hang                 | 挂               | guà                | colgar             | pendurar          
+ 19 | stack                | 堆栈              | duī zhàn           | pila               | pilha             
+ 20 | arrange              | 安排              | ān pái             | organizar          | organizar         
+ 21 | discard              | 丢弃              | diū qì             | descartar          | descartar         
+ 22 | wash dishes          | 洗碗              | xǐ wǎn             | lavar los platos   | lavar louça       
+ 23 | wash clothes         | 洗衣服             | xǐ yī fú           | lavar la ropa      | lavar roupas      
+ 24 | dry off              | 擦干燥             | cā gān zào         | secar              | seque             
+ 25 | dry clean            | 干洗              | gān xǐ             | limpieza en seco   | lavagem a seco    
+ 26 | sweep the floor      | 扫地              | sǎo dì             | barrer el piso     | varrer o chão     
+ 27 | sweep up             | 扫起来             | sǎo qǐ lái         | barrer             | varrer            
+ 28 | mop the floor        | 拖地              | tuō dì             | trapear el piso    | esfregar o chão   
+ 29 | mop up               | 拖地              | tuō dì             | limpiar            | limpar            
+ 30 | vacuum cleaner       | 吸尘器             | xī chén qì         | aspiradora         | aspirador         
+ 31 | vacuum the carpet    | 用吸尘器吸地毯         | yòng xī chén qì xī | aspirar la alfombr | aspirar o carpete 
+ 32 | dust off             | 除尘              | chú chén           | quitar el polvo    | tire a poeira     
+ 33 | dust the furniture   | 给家具除尘           | gěi jiā jù chú ché | quitar el polvo de | tirar o pó dos móv
+ 34 | wipe down            | 擦拭              | cā shì             | limpiar            | limpar            
+ 35 | wipe clean           | 擦干净             | cā gān jìng        | limpiar con un pañ | limpe             
+ 36 | scrub hard           | 用力擦洗            | yòng lì cā xǐ      | frotar fuerte      | esfregue com força
+ 37 | scrub the floor      | 擦地板             | cā dì bǎn          | fregar el piso     | esfregar o chão   
+ 38 | polish shoes         | 擦亮鞋子            | cā liàng xié zi    | lustrar zapatos    | sapatos polidos   
+ 39 | nail polish          | 指甲油             | zhǐ jiǎ yóu        | esmalte de uñas    | esmalte           
+ 40 | fold clothes         | 叠衣服             | dié yī fú          | doblar la ropa     | dobrar roupas     
+ 41 | fold up              | 折叠起来            | zhé dié qǐ lái     | doblar             | dobre             
+ 42 | iron clothes         | 铁衣服             | tiě yī fú          | planchar la ropa   | roupas de ferro   
+ 43 | iron out             | 熨烫              | yùn tàng           | solucionar         | resolver          
+ 44 | tidy up              | 整理              | zhěng lǐ           | ordenar            | arrumar           
+ 45 | keep tidy            | 保持整洁            | bǎo chí zhěng jié  | mantener ordenado  | mantenha-se arruma
+ 46 | repair it            | 修复它             | xiū fù tā          | repararlo          | consertá-lo       
+ 47 | home repair          | 上门维修            | shàng mén wéi xiū  | reparaciones del h | reparação doméstic
+ 48 | pick apples          | 摘苹果             | zhāi píng guǒ      | recoger manzanas   | colher maçãs      
+ 49 | pick out             | 挑出              | tiāo chū           | escoger            | escolha           
+ 50 | sort by              | 排序依据            | pái xù yī jù       | ordenar por        | classificar por   
+ 51 | sort through         | 按               | àn                 | ordenar            | classificar       
+ 52 | rinse off            | 排序冲洗掉           | pái xù chōng xǐ di | enjuagar           | enxaguar          
+ 53 | rinse out            | 冲洗掉             | chōng xǐ diào      | enjuagar           | enxaguar          
+ 54 | hang dry             | 悬挂晾干燥           | xuán guà liàng gān | colgar para secar  | pendurar para seca
+ 55 | hang loose           | 保持放松            | bǎo chí fàng sōng  | colgar suelto      | fique solto       
+ 56 | stack up             | 堆叠              | duī dié            | apilar             | empilhar          
+ 57 | stack together       | 堆叠在一起           | duī dié zài yì qǐ  | apilar juntos      | empilhar juntos   
+ 58 | arrange neatly       | 排列整齐            | pái liè zhěng qí   | organizar cuidados | organize ordenadam
+ 59 | flower arrange       | 插花              | chā huā            | arreglo floral     | arranjo de flores 
+ 60 | discard old items    | 丢弃旧物品           | diū qì jiù wù pǐn  | descartar artículo | descartar itens an
+ 61 | discard properly     | 正确丢弃            | zhèng què diū qì   | descartar adecuada | descarte corretame

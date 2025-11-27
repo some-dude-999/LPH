@@ -1,0 +1,65 @@
+PACK 114: Finance Basics
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | financial            | 金融              | jīn róng           | financiero         | financeiro        
+  3 | stock                | 库存              | kù cún             | valores            | estoque           
+  4 | index fund           | 指数基金            | zhǐ shù jī jīn     | fondo indexado     | fundo de índice   
+  5 | fund                 | 基金              | jī jīn             | fondo              | fundo             
+  6 | asset                | 资产              | zī chǎn            | activo             | ativo             
+  7 | liability            | 责任              | zé rèn             | responsabilidad    | responsabilidade  
+  8 | equity               | 股权              | gǔ quán            | patrimonio         | patrimônio líquido
+  9 | dividend             | 股息              | gǔ xī              | dividendo          | dividendo         
+ 10 | portfolio            | 投资组合            | tóu zī zǔ hé       | cartera            | portfólio         
+ 11 | invest               | 投资              | tóu zī             | invertir           | investir          
+ 12 | inflation            | 通货膨胀            | tōng huò péng zhàn | inflación          | inflação          
+ 13 | capital              | 资本              | zī běn             | capital            | capitais          
+ 14 | exchange             | 交换              | jiāo huàn          | intercambio        | troca             
+ 15 | rate                 | 率               | lǜ                 | tasa               | taxa              
+ 16 | securities           | 证券              | zhèng quàn         | valores            | títulos           
+ 17 | treasury             | 国库              | guó kù             | tesorería          | tesouraria        
+ 18 | broker               | 经纪人             | jīng jì rén        | corredor           | corretor          
+ 19 | hedge                | 对冲              | duì chōng          | cobertura          | cerca viva        
+ 20 | index                | 索引              | suǒ yǐn            | índice             | índice            
+ 21 | yield                | 产量              | chǎn liàng         | rendimiento        | rendimento        
+ 22 | financial advisor    | 财务顾问            | cái wù gù wèn      | asesor financiero  | consultor financei
+ 23 | financial planning   | 财务规划            | cái wù guī huà     | planificación fina | planejamento finan
+ 24 | stock market         | 股市              | gǔ shì             | mercado de valores | mercado de ações  
+ 25 | stock price          | 股价              | gǔ jià             | precio de las acci | preço das ações   
+ 26 | invest in index fund | 投资指数基金          | tóu zī zhǐ shù jī  | invertir en fondos | investir em fundo 
+ 27 | index fund portfolio | 指数基金投资组合        | zhǐ shù jī jīn tóu | cartera de fondos  | carteira de fundos
+ 28 | mutual fund          | 共同基金            | gòng tóng jī jīn   | fondo mutuo        | fundo mútuo       
+ 29 | fund manager         | 基金经理            | jī jīn jīng lǐ     | gestor de fondos   | gestor de fundos  
+ 30 | asset allocation     | 资产配置            | zī chǎn pèi zhì    | asignación de acti | alocação de ativos
+ 31 | liquid asset         | 流动资产            | liú dòng zī chǎn   | activo líquido     | ativo líquido     
+ 32 | liability insurance  | 责任保险            | zé rèn bǎo xiǎn    | seguro de responsa | seguro de responsa
+ 33 | personal liability   | 个人责任            | gè rén zé rèn      | responsabilidad pe | responsabilidade p
+ 34 | home equity          | 房屋净值            | fáng wū jìng zhí   | valor líquido de l | valor da casa     
+ 35 | equity stake         | 股权              | gǔ quán            | participación acci | participação acion
+ 36 | dividend payment     | 股息支付            | gǔ xī zhī fù       | pago de dividendos | pagamento de divid
+ 37 | quarterly dividend   | 季度股息            | jì dù gǔ xī        | dividendo trimestr | dividendo trimestr
+ 38 | investment portfolio | 投资组合            | tóu zī zǔ hé       | cartera de inversi | carteira de invest
+ 39 | portfolio management | 投资组合管理          | tóu zī zǔ hé guǎn  | gestión de cartera | gestão de portfóli
+ 40 | invest wisely        | 明智投资            | míng zhì tóu zī    | invertir sabiament | invista com sabedo
+ 41 | invest in stocks     | 投资股票            | tóu zī gǔ piào     | invertir en accion | investir em ações 
+ 42 | inflation rate       | 通货膨胀率           | tōng huò péng zhàn | tasa de inflación  | taxa de inflação  
+ 43 | high inflation       | 高通胀             | gāo tōng zhàng     | alta inflación     | inflação alta     
+ 44 | capital gains        | 资本收益            | zī běn shōu yì     | ganancias de capit | ganhos de capital 
+ 45 | capital investment   | 资本投资            | zī běn tóu zī      | inversión de capit | investimento de ca
+ 46 | currency exchange    | 货币兑换            | huò bì duì huàn    | cambio de moneda   | câmbio de moeda   
+ 47 | stock exchange       | 证券交易所           | zhèng quàn jiāo yì | bolsa de valores   | bolsa de valores  
+ 48 | interest rate        | 利率              | lì lǜ              | tasa de interés    | taxa de juros     
+ 49 | exchange rate        | 汇率              | huì lǜ             | tipo de cambio     | taxa de câmbio    
+ 50 | securities trading   | 证券交易            | zhèng quàn jiāo yì | negociación de val | negociação de valo
+ 51 | buy securities       | 购买证券            | gòu mǎi zhèng quàn | comprar valores    | comprar títulos   
+ 52 | treasury bond        | 国债              | guó zhài           | bono del tesoro    | títulos do tesouro
+ 53 | treasury department  | 财务部             | cái wù bù          | departamento de te | departamento de te
+ 54 | stock broker         | 股票经纪人           | gǔ piào jīng jì ré | corredor de bolsa  | corretor da bolsa 
+ 55 | broker fee           | 经纪费             | jīng jì fèi        | honorarios del cor | taxa de corretagem
+ 56 | hedge fund           | 对冲基金            | duì chōng jī jīn   | fondo de cobertura | fundo de hedge    
+ 57 | hedge against        | 对冲              | duì chōng          | protegerse contra  | proteção contra   
+ 58 | stock index          | 股票指数            | gǔ piào zhǐ shù    | índice bursátil    | índice de ações   
+ 59 | price index          | 价格指数            | jià gé zhǐ shù     | índice de precios  | índice de preços  
+ 60 | high yield           | 高产              | gāo chǎn           | alto rendimiento   | alto rendimento   
+ 61 | yield return         | 收益率回报           | shōu yì lǜ huí bào | retorno de rendimi | retorno de rendime

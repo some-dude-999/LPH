@@ -1,0 +1,65 @@
+PACK 135: Academic Nouns
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | assumption           | 假设              | jiǎ shè            | suposición         | suposição         
+  3 | capacity             | 容量              | róng liàng         | capacidad          | capacidade        
+  4 | tenet                | 宗旨              | zōng zhǐ           | principio          | princípio         
+  5 | conception           | 构想              | gòu xiǎng          | concepción         | concepção         
+  6 | constraint           | 约束              | yuē shù            | restricción        | restrição         
+  7 | contradiction        | 矛盾              | máo dùn            | contradicción      | contradição       
+  8 | controversy          | 争议              | zhēng yì           | controversia       | polêmica          
+  9 | inference            | 推理              | tuī lǐ             | inferencia         | inferência        
+ 10 | criterion            | 标准              | biāo zhǔn          | criterio           | critério          
+ 11 | deviation            | 偏差              | piān chā           | desviación         | desvio            
+ 12 | dichotomy            | 二分法             | èr fēn fǎ          | dicotomía          | dicotomia         
+ 13 | discourse            | 话语              | huà yǔ             | discurso           | discurso          
+ 14 | distinction          | 区别              | qū bié             | distinción         | distinção         
+ 15 | framework            | 框架              | kuāng jià          | marco              | quadro            
+ 16 | hierarchy            | 层次结构            | céng cì jié gòu    | jerarquía          | hierarquia        
+ 17 | ideology             | 意识形态            | yì shí xíng tài    | ideología          | ideologia         
+ 18 | implication          | 含义              | hán yì             | implicación        | implicação        
+ 19 | corollary            | 推论              | tuī lùn            | corolario          | corolário         
+ 20 | paradigm             | 范式              | fàn shì            | paradigma          | paradigma         
+ 21 | conjecture           | 猜想              | cāi xiǎng          | conjetura          | conjectura        
+ 22 | basic assumption     | 基本假设            | jī běn jiǎ shè     | supuesto básico    | suposição básica  
+ 23 | assumption that      | 假设              | jiǎ shè            | suposición de que  | suposição de que  
+ 24 | full capacity        | 满容量             | mǎn róng liàng     | capacidad completa | capacidade total  
+ 25 | capacity for         | 的容量             | de róng liàng      | capacidad para     | capacidade para   
+ 26 | core tenet           | 核心宗旨            | hé xīn zōng zhǐ    | principio fundamen | princípio central 
+ 27 | tenet of             | 的宗旨             | de zōng zhǐ        | principio de       | princípio de      
+ 28 | popular conception   | 流行观念            | liú xíng guān niàn | concepción popular | concepção popular 
+ 29 | conception of        | 的构想             | de gòu xiǎng       | concepción de      | concepção de      
+ 30 | budget constraint    | 预算限制            | yù suàn xiàn zhì   | restricción presup | restrição orçament
+ 31 | constraint on        | 对某物的约束          | duì mǒu wù de yuē  | restricción en     | restrição em      
+ 32 | apparent contradicti | 明显的矛盾           | míng xiǎn de máo d | aparente contradic | aparente contradiç
+ 33 | contradiction betwee | 之间的矛盾           | zhī jiān de máo dù | contradicción entr | contradição entre 
+ 34 | political controvers | 政治争议            | zhèng zhì zhēng yì | controversia polít | polêmica política 
+ 35 | controversy over     | 关于某事的争议         | guān yú mǒu shì de | controversia sobre | controvérsia sobre
+ 36 | logical inference    | 逻辑推理            | luó jí tuī lǐ      | inferencia lógica  | inferência lógica 
+ 37 | inference from       | 从某事推断           | cóng mǒu shì tuī d | inferencia de      | inferência de     
+ 38 | main criterion       | 主要标准            | zhǔ yào biāo zhǔn  | criterio principal | critério principal
+ 39 | criterion for        | 的标准             | de biāo zhǔn       | criterio para      | critério para     
+ 40 | slight deviation     | 轻微偏差            | qīng wēi piān chā  | ligera desviación  | ligeiro desvio    
+ 41 | deviation from       | 偏离              | piān lí            | desviación de      | desvio de         
+ 42 | false dichotomy      | 错误的二分法          | cuò wù de èr fēn f | falsa dicotomía    | falsa dicotomia   
+ 43 | dichotomy between    | 之间的二分法          | zhī jiān de èr fēn | dicotomía entre    | dicotomia entre   
+ 44 | public discourse     | 公共话语            | gōng gòng huà yǔ   | discurso público   | discurso público  
+ 45 | discourse on         | 关于某事的讨论         | guān yú mǒu shì de | discurso sobre     | discurso sobre    
+ 46 | clear distinction    | 明显区别            | míng xiǎn qū bié   | distinción clara   | distinção clara   
+ 47 | distinction between  | 之间的区别           | zhī jiān de qū bié | distinción entre   | distinção entre   
+ 48 | legal framework      | 法律框架            | fǎ lǜ kuāng jià    | marco jurídico     | quadro jurídico   
+ 49 | framework for        | 的框架             | de kuāng jià       | marco para         | quadro para       
+ 50 | social hierarchy     | 社会等级制度          | shè huì děng jí zh | jerarquía social   | hierarquia social 
+ 51 | hierarchy of         | 的层次结构           | de céng cì jié gòu | jerarquía de       | hierarquia de     
+ 52 | political ideology   | 政治意识形态          | zhèng zhì yì shí x | ideología política | ideologia política
+ 53 | ideology of          | 的意识形态           | de yì shí xíng tài | ideología de       | ideologia de      
+ 54 | practical implicatio | 实际意义            | shí jì yì yì       | implicaciones prác | implicação prática
+ 55 | implication of       | 的含义             | de hán yì          | implicación de     | implicação de     
+ 56 | natural corollary    | 自然推论            | zì rán tuī lùn     | corolario natural  | corolário natural 
+ 57 | corollary to         | 某事的推论           | mǒu shì de tuī lùn | corolario de       | corolário de      
+ 58 | new paradigm         | 新范式             | xīn fàn shì        | nuevo paradigma    | novo paradigma    
+ 59 | paradigm shift       | 范式转变            | fàn shì zhuǎn biàn | cambio de paradigm | mudança de paradig
+ 60 | mere conjecture      | 纯属猜想            | chún shǔ cāi xiǎng | mera conjetura     | mera conjectura   
+ 61 | conjecture about     | 推测关于            | tuī cè guān yú     | conjetura sobre    | conjecturar sobre 

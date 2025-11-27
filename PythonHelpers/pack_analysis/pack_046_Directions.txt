@@ -1,0 +1,65 @@
+PACK 46: Directions
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | left                 | 左               | zuǒ                | izquierda          | esquerda          
+  3 | right                | 对               | duì                | derecha            | certo             
+  4 | straight             | 直               | zhí                | recto              | direto            
+  5 | north                | 北               | běi                | norte              | norte             
+  6 | south                | 南               | nán                | sur                | sul               
+  7 | east                 | 东               | dōng               | este               | leste             
+  8 | west                 | 西               | xī                 | oeste              | oeste             
+  9 | corner               | 角落              | jiǎo luò           | esquina            | canto             
+ 10 | across               | 跨越              | kuà yuè            | a través           | através           
+ 11 | along                | 沿着              | yán zhe            | junto              | junto             
+ 12 | toward               | 走向              | zǒu xiàng          | hacia              | em direção        
+ 13 | away                 | 离开              | lí kāi             | lejos              | longe             
+ 14 | distance             | 距离              | jù lí              | distancia          | distância         
+ 15 | direction            | 方向              | fāng xiàng         | dirección          | direção           
+ 16 | map                  | 地图              | dì tú              | mapa               | mapa              
+ 17 | block                | 块               | kuài               | bloquear           | bloquear          
+ 18 | intersection         | 交叉点             | jiāo chā diǎn      | intersección       | interseção        
+ 19 | opposite             | 对面              | duì miàn           | opuesto            | oposto            
+ 20 | navigate             | 导航              | dǎo háng           | navegar            | navegar           
+ 21 | detour               | 绕道              | rào dào            | desvío             | desvio            
+ 22 | turn left            | 左转              | zuǒ zhuǎn          | girar a la izquier | vire à esquerda   
+ 23 | on the left          | 在左边             | zài zuǒ biān       | a la izquierda     | à esquerda        
+ 24 | turn right           | 右转              | yòu zhuǎn          | girar a la derecha | vire à direita    
+ 25 | on the right         | 在右边             | zài yòu biān       | a la derecha       | à direita         
+ 26 | go straight          | 直走              | zhí zǒu            | sigue recto        | siga em frente    
+ 27 | straight ahead       | 一直向前            | yì zhí xiàng qián  | de frente          | sempre em frente  
+ 28 | head north           | 向北              | xiàng běi          | dirígete al norte  | siga para o norte 
+ 29 | north side           | 北侧              | běi cè             | lado norte         | lado norte        
+ 30 | head south           | 向南              | xiàng nán          | dirígete al sur    | siga para o sul   
+ 31 | south side           | 南侧              | nán cè             | lado sur           | lado sul          
+ 32 | go east              | 向东走             | xiàng dōng zǒu     | ve al este         | vá para o leste   
+ 33 | east coast           | 东海岸             | dōng hǎi àn        | costa este         | costa leste       
+ 34 | go west              | 向西走             | xiàng xī zǒu       | ve al oeste        | vá para o oeste   
+ 35 | west side            | 西侧              | xī cè              | lado oeste         | lado oeste        
+ 36 | street corner        | 街角              | jiē jiǎo           | esquina de la call | esquina           
+ 37 | around the corner    | 就在拐角处           | jiù zài guǎi jiǎo  | a la vuelta de la  | ao virar da esquin
+ 38 | across the street    | 马路对面            | mǎ lù duì miàn     | al otro lado de la | do outro lado da r
+ 39 | across from          | 对面的             | duì miàn de        | frente a           | em frente         
+ 40 | along the way        | 对面一路走来          | duì miàn yī lù zǒu | en el camino       | ao longo do caminh
+ 41 | walk along           | 一起走             | yì qǐ zǒu          | caminar            | caminhar          
+ 42 | toward me            | 向着我             | xiàng zhe wǒ       | hacia mi           | em minha direção  
+ 43 | toward the end       | 走向最后            | zǒu xiàng zuì hòu  | hacia el final     | no final          
+ 44 | go away              | 走开              | zǒu kāi            | vete               | vá embora         
+ 45 | far away             | 远方              | yuǎn fāng          | muy lejos          | longe             
+ 46 | short distance       | 短距离             | duǎn jù lí         | corta distancia    | curta distância   
+ 47 | long distance        | 长途              | cháng tú           | larga distancia    | longa distância   
+ 48 | wrong direction      | 方向错误            | fāng xiàng cuò wù  | dirección equivoca | direção errada    
+ 49 | right direction      | 正确的方向           | zhèng què de fāng  | dirección correcta | direção certa     
+ 50 | use a map            | 使用地图            | shǐ yòng dì tú     | utilizar un mapa   | use um mapa       
+ 51 | check the map        | 查看地图            | chá kàn dì tú      | consulta el mapa   | confira o mapa    
+ 52 | next block           | 下一个块            | xià yí gè kuài     | siguiente bloque   | próximo bloco     
+ 53 | around the block     | 街区附近            | jiē qū fù jìn      | alrededor de la cu | ao redor do quarte
+ 54 | busy intersection    | 繁忙的十字路口         | fán máng de shí zì | intersección muy t | cruzamento movimen
+ 55 | at the intersection  | 在十字路口           | zài shí zì lù kǒu  | en la intersección | no cruzamento     
+ 56 | opposite side        | 对面              | duì miàn           | lado opuesto       | lado oposto       
+ 57 | quite opposite       | 恰恰相反            | qià qià xiāng fǎn  | todo lo contrario  | bem o oposto      
+ 58 | navigate through     | 浏览              | liú lǎn            | navegar por        | navegar por       
+ 59 | easy to navigate     | 易于导航            | yì yú dǎo háng     | fácil de navegar   | fácil de navegar  
+ 60 | take a detour        | 绕道走             | rào dào zǒu        | tomar un desvío    | faça um desvio    
+ 61 | road detour          | 绕行道路            | rào xíng dào lù    | desvío del camino  | desvio de estrada 

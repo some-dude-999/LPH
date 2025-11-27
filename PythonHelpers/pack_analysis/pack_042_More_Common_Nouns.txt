@@ -1,0 +1,65 @@
+PACK 42: More Common Nouns
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | example              | 例子              | lì zi              | ejemplo            | exemplo           
+  3 | part                 | 部分              | bù fèn             | parte              | parte             
+  4 | side                 | 侧面              | cè miàn            | lado               | lado              
+  5 | end                  | 结束              | jié shù            | fin                | fim               
+  6 | fact                 | 事实              | shì shí            | hecho              | fato              
+  7 | point                | 点               | diǎn               | punto              | ponto             
+  8 | story                | 故事              | gù shì             | historia           | história          
+  9 | word                 | 词               | cí                 | palabra            | palavra           
+ 10 | area                 | 面积              | miàn jī            | zona               | área              
+ 11 | country              | 国家              | guó jiā            | país               | país              
+ 12 | city                 | 城市              | chéng shì          | ciudad             | cidade            
+ 13 | state                | 状态              | zhuàng tài         | estado             | estado            
+ 14 | case                 | 案例              | àn lì              | caso               | caso              
+ 15 | lot                  | 大量              | dà liàng           | lote               | muito             
+ 16 | difference           | 区别              | qū bié             | diferencia         | diferença         
+ 17 | type                 | 类型              | lèi xíng           | tipo               | tipo              
+ 18 | topic                | 主题              | zhǔ tí             | tema               | tópico            
+ 19 | matter               | 事               | shì                | materia            | importa           
+ 20 | concern              | 关注              | guān zhù           | preocupación       | preocupação       
+ 21 | detail               | 详细              | xiáng xì           | detalle            | detalhe           
+ 22 | for example          | 例如              | lì rú              | por ejemplo        | por exemplo       
+ 23 | good example         | 好例子             | hǎo lì zi          | buen ejemplo       | bom exemplo       
+ 24 | big part             | 很大一部分           | hěn dà yī bù fèn   | gran parte         | grande parte      
+ 25 | part of              | 部分的             | bù fèn de          | parte de           | parte de          
+ 26 | each side            | 的一部分每一边         | de yī bù fèn měi y | cada lado          | cada lado         
+ 27 | other side           | 另一边             | lìng yī biān       | otro lado          | outro lado        
+ 28 | in the end           | 最后              | zuì hòu            | al final           | no final          
+ 29 | end of               | 结束的             | jié shù de         | fin de             | fim de            
+ 30 | in fact              | 结束事实上           | jié shù shì shí sh | de hecho           | na verdade        
+ 31 | fun fact             | 有趣的事实           | yǒu qù de shì shí  | dato curioso       | curiosidade       
+ 32 | starting point       | 起点              | qǐ diǎn            | punto de partida   | ponto de partida  
+ 33 | the point            | 要点              | yào diǎn           | el punto           | o ponto           
+ 34 | long story           | 长话短说            | cháng huà duǎn shu | larga historia     | longa história    
+ 35 | short story          | 短篇小说            | duǎn piān xiǎo shu | cuento             | conto             
+ 36 | in other words       | 换句话说            | huàn jù huà shuō   | en otras palabras  | em outras palavras
+ 37 | key word             | 关键词             | guān jiàn cí       | palabra clave      | palavra-chave     
+ 38 | this area            | 该区域             | gāi qū yù          | esta zona          | esta área         
+ 39 | local area           | 当地              | dāng dì            | área local         | área local        
+ 40 | home country         | 祖国              | zǔ guó             | país de origen     | país de origem    
+ 41 | country side         | 乡村              | xiāng cūn          | campo              | zona rural        
+ 42 | big city             | 大城市             | dà chéng shì       | gran ciudad        | cidade grande     
+ 43 | city center          | 市中心             | shì zhōng xīn      | centro de la ciuda | centro da cidade  
+ 44 | current state        | 当前状态            | dāng qián zhuàng t | estado actual      | estado atual      
+ 45 | state of mind        | 心态              | xīn tài            | estado de ánimo    | estado de espírito
+ 46 | in that case         | 在那种情况下          | zài nà zhǒng qíng  | en ese caso        | nesse caso        
+ 47 | just in case         | 以防万一            | yǐ fáng wàn yī     | por si acaso       | por precaução     
+ 48 | empty lot            | 空地              | kòng dì            | lote baldío        | terreno vazio     
+ 49 | lot of               | 很多              | hěn duō            | muchos             | muitos            
+ 50 | spot the difference  | 找出差异            | zhǎo chū chāi yì   | encuentra la difer | descubra a diferen
+ 51 | what's the differenc | 有什么区别           | yǒu shén me qū bié | cual es la diferen | qual é a diferença
+ 52 | this type            | 这种类型            | zhè zhǒng lèi xíng | este tipo          | esse tipo         
+ 53 | type of              | 类型的             | lèi xíng de        | tipo de            | tipo de           
+ 54 | main topic           | 的类型主要话题         | de lèi xíng zhǔ yà | tema principal     | tópico principal  
+ 55 | off topic            | 题外话             | tí wài huà         | fuera de tema      | fora do tópico    
+ 56 | no matter            | 不管              | bù guǎn            | no importa         | não importa       
+ 57 | dark matter          | 暗物质             | àn wù zhì          | materia oscura     | matéria escura    
+ 58 | main concern         | 主要关注点           | zhǔ yào guān zhù d | principal preocupa | principal preocupa
+ 59 | concern for          | 关心              | guān xīn           | preocupación por   | preocupação com   
+ 60 | in detail            | 详细              | xiáng xì           | en detalle         | em detalhes       
+ 61 | more detail          | 更多细节            | gèng duō xì jié    | más detalle        | mais detalhes     

@@ -1,0 +1,65 @@
+PACK 41: Common Nouns
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | thing                | 东西              | dōng xī            | cosa               | coisa             
+  3 | place                | 地点              | dì diǎn            | lugar              | lugar             
+  4 | person               | 人               | rén                | persona            | pessoa            
+  5 | people               | 人               | rén                | personas           | pessoas           
+  6 | man                  | 男人              | nán rén            | hombre             | homem             
+  7 | woman                | 女人              | nǚ rén             | mujer              | mulher            
+  8 | name                 | 姓名              | xìng míng          | nombre             | nome              
+  9 | time                 | 时间              | shí jiān           | tiempo             | tempo             
+ 10 | money                | 钱               | qián               | dinero             | dinheiro          
+ 11 | way                  | 方式              | fāng shì           | camino             | caminho           
+ 12 | world                | 世界              | shì jiè            | mundo              | mundo             
+ 13 | life                 | 生活              | shēng huó          | vida               | vida              
+ 14 | job                  | 工作              | gōng zuò           | trabajo            | trabalho          
+ 15 | book                 | 书               | shū                | libro              | livro             
+ 16 | paper                | 纸               | zhǐ                | papel              | papel             
+ 17 | number               | 数量              | shù liàng          | número             | número            
+ 18 | problem              | 问题              | wèn tí             | problema           | problema          
+ 19 | event                | 事件              | shì jiàn           | evento             | evento            
+ 20 | moment               | 时刻              | shí kè             | momento            | momento           
+ 21 | situation            | 情况              | qíng kuàng         | situación          | situação          
+ 22 | same thing           | 同样的事情           | tóng yàng de shì q | lo mismo           | a mesma coisa     
+ 23 | one thing            | 一件事             | yī jiàn shì        | una cosa           | uma coisa         
+ 24 | nice place           | 好地方             | hǎo dì fāng        | bonito lugar       | lugar agradável   
+ 25 | your place           | 你的位置            | nǐ de wèi zhì      | tu lugar           | seu lugar         
+ 26 | nice person          | 好人              | hǎo rén            | buena persona      | pessoa legal      
+ 27 | in person            | 亲自              | qīn zì             | en persona         | pessoalmente      
+ 28 | many people          | 很多人             | hěn duō rén        | mucha gente        | muitas pessoas    
+ 29 | some people          | 有些人             | yǒu xiē rén        | algunas personas   | algumas pessoas   
+ 30 | business man         | 商人              | shāng rén          | hombre de negocios | homem de negócios 
+ 31 | old man              | 老头              | lǎo tóu            | viejo              | velho             
+ 32 | young woman          | 年轻女子            | nián qīng nǚ zǐ    | mujer joven        | jovem             
+ 33 | old woman            | 老妇人             | lǎo fù rén         | anciana            | velha             
+ 34 | last name            | 姓氏              | xìng shì           | apellido           | sobrenome         
+ 35 | name tag             | 姓名标签            | xìng míng biāo qiā | etiqueta de nombre | crachá            
+ 36 | spare time           | 业余时间            | yè yú shí jiān     | tiempo libre       | tempo livre       
+ 37 | time out             | 超时              | chāo shí           | tiempo de espera   | tempo limite      
+ 38 | no money             | 没钱              | méi qián           | sin dinero         | sem dinheiro      
+ 39 | money matters        | 钱很重要            | qián hěn zhòng yào | el dinero importa  | dinheiro é importa
+ 40 | one way              | 一种方式            | yī zhǒng fāng shì  | unidireccional     | só de ida         
+ 41 | any way              | 无论如何            | wú lùn rú hé       | de cualquier maner | de qualquer maneir
+ 42 | around the world     | 世界各地            | shì jiè gè dì      | en todo el mundo   | ao redor do mundo 
+ 43 | world tour           | 世界巡演            | shì jiè xún yǎn    | gira mundial       | turnê mundial     
+ 44 | good life            | 美好生活            | měi hǎo shēng huó  | buena vida         | boa vida          
+ 45 | life is good         | 生活是美好的          | shēng huó shì měi  | la vida es buena   | a vida é boa      
+ 46 | new job              | 新工作             | xīn gōng zuò       | nuevo trabajo      | novo emprego      
+ 47 | dream job            | 梦想的工作           | mèng xiǎng de gōng | trabajo soñado     | emprego dos sonhos
+ 48 | good book            | 好书              | hǎo shū            | buen libro         | bom livro         
+ 49 | book store           | 书店              | shū diàn           | librería           | livraria          
+ 50 | piece of paper       | 一张纸             | yī zhāng zhǐ       | trozo de papel     | pedaço de papel   
+ 51 | paper work           | 文书工作            | wén shū gōng zuò   | papeleo            | papelada          
+ 52 | phone number         | 电话号码            | diàn huà hào mǎ    | número de teléfono | número de telefone
+ 53 | number one           | 第一名             | dì yì míng         | número uno         | número um         
+ 54 | problem child        | 问题孩子            | wèn tí hái zi      | niño problemático  | criança problemáti
+ 55 | big problem          | 大问题             | dà wèn tí          | gran problema      | grande problema   
+ 56 | special event        | 特别活动            | tè bié huó dòng    | evento especial    | evento especial   
+ 57 | main event           | 主要活动            | zhǔ yào huó dòng   | evento principal   | evento principal  
+ 58 | at the moment        | 此刻              | cǐ kè              | en este momento    | no momento        
+ 59 | one moment           | 一会儿             | yī huì er          | un momento         | um momento        
+ 60 | current situation    | 现状              | xiàn zhuàng        | situación actual   | situação atual    
+ 61 | difficult situation  | 困难的处境           | kùn nán de chǔ jìn | situación difícil  | situação difícil  

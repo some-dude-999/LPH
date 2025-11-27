@@ -1,0 +1,65 @@
+PACK 52: More Food
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | beef                 | 牛肉              | niú ròu            | carne de res       | carne bovina      
+  3 | pork                 | 猪肉              | zhū ròu            | cerdo              | carne de porco    
+  4 | bacon                | 培根              | péi gēn            | tocino             | bacon             
+  5 | pizza                | 披萨              | pī sà              | pizza              | pizza             
+  6 | pasta                | 面食              | miàn shí           | pasta              | macarrão          
+  7 | sandwich             | 三明治             | sān míng zhì       | sándwich           | sanduíche         
+  8 | burger               | 汉堡              | hàn bǎo            | hamburguesa        | hambúrguer        
+  9 | steak                | 牛排              | niú pái            | filete             | bife              
+ 10 | shrimp               | 虾               | xiā                | camarones          | camarão           
+ 11 | noodles              | 面条              | miàn tiáo          | fideos             | macarrão          
+ 12 | cereal               | 谷物              | gǔ wù              | cereales           | cereais           
+ 13 | yogurt               | 酸奶              | suān nǎi           | yogur              | iogurte           
+ 14 | butter               | 黄油              | huáng yóu          | mantequilla        | manteiga          
+ 15 | cream                | 奶油              | nǎi yóu            | crema              | creme             
+ 16 | sauce                | 酱               | jiàng              | salsa              | molho             
+ 17 | pepper               | 胡椒              | hú jiāo            | pimienta           | pimenta           
+ 18 | tomato               | 番茄              | fān qié            | tomate             | tomate            
+ 19 | lettuce              | 生菜              | shēng cài          | lechuga            | alface            
+ 20 | turkey               | 土耳其             | tǔ ěr qí           | pavo               | peru              
+ 21 | seafood              | 海鲜              | hǎi xiān           | mariscos           | frutos do mar     
+ 22 | ground beef          | 碎牛肉             | suì niú ròu        | carne molida       | carne moída       
+ 23 | beef stew            | 炖牛肉             | dùn niú ròu        | estofado de terner | ensopado de carne 
+ 24 | pork chop            | 猪排              | zhū pái            | chuleta de cerdo   | costeleta de porco
+ 25 | pulled pork          | 拉猪肉             | lā zhū ròu         | cerdo desmenuzado  | carne de porco des
+ 26 | crispy bacon         | 脆皮培根            | cuì pí péi gēn     | tocino crujiente   | bacon crocante    
+ 27 | bacon and eggs       | 培根和鸡蛋           | péi gēn hé jī dàn  | tocino y huevos    | bacon e ovos      
+ 28 | cheese pizza         | 奶酪披萨            | nǎi lào pī sà      | pizza de queso     | pizza de queijo   
+ 29 | pizza slice          | 披萨片             | pī sà piàn         | porción de pizza   | fatia de pizza    
+ 30 | fresh pasta          | 新鲜意大利面          | xīn xiān yì dà lì  | pasta fresca       | massa fresca      
+ 31 | pasta sauce          | 意大利面酱           | yì dà lì miàn jiàn | salsa para pasta   | molho para macarrã
+ 32 | ham sandwich         | 火腿三明治           | huǒ tuǐ sān míng z | sándwich de jamón  | sanduíche de presu
+ 33 | sandwich bread       | 三明治面包           | sān míng zhì miàn  | pan de sándwich    | pão sanduíche     
+ 34 | cheese burger        | 芝士汉堡            | zhī shì hàn bǎo    | hamburguesa con qu | hambúrguer de quei
+ 35 | burger joint         | 汉堡店             | hàn bǎo diàn       | hamburguesería     | hamburgueria      
+ 36 | grilled steak        | 烤牛排             | kǎo niú pái        | filete a la parril | bife grelhado     
+ 37 | steak house          | 牛排馆             | niú pái guǎn       | asador             | churrascaria      
+ 38 | fried shrimp         | 炸虾              | zhá xiā            | camarones fritos   | camarão frito     
+ 39 | shrimp cocktail      | 虾鸡尾酒            | xiā jī wěi jiǔ     | cóctel de camarone | coquetel de camarã
+ 40 | egg noodles          | 鸡蛋面             | jī dàn miàn        | fideos de huevo    | macarrão de ovo   
+ 41 | noodles soup         | 面条汤             | miàn tiáo tāng     | sopa de fideos     | sopa de macarrão  
+ 42 | breakfast cereal     | 早餐麦片            | zǎo cān mài piàn   | cereales para el d | cereal matinal    
+ 43 | cereal bowl          | 麦片碗             | mài piàn wǎn       | tazón de cereal    | tigela de cereal  
+ 44 | plain yogurt         | 原味酸奶            | yuán wèi suān nǎi  | yogur natural      | iogurte natural   
+ 45 | yogurt parfait       | 酸奶冻糕            | suān nǎi dòng gāo  | parfait de yogur   | parfait de iogurte
+ 46 | peanut butter        | 花生酱             | huā shēng jiàng    | mantequilla de man | manteiga de amendo
+ 47 | butter knife         | 黄油刀             | huáng yóu dāo      | cuchillo de manteq | faca de manteiga  
+ 48 | ice cream            | 冰淇淋             | bīng qí lín        | helado             | sorvete           
+ 49 | whipped cream        | 鲜奶油             | xiān nǎi yóu       | nata montada       | chantilly         
+ 50 | tomato sauce         | 番茄酱             | fān qié jiàng      | salsa de tomate    | molho de tomate   
+ 51 | hot sauce            | 辣酱              | là jiàng           | salsa picante      | molho picante     
+ 52 | black pepper         | 黑胡椒             | hēi hú jiāo        | pimienta negra     | pimenta preta     
+ 53 | salt and pepper      | 盐和胡椒            | yán hé hú jiāo     | sal y pimienta     | sal e pimenta     
+ 54 | fresh tomato         | 新鲜番茄            | xīn xiān fān qié   | tomate fresco      | tomate fresco     
+ 55 | tomato soup          | 番茄汤             | fān qié tāng       | sopa de tomate     | sopa de tomate    
+ 56 | iceberg lettuce      | 卷心生菜            | juǎn xīn shēng cài | lechuga iceberg    | alface americana  
+ 57 | lettuce wrap         | 生菜卷             | shēng cài juǎn     | envoltura de lechu | wrap de alface    
+ 58 | roast turkey         | 烤火鸡             | kǎo huǒ jī         | pavo asado         | peru assado       
+ 59 | turkey sandwich      | 火鸡三明治           | huǒ jī sān míng zh | sándwich de pavo   | sanduíche de peru 
+ 60 | fresh seafood        | 新鲜海鲜            | xīn xiān hǎi xiān  | mariscos frescos   | marisco fresco    
+ 61 | seafood restaurant   | 海鲜餐厅            | hǎi xiān cān tīng  | restaurante de mar | restaurante de fru

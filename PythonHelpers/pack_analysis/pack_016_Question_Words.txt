@@ -1,0 +1,65 @@
+PACK 16: Question Words
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | when                 | 什么时候            | shén me shí hòu    | cuando             | quando            
+  3 | where                | 在哪里             | zài nǎ lǐ          | dónde              | onde              
+  4 | why                  | 为什么             | wèi shén me        | por qué            | por que           
+  5 | how                  | 如何              | rú hé              | cómo               | como              
+  6 | how much             | 多少              | duō shǎo           | cuánto             | quanto            
+  7 | how many             | 多少              | duō shǎo           | cuántos            | quantos           
+  8 | how long             | 多长时间            | duō zhǎng shí jiān | cuánto tiempo      | quanto tempo      
+  9 | how far              | 多远              | duō yuǎn           | Hasta dónde        | quão longe        
+ 10 | how often            | 多常              | duō cháng          | con qué frecuencia | com que frequência
+ 11 | how old              | 多大了             | duō dà le          | cuántos años       | que idade         
+ 12 | what kind            | 什么样的            | shén me yàng de    | que tipo           | que tipo          
+ 13 | what time            | 什么时候            | shén me shí hòu    | ¿a qué hora?       | que horas         
+ 14 | what if              | 如果什么            | rú guǒ shén me     | Y si               | e se              
+ 15 | why not              | 为什么不呢           | wèi shén me bù ne  | por qué no         | por que não       
+ 16 | how come             | 怎么会             | zěn me huì         | Cómo               | Por quê           
+ 17 | wherever             | 无论在哪里           | wú lùn zài nǎ lǐ   | lo que sea         | onde quer que     
+ 18 | whenever             | 每当              | měi dāng           | cuando sea         | em qualquer moment
+ 19 | whomever             | 无论是谁            | wú lùn shì shuí    | quienquiera        | quem quer que seja
+ 20 | somehow              | 不知何故            | bù zhī hé gù       | de alguna manera   | de alguma forma   
+ 21 | anyhow               | 无论如何            | wú lùn rú hé       | de todos modos     | de qualquer forma 
+ 22 | when is it           | 什么时候            | shén me shí hòu    | cuando es          | quando é isso     
+ 23 | when we arrive       | 当我们到达时          | dāng wǒ men dào dá | cuando lleguemos   | quando chegarmos  
+ 24 | where is it          | 它在哪里            | tā zài nǎ lǐ       | donde esta         | Cadê              
+ 25 | where are you        | 你在哪             | nǐ zài nǎ          | dónde estás        | onde você está    
+ 26 | why is that          | 这是为什么           | zhè shì wèi shén m | porqué es eso      | por que é que     
+ 27 | why not try          | 为什么不尝试          | wèi shén me bù chá | ¿Por qué no intent | por que não tentar
+ 28 | how are you          | 你好吗             | nǐ hǎo ma          | Cómo estás         | como vai          
+ 29 | how do you know      | 你怎么知道           | nǐ zěn me zhī dào  | Cómo lo sabes      | como você sabe    
+ 30 | how much is it       | 多少钱             | duō shǎo qián      | Cuánto cuesta      | quanto isso custa 
+ 31 | how much does it cos | 它要多少钱           | tā yào duō shǎo qi | Cuánto cuesta      | quanto custa isso 
+ 32 | how many are there   | 有多少人            | yǒu duō shǎo rén   | cuantos hay        | quantos existem   
+ 33 | how many do you want | 你想要多少           | nǐ xiǎng yào duō s | cuantos quieres    | quantos você quer 
+ 34 | how long does it tak | 多久时间            | duō jiǔ shí jiān   | Cuánto tiempo se t | Quanto tempo leva 
+ 35 | how long will it be  | 需要多长时间          | xū yào duō zhǎng s | cuanto tiempo sera | quanto tempo vai d
+ 36 | how far is it        | 有多远             | yǒu duō yuǎn       | ¿Qué tan lejos est | quão longe está   
+ 37 | how far away         | 有多远             | yǒu duō yuǎn       | que tan lejos      | quão longe        
+ 38 | how often do you go  | 你多久去一次          | nǐ duō jiǔ qù yī c | ¿Con qué frecuenci | com que frequência
+ 39 | how often does it ha | 它多久发生一次         | tā duō jiǔ fā shēn | ¿Con qué frecuenci | com que frequência
+ 40 | how old are you      | 你今年多大           | nǐ jīn nián duō dà | cuántos años tiene | quantos anos você 
+ 41 | how old is she       | 她年纪多大           | tā nián jì duō dà  | Qué edad tiene ell | quantos anos ela t
+ 42 | what kind of food    | 什么样的食物          | shén me yàng de sh | que tipo de comida | que tipo de comida
+ 43 | what kind is it      | 它是什么类型的         | tā shì shén me lèi | ¿Qué tipo es?      | que tipo é isso   
+ 44 | what time is it      | 现在是几奌           | xiàn zài shì jǐ di | ¿qué hora es?      | que horas são     
+ 45 | what time do we leav | 我们什么时候出发        | wǒ men shén me shí | ¿A qué hora salimo | que horas partimos
+ 46 | what if it rains     | 如果下雨怎么办         | rú guǒ xià yǔ zěn  | ¿Qué pasa si lluev | e se chover       
+ 47 | what if we try       | 如果我们尝试怎么办       | rú guǒ wǒ men chán | ¿Qué pasa si lo in | e se tentarmos    
+ 48 | why not go           | 为什么不去           | wèi shén me bù qù  | ¿Por qué no ir?    | por que não ir    
+ 49 | why not try it       | 为什么不尝试一下        | wèi shén me bù chá | ¿Por qué no intent | por que não tentar
+ 50 | how come you know    | 你怎么知道           | nǐ zěn me zhī dào  | ¿Cómo es que lo sa | como é que você sa
+ 51 | how come he left     | 他怎么离开了          | tā zěn me lí kāi l | ¿Cómo es que se fu | como é que ele foi
+ 52 | wherever you go      | 无论你去哪里          | wú lùn nǐ qù nǎ lǐ | dondequiera que va | onde quer que você
+ 53 | wherever it is       | 无论它在哪里          | wú lùn tā zài nǎ l | dondequiera que es | onde quer que este
+ 54 | whenever you want    | 每当你想要的时候        | měi dāng nǐ xiǎng  | cuando quieras     | sempre que você qu
+ 55 | whenever possible    | 只要有可能           | zhǐ yào yǒu kě nén | siempre que es pos | sempre que possíve
+ 56 | give it to whomever  | 给任何人            | gěi rèn hé rén     | dáselo a quien sea | dê para quem      
+ 57 | whomever you want    | 无论你想要谁          | wú lùn nǐ xiǎng yà | quien quieras      | quem você quiser  
+ 58 | somehow I knew       | 不知何故我知道         | bù zhī hé gù wǒ zh | de alguna manera l | de alguma forma eu
+ 59 | somehow it works     | 不知何故它有效         | bù zhī hé gù tā yǒ | de alguna manera f | de alguma forma fu
+ 60 | anyhow it happened   | 无论如何它发生了        | wú lùn rú hé tā fā | de todos modos suc | de qualquer forma,
+ 61 | anyhow we tried      | 无论如何我们尝试过       | wú lùn rú hé wǒ me | de todos modos lo  | de qualquer forma,
