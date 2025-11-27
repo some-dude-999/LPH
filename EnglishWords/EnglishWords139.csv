@@ -10,7 +10,7 @@ triage,分类,fēn lèi,triaje,triagem
 referral,推荐,tuī jiàn,referencia,encaminhamento
 specialist,专家,zhuān jiā,especialista,especialista
 scan,扫描,sǎo miáo,escanear,digitalizar
-x-ray,X 射线,X  shè xiàn,radiografía,raio-x
+x-ray,X 射线,shè xiàn,radiografía,raio-x
 vaccine,疫苗,yì miáo,vacuna,vacina
 antidote,解药,jiě yào,antídoto,antídoto
 side effect,副作用,fù zuò yòng,efecto secundario,efeito colateral
@@ -39,10 +39,10 @@ doctor referral,医生转介,yī shēng zhuǎn jiè,derivación médica,encaminh
 referral to,转介至,zhuǎn jiè zhì,remisión a,encaminhamento para
 medical specialist,医学专家,yī xué zhuān jiā,especialista médico,médico especialista
 specialist appointment,专家预约,zhuān jiā yù yuē,cita con un especialista,consulta especializada
-CT scan,CT扫描,CT sǎo miáo,Tomografía computarizada,Tomografia computadorizada
+CT scan,CT扫描,sǎo miáo,Tomografía computarizada,Tomografia computadorizada
 body scan,身体扫描,shēn tǐ sǎo miáo,escaneo corporal,varredura corporal
-chest x-ray,胸部X光检查,xiōng bù X guāng jiǎn chá,radiografía de tórax,radiografia de tórax
-x-ray results,X 射线结果,X  shè xiàn jié guǒ,resultados de radiografías,resultados de raios X
+chest x-ray,胸部X光检查,xiōng bù guāng jiǎn chá,radiografía de tórax,radiografia de tórax
+x-ray results,X 射线结果,shè xiàn jié guǒ,resultados de radiografías,resultados de raios X
 flu vaccine,流感疫苗,liú gǎn yì miáo,vacuna contra la gripe,vacina contra gripe
 vaccine shot,疫苗注射,yì miáo zhù shè,inyección de vacuna,injeção de vacina
 poison antidote,毒药解药,dú yào jiě yào,antídoto contra el veneno,antídoto venenoso
