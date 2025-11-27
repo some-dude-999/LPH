@@ -1346,155 +1346,95 @@ Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
 ⚠️ COMMIT AND PR AFTER EACH WORDPACK FIX!
 Fix ALL packs below 9 - no exceptions!</div>
 
-<h3>Spanish - Stage 3</h3>
+<h3>Spanish - Stage 3A (Evaluation Only)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Create or critique breakout CSV files (SpanishWords1.csv, etc.)
+<div onclick="copyPrompt(this)" data-stage="3a" data-lang="spanish">TASK: EVALUATE ALL 250 SPANISH BREAKOUT CSVs - PRODUCE SCORECARD ONLY (NO FIXING)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚫🚫🚫 ABSOLUTE RULE: NEVER EDIT THE OVERVIEW CSV 🚫🚫🚫        ║
+║  📊 THIS IS EVALUATION ONLY - DO NOT FIX ANYTHING                ║
 ║                                                                  ║
-║  SpanishWordsOverview.csv is 100% READ-ONLY. NEVER touch it.     ║
-║  Do NOT edit it. Do NOT modify it. Do NOT change a single cell.  ║
-║  If you edit the Overview CSV for ANY reason = IMMEDIATE FAIL.   ║
-║                                                                  ║
-║  You are ONLY working with breakout files: SpanishWords1.csv...  ║
-╚══════════════════════════════════════════════════════════════════╝
-
-=== FIRST: DETERMINE YOUR MODE ===
-Run this check command:
-python PythonHelpers/construct_breakout_csvs.py spanish check
-
-This tells you:
-- How many breakout CSVs exist
-- Which packs are missing
-- Whether existing CSVs match Spanish_Combined_Words
-
-MODE A - CONSTRUCTION MODE (ANY CSVs missing):
-  → Use Python script with translation API to CREATE breakout CSVs
-  → Code-based generation is REQUIRED in this mode
-  → CONTINUE where previous agent left off!
-  → PR to main after creating CSVs
-
-MODE B - CRITIQUE MODE (ALL CSVs exist):
-  → Python is ONLY for validation checks (no editing!)
-  → Verify all Overview Combined_Words appear in breakout CSVs
-  → ⛔ ABSOLUTELY NO PYTHON to edit translations!
-
-=== MODE A: CONSTRUCTION WORKFLOW ===
-If ANY breakout CSVs are missing, you are in CONSTRUCTION MODE.
-
-╔══════════════════════════════════════════════════════════════════╗
-║  🔄 CONTINUE PREVIOUS WORK!                                      ║
-║                                                                  ║
-║  Previous agents may have created SOME CSVs before stopping.     ║
-║  Your job: CONTINUE where they left off!                         ║
-║                                                                  ║
-║  1. Run check to see which packs are MISSING                     ║
-║  2. Create the MISSING packs (don't redo existing ones)          ║
-║  3. Keep going until ALL packs exist or you must stop            ║
-║  4. PR your progress so next agent can continue                  ║
+║  Your ONLY job: Score ALL 250 packs and output the scorecard.   ║
+║  DO NOT edit any files. DO NOT fix any issues.                  ║
+║  Just READ, EVALUATE, and OUTPUT the full scorecard.            ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  ✅ CONSTRUCTION MODE: USE PYTHON SCRIPT!                        ║
+║  ⛔⛔⛔ TOTAL FAIL CONDITIONS ⛔⛔⛔                               ║
 ║                                                                  ║
-║  In this mode, you MUST use the translation script:              ║
-║  python PythonHelpers/construct_breakout_csvs.py spanish construct║
+║  YOUR TASK IS A COMPLETE FAILURE IF:                             ║
+║  ❌ You give an "overall score" (e.g., "9.6/10") instead of      ║
+║     individual per-pack scores                                   ║
+║  ❌ Even ONE pack is missing from your scorecard (1-250)         ║
+║  ❌ You say "Packs 1-50 reviewed" or "Act I reviewed"            ║
+║  ❌ You use "..." or skip any rows                               ║
+║  ❌ You try to fix anything (this is evaluation ONLY)            ║
+║  ❌ Your table has fewer than 250 rows                           ║
 ║                                                                  ║
-║  This uses Google Translate API to generate initial translations.║
-║  You can also specify a pack range:                              ║
-║  python PythonHelpers/construct_breakout_csvs.py spanish construct 1 50 ║
+║  250 packs = 250 rows. NO EXCEPTIONS. NO SHORTCUTS.              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-Construction workflow:
-1. Run: python PythonHelpers/construct_breakout_csvs.py spanish check
-2. Identify which packs are MISSING (previous agent may have done some!)
-3. Run: python PythonHelpers/construct_breakout_csvs.py spanish construct [start] [end]
-   → Start from the FIRST missing pack, not pack 1!
-4. Script creates CSVs with translations from Google Translate
-5. Run validation: python PythonHelpers/validate_pinyin.py spanish
-6. KEEP GOING until all packs done OR you must stop
-7. BEFORE STOPPING: Commit and PR to main (even partial progress!)
+=== STEP 1: RUN VALIDATION SCRIPTS ===
+python PythonHelpers/verify_words_integrity.py spanish
+python PythonHelpers/validate_pinyin.py spanish
+
+Note any errors found by scripts.
+
+=== STEP 2: READ AND SCORE EVERY PACK ===
+
+Spanish Packs: SpanishWords1.csv through SpanishWords250.csv
+Location: SpanishWords/SpanishWords{N}.csv
+
+FOR EACH PACK (1-250), read the CSV and check EVERY ROW:
+   - Column 1 (spanish): Does it match Overview? (READ ONLY)
+   - Column 2 (english): Accurate? Natural? Common usage?
+   - Column 3 (chinese): Accurate? Natural?
+   - Column 4 (pinyin): 1 syllable per character? Correct tones? Spaces?
+   - Column 5 (portuguese): Accurate? Natural?
+
+SCORING SCALE:
+  10 = Perfect (no issues at all)
+  9  = Excellent (trivial issues only, acceptable as-is)
+  8  = Good (minor issues that should be fixed)
+  7  = Fair (several issues)
+  6 or below = Poor (significant issues, definitely needs work)
+
+=== STEP 3: OUTPUT THE COMPLETE SCORECARD ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔴 CRITICAL: DO MAXIMUM WORK & ALWAYS PR BEFORE STOPPING!       ║
-║                                                                  ║
-║  → Create as many packs as possible before stopping              ║
-║  → Don't stop after just a few packs if you can do more!         ║
-║  → If you need to stop for ANY reason:                           ║
-║    • Commit and PR whatever CSVs were created                    ║
-║    • Even if it's just 1 pack - PR IT!                           ║
-║    • NEVER stop without PR'ing your work to main                 ║
-║                                                                  ║
-║  Next agent will continue where you left off.                    ║
+║  🚨 MANDATORY OUTPUT - ALL 250 ROWS - NO EXCEPTIONS 🚨           ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== MODE B: CRITIQUE WORKFLOW ===
-If ALL CSVs exist, enter CRITIQUE MODE.
+| Pack | Wordpack | Score | Issues Found |
+|------|----------|-------|--------------|
+| 1 | SpanishWords1.csv | X/10 | [specific issues or "None ✓"] |
+| 2 | SpanishWords2.csv | X/10 | [specific issues or "None ✓"] |
+| 3 | SpanishWords3.csv | X/10 | [specific issues or "None ✓"] |
+| ... CONTINUE FOR EVERY SINGLE PACK ... |
+| 249 | SpanishWords249.csv | X/10 | [specific issues or "None ✓"] |
+| 250 | SpanishWords250.csv | X/10 | [specific issues or "None ✓"] |
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ CRITIQUE MODE: PYTHON FOR CHECKING ONLY! ⛔⛔⛔            ║
-║                                                                  ║
-║  In CRITIQUE mode:                                               ║
-║  ✅ Python to CHECK if all Combined_Words are in breakout CSVs   ║
-║  ✅ Python to validate pinyin formatting                         ║
-║  ⛔ NO Python to edit or fix translations                        ║
-║  ⛔ NO scripts to batch-edit CSV files                           ║
-║                                                                  ║
-║  If you use ANY code to EDIT translations = TOTAL FAILURE!       ║
-║  Manual editing ONLY for fixes.                                  ║
-╚══════════════════════════════════════════════════════════════════╝
+⛔ YOUR TABLE MUST HAVE EXACTLY 250 ROWS (1-250). NO "..." ALLOWED IN YOUR OUTPUT! ⛔
 
-╔══════════════════════════════════════════════════════════════════╗
-║  🔥 IF SCORE < 9.5: FIX AS MUCH AS POSSIBLE! 🔥                  ║
-║                                                                  ║
-║  Even if there are HUNDREDS of issues:                           ║
-║  → DO NOT give up or stop early!                                 ║
-║  → Fix as many issues as you can                                 ║
-║  → Every fix helps - chip away at the problem                    ║
-║  → PR your partial fixes so next agent can continue              ║
-║                                                                  ║
-║  "Too many issues" is NOT an excuse to do nothing!               ║
-║  Fix 10, 20, 50 issues - whatever you can manage.                ║
-║  Progress > Perfection. ALWAYS PR before stopping.               ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 4: SUMMARY COUNTS ===
 
-=== IF INITIAL SCORE >= 9.5: STOP ===
-If your initial quality score is 9.5 or higher, the data is already excellent.
-DO NOT make changes. Report the score and move on.
+| Metric | Count |
+|--------|-------|
+| Packs scoring 10/10 | X |
+| Packs scoring 9/10 | X |
+| Packs scoring 8/10 | X |
+| Packs scoring 7/10 | X |
+| Packs scoring 6 or below | X |
+| TOTAL PACKS NEEDING FIXES (below 9) | X |
 
-=== IF INITIAL SCORE < 9.5: FIX EVERYTHING YOU CAN ===
-If score is below 9.5, you MUST make fixes:
-1. Identify all issues you can find
-2. Fix AS MANY as possible (not just a few!)
-3. Don't stop just because there are "too many" issues
-4. PR your fixes even if you couldn't fix everything
-5. Report what you fixed and what remains for next agent
+=== STEP 5: IMPROVEMENT PLAN (for Stage 3B) ===
 
-Critique workflow (ONE ACT AT A TIME):
-1. Run: python PythonHelpers/construct_breakout_csvs.py spanish check
-2. Verify all CSVs exist and match Spanish_Combined_Words
-3. Pick ONE act to scrutinize (start with Act I if not specified)
-4. SCORE the current quality (1-10)
-5. IF score >= 9.5: Report and stop (no changes needed)
-6. IF score < 9.5: For EACH CSV in that act, MANUALLY review & fix:
-   - Is EVERY translation accurate and natural?
-   - Would a native speaker actually say this?
-   - Is pinyin correct (1 syllable per char, proper tones)?
-   - Are there awkward, overly formal, or rare translations?
-7. MANUALLY edit the CSV file to fix issues (NO CODE!)
-8. Run validation: python PythonHelpers/validate_pinyin.py spanish
-9. Score again (AFTER score)
-10. Commit and PR to main - EVEN IF NOT ALL ISSUES FIXED!
-11. Report: what you fixed, what remains, which act was critiqued
+List ALL packs scoring below 9, ordered by priority (worst scores first):
 
-CRITIQUE MODE CHECKLIST:
-□ Read EVERY row in the CSV - don't skim!
-□ Check EACH language column for accuracy
-□ Verify pinyin: 1 syllable per character, correct tones
-□ Fix awkward translations (what would a native speaker say?)
-□ Ensure consistency across similar words
-□ Use the MOST COMMON translation, not obscure alternatives
+| Priority | Pack | Score | Row | Column | Issue | Proposed Fix |
+|----------|------|-------|-----|--------|-------|--------------|
+| 1 | SpanishWords23.csv | 5/10 | 3 | pinyin | "nǐhǎo" no space | Add space: "nǐ hǎo" |
+| 2 | SpanishWords45.csv | 6/10 | 12 | english | awkward phrasing | Rewrite naturally |
+| ... | ... | ... | ... | ... | ... | ... |
 
 Spanish Acts (250 packs total):
 - Act I (Foundation): Packs 1-50
@@ -1505,182 +1445,207 @@ Spanish Acts (250 packs total):
 - Act VI (Advanced Constructs): Packs 211-235
 - Act VII (Mastery Fluency): Packs 236-250
 
-=== BREAKOUT CSV COLUMNS (5 columns, exact order) ===
-spanish,english,chinese,pinyin,portuguese
+=== BREAKOUT CSV COLUMNS (5 columns) ===
+| Col | Name       | Notes                        |
+|-----|------------|------------------------------|
+| 1   | spanish    | Must match Overview          |
+| 2   | english    | Translation                  |
+| 3   | chinese    | Translation                  |
+| 4   | pinyin     | 1 syllable per character     |
+| 5   | portuguese | Translation                  |
 
-=== CRITICAL PINYIN RULE ===
+=== PINYIN RULE ===
 CORRECT: 你好 → nǐ hǎo (space between syllables)
 INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
-=== VALIDATION SCRIPTS ===
-# Check if CSVs exist and match Combined_Words:
-python PythonHelpers/construct_breakout_csvs.py spanish check
+DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 
-# Validate pinyin formatting:
-python PythonHelpers/validate_pinyin.py spanish
+<h3>Spanish - Stage 3B (Fixing Only)</h3>
+<div>Click to copy</div>
+<div onclick="copyPrompt(this)" data-stage="3b" data-lang="spanish">TASK: FIX ALL SPANISH PACKS SCORING BELOW 9 (Based on Stage 3A Scorecard)
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🔧 THIS IS FIXING ONLY - SCORECARD ALREADY EXISTS               ║
+║                                                                  ║
+║  Stage 3A already evaluated all 250 packs and produced a        ║
+║  scorecard with issues. Your job: FIX every pack below 9.       ║
+║  Start with the LOWEST scores first (worst = highest priority). ║
+╚══════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
+║  🔒 NEVER EDIT COLUMN 1 (spanish) - IT'S SACRED                  ║
+║  ⛔ NEVER USE PYTHON TO FIX TRANSLATIONS (auto-fail)             ║
+║  ✅ ONLY edit Columns 2-5 (translations)                         ║
+║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
+╚══════════════════════════════════════════════════════════════════╝
+
+=== STEP 1: GET THE SCORECARD ===
+
+First, check if a Stage 3A scorecard exists. If not, run Stage 3A first.
+
+The scorecard should show ALL 250 packs with:
+- Individual scores (1-10)
+- Specific issues for each pack
+- Improvement plan with priorities
+
+=== STEP 2: FIX ALL PACKS SCORING BELOW 9 ===
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🔥 FIX EVERY PACK WITH SCORE < 9. NO EXCEPTIONS. 🔥            ║
+║                                                                  ║
+║  80 packs below 9? FIX ALL 80. One pack at a time.              ║
+║  Do NOT stop halfway. Do NOT leave work for next agent.          ║
+║  Start with LOWEST scores first (5/10 before 8/10).             ║
+║  COMPLETE EVERYTHING before finishing this task.                 ║
+╚══════════════════════════════════════════════════════════════════╝
+
+FOR EACH PACK SCORING BELOW 9 (in priority order):
+
+1. Read the pack CSV file
+2. Fix ALL issues identified in the scorecard
+3. Show before/after table:
+
+   | File | Row | Column | Before | After |
+   |------|-----|--------|--------|-------|
+   | SpanishWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo |
+   | SpanishWords23.csv | 7 | english | hello friend boy | hey buddy |
+
+4. COMMIT that pack's fixes
+5. PR TO MAIN
+6. Move to next pack
+7. REPEAT until ALL packs below 9 are fixed
+
+=== CRITICAL RULES ===
+
+| Rule | Description |
+|------|-------------|
+| 🔒 Column 1 | NEVER edit - spanish words are sacred |
+| ✅ Columns 2-5 | OK to edit - translations |
+| ⛔ No Python fixes | Manual Edit tool only for translations |
+| 🎯 Priority | Fix lowest scores first (5/10 → 6/10 → 7/10 → 8/10) |
+
+=== BREAKOUT CSV COLUMNS (5 columns) ===
+| Col | Name       | Editable? | Notes                        |
+|-----|------------|-----------|------------------------------|
+| 1   | spanish    | 🔒 NEVER  | Sacred - matches Overview    |
+| 2   | english    | ✅ YES    | Translation                  |
+| 3   | chinese    | ✅ YES    | Translation                  |
+| 4   | pinyin     | ✅ YES    | 1 syllable per character     |
+| 5   | portuguese | ✅ YES    | Translation                  |
+
+=== PINYIN RULE ===
+CORRECT: 你好 → nǐ hǎo (space between syllables)
+INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
 === FINAL OUTPUT (REQUIRED) ===
-| Metric         | Value |
-|----------------|-------|
-| Mode           | Construction / Critique |
-| Packs Done     | [List specific packs, e.g., "1-50" or "Act I"] |
-| Packs Remaining| [What's left for next agent] |
-| BEFORE Score   | X/10 (Critique mode only) |
-| AFTER Score    | X/10 (Critique mode only) |
-| Reason         | [1-2 sentence explanation] |
 
-Create your own branch, commit, and PR to main.
-⚠️ ALWAYS PR BEFORE STOPPING!</div>
+| Metric                    | Value |
+|---------------------------|-------|
+| Packs Below 9 (from 3A)   | X     |
+| Packs Fixed               | X     |
+| Packs PRed to Main        | X     |
 
-<h3>English - Stage 3</h3>
+╔══════════════════════════════════════════════════════════════════╗
+║  ✅ SUCCESS CRITERIA: Packs Below 9 = Packs Fixed                ║
+║                                                                  ║
+║  If 80 packs scored below 9, you must have fixed all 80.        ║
+║  If Packs Fixed < Packs Below 9, YOU ARE NOT DONE.              ║
+║  NEVER finish with unfixed low-scoring packs.                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+⚠️ COMMIT AND PR AFTER EACH WORDPACK FIX!
+Fix ALL packs below 9 - no exceptions!</div>
+
+<h3>English - Stage 3A (Evaluation Only)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Create or critique breakout CSV files (EnglishWords1.csv, etc.)
+<div onclick="copyPrompt(this)" data-stage="3a" data-lang="english">TASK: EVALUATE ALL 160 ENGLISH BREAKOUT CSVs - PRODUCE SCORECARD ONLY (NO FIXING)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚫🚫🚫 ABSOLUTE RULE: NEVER EDIT THE OVERVIEW CSV 🚫🚫🚫        ║
+║  📊 THIS IS EVALUATION ONLY - DO NOT FIX ANYTHING                ║
 ║                                                                  ║
-║  EnglishWordsOverview.csv is 100% READ-ONLY. NEVER touch it.     ║
-║  Do NOT edit it. Do NOT modify it. Do NOT change a single cell.  ║
-║  If you edit the Overview CSV for ANY reason = IMMEDIATE FAIL.   ║
-║                                                                  ║
-║  You are ONLY working with breakout files: EnglishWords1.csv...  ║
-╚══════════════════════════════════════════════════════════════════╝
-
-=== FIRST: DETERMINE YOUR MODE ===
-Run this check command:
-python PythonHelpers/construct_breakout_csvs.py english check
-
-This tells you:
-- How many breakout CSVs exist
-- Which packs are missing
-- Whether existing CSVs match English_Combined_Words
-
-MODE A - CONSTRUCTION MODE (ANY CSVs missing):
-  → Use Python script with translation API to CREATE breakout CSVs
-  → Code-based generation is REQUIRED in this mode
-  → CONTINUE where previous agent left off!
-  → PR to main after creating CSVs
-
-MODE B - CRITIQUE MODE (ALL CSVs exist):
-  → Python is ONLY for validation checks (no editing!)
-  → Verify all Overview Combined_Words appear in breakout CSVs
-  → ⛔ ABSOLUTELY NO PYTHON to edit translations!
-
-=== MODE A: CONSTRUCTION WORKFLOW ===
-If ANY breakout CSVs are missing, you are in CONSTRUCTION MODE.
-
-╔══════════════════════════════════════════════════════════════════╗
-║  🔄 CONTINUE PREVIOUS WORK!                                      ║
-║                                                                  ║
-║  Previous agents may have created SOME CSVs before stopping.     ║
-║  Your job: CONTINUE where they left off!                         ║
-║                                                                  ║
-║  1. Run check to see which packs are MISSING                     ║
-║  2. Create the MISSING packs (don't redo existing ones)          ║
-║  3. Keep going until ALL packs exist or you must stop            ║
-║  4. PR your progress so next agent can continue                  ║
+║  Your ONLY job: Score ALL 160 packs and output the scorecard.   ║
+║  DO NOT edit any files. DO NOT fix any issues.                  ║
+║  Just READ, EVALUATE, and OUTPUT the full scorecard.            ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  ✅ CONSTRUCTION MODE: USE PYTHON SCRIPT!                        ║
+║  ⛔⛔⛔ TOTAL FAIL CONDITIONS ⛔⛔⛔                               ║
 ║                                                                  ║
-║  In this mode, you MUST use the translation script:              ║
-║  python PythonHelpers/construct_breakout_csvs.py english construct║
+║  YOUR TASK IS A COMPLETE FAILURE IF:                             ║
+║  ❌ You give an "overall score" (e.g., "9.6/10") instead of      ║
+║     individual per-pack scores                                   ║
+║  ❌ Even ONE pack is missing from your scorecard (1-160)         ║
+║  ❌ You say "Packs 1-40 reviewed" or "Act I reviewed"            ║
+║  ❌ You use "..." or skip any rows                               ║
+║  ❌ You try to fix anything (this is evaluation ONLY)            ║
+║  ❌ Your table has fewer than 160 rows                           ║
 ║                                                                  ║
-║  This uses Google Translate API to generate initial translations.║
-║  You can also specify a pack range:                              ║
-║  python PythonHelpers/construct_breakout_csvs.py english construct 1 40 ║
+║  160 packs = 160 rows. NO EXCEPTIONS. NO SHORTCUTS.              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-Construction workflow:
-1. Run: python PythonHelpers/construct_breakout_csvs.py english check
-2. Identify which packs are MISSING (previous agent may have done some!)
-3. Run: python PythonHelpers/construct_breakout_csvs.py english construct [start] [end]
-   → Start from the FIRST missing pack, not pack 1!
-4. Script creates CSVs with translations from Google Translate
-5. Run validation: python PythonHelpers/validate_pinyin.py english
-6. KEEP GOING until all packs done OR you must stop
-7. BEFORE STOPPING: Commit and PR to main (even partial progress!)
+=== STEP 1: RUN VALIDATION SCRIPTS ===
+python PythonHelpers/verify_words_integrity.py english
+python PythonHelpers/validate_pinyin.py english
+
+Note any errors found by scripts.
+
+=== STEP 2: READ AND SCORE EVERY PACK ===
+
+English Packs: EnglishWords1.csv through EnglishWords160.csv
+Location: EnglishWords/EnglishWords{N}.csv
+
+FOR EACH PACK (1-160), read the CSV and check EVERY ROW:
+   - Column 1 (english): Does it match Overview? (READ ONLY)
+   - Column 2 (chinese): Accurate? Natural?
+   - Column 3 (pinyin): 1 syllable per character? Correct tones? Spaces?
+   - Column 4 (spanish): Accurate? Natural?
+   - Column 5 (portuguese): Accurate? Natural?
+
+SCORING SCALE:
+  10 = Perfect (no issues at all)
+  9  = Excellent (trivial issues only, acceptable as-is)
+  8  = Good (minor issues that should be fixed)
+  7  = Fair (several issues)
+  6 or below = Poor (significant issues, definitely needs work)
+
+=== STEP 3: OUTPUT THE COMPLETE SCORECARD ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔴 CRITICAL: DO MAXIMUM WORK & ALWAYS PR BEFORE STOPPING!       ║
-║                                                                  ║
-║  → Create as many packs as possible before stopping              ║
-║  → Don't stop after just a few packs if you can do more!         ║
-║  → If you need to stop for ANY reason:                           ║
-║    • Commit and PR whatever CSVs were created                    ║
-║    • Even if it's just 1 pack - PR IT!                           ║
-║    • NEVER stop without PR'ing your work to main                 ║
-║                                                                  ║
-║  Next agent will continue where you left off.                    ║
+║  🚨 MANDATORY OUTPUT - ALL 160 ROWS - NO EXCEPTIONS 🚨           ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== MODE B: CRITIQUE WORKFLOW ===
-If ALL CSVs exist, enter CRITIQUE MODE.
+| Pack | Wordpack | Score | Issues Found |
+|------|----------|-------|--------------|
+| 1 | EnglishWords1.csv | X/10 | [specific issues or "None ✓"] |
+| 2 | EnglishWords2.csv | X/10 | [specific issues or "None ✓"] |
+| 3 | EnglishWords3.csv | X/10 | [specific issues or "None ✓"] |
+| ... CONTINUE FOR EVERY SINGLE PACK ... |
+| 159 | EnglishWords159.csv | X/10 | [specific issues or "None ✓"] |
+| 160 | EnglishWords160.csv | X/10 | [specific issues or "None ✓"] |
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ CRITIQUE MODE: PYTHON FOR CHECKING ONLY! ⛔⛔⛔            ║
-║                                                                  ║
-║  In CRITIQUE mode:                                               ║
-║  ✅ Python to CHECK if all Combined_Words are in breakout CSVs   ║
-║  ✅ Python to validate pinyin formatting                         ║
-║  ⛔ NO Python to edit or fix translations                        ║
-║  ⛔ NO scripts to batch-edit CSV files                           ║
-║                                                                  ║
-║  If you use ANY code to EDIT translations = TOTAL FAILURE!       ║
-║  Manual editing ONLY for fixes.                                  ║
-╚══════════════════════════════════════════════════════════════════╝
+⛔ YOUR TABLE MUST HAVE EXACTLY 160 ROWS (1-160). NO "..." ALLOWED IN YOUR OUTPUT! ⛔
 
-╔══════════════════════════════════════════════════════════════════╗
-║  🔥 IF SCORE < 9.5: FIX AS MUCH AS POSSIBLE! 🔥                  ║
-║                                                                  ║
-║  Even if there are HUNDREDS of issues:                           ║
-║  → DO NOT give up or stop early!                                 ║
-║  → Fix as many issues as you can                                 ║
-║  → Every fix helps - chip away at the problem                    ║
-║  → PR your partial fixes so next agent can continue              ║
-║                                                                  ║
-║  "Too many issues" is NOT an excuse to do nothing!               ║
-║  Fix 10, 20, 50 issues - whatever you can manage.                ║
-║  Progress > Perfection. ALWAYS PR before stopping.               ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 4: SUMMARY COUNTS ===
 
-=== IF INITIAL SCORE >= 9.5: STOP ===
-If your initial quality score is 9.5 or higher, the data is already excellent.
-DO NOT make changes. Report the score and move on.
+| Metric | Count |
+|--------|-------|
+| Packs scoring 10/10 | X |
+| Packs scoring 9/10 | X |
+| Packs scoring 8/10 | X |
+| Packs scoring 7/10 | X |
+| Packs scoring 6 or below | X |
+| TOTAL PACKS NEEDING FIXES (below 9) | X |
 
-=== IF INITIAL SCORE < 9.5: FIX EVERYTHING YOU CAN ===
-If score is below 9.5, you MUST make fixes:
-1. Identify all issues you can find
-2. Fix AS MANY as possible (not just a few!)
-3. Don't stop just because there are "too many" issues
-4. PR your fixes even if you couldn't fix everything
-5. Report what you fixed and what remains for next agent
+=== STEP 5: IMPROVEMENT PLAN (for Stage 3B) ===
 
-Critique workflow (ONE ACT AT A TIME):
-1. Run: python PythonHelpers/construct_breakout_csvs.py english check
-2. Verify all CSVs exist and match English_Combined_Words
-3. Pick ONE act to scrutinize (start with Act I if not specified)
-4. SCORE the current quality (1-10)
-5. IF score >= 9.5: Report and stop (no changes needed)
-6. IF score < 9.5: For EACH CSV in that act, MANUALLY review & fix:
-   - Is EVERY translation accurate and natural?
-   - Would a native speaker actually say this?
-   - Is pinyin correct (1 syllable per char, proper tones)?
-   - Are there awkward, overly formal, or rare translations?
-7. MANUALLY edit the CSV file to fix issues (NO CODE!)
-8. Run validation: python PythonHelpers/validate_pinyin.py english
-9. Score again (AFTER score)
-10. Commit and PR to main - EVEN IF NOT ALL ISSUES FIXED!
-11. Report: what you fixed, what remains, which act was critiqued
+List ALL packs scoring below 9, ordered by priority (worst scores first):
 
-CRITIQUE MODE CHECKLIST:
-□ Read EVERY row in the CSV - don't skim!
-□ Check EACH language column for accuracy
-□ Verify pinyin: 1 syllable per character, correct tones
-□ Fix awkward translations (what would a native speaker say?)
-□ Ensure consistency across similar words
-□ Use the MOST COMMON translation, not obscure alternatives
+| Priority | Pack | Score | Row | Column | Issue | Proposed Fix |
+|----------|------|-------|-----|--------|-------|--------------|
+| 1 | EnglishWords23.csv | 5/10 | 3 | pinyin | "nǐhǎo" no space | Add space: "nǐ hǎo" |
+| 2 | EnglishWords45.csv | 6/10 | 12 | spanish | awkward phrasing | Rewrite naturally |
+| ... | ... | ... | ... | ... | ... | ... |
 
 English Acts (160 packs total):
 - Act I (Foundation): Packs 1-40
@@ -1689,32 +1654,117 @@ English Acts (160 packs total):
 - Act IV (Expanding Horizons): Packs 116-140
 - Act V (Advanced Mastery): Packs 141-160
 
-=== BREAKOUT CSV COLUMNS (5 columns, exact order) ===
-english,chinese,pinyin,spanish,portuguese
+=== BREAKOUT CSV COLUMNS (5 columns) ===
+| Col | Name       | Notes                        |
+|-----|------------|------------------------------|
+| 1   | english    | Must match Overview          |
+| 2   | chinese    | Translation                  |
+| 3   | pinyin     | 1 syllable per character     |
+| 4   | spanish    | Translation                  |
+| 5   | portuguese | Translation                  |
 
-=== CRITICAL PINYIN RULE ===
+=== PINYIN RULE ===
 CORRECT: 你好 → nǐ hǎo (space between syllables)
 INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
-=== VALIDATION SCRIPTS ===
-# Check if CSVs exist and match Combined_Words:
-python PythonHelpers/construct_breakout_csvs.py english check
+DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 
-# Validate pinyin formatting:
-python PythonHelpers/validate_pinyin.py english
+<h3>English - Stage 3B (Fixing Only)</h3>
+<div>Click to copy</div>
+<div onclick="copyPrompt(this)" data-stage="3b" data-lang="english">TASK: FIX ALL ENGLISH PACKS SCORING BELOW 9 (Based on Stage 3A Scorecard)
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🔧 THIS IS FIXING ONLY - SCORECARD ALREADY EXISTS               ║
+║                                                                  ║
+║  Stage 3A already evaluated all 160 packs and produced a        ║
+║  scorecard with issues. Your job: FIX every pack below 9.       ║
+║  Start with the LOWEST scores first (worst = highest priority). ║
+╚══════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
+║  🔒 NEVER EDIT COLUMN 1 (english) - IT'S SACRED                  ║
+║  ⛔ NEVER USE PYTHON TO FIX TRANSLATIONS (auto-fail)             ║
+║  ✅ ONLY edit Columns 2-5 (translations)                         ║
+║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
+╚══════════════════════════════════════════════════════════════════╝
+
+=== STEP 1: GET THE SCORECARD ===
+
+First, check if a Stage 3A scorecard exists. If not, run Stage 3A first.
+
+The scorecard should show ALL 160 packs with:
+- Individual scores (1-10)
+- Specific issues for each pack
+- Improvement plan with priorities
+
+=== STEP 2: FIX ALL PACKS SCORING BELOW 9 ===
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🔥 FIX EVERY PACK WITH SCORE < 9. NO EXCEPTIONS. 🔥            ║
+║                                                                  ║
+║  50 packs below 9? FIX ALL 50. One pack at a time.              ║
+║  Do NOT stop halfway. Do NOT leave work for next agent.          ║
+║  Start with LOWEST scores first (5/10 before 8/10).             ║
+║  COMPLETE EVERYTHING before finishing this task.                 ║
+╚══════════════════════════════════════════════════════════════════╝
+
+FOR EACH PACK SCORING BELOW 9 (in priority order):
+
+1. Read the pack CSV file
+2. Fix ALL issues identified in the scorecard
+3. Show before/after table:
+
+   | File | Row | Column | Before | After |
+   |------|-----|--------|--------|-------|
+   | EnglishWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo |
+   | EnglishWords23.csv | 7 | spanish | hola amigo chico | hola amigo |
+
+4. COMMIT that pack's fixes
+5. PR TO MAIN
+6. Move to next pack
+7. REPEAT until ALL packs below 9 are fixed
+
+=== CRITICAL RULES ===
+
+| Rule | Description |
+|------|-------------|
+| 🔒 Column 1 | NEVER edit - english words are sacred |
+| ✅ Columns 2-5 | OK to edit - translations |
+| ⛔ No Python fixes | Manual Edit tool only for translations |
+| 🎯 Priority | Fix lowest scores first (5/10 → 6/10 → 7/10 → 8/10) |
+
+=== BREAKOUT CSV COLUMNS (5 columns) ===
+| Col | Name       | Editable? | Notes                        |
+|-----|------------|-----------|------------------------------|
+| 1   | english    | 🔒 NEVER  | Sacred - matches Overview    |
+| 2   | chinese    | ✅ YES    | Translation                  |
+| 3   | pinyin     | ✅ YES    | 1 syllable per character     |
+| 4   | spanish    | ✅ YES    | Translation                  |
+| 5   | portuguese | ✅ YES    | Translation                  |
+
+=== PINYIN RULE ===
+CORRECT: 你好 → nǐ hǎo (space between syllables)
+INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
 === FINAL OUTPUT (REQUIRED) ===
-| Metric         | Value |
-|----------------|-------|
-| Mode           | Construction / Critique |
-| Packs Done     | [List specific packs, e.g., "1-40" or "Act I"] |
-| Packs Remaining| [What's left for next agent] |
-| BEFORE Score   | X/10 (Critique mode only) |
-| AFTER Score    | X/10 (Critique mode only) |
-| Reason         | [1-2 sentence explanation] |
 
-Create your own branch, commit, and PR to main.
-⚠️ ALWAYS PR BEFORE STOPPING!</div>
+| Metric                    | Value |
+|---------------------------|-------|
+| Packs Below 9 (from 3A)   | X     |
+| Packs Fixed               | X     |
+| Packs PRed to Main        | X     |
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ✅ SUCCESS CRITERIA: Packs Below 9 = Packs Fixed                ║
+║                                                                  ║
+║  If 50 packs scored below 9, you must have fixed all 50.        ║
+║  If Packs Fixed < Packs Below 9, YOU ARE NOT DONE.              ║
+║  NEVER finish with unfixed low-scoring packs.                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+⚠️ COMMIT AND PR AFTER EACH WORDPACK FIX!
+Fix ALL packs below 9 - no exceptions!</div>
 
 <!-- ============================================================ -->
 <!-- STAGE 4: JAVASCRIPT MODULE GENERATION                        -->
