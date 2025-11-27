@@ -2222,6 +2222,163 @@
     }
 
     // ============================================================
+    // DEBUG VERSION: Returns detailed coupling information
+    // ============================================================
+    function coupleChineseWithPinyinDebug(chineseStr, pinyinStr) {
+      let debugOutput = [];
+
+      debugOutput.push(`<b>Input:</b>`);
+      debugOutput.push(`Chinese: "${chineseStr}"`);
+      debugOutput.push(`Pinyin: "${pinyinStr}"`);
+      debugOutput.push(``);
+
+      if (!chineseStr) {
+        debugOutput.push(`ERROR: No Chinese text`);
+        return debugOutput.join('\n');
+      }
+
+      if (!pinyinStr) {
+        debugOutput.push(`ERROR: No pinyin text`);
+        return debugOutput.join('\n');
+      }
+
+      // Parse Chinese sequences
+      function parseChineseSeqs(text) {
+        if (!text) return [];
+        const seqs = [];
+        let curr = '';
+        let currType = null;
+
+        for (const ch of text) {
+          let chType;
+          if (/[A-Za-z]/.test(ch)) {
+            chType = 'latin';
+          } else if (/[\u4e00-\u9fff]/.test(ch)) {
+            chType = 'chinese';
+          } else {
+            if (currType) {
+              curr += ch;
+              continue;
+            } else {
+              chType = 'other';
+            }
+          }
+
+          if (chType !== currType && curr) {
+            if (currType === 'latin' || currType === 'chinese') {
+              seqs.push({text: curr, type: currType});
+            }
+            curr = '';
+          }
+
+          if (chType === 'latin' || chType === 'chinese') {
+            curr += ch;
+            currType = chType;
+          }
+        }
+
+        if (curr && (currType === 'latin' || currType === 'chinese')) {
+          seqs.push({text: curr, type: currType});
+        }
+
+        return seqs;
+      }
+
+      // Parse pinyin based on Chinese structure
+      function parsePinyinSeqs(pyText, chSeqs) {
+        if (!pyText) return [];
+        const tokens = pyText.trim().split(/\s+/);
+        const result = [];
+        let idx = 0;
+
+        for (const {text: chText, type: chType} of chSeqs) {
+          if (chType === 'latin') {
+            result.push({
+              text: (idx < tokens.length) ? tokens[idx] : '',
+              type: 'latin'
+            });
+            idx++;
+          } else if (chType === 'chinese') {
+            const charCnt = [...chText].length;
+            const syls = [];
+            for (let i = 0; i < charCnt; i++) {
+              syls.push((idx < tokens.length) ? tokens[idx] : '?');
+              idx++;
+            }
+            result.push({text: syls.join(' '), type: 'pinyin'});
+          }
+        }
+
+        return result;
+      }
+
+      const chineseSeqs = parseChineseSeqs(chineseStr);
+      const pinyinSeqs = parsePinyinSeqs(pinyinStr, chineseSeqs);
+
+      debugOutput.push(`<b>Parsed Chinese sequences:</b>`);
+      chineseSeqs.forEach((seq, i) => {
+        debugOutput.push(`  [${i}] "${seq.text}" (${seq.type})`);
+      });
+      debugOutput.push(``);
+
+      debugOutput.push(`<b>Parsed Pinyin sequences:</b>`);
+      pinyinSeqs.forEach((seq, i) => {
+        debugOutput.push(`  [${i}] "${seq.text}" (${seq.type})`);
+      });
+      debugOutput.push(``);
+
+      debugOutput.push(`<b>Coupling process:</b>`);
+      const coupled = [];
+
+      for (let i = 0; i < chineseSeqs.length; i++) {
+        const chSeq = chineseSeqs[i];
+        const pySeq = pinyinSeqs[i] || {text: '', type: ''};
+
+        if (chSeq.type === 'latin') {
+          const chLetters = [...chSeq.text];
+          const pyLetters = [...pySeq.text];
+
+          debugOutput.push(`Seq ${i}: Latin "${chSeq.text}"`);
+          debugOutput.push(`  Chinese letters: [${chLetters.join(', ')}]`);
+          debugOutput.push(`  Pinyin letters: [${pyLetters.join(', ')}]`);
+
+          chLetters.forEach((letter, j) => {
+            const pinyinLetter = pyLetters[j] || letter;
+            coupled.push({
+              char: letter,
+              pinyin: pinyinLetter
+            });
+            debugOutput.push(`    ${letter} → ${pinyinLetter}`);
+          });
+        } else if (chSeq.type === 'chinese') {
+          const chars = [...chSeq.text];
+          const syls = pySeq.text.split(/\s+/);
+
+          debugOutput.push(`Seq ${i}: Chinese "${chSeq.text}"`);
+          debugOutput.push(`  Characters: [${chars.join(', ')}]`);
+          debugOutput.push(`  Syllables: [${syls.join(', ')}]`);
+
+          chars.forEach((ch, j) => {
+            const syllable = syls[j] || '?';
+            coupled.push({
+              char: ch,
+              pinyin: syllable
+            });
+            debugOutput.push(`    ${ch} → ${syllable}`);
+          });
+        }
+      }
+
+      debugOutput.push(``);
+      debugOutput.push(`<b>Final coupled array (${coupled.length} pairs):</b>`);
+      coupled.forEach((pair, i) => {
+        debugOutput.push(`  [${i}] char="${pair.char}", pinyin="${pair.pinyin}"`);
+      });
+
+      return debugOutput.join('\n');
+    }
+
+    // ============================================================
     // CHINESE RENDERING: Display Characters with Pinyin
     // ============================================================
 
@@ -3086,11 +3243,14 @@
       const targetLanguage = config.columns[0];
       const nativeLanguage = config.columns[state.currentNativeLanguage];
 
-      // Setup headers with Pack Source column
+      // Setup headers with Pack Source column + DEBUG columns
       const headers = [
         `<th>Pack Source</th>`,
         `<th>Word (${targetLanguage})</th>`,
-        `<th>Translation (${nativeLanguage})</th>`
+        `<th>Translation (${nativeLanguage})</th>`,
+        `<th style="background: #ffe6e6;">Raw Chinese</th>`,
+        `<th style="background: #e6f3ff;">Raw Pinyin</th>`,
+        `<th style="background: #fff3e6;">Debug Info</th>`
       ];
       tableHeaderRow.innerHTML = headers.join('\n');
 
@@ -3180,7 +3340,7 @@
 
       // Display results
       if (edgeCaseWords.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="3">No edge cases found in this language</td></tr>';
+        tableBody.innerHTML = '<tr><td colspan="6">No edge cases found in this language</td></tr>';
         return;
       }
 
@@ -3222,6 +3382,47 @@
         }
         row.appendChild(translationCell);
 
+        // Column 4: Raw Chinese (DEBUG)
+        const rawChineseCell = document.createElement('td');
+        rawChineseCell.style.fontFamily = 'monospace';
+        rawChineseCell.style.fontSize = '0.85em';
+        rawChineseCell.style.background = '#ffe6e6';
+        if (nativeIsChinese && nativePinyinColumn !== null) {
+          rawChineseCell.textContent = item.word[state.currentNativeLanguage] || '(empty)';
+        } else {
+          rawChineseCell.textContent = 'N/A';
+        }
+        row.appendChild(rawChineseCell);
+
+        // Column 5: Raw Pinyin (DEBUG)
+        const rawPinyinCell = document.createElement('td');
+        rawPinyinCell.style.fontFamily = 'monospace';
+        rawPinyinCell.style.fontSize = '0.85em';
+        rawPinyinCell.style.background = '#e6f3ff';
+        if (nativeIsChinese && nativePinyinColumn !== null) {
+          rawPinyinCell.textContent = item.word[nativePinyinColumn] || '(empty)';
+        } else {
+          rawPinyinCell.textContent = 'N/A';
+        }
+        row.appendChild(rawPinyinCell);
+
+        // Column 6: Debug Info (DEBUG)
+        const debugCell = document.createElement('td');
+        debugCell.style.fontFamily = 'monospace';
+        debugCell.style.fontSize = '0.75em';
+        debugCell.style.background = '#fff3e6';
+        debugCell.style.whiteSpace = 'pre-wrap';
+        if (nativeIsChinese && nativePinyinColumn !== null) {
+          const chineseText = item.word[state.currentNativeLanguage];
+          const pinyinText = item.word[nativePinyinColumn];
+          // Get debug info from coupling function
+          const debugInfo = coupleChineseWithPinyinDebug(chineseText, pinyinText);
+          debugCell.innerHTML = debugInfo;
+        } else {
+          debugCell.textContent = 'N/A';
+        }
+        row.appendChild(debugCell);
+
         tableBody.appendChild(row);
       });
 
@@ -3229,7 +3430,7 @@
       const summaryRow = document.createElement('tr');
       summaryRow.style.fontWeight = 'bold';
       summaryRow.style.backgroundColor = '#f0f0f0';
-      summaryRow.innerHTML = `<td colspan="3">Total edge cases found: ${edgeCaseWords.length}</td>`;
+      summaryRow.innerHTML = `<td colspan="6">Total edge cases found: ${edgeCaseWords.length}</td>`;
       tableBody.appendChild(summaryRow);
     }
 

@@ -14,6 +14,7 @@ https://some-dude-999.github.io/LPH/FlashcardTypingGame/SpanishFlashcardTypingGa
 https://some-dude-999.github.io/LPH/FlashcardTypingGame/SpanishFlashcardTypingGameMISSINGPACKTEST.html - [Add description for SpanishFlashcardTypingGameMISSINGPACKTEST.html]
 https://some-dude-999.github.io/LPH/PromptCopier.html - Prompt template tool for generating vocabulary content
 https://some-dude-999.github.io/LPH/SpanishWords/SpanishWordsViewer.html - Interactive Spanish vocabulary pack viewer with analytics, word count validation, and act progression tracking
+https://some-dude-999.github.io/LPH/TranslationErrorReport.html - [Add description for TranslationErrorReport.html]
 https://some-dude-999.github.io/LPH/Who%20Even%20Learns%20Languages%20Dude.html - Demographics visualization with 3 tabs showing native languages of Spanish, English, and Chinese learners worldwide
 
 ═══════════════════════════════════════════════════════════════
@@ -36,6 +37,7 @@ https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act5-intermediate-mas
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act6-advanced-constructs.js - Act VI Advanced Constructs vocabulary (packs 191-220) - readable development version
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/act7-mastery-fluency.js - Act VII Mastery & Fluency vocabulary (packs 221-250) - readable development version
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/decoder-example.js - Example decoder utility for processing obfuscated vocabulary modules (requires pako.js for decompression)
+https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules/edge-cases.js - Spanish edge cases (Latin in Chinese: ATM, WhatsApp, NFT, etc.) - 13 words
 
 ▓▓▓ ENGLISH ▓▓▓
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act1-foundation.js - Act I Foundation vocabulary (packs 1-49) - readable development version
@@ -43,6 +45,7 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act2-building-blocks.
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act3-everyday-life.js - Act III Everyday Life vocabulary (packs 87-117) - readable development version
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act4-expanding-horizons.js - Act IV Expanding Horizons vocabulary (packs 118-135) - readable development version
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act5-advanced-mastery.js - Act V Advanced Mastery vocabulary (packs 136-160) - readable development version
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/edge-cases.js - English edge cases (Latin in Chinese translations) - 9 words
 
 ═══════════════════════════════════════════════════════════════
 ██ JAVASCRIPT MODULES - OBFUSCATED (Production - Compressed)
@@ -63,6 +66,7 @@ https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules-js/act4-expanding-exp
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js - Act V Intermediate Mastery vocabulary (packs 151-190) - compressed production version
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js - Act VI Advanced Constructs vocabulary (packs 191-220) - compressed production version
 https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js - Act VII Mastery & Fluency vocabulary (packs 221-250) - compressed production version
+https://some-dude-999.github.io/LPH/SpanishWords/Jsmodules-js/edge-cases-js.js - Spanish edge cases (compressed) - 13 words
 
 ▓▓▓ ENGLISH ▓▓▓
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act1-foundation-js.js - Act I Foundation vocabulary (packs 1-49) - compressed production version
@@ -70,3 +74,4 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act2-building-bloc
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act3-everyday-life-js.js - Act III Everyday Life vocabulary (packs 87-117) - compressed production version
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js - Act IV Expanding Horizons vocabulary (packs 118-135) - compressed production version
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js - Act V Advanced Mastery vocabulary (packs 136-160) - compressed production version
+https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/edge-cases-js.js - English edge cases (compressed) - 9 words
