@@ -1356,139 +1356,136 @@ Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
 
 UPDATE THE CSV. COMMIT. PR TO MAIN.</div>
 
-<h3>Chinese - Stage 3B (Fixing Only)</h3>
+<h3>Chinese - Stage 3B (Ultra-Efficient Fixing)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3b" data-lang="chinese">TASK: FIX ALL CHINESE PACKS SCORING BELOW 9 (Based on Stage 3A Scorecard)
+<div onclick="copyPrompt(this)" data-stage="3b" data-lang="chinese">TASK: SCAN ALL CHINESE PACKS - RECORD FIXES IN MINIMAL FIX TABLE (Ultra-Efficient)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔧 THIS IS FIXING ONLY - SCORECARD ALREADY EXISTS               ║
+║  ⚡ ULTRA-EFFICIENT FIX RECORDING - MINIMAL DATA ONLY            ║
 ║                                                                  ║
-║  Stage 3A already evaluated all 107 packs and produced a        ║
-║  scorecard with issues. Your job: FIX every pack below 9.       ║
-║  Start with the LOWEST scores first (worst = highest priority). ║
+║  Goal: Scan all 107 packs and record ONLY what needs fixing.    ║
+║  Write the LEAST amount possible to identify each fix.          ║
+║  NO Reason column. NO verbose descriptions. JUST the data.      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
-║  🔒 NEVER EDIT COLUMN 1 (chinese) - IT'S SACRED                  ║
-║  ✅ ONLY edit Columns 2-12 (pinyin + translations)               ║
-║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
+║  🔒 COLUMN 1 IS SACRED - NEVER QUESTION IT                       ║
+║                                                                  ║
+║  Column 1 (chinese) is ALWAYS CORRECT for the pack theme.       ║
+║  Problem: Auto-translation may pick WRONG MEANING of the word.  ║
+║                                                                  ║
+║  Example: Pack theme is "Sports Equipment"                      ║
+║  - Column 1: "bat" ✅ CORRECT word for theme                    ║
+║  - Translation: 蝙蝠 (animal) ❌ WRONG meaning!                  ║
+║  - Should be: 球棒 (sports equipment) ✅ RIGHT meaning          ║
+║                                                                  ║
+║  NEVER suggest changing Column 1. ONLY fix translations.        ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ AUTO-FAIL: NO SYSTEMATIC TRANSLATION ⛔⛔⛔                ║
-║                                                                  ║
-║  The following are IMMEDIATE FAILURES:                           ║
-║  ❌ Using Python/scripts to generate translations                ║
-║  ❌ Using translation APIs (Google Translate, DeepL, etc.)       ║
-║  ❌ Batch-translating multiple words at once                     ║
-║  ❌ Copy-pasting from translation websites                       ║
-║                                                                  ║
-║  ALL translations must be done:                                  ║
-║  ✅ ONE BY ONE - each translation individually                   ║
-║  ✅ MANUALLY - using your knowledge of the language              ║
-║  ✅ THOUGHTFULLY - considering context and natural usage         ║
-║                                                                  ║
-║  If you have gaps (empty cells), fill them ONE AT A TIME.       ║
-║  If you have bad translations ([...]), fix them ONE AT A TIME.  ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 1: READ TRANSLATION ERRORS CSV ===
 
-=== STEP 1: RUN QUALITY CHECK FIRST ===
-python PythonHelpers/check_translation_quality.py chinese
+Use Read tool: ChineseWords/ChineseWordsTranslationErrors.csv
 
 This shows:
-- Translations with [ or ] that need replacing
-- Empty cells that need manual translation
+- Issue_Count: Number of problems in each pack
+- Issues: Brief summary of what's wrong
 
-Then get the Stage 3A scorecard.
+Focus on packs where Issue_Count > 0.
 
-=== STEP 2: READ THE TRANSLATION ERRORS CSV ===
+=== STEP 2: SCAN PACKS AND RECORD FIXES ===
 
-╔══════════════════════════════════════════════════════════════════╗
-║  📖 READ: ChineseWords/ChineseWordsTranslationErrors.csv         ║
-║                                                                  ║
-║  Stage 3A already evaluated all 107 packs and filled in the     ║
-║  Score and Issues columns. Your job: FIX every pack below 9.    ║
-╚══════════════════════════════════════════════════════════════════╝
+For EACH pack with issues:
 
-Use the Read tool to open ChineseWordsTranslationErrors.csv
-
-This CSV shows ALL 107 packs with:
-- Score column: 1-10 score for each pack
-- Issues column: Specific problems that need fixing
-
-Find ALL packs with Score < 9. These are your targets.
-Start with the LOWEST scores first (worst = highest priority).
-
-=== STEP 3: FIX ALL PACKS SCORING BELOW 9 ===
+1. Read pack CSV: ChineseWords/ChineseWords{N}.csv
+2. Identify EVERY problem (pinyin errors, translation errors, empty cells, theme mismatches)
+3. Record fix in ChineseWords/ChineseFixTableB.csv with MINIMAL data:
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔥 FIX EVERY PACK WITH SCORE < 9. NO EXCEPTIONS. 🔥            ║
+║  📝 ChineseFixTableB.csv FORMAT (NO Reason column!)              ║
 ║                                                                  ║
-║  45 packs below 9? FIX ALL 45. One pack at a time.              ║
-║  Do NOT stop halfway. Do NOT leave work for next agent.          ║
-║  Start with LOWEST scores first (5/10 before 8/10).             ║
-║  COMPLETE EVERYTHING before finishing this task.                 ║
+║  Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value║
+║                                                                  ║
+║  Example fixes:                                                  ║
+║  chinese,23,3,pinyin,nǐhǎo,nǐ hǎo                               ║
+║  chinese,23,7,english,hello friend boy,hey buddy                ║
+║  chinese,45,12,spanish,,hola amigo                              ║
+║                                                                  ║
+║  That's it! Just 6 columns. No explanations needed.             ║
 ╚══════════════════════════════════════════════════════════════════╝
+
+⚡ WRITE ONLY:
+- Language (pre-filled: "chinese")
+- Pack_Number (e.g., "23")
+- Row_Number (CSV row number - remember row 1 is header, data starts at row 2)
+- Column_Name (e.g., "pinyin", "english", "spanish")
+- Old_Value (current wrong value - can be empty string if cell is empty)
+- New_Value (what it should be)
+
+❌ DO NOT WRITE:
+- Reason/explanation (no such column!)
+- Comments about why it's wrong
+- Multiple values in one cell
+
+=== CRITICAL VALIDATION RULES ===
+
+| Check | Description |
+|-------|-------------|
+| 🔒 NEVER change Column 1 | chinese column is SACRED - only fix translations (columns 2-12) |
+| ⚠️ Pinyin comma rule | Commas align: 的，→ de，(no space before comma) |
+| ⚠️ Pinyin spacing | 1 Chinese char = 1 pinyin syllable with spaces: 你好 → nǐ hǎo |
+| ⚠️ Theme matching | Check if TRANSLATION matches intended meaning for pack theme |
+| ⚠️ Empty cells | Record as empty Old_Value, provide New_Value |
+
+=== PINYIN COMMA CONVENTION (CRITICAL!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📋 YOUR ONLY JOB: FIX EVERY ISSUE IN THE ISSUES COLUMN          ║
+║  ⚠️  PINYIN COMMAS MUST ALIGN WITH CHINESE CHARACTER COMMAS      ║
 ║                                                                  ║
-║  Stage 3A already scored and documented ALL issues.             ║
-║  You do NOT need to re-evaluate or re-score.                    ║
-║  Simply READ the Issues column and FIX everything listed.       ║
+║  Chinese: 是的，先生                                            ║
+║  Pinyin:  shì de，xiān shēng                                    ║
 ║                                                                  ║
-║  NO scoring. NO evaluating. JUST FIX WHAT'S LISTED.             ║
+║  Notice: Comma after "的" and after "de" - same block!          ║
+║                                                                  ║
+║  ✅ CORRECT: de，xiān (comma right after "de")                  ║
+║  ❌ WRONG:   de, xiān (space before comma - breaks alignment!)  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-FOR EACH PACK SCORING BELOW 9 (in priority order):
+=== STEP 3: APPLY ALL FIXES (BULK OPERATION) ===
 
-1. Read the Issues column for this pack in ChineseWordsTranslationErrors.csv
-2. Read the pack CSV file: ChineseWords/ChineseWords{N}.csv
-3. Fix EVERY SINGLE ISSUE listed in the Issues column
-4. Show before/after table for ALL changes:
+After recording ALL fixes in ChineseFixTableB.csv:
 
-   | File | Row | Column | Before | After | Issue Fixed |
-   |------|-----|--------|--------|-------|-------------|
-   | ChineseWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo | Missing space |
-   | ChineseWords23.csv | 7 | english | hello friend boy | hey buddy | Awkward phrasing |
-   | ChineseWords23.csv | 12 | spanish | (empty) | hola amigo | Empty cell |
+python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTableB.csv
 
-5. COMMIT that pack's fixes
-6. PR TO MAIN
-7. Move to next pack
-8. REPEAT until ALL issues from ALL packs below 9 are fixed
+This applies all fixes at once. Review output for any mismatches.
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⚠️  CRITICAL: ADDRESS EVERY ISSUE FROM THE ISSUES COLUMN        ║
-║                                                                  ║
-║  If the Issues column says:                                      ║
-║  "Row 3 pinyin: missing space; Row 7 english: awkward; Row 12   ║
-║   spanish: too formal"                                           ║
-║                                                                  ║
-║  Then you MUST fix:                                              ║
-║  - Row 3 pinyin (add the space)                                  ║
-║  - Row 7 english (fix the awkward phrasing)                      ║
-║  - Row 12 spanish (make it less formal)                          ║
-║                                                                  ║
-║  Do NOT skip any issue. Do NOT leave anything for later.        ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 4: COMMIT AND PUSH ===
 
-=== CRITICAL RULES ===
+git add .
+git commit -m "Stage 3B: Apply surgical fixes to Chinese packs"
+git push -u origin <branch-name>
 
-| Rule | Description |
-|------|-------------|
-| 🔒 Column 1 | NEVER edit - chinese words are sacred |
-| ✅ Columns 2-12 | OK to edit - pinyin and translations |
-| ⛔ No Python fixes | Manual Edit tool only for translations |
-| 🎯 Priority | Fix lowest scores first (5/10 → 6/10 → 7/10 → 8/10) |
+=== EXAMPLE WORKFLOW ===
 
-=== PINYIN RULE ===
-Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
-✓ CORRECT: 猴子 → hóu zi (2 chars = 2 syllables with space)
-✗ WRONG: 猴子 → hóuzi (missing space!)
+1. Read ChineseWordsTranslationErrors.csv → See Pack 23 has issues
+2. Read ChineseWords/ChineseWords23.csv → Find 3 problems:
+   - Row 3, pinyin: "nǐhǎo" (missing space)
+   - Row 7, english: "hello friend boy" (awkward)
+   - Row 12, spanish: "" (empty cell)
+
+3. Record in ChineseFixTableB.csv:
+   ```
+   chinese,23,3,pinyin,nǐhǎo,nǐ hǎo
+   chinese,23,7,english,hello friend boy,hey buddy
+   chinese,23,12,spanish,,hola amigo
+   ```
+
+4. Move to next pack, repeat
+
+5. After ALL packs scanned, run:
+   python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTableB.csv
 
 === BREAKOUT CSV COLUMNS (12 columns) ===
+
 | Col | Name       | Editable? | Notes                        |
 |-----|------------|-----------|------------------------------|
 | 1   | chinese    | 🔒 NEVER  | Sacred - matches Overview    |
@@ -1504,24 +1501,12 @@ Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
 | 11  | malay      | ✅ YES    | Translation                  |
 | 12  | filipino   | ✅ YES    | Translation                  |
 
-=== FINAL OUTPUT (REQUIRED) ===
+=== SUCCESS CRITERIA ===
 
-| Metric                    | Value |
-|---------------------------|-------|
-| Packs Below 9 (from 3A)   | X     |
-| Packs Fixed               | X     |
-| Packs PRed to Main        | X     |
-
-╔══════════════════════════════════════════════════════════════════╗
-║  ✅ SUCCESS CRITERIA: Packs Below 9 = Packs Fixed                ║
-║                                                                  ║
-║  If 35 packs scored below 9, you must have fixed all 35.        ║
-║  If Packs Fixed < Packs Below 9, YOU ARE NOT DONE.              ║
-║  NEVER finish with unfixed low-scoring packs.                    ║
-╚══════════════════════════════════════════════════════════════════╝
-
-⚠️ COMMIT AND PR AFTER EACH WORDPACK FIX!
-Fix ALL packs below 9 - no exceptions!</div>
+✅ ChineseFixTableB.csv has entries for EVERY issue found
+✅ apply_fixes.py runs successfully with 0 mismatches
+✅ All changes committed and pushed
+✅ All 107 packs scanned (even if some have 0 issues)</div>
 
 <h3>Spanish - Stage 3A (Evaluation Only)</h3>
 <div>Click to copy</div>
@@ -1770,132 +1755,136 @@ INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
 DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 
-<h3>Spanish - Stage 3B (Fixing Only)</h3>
+<h3>Spanish - Stage 3B (Ultra-Efficient Fixing)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3b" data-lang="spanish">TASK: FIX ALL SPANISH PACKS SCORING BELOW 9 (Based on Stage 3A Scorecard)
+<div onclick="copyPrompt(this)" data-stage="3b" data-lang="spanish">TASK: SCAN ALL SPANISH PACKS - RECORD FIXES IN MINIMAL FIX TABLE (Ultra-Efficient)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔧 THIS IS FIXING ONLY - SCORECARD ALREADY EXISTS               ║
+║  ⚡ ULTRA-EFFICIENT FIX RECORDING - MINIMAL DATA ONLY            ║
 ║                                                                  ║
-║  Stage 3A already evaluated all 250 packs and produced a        ║
-║  scorecard with issues. Your job: FIX every pack below 9.       ║
-║  Start with the LOWEST scores first (worst = highest priority). ║
+║  Goal: Scan all 250 packs and record ONLY what needs fixing.    ║
+║  Write the LEAST amount possible to identify each fix.          ║
+║  NO Reason column. NO verbose descriptions. JUST the data.      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
-║  🔒 NEVER EDIT COLUMN 1 (spanish) - IT'S SACRED                  ║
-║  ✅ ONLY edit Columns 2-5 (translations)                         ║
-║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
+║  🔒 COLUMN 1 IS SACRED - NEVER QUESTION IT                       ║
+║                                                                  ║
+║  Column 1 (spanish) is ALWAYS CORRECT for the pack theme.       ║
+║  Problem: Auto-translation may pick WRONG MEANING of the word.  ║
+║                                                                  ║
+║  Example: Pack theme is "Sports Equipment"                      ║
+║  - Column 1: "bate" ✅ CORRECT word for theme                   ║
+║  - Translation: bat (flying animal) ❌ WRONG meaning!           ║
+║  - Should be: bat (sports equipment) ✅ RIGHT meaning           ║
+║                                                                  ║
+║  NEVER suggest changing Column 1. ONLY fix translations.        ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ AUTO-FAIL: NO SYSTEMATIC TRANSLATION ⛔⛔⛔                ║
-║                                                                  ║
-║  The following are IMMEDIATE FAILURES:                           ║
-║  ❌ Using Python/scripts to generate translations                ║
-║  ❌ Using translation APIs (Google Translate, DeepL, etc.)       ║
-║  ❌ Batch-translating multiple words at once                     ║
-║  ❌ Copy-pasting from translation websites                       ║
-║                                                                  ║
-║  ALL translations must be done:                                  ║
-║  ✅ ONE BY ONE - each translation individually                   ║
-║  ✅ MANUALLY - using your knowledge of the language              ║
-║  ✅ THOUGHTFULLY - considering context and natural usage         ║
-║                                                                  ║
-║  If you have gaps (empty cells), fill them ONE AT A TIME.       ║
-║  If you have bad translations ([...]), fix them ONE AT A TIME.  ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 1: READ TRANSLATION ERRORS CSV ===
 
-=== STEP 1: RUN QUALITY CHECK FIRST ===
-python PythonHelpers/check_translation_quality.py spanish
+Use Read tool: SpanishWords/SpanishWordsTranslationErrors.csv
 
 This shows:
-- Translations with [ or ] that need replacing
-- Empty cells that need manual translation
+- Issue_Count: Number of problems in each pack
+- Issues: Brief summary of what's wrong
 
-=== STEP 2: READ THE TRANSLATION ERRORS CSV ===
+Focus on packs where Issue_Count > 0.
 
-╔══════════════════════════════════════════════════════════════════╗
-║  📖 READ: SpanishWords/SpanishWordsTranslationErrors.csv         ║
-║                                                                  ║
-║  Stage 3A already evaluated all 250 packs and filled in the     ║
-║  Score and Issues columns. Your job: FIX every pack below 9.    ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 2: SCAN PACKS AND RECORD FIXES ===
 
-Use the Read tool to open SpanishWordsTranslationErrors.csv
+For EACH pack with issues:
 
-This CSV shows ALL 250 packs with:
-- Score column: 1-10 score for each pack
-- Issues column: Specific problems that need fixing
-
-Find ALL packs with Score < 9. These are your targets.
-Start with the LOWEST scores first (worst = highest priority).
-
-=== STEP 3: FIX ALL PACKS SCORING BELOW 9 ===
+1. Read pack CSV: SpanishWords/SpanishWords{N}.csv
+2. Identify EVERY problem (pinyin errors, translation errors, empty cells, theme mismatches)
+3. Record fix in SpanishWords/SpanishFixTableB.csv with MINIMAL data:
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔥 FIX EVERY PACK WITH SCORE < 9. NO EXCEPTIONS. 🔥            ║
+║  📝 SpanishFixTableB.csv FORMAT (NO Reason column!)              ║
 ║                                                                  ║
-║  80 packs below 9? FIX ALL 80. One pack at a time.              ║
-║  Do NOT stop halfway. Do NOT leave work for next agent.          ║
-║  Start with LOWEST scores first (5/10 before 8/10).             ║
-║  COMPLETE EVERYTHING before finishing this task.                 ║
+║  Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value║
+║                                                                  ║
+║  Example fixes:                                                  ║
+║  spanish,23,3,pinyin,nǐhǎo,nǐ hǎo                               ║
+║  spanish,23,7,english,hello friend boy,hey buddy                ║
+║  spanish,45,12,portuguese,,olá amigo                            ║
+║                                                                  ║
+║  That's it! Just 6 columns. No explanations needed.             ║
 ╚══════════════════════════════════════════════════════════════════╝
+
+⚡ WRITE ONLY:
+- Language (pre-filled: "spanish")
+- Pack_Number (e.g., "23")
+- Row_Number (CSV row number - remember row 1 is header, data starts at row 2)
+- Column_Name (e.g., "english", "chinese", "pinyin", "portuguese")
+- Old_Value (current wrong value - can be empty string if cell is empty)
+- New_Value (what it should be)
+
+❌ DO NOT WRITE:
+- Reason/explanation (no such column!)
+- Comments about why it's wrong
+- Multiple values in one cell
+
+=== CRITICAL VALIDATION RULES ===
+
+| Check | Description |
+|-------|-------------|
+| 🔒 NEVER change Column 1 | spanish column is SACRED - only fix translations (columns 2-5) |
+| ⚠️ Pinyin comma rule | Commas align: 的，→ de，(no space before comma) |
+| ⚠️ Pinyin spacing | 1 Chinese char = 1 pinyin syllable with spaces: 你好 → nǐ hǎo |
+| ⚠️ Theme matching | Check if TRANSLATION matches intended meaning for pack theme |
+| ⚠️ Empty cells | Record as empty Old_Value, provide New_Value |
+
+=== PINYIN COMMA CONVENTION (CRITICAL!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📋 YOUR ONLY JOB: FIX EVERY ISSUE IN THE ISSUES COLUMN          ║
+║  ⚠️  PINYIN COMMAS MUST ALIGN WITH CHINESE CHARACTER COMMAS      ║
 ║                                                                  ║
-║  Stage 3A already scored and documented ALL issues.             ║
-║  You do NOT need to re-evaluate or re-score.                    ║
-║  Simply READ the Issues column and FIX everything listed.       ║
+║  Chinese: 是的，先生                                            ║
+║  Pinyin:  shì de，xiān shēng                                    ║
 ║                                                                  ║
-║  NO scoring. NO evaluating. JUST FIX WHAT'S LISTED.             ║
+║  Notice: Comma after "的" and after "de" - same block!          ║
+║                                                                  ║
+║  ✅ CORRECT: de，xiān (comma right after "de")                  ║
+║  ❌ WRONG:   de, xiān (space before comma - breaks alignment!)  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-FOR EACH PACK SCORING BELOW 9 (in priority order):
+=== STEP 3: APPLY ALL FIXES (BULK OPERATION) ===
 
-1. Read the Issues column for this pack in SpanishWordsTranslationErrors.csv
-2. Read the pack CSV file: SpanishWords/SpanishWords{N}.csv
-3. Fix EVERY SINGLE ISSUE listed in the Issues column
-4. Show before/after table for ALL changes:
+After recording ALL fixes in SpanishFixTableB.csv:
 
-   | File | Row | Column | Before | After | Issue Fixed |
-   |------|-----|--------|--------|-------|-------------|
-   | SpanishWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo | Missing space |
-   | SpanishWords23.csv | 7 | english | hello friend boy | hey buddy | Awkward phrasing |
-   | SpanishWords23.csv | 12 | portuguese | (empty) | olá amigo | Empty cell |
+python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTableB.csv
 
-5. COMMIT that pack's fixes
-6. PR TO MAIN
-7. Move to next pack
-8. REPEAT until ALL issues from ALL packs below 9 are fixed
+This applies all fixes at once. Review output for any mismatches.
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⚠️  CRITICAL: ADDRESS EVERY ISSUE FROM THE ISSUES COLUMN        ║
-║                                                                  ║
-║  If the Issues column says:                                      ║
-║  "Row 3 pinyin: missing space; Row 7 english: awkward; Row 12   ║
-║   portuguese: missing accent"                                    ║
-║                                                                  ║
-║  Then you MUST fix:                                              ║
-║  - Row 3 pinyin (add the space)                                  ║
-║  - Row 7 english (fix the awkward phrasing)                      ║
-║  - Row 12 portuguese (add the missing accent)                    ║
-║                                                                  ║
-║  Do NOT skip any issue. Do NOT leave anything for later.        ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 4: COMMIT AND PUSH ===
 
-=== CRITICAL RULES ===
+git add .
+git commit -m "Stage 3B: Apply surgical fixes to Spanish packs"
+git push -u origin <branch-name>
 
-| Rule | Description |
-|------|-------------|
-| 🔒 Column 1 | NEVER edit - spanish words are sacred |
-| ✅ Columns 2-5 | OK to edit - translations |
-| ⛔ No Python fixes | Manual Edit tool only for translations |
-| 🎯 Priority | Fix lowest scores first (5/10 → 6/10 → 7/10 → 8/10) |
+=== EXAMPLE WORKFLOW ===
+
+1. Read SpanishWordsTranslationErrors.csv → See Pack 23 has issues
+2. Read SpanishWords/SpanishWords23.csv → Find 3 problems:
+   - Row 3, pinyin: "nǐhǎo" (missing space)
+   - Row 7, english: "hello friend boy" (awkward)
+   - Row 12, portuguese: "" (empty cell)
+
+3. Record in SpanishFixTableB.csv:
+   ```
+   spanish,23,3,pinyin,nǐhǎo,nǐ hǎo
+   spanish,23,7,english,hello friend boy,hey buddy
+   spanish,23,12,portuguese,,olá amigo
+   ```
+
+4. Move to next pack, repeat
+
+5. After ALL packs scanned, run:
+   python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTableB.csv
 
 === BREAKOUT CSV COLUMNS (5 columns) ===
+
 | Col | Name       | Editable? | Notes                        |
 |-----|------------|-----------|------------------------------|
 | 1   | spanish    | 🔒 NEVER  | Sacred - matches Overview    |
@@ -1904,28 +1893,12 @@ FOR EACH PACK SCORING BELOW 9 (in priority order):
 | 4   | pinyin     | ✅ YES    | 1 syllable per character     |
 | 5   | portuguese | ✅ YES    | Translation                  |
 
-=== PINYIN RULE ===
-CORRECT: 你好 → nǐ hǎo (space between syllables)
-INCORRECT: 你好 → nǐhǎo (no space - WRONG)
+=== SUCCESS CRITERIA ===
 
-=== FINAL OUTPUT (REQUIRED) ===
-
-| Metric                    | Value |
-|---------------------------|-------|
-| Packs Below 9 (from 3A)   | X     |
-| Packs Fixed               | X     |
-| Packs PRed to Main        | X     |
-
-╔══════════════════════════════════════════════════════════════════╗
-║  ✅ SUCCESS CRITERIA: Packs Below 9 = Packs Fixed                ║
-║                                                                  ║
-║  If 80 packs scored below 9, you must have fixed all 80.        ║
-║  If Packs Fixed < Packs Below 9, YOU ARE NOT DONE.              ║
-║  NEVER finish with unfixed low-scoring packs.                    ║
-╚══════════════════════════════════════════════════════════════════╝
-
-⚠️ COMMIT AND PR AFTER EACH WORDPACK FIX!
-Fix ALL packs below 9 - no exceptions!</div>
+✅ SpanishFixTableB.csv has entries for EVERY issue found
+✅ apply_fixes.py runs successfully with 0 mismatches
+✅ All changes committed and pushed
+✅ All 250 packs scanned (even if some have 0 issues)</div>
 
 <h3>English - Stage 3A (Evaluation Only)</h3>
 <div>Click to copy</div>
@@ -2219,132 +2192,136 @@ INCORRECT: 你好 → nǐhǎo (no space - WRONG)
 
 DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 
-<h3>English - Stage 3B (Fixing Only)</h3>
+<h3>English - Stage 3B (Ultra-Efficient Fixing)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3b" data-lang="english">TASK: FIX ALL ENGLISH PACKS SCORING BELOW 9 (Based on Stage 3A Scorecard)
+<div onclick="copyPrompt(this)" data-stage="3b" data-lang="english">TASK: SCAN ALL ENGLISH PACKS - RECORD FIXES IN MINIMAL FIX TABLE (Ultra-Efficient)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔧 THIS IS FIXING ONLY - SCORECARD ALREADY EXISTS               ║
+║  ⚡ ULTRA-EFFICIENT FIX RECORDING - MINIMAL DATA ONLY            ║
 ║                                                                  ║
-║  Stage 3A already evaluated all 160 packs and produced a        ║
-║  scorecard with issues. Your job: FIX every pack below 9.       ║
-║  Start with the LOWEST scores first (worst = highest priority). ║
+║  Goal: Scan all 160 packs and record ONLY what needs fixing.    ║
+║  Write the LEAST amount possible to identify each fix.          ║
+║  NO Reason column. NO verbose descriptions. JUST the data.      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
-║  🔒 NEVER EDIT COLUMN 1 (english) - IT'S SACRED                  ║
-║  ✅ ONLY edit Columns 2-5 (translations)                         ║
-║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
+║  🔒 COLUMN 1 IS SACRED - NEVER QUESTION IT                       ║
+║                                                                  ║
+║  Column 1 (english) is ALWAYS CORRECT for the pack theme.       ║
+║  Problem: Auto-translation may pick WRONG MEANING of the word.  ║
+║                                                                  ║
+║  Example: Pack theme is "Sports Equipment"                      ║
+║  - Column 1: "bat" ✅ CORRECT word for theme                    ║
+║  - Translation: 蝙蝠 (animal) ❌ WRONG meaning!                  ║
+║  - Should be: 球棒 (sports equipment) ✅ RIGHT meaning          ║
+║                                                                  ║
+║  NEVER suggest changing Column 1. ONLY fix translations.        ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ AUTO-FAIL: NO SYSTEMATIC TRANSLATION ⛔⛔⛔                ║
-║                                                                  ║
-║  The following are IMMEDIATE FAILURES:                           ║
-║  ❌ Using Python/scripts to generate translations                ║
-║  ❌ Using translation APIs (Google Translate, DeepL, etc.)       ║
-║  ❌ Batch-translating multiple words at once                     ║
-║  ❌ Copy-pasting from translation websites                       ║
-║                                                                  ║
-║  ALL translations must be done:                                  ║
-║  ✅ ONE BY ONE - each translation individually                   ║
-║  ✅ MANUALLY - using your knowledge of the language              ║
-║  ✅ THOUGHTFULLY - considering context and natural usage         ║
-║                                                                  ║
-║  If you have gaps (empty cells), fill them ONE AT A TIME.       ║
-║  If you have bad translations ([...]), fix them ONE AT A TIME.  ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 1: READ TRANSLATION ERRORS CSV ===
 
-=== STEP 1: RUN QUALITY CHECK FIRST ===
-python PythonHelpers/check_translation_quality.py english
+Use Read tool: EnglishWords/EnglishWordsTranslationErrors.csv
 
 This shows:
-- Translations with [ or ] that need replacing
-- Empty cells that need manual translation
+- Issue_Count: Number of problems in each pack
+- Issues: Brief summary of what's wrong
 
-=== STEP 2: READ THE TRANSLATION ERRORS CSV ===
+Focus on packs where Issue_Count > 0.
 
-╔══════════════════════════════════════════════════════════════════╗
-║  📖 READ: EnglishWords/EnglishWordsTranslationErrors.csv         ║
-║                                                                  ║
-║  Stage 3A already evaluated all 160 packs and filled in the     ║
-║  Score and Issues columns. Your job: FIX every pack below 9.    ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 2: SCAN PACKS AND RECORD FIXES ===
 
-Use the Read tool to open EnglishWordsTranslationErrors.csv
+For EACH pack with issues:
 
-This CSV shows ALL 160 packs with:
-- Score column: 1-10 score for each pack
-- Issues column: Specific problems that need fixing
-
-Find ALL packs with Score < 9. These are your targets.
-Start with the LOWEST scores first (worst = highest priority).
-
-=== STEP 3: FIX ALL PACKS SCORING BELOW 9 ===
+1. Read pack CSV: EnglishWords/EnglishWords{N}.csv
+2. Identify EVERY problem (pinyin errors, translation errors, empty cells, theme mismatches)
+3. Record fix in EnglishWords/EnglishFixTableB.csv with MINIMAL data:
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔥 FIX EVERY PACK WITH SCORE < 9. NO EXCEPTIONS. 🔥            ║
+║  📝 EnglishFixTableB.csv FORMAT (NO Reason column!)              ║
 ║                                                                  ║
-║  50 packs below 9? FIX ALL 50. One pack at a time.              ║
-║  Do NOT stop halfway. Do NOT leave work for next agent.          ║
-║  Start with LOWEST scores first (5/10 before 8/10).             ║
-║  COMPLETE EVERYTHING before finishing this task.                 ║
+║  Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value║
+║                                                                  ║
+║  Example fixes:                                                  ║
+║  english,23,3,pinyin,nǐhǎo,nǐ hǎo                               ║
+║  english,23,7,spanish,hola tu,hola tú                           ║
+║  english,45,12,chinese,,你好                                    ║
+║                                                                  ║
+║  That's it! Just 6 columns. No explanations needed.             ║
 ╚══════════════════════════════════════════════════════════════════╝
+
+⚡ WRITE ONLY:
+- Language (pre-filled: "english")
+- Pack_Number (e.g., "23")
+- Row_Number (CSV row number - remember row 1 is header, data starts at row 2)
+- Column_Name (e.g., "chinese", "pinyin", "spanish", "portuguese")
+- Old_Value (current wrong value - can be empty string if cell is empty)
+- New_Value (what it should be)
+
+❌ DO NOT WRITE:
+- Reason/explanation (no such column!)
+- Comments about why it's wrong
+- Multiple values in one cell
+
+=== CRITICAL VALIDATION RULES ===
+
+| Check | Description |
+|-------|-------------|
+| 🔒 NEVER change Column 1 | english column is SACRED - only fix translations (columns 2-5) |
+| ⚠️ Pinyin comma rule | Commas align: 的，→ de，(no space before comma) |
+| ⚠️ Pinyin spacing | 1 Chinese char = 1 pinyin syllable with spaces: 你好 → nǐ hǎo |
+| ⚠️ Theme matching | Check if TRANSLATION matches intended meaning for pack theme |
+| ⚠️ Empty cells | Record as empty Old_Value, provide New_Value |
+
+=== PINYIN COMMA CONVENTION (CRITICAL!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📋 YOUR ONLY JOB: FIX EVERY ISSUE IN THE ISSUES COLUMN          ║
+║  ⚠️  PINYIN COMMAS MUST ALIGN WITH CHINESE CHARACTER COMMAS      ║
 ║                                                                  ║
-║  Stage 3A already scored and documented ALL issues.             ║
-║  You do NOT need to re-evaluate or re-score.                    ║
-║  Simply READ the Issues column and FIX everything listed.       ║
+║  Chinese: 是的，先生                                            ║
+║  Pinyin:  shì de，xiān shēng                                    ║
 ║                                                                  ║
-║  NO scoring. NO evaluating. JUST FIX WHAT'S LISTED.             ║
+║  Notice: Comma after "的" and after "de" - same block!          ║
+║                                                                  ║
+║  ✅ CORRECT: de，xiān (comma right after "de")                  ║
+║  ❌ WRONG:   de, xiān (space before comma - breaks alignment!)  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-FOR EACH PACK SCORING BELOW 9 (in priority order):
+=== STEP 3: APPLY ALL FIXES (BULK OPERATION) ===
 
-1. Read the Issues column for this pack in EnglishWordsTranslationErrors.csv
-2. Read the pack CSV file: EnglishWords/EnglishWords{N}.csv
-3. Fix EVERY SINGLE ISSUE listed in the Issues column
-4. Show before/after table for ALL changes:
+After recording ALL fixes in EnglishFixTableB.csv:
 
-   | File | Row | Column | Before | After | Issue Fixed |
-   |------|-----|--------|--------|-------|-------------|
-   | EnglishWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo | Missing space |
-   | EnglishWords23.csv | 7 | spanish | hola tu | hola tú | Missing accent |
-   | EnglishWords23.csv | 12 | chinese | (empty) | 你好 | Empty cell |
+python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTableB.csv
 
-5. COMMIT that pack's fixes
-6. PR TO MAIN
-7. Move to next pack
-8. REPEAT until ALL issues from ALL packs below 9 are fixed
+This applies all fixes at once. Review output for any mismatches.
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⚠️  CRITICAL: ADDRESS EVERY ISSUE FROM THE ISSUES COLUMN        ║
-║                                                                  ║
-║  If the Issues column says:                                      ║
-║  "Row 3 pinyin: missing space; Row 7 spanish: missing accent;   ║
-║   Row 12 chinese: empty cell"                                    ║
-║                                                                  ║
-║  Then you MUST fix:                                              ║
-║  - Row 3 pinyin (add the space)                                  ║
-║  - Row 7 spanish (add the missing accent)                        ║
-║  - Row 12 chinese (fill the empty cell)                          ║
-║                                                                  ║
-║  Do NOT skip any issue. Do NOT leave anything for later.        ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 4: COMMIT AND PUSH ===
 
-=== CRITICAL RULES ===
+git add .
+git commit -m "Stage 3B: Apply surgical fixes to English packs"
+git push -u origin <branch-name>
 
-| Rule | Description |
-|------|-------------|
-| 🔒 Column 1 | NEVER edit - english words are sacred |
-| ✅ Columns 2-5 | OK to edit - translations |
-| ⛔ No Python fixes | Manual Edit tool only for translations |
-| 🎯 Priority | Fix lowest scores first (5/10 → 6/10 → 7/10 → 8/10) |
+=== EXAMPLE WORKFLOW ===
+
+1. Read EnglishWordsTranslationErrors.csv → See Pack 23 has issues
+2. Read EnglishWords/EnglishWords23.csv → Find 3 problems:
+   - Row 3, pinyin: "nǐhǎo" (missing space)
+   - Row 7, spanish: "hola tu" (missing accent)
+   - Row 12, chinese: "" (empty cell)
+
+3. Record in EnglishFixTableB.csv:
+   ```
+   english,23,3,pinyin,nǐhǎo,nǐ hǎo
+   english,23,7,spanish,hola tu,hola tú
+   english,23,12,chinese,,你好
+   ```
+
+4. Move to next pack, repeat
+
+5. After ALL packs scanned, run:
+   python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTableB.csv
 
 === BREAKOUT CSV COLUMNS (5 columns) ===
+
 | Col | Name       | Editable? | Notes                        |
 |-----|------------|-----------|------------------------------|
 | 1   | english    | 🔒 NEVER  | Sacred - matches Overview    |
@@ -2353,28 +2330,12 @@ FOR EACH PACK SCORING BELOW 9 (in priority order):
 | 4   | spanish    | ✅ YES    | Translation                  |
 | 5   | portuguese | ✅ YES    | Translation                  |
 
-=== PINYIN RULE ===
-CORRECT: 你好 → nǐ hǎo (space between syllables)
-INCORRECT: 你好 → nǐhǎo (no space - WRONG)
+=== SUCCESS CRITERIA ===
 
-=== FINAL OUTPUT (REQUIRED) ===
-
-| Metric                    | Value |
-|---------------------------|-------|
-| Packs Below 9 (from 3A)   | X     |
-| Packs Fixed               | X     |
-| Packs PRed to Main        | X     |
-
-╔══════════════════════════════════════════════════════════════════╗
-║  ✅ SUCCESS CRITERIA: Packs Below 9 = Packs Fixed                ║
-║                                                                  ║
-║  If 50 packs scored below 9, you must have fixed all 50.        ║
-║  If Packs Fixed < Packs Below 9, YOU ARE NOT DONE.              ║
-║  NEVER finish with unfixed low-scoring packs.                    ║
-╚══════════════════════════════════════════════════════════════════╝
-
-⚠️ COMMIT AND PR AFTER EACH WORDPACK FIX!
-Fix ALL packs below 9 - no exceptions!</div>
+✅ EnglishFixTableB.csv has entries for EVERY issue found
+✅ apply_fixes.py runs successfully with 0 mismatches
+✅ All changes committed and pushed
+✅ All 160 packs scanned (even if some have 0 issues)</div>
 
 <!-- ============================================================ -->
 <!-- STAGE 4: JAVASCRIPT MODULE GENERATION                        -->

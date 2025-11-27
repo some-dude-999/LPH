@@ -2,10 +2,17 @@
 """
 Apply surgical fixes from fix tables to breakout CSVs.
 
+Works with both:
+- FixTable.csv (with Reason column - Stage 3A)
+- FixTableB.csv (without Reason column - Stage 3B, ultra-efficient)
+
 Usage:
     python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTable.csv
     python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTable.csv
     python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTable.csv
+    python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTableB.csv
+    python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTableB.csv
+    python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTableB.csv
 """
 
 import csv
@@ -137,10 +144,14 @@ def apply_fixes_to_file(file_path, fixes):
 def main():
     if len(sys.argv) < 2:
         print("Usage: python apply_fixes.py <fix_table.csv>")
-        print("\nExamples:")
+        print("\nExamples (Stage 3A - with Reason column):")
         print("  python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTable.csv")
         print("  python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTable.csv")
         print("  python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTable.csv")
+        print("\nExamples (Stage 3B - minimal, no Reason):")
+        print("  python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTableB.csv")
+        print("  python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTableB.csv")
+        print("  python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTableB.csv")
         sys.exit(1)
 
     fix_table_path = sys.argv[1]
