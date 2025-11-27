@@ -388,6 +388,16 @@ If the JS modules don't load, NOTHING about the game should load. The HTML only 
 - Empty `<select>` elements (populated after modules load)
 - UI shell (CSS, layout, etc.)
 
+**⚠️ NO FALLBACKS - DEAD APP WITHOUT MODULES ⚠️**
+When JS modules fail to load:
+- ❌ ALL dropdowns must be EMPTY (Act, Pack, "I speak" language)
+- ❌ Vocabulary table must be EMPTY
+- ❌ NO hardcoded default options should appear
+- ✅ Debug info should show loading errors
+
+**This is intentional!** An empty UI immediately tells us something is wrong.
+Fallback data would hide module loading failures and cause confusion.
+
 **What MUST come from JS modules (__actMeta):**
 - ✅ Act names (actName in __actMeta)
 - ✅ Available "I speak" languages with column indices (translations in __actMeta)
@@ -401,6 +411,7 @@ If the JS modules don't load, NOTHING about the game should load. The HTML only 
 - ❌ NOT act names
 - ❌ NOT translation config
 - ❌ NOT hardcoded `<option>` elements
+- ❌ NOT fallback data in LANGUAGE_CONFIG.nativeLanguages
 
 **Module Structure (__actMeta):**
 Each JS module exports `__actMeta` containing all configuration:
@@ -458,7 +469,14 @@ function populateLanguageSelector(selectElement) {
 - **True module dependency**: If modules fail to load, dropdowns stay empty - user knows something is wrong
 - **Single source of truth**: All config lives in modules, not duplicated in HTML
 - **No sync issues**: Change translations in module converter, regenerate, done
-- **Testable**: Can create test file with empty URLs to verify error handling
+- **Testable**: See `DecoderTest-NoModules.html` for what happens when modules fail to load
+
+**Testing Module Failures:**
+Use `DecoderTest-NoModules.html` to verify the app behaves correctly when modules don't load:
+- All module paths are set to `./INVALID/module-does-not-exist.js`
+- All dropdowns should be empty
+- Debug info should show loading errors
+- This demonstrates the "dead app" behavior is working correctly
 
 ---
 

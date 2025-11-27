@@ -7,13 +7,16 @@
 
   <!--
     ╔══════════════════════════════════════════════════════════════════════════════╗
-    ║                                                                              ║
     ║   ⚠️ TEST VERSION - MODULE LOADING DISABLED ⚠️                               ║
-    ║                                                                              ║
+    ╠══════════════════════════════════════════════════════════════════════════════╣
     ║   This is a TEST COPY of DecoderTest.html with INVALID module paths.        ║
     ║   It demonstrates what the UI looks like when JS modules fail to load.      ║
     ║   All module paths have been changed to './INVALID/module-does-not-exist.js'║
     ║                                                                              ║
+    ║   EXPECTED BEHAVIOR:                                                         ║
+    ║   - All dropdowns should be EMPTY (no acts, no packs, no "I speak" options) ║
+    ║   - Vocabulary table should be EMPTY                                         ║
+    ║   - Debug info should show loading errors for each act                       ║
     ╠══════════════════════════════════════════════════════════════════════════════╣
     ║                                                                              ║
     ║   🎮 LANGUAGE LEARNING GAME - REFERENCE TEMPLATE IMPLEMENTATION 🎮           ║
@@ -739,8 +742,17 @@
       2. Column structure (what each column index represents)
       3. Available native languages (for "I speak" dropdown)
 
-    NOTE: This is a TEST VERSION with INVALID module paths to demonstrate
-    what the UI looks like when modules fail to load.
+      ════════════════════════════════════════════════════════════════════════════
+      ⚠️ TEST VERSION - ALL MODULE PATHS ARE INTENTIONALLY INVALID ⚠️
+      ════════════════════════════════════════════════════════════════════════════
+      This file demonstrates what the UI looks like when JS modules fail to load.
+      All paths point to './INVALID/module-does-not-exist.js' which doesn't exist.
+
+      Expected behavior:
+      - All dropdowns should be EMPTY (no acts, no packs, no "I speak" options)
+      - Vocabulary table should be EMPTY
+      - Debug info should show loading errors for each act
+      ════════════════════════════════════════════════════════════════════════════
     */
     const LANGUAGE_CONFIG = {
       'Spanish': {
@@ -1396,15 +1408,14 @@
           await loadLanguageData(newLanguage);
 
           // Reset native language to first available option from loaded metadata
+          // NO FALLBACK - if modules didn't load, we have no valid options
           const firstActMeta = Object.values(state.loadedActMeta)[0];
           if (firstActMeta && firstActMeta.translations) {
             const firstTranslation = Object.values(firstActMeta.translations)[0];
             state.currentNativeLanguage = firstTranslation.index;
-          } else {
-            // Fallback to LANGUAGE_CONFIG
-            const nativeLanguages = LANGUAGE_CONFIG[newLanguage].nativeLanguages;
-            state.currentNativeLanguage = Object.values(nativeLanguages)[0];
           }
+          // If no modules loaded, currentNativeLanguage stays at previous value
+          // but dropdown will be empty anyway
 
           // Update UI
           populateActDropdown();
@@ -2286,6 +2297,15 @@
       Populates the "I speak" dropdown with available native languages.
       Available options depend on the column structure of target language.
 
+      ════════════════════════════════════════════════════════════════════════════
+      ARCHITECTURE PRINCIPLE: NO HARDCODED DATA - MODULES ARE THE SOURCE OF TRUTH
+      ════════════════════════════════════════════════════════════════════════════
+      If JS modules fail to load, this dropdown stays EMPTY.
+      ALL options come from __actMeta.translations in loaded modules.
+      There is NO fallback - without modules, the app is intentionally dead.
+      This ensures we immediately know when modules aren't loading properly.
+      ════════════════════════════════════════════════════════════════════════════
+
       EXAMPLE:
       If learning Spanish, can choose: English, Chinese, Pinyin, Portuguese
       If learning Chinese, can choose: English, Spanish, French, Portuguese, etc.
@@ -2294,26 +2314,23 @@
       const nativeSelect = document.getElementById('nativeLanguageSelect');
       nativeSelect.innerHTML = '';
 
-      // Get translations from loaded __actMeta (same as ChineseFlashcardTypingGame.html)
-      // Falls back to LANGUAGE_CONFIG if no metadata loaded
-      let nativeLanguages = {};
+      // ════════════════════════════════════════════════════════════════════════
+      // Get translations ONLY from loaded __actMeta - NO FALLBACK
+      // If modules didn't load, dropdown stays empty (this is intentional)
+      // ════════════════════════════════════════════════════════════════════════
       const firstActMeta = Object.values(state.loadedActMeta)[0];
-      if (firstActMeta && firstActMeta.translations) {
-        // Use translations from __actMeta - format: { english: { index: 2, display: "English" }, ... }
-        Object.entries(firstActMeta.translations).forEach(([key, config]) => {
-          nativeLanguages[config.display] = config.index;
-        });
-      } else {
-        // Fallback to LANGUAGE_CONFIG
-        const config = LANGUAGE_CONFIG[state.currentLanguage];
-        nativeLanguages = config.nativeLanguages;
+      if (!firstActMeta || !firstActMeta.translations) {
+        // No modules loaded = no options. This is correct behavior.
+        console.warn('[populateNativeLanguageDropdown] No modules loaded - dropdown empty');
+        return;
       }
 
-      Object.entries(nativeLanguages).forEach(([langName, columnIndex]) => {
+      // Use translations from __actMeta - format: { english: { index: 2, display: "English" }, ... }
+      Object.entries(firstActMeta.translations).forEach(([key, config]) => {
         const option = document.createElement('option');
-        option.value = columnIndex;
-        option.textContent = langName;
-        if (columnIndex === state.currentNativeLanguage) {
+        option.value = config.index;
+        option.textContent = config.display;
+        if (config.index === state.currentNativeLanguage) {
           option.selected = true;
         }
         nativeSelect.appendChild(option);
