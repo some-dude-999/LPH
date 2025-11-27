@@ -89,8 +89,8 @@ export const p6_182_telecommunications = {
     ["en telecomunicaciones", "in telecommunications", "在电信领域", "zài diàn xìn lǐng yù", "em telecomunicações"],
     ["un SMS", "an SMS", "一条短信", "yī tiáo duǎn xìn", "um SMS"],
     ["por SMS", "by SMS", "通过短信", "tōng guò duǎn xìn", "por SMS"],
-    ["por WhatsApp", "by WhatsApp", "通过 WhatsApp", "tōng guò  WhatsApp", "por WhatsApp"],
-    ["en WhatsApp", "on WhatsApp", "在 WhatsApp 上", "zài  WhatsApp  shàng", "no WhatsApp"],
+    ["por WhatsApp", "by WhatsApp", "通过 WhatsApp", "tōng guò WhatsApp", "por WhatsApp"],
+    ["en WhatsApp", "on WhatsApp", "在 WhatsApp 上", "zài WhatsApp shàng", "no WhatsApp"],
     ["un email", "an email", "一封电子邮件", "yī fēng diàn zi yóu jiàn", "um e-mail"],
     ["por email", "by email", "通过电子邮件", "tōng guò diàn zi yóu jiàn", "por e-mail"],
     ["la videollamada", "the video call", "视频通话", "shì pín tōng huà", "a videochamada"],
@@ -614,15 +614,15 @@ export const p6_192_existing__existir = {
   ],
   exampleWords: [
     ["yo existo", "I exist", "我存在", "wǒ cún zài", "Eu existo"],
-    ["sí existo", "yes I exist", "是的，我存在", "shì de ， wǒ cún zài", "sim, eu existo"],
+    ["sí existo", "yes I exist", "是的，我存在", "shì de， wǒ cún zài", "sim, eu existo"],
     ["tú existes", "you exist", "你存在", "nǐ cún zài", "você existe"],
-    ["sí existes", "yes you exist", "是的，你存在", "shì de ， nǐ cún zài", "sim, você existe"],
+    ["sí existes", "yes you exist", "是的，你存在", "shì de， nǐ cún zài", "sim, você existe"],
     ["él existe", "he exists", "他存在", "tā cún zài", "ele existe"],
     ["no existe", "does not exist", "不存在", "bù cún zài", "não existe"],
     ["nosotros existimos", "we exist", "我们存在", "wǒ men cún zài", "nós existimos"],
-    ["sí existimos", "yes we exist", "是的，我们存在", "shì de ， wǒ men cún zài", "sim, nós existimos"],
+    ["sí existimos", "yes we exist", "是的，我们存在", "shì de， wǒ men cún zài", "sim, nós existimos"],
     ["vosotros existís", "you exist", "你存在", "nǐ cún zài", "você existe"],
-    ["sí existís", "yes you exist", "是的，你存在", "shì de ， nǐ cún zài", "sim, você existe"],
+    ["sí existís", "yes you exist", "是的，你存在", "shì de， nǐ cún zài", "sim, você existe"],
     ["ellos existen", "they exist", "它们存在", "tā men cún zài", "eles existem"],
     ["no existen", "do not exist", "不存在", "bù cún zài", "não existem"],
     ["puede existir", "can exist", "可以存在", "kě yǐ cún zài", "pode existir"],
@@ -1008,7 +1008,7 @@ export const p6_200_real__estate__terms = {
     ["bienes", "goods", "货物", "huò wù", "bens"],
     ["inmueble", "property", "财产", "cái chǎn", "propriedade"],
     ["terreno", "land", "土地", "tǔ dì", "terreno"],
-    ["alquilar", "rent", "租金", "zū jīn", "alugar"],
+    ["alquilar", "rent", "租用", "zū jīn", "alugar"],
     ["alquiler", "rent", "租金", "zū jīn", "alugar"],
     ["renta", "income", "收入", "shōu rù", "renda"],
     ["propietario", "owner", "业主", "yè zhǔ", "proprietário"],
@@ -1056,8 +1056,8 @@ export const p6_200_real__estate__terms = {
     ["un arrendamiento", "a lease", "租约", "zū yuē", "um arrendamento"],
     ["el desalojo", "the eviction", "驱逐", "qū zhú", "o despejo"],
     ["un desalojo", "an eviction", "驱逐", "qū zhú", "um despejo"],
-    ["el embargo", "the embargo", "禁运", "jìn yùn", "o embargo"],
-    ["un embargo", "an embargo", "禁运", "jìn yùn", "um embargo"]
+    ["el embargo", "the embargo", "扣押", "jìn yùn", "o embargo"],
+    ["un embargo", "an embargo", "扣押", "jìn yùn", "um embargo"]
   ]
 };
 
