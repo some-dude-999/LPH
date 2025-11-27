@@ -5,7 +5,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 假使,jiǎ shǐ,if,si,si,se,nếu,ถ้า,ប្រសិនបើ,jika,jika,kung
 万一,wàn yī,if,si,si,se,nếu,ถ้า,ប្រសិនបើ,jika,jika,kung
 除非,chú fēi,unless,a menos que,à moins que,a menos que,trừ khi,เว้นแต่,លើកលែងតែ,kecuali,Kecuali,maliban kung
-只要,zhǐ yào,only,sólo,seulement,apenas,chỉ,เท่านั้น,| តែ,hanya,hanya,Tanging
+只要,zhǐ yào,only,sólo,seulement,apenas,chỉ,เท่านั้น,តែ,hanya,hanya,Tanging
 只有,zhǐ yǒu,only,sólo,seulement,apenas,chỉ,เท่านั้น,តែ,hanya,hanya,Tanging
 否则,fǒu zé,otherwise,de lo contrario,sinon,caso contrário,nếu không thì,มิฉะนั้น,បើមិនដូច្នេះទេ,jika tidak,Jika tidak,kung hindi man
 不然,bù rán,otherwise,de lo contrario,sinon,caso contrário,nếu không thì,มิฉะนั้น,បើមិនដូច្នេះទេ,jika tidak,Jika tidak,kung hindi man
@@ -14,7 +14,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 尽管,jǐn guǎn,although,aunque,bien que,embora,mặc dù,แม้ว่า,ថ្វីបើ,meskipun,Walaupun,Bagaman
 即使,jí shǐ,even,incluso,même,mesmo,thậm chí,แม้กระทั่ง,សូម្បីតែ,bahkan,Malah,Kahit na
 哪怕,nǎ pà,even if,incluso si,même si,mesmo que,ngay cả khi,แม้ว่า,បើទោះបីជា,meskipun,Walaupun,Kahit na
-无论,wú lùn,regardless of,independientemente de,indépendamment de,independentemente de,bất chấp,โดยไม่คำนึงถึง,| ដោយមិនគិតពី,terlepas dari,Terlepas dari,Anuman ang
+无论,wú lùn,regardless of,independientemente de,indépendamment de,independentemente de,bất chấp,โดยไม่คำนึงถึง,ដោយមិនគិតពី,terlepas dari,Terlepas dari,Anuman ang
 如果是,rú guǒ shì,if,si,si,se,nếu,ถ้า,ប្រសិនបើ,jika,jika,kung
 如果说,rú guǒ shuō,if say,si dices,si disons,se disser,nếu nói,ถ้าพูด,ប្រសិនបើនិយាយ,jika dikatakan,jika berkata,Kung sasabihin
 假如是,jiǎ rú shì,if,si,si,se,nếu,ถ้า,ប្រសិនបើ,jika,jika,kung
@@ -23,8 +23,8 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 假设说,jiǎ shè shuō,suppose to say,supongo que decir,supposons dire,suponho que diga,giả sử nói,สมมุติว่า,ឧបមាថានិយាយ,misalkan mengatakan,Katakan untuk mengatakan,Ipagpalagay na sabihin
 假使是,jiǎ shǐ shì,if yes,en caso afirmativo,si oui,se sim,nếu có,ถ้าใช่,ប្រសិនបើបាទ / ចាស,jika ya,jika ya,Kung oo
 假使如此,jiǎ shǐ rú cǐ,What if,¿Y si,Et si,E se,Nếu,จะเกิดอะไรขึ้นถ้า,ចុះប្រសិនបើ,Bagaimana jika,Bagaimana jika,Paano kung
-万一呢,wàn yī ne,What if,¿Y si,Et si,E se,Nếu,จะเกิดอะไรขึ้นถ้า,| ចុះប្រសិនបើ,Bagaimana jika,Bagaimana jika,Paano kung
-万一是,wàn yī shì,Unless it is,A menos que sea,À moins que ce ne soit,A menos que seja,Trừ khi đó là,เว้นแต่จะเป็น,| លើកលែងតែវាគឺ,Kecuali itu,Kecuali ia,Maliban kung ito ay
+万一呢,wàn yī ne,What if,¿Y si,Et si,E se,Nếu,จะเกิดอะไรขึ้นถ้า,ចុះប្រសិនបើ,Bagaimana jika,Bagaimana jika,Paano kung
+万一是,wàn yī shì,Unless it is,A menos que sea,À moins que ce ne soit,A menos que seja,Trừ khi đó là,เว้นแต่จะเป็น,លើកលែងតែវាគឺ,Kecuali itu,Kecuali ia,Maliban kung ito ay
 除非是,chú fēi shì,Unless you,A menos que tú,Sauf si vous,A menos que você,Trừ khi bạn,เว้นแต่คุณ,លើកលែងតែអ្នក,Kecuali kamu,Kecuali anda,Maliban kung ikaw
 除非你,chú fēi nǐ,As long as it is,Mientras sea,Tant que c'est,Contanto que seja,Miễn là như vậy,ตราบใดที่มันเป็น,ដរាបណាវាគឺ,Selama itu,Selagi ia,Hangga't ito ay
 只要是,zhǐ yào shì,As long as you,Mientras tú,Tant que vous,Contanto que você,Miễn là bạn,ตราบใดที่คุณ,ដរាបណាអ្នក,Selama kamu,Selagi anda,Hangga't ikaw
@@ -36,14 +36,14 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 不然会,bù rán huì,Otherwise,De lo contrario,Sinon,Caso contrário,Ngược lại,มิฉะนั้น,បើមិនដូច្នេះទេ,Jika tidak,Jika tidak,Kung hindi man
 不然就,bù rán jiù,Otherwise,De lo contrario,Sinon,Caso contrário,Ngược lại,มิฉะนั้น,បើមិនដូច្នេះទេ,Jika tidak,Jika tidak,Kung hindi man
 要不然,yào bù rán,Even though it is,Aunque lo sea,Même si c'est,Mesmo que seja,Mặc dù là,ถึงแม้จะเป็น,ទោះបីជាវាគឺ,Meskipun itu,Walaupun ia,Kahit na ito ay
-要不就,yào bù jiù,Even though it is,Aunque lo sea,Même si c'est,Mesmo que seja,Mặc dù là,ถึงแม้จะเป็น,| ទោះបីជាវាគឺ,Meskipun itu,Walaupun ia,Kahit na ito ay
-虽然是,suī rán shì,Even though it is,Aunque lo sea,Même si c'est,Mesmo que seja,Mặc dù là,ถึงแม้จะเป็น,| ទោះបីជាវាគឺ,Meskipun itu,Walaupun ia,Kahit na ito ay
-虽然说,suī rán shuō,Even so,Aun así,Malgré tout,Mesmo assim,Dù vậy,ยังไงก็ตาม,| ទោះយ៉ាងណា,Meski begitu,Walaupun begitu,Kahit na
+要不就,yào bù jiù,Even though it is,Aunque lo sea,Même si c'est,Mesmo que seja,Mặc dù là,ถึงแม้จะเป็น,ទោះបីជាវាគឺ,Meskipun itu,Walaupun ia,Kahit na ito ay
+虽然是,suī rán shì,Even though it is,Aunque lo sea,Même si c'est,Mesmo que seja,Mặc dù là,ถึงแม้จะเป็น,ទោះបីជាវាគឺ,Meskipun itu,Walaupun ia,Kahit na ito ay
+虽然说,suī rán shuō,Even so,Aun así,Malgré tout,Mesmo assim,Dù vậy,ยังไงก็ตาม,ទោះយ៉ាងណា,Meski begitu,Walaupun begitu,Kahit na
 尽管是,jǐn guǎn shì,Even though it is,Aunque lo sea,Même si c'est,Mesmo que seja,Mặc dù là,ถึงแม้จะเป็น,ទោះបីជាវាគឺ,Meskipun itu,Walaupun ia,Kahit na ito ay
-尽管如此,jǐn guǎn rú cǐ,Even so,Aun así,Malgré tout,Mesmo assim,Dù vậy,ยังไงก็ตาม,| ទោះយ៉ាងណា,Meski begitu,Walaupun begitu,Kahit na
+尽管如此,jǐn guǎn rú cǐ,Even so,Aun así,Malgré tout,Mesmo assim,Dù vậy,ยังไงก็ตาม,ទោះយ៉ាងណា,Meski begitu,Walaupun begitu,Kahit na
 即使是,jí shǐ shì,Even if it’s,Incluso si es,Même si c'est,Mesmo que seja,Ngay cả khi đó là,แม้ว่าจะเป็น,ទោះបីវា,Meskipun itu,Walaupun ia,Kahit na ito ay
-即使这样,jí shǐ zhè yàng,Even if it’s just,Incluso si es solo,Même si c'est juste,Mesmo que seja apenas,Dù chỉ là,แม้จะเป็นเพียง,| ទោះបីជាវាគ្រាន់តែ,Meski hanya,Walaupun ia hanya,Kahit na ito ay
-哪怕是,nǎ pà shì,No matter what,No importa qué,Quoi qu’il arrive,Não importa o que aconteça,Dù thế nào đi chăng nữa,ไม่ว่ายังไงก็ตาม,| មិនថាមានអ្វីទៀតទេ ?|| មិនថាមានបញ្ហាអ្វីក៏ដោយ,Tidak peduli apa,Tidak kira apa,Hindi mahalaga kung ano ang
+即使这样,jí shǐ zhè yàng,Even if it's just,Incluso si es solo,Même si c'est juste,Mesmo que seja apenas,Dù chỉ là,แม้จะเป็นเพียง,ទោះបីជាវាគ្រាន់តែ,Meski hanya,Walaupun ia hanya,Kahit na ito ay
+哪怕是,nǎ pà shì,No matter what,No importa qué,Quoi qu'il arrive,Não importa o que aconteça,Dù thế nào đi chăng nữa,ไม่ว่ายังไงก็ตาม,មិនថាមានបញ្ហាអ្វីក៏ដោយ,Tidak peduli apa,Tidak kira apa,Hindi mahalaga kung ano ang
 哪怕只有,nǎ pà zhǐ yǒu,Even if only,Incluso si solo,Même si seulement,Mesmo que apenas,Ngay cả khi chỉ,แม้จะมีเพียง,សូម្បីតែមានតែ,Meskipun hanya,Walaupun hanya,Kahit na lamang
 无论是,wú lùn shì,Whether it is,Ya sea,Que ce soit,Seja,Dù là,ไม่ว่าจะเป็น,មិនថាជា,Apakah itu,Sama ada,Kung ito ay
 无论如何,wú lùn rú hé,No matter what,Pase lo que pase,Quoi qu'il en soit,Não importa o que,Dù thế nào,ไม่ว่าอย่างไร,មិនថាអ្វីក៏ដោយ,Bagaimanapun juga,Walau bagaimanapun,Kahit ano man
