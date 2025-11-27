@@ -3021,15 +3021,34 @@
         }
       }
 
-      // Helper: Check if word contains Latin characters
-      function hasLatinCharacters(wordArray) {
-        for (let i = 0; i < wordArray.length; i++) {
-          const text = wordArray[i] || '';
-          if (/[A-Za-z]/.test(text)) {
-            return true;
-          }
-        }
-        return false;
+      // ════════════════════════════════════════════════════════════════════════
+      // DETERMINE CHINESE COLUMN INDEX: Varies by language
+      // ════════════════════════════════════════════════════════════════════════
+      // Spanish: [0]=spanish, [1]=english, [2]=chinese, [3]=pinyin, [4]=portuguese
+      // English: [0]=english, [1]=chinese, [2]=pinyin, [3]=spanish, [4]=portuguese
+      // Chinese: [0]=chinese, [1]=pinyin, [2]=english, [3]=spanish, ...
+      let chineseColumnIndex;
+      if (state.currentLanguage === 'Spanish') {
+        chineseColumnIndex = 2;
+      } else if (state.currentLanguage === 'English') {
+        chineseColumnIndex = 1;
+      } else if (state.currentLanguage === 'Chinese') {
+        chineseColumnIndex = 0;
+      } else {
+        // Fallback
+        chineseColumnIndex = 0;
+      }
+
+      // Helper: Check if word is an edge case (Latin in Chinese column)
+      function isEdgeCase(wordArray) {
+        // Get the Chinese column text
+        const chineseText = wordArray[chineseColumnIndex] || '';
+
+        // Edge case = Chinese column contains Latin letters
+        // This catches:
+        // - Mixed: ATM机, DNA测试, T恤, WhatsApp消息
+        // - Pure Latin: la, los, NFT, WhatsApp
+        return /[A-Za-z]/.test(chineseText);
       }
 
       // Collect all edge case words from all packs
@@ -3052,9 +3071,9 @@
             pack.exampleWords.forEach(w => allWords.push({ word: w, type: 'Example' }));
           }
 
-          // Filter for words with Latin characters
+          // Filter for edge cases (Latin in Chinese column)
           allWords.forEach(wordObj => {
-            if (hasLatinCharacters(wordObj.word)) {
+            if (isEdgeCase(wordObj.word)) {
               edgeCaseWords.push({
                 word: wordObj.word,
                 type: wordObj.type,
