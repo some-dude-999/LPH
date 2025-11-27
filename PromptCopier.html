@@ -1138,51 +1138,68 @@ Create your own branch, commit, and PR to main.</div>
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🎯 THIS IS MANUAL TRANSLATION WORK - NOT MECHANICAL CHECKING    ║
+║  🎯 MANUAL TRANSLATION QUALITY CRITIQUE - NOT MECHANICAL CHECKS  ║
 ║                                                                  ║
-║  YOUR CORE JOB: Translate Column 1 (Chinese) to Columns 2-12    ║
-║  in the MOST NATURAL, NATIVE, CONTEXTUALLY PERFECT way possible. ║
+║  CSV STRUCTURE (Chinese):                                        ║
+║  Column 0: chinese  (SACRED - from Combined_Words, validated)    ║
+║  Column 1: pinyin   (EVALUATE - check syllable count, commas)    ║
+║  Column 2: english  (EVALUATE - check translation quality)       ║
+║  Column 3: spanish  (EVALUATE - check translation quality)       ║
+║  Column 4: french   (EVALUATE - check translation quality)       ║
+║  ...and so on through Column 11 (filipino)                       ║
+║                                                                  ║
+║  YOUR CORE JOB: CRITIQUE existing translations in Columns 1-11.  ║
+║  Column 0 is already correct. Your job is to evaluate if the     ║
+║  TRANSLATIONS of Column 0 are natural, accurate, and appropriate ║
+║  for the pack's theme.                                           ║
 ║                                                                  ║
 ║  ⚠️  CRITICAL UNDERSTANDING:                                     ║
-║  • Python scripts are HELPERS (find empty cells, brackets,       ║
-║    pinyin errors) - NOT the main work                            ║
-║  • YOUR job is THOUGHTFUL TRANSLATION CRITIQUE                   ║
-║  • Read EVERY cell, think DEEPLY about each translation          ║
-║  • Consider the PACK THEME when evaluating appropriateness       ║
-║  • Not "good enough" - must be MOST APPROPRIATE for natives      ║
+║  • Translations already exist (may be auto-generated)            ║
+║  • You're EVALUATING quality, NOT creating from scratch          ║
+║  • Python finds TECHNICAL errors (empty, brackets, pinyin)       ║
+║  • YOU find SEMANTIC errors (wrong meaning, unnatural phrasing)  ║
+║  • Pack theme is CRITICAL context for evaluation                 ║
 ║                                                                  ║
-║  📖 THIS IS CREATIVE, JUDGMENT-BASED WORK:                       ║
-║  • Does this translation capture the RIGHT MEANING for theme?    ║
-║  • Would a NATIVE SPEAKER actually say this?                     ║
-║  • Is this the MOST COMMON/NATURAL phrasing?                     ║
-║  • Does grammar/tone/formality match the context?                ║
+║  📖 FOR EACH ROW, ASK THESE QUESTIONS:                           ║
+║  • Column 0 (chinese): [SKIP - this is correct from Overview]    ║
+║  • Column 1 (pinyin): Syllable count correct? Commas aligned?    ║
+║  • Columns 2-11: Does translation match RIGHT MEANING for theme? ║
+║  • Would NATIVE SPEAKER use this exact phrasing?                 ║
+║  • Is this MOST COMMON/NATURAL way to express this?              ║
+║  • Grammar, accents, tone marks all correct?                     ║
 ║                                                                  ║
-║  ⛔ NOT ACCEPTABLE:                                               ║
-║  • Relying only on Python error reports                          ║
-║  • Skimming rows without deep thought                            ║
-║  • Accepting "technically correct but awkward" translations      ║
-║  • Ignoring pack theme when choosing word meanings               ║
+║  🔍 THE REAL PROBLEM WE'RE SOLVING:                              ║
 ║                                                                  ║
-║  ✅ REQUIRED APPROACH:                                            ║
-║  • Read pack title - understand the THEME                        ║
-║  • Read Column 1 (Chinese) - this is the correct word            ║
-║  • Read EACH translation (columns 2-12) ONE BY ONE               ║
-║  • Ask: "Is this the BEST way to say this in [language]?"       ║
-║  • If not perfect → record fix with BETTER translation           ║
-║  • Think like a native speaker, not a dictionary                 ║
+║  Pack: "Sports Equipment" (theme context)                        ║
+║  Column 0 (chinese): 球拍 ← CORRECT (from Combined_Words)        ║
+║  Column 2 (english): "noise" ← ❌ WRONG MEANING!                 ║
 ║                                                                  ║
-║  Example of the REAL problem we're solving:                      ║
-║  Pack: "Sports Equipment" (theme = sports)                       ║
-║  Column 1 (chinese): 球拍 ✅ CORRECT (racket for sports)         ║
-║  Column 3 (english): "noise" ❌ WRONG MEANING!                   ║
-║       → Auto-translator chose "racket = loud noise"              ║
-║       → You must FIX to "racket" (sports equipment)              ║
+║  Why wrong? Auto-translator chose "racket = loud noise"          ║
+║  Should be: "racket" (sports equipment) for THIS theme           ║
 ║                                                                  ║
-║  Python can't catch this. Only YOU can - by understanding        ║
+║  Python can't catch this - it only sees non-empty cell with      ║
+║  no brackets. Only YOU can catch wrong meanings by understanding ║
 ║  the theme and thinking about what makes sense.                  ║
 ║                                                                  ║
+║  ⛔ NOT ACCEPTABLE:                                               ║
+║  • Relying only on Python error reports (empty/brackets)         ║
+║  • Skimming rows without thinking about theme context            ║
+║  • Accepting "technically correct but awkward" translations      ║
+║  • Ignoring whether auto-translation picked right word sense     ║
+║                                                                  ║
+║  ✅ REQUIRED APPROACH:                                            ║
+║  1. Read pack title → understand THEME                           ║
+║  2. Read Column 0 → this is the word to translate                ║
+║  3. Read Column 1 (pinyin) → check technical correctness         ║
+║  4. Read Columns 2-11 ONE BY ONE → critique each translation:    ║
+║     - Right meaning for this theme?                              ║
+║     - Natural phrasing for native speaker?                       ║
+║     - Most common way to say this?                               ║
+║  5. If not perfect → record fix with BETTER translation          ║
+║                                                                  ║
 ║  🎯 QUALITY BAR: MOST APPROPRIATE NATIVE TRANSLATION             ║
-║  Not "correct" - MOST NATURAL. Not "acceptable" - BEST CHOICE.   ║
+║  Not just "correct" - MOST NATURAL for native speakers.          ║
+║  Not just "acceptable" - BEST CHOICE for this theme.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 === STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
@@ -1240,36 +1257,36 @@ Location: ChineseWords/ChineseWords{N}.csv
 FOR EACH PACK, use Read tool: Read("ChineseWords/ChineseWords{N}.csv")
 
 Then check EVERY ROW, EVERY COLUMN:
-   - Column 1 (chinese): SACRED - Don't question this. It's the correct word for the theme.
-   - Column 2 (pinyin): 1 syllable per character? Correct tones? Spaces between syllables? COMMA PLACEMENT CORRECT?
-   - Column 3 (english): Does it match the INTENDED MEANING for this theme? Natural?
-   - Column 4 (spanish): Does it match the INTENDED MEANING for this theme? Natural?
-   - Column 5 (french): Does it match the INTENDED MEANING for this theme? Natural?
-   - Column 6 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
-   - Column 7 (vietnamese): Does it match the INTENDED MEANING for this theme?
-   - Column 8 (thai): Does it match the INTENDED MEANING for this theme?
-   - Column 9 (khmer): Does it match the INTENDED MEANING for this theme?
-   - Column 10 (indonesian): Does it match the INTENDED MEANING for this theme?
-   - Column 11 (malay): Does it match the INTENDED MEANING for this theme?
-   - Column 12 (filipino): Does it match the INTENDED MEANING for this theme?
+   - Column 0 (chinese): SACRED - Skip this. It's correct from Combined_Words.
+   - Column 1 (pinyin): 1 syllable per character? Correct tones? Spaces between syllables? COMMA PLACEMENT CORRECT?
+   - Column 2 (english): Does it match the INTENDED MEANING for this theme? Natural?
+   - Column 3 (spanish): Does it match the INTENDED MEANING for this theme? Natural?
+   - Column 4 (french): Does it match the INTENDED MEANING for this theme? Natural?
+   - Column 5 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
+   - Column 6 (vietnamese): Does it match the INTENDED MEANING for this theme?
+   - Column 7 (thai): Does it match the INTENDED MEANING for this theme?
+   - Column 8 (khmer): Does it match the INTENDED MEANING for this theme?
+   - Column 9 (indonesian): Does it match the INTENDED MEANING for this theme?
+   - Column 10 (malay): Does it match the INTENDED MEANING for this theme?
+   - Column 11 (filipino): Does it match the INTENDED MEANING for this theme?
 
 ⚠️⚠️⚠️ THE CRITICAL ISSUE: WRONG MEANINGS FROM AUTO-TRANSLATION ⚠️⚠️⚠️
 
-Column 1 (chinese) is CORRECT for the pack theme. The problem is:
-TRANSLATIONS (columns 2-12) may have the WRONG MEANING because many words have
-multiple meanings depending on context!
+Column 0 (chinese) is CORRECT - it came from Combined_Words validated in Stages 1-2.
+The problem is: TRANSLATIONS (columns 1-11) may have the WRONG MEANING because
+many words have multiple meanings depending on context!
 
 EXAMPLE:
 Pack: "Sports Equipment"
-Column 1: 球拍 (racket) ← CORRECT word for theme
-Column 3 (english): "noise" ← WRONG! Auto-translator chose "racket = noise"
-Column 3 SHOULD BE: "racket" (sports equipment) ← CORRECT meaning for theme!
+Column 0: 球拍 (racket) ← CORRECT word for theme (from Combined_Words)
+Column 2 (english): "noise" ← WRONG! Auto-translator chose "racket = noise"
+Column 2 SHOULD BE: "racket" (sports equipment) ← CORRECT meaning for theme!
 
 ANOTHER EXAMPLE:
 Pack: "Kitchen Utensils"
-Column 1: 叉子 (fork) ← CORRECT word for theme
-Column 4 (spanish): "bifurcación" ← WRONG! (fork in road)
-Column 4 SHOULD BE: "tenedor" ← CORRECT! (eating utensil)
+Column 0: 叉子 (fork) ← CORRECT word for theme (from Combined_Words)
+Column 3 (spanish): "bifurcación" ← WRONG! (fork in road)
+Column 3 SHOULD BE: "tenedor" ← CORRECT! (eating utensil)
 
 ⚠️⚠️⚠️ PINYIN COMMA CONVENTION - CRITICAL! ⚠️⚠️⚠️
 
