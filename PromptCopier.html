@@ -1134,30 +1134,52 @@ python PythonHelpers/validate_pinyin.py chinese
 
 Note any errors found by scripts.
 
-=== STEP 2: READ AND SCORE EVERY PACK ===
+=== STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
+
+╔══════════════════════════════════════════════════════════════════╗
+║  📖 READ EACH CSV FILE MANUALLY - NO SHORTCUTS                   ║
+║                                                                  ║
+║  For EACH wordpack (1-107):                                      ║
+║  1. Use the Read tool to open the CSV file                       ║
+║  2. Read EVERY SINGLE ROW carefully                              ║
+║  3. Check EVERY translation across ALL languages                 ║
+║  4. Ask yourself: "Is this the BEST translation possible?"       ║
+║  5. Score based on translation quality across ALL columns        ║
+║                                                                  ║
+║  DO NOT SKIM. DO NOT RUSH. READ CAREFULLY.                       ║
+╚══════════════════════════════════════════════════════════════════╝
 
 Chinese Packs: ChineseWords1.csv through ChineseWords107.csv
 Location: ChineseWords/ChineseWords{N}.csv
 
-FOR EACH PACK (1-107), read the CSV and check EVERY ROW:
-   - Column 1 (chinese): Does it match Overview? (READ ONLY)
+FOR EACH PACK, use Read tool: Read("ChineseWords/ChineseWords{N}.csv")
+
+Then check EVERY ROW, EVERY COLUMN:
+   - Column 1 (chinese): Does it match Overview? (READ ONLY - sacred)
    - Column 2 (pinyin): 1 syllable per character? Correct tones? Spaces between syllables?
-   - Column 3 (english): Accurate? Natural? Common usage?
-   - Column 4 (spanish): Accurate? Natural?
-   - Column 5 (french): Accurate? Natural?
-   - Column 6 (portuguese): Accurate? Natural?
-   - Column 7 (vietnamese): Accurate? Natural?
-   - Column 8 (thai): Accurate? Natural?
-   - Column 9 (khmer): Accurate? Natural?
+   - Column 3 (english): Accurate? Natural? Would a native speaker say this?
+   - Column 4 (spanish): Accurate? Natural? Common usage, not obscure?
+   - Column 5 (french): Accurate? Natural? Proper accents?
+   - Column 6 (portuguese): Accurate? Natural? Brazilian vs European?
+   - Column 7 (vietnamese): Accurate? Correct diacritics?
+   - Column 8 (thai): Accurate? Correct script?
+   - Column 9 (khmer): Accurate? Correct script?
    - Column 10 (indonesian): Accurate? Natural?
-   - Column 11 (malay): Accurate? Natural?
+   - Column 11 (malay): Accurate? Natural? Different from Indonesian?
    - Column 12 (filipino): Accurate? Natural?
 
+QUALITY CHECK FOR EACH TRANSLATION:
+□ Is this the most COMMON way to say this? (not rare/formal)
+□ Would a NATIVE SPEAKER actually use this phrase?
+□ Is the grammar CORRECT?
+□ Are special characters/accents CORRECT?
+□ Does it MATCH the meaning of the Chinese word?
+
 SCORING SCALE:
-  10 = Perfect (no issues at all)
+  10 = Perfect (no issues at all - every translation is excellent)
   9  = Excellent (trivial issues only, acceptable as-is)
   8  = Good (minor issues that should be fixed)
-  7  = Fair (several issues)
+  7  = Fair (several issues across translations)
   6 or below = Poor (significant issues, definitely needs work)
 
 === STEP 3: OUTPUT THE COMPLETE SCORECARD ===
@@ -1379,23 +1401,45 @@ python PythonHelpers/validate_pinyin.py spanish
 
 Note any errors found by scripts.
 
-=== STEP 2: READ AND SCORE EVERY PACK ===
+=== STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
+
+╔══════════════════════════════════════════════════════════════════╗
+║  📖 READ EACH CSV FILE MANUALLY - NO SHORTCUTS                   ║
+║                                                                  ║
+║  For EACH wordpack (1-250):                                      ║
+║  1. Use the Read tool to open the CSV file                       ║
+║  2. Read EVERY SINGLE ROW carefully                              ║
+║  3. Check EVERY translation across ALL languages                 ║
+║  4. Ask yourself: "Is this the BEST translation possible?"       ║
+║  5. Score based on translation quality across ALL columns        ║
+║                                                                  ║
+║  DO NOT SKIM. DO NOT RUSH. READ CAREFULLY.                       ║
+╚══════════════════════════════════════════════════════════════════╝
 
 Spanish Packs: SpanishWords1.csv through SpanishWords250.csv
 Location: SpanishWords/SpanishWords{N}.csv
 
-FOR EACH PACK (1-250), read the CSV and check EVERY ROW:
-   - Column 1 (spanish): Does it match Overview? (READ ONLY)
-   - Column 2 (english): Accurate? Natural? Common usage?
-   - Column 3 (chinese): Accurate? Natural?
+FOR EACH PACK, use Read tool: Read("SpanishWords/SpanishWords{N}.csv")
+
+Then check EVERY ROW, EVERY COLUMN:
+   - Column 1 (spanish): Does it match Overview? (READ ONLY - sacred)
+   - Column 2 (english): Accurate? Natural? Would a native speaker say this?
+   - Column 3 (chinese): Accurate? Correct characters (simplified)?
    - Column 4 (pinyin): 1 syllable per character? Correct tones? Spaces?
-   - Column 5 (portuguese): Accurate? Natural?
+   - Column 5 (portuguese): Accurate? Natural? Brazilian vs European?
+
+QUALITY CHECK FOR EACH TRANSLATION:
+□ Is this the most COMMON way to say this? (not rare/formal)
+□ Would a NATIVE SPEAKER actually use this phrase?
+□ Is the grammar CORRECT?
+□ Are special characters/accents CORRECT? (á, é, í, ó, ú, ñ, ü)
+□ Does it MATCH the meaning of the Spanish word?
 
 SCORING SCALE:
-  10 = Perfect (no issues at all)
+  10 = Perfect (no issues at all - every translation is excellent)
   9  = Excellent (trivial issues only, acceptable as-is)
   8  = Good (minor issues that should be fixed)
-  7  = Fair (several issues)
+  7  = Fair (several issues across translations)
   6 or below = Poor (significant issues, definitely needs work)
 
 === STEP 3: OUTPUT THE COMPLETE SCORECARD ===
@@ -1590,23 +1634,45 @@ python PythonHelpers/validate_pinyin.py english
 
 Note any errors found by scripts.
 
-=== STEP 2: READ AND SCORE EVERY PACK ===
+=== STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
+
+╔══════════════════════════════════════════════════════════════════╗
+║  📖 READ EACH CSV FILE MANUALLY - NO SHORTCUTS                   ║
+║                                                                  ║
+║  For EACH wordpack (1-160):                                      ║
+║  1. Use the Read tool to open the CSV file                       ║
+║  2. Read EVERY SINGLE ROW carefully                              ║
+║  3. Check EVERY translation across ALL languages                 ║
+║  4. Ask yourself: "Is this the BEST translation possible?"       ║
+║  5. Score based on translation quality across ALL columns        ║
+║                                                                  ║
+║  DO NOT SKIM. DO NOT RUSH. READ CAREFULLY.                       ║
+╚══════════════════════════════════════════════════════════════════╝
 
 English Packs: EnglishWords1.csv through EnglishWords160.csv
 Location: EnglishWords/EnglishWords{N}.csv
 
-FOR EACH PACK (1-160), read the CSV and check EVERY ROW:
-   - Column 1 (english): Does it match Overview? (READ ONLY)
-   - Column 2 (chinese): Accurate? Natural?
+FOR EACH PACK, use Read tool: Read("EnglishWords/EnglishWords{N}.csv")
+
+Then check EVERY ROW, EVERY COLUMN:
+   - Column 1 (english): Does it match Overview? (READ ONLY - sacred)
+   - Column 2 (chinese): Accurate? Correct characters (simplified)?
    - Column 3 (pinyin): 1 syllable per character? Correct tones? Spaces?
-   - Column 4 (spanish): Accurate? Natural?
-   - Column 5 (portuguese): Accurate? Natural?
+   - Column 4 (spanish): Accurate? Natural? Correct accents (á, é, í, ó, ú, ñ)?
+   - Column 5 (portuguese): Accurate? Natural? Brazilian vs European?
+
+QUALITY CHECK FOR EACH TRANSLATION:
+□ Is this the most COMMON way to say this? (not rare/formal)
+□ Would a NATIVE SPEAKER actually use this phrase?
+□ Is the grammar CORRECT?
+□ Are special characters/accents CORRECT?
+□ Does it MATCH the meaning of the English word?
 
 SCORING SCALE:
-  10 = Perfect (no issues at all)
+  10 = Perfect (no issues at all - every translation is excellent)
   9  = Excellent (trivial issues only, acceptable as-is)
   8  = Good (minor issues that should be fixed)
-  7  = Fair (several issues)
+  7  = Fair (several issues across translations)
   6 or below = Poor (significant issues, definitely needs work)
 
 === STEP 3: OUTPUT THE COMPLETE SCORECARD ===
