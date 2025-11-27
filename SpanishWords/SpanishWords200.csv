@@ -9,13 +9,13 @@ propietario,owner,业主,yè zhǔ,proprietário
 propietaria,owner,业主,yè zhǔ,proprietário
 inquilino,tenant,租户,zū hù,inquilino
 inquilina,tenant,租户,zū hù,inquilino
-valorar,rate,率,lǜ,taxa
+valorar,appraise,估价,gū jià,avaliar
 inmobiliaria,real estate,房地产,fáng dì chǎn,imobiliário
-lote,lot,大量,dà liàng,muito
-parcela,plot,情节,qíng jié,enredo
+lote,lot,地块,dì kuài,lote
+parcela,plot,地块,dì kuài,parcela
 arrendamiento,lease,租赁,zū lìn,arrendamento
 desalojo,eviction,驱逐,qū zhú,despejo
-embargo,however,然而,rán ér,entretanto
+embargo,seizure,查封,chá fēng,penhora
 los bienes,the goods,货物,huò wù,as mercadorias
 bienes raíces,real estate,房地产,fáng dì chǎn,imobiliário
 el inmueble,the property,财产,cái chǎn,a propriedade
@@ -41,9 +41,9 @@ voy a valorar,I will value,我会珍惜,wǒ huì zhēn xī,Vou valorizar
 la inmobiliaria,the real estate,房地产,fáng dì chǎn,o imobiliário
 una inmobiliaria,a real estate,房地产,fáng dì chǎn,um imóvel
 el lote,the lot,地段,dì duàn,o lote
-un lote,a lot,很多,hěn duō,muito
-la parcela,the plot,情节,qíng jié,o enredo
-una parcela,a plot,情节,qíng jié,um enredo
+un lote,a lot,一个地块,yí gè dì kuài,um lote
+la parcela,the plot,地块,dì kuài,a parcela
+una parcela,a plot,一块地,yí kuài dì,uma parcela
 el arrendamiento,the lease,租约,zū yuē,o arrendamento
 un arrendamiento,a lease,租约,zū yuē,um arrendamento
 el desalojo,the eviction,驱逐,qū zhú,o despejo
