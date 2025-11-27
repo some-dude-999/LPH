@@ -618,6 +618,50 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act1-foundation-js
 3. Use Simplified Chinese input methods/references
 4. When in doubt, look up the Simplified form
 
+### Pinyin Comma Convention - CRITICAL!
+**In our language learning game, pinyin appears directly under Chinese characters.**
+
+**The Rule:** Commas in pinyin must align with commas in Chinese characters.
+
+**Format:**
+```
+Chinese: 是的，先生
+Pinyin:  shì de，xiān shēng
+```
+
+Notice: The comma appears AFTER "的" and AFTER "de" - they're in the same "block" together.
+
+**Why This Matters:**
+- Pinyin is displayed directly under Chinese characters in the game UI
+- Comma placement must match so they align vertically
+- Makes it easy for learners to see which pinyin goes with which character
+
+**Examples:**
+
+✅ CORRECT:
+```
+Chinese: 好的，谢谢你
+Pinyin:  hǎo de，xiè xiè nǐ
+```
+
+❌ WRONG:
+```
+Chinese: 好的，谢谢你
+Pinyin:  hǎo de, xiè xiè nǐ    ← Comma has space before it, won't align!
+```
+
+✅ CORRECT:
+```
+Chinese: 你好，我是学生
+Pinyin:  nǐ hǎo，wǒ shì xué shēng
+```
+
+**Rule Summary:**
+- Chinese character + comma together: `的，`
+- Pinyin syllable + comma together: `de，`
+- Comma is part of the character's "block" in both cases
+- No space before comma in pinyin
+
 ---
 
 ## 📋 OVERVIEW WORDPACK DATA STRUCTURE (CRITICAL!)
