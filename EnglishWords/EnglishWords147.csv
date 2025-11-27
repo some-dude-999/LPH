@@ -22,13 +22,13 @@ backlog,积压,jī yā,atrasos,atraso
 project scope,项目范围,xiàng mù fàn wéi,alcance del proyecto,escopo do projeto
 scope creep,范围蔓延,fàn wéi màn yán,desplazamiento del alcance,aumento de escopo
 project timeline,项目时间表,xiàng mù shí jiān biǎo,cronograma del proyecto,cronograma do projeto
-timeline for,,,cronograma para,cronograma para
+timeline for,时间表用于,shí jiān biǎo yòng yú,cronograma para,cronograma para
 key deliverable,的时间表关键交付成果,de shí jiān biǎo guān jiàn jiāo fù chéng guǒ,entregable clave,principal produto final
 deliverable due,可交付成果,kě jiāo fù chéng guǒ,entrega vencida,entrega vencida
 allocate resource,分配资源,fēn pèi zī yuán,asignar recursos,alocar recurso
 resource management,资源管理,zī yuán guǎn lǐ,gestión de recursos,gestão de recursos
 budget allocation,预算分配,yù suàn fēn pèi,asignación presupuestaria,dotação orçamental
-allocation of,,,asignación de,alocação de
+allocation of,分配的,fēn pèi de,asignación de,alocação de
 task dependency,的分配任务依赖,de fēn pèi rèn wù yī lài,dependencia de tareas,dependência de tarefa
 dependency on,依赖,yī lài,dependencia de,dependência de
 assess risk,评估风险,píng gū fēng xiǎn,evaluar el riesgo,avaliar o risco
@@ -56,6 +56,6 @@ agile development,敏捷开发,mǐn jié kāi fā,desarrollo ágil,desenvolvimen
 iterate on,迭代,dié dài,iterar,iterar em
 iterate quickly,快速迭代,kuài sù dié dài,iterar rápidamente,iterar rapidamente
 product roadmap,产品路线图,chǎn pǐn lù xiàn tú,hoja de ruta del producto,roteiro do produto
-roadmap for,,,hoja de ruta para,roteiro para
+roadmap for,路线图用于,lù xiàn tú yòng yú,hoja de ruta para,roteiro para
 product backlog,的路线图产品积压,de lù xiàn tú chǎn pǐn jī yā,cartera de productos,carteira de produtos
 backlog items,积压项目,jī yā xiàng mù,elementos pendientes,itens do backlog
