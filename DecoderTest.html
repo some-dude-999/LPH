@@ -2960,6 +2960,205 @@
          - If typing mode: Add typing input box and tracking columns
          - If pronunciation mode: Add record button and score columns
     */
+
+    // ============================================================
+    // DISPLAY ALL EDGE CASES: Master toggle showing all packs
+    // ============================================================
+    /*
+      When "Show Edge Cases Only" is checked, this function displays ALL words
+      containing Latin abbreviations from ALL wordpacks across ALL acts.
+
+      PURPOSE:
+      - Demonstrate edge case handling in validate_pinyin.py
+      - Show real examples: ATM, DNA, WhatsApp, T恤, la, los, etc.
+      - Help users understand Latin block matching logic
+
+      PROCESS:
+      1. Iterate through all acts in state.loadedData
+      2. Iterate through all packs in each act
+      3. Extract all words from each pack
+      4. Filter for words containing Latin characters
+      5. Display with pack source information (Pack #: Title)
+    */
+    function displayAllEdgeCases() {
+      const tableBody = document.getElementById('vocabularyTable');
+      const packTitleEl = document.getElementById('packTitle');
+      const tableHeaderRow = document.getElementById('tableHeaderRow');
+
+      // Update title
+      packTitleEl.textContent = `Edge Cases - All Packs (${state.currentLanguage})`;
+
+      // Get language names
+      const config = LANGUAGE_CONFIG[state.currentLanguage];
+      const targetLanguage = config.columns[0];
+      const nativeLanguage = config.columns[state.currentNativeLanguage];
+
+      // Setup headers with Pack Source column
+      const headers = [
+        `<th>Pack Source</th>`,
+        `<th>Word (${targetLanguage})</th>`,
+        `<th>Translation (${nativeLanguage})</th>`
+      ];
+      tableHeaderRow.innerHTML = headers.join('\n');
+
+      // Determine if we're learning Chinese or if native language is Chinese
+      const isLearningChinese = state.currentLanguage === 'Chinese';
+      const nativeConfig = LANGUAGE_CONFIG[state.currentLanguage];
+      let nativeIsChinese = false;
+      let nativePinyinColumn = null;
+
+      if (nativeConfig && nativeConfig.nativeLanguages) {
+        const entries = Object.entries(nativeConfig.nativeLanguages);
+        for (const [name, colIndex] of entries) {
+          if (colIndex === state.currentNativeLanguage && name.toLowerCase().includes('chinese')) {
+            nativeIsChinese = true;
+            const pinyinEntry = entries.find(([n]) => n.toLowerCase().includes('pinyin'));
+            if (pinyinEntry) {
+              nativePinyinColumn = pinyinEntry[1];
+            }
+            break;
+          }
+        }
+      }
+
+      // Helper: Check if word contains Latin characters
+      function hasLatinCharacters(wordArray) {
+        for (let i = 0; i < wordArray.length; i++) {
+          const text = wordArray[i] || '';
+          if (/[A-Za-z]/.test(text)) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      // Collect all edge case words from all packs
+      let edgeCaseWords = [];
+
+      // Iterate through all acts
+      for (const actKey in state.loadedData) {
+        const actData = state.loadedData[actKey];
+
+        // Iterate through all packs in this act
+        for (const packKey in actData) {
+          const pack = actData[packKey];
+
+          // Combine base and example words
+          const allWords = [];
+          if (pack.baseWords) {
+            pack.baseWords.forEach(w => allWords.push({ word: w, type: 'Base' }));
+          }
+          if (pack.exampleWords) {
+            pack.exampleWords.forEach(w => allWords.push({ word: w, type: 'Example' }));
+          }
+
+          // Filter for words with Latin characters
+          allWords.forEach(wordObj => {
+            if (hasLatinCharacters(wordObj.word)) {
+              edgeCaseWords.push({
+                word: wordObj.word,
+                type: wordObj.type,
+                packNumber: pack.meta.wordpack,
+                packTitle: pack.meta.english || pack.meta.chinese || 'Untitled'
+              });
+            }
+          });
+        }
+      }
+
+      // Display results
+      if (edgeCaseWords.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="3">No edge cases found in this language</td></tr>';
+        return;
+      }
+
+      // Sort by pack number
+      edgeCaseWords.sort((a, b) => a.packNumber - b.packNumber);
+
+      // Render each edge case
+      edgeCaseWords.forEach(item => {
+        const row = document.createElement('tr');
+
+        // Column 1: Pack Source
+        const packSourceCell = document.createElement('td');
+        packSourceCell.textContent = `Pack ${item.packNumber}: ${item.packTitle}`;
+        packSourceCell.style.fontSize = '0.9em';
+        packSourceCell.style.color = '#666';
+        row.appendChild(packSourceCell);
+
+        // Column 2: Target language word
+        const targetCell = document.createElement('td');
+        if (isLearningChinese) {
+          const chineseText = item.word[0];
+          const pinyinText = item.word[1];
+          const renderedElement = renderChineseText(chineseText, pinyinText, true);
+          targetCell.appendChild(renderedElement);
+        } else {
+          targetCell.textContent = item.word[0];
+        }
+        row.appendChild(targetCell);
+
+        // Column 3: Native language translation
+        const translationCell = document.createElement('td');
+        if (nativeIsChinese && nativePinyinColumn !== null) {
+          const chineseText = item.word[state.currentNativeLanguage];
+          const pinyinText = item.word[nativePinyinColumn];
+          const renderedElement = renderChineseText(chineseText, pinyinText, true);
+          translationCell.appendChild(renderedElement);
+        } else {
+          translationCell.textContent = item.word[state.currentNativeLanguage];
+        }
+        row.appendChild(translationCell);
+
+        tableBody.appendChild(row);
+      });
+
+      // Add summary at the bottom
+      const summaryRow = document.createElement('tr');
+      summaryRow.style.fontWeight = 'bold';
+      summaryRow.style.backgroundColor = '#f0f0f0';
+      summaryRow.innerHTML = `<td colspan="3">Total edge cases found: ${edgeCaseWords.length}</td>`;
+      tableBody.appendChild(summaryRow);
+    }
+
+    // ============================================================
+    // DISPLAY VOCABULARY: Show current pack or all edge cases
+    // ============================================================
+    /*
+      Main display function for vocabulary table.
+
+      MODES:
+      - Normal mode: Display current selected pack
+      - Edge case mode: Display all edge cases from all packs (calls displayAllEdgeCases())
+
+      FEATURES:
+      - Multiple choice mode: Generate 4 wrong answers from act-wide pool
+      - Typing mode: Add typing input, wrong letter tracking, wrong count
+      - Pronunciation mode: Record button for speech recognition
+      - Chinese rendering: Character + pinyin coupling with visibility toggles
+
+      KEY FUNCTIONS CALLED:
+      - combineAndShuffleWords(): Merges base/example words with shuffling
+      - generateWrongAnswers(): Creates wrong answers for multiple choice
+      - renderChineseText(): Handles Chinese character + pinyin display
+      - Levenshtein distance for fuzzy string matching
+
+      MODES CAN BE COMBINED:
+      - Multiple modes can be enabled simultaneously
+      - Columns are added in order: base → multiple choice → typing → pronunciation
+
+      PROCESS:
+      1. Get selected wordpack from state.loadedData
+      2. Check which modes are enabled
+      3. Update table headers accordingly
+      4. Loop through words array
+      5. For each word:
+         - Display word[0] in column 1 (target language - correct answer)
+         - Display word[nativeLanguageIndex] in column 2 (translation)
+         - If multiple choice mode: Generate and display 4 wrong answers
+         - If typing mode: Add typing input box and tracking columns
+         - If pronunciation mode: Add record button and score columns
+    */
     function displayVocabulary() {
       const tableBody = document.getElementById('vocabularyTable');
       const packTitleEl = document.getElementById('packTitle');
@@ -2967,6 +3166,21 @@
 
       // Clear table
       tableBody.innerHTML = '';
+
+      // ════════════════════════════════════════════════════════════════════════
+      // EDGE CASE MASTER TOGGLE: Show ALL edge cases from ALL packs
+      // ════════════════════════════════════════════════════════════════════════
+      const showEdgeCasesOnly = document.getElementById('showEdgeCasesOnly')?.checked || false;
+
+      if (showEdgeCasesOnly) {
+        // MASTER MODE: Collect all edge cases from all packs across all acts
+        displayAllEdgeCases();
+        return;
+      }
+
+      // ════════════════════════════════════════════════════════════════════════
+      // NORMAL MODE: Show current pack only
+      // ════════════════════════════════════════════════════════════════════════
 
       // Calculate colspan based on active modes
       let totalColumns = 3;  // Base: target language + native language + word type
@@ -3103,33 +3317,10 @@
       // ════════════════════════════════════════════════════════════════════════
       const words = combineAndShuffleWords(pack);
 
-      // ════════════════════════════════════════════════════════════════════════
-      // EDGE CASE FILTERING: Show only words with Latin abbreviations
-      // ════════════════════════════════════════════════════════════════════════
-      const showEdgeCasesOnly = document.getElementById('showEdgeCasesOnly')?.checked || false;
-
-      // Helper: Check if word contains Latin characters (edge cases)
-      function hasLatinInChinese(wordArray) {
-        // Check all columns that might contain Chinese text
-        for (let i = 0; i < wordArray.length; i++) {
-          const text = wordArray[i] || '';
-          // Check if text contains Latin letters (A-Z, a-z)
-          if (/[A-Za-z]/.test(text)) {
-            return true;
-          }
-        }
-        return false;
-      }
-
       words.forEach((wordObj, index) => {
         // Extract word array and type from the combined object
         const word = wordObj.word;      // Word array: ["spanish", "english", "chinese", ...]
         const wordType = wordObj.type;  // Either "Base Word" or "Example Word"
-
-        // EDGE CASE FILTER: Skip words without Latin if filter is active
-        if (showEdgeCasesOnly && !hasLatinInChinese(word)) {
-          return;  // Skip this word
-        }
 
         const row = document.createElement('tr');
 
