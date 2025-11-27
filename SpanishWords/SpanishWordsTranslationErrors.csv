@@ -1,19 +1,19 @@
 Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
-1,Greetings & Goodbyes,Act I: Foundation,8,Row 22 pinyin: Chinese has punctuation '，' causing character count vs pinyin syllable count mismatch; Row 31 pinyin: same punctuation issue; Row 35 pinyin: same punctuation issue
-2,Yes No & Agreement,Act I: Foundation,7,Row 13 pinyin: Chinese has punctuation '，' causing mismatch; Row 14 pinyin: same; Row 25 pinyin: same; Row 27 pinyin: same
+1,Greetings & Goodbyes,Act I: Foundation,10,None
+2,Yes No & Agreement,Act I: Foundation,10,None
 3,Numbers 0-10,Act I: Foundation,10,None
 4,Asking Questions (qué cuándo dónde),Act I: Foundation,10,None
-5,Referring to People (yo tú él ella),Act I: Foundation,10,None
-6,Being Permanent (ser),Act I: Foundation,10,None
-7,Being Temporary (estar),Act I: Foundation,10,None
-8,Having & Age (tener),Act I: Foundation,10,None
-9,The & A Articles (el la un una),Act I: Foundation,10,None
+5,Referring to People (yo tú él ella),Act I: Foundation,9,"Row 12 chinese: 'ellas'→'他们' should be '她们' (feminine they, not masculine)"
+6,Being Permanent (ser),Act I: Foundation,8,"Row 14,42 chinese: 'trabajador' context - should be '勤奋的'/'勤劳的人' (hardworking), not '工人' (worker noun)"
+7,Being Temporary (estar),Act I: Foundation,9,"Row 11 chinese: 'ánimo' should be '心情'/'精神' (spirit/mood noun), not '开心点' (cheer up imperative)"
+8,Having & Age (tener),Act I: Foundation,9,"Row 11 chinese: 'sueño' in context should be '困意'/'睡意' (sleepiness), not '梦' (dream)"
+9,The & A Articles (el la un una),Act I: Foundation,8,Row 2 english: 'el'='he' should be 'the' (article); Row 3-5 chinese: article translation issues - Spanish articles don't map directly to Chinese
 10,Connecting Words (y pero porque),Act I: Foundation,10,None
 11,Days of the Week,Act I: Foundation,10,None
 12,Months of the Year,Act I: Foundation,10,None
-13,Family Members,Act I: Foundation,10,None
+13,Family Members,Act I: Foundation,8,"Row 8,13,14 chinese: Family terms too specific - '姐姐' should be '姐妹', '表哥' should be '表兄弟', '表姐' should be '表姐妹'"
 14,Body Parts,Act I: Foundation,10,None
-15,Colors,Act I: Foundation,10,None
+15,Colors,Act I: Foundation,9,"Row 14 chinese: 'turquesa' should be '绿松石色'/'青绿色' (color), not '绿松石' (gemstone)"
 16,Describing Things (grande pequeño bueno),Act I: Foundation,10,None
 17,Basic Action Verbs,Act I: Foundation,10,None
 18,Common Foods,Act I: Foundation,10,None
@@ -24,7 +24,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
 23,Extended Family,Act I: Foundation,10,None
 24,Emotions & Feelings,Act I: Foundation,10,None
 25,Time Words (hoy ayer mañana),Act I: Foundation,10,None
-26,Clothing,Act I: Foundation,8,Row 4 pinyin: 'T恤' contains Latin letter causing pinyin syllable count mismatch; Row 21 pinyin: same; Row 22 pinyin: same
+26,Clothing,Act I: Foundation,10,None
 27,Daily Activities,Act I: Foundation,10,None
 28,City Places,Act I: Foundation,10,None
 29,Transportation,Act I: Foundation,10,None
@@ -71,7 +71,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
 70,Hobbies & Interests,Act III: Daily Life,10,None
 71,Leaving (salir),Act III: Daily Life,10,None
 72,Returning (volver),Act III: Daily Life,10,None
-73,Music & Songs,Act III: Daily Life,10,None
+73,Music & Songs,Act III: Daily Life,5,"Critical: Music pack with wrong meanings - 'instrumento'→'乐器' (not 仪器), 'batería'→'鼓' (not 电池), 'disco'→'唱片' (not 磁盘). 8 rows affected."
 74,Wearing & Carrying (llevar),Act III: Daily Life,10,None
 75,Bringing (traer),Act III: Daily Life,10,None
 76,School & Education,Act III: Daily Life,10,None
@@ -129,8 +129,8 @@ Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
 128,Emergency & Safety,Act IV: Expanding Expression,10,None
 129,Falling (caer),Act IV: Expanding Expression,10,None
 130,Lifting & Waking (levantar),Act IV: Expanding Expression,10,None
-131,Materials,Act IV: Expanding Expression,9,Row 47 pinyin: 'T恤' contains Latin letter causing pinyin syllable count mismatch
-132,Touching & Playing Music (tocar),Act IV: Expanding Expression,10,None
+131,Materials,Act IV: Expanding Expression,9,"Row 47: 'T恤' Latin char acceptable; Row 51 chinese: '丝皮' unnatural, should be '丝滑肌肤'/'如丝般的皮肤'"
+132,Touching & Playing Music (tocar),Act IV: Expanding Expression,4,Critical: Systematic error - All 'tocar' (play music) translated as '玩' (play games). Should be '演奏'/'弹奏'. 10 rows affected.
 133,Breaking (romper),Act IV: Expanding Expression,10,None
 134,Farming & Agriculture,Act IV: Expanding Expression,10,None
 135,Sharing (compartir),Act IV: Expanding Expression,10,None
@@ -165,7 +165,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
 164,Dance & Dancing,Act V: Intermediate Mastery,10,None
 165,Losing (perder),Act V: Intermediate Mastery,10,None
 166,Forming (formar),Act V: Intermediate Mastery,10,None
-167,Fashion & Style,Act V: Intermediate Mastery,9,Row 26 pinyin: 'T台' contains Latin letter causing pinyin syllable count mismatch
+167,Fashion & Style,Act V: Intermediate Mastery,8,"Row 26: 'T台' Latin char acceptable; Row 4,10,11,17 chinese/portuguese: 'modelo'→'模特', 'vestir'→'穿衣', 'lucir'→'展示', 'hilo'→'线'"
 168,Reaching (alcanzar),Act V: Intermediate Mastery,10,None
 169,Maintaining (mantener),Act V: Intermediate Mastery,10,None
 170,Psychology Terms,Act V: Intermediate Mastery,10,None
@@ -180,7 +180,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
 179,Marketing & Advertising,Act V: Intermediate Mastery,10,None
 180,Appearing (aparecer),Act V: Intermediate Mastery,10,None
 181,Disappearing (desaparecer),Act VI: Advanced Constructs,10,None
-182,Telecommunications,Act VI: Advanced Constructs,8,Row 4 chinese/pinyin: 'WhatsApp' in Chinese text and pinyin column causing mismatch; Row 26 same; Row 27 same
+182,Telecommunications,Act VI: Advanced Constructs,10,None
 183,Birthdays & Fulfilling (cumplir),Act VI: Advanced Constructs,10,None
 184,Missing & Lacking (faltar),Act VI: Advanced Constructs,10,None
 185,Tourism Terms,Act VI: Advanced Constructs,10,None
@@ -190,7 +190,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
 189,Achieving (lograr),Act VI: Advanced Constructs,10,None
 190,Performing (realizar),Act VI: Advanced Constructs,10,None
 191,Economics Terms,Act VI: Advanced Constructs,10,None
-192,Existing (existir),Act VI: Advanced Constructs,7,Row 12 pinyin: Chinese has punctuation '，' causing mismatch; Row 14 same; Row 18 same; Row 20 same
+192,Existing (existir),Act VI: Advanced Constructs,10,None
 193,Depending (depender),Act VI: Advanced Constructs,10,None
 194,Retail & Sales,Act VI: Advanced Constructs,10,None
 195,Belonging (pertenecer),Act VI: Advanced Constructs,10,None
@@ -198,7 +198,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
 197,Insurance Terms,Act VI: Advanced Constructs,10,None
 198,Suffering (sufrir),Act VI: Advanced Constructs,10,None
 199,Enjoying (disfrutar),Act VI: Advanced Constructs,10,None
-200,Real Estate Terms,Act VI: Advanced Constructs,10,None
+200,Real Estate Terms,Act VI: Advanced Constructs,8,"Row 5,51,52 chinese: 'alquilar'→'租用'/'租赁' (verb to rent, not 租金 noun), 'embargo'→'扣押'/'查封' (legal seizure, not 禁运 trade embargo)"
 201,Occurring (ocurrir),Act VI: Advanced Constructs,10,None
 202,Happening (suceder),Act VI: Advanced Constructs,10,None
 203,Aviation Terms,Act VI: Advanced Constructs,10,None
@@ -231,7 +231,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
 230,Virtual Reality Terms,Act VII: Mastery & Fluency,10,None
 231,Measuring (medir),Act VII: Mastery & Fluency,10,None
 232,Weighing (pesar),Act VII: Mastery & Fluency,10,None
-233,Cryptocurrency Terms,Act VII: Mastery & Fluency,8,Row 19 pinyin: 'nft' in pinyin column (should be proper pinyin); Row 54 same; Row 55 same
+233,Cryptocurrency Terms,Act VII: Mastery & Fluency,8,"Row 19,54,55: 'NFT' Latin char acceptable; Row 13,43 chinese/portuguese: 'minar'→'挖矿'/'minerar' (to mine crypto), not '我的'/'meu' (possessive)"
 234,Establishing & Founding (fundar),Act VII: Mastery & Fluency,10,None
 235,Concluding & Wrapping Up (concluir),Act VII: Mastery & Fluency,10,None
 236,Sustainable Living,Act VII: Mastery & Fluency,10,None
