@@ -250,7 +250,7 @@ export const p1_5_referring__to__people__yo__t__l__ella = {
     ["vosotras mismas", "yourselves", "你们自己", "nǐ men zì jǐ", "vocês mesmos"],
     ["ellos también", "they too", "他们也是", "tā men yě shì", "eles também"],
     ["como ellos", "like them", "像他们一样", "xiàng tā men yī yàng", "como eles"],
-    ["ellas también", "they too", "他们也是", "tā men yě shì", "eles também"],
+    ["ellas también", "they too", "她们也是", "tā men yě shì", "eles também"],
     ["como ellas", "like them", "像她们一样", "xiàng tā men yī yàng", "como elas"],
     ["para ustedes", "for you", "为你们", "wèi nǐ men", "para você"],
     ["ustedes también", "you too", "你们也是", "nǐ men yě shì", "você também"]
@@ -440,7 +440,7 @@ export const p1_9_the__a__articles__el__la__un__una = {
     portuguese: "Artigos"
   },
   baseWords: [
-    ["el", "the", "他", "tā", "ele"],
+    ["el", "the", "el", "el", "ele"],
     ["la", "the", "la", "la", "a"],
     ["los", "the", "los", "los", "os"],
     ["las", "the", "这", "zhè", "o"],
@@ -628,7 +628,7 @@ export const p1_13_family__members = {
     ["hijo", "son", "儿子", "ér zi", "filho"],
     ["hija", "daughter", "女儿", "nǚ ér", "filha"],
     ["hermano", "brother", "兄弟", "xiōng dì", "irmão"],
-    ["hermana", "sister", "姐妹", "jiě jiě", "irmã"],
+    ["hermana", "sister", "姐妹", "jiě mèi", "irmã"],
     ["abuelo", "grandfather", "祖父", "zǔ fù", "avô"],
     ["abuela", "grandmother", "祖母", "zǔ mǔ", "avó"],
     ["tío", "uncle", "叔叔", "shū shū", "tio"],
@@ -1418,7 +1418,7 @@ export const p1_26_clothing = {
   baseWords: [
     ["ropa", "clothes", "衣服", "yī fú", "roupas"],
     ["camisa", "shirt", "衬衫", "chèn shān", "camisa"],
-    ["camiseta", "t-shirt", "T恤", "Txù", "camiseta"],
+    ["camiseta", "t-shirt", "T恤", "T xù", "camiseta"],
     ["pantalones", "pants", "裤子", "kù zi", "calça"],
     ["vestido", "dress", "裙子", "qún zi", "vestir"],
     ["falda", "skirt", "裙子", "qún zi", "saia"],
@@ -1437,8 +1437,8 @@ export const p1_26_clothing = {
     ["cambiar de ropa", "change clothes", "换衣服", "huàn yī fú", "trocar de roupa"],
     ["camisa de manga larga", "long sleeve shirt", "长袖衬衫", "cháng xiù chèn shān", "camisa de manga longa"],
     ["ponerse la camisa", "put on the shirt", "穿上衬衫", "chuān shàng chèn shān", "coloque a camisa"],
-    ["camiseta sin mangas", "sleeveless t-shirt", "无袖T恤", "wú xiù Txù", "camiseta sem mangas"],
-    ["una camiseta nueva", "a new t-shirt", "一件新T恤", "yī jiàn xīn Txù", "uma camiseta nova"],
+    ["camiseta sin mangas", "sleeveless t-shirt", "无袖T恤", "wú xiù T xù", "camiseta sem mangas"],
+    ["una camiseta nueva", "a new t-shirt", "一件新T恤", "yī jiàn xīn T xù", "uma camiseta nova"],
     ["pantalones vaqueros", "jeans", "牛仔裤", "niú zǎi kù", "jeans"],
     ["par de pantalones", "pair of pants", "一条裤子", "yī tiáo kù zi", "par de calças"],
     ["vestido de noche", "evening dress", "晚礼服", "wǎn lǐ fú", "vestido de noite"],

@@ -90,7 +90,7 @@ export const p6_182_telecommunications = {
     ["un SMS", "an SMS", "一条短信", "yī tiáo duǎn xìn", "um SMS"],
     ["por SMS", "by SMS", "通过短信", "tōng guò duǎn xìn", "por SMS"],
     ["por WhatsApp", "by WhatsApp", "通过 WhatsApp", "tōng guò WhatsApp", "por WhatsApp"],
-    ["en WhatsApp", "on WhatsApp", "在 WhatsApp 上", "zài WhatsApp shàng", "no WhatsApp"],
+    ["en WhatsApp", "on WhatsApp", "在 WhatsApp上", "zài WhatsApp shàng", "no WhatsApp"],
     ["un email", "an email", "一封电子邮件", "yī fēng diàn zi yóu jiàn", "um e-mail"],
     ["por email", "by email", "通过电子邮件", "tōng guò diàn zi yóu jiàn", "por e-mail"],
     ["la videollamada", "the video call", "视频通话", "shì pín tōng huà", "a videochamada"],
