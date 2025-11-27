@@ -771,6 +771,106 @@ More examples:
 
 ---
 
+## 🌏 CHINESE + PINYIN: INSEPARABLE ACROSS ALL GAMES - CRITICAL!
+**Chinese and Pinyin are an atomic unit that travels together across the entire system.**
+
+### The Architectural Principle
+
+**Whenever Chinese characters appear in ANY CSV file (whether as the target language being learned OR as a translation option), they MUST be accompanied by a pinyin column.**
+
+### Why This Exists
+
+The fundamental difference between writing systems:
+
+- **Spanish, English, Portuguese**: Latin alphabet → pronunciation is visible in the text ✅
+- **Chinese**: Logograms (characters) → pronunciation is NOT visible → requires pinyin ❌
+
+**Without pinyin, Chinese is unpronounceable for non-readers.**
+
+### Application Across All Three Language Games
+
+| CSV File | Chinese Column | Pinyin Column | Why Pinyin is There |
+|----------|----------------|---------------|---------------------|
+| `ChineseWords{N}.csv` | Column 0 (target) | Column 1 | Learning Chinese → need to pronounce the target words |
+| `SpanishWords{N}.csv` | Column 2 (translation) | Column 3 | If player selects "I speak Chinese" → need to pronounce the translation |
+| `EnglishWords{N}.csv` | Column 1 (translation) | Column 2 | If player selects "I speak Chinese" → need to pronounce the translation |
+
+**Key insight**: Even when learning Spanish or English, if the user's native language is Chinese, they see Chinese translations WITH pinyin underneath!
+
+### Visual Display in All Games
+
+Regardless of which language is being learned, when Chinese appears, it displays with pinyin:
+
+```
+┌─────────────────────────┐
+│  你  好  ，  先  生      │  ← Chinese characters (each is a visual unit)
+│  nǐ hǎo  ， xiān shēng  │  ← Pinyin syllables (1:1 alignment with characters above)
+│                         │
+│  hello sir              │  ← English translation
+└─────────────────────────┘
+```
+
+This layout works whether:
+- Learning Chinese (Chinese is the target)
+- Learning Spanish but speaking Chinese (Chinese is the translation)
+- Learning English but speaking Chinese (Chinese is the translation)
+
+### Validation Requirement
+
+**ALL CSVs with Chinese columns must pass pinyin validation:**
+
+```bash
+# Validates Chinese+Pinyin in ALL three language folders
+python PythonHelpers/validate_pinyin.py all
+
+# Or individually:
+python PythonHelpers/validate_pinyin.py chinese
+python PythonHelpers/validate_pinyin.py spanish
+python PythonHelpers/validate_pinyin.py english
+```
+
+**Core validation rule**: Each Chinese character = exactly 1 space-separated pinyin syllable
+
+```
+✅ 你好 → nǐ hǎo (2 chars = 2 syllables)
+❌ 你好 → nǐhǎo (2 chars = 1 syllable - missing space!)
+```
+
+### Edge Case: Latin Abbreviations in Chinese Text
+
+When Chinese text contains Latin abbreviations (ATM, DNA, brand names, etc.):
+
+**Simple Rule:**
+- **Latin sequences** (ATM, DNA, WhatsApp) → same sequence appears in pinyin column (case insensitive)
+- **Chinese characters** → pinyin syllables with spaces
+
+**Examples:**
+
+| Chinese | Pinyin | Explanation |
+|---------|--------|-------------|
+| `ATM机` | `ATM jī` | ✅ Latin block "ATM" + 1 Chinese character → Latin block "ATM" + 1 pinyin syllable |
+| `DNA测试` | `DNA cè shì` | ✅ Latin block "DNA" + 2 Chinese characters → Latin block "DNA" + 2 pinyin syllables |
+| `WhatsApp消息` | `WhatsApp xiāo xī` | ✅ Mixed-case brand name + 2 characters → same brand name + 2 syllables |
+| `T恤` | `T xù` | ✅ Single Latin letter + 1 character → same letter + 1 syllable |
+| `la` | `la` | ✅ Spanish article (no Chinese chars) → same article in pinyin |
+
+The validator (`validate_pinyin.py`) handles these cases automatically:
+1. Parses Chinese column to identify Latin vs Chinese sequences
+2. Validates Latin blocks match exactly (case insensitive)
+3. Validates Chinese characters have matching syllable count
+
+### This Principle is NON-NEGOTIABLE
+
+Chinese + Pinyin inseparability applies **regardless of which language is being learned**. This is an architectural decision that affects:
+- ✅ CSV data structure (all 3 languages)
+- ✅ Validation scripts (validate all 3 languages)
+- ✅ Game display logic (all games show pinyin when Chinese appears)
+- ✅ Module generation (all modules include pinyin for Chinese columns)
+
+**Chinese always travels with its pronunciation guide.**
+
+---
+
 ## 📋 OVERVIEW WORDPACK DATA STRUCTURE (CRITICAL!)
 **Understanding how wordpacks are organized in the Overview CSV files.**
 
