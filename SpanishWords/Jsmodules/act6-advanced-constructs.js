@@ -18,7 +18,7 @@ export const p6_181_disappearing__desaparecer = {
     pinyin: "Xiāoshī (desaparecer)",
     portuguese: "Desaparecer"
   },
-  words: [
+  baseWords: [
     ["desaparezco", "I disappear", "我消失了", "wǒ xiāo shī le", "Eu desapareço"],
     ["desapareces", "you disappear", "你消失了", "nǐ xiāo shī le", "você desaparece"],
     ["desaparece", "disappears", "消失", "xiāo shī", "desaparece"],
@@ -28,7 +28,9 @@ export const p6_181_disappearing__desaparecer = {
     ["desaparecer", "disappear", "消失", "xiāo shī", "desaparecer"],
     ["desaparición", "disappearance", "失踪", "shī zōng", "desaparecimento"],
     ["perderse", "get lost", "迷路", "mí lù", "se perder"],
-    ["esfumarse", "vanish", "消失", "xiāo shī", "desaparecer"],
+    ["esfumarse", "vanish", "消失", "xiāo shī", "desaparecer"]
+  ],
+  exampleWords: [
     ["yo desaparezco", "I disappear", "我消失了", "wǒ xiāo shī le", "Eu desapareço"],
     ["nunca desaparezco", "I never disappear", "我从未消失", "wǒ cóng wèi xiāo shī", "Eu nunca desapareço"],
     ["tú desapareces", "you disappear", "你消失了", "nǐ xiāo shī le", "você desaparece"],
@@ -60,7 +62,7 @@ export const p6_182_telecommunications = {
     pinyin: "Diànxìn",
     portuguese: "Telecomunicações"
   },
-  words: [
+  baseWords: [
     ["telecomunicaciones", "telecommunications", "电信", "diàn xìn", "telecomunicações"],
     ["SMS", "SMS", "短信", "duǎn xìn", "SMS"],
     ["WhatsApp", "WhatsApp", "WhatsApp", "WhatsApp", "WhatsApp"],
@@ -78,9 +80,11 @@ export const p6_182_telecommunications = {
     ["roaming", "roaming", "漫游", "màn yóu", "roaming"],
     ["datos", "data", "数据", "shù jù", "dados"],
     ["ancho de banda", "bandwidth", "带宽", "dài kuān", "largura de banda"],
-    ["fibra", "fiber", "纤维", "xiān wéi", "fibra"],
-    ["operador", "operator", "运算符", "yùn suàn fú", "operador"],
-    ["proveedor", "supplier", "供应商", "gōng yìng shāng", "fornecedor"],
+    ["fibra", "fiber", "光纤", "guāng xiān", "fibra"],
+    ["operador", "operator", "运营商", "yùn yíng shāng", "operador"],
+    ["proveedor", "supplier", "供应商", "gōng yìng shāng", "fornecedor"]
+  ],
+  exampleWords: [
     ["las telecomunicaciones", "telecommunications", "电信", "diàn xìn", "telecomunicações"],
     ["en telecomunicaciones", "in telecommunications", "在电信领域", "zài diàn xìn lǐng yù", "em telecomunicações"],
     ["un SMS", "an SMS", "一条短信", "yī tiáo duǎn xìn", "um SMS"],
@@ -92,7 +96,7 @@ export const p6_182_telecommunications = {
     ["la videollamada", "the video call", "视频通话", "shì pín tōng huà", "a videochamada"],
     ["una videollamada", "a video call", "视频通话", "shì pín tōng huà", "uma videochamada"],
     ["la cobertura", "coverage", "覆盖范围", "fù gài fàn wéi", "cobertura"],
-    ["sin cobertura", "no coverage", "没有报道", "méi yǒu bào dào", "sem cobertura"],
+    ["sin cobertura", "no coverage", "没有信号", "méi yǒu xìn hào", "sem cobertura"],
     ["el router", "the router", "路由器", "lù yóu qì", "o roteador"],
     ["un router", "a router", "路由器", "lù yóu qì", "um roteador"],
     ["la antena", "the antenna", "天线", "tiān xiàn", "a antena"],
@@ -115,10 +119,10 @@ export const p6_182_telecommunications = {
     ["sin datos", "no data", "没有数据", "méi yǒu shù jù", "sem dados"],
     ["el ancho de banda", "the bandwidth", "带宽", "dài kuān", "a largura de banda"],
     ["más ancho de banda", "more bandwidth", "更多带宽", "gèng duō dài kuān", "mais largura de banda"],
-    ["la fibra", "the fiber", "纤维", "xiān wéi", "a fibra"],
-    ["con fibra", "with fiber", "有纤维", "yǒu xiān wéi", "com fibra"],
-    ["el operador", "the operator", "运算符", "yùn suàn fú", "o operador"],
-    ["un operador", "an operator", "运算符", "yùn suàn fú", "um operador"],
+    ["la fibra", "the fiber", "光纤", "guāng xiān", "a fibra"],
+    ["con fibra", "with fiber", "有光纤", "yǒu guāng xiān", "com fibra"],
+    ["el operador", "the operator", "运营商", "yùn yíng shāng", "o operador"],
+    ["un operador", "an operator", "运营商", "yùn yíng shāng", "um operador"],
     ["el proveedor", "the supplier", "供应商", "gōng yìng shāng", "o fornecedor"],
     ["un proveedor", "a supplier", "供应商", "gōng yìng shāng", "um fornecedor"]
   ]
@@ -132,29 +136,31 @@ export const p6_183_birthdays__fulfilling__cumplir = {
     pinyin: "Shēngrì yǔ Shíxiàn (cumplir)",
     portuguese: "Aniversários e Cumprir"
   },
-  words: [
+  baseWords: [
     ["cumplo", "I fulfill", "我履行", "wǒ lǚ xíng", "Eu cumpro"],
-    ["cumples", "you meet", "你遇见", "nǐ yù jiàn", "você conhece"],
-    ["cumple", "meets", "遇见", "yù jiàn", "atende"],
+    ["cumples", "you fulfill", "你履行", "nǐ lǚ xíng", "você cumpre"],
+    ["cumple", "fulfills", "履行", "lǚ xíng", "cumpre"],
     ["cumplimos", "we comply", "我们遵守", "wǒ men zūn shǒu", "nós cumprimos"],
     ["cumplís", "you comply", "你遵守", "nǐ zūn shǒu", "você cumpre"],
-    ["cumplen", "meet", "遇见", "yù jiàn", "conhecer"],
-    ["cumplir", "meet", "遇见", "yù jiàn", "conhecer"],
+    ["cumplen", "they fulfill", "他们履行", "tā men lǚ xíng", "cumprem"],
+    ["cumplir", "to fulfill", "履行", "lǚ xíng", "cumprir"],
     ["cumpleaños", "birthday", "生日", "shēng rì", "aniversário"],
     ["cumplimiento", "compliance", "合规", "hé guī", "conformidade"],
-    ["celebración", "celebration", "庆典", "qìng diǎn", "celebração"],
+    ["celebración", "celebration", "庆典", "qìng diǎn", "celebração"]
+  ],
+  exampleWords: [
     ["yo cumplo", "I fulfill", "我履行", "wǒ lǚ xíng", "Eu cumpro"],
-    ["hoy cumplo", "today I turn", "今天我转", "jīn tiān wǒ zhuǎn", "hoje eu viro"],
+    ["hoy cumplo", "today I turn", "今天我过生日", "jīn tiān wǒ guò shēng rì", "hoje eu faço aniversário"],
     ["tú cumples", "you fulfill", "你满足", "nǐ mǎn zú", "você cumpre"],
     ["hoy cumples", "today your birthday", "今天你生日", "jīn tiān nǐ shēng rì", "hoje é seu aniversário"],
-    ["él cumple", "he meets", "他遇见了", "tā yù jiàn le", "ele conhece"],
+    ["él cumple", "he fulfills", "他履行", "tā lǚ xíng", "ele cumpre"],
     ["hoy cumple", "today is his birthday", "今天是他的生日", "jīn tiān shì tā de shēng rì", "hoje é aniversário dele"],
     ["nosotros cumplimos", "we fulfill", "我们履行", "wǒ men lǚ xíng", "nós cumprimos"],
     ["hoy cumplimos", "today we fulfill", "今天我们履行", "jīn tiān wǒ men lǚ xíng", "hoje cumprimos"],
     ["vosotros cumplís", "you fulfill", "你满足", "nǐ mǎn zú", "você cumpre"],
-    ["hoy cumplís", "today you turn", "今天你轮到", "jīn tiān nǐ lún dào", "hoje você vira"],
+    ["hoy cumplís", "today you turn", "今天你过生日", "jīn tiān nǐ guò shēng rì", "hoje vocês fazem aniversário"],
     ["ellos cumplen", "they comply", "他们遵守", "tā men zūn shǒu", "eles cumprem"],
-    ["hoy cumplen", "today they meet", "今天他们见面", "jīn tiān tā men jiàn miàn", "hoje eles se encontram"],
+    ["hoy cumplen", "today they turn", "今天他们过生日", "jīn tiān tā men guò shēng rì", "hoje eles fazem aniversário"],
     ["quiero cumplir", "I want to fulfill", "我要满足", "wǒ yào mǎn zú", "Quero cumprir"],
     ["voy a cumplir", "I will fulfill", "我会履行", "wǒ huì lǚ xíng", "Vou cumprir"],
     ["el cumpleaños", "the birthday", "生日", "shēng rì", "o aniversário"],
@@ -174,7 +180,7 @@ export const p6_184_missing__lacking__faltar = {
     pinyin: "Quēshǎo (faltar)",
     portuguese: "Faltar"
   },
-  words: [
+  baseWords: [
     ["falto", "missing", "失踪", "shī zōng", "faltando"],
     ["faltas", "fouls", "犯规", "fàn guī", "faltas"],
     ["falta", "missing", "失踪", "shī zōng", "faltando"],
@@ -183,7 +189,9 @@ export const p6_184_missing__lacking__faltar = {
     ["faltan", "missing", "失踪", "shī zōng", "faltando"],
     ["faltar", "missing", "失踪", "shī zōng", "faltando"],
     ["ausencia", "absence", "缺席", "quē xí", "ausência"],
-    ["carencia", "lack", "缺乏", "quē fá", "falta"],
+    ["carencia", "lack", "缺乏", "quē fá", "falta"]
+  ],
+  exampleWords: [
     ["yo falto", "I'm missing", "我失踪了", "wǒ shī zōng le", "Estou com saudades"],
     ["nunca falto", "I never miss", "我从来没有错过", "wǒ cóng lái méi yǒu cuò guò", "Eu nunca sinto falta"],
     ["tú faltas", "you are missing", "你失踪了", "nǐ shī zōng le", "você está faltando"],
@@ -213,11 +221,11 @@ export const p6_185_tourism__terms = {
     pinyin: "Lǚyóu Shùyǔ",
     portuguese: "Termos de Turismo"
   },
-  words: [
+  baseWords: [
     ["atracción", "attraction", "景点", "jǐng diǎn", "atração"],
     ["monumento", "monument", "纪念碑", "jì niàn bēi", "monumento"],
     ["hostal", "hostel", "宿舍", "sù shè", "albergue"],
-    ["pensión", "pension", "养老金", "yǎng lǎo jīn", "pensão"],
+    ["pensión", "guesthouse", "民宿", "mín sù", "pensão"],
     ["albergue", "hostel", "宿舍", "sù shè", "albergue"],
     ["guía", "guide", "指导", "zhǐ dǎo", "guia"],
     ["visitar", "visit", "访问", "fǎng wèn", "visite"],
@@ -228,19 +236,21 @@ export const p6_185_tourism__terms = {
     ["alojamiento", "accommodation", "住宿", "zhù sù", "alojamento"],
     ["hospedaje", "accommodation", "住宿", "zhù sù", "alojamento"],
     ["posada", "inn", "客栈", "kè zhàn", "pousada"],
-    ["cabaña", "cabin", "机舱", "jī cāng", "cabine"],
+    ["cabaña", "cabin", "小屋", "xiǎo wū", "cabana"],
     ["tienda de campaña", "tent", "帐篷", "zhàng péng", "barraca"],
     ["mochilero", "backpacker", "背包客", "bēi bāo kè", "mochileiro"],
     ["safari", "safari", "野生动物园", "yě shēng dòng wù yuán", "safári"],
-    ["crucero", "cruise", "巡航", "xún háng", "cruzeiro"],
+    ["crucero", "cruise", "巡航", "xún háng", "cruzeiro"]
+  ],
+  exampleWords: [
     ["la atracción", "the attraction", "景点", "jǐng diǎn", "a atração"],
     ["una atracción", "an attraction", "一个景点", "yí gè jǐng diǎn", "uma atração"],
     ["el monumento", "the monument", "纪念碑", "jì niàn bēi", "o monumento"],
     ["un monumento", "a monument", "一座纪念碑", "yī zuò jì niàn bēi", "um monumento"],
     ["el hostal", "the hostel", "宿舍", "sù shè", "o albergue"],
     ["un hostal", "a hostel", "旅馆", "lǚ guǎn", "um albergue"],
-    ["la pensión", "the pension", "养老金", "yǎng lǎo jīn", "a pensão"],
-    ["una pensión", "a pension", "养老金", "yǎng lǎo jīn", "uma pensão"],
+    ["la pensión", "the guesthouse", "民宿", "mín sù", "a pensão"],
+    ["una pensión", "a guesthouse", "民宿", "mín sù", "uma pensão"],
     ["el albergue", "the hostel", "宿舍", "sù shè", "o albergue"],
     ["un albergue", "a hostel", "旅馆", "lǚ guǎn", "um albergue"],
     ["el guía", "the guide", "指南", "zhǐ nán", "o guia"],
@@ -282,7 +292,7 @@ export const p6_186_noticing__notar = {
     pinyin: "Zhùyìdào (notar)",
     portuguese: "Notar"
   },
-  words: [
+  baseWords: [
     ["noto", "I notice", "我注意到", "wǒ zhù yì dào", "Eu noto"],
     ["notas", "notes", "笔记", "bǐ jì", "notas"],
     ["nota", "note", "注意", "zhù yì", "nota"],
@@ -291,7 +301,9 @@ export const p6_186_noticing__notar = {
     ["notan", "notice", "注意", "zhù yì", "aviso"],
     ["notar", "notice", "注意", "zhù yì", "aviso"],
     ["percepción", "perception", "感知", "gǎn zhī", "percepção"],
-    ["percibir", "perceive", "感知", "gǎn zhī", "perceber"],
+    ["percibir", "perceive", "感知", "gǎn zhī", "perceber"]
+  ],
+  exampleWords: [
     ["yo noto", "I notice", "我注意到", "wǒ zhù yì dào", "Eu noto"],
     ["lo noto", "I notice it", "我注意到了", "wǒ zhù yì dào le", "Eu notei isso"],
     ["tú notas", "you note", "你注意到", "nǐ zhù yì dào", "você nota"],
@@ -321,7 +333,7 @@ export const p6_187_allowing__permitir = {
     pinyin: "Yǔnxǔ (permitir)",
     portuguese: "Permitir"
   },
-  words: [
+  baseWords: [
     ["permito", "I allow", "我允许", "wǒ yǔn xǔ", "Eu permito"],
     ["permites", "you allow", "你允许", "nǐ yǔn xǔ", "você permite"],
     ["permite", "allows", "允许", "yǔn xǔ", "permite"],
@@ -331,7 +343,9 @@ export const p6_187_allowing__permitir = {
     ["permitir", "allow", "允许", "yǔn xǔ", "permitir"],
     ["permiso", "permission", "许可", "xǔ kě", "permissão"],
     ["autorización", "authorization", "授权", "shòu quán", "autorização"],
-    ["consentimiento", "consent", "同意", "tóng yì", "consentimento"],
+    ["consentimiento", "consent", "同意", "tóng yì", "consentimento"]
+  ],
+  exampleWords: [
     ["yo permito", "I allow", "我允许", "wǒ yǔn xǔ", "Eu permito"],
     ["lo permito", "I allow it", "我允许", "wǒ yǔn xǔ", "Eu permito"],
     ["tú permites", "you allow", "你允许", "nǐ yǔn xǔ", "você permite"],
@@ -363,14 +377,14 @@ export const p6_188_manufacturing__terms = {
     pinyin: "Zhìzào Shùyǔ",
     portuguese: "Termos de Manufatura"
   },
-  words: [
+  baseWords: [
     ["fabricación", "manufacturing", "制造", "zhì zào", "fabricação"],
     ["fábrica", "factory", "工厂", "gōng chǎng", "fábrica"],
     ["línea", "line", "线", "xiàn", "linha"],
     ["procesos", "processes", "进程", "jìn chéng", "processos"],
     ["proceso", "process", "进程", "jìn chéng", "processo"],
     ["calidad", "quality", "质量", "zhì liàng", "qualidade"],
-    ["defecto", "default", "默认", "mò rèn", "padrão"],
+    ["defecto", "defect", "缺陷", "quē xiàn", "defeito"],
     ["estándar", "standard", "标准", "biāo zhǔn", "padrão"],
     ["eficiencia", "efficiency", "效率", "xiào lǜ", "eficiência"],
     ["optimizar", "optimize", "优化", "yōu huà", "otimizar"],
@@ -381,7 +395,9 @@ export const p6_188_manufacturing__terms = {
     ["pieza", "piece", "一块", "yī kuài", "peça"],
     ["repuesto", "spare", "备用", "bèi yòng", "sobressalente"],
     ["inventario", "inventory", "库存", "kù cún", "inventário"],
-    ["almacenamiento", "storage", "存储", "cún chǔ", "armazenamento"],
+    ["almacenamiento", "storage", "存储", "cún chǔ", "armazenamento"]
+  ],
+  exampleWords: [
     ["la fabricación", "manufacturing", "制造", "zhì zào", "fabricação"],
     ["en fabricación", "in manufacturing", "在制造业", "zài zhì zào yè", "na fabricação"],
     ["la fábrica", "the factory", "工厂", "gōng chǎng", "a fábrica"],
@@ -404,13 +420,13 @@ export const p6_188_manufacturing__terms = {
     ["voy a optimizar", "I'm going to optimize", "我要优化", "wǒ yào yōu huà", "Vou otimizar"],
     ["la industria", "the industry", "行业", "háng yè", "a indústria"],
     ["una industria", "an industry", "一个行业", "yí gè háng yè", "uma indústria"],
-    ["el ensamblaje", "the assembly", "大会", "dà huì", "a montagem"],
+    ["el ensamblaje", "the assembly", "装配", "zhuāng pèi", "a montagem"],
     ["de ensamblaje", "assembly", "装配", "zhuāng pèi", "montagem"],
-    ["el montaje", "the assembly", "大会", "dà huì", "a montagem"],
+    ["el montaje", "the assembly", "装配", "zhuāng pèi", "a montagem"],
     ["de montaje", "mounting", "安装", "ān zhuāng", "montagem"],
     ["el componente", "the component", "组件", "zǔ jiàn", "o componente"],
     ["un componente", "a component", "一个组件", "yí gè zǔ jiàn", "um componente"],
-    ["la pieza", "the piece", "这件作品", "zhè jiàn zuò pǐn", "a peça"],
+    ["la pieza", "the piece", "这个零件", "zhè gè líng jiàn", "a peça"],
     ["una pieza", "one piece", "一件", "yī jiàn", "uma peça"],
     ["el repuesto", "the spare", "备用", "bèi yòng", "o sobressalente"],
     ["un repuesto", "a spare", "备用", "bèi yòng", "um sobressalente"],
@@ -429,7 +445,7 @@ export const p6_189_achieving__lograr = {
     pinyin: "Shíxiàn (lograr)",
     portuguese: "Alcançar"
   },
-  words: [
+  baseWords: [
     ["logro", "achievement", "成就", "chéng jiù", "conquista"],
     ["logras", "you achieve", "你实现", "nǐ shí xiàn", "você consegue"],
     ["logra", "achieves", "达到", "dá dào", "alcança"],
@@ -438,7 +454,9 @@ export const p6_189_achieving__lograr = {
     ["logran", "they achieve", "他们实现了", "tā men shí xiàn le", "eles alcançam"],
     ["lograr", "achieve", "实现", "shí xiàn", "alcançar"],
     ["éxito", "success", "成功", "chéng gōng", "sucesso"],
-    ["obtención", "obtaining", "获得", "huò dé", "obtenção"],
+    ["obtención", "obtaining", "获得", "huò dé", "obtenção"]
+  ],
+  exampleWords: [
     ["yo logro", "I achieve", "我实现了", "wǒ shí xiàn le", "Eu consigo"],
     ["lo logro", "I achieve it", "我实现了", "wǒ shí xiàn le", "Eu consigo"],
     ["tú logras", "you achieve", "你实现", "nǐ shí xiàn", "você consegue"],
@@ -468,7 +486,7 @@ export const p6_190_performing__realizar = {
     pinyin: "Zhíxíng (realizar)",
     portuguese: "Realizar"
   },
-  words: [
+  baseWords: [
     ["realizo", "I make", "我做", "wǒ zuò", "Eu faço"],
     ["realizas", "do you do", "你做吗", "nǐ zuò ma", "você faz"],
     ["realiza", "performs", "执行", "zhí xíng", "executa"],
@@ -478,7 +496,9 @@ export const p6_190_performing__realizar = {
     ["realizar", "perform", "执行", "zhí xíng", "executar"],
     ["realización", "realization", "实现", "shí xiàn", "realização"],
     ["ejecución", "execution", "执行", "zhí xíng", "execução"],
-    ["desempeño", "performance", "性能", "xìng néng", "desempenho"],
+    ["desempeño", "performance", "性能", "xìng néng", "desempenho"]
+  ],
+  exampleWords: [
     ["yo realizo", "I do", "我愿意", "wǒ yuàn yì", "Eu sim"],
     ["lo realizo", "I do it", "我做", "wǒ zuò", "Eu faço isso"],
     ["tú realizas", "you perform", "你执行", "nǐ zhí xíng", "você executa"],
@@ -510,12 +530,12 @@ export const p6_191_economics__terms = {
     pinyin: "Jīngjìxué Shùyǔ",
     portuguese: "Termos de Economia"
   },
-  words: [
+  baseWords: [
     ["economía", "economy", "经济", "jīng jì", "economia"],
     ["economista", "economist", "经济学家", "jīng jì xué jiā", "economista"],
-    ["bolsa", "bag", "包", "bāo", "bolsa"],
-    ["acción", "action", "行动", "xíng dòng", "ação"],
-    ["bono", "bonus", "奖金", "jiǎng jīn", "bônus"],
+    ["bolsa", "stock market", "股市", "gǔ shì", "bolsa"],
+    ["acción", "stock", "股票", "gǔ piào", "ação"],
+    ["bono", "bond", "债券", "zhài quàn", "título"],
     ["crédito", "credit", "信用", "xìn yòng", "crédito"],
     ["inflación", "inflation", "通货膨胀", "tōng huò péng zhàng", "inflação"],
     ["crisis", "crisis", "危机", "wēi jī", "crise"],
@@ -529,17 +549,19 @@ export const p6_191_economics__terms = {
     ["desempleo", "unemployment", "失业", "shī yè", "desemprego"],
     ["productividad", "productivity", "生产力", "shēng chǎn lì", "produtividade"],
     ["competitividad", "competitiveness", "竞争力", "jìng zhēng lì", "competitividade"],
-    ["activo", "active", "活跃", "huó yuè", "ativo"],
+    ["activo", "asset", "资产", "zī chǎn", "ativo"]
+  ],
+  exampleWords: [
     ["la economía", "the economy", "经济", "jīng jì", "a economia"],
     ["en la economía", "in the economy", "在经济中", "zài jīng jì zhōng", "na economia"],
     ["el economista", "the economist", "经济学家", "jīng jì xué jiā", "o economista"],
     ["un economista", "an economist", "经济学家", "jīng jì xué jiā", "um economista"],
-    ["la bolsa", "the bag", "包", "bāo", "a bolsa"],
-    ["en la bolsa", "in the bag", "在袋子里", "zài dài zi lǐ", "na bolsa"],
-    ["la acción", "the action", "行动", "xíng dòng", "a ação"],
-    ["una acción", "an action", "一个动作", "yí gè dòng zuò", "uma ação"],
-    ["el bono", "the bonus", "奖金", "jiǎng jīn", "o bônus"],
-    ["un bono", "a bonus", "奖金", "jiǎng jīn", "um bônus"],
+    ["la bolsa", "the stock market", "股市", "gǔ shì", "a bolsa"],
+    ["en la bolsa", "on the stock market", "在股市", "zài gǔ shì", "na bolsa"],
+    ["la acción", "the stock", "股票", "gǔ piào", "a ação"],
+    ["una acción", "a stock", "一只股票", "yī zhī gǔ piào", "uma ação"],
+    ["el bono", "the bond", "债券", "zhài quàn", "o título"],
+    ["un bono", "a bond", "债券", "zhài quàn", "um título"],
     ["el crédito", "the credit", "信用", "xìn yòng", "o crédito"],
     ["un crédito", "a credit", "信用", "xìn yòng", "um crédito"],
     ["la inflación", "inflation", "通货膨胀", "tōng huò péng zhàng", "inflação"],
@@ -566,7 +588,7 @@ export const p6_191_economics__terms = {
     ["con productividad", "with productivity", "生产力", "shēng chǎn lì", "com produtividade"],
     ["la competitividad", "competitiveness", "竞争力", "jìng zhēng lì", "competitividade"],
     ["con competitividad", "with competitiveness", "具有竞争力", "jù yǒu jìng zhēng lì", "com competitividade"],
-    ["el activo", "the active", "活跃", "huó yuè", "o ativo"],
+    ["el activo", "the asset", "资产", "zī chǎn", "o ativo"],
     ["un activo", "an asset", "一项资产", "yī xiàng zī chǎn", "um ativo"]
   ]
 };
@@ -579,7 +601,7 @@ export const p6_192_existing__existir = {
     pinyin: "Cúnzài (existir)",
     portuguese: "Existir"
   },
-  words: [
+  baseWords: [
     ["existo", "I exist", "我存在", "wǒ cún zài", "Eu existo"],
     ["existes", "you exist", "你存在", "nǐ cún zài", "você existe"],
     ["existe", "exists", "存在", "cún zài", "existe"],
@@ -588,7 +610,9 @@ export const p6_192_existing__existir = {
     ["existen", "exist", "存在", "cún zài", "existe"],
     ["existir", "exist", "存在", "cún zài", "existe"],
     ["existencia", "existence", "存在", "cún zài", "existência"],
-    ["presencia", "presence", "存在", "cún zài", "presença"],
+    ["presencia", "presence", "存在", "cún zài", "presença"]
+  ],
+  exampleWords: [
     ["yo existo", "I exist", "我存在", "wǒ cún zài", "Eu existo"],
     ["sí existo", "yes I exist", "是的，我存在", "shì de ， wǒ cún zài", "sim, eu existo"],
     ["tú existes", "you exist", "你存在", "nǐ cún zài", "você existe"],
@@ -618,7 +642,7 @@ export const p6_193_depending__depender = {
     pinyin: "Yīlài (depender)",
     portuguese: "Depender"
   },
-  words: [
+  baseWords: [
     ["dependo", "I depend", "我靠", "wǒ kào", "Eu dependo"],
     ["dependes", "you depend", "你依赖", "nǐ yī lài", "você depende"],
     ["depende", "depends", "取决于", "qǔ jué yú", "depende"],
@@ -628,7 +652,9 @@ export const p6_193_depending__depender = {
     ["depender", "depend", "取决于", "qǔ jué yú", "depende"],
     ["dependencia", "dependency", "依赖", "yī lài", "dependência"],
     ["basarse", "rely", "依靠", "yī kào", "confiar"],
-    ["apoyarse", "lean on", "依靠", "yī kào", "apoie-se"],
+    ["apoyarse", "lean on", "依靠", "yī kào", "apoie-se"]
+  ],
+  exampleWords: [
     ["yo dependo", "I depend", "我靠", "wǒ kào", "Eu dependo"],
     ["no dependo", "I don't depend", "我不依赖", "wǒ bù yī lài", "Eu não dependo"],
     ["tú dependes", "you depend", "你依赖", "nǐ yī lài", "você depende"],
@@ -660,7 +686,7 @@ export const p6_194_retail__sales = {
     pinyin: "Língshòu yǔ Xiāoshòu",
     portuguese: "Varejo e Vendas"
   },
-  words: [
+  baseWords: [
     ["comercio", "trade", "贸易", "mào yì", "comércio"],
     ["comerciante", "merchant", "商人", "shāng rén", "comerciante"],
     ["vendedor", "seller", "卖家", "mài jiā", "vendedor"],
@@ -670,7 +696,7 @@ export const p6_194_retail__sales = {
     ["mostrador", "counter", "柜台", "guì tái", "contador"],
     ["escaparate", "showcase", "展示", "zhǎn shì", "vitrine"],
     ["vitrina", "showcase", "展示", "zhǎn shì", "vitrine"],
-    ["probador", "tester", "测试员", "cè shì yuán", "testador"],
+    ["probador", "fitting room", "试衣间", "shì yī jiān", "provador"],
     ["ticket", "ticket", "票", "piào", "bilhete"],
     ["rebaja", "discount", "折扣", "zhé kòu", "desconto"],
     ["minorista", "retailer", "零售商", "líng shòu shāng", "varejista"],
@@ -679,7 +705,9 @@ export const p6_194_retail__sales = {
     ["existencias", "stocks", "股票", "gǔ piào", "ações"],
     ["stock", "stock", "库存", "kù cún", "estoque"],
     ["surtido", "assortment", "品种", "pǐn zhǒng", "sortimento"],
-    ["suministro", "supply", "供应", "gōng yìng", "fornecimento"],
+    ["suministro", "supply", "供应", "gōng yìng", "fornecimento"]
+  ],
+  exampleWords: [
     ["el comercio", "trade", "贸易", "mào yì", "comércio"],
     ["del comercio", "of commerce", "商业", "shāng yè", "do comércio"],
     ["el comerciante", "the merchant", "商人", "shāng rén", "o comerciante"],
@@ -698,8 +726,8 @@ export const p6_194_retail__sales = {
     ["un escaparate", "a showcase", "展示柜", "zhǎn shì guì", "uma vitrine"],
     ["la vitrina", "the showcase", "展示柜", "zhǎn shì guì", "a vitrine"],
     ["una vitrina", "a showcase", "展示柜", "zhǎn shì guì", "uma vitrine"],
-    ["el probador", "the tester", "测试仪", "cè shì yí", "o testador"],
-    ["un probador", "a tester", "测试员", "cè shì yuán", "um testador"],
+    ["el probador", "the fitting room", "试衣间", "shì yī jiān", "o provador"],
+    ["un probador", "a fitting room", "试衣间", "shì yī jiān", "um provador"],
     ["el ticket", "the ticket", "票", "piào", "o ingresso"],
     ["un ticket", "a ticket", "一张票", "yī zhāng piào", "um ingresso"],
     ["la rebaja", "the discount", "折扣", "zhé kòu", "o desconto"],
@@ -710,9 +738,9 @@ export const p6_194_retail__sales = {
     ["un mayorista", "a wholesaler", "批发商", "pī fā shāng", "um atacadista"],
     ["el distribuidor", "the distributor", "经销商", "jīng xiāo shāng", "o distribuidor"],
     ["un distribuidor", "a distributor", "经销商", "jīng xiāo shāng", "um distribuidor"],
-    ["las existencias", "stocks", "股票", "gǔ piào", "ações"],
+    ["las existencias", "the inventory", "库存", "kù cún", "o estoque"],
     ["sin existencias", "out of stock", "缺货", "quē huò", "fora de estoque"],
-    ["el stock", "the stock", "股票", "gǔ piào", "o estoque"],
+    ["el stock", "the stock", "库存", "kù cún", "o estoque"],
     ["sin stock", "out of stock", "缺货", "quē huò", "fora de estoque"],
     ["el surtido", "the assortment", "品种", "pǐn zhǒng", "o sortimento"],
     ["buen surtido", "good assortment", "品种齐全", "pǐn zhǒng qí quán", "bom sortimento"],
@@ -729,7 +757,7 @@ export const p6_195_belonging__pertenecer = {
     pinyin: "Shǔyú (pertenecer)",
     portuguese: "Pertencer"
   },
-  words: [
+  baseWords: [
     ["pertenezco", "I belong", "我属于", "wǒ shǔ yú", "Eu pertenço"],
     ["perteneces", "you belong", "你属于", "nǐ shǔ yú", "você pertence"],
     ["pertenece", "belongs", "属于", "shǔ yú", "pertence"],
@@ -739,7 +767,9 @@ export const p6_195_belonging__pertenecer = {
     ["pertenecer", "belong", "属于", "shǔ yú", "pertencer"],
     ["pertenencia", "membership", "会员资格", "huì yuán zī gé", "adesão"],
     ["propiedad", "property", "财产", "cái chǎn", "propriedade"],
-    ["miembro", "member", "会员", "huì yuán", "membro"],
+    ["miembro", "member", "会员", "huì yuán", "membro"]
+  ],
+  exampleWords: [
     ["yo pertenezco", "I belong", "我属于", "wǒ shǔ yú", "Eu pertenço"],
     ["le pertenezco", "I belong to him", "我属于他", "wǒ shǔ yú tā", "Eu pertenço a ele"],
     ["tú perteneces", "you belong", "你属于", "nǐ shǔ yú", "você pertence"],
@@ -771,7 +801,7 @@ export const p6_196_deserving__merecer = {
     pinyin: "Zhídé (merecer)",
     portuguese: "Merecer"
   },
-  words: [
+  baseWords: [
     ["merezco", "I deserve", "我应得的", "wǒ yīng dé de", "Eu mereço"],
     ["mereces", "you deserve", "你值得", "nǐ zhí de", "você merece"],
     ["merece", "deserves", "应得", "yīng dé", "merece"],
@@ -781,7 +811,9 @@ export const p6_196_deserving__merecer = {
     ["merecer", "deserve", "应得", "yīng dé", "merece"],
     ["mérito", "merit", "优点", "yōu diǎn", "mérito"],
     ["merecimiento", "desert", "沙漠", "shā mò", "deserto"],
-    ["dignidad", "dignity", "尊严", "zūn yán", "dignidade"],
+    ["dignidad", "dignity", "尊严", "zūn yán", "dignidade"]
+  ],
+  exampleWords: [
     ["yo merezco", "I deserve", "我应得的", "wǒ yīng dé de", "Eu mereço"],
     ["lo merezco", "I deserve it", "我应得的", "wǒ yīng dé de", "Eu mereço"],
     ["tú mereces", "you deserve", "你值得", "nǐ zhí de", "você merece"],
@@ -813,15 +845,15 @@ export const p6_197_insurance__terms = {
     pinyin: "Bǎoxiǎn Shùyǔ",
     portuguese: "Termos de Seguro"
   },
-  words: [
+  baseWords: [
     ["asegurar", "ensure", "确保", "què bǎo", "garantir"],
-    ["póliza", "policy", "政策", "zhèng cè", "política"],
-    ["siniestro", "sinister", "险恶", "xiǎn è", "sinistro"],
+    ["póliza", "policy", "保单", "bǎo dān", "apólice"],
+    ["siniestro", "accident", "事故", "shì gù", "sinistro"],
     ["indemnización", "compensation", "补偿", "bǔ cháng", "compensação"],
     ["beneficiario", "beneficiary", "受益人", "shòu yì rén", "beneficiário"],
     ["aseguradora", "insurer", "保险公司", "bǎo xiǎn gōng sī", "seguradora"],
     ["agente", "agent", "代理", "dài lǐ", "agente"],
-    ["cubrir", "cover", "封面", "fēng miàn", "capa"],
+    ["cubrir", "to cover", "承保", "chéng bǎo", "cobrir"],
     ["reclamar", "claim", "索赔", "suǒ péi", "reivindicação"],
     ["riesgo", "risk", "风险", "fēng xiǎn", "risco"],
     ["responsabilidad", "responsibility", "责任", "zé rèn", "responsabilidade"],
@@ -831,14 +863,16 @@ export const p6_197_insurance__terms = {
     ["beneficio", "benefit", "好处", "hǎo chù", "benefício"],
     ["contingencia", "contingency", "意外事件", "yì wài shì jiàn", "contingência"],
     ["siniestralidad", "accident rate", "事故率", "shì gù lǜ", "taxa de acidentes"],
-    ["franquicia", "franchise", "特许经营", "tè xǔ jīng yíng", "franquia"],
-    ["exclusión", "exclusion", "排除", "pái chú", "exclusão"],
+    ["franquicia", "deductible", "免赔额", "miǎn péi é", "franquia"],
+    ["exclusión", "exclusion", "排除", "pái chú", "exclusão"]
+  ],
+  exampleWords: [
     ["hay que asegurar", "must be ensured", "必须保证", "bì xū bǎo zhèng", "deve ser garantido"],
     ["voy a asegurar", "I will ensure", "我会保证", "wǒ huì bǎo zhèng", "Eu garantirei"],
-    ["la póliza", "the policy", "政策", "zhèng cè", "a política"],
-    ["una póliza", "a policy", "政策", "zhèng cè", "uma política"],
+    ["la póliza", "the policy", "保单", "bǎo dān", "a apólice"],
+    ["una póliza", "a policy", "保单", "bǎo dān", "uma apólice"],
     ["el siniestro", "the accident", "事故", "shì gù", "o acidente"],
-    ["un siniestro", "a sinister", "险恶的", "xiǎn è de", "um sinistro"],
+    ["un siniestro", "an accident", "事故", "shì gù", "um sinistro"],
     ["la indemnización", "compensation", "补偿", "bǔ cháng", "compensação"],
     ["una indemnización", "compensation", "补偿", "bǔ cháng", "compensação"],
     ["el beneficiario", "the beneficiary", "受益人", "shòu yì rén", "o beneficiário"],
@@ -847,10 +881,10 @@ export const p6_197_insurance__terms = {
     ["una aseguradora", "an insurer", "保险公司", "bǎo xiǎn gōng sī", "uma seguradora"],
     ["el agente", "the agent", "代理", "dài lǐ", "o agente"],
     ["un agente", "an agent", "代理", "dài lǐ", "um agente"],
-    ["hay que cubrir", "must be covered", "必须覆盖", "bì xū fù gài", "deve ser coberto"],
-    ["voy a cubrir", "I'll cover", "我会覆盖", "wǒ huì fù gài", "Eu vou cobrir"],
-    ["hay que reclamar", "you have to claim", "你必须声明", "nǐ bì xū shēng míng", "você tem que reivindicar"],
-    ["voy a reclamar", "I'm going to claim", "我要声明", "wǒ yào shēng míng", "Vou reivindicar"],
+    ["hay que cubrir", "must be covered", "必须承保", "bì xū chéng bǎo", "deve ser coberto"],
+    ["voy a cubrir", "I'll cover", "我会承保", "wǒ huì chéng bǎo", "Eu vou cobrir"],
+    ["hay que reclamar", "you have to claim", "你必须索赔", "nǐ bì xū suǒ péi", "você tem que reivindicar"],
+    ["voy a reclamar", "I'm going to claim", "我要索赔", "wǒ yào suǒ péi", "Vou reivindicar"],
     ["el riesgo", "the risk", "风险", "fēng xiǎn", "o risco"],
     ["un riesgo", "a risk", "风险", "fēng xiǎn", "um risco"],
     ["la responsabilidad", "responsibility", "责任", "zé rèn", "responsabilidade"],
@@ -867,8 +901,8 @@ export const p6_197_insurance__terms = {
     ["una contingencia", "a contingency", "意外事件", "yì wài shì jiàn", "uma contingência"],
     ["la siniestralidad", "the accident rate", "事故率", "shì gù lǜ", "a taxa de acidentes"],
     ["sin siniestralidad", "without accidents", "无意外", "wú yì wài", "sem acidentes"],
-    ["la franquicia", "the franchise", "特许经营权", "tè xǔ jīng yíng quán", "a franquia"],
-    ["una franquicia", "a franchise", "特许经营", "tè xǔ jīng yíng", "uma franquia"],
+    ["la franquicia", "the deductible", "免赔额", "miǎn péi é", "a franquia"],
+    ["una franquicia", "a deductible", "免赔额", "miǎn péi é", "uma franquia"],
     ["la exclusión", "exclusion", "排除", "pái chú", "exclusão"],
     ["una exclusión", "an exclusion", "排除", "pái chú", "uma exclusão"]
   ]
@@ -882,7 +916,7 @@ export const p6_198_suffering__sufrir = {
     pinyin: "Zāoshòu (sufrir)",
     portuguese: "Sofrer"
   },
-  words: [
+  baseWords: [
     ["sufro", "I suffer", "我受苦", "wǒ shòu kǔ", "Eu sofro"],
     ["sufres", "you suffer", "你受苦", "nǐ shòu kǔ", "você sofre"],
     ["sufre", "suffers", "受苦", "shòu kǔ", "sofre"],
@@ -892,7 +926,9 @@ export const p6_198_suffering__sufrir = {
     ["sufrir", "suffer", "受苦", "shòu kǔ", "sofrer"],
     ["sufrimiento", "suffering", "痛苦", "tòng kǔ", "sofrimento"],
     ["padecer", "suffer", "受苦", "shòu kǔ", "sofrer"],
-    ["agonía", "agony", "痛苦", "tòng kǔ", "agonia"],
+    ["agonía", "agony", "痛苦", "tòng kǔ", "agonia"]
+  ],
+  exampleWords: [
     ["yo sufro", "I suffer", "我受苦", "wǒ shòu kǔ", "Eu sofro"],
     ["no sufro", "I don't suffer", "我不痛苦", "wǒ bù tòng kǔ", "Eu não sofro"],
     ["tú sufres", "you suffer", "你受苦", "nǐ shòu kǔ", "você sofre"],
@@ -924,7 +960,7 @@ export const p6_199_enjoying__disfrutar = {
     pinyin: "Xiǎngshòu (disfrutar)",
     portuguese: "Desfrutar"
   },
-  words: [
+  baseWords: [
     ["disfruto", "I enjoy", "我喜欢", "wǒ xǐ huān", "Eu gosto"],
     ["disfrutas", "you enjoy", "你喜欢", "nǐ xǐ huān", "você gosta"],
     ["disfruta", "enjoy", "享受", "xiǎng shòu", "aproveite"],
@@ -934,7 +970,9 @@ export const p6_199_enjoying__disfrutar = {
     ["disfrutar", "enjoy", "享受", "xiǎng shòu", "aproveite"],
     ["disfrute", "enjoy", "享受", "xiǎng shòu", "aproveite"],
     ["goce", "enjoyment", "享受", "xiǎng shòu", "diversão"],
-    ["placer", "pleasure", "快乐", "kuài lè", "prazer"],
+    ["placer", "pleasure", "快乐", "kuài lè", "prazer"]
+  ],
+  exampleWords: [
     ["yo disfruto", "I enjoy", "我喜欢", "wǒ xǐ huān", "Eu gosto"],
     ["lo disfruto", "I enjoy it", "我很享受", "wǒ hěn xiǎng shòu", "Eu gosto disso"],
     ["tú disfrutas", "you enjoy", "你喜欢", "nǐ xǐ huān", "você gosta"],
@@ -966,10 +1004,10 @@ export const p6_200_real__estate__terms = {
     pinyin: "Fángdìchǎn Shùyǔ",
     portuguese: "Termos Imobiliários"
   },
-  words: [
+  baseWords: [
     ["bienes", "goods", "货物", "huò wù", "bens"],
     ["inmueble", "property", "财产", "cái chǎn", "propriedade"],
-    ["terreno", "terrain", "地形", "dì xíng", "terreno"],
+    ["terreno", "land", "土地", "tǔ dì", "terreno"],
     ["alquilar", "rent", "租金", "zū jīn", "alugar"],
     ["alquiler", "rent", "租金", "zū jīn", "alugar"],
     ["renta", "income", "收入", "shōu rù", "renda"],
@@ -977,18 +1015,20 @@ export const p6_200_real__estate__terms = {
     ["propietaria", "owner", "业主", "yè zhǔ", "proprietário"],
     ["inquilino", "tenant", "租户", "zū hù", "inquilino"],
     ["inquilina", "tenant", "租户", "zū hù", "inquilino"],
-    ["valorar", "rate", "率", "lǜ", "taxa"],
+    ["valorar", "to appraise", "评估", "píng gū", "avaliar"],
     ["inmobiliaria", "real estate", "房地产", "fáng dì chǎn", "imobiliário"],
-    ["lote", "lot", "大量", "dà liàng", "muito"],
-    ["parcela", "plot", "情节", "qíng jié", "enredo"],
+    ["lote", "plot", "地块", "dì kuài", "lote"],
+    ["parcela", "parcel", "地块", "dì kuài", "parcela"],
     ["arrendamiento", "lease", "租赁", "zū lìn", "arrendamento"],
     ["desalojo", "eviction", "驱逐", "qū zhú", "despejo"],
-    ["embargo", "however", "然而", "rán ér", "entretanto"],
+    ["embargo", "seizure", "查封", "chá fēng", "penhora"]
+  ],
+  exampleWords: [
     ["los bienes", "the goods", "货物", "huò wù", "as mercadorias"],
     ["bienes raíces", "real estate", "房地产", "fáng dì chǎn", "imobiliário"],
     ["el inmueble", "the property", "财产", "cái chǎn", "a propriedade"],
     ["un inmueble", "a property", "财产", "cái chǎn", "uma propriedade"],
-    ["el terreno", "the terrain", "地形", "dì xíng", "o terreno"],
+    ["el terreno", "the land", "土地", "tǔ dì", "o terreno"],
     ["un terreno", "a piece of land", "一块土地", "yī kuài tǔ dì", "um pedaço de terra"],
     ["hay que alquilar", "you have to rent", "你必须租", "nǐ bì xū zū", "você tem que alugar"],
     ["voy a alquilar", "I'm going to rent", "我要租", "wǒ yào zū", "Vou alugar"],
@@ -1009,9 +1049,9 @@ export const p6_200_real__estate__terms = {
     ["la inmobiliaria", "the real estate", "房地产", "fáng dì chǎn", "o imobiliário"],
     ["una inmobiliaria", "a real estate", "房地产", "fáng dì chǎn", "um imóvel"],
     ["el lote", "the lot", "地段", "dì duàn", "o lote"],
-    ["un lote", "a lot", "很多", "hěn duō", "muito"],
-    ["la parcela", "the plot", "情节", "qíng jié", "o enredo"],
-    ["una parcela", "a plot", "情节", "qíng jié", "um enredo"],
+    ["un lote", "a plot", "地块", "dì kuài", "um lote"],
+    ["la parcela", "the parcel", "地块", "dì kuài", "a parcela"],
+    ["una parcela", "a parcel", "地块", "dì kuài", "uma parcela"],
     ["el arrendamiento", "the lease", "租约", "zū yuē", "o arrendamento"],
     ["un arrendamiento", "a lease", "租约", "zū yuē", "um arrendamento"],
     ["el desalojo", "the eviction", "驱逐", "qū zhú", "o despejo"],
@@ -1029,7 +1069,7 @@ export const p6_201_occurring__ocurrir = {
     pinyin: "Fāshēng (ocurrir)",
     portuguese: "Ocorrer"
   },
-  words: [
+  baseWords: [
     ["ocurro", "happens", "发生", "fā shēng", "acontece"],
     ["ocurres", "occur", "发生", "fā shēng", "ocorrer"],
     ["ocurre", "happens", "发生", "fā shēng", "acontece"],
@@ -1039,7 +1079,9 @@ export const p6_201_occurring__ocurrir = {
     ["ocurrir", "occur", "发生", "fā shēng", "ocorrer"],
     ["evento", "event", "事件", "shì jiàn", "evento"],
     ["tener lugar", "take place", "发生", "fā shēng", "acontecer"],
-    ["acaecer", "happen", "发生", "fā shēng", "acontecer"],
+    ["acaecer", "happen", "发生", "fā shēng", "acontecer"]
+  ],
+  exampleWords: [
     ["me ocurro", "it occurs to me", "我想到了", "wǒ xiǎng dào le", "isso me ocorre"],
     ["se me ocurro", "it occurred to me", "我想到了", "wǒ xiǎng dào le", "isso me ocorreu"],
     ["te ocurres", "do you think", "你认为", "nǐ rèn wéi", "você acha"],
@@ -1071,7 +1113,7 @@ export const p6_202_happening__suceder = {
     pinyin: "Fāshēng (suceder)",
     portuguese: "Suceder"
   },
-  words: [
+  baseWords: [
     ["sucedo", "happen", "发生", "fā shēng", "acontecer"],
     ["sucedes", "happen", "发生", "fā shēng", "acontecer"],
     ["sucede", "happens", "发生", "fā shēng", "acontece"],
@@ -1080,7 +1122,9 @@ export const p6_202_happening__suceder = {
     ["suceden", "happen", "发生", "fā shēng", "acontecer"],
     ["suceder", "happen", "发生", "fā shēng", "acontecer"],
     ["suceso", "event", "事件", "shì jiàn", "evento"],
-    ["acontecer", "happen", "发生", "fā shēng", "acontecer"],
+    ["acontecer", "happen", "发生", "fā shēng", "acontecer"]
+  ],
+  exampleWords: [
     ["yo sucedo", "I happen", "我碰巧", "wǒ pèng qiǎo", "eu acontece"],
     ["le sucedo", "I happen to you", "我发生在你身上", "wǒ fā shēng zài nǐ shēn shàng", "Aconteceu com você"],
     ["tú sucedes", "you happen", "你发生了", "nǐ fā shēng le", "você acontece"],
@@ -1110,7 +1154,7 @@ export const p6_203_aviation__terms = {
     pinyin: "Hángkōng Shùyǔ",
     portuguese: "Termos de Aviação"
   },
-  words: [
+  baseWords: [
     ["aviación", "aviation", "航空", "háng kōng", "aviação"],
     ["piloto", "pilot", "飞行员", "fēi xíng yuán", "piloto"],
     ["copiloto", "co-pilot", "副驾驶", "fù jià shǐ", "copiloto"],
@@ -1121,14 +1165,16 @@ export const p6_203_aviation__terms = {
     ["turbulencia", "turbulence", "湍流", "tuān liú", "turbulência"],
     ["pasajero", "passenger", "乘客", "chéng kè", "passageiro"],
     ["pasajera", "passenger", "乘客", "chéng kè", "passageiro"],
-    ["facturar", "invoice", "发票", "fā piào", "fatura"],
-    ["embarcar", "embark", "登船", "dēng chuán", "embarcar"],
+    ["facturar", "to check in", "托运", "tuō yùn", "despachar"],
+    ["embarcar", "to board", "登机", "dēng jī", "embarcar"],
     ["cabina", "cabin", "机舱", "jī cāng", "cabine"],
-    ["tripulación", "crew", "船员", "chuán yuán", "tripulação"],
+    ["tripulación", "crew", "机组人员", "jī zǔ rén yuán", "tripulação"],
     ["altitud", "altitude", "海拔", "hǎi bá", "altitude"],
     ["velocidad", "speed", "速度", "sù dù", "velocidade"],
     ["torre", "tower", "塔", "tǎ", "torre"],
-    ["hangar", "hangar", "机库", "jī kù", "hangar"],
+    ["hangar", "hangar", "机库", "jī kù", "hangar"]
+  ],
+  exampleWords: [
     ["la aviación", "aviation", "航空", "háng kōng", "aviação"],
     ["de aviación", "aviation", "航空", "háng kōng", "aviação"],
     ["el piloto", "the pilot", "飞行员", "fēi xíng yuán", "o piloto"],
@@ -1149,14 +1195,14 @@ export const p6_203_aviation__terms = {
     ["un pasajero", "a passenger", "乘客", "chéng kè", "um passageiro"],
     ["la pasajera", "the passenger", "乘客", "chéng kè", "o passageiro"],
     ["una pasajera", "a passenger", "乘客", "chéng kè", "um passageiro"],
-    ["hay que facturar", "must be invoiced", "必须开具发票", "bì xū kāi jù fā piào", "deve ser faturado"],
-    ["voy a facturar", "I will invoice", "我会开发票", "wǒ huì kāi fā piào", "Vou faturar"],
+    ["hay que facturar", "must check in", "必须托运", "bì xū tuō yùn", "deve despachar"],
+    ["voy a facturar", "I will check in", "我要托运", "wǒ yào tuō yùn", "Vou despachar"],
     ["hay que embarcar", "you have to board", "你必须登机", "nǐ bì xū dēng jī", "você tem que embarcar"],
     ["voy a embarcar", "I'm going to board", "我要登机", "wǒ yào dēng jī", "Vou embarcar"],
-    ["la cabina", "the cabin", "小屋", "xiǎo wū", "a cabana"],
+    ["la cabina", "the cabin", "机舱", "jī cāng", "a cabine"],
     ["en cabina", "in cabin", "在机舱内", "zài jī cāng nèi", "na cabine"],
-    ["la tripulación", "the crew", "船员", "chuán yuán", "a tripulação"],
-    ["una tripulación", "a crew", "船员", "chuán yuán", "uma tripulação"],
+    ["la tripulación", "the crew", "机组人员", "jī zǔ rén yuán", "a tripulação"],
+    ["una tripulación", "a crew", "机组人员", "jī zǔ rén yuán", "uma tripulação"],
     ["la altitud", "the altitude", "海拔", "hǎi bá", "a altitude"],
     ["a altitud", "at altitude", "在海拔高度", "zài hǎi bá gāo dù", "em altitude"],
     ["la velocidad", "speed", "速度", "sù dù", "velocidade"],
@@ -1176,7 +1222,7 @@ export const p6_204_protecting__proteger = {
     pinyin: "Bǎohù (proteger)",
     portuguese: "Proteger"
   },
-  words: [
+  baseWords: [
     ["protejo", "I protect", "我保护", "wǒ bǎo hù", "Eu protejo"],
     ["proteges", "you protect", "你保护", "nǐ bǎo hù", "você protege"],
     ["protege", "protects", "保护", "bǎo hù", "protege"],
@@ -1186,7 +1232,9 @@ export const p6_204_protecting__proteger = {
     ["proteger", "protect", "保护", "bǎo hù", "proteger"],
     ["protección", "protection", "保护", "bǎo hù", "proteção"],
     ["resguardo", "shelter", "庇护所", "bì hù suǒ", "abrigo"],
-    ["salvaguardar", "safeguard", "保障", "bǎo zhàng", "salvaguardar"],
+    ["salvaguardar", "safeguard", "保障", "bǎo zhàng", "salvaguardar"]
+  ],
+  exampleWords: [
     ["yo protejo", "I protect", "我保护", "wǒ bǎo hù", "Eu protejo"],
     ["lo protejo", "I protect it", "我保护它", "wǒ bǎo hù tā", "Eu protejo isso"],
     ["tú proteges", "you protect", "你保护", "nǐ bǎo hù", "você protege"],
@@ -1218,7 +1266,7 @@ export const p6_205_defending__defender = {
     pinyin: "Fángyù (defender)",
     portuguese: "Defender"
   },
-  words: [
+  baseWords: [
     ["defiendo", "I defend", "我捍卫", "wǒ hàn wèi", "Eu defendo"],
     ["defiendes", "you defend", "你捍卫", "nǐ hàn wèi", "você defende"],
     ["defiende", "defend", "捍卫", "hàn wèi", "defender"],
@@ -1228,7 +1276,9 @@ export const p6_205_defending__defender = {
     ["defender", "defend", "捍卫", "hàn wèi", "defender"],
     ["defensa", "defense", "防御", "fáng yù", "defesa"],
     ["defensor", "defender", "后卫", "hòu wèi", "defensor"],
-    ["custodio", "custodian", "托管人", "tuō guǎn rén", "custodiante"],
+    ["custodio", "custodian", "托管人", "tuō guǎn rén", "custodiante"]
+  ],
+  exampleWords: [
     ["yo defiendo", "I defend", "我捍卫", "wǒ hàn wèi", "Eu defendo"],
     ["lo defiendo", "I defend it", "我捍卫它", "wǒ hàn wèi tā", "Eu defendo"],
     ["tú defiendes", "you defend", "你捍卫", "nǐ hàn wèi", "você defende"],
@@ -1260,7 +1310,7 @@ export const p6_206_logistics__shipping = {
     pinyin: "Wùliú yǔ Yùnshū",
     portuguese: "Logística e Transporte"
   },
-  words: [
+  baseWords: [
     ["logística", "logistics", "物流", "wù liú", "logística"],
     ["transporte", "transport", "运输", "yùn shū", "transporte"],
     ["distribución", "distribution", "分布", "fēn bù", "distribuição"],
@@ -1272,15 +1322,17 @@ export const p6_206_logistics__shipping = {
     ["paquete", "package", "包", "bāo", "pacote"],
     ["contenedor", "container", "集装箱", "jí zhuāng xiāng", "recipiente"],
     ["camión", "truck", "卡车", "kǎ chē", "caminhão"],
-    ["rastrear", "track", "轨道", "guǐ dào", "acompanhar"],
+    ["rastrear", "to track", "追踪", "zhuī zōng", "rastrear"],
     ["gestionar", "manage", "管理", "guǎn lǐ", "gerenciar"],
-    ["coordinar", "coordinate", "坐标", "zuò biāo", "coordenar"],
+    ["coordinar", "to coordinate", "协调", "xié tiáo", "coordenar"],
     ["flete", "freight", "货运", "huò yùn", "frete"],
     ["aduana", "customs", "海关", "hǎi guān", "costumes"],
     ["aranceles", "tariffs", "关税", "guān shuì", "tarifas"],
     ["tránsito", "transit", "过境", "guò jìng", "trânsito"],
-    ["bodega", "winery", "酒庄", "jiǔ zhuāng", "vinícola"],
-    ["depósito", "deposit", "存款", "cún kuǎn", "depósito"],
+    ["bodega", "cargo hold", "货舱", "huò cāng", "porão"],
+    ["depósito", "warehouse", "仓库", "cāng kù", "depósito"]
+  ],
+  exampleWords: [
     ["la logística", "logistics", "物流", "wù liú", "logística"],
     ["de logística", "logistics", "物流", "wù liú", "logística"],
     ["el transporte", "transportation", "交通", "jiāo tōng", "transporte"],
@@ -1317,10 +1369,10 @@ export const p6_206_logistics__shipping = {
     ["sin aranceles", "no tariffs", "无关税", "wú guān shuì", "sem tarifas"],
     ["en tránsito", "in transit", "运输途中", "yùn shū tú zhōng", "em trânsito"],
     ["de tránsito", "transit", "过境", "guò jìng", "trânsito"],
-    ["la bodega", "the winery", "酒庄", "jiǔ zhuāng", "a vinícola"],
-    ["una bodega", "a winery", "一个酒厂", "yí gè jiǔ chǎng", "uma vinícola"],
-    ["el depósito", "the deposit", "押金", "yā jīn", "o depósito"],
-    ["un depósito", "a deposit", "押金", "yā jīn", "um depósito"]
+    ["la bodega", "the cargo hold", "货舱", "huò cāng", "o porão"],
+    ["una bodega", "a cargo hold", "货舱", "huò cāng", "um porão"],
+    ["el depósito", "the warehouse", "仓库", "cāng kù", "o depósito"],
+    ["un depósito", "a warehouse", "仓库", "cāng kù", "um depósito"]
   ]
 };
 
@@ -1332,7 +1384,7 @@ export const p6_207_reducing__reducir = {
     pinyin: "Jiǎnshǎo (reducir)",
     portuguese: "Reduzir"
   },
-  words: [
+  baseWords: [
     ["reduzco", "I reduce", "我减少", "wǒ jiǎn shǎo", "Eu reduzo"],
     ["reduces", "you reduce", "你减少", "nǐ jiǎn shǎo", "você reduz"],
     ["reduce", "reduces", "减少", "jiǎn shǎo", "reduz"],
@@ -1342,7 +1394,9 @@ export const p6_207_reducing__reducir = {
     ["reducir", "reduce", "减少", "jiǎn shǎo", "reduzir"],
     ["reducción", "reduction", "减少", "jiǎn shǎo", "redução"],
     ["disminución", "decrease", "减少", "jiǎn shǎo", "diminuir"],
-    ["recorte", "clipping", "剪辑", "jiǎn jí", "recorte"],
+    ["recorte", "clipping", "剪辑", "jiǎn jí", "recorte"]
+  ],
+  exampleWords: [
     ["yo reduzco", "I reduce", "我减少", "wǒ jiǎn shǎo", "Eu reduzo"],
     ["lo reduzco", "I reduce it", "我减少它", "wǒ jiǎn shǎo tā", "Eu reduzo"],
     ["tú reduces", "you reduce", "你减少", "nǐ jiǎn shǎo", "você reduz"],
@@ -1374,7 +1428,7 @@ export const p6_208_increasing__aumentar = {
     pinyin: "Zēngjiā (aumentar)",
     portuguese: "Aumentar"
   },
-  words: [
+  baseWords: [
     ["aumento", "increase", "增加", "zēng jiā", "aumentar"],
     ["aumentas", "you increase", "你增加", "nǐ zēng jiā", "você aumenta"],
     ["aumenta", "increases", "增加", "zēng jiā", "aumenta"],
@@ -1384,7 +1438,9 @@ export const p6_208_increasing__aumentar = {
     ["aumentar", "increase", "增加", "zēng jiā", "aumentar"],
     ["incremento", "increase", "增加", "zēng jiā", "aumentar"],
     ["alza", "rise", "上升", "shàng shēng", "subir"],
-    ["auge", "boom", "繁荣", "fán róng", "estrondo"],
+    ["auge", "boom", "繁荣", "fán róng", "estrondo"]
+  ],
+  exampleWords: [
     ["yo aumento", "I increase", "我增加", "wǒ zēng jiā", "Eu aumento"],
     ["lo aumento", "I increase it", "我增加它", "wǒ zēng jiā tā", "Eu aumento"],
     ["tú aumentas", "you increase", "你增加", "nǐ zēng jiā", "você aumenta"],
@@ -1416,9 +1472,9 @@ export const p6_209_pharmaceutical__terms = {
     pinyin: "Zhìyào Shùyǔ",
     portuguese: "Termos Farmacêuticos"
   },
-  words: [
+  baseWords: [
     ["farmacéutico", "pharmacist", "药剂师", "yào jì shī", "farmacêutico"],
-    ["medicamento", "medicine", "医学", "yī xué", "medicina"],
+    ["medicamento", "medication", "药物", "yào wù", "medicamento"],
     ["píldora", "pill", "丸", "wán", "pílula"],
     ["cápsula", "capsule", "胶囊", "jiāo náng", "cápsula"],
     ["jarabe", "syrup", "糖浆", "táng jiāng", "xarope"],
@@ -1431,10 +1487,12 @@ export const p6_209_pharmaceutical__terms = {
     ["aliviar", "relieve", "缓解", "huǎn jiě", "aliviar"],
     ["genérico", "generic", "通用", "tōng yòng", "genérico"],
     ["patente", "patent", "专利", "zhuān lì", "patente"],
-    ["prospecto", "prospectus", "招股说明书", "zhāo gǔ shuō míng shū", "prospecto"],
-    ["posología", "posology", "姿势学", "zī shì xué", "posologia"],
+    ["prospecto", "leaflet", "说明书", "shuō míng shū", "bula"],
+    ["posología", "dosage", "用药说明", "yòng yào shuō míng", "posologia"],
     ["contraindicación", "contraindication", "禁忌症", "jìn jì zhèng", "contra-indicação"],
-    ["interacción", "interaction", "互动", "hù dòng", "interação"],
+    ["interacción", "interaction", "互动", "hù dòng", "interação"]
+  ],
+  exampleWords: [
     ["el farmacéutico", "the pharmacist", "药剂师", "yào jì shī", "o farmacêutico"],
     ["un farmacéutico", "a pharmacist", "药剂师", "yào jì shī", "um farmacêutico"],
     ["el medicamento", "the medicine", "药", "yào", "o remédio"],
@@ -1463,7 +1521,7 @@ export const p6_209_pharmaceutical__terms = {
     ["un genérico", "a generic", "通用", "tōng yòng", "um genérico"],
     ["la patente", "the patent", "专利", "zhuān lì", "a patente"],
     ["una patente", "a patent", "专利", "zhuān lì", "uma patente"],
-    ["el prospecto", "the prospectus", "招股说明书", "zhāo gǔ shuō míng shū", "o prospecto"],
+    ["el prospecto", "the leaflet", "说明书", "shuō míng shū", "a bula"],
     ["un prospecto", "a prospect", "前景", "qián jǐng", "um cliente em potencial"],
     ["la posología", "the dosage", "剂量", "jì liàng", "a dosagem"],
     ["una posología", "a posology", "剂量学", "jì liàng xué", "uma posologia"],
@@ -1482,7 +1540,7 @@ export const p6_210_demonstrating__demostrar = {
     pinyin: "Yǎnshì (demostrar)",
     portuguese: "Demonstrar"
   },
-  words: [
+  baseWords: [
     ["demuestro", "I demonstrate", "我演示", "wǒ yǎn shì", "Eu demonstro"],
     ["demuestras", "you demonstrate", "你展示", "nǐ zhǎn shì", "você demonstra"],
     ["demuestra", "proves", "证明", "zhèng míng", "prova"],
@@ -1492,7 +1550,9 @@ export const p6_210_demonstrating__demostrar = {
     ["demostrar", "demonstrate", "演示", "yǎn shì", "demonstrar"],
     ["demostración", "demonstration", "示范", "shì fàn", "demonstração"],
     ["evidenciar", "evidence", "证据", "zhèng jù", "evidências"],
-    ["verificar", "verify", "验证", "yàn zhèng", "verificar"],
+    ["verificar", "verify", "验证", "yàn zhèng", "verificar"]
+  ],
+  exampleWords: [
     ["yo demuestro", "I demonstrate", "我演示", "wǒ yǎn shì", "Eu demonstro"],
     ["lo demuestro", "I prove it", "我证明了", "wǒ zhèng míng liǎo", "Eu provo isso"],
     ["tú demuestras", "you demonstrate", "你展示", "nǐ zhǎn shì", "você demonstra"],
@@ -1524,7 +1584,7 @@ export const p6_211_checking__comprobar = {
     pinyin: "Jiǎnchá (comprobar)",
     portuguese: "Verificar"
   },
-  words: [
+  baseWords: [
     ["compruebo", "I check", "我检查", "wǒ jiǎn chá", "Eu verifico"],
     ["compruebas", "you check", "你检查", "nǐ jiǎn chá", "você verifica"],
     ["comprueba", "check", "检查", "jiǎn chá", "verificar"],
@@ -1534,7 +1594,9 @@ export const p6_211_checking__comprobar = {
     ["comprobar", "check", "检查", "jiǎn chá", "verificar"],
     ["comprobación", "check", "检查", "jiǎn chá", "verificar"],
     ["verificación", "verification", "验证", "yàn zhèng", "verificação"],
-    ["revisión", "review", "评论", "píng lùn", "revisão"],
+    ["revisión", "review", "评论", "píng lùn", "revisão"]
+  ],
+  exampleWords: [
     ["yo compruebo", "I check", "我检查", "wǒ jiǎn chá", "Eu verifico"],
     ["lo compruebo", "I check it", "我检查一下", "wǒ jiǎn chá yī xià", "Eu verifico"],
     ["tú compruebas", "you check", "你检查", "nǐ jiǎn chá", "você verifica"],
@@ -1566,7 +1628,7 @@ export const p6_212_energy__power = {
     pinyin: "Néngyuán yǔ Diànlì",
     portuguese: "Energia e Poder"
   },
-  words: [
+  baseWords: [
     ["eléctrico", "electric", "电动", "diàn dòng", "elétrica"],
     ["renovable", "renewable", "可再生", "kě zài shēng", "renovável"],
     ["sostenible", "sustainable", "可持续", "kě chí xù", "sustentável"],
@@ -1585,7 +1647,9 @@ export const p6_212_energy__power = {
     ["corriente", "current", "当前", "dāng qián", "atual"],
     ["transformador", "transformer", "变压器", "biàn yā qì", "transformador"],
     ["generador", "generator", "发电机", "fā diàn jī", "gerador"],
-    ["red eléctrica", "electrical network", "电力网络", "diàn lì wǎng luò", "rede elétrica"],
+    ["red eléctrica", "electrical network", "电力网络", "diàn lì wǎng luò", "rede elétrica"]
+  ],
+  exampleWords: [
     ["es eléctrico", "It's electric", "这是电动的", "zhè shì diàn dòng de", "É elétrico"],
     ["aparato eléctrico", "electrical appliance", "电器", "diàn qì", "aparelho elétrico"],
     ["es renovable", "is renewable", "是可再生的", "shì kě zài shēng de", "é renovável"],
@@ -1635,7 +1699,7 @@ export const p6_213_thanking__agradecer = {
     pinyin: "Gǎnxiè (agradecer)",
     portuguese: "Agradecer"
   },
-  words: [
+  baseWords: [
     ["agradezco", "I appreciate", "我很欣赏", "wǒ hěn xīn shǎng", "Eu agradeço"],
     ["agradeces", "thank you", "谢谢", "xiè xiè", "obrigado"],
     ["agradece", "thank you", "谢谢", "xiè xiè", "obrigado"],
@@ -1645,7 +1709,9 @@ export const p6_213_thanking__agradecer = {
     ["agradecer", "thank", "谢谢", "xiè xiè", "obrigado"],
     ["agradecimiento", "thanks", "谢谢", "xiè xiè", "obrigado"],
     ["gratitud", "gratitude", "感恩", "gǎn ēn", "gratidão"],
-    ["reconocer", "recognize", "认识", "rèn shí", "reconhecer"],
+    ["reconocer", "recognize", "认识", "rèn shí", "reconhecer"]
+  ],
+  exampleWords: [
     ["yo agradezco", "I appreciate", "我很欣赏", "wǒ hěn xīn shǎng", "Eu agradeço"],
     ["te lo agradezco", "I appreciate it", "我很感激", "wǒ hěn gǎn jī", "Eu agradeço"],
     ["tú agradeces", "you thank", "谢谢你", "xiè xiè nǐ", "você agradece"],
@@ -1677,7 +1743,7 @@ export const p6_214_congratulating__felicitar = {
     pinyin: "Zhùhè (felicitar)",
     portuguese: "Felicitar"
   },
-  words: [
+  baseWords: [
     ["felicito", "congratulations", "恭喜", "gōng xǐ", "parabéns"],
     ["felicitas", "congratulations", "恭喜", "gōng xǐ", "parabéns"],
     ["felicita", "congratulate", "恭喜", "gōng xǐ", "parabéns"],
@@ -1687,7 +1753,9 @@ export const p6_214_congratulating__felicitar = {
     ["felicitar", "congratulate", "恭喜", "gōng xǐ", "parabéns"],
     ["felicitación", "congratulations", "恭喜", "gōng xǐ", "parabéns"],
     ["felicidades", "congratulations", "恭喜", "gōng xǐ", "parabéns"],
-    ["enhorabuena", "congratulations", "恭喜", "gōng xǐ", "parabéns"],
+    ["enhorabuena", "congratulations", "恭喜", "gōng xǐ", "parabéns"]
+  ],
+  exampleWords: [
     ["yo felicito", "I congratulate", "我祝贺", "wǒ zhù hè", "Parabenizo"],
     ["te felicito", "I congratulate you", "我祝贺你", "wǒ zhù hè nǐ", "Parabenizo você"],
     ["tú felicitas", "you congratulate", "你祝贺", "nǐ zhù hè", "você está de parabéns"],
@@ -1719,7 +1787,7 @@ export const p6_215_automotive__terms = {
     pinyin: "Qìchē Shùyǔ",
     portuguese: "Termos Automotivos"
   },
-  words: [
+  baseWords: [
     ["automotriz", "automotive", "汽车", "qì chē", "automotivo"],
     ["automóvil", "automobile", "汽车", "qì chē", "automóvel"],
     ["carro", "car", "汽车", "qì chē", "carro"],
@@ -1734,12 +1802,14 @@ export const p6_215_automotive__terms = {
     ["taller", "workshop", "车间", "chē jiān", "oficina"],
     ["mecánico", "mechanic", "机械师", "jī xiè shī", "mecânico"],
     ["mecánica", "mechanical", "机械", "jī xiè", "mecânica"],
-    ["revisar", "review", "评论", "píng lùn", "revisão"],
-    ["aparcar", "park", "公园", "gōng yuán", "parque"],
+    ["revisar", "to inspect", "检查", "jiǎn chá", "revisar"],
+    ["aparcar", "to park", "停车", "tíng chē", "estacionar"],
     ["transmisión", "transmission", "传输", "chuán shū", "transmissão"],
     ["embrague", "clutch", "离合器", "lí hé qì", "embreagem"],
     ["radiador", "radiator", "散热器", "sàn rè qì", "radiador"],
-    ["alternador", "alternator", "交流发电机", "jiāo liú fā diàn jī", "alternador"],
+    ["alternador", "alternator", "交流发电机", "jiāo liú fā diàn jī", "alternador"]
+  ],
+  exampleWords: [
     ["la automotriz", "the automotive", "汽车", "qì chē", "o automotivo"],
     ["industria automotriz", "automotive industry", "汽车工业", "qì chē gōng yè", "indústria automotiva"],
     ["el automóvil", "the car", "汽车", "qì chē", "o carro"],
@@ -1762,8 +1832,8 @@ export const p6_215_automotive__terms = {
     ["sin gasolina", "without gasoline", "没有汽油", "méi yǒu qì yóu", "sem gasolina"],
     ["el diesel", "the diesel", "柴油", "chái yóu", "o diesel"],
     ["con diesel", "with diesel", "用柴油", "yòng chái yóu", "com gasóleo"],
-    ["el taller", "the workshop", "研讨会", "yán tǎo huì", "a oficina"],
-    ["un taller", "a workshop", "研讨会", "yán tǎo huì", "uma oficina"],
+    ["el taller", "the repair shop", "修理厂", "xiū lǐ chǎng", "a oficina"],
+    ["un taller", "a repair shop", "修理厂", "xiū lǐ chǎng", "uma oficina"],
     ["el mecánico", "the mechanic", "机械师", "jī xiè shī", "o mecânico"],
     ["un mecánico", "a mechanic", "机械师", "jī xiè shī", "um mecânico"],
     ["la mecánica", "the mechanics", "机械师", "jī xiè shī", "a mecânica"],
@@ -1791,7 +1861,7 @@ export const p6_216_suggesting__sugerir = {
     pinyin: "Jiànyì (sugerir)",
     portuguese: "Sugerir"
   },
-  words: [
+  baseWords: [
     ["sugiero", "I suggest", "我建议", "wǒ jiàn yì", "Eu sugiro"],
     ["sugieres", "you suggest", "你建议", "nǐ jiàn yì", "você sugere"],
     ["sugiere", "suggests", "建议", "jiàn yì", "sugere"],
@@ -1800,7 +1870,9 @@ export const p6_216_suggesting__sugerir = {
     ["sugieren", "suggest", "建议", "jiàn yì", "sugerir"],
     ["sugerir", "suggest", "建议", "jiàn yì", "sugerir"],
     ["sugerencia", "suggestion", "建议", "jiàn yì", "sugestão"],
-    ["consejo", "advice", "建议", "jiàn yì", "conselhos"],
+    ["consejo", "advice", "建议", "jiàn yì", "conselhos"]
+  ],
+  exampleWords: [
     ["yo sugiero", "I suggest", "我建议", "wǒ jiàn yì", "Eu sugiro"],
     ["te sugiero", "I suggest you", "我建议你", "wǒ jiàn yì nǐ", "Eu sugiro você"],
     ["tú sugieres", "you suggest", "你建议", "nǐ jiàn yì", "você sugere"],
@@ -1830,7 +1902,7 @@ export const p6_217_recommending__recomendar = {
     pinyin: "Tuījiàn (recomendar)",
     portuguese: "Recomendar"
   },
-  words: [
+  baseWords: [
     ["recomiendo", "I recommend", "我推荐", "wǒ tuī jiàn", "Eu recomendo"],
     ["recomiendas", "do you recommend", "你推荐吗", "nǐ tuī jiàn ma", "você recomenda"],
     ["recomienda", "recommends", "推荐", "tuī jiàn", "recomenda"],
@@ -1839,7 +1911,9 @@ export const p6_217_recommending__recomendar = {
     ["recomiendan", "recommend", "推荐", "tuī jiàn", "recomendo"],
     ["recomendar", "recommend", "推荐", "tuī jiàn", "recomendo"],
     ["recomendación", "recommendation", "推荐", "tuī jiàn", "recomendação"],
-    ["asesoramiento", "advice", "建议", "jiàn yì", "conselhos"],
+    ["asesoramiento", "advice", "建议", "jiàn yì", "conselhos"]
+  ],
+  exampleWords: [
     ["yo recomiendo", "I recommend", "我推荐", "wǒ tuī jiàn", "Eu recomendo"],
     ["te lo recomiendo", "I recommend it", "我推荐它", "wǒ tuī jiàn tā", "Eu recomendo"],
     ["tú recomiendas", "you recommend", "你推荐", "nǐ tuī jiàn", "você recomenda"],
@@ -1869,7 +1943,7 @@ export const p6_218_subjunctive__triggers = {
     pinyin: "Xūnǐ Yǔqì Chùfā Cí",
     portuguese: "Gatilhos do Subjuntivo"
   },
-  words: [
+  baseWords: [
     ["dudar", "doubt", "怀疑", "huái yí", "dúvida"],
     ["temer", "fear", "恐惧", "kǒng jù", "medo"],
     ["alegrarse", "rejoice", "庆幸", "qìng xìng", "alegre-se"],
@@ -1886,7 +1960,9 @@ export const p6_218_subjunctive__triggers = {
     ["aconsejar", "advise", "建议", "jiàn yì", "aconselhar"],
     ["improbable", "unlikely", "不太可能", "bù tài kě néng", "improvável"],
     ["dudoso", "doubtful", "可疑", "kě yí", "duvidoso"],
-    ["increíble", "amazing", "太棒了", "tài bàng le", "incrível"],
+    ["increíble", "amazing", "太棒了", "tài bàng le", "incrível"]
+  ],
+  exampleWords: [
     ["hay que dudar", "you have to doubt", "你不得不怀疑", "nǐ bù dé bù huái yí", "você tem que duvidar"],
     ["no hay que dudar", "no need to hesitate", "无需犹豫", "wú xū yóu yù", "não há necessidade de hesitar"],
     ["hay que temer", "we have to fear", "我们必须害怕", "wǒ men bì xū hài pà", "temos que temer"],
@@ -1932,7 +2008,7 @@ export const p6_219_convincing__convencer = {
     pinyin: "Shuōfú (convencer)",
     portuguese: "Convencer"
   },
-  words: [
+  baseWords: [
     ["convenzo", "I convince", "我说服", "wǒ shuō fú", "Eu convenço"],
     ["convences", "you convince", "你说服", "nǐ shuō fú", "você convence"],
     ["convence", "convinces", "说服", "shuō fú", "convence"],
@@ -1942,7 +2018,9 @@ export const p6_219_convincing__convencer = {
     ["convencer", "convince", "说服", "shuō fú", "convencer"],
     ["convencido", "convinced", "确信", "què xìn", "convencido"],
     ["persuadir", "persuade", "说服", "shuō fú", "persuadir"],
-    ["convicción", "conviction", "信念", "xìn niàn", "convicção"],
+    ["convicción", "conviction", "信念", "xìn niàn", "convicção"]
+  ],
+  exampleWords: [
     ["yo convenzo", "I convince", "我说服", "wǒ shuō fú", "Eu convenço"],
     ["te convenzo", "I convince you", "我说服你", "wǒ shuō fú nǐ", "Eu te convenço"],
     ["tú convences", "you convince", "你说服", "nǐ shuō fú", "você convence"],
@@ -1974,7 +2052,7 @@ export const p6_220_trusting__confiar = {
     pinyin: "Xìnrèn (confiar)",
     portuguese: "Confiar"
   },
-  words: [
+  baseWords: [
     ["confío", "I trust", "我相信", "wǒ xiāng xìn", "Eu confio"],
     ["confías", "do you trust", "你相信吗", "nǐ xiāng xìn ma", "você confia"],
     ["confía", "trust", "信任", "xìn rèn", "confiança"],
@@ -1984,7 +2062,9 @@ export const p6_220_trusting__confiar = {
     ["confiar", "trust", "信任", "xìn rèn", "confiança"],
     ["confianza", "trust", "信任", "xìn rèn", "confiança"],
     ["fiar", "legit", "合法", "hé fǎ", "legítimo"],
-    ["entregar", "deliver", "交付", "jiāo fù", "entregar"],
+    ["entregar", "deliver", "交付", "jiāo fù", "entregar"]
+  ],
+  exampleWords: [
     ["yo confío", "I trust", "我相信", "wǒ xiāng xìn", "Eu confio"],
     ["en ti confío", "I trust in you", "我相信你", "wǒ xiāng xìn nǐ", "Eu confio em você"],
     ["tú confías", "you trust", "你信任", "nǐ xìn rèn", "você confia"],

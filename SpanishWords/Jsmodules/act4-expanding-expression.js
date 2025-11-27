@@ -18,7 +18,7 @@ export const p4_101_law__legal = {
     pinyin: "Fǎlǜ",
     portuguese: "Lei e Jurídico"
   },
-  words: [
+  baseWords: [
     ["abogado", "lawyer", "律师", "lǜ shī", "advogado"],
     ["abogada", "lawyer", "律师", "lǜ shī", "advogado"],
     ["juez", "judge", "判断", "pàn duàn", "juiz"],
@@ -38,7 +38,9 @@ export const p4_101_law__legal = {
     ["prueba", "test", "测试", "cè shì", "teste"],
     ["justicia", "justice", "正义", "zhèng yì", "justiça"],
     ["demanda", "demand", "需求", "xū qiú", "demanda"],
-    ["veredicto", "verdict", "判决", "pàn jué", "veredicto"],
+    ["veredicto", "verdict", "判决", "pàn jué", "veredicto"]
+  ],
+  exampleWords: [
     ["el abogado", "the lawyer", "律师", "lǜ shī", "o advogado"],
     ["un abogado", "a lawyer", "律师", "lǜ shī", "um advogado"],
     ["la abogada", "the lawyer", "律师", "lǜ shī", "o advogado"],
@@ -90,7 +92,7 @@ export const p4_102_remembering__recordar = {
     pinyin: "Jìde (recordar)",
     portuguese: "Lembrar"
   },
-  words: [
+  baseWords: [
     ["recuerdo", "I remember", "我记得", "wǒ jì de", "Eu lembro"],
     ["recuerdas", "do you remember", "你还记得", "nǐ hái jì de", "você se lembra"],
     ["recuerda", "remember", "记住", "jì zhù", "lembre-se"],
@@ -100,7 +102,9 @@ export const p4_102_remembering__recordar = {
     ["recordar", "remember", "记住", "jì zhù", "lembre-se"],
     ["recuerdos", "memories", "回忆", "huí yì", "memórias"],
     ["memorias", "memories", "回忆", "huí yì", "memórias"],
-    ["memoria", "memory", "内存", "nèi cún", "memória"],
+    ["memoria", "memory", "内存", "nèi cún", "memória"]
+  ],
+  exampleWords: [
     ["yo recuerdo", "I remember", "我记得", "wǒ jì de", "Eu lembro"],
     ["lo recuerdo", "I remember", "我记得", "wǒ jì de", "Eu lembro"],
     ["tú recuerdas", "you remember", "你还记得", "nǐ hái jì de", "você se lembra"],
@@ -132,7 +136,7 @@ export const p4_103_forgetting__olvidar = {
     pinyin: "Wàngjì (olvidar)",
     portuguese: "Esquecer"
   },
-  words: [
+  baseWords: [
     ["olvido", "oblivion", "遗忘", "yí wàng", "esquecimento"],
     ["olvidas", "you forget", "你忘记了", "nǐ wàng jì le", "você esquece"],
     ["olvida", "forget", "忘记", "wàng jì", "esquecer"],
@@ -142,7 +146,9 @@ export const p4_103_forgetting__olvidar = {
     ["olvidar", "forget", "忘记", "wàng jì", "esquecer"],
     ["olvidarse", "forget", "忘记", "wàng jì", "esquecer"],
     ["olvidadizo", "forgetful", "健忘", "jiàn wàng", "esquecido"],
-    ["olvidos", "forgetfulness", "健忘", "jiàn wàng", "esquecimento"],
+    ["olvidos", "forgetfulness", "健忘", "jiàn wàng", "esquecimento"]
+  ],
+  exampleWords: [
     ["yo olvido", "I forget", "我忘了", "wǒ wàng le", "Eu esqueci"],
     ["no olvido", "I don't forget", "我没有忘记", "wǒ méi yǒu wàng jì", "Não esqueço"],
     ["tú olvidas", "you forget", "你忘记了", "nǐ wàng jì le", "você esquece"],
@@ -174,7 +180,7 @@ export const p4_104_science__terms = {
     pinyin: "Kēxué Shùyǔ",
     portuguese: "Termos Científicos"
   },
-  words: [
+  baseWords: [
     ["científico", "scientist", "科学家", "kē xué jiā", "cientista"],
     ["científica", "scientific", "科学", "kē xué", "científico"],
     ["experimento", "experiment", "实验", "shí yàn", "experimentar"],
@@ -193,7 +199,9 @@ export const p4_104_science__terms = {
     ["investigar", "investigate", "调查", "diào chá", "investigar"],
     ["observación", "observation", "观察", "guān chá", "observação"],
     ["variable", "variable", "变量", "biàn liàng", "variável"],
-    ["constante", "constant", "常数", "cháng shù", "constante"],
+    ["constante", "constant", "常数", "cháng shù", "constante"]
+  ],
+  exampleWords: [
     ["el científico", "the scientist", "科学家", "kē xué jiā", "o cientista"],
     ["un científico", "a scientist", "科学家", "kē xué jiā", "um cientista"],
     ["la científica", "the scientist", "科学家", "kē xué jiā", "o cientista"],
@@ -243,7 +251,7 @@ export const p4_105_learning__aprender = {
     pinyin: "Xuéxí (aprender)",
     portuguese: "Aprender"
   },
-  words: [
+  baseWords: [
     ["aprendo", "I learn", "我学习", "wǒ xué xí", "Eu aprendo"],
     ["aprendes", "you learn", "你学习", "nǐ xué xí", "você aprende"],
     ["aprende", "learn", "学习", "xué xí", "aprenda"],
@@ -253,7 +261,9 @@ export const p4_105_learning__aprender = {
     ["aprender", "learn", "学习", "xué xí", "aprenda"],
     ["aprendiz", "apprentice", "学徒", "xué tú", "aprendiz"],
     ["alumno", "student", "学生", "xué shēng", "estudante"],
-    ["aprendizaje", "learning", "学习", "xué xí", "aprendendo"],
+    ["aprendizaje", "learning", "学习", "xué xí", "aprendendo"]
+  ],
+  exampleWords: [
     ["yo aprendo", "I learn", "我学习", "wǒ xué xí", "Eu aprendo"],
     ["aprendo rápido", "I learn fast", "我学得很快", "wǒ xué dé hěn kuài", "Aprendo rápido"],
     ["tú aprendes", "you learn", "你学习", "nǐ xué xí", "você aprende"],
@@ -285,7 +295,7 @@ export const p4_106_teaching__ensear = {
     pinyin: "Jiàoxué (enseñar)",
     portuguese: "Ensinar"
   },
-  words: [
+  baseWords: [
     ["enseño", "I teach", "我教", "wǒ jiào", "Eu ensino"],
     ["enseñas", "you teach", "你教", "nǐ jiào", "você ensina"],
     ["enseña", "teaches", "教", "jiào", "ensina"],
@@ -295,7 +305,9 @@ export const p4_106_teaching__ensear = {
     ["enseñar", "teach", "教", "jiào", "ensinar"],
     ["enseñanza", "teaching", "教学", "jiào xué", "ensino"],
     ["maestro", "teacher", "老师", "lǎo shī", "professora"],
-    ["instructor", "instructor", "导师", "dǎo shī", "instrutor"],
+    ["instructor", "instructor", "导师", "dǎo shī", "instrutor"]
+  ],
+  exampleWords: [
     ["yo enseño", "I teach", "我教", "wǒ jiào", "Eu ensino"],
     ["te enseño", "I teach you", "我教你", "wǒ jiào nǐ", "Eu te ensino"],
     ["tú enseñas", "you teach", "你教", "nǐ jiào", "você ensina"],
@@ -327,7 +339,7 @@ export const p4_107_environment__nature = {
     pinyin: "Huánjìng yǔ Zìrán",
     portuguese: "Meio Ambiente e Natureza"
   },
-  words: [
+  baseWords: [
     ["ambiente", "environment", "环境", "huán jìng", "meio ambiente"],
     ["contaminación", "pollution", "污染", "wū rǎn", "poluição"],
     ["reciclaje", "recycling", "回收", "huí shōu", "reciclagem"],
@@ -347,7 +359,9 @@ export const p4_107_environment__nature = {
     ["planeta", "planet", "行星", "xíng xīng", "planeta"],
     ["cuidar", "care", "护理", "hù lǐ", "cuidado"],
     ["conservar", "keep", "保留", "bǎo liú", "manter"],
-    ["preservar", "preserve", "保存", "bǎo cún", "preservar"],
+    ["preservar", "preserve", "保存", "bǎo cún", "preservar"]
+  ],
+  exampleWords: [
     ["el ambiente", "the environment", "环境", "huán jìng", "o meio ambiente"],
     ["medio ambiente", "environment", "环境", "huán jìng", "meio ambiente"],
     ["la contaminación", "pollution", "污染", "wū rǎn", "poluição"],
@@ -399,7 +413,7 @@ export const p4_108_changing__cambiar = {
     pinyin: "Gǎibiàn (cambiar)",
     portuguese: "Mudar"
   },
-  words: [
+  baseWords: [
     ["cambio", "change", "改变", "gǎi biàn", "mudar"],
     ["cambias", "you change", "你改变", "nǐ gǎi biàn", "você muda"],
     ["cambia", "changes", "变化", "biàn huà", "mudanças"],
@@ -409,7 +423,9 @@ export const p4_108_changing__cambiar = {
     ["cambiar", "change", "改变", "gǎi biàn", "mudar"],
     ["intercambio", "exchange", "交换", "jiāo huàn", "troca"],
     ["transformación", "transformation", "转变", "zhuǎn biàn", "transformação"],
-    ["modificación", "modification", "修改", "xiū gǎi", "modificação"],
+    ["modificación", "modification", "修改", "xiū gǎi", "modificação"]
+  ],
+  exampleWords: [
     ["yo cambio", "I change", "我改变", "wǒ gǎi biàn", "Eu mudo"],
     ["lo cambio", "I change it", "我改一下", "wǒ gǎi yī xià", "Eu mudo"],
     ["tú cambias", "you change", "你改变", "nǐ gǎi biàn", "você muda"],
@@ -441,7 +457,7 @@ export const p4_109_improving__mejorar = {
     pinyin: "Gǎijìn (mejorar)",
     portuguese: "Melhorar"
   },
-  words: [
+  baseWords: [
     ["mejoro", "I improve", "我进步", "wǒ jìn bù", "Eu melhoro"],
     ["mejoras", "improvements", "改进", "gǎi jìn", "melhorias"],
     ["mejora", "improvement", "改进", "gǎi jìn", "melhoria"],
@@ -451,7 +467,9 @@ export const p4_109_improving__mejorar = {
     ["mejorar", "improve", "改善", "gǎi shàn", "melhorar"],
     ["mejoramiento", "improvement", "改进", "gǎi jìn", "melhoria"],
     ["progreso", "progress", "进展", "jìn zhǎn", "progresso"],
-    ["empeorar", "get worse", "变得更糟", "biàn dé gèng zāo", "piorar"],
+    ["empeorar", "get worse", "变得更糟", "biàn dé gèng zāo", "piorar"]
+  ],
+  exampleWords: [
     ["yo mejoro", "I improve", "我进步", "wǒ jìn bù", "Eu melhoro"],
     ["siempre mejoro", "I always improve", "我总是进步", "wǒ zǒng shì jìn bù", "Eu sempre melhoro"],
     ["tú mejoras", "you improve", "你进步了", "nǐ jìn bù le", "você melhora"],
@@ -483,7 +501,7 @@ export const p4_110_media__news = {
     pinyin: "Méitǐ yǔ Xīnwén",
     portuguese: "Mídia e Notícias"
   },
-  words: [
+  baseWords: [
     ["medios", "media", "媒体", "méi tǐ", "mídia"],
     ["radio", "radius", "半径", "bàn jìng", "raio"],
     ["periódico", "newspaper", "报纸", "bào zhǐ", "jornal"],
@@ -501,7 +519,9 @@ export const p4_110_media__news = {
     ["transmitir", "transmit", "传输", "chuán shū", "transmitir"],
     ["informar", "inform", "告知", "gào zhī", "informar"],
     ["comunicar", "communicate", "沟通", "gōu tōng", "comunicar"],
-    ["prensa", "press", "按", "àn", "pressione"],
+    ["prensa", "press", "按", "àn", "pressione"]
+  ],
+  exampleWords: [
     ["los medios", "the media", "媒体", "méi tǐ", "a mídia"],
     ["en los medios", "in the media", "在媒体", "zài méi tǐ", "na mídia"],
     ["la radio", "the radio", "收音机", "shōu yīn jī", "o rádio"],
@@ -549,7 +569,7 @@ export const p4_111_trying__intentar = {
     pinyin: "Chángshì (intentar)",
     portuguese: "Tentar"
   },
-  words: [
+  baseWords: [
     ["intento", "try", "尝试", "cháng shì", "tente"],
     ["intentas", "you try", "你试试", "nǐ shì shì", "você tenta"],
     ["intenta", "try", "尝试", "cháng shì", "tente"],
@@ -558,7 +578,9 @@ export const p4_111_trying__intentar = {
     ["intentan", "try", "尝试", "cháng shì", "tente"],
     ["intentar", "try", "尝试", "cháng shì", "tente"],
     ["tratar", "try", "尝试", "cháng shì", "tente"],
-    ["ensayar", "rehearse", "排练", "pái liàn", "ensaiar"],
+    ["ensayar", "rehearse", "排练", "pái liàn", "ensaiar"]
+  ],
+  exampleWords: [
     ["siempre lo intento", "I always try", "我总是尝试", "wǒ zǒng shì cháng shì", "Eu sempre tento"],
     ["intento de nuevo", "try again", "再试一次", "zài shì yī cì", "tente novamente"],
     ["si no lo intentas", "if you don't try", "如果你不尝试", "rú guǒ nǐ bù cháng shì", "se você não tentar"],
@@ -588,7 +610,7 @@ export const p4_112_getting__achieving__conseguir = {
     pinyin: "Huòdé (conseguir)",
     portuguese: "Conseguir"
   },
-  words: [
+  baseWords: [
     ["consigo", "I get", "我得到", "wǒ dé dào", "Eu entendo"],
     ["consigues", "you get", "你得到", "nǐ dé dào", "você consegue"],
     ["consigue", "get", "得到", "dé dào", "obter"],
@@ -597,7 +619,9 @@ export const p4_112_getting__achieving__conseguir = {
     ["consiguen", "they get", "他们得到", "tā men dé dào", "eles conseguem"],
     ["conseguir", "get", "得到", "dé dào", "obter"],
     ["adquirir", "acquire", "获取", "huò qǔ", "adquirir"],
-    ["conquistar", "conquer", "征服", "zhēng fú", "conquistar"],
+    ["conquistar", "conquer", "征服", "zhēng fú", "conquistar"]
+  ],
+  exampleWords: [
     ["no consigo entender", "I can't understand", "看不懂", "kàn bù dǒng", "Não consigo entender"],
     ["siempre consigo mis metas", "I always achieve my goals", "我总是实现我的目标", "wǒ zǒng shì shí xiàn wǒ de mù biāo", "Sempre alcanço meus objetivos"],
     ["cómo lo consigues", "how do you get it", "你怎么得到它", "nǐ zěn me dé dào tā", "como você consegue isso"],
@@ -627,7 +651,7 @@ export const p4_113_geography = {
     pinyin: "Dìlǐ",
     portuguese: "Geografia"
   },
-  words: [
+  baseWords: [
     ["mapa", "map", "地图", "dì tú", "mapa"],
     ["continente", "continent", "大陆", "dà lù", "continente"],
     ["océano", "ocean", "海洋", "hǎi yáng", "oceano"],
@@ -648,7 +672,9 @@ export const p4_113_geography = {
     ["trópico", "tropic", "热带", "rè dài", "trópico"],
     ["ecuador", "equator", "赤道", "chì dào", "Equador"],
     ["polo", "pole", "杆", "gān", "pólo"],
-    ["latitud", "latitude", "纬度", "wěi dù", "latitude"],
+    ["latitud", "latitude", "纬度", "wěi dù", "latitude"]
+  ],
+  exampleWords: [
     ["el mapa", "the map", "地图", "dì tú", "o mapa"],
     ["un mapa", "a map", "地图", "dì tú", "um mapa"],
     ["el continente", "the continent", "大陆", "dà lù", "o continente"],
@@ -702,7 +728,7 @@ export const p4_114_seeming__appearing__parecer = {
     pinyin: "Sìhū (parecer)",
     portuguese: "Parecer"
   },
-  words: [
+  baseWords: [
     ["parezco", "I look like", "我看起来像", "wǒ kàn qǐ lái xiàng", "Eu pareço"],
     ["pareces", "you look like", "你看起来像", "nǐ kàn qǐ lái xiàng", "você parece"],
     ["parece", "seems", "似乎", "sì hū", "parece"],
@@ -712,7 +738,9 @@ export const p4_114_seeming__appearing__parecer = {
     ["parecer", "seem", "似乎", "sì hū", "parece"],
     ["parecerse", "resemble", "类似于", "lèi sì yú", "assemelha-se"],
     ["parecido", "similar", "类似", "lèi sì", "semelhante"],
-    ["apariencia", "appearance", "外观", "wài guān", "aparência"],
+    ["apariencia", "appearance", "外观", "wài guān", "aparência"]
+  ],
+  exampleWords: [
     ["yo parezco", "I seem", "我好像", "wǒ hǎo xiàng", "Eu pareço"],
     ["me parezco", "I look like", "我看起来像", "wǒ kàn qǐ lái xiàng", "Eu pareço"],
     ["tú pareces", "you seem", "你看起来", "nǐ kàn qǐ lái", "você parece"],
@@ -744,7 +772,7 @@ export const p4_115_staying__meeting__quedar = {
     pinyin: "Liúxià yǔ Jiànmiàn (quedar)",
     portuguese: "Ficar e Encontrar"
   },
-  words: [
+  baseWords: [
     ["quedo", "stay", "留下", "liú xià", "fique"],
     ["quedas", "stay", "留下", "liú xià", "fique"],
     ["queda", "remains", "仍然", "réng rán", "permanece"],
@@ -754,7 +782,9 @@ export const p4_115_staying__meeting__quedar = {
     ["quedar", "stay", "留下", "liú xià", "fique"],
     ["quedarse", "stay", "留下", "liú xià", "fique"],
     ["reunirse", "meet", "遇见", "yù jiàn", "conhecer"],
-    ["verse", "see", "见", "jiàn", "veja"],
+    ["verse", "see", "见", "jiàn", "veja"]
+  ],
+  exampleWords: [
     ["yo quedo", "I remain", "我依然", "wǒ yī rán", "Eu permaneço"],
     ["me quedo", "I stay", "我留下", "wǒ liú xià", "Eu fico"],
     ["tú quedas", "you stay", "你留下来", "nǐ liú xià lái", "você fica"],
@@ -786,7 +816,7 @@ export const p4_116_art__culture = {
     pinyin: "Yìshù yǔ Wénhuà",
     portuguese: "Arte e Cultura"
   },
-  words: [
+  baseWords: [
     ["artista", "artist", "艺术家", "yì shù jiā", "artista"],
     ["pintura", "painting", "绘画", "huì huà", "pintura"],
     ["cuadro", "box", "盒子", "hé zi", "caixa"],
@@ -804,7 +834,9 @@ export const p4_116_art__culture = {
     ["grabado", "engraving", "雕刻", "diāo kè", "gravura"],
     ["tallado", "carved", "雕刻", "diāo kè", "esculpido"],
     ["retrato", "portrait", "肖像", "xiào xiàng", "retrato"],
-    ["paisaje", "landscape", "风景", "fēng jǐng", "paisagem"],
+    ["paisaje", "landscape", "风景", "fēng jǐng", "paisagem"]
+  ],
+  exampleWords: [
     ["el artista", "the artist", "艺术家", "yì shù jiā", "o artista"],
     ["un artista", "an artist", "艺术家", "yì shù jiā", "um artista"],
     ["la pintura", "the painting", "这幅画", "zhè fú huà", "a pintura"],
@@ -852,7 +884,7 @@ export const p4_117_arriving__llegar = {
     pinyin: "Dàodá (llegar)",
     portuguese: "Chegar"
   },
-  words: [
+  baseWords: [
     ["llego", "arrived", "到达", "dào dá", "chegou"],
     ["llegas", "you arrive", "你到达", "nǐ dào dá", "você chega"],
     ["llega", "arrives", "到达", "dào dá", "chega"],
@@ -862,7 +894,9 @@ export const p4_117_arriving__llegar = {
     ["llegar", "arrive", "到达", "dào dá", "chegar"],
     ["llegada", "arrival", "到达", "dào dá", "chegada"],
     ["arribo", "arrival", "到达", "dào dá", "chegada"],
-    ["retrasado", "delayed", "延迟", "yán chí", "atrasado"],
+    ["retrasado", "delayed", "延迟", "yán chí", "atrasado"]
+  ],
+  exampleWords: [
     ["yo llego", "I arrive", "我到达", "wǒ dào dá", "Eu chego"],
     ["ya llego", "I'm here", "我在这里", "wǒ zài zhè lǐ", "Estou aqui"],
     ["tú llegas", "you arrive", "你到达", "nǐ dào dá", "você chega"],
@@ -894,7 +928,7 @@ export const p4_118_happening__pasar = {
     pinyin: "Fāshēng (pasar)",
     portuguese: "Acontecer"
   },
-  words: [
+  baseWords: [
     ["paso", "step", "步骤", "bù zhòu", "passo"],
     ["pasas", "raisins", "葡萄干", "pú táo gān", "passas"],
     ["pasa", "pass", "通过", "tōng guò", "passar"],
@@ -904,7 +938,9 @@ export const p4_118_happening__pasar = {
     ["pasar", "pass", "通过", "tōng guò", "passar"],
     ["pasado", "past", "过去", "guò qù", "passado"],
     ["ocurrencia", "occurrence", "发生", "fā shēng", "ocorrência"],
-    ["acontecimiento", "event", "事件", "shì jiàn", "evento"],
+    ["acontecimiento", "event", "事件", "shì jiàn", "evento"]
+  ],
+  exampleWords: [
     ["yo paso", "I pass", "我通过", "wǒ tōng guò", "Eu passo"],
     ["lo paso", "I pass it", "我通过了", "wǒ tōng guò le", "Eu passo"],
     ["tú pasas", "you pass", "你通过了", "nǐ tōng guò le", "você passa"],
@@ -936,7 +972,7 @@ export const p4_119_religion__faith = {
     pinyin: "Zōngjiào yǔ Xìnyǎng",
     portuguese: "Religião e Fé"
   },
-  words: [
+  baseWords: [
     ["religión", "religion", "宗教", "zōng jiào", "religião"],
     ["dios", "god", "上帝", "shàng dì", "deus"],
     ["diosa", "goddess", "女神", "nǚ shén", "deusa"],
@@ -956,7 +992,9 @@ export const p4_119_religion__faith = {
     ["bendecir", "bless", "保佑", "bǎo yòu", "abençoe"],
     ["espiritualidad", "spirituality", "灵性", "líng xìng", "espiritualidade"],
     ["devoción", "devotion", "奉献", "fèng xiàn", "devoção"],
-    ["piedad", "mercy", "怜悯", "lián mǐn", "misericórdia"],
+    ["piedad", "mercy", "怜悯", "lián mǐn", "misericórdia"]
+  ],
+  exampleWords: [
     ["la religión", "religion", "宗教", "zōng jiào", "religião"],
     ["una religión", "a religion", "一种宗教", "yī zhǒng zōng jiào", "uma religião"],
     ["el dios", "the god", "神", "shén", "o deus"],
@@ -1008,7 +1046,7 @@ export const p4_120_letting__leaving__dejar = {
     pinyin: "Ràng yǔ Liúxià (dejar)",
     portuguese: "Deixar"
   },
-  words: [
+  baseWords: [
     ["dejo", "I leave", "我离开", "wǒ lí kāi", "Eu vou embora"],
     ["dejas", "you leave", "你离开", "nǐ lí kāi", "você sai"],
     ["deja", "let", "让", "ràng", "vamos"],
@@ -1018,7 +1056,9 @@ export const p4_120_letting__leaving__dejar = {
     ["dejar", "leave", "离开", "lí kāi", "sair"],
     ["abandono", "abandonment", "遗弃", "yí qì", "abandono"],
     ["renuncia", "resignation", "辞职", "cí zhí", "demissão"],
-    ["autorizar", "authorize", "授权", "shòu quán", "autorizar"],
+    ["autorizar", "authorize", "授权", "shòu quán", "autorizar"]
+  ],
+  exampleWords: [
     ["yo dejo", "I leave", "我离开", "wǒ lí kāi", "Eu vou embora"],
     ["lo dejo", "I leave it", "我留下它", "wǒ liú xià tā", "Eu deixo"],
     ["tú dejas", "you leave", "你离开", "nǐ lí kāi", "você sai"],
@@ -1050,7 +1090,7 @@ export const p4_121_using__usar = {
     pinyin: "Shǐyòng (usar)",
     portuguese: "Usar"
   },
-  words: [
+  baseWords: [
     ["uso", "use", "使用", "shǐ yòng", "usar"],
     ["usas", "you use", "你使用", "nǐ shǐ yòng", "você usa"],
     ["usa", "use", "使用", "shǐ yòng", "usar"],
@@ -1060,7 +1100,9 @@ export const p4_121_using__usar = {
     ["usar", "use", "使用", "shǐ yòng", "usar"],
     ["utilidad", "utility", "实用程序", "shí yòng chéng xù", "utilidade"],
     ["utilizar", "use", "使用", "shǐ yòng", "usar"],
-    ["emplear", "use", "使用", "shǐ yòng", "usar"],
+    ["emplear", "use", "使用", "shǐ yòng", "usar"]
+  ],
+  exampleWords: [
     ["yo uso", "I use", "我用", "wǒ yòng", "Eu uso"],
     ["lo uso", "I use it", "我用它", "wǒ yòng tā", "Eu uso"],
     ["tú usas", "you use", "你使用", "nǐ shǐ yòng", "você usa"],
@@ -1092,7 +1134,7 @@ export const p4_122_tools__building = {
     pinyin: "Gōngjù yǔ Jiànzhù",
     portuguese: "Ferramentas e Construção"
   },
-  words: [
+  baseWords: [
     ["herramienta", "tool", "工具", "gōng jù", "ferramenta"],
     ["martillo", "hammer", "锤子", "chuí zi", "martelo"],
     ["clavo", "nail", "钉子", "dīng zi", "prego"],
@@ -1100,7 +1142,7 @@ export const p4_122_tools__building = {
     ["destornillador", "screwdriver", "螺丝刀", "luó sī dāo", "chave de fenda"],
     ["llave", "key", "关键", "guān jiàn", "chave"],
     ["tijeras", "scissors", "剪刀", "jiǎn dāo", "tesoura"],
-    ["sierra", "saw", "看到", "kàn dào", "vi"],
+    ["sierra", "saw", "锯", "jù", "serra"],
     ["taladro", "drill", "钻", "zuān", "perfurar"],
     ["escalera", "ladder", "梯子", "tī zi", "escada"],
     ["cinta", "tape", "胶带", "jiāo dài", "fita"],
@@ -1112,7 +1154,9 @@ export const p4_122_tools__building = {
     ["arreglar", "fix", "修复", "xiū fù", "consertar"],
     ["máquina", "machine", "机器", "jī qì", "máquina"],
     ["motor", "engine", "发动机", "fā dòng jī", "motor"],
-    ["lijar", "sand", "沙子", "shā zi", "areia"],
+    ["lijar", "to sand", "打磨", "dǎ mó", "lixar"]
+  ],
+  exampleWords: [
     ["la herramienta", "the tool", "该工具", "gāi gōng jù", "a ferramenta"],
     ["una herramienta", "a tool", "一个工具", "yí gè gōng jù", "uma ferramenta"],
     ["el martillo", "the hammer", "锤子", "chuí zi", "o martelo"],
@@ -1133,8 +1177,8 @@ export const p4_122_tools__building = {
     ["un taladro", "a drill", "钻头", "zuàn tóu", "uma broca"],
     ["la escalera", "the ladder", "梯子", "tī zi", "a escada"],
     ["una escalera", "a ladder", "梯子", "tī zi", "uma escada"],
-    ["la cinta", "the tape", "磁带", "cí dài", "a fita"],
-    ["una cinta", "a tape", "一盘磁带", "yī pán cí dài", "uma fita"],
+    ["la cinta", "the tape", "胶带", "jiāo dài", "a fita"],
+    ["una cinta", "a tape", "一卷胶带", "yī juǎn jiāo dài", "uma fita"],
     ["el pegamento", "the glue", "胶水", "jiāo shuǐ", "a cola"],
     ["con pegamento", "with glue", "用胶水", "yòng jiāo shuǐ", "com cola"],
     ["la cuerda", "the rope", "绳子", "shéng zi", "a corda"],
@@ -1152,7 +1196,7 @@ export const p4_122_tools__building = {
     ["el motor", "the engine", "发动机", "fā dòng jī", "o motor"],
     ["un motor", "an engine", "发动机", "fā dòng jī", "um motor"],
     ["hay que lijar", "you have to sand", "你必须打磨", "nǐ bì xū dǎ mó", "você tem que lixar"],
-    ["voy a lijar", "I'm going to sand", "我要去沙子", "wǒ yào qù shā zi", "vou lixar"]
+    ["voy a lijar", "I'm going to sand", "我要打磨", "wǒ yào dǎ mó", "vou lixar"]
   ]
 };
 
@@ -1164,7 +1208,7 @@ export const p4_123_telling__counting__contar = {
     pinyin: "Jiǎngshù yǔ Jìshù (contar)",
     portuguese: "Contar"
   },
-  words: [
+  baseWords: [
     ["cuento", "story", "故事", "gù shì", "história"],
     ["cuentas", "accounts", "账户", "zhàng hù", "contas"],
     ["cuenta", "account", "帐户", "zhàng hù", "conta"],
@@ -1174,7 +1218,9 @@ export const p4_123_telling__counting__contar = {
     ["contar", "count", "计数", "jì shù", "contar"],
     ["relato", "story", "故事", "gù shì", "história"],
     ["narración", "narration", "旁白", "páng bái", "narração"],
-    ["chisme", "gossip", "八卦", "bā guà", "fofoca"],
+    ["chisme", "gossip", "八卦", "bā guà", "fofoca"]
+  ],
+  exampleWords: [
     ["yo cuento", "I count", "我数", "wǒ shù", "Eu conto"],
     ["te cuento", "I'll tell you", "我告诉你", "wǒ gào sù nǐ", "Eu vou te contar"],
     ["tú cuentas", "you count", "你算", "nǐ suàn", "você conta"],
@@ -1206,7 +1252,7 @@ export const p4_124_creating__crear = {
     pinyin: "Chuàngzào (crear)",
     portuguese: "Criar"
   },
-  words: [
+  baseWords: [
     ["creas", "you believe", "你相信", "nǐ xiāng xìn", "você acredita"],
     ["crea", "create", "创建", "chuàng jiàn", "criar"],
     ["creamos", "we create", "我们创造", "wǒ men chuàng zào", "nós criamos"],
@@ -1216,7 +1262,9 @@ export const p4_124_creating__crear = {
     ["creación", "creation", "创造", "chuàng zào", "criação"],
     ["creador", "creator", "创造者", "chuàng zào zhě", "criador"],
     ["inventar", "invent", "发明", "fā míng", "inventar"],
-    ["elaborar", "elaborate", "详细说明", "xiáng xì shuō míng", "elaborado"],
+    ["elaborar", "elaborate", "详细说明", "xiáng xì shuō míng", "elaborado"]
+  ],
+  exampleWords: [
     ["tú creas", "you believe", "你相信", "nǐ xiāng xìn", "você acredita"],
     ["qué creas", "what do you think", "你觉得怎么样", "nǐ jué de zěn me yàng", "o que você acha"],
     ["él crea", "he creates", "他创造", "tā chuàng zào", "ele cria"],
@@ -1248,7 +1296,7 @@ export const p4_125_personality__types = {
     pinyin: "Xìnggé Lèixíng",
     portuguese: "Tipos de Personalidade"
   },
-  words: [
+  baseWords: [
     ["carácter", "character", "字符", "zì fú", "personagem"],
     ["tímido", "shy", "害羞", "hài xiū", "tímido"],
     ["extrovertido", "extrovert", "外向", "wài xiàng", "extrovertido"],
@@ -1268,7 +1316,9 @@ export const p4_125_personality__types = {
     ["solitario", "lonely", "孤独", "gū dú", "solitário"],
     ["curioso", "curious", "好奇", "hào qí", "curioso"],
     ["ingenuo", "naive", "天真", "tiān zhēn", "ingênuo"],
-    ["astuto", "cunning", "狡猾", "jiǎo huá", "astúcia"],
+    ["astuto", "cunning", "狡猾", "jiǎo huá", "astúcia"]
+  ],
+  exampleWords: [
     ["tiene carácter", "has character", "具有字符", "jù yǒu zì fú", "tem caráter"],
     ["carácter fuerte", "strong character", "性格坚强", "xìng gé jiān qiáng", "caráter forte"],
     ["niño tímido", "shy boy", "害羞的男孩", "hài xiū de nán hái", "garoto tímido"],
@@ -1320,7 +1370,7 @@ export const p4_126_going__up__subir = {
     pinyin: "Shàngshēng (subir)",
     portuguese: "Subir"
   },
-  words: [
+  baseWords: [
     ["subo", "I go up", "我上去", "wǒ shàng qù", "eu subo"],
     ["subes", "you go up", "你上去", "nǐ shàng qù", "você sobe"],
     ["sube", "rise", "上升", "shàng shēng", "subir"],
@@ -1330,7 +1380,9 @@ export const p4_126_going__up__subir = {
     ["subir", "upload", "上传", "shàng chuán", "carregar"],
     ["subida", "rise", "上升", "shàng shēng", "subir"],
     ["ascenso", "promotion", "促销", "cù xiāo", "promoção"],
-    ["elevación", "elevation", "海拔", "hǎi bá", "elevação"],
+    ["elevación", "elevation", "海拔", "hǎi bá", "elevação"]
+  ],
+  exampleWords: [
     ["yo subo", "I go up", "我上去", "wǒ shàng qù", "eu subo"],
     ["lo subo", "I upload it", "我上传了", "wǒ shàng chuán le", "Eu carrego"],
     ["tú subes", "you go up", "你上去", "nǐ shàng qù", "você sobe"],
@@ -1362,7 +1414,7 @@ export const p4_127_going__down__bajar = {
     pinyin: "Xiàjiàng (bajar)",
     portuguese: "Descer"
   },
-  words: [
+  baseWords: [
     ["bajo", "low", "低", "dī", "baixo"],
     ["bajas", "lows", "低点", "dī diǎn", "mínimos"],
     ["baja", "low", "低", "dī", "baixo"],
@@ -1371,7 +1423,9 @@ export const p4_127_going__down__bajar = {
     ["bajan", "go down", "下去", "xià qù", "descer"],
     ["bajar", "go down", "下去", "xià qù", "descer"],
     ["bajada", "descent", "血统", "xuè tǒng", "descida"],
-    ["descenso", "descent", "血统", "xuè tǒng", "descida"],
+    ["descenso", "descent", "血统", "xuè tǒng", "descida"]
+  ],
+  exampleWords: [
     ["yo bajo", "I go down", "我下去", "wǒ xià qù", "Eu desço"],
     ["lo bajo", "low", "低", "dī", "baixo"],
     ["tú bajas", "you go down", "你下去", "nǐ xià qù", "você desce"],
@@ -1401,7 +1455,7 @@ export const p4_128_emergency__safety = {
     pinyin: "Jǐnjí yǔ Ānquán",
     portuguese: "Emergência e Segurança"
   },
-  words: [
+  baseWords: [
     ["emergencia", "emergency", "紧急", "jǐn jí", "emergência"],
     ["accidente", "accident", "事故", "shì gù", "acidente"],
     ["peligro", "danger", "危险", "wēi xiǎn", "perigo"],
@@ -1419,7 +1473,9 @@ export const p4_128_emergency__safety = {
     ["alarma", "alarm", "警报", "jǐng bào", "alarme"],
     ["evacuación", "evacuation", "疏散", "shū sàn", "evacuação"],
     ["primeros auxilios", "first aid", "急救", "jí jiù", "primeiros socorros"],
-    ["extinguidor", "extinguisher", "灭火器", "miè huǒ qì", "extintor"],
+    ["extinguidor", "extinguisher", "灭火器", "miè huǒ qì", "extintor"]
+  ],
+  exampleWords: [
     ["la emergencia", "the emergency", "紧急情况", "jǐn jí qíng kuàng", "a emergência"],
     ["una emergencia", "an emergency", "紧急情况", "jǐn jí qíng kuàng", "uma emergência"],
     ["el accidente", "the accident", "事故", "shì gù", "o acidente"],
@@ -1467,7 +1523,7 @@ export const p4_129_falling__caer = {
     pinyin: "Diēluò (caer)",
     portuguese: "Cair"
   },
-  words: [
+  baseWords: [
     ["caigo", "I fall", "我跌倒了", "wǒ diē dǎo le", "Eu caio"],
     ["caes", "you fall", "你跌倒了", "nǐ diē dǎo le", "você cai"],
     ["cae", "falls", "跌倒", "diē dǎo", "cai"],
@@ -1477,7 +1533,9 @@ export const p4_129_falling__caer = {
     ["caer", "fall", "秋天", "qiū tiān", "queda"],
     ["tropiezo", "stumble", "绊倒", "bàn dǎo", "tropeçar"],
     ["resbalón", "slip", "滑", "huá", "escorregar"],
-    ["deslizarse", "slide", "幻灯片", "huàn dēng piàn", "deslizar"],
+    ["deslizarse", "slide", "幻灯片", "huàn dēng piàn", "deslizar"]
+  ],
+  exampleWords: [
     ["yo caigo", "I fall", "我跌倒了", "wǒ diē dǎo le", "Eu caio"],
     ["me caigo", "I fall", "我跌倒了", "wǒ diē dǎo le", "Eu caio"],
     ["tú caes", "you fall", "你跌倒了", "nǐ diē dǎo le", "você cai"],
@@ -1509,7 +1567,7 @@ export const p4_130_lifting__waking__levantar = {
     pinyin: "Táiqǐ yǔ Xǐnglái (levantar)",
     portuguese: "Levantar"
   },
-  words: [
+  baseWords: [
     ["levanto", "I lift", "我举起", "wǒ jǔ qǐ", "Eu levanto"],
     ["levantas", "you lift", "你举起", "nǐ jǔ qǐ", "você levanta"],
     ["levanta", "lift", "电梯", "diàn tī", "levantar"],
@@ -1519,7 +1577,9 @@ export const p4_130_lifting__waking__levantar = {
     ["levantar", "lift", "电梯", "diàn tī", "levantar"],
     ["levantarse", "get up", "起来", "qǐ lái", "levante-se"],
     ["despertador", "alarm clock", "闹钟", "nào zhōng", "despertador"],
-    ["alzar", "raise", "提高", "tí gāo", "aumentar"],
+    ["alzar", "raise", "提高", "tí gāo", "aumentar"]
+  ],
+  exampleWords: [
     ["yo levanto", "I lift", "我举起", "wǒ jǔ qǐ", "Eu levanto"],
     ["lo levanto", "I lift it", "我举起它", "wǒ jǔ qǐ tā", "Eu levanto"],
     ["tú levantas", "you lift", "你举起", "nǐ jǔ qǐ", "você levanta"],
@@ -1551,7 +1611,7 @@ export const p4_131_materials = {
     pinyin: "Cáiliào",
     portuguese: "Materiais"
   },
-  words: [
+  baseWords: [
     ["material", "material", "材质", "cái zhì", "materiais"],
     ["madera", "wood", "木", "mù", "madeira"],
     ["metal", "metal", "金属", "jīn shǔ", "metálica"],
@@ -1571,7 +1631,9 @@ export const p4_131_materials = {
     ["cemento", "cement", "水泥", "shuǐ ní", "cimento"],
     ["piedra", "stone", "石头", "shí tou", "pedra"],
     ["bronce", "bronze", "青铜", "qīng tóng", "bronze"],
-    ["latón", "brass", "黄铜", "huáng tóng", "latão"],
+    ["latón", "brass", "黄铜", "huáng tóng", "latão"]
+  ],
+  exampleWords: [
     ["material escolar", "school supplies", "学校用品", "xué xiào yòng pǐn", "material escolar"],
     ["material de construcción", "construction material", "建筑材料", "jiàn zhù cái liào", "material de construção"],
     ["mesa de madera", "wooden table", "木桌", "mù zhuō", "mesa de madeira"],
@@ -1623,7 +1685,7 @@ export const p4_132_touching__playing__music__tocar = {
     pinyin: "Chùmō yǔ Yǎnzòu (tocar)",
     portuguese: "Tocar"
   },
-  words: [
+  baseWords: [
     ["toco", "I play", "我玩", "wǒ wán", "Eu jogo"],
     ["tocas", "you touch", "你触摸", "nǐ chù mō", "você toca"],
     ["toca", "play", "玩", "wán", "brincar"],
@@ -1633,7 +1695,9 @@ export const p4_132_touching__playing__music__tocar = {
     ["tocar", "touch", "触摸", "chù mō", "toque"],
     ["toque", "touch", "触摸", "chù mō", "toque"],
     ["tacto", "touch", "触摸", "chù mō", "toque"],
-    ["contacto", "contact", "联系方式", "lián xì fāng shì", "contato"],
+    ["contacto", "contact", "联系方式", "lián xì fāng shì", "contato"]
+  ],
+  exampleWords: [
     ["toco la guitarra", "I play the guitar", "我弹吉他", "wǒ dàn jí tā", "Eu toco violão"],
     ["toco el timbre", "I ring the bell", "我按响门铃", "wǒ àn xiǎng mén líng", "Toco a campainha"],
     ["tocas muy bien", "you play very well", "你打得很好", "nǐ dǎ dé hěn hǎo", "você joga muito bem"],
@@ -1665,7 +1729,7 @@ export const p4_133_breaking__romper = {
     pinyin: "Dǎpò (romper)",
     portuguese: "Quebrar"
   },
-  words: [
+  baseWords: [
     ["rompo", "I break", "我打破了", "wǒ dǎ pò le", "Eu quebro"],
     ["rompes", "you break", "你打破了", "nǐ dǎ pò le", "você quebra"],
     ["rompe", "breaks", "休息", "xiū xī", "quebras"],
@@ -1675,7 +1739,9 @@ export const p4_133_breaking__romper = {
     ["romper", "break", "打破", "dǎ pò", "quebrar"],
     ["rotura", "breakage", "破损", "pò sǔn", "quebra"],
     ["roto", "broken", "破碎", "pò suì", "quebrado"],
-    ["fractura", "fracture", "骨折", "gǔ zhé", "fratura"],
+    ["fractura", "fracture", "骨折", "gǔ zhé", "fratura"]
+  ],
+  exampleWords: [
     ["rompo el silencio", "I break the silence", "我打破沉默", "wǒ dǎ pò chén mò", "Quebro o silêncio"],
     ["me rompo la cabeza", "I break my head", "我伤透了头", "wǒ shāng tòu le tóu", "Eu quebro minha cabeça"],
     ["me rompes el corazón", "you break my heart", "你伤了我的心", "nǐ shāng le wǒ de xīn", "você parte meu coração"],
@@ -1707,7 +1773,7 @@ export const p4_134_farming__agriculture = {
     pinyin: "Nóngyè",
     portuguese: "Agricultura"
   },
-  words: [
+  baseWords: [
     ["agricultura", "agriculture", "农业", "nóng yè", "agricultura"],
     ["campo", "field", "领域", "lǐng yù", "campo"],
     ["granja", "farm", "农场", "nóng chǎng", "fazenda"],
@@ -1727,7 +1793,9 @@ export const p4_134_farming__agriculture = {
     ["arar", "plow", "犁", "lí", "arado"],
     ["podar", "prune", "修剪", "xiū jiǎn", "podar"],
     ["injertar", "graft", "嫁接", "jià jiē", "enxerto"],
-    ["abono", "fertilizer", "肥料", "féi liào", "fertilizante"],
+    ["abono", "fertilizer", "肥料", "féi liào", "fertilizante"]
+  ],
+  exampleWords: [
     ["la agricultura", "agriculture", "农业", "nóng yè", "agricultura"],
     ["para la agricultura", "for agriculture", "用于农业", "yòng yú nóng yè", "para a agricultura"],
     ["el campo", "the field", "领域", "lǐng yù", "o campo"],
@@ -1779,7 +1847,7 @@ export const p4_135_sharing__compartir = {
     pinyin: "Fēnxiǎng (compartir)",
     portuguese: "Compartilhar"
   },
-  words: [
+  baseWords: [
     ["comparto", "I share", "我分享", "wǒ fēn xiǎng", "Eu compartilho"],
     ["compartes", "you share", "你分享", "nǐ fēn xiǎng", "você compartilha"],
     ["comparte", "share", "分享", "fēn xiǎng", "compartilhar"],
@@ -1789,7 +1857,9 @@ export const p4_135_sharing__compartir = {
     ["compartir", "share", "分享", "fēn xiǎng", "compartilhar"],
     ["repartir", "distribute", "分发", "fēn fā", "distribuir"],
     ["dividir", "split", "分裂", "fēn liè", "dividir"],
-    ["distribuir", "distribute", "分发", "fēn fā", "distribuir"],
+    ["distribuir", "distribute", "分发", "fēn fā", "distribuir"]
+  ],
+  exampleWords: [
     ["comparto tu opinión", "I share your opinion", "我同意你的意见", "wǒ tóng yì nǐ de yì jiàn", "Partilho da sua opinião"],
     ["comparto piso con amigos", "I share a flat with friends", "我和朋友合住一套公寓", "wǒ hé péng yǒu hé zhù yī tào gōng yù", "Divido apartamento com amigos"],
     ["por qué no lo compartes", "why don't you share it", "为什么不分享一下", "wèi shén me bù fēn xiǎng yī xià", "por que você não compartilha"],
@@ -1821,7 +1891,7 @@ export const p4_136_participating__participar = {
     pinyin: "Cānyù (participar)",
     portuguese: "Participar"
   },
-  words: [
+  baseWords: [
     ["participo", "I participate", "我参加", "wǒ cān jiā", "Eu participo"],
     ["participas", "you participate", "你参与", "nǐ cān yù", "você participa"],
     ["participa", "participate", "参与", "cān yù", "participe"],
@@ -1831,7 +1901,9 @@ export const p4_136_participating__participar = {
     ["participar", "participate", "参与", "cān yù", "participe"],
     ["participación", "participation", "参与", "cān yù", "participação"],
     ["participante", "participant", "参与者", "cān yù zhě", "participante"],
-    ["colaborar", "collaborate", "合作", "hé zuò", "colaborar"],
+    ["colaborar", "collaborate", "合作", "hé zuò", "colaborar"]
+  ],
+  exampleWords: [
     ["participo en el concurso", "I participate in the contest", "我参加比赛", "wǒ cān jiā bǐ sài", "Eu participo do concurso"],
     ["no participo en política", "I do not participate in politics", "我不参与政治", "wǒ bù cān yù zhèng zhì", "Não participo de política"],
     ["participas en el proyecto", "you participate in the project", "您参与该项目", "nín cān yù gāi xiàng mù", "você participa do projeto"],
@@ -1863,7 +1935,7 @@ export const p4_137_math__operations = {
     pinyin: "Shùxué Yùnsuàn",
     portuguese: "Operações Matemáticas"
   },
-  words: [
+  baseWords: [
     ["número", "number", "数量", "shù liàng", "número"],
     ["sumar", "add", "添加", "tiān jiā", "adicionar"],
     ["restar", "subtract", "减去", "jiǎn qù", "subtrair"],
@@ -1882,7 +1954,9 @@ export const p4_137_math__operations = {
     ["potencia", "power", "电源", "diàn yuán", "poder"],
     ["exponente", "exponent", "指数", "zhǐ shù", "expoente"],
     ["logaritmo", "logarithm", "对数", "duì shù", "logaritmo"],
-    ["geometría", "geometry", "几何", "jǐ hé", "geometria"],
+    ["geometría", "geometry", "几何", "jǐ hé", "geometria"]
+  ],
+  exampleWords: [
     ["el número", "the number", "数量", "shù liàng", "o número"],
     ["un número", "a number", "一个数字", "yí gè shù zì", "um número"],
     ["hay que sumar", "you have to add", "你必须添加", "nǐ bì xū tiān jiā", "você tem que adicionar"],
@@ -1932,7 +2006,7 @@ export const p4_138_preparing__preparar = {
     pinyin: "Zhǔnbèi (preparar)",
     portuguese: "Preparar"
   },
-  words: [
+  baseWords: [
     ["preparo", "I prepare", "我准备", "wǒ zhǔn bèi", "Eu me preparo"],
     ["preparas", "you prepare", "你准备", "nǐ zhǔn bèi", "você se prepara"],
     ["prepara", "prepare", "准备", "zhǔn bèi", "preparar"],
@@ -1942,7 +2016,9 @@ export const p4_138_preparing__preparar = {
     ["preparar", "prepare", "准备", "zhǔn bèi", "preparar"],
     ["preparación", "preparation", "准备", "zhǔn bèi", "preparação"],
     ["preparativo", "preparation", "准备", "zhǔn bèi", "preparação"],
-    ["listo", "ready", "准备好", "zhǔn bèi hǎo", "pronto"],
+    ["listo", "ready", "准备好", "zhǔn bèi hǎo", "pronto"]
+  ],
+  exampleWords: [
     ["preparo la cena", "I prepare dinner", "我准备晚餐", "wǒ zhǔn bèi wǎn cān", "Eu preparo o jantar"],
     ["me preparo para salir", "I'm getting ready to go out", "我正准备出去", "wǒ zhèng zhǔn bèi chū qù", "Estou me preparando para sair"],
     ["qué preparas de comer", "what do you prepare to eat", "你准备吃什么", "nǐ zhǔn bèi chī shén me", "o que você prepara para comer"],
@@ -1974,7 +2050,7 @@ export const p4_139_cooking__cocinar = {
     pinyin: "Pēngrèn (cocinar)",
     portuguese: "Cozinhar"
   },
-  words: [
+  baseWords: [
     ["cocino", "I cook", "我做饭", "wǒ zuò fàn", "Eu cozinho"],
     ["cocinas", "kitchens", "厨房", "chú fáng", "cozinhas"],
     ["cocina", "kitchen", "厨房", "chú fáng", "cozinha"],
@@ -1984,7 +2060,9 @@ export const p4_139_cooking__cocinar = {
     ["cocinar", "cook", "做饭", "zuò fàn", "cozinhar"],
     ["cocinera", "cook", "做饭", "zuò fàn", "cozinhar"],
     ["chef", "chef", "厨师", "chú shī", "chef"],
-    ["ayudante", "helper", "帮手", "bāng shǒu", "ajudante"],
+    ["ayudante", "helper", "帮手", "bāng shǒu", "ajudante"]
+  ],
+  exampleWords: [
     ["yo cocino", "I cook", "我做饭", "wǒ zuò fàn", "Eu cozinho"],
     ["siempre cocino", "I always cook", "我总是做饭", "wǒ zǒng shì zuò fàn", "Eu sempre cozinho"],
     ["tú cocinas", "you cook", "你做饭", "nǐ zuò fàn", "você cozinha"],
@@ -2016,7 +2094,7 @@ export const p4_140_history__terms = {
     pinyin: "Lìshǐ Shùyǔ",
     portuguese: "Termos Históricos"
   },
-  words: [
+  baseWords: [
     ["presente", "present", "现在", "xiàn zài", "presente"],
     ["futuro", "future", "未来", "wèi lái", "futuro"],
     ["siglo", "century", "世纪", "shì jì", "século"],
@@ -2036,7 +2114,9 @@ export const p4_140_history__terms = {
     ["histórico", "historical", "历史", "lì shǐ", "histórico"],
     ["colonia", "colony", "殖民地", "zhí mín dì", "colônia"],
     ["conquista", "conquest", "征服", "zhēng fú", "conquista"],
-    ["tratado", "treaty", "条约", "tiáo yuē", "tratado"],
+    ["tratado", "treaty", "条约", "tiáo yuē", "tratado"]
+  ],
+  exampleWords: [
     ["vivir el presente", "live in the present", "活在当下", "huó zài dāng xià", "viver no presente"],
     ["tiempo presente", "present tense", "现在时", "xiàn zài shí", "presente"],
     ["pensar en el futuro", "think about the future", "想想未来", "xiǎng xiǎng wèi lái", "pense no futuro"],

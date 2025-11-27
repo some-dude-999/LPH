@@ -29,6 +29,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent.parent  # EnglishWords/
 CSV_DIR = BASE_DIR
 OVERVIEW_CSV = CSV_DIR / "EnglishWordsOverview.csv"
+META_CSV = CSV_DIR / "EnglishWordsMeta.csv"
 OUTPUT_CLEAN = BASE_DIR / "Jsmodules"
 OUTPUT_OBFUSCATED = BASE_DIR / "Jsmodules-js"
 
@@ -86,10 +87,34 @@ def sanitize_for_variable_name(name):
     return name
 
 
+def read_meta_csv():
+    """Read meta CSV and return pack metadata with translations (optional)"""
+    pack_meta = {}
+
+    # Meta CSV is optional - if it doesn't exist, we'll use pack titles from Overview
+    if not META_CSV.exists():
+        print("      No meta CSV found - will use pack titles from Overview")
+        return pack_meta
+
+    with open(META_CSV, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            pack_num = int(row['Pack_Number'])
+            pack_meta[pack_num] = {
+                'english': row['Title_EN'],
+                'chinese': row['Title_ZH'],
+                'pinyin': row['Title_Pinyin'],
+                'portuguese': row['Title_PT']
+            }
+
+    return pack_meta
+
+
 def read_overview_csv():
-    """Read overview CSV and return pack-to-act mapping"""
+    """Read overview CSV and return pack-to-act mapping + base/example word counts"""
     pack_to_act = {}
     pack_titles = {}
+    pack_word_counts = {}  # New: stores base/example word counts
 
     with open(OVERVIEW_CSV, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -98,28 +123,54 @@ def read_overview_csv():
             pack_to_act[pack_num] = row['Difficulty_Act']
             pack_titles[pack_num] = row['Pack_Title']
 
-    return pack_to_act, pack_titles
+            # Parse base and example word arrays to get counts
+            base_words_str = row.get('English_Base_Words', '[]')
+            example_words_str = row.get('English_Example_Words', '[]')
+
+            # Parse arrays (format is [item1,item2,item3] - not valid JSON)
+            # Strip brackets and split on commas
+            base_words = []
+            example_words = []
+
+            if base_words_str and base_words_str != '[]':
+                base_words_str = base_words_str.strip('[]')
+                base_words = [w.strip() for w in base_words_str.split(',')]
+
+            if example_words_str and example_words_str != '[]':
+                example_words_str = example_words_str.strip('[]')
+                example_words = [w.strip() for w in example_words_str.split(',')]
+
+            pack_word_counts[pack_num] = {
+                'base_count': len(base_words),
+                'example_count': len(example_words)
+            }
+
+    return pack_to_act, pack_titles, pack_word_counts
 
 
-def read_pack_csv(pack_number):
-    """Read individual pack CSV and return words array"""
+def read_pack_csv(pack_number, base_count, example_count):
+    """Read individual pack CSV and return baseWords and exampleWords arrays"""
     csv_file = CSV_DIR / f"EnglishWords{pack_number}.csv"
 
     if not csv_file.exists():
         print(f"WARNING: {csv_file} not found, skipping...")
-        return []
+        return [], []
 
-    words = []
+    all_words = []
     with open(csv_file, 'r', encoding='utf-8') as f:
         reader = csv.reader(f)
         next(reader)  # Skip header
 
         for row in reader:
             if len(row) >= 5:
-                # Row format: [english, chinese, pinyin, spanish, portuguese]
-                words.append(row[:5])
+                # Row format: [english, english, chinese, pinyin, portuguese]
+                all_words.append(row[:5])
 
-    return words
+    # Split into base and example words
+    base_words = all_words[:base_count]
+    example_words = all_words[base_count:base_count + example_count]
+
+    return base_words, example_words
 
 
 def create_clean_js_file(act_name, act_number, packs_data):
@@ -154,16 +205,29 @@ def create_clean_js_file(act_name, act_number, packs_data):
 
         output_lines[-1] = output_lines[-1].rstrip(',')  # Remove trailing comma
         output_lines.append("  },")
-        output_lines.append("  words: [")
 
-        # Words array
-        for word_row in pack_data['words']:
+        # Base words array
+        output_lines.append("  baseWords: [")
+        for word_row in pack_data['baseWords']:
             # Escape quotes in strings
             escaped_row = [w.replace('"', '\\"') for w in word_row]
             word_str = '", "'.join(escaped_row)
             output_lines.append(f'    ["{word_str}"],')
 
-        output_lines[-1] = output_lines[-1].rstrip(',')  # Remove trailing comma
+        if pack_data['baseWords']:
+            output_lines[-1] = output_lines[-1].rstrip(',')  # Remove trailing comma
+        output_lines.append("  ],")
+
+        # Example words array
+        output_lines.append("  exampleWords: [")
+        for word_row in pack_data['exampleWords']:
+            # Escape quotes in strings
+            escaped_row = [w.replace('"', '\\"') for w in word_row]
+            word_str = '", "'.join(escaped_row)
+            output_lines.append(f'    ["{word_str}"],')
+
+        if pack_data['exampleWords']:
+            output_lines[-1] = output_lines[-1].rstrip(',')  # Remove trailing comma
         output_lines.append("  ]")
         output_lines.append("};\n")
 
@@ -223,14 +287,19 @@ def main():
     print("English Words CSV to JavaScript Converter")
     print("=" * 80)
 
-    # Read overview to get pack-to-act mapping
+    # Read overview to get pack-to-act mapping and word counts
     print("\n[1/6] Reading overview CSV...")
-    pack_to_act, pack_titles = read_overview_csv()
+    pack_to_act, pack_titles, pack_word_counts = read_overview_csv()
     print(f"      Found {len(pack_to_act)} packs across {len(set(pack_to_act.values()))} acts")
 
+    # Read meta CSV to get proper translations
+    print("\n[2/6] Reading meta CSV for translations...")
+    pack_meta = read_meta_csv()
+    print(f"      Loaded translations for {len(pack_meta)} packs")
+
     # Group packs by act
-    print("\n[2/6] Reading individual pack CSVs and grouping by act...")
-    acts_data = {}  # act_name -> {pack_var_name: {meta, words}}
+    print("\n[3/6] Reading individual pack CSVs and grouping by act...")
+    acts_data = {}  # act_name -> {pack_var_name: {meta, baseWords, exampleWords}}
 
     for pack_num in range(1, 161):
         if pack_num not in pack_to_act:
@@ -247,23 +316,32 @@ def main():
             print(f"      WARNING: Unknown act '{difficulty_act}' for pack {pack_num}")
             continue
 
-        # Read pack words
-        words = read_pack_csv(pack_num)
-        if not words:
+        # Get word counts
+        word_counts = pack_word_counts.get(pack_num, {'base_count': 0, 'example_count': 0})
+        base_count = word_counts['base_count']
+        example_count = word_counts['example_count']
+
+        # Read pack words (split into base and example)
+        base_words, example_words = read_pack_csv(pack_num, base_count, example_count)
+        if not base_words and not example_words:
             continue
 
         # Create pack variable name: p{actNum}_{packNum}_{sanitizedTitle}
-        # e.g., "p1_1_greetings__basics" (p prefix for valid JS variable name)
+        # e.g., "p1_1_greetings__goodbyes" (p prefix for valid JS variable name)
         sanitized_title = sanitize_for_variable_name(pack_title)
         pack_var_name = f"p{act_number}_{pack_num}_{sanitized_title}"
 
-        # Create meta object (use pack title for all languages)
-        meta_titles = {
-            'chinese': pack_title,
-            'pinyin': pack_title,
-            'spanish': pack_title,
-            'portuguese': pack_title
-        }
+        # Get meta titles from meta CSV (with proper translations)
+        if pack_num in pack_meta:
+            meta_titles = pack_meta[pack_num]
+        else:
+            print(f"      WARNING: Pack {pack_num} not in meta CSV, using placeholder")
+            meta_titles = {
+                'english': pack_title,
+                'chinese': pack_title,
+                'pinyin': pack_title,
+                'portuguese': pack_title
+            }
 
         # Store pack data
         if act_filename not in acts_data:
@@ -271,20 +349,21 @@ def main():
 
         acts_data[act_filename][pack_var_name] = {
             'meta': {'wordpack': pack_num, **meta_titles},
-            'words': words
+            'baseWords': base_words,
+            'exampleWords': example_words
         }
 
-        print(f"      Pack {pack_num:3d}: {pack_title:40s} -> {pack_var_name}")
+        print(f"      Pack {pack_num:3d}: {pack_title:40s} -> {pack_var_name} (base: {len(base_words)}, ex: {len(example_words)})")
 
     # Create output directories
-    print("\n[3/6] Creating output directories...")
+    print("\n[4/6] Creating output directories...")
     OUTPUT_CLEAN.mkdir(exist_ok=True)
     OUTPUT_OBFUSCATED.mkdir(exist_ok=True)
     print(f"      Clean: {OUTPUT_CLEAN}")
     print(f"      Obfuscated: {OUTPUT_OBFUSCATED}")
 
     # Generate clean files
-    print("\n[4/6] Generating clean JavaScript files...")
+    print("\n[5/6] Generating clean JavaScript files...")
     clean_files = []
     for act_name, packs_data in sorted(acts_data.items()):
         # Extract act number from act_name (e.g., "act1-foundation" -> 1)
@@ -295,7 +374,7 @@ def main():
         print(f"      Created: {filepath.name:40s} ({size_kb:7.2f} KB)")
 
     # Generate obfuscated files
-    print("\n[5/6] Generating obfuscated JavaScript files...")
+    print("\n[6/6] Generating obfuscated JavaScript files...")
     obfuscated_files = []
     for act_name, packs_data in sorted(acts_data.items()):
         # Extract act number from act_name (e.g., "act1-foundation" -> 1)
@@ -341,6 +420,7 @@ def main():
     print("  - Include pako.js for decompression:")
     print("    * CDN: <script src=\"https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js\"></script>")
     print("    * NPM: npm install pako")
+    print("  - See EnglishWords/Jsmodules/decoder-example.js for usage example")
 
 
 if __name__ == "__main__":

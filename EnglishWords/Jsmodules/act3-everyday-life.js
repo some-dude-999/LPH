@@ -13,12 +13,12 @@ export const __actMeta = {
 export const p3_82_travel = {
   meta: {
     wordpack: 82,
+    english: "Travel",
     chinese: "Travel",
     pinyin: "Travel",
-    spanish: "Travel",
     portuguese: "Travel"
   },
-  words: [
+  baseWords: [
     ["vacation", "假期", "jià qī", "vacaciones", "férias"],
     ["holiday", "假期", "jià qī", "vacaciones", "feriado"],
     ["tour", "游览", "yóu lǎn", "recorrido", "passeio"],
@@ -38,7 +38,9 @@ export const p3_82_travel = {
     ["trek", "跋涉", "bá shè", "caminata", "caminhada"],
     ["voyage", "航程", "háng chéng", "viaje", "viagem"],
     ["cruise", "巡航", "xún háng", "crucero", "cruzeiro"],
-    ["expedition", "远征", "yuǎn zhēng", "expedición", "expedição"],
+    ["expedition", "远征", "yuǎn zhēng", "expedición", "expedição"]
+  ],
+  exampleWords: [
     ["summer vacation", "暑假", "shǔ jià", "vacaciones de verano", "férias de verão"],
     ["vacation time", "假期时间", "jià qī shí jiān", "tiempo de vacaciones", "período de férias"],
     ["national holiday", "国庆节", "guó qìng jié", "feriado nacional", "feriado nacional"],
@@ -85,12 +87,12 @@ export const p3_82_travel = {
 export const p3_83_airport__flying = {
   meta: {
     wordpack: 83,
+    english: "Airport & Flying",
     chinese: "Airport & Flying",
     pinyin: "Airport & Flying",
-    spanish: "Airport & Flying",
     portuguese: "Airport & Flying"
   },
-  words: [
+  baseWords: [
     ["airport", "机场", "jī chǎng", "aeropuerto", "aeroporto"],
     ["flight", "航班", "háng bān", "vuelo", "vôo"],
     ["plane", "飞机", "fēi jī", "avión", "avião"],
@@ -110,7 +112,9 @@ export const p3_83_airport__flying = {
     ["cancel", "取消", "qǔ xiāo", "cancelar", "cancelar"],
     ["turbulence", "湍流", "tuān liú", "turbulencia", "turbulência"],
     ["seatbelt", "安全带", "ān quán dài", "cinturón de seguridad", "cinto de segurança"],
-    ["overhead", "开销", "kāi xiāo", "gastos generales", "sobrecarga"],
+    ["overhead", "开销", "kāi xiāo", "gastos generales", "sobrecarga"]
+  ],
+  exampleWords: [
     ["international airport", "国际机场", "guó jì jī chǎng", "aeropuerto internacional", "aeroporto internacional"],
     ["airport terminal", "机场航站楼", "jī chǎng háng zhàn lóu", "terminal del aeropuerto", "terminal do aeroporto"],
     ["book flight", "预订航班", "yù dìng háng bān", "reservar vuelo", "reservar voo"],
@@ -157,12 +161,12 @@ export const p3_83_airport__flying = {
 export const p3_84_hotel = {
   meta: {
     wordpack: 84,
+    english: "Hotel",
     chinese: "Hotel",
     pinyin: "Hotel",
-    spanish: "Hotel",
     portuguese: "Hotel"
   },
-  words: [
+  baseWords: [
     ["hotel", "酒店", "jiǔ diàn", "hoteles", "hotéis"],
     ["motel", "汽车旅馆", "qì chē lǚ guǎn", "motel", "motel"],
     ["hostel", "宿舍", "sù shè", "albergue", "albergue"],
@@ -182,7 +186,9 @@ export const p3_84_hotel = {
     ["key card", "钥匙卡", "yào shi kǎ", "tarjeta llave", "cartão-chave"],
     ["minibar", "迷你吧", "mí nǐ ba", "minibar", "frigobar"],
     ["bellhop", "服务生", "fú wù shēng", "botones", "carregador"],
-    ["tip", "提示", "tí shì", "consejo", "dica"],
+    ["tip", "提示", "tí shì", "consejo", "dica"]
+  ],
+  exampleWords: [
     ["luxury hotel", "豪华酒店", "háo huá jiǔ diàn", "hotel de lujo", "hotel de luxo"],
     ["hotel room", "酒店房间", "jiǔ diàn fáng jiān", "habitación de hotel", "quarto de hotel"],
     ["cheap motel", "便宜的汽车旅馆", "pián yi de qì chē lǚ guǎn", "motel barato", "motel barato"],
@@ -229,12 +235,12 @@ export const p3_84_hotel = {
 export const p3_85_work__office = {
   meta: {
     wordpack: 85,
+    english: "Work & Office",
     chinese: "Work & Office",
     pinyin: "Work & Office",
-    spanish: "Work & Office",
     portuguese: "Work & Office"
   },
-  words: [
+  baseWords: [
     ["company", "公司", "gōng sī", "empresa", "empresa"],
     ["business", "业务", "yè wù", "negocio", "negócio"],
     ["department", "部门", "bù mén", "departamento", "departamento"],
@@ -254,7 +260,9 @@ export const p3_85_work__office = {
     ["career", "职业生涯", "zhí yè shēng yá", "carrera", "carreira"],
     ["title", "标题", "biāo tí", "título", "título"],
     ["responsibilities", "职责", "zhí zé", "responsabilidades", "responsabilidades"],
-    ["office", "办公室", "bàn gōng shì", "oficina", "escritório"],
+    ["office", "办公室", "bàn gōng shì", "oficina", "escritório"]
+  ],
+  exampleWords: [
     ["big company", "大公司", "dà gōng sī", "gran empresa", "grande empresa"],
     ["company policy", "公司政策", "gōng sī zhèng cè", "política de la empresa", "política da empresa"],
     ["start a business", "创业", "chuàng yè", "iniciar un negocio", "começar um negócio"],
@@ -301,12 +309,12 @@ export const p3_85_work__office = {
 export const p3_86_workplace__actions = {
   meta: {
     wordpack: 86,
+    english: "Workplace Actions",
     chinese: "Workplace Actions",
     pinyin: "Workplace Actions",
-    spanish: "Workplace Actions",
     portuguese: "Workplace Actions"
   },
-  words: [
+  baseWords: [
     ["hire", "雇用", "gù yòng", "contratar", "contratar"],
     ["fire", "火", "huǒ", "fuego", "fogo"],
     ["resign", "辞职", "cí zhí", "dimitir", "renunciar"],
@@ -326,7 +334,9 @@ export const p3_86_workplace__actions = {
     ["execute", "执行", "zhí xíng", "ejecutar", "executar"],
     ["implement", "实施", "shí shī", "implementar", "implementar"],
     ["fulfill", "履行", "lǚ xíng", "cumplir", "cumprir"],
-    ["accomplish", "完成", "wán chéng", "lograr", "realizar"],
+    ["accomplish", "完成", "wán chéng", "lograr", "realizar"]
+  ],
+  exampleWords: [
     ["hire someone", "雇用某人", "gù yòng mǒu rén", "contratar a alguien", "contratar alguém"],
     ["hire new staff", "雇用新员工", "gù yòng xīn yuán gōng", "contratar nuevo personal", "contratar novos funcionários"],
     ["fire someone", "解雇某人", "jiě gù mǒu rén", "despedir a alguien", "demitir alguém"],
@@ -373,12 +383,12 @@ export const p3_86_workplace__actions = {
 export const p3_87_business__communication = {
   meta: {
     wordpack: 87,
+    english: "Business Communication",
     chinese: "Business Communication",
     pinyin: "Business Communication",
-    spanish: "Business Communication",
     portuguese: "Business Communication"
   },
-  words: [
+  baseWords: [
     ["memo", "备忘录", "bèi wàng lù", "nota", "memorando"],
     ["letter", "信", "xìn", "carta", "carta"],
     ["voicemail", "语音信箱", "yǔ yīn xìn xiāng", "correo de voz", "correio de voz"],
@@ -398,7 +408,9 @@ export const p3_87_business__communication = {
     ["draft", "草稿", "cǎo gǎo", "borrador", "rascunho"],
     ["attach", "附上", "fù shàng", "adjuntar", "anexar"],
     ["forward", "转发", "zhuǎn fā", "adelante", "avançar"],
-    ["distribute", "分发", "fēn fā", "distribuir", "distribuir"],
+    ["distribute", "分发", "fēn fā", "distribuir", "distribuir"]
+  ],
+  exampleWords: [
     ["office memo", "办公室备忘录", "bàn gōng shì bèi wàng lù", "nota de oficina", "memorando de escritório"],
     ["memo to staff", "给员工的备忘录", "gěi yuán gōng de bèi wàng lù", "memorando al personal", "memorando para a equipe"],
     ["cover letter", "求职信", "qiú zhí xìn", "carta de presentación", "carta de apresentação"],
@@ -426,7 +438,7 @@ export const p3_87_business__communication = {
     ["collaborate on", "合作", "hé zuò", "colaborar en", "colaborar em"],
     ["collaborate together", "一起协作", "yì qǐ xié zuò", "colaborar juntos", "colaborar juntos"],
     ["liaise with", "联络", "lián luò", "establecer enlace con", "entre em contato com"],
-    ["liaise between", "", "", "enlace entre", "ligação entre"],
+    ["liaise between", "之间联络", "zhī jiān lián luò", "enlace entre", "ligação entre"],
     ["formalize agreement", "之间的联络正式协议", "zhī jiān de lián luò zhèng shì xié yì", "formalizar acuerdo", "formalizar acordo"],
     ["formalize process", "正式化流程", "zhèng shì huà liú chéng", "formalizar proceso", "formalizar processo"],
     ["outline plan", "概要计划", "gài yào jì huà", "plan general", "plano geral"],
@@ -445,12 +457,12 @@ export const p3_87_business__communication = {
 export const p3_88_internet__social__media = {
   meta: {
     wordpack: 88,
+    english: "Internet & Social Media",
     chinese: "Internet & Social Media",
     pinyin: "Internet & Social Media",
-    spanish: "Internet & Social Media",
     portuguese: "Internet & Social Media"
   },
-  words: [
+  baseWords: [
     ["link", "链接", "liàn jiē", "enlace", "ligação"],
     ["search engine", "搜索引擎", "sōu suǒ yǐn qíng", "motor de búsqueda", "mecanismo de busca"],
     ["social media", "社交媒体", "shè jiāo méi tǐ", "redes sociales", "mídias sociais"],
@@ -470,7 +482,9 @@ export const p3_88_internet__social__media = {
     ["content", "内容", "nèi róng", "contenido", "conteúdo"],
     ["influencer", "影响者", "yǐng xiǎng zhě", "influenciador", "influenciador"],
     ["subscribe", "订阅", "dìng yuè", "suscríbete", "inscreva-se"],
-    ["trending", "趋势", "qū shì", "tendencia", "tendências"],
+    ["trending", "趋势", "qū shì", "tendencia", "tendências"]
+  ],
+  exampleWords: [
     ["click the link", "点击链接", "diǎn jī liàn jiē", "haga clic en el enlace", "clique no link"],
     ["broken link", "断开的链接", "duàn kāi de liàn jiē", "enlace roto", "link quebrado"],
     ["use search engine", "使用搜索引擎", "shǐ yòng sōu suǒ yǐn qíng", "utilizar el motor de búsqueda", "usar mecanismo de busca"],
@@ -517,12 +531,12 @@ export const p3_88_internet__social__media = {
 export const p3_89_relationships = {
   meta: {
     wordpack: 89,
+    english: "Relationships",
     chinese: "Relationships",
     pinyin: "Relationships",
-    spanish: "Relationships",
     portuguese: "Relationships"
   },
-  words: [
+  baseWords: [
     ["relationship", "关系", "guān xì", "relación", "relacionamento"],
     ["friendship", "友谊", "yǒu yì", "amistad", "amizade"],
     ["partner", "合作伙伴", "hé zuò huǒ bàn", "socio", "parceiro"],
@@ -542,7 +556,9 @@ export const p3_89_relationships = {
     ["argue", "争论", "zhēng lùn", "discutir", "argumentar"],
     ["respect", "尊重", "zūn zhòng", "respeto", "respeito"],
     ["commitment", "承诺", "chéng nuò", "compromiso", "compromisso"],
-    ["bond", "债券", "zhài quàn", "vínculo", "vínculo"],
+    ["bond", "债券", "zhài quàn", "vínculo", "vínculo"]
+  ],
+  exampleWords: [
     ["good relationship", "良好的关系", "liáng hǎo de guān xì", "buena relación", "bom relacionamento"],
     ["relationship goals", "关系目标", "guān xì mù biāo", "objetivos de relación", "objetivos de relacionamento"],
     ["close friendship", "亲密友谊", "qīn mì yǒu yì", "amistad cercana", "amizade próxima"],
@@ -589,12 +605,12 @@ export const p3_89_relationships = {
 export const p3_90_social__interactions = {
   meta: {
     wordpack: 90,
+    english: "Social Interactions",
     chinese: "Social Interactions",
     pinyin: "Social Interactions",
-    spanish: "Social Interactions",
     portuguese: "Social Interactions"
   },
-  words: [
+  baseWords: [
     ["conversation", "对话", "duì huà", "conversación", "conversa"],
     ["chat", "聊天", "liáo tiān", "chatear", "conversar"],
     ["gossip", "八卦", "bā guà", "chismes", "fofoca"],
@@ -614,7 +630,9 @@ export const p3_90_social__interactions = {
     ["mingle", "混在一起", "hùn zài yì qǐ", "mezclarse", "misturar"],
     ["socialize", "社交", "shè jiāo", "socializar", "socializar"],
     ["greet", "问候", "wèn hòu", "saludar", "cumprimentar"],
-    ["acknowledge", "承认", "chéng rèn", "reconocer", "reconhecer"],
+    ["acknowledge", "承认", "chéng rèn", "reconocer", "reconhecer"]
+  ],
+  exampleWords: [
     ["private conversation", "私人谈话", "sī rén tán huà", "conversación privada", "conversa privada"],
     ["conversation starter", "对话开始", "duì huà kāi shǐ", "iniciador de conversación", "iniciador de conversa"],
     ["quick chat", "快速聊天", "kuài sù liáo tiān", "charla rápida", "bate-papo rápido"],
@@ -661,12 +679,12 @@ export const p3_90_social__interactions = {
 export const p3_91_life__events = {
   meta: {
     wordpack: 91,
+    english: "Life Events",
     chinese: "Life Events",
     pinyin: "Life Events",
-    spanish: "Life Events",
     portuguese: "Life Events"
   },
-  words: [
+  baseWords: [
     ["birth", "出生", "chū shēng", "nacimiento", "nascimento"],
     ["childhood", "童年", "tóng nián", "infancia", "infância"],
     ["teenager", "青少年", "qīng shào nián", "adolescente", "adolescente"],
@@ -686,7 +704,9 @@ export const p3_91_life__events = {
     ["milestone", "里程碑", "lǐ chéng bēi", "hito", "marco"],
     ["achievement", "成就", "chéng jiù", "logro", "conquista"],
     ["legacy", "遗产", "yí chǎn", "legado", "legado"],
-    ["occasion", "场合", "chǎng hé", "ocasión", "ocasião"],
+    ["occasion", "场合", "chǎng hé", "ocasión", "ocasião"]
+  ],
+  exampleWords: [
     ["give birth", "生下", "shēng xià", "dar a luz", "dar à luz"],
     ["birth certificate", "出生证明", "chū shēng zhèng míng", "certificado de nacimiento", "certidão de nascimento"],
     ["happy childhood", "快乐的童年", "kuài lè de tóng nián", "infancia feliz", "infância feliz"],
@@ -716,7 +736,7 @@ export const p3_91_life__events = {
     ["traditional ceremony", "传统仪式", "chuán tǒng yí shì", "ceremonia tradicional", "cerimônia tradicional"],
     ["wedding ceremony", "婚礼", "hūn lǐ", "ceremonia de boda", "cerimônia de casamento"],
     ["family tradition", "家庭传统", "jiā tíng chuán tǒng", "tradición familiar", "tradição familiar"],
-    ["tradition of", "", "", "tradición de", "tradição de"],
+    ["tradition of", "传统的", "chuán tǒng de", "tradición de", "tradição de"],
     ["music festival", "的传统音乐节", "de chuán tǒng yīn yuè jié", "festival de música", "festival de música"],
     ["film festival", "电影节", "diàn yǐng jié", "festival de cine", "festival de cinema"],
     ["important milestone", "重要的里程碑", "zhòng yào de lǐ chéng bēi", "hito importante", "marco importante"],
@@ -733,12 +753,12 @@ export const p3_91_life__events = {
 export const p3_92_housing = {
   meta: {
     wordpack: 92,
+    english: "Housing",
     chinese: "Housing",
     pinyin: "Housing",
-    spanish: "Housing",
     portuguese: "Housing"
   },
-  words: [
+  baseWords: [
     ["rent", "租金", "zū jīn", "alquiler", "alugar"],
     ["lease", "租赁", "zū lìn", "arrendamiento", "arrendamento"],
     ["landlord", "楼主", "lóu zhǔ", "propietario", "senhorio"],
@@ -758,7 +778,9 @@ export const p3_92_housing = {
     ["cooling", "冷却", "lěng què", "enfriamiento", "resfriamento"],
     ["relocate", "搬迁", "bān qiān", "reubicar", "realocar"],
     ["dwelling", "住宅", "zhù zhái", "vivienda", "habitação"],
-    ["sublet", "转租", "zhuǎn zū", "subarrendar", "sublocar"],
+    ["sublet", "转租", "zhuǎn zū", "subarrendar", "sublocar"]
+  ],
+  exampleWords: [
     ["pay rent", "支付租金", "zhī fù zū jīn", "pagar el alquiler", "pagar aluguel"],
     ["rent increase", "租金上涨", "zū jīn shàng zhǎng", "aumento del alquiler", "aumento de aluguel"],
     ["sign lease", "签订租约", "qiān dìng zū yuē", "firmar contrato de arrendamiento", "assinar contrato de arrendamento"],
@@ -805,12 +827,12 @@ export const p3_92_housing = {
 export const p3_93_news__media = {
   meta: {
     wordpack: 93,
+    english: "News & Media",
     chinese: "News & Media",
     pinyin: "News & Media",
-    spanish: "News & Media",
     portuguese: "News & Media"
   },
-  words: [
+  baseWords: [
     ["newspaper", "报纸", "bào zhǐ", "periódico", "jornal"],
     ["magazine", "杂志", "zá zhì", "revista", "revista"],
     ["article", "文章", "wén zhāng", "artículo", "artigo"],
@@ -830,7 +852,9 @@ export const p3_93_news__media = {
     ["publication", "出版物", "chū bǎn wù", "publicación", "publicação"],
     ["misinformation", "错误信息", "cuò wù xìn xī", "desinformación", "desinformação"],
     ["newsroom", "新闻编辑室", "xīn wén biān jí shì", "sala de redacción", "redação"],
-    ["anchor", "锚", "máo", "ancla", "âncora"],
+    ["anchor", "锚", "máo", "ancla", "âncora"]
+  ],
+  exampleWords: [
     ["daily newspaper", "日报", "rì bào", "periódico diario", "jornal diário"],
     ["newspaper article", "报纸文章", "bào zhǐ wén zhāng", "artículo periodístico", "artigo de jornal"],
     ["fashion magazine", "时尚杂志", "shí shàng zá zhì", "revista de moda", "revista de moda"],
@@ -877,12 +901,12 @@ export const p3_93_news__media = {
 export const p3_94_environment = {
   meta: {
     wordpack: 94,
+    english: "Environment",
     chinese: "Environment",
     pinyin: "Environment",
-    spanish: "Environment",
     portuguese: "Environment"
   },
-  words: [
+  baseWords: [
     ["pollution", "污染", "wū rǎn", "contaminación", "poluição"],
     ["recycle", "回收", "huí shōu", "reciclar", "reciclar"],
     ["renewable", "可再生", "kě zài shēng", "renovable", "renovável"],
@@ -902,7 +926,9 @@ export const p3_94_environment = {
     ["ecology", "生态", "shēng tài", "ecología", "ecologia"],
     ["solar", "太阳能", "tài yáng néng", "solares", "solares"],
     ["wind", "风", "fēng", "viento", "vento"],
-    ["endangered", "濒危", "bīn wēi", "en peligro de extinción", "em perigo"],
+    ["endangered", "濒危", "bīn wēi", "en peligro de extinción", "em perigo"]
+  ],
+  exampleWords: [
     ["air pollution", "空气污染", "kōng qì wū rǎn", "contaminación del aire", "poluição atmosférica"],
     ["pollution level", "污染程度", "wū rǎn chéng dù", "nivel de contaminación", "nível de poluição"],
     ["recycle plastic", "回收塑料", "huí shōu sù liào", "reciclar plástico", "reciclar plástico"],
@@ -949,12 +975,12 @@ export const p3_94_environment = {
 export const p3_95_cooking__methods = {
   meta: {
     wordpack: 95,
+    english: "Cooking Methods",
     chinese: "Cooking Methods",
     pinyin: "Cooking Methods",
-    spanish: "Cooking Methods",
     portuguese: "Cooking Methods"
   },
-  words: [
+  baseWords: [
     ["bake", "烘烤", "hōng kǎo", "hornear", "assar"],
     ["fry", "炒", "chǎo", "freír", "fritar"],
     ["boil", "煮沸", "zhǔ fèi", "hervir", "ferver"],
@@ -974,7 +1000,9 @@ export const p3_95_cooking__methods = {
     ["slice", "切片", "qiē piàn", "rebanada", "fatia"],
     ["braise", "焖", "mèn", "estofado", "refogar"],
     ["poach", "偷猎", "tōu liè", "caza furtiva", "caça furtiva"],
-    ["caramelize", "焦糖化", "jiāo táng huà", "caramelizar", "caramelizar"],
+    ["caramelize", "焦糖化", "jiāo táng huà", "caramelizar", "caramelizar"]
+  ],
+  exampleWords: [
     ["bake cookies", "烤饼干", "kǎo bǐng gān", "hornear galletas", "assar biscoitos"],
     ["bake a cake", "烤蛋糕", "kǎo dàn gāo", "hornear un pastel", "fazer um bolo"],
     ["fry chicken", "炸鸡", "zhà jī", "freír pollo", "frango frito"],
@@ -1021,12 +1049,12 @@ export const p3_95_cooking__methods = {
 export const p3_96_food__preparation = {
   meta: {
     wordpack: 96,
+    english: "Food Preparation",
     chinese: "Food Preparation",
     pinyin: "Food Preparation",
-    spanish: "Food Preparation",
     portuguese: "Food Preparation"
   },
-  words: [
+  baseWords: [
     ["peel", "剥皮", "bāo pí", "pelar", "descascar"],
     ["cut", "切", "qiè", "cortar", "cortar"],
     ["dice", "骰子", "tóu zi", "dados", "dados"],
@@ -1046,7 +1074,9 @@ export const p3_96_food__preparation = {
     ["preparation", "准备", "zhǔn bèi", "preparación", "preparação"],
     ["knead", "揉捏", "róu niē", "amasar", "amassar"],
     ["tenderize", "嫩化", "nèn huà", "ablandar", "amaciar"],
-    ["julienne", "切丝", "qiè sī", "juliana", "juliana"],
+    ["julienne", "切丝", "qiè sī", "juliana", "juliana"]
+  ],
+  exampleWords: [
     ["peel potato", "土豆去皮", "tǔ dòu qù pí", "pelar patatas", "descascar batata"],
     ["peel apple", "苹果去皮", "píng guǒ qù pí", "pelar manzana", "descascar maçã"],
     ["cut onion", "切洋葱", "qiè yáng cōng", "cortar cebolla", "cebola cortada"],
@@ -1093,12 +1123,12 @@ export const p3_96_food__preparation = {
 export const p3_97_restaurant = {
   meta: {
     wordpack: 97,
+    english: "Restaurant",
     chinese: "Restaurant",
     pinyin: "Restaurant",
-    spanish: "Restaurant",
     portuguese: "Restaurant"
   },
-  words: [
+  baseWords: [
     ["cafe", "咖啡馆", "kā fēi guǎn", "cafetería", "café"],
     ["diner", "晚餐", "wǎn cān", "cena", "jantar"],
     ["menu", "菜单", "cài dān", "menú", "cardápio"],
@@ -1118,7 +1148,9 @@ export const p3_97_restaurant = {
     ["cuisine", "美食", "měi shí", "cocina", "culinária"],
     ["gratuity", "小费", "xiǎo fèi", "propina", "gratuidade"],
     ["sommelier", "侍酒师", "shì jiǔ shī", "sumiller", "sommelier"],
-    ["maître d'", "领班", "lǐng bān", "maître", "maître d'"],
+    ["maître d'", "领班", "lǐng bān", "maître", "maître d'"]
+  ],
+  exampleWords: [
     ["street cafe", "街边咖啡馆", "jiē biān kā fēi guǎn", "café callejero", "café de rua"],
     ["cafe latte", "拿铁咖啡", "ná tiě kā fēi", "café con leche", "café com leite"],
     ["local diner", "当地餐馆", "dāng dì cān guǎn", "restaurante local", "lanchonete local"],
@@ -1165,12 +1197,12 @@ export const p3_97_restaurant = {
 export const p3_98_movies__tv = {
   meta: {
     wordpack: 98,
+    english: "Movies & TV",
     chinese: "Movies & TV",
     pinyin: "Movies & TV",
-    spanish: "Movies & TV",
     portuguese: "Movies & TV"
   },
-  words: [
+  baseWords: [
     ["cinema", "电影院", "diàn yǐng yuàn", "cine", "cinema"],
     ["series", "系列", "xì liè", "serie", "série"],
     ["episode", "情节", "qíng jié", "episodio", "episódio"],
@@ -1190,7 +1222,9 @@ export const p3_98_movies__tv = {
     ["sequel", "续集", "xù jí", "secuela", "sequência"],
     ["trailer", "预告片", "yù gào piàn", "remolque", "reboque"],
     ["premiere", "首映", "shǒu yìng", "estreno", "estreia"],
-    ["blockbuster", "重磅炸弹", "zhòng bàng zhà dàn", "éxito de taquilla", "sucesso de bilheteria"],
+    ["blockbuster", "重磅炸弹", "zhòng bàng zhà dàn", "éxito de taquilla", "sucesso de bilheteria"]
+  ],
+  exampleWords: [
     ["go to cinema", "去电影院", "qù diàn yǐng yuàn", "ir al cine", "ir ao cinema"],
     ["cinema ticket", "电影票", "diàn yǐng piào", "entrada de cine", "ingresso de cinema"],
     ["TV series", "电视剧", "diàn shì jù", "Serie de televisión", "Séries de TV"],
@@ -1237,12 +1271,12 @@ export const p3_98_movies__tv = {
 export const p3_99_books__reading = {
   meta: {
     wordpack: 99,
+    english: "Books & Reading",
     chinese: "Books & Reading",
     pinyin: "Books & Reading",
-    spanish: "Books & Reading",
     portuguese: "Books & Reading"
   },
-  words: [
+  baseWords: [
     ["novel", "小说", "xiǎo shuō", "novela", "novela"],
     ["fiction", "小说", "xiǎo shuō", "ficción", "ficção"],
     ["nonfiction", "非小说类", "fēi xiǎo shuō lèi", "no ficción", "não ficção"],
@@ -1262,7 +1296,9 @@ export const p3_99_books__reading = {
     ["memoir", "回忆录", "huí yì lù", "memorias", "livro de memórias"],
     ["bookmark", "书签", "shū qiān", "marcador", "marcador"],
     ["manuscript", "手稿", "shǒu gǎo", "manuscrito", "manuscrito"],
-    ["edition", "版", "bǎn", "edición", "edição"],
+    ["edition", "版", "bǎn", "edición", "edição"]
+  ],
+  exampleWords: [
     ["read novel", "读小说", "dú xiǎo shuō", "leer novela", "leia o romance"],
     ["novel idea", "新颖的想法", "xīn yǐng de xiǎng fǎ", "idea novedosa", "ideia nova"],
     ["science fiction", "科幻小说", "kē huàn xiǎo shuō", "ciencia ficción", "ficção científica"],
@@ -1282,7 +1318,7 @@ export const p3_99_books__reading = {
     ["main character", "主角", "zhǔ jué", "personaje principal", "personagem principal"],
     ["character development", "角色发展", "jué sè fā zhǎn", "desarrollo del personaje", "desenvolvimento do personagem"],
     ["book genre", "书籍类型", "shū jí lèi xíng", "género del libro", "gênero de livro"],
-    ["genre of", "", "", "género de", "gênero de"],
+    ["genre of", "流派的", "liú pài de", "género de", "gênero de"],
     ["local bookstore", "的流派当地书店", "de liú pài dāng dì shū diàn", "librería local", "livraria local"],
     ["bookstore sale", "书店特卖", "shū diàn tè mài", "venta de librería", "venda de livraria"],
     ["publish book", "出版书籍", "chū bǎn shū jí", "publicar libro", "publicar livro"],
@@ -1309,12 +1345,12 @@ export const p3_99_books__reading = {
 export const p3_100_music__art = {
   meta: {
     wordpack: 100,
+    english: "Music & Art",
     chinese: "Music & Art",
     pinyin: "Music & Art",
-    spanish: "Music & Art",
     portuguese: "Music & Art"
   },
-  words: [
+  baseWords: [
     ["singer", "歌手", "gē shǒu", "cantante", "cantor"],
     ["band", "乐队", "yuè duì", "banda", "banda"],
     ["album", "专辑", "zhuān jí", "álbum", "álbum"],
@@ -1334,7 +1370,9 @@ export const p3_100_music__art = {
     ["gallery", "画廊", "huà láng", "galería", "galeria"],
     ["exhibition", "展览", "zhǎn lǎn", "exposición", "exposição"],
     ["composer", "作曲家", "zuò qǔ jiā", "compositor", "compositor"],
-    ["orchestra", "乐团", "yuè tuán", "orquesta", "orquestra"],
+    ["orchestra", "乐团", "yuè tuán", "orquesta", "orquestra"]
+  ],
+  exampleWords: [
     ["lead singer", "主唱", "zhǔ chàng", "cantante principal", "vocalista"],
     ["singer voice", "歌手声音", "gē shǒu shēng yīn", "voz de cantante", "voz do cantor"],
     ["rock band", "摇滚乐队", "yáo gǔn yuè duì", "banda de rock", "banda de rock"],
@@ -1381,12 +1419,12 @@ export const p3_100_music__art = {
 export const p3_101_basic__law__rules = {
   meta: {
     wordpack: 101,
+    english: "Basic Law & Rules",
     chinese: "Basic Law & Rules",
     pinyin: "Basic Law & Rules",
-    spanish: "Basic Law & Rules",
     portuguese: "Basic Law & Rules"
   },
-  words: [
+  baseWords: [
     ["law", "法律", "fǎ lǜ", "ley", "lei"],
     ["rule", "规则", "guī zé", "regla", "regra"],
     ["ticket", "票", "piào", "billete", "bilhete"],
@@ -1406,7 +1444,9 @@ export const p3_101_basic__law__rules = {
     ["rights", "权利", "quán lì", "derechos", "direitos"],
     ["verdict", "判决", "pàn jué", "veredicto", "veredicto"],
     ["penalty", "处罚", "chǔ fá", "pena", "penalidade"],
-    ["subpoena", "传票", "chuán piào", "citación", "intimação"],
+    ["subpoena", "传票", "chuán piào", "citación", "intimação"]
+  ],
+  exampleWords: [
     ["law school", "法学院", "fǎ xué yuàn", "facultad de derecho", "faculdade de direito"],
     ["law enforcement", "执法", "zhí fǎ", "aplicación de la ley", "aplicação da lei"],
     ["follow the rule", "遵守规则", "zūn shǒu guī zé", "sigue la regla", "siga a regra"],
@@ -1453,12 +1493,12 @@ export const p3_101_basic__law__rules = {
 export const p3_102_government__citizenship = {
   meta: {
     wordpack: 102,
+    english: "Government & Citizenship",
     chinese: "Government & Citizenship",
     pinyin: "Government & Citizenship",
-    spanish: "Government & Citizenship",
     portuguese: "Government & Citizenship"
   },
-  words: [
+  baseWords: [
     ["government", "政府", "zhèng fǔ", "gobierno", "governo"],
     ["mayor", "市长", "shì zhǎng", "alcalde", "prefeito"],
     ["council", "理事会", "lǐ shì huì", "consejo", "conselho"],
@@ -1478,7 +1518,9 @@ export const p3_102_government__citizenship = {
     ["freedom", "自由", "zì yóu", "libertad", "liberdade"],
     ["taxes", "税收", "shuì shōu", "impuestos", "impostos"],
     ["constitution", "宪法", "xiàn fǎ", "constitución", "constituição"],
-    ["legislation", "立法", "lì fǎ", "legislación", "legislação"],
+    ["legislation", "立法", "lì fǎ", "legislación", "legislação"]
+  ],
+  exampleWords: [
     ["federal government", "联邦政府", "lián bāng zhèng fǔ", "gobierno federal", "governo federal"],
     ["government official", "政府官员", "zhèng fǔ guān yuán", "funcionario del gobierno", "funcionário do governo"],
     ["city mayor", "市长", "shì zhǎng", "alcalde de la ciudad", "prefeito da cidade"],
@@ -1525,12 +1567,12 @@ export const p3_102_government__citizenship = {
 export const p3_103_opinions__arguments = {
   meta: {
     wordpack: 103,
+    english: "Opinions & Arguments",
     chinese: "Opinions & Arguments",
     pinyin: "Opinions & Arguments",
-    spanish: "Opinions & Arguments",
     portuguese: "Opinions & Arguments"
   },
-  words: [
+  baseWords: [
     ["opinion", "意见", "yì jiàn", "opinión", "opinião"],
     ["oppose", "反对", "fǎn duì", "oponerse", "opor-se"],
     ["view", "查看", "chá kàn", "ver", "ver"],
@@ -1550,7 +1592,9 @@ export const p3_103_opinions__arguments = {
     ["conviction", "信念", "xìn niàn", "convicción", "convicção"],
     ["sentiment", "情绪", "qíng xù", "sentimiento", "sentimento"],
     ["attitude", "态度", "tài dù", "actitud", "atitude"],
-    ["belief", "信念", "xìn niàn", "creencia", "crença"],
+    ["belief", "信念", "xìn niàn", "creencia", "crença"]
+  ],
+  exampleWords: [
     ["my opinion", "我的意见", "wǒ de yì jiàn", "mi opinión", "minha opinião"],
     ["opinion on", "对", "duì", "opinión sobre", "opinião sobre"],
     ["strongly oppose", "的意见强烈反对", "de yì jiàn qiáng liè fǎn duì", "oponerse firmemente", "opor-se fortemente"],
@@ -1574,7 +1618,7 @@ export const p3_103_opinions__arguments = {
     ["firm stance", "立场坚定", "lì chǎng jiān dìng", "postura firme", "postura firme"],
     ["stance on", "对", "duì", "postura sobre", "posição sobre"],
     ["from my standpoint", "的立场从我的角度来看", "de lì chǎng cóng wǒ de jiǎo dù lái kàn", "desde mi punto de vista", "do meu ponto de vista"],
-    ["standpoint of", "", "", "punto de vista de", "ponto de vista de"],
+    ["standpoint of", "立场的", "lì chǎng de", "punto de vista de", "ponto de vista de"],
     ["different viewpoint", "的立场不同观点", "de lì chǎng bù tóng guān diǎn", "punto de vista diferente", "ponto de vista diferente"],
     ["viewpoint on", "对", "duì", "punto de vista sobre", "ponto de vista sobre"],
     ["positive outlook", "的观点积极的前景", "de guān diǎn jī jí de qián jǐng", "perspectiva positiva", "perspectiva positiva"],
@@ -1597,12 +1641,12 @@ export const p3_103_opinions__arguments = {
 export const p3_104_problems__solutions = {
   meta: {
     wordpack: 104,
+    english: "Problems & Solutions",
     chinese: "Problems & Solutions",
     pinyin: "Problems & Solutions",
-    spanish: "Problems & Solutions",
     portuguese: "Problems & Solutions"
   },
-  words: [
+  baseWords: [
     ["issue", "问题", "wèn tí", "problema", "questão"],
     ["challenge", "挑战", "tiǎo zhàn", "desafío", "desafio"],
     ["difficulty", "难度", "nán dù", "dificultad", "dificuldade"],
@@ -1622,9 +1666,11 @@ export const p3_104_problems__solutions = {
     ["progress", "进展", "jìn zhǎn", "progreso", "progresso"],
     ["success", "成功", "chéng gōng", "éxito", "sucesso"],
     ["failure", "失败", "shī bài", "fracaso", "fracasso"],
-    ["remedy", "补救措施", "bǔ jiù cuò shī", "remedio", "remédio"],
+    ["remedy", "补救措施", "bǔ jiù cuò shī", "remedio", "remédio"]
+  ],
+  exampleWords: [
     ["main issue", "主要问题", "zhǔ yào wèn tí", "cuestión principal", "questão principal"],
-    ["issue with", "", "", "problema con", "problema com"],
+    ["issue with", "问题在于", "wèn tí zài yú", "problema con", "problema com"],
     ["big challenge", "的问题巨大的挑战", "de wèn tí jù dà de tiǎo zhàn", "gran desafío", "grande desafio"],
     ["challenge yourself", "挑战自我", "tiǎo zhàn zì wǒ", "desafíate a ti mismo", "desafie-se"],
     ["face difficulty", "面对困难", "miàn duì kùn nán", "enfrentar dificultades", "enfrenta dificuldade"],
@@ -1634,7 +1680,7 @@ export const p3_104_problems__solutions = {
     ["major crisis", "重大危机", "zhòng dà wēi jī", "crisis importante", "grande crise"],
     ["crisis management", "危机管理", "wēi jī guǎn lǐ", "gestión de crisis", "gestão de crises"],
     ["find solution", "寻找解决方案", "xún zhǎo jiě jué fāng àn", "encontrar solución", "encontrar solução"],
-    ["solution to", "", "", "solución a", "solução para"],
+    ["solution to", "解决方案用于", "jiě jué fāng àn yòng yú", "solución a", "solução para"],
     ["solve problem", "的解决方案解决问题", "de jiě jué fāng àn jiě jué wèn tí", "resolver problema", "resolver problema"],
     ["solve it", "解决它", "jiě jué tā", "resolverlo", "resolva"],
     ["fix it", "修复它", "xiū fù tā", "arreglarlo", "consertar"],
@@ -1646,17 +1692,17 @@ export const p3_104_problems__solutions = {
     ["clever tactic", "聪明的策略", "cōng míng de cè lüè", "táctica inteligente", "tática inteligente"],
     ["tactic used", "使用的策略", "shǐ yòng de cè lüè", "táctica utilizada", "tática usada"],
     ["medical procedure", "医疗程序", "yī liáo chéng xù", "procedimiento médico", "procedimento médico"],
-    ["procedure for", "", "", "procedimiento para", "procedimento para"],
+    ["procedure for", "程序用于", "chéng xù yòng yú", "procedimiento para", "procedimento para"],
     ["no alternative", "的程序别无选择", "de chéng xù bié wú xuǎn zé", "no hay alternativa", "nenhuma alternativa"],
     ["alternative option", "替代选项", "tì dài xuǎn xiàng", "opción alternativa", "opção alternativa"],
     ["only option", "唯一的选择", "wéi yī de xuǎn zé", "única opción", "única opção"],
     ["best option", "最好的选择", "zuì hǎo de xuǎn zé", "mejor opción", "melhor opção"],
     ["real possibility", "真正的可能性", "zhēn zhèng de kě néng xìng", "posibilidad real", "possibilidade real"],
-    ["possibility of", "", "", "posibilidad de", "possibilidade de"],
+    ["possibility of", "可能性的", "kě néng xìng de", "posibilidad de", "possibilidade de"],
     ["great opportunity", "的可能性绝佳机会", "de kě néng xìng jué jiā jī huì", "gran oportunidad", "ótima oportunidade"],
-    ["opportunity for", "", "", "oportunidad para", "oportunidade para"],
+    ["opportunity for", "机会用于", "jī huì yòng yú", "oportunidad para", "oportunidade para"],
     ["slow progress", "的机会进展缓慢", "de jī huì jìn zhǎn huǎn màn", "progreso lento", "progresso lento"],
-    ["progress on", "", "", "progreso en", "progresso em"],
+    ["progress on", "进展于", "jìn zhǎn yú", "progreso en", "progresso em"],
     ["great success", "的进展巨大的成功", "de jìn zhǎn jù dà de chéng gōng", "gran éxito", "grande sucesso"],
     ["success rate", "成功率", "chéng gōng lǜ", "tasa de éxito", "taxa de sucesso"],
     ["complete failure", "彻底失败", "chè dǐ shī bài", "fracaso total", "falha completa"],
@@ -1669,12 +1715,12 @@ export const p3_104_problems__solutions = {
 export const p3_105_describing__trends = {
   meta: {
     wordpack: 105,
+    english: "Describing Trends",
     chinese: "Describing Trends",
     pinyin: "Describing Trends",
-    spanish: "Describing Trends",
     portuguese: "Describing Trends"
   },
-  words: [
+  baseWords: [
     ["climb", "爬", "pá", "subir", "subir"],
     ["drop", "下降", "xià jiàng", "soltar", "cair"],
     ["surge", "激增", "jī zēng", "oleada", "aumento"],
@@ -1694,7 +1740,9 @@ export const p3_105_describing__trends = {
     ["trend", "趋势", "qū shì", "tendencia", "tendência"],
     ["rise", "上升", "shàng shēng", "subir", "subir"],
     ["decline", "拒绝", "jù jué", "declive", "declínio"],
-    ["stagnate", "停滞", "tíng zhì", "estancarse", "estagnar"],
+    ["stagnate", "停滞", "tíng zhì", "estancarse", "estagnar"]
+  ],
+  exampleWords: [
     ["prices climb", "价格攀升", "jià gé pān shēng", "los precios suben", "preços sobem"],
     ["climb steadily", "稳步攀升", "wěn bù pān shēng", "subir constantemente", "subir de forma constante"],
     ["prices drop", "价格下跌", "jià gé xià diē", "los precios bajan", "preços caem"],
@@ -1732,7 +1780,7 @@ export const p3_105_describing__trends = {
     ["on the rise", "正在上升", "zhèng zài shàng shēng", "en aumento", "em ascensão"],
     ["rise sharply", "大幅上涨", "dà fú shàng zhǎng", "aumentar bruscamente", "subir acentuadamente"],
     ["steady decline", "稳步下降", "wěn bù xià jiàng", "descenso constante", "declínio constante"],
-    ["decline in", "", "", "descenso en", "declínio em"],
+    ["decline in", "下降于", "xià jiàng yú", "descenso en", "declínio em"],
     ["growth stagnate", "下降增长停滞", "xià jiàng zēng zhǎng tíng zhì", "el crecimiento se estanca", "estagnação do crescimento"],
     ["stagnate over time", "随着时间的推移停滞不前", "suí zhe shí jiān de tuī yí tíng zhì bù qián", "estancarse en el tiempo", "estagnar com o tempo"]
   ]
@@ -1741,12 +1789,12 @@ export const p3_105_describing__trends = {
 export const p3_106_common__idioms__1 = {
   meta: {
     wordpack: 106,
+    english: "Common Idioms 1",
     chinese: "Common Idioms 1",
     pinyin: "Common Idioms 1",
-    spanish: "Common Idioms 1",
     portuguese: "Common Idioms 1"
   },
-  words: [
+  baseWords: [
     ["piece of cake", "小菜一碟", "xiǎo cài yī dié", "pan comido", "pedaço de bolo"],
     ["break the ice", "打破僵局", "dǎ pò jiāng jú", "romper el hielo", "quebrar o gelo"],
     ["hit the nail on the head", "一语中的", "yī yǔ zhòng dì", "da en el clavo", "acertou em cheio"],
@@ -1761,7 +1809,9 @@ export const p3_106_common__idioms__1 = {
     ["once in a blue moon", "千载难逢", "qiān zǎi nán féng", "una vez en una luna azul", "uma vez na lua azul"],
     ["on the same page", "在同一页", "zài tóng yī yè", "en la misma página", "na mesma página"],
     ["break a leg", "摔断腿", "shuāi duàn tuǐ", "romperse una pierna", "quebrar uma perna"],
-    ["cost an arm and a leg", "花费了一条胳膊和一条腿", "huā fèi le yī tiáo gē bó hé yī tiáo tuǐ", "cuesta un brazo y una pierna", "custou um braço e uma perna"],
+    ["cost an arm and a leg", "花费了一条胳膊和一条腿", "huā fèi le yī tiáo gē bó hé yī tiáo tuǐ", "cuesta un brazo y una pierna", "custou um braço e uma perna"]
+  ],
+  exampleWords: [
     ["it was a piece of cake", "这是小菜一碟", "zhè shì xiǎo cài yī dié", "fue pan comido", "foi moleza"],
     ["this is a piece of cake", "这是小菜一碟", "zhè shì xiǎo cài yī dié", "esto es pan comido", "isso é moleza"],
     ["let's break the ice", "让我们打破僵局", "ràng wǒ men dǎ pò jiāng jú", "rompamos el hielo", "vamos quebrar o gelo"],
@@ -1798,12 +1848,12 @@ export const p3_106_common__idioms__1 = {
 export const p3_107_common__idioms__2 = {
   meta: {
     wordpack: 107,
+    english: "Common Idioms 2",
     chinese: "Common Idioms 2",
     pinyin: "Common Idioms 2",
-    spanish: "Common Idioms 2",
     portuguese: "Common Idioms 2"
   },
-  words: [
+  baseWords: [
     ["cold feet", "手脚冰冷", "shǒu jiǎo bīng lěng", "pies fríos", "pés frios"],
     ["keep an eye on", "关注", "guān zhù", "mantente atento", "fique de olho"],
     ["give a hand", "伸出援助之手", "shēn chū yuán zhù zhī shǒu", "echa una mano", "dê uma mão"],
@@ -1818,7 +1868,9 @@ export const p3_107_common__idioms__2 = {
     ["when pigs fly", "当猪飞的时候", "dāng zhū fēi de shí hòu", "cuando los cerdos vuelan", "quando os porcos voam"],
     ["raining cats and dogs", "下着猫狗雨", "xià zhe māo gǒu yǔ", "lloviendo a cántaros", "chovendo cães e gatos"],
     ["bite off more than you can chew", "贪多嚼不烂", "tān duō jiáo bù làn", "muerde más de lo que puedes masticar", "morda mais do que você consegue mastigar"],
-    ["better late than never", "迟到总比不到好", "chí dào zǒng bǐ bú dào hǎo", "más vale tarde que nunca", "antes tarde do que nunca"],
+    ["better late than never", "迟到总比不到好", "chí dào zǒng bǐ bú dào hǎo", "más vale tarde que nunca", "antes tarde do que nunca"]
+  ],
+  exampleWords: [
     ["I got cold feet", "我临阵退缩", "wǒ lín zhèn tuì suō", "Tengo los pies fríos", "Fiquei com medo"],
     ["getting cold feet about", "临阵退缩", "lín zhèn tuì suō", "tener miedo de eso", "ficando com medo"],
     ["keep an eye on the kids", "留意孩子们", "liú yì hái zi men", "vigila a los niños", "fique de olho nas crianças"],
@@ -1855,12 +1907,12 @@ export const p3_107_common__idioms__2 = {
 export const p3_108_phrasal__verbs__3 = {
   meta: {
     wordpack: 108,
+    english: "Phrasal Verbs 3",
     chinese: "Phrasal Verbs 3",
     pinyin: "Phrasal Verbs 3",
-    spanish: "Phrasal Verbs 3",
     portuguese: "Phrasal Verbs 3"
   },
-  words: [
+  baseWords: [
     ["point out", "指出", "zhǐ chū", "señalar", "destacar"],
     ["rule out", "排除", "pái chú", "descartar", "descartar"],
     ["sort out", "整理", "zhěng lǐ", "ordenar", "resolver"],
@@ -1880,7 +1932,9 @@ export const p3_108_phrasal__verbs__3 = {
     ["let down", "失望", "shī wàng", "decepcionar", "decepcionar"],
     ["look into", "调查", "diào chá", "investigar", "dê uma olhada em"],
     ["pass out", "昏倒", "hūn dào", "desmayarse", "desmaiar"],
-    ["make up for", "弥补", "mí bǔ", "compensar", "compensar"],
+    ["make up for", "弥补", "mí bǔ", "compensar", "compensar"]
+  ],
+  exampleWords: [
     ["point out mistake", "指出错误", "zhǐ chū cuò wù", "señalar el error", "apontar erro"],
     ["let me point out", "让我指出", "ràng wǒ zhǐ chū", "déjame señalar", "deixe-me ressaltar"],
     ["rule out possibility", "排除可能性", "pái chú kě néng xìng", "descartar posibilidad", "descarta possibilidade"],
@@ -1927,12 +1981,12 @@ export const p3_108_phrasal__verbs__3 = {
 export const p3_109_phrasal__verbs__4 = {
   meta: {
     wordpack: 109,
+    english: "Phrasal Verbs 4",
     chinese: "Phrasal Verbs 4",
     pinyin: "Phrasal Verbs 4",
-    spanish: "Phrasal Verbs 4",
     portuguese: "Phrasal Verbs 4"
   },
-  words: [
+  baseWords: [
     ["run into", "遇到", "yù dào", "toparse con", "esbarrar em"],
     ["take over", "接管", "jiē guǎn", "hacerse cargo", "assumir"],
     ["bring back", "带回来", "dài huí lái", "traer de vuelta", "trazer de volta"],
@@ -1952,7 +2006,9 @@ export const p3_109_phrasal__verbs__4 = {
     ["put off", "推迟", "tuī chí", "posponer", "adiar"],
     ["rip off", "敲竹杠", "qiāo zhú gàng", "estafa", "arrancar"],
     ["settle down", "安顿下来", "ān dùn xià lái", "establecerse", "acalme-se"],
-    ["sign up", "注册", "zhù cè", "registrarse", "inscreva-se"],
+    ["sign up", "注册", "zhù cè", "registrarse", "inscreva-se"]
+  ],
+  exampleWords: [
     ["run into someone", "遇到某人", "yù dào mǒu rén", "toparse con alguien", "esbarrar em alguém"],
     ["run into problems", "遇到问题", "yù dào wèn tí", "tener problemas", "enfrenta problemas"],
     ["take over business", "接管业务", "jiē guǎn yè wù", "hacerse cargo del negocio", "assumir negócios"],
@@ -1999,12 +2055,12 @@ export const p3_109_phrasal__verbs__4 = {
 export const p3_110_collocations__make__do = {
   meta: {
     wordpack: 110,
+    english: "Collocations - Make & Do",
     chinese: "Collocations - Make & Do",
     pinyin: "Collocations - Make & Do",
-    spanish: "Collocations - Make & Do",
     portuguese: "Collocations - Make & Do"
   },
-  words: [
+  baseWords: [
     ["make a decision", "做出决定", "zuò chū jué dìng", "tomar una decisión", "tomar uma decisão"],
     ["make a mistake", "犯错误", "fàn cuò wù", "cometer un error", "cometer um erro"],
     ["make progress", "取得进步", "qǔ dé jìn bù", "progresar", "progredir"],
@@ -2024,7 +2080,9 @@ export const p3_110_collocations__make__do = {
     ["do exercise", "做运动", "zuò yùn dòng", "hacer ejercicio", "fazer exercício"],
     ["do damage", "造成伤害", "zào chéng shāng hài", "hacer daño", "causar danos"],
     ["do laundry", "洗衣服", "xǐ yī fú", "lavar la ropa", "lavar roupa"],
-    ["do nothing", "什么都不做", "shén me dōu bù zuò", "no hacer nada", "não faça nada"],
+    ["do nothing", "什么都不做", "shén me dōu bù zuò", "no hacer nada", "não faça nada"]
+  ],
+  exampleWords: [
     ["make a decision now", "现在就做决定", "xiàn zài jiù zuò jué dìng", "toma una decisión ahora", "tome uma decisão agora"],
     ["hard to make a decision", "很难做出决定", "hěn nán zuò chū jué dìng", "difícil tomar una decisión", "difícil tomar uma decisão"],
     ["make a mistake sometimes", "有时会犯错误", "yǒu shí huì fàn cuò wù", "a veces comete un error", "comete erros às vezes"],
@@ -2071,12 +2129,12 @@ export const p3_110_collocations__make__do = {
 export const p3_111_collocations__have__take = {
   meta: {
     wordpack: 111,
+    english: "Collocations - Have & Take",
     chinese: "Collocations - Have & Take",
     pinyin: "Collocations - Have & Take",
-    spanish: "Collocations - Have & Take",
     portuguese: "Collocations - Have & Take"
   },
-  words: [
+  baseWords: [
     ["have a look", "看看", "kàn kàn", "echa un vistazo", "dê uma olhada"],
     ["have a break", "休息一下", "xiū xī yī xià", "tómate un descanso", "faça uma pausa"],
     ["have a conversation", "进行对话", "jìn xíng duì huà", "tener una conversación", "conversar"],
@@ -2096,7 +2154,9 @@ export const p3_111_collocations__have__take = {
     ["take action", "采取行动", "cǎi qǔ xíng dòng", "tomar medidas", "agir"],
     ["take a shower", "洗澡", "xǐ zǎo", "tomar una ducha", "tomar banho"],
     ["take responsibility", "承担责任", "chéng dān zé rèn", "asumir la responsabilidad", "assumir a responsabilidade"],
-    ["take advantage", "利用", "lì yòng", "aprovecha", "aproveite"],
+    ["take advantage", "利用", "lì yòng", "aprovecha", "aproveite"]
+  ],
+  exampleWords: [
     ["have a look at", "看看", "kàn kàn", "echa un vistazo a", "dê uma olhada em"],
     ["let me have a look", "让我看看", "ràng wǒ kàn kàn", "déjame echar un vistazo", "deixe-me dar uma olhada"],
     ["have a break now", "现在休息一下吧", "xiàn zài xiū xī yī xià ba", "tómate un descanso ahora", "faça uma pausa agora"],
@@ -2109,7 +2169,7 @@ export const p3_111_collocations__have__take = {
     ["let's have lunch", "我们吃午饭吧", "wǒ men chī wǔ fàn ba", "vamos a almorzar", "vamos almoçar"],
     ["have a meeting at", "在", "zài", "tener una reunión en", "tenha uma reunião em"],
     ["need to have a meeting", "开会需要开会", "kāi huì xū yào kāi huì", "necesito tener una reunión", "preciso fazer uma reunião"],
-    ["have a problem with", "", "", "tienes un problema con", "tenho um problema com"],
+    ["have a problem with", "有问题于", "yǒu wèn tí yú", "tienes un problema con", "tenho um problema com"],
     ["I have a problem", "有问题我有一个问题", "yǒu wèn tí wǒ yǒu yí gè wèn tí", "Tengo un problema", "Estou com um problema"],
     ["have an effect on", "影响", "yǐng xiǎng", "tener un efecto sobre", "tem um efeito em"],
     ["will have an effect", "会有效果", "huì yǒu xiào guǒ", "tendrá un efecto", "terá um efeito"],
@@ -2143,12 +2203,12 @@ export const p3_111_collocations__have__take = {
 export const p3_112_collocations__other = {
   meta: {
     wordpack: 112,
+    english: "Collocations - Other",
     chinese: "Collocations - Other",
     pinyin: "Collocations - Other",
-    spanish: "Collocations - Other",
     portuguese: "Collocations - Other"
   },
-  words: [
+  baseWords: [
     ["pay attention", "注意", "zhù yì", "presta atención", "preste atenção"],
     ["keep in mind", "牢记", "láo jì", "ten en cuenta", "tenha em mente"],
     ["come to a conclusion", "得出结论", "dé chū jié lùn", "llegar a una conclusión", "chegar a uma conclusão"],
@@ -2168,7 +2228,9 @@ export const p3_112_collocations__other = {
     ["tell a lie", "说谎", "shuō huǎng", "decir una mentira", "contar uma mentira"],
     ["tell a story", "讲一个故事", "jiǎng yí gè gù shì", "contar una historia", "contar uma história"],
     ["tell the difference", "说出区别", "shuō chū qū bié", "notar la diferencia", "diga a diferença"],
-    ["tell a joke", "讲个笑话", "jiǎng gè xiào huà", "contar un chiste", "conte uma piada"],
+    ["tell a joke", "讲个笑话", "jiǎng gè xiào huà", "contar un chiste", "conte uma piada"]
+  ],
+  exampleWords: [
     ["pay attention to", "关注", "guān zhù", "presta atención a", "preste atenção em"],
     ["please pay attention", "请关注", "qǐng guān zhù", "por favor presta atención", "por favor preste atenção"],
     ["keep in mind that", "请记住", "qǐng jì zhù", "ten en cuenta que", "tenha em mente que"],

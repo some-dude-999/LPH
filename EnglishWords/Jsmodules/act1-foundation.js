@@ -13,12 +13,12 @@ export const __actMeta = {
 export const p1_1_greetings__basics = {
   meta: {
     wordpack: 1,
+    english: "Greetings & Basics",
     chinese: "Greetings & Basics",
     pinyin: "Greetings & Basics",
-    spanish: "Greetings & Basics",
     portuguese: "Greetings & Basics"
   },
-  words: [
+  baseWords: [
     ["hello", "你好", "nǐ hǎo", "Hola", "olá"],
     ["hi", "你好", "nǐ hǎo", "Hola", "oi"],
     ["goodbye", "再见", "zài jiàn", "adiós", "adeus"],
@@ -38,7 +38,9 @@ export const p1_1_greetings__basics = {
     ["welcome", "欢迎", "huān yíng", "bienvenido", "Bem-vindo"],
     ["hey", "嘿", "hēi", "ey", "ei"],
     ["cheers", "干杯", "gān bēi", "salud", "saúde"],
-    ["farewell", "告别", "gào bié", "despedida", "até a próxima"],
+    ["farewell", "告别", "gào bié", "despedida", "até a próxima"]
+  ],
+  exampleWords: [
     ["hello there", "你好呀", "nǐ hǎo ya", "hola", "olá"],
     ["hello friend", "朋友你好", "péng yǒu nǐ hǎo", "hola, amigo", "olá amigo"],
     ["hi there", "你好呀", "nǐ hǎo ya", "hola", "olá"],
@@ -85,12 +87,12 @@ export const p1_1_greetings__basics = {
 export const p1_2_numbers__120 = {
   meta: {
     wordpack: 2,
+    english: "Numbers 1-20",
     chinese: "Numbers 1-20",
     pinyin: "Numbers 1-20",
-    spanish: "Numbers 1-20",
     portuguese: "Numbers 1-20"
   },
-  words: [
+  baseWords: [
     ["one", "一", "yī", "uno", "um"],
     ["two", "二", "èr", "dos", "dois"],
     ["three", "三", "sān", "tres", "três"],
@@ -110,7 +112,9 @@ export const p1_2_numbers__120 = {
     ["seventeen", "十七", "shí qī", "diecisiete", "dezessete"],
     ["eighteen", "十八", "shí bā", "dieciocho", "dezoito"],
     ["nineteen", "十九", "shí jiǔ", "diecinueve", "dezenove"],
-    ["twenty", "二十", "èr shí", "veinte", "vinte"],
+    ["twenty", "二十", "èr shí", "veinte", "vinte"]
+  ],
+  exampleWords: [
     ["one more time", "再一次", "zài yí cì", "Una vez más", "mais uma vez"],
     ["one of them", "其中之一", "qí zhōng zhī yī", "uno de ellos", "um deles"],
     ["two of us", "我们两个人", "wǒ men liǎng gè rén", "dos de nosotros", "nós dois"],
@@ -157,12 +161,12 @@ export const p1_2_numbers__120 = {
 export const p1_3_numbers__counting = {
   meta: {
     wordpack: 3,
+    english: "Numbers & Counting",
     chinese: "Numbers & Counting",
     pinyin: "Numbers & Counting",
-    spanish: "Numbers & Counting",
     portuguese: "Numbers & Counting"
   },
-  words: [
+  baseWords: [
     ["thirty", "三十", "sān shí", "treinta", "trinta"],
     ["forty", "四十", "sì shí", "cuarenta", "quarenta"],
     ["fifty", "五十", "wǔ shí", "cincuenta", "cinquenta"],
@@ -182,7 +186,9 @@ export const p1_3_numbers__counting = {
     ["billion", "十亿", "shí yì", "mil millones", "bilhão"],
     ["tenth", "第十", "dì shí", "décimo", "décimo"],
     ["fifth", "第五", "dì wǔ", "quinto", "quinto"],
-    ["last", "最后的", "zuì hòu de", "último", "último"],
+    ["last", "最后的", "zuì hòu de", "último", "último"]
+  ],
+  exampleWords: [
     ["thirty days", "三十天", "sān shí tiān", "treinta dias", "trinta dias"],
     ["thirty minutes", "三十分钟", "sān shí fēn zhōng", "treinta minutos", "trinta minutos"],
     ["forty years old", "四十岁", "sì shí suì", "cuarenta años", "quarenta anos"],
@@ -229,12 +235,12 @@ export const p1_3_numbers__counting = {
 export const p1_4_articles__determiners = {
   meta: {
     wordpack: 4,
+    english: "Articles & Determiners",
     chinese: "Articles & Determiners",
     pinyin: "Articles & Determiners",
-    spanish: "Articles & Determiners",
     portuguese: "Articles & Determiners"
   },
-  words: [
+  baseWords: [
     ["a", "一个", "yí gè", "a", "um"],
     ["an", "一个", "yí gè", "un", "um"],
     ["the", "这", "zhè", "el", "o"],
@@ -254,7 +260,9 @@ export const p1_4_articles__determiners = {
     ["such", "这样的", "zhè yàng de", "semejante", "tal"],
     ["own", "自己的", "zì jǐ de", "propio", "ter"],
     ["former", "以前的", "yǐ qián de", "anterior", "antigo"],
-    ["latter", "后者", "hòu zhě", "último", "último"],
+    ["latter", "后者", "hòu zhě", "último", "último"]
+  ],
+  exampleWords: [
     ["a lot", "很多", "hěn duō", "mucho", "bastante"],
     ["a few", "几个", "jǐ gè", "algunos", "um pouco"],
     ["an hour", "一个小时", "yí gè xiǎo shí", "una hora", "uma hora"],
@@ -301,12 +309,12 @@ export const p1_4_articles__determiners = {
 export const p1_5_quantifiers = {
   meta: {
     wordpack: 5,
+    english: "Quantifiers",
     chinese: "Quantifiers",
     pinyin: "Quantifiers",
-    spanish: "Quantifiers",
     portuguese: "Quantifiers"
   },
-  words: [
+  baseWords: [
     ["many", "许多", "xǔ duō", "muchos", "muitos"],
     ["much", "很多", "hěn duō", "mucho", "muito"],
     ["more", "更多的", "gèng duō de", "más", "mais"],
@@ -326,7 +334,9 @@ export const p1_5_quantifiers = {
     ["numerous", "很多的", "hěn duō de", "numeroso", "numerosos"],
     ["ample", "充足", "chōng zú", "amplio", "amplo"],
     ["meager", "微薄", "wēi bó", "pobre", "escasso"],
-    ["scant", "很少", "hěn shǎo", "escaso", "escasso"],
+    ["scant", "很少", "hěn shǎo", "escaso", "escasso"]
+  ],
+  exampleWords: [
     ["many times", "很多次", "hěn duō cì", "muchas veces", "muitas vezes"],
     ["so many", "这么多", "zhè me duō", "tantos", "tantos"],
     ["too much", "太多了", "tài duō le", "demasiado", "demais"],
@@ -373,12 +383,12 @@ export const p1_5_quantifiers = {
 export const p1_6_contractions = {
   meta: {
     wordpack: 6,
+    english: "Contractions",
     chinese: "Contractions",
     pinyin: "Contractions",
-    spanish: "Contractions",
     portuguese: "Contractions"
   },
-  words: [
+  baseWords: [
     ["I'm", "我是", "wǒ shì", "Soy", "Eu sou"],
     ["you're", "你是", "nǐ shì", "estás", "você é"],
     ["he's", "他是", "tā shì", "el es", "ele é"],
@@ -398,7 +408,9 @@ export const p1_6_contractions = {
     ["they'll", "他们会", "tā men huì", "ellos van a", "eles vão"],
     ["I'd", "我会", "wǒ huì", "yo haría", "eu faria"],
     ["you'd", "你会", "nǐ huì", "tú harías", "você faria"],
-    ["we'd", "我们会", "wǒ men huì", "nosotros haríamos", "nós faríamos"],
+    ["we'd", "我们会", "wǒ men huì", "nosotros haríamos", "nós faríamos"]
+  ],
+  exampleWords: [
     ["I'm here", "我在这里", "wǒ zài zhè lǐ", "Estoy aquí", "Estou aqui"],
     ["I'm sorry", "对不起", "duì bù qǐ", "Lo lamento", "Desculpe"],
     ["you're kidding", "你在开玩笑吧", "nǐ zài kāi wán xiào ba", "estás bromeando", "você está brincando"],
@@ -445,12 +457,12 @@ export const p1_6_contractions = {
 export const p1_7_contractions__2 = {
   meta: {
     wordpack: 7,
+    english: "Contractions 2",
     chinese: "Contractions 2",
     pinyin: "Contractions 2",
-    spanish: "Contractions 2",
     portuguese: "Contractions 2"
   },
-  words: [
+  baseWords: [
     ["don't", "不", "bù", "no", "não"],
     ["doesn't", "不", "bù", "no", "não"],
     ["didn't", "没有", "méi yǒu", "no", "não"],
@@ -470,7 +482,9 @@ export const p1_7_contractions__2 = {
     ["that's", "那是", "nà shì", "eso es", "isso é"],
     ["there's", "有", "yǒu", "hay", "há"],
     ["here's", "这是", "zhè shì", "aquí está", "aqui está"],
-    ["what's", "什么是", "shén me shì", "qué", "o que é"],
+    ["what's", "什么是", "shén me shì", "qué", "o que é"]
+  ],
+  exampleWords: [
     ["don't worry", "不用担心", "bù yòng dān xīn", "no te preocupes", "não se preocupe"],
     ["I don't know", "我不知道", "wǒ bù zhī dào", "No sé", "Não sei"],
     ["it doesn't matter", "没关系", "méi guān xì", "no importa", "Não importa"],
@@ -517,12 +531,12 @@ export const p1_7_contractions__2 = {
 export const p1_8_common__expressions = {
   meta: {
     wordpack: 8,
+    english: "Common Expressions",
     chinese: "Common Expressions",
     pinyin: "Common Expressions",
-    spanish: "Common Expressions",
     portuguese: "Common Expressions"
   },
-  words: [
+  baseWords: [
     ["me too", "我也是", "wǒ yě shì", "yo también", "eu também"],
     ["no problem", "没问题", "méi wèn tí", "ningún problema", "sem problemas"],
     ["you're welcome", "不客气", "bú kè qì", "de nada", "de nada"],
@@ -542,7 +556,9 @@ export const p1_8_common__expressions = {
     ["as usual", "照常", "zhào cháng", "como siempre", "como de costume"],
     ["at least", "至少", "zhì shǎo", "al menos", "pelo menos"],
     ["so far", "迄今为止", "qì jīn wéi zhǐ", "hasta ahora", "até aqui"],
-    ["take it easy", "别紧张", "bié jǐn zhāng", "tómalo con calma", "vá com calma"],
+    ["take it easy", "别紧张", "bié jǐn zhāng", "tómalo con calma", "vá com calma"]
+  ],
+  exampleWords: [
     ["me too thanks", "我也是谢谢", "wǒ yě shì xiè xiè", "yo también gracias", "eu também obrigado"],
     ["me too please", "我也是请", "wǒ yě shì qǐng", "yo también por favor", "eu também por favor"],
     ["no problem at all", "完全没问题", "wán quán méi wèn tí", "no hay problema en absoluto", "não há problema algum"],
@@ -589,12 +605,12 @@ export const p1_8_common__expressions = {
 export const p1_9_colors = {
   meta: {
     wordpack: 9,
+    english: "Colors",
     chinese: "Colors",
     pinyin: "Colors",
-    spanish: "Colors",
     portuguese: "Colors"
   },
-  words: [
+  baseWords: [
     ["red", "红色的", "hóng sè de", "rojo", "vermelho"],
     ["blue", "蓝色的", "lán sè de", "azul", "azul"],
     ["green", "绿色的", "lǜ sè de", "verde", "verde"],
@@ -614,7 +630,9 @@ export const p1_9_colors = {
     ["color", "颜色", "yán sè", "color", "cor"],
     ["tan", "晒黑", "shài hēi", "broncearse", "bronzeado"],
     ["beige", "浅褐色的", "qiǎn hè sè de", "beige", "bege"],
-    ["navy", "海军", "hǎi jūn", "marina de guerra", "marinha"],
+    ["navy", "海军", "hǎi jūn", "marina de guerra", "marinha"]
+  ],
+  exampleWords: [
     ["red light", "红灯", "hóng dēng", "luz roja", "luz vermelha"],
     ["red rose", "红玫瑰", "hóng méi guī", "rosa roja", "rosa vermelha"],
     ["blue ocean", "蓝色海洋", "lán sè hǎi yáng", "océano azul", "oceano azul"],
@@ -661,12 +679,12 @@ export const p1_9_colors = {
 export const p1_10_days__time = {
   meta: {
     wordpack: 10,
+    english: "Days & Time",
     chinese: "Days & Time",
     pinyin: "Days & Time",
-    spanish: "Days & Time",
     portuguese: "Days & Time"
   },
-  words: [
+  baseWords: [
     ["Monday", "周一", "zhōu yī", "Lunes", "Segunda-feira"],
     ["Tuesday", "周二", "zhōu èr", "Martes", "Terça-feira"],
     ["Wednesday", "周三", "zhōu sān", "Miércoles", "Quarta-feira"],
@@ -686,7 +704,9 @@ export const p1_10_days__time = {
     ["day", "天", "tiān", "día", "dia"],
     ["hour", "小时", "xiǎo shí", "hora", "hora"],
     ["minute", "分钟", "fēn zhōng", "minuto", "minuto"],
-    ["second", "秒", "miǎo", "segundo", "segundo"],
+    ["second", "秒", "miǎo", "segundo", "segundo"]
+  ],
+  exampleWords: [
     ["Monday morning", "周一早上", "zhōu yī zǎo shàng", "lunes por la mañana", "Segunda de manhã"],
     ["every Monday", "每周一", "měi zhōu yī", "todos los lunes", "toda segunda-feira"],
     ["Tuesday night", "周二晚上", "zhōu èr wǎn shàng", "martes por la noche", "Terça-feira à noite"],
@@ -733,12 +753,12 @@ export const p1_10_days__time = {
 export const p1_11_months__seasons = {
   meta: {
     wordpack: 11,
+    english: "Months & Seasons",
     chinese: "Months & Seasons",
     pinyin: "Months & Seasons",
-    spanish: "Months & Seasons",
     portuguese: "Months & Seasons"
   },
-  words: [
+  baseWords: [
     ["January", "一月", "yí yuè", "Enero", "Janeiro"],
     ["February", "二月", "èr yuè", "Febrero", "Fevereiro"],
     ["March", "三月", "sān yuè", "Marzo", "Março"],
@@ -758,7 +778,9 @@ export const p1_11_months__seasons = {
     ["year", "年", "nián", "año", "ano"],
     ["month", "月", "yuè", "mes", "mês"],
     ["seasonal", "季节性的", "jì jié xìng de", "estacional", "sazonal"],
-    ["calendar", "日历", "rì lì", "calendario", "calendário"],
+    ["calendar", "日历", "rì lì", "calendario", "calendário"]
+  ],
+  exampleWords: [
     ["January first", "一月一日", "yí yuè yī rì", "primero de enero", "primeiro de janeiro"],
     ["in January", "一月", "yí yuè", "en enero", "em janeiro"],
     ["February fourteenth", "二月十四日", "èr yuè shí sì rì", "catorce de febrero", "14 de fevereiro"],
@@ -805,12 +827,12 @@ export const p1_11_months__seasons = {
 export const p1_12_family = {
   meta: {
     wordpack: 12,
+    english: "Family",
     chinese: "Family",
     pinyin: "Family",
-    spanish: "Family",
     portuguese: "Family"
   },
-  words: [
+  baseWords: [
     ["mother", "母亲", "mǔ qīn", "madre", "mãe"],
     ["father", "父亲", "fù qīn", "padre", "pai"],
     ["mom", "妈妈", "mā mā", "mamá", "mãe"],
@@ -830,7 +852,9 @@ export const p1_12_family = {
     ["children", "孩子们", "hái zi men", "niños", "crianças"],
     ["baby", "婴儿", "yīng ér", "bebé", "bebê"],
     ["family", "家庭", "jiā tíng", "familia", "família"],
-    ["relative", "亲戚", "qīn qī", "pariente", "parente"],
+    ["relative", "亲戚", "qīn qī", "pariente", "parente"]
+  ],
+  exampleWords: [
     ["my mother", "我的母亲", "wǒ de mǔ qīn", "mi madre", "minha mãe"],
     ["mother knows best", "妈妈最了解", "mā mā zuì liǎo jiě", "madre sabe mejor", "mãe sabe melhor"],
     ["my father", "我的父亲", "wǒ de fù qīn", "mi padre", "meu pai"],
@@ -877,12 +901,12 @@ export const p1_12_family = {
 export const p1_13_body__parts = {
   meta: {
     wordpack: 13,
+    english: "Body Parts",
     chinese: "Body Parts",
     pinyin: "Body Parts",
-    spanish: "Body Parts",
     portuguese: "Body Parts"
   },
-  words: [
+  baseWords: [
     ["head", "头", "tóu", "cabeza", "cabeça"],
     ["face", "脸", "liǎn", "rostro", "face"],
     ["eye", "眼睛", "yǎn jīng", "ojo", "olho"],
@@ -902,7 +926,9 @@ export const p1_13_body__parts = {
     ["back", "背", "bèi", "espalda", "costas"],
     ["stomach", "胃", "wèi", "estómago", "estômago"],
     ["heart", "心", "xīn", "corazón", "coração"],
-    ["brain", "脑", "nǎo", "cerebro", "cérebro"],
+    ["brain", "脑", "nǎo", "cerebro", "cérebro"]
+  ],
+  exampleWords: [
     ["my head hurts", "我头疼", "wǒ tóu téng", "me duele la cabeza", "minha cabeça dói"],
     ["head first", "头先", "tóu xiān", "cabeza primero", "cabeça primeiro"],
     ["pretty face", "漂亮的脸", "piào liàng de liǎn", "cara bonita", "rosto bonito"],
@@ -949,12 +975,12 @@ export const p1_13_body__parts = {
 export const p1_14_personal__pronouns = {
   meta: {
     wordpack: 14,
+    english: "Personal Pronouns",
     chinese: "Personal Pronouns",
     pinyin: "Personal Pronouns",
-    spanish: "Personal Pronouns",
     portuguese: "Personal Pronouns"
   },
-  words: [
+  baseWords: [
     ["I", "我", "wǒ", "I", "EU"],
     ["me", "我", "wǒ", "a mí", "meu"],
     ["you", "你", "nǐ", "tú", "você"],
@@ -974,7 +1000,9 @@ export const p1_14_personal__pronouns = {
     ["ourselves", "我们自己", "wǒ men zì jǐ", "nosotros mismos", "nós mesmos"],
     ["themselves", "他们自己", "tā men zì jǐ", "ellos mismos", "eles mesmos"],
     ["someone", "某人", "mǒu rén", "alguien", "alguém"],
-    ["anyone", "任何人", "rèn hé rén", "alguien", "qualquer um"],
+    ["anyone", "任何人", "rèn hé rén", "alguien", "qualquer um"]
+  ],
+  exampleWords: [
     ["I know", "我知道", "wǒ zhī dào", "Sé", "Eu sei"],
     ["I think", "我认为", "wǒ rèn wéi", "Creo", "Eu penso"],
     ["give me", "给我", "gěi wǒ", "dame", "me dê"],
@@ -1021,12 +1049,12 @@ export const p1_14_personal__pronouns = {
 export const p1_15_possessives__relatives = {
   meta: {
     wordpack: 15,
+    english: "Possessives & Relatives",
     chinese: "Possessives & Relatives",
     pinyin: "Possessives & Relatives",
-    spanish: "Possessives & Relatives",
     portuguese: "Possessives & Relatives"
   },
-  words: [
+  baseWords: [
     ["my", "我的", "wǒ de", "mi", "meu"],
     ["your", "你的", "nǐ de", "su", "seu"],
     ["his", "他的", "tā de", "su", "dele"],
@@ -1046,7 +1074,9 @@ export const p1_15_possessives__relatives = {
     ["whoever", "谁", "shuí", "quien", "quem quer que seja"],
     ["whichever", "任何", "rèn hé", "cualquiera", "qualquer que seja"],
     ["somebody", "某人", "mǒu rén", "alguien", "alguém"],
-    ["everyone", "每个人", "měi gè rén", "todos", "todos"],
+    ["everyone", "每个人", "měi gè rén", "todos", "todos"]
+  ],
+  exampleWords: [
     ["my name", "我的名字", "wǒ de míng zì", "mi nombre", "o meu nome"],
     ["my house", "我的房子", "wǒ de fáng zi", "mi casa", "minha casa"],
     ["your turn", "轮到你了", "lún dào nǐ le", "tu turno", "sua vez"],
@@ -1093,12 +1123,12 @@ export const p1_15_possessives__relatives = {
 export const p1_16_question__words = {
   meta: {
     wordpack: 16,
+    english: "Question Words",
     chinese: "Question Words",
     pinyin: "Question Words",
-    spanish: "Question Words",
     portuguese: "Question Words"
   },
-  words: [
+  baseWords: [
     ["when", "什么时候", "shén me shí hòu", "cuando", "quando"],
     ["where", "在哪里", "zài nǎ lǐ", "dónde", "onde"],
     ["why", "为什么", "wèi shén me", "por qué", "por que"],
@@ -1118,7 +1148,9 @@ export const p1_16_question__words = {
     ["whenever", "每当", "měi dāng", "cuando sea", "em qualquer momento"],
     ["whomever", "无论是谁", "wú lùn shì shuí", "quienquiera", "quem quer que seja"],
     ["somehow", "不知何故", "bù zhī hé gù", "de alguna manera", "de alguma forma"],
-    ["anyhow", "无论如何", "wú lùn rú hé", "de todos modos", "de qualquer forma"],
+    ["anyhow", "无论如何", "wú lùn rú hé", "de todos modos", "de qualquer forma"]
+  ],
+  exampleWords: [
     ["when is it", "什么时候", "shén me shí hòu", "cuando es", "quando é isso"],
     ["when we arrive", "当我们到达时", "dāng wǒ men dào dá shí", "cuando lleguemos", "quando chegarmos"],
     ["where is it", "它在哪里", "tā zài nǎ lǐ", "donde esta", "Cadê"],
@@ -1165,12 +1197,12 @@ export const p1_16_question__words = {
 export const p1_17_modal__verbs = {
   meta: {
     wordpack: 17,
+    english: "Modal Verbs",
     chinese: "Modal Verbs",
     pinyin: "Modal Verbs",
-    spanish: "Modal Verbs",
     portuguese: "Modal Verbs"
   },
-  words: [
+  baseWords: [
     ["can", "能", "néng", "poder", "pode"],
     ["could", "可以", "kě yǐ", "podría", "poderia"],
     ["will", "将要", "jiāng yào", "voluntad", "vai"],
@@ -1190,7 +1222,9 @@ export const p1_17_modal__verbs = {
     ["willing", "愿意的", "yuàn yì de", "deseoso", "disposto"],
     ["capable", "有能力的", "yǒu néng lì de", "capaz", "capaz"],
     ["permitted", "允许的", "yǔn xǔ de", "permitido", "permitido"],
-    ["obligated", "有义务的", "yǒu yì wù de", "obligado", "obrigado"],
+    ["obligated", "有义务的", "yǒu yì wù de", "obligado", "obrigado"]
+  ],
+  exampleWords: [
     ["can I help", "我可以帮忙吗", "wǒ kě yǐ bāng máng ma", "puedo ayudar", "posso ajudar"],
     ["I can do it", "我能做到", "wǒ néng zuò dào", "puedo hacerlo", "Eu posso fazer isso"],
     ["could you please", "能不能请你", "néng bù néng qǐng nǐ", "podría usted", "você poderia, por favor"],
@@ -1237,12 +1271,12 @@ export const p1_17_modal__verbs = {
 export const p1_18_essential__verbs__be__have = {
   meta: {
     wordpack: 18,
+    english: "Essential Verbs: Be & Have",
     chinese: "Essential Verbs: Be & Have",
     pinyin: "Essential Verbs: Be & Have",
-    spanish: "Essential Verbs: Be & Have",
     portuguese: "Essential Verbs: Be & Have"
   },
-  words: [
+  baseWords: [
     ["be", "是", "shì", "ser", "ser"],
     ["is", "是", "shì", "es", "é"],
     ["am", "是", "shì", "soy", "sou"],
@@ -1262,7 +1296,9 @@ export const p1_18_essential__verbs__be__have = {
     ["doing", "正在做", "zhèng zài zuò", "haciendo", "fazendo"],
     ["get", "得到", "dé dào", "conseguir", "pegar"],
     ["gets", "得到", "dé dào", "obtiene", "recebe"],
-    ["got", "得到", "dé dào", "consiguió", "pegou"],
+    ["got", "得到", "dé dào", "consiguió", "pegou"]
+  ],
+  exampleWords: [
     ["to be honest", "说实话", "shuō shí huà", "para ser sincero", "para ser honesto"],
     ["want to be", "想要成为", "xiǎng yào chéng wéi", "quiero ser", "quero ser"],
     ["it is good", "这很好", "zhè hěn hǎo", "es bueno", "isso é bom"],
@@ -1309,12 +1345,12 @@ export const p1_18_essential__verbs__be__have = {
 export const p1_19_essential__verbs__go__come = {
   meta: {
     wordpack: 19,
+    english: "Essential Verbs: Go & Come",
     chinese: "Essential Verbs: Go & Come",
     pinyin: "Essential Verbs: Go & Come",
-    spanish: "Essential Verbs: Go & Come",
     portuguese: "Essential Verbs: Go & Come"
   },
-  words: [
+  baseWords: [
     ["go", "去", "qù", "ir", "ir"],
     ["goes", "去", "qù", "va", "vai"],
     ["went", "去了", "qù le", "fue", "foi"],
@@ -1334,7 +1370,9 @@ export const p1_19_essential__verbs__go__come = {
     ["depart", "离开", "lí kāi", "salir", "partir"],
     ["fetch", "拿来", "ná lái", "buscar", "buscar"],
     ["visit", "访问", "fǎng wèn", "visita", "visita"],
-    ["proceed", "继续", "jì xù", "proceder", "prosseguir"],
+    ["proceed", "继续", "jì xù", "proceder", "prosseguir"]
+  ],
+  exampleWords: [
     ["time to go", "是时候走了", "shì shí hòu zǒu le", "hora de ir", "hora de ir"],
     ["go now", "现在就走", "xiàn zài jiù zǒu", "vete ahora", "vá agora"],
     ["he goes there", "他去那里", "tā qù nà lǐ", "él va allí", "ele vai lá"],
@@ -1381,12 +1419,12 @@ export const p1_19_essential__verbs__go__come = {
 export const p1_20_essential__verbs__common__actions = {
   meta: {
     wordpack: 20,
+    english: "Essential Verbs: Common Actions",
     chinese: "Essential Verbs: Common Actions",
     pinyin: "Essential Verbs: Common Actions",
-    spanish: "Essential Verbs: Common Actions",
     portuguese: "Essential Verbs: Common Actions"
   },
-  words: [
+  baseWords: [
     ["make", "制作", "zhì zuò", "hacer", "fazer"],
     ["made", "制成", "zhì chéng", "hecho", "feito"],
     ["give", "给", "gěi", "dar", "dar"],
@@ -1406,7 +1444,9 @@ export const p1_20_essential__verbs__common__actions = {
     ["tell", "告诉", "gào sù", "decir", "dizer"],
     ["told", "告诉", "gào sù", "dijo", "contado"],
     ["ask", "问", "wèn", "preguntar", "perguntar"],
-    ["help", "帮助", "bāng zhù", "ayuda", "ajuda"],
+    ["help", "帮助", "bāng zhù", "ayuda", "ajuda"]
+  ],
+  exampleWords: [
     ["make it", "成功", "chéng gōng", "hazlo", "faça isso"],
     ["I will make", "我会让", "wǒ huì ràng", "voy a hacer", "eu farei"],
     ["I made it", "我做到了", "wǒ zuò dào le", "lo hice", "Eu consegui"],
@@ -1453,12 +1493,12 @@ export const p1_20_essential__verbs__common__actions = {
 export const p1_21_essential__verbs__daily__actions = {
   meta: {
     wordpack: 21,
+    english: "Essential Verbs: Daily Actions",
     chinese: "Essential Verbs: Daily Actions",
     pinyin: "Essential Verbs: Daily Actions",
-    spanish: "Essential Verbs: Daily Actions",
     portuguese: "Essential Verbs: Daily Actions"
   },
-  words: [
+  baseWords: [
     ["eat", "吃", "chī", "comer", "comer"],
     ["ate", "吃了", "chī le", "comió", "comi"],
     ["drink", "喝", "hē", "beber", "beber"],
@@ -1478,7 +1518,9 @@ export const p1_21_essential__verbs__daily__actions = {
     ["stop", "停止", "tíng zhǐ", "detener", "parar"],
     ["wait", "等等", "děng děng", "espera", "espere"],
     ["lie", "谎言", "huǎng yán", "mentira", "mentira"],
-    ["relax", "放松", "fàng sōng", "relajarse", "relaxe"],
+    ["relax", "放松", "fàng sōng", "relajarse", "relaxe"]
+  ],
+  exampleWords: [
     ["eat well", "吃得好", "chī dé hǎo", "comer bien", "coma bem"],
     ["eat dinner", "吃晚饭", "chī wǎn fàn", "cenar", "jantar"],
     ["I ate it", "我吃了", "wǒ chī le", "Me lo comí", "Eu comi"],
@@ -1525,12 +1567,12 @@ export const p1_21_essential__verbs__daily__actions = {
 export const p1_22_essential__verbs__communication = {
   meta: {
     wordpack: 22,
+    english: "Essential Verbs: Communication",
     chinese: "Essential Verbs: Communication",
     pinyin: "Essential Verbs: Communication",
-    spanish: "Essential Verbs: Communication",
     portuguese: "Essential Verbs: Communication"
   },
-  words: [
+  baseWords: [
     ["speak", "说话", "shuō huà", "hablar", "falar"],
     ["spoke", "发言", "fā yán", "habló", "falou"],
     ["spoken", "口语", "kǒu yǔ", "hablado", "falado"],
@@ -1550,7 +1592,9 @@ export const p1_22_essential__verbs__communication = {
     ["shown", "显示", "xiǎn shì", "mostrado", "mostrado"],
     ["call", "致电", "zhì diàn", "llamar", "ligar"],
     ["shout", "喊", "hǎn", "gritar", "gritar"],
-    ["whisper", "耳语", "ěr yǔ", "susurro", "sussurrar"],
+    ["whisper", "耳语", "ěr yǔ", "susurro", "sussurrar"]
+  ],
+  exampleWords: [
     ["speak up", "大声说出来", "dà shēng shuō chū lái", "hablar", "fale"],
     ["speak English", "说英语", "shuō yīng yǔ", "hablar inglés", "falar inglês"],
     ["I spoke to him", "我和他说话了", "wǒ hé tā shuō huà le", "Hablé con él", "Falei com ele"],
@@ -1597,12 +1641,12 @@ export const p1_22_essential__verbs__communication = {
 export const p1_23_irregular__verbs__1 = {
   meta: {
     wordpack: 23,
+    english: "Irregular Verbs 1",
     chinese: "Irregular Verbs 1",
     pinyin: "Irregular Verbs 1",
-    spanish: "Irregular Verbs 1",
     portuguese: "Irregular Verbs 1"
   },
-  words: [
+  baseWords: [
     ["buy", "购买", "gòu mǎi", "comprar", "comprar"],
     ["bought", "买了", "mǎi le", "comprado", "comprei"],
     ["sell", "卖", "mài", "vender", "vender"],
@@ -1622,7 +1666,9 @@ export const p1_23_irregular__verbs__1 = {
     ["mean", "意思是", "yì si shì", "significar", "significa"],
     ["meant", "意思是", "yì si shì", "significaba", "significava"],
     ["tear", "撕裂", "sī liè", "lágrima", "lágrima"],
-    ["torn", "撕裂", "sī liè", "rasgado", "rasgado"],
+    ["torn", "撕裂", "sī liè", "rasgado", "rasgado"]
+  ],
+  exampleWords: [
     ["buy it", "买它", "mǎi tā", "cómpralo", "compre"],
     ["buy now", "立即购买", "lì jí gòu mǎi", "comprar ahora", "compre agora"],
     ["I bought it", "我买了", "wǒ mǎi le", "Lo compré", "Eu comprei"],
@@ -1669,12 +1715,12 @@ export const p1_23_irregular__verbs__1 = {
 export const p1_24_irregular__verbs__2 = {
   meta: {
     wordpack: 24,
+    english: "Irregular Verbs 2",
     chinese: "Irregular Verbs 2",
     pinyin: "Irregular Verbs 2",
-    spanish: "Irregular Verbs 2",
     portuguese: "Irregular Verbs 2"
   },
-  words: [
+  baseWords: [
     ["fall", "秋天", "qiū tiān", "caer", "queda"],
     ["fell", "跌倒", "diē dǎo", "cayó", "caiu"],
     ["feel", "感觉", "gǎn jué", "sentir", "sinto"],
@@ -1694,7 +1740,9 @@ export const p1_24_irregular__verbs__2 = {
     ["lay", "躺着", "tǎng zhe", "poner", "deitar"],
     ["laid", "铺设", "pū shè", "puesto", "colocado"],
     ["lain", "赖恩", "lài ēn", "acostado", "deitado"],
-    ["awoke", "醒来", "xǐng lái", "desperté", "acordei"],
+    ["awoke", "醒来", "xǐng lái", "desperté", "acordei"]
+  ],
+  exampleWords: [
     ["don't fall", "别摔倒", "bié shuāi dǎo", "no te caigas", "não caia"],
     ["fall down", "跌倒", "diē dǎo", "caer", "cair"],
     ["I fell down", "我摔倒了", "wǒ shuāi dǎo le", "Me caí", "Eu caí"],
@@ -1741,12 +1789,12 @@ export const p1_24_irregular__verbs__2 = {
 export const p1_25_irregular__verbs__3 = {
   meta: {
     wordpack: 25,
+    english: "Irregular Verbs 3",
     chinese: "Irregular Verbs 3",
     pinyin: "Irregular Verbs 3",
-    spanish: "Irregular Verbs 3",
     portuguese: "Irregular Verbs 3"
   },
-  words: [
+  baseWords: [
     ["hold", "保持", "bǎo chí", "mantener", "segure"],
     ["held", "举行", "jǔ xíng", "celebrado", "realizada"],
     ["keep", "保留", "bǎo liú", "mantener", "manter"],
@@ -1766,7 +1814,9 @@ export const p1_25_irregular__verbs__3 = {
     ["stick", "坚持", "jiān chí", "palo", "colar"],
     ["stuck", "卡住", "kǎ zhù", "atascado", "preso"],
     ["weave", "编织", "biān zhī", "tejer", "tecer"],
-    ["wove", "编织", "biān zhī", "tejió", "teceu"],
+    ["wove", "编织", "biān zhī", "tejió", "teceu"]
+  ],
+  exampleWords: [
     ["please hold", "请按住", "qǐng àn zhù", "por favor espera", "por favor espere"],
     ["hold tight", "抓紧", "zhuā jǐn", "agárrate fuerte", "segure firme"],
     ["I held it", "我拿着它", "wǒ ná zhe tā", "Lo sostuve", "Eu segurei"],
@@ -1813,12 +1863,12 @@ export const p1_25_irregular__verbs__3 = {
 export const p1_26_irregular__verbs__4 = {
   meta: {
     wordpack: 26,
+    english: "Irregular Verbs 4",
     chinese: "Irregular Verbs 4",
     pinyin: "Irregular Verbs 4",
-    spanish: "Irregular Verbs 4",
     portuguese: "Irregular Verbs 4"
   },
-  words: [
+  baseWords: [
     ["sing", "唱歌", "chàng gē", "cantar", "cantar"],
     ["sang", "唱", "chàng", "cantó", "cantou"],
     ["swim", "游泳", "yóu yǒng", "nadar", "nadar"],
@@ -1838,7 +1888,9 @@ export const p1_26_irregular__verbs__4 = {
     ["freeze", "冻结", "dòng jié", "congelar", "congelar"],
     ["froze", "冻结", "dòng jié", "se congeló", "congelei"],
     ["steal", "偷", "tōu", "robar", "roubar"],
-    ["stole", "偷了", "tōu le", "robó", "roubou"],
+    ["stole", "偷了", "tōu le", "robó", "roubou"]
+  ],
+  exampleWords: [
     ["sing along", "一起唱", "yì qǐ chàng", "cantar", "cante junto"],
     ["sing a song", "唱首歌", "chàng shǒu gē", "cantar una canción", "cante uma música"],
     ["she sang well", "她唱得很好", "tā chàng dé hěn hǎo", "ella cantó bien", "ela cantou bem"],
@@ -1885,12 +1937,12 @@ export const p1_26_irregular__verbs__4 = {
 export const p1_27_essential__adjectives__1 = {
   meta: {
     wordpack: 27,
+    english: "Essential Adjectives 1",
     chinese: "Essential Adjectives 1",
     pinyin: "Essential Adjectives 1",
-    spanish: "Essential Adjectives 1",
     portuguese: "Essential Adjectives 1"
   },
-  words: [
+  baseWords: [
     ["good", "好", "hǎo", "bueno", "bom"],
     ["bad", "坏", "huài", "malo", "ruim"],
     ["big", "大", "dà", "grande", "grande"],
@@ -1910,7 +1962,9 @@ export const p1_27_essential__adjectives__1 = {
     ["high", "高", "gāo", "alto", "alto"],
     ["low", "低", "dī", "bajo", "baixo"],
     ["wide", "宽", "kuān", "ancho", "largo"],
-    ["narrow", "缩小", "suō xiǎo", "estrecho", "estreito"],
+    ["narrow", "缩小", "suō xiǎo", "estrecho", "estreito"]
+  ],
+  exampleWords: [
     ["good job", "干得好", "gàn dé hǎo", "buen trabajo", "bom trabalho"],
     ["very good", "非常好", "fēi cháng hǎo", "muy bueno", "muito bom"],
     ["bad news", "坏消息", "huài xiāo xī", "malas noticias", "más notícias"],
@@ -1957,12 +2011,12 @@ export const p1_27_essential__adjectives__1 = {
 export const p1_28_essential__adjectives__2 = {
   meta: {
     wordpack: 28,
+    english: "Essential Adjectives 2",
     chinese: "Essential Adjectives 2",
     pinyin: "Essential Adjectives 2",
-    spanish: "Essential Adjectives 2",
     portuguese: "Essential Adjectives 2"
   },
-  words: [
+  baseWords: [
     ["nice", "不错", "bù cuò", "agradable", "legal"],
     ["great", "太棒了", "tài bàng le", "genial", "ótimo"],
     ["important", "重要", "zhòng yào", "importante", "importante"],
@@ -1982,7 +2036,9 @@ export const p1_28_essential__adjectives__2 = {
     ["strong", "强", "qiáng", "fuerte", "forte"],
     ["weak", "弱", "ruò", "débil", "fraco"],
     ["closed", "已关闭", "yǐ guān bì", "cerrado", "fechado"],
-    ["simple", "简单", "jiǎn dān", "sencillo", "simples"],
+    ["simple", "简单", "jiǎn dān", "sencillo", "simples"]
+  ],
+  exampleWords: [
     ["nice day", "美好的一天", "měi hǎo de yī tiān", "buen día", "bom dia"],
     ["very nice", "非常好", "fēi cháng hǎo", "muy bonito", "muito legal"],
     ["great job", "干得好", "gàn dé hǎo", "gran trabajo", "ótimo trabalho"],
@@ -2029,12 +2085,12 @@ export const p1_28_essential__adjectives__2 = {
 export const p1_29_basic__emotions = {
   meta: {
     wordpack: 29,
+    english: "Basic Emotions",
     chinese: "Basic Emotions",
     pinyin: "Basic Emotions",
-    spanish: "Basic Emotions",
     portuguese: "Basic Emotions"
   },
-  words: [
+  baseWords: [
     ["happy", "快乐", "kuài lè", "feliz", "feliz"],
     ["sad", "悲伤", "bēi shāng", "triste", "triste"],
     ["angry", "生气", "shēng qì", "enojado", "irritado"],
@@ -2054,7 +2110,9 @@ export const p1_29_basic__emotions = {
     ["joyful", "快乐", "kuài lè", "alegre", "alegre"],
     ["anxious", "着急", "zháo jí", "ansioso", "ansioso"],
     ["pleased", "很高兴", "hěn gāo xìng", "contento", "satisfeito"],
-    ["fearful", "可怕", "kě pà", "temeroso", "com medo"],
+    ["fearful", "可怕", "kě pà", "temeroso", "com medo"]
+  ],
+  exampleWords: [
     ["so happy", "太开心了", "tài kāi xīn le", "muy feliz", "tão feliz"],
     ["happy ending", "美好结局", "měi hǎo jié jú", "final feliz", "final feliz"],
     ["very sad", "很伤心", "hěn shāng xīn", "muy triste", "muito triste"],
@@ -2101,12 +2159,12 @@ export const p1_29_basic__emotions = {
 export const p1_30_common__animals = {
   meta: {
     wordpack: 30,
+    english: "Common Animals",
     chinese: "Common Animals",
     pinyin: "Common Animals",
-    spanish: "Common Animals",
     portuguese: "Common Animals"
   },
-  words: [
+  baseWords: [
     ["dog", "狗", "gǒu", "perro", "cachorro"],
     ["cat", "猫", "māo", "gato", "gato"],
     ["bird", "鸟", "niǎo", "pájaro", "pássaro"],
@@ -2126,7 +2184,9 @@ export const p1_30_common__animals = {
     ["snake", "蛇", "shé", "serpiente", "cobra"],
     ["butterfly", "蝴蝶", "hú dié", "mariposa", "borboleta"],
     ["bee", "蜜蜂", "mì fēng", "abeja", "abelha"],
-    ["ant", "蚂蚁", "mǎ yǐ", "hormiga", "formiga"],
+    ["ant", "蚂蚁", "mǎ yǐ", "hormiga", "formiga"]
+  ],
+  exampleWords: [
     ["pet dog", "宠物狗", "chǒng wù gǒu", "perro mascota", "cachorro de estimação"],
     ["hot dog", "热狗", "rè gǒu", "perrito caliente", "cachorro-quente"],
     ["black cat", "黑猫", "hēi māo", "gato negro", "gato preto"],
@@ -2173,12 +2233,12 @@ export const p1_30_common__animals = {
 export const p1_31_home__rooms = {
   meta: {
     wordpack: 31,
+    english: "Home & Rooms",
     chinese: "Home & Rooms",
     pinyin: "Home & Rooms",
-    spanish: "Home & Rooms",
     portuguese: "Home & Rooms"
   },
-  words: [
+  baseWords: [
     ["home", "首页", "shǒu yè", "inicio", "casa"],
     ["house", "房子", "fáng zi", "casa", "casa"],
     ["room", "房间", "fáng jiān", "habitación", "quarto"],
@@ -2198,7 +2258,9 @@ export const p1_31_home__rooms = {
     ["floor", "地板", "dì bǎn", "piso", "chão"],
     ["ceiling", "天花板", "tiān huā bǎn", "techo", "teto"],
     ["stairs", "楼梯", "lóu tī", "escaleras", "escadas"],
-    ["hallway", "走廊", "zǒu láng", "pasillo", "corredor"],
+    ["hallway", "走廊", "zǒu láng", "pasillo", "corredor"]
+  ],
+  exampleWords: [
     ["come home", "回家", "huí jiā", "vuelve a casa", "volte para casa"],
     ["home sweet home", "甜蜜的家", "tián mì de jiā", "hogar dulce hogar", "lar doce lar"],
     ["new house", "新房子", "xīn fáng zi", "casa nueva", "casa nova"],
@@ -2245,12 +2307,12 @@ export const p1_31_home__rooms = {
 export const p1_32_food__basics = {
   meta: {
     wordpack: 32,
+    english: "Food Basics",
     chinese: "Food Basics",
     pinyin: "Food Basics",
-    spanish: "Food Basics",
     portuguese: "Food Basics"
   },
-  words: [
+  baseWords: [
     ["food", "食物", "shí wù", "comida", "comida"],
     ["water", "水", "shuǐ", "agua", "água"],
     ["bread", "面包", "miàn bāo", "pan", "pão"],
@@ -2270,7 +2332,9 @@ export const p1_32_food__basics = {
     ["salt", "盐", "yán", "sal", "sal"],
     ["oil", "油", "yóu", "petróleo", "óleo"],
     ["snack", "小吃", "xiǎo chī", "merienda", "lanche"],
-    ["meal", "餐", "cān", "comida", "refeição"],
+    ["meal", "餐", "cān", "comida", "refeição"]
+  ],
+  exampleWords: [
     ["junk food", "垃圾食品", "lā jī shí pǐn", "comida chatarra", "comida lixo"],
     ["food court", "美食广场", "měi shí guǎng chǎng", "patio de comidas", "praça de alimentação"],
     ["drinking water", "饮用水", "yǐn yòng shuǐ", "agua potable", "água potável"],
@@ -2317,12 +2381,12 @@ export const p1_32_food__basics = {
 export const p1_33_drinks__meals = {
   meta: {
     wordpack: 33,
+    english: "Drinks & Meals",
     chinese: "Drinks & Meals",
     pinyin: "Drinks & Meals",
-    spanish: "Drinks & Meals",
     portuguese: "Drinks & Meals"
   },
-  words: [
+  baseWords: [
     ["coffee", "咖啡", "kā fēi", "café", "café"],
     ["tea", "茶", "chá", "té", "chá"],
     ["juice", "果汁", "guǒ zhī", "jugo", "suco"],
@@ -2342,7 +2406,9 @@ export const p1_33_drinks__meals = {
     ["appetite", "食欲", "shí yù", "apetito", "apetite"],
     ["refresh", "刷新", "shuā xīn", "actualizar", "atualizar"],
     ["beverage", "饮料", "yǐn liào", "bebida", "bebida"],
-    ["savor", "品味", "pǐn wèi", "saborear", "saborear"],
+    ["savor", "品味", "pǐn wèi", "saborear", "saborear"]
+  ],
+  exampleWords: [
     ["hot coffee", "热咖啡", "rè kā fēi", "café caliente", "café quente"],
     ["coffee break", "喝咖啡休息时间", "hē kā fēi xiū xī shí jiān", "pausa para el café", "pausa para o café"],
     ["iced tea", "冰茶", "bīng chá", "té helado", "chá gelado"],
@@ -2389,12 +2455,12 @@ export const p1_33_drinks__meals = {
 export const p1_34_clothing = {
   meta: {
     wordpack: 34,
+    english: "Clothing",
     chinese: "Clothing",
     pinyin: "Clothing",
-    spanish: "Clothing",
     portuguese: "Clothing"
   },
-  words: [
+  baseWords: [
     ["clothes", "衣服", "yī fú", "ropa", "roupas"],
     ["shirt", "衬衫", "chèn shān", "camisa", "camisa"],
     ["pants", "裤子", "kù zi", "pantalones", "calças"],
@@ -2414,7 +2480,9 @@ export const p1_34_clothing = {
     ["comfortable", "舒适", "shū shì", "cómodo", "confortável"],
     ["button", "按钮", "àn niǔ", "botón", "botão"],
     ["fashion", "时尚", "shí shàng", "moda", "moda"],
-    ["outfit", "服装", "fú zhuāng", "traje", "roupa"],
+    ["outfit", "服装", "fú zhuāng", "traje", "roupa"]
+  ],
+  exampleWords: [
     ["new clothes", "新衣服", "xīn yī fú", "ropa nueva", "roupas novas"],
     ["clothes shopping", "买衣服", "mǎi yī fú", "compras de ropa", "compras de roupas"],
     ["white shirt", "白衬衫", "bái chèn shān", "camisa blanca", "camisa branca"],
@@ -2461,12 +2529,12 @@ export const p1_34_clothing = {
 export const p1_35_weather = {
   meta: {
     wordpack: 35,
+    english: "Weather",
     chinese: "Weather",
     pinyin: "Weather",
-    spanish: "Weather",
     portuguese: "Weather"
   },
-  words: [
+  baseWords: [
     ["weather", "天气", "tiān qì", "clima", "clima"],
     ["sun", "太阳", "tài yáng", "sol", "sol"],
     ["sunny", "晴朗", "qíng lǎng", "soleado", "ensolarado"],
@@ -2486,7 +2554,9 @@ export const p1_35_weather = {
     ["freezing", "冷冻", "lěng dòng", "congelación", "congelamento"],
     ["mild", "温和", "wēn hé", "leve", "leve"],
     ["forecast", "预测", "yù cè", "pronóstico", "previsão"],
-    ["drizzle", "毛毛雨", "máo máo yǔ", "llovizna", "chuvisco"],
+    ["drizzle", "毛毛雨", "máo máo yǔ", "llovizna", "chuvisco"]
+  ],
+  exampleWords: [
     ["nice weather", "天气好", "tiān qì hǎo", "buen tiempo", "bom tempo"],
     ["weather report", "天气预报", "tiān qì yù bào", "informe meteorológico", "boletim meteorológico"],
     ["bright sun", "灿烂的阳光", "càn làn de yáng guāng", "sol brillante", "sol brilhante"],
@@ -2533,12 +2603,12 @@ export const p1_35_weather = {
 export const p1_36_prepositions__of__place = {
   meta: {
     wordpack: 36,
+    english: "Prepositions of Place",
     chinese: "Prepositions of Place",
     pinyin: "Prepositions of Place",
-    spanish: "Prepositions of Place",
     portuguese: "Prepositions of Place"
   },
-  words: [
+  baseWords: [
     ["in", "在", "zài", "en", "em"],
     ["on", "于", "yú", "en", "em"],
     ["at", "在", "zài", "en", "em"],
@@ -2558,7 +2628,9 @@ export const p1_36_prepositions__of__place = {
     ["below", "下面", "xià miàn", "abajo", "abaixo"],
     ["inside", "里面", "lǐ miàn", "dentro", "dentro"],
     ["outside", "外面", "wài miàn", "afuera", "fora"],
-    ["alongside", "旁边", "páng biān", "junto", "ao lado"],
+    ["alongside", "旁边", "páng biān", "junto", "ao lado"]
+  ],
+  exampleWords: [
     ["in here", "在这里", "zài zhè lǐ", "aquí", "aqui"],
     ["in there", "在那里", "zài nà lǐ", "ahí dentro", "aí"],
     ["on top", "在上面", "zài shàng miàn", "encima", "em cima"],
@@ -2605,12 +2677,12 @@ export const p1_36_prepositions__of__place = {
 export const p1_37_prepositions__of__time__other = {
   meta: {
     wordpack: 37,
+    english: "Prepositions of Time & Other",
     chinese: "Prepositions of Time & Other",
     pinyin: "Prepositions of Time & Other",
-    spanish: "Prepositions of Time & Other",
     portuguese: "Prepositions of Time & Other"
   },
-  words: [
+  baseWords: [
     ["during", "期间", "qī jiān", "durante", "durante"],
     ["for", "对于", "duì yú", "para", "para"],
     ["about", "关于", "guān yú", "acerca de", "sobre"],
@@ -2620,7 +2692,7 @@ export const p1_37_prepositions__of__time__other = {
     ["into", "进入", "jìn rù", "en", "em"],
     ["against", "反对", "fǎn duì", "en contra", "contra"],
     ["among", "其中", "qí zhōng", "entre", "entre"],
-    ["within", "", "", "dentro", "dentro"],
+    ["within", "在内", "zài nèi", "dentro", "dentro"],
     ["beyond", "内超越", "nèi chāo yuè", "más allá", "além"],
     ["throughout", "贯穿", "guàn chuān", "en todas partes", "em todo"],
     ["beside", "旁边", "páng biān", "al lado", "ao lado"],
@@ -2630,7 +2702,9 @@ export const p1_37_prepositions__of__time__other = {
     ["amid", "之中", "zhī zhōng", "en medio", "entre"],
     ["per", "每", "měi", "por", "por"],
     ["regarding", "关于", "guān yú", "respecto", "sobre"],
-    ["concerning", "关于", "guān yú", "relativa a", "relativo"],
+    ["concerning", "关于", "guān yú", "relativa a", "relativo"]
+  ],
+  exampleWords: [
     ["during the day", "白天", "bái tiān", "durante el día", "durante o dia"],
     ["during class", "上课时", "shàng kè shí", "durante la clase", "durante a aula"],
     ["for now", "现在", "xiàn zài", "por ahora", "por enquanto"],
@@ -2677,12 +2751,12 @@ export const p1_37_prepositions__of__time__other = {
 export const p1_38_time__expressions = {
   meta: {
     wordpack: 38,
+    english: "Time Expressions",
     chinese: "Time Expressions",
     pinyin: "Time Expressions",
-    spanish: "Time Expressions",
     portuguese: "Time Expressions"
   },
-  words: [
+  baseWords: [
     ["now", "现在", "xiàn zài", "ahora", "agora"],
     ["later", "稍后", "shāo hòu", "más tarde", "mais tarde"],
     ["soon", "很快", "hěn kuài", "pronto", "em breve"],
@@ -2702,7 +2776,9 @@ export const p1_38_time__expressions = {
     ["nowadays", "如今", "rú jīn", "hoy en día", "hoje em dia"],
     ["eventually", "最终", "zuì zhōng", "eventualmente", "eventualmente"],
     ["presently", "目前", "mù qián", "actualmente", "atualmente"],
-    ["formerly", "以前", "yǐ qián", "anteriormente", "anteriormente"],
+    ["formerly", "以前", "yǐ qián", "anteriormente", "anteriormente"]
+  ],
+  exampleWords: [
     ["right now", "现在", "xiàn zài", "ahora mismo", "agora"],
     ["do it now", "现在就做", "xiàn zài jiù zuò", "hazlo ahora", "faça isso agora"],
     ["see you later", "稍后见", "shāo hòu jiàn", "nos vemos luego", "até mais"],
@@ -2749,12 +2825,12 @@ export const p1_38_time__expressions = {
 export const p1_39_negatives__limits = {
   meta: {
     wordpack: 39,
+    english: "Negatives & Limits",
     chinese: "Negatives & Limits",
     pinyin: "Negatives & Limits",
-    spanish: "Negatives & Limits",
     portuguese: "Negatives & Limits"
   },
-  words: [
+  baseWords: [
     ["hardly", "几乎", "jī hū", "apenas", "dificilmente"],
     ["barely", "勉强", "miǎn qiǎng", "apenas", "mal"],
     ["scarcely", "几乎", "jī hū", "apenas", "dificilmente"],
@@ -2774,7 +2850,9 @@ export const p1_39_negatives__limits = {
     ["omit", "省略", "shěng lüè", "omitir", "omitir"],
     ["abstain", "弃权", "qì quán", "abstenerse", "abster-se"],
     ["refrain", "避免", "bì miǎn", "abstenerse", "abster-se"],
-    ["deprive", "剥夺", "bō duó", "privar", "privar"],
+    ["deprive", "剥夺", "bō duó", "privar", "privar"]
+  ],
+  exampleWords: [
     ["hardly ever", "几乎没有", "jī hū méi yǒu", "casi nunca", "quase nunca"],
     ["hardly any", "几乎没有", "jī hū méi yǒu", "casi ninguno", "quase nenhum"],
     ["barely made it", "勉强做到了", "miǎn qiǎng zuò dào le", "apenas lo logré", "mal consegui"],
@@ -2821,12 +2899,12 @@ export const p1_39_negatives__limits = {
 export const p1_40_basic__transportation = {
   meta: {
     wordpack: 40,
+    english: "Basic Transportation",
     chinese: "Basic Transportation",
     pinyin: "Basic Transportation",
-    spanish: "Basic Transportation",
     portuguese: "Basic Transportation"
   },
-  words: [
+  baseWords: [
     ["car", "汽车", "qì chē", "coche", "carro"],
     ["bus", "巴士", "bā shì", "autobús", "ônibus"],
     ["train", "火车", "huǒ chē", "tren", "trem"],
@@ -2846,7 +2924,9 @@ export const p1_40_basic__transportation = {
     ["ferry", "渡轮", "dù lún", "ferry", "balsa"],
     ["tram", "电车", "diàn chē", "tranvía", "bonde"],
     ["cab", "出租车", "chū zū chē", "taxi", "táxi"],
-    ["scooter", "滑板车", "huá bǎn chē", "scooter", "scooter"],
+    ["scooter", "滑板车", "huá bǎn chē", "scooter", "scooter"]
+  ],
+  exampleWords: [
     ["rent a car", "租车", "zū chē", "alquilar un coche", "alugar um carro"],
     ["car park", "停车场", "tíng chē chǎng", "aparcamiento", "parque de estacionamento"],
     ["by bus", "乘巴士", "chéng bā shì", "en autobús", "de ônibus"],
@@ -2893,12 +2973,12 @@ export const p1_40_basic__transportation = {
 export const p1_41_common__nouns = {
   meta: {
     wordpack: 41,
+    english: "Common Nouns",
     chinese: "Common Nouns",
     pinyin: "Common Nouns",
-    spanish: "Common Nouns",
     portuguese: "Common Nouns"
   },
-  words: [
+  baseWords: [
     ["thing", "东西", "dōng xī", "cosa", "coisa"],
     ["place", "地点", "dì diǎn", "lugar", "lugar"],
     ["person", "人", "rén", "persona", "pessoa"],
@@ -2918,7 +2998,9 @@ export const p1_41_common__nouns = {
     ["problem", "问题", "wèn tí", "problema", "problema"],
     ["event", "事件", "shì jiàn", "evento", "evento"],
     ["moment", "时刻", "shí kè", "momento", "momento"],
-    ["situation", "情况", "qíng kuàng", "situación", "situação"],
+    ["situation", "情况", "qíng kuàng", "situación", "situação"]
+  ],
+  exampleWords: [
     ["same thing", "同样的事情", "tóng yàng de shì qíng", "lo mismo", "a mesma coisa"],
     ["one thing", "一件事", "yī jiàn shì", "una cosa", "uma coisa"],
     ["nice place", "好地方", "hǎo dì fāng", "bonito lugar", "lugar agradável"],
@@ -2965,12 +3047,12 @@ export const p1_41_common__nouns = {
 export const p1_42_more__common__nouns = {
   meta: {
     wordpack: 42,
+    english: "More Common Nouns",
     chinese: "More Common Nouns",
     pinyin: "More Common Nouns",
-    spanish: "More Common Nouns",
     portuguese: "More Common Nouns"
   },
-  words: [
+  baseWords: [
     ["example", "例子", "lì zi", "ejemplo", "exemplo"],
     ["part", "部分", "bù fèn", "parte", "parte"],
     ["side", "侧面", "cè miàn", "lado", "lado"],
@@ -2990,15 +3072,17 @@ export const p1_42_more__common__nouns = {
     ["topic", "主题", "zhǔ tí", "tema", "tópico"],
     ["matter", "事", "shì", "materia", "importa"],
     ["concern", "关注", "guān zhù", "preocupación", "preocupação"],
-    ["detail", "详细", "xiáng xì", "detalle", "detalhe"],
+    ["detail", "详细", "xiáng xì", "detalle", "detalhe"]
+  ],
+  exampleWords: [
     ["for example", "例如", "lì rú", "por ejemplo", "por exemplo"],
     ["good example", "好例子", "hǎo lì zi", "buen ejemplo", "bom exemplo"],
     ["big part", "很大一部分", "hěn dà yī bù fèn", "gran parte", "grande parte"],
-    ["part of", "", "", "parte de", "parte de"],
+    ["part of", "部分的", "bù fèn de", "parte de", "parte de"],
     ["each side", "的一部分每一边", "de yī bù fèn měi yī biān", "cada lado", "cada lado"],
     ["other side", "另一边", "lìng yī biān", "otro lado", "outro lado"],
     ["in the end", "最后", "zuì hòu", "al final", "no final"],
-    ["end of", "", "", "fin de", "fim de"],
+    ["end of", "结束的", "jié shù de", "fin de", "fim de"],
     ["in fact", "结束事实上", "jié shù shì shí shàng", "de hecho", "na verdade"],
     ["fun fact", "有趣的事实", "yǒu qù de shì shí", "dato curioso", "curiosidade"],
     ["starting point", "起点", "qǐ diǎn", "punto de partida", "ponto de partida"],
@@ -3022,7 +3106,7 @@ export const p1_42_more__common__nouns = {
     ["spot the difference", "找出差异", "zhǎo chū chāi yì", "encuentra la diferencia", "descubra a diferença"],
     ["what's the difference", "有什么区别", "yǒu shén me qū bié", "cual es la diferencia", "qual é a diferença"],
     ["this type", "这种类型", "zhè zhǒng lèi xíng", "este tipo", "esse tipo"],
-    ["type of", "", "", "tipo de", "tipo de"],
+    ["type of", "类型的", "lèi xíng de", "tipo de", "tipo de"],
     ["main topic", "的类型主要话题", "de lèi xíng zhǔ yào huà tí", "tema principal", "tópico principal"],
     ["off topic", "题外话", "tí wài huà", "fuera de tema", "fora do tópico"],
     ["no matter", "不管", "bù guǎn", "no importa", "não importa"],
@@ -3037,12 +3121,12 @@ export const p1_42_more__common__nouns = {
 export const p1_43_places__in__town = {
   meta: {
     wordpack: 43,
+    english: "Places in Town",
     chinese: "Places in Town",
     pinyin: "Places in Town",
-    spanish: "Places in Town",
     portuguese: "Places in Town"
   },
-  words: [
+  baseWords: [
     ["town", "镇", "zhèn", "ciudad", "cidade"],
     ["store", "商店", "shāng diàn", "tienda", "loja"],
     ["shop", "店铺", "diàn pù", "tienda", "fazer compras"],
@@ -3062,7 +3146,9 @@ export const p1_43_places__in__town = {
     ["plaza", "广场", "guǎng chǎng", "plaza", "praça"],
     ["warehouse", "仓库", "cāng kù", "almacén", "armazém"],
     ["kiosk", "信息亭", "xìn xī tíng", "quiosco", "quiosque"],
-    ["arcade", "街机", "jiē jī", "sala de juegos", "fliperama"],
+    ["arcade", "街机", "jiē jī", "sala de juegos", "fliperama"]
+  ],
+  exampleWords: [
     ["small town", "小镇", "xiǎo zhèn", "pequeño pueblo", "cidade pequena"],
     ["town center", "市中心", "shì zhōng xīn", "centro de la ciudad", "centro da cidade"],
     ["grocery store", "杂货店", "zá huò diàn", "tienda de comestibles", "mercearia"],
@@ -3109,12 +3195,12 @@ export const p1_43_places__in__town = {
 export const p1_44_casual__informal__english = {
   meta: {
     wordpack: 44,
+    english: "Casual & Informal English",
     chinese: "Casual & Informal English",
     pinyin: "Casual & Informal English",
-    spanish: "Casual & Informal English",
     portuguese: "Casual & Informal English"
   },
-  words: [
+  baseWords: [
     ["yeah", "是的", "shì de", "si", "sim"],
     ["yep", "是的", "shì de", "sí", "sim"],
     ["nope", "不", "bù", "no", "não"],
@@ -3134,13 +3220,15 @@ export const p1_44_casual__informal__english = {
     ["lame", "无聊", "wú liáo", "aburrido", "chato"],
     ["epic", "超棒", "chāo bàng", "épico", "épico"],
     ["sketchy", "可疑", "kě yí", "sospechoso", "suspeito"],
-    ["legit", "靠谱", "kào pǔ", "legítimo", "legítimo"],
-    ["oh yeah", "哦，是的", "ó ， shì de", "oh si", "ah sim"],
-    ["yeah right", "是的，对", "shì de ， duì", "si claro", "sim, certo"],
-    ["yep sure", "是的，当然", "shì de ， dāng rán", "si claro", "sim, claro"],
-    ["yep that works", "是的，有效", "shì de ， yǒu xiào", "sí, eso funciona", "sim, isso funciona"],
-    ["nope not me", "不，不是我", "bù ， bú shì wǒ", "No, yo no", "não, eu não"],
-    ["nope sorry", "不，抱歉", "bù ， bào qiàn", "no lo siento", "não, desculpe"],
+    ["legit", "靠谱", "kào pǔ", "legítimo", "legítimo"]
+  ],
+  exampleWords: [
+    ["oh yeah", "哦，是的", "ó shì de", "oh si", "ah sim"],
+    ["yeah right", "是的，对", "shì de duì", "si claro", "sim, certo"],
+    ["yep sure", "是的，当然", "shì de dāng rán", "si claro", "sim, claro"],
+    ["yep that works", "是的，有效", "shì de yǒu xiào", "sí, eso funciona", "sim, isso funciona"],
+    ["nope not me", "不，不是我", "bù bú shì wǒ", "No, yo no", "não, eu não"],
+    ["nope sorry", "不，抱歉", "bù bào qiàn", "no lo siento", "não, desculpe"],
     ["so cool", "太酷了", "tài kù le", "que genial", "tão legal"],
     ["cool stuff", "很酷的东西", "hěn kù de dōng xī", "cosas interesantes", "coisas legais"],
     ["that's awesome", "太棒了", "tài bàng le", "eso es increíble", "isso é incrível"],
@@ -3181,12 +3269,12 @@ export const p1_44_casual__informal__english = {
 export const p1_45_filler__words__reactions = {
   meta: {
     wordpack: 45,
+    english: "Filler Words & Reactions",
     chinese: "Filler Words & Reactions",
     pinyin: "Filler Words & Reactions",
-    spanish: "Filler Words & Reactions",
     portuguese: "Filler Words & Reactions"
   },
-  words: [
+  baseWords: [
     ["well", "好吧", "hǎo ba", "bien", "bem"],
     ["basically", "基本上", "jī běn shàng", "básicamente", "basicamente"],
     ["honestly", "老实说", "lǎo shí shuō", "honestamente", "honestamente"],
@@ -3206,9 +3294,11 @@ export const p1_45_filler__words__reactions = {
     ["apparently", "显然", "xiǎn rán", "aparentemente", "aparentemente"],
     ["generally", "一般来说", "yì bān lái shuō", "en general", "geralmente"],
     ["frankly", "坦白说", "tǎn bái shuō", "francamente", "francamente"],
-    ["truly", "确实", "què shí", "verdaderamente", "verdadeiramente"],
+    ["truly", "确实", "què shí", "verdaderamente", "verdadeiramente"]
+  ],
+  exampleWords: [
     ["well then", "那么", "nà me", "bueno entonces", "bem, então"],
-    ["oh well", "哦，好吧", "ó ， hǎo ba", "oh bueno", "ah, bem"],
+    ["oh well", "哦，好吧", "ó hǎo ba", "oh bueno", "ah, bem"],
     ["basically yes", "基本上是的", "jī běn shàng shì de", "básicamente sí", "basicamente sim"],
     ["basically the same", "基本一样", "jī běn yī yàng", "básicamente lo mismo", "basicamente o mesmo"],
     ["honestly speaking", "老实说", "lǎo shí shuō", "honestamente hablando", "honestamente falando"],
@@ -3224,13 +3314,13 @@ export const p1_45_filler__words__reactions = {
     ["wow really", "哇真的", "wa zhēn de", "guau, de verdad", "uau, sério"],
     ["wow amazing", "哇太棒了", "wa tài bàng le", "guau increíble", "uau incrível"],
     ["oh no", "哦不", "ó bù", "oh no", "ah não"],
-    ["oh I see", "哦，我明白了", "ó ， wǒ míng bái le", "oh ya veo", "ah, entendi"],
+    ["oh I see", "哦，我明白了", "ó wǒ míng bái le", "oh ya veo", "ah, entendi"],
     ["uh yeah", "呃是的", "è shì de", "eh, sí", "ah sim"],
     ["uh maybe", "呃也许", "è yě xǔ", "eh, tal vez", "ah, talvez"],
-    ["um well", "嗯，好吧", "ń ， hǎo ba", "bueno", "hum, bem"],
+    ["um well", "嗯，好吧", "ń hǎo ba", "bueno", "hum, bem"],
     ["um let me think", "嗯让我想想", "ń ràng wǒ xiǎng xiǎng", "déjame pensar", "hum, deixe-me pensar"],
     ["hmm interesting", "嗯有趣", "ń yǒu qù", "Mmmm interesante", "hum interessante"],
-    ["hmm maybe", "嗯，也许", "ń ， yě xǔ", "mmm tal vez", "hum talvez"],
+    ["hmm maybe", "嗯，也许", "ń yě xǔ", "mmm tal vez", "hum talvez"],
     ["huh what", "呃什么", "è shén me", "eh que", "hein, o que"],
     ["huh really", "嗯真的吗", "ń zhēn de ma", "eh, de verdad", "hein, sério"],
     ["exactly right", "完全正确", "wán quán zhèng què", "exactamente correcto", "exatamente certo"],
@@ -3253,12 +3343,12 @@ export const p1_45_filler__words__reactions = {
 export const p1_156_question__patterns = {
   meta: {
     wordpack: 156,
+    english: "Question Patterns",
     chinese: "Question Patterns",
     pinyin: "Question Patterns",
-    spanish: "Question Patterns",
     portuguese: "Question Patterns"
   },
-  words: [
+  baseWords: [
     ["question", "问题", "wèn tí", "pregunta", "pergunta"],
     ["wonder", "想知道", "xiǎng zhī dào", "maravilla", "maravilha"],
     ["curious", "好奇", "hào qí", "curioso", "curioso"],
@@ -3278,7 +3368,9 @@ export const p1_156_question__patterns = {
     ["muse", "沉思", "chén sī", "musa", "musa"],
     ["hypothesize", "假设", "jiǎ shè", "formular hipótesis", "hipotetizar"],
     ["deliberate", "深思熟虑", "shēn sī shú lǜ", "deliberado", "deliberado"],
-    ["inquire", "询问", "xún wèn", "preguntar", "pergunte"],
+    ["inquire", "询问", "xún wèn", "preguntar", "pergunte"]
+  ],
+  exampleWords: [
     ["good question", "好问题", "hǎo wèn tí", "buena pregunta", "boa pergunta"],
     ["question about", "关于的问题", "guān yú de wèn tí", "pregunta sobre", "pergunta sobre"],
     ["I wonder if", "我想知道是否", "wǒ xiǎng zhī dào shì fǒu", "Me pregunto si", "Eu me pergunto se"],
@@ -3325,12 +3417,12 @@ export const p1_156_question__patterns = {
 export const p1_157_response__patterns = {
   meta: {
     wordpack: 157,
+    english: "Response Patterns",
     chinese: "Response Patterns",
     pinyin: "Response Patterns",
-    spanish: "Response Patterns",
     portuguese: "Response Patterns"
   },
-  words: [
+  baseWords: [
     ["response", "回应", "huí yìng", "respuesta", "resposta"],
     ["reply", "回复", "huí fù", "responder", "responder"],
     ["rejoinder", "反驳", "fǎn bó", "dúplica", "tréplica"],
@@ -3350,7 +3442,9 @@ export const p1_157_response__patterns = {
     ["respond", "回应", "huí yìng", "responder", "responder"],
     ["retort", "反驳", "fǎn bó", "replicar", "retrucar"],
     ["answer", "回答", "huí dá", "respuesta", "responder"],
-    ["voice", "声音", "shēng yīn", "voz", "voz"],
+    ["voice", "声音", "shēng yīn", "voz", "voz"]
+  ],
+  exampleWords: [
     ["quick response", "快速响应", "kuài sù xiǎng yìng", "respuesta rápida", "resposta rápida"],
     ["response to", "回应", "huí yìng", "respuesta a", "resposta a"],
     ["reply to", "回复", "huí fù", "responder a", "responder a"],
@@ -3397,12 +3491,12 @@ export const p1_157_response__patterns = {
 export const p1_158_negative__patterns = {
   meta: {
     wordpack: 158,
+    english: "Negative Patterns",
     chinese: "Negative Patterns",
     pinyin: "Negative Patterns",
-    spanish: "Negative Patterns",
     portuguese: "Negative Patterns"
   },
-  words: [
+  baseWords: [
     ["not", "不是", "bú shì", "no", "não"],
     ["never", "从来没有", "cóng lái méi yǒu", "nunca", "nunca"],
     ["nothing", "什么都没有", "shén me dōu méi yǒu", "nada", "nada"],
@@ -3422,7 +3516,9 @@ export const p1_158_negative__patterns = {
     ["incapable", "无能", "wú néng", "incapaz", "incapaz"],
     ["improbable", "不可能", "bù kě néng", "improbable", "improvável"],
     ["invalid", "无效", "wú xiào", "inválido", "inválido"],
-    ["inapplicable", "不适用", "bù shì yòng", "no aplicable", "inaplicável"],
+    ["inapplicable", "不适用", "bù shì yòng", "no aplicable", "inaplicável"]
+  ],
+  exampleWords: [
     ["not sure", "不确定", "bù què dìng", "no estoy seguro", "não tenho certeza"],
     ["not now", "现在不行", "xiàn zài bù xíng", "ahora no", "agora não"],
     ["never again", "再也不会", "zài yě bú huì", "nunca más", "nunca mais"],
@@ -3469,12 +3565,12 @@ export const p1_158_negative__patterns = {
 export const p1_159_agreement__disagreement = {
   meta: {
     wordpack: 159,
+    english: "Agreement & Disagreement",
     chinese: "Agreement & Disagreement",
     pinyin: "Agreement & Disagreement",
-    spanish: "Agreement & Disagreement",
     portuguese: "Agreement & Disagreement"
   },
-  words: [
+  baseWords: [
     ["compatible", "兼容", "jiān róng", "compatibles", "compatível"],
     ["acquiesce", "默许", "mò xǔ", "consentir", "aquiescer"],
     ["endorse", "赞同", "zàn tóng", "respaldar", "endossar"],
@@ -3494,7 +3590,9 @@ export const p1_159_agreement__disagreement = {
     ["clash", "冲突", "chōng tū", "choque", "confronto"],
     ["approve", "批准", "pī zhǔn", "aprobar", "aprovar"],
     ["dissent", "异议", "yì yì", "disidencia", "dissidência"],
-    ["assent", "同意", "tóng yì", "consentimiento", "consentimento"],
+    ["assent", "同意", "tóng yì", "consentimiento", "consentimento"]
+  ],
+  exampleWords: [
     ["fully compatible", "完全兼容", "wán quán jiān róng", "totalmente compatible", "totalmente compatível"],
     ["compatible with", "与", "yǔ", "compatible con", "compatível com"],
     ["acquiesce to", "兼容默许", "jiān róng mò xǔ", "aceptar", "concordar com"],

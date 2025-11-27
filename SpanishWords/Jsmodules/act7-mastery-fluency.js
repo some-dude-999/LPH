@@ -18,7 +18,7 @@ export const p7_221_past__subjunctive__forms = {
     pinyin: "Guòqù Xūnǐ Yǔqì",
     portuguese: "Formas do Subjuntivo Passado"
   },
-  words: [
+  baseWords: [
     ["tuviera", "had", "有", "yǒu", "tinha"],
     ["pudiera", "could", "可以", "kě yǐ", "poderia"],
     ["fuera", "out", "出", "chū", "fora"],
@@ -38,7 +38,9 @@ export const p7_221_past__subjunctive__forms = {
     ["estudiara", "will study", "将学习", "jiāng xué xí", "vou estudar"],
     ["necesitara", "would need", "需要", "xū yào", "precisaria"],
     ["esperara", "will wait", "会等待", "huì děng dài", "vou esperar"],
-    ["quisiera", "I would like", "我想要", "wǒ xiǎng yào", "Eu gostaria"],
+    ["quisiera", "I would like", "我想要", "wǒ xiǎng yào", "Eu gostaria"]
+  ],
+  exampleWords: [
     ["si tuviera", "if I had", "如果我有", "rú guǒ wǒ yǒu", "se eu tivesse"],
     ["ojalá tuviera", "I wish I had", "我希望我有", "wǒ xī wàng wǒ yǒu", "Eu gostaria de ter"],
     ["si pudiera", "if I could", "如果我可以", "rú guǒ wǒ kě yǐ", "se eu pudesse"],
@@ -90,7 +92,7 @@ export const p7_222_dreaming__soar = {
     pinyin: "Mèngxiǎng (soñar)",
     portuguese: "Sonhar"
   },
-  words: [
+  baseWords: [
     ["sueñas", "you dream", "你梦想", "nǐ mèng xiǎng", "você sonha"],
     ["sueña", "dream", "梦想", "mèng xiǎng", "sonho"],
     ["soñamos", "we dream", "我们梦想", "wǒ men mèng xiǎng", "sonhamos"],
@@ -100,7 +102,9 @@ export const p7_222_dreaming__soar = {
     ["soñador", "dreamer", "梦想家", "mèng xiǎng jiā", "sonhador"],
     ["sueños", "dreams", "梦想", "mèng xiǎng", "sonhos"],
     ["pesadilla", "nightmare", "噩梦", "è mèng", "pesadelo"],
-    ["ensueño", "dream", "梦想", "mèng xiǎng", "sonho"],
+    ["ensueño", "dream", "梦想", "mèng xiǎng", "sonho"]
+  ],
+  exampleWords: [
     ["tú sueñas", "you dream", "你梦想", "nǐ mèng xiǎng", "você sonha"],
     ["siempre sueñas", "you always dream", "你总是梦想", "nǐ zǒng shì mèng xiǎng", "você sempre sonha"],
     ["él sueña", "he dreams", "他梦想", "tā mèng xiǎng", "ele sonha"],
@@ -132,7 +136,7 @@ export const p7_223_agreeing__acordar = {
     pinyin: "Tóngyì (acordar)",
     portuguese: "Concordar"
   },
-  words: [
+  baseWords: [
     ["acuerdo", "agreement", "协议", "xié yì", "acordo"],
     ["acuerdas", "you agree", "你同意", "nǐ tóng yì", "você concorda"],
     ["acuerda", "agree", "同意", "tóng yì", "concordo"],
@@ -141,7 +145,9 @@ export const p7_223_agreeing__acordar = {
     ["acuerdan", "agree", "同意", "tóng yì", "concordo"],
     ["acordar", "agree", "同意", "tóng yì", "concordo"],
     ["convenio", "agreement", "协议", "xié yì", "acordo"],
-    ["pacto", "pact", "契约", "qì yuē", "pacto"],
+    ["pacto", "pact", "契约", "qì yuē", "pacto"]
+  ],
+  exampleWords: [
     ["yo acuerdo", "I agree", "我同意", "wǒ tóng yì", "Eu concordo"],
     ["llegar a un acuerdo", "reach an agreement", "达成协议", "dá chéng xié yì", "chegar a um acordo"],
     ["tú acuerdas", "you agree", "你同意", "nǐ tóng yì", "você concorda"],
@@ -171,7 +177,7 @@ export const p7_224_robotics__ai__terms = {
     pinyin: "Jīqìrén yǔ Réngōng Zhìnéng Shùyǔ",
     portuguese: "Termos de Robótica e IA"
   },
-  words: [
+  baseWords: [
     ["robot", "robot", "机器人", "jī qì rén", "robô"],
     ["robótica", "robotics", "机器人技术", "jī qì rén jì shù", "robótica"],
     ["algoritmo", "algorithm", "算法", "suàn fǎ", "algoritmo"],
@@ -191,7 +197,9 @@ export const p7_224_robotics__ai__terms = {
     ["script", "script", "脚本", "jiǎo běn", "roteiro"],
     ["interfaz", "interface", "接口", "jiē kǒu", "interface"],
     ["módulo", "module", "模块", "mó kuài", "módulo"],
-    ["rutina", "routine", "例行公事", "lì xíng gōng shì", "rotina"],
+    ["rutina", "routine", "例行公事", "lì xíng gōng shì", "rotina"]
+  ],
+  exampleWords: [
     ["el robot", "the robot", "机器人", "jī qì rén", "o robô"],
     ["un robot", "a robot", "机器人", "jī qì rén", "um robô"],
     ["la robótica", "robotics", "机器人技术", "jī qì rén jì shù", "robótica"],
@@ -243,7 +251,7 @@ export const p7_225_warming__calentar = {
     pinyin: "Jiārè (calentar)",
     portuguese: "Aquecer"
   },
-  words: [
+  baseWords: [
     ["caliento", "heat", "热", "rè", "calor"],
     ["calientas", "you warm up", "你热身了", "nǐ rè shēn le", "você aquece"],
     ["calienta", "heats", "加热", "jiā rè", "aquece"],
@@ -253,7 +261,9 @@ export const p7_225_warming__calentar = {
     ["calentar", "warm up", "热身", "rè shēn", "aquecer"],
     ["calentamiento", "warming up", "热身", "rè shēn", "aquecendo"],
     ["tibio", "warm", "温暖", "wēn nuǎn", "quente"],
-    ["templado", "tempered", "磨砺", "mó lì", "temperado"],
+    ["templado", "tempered", "磨砺", "mó lì", "temperado"]
+  ],
+  exampleWords: [
     ["yo caliento", "I warm", "我温暖", "wǒ wēn nuǎn", "Eu aqueço"],
     ["lo caliento", "I heat it", "我加热它", "wǒ jiā rè tā", "Eu aqueço"],
     ["tú calientas", "you warm up", "你热身了", "nǐ rè shēn le", "você aquece"],
@@ -285,28 +295,30 @@ export const p7_226_cooling__enfriar = {
     pinyin: "Lěngquè (enfriar)",
     portuguese: "Esfriar"
   },
-  words: [
+  baseWords: [
     ["enfrío", "cold", "冷", "lěng", "frio"],
-    ["enfrías", "you cool", "你酷", "nǐ kù", "você é legal"],
+    ["enfrías", "you cool", "你冷却", "nǐ lěng què", "você esfria"],
     ["enfría", "cools", "冷却", "lěng què", "esfria"],
-    ["enfriamos", "we cool", "我们很酷", "wǒ men hěn kù", "estamos bem"],
-    ["enfriáis", "you cool", "你酷", "nǐ kù", "você é legal"],
-    ["enfrían", "cool", "酷", "kù", "legal"],
-    ["enfriar", "cool", "酷", "kù", "legal"],
+    ["enfriamos", "we cool", "我们冷却", "wǒ men lěng què", "nós esfriamos"],
+    ["enfriáis", "you cool", "你们冷却", "nǐ men lěng què", "vocês esfriam"],
+    ["enfrían", "they cool", "冷却", "lěng què", "esfriam"],
+    ["enfriar", "to cool", "冷却", "lěng què", "esfriar"],
     ["enfriamiento", "cooling", "冷却", "lěng què", "resfriamento"],
     ["refrigeración", "cooling", "冷却", "lěng què", "resfriamento"],
-    ["escarchado", "frosty", "霜冻", "shuāng dòng", "gelado"],
-    ["yo enfrío", "I cool", "我酷", "wǒ kù", "Eu estou bem"],
+    ["escarchado", "frosty", "霜冻", "shuāng dòng", "gelado"]
+  ],
+  exampleWords: [
+    ["yo enfrío", "I cool", "我冷却", "wǒ lěng què", "Eu esfrio"],
     ["lo enfrío", "I cool it", "我凉了", "wǒ liáng le", "Eu esfriei"],
-    ["tú enfrías", "you cool", "你酷", "nǐ kù", "você é legal"],
-    ["lo enfrías", "you cool it", "你酷吧", "nǐ kù ba", "você se acalma"],
-    ["él enfría", "he cools", "他冷静", "tā lěng jìng", "ele esfria"],
+    ["tú enfrías", "you cool", "你冷却", "nǐ lěng què", "você esfria"],
+    ["lo enfrías", "you cool it", "你冷却它", "nǐ lěng què tā", "você esfria isso"],
+    ["él enfría", "he cools", "他冷却", "tā lěng què", "ele esfria"],
     ["lo enfría", "cools it", "冷却它", "lěng què tā", "esfria"],
-    ["nosotros enfriamos", "we cool", "我们很酷", "wǒ men hěn kù", "estamos bem"],
+    ["nosotros enfriamos", "we cool", "我们冷却", "wǒ men lěng què", "nós esfriamos"],
     ["lo enfriamos", "we cool it", "我们冷却它", "wǒ men lěng què tā", "nós esfriamos"],
-    ["vosotros enfriáis", "you cool", "你酷", "nǐ kù", "você é legal"],
-    ["lo enfriáis", "you cool it", "你酷吧", "nǐ kù ba", "você se acalma"],
-    ["ellos enfrían", "they cool", "他们很酷", "tā men hěn kù", "eles são legais"],
+    ["vosotros enfriáis", "you cool", "你们冷却", "nǐ men lěng què", "vocês esfriam"],
+    ["lo enfriáis", "you cool it", "你们冷却它", "nǐ men lěng què tā", "vocês esfriam isso"],
+    ["ellos enfrían", "they cool", "他们冷却", "tā men lěng què", "eles esfriam"],
     ["lo enfrían", "they cool it", "他们冷却它", "tā men lěng què tā", "eles esfriam"],
     ["quiero enfriar", "I want to cool", "我想凉快", "wǒ xiǎng liáng kuài", "Eu quero esfriar"],
     ["voy a enfriar", "I'm going to cool", "我要凉了", "wǒ yào liáng le", "Vou esfriar"],
@@ -327,7 +339,7 @@ export const p7_227_alternative__medicine = {
     pinyin: "Tìdài Yīxué",
     portuguese: "Medicina Alternativa"
   },
-  words: [
+  baseWords: [
     ["acupuntura", "acupuncture", "针灸", "zhēn jiǔ", "acupuntura"],
     ["homeopatía", "homeopathy", "顺势疗法", "shùn shì liáo fǎ", "homeopatia"],
     ["naturopatía", "naturopathy", "自然疗法", "zì rán liáo fǎ", "naturopatia"],
@@ -346,7 +358,9 @@ export const p7_227_alternative__medicine = {
     ["bienestar", "well-being", "幸福", "xìng fú", "bem-estar"],
     ["energético", "energetic", "充满活力", "chōng mǎn huó lì", "energético"],
     ["espiritual", "spiritual", "精神", "jīng shén", "espiritual"],
-    ["natural", "natural", "天然", "tiān rán", "naturais"],
+    ["natural", "natural", "天然", "tiān rán", "naturais"]
+  ],
+  exampleWords: [
     ["la acupuntura", "acupuncture", "针灸", "zhēn jiǔ", "acupuntura"],
     ["con acupuntura", "with acupuncture", "针灸", "zhēn jiǔ", "com acupuntura"],
     ["la homeopatía", "homeopathy", "顺势疗法", "shùn shì liáo fǎ", "homeopatia"],
@@ -396,7 +410,7 @@ export const p7_228_hiding__esconder = {
     pinyin: "Yǐncáng (esconder)",
     portuguese: "Esconder"
   },
-  words: [
+  baseWords: [
     ["escondo", "I hide", "我隐藏", "wǒ yǐn cáng", "Eu me escondo"],
     ["escondes", "you hide", "你隐藏", "nǐ yǐn cáng", "você se esconde"],
     ["esconde", "hide", "隐藏", "yǐn cáng", "esconder"],
@@ -406,7 +420,9 @@ export const p7_228_hiding__esconder = {
     ["esconder", "hide", "隐藏", "yǐn cáng", "esconder"],
     ["esconderse", "hide", "隐藏", "yǐn cáng", "esconder"],
     ["escondite", "hiding place", "藏身之处", "cáng shēn zhī chù", "esconderijo"],
-    ["ocultar", "hide", "隐藏", "yǐn cáng", "esconder"],
+    ["ocultar", "hide", "隐藏", "yǐn cáng", "esconder"]
+  ],
+  exampleWords: [
     ["yo escondo", "I hide", "我隐藏", "wǒ yǐn cáng", "Eu me escondo"],
     ["lo escondo", "I hide it", "我隐藏它", "wǒ yǐn cáng tā", "Eu escondo"],
     ["tú escondes", "you hide", "你隐藏", "nǐ yǐn cáng", "você se esconde"],
@@ -438,7 +454,7 @@ export const p7_229_revealing__exposing__revelar = {
     pinyin: "Zhǎnshì (mostrar)",
     portuguese: "Mostrar"
   },
-  words: [
+  baseWords: [
     ["revelo", "reveal", "揭示", "jiē shì", "revelar"],
     ["revelas", "you reveal", "你透露", "nǐ tòu lù", "você revela"],
     ["revela", "reveals", "揭示", "jiē shì", "revela"],
@@ -448,7 +464,9 @@ export const p7_229_revealing__exposing__revelar = {
     ["revelar", "reveal", "揭示", "jiē shì", "revelar"],
     ["revelación", "revelation", "启示", "qǐ shì", "revelação"],
     ["desvelar", "reveal", "揭示", "jiē shì", "revelar"],
-    ["secreto", "secret", "秘密", "mì mì", "segredo"],
+    ["secreto", "secret", "秘密", "mì mì", "segredo"]
+  ],
+  exampleWords: [
     ["yo revelo", "I reveal", "我透露", "wǒ tòu lù", "Eu revelo"],
     ["te revelo", "I reveal to you", "小编给你揭晓", "xiǎo biān gěi nǐ jiē xiǎo", "Eu revelo para você"],
     ["tú revelas", "you reveal", "你透露", "nǐ tòu lù", "você revela"],
@@ -480,7 +498,7 @@ export const p7_230_virtual__reality__terms = {
     pinyin: "Xūnǐ Xiànshí Shùyǔ",
     portuguese: "Termos de Realidade Virtual"
   },
-  words: [
+  baseWords: [
     ["virtual", "virtual", "虚拟", "xū nǐ", "virtuais"],
     ["aumentada", "increased", "增加", "zēng jiā", "aumentou"],
     ["mixta", "mixed", "混合", "hùn hé", "misto"],
@@ -499,7 +517,9 @@ export const p7_230_virtual__reality__terms = {
     ["holográfico", "holographic", "全息", "quán xī", "holográfico"],
     ["simulador", "simulator", "模拟器", "mó nǐ qì", "simulador"],
     ["inmersivo", "immersive", "身临其境", "shēn lín qí jìng", "imersivo"],
-    ["sensorial", "sensory", "感官", "gǎn guān", "sensorial"],
+    ["sensorial", "sensory", "感官", "gǎn guān", "sensorial"]
+  ],
+  exampleWords: [
     ["es virtual", "is virtual", "是虚拟的", "shì xū nǐ de", "é virtual"],
     ["realidad virtual", "virtual reality", "虚拟现实", "xū nǐ xiàn shí", "realidade virtual"],
     ["es aumentada", "is increased", "增加", "zēng jiā", "aumentou"],
@@ -549,7 +569,7 @@ export const p7_231_measuring__medir = {
     pinyin: "Cèliáng (medir)",
     portuguese: "Medir"
   },
-  words: [
+  baseWords: [
     ["mido", "I measure", "我测量", "wǒ cè liáng", "Eu meço"],
     ["mides", "you measure", "你测量", "nǐ cè liáng", "você mede"],
     ["mide", "measures", "措施", "cuò shī", "medidas"],
@@ -558,7 +578,9 @@ export const p7_231_measuring__medir = {
     ["miden", "measure", "测量", "cè liáng", "medir"],
     ["medir", "measure", "测量", "cè liáng", "medir"],
     ["medida", "measure", "测量", "cè liáng", "medir"],
-    ["medición", "measurement", "测量", "cè liáng", "medição"],
+    ["medición", "measurement", "测量", "cè liáng", "medição"]
+  ],
+  exampleWords: [
     ["yo mido", "I measure", "我测量", "wǒ cè liáng", "Eu meço"],
     ["lo mido", "I measure it", "我测量一下", "wǒ cè liáng yī xià", "Eu meço"],
     ["tú mides", "you measure", "你测量", "nǐ cè liáng", "você mede"],
@@ -588,7 +610,7 @@ export const p7_232_weighing__pesar = {
     pinyin: "Chēngzhòng (pesar)",
     portuguese: "Pesar"
   },
-  words: [
+  baseWords: [
     ["peso", "weight", "重量", "zhòng liàng", "peso"],
     ["pesas", "weights", "权重", "quán zhòng", "pesos"],
     ["pesa", "weighs", "重", "zhòng", "pesa"],
@@ -598,7 +620,9 @@ export const p7_232_weighing__pesar = {
     ["pesar", "weigh", "称重", "chēng zhòng", "pesar"],
     ["báscula", "scale", "规模", "guī mó", "escala"],
     ["kilogramo", "kilogram", "公斤", "gōng jīn", "quilograma"],
-    ["gramo", "gram", "克", "kè", "grama"],
+    ["gramo", "gram", "克", "kè", "grama"]
+  ],
+  exampleWords: [
     ["yo peso", "I weigh", "我称重", "wǒ chēng zhòng", "Eu peso"],
     ["lo peso", "I weigh it", "我掂量一下", "wǒ diān liáng yī xià", "Eu peso"],
     ["tú pesas", "you weigh", "你称重", "nǐ chēng zhòng", "você pesa"],
@@ -630,7 +654,7 @@ export const p7_233_cryptocurrency__terms = {
     pinyin: "Jiāmì Huòbì Shùyǔ",
     portuguese: "Termos de Criptomoeda"
   },
-  words: [
+  baseWords: [
     ["criptomoneda", "cryptocurrency", "加密货币", "jiā mì huò bì", "criptomoeda"],
     ["bitcoin", "bitcoin", "比特币", "bǐ tè bì", "bitcoin"],
     ["ethereum", "ethereum", "以太坊", "yǐ tài fāng", "etéreo"],
@@ -648,7 +672,9 @@ export const p7_233_cryptocurrency__terms = {
     ["altcoin", "altcoin", "山寨币", "shān zhài bì", "altcoin"],
     ["staking", "staking", "质押", "zhì yā", "piquetagem"],
     ["defi", "defi", "去中心化金融", "qù zhōng xīn huà jīn róng", "definição"],
-    ["nft", "nft", "nft", "nft", "nft"],
+    ["nft", "nft", "nft", "nft", "nft"]
+  ],
+  exampleWords: [
     ["la criptomoneda", "the cryptocurrency", "加密货币", "jiā mì huò bì", "a criptomoeda"],
     ["una criptomoneda", "a cryptocurrency", "加密货币", "jiā mì huò bì", "uma criptomoeda"],
     ["el bitcoin", "the bitcoin", "比特币", "bǐ tè bì", "o bitcoin"],
@@ -696,31 +722,33 @@ export const p7_234_establishing__founding__fundar = {
     pinyin: "Dǎkāi (abrir)",
     portuguese: "Abrir"
   },
-  words: [
+  baseWords: [
     ["fundo", "fund", "基金", "jī jīn", "fundo"],
     ["fundas", "covers", "涵盖", "hán gài", "capas"],
     ["funda", "cover", "封面", "fēng miàn", "capa"],
     ["fundamos", "we founded", "我们创立了", "wǒ men chuàng lì le", "fundamos"],
-    ["fundáis", "you found", "你发现", "nǐ fā xiàn", "você encontrou"],
-    ["fundan", "found", "发现", "fā xiàn", "encontrado"],
-    ["fundar", "found", "发现", "fā xiàn", "encontrado"],
+    ["fundáis", "you found", "你们创立", "nǐ men chuàng lì", "vocês fundam"],
+    ["fundan", "they found", "他们创立", "tā men chuàng lì", "fundam"],
+    ["fundar", "to found", "创立", "chuàng lì", "fundar"],
     ["fundación", "foundation", "基金会", "jī jīn huì", "fundação"],
     ["fundador", "founder", "创始人", "chuàng shǐ rén", "fundador"],
-    ["fundadora", "founder", "创始人", "chuàng shǐ rén", "fundador"],
-    ["yo fundo", "I found", "我发现", "wǒ fā xiàn", "Eu encontrei"],
-    ["lo fundo", "I found it", "我找到了", "wǒ zhǎo dào le", "Eu encontrei"],
+    ["fundadora", "founder", "创始人", "chuàng shǐ rén", "fundador"]
+  ],
+  exampleWords: [
+    ["yo fundo", "I found", "我创立", "wǒ chuàng lì", "Eu fundo"],
+    ["lo fundo", "I found it", "我创立了它", "wǒ chuàng lì le tā", "Eu o fundo"],
     ["tú fundas", "you cover", "你覆盖", "nǐ fù gài", "você cobre"],
-    ["lo fundas", "you found it", "你找到了", "nǐ zhǎo dào le", "você encontrou"],
+    ["lo fundas", "you found it", "你创立了它", "nǐ chuàng lì le tā", "você o funda"],
     ["él funda", "he founds", "他创立了", "tā chuàng lì le", "ele funda"],
-    ["lo funda", "founds it", "发现了它", "fā xiàn le tā", "funda"],
+    ["lo funda", "founds it", "创立了它", "chuàng lì le tā", "o funda"],
     ["nosotros fundamos", "we founded", "我们创立了", "wǒ men chuàng lì le", "fundamos"],
     ["lo fundamos", "we founded it", "我们创立了它", "wǒ men chuàng lì le tā", "nós fundamos"],
-    ["vosotros fundáis", "you found", "你发现", "nǐ fā xiàn", "você encontrou"],
-    ["lo fundáis", "you found it", "你找到了", "nǐ zhǎo dào le", "você encontrou"],
-    ["ellos fundan", "they found", "他们发现", "tā men fā xiàn", "eles encontraram"],
-    ["lo fundan", "they found it", "他们找到了", "tā men zhǎo dào le", "eles encontraram"],
-    ["quiero fundar", "I want to found", "我想找到", "wǒ xiǎng zhǎo dào", "Eu quero encontrar"],
-    ["voy a fundar", "I am going to found", "我要找到", "wǒ yào zhǎo dào", "Eu vou encontrar"],
+    ["vosotros fundáis", "you found", "你们创立", "nǐ men chuàng lì", "vocês fundam"],
+    ["lo fundáis", "you found it", "你们创立了它", "nǐ men chuàng lì le tā", "vocês o fundam"],
+    ["ellos fundan", "they found", "他们创立", "tā men chuàng lì", "eles fundam"],
+    ["lo fundan", "they found it", "他们创立了它", "tā men chuàng lì le tā", "eles o fundam"],
+    ["quiero fundar", "I want to found", "我想创立", "wǒ xiǎng chuàng lì", "Eu quero fundar"],
+    ["voy a fundar", "I am going to found", "我要创立", "wǒ yào chuàng lì", "Eu vou fundar"],
     ["la fundación", "the foundation", "基础", "jī chǔ", "a fundação"],
     ["una fundación", "a foundation", "基础", "jī chǔ", "uma fundação"],
     ["el fundador", "the founder", "创始人", "chuàng shǐ rén", "o fundador"],
@@ -738,7 +766,7 @@ export const p7_235_concluding__wrapping__up__concluir = {
     pinyin: "Guānbì (cerrar)",
     portuguese: "Fechar"
   },
-  words: [
+  baseWords: [
     ["concluyo", "I conclude", "我的结论是", "wǒ de jié lùn shì", "Concluo"],
     ["concluyes", "you conclude", "你得出结论", "nǐ dé chū jié lùn", "você conclui"],
     ["concluye", "concludes", "结论", "jié lùn", "conclui"],
@@ -748,7 +776,9 @@ export const p7_235_concluding__wrapping__up__concluir = {
     ["concluir", "conclude", "总结", "zǒng jié", "concluir"],
     ["clausura", "closure", "关闭", "guān bì", "encerramento"],
     ["desenlace", "outcome", "结果", "jié guǒ", "resultado"],
-    ["epílogo", "epilogue", "结语", "jié yǔ", "epílogo"],
+    ["epílogo", "epilogue", "结语", "jié yǔ", "epílogo"]
+  ],
+  exampleWords: [
     ["yo concluyo", "I conclude", "我的结论是", "wǒ de jié lùn shì", "Concluo"],
     ["lo concluyo", "I conclude it", "我总结一下", "wǒ zǒng jié yī xià", "Eu concluo"],
     ["tú concluyes", "you conclude", "你得出结论", "nǐ dé chū jié lùn", "você conclui"],
@@ -780,7 +810,7 @@ export const p7_236_sustainable__living = {
     pinyin: "Kě Chíxù Shēnghuó",
     portuguese: "Vida Sustentável"
   },
-  words: [
+  baseWords: [
     ["reutilización", "reuse", "重用", "zhòng yòng", "reutilizar"],
     ["compostaje", "composting", "堆肥", "duī féi", "compostagem"],
     ["productos", "products", "产品", "chǎn pǐn", "produtos"],
@@ -798,7 +828,9 @@ export const p7_236_sustainable__living = {
     ["minimalismo", "minimalism", "极简主义", "jí jiǎn zhǔ yì", "minimalismo"],
     ["estacional", "seasonal", "季节性", "jì jié xìng", "sazonal"],
     ["cíclico", "cyclic", "循环", "xún huán", "cíclico"],
-    ["duradero", "durable", "耐用", "nài yòng", "durável"],
+    ["duradero", "durable", "耐用", "nài yòng", "durável"]
+  ],
+  exampleWords: [
     ["la reutilización", "reuse", "重用", "zhòng yòng", "reutilizar"],
     ["con reutilización", "with reuse", "重复使用", "chóng fù shǐ yòng", "com reutilização"],
     ["el compostaje", "composting", "堆肥", "duī féi", "compostagem"],
@@ -846,7 +878,7 @@ export const p7_237_pushing__empujar = {
     pinyin: "Tuī (empujar)",
     portuguese: "Empurrar"
   },
-  words: [
+  baseWords: [
     ["empujo", "push", "推", "tuī", "empurrar"],
     ["empujas", "you push", "你推", "nǐ tuī", "você empurra"],
     ["empuja", "push", "推", "tuī", "empurrar"],
@@ -856,7 +888,9 @@ export const p7_237_pushing__empujar = {
     ["empujar", "push", "推", "tuī", "empurrar"],
     ["empujón", "push", "推", "tuī", "empurrar"],
     ["impulso", "impulse", "冲动", "chōng dòng", "impulso"],
-    ["presión", "pressure", "压力", "yā lì", "pressão"],
+    ["presión", "pressure", "压力", "yā lì", "pressão"]
+  ],
+  exampleWords: [
     ["yo empujo", "I push", "我推", "wǒ tuī", "Eu empurro"],
     ["lo empujo", "I push him", "我推他", "wǒ tuī tā", "Eu empurro ele"],
     ["tú empujas", "you push", "你推", "nǐ tuī", "você empurra"],
@@ -888,7 +922,7 @@ export const p7_238_pulling__tirar = {
     pinyin: "Lā (tirar)",
     portuguese: "Puxar"
   },
-  words: [
+  baseWords: [
     ["tiro", "shot", "射击", "shè jī", "tiro"],
     ["tiras", "strips", "条", "tiáo", "tiras"],
     ["tira", "strip", "条", "tiáo", "tira"],
@@ -898,7 +932,9 @@ export const p7_238_pulling__tirar = {
     ["tirar", "throw", "扔", "rēng", "lançar"],
     ["tirón", "pull", "拉", "lā", "puxar"],
     ["jalar", "pull", "拉", "lā", "puxar"],
-    ["tracción", "traction", "牵引力", "qiān yǐn lì", "tração"],
+    ["tracción", "traction", "牵引力", "qiān yǐn lì", "tração"]
+  ],
+  exampleWords: [
     ["yo tiro", "I shoot", "我射击", "wǒ shè jī", "Eu atiro"],
     ["lo tiro", "I throw it", "我扔了", "wǒ rēng le", "Eu jogo"],
     ["tú tiras", "you throw", "你扔", "nǐ rēng", "você joga"],
@@ -930,7 +966,7 @@ export const p7_239_combining__combinar = {
     pinyin: "Zǔhé (combinar)",
     portuguese: "Combinar"
   },
-  words: [
+  baseWords: [
     ["combino", "I combine", "我结合", "wǒ jié hé", "Eu combino"],
     ["combinas", "you combine", "你结合", "nǐ jié hé", "você combina"],
     ["combina", "combine", "结合", "jié hé", "combinar"],
@@ -940,7 +976,9 @@ export const p7_239_combining__combinar = {
     ["combinar", "combine", "结合", "jié hé", "combinar"],
     ["combinación", "combination", "组合", "zǔ hé", "combinação"],
     ["mezcla", "mix", "混合", "hùn hé", "misturar"],
-    ["fusión", "fusion", "融合", "róng hé", "fusão"],
+    ["fusión", "fusion", "融合", "róng hé", "fusão"]
+  ],
+  exampleWords: [
     ["yo combino", "I combine", "我结合", "wǒ jié hé", "Eu combino"],
     ["lo combino", "I combine it", "我把它结合起来", "wǒ bǎ tā jié hé qǐ lái", "Eu combino"],
     ["tú combinas", "you combine", "你结合", "nǐ jié hé", "você combina"],
@@ -972,7 +1010,7 @@ export const p7_240_separating__separar = {
     pinyin: "Fēnlí (separar)",
     portuguese: "Separar"
   },
-  words: [
+  baseWords: [
     ["separo", "I separate", "我分开", "wǒ fēn kāi", "Eu separo"],
     ["separas", "you separate", "你们分开", "nǐ men fēn kāi", "você separa"],
     ["separa", "separates", "分隔", "fēn gé", "separa"],
@@ -982,7 +1020,9 @@ export const p7_240_separating__separar = {
     ["separar", "separate", "分开", "fēn kāi", "separar"],
     ["separarse", "break up", "分手", "fēn shǒu", "terminar"],
     ["separación", "separation", "分离", "fēn lí", "separação"],
-    ["apartar", "set aside", "放在一边", "fàng zài yī biān", "reservar"],
+    ["apartar", "set aside", "放在一边", "fàng zài yī biān", "reservar"]
+  ],
+  exampleWords: [
     ["yo separo", "I separate", "我分开", "wǒ fēn kāi", "Eu separo"],
     ["lo separo", "I separate it", "我把它分开", "wǒ bǎ tā fēn kāi", "Eu separo"],
     ["tú separas", "you separate", "你们分开", "nǐ men fēn kāi", "você separa"],
@@ -1014,7 +1054,7 @@ export const p7_241_dying__morir = {
     pinyin: "Sǐwáng (morir)",
     portuguese: "Morrer"
   },
-  words: [
+  baseWords: [
     ["muero", "I die", "我死了", "wǒ sǐ le", "Eu morro"],
     ["mueres", "you die", "你死了", "nǐ sǐ le", "você morre"],
     ["muere", "die", "死", "sǐ", "morrer"],
@@ -1024,7 +1064,9 @@ export const p7_241_dying__morir = {
     ["morir", "die", "死", "sǐ", "morrer"],
     ["muerte", "death", "死亡", "sǐ wáng", "morte"],
     ["fallecimiento", "death", "死亡", "sǐ wáng", "morte"],
-    ["difunto", "deceased", "已故", "yǐ gù", "falecido"],
+    ["difunto", "deceased", "已故", "yǐ gù", "falecido"]
+  ],
+  exampleWords: [
     ["yo muero", "I die", "我死了", "wǒ sǐ le", "Eu morro"],
     ["me muero", "I'm dying", "我快死了", "wǒ kuài sǐ le", "Estou morrendo"],
     ["tú mueres", "you die", "你死了", "nǐ sǐ le", "você morre"],
@@ -1056,7 +1098,7 @@ export const p7_242_irregular__past__forms = {
     pinyin: "Bù Guīzé Guòqùshì",
     portuguese: "Formas Irregulares do Passado"
   },
-  words: [
+  baseWords: [
     ["fui", "I went", "我去了", "wǒ qù le", "Eu fui"],
     ["fuiste", "you were", "你是", "nǐ shì", "você estava"],
     ["fue", "was", "是", "shì", "foi"],
@@ -1074,7 +1116,9 @@ export const p7_242_irregular__past__forms = {
     ["tuvo", "had", "有", "yǒu", "tinha"],
     ["tuvimos", "we had", "我们有", "wǒ men yǒu", "tivemos"],
     ["tuvisteis", "you had", "你有", "nǐ yǒu", "você teve"],
-    ["tuvieron", "they had", "他们有", "tā men yǒu", "eles tinham"],
+    ["tuvieron", "they had", "他们有", "tā men yǒu", "eles tinham"]
+  ],
+  exampleWords: [
     ["yo fui", "I was", "我是", "wǒ shì", "Eu estava"],
     ["fui ayer", "I went yesterday", "我昨天去了", "wǒ zuó tiān qù le", "Fui ontem"],
     ["tú fuiste", "you were", "你是", "nǐ shì", "você estava"],
@@ -1122,7 +1166,7 @@ export const p7_243_growing__crecer = {
     pinyin: "Chéngzhǎng (crecer)",
     portuguese: "Crescer"
   },
-  words: [
+  baseWords: [
     ["crezco", "I grow", "我成长", "wǒ chéng zhǎng", "Eu cresço"],
     ["creces", "you grow", "你成长", "nǐ chéng zhǎng", "você cresce"],
     ["crece", "grows", "成长", "chéng zhǎng", "cresce"],
@@ -1132,7 +1176,9 @@ export const p7_243_growing__crecer = {
     ["crecer", "grow", "成长", "chéng zhǎng", "crescer"],
     ["crecimiento", "growth", "成长", "chéng zhǎng", "crescimento"],
     ["maduración", "maturation", "成熟", "chéng shú", "maturação"],
-    ["brote", "outbreak", "爆发", "bào fā", "surto"],
+    ["brote", "outbreak", "爆发", "bào fā", "surto"]
+  ],
+  exampleWords: [
     ["yo crezco", "I grow", "我成长", "wǒ chéng zhǎng", "Eu cresço"],
     ["todavía crezco", "I'm still growing", "我还在成长", "wǒ hái zài chéng zhǎng", "Ainda estou crescendo"],
     ["tú creces", "you grow", "你成长", "nǐ chéng zhǎng", "você cresce"],
@@ -1164,7 +1210,7 @@ export const p7_244_aging__envejecer = {
     pinyin: "Shuāilǎo (envejecer)",
     portuguese: "Envelhecer"
   },
-  words: [
+  baseWords: [
     ["envejezco", "I grow old", "我老了", "wǒ lǎo le", "Eu envelheço"],
     ["envejeces", "you get old", "你变老了", "nǐ biàn lǎo le", "você envelhece"],
     ["envejece", "gets old", "变老", "biàn lǎo", "envelhece"],
@@ -1174,7 +1220,9 @@ export const p7_244_aging__envejecer = {
     ["envejecer", "grow old", "变老", "biàn lǎo", "envelhecer"],
     ["envejecimiento", "aging", "老化", "lǎo huà", "envelhecimento"],
     ["vejez", "old age", "老年", "lǎo nián", "velhice"],
-    ["anciano", "old man", "老头", "lǎo tóu", "velho"],
+    ["anciano", "old man", "老头", "lǎo tóu", "velho"]
+  ],
+  exampleWords: [
     ["yo envejezco", "I grow old", "我老了", "wǒ lǎo le", "Eu envelheço"],
     ["ya envejezco", "I'm getting old", "我已经老了", "wǒ yǐ jīng lǎo le", "Estou ficando velho"],
     ["tú envejeces", "you grow old", "你变老了", "nǐ biàn lǎo le", "você envelhece"],
@@ -1206,7 +1254,7 @@ export const p7_245_command__forms = {
     pinyin: "Mìnglìng Shì",
     portuguese: "Formas Imperativas"
   },
-  words: [
+  baseWords: [
     ["haz", "do", "做", "zuò", "fazer"],
     ["di", "say", "说", "shuō", "diga"],
     ["pon", "put", "把", "bǎ", "colocar"],
@@ -1226,7 +1274,9 @@ export const p7_245_command__forms = {
     ["ponte", "put on", "穿上", "chuān shàng", "colocar"],
     ["hazlo", "do it", "做吧", "zuò ba", "faça isso"],
     ["vete", "go away", "走开", "zǒu kāi", "vá embora"],
-    ["quédate", "stay", "留下", "liú xià", "fique"],
+    ["quédate", "stay", "留下", "liú xià", "fique"]
+  ],
+  exampleWords: [
     ["haz eso", "do that", "这样做", "zhè yàng zuò", "faça isso"],
     ["haz algo", "do something", "做某事", "zuò mǒu shì", "faça alguma coisa"],
     ["di algo", "say something", "说点什么", "shuō diǎn shén me", "diga alguma coisa"],
@@ -1278,7 +1328,7 @@ export const p7_246_reflexive__pronouns = {
     pinyin: "Fǎnshēn Dàicí",
     portuguese: "Pronomes Reflexivos"
   },
-  words: [
+  baseWords: [
     ["me", "me", "我", "wǒ", "eu"],
     ["te", "you", "你", "nǐ", "você"],
     ["se", "se", "瑟", "sè", "se"],
@@ -1294,7 +1344,9 @@ export const p7_246_reflexive__pronouns = {
     ["cepillarse", "brush", "刷", "shuā", "escova"],
     ["mirarse", "look at each other", "互相看看", "hù xiāng kàn kàn", "olhem um para o outro"],
     ["arreglarse", "get ready", "准备好", "zhǔn bèi hǎo", "prepare-se"],
-    ["prepararse", "prepare", "准备", "zhǔn bèi", "preparar"],
+    ["prepararse", "prepare", "准备", "zhǔn bèi", "preparar"]
+  ],
+  exampleWords: [
     ["me veo", "I see myself", "我看到了我自己", "wǒ kàn dào le wǒ zì jǐ", "Eu me vejo"],
     ["me gusta", "I like it", "我喜欢", "wǒ xǐ huān", "Eu gosto disso"],
     ["te duchas", "you shower", "你洗澡", "nǐ xǐ zǎo", "você toma banho"],
@@ -1338,7 +1390,7 @@ export const p7_247_gerund__forms = {
     pinyin: "Dòng Míngcí Xíngshì",
     portuguese: "Formas de Gerúndio"
   },
-  words: [
+  baseWords: [
     ["hablando", "speaking", "说话", "shuō huà", "falando"],
     ["comiendo", "eating", "吃", "chī", "comendo"],
     ["viviendo", "living", "生活", "shēng huó", "vivendo"],
@@ -1356,7 +1408,9 @@ export const p7_247_gerund__forms = {
     ["leyendo", "reading", "阅读", "yuè dú", "lendo"],
     ["oyendo", "hearing", "听力", "tīng lì", "audição"],
     ["trayendo", "bringing", "带来", "dài lái", "trazendo"],
-    ["cayendo", "falling", "坠落", "zhuì luò", "caindo"],
+    ["cayendo", "falling", "坠落", "zhuì luò", "caindo"]
+  ],
+  exampleWords: [
     ["estoy hablando", "I'm talking", "我在说话", "wǒ zài shuō huà", "Estou falando"],
     ["sigo hablando", "I keep talking", "我继续说", "wǒ jì xù shuō", "Continuo falando"],
     ["estoy comiendo", "I'm eating", "我正在吃饭", "wǒ zhèng zài chī fàn", "Estou comendo"],
@@ -1404,7 +1458,7 @@ export const p7_248_perfect__tenses = {
     pinyin: "Wánchéng Shítài",
     portuguese: "Tempos Perfeitos"
   },
-  words: [
+  baseWords: [
     ["he", "I have", "我有", "wǒ yǒu", "Eu tenho"],
     ["has", "have you", "你有吗", "nǐ yǒu ma", "você tem"],
     ["ha", "has", "有", "yǒu", "tem"],
@@ -1422,7 +1476,9 @@ export const p7_248_perfect__tenses = {
     ["habremos", "we will have", "我们将会有", "wǒ men jiāng huì yǒu", "teremos"],
     ["habréis", "there will be", "会有", "huì yǒu", "haverá"],
     ["habrán", "there will be", "会有", "huì yǒu", "haverá"],
-    ["dicho", "said", "说", "shuō", "disse"],
+    ["dicho", "said", "说", "shuō", "disse"]
+  ],
+  exampleWords: [
     ["yo he", "I have", "我有", "wǒ yǒu", "Eu tenho"],
     ["he hecho", "I have done", "我已经做了", "wǒ yǐ jīng zuò le", "Eu fiz"],
     ["tú has", "you have", "你有", "nǐ yǒu", "você tem"],
@@ -1470,7 +1526,7 @@ export const p7_249_future__forms = {
     pinyin: "Jiānglái Shítài",
     portuguese: "Formas do Futuro"
   },
-  words: [
+  baseWords: [
     ["vendré", "I will come", "我会来", "wǒ huì lái", "Eu irei"],
     ["vendrás", "you will come", "你会来", "nǐ huì lái", "você virá"],
     ["vendrá", "will come", "会来", "huì lái", "virá"],
@@ -1488,7 +1544,9 @@ export const p7_249_future__forms = {
     ["tendrá", "will have", "会有", "huì yǒu", "terá"],
     ["tendremos", "we will have", "我们将会有", "wǒ men jiāng huì yǒu", "teremos"],
     ["tendréis", "you will have", "你将会有", "nǐ jiāng huì yǒu", "você terá"],
-    ["tendrán", "will have", "会有", "huì yǒu", "terá"],
+    ["tendrán", "will have", "会有", "huì yǒu", "terá"]
+  ],
+  exampleWords: [
     ["yo vendré", "I will come", "我会来", "wǒ huì lái", "Eu irei"],
     ["vendré mañana", "I will come tomorrow", "我明天就来", "wǒ míng tiān jiù lái", "Eu irei amanhã"],
     ["tú vendrás", "you will come", "你会来", "nǐ huì lái", "você virá"],
@@ -1536,7 +1594,7 @@ export const p7_250_common__idioms = {
     pinyin: "Chángyòng Xíyǔ",
     portuguese: "Expressões Idiomáticas Comuns"
   },
-  words: [
+  baseWords: [
     ["estar en las nubes", "be in the clouds", "在云端", "zài yún duān", "estar nas nuvens"],
     ["meter la pata", "screw up", "搞砸了", "gǎo zá le", "estragar tudo"],
     ["echar de menos", "miss", "想念", "xiǎng niàn", "senhorita"],
@@ -1557,7 +1615,9 @@ export const p7_250_common__idioms = {
     ["estar hasta las narices", "be fed up", "厌倦了", "yàn juàn le", "estar farto"],
     ["dar en el clavo", "hit the nail on the head", "一语中的", "yī yǔ zhòng dì", "acertou em cheio"],
     ["poner los pelos de punta", "make your hair stand on end", "让你毛骨悚然", "ràng nǐ máo gǔ sǒng rán", "deixa seu cabelo em pé"],
-    ["no dar ni golpe", "not give a single blow", "不予一击", "bù yǔ yī jī", "não dar um único golpe"],
+    ["no dar ni golpe", "not give a single blow", "不予一击", "bù yǔ yī jī", "não dar um único golpe"]
+  ],
+  exampleWords: [
     ["siempre estar en las nubes", "always be in the clouds", "永远在云端", "yǒng yuǎn zài yún duān", "esteja sempre nas nuvens"],
     ["suele estar en las nubes", "is usually in the clouds", "通常在云端", "tōng cháng zài yún duān", "geralmente está nas nuvens"],
     ["voy a meter la pata", "I'm going to screw up", "我要搞砸了", "wǒ yào gǎo zá le", "Eu vou estragar tudo"],

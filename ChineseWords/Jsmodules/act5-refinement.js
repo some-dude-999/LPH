@@ -26,7 +26,7 @@ export const p5_80_personality__traits = {
     malay: "Personality Traits",
     filipino: "Personality Traits"
   },
-  words: [
+  baseWords: [
     ["性格", "xìng gé", "Personality", "Personalidad", "Personnalité", "Personalidade", "Tính cách", "บุคลิกภาพ", "បុគ្គលិកលក្ខណៈ", "Kepribadian", "Keperibadian", "Pagkatao"],
     ["开朗", "kāi lǎng", "Cheerful", "Alegre", "Joyeux", "Alegre", "Vui vẻ", "ร่าเริง", "រីករាយ", "Ceria", "Ceria", "Masaya"],
     ["内向", "nèi xiàng", "Introvert", "Introvertido", "Introverti", "Introvertido", "Hướng nội", "เก็บตัว", "បិទខ្លួន", "Introvert", "Introvert", "Introvert"],
@@ -43,7 +43,9 @@ export const p5_80_personality__traits = {
     ["急躁", "jí zào", "Impatient", "Impaciente", "Impatient", "Impaciente", "Nóng nảy", "ใจร้อน", "ប្រញាប់ប្រញាល់", "Tidak sabar", "Tidak sabar", "Naiinip"],
     ["乐观", "lè guān", "Optimistic", "Optimista", "Optimiste", "Otimista", "Lạc quan", "มองโลกในแง่ดี", "សុទិដ្ឋិនិយម", "Optimis", "Optimistik", "Optimistiko"],
     ["悲观", "bēi guān", "Pessimistic", "Pesimista", "Pessimiste", "Pessimista", "Bi quan", "มองโลกในแง่ร้าย", "ទុទិដ្ឋិនិយម", "Pesimis", "Pesimistik", "Pesimistiko"],
-    ["自信", "zì xìn", "Confident", "Confiado", "Confiant", "Confiante", "Tự tin", "มั่นใจ", "ទំនុកចិត្ត", "Percaya diri", "Yakin", "Tiwala sa sarili"],
+    ["自信", "zì xìn", "Confident", "Confiado", "Confiant", "Confiante", "Tự tin", "มั่นใจ", "ទំនុកចិត្ត", "Percaya diri", "Yakin", "Tiwala sa sarili"]
+  ],
+  exampleWords: [
     ["好性格", "hǎo xìng gé", "Good personality", "Buena personalidad", "Bonne personnalité", "Boa personalidade", "Tính cách tốt", "บุคลิกดี", "បុគ្គលិកលក្ខណៈល្អ", "Kepribadian baik", "Personaliti baik", "Magandang pagkatao"],
     ["改变性格", "gǎi biàn xìng gé", "Change personality", "Cambiar personalidad", "Changer de personnalité", "Mudar personalidade", "Thay đổi tính cách", "เปลี่ยนบุคลิก", "ផ្លាស់ប្តូរបុគ្គលិកលក្ខណៈ", "Mengubah kepribadian", "Tukar personaliti", "Baguhin ang pagkatao"],
     ["性格开朗", "xìng gé kāi lǎng", "Cheerful personality", "Personalidad alegre", "Personnalité joyeuse", "Personalidade alegre", "Tính cách vui vẻ", "บุคลิกร่าเริง", "បុគ្គលិកលក្ខណៈរីករាយ", "Kepribadian ceria", "Personaliti ceria", "Masayang pagkatao"],
@@ -97,7 +99,7 @@ export const p5_81_culture__traditions = {
     malay: "Culture & Traditions",
     filipino: "Culture & Traditions"
   },
-  words: [
+  baseWords: [
     ["文化", "wén huà", "Culture", "Cultura", "Culture", "Cultura", "Văn hóa", "วัฒนธรรม", "វប្បធម៌", "Budaya", "Budaya", "Kultura"],
     ["传统", "chuán tǒng", "Tradition", "Tradición", "Tradition", "Tradição", "Truyền thống", "ประเพณี", "ប្រពៃណី", "Tradisi", "Tradisi", "Tradisyon"],
     ["习俗", "xí sú", "Customs", "Costumbres", "Coutumes", "Costumes", "Phong tục", "ประเพณี", "ទំនៀមទម្លាប់", "Kebiasaan", "Adat", "Kaugalian"],
@@ -113,7 +115,9 @@ export const p5_81_culture__traditions = {
     ["拜年", "bài nián", "New Year visit", "Visita de año nuevo", "Visite du Nouvel An", "Visita de ano novo", "Chúc Tết", "ไหว้ปีใหม่", "ទៅជូនពរឆ្នាំថ្មី", "Kunjungan Tahun Baru", "Kunjungan Tahun Baru", "Pagbisita sa Bagong Taon"],
     ["团圆", "tuán yuán", "Reunion", "Reunión", "Réunion", "Reunião", "Đoàn viên", "การรวมตัว", "ការជួបជុំ", "Reuni", "Reuni", "Pagtitipon"],
     ["放鞭炮", "fàng biān pào", "Set off firecrackers", "Encender petardos", "Allumer des pétards", "Acender fogos", "Đốt pháo", "จุดประทัด", "បាញ់កាំជ្រួច", "Menyalakan petasan", "Pasang mercun", "Magpaputok"],
-    ["贴春联", "tiē chūn lián", "Post Spring couplets", "Pegar dísticos de primavera", "Coller des distiques de printemps", "Colar dísticos de primavera", "Dán câu đối tết", "ติดคู่บทกลอน", "បិទស្លាកទ្វារ", "Menempelkan kuplet", "Tampal kuplet", "Magdikit ng mga couplet"],
+    ["贴春联", "tiē chūn lián", "Post Spring couplets", "Pegar dísticos de primavera", "Coller des distiques de printemps", "Colar dísticos de primavera", "Dán câu đối tết", "ติดคู่บทกลอน", "បិទស្លាកទ្វារ", "Menempelkan kuplet", "Tampal kuplet", "Magdikit ng mga couplet"]
+  ],
+  exampleWords: [
     ["中国文化", "zhōng guó wén huà", "Chinese culture", "Cultura china", "Culture chinoise", "Cultura chinesa", "Văn hóa Trung Quốc", "วัฒนธรรมจีน", "វប្បធម៌ចិន", "Budaya Tiongkok", "Budaya Cina", "Kulturang Tsino"],
     ["学文化", "xué wén huà", "Learn culture", "Aprender cultura", "Apprendre la culture", "Aprender cultura", "Học văn hóa", "เรียนวัฒนธรรม", "រៀនវប្បធម៌", "Belajar budaya", "Belajar budaya", "Mag-aral ng kultura"],
     ["传统的", "chuán tǒng de", "Traditional", "Tradicional", "Traditionnel", "Tradicional", "Truyền thống", "แบบดั้งเดิม", "ប្រពៃណី", "Tradisional", "Tradisional", "Tradisyonal"],
@@ -165,58 +169,60 @@ export const p5_82_chinese__arts__heritage = {
     malay: "Chinese Arts & Heritage",
     filipino: "Chinese Arts & Heritage"
   },
-  words: [
-    ["中国", "zhōng guó", "China", "China", "Chine", "China", "Trung Quốc", "จีน - มังกร - ฟีนิกซ์ - แพนด้า - กังฟู - ศิลปะการต่อสู้ - ไทเก็ก - การประดิษฐ์ตัวอักษร - จิตรกรรมจีนแบบดั้งเดิม - งิ้วปักกิ่ง - พิธีชงชา - การแพทย์แผนจีน - การฝังเข็ม - ตัดกระดาษ - เย็บปักถักร้อย - เซรามิค - ไหม - ไปจีน - ในประเทศจีน - มังกรจีน - เหมือนมังกร - ฟีนิกซ์ - เหมือนนกฟีนิกซ์ - แพนด้ายักษ์ - ดูหมีแพนด้า - เรียนกังฟู - ฝึกกังฟู - เรียนรู้ศิลปะการต่อสู้ - ฝึกศิลปะการต่อสู้ - ฝึกไทชิ || - ดูการแพทย์แผนจีน - เรียนแพทย์แผนจีน - ฝังเข็ม - เรียนรู้การฝังเข็ม - เรียนรู้การตัดกระดาษ - ตัดกระดาษ - เรียนรู้การเย็บปักถักร้อย - ทำการเย็บปักถักร้อย - เซรามิค - ทำเซรามิก - ผ้าไหม - ซื้อผ้าไหม", "ចិន || នាគ", "Cina", "China", "Tsina"],
-    ["龙", "lóng", "Dragon", "Dragón", "Dragons", "Dragão", "Rồng", "[TRANSLATE_TH]", "Phoenix", "Naga", "Naga", "Dragon"],
-    ["凤", "fèng", "Phoenix", "Fénix", "Phénix", "Fênix", "Phượng Hoàng", "[TRANSLATE_TH]", "ខ្លាឃ្មុំផេនដា", "burung phoenix", "Phoenix", "Phoenix"],
-    ["熊猫", "xióng māo", "Panda", "Panda", "Panda", "Panda", "Gấu trúc", "[TRANSLATE_TH]", "Kung Fu", "Panda", "Panda", "Panda"],
-    ["功夫", "gōng fu", "Kung Fu", "Kung Fu", "Kung-Fu", "Kung Fu", "Kung Fu", "[TRANSLATE_TH]", "សិល្បៈក្បាច់គុន", "Kung Fu", "Kung fu", "Kung fu"],
-    ["武术", "wǔ shù", "Martial Arts", "Artes marciales", "Arts martiaux", "Artes Marciais", "Võ Thuật", "[TRANSLATE_TH]", "តាយជី", "Seni Bela Diri", "Seni Martial", "Martial Arts"],
-    ["太极拳", "tài jí quán", "Tai Chi", "Tai Chi", "Taï Chi", "Tai Chi", "Thái cực quyền", "[TRANSLATE_TH]", "ការសរសេរអក្សរផ្ចង់ || គំនូរចិនបុរាណ", "Tai Chi", "Tai chi", "Tai Chi"],
-    ["书法", "shū fǎ", "Calligraphy", "Caligrafía", "Calligraphie", "Caligrafia", "Thư pháp", "[TRANSLATE_TH]", "ល្ខោន Peking", "Kaligrafi", "Kaligrafi", "Calligraphy"],
-    ["国画", "guó huà", "Traditional Chinese Painting", "Pintura tradicional china", "Peinture traditionnelle chinoise", "Pintura Tradicional Chinesa", "Tranh truyền thống Trung Quốc", "[TRANSLATE_TH]", "ពិធីតែ", "Lukisan Tradisional Tiongkok", "Lukisan Cina Tradisional", "Tradisyonal na pagpipinta ng Tsino"],
-    ["京剧", "jīng jù", "Peking Opera", "Ópera de Pekín", "Opéra de Pékin", "Ópera de Pequim", "Kinh kịch", "[TRANSLATE_TH]", "ឱសថបុរាណចិន", "Opera Peking", "Peking Opera", "Peking Opera"],
-    ["茶道", "chá dào", "Tea Ceremony", "Ceremonia del Té", "Cérémonie du thé", "Cerimônia do Chá", "Trà đạo", "[TRANSLATE_TH]", "ការចាក់ម្ជុលវិទ្យាសាស្ត្រ || ការកាត់ក្រដាស", "Upacara Minum Teh", "Majlis Teh", "Seremonya ng tsaa"],
-    ["中医", "zhōng yī", "Traditional Chinese Medicine", "Medicina Tradicional China", "Médecine traditionnelle chinoise", "Medicina Tradicional Chinesa", "Y học cổ truyền Trung Quốc", "[TRANSLATE_TH]", "ប៉ាក់", "Pengobatan Tradisional Cina", "Perubatan Cina Tradisional", "Tradisyonal na gamot na Tsino"],
-    ["针灸", "zhēn jiǔ", "Acupuncture", "Acupuntura", "Acupuncture", "Acupuntura", "Châm cứu", "[TRANSLATE_TH]", "សេរ៉ាមិច || សូត្រ", "Akupunktur", "Akupunktur", "Acupuncture"],
-    ["剪纸", "jiǎn zhǐ", "Paper-cutting", "Corte de papel", "Découpe de papier", "Corte de papel", "Cắt giấy", "[TRANSLATE_TH]", "ការទៅប្រទេសចិន", "Pemotongan kertas", "Pemotongan kertas", "Pag-cut ng papel"],
-    ["刺绣", "cì xiù", "Embroidery", "Bordado", "Broderie", "Bordado", "Thêu", "[TRANSLATE_TH]", "នៅប្រទេសចិន", "Sulaman", "Sulaman", "Embroidery"],
-    ["陶瓷", "táo cí", "Ceramics", "Cerámica", "Céramique", "Cerâmica", "Gốm sứ", "[TRANSLATE_TH]", "នាគចិន", "Keramik", "Seramik", "Seramika"],
-    ["丝绸", "sī chóu", "Silk", "Seda", "Soie", "Seda", "Tơ lụa", "[TRANSLATE_TH]", "ដូចជានាគមួយ", "Sutra", "Sutera", "Silk"],
-    ["去中国", "qù zhōng guó", "Going to China", "Ir a China", "Partir en Chine", "Indo para a China", "Đi Trung Quốc", "[TRANSLATE_TH]", "| Phoenix", "Pergi ke Cina", "Pergi ke China", "Pagpunta sa China"],
-    ["在中国", "zài zhōng guó", "In China", "En China", "En Chine", "Na China", "Ở Trung Quốc", "[TRANSLATE_TH]", "ដូចជា Phoenix", "Di Cina", "Di China", "Sa China"],
-    ["中国龙", "zhōng guó lóng", "Chinese dragon", "Dragón chino", "Dragon chinois", "Dragão Chinês", "Rồng Trung Quốc", "[TRANSLATE_TH]", "ខ្លាឃ្មុំផេនដាយក្ស", "Naga Cina", "Naga Cina", "Chinese Dragon"],
-    ["像龙", "xiàng lóng", "Like a dragon", "Como un dragón", "Comme un dragon", "Como um dragão", "Giống như một con rồng", "[TRANSLATE_TH]", "មើលផេនដាស", "Seperti naga", "Seperti naga", "Tulad ng isang dragon"],
-    ["凤凰", "fèng huáng", "Phoenix", "Fénix", "Phénix", "Fênix", "Phượng Hoàng", "[TRANSLATE_TH]", "រៀនកុងហ្វូ", "burung phoenix", "Phoenix", "Phoenix"],
-    ["像凤", "xiàng fèng", "Like a phoenix", "Como un fénix", "Comme un phénix", "Como uma fênix", "Như phượng hoàng", "[TRANSLATE_TH]", "អនុវត្ត Kung Fu", "Seperti burung phoenix", "Seperti Phoenix", "Tulad ng isang Phoenix"],
-    ["大熊猫", "dà xióng māo", "Giant panda", "Panda gigante", "Panda géant", "Panda gigante", "Gấu trúc khổng lồ", "[TRANSLATE_TH]", "រៀនសិល្បៈក្បាច់គុន", "Panda raksasa", "Giant Panda", "Giant Panda"],
-    ["看熊猫", "kàn xióng māo", "Watch pandas", "Ver pandas", "Observez les pandas", "Assistir pandas", "Xem gấu trúc", "[TRANSLATE_TH]", "អនុវត្តសិល្បៈក្បាច់គុន", "Tonton panda", "Watch Pandas", "Panoorin ang Pandas"],
-    ["学功夫", "xué gōng fu", "Learn kung fu", "Aprende kung fu", "Apprendre le kung-fu", "Aprenda kung fu", "Học kung fu", "[TRANSLATE_TH]", "អនុវត្តតៃជី ||", "Belajar kungfu", "Belajar kung fu", "Alamin kung fu"],
-    ["练功夫", "liàn gōng fu", "Practice kung fu", "Practica kung fu", "Pratiquez le kung-fu", "Pratique kung fu", "Luyện tập kung fu", "[TRANSLATE_TH]", "សូមមើលថ្នាំចិន", "Berlatih kung fu", "Amalan kung fu", "Magsanay kung fu"],
-    ["学武术", "xué wǔ shù", "Learn martial arts", "Aprende artes marciales", "Apprendre les arts martiaux", "Aprenda artes marciais", "Học võ", "[TRANSLATE_TH]", "រៀនថាំចិន", "Belajar seni bela diri", "Belajar seni mempertahankan diri", "Alamin ang martial arts"],
-    ["练武术", "liàn wǔ shù", "Practice martial arts", "Practica artes marciales", "Pratiquer les arts martiaux", "Pratique artes marciais", "Luyện võ", "[TRANSLATE_TH]", "ធ្វើការចាក់ម្ជុលវិទ្យាសាស្ត្រ", "Berlatih seni bela diri", "Amalan Seni Bela Diri", "Magsanay ng martial arts"],
-    ["打太极拳", "dǎ tài jí quán", "Practice Tai Chi ||", "Practica Tai Chi ||", "Pratiquez le Tai Chi ||", "Pratique Tai Chi ||", "Luyện Thái Cực Quyền ||", "[TRANSLATE_TH]", "រៀនចាក់ធ្មេញ acupuncture", "Berlatih Tai Chi ||", "Amalan Tai Chi ||", "Magsanay sa tai chi ||"],
-    ["练太极拳", "liàn tài jí quán", "See Chinese medicine", "Ver medicina china", "Voir médecine chinoise", "Veja Medicina Chinesa", "Xem y học cổ truyền", "[TRANSLATE_TH]", "រៀនពីការកាត់ក្រដាស", "Lihat pengobatan Tiongkok", "Lihat Perubatan Cina", "Tingnan ang Chinese Medicine"],
-    ["学书法", "xué shū fǎ", "Learn Chinese medicine", "Aprende medicina china", "Apprendre la médecine chinoise", "Aprenda medicina chinesa", "Tìm hiểu y học Trung Hoa", "[TRANSLATE_TH]", "ធ្វើការកាត់ក្រដាស", "Pelajari pengobatan Tiongkok", "Belajar Perubatan Cina", "Alamin ang gamot na Tsino"],
-    ["练书法", "liàn shū fǎ", "Do acupuncture", "Hacer acupuntura", "Faire de l'acupuncture", "Faça acupuntura", "Châm cứu", "[TRANSLATE_TH]", "រៀនប៉ាក់", "Lakukan akupunktur", "Adakah akupunktur", "Gawin ang acupuncture"],
-    ["学国画", "xué guó huà", "Learn acupuncture", "Aprender acupuntura", "Apprendre l'acupuncture", "Aprenda acupuntura", "Học châm cứu", "[TRANSLATE_TH]", "ធ្វើប៉ាក់", "Pelajari akupunktur", "Belajar Akupunktur", "Alamin ang Acupuncture"],
-    ["画国画", "huà guó huà", "Learn paper-cutting", "Aprende a cortar papel", "Apprenez le découpage du papier", "Aprenda a cortar papel", "Học cắt giấy", "[TRANSLATE_TH]", "សេរ៉ាមិច || ធ្វើសេរ៉ាមិច", "Pelajari pemotongan kertas", "Belajar kertas pemotongan", "Alamin ang pagputol ng papel"],
-    ["看京剧", "kàn jīng jù", "Do paper-cutting", "Cortar papel", "Faire du découpage de papier", "Faça recortes de papel", "Cắt giấy", "[TRANSLATE_TH]", "ក្រណាត់សូត្រ", "Lakukan pemotongan kertas", "Adakah pemotongan kertas", "Gawin ang pagputol ng papel"],
-    ["唱京剧", "chàng jīng jù", "Learn embroidery", "Aprende a bordar", "Apprendre la broderie", "Aprenda bordado", "Học thêu", "[TRANSLATE_TH]", "ទិញសូត្រ", "Belajar menyulam", "Belajar sulaman", "Alamin ang pagbuburda"],
-    ["学茶道", "xué chá dào", "Do embroidery", "Hacer bordado", "Faire de la broderie", "Bordar", "Nghề thêu", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "Lakukan bordir", "Adakah sulaman", "Gawin ang pagbuburda"],
-    ["懂茶道", "dǒng chá dào", "Ceramics", "Cerámica", "Céramique", "Cerâmica", "Gốm sứ", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "Keramik", "Seramik", "Seramika"],
-    ["看中医", "kàn zhòng yī", "Make ceramics", "Hacer cerámica", "Fabriquer de la céramique", "Fazer cerâmica", "Làm đồ gốm", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "Membuat keramik", "Buat seramik", "Gumawa ng mga keramika"],
-    ["学中医", "xué zhōng yī", "Silk cloth", "Tela de seda", "Tissu de soie", "Pano de seda", "Vải lụa", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "Kain sutra", "Kain sutera", "Silk Cloth"],
-    ["做针灸", "zuò zhēn jiǔ", "Buy silk", "comprar seda", "Acheter de la soie", "Compre seda", "Mua lụa", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "Beli sutra", "Beli sutera", "Bumili ng sutla"],
-    ["学针灸", "xué zhēn jiǔ", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"],
-    ["学剪纸", "xué jiǎn zhǐ", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"],
-    ["做剪纸", "zuò jiǎn zhǐ", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"],
-    ["学刺绣", "xué cì xiù", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"],
-    ["做刺绣", "zuò cì xiù", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"],
-    ["陶瓷品", "táo cí pǐn", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"],
-    ["做陶瓷", "zuò táo cí", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"],
-    ["丝绸布", "sī chóu bù", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"],
-    ["买丝绸", "mǎi sī chóu", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"]
+  baseWords: [
+    ["中国", "zhōng guó", "China", "China", "Chine", "China", "Trung Quốc", "จีน", "ចិន", "Cina", "China", "Tsina"],
+    ["龙", "lóng", "Dragon", "Dragón", "Dragon", "Dragão", "Rồng", "มังกร", "នាគ", "Naga", "Naga", "Dragon"],
+    ["凤", "fèng", "Phoenix", "Fénix", "Phénix", "Fênix", "Phượng Hoàng", "ฟีนิกซ์", "បក្សីហ្វេនិច", "burung phoenix", "Phoenix", "Phoenix"],
+    ["熊猫", "xióng māo", "Panda", "Panda", "Panda", "Panda", "Gấu trúc", "แพนด้า", "ខ្លាឃ្មុំផេនដា", "Panda", "Panda", "Panda"],
+    ["功夫", "gōng fu", "Kung Fu", "Kung Fu", "Kung-Fu", "Kung Fu", "Kung Fu", "กังฟู", "កុងហ្វូ", "Kung Fu", "Kung fu", "Kung fu"],
+    ["武术", "wǔ shù", "Martial Arts", "Artes marciales", "Arts martiaux", "Artes Marciais", "Võ Thuật", "ศิลปะการต่อสู้", "សិល្បៈក្បាច់គុន", "Seni Bela Diri", "Seni Martial", "Martial Arts"],
+    ["太极拳", "tài jí quán", "Tai Chi", "Tai Chi", "Taï Chi", "Tai Chi", "Thái cực quyền", "ไทเก็ก", "តាយជី", "Tai Chi", "Tai chi", "Tai Chi"],
+    ["书法", "shū fǎ", "Calligraphy", "Caligrafía", "Calligraphie", "Caligrafia", "Thư pháp", "การประดิษฐ์ตัวอักษร", "ការសរសេរអក្សរផ្ចង់", "Kaligrafi", "Kaligrafi", "Calligraphy"],
+    ["国画", "guó huà", "Traditional Chinese Painting", "Pintura tradicional china", "Peinture traditionnelle chinoise", "Pintura Tradicional Chinesa", "Tranh truyền thống Trung Quốc", "จิตรกรรมจีน", "គំនូរចិនបុរាណ", "Lukisan Tradisional Tiongkok", "Lukisan Cina Tradisional", "Tradisyonal na pagpipinta ng Tsino"],
+    ["京剧", "jīng jù", "Peking Opera", "Ópera de Pekín", "Opéra de Pékin", "Ópera de Pequim", "Kinh kịch", "งิ้วปักกิ่ง", "ល្ខោនប៉េកាំង", "Opera Peking", "Peking Opera", "Peking Opera"],
+    ["茶道", "chá dào", "Tea Ceremony", "Ceremonia del Té", "Cérémonie du thé", "Cerimônia do Chá", "Trà đạo", "พิธีชงชา", "ពិធីតែ", "Upacara Minum Teh", "Majlis Teh", "Seremonya ng tsaa"],
+    ["中医", "zhōng yī", "Traditional Chinese Medicine", "Medicina Tradicional China", "Médecine traditionnelle chinoise", "Medicina Tradicional Chinesa", "Y học cổ truyền Trung Quốc", "การแพทย์แผนจีน", "ឱសថបុរាណចិន", "Pengobatan Tradisional Cina", "Perubatan Cina Tradisional", "Tradisyonal na gamot na Tsino"],
+    ["针灸", "zhēn jiǔ", "Acupuncture", "Acupuntura", "Acupuncture", "Acupuntura", "Châm cứu", "การฝังเข็ม", "ការចាក់ម្ជុល", "Akupunktur", "Akupunktur", "Acupuncture"],
+    ["剪纸", "jiǎn zhǐ", "Paper-cutting", "Corte de papel", "Découpe de papier", "Corte de papel", "Cắt giấy", "การตัดกระดาษ", "ការកាត់ក្រដាស", "Pemotongan kertas", "Pemotongan kertas", "Pag-cut ng papel"],
+    ["刺绣", "cì xiù", "Embroidery", "Bordado", "Broderie", "Bordado", "Thêu", "การปักผ้า", "ការប៉ាក់សំពត់", "Sulaman", "Sulaman", "Embroidery"],
+    ["陶瓷", "táo cí", "Ceramics", "Cerámica", "Céramique", "Cerâmica", "Gốm sứ", "เซรามิก", "សេរ៉ាមិច", "Keramik", "Seramik", "Seramika"],
+    ["丝绸", "sī chóu", "Silk", "Seda", "Soie", "Seda", "Tơ lụa", "ผ้าไหม", "សូត្រ", "Sutra", "Sutera", "Silk"]
+  ],
+  exampleWords: [
+    ["去中国", "qù zhōng guó", "Going to China", "Ir a China", "Partir en Chine", "Indo para a China", "Đi Trung Quốc", "ไปจีน", "ទៅប្រទេសចិន", "Pergi ke Cina", "Pergi ke China", "Pagpunta sa China"],
+    ["在中国", "zài zhōng guó", "In China", "En China", "En Chine", "Na China", "Ở Trung Quốc", "ในประเทศจีน", "នៅប្រទេសចិន", "Di Cina", "Di China", "Sa China"],
+    ["中国龙", "zhōng guó lóng", "Chinese dragon", "Dragón chino", "Dragon chinois", "Dragão Chinês", "Rồng Trung Quốc", "มังกรจีน", "នាគចិន", "Naga Cina", "Naga Cina", "Chinese Dragon"],
+    ["像龙", "xiàng lóng", "Like a dragon", "Como un dragón", "Comme un dragon", "Como um dragão", "Giống như một con rồng", "เหมือนมังกร", "ដូចជានាគ", "Seperti naga", "Seperti naga", "Tulad ng isang dragon"],
+    ["凤凰", "fèng huáng", "Phoenix", "Fénix", "Phénix", "Fênix", "Phượng Hoàng", "ฟีนิกซ์", "បក្សីហ្វេនិច", "burung phoenix", "Phoenix", "Phoenix"],
+    ["像凤", "xiàng fèng", "Like a phoenix", "Como un fénix", "Comme un phénix", "Como uma fênix", "Như phượng hoàng", "เหมือนฟีนิกซ์", "ដូចជាបក្សីហ្វេនិច", "Seperti burung phoenix", "Seperti Phoenix", "Tulad ng isang Phoenix"],
+    ["大熊猫", "dà xióng māo", "Giant panda", "Panda gigante", "Panda géant", "Panda gigante", "Gấu trúc khổng lồ", "แพนด้ายักษ์", "ខ្លាឃ្មុំផេនដាធំ", "Panda raksasa", "Giant Panda", "Giant Panda"],
+    ["看熊猫", "kàn xióng māo", "Watch pandas", "Ver pandas", "Observez les pandas", "Assistir pandas", "Xem gấu trúc", "ดูแพนด้า", "មើលខ្លាឃ្មុំផេនដា", "Tonton panda", "Watch Pandas", "Panoorin ang Pandas"],
+    ["学功夫", "xué gōng fu", "Learn kung fu", "Aprende kung fu", "Apprendre le kung-fu", "Aprenda kung fu", "Học kung fu", "เรียนกังฟู", "រៀនកុងហ្វូ", "Belajar kungfu", "Belajar kung fu", "Alamin kung fu"],
+    ["练功夫", "liàn gōng fu", "Practice kung fu", "Practica kung fu", "Pratiquez le kung-fu", "Pratique kung fu", "Luyện tập kung fu", "ฝึกกังฟู", "អនុវត្តកុងហ្វូ", "Berlatih kung fu", "Amalan kung fu", "Magsanay kung fu"],
+    ["学武术", "xué wǔ shù", "Learn martial arts", "Aprende artes marciales", "Apprendre les arts martiaux", "Aprenda artes marciais", "Học võ", "เรียนศิลปะการต่อสู้", "រៀនសិល្បៈក្បាច់គុន", "Belajar seni bela diri", "Belajar seni mempertahankan diri", "Alamin ang martial arts"],
+    ["练武术", "liàn wǔ shù", "Practice martial arts", "Practica artes marciales", "Pratiquer les arts martiaux", "Pratique artes marciais", "Luyện võ", "ฝึกศิลปะการต่อสู้", "អនុវត្តសិល្បៈក្បាច់គុន", "Berlatih seni bela diri", "Amalan Seni Bela Diri", "Magsanay ng martial arts"],
+    ["打太极拳", "dǎ tài jí quán", "Practice Tai Chi", "Practica Tai Chi", "Pratiquez le Taï Chi", "Pratique Tai Chi", "Luyện Thái Cực Quyền", "ฝึกไทเก็ก", "អនុវត្តតៃជី", "Berlatih Tai Chi", "Amalan Tai Chi", "Magsanay ng Tai Chi"],
+    ["练太极拳", "liàn tài jí quán", "Practice Tai Chi", "Practica Tai Chi", "Pratiquez le Taï Chi", "Pratique Tai Chi", "Luyện Thái Cực Quyền", "ฝึกไทเก็ก", "អនុវត្តតៃជី", "Berlatih Tai Chi", "Amalan Tai Chi", "Magsanay ng Tai Chi"],
+    ["学书法", "xué shū fǎ", "Learn calligraphy", "Aprende caligrafía", "Apprendre la calligraphie", "Aprenda caligrafia", "Học thư pháp", "เรียนการประดิษฐ์ตัวอักษร", "រៀនសរសេរអក្សរផ្ចង់", "Belajar kaligrafi", "Belajar kaligrafi", "Matuto ng caligraphy"],
+    ["练书法", "liàn shū fǎ", "Practice calligraphy", "Practica caligrafía", "Pratiquer la calligraphie", "Pratique caligrafia", "Luyện thư pháp", "ฝึกการประดิษฐ์ตัวอักษร", "អនុវត្តសរសេរអក្សរផ្ចង់", "Berlatih kaligrafi", "Amalan kaligrafi", "Magsanay ng caligraphy"],
+    ["学国画", "xué guó huà", "Learn Chinese painting", "Aprende pintura china", "Apprendre la peinture chinoise", "Aprenda pintura chinesa", "Học tranh Trung Quốc", "เรียนจิตรกรรมจีน", "រៀនគំនូរចិន", "Belajar lukisan Cina", "Belajar lukisan Cina", "Matuto ng pagpipinta ng Tsino"],
+    ["画国画", "huà guó huà", "Paint Chinese paintings", "Pinta pinturas chinas", "Peindre des peintures chinoises", "Pintar pinturas chinesas", "Vẽ tranh Trung Quốc", "วาดภาพจีน", "គូរគំនូរចិន", "Melukis lukisan Cina", "Melukis lukisan Cina", "Magpinta ng larawang Tsino"],
+    ["看京剧", "kàn jīng jù", "Watch Peking Opera", "Ver Ópera de Pekín", "Regarder l'opéra de Pékin", "Assistir Ópera de Pequim", "Xem Kinh kịch", "ดูงิ้วปักกิ่ง", "មើលល្ខោនប៉េកាំង", "Menonton Opera Peking", "Tonton Opera Peking", "Manood ng Peking Opera"],
+    ["唱京剧", "chàng jīng jù", "Sing Peking Opera", "Cantar Ópera de Pekín", "Chanter l'opéra de Pékin", "Cantar Ópera de Pequim", "Hát Kinh kịch", "ร้องงิ้วปักกิ่ง", "ច្រៀងល្ខោនប៉េកាំង", "Menyanyi Opera Peking", "Menyanyi Opera Peking", "Kumanta ng Peking Opera"],
+    ["学茶道", "xué chá dào", "Learn tea ceremony", "Aprende ceremonia del té", "Apprendre la cérémonie du thé", "Aprenda cerimônia do chá", "Học trà đạo", "เรียนพิธีชงชา", "រៀនពិធីតែ", "Belajar upacara teh", "Belajar upacara teh", "Matuto ng seremonya ng tsaa"],
+    ["懂茶道", "dǒng chá dào", "Understand tea ceremony", "Entender ceremonia del té", "Comprendre la cérémonie du thé", "Entender cerimônia do chá", "Hiểu trà đạo", "เข้าใจพิธีชงชา", "យល់ពិធីតែ", "Memahami upacara teh", "Memahami upacara teh", "Maunawaan ang seremonya ng tsaa"],
+    ["看中医", "kàn zhōng yī", "See a Chinese doctor", "Ver médico chino", "Consulter un médecin chinois", "Consultar médico chinês", "Khám bác sĩ Trung Quốc", "พบแพทย์แผนจีน", "ជួបពេទ្យចិន", "Menemui dokter Cina", "Jumpa doktor Cina", "Magpatingin sa doktor na Tsino"],
+    ["学中医", "xué zhōng yī", "Study Chinese medicine", "Estudiar medicina china", "Étudier la médecine chinoise", "Estudar medicina chinesa", "Học y học Trung Quốc", "เรียนแพทย์แผนจีน", "រៀនឱសថចិន", "Belajar pengobatan Cina", "Belajar perubatan Cina", "Mag-aral ng gamot na Tsino"],
+    ["做针灸", "zuò zhēn jiǔ", "Do acupuncture", "Hacer acupuntura", "Faire de l'acupuncture", "Fazer acupuntura", "Làm châm cứu", "ทำการฝังเข็ม", "ធ្វើការចាក់ម្ជុល", "Melakukan akupunktur", "Lakukan akupunktur", "Gumawa ng acupuncture"],
+    ["学针灸", "xué zhēn jiǔ", "Learn acupuncture", "Aprender acupuntura", "Apprendre l'acupuncture", "Aprender acupuntura", "Học châm cứu", "เรียนการฝังเข็ม", "រៀនការចាក់ម្ជុល", "Belajar akupunktur", "Belajar akupunktur", "Matuto ng acupuncture"],
+    ["学剪纸", "xué jiǎn zhǐ", "Learn paper-cutting", "Aprender corte de papel", "Apprendre le découpage de papier", "Aprender recorte de papel", "Học cắt giấy", "เรียนการตัดกระดาษ", "រៀនកាត់ក្រដាស", "Belajar memotong kertas", "Belajar memotong kertas", "Matuto ng paggupit ng papel"],
+    ["做剪纸", "zuò jiǎn zhǐ", "Do paper-cutting", "Hacer corte de papel", "Faire du découpage de papier", "Fazer recorte de papel", "Làm cắt giấy", "ทำการตัดกระดาษ", "ធ្វើការកាត់ក្រដាស", "Melakukan pemotongan kertas", "Lakukan pemotongan kertas", "Gumawa ng paggupit ng papel"],
+    ["学刺绣", "xué cì xiù", "Learn embroidery", "Aprender bordado", "Apprendre la broderie", "Aprender bordado", "Học thêu", "เรียนการปักผ้า", "រៀនប៉ាក់សំពត់", "Belajar menyulam", "Belajar menyulam", "Matuto ng pagbuburda"],
+    ["做刺绣", "zuò cì xiù", "Do embroidery", "Hacer bordado", "Faire de la broderie", "Fazer bordado", "Làm thêu", "ทำการปักผ้า", "ធ្វើការប៉ាក់សំពត់", "Melakukan sulaman", "Lakukan sulaman", "Gumawa ng pagbuburda"],
+    ["陶瓷品", "táo cí pǐn", "Ceramic products", "Productos de cerámica", "Produits céramiques", "Produtos de cerâmica", "Đồ gốm sứ", "ผลิตภัณฑ์เซรามิก", "ផលិតផលសេរ៉ាមិច", "Produk keramik", "Produk seramik", "Mga produktong seramik"],
+    ["做陶瓷", "zuò táo cí", "Make ceramics", "Hacer cerámica", "Faire de la céramique", "Fazer cerâmica", "Làm đồ gốm", "ทำเซรามิก", "ធ្វើសេរ៉ាមិច", "Membuat keramik", "Buat seramik", "Gumawa ng seramik"],
+    ["丝绸布", "sī chóu bù", "Silk fabric", "Tela de seda", "Tissu de soie", "Tecido de seda", "Vải lụa", "ผ้าไหม", "ក្រណាត់សូត្រ", "Kain sutra", "Kain sutera", "Telang sutla"],
+    ["买丝绸", "mǎi sī chóu", "Buy silk", "Comprar seda", "Acheter de la soie", "Comprar seda", "Mua lụa", "ซื้อผ้าไหม", "ទិញសូត្រ", "Membeli sutra", "Beli sutera", "Bumili ng sutla"]
   ]
 };
 
@@ -236,7 +242,7 @@ export const p5_83_time__expressions__advanced = {
     malay: "Time Expressions Advanced",
     filipino: "Time Expressions Advanced"
   },
-  words: [
+  baseWords: [
     ["随时", "suí shí", "Any time", "En cualquier momento", "À tout moment", "A qualquer hora", "Bất cứ lúc nào", "เมื่อใดก็ได้", "គ្រប់ពេល", "Kapan saja", "Bila -bila masa", "Anumang oras"],
     ["及时", "jí shí", "Timely", "Oportuno", "En temps opportun", "Oportuno", "Kịp thời", "ทันเวลา", "ទាន់ពេលវេលា", "Tepat waktu", "Tepat pada masanya", "Napapanahon"],
     ["按时", "àn shí", "On time", "A tiempo", "À l'heure", "Na hora certa", "Đúng giờ", "ตรงเวลา", "ទាន់ពេល", "Tepat waktu", "Pada masa", "Sa oras"],
@@ -252,7 +258,9 @@ export const p5_83_time__expressions__advanced = {
     ["瞬间", "shùn jiān", "Instantaneous", "Instantáneo", "Instantané", "Instantâneo", "Tức thời", "ทันที", "ភ្លាមៗ", "Sesaat", "Seketika", "Agad na"],
     ["长期", "cháng qī", "Long term", "Largo plazo", "Long terme", "Longo prazo", "Dài hạn", "ระยะยาว", "ថ្ងៃទីវែង", "Jangka panjang", "Jangka Panjang", "Pangmatagalang"],
     ["短期", "duǎn qī", "Short term", "Corto plazo", "Court terme", "Curto prazo", "Ngắn hạn", "ระยะสั้น", "ពាក្យខ្លី", "Jangka pendek", "Jangka Pendek", "Maikling term"],
-    ["与此同时", "yǔ cǐ tóng shí", "At the same time", "Al mismo tiempo", "En même temps", "Ao mesmo tempo", "Đồng thời", "ในเวลาเดียวกัน", "ក្នុងពេលតែមួយ", "Pada saat yang sama", "Pada masa yang sama", "Kasabay nito"],
+    ["与此同时", "yǔ cǐ tóng shí", "At the same time", "Al mismo tiempo", "En même temps", "Ao mesmo tempo", "Đồng thời", "ในเวลาเดียวกัน", "ក្នុងពេលតែមួយ", "Pada saat yang sama", "Pada masa yang sama", "Kasabay nito"]
+  ],
+  exampleWords: [
     ["随时都可以", "suí shí dōu kě yǐ", "Available at any time", "Disponible en cualquier momento", "Disponible à tout moment", "Disponível a qualquer momento", "Có sẵn bất cứ lúc nào", "พร้อมให้บริการตลอดเวลา", "មាននៅពេលណាមួយ", "Tersedia kapan saja", "Tersedia pada bila -bila masa", "Magagamit sa anumang oras"],
     ["随时联系", "suí shí lián xì", "Contact at any time", "Contactar en cualquier momento", "Contacter à tout moment", "Entre em contato a qualquer momento", "Liên hệ bất cứ lúc nào", "ติดต่อได้ตลอดเวลา", "ទំនាក់ទំនងនៅពេលណាមួយ", "Hubungi kapan saja", "Hubungi pada bila -bila masa", "Makipag -ugnay sa anumang oras"],
     ["及时处理", "jí shí chǔ lǐ", "Prompt processing", "Procesamiento rápido", "Traitement rapide", "Processamento imediato", "Xử lý kịp thời", "การประมวลผลพร้อมท์", "ដំណើរការជម្រុញ", "Pemrosesan cepat", "Pemprosesan segera", "Prompt Processing"],
@@ -304,7 +312,7 @@ export const p5_84_frequency__duration = {
     malay: "Frequency & Duration",
     filipino: "Frequency & Duration"
   },
-  words: [
+  baseWords: [
     ["频率", "pín lǜ", "Frequency", "Frecuencia", "Fréquence", "Frequência", "Tần số", "ความถี่", "ភាពញឹកញាប់", "Frekuensi", "Kekerapan", "Kadalasan"],
     ["频繁", "pín fán", "Frequent", "Frecuente", "Fréquent", "Frequente", "Thường xuyên", "บ่อยครั้ง", "ការរៀនសូត្រច្រើន ធ្វើម្តងទៀត", "Sering", "Kerap", "Madalas"],
     ["反复", "fǎn fù", "Repeated", "Repetido", "Répété", "Repetido", "Lặp đi lặp lại", "ซ้ำ", "ធ្វើម្តងទៀត", "Berulang", "Berulang", "Paulit -ulit"],
@@ -320,7 +328,9 @@ export const p5_84_frequency__duration = {
     ["一时", "yī shí", "One time", "Una vez", "Une fois", "Uma vez", "Một lần", "ครั้งหนึ่ง", "ពេញមួយថ្ងៃ", "Suatu saat", "Satu kali", "Isang beses"],
     ["整天", "zhěng tiān", "All day", "Todo el día", "Toute la journée", "O dia todo", "Cả ngày", "ทั้งวัน", "ពេញមួយយប់", "Sepanjang hari", "Semua hari", "Buong araw"],
     ["整夜", "zhěng yè", "All night", "Toda la noche", "Toute la nuit", "A noite toda", "Cả đêm", "ทั้งคืน", "ពេញមួយយប់", "Sepanjang malam", "Semua Malam", "Buong gabi"],
-    ["通宵", "tōng xiāo", "All night", "Toda la noche", "Toute la nuit", "A noite toda", "Cả đêm", "ทั้งคืน", "ប្រេកង់ខ្ពស់", "Sepanjang malam", "Semua Malam", "Buong gabi"],
+    ["通宵", "tōng xiāo", "All night", "Toda la noche", "Toute la nuit", "A noite toda", "Cả đêm", "ทั้งคืน", "ប្រេកង់ខ្ពស់", "Sepanjang malam", "Semua Malam", "Buong gabi"]
+  ],
+  exampleWords: [
     ["频率高", "pín lǜ gāo", "High frequency", "Alta frecuencia", "Haute fréquence", "Alta frequência", "Tần số cao", "ความถี่สูง", "ប្រេកង់មើល", "Frekuensi tinggi", "Kekerapan Tinggi", "Mataas na dalas"],
     ["看频率", "kàn pín lǜ", "View frequency", "Ver frecuencia", "Afficher la fréquence", "Ver frequência", "Xem tần suất", "ดูความถี่", "ជាញឹកញាប់ណាស់", "Lihat frekuensi", "Lihat Kekerapan", "Tingnan ang dalas"],
     ["很频繁", "hěn pín fán", "Very frequently", "Muy frecuentemente", "Très fréquemment", "Muito frequentemente", "Rất thường xuyên", "บ่อยมาก", "ជាញឹកញាប់ពេក", "Sangat sering", "Sangat kerap", "Napakadalas"],
@@ -372,7 +382,7 @@ export const p5_85_comparison__degree = {
     malay: "Comparison & Degree",
     filipino: "Comparison & Degree"
   },
-  words: [
+  baseWords: [
     ["相当", "xiāng dāng", "Quite", "Bastante", "Tout à fait", "Bastante", "Khá", "ค่อนข้าง", "អើយ", "Cukup", "Cukup", "Medyo"],
     ["极其", "jí qí", "Extremely", "Extremadamente", "Extrêmement", "Extremamente", "Cực kỳ", "สุดๆ", "ខ្លាំងណាស់", "Sangat", "Sangat", "Lubhang"],
     ["尤其", "yóu qí", "Particularly", "En particular", "En particulier", "Particularmente", "Đặc biệt", "โดยเฉพาะ", "ជាពិសេស", "Khususnya", "Terutamanya", "Lalo na"],
@@ -381,12 +391,14 @@ export const p5_85_comparison__degree = {
     ["越来越", "yuè lái yuè", "Increasingly", "Cada vez más", "De plus en plus", "Cada vez mais", "Ngày càng", "เพิ่มมากขึ้น", "កាន់តែខ្លាំងឡើង", "Semakin", "Semakin", "Dumarami"],
     ["越发", "yuè fā", "More", "Más", "Plus", "Mais", "Thêm", "เพิ่มเติม", "បន្ថែម", "Selengkapnya", "Lebih banyak", "Higit pa"],
     ["稀微", "xī wēi", "Rare", "Raro", "Rares", "Raro", "Hiếm", "หายาก", "កម្រណាស់", "Jarang", "Jarang", "Rare"],
-    ["略微", "lüè wēi", "Slightly", "Ligeramente", "Légèrement", "Um pouco", "Hơi", "เล็กน้อย", "| បន្តិច", "Sedikit", "Sedikit", "Bahagyang"],
+    ["略微", "lüè wēi", "Slightly", "Ligeramente", "Légèrement", "Um pouco", "Hơi", "เล็กน้อย", "បន្តិច", "Sedikit", "Sedikit", "Bahagyang"],
     ["差一点", "chà yì diǎn", "A little", "Un poco", "Un peu", "Um pouco", "Một chút", "นิดหน่อย", "បន្តិច", "Sedikit", "A Little", "Medyo"],
     ["几乎", "jī hū", "Almost", "Casi", "Presque", "Quase", "Gần như", "เกือบ", "ស្ទើរតែ", "Hampir", "Hampir", "Halos"],
     ["完全", "wán quán", "Completely", "Completamente", "Complètement", "Completamente", "Hoàn toàn", "สมบูรณ์", "ទាំងស្រុង", "Sepenuhnya", "Sepenuhnya", "Ganap na"],
     ["愈发", "yù fā", "More", "Más", "Plus", "Mais", "Thêm", "เพิ่มเติม", "បន្ថែម", "Selengkapnya", "Lebih banyak", "Higit pa"],
-    ["极端", "jí duān", "Extreme", "Extremo", "Extrême", "Extremo", "Cực đoan", "สุดขีด", "lowe", "Ekstrim", "Melampau", "Extreme"],
+    ["极端", "jí duān", "Extreme", "Extremo", "Extrême", "Extremo", "Cực đoan", "สุดขีด", "ខ្លាំង", "Ekstrim", "Melampau", "Extreme"]
+  ],
+  exampleWords: [
     ["相当好", "xiāng dāng hǎo", "Pretty good", "Bastante bien", "Plutôt bien", "Muito bom", "Khá tốt", "ดีจังเลย", "ល្អណាស់", "Cukup bagus", "Cukup baik", "Medyo mahusay"],
     ["相当不错", "xiāng dāng bù cuò", "Pretty good", "Bastante bien", "Plutôt bien", "Muito bom", "Khá tốt", "ดีจังเลย", "ល្អណាស់", "Cukup bagus", "Cukup baik", "Medyo mahusay"],
     ["极其重要", "jí qí zhòng yào", "Extremely important", "Extremadamente importante", "Extrêmement important", "Extremamente importante", "Cực kỳ quan trọng", "สำคัญมาก", "សំខាន់បំផុត", "Sangat penting", "Sangat penting", "Labis na mahalaga"],
@@ -403,18 +415,18 @@ export const p5_85_comparison__degree = {
     ["越发明显", "yuè fā míng xiǎn", "More and more obvious", "Cada vez más obvio", "De plus en plus évident", "Cada vez mais óbvio", "Ngày càng rõ ràng", "ชัดเจนมากขึ้นเรื่อยๆ", "កាន់តែច្រើនឡើង ៗ", "Semakin jelas", "Lebih banyak dan lebih jelas", "Higit pa at mas malinaw"],
     ["稀微不同", "xī wēi bù tóng", "Slightly different", "Ligeramente diferente", "Légèrement différent", "Um pouco diferente", "Hơi khác một chút", "แตกต่างเล็กน้อย", "ខុសគ្នាបន្តិច", "Sedikit berbeda", "Sedikit berbeza", "Bahagyang naiiba"],
     ["稀微差别", "xī wēi chā bié", "Slightly different", "Ligeramente diferente", "Légèrement différent", "Um pouco diferente", "Hơi khác một chút", "แตกต่างเล็กน้อย", "ខុសគ្នាបន្តិច", "Sedikit berbeda", "Sedikit berbeza", "Bahagyang naiiba"],
-    ["略微不同", "lüè wēi bù tóng", "Slightly adjusted", "Ligeramente ajustado", "Légèrement ajusté", "Ligeiramente ajustado", "Điều chỉnh một chút", "ปรับเล็กน้อย", "ត្រូវបានកែតម្រូវបន្តិច", "Sedikit disesuaikan", "Sedikit diselaraskan", "Bahagyang nababagay"],
-    ["略微调整", "lüè wēi tiáo zhěng", "Almost", "Casi", "Presque", "Quase", "Gần như", "เกือบ", "ស្ទើរតែ", "Hampir", "Hampir", "Halos"],
-    ["差一点就", "chà yì diǎn jiù", "Almost successful", "Casi exitoso", "Presque réussi", "Quase sucesso", "Gần như thành công", "เกือบสำเร็จแล้ว", "ស្ទើរតែទទួលបានជោគជ័យ", "Hampir sukses", "Hampir berjaya", "Halos matagumpay"],
-    ["差一点成功", "chà yì diǎn chéng gōng", "Almost", "Casi", "Presque", "Quase", "Gần như", "เกือบ", "ស្ទើរតែ", "Hampir", "Hampir", "Halos"],
-    ["几乎是", "jī hū shì", "Almost done", "Casi terminado", "Presque terminé", "Quase pronto", "Gần xong rồi", "เกือบเสร็จแล้ว", "ជិតរួចរាល់", "Hampir selesai", "Hampir selesai", "Halos tapos na"],
-    ["几乎完成", "jī hū wán chéng", "Completely agree", "Totalmente de acuerdo", "Tout à fait d'accord", "Concordo plenamente", "Hoàn toàn đồng ý", "เห็นด้วยอย่างยิ่ง", "យល់ព្រមទាំងស្រុង", "Setuju sekali", "Sepenuhnya setuju", "Ganap na sumasang -ayon"],
-    ["完全同意", "wán quán tóng yì", "Completely different", "Completamente diferente", "Complètement différent", "Completamente diferente", "Hoàn toàn khác", "แตกต่างอย่างสิ้นเชิง", "ខុសគ្នាទាំងស្រុង", "Benar-benar berbeda", "Sama sekali berbeza", "Ganap na naiiba"],
-    ["完全不同", "wán quán bù tóng", "Increasingly serious", "Cada vez más grave", "De plus en plus sérieux", "Cada vez mais sério", "Ngày càng nghiêm trọng", "จริงจังมากขึ้นเรื่อยๆ", "ធ្ងន់ធ្ងរកាន់តែធ្ងន់ធ្ងរ", "Semakin serius", "Semakin serius", "Lalong seryoso"],
-    ["愈发严重", "yù fā yán zhòng", "Feeling more and more", "Sintiéndose cada vez más", "Se sentir de plus en plus", "Me sentindo cada vez mais", "Càng ngày càng cảm thấy", "รู้สึกมากขึ้นเรื่อยๆ", "| មានអារម្មណ៍កាន់តែខ្លាំងឡើង", "Merasa semakin", "Merasa lebih banyak", "Higit pa at higit pa"],
-    ["愈发觉得", "yù fā jué de", "Extreme situation", "Situación extrema", "Situation extrême", "Situação extrema", "Tình thế cực đoan", "สถานการณ์สุดขั้ว", "ស្ថានភាពធ្ងន់ធ្ងរ", "Situasi ekstrim", "Situasi Extreme", "Matinding sitwasyon"],
-    ["极端情况", "jí duān qíng kuàng", "Too extreme", "demasiado extremo", "Trop extrême", "Muito extremo", "Quá cực đoan", "สุดขั้วเกินไป", "ខ្លាំងពេក", "Terlalu ekstrem", "Terlalu melampau", "Masyadong matindi"],
-    ["太极端", "tài jí duān", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"]
+    ["略微不同", "lüè wēi bù tóng", "Slightly different", "Ligeramente diferente", "Légèrement différent", "Ligeiramente diferente", "Hơi khác", "ต่างกันเล็กน้อย", "ខុសគ្នាបន្តិច", "Sedikit berbeda", "Sedikit berbeza", "Bahagyang naiiba"],
+    ["略微调整", "lüè wēi tiáo zhěng", "Slightly adjust", "Ajustar ligeramente", "Ajuster légèrement", "Ajustar ligeiramente", "Điều chỉnh nhẹ", "ปรับเล็กน้อย", "កែតម្រូវបន្តិច", "Sedikit menyesuaikan", "Menyesuaikan sedikit", "Bahagyang ayusin"],
+    ["差一点就", "chà yì diǎn jiù", "Almost", "Casi", "Presque", "Quase", "Gần như", "เกือบ", "ស្ទើរតែ", "Hampir", "Hampir", "Halos"],
+    ["差一点成功", "chà yì diǎn chéng gōng", "Almost succeeded", "Casi exitoso", "Presque réussi", "Quase sucesso", "Gần như thành công", "เกือบสำเร็จแล้ว", "ស្ទើរតែជោគជ័យ", "Hampir sukses", "Hampir berjaya", "Halos nagtagumpay"],
+    ["几乎是", "jī hū shì", "Almost is", "Casi es", "C'est presque", "É quase", "Gần như là", "เกือบจะเป็น", "ស្ទើរតែជា", "Hampir", "Hampir", "Halos ay"],
+    ["几乎完成", "jī hū wán chéng", "Almost done", "Casi terminado", "Presque terminé", "Quase pronto", "Gần xong rồi", "เกือบเสร็จแล้ว", "ជិតរួចរាល់", "Hampir selesai", "Hampir selesai", "Halos tapos na"],
+    ["完全同意", "wán quán tóng yì", "Completely agree", "Totalmente de acuerdo", "Tout à fait d'accord", "Concordo plenamente", "Hoàn toàn đồng ý", "เห็นด้วยอย่างยิ่ง", "យល់ព្រមទាំងស្រុង", "Setuju sekali", "Sepenuhnya setuju", "Sumasang-ayon nang buo"],
+    ["完全不同", "wán quán bù tóng", "Completely different", "Completamente diferente", "Complètement différent", "Completamente diferente", "Hoàn toàn khác", "แตกต่างอย่างสิ้นเชิง", "ខុសគ្នាទាំងស្រុង", "Benar-benar berbeda", "Sama sekali berbeza", "Ganap na naiiba"],
+    ["愈发严重", "yù fā yán zhòng", "Increasingly serious", "Cada vez más grave", "De plus en plus sérieux", "Cada vez mais sério", "Ngày càng nghiêm trọng", "จริงจังมากขึ้นเรื่อยๆ", "កាន់តែធ្ងន់ធ្ងរ", "Semakin serius", "Semakin serius", "Lalong seryoso"],
+    ["愈发觉得", "yù fā jué de", "Increasingly feel", "Sentirse cada vez más", "Se sentir de plus en plus", "Sentindo cada vez mais", "Càng ngày càng cảm thấy", "รู้สึกมากขึ้นเรื่อยๆ", "មានអារម្មណ៍កាន់តែខ្លាំង", "Merasa semakin", "Semakin terasa", "Lalong nadarama"],
+    ["极端情况", "jí duān qíng kuàng", "Extreme situation", "Situación extrema", "Situation extrême", "Situação extrema", "Tình huống cực đoan", "สถานการณ์สุดขั้ว", "ស្ថានភាពធ្ងន់ធ្ងរ", "Situasi ekstrem", "Situasi melampau", "Matinding sitwasyon"],
+    ["太极端", "tài jí duān", "Too extreme", "Demasiado extremo", "Trop extrême", "Muito extremo", "Quá cực đoan", "สุดขั้วเกินไป", "ខ្លាំងពេក", "Terlalu ekstrem", "Terlalu melampau", "Masyadong matindi"]
   ]
 };
 
@@ -434,7 +446,7 @@ export const p5_86_cause__effect = {
     malay: "Cause & Effect",
     filipino: "Cause & Effect"
   },
-  words: [
+  baseWords: [
     ["原因", "yuán yīn", "cause", "causa", "cause", "causa", "nguyên nhân", "สาเหตุ", "មូលហេតុ", "penyebab", "menyebabkan", "sanhi"],
     ["结果", "jié guǒ", "result", "resultado", "résultat", "resultado", "kết quả", "ผลลัพธ์", "លទ្ធផល", "hasil", "hasil", "Resulta"],
     ["因果", "yīn guǒ", "cause and effect", "causa y efecto", "cause et effet", "causa e efeito", "nhân quả", "เหตุและผล", "បុព្វហេតុនិងផលប៉ះពាល់", "sebab dan akibat", "Punca dan Kesan", "Sanhi at epekto"],
@@ -450,7 +462,9 @@ export const p5_86_cause__effect = {
     ["归因于", "guī yīn yú", "attributed to", "atribuido a", "attribué à", "atribuído a", "quy cho", "ประกอบกับ", "សន្មតថា", "dikaitkan dengan", "dikaitkan dengan", "naiugnay sa"],
     ["源于", "yuán yú", "from", "de", "de", "de", "từ", "จาก", "ពី", "dari", "dari", "mula sa"],
     ["由此", "yóu cǐ", "therefore", "por lo tanto", "donc", "portanto", "do đó", "ดังนั้น", "ដូច្នេះ", "oleh karena itu", "Oleh itu", "Samakatuwid"],
-    ["因而", "yīn ér", "therefore", "por lo tanto", "donc", "portanto", "do đó", "ดังนั้น", "ដូច្នេះ", "oleh karena itu", "Oleh itu", "Samakatuwid"],
+    ["因而", "yīn ér", "therefore", "por lo tanto", "donc", "portanto", "do đó", "ดังนั้น", "ដូច្នេះ", "oleh karena itu", "Oleh itu", "Samakatuwid"]
+  ],
+  exampleWords: [
     ["原因是", "yuán yīn shì", "the cause is", "la causa es", "la cause est", "a causa é", "nguyên nhân là", "สาเหตุคือ", "បុព្វហេតុគឺ", "penyebabnya adalah", "Penyebabnya ialah", "Ang sanhi ay"],
     ["找原因", "zhǎo yuán yīn", "find the cause", "encontrar la causa", "trouver la cause", "encontre a causa", "tìm ra nguyên nhân", "หาสาเหตุ", "ស្វែងរកបុព្វហេតុ", "temukan penyebabnya", "Cari Punca", "Hanapin ang sanhi"],
     ["结果是", "jié guǒ shì", "the result is", "el resultado es", "le résultat est", "o resultado é", "kết quả là", "ผลลัพธ์คือ", "លទ្ធផលគឺ", "hasilnya adalah", "Hasilnya ialah", "Ang resulta ay"],
@@ -502,7 +516,7 @@ export const p5_87_conditions__assumptions = {
     malay: "Conditions & Assumptions",
     filipino: "Conditions & Assumptions"
   },
-  words: [
+  baseWords: [
     ["如果", "rú guǒ", "if", "si", "si", "se", "nếu", "ถ้า", "ប្រសិនបើ", "jika", "jika", "kung"],
     ["假如", "jiǎ rú", "if", "si", "si", "se", "nếu", "ถ้า", "ប្រសិនបើ", "jika", "jika", "kung"],
     ["假设", "jiǎ shè", "suppose", "suponer", "supposons", "suponha", "giả sử", "สมมุติ", "ស្មាន", "misalkan", "Katakan", "Ipagpalagay"],
@@ -518,7 +532,9 @@ export const p5_87_conditions__assumptions = {
     ["尽管", "jǐn guǎn", "although", "aunque", "bien que", "embora", "mặc dù", "แม้ว่า", "ថ្វីបើ", "meskipun", "Walaupun", "Bagaman"],
     ["即使", "jí shǐ", "even", "incluso", "même", "mesmo", "thậm chí", "แม้กระทั่ง", "សូម្បីតែ", "bahkan", "Malah", "Kahit na"],
     ["哪怕", "nǎ pà", "even if", "incluso si", "même si", "mesmo que", "ngay cả khi", "แม้ว่า", "បើទោះបីជា", "meskipun", "Walaupun", "Kahit na"],
-    ["无论", "wú lùn", "regardless of", "independientemente de", "indépendamment de", "independentemente de", "bất chấp", "โดยไม่คำนึงถึง", "| ដោយមិនគិតពី", "terlepas dari", "Terlepas dari", "Anuman ang"],
+    ["无论", "wú lùn", "regardless of", "independientemente de", "indépendamment de", "independentemente de", "bất chấp", "โดยไม่คำนึงถึง", "| ដោយមិនគិតពី", "terlepas dari", "Terlepas dari", "Anuman ang"]
+  ],
+  exampleWords: [
     ["如果是", "rú guǒ shì", "if", "si", "si", "se", "nếu", "ถ้า", "ប្រសិនបើ", "jika", "jika", "kung"],
     ["如果说", "rú guǒ shuō", "if say", "si dices", "si disons", "se disser", "nếu nói", "ถ้าพูด", "ប្រសិនបើនិយាយ", "jika dikatakan", "jika berkata", "Kung sasabihin"],
     ["假如是", "jiǎ rú shì", "if", "si", "si", "se", "nếu", "ถ้า", "ប្រសិនបើ", "jika", "jika", "kung"],
@@ -570,7 +586,7 @@ export const p5_88_conjunctions__connectors = {
     malay: "Conjunctions & Connectors",
     filipino: "Conjunctions & Connectors"
   },
-  words: [
+  baseWords: [
     ["和", "hé", "and", "y", "et", "e", "và", "และ", "និង", "dan", "dan", "at"],
     ["与", "yǔ", "and", "y", "et", "e", "và", "และ", "និង", "dan", "dan", "at"],
     ["跟", "gēn", "with", "con", "avec", "com", "với", "กับ", "ជាមួយ", "dengan", "dengan", "kasama ang"],
@@ -586,7 +602,9 @@ export const p5_88_conjunctions__connectors = {
     ["同时", "tóng shí", "at the same time", "al mismo tiempo", "en même temps", "ao mesmo tempo", "cùng lúc", "ในเวลาเดียวกัน", "ក្នុងពេលតែមួយ", "pada saat yang sama", "Pada masa yang sama", "Kasabay nito"],
     ["另外", "lìng wài", "in addition", "además", "en plus", "além disso", "ngoài ra", "นอกจากนี้", "លើសពីនេះទៀត", "selain itu", "Di samping itu", "Bilang karagdagan"],
     ["此外", "cǐ wài", "in addition", "además", "en plus", "além disso", "ngoài ra", "นอกจากนี้", "លើសពីនេះទៀត", "selain itu", "Di samping itu", "Bilang karagdagan"],
-    ["总之", "zǒng zhī", "in short", "en resumen", "en bref", "em resumo", "tóm lại", "โดยสรุป", "និយាយឱ្យខ្លី", "singkatnya", "Pendek kata", "Sa madaling sabi"],
+    ["总之", "zǒng zhī", "in short", "en resumen", "en bref", "em resumo", "tóm lại", "โดยสรุป", "និយាយឱ្យខ្លី", "singkatnya", "Pendek kata", "Sa madaling sabi"]
+  ],
+  exampleWords: [
     ["我和你", "wǒ hé nǐ", "me and you", "tu y yo", "moi et toi", "eu e você", "tôi và bạn", "ฉันและคุณ", "ខ្ញុំនិងអ្នក", "aku dan kamu", "saya dan anda", "Ako at ikaw"],
     ["和他", "hé tā", "and him", "y él", "et lui", "e ele", "và anh ấy", "และเขา", "ហើយគាត់", "dan dia", "dan dia", "at siya"],
     ["我与你", "wǒ yǔ nǐ", "me and you", "tu y yo", "moi et toi", "eu e você", "tôi và bạn", "ฉันและคุณ", "ខ្ញុំនិងអ្នក", "aku dan kamu", "saya dan anda", "Ako at ikaw"],
@@ -638,7 +656,7 @@ export const p5_89_modal__particles__mood = {
     malay: "Modal Particles & Mood",
     filipino: "Modal Particles & Mood"
   },
-  words: [
+  baseWords: [
     ["吗", "ma", "(question particle)", "(partícula interrogativa)", "(particule interrogative)", "(partícula interrogativa)", "(trợ từ nghi vấn)", "ไหม", "ទេ", "(partikel tanya)", "(partikel soalan)", "(tanong na bahagi)"],
     ["吧", "ba", "(suggestion particle)", "(partícula de sugerencia)", "(particule de suggestion)", "(partícula de sugestão)", "(trợ từ đề nghị)", "นะ", "ទៅ", "(partikel saran)", "(partikel cadangan)", "(partikula ng mungkahi)"],
     ["呢", "ne", "(continuation particle)", "(partícula de continuación)", "(particule de continuation)", "(partícula de continuação)", "(trợ từ tiếp nối)", "ล่ะ", "ដែរ", "(partikel lanjutan)", "(partikel sambungan)", "(pagpapatuloy na bahagi)"],
@@ -654,7 +672,9 @@ export const p5_89_modal__particles__mood = {
     ["诶", "éi", "Hey", "Oye", "Hé", "Ei", "Ê", "เอ้", "អេ", "Eh", "Eh", "Ay"],
     ["得了", "dé le", "Enough", "Basta", "Ça suffit", "Chega", "Thôi", "พอเถอะ", "គ្រប់គ្រាន់ហើយ", "Cukup", "Cukup", "Tama na"],
     ["罢了", "bà le", "That's all", "Eso es todo", "C'est tout", "É só isso", "Vậy thôi", "แค่นั้นแหละ", "ប៉ុណ្ណោះ", "Itu saja", "Itu sahaja", "Iyon lang"],
-    ["而已", "ér yǐ", "Just that", "Solo eso", "Juste ça", "Apenas isso", "Chỉ vậy thôi", "เท่านั้น", "គ្រាន់តែ", "Hanya itu", "Cuma itu", "Iyon lang"],
+    ["而已", "ér yǐ", "Just that", "Solo eso", "Juste ça", "Apenas isso", "Chỉ vậy thôi", "เท่านั้น", "គ្រាន់តែ", "Hanya itu", "Cuma itu", "Iyon lang"]
+  ],
+  exampleWords: [
     ["是吗", "shì ma", "Really?", "¿De verdad?", "Vraiment?", "Mesmo?", "Thật sao?", "จริงเหรอ", "ពិតមែនទេ", "Benarkah?", "Betul ke?", "Talaga?"],
     ["好吗", "hǎo ma", "Okay?", "¿Está bien?", "D'accord?", "Tudo bem?", "Được không?", "ได้ไหม", "បានទេ", "Baik?", "Okay?", "Okay ba?"],
     ["走吧", "zǒu ba", "Let's go", "Vámonos", "Allons-y", "Vamos", "Đi thôi", "ไปกันเถอะ", "ទៅ", "Ayo pergi", "Jom pergi", "Tara na"],
@@ -706,7 +726,7 @@ export const p5_90_structural__particles = {
     malay: "Structural Particles",
     filipino: "Structural Particles"
   },
-  words: [
+  baseWords: [
     ["的", "de", "of", "de", "de", "de", "của", "ของ", "នៃ", "dari", "daripada", "ng"],
     ["地", "dì", "land", "tierra", "terrain", "terreno", "đất", "ที่ดิน", "ដី || ទទួលបាន", "tanah", "tanah", "Lupa"],
     ["得", "dé", "got", "tengo", "obtenu", "tenho", "có", "ได้", "អក្ខរាវិរុទ្ធ || ជាមួយ", "mendapat", "mendapat", "nakuha"],
@@ -722,7 +742,9 @@ export const p5_90_structural__particles = {
     ["回来", "huí lái", "back", "volver", "retour", "voltar", "quay lại", "กลับ", "បើក", "kembali", "Kembali", "Bumalik"],
     ["过来", "guò lái", "over", "terminado", "plus de", "acabou", "kết thúc", "เหนือ", "| របស់ខ្ញុំ || ស្រស់ស្អាត", "berakhir", "Lebih", "Over"],
     ["过去", "guò qù", "past", "pasado", "passé", "passado", "quá khứ", "อดีต", "យឺត", "masa lalu", "masa lalu", "Nakaraan"],
-    ["开", "kāi", "open", "abierto", "ouvert", "abrir", "mở", "เปิด", "លឿន", "buka", "Buka", "Buksan"],
+    ["开", "kāi", "open", "abierto", "ouvert", "abrir", "mở", "เปิด", "លឿន", "buka", "Buka", "Buksan"]
+  ],
+  exampleWords: [
     ["我的", "wǒ de", "my", "mi", "mon", "meu", "", "ของฉัน", "រត់យ៉ាងលឿន", "saya", "saya", "Aking"],
     ["美的", "měi de", "beautiful", "hermosa", "magnifique", "lindo", "của tôi đẹp", "สวยงาม", "ធ្វើបានយ៉ាងល្អ", "cantik", "cantik", "maganda"],
     ["慢慢地", "màn màn dì", "slowly", "lentamente", "lentement", "lentamente", "từ từ", "ช้าๆ", "ទៅ", "pelan-pelan", "Perlahan", "Dahan -dahan"],
@@ -774,7 +796,7 @@ export const p5_91_common__sentence__patterns = {
     malay: "Common Sentence Patterns",
     filipino: "Common Sentence Patterns"
   },
-  words: [
+  baseWords: [
     ["把", "bǎ", "(object marker)", "(marcador de objeto)", "(marqueur d'objet)", "(marcador de objeto)", "(giới từ tân ngữ)", "เอา", "យក", "(penanda objek)", "(penanda objek)", "(pananda ng bagay)"],
     ["被", "bèi", "by (passive)", "por (pasivo)", "par (passif)", "por (passivo)", "bị (bị động)", "ถูก", "ត្រូវបាន", "oleh (pasif)", "oleh (pasif)", "ng (pasibo)"],
     ["让", "ràng", "let", "dejar", "laisser", "deixar", "để cho", "ให้", "អនុញ្ញាតឱ្យ", "biarkan", "biarkan", "hayaan"],
@@ -788,7 +810,9 @@ export const p5_91_common__sentence__patterns = {
     ["关于", "guān yú", "about", "sobre", "à propos de", "sobre", "về", "เกี่ยวกับ", "អំពី", "tentang", "mengenai", "tungkol sa"],
     ["按照", "àn zhào", "according to", "según", "selon", "de acordo com", "theo", "ตาม", "តាម", "menurut", "mengikut", "ayon sa"],
     ["令", "lìng", "make", "hacer", "rendre", "fazer", "khiến", "ทำให้", "ធ្វើឱ្យ", "membuat", "membuat", "gumawa"],
-    ["朝", "cháo", "toward", "hacia", "vers", "em direção a", "về phía", "ไปทาง", "ឆ្ពោះទៅ", "menuju", "ke arah", "patungo sa"],
+    ["朝", "cháo", "toward", "hacia", "vers", "em direção a", "về phía", "ไปทาง", "ឆ្ពោះទៅ", "menuju", "ke arah", "patungo sa"]
+  ],
+  exampleWords: [
     ["把它", "bǎ tā", "take it", "tómalo", "prends-le", "pegue-o", "lấy nó", "เอามัน", "យកវា", "ambil itu", "ambil itu", "kunin ito"],
     ["把这个", "bǎ zhè ge", "take this", "toma esto", "prends ça", "pegue isso", "lấy cái này", "เอาอันนี้", "យកនេះ", "ambil ini", "ambil ini", "kunin ito"],
     ["被人", "bèi rén", "by people", "por personas", "par des gens", "por pessoas", "bị người ta", "ถูกคน", "ត្រូវបានដោយមនុស្ស", "oleh orang", "oleh orang", "ng mga tao"],
@@ -836,7 +860,7 @@ export const p5_92_describing__things = {
     malay: "Describing Things",
     filipino: "Describing Things"
   },
-  words: [
+  baseWords: [
     ["东西", "dōng xī", "thing", "cosa", "chose", "coisa", "điều", "สิ่ง", "រឿង", "hal", "perkara", "bagay"],
     ["物品", "wù pǐn", "object", "objeto", "objet", "objeto", "đối tượng", "วัตถุ", "វត្ថុ", "objek", "Objek", "Bagay"],
     ["事情", "shì qíng", "thing", "cosa", "chose", "coisa", "điều", "สิ่ง", "រឿង", "hal", "perkara", "bagay"],
@@ -852,7 +876,9 @@ export const p5_92_describing__things = {
     ["重量", "zhòng liàng", "weight", "peso", "poids", "peso", "cân nặng", "น้ำหนัก", "ទំងន់", "berat", "Berat", "Timbang"],
     ["材料", "cái liào", "material", "materiales", "matériel", "materiais", "vật chất", "วัสดุ", "| សម្ភារៈ", "bahan", "Bahan", "Materyal"],
     ["材质", "cái zhì", "material", "materiales", "matériel", "materiais", "vật chất", "วัสดุ", "សម្ភារៈ", "bahan", "Bahan", "Materyal"],
-    ["质地", "zhì dì", "texture", "textura", "textures", "textura", "kết cấu", "พื้นผิว", "វាយនភាព", "tekstur", "Tekstur", "Texture"],
+    ["质地", "zhì dì", "texture", "textura", "textures", "textura", "kết cấu", "พื้นผิว", "វាយនភាព", "tekstur", "Tekstur", "Texture"]
+  ],
+  exampleWords: [
     ["有东西", "yǒu dōng xī", "something", "algo", "quelque chose", "alguma coisa", "cái gì đó", "บางสิ่งบางอย่าง", "អ្វីមួយ", "sesuatu", "sesuatu", "isang bagay"],
     ["什么东西", "shén me dōng xī", "something", "algo", "quelque chose", "alguma coisa", "cái gì đó", "บางสิ่งบางอย่าง", "អ្វីមួយ", "sesuatu", "sesuatu", "isang bagay"],
     ["贵重物品", "guì zhòng wù pǐn", "valuables", "objetos de valor", "objets de valeur", "objetos de valor", "vật có giá trị", "ของมีค่า", "របស់មានតម្លៃ", "barang berharga", "NOLUABLES", "Mga mahahalagang bagay"],
@@ -904,7 +930,7 @@ export const p5_93_quantities__amounts = {
     malay: "Quantities & Amounts",
     filipino: "Quantities & Amounts"
   },
-  words: [
+  baseWords: [
     ["全部", "quán bù", "All", "Todo", "Tout", "Tudo", "Tất cả", "ทั้งหมด", "ទាំងអស់", "Semua", "Semua", "Lahat"],
     ["所有", "suǒ yǒu", "All", "Todo", "Tout", "Todo", "Tất cả", "ทั้งหมด", "ទាំងអស់", "Semua", "Semua", "Lahat"],
     ["整个", "zhěng gè", "Whole", "Entero", "Entier", "Inteiro", "Toàn bộ", "ทั้งหมด", "ទាំងមូល", "Seluruh", "Seluruh", "Buo"],
@@ -920,7 +946,9 @@ export const p5_93_quantities__amounts = {
     ["某些", "mǒu xiē", "Certain", "Ciertos", "Certains", "Certos", "Một số", "บางอย่าง", "ខ្លះៗ", "Tertentu", "Tertentu", "Tiyak"],
     ["多数", "duō shù", "Majority", "Mayoría", "Majorité", "Maioria", "Đa số", "ส่วนใหญ่", "ភាគច្រើន", "Mayoritas", "Majoriti", "Karamihan"],
     ["少数", "shǎo shù", "Minority", "Minoría", "Minorité", "Minoria", "Thiểu số", "ส่วนน้อย", "ភាគតិច", "Minoritas", "Minoriti", "Minorya"],
-    ["若干", "ruò gān", "Several", "Varios", "Plusieurs", "Vários", "Một số", "หลาย", "ជាច្រើន", "Beberapa", "Beberapa", "Ilang"],
+    ["若干", "ruò gān", "Several", "Varios", "Plusieurs", "Vários", "Một số", "หลาย", "ជាច្រើន", "Beberapa", "Beberapa", "Ilang"]
+  ],
+  exampleWords: [
     ["全部都", "quán bù dōu", "All of them", "Todos ellos", "Tous", "Todos eles", "Tất cả đều", "ทั้งหมด", "ទាំងអស់គ្នា", "Semuanya", "Semuanya", "Lahat sila"],
     ["全部是", "quán bù shì", "All are", "Todos son", "Tous sont", "Todos são", "Tất cả là", "ทั้งหมดคือ", "ទាំងអស់គឺ", "Semuanya adalah", "Semua adalah", "Lahat ay"],
     ["所有人", "suǒ yǒu rén", "Everyone", "Todos", "Tout le monde", "Todos", "Tất cả mọi người", "ทุกคน", "អ្នករាល់គ្នា", "Semua orang", "Semua orang", "Lahat ng tao"],
@@ -972,52 +1000,54 @@ export const p5_94_extent__degree = {
     malay: "Extent & Degree",
     filipino: "Extent & Degree"
   },
-  words: [
+  baseWords: [
     ["程度", "chéng dù", "Degree", "Grado", "Diplôme", "Grau", "Bằng cấp", "ปริญญา", "សញ្ញាប័ត្រ", "Gelar", "Ijazah", "Degree"],
     ["非常", "fēi cháng", "Very", "Muy", "Très", "Muito", "Rất", "มาก", "ខ្លាំងណាស់", "Sangat", "Sangat", "Napaka"],
     ["很", "hěn", "Very", "Muy", "Très", "Muito", "Rất", "มาก", "ខ្លាំងណាស់", "Sangat", "Sangat", "Napaka"],
     ["太", "tài", "Too", "También", "Trop", "Também", "Quá", "เกินไป", "ផងដែរ", "Terlalu", "Terlalu", "Masyadong"],
-    ["极", "jí", "Extreme", "Extremo", "Extrême", "Extremo", "Cực đoan", "สุดขีด", "lowe", "Ekstrim", "Melampau", "Extreme"],
+    ["极", "jí", "Extreme", "Extremo", "Extrême", "Extremo", "Cực đoan", "สุดขีด", "ខ្លាំង", "Ekstrim", "Melampau", "Extreme"],
     ["最", "zuì", "Most", "La mayoría", "Les plus", "A maioria", "Hầu hết", "มากที่สุด", "ភាគច្រើន", "Kebanyakan", "Kebanyakan", "Karamihan"],
     ["挺", "tǐng", "Quite", "Bastante", "Tout à fait", "Bastante", "Khá", "ค่อนข้าง", "អើយ", "Cukup", "Cukup", "Medyo"],
-    ["蛮", "mán", "Brutal", "Brutal", "Brutale", "Brutais", "Tàn bạo", "โหดร้าย", "ឃោរឃៅ || បន្តិច", "Brutal", "Brutal", "Brutal"],
-    ["有点", "yǒu diǎn", "A little", "Un poco", "Un peu", "Um pouco", "Một chút", "นิดหน่อย", "ខ្លាំងណាស់", "Sedikit", "A Little", "Medyo"],
+    ["蛮", "mán", "Quite", "Bastante", "Assez", "Bastante", "Khá", "ค่อนข้าง", "គួរសម", "Cukup", "Agak", "Medyo"],
+    ["有点", "yǒu diǎn", "A little", "Un poco", "Un peu", "Um pouco", "Một chút", "นิดหน่อย", "បន្តិច", "Sedikit", "Sedikit", "Medyo"],
     ["十分", "shí fēn", "Very", "Muy", "Très", "Muito", "Rất", "มาก", "វិសាមញ្ញ", "Sangat", "Sangat", "Napaka"],
     ["格外", "gé wài", "Extraordinary", "Extraordinario", "Extraordinaire", "Extraordinário", "Phi thường", "วิสามัญ", "វិសាមញ្ញ", "Luar Biasa", "Luar Biasa", "Pambihirang"],
     ["分外", "fèn wài", "Extraordinary", "Extraordinario", "Extraordinaire", "Extraordinário", "Phi thường", "วิสามัญ", "ខ្លាំងណាស់", "Luar Biasa", "Luar Biasa", "Pambihirang"],
     ["甚", "shèn", "Very", "Muy", "Très", "Muito", "Rất", "มาก", "កម្រណាស់", "Sangat", "Sangat", "Napaka"],
-    ["稀稀", "xī xī", "Rare", "Raro", "Rares", "Raro", "Hiếm", "หายาก", "| តើមួយណា", "Jarang", "Jarang", "Rare"],
-    ["略", "lüè", "To what extent", "¿En qué medida", "Dans quelle mesure", "Até que ponto", "Ở mức độ nào", "ขนาดไหน", "ជ្រៅណាស់", "Sejauh mana", "Sejauh manakah", "Hanggang saan ang"],
-    ["颇", "pǒ", "Very deep", "Muy profundo", "Très profond", "Muito profundo", "Rất sâu sắc", "ลึกมาก", "សូមអរគុណច្រើន", "Sangat dalam", "Sangat mendalam", "Napakalalim"],
-    ["什么程度", "shén me chéng dù", "Thank you very much", "Muchas gracias", "Merci beaucoup", "Muito obrigado", "Cảm ơn bạn rất nhiều", "ขอบคุณมากครับ", "រីករាយណាស់", "Terima kasih banyak", "Terima kasih banyak", "Maraming salamat"],
-    ["程度很深", "chéng dù hěn shēn", "Very happy", "Muy feliz", "Très heureux", "Muito feliz", "Rất vui", "มีความสุขมากๆนะ", "សំខាន់ណាស់", "Senang sekali", "Sangat gembira", "Napakasaya"],
-    ["非常感谢", "fēi cháng gǎn xiè", "Very important", "Muy importante", "Très important", "Muito importante", "Rất quan trọng", "สำคัญมาก", "ល្អណាស់", "Sangat penting", "Sangat penting", "Napakahalaga"],
-    ["非常高兴", "fēi cháng gāo xìng", "Very good", "Muy bien", "Très bien", "Muito bom", "Rất tốt", "ดีมาก", "ច្រើនពេក", "Bagus sekali", "Sangat baik", "Napakahusay"],
-    ["很重要", "hěn zhòng yào", "Too much", "Demasiado", "Trop", "Demais", "Quá nhiều", "มากเกินไป", "អស្ចារ្យ", "Terlalu banyak", "Terlalu banyak", "Masyadong marami"],
-    ["很厉害", "hěn lì hài", "Great", "Genial", "Génial", "Ótimo", "Tuyệt vời", "เยี่ยมมาก", "| សំខាន់បំផុត", "Hebat", "Besar", "Mahusay"],
-    ["太过分", "tài guò fèn", "Extremely important", "Extremadamente importante", "Extrêmement important", "Extremamente importante", "Cực kỳ quan trọng", "สำคัญมาก", "តិចតួចណាស់", "Sangat penting", "Sangat penting", "Labis na mahalaga"],
-    ["太棒了", "tài bàng le", "Very few", "Muy pocos", "Très peu", "Muito poucos", "Rất ít", "น้อยมาก", "សំខាន់បំផុត", "Sangat sedikit", "Sangat sedikit", "Napakakaunting"],
-    ["极为重要", "jí wéi zhòng yào", "The most important", "Lo más importante", "Le plus important", "O mais importante", "Điều quan trọng nhất", "ที่สำคัญที่สุด", "ដ៏មានឥទ្ធិពលបំផុត", "Yang paling penting", "Yang paling penting", "Ang pinakamahalagang"],
-    ["极少数", "jí shǎo shù", "The most powerful", "El más poderoso", "Le plus puissant", "O mais poderoso", "Mạnh mẽ nhất", "ทรงพลังที่สุด", "ល្អណាស់", "", "Yang paling berkuasa", "Ang pinakamalakas"],
-    ["最重要", "zuì zhòng yào", "Pretty good", "Bastante bien", "Plutôt bien", "Muito bom", "Khá tốt", "ดีจังเลย", "គួរឱ្យចាប់អារម្មណ៍ណាស់", "yang paling kuat Cukup bagus", "Cukup baik", "Medyo mahusay"],
-    ["最厉害", "zuì lì hài", "Quite interesting", "Bastante interesante", "Assez intéressant", "Muito interessante", "Khá thú vị", "น่าสนใจมาก", "ល្អណាស់", "Cukup menarik", "Cukup menarik", "Medyo kawili -wili"],
-    ["挺不错", "tǐng bù cuò", "Pretty good", "Bastante bien", "Plutôt bien", "Muito bom", "Khá tốt", "ดีจังเลย", "គួរឱ្យចាប់អារម្មណ៍ណាស់", "Cukup bagus", "Cukup baik", "Medyo mahusay"],
-    ["挺有意思", "tǐng yǒu yì si", "Quite interesting", "Bastante interesante", "Assez intéressant", "Muito interessante", "Khá thú vị", "น่าสนใจมาก", "ហត់នឿយបន្តិច", "Cukup menarik", "Cukup menarik", "Medyo kawili -wili"],
-    ["蛮好的", "mán hǎo de", "A little tired", "Un poco cansado", "Un peu fatigué", "Um pouco cansado", "Hơi mệt", "เหนื่อยนิดหน่อย", "គួរឱ្យចាប់អារម្មណ៍បន្តិច", "Sedikit lelah", "Sedikit letih", "Isang maliit na pagod"],
-    ["蛮有趣", "mán yǒu qù", "A bit interesting", "Un poco interesante", "Un peu intéressant", "Um pouco interessante", "Có chút thú vị", "น่าสนใจนิดหน่อย", "សូមអរគុណច្រើន", "Sedikit menarik", "Sedikit menarik", "Medyo kawili -wili"],
-    ["有点累", "yǒu diǎn lèi", "Thank you very much", "Muchas gracias", "Merci beaucoup", "Muito obrigado", "Cảm ơn bạn rất nhiều", "ขอบคุณมากครับ", "ពេញចិត្តណាស់", "Terima kasih banyak", "Terima kasih banyak", "Maraming salamat"],
-    ["有点意思", "yǒu diǎn yì si", "Very satisfied", "Muy satisfecho", "Très satisfait", "Muito satisfeito", "Rất hài lòng", "พอใจมาก", "ប្រុងប្រយ័ត្នបន្ថែម", "Sangat puas", "Sangat berpuas hati", "Sobrang nasiyahan"],
-    ["十分感谢", "shí fēn gǎn xiè", "Extra careful", "Mucho cuidado", "Très prudent", "Muito cuidado", "Cẩn thận hơn", "ระมัดระวังเป็นพิเศษ", "សប្បាយចិត្តមិនធម្មតា", "Ekstra hati-hati", "Tambahan berhati -hati", "Dagdag na maingat"],
-    ["十分满意", "shí fēn mǎn yì", "Extraordinarily happy", "Extraordinariamente feliz", "Extraordinairement heureux", "Extraordinariamente feliz", "Hạnh phúc lạ thường", "มีความสุขเป็นพิเศษ", "ស្រឡាញ់អ្នកស្រឡាញ់វិសាមញ្ញ", "Luar biasa bahagia", "Luar biasa gembira", "Extraordinarily masaya"],
-    ["格外小心", "gé wài xiǎo xīn", "Extraordinary cherishment", "Aprecio extraordinario", "Chérisse extraordinaire", "Valorização extraordinária", "Sự trân trọng phi thường", "ความทะนุถนอมพิเศษ", "សប្បាយចិត្តមិនធម្មតា", "Penghargaan yang luar biasa", "Cherishment luar biasa", "Pambihirang Cherishment"],
-    ["格外高兴", "gé wài gāo xìng", "Extraordinarily happy", "Extraordinariamente feliz", "Extraordinairement heureux", "Extraordinariamente feliz", "Hạnh phúc lạ thường", "มีความสุขเป็นพิเศษ", "សូម្បីតែ", "Luar biasa bahagia", "Luar biasa gembira", "Extraordinarily masaya"],
-    ["分外珍惜", "fèn wài zhēn xī", "Even", "Incluso", "Même", "Mesmo", "Thậm chí", "แม้แต่", "សំខាន់ណាស់", "Bahkan", "Malah", "Kahit na"],
-    ["分外开心", "fèn wài kāi xīn", "Very important", "Muy importante", "Très important", "Muito importante", "Rất quan trọng", "สำคัญมาก", "រាស់", "Sangat penting", "Sangat penting", "Napakahalaga"],
-    ["甚至于", "shèn zhì yú", "Sparse", "Escaso", "Clairsemé", "Esparso", "Thưa thớt", "เบาบาง", "រាស់", "Jarang", "Ringkas", "Kalat -kalat"],
-    ["甚为重要", "shèn wéi zhòng yào", "Sparse", "Escaso", "Clairsemé", "Esparso", "Thưa thớt", "เบาบาง", "ដឹងបន្តិច", "Jarang", "Ringkas", "Kalat -kalat"],
-    ["稀稀疏疏", "xī xī shū shū", "Know a little bit", "Conozca un poquito", "En savoir un peu", "Conheça um pouco", "Biết một chút", "รู้เรื่องนิดหน่อย", "ចំណេះដឹងតិចតួច", "Tahu sedikit", "Tahu sedikit", "Alam ng kaunti"],
-    ["稀稀拉拉", "xī xī lā lā", "A little knowledge", "Un poco de conocimiento", "Un peu de connaissances", "Um pouco de conhecimento", "Một chút kiến ​​thức", "ความรู้เล็กๆ น้อยๆ", "ពិតជាមានប្រសិទ្ធភាពណាស់", "Sedikit pengetahuan", "Sedikit pengetahuan", "Isang maliit na kaalaman"],
-    ["略知一二", "lüè zhī yī èr", "Quite effective", "Bastante eficaz", "Assez efficace", "Bastante eficaz", "Khá hiệu quả", "ค่อนข้างมีประสิทธิภาพ", "ពេញចិត្តណាស់", "Cukup efektif", "Agak berkesan", "Medyo epektibo"],
+    ["稀稀", "xī xī", "Sparse", "Escaso", "Clairsemé", "Esparso", "Thưa thớt", "เบาบาง", "រាស់រាយ", "Jarang", "Jarang", "Kalat-kalat"],
+    ["略", "lüè", "Slightly", "Ligeramente", "Légèrement", "Ligeiramente", "Hơi", "เล็กน้อย", "បន្តិច", "Sedikit", "Sedikit", "Bahagya"],
+    ["颇", "pǒ", "Quite", "Bastante", "Assez", "Bastante", "Khá", "ค่อนข้าง", "គួរសម", "Cukup", "Agak", "Medyo"]
+  ],
+  exampleWords: [
+    ["什么程度", "shén me chéng dù", "To what degree", "A qué grado", "À quel degré", "A que grau", "Ở mức độ nào", "ระดับไหน", "តើមួយណា", "Sejauh mana", "Sejauh mana", "Hanggang saan"],
+    ["程度很深", "chéng dù hěn shēn", "Very deep degree", "Grado muy profundo", "Degré très profond", "Grau muito profundo", "Mức độ rất sâu", "ระดับลึกมาก", "កម្រិតជ្រៅខ្លាំង", "Tingkat sangat dalam", "Tahap sangat dalam", "Napakalalim na antas"],
+    ["非常感谢", "fēi cháng gǎn xiè", "Thank you very much", "Muchas gracias", "Merci beaucoup", "Muito obrigado", "Cảm ơn rất nhiều", "ขอบคุณมาก", "សូមអរគុណច្រើន", "Terima kasih banyak", "Terima kasih banyak", "Maraming salamat"],
+    ["非常高兴", "fēi cháng gāo xìng", "Very happy", "Muy feliz", "Très heureux", "Muito feliz", "Rất vui", "มีความสุขมาก", "រីករាយណាស់", "Sangat senang", "Sangat gembira", "Napakasaya"],
+    ["很重要", "hěn zhòng yào", "Very important", "Muy importante", "Très important", "Muito importante", "Rất quan trọng", "สำคัญมาก", "សំខាន់ណាស់", "Sangat penting", "Sangat penting", "Napakahalaga"],
+    ["很厉害", "hěn lì hài", "Very awesome", "Muy genial", "Très génial", "Muito incrível", "Rất giỏi", "เก่งมาก", "អស្ចារ្យណាស់", "Sangat hebat", "Sangat hebat", "Napakagaling"],
+    ["太过分", "tài guò fèn", "Too excessive", "Demasiado excesivo", "Trop excessif", "Excessivo demais", "Quá đáng", "เกินไป", "ហួសពេក", "Terlalu berlebihan", "Terlalu keterlaluan", "Masyadong labis"],
+    ["太棒了", "tài bàng le", "Awesome", "Increíble", "Génial", "Incrível", "Tuyệt vời", "เยี่ยมมาก", "អស្ចារ្យ", "Luar biasa", "Hebat", "Kahanga-hanga"],
+    ["极为重要", "jí wéi zhòng yào", "Extremely important", "Extremadamente importante", "Extrêmement important", "Extremamente importante", "Cực kỳ quan trọng", "สำคัญมาก", "សំខាន់បំផុត", "Sangat penting", "Sangat penting", "Lubhang mahalaga"],
+    ["极少数", "jí shǎo shù", "Very few", "Muy pocos", "Très peu", "Muito poucos", "Rất ít", "น้อยมาก", "តិចតួចណាស់", "Sangat sedikit", "Sangat sedikit", "Napakakaunti"],
+    ["最重要", "zuì zhòng yào", "Most important", "Lo más importante", "Le plus important", "O mais importante", "Quan trọng nhất", "สำคัญที่สุด", "សំខាន់បំផុត", "Paling penting", "Paling penting", "Pinakamahalaga"],
+    ["最厉害", "zuì lì hài", "Most powerful", "El más poderoso", "Le plus puissant", "O mais poderoso", "Giỏi nhất", "เก่งที่สุด", "ខ្លាំងបំផុត", "Paling hebat", "Paling hebat", "Pinakamagaling"],
+    ["挺不错", "tǐng bù cuò", "Pretty good", "Bastante bien", "Plutôt bien", "Muito bom", "Khá tốt", "ดีจังเลย", "ល្អណាស់", "Cukup bagus", "Cukup baik", "Medyo mahusay"],
+    ["挺有意思", "tǐng yǒu yì si", "Quite interesting", "Bastante interesante", "Assez intéressant", "Muito interessante", "Khá thú vị", "น่าสนใจมาก", "គួរឱ្យចាប់អារម្មណ៍គួរសម", "Cukup menarik", "Cukup menarik", "Medyo kawili-wili"],
+    ["蛮好的", "mán hǎo de", "Pretty good", "Bastante bien", "Plutôt bien", "Muito bom", "Khá tốt", "ดีมาก", "ល្អណាស់", "Cukup bagus", "Cukup baik", "Medyo mahusay"],
+    ["蛮有趣", "mán yǒu qù", "Quite interesting", "Bastante interesante", "Assez intéressant", "Bastante interessante", "Khá thú vị", "น่าสนใจมาก", "គួរឱ្យចាប់អារម្មណ៍", "Cukup menarik", "Agak menarik", "Medyo kawili-wili"],
+    ["有点累", "yǒu diǎn lèi", "A little tired", "Un poco cansado", "Un peu fatigué", "Um pouco cansado", "Hơi mệt", "เหนื่อยนิดหน่อย", "ហត់បន្តិច", "Sedikit lelah", "Sedikit penat", "Medyo pagod"],
+    ["有点意思", "yǒu diǎn yì si", "A bit interesting", "Un poco interesante", "Un peu intéressant", "Um pouco interessante", "Có chút thú vị", "น่าสนใจนิดหน่อย", "គួរឱ្យចាប់អារម្មណ៍បន្តិច", "Sedikit menarik", "Agak menarik", "Medyo kawili-wili"],
+    ["十分感谢", "shí fēn gǎn xiè", "Thank you very much", "Muchas gracias", "Merci beaucoup", "Muito obrigado", "Cảm ơn rất nhiều", "ขอบคุณมาก", "សូមអរគុណច្រើន", "Terima kasih banyak", "Terima kasih banyak", "Maraming salamat"],
+    ["十分满意", "shí fēn mǎn yì", "Very satisfied", "Muy satisfecho", "Très satisfait", "Muito satisfeito", "Rất hài lòng", "พอใจมาก", "ពេញចិត្តណាស់", "Sangat puas", "Sangat berpuas hati", "Labis na nasiyahan"],
+    ["格外小心", "gé wài xiǎo xīn", "Extra careful", "Extra cuidadoso", "Très prudent", "Extra cuidadoso", "Cẩn thận đặc biệt", "ระมัดระวังเป็นพิเศษ", "ប្រុងប្រយ័ត្នបន្ថែម", "Ekstra hati-hati", "Lebih berhati-hati", "Dagdag na maingat"],
+    ["格外高兴", "gé wài gāo xìng", "Extraordinarily happy", "Extraordinariamente feliz", "Extraordinairement heureux", "Extraordinariamente feliz", "Vui mừng đặc biệt", "มีความสุขเป็นพิเศษ", "រីករាយខ្លាំង", "Luar biasa senang", "Luar biasa gembira", "Lubhang masaya"],
+    ["分外珍惜", "fèn wài zhēn xī", "Especially cherish", "Apreciar especialmente", "Chérir particulièrement", "Valorizar especialmente", "Trân trọng đặc biệt", "ทะนุถนอมเป็นพิเศษ", "ស្រឡាញ់ជាពិសេស", "Sangat menghargai", "Sangat menghargai", "Labis na pinahahalagahan"],
+    ["分外开心", "fèn wài kāi xīn", "Especially happy", "Especialmente feliz", "Particulièrement heureux", "Especialmente feliz", "Vui vẻ đặc biệt", "มีความสุขเป็นพิเศษ", "រីករាយជាពិសេស", "Sangat senang", "Sangat gembira", "Lubhang masaya"],
+    ["甚至于", "shèn zhì yú", "Even", "Incluso", "Même", "Até mesmo", "Thậm chí", "แม้แต่", "សូម្បីតែ", "Bahkan", "Malah", "Kahit na"],
+    ["甚为重要", "shèn wéi zhòng yào", "Very important", "Muy importante", "Très important", "Muito importante", "Rất quan trọng", "สำคัญมาก", "សំខាន់ណាស់", "Sangat penting", "Sangat penting", "Napakahalaga"],
+    ["稀稀疏疏", "xī xī shū shū", "Sparse", "Escaso", "Clairsemé", "Esparso", "Thưa thớt", "เบาบาง", "រាស់រាយ", "Jarang", "Jarang", "Kalat-kalat"],
+    ["稀稀拉拉", "xī xī lā lā", "Scattered", "Disperso", "Éparpillé", "Disperso", "Rải rác", "กระจัดกระจาย", "ប្រាក់សាច់", "Berserakan", "Berselerak", "Nakakalat"],
+    ["略知一二", "lüè zhī yī èr", "Know a little", "Saber un poco", "Savoir un peu", "Saber um pouco", "Biết một chút", "รู้จักบ้าง", "ដឹងបន្តិច", "Tahu sedikit", "Tahu sedikit", "Alam ng kaunti"],
     ["略有所闻", "lüè yǒu suǒ wén", "Heard a little", "Oído un poco", "Entendu un peu", "Ouviu um pouco", "Nghe được một chút", "ได้ยินมาบ้าง", "បានដឹងខ្លះ", "Mendengar sedikit", "Dengar sikit", "Narinig ng kaunti"],
     ["颇有成效", "pǒ yǒu chéng xiào", "Quite effective", "Bastante eficaz", "Assez efficace", "Bastante eficaz", "Khá hiệu quả", "ค่อนข้างมีประสิทธิภาพ", "មានប្រសិទ្ធភាពគួរសម", "Cukup efektif", "Agak berkesan", "Medyo epektibo"],
     ["颇为满意", "pǒ wèi mǎn yì", "Quite satisfied", "Bastante satisfecho", "Assez satisfait", "Bastante satisfeito", "Khá hài lòng", "ค่อนข้างพอใจ", "ពេញចិត្តគួរសម", "Cukup puas", "Cukup berpuas hati", "Medyo nasiyahan"]
@@ -1040,7 +1070,7 @@ export const p5_95_emphasis__intensifiers = {
     malay: "Emphasis & Intensifiers",
     filipino: "Emphasis & Intensifiers"
   },
-  words: [
+  baseWords: [
     ["就是", "jiù shì", "It is", "Es", "C'est", "É", "Đó là", "ก็คือ", "វាជា", "Itu adalah", "Ia adalah", "Ito ay"],
     ["正是", "zhèng shì", "Exactly", "Exactamente", "Exactement", "Exatamente", "Chính xác", "แน่นอน", "យ៉ាងពិតប្រាកដ", "Tepat sekali", "Tepat", "Eksaktong"],
     ["只是", "zhǐ shì", "Just", "Solo", "Juste", "Apenas", "Chỉ là", "แค่", "គ្រាន់តែ", "Hanya", "Hanya", "Lamang"],
@@ -1056,7 +1086,9 @@ export const p5_95_emphasis__intensifiers = {
     ["实在", "shí zài", "Really", "Realmente", "Vraiment", "Realmente", "Thực sự", "จริงๆ", "ពិតប្រាកដ", "Sungguh", "Benar", "Talaga"],
     ["究竟", "jiū jìng", "After all", "Al fin y al cabo", "Après tout", "Afinal", "Rốt cuộc", "อันที่จริง", "បន្ទាប់ពីទាំងអស់", "Sebenarnya", "Sebenarnya", "Sa bandang huli"],
     ["到底", "dào dǐ", "In the end", "Al final", "À la fin", "No final", "Cuối cùng", "ในที่สุด", "នៅទីបញ្ចប់", "Pada akhirnya", "Akhirnya", "Sa huli"],
-    ["果然", "guǒ rán", "As expected", "Como se esperaba", "Comme prévu", "Como esperado", "Đúng như dự đoán", "ตามคาด", "ដូចការរំពឹងទុក", "Ternyata", "Seperti yang dijangkakan", "Tulad ng inaasahan"],
+    ["果然", "guǒ rán", "As expected", "Como se esperaba", "Comme prévu", "Como esperado", "Đúng như dự đoán", "ตามคาด", "ដូចការរំពឹងទុក", "Ternyata", "Seperti yang dijangkakan", "Tulad ng inaasahan"]
+  ],
+  exampleWords: [
     ["就是他", "jiù shì tā", "It's him", "Es él", "C'est lui", "É ele", "Đó là anh ấy", "ก็คือเขา", "វាជាគាត់", "Itu dia", "Itu dia", "Siya iyon"],
     ["就是这样", "jiù shì zhè yàng", "That's how it is", "Así es", "C'est comme ça", "É assim", "Đó là như vậy", "ก็แบบนี้", "វាដូច្នេះ", "Begitulah", "Begitulah", "Ganoon talaga"],
     ["正是他", "zhèng shì tā", "It's exactly him", "Es exactamente él", "C'est exactement lui", "É exatamente ele", "Chính là anh ấy", "แน่นอนคือเขา", "វាជាគាត់ពិតប្រាកដ", "Tepat sekali dia", "Tepat dia", "Siya mismo"],
@@ -1108,7 +1140,7 @@ export const p5_96_describing__problems = {
     malay: "Describing Problems",
     filipino: "Describing Problems"
   },
-  words: [
+  baseWords: [
     ["困难", "kùn nán", "Difficulty", "Dificultad", "Difficulté", "Dificuldade", "Độ khó", "ความยาก", "ការលំបាក", "Kesulitan", "Kesukaran", "Kahirapan"],
     ["难题", "nán tí", "Problem", "Problema", "Problème", "Problema", "Vấn đề", "ปัญหา", "បញ្ហា", "Masalah", "Masalah", "Suliranin"],
     ["难处", "nán chǔ", "Difficulty", "Dificultad", "Difficulté", "Dificuldade", "Độ khó", "ความยาก", "ការលំបាក", "Kesulitan", "Kesukaran", "Kahirapan"],
@@ -1122,7 +1154,9 @@ export const p5_96_describing__problems = {
     ["严重", "yán zhòng", "Serious", "Serio", "Sérieux", "Sério", "Nghiêm túc", "จริงจัง", "ស្មុគស្មាញ", "Serius", "Serius", "Seryoso"],
     ["棘手", "jí shǒu", "Troublesome", "Molesto", "Gênant", "Problemático", "Rắc rối", "ลำบากใจ", "អាក្រក់", "Merepotkan", "Menyusahkan", "Nakakagambala"],
     ["复杂", "fù zá", "Complex", "Complejo", "Complexe", "Complexo", "Phức tạp", "คอมเพล็กซ์", "ការជំនះការលំបាក", "Kompleks", "Kompleks", "Kumplikado"],
-    ["糟糕", "zāo gāo", "Bad", "Malo", "Mauvais", "Ruim", "Xấu", "แย่", "ការលំបាក", "Buruk", "Bad", "Masama"],
+    ["糟糕", "zāo gāo", "Bad", "Malo", "Mauvais", "Ruim", "Xấu", "แย่", "ការលំបាក", "Buruk", "Bad", "Masama"]
+  ],
+  exampleWords: [
     ["克服困难", "kè fú kùn nán", "Overcoming difficulties", "Superar las dificultades", "Surmonter les difficultés", "Superando dificuldades", "Vượt qua khó khăn", "เอาชนะความยากลำบาก", "ការដោះស្រាយបញ្ហា", "Mengatasi kesulitan", "Mengatasi kesukaran", "Pagdating ng mga paghihirap"],
     ["困难重重", "kùn nán chóng chóng", "Difficulties", "Dificultades", "Difficultés", "Dificuldades", "Khó khăn", "ความยากลำบาก", "បញ្ហាពិភពលោក", "Kesulitan", "Kesukaran", "Mga paghihirap"],
     ["破解难题", "pò jiě nán tí", "Solving problems", "Resolver problemas", "Résoudre les problèmes", "Resolvendo problemas", "Giải quyết vấn đề", "การแก้ปัญหา", "នីមួយៗមានការលំបាករបស់ខ្លួន", "Memecahkan masalah", "Menyelesaikan masalah", "Paglutas ng mga problema"],
@@ -1170,7 +1204,7 @@ export const p5_97_solutions__methods = {
     malay: "Solutions & Methods",
     filipino: "Solutions & Methods"
   },
-  words: [
+  baseWords: [
     ["解决", "jiě jué", "Solve", "Resolver", "Résoudre", "Resolver", "Giải quyết", "แก้", "ដោះស្រាយ", "Selesaikan", "Menyelesaikan", "Malutas"],
     ["处理", "chǔ lǐ", "Deal with", "Tratar con", "Traiter avec", "Lidar com", "Xử lý", "จัดการกับ", "ដោះស្រាយជាមួយ", "Berurusan dengan", "Berurusan dengan", "Makitungo sa"],
     ["应对", "yìng duì", "Respond", "Responder", "Répondre", "Responder", "Trả lời", "ตอบกลับ", "ឆ្លើយតប", "Tanggapi", "Bertindak balas", "Tumugon"],
@@ -1187,7 +1221,9 @@ export const p5_97_solutions__methods = {
     ["调整", "tiáo zhěng", "Adjustment", "Ajuste", "Ajustement", "Ajuste", "Điều chỉnh", "การปรับ", "សំណង", "Penyesuaian", "Pelarasan", "Pagsasaayos"],
     ["补救", "bǔ jiù", "Remedy", "Remedio", "Remède", "Remédio", "Cách khắc phục", "การเยียวยา", "ការធ្វើផែនការ", "Obat", "Remedy", "Lunas"],
     ["策划", "cè huà", "Planning", "Planificación", "Planification", "Planejamento", "Lập kế hoạch", "การวางแผน", "ការផ្តល់យោបល់", "Perencanaan", "Perancangan", "Pagpaplano"],
-    ["提议", "tí yì", "Suggestion", "Sugerencia", "Suggestions", "Sugestão", "Đề xuất", "คำแนะนำ", "ដោះស្រាយបញ្ហា", "Saran", "Cadangan", "Mungkahi"],
+    ["提议", "tí yì", "Suggestion", "Sugerencia", "Suggestions", "Sugestão", "Đề xuất", "คำแนะนำ", "ដោះស្រាយបញ្ហា", "Saran", "Cadangan", "Mungkahi"]
+  ],
+  exampleWords: [
     ["解决问题", "jiě jué wèn tí", "Solve the problem", "Resuelve el problema", "Résoudre le problème", "Resolva o problema", "Giải quyết vấn đề", "แก้ปัญหา", "ដើម្បីដោះស្រាយ", "Selesaikan masalahnya", "Menyelesaikan masalah", "Malutas ang problema"],
     ["去解决", "qù jiě jué", "To solve", "Para resolver", "Pour résoudre", "Para resolver", "Để giải quyết", "วิธีแก้", "ដោះស្រាយបានល្អ", "Untuk menyelesaikan", "Untuk menyelesaikan", "Upang malutas"],
     ["处理好", "chǔ lǐ hǎo", "Handle well", "Manejar bien", "Bien manipuler", "Manuseie bem", "Xử lý tốt", "จัดการให้ดี", "| ដើម្បីដោះស្រាយជាមួយ", "Tangani dengan baik", "Mengendalikan dengan baik", "Hawakan nang maayos"],
@@ -1241,7 +1277,7 @@ export const p5_98_education__learning = {
     malay: "Education & Learning",
     filipino: "Education & Learning"
   },
-  words: [
+  baseWords: [
     ["教育", "jiào yù", "Education", "Educación", "Éducation", "Educação", "Giáo dục", "การศึกษา", "ការអប់រំ", "Pendidikan", "Pendidikan", "Edukasyon"],
     ["学习", "xué xí", "Learning", "Aprendizaje", "Apprentissage", "Aprendizagem", "Học tập", "การเรียนรู้", "រៀន", "Belajar", "Pembelajaran", "Pag -aaral"],
     ["培训", "péi xùn", "Training", "Formación", "Formation", "Treinamento", "Đào tạo", "การฝึกอบรม", "ការបណ្តុះបណ្តាល", "Pelatihan", "Latihan", "Pagsasanay"],
@@ -1257,7 +1293,9 @@ export const p5_98_education__learning = {
     ["专业", "zhuān yè", "Major", "Mayor", "Majeur", "Maior", "Thiếu tá", "เมเจอร์", "ធំ", "Mayor", "Major", "Major"],
     ["科目", "kē mù", "Subjects", "Materias", "Sujets", "Assuntos", "Chủ đề", "หัวเรื่อง", "ប្រធានបទ", "Subyek", "Subjek", "Paksa"],
     ["进修", "jìn xiū", "Continuing education", "Educación continua", "Formation continue", "Educação continuada", "Giáo dục thường xuyên", "การศึกษาต่อเนื่อง", "ការអប់រំបន្ត", "Melanjutkan pendidikan", "Pendidikan berterusan", "Patuloy na Edukasyon"],
-    ["自学", "zì xué", "Self-study", "Autoestudio", "Auto-apprentissage", "Autoestudo", "Tự học", "ศึกษาด้วยตนเอง", "ការសិក្សាដោយខ្លួនឯង", "Belajar mandiri", "Self-study", "Self-study"],
+    ["自学", "zì xué", "Self-study", "Autoestudio", "Auto-apprentissage", "Autoestudo", "Tự học", "ศึกษาด้วยตนเอง", "ការសិក្សាដោយខ្លួនឯង", "Belajar mandiri", "Self-study", "Self-study"]
+  ],
+  exampleWords: [
     ["教育好", "jiào yù hǎo", "Good education", "Buena educación", "Bonne éducation", "Boa educação", "Giáo dục tốt", "การศึกษาที่ดี", "ការអប់រំល្អ", "Pendidikan yang bagus", "Pendidikan Baik", "Magandang Edukasyon"],
     ["受教育", "shòu jiào yù", "Educated", "Educado", "Instruit", "Educado", "Có giáo dục", "มีการศึกษา", "អប់រំ", "Berpendidikan", "Berpendidikan", "Edukado"],
     ["学习好", "xué xí hǎo", "Study well", "Estudia bien", "Bien étudier", "Estude bem", "Học tốt", "เรียนเก่ง", "សិក្សាបានល្អ", "Belajar dengan baik", "Kajian dengan baik", "Pag -aralan nang maayos"],
@@ -1309,7 +1347,7 @@ export const p5_99_career__development = {
     malay: "Career Development",
     filipino: "Career Development"
   },
-  words: [
+  baseWords: [
     ["职业", "zhí yè", "Career", "Carrera", "Carrière", "Carreira", "Sự nghiệp", "อาชีพ", "អាជីព", "Karier", "Kerjaya", "Karera"],
     ["工作", "gōng zuò", "Job", "Trabajo", "Emploi", "Trabalho", "Việc làm", "งาน", "| ការងារ", "Pekerjaan", "Pekerjaan", "Trabaho"],
     ["就业", "jiù yè", "Employment", "Empleo", "Emploi", "Emprego", "Việc làm", "การจ้างงาน", "ការងារ", "Pekerjaan", "Pekerjaan", "Trabaho"],
@@ -1325,7 +1363,9 @@ export const p5_99_career__development = {
     ["加薪", "jiā xīn", "Salary increase", "Aumento salarial", "Augmentation de salaire", "Aumento salarial", "Tăng lương", "การขึ้นเงินเดือน", "ផ្ទេរ", "Kenaikan gaji", "Kenaikan gaji", "Pagtaas ng suweldo"],
     ["调动", "diào dòng", "Transfer", "Transferencia", "Transfert", "Transferência", "Chuyển", "โอน", "| ការលាលែងពីតំណែង", "Pemindahan", "Pemindahan", "Ilipat"],
     ["辞职", "cí zhí", "Resignation", "Renuncia", "Démission", "Renúncia", "Từ chức", "ลาออก", "ការងារលោត", "Pengunduran diri", "Peletakan jawatan", "Pagbitiw"],
-    ["跳槽", "tiào cáo", "Job hopping", "Salto de trabajo", "Changement d'emploi", "Salto de empregos", "Nhảy việc", "กระโดดงาน", "តើអាជីពអ្វី", "Lompatan pekerjaan", "Job Hopping", "Job Hopping"],
+    ["跳槽", "tiào cáo", "Job hopping", "Salto de trabajo", "Changement d'emploi", "Salto de empregos", "Nhảy việc", "กระโดดงาน", "តើអាជីពអ្វី", "Lompatan pekerjaan", "Job Hopping", "Job Hopping"]
+  ],
+  exampleWords: [
     ["什么职业", "shén me zhí yè", "What career", "Que carrera", "Quelle carrière", "Que carreira", "Nghề nghiệp gì", "อาชีพอะไร", "ជ្រើសរើសអាជីព", "Karier apa", "Apa Kerjaya", "Anong karera"],
     ["选职业", "xuǎn zhí yè", "Choose a career", "Elige una carrera", "Choisissez une carrière", "Escolha uma carreira", "Chọn nghề nghiệp", "เลือกอาชีพ", "រវល់នៅកន្លែងធ្វើការ", "Pilih karier", "Pilih Kerjaya", "Pumili ng isang karera"],
     ["工作忙", "gōng zuò máng", "Busy at work", "Ocupado en el trabajo", "Occupé au travail", "Ocupado no trabalho", "Bận rộn trong công việc", "งานยุ่ง", "មានការងារធ្វើ", "Sibuk bekerja", "Sibuk di tempat kerja", "Abala sa trabaho"],
@@ -1377,7 +1417,7 @@ export const p5_100_banking__finance = {
     malay: "Banking & Finance",
     filipino: "Banking & Finance"
   },
-  words: [
+  baseWords: [
     ["账户", "zhàng hù", "Account", "Cuenta", "Compte", "Conta", "Tài khoản", "บัญชี", "គណនី", "Akun", "Akaun", "Account"],
     ["存款", "cún kuǎn", "Deposit", "Depósito", "Dépôt", "Depósito", "Tiền gửi", "ฝากเงิน", "ការដាក់ប្រាក់", "Setoran", "Deposit", "Deposito"],
     ["取款", "qǔ kuǎn", "Withdrawal", "Retiro", "Retrait", "Retirada", "Rút tiền", "ถอนเงิน", "ការដកប្រាក់", "Penarikan", "Pengeluaran", "Withdrawal"],
@@ -1393,7 +1433,9 @@ export const p5_100_banking__finance = {
     ["理财", "lǐ cái", "Financial management", "Gestión financiera", "Gestion financière", "Gestão financeira", "Quản lý tài chính", "การเงิน", "ការគ្រប់គ្រងហិរញ្ញវត្ថុ", "Manajemen keuangan", "Pengurusan kewangan", "Pamamahala ng pera"],
     ["投资", "tóu zī", "Investment", "Inversión", "Investissement", "Investimento", "Đầu tư", "การลงทุน", "ការវិនិយោគ", "Investasi", "Pelaburan", "Pamumuhunan"],
     ["柜台", "guì tái", "Counter", "Mostrador", "Comptoir", "Balcão", "Quầy", "เคาน์เตอร์", "បញ្ជរ", "Loket", "Kaunter", "Counter"],
-    ["储蓄", "chǔ xù", "Savings", "Ahorros", "Épargne", "Poupança", "Tiết kiệm", "ออมทรัพย์", "ការសន្សំ", "Tabungan", "Simpanan", "Savings"],
+    ["储蓄", "chǔ xù", "Savings", "Ahorros", "Épargne", "Poupança", "Tiết kiệm", "ออมทรัพย์", "ការសន្សំ", "Tabungan", "Simpanan", "Savings"]
+  ],
+  exampleWords: [
     ["开账户", "kāi zhàng hù", "Open account", "Abrir cuenta", "Ouvrir un compte", "Abrir conta", "Mở tài khoản", "เปิดบัญชี", "បើកគណនី", "Buka akun", "Buka akaun", "Buksan ang account"],
     ["银行账户", "yín háng zhàng hù", "Bank account", "Cuenta bancaria", "Compte bancaire", "Conta bancária", "Tài khoản ngân hàng", "บัญชีธนาคาร", "គណនីធនាគារ", "Rekening bank", "Akaun bank", "Bank account"],
     ["存款额", "cún kuǎn é", "Deposit amount", "Monto del depósito", "Montant du dépôt", "Valor do depósito", "Số tiền gửi", "จำนวนเงินฝาก", "ចំនួនប្រាក់បញ្ញើ", "Jumlah setoran", "Jumlah deposit", "Halaga ng deposito"],
@@ -1445,7 +1487,7 @@ export const p5_101_government__society = {
     malay: "Government & Society",
     filipino: "Government & Society"
   },
-  words: [
+  baseWords: [
     ["政府", "zhèng fǔ", "Government", "Gobierno", "Gouvernement", "Governo", "Chính phủ", "รัฐบาล", "រដ្ឋាភិបាល", "Pemerintah", "Kerajaan", "Pamahalaan"],
     ["国家", "guó jiā", "Country", "País", "Pays", "País", "Quốc gia", "ประเทศ", "ប្រទេស", "Negara", "Negara", "Bansa"],
     ["社会", "shè huì", "Society", "Sociedad", "Société", "Sociedade", "Xã hội", "สังคม", "សង្គម", "Masyarakat", "Masyarakat", "Lipunan"],
@@ -1461,7 +1503,9 @@ export const p5_101_government__society = {
     ["发展", "fā zhǎn", "Development", "Desarrollo", "Développement", "Desenvolvimento", "Phát triển", "การพัฒนา", "ការអភិវឌ្ឍ", "Perkembangan", "Pembangunan", "Pag-unlad"],
     ["改革", "gǎi gé", "Reform", "Reforma", "Réforme", "Reforma", "Cải cách", "ปฏิรูป", "កំណែទម្រង់", "Reformasi", "Pembaharuan", "Reporma"],
     ["民主", "mín zhǔ", "Democracy", "Democracia", "Démocratie", "Democracia", "Dân chủ", "ประชาธิปไตย", "លទ្ធិប្រជាធិបតេយ្យ", "Demokrasi", "Demokrasi", "Demokrasya"],
-    ["自由", "zì yóu", "Freedom", "Libertad", "Liberté", "Liberdade", "Tự do", "เสรีภาพ", "សេរីភាព", "Kebebasan", "Kebebasan", "Kalayaan"],
+    ["自由", "zì yóu", "Freedom", "Libertad", "Liberté", "Liberdade", "Tự do", "เสรีภาพ", "សេរីភាព", "Kebebasan", "Kebebasan", "Kalayaan"]
+  ],
+  exampleWords: [
     ["政府部门", "zhèng fǔ bù mén", "Government department", "Departamento del gobierno", "Département gouvernemental", "Departamento do governo", "Bộ phận chính phủ", "หน่วยงานรัฐบาล", "នាយកដ្ឋានរដ្ឋាភិបាល", "Departemen pemerintah", "Jabatan kerajaan", "Kagawaran ng pamahalaan"],
     ["地方政府", "dì fāng zhèng fǔ", "Local government", "Gobierno local", "Gouvernement local", "Governo local", "Chính quyền địa phương", "รัฐบาลท้องถิ่น", "រដ្ឋាភិបាលមូលដ្ឋាន", "Pemerintah daerah", "Kerajaan tempatan", "Lokal na pamahalaan"],
     ["国家大事", "guó jiā dà shì", "National affairs", "Asuntos nacionales", "Affaires nationales", "Assuntos nacionais", "Quốc sự", "กิจการระดับชาติ", "កិច្ចការជាតិ", "Urusan nasional", "Hal ehwal negara", "Pambansang gawain"],
@@ -1513,7 +1557,7 @@ export const p5_102_describing__processes = {
     malay: "Describing Processes",
     filipino: "Describing Processes"
   },
-  words: [
+  baseWords: [
     ["过程", "guò chéng", "Process", "Proceso", "Processus", "Processo", "Quá trình", "กระบวนการ", "ដំណើរការ", "Proses", "Proses", "Proseso"],
     ["流程", "liú chéng", "Process", "Proceso", "Processus", "Processo", "Quá trình", "กระบวนการ", "ដំណើរការ", "Proses", "Proses", "Proseso"],
     ["程序", "chéng xù", "Program", "Programa", "Programme", "Programa", "Chương trình", "โปรแกรม", "កម្មវិធី", "Program", "Program", "Program"],
@@ -1529,7 +1573,9 @@ export const p5_102_describing__processes = {
     ["完成", "wán chéng", "Completion", "Finalización", "Achèvement", "Conclusão", "Hoàn thành", "เสร็จสิ้น", "វឌ្ឍនភាព", "Penyelesaian", "Penyelesaian", "Pagkumpleto"],
     ["进展", "jìn zhǎn", "Progress", "Progreso", "Progrès", "Progresso", "Tiến độ", "ความคืบหน้า", "បញ្ចប់", "Kemajuan", "Kemajuan", "Pag -unlad"],
     ["进度", "jìn dù", "Progress", "Progreso", "Progrès", "Progresso", "Tiến độ", "ความคืบหน้า", "វឌ្ឍនភាព", "Kemajuan", "Kemajuan", "Pag -unlad"],
-    ["终结", "zhōng jié", "End", "Fin", "Fin", "Fim", "Kết thúc", "จบ", "នៅក្នុងដំណើរការ", "Akhir", "Akhir", "End"],
+    ["终结", "zhōng jié", "End", "Fin", "Fin", "Fim", "Kết thúc", "จบ", "នៅក្នុងដំណើរការ", "Akhir", "Akhir", "End"]
+  ],
+  exampleWords: [
     ["整个过程", "zhěng gè guò chéng", "Whole process", "Todo el proceso", "Processus complet", "Todo o processo", "Toàn bộ quá trình", "กระบวนการทั้งหมด", "លំហូរការងារ", "Seluruh proses", "Keseluruhan proses", "Buong proseso"],
     ["在过程中", "zài guò chéng zhōng", "In process", "En proceso", "En cours", "Em processo", "Đang trong quá trình", "อยู่ระหว่างดำเนินการ", "អនុវត្តតាមដំណើរការ", "Sedang proses", "Dalam proses", "Sa proseso"],
     ["工作流程", "gōng zuò liú chéng", "Work flow", "Flujo de trabajo", "Flux de travail", "Fluxo de trabalho", "Luồng công việc", "ขั้นตอนการทำงาน", "នីតិវិធីប្រតិបត្តិការ", "Alur kerja", "Aliran Kerja", "Daloy ng trabaho"],
@@ -1581,7 +1627,7 @@ export const p5_103_logical__relations = {
     malay: "Logical Relations",
     filipino: "Logical Relations"
   },
-  words: [
+  baseWords: [
     ["逻辑", "luó jí", "Logic", "Lógica", "Logique", "Lógica", "Logic", "ตรรกะ", "ឡូជីក", "Logika", "Logik", "Lohika"],
     ["因此", "yīn cǐ", "Therefore", "Por lo tanto", "Par conséquent", "Portanto", "Do đó", "ดังนั้น", "ដូច្នេះ", "Oleh karena itu", "Oleh itu", "Samakatuwid"],
     ["从而", "cóng ér", "Thus", "Así", "Ainsi", "Assim", "Từ đó", "จึง", "ដូច្នេះហើយ", "Dengan demikian", "Dengan itu", "Kaya"],
@@ -1597,7 +1643,9 @@ export const p5_103_logical__relations = {
     ["也就是说", "yě jiù shì shuō", "That is to say", "Es decir", "C'est-à-dire", "Ou seja", "Nghĩa là", "กล่าวคือ", "គឺនិយាយថា", "Artinya", "Iaitu", "Ibig sabihin"],
     ["简言之", "jiǎn yán zhī", "In short", "En resumen", "En bref", "Em resumo", "Nói ngắn gọn", "กล่าวโดยย่อ", "និយាយឱ្យខ្លី", "Singkatnya", "Ringkasnya", "Sa madaling salita"],
     ["故而", "gù ér", "Therefore", "Por lo tanto", "C'est pourquoi", "Por isso", "Cho nên", "ดังนั้น", "ដូច្នេះ", "Karenanya", "Oleh itu", "Kaya naman"],
-    ["事实上", "shì shí shàng", "In fact", "De hecho", "En fait", "De fato", "Thực tế", "อันที่จริง", "តាមពិត", "Sebenarnya", "Sebenarnya", "Sa katunayan"],
+    ["事实上", "shì shí shàng", "In fact", "De hecho", "En fait", "De fato", "Thực tế", "อันที่จริง", "តាមពិត", "Sebenarnya", "Sebenarnya", "Sa katunayan"]
+  ],
+  exampleWords: [
     ["有逻辑", "yǒu luó jí", "Is logical", "Es lógico", "Est logique", "É lógico", "Có logic", "มีตรรกะ", "មានឡូជីក", "Logis", "Berlogik", "May lohika"],
     ["讲逻辑", "jiǎng luó jí", "Talk logic", "Hablar de lógica", "Parler de logique", "Falar de lógica", "Nói về logic", "พูดตรรกะ", "និយាយឡូជីក", "Bicara logika", "Bercakap logik", "Pag-usapan ang lohika"],
     ["因此说", "yīn cǐ shuō", "Therefore say", "Por lo tanto digo", "C'est pourquoi je dis", "Por isso digo", "Do đó nói", "ดังนั้นพูด", "ដូច្នេះនិយាយ", "Karenanya katakan", "Oleh itu kata", "Samakatuwid sabihin"],
@@ -1649,7 +1697,7 @@ export const p5_104_quality__standards = {
     malay: "Quality & Standards",
     filipino: "Quality & Standards"
   },
-  words: [
+  baseWords: [
     ["品质", "pǐn zhì", "Quality", "Calidad", "Qualité", "Qualidade", "Chất lượng", "คุณภาพ", "គុណភាព", "Kualitas", "Kualiti", "Kalidad"],
     ["质量", "zhì liàng", "Quality", "Calidad", "Qualité", "Qualidade", "Chất lượng", "คุณภาพ", "គុណភាព", "Kualitas", "Kualiti", "Kalidad"],
     ["标准", "biāo zhǔn", "Standard", "Estándar", "Norme", "Padrão", "Tiêu chuẩn", "มาตรฐาน", "ស្តង់ដារ", "Standar", "Standard", "Pamantayan"],
@@ -1664,7 +1712,9 @@ export const p5_104_quality__standards = {
     ["次品", "cì pǐn", "Defective product", "Producto defectuoso", "Produit défectueux", "Produto defeituoso", "Sản phẩm lỗi", "สินค้าชำรุด", "ផលិតផលខូច", "Produk cacat", "Produk rosak", "Depektibong produkto"],
     ["瑕疵", "xiá cī", "Flaw", "Defecto", "Défaut", "Defeito", "Khuyết điểm", "ตำหนิ", "កំហុស", "Cacat", "Kecacatan", "Depekto"],
     ["认证", "rèn zhèng", "Certification", "Certificación", "Certification", "Certificação", "Chứng nhận", "การรับรอง", "វិញ្ញាបនប័ត្រ", "Sertifikasi", "Pensijilan", "Sertipikasyon"],
-    ["规范", "guī fàn", "Standards", "Normas", "Normes", "Normas", "Quy chuẩn", "มาตรฐาน", "ស្តង់ដារ", "Standar", "Piawaian", "Pamantayan"],
+    ["规范", "guī fàn", "Standards", "Normas", "Normes", "Normas", "Quy chuẩn", "มาตรฐาน", "ស្តង់ដារ", "Standar", "Piawaian", "Pamantayan"]
+  ],
+  exampleWords: [
     ["品质好", "pǐn zhì hǎo", "Good quality", "Buena calidad", "Bonne qualité", "Boa qualidade", "Chất lượng tốt", "คุณภาพดี", "គុណភាពល្អ", "Kualitas bagus", "Kualiti baik", "Magandang kalidad"],
     ["高品质", "gāo pǐn zhì", "High quality", "Alta calidad", "Haute qualité", "Alta qualidade", "Chất lượng cao", "คุณภาพสูง", "គុណភាពខ្ពស់", "Kualitas tinggi", "Kualiti tinggi", "Mataas na kalidad"],
     ["质量好", "zhì liàng hǎo", "Good quality", "Buena calidad", "Bonne qualité", "Boa qualidade", "Chất lượng tốt", "คุณภาพดี", "គុណភាពល្អ", "Kualitas bagus", "Kualiti baik", "Magandang kalidad"],
@@ -1714,7 +1764,7 @@ export const p5_105_evaluation__assessment = {
     malay: "Evaluation & Assessment",
     filipino: "Evaluation & Assessment"
   },
-  words: [
+  baseWords: [
     ["评价", "píng jià", "Evaluation", "Evaluación", "Évaluation", "Avaliação", "Đánh giá", "การประเมินผล", "ការវាយតំលៃ", "Evaluasi", "Penilaian", "Pagsusuri"],
     ["评估", "píng gū", "Evaluation", "Evaluación", "Évaluation", "Avaliação", "Đánh Giá", "การประเมินผล", "ការវាយតំលៃ", "Evaluasi", "Penilaian", "Pagsusuri"],
     ["评论", "píng lùn", "Comment", "Comentar", "Commentaire", "Comente", "Bình luận", "ความคิดเห็น", "មតិយោបល់", "Komentar", "Komen", "Komento"],
@@ -1730,7 +1780,9 @@ export const p5_105_evaluation__assessment = {
     ["预计", "yù jì", "Expect", "Esperar", "Attendez-vous", "Espere", "Mong đợi", "คาดหวัง", "រំពឹងថា", "Harapkan", "Menjangkakan", "Asahan"],
     ["预测", "yù cè", "Forecast", "Pronóstico", "Prévisions", "Previsão", "Dự báo", "พยากรณ์", "ការព្យាករណ៍", "Ramalan", "Ramalan", "Pagtataya"],
     ["分析", "fēn xī", "Analysis", "Análisis", "Analyse", "Análise", "Phân tích", "วิเคราะห์", "វិភាគ", "Analisis", "Analisis", "Pagtatasa"],
-    ["考虑", "kǎo lǜ", "Consideration", "Consideración", "Considération", "Consideração", "Cân nhắc", "การพิจารณา", "ការពិចារណា", "Pertimbangan", "Pertimbangan", "Pagsasaalang -alang"],
+    ["考虑", "kǎo lǜ", "Consideration", "Consideración", "Considération", "Consideração", "Cân nhắc", "การพิจารณา", "ការពិចារណា", "Pertimbangan", "Pertimbangan", "Pagsasaalang -alang"]
+  ],
+  exampleWords: [
     ["评价高", "píng jià gāo", "High evaluation", "Alta evaluación", "Évaluation élevée", "Avaliação alta", "Đánh giá cao", "การประเมินผลสูง", "ការវាយតម្លៃខ្ពស់", "Evaluasi tinggi", "Penilaian Tinggi", "Mataas na pagsusuri"],
     ["做评价", "zuò píng jià", "Make an evaluation", "Hacer una evaluación", "Faire une évaluation", "Faça uma avaliação", "Thực hiện đánh giá", "ทำการประเมิน", "ធ្វើការវាយតម្លៃ", "Buatlah evaluasi", "Buat penilaian", "Gumawa ng isang pagsusuri"],
     ["评估报告", "píng gū bào gào", "Evaluation report", "Informe de evaluación", "Rapport d'évaluation", "Relatório de avaliação", "Báo cáo đánh giá", "รายงานผลการประเมิน", "របាយការណ៍វាយតម្លៃ", "Laporan evaluasi", "Laporan Penilaian", "Ulat sa pagsusuri"],
@@ -1782,7 +1834,7 @@ export const p5_106_abstract__concepts = {
     malay: "Abstract Concepts",
     filipino: "Abstract Concepts"
   },
-  words: [
+  baseWords: [
     ["概念", "gài niàn", "Concepts", "Conceptos", "Concepts", "Conceitos", "Khái niệm", "แนวคิด", "គោលគំនិត", "Konsep", "Konsep", "Mga Konsepto"],
     ["观念", "guān niàn", "Concepts", "Conceptos", "Concepts", "Conceitos", "Khái niệm", "แนวคิด", "គោលគំនិត", "Konsep", "Konsep", "Mga Konsepto"],
     ["想法", "xiǎng fǎ", "Ideas", "Ideas", "Idées", "Ideias", "Ý tưởng", "ไอเดีย", "គំនិត", "Ide", "Idea", "Mga ideya"],
@@ -1798,7 +1850,9 @@ export const p5_106_abstract__concepts = {
     ["信念", "xìn niàn", "Faith", "Fe", "Foi", "Fé", "Niềm tin", "ศรัทธา", "ជំនឿ", "Iman", "Iman", "Pananampalataya"],
     ["精神", "jīng shén", "Spirit", "Espíritu", "Esprit", "Espírito", "Tinh Thần", "วิญญาณ", "វិញ្ញាណ", "Semangat", "Roh", "Espiritu"],
     ["真理", "zhēn lǐ", "Truth", "Verdad", "Vérité", "Verdade", "Sự thật", "ความจริง", "សេចក្តីពិត", "Kebenaran", "Kebenaran", "Katotohanan"],
-    ["哲学", "zhé xué", "Philosophy", "Filosofía", "Philosophie", "Filosofia", "Triết học", "ปรัชญา", "ទស្សនវិជ្ជា", "Filsafat", "Falsafah", "Pilosopiya"],
+    ["哲学", "zhé xué", "Philosophy", "Filosofía", "Philosophie", "Filosofia", "Triết học", "ปรัชญา", "ទស្សនវិជ្ជា", "Filsafat", "Falsafah", "Pilosopiya"]
+  ],
+  exampleWords: [
     ["新概念", "xīn gài niàn", "New concepts", "Nuevos conceptos", "Nouveaux concepts", "Novos conceitos", "Khái niệm mới", "แนวคิดใหม่", "គំនិតថ្មី", "Konsep baru", "Konsep baru", "Bagong Konsepto"],
     ["有概念", "yǒu gài niàn", "Concepts", "Conceptos", "Concepts", "Conceitos", "Khái niệm", "แนวคิด", "គោលគំនិត", "Konsep", "Konsep", "Mga Konsepto"],
     ["新观念", "xīn guān niàn", "New ideas", "Nuevas ideas", "Nouvelles idées", "Novas ideias", "Ý tưởng mới", "ไอเดียใหม่ๆ", "គំនិតថ្មី", "Ide baru", "Idea Baru", "Bagong Mga Ideya"],
@@ -1850,7 +1904,7 @@ export const p5_107_success__achievement = {
     malay: "Success & Achievement",
     filipino: "Success & Achievement"
   },
-  words: [
+  baseWords: [
     ["成功", "chéng gōng", "Success", "Éxito", "Succès", "Sucesso", "Thành công", "สำเร็จ", "ជោគជ័យ", "Sukses", "Kejayaan", "Tagumpay"],
     ["成就", "chéng jiù", "Achievements", "Logros", "Réalisations", "Conquistas", "Thành tích", "ความสำเร็จ", "សមិទ្ធិផល", "Prestasi", "Pencapaian", "Mga nakamit"],
     ["成果", "chéng guǒ", "Achievements", "Logros", "Réalisations", "Conquistas", "Thành tích", "ความสำเร็จ", "សមិទ្ធិផល", "Prestasi", "Pencapaian", "Mga nakamit"],
@@ -1866,7 +1920,9 @@ export const p5_107_success__achievement = {
     ["效果", "xiào guǒ", "Effect", "Efecto", "Effet", "Efeito", "Hiệu ứng", "เอฟเฟกต์", "ប្រសិទ្ធភាព", "Efek", "Kesan", "Epekto"],
     ["成效", "chéng xiào", "Effectiveness", "Efectividad", "Efficacité", "Eficácia", "Hiệu quả", "ประสิทธิผล", "លទ្ធផល", "Efektivitas", "Keberkesanan", "Pagiging epektibo"],
     ["战果", "zhàn guǒ", "Result", "Resultado", "Résultat", "Resultado", "Kết quả", "ผลลัพธ์", "សមិទ្ធិផល", "Hasil", "Hasil", "Resulta"],
-    ["建树", "jiàn shù", "Achievements", "Logros", "Réalisations", "Conquistas", "Thành tích", "ความสำเร็จ", "ប្រជាជនជោគជ័យ", "Prestasi", "Pencapaian", "Mga nakamit"],
+    ["建树", "jiàn shù", "Achievements", "Logros", "Réalisations", "Conquistas", "Thành tích", "ความสำเร็จ", "ប្រជាជនជោគជ័យ", "Prestasi", "Pencapaian", "Mga nakamit"]
+  ],
+  exampleWords: [
     ["成功人士", "chéng gōng rén shì", "Successful people", "Personas exitosas", "Les gens qui réussissent", "Pessoas de sucesso", "Người thành công", "คนที่ประสบความสำเร็จ", "ឆ្ពោះទៅរកភាពជោគជ័យ", "Orang sukses", "Orang yang berjaya", "Matagumpay na tao"],
     ["走向成功", "zǒu xiàng chéng gōng", "Toward success", "Hacia el éxito", "Vers le succès", "Rumo ao sucesso", "Hướng tới thành công", "สู่ความสำเร็จ", "| អារម្មណ៍នៃសមិទ្ធិផល", "Menuju kesuksesan", "Ke arah kejayaan", "Patungo sa Tagumpay"],
     ["成就感", "chéng jiù gǎn", "Sense of accomplishment", "Sentido de logro", "Sentiment d'accomplissement", "Sensação de realização", "Cảm giác thành tựu", "ความรู้สึกของความสำเร็จ", "សមិទ្ធិផលមួយ", "Rasa pencapaian", "Rasa pencapaian", "SENSE NG ARALINGAN"],

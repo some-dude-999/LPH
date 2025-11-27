@@ -13,12 +13,12 @@ export const __actMeta = {
 export const p4_113_business__basics = {
   meta: {
     wordpack: 113,
+    english: "Business Basics",
     chinese: "Business Basics",
     pinyin: "Business Basics",
-    spanish: "Business Basics",
     portuguese: "Business Basics"
   },
-  words: [
+  baseWords: [
     ["trade", "贸易", "mào yì", "comercio", "comércio"],
     ["import", "导入", "dǎo rù", "importar", "importar"],
     ["export", "出口", "chū kǒu", "exportar", "exportar"],
@@ -38,7 +38,9 @@ export const p4_113_business__basics = {
     ["wholesale", "批发", "pī fā", "venta al por mayor", "atacado"],
     ["supply", "供应", "gōng yìng", "suministro", "fornecimento"],
     ["demand", "需求", "xū qiú", "demanda", "demanda"],
-    ["commerce", "商业", "shāng yè", "comercio", "comércio"],
+    ["commerce", "商业", "shāng yè", "comercio", "comércio"]
+  ],
+  exampleWords: [
     ["free trade", "自由贸易", "zì yóu mào yì", "libre comercio", "livre comércio"],
     ["trade agreement", "贸易协定", "mào yì xié dìng", "acuerdo comercial", "acordo comercial"],
     ["import goods", "进口货物", "jìn kǒu huò wù", "importar bienes", "importar mercadorias"],
@@ -48,7 +50,7 @@ export const p4_113_business__basics = {
     ["market research", "市场研究", "shì chǎng yán jiū", "investigación de mercado", "pesquisa de mercado"],
     ["market share", "市场份额", "shì chǎng fèn é", "cuota de mercado", "participação de mercado"],
     ["tough competition", "激烈的竞争", "jī liè de jìng zhēng", "dura competencia", "concorrência acirrada"],
-    ["competition between", "", "", "competencia entre", "competição entre"],
+    ["competition between", "之间的竞争", "zhī jiān de jìng zhēng", "competencia entre", "competição entre"],
     ["make profit", "之间的竞争赚取利润", "zhī jiān de jìng zhēng zhuàn qǔ lì rùn", "obtener ganancias", "ter lucro"],
     ["profit margin", "利润率", "lì rùn lǜ", "margen de beneficio", "margem de lucro"],
     ["financial loss", "经济损失", "jīng jì sǔn shī", "pérdida financiera", "perda financeira"],
@@ -85,12 +87,12 @@ export const p4_113_business__basics = {
 export const p4_114_finance__basics = {
   meta: {
     wordpack: 114,
+    english: "Finance Basics",
     chinese: "Finance Basics",
     pinyin: "Finance Basics",
-    spanish: "Finance Basics",
     portuguese: "Finance Basics"
   },
-  words: [
+  baseWords: [
     ["financial", "金融", "jīn róng", "financiero", "financeiro"],
     ["stock", "库存", "kù cún", "valores", "estoque"],
     ["index fund", "指数基金", "zhǐ shù jī jīn", "fondo indexado", "fundo de índice"],
@@ -110,7 +112,9 @@ export const p4_114_finance__basics = {
     ["broker", "经纪人", "jīng jì rén", "corredor", "corretor"],
     ["hedge", "对冲", "duì chōng", "cobertura", "cerca viva"],
     ["index", "索引", "suǒ yǐn", "índice", "índice"],
-    ["yield", "产量", "chǎn liàng", "rendimiento", "rendimento"],
+    ["yield", "产量", "chǎn liàng", "rendimiento", "rendimento"]
+  ],
+  exampleWords: [
     ["financial advisor", "财务顾问", "cái wù gù wèn", "asesor financiero", "consultor financeiro"],
     ["financial planning", "财务规划", "cái wù guī huà", "planificación financiera", "planejamento financeiro"],
     ["stock market", "股市", "gǔ shì", "mercado de valores", "mercado de ações"],
@@ -157,12 +161,12 @@ export const p4_114_finance__basics = {
 export const p4_115_marketing__sales = {
   meta: {
     wordpack: 115,
+    english: "Marketing & Sales",
     chinese: "Marketing & Sales",
     pinyin: "Marketing & Sales",
-    spanish: "Marketing & Sales",
     portuguese: "Marketing & Sales"
   },
-  words: [
+  baseWords: [
     ["advertise", "做广告", "zuò guǎng gào", "anunciar", "anunciar"],
     ["campaign", "活动", "huó dòng", "campaña", "campanha"],
     ["brand", "品牌", "pǐn pái", "marca", "marca"],
@@ -182,7 +186,9 @@ export const p4_115_marketing__sales = {
     ["branding", "品牌", "pǐn pái", "marca", "marca"],
     ["outreach", "外展", "wài zhǎn", "extensión", "divulgação"],
     ["conversion", "转换", "zhuǎn huàn", "conversión", "conversão"],
-    ["segment", "段", "duàn", "segmento", "segmento"],
+    ["segment", "段", "duàn", "segmento", "segmento"]
+  ],
+  exampleWords: [
     ["advertise online", "网上做广告", "wǎng shàng zuò guǎng gào", "anunciar en línea", "anunciar on-line"],
     ["advertise products", "为产品做广告", "wèi chǎn pǐn zuò guǎng gào", "anunciar productos", "anunciar produtos"],
     ["marketing campaign", "营销活动", "yíng xiāo huó dòng", "campaña de marketing", "campanha de marketing"],
@@ -229,12 +235,12 @@ export const p4_115_marketing__sales = {
 export const p4_116_science__basics = {
   meta: {
     wordpack: 116,
+    english: "Science Basics",
     chinese: "Science Basics",
     pinyin: "Science Basics",
-    spanish: "Science Basics",
     portuguese: "Science Basics"
   },
-  words: [
+  baseWords: [
     ["scientific", "科学", "kē xué", "científico", "científico"],
     ["experiment", "实验", "shí yàn", "experimento", "experimentar"],
     ["theory", "理论", "lǐ lùn", "teoría", "teoria"],
@@ -254,7 +260,9 @@ export const p4_116_science__basics = {
     ["theorem", "定理", "dìng lǐ", "teorema", "teorema"],
     ["proof", "证明", "zhèng míng", "prueba", "prova"],
     ["method", "方法", "fāng fǎ", "método", "método"],
-    ["calibrate", "校准", "jiào zhǔn", "calibrar", "calibrar"],
+    ["calibrate", "校准", "jiào zhǔn", "calibrar", "calibrar"]
+  ],
+  exampleWords: [
     ["scientific method", "科学方法", "kē xué fāng fǎ", "método científico", "método científico"],
     ["scientific research", "科学研究", "kē xué yán jiū", "investigación científica", "investigação científica"],
     ["conduct experiment", "进行实验", "jìn xíng shí yàn", "realizar experimento", "realizar experimento"],
@@ -301,14 +309,14 @@ export const p4_116_science__basics = {
 export const p4_117_biology__basics = {
   meta: {
     wordpack: 117,
+    english: "Biology Basics",
     chinese: "Biology Basics",
     pinyin: "Biology Basics",
-    spanish: "Biology Basics",
     portuguese: "Biology Basics"
   },
-  words: [
+  baseWords: [
     ["cell", "细胞", "xì bāo", "celda", "célula"],
-    ["DNA", "DNA", "DNA", "ADN", "ADN"],
+    ["DNA", "脱氧核糖核酸", "tuō yǎng hé táng hé suān", "ADN", "ADN"],
     ["gene", "基因", "jī yīn", "gen", "gene"],
     ["evolution", "进化", "jìn huà", "evolución", "evolução"],
     ["species", "物种", "wù zhǒng", "especies", "espécies"],
@@ -319,14 +327,16 @@ export const p4_117_biology__basics = {
     ["protein", "蛋白质", "dàn bái zhì", "proteína", "proteína"],
     ["tissue", "组织", "zǔ zhī", "tejido", "tecido"],
     ["organ", "器官", "qì guān", "órgano", "órgão"],
-    ["reproduce", "重现", "chóng xiàn", "reproducir", "reproduzir"],
+    ["reproduce", "繁殖", "fán zhí", "reproducir", "reproduzir"],
     ["adapt", "适应", "shì yìng", "adaptarse", "adaptar"],
     ["biodiversity", "生物多样性", "shēng wù duō yàng xìng", "biodiversidad", "biodiversidade"],
     ["extinct", "灭绝", "miè jué", "extinto", "extinto"],
     ["mutation", "突变", "tū biàn", "mutación", "mutação"],
     ["food chain", "食物链", "shí wù liàn", "cadena alimentaria", "cadeia alimentar"],
     ["habitat", "栖息地", "qī xī dì", "hábitat", "habitat"],
-    ["chromosome", "染色体", "rǎn sè tǐ", "cromosoma", "cromossomo"],
+    ["chromosome", "染色体", "rǎn sè tǐ", "cromosoma", "cromossomo"]
+  ],
+  exampleWords: [
     ["blood cell", "血细胞", "xuè xì bāo", "glóbulo", "célula sanguínea"],
     ["cell division", "细胞分裂", "xì bāo fēn liè", "división celular", "divisão celular"],
     ["DNA test", "DNA测试", "DNA cè shì", "Prueba de ADN", "Teste de ADN"],
@@ -351,7 +361,7 @@ export const p4_117_biology__basics = {
     ["tissue sample", "组织样本", "zǔ zhī yàng běn", "muestra de tejido", "amostra de tecido"],
     ["vital organ", "重要器官", "zhòng yào qì guān", "órgano vital", "órgão vital"],
     ["organ transplant", "器官移植", "qì guān yí zhí", "trasplante de órganos", "transplante de órgãos"],
-    ["reproduce quickly", "快速重现", "kuài sù chóng xiàn", "reproducirse rápidamente", "reproduzir rapidamente"],
+    ["reproduce quickly", "快速繁殖", "kuài sù fán zhí", "reproducirse rápidamente", "reproduzir rapidamente"],
     ["reproduce offspring", "繁衍后代", "fán yǎn hòu dài", "reproducir descendencia", "reproduzir descendentes"],
     ["adapt to", "适应", "shì yìng", "adaptarse a", "adaptar-se a"],
     ["adapt easily", "轻松适应", "qīng sōng shì yìng", "adaptarse fácilmente", "adapte-se facilmente"],
@@ -373,12 +383,12 @@ export const p4_117_biology__basics = {
 export const p4_118_basic__chemistry__physics = {
   meta: {
     wordpack: 118,
+    english: "Basic Chemistry & Physics",
     chinese: "Basic Chemistry & Physics",
     pinyin: "Basic Chemistry & Physics",
-    spanish: "Basic Chemistry & Physics",
     portuguese: "Basic Chemistry & Physics"
   },
-  words: [
+  baseWords: [
     ["reaction", "反应", "fǎn yìng", "reacción", "reação"],
     ["element", "元素", "yuán sù", "elemento", "elemento"],
     ["compound", "化合物", "huà hé wù", "compuesto", "composto"],
@@ -398,7 +408,9 @@ export const p4_118_basic__chemistry__physics = {
     ["formula", "公式", "gōng shì", "fórmula", "fórmula"],
     ["pressure", "压力", "yā lì", "presión", "pressão"],
     ["density", "密度", "mì dù", "densidad", "densidade"],
-    ["friction", "摩擦", "mó cā", "fricción", "fricção"],
+    ["friction", "摩擦", "mó cā", "fricción", "fricção"]
+  ],
+  exampleWords: [
     ["chemical reaction", "化学反应", "huà xué fǎn yìng", "reacción química", "reação química"],
     ["reaction time", "反应时间", "fǎn yìng shí jiān", "tiempo de reacción", "tempo de reação"],
     ["chemical element", "化学元素", "huà xué yuán sù", "elemento químico", "elemento químico"],
@@ -445,12 +457,12 @@ export const p4_118_basic__chemistry__physics = {
 export const p4_119_health__wellness = {
   meta: {
     wordpack: 119,
+    english: "Health & Wellness",
     chinese: "Health & Wellness",
     pinyin: "Health & Wellness",
-    spanish: "Health & Wellness",
     portuguese: "Health & Wellness"
   },
-  words: [
+  baseWords: [
     ["health", "健康", "jiàn kāng", "salud", "saúde"],
     ["wellness", "健康", "jiàn kāng", "bienestar", "bem-estar"],
     ["symptom", "症状", "zhèng zhuàng", "síntoma", "sintoma"],
@@ -470,14 +482,16 @@ export const p4_119_health__wellness = {
     ["allergic", "过敏", "guò mǐn", "alérgico", "alérgico"],
     ["condition", "条件", "tiáo jiàn", "condición", "condição"],
     ["prevention", "预防", "yù fáng", "prevención", "prevenção"],
-    ["rehabilitation", "康复", "kāng fù", "rehabilitación", "reabilitação"],
+    ["rehabilitation", "康复", "kāng fù", "rehabilitación", "reabilitação"]
+  ],
+  exampleWords: [
     ["good health", "身体健康", "shēn tǐ jiàn kāng", "buena salud", "boa saúde"],
     ["health benefits", "健康益处", "jiàn kāng yì chù", "beneficios para la salud", "benefícios para a saúde"],
     ["wellness program", "健康计划", "jiàn kāng jì huà", "programa de bienestar", "programa de bem-estar"],
     ["wellness check", "健康检查", "jiàn kāng jiǎn chá", "control de bienestar", "verificação de bem-estar"],
     ["common symptom", "常见症状", "cháng jiàn zhèng zhuàng", "síntoma común", "sintoma comum"],
-    ["symptom of", "", "", "síntoma de", "sintoma de"],
-    ["early diagnosis", "的症状早期诊断", "de zhèng zhuàng zǎo qī zhěn duàn", "diagnóstico precoz", "diagnóstico precoce"],
+    ["symptom of", "的症状", "de zhèng zhuàng", "síntoma de", "sintoma de"],
+    ["early diagnosis", "早期诊断", "zǎo qī zhěn duàn", "diagnóstico precoz", "diagnóstico precoce"],
     ["diagnosis confirmed", "确诊", "què zhěn", "diagnóstico confirmado", "diagnóstico confirmado"],
     ["physical therapy", "物理治疗", "wù lǐ zhì liáo", "fisioterapia", "fisioterapia"],
     ["therapy session", "治疗疗程", "zhì liáo liáo chéng", "sesión de terapia", "sessão de terapia"],
@@ -504,8 +518,8 @@ export const p4_119_health__wellness = {
     ["recommended dosage", "推荐剂量", "tuī jiàn jì liàng", "dosis recomendada", "dosagem recomendada"],
     ["dosage instructions", "剂量说明", "jì liàng shuō míng", "instrucciones de dosificación", "instruções de dosagem"],
     ["allergic reaction", "过敏反应", "guò mǐn fǎn yìng", "reacción alérgica", "reação alérgica"],
-    ["allergic to", "对", "duì", "alérgico a", "alérgico a"],
-    ["medical condition", "过敏医疗状况", "guò mǐn yī liáo zhuàng kuàng", "condición médica", "condição médica"],
+    ["allergic to", "对...过敏", "duì ... guò mǐn", "alérgico a", "alérgico a"],
+    ["medical condition", "医疗状况", "yī liáo zhuàng kuàng", "condición médica", "condição médica"],
     ["condition worsened", "病情恶化", "bìng qíng è huà", "la condición empeoró", "condição piorou"],
     ["crime prevention", "预防犯罪", "yù fáng fàn zuì", "prevención del delito", "prevenção da criminalidade"],
     ["prevention is key", "预防是关键", "yù fáng shì guān jiàn", "la prevención es clave", "a prevenção é fundamental"],
@@ -517,12 +531,12 @@ export const p4_119_health__wellness = {
 export const p4_120_mental__health__basics = {
   meta: {
     wordpack: 120,
+    english: "Mental Health Basics",
     chinese: "Mental Health Basics",
     pinyin: "Mental Health Basics",
-    spanish: "Mental Health Basics",
     portuguese: "Mental Health Basics"
   },
-  words: [
+  baseWords: [
     ["mental", "心理", "xīn lǐ", "mentales", "mentais"],
     ["anxiety", "焦虑", "jiāo lǜ", "ansiedad", "ansiedade"],
     ["depression", "抑郁症", "yì yù zhèng", "depresión", "depressão"],
@@ -542,7 +556,9 @@ export const p4_120_mental__health__basics = {
     ["mindfulness", "正念", "zhèng niàn", "atención plena", "atenção plena"],
     ["meditation", "冥想", "míng xiǎng", "meditación", "meditação"],
     ["burnout", "倦怠", "juàn dài", "agotamiento", "esgotamento"],
-    ["resilience", "韧性", "rèn xìng", "resiliencia", "resiliência"],
+    ["resilience", "韧性", "rèn xìng", "resiliencia", "resiliência"]
+  ],
+  exampleWords: [
     ["mental health", "心理健康", "xīn lǐ jiàn kāng", "salud mental", "saúde mental"],
     ["mental illness", "精神疾病", "jīng shén jí bìng", "enfermedad mental", "doença mental"],
     ["anxiety disorder", "焦虑症", "jiāo lǜ zhèng", "trastorno de ansiedad", "transtorno de ansiedade"],
@@ -564,8 +580,8 @@ export const p4_120_mental__health__basics = {
     ["panic attack", "惊恐发作", "jīng kǒng fā zuò", "ataque de pánico", "ataque de pânico"],
     ["panic disorder", "恐慌症", "kǒng huāng zhèng", "trastorno de pánico", "transtorno de pânico"],
     ["social phobia", "社交恐惧症", "shè jiāo kǒng jù zhèng", "fobia social", "fobia social"],
-    ["phobia of", "", "", "fobia a", "fobia de"],
-    ["unhealthy obsession", "的恐惧症不健康的痴迷", "de kǒng jù zhèng bù jiàn kāng de chī mí", "obsesión enfermiza", "obsessão doentia"],
+    ["phobia of", "对...的恐惧", "duì ... de kǒng jù", "fobia a", "fobia de"],
+    ["unhealthy obsession", "不健康的痴迷", "bù jiàn kāng de chī mí", "obsesión enfermiza", "obsessão doentia"],
     ["obsession with", "痴迷", "chī mí", "obsesión con", "obsessão por"],
     ["compulsion to", "强迫", "qiǎng pò", "compulsión a", "compulsão para"],
     ["compulsion behavior", "强迫行为", "qiǎng pò xíng wéi", "comportamiento de compulsión", "comportamento compulsivo"],
@@ -589,12 +605,12 @@ export const p4_120_mental__health__basics = {
 export const p4_121_technology__advanced = {
   meta: {
     wordpack: 121,
+    english: "Technology Advanced",
     chinese: "Technology Advanced",
     pinyin: "Technology Advanced",
-    spanish: "Technology Advanced",
     portuguese: "Technology Advanced"
   },
-  words: [
+  baseWords: [
     ["artificial intelligence", "人工智能", "rén gōng zhì néng", "inteligencia artificial", "inteligência artificial"],
     ["algorithm", "算法", "suàn fǎ", "algoritmo", "algoritmo"],
     ["automation", "自动化", "zì dòng huà", "automatización", "automação"],
@@ -614,7 +630,9 @@ export const p4_121_technology__advanced = {
     ["startup", "启动", "qǐ dòng", "inicio", "inicialização"],
     ["database", "数据库", "shù jù kù", "base de datos", "banco de dados"],
     ["interface", "接口", "jiē kǒu", "interfaz", "interface"],
-    ["platform", "平台", "píng tái", "plataforma", "plataforma"],
+    ["platform", "平台", "píng tái", "plataforma", "plataforma"]
+  ],
+  exampleWords: [
     ["artificial intelligence research", "人工智能研究", "rén gōng zhì néng yán jiū", "investigación de inteligencia artificial", "investigação em inteligência artificial"],
     ["use artificial intelligence", "使用人工智能", "shǐ yòng rén gōng zhì néng", "utilizar inteligencia artificial", "usar inteligência artificial"],
     ["search algorithm", "搜索算法", "sōu suǒ suàn fǎ", "algoritmo de búsqueda", "algoritmo de busca"],
@@ -661,12 +679,12 @@ export const p4_121_technology__advanced = {
 export const p4_122_academic__writing = {
   meta: {
     wordpack: 122,
+    english: "Academic Writing",
     chinese: "Academic Writing",
     pinyin: "Academic Writing",
-    spanish: "Academic Writing",
     portuguese: "Academic Writing"
   },
-  words: [
+  baseWords: [
     ["thesis", "论文", "lùn wén", "tesis", "tese"],
     ["dissertation", "论文", "lùn wén", "disertación", "dissertação"],
     ["analyze", "分析", "fēn xī", "analizar", "analisar"],
@@ -686,7 +704,9 @@ export const p4_122_academic__writing = {
     ["review", "评论", "píng lùn", "revisión", "revisão"],
     ["appendix", "附录", "fù lù", "apéndice", "apêndice"],
     ["footnote", "脚注", "jiǎo zhù", "nota al pie", "nota de rodapé"],
-    ["annotation", "注释", "zhù shì", "anotación", "anotação"],
+    ["annotation", "注释", "zhù shì", "anotación", "anotação"]
+  ],
+  exampleWords: [
     ["thesis statement", "论文陈述", "lùn wén chén shù", "declaración de tesis", "declaração de tese"],
     ["write thesis", "写论文", "xiě lùn wén", "escribir tesis", "escrever tese"],
     ["doctoral dissertation", "博士论文", "bó shì lùn wén", "tesis doctoral", "dissertação de doutorado"],
@@ -733,12 +753,12 @@ export const p4_122_academic__writing = {
 export const p4_123_philosophy__ethics = {
   meta: {
     wordpack: 123,
+    english: "Philosophy & Ethics",
     chinese: "Philosophy & Ethics",
     pinyin: "Philosophy & Ethics",
-    spanish: "Philosophy & Ethics",
     portuguese: "Philosophy & Ethics"
   },
-  words: [
+  baseWords: [
     ["philosophy", "哲学", "zhé xué", "filosofía", "filosofia"],
     ["code", "代码", "dài mǎ", "código", "código"],
     ["ethical", "道德", "dào dé", "ético", "ético"],
@@ -758,7 +778,9 @@ export const p4_123_philosophy__ethics = {
     ["meaning", "意思", "yì si", "significado", "significado"],
     ["wisdom", "智慧", "zhì huì", "sabiduría", "sabedoria"],
     ["metaphysics", "形而上学", "xíng ér shàng xué", "metafísica", "metafísica"],
-    ["epistemology", "认识论", "rèn shí lùn", "epistemología", "epistemologia"],
+    ["epistemology", "认识论", "rèn shí lùn", "epistemología", "epistemologia"]
+  ],
+  exampleWords: [
     ["study philosophy", "学习哲学", "xué xí zhé xué", "estudiar filosofía", "estudar filosofia"],
     ["philosophy class", "哲学课", "zhé xué kè", "clase de filosofía", "aula de filosofia"],
     ["dress code", "着装要求", "zhuó zhuāng yāo qiú", "código de vestimenta", "código de vestimenta"],
@@ -790,8 +812,8 @@ export const p4_123_philosophy__ethics = {
     ["practice virtue", "践行美德", "jiàn xíng měi dé", "practicar la virtud", "praticar a virtude"],
     ["virtue ethics", "美德伦理", "měi dé lún lǐ", "ética de la virtud", "ética da virtude"],
     ["human existence", "人类的存在", "rén lèi de cún zài", "existencia humana", "existência humana"],
-    ["existence of", "", "", "existencia de", "existência de"],
-    ["deeper meaning", "的存在更深层次的意义", "de cún zài gēng shēn céng cì de yì yì", "significado más profundo", "significado mais profundo"],
+    ["existence of", "的存在", "de cún zài", "existencia de", "existência de"],
+    ["deeper meaning", "更深层次的意义", "gēng shēn céng cì de yì yì", "significado más profundo", "significado mais profundo"],
     ["meaning of life", "生命的意义", "shēng mìng de yì yì", "significado de la vida", "sentido da vida"],
     ["ancient wisdom", "古老的智慧", "gǔ lǎo de zhì huì", "sabiduría antigua", "sabedoria antiga"],
     ["wisdom tooth", "智齿", "zhì chǐ", "muela del juicio", "dente do siso"],
@@ -805,12 +827,12 @@ export const p4_123_philosophy__ethics = {
 export const p4_124_abstract__concepts = {
   meta: {
     wordpack: 124,
+    english: "Abstract Concepts",
     chinese: "Abstract Concepts",
     pinyin: "Abstract Concepts",
-    spanish: "Abstract Concepts",
     portuguese: "Abstract Concepts"
   },
-  words: [
+  baseWords: [
     ["concept", "概念", "gài niàn", "concepto", "conceito"],
     ["idea", "想法", "xiǎng fǎ", "ideas", "ideia"],
     ["rationale", "基本原理", "jī běn yuán lǐ", "justificación", "justificativa"],
@@ -830,46 +852,48 @@ export const p4_124_abstract__concepts = {
     ["purpose", "目的", "mù dì", "propósito", "propósito"],
     ["function", "功能", "gōng néng", "función", "função"],
     ["dimension", "尺寸", "chǐ cùn", "dimensión", "dimensão"],
-    ["essence", "本质", "běn zhì", "esencia", "essência"],
+    ["essence", "本质", "běn zhì", "esencia", "essência"]
+  ],
+  exampleWords: [
     ["basic concept", "基本概念", "jī běn gài niàn", "concepto básico", "conceito básico"],
-    ["concept of", "", "", "concepto de", "conceito de"],
-    ["good idea", "的概念好主意", "de gài niàn hǎo zhǔ yì", "buena idea", "boa ideia"],
-    ["idea for", "", "", "idea para", "ideia para"],
-    ["underlying rationale", "的想法基本原理", "de xiǎng fǎ jī běn yuán lǐ", "justificación subyacente", "justificativa subjacente"],
-    ["rationale behind", "", "", "justificación detrás", "justificativa por trás"],
-    ["key aspect", "背后的基本原理关键方面", "bèi hòu de jī běn yuán lǐ guān jiàn fāng miàn", "aspecto clave", "aspecto chave"],
-    ["aspect of", "", "", "aspecto de", "aspecto de"],
-    ["key factor", "的方面关键因素", "de fāng miàn guān jiàn yīn sù", "factor clave", "fator chave"],
+    ["concept of", "的概念", "de gài niàn", "concepto de", "conceito de"],
+    ["good idea", "好主意", "hǎo zhǔ yì", "buena idea", "boa ideia"],
+    ["idea for", "的想法", "de xiǎng fǎ", "idea para", "ideia para"],
+    ["underlying rationale", "深层理由", "shēn céng lǐ yóu", "justificación subyacente", "justificativa subjacente"],
+    ["rationale behind", "背后的理由", "bèi hòu de lǐ yóu", "justificación detrás", "justificativa por trás"],
+    ["key aspect", "关键方面", "guān jiàn fāng miàn", "aspecto clave", "aspecto chave"],
+    ["aspect of", "的方面", "de fāng miàn", "aspecto de", "aspecto de"],
+    ["key factor", "关键因素", "guān jiàn yīn sù", "factor clave", "fator chave"],
     ["risk factor", "风险因素", "fēng xiǎn yīn sù", "factor de riesgo", "fator de risco"],
     ["order of magnitude", "数量级", "shù liàng jí", "orden de magnitud", "ordem de grandeza"],
-    ["magnitude of", "", "", "magnitud de", "magnitude de"],
-    ["main component", "的大小主要成分", "de dà xiǎo zhǔ yào chéng fèn", "componente principal", "componente principal"],
+    ["magnitude of", "的大小", "de dà xiǎo", "magnitud de", "magnitude de"],
+    ["main component", "主要成分", "zhǔ yào chéng fèn", "componente principal", "componente principal"],
     ["component part", "组成部分", "zǔ chéng bù fèn", "componente", "parte componente"],
     ["new feature", "新功能", "xīn gōng néng", "nueva característica", "novo recurso"],
     ["feature request", "功能请求", "gōng néng qǐng qiú", "solicitud de función", "solicitação de recurso"],
     ["high quality", "高品质", "gāo pǐn zhì", "alta calidad", "alta qualidade"],
     ["quality control", "质量控制", "zhì liàng kòng zhì", "control de calidad", "controle de qualidade"],
     ["main characteristic", "主要特点", "zhǔ yào tè diǎn", "característica principal", "característica principal"],
-    ["characteristic of", "", "", "característica de", "característica de"],
-    ["in context", "的特点在上下文中", "de tè diǎn zài shàng xià wén zhōng", "en contexto", "no contexto"],
+    ["characteristic of", "的特点", "de tè diǎn", "característica de", "característica de"],
+    ["in context", "在上下文中", "zài shàng xià wén zhōng", "en contexto", "no contexto"],
     ["context matters", "上下文很重要", "shàng xià wén hěn zhòng yào", "el contexto importa", "o contexto é importante"],
     ["strong connection", "强连接", "qiáng lián jiē", "conexión fuerte", "conexão forte"],
-    ["connection between", "", "", "conexión entre", "conexão entre"],
-    ["major influence", "之间的联系主要影响", "zhī jiān de lián xì zhǔ yào yǐng xiǎng", "gran influencia", "grande influência"],
-    ["influence on", "对", "duì", "influencia en", "influência em"],
-    ["positive impact", "的影响积极影响", "de yǐng xiǎng jī jí yǐng xiǎng", "impacto positivo", "impacto positivo"],
-    ["impact of", "", "", "impacto de", "impacto de"],
-    ["complex interplay", "的影响复杂的相互作用", "de yǐng xiǎng fù zá de xiāng hù zuò yòng", "interacción compleja", "interação complexa"],
-    ["interplay between", "", "", "interacción entre", "interação entre"],
-    ["defense mechanism", "之间的相互作用防御机制", "zhī jiān de xiāng hù zuò yòng fáng yù jī zhì", "mecanismo de defensa", "mecanismo de defesa"],
-    ["mechanism for", "", "", "mecanismo para", "mecanismo para"],
-    ["main purpose", "的机制主要用途", "de jī zhì zhǔ yào yòng tú", "objetivo principal", "objetivo principal"],
-    ["purpose of", "", "", "propósito de", "propósito de"],
-    ["brain function", "的目的大脑功能", "de mù dì dà nǎo gōng néng", "función cerebral", "função cerebral"],
+    ["connection between", "之间的联系", "zhī jiān de lián xì", "conexión entre", "conexão entre"],
+    ["major influence", "主要影响", "zhǔ yào yǐng xiǎng", "gran influencia", "grande influência"],
+    ["influence on", "对...的影响", "duì ... de yǐng xiǎng", "influencia en", "influência em"],
+    ["positive impact", "积极影响", "jī jí yǐng xiǎng", "impacto positivo", "impacto positivo"],
+    ["impact of", "的影响", "de yǐng xiǎng", "impacto de", "impacto de"],
+    ["complex interplay", "复杂的相互作用", "fù zá de xiāng hù zuò yòng", "interacción compleja", "interação complexa"],
+    ["interplay between", "之间的相互作用", "zhī jiān de xiāng hù zuò yòng", "interacción entre", "interação entre"],
+    ["defense mechanism", "防御机制", "fáng yù jī zhì", "mecanismo de defensa", "mecanismo de defesa"],
+    ["mechanism for", "的机制", "de jī zhì", "mecanismo para", "mecanismo para"],
+    ["main purpose", "主要用途", "zhǔ yào yòng tú", "objetivo principal", "objetivo principal"],
+    ["purpose of", "的目的", "de mù dì", "propósito de", "propósito de"],
+    ["brain function", "大脑功能", "dà nǎo gōng néng", "función cerebral", "função cerebral"],
     ["function properly", "功能正常", "gōng néng zhèng cháng", "funcionar correctamente", "funcionar corretamente"],
     ["new dimension", "新维度", "xīn wéi dù", "nueva dimensión", "nova dimensão"],
-    ["dimension of", "", "", "dimensión de", "dimensão de"],
-    ["true essence", "的维度真正的本质", "de wéi dù zhēn zhèng de běn zhì", "verdadera esencia", "verdadeira essência"],
+    ["dimension of", "的维度", "de wéi dù", "dimensión de", "dimensão de"],
+    ["true essence", "真正的本质", "zhēn zhèng de běn zhì", "verdadera esencia", "verdadeira essência"],
     ["essence of", "的本质", "de běn zhì", "esencia de", "essência de"]
   ]
 };
@@ -877,12 +901,12 @@ export const p4_124_abstract__concepts = {
 export const p4_125_cause__effect = {
   meta: {
     wordpack: 125,
+    english: "Cause & Effect",
     chinese: "Cause & Effect",
     pinyin: "Cause & Effect",
-    spanish: "Cause & Effect",
     portuguese: "Cause & Effect"
   },
-  words: [
+  baseWords: [
     ["cause", "原因", "yuán yīn", "causa", "causa"],
     ["effect", "效果", "xiào guǒ", "efecto", "efeito"],
     ["result", "结果", "jié guǒ", "resultado", "resultado"],
@@ -902,18 +926,20 @@ export const p4_125_cause__effect = {
     ["provoke", "挑衅", "tiǎo xìn", "provocar", "provocar"],
     ["initiate", "发起", "fā qǐ", "iniciar", "iniciar"],
     ["catalyze", "催化", "cuī huà", "catalizar", "catalisar"],
-    ["spark", "火花", "huǒ huā", "chispa", "faísca"],
+    ["spark", "火花", "huǒ huā", "chispa", "faísca"]
+  ],
+  exampleWords: [
     ["root cause", "根本原因", "gēn běn yuán yīn", "causa raíz", "causa raiz"],
-    ["cause of", "", "", "causa de", "causa de"],
-    ["visual effect", "的原因视觉效果", "de yuán yīn shì jué xiào guǒ", "efecto visual", "efeito visual"],
-    ["effect on", "对", "duì", "efecto sobre", "efeito em"],
-    ["end result", "的影响最终结果", "de yǐng xiǎng zuì zhōng jié guǒ", "resultado final", "resultado final"],
+    ["cause of", "的原因", "de yuán yīn", "causa de", "causa de"],
+    ["visual effect", "视觉效果", "shì jué xiào guǒ", "efecto visual", "efeito visual"],
+    ["effect on", "对...的影响", "duì ... de yǐng xiǎng", "efecto sobre", "efeito em"],
+    ["end result", "最终结果", "zuì zhōng jié guǒ", "resultado final", "resultado final"],
     ["result in", "结果", "jié guǒ", "resultado en", "resultar em"],
     ["negative consequence", "负面后果", "fù miàn hòu guǒ", "consecuencia negativa", "consequência negativa"],
-    ["consequence of", "", "", "consecuencia de", "consequência de"],
-    ["positive outcome", "的后果积极成果", "de hòu guǒ jī jí chéng guǒ", "resultado positivo", "resultado positivo"],
-    ["outcome of", "", "", "resultado de", "resultado de"],
-    ["contribute to", "的结果贡献于", "de jié guǒ gòng xiàn yú", "contribuir a", "contribuir para"],
+    ["consequence of", "的后果", "de hòu guǒ", "consecuencia de", "consequência de"],
+    ["positive outcome", "积极成果", "jī jí chéng guǒ", "resultado positivo", "resultado positivo"],
+    ["outcome of", "的结果", "de jié guǒ", "resultado de", "resultado de"],
+    ["contribute to", "贡献于", "gòng xiàn yú", "contribuir a", "contribuir para"],
     ["contribute money", "捐款", "juān kuǎn", "aportar dinero", "contribuir com dinheiro"],
     ["lead to", "导致", "dǎo zhì", "conducir a", "levar a"],
     ["lead the way", "带路", "dài lù", "lidera el camino", "mostre o caminho"],
@@ -949,12 +975,12 @@ export const p4_125_cause__effect = {
 export const p4_126_certainty__probability = {
   meta: {
     wordpack: 126,
+    english: "Certainty & Probability",
     chinese: "Certainty & Probability",
     pinyin: "Certainty & Probability",
-    spanish: "Certainty & Probability",
     portuguese: "Certainty & Probability"
   },
-  words: [
+  baseWords: [
     ["uncertain", "不确定", "bù què dìng", "incierto", "incerto"],
     ["sure", "当然", "dāng rán", "seguro", "claro"],
     ["definite", "明确", "míng què", "definido", "definido"],
@@ -974,7 +1000,9 @@ export const p4_126_certainty__probability = {
     ["presume", "假设", "jiǎ shè", "suponer", "presumir"],
     ["plausible", "似是而非", "sì shì ér fēi", "plausible", "plausível"],
     ["tentative", "暂定", "zàn dìng", "tentativo", "provisório"],
-    ["conclusive", "结论性", "jié lùn xìng", "concluyente", "conclusivo"],
+    ["conclusive", "结论性", "jié lùn xìng", "concluyente", "conclusivo"]
+  ],
+  exampleWords: [
     ["feel uncertain", "感到不确定", "gǎn dào bù què dìng", "sentirse inseguro", "me sinto inseguro"],
     ["uncertain about", "不确定", "bù què dìng", "inseguro sobre", "incerto sobre"],
     ["sure enough", "果然", "guǒ rán", "efectivamente", "com certeza"],
@@ -1021,12 +1049,12 @@ export const p4_126_certainty__probability = {
 export const p4_127_social__issues = {
   meta: {
     wordpack: 127,
+    english: "Social Issues",
     chinese: "Social Issues",
     pinyin: "Social Issues",
-    spanish: "Social Issues",
     portuguese: "Social Issues"
   },
-  words: [
+  baseWords: [
     ["society", "社会", "shè huì", "sociedad", "sociedade"],
     ["social", "社交", "shè jiāo", "sociales", "sociais"],
     ["community", "社区", "shè qū", "comunidad", "comunidade"],
@@ -1046,7 +1074,9 @@ export const p4_127_social__issues = {
     ["reform", "改革", "gǎi gé", "reforma", "reforma"],
     ["welfare", "福利", "fú lì", "bienestar", "bem-estar"],
     ["segregation", "隔离", "gé lí", "segregación", "segregação"],
-    ["marginalization", "边缘化", "biān yuán huà", "marginación", "marginalização"],
+    ["marginalization", "边缘化", "biān yuán huà", "marginación", "marginalização"]
+  ],
+  exampleWords: [
     ["modern society", "现代社会", "xiàn dài shè huì", "sociedad moderna", "sociedade moderna"],
     ["society as a whole", "整个社会", "zhěng gè shè huì", "la sociedad en su conjunto", "sociedade como um todo"],
     ["social life", "社交生活", "shè jiāo shēng huó", "vida social", "vida social"],
@@ -1058,18 +1088,18 @@ export const p4_127_social__issues = {
     ["income inequality", "收入不平等", "shōu rù bù píng děng", "desigualdad de ingresos", "desigualdade de renda"],
     ["inequality gap", "不平等差距", "bù píng děng chà jù", "brecha de desigualdad", "lacuna de desigualdade"],
     ["racial discrimination", "种族歧视", "zhǒng zú qí shì", "discriminación racial", "discriminação racial"],
-    ["discrimination against", "对", "duì", "discriminación contra", "discriminação contra"],
-    ["personal prejudice", "的歧视个人偏见", "de qí shì gè rén piān jiàn", "prejuicio personal", "preconceito pessoal"],
-    ["prejudice toward", "对", "duì", "prejuicio hacia", "preconceito em relação"],
-    ["extreme poverty", "的偏见赤贫", "de piān jiàn chì pín", "pobreza extrema", "pobreza extrema"],
+    ["discrimination against", "对...的歧视", "duì ... de qí shì", "discriminación contra", "discriminação contra"],
+    ["personal prejudice", "个人偏见", "gè rén piān jiàn", "prejuicio personal", "preconceito pessoal"],
+    ["prejudice toward", "对...的偏见", "duì ... de piān jiàn", "prejuicio hacia", "preconceito em relação"],
+    ["extreme poverty", "赤贫", "chì pín", "pobreza extrema", "pobreza extrema"],
     ["poverty level", "贫困水平", "pín kùn shuǐ píng", "nivel de pobreza", "nível de pobreza"],
     ["accumulate wealth", "积累财富", "jī lěi cái fù", "acumular riqueza", "acumular riqueza"],
     ["wealth distribution", "财富分配", "cái fù fēn pèi", "distribución de la riqueza", "distribuição de riqueza"],
     ["wage disparity", "工资差距", "gōng zī chā jù", "disparidad salarial", "disparidade salarial"],
-    ["disparity between", "", "", "disparidad entre", "disparidade entre"],
-    ["fight oppression", "之间的差距反抗压迫", "zhī jiān de chā jù fǎn kàng yā pò", "luchar contra la opresión", "combater a opressão"],
-    ["oppression of", "", "", "opresión de", "opressão de"],
-    ["cultural diversity", "的压迫文化多样性", "de yā pò wén huà duō yàng xìng", "diversidad cultural", "diversidade cultural"],
+    ["disparity between", "之间的差距", "zhī jiān de chā jù", "disparidad entre", "disparidade entre"],
+    ["fight oppression", "反抗压迫", "fǎn kàng yā pò", "luchar contra la opresión", "combater a opressão"],
+    ["oppression of", "的压迫", "de yā pò", "opresión de", "opressão de"],
+    ["cultural diversity", "文化多样性", "wén huà duō yàng xìng", "diversidad cultural", "diversidade cultural"],
     ["diversity training", "多元化培训", "duō yuán huà péi xùn", "formación en diversidad", "formação em diversidade"],
     ["promote inclusion", "促进包容", "cù jìn bāo róng", "promover la inclusión", "promover a inclusão"],
     ["inclusion policy", "包容政策", "bāo róng zhèng cè", "política de inclusión", "política de inclusão"],
@@ -1093,12 +1123,12 @@ export const p4_127_social__issues = {
 export const p4_128_international__relations = {
   meta: {
     wordpack: 128,
+    english: "International Relations",
     chinese: "International Relations",
     pinyin: "International Relations",
-    spanish: "International Relations",
     portuguese: "International Relations"
   },
-  words: [
+  baseWords: [
     ["international", "国际", "guó jì", "internacional", "internacional"],
     ["foreign", "国外", "guó wài", "extranjero", "estrangeiro"],
     ["domestic", "国内", "guó nèi", "nacional", "doméstico"],
@@ -1118,7 +1148,9 @@ export const p4_128_international__relations = {
     ["ambassador", "大使", "dà shǐ", "embajador", "embaixador"],
     ["humanitarian", "人道主义", "rén dào zhǔ yì", "humanitario", "humanitário"],
     ["sovereignty", "主权", "zhǔ quán", "soberanía", "soberania"],
-    ["geopolitics", "地缘政治", "dì yuán zhèng zhì", "geopolítica", "geopolítica"],
+    ["geopolitics", "地缘政治", "dì yuán zhèng zhì", "geopolítica", "geopolítica"]
+  ],
+  exampleWords: [
     ["international trade", "国际贸易", "guó jì mào yì", "comercio internacional", "comércio internacional"],
     ["international law", "国际法", "guó jì fǎ", "derecho internacional", "direito internacional"],
     ["foreign policy", "外交政策", "wài jiāo zhèng cè", "política exterior", "política externa"],
@@ -1132,8 +1164,8 @@ export const p4_128_international__relations = {
     ["peace treaty", "和平条约", "hé píng tiáo yuē", "tratado de paz", "tratado de paz"],
     ["treaty agreement", "条约协议", "tiáo yuē xié yì", "acuerdo de tratado", "acordo de tratado"],
     ["military alliance", "军事联盟", "jūn shì lián méng", "alianza militar", "aliança militar"],
-    ["alliance between", "", "", "alianza entre", "aliança entre"],
-    ["armed conflict", "之间的联盟武装冲突", "zhī jiān de lián méng wǔ zhuāng chōng tū", "conflicto armado", "conflito armado"],
+    ["alliance between", "之间的联盟", "zhī jiān de lián méng", "alianza entre", "aliança entre"],
+    ["armed conflict", "武装冲突", "wǔ zhuāng chōng tū", "conflicto armado", "conflito armado"],
     ["conflict resolution", "冲突解决", "chōng tū jiě jué", "resolución de conflictos", "resolução de conflitos"],
     ["world peace", "世界和平", "shì jiè hé píng", "paz mundial", "paz mundial"],
     ["peace process", "和平进程", "hé píng jìn chéng", "proceso de paz", "processo de paz"],
@@ -1142,22 +1174,22 @@ export const p4_128_international__relations = {
     ["trade negotiation", "贸易谈判", "mào yì tán pàn", "negociación comercial", "negociação comercial"],
     ["negotiation process", "谈判过程", "tán pàn guò chéng", "proceso de negociación", "processo de negociação"],
     ["economic sanctions", "经济制裁", "jīng jì zhì cái", "sanciones económicas", "sanções económicas"],
-    ["sanctions against", "制裁", "zhì cái", "sanciones contra", "sanções contra"],
+    ["sanctions against", "对...的制裁", "duì ... de zhì cái", "sanciones contra", "sanções contra"],
     ["refugee crisis", "难民危机", "nàn mín wēi jī", "crisis de refugiados", "crise de refugiados"],
     ["refugee camp", "难民营", "nàn mín yíng", "campo de refugiados", "campo de refugiados"],
     ["disputed territory", "有争议的领土", "yǒu zhēng yì de lǐng tǔ", "territorio en disputa", "território disputado"],
     ["territory control", "领土控制", "lǐng tǔ kòng zhì", "control del territorio", "controle de território"],
     ["international cooperation", "国际合作", "guó jì hé zuò", "cooperación internacional", "cooperação internacional"],
-    ["cooperation between", "", "", "cooperación entre", "cooperação entre"],
-    ["world summit", "之间的合作世界峰会", "zhī jiān de hé zuò shì jiè fēng huì", "cumbre mundial", "cimeira mundial"],
+    ["cooperation between", "之间的合作", "zhī jiān de hé zuò", "cooperación entre", "cooperação entre"],
+    ["world summit", "世界峰会", "shì jiè fēng huì", "cumbre mundial", "cimeira mundial"],
     ["summit meeting", "峰会", "fēng huì", "reunión cumbre", "reunião de cimeira"],
     ["appointed ambassador", "任命大使", "rèn mìng dà shǐ", "embajador designado", "embaixador nomeado"],
-    ["ambassador to", "驻", "zhù", "embajador en", "embaixador em"],
-    ["humanitarian aid", "大使人道主义援助", "dà shǐ rén dào zhǔ yì yuán zhù", "ayuda humanitaria", "ajuda humanitária"],
+    ["ambassador to", "驻...大使", "zhù ... dà shǐ", "embajador en", "embaixador em"],
+    ["humanitarian aid", "人道主义援助", "rén dào zhǔ yì yuán zhù", "ayuda humanitaria", "ajuda humanitária"],
     ["humanitarian crisis", "人道主义危机", "rén dào zhǔ yì wēi jī", "crisis humanitaria", "crise humanitária"],
     ["national sovereignty", "国家主权", "guó jiā zhǔ quán", "soberanía nacional", "soberania nacional"],
-    ["sovereignty over", "", "", "soberanía sobre", "soberania sobre"],
-    ["global geopolitics", "的主权全球地缘政治", "de zhǔ quán quán qiú dì yuán zhèng zhì", "geopolítica global", "geopolítica global"],
+    ["sovereignty over", "的主权", "de zhǔ quán", "soberanía sobre", "soberania sobre"],
+    ["global geopolitics", "全球地缘政治", "quán qiú dì yuán zhèng zhì", "geopolítica global", "geopolítica global"],
     ["geopolitics of", "地缘政治", "dì yuán zhèng zhì", "geopolítica de", "geopolítica de"]
   ]
 };
@@ -1165,12 +1197,12 @@ export const p4_128_international__relations = {
 export const p4_129_literature = {
   meta: {
     wordpack: 129,
+    english: "Literature",
     chinese: "Literature",
     pinyin: "Literature",
-    spanish: "Literature",
     portuguese: "Literature"
   },
-  words: [
+  baseWords: [
     ["literary", "文学", "wén xué", "literario", "literário"],
     ["narrative", "叙述", "xù shù", "narrativa", "narrativa"],
     ["theme", "主题", "zhǔ tí", "tema", "tema"],
@@ -1190,28 +1222,30 @@ export const p4_129_literature = {
     ["irony", "讽刺", "fěng cì", "ironía", "ironia"],
     ["satire", "讽刺", "fěng cì", "sátira", "sátira"],
     ["verse", "诗句", "shī jù", "verso", "verso"],
-    ["stanza", "节", "jié", "estrofa", "estrofe"],
+    ["stanza", "节", "jié", "estrofa", "estrofe"]
+  ],
+  exampleWords: [
     ["literary analysis", "文学分析", "wén xué fēn xī", "análisis literario", "análise literária"],
     ["literary work", "文学作品", "wén xué zuò pǐn", "obra literaria", "obra literária"],
     ["first-person narrative", "第一人称叙述", "dì yī rén chēng xù shù", "narrativa en primera persona", "narrativa em primeira pessoa"],
     ["narrative structure", "叙事结构", "xù shì jié gòu", "estructura narrativa", "estrutura narrativa"],
     ["central theme", "中心主题", "zhōng xīn zhǔ tí", "tema central", "tema central"],
-    ["theme of", "", "", "tema de", "tema de"],
-    ["powerful symbol", "的主题强大的象征", "de zhǔ tí qiáng dà de xiàng zhēng", "símbolo poderoso", "símbolo poderoso"],
-    ["symbol of", "", "", "símbolo de", "símbolo de"],
-    ["use metaphor", "的符号使用隐喻", "de fú hào shǐ yòng yǐn yù", "usar metáfora", "usar metáfora"],
-    ["metaphor for", "", "", "metáfora de", "metáfora para"],
-    ["use simile", "的隐喻使用明喻", "de yǐn yù shǐ yòng míng yù", "usar símil", "usar comparação"],
+    ["theme of", "的主题", "de zhǔ tí", "tema de", "tema de"],
+    ["powerful symbol", "强大的象征", "qiáng dà de xiàng zhēng", "símbolo poderoso", "símbolo poderoso"],
+    ["symbol of", "的符号", "de fú hào", "símbolo de", "símbolo de"],
+    ["use metaphor", "使用隐喻", "shǐ yòng yǐn yù", "usar metáfora", "usar metáfora"],
+    ["metaphor for", "的隐喻", "de yǐn yù", "metáfora de", "metáfora para"],
+    ["use simile", "使用明喻", "shǐ yòng míng yù", "usar símil", "usar comparação"],
     ["simile comparing", "比喻比较", "bǐ yù bǐ jiào", "comparación de símil", "comparação comparando"],
     ["main protagonist", "主要主角", "zhǔ yào zhǔ jué", "protagonista principal", "protagonista principal"],
-    ["protagonist of", "", "", "protagonista de", "protagonista de"],
-    ["main antagonist", "的主角主要反派", "de zhǔ jué zhǔ yào fǎn pài", "antagonista principal", "antagonista principal"],
-    ["antagonist in", "", "", "antagonista en", "antagonista em"],
-    ["story setting", "中的对手故事设定", "zhōng de duì shǒu gù shì shè dìng", "ambientación de la historia", "cenário da história"],
-    ["setting of", "", "", "configuración de", "configuração de"],
-    ["write dialogue", "的设置写对话", "de shè zhì xiě duì huà", "escribir diálogo", "escrever diálogo"],
-    ["dialogue between", "", "", "diálogo entre", "diálogo entre"],
-    ["serious tone", "之间的对话严肃的语气", "zhī jiān de duì huà yán sù de yǔ qì", "tono serio", "tom sério"],
+    ["protagonist of", "的主角", "de zhǔ jué", "protagonista de", "protagonista de"],
+    ["main antagonist", "主要反派", "zhǔ yào fǎn pài", "antagonista principal", "antagonista principal"],
+    ["antagonist in", "中的对手", "zhōng de duì shǒu", "antagonista en", "antagonista em"],
+    ["story setting", "故事设定", "gù shì shè dìng", "ambientación de la historia", "cenário da história"],
+    ["setting of", "的设置", "de shè zhì", "configuración de", "configuração de"],
+    ["write dialogue", "写对话", "xiě duì huà", "escribir diálogo", "escrever diálogo"],
+    ["dialogue between", "之间的对话", "zhī jiān de duì huà", "diálogo entre", "diálogo entre"],
+    ["serious tone", "严肃的语气", "yán sù de yǔ qì", "tono serio", "tom sério"],
     ["tone of voice", "语气", "yǔ qì", "tono de voz", "tom de voz"],
     ["writing style", "写作风格", "xiě zuò fēng gé", "estilo de escritura", "estilo de escrita"],
     ["style guide", "风格指南", "fēng gé zhǐ nán", "guía de estilo", "guia de estilo"],
@@ -1220,13 +1254,13 @@ export const p4_129_literature = {
     ["prose writing", "散文写作", "sǎn wén xiě zuò", "escritura en prosa", "escrita em prosa"],
     ["prose style", "散文风格", "sǎn wén fēng gé", "estilo de prosa", "estilo prosa"],
     ["vivid imagery", "生动形象", "shēng dòng xíng xiàng", "imágenes vívidas", "imagens vívidas"],
-    ["imagery in", "", "", "imágenes en", "imagens em"],
-    ["political allegory", "中的图像政治寓言", "zhōng de tú xiàng zhèng zhì yù yán", "alegoría política", "alegoria política"],
-    ["allegory of", "", "", "alegoría de", "alegoria de"],
-    ["dramatic irony", "的寓言戏剧性的讽刺", "de yù yán xì jù xìng de fěng cì", "ironía dramática", "ironia dramática"],
-    ["irony in", "讽刺", "fěng cì", "ironía en", "ironia em"],
+    ["imagery in", "中的图像", "zhōng de tú xiàng", "imágenes en", "imagens em"],
+    ["political allegory", "政治寓言", "zhèng zhì yù yán", "alegoría política", "alegoria política"],
+    ["allegory of", "的寓言", "de yù yán", "alegoría de", "alegoria de"],
+    ["dramatic irony", "戏剧性的讽刺", "xì jù xìng de fěng cì", "ironía dramática", "ironia dramática"],
+    ["irony in", "中的讽刺", "zhōng de fěng cì", "ironía en", "ironia em"],
     ["political satire", "政治讽刺", "zhèng zhì fěng cì", "sátira política", "sátira política"],
-    ["satire on", "讽刺", "fěng cì", "sátira sobre", "sátira em"],
+    ["satire on", "对...的讽刺", "duì ... de fěng cì", "sátira sobre", "sátira em"],
     ["poetic verse", "诗句", "shī jù", "verso poético", "verso poético"],
     ["verse form", "诗句形式", "shī jù xíng shì", "forma de verso", "forma de verso"],
     ["final stanza", "最后一节", "zuì hòu yī jié", "estrofa final", "estrofe final"],
@@ -1237,12 +1271,12 @@ export const p4_129_literature = {
 export const p4_130_art__culture = {
   meta: {
     wordpack: 130,
+    english: "Art & Culture",
     chinese: "Art & Culture",
     pinyin: "Art & Culture",
-    spanish: "Art & Culture",
     portuguese: "Art & Culture"
   },
-  words: [
+  baseWords: [
     ["culture", "文化", "wén huà", "cultura", "cultura"],
     ["cultural", "文化", "wén huà", "culturales", "culturais"],
     ["creative", "创意", "chuàng yì", "creativo", "criativo"],
@@ -1262,7 +1296,9 @@ export const p4_130_art__culture = {
     ["portrait", "肖像", "xiào xiàng", "retrato", "retrato"],
     ["masterpiece", "杰作", "jié zuò", "obra maestra", "obra-prima"],
     ["renaissance", "文艺复兴", "wén yì fù xīng", "renacimiento", "renascimento"],
-    ["baroque", "巴洛克风格", "bā luò kè fēng gé", "barroco", "barroco"],
+    ["baroque", "巴洛克风格", "bā luò kè fēng gé", "barroco", "barroco"]
+  ],
+  exampleWords: [
     ["pop culture", "流行文化", "liú xíng wén huà", "cultura pop", "cultura pop"],
     ["culture shock", "文化冲击", "wén huà chōng jī", "choque cultural", "choque cultural"],
     ["cultural exchange", "文化交流", "wén huà jiāo liú", "intercambio cultural", "intercâmbio cultural"],
@@ -1293,13 +1329,13 @@ export const p4_130_art__culture = {
     ["identity crisis", "身份危机", "shēn fèn wēi jī", "crisis de identidad", "crise de identidade"],
     ["art movement", "艺术运动", "yì shù yùn dòng", "movimiento artístico", "movimento artístico"],
     ["movement toward", "走向", "zǒu xiàng", "movimiento hacia", "movimento em direção"],
-    ["artistic talent", "的运动艺术天赋", "de yùn dòng yì shù tiān fù", "talento artístico", "talento artístico"],
+    ["artistic talent", "艺术天赋", "yì shù tiān fù", "talento artístico", "talento artístico"],
     ["artistic expression", "艺术表达", "yì shù biǎo dá", "expresión artística", "expressão artística"],
     ["paint portrait", "画肖像", "huà xiào xiàng", "pintar retrato", "pintar retrato"],
-    ["portrait of", "", "", "retrato de", "retrato de"],
-    ["artistic masterpiece", "的肖像艺术杰作", "de xiào xiàng yì shù jié zuò", "obra maestra artística", "obra-prima artística"],
-    ["masterpiece of", "", "", "obra maestra de", "obra-prima de"],
-    ["italian renaissance", "的杰作意大利文艺复兴", "de jié zuò yì dà lì wén yì fù xīng", "renacimiento italiano", "renascimento italiano"],
+    ["portrait of", "的肖像", "de xiào xiàng", "retrato de", "retrato de"],
+    ["artistic masterpiece", "艺术杰作", "yì shù jié zuò", "obra maestra artística", "obra-prima artística"],
+    ["masterpiece of", "的杰作", "de jié zuò", "obra maestra de", "obra-prima de"],
+    ["italian renaissance", "意大利文艺复兴", "yì dà lì wén yì fù xīng", "renacimiento italiano", "renascimento italiano"],
     ["renaissance art", "文艺复兴艺术", "wén yì fù xīng yì shù", "arte renacentista", "arte renascentista"],
     ["baroque music", "巴洛克音乐", "bā luò kè yīn yuè", "musica barroca", "música barroca"],
     ["baroque style", "巴洛克风格", "bā luò kè fēng gé", "estilo barroco", "estilo barroco"]
