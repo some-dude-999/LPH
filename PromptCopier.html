@@ -1251,6 +1251,38 @@ Note all errors found. These will need manual fixes in Stage 3B.
 ║  DO NOT SKIM. DO NOT RUSH. BE BRUTALLY HONEST. FIND ALL FLAWS.  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+⛔⛔⛔ ABSOLUTELY NO CORNER-CUTTING OR SAMPLING ⛔⛔⛔
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚨 YOU MUST CHECK ALL 107 PACKS - NO EXCEPTIONS                 ║
+║                                                                  ║
+║  ❌ FORBIDDEN CORNER-CUTTING BEHAVIORS:                          ║
+║  ❌ "Let me read representative samples across acts"             ║
+║  ❌ "I'll check a few packs from each act"                       ║
+║  ❌ "Let me spot-check some packs"                               ║
+║  ❌ "I'll review a subset to understand the pattern"             ║
+║  ❌ Reading only packs with known errors                         ║
+║  ❌ Skipping packs that "look fine"                              ║
+║  ❌ Stopping after finding some errors                           ║
+║                                                                  ║
+║  ✅ REQUIRED BEHAVIOR:                                            ║
+║  ✅ Open and read ALL 107 pack CSV files using Read tool         ║
+║  ✅ Check EVERY row in EVERY pack                                ║
+║  ✅ Check EVERY column in EVERY row                              ║
+║  ✅ Record EVERY issue found (no matter how small)               ║
+║  ✅ At the end, state: "I checked all 107 packs"                 ║
+║                                                                  ║
+║  🔍 CORNER-CUTTING WILL BE DETECTED BY:                          ║
+║  • Missing packs in TranslationErrors.csv (must have all 107)    ║
+║  • Gaps in pack numbers (1,2,3...106,107 - no skipping)          ║
+║  • Suspiciously low error counts (if you found <50 total issues  ║
+║    across 107 packs, you're not looking hard enough)             ║
+║  • Vague issue descriptions (proves you didn't read carefully)   ║
+║                                                                  ║
+║  ⚠️  IF YOU CORNER-CUT, THE ENTIRE TASK IS A FAILURE.            ║
+║  The user will see which packs are missing and know you skipped. ║
+╚══════════════════════════════════════════════════════════════════╝
+
 Chinese Packs: ChineseWords1.csv through ChineseWords107.csv
 Location: ChineseWords/ChineseWords{N}.csv
 
@@ -1645,6 +1677,25 @@ This will flag:
 - ⚠️  ERROR: Missing spaces in pinyin (Txù → should be "T xù")
 - ⚡ WARNING: Suspicious Latin text not in known loanword list
 
+⛔⛔⛔ ABSOLUTELY NO CORNER-CUTTING OR SAMPLING ⛔⛔⛔
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚨 YOU MUST CHECK ALL 107 PACKS - NO EXCEPTIONS                 ║
+║                                                                  ║
+║  ❌ FORBIDDEN: "I'll check packs with Issue_Count > 0 only"      ║
+║  ❌ FORBIDDEN: "Let me review a few representative packs"        ║
+║  ❌ FORBIDDEN: Reading only high-error packs                     ║
+║  ❌ FORBIDDEN: Skipping packs that seem fine                     ║
+║                                                                  ║
+║  ✅ REQUIRED: Check ALL 107 packs (even if Issue_Count = 0)      ║
+║  ✅ REQUIRED: Read EVERY row in EVERY pack                       ║
+║  ✅ REQUIRED: At end, state "I checked all 107 packs"            ║
+║                                                                  ║
+║  The Python helper finds SOME errors, but YOU must find ALL.     ║
+║  Empty cells and brackets are easy. Wrong meanings are hard.     ║
+║  That's why YOU must check every pack manually.                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
 === STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
 
 python PythonHelpers/generate_error_summary.py chinese 3b
@@ -1965,6 +2016,38 @@ Note all errors found. These will need manual fixes in Stage 3B.
 ║  7. WRITE DOWN EVERY SINGLE ISSUE - be extremely detailed        ║
 ║                                                                  ║
 ║  DO NOT SKIM. DO NOT RUSH. BE BRUTALLY HONEST. FIND ALL FLAWS.  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+⛔⛔⛔ ABSOLUTELY NO CORNER-CUTTING OR SAMPLING ⛔⛔⛔
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚨 YOU MUST CHECK ALL 250 PACKS - NO EXCEPTIONS                 ║
+║                                                                  ║
+║  ❌ FORBIDDEN CORNER-CUTTING BEHAVIORS:                          ║
+║  ❌ "Let me read representative samples across acts"             ║
+║  ❌ "I'll check a few packs from each act"                       ║
+║  ❌ "Let me spot-check some packs"                               ║
+║  ❌ "I'll review a subset to understand the pattern"             ║
+║  ❌ Reading only packs with known errors                         ║
+║  ❌ Skipping packs that "look fine"                              ║
+║  ❌ Stopping after finding some errors                           ║
+║                                                                  ║
+║  ✅ REQUIRED BEHAVIOR:                                            ║
+║  ✅ Open and read ALL 250 pack CSV files using Read tool         ║
+║  ✅ Check EVERY row in EVERY pack                                ║
+║  ✅ Check EVERY column in EVERY row                              ║
+║  ✅ Record EVERY issue found (no matter how small)               ║
+║  ✅ At the end, state: "I checked all 250 packs"                 ║
+║                                                                  ║
+║  🔍 CORNER-CUTTING WILL BE DETECTED BY:                          ║
+║  • Missing packs in TranslationErrors.csv (must have all 250)    ║
+║  • Gaps in pack numbers (1,2,3...249,250 - no skipping)          ║
+║  • Suspiciously low error counts (if you found <100 total issues ║
+║    across 250 packs, you're not looking hard enough)             ║
+║  • Vague issue descriptions (proves you didn't read carefully)   ║
+║                                                                  ║
+║  ⚠️  IF YOU CORNER-CUT, THE ENTIRE TASK IS A FAILURE.            ║
+║  The user will see which packs are missing and know you skipped. ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 Spanish Packs: SpanishWords1.csv through SpanishWords250.csv
@@ -2353,6 +2436,25 @@ This will flag:
 - ⚠️  ERROR: Missing spaces in pinyin (Txù → should be "T xù")
 - ⚡ WARNING: Suspicious Latin text not in known loanword list
 
+⛔⛔⛔ ABSOLUTELY NO CORNER-CUTTING OR SAMPLING ⛔⛔⛔
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚨 YOU MUST CHECK ALL 250 PACKS - NO EXCEPTIONS                 ║
+║                                                                  ║
+║  ❌ FORBIDDEN: "I'll check packs with Issue_Count > 0 only"      ║
+║  ❌ FORBIDDEN: "Let me review a few representative packs"        ║
+║  ❌ FORBIDDEN: Reading only high-error packs                     ║
+║  ❌ FORBIDDEN: Skipping packs that seem fine                     ║
+║                                                                  ║
+║  ✅ REQUIRED: Check ALL 250 packs (even if Issue_Count = 0)      ║
+║  ✅ REQUIRED: Read EVERY row in EVERY pack                       ║
+║  ✅ REQUIRED: At end, state "I checked all 250 packs"            ║
+║                                                                  ║
+║  The Python helper finds SOME errors, but YOU must find ALL.     ║
+║  Empty cells and brackets are easy. Wrong meanings are hard.     ║
+║  That's why YOU must check every pack manually.                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
 === STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
 
 python PythonHelpers/generate_error_summary.py spanish 3b
@@ -2666,6 +2768,38 @@ Note all errors found. These will need manual fixes in Stage 3B.
 ║  7. WRITE DOWN EVERY SINGLE ISSUE - be extremely detailed        ║
 ║                                                                  ║
 ║  DO NOT SKIM. DO NOT RUSH. BE BRUTALLY HONEST. FIND ALL FLAWS.  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+⛔⛔⛔ ABSOLUTELY NO CORNER-CUTTING OR SAMPLING ⛔⛔⛔
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚨 YOU MUST CHECK ALL 160 PACKS - NO EXCEPTIONS                 ║
+║                                                                  ║
+║  ❌ FORBIDDEN CORNER-CUTTING BEHAVIORS:                          ║
+║  ❌ "Let me read representative samples across acts"             ║
+║  ❌ "I'll check a few packs from each act"                       ║
+║  ❌ "Let me spot-check some packs"                               ║
+║  ❌ "I'll review a subset to understand the pattern"             ║
+║  ❌ Reading only packs with known errors                         ║
+║  ❌ Skipping packs that "look fine"                              ║
+║  ❌ Stopping after finding some errors                           ║
+║                                                                  ║
+║  ✅ REQUIRED BEHAVIOR:                                            ║
+║  ✅ Open and read ALL 160 pack CSV files using Read tool         ║
+║  ✅ Check EVERY row in EVERY pack                                ║
+║  ✅ Check EVERY column in EVERY row                              ║
+║  ✅ Record EVERY issue found (no matter how small)               ║
+║  ✅ At the end, state: "I checked all 160 packs"                 ║
+║                                                                  ║
+║  🔍 CORNER-CUTTING WILL BE DETECTED BY:                          ║
+║  • Missing packs in TranslationErrors.csv (must have all 160)    ║
+║  • Gaps in pack numbers (1,2,3...159,160 - no skipping)          ║
+║  • Suspiciously low error counts (if you found <80 total issues  ║
+║    across 160 packs, you're not looking hard enough)             ║
+║  • Vague issue descriptions (proves you didn't read carefully)   ║
+║                                                                  ║
+║  ⚠️  IF YOU CORNER-CUT, THE ENTIRE TASK IS A FAILURE.            ║
+║  The user will see which packs are missing and know you skipped. ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 English Packs: EnglishWords1.csv through EnglishWords160.csv
@@ -3081,6 +3215,25 @@ This will flag:
 - 🚨 CRITICAL: Untranslated words in Chinese column = translation failures
 - ⚠️  ERROR: Missing spaces in pinyin (Txù → should be "T xù")
 - ⚡ WARNING: Suspicious Latin text not in known loanword list
+
+⛔⛔⛔ ABSOLUTELY NO CORNER-CUTTING OR SAMPLING ⛔⛔⛔
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚨 YOU MUST CHECK ALL 160 PACKS - NO EXCEPTIONS                 ║
+║                                                                  ║
+║  ❌ FORBIDDEN: "I'll check packs with Issue_Count > 0 only"      ║
+║  ❌ FORBIDDEN: "Let me review a few representative packs"        ║
+║  ❌ FORBIDDEN: Reading only high-error packs                     ║
+║  ❌ FORBIDDEN: Skipping packs that seem fine                     ║
+║                                                                  ║
+║  ✅ REQUIRED: Check ALL 160 packs (even if Issue_Count = 0)      ║
+║  ✅ REQUIRED: Read EVERY row in EVERY pack                       ║
+║  ✅ REQUIRED: At end, state "I checked all 160 packs"            ║
+║                                                                  ║
+║  The Python helper finds SOME errors, but YOU must find ALL.     ║
+║  Empty cells and brackets are easy. Wrong meanings are hard.     ║
+║  That's why YOU must check every pack manually.                  ║
+╚══════════════════════════════════════════════════════════════════╝
 
 === STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
 
