@@ -11,8 +11,8 @@ Each file has columns:
 - Pack_Number
 - Pack_Title
 - Difficulty_Act
-- Score (1-10, empty by default)
-- Issues (description of problems, empty by default)
+- Issue_Count (number of issues, empty by default)
+- Issues (brief summary of problems, empty by default)
 
 Usage:
     python PythonHelpers/create_translation_errors_csv.py [chinese|spanish|english|all]
@@ -55,20 +55,20 @@ def create_translation_errors_csv(language):
         reader = csv.DictReader(f)
         rows = list(reader)
 
-    # Create output rows with Score and Issues columns
+    # Create output rows with Issue_Count and Issues columns
     output_rows = []
     for row in rows:
         output_rows.append({
             'Pack_Number': row['Pack_Number'],
             'Pack_Title': row['Pack_Title'],
             'Difficulty_Act': row['Difficulty_Act'],
-            'Score': '',  # Empty by default - to be filled by Stage 3A
+            'Issue_Count': '',  # Empty by default - to be filled by Stage 3A
             'Issues': ''  # Empty by default - to be filled by Stage 3A
         })
 
     # Write output CSV
     with open(output_path, 'w', encoding='utf-8', newline='') as f:
-        fieldnames = ['Pack_Number', 'Pack_Title', 'Difficulty_Act', 'Score', 'Issues']
+        fieldnames = ['Pack_Number', 'Pack_Title', 'Difficulty_Act', 'Issue_Count', 'Issues']
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(output_rows)

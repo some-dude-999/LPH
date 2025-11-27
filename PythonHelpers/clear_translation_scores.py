@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Clear all scores in Translation Error CSV files.
+Clear all issue counts in Translation Error CSV files.
 
-This script clears the Score column in the translation error CSVs,
+This script clears the Issue_Count column in the translation error CSVs,
 preparing them for fresh evaluation by an LLM in Stage 3A.
 
 Usage:
@@ -17,7 +17,7 @@ import csv
 from pathlib import Path
 
 def clear_scores(language):
-    """Clear the Score column for the specified language."""
+    """Clear the Issue_Count column for the specified language."""
 
     # Map language to file path
     file_map = {
@@ -44,16 +44,16 @@ def clear_scores(language):
             fieldnames = reader.fieldnames
             rows = list(reader)
 
-        # Check if Score column exists
-        if 'Score' not in fieldnames:
-            print(f"❌ Error: 'Score' column not found in {csv_path}")
+        # Check if Issue_Count column exists
+        if 'Issue_Count' not in fieldnames:
+            print(f"❌ Error: 'Issue_Count' column not found in {csv_path}")
             return False
 
-        # Clear all Score values
+        # Clear all Issue_Count values
         cleared_count = 0
         for row in rows:
-            if row['Score'] and row['Score'].strip():
-                row['Score'] = ''
+            if row['Issue_Count'] and row['Issue_Count'].strip():
+                row['Issue_Count'] = ''
                 cleared_count += 1
 
         # Write back to CSV
@@ -62,7 +62,7 @@ def clear_scores(language):
             writer.writeheader()
             writer.writerows(rows)
 
-        print(f"✓ Cleared {cleared_count} scores in {csv_path}")
+        print(f"✓ Cleared {cleared_count} issue counts in {csv_path}")
         print(f"  Total packs: {len(rows)}")
         print(f"  Ready for fresh evaluation!")
         return True
@@ -79,7 +79,7 @@ def main():
     language = sys.argv[1].lower()
 
     if language == 'all':
-        print("Clearing scores for ALL languages...\n")
+        print("Clearing issue counts for ALL languages...\n")
         success = True
         for lang in ['chinese', 'spanish', 'english']:
             print(f"--- {lang.upper()} ---")
@@ -88,7 +88,7 @@ def main():
             print()
 
         if success:
-            print("✓ All scores cleared successfully!")
+            print("✓ All issue counts cleared successfully!")
         else:
             print("❌ Some errors occurred. Check output above.")
             sys.exit(1)
