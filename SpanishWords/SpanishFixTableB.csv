@@ -1,1 +1,27 @@
 Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value
+spanish,5,34,chinese,他们也是,她们也是
+spanish,9,2,chinese,他,这
+spanish,9,2,pinyin,tā,zhè
+spanish,9,3,chinese,la,这
+spanish,9,3,pinyin,la,zhè
+spanish,9,4,chinese,los,这些
+spanish,9,4,pinyin,los,zhè xiē
+spanish,9,5,chinese,这,这些
+spanish,9,5,pinyin,zhè,zhè xiē
+spanish,13,8,pinyin,jiě jiě,jiě mèi
+spanish,73,9,pinyin,yí qì,yuè qì
+spanish,73,15,pinyin,cí pán,chàng piàn
+spanish,73,35,pinyin,yí qì,yuè qì
+spanish,73,36,pinyin,yí qì,yuè qì
+spanish,73,47,pinyin,cí pán,chàng piàn
+spanish,73,48,pinyin,cí pán,chàng piàn
+spanish,167,4,pinyin,xíng hào,mó tè
+spanish,167,23,chinese,模型,模特
+spanish,167,23,pinyin,mó xíng,mó tè
+spanish,167,24,chinese,模型,模特
+spanish,167,24,pinyin,mó xíng,mó tè
+spanish,200,5,pinyin,zū jīn,zū yòng
+spanish,200,51,pinyin,jìn yùn,kòu yā
+spanish,200,52,pinyin,jìn yùn,kòu yā
+spanish,233,13,pinyin,wǒ de,wā kuàng
+spanish,233,43,pinyin,wǒ yào qù wǒ de,wǒ yào qù wā kuàng
