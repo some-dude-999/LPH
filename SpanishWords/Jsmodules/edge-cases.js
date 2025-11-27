@@ -19,6 +19,7 @@ export const p1_9_the__a__articles__el__la__un__una = {
     portuguese: "Artigos"
   },
   words: [
+    ["el", "the", "el", "el", "ele"],
     ["la", "the", "la", "la", "a"],
     ["los", "the", "los", "los", "os"]
   ]
@@ -33,9 +34,9 @@ export const p1_26_clothing = {
     portuguese: "Roupas"
   },
   words: [
-    ["camiseta", "t-shirt", "T恤", "Txù", "camiseta"],
-    ["camiseta sin mangas", "sleeveless t-shirt", "无袖T恤", "wú xiù Txù", "camiseta sem mangas"],
-    ["una camiseta nueva", "a new t-shirt", "一件新T恤", "yī jiàn xīn Txù", "uma camiseta nova"]
+    ["camiseta", "t-shirt", "T恤", "T xù", "camiseta"],
+    ["camiseta sin mangas", "sleeveless t-shirt", "无袖T恤", "wú xiù T xù", "camiseta sem mangas"],
+    ["una camiseta nueva", "a new t-shirt", "一件新T恤", "yī jiàn xīn T xù", "uma camiseta nova"]
   ]
 };
 
@@ -76,7 +77,7 @@ export const p6_182_telecommunications = {
   words: [
     ["WhatsApp", "WhatsApp", "WhatsApp", "WhatsApp", "WhatsApp"],
     ["por WhatsApp", "by WhatsApp", "通过 WhatsApp", "tōng guò WhatsApp", "por WhatsApp"],
-    ["en WhatsApp", "on WhatsApp", "在 WhatsApp 上", "zài WhatsApp shàng", "no WhatsApp"]
+    ["en WhatsApp", "on WhatsApp", "在 WhatsApp上", "zài WhatsApp shàng", "no WhatsApp"]
   ]
 };
 
