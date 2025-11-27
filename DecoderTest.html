@@ -817,6 +817,7 @@
     let state = {
       currentLanguage: 'Spanish',  // Default language
       loadedData: {},               // { actNumber: { packKey: {meta, words}, ... } }
+      loadedActMeta: {},            // { actNumber: { actName, translations, wordColumns, ... } } - from __actMeta
       currentAct: null,
       currentPack: null,
       currentNativeLanguage: 1,     // Default to English column (index 1 for Spanish)
@@ -1325,7 +1326,8 @@
       updateDebugInfo(`Loading ${languageName} data...`);
 
       const config = LANGUAGE_CONFIG[languageName];
-      state.loadedData = {};  // Clear previous data
+      state.loadedData = {};      // Clear previous data
+      state.loadedActMeta = {};   // Clear previous metadata
 
       // Load each act module
       for (const moduleInfo of config.modules) {
@@ -1333,8 +1335,20 @@
 
         try {
           const actData = await decodeObfuscatedModule(moduleInfo.path);
-          state.loadedData[moduleInfo.act] = actData;
-          updateDebugInfo(`✓ Act ${moduleInfo.act} loaded (${Object.keys(actData).length} packs)`);
+
+          // Extract and store __actMeta (contains actName, translations, wordColumns, etc.)
+          // This is the same pattern as ChineseFlashcardTypingGame.html
+          if (actData.__actMeta) {
+            state.loadedActMeta[moduleInfo.act] = actData.__actMeta;
+            console.log(`Act ${moduleInfo.act} metadata:`, actData.__actMeta.actName);
+          }
+
+          // Store only pack data (exclude __actMeta)
+          const packsOnly = { ...actData };
+          delete packsOnly.__actMeta;
+
+          state.loadedData[moduleInfo.act] = packsOnly;
+          updateDebugInfo(`✓ Act ${moduleInfo.act} loaded (${Object.keys(packsOnly).length} packs)`);
         } catch (error) {
           updateDebugInfo(`✗ Failed to load Act ${moduleInfo.act}: ${error.message}`);
         }
@@ -1367,12 +1381,19 @@
           state.currentAct = null;
           state.currentPack = null;
 
-          // Reset native language to first available option
-          const nativeLanguages = LANGUAGE_CONFIG[newLanguage].nativeLanguages;
-          state.currentNativeLanguage = Object.values(nativeLanguages)[0];
-
-          // Reload data for new language
+          // Reload data for new language (this populates state.loadedActMeta)
           await loadLanguageData(newLanguage);
+
+          // Reset native language to first available option from loaded metadata
+          const firstActMeta = Object.values(state.loadedActMeta)[0];
+          if (firstActMeta && firstActMeta.translations) {
+            const firstTranslation = Object.values(firstActMeta.translations)[0];
+            state.currentNativeLanguage = firstTranslation.index;
+          } else {
+            // Fallback to LANGUAGE_CONFIG
+            const nativeLanguages = LANGUAGE_CONFIG[newLanguage].nativeLanguages;
+            state.currentNativeLanguage = Object.values(nativeLanguages)[0];
+          }
 
           // Update UI
           populateActDropdown();
@@ -2161,13 +2182,14 @@
       actSelect.innerHTML = '';
 
       const acts = Object.keys(state.loadedData).map(Number).sort((a, b) => a - b);
-      const config = LANGUAGE_CONFIG[state.currentLanguage];
 
       acts.forEach(actNum => {
-        const moduleInfo = config.modules.find(m => m.act === actNum);
+        // Use __actMeta from loaded module (same as ChineseFlashcardTypingGame.html)
+        const actMeta = state.loadedActMeta[actNum];
+        const actName = actMeta ? actMeta.actName : `Act ${actNum}`;
         const option = document.createElement('option');
         option.value = actNum;
-        option.textContent = `Act ${actNum}: ${moduleInfo.name}`;
+        option.textContent = `Act ${actNum}: ${actName}`;
         actSelect.appendChild(option);
       });
 
@@ -2261,8 +2283,20 @@
       const nativeSelect = document.getElementById('nativeLanguageSelect');
       nativeSelect.innerHTML = '';
 
-      const config = LANGUAGE_CONFIG[state.currentLanguage];
-      const nativeLanguages = config.nativeLanguages;
+      // Get translations from loaded __actMeta (same as ChineseFlashcardTypingGame.html)
+      // Falls back to LANGUAGE_CONFIG if no metadata loaded
+      let nativeLanguages = {};
+      const firstActMeta = Object.values(state.loadedActMeta)[0];
+      if (firstActMeta && firstActMeta.translations) {
+        // Use translations from __actMeta - format: { english: { index: 2, display: "English" }, ... }
+        Object.entries(firstActMeta.translations).forEach(([key, config]) => {
+          nativeLanguages[config.display] = config.index;
+        });
+      } else {
+        // Fallback to LANGUAGE_CONFIG
+        const config = LANGUAGE_CONFIG[state.currentLanguage];
+        nativeLanguages = config.nativeLanguages;
+      }
 
       Object.entries(nativeLanguages).forEach(([langName, columnIndex]) => {
         const option = document.createElement('option');
