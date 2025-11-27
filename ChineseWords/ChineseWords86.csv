@@ -8,7 +8,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 产生,chǎn shēng,produce,producir,produire,produzir,sản xuất,ผลิต,ផលិត,menghasilkan,menghasilkan,gumawa
 带来,dài lái,bring about,provocar,provoquer,provocar,mang lại,นำมาซึ่ง,នាំមកអំពី,mewujudkan,Bawa tentang,magdala ng
 影响,yǐng xiǎng,influence,influencia,influencer,influência,ảnh hưởng,อิทธิพล,ឥទ្ធិពល,pengaruh,Pengaruh,Impluwensya
-后果,hòu guǒ,consequence,consecuencia,conséquence,consequência,hậu quả,ผลที่ตามมา,| ផលវិបាក,konsekuensi,akibat,kinahinatnan
+后果,hòu guǒ,consequence,consecuencia,conséquence,consequência,hậu quả,ผลที่ตามมา,ផលវិបាក,konsekuensi,akibat,kinahinatnan
 根源,gēn yuán,root cause,causa raíz,cause profonde,causa raiz,nguyên nhân sâu xa,สาเหตุที่แท้จริง,បុព្វហេតុឫស,akar permasalahan,punca akar,ugat sanhi
 起因,qǐ yīn,cause,causa,cause,causa,nguyên nhân,สาเหตุ,មូលហេតុ,penyebab,menyebabkan,sanhi
 归因于,guī yīn yú,attributed to,atribuido a,attribué à,atribuído a,quy cho,ประกอบกับ,សន្មតថា,dikaitkan dengan,dikaitkan dengan,naiugnay sa
@@ -19,11 +19,11 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 找原因,zhǎo yuán yīn,find the cause,encontrar la causa,trouver la cause,encontre a causa,tìm ra nguyên nhân,หาสาเหตุ,ស្វែងរកបុព្វហេតុ,temukan penyebabnya,Cari Punca,Hanapin ang sanhi
 结果是,jié guǒ shì,the result is,el resultado es,le résultat est,o resultado é,kết quả là,ผลลัพธ์คือ,លទ្ធផលគឺ,hasilnya adalah,Hasilnya ialah,Ang resulta ay
 看结果,kàn jié guǒ,look at the result,mira el resultado,regardez le résultat,olha o resultado,nhìn vào kết quả,ดูผลลัพธ์,រកមើលលទ្ធផល,lihat hasilnya,Lihat hasilnya,Tumingin sa resulta
-因果关系,yīn guǒ guān xì,causality,causalidad,causalité,causalidade,nhân quả,สาเหตุ,មូលហេតុនៃការ || មានបុព្វហេតុនិងផលប៉ះពាល់,kausalitas,kausalitas,Causality
-有因果,yǒu yīn guǒ,there is cause and effect,hay causa y efecto,il y a une cause et un effet,existe causa e efeito,có nhân quả,มีเหตุและผล,បណ្តាលមកពីការ|| នឹងបណ្តាលឱ្យ,ada sebab dan akibat,Terdapat sebab dan kesan,May Sanhi at Epekto
-导致了,dǎo zhì le,Caused,Causado,Causé,Causado,Nguyên nhân,สาเหตุ,បណ្តាលមកពីការ|| នឹងបណ្តាលឱ្យ,Disebabkan,Disebabkan,Sanhi
-会导致,huì dǎo zhì,Will cause,Causará,Causera,Causará,Sẽ gây ra,จะทำให้,បណ្តាលមកពីការ|| នឹងបណ្តាលឱ្យ,Akan menyebabkan,Akan menyebabkan,Ay magiging sanhi
-造成了,zào chéng le,Caused,Causado,Causé,Causado,Nguyên nhân,สาเหตุ,បណ្តាលមកពីការ|| នឹងបណ្តាលឱ្យ,Disebabkan,Disebabkan,Sanhi
+因果关系,yīn guǒ guān xì,causality,causalidad,causalité,causalidade,nhân quả,สาเหตุ,មូលហេតុនិងផលប៉ះពាល់,kausalitas,kausalitas,Causality
+有因果,yǒu yīn guǒ,there is cause and effect,hay causa y efecto,il y a une cause et un effet,existe causa e efeito,có nhân quả,มีเหตุและผล,មានបុព្វហេតុនិងផលប៉ះពាល់,ada sebab dan akibat,Terdapat sebab dan kesan,May Sanhi at Epekto
+导致了,dǎo zhì le,Caused,Causado,Causé,Causado,Nguyên nhân,สาเหตุ,បណ្តាលឱ្យ,Disebabkan,Disebabkan,Sanhi
+会导致,huì dǎo zhì,Will cause,Causará,Causera,Causará,Sẽ gây ra,จะทำให้,នឹងបណ្តាលឱ្យ,Akan menyebabkan,Akan menyebabkan,Ay magiging sanhi
+造成了,zào chéng le,Caused,Causado,Causé,Causado,Nguyên nhân,สาเหตุ,បណ្តាលឱ្យ,Disebabkan,Disebabkan,Sanhi
 会造成,huì zào chéng,Will cause,Causará,Causera,Causará,Sẽ gây ra,จะทำให้,នាំ,Akan menyebabkan,Akan menyebabkan,Ay magiging sanhi
 引起了,yǐn qǐ le,Caused,Causado,Causé,Causado,Nguyên nhân,สาเหตุ,នឹងនាំ,Disebabkan,Disebabkan,Sanhi
 会引起,huì yǐn qǐ,Will cause,Causará,Causera,Causará,Sẽ gây ra,จะทำให้,ផលប៉ះពាល់ធំ,Akan menyebabkan,Akan menyebabkan,Ay magiging sanhi
@@ -40,10 +40,10 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 起因是,qǐ yīn shì,The cause is,La causa es,La cause est,A causa é,Nguyên nhân là,สาเหตุคือ,បានមកពីអតីតកាល,Penyebabnya adalah,Penyebabnya ialah,Ang sanhi ay
 查起因,chá qǐ yīn,Find the cause,Encuentra la causa,Trouver la cause,Encontre a causa,Tìm nguyên nhân,หาสาเหตุ,បានឃើញពីនេះ,Temukan penyebabnya,Cari Punca,Hanapin ang sanhi
 归因于他,guī yīn yú tā,Attribute it to him,Se lo atribuyes a él,Attribuez-lui,Atribua isso a ele,Hãy quy nó cho anh ấy,อ้างถึงเขา,ផលិតពីនេះ,Atribusikan itu padanya,Atribut kepadanya,Iugnay ito sa kanya
-可归因于,kě guī yīn yú,attributable to,atribuible a,attribuable à,atribuível a,có thể quy cho,เนื่องมาจาก,បណ្តាលមកពីការ|| ដូច្នេះបានកំណត់,diatribusikan kepada,dikaitkan dengan,naiugnay sa
-源于此,yuán yú cǐ,derived from this,derivado de esto,dérivé de ceci,derivado disso,bắt nguồn từ điều này,มาจากสิ่งนี้,[TRANSLATE_KM],berasal dari ini,berasal dari ini,nagmula sa ito
-源于过去,yuán yú guò qù,derived from the past,derivado del pasado,dérivé du passé,derivado do passado,bắt nguồn từ quá khứ,มาจากอดีต,[TRANSLATE_KM],berasal dari masa lalu,berasal dari masa lalu,nagmula sa nakaraan
-由此可见,yóu cǐ kě jiàn,seen from this,visto desde esto,vu de là,visto por isso,nhìn thấy từ đây,เห็นได้จากสิ่งนี้,[TRANSLATE_KM],dilihat dari ini,Dilihat dari ini,Nakita mula dito
-由此产生,yóu cǐ chǎn shēng,produced from this,producido a partir de esto,produit à partir de ce,produzido a partir disso,được tạo ra từ điều này,ผลิตจากสิ่งนี้,[TRANSLATE_KM],dihasilkan dari,Dihasilkan dari ini,ginawa mula dito
-因而导致,yīn ér dǎo zhì,caused,causado,causé,causou,gây ra,ทำให้เกิด,[TRANSLATE_KM],disebabkan,disebabkan,sanhi
-因而决定,yīn ér jué dìng,thus determined,así determinado,ainsi déterminé,assim determinado,do đó xác định,จึงกำหนดไว้,[TRANSLATE_KM],ditentukan demikian,dengan itu ditentukan,sa gayon ay tinutukoy
+可归因于,kě guī yīn yú,attributable to,atribuible a,attribuable à,atribuível a,có thể quy cho,เนื่องมาจาก,អាចដោយសារ,diatribusikan kepada,dikaitkan dengan,naiugnay sa
+源于此,yuán yú cǐ,derived from this,derivado de esto,dérivé de ceci,derivado disso,bắt nguồn từ điều này,มาจากสิ่งนี้,មកពីនេះ,berasal dari ini,berasal dari ini,nagmula sa ito
+源于过去,yuán yú guò qù,derived from the past,derivado del pasado,dérivé du passé,derivado do passado,bắt nguồn từ quá khứ,มาจากอดีต,មកពីអតីតកាល,berasal dari masa lalu,berasal dari masa lalu,nagmula sa nakaraan
+由此可见,yóu cǐ kě jiàn,seen from this,visto desde esto,vu de là,visto por isso,nhìn thấy từ đây,เห็นได้จากสิ่งนี้,ឃើញពីនេះ,dilihat dari ini,Dilihat dari ini,Nakita mula dito
+由此产生,yóu cǐ chǎn shēng,produced from this,producido a partir de esto,produit à partir de ce,produzido a partir disso,được tạo ra từ điều này,ผลิตจากสิ่งนี้,ផលិតពីនេះ,dihasilkan dari,Dihasilkan dari ini,ginawa mula dito
+因而导致,yīn ér dǎo zhì,caused,causado,causé,causou,gây ra,ทำให้เกิด,បណ្តាលឱ្យ,disebabkan,disebabkan,sanhi
+因而决定,yīn ér jué dìng,thus determined,así determinado,ainsi déterminé,assim determinado,do đó xác định,จึงกำหนดไว้,ដូច្នេះបានកំណត់,ditentukan demikian,dengan itu ditentukan,sa gayon ay tinutukoy
