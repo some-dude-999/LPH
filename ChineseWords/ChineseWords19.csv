@@ -45,8 +45,8 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 整点报时,zhěng diǎn bào shí,On the hour,A la hora,À l'heure,Na hora,Đúng giờ,ในชั่วโมง,ការផ្សាយតាមកាលវិធានការ រាល់ពេល,Pada jam,Pada jam,Sa oras
 每整点,měi zhěng diǎn,Every hour,Cada hora,Toutes les heures,A cada hora,Mỗi giờ,ทุกชั่วโมง,យឺត,Setiap jam,Setiap jam,Bawat oras
 上午好,shàng wǔ hǎo,Good morning,Buenos días,Bonjour,Bom dia,Chào buổi sáng,สวัสดียามเช้า,ការហោះហើរត្រូវបានពន្យារពេល,Selamat pagi,Selamat pagi,Magandang umaga
-在上午,zài shàng wǔ,In the morning,Por la mañana,Le matin,De manhã,Buổi sáng,ในตอนเช้า,[TRANSLATE_KM],Di pagi hari,Pada waktu pagi,Sa umaga
-时刻表,shí kè biǎo,Timetable,Horario,Horaires,Cronograma,Thời khóa biểu,ตารางเวลา,[TRANSLATE_KM],Jadwal,Jadual waktu,Timetable
-每时刻,měi shí kè,Every time,Cada vez,À chaque fois,Toda vez,Mỗi lần,ทุกครั้ง,[TRANSLATE_KM],Setiap saat,Setiap kali,Sa bawat oras
-晚点了,wǎn diǎn le,Late,Tarde,En retard,Tarde,Muộn,สาย,[TRANSLATE_KM],Terlambat,Lewat,Late
-飞机晚点,fēi jī wǎn diǎn,The flight is delayed,El vuelo esta retrasado,Le vol est retardé,O vôo está atrasado,Chuyến bay bị trì hoãn,เที่ยวบินเกิดความล่าช้า,[TRANSLATE_KM],Penerbangannya tertunda,Penerbangan ditangguhkan,Ang flight ay naantala
+在上午,zài shàng wǔ,In the morning,Por la mañana,Le matin,De manhã,Buổi sáng,ในตอนเช้า,ក្នុងពេលព្រឹក,Di pagi hari,Pada waktu pagi,Sa umaga
+时刻表,shí kè biǎo,Timetable,Horario,Horaires,Cronograma,Thời khóa biểu,ตารางเวลา,តារាងពេលវេលា,Jadwal,Jadual waktu,Timetable
+每时刻,měi shí kè,Every time,Cada vez,À chaque fois,Toda vez,Mỗi lần,ทุกครั้ง,រាល់ពេល,Setiap saat,Setiap kali,Sa bawat oras
+晚点了,wǎn diǎn le,Late,Tarde,En retard,Tarde,Muộn,สาย,យឺត,Terlambat,Lewat,Late
+飞机晚点,fēi jī wǎn diǎn,The flight is delayed,El vuelo esta retrasado,Le vol est retardé,O vôo está atrasado,Chuyến bay bị trì hoãn,เที่ยวบินเกิดความล่าช้า,ការហោះហើរយឺត,Penerbangannya tertunda,Penerbangan ditangguhkan,Ang flight ay naantala

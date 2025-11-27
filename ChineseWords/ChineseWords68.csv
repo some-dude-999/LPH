@@ -40,10 +40,10 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 留言板,liú yán bǎn,Message board,Tablero de mensajes,Tableau de messages,Quadro de mensagens,Bảng tin,กระดานข้อความ,សូមចុច,Papan pesan,Papan Mesej,Message Board
 请留言,qǐng liú yán,Please leave a message,Por favor deja un mensaje,Veuillez laisser un message,Por favor deixe uma mensagem,Vui lòng để lại tin nhắn,กรุณาฝากข้อความ,បានភ្ជាប់,Silakan tinggalkan pesan,Sila tinggalkan mesej,Mangyaring mag -iwan ng mensahe
 发语音,fā yǔ yīn,Send voice,Enviar voz,Envoyer la voix,Enviar voz,Gửi giọng nói,ส่งเสียง,មិនអាចភ្ជាប់បានទេ,Kirim suara,Hantar suara,Magpadala ng boses
-听语音,tīng yǔ yīn,Listen to voice,Escuchar voz,Écouter la voix,Ouça a voz,Nghe giọng nói,ฟังเสียง,[TRANSLATE_KM],Dengarkan suara,Dengarkan suara,Makinig sa boses
-忙线中,máng xiàn zhōng,Busy,Ocupado,Occupé,Ocupado,Bận,ไม่ว่าง,[TRANSLATE_KM],Sibuk,Sibuk,Abala
-电话忙线,diàn huà máng xiàn,Phone busy,Teléfono ocupado,Téléphone occupé,Telefone ocupado,Điện thoại bận,โทรศัพท์ไม่ว่าง,[TRANSLATE_KM],Telepon sibuk,Telefon sibuk,Abala sa telepono
-拨打电话,bō dǎ diàn huà,Make a call,Hacer una llamada,Passer un appel,Faça uma ligação,Thực hiện cuộc gọi,โทรออก,[TRANSLATE_KM],Lakukan panggilan,Buat panggilan,Tumawag
-请拨打,qǐng bō dǎ,Please dial,Por favor marque,Veuillez composer,Por favor disque,Hãy quay số,กรุณากด,[TRANSLATE_KM],Silakan hubungi,Sila dail,Mangyaring i -dial
-已接通,yǐ jiē tōng,Connected,Conectado,Connecté,Conectado,Đã kết nối,เชื่อมต่อ,[TRANSLATE_KM],Terhubung,Disambungkan,Nakakonekta
-无法接通,wú fǎ jiē tōng,Unable to connect,No se puede conectar,Impossible de se connecter,Não foi possível conectar,Không thể kết nối,ไม่สามารถเชื่อมต่อได้,[TRANSLATE_KM],Tidak dapat terhubung,Tidak dapat menyambung,Hindi kumonekta
+听语音,tīng yǔ yīn,Listen to voice,Escuchar voz,Écouter la voix,Ouça a voz,Nghe giọng nói,ฟังเสียง,ការហៅទូរសព្ទ,Dengarkan suara,Dengarkan suara,Makinig sa boses
+忙线中,máng xiàn zhōng,Busy,Ocupado,Occupé,Ocupado,Bận,ไม่ว่าง,ទូរសព្ទចូល,Sibuk,Sibuk,Abala
+电话忙线,diàn huà máng xiàn,Phone busy,Teléfono ocupado,Téléphone occupé,Telefone ocupado,Điện thoại bận,โทรศัพท์ไม่ว่าง,ទូរសព្ទចេញ,Telepon sibuk,Telefon sibuk,Abala sa telepono
+拨打电话,bō dǎ diàn huà,Make a call,Hacer una llamada,Passer un appel,Faça uma ligação,Thực hiện cuộc gọi,โทรออก,រង់ចាំខ្សែទូរសព្ទ,Lakukan panggilan,Buat panggilan,Tumawag
+请拨打,qǐng bō dǎ,Please dial,Por favor marque,Veuillez composer,Por favor disque,Hãy quay số,กรุณากด,ទូរសព្ទរវល់,Silakan hubungi,Sila dail,Mangyaring i -dial
+已接通,yǐ jiē tōng,Connected,Conectado,Connecté,Conectado,Đã kết nối,เชื่อมต่อ,ទូរសព្ទដាច់,Terhubung,Disambungkan,Nakakonekta
+无法接通,wú fǎ jiē tōng,Unable to connect,No se puede conectar,Impossible de se connecter,Não foi possível conectar,Không thể kết nối,ไม่สามารถเชื่อมต่อได้,ទូរសព្ទទៅវិញទៅមក,Tidak dapat terhubung,Tidak dapat menyambung,Hindi kumonekta

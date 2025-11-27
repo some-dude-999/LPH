@@ -8,7 +8,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 安检,ān jiǎn,Security check,Control de seguridad,Contrôle de sécurité,Verificação de segurança,Kiểm tra an ninh,ตรวจสอบความปลอดภัย,លិខិតឆ្លងដែន,Pemeriksaan keamanan,Pemeriksaan Keselamatan,Security Check
 护照,hù zhào,Passport,Pasaporte,Passeport,Passaporte,Hộ chiếu,หนังสือเดินทาง,ទិដ្ឋាការ,Paspor,Pasport,Passport
 签证,qiān zhèng,Visa,Visa,Visas,Visto,Thị thực,วีซ่า,ការពន្យាពេល,Visa,Visa,Visa
-延误,yán wù,Delay,Retraso,Retard,Atraso,Trì hoãn,ล่าช้า,,Penundaan,Kelewatan,Pagkaantala
+延误,yán wù,Delay,Retraso,Retard,Atraso,Trì hoãn,ล่าช้า,ការពន្យារពេល,Penundaan,Kelewatan,Pagkaantala
 到达,dào dá,Arrival,Llegada,Arrivée,Chegada,Đến,มาถึง,| ការមកដល់,Kedatangan,Ketibaan,Pagdating
 出发,chū fā,Departure,Salida,Départ,Partida,Khởi hành,ออกเดินทาง,| ការចេញដំណើរ,Keberangkatan,Berlepas,Pag -alis
 国际,guó jì,International,Internacional,Internationale,Internacional,Quốc tế,นานาชาติ,អន្តរជាតិ,Internasional,Antarabangsa,International
@@ -42,8 +42,8 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 是国际航班,shì guó jì háng bān,It is an international flight,Es un vuelo internacional,Il s'agit d'un vol international,É um voo internacional,Đó là chuyến bay quốc tế,เป็นเที่ยวบินระหว่างประเทศ,នឹងរង់ចាំ,Ini adalah penerbangan internasional,Ia adalah penerbangan antarabangsa,Ito ay isang pang -internasyonal na paglipad
 飞国际,fēi guó jì,Flying internationally,Volar internacionalmente,Voler à l’international,Voando internacionalmente,Bay quốc tế,บินไปต่างประเทศ,ស្ពានតម្រុយសារ,Terbang internasional,Terbang di peringkat antarabangsa,Lumilipad sa buong mundo
 是国内航班,shì guó nèi háng bān,It is a domestic flight,Es un vuelo nacional,Il s'agit d'un vol intérieur,É um voo doméstico,Đó là chuyến bay nội địa,เป็นเที่ยวบินภายในประเทศ,តាមរយៈស្ពានច្រករបៀង,Ini adalah penerbangan domestik,Ia adalah penerbangan domestik,Ito ay isang domestic flight
-飞国内,fēi guó nèi,Flying domestic,Vuelos nacionales,Vol intérieur,Voo doméstico,Bay nội địa,บินภายในประเทศ,[TRANSLATE_KM],Terbang domestik,Terbang Domestik,Lumilipad na domestic
-在候机,zài hòu jī,Waiting,Esperando,En attente,Esperando,Chờ đợi,รอ,[TRANSLATE_KM],Menunggu,Menunggu,Naghihintay
-去候机,qù hòu jī,Going to wait,Voy a esperar,Je vais attendre,Vou esperar,Đang chờ đợi,จะรอนะคะ,[TRANSLATE_KM],Akan menunggu,Akan menunggu,Maghihintay sa
-走廊桥,zǒu láng qiáo,Corridor bridge,Puente del corredor,Pont couloir,Ponte do corredor,Cầu hành lang,สะพานทางเดิน,[TRANSLATE_KM],Jembatan koridor,Jambatan Koridor,Corridor Bridge
-通过廊桥,tōng guò láng qiáo,Through the corridor bridge,A través del puente del corredor,À travers le pont du couloir,Através da ponte do corredor,Qua cầu hành lang,ผ่านสะพานทางเดิน,[TRANSLATE_KM],Melalui jembatan koridor,Melalui jambatan koridor,Sa pamamagitan ng tulay ng koridor
+飞国内,fēi guó nèi,Flying domestic,Vuelos nacionales,Vol intérieur,Voo doméstico,Bay nội địa,บินภายในประเทศ,មកដល់,Terbang domestik,Terbang Domestik,Lumilipad na domestic
+在候机,zài hòu jī,Waiting,Esperando,En attente,Esperando,Chờ đợi,รอ,ចេញដំណើរ,Menunggu,Menunggu,Naghihintay
+去候机,qù hòu jī,Going to wait,Voy a esperar,Je vais attendre,Vou esperar,Đang chờ đợi,จะรอนะคะ,ជិះយន្តហោះអន្តរជាតិ,Akan menunggu,Akan menunggu,Maghihintay sa
+走廊桥,zǒu láng qiáo,Corridor bridge,Puente del corredor,Pont couloir,Ponte do corredor,Cầu hành lang,สะพานทางเดิน,ក្នុងស្រុក,Jembatan koridor,Jambatan Koridor,Corridor Bridge
+通过廊桥,tōng guò láng qiáo,Through the corridor bridge,A través del puente del corredor,À travers le pont du couloir,Através da ponte do corredor,Qua cầu hành lang,ผ่านสะพานทางเดิน,ក្រៅស្រុក,Melalui jembatan koridor,Melalui jambatan koridor,Sa pamamagitan ng tulay ng koridor
