@@ -1593,7 +1593,7 @@ Then check EVERY ROW, EVERY COLUMN:
    - Column 1 (spanish): SACRED - Don't question this. It's the correct word for the theme.
    - Column 2 (english): Does it match the INTENDED MEANING for this theme? Natural?
    - Column 3 (chinese): Does it match the INTENDED MEANING for this theme? Simplified only?
-   - Column 4 (pinyin): 1 syllable per character? Correct tones? Spaces?
+   - Column 4 (pinyin): 1 syllable per character? Correct tones? Spaces? COMMA PLACEMENT CORRECT?
    - Column 5 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
 
 ⚠️⚠️⚠️ THE CRITICAL ISSUE: WRONG MEANINGS FROM AUTO-TRANSLATION ⚠️⚠️⚠️
@@ -1614,6 +1614,26 @@ Column 1: "copa" ← CORRECT word for theme (wine glass)
 Column 2 (english): "trophy" ← WRONG! (copa = trophy in sports context)
 Column 2 SHOULD BE: "wine glass" ← CORRECT! (drinking vessel)
 
+⚠️⚠️⚠️ PINYIN COMMA CONVENTION - CRITICAL! ⚠️⚠️⚠️
+
+Commas in pinyin MUST align with commas in Chinese characters!
+
+✅ CORRECT:
+Chinese: 是的，先生
+Pinyin:  shì de，xiān shēng
+(Comma appears AFTER "的" and AFTER "de" - same block)
+
+❌ WRONG:
+Chinese: 是的，先生
+Pinyin:  shì de, xiān shēng
+(Space before comma in pinyin - won't align!)
+
+WHY: Pinyin displays directly under Chinese characters in the game.
+Comma placement must match for vertical alignment.
+
+RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
+NO space before comma in pinyin!
+
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
 □ Did auto-translation pick the RIGHT definition of this word?
@@ -1621,6 +1641,7 @@ QUALITY CHECK FOR EACH TRANSLATION:
 □ Would a NATIVE SPEAKER actually use this phrase?
 □ Is the grammar CORRECT?
 □ Are special characters/accents CORRECT? (á, é, í, ó, ú, ñ, ü)
+□ Pinyin commas aligned with Chinese commas? (的，→ de，)
 
 SCORING SCALE:
   10 = Perfect (no issues at all - every translation is excellent)
@@ -1632,74 +1653,98 @@ SCORING SCALE:
 === STEP 3: UPDATE THE TRANSLATION ERRORS CSV ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📝 EDIT: SpanishWords/SpanishWordsTranslationErrors.csv         ║
-║                                                                  ║
-║  This CSV tracks scores and issues for ALL 250 packs.           ║
-║  Your job: Fill in the Score and Issues columns for EVERY pack. ║
+║  📝 EDIT TWO FILES FOR EACH PACK:                                ║
+║  1. SpanishWords/SpanishWordsTranslationErrors.csv               ║
+║  2. SpanishWords/SpanishFixTable.csv                             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+=== FILE 1: TranslationErrors.csv ===
 The CSV has these columns:
 | Column | Description |
 |--------|-------------|
 | Pack_Number | Pack number (1-250) - DO NOT EDIT |
 | Pack_Title | Title of the pack - DO NOT EDIT |
 | Difficulty_Act | Act assignment - DO NOT EDIT |
-| Score | YOUR SCORE (1-10) - FILL THIS IN |
-| Issues | WHAT'S WRONG - FILL THIS IN |
+| Issue_Count | NUMBER of issues found - FILL THIS IN |
+| Issues | BRIEF SUMMARY of issues - FILL THIS IN |
+
+=== FILE 2: SpanishFixTable.csv ===
+For EACH issue you find, add a row to the fix table:
+| Column | Description |
+|--------|-------------|
+| Language | "spanish" (pre-filled by init script) |
+| Pack_Number | Pack number (pre-filled by init script) |
+| Row_Number | Row number in breakout CSV (YOU FILL) |
+| Column_Name | Column to fix (YOU FILL) |
+| Old_Value | Current incorrect value (YOU FILL) |
+| New_Value | Correct value (YOU FILL) |
+| Reason | Why this fix is needed (YOU FILL) |
 
 FOR EACH PACK (1-250):
 1. Read the breakout CSV: SpanishWords/SpanishWords{N}.csv
 2. Evaluate all translations carefully - BE EXTREMELY NITPICKY
-3. Assign a score (1-10)
-4. Write EVERY SINGLE ISSUE you find - no matter how small
-5. Update the row in SpanishWordsTranslationErrors.csv
+3. Count issues and write brief summary in TranslationErrors.csv
+4. For EACH issue, add a row to SpanishFixTable.csv with the fix details
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  ⚠️  BE BRUTALLY DETAILED IN THE ISSUES COLUMN                   ║
+║  💡 THE FIX TABLE IS WHERE PRECISION HAPPENS!                    ║
 ║                                                                  ║
-║  For EACH issue you find, write:                                 ║
-║  - Exact row number                                              ║
-║  - Exact column name                                             ║
-║  - What's wrong                                                  ║
-║  - What it should be (if you know)                               ║
+║  TranslationErrors.csv = High-level summary (Issue_Count)        ║
+║  SpanishFixTable.csv = Surgical details for bulk apply           ║
 ║                                                                  ║
-║  Example: "Row 3 pinyin: missing space (你好 → nǐ hǎo)"          ║
-║  Example: "Row 7 english: awkward 'I go to home'"                ║
-║  Example: "Row 12 portuguese: missing accent (irmao → irmão)"    ║
-║                                                                  ║
-║  DO NOT just say "several issues" - LIST EVERY SINGLE ONE!       ║
+║  For EACH issue you find:                                        ║
+║  1. Increment Issue_Count in TranslationErrors.csv               ║
+║  2. Add a fix row to SpanishFixTable.csv with exact details      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-Example of filled-in rows:
-Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
-1,Greetings & Goodbyes,Act I: Foundation,9,"Row 5 english: awkward 'hello how you do' → 'how are you'"
-2,Yes No & Agreement,Act I: Foundation,10,None
-3,Numbers 0-10,Act I: Foundation,7,"Row 3 chinese: wrong character (一 → 壹); Row 8 portuguese: empty cell needs translation; Row 12 pinyin: missing space"
-4,Asking Questions,Act I: Foundation,6,"Row 2 english: has [brackets]; Row 5 pinyin: wrong tone; Row 7 portuguese: missing tilde; Row 9 chinese: traditional not simplified; Row 11 english: too formal"
+=== EXAMPLE: TranslationErrors.csv ===
+Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
+1,Greetings & Goodbyes,Act I: Foundation,1,"Pinyin spacing"
+2,Yes No & Agreement,Act I: Foundation,0,None
+3,Numbers 0-10,Act I: Foundation,3,"Wrong meanings, formatting"
+4,Asking Questions,Act I: Foundation,6,"Multiple translation errors"
 
-⛔ EVERY ROW MUST HAVE A SCORE. NO EMPTY SCORES ALLOWED! ⛔
-⛔ EVERY ISSUE MUST BE DOCUMENTED IN DETAIL! ⛔
+=== EXAMPLE: SpanishFixTable.csv ===
+Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing space between syllables
+spanish,3,3,english,one (1),one,Remove parenthetical - unnecessary
+spanish,3,8,portuguese,,tradução,Empty cell - needs translation
+spanish,3,12,pinyin,yī èr sān,yī èr sān，,Missing comma after sān
+spanish,4,2,english,[greeting],hello,Has brackets - failed auto-translation
+spanish,4,5,pinyin,shí,shì,Wrong tone (shí → shì)
 
-=== STEP 4: SUMMARY COUNTS ===
+⛔ EVERY PACK MUST HAVE Issue_Count filled in! ⛔
+⛔ EVERY ISSUE MUST HAVE A FIX ROW IN SpanishFixTable.csv! ⛔
+
+=== STEP 4: APPLY FIXES (BULK OPERATION) ===
+
+After completing the fix table:
+1. Review SpanishFixTable.csv for accuracy
+2. Run: python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTable.csv
+3. All fixes apply in seconds (hundreds of changes at once!)
+4. Validate with existing checkers
+5. Commit and PR to main
+
+=== STEP 5: SUMMARY COUNTS ===
 
 | Metric | Count |
 |--------|-------|
-| Packs scoring 10/10 | X |
-| Packs scoring 9/10 | X |
-| Packs scoring 8/10 | X |
-| Packs scoring 7/10 | X |
-| Packs scoring 6 or below | X |
-| TOTAL PACKS NEEDING FIXES (below 9) | X |
+| Packs with 0 issues | X |
+| Packs with 1-5 issues | X |
+| Packs with 6-10 issues | X |
+| Packs with 11+ issues | X |
+| TOTAL PACKS NEEDING FIXES (Issue_Count > 0) | X |
+| TOTAL FIXES IN FIX TABLE | X |
 
-=== STEP 5: IMPROVEMENT PLAN (for Stage 3B) ===
-
-List ALL packs scoring below 9, ordered by priority (worst scores first):
-
-| Priority | Pack | Score | Row | Column | Issue | Proposed Fix |
-|----------|------|-------|-----|--------|-------|--------------|
-| 1 | SpanishWords23.csv | 5/10 | 3 | pinyin | "nǐhǎo" no space | Add space: "nǐ hǎo" |
-| 2 | SpanishWords45.csv | 6/10 | 12 | english | awkward phrasing | Rewrite naturally |
-| ... | ... | ... | ... | ... | ... | ... |
+=== FINAL OUTPUT CHECKLIST ===
+| Requirement | Status |
+|-------------|--------|
+| All 250 packs evaluated | ✓/✗ |
+| TranslationErrors.csv: All Issue_Count filled | ✓/✗ |
+| SpanishFixTable.csv: One row per issue | ✓/✗ |
+| Fixes applied with apply_fixes.py | ✓/✗ |
+| Validation scripts pass | ✓/✗ |
+| Changes committed and PRed | ✓/✗ |
 
 Spanish Acts (250 packs total):
 - Act I (Foundation): Packs 1-50
@@ -1951,7 +1996,7 @@ FOR EACH PACK, use Read tool: Read("EnglishWords/EnglishWords{N}.csv")
 Then check EVERY ROW, EVERY COLUMN:
    - Column 1 (english): SACRED - Don't question this. It's the correct word for the theme.
    - Column 2 (chinese): Does it match the INTENDED MEANING for this theme? Simplified only?
-   - Column 3 (pinyin): 1 syllable per character? Correct tones? Spaces?
+   - Column 3 (pinyin): 1 syllable per character? Correct tones? Spaces? COMMA PLACEMENT CORRECT?
    - Column 4 (spanish): Does it match the INTENDED MEANING for this theme? Natural?
    - Column 5 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
 
@@ -1973,6 +2018,26 @@ Column 1: "bat" ← CORRECT word for theme (flying mammal)
 Column 2 (chinese): "球棒" ← WRONG! (sports equipment)
 Column 2 SHOULD BE: "蝙蝠" ← CORRECT! (the animal)
 
+⚠️⚠️⚠️ PINYIN COMMA CONVENTION - CRITICAL! ⚠️⚠️⚠️
+
+Commas in pinyin MUST align with commas in Chinese characters!
+
+✅ CORRECT:
+Chinese: 是的，先生
+Pinyin:  shì de，xiān shēng
+(Comma appears AFTER "的" and AFTER "de" - same block)
+
+❌ WRONG:
+Chinese: 是的，先生
+Pinyin:  shì de, xiān shēng
+(Space before comma in pinyin - won't align!)
+
+WHY: Pinyin displays directly under Chinese characters in the game.
+Comma placement must match for vertical alignment.
+
+RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
+NO space before comma in pinyin!
+
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
 □ Did auto-translation pick the RIGHT definition of this word?
@@ -1980,6 +2045,7 @@ QUALITY CHECK FOR EACH TRANSLATION:
 □ Would a NATIVE SPEAKER actually use this phrase?
 □ Is the grammar CORRECT?
 □ Are special characters/accents CORRECT?
+□ Pinyin commas aligned with Chinese commas? (的，→ de，)
 
 SCORING SCALE:
   10 = Perfect (no issues at all - every translation is excellent)
@@ -1991,30 +2057,101 @@ SCORING SCALE:
 === STEP 3: UPDATE THE TRANSLATION ERRORS CSV ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📝 EDIT: EnglishWords/EnglishWordsTranslationErrors.csv         ║
-║                                                                  ║
-║  This CSV tracks scores and issues for ALL 160 packs.           ║
-║  Your job: Fill in the Score and Issues columns for EVERY pack. ║
+║  📝 EDIT TWO FILES FOR EACH PACK:                                ║
+║  1. EnglishWords/EnglishWordsTranslationErrors.csv               ║
+║  2. EnglishWords/EnglishFixTable.csv                             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+=== FILE 1: TranslationErrors.csv ===
 The CSV has these columns:
 | Column | Description |
 |--------|-------------|
 | Pack_Number | Pack number (1-160) - DO NOT EDIT |
 | Pack_Title | Title of the pack - DO NOT EDIT |
 | Difficulty_Act | Act assignment - DO NOT EDIT |
-| Score | YOUR SCORE (1-10) - FILL THIS IN |
-| Issues | WHAT'S WRONG - FILL THIS IN |
+| Issue_Count | NUMBER of issues found - FILL THIS IN |
+| Issues | BRIEF SUMMARY of issues - FILL THIS IN |
+
+=== FILE 2: EnglishFixTable.csv ===
+For EACH issue you find, add a row to the fix table:
+| Column | Description |
+|--------|-------------|
+| Language | "english" (pre-filled by init script) |
+| Pack_Number | Pack number (pre-filled by init script) |
+| Row_Number | Row number in breakout CSV (YOU FILL) |
+| Column_Name | Column to fix (YOU FILL) |
+| Old_Value | Current incorrect value (YOU FILL) |
+| New_Value | Correct value (YOU FILL) |
+| Reason | Why this fix is needed (YOU FILL) |
 
 FOR EACH PACK (1-160):
 1. Read the breakout CSV: EnglishWords/EnglishWords{N}.csv
 2. Evaluate all translations carefully - BE EXTREMELY NITPICKY
-3. Assign a score (1-10)
-4. Write EVERY SINGLE ISSUE you find - no matter how small
-5. Update the row in EnglishWordsTranslationErrors.csv
+3. Count issues and write brief summary in TranslationErrors.csv
+4. For EACH issue, add a row to EnglishFixTable.csv with the fix details
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  ⚠️  BE BRUTALLY DETAILED IN THE ISSUES COLUMN                   ║
+║  💡 THE FIX TABLE IS WHERE PRECISION HAPPENS!                    ║
+║                                                                  ║
+║  TranslationErrors.csv = High-level summary (Issue_Count)        ║
+║  EnglishFixTable.csv = Surgical details for bulk apply           ║
+║                                                                  ║
+║  For EACH issue you find:                                        ║
+║  1. Increment Issue_Count in TranslationErrors.csv               ║
+║  2. Add a fix row to EnglishFixTable.csv with exact details      ║
+╚══════════════════════════════════════════════════════════════════╝
+
+=== EXAMPLE: TranslationErrors.csv ===
+Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
+1,Greetings & Basic Phrases,Act I: Foundation,1,"Pinyin spacing"
+2,Personal Pronouns,Act I: Foundation,0,None
+3,Question Words,Act I: Foundation,3,"Wrong meanings, formatting"
+4,Common Verbs,Act I: Foundation,5,"Multiple translation errors"
+
+=== EXAMPLE: EnglishFixTable.csv ===
+Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
+english,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing space between syllables
+english,3,3,chinese,蝙蝠,球棒,Wrong meaning - sports equipment not animal
+english,3,8,spanish,,bate,Empty cell - needs translation
+english,3,12,pinyin,yī èr sān,yī èr sān，,Missing comma after sān
+english,4,2,chinese,[word],你好,Has brackets - failed auto-translation
+english,4,5,pinyin,shí,shì,Wrong tone (shí → shì)
+
+⛔ EVERY PACK MUST HAVE Issue_Count filled in! ⛔
+⛔ EVERY ISSUE MUST HAVE A FIX ROW IN EnglishFixTable.csv! ⛔
+
+=== STEP 4: APPLY FIXES (BULK OPERATION) ===
+
+After completing the fix table:
+1. Review EnglishFixTable.csv for accuracy
+2. Run: python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTable.csv
+3. All fixes apply in seconds (hundreds of changes at once!)
+4. Validate with existing checkers
+5. Commit and PR to main
+
+=== STEP 5: SUMMARY COUNTS ===
+
+| Metric | Count |
+|--------|-------|
+| Packs with 0 issues | X |
+| Packs with 1-5 issues | X |
+| Packs with 6-10 issues | X |
+| Packs with 11+ issues | X |
+| TOTAL PACKS NEEDING FIXES (Issue_Count > 0) | X |
+| TOTAL FIXES IN FIX TABLE | X |
+
+=== FINAL OUTPUT CHECKLIST ===
+| Requirement | Status |
+|-------------|--------|
+| All 160 packs evaluated | ✓/✗ |
+| TranslationErrors.csv: All Issue_Count filled | ✓/✗ |
+| EnglishFixTable.csv: One row per issue | ✓/✗ |
+| Fixes applied with apply_fixes.py | ✓/✗ |
+| Validation scripts pass | ✓/✗ |
+| Changes committed and PRed | ✓/✗ |
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔⛔⛔ YOU MUST EVALUATE ALL 160 PACKS ⛔⛔⛔                   ║
 ║                                                                  ║
 ║  For EACH issue you find, write:                                 ║
 ║  - Exact row number                                              ║
