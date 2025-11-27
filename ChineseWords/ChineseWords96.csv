@@ -3,12 +3,12 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 难题,nán tí,Problem,Problema,Problème,Problema,Vấn đề,ปัญหา,បញ្ហា,Masalah,Masalah,Suliranin
 难处,nán chǔ,Difficulty,Dificultad,Difficulté,Dificuldade,Độ khó,ความยาก,ការលំបាក,Kesulitan,Kesukaran,Kahirapan
 障碍,zhàng ài,Obstacle,Obstáculo,Obstacles,Obstáculo,Chướng ngại vật,อุปสรรค,ឧបសគ្គ,Hambatan,Halangan,Obstacle
-困境,kùn jìng,Dilemma,Dilema,Dilemme,Dilema,Vấn đề nan giải,ภาวะที่กลืนไม่เข้าคายไม่ออก,ការលំបាក || វិបត្តិ,Dilema,Dilema,Dilemma
+困境,kùn jìng,Dilemma,Dilema,Dilemme,Dilema,Vấn đề nan giải,ภาวะที่กลืนไม่เข้าคายไม่ออก,ស្ថានភាពលំបាក,Dilema,Dilema,Dilemma
 危机,wēi jī,Crisis,Crisis,Crise,Crise,Khủng hoảng,วิกฤติ,កំហុស,Krisis,Krisis,Krisis
 差错,chā cuò,Error,Error,Erreur,Erro,Lỗi,เกิดข้อผิดพลาด,ការបរាជ័យ,Kesalahan,Ralat,Error
 故障,gù zhàng,Failure,Fracaso,Échec,Falha,Thất bại,ความล้มเหลว,ពិការភាព,Kegagalan,Kegagalan,Pagkabigo
-缺陷,quē xiàn,Defect,Defecto,Défaut,Defeito,Khiếm khuyết,ข้อบกพร่อง,ការពឹងផ្អែកលើការ|| ធ្ងន់ធ្ងរ,Cacat,Kecacatan,DEFECT
-不足,bù zú,Insufficiency,Insuficiencia,Insuffisance,Insuficiência,Thiếu,ความไม่เพียงพอ,| បញ្ហា,Ketidakcukupan,Kekurangan,Kakulangan
+缺陷,quē xiàn,Defect,Defecto,Défaut,Defeito,Khiếm khuyết,ข้อบกพร่อง,ពិការភាព,Cacat,Kecacatan,DEFECT
+不足,bù zú,Insufficiency,Insuficiencia,Insuffisance,Insuficiência,Thiếu,ความไม่เพียงพอ,មិនគ្រប់គ្រាន់,Ketidakcukupan,Kekurangan,Kakulangan
 严重,yán zhòng,Serious,Serio,Sérieux,Sério,Nghiêm túc,จริงจัง,ស្មុគស្មាញ,Serius,Serius,Seryoso
 棘手,jí shǒu,Troublesome,Molesto,Gênant,Problemático,Rắc rối,ลำบากใจ,អាក្រក់,Merepotkan,Menyusahkan,Nakakagambala
 复杂,fù zá,Complex,Complejo,Complexe,Complexo,Phức tạp,คอมเพล็กซ์,ការជំនះការលំបាក,Kompleks,Kompleks,Kumplikado
@@ -18,13 +18,13 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 破解难题,pò jiě nán tí,Solving problems,Resolver problemas,Résoudre les problèmes,Resolvendo problemas,Giải quyết vấn đề,การแก้ปัญหา,នីមួយៗមានការលំបាករបស់ខ្លួន,Memecahkan masalah,Menyelesaikan masalah,Paglutas ng mga problema
 世界难题,shì jiè nán tí,World problems,Problemas mundiales,Problèmes mondiaux,Problemas mundiais,Các vấn đề của thế giới,ปัญหาโลก,ការលំបាកដែលមិនអាចពន្យល់បាន,Masalah dunia,Masalah Dunia,Mga problema sa mundo
 各有难处,gè yǒu nán chǔ,Each has its own difficulties,Cada uno tiene sus propias dificultades,Chacun a ses propres difficultés,Cada um tem suas dificuldades,Mỗi người đều có những khó khăn riêng,แต่ละคนก็มีปัญหาของตัวเอง,ឧបសគ្គភាសា,Masing-masing punya kesulitannya masing-masing,Masing -masing mempunyai kesukaran tersendiri,Ang bawat isa ay may sariling mga paghihirap
-说不出的难处,shuō bù chū de nán chǔ,Unspeakable difficulties,Dificultades indescriptibles,Des difficultés indicibles,Dificuldades indescritíveis,Khó khăn không thể tả,ความยากลำบากที่บรรยายไม่ได้,ដកឧបសគ្គ || ធ្លាក់ខ្លួនទៅរកបញ្ហា,Kesulitan yang tak terkatakan,Kesukaran yang tidak terkatakan,Hindi masabi na mga paghihirap
+说不出的难处,shuō bù chū de nán chǔ,Unspeakable difficulties,Dificultades indescriptibles,Des difficultés indicibles,Dificuldades indescritíveis,Khó khăn không thể tả,ความยากลำบากที่บรรยายไม่ได้,ការលំបាកដែលមិនអាចពន្យល់បាន,Kesulitan yang tak terkatakan,Kesukaran yang tidak terkatakan,Hindi masabi na mga paghihirap
 语言障碍,yǔ yán zhàng ài,Language barrier,Barrera del idioma,Barrière de la langue,Barreira linguística,Rào cản ngôn ngữ,อุปสรรคทางภาษา,ចេញពីបញ្ហា,Kendala bahasa,Barrier Bahasa,HARRIER NG WIKA
 扫除障碍,sǎo chú zhàng ài,Remove obstacles,Eliminar obstáculos,Supprimer les obstacles,Remover obstáculos,Loại bỏ chướng ngại vật,ขจัดอุปสรรค,វិបត្តិសេដ្ឋកិច្ច,Hilangkan rintangan,Keluarkan halangan,Alisin ang mga hadlang
 陷入困境,xiàn rù kùn jìng,Fall into trouble,Caer en problemas,Tomber dans le pétrin,Ter problemas,Rơi vào rắc rối,ตกอยู่ในปัญหา,ការដោះស្រាយវិបត្តិ,Terjerumus dalam masalah,Jatuh ke dalam masalah,Mahulog sa problema
 走出困境,zǒu chū kùn jìng,Get out of trouble,Sal del problema,Sortez du pétrin,Saia dos problemas,Thoát khỏi rắc rối,หมดปัญหา,មានអ្វីខុស,Keluar dari masalah,Keluar dari masalah,Lumabas sa problema
 经济危机,jīng jì wēi jī,Economic crisis,Crisis económica,Crise économique,Crise económica,Khủng hoảng kinh tế,วิกฤตเศรษฐกิจ,កែកំហុស,Krisis ekonomi,Krisis Ekonomi,Krisis sa ekonomiya
-化解危机,huà jiě wēi jī,Resolve the crisis,Resolver la crisis,Résoudre la crise,Resolver a crise,Giải quyết khủng hoảng,แก้วิกฤติ,| ការបរាជ័យរបស់ម៉ាស៊ីន,Selesaikan krisis,Selesaikan krisis,Malutas ang krisis
+化解危机,huà jiě wēi jī,Resolve the crisis,Resolver la crisis,Résoudre la crise,Resolver a crise,Giải quyết khủng hoảng,แก้วิกฤติ,ដោះស្រាយវិបត្តិ,Selesaikan krisis,Selesaikan krisis,Malutas ang krisis
 出了差错,chū le chā cuò,Something went wrong,Algo salió mal,Quelque chose s'est mal passé,Algo deu errado,Đã xảy ra lỗi,เกิดข้อผิดพลาดบางอย่าง,ការដោះស្រាយបញ្ហា,Ada yang tidak beres,Sesuatu yang tidak kena,May mali
 纠正差错,jiū zhèng chā cuò,Correct the error,Corregir el error,Corrigez l'erreur,Corrija o erro,Sửa lỗi,แก้ไขข้อผิดพลาด,គុណវិបត្តិនៃលក្ខណៈ,Perbaiki kesalahannya,Betulkan ralat,Itama ang error
 机器故障,jī qì gù zhàng,Machine failure,Fallo de la máquina,Panne de machine,Falha da máquina,Máy bị lỗi,เครื่องขัดข้อง,ពិការភាពពីកំណើត,Kegagalan mesin,Kegagalan mesin,Pagkabigo ng makina
