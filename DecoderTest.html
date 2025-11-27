@@ -2944,8 +2944,13 @@
             1. Typing input box (initialized with "XXXX XXXXX" format)
             2. Wrong letters column (displays struck-through wrong attempts)
             3. Wrong count column (displays total wrong attempts)
+
+            KEY FEATURE: For Chinese, type PINYIN (word[1]) instead of characters (word[0])
+            - Ignores spaces (like Spanish/English typing modes)
+            - Accepts any variant of accented letters (ā, á, ǎ, à -> a)
           */
-          const correctWord = word[0];
+          // For Chinese: use pinyin (word[1]); for other languages: use target word (word[0])
+          const correctWord = (state.currentLanguage === 'Chinese') ? word[1] : word[0];
 
           // COLUMN: Typing input box
           const typingCell = document.createElement('td');
