@@ -7,12 +7,12 @@ templo,temple,寺庙,sì miào,templo
 mezquita,mosque,清真寺,qīng zhēn sì,mesquita
 sinagoga,synagogue,犹太教堂,yóu tài jiào táng,sinagoga
 sacerdote,priest,牧师,mù shī,sacerdote
-cura,cure,治愈,zhì yù,cura
+cura,priest,神父,shén fù,padre
 rabino,rabbi,拉比,lā bǐ,rabino
-imán,magnet,磁铁,cí tiě,ímã
+imán,imam,伊玛目,yī mǎ mù,imã
 rezar,pray,祈祷,qí dǎo,orar
 orar,pray,祈祷,qí dǎo,orar
-oración,sentence,句子,jù zi,frase
+oración,prayer,祈祷,qí dǎo,oração
 santo,holy,神圣,shén shèng,santo
 santa,holy,神圣,shén shèng,santo
 bendecir,bless,保佑,bǎo yòu,abençoe
@@ -39,14 +39,14 @@ el cura,the priest,牧师,mù shī,o padre
 un cura,a priest,牧师,mù shī,um padre
 el rabino,the rabbi,拉比,lā bǐ,o rabino
 un rabino,a rabbi,拉比,lā bǐ,um rabino
-el imán,the magnet,磁铁,cí tiě,o ímã
-un imán,a magnet,磁铁,cí tiě,um ímã
+el imán,the imam,伊玛目,yī mǎ mù,o imã
+un imán,an imam,伊玛目,yī mǎ mù,um imã
 hay que rezar,you have to pray,你必须祈祷,nǐ bì xū qí dǎo,você tem que orar
 voy a rezar,I'm going to pray,我要祈祷,wǒ yào qí dǎo,Vou orar
 hay que orar,you have to pray,你必须祈祷,nǐ bì xū qí dǎo,você tem que orar
 voy a orar,I'm going to pray,我要祈祷,wǒ yào qí dǎo,Vou orar
-la oración,the sentence,这句话,zhè jù huà,a frase
-una oración,a sentence,一句话,yī jù huà,uma frase
+la oración,the prayer,祈祷,qí dǎo,a oração
+una oración,a prayer,祈祷,qí dǎo,uma oração
 el santo,the saint,圣人,shèng rén,o santo
 un santo,a saint,圣人,shèng rén,um santo
 la santa,the saint,圣人,shèng rén,o santo
