@@ -1,161 +1,161 @@
 Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
-1,Greetings & Basics,Act I: Foundation,10,None
-2,Numbers 1-20,Act I: Foundation,10,None
-3,Numbers & Counting,Act I: Foundation,10,None
-4,Articles & Determiners,Act I: Foundation,10,None
-5,Quantifiers,Act I: Foundation,10,None
-6,Contractions,Act I: Foundation,10,None
-7,Contractions 2,Act I: Foundation,10,None
-8,Common Expressions,Act I: Foundation,10,None
-9,Colors,Act I: Foundation,10,None
-10,Days & Time,Act I: Foundation,10,None
-11,Months & Seasons,Act I: Foundation,10,None
-12,Family,Act I: Foundation,10,None
-13,Body Parts,Act I: Foundation,10,None
-14,Personal Pronouns,Act I: Foundation,10,None
-15,Possessives & Relatives,Act I: Foundation,10,None
-16,Question Words,Act I: Foundation,10,None
-17,Modal Verbs,Act I: Foundation,10,None
-18,Essential Verbs: Be & Have,Act I: Foundation,10,None
-19,Essential Verbs: Go & Come,Act I: Foundation,10,None
-20,Essential Verbs: Common Actions,Act I: Foundation,10,None
-21,Essential Verbs: Daily Actions,Act I: Foundation,10,None
-22,Essential Verbs: Communication,Act I: Foundation,10,None
-23,Irregular Verbs 1,Act I: Foundation,10,None
-24,Irregular Verbs 2,Act I: Foundation,10,None
-25,Irregular Verbs 3,Act I: Foundation,10,None
-26,Irregular Verbs 4,Act I: Foundation,10,None
-27,Essential Adjectives 1,Act I: Foundation,10,None
-28,Essential Adjectives 2,Act I: Foundation,10,None
-29,Basic Emotions,Act I: Foundation,10,None
-30,Common Animals,Act I: Foundation,10,None
-31,Home & Rooms,Act I: Foundation,10,None
-32,Food Basics,Act I: Foundation,10,None
-33,Drinks & Meals,Act I: Foundation,10,None
-34,Clothing,Act I: Foundation,10,None
-35,Weather,Act I: Foundation,10,None
-36,Prepositions of Place,Act I: Foundation,10,None
-37,Prepositions of Time & Other,Act I: Foundation,7,Row 11 empty chinese/pinyin for 'within'
-38,Time Expressions,Act I: Foundation,10,None
-39,Negatives & Limits,Act I: Foundation,10,None
-40,Basic Transportation,Act I: Foundation,10,None
-41,Common Nouns,Act I: Foundation,10,None
-42,More Common Nouns,Act I: Foundation,7,Rows 25/29/53 empty chinese/pinyin (part of/end of/type of)
-43,Places in Town,Act I: Foundation,10,None
-44,Casual & Informal English,Act I: Foundation,10,None
-45,Filler Words & Reactions,Act I: Foundation,10,None
-46,Directions,Act II: Building Blocks,8,Row 39 empty chinese/pinyin for 'across from'
-47,More Transportation,Act II: Building Blocks,10,None
-48,Furniture,Act II: Building Blocks,10,None
-49,Kitchen Items,Act II: Building Blocks,10,None
-50,Bathroom Items,Act II: Building Blocks,10,None
-51,Household Chores,Act II: Building Blocks,10,None
-52,More Food,Act II: Building Blocks,10,None
-53,Fruits,Act II: Building Blocks,10,None
-54,Vegetables,Act II: Building Blocks,10,None
-55,More Clothing,Act II: Building Blocks,10,None
-56,Jobs 1,Act II: Building Blocks,10,None
-57,Jobs 2,Act II: Building Blocks,10,None
-58,More Animals,Act II: Building Blocks,10,None
-59,Nature,Act II: Building Blocks,10,None
-60,Geography,Act II: Building Blocks,10,None
-61,School & Education,Act II: Building Blocks,10,None
-62,Sports,Act II: Building Blocks,10,None
-63,More Sports,Act II: Building Blocks,10,None
-64,Entertainment,Act II: Building Blocks,10,None
-65,More Emotions,Act II: Building Blocks,10,None
-66,Personality,Act II: Building Blocks,10,None
-67,Physical Appearance,Act II: Building Blocks,10,None
-68,Shopping,Act II: Building Blocks,10,None
-69,Money & Banking,Act II: Building Blocks,9,Pinyin for ATM uses English abbreviation (acceptable for proper nouns)
-70,Health,Act II: Building Blocks,10,None
-71,Technology,Act II: Building Blocks,10,None
-72,Verbs of Motion,Act II: Building Blocks,10,None
-73,Verbs of Change,Act II: Building Blocks,10,None
-74,Communication Verbs,Act II: Building Blocks,10,None
-75,Mental Verbs,Act II: Building Blocks,10,None
-76,Adverbs of Manner,Act II: Building Blocks,10,None
-77,Adverbs of Degree,Act II: Building Blocks,10,None
-78,Conjunctions,Act II: Building Blocks,7,Row 8 empty chinese/pinyin for 'after'
-79,Connectors,Act II: Building Blocks,10,None
-80,Phrasal Verbs 1,Act II: Building Blocks,10,None
-81,Phrasal Verbs 2,Act II: Building Blocks,10,None
-82,Travel,Act III: Everyday Life,10,None
-83,Airport & Flying,Act III: Everyday Life,10,None
-84,Hotel,Act III: Everyday Life,10,None
-85,Work & Office,Act III: Everyday Life,10,None
-86,Workplace Actions,Act III: Everyday Life,10,None
-87,Business Communication,Act III: Everyday Life,8,Row 49 empty chinese/pinyin for 'liaise between'
-88,Internet & Social Media,Act III: Everyday Life,10,None
-89,Relationships,Act III: Everyday Life,10,None
-90,Social Interactions,Act III: Everyday Life,10,None
-91,Life Events,Act III: Everyday Life,8,Row 51 empty chinese/pinyin for 'tradition of'
-92,Housing,Act III: Everyday Life,10,None
-93,News & Media,Act III: Everyday Life,10,None
-94,Environment,Act III: Everyday Life,10,None
-95,Cooking Methods,Act III: Everyday Life,10,None
-96,Food Preparation,Act III: Everyday Life,10,None
-97,Restaurant,Act III: Everyday Life,10,None
-98,Movies & TV,Act III: Everyday Life,10,None
-99,Books & Reading,Act III: Everyday Life,8,Row 41 empty chinese/pinyin for 'genre of'
-100,Music & Art,Act III: Everyday Life,10,None
-101,Basic Law & Rules,Act III: Everyday Life,10,None
-102,Government & Citizenship,Act III: Everyday Life,10,None
-103,Opinions & Arguments,Act III: Everyday Life,6,Rows 23/45 empty chinese/pinyin (opinion on/standpoint of)
-104,Problems & Solutions,Act III: Everyday Life,5,Rows 23/33/45/51/53/55 empty chinese/pinyin (6 cells: issue with/solution to/procedure for/possibility of/opportunity for/progress on)
-105,Describing Trends,Act III: Everyday Life,8,Row 59 empty chinese/pinyin for 'decline in'
-106,Common Idioms 1,Act III: Everyday Life,10,None
-107,Common Idioms 2,Act III: Everyday Life,10,None
-108,Phrasal Verbs 3,Act III: Everyday Life,10,None
-109,Phrasal Verbs 4,Act III: Everyday Life,10,None
-110,Collocations - Make & Do,Act III: Everyday Life,10,None
-111,Collocations - Have & Take,Act III: Everyday Life,8,Row 34 empty chinese/pinyin for 'have a problem with'
-112,Collocations - Other,Act III: Everyday Life,10,None
-113,Business Basics,Act IV: Expanding Horizons,8,Row 31 empty chinese/pinyin for 'competition between'
-114,Finance Basics,Act IV: Expanding Horizons,10,None
-115,Marketing & Sales,Act IV: Expanding Horizons,10,None
-116,Science Basics,Act IV: Expanding Horizons,10,None
-117,Biology Basics,Act IV: Expanding Horizons,9,DNA in pinyin uses English abbreviation (acceptable for scientific terms)
-118,Basic Chemistry & Physics,Act IV: Expanding Horizons,10,None
-119,Health & Wellness,Act IV: Expanding Horizons,10,None
-120,Mental Health Basics,Act IV: Expanding Horizons,10,None
-121,Technology Advanced,Act IV: Expanding Horizons,10,None
-122,Academic Writing,Act IV: Expanding Horizons,10,None
-123,Philosophy & Ethics,Act IV: Expanding Horizons,10,None
-124,Abstract Concepts,Act IV: Expanding Horizons,10,None
-125,Cause & Effect,Act IV: Expanding Horizons,10,None
-126,Certainty & Probability,Act IV: Expanding Horizons,10,None
-127,Social Issues,Act IV: Expanding Horizons,10,None
-128,International Relations,Act IV: Expanding Horizons,10,None
-129,Literature,Act IV: Expanding Horizons,10,None
-130,Art & Culture,Act IV: Expanding Horizons,10,None
-131,Formal Vocabulary 1,Act V: Advanced Mastery,10,None
-132,Formal Vocabulary 2,Act V: Advanced Mastery,10,None
-133,Formal Vocabulary 3,Act V: Advanced Mastery,10,None
-134,Formal Vocabulary 4,Act V: Advanced Mastery,10,None
-135,Academic Nouns,Act V: Advanced Mastery,10,None
-136,Academic Adjectives,Act V: Advanced Mastery,10,None
-137,Academic Adjectives 2,Act V: Advanced Mastery,8,Row 33 empty chinese/pinyin for 'integral to'
-138,Everyday Legal,Act V: Advanced Mastery,10,None
-139,Everyday Medical,Act V: Advanced Mastery,10,None
-140,Everyday Finance,Act V: Advanced Mastery,8,Row 31 empty chinese/pinyin for 'budget for'
-141,Research & Statistics,Act V: Advanced Mastery,6,Rows 41/53/59 empty chinese/pinyin (validity of/distribution of/correlation between)
-142,Psychology Basics,Act V: Advanced Mastery,10,None
-143,Sociology Basics,Act V: Advanced Mastery,10,None
-144,Critical Thinking,Act V: Advanced Mastery,10,None
-145,Debate & Argument,Act V: Advanced Mastery,10,None
-146,Negotiation,Act V: Advanced Mastery,10,None
-147,Project Management,Act V: Advanced Mastery,6,Rows 25/31/59 empty chinese/pinyin (timeline for/allocation of/roadmap for)
-148,Business Advanced,Act V: Advanced Mastery,4,Rows 27/29/33/37/45/57/59 empty (7 cells: co-founder of/backer for/valuation of/merger between/model for/scalability of/synergy between)
-149,Environmental Science,Act V: Advanced Mastery,10,None
-150,Literary Devices,Act V: Advanced Mastery,3,Rows 25/29/33/41/43/45/47/49/51/53/59 empty (11 cells with 'X of/for/in/between' patterns)
-151,Advanced Idioms,Act V: Advanced Mastery,10,None
-152,Business Idioms,Act V: Advanced Mastery,10,None
-153,Formal Connectors,Act V: Advanced Mastery,10,None
-154,Advanced Verbs,Act V: Advanced Mastery,10,None
-155,Nuanced Adjectives,Act V: Advanced Mastery,10,None
-156,Question Patterns,Act I: Foundation,10,None
-157,Response Patterns,Act I: Foundation,10,None
-158,Negative Patterns,Act I: Foundation,10,None
-159,Agreement & Disagreement,Act I: Foundation,10,None
-160,Apology & Excuse Patterns,Act II: Building Blocks,7,Rows 33/39/43/45 empty chinese/pinyin (fault of/error in/misunderstanding between/explanation for)
+1,Greetings & Basics,Act I: Foundation,10.0,None
+2,Numbers 1-20,Act I: Foundation,10.0,None
+3,Numbers & Counting,Act I: Foundation,10.0,None
+4,Articles & Determiners,Act I: Foundation,10.0,None
+5,Quantifiers,Act I: Foundation,10.0,None
+6,Contractions,Act I: Foundation,10.0,None
+7,Contractions 2,Act I: Foundation,10.0,None
+8,Common Expressions,Act I: Foundation,10.0,None
+9,Colors,Act I: Foundation,10.0,None
+10,Days & Time,Act I: Foundation,10.0,None
+11,Months & Seasons,Act I: Foundation,10.0,None
+12,Family,Act I: Foundation,10.0,None
+13,Body Parts,Act I: Foundation,10.0,None
+14,Personal Pronouns,Act I: Foundation,10.0,None
+15,Possessives & Relatives,Act I: Foundation,10.0,None
+16,Question Words,Act I: Foundation,10.0,None
+17,Modal Verbs,Act I: Foundation,10.0,None
+18,Essential Verbs: Be & Have,Act I: Foundation,10.0,None
+19,Essential Verbs: Go & Come,Act I: Foundation,10.0,None
+20,Essential Verbs: Common Actions,Act I: Foundation,10.0,None
+21,Essential Verbs: Daily Actions,Act I: Foundation,10.0,None
+22,Essential Verbs: Communication,Act I: Foundation,10.0,None
+23,Irregular Verbs 1,Act I: Foundation,10.0,None
+24,Irregular Verbs 2,Act I: Foundation,10.0,None
+25,Irregular Verbs 3,Act I: Foundation,10.0,None
+26,Irregular Verbs 4,Act I: Foundation,10.0,None
+27,Essential Adjectives 1,Act I: Foundation,10.0,None
+28,Essential Adjectives 2,Act I: Foundation,10.0,None
+29,Basic Emotions,Act I: Foundation,10.0,None
+30,Common Animals,Act I: Foundation,10.0,None
+31,Home & Rooms,Act I: Foundation,10.0,None
+32,Food Basics,Act I: Foundation,10.0,None
+33,Drinks & Meals,Act I: Foundation,10.0,None
+34,Clothing,Act I: Foundation,10.0,None
+35,Weather,Act I: Foundation,10.0,None
+36,Prepositions of Place,Act I: Foundation,10.0,None
+37,Prepositions of Time & Other,Act I: Foundation,10.0,None
+38,Time Expressions,Act I: Foundation,10.0,None
+39,Negatives & Limits,Act I: Foundation,10.0,None
+40,Basic Transportation,Act I: Foundation,10.0,None
+41,Common Nouns,Act I: Foundation,10.0,None
+42,More Common Nouns,Act I: Foundation,10.0,None
+43,Places in Town,Act I: Foundation,10.0,None
+44,Casual & Informal English,Act I: Foundation,10.0,None
+45,Filler Words & Reactions,Act I: Foundation,10.0,None
+46,Directions,Act II: Building Blocks,10.0,None
+47,More Transportation,Act II: Building Blocks,10.0,None
+48,Furniture,Act II: Building Blocks,10.0,None
+49,Kitchen Items,Act II: Building Blocks,10.0,None
+50,Bathroom Items,Act II: Building Blocks,10.0,None
+51,Household Chores,Act II: Building Blocks,10.0,None
+52,More Food,Act II: Building Blocks,10.0,None
+53,Fruits,Act II: Building Blocks,10.0,None
+54,Vegetables,Act II: Building Blocks,10.0,None
+55,More Clothing,Act II: Building Blocks,10.0,None
+56,Jobs 1,Act II: Building Blocks,10.0,None
+57,Jobs 2,Act II: Building Blocks,10.0,None
+58,More Animals,Act II: Building Blocks,10.0,None
+59,Nature,Act II: Building Blocks,10.0,None
+60,Geography,Act II: Building Blocks,10.0,None
+61,School & Education,Act II: Building Blocks,10.0,None
+62,Sports,Act II: Building Blocks,10.0,None
+63,More Sports,Act II: Building Blocks,10.0,None
+64,Entertainment,Act II: Building Blocks,10.0,None
+65,More Emotions,Act II: Building Blocks,10.0,None
+66,Personality,Act II: Building Blocks,10.0,None
+67,Physical Appearance,Act II: Building Blocks,10.0,None
+68,Shopping,Act II: Building Blocks,10.0,None
+69,Money & Banking,Act II: Building Blocks,9.6,Row 56 pinyin: 1 chars but 2 syllables; Row 57 pinyin: 2 chars but 3 syllables
+70,Health,Act II: Building Blocks,10.0,None
+71,Technology,Act II: Building Blocks,10.0,None
+72,Verbs of Motion,Act II: Building Blocks,10.0,None
+73,Verbs of Change,Act II: Building Blocks,10.0,None
+74,Communication Verbs,Act II: Building Blocks,10.0,None
+75,Mental Verbs,Act II: Building Blocks,10.0,None
+76,Adverbs of Manner,Act II: Building Blocks,10.0,None
+77,Adverbs of Degree,Act II: Building Blocks,10.0,None
+78,Conjunctions,Act II: Building Blocks,10.0,None
+79,Connectors,Act II: Building Blocks,10.0,None
+80,Phrasal Verbs 1,Act II: Building Blocks,10.0,None
+81,Phrasal Verbs 2,Act II: Building Blocks,10.0,None
+82,Travel,Act III: Everyday Life,10.0,None
+83,Airport & Flying,Act III: Everyday Life,10.0,None
+84,Hotel,Act III: Everyday Life,10.0,None
+85,Work & Office,Act III: Everyday Life,10.0,None
+86,Workplace Actions,Act III: Everyday Life,10.0,None
+87,Business Communication,Act III: Everyday Life,10.0,None
+88,Internet & Social Media,Act III: Everyday Life,10.0,None
+89,Relationships,Act III: Everyday Life,10.0,None
+90,Social Interactions,Act III: Everyday Life,10.0,None
+91,Life Events,Act III: Everyday Life,10.0,None
+92,Housing,Act III: Everyday Life,10.0,None
+93,News & Media,Act III: Everyday Life,10.0,None
+94,Environment,Act III: Everyday Life,10.0,None
+95,Cooking Methods,Act III: Everyday Life,10.0,None
+96,Food Preparation,Act III: Everyday Life,10.0,None
+97,Restaurant,Act III: Everyday Life,10.0,None
+98,Movies & TV,Act III: Everyday Life,10.0,None
+99,Books & Reading,Act III: Everyday Life,10.0,None
+100,Music & Art,Act III: Everyday Life,10.0,None
+101,Basic Law & Rules,Act III: Everyday Life,10.0,None
+102,Government & Citizenship,Act III: Everyday Life,10.0,None
+103,Opinions & Arguments,Act III: Everyday Life,10.0,None
+104,Problems & Solutions,Act III: Everyday Life,10.0,None
+105,Describing Trends,Act III: Everyday Life,10.0,None
+106,Common Idioms 1,Act III: Everyday Life,10.0,None
+107,Common Idioms 2,Act III: Everyday Life,10.0,None
+108,Phrasal Verbs 3,Act III: Everyday Life,10.0,None
+109,Phrasal Verbs 4,Act III: Everyday Life,10.0,None
+110,Collocations - Make & Do,Act III: Everyday Life,10.0,None
+111,Collocations - Have & Take,Act III: Everyday Life,10.0,None
+112,Collocations - Other,Act III: Everyday Life,10.0,None
+113,Business Basics,Act IV: Expanding Horizons,10.0,None
+114,Finance Basics,Act IV: Expanding Horizons,10.0,None
+115,Marketing & Sales,Act IV: Expanding Horizons,10.0,None
+116,Science Basics,Act IV: Expanding Horizons,10.0,None
+117,Biology Basics,Act IV: Expanding Horizons,9.6,Row 24 pinyin: 2 chars but 3 syllables; Row 25 pinyin: 2 chars but 3 syllables
+118,Basic Chemistry & Physics,Act IV: Expanding Horizons,10.0,None
+119,Health & Wellness,Act IV: Expanding Horizons,10.0,None
+120,Mental Health Basics,Act IV: Expanding Horizons,10.0,None
+121,Technology Advanced,Act IV: Expanding Horizons,10.0,None
+122,Academic Writing,Act IV: Expanding Horizons,10.0,None
+123,Philosophy & Ethics,Act IV: Expanding Horizons,10.0,None
+124,Abstract Concepts,Act IV: Expanding Horizons,10.0,None
+125,Cause & Effect,Act IV: Expanding Horizons,10.0,None
+126,Certainty & Probability,Act IV: Expanding Horizons,10.0,None
+127,Social Issues,Act IV: Expanding Horizons,10.0,None
+128,International Relations,Act IV: Expanding Horizons,10.0,None
+129,Literature,Act IV: Expanding Horizons,10.0,None
+130,Art & Culture,Act IV: Expanding Horizons,10.0,None
+131,Formal Vocabulary 1,Act V: Advanced Mastery,10.0,None
+132,Formal Vocabulary 2,Act V: Advanced Mastery,9.8,Row 30 pinyin: 4 chars but 5 syllables
+133,Formal Vocabulary 3,Act V: Advanced Mastery,10.0,None
+134,Formal Vocabulary 4,Act V: Advanced Mastery,10.0,None
+135,Academic Nouns,Act V: Advanced Mastery,10.0,None
+136,Academic Adjectives,Act V: Advanced Mastery,10.0,None
+137,Academic Adjectives 2,Act V: Advanced Mastery,10.0,None
+138,Everyday Legal,Act V: Advanced Mastery,10.0,None
+139,Everyday Medical,Act V: Advanced Mastery,9.2,Row 13 pinyin: 2 chars but 3 syllables; Row 42 pinyin: 2 chars but 3 syllables; Row 44 pinyin: 5 chars but 6 syllables; Row 45 pinyin: 4 chars but 5 syllables
+140,Everyday Finance,Act V: Advanced Mastery,10.0,None
+141,Research & Statistics,Act V: Advanced Mastery,10.0,None
+142,Psychology Basics,Act V: Advanced Mastery,9.0,Row 31 chinese: empty cell; Row 31 pinyin: empty cell
+143,Sociology Basics,Act V: Advanced Mastery,9.8,Row 55 pinyin: 4 chars but 5 syllables
+144,Critical Thinking,Act V: Advanced Mastery,10.0,None
+145,Debate & Argument,Act V: Advanced Mastery,10.0,None
+146,Negotiation,Act V: Advanced Mastery,10.0,None
+147,Project Management,Act V: Advanced Mastery,10.0,None
+148,Business Advanced,Act V: Advanced Mastery,10.0,None
+149,Environmental Science,Act V: Advanced Mastery,7.0,Row 31 chinese: empty cell; Row 31 pinyin: empty cell; Row 33 chinese: empty cell; Row 33 pinyin: empty cell; Row 41 chinese: empty cell; Row 41 pinyin: empty cell
+150,Literary Devices,Act V: Advanced Mastery,10.0,None
+151,Advanced Idioms,Act V: Advanced Mastery,10.0,None
+152,Business Idioms,Act V: Advanced Mastery,10.0,None
+153,Formal Connectors,Act V: Advanced Mastery,9.0,Row 37 chinese: empty cell; Row 37 pinyin: empty cell
+154,Advanced Verbs,Act V: Advanced Mastery,10.0,None
+155,Nuanced Adjectives,Act V: Advanced Mastery,10.0,None
+156,Question Patterns,Act I: Foundation,10.0,None
+157,Response Patterns,Act I: Foundation,9.0,Row 39 chinese: empty cell; Row 39 pinyin: empty cell
+158,Negative Patterns,Act I: Foundation,10.0,None
+159,Agreement & Disagreement,Act I: Foundation,9.0,Row 45 chinese: empty cell; Row 45 pinyin: empty cell
+160,Apology & Excuse Patterns,Act II: Building Blocks,10.0,None
