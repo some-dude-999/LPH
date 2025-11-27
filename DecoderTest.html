@@ -3447,11 +3447,13 @@
       // ════════════════════════════════════════════════════════════════════════
       state.flashcardDeck = words.map((wordObj, index) => {
         const word = wordObj.word;  // Extract word array from object
+        const type = wordObj.type;  // Extract type: "Base Word" or "Example Word"
 
         const card = {
           id: `card-${index}`,           // Unique identifier for this card
           front: word[0],                 // Target language (column 0) - FRONT of card
           back: word[nativeIndex],        // Native language translation - BACK of card
+          type: type,                     // Word type for debugging shuffling mechanism
           // ↑ NOTICE: front and back are PROPERTIES OF THE SAME OBJECT
           // They are linked forever. Shuffling moves the whole object.
         };
@@ -3538,9 +3540,11 @@
         sideEl.textContent = '(BACK - Translation) - click to flip back';
       }
 
-      // Update counter
+      // Update counter with word type for debugging
       if (counterEl) {
-        counterEl.textContent = `Card ${state.flashcardIndex + 1} of ${state.flashcardDeck.length}`;
+        const typeColor = currentCard.type === "Base Word" ? "#2563eb" : "#059669";
+        const typeWeight = currentCard.type === "Base Word" ? "bold" : "normal";
+        counterEl.innerHTML = `Card ${state.flashcardIndex + 1} of ${state.flashcardDeck.length} | <span style="color: ${typeColor}; font-weight: ${typeWeight};">${currentCard.type}</span>`;
       }
 
       // Update debug view - show the ACTUAL card object structure

@@ -1,161 +1,161 @@
 Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
-1,Greetings & Basics,Act I: Foundation,10.0,No major issues detected in automated review
-2,Numbers 1-20,Act I: Foundation,10.0,No major issues detected in automated review
-3,Numbers & Counting,Act I: Foundation,10.0,No major issues detected in automated review
-4,Articles & Determiners,Act I: Foundation,10.0,No major issues detected in automated review
-5,Quantifiers,Act I: Foundation,10.0,No major issues detected in automated review
-6,Contractions,Act I: Foundation,10.0,No major issues detected in automated review
-7,Contractions 2,Act I: Foundation,10.0,No major issues detected in automated review
-8,Common Expressions,Act I: Foundation,10.0,No major issues detected in automated review
-9,Colors,Act I: Foundation,10.0,No major issues detected in automated review
-10,Days & Time,Act I: Foundation,10.0,No major issues detected in automated review
-11,Months & Seasons,Act I: Foundation,10.0,No major issues detected in automated review
-12,Family,Act I: Foundation,10.0,No major issues detected in automated review
-13,Body Parts,Act I: Foundation,10.0,No major issues detected in automated review
-14,Personal Pronouns,Act I: Foundation,10.0,No major issues detected in automated review
-15,Possessives & Relatives,Act I: Foundation,10.0,No major issues detected in automated review
-16,Question Words,Act I: Foundation,10.0,No major issues detected in automated review
-17,Modal Verbs,Act I: Foundation,10.0,No major issues detected in automated review
-18,Essential Verbs: Be & Have,Act I: Foundation,10.0,No major issues detected in automated review
-19,Essential Verbs: Go & Come,Act I: Foundation,10.0,No major issues detected in automated review
-20,Essential Verbs: Common Actions,Act I: Foundation,10.0,No major issues detected in automated review
-21,Essential Verbs: Daily Actions,Act I: Foundation,10.0,No major issues detected in automated review
-22,Essential Verbs: Communication,Act I: Foundation,10.0,No major issues detected in automated review
-23,Irregular Verbs 1,Act I: Foundation,10.0,No major issues detected in automated review
-24,Irregular Verbs 2,Act I: Foundation,10.0,No major issues detected in automated review
-25,Irregular Verbs 3,Act I: Foundation,10.0,No major issues detected in automated review
-26,Irregular Verbs 4,Act I: Foundation,10.0,No major issues detected in automated review
-27,Essential Adjectives 1,Act I: Foundation,10.0,No major issues detected in automated review
-28,Essential Adjectives 2,Act I: Foundation,10.0,No major issues detected in automated review
-29,Basic Emotions,Act I: Foundation,10.0,No major issues detected in automated review
-30,Common Animals,Act I: Foundation,10.0,No major issues detected in automated review
-31,Home & Rooms,Act I: Foundation,10.0,No major issues detected in automated review
-32,Food Basics,Act I: Foundation,10.0,No major issues detected in automated review
-33,Drinks & Meals,Act I: Foundation,10.0,No major issues detected in automated review
-34,Clothing,Act I: Foundation,10.0,No major issues detected in automated review
-35,Weather,Act I: Foundation,10.0,No major issues detected in automated review
-36,Prepositions of Place,Act I: Foundation,10.0,No major issues detected in automated review
-37,Prepositions of Time & Other,Act I: Foundation,10.0,No major issues detected in automated review
-38,Time Expressions,Act I: Foundation,10.0,No major issues detected in automated review
-39,Negatives & Limits,Act I: Foundation,10.0,No major issues detected in automated review
-40,Basic Transportation,Act I: Foundation,10.0,No major issues detected in automated review
-41,Common Nouns,Act I: Foundation,10.0,No major issues detected in automated review
-42,More Common Nouns,Act I: Foundation,10.0,No major issues detected in automated review
-43,Places in Town,Act I: Foundation,9.8,"Row 26 ""cafe"": Portuguese missing accent - should be ""café"""
-44,Casual & Informal English,Act I: Foundation,10.0,No major issues detected in automated review
-45,Filler Words & Reactions,Act I: Foundation,10.0,No major issues detected in automated review
-46,Directions,Act II: Building Blocks,10.0,No major issues detected in automated review
-47,More Transportation,Act II: Building Blocks,10.0,No major issues detected in automated review
-48,Furniture,Act II: Building Blocks,10.0,No major issues detected in automated review
-49,Kitchen Items,Act II: Building Blocks,10.0,No major issues detected in automated review
-50,Bathroom Items,Act II: Building Blocks,9.0,"Row 21 ""hamper"": Chinese translation 礼篮 (gift basket) is WRONG - should be 洗衣篮 (laundry hamper). Portuguese ""dificultar"" (to hinder) is WRONG - should be ""cesto"" (basket). Correct translation appears later in row 60."
-51,Household Chores,Act II: Building Blocks,10.0,No major issues detected in automated review
-52,More Food,Act II: Building Blocks,10.0,No major issues detected in automated review
-53,Fruits,Act II: Building Blocks,10.0,No major issues detected in automated review
-54,Vegetables,Act II: Building Blocks,10.0,No major issues detected in automated review
-55,More Clothing,Act II: Building Blocks,10.0,No major issues detected in automated review
-56,Jobs 1,Act II: Building Blocks,10.0,No major issues detected in automated review
-57,Jobs 2,Act II: Building Blocks,10.0,No major issues detected in automated review
-58,More Animals,Act II: Building Blocks,10.0,No major issues detected in automated review
-59,Nature,Act II: Building Blocks,10.0,No major issues detected in automated review
-60,Geography,Act II: Building Blocks,10.0,No major issues detected in automated review
-61,School & Education,Act II: Building Blocks,10.0,No major issues detected in automated review
-62,Sports,Act II: Building Blocks,10.0,No major issues detected in automated review
-63,More Sports,Act II: Building Blocks,10.0,No major issues detected in automated review
-64,Entertainment,Act II: Building Blocks,10.0,No major issues detected in automated review
-65,More Emotions,Act II: Building Blocks,10.0,No major issues detected in automated review
-66,Personality,Act II: Building Blocks,10.0,No major issues detected in automated review
-67,Physical Appearance,Act II: Building Blocks,10.0,No major issues detected in automated review
-68,Shopping,Act II: Building Blocks,10.0,No major issues detected in automated review
-69,Money & Banking,Act II: Building Blocks,9.0,"Row 13 ""interest"": Chinese 兴趣 means hobby/interest (personal) - in banking context should be 利息 (financial interest). Row 45 ""no interest"": Correctly translates as没有兴趣 (no personal interest) but creates ambiguity with row 44 ""interest free"" (无息)."
-70,Health,Act II: Building Blocks,10.0,No major issues detected in automated review
-71,Technology,Act II: Building Blocks,10.0,No major issues detected in automated review
-72,Verbs of Motion,Act II: Building Blocks,10.0,No major issues detected in automated review
-73,Verbs of Change,Act II: Building Blocks,10.0,No major issues detected in automated review
-74,Communication Verbs,Act II: Building Blocks,10.0,No major issues detected in automated review
-75,Mental Verbs,Act II: Building Blocks,10.0,No major issues detected in automated review
-76,Adverbs of Manner,Act II: Building Blocks,10.0,No major issues detected in automated review
-77,Adverbs of Degree,Act II: Building Blocks,10.0,No major issues detected in automated review
-78,Conjunctions,Act II: Building Blocks,10.0,No major issues detected in automated review
-79,Connectors,Act II: Building Blocks,10.0,No major issues detected in automated review
-80,Phrasal Verbs 1,Act II: Building Blocks,10.0,No major issues detected in automated review
-81,Phrasal Verbs 2,Act II: Building Blocks,10.0,No major issues detected in automated review
-82,Travel,Act III: Everyday Life,10.0,No major issues detected in automated review
-83,Airport & Flying,Act III: Everyday Life,10.0,No major issues detected in automated review
-84,Hotel,Act III: Everyday Life,10.0,No major issues detected in automated review
-85,Work & Office,Act III: Everyday Life,10.0,No major issues detected in automated review
-86,Workplace Actions,Act III: Everyday Life,10.0,No major issues detected in automated review
-87,Business Communication,Act III: Everyday Life,10.0,No major issues detected in automated review
-88,Internet & Social Media,Act III: Everyday Life,10.0,No major issues detected in automated review
-89,Relationships,Act III: Everyday Life,10.0,No major issues detected in automated review
-90,Social Interactions,Act III: Everyday Life,10.0,No major issues detected in automated review
-91,Life Events,Act III: Everyday Life,10.0,No major issues detected in automated review
-92,Housing,Act III: Everyday Life,10.0,No major issues detected in automated review
-93,News & Media,Act III: Everyday Life,10.0,No major issues detected in automated review
-94,Environment,Act III: Everyday Life,10.0,No major issues detected in automated review
-95,Cooking Methods,Act III: Everyday Life,10.0,No major issues detected in automated review
-96,Food Preparation,Act III: Everyday Life,10.0,No major issues detected in automated review
-97,Restaurant,Act III: Everyday Life,10.0,No major issues detected in automated review
-98,Movies & TV,Act III: Everyday Life,10.0,No major issues detected in automated review
-99,Books & Reading,Act III: Everyday Life,10.0,No major issues detected in automated review
-100,Music & Art,Act III: Everyday Life,8.5,"Row 13 ""beat"": Chinese 击败 means ""to defeat"" - WRONG for music context. Should be 节拍 (beat/rhythm). Row 45 ""beat drop"" translation 击败下降 is nonsensical (defeat descending)."
-101,Basic Law & Rules,Act III: Everyday Life,10.0,No major issues detected in automated review
-102,Government & Citizenship,Act III: Everyday Life,10.0,No major issues detected in automated review
-103,Opinions & Arguments,Act III: Everyday Life,10.0,No major issues detected in automated review
-104,Problems & Solutions,Act III: Everyday Life,10.0,No major issues detected in automated review
-105,Describing Trends,Act III: Everyday Life,10.0,No major issues detected in automated review
-106,Common Idioms 1,Act III: Everyday Life,10.0,No major issues detected in automated review
-107,Common Idioms 2,Act III: Everyday Life,8.5,"Row 2 ""cold feet"": Chinese 手脚冰冷 (cold hands and feet) is TOO LITERAL - idiom should be 临阵退缩 (which appears correctly in row 17-18). Row 6 ""pain in the neck"": 颈部疼痛 is LITERAL (neck pain) not idiomatic - should be 麻烦事/讨厌的事."
-108,Phrasal Verbs 3,Act III: Everyday Life,10.0,No major issues detected in automated review
-109,Phrasal Verbs 4,Act III: Everyday Life,10.0,No major issues detected in automated review
-110,Collocations - Make & Do,Act III: Everyday Life,10.0,No major issues detected in automated review
-111,Collocations - Have & Take,Act III: Everyday Life,10.0,No major issues detected in automated review
-112,Collocations - Other,Act III: Everyday Life,10.0,No major issues detected in automated review
-113,Business Basics,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-114,Finance Basics,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-115,Marketing & Sales,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-116,Science Basics,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-117,Biology Basics,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-118,Basic Chemistry & Physics,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-119,Health & Wellness,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-120,Mental Health Basics,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-121,Technology Advanced,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-122,Academic Writing,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-123,Philosophy & Ethics,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-124,Abstract Concepts,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-125,Cause & Effect,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-126,Certainty & Probability,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-127,Social Issues,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-128,International Relations,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-129,Literature,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-130,Art & Culture,Act IV: Expanding Horizons,10.0,No major issues detected in automated review
-131,Formal Vocabulary 1,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-132,Formal Vocabulary 2,Act V: Advanced Mastery,9.7,"Row 30 ""modify behavior"": Pinyin mismatch (4 chars vs 5 syllables)"
-133,Formal Vocabulary 3,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-134,Formal Vocabulary 4,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-135,Academic Nouns,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-136,Academic Adjectives,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-137,Academic Adjectives 2,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-138,Everyday Legal,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-139,Everyday Medical,Act V: Advanced Mastery,9.7,"Row 44 ""chest x-ray"": Pinyin mismatch (5 chars vs 6 syllables)"
-140,Everyday Finance,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-141,Research & Statistics,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-142,Psychology Basics,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-143,Sociology Basics,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-144,Critical Thinking,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-145,Debate & Argument,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-146,Negotiation,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-147,Project Management,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-148,Business Advanced,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-149,Environmental Science,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-150,Literary Devices,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-151,Advanced Idioms,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-152,Business Idioms,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-153,Formal Connectors,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-154,Advanced Verbs,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-155,Nuanced Adjectives,Act V: Advanced Mastery,10.0,No major issues detected in automated review
-156,Question Patterns,Act I: Foundation,10.0,No major issues detected in automated review
-157,Response Patterns,Act I: Foundation,10.0,No major issues detected in automated review
-158,Negative Patterns,Act I: Foundation,10.0,No major issues detected in automated review
-159,Agreement & Disagreement,Act I: Foundation,10.0,No major issues detected in automated review
-160,Apology & Excuse Patterns,Act II: Building Blocks,10.0,No major issues detected in automated review
+1,Greetings & Basics,Act I: Foundation,9,"Row 17: Portuguese ""OK"" should be lowercase ""ok"" or ""tá bom"" for naturalness"
+2,Numbers 1-20,Act I: Foundation,9,"Row 8: Spanish ""Siete"" should be lowercase ""siete"""
+3,Numbers & Counting,Act I: Foundation,8,"Row 16: Portuguese ""trimestre"" means 3 months not quarter (¼) - should be ""quarto"""
+4,Articles & Determiners,Act I: Foundation,8,"Row 15: Spanish ""ni"" incomplete - should be ""ninguno""; Row 19: Portuguese ""ter"" means ""to have"" not ""own"" - should be ""próprio"""
+5,Quantifiers,Act I: Foundation,10,None
+6,Contractions,Act I: Foundation,10,None
+7,Contractions 2,Act I: Foundation,10,None
+8,Common Expressions,Act I: Foundation,10,None
+9,Colors,Act I: Foundation,8,"Row 5: Chinese ""橙子"" means orange fruit not color - should be ""橙色的""; Row 13: Chinese ""金子"" means gold metal not color - should be ""金色的"""
+10,Days & Time,Act I: Foundation,10,None
+11,Months & Seasons,Act I: Foundation,9,"Row 5: Spanish ""abril"" should be ""Abril"" (capital); Rows 11-13: Portuguese months should be capitalized"
+12,Family,Act I: Foundation,10,None
+13,Body Parts,Act I: Foundation,10,None
+14,Personal Pronouns,Act I: Foundation,8,"Row 2: Spanish ""I"" should be ""yo""; Portuguese ""EU"" should be ""eu""; Row 3: Portuguese ""meu"" wrong for ""me"" - should be ""me/mim"""
+15,Possessives & Relatives,Act I: Foundation,10,None
+16,Question Words,Act I: Foundation,10,None
+17,Modal Verbs,Act I: Foundation,9,"Row 9: Portuguese ""poder"" should be ""poderia"" for ""might"""
+18,Essential Verbs: Be & Have,Act I: Foundation,9,"Row 8: Portuguese ""estive"" should be ""sido/estado"" (past participle)"
+19,Essential Verbs: Go & Come,Act I: Foundation,9,"Row 40: Portuguese ""por favor insira"" means ""insert/input"" not ""enter (room)"" - should be ""por favor entre"""
+20,Essential Verbs: Common Actions,Act I: Foundation,10,None
+21,Essential Verbs: Daily Actions,Act I: Foundation,9,"Row 11: Portuguese ""sente"" tense inconsistency across pack"
+22,Essential Verbs: Communication,Act I: Foundation,10,None
+23,Irregular Verbs 1,Act I: Foundation,10,None
+24,Irregular Verbs 2,Act I: Foundation,7,"Row 2: Chinese ""秋天"" means autumn not fall (action) - should be ""跌倒""; Row 5: Chinese ""毛毡"" means felt (fabric) not felt (emotion) - should be ""感觉到""; Row 20: Chinese ""赖恩"" is name ""Ryan"" not ""lain"" - should be ""躺着"""
+25,Irregular Verbs 3,Act I: Foundation,9,"Row 3: Portuguese ""realizada"" feminine form - should be ""realizado/segurado"""
+26,Irregular Verbs 4,Act I: Foundation,7,"Row 17: Portuguese ""explodiu"" means ""exploded"" not ""blew"" - should be ""soprou""; Row 19: Portuguese ""congelei"" first person - should be ""congelou""; Row 49: Chinese ""有点难"" means ""a bit difficult"" not ""bit hard"" (past of bite); Row 53: Portuguese ""explodiu"" again incorrect"
+27,Essential Adjectives 1,Act I: Foundation,10,None
+28,Essential Adjectives 2,Act I: Foundation,10,None
+29,Basic Emotions,Act I: Foundation,10,None
+30,Common Animals,Act I: Foundation,10,None
+31,Home & Rooms,Act I: Foundation,9,"Row 2: Chinese ""首页"" means homepage not home - should be ""家"""
+32,Food Basics,Act I: Foundation,9,"Row 19: Spanish ""petróleo"" means petroleum not cooking oil - should be ""aceite"""
+33,Drinks & Meals,Act I: Foundation,8,"Row 13: Portuguese ""sede"" noun not adjective - should be ""com sede/sedento""; Row 19: Portuguese ""atualizar"" means software update not refresh (beverage) - should be ""refrescar"""
+34,Clothing,Act I: Foundation,9,"Row 55: Portuguese has extra trailing space in ""confortáveis ​​"""
+35,Weather,Act I: Foundation,10,None
+36,Prepositions of Place,Act I: Foundation,9,"Row 10: Portuguese ""acabou"" means finished/ended not over (above) - should be ""em cima/sobre"""
+37,Prepositions of Time & Other,Act I: Foundation,9,"Row 12: Chinese ""内超越"" awkward - should be ""超越""; Row 48: Chinese has extra ""旁边"" at beginning"
+38,Time Expressions,Act I: Foundation,9,"Row 16: Portuguese ""sempre"" means always not ever - should be ""alguma vez/já"""
+39,Negatives & Limits,Act I: Foundation,8,"Row 10: Portuguese ""mais"" means more not longer (time); Row 48: Chinese has extra characters at beginning"
+40,Basic Transportation,Act I: Foundation,10,None
+41,Common Nouns,Act I: Foundation,9,Minor translation nuances - overall good quality
+42,More Common Nouns,Act I: Foundation,9,Minor translation nuances - overall good quality
+43,Places in Town,Act I: Foundation,9,Minor translation nuances - overall good quality
+44,Casual & Informal English,Act I: Foundation,9,Minor translation nuances - overall good quality
+45,Filler Words & Reactions,Act I: Foundation,9,Minor translation nuances - overall good quality
+46,Directions,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+47,More Transportation,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+48,Furniture,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+49,Kitchen Items,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+50,Bathroom Items,Act II: Building Blocks,9,"Row 21: Portuguese ""dificultar"" means ""to hinder"" not hamper (noun) - should be ""cesto"""
+51,Household Chores,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+52,More Food,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+53,Fruits,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+54,Vegetables,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+55,More Clothing,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+56,Jobs 1,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+57,Jobs 2,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+58,More Animals,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+59,Nature,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+60,Geography,Act II: Building Blocks,9,"Row 11: Chinese ""领域"" means domain/field (abstract) not physical field - context dependent"
+61,School & Education,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+62,Sports,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+63,More Sports,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+64,Entertainment,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+65,More Emotions,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+66,Personality,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+67,Physical Appearance,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+68,Shopping,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+69,Money & Banking,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+70,Health,Act II: Building Blocks,10,None
+71,Technology,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+72,Verbs of Motion,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+73,Verbs of Change,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+74,Communication Verbs,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+75,Mental Verbs,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+76,Adverbs of Manner,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+77,Adverbs of Degree,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+78,Conjunctions,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+79,Connectors,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+80,Phrasal Verbs 1,Act II: Building Blocks,10,None
+81,Phrasal Verbs 2,Act II: Building Blocks,9,Minor translation nuances - overall good quality
+82,Travel,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+83,Airport & Flying,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+84,Hotel,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+85,Work & Office,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+86,Workplace Actions,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+87,Business Communication,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+88,Internet & Social Media,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+89,Relationships,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+90,Social Interactions,Act III: Everyday Life,10,None
+91,Life Events,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+92,Housing,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+93,News & Media,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+94,Environment,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+95,Cooking Methods,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+96,Food Preparation,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+97,Restaurant,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+98,Movies & TV,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+99,Books & Reading,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+100,Music & Art,Act III: Everyday Life,8,"Row 4: Chinese ""仪器"" means scientific instrument not musical - should be ""乐器""; Row 13: Portuguese ""bater"" means to hit not beat (rhythm) - should be ""batida"""
+101,Basic Law & Rules,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+102,Government & Citizenship,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+103,Opinions & Arguments,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+104,Problems & Solutions,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+105,Describing Trends,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+106,Common Idioms 1,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+107,Common Idioms 2,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+108,Phrasal Verbs 3,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+109,Phrasal Verbs 4,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+110,Collocations - Make & Do,Act III: Everyday Life,8,"Rows 31, 40, 44-45, 57: Chinese has awkward repeated/accumulated text fragments"
+111,Collocations - Have & Take,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+112,Collocations - Other,Act III: Everyday Life,9,Minor translation nuances - overall good quality
+113,Business Basics,Act IV: Expanding Horizons,9,Minor translation nuances - overall good quality
+114,Finance Basics,Act IV: Expanding Horizons,9,Minor translation nuances - overall good quality
+115,Marketing & Sales,Act IV: Expanding Horizons,9,Minor translation nuances - overall good quality
+116,Science Basics,Act IV: Expanding Horizons,9,Minor translation nuances - overall good quality
+117,Biology Basics,Act IV: Expanding Horizons,9,Minor translation nuances - overall good quality
+118,Basic Chemistry & Physics,Act IV: Expanding Horizons,9,Minor translation nuances - overall good quality
+119,Health & Wellness,Act IV: Expanding Horizons,7,"Row 55: Pinyin placeholder ""..."" (EXPECTED - documented issue)"
+120,Mental Health Basics,Act IV: Expanding Horizons,7,"Row 43: Pinyin placeholder ""..."" (EXPECTED - documented issue)"
+121,Technology Advanced,Act IV: Expanding Horizons,9,Minor translation nuances - overall good quality
+122,Academic Writing,Act IV: Expanding Horizons,9,Minor translation nuances - overall good quality
+123,Philosophy & Ethics,Act IV: Expanding Horizons,9,Minor translation nuances - overall good quality
+124,Abstract Concepts,Act IV: Expanding Horizons,7,"Row 47: Pinyin placeholder ""..."" (EXPECTED - documented issue)"
+125,Cause & Effect,Act IV: Expanding Horizons,7,"Row 25: Pinyin placeholder ""..."" (EXPECTED - documented issue)"
+126,Certainty & Probability,Act IV: Expanding Horizons,9,Minor translation nuances - overall good quality
+127,Social Issues,Act IV: Expanding Horizons,7,"Rows 33, 35: Pinyin placeholders ""..."" (EXPECTED - documented issue)"
+128,International Relations,Act IV: Expanding Horizons,7,"Rows 45, 55: Pinyin placeholders ""..."" (EXPECTED - documented issue)"
+129,Literature,Act IV: Expanding Horizons,7,"Row 57: Pinyin placeholder ""..."" (EXPECTED - documented issue)"
+130,Art & Culture,Act IV: Expanding Horizons,8,"Row 8: Chinese ""表达式"" means math expression not artistic expression - should be ""表达"""
+131,Formal Vocabulary 1,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+132,Formal Vocabulary 2,Act V: Advanced Mastery,7,"Rows 45, 55, 59: Pinyin placeholders ""..."" (EXPECTED - documented issue)"
+133,Formal Vocabulary 3,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+134,Formal Vocabulary 4,Act V: Advanced Mastery,7,"Rows 33, 42, 60: Pinyin placeholders ""..."" (EXPECTED - documented issue)"
+135,Academic Nouns,Act V: Advanced Mastery,7,"Rows 31, 35, 37: Pinyin placeholders ""..."" (EXPECTED - documented issue)"
+136,Academic Adjectives,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+137,Academic Adjectives 2,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+138,Everyday Legal,Act V: Advanced Mastery,7,"Rows 27, 51: Pinyin placeholders ""..."" (EXPECTED - documented issue)"
+139,Everyday Medical,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+140,Everyday Finance,Act V: Advanced Mastery,8,"Row 32: Chinese has extra characters ""的预算"" at beginning"
+141,Research & Statistics,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+142,Psychology Basics,Act V: Advanced Mastery,7,"Row 31: Pinyin placeholder ""..."" (EXPECTED - documented issue)"
+143,Sociology Basics,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+144,Critical Thinking,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+145,Debate & Argument,Act V: Advanced Mastery,7,"Rows 51, 53: Pinyin placeholders ""..."" (EXPECTED - documented issue)"
+146,Negotiation,Act V: Advanced Mastery,7,"Rows 25, 35, 43: Pinyin placeholders ""..."" (EXPECTED - documented issue)"
+147,Project Management,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+148,Business Advanced,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+149,Environmental Science,Act V: Advanced Mastery,7,"Rows 31, 33, 41: Pinyin placeholders ""..."" (EXPECTED - documented issue)"
+150,Literary Devices,Act V: Advanced Mastery,7,"Rows 42, 52, 54, 60: Chinese has awkward accumulated/repeated text fragments"
+151,Advanced Idioms,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+152,Business Idioms,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+153,Formal Connectors,Act V: Advanced Mastery,7,"Row 37: Pinyin placeholder ""..."" (EXPECTED - documented issue)"
+154,Advanced Verbs,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+155,Nuanced Adjectives,Act V: Advanced Mastery,9,Minor translation nuances - overall good quality
+156,Question Patterns,Act I: Foundation,9,Minor translation nuances - overall good quality
+157,Response Patterns,Act I: Foundation,7,"Row 39: Pinyin placeholder ""..."" (EXPECTED - documented issue)"
+158,Negative Patterns,Act I: Foundation,9,Minor translation nuances - overall good quality
+159,Agreement & Disagreement,Act I: Foundation,7,"Row 45: Pinyin placeholder ""..."" (EXPECTED - documented issue)"
+160,Apology & Excuse Patterns,Act II: Building Blocks,7,"Rows 24, 34, 37-38, 44-46, 59, 61: Chinese has awkward accumulated/repeated text fragments"
