@@ -3,7 +3,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 学习,xué xí,Learning,Aprendizaje,Apprentissage,Aprendizagem,Học tập,การเรียนรู้,រៀន,Belajar,Pembelajaran,Pag -aaral
 培训,péi xùn,Training,Formación,Formation,Treinamento,Đào tạo,การฝึกอบรม,ការបណ្តុះបណ្តាល,Pelatihan,Latihan,Pagsasanay
 研究,yán jiū,Research,Investigación,Recherche,Pesquisa,Nghiên cứu,วิจัย,ការស្រាវជ្រាវ,Penelitian,Penyelidikan,Pananaliksik
-学问,xué wèn,Learning,Aprendizaje,Apprentissage,Aprendizagem,Học tập,การเรียนรู้,| រៀន,Belajar,Pembelajaran,Pag -aaral
+学问,xué wèn,Learning,Aprendizaje,Apprentissage,Aprendizagem,Học tập,การเรียนรู้,រៀន,Belajar,Pembelajaran,Pag -aaral
 知识,zhī shí,Knowledge,Conocimiento,Connaissance,Conhecimento,Kiến thức,ความรู้,ចំណេះដឹង,Pengetahuan,Pengetahuan,Kaalaman
 能力,néng lì,Abilities,Habilidades,Capacités,Habilidades,Khả năng,ความสามารถ,សមត្ថភាព,Kemampuan,Kemampuan,Mga Kakayahang
 技能,jì néng,Skills,Habilidades,Compétences,Habilidades,Kỹ năng,ทักษะ,ជំនាញ,Keterampilan,Kemahiran,Kasanayan
@@ -22,7 +22,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 参加培训,cān jiā péi xùn,Participate in training,Participar en la formación,Participer à une formation,Participe na formação,Tham gia đào tạo,เข้าร่วมการฝึกอบรม,ចូលរួមក្នុងការបណ្តុះបណ្តាល,Berpartisipasi dalam pelatihan,Mengambil bahagian dalam Latihan,Makilahok sa pagsasanay
 做培训,zuò péi xùn,Do training,Hacer entrenamiento,Faire une formation,Faça treinamento,Luyện tập,ฝึกซ้อม,ការបណ្តុះបណ្តាល,Lakukan pelatihan,Melakukan latihan,Gawin ang pagsasanay
 做研究,zuò yán jiū,Do research,Investigar,Faites des recherches,Faça pesquisas,Nghiên cứu,ทำวิจัย,ធ្វើការស្រាវជ្រាវ,Lakukan penelitian,Adakah Penyelidikan,Magsaliksik
-研究下,yán jiū xià,Study,Estudio,Étude,Estude,Học,เรียน,| ការសិក្សា,Belajar,Kajian,Pag -aaral
+研究下,yán jiū xià,Study,Estudio,Étude,Estude,Học,เรียน,ការសិក្សា,Belajar,Kajian,Pag -aaral
 有学问,yǒu xué wèn,Be knowledgeable,Sea informado,Soyez bien informé,Tenha conhecimento,Hãy là người hiểu biết,มีความรู้,មានចំណេះដឹង,Jadilah berpengetahuan,Menjadi berpengetahuan,Maging kaalaman
 做学问,zuò xué wèn,Be knowledgeable,Sea informado,Soyez bien informé,Tenha conhecimento,Hãy là người hiểu biết,มีความรู้,មានចំណេះដឹង,Jadilah berpengetahuan,Menjadi berpengetahuan,Maging kaalaman
 有知识,yǒu zhī shí,Have knowledge,Tener conocimientos,Avoir des connaissances,Tenha conhecimento,Có kiến ​​thức,มีความรู้,មានចំណេះដឹង,Punya ilmu,Mempunyai pengetahuan,May kaalaman
@@ -34,14 +34,14 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 学历高,xué lì gāo,High education,Educación superior,Enseignement supérieur,Ensino superior,Trình độ học vấn cao,การศึกษาระดับอุดมศึกษา,ឧត្តមសិក្សា,Pendidikan tinggi,Pendidikan Tinggi,Mataas na Edukasyon
 看学历,kàn xué lì,See academic qualifications,Ver titulaciones académicas,Voir les diplômes universitaires,Ver habilitações académicas,Xem trình độ học vấn,ดูวุฒิการศึกษา,សូមមើលគុណវុឌ្ឍិសិក្សា,Lihat kualifikasi akademik,Lihat Kelayakan Akademik,Tingnan ang mga kwalipikasyong pang -akademiko
 有文凭,yǒu wén píng,Have a diploma,Tener un diploma,Avoir un diplôme,Ter um diploma,Có bằng tốt nghiệp,มีประกาศนียบัตร,មានសញ្ញាប័ត្រ,Memiliki ijazah,Mempunyai diploma,Magkaroon ng isang diploma
-拿文凭,ná wén píng,Get a diploma,Obtener un diploma,Obtenir un diplôme,Obtenha um diploma,Nhận bằng tốt nghiệp,รับประกาศนียบัตร,| ទទួលបានសញ្ញាប័ត្រ,Dapatkan ijazah,Dapatkan Diploma,Kumuha ng isang diploma
-有学位,yǒu xué wèi,Have a degree,Tener un título,Avoir un diplôme,Ter um diploma,Có bằng cấp,มีวุฒิการศึกษา,| មានសញ្ញាប័ត្រមួយ,Memiliki gelar,Mempunyai ijazah,Magkaroon ng isang degree
-拿学位,ná xué wèi,Get a degree,Obtener un título,Obtenir un diplôme,Obter um diploma,Lấy bằng,รับปริญญา,| ទទួលបានសញ្ញាប័ត្រមួយ,Dapatkan gelar,Dapatkan ijazah,Kumuha ng isang degree
-上课程,shàng kè chéng,Take courses,Tomar cursos,Suivre des cours,Faça cursos,Tham gia các khóa học,เรียนหลักสูตร,| ចូលរៀនវគ្គសិក្សា,Ikuti kursus,Ambil Kursus,Kumuha ng mga kurso
+拿文凭,ná wén píng,Get a diploma,Obtener un diploma,Obtenir un diplôme,Obtenha um diploma,Nhận bằng tốt nghiệp,รับประกาศนียบัตร,ទទួលបានសញ្ញាប័ត្រ,Dapatkan ijazah,Dapatkan Diploma,Kumuha ng isang diploma
+有学位,yǒu xué wèi,Have a degree,Tener un título,Avoir un diplôme,Ter um diploma,Có bằng cấp,มีวุฒิการศึกษา,មានសញ្ញាប័ត្រមួយ,Memiliki gelar,Mempunyai ijazah,Magkaroon ng isang degree
+拿学位,ná xué wèi,Get a degree,Obtener un título,Obtenir un diplôme,Obter um diploma,Lấy bằng,รับปริญญา,ទទួលបានសញ្ញាប័ត្រមួយ,Dapatkan gelar,Dapatkan ijazah,Kumuha ng isang degree
+上课程,shàng kè chéng,Take courses,Tomar cursos,Suivre des cours,Faça cursos,Tham gia các khóa học,เรียนหลักสูตร,ចូលរៀនវគ្គសិក្សា,Ikuti kursus,Ambil Kursus,Kumuha ng mga kurso
 选课程,xuǎn kè chéng,Choose a course,Elige un curso,Choisissez un cours,Escolha um curso,Chọn khóa học,เลือกหลักสูตร,ជ្រើសរើសវគ្គសិក្សា,Pilih kursus,Pilih kursus,Pumili ng isang kurso
 学专业,xué zhuān yè,Learn a major,Aprende una especialidad,Apprendre une majeure,Aprenda uma especialização,Học chuyên ngành,เรียนวิชาเอก,រៀនជំនាញមួយ,Pelajari jurusan,Belajar Major,Alamin ang isang pangunahing
-选专业,xuǎn zhuān yè,Choose a major,Elige una especialidad,Choisissez une majeure,Escolha uma especialização,Chọn chuyên ngành,เลือกวิชาเอก,| ជ្រើសរើសមុខវិជ្ជាមួយ,Pilih jurusan,Pilih Major,Pumili ng isang pangunahing
-考科目,kǎo kē mù,Test subjects,Sujetos de prueba,Sujets de test,Cobaias,Đối tượng thử nghiệm,วิชาทดสอบ,| ប្រធានបទសាកល្បង,Subyek tes,Subjek Ujian,Mga Paksa sa Pagsubok
+选专业,xuǎn zhuān yè,Choose a major,Elige una especialidad,Choisissez une majeure,Escolha uma especialização,Chọn chuyên ngành,เลือกวิชาเอก,ជ្រើសរើសមុខវិជ្ជាមួយ,Pilih jurusan,Pilih Major,Pumili ng isang pangunahing
+考科目,kǎo kē mù,Test subjects,Sujetos de prueba,Sujets de test,Cobaias,Đối tượng thử nghiệm,วิชาทดสอบ,ប្រធានបទសាកល្បង,Subyek tes,Subjek Ujian,Mga Paksa sa Pagsubok
 选科目,xuǎn kē mù,Select subjects,Seleccionar materias,Sélectionnez des sujets,Selecione os assuntos,Chọn môn học,เลือกวิชา,ជ្រើសរើសមុខវិជ្ជា,Pilih mata pelajaran,Pilih Subjek,Piliin ang Mga Paksa
 去进修,qù jìn xiū,Go to study,Ir a estudiar,Aller étudier,Vá estudar,Đi học,ไปเรียน,ទៅសិក្សា,Pergi belajar,Pergi ke Kajian,Pumunta sa pag -aaral
 继续进修,jì xù jìn xiū,Continue to study,Continuar estudiando,Continuer à étudier,Continuar estudando,Tiếp tục học,เรียนต่อ,បន្តសិក្សា,Lanjutkan belajar,Terus belajar,Patuloy na mag -aral

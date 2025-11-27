@@ -3,17 +3,17 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 流程,liú chéng,Process,Proceso,Processus,Processo,Quá trình,กระบวนการ,ដំណើរការ,Proses,Proses,Proseso
 程序,chéng xù,Program,Programa,Programme,Programa,Chương trình,โปรแกรม,កម្មវិធី,Program,Program,Program
 步骤,bù zhòu,Step,Paso,Étape,Etapa,Bước,ขั้นตอน,ជំហាន,Langkah,Langkah,Hakbang
-阶段,jiē duàn,Phase,Fase,Phases,Fase,Giai đoạn,เฟส,| តំណាក់កាល || តំណ,Fase,Fasa,Phase
+阶段,jiē duàn,Phase,Fase,Phases,Fase,Giai đoạn,เฟส,តំណាក់កាល,Fase,Fasa,Phase
 环节,huán jié,Link,Enlace,Lien,Ligação,Liên kết,ลิงค์,ទីមួយ,Tautan,Pautan,Link
 首先,shǒu xiān,First,Primero,Premier,Primeiro,Đầu tiên,ครั้งแรก,បន្ទាប់,Pertama,Pertama,Una
 其次,qí cì,Next,Siguiente,Suivant,Próximo,Tiếp theo,ถัดไป,បន្ទាប់មក,Selanjutnya,Seterusnya,Susunod
 然后,rán hòu,Then,Entonces,Puis,Então,Sau đó,แล้ว,បន្ទាប់មក,Lalu,Maka,Pagkatapos
 接着,jiē zhe,Then,Entonces,Puis,Então,Sau đó,แล้ว,ទីបំផុត,Lalu,Maka,Pagkatapos
 最后,zuì hòu,Finally,Finalmente,Enfin,Finalmente,Cuối cùng,ในที่สุด,ចុងក្រោយ,Akhirnya,Akhirnya,Panghuli
-最终,zuì zhōng,Final,Final,Finale,Final,Chung kết,สุดท้าย,ការបញ្ចប់| វឌ្ឍនភាព,Akhir,Akhir,Pangwakas
+最终,zuì zhōng,Final,Final,Finale,Final,Chung kết,สุดท้าย,ចុងក្រោយ,Akhir,Akhir,Pangwakas
 完成,wán chéng,Completion,Finalización,Achèvement,Conclusão,Hoàn thành,เสร็จสิ้น,វឌ្ឍនភាព,Penyelesaian,Penyelesaian,Pagkumpleto
 进展,jìn zhǎn,Progress,Progreso,Progrès,Progresso,Tiến độ,ความคืบหน้า,បញ្ចប់,Kemajuan,Kemajuan,Pag -unlad
-进度,jìn dù,Progress,Progreso,Progrès,Progresso,Tiến độ,ความคืบหน้า,| ដំណើរការទាំងមូល,Kemajuan,Kemajuan,Pag -unlad
+进度,jìn dù,Progress,Progreso,Progrès,Progresso,Tiến độ,ความคืบหน้า,វឌ្ឍនភាព,Kemajuan,Kemajuan,Pag -unlad
 终结,zhōng jié,End,Fin,Fin,Fim,Kết thúc,จบ,នៅក្នុងដំណើរការ,Akhir,Akhir,End
 整个过程,zhěng gè guò chéng,Whole process,Todo el proceso,Processus complet,Todo o processo,Toàn bộ quá trình,กระบวนการทั้งหมด,លំហូរការងារ,Seluruh proses,Keseluruhan proses,Buong proseso
 在过程中,zài guò chéng zhōng,In process,En proceso,En cours,Em processo,Đang trong quá trình,อยู่ระหว่างดำเนินการ,អនុវត្តតាមដំណើរការ,Sedang proses,Dalam proses,Sa proseso
@@ -44,6 +44,6 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 有进展,yǒu jìn zhǎn,There is progress,Hay avances,Il y a des progrès,Há progresso,Có tiến bộ,มีความคืบหน้า,សូមក្រឡេកមើលវឌ្ឍនភាព,Ada kemajuan,Terdapat kemajuan,Mayroong pag -unlad
 看进展,kàn jìn zhǎn,Look at the progress,Mira el progreso,Regardez les progrès,Veja o progresso,Nhìn vào sự tiến bộ,ดูความคืบหน้า,ចាប់យកវឌ្ឍនភាព,Lihatlah kemajuannya,Lihatlah kemajuan,Tumingin sa pag -unlad
 看进度,kàn jìn dù,Look at the progress,Mira el progreso,Regardez les progrès,Veja o progresso,Nhìn vào sự tiến bộ,ดูความคืบหน้า,វាចប់ហើយ,Lihatlah kemajuannya,Lihatlah kemajuan,Tumingin sa pag -unlad
-赶进度,gǎn jìn dù,Catch up on progress,Póngase al día con el progreso,Rattraper les progrès,Acompanhar o progresso,Bắt kịp tiến độ,ติดตามความคืบหน้า,| ប្រកាសចុងបញ្ចប់,Ikuti kemajuan,Tangkap Kemajuan,Makibalita sa pag -unlad
+赶进度,gǎn jìn dù,Catch up on progress,Póngase al día con el progreso,Rattraper les progrès,Acompanhar o progresso,Bắt kịp tiến độ,ติดตามความคืบหน้า,ប្រមាញ់វឌ្ឍនភាព,Ikuti kemajuan,Tangkap Kemajuan,Makibalita sa pag -unlad
 终结了,zhōng jié le,It's over,Se acabó,C'est fini,Acabou,Hết rồi,จบแล้ว,ចប់ហើយ,Sudah berakhir,Ia lebih dari,Tapos na ito
 宣告终结,xuān gào zhōng jié,Declare the end,Declarar el fin,Déclarer la fin,Declare o fim,Tuyên bố kết thúc,แจ้งปิดท้ายครับ,ប្រកាសបញ្ចប់,Nyatakan akhirnya,Mengisytiharkan akhir,Ipahayag ang pagtatapos
