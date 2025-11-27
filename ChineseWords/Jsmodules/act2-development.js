@@ -26,7 +26,7 @@ export const p2_15_family__members = {
     malay: "Family Members",
     filipino: "Family Members"
   },
-  words: [
+  baseWords: [
     ["家", "jiā", "Home", "Inicio", "Accueil", "Início", "Trang chủ", "หน้าแรก", "ផ្ទះ", "Beranda", "Rumah", "Home"],
     ["家人", "jiā rén", "Family", "Familia", "Famille", "Família", "Gia Đình", "ครอบครัว", "គ្រួសារ", "Keluarga", "Keluarga", "Pamilya"],
     ["爸爸", "bà bà", "Dad", "Papá", "Papa", "Papai", "Bố", "พ่อ", "ប៉ា", "Ayah", "Ayah", "Tatay"],
@@ -45,7 +45,9 @@ export const p2_15_family__members = {
     ["外婆", "wài pó", "Maternal grandma", "Abuela materna", "Grand-mère maternelle", "Vovó materna", "Bà ngoại", "คุณยาย", "យាយ", "Nenek", "Nenek", "Lola"],
     ["丈夫", "zhàng fū", "Husband", "Marido", "Mari", "Marido", "Chồng", "สามี", "ប្តី", "Suami", "Suami", "Asawa"],
     ["妻子", "qī zǐ", "Wife", "Esposa", "Femme", "Esposa", "Vợ", "ภรรยา", "ប្រពន្ធ", "Istri", "Isteri", "Asawa"],
-    ["亲戚", "qīn qī", "Relatives", "Familiares", "Parents", "Parentes", "Người thân", "ญาติ", "សាច់ញាតិ", "Kerabat", "Saudara-mara", "Mga kamag-anak"],
+    ["亲戚", "qīn qī", "Relatives", "Familiares", "Parents", "Parentes", "Người thân", "ญาติ", "សាច់ញាតិ", "Kerabat", "Saudara-mara", "Mga kamag-anak"]
+  ],
+  exampleWords: [
     ["回家去", "huí jiā qù", "Go home", "Vete a casa", "Rentre chez toi", "Vá para casa", "Về nhà", "กลับบ้าน", "ទៅផ្ទះ", "Pulang", "Pergi ke rumah", "Umuwi"],
     ["在家里", "zài jiā lǐ", "At home", "En casa", "À la maison", "Em casa", "Ở nhà", "ที่บ้าน", "នៅផ្ទះ", "Di rumah", "Di rumah", "Sa bahay"],
     ["家人团聚", "jiā rén tuán jù", "Family reunion", "Reunión familiar", "Regroupement familial", "Reunião de família", "Đoàn tụ gia đình", "การรวมตัวของครอบครัว", "ការជួបជុំគ្រួសារ", "Reuni keluarga", "Reunion Keluarga", "Family Reunion"],
@@ -103,7 +105,7 @@ export const p2_16_days__of__week = {
     malay: "Days of Week",
     filipino: "Days of Week"
   },
-  words: [
+  baseWords: [
     ["星期", "xīng qī", "Week", "Semana", "Semaine", "Semana", "Tuần", "สัปดาห์", "សប្តាហ៍ || ថ្ងៃច័ន្ទ", "Minggu", "Minggu", "Linggo"],
     ["星期一", "xīng qī yī", "Monday", "Lunes", "Lundi", "Segunda-feira", "Thứ Hai", "วันจันทร์", "ថ្ងៃអង្គារ", "Senin", "Isnin", "Lunes"],
     ["星期二", "xīng qī èr", "Tuesday", "Martes", "mardi", "Terça-feira", "Thứ Ba", "วันอังคาร", "ថ្ងៃពុធ", "Selasa", "Selasa", "Martes"],
@@ -117,7 +119,9 @@ export const p2_16_days__of__week = {
     ["周末", "zhōu mò", "weekend", "fin de semana", "week-end", "fim de semana", "cuối tuần", "สุดสัปดาห์", "មួយសប្តាហ៍", "akhir pekan", "Hujung minggu", "Weekend"],
     ["工作日", "gōng zuò rì", "working day", "jornada laboral", "jour ouvrable", "jornada de trabalho", "ngày làm việc", "วันทำงาน", "ការងារថ្ងៃច័ន្ទ", "hari kerja", "Hari Kerja", "Araw ng Paggawa"],
     ["礼拜", "lǐ bài", "week", "semana", "semaine", "semana", "tuần", "สัปดาห์", "កិច្ចប្រជុំថ្ងៃច័ន្ទ", "minggu", "Minggu", "Linggo"],
-    ["每周", "měi zhōu", "week", "semana", "semaine", "semana", "tuần", "สัปดาห์", "ថ្នាក់ថ្ងៃអង្គារ", "minggu", "Minggu", "Linggo"],
+    ["每周", "měi zhōu", "week", "semana", "semaine", "semana", "tuần", "สัปดาห์", "ថ្នាក់ថ្ងៃអង្គារ", "minggu", "Minggu", "Linggo"]
+  ],
+  exampleWords: [
     ["今天星期几", "jīn tiān xīng qī jǐ", "day of the week", "día de la semana", "jour de la semaine", "dia da semana", "ngày trong tuần", "วันในสัปดาห์", "ការប្រលងថ្ងៃអង្គារ", "hari dalam seminggu", "Hari dalam Minggu", "Araw ng Linggo"],
     ["一个星期", "yí gè xīng qī", "one week", "una semana", "une semaine", "uma semana", "một tuần", "หนึ่งสัปดาห์", "រសៀលថ្ងៃពុធ", "satu minggu", "Satu minggu", "Isang linggo"],
     ["星期一上班", "xīng qī yī shàng bān", "Monday work", "Lunes trabajo", "Travail du lundi", "Trabalho de segunda-feira", "Thứ hai làm việc", "งานวันจันทร์", "ថ្ងៃពុធឥតគិតថ្លៃ", "Senin kerja", "Isnin kerja", "Lunes ng trabaho"],
@@ -165,7 +169,7 @@ export const p2_17_months__seasons = {
     malay: "Months & Seasons",
     filipino: "Months & Seasons"
   },
-  words: [
+  baseWords: [
     ["月", "yuè", "Month", "Mes", "Mois", "Mês", "Tháng", "เดือน", "ខែ", "Bulan", "Bulan", "Buwan"],
     ["一月", "yí yuè", "January", "enero", "janvier", "Janeiro", "Tháng Giêng", "มกราคม", "ខែមករា || ខែកុម្ភៈ || || មីនា || ខែមេសា", "Januari", "Januari", "Enero"],
     ["二月", "èr yuè", "February", "febrero", "Février", "Fevereiro", "Tháng Hai", "กุมภาพันธ์", "ឧសភា", "Februari", "Februari", "Pebrero"],
@@ -183,7 +187,9 @@ export const p2_17_months__seasons = {
     ["夏天", "xià tiān", "Summer", "Verano", "Été", "Verão", "Mùa hè", "ฤดูร้อน", "ថ្ងៃឈប់សម្រាកខែមករា", "Musim panas", "Musim panas", "Tag -init"],
     ["秋天", "qiū tiān", "Autumn", "Otoño", "Automne", "Outono", "Mùa thu", "ฤดูใบไม้ร่วง", "ថ្ងៃចូលឆ្នាំសកលក្នុងខែកុម្ភៈ", "Musim gugur", "Autumn", "Taglagas"],
     ["冬天", "dōng tiān", "Winter", "Invierno", "Hiver", "Inverno", "Mùa đông", "ฤดูหนาว", "ខែកុម្ភៈគឺជាការខ្លីបំផុត", "Musim dingin", "Musim sejuk", "Taglamig"],
-    ["季节", "jì jié", "Season", "Temporada", "Saison", "Temporada", "Mùa", "ฤดูกาล", "| ខែមីនាចាប់ផ្តើមសាលារៀន", "Musim", "Musim", "Panahon"],
+    ["季节", "jì jié", "Season", "Temporada", "Saison", "Temporada", "Mùa", "ฤดูกาล", "| ខែមីនាចាប់ផ្តើមសាលារៀន", "Musim", "Musim", "Panahon"]
+  ],
+  exampleWords: [
     ["这个月", "zhè ge yuè", "This month", "Este mes", "Ce mois-ci", "Este mês", "Tháng này", "เดือนนี้", "ការដាំដើមឈើនៅខែមីនា", "Bulan ini", "Bulan ini", "Ngayong buwan"],
     ["月底", "yuè dǐ", "End of the month", "Fin de mes", "Fin du mois", "Fim do mês", "Cuối tháng", "สิ้นเดือน", "| ខែមេសា Qingming", "Akhir bulan", "Akhir bulan", "Pagtatapos ng buwan"],
     ["一月很冷", "yí yuè hěn lěng", "January is cold", "Enero es frío", "Janvier est froid", "Janeiro está frio", "Tháng giêng lạnh", "มกราคม หนาว", "ខែមេសាចេញ", "Januari dingin", "Januari sejuk", "Ang Enero ay malamig"],
@@ -239,7 +245,7 @@ export const p2_18_years__calendar = {
     malay: "Years & Calendar",
     filipino: "Years & Calendar"
   },
-  words: [
+  baseWords: [
     ["年", "nián", "year", "año", "année", "ano", "năm", "ปี", "ឆ្នាំ", "tahun", "tahun", "Taon"],
     ["今年", "jīn nián", "this year", "este año", "cette année", "este ano", "năm nay", "ปีนี้", "ឆ្នាំនេះ", "tahun ini", "Tahun ini", "Sa taong ito"],
     ["明年", "míng nián", "next year", "el año que viene", "l'année prochaine", "ano que vem", "năm tới", "ปีหน้า", "ឆ្នាំក្រោយ", "tahun depan", "Tahun depan", "Sa susunod na taon"],
@@ -254,7 +260,9 @@ export const p2_18_years__calendar = {
     ["阳历", "yáng lì", "Solar calendar", "Calendario solar", "Calendrier solaire", "Calendário solar", "Dương lịch", "ปฏิทินสุริยคติ", "ប្រតិទិនព្រះអាទិត្យ", "Kalender matahari", "Kalendar solar", "Solar na kalendaryo"],
     ["年代", "nián dài", "Era/Decade", "Época/Década", "Époque/Décennie", "Era/Década", "Thập niên", "ยุคสมัย", "សម័យ", "Era/Dekade", "Era/Dekad", "Panahon/Dekada"],
     ["周年", "zhōu nián", "Anniversary", "Aniversario", "Anniversaire", "Aniversário", "Kỷ niệm", "ครบรอบ", "ខួបកំណើត", "Ulang tahun", "Ulang tahun", "Anibersaryo"],
-    ["新年", "xīn nián", "New Year", "Año Nuevo", "Nouvel An", "Ano Novo", "Năm mới", "ปีใหม่", "ឆ្នាំថ្មី", "Tahun Baru", "Tahun Baru", "Bagong Taon"],
+    ["新年", "xīn nián", "New Year", "Año Nuevo", "Nouvel An", "Ano Novo", "Năm mới", "ปีใหม่", "ឆ្នាំថ្មី", "Tahun Baru", "Tahun Baru", "Bagong Taon"]
+  ],
+  exampleWords: [
     ["一年", "yī nián", "One year", "Un año", "Un an", "Um ano", "Một năm", "หนึ่งปี", "មួយឆ្នាំ", "Satu tahun", "Satu tahun", "Isang taon"],
     ["这年", "zhè nián", "This year", "Este año", "Cette année", "Este ano", "Năm này", "ปีนี้", "ឆ្នាំនេះ", "Tahun ini", "Tahun ini", "Sa taong ito"],
     ["今年好", "jīn nián hǎo", "This year is good", "Este año es bueno", "Cette année est bonne", "Este ano é bom", "Năm nay tốt", "ปีนี้ดี", "ឆ្នាំនេះល្អ", "Tahun ini bagus", "Tahun ini baik", "Maganda ang taong ito"],
@@ -304,7 +312,7 @@ export const p2_19_telling__time = {
     malay: "Telling Time",
     filipino: "Telling Time"
   },
-  words: [
+  baseWords: [
     ["点", "diǎn", "o'clock", "en punto", "heures", "horas", "giờ", "โมง", "ម៉ោង", "jam", "O'Clock", "O'Clock"],
     ["分", "fēn", "minutes", "minutos", "minutes", "minutos", "phút", "นาที", "នាទី", "menit", "minit", "Minuto"],
     ["秒", "miǎo", "seconds", "segundos", "secondes", "segundos", "giây", "วินาที", "វិនាទី", "detik", "Seconds", "segundo"],
@@ -321,7 +329,9 @@ export const p2_19_telling__time = {
     ["整点", "zhěng diǎn", "hour", "hora", "heure", "hora", "giờ", "ชั่วโมง", "តើម៉ោងប៉ុន្មាន", "jam", "Jam", "Oras"],
     ["上午", "shàng wǔ", "morning", "mañana", "matin", "manhã", "buổi sáng", "เช้า", "ម៉ោង 3", "pagi", "Pagi", "Umaga"],
     ["时刻", "shí kè", "hour", "hora", "heure", "hora", "giờ", "ชั่วโมง", "ច្រើននាទី", "jam", "Jam", "Oras"],
-    ["晚点", "wǎn diǎn", "late", "tarde", "en retard", "atrasado", "muộn", "สาย", "ប្រាំនាទី", "terlambat", "Lewat", "Late"],
+    ["晚点", "wǎn diǎn", "late", "tarde", "en retard", "atrasado", "muộn", "สาย", "ប្រាំនាទី", "terlambat", "Lewat", "Late"]
+  ],
+  exampleWords: [
     ["几点", "jǐ diǎn", "what time", "a qué hora", "à quelle heure", "que horas", "mấy giờ", "กี่โมง", "ពីរបីវិនាទី", "jam berapa", "Waktu berapa", "Anong oras"],
     ["三点", "sān diǎn", "three o'clock", "las tres en punto", "trois heures", "três horas", "ba giờ", "สามโมง", "បីវិនាទី", "jam tiga", "Tiga jam", "IKATLONG O'CLOCK"],
     ["几分", "jǐ fēn", "several minutes", "varios minutos", "plusieurs minutes", "vários minutos", "vài phút", "หลายนาที", "មួយភាគបួននៃមួយម៉ោង", "beberapa menit", "Beberapa minit", "ilang minuto"],
@@ -375,7 +385,7 @@ export const p2_20_numbers__11100 = {
     malay: "Numbers 11-100",
     filipino: "Numbers 11-100"
   },
-  words: [
+  baseWords: [
     ["十一", "shí yī", "eleven", "once", "onze", "onze", "mười một", "สิบเอ็ด", "ដប់មួយ", "sebelas", "sebelas", "labing-isa"],
     ["十二", "shí èr", "twelve", "doce", "douze", "doze", "mười hai", "สิบสอง", "ដប់ពីរ", "dua belas", "dua belas", "labindalawa"],
     ["十三", "shí sān", "thirteen", "trece", "treize", "treze", "mười ba", "สิบสาม", "ដប់បី", "tiga belas", "tiga belas", "labintatlo"],
@@ -393,7 +403,9 @@ export const p2_20_numbers__11100 = {
     ["千", "qiān", "thousand", "mil", "mille", "mil", "một ngàn", "พัน", "មួយពាន់", "seribu", "seribu", "libo"],
     ["万", "wàn", "ten thousand", "diez mil", "dix mille", "dez mil", "mười ngàn", "หมื่น", "មួយម៉ឺន", "sepuluh ribu", "sepuluh ribu", "sampung libo"],
     ["亿", "yì", "hundred million", "cien millones", "cent millions", "cem milhões", "một trăm triệu", "ร้อยล้าน", "មួយរយលាន", "seratus juta", "seratus juta", "isang daang milyon"],
-    ["数字", "shù zì", "number/digit", "número/dígito", "numéro/chiffre", "número/dígito", "số/chữ số", "ตัวเลข", "លេខ", "angka", "nombor", "numero"],
+    ["数字", "shù zì", "number/digit", "número/dígito", "numéro/chiffre", "número/dígito", "số/chữ số", "ตัวเลข", "លេខ", "angka", "nombor", "numero"]
+  ],
+  exampleWords: [
     ["双十一", "shuāng shí yī", "Double Eleven/Singles Day", "Día del Soltero", "Journée des célibataires", "Dia dos Solteiros", "Ngày độc thân", "วันคนโสด", "ថ្ងៃអ្នកនៅលីវ", "Hari Lajang", "Hari Bujang", "Araw ng mga Binata"],
     ["十一点钟", "shí yì diǎn zhōng", "eleven o'clock", "las once", "onze heures", "onze horas", "mười một giờ", "สิบเอ็ดโมง", "ម៉ោងដប់មួយ", "jam sebelas", "pukul sebelas", "alas-onse"],
     ["十二生肖", "shí èr shēng xiào", "twelve zodiac animals", "doce signos del zodiaco", "douze signes du zodiaque", "doze signos do zodíaco", "mười hai con giáp", "สิบสองนักษัตร", "រាសីចក្រដប់ពីរ", "dua belas shio", "dua belas zodiak", "labindalawang zodiac"],
@@ -449,7 +461,7 @@ export const p2_21_more__measure__words = {
     malay: "More Measure Words",
     filipino: "More Measure Words"
   },
-  words: [
+  baseWords: [
     ["盒", "hé", "box", "caja", "boîte", "caixa", "hộp", "กล่อง", "ប្រអប់ || កាបូប", "kotak", "Kotak", "Kahon"],
     ["袋", "dài", "bag", "bolsa", "sac", "bolsa", "túi", "กระเป๋า", "ចំណែក", "tas", "BAG", "Bag"],
     ["份", "fèn", "portion", "porción", "partie", "porção", "phần", "ส่วน", "ហុច", "porsi", "bahagian", "bahagi"],
@@ -467,7 +479,9 @@ export const p2_21_more__measure__words = {
     ["朵", "duǒ", "flower", "flor", "fleur", "flor", "hoa", "ดอกไม้", "កាបូបអង្ករមួយ កាបូបពីរបី", "bunga", "Bunga", "Bulaklak"],
     ["串", "chuàn", "string", "cadena", "chaîne", "cadeia de caracteres", "chuỗi", "สตริง", "កាសែតមួយ", "tali", "String", "String"],
     ["束", "shù", "bunch", "grupo", "groupe", "bando", "bó", "พวง", "ពីរបី", "banyak", "Bunch", "Bunch"],
-    ["堆", "duī", "pile", "pila", "tas", "pilha", "đống", "กอง", "and ើកម្តងហើយម្តងទៀត", "tumpukan", "Pile", "Pile"],
+    ["堆", "duī", "pile", "pila", "tas", "pilha", "đống", "กอง", "and ើកម្តងហើយម្តងទៀត", "tumpukan", "Pile", "Pile"]
+  ],
+  exampleWords: [
     ["一盒糖", "yī hé táng", "a box of sugar", "una caja de azúcar", "une boîte de sucre", "uma caixa de açúcar", "một hộp đường", "น้ำตาลกล่อง", "និយាយម្តងទៀត", "sekotak gula", "Kotak gula", "isang kahon ng asukal"],
     ["几盒", "jǐ hé", "a few boxes", "algunas cajas", "quelques cartons", "algumas caixas", "vài hộp", "ไม่กี่กล่อง", "ការរត់", "beberapa kotak", "beberapa kotak", "ilang mga kahon"],
     ["一袋米", "yī dài mǐ", "a bag of rice", "una bolsa de arroz", "un sac de riz", "um saco de arroz", "một bao gạo", "ข้าวถุง", "| ដំណើរពីរបី", "sekantong beras", "beg beras", "isang bag ng bigas"],
@@ -523,7 +537,7 @@ export const p2_22_more__action__verbs = {
     malay: "More Action Verbs",
     filipino: "More Action Verbs"
   },
-  words: [
+  baseWords: [
     ["放", "fàng", "put", "poner", "mettre", "colocar", "đặt", "ใส่", "ដាក់ ​​", "letakkan", "meletakkan", "Ilagay"],
     ["带", "dài", "bring", "traer", "apporter", "trazer", "mang theo", "นำ", "នាំ", "bawa", "Bawa", "magdala"],
     ["送", "sòng", "send", "enviar", "envoyer", "enviar", "gửi", "ส่ง", "ផ្ញើ", "kirim", "Hantar", "Magpadala"],
@@ -543,7 +557,9 @@ export const p2_22_more__action__verbs = {
     ["记", "jì", "remember", "recuerda", "souviens-toi", "lembre-se", "nhớ", "จำไว้", "ចងចាំ", "ingat", "Ingat", "Tandaan"],
     ["忘", "wàng", "forget", "olvidar", "oublier", "esquecer", "quên", "ลืม", "ភ្លេច", "lupakan", "Lupakan", "kalimutan"],
     ["搬", "bān", "move", "mover", "bouger", "mover", "di chuyển", "ย้าย", "ការផ្លាស់ប្តូរ", "pindah", "bergerak", "Ilipat"],
-    ["挪", "nuó", "move", "mover", "bouger", "mover", "di chuyển", "ย้าย", "ការផ្លាស់ប្តូរ", "pindah", "bergerak", "Ilipat"],
+    ["挪", "nuó", "move", "mover", "bouger", "mover", "di chuyển", "ย้าย", "ការផ្លាស់ប្តូរ", "pindah", "bergerak", "Ilipat"]
+  ],
+  exampleWords: [
     ["放下", "fàng xià", "put down", "dejar", "déposer", "colocar para baixo", "đặt xuống", "วางลง", "ដាក់ចុះ", "letakkan", "Letakkan", "Ilagay"],
     ["放好", "fàng hǎo", "put away", "guardar", "ranger", "guardar", "cất đi", "เอาไป", "ដាក់ចេញ", "singkirkan", "Letakkan", "Ilayo"],
     ["带走", "dài zǒu", "take away", "para llevar", "à emporter", "tirar", "mang đi", "เอาออกไป", "យកទៅឆ្ងាយ", "ambil", "Ambil", "Alisin"],
@@ -603,7 +619,7 @@ export const p2_23_daily__actions = {
     malay: "Daily Actions",
     filipino: "Daily Actions"
   },
-  words: [
+  baseWords: [
     ["起床", "qǐ chuáng", "Get up", "Levántate", "Se lever", "Levantar", "Dậy", "ตื่นนอน", "ក្រោកឡើង", "Bangun", "Bangun", "Bumangon"],
     ["睡觉", "shuì jiào", "Sleep", "Dormir", "Dormir", "Dormir", "Ngủ", "นอน", "គេង", "Tidur", "Tidur", "Matulog"],
     ["洗脸", "xǐ liǎn", "Wash your face", "Lávate la cara", "Lavez-vous le visage", "Lave o rosto", "Rửa mặt", "ล้างหน้า", "លាងមុខ", "Cuci muka", "Basuh muka", "Maghilamos"],
@@ -620,7 +636,9 @@ export const p2_23_daily__actions = {
     ["放学", "fàng xué", "School is over", "Salir de la escuela", "Sortir de l'école", "Sair da escola", "Tan học", "เลิกเรียน", "ចេញពីសាលា", "Pulang sekolah", "Balik sekolah", "Tapos sa klase"],
     ["回家", "huí jiā", "Go home", "Ir a casa", "Rentrer à la maison", "Ir para casa", "Về nhà", "กลับบ้าน", "ត្រឡប់ផ្ទះ", "Pulang", "Balik rumah", "Umuwi"],
     ["出门", "chū mén", "Go out", "Salir", "Sortir", "Sair", "Ra ngoài", "ออกไป", "ចេញទៅក្រៅ", "Keluar", "Keluar", "Lumabas"],
-    ["休息", "xiū xī", "Rest", "Descansar", "Se reposer", "Descansar", "Nghỉ ngơi", "พักผ่อน", "សម្រាក", "Istirahat", "Rehat", "Magpahinga"],
+    ["休息", "xiū xī", "Rest", "Descansar", "Se reposer", "Descansar", "Nghỉ ngơi", "พักผ่อน", "សម្រាក", "Istirahat", "Rehat", "Magpahinga"]
+  ],
+  exampleWords: [
     ["起床了", "qǐ chuáng le", "Wake up", "Levántate", "Réveille-toi", "Acorde", "Dậy đi", "ตื่นนอน", "ក្រោកឡើង", "Bangun", "Bangun", "Gising na"],
     ["早起床", "zǎo qǐ chuáng", "Get up early", "Levántate temprano", "Se lever tôt", "Acordar cedo", "Dậy sớm", "ตื่นเช้า", "ក្រោកពីព្រលឹម", "Bangun pagi", "Bangun awal", "Bumangon ng maaga"],
     ["睡觉吧", "shuì jiào ba", "Go to sleep", "Vete a dormir", "Va dormir", "Vá dormir", "Đi ngủ đi", "ไปนอน", "ទៅគេង", "Tidurlah", "Pergi tidur", "Matulog na"],
@@ -674,7 +692,7 @@ export const p2_24_places__locations = {
     malay: "Places & Locations",
     filipino: "Places & Locations"
   },
-  words: [
+  baseWords: [
     ["地方", "dì fāng", "Place", "Lugar", "Lieu", "Lugar", "Nơi", "สถานที่", "ដាក់ ​​", "Tempat", "Tempat", "Lugar"],
     ["学校", "xué xiào", "School", "Escuela", "École", "Escola", "Trường học", "โรงเรียน", "សាលា", "Sekolah", "Sekolah", "Paaralan"],
     ["公司", "gōng sī", "Company", "Empresa", "Entreprise", "Empresa", "Công ty", "บริษัท", "ក្រុមហ៊ុន || ធនាគារ || ផ្សារទំនើប || ហាង || សណ្ឋាគារ || សណ្ឋាគារ || ភោជនីយដ្ឋាន || អាកាសយានដ្ឋាន", "Perusahaan", "Syarikat", "Kumpanya"],
@@ -692,7 +710,9 @@ export const p2_24_places__locations = {
     ["邮局", "yóu jú", "Post office", "Oficina de correos", "Bureau de poste", "Correios", "Bưu điện", "ที่ทำการไปรษณีย์", "តម្រង់ជួរនៅធនាគារ", "Kantor pos", "Pejabat Pos", "Post Office"],
     ["电影院", "diàn yǐng yuàn", "Cinema", "Cine", "Cinéma", "Cinema", "Rạp chiếu phim", "ภาพยนตร์", "ដកប្រាក់ពីធនាគារ", "Bioskop", "Cinema", "Sinehan"],
     ["博物馆", "bó wù guǎn", "Museum", "Museo", "Musée", "Museu", "Bảo tàng", "พิพิธภัณฑ์", "ហាងលក់ទំនិញផ្សារទំនើប", "Muzium", "Muzium", "Museum"],
-    ["体育馆", "tǐ yù guǎn", "Gym", "Gimnasio", "Salle de sport", "Academia", "Phòng tập", "ยิม", "| ការបញ្ចុះតម្លៃផ្សារទំនើប", "Gimnasium", "Gym", "Gym"],
+    ["体育馆", "tǐ yù guǎn", "Gym", "Gimnasio", "Salle de sport", "Academia", "Phòng tập", "ยิม", "| ការបញ្ចុះតម្លៃផ្សារទំនើប", "Gimnasium", "Gym", "Gym"]
+  ],
+  exampleWords: [
     ["这地方不错", "zhè dì fāng bù cuò", "This place is nice", "Este lugar es bonito", "Cet endroit est sympa", "Esse lugar é legal", "Chỗ này đẹp đấy", "ที่นี่ดีมาก", "ហាងត្រូវបានបិទ", "Tempat ini bagus", "Tempat ini bagus", "Ang lugar na ito ay maganda"],
     ["找个地方", "zhǎo gè dì fāng", "Find a place", "Encuentra un lugar", "Trouver un endroit", "Encontre um lugar", "Tìm một địa điểm", "ค้นหาสถานที่", "ទៅទិញឥវ៉ាន់", "Cari tempat", "Cari tempat", "Maghanap ng isang lugar"],
     ["学校放假", "xué xiào fàng jià", "School holidays", "Vacaciones escolares", "Vacances scolaires", "Férias escolares", "Nghỉ học", "วันหยุดโรงเรียน", "កក់សណ្ឋាគារ || ដើរនៅឧទ្យាន", "Liburan sekolah", "Cuti Sekolah", "Mga Piyesta Opisyal ng Paaralan"],
@@ -748,7 +768,7 @@ export const p2_25_directions__positions = {
     malay: "Directions & Positions",
     filipino: "Directions & Positions"
   },
-  words: [
+  baseWords: [
     ["前面", "qián miàn", "front", "frente", "avant", "frente", "phía trước", "ด้านหน้า", "មុខ", "depan", "Depan", "harap"],
     ["后面", "hòu miàn", "behind", "atrás", "derrière", "atrás", "phía sau", "ข้างหลัง", "ខាងក្រោយ", "belakang", "Belakang", "likod"],
     ["左边", "zuǒ biān", "left", "izquierda", "gauche", "esquerda", "trái", "ซ้าย", "ឆ្វេង", "kiri", "Kiri", "Kaliwa"],
@@ -766,7 +786,9 @@ export const p2_25_directions__positions = {
     ["西", "xī", "west", "oeste", "ouest", "oeste", "hướng tây", "ตะวันตก", "ខាងលិច", "barat", "Barat", "kanluran"],
     ["北", "běi", "north", "norte", "nord", "norte", "bắc", "เหนือ", "ខាងជើង", "utara", "Utara", "hilaga"],
     ["远处", "yuǎn chù", "far", "lejos", "loin", "longe", "xa", "ไกล", "ឆ្ងាយ", "jauh", "Jauh", "malayo"],
-    ["近处", "jìn chù", "near", "cerca", "près de", "perto", "gần", "ใกล้", "ជិត", "dekat", "Berhampiran", "malapit"],
+    ["近处", "jìn chù", "near", "cerca", "près de", "perto", "gần", "ใกล้", "ជិត", "dekat", "Berhampiran", "malapit"]
+  ],
+  exampleWords: [
     ["前面走", "qián miàn zǒu", "walk ahead", "camina adelante", "avancer", "siga em frente", "đi về phía trước", "เดินไปข้างหน้า", "ដើរទៅមុខ", "berjalan ke depan", "Berjalan ke hadapan", "Maglakad pasulong"],
     ["在前面", "zài qián miàn", "in front", "al frente", "devant", "na frente", "phía trước", "ข้างหน้า", "នៅខាងមុខ", "di depan", "Di hadapan", "sa harap"],
     ["后面看", "hòu miàn kàn", "look from behind", "mirar desde atrás", "regarder par derrière", "olhar por trás", "nhìn từ phía sau", "มองจากด้านหลัง", "នៅខាងក្រោយ", "lihat dari belakang", "Lihat dari belakang", "Tumingin mula sa likuran"],
@@ -822,7 +844,7 @@ export const p2_26_basic__transportation = {
     malay: "Basic Transportation",
     filipino: "Basic Transportation"
   },
-  words: [
+  baseWords: [
     ["车", "chē", "Car", "Coche", "Voiture", "Carro", "Xe", "รถยนต์", "ឡាន", "Mobil", "Kereta", "CAR"],
     ["坐车", "zuò chē", "By car", "En coche", "En voiture", "De carro", "Bằng ô tô", "โดยรถยนต์", "ដោយឡាន", "Dengan mobil", "Oleh kereta", "Sa pamamagitan ng kotse"],
     ["开车", "kāi chē", "Driving", "Conducir", "Conduite", "Dirigindo", "Lái xe", "การขับรถ", "ការបើកបរ", "Mengemudi", "Memandu", "Pagmamaneho"],
@@ -840,7 +862,9 @@ export const p2_26_basic__transportation = {
     ["上车", "shàng chē", "Get on", "Súbete", "Montez", "Suba", "Lên xe", "ขึ้นรถ", "ឡើងឡាន", "Naik", "Naik", "Sumakay"],
     ["下车", "xià chē", "Get off", "Bájate", "Descendez", "Desça", "Xuống xe", "ลงรถ", "ចុះឡាន", "Turun", "Turun", "Bumaba"],
     ["车票", "chē piào", "Ticket", "Boleto", "Billet", "Bilhete", "Vé", "ตั๋ว", "សំបុត្រ", "Tiket", "Tiket", "Tiket"],
-    ["堵车", "dǔ chē", "Traffic jam", "Atasco de tráfico", "Embouteillage", "Engarrafamento", "Ùn tắc giao thông", "รถติด", "ការស្ទះចរាចរណ៍", "Kemacetan lalu lintas", "Kesesakan lalu lintas", "Traffic jam"],
+    ["堵车", "dǔ chē", "Traffic jam", "Atasco de tráfico", "Embouteillage", "Engarrafamento", "Ùn tắc giao thông", "รถติด", "ការស្ទះចរាចរណ៍", "Kemacetan lalu lintas", "Kesesakan lalu lintas", "Traffic jam"]
+  ],
+  exampleWords: [
     ["汽车", "qì chē", "Car", "Coche", "Voiture", "Carro", "Xe ô tô", "รถยนต์", "ឡាន", "Mobil", "Kereta", "Kotse"],
     ["买车", "mǎi chē", "Buy a car", "Comprar un coche", "Acheter une voiture", "Comprar um carro", "Mua xe", "ซื้อรถ", "ទិញឡាន", "Beli mobil", "Beli kereta", "Bumili ng kotse"],
     ["坐车去", "zuò chē qù", "Go by car", "Ir en coche", "Prendre une voiture", "Ir de carro", "Đi xe", "ไปด้วยรถ", "ជិះឡានទៅ", "Pergi naik mobil", "Pergi dengan kereta", "Sumakay ng kotse"],
@@ -896,7 +920,7 @@ export const p2_27_colors = {
     malay: "Colors",
     filipino: "Colors"
   },
-  words: [
+  baseWords: [
     ["颜色", "yán sè", "Color", "Color", "Couleur", "Cor", "Màu sắc", "สี", "ពណ៌", "Warna", "Warna", "Kulay"],
     ["红色", "hóng sè", "Red", "Rojo", "Rouge", "Vermelho", "Đỏ", "แดง", "ក្រហម", "Merah", "Merah", "Pula"],
     ["黄色", "huáng sè", "Yellow", "Amarillo", "Jaune", "Amarelo", "Màu vàng", "สีเหลือง", "ពណ៌លឿង", "Kuning", "Kuning", "Dilaw"],
@@ -914,7 +938,9 @@ export const p2_27_colors = {
     ["亮", "liàng", "Bright", "Brillante", "Lumineux", "Brilhante", "Sáng", "สว่าง", "ភ្លឺ", "Terang", "Terang", "Maliwanag"],
     ["暗", "àn", "Dark", "Oscuro", "Sombre", "Escuro", "Tối", "มืด", "ងងឹត", "Gelap", "Gelap", "Madilim"],
     ["鲜艳", "xiān yàn", "Vivid", "Vivo", "Vif", "Vívido", "Tươi sáng", "สดใส", "ភ្លឺស្រស់", "Cerah", "Cerah", "Makulay"],
-    ["暗淡", "àn dàn", "Dim", "Apagado", "Terne", "Opaco", "Mờ", "สลัว", "ស្រអាប់", "Redup", "Pudar", "Mapurol"],
+    ["暗淡", "àn dàn", "Dim", "Apagado", "Terne", "Opaco", "Mờ", "สลัว", "ស្រអាប់", "Redup", "Pudar", "Mapurol"]
+  ],
+  exampleWords: [
     ["什么颜色", "shén me yán sè", "What color", "De qué color", "De quelle couleur", "Que cor", "Màu gì", "สีอะไร", "ពណ៌អ្វី", "Warna apa", "Warna apa", "Anong kulay"],
     ["颜色好看", "yán sè hǎo kàn", "Color is nice", "El color es bonito", "La couleur est belle", "A cor é bonita", "Màu đẹp", "สีสวย", "ពណ៌ស្អាត", "Warnanya bagus", "Warna cantik", "Magandang kulay"],
     ["红色的花", "hóng sè de huā", "Red flower", "Flor roja", "Fleur rouge", "Flor vermelha", "Hoa đỏ", "ดอกไม้สีแดง", "ផ្កាក្រហម", "Bunga merah", "Bunga merah", "Pulang bulaklak"],

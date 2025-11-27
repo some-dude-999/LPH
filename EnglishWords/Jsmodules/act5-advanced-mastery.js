@@ -13,12 +13,12 @@ export const __actMeta = {
 export const p5_131_formal__vocabulary__1 = {
   meta: {
     wordpack: 131,
+    english: "Formal Vocabulary 1",
     chinese: "Formal Vocabulary 1",
     pinyin: "Formal Vocabulary 1",
-    spanish: "Formal Vocabulary 1",
     portuguese: "Formal Vocabulary 1"
   },
-  words: [
+  baseWords: [
     ["acquire", "获取", "huò qǔ", "adquirir", "adquirir"],
     ["allocate", "分配", "fēn pèi", "asignar", "alocar"],
     ["ascertain", "确定", "què dìng", "determinar", "verificar"],
@@ -38,7 +38,9 @@ export const p5_131_formal__vocabulary__1 = {
     ["replicate", "复制", "fù zhì", "replicar", "replicar"],
     ["indicate", "表示", "biǎo shì", "indicar", "indicar"],
     ["inherent", "固有", "gù yǒu", "inherente", "inerente"],
-    ["attain", "达到", "dá dào", "alcanzar", "atingir"],
+    ["attain", "达到", "dá dào", "alcanzar", "atingir"]
+  ],
+  exampleWords: [
     ["acquire knowledge", "获取知识", "huò qǔ zhī shí", "adquirir conocimientos", "adquirir conhecimento"],
     ["acquire skills", "获得技能", "huò dé jì néng", "adquirir habilidades", "adquirir competências"],
     ["allocate resources", "分配资源", "fēn pèi zī yuán", "asignar recursos", "alocar recursos"],
@@ -76,8 +78,8 @@ export const p5_131_formal__vocabulary__1 = {
     ["indicate interest", "表示兴趣", "biǎo shì xìng qù", "indicar interés", "indicar interesse"],
     ["indicate that", "表明", "biǎo míng", "indicar que", "indique que"],
     ["inherent risk", "固有风险", "gù yǒu fēng xiǎn", "riesgo inherente", "risco inerente"],
-    ["inherent in", "", "", "inherente a", "inerente a"],
-    ["attain goal", "固有的达到目标", "gù yǒu de dá dào mù biāo", "alcanzar la meta", "atingir a meta"],
+    ["inherent in", "固有的", "gù yǒu de", "inherente a", "inerente a"],
+    ["attain goal", "达到目标", "dá dào mù biāo", "alcanzar la meta", "atingir a meta"],
     ["attain success", "获得成功", "huò dé chéng gōng", "alcanzar el éxito", "alcançar o sucesso"]
   ]
 };
@@ -85,12 +87,12 @@ export const p5_131_formal__vocabulary__1 = {
 export const p5_132_formal__vocabulary__2 = {
   meta: {
     wordpack: 132,
+    english: "Formal Vocabulary 2",
     chinese: "Formal Vocabulary 2",
     pinyin: "Formal Vocabulary 2",
-    spanish: "Formal Vocabulary 2",
     portuguese: "Formal Vocabulary 2"
   },
-  words: [
+  baseWords: [
     ["inaugurate", "揭幕", "jiē mù", "inaugurar", "inaugurar"],
     ["integrate", "整合", "zhěng hé", "integrar", "integrar"],
     ["construe", "解释", "jiě shì", "interpretar", "interpretar"],
@@ -110,7 +112,9 @@ export const p5_132_formal__vocabulary__2 = {
     ["relevant", "相关", "xiāng guān", "relevante", "relevante"],
     ["significant", "重要", "zhòng yào", "significativo", "significativo"],
     ["subsequent", "后续", "hòu xù", "posterior", "subsequente"],
-    ["amend", "修改", "xiū gǎi", "modificar", "alterar"],
+    ["amend", "修改", "xiū gǎi", "modificar", "alterar"]
+  ],
+  exampleWords: [
     ["inaugurate president", "就任总统", "jiù rèn zǒng tǒng", "inaugurar presidente", "toma posse como presidente"],
     ["inaugurate new", "开启新的", "kāi qǐ xīn de", "inaugurar nuevo", "inaugurar novo"],
     ["integrate systems", "集成系统", "jí chéng xì tǒng", "integrar sistemas", "integrar sistemas"],
@@ -134,22 +138,22 @@ export const p5_132_formal__vocabulary__2 = {
     ["principal reason", "主要原因", "zhǔ yào yuán yīn", "razón principal", "razão principal"],
     ["principal amount", "本金金额", "běn jīn jīn é", "importe principal", "montante principal"],
     ["prior experience", "以前的经验", "yǐ qián de jīng yàn", "experiencia previa", "experiência anterior"],
-    ["prior to", "在", "zài", "antes de", "antes de"],
-    ["profound impact", "之前深远影响", "zhī qián shēn yuǎn yǐng xiǎng", "impacto profundo", "impacto profundo"],
+    ["prior to", "在...之前", "zài ... zhī qián", "antes de", "antes de"],
+    ["profound impact", "深远影响", "shēn yuǎn yǐng xiǎng", "impacto profundo", "impacto profundo"],
     ["profound effect", "深远影响", "shēn yuǎn yǐng xiǎng", "efecto profundo", "efeito profundo"],
     ["prominent figure", "杰出人物", "jié chū rén wù", "figura destacada", "figura proeminente"],
     ["prominent role", "突出角色", "tū chū jué sè", "papel destacado", "papel de destaque"],
     ["large proportion", "比例大", "bǐ lì dà", "gran proporción", "grande proporção"],
-    ["proportion of", "", "", "proporción de", "proporção de"],
-    ["pursue career", "的比例追求事业", "de bǐ lì zhuī qiú shì yè", "seguir una carrera", "seguir carreira"],
+    ["proportion of", "的比例", "de bǐ lì", "proporción de", "proporção de"],
+    ["pursue career", "追求事业", "zhuī qiú shì yè", "seguir una carrera", "seguir carreira"],
     ["pursue goal", "追求目标", "zhuī qiú mù biāo", "perseguir el objetivo", "perseguir o objetivo"],
     ["relevant information", "相关信息", "xiāng guān xìn xī", "información relevante", "informações relevantes"],
-    ["relevant to", "与", "yǔ", "relevante para", "relevante para"],
-    ["significant difference", "相关显着差异", "xiāng guān xiǎn zhe chā yì", "diferencia significativa", "diferença significativa"],
+    ["relevant to", "与...相关", "yǔ ... xiāng guān", "relevante para", "relevante para"],
+    ["significant difference", "显着差异", "xiǎn zhe chā yì", "diferencia significativa", "diferença significativa"],
     ["significant impact", "重大影响", "zhòng dà yǐng xiǎng", "impacto significativo", "impacto significativo"],
     ["subsequent events", "后续事件", "hòu xù shì jiàn", "acontecimientos posteriores", "eventos subsequentes"],
-    ["subsequent to", "", "", "posterior a", "após"],
-    ["amend constitution", "之后修改宪法", "zhī hòu xiū gǎi xiàn fǎ", "modificar la constitución", "alterar a constituição"],
+    ["subsequent to", "在...之后", "zài ... zhī hòu", "posterior a", "após"],
+    ["amend constitution", "修改宪法", "xiū gǎi xiàn fǎ", "modificar la constitución", "alterar a constituição"],
     ["amend policy", "修改政策", "xiū gǎi zhèng cè", "modificar la política", "alterar política"]
   ]
 };
@@ -157,12 +161,12 @@ export const p5_132_formal__vocabulary__2 = {
 export const p5_133_formal__vocabulary__3 = {
   meta: {
     wordpack: 133,
+    english: "Formal Vocabulary 3",
     chinese: "Formal Vocabulary 3",
     pinyin: "Formal Vocabulary 3",
-    spanish: "Formal Vocabulary 3",
     portuguese: "Formal Vocabulary 3"
   },
-  words: [
+  baseWords: [
     ["substantial", "实质性", "shí zhì xìng", "sustancial", "substancial"],
     ["sufficient", "足够", "zú gòu", "suficiente", "suficiente"],
     ["sustain", "维持", "wéi chí", "sostener", "sustentar"],
@@ -182,7 +186,9 @@ export const p5_133_formal__vocabulary__3 = {
     ["consent", "同意", "tóng yì", "consentimiento", "consentimento"],
     ["consolidate", "巩固", "gǒng gù", "consolidar", "consolidar"],
     ["convey", "传达", "chuán dá", "transmitir", "transmitir"],
-    ["designate", "指定", "zhǐ dìng", "designar", "designar"],
+    ["designate", "指定", "zhǐ dìng", "designar", "designar"]
+  ],
+  exampleWords: [
     ["substantial evidence", "实质性证据", "shí zhì xìng zhèng jù", "pruebas sustanciales", "evidências substanciais"],
     ["substantial amount", "大量", "dà liàng", "cantidad sustancial", "montante substancial"],
     ["sufficient time", "时间充足", "shí jiān chōng zú", "tiempo suficiente", "tempo suficiente"],
@@ -229,12 +235,12 @@ export const p5_133_formal__vocabulary__3 = {
 export const p5_134_formal__vocabulary__4 = {
   meta: {
     wordpack: 134,
+    english: "Formal Vocabulary 4",
     chinese: "Formal Vocabulary 4",
     pinyin: "Formal Vocabulary 4",
-    spanish: "Formal Vocabulary 4",
     portuguese: "Formal Vocabulary 4"
   },
-  words: [
+  baseWords: [
     ["criteria", "标准", "biāo zhǔn", "criterios", "critérios"],
     ["crucial", "至关重要", "zhì guān zhòng yào", "crucial", "crucial"],
     ["derive", "导出", "dǎo chū", "derivar", "derivar"],
@@ -254,10 +260,12 @@ export const p5_134_formal__vocabulary__4 = {
     ["equivalent", "等价", "děng jià", "equivalente", "equivalente"],
     ["evolve", "进化", "jìn huà", "evolucionar", "evoluir"],
     ["exceed", "超过", "chāo guò", "exceder", "exceder"],
-    ["exclude", "排除", "pái chú", "excluir", "excluir"],
+    ["exclude", "排除", "pái chú", "excluir", "excluir"]
+  ],
+  exampleWords: [
     ["selection criteria", "选择标准", "xuǎn zé biāo zhǔn", "criterios de selección", "critérios de seleção"],
-    ["criteria for", "", "", "criterios para", "critérios para"],
-    ["crucial step", "的标准关键一步", "de biāo zhǔn guān jiàn yī bù", "paso crucial", "etapa crucial"],
+    ["criteria for", "的标准", "de biāo zhǔn", "criterios para", "critérios para"],
+    ["crucial step", "关键一步", "guān jiàn yī bù", "paso crucial", "etapa crucial"],
     ["crucial role", "至关重要的作用", "zhì guān zhòng yào de zuò yòng", "papel crucial", "papel crucial"],
     ["derive from", "源自", "yuán zì", "derivar de", "deriva de"],
     ["derive meaning", "衍生意义", "yǎn shēng yì yì", "derivar significado", "derivar significado"],
@@ -266,17 +274,17 @@ export const p5_134_formal__vocabulary__4 = {
     ["devote time", "投入时间", "tóu rù shí jiān", "dedicar tiempo", "dedicar tempo"],
     ["devote resources", "投入资源", "tóu rù zī yuán", "dedicar recursos", "dedicar recursos"],
     ["distinct difference", "明显差异", "míng xiǎn chā yì", "diferencia clara", "diferença distinta"],
-    ["distinct from", "与", "yǔ", "distinto de", "distinto de"],
-    ["public domain", "不同公共领域", "bù tóng gōng gòng lǐng yù", "dominio público", "domínio público"],
+    ["distinct from", "与...不同", "yǔ ... bù tóng", "distinto de", "distinto de"],
+    ["public domain", "公共领域", "gōng gòng lǐng yù", "dominio público", "domínio público"],
     ["domain expertise", "领域专业知识", "lǐng yù zhuān yè zhī shí", "experiencia en el dominio", "especialização no domínio"],
     ["redact information", "编辑信息", "biān jí xìn xī", "redactar información", "redigir informações"],
     ["redact names", "编辑姓名", "biān jí xìng míng", "redactar nombres", "redigir nomes"],
     ["project duration", "项目工期", "xiàng mù gōng qī", "duración del proyecto", "duração do projeto"],
-    ["duration of", "", "", "duración de", "duração de"],
-    ["eliminate waste", "的持续时间消除浪费", "de chí xù shí jiān xiāo chú làng fèi", "eliminar residuos", "eliminar desperdícios"],
+    ["duration of", "的持续时间", "de chí xù shí jiān", "duración de", "duração de"],
+    ["eliminate waste", "消除浪费", "xiāo chú làng fèi", "eliminar residuos", "eliminar desperdícios"],
     ["eliminate risk", "消除风险", "xiāo chú fēng xiǎn", "eliminar el riesgo", "eliminar riscos"],
-    ["emerge from", "从", "cóng", "emerger de", "emerge de"],
-    ["emerge as", "中出现出现为", "zhōng chū xiàn chū xiàn wèi", "emerger como", "emerge como"],
+    ["emerge from", "从...中出现", "cóng ... zhōng chū xiàn", "emerger de", "emerge de"],
+    ["emerge as", "出现为", "chū xiàn wèi", "emerger como", "emerge como"],
     ["enable access", "启用访问", "qǐ yòng fǎng wèn", "habilitar el acceso", "ativar o acesso"],
     ["enable users", "启用用户", "qǐ yòng yòng hù", "habilitar usuarios", "habilitar usuários"],
     ["encounter problems", "遇到问题", "yù dào wèn tí", "encontrar problemas", "encontrar problemas"],
@@ -293,20 +301,20 @@ export const p5_134_formal__vocabulary__4 = {
     ["evolve into", "演变成", "yǎn biàn chéng", "evolucionar hacia", "evoluir para"],
     ["exceed expectations", "超出预期", "chāo chū yù qī", "superar las expectativas", "superar as expectativas"],
     ["exceed limit", "超出限制", "chāo chū xiàn zhì", "exceder el límite", "exceder o limite"],
-    ["exclude from", "从", "cóng", "excluir de", "excluir de"],
-    ["exclude possibility", "中排除排除可能性", "zhōng pái chú pái chú kě néng xìng", "excluir posibilidad", "excluir possibilidade"]
+    ["exclude from", "从...中排除", "cóng ... zhōng pái chú", "excluir de", "excluir de"],
+    ["exclude possibility", "排除可能性", "pái chú kě néng xìng", "excluir posibilidad", "excluir possibilidade"]
   ]
 };
 
 export const p5_135_academic__nouns = {
   meta: {
     wordpack: 135,
+    english: "Academic Nouns",
     chinese: "Academic Nouns",
     pinyin: "Academic Nouns",
-    spanish: "Academic Nouns",
     portuguese: "Academic Nouns"
   },
-  words: [
+  baseWords: [
     ["assumption", "假设", "jiǎ shè", "suposición", "suposição"],
     ["capacity", "容量", "róng liàng", "capacidad", "capacidade"],
     ["tenet", "宗旨", "zōng zhǐ", "principio", "princípio"],
@@ -326,43 +334,45 @@ export const p5_135_academic__nouns = {
     ["implication", "含义", "hán yì", "implicación", "implicação"],
     ["corollary", "推论", "tuī lùn", "corolario", "corolário"],
     ["paradigm", "范式", "fàn shì", "paradigma", "paradigma"],
-    ["conjecture", "猜想", "cāi xiǎng", "conjetura", "conjectura"],
+    ["conjecture", "猜想", "cāi xiǎng", "conjetura", "conjectura"]
+  ],
+  exampleWords: [
     ["basic assumption", "基本假设", "jī běn jiǎ shè", "supuesto básico", "suposição básica"],
     ["assumption that", "假设", "jiǎ shè", "suposición de que", "suposição de que"],
     ["full capacity", "满容量", "mǎn róng liàng", "capacidad completa", "capacidade total"],
-    ["capacity for", "", "", "capacidad para", "capacidade para"],
-    ["core tenet", "的容量核心宗旨", "de róng liàng hé xīn zōng zhǐ", "principio fundamental", "princípio central"],
-    ["tenet of", "", "", "principio de", "princípio de"],
-    ["popular conception", "的宗旨流行观念", "de zōng zhǐ liú xíng guān niàn", "concepción popular", "concepção popular"],
-    ["conception of", "", "", "concepción de", "concepção de"],
-    ["budget constraint", "的构想预算限制", "de gòu xiǎng yù suàn xiàn zhì", "restricción presupuestaria", "restrição orçamentária"],
-    ["constraint on", "", "", "restricción en", "restrição em"],
-    ["apparent contradiction", "的约束明显的矛盾", "de yuē shù míng xiǎn de máo dùn", "aparente contradicción", "aparente contradição"],
-    ["contradiction between", "", "", "contradicción entre", "contradição entre"],
-    ["political controversy", "之间的矛盾政治争议", "zhī jiān de máo dùn zhèng zhì zhēng yì", "controversia política", "polêmica política"],
-    ["controversy over", "关于", "guān yú", "controversia sobre", "controvérsia sobre"],
-    ["logical inference", "的争议逻辑推理", "de zhēng yì luó jí tuī lǐ", "inferencia lógica", "inferência lógica"],
-    ["inference from", "从", "cóng", "inferencia de", "inferência de"],
-    ["main criterion", "推论主要标准", "tuī lùn zhǔ yào biāo zhǔn", "criterio principal", "critério principal"],
-    ["criterion for", "", "", "criterio para", "critério para"],
-    ["slight deviation", "的标准轻微偏差", "de biāo zhǔn qīng wēi piān chā", "ligera desviación", "ligeiro desvio"],
+    ["capacity for", "的容量", "de róng liàng", "capacidad para", "capacidade para"],
+    ["core tenet", "核心宗旨", "hé xīn zōng zhǐ", "principio fundamental", "princípio central"],
+    ["tenet of", "的宗旨", "de zōng zhǐ", "principio de", "princípio de"],
+    ["popular conception", "流行观念", "liú xíng guān niàn", "concepción popular", "concepção popular"],
+    ["conception of", "的构想", "de gòu xiǎng", "concepción de", "concepção de"],
+    ["budget constraint", "预算限制", "yù suàn xiàn zhì", "restricción presupuestaria", "restrição orçamentária"],
+    ["constraint on", "对...的约束", "duì ... de yuē shù", "restricción en", "restrição em"],
+    ["apparent contradiction", "明显的矛盾", "míng xiǎn de máo dùn", "aparente contradicción", "aparente contradição"],
+    ["contradiction between", "之间的矛盾", "zhī jiān de máo dùn", "contradicción entre", "contradição entre"],
+    ["political controversy", "政治争议", "zhèng zhì zhēng yì", "controversia política", "polêmica política"],
+    ["controversy over", "关于...的争议", "guān yú ... de zhēng yì", "controversia sobre", "controvérsia sobre"],
+    ["logical inference", "逻辑推理", "luó jí tuī lǐ", "inferencia lógica", "inferência lógica"],
+    ["inference from", "从...推断", "cóng ... tuī duàn", "inferencia de", "inferência de"],
+    ["main criterion", "主要标准", "zhǔ yào biāo zhǔn", "criterio principal", "critério principal"],
+    ["criterion for", "的标准", "de biāo zhǔn", "criterio para", "critério para"],
+    ["slight deviation", "轻微偏差", "qīng wēi piān chā", "ligera desviación", "ligeiro desvio"],
     ["deviation from", "偏离", "piān lí", "desviación de", "desvio de"],
     ["false dichotomy", "错误的二分法", "cuò wù de èr fēn fǎ", "falsa dicotomía", "falsa dicotomia"],
-    ["dichotomy between", "", "", "dicotomía entre", "dicotomia entre"],
-    ["public discourse", "之间的二分法公共话语", "zhī jiān de èr fēn fǎ gōng gòng huà yǔ", "discurso público", "discurso público"],
-    ["discourse on", "关于", "guān yú", "discurso sobre", "discurso sobre"],
-    ["clear distinction", "的讨论明显区别", "de tǎo lùn míng xiǎn qū bié", "distinción clara", "distinção clara"],
-    ["distinction between", "", "", "distinción entre", "distinção entre"],
-    ["legal framework", "之间的区别法律框架", "zhī jiān de qū bié fǎ lǜ kuāng jià", "marco jurídico", "quadro jurídico"],
-    ["framework for", "", "", "marco para", "quadro para"],
-    ["social hierarchy", "的框架社会等级制度", "de kuāng jià shè huì děng jí zhì dù", "jerarquía social", "hierarquia social"],
-    ["hierarchy of", "", "", "jerarquía de", "hierarquia de"],
-    ["political ideology", "的层次结构政治意识形态", "de céng cì jié gòu zhèng zhì yì shí xíng tài", "ideología política", "ideologia política"],
-    ["ideology of", "", "", "ideología de", "ideologia de"],
-    ["practical implication", "的意识形态实际意义", "de yì shí xíng tài shí jì yì yì", "implicaciones prácticas", "implicação prática"],
-    ["implication of", "", "", "implicación de", "implicação de"],
-    ["natural corollary", "的含义自然推论", "de hán yì zì rán tuī lùn", "corolario natural", "corolário natural"],
-    ["corollary to", "推论", "tuī lùn", "corolario de", "corolário de"],
+    ["dichotomy between", "之间的二分法", "zhī jiān de èr fēn fǎ", "dicotomía entre", "dicotomia entre"],
+    ["public discourse", "公共话语", "gōng gòng huà yǔ", "discurso público", "discurso público"],
+    ["discourse on", "关于...的讨论", "guān yú ... de tǎo lùn", "discurso sobre", "discurso sobre"],
+    ["clear distinction", "明显区别", "míng xiǎn qū bié", "distinción clara", "distinção clara"],
+    ["distinction between", "之间的区别", "zhī jiān de qū bié", "distinción entre", "distinção entre"],
+    ["legal framework", "法律框架", "fǎ lǜ kuāng jià", "marco jurídico", "quadro jurídico"],
+    ["framework for", "的框架", "de kuāng jià", "marco para", "quadro para"],
+    ["social hierarchy", "社会等级制度", "shè huì děng jí zhì dù", "jerarquía social", "hierarquia social"],
+    ["hierarchy of", "的层次结构", "de céng cì jié gòu", "jerarquía de", "hierarquia de"],
+    ["political ideology", "政治意识形态", "zhèng zhì yì shí xíng tài", "ideología política", "ideologia política"],
+    ["ideology of", "的意识形态", "de yì shí xíng tài", "ideología de", "ideologia de"],
+    ["practical implication", "实际意义", "shí jì yì yì", "implicaciones prácticas", "implicação prática"],
+    ["implication of", "的含义", "de hán yì", "implicación de", "implicação de"],
+    ["natural corollary", "自然推论", "zì rán tuī lùn", "corolario natural", "corolário natural"],
+    ["corollary to", "...的推论", "... de tuī lùn", "corolario de", "corolário de"],
     ["new paradigm", "新范式", "xīn fàn shì", "nuevo paradigma", "novo paradigma"],
     ["paradigm shift", "范式转变", "fàn shì zhuǎn biàn", "cambio de paradigma", "mudança de paradigma"],
     ["mere conjecture", "纯属猜想", "chún shǔ cāi xiǎng", "mera conjetura", "mera conjectura"],
@@ -373,12 +383,12 @@ export const p5_135_academic__nouns = {
 export const p5_136_academic__adjectives = {
   meta: {
     wordpack: 136,
+    english: "Academic Adjectives",
     chinese: "Academic Adjectives",
     pinyin: "Academic Adjectives",
-    spanish: "Academic Adjectives",
     portuguese: "Academic Adjectives"
   },
-  words: [
+  baseWords: [
     ["salient", "突出", "tū chū", "saliente", "saliente"],
     ["tenuous", "脆弱", "cuì ruò", "tenue", "tênue"],
     ["arbitrary", "任意", "rèn yì", "arbitrario", "arbitrário"],
@@ -398,7 +408,9 @@ export const p5_136_academic__adjectives = {
     ["finite", "有限", "yǒu xiàn", "finito", "finito"],
     ["holistic", "整体", "zhěng tǐ", "holístico", "holístico"],
     ["implicit", "隐式", "yǐn shì", "implícito", "implícito"],
-    ["tangential", "切向", "qiè xiàng", "tangencial", "tangencial"],
+    ["tangential", "切向", "qiè xiàng", "tangencial", "tangencial"]
+  ],
+  exampleWords: [
     ["salient point", "突出点", "tū chū diǎn", "punto saliente", "ponto saliente"],
     ["salient feature", "显着特点", "xiǎn zhe tè diǎn", "característica destacada", "característica saliente"],
     ["tenuous connection", "脆弱的连接", "cuì ruò de lián jiē", "conexión tenue", "conexão tênue"],
@@ -445,12 +457,12 @@ export const p5_136_academic__adjectives = {
 export const p5_137_academic__adjectives__2 = {
   meta: {
     wordpack: 137,
+    english: "Academic Adjectives 2",
     chinese: "Academic Adjectives 2",
     pinyin: "Academic Adjectives 2",
-    spanish: "Academic Adjectives 2",
     portuguese: "Academic Adjectives 2"
   },
-  words: [
+  baseWords: [
     ["indigenous", "土著", "tǔ zhù", "indígena", "indígenas"],
     ["contingent", "特遣队", "tè qiǎn duì", "contingente", "contingente"],
     ["latent", "潜伏", "qián fú", "latente", "latente"],
@@ -470,7 +482,9 @@ export const p5_137_academic__adjectives__2 = {
     ["passive", "被动", "bèi dòng", "pasivo", "passivo"],
     ["persistent", "执着", "zhí zhuó", "persistente", "persistente"],
     ["pertinent", "相关", "xiāng guān", "pertinente", "pertinente"],
-    ["pervasive", "普遍", "pǔ biàn", "omnipresente", "difundido"],
+    ["pervasive", "普遍", "pǔ biàn", "omnipresente", "difundido"]
+  ],
+  exampleWords: [
     ["indigenous people", "土著人民", "tǔ zhù rén mín", "pueblos indígenas", "povos indígenas"],
     ["indigenous culture", "土著文化", "tǔ zhù wén huà", "cultura indígena", "cultura indígena"],
     ["contingent upon", "视", "shì", "supeditado a", "depende de"],
@@ -482,7 +496,7 @@ export const p5_137_academic__adjectives__2 = {
     ["innovative solution", "创新解决方案", "chuàng xīn jiě jué fāng àn", "solución innovadora", "solução inovadora"],
     ["innovative approach", "创新方法", "chuàng xīn fāng fǎ", "enfoque innovador", "abordagem inovadora"],
     ["integral part", "不可或缺的一部分", "bù kě huò quē de yī bù fèn", "parte integrante", "parte integrante"],
-    ["integral to", "", "", "integral a", "integral para"],
+    ["integral to", "不可或缺的", "bù kě huò quē de", "integral a", "integral para"],
     ["intermediate level", "的积分中级", "de jī fēn zhōng jí", "nivel intermedio", "nível intermediário"],
     ["intermediate stage", "中期阶段", "zhōng qī jiē duàn", "etapa intermedia", "fase intermediária"],
     ["internal affairs", "内政", "nèi zhèng", "asuntos internos", "assuntos internos"],
@@ -517,12 +531,12 @@ export const p5_137_academic__adjectives__2 = {
 export const p5_138_everyday__legal = {
   meta: {
     wordpack: 138,
+    english: "Everyday Legal",
     chinese: "Everyday Legal",
     pinyin: "Everyday Legal",
-    spanish: "Everyday Legal",
     portuguese: "Everyday Legal"
   },
-  words: [
+  baseWords: [
     ["agreement", "协议", "xié yì", "acuerdo", "acordo"],
     ["advice", "建议", "jiàn yì", "consejo", "conselhos"],
     ["testimony", "见证", "jiàn zhèng", "testimonio", "testemunho"],
@@ -542,20 +556,22 @@ export const p5_138_everyday__legal = {
     ["litigation", "诉讼", "sù sòng", "litigio", "litígio"],
     ["arbitration", "仲裁", "zhòng cái", "arbitraje", "arbitragem"],
     ["tort", "侵权", "qīn quán", "agravio", "ato ilícito"],
-    ["indictment", "起诉书", "qǐ sù shū", "acusación", "acusação"],
+    ["indictment", "起诉书", "qǐ sù shū", "acusación", "acusação"]
+  ],
+  exampleWords: [
     ["legal agreement", "法律协议", "fǎ lǜ xié yì", "acuerdo legal", "acordo jurídico"],
-    ["agreement between", "", "", "acuerdo entre", "acordo entre"],
-    ["legal advice", "之间的协议法律咨询", "zhī jiān de xié yì fǎ lǜ zī xún", "asesoramiento jurídico", "assessoria jurídica"],
+    ["agreement between", "之间的协议", "zhī jiān de xié yì", "acuerdo entre", "acordo entre"],
+    ["legal advice", "法律咨询", "fǎ lǜ zī xún", "asesoramiento jurídico", "assessoria jurídica"],
     ["seek advice", "寻求建议", "xún qiú jiàn yì", "buscar consejo", "procure aconselhamento"],
     ["give testimony", "作证", "zuò zhèng", "dar testimonio", "dar testemunho"],
-    ["testimony from", "来自", "lái zì", "testimonio de", "depoimento de"],
-    ["present evidence", "的证词出示证据", "de zhèng cí chū shì zhèng jù", "presentar pruebas", "apresentar provas"],
-    ["evidence of", "", "", "evidencia de", "evidência de"],
-    ["legal dispute", "的证据法律纠纷", "de zhèng jù fǎ lǜ jiū fēn", "disputa legal", "disputa judicial"],
+    ["testimony from", "来自...的证词", "lái zì ... de zhèng cí", "testimonio de", "depoimento de"],
+    ["present evidence", "出示证据", "chū shì zhèng jù", "presentar pruebas", "apresentar provas"],
+    ["evidence of", "的证据", "de zhèng jù", "evidencia de", "evidência de"],
+    ["legal dispute", "法律纠纷", "fǎ lǜ jiū fēn", "disputa legal", "disputa judicial"],
     ["dispute resolution", "争议解决", "zhēng yì jiě jué", "resolución de disputas", "resolução de litígios"],
     ["serious allegation", "严重指控", "yán zhòng zhǐ kòng", "acusación grave", "alegação grave"],
-    ["allegation of", "", "", "alegación de", "alegação de"],
-    ["criminal negligence", "的指控刑事过失", "de zhǐ kòng xíng shì guò shī", "negligencia criminal", "negligência criminosa"],
+    ["allegation of", "的指控", "de zhǐ kòng", "alegación de", "alegação de"],
+    ["criminal negligence", "刑事过失", "xíng shì guò shī", "negligencia criminal", "negligência criminosa"],
     ["negligence claim", "疏忽索赔", "shū hū suǒ péi", "demanda por negligencia", "alegação de negligência"],
     ["jury trial", "陪审团审判", "péi shěn tuán shěn pàn", "juicio con jurado", "julgamento com júri"],
     ["jury verdict", "陪审团裁决", "péi shěn tuán cái jué", "veredicto del jurado", "Veredicto do júri"],
@@ -570,10 +586,10 @@ export const p5_138_everyday__legal = {
     ["file appeal", "提出上诉", "tí chū shàng sù", "presentar recurso de apelación", "interpor recurso"],
     ["appeal process", "上诉程序", "shàng sù chéng xù", "proceso de apelación", "processo de recurso"],
     ["jury acquittal", "陪审团无罪释放", "péi shěn tuán wú zuì shì fàng", "absolución del jurado", "absolvição do júri"],
-    ["acquittal of", "", "", "absolución de", "absolvição de"],
-    ["court injunction", "无罪释放法院禁令", "wú zuì shì fàng fǎ yuàn jìn lìng", "orden judicial", "liminar"],
-    ["injunction against", "针对", "zhēn duì", "orden judicial contra", "liminar contra"],
-    ["legal deposition", "的禁令法律作证", "de jìn lìng fǎ lǜ zuò zhèng", "deposición legal", "depoimento judicial"],
+    ["acquittal of", "的无罪释放", "de wú zuì shì fàng", "absolución de", "absolvição de"],
+    ["court injunction", "法院禁令", "fǎ yuàn jìn lìng", "orden judicial", "liminar"],
+    ["injunction against", "针对...的禁令", "zhēn duì ... de jìn lìng", "orden judicial contra", "liminar contra"],
+    ["legal deposition", "法律作证", "fǎ lǜ zuò zhèng", "deposición legal", "depoimento judicial"],
     ["deposition testimony", "证词作证", "zhèng cí zuò zhèng", "testimonio de deposición", "depoimento de depoimento"],
     ["ongoing litigation", "正在进行的诉讼", "zhèng zài jìn xíng de sù sòng", "litigio en curso", "litígio em curso"],
     ["litigation costs", "诉讼费用", "sù sòng fèi yòng", "costas del litigio", "custos de litígio"],
@@ -589,12 +605,12 @@ export const p5_138_everyday__legal = {
 export const p5_139_everyday__medical = {
   meta: {
     wordpack: 139,
+    english: "Everyday Medical",
     chinese: "Everyday Medical",
     pinyin: "Everyday Medical",
-    spanish: "Everyday Medical",
     portuguese: "Everyday Medical"
   },
-  words: [
+  baseWords: [
     ["clinic", "诊所", "zhěn suǒ", "clínica", "clínica"],
     ["insurance", "保险", "bǎo xiǎn", "seguro", "seguro"],
     ["ambulance", "救护车", "jiù hù chē", "ambulancia", "ambulância"],
@@ -614,7 +630,9 @@ export const p5_139_everyday__medical = {
     ["contagious", "具有传染性", "jù yǒu chuán rǎn xìng", "contagioso", "contagioso"],
     ["outpatient", "门诊", "mén zhěn", "ambulatorio", "ambulatorial"],
     ["inpatient", "住院", "zhù yuàn", "paciente hospitalizado", "paciente internado"],
-    ["prognosis", "预后", "yù hòu", "pronóstico", "prognóstico"],
+    ["prognosis", "预后", "yù hòu", "pronóstico", "prognóstico"]
+  ],
+  exampleWords: [
     ["medical clinic", "医疗诊所", "yī liáo zhěn suǒ", "clínica médica", "clínica médica"],
     ["clinic visit", "门诊", "mén zhěn", "visita a la clínica", "visita clínica"],
     ["health insurance", "健康保险", "jiàn kāng bǎo xiǎn", "seguro médico", "seguro saúde"],
@@ -642,9 +660,9 @@ export const p5_139_everyday__medical = {
     ["flu vaccine", "流感疫苗", "liú gǎn yì miáo", "vacuna contra la gripe", "vacina contra gripe"],
     ["vaccine shot", "疫苗注射", "yì miáo zhù shè", "inyección de vacuna", "injeção de vacina"],
     ["poison antidote", "毒药解药", "dú yào jiě yào", "antídoto contra el veneno", "antídoto venenoso"],
-    ["antidote for", "", "", "antídoto para", "antídoto para"],
-    ["side effect of", "的解毒剂", "de jiě dú jì", "efecto secundario de", "efeito colateral de"],
-    ["common side effect", "的副作用常见副作用", "de fù zuò yòng cháng jiàn fù zuò yòng", "efecto secundario común", "efeito colateral comum"],
+    ["antidote for", "的解药", "de jiě yào", "antídoto para", "antídoto para"],
+    ["side effect of", "的副作用", "de fù zuò yòng", "efecto secundario de", "efeito colateral de"],
+    ["common side effect", "常见副作用", "cháng jiàn fù zuò yòng", "efecto secundario común", "efeito colateral comum"],
     ["cancer remission", "癌症缓解", "ái zhèng huǎn jiě", "remisión del cáncer", "remissão do câncer"],
     ["in remission", "缓解中", "huǎn jiě zhōng", "en remisión", "em remissão"],
     ["highly contagious", "传染性极强", "chuán rǎn xìng jí qiáng", "altamente contagioso", "altamente contagioso"],
@@ -661,12 +679,12 @@ export const p5_139_everyday__medical = {
 export const p5_140_everyday__finance = {
   meta: {
     wordpack: 140,
+    english: "Everyday Finance",
     chinese: "Everyday Finance",
     pinyin: "Everyday Finance",
-    spanish: "Everyday Finance",
     portuguese: "Everyday Finance"
   },
-  words: [
+  baseWords: [
     ["account", "帐户", "zhàng hù", "cuenta", "conta"],
     ["card", "卡", "kǎ", "tarjeta", "cartão"],
     ["save", "保存", "bǎo cún", "guardar", "salvar"],
@@ -686,7 +704,9 @@ export const p5_140_everyday__finance = {
     ["statement", "声明", "shēng míng", "declaración", "declaração"],
     ["overdraft", "透支", "tòu zhī", "sobregiro", "cheque especial"],
     ["accrual", "应计", "yīng jì", "acumulación", "acumulação"],
-    ["amortization", "摊销", "tān xiāo", "amortización", "amortização"],
+    ["amortization", "摊销", "tān xiāo", "amortización", "amortização"]
+  ],
+  exampleWords: [
     ["bank account", "银行账户", "yín háng zhàng hù", "cuenta bancaria", "conta bancária"],
     ["email account", "电子邮件帐户", "diàn zi yóu jiàn zhàng hù", "cuenta de correo electrónico", "conta de e-mail"],
     ["gift card", "礼品卡", "lǐ pǐn kǎ", "tarjeta de regalo", "vale-presente"],
@@ -696,7 +716,7 @@ export const p5_140_everyday__finance = {
     ["spend money", "花钱", "huā qián", "gastar dinero", "gastar dinheiro"],
     ["spend on", "花费在", "huā fèi zài", "gastar en", "gastar em"],
     ["monthly budget", "每月预算", "měi yuè yù suàn", "presupuesto mensual", "orçamento mensal"],
-    ["budget for", "", "", "presupuesto para", "orçamento para"],
+    ["budget for", "预算用于", "yù suàn yòng yú", "presupuesto para", "orçamento para"],
     ["bank loan", "的预算银行贷款", "de yù suàn yín háng dài kuǎn", "préstamo bancario", "empréstimo bancário"],
     ["loan application", "贷款申请", "dài kuǎn shēn qǐng", "solicitud de préstamo", "pedido de empréstimo"],
     ["make payment", "付款", "fù kuǎn", "realizar el pago", "efetuar o pagamento"],
@@ -733,12 +753,12 @@ export const p5_140_everyday__finance = {
 export const p5_141_research__statistics = {
   meta: {
     wordpack: 141,
+    english: "Research & Statistics",
     chinese: "Research & Statistics",
     pinyin: "Research & Statistics",
-    spanish: "Research & Statistics",
     portuguese: "Research & Statistics"
   },
-  words: [
+  baseWords: [
     ["qualitative", "定性", "dìng xìng", "cualitativo", "qualitativo"],
     ["quantitative", "定量", "dìng liàng", "cuantitativo", "quantitativo"],
     ["theoretical", "理论", "lǐ lùn", "teórico", "teórico"],
@@ -758,7 +778,9 @@ export const p5_141_research__statistics = {
     ["outlier", "离群值", "lí qún zhí", "valor atípico", "atípico"],
     ["regression", "回归", "huí guī", "regresión", "regressão"],
     ["correlation", "相关性", "xiāng guān xìng", "correlación", "correlação"],
-    ["median", "中位数", "zhōng wèi shù", "mediana", "mediana"],
+    ["median", "中位数", "zhōng wèi shù", "mediana", "mediana"]
+  ],
+  exampleWords: [
     ["qualitative research", "定性研究", "dìng xìng yán jiū", "investigación cualitativa", "pesquisa qualitativa"],
     ["qualitative data", "定性数据", "dìng xìng shù jù", "datos cualitativos", "dados qualitativos"],
     ["quantitative analysis", "定量分析", "dìng liàng fēn xī", "análisis cuantitativo", "análise quantitativa"],
@@ -778,7 +800,7 @@ export const p5_141_research__statistics = {
     ["key parameter", "关键参数", "guān jiàn cān shù", "parámetro clave", "parâmetro chave"],
     ["parameter setting", "参数设置", "cān shù shè zhì", "configuración de parámetros", "configuração de parâmetros"],
     ["internal validity", "内部效度", "nèi bù xiào dù", "validez interna", "validade interna"],
-    ["validity of", "", "", "validez de", "validade de"],
+    ["validity of", "有效性的", "yǒu xiào xìng de", "validez de", "validade de"],
     ["test reliability", "的有效性测试可靠性", "de yǒu xiào xìng cè shì kě kào xìng", "fiabilidad de la prueba", "confiabilidade do teste"],
     ["reliability coefficient", "可靠性系数", "kě kào xìng xì shù", "coeficiente de fiabilidad", "coeficiente de confiabilidade"],
     ["random sampling", "随机抽样", "suí jī chōu yàng", "muestreo aleatorio", "amostragem aleatória"],
@@ -790,13 +812,13 @@ export const p5_141_research__statistics = {
     ["standard deviation", "标准差", "biāo zhǔn chà", "desviación estándar", "desvio padrão"],
     ["standard procedure", "标准程序", "biāo zhǔn chéng xù", "procedimiento estándar", "procedimento padrão"],
     ["normal distribution", "正态分布", "zhèng tài fēn bù", "distribución normal", "distribuição normal"],
-    ["distribution of", "", "", "distribución de", "distribuição de"],
+    ["distribution of", "分布的", "fēn bù de", "distribución de", "distribuição de"],
     ["statistical outlier", "的分布统计异常值", "de fēn bù tǒng jì yì cháng zhí", "valor atípico estadístico", "outlier estatístico"],
     ["outlier detection", "异常值检测", "yì cháng zhí jiǎn cè", "detección de valores atípicos", "detecção de valores discrepantes"],
     ["regression analysis", "回归分析", "huí guī fēn xī", "análisis de regresión", "análise de regressão"],
     ["linear regression", "线性回归", "xiàn xìng huí guī", "regresión lineal", "regressão linear"],
     ["positive correlation", "正相关", "zhèng xiāng guān", "correlación positiva", "correlação positiva"],
-    ["correlation between", "", "", "correlación entre", "correlação entre"],
+    ["correlation between", "之间的相关性", "zhī jiān de xiāng guān xìng", "correlación entre", "correlação entre"],
     ["calculate median", "之间的相关性计算中位数", "zhī jiān de xiāng guān xìng jì suàn zhōng wèi shù", "calcular la mediana", "calcular mediana"],
     ["median value", "中值", "zhōng zhí", "valor mediano", "valor mediano"]
   ]
@@ -805,12 +827,12 @@ export const p5_141_research__statistics = {
 export const p5_142_psychology__basics = {
   meta: {
     wordpack: 142,
+    english: "Psychology Basics",
     chinese: "Psychology Basics",
     pinyin: "Psychology Basics",
-    spanish: "Psychology Basics",
     portuguese: "Psychology Basics"
   },
-  words: [
+  baseWords: [
     ["cognitive", "认知", "rèn zhī", "cognitivo", "cognitivo"],
     ["perception", "感知", "gǎn zhī", "percepción", "percepção"],
     ["attention", "注意", "zhù yì", "atención", "atenção"],
@@ -830,7 +852,9 @@ export const p5_142_psychology__basics = {
     ["bias", "偏见", "piān jiàn", "sesgo", "preconceito"],
     ["placebo", "安慰剂", "ān wèi jì", "placebo", "placebo"],
     ["conditioning", "调理", "tiáo lǐ", "acondicionamiento", "condicionamento"],
-    ["psyche", "心灵", "xīn líng", "psique", "psique"],
+    ["psyche", "心灵", "xīn líng", "psique", "psique"]
+  ],
+  exampleWords: [
     ["cognitive ability", "认知能力", "rèn zhī néng lì", "capacidad cognitiva", "capacidade cognitiva"],
     ["cognitive development", "认知发展", "rèn zhī fā zhǎn", "desarrollo cognitivo", "desenvolvimento cognitivo"],
     ["visual perception", "视觉感知", "shì jué gǎn zhī", "percepción visual", "percepção visual"],
@@ -877,12 +901,12 @@ export const p5_142_psychology__basics = {
 export const p5_143_sociology__basics = {
   meta: {
     wordpack: 143,
+    english: "Sociology Basics",
     chinese: "Sociology Basics",
     pinyin: "Sociology Basics",
-    spanish: "Sociology Basics",
     portuguese: "Sociology Basics"
   },
-  words: [
+  baseWords: [
     ["institution", "机构", "jī gòu", "institución", "instituição"],
     ["norm", "规范", "guī fàn", "norma", "norma"],
     ["class", "类", "lèi", "clase", "aula"],
@@ -902,12 +926,14 @@ export const p5_143_sociology__basics = {
     ["collectivism", "集体主义", "jí tǐ zhǔ yì", "colectivismo", "coletivismo"],
     ["individualism", "个人主义", "gè rén zhǔ yì", "individualismo", "individualismo"],
     ["mobility", "流动性", "liú dòng xìng", "movilidad", "mobilidade"],
-    ["conformity", "一致性", "yí zhì xìng", "conformidad", "conformidade"],
+    ["conformity", "一致性", "yí zhì xìng", "conformidad", "conformidade"]
+  ],
+  exampleWords: [
     ["social institution", "社会机构", "shè huì jī gòu", "institución social", "instituição social"],
-    ["institution of", "", "", "institución de", "instituição de"],
-    ["social norm", "机构社会规范", "jī gòu shè huì guī fàn", "norma social", "norma social"],
-    ["norm of", "", "", "norma de", "norma de"],
-    ["social class", "的范数社会阶层", "de fàn shù shè huì jiē céng", "clase social", "classe social"],
+    ["institution of", "的机构", "de jī gòu", "institución de", "instituição de"],
+    ["social norm", "社会规范", "shè huì guī fàn", "norma social", "norma social"],
+    ["norm of", "的规范", "de guī fàn", "norma de", "norma de"],
+    ["social class", "社会阶层", "shè huì jiē céng", "clase social", "classe social"],
     ["class system", "等级制度", "děng jí zhì dù", "sistema de clases", "sistema de classes"],
     ["social status", "社会地位", "shè huì dì wèi", "estatus social", "situação social"],
     ["status symbol", "身份象征", "shēn fèn xiàng zhēng", "símbolo de estado", "símbolo de status"],
@@ -916,16 +942,16 @@ export const p5_143_sociology__basics = {
     ["social group", "社会团体", "shè huì tuán tǐ", "grupo social", "grupo social"],
     ["group dynamics", "团体动态", "tuán tǐ dòng tài", "dinámica de grupo", "dinâmica de grupo"],
     ["social interaction", "社交互动", "shè jiāo hù dòng", "interacción social", "interação social"],
-    ["interaction between", "", "", "interacción entre", "interação entre"],
-    ["social structure", "之间的相互作用社会结构", "zhī jiān de xiāng hù zuò yòng shè huì jié gòu", "estructura social", "estrutura social"],
-    ["structure of", "", "", "estructura de", "estrutura de"],
-    ["gender role", "的结构性别角色", "de jié gòu xìng bié jué sè", "rol de género", "papel de gênero"],
+    ["interaction between", "之间的互动", "zhī jiān de hù dòng", "interacción entre", "interação entre"],
+    ["social structure", "社会结构", "shè huì jié gòu", "estructura social", "estrutura social"],
+    ["structure of", "的结构", "de jié gòu", "estructura de", "estrutura de"],
+    ["gender role", "性别角色", "xìng bié jué sè", "rol de género", "papel de gênero"],
     ["role model", "榜样", "bǎng yàng", "modelo a seguir", "modelo"],
     ["social deviance", "社会越轨", "shè huì yuè guǐ", "desviación social", "desvio social"],
     ["deviance from", "偏离", "piān lí", "desviación de", "desvio de"],
     ["social stratification", "社会分层", "shè huì fēn céng", "estratificación social", "estratificação social"],
-    ["stratification in", "", "", "estratificación en", "estratificação em"],
-    ["demographic data", "中的分层人口统计数据", "zhōng de fēn céng rén kǒu tǒng jì shù jù", "datos demográficos", "dados demográficos"],
+    ["stratification in", "中的分层", "zhōng de fēn céng", "estratificación en", "estratificação em"],
+    ["demographic data", "人口统计数据", "rén kǒu tǒng jì shù jù", "datos demográficos", "dados demográficos"],
     ["demographic shift", "人口结构变化", "rén kǒu jié gòu biàn huà", "cambio demográfico", "mudança demográfica"],
     ["rapid urbanization", "快速城市化", "kuài sù chéng shì huà", "rápida urbanización", "rápida urbanização"],
     ["urbanization rate", "城市化率", "chéng shì huà lǜ", "tasa de urbanización", "taxa de urbanização"],
@@ -934,14 +960,14 @@ export const p5_143_sociology__basics = {
     ["social alienation", "社会疏远", "shè huì shū yuǎn", "alienación social", "alienação social"],
     ["alienation from", "疏远", "shū yuǎn", "alienación de", "alienação de"],
     ["government bureaucracy", "政府官僚机构", "zhèng fǔ guān liáo jī gòu", "burocracia gubernamental", "burocracia governamental"],
-    ["bureaucracy in", "", "", "burocracia en", "burocracia em"],
-    ["cultural collectivism", "中的官僚主义文化集体主义", "zhōng de guān liáo zhǔ yì wén huà jí tǐ zhǔ yì", "colectivismo cultural", "coletivismo cultural"],
+    ["bureaucracy in", "中的官僚主义", "zhōng de guān liáo zhǔ yì", "burocracia en", "burocracia em"],
+    ["cultural collectivism", "文化集体主义", "wén huà jí tǐ zhǔ yì", "colectivismo cultural", "coletivismo cultural"],
     ["collectivism vs", "集体主义 vs", "jí tǐ zhǔ yì  vs", "colectivismo vs", "coletivismo vs"],
     ["rugged individualism", "粗犷的个人主义", "cū guǎng de gè rén zhǔ yì", "individualismo rudo", "individualismo robusto"],
-    ["individualism in", "", "", "individualismo en", "individualismo em"],
-    ["social mobility", "中的个人主义社会流动性", "zhōng de gè rén zhǔ yì shè huì liú dòng xìng", "movilidad social", "mobilidade social"],
-    ["mobility between", "", "", "movilidad entre", "mobilidade entre"],
-    ["social conformity", "之间的流动性社会整合", "zhī jiān de liú dòng xìng shè huì zhěng hé", "conformidad social", "conformidade social"],
+    ["individualism in", "中的个人主义", "zhōng de gè rén zhǔ yì", "individualismo en", "individualismo em"],
+    ["social mobility", "社会流动性", "shè huì liú dòng xìng", "movilidad social", "mobilidade social"],
+    ["mobility between", "之间的流动性", "zhī jiān de liú dòng xìng", "movilidad entre", "mobilidade entre"],
+    ["social conformity", "社会整合", "shè huì zhěng hé", "conformidad social", "conformidade social"],
     ["conformity to", "符合", "fú hé", "conformidad con", "conformidade com"]
   ]
 };
@@ -949,12 +975,12 @@ export const p5_143_sociology__basics = {
 export const p5_144_critical__thinking = {
   meta: {
     wordpack: 144,
+    english: "Critical Thinking",
     chinese: "Critical Thinking",
     pinyin: "Critical Thinking",
-    spanish: "Critical Thinking",
     portuguese: "Critical Thinking"
   },
-  words: [
+  baseWords: [
     ["scrutinize", "仔细检查", "zǐ xì jiǎn chá", "escudriñar", "examinar"],
     ["distill", "蒸馏", "zhēng liú", "destilar", "destilar"],
     ["adjudge", "判断", "pàn duàn", "juzgar", "julgar"],
@@ -974,7 +1000,9 @@ export const p5_144_critical__thinking = {
     ["evaluate", "评价", "píng jià", "evaluar", "avaliar"],
     ["appraise", "评价", "píng jià", "tasar", "avaliar"],
     ["probe", "探针", "tàn zhēn", "sonda", "sonda"],
-    ["deduction", "扣除", "kòu chú", "deducción", "dedução"],
+    ["deduction", "扣除", "kòu chú", "deducción", "dedução"]
+  ],
+  exampleWords: [
     ["scrutinize carefully", "仔细观察", "zǐ xì guān chá", "examinar cuidadosamente", "examine cuidadosamente"],
     ["scrutinize evidence", "审查证据", "shěn chá zhèng jù", "examinar las pruebas", "examinar as evidências"],
     ["distill information", "提炼信息", "tí liàn xìn xī", "destilar información", "informações sobre destilação"],
@@ -1021,12 +1049,12 @@ export const p5_144_critical__thinking = {
 export const p5_145_debate__argument = {
   meta: {
     wordpack: 145,
+    english: "Debate & Argument",
     chinese: "Debate & Argument",
     pinyin: "Debate & Argument",
-    spanish: "Debate & Argument",
     portuguese: "Debate & Argument"
   },
-  words: [
+  baseWords: [
     ["premise", "前提", "qián tí", "premisa", "premissa"],
     ["reasoning", "推理", "tuī lǐ", "razonamiento", "raciocínio"],
     ["fallacy", "谬误", "miù wù", "falacia", "falácia"],
@@ -1046,14 +1074,16 @@ export const p5_145_debate__argument = {
     ["rhetoric", "修辞", "xiū cí", "retórica", "retórica"],
     ["eloquent", "雄辩", "xióng biàn", "elocuente", "eloquente"],
     ["rebuttal", "反驳", "fǎn bó", "refutación", "refutação"],
-    ["proposition", "提议", "tí yì", "proposición", "proposição"],
+    ["proposition", "提议", "tí yì", "proposición", "proposição"]
+  ],
+  exampleWords: [
     ["basic premise", "基本前提", "jī běn qián tí", "premisa básica", "premissa básica"],
     ["premise that", "前提是", "qián tí shì", "premisa de que", "premissa de que"],
     ["logical reasoning", "逻辑推理", "luó jí tuī lǐ", "razonamiento lógico", "raciocínio lógico"],
     ["reasoning behind", "背后的推理", "bèi hòu de tuī lǐ", "razonamiento detrás", "raciocínio por trás"],
     ["logical fallacy", "逻辑谬误", "luó jí miù wù", "falacia lógica", "falácia lógica"],
-    ["fallacy in", "", "", "falacia en", "falácia em"],
-    ["refute argument", "中的谬误反驳论据", "zhōng de miù wù fǎn bó lùn jù", "refutar el argumento", "refutar argumento"],
+    ["fallacy in", "中的谬误", "zhōng de miù wù", "falacia en", "falácia em"],
+    ["refute argument", "反驳论据", "fǎn bó lùn jù", "refutar el argumento", "refutar argumento"],
     ["refute claims", "反驳主张", "fǎn bó zhǔ zhāng", "refutar afirmaciones", "refutar afirmações"],
     ["rebut criticism", "反驳批评", "fǎn bó pī píng", "refutar las críticas", "refutar críticas"],
     ["rebut argument", "反驳论据", "fǎn bó lùn jù", "argumento de refutación", "refutar argumento"],
@@ -1062,12 +1092,12 @@ export const p5_145_debate__argument = {
     ["main contention", "主要论点", "zhǔ yào lùn diǎn", "argumento principal", "principal contenção"],
     ["contention that", "争论", "zhēng lùn", "argumento de que", "afirmação de que"],
     ["complete antithesis", "完全对立", "wán quán duì lì", "antítesis completa", "antítese completa"],
-    ["antithesis of", "", "", "antítesis de", "antítese de"],
-    ["persuade people", "的对立面说服人们", "de duì lì miàn shuō fú rén men", "persuadir a la gente", "persuadir as pessoas"],
+    ["antithesis of", "的对立面", "de duì lì miàn", "antítesis de", "antítese de"],
+    ["persuade people", "说服人们", "shuō fú rén men", "persuadir a la gente", "persuadir as pessoas"],
     ["persuade someone", "说服某人", "shuō fú mǒu rén", "persuadir a alguien", "convencer alguém"],
     ["establish credibility", "建立信誉", "jiàn lì xìn yù", "establecer credibilidad", "estabelecer credibilidade"],
-    ["credibility of", "", "", "credibilidad de", "credibilidade de"],
-    ["controversial topic", "的可信度有争议的话题", "de kě xìn dù yǒu zhēng yì de huà tí", "tema controvertido", "tema polêmico"],
+    ["credibility of", "的可信度", "de kě xìn dù", "credibilidad de", "credibilidade de"],
+    ["controversial topic", "有争议的话题", "yǒu zhēng yì de huà tí", "tema controvertido", "tema polêmico"],
     ["controversial issue", "有争议的问题", "yǒu zhēng yì de wèn tí", "tema controvertido", "assunto polêmico"],
     ["subtle difference", "细微差别", "xì wēi chā bié", "diferencia sutil", "diferença sutil"],
     ["subtle hint", "微妙的暗示", "wēi miào de àn shì", "pista sutil", "dica sutil"],
@@ -1076,12 +1106,12 @@ export const p5_145_debate__argument = {
     ["mere supposition", "仅仅是假设", "jǐn jǐn shì jiǎ shè", "mera suposición", "mera suposição"],
     ["supposition that", "假设", "jiǎ shè", "suposición de que", "suposição que"],
     ["broad generalization", "广泛概括", "guǎng fàn gài kuò", "amplia generalización", "ampla generalização"],
-    ["generalization about", "关于", "guān yú", "generalización sobre", "generalização sobre"],
-    ["strong counterargument", "的概括强烈反驳", "de gài kuò qiáng liè fǎn bó", "fuerte contraargumento", "forte contra-argumento"],
-    ["counterargument to", "", "", "contraargumento a", "contra-argumento para"],
-    ["political rhetoric", "的反驳政治言论", "de fǎn bó zhèng zhì yán lùn", "retórica política", "retórica política"],
-    ["rhetoric of", "", "", "retórica de", "retórica de"],
-    ["eloquent speaker", "的修辞雄辩的演讲者", "de xiū cí xióng biàn de yǎn jiǎng zhě", "orador elocuente", "orador eloquente"],
+    ["generalization about", "关于...的概括", "guān yú ... de gài kuò", "generalización sobre", "generalização sobre"],
+    ["strong counterargument", "强烈反驳", "qiáng liè fǎn bó", "fuerte contraargumento", "forte contra-argumento"],
+    ["counterargument to", "对...的反驳", "duì ... de fǎn bó", "contraargumento a", "contra-argumento para"],
+    ["political rhetoric", "政治言论", "zhèng zhì yán lùn", "retórica política", "retórica política"],
+    ["rhetoric of", "的修辞", "de xiū cí", "retórica de", "retórica de"],
+    ["eloquent speaker", "雄辩的演讲者", "xióng biàn de yǎn jiǎng zhě", "orador elocuente", "orador eloquente"],
     ["eloquent speech", "雄辩的演讲", "xióng biàn de yǎn jiǎng", "discurso elocuente", "discurso eloquente"],
     ["offer rebuttal", "提供反驳", "tí gōng fǎn bó", "oferta de refutación", "oferecer refutação"],
     ["rebuttal to", "反驳", "fǎn bó", "refutación a", "refutação para"],
@@ -1093,12 +1123,12 @@ export const p5_145_debate__argument = {
 export const p5_146_negotiation = {
   meta: {
     wordpack: 146,
+    english: "Negotiation",
     chinese: "Negotiation",
     pinyin: "Negotiation",
-    spanish: "Negotiation",
     portuguese: "Negotiation"
   },
-  words: [
+  baseWords: [
     ["negotiate", "洽谈", "qià tán", "negociar", "negociar"],
     ["bargain", "讨价还价", "tǎo jià huán jià", "ganga", "pechincha"],
     ["compromise", "妥协", "tuǒ xié", "compromiso", "compromisso"],
@@ -1118,44 +1148,46 @@ export const p5_146_negotiation = {
     ["terms", "条款", "tiáo kuǎn", "términos", "termos"],
     ["conditions", "条件", "tiáo jiàn", "condiciones", "condições"],
     ["ratify", "批准", "pī zhǔn", "ratificar", "ratificar"],
-    ["conciliate", "调解", "tiáo jiě", "conciliar", "conciliar"],
+    ["conciliate", "调解", "tiáo jiě", "conciliar", "conciliar"]
+  ],
+  exampleWords: [
     ["negotiate deal", "洽谈交易", "qià tán jiāo yì", "negociar un acuerdo", "negociar acordo"],
     ["negotiate terms", "谈判条款", "tán pàn tiáo kuǎn", "negociar términos", "negociar termos"],
     ["bargain for", "讨价还价", "tǎo jià huán jià", "ganga por", "pechincha para"],
-    ["bargain with", "与", "yǔ", "negociar con", "negociar com"],
-    ["reach compromise", "讨价还价达成妥协", "tǎo jià huán jià dá chéng tuǒ xié", "llegar a un acuerdo", "chegar a um compromisso"],
+    ["bargain with", "与...讨价还价", "yǔ ... tǎo jià huán jià", "negociar con", "negociar com"],
+    ["reach compromise", "达成妥协", "dá chéng tuǒ xié", "llegar a un acuerdo", "chegar a um compromisso"],
     ["compromise on", "妥协", "tuǒ xié", "compromiso sobre", "compromisso em"],
     ["make concession", "做出让步", "zuò chū ràng bù", "hacer concesiones", "fazer concessão"],
     ["concession to", "让步", "ràng bù", "concesión a", "concessão a"],
     ["issue ultimatum", "发出最后通牒", "fā chū zuì hòu tōng dié", "emitir ultimátum", "emitir ultimato"],
     ["ultimatum to", "最后通牒", "zuì hòu tōng dié", "ultimátum a", "ultimato para"],
     ["make counteroffer", "还价", "huán jià", "hacer contraoferta", "fazer contraproposta"],
-    ["counteroffer of", "", "", "contraoferta de", "contraoferta de"],
-    ["mediate dispute", "的还盘调解纠纷", "de hái pán tiáo jiě jiū fēn", "mediar en la disputa", "mediar disputa"],
-    ["mediate between", "", "", "mediar entre", "mediar entre"],
-    ["arbitrate conflict", "之间的调解仲裁冲突", "zhī jiān de tiáo jiě zhòng cái chōng tū", "arbitrar conflicto", "arbitrar conflito"],
+    ["counteroffer of", "的还盘", "de hái pán", "contraoferta de", "contraoferta de"],
+    ["mediate dispute", "调解纠纷", "tiáo jiě jiū fēn", "mediar en la disputa", "mediar disputa"],
+    ["mediate between", "在...之间调解", "zài ... zhī jiān tiáo jiě", "mediar entre", "mediar entre"],
+    ["arbitrate conflict", "仲裁冲突", "zhòng cái chōng tū", "arbitrar conflicto", "arbitrar conflito"],
     ["arbitrate dispute", "仲裁争议", "zhòng cái zhēng yì", "arbitrar disputa", "arbitrar disputa"],
     ["resolve conflict", "解决冲突", "jiě jué chōng tū", "resolver conflictos", "resolver conflitos"],
     ["resolve issue", "解决问题", "jiě jué wèn tí", "resolver el problema", "resolver problema"],
     ["settle dispute", "解决争端", "jiě jué zhēng duān", "resolver disputa", "resolver disputa"],
     ["settle on", "决定", "jué dìng", "decidirse por", "resolver"],
     ["reach deadlock", "陷入僵局", "xiàn rù jiāng jú", "llegar a un punto muerto", "chegar ao impasse"],
-    ["deadlock over", "", "", "punto muerto terminado", "impasse encerrado"],
-    ["reach impasse", "陷入僵局陷入僵局", "xiàn rù jiāng jú xiàn rù jiāng jú", "llegar a un punto muerto", "chegar ao impasse"],
+    ["deadlock over", "在...上陷入僵局", "zài ... shàng xiàn rù jiāng jú", "punto muerto terminado", "impasse encerrado"],
+    ["reach impasse", "陷入僵局", "xiàn rù jiāng jú", "llegar a un punto muerto", "chegar ao impasse"],
     ["impasse in", "陷入僵局", "xiàn rù jiāng jú", "punto muerto en", "impasse em"],
     ["political stalemate", "政治僵局", "zhèng zhì jiāng jú", "estancamiento político", "impasse político"],
-    ["stalemate between", "", "", "punto muerto entre", "impasse entre"],
-    ["key stakeholder", "之间陷入僵局主要利益相关者", "zhī jiān xiàn rù jiāng jú zhǔ yào lì yì xiāng guān zhě", "actor clave", "principais partes interessadas"],
+    ["stalemate between", "之间的僵局", "zhī jiān de jiāng jú", "punto muerto entre", "impasse entre"],
+    ["key stakeholder", "主要利益相关者", "zhǔ yào lì yì xiāng guān zhě", "actor clave", "principais partes interessadas"],
     ["stakeholder meeting", "利益相关者会议", "lì yì xiāng guān zhě huì yì", "reunión de partes interesadas", "reunião das partes interessadas"],
     ["use leverage", "使用杠杆", "shǐ yòng gàng gǎn", "utilizar apalancamiento", "usar alavancagem"],
     ["leverage over", "杠杆", "gàng gǎn", "apalancamiento sobre", "alavancagem sobre"],
     ["reciprocal agreement", "互惠协议", "hù huì xié yì", "acuerdo recíproco", "acordo recíproco"],
     ["reciprocal relationship", "互惠关系", "hù huì guān xì", "relación recíproca", "relacionamento recíproco"],
-    ["terms of", "", "", "términos de", "termos de"],
-    ["terms and", "的条款条款和", "de tiáo kuǎn tiáo kuǎn hé", "términos y", "termos e"],
+    ["terms of", "的条款", "de tiáo kuǎn", "términos de", "termos de"],
+    ["terms and", "条款和", "tiáo kuǎn hé", "términos y", "termos e"],
     ["conditions apply", "适用条件", "shì yòng tiáo jiàn", "se aplican condiciones", "aplicam-se condições"],
-    ["conditions for", "", "", "condiciones para", "condições para"],
-    ["ratify agreement", "的条件批准协议", "de tiáo jiàn pī zhǔn xié yì", "ratificar el acuerdo", "ratificar acordo"],
+    ["conditions for", "的条件", "de tiáo jiàn", "condiciones para", "condições para"],
+    ["ratify agreement", "批准协议", "pī zhǔn xié yì", "ratificar el acuerdo", "ratificar acordo"],
     ["ratify treaty", "批准条约", "pī zhǔn tiáo yuē", "ratificar el tratado", "ratificar o tratado"],
     ["conciliate parties", "调解各方", "tiáo jiě gè fāng", "conciliar partes", "conciliar as partes"],
     ["conciliate between", "之间进行调解", "zhī jiān jìn xíng tiáo jiě", "conciliar entre", "conciliar entre"]
@@ -1165,12 +1197,12 @@ export const p5_146_negotiation = {
 export const p5_147_project__management = {
   meta: {
     wordpack: 147,
+    english: "Project Management",
     chinese: "Project Management",
     pinyin: "Project Management",
-    spanish: "Project Management",
     portuguese: "Project Management"
   },
-  words: [
+  baseWords: [
     ["scope", "范围", "fàn wéi", "alcance", "escopo"],
     ["timeline", "时间线", "shí jiān xiàn", "línea de tiempo", "linha do tempo"],
     ["deliverable", "可交付成果", "kě jiāo fù chéng guǒ", "entregable", "entregável"],
@@ -1190,17 +1222,19 @@ export const p5_147_project__management = {
     ["agile", "敏捷", "mǐn jié", "ágil", "ágil"],
     ["iterate", "迭代", "dié dài", "iterar", "iterar"],
     ["roadmap", "路线图", "lù xiàn tú", "hoja de ruta", "roteiro"],
-    ["backlog", "积压", "jī yā", "atrasos", "atraso"],
+    ["backlog", "积压", "jī yā", "atrasos", "atraso"]
+  ],
+  exampleWords: [
     ["project scope", "项目范围", "xiàng mù fàn wéi", "alcance del proyecto", "escopo do projeto"],
     ["scope creep", "范围蔓延", "fàn wéi màn yán", "desplazamiento del alcance", "aumento de escopo"],
     ["project timeline", "项目时间表", "xiàng mù shí jiān biǎo", "cronograma del proyecto", "cronograma do projeto"],
-    ["timeline for", "", "", "cronograma para", "cronograma para"],
+    ["timeline for", "时间表用于", "shí jiān biǎo yòng yú", "cronograma para", "cronograma para"],
     ["key deliverable", "的时间表关键交付成果", "de shí jiān biǎo guān jiàn jiāo fù chéng guǒ", "entregable clave", "principal produto final"],
     ["deliverable due", "可交付成果", "kě jiāo fù chéng guǒ", "entrega vencida", "entrega vencida"],
     ["allocate resource", "分配资源", "fēn pèi zī yuán", "asignar recursos", "alocar recurso"],
     ["resource management", "资源管理", "zī yuán guǎn lǐ", "gestión de recursos", "gestão de recursos"],
     ["budget allocation", "预算分配", "yù suàn fēn pèi", "asignación presupuestaria", "dotação orçamental"],
-    ["allocation of", "", "", "asignación de", "alocação de"],
+    ["allocation of", "分配的", "fēn pèi de", "asignación de", "alocação de"],
     ["task dependency", "的分配任务依赖", "de fēn pèi rèn wù yī lài", "dependencia de tareas", "dependência de tarefa"],
     ["dependency on", "依赖", "yī lài", "dependencia de", "dependência de"],
     ["assess risk", "评估风险", "píng gū fēng xiǎn", "evaluar el riesgo", "avaliar o risco"],
@@ -1228,7 +1262,7 @@ export const p5_147_project__management = {
     ["iterate on", "迭代", "dié dài", "iterar", "iterar em"],
     ["iterate quickly", "快速迭代", "kuài sù dié dài", "iterar rápidamente", "iterar rapidamente"],
     ["product roadmap", "产品路线图", "chǎn pǐn lù xiàn tú", "hoja de ruta del producto", "roteiro do produto"],
-    ["roadmap for", "", "", "hoja de ruta para", "roteiro para"],
+    ["roadmap for", "路线图用于", "lù xiàn tú yòng yú", "hoja de ruta para", "roteiro para"],
     ["product backlog", "的路线图产品积压", "de lù xiàn tú chǎn pǐn jī yā", "cartera de productos", "carteira de produtos"],
     ["backlog items", "积压项目", "jī yā xiàng mù", "elementos pendientes", "itens do backlog"]
   ]
@@ -1237,12 +1271,12 @@ export const p5_147_project__management = {
 export const p5_148_business__advanced = {
   meta: {
     wordpack: 148,
+    english: "Business Advanced",
     chinese: "Business Advanced",
     pinyin: "Business Advanced",
-    spanish: "Business Advanced",
     portuguese: "Business Advanced"
   },
-  words: [
+  baseWords: [
     ["entrepreneur", "企业家", "qǐ yè jiā", "emprendedor", "empreendedor"],
     ["venture", "创业", "chuàng yè", "emprendimiento", "empreendimento"],
     ["founder", "创始人", "chuàng shǐ rén", "fundador", "fundador"],
@@ -1262,23 +1296,25 @@ export const p5_148_business__advanced = {
     ["liquidity", "流动性", "liú dòng xìng", "liquidez", "liquidez"],
     ["scalability", "可扩展性", "kě kuò zhǎn xìng", "escalabilidad", "escalabilidade"],
     ["synergy", "协同作用", "xié tóng zuò yòng", "sinergia", "sinergia"],
-    ["diversification", "多元化", "duō yuán huà", "diversificación", "diversificação"],
+    ["diversification", "多元化", "duō yuán huà", "diversificación", "diversificação"]
+  ],
+  exampleWords: [
     ["successful entrepreneur", "成功企业家", "chéng gōng qǐ yè jiā", "empresario exitoso", "empreendedor de sucesso"],
     ["entrepreneur mindset", "企业家心态", "qǐ yè jiā xīn tài", "mentalidad emprendedora", "mentalidade empreendedora"],
     ["new venture", "新事业", "xīn shì yè", "nueva empresa", "novo empreendimento"],
     ["venture capital", "风险投资", "fēng xiǎn tóu zī", "capital riesgo", "capital de risco"],
     ["company founder", "公司创始人", "gōng sī chuàng shǐ rén", "fundador de la empresa", "fundador da empresa"],
-    ["co-founder of", "", "", "cofundador de", "cofundador da"],
+    ["co-founder of", "联合创始人的", "lián hé chuàng shǐ rén de", "cofundador de", "cofundador da"],
     ["financial backer", "联合创始人财务支持者", "lián hé chuàng shǐ rén cái wù zhī chí zhě", "patrocinador financiero", "financiador"],
-    ["backer for", "", "", "patrocinador de", "apoiador de"],
+    ["backer for", "支持者为", "zhī chí zhě wèi", "patrocinador de", "apoiador de"],
     ["secure funding", "的支持者安全资金", "de zhī chí zhě ān quán zī jīn", "financiación segura", "financiamento seguro"],
     ["funding round", "融资轮", "róng zī lún", "ronda de financiación", "rodada de financiamento"],
     ["company valuation", "公司估值", "gōng sī gū zhí", "valoración de empresas", "avaliação de empresas"],
-    ["valuation of", "", "", "valoración de", "avaliação de"],
+    ["valuation of", "估值的", "gū zhí de", "valoración de", "avaliação de"],
     ["company acquisition", "的估值公司收购", "de gū zhí gōng sī shōu gòu", "adquisición de empresa", "aquisição de empresa"],
     ["acquisition of", "收购", "shōu gòu", "adquisición de", "aquisição de"],
     ["corporate merger", "公司合并", "gōng sī hé bìng", "fusión corporativa", "fusão societária"],
-    ["merger between", "", "", "fusión entre", "fusão entre"],
+    ["merger between", "之间的合并", "zhī jiān de hé bìng", "fusión entre", "fusão entre"],
     ["bootstrap company", "之间的合并引导公司", "zhī jiān de hé bìng yǐn dǎo gōng sī", "empresa de arranque", "empresa de bootstrap"],
     ["bootstrap startup", "引导启动", "yǐn dǎo qǐ dòng", "inicio de arranque", "inicialização de inicialização"],
     ["scale business", "规模业务", "guī mó yè wù", "negocio a escala", "negócios em escala"],
@@ -1286,7 +1322,7 @@ export const p5_148_business__advanced = {
     ["pivot strategy", "支点战略", "zhī diǎn zhàn lüè", "estrategia de pivote", "estratégia de pivô"],
     ["pivot to", "转向", "zhuǎn xiàng", "girar a", "girar para"],
     ["business model", "商业模式", "shāng yè mó shì", "modelo de negocio", "modelo de negócio"],
-    ["model for", "", "", "modelo para", "modelo para"],
+    ["model for", "模式用于", "mó shì yòng yú", "modelo para", "modelo para"],
     ["gain traction", "的模型获得牵引力", "de mó xíng huò dé qiān yǐn lì", "ganar tracción", "ganhar força"],
     ["traction in", "牵引力", "qiān yǐn lì", "tracción en", "tração em"],
     ["competitive advantage", "竞争优势", "jìng zhēng yōu shì", "ventaja competitiva", "vantagem competitiva"],
@@ -1298,9 +1334,9 @@ export const p5_148_business__advanced = {
     ["market liquidity", "市场流动性", "shì chǎng liú dòng xìng", "liquidez del mercado", "liquidez do mercado"],
     ["liquidity crisis", "流动性危机", "liú dòng xìng wēi jī", "crisis de liquidez", "crise de liquidez"],
     ["business scalability", "业务可扩展性", "yè wù kě kuò zhǎn xìng", "escalabilidad empresarial", "escalabilidade de negócios"],
-    ["scalability of", "", "", "escalabilidad de", "escalabilidade de"],
+    ["scalability of", "可扩展性的", "kě kuò zhǎn xìng de", "escalabilidad de", "escalabilidade de"],
     ["create synergy", "的可扩展性创造协同效应", "de kě kuò zhǎn xìng chuàng zào xié tóng xiào yìng", "crear sinergia", "criar sinergia"],
-    ["synergy between", "", "", "sinergia entre", "sinergia entre"],
+    ["synergy between", "之间的协同", "zhī jiān de xié tóng", "sinergia entre", "sinergia entre"],
     ["portfolio diversification", "之间的协同作用投资组合多元化", "zhī jiān de xié tóng zuò yòng tóu zī zǔ hé duō yuán huà", "diversificación de carteras", "diversificação da carteira"],
     ["diversification strategy", "多元化战略", "duō yuán huà zhàn lüè", "estrategia de diversificación", "estratégia de diversificação"]
   ]
@@ -1309,12 +1345,12 @@ export const p5_148_business__advanced = {
 export const p5_149_environmental__science = {
   meta: {
     wordpack: 149,
+    english: "Environmental Science",
     chinese: "Environmental Science",
     pinyin: "Environmental Science",
-    spanish: "Environmental Science",
     portuguese: "Environmental Science"
   },
-  words: [
+  baseWords: [
     ["biome", "生物群落", "shēng wù qún luò", "bioma", "bioma"],
     ["sustainability", "可持续性", "kě chí xù xìng", "sostenibilidad", "sustentabilidade"],
     ["nonrenewable", "不可再生", "bù kě zài shēng", "no renovable", "não renovável"],
@@ -1334,7 +1370,9 @@ export const p5_149_environmental__science = {
     ["reforestation", "重新造林", "chóng xīn zào lín", "reforestación", "reflorestamento"],
     ["erosion", "侵蚀", "qīn shí", "erosión", "erosão"],
     ["ozone", "臭氧", "chòu yǎng", "ozono", "ozônio"],
-    ["watershed", "分水岭", "fēn shuǐ lǐng", "cuenca", "bacia hidrográfica"],
+    ["watershed", "分水岭", "fēn shuǐ lǐng", "cuenca", "bacia hidrográfica"]
+  ],
+  exampleWords: [
     ["tropical biome", "热带生物群落", "rè dài shēng wù qún luò", "bioma tropical", "bioma tropical"],
     ["biome type", "生物群落类型", "shēng wù qún luò lèi xíng", "tipo de bioma", "tipo de bioma"],
     ["environmental sustainability", "环境可持续性", "huán jìng kě chí xù xìng", "sostenibilidad ambiental", "sustentabilidade ambiental"],
@@ -1381,12 +1419,12 @@ export const p5_149_environmental__science = {
 export const p5_150_literary__devices = {
   meta: {
     wordpack: 150,
+    english: "Literary Devices",
     chinese: "Literary Devices",
     pinyin: "Literary Devices",
-    spanish: "Literary Devices",
     portuguese: "Literary Devices"
   },
-  words: [
+  baseWords: [
     ["alliteration", "头韵", "tóu yùn", "aliteración", "aliteração"],
     ["hyperbole", "夸张", "kuā zhāng", "hipérbole", "hipérbole"],
     ["sarcasm", "讽刺", "fěng cì", "sarcasmo", "sarcasmo"],
@@ -1406,19 +1444,21 @@ export const p5_150_literary__devices = {
     ["understatement", "轻描淡写", "qīng miáo dàn xiě", "eufemismo", "eufemismo"],
     ["onomatopoeia", "象声词", "xiàng shēng cí", "onomatopeya", "onomatopeia"],
     ["assonance", "协和", "xié hé", "asonancia", "assonância"],
-    ["synecdoche", "提喻", "tí yù", "sinécdoque", "sinédoque"],
+    ["synecdoche", "提喻", "tí yù", "sinécdoque", "sinédoque"]
+  ],
+  exampleWords: [
     ["use alliteration", "使用头韵", "shǐ yòng tóu yùn", "utilizar aliteración", "usar aliteração"],
     ["alliteration example", "头韵示例", "tóu yùn shì lì", "ejemplo de aliteración", "exemplo de aliteração"],
     ["obvious hyperbole", "明显夸张", "míng xiǎn kuā zhāng", "hipérbole obvia", "hipérbole óbvia"],
-    ["hyperbole for", "", "", "hipérbole para", "hipérbole para"],
+    ["hyperbole for", "夸张用于", "kuā zhāng yòng yú", "hipérbole para", "hipérbole para"],
     ["dripping sarcasm", "的夸张说法滴滴的讽刺", "de kuā zhāng shuō fǎ dī dī de fěng cì", "goteando sarcasmo", "pingando sarcasmo"],
     ["sarcasm intended", "讽刺的意思", "fěng cì de yì si", "sarcasmo intencionado", "sarcasmo pretendido"],
     ["use personification", "使用拟人化", "shǐ yòng nǐ rén huà", "usar personificación", "usar personificação"],
-    ["personification of", "", "", "personificación de", "personificação de"],
+    ["personification of", "拟人化的", "nǐ rén huà de", "personificación de", "personificação de"],
     ["classic oxymoron", "的拟人化经典矛盾修辞", "de nǐ rén huà jīng diǎn máo dùn xiū cí", "oxímoron clásico", "oxímoro clássico"],
     ["oxymoron like", "矛盾修辞如", "máo dùn xiū cí rú", "oxímoron como", "oxímoro como"],
     ["apparent paradox", "明显的悖论", "míng xiǎn de bèi lùn", "aparente paradoja", "aparente paradoxo"],
-    ["paradox of", "", "", "paradoja de", "paradoxo de"],
+    ["paradox of", "悖论的", "bèi lùn de", "paradoja de", "paradoxo de"],
     ["use foreshadowing", "的悖论使用伏笔", "de bèi lùn shǐ yòng fú bǐ", "utilizar presagio", "usar prenúncio"],
     ["foreshadowing events", "预示事件", "yù shì shì jiàn", "presagios de eventos", "prenunciando eventos"],
     ["narrative flashback", "叙事闪回", "xù shì shǎn huí", "flashback narrativo", "flashback narrativo"],
@@ -1426,25 +1466,25 @@ export const p5_150_literary__devices = {
     ["literary allusion", "文学典故", "wén xué diǎn gù", "alusión literaria", "alusão literária"],
     ["allusion to", "暗示", "àn shì", "alusión a", "alusão a"],
     ["rich symbolism", "丰富的象征意义", "fēng fù de xiàng zhēng yì yì", "rico simbolismo", "rico simbolismo"],
-    ["symbolism in", "", "", "simbolismo en", "simbolismo em"],
+    ["symbolism in", "象征于", "xiàng zhēng yú", "simbolismo en", "simbolismo em"],
     ["recurring motif", "中的象征意义重复出现的主题", "zhōng de xiàng zhēng yì yì chóng fù chū xiàn de zhǔ tí", "motivo recurrente", "motivo recorrente"],
-    ["motif of", "", "", "motivo de", "motivo de"],
+    ["motif of", "主题的", "zhǔ tí de", "motivo de", "motivo de"],
     ["hero archetype", "的主题英雄原型", "de zhǔ tí yīng xióng yuán xíng", "arquetipo de héroe", "arquétipo do herói"],
-    ["archetype of", "", "", "arquetipo de", "arquétipo de"],
+    ["archetype of", "原型的", "yuán xíng de", "arquetipo de", "arquétipo de"],
     ["polite euphemism", "的原型礼貌委婉语", "de yuán xíng lǐ mào wěi wǎn yǔ", "eufemismo cortés", "eufemismo educado"],
-    ["euphemism for", "", "", "eufemismo para", "eufemismo para"],
+    ["euphemism for", "委婉说法用于", "wěi wǎn shuō fǎ yòng yú", "eufemismo para", "eufemismo para"],
     ["negative connotation", "的委婉说法负面含义", "de wěi wǎn shuō fǎ fù miàn hán yì", "connotación negativa", "conotação negativa"],
-    ["connotation of", "", "", "connotación de", "conotação de"],
+    ["connotation of", "内涵的", "nèi hán de", "connotación de", "conotação de"],
     ["stark juxtaposition", "的内涵鲜明的并置", "de nèi hán xiān míng de bìng zhì", "yuxtaposición marcada", "justaposição total"],
-    ["juxtaposition of", "", "", "yuxtaposición de", "justaposição de"],
+    ["juxtaposition of", "并置的", "bìng zhì de", "yuxtaposición de", "justaposição de"],
     ["useful analogy", "并置有用的类比", "bìng zhì yǒu yòng de lèi bǐ", "analogía útil", "analogia útil"],
-    ["analogy between", "", "", "analogía entre", "analogia entre"],
+    ["analogy between", "之间的类比", "zhī jiān de lèi bǐ", "analogía entre", "analogia entre"],
     ["deliberate understatement", "之间的类比故意轻描淡写", "zhī jiān de lèi bǐ gù yì qīng miáo dàn xiě", "subestimación deliberada", "eufemismo deliberado"],
     ["understatement of", "轻描淡写", "qīng miáo dàn xiě", "subestimación de", "eufemismo de"],
     ["use onomatopoeia", "使用象声词", "shǐ yòng xiàng shēng cí", "utilizar onomatopeya", "usar onomatopeia"],
     ["onomatopoeia like", "象声词如", "xiàng shēng cí rú", "onomatopeya como", "onomatopeia como"],
     ["vowel assonance", "元音协和", "yuán yīn xié hé", "asonancia vocal", "assonância vocálica"],
-    ["assonance in", "", "", "asonancia en", "assonância em"],
+    ["assonance in", "谐音于", "xié yīn yú", "asonancia en", "assonância em"],
     ["use synecdoche", "中的谐音使用提喻法", "zhōng de xié yīn shǐ yòng tí yù fǎ", "utilizar sinécdoque", "usar sinédoque"],
     ["synecdoche for", "提喻", "tí yù", "sinécdoque para", "sinédoque para"]
   ]
@@ -1453,12 +1493,12 @@ export const p5_150_literary__devices = {
 export const p5_151_advanced__idioms = {
   meta: {
     wordpack: 151,
+    english: "Advanced Idioms",
     chinese: "Advanced Idioms",
     pinyin: "Advanced Idioms",
-    spanish: "Advanced Idioms",
     portuguese: "Advanced Idioms"
   },
-  words: [
+  baseWords: [
     ["ball is in your court", "球在你的球场上", "qiú zài nǐ de qiú chǎng shàng", "la pelota está en tu tejado", "a bola está do seu lado"],
     ["bite the bullet", "咬紧牙关", "yǎo jǐn yá guān", "muerde la bala", "morda a bala"],
     ["burn the midnight oil", "开夜车", "kāi yè chē", "quemar el aceite de medianoche", "queimar o óleo da meia-noite"],
@@ -1473,7 +1513,9 @@ export const p5_151_advanced__idioms = {
     ["back to square one", "回到第一个", "huí dào dì yí gè", "volver al punto de partida", "de volta à estaca zero"],
     ["raise the bar", "提高标准", "tí gāo biāo zhǔn", "sube el listón", "elevar a fasquia"],
     ["at the end of the day", "归根结底", "guī gēn jié dǐ", "al final del día", "no final do dia"],
-    ["see eye to eye", "意见一致", "yì jiàn yí zhì", "estamos de acuerdo", "estamos de acordo"],
+    ["see eye to eye", "意见一致", "yì jiàn yí zhì", "estamos de acuerdo", "estamos de acordo"]
+  ],
+  exampleWords: [
     ["the ball is in your court now", "现在球在你的场上", "xiàn zài qiú zài nǐ de chǎng shàng", "la pelota está en tu tejado ahora", "a bola está do seu lado agora"],
     ["ball is in your court so decide", "球在你的球场上，所以决定", "qiú zài nǐ de qiú chǎng shàng ， suǒ yǐ jué dìng", "la pelota está en tu tejado, así que decide", "a bola está do seu lado então decida"],
     ["just bite the bullet and", "硬着头皮", "yìng zhe tóu pí", "simplemente muerde la bala y", "apenas morda a bala e"],
@@ -1510,12 +1552,12 @@ export const p5_151_advanced__idioms = {
 export const p5_152_business__idioms = {
   meta: {
     wordpack: 152,
+    english: "Business Idioms",
     chinese: "Business Idioms",
     pinyin: "Business Idioms",
-    spanish: "Business Idioms",
     portuguese: "Business Idioms"
   },
-  words: [
+  baseWords: [
     ["back to the drawing board", "回到绘图板", "huí dào huì tú bǎn", "de vuelta a la mesa de dibujo", "de volta à prancheta"],
     ["ballpark figure", "大概数字", "dà gài shù zì", "cifra aproximada", "valor aproximado"],
     ["bottom line", "底线", "dǐ xiàn", "resultado final", "resultado final"],
@@ -1530,7 +1572,9 @@ export const p5_152_business__idioms = {
     ["win-win situation", "双赢", "shuāng yíng", "situación beneficiosa para todos", "situação ganha-ganha"],
     ["ahead of the curve", "领先于曲线", "lǐng xiān yú qū xiàn", "por delante de la curva", "à frente da curva"],
     ["bring to the table", "带到餐桌上", "dài dào cān zhuō shàng", "traer a la mesa", "trazer para a mesa"],
-    ["move the needle", "移动针", "yí dòng zhēn", "mueve la aguja", "mova a agulha"],
+    ["move the needle", "移动针", "yí dòng zhēn", "mueve la aguja", "mova a agulha"]
+  ],
+  exampleWords: [
     ["go back to the drawing board", "回到绘图板", "huí dào huì tú bǎn", "volver a la mesa de dibujo", "voltar para a prancheta"],
     ["back to the drawing board again", "再次回到绘图板", "zài cì huí dào huì tú bǎn", "De vuelta a la mesa de dibujo otra vez", "de volta à prancheta novamente"],
     ["give me a ballpark figure", "给我一个大概的数字", "gěi wǒ yí gè dà gài de shù zì", "dame una cifra aproximada", "me dê um valor aproximado"],
@@ -1567,12 +1611,12 @@ export const p5_152_business__idioms = {
 export const p5_153_formal__connectors = {
   meta: {
     wordpack: 153,
+    english: "Formal Connectors",
     chinese: "Formal Connectors",
     pinyin: "Formal Connectors",
-    spanish: "Formal Connectors",
     portuguese: "Formal Connectors"
   },
-  words: [
+  baseWords: [
     ["nonetheless", "尽管如此", "jǐn guǎn rú cǐ", "no obstante", "mesmo assim"],
     ["thence", "从此", "cóng cǐ", "desde allí", "daí"],
     ["whence", "从哪里来", "cóng nǎ lǐ lái", "de donde", "de onde"],
@@ -1592,7 +1636,9 @@ export const p5_153_formal__connectors = {
     ["forthwith", "立即", "lì jí", "inmediatamente", "imediatamente"],
     ["heretofore", "迄今为止", "qì jīn wéi zhǐ", "hasta ahora", "até agora"],
     ["thereby", "从而", "cóng ér", "por lo tanto", "assim"],
-    ["herein", "此处", "cǐ chù", "aquí", "aqui"],
+    ["herein", "此处", "cǐ chù", "aquí", "aqui"]
+  ],
+  exampleWords: [
     ["but nonetheless", "但尽管如此", "dàn jǐn guǎn rú cǐ", "pero aun así", "mas mesmo assim"],
     ["nonetheless important", "尽管如此重要", "jǐn guǎn rú cǐ zhòng yào", "no obstante importante", "ainda assim importante"],
     ["from thence", "从那里", "cóng nà lǐ", "desde allí", "de lá"],
@@ -1639,12 +1685,12 @@ export const p5_153_formal__connectors = {
 export const p5_154_advanced__verbs = {
   meta: {
     wordpack: 154,
+    english: "Advanced Verbs",
     chinese: "Advanced Verbs",
     pinyin: "Advanced Verbs",
-    spanish: "Advanced Verbs",
     portuguese: "Advanced Verbs"
   },
-  words: [
+  baseWords: [
     ["comprise", "包括", "bāo kuò", "comprenden", "compreende"],
     ["encompass", "包含", "bāo hán", "abarcar", "abranger"],
     ["entail", "需要", "xū yào", "implica", "implica"],
@@ -1664,7 +1710,9 @@ export const p5_154_advanced__verbs = {
     ["preclude", "排除", "pái chú", "excluir", "impedir"],
     ["exacerbate", "加剧", "jiā jù", "exacerbar", "agravar"],
     ["ameliorate", "改善", "gǎi shàn", "mejorar", "melhorar"],
-    ["promulgate", "颁布", "bān bù", "promulgar", "promulgar"],
+    ["promulgate", "颁布", "bān bù", "promulgar", "promulgar"]
+  ],
+  exampleWords: [
     ["comprise of", "包括", "bāo kuò", "forman parte de", "composto por"],
     ["comprise the", "包括", "bāo kuò", "comprenden el", "compõem o"],
     ["encompass all", "涵盖所有", "hán gài suǒ yǒu", "abarcar todo", "engloba todos"],
@@ -1711,12 +1759,12 @@ export const p5_154_advanced__verbs = {
 export const p5_155_nuanced__adjectives = {
   meta: {
     wordpack: 155,
+    english: "Nuanced Adjectives",
     chinese: "Nuanced Adjectives",
     pinyin: "Nuanced Adjectives",
-    spanish: "Nuanced Adjectives",
     portuguese: "Nuanced Adjectives"
   },
-  words: [
+  baseWords: [
     ["meticulous", "细致", "xì zhì", "meticuloso", "meticuloso"],
     ["robust", "坚固", "jiān gù", "robusto", "robusto"],
     ["viable", "可行", "kě xíng", "viable", "viável"],
@@ -1736,7 +1784,9 @@ export const p5_155_nuanced__adjectives = {
     ["nuanced", "细致入微", "xì zhì rù wēi", "matizado", "matizado"],
     ["esoteric", "深奥", "shēn ào", "esotérico", "esotérico"],
     ["ephemeral", "短暂的", "duǎn zàn de", "efímero", "efêmero"],
-    ["arduous", "艰巨", "jiān jù", "arduo", "árduo"],
+    ["arduous", "艰巨", "jiān jù", "arduo", "árduo"]
+  ],
+  exampleWords: [
     ["meticulous attention", "细致的关注", "xì zhì de guān zhù", "atención meticulosa", "atenção meticulosa"],
     ["meticulous planning", "精心策划", "jīng xīn cè huà", "planificación meticulosa", "planejamento meticuloso"],
     ["robust system", "强大的系统", "qiáng dà de xì tǒng", "sistema robusto", "sistema robusto"],

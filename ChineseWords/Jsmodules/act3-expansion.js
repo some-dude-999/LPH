@@ -26,7 +26,7 @@ export const p3_28_body__parts = {
     malay: "Body Parts",
     filipino: "Body Parts"
   },
-  words: [
+  baseWords: [
     ["头", "tóu", "Head", "Cabeza", "Tête", "Cabeça", "Đầu", "หัว", "ក្បាល", "Kepala", "Kepala", "Ulo"],
     ["脸", "liǎn", "Face", "Cara", "Visage", "Cara", "Mặt", "ใบหน้า", "មុខ", "Wajah", "Muka", "Mukha"],
     ["眼睛", "yǎn jīng", "Eyes", "Ojos", "Yeux", "Olhos", "Mắt", "ตา", "ភ្នែក", "Mata", "Mata", "Mga mata"],
@@ -45,7 +45,9 @@ export const p3_28_body__parts = {
     ["腿", "tuǐ", "Legs", "Piernas", "Jambes", "Pernas", "Chân", "ขา", "ជើង", "Kaki", "Kaki", "Mga binti"],
     ["肚子", "dǔ zi", "Belly", "Vientre", "Ventre", "Barriga", "Bụng", "พุง", "ពោះ", "Perut", "Perut", "Tiyan"],
     ["背", "bèi", "Back", "Espalda", "Dos", "Costas", "Lưng", "หลัง", "ខ្នង", "Punggung", "Belakang", "Likod"],
-    ["心脏", "xīn zàng", "Heart", "Corazón", "Coeur", "Coração", "Trái tim", "หัวใจ", "បេះដូង", "Jantung", "Jantung", "Puso"],
+    ["心脏", "xīn zàng", "Heart", "Corazón", "Coeur", "Coração", "Trái tim", "หัวใจ", "បេះដូង", "Jantung", "Jantung", "Puso"]
+  ],
+  exampleWords: [
     ["叩头", "kòu tóu", "Kowtow", "Reverencia", "Se prosterner", "Prosternação", "Cúi lạy", "โควตอ", "ក្រាបថ្វាយបង្គំ", "Bersujud", "Sujud", "Yumuko"],
     ["摇头", "yáo tóu", "Shake head", "Sacudir la cabeza", "Secouez la tête", "Balançar a cabeça", "Lắc đầu", "ส่ายหัว", "គ្រវីក្បាល", "Menggelengkan kepala", "Goncang kepala", "Umiling"],
     ["净面", "jìng miàn", "Clean face", "Cara limpia", "Visage propre", "Rosto limpo", "Mặt sạch", "หน้าสะอาด", "មុខស្អាត", "Membersihkan wajah", "Muka bersih", "Malinis na mukha"],
@@ -103,7 +105,7 @@ export const p3_29_food__basics = {
     malay: "Food Basics",
     filipino: "Food Basics"
   },
-  words: [
+  baseWords: [
     ["饭", "fàn", "Rice", "Arroz", "Riz", "Arroz", "Gạo", "ข้าว", "បាយ", "Beras", "Beras", "Bigas"],
     ["米饭", "mǐ fàn", "Rice", "Arroz", "Riz", "Arroz", "Cơm", "ข้าวสวย", "បាយ", "Nasi", "Nasi", "Kanin"],
     ["面", "miàn", "Noodles", "Fideos", "Nouilles", "Macarrão", "Mì", "ก๋วยเตี๋ยว", "មី", "Mie", "Mi", "Noodles"],
@@ -121,7 +123,9 @@ export const p3_29_food__basics = {
     ["水果", "shuǐ guǒ", "Fruit", "Fruta", "Fruits", "Fruta", "Trái cây", "ผลไม้", "ផ្លែឈើ", "Buah", "Buah", "Prutas"],
     ["汤", "tāng", "Soup", "Sopa", "Soupe", "Sopa", "Súp", "ซุป", "ស៊ុប", "Sup", "Sup", "Sopas"],
     ["羊肉", "yáng ròu", "Mutton", "Cordero", "Mouton", "Carneiro", "Thịt cừu", "เนื้อแกะ", "សាច់ចៀម", "Daging kambing", "Daging kambing", "Mutton"],
-    ["海鲜", "hǎi xiān", "Seafood", "Mariscos", "Fruits de mer", "Frutos do mar", "Hải sản", "อาหารทะเล", "អាហារសមុទ្រ", "Makanan laut", "Makanan laut", "Seafood"],
+    ["海鲜", "hǎi xiān", "Seafood", "Mariscos", "Fruits de mer", "Frutos do mar", "Hải sản", "อาหารทะเล", "អាហារសមុទ្រ", "Makanan laut", "Makanan laut", "Seafood"]
+  ],
+  exampleWords: [
     ["白饭", "bái fàn", "White rice", "Arroz blanco", "Riz blanc", "Arroz branco", "Cơm trắng", "ข้าวขาว", "បាយស", "Nasi putih", "Nasi putih", "Puting kanin"],
     ["热饭", "rè fàn", "Hot rice", "Arroz caliente", "Riz chaud", "Arroz quente", "Cơm nóng", "ข้าวร้อน", "បាយក្តៅ", "Nasi panas", "Nasi panas", "Mainit na kanin"],
     ["米饭香", "mǐ fàn xiāng", "Fragrant rice", "Arroz fragante", "Riz parfumé", "Arroz perfumado", "Cơm thơm", "ข้าวหอม", "បាយក្រអូប", "Nasi harum", "Nasi wangi", "Mabangong kanin"],
@@ -177,24 +181,26 @@ export const p3_30_drinks__beverages = {
     malay: "Drinks & Beverages",
     filipino: "Drinks & Beverages"
   },
-  words: [
+  baseWords: [
     ["水", "shuǐ", "Water", "Agua", "Eau", "Água", "Nước", "น้ำ", "ទឹក", "Air", "Air", "Tubig"],
     ["开水", "kāi shuǐ", "Boiled water", "Agua hervida", "Eau bouillie", "Água fervida", "Nước đun sôi", "น้ำต้มสุก", "ទឹកឆ្អិន", "Air matang", "Air rebus", "Pinakuluang tubig"],
     ["茶", "chá", "Tea", "Té", "Thé", "Chá", "Trà", "ชา", "តែ", "Teh", "TEA", "TEA"],
     ["绿茶", "lǜ chá", "Green tea", "Té verde", "Thé vert", "Chá verde", "Trà xanh", "ชาเขียว", "តែបៃតង", "Teh hijau", "Teh Hijau", "Green Tea"],
     ["红茶", "hóng chá", "Black tea", "Té negro", "Thé noir", "Chá preto", "Trà đen", "ชาดำ", "តែខ្មៅ", "Teh hitam", "Teh hitam", "Itim na tsaa"],
-    ["咖啡", "kā fēi", "Coffee", "Café", "Café", "Café", "Cà phê", "กาแฟ", "កាហ្វេ || ទឹកដោះ", "Kopi", "Kopi", "Kape"],
-    ["牛奶", "niú nǎi", "Milk", "Leche", "Lait", "Leite", "Sữa", "นม", "| តែទឹកដោះគោ", "Susu", "Susu", "Gatas"],
-    ["奶茶", "nǎi chá", "Milk tea", "Té con leche", "Thé au lait", "Chá com leite", "Trà sữa", "ชานม", "ទឹក", "Teh susu", "Susu Teh", "Milk Tea"],
-    ["果汁", "guǒ zhī", "Juice", "Jugo", "Jus", "Suco", "Nước ép", "น้ำผลไม้", "កូកាកូឡា", "Jus", "Jus", "Juice"],
-    ["可乐", "kě lè", "Coke", "Coca-Cola", "Coca", "Coca", "Than cốc", "โค้ก", "សូដា", "minuman bersoda", "Coke", "Coke"],
-    ["汽水", "qì shuǐ", "Soda", "Refresco", "Soda", "Refrigerante", "Nước ngọt", "โซดา", "ស្រាបៀរ", "soda", "Soda", "Soda"],
-    ["啤酒", "pí jiǔ", "Beer", "Cerveza", "Bière", "Cerveja", "Bia", "เบียร์", "ស្រា || ស្រាក្រហម", "Bir", "Beer", "Beer"],
+    ["咖啡", "kā fēi", "Coffee", "Café", "Café", "Café", "Cà phê", "กาแฟ", "កាហ្វេ", "Kopi", "Kopi", "Kape"],
+    ["牛奶", "niú nǎi", "Milk", "Leche", "Lait", "Leite", "Sữa", "นม", "ទឹកដោះគោ", "Susu", "Susu", "Gatas"],
+    ["奶茶", "nǎi chá", "Milk tea", "Té con leche", "Thé au lait", "Chá com leite", "Trà sữa", "ชานม", "តែទឹកដោះ", "Teh susu", "Teh susu", "Milk tea"],
+    ["果汁", "guǒ zhī", "Juice", "Jugo", "Jus", "Suco", "Nước ép", "น้ำผลไม้", "ទឹកផ្លែឈើ", "Jus", "Jus", "Juice"],
+    ["可乐", "kě lè", "Coke", "Coca-Cola", "Coca", "Coca-Cola", "Coca", "โค้ก", "កូកាកូឡា", "Coke", "Coke", "Coke"],
+    ["汽水", "qì shuǐ", "Soda", "Refresco", "Soda", "Refrigerante", "Nước ngọt", "โซดา", "សូដា", "Soda", "Soda", "Soda"],
+    ["啤酒", "pí jiǔ", "Beer", "Cerveza", "Bière", "Cerveja", "Bia", "เบียร์", "ស្រាបៀរ", "Bir", "Beer", "Beer"],
     ["白酒", "bái jiǔ", "Liquor", "Licor", "Alcool", "Licor", "Rượu", "สุรา", "ភេសជ្ជៈ", "Minuman keras", "Liquor", "Alak"],
     ["红酒", "hóng jiǔ", "Red wine", "Vino tinto", "Vin rouge", "Vinho tinto", "Rượu vang đỏ", "ไวน์แดง", "ទឹកដោះគោសណ្តែក", "Anggur merah", "Wain Merah", "Red Wine"],
     ["饮料", "yǐn liào", "Beverages", "Bebidas", "Boissons", "Bebidas", "Đồ Uống", "เครื่องดื่ม", "ទឹករ៉ែ", "Minuman", "Minuman", "Inumin"],
     ["豆浆", "dòu jiāng", "Soy milk", "Leche de soja", "Lait de soja", "Leite de soja", "Sữa đậu nành", "นมถั่วเหลือง", "ទឹកត្រជាក់", "Susu kedelai", "Susu soya", "Soy Milk"],
-    ["矿泉水", "kuàng quán shuǐ", "Mineral water", "Agua mineral", "Eau minérale", "Água mineral", "Nước khoáng", "น้ำแร่", "ចាក់ទឹក", "Air mineral", "Air Mineral", "Mineral Water"],
+    ["矿泉水", "kuàng quán shuǐ", "Mineral water", "Agua mineral", "Eau minérale", "Água mineral", "Nước khoáng", "น้ำแร่", "ចាក់ទឹក", "Air mineral", "Air Mineral", "Mineral Water"]
+  ],
+  exampleWords: [
     ["冷水", "lěng shuǐ", "Cold water", "Agua fría", "Eau froide", "Água fria", "Nước lạnh", "น้ำเย็น", "ទឹករំពុះ", "Air dingin", "Air sejuk", "Malamig na tubig"],
     ["倒水", "dào shuǐ", "Pour water", "Vierta agua", "Verser de l'eau", "Despeje água", "Đổ nước", "เทน้ำ", "ទឹកដាំទឹក", "Tuangkan air", "Tuang air", "Ibuhos ang tubig"],
     ["开水烫", "kāi shuǐ tàng", "Boiling water", "Agua hirviendo", "Eau bouillante", "Água fervente", "Nước sôi", "น้ำเดือด", "ផឹកតែ", "Air mendidih", "Air mendidih", "Kumukulong tubig"],
@@ -226,9 +232,9 @@ export const p3_30_drinks__beverages = {
     ["饮料甜", "yǐn liào tián", "Sweet drink", "Bebida dulce", "Boisson sucrée", "Bebida doce", "Nước ngọt", "น้ำหวาน", "ទឹកដោះគោសណ្តែកក្រអូប", "Minuman manis", "Minuman manis", "Matamis na inumin"],
     ["喝饮料", "hē yǐn liào", "Drink drink", "Beber beber", "Boire un verre", "Beba, beba", "Uống uống", "ดื่มเครื่องดื่ม", "ផឹកទឹកដោះគោសណ្តែក", "Minum minuman", "Minuman minuman", "Uminom ng inumin"],
     ["豆浆香", "dòu jiāng xiāng", "Soy milk fragrant", "Leche de soja fragante", "Lait de soja parfumé", "Leite de soja perfumado", "Sữa đậu nành thơm", "นมถั่วเหลืองหอม", "ទឹករ៉ែរ៉ែល្អ", "Susu kedelai harum", "Susu soya wangi", "Soy Milk Fragrant"],
-    ["喝豆浆", "hē dòu jiāng", "Drink soy milk", "Beber leche de soja", "Boire du lait de soja", "Beba leite de soja", "Uống sữa đậu nành", "ดื่มนมถั่วเหลือง", "| ផឹកទឹករ៉ែ", "Minum susu kedelai", "Minum susu soya", "Uminom ng toyo ng gatas"],
-    ["矿泉水好", "kuàng quán shuǐ hǎo", "Mineral water is good", "El agua mineral es buena", "L'eau minérale est bonne", "Água mineral faz bem", "Nước khoáng có tốt", "น้ำแร่ก็ดี", "[TRANSLATE_KM]", "Air mineral itu bagus", "Air mineral baik", "Ang tubig ng mineral ay mabuti"],
-    ["喝矿泉水", "hē kuàng quán shuǐ", "Drink mineral water", "Beber agua mineral", "Boire de l'eau minérale", "Beba água mineral", "Uống nước khoáng", "ดื่มน้ำแร่", "[TRANSLATE_KM]", "Minumlah air mineral", "Minum air mineral", "Uminom ng mineral na tubig"]
+    ["喝豆浆", "hē dòu jiāng", "Drink soy milk", "Beber leche de soja", "Boire du lait de soja", "Beba leite de soja", "Uống sữa đậu nành", "ดื่มนมถั่วเหลือง", "ផឹកទឹកសណ្តែក", "Minum susu kedelai", "Minum susu soya", "Uminom ng soy milk"],
+    ["矿泉水好", "kuàng quán shuǐ hǎo", "Mineral water is good", "El agua mineral es buena", "L'eau minérale est bonne", "Água mineral faz bem", "Nước khoáng tốt", "น้ำแร่ดี", "ទឹករ៉ែល្អ", "Air mineral bagus", "Air mineral baik", "Magandang mineral water"],
+    ["喝矿泉水", "hē kuàng quán shuǐ", "Drink mineral water", "Beber agua mineral", "Boire de l'eau minérale", "Beba água mineral", "Uống nước khoáng", "ดื่มน้ำแร่", "ផឹកទឹករ៉ែ", "Minum air mineral", "Minum air mineral", "Uminom ng mineral na tubig"]
   ]
 };
 
@@ -248,7 +254,7 @@ export const p3_31_common__foods = {
     malay: "Common Foods",
     filipino: "Common Foods"
   },
-  words: [
+  baseWords: [
     ["豆腐", "dòu fǔ", "Tofu", "Tofu", "Tofu", "Tofu", "Đậu Phụ", "เต้าหู้", "តៅហ៊ូ", "Tahu", "TOFU", "Tofu"],
     ["土豆", "tǔ dòu", "Potatoes", "Patatas", "Pommes de terre", "Batatas", "Khoai tây", "มันฝรั่ง", "ដំឡូង", "Kentang", "Kentang", "Mga patatas"],
     ["西红柿", "xī hóng shì", "Tomatoes", "Tomates", "Tomates", "Tomates", "Cà chua", "มะเขือเทศ", "ប៉េងប៉ោះ", "Tomat", "Tomato", "Mga kamatis"],
@@ -264,7 +270,9 @@ export const p3_31_common__foods = {
     ["香蕉", "xiāng jiāo", "Banana", "Plátano", "Banane", "Banana", "Chuối", "กล้วย", "ផ្លែឪឡឹក || TOFU ដេញថ្លៃ", "Pisang", "Pisang", "Banana"],
     ["橘子", "jú zi", "Orange", "Naranja", "Orange", "Laranja", "Cam", "ส้ม", "បរិភោគតៅហ៊ូ", "Oranye", "Orange", "Orange"],
     ["葡萄", "pú táo", "Grape", "Uva", "Raisin", "Uva", "Nho", "องุ่น", "ដំឡូងបារាំង Shredded", "Anggur", "Anggur", "Grape"],
-    ["西瓜", "xī guā", "Watermelon", "Sandía", "Pastèque", "Melancia", "Dưa hấu", "แตงโม", "ដំឡូងចៀន", "Semangka", "Watermelon", "Pakwan"],
+    ["西瓜", "xī guā", "Watermelon", "Sandía", "Pastèque", "Melancia", "Dưa hấu", "แตงโม", "ដំឡូងចៀន", "Semangka", "Watermelon", "Pakwan"]
+  ],
+  exampleWords: [
     ["豆腐嫩", "dòu fǔ nèn", "Tender tofu", "Tofu tierno", "Tofu tendre", "Tofu tenro", "Đậu phụ mềm", "เต้าหู้อ่อน", "ប៉េងប៉ោះក្រហម", "Tahu empuk", "Tender tofu", "Malambot na tofu"],
     ["吃豆腐", "chī dòu fǔ", "Eat tofu", "Comer tofu", "Manger du tofu", "Coma tofu", "Ăn đậu phụ", "กินเต้าหู้", "ប៉េងប៉ោះចៀន", "Makan tahu", "Makan tauhu", "Kumain ng tofu"],
     ["土豆丝", "tǔ dòu sī", "Shredded potatoes", "Patatas ralladas", "Pommes de terre râpées", "Batatas desfiadas", "Khoai tây cắt nhỏ", "มันฝรั่งฝอย", "ស្ពៃក្តោបគឺល្អ", "Kentang suwir", "Kentang yang dicincang", "Shredded patatas"],
@@ -316,7 +324,7 @@ export const p3_32_eating__drinking = {
     malay: "Eating & Drinking",
     filipino: "Eating & Drinking"
   },
-  words: [
+  baseWords: [
     ["饿", "è", "Hungry", "Hambriento", "Affamé", "Com fome", "Đói", "หิว", "ឃ្លាន", "Lapar", "Lapar", "Gutom"],
     ["饱", "bǎo", "Full", "Lleno", "Rassasié", "Cheio", "No", "อิ่ม", "ឆ្អែត", "Kenyang", "Kenyang", "Busog"],
     ["渴", "kě", "Thirsty", "Sediento", "Assoiffé", "Com sede", "Khát", "กระหาย", "ស្រេកទឹក", "Haus", "Dahaga", "Uhaw"],
@@ -334,7 +342,9 @@ export const p3_32_eating__drinking = {
     ["点餐", "diǎn cān", "Order food", "Pedir comida", "Commander", "Pedir comida", "Gọi món", "สั่งอาหาร", "កម្មង់អាហារ", "Pesan makanan", "Pesan makanan", "Umorder ng pagkain"],
     ["用餐", "yòng cān", "Have a meal", "Comer", "Prendre un repas", "Fazer refeição", "Dùng bữa", "รับประทานอาหาร", "ទទួលទានអាហារ", "Makan", "Makan", "Kumain"],
     ["加菜", "jiā cài", "Add dishes", "Añadir platos", "Ajouter des plats", "Adicionar pratos", "Thêm món", "เพิ่มเมนู", "បន្ថែមម្ហូប", "Tambah menu", "Tambah hidangan", "Magdagdag ng ulam"],
-    ["下单", "xià dān", "Place order", "Hacer pedido", "Passer commande", "Fazer pedido", "Đặt hàng", "สั่งซื้อ", "បញ្ជាទិញ", "Pesan", "Buat pesanan", "Mag-order"],
+    ["下单", "xià dān", "Place order", "Hacer pedido", "Passer commande", "Fazer pedido", "Đặt hàng", "สั่งซื้อ", "បញ្ជាទិញ", "Pesan", "Buat pesanan", "Mag-order"]
+  ],
+  exampleWords: [
     ["肚子饿", "dù zi è", "Stomach is hungry", "Tengo hambre", "J'ai faim", "Estou com fome", "Đói bụng", "หิวข้าว", "ឃ្លានពោះ", "Perut lapar", "Perut lapar", "Nagugutom"],
     ["饿死了", "è sǐ le", "Starving", "Muerto de hambre", "Affamé", "Morrendo de fome", "Đói chết", "หิวมาก", "ឃ្លានណាស់", "Sangat lapar", "Lapar sangat", "Gutom na gutom"],
     ["吃饱了", "chī bǎo le", "I'm full", "Estoy lleno", "Je suis rassasié", "Estou cheio", "No rồi", "อิ่มแล้ว", "ឆ្អែតហើយ", "Sudah kenyang", "Sudah kenyang", "Busog na ako"],
@@ -390,7 +400,7 @@ export const p3_33_clothing__items = {
     malay: "Clothing Items",
     filipino: "Clothing Items"
   },
-  words: [
+  baseWords: [
     ["衣服", "yī fú", "Clothes", "Ropa", "Vêtements", "Roupas", "Quần áo", "เสื้อผ้า", "សម្លៀកបំពាក់", "Pakaian", "Pakaian", "Damit"],
     ["裤子", "kù zi", "Pants", "Pantalones", "Pantalon", "Calças", "Quần", "กางเกง", "ខោ", "Celana", "Seluar", "Pantalon"],
     ["裙子", "qún zi", "Skirt", "Falda", "Jupe", "Saia", "Váy", "กระโปรง", "សំពត់", "Rok", "Skirt", "Skirt"],
@@ -406,7 +416,9 @@ export const p3_33_clothing__items = {
     ["围巾", "wéi jīn", "Scarf", "Bufanda", "Écharpe", "Lenço", "Khăn choàng", "ผ้าพันคอ", "ក្រវ៉្ដ", "Syal", "Scarf", "Scarf"],
     ["领带", "lǐng dài", "Tie", "Empate", "Cravate", "Gravata", "Cà vạt", "เสมอ", "| វ៉ែនតា", "Ikat", "Tie", "Itali"],
     ["眼镜", "yǎn jìng", "Glasses", "Gafas", "Lunettes", "Óculos", "Kính", "แว่นตา", "កាបូប", "Kacamata", "Gelas", "Glasses"],
-    ["包", "bāo", "Bag", "Bolsa", "Sac", "Bolsa", "Túi", "กระเป๋า", "ផ្លាស់ប្តូរសម្លៀកបំពាក់", "tas", "BAG", "Bag"],
+    ["包", "bāo", "Bag", "Bolsa", "Sac", "Bolsa", "Túi", "กระเป๋า", "ផ្លាស់ប្តូរសម្លៀកបំពាក់", "tas", "BAG", "Bag"]
+  ],
+  exampleWords: [
     ["换衣服", "huàn yī fú", "Change clothes", "Cambiarse de ropa", "Changer de vêtements", "Trocar de roupa", "Thay quần áo", "เปลี่ยนเสื้อผ้า", "សម្លៀកបំពាក់កខ្វក់", "Ganti baju", "Tukar pakaian", "Baguhin ang mga damit"],
     ["衣服脏了", "yī fú zāng le", "Dirty clothes", "Ropa sucia", "Vêtements sales", "Roupas sujas", "Quần áo bẩn", "เสื้อผ้าสกปรก", "ខោខូវប៊យ", "Pakaian kotor", "Pakaian kotor", "Maruming damit"],
     ["牛仔裤子", "niú zǎi kù zi", "Jeans", "Vaqueros", "Jean", "Jeans", "Quần jean", "ยีนส์", "ខោវែងពេក", "Jins", "Jeans", "Jeans"],
@@ -458,7 +470,7 @@ export const p3_34_weather__words = {
     malay: "Weather Words",
     filipino: "Weather Words"
   },
-  words: [
+  baseWords: [
     ["天气", "tiān qì", "Weather", "Tiempo", "Météo", "Tempo", "Thời tiết", "สภาพอากาศ", "អាកាសធាតុ", "Cuaca", "Cuaca", "Panahon"],
     ["晴天", "qíng tiān", "Sunny", "Soleado", "Ensoleillé", "Ensolarado", "Nắng", "ซันนี่", "សាន់នី", "Cerah", "Sunny", "Maaraw"],
     ["阴天", "yīn tiān", "Cloudy", "Nublado", "Nuageux", "Nublado", "Nhiều mây", "มีเมฆมาก", "ពពក", "Berawan", "Mendung", "Maulap"],
@@ -474,7 +486,9 @@ export const p3_34_weather__words = {
     ["气温", "qì wēn", "Temperature", "Temperatura", "Température", "Temperatura", "Nhiệt độ", "อุณหภูมิ", "សីតុណ្ហាភាព", "Suhu", "Suhu", "Temperatura"],
     ["霜", "shuāng", "Frost", "Escarcha", "Givre", "Geada", "Sương giá", "ฟรอสต์", "សាយសត្វ || គោរព", "Embun beku", "Frost", "Frost"],
     ["雹子", "báo zi", "Hail", "Granizo", "Grêle", "Granizo", "Mưa đá", "ลูกเห็บ", "ប្រឡាក់គ្រាប់ព្រិល", "Hujan es", "Hujan batu", "Ulan ng yelo"],
-    ["潮湿", "cháo shī", "Humid", "Húmedo", "Humide", "Úmido", "Ẩm ướt", "ชื้น", "អាកាសធាតុល្អ", "Lembab", "Lembap", "Humid"],
+    ["潮湿", "cháo shī", "Humid", "Húmedo", "Humide", "Úmido", "Ẩm ướt", "ชื้น", "អាកាសធាតុល្អ", "Lembab", "Lembap", "Humid"]
+  ],
+  exampleWords: [
     ["天气好", "tiān qì hǎo", "Good weather", "Buen tiempo", "Beau temps", "Bom tempo", "Thời tiết tốt", "อากาศดี", "ពិនិត្យមើលអាកាសធាតុ", "Cuaca bagus", "Cuaca yang baik", "Magandang panahon"],
     ["看天气", "kàn tiān qì", "Check the weather", "Consulta el tiempo", "Consultez la météo", "Verifique o tempo", "Kiểm tra thời tiết", "เช็คสภาพอากาศ", "ថ្ងៃដែលមានពន្លឺថ្ងៃល្អ", "Periksa cuaca", "Periksa cuaca", "Suriin ang panahon"],
     ["晴天好", "qíng tiān hǎo", "Good sunny day", "Buen día soleado", "Bonne journée ensoleillée", "Bom dia de sol", "Chúc một ngày nắng đẹp", "สวัสดีวันสดใส", "បាទមានពន្លឺថ្ងៃ", "Selamat hari yang cerah", "Hari cerah yang baik", "Magandang maaraw na araw"],
@@ -526,7 +540,7 @@ export const p3_35_shopping__basics = {
     malay: "Shopping Basics",
     filipino: "Shopping Basics"
   },
-  words: [
+  baseWords: [
     ["店", "diàn", "Store", "Tienda", "Magasin", "Loja", "Cửa hàng", "ร้านค้า", "រក្សាទុក", "Toko", "Kedai", "Tindahan"],
     ["商场", "shāng chǎng", "Shopping mall", "Centro comercial", "Centre commercial", "Centro comercial", "Trung tâm mua sắm", "ห้างสรรพสินค้า", "ផ្សារទំនើប", "Pusat perbelanjaan", "Membeli -belah pusat membeli -belah", "Shopping Mall"],
     ["便宜", "pián yi", "Cheap", "Barato", "Pas cher", "Barato", "Giá rẻ", "ราคาถูก", "ថោក", "Murah", "Murah", "Murang"],
@@ -541,7 +555,9 @@ export const p3_35_shopping__basics = {
     ["特价", "tè jià", "Special offer", "Oferta especial", "Offre spéciale", "Oferta especial", "Ưu đãi đặc biệt", "ข้อเสนอพิเศษ", "ការចរចា los| តារាងតំលៃ", "Penawaran khusus", "Tawaran Khas", "Espesyal na alok"],
     ["砍价", "kǎn jià", "Bargain", "Oferta", "Bonne affaire", "Pechincha", "Mặc cả", "ต่อรอง", "ការដើរទិញឥវ៉ាន់", "Tawar-menawar", "Bargain", "Bargain"],
     ["标价", "biāo jià", "Price list", "Lista de precios", "Liste de prix", "Lista de preços", "Bảng giá", "รายการราคา", "ហាងនេះ", "Daftar harga", "Senarai Harga", "Listahan ng Presyo"],
-    ["选购", "xuǎn gòu", "Shopping", "Compras", "Achats", "Compras", "Mua sắm", "ชอปปิ้ง", "ទៅហាង", "Belanja", "Membeli -belah", "Pamimili"],
+    ["选购", "xuǎn gòu", "Shopping", "Compras", "Achats", "Compras", "Mua sắm", "ชอปปิ้ง", "ទៅហាង", "Belanja", "Membeli -belah", "Pamimili"]
+  ],
+  exampleWords: [
     ["这家店", "zhè jiā diàn", "This store", "Esta tienda", "Ce magasin", "Esta loja", "Cửa hàng này", "ร้านนี้", "ចូលទៅកាន់ផ្សារទំនើប", "Toko ini", "Kedai ini", "Ang tindahan na ito"],
     ["去店里", "qù diàn lǐ", "Go to the store", "Ir a la tienda", "Aller au magasin", "Vá até a loja", "Đến cửa hàng", "ไปที่ร้าน", "នៅផ្សារទំនើប", "Pergi ke toko", "Pergi ke kedai", "Pumunta sa tindahan"],
     ["去商场", "qù shāng chǎng", "Go to the mall", "Ir al centro comercial", "Aller au centre commercial", "Ir ao shopping", "Đi đến trung tâm mua sắm", "ไปห้างสรรพสินค้า", "ថោកជាង || ថោកណាស់", "Pergi ke mal", "Pergi ke pusat membeli -belah", "Pumunta sa mall"],
@@ -591,14 +607,14 @@ export const p3_36_around__the__house = {
     malay: "Around the House",
     filipino: "Around the House"
   },
-  words: [
-    ["房子", "fáng zi", "House", "Casa", "Maison", "Casa", "Nhà", "บ้าน", "ផ្ទះ || បន្ទប់ || ទ្វារ", "Rumah", "Rumah", "Bahay"],
+  baseWords: [
+    ["房子", "fáng zi", "House", "Casa", "Maison", "Casa", "Nhà", "บ้าน", "ផ្ទះ", "Rumah", "Rumah", "Bahay"],
     ["房间", "fáng jiān", "Room", "Habitación", "Chambre", "Quarto", "Phòng", "ห้อง", "វីនដូ", "Kamar", "Bilik", "Silid"],
     ["门", "mén", "Door", "Puerta", "Porte", "Porta", "Cửa", "ประตู", "ជញ្ជាំង", "Pintu", "Pintu", "Pinto"],
-    ["窗户", "chuāng hù", "Windows", "Ventanas", "Fenêtres", "Janelas", "Cửa sổ", "หน้าต่าง", "ជាន់ || ពិដាន", "jendela", "Windows", "Windows"],
+    ["窗户", "chuāng hù", "Window", "Ventana", "Fenêtre", "Janela", "Cửa sổ", "หน้าต่าง", "បង្អួច", "Jendela", "Tingkap", "Bintana"],
     ["墙", "qiáng", "Wall", "Muro", "Mur", "Parede", "Tường", "กำแพง", "បន្ទប់ទទួលភ្ញៀវ", "Dinding", "Dinding", "Pader"],
     ["地板", "dì bǎn", "Floor", "Piso", "Sol", "Piso", "Tầng", "ชั้น", "បន្ទប់គេង", "Lantai", "Lantai", "Sahig"],
-    ["天花板", "tiān huā bǎn", "Ceiling", "Techo", "Plafond", "Teto", "Trần nhà", "เพดาน", "ផ្ទះបាយ || បន្ទប់ទឹក", "Plafon", "Siling", "Kisame"],
+    ["天花板", "tiān huā bǎn", "Ceiling", "Techo", "Plafond", "Teto", "Trần nhà", "เพดาน", "ពិដាន", "Plafon", "Siling", "Kisame"],
     ["客厅", "kè tīng", "Living room", "Sala de estar", "Salon", "Sala de estar", "Phòng khách", "ห้องนั่งเล่น", "បន្ទប់ទឹក", "Ruang tamu", "Ruang tamu", "Living Room"],
     ["卧室", "wò shì", "Bedroom", "Dormitorio", "Chambre", "Quarto", "Phòng ngủ", "ห้องนอน", "យ៉រ", "Kamar tidur", "Bilik tidur", "Silid -tulugan"],
     ["厨房", "chú fáng", "Kitchen", "Cocina", "Cuisine", "Cozinha", "Nhà bếp", "ห้องครัว", "ជណ្តើរ", "Dapur", "Dapur", "Kusina"],
@@ -608,7 +624,9 @@ export const p3_36_around__the__house = {
     ["楼梯", "lóu tī", "Stairs", "Escaleras", "Escaliers", "Escadas", "Cầu thang", "บันได", "ផ្ទះធំ", "Tangga", "Tangga", "Hagdan"],
     ["电梯", "diàn tī", "Elevator", "Ascensor", "Ascenseur", "Elevador", "Thang máy", "ลิฟต์", "ទិញផ្ទះមួយ", "Lift", "Lif", "Elevator"],
     ["花园", "huā yuán", "Garden", "Jardín", "Jardin", "Jardim", "Vườn", "สวน", "បន្ទប់តូច", "Taman", "Taman", "Hardin"],
-    ["车库", "chē kù", "Garage", "Garaje", "Garage", "Garagem", "Gara", "โรงรถ", "ចូលបន្ទប់", "Garasi", "Garage", "Garage"],
+    ["车库", "chē kù", "Garage", "Garaje", "Garage", "Garagem", "Gara", "โรงรถ", "ចូលបន្ទប់", "Garasi", "Garage", "Garage"]
+  ],
+  exampleWords: [
     ["大房子", "dà fáng zi", "Big house", "Casa grande", "Grande maison", "Casa grande", "Ngôi nhà lớn", "บ้านหลังใหญ่", "បើកទ្វារ", "Rumah besar", "Big House", "Malaking bahay"],
     ["买房子", "mǎi fáng zi", "Buy a house", "Comprar una casa", "Acheter une maison", "Comprar uma casa", "Mua nhà", "ซื้อบ้าน", "បិទទ្វារ", "Beli rumah", "Beli Rumah", "Bumili ng bahay"],
     ["小房间", "xiǎo fáng jiān", "Small room", "Habitación pequeña", "Petite chambre", "Quarto pequeno", "Phòng nhỏ", "ห้องเล็ก", "បើកបង្អួច", "Kamar kecil", "Bilik Kecil", "Maliit na silid"],
@@ -639,10 +657,10 @@ export const p3_36_around__the__house = {
     ["走楼梯", "zǒu lóu tī", "Take the stairs", "Sube las escaleras", "Prenez les escaliers", "Suba as escadas", "Đi cầu thang", "ขึ้นบันได", "នៅសួនច្បារ", "Naik tangga", "Ambil tangga", "Kumuha ng hagdan"],
     ["坐电梯", "zuò diàn tī", "Take the elevator", "Toma el ascensor", "Prenez l'ascenseur", "Pegue o elevador", "Đi thang máy", "ขึ้นลิฟต์", "យានដ្ឋានធំ", "Naik lift", "Ambil lif", "Kunin ang elevator"],
     ["等电梯", "děng diàn tī", "Wait for the elevator", "Espera el ascensor", "Attendez l'ascenseur", "Espere o elevador", "Đợi thang máy", "รอลิฟต์", "នៅក្នុងហ្គារ៉ាស", "Tunggu liftnya", "Tunggu lif", "Maghintay para sa elevator"],
-    ["小花园", "xiǎo huā yuán", "Small garden", "Pequeño jardín", "Petit jardin", "Pequeno jardim", "Khu vườn nhỏ", "สวนเล็กๆ", "[TRANSLATE_KM]", "Taman kecil", "Taman Kecil", "Maliit na hardin"],
-    ["在花园", "zài huā yuán", "In the garden", "En el jardín", "Dans le jardin", "No jardim", "Trong vườn", "ในสวน", "[TRANSLATE_KM]", "Di taman", "Di Taman", "Sa hardin"],
-    ["大车库", "dà chē kù", "Large garage", "Amplio garaje", "Grand garage", "Grande garagem", "Nhà để xe lớn", "โรงจอดรถขนาดใหญ่", "[TRANSLATE_KM]", "Garasi besar", "Garaj besar", "Malaking garahe"],
-    ["在车库", "zài chē kù", "In the garage", "en el garaje", "Dans le garage", "Na garagem", "Trong gara", "ในโรงรถ", "[TRANSLATE_KM]", "Di garasi", "Di garaj", "Sa garahe"]
+    ["小花园", "xiǎo huā yuán", "Small garden", "Pequeño jardín", "Petit jardin", "Pequeno jardim", "Khu vườn nhỏ", "สวนเล็กๆ", "សួនតូច", "Taman kecil", "Taman kecil", "Maliit na hardin"],
+    ["在花园", "zài huā yuán", "In the garden", "En el jardín", "Dans le jardin", "No jardim", "Trong vườn", "ในสวน", "នៅសួន", "Di taman", "Di taman", "Sa hardin"],
+    ["大车库", "dà chē kù", "Large garage", "Amplio garaje", "Grand garage", "Grande garagem", "Nhà để xe lớn", "โรงจอดรถขนาดใหญ่", "យានដ្ឋានធំ", "Garasi besar", "Garaj besar", "Malaking garahe"],
+    ["在车库", "zài chē kù", "In the garage", "en el garaje", "Dans le garage", "Na garagem", "Trong gara", "ในโรงรถ", "នៅក្នុងយានដ្ឋាន", "Di garasi", "Di garaj", "Sa garahe"]
   ]
 };
 
@@ -662,7 +680,7 @@ export const p3_37_furniture__objects = {
     malay: "Furniture & Objects",
     filipino: "Furniture & Objects"
   },
-  words: [
+  baseWords: [
     ["桌子", "zhuō zi", "Table", "Mesa", "Table", "Mesa", "Bàn", "โต๊ะ", "តុ", "Meja", "Meja", "Mesa"],
     ["椅子", "yǐ zi", "Chair", "Silla", "Chaise", "Cadeira", "Ghế", "เก้าอี้", "កៅអី", "Kursi", "Kerusi", "Upuan"],
     ["床", "chuáng", "Bed", "Cama", "Lit", "Cama", "Giường", "เตียง", "គ្រែ", "Tempat tidur", "Katil", "Kama"],
@@ -678,7 +696,9 @@ export const p3_37_furniture__objects = {
     ["钥匙", "yào shi", "Keys", "Llaves", "Clés", "Chaves", "Chìa khóa", "กุญแจ", "កូនសោ", "Kunci", "Kunci", "Mga susi"],
     ["纸", "zhǐ", "Paper", "Papel", "Papier", "Papel", "Giấy", "กระดาษ", "ក្រដាស", "Kertas", "Kertas", "Papel"],
     ["窗帘", "chuāng lián", "Curtains", "Cortinas", "Rideaux", "Cortinas", "Rèm", "ผ้าม่าน", "វាំងនន", "Tirai", "Langsir", "Mga kurtina"],
-    ["地毯", "dì tǎn", "Carpet", "Alfombra", "Tapis", "Tapete", "Thảm", "พรม", "កំរាលព្រំ", "Karpet", "Permaidani", "Carpet"],
+    ["地毯", "dì tǎn", "Carpet", "Alfombra", "Tapis", "Tapete", "Thảm", "พรม", "កំរាលព្រំ", "Karpet", "Permaidani", "Carpet"]
+  ],
+  exampleWords: [
     ["大桌子", "dà zhuō zi", "Large table", "Mesa grande", "Grande table", "Mesa grande", "Bàn lớn", "โต๊ะใหญ่", "តុធំ", "Meja besar", "Meja besar", "Malaking mesa"],
     ["擦桌子", "cā zhuō zi", "Wipe the table", "Limpiar la mesa", "Essuyer la table", "Limpar a mesa", "Lau bàn", "เช็ดโต๊ะ", "ជូតតុ", "Lap meja", "Lap meja", "Punasan ang mesa"],
     ["小椅子", "xiǎo yǐ zi", "Small chair", "Silla pequeña", "Petite chaise", "Cadeira pequena", "Ghế nhỏ", "เก้าอี้ตัวเล็ก", "កៅអីតូច", "Kursi kecil", "Kerusi kecil", "Maliit na upuan"],
@@ -730,7 +750,7 @@ export const p3_38_describing__people = {
     malay: "Describing People",
     filipino: "Describing People"
   },
-  words: [
+  baseWords: [
     ["漂亮", "piào liàng", "Beautiful", "Hermosa", "Magnifique", "Lindo", "Đẹp", "สวย", "ស្រស់ស្អាត", "Cantik", "Cantik", "Maganda"],
     ["帅", "shuài", "Handsome", "Guapo", "Beau", "Bonito", "Đẹp trai", "สุดหล่อ", "សង្ហា", "Tampan", "Kacak", "Gwapo"],
     ["可爱", "kě ài", "Cute", "Lindo", "Mignon", "Fofo", "Dễ thương", "น่ารัก", "| គួរឱ្យស្រលាញ់", "Lucu", "Comel", "Cute"],
@@ -747,7 +767,9 @@ export const p3_38_describing__people = {
     ["友好", "yǒu hǎo", "Friendly", "Amistoso", "Amical", "Amigável", "Thân thiện", "เป็นมิตร", "អាត្មានិយម || សប្បុរស", "Ramah", "Mesra", "Friendly"],
     ["勇敢", "yǒng gǎn", "Brave", "Valiente", "Courageux", "Corajoso", "Dũng cảm", "ผู้กล้าหาญ", "ស្រស់ស្អាតខ្លាំងណាស់", "Berani", "Berani", "Matapang"],
     ["自私", "zì sī", "Selfish", "Egoísta", "Égoïste", "Egoísta", "Ích Kỷ", "เห็นแก่ตัว", "ធ្វើបានយ៉ាងល្អ", "Egois", "Mementingkan", "Makasarili"],
-    ["大方", "dà fāng", "Generous", "Generoso", "Généreux", "Generoso", "Hào phóng", "ใจกว้าง", "បុរសសង្ហា", "Murah hati", "Murah hati", "Mapagbigay"],
+    ["大方", "dà fāng", "Generous", "Generoso", "Généreux", "Generoso", "Hào phóng", "ใจกว้าง", "បុរសសង្ហា", "Murah hati", "Murah hati", "Mapagbigay"]
+  ],
+  exampleWords: [
     ["很漂亮", "hěn piào liàng", "Very beautiful", "Muy hermosa", "Très beau", "Muito lindo", "Rất đẹp", "สวยมาก", "សង្ហាណាស់", "Cantik sekali", "Sangat cantik", "Napakaganda"],
     ["干得漂亮", "gàn dé piào liàng", "Well done", "Bien hecho", "Bravo", "Muito bem", "Làm tốt lắm", "เก่งมาก", "គួរឱ្យស្រលាញ់ណាស់", "Bagus sekali", "Baik dilakukan", "Magaling"],
     ["帅哥", "shuài gē", "Handsome guy", "Chico guapo", "Beau mec", "Cara bonito", "Anh chàng đẹp trai", "หนุ่มหล่อ", "គួរឱ្យស្រលាញ់ណាស់", "Pria tampan", "Lelaki kacak", "Gwapo na tao"],
@@ -801,7 +823,7 @@ export const p3_39_emotions__feelings = {
     malay: "Emotions & Feelings",
     filipino: "Emotions & Feelings"
   },
-  words: [
+  baseWords: [
     ["高兴", "gāo xìng", "Happy", "Feliz", "Heureux", "Feliz", "Hạnh phúc", "มีความสุข", "រីករាយ", "Selamat", "Selamat", "Masaya"],
     ["开心", "kāi xīn", "Happy", "Feliz", "Heureux", "Feliz", "Hạnh phúc", "มีความสุข", "រីករាយ", "Selamat", "Selamat", "Masaya"],
     ["难过", "nán guò", "Sad", "Triste", "Triste", "Triste", "Buồn", "เศร้า", "សោកសៅ", "Sedih", "SAD", "Malungkot"],
@@ -819,7 +841,9 @@ export const p3_39_emotions__feelings = {
     ["满意", "mǎn yì", "Satisfied", "Satisfecho", "Satisfait", "Satisfeito", "Hài lòng", "พอใจ", "ពេញចិត្ត", "Puas", "Puas", "Nasiyahan"],
     ["失望", "shī wàng", "Disappointed", "Decepcionado", "Déçu", "Decepcionado", "Thất vọng", "ผิดหวัง", "ខកចិត្ត", "Kecewa", "Kecewa", "Nabigo"],
     ["着急", "zháo jí", "Anxious", "Ansioso", "Anxieux", "Ansioso", "Lo lắng", "กังวล", "អន្ទះសា", "Cemas", "Cemas", "Sabik na"],
-    ["舒服", "shū fú", "Comfortable", "Cómodo", "Confortable", "Confortável", "Thoải mái", "สบาย", "សុខស្រួល", "Nyaman", "Selesa", "Kumportable"],
+    ["舒服", "shū fú", "Comfortable", "Cómodo", "Confortable", "Confortável", "Thoải mái", "สบาย", "សុខស្រួល", "Nyaman", "Selesa", "Kumportable"]
+  ],
+  exampleWords: [
     ["高兴起来", "gāo xìng qǐ lái", "Happy", "Feliz", "Heureux", "Feliz", "Hạnh phúc", "มีความสุข", "រីករាយ", "Selamat", "Selamat", "Masaya"],
     ["高兴得很", "gāo xìng dé hěn", "Very happy", "Muy feliz", "Très heureux", "Muito feliz", "Rất vui", "มีความสุขมากๆนะ", "រីករាយណាស់", "Senang sekali", "Sangat gembira", "Napakasaya"],
     ["开心果", "kāi xīn guǒ", "Pistachios", "Pistachos", "Pistaches", "Pistácios", "Quả hồ trăn", "พิสตาชิโอ", "Pistachios", "Pistachio", "Pistachios", "Pistachios"],
@@ -875,7 +899,7 @@ export const p3_40_health__sickness = {
     malay: "Health & Sickness",
     filipino: "Health & Sickness"
   },
-  words: [
+  baseWords: [
     ["健康", "jiàn kāng", "Health", "Salud", "Santé", "Saúde", "Sức khỏe", "สุขภาพ", "សុខភាព", "Kesehatan", "Kesihatan", "Kalusugan"],
     ["生病", "shēng bìng", "Illness", "Enfermedad", "Maladie", "Doença", "Bệnh tật", "การเจ็บป่วย", "ជំងឺ", "Penyakit", "Penyakit", "Sakit"],
     ["感冒", "gǎn mào", "Cold", "Frío", "Froid", "Frio", "Lạnh lùng", "เย็น", "ត្រជាក់", "Dingin", "Sejuk", "Malamig"],
@@ -890,7 +914,9 @@ export const p3_40_health__sickness = {
     ["复诊", "fù zhěn", "Follow-up", "Seguimiento", "Suivi", "Acompanhamento", "Theo dõi", "ติดตามผล", "ការ resuper || សុខភាពល្អ", "Tindak lanjut", "Susulan", "Follow-up"],
     ["住院", "zhù yuàn", "Hospitalization", "Hospitalización", "Hospitalisation", "Hospitalização", "Nhập viện", "การเข้ารับการรักษาในโรงพยาบาล", "មានសុខភាពល្អណាស់", "Rawat Inap", "Hospitalisasi", "Pag -ospital"],
     ["出院", "chū yuàn", "Discharge", "Alta", "Décharge", "Alta", "Xả", "ปลดประจำการ", "ឈឺ", "Keluaran", "Pelepasan", "Paglabas"],
-    ["养病", "yǎng bìng", "Recuperation", "Recuperación", "Récupération", "Recuperação", "Phục hồi", "การพักฟื้น", "ឈឺដោយងាយ", "Pemulihan", "Pemulihan", "Recuperation"],
+    ["养病", "yǎng bìng", "Recuperation", "Recuperación", "Récupération", "Recuperação", "Phục hồi", "การพักฟื้น", "ឈឺដោយងាយ", "Pemulihan", "Pemulihan", "Recuperation"]
+  ],
+  exampleWords: [
     ["身体健康", "shēn tǐ jiàn kāng", "Good health", "Buena salud", "Bonne santé", "Muita saúde", "Chúc sức khỏe", "สุขภาพแข็งแรง", "| ត្រជាក់", "Kesehatan yang baik", "Kesihatan yang baik", "Magandang Kalusugan"],
     ["很健康", "hěn jiàn kāng", "Very healthy", "Muy saludable", "Très sain", "Muito saudável", "Rất khỏe mạnh", "สุขภาพแข็งแรงมากๆ", "ទទួលបានជំងឺផ្តាសាយ", "Sangat sehat", "Sangat sihat", "Napaka malusog"],
     ["生病了", "shēng bìng le", "Sick", "Enfermo", "Malade", "Doente", "Bị ốm", "ป่วย", "គ្រុនក្ដក", "Sakit", "Sakit", "May sakit"],
@@ -940,7 +966,7 @@ export const p3_41_school__life = {
     malay: "School Life",
     filipino: "School Life"
   },
-  words: [
+  baseWords: [
     ["老师", "lǎo shī", "Teacher", "Profesor", "Enseignant", "Professor", "Giáo viên", "ครู", "គ្រូ", "Guru", "Guru", "Guro"],
     ["学生", "xué shēng", "Student", "Estudiante", "Étudiant", "Aluno", "Sinh viên", "นักเรียน", "និស្សិត || មិត្តរួមថ្នាក់", "Pelajar", "Pelajar", "Mag -aaral"],
     ["同学", "tóng xué", "Classmate", "Compañero de clase", "Camarade de classe", "Colega", "Bạn cùng lớp", "เพื่อนร่วมชั้น", "ថ្នាក់រៀន", "Teman sekelas", "Kelas", "Classmate"],
@@ -957,7 +983,9 @@ export const p3_41_school__life = {
     ["笔", "bǐ", "Pen", "Bolígrafo", "Stylo", "Caneta", "Cây bút", "ปากกา", "និស្សិតល្អ", "Pena", "Pen", "Panulat"],
     ["书包", "shū bāo", "School bag", "Mochila escolar", "Sac d'école", "Mochila escolar", "Cặp đi học", "กระเป๋านักเรียน", "ខ្ញុំជាសិស្ស", "Tas sekolah", "Beg Sekolah", "Bag ng paaralan"],
     ["操场", "cāo chǎng", "Playground", "Zona de juegos", "Aire de jeux", "Parque Infantil", "Sân chơi", "สนามเด็กเล่น", "| មិត្តរួមថ្នាក់ល្អ", "Taman bermain", "Taman Permainan", "Playground"],
-    ["校园", "xiào yuán", "Campus", "Campus", "Campus", "Campus", "Khuôn viên trường", "วิทยาเขต", "មិត្តរួមថ្នាក់របស់ខ្ញុំ", "Kampus", "Kampus", "Campus"],
+    ["校园", "xiào yuán", "Campus", "Campus", "Campus", "Campus", "Khuôn viên trường", "วิทยาเขต", "មិត្តរួមថ្នាក់របស់ខ្ញុំ", "Kampus", "Kampus", "Campus"]
+  ],
+  exampleWords: [
     ["好老师", "hǎo lǎo shī", "Good teacher", "Buen maestro", "Bon professeur", "Bom professor", "Thầy giỏi", "ครูที่ดี", "ថ្នាក់រៀនធំ", "Guru yang baik", "Guru yang baik", "Magandang guro"],
     ["我老师", "wǒ lǎo shī", "My teacher", "Mi maestra", "Mon professeur", "Minha professora", "Thầy của tôi", "ครูของฉัน", "នៅក្នុងថ្នាក់រៀន", "Guruku", "Guru saya", "Ang aking guro"],
     ["好学生", "hào xué shēng", "Good student", "Buen estudiante", "Bon élève", "Bom aluno", "Học sinh giỏi", "นักเรียนที่ดี", "ថ្នាក់នេះ", "Murid yang baik", "Pelajar yang baik", "Magandang mag -aaral"],
@@ -1011,7 +1039,7 @@ export const p3_42_work__office = {
     malay: "Work & Office",
     filipino: "Work & Office"
   },
-  words: [
+  baseWords: [
     ["同事", "tóng shì", "Colleagues", "Colegas", "Collègues", "Colegas", "Đồng nghiệp", "เพื่อนร่วมงาน", "សហការី", "Kolega", "Rakan sekerja", "Mga kasamahan"],
     ["老板", "lǎo bǎn", "Boss", "Jefe", "Patron", "Chefe", "Ông chủ", "บอส", "ថៅកែ", "Bos", "Bos", "Boss"],
     ["员工", "yuán gōng", "Employees", "Empleados", "Employés", "Funcionários", "Nhân viên", "พนักงาน", "បុគ្គលិក", "Karyawan", "Pekerja", "Mga empleyado"],
@@ -1027,7 +1055,9 @@ export const p3_42_work__office = {
     ["项目", "xiàng mù", "Project", "Proyecto", "Projet", "Projeto", "Dự án", "โครงการ", "គម្រោង", "Proyek", "Projek", "Proyekto"],
     ["报销", "bào xiāo", "Reimbursement", "Reembolso", "Remboursement", "Reembolso", "Hoàn tiền", "เบิกเงิน", "សងប្រាក់វិញ", "Penggantian biaya", "Pembayaran balik", "Reimbursement"],
     ["绩效", "jì xiào", "Performance", "Rendimiento", "Performance", "Desempenho", "Hiệu suất", "ประสิทธิภาพ", "ការសម្តែង", "Kinerja", "Prestasi", "Pagganap"],
-    ["考核", "kǎo hé", "Assessment", "Evaluación", "Évaluation", "Avaliação", "Đánh giá", "การประเมิน", "ការវាយតម្លៃ", "Penilaian", "Penilaian", "Pagtatasa"],
+    ["考核", "kǎo hé", "Assessment", "Evaluación", "Évaluation", "Avaliação", "Đánh giá", "การประเมิน", "ការវាយតម្លៃ", "Penilaian", "Penilaian", "Pagtatasa"]
+  ],
+  exampleWords: [
     ["好同事", "hǎo tóng shì", "Good colleague", "Buen colega", "Bon collègue", "Bom colega", "Đồng nghiệp tốt", "เพื่อนร่วมงานที่ดี", "សហការីល្អ", "Rekan yang baik", "Rakan sekerja yang baik", "Mabuting kasamahan"],
     ["我同事", "wǒ tóng shì", "My colleague", "Mi colega", "Mon collègue", "Meu colega", "Đồng nghiệp của tôi", "เพื่อนร่วมงานของฉัน", "សហការីរបស់ខ្ញុំ", "Rekan saya", "Rakan sekerja saya", "Aking kasamahan"],
     ["大老板", "dà lǎo bǎn", "Big boss", "Gran jefe", "Grand patron", "Grande chefe", "Ông chủ lớn", "นายใหญ่", "ថៅកែធំ", "Bos besar", "Bos besar", "Malaking boss"],
@@ -1079,7 +1109,7 @@ export const p3_43_communication__verbs = {
     malay: "Communication Verbs",
     filipino: "Communication Verbs"
   },
-  words: [
+  baseWords: [
     ["讲", "jiǎng", "Speak", "Hablar", "Parler", "Falar", "Nói", "พูด", "និយាយ", "Berbicara", "Bercakap", "Magsalita"],
     ["读", "dú", "Read", "Leer", "Lire", "Ler", "Đọc", "อ่าน", "អាន", "Membaca", "Baca", "Basahin"],
     ["写", "xiě", "Write", "Escribir", "Écrire", "Escrever", "Viết", "เขียน", "សរសេរ", "Menulis", "Tulis", "Sumulat"],
@@ -1096,7 +1126,9 @@ export const p3_43_communication__verbs = {
     ["辩论", "biàn lùn", "Debate", "Debatir", "Débattre", "Debater", "Tranh luận", "โต้วาที", "ជជែកដេញដោល", "Berdebat", "Berdebat", "Makipagtalo"],
     ["商量", "shāng liáng", "Consult", "Consultar", "Consulter", "Consultar", "Bàn bạc", "ปรึกษา", "ពិគ្រោះ", "Berunding", "Berunding", "Kumonsulta"],
     ["回应", "huí yìng", "Respond", "Responder", "Répondre", "Responder", "Phản hồi", "ตอบสนอง", "ឆ្លើយតប", "Merespons", "Bertindak balas", "Tumugon"],
-    ["回复", "huí fù", "Reply", "Responder", "Répondre", "Responder", "Trả lời", "ตอบกลับ", "ឆ្លើយ", "Membalas", "Membalas", "Sumagot"],
+    ["回复", "huí fù", "Reply", "Responder", "Répondre", "Responder", "Trả lời", "ตอบกลับ", "ឆ្លើយ", "Membalas", "Membalas", "Sumagot"]
+  ],
+  exampleWords: [
     ["讲话", "jiǎng huà", "Give a speech", "Dar un discurso", "Faire un discours", "Fazer um discurso", "Phát biểu", "กล่าว", "ថ្លែង", "Berpidato", "Berucap", "Magsalita"],
     ["讲故事", "jiǎng gù shì", "Tell a story", "Contar una historia", "Raconter une histoire", "Contar uma história", "Kể chuyện", "เล่าเรื่อง", "រៀបរាប់រឿង", "Bercerita", "Bercerita", "Magkuwento"],
     ["读书", "dú shū", "Study", "Estudiar", "Étudier", "Estudar", "Đọc sách", "อ่านหนังสือ", "អានសៀវភៅ", "Membaca buku", "Membaca buku", "Mag-aral"],
@@ -1150,7 +1182,7 @@ export const p3_44_phone__internet = {
     malay: "Phone & Internet",
     filipino: "Phone & Internet"
   },
-  words: [
+  baseWords: [
     ["电话", "diàn huà", "Phone", "Teléfono", "Téléphone", "Telefone", "Điện thoại", "โทรศัพท์", "ទូរស័ព្ទ", "Telepon", "Telefon", "Telepono"],
     ["手机", "shǒu jī", "Mobile phone", "Móvil", "Mobile", "Celular", "Điện thoại di động", "มือถือ", "ទូរស័ព្ទដៃ", "Ponsel", "Telefon bimbit", "Mobile phone"],
     ["号码", "hào mǎ", "Number", "Número", "Numéro", "Número", "Số", "หมายเลข", "លេខ", "Nomor", "Nombor", "Numero"],
@@ -1165,7 +1197,9 @@ export const p3_44_phone__internet = {
     ["下载", "xià zài", "Download", "Descargar", "Télécharger", "Baixar", "Tải xuống", "ดาวน์โหลด", "ទាញយក", "Unduh", "Muat turun", "I-download"],
     ["密码", "mì mǎ", "Password", "Contraseña", "Mot de passe", "Senha", "Mật khẩu", "รหัสผ่าน", "លេខសម្ងាត់", "Kata sandi", "Kata laluan", "Password"],
     ["账号", "zhàng hào", "Account", "Cuenta", "Compte", "Conta", "Tài khoản", "บัญชี", "គណនី", "Akun", "Akaun", "Account"],
-    ["充电", "chōng diàn", "Charge", "Cargar", "Charger", "Carregar", "Sạc", "ชาร์จ", "សាកថ្ម", "Mengisi daya", "Caj", "Mag-charge"],
+    ["充电", "chōng diàn", "Charge", "Cargar", "Charger", "Carregar", "Sạc", "ชาร์จ", "សាកថ្ម", "Mengisi daya", "Caj", "Mag-charge"]
+  ],
+  exampleWords: [
     ["拨电话", "bō diàn huà", "Make a call", "Hacer una llamada", "Passer un appel", "Fazer uma ligação", "Gọi điện", "โทรออก", "ហៅទូរស័ព្ទ", "Menelepon", "Buat panggilan", "Tumawag"],
     ["听电话", "tīng diàn huà", "Answer the phone", "Contestar el teléfono", "Répondre au téléphone", "Atender o telefone", "Nghe điện", "รับโทรศัพท์", "ឆ្លើយទូរស័ព្ទ", "Menjawab telepon", "Angkat telefon", "Sagutin ang telepono"],
     ["用手机", "yòng shǒu jī", "Use mobile phone", "Usar el móvil", "Utiliser le mobile", "Usar o celular", "Dùng điện thoại", "ใช้มือถือ", "ប្រើទូរស័ព្ទដៃ", "Menggunakan ponsel", "Gunakan telefon bimbit", "Gumamit ng mobile phone"],
@@ -1215,7 +1249,7 @@ export const p3_45_getting__around = {
     malay: "Getting Around",
     filipino: "Getting Around"
   },
-  words: [
+  baseWords: [
     ["跑", "pǎo", "Run", "Correr", "Courir", "Correr", "Chạy", "วิ่ง", "រត់", "Lari", "Lari", "Tumakbo"],
     ["进", "jìn", "Enter", "Entrar", "Entrer", "Entrar", "Vào", "เข้า", "ចូល", "Masuk", "Masuk", "Pumasok"],
     ["出", "chū", "Exit", "Salir", "Sortir", "Sair", "Ra", "ออก", "ចេញ", "Keluar", "Keluar", "Lumabas"],
@@ -1232,7 +1266,9 @@ export const p3_45_getting__around = {
     ["返回", "fǎn huí", "Return", "Regresar", "Revenir", "Retornar", "Quay lại", "กลับมา", "ត្រឡប់មកវិញ", "Kembali", "Pulang", "Bumalik"],
     ["抵达", "dǐ dá", "Arrive", "Llegar", "Arriver", "Chegar", "Đến nơi", "มาถึง", "មកដល់", "Tiba", "Sampai", "Dumating"],
     ["启程", "qǐ chéng", "Set off", "Partir", "Partir", "Partir", "Khởi hành", "ออกเดินทาง", "ចាប់ផ្តើមដំណើរ", "Berangkat", "Bertolak", "Umalis"],
-    ["途经", "tú jīng", "Pass through", "Pasar por", "Passer par", "Passar por", "Đi qua", "ผ่านทาง", "ឆ្លងកាត់តាម", "Melewati", "Melalui", "Dumaan sa"],
+    ["途经", "tú jīng", "Pass through", "Pasar por", "Passer par", "Passar por", "Đi qua", "ผ่านทาง", "ឆ្លងកាត់តាម", "Melewati", "Melalui", "Dumaan sa"]
+  ],
+  exampleWords: [
     ["跑开", "pǎo kāi", "Run away", "Huir", "S'enfuir", "Fugir", "Chạy đi", "วิ่งหนี", "រត់ចេញ", "Lari pergi", "Lari", "Tumakbo palayo"],
     ["快跑", "kuài pǎo", "Run fast", "Correr rápido", "Courir vite", "Correr rápido", "Chạy nhanh", "วิ่งเร็ว", "រត់លឿន", "Lari cepat", "Lari laju", "Tumakbo nang mabilis"],
     ["进来", "jìn lái", "Come in", "Entra", "Entre", "Entre", "Vào đây", "เข้ามา", "ចូលមក", "Masuk", "Masuk sini", "Pumasok"],
@@ -1286,7 +1322,7 @@ export const p3_46_daily__routines = {
     malay: "Daily Routines",
     filipino: "Daily Routines"
   },
-  words: [
+  baseWords: [
     ["醒", "xǐng", "Wake up", "Despertar", "Se réveiller", "Acordar", "Thức dậy", "ตื่น", "ភ្ញាក់", "Bangun", "Bangun", "Gumising"],
     ["洗漱", "xǐ shù", "Wash up", "Asearse", "Se laver", "Lavar-se", "Rửa mặt", "ล้างหน้า", "លាងមុខ", "Cuci muka", "Basuh muka", "Maghilamos"],
     ["早餐", "zǎo cān", "Breakfast", "Desayuno", "Petit-déjeuner", "Café da manhã", "Bữa sáng", "อาหารเช้า", "អាហារពេលព្រឹក", "Sarapan", "Sarapan", "Almusal"],
@@ -1302,7 +1338,9 @@ export const p3_46_daily__routines = {
     ["梳洗", "shū xǐ", "Freshen up", "Arreglarse", "Se rafraîchir", "Arrumar-se", "Sửa soạn", "แต่งตัว", "ធ្វើបាទ", "Bersolek", "Bersiap", "Maghanda"],
     ["通勤", "tōng qín", "Commute", "Desplazarse", "Faire la navette", "Ir ao trabalho", "Đi làm", "เดินทางไปทำงาน", "ធ្វើដំណើរទៅធ្វើការ", "Perjalanan ke kantor", "Perjalanan kerja", "Magbyahe papasok"],
     ["待业", "dài yè", "Unemployed", "Desempleado", "Sans emploi", "Desempregado", "Thất nghiệp", "ว่างงาน", "គ្មានការងារ", "Menganggur", "Menganggur", "Walang trabaho"],
-    ["活动", "huó dòng", "Activity", "Actividad", "Activité", "Atividade", "Hoạt động", "กิจกรรม", "សកម្មភាព", "Aktivitas", "Aktiviti", "Aktibidad"],
+    ["活动", "huó dòng", "Activity", "Actividad", "Activité", "Atividade", "Hoạt động", "กิจกรรม", "សកម្មភាព", "Aktivitas", "Aktiviti", "Aktibidad"]
+  ],
+  exampleWords: [
     ["醒了", "xǐng le", "Woke up", "Me desperté", "Je me suis réveillé", "Acordei", "Đã thức dậy", "ตื่นแล้ว", "ភ្ញាក់ហើយ", "Sudah bangun", "Sudah bangun", "Gumising na"],
     ["睡醒", "shuì xǐng", "Wake up from sleep", "Despertarse", "Se réveiller", "Acordar", "Ngủ dậy", "ตื่นนอน", "ភ្ញាក់ពីគេង", "Bangun tidur", "Bangun tidur", "Gumising sa pagtulog"],
     ["洗漱完", "xǐ shù wán", "Finished washing up", "Terminé de asearme", "Fini de se laver", "Terminei de lavar", "Đã rửa mặt xong", "ล้างหน้าเสร็จแล้ว", "លាងមុខរួចហើយ", "Selesai cuci muka", "Selesai basuh muka", "Tapos na maghilamos"],
@@ -1354,7 +1392,7 @@ export const p3_47_hobbies__leisure = {
     malay: "Hobbies & Leisure",
     filipino: "Hobbies & Leisure"
   },
-  words: [
+  baseWords: [
     ["爱好", "ài hào", "Hobbies", "Pasatiempos", "Loisirs", "Passatempos", "Sở thích", "งานอดิเรก", "ចំណង់ចំណូលចិត្ត", "Hobi", "Hobi", "Mga libangan"],
     ["阅读", "yuè dú", "Reading", "Leyendo", "Lecture", "Leitura", "Đọc", "การอ่าน", "ការអាន", "Membaca", "Membaca", "Pagbasa"],
     ["看书", "kàn shū", "Reading", "Leyendo", "Lecture", "Leitura", "Đọc", "การอ่าน", "ការអាន", "Membaca", "Membaca", "Pagbasa"],
@@ -1371,7 +1409,9 @@ export const p3_47_hobbies__leisure = {
     ["游戏", "yóu xì", "Games", "Juegos", "Jeux", "Jogos", "Trò chơi", "เกม", "ល្បែង || ការលេងអុកអូរ", "Permainan", "Permainan", "Mga Laro"],
     ["下棋", "xià qí", "Playing chess", "Jugando al ajedrez", "Jouer aux échecs", "Jogando xadrez", "Chơi cờ", "กำลังเล่นหมากรุก", "ចម្អិនអាហារ", "Bermain catur", "Bermain catur", "Naglalaro ng chess"],
     ["烹饪", "pēng rèn", "Cooking", "Cocinar", "Cuisine", "Cozinhando", "Nấu ăn", "ทำอาหาร", "ថែសួន || ចំណង់ចំណូលចិត្តរបស់ខ្ញុំ", "Memasak", "Memasak", "Pagluluto"],
-    ["园艺", "yuán yì", "Gardening", "Jardinería", "Jardinage", "Jardinagem", "Làm vườn", "การทำสวน", "មានចំណង់ចំណូលចិត្ត", "Berkebun", "Berkebun", "Paghahardin"],
+    ["园艺", "yuán yì", "Gardening", "Jardinería", "Jardinage", "Jardinagem", "Làm vườn", "การทำสวน", "មានចំណង់ចំណូលចិត្ត", "Berkebun", "Berkebun", "Paghahardin"]
+  ],
+  exampleWords: [
     ["我的爱好", "wǒ de ài hào", "My hobbies", "Mis aficiones", "Mes loisirs", "Meus hobbies", "Sở thích của tôi", "งานอดิเรกของฉัน", "ស្រឡាញ់ការអាន", "Hobi saya", "Hobi saya", "Ang aking mga libangan"],
     ["有爱好", "yǒu ài hào", "Have hobbies", "Tener pasatiempos", "Avoir des passe-temps", "Tenha hobbies", "Có sở thích", "มีงานอดิเรก", "ដូចជាការអាន", "Punya hobi", "Mempunyai hobi", "May mga libangan"],
     ["爱阅读", "ài yuè dú", "Love reading", "Me encanta leer", "J'adore lire", "Adoro ler", "Thích đọc sách", "รักการอ่าน", "| ស្រឡាញ់ការអាន", "Suka membaca", "Cinta membaca", "Pag -ibig Pagbasa"],
@@ -1425,7 +1465,7 @@ export const p3_48_sports__exercise = {
     malay: "Sports & Exercise",
     filipino: "Sports & Exercise"
   },
-  words: [
+  baseWords: [
     ["运动", "yùn dòng", "Sports", "Deportes", "Sport", "Esportes", "Thể thao", "กีฬา", "កីឡា", "Olahraga", "Sukan", "Palakasan"],
     ["跑步", "pǎo bù", "Running", "Corriendo", "En cours d'exécution", "Correndo", "Đang chạy", "วิ่ง", "ការរត់", "Berjalan", "Running", "Tumatakbo"],
     ["游泳", "yóu yǒng", "Swimming", "Natación", "Natation", "Natação", "Bơi lội", "ว่ายน้ำ", "ហែលទឹក", "Berenang", "Berenang", "Paglangoy"],
@@ -1442,7 +1482,9 @@ export const p3_48_sports__exercise = {
     ["赢", "yíng", "Win", "Ganar", "Gagner", "Ganhe", "Thắng", "ชนะ", "ឈ្នះ", "Menangkan", "Win", "Manalo"],
     ["输", "shū", "Lose", "Perder", "Perdre", "Perder", "Thua", "แพ้", "បាត់បង់", "Kalah", "Kehilangan", "Mawala"],
     ["锻炼", "duàn liàn", "Exercise", "Ejercicio", "Exercice", "Exercício", "Bài tập", "ออกกำลังกาย", "លំហាត់ប្រាណ", "Latihan", "Latihan", "Ehersisyo"],
-    ["体育", "tǐ yù", "Sports", "Deportes", "Sport", "Esportes", "Thể thao", "กีฬา", "កីឡា", "Olahraga", "Sukan", "Palakasan"],
+    ["体育", "tǐ yù", "Sports", "Deportes", "Sport", "Esportes", "Thể thao", "กีฬา", "កីឡា", "Olahraga", "Sukan", "Palakasan"]
+  ],
+  exampleWords: [
     ["做运动", "zuò yùn dòng", "Do sports", "Hacer deporte", "Faire du sport", "Pratique esportes", "Chơi thể thao", "เล่นกีฬา", "ធ្វើកីឡា", "Berolahraga", "Adakah Sukan", "Gawin ang sports"],
     ["爱运动", "ài yùn dòng", "Love sports", "Me encantan los deportes", "J'adore le sport", "Adoro esportes", "Yêu thể thao", "รักกีฬา", "កីឡាស្នេហា", "Suka olahraga", "Cinta Sukan", "Love Sports"],
     ["去跑步", "qù pǎo bù", "Go running", "Sal a correr", "Allez courir", "Vá correndo", "Chạy đi", "วิ่งไป", "ដំណើរការហើយ", "Lari", "Pergi berjalan", "Tumakbo"],
@@ -1496,7 +1538,7 @@ export const p3_49_nature__environment = {
     malay: "Nature & Environment",
     filipino: "Nature & Environment"
   },
-  words: [
+  baseWords: [
     ["天空", "tiān kōng", "Sky", "Cielo", "Ciel", "Céu", "Bầu trời", "สกาย", "មេឃ || ស៊ុន", "Langit", "Sky", "Sky"],
     ["太阳", "tài yáng", "Sun", "Sol", "Soleil", "Sol", "Mặt Trời", "ซัน", "ព្រះច័ន្ទ || តារា", "Matahari", "Sun", "Araw"],
     ["月亮", "yuè liàng", "Moon", "Luna", "Lune", "Lua", "Mặt trăng", "ดวงจันทร์", "ពពក", "Bulan", "Bulan", "Buwan"],
@@ -1514,7 +1556,9 @@ export const p3_49_nature__environment = {
     ["空气", "kōng qì", "Air", "Aire", "Aérien", "Ar", "Không khí", "แอร์", "មេឃខៀវ", "Udara", "Udara", "AIR"],
     ["环境", "huán jìng", "Environment", "Medio ambiente", "Environnement", "Meio Ambiente", "Môi trường", "สิ่งแวดล้อม", "ព្រះអាទិត្យនៅខាងក្រៅ", "Lingkungan", "Alam Sekitar", "Kapaligiran"],
     ["自然", "zì rán", "Nature", "Naturaleza", "Nature", "Natureza", "Thiên nhiên", "ธรรมชาติ", "Baseking នៅលើព្រះអាទិត្យ", "Alam", "Alam", "Kalikasan"],
-    ["植物", "zhí wù", "Plants", "Plantas", "Plantes", "Plantas", "Thực vật", "พืช", "ព្រះច័ន្ទគឺជុំ", "Tumbuhan", "Tumbuhan", "Halaman"],
+    ["植物", "zhí wù", "Plants", "Plantas", "Plantes", "Plantas", "Thực vật", "พืช", "ព្រះច័ន្ទគឺជុំ", "Tumbuhan", "Tumbuhan", "Halaman"]
+  ],
+  exampleWords: [
     ["看天空", "kàn tiān kōng", "Look at the sky", "Mira al cielo", "Regarde le ciel", "Olhe para o céu", "Hãy nhìn bầu trời", "มองท้องฟ้า", "| សូមក្រឡេកមើលព្រះច័ន្ទ", "Lihatlah langit", "Lihatlah langit", "Tumingin sa kalangitan"],
     ["蓝天空", "lán tiān kōng", "Blue sky", "Cielo azul", "Ciel bleu", "Céu azul", "Bầu trời xanh", "ท้องฟ้าสีคราม", "| តារាភ្លឺស្វាង", "Langit biru", "Blue Sky", "Blue Sky"],
     ["太阳出来了", "tài yáng chū lái le", "The sun is out", "Ha salido el sol", "Le soleil est au rendez-vous", "O sol apareceu", "Nắng tắt", "แดดออกแล้ว", "រាប់ផ្កាយ", "Matahari terbit", "Matahari keluar", "Ang araw ay nasa labas"],
@@ -1570,7 +1614,7 @@ export const p3_50_animals = {
     malay: "Animals",
     filipino: "Animals"
   },
-  words: [
+  baseWords: [
     ["动物", "dòng wù", "Animals", "Animales", "Animaux", "Animais", "Động vật", "สัตว์", "សត្វ", "Hewan", "Haiwan", "Mga Hayop"],
     ["狗", "gǒu", "Dog", "Perro", "Chien", "Cachorro", "Chó", "หมา", "ឆ្កែ", "Anjing", "Anjing", "Aso"],
     ["猫", "māo", "Cat", "Gato", "Chat", "Gato", "Mèo", "แมว", "ឆ្មា", "Kucing", "Kucing", "Pusa"],
@@ -1589,7 +1633,9 @@ export const p3_50_animals = {
     ["大象", "dà xiàng", "Elephant", "Elefante", "Éléphant", "Elefante", "Voi", "ช้าง", "ដំរី", "Gajah", "Gajah", "Elepante"],
     ["猴子", "hóu zi", "Monkey", "Mono", "Singe", "Macaco", "Khỉ", "ลิง", "ស្វា", "Monyet", "Monyet", "Unggoy"],
     ["蛇", "shé", "Snake", "Serpiente", "Serpent", "Cobra", "Rắn", "งู", "ពស់", "Ular", "Ular", "Ahas"],
-    ["海豚", "hǎi tún", "Dolphin", "Delfín", "Dauphin", "Golfinho", "Cá heo", "โลมา", "ដូហ្វីន", "Lumba-lumba", "Lumba-lumba", "Dolphin"],
+    ["海豚", "hǎi tún", "Dolphin", "Delfín", "Dauphin", "Golfinho", "Cá heo", "โลมา", "ដូហ្វីន", "Lumba-lumba", "Lumba-lumba", "Dolphin"]
+  ],
+  exampleWords: [
     ["野生动物", "yě shēng dòng wù", "Wild animals", "Animales salvajes", "Animaux sauvages", "Animais selvagens", "Động vật hoang dã", "สัตว์ป่า", "សត្វព្រៃ", "Hewan liar", "Haiwan liar", "Mga ligaw na hayop"],
     ["保护动物", "bǎo hù dòng wù", "Protected animals", "Animales protegidos", "Animaux protégés", "Animais protegidos", "Động vật được bảo vệ", "สัตว์คุ้มครอง", "សត្វការពារ", "Hewan yang dilindungi", "Haiwan yang dilindungi", "Protektadong mga hayop"],
     ["遛狗", "liú gǒu", "Walk the dog", "Pasear al perro", "Promener le chien", "Passear com o cachorro", "Dắt chó đi dạo", "พาหมาเดินเล่น", "ដើរឆ្កែ", "Jalan-jalan dengan anjing", "Berjalan dengan anjing", "Maglakad ng aso"],
@@ -1647,7 +1693,7 @@ export const p3_51_numbers__math = {
     malay: "Numbers & Math",
     filipino: "Numbers & Math"
   },
-  words: [
+  baseWords: [
     ["加", "jiā", "addition", "adición", "ajout", "adição", "phép cộng", "นอกจากนี้", "បន្ថែម", "tambahan", "Tambahan", "karagdagan"],
     ["减", "jiǎn", "subtraction", "resta", "soustraction", "subtração", "phép trừ", "ลบ", "ដកការដក", "pengurangan", "pengurangan", "pagbabawas"],
     ["乘", "chéng", "Multiplication", "Multiplicación", "Multiplication", "Multiplicação", "Phép nhân", "การคูณ", "គុណ", "Perkalian", "Pendaraban", "Pagpaparami"],
@@ -1664,7 +1710,9 @@ export const p3_51_numbers__math = {
     ["余", "yú", "Remainder", "Resto", "Reste", "Resto", "Số dư", "เศษ", "សល់", "Sisa", "Baki", "Natitira"],
     ["差", "chà", "Difference", "Diferencia", "Différence", "Diferença", "Sự khác biệt", "ความแตกต่าง", "ភាពខុសគ្នា", "Perbedaan", "Perbezaan", "Pagkakaiba"],
     ["积", "jī", "Product", "Producto", "Produit", "Produto", "Tích", "ผลคูณ", "ផលគុណ", "Produk", "Hasil darab", "Produkto"],
-    ["商", "shāng", "Quotient", "Cociente", "Quotient", "Quociente", "Thương", "ผลหาร", "ចំណែក", "Hasil bagi", "Pembahagi", "Quotient"],
+    ["商", "shāng", "Quotient", "Cociente", "Quotient", "Quociente", "Thương", "ผลหาร", "ចំណែក", "Hasil bagi", "Pembahagi", "Quotient"]
+  ],
+  exampleWords: [
     ["加法", "jiā fǎ", "Addition", "Suma", "Addition", "Adição", "Phép cộng", "การบวก", "ការបូក", "Penjumlahan", "Tambah", "Pagdaragdag"],
     ["加上", "jiā shàng", "Plus", "Más", "Plus", "Mais", "Cộng thêm", "บวก", "បូក", "Ditambah", "Tambah", "Dagdag"],
     ["减法", "jiǎn fǎ", "Subtraction", "Resta", "Soustraction", "Subtração", "Phép trừ", "การลบ", "ការដក", "Pengurangan", "Tolak", "Pagbabawas"],
@@ -1718,7 +1766,7 @@ export const p3_52_time__words__advanced = {
     malay: "Time Words Advanced",
     filipino: "Time Words Advanced"
   },
-  words: [
+  baseWords: [
     ["白天", "bái tiān", "Daytime", "Durante el día", "Jour", "Diurno", "Ban ngày", "กลางวัน", "ពេលថ្ងៃ", "Siang hari", "Siang hari", "Araw"],
     ["夜晚", "yè wǎn", "Night", "Noche", "Nuit", "Noite", "Đêm", "กลางคืน", "រាត្រី", "Malam", "Malam", "Gabi"],
     ["凌晨", "líng chén", "Early morning", "Temprano en la mañana", "Tôt le matin", "De manhã cedo", "Sáng sớm", "เช้าตรู่", "ព្រឹកព្រលឹម", "Dini hari", "Pagi awal", "Maagang umaga"],
@@ -1735,7 +1783,9 @@ export const p3_52_time__words__advanced = {
     ["今后", "jīn hòu", "From now on", "De ahora en adelante", "A partir de maintenant", "De agora em diante", "Từ bây giờ", "ตั้งแต่บัดนี้เป็นต้นไป", "មុន", "Mulai sekarang", "Mulai sekarang di", "Mula ngayon sa"],
     ["当初", "dāng chū", "At the beginning", "Al principio", "Au début", "No início", "Lúc đầu", "ที่จุดเริ่มต้น", "ក្រោយមក", "Pada awalnya", "Pada mulanya", "Sa simula"],
     ["先前", "xiān qián", "Before", "Antes", "Avant", "Antes", "Trước", "ก่อน", "ធ្វើការក្នុងអំឡុងពេលថ្ងៃ", "Sebelumnya", "Sebelum", "Bago"],
-    ["此后", "cǐ hòu", "Afterward", "Después", "Ensuite", "Depois", "Sau đó", "หลังจากนั้น", "អំឡុងពេលថ្ងៃ", "Setelah itu", "Selepas itu", "Pagkatapos"],
+    ["此后", "cǐ hòu", "Afterward", "Después", "Ensuite", "Depois", "Sau đó", "หลังจากนั้น", "អំឡុងពេលថ្ងៃ", "Setelah itu", "Selepas itu", "Pagkatapos"]
+  ],
+  exampleWords: [
     ["白天工作", "bái tiān gōng zuò", "Working during the day", "Trabajar durante el día", "Travailler pendant la journée", "Trabalhar durante o dia", "Làm việc trong ngày", "ทำงานระหว่างวัน", "សម្រាកនៅពេលយប់", "Bekerja di siang hari", "Bekerja pada siang hari", "Nagtatrabaho sa araw"],
     ["在白天", "zài bái tiān", "During the day", "Durante el día", "Pendant la journée", "Durante o dia", "Trong ngày", "ในระหว่างวัน", "នៅពេលយប់", "Siang hari", "Pada siang hari", "Sa araw"],
     ["夜晚休息", "yè wǎn xiū xī", "Resting at night", "Descansando por la noche", "Repos la nuit", "Descansando à noite", "Nghỉ đêm", "พักผ่อนยามค่ำคืน", "ក្រោកពីដំណេកនៅព្រឹកព្រលឹម", "Istirahat malam", "Berehat pada waktu malam", "Nagpapahinga sa gabi"],
@@ -1789,7 +1839,7 @@ export const p3_53_location__words = {
     malay: "Location Words",
     filipino: "Location Words"
   },
-  words: [
+  baseWords: [
     ["中", "zhōng", "middle", "medio", "milieu", "meio", "giữa", "กลาง", "កណ្តាល || || នៅខាងក្នុង", "tengah", "tengah", "Gitnang"],
     ["内", "nèi", "inside", "dentro", "à l'intérieur", "dentro", "bên trong", "ภายใน", "នៅខាងក្រៅ", "di dalam", "Di dalam", "Sa loob"],
     ["外", "wài", "outside", "afuera", "dehors", "fora", "bên ngoài", "ภายนอก", "កំពូល", "di luar", "di luar", "sa labas"],
@@ -1809,7 +1859,9 @@ export const p3_53_location__words = {
     ["西边", "xī biān", "west", "oeste", "ouest", "oeste", "hướng tây", "ตะวันตก", "ខាងជើង", "barat", "Barat", "West"],
     ["北边", "běi biān", "north", "norte", "nord", "norte", "bắc", "เหนือ", "កំពូល", "utara", "Utara", "Hilaga"],
     ["上边", "shàng biān", "top", "arriba", "haut", "topo", "hàng đầu", "ด้านบน", "បាត", "atas", "Atas", "Nangungunang"],
-    ["下边", "xià biān", "bottom", "abajo", "en bas", "inferior", "đáy", "ด้านล่าง", "កណ្តាល || || កន្លែងណា", "bawah", "bawah", "Bottom"],
+    ["下边", "xià biān", "bottom", "abajo", "en bas", "inferior", "đáy", "ด้านล่าง", "កណ្តាល || || កន្លែងណា", "bawah", "bawah", "Bottom"]
+  ],
+  exampleWords: [
     ["之中", "zhī zhōng", "middle", "medio", "milieu", "meio", "giữa", "กลาง", "នៅខាងក្នុង", "tengah", "tengah", "Gitnang"],
     ["其中", "qí zhōng", "where", "donde", "où", "onde", "ở đâu", "ที่ไหน", "នៅខាងក្នុង", "dimana", "di mana", "kung saan"],
     ["内部", "nèi bù", "inside", "dentro", "à l'intérieur", "dentro", "bên trong", "ภายใน", "នៅខាងក្រៅ", "di dalam", "Di dalam", "Sa loob"],

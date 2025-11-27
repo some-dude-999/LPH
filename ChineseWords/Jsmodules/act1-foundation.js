@@ -26,7 +26,7 @@ export const p1_1_greetings__goodbyes = {
     malay: "Greetings & Goodbyes",
     filipino: "Greetings & Goodbyes"
   },
-  words: [
+  baseWords: [
     ["你好", "nǐ hǎo", "Hello", "Hola", "Bonjour", "Olá", "Xin chào", "สวัสดี", "ចមរាបសយរ", "Halo", "Helo", "Kumusta"],
     ["您好", "nín hǎo", "Hello", "Hola", "Bonjour", "Olá", "Xin chào", "สวัสดี", "ចមរាបសយរ", "Halo", "Helo", "Kumusta"],
     ["早安", "zǎo ān", "Good morning", "Buen día", "Bonjour", "Bom dia", "Chào buổi sáng", "สวัสดีตอนเช้า", "អរុណសួស្តី", "Selamat pagi", "Selamat pagi", "Magandang umaga"],
@@ -45,7 +45,9 @@ export const p1_1_greetings__goodbyes = {
     ["好久不见", "hǎo jiǔ bú jiàn", "haven't seen you for a long time", "hace mucho que no te veo", "je ne t'ai pas vu depuis longtemps", "não te vejo há muito tempo", "đã lâu không gặp bạn", "ไม่ได้เจอคุณมานานแล้ว", "មិនបានឃើញអ្នកអស់រយៈពេលជាយូរមកហើយ", "sudah lama tidak bertemu denganmu", "sudah lama tidak melihat anda", "Matagal ka nang hindi mo nakita"],
     ["再会", "zài huì", "Goodbye", "Adiós", "Au revoir", "Adeus", "Tạm biệt", "ลาก่อน", "ការលាក្នា", "Selamat tinggal", "Selamat tinggal", "Paalam"],
     ["保重", "bǎo zhòng", "Take care of yourself", "Cuídate", "Prends soin de toi", "Cuide-se", "Hãy chăm sóc bản thân", "ดูแลตัวเองด้วยนะ", "ថែរក្សាខ្លួនអ្នក", "Jaga dirimu", "Jaga Diri Anda", "Alagaan ang iyong sarili"],
-    ["慢走", "màn zǒu", "take care", "cuídate", "prends soin de toi", "cuide-se", "đi cẩn thận", "เดินทางปลอดภัย", "ដើរដោយសុវត្ថិភាព", "hati-hati", "jaga diri", "ingat ka"],
+    ["慢走", "màn zǒu", "take care", "cuídate", "prends soin de toi", "cuide-se", "đi cẩn thận", "เดินทางปลอดภัย", "ដើរដោយសុវត្ថិភាព", "hati-hati", "jaga diri", "ingat ka"]
+  ],
+  exampleWords: [
     ["你好吗", "nǐ hǎo ma", "Are you OK", "Estás bien", "Êtes-vous ok", "Você está bem", "Bạn ổn chứ", "คุณโอเคไหม", "តើអ្នកមិនអីទេ", "Kamu tidak apa apa", "Adakah anda baik -baik saja", "OK ka ba"],
     ["你好啊", "nǐ hǎo a", "hello", "Hola", "Bonjour", "olá", "Xin chào", "สวัสดี", "ចមរាបសយរ", "Halo", "Helo", "Kumusta"],
     ["您好先生", "nín hǎo xiān shēng", "hello sir", "hola señor", "bonjour monsieur", "olá senhor", "xin chào ngài", "สวัสดีท่าน", "សួស្តីលោកម្ចាស់", "Halo Pak", "Helo tuan", "hello sir"],
@@ -103,7 +105,7 @@ export const p1_2_personal__pronouns = {
     malay: "Personal Pronouns",
     filipino: "Personal Pronouns"
   },
-  words: [
+  baseWords: [
     ["我", "wǒ", "I", "yo", "je", "eu", "tôi", "ฉัน", "ខ្ញុំ", "saya", "saya", "ako"],
     ["你", "nǐ", "you", "tú", "toi", "você", "Bạn", "คุณ", "អ្នក", "Anda", "Anda", "Ikaw"],
     ["您", "nín", "you", "tú", "toi", "você", "Bạn", "คุณ", "អ្នក", "Anda", "Anda", "Ikaw"],
@@ -120,7 +122,9 @@ export const p1_2_personal__pronouns = {
     ["人家", "rén jiā", "people", "gente", "personnes", "pessoas", "mọi người", "ประชากร", "របចារាស្រ្ដ", "rakyat", "orang", "mga tao"],
     ["大家", "dà jiā", "Everyone", "Todos", "Tout le monde", "Todos", "Mọi người", "ทุกคน", "មនុសសអាេយអ្នករាល់គ្នា", "Setiap orang", "Semua orang", "Lahat"],
     ["每个人", "měi gè rén", "everyone", "todos", "tout le monde", "todos", "mọi người", "ทุกคน", "មនុសសអាេយអ្នករាល់គ្នា", "setiap orang", "semua orang", "Lahat"],
-    ["某人", "mǒu rén", "someone", "alguien", "quelqu'un", "alguém", "người nào đó", "บางคน", "រសី", "seseorang", "seseorang", "isang tao"],
+    ["某人", "mǒu rén", "someone", "alguien", "quelqu'un", "alguém", "người nào đó", "บางคน", "រសី", "seseorang", "seseorang", "isang tao"]
+  ],
+  exampleWords: [
     ["我来了", "wǒ lái le", "I am coming", "Vengo", "J'arrive", "Eu estou vindo", "tôi đang đến", "ฉันกำลังมา", "ខ្ញុំនឹងមក", "saya datang", "Saya datang", "Pupunta ako"],
     ["我愿意", "wǒ yuàn yì", "I do", "sí", "Je fais", "Eu faço", "tôi làm", "ฉันทำ", "ខ្ញុំធ្វើ", "Saya bersedia", "Saya buat", "Ginagawa ko"],
     ["你真棒", "nǐ zhēn bàng", "you are awesome", "usted es maravilloso", "vous êtes génial", "você é incrível", "bạn thật tuyệt vời", "คุณเก่งมาก", "អ្នកពិតជាអស្ចារ្យមែន", "kamu luar biasa", "Anda hebat", "Napakaganda mo"],
@@ -174,7 +178,7 @@ export const p1_3_demonstratives__pointers = {
     malay: "Demonstratives & Pointers",
     filipino: "Demonstratives & Pointers"
   },
-  words: [
+  baseWords: [
     ["这", "zhè", "this", "este", "ce", "esse", "cái này", "นี้", "នេហ", "ini", "ini", "ito"],
     ["那", "nà", "That", "Eso", "Que", "Que", "Cái đó", "ที่", "ដេល", "Itu", "Itu", "Iyon"],
     ["这个", "zhè ge", "this", "este", "ce", "esse", "cái này", "นี้", "នេហ", "ini", "ini", "ito"],
@@ -192,7 +196,9 @@ export const p1_3_demonstratives__pointers = {
     ["这边", "zhè biān", "This way", "Por aquí", "Par ici", "Por aqui", "Lối này", "ทางนี้", "វិធីនេះ", "Lewat sini", "Cara ini", "Sa ganitong paraan"],
     ["那边", "nà biān", "there", "allá", "là", "lá", "ở đó", "ที่นั่น", "ឯហ្នុហ", "di sana", "di sana", "doon"],
     ["此", "cǐ", "this", "este", "ce", "esse", "cái này", "นี้", "នេហ", "ini", "ini", "ito"],
-    ["彼", "bǐ", "that", "aquel", "celui-là", "aquele", "kia", "นั้น", "នោះ", "itu", "itu", "iyon"],
+    ["彼", "bǐ", "that", "aquel", "celui-là", "aquele", "kia", "นั้น", "នោះ", "itu", "itu", "iyon"]
+  ],
+  exampleWords: [
     ["这是", "zhè shì", "This is", "Esto es", "C'est", "Isso é", "Đây là", "นี่คือ", "នេះគឺ", "Ini", "Ini", "Ito ay"],
     ["就这", "jiù zhè", "That's it", "Eso es todo", "C'est ça", "É isso", "Thế thôi", "แค่นั้นแหละ", "នោះហើយជាវា", "Itu saja", "Itu sahaja", "Yun lang"],
     ["那是", "nà shì", "that is", "eso es", "c'est", "aquilo é", "đó là", "นั่นคือ", "នោះគឺ", "yaitu", "itu", "iyon ay"],
@@ -248,7 +254,7 @@ export const p1_4_yes__no__responses = {
     malay: "Yes No & Responses",
     filipino: "Yes No & Responses"
   },
-  words: [
+  baseWords: [
     ["对", "duì", "right", "correcto", "correct", "certo", "Đúng", "ถูกต้อง", "ត្រឹមត្រូវ", "benar", "betul", "tama"],
     ["好", "hǎo", "good", "bien", "bien", "bom", "Tốt", "ดี", "ល្អ", "Bagus", "baik", "Mabuti"],
     ["行", "xíng", "OK", "DE ACUERDO", "D'ACCORD", "OK", "ĐƯỢC RỒI", "ตกลง", "យល់ព្រម", "OKE", "Ok", "Ok"],
@@ -266,7 +272,9 @@ export const p1_4_yes__no__responses = {
     ["对了", "duì le", "Right", "Correcto", "C'est exact", "Certo", "Đúng rồi", "ถูกแล้ว", "ត្រឹមត្រូវហើយ", "Benar", "Betul", "Tama"],
     ["算了", "suàn le", "never mind", "no importa", "pas grave", "deixa para lá", "đừng bận tâm", "ช่างเถอะ", "មិនអីទេ", "Sudahlah", "tidak keberatan", "Huwag alalahanin"],
     ["没事", "méi shì", "fine", "bien", "bien", "multar", "khỏe", "ดี", "ល្អ", "Bagus", "baik", "Fine"],
-    ["准确", "zhǔn què", "precise", "preciso", "précis", "preciso", "chính xác", "แม่นยำ", "ចាក់លាក់", "tepat", "tepat", "tumpak"],
+    ["准确", "zhǔn què", "precise", "preciso", "précis", "preciso", "chính xác", "แม่นยำ", "ចាក់លាក់", "tepat", "tepat", "tumpak"]
+  ],
+  exampleWords: [
     ["答对了", "dá duì le", "Correct answer", "respuesta correcta", "Bonne réponse", "Resposta correta", "Câu trả lời đúng", "คำตอบที่ถูกต้อง", "ចម្លើយត្រឹមត្រូវ", "Jawaban yang benar", "Jawapan yang betul", "Tamang sagot"],
     ["说得对", "shuō dé duì", "That's right", "Así es", "C'est exact", "Isso mesmo", "Đúng rồi", "ถูกต้องแล้ว", "ត្រឹមត្រូវហើយ", "Itu benar", "Betul", "Tama yan"],
     ["好啊", "hǎo a", "OK", "DE ACUERDO", "D'ACCORD", "OK", "ĐƯỢC RỒI", "ตกลง", "យល់ព្រម", "OKE", "Ok", "Ok"],
@@ -322,7 +330,7 @@ export const p1_5_essential__verbs__i = {
     malay: "Essential Verbs I",
     filipino: "Essential Verbs I"
   },
-  words: [
+  baseWords: [
     ["是", "shì", "yes", "Sí", "Oui", "sim", "Đúng", "ใช่", "បាត", "Ya", "Ya", "Oo"],
     ["有", "yǒu", "have", "tener", "avoir", "ter", "có", "มี", "មាន", "memiliki", "mempunyai", "mayroon"],
     ["在", "zài", "exist", "existir", "exister", "existir", "hiện hữu", "มีอยู่", "មាន", "ada", "wujud", "umiiral"],
@@ -341,7 +349,9 @@ export const p1_5_essential__verbs__i = {
     ["站", "zhàn", "stand", "pararse", "rester", "ficar", "đứng", "ยืน", "ឈរ", "berdiri", "berdiri", "tumayo"],
     ["睡", "shuì", "sleep", "dormir", "dormir", "dormir", "ngủ", "นอน", "ដមនេក", "tidur", "tidur", "matulog ka na"],
     ["起", "qǐ", "rise", "elevar", "augmenter", "ascender", "tăng lên", "ลุกขึ้น", "រហ", "bangkit", "bangkit", "tumaas"],
-    ["到", "dào", "arrive", "llegar", "arriver", "chegar", "đến", "มาถึง", "មកដល់", "tiba", "tiba", "dumating"],
+    ["到", "dào", "arrive", "llegar", "arriver", "chegar", "đến", "มาถึง", "មកដល់", "tiba", "tiba", "dumating"]
+  ],
+  exampleWords: [
     ["便是", "biàn shì", "That's it", "Eso es todo", "C'est ça", "É isso", "Thế thôi", "แค่นั้นแหละ", "នោះហើយជាវា", "Itu saja", "Itu sahaja", "Yun lang"],
     ["算是", "suàn shì", "That's it", "Eso es todo", "C'est ça", "É isso", "Thế thôi", "แค่นั้นแหละ", "នោះហើយជាវា", "Itu saja", "Itu sahaja", "Yun lang"],
     ["有钱", "yǒu qián", "rich", "rico", "riche", "rico", "giàu có", "รวย", "ដេលមានរតប្យរេចីន", "kaya", "kaya", "mayaman"],
@@ -399,7 +409,7 @@ export const p1_6_essential__verbs__ii = {
     malay: "Essential Verbs II",
     filipino: "Essential Verbs II"
   },
-  words: [
+  baseWords: [
     ["要", "yào", "want", "desear", "vouloir", "querer", "muốn", "ต้องการ", "ចង់", "ingin", "mahu", "gusto"],
     ["想", "xiǎng", "think", "pensar", "pense", "pensar", "nghĩ", "คิด", "កិត", "memikirkan", "Fikirkan", "Mag -isip"],
     ["能", "néng", "able", "capaz", "capable", "capaz", "có thể", "สามารถ", "ដេលអាច", "mampu", "mampu", "Nagagawa"],
@@ -418,7 +428,9 @@ export const p1_6_essential__verbs__ii = {
     ["用", "yòng", "use", "usar", "utiliser", "usar", "sử dụng", "ใช้", "រេបី", "menggunakan", "gunakan", "Gumamit"],
     ["该", "gāi", "Should", "Debería", "Devrait", "Deve", "Nên", "ควร", "នឹង", "Sebaiknya", "Harus", "Dapat"],
     ["须", "xū", "Must", "Debe", "Doit", "Deve", "Phải", "ต้อง", "រតុវតេ", "Harus", "Mesti", "Dapat"],
-    ["肯", "kěn", "willing", "dispuesto", "disposé", "disposto", "sẵn lòng", "เต็มใจ", "ព្រមព្រៀង", "bersedia", "sanggup", "handang"],
+    ["肯", "kěn", "willing", "dispuesto", "disposé", "disposto", "sẵn lòng", "เต็มใจ", "ព្រមព្រៀង", "bersedia", "sanggup", "handang"]
+  ],
+  exampleWords: [
     ["要去", "yào qù", "want to go", "quiero ir", "je veux y aller", "quero ir", "muốn đi", "อยากไป", "ចង់ទៅ", "ingin pergi", "mahu pergi", "Gustong pumunta"],
     ["我要", "wǒ yào", "I want", "Quiero", "Je veux", "Eu quero", "Tôi muốn", "ฉันต้องการ", "ខ្ញុំចង់", "Saya ingin", "Saya mahu", "Gusto ko"],
     ["想到", "xiǎng dào", "think", "pensar", "pense", "pensar", "nghĩ", "คิด", "កិត", "memikirkan", "Fikirkan", "Mag -isip"],
@@ -476,7 +488,7 @@ export const p1_7_numbers__010 = {
     malay: "Numbers 0-10",
     filipino: "Numbers 0-10"
   },
-  words: [
+  baseWords: [
     ["零", "líng", "zero", "cero", "zéro", "zero", "không", "ศูนย์", "សូន្យ", "nol", "sifar", "Zero"],
     ["一", "yī", "one", "uno", "un", "um", "một", "หนึ่ง", "មួយ", "satu", "satu", "isa"],
     ["二", "èr", "two", "dos", "deux", "dois", "hai", "สอง", "ពីរ", "dua", "dua", "dalawa"],
@@ -492,7 +504,9 @@ export const p1_7_numbers__010 = {
     ["第", "dì", "ordinal prefix", "prefijo ordinal", "préfixe ordinal", "prefixo ordinal", "tiền tố thứ tự", "คำนำหน้าลำดับ", "បុព្វបទលំដាប់", "awalan ordinal", "awalan ordinal", "ordinal na unlapi"],
     ["首", "shǒu", "first", "primero", "premier", "primeiro", "đầu tiên", "แรก", "ទីមួយ", "pertama", "pertama", "una"],
     ["末", "mò", "end", "final", "fin", "fim", "cuối", "สิ้นสุด", "ចុងក្រោយ", "akhir", "akhir", "huli"],
-    ["整", "zhěng", "whole", "entero", "entier", "inteiro", "toàn bộ", "ทั้งหมด", "ទាំងមូល", "seluruh", "keseluruhan", "buo"],
+    ["整", "zhěng", "whole", "entero", "entier", "inteiro", "toàn bộ", "ทั้งหมด", "ទាំងមូល", "seluruh", "keseluruhan", "buo"]
+  ],
+  exampleWords: [
     ["从零开始", "cóng líng kāi shǐ", "start from scratch", "empezar desde cero", "partir de zéro", "começar do zero", "bắt đầu từ đầu", "เริ่มต้นใหม่", "ចាប់ផ្តើមពីដំបូង", "mulai dari nol", "bermula dari awal", "magsimula mula sa simula"],
     ["零食", "líng shí", "snacks", "bocadillos", "collations", "lanches", "đồ ăn vặt", "ขนม", "អាហារសម្រន់", "camilan", "snek", "meryenda"],
     ["一模一样", "yī mú yī yàng", "exactly the same", "exactamente igual", "exactement pareil", "exatamente igual", "hoàn toàn giống nhau", "เหมือนกันทุกประการ", "ដូចគ្នាបេះបិទ", "persis sama", "sama persis", "eksaktong pareho"],
@@ -544,7 +558,7 @@ export const p1_8_core__measure__words = {
     malay: "Core Measure Words",
     filipino: "Core Measure Words"
   },
-  words: [
+  baseWords: [
     ["个", "gè", "Individual", "Individual", "Individuel", "Individual", "Cá nhân", "บุคคล", "បុគ្គល", "Individu", "Individu", "Indibidwal"],
     ["只", "zhǐ", "Only", "Sólo", "Seulement", "Somente", "Chỉ", "เท่านั้น", "តែ", "Hanya", "Hanya", "Tanging"],
     ["条", "tiáo", "strip (MW)", "tira", "bande", "tira", "dải", "เส้น", "បន្ទាត់", "batang", "jalur", "piraso"],
@@ -563,7 +577,9 @@ export const p1_8_core__measure__words = {
     ["种", "zhǒng", "kind (MW)", "tipo", "type", "tipo", "loại", "ชนิด", "ប្រភេទ", "jenis", "jenis", "uri"],
     ["排", "pái", "Row", "Fila", "Ligne", "Linha", "Hàng", "แถว", "ឆ្មាមួយ", "Baris", "Baris", "Hilera"],
     ["群", "qún", "Group", "Grupo", "Groupe", "Grupo", "Nhóm", "กลุ่ม", "ពីរ", "Grup", "Kumpulan", "Pangkat"],
-    ["副", "fù", "pair (MW)", "par", "paire", "par", "cặp", "คู่", "គូ", "pasang", "pasang", "pares"],
+    ["副", "fù", "pair (MW)", "par", "paire", "par", "cặp", "คู่", "គូ", "pasang", "pasang", "pares"]
+  ],
+  exampleWords: [
     ["一个人", "yí gè rén", "One person", "Una persona", "Une personne", "Uma pessoa", "Một người", "คนหนึ่ง", "ពីរបី", "Satu orang", "Satu orang", "Isang tao"],
     ["首个", "shǒu gè", "First", "Primero", "Premier", "Primeiro", "Đầu tiên", "ครั้งแรก", "បី", "Pertama", "Pertama", "Una"],
     ["一只猫", "yī zhī māo", "One cat", "Un gato", "Un chat", "Um gato", "Một con mèo", "แมวตัวหนึ่ง", "ពីរ", "Seekor kucing", "Satu kucing", "Isang pusa"],
@@ -621,7 +637,7 @@ export const p1_9_basic__question__words = {
     malay: "Basic Question Words",
     filipino: "Basic Question Words"
   },
-  words: [
+  baseWords: [
     ["什么", "shén me", "What", "¿Qué", "Quoi", "O que", "Cái gì", "อะไร", "អ្វីដែល", "Apa", "Apa", "Ano"],
     ["谁", "shuí", "Who", "Quién", "Qui", "Quem", "Ai", "ใคร", "អ្នកណា", "Siapa", "WHO", "Sino"],
     ["哪", "nǎ", "Which", "Cuál", "Lequel", "Qual", "Cái nào", "ซึ่ง", "ដែល", "Yang", "Yang", "Na"],
@@ -636,7 +652,9 @@ export const p1_9_basic__question__words = {
     ["多久", "duō jiǔ", "How long", "¿Cuánto tiempo", "Combien de temps", "Quanto tempo", "Bao lâu", "นานแค่ไหน", "តើមានរយៈពេលប៉ុន្មាន", "Berapa lama", "Berapa lama", "Gaano katagal"],
     ["多远", "duō yuǎn", "How far", "¿Qué tan lejos", "Jusqu'où", "Quão longe", "Bao xa", "ไกลแค่ไหน", "| តើមានប៉ុណ្ណា ?", "Seberapa jauh", "Sejauh mana", "Gaano kalayo"],
     ["多大", "duō dà", "How big", "Que grande", "Quelle taille", "Quão grande", "Lớn cỡ nào", "ใหญ่ขนาดไหน", "តើខុនដូយ៉ាងដូចម្តេច ?", "Seberapa besar", "Berapa besar", "Gaano kalaki"],
-    ["多高", "duō gāo", "How high", "¿Qué tan alto", "À quelle hauteur", "Quão alto", "Cao bao nhiêu", "สูงแค่ไหน", "តើមានកម្ពស់ខ្ពស់ប៉ុណ្ណា អ្វីដែល", "Seberapa tinggi", "Berapa tinggi", "Gaano kataas"],
+    ["多高", "duō gāo", "How high", "¿Qué tan alto", "À quelle hauteur", "Quão alto", "Cao bao nhiêu", "สูงแค่ไหน", "តើមានកម្ពស់ខ្ពស់ប៉ុណ្ណា អ្វីដែល", "Seberapa tinggi", "Berapa tinggi", "Gaano kataas"]
+  ],
+  exampleWords: [
     ["什么事", "shén me shì", "What", "¿Qué", "Quoi", "O que", "Cái gì", "อะไร", "អ្វីដែល", "Apa", "Apa", "Ano"],
     ["是什么", "shì shén me", "What", "¿Qué", "Quoi", "O que", "Cái gì", "อะไร", "តើអ្នកណានៅទីនេះ", "Apa", "Apa", "Ano"],
     ["谁来了", "shuí lái le", "Who is here", "¿Quién está aquí?", "Qui est ici", "Quem está aqui", "Ai ở đây", "ใครอยู่บ้าง", "អ្នកណា", "Siapa disini", "Siapa di sini", "Sino ang narito"],
@@ -686,7 +704,7 @@ export const p1_10_time__essentials = {
     malay: "Time Essentials",
     filipino: "Time Essentials"
   },
-  words: [
+  baseWords: [
     ["现在", "xiàn zài", "Now", "Ahora", "Maintenant", "Agora", "Bây giờ", "ตอนนี้", "ឥឡូវ", "Sekarang", "Sekarang", "Ngayon"],
     ["今天", "jīn tiān", "Today", "Hoy", "Aujourd'hui", "Hoje", "Hôm nay", "วันนี้", "ថ្ងៃនេះ", "Hari ini", "Hari ini", "Ngayon"],
     ["明天", "míng tiān", "Tomorrow", "Mañana", "Demain", "Amanhã", "Ngày mai", "พรุ่งนี้", "ថ្ងៃស្អែក || ម្សិលមិញ", "Besok", "Esok", "Bukas"],
@@ -703,7 +721,9 @@ export const p1_10_time__essentials = {
     ["每天", "měi tiān", "Every day", "Todos los días", "Chaque jour", "Todos os dias", "Mỗi ngày", "ทุกวัน", "ឥលូវនេះ", "Setiap hari", "Setiap hari", "Araw -araw"],
     ["刚才", "gāng cái", "Just now", "Justo ahora", "Tout à l'heure", "Agora mesmo", "Vừa rồi", "เมื่อกี้", "មួយរយៈ", "Baru saja", "Sekarang", "Ngayon lang"],
     ["马上", "mǎ shàng", "Right now", "Ahora mismo", "En ce moment", "Agora", "Ngay bây giờ", "ตอนนี้", "ទៅឥឡូវនេះ", "Saat ini", "Sekarang", "Sa ngayon"],
-    ["一会儿", "yī huì er", "A while", "Un rato", "Un moment", "Um tempo", "Một lúc", "สักพัก", "ឥលូវនេះ", "Sebentar", "A WHILE", "Isang habang"],
+    ["一会儿", "yī huì er", "A while", "Un rato", "Un moment", "Um tempo", "Một lúc", "สักพัก", "ឥលូវនេះ", "Sebentar", "A WHILE", "Isang habang"]
+  ],
+  exampleWords: [
     ["现在走", "xiàn zài zǒu", "Go now", "Ir ahora", "Allez-y maintenant", "Vá agora", "Đi ngay", "ไปเดี๋ยวนี้", "ល្អថ្ងៃនេះ", "Pergi sekarang", "Pergi sekarang", "Pumunta ngayon"],
     ["就现在", "jiù xiàn zài", "Right now", "Ahora mismo", "En ce moment", "Agora", "Ngay bây giờ", "ตอนนี้", "ទើបតែថ្ងៃនេះ", "Saat ini", "Sekarang", "Sa ngayon"],
     ["今天好", "jīn tiān hǎo", "Good today", "Bueno hoy", "Bien aujourd'hui", "Bom hoje", "Hôm nay tốt quá", "วันนี้ดีจัง", "ជួបអ្នកនៅថ្ងៃស្អែក", "Bagus hari ini", "Baik hari ini", "Mabuti ngayon"],
@@ -757,7 +777,7 @@ export const p1_11_basic__adjectives__i = {
     malay: "Basic Adjectives I",
     filipino: "Basic Adjectives I"
   },
-  words: [
+  baseWords: [
     ["大", "dà", "big", "grande", "grand", "grande", "lớn", "ใหญ่", "ធំ", "besar", "besar", "malaki"],
     ["小", "xiǎo", "small", "pequeño", "petit", "pequeno", "nhỏ", "เล็ก", "តូច", "kecil", "Kecil", "Maliit"],
     ["多", "duō", "more", "más", "plus", "mais", "thêm", "เพิ่มเติม", "បន្ថែម", "selengkapnya", "lebih banyak", "higit pa"],
@@ -774,7 +794,9 @@ export const p1_11_basic__adjectives__i = {
     ["远", "yuǎn", "far", "lejos", "loin", "longe", "xa", "ไกล", "| ឆ្ងាយ", "jauh", "Jauh", "malayo"],
     ["近", "jìn", "near", "cerca", "près de", "perto", "gần", "ใกล้", "ជិត", "dekat", "Berhampiran", "Malapit"],
     ["早", "zǎo", "early", "temprano", "tôt", "cedo", "sớm", "ต้น", "| ដំបូង", "awal", "Awal", "Maaga"],
-    ["晚", "wǎn", "late", "tarde", "en retard", "atrasado", "muộn", "สาย", "យឺត", "terlambat", "Lewat", "Late"],
+    ["晚", "wǎn", "late", "tarde", "en retard", "atrasado", "muộn", "สาย", "យឺត", "terlambat", "Lewat", "Late"]
+  ],
+  exampleWords: [
     ["大人", "dà rén", "adult", "adulto", "adulte", "adulto", "người lớn", "ผู้ใหญ่", "មនុស្សពេញវ័យ || ធំឡើង", "dewasa", "Dewasa", "Pang -adulto"],
     ["长大", "zhǎng dà", "grown up", "crecido", "grandi", "cresci", "lớn lên", "โตขึ้น", "| រឿងតិចតួច", "dewasa", "Tumbuh", "lumaki"],
     ["小事", "xiǎo shì", "little things", "pequeñas cosas", "petites choses", "pequenas coisas", "những điều nhỏ nhặt", "สิ่งเล็กๆ น้อยๆ", "ប្រលោមលោម", "hal-hal kecil", "Perkara -perkara kecil", "maliit na bagay"],
@@ -828,7 +850,7 @@ export const p1_12_basic__adjectives__ii = {
     malay: "Basic Adjectives II",
     filipino: "Basic Adjectives II"
   },
-  words: [
+  baseWords: [
     ["热", "rè", "hot", "caliente", "chaud", "quente", "nóng", "ร้อน", "ក្តៅ", "panas", "Panas", "Mainit"],
     ["冷", "lěng", "cold", "frío", "froid", "frio", "lạnh lùng", "เย็น", "ត្រជាក់", "dingin", "sejuk", "malamig"],
     ["暖和", "nuǎn huo", "warm", "cálido", "chaud", "quente", "ấm áp", "อบอุ่น", "កក់ក្ដៅ", "hangat", "hangat", "Mainit"],
@@ -846,7 +868,9 @@ export const p1_12_basic__adjectives__ii = {
     ["轻", "qīng", "light", "ligero", "léger", "leve", "nhẹ", "เบา", "ស្រាល", "ringan", "ringan", "magaan"],
     ["重", "zhòng", "heavy", "pesado", "lourd", "pesado", "nặng", "หนัก", "ធ្ងន់", "berat", "berat", "Malakas"],
     ["干净", "gān jìng", "clean", "limpiar", "nettoyer", "limpar", "sạch sẽ", "สะอาด", "ស្អាត", "bersih", "Bersih", "Malinis"],
-    ["脏", "zàng", "dirty", "sucio", "sale", "sujo", "bẩn thỉu", "สกปรก", "កខ្វក់ || រស់រវើក", "kotor", "Dirty", "marumi"],
+    ["脏", "zàng", "dirty", "sucio", "sale", "sujo", "bẩn thỉu", "สกปรก", "កខ្វក់ || រស់រវើក", "kotor", "Dirty", "marumi"]
+  ],
+  exampleWords: [
     ["热闹", "rè nào", "lively", "animado", "animé", "animado", "sống động", "มีชีวิตชีวา", "ក្តៅ", "hidup", "Lively", "Lively"],
     ["热气", "rè qì", "hot", "caliente", "chaud", "quente", "nóng", "ร้อน", "ស្ងប់ស្ងាត់", "panas", "Panas", "Mainit"],
     ["冷静", "lěng jìng", "calm", "calma", "calme", "calma", "bình tĩnh", "สงบ", "| ត្រជាក់", "tenang", "tenang", "Kalmado"],
@@ -902,7 +926,7 @@ export const p1_13_core__radicals__components = {
     malay: "Core Radicals & Components",
     filipino: "Core Radicals & Components"
   },
-  words: [
+  baseWords: [
     ["人", "rén", "people", "personas", "les gens", "pessoas", "mọi người", "คน", "ប្រជាជន || បេះដូង", "orang", "Orang", "mga tao"],
     ["心", "xīn", "heart", "corazón", "coeur", "coração", "trái tim", "หัวใจ", "ឈើ", "jantung", "hati", "Puso"],
     ["木", "mù", "wood", "madera", "bois", "madeira", "gỗ", "ไม้", "អគ្គិភ័យ", "kayu", "kayu", "kahoy"],
@@ -921,7 +945,9 @@ export const p1_13_core__radicals__components = {
     ["言", "yán", "speech/word", "palabra", "parole", "palavra", "lời nói", "คำพูด", "ពាក្យ", "kata", "kata", "salita"],
     ["贝", "bèi", "shell", "concha", "coquillage", "concha", "vỏ sò", "เปลือกหอย", "សំបក", "kerang", "cengkerang", "kabibe"],
     ["足", "zú", "foot", "pie", "pied", "pé", "chân", "เท้า", "ជើង", "kaki", "kaki", "paa"],
-    ["舌", "shé", "tongue", "lengua", "langue", "língua", "lưỡi", "ลิ้น", "អណ្ដាត", "lidah", "lidah", "dila"],
+    ["舌", "shé", "tongue", "lengua", "langue", "língua", "lưỡi", "ลิ้น", "អណ្ដាត", "lidah", "lidah", "dila"]
+  ],
+  exampleWords: [
     ["人们", "rén men", "people", "gente", "gens", "pessoas", "mọi người", "ผู้คน", "មនុស្ស", "orang-orang", "orang", "mga tao"],
     ["有人", "yǒu rén", "someone", "alguien", "quelqu'un", "alguém", "có người", "มีคน", "មាននរណាម្នាក់", "ada orang", "ada orang", "may tao"],
     ["心里", "xīn lǐ", "in heart", "en el corazón", "dans le coeur", "no coração", "trong lòng", "ในใจ", "ក្នុងចិត្ត", "di hati", "dalam hati", "sa puso"],
@@ -979,7 +1005,7 @@ export const p1_14_emergency__survival = {
     malay: "Emergency & Survival",
     filipino: "Emergency & Survival"
   },
-  words: [
+  baseWords: [
     ["救命", "jiù mìng", "Help", "Ayuda", "Aide", "Ajuda", "Trợ giúp", "ช่วยเหลือ", "ជំនួយ", "Bantuan", "Bantuan", "Tulong"],
     ["帮忙", "bāng máng", "Help", "Ayuda", "Aide", "Ajuda", "Trợ giúp", "ช่วยเหลือ", "ជំនួយ", "Bantuan", "Bantuan", "Tulong"],
     ["紧急", "jǐn jí", "Emergency", "Emergencia", "Urgence", "Emergência", "Khẩn cấp", "ฉุกเฉิน", "បន្ទាន់", "Darurat", "Kecemasan", "Emergency"],
@@ -997,7 +1023,9 @@ export const p1_14_emergency__survival = {
     ["丢失", "diū shī", "Lost", "Perdido", "Perdu", "Perdido", "Bị mất", "แพ้", "សុវត្ថិភាព", "Hilang", "Hilang", "Nawala"],
     ["迷路", "mí lù", "Lost", "Perdido", "Perdu", "Perdido", "Bị mất", "แพ้", "ជំនួយ", "Hilang", "Hilang", "Nawala"],
     ["安全", "ān quán", "Safety", "Seguridad", "Sécurité", "Segurança", "An toàn", "ความปลอดภัย", "ជំនួយ", "Keamanan", "Keselamatan", "Kaligtasan"],
-    ["求助", "qiú zhù", "Help", "Ayuda", "Aide", "Ajuda", "Trợ giúp", "ช่วยเหลือ", "ជំនួយ", "Bantuan", "Bantuan", "Tulong"],
+    ["求助", "qiú zhù", "Help", "Ayuda", "Aide", "Ajuda", "Trợ giúp", "ช่วยเหลือ", "ជំនួយ", "Bantuan", "Bantuan", "Tulong"]
+  ],
+  exampleWords: [
     ["救命啊", "jiù mìng a", "Help", "Ayuda", "Aide", "Ajuda", "Trợ giúp", "ช่วยเหลือ", "ជំនួយ", "Bantuan", "Bantuan", "Tulong"],
     ["快救命", "kuài jiù mìng", "Help", "Ayuda", "Aide", "Ajuda", "Trợ giúp", "ช่วยเหลือ", "សូមជួយ", "Bantuan", "Bantuan", "Tulong"],
     ["帮忙啊", "bāng máng a", "Help", "Ayuda", "Aide", "Ajuda", "Trợ giúp", "ช่วยเหลือ", "បន្ទាន់", "Bantuan", "Bantuan", "Tulong"],

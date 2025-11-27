@@ -26,7 +26,7 @@ export const p4_54_opinions__views = {
     malay: "Opinions & Views",
     filipino: "Opinions & Views"
   },
-  words: [
+  baseWords: [
     ["看法", "kàn fǎ", "View", "Vista", "Vue", "Vista", "Quan điểm", "มุมมอง", "ទស្សនៈ", "Pandangan", "Pandangan", "Pananaw"],
     ["意见", "yì jiàn", "Opinion", "Opinión", "Avis", "Opinião", "Ý kiến", "ความคิดเห็น", "មតិ", "Pendapat", "Pendapat", "Opinyon"],
     ["观点", "guān diǎn", "Point of view", "Punto de vista", "Point de vue", "Ponto de vista", "Quan điểm", "มุมมอง", "ទស្សនៈ", "Sudut pandang", "Sudut pandangan", "Pananaw"],
@@ -43,7 +43,9 @@ export const p4_54_opinions__views = {
     ["持有", "chí yǒu", "Hold", "Mantener", "Détenir", "Possuir", "Nắm giữ", "ถือ", "កាន់កាប់", "Memiliki", "Memegang", "Hawakan"],
     ["坚持", "jiān chí", "Persist", "Persistir", "Persister", "Persistir", "Kiên trì", "ยืนยัน", "តស៊ូ", "Bertahan", "Bertegas", "Magtiyaga"],
     ["表示", "biǎo shì", "Express", "Expresar", "Exprimer", "Expressar", "Biểu thị", "แสดง", "បង្ហាញ", "Menyatakan", "Menyatakan", "Ipahayag"],
-    ["鉴定", "jiàn dìng", "Appraisal", "Tasación", "Évaluation", "Avaliação", "Thẩm định", "การประเมิน", "ការវាយតម្លៃ", "Penilaian", "Penilaian", "Pagtatasa"],
+    ["鉴定", "jiàn dìng", "Appraisal", "Tasación", "Évaluation", "Avaliação", "Thẩm định", "การประเมิน", "ការវាយតម្លៃ", "Penilaian", "Penilaian", "Pagtatasa"]
+  ],
+  exampleWords: [
     ["我的看法", "wǒ de kàn fǎ", "My opinion", "Mi opinión", "Mon avis", "Minha opinião", "Ý kiến của tôi", "ความเห็นของฉัน", "មតិរបស់ខ្ញុំ", "Pendapat saya", "Pendapat saya", "Ang aking opinyon"],
     ["有看法", "yǒu kàn fǎ", "Have an opinion", "Tener una opinión", "Avoir un avis", "Ter uma opinião", "Có ý kiến", "มีความเห็น", "មានមតិ", "Punya pendapat", "Mempunyai pendapat", "Magkaroon ng opinyon"],
     ["提意见", "tí yì jiàn", "Give an opinion", "Dar una opinión", "Donner un avis", "Dar uma opinião", "Đưa ra ý kiến", "ให้ความเห็น", "ផ្តល់មតិ", "Berikan pendapat", "Berikan pendapat", "Magbigay ng opinyon"],
@@ -97,7 +99,7 @@ export const p4_55_making__plans = {
     malay: "Making Plans",
     filipino: "Making Plans"
   },
-  words: [
+  baseWords: [
     ["打算", "dǎ suàn", "Plan", "Planear", "Prévoir", "Planejar", "Dự định", "วางแผน", "គ្រោង", "Berencana", "Merancang", "Planong"],
     ["计划", "jì huà", "Plan", "Plan", "Plan", "Plano", "Kế hoạch", "แผนการ", "ផែនការ", "Rencana", "Pelan", "Plano"],
     ["准备", "zhǔn bèi", "Prepare", "Preparar", "Préparer", "Preparar", "Chuẩn bị", "เตรียม", "រៀបចំ", "Persiapan", "Bersedia", "Maghanda"],
@@ -114,7 +116,9 @@ export const p4_55_making__plans = {
     ["约会", "yuē huì", "Date", "Cita", "Rendez-vous", "Encontro", "Hẹn hò", "นัดพบ", "ការណាត់ជួប", "Kencan", "Temu janji", "Date"],
     ["排期", "pái qī", "Schedule", "Calendario", "Calendrier", "Calendário", "Lịch trình", "กำหนดการ", "កាលវិភាគ", "Jadwal", "Jadual", "Iskedyul"],
     ["档期", "dàng qī", "Available time", "Disponibilidad", "Disponibilité", "Disponibilidade", "Lịch trống", "ช่วงเวลาว่าง", "ពេលទំនេរ", "Ketersediaan", "Slot masa", "Bakanteng oras"],
-    ["行程", "xíng chéng", "Itinerary", "Itinerario", "Itinéraire", "Itinerário", "Hành trình", "กำหนดการเดินทาง", "កម្មវិធីដំណើរ", "Rencana perjalanan", "Jadual perjalanan", "Itineraryo"],
+    ["行程", "xíng chéng", "Itinerary", "Itinerario", "Itinéraire", "Itinerário", "Hành trình", "กำหนดการเดินทาง", "កម្មវិធីដំណើរ", "Rencana perjalanan", "Jadual perjalanan", "Itineraryo"]
+  ],
+  exampleWords: [
     ["打算去", "dǎ suàn qù", "Plan to go", "Planear ir", "Prévoir d'aller", "Planejar ir", "Dự định đi", "วางแผนจะไป", "គ្រោងទៅ", "Berencana pergi", "Merancang pergi", "Planong pumunta"],
     ["有打算", "yǒu dǎ suàn", "Have plans", "Tener planes", "Avoir des projets", "Ter planos", "Có dự định", "มีแผน", "មានគម្រោង", "Ada rencana", "Ada perancangan", "May plano"],
     ["计划好", "jì huà hǎo", "Plan well", "Planear bien", "Bien planifié", "Planejado bem", "Kế hoạch tốt", "วางแผนดี", "រៀបចំផែនការល្អ", "Direncanakan dengan baik", "Dirancang dengan baik", "Nakaplanong mabuti"],
@@ -168,7 +172,7 @@ export const p4_56_expressing__needs = {
     malay: "Expressing Needs",
     filipino: "Expressing Needs"
   },
-  words: [
+  baseWords: [
     ["需要", "xū yào", "Need", "Necesidad", "Besoin", "Precisa", "Cần", "ต้องการ", "ត្រូវការ", "Butuh", "Perlu", "Kailangan"],
     ["想要", "xiǎng yào", "Want", "Quiero", "Voulez", "Quer", "Muốn", "ต้องการ", "ចង់បាន", "Ingin", "Mahu", "Gusto"],
     ["希望", "xī wàng", "Hope", "Esperanza", "Espoir", "Esperança", "Hy Vọng", "หวัง", "ក្តីសង្ឃឹម", "Harapan", "Harapan", "Sana"],
@@ -184,7 +188,9 @@ export const p4_56_expressing__needs = {
     ["非得", "fēi děi", "Must", "Debe", "Doit", "Deve", "Phải", "ต้อง", "ត្រូវតែ", "Harus", "Mesti", "Dapat"],
     ["亟需", "jí xū", "Urgently needed", "Se necesita con urgencia", "Besoin urgent", "Necessário com urgência", "Đang cần gấp", "ต้องการด่วน", "ត្រូវការជាបន្ទាន់", "Dibutuhkan segera", "Segera diperlukan", "Agarang kailangan"],
     ["迫切", "pò qiè", "Urgent", "Urgente", "Urgent", "Urgente", "Khẩn cấp", "ด่วน", "ការស្រាវជ្រាវបន្ទាន់ || ការស្រាវជ្រាវបន្ទាន់ || ត្រូវការអ្នក", "Mendesak", "Urgent", "Kagyat"],
-    ["紧迫", "jǐn pò", "Urgent", "Urgente", "Urgent", "Urgente", "Khẩn cấp", "ด่วน", "ត្រូវការវាខ្លាំងណាស់", "Mendesak", "Urgent", "Kagyat"],
+    ["紧迫", "jǐn pò", "Urgent", "Urgente", "Urgent", "Urgente", "Khẩn cấp", "ด่วน", "ត្រូវការវាខ្លាំងណាស់", "Mendesak", "Urgent", "Kagyat"]
+  ],
+  exampleWords: [
     ["需要你", "xū yào nǐ", "Need you", "Te necesito", "Besoin de toi", "Preciso de você", "Cần bạn", "ต้องการคุณ", "ចង់ទិញ", "Membutuhkanmu", "Perlu anda", "Kailangan ka"],
     ["很需要", "hěn xū yào", "Need it very much", "Lo necesito mucho", "J'en ai vraiment besoin", "Preciso muito", "Đang rất cần", "ต้องการมันมาก", "ចង់បានវាខ្លាំងណាស់", "Sangat membutuhkannya", "Memerlukannya", "Kailangan ito ng sobra"],
     ["想要买", "xiǎng yào mǎi", "Want to buy", "Quiero comprar", "Vous voulez acheter", "Quer comprar", "Muốn mua", "ต้องการซื้อ", "សង្ឃឹមថាអ្នក", "Ingin membeli", "Mahu membeli", "Nais bumili"],
@@ -236,7 +242,7 @@ export const p4_57_asking__for__help = {
     malay: "Asking for Help",
     filipino: "Asking for Help"
   },
-  words: [
+  baseWords: [
     ["帮助", "bāng zhù", "Help", "Ayuda", "Aide", "Ajuda", "Trợ giúp", "ช่วยเหลือ", "ជំនួយ", "Bantuan", "Bantuan", "Tulong"],
     ["拜托", "bài tuō", "Please", "Por favor", "S'il vous plaît", "Por favor", "Làm ơn", "ได้โปรด", "សូម", "Tolong", "Sila", "Mangyaring"],
     ["请教", "qǐng jiào", "Ask for advice", "Pedir consejo", "Demander conseil", "Pedir conselho", "Xin chỉ giáo", "ขอคำแนะนำ", "សួរ", "Minta nasihat", "Minta nasihat", "Humingi ng payo"],
@@ -250,7 +256,9 @@ export const p4_57_asking__for__help = {
     ["劳驾", "láo jià", "Excuse me", "Disculpe", "Excusez-moi", "Com licença", "Xin lỗi", "ขอโทษ", "សូមទោស", "Permisi", "Maafkan saya", "Excuse me"],
     ["有劳", "yǒu láo", "Thank you for the trouble", "Gracias por la molestia", "Merci pour la peine", "Obrigado pelo trabalho", "Cảm ơn đã phiền", "ขอบคุณที่ลำบาก", "សូមអរគុណ", "Terima kasih sudah repot", "Terima kasih atas kesusahan", "Salamat sa abala"],
     ["费心", "fèi xīn", "Take the trouble", "Tomarse la molestia", "Prendre la peine", "Incomodar-se", "Phiền bạn", "ลำบากให้", "រំខាន", "Repot-repot", "Bersusah payah", "Mag-abala"],
-    ["指点", "zhǐ diǎn", "Give guidance", "Dar orientación", "Donner des conseils", "Dar orientação", "Chỉ dẫn", "ให้คำแนะนำ", "ផ្តល់ការណែនាំ", "Memberikan bimbingan", "Memberi tunjuk ajar", "Magbigay ng gabay"],
+    ["指点", "zhǐ diǎn", "Give guidance", "Dar orientación", "Donner des conseils", "Dar orientação", "Chỉ dẫn", "ให้คำแนะนำ", "ផ្តល់ការណែនាំ", "Memberikan bimbingan", "Memberi tunjuk ajar", "Magbigay ng gabay"]
+  ],
+  exampleWords: [
     ["帮助我", "bāng zhù wǒ", "Help me", "Ayúdame", "Aidez-moi", "Me ajude", "Giúp tôi", "ช่วยฉัน", "ជួយខ្ញុំ", "Bantu saya", "Tolong saya", "Tulungan mo ako"],
     ["需要帮助", "xū yào bāng zhù", "Need help", "Necesito ayuda", "Besoin d'aide", "Preciso de ajuda", "Cần giúp đỡ", "ต้องการความช่วยเหลือ", "ត្រូវការជំនួយ", "Butuh bantuan", "Perlukan bantuan", "Kailangan ng tulong"],
     ["拜托你", "bài tuō nǐ", "Please I beg you", "Por favor te lo pido", "Je t'en prie", "Por favor te peço", "Làm ơn mà", "ได้โปรดเถอะ", "សូមខ្ញុំអង្វរអ្នក", "Tolong ya", "Tolong ya", "Pakiusap"],
@@ -298,7 +306,7 @@ export const p4_58_giving__directions = {
     malay: "Giving Directions",
     filipino: "Giving Directions"
   },
-  words: [
+  baseWords: [
     ["直走", "zhí zǒu", "Go straight", "Siga recto", "Allez tout droit", "Siga em frente", "Đi thẳng", "ตรงไป", "ទៅត្រង់", "Langsung saja", "Pergi lurus", "Dumiretso"],
     ["左转", "zuǒ zhuǎn", "Turn left", "Gira a la izquierda", "Tourner à gauche", "Vire à esquerda", "Rẽ trái", "เลี้ยวซ้าย", "បត់ឆ្វេង", "Belok kiri", "Belok kiri", "Lumiko pakaliwa"],
     ["右转", "yòu zhuǎn", "Turn right", "Gira a la derecha", "Tourner à droite", "Vire à direita", "Rẽ phải", "เลี้ยวขวา", "បត់ស្តាំ", "Belok kanan", "Belok kanan", "Lumiko pakanan"],
@@ -314,7 +322,9 @@ export const p4_58_giving__directions = {
     ["地址", "dì zhǐ", "Address", "Dirección", "Adresse", "Endereço", "Địa chỉ", "ที่อยู่", "អាសយដ្ឋាន", "Alamat", "Alamat", "Address"],
     ["目的地", "mù dì dì", "Destination", "Destino", "Destination", "Destino", "Điểm đến", "จุดหมายปลายทาง", "ទិសដៅ", "Tujuan", "Destinasi", "Destinasyon"],
     ["导航", "dǎo háng", "Navigation", "Navegación", "Navigation", "Navegação", "Điều hướng", "การนำทาง", "ការធ្វើនាវាចរណ៍", "Navigasi", "Navigasi", "Nabigasyon"],
-    ["地图", "dì tú", "Map", "Mapa", "Carte", "Mapa", "Bản đồ", "แผนที่", "ផែនទី", "Peta", "Peta", "Mapa"],
+    ["地图", "dì tú", "Map", "Mapa", "Carte", "Mapa", "Bản đồ", "แผนที่", "ផែនទី", "Peta", "Peta", "Mapa"]
+  ],
+  exampleWords: [
     ["往前直走", "wǎng qián zhí zǒu", "Go straight ahead", "Siga recto", "Allez tout droit", "Siga em frente", "Đi thẳng về phía trước", "เดินตรงไป", "ទៅត្រង់ទៅមុខ", "Silakan saja", "Pergi lurus ke hadapan", "Dumiretso sa unahan"],
     ["请直走", "qǐng zhí zǒu", "Please go straight", "Por favor, sigue recto", "S'il vous plaît, allez tout droit", "Por favor, siga em frente", "Hãy đi thẳng", "กรุณาตรงไป", "សូមទៅត្រង់", "Silakan langsung", "Sila pergi lurus", "Mangyaring dumiretso"],
     ["向左左转", "xiàng zuǒ zuǒ zhuǎn", "Turn left", "Gira a la izquierda", "Tourner à gauche", "Vire à esquerda", "Rẽ trái", "เลี้ยวซ้าย", "បត់ឆ្វេង", "Belok kiri", "Belok kiri", "Lumiko pakaliwa"],
@@ -366,7 +376,7 @@ export const p4_59_describing__situations = {
     malay: "Describing Situations",
     filipino: "Describing Situations"
   },
-  words: [
+  baseWords: [
     ["情况", "qíng kuàng", "Situation", "Situación", "Situation", "Situação", "Tình huống", "สถานการณ์", "ស្ថានភាព", "Situasi", "Situasi", "Sitwasyon"],
     ["状况", "zhuàng kuàng", "Situation", "Situación", "Situation", "Situação", "Tình huống", "สถานการณ์", "ស្ថានភាព", "Situasi", "Situasi", "Sitwasyon"],
     ["形势", "xíng shì", "Situation", "Situación", "Situation", "Situação", "Tình huống", "สถานการณ์", "ស្ថានភាព", "Situasi", "Situasi", "Sitwasyon"],
@@ -380,7 +390,9 @@ export const p4_59_describing__situations = {
     ["变化", "biàn huà", "Change", "Cambiar", "Changer", "Alterar", "Thay đổi", "เปลี่ยน", "ផ្លាស់ប្តូរ", "Ubah", "Tukar", "Baguhin"],
     ["改变", "gǎi biàn", "Change", "Cambiar", "Changer", "Alterar", "Thay đổi", "เปลี่ยน", "ផ្លាស់ប្តូរ", "Ubah", "Tukar", "Baguhin"],
     ["转变", "zhuǎn biàn", "Change", "Cambiar", "Changer", "Alterar", "Thay đổi", "เปลี่ยน", "ការខ្សោះជីវជាតិ", "Ubah", "Tukar", "Baguhin"],
-    ["恶化", "è huà", "Deterioration", "Deterioro", "Détérioration", "Deterioração", "Suy thoái", "การเสื่อมสภาพ", "អ្វីដែលកំពុងកើតឡើង", "Kemunduran", "Kemerosotan", "Pagkasira"],
+    ["恶化", "è huà", "Deterioration", "Deterioro", "Détérioration", "Deterioração", "Suy thoái", "การเสื่อมสภาพ", "អ្វីដែលកំពុងកើតឡើង", "Kemunduran", "Kemerosotan", "Pagkasira"]
+  ],
+  exampleWords: [
     ["什么情况", "shén me qíng kuàng", "What is going on", "¿Qué está pasando", "Que se passe-t-il", "O que está acontecendo", "Chuyện gì đang xảy ra vậy", "เกิดอะไรขึ้น", "ស្វែងយល់ពីស្ថានភាព", "Apa yang terjadi", "Apa yang sedang berlaku", "Ano ang nangyayari"],
     ["了解情况", "liǎo jiě qíng kuàng", "Understand the situation", "Comprender la situación", "Comprendre la situation", "Entenda a situação", "Hiểu rõ tình hình", "เข้าใจสถานการณ์", "តើស្ថានភាពយ៉ាងម៉េច ?|| ស្ថានភាពបច្ចុប្បន្ន", "Pahami situasinya", "Memahami keadaan", "Unawain ang sitwasyon"],
     ["状况如何", "zhuàng kuàng rú hé", "How is the situation", "¿Cómo está la situación?", "Quelle est la situation", "Como está a situação", "Tình hình thế nào", "สถานการณ์เป็นอย่างไรบ้าง", "ស្ថានភាពគឺល្អ", "Bagaimana situasinya", "Bagaimana keadaan", "Paano ang sitwasyon"],
@@ -428,7 +440,7 @@ export const p4_60_talking__about__problems = {
     malay: "Talking About Problems",
     filipino: "Talking About Problems"
   },
-  words: [
+  baseWords: [
     ["问题", "wèn tí", "Problem", "Problema", "Problème", "Problema", "Vấn đề", "ปัญหา", "បញ្ហា", "Masalah", "Masalah", "Problema"],
     ["麻烦", "má fán", "Trouble", "Problema", "Ennui", "Problema", "Rắc rối", "ปัญหา", "បញ្ហា", "Masalah", "Masalah", "Problema"],
     ["毛病", "máo bìng", "Defect", "Defecto", "Défaut", "Defeito", "Hư hỏng", "ข้อบกพร่อง", "កំហុស", "Cacat", "Kecacatan", "Depekto"],
@@ -443,7 +455,9 @@ export const p4_60_talking__about__problems = {
     ["隐患", "yǐn huàn", "Hidden danger", "Peligro oculto", "Danger caché", "Perigo oculto", "Nguy hiểm tiềm ẩn", "อันตรายแฝง", "គ្រោះថ្នាក់លាក់កំបាំង", "Bahaya tersembunyi", "Bahaya tersembunyi", "Nakatagong panganib"],
     ["漏洞", "lòu dòng", "Loophole", "Laguna", "Faille", "Brecha", "Lỗ hổng", "ช่องโหว่", "ចន្លោះ", "Celah", "Kelemahan", "Butas"],
     ["纰漏", "pī lòu", "Oversight", "Descuido", "Négligence", "Descuido", "Sơ suất", "ความผิดพลาด", "កំហុសឆ្គង", "Kelalaian", "Kesilapan", "Pagkakamali"],
-    ["瓶颈", "píng jǐng", "Bottleneck", "Cuello de botella", "Goulot d'étranglement", "Gargalo", "Điểm nghẽn", "คอขวด", "ឧបសគ្គ", "Hambatan", "Kesesakan", "Bottleneck"],
+    ["瓶颈", "píng jǐng", "Bottleneck", "Cuello de botella", "Goulot d'étranglement", "Gargalo", "Điểm nghẽn", "คอขวด", "ឧបសគ្គ", "Hambatan", "Kesesakan", "Bottleneck"]
+  ],
+  exampleWords: [
     ["有问题", "yǒu wèn tí", "Has a problem", "Tiene un problema", "A un problème", "Tem um problema", "Có vấn đề", "มีปัญหา", "មានបញ្ហា", "Ada masalah", "Ada masalah", "May problema"],
     ["什么问题", "shén me wèn tí", "What problem", "¿Qué problema?", "Quel problème?", "Qual problema?", "Vấn đề gì?", "มีปัญหาอะไร", "បញ្ហាអ្វី?", "Masalah apa?", "Masalah apa?", "Anong problema?"],
     ["有麻烦", "yǒu má fán", "Have trouble", "Tener problemas", "Avoir des ennuis", "Ter problemas", "Có rắc rối", "มีปัญหา", "មានបញ្ហា", "Punya masalah", "Ada masalah", "May problema"],
@@ -493,7 +507,7 @@ export const p4_61_money__payments = {
     malay: "Money & Payments",
     filipino: "Money & Payments"
   },
-  words: [
+  baseWords: [
     ["钱", "qián", "Money", "Dinero", "Argent", "Dinheiro", "Tiền", "เงิน", "លុយ", "Uang", "Wang", "Pera"],
     ["价格", "jià gé", "Price", "Precio", "Prix ​​", "Preço", "Giá", "ราคา", "| តំលៃ", "Harga", "Harga", "Presyo"],
     ["费用", "fèi yòng", "Fees", "Tarifas", "Honoraires", "Taxas", "Phí", "ค่าธรรมเนียม", "ថ្លៃឈ្នួល", "Biaya", "Yuran", "Bayad"],
@@ -508,7 +522,9 @@ export const p4_61_money__payments = {
     ["收据", "shōu jù", "Receipt", "Recibo", "Reçu", "Recibo", "Biên nhận", "ใบเสร็จรับเงิน", "ការចំណាយ", "Tanda terima", "Resit", "Resibo"],
     ["消费", "xiāo fèi", "Consumption", "Consumo", "Consommation", "Consumo", "Tiêu thụ", "การบริโภค", "ការចំណាយ", "Konsumsi", "Penggunaan", "Pagkonsumo"],
     ["花费", "huā fèi", "Expenditure", "Gasto", "Dépenses", "Despesas", "Chi tiêu", "ค่าใช้จ่าย", "តើ", "Pengeluaran", "Perbelanjaan", "Gastos"],
-    ["开销", "kāi xiāo", "Expenditure", "Gasto", "Dépenses", "Despesas", "Chi tiêu", "ค่าใช้จ่าย", "ប៉ុន្មាន ផ្តល់ប្រាក់", "Pengeluaran", "Perbelanjaan", "Gastos"],
+    ["开销", "kāi xiāo", "Expenditure", "Gasto", "Dépenses", "Despesas", "Chi tiêu", "ค่าใช้จ่าย", "ប៉ុន្មាន ផ្តល់ប្រាក់", "Pengeluaran", "Perbelanjaan", "Gastos"]
+  ],
+  exampleWords: [
     ["多少钱", "duō shǎo qián", "How much", "¿Cuánto", "Combien", "Quanto", "Bao nhiêu", "เท่าไหร่", "តម្លៃខ្ពស់", "Berapa", "Berapa banyak", "Magkano"],
     ["给钱", "gěi qián", "Give money", "Dar dinero", "Donner de l'argent", "Dê dinheiro", "Đưa tiền", "ให้เงิน", "សូមក្រឡេកមើលតម្លៃ", "Berikan uang", "Beri wang", "Magbigay ng pera"],
     ["价格高", "jià gé gāo", "High price", "Precio alto", "Prix ​​élevé", "Preço alto", "Giá cao", "ราคาสูง", "ថ្លៃសេវាខ្ពស់", "Harga mahal", "Harga Tinggi", "Mataas na presyo"],
@@ -558,7 +574,7 @@ export const p4_62_at__the__restaurant = {
     malay: "At the Restaurant",
     filipino: "At the Restaurant"
   },
-  words: [
+  baseWords: [
     ["菜单", "cài dān", "Menu", "Menú", "Menus", "Cardápio", "Thực đơn", "เมนู", "Menu || បញ្ជាទិញម្ហូប", "Menu", "Menu", "Menu"],
     ["点菜", "diǎn cài", "Order food", "Pedir comida", "Commander de la nourriture", "Pedir comida", "Gọi món", "สั่งอาหาร", "អនុសាសន៍", "Pesan makanan", "Pesanan Makanan", "Mag -order ng pagkain"],
     ["推荐", "tuī jiàn", "Recommendation", "Recomendación", "Recommandation", "Recomendação", "Khuyến nghị", "คำแนะนำ", "ចានហត្ថលេខា", "Rekomendasi", "Cadangan", "Rekomendasyon"],
@@ -574,7 +590,9 @@ export const p4_62_at__the__restaurant = {
     ["餐具", "cān jù", "Cutlery", "Cubiertos", "Couverts", "Talheres", "Dao kéo", "ช้อนส้อม", "chopsticks || បម្រើ", "Peralatan makan", "Cutlery", "Cutlery"],
     ["筷子", "kuài zi", "Chopsticks", "Palillos", "Baguettes", "Pauzinhos", "Đũa", "ตะเกียบ", "ការកក់", "Sumpit", "Penyepit", "Chopsticks"],
     ["上菜", "shàng cài", "Serving", "Sirviendo", "Servir", "Servindo", "Phục vụ", "ให้บริการ", "មើលម៉ឺនុយ", "Melayani", "Berkhidmat", "Paghahatid"],
-    ["订座", "dìng zuò", "Reservation", "Reserva", "Réservation", "Reserva", "Đặt chỗ", "สำรองห้องพัก", "ទទួលបានមីនុយ || បញ្ជាទិញ", "Reservasi", "Tempahan", "Reservation"],
+    ["订座", "dìng zuò", "Reservation", "Reserva", "Réservation", "Reserva", "Đặt chỗ", "สำรองห้องพัก", "ទទួលបានមីនុយ || បញ្ជាទិញ", "Reservasi", "Tempahan", "Reservation"]
+  ],
+  exampleWords: [
     ["看菜单", "kàn cài dān", "View menu", "Ver menú", "Afficher le menu", "Ver menu", "Xem thực đơn", "ดูเมนู", "មកបញ្ជាទិញ", "Lihat menu", "Lihat Menu", "Tingnan ang menu"],
     ["拿菜单", "ná cài dān", "Get menu", "Obtener menú", "Obtenir le menu", "Obter cardápio", "Nhận thực đơn", "รับเมนู", "បានណែនាំ", "Dapatkan menunya", "Dapatkan Menu", "Kumuha ng menu"],
     ["要点菜", "yào diǎn cài", "Order", "Orden", "Commande", "Encomenda", "Đặt hàng", "สั่งซื้อ", "| សូមផ្តល់អនុសាសន៍", "Pesan", "Perintah", "Order"],
@@ -626,7 +644,7 @@ export const p4_63_at__the__hotel = {
     malay: "At the Hotel",
     filipino: "At the Hotel"
   },
-  words: [
+  baseWords: [
     ["宾馆", "bīn guǎn", "Hotel", "Hoteles", "Hôtel", "Hotéis", "Khách sạn", "โรงแรม", "សណ្ឋាគារ || បន្ទប់តែមួយ", "Hotel", "Hotel", "Hotel"],
     ["单人间", "dān rén jiān", "Single room", "Habitación individual", "Chambre simple", "Quarto individual", "Phòng đơn", "ห้องเดี่ยว", "បន្ទប់គ្រែពីរ", "Kamar tunggal", "Bilik tunggal", "Solong silid"],
     ["双人间", "shuāng rén jiān", "Double room", "Habitación doble", "Chambre double", "Quarto duplo", "Phòng đôi", "ห้องเตียงคู่", "ការកក់", "Kamar ganda", "Bilik Double", "Double Room"],
@@ -641,7 +659,9 @@ export const p4_63_at__the__hotel = {
     ["客房", "kè fáng", "Guest room", "Habitación de invitados", "Chambre d'hôtes", "Quarto de hóspedes", "Phòng khách", "ห้องพัก", "ការិយាល័យជួរមុខ", "Kamar tamu", "Bilik Tetamu", "Panauhin ang silid"],
     ["前厅", "qián tīng", "Front office", "Oficina principal", "Réception", "Recepção", "Văn phòng phía trước", "แผนกต้อนรับ", "ពិធីទទួលភ្ញៀវ", "Kantor depan", "Pejabat depan", "Front Office"],
     ["接待", "jiē dài", "Reception", "Recepción", "Réception", "Recepção", "Lễ tân", "แผนกต้อนรับ", "Bellman", "Penerimaan", "Penerimaan", "Pagtanggap"],
-    ["行李员", "xíng lǐ yuán", "Bellman", "botones", "Bellman", "Mensageiro", "Người bán chuông", "เบลล์แมน", "ស្នាក់នៅសណ្ឋាគារ", "Pelayan", "Bellman", "Bellman"],
+    ["行李员", "xíng lǐ yuán", "Bellman", "botones", "Bellman", "Mensageiro", "Người bán chuông", "เบลล์แมน", "ស្នាក់នៅសណ្ឋាគារ", "Pelayan", "Bellman", "Bellman"]
+  ],
+  exampleWords: [
     ["住宾馆", "zhù bīn guǎn", "Stay in hotel", "Estancia en hotel", "Séjour à l'hôtel", "Hospedagem em hotel", "Ở trong khách sạn", "พักที่โรงแรม", "ស្វែងរកសណ្ឋាគារ", "Menginap di hotel", "Menginap di Hotel", "Manatili sa hotel"],
     ["找宾馆", "zhǎo bīn guǎn", "Find hotel", "Encontrar hotel", "Trouver un hôtel", "Encontrar hotel", "Tìm khách sạn", "ค้นหาโรงแรม", "ស្នើសុំបន្ទប់តែមួយ", "Cari hotel", "Cari Hotel", "Maghanap ng hotel"],
     ["要单人间", "yào dān rén jiān", "Request a single room", "Solicitar una habitación individual", "Demander une chambre individuelle", "Solicitar quarto individual", "Yêu cầu phòng đơn", "ขอห้องเดี่ยว", "បញ្ជាទិញបន្ទប់មួយ", "Minta kamar single", "Minta bilik tunggal", "Humiling ng isang solong silid"],
@@ -691,7 +711,7 @@ export const p4_64_at__the__airport = {
     malay: "At the Airport",
     filipino: "At the Airport"
   },
-  words: [
+  baseWords: [
     ["航班", "háng bān", "Flight", "Vuelo", "Vol", "Voo", "Chuyến bay", "เที่ยวบิน", "ការហោះហើរ", "Penerbangan", "Penerbangan", "Flight"],
     ["登机", "dēng jī", "Boarding", "Embarque", "Embarquement", "Embarque", "Lên máy bay", "ขึ้นเครื่อง", "ការឡើងជិះ", "Asrama", "Boarding", "Boarding"],
     ["登机口", "dēng jī kǒu", "Gate", "Puerta", "Porte", "Portão", "Cổng", "ประตู", "ខ្លោងទ្វារ || អនុម័តឡើងជិះ", "Gerbang", "GATE", "Gate"],
@@ -707,7 +727,9 @@ export const p4_64_at__the__airport = {
     ["国际", "guó jì", "International", "Internacional", "Internationale", "Internacional", "Quốc tế", "นานาชาติ", "អន្តរជាតិ", "Internasional", "Antarabangsa", "International"],
     ["国内", "guó nèi", "Domestic", "Nacional", "Domestique", "Doméstico", "Nội địa", "ในประเทศ", "ក្នុងស្រុក", "Domestik", "Domestik", "Domestic"],
     ["候机", "hòu jī", "Waiting", "Esperando", "En attente", "Esperando", "Chờ đợi", "รอ", "ការរង់ចាំ", "Menunggu", "Menunggu", "Naghihintay"],
-    ["廊桥", "láng qiáo", "Bridge", "Puente", "Pont", "Ponte", "Cầu", "สะพาน", "ស្ពាន || ពិនិត្យការហោះហើរ", "Jembatan", "Jambatan", "Tulay"],
+    ["廊桥", "láng qiáo", "Bridge", "Puente", "Pont", "Ponte", "Cầu", "สะพาน", "ស្ពាន || ពិនិត្យការហោះហើរ", "Jembatan", "Jambatan", "Tulay"]
+  ],
+  exampleWords: [
     ["查航班", "chá háng bān", "Check flight", "Consultar vuelo", "Vérifier le vol", "Verifique o voo", "Kiểm tra chuyến bay", "ตรวจสอบเที่ยวบิน", "រង់ចាំការហោះហើរ", "Periksa penerbangan", "Semak penerbangan", "Suriin ang flight"],
     ["等航班", "děng háng bān", "Waiting for flight", "Esperando vuelo", "En attente du vol", "Esperando voo", "Chờ chuyến bay", "รอเที่ยวบิน", "ចូលទៅកាន់ក្តារ", "Menunggu penerbangan", "Menunggu penerbangan", "Naghihintay para sa paglipad"],
     ["去登机", "qù dēng jī", "Go to board", "Ir al foro", "Aller au tableau", "Ir para o quadro", "Lên bảng", "ไปที่บอร์ด", "ត្រៀមក្តារ", "Pergi ke kapal", "Pergi ke papan", "Pumunta sa board"],
@@ -759,7 +781,7 @@ export const p4_65_at__the__doctor = {
     malay: "At the Doctor",
     filipino: "At the Doctor"
   },
-  words: [
+  baseWords: [
     ["诊所", "zhěn suǒ", "Clinic", "Clínica", "Clinique", "Clínica", "Phòng khám", "คลินิก", "គ្លីនិក", "Klinik", "Klinik", "Clinic"],
     ["医生", "yī shēng", "Doctor", "Médico", "Docteur", "Doutor", "Bác sĩ", "หมอ", "វេជ្ជបណ្ឌិត", "Dokter", "Doktor", "Doctor"],
     ["护士", "hù shì", "Nurse", "Enfermera", "Infirmière", "Enfermeira", "Y tá", "พยาบาล", "គិលានុបដ្ឋាយិកា", "Perawat", "Jururawat", "Nars"],
@@ -775,7 +797,9 @@ export const p4_65_at__the__doctor = {
     ["打针", "dǎ zhēn", "Injection", "Inyección", "Injection", "Injeção", "Tiêm", "ฉีดยา", "ចាក់ថ្នាំ", "Injeksi", "Suntikan", "Iniksyon"],
     ["处方", "chǔ fāng", "Prescription", "Prescripción", "Ordonnance", "Prescrição", "Đơn thuốc", "ใบสั่งยา", "វេជ្ជបញ្ជា", "Resep", "Preskripsi", "Reseta"],
     ["门诊", "mén zhěn", "Outpatient service", "Servicio ambulatorio", "Service ambulatoire", "Atendimento ambulatorial", "Dịch vụ ngoại trú", "แผนกผู้ป่วยนอก", "សេវាកម្មអ្នកជំងឺក្រៅ", "Pelayanan rawat jalan", "Perkhidmatan Pesakit Luar", "Outpatient Service"],
-    ["急诊", "jí zhěn", "Emergency", "Emergencia", "Urgence", "Emergência", "Khẩn cấp", "ห้องฉุกเฉิน", "បន្ទាន់", "Darurat", "Kecemasan", "Emergency"],
+    ["急诊", "jí zhěn", "Emergency", "Emergencia", "Urgence", "Emergência", "Khẩn cấp", "ห้องฉุกเฉิน", "បន្ទាន់", "Darurat", "Kecemasan", "Emergency"]
+  ],
+  exampleWords: [
     ["去诊所", "qù zhěn suǒ", "Go to clinic", "Ir a la clínica", "Aller à la clinique", "Vá para a clínica", "Đến phòng khám", "ไปคลินิก", "ទៅគ្លីនិក", "Pergi ke klinik", "Pergi ke Klinik", "Pumunta sa klinika"],
     ["在诊所", "zài zhěn suǒ", "At the clinic", "En la clínica", "À la clinique", "Na clínica", "Tại phòng khám", "ที่คลินิก", "នៅគ្លីនិក", "Di klinik", "Di klinik", "Sa klinika"],
     ["找医生", "zhǎo yī shēng", "Find a doctor", "Buscar un médico", "Trouver un médecin", "Procurar um médico", "Tìm bác sĩ", "หาหมอ", "រកវេជ្ជបណ្ឌិត", "Cari dokter", "Cari doktor", "Maghanap ng doktor"],
@@ -827,7 +851,7 @@ export const p4_66_making__appointments = {
     malay: "Making Appointments",
     filipino: "Making Appointments"
   },
-  words: [
+  baseWords: [
     ["预约", "yù yuē", "Appointment", "Cita", "Rendez-vous", "Nomeação", "Cuộc hẹn", "การนัดหมาย", "ការតែងតាំង", "Janji temu", "Pelantikan", "Appointment"],
     ["下周", "xià zhōu", "Next week", "La próxima semana", "La semaine prochaine", "Semana que vem", "Tuần tới", "สัปดาห์หน้า", "សប្តាហ៍ក្រោយ", "Minggu depan", "Minggu depan", "Sa susunod na linggo"],
     ["改期", "gǎi qī", "Reschedule", "Reprogramar", "Reprogrammer", "Reagendar", "Đổi lịch", "กำหนดเวลาใหม่", "កំណត់ពេលវេលា", "Jadwalkan ulang", "Menjadualkan semula", "Reschedule"],
@@ -841,7 +865,9 @@ export const p4_66_making__appointments = {
     ["问诊", "wèn zhěn", "Consultation", "Consulta", "Consultations", "Consulta", "Tư vấn", "การให้คำปรึกษา", "ចំនួនធម្មតា", "Konsultasi", "Rundingan", "Konsultasyon"],
     ["专家号", "zhuān jiā hào", "Expert number", "Número de experto", "Numéro d'expert", "Número do especialista", "Số chuyên gia", "หมายเลขผู้เชี่ยวชาญ", "លេខនៃការតែងតាំង", "Nomor ahli", "Nombor Pakar", "Expert number"],
     ["普通号", "pǔ tōng hào", "Ordinary number", "Número ordinario", "Numéro ordinaire", "Número normal", "Số thường", "เลขธรรมดา", "ធ្វើការណាត់ជួប", "Bilangan biasa", "Nombor biasa", "Ordinaryong numero"],
-    ["约号", "yuē hào", "Appointment number", "Número de cita", "Numéro de rendez-vous", "Número da consulta", "Số hẹn", "หมายเลขนัดหมาย", "បានណាត់ជួបរួចហើយ", "Nomor janji temu", "Nombor pelantikan", "Numero ng appointment"],
+    ["约号", "yuē hào", "Appointment number", "Número de cita", "Numéro de rendez-vous", "Número da consulta", "Số hẹn", "หมายเลขนัดหมาย", "បានណាត់ជួបរួចហើយ", "Nomor janji temu", "Nombor pelantikan", "Numero ng appointment"]
+  ],
+  exampleWords: [
     ["要预约", "yào yù yuē", "Make an appointment", "Concierte una cita", "Prendre rendez-vous", "Marque uma consulta", "Đặt lịch hẹn", "นัดหมาย", "| ជួបគ្នានៅសប្តាហ៍ក្រោយ|| រង់ចាំនៅសប្តាហ៍ក្រោយ", "Buatlah janji", "Buat temujanji", "Gumawa ng isang appointment"],
     ["已预约", "yǐ yù yuē", "Already made an appointment", "Ya concerté una cita", "Déjà pris rendez-vous", "Já marquei consulta", "Đã hẹn rồi", "นัดแล้ว", "ចង់កំណត់ពេលវេលា", "Sudah membuat janji", "Sudah membuat temujanji", "Gumawa na ng isang appointment"],
     ["下周见", "xià zhōu jiàn", "See you next week", "Nos vemos la próxima semana", "A la semaine prochaine", "Até semana que vem", "Hẹn gặp lại bạn vào tuần sau", "เจอกันใหม่สัปดาห์หน้า", "| អាចកំណត់ពេលវេលាឡើងវិញ", "Sampai jumpa minggu depan", "Jumpa anda minggu depan", "Makita ka sa susunod na linggo"],
@@ -889,7 +915,7 @@ export const p4_67_weather__conversations = {
     malay: "Weather Conversations",
     filipino: "Weather Conversations"
   },
-  words: [
+  baseWords: [
     ["干燥", "gān zào", "Dry", "Seco", "Sec", "Seco", "Khô", "แห้ง", "ជាតិស្ងួត", "Kering", "Kering", "Dry"],
     ["雨伞", "yǔ sǎn", "Umbrella", "Paraguas", "Parapluie", "Guarda-chuva", "Ô dù", "ร่ม", "ឆ័ត្រ || ឡេការពារកម្តៅថ្ងៃ", "Payung", "Umbrella", "Umbrella"],
     ["防晒", "fáng shài", "Sunscreen", "Protector solar", "Crème solaire", "Protetor solar", "Kem chống nắng", "ครีมกันแดด", "ការផ្លាស់ប្តូរអាកាសធាតុ", "Tabir surya", "Sunscreen", "Sunscreen"],
@@ -906,7 +932,9 @@ export const p4_67_weather__conversations = {
     ["雾霾", "wù mái", "Haze", "Neblina", "Brume", "Neblina", "Sương mù", "หมอก", "Sultry", "Kabut", "Haze", "Haze"],
     ["晴朗", "qíng lǎng", "Sunny", "Soleado", "Ensoleillé", "Ensolarado", "Nắng", "ซันนี่", "ស្ងួតខ្លាំងណាស់", "Cerah", "Sunny", "Maaraw"],
     ["阴沉", "yīn chén", "Overcast", "Nublado", "Couvert", "Nublado", "U ám", "มืดครึ้ม", "អាកាសធាតុស្ងួត", "Mendung", "Mendung", "Overcast"],
-    ["闷热", "mēn rè", "Sultry", "Sensual", "Sensuelle", "Sensual", "oi bức", "ร้อน", "នាំឆ័ត្រមួយ", "Gerah", "Sultry", "Sultry"],
+    ["闷热", "mēn rè", "Sultry", "Sensual", "Sensuelle", "Sensual", "oi bức", "ร้อน", "នាំឆ័ត្រមួយ", "Gerah", "Sultry", "Sultry"]
+  ],
+  exampleWords: [
     ["很干燥", "hěn gān zào", "Very dry", "Muy seco", "Très sec", "Muito seco", "Rất khô khan", "แห้งมาก", "ទិញឆ័ត្រមួយ", "Sangat kering", "Sangat kering", "Napaka tuyo"],
     ["天气干燥", "tiān qì gān zào", "Dry weather", "Clima seco", "Temps sec", "Tempo seco", "Thời tiết khô hạn", "อากาศแห้ง", "ត្រូវការការការពារកម្តៅថ្ងៃ", "Cuaca kering", "Cuaca kering", "Dry Weather"],
     ["带雨伞", "dài yǔ sǎn", "Bring an umbrella", "Trae un paraguas", "Apportez un parapluie", "Traga um guarda-chuva", "Mang theo ô", "เอาร่มมาด้วย", "លាបថ្នាំការពារព្រះអាទិត្យ", "Bawalah payung", "Bawa payung", "Magdala ng isang payong"],
@@ -960,7 +988,7 @@ export const p4_68_phone__conversations = {
     malay: "Phone Conversations",
     filipino: "Phone Conversations"
   },
-  words: [
+  baseWords: [
     ["喂", "wèi", "Hello", "Hola", "Bonjour", "Olá", "Xin chào", "สวัสดี", "សួស្តី", "Halo", "Helo", "Kumusta"],
     ["请问", "qǐng wèn", "Excuse me", "Disculpe", "Excusez-moi", "Com licença", "Xin lỗi", "ขออภัย", "សូមអភ័យទោស", "Permisi", "Maafkan saya", "Excuse me"],
     ["在吗", "zài ma", "Are you there", "¿Estás ahí?", "Êtes-vous là", "Você está aí", "Bạn có ở đó không", "อยู่ไหม", "តើអ្នកនៅទីនោះទេ ?|| មិនមែន", "Apakah kamu di sana", "Adakah anda di sana", "Nariyan ka ba"],
@@ -976,7 +1004,9 @@ export const p4_68_phone__conversations = {
     ["语音", "yǔ yīn", "Voice", "Voz", "Voix", "Voz", "Giọng nói", "เสียง", "សួស្តី", "Suara", "Suara", "Boses"],
     ["忙线", "máng xiàn", "Busy", "Ocupado", "Occupé", "Ocupado", "Bận", "ไม่ว่าง", "សួស្តី", "Sibuk", "Sibuk", "Abala"],
     ["拨打", "bō dǎ", "Dial", "Marcar", "Composez", "Disque", "Quay số", "กด", "សូមអភ័យទោស", "Tekan", "Dial", "Dial"],
-    ["接通", "jiē tōng", "Connected", "Conectado", "Connecté", "Conectado", "Đã kết nối", "เชื่อมต่อ", "ខ្ញុំចង់សួរ", "Terhubung", "Disambungkan", "Nakakonekta"],
+    ["接通", "jiē tōng", "Connected", "Conectado", "Connecté", "Conectado", "Đã kết nối", "เชื่อมต่อ", "ខ្ញុំចង់សួរ", "Terhubung", "Disambungkan", "Nakakonekta"]
+  ],
+  exampleWords: [
     ["喂你好", "wèi nǐ hǎo", "Hello", "Hola", "Bonjour", "Olá", "Xin chào", "สวัสดี", "តើអ្នកនៅទីនោះទេ ?|| តើអ្នកនៅទីនោះទេ ?|| មិននៅផ្ទះ", "Halo", "Helo", "Kumusta"],
     ["喂请问", "wèi qǐng wèn", "Hello", "Hola", "Bonjour", "Olá", "Xin chào", "สวัสดี", "| គ្មាននរណាម្នាក់នៅទីនេះទេ", "Halo", "Helo", "Kumusta"],
     ["请问一下", "qǐng wèn yī xià", "Excuse me", "Disculpe", "Excusez-moi", "Com licença", "Xin lỗi", "ขออภัย", "រង់ចាំមួយភ្លែត", "Permisi", "Maafkan saya", "Excuse me"],
@@ -1028,7 +1058,7 @@ export const p4_69_social__situations = {
     malay: "Social Situations",
     filipino: "Social Situations"
   },
-  words: [
+  baseWords: [
     ["介绍", "jiè shào", "Introduction", "Introducción", "Présentation", "Introdução", "Giới thiệu", "การแนะนำ", "ការណែនាំ", "Perkenalan", "Pengenalan", "Pagpapakilala"],
     ["怎么样", "zěn me yàng", "How is it", "Cómo está", "Comment ça va", "Como está", "Thế nào", "เป็นอย่างไร", "យ៉ាងម៉េច", "Bagaimana", "Bagaimana", "Kamusta"],
     ["老样子", "lǎo yàng zi", "Same as usual", "Lo mismo de siempre", "Comme d'habitude", "O mesmo de sempre", "Vẫn như cũ", "เหมือนเดิม", "ដូចធម្មតា", "Seperti biasa", "Sama seperti biasa", "Katulad ng dati"],
@@ -1045,7 +1075,9 @@ export const p4_69_social__situations = {
     ["熟悉", "shú xī", "Familiar", "Familiar", "Familier", "Familiar", "Quen thuộc", "คุ้นเคย", "ស្គាល់", "Akrab", "Biasa", "Pamilyar"],
     ["亲近", "qīn jìn", "Close", "Cercano", "Proche", "Próximo", "Thân thiết", "ใกล้ชิด", "ជិតស្និទ្ធ", "Dekat", "Rapat", "Malapit"],
     ["融洽", "róng qià", "Harmonious", "Armonioso", "Harmonieux", "Harmonioso", "Hòa hợp", "กลมกลืน", "សុខដុម", "Harmonis", "Harmoni", "Magkasundo"],
-    ["冷落", "lěng luò", "Neglect", "Descuidar", "Négliger", "Negligenciar", "Bỏ rơi", "เมินเฉย", "មិនអើពើ", "Mengabaikan", "Mengabaikan", "Pabayaan"],
+    ["冷落", "lěng luò", "Neglect", "Descuidar", "Négliger", "Negligenciar", "Bỏ rơi", "เมินเฉย", "មិនអើពើ", "Mengabaikan", "Mengabaikan", "Pabayaan"]
+  ],
+  exampleWords: [
     ["自我介绍", "zì wǒ jiè shào", "Self-introduction", "Autopresentación", "Se présenter", "Autoapresentação", "Tự giới thiệu", "แนะนำตัวเอง", "ណែនាំខ្លួនឯង", "Perkenalan diri", "Perkenalan diri", "Pagpapakilala sa sarili"],
     ["来介绍", "lái jiè shào", "Come introduce", "Ven a presentar", "Viens présenter", "Venha apresentar", "Đến giới thiệu", "มาแนะนำ", "មកណែនាំ", "Datang perkenalkan", "Mari perkenalkan", "Halikayo ipakilala"],
     ["最近怎么样", "zuì jìn zěn me yàng", "How have you been", "Cómo has estado", "Comment vas-tu", "Como você tem passado", "Dạo này thế nào", "เป็นอย่างไรบ้าง", "សុខសប្បាយទេ", "Apa kabar akhir-akhir ini", "Apa khabar", "Kamusta ka na"],
@@ -1099,7 +1131,7 @@ export const p4_70_invitations__offers = {
     malay: "Invitations & Offers",
     filipino: "Invitations & Offers"
   },
-  words: [
+  baseWords: [
     ["邀请", "yāo qǐng", "Invite", "Invitar", "Inviter", "Convidar", "Mời", "เชิญ", "អញ្ជើញ", "Undang", "Jemput", "Anyayahan"],
     ["请客", "qǐng kè", "Treat someone", "Invitar", "Offrir", "Oferecer", "Mời khách", "เลี้ยง", "ប្រគល់ភ្ញៀវ", "Mentraktir", "Belanja", "Ilibre"],
     ["做客", "zuò kè", "Be a guest", "Ser invitado", "Être invité", "Ser convidado", "Làm khách", "เป็นแขก", "ធ្វើជាភ្ញៀវ", "Menjadi tamu", "Menjadi tetamu", "Maging panauhin"],
@@ -1117,7 +1149,9 @@ export const p4_70_invitations__offers = {
     ["不好意思", "bù hǎo yì sī", "Excuse me", "Lo siento", "Excusez-moi", "Com licença", "Xin lỗi", "ขอโทษ", "សូមទោស", "Maaf", "Maaf", "Pasensya na"],
     ["款待", "kuǎn dài", "Hospitality", "Hospitalidad", "Hospitalité", "Hospitalidade", "Tiếp đãi", "การต้อนรับ", "បដិសណ្ឋារកិច្ច", "Keramahan", "Layanan", "Mabuting pagtanggap"],
     ["招待", "zhāo dài", "Entertain", "Atender", "Recevoir", "Receber", "Tiếp đãi", "ต้อนรับ", "ទទួលភ្ញៀវ", "Menjamu", "Menjamu", "Mag-aliw"],
-    ["盛情", "shèng qíng", "Warm hospitality", "Generosa hospitalidad", "Hospitalité chaleureuse", "Hospitalidade calorosa", "Thịnh tình", "ความเมตตา", "បដិសណ្ឋារកិច្ចកក់ក្ដៅ", "Keramahan hangat", "Keramahtamahan", "Maalab na pagtanggap"],
+    ["盛情", "shèng qíng", "Warm hospitality", "Generosa hospitalidad", "Hospitalité chaleureuse", "Hospitalidade calorosa", "Thịnh tình", "ความเมตตา", "បដិសណ្ឋារកិច្ចកក់ក្ដៅ", "Keramahan hangat", "Keramahtamahan", "Maalab na pagtanggap"]
+  ],
+  exampleWords: [
     ["邀请你", "yāo qǐng nǐ", "Invite you", "Invitarte", "T'inviter", "Convidar você", "Mời bạn", "เชิญคุณ", "អញ្ជើញអ្នក", "Mengundang kamu", "Menjemput awak", "Imbitahin ka"],
     ["收到邀请", "shōu dào yāo qǐng", "Receive an invitation", "Recibir una invitación", "Recevoir une invitation", "Receber um convite", "Nhận được lời mời", "ได้รับคำเชิญ", "ទទួលបានការអញ្ជើញ", "Menerima undangan", "Menerima jemputan", "Makatanggap ng imbitasyon"],
     ["我请客", "wǒ qǐng kè", "My treat", "Yo invito", "C'est moi qui offre", "Eu pago", "Tôi mời", "ฉันเลี้ยง", "ខ្ញុំប្រគល់", "Aku yang traktir", "Saya belanja", "Ako ang libre"],
@@ -1173,7 +1207,7 @@ export const p4_71_agreeing__disagreeing = {
     malay: "Agreeing & Disagreeing",
     filipino: "Agreeing & Disagreeing"
   },
-  words: [
+  baseWords: [
     ["同意", "tóng yì", "Agree", "De acuerdo", "D'accord", "Concordo", "Đồng ý", "เห็นด้วย", "យល់ព្រម", "Setuju", "Setuju", "Sumang -ayon"],
     ["赞成", "zàn chéng", "Agree", "De acuerdo", "D'accord", "Concordo", "Đồng ý", "เห็นด้วย", "យល់ព្រម", "Setuju", "Setuju", "Sumang -ayon"],
     ["支持", "zhī chí", "Support", "Soporte", "Prise en charge", "Apoio", "Hỗ trợ", "สนับสนุน", "ការគាំទ្រ", "Dukungan", "Sokongan", "Suporta"],
@@ -1187,7 +1221,9 @@ export const p4_71_agreeing__disagreeing = {
     ["看情况", "kàn qíng kuàng", "It depends on the situation", "Depende de la situación", "Cela dépend de la situation", "Depende da situação", "Nó phụ thuộc vào tình hình", "ขึ้นอยู่กับสถานการณ์", "វាអាស្រ័យលើស្ថានភាព", "Tergantung situasinya", "Ia bergantung pada keadaan", "Ito ay nakasalalay sa sitwasyon"],
     ["妥协", "tuǒ xié", "Compromise", "Compromiso", "Compromis", "Compromisso", "Thỏa hiệp", "ประนีประนอม", "សម្របសម្រួល", "Kompromi", "Kompromi", "Kompromiso"],
     ["认可", "rèn kě", "Approval", "Aprobación", "Approbation", "Aprovação", "Phê duyệt", "การอนุมัติ", "| ការយល់ព្រម", "Persetujuan", "Kelulusan", "Pag -apruba"],
-    ["接纳", "jiē nà", "Acceptance", "Aceptación", "Acceptation", "Aceitação", "Chấp nhận", "การยอมรับ", "ការទទួលយក", "Penerimaan", "Penerimaan", "Pagtanggap"],
+    ["接纳", "jiē nà", "Acceptance", "Aceptación", "Acceptation", "Aceitação", "Chấp nhận", "การยอมรับ", "ការទទួលយក", "Penerimaan", "Penerimaan", "Pagtanggap"]
+  ],
+  exampleWords: [
     ["我同意", "wǒ tóng yì", "I agree", "Estoy de acuerdo", "Je suis d'accord", "Eu concordo", "Tôi đồng ý", "ฉันเห็นด้วย", "ខ្ញុំយល់ស្រប", "Saya setuju", "Saya setuju", "Sumasang -ayon ako"],
     ["明确同意", "míng què tóng yì", "Clearly agree", "Claramente de acuerdo", "Clairement d'accord", "Concordo claramente", "Rõ ràng đồng ý", "เห็นด้วยอย่างยิ่ง", "យល់ព្រមយ៉ាងច្បាស់", "Sangat setuju", "Jelas setuju", "Malinaw na sumasang -ayon"],
     ["我赞成", "wǒ zàn chéng", "I agree", "Estoy de acuerdo", "Je suis d'accord", "Eu concordo", "Tôi đồng ý", "ฉันเห็นด้วย", "ខ្ញុំយល់ស្រប", "Saya setuju", "Saya setuju", "Sumasang -ayon ako"],
@@ -1235,7 +1271,7 @@ export const p4_72_expressing__certainty = {
     malay: "Expressing Certainty",
     filipino: "Expressing Certainty"
   },
-  words: [
+  baseWords: [
     ["确定", "què dìng", "Certain", "Seguro", "Certain", "Certo", "Chắc chắn", "แน่นอน", "ប្រាកដ", "Pasti", "Pasti", "Sigurado"],
     ["肯定", "kěn dìng", "Definitely", "Definitivamente", "Certainement", "Definitivamente", "Chắc chắn", "แน่นอน", "ពិតណាស់", "Pasti", "Pasti", "Tiyak na"],
     ["一定", "yí dìng", "Definitely", "Definitivamente", "Certainement", "Definitivamente", "Chắc chắn", "แน่นอน", "ពិតណាស់", "Pasti", "Pasti", "Tiyak na"],
@@ -1251,7 +1287,9 @@ export const p4_72_expressing__certainty = {
     ["保准", "bǎo zhǔn", "Guaranteed", "Garantizado", "Garanti", "Garantido", "Đảm bảo", "รับประกัน", "ធានា", "Dijamin", "Dijamin", "Garantisado"],
     ["准保", "zhǔn bǎo", "Guaranteed", "Garantizado", "Garanti", "Garantido", "Đảm bảo", "รับประกัน", "ធានា", "Dijamin", "Dijamin", "Garantisado"],
     ["铁定", "tiě dìng", "For sure", "Seguro", "C'est sûr", "Com certeza", "Chắc chắn", "แน่นอน", "ពិតណាស់", "Pasti", "Pasti", "Siguradong"],
-    ["断定", "duàn dìng", "Conclude", "Concluir", "Conclure", "Concluir", "Kết luận", "สรุป", "សន្និដ្ឋាន", "Menyimpulkan", "Menyimpulkan", "Konklusyon"],
+    ["断定", "duàn dìng", "Conclude", "Concluir", "Conclure", "Concluir", "Kết luận", "สรุป", "សន្និដ្ឋាន", "Menyimpulkan", "Menyimpulkan", "Konklusyon"]
+  ],
+  exampleWords: [
     ["我确定", "wǒ què dìng", "I'm sure", "Estoy seguro", "Je suis sûr", "Tenho certeza", "Tôi chắc chắn", "ฉันแน่ใจ", "ខ្ញុំប្រាកដ", "Saya yakin", "Saya pasti", "Sigurado ako"],
     ["确定吗", "què dìng ma", "Are you sure?", "¿Estás seguro?", "Tu es sûr?", "Tem certeza?", "Bạn chắc chắn chứ?", "แน่ใจไหม", "អ្នកប្រាកដទេ?", "Anda yakin?", "Awak pasti?", "Sigurado ka ba?"],
     ["很肯定", "hěn kěn dìng", "Very sure", "Muy seguro", "Très sûr", "Muito certo", "Rất chắc chắn", "มั่นใจมาก", "ប្រាកដណាស់", "Sangat yakin", "Sangat pasti", "Talagang sigurado"],
@@ -1303,7 +1341,7 @@ export const p4_73_time__expressions = {
     malay: "Time Expressions",
     filipino: "Time Expressions"
   },
-  words: [
+  baseWords: [
     ["刚刚", "gāng gāng", "Just", "Sólo", "Juste", "Apenas", "Chỉ", "แค่", "គ្រាន់តែ", "Hanya", "Hanya", "Basta"],
     ["立刻", "lì kè", "Immediately", "Inmediatamente", "Immédiatement", "Imediatamente", "Ngay lập tức", "ทันที", "ភ្លាមៗ", "Segera", "Segera", "Kaagad"],
     ["之前", "zhī qián", "Before", "Antes", "Avant", "Antes", "Trước", "ก่อน", "មុន", "Sebelumnya", "Sebelum", "Bago"],
@@ -1319,7 +1357,9 @@ export const p4_73_time__expressions = {
     ["旋即", "xuán jí", "Immediately", "Inmediatamente", "Immédiatement", "Imediatamente", "Ngay lập tức", "ทันที", "ភ្លាមៗ", "Segera", "Segera", "Kaagad"],
     ["继而", "jì ér", "Then", "Entonces", "Puis", "Então", "Sau đó", "แล้ว", "បន្ទាប់មក", "Lalu", "Maka", "Pagkatapos"],
     ["尔后", "ěr hòu", "Later", "Más tarde", "Plus tard", "Mais tarde", "Sau", "ต่อมา", "ក្រោយមក", "Nanti", "Kemudian", "Mamaya"],
-    ["此刻", "cǐ kè", "At the moment", "Por el momento", "En ce moment", "No momento", "Hiện tại", "ขณะนี้", "នៅពេលនេះ", "Saat ini", "Pada masa ini", "Sa ngayon"],
+    ["此刻", "cǐ kè", "At the moment", "Por el momento", "En ce moment", "No momento", "Hiện tại", "ขณะนี้", "នៅពេលនេះ", "Saat ini", "Pada masa ini", "Sa ngayon"]
+  ],
+  exampleWords: [
     ["刚刚说", "gāng gāng shuō", "Just said", "Acabo de decir", "Je viens de dire", "Acabei de dizer", "Vừa nói", "แค่บอกว่า", "ទើបតែបាននិយាយ", "Baru saja mengatakan", "Hanya berkata", "Sinabi lamang"],
     ["刚刚到", "gāng gāng dào", "Just arrived", "Recién llegado", "Je viens d'arriver", "Acabei de chegar", "Vừa về", "เพิ่งมา", "ទើបតែមកដល់", "Baru saja tiba", "Baru tiba", "Dumating lang"],
     ["立刻去", "lì kè qù", "Go immediately", "Ir inmediatamente", "Allez-y immédiatement", "Vá imediatamente", "Đi ngay", "ไปทันที", "ទៅភ្លាម", "Segera berangkat", "Pergi segera", "Pumunta kaagad"],
@@ -1371,7 +1411,7 @@ export const p4_74_frequency__expressions = {
     malay: "Frequency Expressions",
     filipino: "Frequency Expressions"
   },
-  words: [
+  baseWords: [
     ["天天", "tiān tiān", "Every day", "Todos los días", "Chaque jour", "Todos os dias", "Mỗi ngày", "ทุกวัน", "រាល់ថ្ងៃ", "Setiap hari", "Setiap hari", "Araw -araw"],
     ["每次", "měi cì", "Every time", "Cada vez", "À chaque fois", "Toda vez", "Mỗi lần", "ทุกครั้ง", "រាល់ពេល", "Setiap saat", "Setiap kali", "Sa bawat oras"],
     ["每回", "měi huí", "Every time", "Cada vez", "À chaque fois", "Toda vez", "Mỗi lần", "ทุกครั้ง", "រាល់ពេល", "Setiap saat", "Setiap kali", "Sa bawat oras"],
@@ -1387,7 +1427,9 @@ export const p4_74_frequency__expressions = {
     ["一直", "yì zhí", "Always", "Siempre", "Toujours", "Sempre", "Luôn luôn", "เสมอ", "តែងតែ", "Selalu", "Sentiasa", "Laging"],
     ["第一次", "dì yī cì", "First time", "Primera vez", "Première fois", "Primeira vez", "Lần đầu tiên", "ครั้งแรก", "លើកទីមួយ", "Pertama kali", "Kali pertama", "Unang beses"],
     ["最后一次", "zuì hòu yī cì", "Last time", "La última vez", "La dernière fois", "Última vez", "Lần trước", "ครั้งสุดท้าย", "លើកចុងក្រោយ", "Terakhir kali", "Kali terakhir", "Huling oras"],
-    ["日常", "rì cháng", "Daily", "Diario", "Quotidien", "Diariamente", "Hàng ngày", "รายวัน", "រាល់ថ្ងៃ", "Setiap hari", "Harian", "Pang -araw -araw"],
+    ["日常", "rì cháng", "Daily", "Diario", "Quotidien", "Diariamente", "Hàng ngày", "รายวัน", "រាល់ថ្ងៃ", "Setiap hari", "Harian", "Pang -araw -araw"]
+  ],
+  exampleWords: [
     ["天天见", "tiān tiān jiàn", "See you every day", "Nos vemos todos los días", "À tous les jours", "Vejo você todos os dias", "Hẹn gặp bạn mỗi ngày", "เจอกันทุกวัน", "ជួបអ្នករាល់ថ្ងៃ", "Sampai jumpa setiap hari", "Jumpa anda setiap hari", "Makita ka araw -araw"],
     ["天天练", "tiān tiān liàn", "Practice every day", "Practica todos los días", "Entraînez-vous tous les jours", "Pratique todos os dias", "Luyện tập mỗi ngày", "ฝึกฝนทุกวัน", "អនុវត្តរាល់ថ្ងៃ", "Berlatih setiap hari", "Amalan setiap hari", "Magsanay araw -araw"],
     ["每次都", "měi cì dōu", "Every time", "Cada vez", "À chaque fois", "Toda vez", "Mỗi lần", "ทุกครั้ง", "រាល់ពេល", "Setiap saat", "Setiap kali", "Sa bawat oras"],
@@ -1439,29 +1481,31 @@ export const p4_75_describing__amounts = {
     malay: "Describing Amounts",
     filipino: "Describing Amounts"
   },
-  words: [
+  baseWords: [
     ["很多", "hěn duō", "A lot", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "เยอะมาก", "ច្រើនទៀត", "Banyak", "Banyak", "Maraming"],
-    ["许多", "xǔ duō", "A lot", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "เยอะมาก", "| ច្រើនទៀត", "Banyak", "Banyak", "Maraming"],
-    ["大量", "dà liàng", "A lot", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "เยอะมาก", "| ច្រើនទៀត", "Banyak", "Banyak", "Maraming"],
-    ["一点", "yì diǎn", "A little", "Un poco", "Un peu", "Um pouco", "Một chút", "นิดหน่อย", "| បន្តិច", "Sedikit", "A Little", "Medyo"],
+    ["许多", "xǔ duō", "A lot", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "เยอะมาก", "ច្រើន", "Banyak", "Banyak", "Maraming"],
+    ["大量", "dà liàng", "A large amount", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "เยอะมาก", "ច្រើន", "Banyak", "Banyak", "Maraming"],
+    ["一点", "yì diǎn", "A little", "Un poco", "Un peu", "Um pouco", "Một chút", "นิดหน่อย", "បន្តិច", "Sedikit", "Sedikit", "Kaunti"],
     ["一些", "yī xiē", "Some", "Algunos", "Certains", "Alguns", "Một số", "บางส่วน", "ខ្លះ", "Beberapa", "Beberapa", "Ang ilan"],
     ["足够", "zú gòu", "Enough", "Suficiente", "Assez", "Chega", "Đủ", "พอแล้ว", "គ្រប់គ្រាន់", "Cukup", "Cukup", "Sapat na"],
     ["不够", "bù gòu", "Not enough", "No es suficiente", "Pas assez", "Não é suficiente", "Không đủ", "ยังไม่พอ", "មិនគ្រប់គ្រាន់", "Tidak cukup", "Tidak cukup", "Hindi sapat"],
     ["刚好", "gāng hǎo", "Just", "Sólo", "Juste", "Apenas", "Chỉ", "แค่", "គ្រាន់តែ", "Hanya", "Hanya", "Basta"],
     ["太多", "tài duō", "Too much", "Demasiado", "Trop", "Demais", "Quá nhiều", "มากเกินไป", "ច្រើនពេក", "Terlalu banyak", "Terlalu banyak", "Masyadong marami"],
     ["太少", "tài shǎo", "Too little", "Muy poco", "Trop peu", "Muito pouco", "Quá ít", "น้อยเกินไป", "តិចតួចណាស់", "Terlalu sedikit", "Terlalu kecil", "Masyadong maliit"],
-    ["左右", "zuǒ yòu", "About", "Acerca de", "À propos de", "Sobre", "Giới thiệu về", "เกี่ยวกับ", "| អំពី", "Tentang", "Mengenai", "Tungkol sa"],
-    ["大约", "dà yuē", "About", "Acerca de", "À propos de", "Sobre", "Giới thiệu về", "เกี่ยวกับ", "អំពី", "Tentang", "Mengenai", "Tungkol sa"],
+    ["左右", "zuǒ yòu", "About", "Aproximadamente", "Environ", "Aproximadamente", "Khoảng", "ประมาณ", "ប្រហែល", "Sekitar", "Kira-kira", "Humigit-kumulang"],
+    ["大约", "dà yuē", "Approximately", "Aproximadamente", "Environ", "Aproximadamente", "Khoảng", "ประมาณ", "ប្រហែល", "Sekitar", "Kira-kira", "Humigit-kumulang"],
     ["超过", "chāo guò", "More than", "Más de", "Plus de", "Mais que", "Hơn", "มากกว่า", "ច្រើនជាង", "Lebih dari", "Lebih daripada", "Higit pa sa"],
-    ["不到", "bú dào", "Less than", "Menos de", "Moins de", "Menos que", "Nhỏ hơn", "น้อยกว่า", "| តិចជាង", "Kurang dari", "Kurang daripada", "Mas mababa sa"],
-    ["不少", "bù shǎo", "A lot", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "เยอะมาก", "| ច្រើនទៀត", "Banyak", "Banyak", "Maraming"],
-    ["很多人", "hěn duō rén", "A lot of people", "Mucha gente", "Beaucoup de monde", "Muita gente", "Rất nhiều người", "คนเยอะมาก", "| មនុស្សជាច្រើន", "Banyak orang", "Banyak orang", "Maraming tao"],
+    ["不到", "bú dào", "Less than", "Menos de", "Moins de", "Menos que", "Ít hơn", "น้อยกว่า", "តិចជាង", "Kurang dari", "Kurang daripada", "Mas mababa sa"],
+    ["不少", "bù shǎo", "Quite a lot", "Bastante", "Pas mal", "Bastante", "Khá nhiều", "ไม่น้อย", "មិនតិច", "Cukup banyak", "Agak banyak", "Medyo marami"]
+  ],
+  exampleWords: [
+    ["很多人", "hěn duō rén", "A lot of people", "Mucha gente", "Beaucoup de monde", "Muita gente", "Rất nhiều người", "คนเยอะมาก", "មនុស្សជាច្រើន", "Banyak orang", "Banyak orang", "Maraming tao"],
     ["有很多", "yǒu hěn duō", "A lot", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "เยอะมาก", "ច្រើនទៀត", "Banyak", "Banyak", "Maraming"],
-    ["许多人", "xǔ duō rén", "A lot of people", "Mucha gente", "Beaucoup de monde", "Muita gente", "Rất nhiều người", "คนเยอะมาก", "| មនុស្សជាច្រើន", "Banyak orang", "Banyak orang", "Maraming tao"],
+    ["许多人", "xǔ duō rén", "A lot of people", "Mucha gente", "Beaucoup de monde", "Muita gente", "Rất nhiều người", "คนเยอะมาก", "មនុស្សជាច្រើន", "Banyak orang", "Banyak orang", "Maraming tao"],
     ["有许多", "yǒu xǔ duō", "A lot", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "เยอะมาก", "ច្រើនទៀត", "Banyak", "Banyak", "Maraming"],
-    ["大量的", "dà liàng de", "A lot", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "เยอะมาก", "| ច្រើនទៀត", "Banyak", "Banyak", "Maraming"],
-    ["有大量", "yǒu dà liàng", "A lot", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "เยอะมาก", "| ច្រើនទៀត", "Banyak", "Banyak", "Maraming"],
-    ["一点点", "yì diǎn diǎn", "A little", "Un poco", "Un peu", "Um pouco", "Một chút", "นิดหน่อย", "| បន្តិច", "Sedikit", "A Little", "Medyo"],
+    ["大量的", "dà liàng de", "A large amount of", "Mucho", "Beaucoup", "Muito", "Một lượng lớn", "เยอะมาก", "ចំនួនច្រើន", "Banyak", "Banyak", "Malaking halaga"],
+    ["有大量", "yǒu dà liàng", "Have a lot", "Tener mucho", "Avoir beaucoup", "Ter muito", "Có nhiều", "มีมาก", "មានច្រើន", "Punya banyak", "Ada banyak", "May maraming"],
+    ["一点点", "yì diǎn diǎn", "A tiny bit", "Un poquito", "Un tout petit peu", "Um pouquinho", "Một chút xíu", "นิดนึง", "បន្តិចបន្តួច", "Sedikit sekali", "Sedikit sahaja", "Kaunting-kaunti"],
     ["有一点", "yǒu yì diǎn", "A little", "Un poco", "Un peu", "Um pouco", "Một chút", "นิดหน่อย", "បន្តិច", "Sedikit", "A Little", "Medyo"],
     ["一些人", "yī xiē rén", "some people", "algunas personas", "certaines personnes", "algumas pessoas", "một số người", "บางคน", "ប្រជាជនខ្លះ", "beberapa orang", "Sesetengah orang", "ilang mga tao"],
     ["有一些", "yǒu yī xiē", "some", "algunos", "certains", "alguns", "một số", "บางส่วน", "ខ្លះ", "beberapa", "beberapa", "Ang ilan"],
@@ -1472,19 +1516,19 @@ export const p4_75_describing__amounts = {
     ["刚好够", "gāng hǎo gòu", "just enough", "lo suficiente", "juste assez", "apenas o suficiente", "vừa đủ", "เท่านั้นพอ", "គ្រាន់តែគ្រប់គ្រាន់", "cukup", "Cukup cukup", "Sapat na"],
     ["刚好是", "gāng hǎo shì", "just", "solo", "juste", "apenas", "chỉ", "แค่", "គ្រាន់តែ", "hanya", "hanya", "Basta"],
     ["太多了", "tài duō le", "too much", "demasiado", "trop", "demais", "quá nhiều", "มากเกินไป", "ច្រើនពេក", "terlalu banyak", "Terlalu banyak", "Masyadong marami"],
-    ["有太多", "yǒu tài duō", "too little", "muy poco", "trop peu", "muito pouco", "quá ít", "น้อยเกินไป", "តិចតួចណាស់", "terlalu sedikit", "terlalu kecil", "Masyadong maliit"],
-    ["太少了", "tài shǎo le", "too little", "muy poco", "trop peu", "muito pouco", "quá ít", "น้อยเกินไป", "| តិចតួចណាស់", "terlalu sedikit", "terlalu kecil", "Masyadong maliit"],
-    ["有太少", "yǒu tài shǎo", "about", "acerca de", "à propos de", "sobre", "về", "เกี่ยวกับ", "| អំពី", "tentang", "mengenai", "tungkol sa"],
-    ["左右吧", "zuǒ yòu ba", "about ten", "alrededor de diez", "une dizaine", "cerca de dez", "khoảng mười", "ประมาณสิบ", "ប្រហែលដប់", "sekitar sepuluh", "kira -kira sepuluh", "mga sampung"],
-    ["十个左右", "shí gè zuǒ yòu", "about", "acerca de", "à propos de", "sobre", "về", "เกี่ยวกับ", "អំពី", "tentang", "mengenai", "tungkol sa"],
-    ["大约是", "dà yuē shì", "about", "acerca de", "à propos de", "sobre", "về", "เกี่ยวกับ", "អំពី", "tentang", "mengenai", "tungkol sa"],
-    ["大约有", "dà yuē yǒu", "more than", "más de", "plus de", "mais que", "hơn", "มากกว่า", "ច្រើនជាង", "lebih dari", "Lebih daripada", "Higit pa sa"],
-    ["超过了", "chāo guò le", "more than", "más de", "plus de", "mais que", "hơn", "มากกว่า", "| ច្រើនជាង", "lebih dari", "Lebih daripada", "Higit pa sa"],
-    ["已超过", "yǐ chāo guò", "less than ten", "menos de diez", "moins de dix", "menos de dez", "ít hơn mười", "น้อยกว่าสิบ", "| តិចជាងដប់", "kurang dari sepuluh", "kurang daripada sepuluh", "Mas mababa sa sampung"],
-    ["不到十", "bú dào shí", "not yet", "todavía no", "pas encore", "ainda não", "chưa", "ยังไม่", "មិនទាន់មានទេ", "belum", "Belum", "Hindi pa"],
-    ["还不到", "hái bú dào", "quite a few people", "bastantes personas", "pas mal de monde", "algumas pessoas", "khá nhiều người", "ไม่กี่คน", "មានមនុស្សពីរបីនាក់", "cukup banyak orang", "Cukup beberapa orang", "Medyo ilang tao"],
-    ["不少人", "bù shǎo rén", "There are quite a few", "Hay bastantes", "Il y en a pas mal", "Existem alguns", "Có khá nhiều", "มีค่อนข้างน้อย", "មានមួយចំនួនតូច", "Ada cukup banyak", "Terdapat beberapa", "Mayroong ilang"],
-    ["有不少", "yǒu bù shǎo", "[TRANSLATE_EN]", "[TRANSLATE_ES]", "[TRANSLATE_FR]", "[TRANSLATE_PT]", "[TRANSLATE_VI]", "[TRANSLATE_TH]", "[TRANSLATE_KM]", "[TRANSLATE_ID]", "[TRANSLATE_MS]", "[TRANSLATE_TL]"]
+    ["有太多", "yǒu tài duō", "Have too much", "Tener demasiado", "Avoir trop", "Ter demais", "Có quá nhiều", "มีมากเกินไป", "មានច្រើនពេក", "Punya terlalu banyak", "Ada terlalu banyak", "May sobrang dami"],
+    ["太少了", "tài shǎo le", "Too little", "Muy poco", "Trop peu", "Muito pouco", "Quá ít", "น้อยเกินไป", "តិចពេក", "Terlalu sedikit", "Terlalu sedikit", "Masyadong kaunti"],
+    ["有太少", "yǒu tài shǎo", "Have too little", "Tener muy poco", "Avoir trop peu", "Ter muito pouco", "Có quá ít", "มีน้อยเกินไป", "មានតិចពេក", "Punya terlalu sedikit", "Ada terlalu sedikit", "May sobrang kaunti"],
+    ["左右吧", "zuǒ yòu ba", "Or so", "Más o menos", "À peu près", "Mais ou menos", "Khoảng chừng", "ประมาณ", "ប្រហែល", "Kurang lebih", "Lebih kurang", "Humigit-kumulang"],
+    ["十个左右", "shí gè zuǒ yòu", "About ten", "Unos diez", "Environ dix", "Cerca de dez", "Khoảng mười", "ประมาณสิบ", "ប្រហែលដប់", "Sekitar sepuluh", "Kira-kira sepuluh", "Mga sampu"],
+    ["大约是", "dà yuē shì", "Is approximately", "Es aproximadamente", "C'est environ", "É aproximadamente", "Là khoảng", "ประมาณว่าเป็น", "ប្រហែលជា", "Kira-kira adalah", "Lebih kurang adalah", "Humigit-kumulang ay"],
+    ["大约有", "dà yuē yǒu", "Have approximately", "Tener aproximadamente", "Avoir environ", "Ter aproximadamente", "Có khoảng", "มีประมาณ", "មានប្រហែល", "Memiliki sekitar", "Mempunyai kira-kira", "May humigit-kumulang"],
+    ["超过了", "chāo guò le", "Exceeded", "Superó", "A dépassé", "Ultrapassou", "Đã vượt qua", "เกินไปแล้ว", "បានលើសពី", "Sudah melebihi", "Sudah melebihi", "Lumampas na"],
+    ["已超过", "yǐ chāo guò", "Already exceeded", "Ya ha superado", "A déjà dépassé", "Já ultrapassou", "Đã vượt quá", "เกินไปแล้ว", "បានលើសហើយ", "Sudah melampaui", "Sudah melebihi", "Lumampas na"],
+    ["不到十", "bú dào shí", "Less than ten", "Menos de diez", "Moins de dix", "Menos de dez", "Chưa đến mười", "ไม่ถึงสิบ", "តិចជាងដប់", "Kurang dari sepuluh", "Kurang dari sepuluh", "Mas mababa sa sampu"],
+    ["还不到", "hái bú dào", "Not yet reached", "Todavía no llegó", "Pas encore atteint", "Ainda não chegou", "Chưa đến", "ยังไม่ถึง", "មិនទាន់ដល់", "Belum sampai", "Belum sampai", "Hindi pa umabot"],
+    ["不少人", "bù shǎo rén", "Quite a few people", "Bastante gente", "Pas mal de gens", "Bastante gente", "Khá nhiều người", "ค่อนข้างหลายคน", "មនុស្សមួយចំនួនច្រើន", "Cukup banyak orang", "Agak ramai orang", "Medyo maraming tao"],
+    ["有不少", "yǒu bù shǎo", "Have quite a lot", "Tener bastante", "Avoir pas mal", "Ter bastante", "Có khá nhiều", "มีค่อนข้างมาก", "មានច្រើនដែរ", "Punya cukup banyak", "Ada agak banyak", "May medyo marami"]
   ]
 };
 
@@ -1504,7 +1548,7 @@ export const p4_76_quality__descriptions = {
     malay: "Quality Descriptions",
     filipino: "Quality Descriptions"
   },
-  words: [
+  baseWords: [
     ["正品", "zhèng pǐn", "Authentic", "Auténtico", "Authentique", "Autêntico", "Hàng chính hãng", "ของแท้", "ពិតប្រាកដ", "Asli", "Asli", "Tunay"],
     ["假货", "jiǎ huò", "Fake goods", "Productos falsos", "Faux produits", "Produtos falsos", "Hàng giả", "ของปลอม", "ទំនិញក្លែងក្លាយ", "Barang palsu", "Barang palsu", "Pekeng produkto"],
     ["山寨", "shān zhài", "Knockoff", "Imitación", "Contrefaçon", "Imitação", "Hàng nhái", "ของเลียนแบบ", "ទំនិញចម្លង", "Barang tiruan", "Barang tiruan", "Panggagaya"],
@@ -1520,7 +1564,9 @@ export const p4_76_quality__descriptions = {
     ["低劣", "dī liè", "Inferior", "Inferior", "Inférieur", "Inferior", "Kém chất lượng", "ด้อยคุณภาพ", "ទាបកម្រិត", "Rendah", "Rendah", "Mababa"],
     ["粗糙", "cū cāo", "Rough", "Áspero", "Rugueux", "Áspero", "Thô ráp", "หยาบ", "រដុប", "Kasar", "Kasar", "Magaspang"],
     ["精致", "jīng zhì", "Exquisite", "Exquisito", "Raffiné", "Requintado", "Tinh tế", "ประณีต", "ស្អាត", "Indah", "Halus", "Maarte"],
-    ["精良", "jīng liáng", "Well-made", "Bien hecho", "Bien fait", "Bem feito", "Chất lượng tốt", "คุณภาพดี", "ធ្វើបានល្អ", "Dibuat dengan baik", "Dibuat dengan baik", "Magandang gawa"],
+    ["精良", "jīng liáng", "Well-made", "Bien hecho", "Bien fait", "Bem feito", "Chất lượng tốt", "คุณภาพดี", "ធ្វើបានល្អ", "Dibuat dengan baik", "Dibuat dengan baik", "Magandang gawa"]
+  ],
+  exampleWords: [
     ["是正品", "shì zhèng pǐn", "It's authentic", "Es auténtico", "C'est authentique", "É autêntico", "Là hàng chính hãng", "เป็นของแท้", "ជាពិតប្រាកដ", "Ini asli", "Ini asli", "Tunay ito"],
     ["买正品", "mǎi zhèng pǐn", "Buy authentic", "Comprar auténtico", "Acheter authentique", "Comprar autêntico", "Mua hàng chính hãng", "ซื้อของแท้", "ទិញពិតប្រាកដ", "Beli asli", "Beli asli", "Bumili ng tunay"],
     ["是假货", "shì jiǎ huò", "It's fake", "Es falso", "C'est faux", "É falso", "Là hàng giả", "เป็นของปลอม", "ជាទំនិញក្លែងក្លាយ", "Ini palsu", "Ini palsu", "Peke ito"],
@@ -1572,7 +1618,7 @@ export const p4_77_making__comparisons = {
     malay: "Making Comparisons",
     filipino: "Making Comparisons"
   },
-  words: [
+  baseWords: [
     ["比较", "bǐ jiào", "Compare", "Comparar", "Comparez", "Comparar", "So sánh", "เปรียบเทียบ", "ប្រៀបធៀប", "Bandingkan", "Bandingkan", "Paghambingin"],
     ["更", "gèng", "More", "Más", "Plus", "Mais", "Thêm", "เพิ่มเติม", "បន្ថែម", "Selengkapnya", "Lebih banyak", "Higit pa"],
     ["不如", "bù rú", "Not as good as", "No tan bueno como", "Pas aussi bon que", "Não tão bom quanto", "Không tốt bằng", "ไม่ดีเท่า", "មិនល្អដូច", "Tidak sebagus", "Tidak sebaik", "Hindi kasing ganda ng"],
@@ -1588,7 +1634,9 @@ export const p4_77_making__comparisons = {
     ["相比", "xiāng bǐ", "Compared", "Comparado", "Comparé", "Comparado", "So sánh", "เปรียบเทียบ", "បើប្រៀបធៀប", "Dibandingkan", "Berbanding", "Inihambing"],
     ["对比", "duì bǐ", "Contrast", "Contraste", "Contraste", "Contraste", "Tương phản", "ตรงกันข้าม", "កម្រិតពណ៌", "Kontras", "Kontras", "Kaibahan"],
     ["较", "jiào", "Better", "Mejor", "Mieux", "Melhor", "Tốt hơn", "ดีกว่า", "ល្អជាង", "Lebih baik", "Lebih baik", "Mas mahusay"],
-    ["略胜", "lüè shèng", "Slightly better", "Ligeramente mejor", "Un peu mieux", "Um pouco melhor", "Tốt hơn một chút", "ดีขึ้นนิดหน่อย", "ល្អជាងនេះបន្តិច", "Sedikit lebih baik", "Sedikit lebih baik", "Bahagyang mas mahusay"],
+    ["略胜", "lüè shèng", "Slightly better", "Ligeramente mejor", "Un peu mieux", "Um pouco melhor", "Tốt hơn một chút", "ดีขึ้นนิดหน่อย", "ល្អជាងនេះបន្តិច", "Sedikit lebih baik", "Sedikit lebih baik", "Bahagyang mas mahusay"]
+  ],
+  exampleWords: [
     ["比较好", "bǐ jiào hǎo", "Better", "Mejor", "Mieux", "Melhor", "Tốt hơn", "ดีกว่า", "| ល្អជាង", "Lebih baik", "Lebih baik", "Mas mahusay"],
     ["做比较", "zuò bǐ jiào", "Compare", "Comparar", "Comparez", "Comparar", "So sánh", "เปรียบเทียบ", "ប្រៀបធៀប", "Bandingkan", "Bandingkan", "Paghambingin"],
     ["更好", "gèng hǎo", "Better", "Mejor", "Mieux", "Melhor", "Tốt hơn", "ดีกว่า", "ល្អជាង", "Lebih baik", "Lebih baik", "Mas mahusay"],
@@ -1640,7 +1688,7 @@ export const p4_78_expressing__preferences = {
     malay: "Expressing Preferences",
     filipino: "Expressing Preferences"
   },
-  words: [
+  baseWords: [
     ["喜欢", "xǐ huān", "Like", "Me gusta", "Comme", "Curtir", "Thích", "ชอบ", "ដូច", "Seperti", "Seperti", "Tulad ng"],
     ["爱", "ài", "Love", "Amor", "Amour", "Amor", "Tình yêu", "รัก", "ស្រឡាញ់", "Cinta", "Cinta", "Pag -ibig"],
     ["最爱", "zuì ài", "Favorite", "Favorito", "Favoris", "Favorito", "Yêu thích", "ที่ชื่นชอบ", "សំណព្វ", "Favorit", "Kegemaran", "Paboritong"],
@@ -1656,7 +1704,9 @@ export const p4_78_expressing__preferences = {
     ["宁可", "nìng kě", "Prefer", "Prefiero", "Préférer", "Prefira", "Thích", "ชอบ", "ចូលចិត្ត", "Lebih suka", "Lebih suka", "Mas gusto"],
     ["宁愿", "nìng yuàn", "Prefer", "Prefiero", "Préférer", "Prefira", "Thích", "ชอบ", "ចូលចិត្ត", "Lebih suka", "Lebih suka", "Mas gusto"],
     ["首选", "shǒu xuǎn", "First choice", "Primera opción", "Premier choix", "Primeira escolha", "Lựa chọn đầu tiên", "ตัวเลือกแรก", "ជម្រើសដំបូង", "Pilihan pertama", "Pilihan Pertama", "Unang pagpipilian"],
-    ["次选", "cì xuǎn", "Second choice", "Segunda opción", "Deuxième choix", "Segunda escolha", "Lựa chọn thứ hai", "ตัวเลือกที่สอง", "ជម្រើសទីពីរ", "Pilihan kedua", "Pilihan Kedua", "Pangalawang pagpipilian"],
+    ["次选", "cì xuǎn", "Second choice", "Segunda opción", "Deuxième choix", "Segunda escolha", "Lựa chọn thứ hai", "ตัวเลือกที่สอง", "ជម្រើសទីពីរ", "Pilihan kedua", "Pilihan Kedua", "Pangalawang pagpipilian"]
+  ],
+  exampleWords: [
     ["我喜欢", "wǒ xǐ huān", "I like", "Me gusta", "J'aime", "Eu gosto", "Tôi thích", "ฉันชอบ", "ខ្ញុំចូលចិត្ត", "saya suka", "Saya suka", "Gusto ko"],
     ["很喜欢", "hěn xǐ huān", "Very much", "Mucho", "Beaucoup", "Muito", "Rất nhiều", "มาก", "ខ្លាំងណាស់", "Sangat", "Sangat banyak", "Napaka"],
     ["我爱", "wǒ ài", "I love", "Me encanta", "J'adore", "Eu amo", "Tôi yêu", "ฉันรัก", "ខ្ញុំស្រឡាញ់", "Saya suka", "Saya suka", "Mahal ko"],
@@ -1708,7 +1758,7 @@ export const p4_79_giving__reasons = {
     malay: "Giving Reasons",
     filipino: "Giving Reasons"
   },
-  words: [
+  baseWords: [
     ["因为", "yīn wèi", "because", "porque", "parce que", "porque", "bởi vì", "เพราะ", "ដោយសារតែ", "karena", "kerana", "Dahil"],
     ["由于", "yóu yú", "because", "porque", "parce que", "porque", "bởi vì", "เพราะ", "ដោយសារតែ", "karena", "kerana", "Dahil"],
     ["所以", "suǒ yǐ", "so", "entonces", "donc", "então", "vậy", "ดังนั้น", "ដូច្នេះ", "jadi", "SO", "Kaya"],
@@ -1724,7 +1774,9 @@ export const p4_79_giving__reasons = {
     ["之所以", "zhī suǒ yǐ", "reason", "razón", "raison", "razão", "lý do", "เหตุผล", "ហេតុផល", "alasan", "Sebab", "Dahilan"],
     ["根由", "gēn yóu", "root cause", "causa raíz", "cause profonde", "causa raiz", "nguyên nhân sâu xa", "สาเหตุที่แท้จริง", "បុព្វហេតុឫស", "akar permasalahan", "punca akar", "ugat sanhi"],
     ["归咎", "guī jiù", "blame", "culpar", "blâmer", "culpa", "đổ lỗi", "ตำหนิ", "បន្ទោស", "menyalahkan", "menyalahkan", "sisihin"],
-    ["根本原因", "gēn běn yuán yīn", "root cause", "causa raíz", "cause profonde", "causa raiz", "nguyên nhân sâu xa", "สาเหตุที่แท้จริง", "បុព្វហេតុឫស", "akar permasalahan", "punca akar", "ugat sanhi"],
+    ["根本原因", "gēn běn yuán yīn", "root cause", "causa raíz", "cause profonde", "causa raiz", "nguyên nhân sâu xa", "สาเหตุที่แท้จริง", "បុព្វហេតុឫស", "akar permasalahan", "punca akar", "ugat sanhi"]
+  ],
+  exampleWords: [
     ["因为你", "yīn wèi nǐ", "because of you", "gracias a ti", "à cause de toi", "por sua causa", "vì em", "เพราะเธอ", "ដោយសារតែអ្នក", "karena kamu", "Kerana anda", "Dahil sa iyo"],
     ["是因为", "shì yīn wèi", "because", "porque", "parce que", "porque", "bởi vì", "เพราะ", "ដោយសារតែ", "karena", "kerana", "Dahil"],
     ["由于天气", "yóu yú tiān qì", "because of weather", "por el clima", "à cause de la météo", "por causa do clima", "vì thời tiết", "เพราะสภาพอากาศ", "ដោយសារតែអាកាសធាតុ", "karena cuaca", "Kerana cuaca", "Dahil sa panahon"],

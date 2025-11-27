@@ -18,7 +18,7 @@ export const p1_1_greetings__goodbyes = {
     pinyin: "Wènhòu yǔ Gàobié",
     portuguese: "Cumprimentos e Despedidas"
   },
-  words: [
+  baseWords: [
     ["hola", "hello", "你好", "nǐ hǎo", "olá"],
     ["adiós", "bye", "再见", "zài jiàn", "tchau"],
     ["buenos días", "good morning", "早上好", "zǎo shàng hǎo", "bom dia"],
@@ -33,7 +33,9 @@ export const p1_1_greetings__goodbyes = {
     ["hasta luego", "see you later", "稍后见", "shāo hòu jiàn", "até mais"],
     ["hasta mañana", "see you tomorrow", "明天见", "míng tiān jiàn", "vejo você amanhã"],
     ["bienvenido", "welcome", "欢迎", "huān yíng", "bem-vindo"],
-    ["bienvenida", "welcome", "欢迎", "huān yíng", "bem-vinda"],
+    ["bienvenida", "welcome", "欢迎", "huān yíng", "bem-vinda"]
+  ],
+  exampleWords: [
     ["hola amigo", "hi, friend", "朋友你好", "péng yǒu nǐ hǎo", "oi amigo"],
     ["hola a todos", "hello everyone", "大家好", "dà jiā hǎo", "olá pessoal"],
     ["adiós amigos", "goodbye friends", "再见朋友", "zài jiàn péng yǒu", "adeus amigos"],
@@ -75,7 +77,7 @@ export const p1_2_yes__no__agreement = {
     pinyin: "Shìfēi yǔ Tóngyì",
     portuguese: "Sim Não e Acordo"
   },
-  words: [
+  baseWords: [
     ["sí", "yes", "是的", "shì de", "sim"],
     ["no", "no", "不", "bù", "não"],
     ["tal vez", "maybe", "或许", "huò xǔ", "talvez"],
@@ -85,7 +87,9 @@ export const p1_2_yes__no__agreement = {
     ["vale", "okay", "好的", "hǎo de", "ok"],
     ["está bien", "alright", "好吧", "hǎo ba", "tudo bem"],
     ["de acuerdo", "ok", "好的", "hǎo de", "ok"],
-    ["correcto", "correct", "正确的", "zhèng què de", "correto"],
+    ["correcto", "correct", "正确的", "zhèng què de", "correto"]
+  ],
+  exampleWords: [
     ["sí claro", "yes of course", "是的当然", "shì de dāng rán", "sim claro"],
     ["sí señor", "yes sir", "是的，先生", "shì de ， xiān shēng", "sim, senhor"],
     ["no gracias", "no, thanks", "不，谢谢", "bù ， xiè xiè", "não, obrigado"],
@@ -117,7 +121,7 @@ export const p1_3_numbers__010 = {
     pinyin: "Shùzì 0-10",
     portuguese: "Números 0-10"
   },
-  words: [
+  baseWords: [
     ["cero", "zero", "零", "líng", "zero"],
     ["uno", "one", "一", "yī", "um"],
     ["dos", "two", "二", "èr", "dois"],
@@ -128,7 +132,9 @@ export const p1_3_numbers__010 = {
     ["siete", "seven", "七", "qī", "sete"],
     ["ocho", "eight", "八", "bā", "oito"],
     ["nueve", "nine", "九", "jiǔ", "nove"],
-    ["diez", "ten", "十", "shí", "dez"],
+    ["diez", "ten", "十", "shí", "dez"]
+  ],
+  exampleWords: [
     ["cero grados", "zero degrees", "零度", "líng dù", "zero graus"],
     ["desde cero", "from scratch", "从头开始", "cóng tóu kāi shǐ", "do zero"],
     ["uno más", "one more", "还有一个", "hái yǒu yí gè", "mais um"],
@@ -162,7 +168,7 @@ export const p1_4_asking__questions__qu__cundo__dnde = {
     pinyin: "Tíwèn",
     portuguese: "Fazer Perguntas"
   },
-  words: [
+  baseWords: [
     ["qué", "what", "什么", "shén me", "o que"],
     ["quién", "who", "谁", "shuí", "quem"],
     ["dónde", "where", "在哪里", "zài nǎ lǐ", "onde"],
@@ -173,7 +179,9 @@ export const p1_4_asking__questions__qu__cundo__dnde = {
     ["cuánto", "how much", "多少", "duō shǎo", "quanto"],
     ["cuánta", "how much", "多少", "duō shǎo", "quanto"],
     ["cuántos", "how many", "多少", "duō shǎo", "quantos"],
-    ["cuántas", "how many", "多少", "duō shǎo", "quantos"],
+    ["cuántas", "how many", "多少", "duō shǎo", "quantos"]
+  ],
+  exampleWords: [
     ["qué hora es", "what time is it", "现在几点", "xiàn zài jǐ diǎn", "que horas são"],
     ["qué tal", "how are you", "你好吗", "nǐ hǎo ma", "como vai"],
     ["quién es", "who is", "谁是", "shuí shì", "quem é"],
@@ -207,7 +215,7 @@ export const p1_5_referring__to__people__yo__t__l__ella = {
     pinyin: "Chēnghu Rén",
     portuguese: "Referir-se a Pessoas"
   },
-  words: [
+  baseWords: [
     ["yo", "I", "我", "wǒ", "eu"],
     ["tú", "you", "你", "nǐ", "você"],
     ["él", "he", "他", "tā", "ele"],
@@ -219,7 +227,9 @@ export const p1_5_referring__to__people__yo__t__l__ella = {
     ["vosotras", "you", "你们", "nǐ men", "vocês"],
     ["ellos", "they", "他们", "tā men", "eles"],
     ["ellas", "they", "他们", "tā men", "eles"],
-    ["ustedes", "you", "你们", "nǐ men", "vocês"],
+    ["ustedes", "you", "你们", "nǐ men", "vocês"]
+  ],
+  exampleWords: [
     ["yo primero", "me first", "我先", "wǒ xiān", "eu primeiro"],
     ["yo mismo", "myself", "我", "wǒ", "eu mesmo"],
     ["y tú", "and you", "你呢", "nǐ ne", "e você"],
@@ -255,7 +265,7 @@ export const p1_6_being__permanent__ser = {
     pinyin: "Yǒngjiǔ Zhuàngtài (ser)",
     portuguese: "Ser Permanente"
   },
-  words: [
+  baseWords: [
     ["ser", "be", "是", "shì", "ser"],
     ["soy", "am", "是", "shì", "sou"],
     ["eres", "are", "是", "shì", "são"],
@@ -270,7 +280,9 @@ export const p1_6_being__permanent__ser = {
     ["simpático", "nice", "亲切的", "qīn qiè de", "simpático"],
     ["trabajador", "worker", "工人", "gōng rén", "trabalhador"],
     ["honesto", "honest", "诚实的", "chéng shí de", "honesto"],
-    ["amable", "kind", "友善的", "yǒu shàn de", "gentil"],
+    ["amable", "kind", "友善的", "yǒu shàn de", "gentil"]
+  ],
+  exampleWords: [
     ["puede ser", "could be", "可能是", "kě néng shì", "poderia ser"],
     ["debe ser", "must be", "必须是", "bì xū shì", "deve ser"],
     ["yo soy", "I am", "我是", "wǒ shì", "eu sou"],
@@ -312,7 +324,7 @@ export const p1_7_being__temporary__estar = {
     pinyin: "Línshí Zhuàngtài (estar)",
     portuguese: "Estar Temporário"
   },
-  words: [
+  baseWords: [
     ["estar", "to be", "是", "shì", "estar"],
     ["estoy", "I'm", "我是", "wǒ shì", "eu estou"],
     ["estás", "are", "是", "shì", "são"],
@@ -327,7 +339,9 @@ export const p1_7_being__temporary__estar = {
     ["ocupado", "busy", "忙碌的", "máng lù de", "ocupado"],
     ["cansado", "tired", "疲劳的", "pí láo de", "cansado"],
     ["abierto", "open", "打开", "dǎ kāi", "abrir"],
-    ["situado", "located", "位于的", "wèi yú de", "localizado"],
+    ["situado", "located", "位于的", "wèi yú de", "localizado"]
+  ],
+  exampleWords: [
     ["voy a estar", "I will be", "我会的", "wǒ huì de", "eu estarei"],
     ["puede estar", "may be", "或许", "huò xǔ", "talvez"],
     ["yo estoy", "I'm", "我是", "wǒ shì", "eu estou"],
@@ -369,7 +383,7 @@ export const p1_8_having__age__tener = {
     pinyin: "Yǒngyǒu yǔ Niánlíng (tener)",
     portuguese: "Ter e Idade"
   },
-  words: [
+  baseWords: [
     ["tengo", "I have", "我有", "wǒ yǒu", "Eu tenho"],
     ["tienes", "have", "有", "yǒu", "ter"],
     ["tiene", "has", "有", "yǒu", "tem"],
@@ -383,7 +397,9 @@ export const p1_8_having__age__tener = {
     ["miedo", "fear", "害怕", "hài pà", "temer"],
     ["prisa", "hurry", "匆忙", "cōng máng", "pressa"],
     ["razón", "reason", "原因", "yuán yīn", "razão"],
-    ["suerte", "luck", "运气", "yùn qì", "sorte"],
+    ["suerte", "luck", "运气", "yùn qì", "sorte"]
+  ],
+  exampleWords: [
     ["yo tengo", "I have", "我有", "wǒ yǒu", "Eu tenho"],
     ["tengo que", "I have to", "我必须", "wǒ bì xū", "eu tenho que"],
     ["tú tienes", "you have", "你有", "nǐ yǒu", "você tem"],
@@ -423,7 +439,7 @@ export const p1_9_the__a__articles__el__la__un__una = {
     pinyin: "Guàncí",
     portuguese: "Artigos"
   },
-  words: [
+  baseWords: [
     ["el", "he", "他", "tā", "ele"],
     ["la", "the", "这", "zhè", "o"],
     ["los", "the", "这", "zhè", "o"],
@@ -431,7 +447,9 @@ export const p1_9_the__a__articles__el__la__un__una = {
     ["un", "a", "一个", "yí gè", "um"],
     ["una", "a", "一个", "yí gè", "um"],
     ["unos", "some", "一些", "yī xiē", "alguns"],
-    ["unas", "some", "一些", "yī xiē", "umas"],
+    ["unas", "some", "一些", "yī xiē", "umas"]
+  ],
+  exampleWords: [
     ["el hombre", "the man", "男人", "nán rén", "o homem"],
     ["el día", "the day", "那天", "nà tiān", "o dia"],
     ["la mujer", "the woman", "那个女人", "nà ge nǚ rén", "a mulher"],
@@ -459,7 +477,7 @@ export const p1_10_connecting__words__y__pero__porque = {
     pinyin: "Liánjiē Cí",
     portuguese: "Palavras de Conexão"
   },
-  words: [
+  baseWords: [
     ["y", "and", "和", "hé", "e"],
     ["o", "or", "或", "huò", "ou"],
     ["pero", "but", "但", "dàn", "mas"],
@@ -469,7 +487,9 @@ export const p1_10_connecting__words__y__pero__porque = {
     ["donde", "where", "在哪里", "zài nǎ lǐ", "onde"],
     ["así", "like this", "这样", "zhè yàng", "assim"],
     ["también", "also", "还", "hái", "também"],
-    ["tampoco", "neither", "两者都不", "liǎng zhě dōu bù", "nenhum"],
+    ["tampoco", "neither", "两者都不", "liǎng zhě dōu bù", "nenhum"]
+  ],
+  exampleWords: [
     ["tú y yo", "you and I", "你和我", "nǐ hé wǒ", "você e eu"],
     ["pan y agua", "bread and water", "面包和水", "miàn bāo hé shuǐ", "pão e água"],
     ["sí o no", "yes or no", "是还是不是", "shì hái shì bú shì", "sim ou não"],
@@ -501,7 +521,7 @@ export const p1_11_days__of__the__week = {
     pinyin: "Xīngqī Jǐ",
     portuguese: "Dias da Semana"
   },
-  words: [
+  baseWords: [
     ["lunes", "Monday", "周一", "zhōu yī", "Segunda-feira"],
     ["martes", "Tuesday", "周二", "zhōu èr", "Terça-feira"],
     ["miércoles", "Wednesday", "周三", "zhōu sān", "Quarta-feira"],
@@ -511,7 +531,9 @@ export const p1_11_days__of__the__week = {
     ["domingo", "Sunday", "星期日", "xīng qī rì", "Domingo"],
     ["día", "day", "天", "tiān", "dia"],
     ["semana", "week", "星期", "xīng qī", "semana"],
-    ["fin", "end", "结尾", "jié wěi", "fim"],
+    ["fin", "end", "结尾", "jié wěi", "fim"]
+  ],
+  exampleWords: [
     ["el lunes", "on Monday", "周一", "zhōu yī", "na segunda-feira"],
     ["cada lunes", "every monday", "每个星期一", "měi gè xīng qī yī", "toda segunda-feira"],
     ["el martes", "on tuesday", "周二", "zhōu èr", "na terça-feira"],
@@ -543,7 +565,7 @@ export const p1_12_months__of__the__year = {
     pinyin: "Yuèfèn",
     portuguese: "Meses do Ano"
   },
-  words: [
+  baseWords: [
     ["enero", "January", "一月", "yí yuè", "janeiro"],
     ["febrero", "February", "二月", "èr yuè", "fevereiro"],
     ["marzo", "March", "三月", "sān yuè", "março"],
@@ -557,7 +579,9 @@ export const p1_12_months__of__the__year = {
     ["noviembre", "November", "十一月", "shí yī yuè", "novembro"],
     ["diciembre", "December", "十二月", "shí èr yuè", "dezembro"],
     ["mes", "month", "月", "yuè", "mês"],
-    ["año", "year", "年", "nián", "ano"],
+    ["año", "year", "年", "nián", "ano"]
+  ],
+  exampleWords: [
     ["primero de enero", "first of January", "一月一日", "yí yuè yī rì", "primeiro de janeiro"],
     ["frío de enero", "January cold", "一月寒冷", "yí yuè hán lěng", "frio de janeiro"],
     ["catorce de febrero", "February fourteenth", "二月十四日", "èr yuè shí sì rì", "14 de fevereiro"],
@@ -597,7 +621,7 @@ export const p1_13_family__members = {
     pinyin: "Jiātíng Chéngyuán",
     portuguese: "Membros da Família"
   },
-  words: [
+  baseWords: [
     ["familia", "family", "家庭", "jiā tíng", "família"],
     ["padre", "father", "父亲", "fù qīn", "pai"],
     ["madre", "mother", "母亲", "mǔ qīn", "mãe"],
@@ -612,7 +636,9 @@ export const p1_13_family__members = {
     ["primo", "cousin", "表哥", "biǎo gē", "primo"],
     ["prima", "cousin", "表姐", "biǎo jiě", "prima"],
     ["esposo", "husband", "丈夫", "zhàng fū", "marido"],
-    ["esposa", "wife", "妻子", "qī zǐ", "esposa"],
+    ["esposa", "wife", "妻子", "qī zǐ", "esposa"]
+  ],
+  exampleWords: [
     ["mi familia", "my family", "我的家人", "wǒ de jiā rén", "minha família"],
     ["la familia", "the family", "家人", "jiā rén", "a família"],
     ["mi padre", "my father", "我的父亲", "wǒ de fù qīn", "meu pai"],
@@ -654,7 +680,7 @@ export const p1_14_body__parts = {
     pinyin: "Shēntǐ Bùwèi",
     portuguese: "Partes do Corpo"
   },
-  words: [
+  baseWords: [
     ["cabeza", "head", "头", "tóu", "cabeça"],
     ["cara", "face", "脸", "liǎn", "face"],
     ["ojo", "eye", "眼睛", "yǎn jīng", "olho"],
@@ -673,7 +699,9 @@ export const p1_14_body__parts = {
     ["estómago", "stomach", "胃", "wèi", "estômago"],
     ["pierna", "leg", "腿", "tuǐ", "perna"],
     ["rodilla", "knee", "膝盖", "xī gài", "joelho"],
-    ["pie", "foot", "脚", "jiǎo", "pé"],
+    ["pie", "foot", "脚", "jiǎo", "pé"]
+  ],
+  exampleWords: [
     ["mi cabeza", "my head", "我的头", "wǒ de tóu", "minha cabeça"],
     ["dolor de cabeza", "headache", "头痛", "tóu tòng", "dor de cabeça"],
     ["tu cara", "your face", "你的脸", "nǐ de liǎn", "seu rosto"],
@@ -723,7 +751,7 @@ export const p1_15_colors = {
     pinyin: "Yánsè",
     portuguese: "Cores"
   },
-  words: [
+  baseWords: [
     ["rojo", "red", "红色的", "hóng sè de", "vermelho"],
     ["azul", "blue", "蓝色的", "lán sè de", "azul"],
     ["verde", "green", "绿色的", "lǜ sè de", "verde"],
@@ -736,7 +764,9 @@ export const p1_15_colors = {
     ["rosa", "pink", "粉色的", "fěn sè de", "rosa"],
     ["morado", "purple", "紫色的", "zǐ sè de", "roxo"],
     ["oscuro", "dark", "黑暗的", "hēi àn de", "escuro"],
-    ["turquesa", "turquoise", "绿松石", "lǜ sōng shí", "turquesa"],
+    ["turquesa", "turquoise", "绿松石", "lǜ sōng shí", "turquesa"]
+  ],
+  exampleWords: [
     ["color rojo", "red", "红色的", "hóng sè de", "vermelho"],
     ["rojo oscuro", "dark red", "深红色", "shēn hóng sè", "vermelho escuro"],
     ["color azul", "blue color", "蓝色", "lán sè", "cor azul"],
@@ -774,7 +804,7 @@ export const p1_16_describing__things__grande__pequeo__bueno = {
     pinyin: "Miáoshù Shìwù",
     portuguese: "Descrever Coisas"
   },
-  words: [
+  baseWords: [
     ["grande", "big", "大的", "dà de", "grande"],
     ["pequeño", "little", "小的", "xiǎo de", "pequeno"],
     ["alto", "high", "高的", "gāo de", "alto"],
@@ -793,7 +823,9 @@ export const p1_16_describing__things__grande__pequeo__bueno = {
     ["rápido", "fast", "快速地", "kuài sù dì", "rápido"],
     ["lento", "slow", "慢的", "màn de", "lento"],
     ["bonito", "pretty", "漂亮的", "piào liàng de", "bonito"],
-    ["feo", "ugly", "丑陋的", "chǒu lòu de", "feio"],
+    ["feo", "ugly", "丑陋的", "chǒu lòu de", "feio"]
+  ],
+  exampleWords: [
     ["casa grande", "big house", "大房子", "dà fáng zi", "casa grande"],
     ["familia grande", "big family", "大家庭", "dà jiā tíng", "grande família"],
     ["desde pequeño", "since childhood", "从小", "cóng xiǎo", "desde a infância"],
@@ -843,7 +875,7 @@ export const p1_17_basic__action__verbs = {
     pinyin: "Jīběn Dòngcí",
     portuguese: "Verbos de Ação Básicos"
   },
-  words: [
+  baseWords: [
     ["venir", "come", "来", "lái", "vir"],
     ["tomar", "take", "拿", "ná", "pegar"],
     ["hablar", "talk", "讲话", "jiǎng huà", "falar"],
@@ -858,7 +890,9 @@ export const p1_17_basic__action__verbs = {
     ["trabajar", "work", "工作", "gōng zuò", "trabalhar"],
     ["ayudar", "help", "帮助", "bāng zhù", "ajuda"],
     ["conversar", "discuss", "讨论", "tǎo lùn", "discutir"],
-    ["limpiar", "clean", "打扫", "dǎ sǎo", "limpar"],
+    ["limpiar", "clean", "打扫", "dǎ sǎo", "limpar"]
+  ],
+  exampleWords: [
     ["venir aquí", "come here", "来这里", "lái zhè lǐ", "venha aqui"],
     ["puede venir", "can come", "可以来", "kě yǐ lái", "pode vir"],
     ["tomar agua", "drink water", "喝水", "hē shuǐ", "beba água"],
@@ -900,7 +934,7 @@ export const p1_18_common__foods = {
     pinyin: "Chángjiàn Shíwù",
     portuguese: "Alimentos Comuns"
   },
-  words: [
+  baseWords: [
     ["comida", "meal", "一顿饭", "yī dùn fàn", "refeição"],
     ["agua", "water", "水", "shuǐ", "água"],
     ["pan", "bread", "面包", "miàn bāo", "pão"],
@@ -920,7 +954,9 @@ export const p1_18_common__foods = {
     ["ensalada", "salad", "沙拉", "shā lā", "salada"],
     ["tomate", "tomato", "番茄", "fān qié", "tomate"],
     ["patatas", "potatoes", "土豆", "tǔ dòu", "batatas"],
-    ["galleta", "cookie", "曲奇饼", "qū qí bǐng", "biscoito"],
+    ["galleta", "cookie", "曲奇饼", "qū qí bǐng", "biscoito"]
+  ],
+  exampleWords: [
     ["buena comida", "good food", "好吃的食物", "hǎo chī de shí wù", "boa comida"],
     ["la comida", "the food", "食物", "shí wù", "a comida"],
     ["el agua", "the water", "水", "shuǐ", "a água"],
@@ -972,7 +1008,7 @@ export const p1_19_house__rooms = {
     pinyin: "Fángjiān",
     portuguese: "Cômodos da Casa"
   },
-  words: [
+  baseWords: [
     ["casa", "home", "家", "jiā", "lar"],
     ["apartamento", "apartment", "公寓", "gōng yù", "apartamento"],
     ["habitación", "room", "房间", "fáng jiān", "sala"],
@@ -987,7 +1023,9 @@ export const p1_19_house__rooms = {
     ["techo", "ceiling", "天花板", "tiān huā bǎn", "teto"],
     ["suelo", "floor", "地面", "dì miàn", "chão"],
     ["escaleras", "stairs", "楼梯", "lóu tī", "escadaria"],
-    ["garaje", "garage", "车库", "chē kù", "garagem"],
+    ["garaje", "garage", "车库", "chē kù", "garagem"]
+  ],
+  exampleWords: [
     ["mi casa", "my house", "我的房子", "wǒ de fáng zi", "minha casa"],
     ["en casa", "at home", "在家里", "zài jiā lǐ", "em casa"],
     ["el apartamento", "the apartment", "公寓", "gōng yù", "o apartamento"],
@@ -1029,7 +1067,7 @@ export const p1_20_making__doing__hacer = {
     pinyin: "Zhìzuò yǔ Zuò (hacer)",
     portuguese: "Fazer"
   },
-  words: [
+  baseWords: [
     ["hacer", "do", "做", "zuò", "fazer"],
     ["hago", "do", "做", "zuò", "fazer"],
     ["haces", "you do", "你做", "nǐ zuò", "você faz"],
@@ -1046,7 +1084,9 @@ export const p1_20_making__doing__hacer = {
     ["caso", "case", "案件", "àn jiàn", "caso"],
     ["daño", "damage", "损害", "sǔn hài", "dano"],
     ["ruido", "noise", "噪音", "zào yīn", "barulho"],
-    ["esfuerzo", "effort", "努力", "nǔ lì", "esforço"],
+    ["esfuerzo", "effort", "努力", "nǔ lì", "esforço"]
+  ],
+  exampleWords: [
     ["voy a hacer", "I'm going to do", "我要做", "wǒ yào zuò", "eu vou fazer"],
     ["puedo hacer", "I can do", "我可以做", "wǒ kě yǐ zuò", "eu posso fazer"],
     ["yo hago", "I do", "我做", "wǒ zuò", "eu faço"],
@@ -1092,7 +1132,7 @@ export const p1_21_going__places__ir = {
     pinyin: "Qù Dìfang (ir)",
     portuguese: "Ir a Lugares"
   },
-  words: [
+  baseWords: [
     ["ir", "go", "去", "qù", "ir"],
     ["voy", "go", "去", "qù", "ir"],
     ["vas", "you go", "你去", "nǐ qù", "você vai"],
@@ -1107,7 +1147,9 @@ export const p1_21_going__places__ir = {
     ["paseo", "walk", "走", "zǒu", "andar"],
     ["visita", "visit", "访问", "fǎng wèn", "visita"],
     ["excursión", "excursion", "游览", "yóu lǎn", "excursão"],
-    ["trayecto", "journey", "旅行", "lǚ xíng", "jornada"],
+    ["trayecto", "journey", "旅行", "lǚ xíng", "jornada"]
+  ],
+  exampleWords: [
     ["vamos a ir", "let's go", "我们走吧", "wǒ men zǒu ba", "vamos"],
     ["quiero ir", "I want to go", "我想去", "wǒ xiǎng qù", "eu quero ir"],
     ["yo voy", "I'm coming", "我来了", "wǒ lái le", "Estou chegando"],
@@ -1149,7 +1191,7 @@ export const p1_22_numbers__1120 = {
     pinyin: "Shùzì 11-20",
     portuguese: "Números 11-20"
   },
-  words: [
+  baseWords: [
     ["once", "eleven", "十一", "shí yī", "onze"],
     ["doce", "twelve", "十二", "shí èr", "doze"],
     ["trece", "thirteen", "十三", "shí sān", "treze"],
@@ -1159,7 +1201,9 @@ export const p1_22_numbers__1120 = {
     ["diecisiete", "seventeen", "十七", "shí qī", "dezessete"],
     ["dieciocho", "eighteen", "十八", "shí bā", "dezoito"],
     ["diecinueve", "nineteen", "十九", "shí jiǔ", "dezenove"],
-    ["veinte", "twenty", "二十", "èr shí", "vinte"],
+    ["veinte", "twenty", "二十", "èr shí", "vinte"]
+  ],
+  exampleWords: [
     ["las once", "eleven", "十一", "shí yī", "onze"],
     ["a las once", "at eleven", "十一点", "shí yì diǎn", "às onze"],
     ["las doce", "twelve", "十二", "shí èr", "doze"],
@@ -1191,7 +1235,7 @@ export const p1_23_extended__family = {
     pinyin: "Dà Jiātíng",
     portuguese: "Família Estendida"
   },
-  words: [
+  baseWords: [
     ["novio", "boyfriend", "男朋友", "nán péng yǒu", "namorado"],
     ["novia", "girlfriend", "女朋友", "nǚ péng yǒu", "namorada"],
     ["marido", "husband", "丈夫", "zhàng fū", "marido"],
@@ -1206,7 +1250,9 @@ export const p1_23_extended__family = {
     ["abuelos", "grandparents", "祖父母", "zǔ fù mǔ", "avós"],
     ["nietos", "grandchildren", "孙子", "sūn zi", "netos"],
     ["pariente", "relative", "亲戚", "qīn qī", "parente"],
-    ["parienta", "kinswoman", "亲戚女人", "qīn qī nǚ rén", "parenta"],
+    ["parienta", "kinswoman", "亲戚女人", "qīn qī nǚ rén", "parenta"]
+  ],
+  exampleWords: [
     ["mi novio", "my boyfriend", "我的男朋友", "wǒ de nán péng yǒu", "meu namorado"],
     ["su novio", "her boyfriend", "她的男朋友", "tā de nán péng yǒu", "o namorado dela"],
     ["mi novia", "my girlfriend", "我的女友", "wǒ de nǚ yǒu", "minha namorada"],
@@ -1248,7 +1294,7 @@ export const p1_24_emotions__feelings = {
     pinyin: "Qínggǎn",
     portuguese: "Emoções e Sentimentos"
   },
-  words: [
+  baseWords: [
     ["feliz", "happy", "快乐的", "kuài lè de", "feliz"],
     ["triste", "sad", "伤心", "shāng xīn", "triste"],
     ["enojado", "angry", "生气的", "shēng qì de", "nervoso"],
@@ -1264,7 +1310,9 @@ export const p1_24_emotions__feelings = {
     ["frustrado", "frustrated", "沮丧的", "jǔ sàng de", "frustrado"],
     ["avergonzado", "ashamed", "羞愧", "xiū kuì", "envergonhado"],
     ["aliviado", "relieved", "松了口气", "sōng le kǒu qì", "aliviado"],
-    ["satisfecho", "satisfied", "使满意", "shǐ mǎn yì", "satisfeito"],
+    ["satisfecho", "satisfied", "使满意", "shǐ mǎn yì", "satisfeito"]
+  ],
+  exampleWords: [
     ["cumpleaños feliz", "happy birthday", "生日快乐", "shēng rì kuài lè", "feliz aniversário"],
     ["vida feliz", "happy life", "幸福生活", "xìng fú shēng huó", "vida feliz"],
     ["me pone triste", "it makes me sad", "这让我很难过", "zhè ràng wǒ hěn nán guò", "isso me deixa triste"],
@@ -1308,7 +1356,7 @@ export const p1_25_time__words__hoy__ayer__maana = {
     pinyin: "Shíjiān Cí",
     portuguese: "Palavras de Tempo"
   },
-  words: [
+  baseWords: [
     ["hoy", "today", "今天", "jīn tiān", "hoje"],
     ["ayer", "yesterday", "昨天", "zuó tiān", "ontem"],
     ["mañana", "tomorrow", "明天", "míng tiān", "amanhã"],
@@ -1323,7 +1371,9 @@ export const p1_25_time__words__hoy__ayer__maana = {
     ["ya", "already", "已经", "yǐ jīng", "já"],
     ["temprano", "early", "早", "zǎo", "cedo"],
     ["vez", "time", "时间", "shí jiān", "tempo"],
-    ["pronto", "soon", "很快", "hěn kuài", "breve"],
+    ["pronto", "soon", "很快", "hěn kuài", "breve"]
+  ],
+  exampleWords: [
     ["hoy mismo", "today", "今天", "jīn tiān", "hoje"],
     ["para hoy", "for today", "今天", "jīn tiān", "por hoje"],
     ["desde ayer", "since yesterday", "从昨天开始", "cóng zuó tiān kāi shǐ", "desde ontem"],
@@ -1365,7 +1415,7 @@ export const p1_26_clothing = {
     pinyin: "Yīfu",
     portuguese: "Roupas"
   },
-  words: [
+  baseWords: [
     ["ropa", "clothes", "衣服", "yī fú", "roupas"],
     ["camisa", "shirt", "衬衫", "chèn shān", "camisa"],
     ["camiseta", "t-shirt", "T恤", "T xù", "camiseta"],
@@ -1380,7 +1430,9 @@ export const p1_26_clothing = {
     ["gorra", "cap", "帽", "mào", "boné"],
     ["guantes", "gloves", "手套", "shǒu tào", "luvas"],
     ["cinturón", "belt", "腰带", "yāo dài", "cinto"],
-    ["corbata", "tie", "领带", "lǐng dài", "gravata"],
+    ["corbata", "tie", "领带", "lǐng dài", "gravata"]
+  ],
+  exampleWords: [
     ["tienda de ropa", "clothing store", "服装店", "fú zhuāng diàn", "loja de roupas"],
     ["cambiar de ropa", "change clothes", "换衣服", "huàn yī fú", "trocar de roupa"],
     ["camisa de manga larga", "long sleeve shirt", "长袖衬衫", "cháng xiù chèn shān", "camisa de manga longa"],
@@ -1422,7 +1474,7 @@ export const p1_27_daily__activities = {
     pinyin: "Rìcháng Huódòng",
     portuguese: "Atividades Diárias"
   },
-  words: [
+  baseWords: [
     ["como", "as", "作为", "zuò wéi", "como"],
     ["bebo", "I drink", "我喝", "wǒ hē", "eu bebo"],
     ["madrugo", "early riser", "早起者", "zǎo qǐ zhě", "madrugador"],
@@ -1437,7 +1489,9 @@ export const p1_27_daily__activities = {
     ["merienda", "snack", "小吃", "xiǎo chī", "lanche"],
     ["corro", "I run", "我跑", "wǒ pǎo", "eu corro"],
     ["arreglo", "arrangement", "安排", "ān pái", "arranjo"],
-    ["platico", "I talk", "我说话", "wǒ shuō huà", "eu falo"],
+    ["platico", "I talk", "我说话", "wǒ shuō huà", "eu falo"]
+  ],
+  exampleWords: [
     ["yo como", "I eat", "我吃", "wǒ chī", "eu como"],
     ["como bien", "I eat well", "我吃得好", "wǒ chī dé hǎo", "eu como bem"],
     ["yo bebo", "I drink", "我喝", "wǒ hē", "eu bebo"],
@@ -1479,7 +1533,7 @@ export const p1_28_city__places = {
     pinyin: "Chéngshì Dìdiǎn",
     portuguese: "Lugares da Cidade"
   },
-  words: [
+  baseWords: [
     ["ciudad", "city", "城市", "chéng shì", "cidade"],
     ["pueblo", "town", "镇", "zhèn", "cidade"],
     ["calle", "street", "街道", "jiē dào", "rua"],
@@ -1499,7 +1553,9 @@ export const p1_28_city__places = {
     ["biblioteca", "library", "图书馆", "tú shū guǎn", "biblioteca"],
     ["museo", "museum", "博物馆", "bó wù guǎn", "museu"],
     ["cine", "cinema", "电影院", "diàn yǐng yuàn", "cinema"],
-    ["terminal", "terminal", "终端", "zhōng duān", "terminal"],
+    ["terminal", "terminal", "终端", "zhōng duān", "terminal"]
+  ],
+  exampleWords: [
     ["la ciudad", "the city", "城市", "chéng shì", "a cidade"],
     ["en la ciudad", "in the city", "在城市里", "zài chéng shì lǐ", "na cidade"],
     ["el pueblo", "the town", "镇", "zhèn", "a cidade"],
@@ -1551,7 +1607,7 @@ export const p1_29_transportation = {
     pinyin: "Jiāotōng",
     portuguese: "Transporte"
   },
-  words: [
+  baseWords: [
     ["coche", "car", "车", "chē", "carro"],
     ["autobús", "bus", "公共汽车", "gōng gòng qì chē", "ônibus"],
     ["tren", "train", "火车", "huǒ chē", "trem"],
@@ -1566,7 +1622,9 @@ export const p1_29_transportation = {
     ["tranvía", "tram", "电车", "diàn chē", "eléctrico"],
     ["ferry", "ferry", "渡船", "dù chuán", "balsa"],
     ["helicóptero", "helicopter", "直升机", "zhí shēng jī", "helicóptero"],
-    ["patinete", "scooter", "小型摩托车", "xiǎo xíng mó tuō chē", "scooter"],
+    ["patinete", "scooter", "小型摩托车", "xiǎo xíng mó tuō chē", "scooter"]
+  ],
+  exampleWords: [
     ["el coche", "the car", "汽车", "qì chē", "o carro"],
     ["en coche", "by car", "开车", "kāi chē", "de carro"],
     ["el autobús", "the bus", "公交车", "gōng jiāo chē", "o ônibus"],
@@ -1608,7 +1666,7 @@ export const p1_30_numbers__21100 = {
     pinyin: "Shùzì 21-100",
     portuguese: "Números 21-100"
   },
-  words: [
+  baseWords: [
     ["veintiún", "twenty one", "二十一", "èr shí yī", "vinte e um"],
     ["veintidós", "twenty two", "二十二", "èr shí èr", "vinte e dois"],
     ["veintitrés", "twenty three", "二十三", "èr shí sān", "vinte e três"],
@@ -1625,7 +1683,9 @@ export const p1_30_numbers__21100 = {
     ["setenta", "seventy", "七十", "qī shí", "setenta"],
     ["ochenta", "eighty", "八十", "bā shí", "oitenta"],
     ["noventa", "ninety", "九十", "jiǔ shí", "noventa"],
-    ["cien", "hundred", "百", "bǎi", "cem"],
+    ["cien", "hundred", "百", "bǎi", "cem"]
+  ],
+  exampleWords: [
     ["veintiún años", "twenty one years", "二十一年", "èr shí yī nián", "vinte e um anos"],
     ["solo veintiún", "only twenty one", "只有二十一个", "zhǐ yǒu èr shí yí gè", "apenas vinte e um"],
     ["veintidós años", "twenty two years", "二十二年", "èr shí èr nián", "vinte e dois anos"],

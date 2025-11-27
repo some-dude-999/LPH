@@ -94,9 +94,10 @@ def sanitize_for_variable_name(name):
 
 
 def read_overview_csv():
-    """Read overview CSV and return pack-to-act mapping"""
+    """Read overview CSV and return pack-to-act mapping + base/example word counts"""
     pack_to_act = {}
     pack_titles = {}
+    pack_word_counts = {}  # New: stores base/example word counts
 
     with open(OVERVIEW_CSV, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -105,18 +106,40 @@ def read_overview_csv():
             pack_to_act[pack_num] = row['Difficulty_Act']
             pack_titles[pack_num] = row['Pack_Title']
 
-    return pack_to_act, pack_titles
+            # Parse base and example word arrays to get counts
+            base_words_str = row.get('Chinese_Base_Words', '[]')
+            example_words_str = row.get('Chinese_Example_Words', '[]')
+
+            # Parse arrays (format is [item1,item2,item3] - not valid JSON)
+            # Strip brackets and split on commas
+            base_words = []
+            example_words = []
+
+            if base_words_str and base_words_str != '[]':
+                base_words_str = base_words_str.strip('[]')
+                base_words = [w.strip() for w in base_words_str.split(',')]
+
+            if example_words_str and example_words_str != '[]':
+                example_words_str = example_words_str.strip('[]')
+                example_words = [w.strip() for w in example_words_str.split(',')]
+
+            pack_word_counts[pack_num] = {
+                'base_count': len(base_words),
+                'example_count': len(example_words)
+            }
+
+    return pack_to_act, pack_titles, pack_word_counts
 
 
-def read_pack_csv(pack_number):
-    """Read individual pack CSV and return words array"""
+def read_pack_csv(pack_number, base_count, example_count):
+    """Read individual pack CSV and return baseWords and exampleWords arrays"""
     csv_file = CSV_DIR / f"ChineseWords{pack_number}.csv"
 
     if not csv_file.exists():
         print(f"WARNING: {csv_file} not found, skipping...")
-        return []
+        return [], []
 
-    words = []
+    all_words = []
     with open(csv_file, 'r', encoding='utf-8') as f:
         reader = csv.reader(f)
         next(reader)  # Skip header
@@ -124,9 +147,13 @@ def read_pack_csv(pack_number):
         for row in reader:
             if len(row) >= 12:
                 # Row format: [chinese, pinyin, english, spanish, french, portuguese, vietnamese, thai, khmer, indonesian, malay, filipino]
-                words.append(row[:12])
+                all_words.append(row[:12])
 
-    return words
+    # Split into base and example words
+    base_words = all_words[:base_count]
+    example_words = all_words[base_count:base_count + example_count]
+
+    return base_words, example_words
 
 
 def create_clean_js_file(act_name, act_number, packs_data):
@@ -161,16 +188,29 @@ def create_clean_js_file(act_name, act_number, packs_data):
 
         output_lines[-1] = output_lines[-1].rstrip(',')  # Remove trailing comma
         output_lines.append("  },")
-        output_lines.append("  words: [")
 
-        # Words array
-        for word_row in pack_data['words']:
+        # Base words array
+        output_lines.append("  baseWords: [")
+        for word_row in pack_data['baseWords']:
             # Escape quotes in strings
             escaped_row = [w.replace('"', '\\"') for w in word_row]
             word_str = '", "'.join(escaped_row)
             output_lines.append(f'    ["{word_str}"],')
 
-        output_lines[-1] = output_lines[-1].rstrip(',')  # Remove trailing comma
+        if pack_data['baseWords']:
+            output_lines[-1] = output_lines[-1].rstrip(',')  # Remove trailing comma
+        output_lines.append("  ],")
+
+        # Example words array
+        output_lines.append("  exampleWords: [")
+        for word_row in pack_data['exampleWords']:
+            # Escape quotes in strings
+            escaped_row = [w.replace('"', '\\"') for w in word_row]
+            word_str = '", "'.join(escaped_row)
+            output_lines.append(f'    ["{word_str}"],')
+
+        if pack_data['exampleWords']:
+            output_lines[-1] = output_lines[-1].rstrip(',')  # Remove trailing comma
         output_lines.append("  ]")
         output_lines.append("};\n")
 
@@ -230,14 +270,14 @@ def main():
     print("Chinese Words CSV to JavaScript Converter")
     print("=" * 80)
 
-    # Read overview to get pack-to-act mapping
+    # Read overview to get pack-to-act mapping and word counts
     print("\n[1/5] Reading overview CSV...")
-    pack_to_act, pack_titles = read_overview_csv()
+    pack_to_act, pack_titles, pack_word_counts = read_overview_csv()
     print(f"      Found {len(pack_to_act)} packs across {len(set(pack_to_act.values()))} acts")
 
     # Group packs by act
     print("\n[2/5] Reading individual pack CSVs and grouping by act...")
-    acts_data = {}  # act_name -> {pack_var_name: {meta, words}}
+    acts_data = {}  # act_name -> {pack_var_name: {meta, baseWords, exampleWords}}
 
     for pack_num in range(1, 108):
         if pack_num not in pack_to_act:
@@ -254,9 +294,14 @@ def main():
             print(f"      WARNING: Unknown act '{difficulty_act}' for pack {pack_num}")
             continue
 
-        # Read pack words
-        words = read_pack_csv(pack_num)
-        if not words:
+        # Get word counts
+        word_counts = pack_word_counts.get(pack_num, {'base_count': 0, 'example_count': 0})
+        base_count = word_counts['base_count']
+        example_count = word_counts['example_count']
+
+        # Read pack words (split into base and example)
+        base_words, example_words = read_pack_csv(pack_num, base_count, example_count)
+        if not base_words and not example_words:
             continue
 
         # Create pack variable name: p{actNum}_{packNum}_{sanitizedTitle}
@@ -286,10 +331,11 @@ def main():
 
         acts_data[act_filename][pack_var_name] = {
             'meta': {'wordpack': pack_num, **meta_titles},
-            'words': words
+            'baseWords': base_words,
+            'exampleWords': example_words
         }
 
-        print(f"      Pack {pack_num:3d}: {pack_title:40s} -> {pack_var_name}")
+        print(f"      Pack {pack_num:3d}: {pack_title:40s} -> {pack_var_name} (base: {len(base_words)}, ex: {len(example_words)})")
 
     # Create output directories
     print("\n[3/5] Creating output directories...")
