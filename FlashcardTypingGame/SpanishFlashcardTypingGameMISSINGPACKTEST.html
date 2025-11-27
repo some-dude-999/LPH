@@ -2007,47 +2007,48 @@
     }
 
     // ============================================================
-    // MODULE CONFIGURATION - Single source of truth for all language data
+    // MODULE URLS - Only URLs here, ALL other config comes from modules
     // ============================================================
-    // This config defines:
-    //   1. acts: Module URLs to load (if deleted, nothing loads)
-    //   2. translations: Available "I speak" languages with column indices
-    //   3. defaultTranslation: Default "I speak" language
-    //
-    // IMPORTANT: All dropdown data comes from this config, NOT hardcoded HTML
+    // IMPORTANT: If these URLs don't load, NOTHING about the game loads.
+    // Act names, translations, word columns - all come from __actMeta in modules.
     // ============================================================
-    const LANGUAGE_MODULES = {
-      spanish: {
-        acts: [
-          { act: 1, name: 'Foundation', url: '' },
-          { act: 2, name: 'Building Blocks', url: '' },
-          { act: 3, name: 'Daily Life', url: '' },
-          { act: 4, name: 'Expanding Expression', url: '' },
-          { act: 5, name: 'Intermediate Mastery', url: '' },
-          { act: 6, name: 'Advanced Constructs', url: '' },
-          { act: 7, name: 'Mastery & Fluency', url: '' }
-        ],
-        // Translation column mapping: key=language code, index=column in word array, display=UI label
-        // Word array structure: [spanish, english, chinese, pinyin, portuguese]
-        translations: {
-          english: { index: 1, display: 'English' },
-          chinese: { index: 2, display: '中文' },
-          portuguese: { index: 4, display: 'Português' }
-        },
-        defaultTranslation: 'english'
-      }
-    };
-
-    // Current language (change this to switch between languages)
-    const CURRENT_LANGUAGE = 'spanish';
-
-    // Helper to get current language config
-    function getLanguageConfig() {
-      return LANGUAGE_MODULES[CURRENT_LANGUAGE];
-    }
+    // TEST FILE: Empty URLs to test missing module behavior
+    const MODULE_URLS = [
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      ''
+    ];
 
     let wordpacks = {}; // All loaded wordpacks
     let loadedActs = {}; // Track which acts have been loaded
+    let loadedActMeta = {}; // Store __actMeta from each loaded act
+
+    // Helper to get translations config from first loaded act's __actMeta
+    function getTranslationsConfig() {
+      // Find first loaded act that has __actMeta
+      for (const actNum of Object.keys(loadedActMeta)) {
+        const meta = loadedActMeta[actNum];
+        if (meta && meta.translations) {
+          return meta.translations;
+        }
+      }
+      return null; // No modules loaded yet
+    }
+
+    // Helper to get default translation from loaded metadata
+    function getDefaultTranslation() {
+      for (const actNum of Object.keys(loadedActMeta)) {
+        const meta = loadedActMeta[actNum];
+        if (meta && meta.defaultTranslation) {
+          return meta.defaultTranslation;
+        }
+      }
+      return 'english'; // Fallback
+    }
     let currentDeck = [];
     let originalDeck = [];
     let currentIndex = 0;
@@ -2056,9 +2057,10 @@
     let currentSpeed = 0.6; // Default to normal speed
     const VALID_SPEEDS = [0.3, 0.6, 0.9]; // Valid speed options (must match data-speed values in HTML)
 
-    // Helper to get valid languages from config (for validation)
+    // Helper to get valid languages from loaded metadata (for validation)
     function getValidLanguages() {
-      return Object.keys(getLanguageConfig().translations);
+      const translations = getTranslationsConfig();
+      return translations ? Object.keys(translations) : [];
     }
 
     // ===================================================================================
@@ -2214,7 +2216,7 @@
       }
     }
 
-    let nativeLanguage = getLanguageConfig().defaultTranslation; // Default from config
+    let nativeLanguage = 'english'; // Default, will be updated from loaded module metadata
     let gameStarted = false;
     let currentWordpackKey = '';
     let currentVoice = null;
@@ -3248,22 +3250,31 @@
         return loadedActs[actNumber];
       }
 
-      const acts = getLanguageConfig().acts;
-      const actConfig = acts.find(m => m.act === actNumber);
+      // Get URL from MODULE_URLS array (actNumber is 1-indexed)
+      const url = MODULE_URLS[actNumber - 1];
 
-      if (!actConfig) {
-        throw new Error(`Act ${actNumber} not found for language ${CURRENT_LANGUAGE}`);
+      if (!url) {
+        throw new Error(`Act ${actNumber} URL not found in MODULE_URLS`);
       }
 
       try {
-        console.log(`Loading act ${actNumber}: ${actConfig.name}...`);
-        const actData = await decodeObfuscatedModule(actConfig.url);
+        console.log(`Loading act ${actNumber}...`);
+        const actData = await decodeObfuscatedModule(url);
+
+        // Extract and store __actMeta (contains actName, translations, etc.)
+        if (actData.__actMeta) {
+          loadedActMeta[actNumber] = actData.__actMeta;
+          console.log(`Act ${actNumber} metadata:`, actData.__actMeta.actName);
+        }
+
         loadedActs[actNumber] = actData;
 
-        // Merge into wordpacks
-        Object.assign(wordpacks, actData);
+        // Merge into wordpacks (excluding __actMeta)
+        const packsOnly = { ...actData };
+        delete packsOnly.__actMeta;
+        Object.assign(wordpacks, packsOnly);
 
-        console.log(`Act ${actNumber} loaded successfully:`, Object.keys(actData).length, 'packs');
+        console.log(`Act ${actNumber} loaded successfully:`, Object.keys(packsOnly).length, 'packs');
         return actData;
       } catch (error) {
         console.error(`Failed to load act ${actNumber}:`, error);
@@ -3272,7 +3283,7 @@
     }
 
     // Populate act selector dropdown
-    // KEY FEATURE: Uses saved state first, only defaults to first act if no saved state
+    // KEY FEATURE: Act names come from loaded module __actMeta, not inline config
     function populateActSelector(targetElement = null) {
       // Use provided element or find menu-act element
       const selectElement = targetElement || document.getElementById('menu-act');
@@ -3282,30 +3293,37 @@
       }
 
       selectElement.innerHTML = '';
-      const acts = getLanguageConfig().acts;
 
-      acts.forEach(actConfig => {
+      // Get act numbers from loadedActMeta (populated when modules are loaded)
+      const actNumbers = Object.keys(loadedActMeta).map(Number).sort((a, b) => a - b);
+
+      if (actNumbers.length === 0) {
+        console.warn('[populateActSelector] No acts loaded yet');
+        return;
+      }
+
+      actNumbers.forEach(actNum => {
+        const meta = loadedActMeta[actNum];
         const option = document.createElement('option');
-        option.value = actConfig.act;
-        option.textContent = `Act ${actConfig.act}: ${actConfig.name}`;
+        option.value = actNum;
+        option.textContent = `Act ${actNum}: ${meta.actName}`;
         selectElement.appendChild(option);
       });
 
       // Use saved act if valid, otherwise default to first act
-      const validActs = acts.map(m => m.act);
-      if (currentAct && validActs.includes(currentAct)) {
+      if (currentAct && actNumbers.includes(currentAct)) {
         // Saved act is valid - use it
         selectElement.value = currentAct;
-      } else if (acts.length > 0) {
+      } else if (actNumbers.length > 0) {
         // No saved act or invalid - default to first
-        selectElement.value = acts[0].act;
-        currentAct = acts[0].act;
+        selectElement.value = actNumbers[0];
+        currentAct = actNumbers[0];
         saveState(); // Save the default
       }
     }
 
-    // Populate "I speak" language selector from config
-    // KEY FEATURE: Languages come from LANGUAGE_MODULES config, not hardcoded HTML
+    // Populate "I speak" language selector from loaded module metadata
+    // KEY FEATURE: Languages come from __actMeta.translations in loaded modules
     function populateLanguageSelector(targetElement = null) {
       const selectElement = targetElement || document.getElementById('menu-language');
       if (!selectElement) {
@@ -3314,7 +3332,12 @@
       }
 
       selectElement.innerHTML = '';
-      const translations = getLanguageConfig().translations;
+      const translations = getTranslationsConfig();
+
+      if (!translations) {
+        console.warn('[populateLanguageSelector] No translations loaded yet');
+        return;
+      }
 
       Object.entries(translations).forEach(([langCode, langConfig]) => {
         const option = document.createElement('option');
@@ -3324,12 +3347,12 @@
       });
 
       // Use saved language if valid, otherwise default
-      const validLanguages = getValidLanguages();
+      const validLanguages = Object.keys(translations);
       if (nativeLanguage && validLanguages.includes(nativeLanguage)) {
         selectElement.value = nativeLanguage;
       } else {
-        // Invalid or no saved language - use default from config
-        nativeLanguage = getLanguageConfig().defaultTranslation;
+        // Invalid or no saved language - use default from loaded metadata
+        nativeLanguage = getDefaultTranslation();
         selectElement.value = nativeLanguage;
         saveState();
       }
@@ -3453,15 +3476,15 @@
       setupChineseDisplayOptions();
 
       try {
-        // First, determine the first act from language modules
-        const acts = getLanguageConfig().acts;
-        if (acts.length > 0) {
-          currentAct = acts[0].act;
+        // First act is 1 (MODULE_URLS is 0-indexed, act numbers are 1-indexed)
+        if (MODULE_URLS.length > 0) {
+          currentAct = 1;
         }
 
-        // Load first act data BEFORE rendering menu
-        if (currentAct) {
-          await loadAct(currentAct);
+        // Load ALL acts to get their metadata for dropdowns
+        // (act names and translations come from __actMeta in each module)
+        for (let actNum = 1; actNum <= MODULE_URLS.length; actNum++) {
+          await loadAct(actNum);
         }
 
         // Remember which act we initially loaded
@@ -3578,10 +3601,11 @@
       // Kept for compatibility with existing code that calls it
       if (!backLabel) return;
 
-      // Get display label from config
-      const translations = getLanguageConfig().translations;
+      // Get display label from loaded module metadata
+      const translations = getTranslationsConfig();
+      if (!translations) return;
       const langConfig = translations[nativeLanguage];
-      backLabel.textContent = langConfig ? langConfig.display : translations[getLanguageConfig().defaultTranslation].display;
+      backLabel.textContent = langConfig ? langConfig.display : translations[getDefaultTranslation()].display;
     }
 
     // Shuffle array (Fisher-Yates algorithm)
@@ -3613,10 +3637,14 @@
       }
 
       const pack = wordpacks[packKey];
-      // Get translation column index from config
-      const translations = getLanguageConfig().translations;
+      // Get translation column index from loaded module metadata
+      const translations = getTranslationsConfig();
+      if (!translations) {
+        console.error('[initializeDeck] No translations loaded');
+        return;
+      }
       const langConfig = translations[nativeLanguage];
-      const nativeIndex = langConfig ? langConfig.index : translations[getLanguageConfig().defaultTranslation].index;
+      const nativeIndex = langConfig ? langConfig.index : translations[getDefaultTranslation()].index;
 
       // ============================================================
       // CHINESE PINYIN COUPLING
