@@ -39,3 +39,11 @@ english,143,55,pinyin,jí tǐ zhǔ yì  vs,jí tǐ zhǔ yì vs,Contains multiple
 english,151,18,pinyin,qiú zài nǐ de qiú chǎng shàng suǒ yǐ jué dìng,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
 english,151,34,pinyin,bù guò qǐng chí bǎo liú tài dù,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
 english,151,44,pinyin,guī gēn jié dǐ tā,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
+english,21,20,chinese,谎言,躺,Wrong meaning: 谎言=falsehood but context (daily actions) = lie down (躺)
+english,21,20,pinyin,huǎng yán,tǎng,Wrong meaning: matches falsehood not lie down (see row 58: lie down=躺下)
+english,21,20,spanish,mentira,acostarse,Wrong meaning: mentira=falsehood but context = lie down (see row 58)
+english,21,20,portuguese,mentira,deitar,Wrong meaning: mentira=falsehood but context = lie down (see row 58)
+english,50,21,chinese,礼篮,洗衣篮,Wrong meaning: 礼篮=gift basket but context (bathroom) = laundry basket (see row 60)
+english,50,21,pinyin,lǐ lán,xǐ yī lán,Wrong meaning: matches gift basket not laundry basket (see row 60: laundry hamper=洗衣篮)
+english,50,21,spanish,cesta,cesto de ropa sucia,Too generic: cesta=basket but context = laundry basket (see row 60)
+english,50,21,portuguese,dificultar,cesto de roupa suja,Wrong word class: dificultar=verb (to hinder) but hamper=noun (basket) (see row 60)
