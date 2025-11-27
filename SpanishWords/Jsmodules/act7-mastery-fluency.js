@@ -666,13 +666,13 @@ export const p7_233_cryptocurrency__terms = {
     ["exchange", "exchange", "交换", "jiāo huàn", "troca"],
     ["clave", "key", "关键", "guān jiàn", "chave"],
     ["hash", "hashes", "哈希值", "hā xī zhí", "hash"],
-    ["minar", "mine", "我的", "wǒ de", "meu"],
+    ["minar", "mine", "挖矿", "wǒ de", "minerar"],
     ["bull", "bull", "公牛", "gōng niú", "touro"],
     ["descentralización", "decentralization", "权力下放", "quán lì xià fàng", "descentralização"],
     ["altcoin", "altcoin", "山寨币", "shān zhài bì", "altcoin"],
     ["staking", "staking", "质押", "zhì yā", "piquetagem"],
     ["defi", "defi", "去中心化金融", "qù zhōng xīn huà jīn róng", "definição"],
-    ["nft", "nft", "nft", "nft", "nft"]
+    ["nft", "nft", "NFT", "NFT", "nft"]
   ],
   exampleWords: [
     ["la criptomoneda", "the cryptocurrency", "加密货币", "jiā mì huò bì", "a criptomoeda"],
@@ -698,7 +698,7 @@ export const p7_233_cryptocurrency__terms = {
     ["el hash", "the hash", "哈希", "hā xī", "o hash"],
     ["un hash", "a hash", "哈希", "hā xī", "um hash"],
     ["hay que minar", "you have to mine", "你必须开采", "nǐ bì xū kāi cǎi", "você tem que minerar"],
-    ["voy a minar", "I'm going to mine", "我要去我的", "wǒ yào qù wǒ de", "Vou para o meu"],
+    ["voy a minar", "I'm going to mine", "我要去挖矿", "wǒ yào qù wǒ de", "Vou minerar"],
     ["el bull", "the bull", "公牛", "gōng niú", "o touro"],
     ["mercado bull", "bull market", "牛市", "niú shì", "mercado altista"],
     ["la descentralización", "decentralization", "权力下放", "quán lì xià fàng", "descentralização"],
@@ -709,8 +709,8 @@ export const p7_233_cryptocurrency__terms = {
     ["con staking", "with staking", "与质押", "yǔ zhì yā", "com piquetagem"],
     ["el defi", "the defi", "去中心化金融", "qù zhōng xīn huà jīn róng", "a definição"],
     ["de defi", "defi", "去中心化金融", "qù zhōng xīn huà jīn róng", "definição"],
-    ["el nft", "the nft", "nft", "nft", "o nft"],
-    ["un nft", "an nft", "一个nft", "yí gè nft", "um NFT"]
+    ["el nft", "the nft", "NFT", "NFT", "o nft"],
+    ["un nft", "an nft", "一个NFT", "yí gè NFT", "um NFT"]
   ]
 };
 

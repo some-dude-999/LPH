@@ -419,8 +419,8 @@ export const p4_59_describing__situations = {
     ["要改变", "yào gǎi biàn", "To change", "Para cambiar", "Pour changer", "Para mudar", "Để thay đổi", "หากต้องการเปลี่ยน", "មានការផ្លាស់ប្តូរ", "Untuk mengubah", "Untuk menukar", "Upang baguhin"],
     ["转变了", "zhuǎn biàn le", "Changed", "Cambiado", "Modifié", "Alterado", "Đã thay đổi", "เปลี่ยนแล้ว", "| កាន់តែអាក្រក់ទៅ ៗ", "Berubah", "Berubah", "Nagbago"],
     ["有转变", "yǒu zhuǎn biàn", "There is a change", "Hay un cambio", "Il y a un changement", "Há uma mudança", "Có sự thay đổi", "มีการเปลี่ยนแปลง", "ស្ថានភាពកាន់តែអាក្រក់ទៅ ៗ", "Ada perubahan", "Terdapat perubahan", "May pagbabago"],
-    ["恶化了", "è huà le", "Worsened", "Empeorado", "Aggravé", "Piorou", "Xấu đi", "แย่ลง", "[TRANSLATE_KM]", "Memburuk", "Worsened", "Pinalala"],
-    ["情况恶化", "qíng kuàng è huà", "The situation has worsened", "La situación ha empeorado", "La situation s'est aggravée", "A situação piorou", "Tình hình đã trở nên tồi tệ hơn", "สถานการณ์เลวร้ายลง", "[TRANSLATE_KM]", "Situasinya semakin buruk", "Keadaan semakin buruk", "Lumala ang sitwasyon"]
+    ["恶化了", "è huà le", "Worsened", "Empeorado", "Aggravé", "Piorou", "Xấu đi", "แย่ลง", "មានបញ្ហា", "Memburuk", "Worsened", "Pinalala"],
+    ["情况恶化", "qíng kuàng è huà", "The situation has worsened", "La situación ha empeorado", "La situation s'est aggravée", "A situação piorou", "Tình hình đã trở nên tồi tệ hơn", "สถานการณ์เลวร้ายลง", "បញ្ហាធំ", "Situasinya semakin buruk", "Keadaan semakin buruk", "Lumala ang sitwasyon"]
   ]
 };
 
@@ -552,9 +552,9 @@ export const p4_61_money__payments = {
     ["消费高", "xiāo fèi gāo", "High consumption", "Alto consumo", "Consommation élevée", "Alto consumo", "Mức tiêu thụ cao", "การบริโภคสูง", "ការចំណាយ", "Konsumsi tinggi", "Penggunaan Tinggi", "Mataas na pagkonsumo"],
     ["去消费", "qù xiāo fèi", "Go to spend", "Ir a gastar", "Allez dépenser", "Vá gastar", "Đi tiêu", "ไปใช้จ่าย", "ការចំណាយខ្ពស់", "Pergi berbelanja", "Pergi ke belanja", "Pumunta sa paggastos"],
     ["花费大", "huā fèi dà", "High cost", "Alto costo", "Coût élevé", "Custo elevado", "Chi phí cao", "ต้นทุนสูง", "កាត់បន្ថយការចំណាយ", "Biaya tinggi", "Kos tinggi", "Mataas na gastos"],
-    ["有花费", "yǒu huā fèi", "Expenditure", "Gasto", "Dépenses", "Despesas", "Chi tiêu", "ค่าใช้จ่าย", "[TRANSLATE_KM]", "Pengeluaran", "Perbelanjaan", "Gastos"],
-    ["开销大", "kāi xiāo dà", "High cost", "Alto costo", "Coût élevé", "Custo elevado", "Chi phí cao", "ต้นทุนสูง", "[TRANSLATE_KM]", "Biaya tinggi", "Kos tinggi", "Mataas na gastos"],
-    ["减少开销", "jiǎn shǎo kāi xiāo", "Reduce cost", "Reducir costos", "Réduire les coûts", "Reduzir custos", "Giảm chi phí", "ลดต้นทุน", "[TRANSLATE_KM]", "Mengurangi biaya", "Mengurangkan kos", "Bawasan ang gastos"]
+    ["有花费", "yǒu huā fèi", "Expenditure", "Gasto", "Dépenses", "Despesas", "Chi tiêu", "ค่าใช้จ่าย", "ការទូទាត់", "Pengeluaran", "Perbelanjaan", "Gastos"],
+    ["开销大", "kāi xiāo dà", "High cost", "Alto costo", "Coût élevé", "Custo elevado", "Chi phí cao", "ต้นทุนสูง", "របៀបទូទាត់", "Biaya tinggi", "Kos tinggi", "Mataas na gastos"],
+    ["减少开销", "jiǎn shǎo kāi xiāo", "Reduce cost", "Reducir costos", "Réduire les coûts", "Reduzir custos", "Giảm chi phí", "ลดต้นทุน", "ទូទាត់ភ្លាមៗ", "Mengurangi biaya", "Mengurangkan kos", "Bawasan ang gastos"]
   ]
 };
 
@@ -622,9 +622,9 @@ export const p4_62_at__the__restaurant = {
     ["拿筷子", "ná kuài zi", "Get the chopsticks", "Coge los palillos", "Obtenez les baguettes", "Pegue os pauzinhos", "Lấy đũa", "รับตะเกียบ", "អាហារនឹងត្រូវបានបម្រើការឆាប់ៗនេះ", "Ambil sumpit", "Dapatkan penyepit", "Kunin ang mga chopstick"],
     ["用筷子", "yòng kuài zi", "Use the chopsticks", "Usa los palillos", "Utilisez les baguettes", "Use os pauzinhos", "Hãy dùng đũa", "ใช้ตะเกียบ", "ការកក់ទុកគឺត្រូវបានទាមទារ", "Gunakan sumpit", "Gunakan penyepit", "Gamitin ang mga chopstick"],
     ["上菜了", "shàng cài le", "The food is served", "La comida está servida", "La nourriture est servie", "A comida é servida", "Thức ăn được phục vụ", "อาหารถูกเสิร์ฟ", "បានបម្រុងទុករួចហើយ", "Makanan disajikan", "Makanan dihidangkan", "Naghahain ang pagkain"],
-    ["快上菜", "kuài shàng cài", "The food will be served soon", "La comida se servirá pronto", "La nourriture sera bientôt servie", "A comida será servida em breve", "Đồ ăn sẽ được phục vụ sớm", "อาหารจะเสิร์ฟเร็วๆ นี้", "[TRANSLATE_KM]", "Makanan akan segera disajikan", "Makanan akan dihidangkan tidak lama lagi", "Ang pagkain ay ihahain sa lalong madaling panahon"],
-    ["要订座", "yào dìng zuò", "Reservation is required", "Se requiere reserva", "La réservation est obligatoire", "É necessária reserva", "Cần phải đặt trước", "ต้องจองล่วงหน้า", "[TRANSLATE_KM]", "Reservasi diperlukan", "Tempahan diperlukan", "Kinakailangan ang reserbasyon"],
-    ["已订座", "yǐ dìng zuò", "Already reserved", "Ya reservado", "Déjà réservé", "Já reservado", "Đã đặt trước", "จองไว้แล้ว", "[TRANSLATE_KM]", "Sudah dipesan", "Sudah terpelihara", "Nakareserba na"]
+    ["快上菜", "kuài shàng cài", "The food will be served soon", "La comida se servirá pronto", "La nourriture sera bientôt servie", "A comida será servida em breve", "Đồ ăn sẽ được phục vụ sớm", "อาหารจะเสิร์ฟเร็วๆ นี้", "ជាស់លាស់", "Makanan akan segera disajikan", "Makanan akan dihidangkan tidak lama lagi", "Ang pagkain ay ihahain sa lalong madaling panahon"],
+    ["要订座", "yào dìng zuò", "Reservation is required", "Se requiere reserva", "La réservation est obligatoire", "É necessária reserva", "Cần phải đặt trước", "ต้องจองล่วงหน้า", "បង់ប្រាក់", "Reservasi diperlukan", "Tempahan diperlukan", "Kinakailangan ang reserbasyon"],
+    ["已订座", "yǐ dìng zuò", "Already reserved", "Ya reservado", "Déjà réservé", "Já reservado", "Đã đặt trước", "จองไว้แล้ว", "បង់ប្រាក់", "Sudah dipesan", "Sudah terpelihara", "Nakareserba na"]
   ]
 };
 
@@ -691,7 +691,7 @@ export const p4_63_at__the__hotel = {
     ["接待处", "jiē dài chù", "Reception desk", "Mostrador de recepción", "Réception", "Balcão de recepção", "Bàn tiếp tân", "แผนกต้อนรับ", "ទទួលខុសត្រូវចំពោះការទទួលភ្ញៀវ", "Meja resepsionis", "Meja Penerimaan", "Reception Desk"],
     ["负责接待", "fù zé jiē dài", "Responsible for the reception", "Responsable de la recepción", "Responsable de l'accueil", "Responsável pela recepção", "Chịu trách nhiệm lễ tân", "รับผิดชอบงานต้อนรับ", "ស្វែងរកលោក Bellman", "Bertanggung jawab atas resepsi", "Bertanggungjawab untuk Penerimaan", "May pananagutan sa pagtanggap"],
     ["找行李员", "zhǎo xíng lǐ yuán", "Find the bellman", "Encuentra al botones", "Trouvez le chasseur", "Encontre o mensageiro", "Tìm người phục vụ", "ตามหาคนเฝ้าประตู", "ទូរស័ព្ទទៅប៊ិកមែន", "Temukan pelayan", "Cari Bellman", "Hanapin ang Bellman"],
-    ["叫行李员", "jiào xíng lǐ yuán", "Call the bellman", "llamar al botones", "Appelez le chasseur", "Ligue para o mensageiro", "Gọi người phục vụ chuông", "โทรหาพนักงานยกกระเป๋า", "[TRANSLATE_KM]", "Panggil pelayannya", "Panggil Bellman", "Tumawag sa Bellman"]
+    ["叫行李员", "jiào xíng lǐ yuán", "Call the bellman", "llamar al botones", "Appelez le chasseur", "Ligue para o mensageiro", "Gọi người phục vụ chuông", "โทรหาพนักงานยกกระเป๋า", "ចេញពីសណ្ឋាគារ", "Panggil pelayannya", "Panggil Bellman", "Tumawag sa Bellman"]
   ]
 };
 
@@ -721,7 +721,7 @@ export const p4_64_at__the__airport = {
     ["安检", "ān jiǎn", "Security check", "Control de seguridad", "Contrôle de sécurité", "Verificação de segurança", "Kiểm tra an ninh", "ตรวจสอบความปลอดภัย", "លិខិតឆ្លងដែន", "Pemeriksaan keamanan", "Pemeriksaan Keselamatan", "Security Check"],
     ["护照", "hù zhào", "Passport", "Pasaporte", "Passeport", "Passaporte", "Hộ chiếu", "หนังสือเดินทาง", "ទិដ្ឋាការ", "Paspor", "Pasport", "Passport"],
     ["签证", "qiān zhèng", "Visa", "Visa", "Visas", "Visto", "Thị thực", "วีซ่า", "ការពន្យាពេល", "Visa", "Visa", "Visa"],
-    ["延误", "yán wù", "Delay", "Retraso", "Retard", "Atraso", "Trì hoãn", "ล่าช้า", "", "Penundaan", "Kelewatan", "Pagkaantala"],
+    ["延误", "yán wù", "Delay", "Retraso", "Retard", "Atraso", "Trì hoãn", "ล่าช้า", "ការពន្យារពេល", "Penundaan", "Kelewatan", "Pagkaantala"],
     ["到达", "dào dá", "Arrival", "Llegada", "Arrivée", "Chegada", "Đến", "มาถึง", "| ការមកដល់", "Kedatangan", "Ketibaan", "Pagdating"],
     ["出发", "chū fā", "Departure", "Salida", "Départ", "Partida", "Khởi hành", "ออกเดินทาง", "| ការចេញដំណើរ", "Keberangkatan", "Berlepas", "Pag -alis"],
     ["国际", "guó jì", "International", "Internacional", "Internationale", "Internacional", "Quốc tế", "นานาชาติ", "អន្តរជាតិ", "Internasional", "Antarabangsa", "International"],
@@ -757,11 +757,11 @@ export const p4_64_at__the__airport = {
     ["是国际航班", "shì guó jì háng bān", "It is an international flight", "Es un vuelo internacional", "Il s'agit d'un vol international", "É um voo internacional", "Đó là chuyến bay quốc tế", "เป็นเที่ยวบินระหว่างประเทศ", "នឹងរង់ចាំ", "Ini adalah penerbangan internasional", "Ia adalah penerbangan antarabangsa", "Ito ay isang pang -internasyonal na paglipad"],
     ["飞国际", "fēi guó jì", "Flying internationally", "Volar internacionalmente", "Voler à l’international", "Voando internacionalmente", "Bay quốc tế", "บินไปต่างประเทศ", "ស្ពានតម្រុយសារ", "Terbang internasional", "Terbang di peringkat antarabangsa", "Lumilipad sa buong mundo"],
     ["是国内航班", "shì guó nèi háng bān", "It is a domestic flight", "Es un vuelo nacional", "Il s'agit d'un vol intérieur", "É um voo doméstico", "Đó là chuyến bay nội địa", "เป็นเที่ยวบินภายในประเทศ", "តាមរយៈស្ពានច្រករបៀង", "Ini adalah penerbangan domestik", "Ia adalah penerbangan domestik", "Ito ay isang domestic flight"],
-    ["飞国内", "fēi guó nèi", "Flying domestic", "Vuelos nacionales", "Vol intérieur", "Voo doméstico", "Bay nội địa", "บินภายในประเทศ", "[TRANSLATE_KM]", "Terbang domestik", "Terbang Domestik", "Lumilipad na domestic"],
-    ["在候机", "zài hòu jī", "Waiting", "Esperando", "En attente", "Esperando", "Chờ đợi", "รอ", "[TRANSLATE_KM]", "Menunggu", "Menunggu", "Naghihintay"],
-    ["去候机", "qù hòu jī", "Going to wait", "Voy a esperar", "Je vais attendre", "Vou esperar", "Đang chờ đợi", "จะรอนะคะ", "[TRANSLATE_KM]", "Akan menunggu", "Akan menunggu", "Maghihintay sa"],
-    ["走廊桥", "zǒu láng qiáo", "Corridor bridge", "Puente del corredor", "Pont couloir", "Ponte do corredor", "Cầu hành lang", "สะพานทางเดิน", "[TRANSLATE_KM]", "Jembatan koridor", "Jambatan Koridor", "Corridor Bridge"],
-    ["通过廊桥", "tōng guò láng qiáo", "Through the corridor bridge", "A través del puente del corredor", "À travers le pont du couloir", "Através da ponte do corredor", "Qua cầu hành lang", "ผ่านสะพานทางเดิน", "[TRANSLATE_KM]", "Melalui jembatan koridor", "Melalui jambatan koridor", "Sa pamamagitan ng tulay ng koridor"]
+    ["飞国内", "fēi guó nèi", "Flying domestic", "Vuelos nacionales", "Vol intérieur", "Voo doméstico", "Bay nội địa", "บินภายในประเทศ", "មកដល់", "Terbang domestik", "Terbang Domestik", "Lumilipad na domestic"],
+    ["在候机", "zài hòu jī", "Waiting", "Esperando", "En attente", "Esperando", "Chờ đợi", "รอ", "ចេញដំណើរ", "Menunggu", "Menunggu", "Naghihintay"],
+    ["去候机", "qù hòu jī", "Going to wait", "Voy a esperar", "Je vais attendre", "Vou esperar", "Đang chờ đợi", "จะรอนะคะ", "ជិះយន្តហោះអន្តរជាតិ", "Akan menunggu", "Akan menunggu", "Maghihintay sa"],
+    ["走廊桥", "zǒu láng qiáo", "Corridor bridge", "Puente del corredor", "Pont couloir", "Ponte do corredor", "Cầu hành lang", "สะพานทางเดิน", "ក្នុងស្រុក", "Jembatan koridor", "Jambatan Koridor", "Corridor Bridge"],
+    ["通过廊桥", "tōng guò láng qiáo", "Through the corridor bridge", "A través del puente del corredor", "À travers le pont du couloir", "Através da ponte do corredor", "Qua cầu hành lang", "ผ่านสะพานทางเดิน", "ក្រៅស្រុក", "Melalui jembatan koridor", "Melalui jambatan koridor", "Sa pamamagitan ng tulay ng koridor"]
   ]
 };
 
@@ -893,9 +893,9 @@ export const p4_66_making__appointments = {
     ["挂专家号", "guà zhuān jiā hào", "Make an appointment with an expert", "Pide cita con un experto", "Prendre rendez-vous avec un expert", "Marque uma consulta com um especialista", "Đặt lịch hẹn với chuyên gia", "นัดหมายกับผู้เชี่ยวชาญ", "| ធ្វើការណាត់ជួបជាមួយលេខធម្មតា", "Buatlah janji dengan ahlinya", "Buat temujanji dengan pakar", "Gumawa ng isang appointment sa isang dalubhasa"],
     ["约专家号", "yuē zhuān jiā hào", "Make an appointment with an expert", "Pide cita con un experto", "Prendre rendez-vous avec un expert", "Marque uma consulta com um especialista", "Đặt lịch hẹn với chuyên gia", "นัดหมายกับผู้เชี่ยวชาญ", "| ចូលទៅកាន់លេខណាត់ជួប", "Buatlah janji dengan ahlinya", "Buat temujanji dengan pakar", "Gumawa ng isang appointment sa isang dalubhasa"],
     ["挂普通号", "guà pǔ tōng hào", "Make an appointment with an ordinary number", "Concertar cita con un número ordinario", "Prendre rendez-vous avec un numéro ordinaire", "Marque uma consulta com um número normal", "Đặt lịch hẹn với số thường", "นัดหมายด้วยหมายเลขธรรมดา", "បានធ្វើការណាត់ជួបរួចហើយ", "Buat janji temu dengan nomor biasa", "Buat temujanji dengan nombor biasa", "Gumawa ng isang appointment sa isang ordinaryong numero"],
-    ["约普通号", "yuē pǔ tōng hào", "Make an appointment with an ordinary number", "Concertar cita con un número ordinario", "Prendre rendez-vous avec un numéro ordinaire", "Marque uma consulta com um número normal", "Đặt lịch hẹn với số thường", "นัดหมายด้วยหมายเลขธรรมดา", "[TRANSLATE_KM]", "Buat janji temu dengan nomor biasa", "Buat temujanji dengan nombor biasa", "Gumawa ng isang appointment sa isang ordinaryong numero"],
-    ["去约号", "qù yuē hào", "Go to the appointment number", "Ir al número de cita", "Accédez au numéro de rendez-vous", "Acesse o número do agendamento", "Đến số hẹn", "ไปที่หมายเลขนัดหมาย", "[TRANSLATE_KM]", "Pergi ke nomor janji temu", "Pergi ke nombor pelantikan", "Pumunta sa numero ng appointment"],
-    ["已约号", "yǐ yuē hào", "Already made an appointment", "Ya concerté una cita", "Déjà pris rendez-vous", "Já marquei uma consulta", "Đã hẹn rồi", "นัดกันแล้ว", "[TRANSLATE_KM]", "Sudah membuat janji", "Sudah membuat temu janji", "Gumawa na ng isang appointment"]
+    ["约普通号", "yuē pǔ tōng hào", "Make an appointment with an ordinary number", "Concertar cita con un número ordinario", "Prendre rendez-vous avec un numéro ordinaire", "Marque uma consulta com um número normal", "Đặt lịch hẹn với số thường", "นัดหมายด้วยหมายเลขธรรมดา", "កំណត់ការណាត់ជួប", "Buat janji temu dengan nomor biasa", "Buat temujanji dengan nombor biasa", "Gumawa ng isang appointment sa isang ordinaryong numero"],
+    ["去约号", "qù yuē hào", "Go to the appointment number", "Ir al número de cita", "Accédez au numéro de rendez-vous", "Acesse o número do agendamento", "Đến số hẹn", "ไปที่หมายเลขนัดหมาย", "បោះបង់ការណាត់ជួប", "Pergi ke nomor janji temu", "Pergi ke nombor pelantikan", "Pumunta sa numero ng appointment"],
+    ["已约号", "yǐ yuē hào", "Already made an appointment", "Ya concerté una cita", "Déjà pris rendez-vous", "Já marquei uma consulta", "Đã hẹn rồi", "นัดกันแล้ว", "អះអាងការណាត់ជួប", "Sudah membuat janji", "Sudah membuat temu janji", "Gumawa na ng isang appointment"]
   ]
 };
 
@@ -965,10 +965,10 @@ export const p4_67_weather__conversations = {
     ["出现雾霾", "chū xiàn wù mái", "There is haze", "Hay neblina", "Il y a de la brume", "Há neblina", "Có sương mù", "มีหมอก", "អាកាសធាតុមានអាប់អួរ", "Ada kabut", "Ada jerebu", "Mayroong haze"],
     ["天气晴朗", "tiān qì qíng lǎng", "The weather is sunny", "El tiempo está soleado", "Le temps est ensoleillé", "O tempo está ensolarado", "Trời nắng", "อากาศแจ่มใส", "អាប់អួរណាស់", "Cuacanya cerah", "Cuaca cerah", "Maaraw ang panahon"],
     ["很晴朗", "hěn qíng lǎng", "Very sunny", "Muy soleado", "Très ensoleillé", "Muito ensolarado", "Nắng quá", "แดดแรงมาก", "អាកាសធាតុគឺស្រអានអណ្តែត ស្រអាប់ណាស់", "Sangat cerah", "Sangat Sunny", "Napaka maaraw"],
-    ["天气阴沉", "tiān qì yīn chén", "The weather is gloomy", "El clima está sombrío", "Le temps est maussade", "O tempo está sombrio", "Thời tiết u ám", "อากาศครึ้มๆ", "[TRANSLATE_KM]", "Cuacanya suram", "Cuaca suram", "Ang panahon ay madilim"],
-    ["很阴沉", "hěn yīn chén", "Very gloomy", "Muy sombrío", "Très sombre", "Muito sombrio", "Rất ảm đạm", "เศร้ามาก", "[TRANSLATE_KM]", "Sangat suram", "Sangat suram", "Napaka madilim"],
-    ["天气闷热", "tiān qì mèn rè", "The weather is sultry", "El clima es bochornoso", "Le temps est étouffant", "O tempo está abafado", "Thời tiết oi bức", "อากาศมันร้อน", "[TRANSLATE_KM]", "Cuacanya gerah", "Cuaca adalah sultry", "Ang panahon ay sultry"],
-    ["很闷热", "hěn mēn rè", "Very sultry", "muy sensual", "Très sensuel", "Muito sensual", "Rất oi bức", "เผ็ดมาก", "[TRANSLATE_KM]", "Sangat gerah", "Sangat sedang", "Napaka sultry"]
+    ["天气阴沉", "tiān qì yīn chén", "The weather is gloomy", "El clima está sombrío", "Le temps est maussade", "O tempo está sombrio", "Thời tiết u ám", "อากาศครึ้มๆ", "អាកាសធាតុ", "Cuacanya suram", "Cuaca suram", "Ang panahon ay madilim"],
+    ["很阴沉", "hěn yīn chén", "Very gloomy", "Muy sombrío", "Très sombre", "Muito sombrio", "Rất ảm đạm", "เศร้ามาก", "រាយការណ៍អាកាសធាតុ", "Sangat suram", "Sangat suram", "Napaka madilim"],
+    ["天气闷热", "tiān qì mèn rè", "The weather is sultry", "El clima es bochornoso", "Le temps est étouffant", "O tempo está abafado", "Thời tiết oi bức", "อากาศมันร้อน", "តាមដានអាកាសធាតុ", "Cuacanya gerah", "Cuaca adalah sultry", "Ang panahon ay sultry"],
+    ["很闷热", "hěn mēn rè", "Very sultry", "muy sensual", "Très sensuel", "Muito sensual", "Rất oi bức", "เผ็ดมาก", "អាកាសធាតុប្រែប្រួល", "Sangat gerah", "Sangat sedang", "Napaka sultry"]
   ]
 };
 
@@ -1032,13 +1032,13 @@ export const p4_68_phone__conversations = {
     ["留言板", "liú yán bǎn", "Message board", "Tablero de mensajes", "Tableau de messages", "Quadro de mensagens", "Bảng tin", "กระดานข้อความ", "សូមចុច", "Papan pesan", "Papan Mesej", "Message Board"],
     ["请留言", "qǐng liú yán", "Please leave a message", "Por favor deja un mensaje", "Veuillez laisser un message", "Por favor deixe uma mensagem", "Vui lòng để lại tin nhắn", "กรุณาฝากข้อความ", "បានភ្ជាប់", "Silakan tinggalkan pesan", "Sila tinggalkan mesej", "Mangyaring mag -iwan ng mensahe"],
     ["发语音", "fā yǔ yīn", "Send voice", "Enviar voz", "Envoyer la voix", "Enviar voz", "Gửi giọng nói", "ส่งเสียง", "មិនអាចភ្ជាប់បានទេ", "Kirim suara", "Hantar suara", "Magpadala ng boses"],
-    ["听语音", "tīng yǔ yīn", "Listen to voice", "Escuchar voz", "Écouter la voix", "Ouça a voz", "Nghe giọng nói", "ฟังเสียง", "[TRANSLATE_KM]", "Dengarkan suara", "Dengarkan suara", "Makinig sa boses"],
-    ["忙线中", "máng xiàn zhōng", "Busy", "Ocupado", "Occupé", "Ocupado", "Bận", "ไม่ว่าง", "[TRANSLATE_KM]", "Sibuk", "Sibuk", "Abala"],
-    ["电话忙线", "diàn huà máng xiàn", "Phone busy", "Teléfono ocupado", "Téléphone occupé", "Telefone ocupado", "Điện thoại bận", "โทรศัพท์ไม่ว่าง", "[TRANSLATE_KM]", "Telepon sibuk", "Telefon sibuk", "Abala sa telepono"],
-    ["拨打电话", "bō dǎ diàn huà", "Make a call", "Hacer una llamada", "Passer un appel", "Faça uma ligação", "Thực hiện cuộc gọi", "โทรออก", "[TRANSLATE_KM]", "Lakukan panggilan", "Buat panggilan", "Tumawag"],
-    ["请拨打", "qǐng bō dǎ", "Please dial", "Por favor marque", "Veuillez composer", "Por favor disque", "Hãy quay số", "กรุณากด", "[TRANSLATE_KM]", "Silakan hubungi", "Sila dail", "Mangyaring i -dial"],
-    ["已接通", "yǐ jiē tōng", "Connected", "Conectado", "Connecté", "Conectado", "Đã kết nối", "เชื่อมต่อ", "[TRANSLATE_KM]", "Terhubung", "Disambungkan", "Nakakonekta"],
-    ["无法接通", "wú fǎ jiē tōng", "Unable to connect", "No se puede conectar", "Impossible de se connecter", "Não foi possível conectar", "Không thể kết nối", "ไม่สามารถเชื่อมต่อได้", "[TRANSLATE_KM]", "Tidak dapat terhubung", "Tidak dapat menyambung", "Hindi kumonekta"]
+    ["听语音", "tīng yǔ yīn", "Listen to voice", "Escuchar voz", "Écouter la voix", "Ouça a voz", "Nghe giọng nói", "ฟังเสียง", "ការហៅទូរសព្ទ", "Dengarkan suara", "Dengarkan suara", "Makinig sa boses"],
+    ["忙线中", "máng xiàn zhōng", "Busy", "Ocupado", "Occupé", "Ocupado", "Bận", "ไม่ว่าง", "ទូរសព្ទចូល", "Sibuk", "Sibuk", "Abala"],
+    ["电话忙线", "diàn huà máng xiàn", "Phone busy", "Teléfono ocupado", "Téléphone occupé", "Telefone ocupado", "Điện thoại bận", "โทรศัพท์ไม่ว่าง", "ទូរសព្ទចេញ", "Telepon sibuk", "Telefon sibuk", "Abala sa telepono"],
+    ["拨打电话", "bō dǎ diàn huà", "Make a call", "Hacer una llamada", "Passer un appel", "Faça uma ligação", "Thực hiện cuộc gọi", "โทรออก", "រង់ចាំខ្សែទូរសព្ទ", "Lakukan panggilan", "Buat panggilan", "Tumawag"],
+    ["请拨打", "qǐng bō dǎ", "Please dial", "Por favor marque", "Veuillez composer", "Por favor disque", "Hãy quay số", "กรุณากด", "ទូរសព្ទរវល់", "Silakan hubungi", "Sila dail", "Mangyaring i -dial"],
+    ["已接通", "yǐ jiē tōng", "Connected", "Conectado", "Connecté", "Conectado", "Đã kết nối", "เชื่อมต่อ", "ទូរសព្ទដាច់", "Terhubung", "Disambungkan", "Nakakonekta"],
+    ["无法接通", "wú fǎ jiē tōng", "Unable to connect", "No se puede conectar", "Impossible de se connecter", "Não foi possível conectar", "Không thể kết nối", "ไม่สามารถเชื่อมต่อได้", "ទូរសព្ទទៅវិញទៅមក", "Tidak dapat terhubung", "Tidak dapat menyambung", "Hindi kumonekta"]
   ]
 };
 
@@ -1347,7 +1347,7 @@ export const p4_73_time__expressions = {
     ["之前", "zhī qián", "Before", "Antes", "Avant", "Antes", "Trước", "ก่อน", "មុន", "Sebelumnya", "Sebelum", "Bago"],
     ["之后", "zhī hòu", "After", "Después", "Après", "Depois", "Sau", "หลังจาก", "បន្ទាប់ពី", "Setelah", "Selepas", "Pagkatapos ng"],
     ["正在", "zhèng zài", "Being", "Ser", "Être", "Sendo", "Là", "เป็น", "កំពុង", "Menjadi", "Menjadi", "Ang pagiging"],
-    ["已经", "yǐ jīng", "Already", "Ya", "Déjà", "Já", "Đã", "แล้ว", "", "Sudah", "Sudah", "Na"],
+    ["已经", "yǐ jīng", "Already", "Ya", "Déjà", "Já", "Đã", "แล้ว", "ភ្លាមៗ", "Sudah", "Sudah", "Na"],
     ["还没", "hái méi", "Not yet", "Todavía no", "Pas encore", "Ainda não", "Chưa", "ยังไม่", "មិនទាន់មានទេ", "Belum", "Belum", "Hindi pa"],
     ["终于", "zhōng yú", "Finally", "Finalmente", "Enfin", "Finalmente", "Cuối cùng", "ในที่สุด", "ទីបំផុត", "Akhirnya", "Akhirnya", "Panghuli"],
     ["即时", "jí shí", "Immediately", "Inmediatamente", "Immédiatement", "Imediatamente", "Ngay lập tức", "ทันที", "ភ្លាមៗ", "Segera", "Segera", "Kaagad"],
@@ -1422,7 +1422,7 @@ export const p4_74_frequency__expressions = {
     ["很少", "hěn shǎo", "Rarely", "Rara vez", "Rarement", "Raramente", "Hiếm", "ไม่ค่อย", "កម្រណាស់", "Jarang", "Jarang", "Bihirang"],
     ["难得", "nán dé", "Rare", "Raro", "Rares", "Raro", "Hiếm", "หายาก", "កម្រណាស់", "Jarang", "Jarang", "Rare"],
     ["从不", "cóng bù", "Never", "Nunca", "Jamais", "Nunca", "Không bao giờ", "ไม่เคย", "| មិនដែល", "Tidak pernah", "Tidak pernah", "Huwag kailanman"],
-    ["从来", "cóng lái", "Ever", "Alguna vez", "Jamais", "Sempre", "Đã từng", "เคย", "", "Pernah", "Pernah", "Kailanman"],
+    ["从来", "cóng lái", "Ever", "Alguna vez", "Jamais", "Sempre", "Đã từng", "เคย", "ជាញឹកញាប់", "Pernah", "Pernah", "Kailanman"],
     ["总是", "zǒng shì", "Always", "Siempre", "Toujours", "Sempre", "Luôn luôn", "เสมอ", "តែងតែ", "Selalu", "Sentiasa", "Laging"],
     ["一直", "yì zhí", "Always", "Siempre", "Toujours", "Sempre", "Luôn luôn", "เสมอ", "តែងតែ", "Selalu", "Sentiasa", "Laging"],
     ["第一次", "dì yī cì", "First time", "Primera vez", "Première fois", "Primeira vez", "Lần đầu tiên", "ครั้งแรก", "លើកទីមួយ", "Pertama kali", "Kali pertama", "Unang beses"],
@@ -1622,7 +1622,7 @@ export const p4_77_making__comparisons = {
     ["比较", "bǐ jiào", "Compare", "Comparar", "Comparez", "Comparar", "So sánh", "เปรียบเทียบ", "ប្រៀបធៀប", "Bandingkan", "Bandingkan", "Paghambingin"],
     ["更", "gèng", "More", "Más", "Plus", "Mais", "Thêm", "เพิ่มเติม", "បន្ថែម", "Selengkapnya", "Lebih banyak", "Higit pa"],
     ["不如", "bù rú", "Not as good as", "No tan bueno como", "Pas aussi bon que", "Não tão bom quanto", "Không tốt bằng", "ไม่ดีเท่า", "មិនល្អដូច", "Tidak sebagus", "Tidak sebaik", "Hindi kasing ganda ng"],
-    ["一样", "yī yàng", "The same", "Lo mismo", "Le même", "O mesmo", "Giống nhau", "เหมือนกัน", "| ដូចគ្នា", "", "Yang sama", "Ang parehong"],
+    ["一样", "yī yàng", "The same", "Lo mismo", "Le même", "O mesmo", "Giống nhau", "เหมือนกัน", "| ដូចគ្នា", "sama", "Yang sama", "Ang parehong"],
     ["相同", "xiāng tóng", "The same", "Lo mismo", "Le même", "O mesmo", "Giống nhau", "เหมือนกัน", "ដូចគ្នា", "yang sama", "Yang sama", "Ang parehong"],
     ["不同", "bù tóng", "Different", "Diferente", "Différent", "Diferente", "Khác nhau", "แตกต่าง", "ខុសគ្នា", "yang sama Berbeda", "Berbeza", "Iba't ibang"],
     ["差不多", "chà bu duō", "About the same", "Más o menos lo mismo", "À peu près pareil", "Quase a mesma coisa", "Tương tự", "ประมาณเดียวกัน", "ប្រហែលដូចគ្នា", "Hampir sama", "Mengenai yang sama", "Tungkol sa pareho"],
@@ -1668,7 +1668,7 @@ export const p4_77_making__comparisons = {
     ["较好", "jiào hǎo", "Better", "Mejor", "Mieux", "Melhor", "Tốt hơn", "ดีกว่า", "ធំ", "Lebih baik", "Lebih baik", "Mas mahusay"],
     ["较大", "jiào dà", "Larger", "Más grande", "Plus grand", "Maior", "Lớn hơn", "ใหญ่ขึ้น", "| ល្អជាងនេះបន្តិច", "Lebih besar", "Lebih besar", "Mas malaki"],
     ["略胜一筹", "lüè shèng yī chóu", "Slightly better", "Ligeramente mejor", "Un peu mieux", "Um pouco melhor", "Tốt hơn một chút", "ดีขึ้นนิดหน่อย", "| ល្អជាងបន្តិច", "Sedikit lebih baik", "Sedikit lebih baik", "Bahagyang mas mahusay"],
-    ["稍微略胜", "shāo wēi lüè shèng", "Slightly better", "Ligeramente mejor", "Un peu mieux", "Um pouco melhor", "Tốt hơn một chút", "ดีขึ้นเล็กน้อย", "[TRANSLATE_KM]", "Sedikit lebih baik", "Sedikit lebih baik", "Bahagyang mas mahusay"]
+    ["稍微略胜", "shāo wēi lüè shèng", "Slightly better", "Ligeramente mejor", "Un peu mieux", "Um pouco melhor", "Tốt hơn một chút", "ดีขึ้นเล็กน้อย", "ប្រៀបធៀបតម្លៃ", "Sedikit lebih baik", "Sedikit lebih baik", "Bahagyang mas mahusay"]
   ]
 };
 

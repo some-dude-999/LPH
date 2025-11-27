@@ -362,7 +362,7 @@ export const p5_84_frequency__duration = {
     ["整夜工作", "zhěng yè gōng zuò", "Working all night", "Trabajando toda la noche", "Travailler toute la nuit", "Trabalhando a noite toda", "Làm việc suốt đêm", "ทำงานทั้งคืน", "រវល់ពេញមួយយប់", "Bekerja sepanjang malam", "Bekerja sepanjang malam", "Paggawa buong gabi"],
     ["忙了整夜", "máng le zhěng yè", "Busy all night", "Ocupado toda la noche", "Occupé toute la nuit", "Ocupado a noite toda", "Bận rộn suốt đêm", "คึกคักทั้งคืน", "ធ្វើការពេញមួយយប់", "Sibuk sepanjang malam", "Sibuk sepanjang malam", "Abala buong gabi"],
     ["通宵工作", "tōng xiāo gōng zuò", "Working all night", "Trabajando toda la noche", "Travailler toute la nuit", "Trabalhando a noite toda", "Làm việc suốt đêm", "ทำงานทั้งคืน", "ស្នាក់នៅពេញមួយយប់", "Bekerja sepanjang malam", "Bekerja sepanjang malam", "Paggawa buong gabi"],
-    ["熬了通宵", "áo le tōng xiāo", "Stayed up all night", "Me quedé despierto toda la noche", "Je suis resté éveillé toute la nuit", "Fiquei acordado a noite toda", "Thức cả đêm", "อยู่ทั้งคืน", "[TRANSLATE_KM]", "Begadang sepanjang malam", "Tinggal sepanjang malam", "Nanatili sa buong gabi"]
+    ["熬了通宵", "áo le tōng xiāo", "Stayed up all night", "Me quedé despierto toda la noche", "Je suis resté éveillé toute la nuit", "Fiquei acordado a noite toda", "Thức cả đêm", "อยู่ทั้งคืน", "រយៈពេលខ្លី", "Begadang sepanjang malam", "Tinggal sepanjang malam", "Nanatili sa buong gabi"]
   ]
 };
 
@@ -491,12 +491,12 @@ export const p5_86_cause__effect = {
     ["查起因", "chá qǐ yīn", "Find the cause", "Encuentra la causa", "Trouver la cause", "Encontre a causa", "Tìm nguyên nhân", "หาสาเหตุ", "បានឃើញពីនេះ", "Temukan penyebabnya", "Cari Punca", "Hanapin ang sanhi"],
     ["归因于他", "guī yīn yú tā", "Attribute it to him", "Se lo atribuyes a él", "Attribuez-lui", "Atribua isso a ele", "Hãy quy nó cho anh ấy", "อ้างถึงเขา", "ផលិតពីនេះ", "Atribusikan itu padanya", "Atribut kepadanya", "Iugnay ito sa kanya"],
     ["可归因于", "kě guī yīn yú", "attributable to", "atribuible a", "attribuable à", "atribuível a", "có thể quy cho", "เนื่องมาจาก", "បណ្តាលមកពីការ|| ដូច្នេះបានកំណត់", "diatribusikan kepada", "dikaitkan dengan", "naiugnay sa"],
-    ["源于此", "yuán yú cǐ", "derived from this", "derivado de esto", "dérivé de ceci", "derivado disso", "bắt nguồn từ điều này", "มาจากสิ่งนี้", "[TRANSLATE_KM]", "berasal dari ini", "berasal dari ini", "nagmula sa ito"],
-    ["源于过去", "yuán yú guò qù", "derived from the past", "derivado del pasado", "dérivé du passé", "derivado do passado", "bắt nguồn từ quá khứ", "มาจากอดีต", "[TRANSLATE_KM]", "berasal dari masa lalu", "berasal dari masa lalu", "nagmula sa nakaraan"],
-    ["由此可见", "yóu cǐ kě jiàn", "seen from this", "visto desde esto", "vu de là", "visto por isso", "nhìn thấy từ đây", "เห็นได้จากสิ่งนี้", "[TRANSLATE_KM]", "dilihat dari ini", "Dilihat dari ini", "Nakita mula dito"],
-    ["由此产生", "yóu cǐ chǎn shēng", "produced from this", "producido a partir de esto", "produit à partir de ce", "produzido a partir disso", "được tạo ra từ điều này", "ผลิตจากสิ่งนี้", "[TRANSLATE_KM]", "dihasilkan dari", "Dihasilkan dari ini", "ginawa mula dito"],
-    ["因而导致", "yīn ér dǎo zhì", "caused", "causado", "causé", "causou", "gây ra", "ทำให้เกิด", "[TRANSLATE_KM]", "disebabkan", "disebabkan", "sanhi"],
-    ["因而决定", "yīn ér jué dìng", "thus determined", "así determinado", "ainsi déterminé", "assim determinado", "do đó xác định", "จึงกำหนดไว้", "[TRANSLATE_KM]", "ditentukan demikian", "dengan itu ditentukan", "sa gayon ay tinutukoy"]
+    ["源于此", "yuán yú cǐ", "derived from this", "derivado de esto", "dérivé de ceci", "derivado disso", "bắt nguồn từ điều này", "มาจากสิ่งนี้", "មូលហេតុ", "berasal dari ini", "berasal dari ini", "nagmula sa ito"],
+    ["源于过去", "yuán yú guò qù", "derived from the past", "derivado del pasado", "dérivé du passé", "derivado do passado", "bắt nguồn từ quá khứ", "มาจากอดีต", "ផលវិបាក", "berasal dari masa lalu", "berasal dari masa lalu", "nagmula sa nakaraan"],
+    ["由此可见", "yóu cǐ kě jiàn", "seen from this", "visto desde esto", "vu de là", "visto por isso", "nhìn thấy từ đây", "เห็นได้จากสิ่งนี้", "បណ្តាលមកពី", "dilihat dari ini", "Dilihat dari ini", "Nakita mula dito"],
+    ["由此产生", "yóu cǐ chǎn shēng", "produced from this", "producido a partir de esto", "produit à partir de ce", "produzido a partir disso", "được tạo ra từ điều này", "ผลิตจากสิ่งนี้", "មូលហេតុនិងផល", "dihasilkan dari", "Dihasilkan dari ini", "ginawa mula dito"],
+    ["因而导致", "yīn ér dǎo zhì", "caused", "causado", "causé", "causou", "gây ra", "ทำให้เกิด", "រកមូលហេតុ", "disebabkan", "disebabkan", "sanhi"],
+    ["因而决定", "yīn ér jué dìng", "thus determined", "así determinado", "ainsi déterminé", "assim determinado", "do đó xác định", "จึงกำหนดไว้", "យល់ពីមូលហេតុ", "ditentukan demikian", "dengan itu ditentukan", "sa gayon ay tinutukoy"]
   ]
 };
 
@@ -745,7 +745,7 @@ export const p5_90_structural__particles = {
     ["开", "kāi", "open", "abierto", "ouvert", "abrir", "mở", "เปิด", "លឿន", "buka", "Buka", "Buksan"]
   ],
   exampleWords: [
-    ["我的", "wǒ de", "my", "mi", "mon", "meu", "", "ของฉัน", "រត់យ៉ាងលឿន", "saya", "saya", "Aking"],
+    ["我的", "wǒ de", "my", "mi", "mon", "meu", "của", "ของฉัน", "រត់យ៉ាងលឿន", "saya", "saya", "Aking"],
     ["美的", "měi de", "beautiful", "hermosa", "magnifique", "lindo", "của tôi đẹp", "สวยงาม", "ធ្វើបានយ៉ាងល្អ", "cantik", "cantik", "maganda"],
     ["慢慢地", "màn màn dì", "slowly", "lentamente", "lentement", "lentamente", "từ từ", "ช้าๆ", "ទៅ", "pelan-pelan", "Perlahan", "Dahan -dahan"],
     ["快速地", "kuài sù dì", "fast", "rápido", "rapide", "rápido", "nhanh", "รวดเร็ว", "ការមក", "cepat", "Cepat", "Mabilis"],

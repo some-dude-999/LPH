@@ -80,6 +80,9 @@ TRANSLATIONS_CONFIG = {
 
 DEFAULT_TRANSLATION = "english"
 
+# Chinese column index for edge case detection (contains Latin characters)
+CHINESE_COLUMN_INDEX = 2
+
 
 def sanitize_for_variable_name(name):
     """Convert 'Greetings & Goodbyes' to 'greetings__goodbyes'"""
@@ -91,6 +94,15 @@ def sanitize_for_variable_name(name):
     # Replace multiple underscores with double underscores
     name = re.sub(r'_+', '__', name)
     return name
+
+
+def has_latin_in_chinese(word_row):
+    """Check if Chinese column contains Latin characters (edge case detection)"""
+    import re
+    if len(word_row) <= CHINESE_COLUMN_INDEX:
+        return False
+    chinese_text = word_row[CHINESE_COLUMN_INDEX]
+    return bool(re.search(r'[A-Za-z]', chinese_text))
 
 
 def read_meta_csv():
@@ -282,6 +294,94 @@ def create_obfuscated_js_file(act_name, act_number, packs_data):
     return filepath
 
 
+def create_edge_case_clean_js_file(edge_case_packs):
+    """Create clean JavaScript file with ONLY edge case words (Latin in Chinese column)"""
+    output_lines = []
+    output_lines.append("// Edge Cases Only - Words with Latin characters in Chinese column")
+    output_lines.append("// For testing edge case rendering (ATM, DNA, WhatsApp, etc.)\n")
+
+    # Add __actMeta export
+    output_lines.append("// Act-level metadata for edge cases")
+    output_lines.append("export const __actMeta = {")
+    output_lines.append(f'  actNumber: 0,')  # Special act number for edge cases
+    output_lines.append(f'  actName: "Edge Cases",')
+    output_lines.append(f'  wordColumns: {json.dumps(WORD_COLUMNS)},')
+    output_lines.append(f'  translations: {json.dumps(TRANSLATIONS_CONFIG)},')
+    output_lines.append(f'  defaultTranslation: "{DEFAULT_TRANSLATION}"')
+    output_lines.append("};\n")
+
+    for pack_var_name, pack_data in edge_case_packs.items():
+        # Export each pack
+        output_lines.append(f"export const {pack_var_name} = {{")
+        output_lines.append("  meta: {")
+
+        # Meta titles
+        for lang, title in pack_data['meta'].items():
+            if lang == 'wordpack':
+                output_lines.append(f'    {lang}: {title},')
+            else:
+                output_lines.append(f'    {lang}: "{title}",')
+
+        output_lines[-1] = output_lines[-1].rstrip(',')
+        output_lines.append("  },")
+
+        # Words array (edge cases only)
+        output_lines.append("  words: [")
+        for word_row in pack_data['words']:
+            escaped_row = [w.replace('"', '\\"') for w in word_row]
+            word_str = '", "'.join(escaped_row)
+            output_lines.append(f'    ["{word_str}"],')
+
+        if pack_data['words']:
+            output_lines[-1] = output_lines[-1].rstrip(',')
+        output_lines.append("  ]")
+        output_lines.append("};\n")
+
+    # Write to file
+    filename = "edge-cases.js"
+    filepath = OUTPUT_CLEAN / filename
+
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(output_lines))
+
+    return filepath
+
+
+def create_edge_case_obfuscated_js_file(edge_case_packs):
+    """Create obfuscated JavaScript file with ONLY edge case words"""
+    # Add __actMeta to the data structure
+    data_with_meta = {
+        "__actMeta": {
+            "actNumber": 0,
+            "actName": "Edge Cases",
+            "wordColumns": WORD_COLUMNS,
+            "translations": TRANSLATIONS_CONFIG,
+            "defaultTranslation": DEFAULT_TRANSLATION
+        },
+        **edge_case_packs
+    }
+
+    # Convert to JSON
+    json_str = json.dumps(data_with_meta, ensure_ascii=False, separators=(',', ':'))
+
+    # Reverse, compress, encode
+    reversed_str = json_str[::-1]
+    compressed_bytes = zlib.compress(reversed_str.encode('utf-8'), level=9)
+    compressed_b64 = base64.b64encode(compressed_bytes).decode('ascii')
+
+    # Create JS module
+    output = f'// Edge Cases - Obfuscated (zlib + base64)\nexport const w="{compressed_b64}";'
+
+    # Write to file
+    filename = "edge-cases-js.js"
+    filepath = OUTPUT_OBFUSCATED / filename
+
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(output)
+
+    return filepath
+
+
 def main():
     """Main conversion process"""
     print("=" * 80)
@@ -289,18 +389,19 @@ def main():
     print("=" * 80)
 
     # Read overview to get pack-to-act mapping and word counts
-    print("\n[1/6] Reading overview CSV...")
+    print("\n[1/8] Reading overview CSV...")
     pack_to_act, pack_titles, pack_word_counts = read_overview_csv()
     print(f"      Found {len(pack_to_act)} packs across {len(set(pack_to_act.values()))} acts")
 
     # Read meta CSV to get proper translations
-    print("\n[2/6] Reading meta CSV for translations...")
+    print("\n[2/8] Reading meta CSV for translations...")
     pack_meta = read_meta_csv()
     print(f"      Loaded translations for {len(pack_meta)} packs")
 
     # Group packs by act
-    print("\n[3/6] Reading individual pack CSVs and grouping by act...")
+    print("\n[3/8] Reading individual pack CSVs and grouping by act...")
     acts_data = {}  # act_name -> {pack_var_name: {meta, baseWords, exampleWords}}
+    edge_case_packs = {}  # pack_var_name -> {meta, words} (ONLY edge cases)
 
     for pack_num in range(1, 251):
         if pack_num not in pack_to_act:
@@ -354,17 +455,28 @@ def main():
             'exampleWords': example_words
         }
 
-        print(f"      Pack {pack_num:3d}: {pack_title:40s} -> {pack_var_name} (base: {len(base_words)}, ex: {len(example_words)})")
+        # Collect edge cases (words with Latin in Chinese column)
+        all_words = base_words + example_words
+        edge_case_words = [word for word in all_words if has_latin_in_chinese(word)]
+
+        if edge_case_words:
+            edge_case_packs[pack_var_name] = {
+                'meta': {'wordpack': pack_num, **meta_titles},
+                'words': edge_case_words
+            }
+            print(f"      Pack {pack_num:3d}: {pack_title:40s} -> {pack_var_name} (base: {len(base_words)}, ex: {len(example_words)}, edge: {len(edge_case_words)})")
+        else:
+            print(f"      Pack {pack_num:3d}: {pack_title:40s} -> {pack_var_name} (base: {len(base_words)}, ex: {len(example_words)})")
 
     # Create output directories
-    print("\n[4/6] Creating output directories...")
+    print("\n[4/8] Creating output directories...")
     OUTPUT_CLEAN.mkdir(exist_ok=True)
     OUTPUT_OBFUSCATED.mkdir(exist_ok=True)
     print(f"      Clean: {OUTPUT_CLEAN}")
     print(f"      Obfuscated: {OUTPUT_OBFUSCATED}")
 
     # Generate clean files
-    print("\n[5/6] Generating clean JavaScript files...")
+    print("\n[5/8] Generating clean JavaScript files...")
     clean_files = []
     for act_name, packs_data in sorted(acts_data.items()):
         # Extract act number from act_name (e.g., "act1-foundation" -> 1)
@@ -375,7 +487,7 @@ def main():
         print(f"      Created: {filepath.name:40s} ({size_kb:7.2f} KB)")
 
     # Generate obfuscated files
-    print("\n[6/6] Generating obfuscated JavaScript files...")
+    print("\n[6/8] Generating obfuscated JavaScript files...")
     obfuscated_files = []
     for act_name, packs_data in sorted(acts_data.items()):
         # Extract act number from act_name (e.g., "act1-foundation" -> 1)
@@ -384,6 +496,23 @@ def main():
         size_kb = filepath.stat().st_size / 1024
         obfuscated_files.append((filepath.name, size_kb))
         print(f"      Created: {filepath.name:40s} ({size_kb:7.2f} KB)")
+
+    # Generate edge case files
+    if edge_case_packs:
+        print("\n[7/8] Generating edge case clean JavaScript file...")
+        edge_clean_filepath = create_edge_case_clean_js_file(edge_case_packs)
+        edge_clean_size_kb = edge_clean_filepath.stat().st_size / 1024
+        total_edge_words = sum(len(pack['words']) for pack in edge_case_packs.values())
+        print(f"      Created: {edge_clean_filepath.name:40s} ({edge_clean_size_kb:7.2f} KB, {total_edge_words} edge case words)")
+
+        print("\n[8/8] Generating edge case obfuscated JavaScript file...")
+        edge_obf_filepath = create_edge_case_obfuscated_js_file(edge_case_packs)
+        edge_obf_size_kb = edge_obf_filepath.stat().st_size / 1024
+        edge_savings_pct = ((edge_clean_size_kb - edge_obf_size_kb) / edge_clean_size_kb) * 100 if edge_clean_size_kb > 0 else 0
+        print(f"      Created: {edge_obf_filepath.name:40s} ({edge_obf_size_kb:7.2f} KB, {edge_savings_pct:5.1f}% savings)")
+    else:
+        print("\n[7/8] No edge cases found, skipping edge case module generation...")
+        print("\n[8/8] Skipped edge case obfuscated file (no edge cases)")
 
     # Summary
     print("\n" + "=" * 80)
