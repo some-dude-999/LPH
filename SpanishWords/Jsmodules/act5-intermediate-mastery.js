@@ -1360,7 +1360,7 @@ export const p5_167_fashion__style = {
   baseWords: [
     ["diseñador", "designer", "设计师", "shè jì shī", "desenhista"],
     ["diseñadora", "designer", "设计师", "shè jì shī", "desenhista"],
-    ["modelo", "model", "模特", "xíng hào", "modelo"],
+    ["modelo", "model", "模特", "mó tè", "modelo"],
     ["pasarela", "catwalk", "走秀", "zǒu xiù", "passarela"],
     ["tendencia", "trend", "趋势", "qū shì", "tendência"],
     ["vintage", "vintage", "复古", "fù gǔ", "vintage"],

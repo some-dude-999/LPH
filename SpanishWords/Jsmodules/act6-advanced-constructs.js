@@ -1008,7 +1008,7 @@ export const p6_200_real__estate__terms = {
     ["bienes", "goods", "货物", "huò wù", "bens"],
     ["inmueble", "property", "财产", "cái chǎn", "propriedade"],
     ["terreno", "land", "土地", "tǔ dì", "terreno"],
-    ["alquilar", "rent", "租用", "zū jīn", "alugar"],
+    ["alquilar", "rent", "租用", "zū yòng", "alugar"],
     ["alquiler", "rent", "租金", "zū jīn", "alugar"],
     ["renta", "income", "收入", "shōu rù", "renda"],
     ["propietario", "owner", "业主", "yè zhǔ", "proprietário"],
@@ -1056,8 +1056,8 @@ export const p6_200_real__estate__terms = {
     ["un arrendamiento", "a lease", "租约", "zū yuē", "um arrendamento"],
     ["el desalojo", "the eviction", "驱逐", "qū zhú", "o despejo"],
     ["un desalojo", "an eviction", "驱逐", "qū zhú", "um despejo"],
-    ["el embargo", "the embargo", "扣押", "jìn yùn", "o embargo"],
-    ["un embargo", "an embargo", "扣押", "jìn yùn", "um embargo"]
+    ["el embargo", "the embargo", "扣押", "kòu yā", "o embargo"],
+    ["un embargo", "an embargo", "扣押", "kòu yā", "um embargo"]
   ]
 };
 
