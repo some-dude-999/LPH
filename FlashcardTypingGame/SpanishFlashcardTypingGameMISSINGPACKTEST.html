@@ -2971,7 +2971,8 @@
       const actData = loadedActs[actNumber];
       if (!actData) return;
 
-      const packKeys = Object.keys(actData);
+      // Filter out __actMeta - only get actual pack keys
+      const packKeys = Object.keys(actData).filter(key => key !== '__actMeta');
       packKeys.sort((a, b) => {
         const numA = actData[a].meta.wordpack;
         const numB = actData[b].meta.wordpack;
@@ -3267,15 +3268,15 @@
           console.log(`Act ${actNumber} metadata:`, actData.__actMeta.actName);
         }
 
-        loadedActs[actNumber] = actData;
-
-        // Merge into wordpacks (excluding __actMeta)
+        // Store only pack data (exclude __actMeta)
         const packsOnly = { ...actData };
         delete packsOnly.__actMeta;
+
+        loadedActs[actNumber] = packsOnly;
         Object.assign(wordpacks, packsOnly);
 
         console.log(`Act ${actNumber} loaded successfully:`, Object.keys(packsOnly).length, 'packs');
-        return actData;
+        return packsOnly;
       } catch (error) {
         console.error(`Failed to load act ${actNumber}:`, error);
         throw error;
