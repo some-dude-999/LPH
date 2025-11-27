@@ -1,1 +1,57 @@
 Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,19,48,khmer,[TRANSLATE_KM],ក្នុងពេលព្រឹក,Failed auto-translation - needs manual Khmer translation
+chinese,19,49,khmer,[TRANSLATE_KM],តារាងពេលវេលា,Failed auto-translation - needs manual Khmer translation
+chinese,19,50,khmer,[TRANSLATE_KM],រាល់ពេល,Failed auto-translation - needs manual Khmer translation
+chinese,19,51,khmer,[TRANSLATE_KM],យឺត,Failed auto-translation - needs manual Khmer translation
+chinese,19,52,khmer,[TRANSLATE_KM],ការហោះហើរយឺត,Failed auto-translation - needs manual Khmer translation
+chinese,41,47,khmer,[TRANSLATE_KM],កាបូបសាលា,Failed auto-translation - needs manual Khmer translation
+chinese,41,48,khmer,[TRANSLATE_KM],យកកាបូបសាលា,Failed auto-translation - needs manual Khmer translation
+chinese,41,49,khmer,[TRANSLATE_KM],ទៅលំហែកាយ,Failed auto-translation - needs manual Khmer translation
+chinese,41,50,khmer,[TRANSLATE_KM],លើទីលំហែកាយ,Failed auto-translation - needs manual Khmer translation
+chinese,41,51,khmer,[TRANSLATE_KM],បរិវេណសាលាស្អាត,Failed auto-translation - needs manual Khmer translation
+chinese,41,52,khmer,[TRANSLATE_KM],លើបរិវេណសាលា,Failed auto-translation - needs manual Khmer translation
+chinese,47,49,khmer,[TRANSLATE_KM],ហែលទឹក,Failed auto-translation - needs manual Khmer translation
+chinese,47,50,khmer,[TRANSLATE_KM],ហាត់ហែលទឹក,Failed auto-translation - needs manual Khmer translation
+chinese,47,51,khmer,[TRANSLATE_KM],ផ្សាយតន្ត្រី,Failed auto-translation - needs manual Khmer translation
+chinese,47,52,khmer,[TRANSLATE_KM],ស្តាប់តន្ត្រី,Failed auto-translation - needs manual Khmer translation
+chinese,59,42,khmer,[TRANSLATE_KM],មានបញ្ហា,Failed auto-translation - needs manual Khmer translation
+chinese,59,43,khmer,[TRANSLATE_KM],បញ្ហាធំ,Failed auto-translation - needs manual Khmer translation
+chinese,61,44,khmer,[TRANSLATE_KM],ការទូទាត់,Failed auto-translation - needs manual Khmer translation
+chinese,61,45,khmer,[TRANSLATE_KM],របៀបទូទាត់,Failed auto-translation - needs manual Khmer translation
+chinese,61,46,khmer,[TRANSLATE_KM],ទូទាត់ភ្លាមៗ,Failed auto-translation - needs manual Khmer translation
+chinese,62,47,khmer,[TRANSLATE_KM],ជាស់លាស់,Failed auto-translation - needs manual Khmer translation
+chinese,62,48,khmer,[TRANSLATE_KM],បង់ប្រាក់,Failed auto-translation - needs manual Khmer translation
+chinese,62,49,khmer,[TRANSLATE_KM],បង់ប្រាក់,Failed auto-translation - needs manual Khmer translation
+chinese,63,46,khmer,[TRANSLATE_KM],ចេញពីសណ្ឋាគារ,Failed auto-translation - needs manual Khmer translation
+chinese,64,11,indonesian,,Penundaan,Empty cell - needs Indonesian translation
+chinese,64,45,khmer,[TRANSLATE_KM],មកដល់,Failed auto-translation - needs manual Khmer translation
+chinese,64,46,khmer,[TRANSLATE_KM],ចេញដំណើរ,Failed auto-translation - needs manual Khmer translation
+chinese,64,47,khmer,[TRANSLATE_KM],ជិះយន្តហោះអន្តរជាតិ,Failed auto-translation - needs manual Khmer translation
+chinese,64,48,khmer,[TRANSLATE_KM],ក្នុងស្រុក,Failed auto-translation - needs manual Khmer translation
+chinese,64,49,khmer,[TRANSLATE_KM],ក្រៅស្រុក,Failed auto-translation - needs manual Khmer translation
+chinese,66,41,khmer,[TRANSLATE_KM],កំណត់ការណាត់ជួប,Failed auto-translation - needs manual Khmer translation
+chinese,66,42,khmer,[TRANSLATE_KM],បោះបង់ការណាត់ជួប,Failed auto-translation - needs manual Khmer translation
+chinese,66,43,khmer,[TRANSLATE_KM],អះអាងការណាត់ជួប,Failed auto-translation - needs manual Khmer translation
+chinese,67,49,khmer,[TRANSLATE_KM],អាកាសធាតុ,Failed auto-translation - needs manual Khmer translation
+chinese,67,50,khmer,[TRANSLATE_KM],រាយការណ៍អាកាសធាតុ,Failed auto-translation - needs manual Khmer translation
+chinese,67,51,khmer,[TRANSLATE_KM],តាមដានអាកាសធាតុ,Failed auto-translation - needs manual Khmer translation
+chinese,67,52,khmer,[TRANSLATE_KM],អាកាសធាតុប្រែប្រួល,Failed auto-translation - needs manual Khmer translation
+chinese,68,43,khmer,[TRANSLATE_KM],ការហៅទូរសព្ទ,Failed auto-translation - needs manual Khmer translation
+chinese,68,44,khmer,[TRANSLATE_KM],ទូរសព្ទចូល,Failed auto-translation - needs manual Khmer translation
+chinese,68,45,khmer,[TRANSLATE_KM],ទូរសព្ទចេញ,Failed auto-translation - needs manual Khmer translation
+chinese,68,46,khmer,[TRANSLATE_KM],រង់ចាំខ្សែទូរសព្ទ,Failed auto-translation - needs manual Khmer translation
+chinese,68,47,khmer,[TRANSLATE_KM],ទូរសព្ទរវល់,Failed auto-translation - needs manual Khmer translation
+chinese,68,48,khmer,[TRANSLATE_KM],ទូរសព្ទដាច់,Failed auto-translation - needs manual Khmer translation
+chinese,68,49,khmer,[TRANSLATE_KM],ទូរសព្ទទៅវិញទៅមក,Failed auto-translation - needs manual Khmer translation
+chinese,73,7,khmer,,ភ្លាមៗ,Empty cell - needs Khmer translation
+chinese,74,12,khmer,,ជាញឹកញាប់,Empty cell - needs Khmer translation
+chinese,77,5,indonesian,,sama,Empty cell - needs Indonesian translation
+chinese,77,49,khmer,[TRANSLATE_KM],ប្រៀបធៀបតម្លៃ,Failed auto-translation - needs manual Khmer translation
+chinese,84,49,khmer,[TRANSLATE_KM],រយៈពេលខ្លី,Failed auto-translation - needs manual Khmer translation
+chinese,86,44,khmer,[TRANSLATE_KM],មូលហេតុ,Failed auto-translation - needs manual Khmer translation
+chinese,86,45,khmer,[TRANSLATE_KM],ផលវិបាក,Failed auto-translation - needs manual Khmer translation
+chinese,86,46,khmer,[TRANSLATE_KM],បណ្តាលមកពី,Failed auto-translation - needs manual Khmer translation
+chinese,86,47,khmer,[TRANSLATE_KM],មូលហេតុនិងផល,Failed auto-translation - needs manual Khmer translation
+chinese,86,48,khmer,[TRANSLATE_KM],រកមូលហេតុ,Failed auto-translation - needs manual Khmer translation
+chinese,86,49,khmer,[TRANSLATE_KM],យល់ពីមូលហេតុ,Failed auto-translation - needs manual Khmer translation
+chinese,90,18,vietnamese,,của,Empty cell - needs Vietnamese translation
