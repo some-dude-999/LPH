@@ -1131,8 +1131,13 @@ Create your own branch, commit, and PR to main.</div>
 === STEP 1: RUN VALIDATION SCRIPTS ===
 python PythonHelpers/verify_words_integrity.py chinese
 python PythonHelpers/validate_pinyin.py chinese
+python PythonHelpers/check_translation_quality.py chinese
 
-Note any errors found by scripts.
+This last script checks for:
+- Translations containing [ or ] (bad/failed translations - MUST BE FIXED)
+- Empty translation cells (gaps that need manual translation)
+
+Note all errors found. These will need manual fixes in Stage 3B.
 
 === STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
 
@@ -1278,12 +1283,38 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
 ║  🔒 NEVER EDIT COLUMN 1 (chinese) - IT'S SACRED                  ║
-║  ⛔ NEVER USE PYTHON TO FIX TRANSLATIONS (auto-fail)             ║
 ║  ✅ ONLY edit Columns 2-12 (pinyin + translations)               ║
 ║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 1: GET THE SCORECARD ===
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔⛔⛔ AUTO-FAIL: NO SYSTEMATIC TRANSLATION ⛔⛔⛔                ║
+║                                                                  ║
+║  The following are IMMEDIATE FAILURES:                           ║
+║  ❌ Using Python/scripts to generate translations                ║
+║  ❌ Using translation APIs (Google Translate, DeepL, etc.)       ║
+║  ❌ Batch-translating multiple words at once                     ║
+║  ❌ Copy-pasting from translation websites                       ║
+║                                                                  ║
+║  ALL translations must be done:                                  ║
+║  ✅ ONE BY ONE - each translation individually                   ║
+║  ✅ MANUALLY - using your knowledge of the language              ║
+║  ✅ THOUGHTFULLY - considering context and natural usage         ║
+║                                                                  ║
+║  If you have gaps (empty cells), fill them ONE AT A TIME.       ║
+║  If you have bad translations ([...]), fix them ONE AT A TIME.  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+=== STEP 1: RUN QUALITY CHECK FIRST ===
+python PythonHelpers/check_translation_quality.py chinese
+
+This shows:
+- Translations with [ or ] that need replacing
+- Empty cells that need manual translation
+
+Then get the Stage 3A scorecard.
+
+=== STEP 2: GET THE SCORECARD ===
 
 First, check if a Stage 3A scorecard exists. If not, run Stage 3A first.
 
@@ -1398,8 +1429,13 @@ Fix ALL packs below 9 - no exceptions!</div>
 === STEP 1: RUN VALIDATION SCRIPTS ===
 python PythonHelpers/verify_words_integrity.py spanish
 python PythonHelpers/validate_pinyin.py spanish
+python PythonHelpers/check_translation_quality.py spanish
 
-Note any errors found by scripts.
+This last script checks for:
+- Translations containing [ or ] (bad/failed translations - MUST BE FIXED)
+- Empty translation cells (gaps that need manual translation)
+
+Note all errors found. These will need manual fixes in Stage 3B.
 
 === STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
 
@@ -1519,12 +1555,38 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
 ║  🔒 NEVER EDIT COLUMN 1 (spanish) - IT'S SACRED                  ║
-║  ⛔ NEVER USE PYTHON TO FIX TRANSLATIONS (auto-fail)             ║
 ║  ✅ ONLY edit Columns 2-5 (translations)                         ║
 ║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 1: GET THE SCORECARD ===
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔⛔⛔ AUTO-FAIL: NO SYSTEMATIC TRANSLATION ⛔⛔⛔                ║
+║                                                                  ║
+║  The following are IMMEDIATE FAILURES:                           ║
+║  ❌ Using Python/scripts to generate translations                ║
+║  ❌ Using translation APIs (Google Translate, DeepL, etc.)       ║
+║  ❌ Batch-translating multiple words at once                     ║
+║  ❌ Copy-pasting from translation websites                       ║
+║                                                                  ║
+║  ALL translations must be done:                                  ║
+║  ✅ ONE BY ONE - each translation individually                   ║
+║  ✅ MANUALLY - using your knowledge of the language              ║
+║  ✅ THOUGHTFULLY - considering context and natural usage         ║
+║                                                                  ║
+║  If you have gaps (empty cells), fill them ONE AT A TIME.       ║
+║  If you have bad translations ([...]), fix them ONE AT A TIME.  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+=== STEP 1: RUN QUALITY CHECK FIRST ===
+python PythonHelpers/check_translation_quality.py spanish
+
+This shows:
+- Translations with [ or ] that need replacing
+- Empty cells that need manual translation
+
+Then get the Stage 3A scorecard.
+
+=== STEP 2: GET THE SCORECARD ===
 
 First, check if a Stage 3A scorecard exists. If not, run Stage 3A first.
 
@@ -1533,7 +1595,7 @@ The scorecard should show ALL 250 packs with:
 - Specific issues for each pack
 - Improvement plan with priorities
 
-=== STEP 2: FIX ALL PACKS SCORING BELOW 9 ===
+=== STEP 3: FIX ALL PACKS SCORING BELOW 9 ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🔥 FIX EVERY PACK WITH SCORE < 9. NO EXCEPTIONS. 🔥            ║
@@ -1631,8 +1693,13 @@ Fix ALL packs below 9 - no exceptions!</div>
 === STEP 1: RUN VALIDATION SCRIPTS ===
 python PythonHelpers/verify_words_integrity.py english
 python PythonHelpers/validate_pinyin.py english
+python PythonHelpers/check_translation_quality.py english
 
-Note any errors found by scripts.
+This last script checks for:
+- Translations containing [ or ] (bad/failed translations - MUST BE FIXED)
+- Empty translation cells (gaps that need manual translation)
+
+Note all errors found. These will need manual fixes in Stage 3B.
 
 === STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
 
@@ -1750,12 +1817,38 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
 ║  🔒 NEVER EDIT COLUMN 1 (english) - IT'S SACRED                  ║
-║  ⛔ NEVER USE PYTHON TO FIX TRANSLATIONS (auto-fail)             ║
 ║  ✅ ONLY edit Columns 2-5 (translations)                         ║
 ║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 1: GET THE SCORECARD ===
+╔══════════════════════════════════════════════════════════════════╗
+║  ⛔⛔⛔ AUTO-FAIL: NO SYSTEMATIC TRANSLATION ⛔⛔⛔                ║
+║                                                                  ║
+║  The following are IMMEDIATE FAILURES:                           ║
+║  ❌ Using Python/scripts to generate translations                ║
+║  ❌ Using translation APIs (Google Translate, DeepL, etc.)       ║
+║  ❌ Batch-translating multiple words at once                     ║
+║  ❌ Copy-pasting from translation websites                       ║
+║                                                                  ║
+║  ALL translations must be done:                                  ║
+║  ✅ ONE BY ONE - each translation individually                   ║
+║  ✅ MANUALLY - using your knowledge of the language              ║
+║  ✅ THOUGHTFULLY - considering context and natural usage         ║
+║                                                                  ║
+║  If you have gaps (empty cells), fill them ONE AT A TIME.       ║
+║  If you have bad translations ([...]), fix them ONE AT A TIME.  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+=== STEP 1: RUN QUALITY CHECK FIRST ===
+python PythonHelpers/check_translation_quality.py english
+
+This shows:
+- Translations with [ or ] that need replacing
+- Empty cells that need manual translation
+
+Then get the Stage 3A scorecard.
+
+=== STEP 2: GET THE SCORECARD ===
 
 First, check if a Stage 3A scorecard exists. If not, run Stage 3A first.
 
@@ -1764,7 +1857,7 @@ The scorecard should show ALL 160 packs with:
 - Specific issues for each pack
 - Improvement plan with priorities
 
-=== STEP 2: FIX ALL PACKS SCORING BELOW 9 ===
+=== STEP 3: FIX ALL PACKS SCORING BELOW 9 ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🔥 FIX EVERY PACK WITH SCORE < 9. NO EXCEPTIONS. 🔥            ║
