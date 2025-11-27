@@ -91,7 +91,7 @@ def parse_pinyin_for_chinese(pinyin_text, chinese_parts):
 
         elif ch_type == 'chinese':
             # Expect N pinyin syllables where N = number of Chinese characters
-            char_count = len(ch_seq)
+            char_count = count_chinese_chars(ch_seq)  # Fixed: exclude punctuation
             syllables = []
 
             for _ in range(char_count):
@@ -159,7 +159,7 @@ def validate_mixed_sequences(chinese, pinyin):
 
         # Chinese characters must match pinyin syllables
         elif ch_type == 'chinese' and py_type == 'pinyin':
-            char_count = len(ch_seq)
+            char_count = count_chinese_chars(ch_seq)  # Fixed: exclude punctuation
             syllable_count = len(py_seq.split()) if py_seq else 0
 
             if char_count != syllable_count:
