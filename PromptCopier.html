@@ -1136,14 +1136,31 @@ python PythonHelpers/validate_pinyin.py chinese
 
 Note any pinyin errors to fix.
 
-=== STEP 3: SCORE EVERY WORDPACK (1-10) - MANDATORY OUTPUT ===
+=== STEP 3: SCORE EVERY SINGLE PACK (1-10) - YOUR FIRST RESPONSE ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📊 PRODUCE THE FULL SCORECARD TABLE FIRST                       ║
+║  ⛔⛔⛔ TOTAL FAIL CONDITIONS - READ CAREFULLY ⛔⛔⛔              ║
 ║                                                                  ║
-║  ⚠️ THIS TABLE IS MANDATORY. ALWAYS DISPLAY IT.                  ║
-║  Even if you don't fix anything, this table MUST appear.        ║
-║  Score ALL 107 packs BEFORE moving to Step 4.                   ║
+║  YOUR TASK IS A COMPLETE FAILURE IF:                             ║
+║  ❌ You give an "overall score" instead of per-pack scores       ║
+║  ❌ Even ONE pack is missing from your scorecard                 ║
+║  ❌ You skip ANY pack (1-107) for ANY reason                     ║
+║  ❌ You say "Packs 1-50 reviewed" instead of listing each one   ║
+║  ❌ The full 107-pack scorecard is not in your FIRST response   ║
+║                                                                  ║
+║  There are exactly 107 packs. Your table MUST have 107 rows.    ║
+║  NO SHORTCUTS. NO SUMMARIES. NO GROUPING. EACH PACK SCORED.     ║
+╚══════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ✅ WHAT SUCCESS LOOKS LIKE:                                     ║
+║                                                                  ║
+║  Your FIRST response contains a table with ALL 107 rows:        ║
+║  | 1 | ChineseWords1.csv | 8/10 | Row 3: pinyin issue |         ║
+║  | 2 | ChineseWords2.csv | 10/10 | None ✓ |                     ║
+║  | 3 | ChineseWords3.csv | 7/10 | Row 5: english awkward |      ║
+║  ... (every single pack from 1 to 107) ...                      ║
+║  | 107 | ChineseWords107.csv | 9/10 | Minor ✓ |                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 SCORING SCALE:
@@ -1155,7 +1172,7 @@ SCORING SCALE:
 
 🎯 THRESHOLD: Only fix packs scoring BELOW 9
 
-Chinese Acts:
+Chinese Acts (for reference only - YOU MUST SCORE EVERY PACK):
 - Act I (Foundation): Packs 1-14
 - Act II (Development): Packs 15-27
 - Act III (Expansion): Packs 28-57
@@ -1177,7 +1194,11 @@ FOR EACH PACK, check EVERY ROW:
    - Column 12 (filipino): Accurate? Natural?
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚨 MANDATORY: DISPLAY THIS COMPLETE TABLE BEFORE FIXING 🚨      ║
+║  🚨 YOUR FIRST RESPONSE MUST CONTAIN THIS FULL TABLE 🚨          ║
+║                                                                  ║
+║  ⛔ "..." or "Packs 6-105" = TOTAL FAIL                          ║
+║  ⛔ Missing even 1 pack = TOTAL FAIL                             ║
+║  ✅ All 107 rows explicitly listed = SUCCESS                     ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 | Pack | Wordpack | Score | Issues Found |
@@ -1187,18 +1208,33 @@ FOR EACH PACK, check EVERY ROW:
 | 3 | ChineseWords3.csv | ?/10 | [list issues or "None ✓"] |
 | 4 | ChineseWords4.csv | ?/10 | [list issues or "None ✓"] |
 | 5 | ChineseWords5.csv | ?/10 | [list issues or "None ✓"] |
-| ... | ... | ... | ... |
+| 6 | ChineseWords6.csv | ?/10 | [list issues or "None ✓"] |
+| 7 | ChineseWords7.csv | ?/10 | [list issues or "None ✓"] |
+...YOU MUST LIST EVERY SINGLE ROW FROM 1 TO 107...
+| 105 | ChineseWords105.csv | ?/10 | [list issues or "None ✓"] |
 | 106 | ChineseWords106.csv | ?/10 | [list issues or "None ✓"] |
 | 107 | ChineseWords107.csv | ?/10 | [list issues or "None ✓"] |
 
-^^^ COMPLETE ALL 107 ROWS. DO NOT SKIP ANY. ^^^
+⛔ DO NOT USE "..." IN YOUR ACTUAL TABLE. LIST ALL 107 ROWS. ⛔
 
-SUMMARY (after table):
+SUMMARY (required after scorecard):
 | Metric | Count |
 |--------|-------|
 | Packs scoring 10/10 | X |
 | Packs scoring 9/10 | X |
 | Packs scoring below 9 | X (these need fixing) |
+
+=== IMPROVEMENT PLAN (required after summary) ===
+After the scorecard and summary, create an improvement plan:
+
+| Priority | Pack | Current Score | Main Issues | Proposed Fix |
+|----------|------|---------------|-------------|--------------|
+| 1 | ChineseWords23.csv | 5/10 | Multiple pinyin errors, english awkward | Fix pinyin spacing, rewrite english |
+| 2 | ChineseWords45.csv | 6/10 | Thai translation wrong | Correct thai column |
+| 3 | ChineseWords12.csv | 7/10 | Spanish accent missing | Add accents |
+| ... | ... | ... | ... | ... |
+
+List ALL packs scoring below 9, ordered by priority (worst first).
 
 === STEP 4: FIX ALL PACKS SCORING BELOW 9 ===
 
