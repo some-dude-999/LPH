@@ -1,6 +1,6 @@
 english,chinese,pinyin,spanish,portuguese
 cell,细胞,xì bāo,celda,célula
-DNA,DNA,DNA,ADN,ADN
+DNA,脱氧核糖核酸,tuō yǎng hé táng hé suān,ADN,ADN
 gene,基因,jī yīn,gen,gene
 evolution,进化,jìn huà,evolución,evolução
 species,物种,wù zhǒng,especies,espécies
@@ -11,7 +11,7 @@ immune system,免疫系统,miǎn yì xì tǒng,sistema inmunológico,sistema imu
 protein,蛋白质,dàn bái zhì,proteína,proteína
 tissue,组织,zǔ zhī,tejido,tecido
 organ,器官,qì guān,órgano,órgão
-reproduce,重现,chóng xiàn,reproducir,reproduzir
+reproduce,繁殖,fán zhí,reproducir,reproduzir
 adapt,适应,shì yìng,adaptarse,adaptar
 biodiversity,生物多样性,shēng wù duō yàng xìng,biodiversidad,biodiversidade
 extinct,灭绝,miè jué,extinto,extinto
@@ -43,7 +43,7 @@ muscle tissue,肌肉组织,jī ròu zǔ zhī,tejido muscular,tecido muscular
 tissue sample,组织样本,zǔ zhī yàng běn,muestra de tejido,amostra de tecido
 vital organ,重要器官,zhòng yào qì guān,órgano vital,órgão vital
 organ transplant,器官移植,qì guān yí zhí,trasplante de órganos,transplante de órgãos
-reproduce quickly,快速重现,kuài sù chóng xiàn,reproducirse rápidamente,reproduzir rapidamente
+reproduce quickly,快速繁殖,kuài sù fán zhí,reproducirse rápidamente,reproduzir rapidamente
 reproduce offspring,繁衍后代,fán yǎn hòu dài,reproducir descendencia,reproduzir descendentes
 adapt to,适应,shì yìng,adaptarse a,adaptar-se a
 adapt easily,轻松适应,qīng sōng shì yìng,adaptarse fácilmente,adapte-se facilmente
