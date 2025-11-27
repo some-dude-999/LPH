@@ -1301,14 +1301,40 @@ chinese,4,5,english,[greeting],hello,Has brackets - failed auto-translation
 ⛔ EVERY PACK MUST HAVE Issue_Count filled in! ⛔
 ⛔ EVERY ISSUE MUST HAVE A FIX ROW IN ChineseFixTable.csv! ⛔
 
-=== STEP 4: APPLY FIXES (BULK OPERATION) ===
+=== STEP 4: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
 
-After completing the fix table:
-1. Review ChineseFixTable.csv for accuracy
-2. Run: python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTable.csv
-3. All fixes apply in seconds (hundreds of changes at once!)
-4. Validate with existing checkers
-5. Commit and PR to main
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
+║                                                                  ║
+║  The fix table is ONLY an intermediate artifact.                ║
+║  TASK IS A TOTAL FAIL if you don't actually apply the fixes!    ║
+║                                                                  ║
+║  IMMEDIATELY after completing the fix table:                    ║
+║  1. Run: python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTable.csv
+║  2. If errors occur → debug and rerun until SUCCESS             ║
+║  3. Final output = FIXED DATASET (actual CSV files changed)     ║
+║                                                                  ║
+║  DO NOT ask for review. DO NOT stop at the fix table.           ║
+║  The job is NOT done until the CSVs are actually fixed!         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+APPLY WORKFLOW:
+1. Run: python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTable.csv
+2. Check output for mismatches or errors
+3. If errors:
+   - Debug: Are Row_Numbers correct? (Header = row 1, data starts row 2)
+   - Debug: Do Old_Values match exactly what's in the CSV?
+   - Fix the fix table and rerun
+4. When apply succeeds with 0 mismatches → Validate and commit
+5. Run validation: python PythonHelpers/validate_pinyin.py chinese
+6. Commit and PR to main
+
+SURGICAL EDIT PRINCIPLE (CRITICAL!):
+- Edits target specific: Language, Pack_Number, Row_Number, Column_Name
+- NEVER blanket "replace A with B in all CSVs"
+- Each fix must specify exact location: which pack, which row, which column
+- Can fix 500 rows at once, but EACH must be surgically specified
+- Even if the same error is in ALL rows of ALL packs, specify each one!
 
 === STEP 5: DISPLAY SUMMARY ===
 
@@ -1323,15 +1349,18 @@ After updating both CSVs, display this summary:
 | TOTAL PACKS NEEDING FIXES (Issue_Count > 0) | X |
 | TOTAL FIXES IN FIX TABLE | X |
 
-=== FINAL OUTPUT CHECKLIST ===
+=== FINAL OUTPUT CHECKLIST (ALL REQUIRED!) ===
 | Requirement | Status |
 |-------------|--------|
 | All 107 packs evaluated | ✓/✗ |
 | TranslationErrors.csv: All Issue_Count filled | ✓/✗ |
 | ChineseFixTable.csv: One row per issue | ✓/✗ |
-| Fixes applied with apply_fixes.py | ✓/✗ |
+| ⚠️ Fixes APPLIED with apply_fixes.py (MANDATORY!) | ✓/✗ |
+| apply_fixes.py ran with 0 mismatches | ✓/✗ |
 | Validation scripts pass | ✓/✗ |
 | Changes committed and PRed | ✓/✗ |
+
+⚠️⚠️⚠️ If "Fixes APPLIED" is ✗, you have FAILED THE TASK! ⚠️⚠️⚠️
 
 === PINYIN RULE REFERENCE ===
 Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
@@ -1450,13 +1479,40 @@ For EACH pack with issues:
 ║  ❌ WRONG:   de, xiān (space before comma - breaks alignment!)  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 3: APPLY ALL FIXES (BULK OPERATION) ===
+=== STEP 3: APPLY ALL FIXES (MANDATORY - NOT OPTIONAL!) ===
 
-After recording ALL fixes in ChineseFixTableB.csv:
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
+║                                                                  ║
+║  ChineseFixTableB.csv is ONLY an intermediate artifact.         ║
+║  TASK IS A TOTAL FAIL if you don't actually apply the fixes!    ║
+║                                                                  ║
+║  IMMEDIATELY after completing the fix table:                    ║
+║  1. Run apply_fixes.py                                          ║
+║  2. If errors occur → debug and rerun until SUCCESS             ║
+║  3. Final output = FIXED DATASET (actual CSV files changed)     ║
+║                                                                  ║
+║  DO NOT ask for review. DO NOT stop at the fix table.           ║
+║  The job is NOT done until the CSVs are actually fixed!         ║
+╚══════════════════════════════════════════════════════════════════╝
 
-python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTableB.csv
+APPLY WORKFLOW:
+1. Run: python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTableB.csv
+2. Check output for mismatches or errors
+3. If errors:
+   - Debug: Are Row_Numbers correct? (Header = row 1, data starts row 2)
+   - Debug: Do Old_Values match exactly what's in the CSV?
+   - Fix the fix table and rerun
+4. When apply succeeds with 0 mismatches → Validate and commit
+5. Run validation: python PythonHelpers/validate_pinyin.py chinese
+6. All good? Proceed to Step 4
 
-This applies all fixes at once. Review output for any mismatches.
+SURGICAL EDIT PRINCIPLE (CRITICAL!):
+- Edits target specific: Language, Pack_Number, Row_Number, Column_Name
+- NEVER blanket "replace A with B in all CSVs"
+- Each fix must specify exact location: which pack, which row, which column
+- Can fix 500 rows at once, but EACH must be surgically specified
+- Even if the same error is in ALL rows of ALL packs, specify each one!
 
 === STEP 4: COMMIT AND PUSH ===
 
@@ -1501,12 +1557,16 @@ git push -u origin <branch-name>
 | 11  | malay      | ✅ YES    | Translation                  |
 | 12  | filipino   | ✅ YES    | Translation                  |
 
-=== SUCCESS CRITERIA ===
+=== SUCCESS CRITERIA (ALL REQUIRED!) ===
 
 ✅ ChineseFixTableB.csv has entries for EVERY issue found
-✅ apply_fixes.py runs successfully with 0 mismatches
+✅ ⚠️ apply_fixes.py runs successfully with 0 mismatches (MANDATORY!)
+✅ ⚠️ Actual CSV files are CHANGED (fix table alone = FAIL!)
+✅ Validation passes (validate_pinyin.py chinese)
 ✅ All changes committed and pushed
-✅ All 107 packs scanned (even if some have 0 issues)</div>
+✅ All 107 packs scanned (even if some have 0 issues)
+
+⚠️⚠️⚠️ If actual CSVs aren't fixed, you have FAILED THE TASK! ⚠️⚠️⚠️</div>
 
 <h3>Spanish - Stage 3A (Evaluation Only)</h3>
 <div>Click to copy</div>
@@ -1701,14 +1761,40 @@ spanish,4,5,pinyin,shí,shì,Wrong tone (shí → shì)
 ⛔ EVERY PACK MUST HAVE Issue_Count filled in! ⛔
 ⛔ EVERY ISSUE MUST HAVE A FIX ROW IN SpanishFixTable.csv! ⛔
 
-=== STEP 4: APPLY FIXES (BULK OPERATION) ===
+=== STEP 4: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
 
-After completing the fix table:
-1. Review SpanishFixTable.csv for accuracy
-2. Run: python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTable.csv
-3. All fixes apply in seconds (hundreds of changes at once!)
-4. Validate with existing checkers
-5. Commit and PR to main
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
+║                                                                  ║
+║  The fix table is ONLY an intermediate artifact.                ║
+║  TASK IS A TOTAL FAIL if you don't actually apply the fixes!    ║
+║                                                                  ║
+║  IMMEDIATELY after completing the fix table:                    ║
+║  1. Run: python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTable.csv
+║  2. If errors occur → debug and rerun until SUCCESS             ║
+║  3. Final output = FIXED DATASET (actual CSV files changed)     ║
+║                                                                  ║
+║  DO NOT ask for review. DO NOT stop at the fix table.           ║
+║  The job is NOT done until the CSVs are actually fixed!         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+APPLY WORKFLOW:
+1. Run: python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTable.csv
+2. Check output for mismatches or errors
+3. If errors:
+   - Debug: Are Row_Numbers correct? (Header = row 1, data starts row 2)
+   - Debug: Do Old_Values match exactly what's in the CSV?
+   - Fix the fix table and rerun
+4. When apply succeeds with 0 mismatches → Validate and commit
+5. Run validation: python PythonHelpers/validate_pinyin.py spanish
+6. Commit and PR to main
+
+SURGICAL EDIT PRINCIPLE (CRITICAL!):
+- Edits target specific: Language, Pack_Number, Row_Number, Column_Name
+- NEVER blanket "replace A with B in all CSVs"
+- Each fix must specify exact location: which pack, which row, which column
+- Can fix 500 rows at once, but EACH must be surgically specified
+- Even if the same error is in ALL rows of ALL packs, specify each one!
 
 === STEP 5: SUMMARY COUNTS ===
 
@@ -1721,15 +1807,18 @@ After completing the fix table:
 | TOTAL PACKS NEEDING FIXES (Issue_Count > 0) | X |
 | TOTAL FIXES IN FIX TABLE | X |
 
-=== FINAL OUTPUT CHECKLIST ===
+=== FINAL OUTPUT CHECKLIST (ALL REQUIRED!) ===
 | Requirement | Status |
 |-------------|--------|
 | All 250 packs evaluated | ✓/✗ |
 | TranslationErrors.csv: All Issue_Count filled | ✓/✗ |
 | SpanishFixTable.csv: One row per issue | ✓/✗ |
-| Fixes applied with apply_fixes.py | ✓/✗ |
+| ⚠️ Fixes APPLIED with apply_fixes.py (MANDATORY!) | ✓/✗ |
+| apply_fixes.py ran with 0 mismatches | ✓/✗ |
 | Validation scripts pass | ✓/✗ |
 | Changes committed and PRed | ✓/✗ |
+
+⚠️⚠️⚠️ If "Fixes APPLIED" is ✗, you have FAILED THE TASK! ⚠️⚠️⚠️
 
 Spanish Acts (250 packs total):
 - Act I (Foundation): Packs 1-50
@@ -1849,13 +1938,40 @@ For EACH pack with issues:
 ║  ❌ WRONG:   de, xiān (space before comma - breaks alignment!)  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 3: APPLY ALL FIXES (BULK OPERATION) ===
+=== STEP 3: APPLY ALL FIXES (MANDATORY - NOT OPTIONAL!) ===
 
-After recording ALL fixes in SpanishFixTableB.csv:
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
+║                                                                  ║
+║  SpanishFixTableB.csv is ONLY an intermediate artifact.         ║
+║  TASK IS A TOTAL FAIL if you don't actually apply the fixes!    ║
+║                                                                  ║
+║  IMMEDIATELY after completing the fix table:                    ║
+║  1. Run apply_fixes.py                                          ║
+║  2. If errors occur → debug and rerun until SUCCESS             ║
+║  3. Final output = FIXED DATASET (actual CSV files changed)     ║
+║                                                                  ║
+║  DO NOT ask for review. DO NOT stop at the fix table.           ║
+║  The job is NOT done until the CSVs are actually fixed!         ║
+╚══════════════════════════════════════════════════════════════════╝
 
-python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTableB.csv
+APPLY WORKFLOW:
+1. Run: python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTableB.csv
+2. Check output for mismatches or errors
+3. If errors:
+   - Debug: Are Row_Numbers correct? (Header = row 1, data starts row 2)
+   - Debug: Do Old_Values match exactly what's in the CSV?
+   - Fix the fix table and rerun
+4. When apply succeeds with 0 mismatches → Validate and commit
+5. Run validation: python PythonHelpers/validate_pinyin.py spanish
+6. All good? Proceed to Step 4
 
-This applies all fixes at once. Review output for any mismatches.
+SURGICAL EDIT PRINCIPLE (CRITICAL!):
+- Edits target specific: Language, Pack_Number, Row_Number, Column_Name
+- NEVER blanket "replace A with B in all CSVs"
+- Each fix must specify exact location: which pack, which row, which column
+- Can fix 500 rows at once, but EACH must be surgically specified
+- Even if the same error is in ALL rows of ALL packs, specify each one!
 
 === STEP 4: COMMIT AND PUSH ===
 
@@ -1893,12 +2009,16 @@ git push -u origin <branch-name>
 | 4   | pinyin     | ✅ YES    | 1 syllable per character     |
 | 5   | portuguese | ✅ YES    | Translation                  |
 
-=== SUCCESS CRITERIA ===
+=== SUCCESS CRITERIA (ALL REQUIRED!) ===
 
 ✅ SpanishFixTableB.csv has entries for EVERY issue found
-✅ apply_fixes.py runs successfully with 0 mismatches
+✅ ⚠️ apply_fixes.py runs successfully with 0 mismatches (MANDATORY!)
+✅ ⚠️ Actual CSV files are CHANGED (fix table alone = FAIL!)
+✅ Validation passes (validate_pinyin.py spanish)
 ✅ All changes committed and pushed
-✅ All 250 packs scanned (even if some have 0 issues)</div>
+✅ All 250 packs scanned (even if some have 0 issues)
+
+⚠️⚠️⚠️ If actual CSVs aren't fixed, you have FAILED THE TASK! ⚠️⚠️⚠️</div>
 
 <h3>English - Stage 3A (Evaluation Only)</h3>
 <div>Click to copy</div>
@@ -2093,14 +2213,40 @@ english,4,5,pinyin,shí,shì,Wrong tone (shí → shì)
 ⛔ EVERY PACK MUST HAVE Issue_Count filled in! ⛔
 ⛔ EVERY ISSUE MUST HAVE A FIX ROW IN EnglishFixTable.csv! ⛔
 
-=== STEP 4: APPLY FIXES (BULK OPERATION) ===
+=== STEP 4: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
 
-After completing the fix table:
-1. Review EnglishFixTable.csv for accuracy
-2. Run: python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTable.csv
-3. All fixes apply in seconds (hundreds of changes at once!)
-4. Validate with existing checkers
-5. Commit and PR to main
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
+║                                                                  ║
+║  The fix table is ONLY an intermediate artifact.                ║
+║  TASK IS A TOTAL FAIL if you don't actually apply the fixes!    ║
+║                                                                  ║
+║  IMMEDIATELY after completing the fix table:                    ║
+║  1. Run: python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTable.csv
+║  2. If errors occur → debug and rerun until SUCCESS             ║
+║  3. Final output = FIXED DATASET (actual CSV files changed)     ║
+║                                                                  ║
+║  DO NOT ask for review. DO NOT stop at the fix table.           ║
+║  The job is NOT done until the CSVs are actually fixed!         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+APPLY WORKFLOW:
+1. Run: python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTable.csv
+2. Check output for mismatches or errors
+3. If errors:
+   - Debug: Are Row_Numbers correct? (Header = row 1, data starts row 2)
+   - Debug: Do Old_Values match exactly what's in the CSV?
+   - Fix the fix table and rerun
+4. When apply succeeds with 0 mismatches → Validate and commit
+5. Run validation: python PythonHelpers/validate_pinyin.py english
+6. Commit and PR to main
+
+SURGICAL EDIT PRINCIPLE (CRITICAL!):
+- Edits target specific: Language, Pack_Number, Row_Number, Column_Name
+- NEVER blanket "replace A with B in all CSVs"
+- Each fix must specify exact location: which pack, which row, which column
+- Can fix 500 rows at once, but EACH must be surgically specified
+- Even if the same error is in ALL rows of ALL packs, specify each one!
 
 === STEP 5: SUMMARY COUNTS ===
 
@@ -2113,15 +2259,18 @@ After completing the fix table:
 | TOTAL PACKS NEEDING FIXES (Issue_Count > 0) | X |
 | TOTAL FIXES IN FIX TABLE | X |
 
-=== FINAL OUTPUT CHECKLIST ===
+=== FINAL OUTPUT CHECKLIST (ALL REQUIRED!) ===
 | Requirement | Status |
 |-------------|--------|
 | All 160 packs evaluated | ✓/✗ |
 | TranslationErrors.csv: All Issue_Count filled | ✓/✗ |
 | EnglishFixTable.csv: One row per issue | ✓/✗ |
-| Fixes applied with apply_fixes.py | ✓/✗ |
+| ⚠️ Fixes APPLIED with apply_fixes.py (MANDATORY!) | ✓/✗ |
+| apply_fixes.py ran with 0 mismatches | ✓/✗ |
 | Validation scripts pass | ✓/✗ |
 | Changes committed and PRed | ✓/✗ |
+
+⚠️⚠️⚠️ If "Fixes APPLIED" is ✗, you have FAILED THE TASK! ⚠️⚠️⚠️
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⛔⛔⛔ YOU MUST EVALUATE ALL 160 PACKS ⛔⛔⛔                   ║
@@ -2286,13 +2435,40 @@ For EACH pack with issues:
 ║  ❌ WRONG:   de, xiān (space before comma - breaks alignment!)  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 3: APPLY ALL FIXES (BULK OPERATION) ===
+=== STEP 3: APPLY ALL FIXES (MANDATORY - NOT OPTIONAL!) ===
 
-After recording ALL fixes in EnglishFixTableB.csv:
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
+║                                                                  ║
+║  EnglishFixTableB.csv is ONLY an intermediate artifact.         ║
+║  TASK IS A TOTAL FAIL if you don't actually apply the fixes!    ║
+║                                                                  ║
+║  IMMEDIATELY after completing the fix table:                    ║
+║  1. Run apply_fixes.py                                          ║
+║  2. If errors occur → debug and rerun until SUCCESS             ║
+║  3. Final output = FIXED DATASET (actual CSV files changed)     ║
+║                                                                  ║
+║  DO NOT ask for review. DO NOT stop at the fix table.           ║
+║  The job is NOT done until the CSVs are actually fixed!         ║
+╚══════════════════════════════════════════════════════════════════╝
 
-python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTableB.csv
+APPLY WORKFLOW:
+1. Run: python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTableB.csv
+2. Check output for mismatches or errors
+3. If errors:
+   - Debug: Are Row_Numbers correct? (Header = row 1, data starts row 2)
+   - Debug: Do Old_Values match exactly what's in the CSV?
+   - Fix the fix table and rerun
+4. When apply succeeds with 0 mismatches → Validate and commit
+5. Run validation: python PythonHelpers/validate_pinyin.py english
+6. All good? Proceed to Step 4
 
-This applies all fixes at once. Review output for any mismatches.
+SURGICAL EDIT PRINCIPLE (CRITICAL!):
+- Edits target specific: Language, Pack_Number, Row_Number, Column_Name
+- NEVER blanket "replace A with B in all CSVs"
+- Each fix must specify exact location: which pack, which row, which column
+- Can fix 500 rows at once, but EACH must be surgically specified
+- Even if the same error is in ALL rows of ALL packs, specify each one!
 
 === STEP 4: COMMIT AND PUSH ===
 
@@ -2330,12 +2506,16 @@ git push -u origin <branch-name>
 | 4   | spanish    | ✅ YES    | Translation                  |
 | 5   | portuguese | ✅ YES    | Translation                  |
 
-=== SUCCESS CRITERIA ===
+=== SUCCESS CRITERIA (ALL REQUIRED!) ===
 
 ✅ EnglishFixTableB.csv has entries for EVERY issue found
-✅ apply_fixes.py runs successfully with 0 mismatches
+✅ ⚠️ apply_fixes.py runs successfully with 0 mismatches (MANDATORY!)
+✅ ⚠️ Actual CSV files are CHANGED (fix table alone = FAIL!)
+✅ Validation passes (validate_pinyin.py english)
 ✅ All changes committed and pushed
-✅ All 160 packs scanned (even if some have 0 issues)</div>
+✅ All 160 packs scanned (even if some have 0 issues)
+
+⚠️⚠️⚠️ If actual CSVs aren't fixed, you have FAILED THE TASK! ⚠️⚠️⚠️</div>
 
 <!-- ============================================================ -->
 <!-- STAGE 4: JAVASCRIPT MODULE GENERATION                        -->

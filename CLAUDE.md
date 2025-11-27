@@ -101,6 +101,104 @@ The stamp now sits in the top half of the card!
 
 ---
 
+## 🔧 SURGICAL EDITS - MANDATORY FOR CSV/DATA FIXES
+**CRITICAL: All data edits MUST be surgical - targeting specific locations, NEVER blanket replacements.**
+
+### The Surgical Edit Principle
+When fixing errors in CSV files or any structured data:
+
+**✅ ALWAYS:**
+- Target specific: File, Row, Column
+- Specify exact location for EVERY fix
+- Use scripts that require precise coordinates (Language, Pack_Number, Row_Number, Column_Name)
+- Can batch 500 fixes at once, but EACH must be individually specified
+
+**❌ NEVER:**
+- Blanket "replace A with B in all files"
+- Global search-and-replace across multiple CSVs
+- Assume all instances of a value should be changed
+- Use `sed 's/old/new/g' *.csv` or similar bulk operations
+
+### Example: Fixing Translation Errors
+
+**❌ BAD (Blanket Edit):**
+```bash
+# This would blindly replace "hola" everywhere - WRONG!
+sed -i 's/hola/hello/g' *.csv
+```
+
+**✅ GOOD (Surgical Edit):**
+```csv
+# ChineseFixTable.csv - Each fix precisely specified
+Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,23,3,pinyin,nǐhǎo,nǐ hǎo,Missing space between syllables
+chinese,23,7,english,hello friend boy,hey buddy,Awkward phrasing
+chinese,45,12,spanish,,hola amigo,Empty cell
+chinese,67,5,pinyin,nǐhǎo,nǐ hǎo,Missing space
+```
+
+Then apply surgically:
+```bash
+python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTable.csv
+```
+
+### Why This Matters
+- **Precision**: Only fixes what's actually wrong
+- **Safety**: Won't accidentally change correct values
+- **Context-aware**: Same text might be correct in one place, wrong in another
+- **Auditable**: Every change is tracked and reversible
+- **Intentional**: Forces you to verify each fix is needed
+
+### The Extreme Case
+**Even if the SAME ERROR appears in EVERY row of EVERY pack, you MUST specify each one surgically!**
+
+Example: 500 packs all have pinyin spacing errors in row 3
+```csv
+chinese,1,3,pinyin,nǐhǎo,nǐ hǎo,Missing space
+chinese,2,3,pinyin,nǐhǎo,nǐ hǎo,Missing space
+chinese,3,3,pinyin,nǐhǎo,nǐ hǎo,Missing space
+...
+chinese,500,3,pinyin,nǐhǎo,nǐ hǎo,Missing space
+```
+
+This seems tedious, but it's **safer** and ensures:
+1. You actually verified each case
+2. No false positives (maybe pack 234 was correct!)
+3. Complete audit trail
+4. Reversible at the fix level
+
+### The Fix Table Pattern
+All CSV fixes use this pattern:
+1. **Generate fix table** - CSV listing exact fixes needed
+2. **Fix table is INTERMEDIATE** - useless on its own
+3. **MUST run apply script** - Actually modifies the CSVs
+4. **Task FAILS if you stop at step 1** - Fix table alone = incomplete work
+
+**Example Workflow:**
+```bash
+# 1. Scan data and create fix table
+# (LLM fills in: Row_Number, Column_Name, Old_Value, New_Value)
+
+# 2. IMMEDIATELY apply fixes (MANDATORY!)
+python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTable.csv
+
+# 3. If errors occur:
+#    - Debug (wrong row numbers? mismatched old values?)
+#    - Fix the fix table
+#    - Rerun until SUCCESS
+
+# 4. Validate
+python PythonHelpers/validate_pinyin.py chinese
+
+# 5. Commit
+git add .
+git commit -m "Fix pinyin spacing errors in packs 1-107"
+```
+
+**If you create a fix table but don't run apply_fixes.py → TOTAL FAIL!**
+
+---
+
 ## 🔑 KEY FEATURES - SACRED AND IMMUTABLE
 **CRITICAL: Key features are high-level user requirements that MUST be preserved across all code changes.**
 
