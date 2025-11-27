@@ -17,7 +17,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 16,Days of Week,Act II: Development,0,None - all translations present and valid
 17,Months & Seasons,Act II: Development,0,None - all translations present and valid
 18,Years & Calendar,Act II: Development,0,None - all translations present and valid
-19,Telling Time,Act II: Development,5,5 Khmer [TRANSLATE_KM] placeholders
+19,Telling Time,Act II: Development,8,"Row 5: spanish/french/portuguese 'trimestre' (quarter year) should be 'cuarto de hora'; Row 9: spanish 'ver' (verb) should be 'reloj' (watch noun); similar verb/noun confusion in french/portuguese/vietnamese"
 20,Numbers 11-100,Act II: Development,0,None - all translations present and valid
 21,More Measure Words,Act II: Development,0,None - all translations present and valid
 22,More Action Verbs,Act II: Development,0,None - all translations present and valid
@@ -31,7 +31,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 30,Drinks & Beverages,Act III: Expansion,0,None - all translations present and valid
 31,Common Foods,Act III: Expansion,0,None - all translations present and valid
 32,Eating & Drinking,Act III: Expansion,0,None - all translations present and valid
-33,Clothing Items,Act III: Expansion,0,None - all translations present and valid
+33,Clothing Items,Act III: Expansion,3,"Row 15: spanish 'Empate' (tie in sports) should be 'corbata' (necktie); Row 6/12: khmer translations mixed up (socks→hat, underwear→gloves)"
 34,Weather Words,Act III: Expansion,0,None - all translations present and valid
 35,Shopping Basics,Act III: Expansion,0,None - all translations present and valid
 36,Around the House,Act III: Expansion,0,None - all translations present and valid
@@ -39,13 +39,13 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 38,Describing People,Act III: Expansion,0,None - all translations present and valid
 39,Emotions & Feelings,Act III: Expansion,0,None - all translations present and valid
 40,Health & Sickness,Act III: Expansion,0,None - all translations present and valid
-41,School Life,Act III: Expansion,6,6 Khmer [TRANSLATE_KM] placeholders
+41,School Life,Act III: Expansion,0,None - all translations present and valid
 42,Work & Office,Act III: Expansion,0,None - all translations present and valid
 43,Communication Verbs,Act III: Expansion,0,None - all translations present and valid
 44,Phone & Internet,Act III: Expansion,0,None - all translations present and valid
 45,Getting Around,Act III: Expansion,0,None - all translations present and valid
 46,Daily Routines,Act III: Expansion,0,None - all translations present and valid
-47,Hobbies & Leisure,Act III: Expansion,4,4 Khmer [TRANSLATE_KM] placeholders
+47,Hobbies & Leisure,Act III: Expansion,0,None - all translations present and valid
 48,Sports & Exercise,Act III: Expansion,0,None - all translations present and valid
 49,Nature & Environment,Act III: Expansion,0,None - all translations present and valid
 50,Animals,Act III: Expansion,0,None - all translations present and valid
@@ -57,38 +57,38 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 56,Expressing Needs,Act IV: Mastery,0,None - all translations present and valid
 57,Asking for Help,Act IV: Mastery,0,None - all translations present and valid
 58,Giving Directions,Act IV: Mastery,0,None - all translations present and valid
-59,Describing Situations,Act IV: Mastery,2,2 Khmer [TRANSLATE_KM] placeholders
+59,Describing Situations,Act IV: Mastery,0,None - all translations present and valid
 60,Talking About Problems,Act IV: Mastery,0,None - all translations present and valid
-61,Money & Payments,Act IV: Mastery,3,3 Khmer [TRANSLATE_KM] placeholders
-62,At the Restaurant,Act IV: Mastery,3,3 Khmer [TRANSLATE_KM] placeholders
-63,At the Hotel,Act IV: Mastery,1,1 Khmer [TRANSLATE_KM] placeholders
-64,At the Airport,Act IV: Mastery,6,"5 Khmer placeholders, 1 empty cells"
+61,Money & Payments,Act IV: Mastery,0,None - all translations present and valid
+62,At the Restaurant,Act IV: Mastery,3,"Row 9: french 'Commander' (to order) should be 'Payer/Régler'; Row 13/14: khmer 'private room'→cutlery, 'cutlery'→chopsticks (mixed up)"
+63,At the Hotel,Act IV: Mastery,0,None - all translations present and valid
+64,At the Airport,Act IV: Mastery,0,None - all translations present and valid
 65,At the Doctor,Act IV: Mastery,0,None - all translations present and valid
-66,Making Appointments,Act IV: Mastery,3,3 Khmer [TRANSLATE_KM] placeholders
-67,Weather Conversations,Act IV: Mastery,4,4 Khmer [TRANSLATE_KM] placeholders
-68,Phone Conversations,Act IV: Mastery,7,7 Khmer [TRANSLATE_KM] placeholders
+66,Making Appointments,Act IV: Mastery,0,None - all translations present and valid
+67,Weather Conversations,Act IV: Mastery,0,None - all translations present and valid
+68,Phone Conversations,Act IV: Mastery,0,None - all translations present and valid
 69,Social Situations,Act IV: Mastery,0,None - all translations present and valid
 70,Invitations & Offers,Act IV: Mastery,0,None - all translations present and valid
 71,Agreeing & Disagreeing,Act IV: Mastery,0,None - all translations present and valid
 72,Expressing Certainty,Act IV: Mastery,0,None - all translations present and valid
-73,Time Expressions,Act IV: Mastery,1,1 Khmer [TRANSLATE_KM] placeholders
-74,Frequency Expressions,Act IV: Mastery,1,1 Khmer [TRANSLATE_KM] placeholders
+73,Time Expressions,Act IV: Mastery,0,None - all translations present and valid
+74,Frequency Expressions,Act IV: Mastery,0,None - all translations present and valid
 75,Describing Amounts,Act IV: Mastery,0,None - all translations present and valid
 76,Quality Descriptions,Act IV: Mastery,0,None - all translations present and valid
-77,Making Comparisons,Act IV: Mastery,2,"1 Khmer placeholders, 1 empty cells"
+77,Making Comparisons,Act IV: Mastery,0,None - all translations present and valid
 78,Expressing Preferences,Act IV: Mastery,0,None - all translations present and valid
 79,Giving Reasons,Act IV: Mastery,0,None - all translations present and valid
 80,Personality Traits,Act V: Refinement,0,None - all translations present and valid
 81,Culture & Traditions,Act V: Refinement,0,None - all translations present and valid
 82,Chinese Arts & Heritage,Act V: Refinement,0,None - all translations present and valid
 83,Time Expressions Advanced,Act V: Refinement,0,None - all translations present and valid
-84,Frequency & Duration,Act V: Refinement,1,1 Khmer [TRANSLATE_KM] placeholders
+84,Frequency & Duration,Act V: Refinement,0,None - all translations present and valid
 85,Comparison & Degree,Act V: Refinement,0,None - all translations present and valid
-86,Cause & Effect,Act V: Refinement,6,6 Khmer [TRANSLATE_KM] placeholders
+86,Cause & Effect,Act V: Refinement,0,None - all translations present and valid
 87,Conditions & Assumptions,Act V: Refinement,0,None - all translations present and valid
 88,Conjunctions & Connectors,Act V: Refinement,0,None - all translations present and valid
 89,Modal Particles & Mood,Act V: Refinement,0,None - all translations present and valid
-90,Structural Particles,Act V: Refinement,1,1 empty translation cells
+90,Structural Particles,Act V: Refinement,0,None - all translations present and valid
 91,Common Sentence Patterns,Act V: Refinement,0,None - all translations present and valid
 92,Describing Things,Act V: Refinement,0,None - all translations present and valid
 93,Quantities & Amounts,Act V: Refinement,0,None - all translations present and valid
