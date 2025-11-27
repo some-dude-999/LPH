@@ -3368,6 +3368,46 @@
     }
 
     // ============================================================
+    // ARCHITECTURE: Combine and Shuffle Base/Example Words
+    // ============================================================
+    /*
+      Combines baseWords and exampleWords with controlled shuffling.
+
+      Educational Psychology: Learners should encounter CORE VOCABULARY
+      before CONTEXTUAL EXAMPLES.
+
+      1. BASE WORDS are shuffled internally (variety within basics)
+      2. EXAMPLE WORDS are shuffled internally (variety within examples)
+      3. BASE WORDS ALWAYS COME FIRST (pedagogical order preserved)
+
+      INPUT: pack object with { baseWords: [...], exampleWords: [...] }
+      OUTPUT: Array of objects with { word: [...], type: "Base Word" | "Example Word" }
+    */
+    function combineAndShuffleWords(pack) {
+      const baseWords = pack.baseWords || [];
+      const exampleWords = pack.exampleWords || [];
+
+      // Shuffle and tag base words
+      const shuffledBase = shuffleArray(baseWords).map(word => ({
+        word: word,
+        type: "Base Word"
+      }));
+
+      // Shuffle and tag example words
+      const shuffledExamples = shuffleArray(exampleWords).map(word => ({
+        word: word,
+        type: "Example Word"
+      }));
+
+      // Concatenate - BASE ALWAYS FIRST (pedagogical order)
+      const combinedWords = [...shuffledBase, ...shuffledExamples];
+
+      console.log(`[Architecture] Combined ${shuffledBase.length} base + ${shuffledExamples.length} examples = ${combinedWords.length} total words`);
+
+      return combinedWords;
+    }
+
+    // ============================================================
     // KEY FEATURE: Deck Initialization with Linked Card Objects
     // Core Objective: Create shuffled deck where front/back are ALWAYS synced
     // Key Behaviors:
@@ -3395,13 +3435,22 @@
       const langConfig = translations[nativeLanguage];
       const nativeIndex = langConfig ? langConfig.index : translations[getDefaultTranslation()].index;
 
+      // ============================================================
+      // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
+      // ============================================================
+      const words = combineAndShuffleWords(pack);
+
       // CRITICAL: Each card object contains BOTH front (english) and back (translation)
       // These are NEVER stored separately - they are always linked as one object
-      originalDeck = pack.words.map((word, idx) => ({
-        id: `${packKey}-${idx}`,      // Unique ID for this card
-        english: word[0],              // Front of card (English word)
-        translation: word[nativeIndex] // Back of card (translation) - LINKED to english
-      }));
+      originalDeck = words.map((wordObj, idx) => {
+        const word = wordObj.word;  // Extract word array from object
+        return {
+          id: `${packKey}-${idx}`,      // Unique ID for this card
+          english: word[0],              // Front of card (English word)
+          translation: word[nativeIndex], // Back of card (translation) - LINKED to english
+          type: wordObj.type             // Word type for debugging (Base Word / Example Word)
+        };
+      });
 
       // Shuffle the card OBJECTS - front and back stay linked because they're the same object
       currentDeck = shuffleArray([...originalDeck]);
