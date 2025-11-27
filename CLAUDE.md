@@ -1,7 +1,4 @@
-# Project Development & Documentation Rules
-
-## 🚨 FIRST PRIORITY: DOCUMENTATION
-**No docs? CREATE THEM FIRST.** Understand the system before coding. Update when understanding changes.
+# Project Development Rules
 
 ---
 
@@ -494,19 +491,6 @@ Run after ANY web file changes: `python PythonHelpers/link_manager.py`
 
 ---
 
-## 📝 DOCUMENTATION FILES
-Every `.html` needs a `.txt`: `dashboard.html` → `dashboard.txt`
-
-**Required in each .txt:**
-- What it does & data sources
-- How it works (key functions)  
-- Dependencies & integrations
-- Corrections when initial understanding was wrong
-
-Update docs with EVERY change. If wrong, fix immediately.
-
----
-
 ## 🔄 Git Rules
 **Not on main = didn't happen.** Always work on main. Commit & push immediately after changes.
 
@@ -871,19 +855,15 @@ Use **DecoderTest.html** to verify all obfuscated files decode correctly:
 ---
 
 ## ⚠️ Remember
-1. **NO DOCUMENTATION = STOP! Create it first before ANY other work**
-2. **Check for PythonHelpers/link_manager.py first - use it if it exists!**
-3. **Not on main = useless code**
-4. **Incorrect understanding = update documentation immediately**
-5. **Every change needs this exact sequence:**
-   - Check/create documentation FIRST
+1. **Check for PythonHelpers/link_manager.py first - use it if it exists!**
+2. **Not on main = useless code**
+3. **Every change needs this exact sequence:**
    - Make code changes
-   - Update documentation if understanding changed
    - **Run `python PythonHelpers/link_manager.py`** (auto-updates LINK.txt for all web files)
    - Review and update descriptions in LINK.txt
    - Git add, commit, push to main
    - **ALWAYS end response with clickable PR link:** `https://github.com/[owner]/[repo]/compare/main...[branch]`
-6. **Documentation is a message to your future self - make it count!**
+4. **Document key features in code comments - not separate files**
 
 ## 🎯 Quick Start Checklist for New Sessions
 ```bash
@@ -904,54 +884,3 @@ git add .
 git commit -m "Updated web files and documentation"
 git push origin main
 ```
-
-## Documentation Template Example
-```text
-=== [Component Name].txt ===
-PROJECT: [Project Name]
-COMPONENT: [This Component's Purpose]
-CREATED: [Date]
-LAST UPDATED: [Date] - [What Changed]
-
-DATA SOURCES:
-- API: [endpoint URL] - [what data it provides]
-- File: [filename] - [what data it contains]
-- User Input: [form fields] - [what users provide]
-
-FUNCTIONALITY:
-- Main Purpose: [What this does]
-- Key Functions:
-  * functionName() - [what it does]
-  * anotherFunction() - [its purpose]
-- Event Handlers: [user interactions handled]
-
-DEPENDENCIES:
-- External Libraries: [library names and versions]
-- Project Files: [other files this needs]
-- APIs Required: [external services]
-
-INTEGRATION:
-- Receives data from: [other components]
-- Sends data to: [other components]
-- Triggers: [what causes this to run]
-
-CORRECTIONS & CLARIFICATIONS:
-[Document any initial misunderstandings that were corrected]
-- Initially thought: [wrong assumption]
-- Actually: [correct understanding]
-- Why this matters: [impact on functionality]
-
-NOTES:
-[Any special considerations, known issues, or future improvements needed]
-[Tips for future LLMs working on this]
-===
-```
-
-## 🧠 Documentation Philosophy
-**Think of documentation as a conversation with your future self:**
-- What would you want to know if you saw this code for the first time?
-- What mistakes might you make without proper context?
-- What's the quickest path to understanding the entire system?
-- Document not just WHAT the code does, but WHY it does it that way
-
-This documentation system ensures that as projects grow, any new LLM can quickly understand the entire codebase, data flow, and system architecture.
