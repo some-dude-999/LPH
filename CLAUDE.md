@@ -618,6 +618,59 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act1-foundation-js
 3. Use Simplified Chinese input methods/references
 4. When in doubt, look up the Simplified form
 
+### 📝 PINYIN PUNCTUATION CONVENTION - CRITICAL!
+**Pinyin MUST mirror the Chinese text structure, including punctuation placement.**
+
+This is how Chinese appears in our language learning game - pinyin directly underneath Chinese characters with matching punctuation.
+
+#### The Rule
+- **Chinese punctuation (，。！？) appears in BOTH Chinese and pinyin columns**
+- **Punctuation is placed immediately after the corresponding pinyin syllable**
+- **No space before Chinese punctuation, space after it**
+
+#### ✅ CORRECT Examples
+
+```
+CSV Row:
+spanish,english,chinese,pinyin,portuguese
+sí señor,yes sir,是的，先生,shì de， xiān shēng,"sim, senhor"
+                 └─┘└┘  └─┘└┘
+                 的，    de，  (comma right after "de", no space before comma)
+```
+
+Visual alignment in game:
+```
+是的，先生
+shì de， xiān shēng
+```
+
+More examples:
+| Chinese | Pinyin | Correct? |
+|---------|--------|----------|
+| `是的，先生` | `shì de， xiān shēng` | ✅ Comma after "de" |
+| `不，谢谢` | `bù， xiè xiè` | ✅ Comma after "bù" |
+| `好的，完美` | `hǎo de， wán měi` | ✅ Comma after "de" |
+| `没关系，谢谢` | `méi guān xì， xiè xiè` | ✅ Comma after "xì" |
+
+#### ❌ INCORRECT Examples
+
+| Chinese | Pinyin | Wrong Because |
+|---------|--------|---------------|
+| `是的，先生` | `shì de xiān shēng` | ❌ Missing comma - doesn't mirror Chinese |
+| `是的，先生` | `shì de ， xiān shēng` | ❌ Space before comma (should be `de，` not `de ，`) |
+| `是的，先生` | `shì de, xiān shēng` | ❌ Latin comma instead of Chinese comma |
+
+#### Why This Convention?
+1. **Visual alignment**: Pinyin appears directly under Chinese characters in the game
+2. **Structural mirroring**: Punctuation position helps learners understand sentence structure
+3. **Consistency**: Same punctuation rules across all Chinese content
+4. **Natural pairing**: Each Chinese character/phrase pairs with its pinyin equivalent, including punctuation
+
+#### Validation
+- Use `PythonHelpers/fix_pinyin_punctuation.py` for surgical fixes
+- The script applies the correct convention: comma immediately after pinyin, no space before
+- Always verify Chinese and pinyin have matching punctuation structure
+
 ---
 
 ## 📋 OVERVIEW WORDPACK DATA STRUCTURE (CRITICAL!)
