@@ -1,0 +1,65 @@
+PACK 73: Verbs of Change
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | change               | 改变              | gǎi biàn           | cambiar            | mudar             
+  3 | become               | 成为              | chéng wéi          | convertirse        | tornar-se         
+  4 | develop              | 开发              | kāi fā             | desarrollar        | desenvolver       
+  5 | improve              | 改善              | gǎi shàn           | mejorar            | melhorar          
+  6 | increase             | 增加              | zēng jiā           | aumentar           | aumentar          
+  7 | decrease             | 减少              | jiǎn shǎo          | disminuir          | diminuir          
+  8 | expand               | 展开              | zhǎn kāi           | ampliar            | expandir          
+  9 | reduce               | 减少              | jiǎn shǎo          | reducir            | reduzir           
+ 10 | remove               | 删除              | shān chú           | eliminar           | remover           
+ 11 | replace              | 替换              | tì huàn            | reemplazar         | substituir        
+ 12 | destroy              | 摧毁              | cuī huǐ            | destruir           | destruir          
+ 13 | transform            | 变换              | biàn huàn          | transformar        | transformar       
+ 14 | adjust               | 调整              | tiáo zhěng         | ajustar            | ajustar           
+ 15 | convert              | 转换              | zhuǎn huàn         | convertir          | converter         
+ 16 | alter                | 改变              | gǎi biàn           | alterar            | alterar           
+ 17 | shift                | 转变              | zhuǎn biàn         | turno              | mudança           
+ 18 | shrink               | 缩小              | suō xiǎo           | encoger            | encolher          
+ 19 | morph                | 变形              | biàn xíng          | transformar        | metamorfose       
+ 20 | mutate               | 变异              | biàn yì            | mutar              | mutar             
+ 21 | transmute            | 转变              | zhuǎn biàn         | transmutar         | transmutar        
+ 22 | change it            | 改变它             | gǎi biàn tā        | cambiarlo          | mude              
+ 23 | change plans         | 改变计划            | gǎi biàn jì huà    | cambiar planes     | mudar planos      
+ 24 | become better        | 变得更好            | biàn dé gèng hǎo   | ser mejor          | ficar melhor      
+ 25 | become famous        | 出名              | chū míng           | hacerse famoso     | ficar famoso      
+ 26 | develop skills       | 培养技能            | péi yǎng jì néng   | desarrollar habili | desenvolver compet
+ 27 | develop slowly       | 慢慢发展            | màn màn fā zhǎn    | desarrollarse lent | desenvolver lentam
+ 28 | improve yourself     | 提升自己            | tí shēng zì jǐ     | mejorarte          | melhore-se        
+ 29 | improve on           | 改进              | gǎi jìn            | mejorar            | melhorar          
+ 30 | increase speed       | 提高速度            | tí gāo sù dù       | aumentar la veloci | aumentar a velocid
+ 31 | increase rapidly     | 迅速增加            | xùn sù zēng jiā    | aumentar rápidamen | aumentar rapidamen
+ 32 | decrease slowly      | 缓慢减少            | huǎn màn jiǎn shǎo | disminuir lentamen | diminuir lentament
+ 33 | decrease by          | 减少              | jiǎn shǎo          | disminuir en       | diminuir em       
+ 34 | expand business      | 拓展业务            | tuò zhǎn yè wù     | ampliar el negocio | expandir negócios 
+ 35 | expand on            | 展开              | zhǎn kāi           | ampliar            | expandir          
+ 36 | reduce cost          | 降低成本            | jiàng dī chéng běn | reducir costos     | reduzir custos    
+ 37 | reduce to            | 减少到             | jiǎn shǎo dào      | reducir a          | reduzir para      
+ 38 | remove it            | 删除它             | shān chú tā        | eliminarlo         | remova-o          
+ 39 | remove from          | 从               | cóng               | eliminar de        | remover de        
+ 40 | replace with         | 中删除替换为          | zhōng shān chú tì  | reemplazar con     | substitua por     
+ 41 | replace old          | 替换旧的            | tì huàn jiù de     | reemplazar el viej | substituir o antig
+ 42 | destroy everything   | 摧毁一切            | cuī huǐ yī qiè     | destruir todo      | destruir tudo     
+ 43 | destroy completely   | 彻底摧毁            | chè dǐ cuī huǐ     | destruir completam | destruir completam
+ 44 | transform into       | 转变为             | zhuǎn biàn wèi     | transformarse en   | transformar em    
+ 45 | transform completely | 彻底转变            | chè dǐ zhuǎn biàn  | transformar comple | transformar comple
+ 46 | adjust settings      | 调整设置            | tiáo zhěng shè zhì | ajustar la configu | ajustar configuraç
+ 47 | adjust to            | 调整为             | tiáo zhěng wèi     | ajustarse a        | ajuste para       
+ 48 | convert to           | 转换为             | zhuǎn huàn wèi     | convertir a        | converter para    
+ 49 | convert from         | 从               | cóng               | convertir de       | converter de      
+ 50 | alter slightly       | 转换稍微改变          | zhuǎn huàn shāo wē | alterar ligerament | alterar ligeiramen
+ 51 | alter course         | 改变路线            | gǎi biàn lù xiàn   | alterar el rumbo   | alterar curso     
+ 52 | shift focus          | 转移焦点            | zhuǎn yí jiāo diǎn | cambiar de enfoque | mudar o foco      
+ 53 | shift to             | 转移到             | zhuǎn yí dào       | cambiar a          | mude para         
+ 54 | shrink down          | 缩小              | suō xiǎo           | reducir            | encolher          
+ 55 | shrink in            | 收缩              | shōu suō           | encogerse          | encolher em       
+ 56 | morph into           | 变成              | biàn chéng         | transformarse en   | se transformar em 
+ 57 | morph slowly         | 慢慢变形            | màn màn biàn xíng  | transformarse lent | metamorfoseie lent
+ 58 | mutate into          | 变异为             | biàn yì wèi        | mutar en           | transformar em    
+ 59 | gene mutate          | 基因突变            | jī yīn tū biàn     | mutación del gen   | mutação genética  
+ 60 | transmute into       | 转变为             | zhuǎn biàn wèi     | transmutar en      | transmutar em     
+ 61 | transmute matter     | 转化物质            | zhuǎn huà wù zhì   | transmutar la mate | transmutar matéria

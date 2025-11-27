@@ -1,0 +1,65 @@
+PACK 88: Internet & Social Media
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | link                 | 链接              | liàn jiē           | enlace             | ligação           
+  3 | search engine        | 搜索引擎            | sōu suǒ yǐn qíng   | motor de búsqueda  | mecanismo de busca
+  4 | social media         | 社交媒体            | shè jiāo méi tǐ    | redes sociales     | mídias sociais    
+  5 | post                 | 发布              | fā bù              | publicar           | postar            
+  6 | share                | 分享              | fēn xiǎng          | compartir          | compartilhar      
+  7 | comment              | 评论              | píng lùn           | comentario         | comente           
+  8 | follow               | 关注              | guān zhù           | seguir             | siga              
+  9 | unfollow             | 取消关注            | qǔ xiāo guān zhù   | dejar de seguir    | deixar de seguir  
+ 10 | profile              | 简介              | jiǎn jiè           | perfil             | perfil            
+ 11 | login                | 登录              | dēng lù            | iniciar sesión     | entrar            
+ 12 | logout               | 注销              | zhù xiāo           | cerrar sesión      | sair              
+ 13 | password             | 密码              | mì mǎ              | contraseña         | senha             
+ 14 | notification         | 通知              | tōng zhī           | notificación       | notificação       
+ 15 | upload               | 上传              | shàng chuán        | subir              | carregar          
+ 16 | viral                | 病毒式             | bìng dú shì        | virales            | virais            
+ 17 | hashtag              | 主题标签            | zhǔ tí biāo qiān   | hashtag            | hashtag           
+ 18 | content              | 内容              | nèi róng           | contenido          | conteúdo          
+ 19 | influencer           | 影响者             | yǐng xiǎng zhě     | influenciador      | influenciador     
+ 20 | subscribe            | 订阅              | dìng yuè           | suscríbete         | inscreva-se       
+ 21 | trending             | 趋势              | qū shì             | tendencia          | tendências        
+ 22 | click the link       | 点击链接            | diǎn jī liàn jiē   | haga clic en el en | clique no link    
+ 23 | broken link          | 断开的链接           | duàn kāi de liàn j | enlace roto        | link quebrado     
+ 24 | use search engine    | 使用搜索引擎          | shǐ yòng sōu suǒ y | utilizar el motor  | usar mecanismo de 
+ 25 | search engine result | 搜索引擎结果          | sōu suǒ yǐn qíng j | resultados del mot | resultados do meca
+ 26 | social media platfor | 社交媒体平台          | shè jiāo méi tǐ pí | plataforma de rede | plataforma de mídi
+ 27 | on social media      | 在社交媒体上          | zài shè jiāo méi t | en las redes socia | nas redes sociais 
+ 28 | new post             | 新帖子             | xīn tiě zi         | nueva publicación  | nova postagem     
+ 29 | post update          | 更新后             | gēng xīn hòu       | actualización post | postar atualização
+ 30 | share this           | 分享这个            | fēn xiǎng zhè ge   | comparte esto      | compartilhe isso  
+ 31 | share with           | 与               | yǔ                 | compartir con      | compartilhe com   
+ 32 | leave comment        | 分享发表评论          | fēn xiǎng fā biǎo  | dejar comentario   | deixe comentário  
+ 33 | comment section      | 评论区             | píng lùn qū        | sección de comenta | seção de comentári
+ 34 | follow me            | 跟着我             | gēn zhe wǒ         | sígueme            | siga-me           
+ 35 | follow account       | 关注帐号            | guān zhù zhàng hào | seguir la cuenta   | siga a conta      
+ 36 | unfollow someone     | 取消关注某人          | qǔ xiāo guān zhù m | dejar de seguir a  | deixar de seguir a
+ 37 | unfollow account     | 取消关注帐户          | qǔ xiāo guān zhù z | dejar de seguir la | deixar de seguir c
+ 38 | user profile         | 用户个人资料          | yòng hù gè rén zī  | perfil de usuario  | perfil do usuário 
+ 39 | update profile       | 更新个人资料          | gēng xīn gè rén zī | actualizar perfil  | atualizar perfil  
+ 40 | login now            | 立即登录            | lì jí dēng lù      | iniciar sesión aho | faça login agora  
+ 41 | login credentials    | 登录凭据            | dēng lù píng jù    | credenciales de in | credenciais de log
+ 42 | logout now           | 立即注销            | lì jí zhù xiāo     | cerrar sesión ahor | saia agora        
+ 43 | logout button        | 注销按钮            | zhù xiāo àn niǔ    | botón cerrar sesió | botão de logout   
+ 44 | forget password      | 忘记密码            | wàng jì mì mǎ      | olvidar contraseña | esqueci a senha   
+ 45 | change password      | 更改密码            | gēng gǎi mì mǎ     | cambiar contraseña | alterar senha     
+ 46 | push notification    | 推送通知            | tuī sòng tōng zhī  | notificación autom | notificação push  
+ 47 | notification setting | 通知设置            | tōng zhī shè zhì   | configuración de n | configurações de n
+ 48 | upload photo         | 上传照片            | shàng chuán zhào p | subir foto         | carregar foto     
+ 49 | upload video         | 上传视频            | shàng chuán shì pí | subir vídeo        | enviar vídeo      
+ 50 | go viral             | 病毒式传播           | bìng dú shì chuán  | volverse viral     | viralizar         
+ 51 | viral content        | 病毒式内容           | bìng dú shì nèi ró | contenido viral    | conteúdo viral    
+ 52 | use hashtag          | 使用主题标签          | shǐ yòng zhǔ tí bi | utilizar hashtag   | usar hashtag      
+ 53 | popular hashtag      | 流行标签            | liú xíng biāo qiān | hashtag popular    | hashtag popular   
+ 54 | create content       | 创建内容            | chuàng jiàn nèi ró | crear contenido    | criar conteúdo    
+ 55 | content creator      | 内容创建者           | nèi róng chuàng ji | creador de conteni | criador de conteúd
+ 56 | social media influen | 社交媒体影响者         | shè jiāo méi tǐ yǐ | influenciador de l | influenciador de m
+ 57 | top influencer       | 顶级影响者           | dǐng jí yǐng xiǎng | principal influenc | principal influenc
+ 58 | subscribe now        | 立即订阅            | lì jí dìng yuè     | suscríbete ahora   | inscreva-se agora 
+ 59 | subscribe to         | 订阅              | dìng yuè           | suscríbete a       | inscreva-se       
+ 60 | trending topic       | 热门话题            | rè mén huà tí      | tema de tendencia  | tópico de tendênci
+ 61 | trending now         | 现在流行            | xiàn zài liú xíng  | tendencia ahora    | tendência agora   

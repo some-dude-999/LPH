@@ -1,0 +1,65 @@
+PACK 62: Sports
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | soccer               | 足球              | zú qiú             | fútbol             | futebol           
+  3 | football             | 足球              | zú qiú             | fútbol             | futebol           
+  4 | basketball           | 篮球              | lán qiú            | baloncesto         | basquete          
+  5 | baseball             | 棒球              | bàng qiú           | béisbol            | beisebol          
+  6 | tennis               | 网球              | wǎng qiú           | tenis              | tênis             
+  7 | swimming             | 游泳              | yóu yǒng           | natación           | natação           
+  8 | running              | 运行              | yùn xíng           | corriendo          | correndo          
+  9 | exercise             | 锻炼              | duàn liàn          | ejercicio          | exercício         
+ 10 | gym                  | 健身房             | jiàn shēn fáng     | gimnasio           | academia          
+ 11 | team                 | 团队              | tuán duì           | equipo             | equipe            
+ 12 | player               | 玩家              | wán jiā            | jugador            | jogador           
+ 13 | match                | 匹配              | pǐ pèi             | partido            | combinar          
+ 14 | score                | 分数              | fēn shù            | puntuación         | pontuação         
+ 15 | ball                 | 球               | qiú                | pelota             | bola              
+ 16 | race                 | 种族              | zhǒng zú           | carrera            | corrida           
+ 17 | practice             | 练习              | liàn xí            | práctica           | praticar          
+ 18 | referee              | 裁判              | cái pàn            | árbitro            | árbitro           
+ 19 | league               | 联赛              | lián sài           | liga               | liga              
+ 20 | champion             | 冠军              | guàn jūn           | campeón            | campeão           
+ 21 | assist               | 协助              | xié zhù            | ayudar             | ajudar            
+ 22 | play soccer          | 踢足球             | tī zú qiú          | jugar futbol       | jogar futebol     
+ 23 | soccer ball          | 足球              | zú qiú             | balón de fútbol    | bola de futebol   
+ 24 | American football    | 美式足球            | měi shì zú qiú     | Fútbol americano   | Futebol americano 
+ 25 | football game        | 足球比赛            | zú qiú bǐ sài      | partido de fútbol  | jogo de futebol   
+ 26 | play basketball      | 打篮球             | dǎ lán qiú         | jugar baloncesto   | jogar basquete    
+ 27 | basketball court     | 篮球场             | lán qiú chǎng      | cancha de balonces | quadra de basquete
+ 28 | play baseball        | 打棒球             | dǎ bàng qiú        | jugar béisbol      | jogar beisebol    
+ 29 | baseball cap         | 棒球帽             | bàng qiú mào       | gorra de béisbol   | boné de beisebol  
+ 30 | play tennis          | 打网球             | dǎ wǎng qiú        | jugar tenis        | jogar tênis       
+ 31 | tennis court         | 网球场             | wǎng qiú chǎng     | cancha de tenis    | quadra de tênis   
+ 32 | go swimming          | 去游泳             | qù yóu yǒng        | ir a nadar         | nadar             
+ 33 | swimming pool        | 游泳池             | yóu yǒng chí       | piscina            | piscina           
+ 34 | go running           | 去跑步             | qù pǎo bù          | sal a correr       | vou correr        
+ 35 | running shoes        | 跑鞋              | pǎo xié            | zapatos para corre | tênis de corrida  
+ 36 | daily exercise       | 日常锻炼            | rì cháng duàn liàn | ejercicio diario   | exercício diário  
+ 37 | exercise routine     | 日常锻炼            | rì cháng duàn liàn | rutina de ejercici | rotina de exercíci
+ 38 | go to the gym        | 去健身房            | qù jiàn shēn fáng  | ir al gimnasio     | ir para a academia
+ 39 | gym membership       | 健身房会员资格         | jiàn shēn fáng huì | membresía de gimna | adesão à academia 
+ 40 | sports team          | 运动队             | yùn dòng duì       | equipo deportivo   | equipe esportiva  
+ 41 | team player          | 团队合作者           | tuán duì hé zuò zh | jugador de equipo  | jogador de equipe 
+ 42 | star player          | 明星球员            | míng xīng qiú yuán | jugador estrella   | estrela           
+ 43 | player position      | 球员位置            | qiú yuán wèi zhì   | posición del jugad | posição do jogador
+ 44 | big match            | 大型比赛            | dà xíng bǐ sài     | gran partido       | grande partida    
+ 45 | match point          | 赛点              | sài diǎn           | punto de partido   | ponto de partida  
+ 46 | final score          | 最终得分            | zuì zhōng dé fēn   | puntuación final   | pontuação final   
+ 47 | score board          | 记分板             | jì fēn bǎn         | tablero de puntuac | placar            
+ 48 | throw ball           | 扔球              | rēng qiú           | lanzar pelota      | jogar bola        
+ 49 | pass ball            | 传球              | chuán qiú          | pase de balón      | passar bola       
+ 50 | long race            | 长跑              | cháng pǎo          | carrera larga      | corrida longa     
+ 51 | race track           | 赛道              | sài dào            | pista de carreras  | pista de corrida  
+ 52 | daily practice       | 日常练习            | rì cháng liàn xí   | práctica diaria    | prática diária    
+ 53 | practice makes perfe | 熟能生巧            | shú néng shēng qiǎ | la práctica hace l | a prática leva à p
+ 54 | head referee         | 总裁判             | zǒng cái pàn       | árbitro principal  | árbitro principal 
+ 55 | referee call         | 裁判呼叫            | cái pàn hū jiào    | llamada del árbitr | chamada do árbitro
+ 56 | major league         | 大联盟             | dà lián méng       | liga mayor         | liga principal    
+ 57 | league game          | 联赛              | lián sài           | partido de liga    | jogo da liga      
+ 58 | world champion       | 世界冠军            | shì jiè guàn jūn   | campeón del mundo  | campeão mundial   
+ 59 | champion team        | 冠军队             | guàn jūn duì       | equipo campeón     | time campeão      
+ 60 | good assist          | 很好的帮助           | hěn hǎo de bāng zh | buena asistencia   | boa assistência   
+ 61 | assist record        | 协助记录            | xié zhù jì lù      | registro de asiste | registro de assist

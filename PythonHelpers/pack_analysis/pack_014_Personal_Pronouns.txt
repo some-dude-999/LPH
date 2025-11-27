@@ -1,0 +1,65 @@
+PACK 14: Personal Pronouns
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | I                    | 我               | wǒ                 | yo                 | eu                
+  3 | me                   | 我               | wǒ                 | a mí               | me                
+  4 | you                  | 你               | nǐ                 | tú                 | você              
+  5 | he                   | 他               | tā                 | él                 | ele               
+  6 | him                  | 他               | tā                 | a él               | ele               
+  7 | she                  | 她               | tā                 | ella               | ela               
+  8 | it                   | 它               | tā                 | él                 | isto              
+  9 | we                   | 我们              | wǒ men             | nosotros           | nós               
+ 10 | us                   | 我们              | wǒ men             | a nosotros         | nós               
+ 11 | they                 | 他们              | tā men             | ellos              | eles              
+ 12 | them                 | 他们              | tā men             | a ellos            | eles              
+ 13 | myself               | 我               | wǒ                 | mí mismo           | eu mesmo          
+ 14 | yourself             | 你自己             | nǐ zì jǐ           | tú mismo           | você mesmo        
+ 15 | himself              | 他自己             | tā zì jǐ           | sí mismo           | ele mesmo         
+ 16 | herself              | 她自己             | tā zì jǐ           | sí misma           | ela mesma         
+ 17 | itself               | 本身              | běn shēn           | sí mismo           | em si             
+ 18 | ourselves            | 我们自己            | wǒ men zì jǐ       | nosotros mismos    | nós mesmos        
+ 19 | themselves           | 他们自己            | tā men zì jǐ       | ellos mismos       | eles mesmos       
+ 20 | someone              | 某人              | mǒu rén            | alguien            | alguém            
+ 21 | anyone               | 任何人             | rèn hé rén         | alguien            | qualquer um       
+ 22 | I know               | 我知道             | wǒ zhī dào         | Sé                 | Eu sei            
+ 23 | I think              | 我认为             | wǒ rèn wéi         | Creo               | Eu penso          
+ 24 | give me              | 给我              | gěi wǒ             | dame               | me dê             
+ 25 | tell me              | 告诉我             | gào sù wǒ          | dime               | diga-me           
+ 26 | for you              | 为你              | wèi nǐ             | para ti            | para você         
+ 27 | you know             | 你知道             | nǐ zhī dào         | sabes              | você sabe         
+ 28 | he said              | 他说              | tā shuō            | el dijo            | ele disse         
+ 29 | he knows             | 他知道             | tā zhī dào         | el sabe            | ele sabe          
+ 30 | tell him             | 告诉他             | gào sù tā          | dile               | diga a ele        
+ 31 | give him             | 给他              | gěi tā             | dale               | dê a ele          
+ 32 | she said             | 她说              | tā shuō            | ella dijo          | ela disse         
+ 33 | she knows            | 她知道             | tā zhī dào         | ella sabe          | ela sabe          
+ 34 | it is                | 这是              | zhè shì            | es                 | isso é            
+ 35 | it works             | 有用              | yǒu yòng           | funciona           | funciona          
+ 36 | we are               | 我们是             | wǒ men shì         | somos              | nós somos         
+ 37 | we know              | 我们知道            | wǒ men zhī dào     | sabemos            | nós sabemos       
+ 38 | join us              | 加入我们            | jiā rù wǒ men      | únete a nosotros   | Junte-se a nós    
+ 39 | tell us              | 告诉我们            | gào sù wǒ men      | cuéntanos          | diga-nos          
+ 40 | they are             | 他们是             | tā men shì         | ellos son          | eles são          
+ 41 | they know            | 他们知道            | tā men zhī dào     | ellos saben        | eles sabem        
+ 42 | tell them            | 告诉他们            | gào sù tā men      | diles              | diga a eles       
+ 43 | give them            | 给他们             | gěi tā men         | darles             | dê a eles         
+ 44 | I did it myself      | 我自己做的           | wǒ zì jǐ zuò de    | lo hice yo mismo   | Eu fiz isso sozinh
+ 45 | by myself            | 我自己             | wǒ zì jǐ           | por mi cuenta      | sozinho           
+ 46 | do it yourself       | 自己做             | zì jǐ zuò          | hazlo tu mismo     | faça você mesmo   
+ 47 | help yourself        | 帮助自己            | bāng zhù zì jǐ     | ayudar a sí mismo  | ajude-se          
+ 48 | he did it himself    | 他自己做的           | tā zì jǐ zuò de    | él mismo lo hizo   | ele mesmo fez isso
+ 49 | by himself           | 他自己             | tā zì jǐ           | por sí mismo       | sozinho           
+ 50 | she did it herself   | 她自己做的           | tā zì jǐ zuò de    | ella misma lo hizo | ela mesma fez isso
+ 51 | by herself           | 独自一人            | dú zì yī rén       | por ella misma     | sozinha           
+ 52 | the door opened by i | 门自己开了           | mén zì jǐ kāi le   | la puerta se abrió | a porta abriu sozi
+ 53 | by itself            | 就其本身            | jiù qí běn shēn    | por si mismo       | por si só         
+ 54 | we did it ourselves  | 我们自己做的          | wǒ men zì jǐ zuò d | lo hicimos nosotro | nós mesmos fizemos
+ 55 | by ourselves         | 我们自己            | wǒ men zì jǐ       | por nosotros mismo | sozinhos          
+ 56 | they did it themselv | 他们自己做的          | tā men zì jǐ zuò d | ellos mismos lo hi | eles mesmos fizera
+ 57 | by themselves        | 他们自己            | tā men zì jǐ       | por ellos mismos   | sozinhos          
+ 58 | someone called       | 有人打电话           | yǒu rén dǎ diàn hu | alguien llamó      | alguém ligou      
+ 59 | someone knows        | 有人知道            | yǒu rén zhī dào    | alguien sabe       | alguém sabe       
+ 60 | anyone can           | 任何人都可以          | rèn hé rén dōu kě  | cualquiera puede   | qualquer um pode  
+ 61 | anyone here          | 这里有人            | zhè lǐ yǒu rén     | alguien aquí       | alguém aqui       

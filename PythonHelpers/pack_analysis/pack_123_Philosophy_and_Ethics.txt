@@ -1,0 +1,65 @@
+PACK 123: Philosophy & Ethics
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | philosophy           | 哲学              | zhé xué            | filosofía          | filosofia         
+  3 | code                 | 代码              | dài mǎ             | código             | código            
+  4 | ethical              | 道德              | dào dé             | ético              | ético             
+  5 | moral                | 道德              | dào dé             | moralidad          | morais            
+  6 | morality             | 道德              | dào dé             | moralidad          | moralidade        
+  7 | logic                | 逻辑              | luó jí             | lógica             | lógica            
+  8 | logical              | 逻辑              | luó jí             | lógico             | lógico            
+  9 | reason               | 原因              | yuán yīn           | razón              | razão             
+ 10 | truth                | 真相              | zhēn xiàng         | verdad             | verdade           
+ 11 | reality              | 现实              | xiàn shí           | realidad           | realidade         
+ 12 | ethics               | 道德              | dào dé             | ética              | ética             
+ 13 | value                | 值               | zhí                | valor              | valor             
+ 14 | principle            | 原则              | yuán zé            | principio          | princípio         
+ 15 | justice              | 正义              | zhèng yì           | justicia           | justiça           
+ 16 | virtue               | 美德              | měi dé             | virtud             | virtude           
+ 17 | existence            | 存在              | cún zài            | existencia         | existência        
+ 18 | meaning              | 意思              | yì si              | significado        | significado       
+ 19 | wisdom               | 智慧              | zhì huì            | sabiduría          | sabedoria         
+ 20 | metaphysics          | 形而上学            | xíng ér shàng xué  | metafísica         | metafísica        
+ 21 | epistemology         | 认识论             | rèn shí lùn        | epistemología      | epistemologia     
+ 22 | study philosophy     | 学习哲学            | xué xí zhé xué     | estudiar filosofía | estudar filosofia 
+ 23 | philosophy class     | 哲学课             | zhé xué kè         | clase de filosofía | aula de filosofia 
+ 24 | dress code           | 着装要求            | zhuó zhuāng yāo qi | código de vestimen | código de vestimen
+ 25 | code of conduct      | 行为准则            | xíng wéi zhǔn zé   | código de conducta | código de conduta 
+ 26 | ethical dilemma      | 道德困境            | dào dé kùn jìng    | dilema ético       | dilema ético      
+ 27 | ethical standards    | 道德标准            | dào dé biāo zhǔn   | normas éticas      | padrões éticos    
+ 28 | moral obligation     | 道德义务            | dào dé yì wù       | obligación moral   | obrigação moral   
+ 29 | moral compass        | 道德指南针           | dào dé zhǐ nán zhē | brújula moral      | bússola moral     
+ 30 | question of morality | 道德问题            | dào dé wèn tí      | cuestión de morali | questão de moralid
+ 31 | morality debate      | 道德辩论            | dào dé biàn lùn    | debate sobre moral | debate sobre moral
+ 32 | sound logic          | 合理的逻辑           | hé lǐ de luó jí    | lógica sólida      | lógica sólida     
+ 33 | logic puzzle         | 逻辑谜题            | luó jí mí tí       | rompecabezas de ló | quebra-cabeça lógi
+ 34 | logical thinking     | 逻辑思维            | luó jí sī wéi      | pensamiento lógico | pensamento lógico 
+ 35 | logical conclusion   | 逻辑结论            | luó jí jié lùn     | conclusión lógica  | conclusão lógica  
+ 36 | good reason          | 充分的理由           | chōng fèn de lǐ yó | buena razón        | uma boa razão     
+ 37 | reason why           | 原因              | yuán yīn           | razón por la cual  | razão pela qual   
+ 38 | seek truth           | 寻求真理            | xún qiú zhēn lǐ    | buscar la verdad   | busque a verdade  
+ 39 | truth is             | 事实是             | shì shí shì        | la verdad es       | a verdade é       
+ 40 | face reality         | 面对现实            | miàn duì xiàn shí  | afrontar la realid | encarar a realidad
+ 41 | reality check        | 现实检验            | xiàn shí jiǎn yàn  | verificación de la | verificação da rea
+ 42 | work ethics          | 职业道德            | zhí yè dào dé      | ética laboral      | ética no trabalho 
+ 43 | ethics committee     | 伦理委员会           | lún lǐ wěi yuán hu | comité de ética    | comitê de ética   
+ 44 | core value           | 核心价值            | hé xīn jià zhí     | valor fundamental  | valor central     
+ 45 | value system         | 价值体系            | jià zhí tǐ xì      | sistema de valores | sistema de valores
+ 46 | basic principle      | 基本原理            | jī běn yuán lǐ     | principio básico   | princípio básico  
+ 47 | guiding principle    | 指导原则            | zhǐ dǎo yuán zé    | principio rector   | princípio orientad
+ 48 | social justice       | 社会正义            | shè huì zhèng yì   | justicia social    | justiça social    
+ 49 | justice system       | 司法系统            | sī fǎ xì tǒng      | sistema de justici | sistema de justiça
+ 50 | practice virtue      | 践行美德            | jiàn xíng měi dé   | practicar la virtu | praticar a virtude
+ 51 | virtue ethics        | 美德伦理            | měi dé lún lǐ      | ética de la virtud | ética da virtude  
+ 52 | human existence      | 人类的存在           | rén lèi de cún zài | existencia humana  | existência humana 
+ 53 | existence of         | 的存在             | de cún zài         | existencia de      | existência de     
+ 54 | deeper meaning       | 更深层次的意义         | gēng shēn céng cì  | significado más pr | significado mais p
+ 55 | meaning of life      | 生命的意义           | shēng mìng de yì y | significado de la  | sentido da vida   
+ 56 | ancient wisdom       | 古老的智慧           | gǔ lǎo de zhì huì  | sabiduría antigua  | sabedoria antiga  
+ 57 | wisdom tooth         | 智齿              | zhì chǐ            | muela del juicio   | dente do siso     
+ 58 | study metaphysics    | 研究形而上学          | yán jiū xíng ér sh | estudiar metafísic | estudar metafísica
+ 59 | metaphysics question | 形而上学问题          | xíng ér shàng xué  | pregunta de metafí | questão de metafís
+ 60 | study epistemology   | 研究认识论           | yán jiū rèn shí lù | estudiar epistemol | estudar epistemolo
+ 61 | epistemology theory  | 认识论             | rèn shí lùn        | teoría de la epist | teoria da epistemo

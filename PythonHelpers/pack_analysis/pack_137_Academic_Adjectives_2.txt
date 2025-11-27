@@ -1,0 +1,65 @@
+PACK 137: Academic Adjectives 2
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | indigenous           | 土著              | tǔ zhù             | indígena           | indígenas         
+  3 | contingent           | 特遣队             | tè qiǎn duì        | contingente        | contingente       
+  4 | latent               | 潜伏              | qián fú            | latente            | latente           
+  5 | initial              | 初始              | chū shǐ            | inicial            | inicial           
+  6 | innovative           | 创新              | chuàng xīn         | innovador          | inovador          
+  7 | integral             | 积分              | jī fēn             | integrales         | integrante        
+  8 | intermediate         | 中间              | zhōng jiān         | intermedio         | intermediário     
+  9 | internal             | 内部              | nèi bù             | interno            | interno           
+ 10 | intrinsic            | 内在              | nèi zài            | intrínseco         | intrínseco        
+ 11 | legitimate           | 合法              | hé fǎ              | legítimo           | legítimo          
+ 12 | marginal             | 边缘              | biān yuán          | marginales         | marginais         
+ 13 | minimal              | 最小              | zuì xiǎo           | mínimo             | mínimo            
+ 14 | mutual               | 相互              | xiāng hù           | mutuo              | mútuo             
+ 15 | objective            | 目标              | mù biāo            | objetivo           | objetivo          
+ 16 | ongoing              | 正在进行            | zhèng zài jìn xíng | en curso           | em andamento      
+ 17 | optimal              | 最优              | zuì yōu            | óptimo             | ótimo             
+ 18 | passive              | 被动              | bèi dòng           | pasivo             | passivo           
+ 19 | persistent           | 执着              | zhí zhuó           | persistente        | persistente       
+ 20 | pertinent            | 相关              | xiāng guān         | pertinente         | pertinente        
+ 21 | pervasive            | 普遍              | pǔ biàn            | omnipresente       | difundido         
+ 22 | indigenous people    | 土著人民            | tǔ zhù rén mín     | pueblos indígenas  | povos indígenas   
+ 23 | indigenous culture   | 土著文化            | tǔ zhù wén huà     | cultura indígena   | cultura indígena  
+ 24 | contingent upon      | 视               | shì                | supeditado a       | depende de        
+ 25 | contingent on        | 而定取决于           | ér dìng qǔ jué yú  | supeditado a       | depende de        
+ 26 | latent talent        | 潜在人才            | qián zài rén cái   | talento latente    | talento latente   
+ 27 | latent potential     | 潜在潜力            | qián zài qián lì   | potencial latente  | potencial latente 
+ 28 | initial phase        | 初始阶段            | chū shǐ jiē duàn   | fase inicial       | fase inicial      
+ 29 | initial reaction     | 初步反应            | chū bù fǎn yìng    | reacción inicial   | reação inicial    
+ 30 | innovative solution  | 创新解决方案          | chuàng xīn jiě jué | solución innovador | solução inovadora 
+ 31 | innovative approach  | 创新方法            | chuàng xīn fāng fǎ | enfoque innovador  | abordagem inovador
+ 32 | integral part        | 不可或缺的一部分        | bù kě huò quē de y | parte integrante   | parte integrante  
+ 33 | integral to          | 不可或缺的           | bù kě huò quē de   | integral a         | integral para     
+ 34 | intermediate level   | 的积分中级           | de jī fēn zhōng jí | nivel intermedio   | nível intermediári
+ 35 | intermediate stage   | 中期阶段            | zhōng qī jiē duàn  | etapa intermedia   | fase intermediária
+ 36 | internal affairs     | 内政              | nèi zhèng          | asuntos internos   | assuntos internos 
+ 37 | internal conflict    | 内部冲突            | nèi bù chōng tū    | conflicto interno  | conflito interno  
+ 38 | intrinsic value      | 内在价值            | nèi zài jià zhí    | valor intrínseco   | valor intrínseco  
+ 39 | intrinsic worth      | 内在价值            | nèi zài jià zhí    | valor intrínseco   | valor intrínseco  
+ 40 | legitimate concern   | 合理的关注           | hé lǐ de guān zhù  | preocupación legít | preocupação legíti
+ 41 | legitimate claim     | 合法主张            | hé fǎ zhǔ zhāng    | reclamo legítimo   | reivindicação legí
+ 42 | marginal improvement | 边际改进            | biān jì gǎi jìn    | mejora marginal    | melhoria marginal 
+ 43 | marginal cost        | 边际成本            | biān jì chéng běn  | costo marginal     | custo marginal    
+ 44 | minimal impact       | 影响最小            | yǐng xiǎng zuì xiǎ | impacto mínimo     | impacto mínimo    
+ 45 | minimal effort       | 最小的努力           | zuì xiǎo de nǔ lì  | mínimo esfuerzo    | esforço mínimo    
+ 46 | mutual agreement     | 双方一致            | shuāng fāng yí zhì | acuerdo mutuo      | acordo mútuo      
+ 47 | mutual benefit       | 互惠互利            | hù huì hù lì       | beneficio mutuo    | benefício mútuo   
+ 48 | objective analysis   | 客观分析            | kè guān fēn xī     | análisis objetivo  | análise objetiva  
+ 49 | objective criteria   | 客观标准            | kè guān biāo zhǔn  | criterios objetivo | critérios objetivo
+ 50 | ongoing process      | 正在进行的过程         | zhèng zài jìn xíng | proceso en curso   | processo em andame
+ 51 | ongoing investigatio | 正在进行的调查         | zhèng zài jìn xíng | investigación en c | investigação em cu
+ 52 | optimal solution     | 最优解             | zuì yōu jiě        | solución óptima    | solução ótima     
+ 53 | optimal performance  | 最佳性能            | zuì jiā xìng néng  | rendimiento óptimo | desempenho ideal  
+ 54 | passive voice        | 被动语态            | bèi dòng yǔ tài    | voz pasiva         | voz passiva       
+ 55 | passive income       | 被动收入            | bèi dòng shōu rù   | ingresos pasivos   | renda passiva     
+ 56 | persistent problem   | 持续存在的问题         | chí xù cún zài de  | problema persisten | problema persisten
+ 57 | persistent effort    | 坚持不懈的努力         | jiān chí bù xiè de | esfuerzo persisten | esforço persistent
+ 58 | pertinent informatio | 相关信息            | xiāng guān xìn xī  | información pertin | informações pertin
+ 59 | pertinent to         | 与               | yǔ                 | pertinente a       | pertinente a      
+ 60 | pervasive influence  | 有关普遍影响          | yǒu guān pǔ biàn y | influencia general | influência general
+ 61 | pervasive problem    | 普遍存在的问题         | pǔ biàn cún zài de | problema generaliz | problema generaliz

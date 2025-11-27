@@ -1,0 +1,65 @@
+PACK 13: Body Parts
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | head                 | 头               | tóu                | cabeza             | cabeça            
+  3 | face                 | 脸               | liǎn               | rostro             | face              
+  4 | eye                  | 眼睛              | yǎn jīng           | ojo                | olho              
+  5 | ear                  | 耳朵              | ěr duǒ             | oreja              | orelha            
+  6 | nose                 | 鼻子              | bí zi              | nariz              | nariz             
+  7 | mouth                | 嘴               | zuǐ                | boca               | boca              
+  8 | teeth                | 牙齿              | yá chǐ             | dientes            | dentes            
+  9 | hair                 | 头发              | tóu fà             | cabello            | cabelo            
+ 10 | neck                 | 脖子              | bó zi              | cuello             | pescoço           
+ 11 | shoulder             | 肩膀              | jiān bǎng          | hombro             | ombro             
+ 12 | arm                  | 手臂              | shǒu bì            | brazo              | braço             
+ 13 | hand                 | 手               | shǒu               | mano               | mão               
+ 14 | finger               | 手指              | shǒu zhǐ           | dedo               | dedo              
+ 15 | leg                  | 腿               | tuǐ                | pierna             | perna             
+ 16 | foot                 | 脚               | jiǎo               | pie                | pé                
+ 17 | toe                  | 脚趾              | jiǎo zhǐ           | dedo del pie       | dedo do pé        
+ 18 | back                 | 背               | bèi                | espalda            | costas            
+ 19 | stomach              | 胃               | wèi                | estómago           | estômago          
+ 20 | heart                | 心               | xīn                | corazón            | coração           
+ 21 | brain                | 脑               | nǎo                | cerebro            | cérebro           
+ 22 | my head hurts        | 我头疼             | wǒ tóu téng        | me duele la cabeza | minha cabeça dói  
+ 23 | head first           | 头先              | tóu xiān           | cabeza primero     | cabeça primeiro   
+ 24 | pretty face          | 漂亮的脸            | piào liàng de liǎn | cara bonita        | rosto bonito      
+ 25 | face to face         | 面对面             | miàn duì miàn      | cara a cara        | frente a frente   
+ 26 | blue eye             | 蓝眼睛             | lán yǎn jīng       | ojo azul           | olho azul         
+ 27 | eye contact          | 目光接触            | mù guāng jiē chù   | contacto visual    | contato visual    
+ 28 | left ear             | 左耳              | zuǒ ěr             | oreja izquierda    | orelha esquerda   
+ 29 | ear to ear           | 耳对耳             | ěr duì ěr          | oreja a oreja      | orelha a orelha   
+ 30 | runny nose           | 流鼻涕             | liú bí tì          | rinorrea           | nariz escorrendo  
+ 31 | nose job             | 鼻子整形手术          | bí zi zhěng xíng s | cirugía de nariz   | plástica no nariz 
+ 32 | open mouth           | 张开嘴             | zhāng kāi zuǐ      | boca abierta       | boca aberta       
+ 33 | mouth full           | 满嘴              | mǎn zuǐ            | boca llena         | boca cheia        
+ 34 | brush your teeth     | 刷牙              | shuā yá            | cepilla tus diente | escove os dentes  
+ 35 | white teeth          | 白牙              | bái yá             | dientes blancos    | dentes brancos    
+ 36 | long hair            | 长头发             | zhǎng tóu fà       | pelo largo         | cabelo comprido   
+ 37 | hair cut             | 剪头发             | jiǎn tóu fà        | corte de pelo      | corte de cabelo   
+ 38 | stiff neck           | 落枕              | lào zhěn           | rigidez de nuca    | torcicolo         
+ 39 | neck pain            | 颈部疼痛            | jǐng bù téng tòng  | dolor de cuello    | dor no pescoço    
+ 40 | shoulder pain        | 肩部疼痛            | jiān bù téng tòng  | dolor de hombro    | dor no ombro      
+ 41 | cold shoulder        | 冷遇              | lěng yù            | hombro frío        | ombro frio        
+ 42 | right arm            | 右臂              | yòu bì             | brazo derecho      | braço direito     
+ 43 | arm in arm           | 手臂挽着手臂          | shǒu bì wǎn zhuó s | del brazo          | de braço dado     
+ 44 | left hand            | 左手              | zuǒ shǒu           | mano izquierda     | mão esquerda      
+ 45 | hand in hand         | 携手              | xié shǒu           | de la mano         | de mãos dadas     
+ 46 | index finger         | 食指              | shí zhǐ            | dedo índice        | dedo indicador    
+ 47 | finger food          | 手指食物            | shǒu zhǐ shí wù    | comida para picar  | petiscos          
+ 48 | left leg             | 左腿              | zuǒ tuǐ            | pierna izquierda   | perna esquerda    
+ 49 | leg room             | 腿部空间            | tuǐ bù kōng jiān   | espacio para las p | espaço para as per
+ 50 | right foot           | 右脚              | yòu jiǎo           | pie derecho        | pé direito        
+ 51 | foot long            | 英尺长             | yīng chǐ zhǎng     | pie de largo       | pé de comprimento 
+ 52 | big toe              | 大脚趾             | dà jiǎo zhǐ        | dedo pulgar del pi | dedão do pé       
+ 53 | toe nail             | 脚趾甲             | jiǎo zhǐ jiǎ       | uña del dedo del p | unha do pé        
+ 54 | sore back            | 背痛              | bèi tòng           | dolor de espalda   | dor nas costas    
+ 55 | back home            | 回家              | huí jiā            | de vuelta a casa   | de volta para casa
+ 56 | upset stomach        | 胃部不适            | wèi bù bù shì      | malestar estomacal | dor de estômago   
+ 57 | stomach ache         | 腹痛              | fù tòng            | Dolor de estómago  | dor de estômago   
+ 58 | broken heart         | 破碎的心            | pò suì de xīn      | corazón roto       | coração partido   
+ 59 | kind heart           | 善良的心            | shàn liáng de xīn  | buen corazón       | bom coração       
+ 60 | use your brain       | 用你的大脑           | yòng nǐ de dà nǎo  | usa tu cerebro     | use seu cérebro   
+ 61 | brain power          | 脑力              | nǎo lì             | poder cerebral     | poder cerebral    

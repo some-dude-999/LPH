@@ -1,0 +1,65 @@
+PACK 120: Mental Health Basics
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | mental               | 心理              | xīn lǐ             | mentales           | mentais           
+  3 | anxiety              | 焦虑              | jiāo lǜ            | ansiedad           | ansiedade         
+  4 | depression           | 抑郁症             | yì yù zhèng        | depresión          | depressão         
+  5 | stress               | 压力              | yā lì              | estrés             | estresse          
+  6 | therapist            | 治疗师             | zhì liáo shī       | terapeuta          | terapeuta         
+  7 | counselor            | 辅导员             | fǔ dǎo yuán        | consejero          | conselheiro       
+  8 | psychology           | 心理学             | xīn lǐ xué         | psicología         | psicologia        
+  9 | disorder             | 紊乱              | wěn luàn           | trastorno          | transtorno        
+ 10 | trauma               | 创伤              | chuāng shāng       | trauma             | trauma            
+ 11 | panic                | 恐慌              | kǒng huāng         | pánico             | pânico            
+ 12 | phobia               | 恐惧症             | kǒng jù zhèng      | fobia              | fobia             
+ 13 | obsession            | 痴迷              | chī mí             | obsesión           | obsessão          
+ 14 | compulsion           | 强迫              | qiǎng pò           | compulsión         | compulsão         
+ 15 | mood                 | 心情              | xīn qíng           | estado de ánimo    | humor             
+ 16 | emotion              | 情感              | qíng gǎn           | emoción            | emoção            
+ 17 | coping               | 应对              | yìng duì           | afrontamiento      | enfrentamento     
+ 18 | mindfulness          | 正念              | zhèng niàn         | atención plena     | atenção plena     
+ 19 | meditation           | 冥想              | míng xiǎng         | meditación         | meditação         
+ 20 | burnout              | 倦怠              | juàn dài           | agotamiento        | esgotamento       
+ 21 | resilience           | 韧性              | rèn xìng           | resiliencia        | resiliência       
+ 22 | mental health        | 心理健康            | xīn lǐ jiàn kāng   | salud mental       | saúde mental      
+ 23 | mental illness       | 精神疾病            | jīng shén jí bìng  | enfermedad mental  | doença mental     
+ 24 | anxiety disorder     | 焦虑症             | jiāo lǜ zhèng      | trastorno de ansie | transtorno de ansi
+ 25 | social anxiety       | 社交焦虑            | shè jiāo jiāo lǜ   | ansiedad social    | ansiedade social  
+ 26 | clinical depression  | 临床抑郁症           | lín chuáng yì yù z | depresión clínica  | depressão clínica 
+ 27 | depression treatment | 抑郁症治疗           | yì yù zhèng zhì li | tratamiento de la  | tratamento da depr
+ 28 | work stress          | 工作压力            | gōng zuò yā lì     | estrés laboral     | estresse no trabal
+ 29 | stress management    | 压力管理            | yā lì guǎn lǐ      | manejo del estrés  | gestão do estresse
+ 30 | see a therapist      | 看治疗师            | kàn zhì liáo shī   | ver a un terapeuta | consulte um terape
+ 31 | therapist appointmen | 治疗师预约           | zhì liáo shī yù yu | cita con el terape | consulta com terap
+ 32 | school counselor     | 学校辅导员           | xué xiào fǔ dǎo yu | consejero escolar  | conselheiro escola
+ 33 | counselor advice     | 辅导员建议           | fǔ dǎo yuán jiàn y | consejo del consej | aconselhamento de 
+ 34 | study psychology     | 学习心理学           | xué xí xīn lǐ xué  | estudiar psicologí | estudar psicologia
+ 35 | psychology degree    | 心理学学位           | xīn lǐ xué xué wèi | Licenciatura en Ps | licenciatura em ps
+ 36 | eating disorder      | 饮食失调            | yǐn shí shī tiáo   | trastorno alimenta | transtorno aliment
+ 37 | disorder symptoms    | 失调症状            | shī tiáo zhèng zhu | síntomas del trast | sintomas do transt
+ 38 | emotional trauma     | 情感创伤            | qíng gǎn chuāng sh | trauma emocional   | trauma emocional  
+ 39 | trauma response      | 创伤反应            | chuāng shāng fǎn y | respuesta al traum | resposta ao trauma
+ 40 | panic attack         | 惊恐发作            | jīng kǒng fā zuò   | ataque de pánico   | ataque de pânico  
+ 41 | panic disorder       | 恐慌症             | kǒng huāng zhèng   | trastorno de pánic | transtorno de pâni
+ 42 | social phobia        | 社交恐惧症           | shè jiāo kǒng jù z | fobia social       | fobia social      
+ 43 | phobia of            | 对某物的恐惧          | duì mǒu wù de kǒng | fobia a            | fobia de          
+ 44 | unhealthy obsession  | 不健康的痴迷          | bù jiàn kāng de ch | obsesión enfermiza | obsessão doentia  
+ 45 | obsession with       | 痴迷              | chī mí             | obsesión con       | obsessão por      
+ 46 | compulsion to        | 强迫              | qiǎng pò           | compulsión a       | compulsão para    
+ 47 | compulsion behavior  | 强迫行为            | qiǎng pò xíng wéi  | comportamiento de  | comportamento comp
+ 48 | good mood            | 好心情             | hǎo xīn qíng       | buen humor         | bom humor         
+ 49 | mood swing           | 情绪波动            | qíng xù bō dòng    | cambio de humor    | mudança de humor  
+ 50 | strong emotion       | 强烈的情感           | qiáng liè de qíng  | emoción fuerte     | emoção forte      
+ 51 | emotion regulation   | 情绪调节            | qíng xù tiáo jié   | regulación de las  | regulação emociona
+ 52 | coping mechanism     | 应对机制            | yìng duì jī zhì    | mecanismo de afron | mecanismo de enfre
+ 53 | coping with          | 应对              | yìng duì           | afrontar           | lidando com       
+ 54 | practice mindfulness | 练习正念            | liàn xí zhèng niàn | practicar la atenc | pratique a atenção
+ 55 | mindfulness exercise | 正念练习            | zhèng niàn liàn xí | ejercicio de atenc | exercício de atenç
+ 56 | daily meditation     | 每日冥想            | měi rì míng xiǎng  | meditación diaria  | meditação diária  
+ 57 | meditation practice  | 冥想练习            | míng xiǎng liàn xí | práctica de medita | prática de meditaç
+ 58 | job burnout          | 工作倦怠            | gōng zuò juàn dài  | agotamiento labora | esgotamento profis
+ 59 | burnout symptoms     | 倦怠症状            | juàn dài zhèng zhu | síntomas de agotam | sintomas de esgota
+ 60 | build resilience     | 建立韧性            | jiàn lì rèn xìng   | desarrollar resili | construir resiliên
+ 61 | resilience training  | 复原力训练           | fù yuán lì xùn lià | entrenamiento de r | treinamento de res

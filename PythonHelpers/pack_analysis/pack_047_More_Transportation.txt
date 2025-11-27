@@ -1,0 +1,65 @@
+PACK 47: More Transportation
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | subway               | 地铁              | dì tiě             | metro              | metrô             
+  3 | metro                | 地铁              | dì tiě             | metro              | metrô             
+  4 | truck                | 卡车              | kǎ chē             | camión             | caminhão          
+  5 | van                  | 货车              | huò chē            | furgoneta          | van               
+  6 | motorcycle           | 摩托车             | mó tuō chē         | motocicleta        | motocicleta       
+  7 | ship                 | 船               | chuán              | barco              | navio             
+  8 | helicopter           | 直升机             | zhí shēng jī       | helicóptero        | helicóptero       
+  9 | highway              | 高速公路            | gāo sù gōng lù     | autopista          | rodovia           
+ 10 | bridge               | 桥               | qiáo               | puente             | ponte             
+ 11 | tunnel               | 隧道              | suì dào            | túnel              | túnel             
+ 12 | parking              | 停车              | tíng chē           | estacionamiento    | estacionamento    
+ 13 | gas                  | 气体              | qì tǐ              | gasolina           | gás               
+ 14 | fuel                 | 燃料              | rán liào           | combustible        | combustível       
+ 15 | driver               | 司机              | sī jī              | conductor          | motorista         
+ 16 | pilot                | 飞行员             | fēi xíng yuán      | piloto             | piloto            
+ 17 | journey              | 旅程              | lǚ chéng           | viaje              | viagem            
+ 18 | path                 | 路径              | lù jìng            | camino             | caminho           
+ 19 | lane                 | 车道              | chē dào            | carril             | pista             
+ 20 | railway              | 铁路              | tiě lù             | ferrocarril        | ferrovia          
+ 21 | overpass             | 立交桥             | lì jiāo qiáo       | paso elevado       | viaduto           
+ 22 | take the subway      | 乘坐地铁            | chéng zuò dì tiě   | tomar el metro     | pegue o metrô     
+ 23 | subway station       | 地铁站             | dì tiě zhàn        | estación de metro  | estação de metrô  
+ 24 | ride the metro       | 乘坐地铁            | chéng zuò dì tiě   | viajar en metro    | andar de metrô    
+ 25 | metro line           | 地铁线             | dì tiě xiàn        | línea de metro     | linha do metrô    
+ 26 | big truck            | 大卡车             | dà kǎ chē          | camión grande      | caminhão grande   
+ 27 | truck driver         | 卡车司机            | kǎ chē sī jī       | conductor de camió | caminhoneiro      
+ 28 | cargo van            | 货车              | huò chē            | furgoneta de carga | furgão de carga   
+ 29 | mini van             | 小型货车            | xiǎo xíng huò chē  | mini furgoneta     | minivan           
+ 30 | ride a motorcycle    | 骑摩托车            | qí mó tuō chē      | andar en motocicle | andar de moto     
+ 31 | motorcycle helmet    | 摩托车头盔           | mó tuō chē tóu kuī | casco de moto      | capacete de moto  
+ 32 | ship anchor          | 船锚              | chuán máo          | ancla de barco     | âncora do navio   
+ 33 | cargo ship           | 货船              | huò chuán          | buque de carga     | navio cargueiro   
+ 34 | fly a helicopter     | 驾驶直升机           | jià shǐ zhí shēng  | volar un helicópte | pilotar um helicóp
+ 35 | helicopter ride      | 乘坐直升机           | chéng zuò zhí shēn | paseo en helicópte | passeio de helicóp
+ 36 | on the highway       | 在高速公路上          | zài gāo sù gōng lù | en la carretera    | na rodovia        
+ 37 | highway exit         | 高速公路出口          | gāo sù gōng lù chū | salida de la autop | saída da rodovia  
+ 38 | cross the bridge     | 过桥              | guò qiáo           | cruzar el puente   | atravessar a ponte
+ 39 | bridge over          | 桥               | qiáo               | puente sobre       | ponte sobre       
+ 40 | through the tunnel   | 穿过隧道            | chuān guò suì dào  | a través del túnel | pelo túnel        
+ 41 | tunnel entrance      | 隧道入口            | suì dào rù kǒu     | entrada del túnel  | entrada do túnel  
+ 42 | parking lot          | 停车场             | tíng chē chǎng     | estacionamiento    | estacionamento    
+ 43 | parking space        | 停车位             | tíng chē wèi       | plaza de aparcamie | vaga de estacionam
+ 44 | gas station          | 加油站             | jiā yóu zhàn       | gasolinera         | posto de gasolina 
+ 45 | out of gas           | 没气了             | méi qì le          | sin gasolina       | sem gás           
+ 46 | fuel tank            | 油箱              | yóu xiāng          | tanque de combusti | tanque de combustí
+ 47 | low fuel             | 低油耗             | dī yóu hào         | poco combustible   | baixo combustível 
+ 48 | taxi driver          | 出租车司机           | chū zū chē sī jī   | taxista            | taxista           
+ 49 | bus driver           | 巴士司机            | bā shì sī jī       | conductor de autob | motorista de ônibu
+ 50 | airline pilot        | 航空公司飞行员         | háng kōng gōng sī  | piloto de línea aé | piloto de avião   
+ 51 | pilot license        | 飞行员执照           | fēi xíng yuán zhí  | licencia de piloto | licença de piloto 
+ 52 | long journey         | 长途旅行            | cháng tú lǚ xíng   | largo viaje        | longa jornada     
+ 53 | safe journey         | 旅途平安            | lǚ tú píng ān      | viaje seguro       | viagem segura     
+ 54 | walking path         | 步行道             | bù xíng dào        | sendero para camin | percurso pedestre 
+ 55 | path forward         | 前进之路            | qián jìn zhī lù    | camino a seguir    | caminho a seguir  
+ 56 | fast lane            | 快车道             | kuài chē dào       | carril rápido      | via rápida        
+ 57 | bike lane            | 自行车道            | zì xíng chē dào    | carril bici        | ciclovia          
+ 58 | railway station      | 火车站             | huǒ chē zhàn       | estación de tren   | estação ferroviári
+ 59 | railway track        | 铁路轨道            | tiě lù guǐ dào     | vía férrea         | via férrea        
+ 60 | highway overpass     | 高速公路立交桥         | gāo sù gōng lù lì  | paso elevado de la | viaduto rodoviário
+ 61 | overpass above       | 上面的立交桥          | shàng miàn de lì j | paso elevado arrib | viaduto acima     

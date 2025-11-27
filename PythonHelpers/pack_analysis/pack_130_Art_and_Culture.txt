@@ -1,0 +1,65 @@
+PACK 130: Art & Culture
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | culture              | 文化              | wén huà            | cultura            | cultura           
+  3 | cultural             | 文化              | wén huà            | culturales         | culturais         
+  4 | creative             | 创意              | chuàng yì          | creativo           | criativo          
+  5 | imagination          | 想象力             | xiǎng xiàng lì     | imaginación        | imaginação        
+  6 | inspire              | 启发              | qǐ fā              | inspirar           | inspirar          
+  7 | inspiration          | 灵感              | líng gǎn           | inspiración        | inspiração        
+  8 | expression           | 表达              | biǎo dá            | expresión          | expressão         
+  9 | aesthetic            | 审美              | shěn měi           | estético           | estética          
+ 10 | contemporary         | 当代              | dāng dài           | contemporáneo      | contemporâneo     
+ 11 | classical            | 经典              | jīng diǎn          | clásico            | clássico          
+ 12 | modern               | 现代              | xiàn dài           | moderno            | moderno           
+ 13 | traditional          | 传统              | chuán tǒng         | tradicional        | tradicional       
+ 14 | heritage             | 遗产              | yí chǎn            | patrimonio         | patrimônio        
+ 15 | identity             | 身份              | shēn fèn           | identidad          | identidade        
+ 16 | movement             | 运动              | yùn dòng           | movimiento         | movimento         
+ 17 | artistic             | 艺术              | yì shù             | artístico          | artístico         
+ 18 | portrait             | 肖像              | xiào xiàng         | retrato            | retrato           
+ 19 | masterpiece          | 杰作              | jié zuò            | obra maestra       | obra-prima        
+ 20 | renaissance          | 文艺复兴            | wén yì fù xīng     | renacimiento       | renascimento      
+ 21 | baroque              | 巴洛克风格           | bā luò kè fēng gé  | barroco            | barroco           
+ 22 | pop culture          | 流行文化            | liú xíng wén huà   | cultura pop        | cultura pop       
+ 23 | culture shock        | 文化冲击            | wén huà chōng jī   | choque cultural    | choque cultural   
+ 24 | cultural exchange    | 文化交流            | wén huà jiāo liú   | intercambio cultur | intercâmbio cultur
+ 25 | cultural heritage    | 文化遗产            | wén huà yí chǎn    | patrimonio cultura | património cultura
+ 26 | creative thinking    | 创意思维            | chuàng yì sī wéi   | pensamiento creati | pensamento criativ
+ 27 | creative writing     | 创意写作            | chuàng yì xiě zuò  | escritura creativa | escrita criativa  
+ 28 | wild imagination     | 狂野的想象力          | kuáng yě de xiǎng  | imaginación salvaj | imaginação selvage
+ 29 | use imagination      | 发挥想象力           | fā huī xiǎng xiàng | usa la imaginación | use a imaginação  
+ 30 | inspire others       | 激励他人            | jī lì tā rén       | inspirar a otros   | inspirar outras pe
+ 31 | inspire change       | 激发变革            | jī fā biàn gé      | inspirar el cambio | inspirar mudanças 
+ 32 | find inspiration     | 寻找灵感            | xún zhǎo líng gǎn  | encontrar inspirac | encontre inspiraçã
+ 33 | source of inspiratio | 灵感来源            | líng gǎn lái yuán  | fuente de inspirac | fonte de inspiraçã
+ 34 | self expression      | 自我表达            | zì wǒ biǎo dá      | autoexpresión      | autoexpressão     
+ 35 | freedom of expressio | 言论自由            | yán lùn zì yóu     | libertad de expres | liberdade de expre
+ 36 | aesthetic appeal     | 审美情趣            | shěn měi qíng qù   | atractivo estético | apelo estético    
+ 37 | aesthetic value      | 审美价值            | shěn měi jià zhí   | valor estético     | valor estético    
+ 38 | contemporary art     | 当代艺术            | dāng dài yì shù    | arte contemporáneo | arte contemporânea
+ 39 | contemporary music   | 当代音乐            | dāng dài yīn yuè   | música contemporán | música contemporân
+ 40 | classical music      | 古典音乐            | gǔ diǎn yīn yuè    | música clásica     | música clássica   
+ 41 | classical literature | 古典文学            | gǔ diǎn wén xué    | literatura clásica | literatura clássic
+ 42 | modern art           | 现代艺术            | xiàn dài yì shù    | arte moderno       | arte moderna      
+ 43 | modern design        | 现代设计            | xiàn dài shè jì    | diseño moderno     | design moderno    
+ 44 | traditional values   | 传统价值观           | chuán tǒng jià zhí | valores tradiciona | valores tradiciona
+ 45 | traditional medicine | 传统医学            | chuán tǒng yī xué  | medicina tradicion | medicina tradicion
+ 46 | rich heritage        | 丰富的遗产           | fēng fù de yí chǎn | rico patrimonio    | rico património   
+ 47 | heritage site        | 遗址              | yí zhǐ             | sitio patrimonial  | património        
+ 48 | personal identity    | 个人身份            | gè rén shēn fèn    | identidad personal | identidade pessoal
+ 49 | identity crisis      | 身份危机            | shēn fèn wēi jī    | crisis de identida | crise de identidad
+ 50 | art movement         | 艺术运动            | yì shù yùn dòng    | movimiento artísti | movimento artístic
+ 51 | movement toward      | 走向              | zǒu xiàng          | movimiento hacia   | movimento em direç
+ 52 | artistic talent      | 艺术天赋            | yì shù tiān fù     | talento artístico  | talento artístico 
+ 53 | artistic expression  | 艺术表达            | yì shù biǎo dá     | expresión artístic | expressão artístic
+ 54 | paint portrait       | 画肖像             | huà xiào xiàng     | pintar retrato     | pintar retrato    
+ 55 | portrait of          | 的肖像             | de xiào xiàng      | retrato de         | retrato de        
+ 56 | artistic masterpiece | 艺术杰作            | yì shù jié zuò     | obra maestra artís | obra-prima artísti
+ 57 | masterpiece of       | 的杰作             | de jié zuò         | obra maestra de    | obra-prima de     
+ 58 | italian renaissance  | 意大利文艺复兴         | yì dà lì wén yì fù | renacimiento itali | renascimento itali
+ 59 | renaissance art      | 文艺复兴艺术          | wén yì fù xīng yì  | arte renacentista  | arte renascentista
+ 60 | baroque music        | 巴洛克音乐           | bā luò kè yīn yuè  | musica barroca     | música barroca    
+ 61 | baroque style        | 巴洛克风格           | bā luò kè fēng gé  | estilo barroco     | estilo barroco    

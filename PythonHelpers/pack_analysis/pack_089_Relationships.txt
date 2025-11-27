@@ -1,0 +1,65 @@
+PACK 89: Relationships
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | relationship         | 关系              | guān xì            | relación           | relacionamento    
+  3 | friendship           | 友谊              | yǒu yì             | amistad            | amizade           
+  4 | partner              | 合作伙伴            | hé zuò huǒ bàn     | socio              | parceiro          
+  5 | boyfriend            | 男朋友             | nán péng yǒu       | novio              | namorado          
+  6 | girlfriend           | 女朋友             | nǚ péng yǒu        | novia              | namorada          
+  7 | couple               | 情侣              | qíng lǚ            | pareja             | casal             
+  8 | date                 | 日期              | rì qī              | fecha              | data              
+  9 | dating               | 约会              | yuē huì            | citas              | namoro            
+ 10 | single               | 单               | dān                | soltero            | solteiro          
+ 11 | married              | 已婚              | yǐ hūn             | casado             | casado            
+ 12 | divorced             | 离婚              | lí hūn             | divorciado         | divorciado        
+ 13 | engaged              | 订婚              | dìng hūn           | comprometido       | engajado          
+ 14 | wedding              | 婚礼              | hūn lǐ             | boda               | casamento         
+ 15 | anniversary          | 周年纪念            | zhōu nián jì niàn  | aniversario        | aniversário       
+ 16 | trust                | 信任              | xìn rèn            | confianza          | confiança         
+ 17 | support              | 支持              | zhī chí            | apoyo              | suporte           
+ 18 | argue                | 争论              | zhēng lùn          | discutir           | argumentar        
+ 19 | respect              | 尊重              | zūn zhòng          | respeto            | respeito          
+ 20 | commitment           | 承诺              | chéng nuò          | compromiso         | compromisso       
+ 21 | bond                 | 债券              | zhài quàn          | vínculo            | vínculo           
+ 22 | good relationship    | 良好的关系           | liáng hǎo de guān  | buena relación     | bom relacionamento
+ 23 | relationship goals   | 关系目标            | guān xì mù biāo    | objetivos de relac | objetivos de relac
+ 24 | close friendship     | 亲密友谊            | qīn mì yǒu yì      | amistad cercana    | amizade próxima   
+ 25 | friendship bracelet  | 友谊手链            | yǒu yì shǒu liàn   | pulsera de la amis | pulseira da amizad
+ 26 | life partner         | 人生伴侣            | rén shēng bàn lǚ   | compañero de vida  | companheiro de vid
+ 27 | business partner     | 商业伙伴            | shāng yè huǒ bàn   | socio comercial    | parceiro de negóci
+ 28 | new boyfriend        | 新男友             | xīn nán yǒu        | nuevo novio        | novo namorado     
+ 29 | boyfriend material   | 男朋友材质           | nán péng yǒu cái z | material de novio  | material para namo
+ 30 | new girlfriend       | 新女友             | xīn nǚ yǒu         | nueva novia        | nova namorada     
+ 31 | girlfriend goals     | 女朋友的目标          | nǚ péng yǒu de mù  | objetivos de novia | objetivos da namor
+ 32 | young couple         | 年轻夫妇            | nián qīng fū fù    | pareja joven       | jovem casal       
+ 33 | couple goals         | 情侣目标            | qíng lǚ mù biāo    | objetivos de parej | gols de casal     
+ 34 | first date           | 第一次约会           | dì yī cì yuē huì   | primera cita       | primeiro encontro 
+ 35 | date night           | 约会之夜            | yuē huì zhī yè     | cita nocturna      | encontro noite    
+ 36 | online dating        | 网上约会            | wǎng shàng yuē huì | citas en línea     | namoro on-line    
+ 37 | dating app           | 约会应用程序          | yuē huì yìng yòng  | aplicación de cita | aplicativo de namo
+ 38 | still single         | 仍然单身            | réng rán dān shēn  | todavía soltero    | ainda solteiro    
+ 39 | single life          | 单身生活            | dān shēn shēng huó | vida de soltero    | vida de solteiro  
+ 40 | happily married      | 婚姻幸福            | hūn yīn xìng fú    | felizmente casado  | casado e feliz    
+ 41 | married couple       | 已婚夫妇            | yǐ hūn fū fù       | pareja casada      | casal             
+ 42 | recently divorced    | 最近离婚            | zuì jìn lí hūn     | recientemente divo | recentemente divor
+ 43 | divorced parents     | 离婚父母            | lí hūn fù mǔ       | padres divorciados | pais divorciados  
+ 44 | newly engaged        | 新订婚             | xīn dìng hūn       | recién comprometid | recém-noivado     
+ 45 | engaged couple       | 订婚夫妇            | dìng hūn fū fù     | pareja comprometid | casal de noivos   
+ 46 | dream wedding        | 梦想婚礼            | mèng xiǎng hūn lǐ  | boda de ensueño    | casamento dos sonh
+ 47 | wedding day          | 婚礼当天            | hūn lǐ dàng tiān   | día de la boda     | dia do casamento  
+ 48 | happy anniversary    | 周年快乐            | zhōu nián kuài lè  | feliz aniversario  | feliz aniversário 
+ 49 | anniversary gift     | 周年纪念礼物          | zhōu nián jì niàn  | regalo de aniversa | presente de aniver
+ 50 | trust issues         | 信任问题            | xìn rèn wèn tí     | cuestiones de conf | questões de confia
+ 51 | trust me             | 相信我             | xiāng xìn wǒ       | confía en mí       | confie em mim     
+ 52 | support system       | 支持系统            | zhī chí xì tǒng    | sistema de apoyo   | sistema de apoio  
+ 53 | support you          | 支持你             | zhī chí nǐ         | apoyarte           | te apoiar         
+ 54 | argue about          | 争论              | zhēng lùn          | discutir sobre     | discutir sobre    
+ 55 | argue with           | 与               | yǔ                 | discutir con       | discutir com      
+ 56 | respect yourself     | 争论尊重自己          | zhēng lùn zūn zhòn | respétate a ti mis | respeite-se       
+ 57 | mutual respect       | 相互尊重            | xiāng hù zūn zhòng | respeto mutuo      | respeito mútuo    
+ 58 | long commitment      | 长期承诺            | cháng qī chéng nuò | compromiso largo   | compromisso longo 
+ 59 | commitment issues    | 承诺问题            | chéng nuò wèn tí   | cuestiones de comp | questões de compro
+ 60 | strong bond          | 牢固的联系           | láo gù de lián xì  | vínculo fuerte     | vínculo forte     
+ 61 | family bond          | 家庭纽带            | jiā tíng niǔ dài   | vínculo familiar   | vínculo familiar  

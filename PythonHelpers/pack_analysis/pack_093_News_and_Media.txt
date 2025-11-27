@@ -1,0 +1,65 @@
+PACK 93: News & Media
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | newspaper            | 报纸              | bào zhǐ            | periódico          | jornal            
+  3 | magazine             | 杂志              | zá zhì             | revista            | revista           
+  4 | article              | 文章              | wén zhāng          | artículo           | artigo            
+  5 | headline             | 标题              | biāo tí            | titular            | manchete          
+  6 | reporter             | 记者              | jì zhě             | reportero          | repórter          
+  7 | broadcast            | 广播              | guǎng bō           | transmisión        | transmissão       
+  8 | channel              | 频道              | pín dào            | canal              | canal             
+  9 | press                | 按               | àn                 | prensa             | pressione         
+ 10 | journalist           | 记者              | jì zhě             | periodista         | jornalista        
+ 11 | correspondent        | 通讯员             | tōng xùn yuán      | corresponsal       | correspondente    
+ 12 | source               | 来源              | lái yuán           | fuente             | fonte             
+ 13 | tabloid              | 小报              | xiǎo bào           | tabloide           | tablóide          
+ 14 | coverage             | 覆盖范围            | fù gài fàn wéi     | cobertura          | cobertura         
+ 15 | breaking             | 打破              | dǎ pò              | rompiendo          | quebrando         
+ 16 | editorial            | 社论              | shè lùn            | redacción          | editorial         
+ 17 | column               | 专栏              | zhuān lán          | columna            | coluna            
+ 18 | publication          | 出版物             | chū bǎn wù         | publicación        | publicação        
+ 19 | misinformation       | 错误信息            | cuò wù xìn xī      | desinformación     | desinformação     
+ 20 | newsroom             | 新闻编辑室           | xīn wén biān jí sh | sala de redacción  | redação           
+ 21 | anchor               | 锚               | máo                | ancla              | âncora            
+ 22 | daily newspaper      | 日报              | rì bào             | periódico diario   | jornal diário     
+ 23 | newspaper article    | 报纸文章            | bào zhǐ wén zhāng  | artículo periodíst | artigo de jornal  
+ 24 | fashion magazine     | 时尚杂志            | shí shàng zá zhì   | revista de moda    | revista de moda   
+ 25 | magazine cover       | 杂志封面            | zá zhì fēng miàn   | portada de revista | capa de revista   
+ 26 | news article         | 新闻文章            | xīn wén wén zhāng  | artículo de notici | reportagem        
+ 27 | article about        | 关于              | guān yú            | artículo sobre     | artigo sobre      
+ 28 | front headline       | 的文章头条标题         | de wén zhāng tóu t | titular principal  | manchete          
+ 29 | headline news        | 头条新闻            | tóu tiáo xīn wén   | titulares de notic | manchete          
+ 30 | TV reporter          | 电视台记者           | diàn shì tái jì zh | reportero de telev | Repórter de TV    
+ 31 | reporter ask         | 记者提问            | jì zhě tí wèn      | pregunta del perio | repórter pergunta 
+ 32 | live broadcast       | 直播              | zhí bō             | transmisión en viv | transmissão ao viv
+ 33 | broadcast live       | 直播              | zhí bō             | retransmitir en di | transmitido ao viv
+ 34 | news channel         | 新闻频道            | xīn wén pín dào    | canal de noticias  | canal de notícias 
+ 35 | channel surfing      | 频道冲浪            | pín dào chōng làng | navegar por canale | navegação nos cana
+ 36 | press conference     | 新闻发布会           | xīn wén fā bù huì  | conferencia de pre | conferência de imp
+ 37 | press release        | 新闻稿             | xīn wén gǎo        | comunicado de pren | comunicado de impr
+ 38 | investigative journa | 调查记者            | diào chá jì zhě    | periodista de inve | jornalista investi
+ 39 | journalist question  | 记者提问            | jì zhě tí wèn      | pregunta del perio | pergunta do jornal
+ 40 | foreign corresponden | 驻外记者            | zhù wài jì zhě     | corresponsal extra | correspondente est
+ 41 | correspondent report | 记者报道            | jì zhě bào dào     | informe correspons | relatório correspo
+ 42 | news source          | 新闻来源            | xīn wén lái yuán   | fuente de noticias | fonte de notícias 
+ 43 | source says          | 消息来源说           | xiāo xī lái yuán s | la fuente dice     | fonte diz         
+ 44 | tabloid news         | 小报新闻            | xiǎo bào xīn wén   | noticias sensacion | notícias de tablói
+ 45 | tabloid story        | 小报故事            | xiǎo bào gù shì    | historia sensacion | história de tablói
+ 46 | news coverage        | 新闻报道            | xīn wén bào dào    | cobertura de notic | cobertura noticios
+ 47 | full coverage        | 全面覆盖            | quán miàn fù gài   | cobertura total    | cobertura completa
+ 48 | breaking news        | 突发新闻            | tū fā xīn wén      | noticias de última | últimas notícias  
+ 49 | breaking story       | 突发新闻            | tū fā xīn wén      | noticia de última  | história de última
+ 50 | newspaper editorial  | 报纸社论            | bào zhǐ shè lùn    | editorial del peri | editorial do jorna
+ 51 | editorial opinion    | 编辑意见            | biān jí yì jiàn    | opinión editorial  | opinião editorial 
+ 52 | newspaper column     | 报纸专栏            | bào zhǐ zhuān lán  | columna de periódi | coluna de jornal  
+ 53 | column writer        | 专栏作家            | zhuān lán zuò jiā  | escritor de column | redator da coluna 
+ 54 | new publication      | 新出版物            | xīn chū bǎn wù     | nueva publicación  | nova publicação   
+ 55 | publication date     | 出版日期            | chū bǎn rì qī      | fecha de publicaci | data de publicação
+ 56 | spread misinformatio | 传播错误信息          | chuán bō cuò wù xì | difundir informaci | espalhar desinform
+ 57 | fight misinformation | 打击错误信息          | dǎ jī cuò wù xìn x | luchar contra la d | combater a desinfo
+ 58 | busy newsroom        | 繁忙的新闻编辑室        | fán máng de xīn wé | sala de redacción  | redação ocupada   
+ 59 | newsroom chaos       | 新闻编辑室混乱         | xīn wén biān jí sh | caos en la redacci | caos na redação   
+ 60 | news anchor          | 新闻主播            | xīn wén zhǔ bō     | presentador de not | âncora de notícias
+ 61 | anchor position      | 锚定位置            | máo dìng wèi zhì   | posición de anclaj | posição da âncora 

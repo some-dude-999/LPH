@@ -1,0 +1,65 @@
+PACK 149: Environmental Science
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | biome                | 生物群落            | shēng wù qún luò   | bioma              | bioma             
+  3 | sustainability       | 可持续性            | kě chí xù xìng     | sostenibilidad     | sustentabilidade  
+  4 | nonrenewable         | 不可再生            | bù kě zài shēng    | no renovable       | não renovável     
+  5 | deforestation        | 森林砍伐            | sēn lín kǎn fá     | deforestación      | desmatamento      
+  6 | contamination        | 污染              | wū rǎn             | contaminación      | contaminação      
+  7 | degradation          | 降解              | jiàng jiě          | degradación        | degradação        
+  8 | restoration          | 恢复              | huī fù             | restauración       | restauração       
+  9 | mitigation           | 缓解              | huǎn jiě           | mitigación         | mitigação         
+ 10 | adaptation           | 适应              | shì yìng           | adaptación         | adaptação         
+ 11 | stewardship          | 管理              | guǎn lǐ            | mayordomía         | mordomia          
+ 12 | climate change       | 气候变化            | qì hòu biàn huà    | cambio climático   | alterações climáti
+ 13 | carbon footprint     | 碳足迹             | tàn zú jì          | huella de carbono  | pegada de carbono 
+ 14 | greenhouse gas       | 温室气体            | wēn shì qì tǐ      | gases de efecto in | gases com efeito d
+ 15 | ecological           | 生态              | shēng tài          | ecológico          | ecológico         
+ 16 | preservation         | 保存              | bǎo cún            | preservación       | preservação       
+ 17 | niche                | 利基              | lì jī              | nicho              | nicho             
+ 18 | reforestation        | 重新造林            | chóng xīn zào lín  | reforestación      | reflorestamento   
+ 19 | erosion              | 侵蚀              | qīn shí            | erosión            | erosão            
+ 20 | ozone                | 臭氧              | chòu yǎng          | ozono              | ozônio            
+ 21 | watershed            | 分水岭             | fēn shuǐ lǐng      | cuenca             | bacia hidrográfica
+ 22 | tropical biome       | 热带生物群落          | rè dài shēng wù qú | bioma tropical     | bioma tropical    
+ 23 | biome type           | 生物群落类型          | shēng wù qún luò l | tipo de bioma      | tipo de bioma     
+ 24 | environmental sustai | 环境可持续性          | huán jìng kě chí x | sostenibilidad amb | sustentabilidade a
+ 25 | sustainability effor | 可持续发展努力         | kě chí xù fā zhǎn  | esfuerzos de soste | esforços de susten
+ 26 | nonrenewable resourc | 不可再生资源          | bù kě zài shēng zī | recurso no renovab | recurso não renová
+ 27 | nonrenewable energy  | 不可再生能源          | bù kě zài shēng né | energía no renovab | energia não renová
+ 28 | stop deforestation   | 停止砍伐森林          | tíng zhǐ kǎn fá sē | detener la defores | acabar com o desma
+ 29 | deforestation rate   | 森林砍伐率           | sēn lín kǎn fá lǜ  | tasa de deforestac | taxa de desmatamen
+ 30 | water contamination  | 水污染             | shuǐ wū rǎn        | contaminación del  | contaminação da ág
+ 31 | contamination of     | 对某物的污染          | duì mǒu wù de wū r | contaminación de   | contaminação de   
+ 32 | environmental degrad | 的污染环境恶化         | de wū rǎn huán jìn | degradación ambien | degradação ambient
+ 33 | degradation of       | 对某物的退化          | duì mǒu wù de tuì  | degradación de     | degradação de     
+ 34 | habitat restoration  | 的退化栖息地恢复        | de tuì huà qī xī d | restauración del h | restauração de hab
+ 35 | restoration project  | 修复工程            | xiū fù gōng chéng  | proyecto de restau | projeto de restaur
+ 36 | risk mitigation      | 风险缓解            | fēng xiǎn huǎn jiě | mitigación de ries | mitigação de risco
+ 37 | mitigation efforts   | 缓解措施            | huǎn jiě cuò shī   | esfuerzos de mitig | esforços de mitiga
+ 38 | climate adaptation   | 气候适应            | qì hòu shì yìng    | adaptación climáti | adaptação climátic
+ 39 | adaptation to        | 适应              | shì yìng           | adaptación a       | adaptação para    
+ 40 | environmental stewar | 环境管理            | huán jìng guǎn lǐ  | gestión ambiental  | gestão ambiental  
+ 41 | stewardship of       | 对某物的管理          | duì mǒu wù de guǎn | administración de  | administração de  
+ 42 | address climate chan | 的管理应对气候变化       | de guǎn lǐ yìng du | abordar el cambio  | abordar as alteraç
+ 43 | climate change effec | 气候变化影响          | qì hòu biàn huà yǐ | efectos del cambio | efeitos das altera
+ 44 | reduce carbon footpr | 减少碳足迹           | jiǎn shǎo tàn zú j | reducir la huella  | reduzir a pegada d
+ 45 | carbon footprint red | 减少碳足迹           | jiǎn shǎo tàn zú j | reducción de la hu | redução da pegada 
+ 46 | greenhouse gas emiss | 温室气体排放          | wēn shì qì tǐ pái  | emisiones de gases | emissões de gases 
+ 47 | greenhouse gas effec | 温室气体效应          | wēn shì qì tǐ xiào | efecto de los gase | efeito de gases co
+ 48 | ecological balance   | 生态平衡            | shēng tài píng hén | equilibrio ecológi | equilíbrio ecológi
+ 49 | ecological system    | 生态系统            | shēng tài xì tǒng  | sistema ecológico  | sistema ecológico 
+ 50 | wildlife preservatio | 野生动物保护          | yě shēng dòng wù b | preservación de la | preservação da vid
+ 51 | preservation of      | 保存              | bǎo cún            | preservación de    | preservação de    
+ 52 | ecological niche     | 生态位             | shēng tài wèi      | nicho ecológico    | nicho ecológico   
+ 53 | niche market         | 利基市场            | lì jī shì chǎng    | nicho de mercado   | nicho de mercado  
+ 54 | support reforestatio | 支持重新造林          | zhī chí zhòng xīn  | apoyar la reforest | apoiar a reflorest
+ 55 | reforestation effort | 重新造林努力          | chóng xīn zào lín  | esfuerzos de refor | esforços de reflor
+ 56 | soil erosion         | 土壤侵蚀            | tǔ rǎng qīn shí    | erosión del suelo  | erosão do solo    
+ 57 | erosion control      | 侵蚀控制            | qīn shí kòng zhì   | control de la eros | controle da erosão
+ 58 | ozone layer          | 臭氧层             | chòu yǎng céng     | capa de ozono      | camada de ozônio  
+ 59 | ozone depletion      | 臭氧层破坏           | chòu yǎng céng pò  | agotamiento del oz | destruição da cama
+ 60 | protect watershed    | 保护分水岭           | bǎo hù fēn shuǐ lǐ | proteger la cuenca | proteger bacia hid
+ 61 | watershed area       | 流域面积            | liú yù miàn jī     | área de cuenca     | área da bacia hidr

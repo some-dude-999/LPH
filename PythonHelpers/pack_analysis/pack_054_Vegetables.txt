@@ -1,0 +1,65 @@
+PACK 54: Vegetables
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | carrot               | 胡萝卜             | hú luó bo          | zanahoria          | cenoura           
+  3 | cucumber             | 黄瓜              | huáng guā          | pepino             | pepino            
+  4 | broccoli             | 西兰花             | xī lán huā         | brócoli            | brócolis          
+  5 | corn                 | 玉米              | yù mǐ              | maíz               | milho             
+  6 | bean                 | 豆               | dòu                | frijol             | feijão            
+  7 | mushroom             | 蘑菇              | mó gū              | hongo              | cogumelo          
+  8 | spinach              | 菠菜              | bō cài             | espinacas          | espinafre         
+  9 | cabbage              | 卷心菜             | juǎn xīn cài       | repollo            | repolho           
+ 10 | celery               | 芹菜              | qín cài            | apio               | aipo              
+ 11 | pea                  | 豌豆              | wān dòu            | guisante           | ervilha           
+ 12 | zucchini             | 西葫芦             | xī hú lú           | calabacín          | abobrinha         
+ 13 | eggplant             | 茄子              | qié zi             | berenjena          | berinjela         
+ 14 | cauliflower          | 花椰菜             | huā yē cài         | coliflor           | couve-flor        
+ 15 | asparagus            | 芦笋              | lú sǔn             | espárragos         | espargos          
+ 16 | beet                 | 甜菜              | tián cài           | remolacha          | beterraba         
+ 17 | radish               | 萝卜              | luó bo             | rábano             | rabanete          
+ 18 | squash               | 壁球              | bì qiú             | calabaza           | abóbora           
+ 19 | pumpkin              | 南瓜              | nán guā            | calabaza           | abóbora           
+ 20 | onion                | 洋葱              | yáng cōng          | cebolla            | cebola            
+ 21 | garlic               | 大蒜              | dà suàn            | ajo                | alho              
+ 22 | baby carrot          | 小胡萝卜            | xiǎo hú luó bo     | zanahoria pequeña  | cenoura bebê      
+ 23 | carrot cake          | 胡萝卜蛋糕           | hú luó bo dàn gāo  | pastel de zanahori | bolo de cenoura   
+ 24 | fresh cucumber       | 新鲜黄瓜            | xīn xiān huáng guā | pepino fresco      | pepino fresco     
+ 25 | cucumber salad       | 黄瓜沙拉            | huáng guā shā lā   | ensalada de pepino | salada de pepino  
+ 26 | steamed broccoli     | 蒸西兰花            | zhēng xī lán huā   | brócoli al vapor   | brócolis cozido no
+ 27 | broccoli soup        | 西兰花汤            | xī lán huā tāng    | sopa de brócoli    | sopa de brócolis  
+ 28 | sweet corn           | 甜玉米             | tián yù mǐ         | maíz dulce         | milho doce        
+ 29 | corn on the cob      | 玉米棒             | yù mǐ bàng         | mazorca de maíz    | espiga de milho   
+ 30 | green bean           | 绿豆              | lǜ dòu             | judía verde        | feijão verde      
+ 31 | bean sprout          | 豆芽              | dòu yá             | brote de frijol    | broto de feijão   
+ 32 | wild mushroom        | 野生蘑菇            | yě shēng mó gū     | seta silvestre     | cogumelo selvagem 
+ 33 | mushroom soup        | 蘑菇汤             | mó gū tāng         | sopa de champiñone | sopa de cogumelos 
+ 34 | fresh spinach        | 新鲜菠菜            | xīn xiān bō cài    | espinacas frescas  | espinafre fresco  
+ 35 | spinach salad        | 菠菜沙拉            | bō cài shā lā      | ensalada de espina | salada de espinafr
+ 36 | red cabbage          | 红甘蓝             | hóng gān lán       | col lombarda       | repolho roxo      
+ 37 | cabbage roll         | 卷心菜卷            | juǎn xīn cài juǎn  | rollo de col       | rolinho de repolho
+ 38 | celery stick         | 芹菜棒             | qín cài bàng       | rama de apio       | talo de aipo      
+ 39 | celery soup          | 芹菜汤             | qín cài tāng       | sopa de apio       | sopa de aipo      
+ 40 | green pea            | 绿豌豆             | lǜ wān dòu         | guisante verde     | ervilha verde     
+ 41 | pea soup             | 豌豆汤             | wān dòu tāng       | sopa de guisantes  | sopa de ervilha   
+ 42 | grilled zucchini     | 烤西葫芦            | kǎo xī hú lú       | calabacines asados | abobrinha grelhada
+ 43 | zucchini bread       | 西葫芦面包           | xī hú lú miàn bāo  | pan de calabacín   | pão de abobrinha  
+ 44 | grilled eggplant     | 烤茄子             | kǎo qié zi         | berenjenas asadas  | berinjela grelhada
+ 45 | eggplant parmesan    | 茄子巴马干酪          | qié zi bā mǎ gān l | berenjena a la par | berinjela com parm
+ 46 | steamed cauliflower  | 蒸花椰菜            | zhēng huā yē cài   | coliflor al vapor  | couve-flor cozida 
+ 47 | cauliflower rice     | 花椰菜饭            | huā yē cài fàn     | arroz de coliflor  | arroz de couve-flo
+ 48 | grilled asparagus    | 烤芦笋             | kǎo lú sǔn         | espárragos a la pl | espargos grelhados
+ 49 | asparagus spear      | 芦笋矛             | lú sǔn máo         | lanza de espárrago | lança de espargos 
+ 50 | red beet             | 红甜菜             | hóng tián cài      | remolacha roja     | beterraba vermelha
+ 51 | beet salad           | 甜菜沙拉            | tián cài shā lā    | ensalada de remola | salada de beterrab
+ 52 | red radish           | 红萝卜             | hóng luó bo        | rábano rojo        | rabanete vermelho 
+ 53 | radish salad         | 萝卜沙拉            | luó bo shā lā      | ensalada de rábano | salada de rabanete
+ 54 | butternut squash     | 胡桃南瓜            | hú táo nán guā     | calabaza           | abóbora           
+ 55 | squash soup          | 南瓜汤             | nán guā tāng       | sopa de calabaza   | sopa de abóbora   
+ 56 | pumpkin pie          | 南瓜派             | nán guā pài        | pastel de calabaza | torta de abóbora  
+ 57 | pumpkin spice        | 南瓜香料            | nán guā xiāng liào | especia de calabaz | tempero de abóbora
+ 58 | red onion            | 红洋葱             | hóng yáng cōng     | cebolla morada     | cebola roxa       
+ 59 | onion ring           | 洋葱圈             | yáng cōng quān     | aro de cebolla     | anel de cebola    
+ 60 | fresh garlic         | 新鲜大蒜            | xīn xiān dà suàn   | ajo fresco         | alho fresco       
+ 61 | garlic bread         | 大蒜面包            | dà suàn miàn bāo   | pan de ajo         | pão de alho       

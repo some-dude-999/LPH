@@ -1,0 +1,65 @@
+PACK 101: Basic Law & Rules
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | law                  | 法律              | fǎ lǜ              | ley                | lei               
+  3 | rule                 | 规则              | guī zé             | regla              | regra             
+  4 | ticket               | 票               | piào               | billete            | bilhete           
+  5 | fine                 | 很好              | hěn hǎo            | bien               | tudo bem          
+  6 | arrest               | 逮捕              | dài bǔ             | arresto            | prisão            
+  7 | court                | 法庭              | fǎ tíng            | tribunal           | tribunal          
+  8 | contract             | 合同              | hé tóng            | contrato           | contrato          
+  9 | permission           | 许可              | xǔ kě              | permiso            | permissão         
+ 10 | illegal              | 非法              | fēi fǎ             | ilegal             | ilegal            
+ 11 | legal                | 法律              | fǎ lǜ              | legales            | jurídico          
+ 12 | guilty               | 有罪              | yǒu zuì            | culpable           | culpado           
+ 13 | innocent             | 无辜              | wú gū              | inocente           | inocente          
+ 14 | witness              | 证人              | zhèng rén          | testigo            | testemunha        
+ 15 | crime                | 犯罪              | fàn zuì            | crimen             | criminalidade     
+ 16 | lawsuit              | 诉讼              | sù sòng            | demanda            | ação judicial     
+ 17 | sue                  | 起诉              | qǐ sù              | demandar           | processar         
+ 18 | rights               | 权利              | quán lì            | derechos           | direitos          
+ 19 | verdict              | 判决              | pàn jué            | veredicto          | veredicto         
+ 20 | penalty              | 处罚              | chǔ fá             | pena               | penalidade        
+ 21 | subpoena             | 传票              | chuán piào         | citación           | intimação         
+ 22 | law school           | 法学院             | fǎ xué yuàn        | facultad de derech | faculdade de direi
+ 23 | law enforcement      | 执法              | zhí fǎ             | aplicación de la l | aplicação da lei  
+ 24 | follow the rule      | 遵守规则            | zūn shǒu guī zé    | sigue la regla     | siga a regra      
+ 25 | rule of thumb        | 经验法则            | jīng yàn fǎ zé     | regla general      | regra prática     
+ 26 | parking ticket       | 停车票             | tíng chē piào      | multa de estaciona | multa de estaciona
+ 27 | speeding ticket      | 超速罚单            | chāo sù fá dān     | multa por exceso d | multa por excesso 
+ 28 | pay fine             | 缴纳罚款            | jiǎo nà fá kuǎn    | pagar multa        | pagar multa       
+ 29 | heavy fine           | 重罚              | zhòng fá           | multa fuerte       | multa pesada      
+ 30 | under arrest         | 被捕              | bèi bǔ             | bajo arresto       | preso             
+ 31 | arrest warrant       | 逮捕令             | dài bǔ lìng        | orden de arresto   | mandado de prisão 
+ 32 | go to court          | 上法庭             | shàng fǎ tíng      | acudir a los tribu | ir a tribunal     
+ 33 | court case           | 法庭案件            | fǎ tíng àn jiàn    | caso judicial      | processo judicial 
+ 34 | sign contract        | 签订合同            | qiān dìng hé tóng  | firmar contrato    | assinar contrato  
+ 35 | contract terms       | 合同条款            | hé tóng tiáo kuǎn  | condiciones del co | termos do contrato
+ 36 | ask permission       | 请求许可            | qǐng qiú xǔ kě     | pedir permiso      | peça permissão    
+ 37 | without permission   | 未经许可            | wèi jīng xǔ kě     | sin permiso        | sem permissão     
+ 38 | totally illegal      | 完全非法            | wán quán fēi fǎ    | totalmente ilegal  | totalmente ilegal 
+ 39 | illegal activity     | 非法活动            | fēi fǎ huó dòng    | actividad ilegal   | atividade ilegal  
+ 40 | completely legal     | 完全合法            | wán quán hé fǎ     | completamente lega | completamente lega
+ 41 | legal system         | 法律体系            | fǎ lǜ tǐ xì        | sistema jurídico   | sistema jurídico  
+ 42 | found guilty         | 被判有罪            | bèi pàn yǒu zuì    | declarado culpable | considerado culpad
+ 43 | plead guilty         | 认罪              | rèn zuì            | declararse culpabl | se declarar culpad
+ 44 | proven innocent      | 被证明是无辜的         | bèi zhèng míng shì | inocente probada   | comprovadamente in
+ 45 | innocent person      | 无辜者             | wú gū zhě          | persona inocente   | pessoa inocente   
+ 46 | key witness          | 关键证人            | guān jiàn zhèng ré | testigo clave      | testemunha chave  
+ 47 | witness testimony    | 证人证词            | zhèng rén zhèng cí | testimonio de test | depoimento de test
+ 48 | serious crime        | 严重犯罪            | yán zhòng fàn zuì  | delito grave       | crimes graves     
+ 49 | crime scene          | 犯罪现场            | fàn zuì xiàn chǎng | escena del crimen  | cena do crime     
+ 50 | file lawsuit         | 提起诉讼            | tí qǐ sù sòng      | presentar demanda  | abrir processo    
+ 51 | lawsuit against      | 针对的诉讼           | zhēn duì de sù sòn | demanda contra     | ação judicial cont
+ 52 | sue for              | 起诉索赔            | qǐ sù suǒ péi      | demandar por       | processar por     
+ 53 | sue someone          | 起诉某人            | qǐ sù mǒu rén      | demandar a alguien | processar alguém  
+ 54 | human rights         | 人权              | rén quán           | derechos humanos   | direitos humanos  
+ 55 | civil rights         | 公民权利            | gōng mín quán lì   | derechos civiles   | direitos civis    
+ 56 | final verdict        | 最终判决            | zuì zhōng pàn jué  | veredicto final    | veredicto final   
+ 57 | guilty verdict       | 有罪判决            | yǒu zuì pàn jué    | veredicto de culpa | veredicto de culpa
+ 58 | death penalty        | 死刑              | sǐ xíng            | pena de muerte     | pena de morte     
+ 59 | penalty kick         | 点球              | diǎn qiú           | tiro penal         | pênalti           
+ 60 | issue subpoena       | 发出传票            | fā chū chuán piào  | emitir citación    | emitir intimação  
+ 61 | receive subpoena     | 收到传票            | shōu dào chuán pià | recibir citación   | receber intimação 

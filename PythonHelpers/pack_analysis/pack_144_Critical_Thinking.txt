@@ -1,0 +1,65 @@
+PACK 144: Critical Thinking
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | scrutinize           | 仔细检查            | zǐ xì jiǎn chá     | escudriñar         | examinar          
+  3 | distill              | 蒸馏              | zhēng liú          | destilar           | destilar          
+  4 | adjudge              | 判断              | pàn duàn           | juzgar             | julgar            
+  5 | examine              | 检查              | jiǎn chá           | examinar           | examinar          
+  6 | interpret            | 解释              | jiě shì            | interpretar        | interpretar       
+  7 | infer                | 推断              | tuī duàn           | inferir            | inferir           
+  8 | deduce               | 推论              | tuī lùn            | deducir            | deduzir           
+  9 | justify              | 证明              | zhèng míng         | justificar         | justificar        
+ 10 | validate             | 合理验证            | hé lǐ yàn zhèng    | validar            | validar           
+ 11 | verify               | 验证              | yàn zhèng          | verificar          | verificar         
+ 12 | credible             | 可信              | kě xìn             | creíble            | credível          
+ 13 | reliable             | 可靠              | kě kào             | confiable          | confiável         
+ 14 | subjective           | 主观              | zhǔ guān           | subjetivo          | subjetivo         
+ 15 | biased               | 有偏见             | yǒu piān jiàn      | parcial            | tendencioso       
+ 16 | rational             | 理性              | lǐ xìng            | racional           | racional          
+ 17 | discern              | 辨别              | biàn bié           | discernir          | discernir         
+ 18 | evaluate             | 评价              | píng jià           | evaluar            | avaliar           
+ 19 | appraise             | 评价              | píng jià           | tasar              | avaliar           
+ 20 | probe                | 探针              | tàn zhēn           | sonda              | sonda             
+ 21 | deduction            | 扣除              | kòu chú            | deducción          | dedução           
+ 22 | scrutinize carefully | 仔细观察            | zǐ xì guān chá     | examinar cuidadosa | examine cuidadosam
+ 23 | scrutinize evidence  | 审查证据            | shěn chá zhèng jù  | examinar las prueb | examinar as evidên
+ 24 | distill information  | 提炼信息            | tí liàn xìn xī     | destilar informaci | informações sobre 
+ 25 | distill down         | 蒸馏下来            | zhēng liú xià lái  | destilar           | destilar          
+ 26 | adjudge fairly       | 公正裁决            | gōng zhèng cái jué | juzgar de manera j | julgar de forma ju
+ 27 | adjudge to be        | 判定为             | pàn dìng wèi       | declarar ser       | julgo ser         
+ 28 | examine closely      | 仔细检查            | zǐ xì jiǎn chá     | examinar detenidam | examinar de perto 
+ 29 | examine evidence     | 检查证据            | jiǎn chá zhèng jù  | examinar las prueb | examinar evidência
+ 30 | interpret data       | 解释数据            | jiě shì shù jù     | interpretar datos  | interpretar dados 
+ 31 | interpret meaning    | 解释意义            | jiě shì yì yì      | interpretar el sig | interpretar o sign
+ 32 | infer from           | 从               | cóng               | inferir de         | inferir de        
+ 33 | infer that           | 推断推断            | tuī duàn tuī duàn  | inferir que        | inferir isso      
+ 34 | deduce from          | 从               | cóng               | deducir de         | deduzir de        
+ 35 | deduce that          | 推导出来推断          | tuī dǎo chū lái tu | deducir eso        | deduza isso       
+ 36 | justify decision     | 证明决定的合理性        | zhèng míng jué dìn | justificar la deci | justificar a decis
+ 37 | justify action       | 证明行动的合理性        | zhèng míng xíng dò | justificar la acci | justificar a ação 
+ 38 | validate results     | 验证结果            | yàn zhèng jié guǒ  | validar resultados | validar resultados
+ 39 | validate claims      | 验证声明            | yàn zhèng shēng mí | validar reclamacio | validar reivindica
+ 40 | verify information   | 验证信息            | yàn zhèng xìn xī   | verificar informac | verificar informaç
+ 41 | verify accuracy      | 验证准确性           | yàn zhèng zhǔn què | verificar la exact | verificar a precis
+ 42 | credible source      | 可靠来源            | kě kào lái yuán    | fuente creíble     | fonte confiável   
+ 43 | credible evidence    | 可信证据            | kě xìn zhèng jù    | pruebas creíbles   | provas credíveis  
+ 44 | reliable source      | 可靠来源            | kě kào lái yuán    | fuente confiable   | fonte confiável   
+ 45 | reliable information | 可靠信息            | kě kào xìn xī      | información confia | informações confiá
+ 46 | subjective opinion   | 主观意见            | zhǔ guān yì jiàn   | opinión subjetiva  | opinião subjetiva 
+ 47 | subjective view      | 主观看法            | zhǔ guān kàn fǎ    | visión subjetiva   | visão subjetiva   
+ 48 | potentially biased   | 可能存在偏见          | kě néng cún zài pi | potencialmente ses | potencialmente ten
+ 49 | biased toward        | 偏向              | piān xiàng         | parcializado hacia | tendencioso para  
+ 50 | rational thinking    | 理性思考            | lǐ xìng sī kǎo     | pensamiento racion | pensamento raciona
+ 51 | rational decision    | 理性决定            | lǐ xìng jué dìng   | decisión racional  | decisão racional  
+ 52 | discern between      | 辨别              | biàn bié           | discernir entre    | discernir entre   
+ 53 | discern truth        | 辨别真理            | biàn bié zhēn lǐ   | discernir la verda | discernir a verdad
+ 54 | evaluate performance | 评估绩效            | píng gū jì xiào    | evaluar el desempe | avaliar desempenho
+ 55 | evaluate options     | 评估选项            | píng gū xuǎn xiàng | evaluar opciones   | avaliar opções    
+ 56 | appraise value       | 评估价值            | píng gū jià zhí    | valor de tasación  | avaliar valor     
+ 57 | appraise situation   | 评价情况            | píng jià qíng kuàn | evaluar la situaci | avaliar situação  
+ 58 | probe deeper         | 更深入地探索          | gēng shēn rù dì tà | sondear más profun | sondar mais profun
+ 59 | probe into           | 探究              | tàn jiū            | investigar         | investigar        
+ 60 | logical deduction    | 逻辑演绎            | luó jí yǎn yì      | deducción lógica   | dedução lógica    
+ 61 | deduction from       | 扣除自             | kòu chú zì         | deducción de       | dedução de        

@@ -1,0 +1,65 @@
+PACK 145: Debate & Argument
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | premise              | 前提              | qián tí            | premisa            | premissa          
+  3 | reasoning            | 推理              | tuī lǐ             | razonamiento       | raciocínio        
+  4 | fallacy              | 谬误              | miù wù             | falacia            | falácia           
+  5 | refute               | 反驳              | fǎn bó             | refutar            | refutar           
+  6 | rebut                | 反驳              | fǎn bó             | refutar            | refutar           
+  7 | concede              | 承认              | chéng rèn          | conceder           | conceder          
+  8 | contention           | 争用              | zhēng yòng         | contienda          | contenção         
+  9 | antithesis           | 对立              | duì lì             | antítesis          | antítese          
+ 10 | persuade             | 说服              | shuō fú            | persuadir          | persuadir         
+ 11 | credibility          | 信誉              | xìn yù             | credibilidad       | credibilidade     
+ 12 | controversial        | 有争议             | yǒu zhēng yì       | controvertido      | polêmico          
+ 13 | subtle               | 微妙              | wēi miào           | sutil              | sutil             
+ 14 | assertion            | 断言              | duàn yán           | afirmación         | afirmação         
+ 15 | supposition          | 假设              | jiǎ shè            | suposición         | suposição         
+ 16 | generalization       | 概括              | gài kuò            | generalización     | generalização     
+ 17 | counterargument      | 反驳              | fǎn bó             | contraargumento    | contra-argumento  
+ 18 | rhetoric             | 修辞              | xiū cí             | retórica           | retórica          
+ 19 | eloquent             | 雄辩              | xióng biàn         | elocuente          | eloquente         
+ 20 | rebuttal             | 反驳              | fǎn bó             | refutación         | refutação         
+ 21 | proposition          | 提议              | tí yì              | proposición        | proposição        
+ 22 | basic premise        | 基本前提            | jī běn qián tí     | premisa básica     | premissa básica   
+ 23 | premise that         | 前提是             | qián tí shì        | premisa de que     | premissa de que   
+ 24 | logical reasoning    | 逻辑推理            | luó jí tuī lǐ      | razonamiento lógic | raciocínio lógico 
+ 25 | reasoning behind     | 背后的推理           | bèi hòu de tuī lǐ  | razonamiento detrá | raciocínio por trá
+ 26 | logical fallacy      | 逻辑谬误            | luó jí miù wù      | falacia lógica     | falácia lógica    
+ 27 | fallacy in           | 中的谬误            | zhōng de miù wù    | falacia en         | falácia em        
+ 28 | refute argument      | 反驳论据            | fǎn bó lùn jù      | refutar el argumen | refutar argumento 
+ 29 | refute claims        | 反驳主张            | fǎn bó zhǔ zhāng   | refutar afirmacion | refutar afirmações
+ 30 | rebut criticism      | 反驳批评            | fǎn bó pī píng     | refutar las crític | refutar críticas  
+ 31 | rebut argument       | 反驳论据            | fǎn bó lùn jù      | argumento de refut | refutar argumento 
+ 32 | concede point        | 承认一点            | chéng rèn yì diǎn  | conceder punto     | conceder ponto    
+ 33 | concede that         | 承认              | chéng rèn          | conceder que       | admita que        
+ 34 | main contention      | 主要论点            | zhǔ yào lùn diǎn   | argumento principa | principal contençã
+ 35 | contention that      | 争论              | zhēng lùn          | argumento de que   | afirmação de que  
+ 36 | complete antithesis  | 完全对立            | wán quán duì lì    | antítesis completa | antítese completa 
+ 37 | antithesis of        | 的对立面            | de duì lì miàn     | antítesis de       | antítese de       
+ 38 | persuade people      | 说服人们            | shuō fú rén men    | persuadir a la gen | persuadir as pesso
+ 39 | persuade someone     | 说服某人            | shuō fú mǒu rén    | persuadir a alguie | convencer alguém  
+ 40 | establish credibilit | 建立信誉            | jiàn lì xìn yù     | establecer credibi | estabelecer credib
+ 41 | credibility of       | 的可信度            | de kě xìn dù       | credibilidad de    | credibilidade de  
+ 42 | controversial topic  | 有争议的话题          | yǒu zhēng yì de hu | tema controvertido | tema polêmico     
+ 43 | controversial issue  | 有争议的问题          | yǒu zhēng yì de wè | tema controvertido | assunto polêmico  
+ 44 | subtle difference    | 细微差别            | xì wēi chā bié     | diferencia sutil   | diferença sutil   
+ 45 | subtle hint          | 微妙的暗示           | wēi miào de àn shì | pista sutil        | dica sutil        
+ 46 | bold assertion       | 大胆断言            | dà dǎn duàn yán    | afirmación audaz   | afirmação ousada  
+ 47 | assertion that       | 断言              | duàn yán           | afirmación de que  | afirmação de que  
+ 48 | mere supposition     | 仅仅是假设           | jǐn jǐn shì jiǎ sh | mera suposición    | mera suposição    
+ 49 | supposition that     | 假设              | jiǎ shè            | suposición de que  | suposição que     
+ 50 | broad generalization | 广泛概括            | guǎng fàn gài kuò  | amplia generalizac | ampla generalizaçã
+ 51 | generalization about | 关于某事的概括         | guān yú mǒu shì de | generalización sob | generalização sobr
+ 52 | strong counterargume | 强烈反驳            | qiáng liè fǎn bó   | fuerte contraargum | forte contra-argum
+ 53 | counterargument to   | 对某论点的反驳         | duì mǒu lùn diǎn d | contraargumento a  | contra-argumento p
+ 54 | political rhetoric   | 政治言论            | zhèng zhì yán lùn  | retórica política  | retórica política 
+ 55 | rhetoric of          | 的修辞             | de xiū cí          | retórica de        | retórica de       
+ 56 | eloquent speaker     | 雄辩的演讲者          | xióng biàn de yǎn  | orador elocuente   | orador eloquente  
+ 57 | eloquent speech      | 雄辩的演讲           | xióng biàn de yǎn  | discurso elocuente | discurso eloquente
+ 58 | offer rebuttal       | 提供反驳            | tí gōng fǎn bó     | oferta de refutaci | oferecer refutação
+ 59 | rebuttal to          | 反驳              | fǎn bó             | refutación a       | refutação para    
+ 60 | initial proposition  | 初步提议            | chū bù tí yì       | proposición inicia | proposta inicial  
+ 61 | proposition that     | 提议              | tí yì              | propuesta que      | proposição de que 

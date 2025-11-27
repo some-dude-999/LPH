@@ -1,0 +1,65 @@
+PACK 6: Contractions
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | I'm                  | 我是              | wǒ shì             | Soy                | Eu sou            
+  3 | you're               | 你是              | nǐ shì             | estás              | você é            
+  4 | he's                 | 他是              | tā shì             | el es              | ele é             
+  5 | she's                | 她是              | tā shì             | ella es            | ela é             
+  6 | it's                 | 它是              | tā shì             | es                 | isso é            
+  7 | we're                | 我们是             | wǒ men shì         | somos              | nós somos         
+  8 | they're              | 他们是             | tā men shì         | ellos son          | eles são          
+  9 | I've                 | 我已经             | wǒ yǐ jīng         | he                 | eu tenho          
+ 10 | you've               | 你已经             | nǐ yǐ jīng         | tu has             | você tem          
+ 11 | we've                | 我们已经            | wǒ men yǐ jīng     | hemos              | nós temos         
+ 12 | they've              | 他们已经            | tā men yǐ jīng     | ellos tienen       | eles têm          
+ 13 | I'll                 | 我会              | wǒ huì             | yo voy a           | eu vou            
+ 14 | you'll               | 你会              | nǐ huì             | tu lo harás        | você vai          
+ 15 | he'll                | 他会              | tā huì             | él va a            | ele vai           
+ 16 | she'll               | 她会              | tā huì             | ella va a          | ela vai           
+ 17 | we'll                | 我们会             | wǒ men huì         | nosotros vamos a   | nós vamos         
+ 18 | they'll              | 他们会             | tā men huì         | ellos van a        | eles vão          
+ 19 | I'd                  | 我会              | wǒ huì             | yo haría           | eu faria          
+ 20 | you'd                | 你会              | nǐ huì             | tú harías          | você faria        
+ 21 | we'd                 | 我们会             | wǒ men huì         | nosotros haríamos  | nós faríamos      
+ 22 | I'm here             | 我在这里            | wǒ zài zhè lǐ      | Estoy aquí         | Estou aqui        
+ 23 | I'm sorry            | 对不起             | duì bù qǐ          | Lo lamento         | Desculpe          
+ 24 | you're kidding       | 你在开玩笑吧          | nǐ zài kāi wán xià | estás bromeando    | você está brincand
+ 25 | you're right         | 你说得对            | nǐ shuō dé duì     | tienes razón       | você tem razão    
+ 26 | he's coming          | 他来了             | tā lái le          | el esta viniendo   | ele está vindo    
+ 27 | he's here            | 他在这里            | tā zài zhè lǐ      | el esta aqui       | ele está aqui     
+ 28 | she's coming         | 她来了             | tā lái le          | ella viene         | ela está vindo    
+ 29 | she's here           | 她在这里            | tā zài zhè lǐ      | ella esta aqui     | ela está aqui     
+ 30 | it's okay            | 没关系             | méi guān xì        | está bien          | tudo bem          
+ 31 | it's time            | 是时候了            | shì shí hòu le     | es hora            | está na hora      
+ 32 | we're here           | 我们在这里           | wǒ men zài zhè lǐ  | estamos aquí       | estamos aqui      
+ 33 | we're ready          | 我们准备好了          | wǒ men zhǔn bèi hǎ | estamos listos     | estamos prontos   
+ 34 | they're coming       | 他们来了            | tā men lái le      | ellos vienen       | eles estão vindo  
+ 35 | they're here         | 他们在这里           | tā men zài zhè lǐ  | ellos estan aqui   | eles estão aqui   
+ 36 | I've been there      | 我去过那里           | wǒ qù guò nà lǐ    | he estado allí     | eu estive lá      
+ 37 | I've got it          | 我已经拿到了          | wǒ yǐ jīng ná dào  | lo tengo           | eu entendi        
+ 38 | you've got mail      | 你有封信            | nǐ yǒu fēng xìn    | Tienes un nuevo co | Você tem correio  
+ 39 | you've been great    | 你很棒             | nǐ hěn bàng        | has sido genial    | você tem sido ótim
+ 40 | we've been waiting   | 我们一直在等待         | wǒ men yì zhí zài  | hemos estado esper | estávamos esperand
+ 41 | we've got time       | 我们有时间           | wǒ men yǒu shí jiā | tenemos tiempo     | temos tempo       
+ 42 | they've been busy    | 他们很忙            | tā men hěn máng    | han estado ocupado | eles estiveram ocu
+ 43 | they've got it       | 他们已经做到了         | tā men yǐ jīng zuò | lo tienen          | eles conseguiram  
+ 44 | I'll be there        | 我会在那里           | wǒ huì zài nà lǐ   | Voy a estar allí   | Eu estarei lá     
+ 45 | I'll do it           | 我会做的            | wǒ huì zuò de      | lo haré            | Eu farei isso     
+ 46 | you'll see           | 你会看到            | nǐ huì kàn dào     | ya verás           | você verá         
+ 47 | you'll be fine       | 你会没事的           | nǐ huì méi shì de  | estarás bien       | você vai ficar bem
+ 48 | he'll be back        | 他会回来的           | tā huì huí lái de  | él volverá         | ele estará de volt
+ 49 | he'll do it          | 他会做的            | tā huì zuò de      | él lo hará         | ele vai fazer isso
+ 50 | she'll be there      | 她会在那里           | tā huì zài nà lǐ   | ella estará allí   | ela estará lá     
+ 51 | she'll do it         | 她会做的            | tā huì zuò de      | ella lo hará       | ela vai fazer isso
+ 52 | we'll see            | 我们会看到           | wǒ men huì kàn dào | ya veremos         | veremos           
+ 53 | we'll be there       | 我们会在那里          | wǒ men huì zài nà  | estaremos allí     | estaremos lá      
+ 54 | they'll be there     | 他们会在那里          | tā men huì zài nà  | ellos estarán allí | eles estarão lá   
+ 55 | they'll come         | 他们会来            | tā men huì lái     | ellos vendrán      | eles virão        
+ 56 | I'd like to          | 我想              | wǒ xiǎng           | Me gustaría        | Eu gostaria de    
+ 57 | I'd rather not       | 我宁愿不            | wǒ nìng yuàn bù    | preferiría no      | Eu prefiro não    
+ 58 | you'd better go      | 你最好走吧           | nǐ zuì hǎo zǒu ba  | será mejor que te  | é melhor você ir  
+ 59 | you'd like it        | 你会喜欢的           | nǐ huì xǐ huān de  | te gustaría        | você gostaria     
+ 60 | we'd like to         | 我们想             | wǒ men xiǎng       | nos gustaría       | nós gostaríamos de
+ 61 | we'd better hurry    | 我们最好快点          | wǒ men zuì hǎo kuà | será mejor que nos | é melhor nos apres

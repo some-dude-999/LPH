@@ -1,0 +1,65 @@
+PACK 102: Government & Citizenship
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | government           | 政府              | zhèng fǔ           | gobierno           | governo           
+  3 | mayor                | 市长              | shì zhǎng          | alcalde            | prefeito          
+  4 | council              | 理事会             | lǐ shì huì         | consejo            | conselho          
+  5 | election             | 选举              | xuǎn jǔ            | elección           | eleição           
+  6 | vote                 | 投票              | tóu piào           | votar              | votar             
+  7 | register             | 注册              | zhù cè             | registrarse        | registrar         
+  8 | party                | 聚会              | jù huì             | fiesta             | festa             
+  9 | policy               | 政策              | zhèng cè           | política           | política          
+ 10 | citizen              | 公民              | gōng mín           | ciudadano          | cidadão           
+ 11 | citizenship          | 公民身份            | gōng mín shēn fèn  | ciudadanía         | cidadania         
+ 12 | visa                 | 签证              | qiān zhèng         | visado             | visto             
+ 13 | green card           | 绿卡              | lǜ kǎ              | tarjeta verde      | cartão verde      
+ 14 | immigration          | 移民              | yí mín             | inmigración        | imigração         
+ 15 | flag                 | 标志              | biāo zhì           | bandera            | bandeira          
+ 16 | anthem               | 国歌              | guó gē             | himno              | hino              
+ 17 | democracy            | 民主              | mín zhǔ            | democracia         | democracia        
+ 18 | freedom              | 自由              | zì yóu             | libertad           | liberdade         
+ 19 | taxes                | 税收              | shuì shōu          | impuestos          | impostos          
+ 20 | constitution         | 宪法              | xiàn fǎ            | constitución       | constituição      
+ 21 | legislation          | 立法              | lì fǎ              | legislación        | legislação        
+ 22 | federal government   | 联邦政府            | lián bāng zhèng fǔ | gobierno federal   | governo federal   
+ 23 | government official  | 政府官员            | zhèng fǔ guān yuán | funcionario del go | funcionário do gov
+ 24 | city mayor           | 市长              | shì zhǎng          | alcalde de la ciud | prefeito da cidade
+ 25 | mayor election       | 市长选举            | shì zhǎng xuǎn jǔ  | elección de alcald | eleição para prefe
+ 26 | city council         | 市议会             | shì yì huì         | ayuntamiento       | Câmara Municipal  
+ 27 | council meeting      | 理事会会议           | lǐ shì huì huì yì  | reunión del consej | reunião do conselh
+ 28 | general election     | 大选              | dà xuǎn            | elecciones general | eleições gerais   
+ 29 | election day         | 选举日             | xuǎn jǔ rì         | día de las eleccio | dia das eleições  
+ 30 | cast vote            | 投票              | tóu piào           | voto emitido       | voto expresso     
+ 31 | vote for             | 投票给             | tóu piào gěi       | votar por          | votar em          
+ 32 | register to vote     | 登记投票            | dēng jì tóu piào   | registrarse para v | cadastre-se para v
+ 33 | register online      | 网上注册            | wǎng shàng zhù cè  | registrarse en lín | cadastre-se on-lin
+ 34 | political party      | 政党              | zhèng dǎng         | partido político   | partido político  
+ 35 | party member         | 党员              | dǎng yuán          | miembro del partid | membro do partido 
+ 36 | government policy    | 政府政策            | zhèng fǔ zhèng cè  | política gubername | política govername
+ 37 | new policy           | 新政策             | xīn zhèng cè       | nueva política     | nova política     
+ 38 | local citizen        | 当地公民            | dāng dì gōng mín   | ciudadano local    | cidadão local     
+ 39 | citizen rights       | 公民权利            | gōng mín quán lì   | derechos ciudadano | direitos dos cidad
+ 40 | apply for citizenshi | 申请公民身份          | shēn qǐng gōng mín | solicitar la ciuda | solicitar cidadani
+ 41 | citizenship test     | 公民测试            | gōng mín cè shì    | prueba de ciudadan | teste de cidadania
+ 42 | tourist visa         | 旅游签证            | lǚ yóu qiān zhèng  | visa de turista    | visto de turista  
+ 43 | visa application     | 签证申请            | qiān zhèng shēn qǐ | solicitud de visa  | pedido de visto   
+ 44 | apply for green card | 申请绿卡            | shēn qǐng lǜ kǎ    | solicitar tarjeta  | solicitar green ca
+ 45 | green card holder    | 绿卡持有者           | lǜ kǎ chí yǒu zhě  | titular de la tarj | titular do green c
+ 46 | immigration office   | 移民局             | yí mín jú          | oficina de inmigra | escritório de imig
+ 47 | immigration reform   | 移民改革            | yí mín gǎi gé      | reforma migratoria | reforma da imigraç
+ 48 | national flag        | 国旗              | guó qí             | bandera nacional   | bandeira nacional 
+ 49 | flag ceremony        | 升旗仪式            | shēng qí yí shì    | ceremonia de la ba | cerimônia da bande
+ 50 | national anthem      | 国歌              | guó gē             | himno nacional     | hino nacional     
+ 51 | anthem playing       | 国歌演奏            | guó gē yǎn zòu     | suena el himno     | hino tocando      
+ 52 | support democracy    | 支持民主            | zhī chí mín zhǔ    | apoyar la democrac | apoiar a democraci
+ 53 | democracy in action  | 民主在行动           | mín zhǔ zài háng d | democracia en acci | democracia em ação
+ 54 | personal freedom     | 个人自由            | gè rén zì yóu      | libertad personal  | liberdade pessoal 
+ 55 | freedom of speech    | 言论自由            | yán lùn zì yóu     | libertad de expres | liberdade de expre
+ 56 | pay taxes            | 纳税              | nà shuì            | pagar impuestos    | pagar impostos    
+ 57 | taxes due            | 应缴税款            | yīng jiǎo shuì kuǎ | impuestos adeudado | impostos devidos  
+ 58 | follow constitution  | 遵守宪法            | zūn shǒu xiàn fǎ   | seguir la constitu | siga a constituiçã
+ 59 | constitution right   | 宪法权利            | xiàn fǎ quán lì    | derecho constituci | direito constituci
+ 60 | new legislation      | 新立法             | xīn lì fǎ          | nueva legislación  | nova legislação   
+ 61 | pass legislation     | 通过立法            | tōng guò lì fǎ     | aprobar legislació | aprovar legislação

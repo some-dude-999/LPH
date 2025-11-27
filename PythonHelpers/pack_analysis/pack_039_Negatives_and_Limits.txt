@@ -1,0 +1,65 @@
+PACK 39: Negatives & Limits
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | hardly               | 几乎              | jī hū              | apenas             | dificilmente      
+  3 | barely               | 勉强              | miǎn qiǎng         | apenas             | mal               
+  4 | scarcely             | 几乎              | jī hū              | apenas             | dificilmente      
+  5 | seldom               | 很少              | hěn shǎo           | rara vez           | raramente         
+  6 | rarely               | 很少              | hěn shǎo           | raramente          | raramente         
+  7 | except               | 除了              | chú le             | excepto            | exceto            
+  8 | only                 | 只有              | zhǐ yǒu            | sólo               | apenas            
+  9 | merely               | 只是              | zhǐ shì            | simplemente        | meramente         
+ 10 | longer               | 更长              | gèng zhǎng         | más largo          | mais tempo        
+ 11 | lack                 | 缺乏              | quē fá             | falta              | falta             
+ 12 | shortage             | 短缺              | duǎn quē           | escasez            | escassez          
+ 13 | limit                | 限制              | xiàn zhì           | límite             | limite            
+ 14 | restriction          | 限制              | xiàn zhì           | restricción        | restrição         
+ 15 | ban                  | 禁止              | jìn zhǐ            | prohibición        | proibição         
+ 16 | prohibit             | 禁止              | jìn zhǐ            | prohibir           | proibir           
+ 17 | prevent              | 防止              | fáng zhǐ           | prevenir           | prevenir          
+ 18 | omit                 | 省略              | shěng lüè          | omitir             | omitir            
+ 19 | abstain              | 弃权              | qì quán            | abstenerse         | abster-se         
+ 20 | refrain              | 避免              | bì miǎn            | abstenerse         | abster-se         
+ 21 | deprive              | 剥夺              | bō duó             | privar             | privar            
+ 22 | hardly ever          | 几乎没有            | jī hū méi yǒu      | casi nunca         | quase nunca       
+ 23 | hardly any           | 几乎没有            | jī hū méi yǒu      | casi ninguno       | quase nenhum      
+ 24 | barely made it       | 勉强做到了           | miǎn qiǎng zuò dào | apenas lo logré    | mal consegui      
+ 25 | barely enough        | 勉强够用            | miǎn qiǎng gòu yòn | apenas suficiente  | mal o suficiente  
+ 26 | scarcely any         | 几乎没有            | jī hū méi yǒu      | casi ninguno       | quase nenhum      
+ 27 | scarcely believe     | 简直不敢相信          | jiǎn zhí bù gǎn xi | apenas lo creo     | mal acredito      
+ 28 | seldom seen          | 很少见到            | hěn shǎo jiàn dào  | rara vez visto     | raramente visto   
+ 29 | seldom used          | 很少使用            | hěn shǎo shǐ yòng  | poco utilizado     | raramente usado   
+ 30 | rarely happens       | 很少发生            | hěn shǎo fā shēng  | rara vez sucede    | raramente acontece
+ 31 | rarely seen          | 很少见到            | hěn shǎo jiàn dào  | rara vez visto     | raramente visto   
+ 32 | except for           | 除了              | chú le             | excepto            | exceto            
+ 33 | except me            | 除了我             | chú le wǒ          | excepto yo         | exceto eu         
+ 34 | only one             | 只有一个            | zhǐ yǒu yí gè      | solo uno           | apenas um         
+ 35 | only you             | 只有你             | zhǐ yǒu nǐ         | solo tu            | só você           
+ 36 | merely a             | 只是一个            | zhǐ shì yí gè      | simplemente un     | apenas um         
+ 37 | merely suggesting    | 只是建议            | zhǐ shì jiàn yì    | simplemente sugiri | apenas sugerindo  
+ 38 | no longer            | 不再              | bù zài             | ya no              | não mais          
+ 39 | any longer           | 不再              | bù zài             | ya no              | mais              
+ 40 | lack of              | 缺乏              | quē fá             | falta de           | falta de          
+ 41 | lack time            | 缺乏时间            | quē fá shí jiān    | falta tiempo       | falta tempo       
+ 42 | water shortage       | 缺水              | quē shuǐ           | escasez de agua    | escassez de água  
+ 43 | shortage of          | 短缺              | duǎn quē           | escasez de         | escassez de       
+ 44 | time limit           | 时间限制            | shí jiān xiàn zhì  | límite de tiempo   | limite de tempo   
+ 45 | speed limit          | 限速              | xiàn sù            | límite de velocida | limite de velocida
+ 46 | no restriction       | 无限制             | wú xiàn zhì        | sin restricciones  | sem restrição     
+ 47 | restriction on       | 对               | duì                | restricción de     | restrição em      
+ 48 | smoking ban          | 禁烟令             | jìn yān lìng       | prohibición de fum | proibição de fumar
+ 49 | travel ban           | 旅行禁令            | lǚ xíng jìn lìng   | prohibición de via | proibição de viaja
+ 50 | prohibit smoking     | 禁止吸烟            | jìn zhǐ xī yān     | prohibir fumar     | proibir fumar     
+ 51 | strictly prohibit    | 严禁              | yán jìn            | prohibir estrictam | proibir estritamen
+ 52 | prevent it           | 防止它             | fáng zhǐ tā        | prevenirlo         | prevenir          
+ 53 | prevent from         | 防止              | fáng zhǐ           | evitar             | prevenir de       
+ 54 | please omit          | 请省略             | qǐng shěng lüè     | por favor omita    | por favor omita   
+ 55 | omit details         | 省略细节            | shěng lüè xì jié   | omitir detalles    | omitir detalhes   
+ 56 | abstain from         | 放弃              | fàng qì            | abstenerse de      | abster-se de      
+ 57 | abstain voting       | 弃权              | qì quán            | abstenerse en la v | abster-se de votar
+ 58 | refrain from         | 避免              | bì miǎn            | abstenerse de      | abster-se de      
+ 59 | please refrain       | 请不要             | qǐng bú yào        | por favor absténga | por favor evite   
+ 60 | deprive of           | 剥夺              | bō duó             | privar de          | privar de         
+ 61 | deprive sleep        | 剥夺睡眠            | bō duó shuì mián   | privar de sueño    | privar o sono     

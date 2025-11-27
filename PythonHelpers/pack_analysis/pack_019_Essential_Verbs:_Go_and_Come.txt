@@ -1,0 +1,65 @@
+PACK 19: Essential Verbs: Go & Come
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | go                   | 去               | qù                 | ir                 | ir                
+  3 | goes                 | 去               | qù                 | va                 | vai               
+  4 | went                 | 去了              | qù le              | fue                | foi               
+  5 | gone                 | 消失了             | xiāo shī le        | desaparecido       | perdido           
+  6 | come                 | 来               | lái                | venir              | vir               
+  7 | comes                | 来了              | lái le             | llega              | vem               
+  8 | came                 | 来了              | lái le             | vino               | veio              
+  9 | coming               | 未来              | wèi lái            | próximo            | chegando          
+ 10 | arrive               | 到达              | dào dá             | llegar             | chegar            
+ 11 | enter                | 进入              | jìn rù             | entrar             | entrar            
+ 12 | exit                 | 出口              | chū kǒu            | salida             | saída             
+ 13 | stay                 | 停留              | tíng liú           | permanecer         | ficar             
+ 14 | bring                | 带来              | dài lái            | traer              | trazer            
+ 15 | brought              | 带来              | dài lái            | trajo              | trouxe            
+ 16 | take                 | 拿               | ná                 | llevar             | pegar             
+ 17 | took                 | 采取了             | cǎi qǔ le          | tomó               | pegou             
+ 18 | depart               | 离开              | lí kāi             | salir              | partir            
+ 19 | fetch                | 拿来              | ná lái             | buscar             | buscar            
+ 20 | visit                | 访问              | fǎng wèn           | visita             | visita            
+ 21 | proceed              | 继续              | jì xù              | proceder           | prosseguir        
+ 22 | time to go           | 是时候走了           | shì shí hòu zǒu le | hora de ir         | hora de ir        
+ 23 | go now               | 现在就走            | xiàn zài jiù zǒu   | vete ahora         | vá agora          
+ 24 | he goes there        | 他去那里            | tā qù nà lǐ        | él va allí         | ele vai lá        
+ 25 | she goes often       | 她经常去            | tā jīng cháng qù   | ella va a menudo   | ela vai com frequê
+ 26 | I went there         | 我去了那里           | wǒ qù le nà lǐ     | fui allí           | eu fui lá         
+ 27 | went home            | 回家了             | huí jiā le         | se fue a casa      | fui para casa     
+ 28 | long gone            | 早已消失            | zǎo yǐ xiāo shī    | desaparecido hace  | já se foi         
+ 29 | already gone         | 已经走了            | yǐ jīng zǒu le     | ya se fue          | já se foi         
+ 30 | come here            | 来这里             | lái zhè lǐ         | ven aquí           | venha aqui        
+ 31 | please come          | 请来              | qǐng lái           | por favor ven      | por favor venha   
+ 32 | he comes here        | 他来这里            | tā lái zhè lǐ      | el viene aqui      | ele vem aqui      
+ 33 | she comes daily      | 她每天都来           | tā měi tiān dōu lá | ella viene diariam | ela vem diariament
+ 34 | I came early         | 我来得早            | wǒ lái de zǎo      | llegué temprano    | Eu cheguei cedo   
+ 35 | came home            | 回家了             | huí jiā le         | llegó a casa       | chegou em casa    
+ 36 | I am coming          | 我来了             | wǒ lái le          | Vengo              | Eu estou vindo    
+ 37 | coming soon          | 即将推出            | jí jiāng tuī chū   | muy pronto         | em breve          
+ 38 | arrive early         | 提早到达            | tí zǎo dào dá      | llegar temprano    | chegue cedo       
+ 39 | arrive on time       | 准时到达            | zhǔn shí dào dá    | llegar a tiempo    | chegar na hora cer
+ 40 | please enter         | 请输入             | qǐng shū rù        | por favor ingresa  | por favor insira  
+ 41 | enter here           | 在这里输入           | zài zhè lǐ shū rù  | entra aquí         | entre aqui        
+ 42 | exit now             | 现在退出            | xiàn zài tuì chū   | salir ahora        | saia agora        
+ 43 | exit here            | 从这里退出           | cóng zhè lǐ tuì ch | salir aquí         | saia aqui         
+ 44 | stay here            | 留在这里            | liú zài zhè lǐ     | quédate aquí       | fique aqui        
+ 45 | stay put             | 留在原地            | liú zài yuán dì    | quedarse en el mis | fique onde está   
+ 46 | bring it             | 带上它             | dài shàng tā       | tráelo             | traga             
+ 47 | bring me             | 带我来             | dài wǒ lái         | tráeme             | traga-me          
+ 48 | I brought it         | 我带来了            | wǒ dài lái le      | lo traje           | eu trouxe         
+ 49 | brought home         | 带回家             | dài huí jiā        | traído a casa      | trouxe para casa  
+ 50 | take it              | 拿走它             | ná zǒu tā          | tómalo             | pegue             
+ 51 | take care            | 小心              | xiǎo xīn           | cuidarse           | tomar cuidado     
+ 52 | I took it            | 我拿走了            | wǒ ná zǒu le       | lo tomé            | eu peguei         
+ 53 | took time            | 花了时间            | huā le shí jiān    | tomó tiempo        | demorou           
+ 54 | depart now           | 现在出发            | xiàn zài chū fā    | partir ahora       | partir agora      
+ 55 | time to depart       | 出发时间            | chū fā shí jiān    | hora de partir     | hora de partir    
+ 56 | fetch water          | 打水              | dǎ shuǐ            | ir a buscar agua   | buscar água       
+ 57 | go fetch             | 去取              | qù qǔ              | ir a buscar        | vá buscar         
+ 58 | visit me             | 拜访我             | bài fǎng wǒ        | visítame           | visite-me         
+ 59 | come visit           | 来参观             | lái cān guān       | ven a visitar      | venha visitar     
+ 60 | proceed slowly       | 慢慢地进行           | màn màn dì jìn xín | proceder lentament | prossiga lentament
+ 61 | please proceed       | 请继续             | qǐng jì xù         | por favor continúa | por favor prossiga

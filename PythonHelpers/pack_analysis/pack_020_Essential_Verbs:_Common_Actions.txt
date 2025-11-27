@@ -1,0 +1,65 @@
+PACK 20: Essential Verbs: Common Actions
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | make                 | 制作              | zhì zuò            | hacer              | fazer             
+  3 | made                 | 制成              | zhì chéng          | hecho              | feito             
+  4 | give                 | 给               | gěi                | dar                | dar               
+  5 | gave                 | 给了              | gěi le             | dio                | deu               
+  6 | see                  | 看               | kàn                | ver                | ver               
+  7 | saw                  | 看见了             | kàn jiàn le        | vi                 | vi                
+  8 | know                 | 知道              | zhī dào            | saber              | saber             
+  9 | known                | 已知的             | yǐ zhī de          | conocido           | conhecido         
+ 10 | knew                 | 知道              | zhī dào            | sabía              | sabia             
+ 11 | think                | 思考              | sī kǎo             | pensar             | pensar            
+ 12 | thought              | 想法              | xiǎng fǎ           | pensamiento        | pensamento        
+ 13 | want                 | 想               | xiǎng              | desear             | querer            
+ 14 | need                 | 需要              | xū yào             | necesidad          | precisar          
+ 15 | love                 | 爱               | ài                 | amar               | amor              
+ 16 | say                  | 说               | shuō               | decir              | dizer             
+ 17 | said                 | 说               | shuō               | dicho              | disse             
+ 18 | tell                 | 告诉              | gào sù             | decir              | dizer             
+ 19 | told                 | 告诉              | gào sù             | dijo               | contado           
+ 20 | ask                  | 问               | wèn                | preguntar          | perguntar         
+ 21 | help                 | 帮助              | bāng zhù           | ayuda              | ajuda             
+ 22 | make it              | 成功              | chéng gōng         | hazlo              | faça isso         
+ 23 | I will make          | 我会让             | wǒ huì ràng        | voy a hacer        | eu farei          
+ 24 | I made it            | 我做到了            | wǒ zuò dào le      | lo hice            | Eu consegui       
+ 25 | made a mistake       | 犯了一个错误          | fàn le yí gè cuò w | cometió un error   | cometi um erro    
+ 26 | give back            | 回馈              | huí kuì            | devolver           | retribuir         
+ 27 | give it              | 给它              | gěi tā             | dale               | dê                
+ 28 | I gave it            | 我给了             | wǒ gěi le          | yo lo di           | eu dei            
+ 29 | gave up              | 放弃了             | fàng qì le         | se rindió          | desisti           
+ 30 | I see                | 我懂了             | wǒ dǒng le         | Veo                | Eu vejo           
+ 31 | see you              | 再见              | zài jiàn           | nos vemos          | vê você           
+ 32 | I saw it             | 我看到了            | wǒ kàn dào le      | lo vi              | eu vi isso        
+ 33 | saw her              | 看见她了            | kàn jiàn tā le     | la vi              | a vi              
+ 34 | you never know       | 你永远不知道          | nǐ yǒng yuǎn bù zh | nunca se sabe      | você nunca sabe   
+ 35 | as you know          | 如你所知            | rú nǐ suǒ zhī      | como tú sabes      | como você sabe    
+ 36 | well known           | 众所周知的           | zhòng suǒ zhōu zhī | bien conocido      | bem conhecido     
+ 37 | known for            | 闻名于             | wén míng yú        | conocido por       | conhecido por     
+ 38 | I knew it            | 我就知道            | wǒ jiù zhī dào     | lo sabía           | Eu sabia          
+ 39 | knew that            | 知道              | zhī dào            | sabia que          | sabia disso       
+ 40 | I think so           | 我想是的            | wǒ xiǎng shì de    | Creo que sí        | Eu penso que sim  
+ 41 | think about it       | 想想看             | xiǎng xiǎng kàn    | piensa en ello     | pense nisso       
+ 42 | I thought so         | 我是这么想的          | wǒ shì zhè me xiǎn | Ya me lo imaginaba | Eu pensei assim   
+ 43 | thought about it     | 想了一下            | xiǎng le yī xià    | lo pensé           | pensei sobre isso 
+ 44 | I want it            | 我要它             | wǒ yào tā          | lo quiero          | Quero isso        
+ 45 | want to go           | 想去              | xiǎng qù           | quiero ir          | quero ir          
+ 46 | I need it            | 我需要它            | wǒ xū yào tā       | lo necesito        | eu preciso disso  
+ 47 | need help            | 需要帮助            | xū yào bāng zhù    | necesitar ayuda    | precisar de ajuda 
+ 48 | I love it            | 我喜欢它            | wǒ xǐ huān tā      | Me encanta         | Eu amo isso       
+ 49 | love you             | 爱你              | ài nǐ              | te amo             | amo você          
+ 50 | I say yes            | 我说是的            | wǒ shuō shì de     | yo digo si         | eu digo sim       
+ 51 | say something        | 说些什么            | shuō xiē shén me   | Di algo            | dizer algo        
+ 52 | I said yes           | 我说是的            | wǒ shuō shì de     | dije que si        | eu disse sim      
+ 53 | said that            | 说               | shuō               | dijo eso           | disse que         
+ 54 | please tell          | 请告诉             | qǐng gào sù        | por favor dile     | por favor diga    
+ 55 | don't tell anyone    | 不要告诉任何人         | bú yào gào sù rèn  | no le digas a nadi | não conte a ningué
+ 56 | I told you           | 我告诉你了           | wǒ gào sù nǐ le    | Te dije            | Eu te disse       
+ 57 | told her             | 告诉她             | gào sù tā          | le dijo            | disse a ela       
+ 58 | I ask you            | 我问你             | wǒ wèn nǐ          | Les pido que       | Peço a você       
+ 59 | ask her              | 问她              | wèn tā             | pregúntale         | pergunte a ela    
+ 60 | help me              | 帮我              | bāng wǒ            | ayúdame            | me ajude          
+ 61 | can you help         | 你能帮忙吗           | nǐ néng bāng máng  | ¿puedes ayudar?    | você pode ajudar  

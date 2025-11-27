@@ -1,0 +1,65 @@
+PACK 27: Essential Adjectives 1
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | good                 | 好               | hǎo                | bueno              | bom               
+  3 | bad                  | 坏               | huài               | malo               | ruim              
+  4 | big                  | 大               | dà                 | grande             | grande            
+  5 | small                | 小               | xiǎo               | pequeño            | pequeno           
+  6 | fast                 | 快               | kuài               | rápido             | rápido            
+  7 | slow                 | 慢               | màn                | lento              | lento             
+  8 | tall                 | 高               | gāo                | alto               | alto              
+  9 | short                | 短               | duǎn               | corto              | curto             
+ 10 | long                 | 长               | zhǎng              | largo              | longo             
+ 11 | hot                  | 热               | rè                 | caliente           | quente            
+ 12 | cold                 | 冷               | lěng               | frío               | frio              
+ 13 | new                  | 新               | xīn                | nuevo              | novo              
+ 14 | old                  | 老               | lǎo                | viejo              | velho             
+ 15 | young                | 年轻              | nián qīng          | joven              | jovem             
+ 16 | easy                 | 简单              | jiǎn dān           | fácil              | fácil             
+ 17 | wrong                | 错误              | cuò wù             | mal                | errado            
+ 18 | high                 | 高               | gāo                | alto               | alto              
+ 19 | low                  | 低               | dī                 | bajo               | baixo             
+ 20 | wide                 | 宽               | kuān               | ancho              | largo             
+ 21 | narrow               | 缩小              | suō xiǎo           | estrecho           | estreito          
+ 22 | good job             | 干得好             | gàn dé hǎo         | buen trabajo       | bom trabalho      
+ 23 | very good            | 非常好             | fēi cháng hǎo      | muy bueno          | muito bom         
+ 24 | bad news             | 坏消息             | huài xiāo xī       | malas noticias     | más notícias      
+ 25 | too bad              | 太糟糕了            | tài zāo gāo le     | muy mal            | que pena          
+ 26 | big deal             | 大事              | dà shì             | gran cosa          | grande coisa      
+ 27 | big house            | 大房子             | dà fáng zi         | casa grande        | casa grande       
+ 28 | small size           | 小尺寸             | xiǎo chǐ cùn       | tamaño pequeño     | tamanho pequeno   
+ 29 | too small            | 太小              | tài xiǎo           | demasiado pequeño  | muito pequeno     
+ 30 | fast food            | 快餐              | kuài cān           | comida rápida      | comida rápida     
+ 31 | very fast            | 非常快             | fēi cháng kuài     | muy rápido         | muito rápido      
+ 32 | too slow             | 太慢              | tài màn            | demasiado lento    | muito lento       
+ 33 | slow down            | 慢点              | màn diǎn           | disminuir la veloc | desacelere        
+ 34 | tall building        | 高层建筑            | gāo céng jiàn zhù  | edificio alto      | prédio alto       
+ 35 | very tall            | 很高              | hěn gāo            | muy alto           | muito alto        
+ 36 | short time           | 短时间             | duǎn shí jiān      | poco tiempo        | pouco tempo       
+ 37 | too short            | 太短              | tài duǎn           | demasiado corto    | muito curto       
+ 38 | long time            | 好久了             | hǎo jiǔ le         | mucho tiempo       | muito tempo       
+ 39 | long way             | 路漫漫其修远兮         | lù màn màn qí xiū  | largo camino       | longo caminho     
+ 40 | too hot              | 太热了             | tài rè le          | demasiado caliente | muito quente      
+ 41 | hot day              | 炎热的一天           | yán rè de yī tiān  | día caluroso       | dia quente        
+ 42 | too cold             | 太冷了             | tài lěng le        | demasiado frío     | muito frio        
+ 43 | cold water           | 冷水              | lěng shuǐ          | agua fría          | água fria         
+ 44 | brand new            | 全新              | quán xīn           | nuevo              | novíssimo         
+ 45 | new car              | 新车              | xīn chē            | coche nuevo        | carro novo        
+ 46 | old friend           | 老朋友             | lǎo péng yǒu       | viejo amigo        | velho amigo       
+ 47 | very old             | 很旧              | hěn jiù            | muy viejo          | muito antigo      
+ 48 | young man            | 年轻人             | nián qīng rén      | joven              | jovem             
+ 49 | young people         | 年轻人             | nián qīng rén      | jóvenes            | jovens            
+ 50 | so easy              | 如此简单            | rú cǐ jiǎn dān     | muy fácil          | tão fácil         
+ 51 | easy to do           | 容易做             | róng yì zuò        | fácil de hacer     | fácil de fazer    
+ 52 | something wrong      | 有问题             | yǒu wèn tí         | algo anda mal      | algo errado       
+ 53 | wrong way            | 错误的方式           | cuò wù de fāng shì | camino equivocado  | caminho errado    
+ 54 | high school          | 高中              | gāo zhōng          | escuela secundaria | ensino médio      
+ 55 | high up              | 高处              | gāo chù            | en lo alto         | lá no alto        
+ 56 | low voice            | 低声              | dī shēng           | voz baja           | voz baixa         
+ 57 | too low              | 太低              | tài dī             | demasiado bajo     | muito baixo       
+ 58 | wide open            | 敞开              | chǎng kāi          | completamente abie | bem aberto        
+ 59 | wide range           | 范围广             | fàn wéi guǎng      | amplia gama        | ampla gama        
+ 60 | narrow road          | 狭窄的道路           | xiá zhǎi de dào lù | camino estrecho    | estrada estreita  
+ 61 | too narrow           | 太窄              | tài zhǎi           | demasiado estrecho | muito estreito    

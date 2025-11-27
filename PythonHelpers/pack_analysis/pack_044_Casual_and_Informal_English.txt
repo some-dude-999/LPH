@@ -1,0 +1,65 @@
+PACK 44: Casual & Informal English
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | yeah                 | 是的              | shì de             | si                 | sim               
+  3 | yep                  | 是的              | shì de             | sí                 | sim               
+  4 | nope                 | 不               | bù                 | no                 | não               
+  5 | cool                 | 酷               | kù                 | genial             | legal             
+  6 | awesome              | 太棒了             | tài bàng le        | impresionante      | incrível          
+  7 | weird                | 奇怪              | qí guài            | raro               | estranho          
+  8 | crazy                | 疯狂              | fēng kuáng         | loco               | louco             
+  9 | dude                 | 伙计              | huǒ jì             | amigo              | cara              
+ 10 | guys                 | 伙计们             | huǒ jì men         | chicos             | pessoal           
+ 11 | gonna                | 会               | huì                | voy a              | vou               
+ 12 | wanna                | 想要              | xiǎng yào          | quiero             | quero             
+ 13 | gotta                | 必须              | bì xū              | tengo que          | tenho que         
+ 14 | kinda                | 有点              | yǒu diǎn           | un poco            | mais ou menos     
+ 15 | sorta                | 有点              | yǒu diǎn           | más o menos        | mais ou menos     
+ 16 | alright              | 好吧              | hǎo ba             | bien               | tudo bem          
+ 17 | chill                | 冷静              | lěng jìng          | relajarse          | calma             
+ 18 | lame                 | 无聊              | wú liáo            | aburrido           | chato             
+ 19 | epic                 | 超棒              | chāo bàng          | épico              | épico             
+ 20 | sketchy              | 可疑              | kě yí              | sospechoso         | suspeito          
+ 21 | legit                | 靠谱              | kào pǔ             | legítimo           | legítimo          
+ 22 | oh yeah              | 哦，是的            | ó， shì de          | oh si              | ah sim            
+ 23 | yeah right           | 是的，对            | shì de， duì        | si claro           | sim, certo        
+ 24 | yep sure             | 是的，当然           | shì de， dāng rán   | si claro           | sim, claro        
+ 25 | yep that works       | 是的，有效           | shì de， yǒu xiào   | sí, eso funciona   | sim, isso funciona
+ 26 | nope not me          | 不，不是我           | bù， bú shì wǒ      | No, yo no          | não, eu não       
+ 27 | nope sorry           | 不，抱歉            | bù， bào qiàn       | no lo siento       | não, desculpe     
+ 28 | so cool              | 太酷了             | tài kù le          | que genial         | tão legal         
+ 29 | cool stuff           | 很酷的东西           | hěn kù de dōng xī  | cosas interesantes | coisas legais     
+ 30 | that's awesome       | 太棒了             | tài bàng le        | eso es increíble   | isso é incrível   
+ 31 | awesome job          | 太棒了             | tài bàng le        | trabajo increíble  | trabalho incrível 
+ 32 | so weird             | 好奇怪             | hǎo qí guài        | que raro           | tão estranho      
+ 33 | weird thing          | 奇怪的事情           | qí guài de shì qín | cosa rara          | coisa estranha    
+ 34 | that's crazy         | 太疯狂了            | tài fēng kuáng le  | eso es una locura  | isso é loucura    
+ 35 | crazy idea           | 疯狂的想法           | fēng kuáng de xiǎn | idea loca          | ideia maluca      
+ 36 | hey dude             | 嘿伙计             | hēi huǒ jì         | hola amigo         | ei cara           
+ 37 | dude seriously       | 老兄认真的           | lǎo xiōng rèn zhēn | amigo en serio     | cara, sério       
+ 38 | hey guys             | 嘿伙计们            | hēi huǒ jì men     | Hola chicos        | oi pessoal        
+ 39 | you guys             | 你们              | nǐ men             | ustedes            | vocês             
+ 40 | gonna do it          | 会做              | huì zuò            | lo haré            | vou fazer isso    
+ 41 | gonna go             | 要去              | yào qù             | voy a ir           | vou               
+ 42 | wanna come           | 想来              | xiǎng lái          | quiero venir       | quero vir         
+ 43 | wanna try            | 想尝试             | xiǎng cháng shì    | quiero intentarlo  | quero tentar      
+ 44 | gotta go             | 得走了             | dé zǒu le          | tengo que irme     | tenho que ir      
+ 45 | gotta run            | 得跑              | dé pǎo             | tengo que correr   | tenho que correr  
+ 46 | kinda like           | 有点像             | yǒu diǎn xiàng     | algo así           | tipo              
+ 47 | kinda busy           | 有点忙             | yǒu diǎn máng      | un poco ocupado    | meio ocupado      
+ 48 | sorta like           | 有点像             | yǒu diǎn xiàng     | algo así como      | mais ou menos como
+ 49 | sorta know           | 有点知道            | yǒu diǎn zhī dào   | más o menos lo sé  | meio que sei      
+ 50 | alright then         | 好吧              | hǎo ba             | esta bien entonces | tudo bem então    
+ 51 | alright fine         | 好吧好吧            | hǎo ba hǎo ba      | bien bien          | tudo bem, tudo bem
+ 52 | just chill           | 冷静一下            | lěng jìng yī xià   | simplemente relája | apenas relaxe     
+ 53 | chill out            | 放松一下            | fàng sōng yī xià   | relajarse          | relaxe            
+ 54 | so lame              | 太无聊了            | tài wú liáo le     | tan aburrido       | tão chato         
+ 55 | that's lame          | 那太无聊了           | nà tài wú liáo le  | eso es aburrido    | isso é chato      
+ 56 | so epic              | 太棒了             | tài bàng le        | tan épico          | tão épico         
+ 57 | epic fail            | 惨败              | cǎn bài            | fracaso épico      | falha épica       
+ 58 | looks sketchy        | 看起来可疑           | kàn qǐ lái kě yí   | parece sospechoso  | parece suspeito   
+ 59 | sketchy place        | 可疑的地方           | kě yí de dì fāng   | lugar sospechoso   | lugar suspeito    
+ 60 | seems legit          | 看起来靠谱           | kàn qǐ lái kào pǔ  | parece legítimo    | parece legítimo   
+ 61 | totally legit        | 完全靠谱            | wán quán kào pǔ    | totalmente legítim | totalmente legítim

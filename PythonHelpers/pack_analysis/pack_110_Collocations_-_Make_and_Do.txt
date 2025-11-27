@@ -1,0 +1,65 @@
+PACK 110: Collocations - Make & Do
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | make a decision      | 做出决定            | zuò chū jué dìng   | tomar una decisión | tomar uma decisão 
+  3 | make a mistake       | 犯错误             | fàn cuò wù         | cometer un error   | cometer um erro   
+  4 | make progress        | 取得进步            | qǔ dé jìn bù       | progresar          | progredir         
+  5 | make an effort       | 努力              | nǔ lì              | haz un esfuerzo    | faça um esforço   
+  6 | make sense           | 有道理             | yǒu dào lǐ         | tiene sentido      | faz sentido       
+  7 | make money           | 赚钱              | zhuàn qián         | ganar dinero       | ganhar dinheiro   
+  8 | make a difference    | 有所作为            | yǒu suǒ zuò wéi    | marcar la diferenc | faça a diferença  
+  9 | make sure            | 确保              | què bǎo            | asegúrate          | certifique-se     
+ 10 | make friends         | 交朋友             | jiāo péng yǒu      | hacer amigos       | fazer amigos      
+ 11 | make a reservation   | 预订              | yù dìng            | hacer una reserva  | faça uma reserva  
+ 12 | do homework          | 做作业             | zuò zuò yè         | hacer la tarea     | fazer lição de cas
+ 13 | do business          | 做生意             | zuò shēng yì       | hacer negocios     | fazer negócios    
+ 14 | do a favor           | 帮个忙             | bāng gè máng       | haz un favor       | faça um favor     
+ 15 | do your best         | 尽力而为            | jìn lì ér wéi      | haz tu mejor esfue | faça o seu melhor 
+ 16 | do the dishes        | 洗碗              | xǐ wǎn             | lavar los platos   | lavar a louça     
+ 17 | do research          | 做研究             | zuò yán jiū        | investigar         | pesquisar         
+ 18 | do exercise          | 做运动             | zuò yùn dòng       | hacer ejercicio    | fazer exercício   
+ 19 | do damage            | 造成伤害            | zào chéng shāng hà | hacer daño         | causar danos      
+ 20 | do laundry           | 洗衣服             | xǐ yī fú           | lavar la ropa      | lavar roupa       
+ 21 | do nothing           | 什么都不做           | shén me dōu bù zuò | no hacer nada      | não faça nada     
+ 22 | make a decision now  | 现在就做决定          | xiàn zài jiù zuò j | toma una decisión  | tome uma decisão a
+ 23 | hard to make a decis | 很难做出决定          | hěn nán zuò chū ju | difícil tomar una  | difícil tomar uma 
+ 24 | make a mistake somet | 有时会犯错误          | yǒu shí huì fàn cu | a veces comete un  | comete erros às ve
+ 25 | don't make a mistake | 别搞错了            | bié gǎo cuò le     | no te equivoques   | não se engane     
+ 26 | make progress daily  | 每天进步            | měi tiān jìn bù    | progresar diariame | progredir diariame
+ 27 | make progress on     | 取得进展            | qǔ dé jìn zhǎn     | avanzar en         | fazer progressos e
+ 28 | make an effort to    | 努力              | nǔ lì              | haz un esfuerzo pa | faça um esforço pa
+ 29 | please make an effor | 请努力             | qǐng nǔ lì         | por favor haz un e | por favor faça um 
+ 30 | make sense of        | 明白              | míng bái           | darle sentido      | entender          
+ 31 | does it make sense   | 有道理吗            | yǒu dào lǐ ma      | ¿Tiene sentido     | isso faz sentido  
+ 32 | make money online    | 网上赚钱            | wǎng shàng zhuàn q | ganar dinero en lí | ganhar dinheiro on
+ 33 | need to make money   | 需要赚钱            | xū yào zhuàn qián  | necesito ganar din | preciso ganhar din
+ 34 | make a difference in | 有所作为            | yǒu suǒ zuò wéi    | marcar la diferenc | faça a diferença e
+ 35 | you can make a diffe | 你可以有所作为         | nǐ kě yǐ yǒu suǒ z | tú puedes marcar l | você pode fazer a 
+ 36 | make sure you        | 确保你             | què bǎo nǐ         | asegúrate de       | certifique-se de  
+ 37 | please make sure     | 请确认             | qǐng què rèn       | por favor asegúres | por favor certifiq
+ 38 | make friends easily  | 轻松交友            | qīng sōng jiāo yǒu | hacer amigos fácil | fazer amigos facil
+ 39 | make friends with    | 与               | yǔ                 | hacer amistad con  | fazer amizade com 
+ 40 | make a reservation f | 预订              | yù dìng            | hacer una reserva  | faça uma reserva p
+ 41 | need to make a reser | 需要预约            | xū yào yù yuē      | Necesito hacer una | preciso fazer rese
+ 42 | do homework now      | 现在做作业           | xiàn zài zuò zuò y | haz la tarea ahora | faça a lição de ca
+ 43 | do homework first    | 先做作业            | xiān zuò zuò yè    | haz la tarea prime | faça a lição de ca
+ 44 | do business with     | 与               | yǔ                 | hacer negocios con | fazer negócios com
+ 45 | want to do business  | 想做生意            | xiǎng zuò shēng yì | quiero hacer negoc | quero fazer negóci
+ 46 | do a favor for       | 帮个忙             | bāng gè máng       | hazle un favor     | faça um favor para
+ 47 | can you do a favor   | 你能帮个忙吗          | nǐ néng bāng gè má | puedes hacerme un  | você pode fazer um
+ 48 | do your best always  | 永远尽力而为          | yǒng yuǎn jìn lì é | haz lo mejor que p | faça o seu melhor 
+ 49 | just do your best    | 尽你所能            | jǐn nǐ suǒ néng    | solo haz lo mejor  | apenas faça o seu 
+ 50 | do the dishes later  | 稍后洗碗            | shāo hòu xǐ wǎn    | lava los platos má | lavar a louça mais
+ 51 | need to do the dishe | 需要洗碗            | xū yào xǐ wǎn      | Necesito lavar los | preciso lavar a lo
+ 52 | do research on       | 研究              | yán jiū            | investigar sobre   | pesquise sobre    
+ 53 | do research well     | 好好研究            | hǎo hǎo yán jiū    | investigar bien    | pesquise bem      
+ 54 | do exercise daily    | 每天锻炼身体          | měi tiān duàn liàn | hacer ejercicio di | faço exercício dia
+ 55 | need to do exercise  | 需要锻炼            | xū yào duàn liàn   | necesito hacer eje | preciso fazer exer
+ 56 | do damage to         | 对               | duì                | hacer daño a       | causar danos a    
+ 57 | don't do damage      | 不要造成伤害          | bú yào zào chéng s | no hagas daño      | não cause danos   
+ 58 | do laundry today     | 今天洗衣服           | jīn tiān xǐ yī fú  | lavar la ropa hoy  | lavar roupa hoje  
+ 59 | need to do laundry   | 需要洗衣服           | xū yào xǐ yī fú    | necesito lavar la  | preciso lavar roup
+ 60 | do nothing today     | 今天什么都不做         | jīn tiān shén me d | no hacer nada hoy  | não faça nada hoje
+ 61 | want to do nothing   | 不想做任何事          | bù xiǎng zuò rèn h | no quiero hacer na | não quero fazer na

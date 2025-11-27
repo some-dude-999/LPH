@@ -1,0 +1,65 @@
+PACK 86: Workplace Actions
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | hire                 | 雇用              | gù yòng            | contratar          | contratar         
+  3 | fire                 | 火               | huǒ                | fuego              | fogo              
+  4 | resign               | 辞职              | cí zhí             | dimitir            | renunciar         
+  5 | retire               | 退休              | tuì xiū            | retirarse          | aposentar         
+  6 | apply                | 申请              | shēn qǐng          | aplicar            | aplicar           
+  7 | delegate             | 代表              | dài biǎo           | delegado           | delegado          
+  8 | manage               | 管理              | guǎn lǐ            | gestionar          | gerenciar         
+  9 | coordinate           | 坐标              | zuò biāo           | coordinar          | coordenar         
+ 10 | assign               | 分配              | fēn pèi            | asignar            | atribuir          
+ 11 | submit               | 提交              | tí jiāo            | enviar             | enviar            
+ 12 | complete             | 完整              | wán zhěng          | completo           | completo          
+ 13 | achieve              | 实现              | shí xiàn           | lograr             | alcançar          
+ 14 | succeed              | 成功              | chéng gōng         | tener éxito        | ter sucesso       
+ 15 | fail                 | 失败              | shī bài            | fallar             | falhar            
+ 16 | supervise            | 监督              | jiān dū            | supervisar         | supervisionar     
+ 17 | oversee              | 监督              | jiān dū            | supervisar         | supervisionar     
+ 18 | execute              | 执行              | zhí xíng           | ejecutar           | executar          
+ 19 | implement            | 实施              | shí shī            | implementar        | implementar       
+ 20 | fulfill              | 履行              | lǚ xíng            | cumplir            | cumprir           
+ 21 | accomplish           | 完成              | wán chéng          | lograr             | realizar          
+ 22 | hire someone         | 雇用某人            | gù yòng mǒu rén    | contratar a alguie | contratar alguém  
+ 23 | hire new staff       | 雇用新员工           | gù yòng xīn yuán g | contratar nuevo pe | contratar novos fu
+ 24 | fire someone         | 解雇某人            | jiě gù mǒu rén     | despedir a alguien | demitir alguém    
+ 25 | get fired            | 被解雇             | bèi jiě gù         | ser despedido      | ser demitido      
+ 26 | resign from          | 辞职              | cí zhí             | dimitir de         | demitir-se de     
+ 27 | resign position      | 辞职              | cí zhí             | renunciar al cargo | renunciar ao cargo
+ 28 | retire early         | 提前退休            | tí qián tuì xiū    | jubilarse anticipa | aposentar-se mais 
+ 29 | retire soon          | 快退休             | kuài tuì xiū       | jubilarse pronto   | aposentar logo    
+ 30 | apply for            | 申请              | shēn qǐng          | solicitar          | candidatar-se     
+ 31 | apply online         | 网上申请            | wǎng shàng shēn qǐ | aplicar en línea   | inscreva-se on-lin
+ 32 | delegate tasks       | 委派任务            | wěi pài rèn wù     | delegar tareas     | delegar tarefas   
+ 33 | delegate responsibil | 委托责任            | wěi tuō zé rèn     | delegar responsabi | delegar responsabi
+ 34 | manage team          | 管理团队            | guǎn lǐ tuán duì   | gestionar el equip | gerenciar equipe  
+ 35 | manage well          | 管理好             | guǎn lǐ hǎo        | gestionar bien     | administrar bem   
+ 36 | coordinate with      | 与               | yǔ                 | coordinar con      | coordenar com     
+ 37 | coordinate efforts   | 协调协调努力          | xié tiáo xié tiáo  | coordinar esfuerzo | coordenar esforços
+ 38 | assign task          | 分配任务            | fēn pèi rèn wù     | asignar tarea      | atribuir tarefa   
+ 39 | assign to            | 分配给             | fēn pèi gěi        | asignar a          | atribuir a        
+ 40 | submit report        | 提交报告            | tí jiāo bào gào    | enviar informe     | enviar relatório  
+ 41 | submit application   | 提交申请            | tí jiāo shēn qǐng  | enviar solicitud   | submeter candidatu
+ 42 | complete project     | 完成项目            | wán chéng xiàng mù | proyecto completo  | projeto completo  
+ 43 | complete on time     | 按时完成            | àn shí wán chéng   | completar a tiempo | concluído no prazo
+ 44 | achieve goal         | 实现目标            | shí xiàn mù biāo   | lograr la meta     | atingir a meta    
+ 45 | achieve success      | 取得成功            | qǔ dé chéng gōng   | alcanzar el éxito  | alcançar o sucesso
+ 46 | succeed in           | 成功              | chéng gōng         | tener éxito        | ter sucesso em    
+ 47 | succeed at           | 成功              | chéng gōng         | tener éxito en     | ter sucesso em    
+ 48 | fail to              | 未能              | wèi néng           | no hacerlo         | não consegui      
+ 49 | fail miserably       | 惨败              | cǎn bài            | fracasar miserable | falhar miseravelme
+ 50 | supervise work       | 监督工作            | jiān dū gōng zuò   | supervisar el trab | supervisionar o tr
+ 51 | supervise team       | 监督团队            | jiān dū tuán duì   | supervisar el equi | supervisionar equi
+ 52 | oversee project      | 监督项目            | jiān dū xiàng mù   | supervisar el proy | supervisionar proj
+ 53 | oversee operations   | 监督运营            | jiān dū yùn yíng   | supervisar las ope | supervisionar as o
+ 54 | execute plan         | 执行计划            | zhí xíng jì huà    | ejecutar plan      | executar plano    
+ 55 | execute properly     | 正确执行            | zhèng què zhí xíng | ejecutar correctam | execute corretamen
+ 56 | implement change     | 实施变革            | shí shī biàn gé    | implementar el cam | implementar mudanç
+ 57 | implement strategy   | 实施战略            | shí shī zhàn lüè   | implementar estrat | implementar estrat
+ 58 | fulfill duty         | 履行职责            | lǚ xíng zhí zé     | cumplir con el deb | cumprir o dever   
+ 59 | fulfill requirements | 满足要求            | mǎn zú yāo qiú     | cumplir con los re | cumprir os requisi
+ 60 | accomplish goal      | 完成目标            | wán chéng mù biāo  | lograr la meta     | cumprir meta      
+ 61 | accomplish mission   | 完成使命            | wán chéng shǐ mìng | cumplir la misión  | cumprir missão    

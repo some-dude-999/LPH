@@ -1,0 +1,65 @@
+PACK 128: International Relations
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | international        | 国际              | guó jì             | internacional      | internacional     
+  3 | foreign              | 国外              | guó wài            | extranjero         | estrangeiro       
+  4 | domestic             | 国内              | guó nèi            | nacional           | doméstico         
+  5 | diplomacy            | 外交              | wài jiāo           | diplomacia         | diplomacia        
+  6 | diplomat             | 外交官             | wài jiāo guān      | diplomático        | diplomata         
+  7 | treaty               | 条约              | tiáo yuē           | tratado            | tratado           
+  8 | alliance             | 联盟              | lián méng          | alianza            | aliança           
+  9 | conflict             | 冲突              | chōng tū           | conflicto          | conflito          
+ 10 | peace                | 和平              | hé píng            | paz                | paz               
+ 11 | war                  | 战争              | zhàn zhēng         | guerra             | guerra            
+ 12 | negotiation          | 谈判              | tán pàn            | negociación        | negociação        
+ 13 | sanctions            | 制裁              | zhì cái            | sanciones          | sanções           
+ 14 | refugee              | 难民              | nàn mín            | refugiado          | refugiado         
+ 15 | territory            | 领土              | lǐng tǔ            | territorio         | território        
+ 16 | cooperation          | 合作              | hé zuò             | cooperación        | cooperação        
+ 17 | summit               | 峰会              | fēng huì           | cumbre             | cimeira           
+ 18 | ambassador           | 大使              | dà shǐ             | embajador          | embaixador        
+ 19 | humanitarian         | 人道主义            | rén dào zhǔ yì     | humanitario        | humanitário       
+ 20 | sovereignty          | 主权              | zhǔ quán           | soberanía          | soberania         
+ 21 | geopolitics          | 地缘政治            | dì yuán zhèng zhì  | geopolítica        | geopolítica       
+ 22 | international trade  | 国际贸易            | guó jì mào yì      | comercio internaci | comércio internaci
+ 23 | international law    | 国际法             | guó jì fǎ          | derecho internacio | direito internacio
+ 24 | foreign policy       | 外交政策            | wài jiāo zhèng cè  | política exterior  | política externa  
+ 25 | foreign country      | 外国              | wài guó            | país extranjero    | país estrangeiro  
+ 26 | domestic affairs     | 国内事务            | guó nèi shì wù     | asuntos internos   | assuntos internos 
+ 27 | domestic policy      | 国内政策            | guó nèi zhèng cè   | política interna   | política interna  
+ 28 | practice diplomacy   | 实践外交            | shí jiàn wài jiāo  | practicar la diplo | praticar a diploma
+ 29 | diplomacy effort     | 外交努力            | wài jiāo nǔ lì     | esfuerzo diplomáti | esforço diplomátic
+ 30 | career diplomat      | 职业外交官           | zhí yè wài jiāo gu | diplomático de car | diplomata de carre
+ 31 | diplomat stationed   | 外交官驻扎           | wài jiāo guān zhù  | diplomático estaci | diplomata estacion
+ 32 | peace treaty         | 和平条约            | hé píng tiáo yuē   | tratado de paz     | tratado de paz    
+ 33 | treaty agreement     | 条约协议            | tiáo yuē xié yì    | acuerdo de tratado | acordo de tratado 
+ 34 | military alliance    | 军事联盟            | jūn shì lián méng  | alianza militar    | aliança militar   
+ 35 | alliance between     | 之间的联盟           | zhī jiān de lián m | alianza entre      | aliança entre     
+ 36 | armed conflict       | 武装冲突            | wǔ zhuāng chōng tū | conflicto armado   | conflito armado   
+ 37 | conflict resolution  | 冲突解决            | chōng tū jiě jué   | resolución de conf | resolução de confl
+ 38 | world peace          | 世界和平            | shì jiè hé píng    | paz mundial        | paz mundial       
+ 39 | peace process        | 和平进程            | hé píng jìn chéng  | proceso de paz     | processo de paz   
+ 40 | civil war            | 内战              | nèi zhàn           | guerra civil       | guerra civil      
+ 41 | war zone             | 战区              | zhàn qū            | zona de guerra     | zona de guerra    
+ 42 | trade negotiation    | 贸易谈判            | mào yì tán pàn     | negociación comerc | negociação comerci
+ 43 | negotiation process  | 谈判过程            | tán pàn guò chéng  | proceso de negocia | processo de negoci
+ 44 | economic sanctions   | 经济制裁            | jīng jì zhì cái    | sanciones económic | sanções económicas
+ 45 | sanctions against    | 对某国的制裁          | duì mǒu guó de zhì | sanciones contra   | sanções contra    
+ 46 | refugee crisis       | 难民危机            | nàn mín wēi jī     | crisis de refugiad | crise de refugiado
+ 47 | refugee camp         | 难民营             | nàn mín yíng       | campo de refugiado | campo de refugiado
+ 48 | disputed territory   | 有争议的领土          | yǒu zhēng yì de lǐ | territorio en disp | território disputa
+ 49 | territory control    | 领土控制            | lǐng tǔ kòng zhì   | control del territ | controle de territ
+ 50 | international cooper | 国际合作            | guó jì hé zuò      | cooperación intern | cooperação interna
+ 51 | cooperation between  | 之间的合作           | zhī jiān de hé zuò | cooperación entre  | cooperação entre  
+ 52 | world summit         | 世界峰会            | shì jiè fēng huì   | cumbre mundial     | cimeira mundial   
+ 53 | summit meeting       | 峰会              | fēng huì           | reunión cumbre     | reunião de cimeira
+ 54 | appointed ambassador | 任命大使            | rèn mìng dà shǐ    | embajador designad | embaixador nomeado
+ 55 | ambassador to        | 驻某国大使           | zhù mǒu guó dà shǐ | embajador en       | embaixador em     
+ 56 | humanitarian aid     | 人道主义援助          | rén dào zhǔ yì yuá | ayuda humanitaria  | ajuda humanitária 
+ 57 | humanitarian crisis  | 人道主义危机          | rén dào zhǔ yì wēi | crisis humanitaria | crise humanitária 
+ 58 | national sovereignty | 国家主权            | guó jiā zhǔ quán   | soberanía nacional | soberania nacional
+ 59 | sovereignty over     | 的主权             | de zhǔ quán        | soberanía sobre    | soberania sobre   
+ 60 | global geopolitics   | 全球地缘政治          | quán qiú dì yuán z | geopolítica global | geopolítica global
+ 61 | geopolitics of       | 地缘政治            | dì yuán zhèng zhì  | geopolítica de     | geopolítica de    

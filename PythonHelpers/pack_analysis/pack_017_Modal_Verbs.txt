@@ -1,0 +1,65 @@
+PACK 17: Modal Verbs
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | can                  | 能               | néng               | poder              | pode              
+  3 | could                | 可以              | kě yǐ              | podría             | poderia           
+  4 | will                 | 将要              | jiāng yào          | voluntad           | vai               
+  5 | would                | 会               | huì                | quería             | seria             
+  6 | shall                | 将               | jiāng              | deber              | podemos           
+  7 | should               | 应该              | yīng gāi           | debería            | deve              
+  8 | may                  | 可能              | kě néng            | puede              | poderia           
+  9 | might                | 可能              | kě néng            | podría             | poder             
+ 10 | must                 | 必须              | bì xū              | debe               | deve              
+ 11 | dare                 | 敢               | gǎn                | atrevimiento       | ousar             
+ 12 | ought                | 应该              | yīng gāi           | debería            | deveria           
+ 13 | used                 | 用过的             | yòng guò de        | usado              | usado             
+ 14 | able                 | 有能力的            | yǒu néng lì de     | capaz              | capaz             
+ 15 | better               | 更好的             | gèng hǎo de        | mejor              | melhorar          
+ 16 | supposed             | 假设              | jiǎ shè            | supuesto           | suposto           
+ 17 | allowed              | 允许              | yǔn xǔ             | permitido          | permitido         
+ 18 | willing              | 愿意的             | yuàn yì de         | deseoso            | disposto          
+ 19 | capable              | 有能力的            | yǒu néng lì de     | capaz              | capaz             
+ 20 | permitted            | 允许的             | yǔn xǔ de          | permitido          | permitido         
+ 21 | obligated            | 有义务的            | yǒu yì wù de       | obligado           | obrigado          
+ 22 | can I help           | 我可以帮忙吗          | wǒ kě yǐ bāng máng | puedo ayudar       | posso ajudar      
+ 23 | I can do it          | 我能做到            | wǒ néng zuò dào    | puedo hacerlo      | Eu posso fazer iss
+ 24 | could you please     | 能不能请你           | néng bù néng qǐng  | podría usted       | você poderia, por 
+ 25 | could I ask          | 我可以问吗           | wǒ kě yǐ wèn ma    | ¿podría preguntar? | eu poderia pergunt
+ 26 | will you come        | 你会来吗            | nǐ huì lái ma      | ¿vendrás?          | você virá         
+ 27 | I will try           | 我会尝试            | wǒ huì cháng shì   | Intentaré          | vou tentar        
+ 28 | would you like       | 你愿意吗            | nǐ yuàn yì ma      | te gustaria        | você gostaria     
+ 29 | I would love to      | 我很乐意            | wǒ hěn lè yì       | me encantaría      | Eu adoraria       
+ 30 | shall we go          | 我们可以走了吗         | wǒ men kě yǐ zǒu l | ¿Vamos?            | vamos             
+ 31 | we shall see         | 我们将会看到          | wǒ men jiāng huì k | veremos            | veremos           
+ 32 | should I go          | 我应该去吗           | wǒ yīng gāi qù ma  | ¿debería ir?       | devo ir           
+ 33 | you should try       | 你应该尝试           | nǐ yīng gāi cháng  | deberías intentarl | você deveria tenta
+ 34 | may I come in        | 我可以进来吗          | wǒ kě yǐ jìn lái m | ¿puedo entrar?     | posso entrar      
+ 35 | may I ask            | 请问              | qǐng wèn           | puedo preguntar    | posso perguntar   
+ 36 | might be             | 可能是             | kě néng shì        | podría ser         | pode ser          
+ 37 | it might rain        | 可能会下雨           | kě néng huì xià yǔ | podría llover      | pode chover       
+ 38 | must go now          | 现在必须走了          | xiàn zài bì xū zǒu | debe irse ahora    | devo ir agora     
+ 39 | you must try         | 你必须尝试           | nǐ bì xū cháng shì | debes intentarlo   | você deve tentar  
+ 40 | I dare say           | 我敢说             | wǒ gǎn shuō        | me atrevo a decir  | ouso dizer        
+ 41 | don't you dare       | 你不敢吗            | nǐ bù gǎn ma       | no te atrevas      | não se atreva     
+ 42 | ought to know        | 应该知道            | yīng gāi zhī dào   | debería saber      | deveria saber     
+ 43 | you ought to try     | 你应该尝试           | nǐ yīng gāi cháng  | deberías intentarl | você deveria tenta
+ 44 | used to be           | 曾经是             | céng jīng shì      | solía ser          | costumava ser     
+ 45 | I used to go         | 我曾经去过           | wǒ céng jīng qù gu | yo solía ir        | eu costumava ir   
+ 46 | able to do           | 能够做             | néng gòu zuò       | capaz de hacer     | capaz de fazer    
+ 47 | I am able            | 我有能力            | wǒ yǒu néng lì     | soy capaz          | eu sou capaz      
+ 48 | you better go        | 你最好走            | nǐ zuì hǎo zǒu     | será mejor que te  | é melhor você ir  
+ 49 | had better hurry     | 最好快点            | zuì hǎo kuài diǎn  | será mejor que te  | é melhor se apress
+ 50 | supposed to be       | 应该是             | yīng gāi shì       | se supone que es   | deveria ser       
+ 51 | supposed to do       | 应该做的            | yīng gāi zuò de    | se supone que debe | deveria fazer     
+ 52 | allowed to go        | 允许走             | yǔn xǔ zǒu         | permitido ir       | permitido ir      
+ 53 | not allowed here     | 这里不允许           | zhè lǐ bù yǔn xǔ   | no permitido aquí  | não é permitido aq
+ 54 | willing to help      | 愿意帮忙            | yuàn yì bāng máng  | dispuesto a ayudar | disposto a ajudar 
+ 55 | more than willing    | 非常愿意            | fēi cháng yuàn yì  | más que dispuesto  | mais do que dispos
+ 56 | capable of doing     | 有能力做            | yǒu néng lì zuò    | capaz de hacer     | capaz de fazer    
+ 57 | very capable         | 非常有能力           | fēi cháng yǒu néng | muy capaz          | muito capaz       
+ 58 | not permitted here   | 这里不允许           | zhè lǐ bù yǔn xǔ   | no permitido aquí  | não é permitido aq
+ 59 | permitted to enter   | 允许进入            | yǔn xǔ jìn rù      | permitido entrar   | permitido entrar  
+ 60 | feel obligated       | 感到有义务           | gǎn dào yǒu yì wù  | sentirse obligado  | sinta-se obrigado 
+ 61 | legally obligated    | 法律义务            | fǎ lǜ yì wù        | legalmente obligad | legalmente obrigad

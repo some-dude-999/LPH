@@ -1,0 +1,65 @@
+PACK 3: Numbers & Counting
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | thirty               | 三十              | sān shí            | treinta            | trinta            
+  3 | forty                | 四十              | sì shí             | cuarenta           | quarenta          
+  4 | fifty                | 五十              | wǔ shí             | cincuenta          | cinquenta         
+  5 | sixty                | 六十              | liù shí            | sesenta            | sessenta          
+  6 | seventy              | 七十              | qī shí             | setenta            | setenta           
+  7 | eighty               | 八十              | bā shí             | ochenta            | oitenta           
+  8 | ninety               | 九十              | jiǔ shí            | noventa            | noventa           
+  9 | hundred              | 百               | bǎi                | centenar           | centenas          
+ 10 | thousand             | 千               | qiān               | mil                | mil               
+ 11 | million              | 百万              | bǎi wàn            | millón             | milhão            
+ 12 | first                | 第一的             | dì yī de           | primero            | primeiro          
+ 13 | third                | 第三              | dì sān             | tercero            | terceiro          
+ 14 | zero                 | 零               | líng               | cero               | zero              
+ 15 | twice                | 两次              | liǎng cì           | dos veces          | duas vezes        
+ 16 | quarter              | 四分之一            | sì fēn zhī yī      | cuarto             | quarto            
+ 17 | pair                 | 一对              | yī duì             | par                | par               
+ 18 | billion              | 十亿              | shí yì             | mil millones       | bilhão            
+ 19 | tenth                | 第十              | dì shí             | décimo             | décimo            
+ 20 | fifth                | 第五              | dì wǔ              | quinto             | quinto            
+ 21 | last                 | 最后的             | zuì hòu de         | último             | último            
+ 22 | thirty days          | 三十天             | sān shí tiān       | treinta dias       | trinta dias       
+ 23 | thirty minutes       | 三十分钟            | sān shí fēn zhōng  | treinta minutos    | trinta minutos    
+ 24 | forty years old      | 四十岁             | sì shí suì         | cuarenta años      | quarenta anos     
+ 25 | forty hours          | 四十小时            | sì shí xiǎo shí    | cuarenta horas     | quarenta horas    
+ 26 | fifty percent        | 百分之五十           | bǎi fēn zhī wǔ shí | cincuenta por cien | cinquenta por cent
+ 27 | fifty dollars        | 五十美元            | wǔ shí měi yuán    | cincuenta dolares  | cinquenta dólares 
+ 28 | sixty seconds        | 六十秒             | liù shí miǎo       | sesenta segundos   | sessenta segundos 
+ 29 | sixty minutes        | 六十分钟            | liù shí fēn zhōng  | sesenta minutos    | sessenta minutos  
+ 30 | seventy degrees      | 七十度             | qī shí dù          | setenta grados     | setenta graus     
+ 31 | seventy years old    | 七十岁             | qī shí suì         | setenta años       | setenta anos      
+ 32 | eighty percent       | 百分之八十           | bǎi fēn zhī bā shí | ochenta por ciento | oitenta por cento 
+ 33 | eighty miles         | 八十英里            | bā shí yīng lǐ     | ochenta millas     | oitenta milhas    
+ 34 | ninety percent       | 百分之九十           | bǎi fēn zhī jiǔ sh | noventa por ciento | noventa por cento 
+ 35 | ninety days          | 九十天             | jiǔ shí tiān       | noventa días       | noventa dias      
+ 36 | one hundred percent  | 百分之一百           | bǎi fēn zhī yì bǎi | cien por ciento    | cem por cento     
+ 37 | a hundred times      | 一百次             | yì bǎi cì          | cien veces         | cem vezes         
+ 38 | a thousand times     | 一千次             | yī qiān cì         | mil veces          | mil vezes         
+ 39 | thousand dollars     | 千美元             | qiān měi yuán      | mil dolares        | mil dólares       
+ 40 | a million dollars    | 一百万美元           | yì bǎi wàn měi yuá | un millón de dólar | um milhão de dólar
+ 41 | one million people   | 一百万人            | yì bǎi wàn rén     | un millón de perso | um milhão de pesso
+ 42 | first time           | 第一次             | dì yī cì           | primer tiempo      | primeira vez      
+ 43 | first place          | 首位              | shǒu wèi           | primer lugar       | primeiro lugar    
+ 44 | third time           | 第三次             | dì sān cì          | tercera vez        | terceira vez      
+ 45 | third place          | 第三名             | dì sān míng        | tercer lugar       | terceiro lugar    
+ 46 | zero chance          | 零机会             | líng jī huì        | cero posibilidades | chance zero       
+ 47 | zero tolerance       | 零容忍             | líng róng rěn      | tolerancia cero    | tolerância zero   
+ 48 | twice a day          | 一天两次            | yī tiān liǎng cì   | dos veces al dia   | duas vezes por dia
+ 49 | twice as much        | 两倍              | liǎng bèi          | dos veces más      | o dobro           
+ 50 | a quarter past       | 一刻钟             | yī kè zhōng        | un cuarto y cuarto | um quarto depois  
+ 51 | quarter of an hour   | 一刻钟             | yī kè zhōng        | cuarto de hora     | quarto de hora    
+ 52 | a pair of shoes      | 一双鞋             | yī shuāng xié      | un par de zapatos  | um par de sapatos 
+ 53 | a pair of glasses    | 一副眼镜            | yī fù yǎn jìng     | un par de gafas    | um par de óculos  
+ 54 | a billion dollars    | 十亿美元            | shí yì měi yuán    | mil millones de do | um bilhão de dólar
+ 55 | billion people       | 十亿人             | shí yì rén         | mil millones de pe | bilhão de pessoas 
+ 56 | tenth time           | 第十次             | dì shí cì          | décima vez         | décima vez        
+ 57 | tenth anniversary    | 十周年             | shí zhōu nián      | décimo aniversario | décimo aniversário
+ 58 | fifth time           | 第五次             | dì wǔ cì           | quinta vez         | quinta vez        
+ 59 | fifth grade          | 五年级             | wǔ nián jí         | quinto grado       | quinta série      
+ 60 | last time            | 上次              | shàng cì           | último tiempo      | última vez        
+ 61 | last chance          | 最后的机会           | zuì hòu de jī huì  | última oportunidad | última chance     

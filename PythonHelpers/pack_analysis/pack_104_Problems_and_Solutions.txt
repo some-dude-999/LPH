@@ -1,0 +1,65 @@
+PACK 104: Problems & Solutions
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | issue                | 问题              | wèn tí             | problema           | questão           
+  3 | challenge            | 挑战              | tiǎo zhàn          | desafío            | desafio           
+  4 | difficulty           | 难度              | nán dù             | dificultad         | dificuldade       
+  5 | obstacle             | 障碍              | zhàng ài           | obstáculo          | obstáculo         
+  6 | crisis               | 危机              | wēi jī             | crisis             | crise             
+  7 | solution             | 解决方案            | jiě jué fāng àn    | solución           | solução           
+  8 | solve                | 解决              | jiě jué            | resolver           | resolver          
+  9 | fix                  | 修复              | xiū fù             | arreglar           | consertar         
+ 10 | overcome             | 克服              | kè fú              | superar            | superar           
+ 11 | approach             | 方法              | fāng fǎ            | enfoque            | abordagem         
+ 12 | tactic               | 战术              | zhàn shù           | táctica            | tática            
+ 13 | procedure            | 程序              | chéng xù           | procedimiento      | procedimento      
+ 14 | alternative          | 替代方案            | tì dài fāng àn     | alternativa        | alternativa       
+ 15 | option               | 选项              | xuǎn xiàng         | opción             | opção             
+ 16 | possibility          | 可能性             | kě néng xìng       | posibilidad        | possibilidade     
+ 17 | opportunity          | 机会              | jī huì             | oportunidad        | oportunidade      
+ 18 | progress             | 进展              | jìn zhǎn           | progreso           | progresso         
+ 19 | success              | 成功              | chéng gōng         | éxito              | sucesso           
+ 20 | failure              | 失败              | shī bài            | fracaso            | fracasso          
+ 21 | remedy               | 补救措施            | bǔ jiù cuò shī     | remedio            | remédio           
+ 22 | main issue           | 主要问题            | zhǔ yào wèn tí     | cuestión principal | questão principal 
+ 23 | issue with           | 问题在于            | wèn tí zài yú      | problema con       | problema com      
+ 24 | big challenge        | 的问题巨大的挑战        | de wèn tí jù dà de | gran desafío       | grande desafio    
+ 25 | challenge yourself   | 挑战自我            | tiǎo zhàn zì wǒ    | desafíate a ti mis | desafie-se        
+ 26 | face difficulty      | 面对困难            | miàn duì kùn nán   | enfrentar dificult | enfrenta dificulda
+ 27 | difficulty level     | 难度级别            | nán dù jí bié      | nivel de dificulta | nível de dificulda
+ 28 | major obstacle       | 主要障碍            | zhǔ yào zhàng ài   | obstáculo importan | grande obstáculo  
+ 29 | obstacle course      | 障碍训练场           | zhàng ài xùn liàn  | carrera de obstácu | pista de obstáculo
+ 30 | major crisis         | 重大危机            | zhòng dà wēi jī    | crisis importante  | grande crise      
+ 31 | crisis management    | 危机管理            | wēi jī guǎn lǐ     | gestión de crisis  | gestão de crises  
+ 32 | find solution        | 寻找解决方案          | xún zhǎo jiě jué f | encontrar solución | encontrar solução 
+ 33 | solution to          | 解决方案用于          | jiě jué fāng àn yò | solución a         | solução para      
+ 34 | solve problem        | 的解决方案解决问题       | de jiě jué fāng àn | resolver problema  | resolver problema 
+ 35 | solve it             | 解决它             | jiě jué tā         | resolverlo         | resolva           
+ 36 | fix it               | 修复它             | xiū fù tā          | arreglarlo         | consertar         
+ 37 | quick fix            | 快速修复            | kuài sù xiū fù     | solución rápida    | solução rápida    
+ 38 | overcome fear        | 克服恐惧            | kè fú kǒng jù      | superar el miedo   | superar o medo    
+ 39 | overcome obstacles   | 克服障碍            | kè fú zhàng ài     | superar obstáculos | superar obstáculos
+ 40 | new approach         | 新方法             | xīn fāng fǎ        | nuevo enfoque      | nova abordagem    
+ 41 | approach to          | 接近              | jiē jìn            | acercamiento a     | abordagem para    
+ 42 | clever tactic        | 聪明的策略           | cōng míng de cè lü | táctica inteligent | tática inteligente
+ 43 | tactic used          | 使用的策略           | shǐ yòng de cè lüè | táctica utilizada  | tática usada      
+ 44 | medical procedure    | 医疗程序            | yī liáo chéng xù   | procedimiento médi | procedimento médic
+ 45 | procedure for        | 程序用于            | chéng xù yòng yú   | procedimiento para | procedimento para 
+ 46 | no alternative       | 的程序别无选择         | de chéng xù bié wú | no hay alternativa | nenhuma alternativ
+ 47 | alternative option   | 替代选项            | tì dài xuǎn xiàng  | opción alternativa | opção alternativa 
+ 48 | only option          | 唯一的选择           | wéi yī de xuǎn zé  | única opción       | única opção       
+ 49 | best option          | 最好的选择           | zuì hǎo de xuǎn zé | mejor opción       | melhor opção      
+ 50 | real possibility     | 真正的可能性          | zhēn zhèng de kě n | posibilidad real   | possibilidade real
+ 51 | possibility of       | 可能性的            | kě néng xìng de    | posibilidad de     | possibilidade de  
+ 52 | great opportunity    | 的可能性绝佳机会        | de kě néng xìng ju | gran oportunidad   | ótima oportunidade
+ 53 | opportunity for      | 机会用于            | jī huì yòng yú     | oportunidad para   | oportunidade para 
+ 54 | slow progress        | 的机会进展缓慢         | de jī huì jìn zhǎn | progreso lento     | progresso lento   
+ 55 | progress on          | 进展于             | jìn zhǎn yú        | progreso en        | progresso em      
+ 56 | great success        | 的进展巨大的成功        | de jìn zhǎn jù dà  | gran éxito         | grande sucesso    
+ 57 | success rate         | 成功率             | chéng gōng lǜ      | tasa de éxito      | taxa de sucesso   
+ 58 | complete failure     | 彻底失败            | chè dǐ shī bài     | fracaso total      | falha completa    
+ 59 | failure to           | 未能              | wèi néng           | no                 | falha em          
+ 60 | home remedy          | 家庭疗法            | jiā tíng liáo fǎ   | remedio casero     | remédio caseiro   
+ 61 | remedy for           | 补救措施            | bǔ jiù cuò shī     | remedio para       | remédio para      

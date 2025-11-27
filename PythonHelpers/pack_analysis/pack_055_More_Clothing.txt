@@ -1,0 +1,65 @@
+PACK 55: More Clothing
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | suit                 | 套装              | tào zhuāng         | traje              | terno             
+  3 | tie                  | 领带              | lǐng dài           | corbata            | gravata           
+  4 | belt                 | 腰带              | yāo dài            | cinturón           | cinto             
+  5 | scarf                | 围巾              | wéi jīn            | bufanda            | lenço             
+  6 | gloves               | 手套              | shǒu tào           | guantes            | luvas             
+  7 | sandals              | 凉鞋              | liáng xié          | sandalias          | sandálias         
+  8 | sneakers             | 运动鞋             | yùn dòng xié       | zapatillas         | tênis             
+  9 | underwear            | 内衣              | nèi yī             | ropa interior      | roupa íntima      
+ 10 | pajamas              | 睡衣              | shuì yī            | pijama             | pijama            
+ 11 | uniform              | 制服              | zhì fú             | uniforme           | uniforme          
+ 12 | skirt                | 裙子              | qún zi             | falda              | saia              
+ 13 | blouse               | 衬衫              | chèn shān          | blusa              | blusa             
+ 14 | shorts               | 短裤              | duǎn kù            | pantalones cortos  | shorts            
+ 15 | hoodie               | 连帽衫             | lián mào shān      | sudadera con capuc | moletom com capuz 
+ 16 | raincoat             | 雨衣              | yǔ yī              | impermeable        | capa de chuva     
+ 17 | swimsuit             | 泳衣              | yǒng yī            | traje de baño      | maiô              
+ 18 | zipper               | 拉链              | lā liàn            | cremallera         | zíper             
+ 19 | sleeve               | 袖子              | xiù zi             | manga              | manga             
+ 20 | collar               | 衣领              | yī lǐng            | cuello             | colarinho         
+ 21 | fabric               | 面料              | miàn liào          | tela               | tecido            
+ 22 | business suit        | 西装              | xī zhuāng          | traje de negocios  | terno de negócio  
+ 23 | suit jacket          | 西装外套            | xī zhuāng wài tào  | chaqueta de traje  | paletó            
+ 24 | neck tie             | 领带              | lǐng dài           | corbata            | gravata           
+ 25 | tie a knot           | 打个结             | dǎ gè jié          | hacer un nudo      | dê um nó          
+ 26 | leather belt         | 皮带              | pí dài             | cinturón de cuero  | cinto de couro    
+ 27 | belt buckle          | 皮带扣             | pí dài kòu         | hebilla de cinturó | fivela de cinto   
+ 28 | winter scarf         | 冬季围巾            | dōng jì wéi jīn    | bufanda de inviern | lenço de inverno  
+ 29 | silk scarf           | 丝巾              | sī jīn             | pañuelo de seda    | lenço de seda     
+ 30 | winter gloves        | 冬季手套            | dōng jì shǒu tào   | guantes de inviern | luvas de inverno  
+ 31 | leather gloves       | 皮手套             | pí shǒu tào        | guantes de cuero   | luvas de couro    
+ 32 | beach sandals        | 沙滩凉鞋            | shā tān liáng xié  | sandalias de playa | sandálias de praia
+ 33 | flip sandals         | 凉鞋              | liáng xié          | sandalias con chan | sandálias flip    
+ 34 | running sneakers     | 跑步鞋             | pǎo bù xié         | zapatillas para co | tênis de corrida  
+ 35 | white sneakers       | 白色运动鞋           | bái sè yùn dòng xi | zapatillas blancas | tênis branco      
+ 36 | clean underwear      | 清洁内衣            | qīng jié nèi yī    | ropa interior limp | roupa íntima limpa
+ 37 | underwear drawer     | 内衣抽屉            | nèi yī chōu tì     | cajón de ropa inte | gaveta de roupas í
+ 38 | warm pajamas         | 温暖的睡衣           | wēn nuǎn de shuì y | pijamas calentitos | pijama quentinho  
+ 39 | pajamas party        | 睡衣派对            | shuì yī pài duì    | fiesta de pijamas  | festa do pijama   
+ 40 | school uniform       | 校服              | xiào fú            | uniforme escolar   | uniforme escolar  
+ 41 | uniform policy       | 统一政策            | tǒng yī zhèng cè   | política uniforme  | política uniforme 
+ 42 | long skirt           | 长裙              | zhǎng qún          | falda larga        | saia longa        
+ 43 | mini skirt           | 迷你裙             | mí nǐ qún          | minifalda          | minissaia         
+ 44 | silk blouse          | 丝绸衬衫            | sī chóu chèn shān  | blusa de seda      | blusa de seda     
+ 45 | white blouse         | 白色衬衫            | bái sè chèn shān   | blusa blanca       | blusa branca      
+ 46 | gym shorts           | 健身短裤            | jiàn shēn duǎn kù  | pantalones cortos  | shorts de ginástic
+ 47 | short shorts         | 短裤              | duǎn kù            | pantalones cortos  | shorts curtos     
+ 48 | warm hoodie          | 温暖连帽衫           | wēn nuǎn lián mào  | sudadera con capuc | moletom quentinho 
+ 49 | hoodie weather       | 连帽衫天气           | lián mào shān tiān | clima con capucha  | clima com capuz   
+ 50 | yellow raincoat      | 黄色雨衣            | huáng sè yǔ yī     | impermeable amaril | capa de chuva amar
+ 51 | raincoat hood        | 雨衣罩             | yǔ yī zhào         | capucha impermeabl | capa de chuva     
+ 52 | one piece swimsuit   | 连体泳衣            | lián tǐ yǒng yī    | traje de baño de u | Maiô de uma peça  
+ 53 | swimsuit season      | 泳装季节            | yǒng zhuāng jì jié | temporada de traje | temporada de maiô 
+ 54 | stuck zipper         | 拉链卡住            | lā liàn kǎ zhù     | cremallera atascad | zíper preso       
+ 55 | zipper pull          | 拉链头             | lā liàn tóu        | tirador de cremall | puxador de zíper  
+ 56 | long sleeve          | 长袖              | cháng xiù          | manga larga        | manga longa       
+ 57 | sleeve length        | 袖长              | xiù zhǎng          | largo de la manga  | comprimento da man
+ 58 | shirt collar         | 衬衫领             | chèn shān lǐng     | cuello de camisa   | gola da camisa    
+ 59 | collar button        | 领扣              | lǐng kòu           | botón del cuello   | botão de colarinho
+ 60 | soft fabric          | 柔软面料            | róu ruǎn miàn liào | tela suave         | tecido macio      
+ 61 | cotton fabric        | 棉织物             | mián zhī wù        | tejido de algodón  | tecido de algodão 

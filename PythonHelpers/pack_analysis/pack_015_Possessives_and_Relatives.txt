@@ -1,0 +1,65 @@
+PACK 15: Possessives & Relatives
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | my                   | 我的              | wǒ de              | mi                 | meu               
+  3 | your                 | 你的              | nǐ de              | su                 | seu               
+  4 | his                  | 他的              | tā de              | su                 | dele              
+  5 | its                  | 它的              | tā de              | su                 | seu               
+  6 | our                  | 我们的             | wǒ men de          | nuestro            | nosso             
+  7 | their                | 他们的             | tā men de          | su                 | deles             
+  8 | mine                 | 我的              | wǒ de              | mío                | meu               
+  9 | yours                | 你的              | nǐ de              | tuyo               | seu               
+ 10 | hers                 | 她的              | tā de              | suyo               | dela              
+ 11 | ours                 | 我们的             | wǒ men de          | nuestro            | nosso             
+ 12 | theirs               | 他们的             | tā men de          | suyo               | deles             
+ 13 | who                  | 谁               | shuí               | quién              | quem              
+ 14 | whom                 | 谁               | shuí               | a quien            | a quem            
+ 15 | whose                | 谁               | shuí               | cuyo               | cujo              
+ 16 | which                | 哪个              | nǎ ge              | cual               | qual              
+ 17 | what                 | 什么              | shén me            | qué                | o que             
+ 18 | whoever              | 谁               | shuí               | quien              | quem quer que seja
+ 19 | whichever            | 任何              | rèn hé             | cualquiera         | qualquer que seja 
+ 20 | somebody             | 某人              | mǒu rén            | alguien            | alguém            
+ 21 | everyone             | 每个人             | měi gè rén         | todos              | todos             
+ 22 | my name              | 我的名字            | wǒ de míng zì      | mi nombre          | o meu nome        
+ 23 | my house             | 我的房子            | wǒ de fáng zi      | mi casa            | minha casa        
+ 24 | your turn            | 轮到你了            | lún dào nǐ le      | tu turno           | sua vez           
+ 25 | your choice          | 你的选择            | nǐ de xuǎn zé      | tu elección        | sua escolha       
+ 26 | his name             | 他的名字            | tā de míng zì      | su nombre          | o nome dele       
+ 27 | his car              | 他的车             | tā de chē          | su auto            | o carro dele      
+ 28 | its time             | 它的时间            | tā de shí jiān     | su tiempo          | seu tempo         
+ 29 | its purpose          | 它的目的            | tā de mù dì        | su propósito       | seu propósito     
+ 30 | our team             | 我们的团队           | wǒ men de tuán duì | nuestro equipo     | nossa equipe      
+ 31 | our house            | 我们的房子           | wǒ men de fáng zi  | nuestra casa       | nossa casa        
+ 32 | their house          | 他们的房子           | tā men de fáng zi  | su casa            | a casa deles      
+ 33 | their idea           | 他们的想法           | tā men de xiǎng fǎ | su idea            | a ideia deles     
+ 34 | it is mine           | 这是我的            | zhè shì wǒ de      | es mio             | é meu             
+ 35 | this is mine         | 这是我的            | zhè shì wǒ de      | esto es mio        | isso é meu        
+ 36 | it is yours          | 这是你的            | zhè shì nǐ de      | es tuyo            | é seu             
+ 37 | this is yours        | 这是你的            | zhè shì nǐ de      | esto es tuyo       | este é seu        
+ 38 | this is hers         | 这是她的            | zhè shì tā de      | esto es de ella    | isso é dela       
+ 39 | hers not mine        | 她的不是我的          | tā de bú shì wǒ de | la suya no es mía  | o dela não é meu  
+ 40 | this is ours         | 这是我们的           | zhè shì wǒ men de  | esto es nuestro    | isso é nosso      
+ 41 | ours to keep         | 我们要保留的          | wǒ men yào bǎo liú | nuestro para mante | nosso para manter 
+ 42 | this is theirs       | 这是他们的           | zhè shì tā men de  | esto es de ellos   | isso é deles      
+ 43 | theirs alone         | 他们一个人的          | tā men yí gè rén d | solo de ellos      | só deles          
+ 44 | who is it            | 是谁              | shì shuí           | Quién es           | quem é            
+ 45 | who knows            | 谁知道             | shuí zhī dào       | quien sabe         | quem sabe         
+ 46 | to whom              | 给谁              | gěi shuí           | A quien            | para quem         
+ 47 | whom did you call    | 你给谁打电话          | nǐ gěi shuí dǎ dià | ¿A quién llamaste? | para quem você lig
+ 48 | whose is this        | 这是谁的            | zhè shì shéi de    | ¿de quién es esto? | de quem é isso    
+ 49 | whose turn           | 轮到谁了            | lún dào shuí le    | a quien le toca    | de quem é a vez   
+ 50 | which one            | 哪一个             | nǎ yí gè           | cuál               | qual deles        
+ 51 | which way            | 哪条路             | nǎ tiáo lù         | de que manera      | qual caminho      
+ 52 | what is it           | 这是什么            | zhè shì shén me    | ¿qué es?           | o que é           
+ 53 | what now             | 现在怎么办           | xiàn zài zěn me bà | ¿Y ahora qué?      | e agora           
+ 54 | whoever comes        | 无论谁来            | wú lùn shuí lái    | quienquiera que ve | quem quer que venh
+ 55 | whoever wants        | 谁想要             | shuí xiǎng yào     | quien quiera       | quem quiser       
+ 56 | whichever you choose | 无论你选择哪个         | wú lùn nǐ xuǎn zé  | lo que elijas      | o que você escolhe
+ 57 | whichever works      | 无论哪个有效          | wú lùn nǎ ge yǒu x | lo que funcione    | o que funcionar   
+ 58 | somebody help        | 有人帮忙            | yǒu rén bāng máng  | alguien ayuda      | alguém ajuda      
+ 59 | somebody called      | 有人打电话           | yǒu rén dǎ diàn hu | alguien llamó      | alguém ligou      
+ 60 | everyone knows       | 每个人都知道          | měi gè rén dōu zhī | todo el mundo sabe | todo mundo sabe   
+ 61 | everyone is here     | 大家都在这里          | dà jiā dōu zài zhè | todos están aquí   | todo mundo está aq

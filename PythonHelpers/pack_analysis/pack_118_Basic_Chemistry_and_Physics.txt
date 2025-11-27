@@ -1,0 +1,65 @@
+PACK 118: Basic Chemistry & Physics
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | reaction             | 反应              | fǎn yìng           | reacción           | reação            
+  3 | element              | 元素              | yuán sù            | elemento           | elemento          
+  4 | compound             | 化合物             | huà hé wù          | compuesto          | composto          
+  5 | molecule             | 分子              | fèn zǐ             | molécula           | molécula          
+  6 | atom                 | 原子              | yuán zi            | átomo              | átomo             
+  7 | force                | 力               | lì                 | fuerza             | força             
+  8 | motion               | 运动              | yùn dòng           | movimiento         | movimento         
+  9 | gravity              | 重力              | zhòng lì           | gravedad           | gravidade         
+ 10 | mass                 | 质量              | zhì liàng          | masa               | massa             
+ 11 | velocity             | 速度              | sù dù              | velocidad          | velocidade        
+ 12 | wave                 | 波               | bō                 | ola                | onda              
+ 13 | radiation            | 辐射              | fú shè             | radiación          | radiação          
+ 14 | electricity          | 电力              | diàn lì            | electricidad       | eletricidade      
+ 15 | magnetic             | 磁性              | cí xìng            | magnético          | magnético         
+ 16 | particle             | 粒子              | lì zi              | partícula          | partícula         
+ 17 | nuclear              | 核               | hé                 | nucleares          | nuclear           
+ 18 | formula              | 公式              | gōng shì           | fórmula            | fórmula           
+ 19 | pressure             | 压力              | yā lì              | presión            | pressão           
+ 20 | density              | 密度              | mì dù              | densidad           | densidade         
+ 21 | friction             | 摩擦              | mó cā              | fricción           | fricção           
+ 22 | chemical reaction    | 化学反应            | huà xué fǎn yìng   | reacción química   | reação química    
+ 23 | reaction time        | 反应时间            | fǎn yìng shí jiān  | tiempo de reacción | tempo de reação   
+ 24 | chemical element     | 化学元素            | huà xué yuán sù    | elemento químico   | elemento químico  
+ 25 | element symbol       | 元素符号            | yuán sù fú hào     | símbolo del elemen | símbolo do element
+ 26 | chemical compound    | 化合物             | huà hé wù          | compuesto químico  | composto químico  
+ 27 | compound word        | 复合词             | fù hé cí           | palabra compuesta  | palavra composta  
+ 28 | water molecule       | 水分子             | shuǐ fèn zi        | molécula de agua   | molécula de água  
+ 29 | molecule structure   | 分子结构            | fēn zǐ jié gòu     | estructura de la m | estrutura da moléc
+ 30 | split atom           | 分裂原子            | fēn liè yuán zi    | átomo dividido     | átomo dividido    
+ 31 | atom particle        | 原子粒子            | yuán zi lì zi      | partícula atómica  | partícula de átomo
+ 32 | physical force       | 体力              | tǐ lì              | fuerza física      | força física      
+ 33 | force of nature      | 自然之力            | zì rán zhī lì      | fuerza de la natur | força da natureza 
+ 34 | constant motion      | 持续运动            | chí xù yùn dòng    | movimiento constan | movimento constant
+ 35 | motion picture       | 电影              | diàn yǐng          | película           | filme             
+ 36 | force of gravity     | 重力              | zhòng lì           | fuerza de gravedad | força da gravidade
+ 37 | gravity pull         | 重力拉力            | zhòng lì lā lì     | atracción por grav | atração gravitacio
+ 38 | body mass            | 体重              | tǐ zhòng           | masa corporal      | massa corporal    
+ 39 | mass production      | 量产              | liàng chǎn         | producción en masa | produção em massa 
+ 40 | high velocity        | 高速              | gāo sù             | alta velocidad     | alta velocidade   
+ 41 | velocity measurement | 速度测量            | sù dù cè liáng     | medición de veloci | medição de velocid
+ 42 | sound wave           | 声波              | shēng bō           | onda sonora        | onda sonora       
+ 43 | wave energy          | 波浪能             | bō làng néng       | energía de las ola | energia das ondas 
+ 44 | solar radiation      | 太阳辐射            | tài yáng fú shè    | radiación solar    | radiação solar    
+ 45 | radiation exposure   | 辐射暴露            | fú shè bào lù      | exposición a la ra | exposição à radiaç
+ 46 | generate electricity | 发电              | fā diàn            | generar electricid | gerar eletricidade
+ 47 | electricity bill     | 电费单             | diàn fèi dān       | factura de electri | conta de luz      
+ 48 | magnetic field       | 磁场              | cí chǎng           | campo magnético    | campo magnético   
+ 49 | magnetic force       | 磁力              | cí lì              | fuerza magnética   | força magnética   
+ 50 | tiny particle        | 微小颗粒            | wēi xiǎo kē lì     | partícula diminuta | partícula minúscul
+ 51 | particle physics     | 粒子物理学           | lì zi wù lǐ xué    | física de partícul | física de partícul
+ 52 | nuclear energy       | 核能              | hé néng            | energía nuclear    | energia nuclear   
+ 53 | nuclear power        | 核电              | hé diàn            | energía nuclear    | energia nuclear   
+ 54 | chemical formula     | 化学式             | huà xué shì        | fórmula química    | fórmula química   
+ 55 | formula calculation  | 公式计算            | gōng shì jì suàn   | cálculo de fórmula | cálculo da fórmula
+ 56 | air pressure         | 气压              | qì yā              | presión del aire   | pressão do ar     
+ 57 | pressure drop        | 压降              | yā jiàng           | caída de presión   | queda de pressão  
+ 58 | population density   | 人口密度            | rén kǒu mì dù      | densidad de poblac | densidade populaci
+ 59 | density level        | 密度水平            | mì dù shuǐ píng    | nivel de densidad  | nível de densidade
+ 60 | reduce friction      | 减少摩擦            | jiǎn shǎo mó cā    | reducir la fricció | reduzir o atrito  
+ 61 | friction between     | 之间的摩擦力          | zhī jiān de mó cā  | fricción entre     | atrito entre      

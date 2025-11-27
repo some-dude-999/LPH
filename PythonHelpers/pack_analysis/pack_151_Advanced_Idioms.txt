@@ -1,0 +1,50 @@
+PACK 151: Advanced Idioms
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | ball is in your cour | 球在你的球场上         | qiú zài nǐ de qiú  | la pelota está en  | a bola está do seu
+  3 | bite the bullet      | 咬紧牙关            | yǎo jǐn yá guān    | muerde la bala     | morda a bala      
+  4 | burn the midnight oi | 开夜车             | kāi yè chē         | quemar el aceite d | queimar o óleo da 
+  5 | cut to the chase     | 切入正题            | qiē rù zhèng tí    | vayamos al grano   | direto ao assunto 
+  6 | go the extra mile    | 加倍努力            | jiā bèi nǔ lì      | haz un esfuerzo ad | vá além           
+  7 | hit the ground runni | 立即行动            | lì jí xíng dòng    | comience a funcion | comece a correr   
+  8 | leave no stone untur | 千方百计            | qiān fāng bǎi jì   | No dejes piedra si | não deixe pedra so
+  9 | read between the lin | 阅读字里行间          | yuè dú zì lǐ háng  | leer entre líneas  | leia nas entrelinh
+ 10 | take with a grain of | 持保留态度           | chí bǎo liú tài dù | tómalo con cautela | leve com cautela  
+ 11 | think outside the bo | 跳出框框思考          | tiào chū kuāng kuā | piensa fuera de lo | pense fora da caix
+ 12 | tip of the iceberg   | 冰山一角            | bīng shān yī jiǎo  | punta del iceberg  | ponta do iceberg  
+ 13 | back to square one   | 回到第一个           | huí dào dì yí gè   | volver al punto de | de volta à estaca 
+ 14 | raise the bar        | 提高标准            | tí gāo biāo zhǔn   | sube el listón     | elevar a fasquia  
+ 15 | at the end of the da | 归根结底            | guī gēn jié dǐ     | al final del día   | no final do dia   
+ 16 | see eye to eye       | 意见一致            | yì jiàn yí zhì     | estamos de acuerdo | estamos de acordo 
+ 17 | the ball is in your  | 现在球在你的场上        | xiàn zài qiú zài n | la pelota está en  | a bola está do seu
+ 18 | ball is in your cour | 球在你的球场上，所以决定    | qiú zài nǐ de qiú  | la pelota está en  | a bola está do seu
+ 19 | just bite the bullet | 硬着头皮            | yìng zhe tóu pí    | simplemente muerde | apenas morda a bal
+ 20 | had to bite the bull | 只好硬着头皮          | zhǐ hǎo yìng zhe t | Tuve que hacer de  | tive que aguentar 
+ 21 | burn the midnight oi | 熬夜学习            | áo yè xué xí       | quemar el aceite d | queime o óleo da m
+ 22 | I burn the midnight  | 我开夜车            | wǒ kāi yè chē      | Me quemo hasta med | Eu queimo o óleo d
+ 23 | let me cut to the ch | 让我开门见山          | ràng wǒ kāi mén ji | déjame ir al grano | deixe-me ir direto
+ 24 | cut to the chase ple | 请切入正题           | qǐng qiē rù zhèng  | vayamos al grano p | vá direto ao assun
+ 25 | willing to go the ex | 愿意加倍努力          | yuàn yì jiā bèi nǔ | dispuesto a hacer  | disposto a ir além
+ 26 | always go the extra  | 永远加倍努力          | yǒng yuǎn jiā bèi  | siempre haz un esf | sempre vá além    
+ 27 | ready to hit the gro | 准备好开始运行         | zhǔn bèi hǎo kāi s | listo para comenza | pronto para começa
+ 28 | hit the ground runni | 今天开始行动          | jīn tiān kāi shǐ x | comience a trabaja | comece a correr ho
+ 29 | we leave no stone un | 我们不遗余力          | wǒ men bù yí yú lì | no dejamos piedra  | não deixamos pedra
+ 30 | leave no stone untur | 千方百计寻找          | qiān fāng bǎi jì x | No dejes piedra si | não deixe pedra so
+ 31 | you must read betwee | 你必须阅读字里行间       | nǐ bì xū yuè dú zì | debes leer entre l | você deve ler nas 
+ 32 | read between the lin | 仔细阅读字里行间        | zǐ xì yuè dú zì lǐ | lee atentamente en | leia as entrelinha
+ 33 | take with a grain of | 始终持保留态度         | shǐ zhōng chí bǎo  | tómalo siempre con | leve sempre com ca
+ 34 | take with a grain of | 不过，请持保留态度       | bù guò， qǐng chí b | Aunque tómalo con  | leve com cautela  
+ 35 | need to think outsid | 需要跳出框框思考        | xū yào tiào chū ku | Necesito pensar fu | preciso pensar for
+ 36 | think outside the bo | 更多跳出框框思考        | gèng duō tiào chū  | piensa más fuera d | pense mais fora da
+ 37 | just the tip of the  | 只是冰山一角          | zhǐ shì bīng shān  | sólo la punta del  | apenas a ponta do 
+ 38 | tip of the iceberg r | 确实是冰山一角         | què shí shì bīng s | realmente la punta | ponta do iceberg r
+ 39 | back to square one a | 再次回到原点          | zài cì huí dào yuá | volver al punto de | de volta à estaca 
+ 40 | we are back to squar | 我们又回到了原点        | wǒ men yòu huí dào | volvemos al punto  | voltamos à estaca 
+ 41 | raise the bar higher | 提高标准            | tí gāo biāo zhǔn   | eleva el listón má | elevar a fasquia m
+ 42 | you raise the bar    | 你提高了标准          | nǐ tí gāo le biāo  | subes el listón    | você eleva a fasqu
+ 43 | at the end of the da | 但归根结底           | dàn guī gēn jié dǐ | Aunque al final de | no final do dia   
+ 44 | at the end of the da | 归根结底，它          | guī gēn jié dǐ， tā | al final del día   | no final das conta
+ 45 | we see eye to eye on | 我们意见一致          | wǒ men yì jiàn yí  | estamos de acuerdo | estamos de acordo 
+ 46 | don't see eye to eye | 意见不一致           | yì jiàn bù yī zhì  | no están de acuerd | não vejo olho no o

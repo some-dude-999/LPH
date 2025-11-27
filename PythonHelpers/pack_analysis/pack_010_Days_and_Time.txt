@@ -1,0 +1,65 @@
+PACK 10: Days & Time
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | Monday               | 周一              | zhōu yī            | Lunes              | Segunda-feira     
+  3 | Tuesday              | 周二              | zhōu èr            | Martes             | Terça-feira       
+  4 | Wednesday            | 周三              | zhōu sān           | Miércoles          | Quarta-feira      
+  5 | Thursday             | 周四              | zhōu sì            | Jueves             | Quinta-feira      
+  6 | Friday               | 周五              | zhōu wǔ            | Viernes            | Sexta-feira       
+  7 | Saturday             | 周六              | zhōu liù           | Sábado             | Sábado            
+  8 | Sunday               | 周日              | zhōu rì            | Domingo            | Domingo           
+  9 | today                | 今天              | jīn tiān           | hoy                | hoje              
+ 10 | tomorrow             | 明天              | míng tiān          | mañana             | amanhã            
+ 11 | yesterday            | 昨天              | zuó tiān           | ayer               | ontem             
+ 12 | week                 | 周               | zhōu               | semana             | semana            
+ 13 | weekend              | 周末              | zhōu mò            | fin de semana      | fim de semana     
+ 14 | morning              | 早晨              | zǎo chén           | mañana             | manhã             
+ 15 | afternoon            | 下午              | xià wǔ             | tarde              | tarde             
+ 16 | evening              | 晚上              | wǎn shàng          | noche              | noite             
+ 17 | tonight              | 今晚              | jīn wǎn            | esta noche         | essa noite        
+ 18 | day                  | 天               | tiān               | día                | dia               
+ 19 | hour                 | 小时              | xiǎo shí           | hora               | hora              
+ 20 | minute               | 分钟              | fēn zhōng          | minuto             | minuto            
+ 21 | second               | 秒               | miǎo               | segundo            | segundo           
+ 22 | Monday morning       | 周一早上            | zhōu yī zǎo shàng  | lunes por la mañan | Segunda de manhã  
+ 23 | every Monday         | 每周一             | měi zhōu yī        | todos los lunes    | toda segunda-feira
+ 24 | Tuesday night        | 周二晚上            | zhōu èr wǎn shàng  | martes por la noch | Terça-feira à noit
+ 25 | next Tuesday         | 下周二             | xià zhōu èr        | el martes próximo  | próxima terça-feir
+ 26 | Wednesday afternoon  | 周三下午            | zhōu sān xià wǔ    | miércoles por la t | Quarta-feira à tar
+ 27 | last Wednesday       | 上周三             | shàng zhōu sān     | miércoles pasado   | última quarta-feir
+ 28 | Thursday evening     | 周四晚上            | zhōu sì wǎn shàng  | jueves por la tard | Quinta-feira à noi
+ 29 | this Thursday        | 这周四             | zhè zhōu sì        | este jueves        | esta quinta-feira 
+ 30 | Friday night         | 周五晚上            | zhōu wǔ wǎn shàng  | viernes por la noc | Sexta à noite     
+ 31 | every Friday         | 每周五             | měi zhōu wǔ        | todos los viernes  | toda sexta-feira  
+ 32 | Saturday morning     | 周六早上            | zhōu liù zǎo shàng | Sábado por la maña | Sábado de manhã   
+ 33 | on Saturday          | 周六              | zhōu liù           | en sábado          | no sábado         
+ 34 | Sunday brunch        | 周日早午餐           | zhōu rì zǎo wǔ cān | brunch dominical   | Almoço de domingo 
+ 35 | every Sunday         | 每周日             | měi zhōu rì        | todos los domingos | todo domingo      
+ 36 | today is good        | 今天很好            | jīn tiān hěn hǎo   | hoy es bueno       | hoje está bom     
+ 37 | later today          | 今天晚些时候          | jīn tiān wǎn xiē s | más tarde hoy      | mais tarde hoje   
+ 38 | tomorrow morning     | 明天早上            | míng tiān zǎo shàn | mañana por la maña | amanhã de manhã   
+ 39 | see you tomorrow     | 明天见             | míng tiān jiàn     | nos vemos mañana   | vejo você amanhã  
+ 40 | yesterday was great  | 昨天很棒            | zuó tiān hěn bàng  | ayer fue genial    | ontem foi ótimo   
+ 41 | since yesterday      | 从昨天开始           | cóng zuó tiān kāi  | desde ayer         | desde ontem       
+ 42 | this week            | 本周              | běn zhōu           | esta semana        | essa semana       
+ 43 | next week            | 下周              | xià zhōu           | la próxima semana  | próxima semana    
+ 44 | this weekend         | 这个周末            | zhè ge zhōu mò     | este fin de semana | este fim de semana
+ 45 | long weekend         | 长周末             | zhǎng zhōu mò      | fin de semana larg | fim de semana prol
+ 46 | early morning        | 清晨              | qīng chén          | madrugada          | de manhã cedo     
+ 47 | morning coffee       | 早晨咖啡            | zǎo chén kā fēi    | café de la mañana  | café da manhã     
+ 48 | this afternoon       | 今天下午            | jīn tiān xià wǔ    | esta tarde         | esta tarde        
+ 49 | afternoon nap        | 午睡              | wǔ shuì            | siesta por la tard | cochilo da tarde  
+ 50 | quiet evening        | 安静的夜晚           | ān jìng de yè wǎn  | noche tranquila    | noite tranquila   
+ 51 | evening news         | 晚间新闻            | wǎn jiān xīn wén   | noticias de la noc | notícias da noite 
+ 52 | tonight we go        | 今晚我们走           | jīn wǎn wǒ men zǒu | esta noche vamos   | esta noite nós vam
+ 53 | see you tonight      | 今晚见             | jīn wǎn jiàn       | nos vemos esta noc | vejo você hoje à n
+ 54 | all day long         | 整天              | zhěng tiān         | todo el dia        | o dia todo        
+ 55 | day off              | 休息日             | xiū xī rì          | día de descanso    | folga             
+ 56 | one hour             | 一小时             | yī xiǎo shí        | una hora           | uma hora          
+ 57 | half hour            | 半小时             | bàn xiǎo shí       | media hora         | meia hora         
+ 58 | one minute           | 一分钟             | yì fēn zhōng       | un minuto          | um minuto         
+ 59 | just a minute        | 等一下             | děng yí xià        | Espera un momento  | só um minuto      
+ 60 | one second           | 一秒钟             | yī miǎo zhōng      | un segundo         | um segundo        
+ 61 | second chance        | 第二次机会           | dì èr cì jī huì    | segunda oportunida | segunda chance    

@@ -1,0 +1,65 @@
+PACK 122: Academic Writing
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | thesis               | 论文              | lùn wén            | tesis              | tese              
+  3 | dissertation         | 论文              | lùn wén            | disertación        | dissertação       
+  4 | analyze              | 分析              | fēn xī             | analizar           | analisar          
+  5 | analysis             | 分析              | fēn xī             | análisis           | análise           
+  6 | abstract             | 摘要              | zhāi yào           | resumen            | resumo            
+  7 | introduction         | 简介              | jiǎn jiè           | introducción       | introdução        
+  8 | methodology          | 方法论             | fāng fǎ lùn        | metodología        | metodologia       
+  9 | conclusion           | 结论              | jié lùn            | conclusión         | conclusão         
+ 10 | reference            | 参考              | cān kǎo            | referencia         | referência        
+ 11 | citation             | 引文              | yǐn wén            | cita               | citação           
+ 12 | bibliography         | 参考书目            | cān kǎo shū mù     | bibliografía       | bibliografia      
+ 13 | plagiarism           | 抄袭              | chāo xí            | plagio             | plágio            
+ 14 | paraphrase           | 释义              | shì yì             | paráfrasis         | paráfrase         
+ 15 | synthesize           | 合成              | hé chéng           | sintetizar         | sintetizar        
+ 16 | critique             | 批评              | pī píng            | crítica            | crítica           
+ 17 | literature           | 文学              | wén xué            | literatura         | literatura        
+ 18 | review               | 评论              | píng lùn           | revisión           | revisão           
+ 19 | appendix             | 附录              | fù lù              | apéndice           | apêndice          
+ 20 | footnote             | 脚注              | jiǎo zhù           | nota al pie        | nota de rodapé    
+ 21 | annotation           | 注释              | zhù shì            | anotación          | anotação          
+ 22 | thesis statement     | 论文陈述            | lùn wén chén shù   | declaración de tes | declaração de tese
+ 23 | write thesis         | 写论文             | xiě lùn wén        | escribir tesis     | escrever tese     
+ 24 | doctoral dissertatio | 博士论文            | bó shì lùn wén     | tesis doctoral     | dissertação de dou
+ 25 | dissertation defense | 论文答辩            | lùn wén dá biàn    | defensa de tesis   | defesa de disserta
+ 26 | analyze data         | 分析数据            | fēn xī shù jù      | analizar datos     | analisar dados    
+ 27 | analyze carefully    | 仔细分析            | zǐ xì fēn xī       | analizar cuidadosa | analise com atençã
+ 28 | data analysis        | 数据分析            | shù jù fēn xī      | análisis de datos  | análise de dados  
+ 29 | critical analysis    | 批判性分析           | pī pàn xìng fēn xī | análisis crítico   | análise crítica   
+ 30 | paper abstract       | 论文摘要            | lùn wén zhāi yào   | resumen del artícu | resumo do artigo  
+ 31 | abstract summary     | 摘要摘要            | zhāi yào zhāi yào  | resumen abstracto  | resumo abstrato   
+ 32 | brief introduction   | 简介              | jiǎn jiè           | breve introducción | breve introdução  
+ 33 | introduction paragra | 引言段             | yǐn yán duàn       | párrafo de introdu | parágrafo de intro
+ 34 | research methodology | 研究方法            | yán jiū fāng fǎ    | metodología de la  | metodologia de pes
+ 35 | methodology section  | 方法论部分           | fāng fǎ lùn bù fèn | sección de metodol | seção de metodolog
+ 36 | draw conclusion      | 得出结论            | dé chū jié lùn     | sacar una conclusi | tirar uma conclusã
+ 37 | in conclusion        | 总之              | zǒng zhī           | en conclusión      | em conclusão      
+ 38 | reference list       | 参考文献列表          | cān kǎo wén xiàn l | lista de referenci | lista de referênci
+ 39 | reference material   | 参考资料            | cān kǎo zī liào    | material de refere | material de referê
+ 40 | proper citation      | 正确引用            | zhèng què yǐn yòng | cita adecuada      | citação adequada  
+ 41 | citation format      | 引文格式            | yǐn wén gé shì     | formato de cita    | formato de citação
+ 42 | annotated bibliograp | 带注释的参考书目        | dài zhù shì de cān | bibliografía comen | bibliografia comen
+ 43 | bibliography entry   | 参考书目条目          | cān kǎo shū mù tiá | entrada de bibliog | entrada bibliográf
+ 44 | avoid plagiarism     | 避免抄袭            | bì miǎn chāo xí    | evitar el plagio   | evite o plágio    
+ 45 | plagiarism check     | 抄袭检查            | chāo xí jiǎn chá   | control de plagio  | verificação de plá
+ 46 | paraphrase correctly | 正确解释            | zhèng què jiě shì  | parafrasear correc | parafraseando corr
+ 47 | paraphrase text      | 释义文字            | shì yì wén zì      | parafrasear el tex | parafrasear texto 
+ 48 | synthesize informati | 综合信息            | zōng hé xìn xī     | sintetizar informa | sintetizar informa
+ 49 | synthesize ideas     | 综合想法            | zōng hé xiǎng fǎ   | sintetizar ideas   | sintetizar ideias 
+ 50 | critique paper       | 评论文章            | píng lùn wén zhāng | artículo de crític | artigo de crítica 
+ 51 | literary critique    | 文学评论            | wén xué píng lùn   | crítica literaria  | crítica literária 
+ 52 | literature review    | 文献综述            | wén xiàn zōng shù  | revisión de la lit | revisão de literat
+ 53 | classic literature   | 经典文学            | jīng diǎn wén xué  | literatura clásica | literatura clássic
+ 54 | peer review          | 同行评审            | tóng háng píng shě | revisión por pares | revisão por pares 
+ 55 | write review         | 写评论             | xiě píng lùn       | escribir reseña    | escrever comentári
+ 56 | include appendix     | 包括附录            | bāo kuò fù lù      | incluir apéndice   | incluir apêndice  
+ 57 | appendix section     | 附录部分            | fù lù bù fèn       | sección del apéndi | seção de apêndice 
+ 58 | add footnote         | 添加脚注            | tiān jiā jiǎo zhù  | añadir nota a pie  | adicionar nota de 
+ 59 | footnote reference   | 脚注参考            | jiǎo zhù cān kǎo   | referencia de nota | referência de nota
+ 60 | text annotation      | 文字注释            | wén zì zhù shì     | anotación de texto | anotação de texto 
+ 61 | annotation tool      | 注释工具            | zhù shì gōng jù    | herramienta de ano | ferramenta de anot

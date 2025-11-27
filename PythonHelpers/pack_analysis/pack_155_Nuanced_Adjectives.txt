@@ -1,0 +1,65 @@
+PACK 155: Nuanced Adjectives
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | meticulous           | 细致              | xì zhì             | meticuloso         | meticuloso        
+  3 | robust               | 坚固              | jiān gù            | robusto            | robusto           
+  4 | viable               | 可行              | kě xíng            | viable             | viável            
+  5 | pragmatic            | 务实              | wù shí             | pragmático         | pragmático        
+  6 | pivotal              | 关键              | guān jiàn          | fundamental        | fundamental       
+  7 | paramount            | 至高无上            | zhì gāo wú shàng   | primordial         | primordial        
+  8 | seminal              | 开创性的            | kāi chuàng xìng de | fundamental        | fundamental       
+  9 | prolific             | 多产              | duō chǎn           | prolífico          | prolífico         
+ 10 | redundant            | 多余              | duō yú             | redundante         | redundante        
+ 11 | obsolete             | 已过时             | yǐ guò shí         | obsoleto           | obsoleto          
+ 12 | ambivalent           | 矛盾              | máo dùn            | ambivalente        | ambivalente       
+ 13 | volatile             | 挥发性             | huī fā xìng        | volátil            | volátil           
+ 14 | tangible             | 有形              | yǒu xíng           | tangibles          | tangível          
+ 15 | intangible           | 无形              | wú xíng            | intangibles        | intangível        
+ 16 | unprecedented        | 史无前例            | shǐ wú qián lì     | sin precedentes    | sem precedentes   
+ 17 | ubiquitous           | 无处不在            | wú chǔ bù zài      | omnipresente       | onipresente       
+ 18 | nuanced              | 细致入微            | xì zhì rù wēi      | matizado           | matizado          
+ 19 | esoteric             | 深奥              | shēn ào            | esotérico          | esotérico         
+ 20 | ephemeral            | 短暂的             | duǎn zàn de        | efímero            | efêmero           
+ 21 | arduous              | 艰巨              | jiān jù            | arduo              | árduo             
+ 22 | meticulous attention | 细致的关注           | xì zhì de guān zhù | atención meticulos | atenção meticulosa
+ 23 | meticulous planning  | 精心策划            | jīng xīn cè huà    | planificación meti | planejamento metic
+ 24 | robust system        | 强大的系统           | qiáng dà de xì tǒn | sistema robusto    | sistema robusto   
+ 25 | robust health        | 身体健康            | shēn tǐ jiàn kāng  | salud sólida       | saúde robusta     
+ 26 | viable option        | 可行的选择           | kě xíng de xuǎn zé | opción viable      | opção viável      
+ 27 | viable solution      | 可行的解决方案         | kě xíng de jiě jué | solución viable    | solução viável    
+ 28 | pragmatic approach   | 务实的态度           | wù shí de tài dù   | enfoque pragmático | abordagem pragmáti
+ 29 | pragmatic decision   | 务实的决定           | wù shí de jué dìng | decisión pragmátic | decisão pragmática
+ 30 | pivotal role         | 关键作用            | guān jiàn zuò yòng | papel fundamental  | papel fundamental 
+ 31 | pivotal moment       | 关键时刻            | guān jiàn shí kè   | momento crucial    | momento crucial   
+ 32 | paramount importance | 最重要             | zuì zhòng yào      | importancia primor | suma importância  
+ 33 | paramount concern    | 最关心的问题          | zuì guān xīn de wè | preocupación primo | preocupação primor
+ 34 | seminal work         | 开创性的工作          | kāi chuàng xìng de | trabajo fundamenta | trabalho seminal  
+ 35 | seminal paper        | 开创性论文           | kāi chuàng xìng lù | artículo fundament | papel seminal     
+ 36 | prolific writer      | 多产作家            | duō chǎn zuò jiā   | escritor prolífico | escritor prolífico
+ 37 | prolific output      | 多产的输出           | duō chǎn de shū ch | producción prolífi | produção prolífica
+ 38 | redundant informatio | 冗余信息            | rǒng yú xìn xī     | información redund | informações redund
+ 39 | made redundant       | 变得多余            | biàn dé duō yú     | despedido          | tornado redundante
+ 40 | obsolete technology  | 过时的技术           | guò shí de jì shù  | tecnología obsolet | tecnologia obsolet
+ 41 | become obsolete      | 变得过时            | biàn dé guò shí    | quedar obsoleto    | tornar-se obsoleto
+ 42 | ambivalent about     | 对               | duì                | ambivalente sobre  | ambivalente sobre 
+ 43 | ambivalent feelings  | 感到矛盾矛盾的感情       | gǎn dào máo dùn má | sentimientos ambiv | sentimentos ambiva
+ 44 | volatile market      | 波动的市场           | bō dòng de shì chǎ | mercado volátil    | mercado volátil   
+ 45 | volatile situation   | 局势动荡            | jú shì dòng dàng   | situación volátil  | situação volátil  
+ 46 | tangible results     | 切实成果            | qiè shí chéng guǒ  | resultados tangibl | resultados tangíve
+ 47 | tangible evidence    | 有形证据            | yǒu xíng zhèng jù  | evidencia tangible | provas tangíveis  
+ 48 | intangible assets    | 无形资产            | wú xíng zī chǎn    | activos intangible | ativos intangíveis
+ 49 | intangible benefits  | 无形效益            | wú xíng xiào yì    | beneficios intangi | benefícios intangí
+ 50 | unprecedented growth | 前所未有的增长         | qián suǒ wèi yǒu d | crecimiento sin pr | crescimento sem pr
+ 51 | unprecedented event  | 史无前例的事件         | shǐ wú qián lì de  | evento sin precede | evento inédito    
+ 52 | ubiquitous presence  | 无处不在            | wú chǔ bù zài      | presencia ubicua   | presença onipresen
+ 53 | ubiquitous technolog | 无处不在的技术         | wú chǔ bù zài de j | tecnología ubicua  | tecnologia onipres
+ 54 | nuanced understandin | 细致入微的理解         | xì zhì rù wēi de l | comprensión matiza | compreensão difere
+ 55 | nuanced approach     | 细致入微的方法         | xì zhì rù wēi de f | enfoque matizado   | abordagem diferenc
+ 56 | esoteric knowledge   | 深奥知识            | shēn ào zhī shí    | conocimiento esoté | conhecimento esoté
+ 57 | esoteric subject     | 深奥的主题           | shēn ào de zhǔ tí  | tema esotérico     | assunto esotérico 
+ 58 | ephemeral nature     | 短暂的本质           | duǎn zàn de běn zh | naturaleza efímera | natureza efêmera  
+ 59 | ephemeral moment     | 短暂的时刻           | duǎn zàn de shí kè | momento efímero    | momento efêmero   
+ 60 | arduous task         | 任务艰巨            | rèn wù jiān jù     | ardua tarea        | tarefa árdua      
+ 61 | arduous journey      | 艰辛的旅程           | jiān xīn de lǚ ché | viaje arduo        | jornada árdua     

@@ -1,0 +1,65 @@
+PACK 12: Family
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | mother               | 母亲              | mǔ qīn             | madre              | mãe               
+  3 | father               | 父亲              | fù qīn             | padre              | pai               
+  4 | mom                  | 妈妈              | mā mā              | mamá               | mãe               
+  5 | dad                  | 爸爸              | bà bà              | papá               | pai               
+  6 | sister               | 姐姐              | jiě jiě            | hermana            | irmã              
+  7 | brother              | 兄弟              | xiōng dì           | hermano            | irmão             
+  8 | son                  | 儿子              | ér zi              | hijo               | filho             
+  9 | daughter             | 女儿              | nǚ ér              | hija               | filha             
+ 10 | grandmother          | 祖母              | zǔ mǔ              | abuela             | avó               
+ 11 | grandfather          | 祖父              | zǔ fù              | abuelo             | avô               
+ 12 | aunt                 | 阿姨              | ā yí               | tía                | tia               
+ 13 | uncle                | 叔叔              | shū shū            | tío                | tio               
+ 14 | cousin               | 表哥              | biǎo gē            | primo              | primo             
+ 15 | husband              | 丈夫              | zhàng fū           | marido             | marido            
+ 16 | wife                 | 妻子              | qī zǐ              | esposa             | esposa            
+ 17 | parents              | 父母              | fù mǔ              | padres             | pais              
+ 18 | children             | 孩子们             | hái zi men         | niños              | crianças          
+ 19 | baby                 | 婴儿              | yīng ér            | bebé               | bebê              
+ 20 | family               | 家庭              | jiā tíng           | familia            | família           
+ 21 | relative             | 亲戚              | qīn qī             | pariente           | parente           
+ 22 | my mother            | 我的母亲            | wǒ de mǔ qīn       | mi madre           | minha mãe         
+ 23 | mother knows best    | 妈妈最了解           | mā mā zuì liǎo jiě | madre sabe mejor   | mãe sabe melhor   
+ 24 | my father            | 我的父亲            | wǒ de fù qīn       | mi padre           | meu pai           
+ 25 | father figure        | 父亲形象            | fù qīn xíng xiàng  | figura paterna     | figura paterna    
+ 26 | hi mom               | 嗨妈妈             | hāi mā mā          | hola mamá          | oi mãe            
+ 27 | mom and dad          | 爸爸妈妈            | bà bà mā mā        | mamá y papá        | mamãe e papai     
+ 28 | hey dad              | 嘿爸爸             | hēi bà bà          | hola papa          | ei pai            
+ 29 | dad jokes            | 爸爸笑话            | bà bà xiào huà     | chistes de papá    | piadas do pai     
+ 30 | little sister        | 小妹妹             | xiǎo mèi mèi       | hermana menor      | irmãzinha         
+ 31 | big sister           | 姐姐              | jiě jiě            | hermana mayor      | irmã mais velha   
+ 32 | older brother        | 哥哥              | gē gē              | hermano mayor      | irmão mais velho  
+ 33 | little brother       | 小兄弟             | xiǎo xiōng dì      | hermano menor      | irmãozinho        
+ 34 | my son               | 我的儿子            | wǒ de ér zi        | mi hijo            | meu filho         
+ 35 | like father like son | 有其父必有其子         | yǒu qí fù bì yǒu q | como padre tanto h | tal pai tal filho 
+ 36 | my daughter          | 我的女儿            | wǒ de nǚ ér        | mi hija            | minha filha       
+ 37 | daughter of mine     | 我的女儿            | wǒ de nǚ ér        | hija mía           | filha minha       
+ 38 | dear grandmother     | 亲爱的奶奶           | qīn ài de nǎi nǎi  | querida abuela     | querida avó       
+ 39 | grandmother's house  | 祖母的房子           | zǔ mǔ de fáng zi   | casa de la abuela  | casa da avó       
+ 40 | dear grandfather     | 亲爱的祖父           | qīn ài de zǔ fù    | querido abuelo     | querido avô       
+ 41 | grandfather clock    | 祖父钟             | zǔ fù zhōng        | reloj de pie       | relógio de pêndulo
+ 42 | aunt mary            | 玛丽阿姨            | mǎ lì ā yí         | tia maria          | tia Maria         
+ 43 | my aunt              | 我的阿姨            | wǒ de ā yí         | mi tia             | minha tia         
+ 44 | uncle bob            | 鲍勃叔叔            | bào bó shū shū     | tio bob            | tio bob           
+ 45 | my uncle             | 我叔叔             | wǒ shū shū         | mi tio             | meu tio           
+ 46 | my cousin            | 我的表弟            | wǒ de biǎo dì      | mi prima           | meu primo         
+ 47 | cousin once removed  | 远房表亲            | yuǎn fáng biǎo qīn | primo segundo      | primo de segundo g
+ 48 | my husband           | 我的丈夫            | wǒ de zhàng fū     | mi marido          | meu marido        
+ 49 | husband and wife     | 丈夫和妻子           | zhàng fū hé qī zǐ  | marido y mujer     | marido e mulher   
+ 50 | my wife              | 我的妻子            | wǒ de qī zǐ        | mi esposa          | minha esposa      
+ 51 | wife and kids        | 妻子和孩子           | qī zǐ hé hái zi    | esposa e hijos     | esposa e filhos   
+ 52 | my parents           | 我的父母            | wǒ de fù mǔ        | mis padres         | meus pais         
+ 53 | parents house        | 父母的房子           | fù mǔ de fáng zi   | casa de los padres | casa dos pais     
+ 54 | the children         | 孩子们             | hái zi men         | los niños          | as crianças       
+ 55 | young children       | 年幼的孩子           | nián yòu de hái zi | niños pequeños     | crianças pequenas 
+ 56 | new baby             | 新宝宝             | xīn bǎo bǎo        | nuevo bebe         | novo bebê         
+ 57 | baby shower          | 婴儿送礼会           | yīng ér sòng lǐ hu | fiesta de bienveni | chá de bebê       
+ 58 | my family            | 我的家人            | wǒ de jiā rén      | Mi familia         | minha família     
+ 59 | family dinner        | 家庭晚餐            | jiā tíng wǎn cān   | cena familiar      | jantar em família 
+ 60 | close relative       | 近亲              | jìn qīn            | pariente cercano   | parente próximo   
+ 61 | distant relative     | 远房亲戚            | yuǎn fáng qīn qī   | pariente lejano    | parente distante  

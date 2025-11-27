@@ -1,0 +1,65 @@
+PACK 21: Essential Verbs: Daily Actions
+================================================================================
+
+Row | English | Chinese | Pinyin | Spanish | Portuguese
+--------------------------------------------------------------------------------
+  2 | eat                  | 吃               | chī                | comer              | comer             
+  3 | ate                  | 吃了              | chī le             | comió              | comi              
+  4 | drink                | 喝               | hē                 | beber              | beber             
+  5 | drank                | 喝了              | hē le              | bebí               | bebeu             
+  6 | sleep                | 睡觉              | shuì jiào          | dormir             | dormir            
+  7 | slept                | 睡了              | shuì le            | dormido            | dormi             
+  8 | wake                 | 唤醒              | huàn xǐng          | despertar          | acordar           
+  9 | woke                 | 醒来              | xǐng lái           | desperté           | acordei           
+ 10 | walk                 | 步行              | bù xíng            | caminar            | caminhar          
+ 11 | sit                  | 坐               | zuò                | sentarse           | sente             
+ 12 | sat                  | 坐               | zuò                | se sentó           | sentou            
+ 13 | stand                | 站               | zhàn               | estar de pie       | ficar             
+ 14 | stood                | 站着              | zhàn zhe           | estaba de pie      | ficou             
+ 15 | open                 | 打开              | dǎ kāi             | abierto            | abrir             
+ 16 | close                | 关闭              | guān bì            | cerrar             | fechar            
+ 17 | start                | 开始              | kāi shǐ            | empezar            | começar           
+ 18 | stop                 | 停止              | tíng zhǐ           | detener            | parar             
+ 19 | wait                 | 等等              | děng děng          | espera             | espere            
+ 20 | lie                  | 谎言              | huǎng yán          | mentira            | mentira           
+ 21 | relax                | 放松              | fàng sōng          | relajarse          | relaxe            
+ 22 | eat well             | 吃得好             | chī dé hǎo         | comer bien         | coma bem          
+ 23 | eat dinner           | 吃晚饭             | chī wǎn fàn        | cenar              | jantar            
+ 24 | I ate it             | 我吃了             | wǒ chī le          | Me lo comí         | Eu comi           
+ 25 | ate lunch            | 吃了午饭            | chī le wǔ fàn      | almorzó            | almocei           
+ 26 | drink water          | 喝水              | hē shuǐ            | beber agua         | beba água         
+ 27 | drink coffee         | 喝咖啡             | hē kā fēi          | tomar café         | tomar café        
+ 28 | I drank it           | 我喝了             | wǒ hē le           | Lo bebí            | Eu bebi           
+ 29 | drank too much       | 喝多了             | hē duō le          | bebí demasiado     | bebi demais       
+ 30 | sleep well           | 睡个好觉            | shuì gè hǎo jué    | duerme bien        | durma bem         
+ 31 | go to sleep          | 去睡觉吧            | qù shuì jiào ba    | vete a dormir      | vá dormir         
+ 32 | I slept well         | 我睡得很好           | wǒ shuì dé hěn hǎo | Dormí bien         | Dormi bem         
+ 33 | slept late           | 睡晚了             | shuì wǎn le        | dormí hasta tarde  | dormi até tarde   
+ 34 | wake early           | 早起              | zǎo qǐ             | despertarse tempra | acordar cedo      
+ 35 | wake me              | 叫醒我             | jiào xǐng wǒ       | despiértame        | me acorde         
+ 36 | I woke up            | 我醒了             | wǒ xǐng le         | Me desperté        | Acordei           
+ 37 | woke early           | 早起              | zǎo qǐ             | desperté temprano  | acordei cedo      
+ 38 | go for a walk        | 去散步             | qù sàn bù          | salir a caminar    | dar um passeio    
+ 39 | walk home            | 步行回家            | bù xíng huí jiā    | caminar a casa     | voltar para casa  
+ 40 | please sit           | 请坐              | qǐng zuò           | por favor siéntate | por favor sente-se
+ 41 | sit here             | 坐在这里            | zuò zài zhè lǐ     | siéntate aquí      | sente aqui        
+ 42 | I sat down           | 我坐下             | wǒ zuò xià         | Me senté           | Eu sentei         
+ 43 | sat there            | 坐在那里            | zuò zài nà lǐ      | se sentó allí      | sentei lá         
+ 44 | stand up             | 站起来             | zhàn qǐ lái        | levántate          | levante-se        
+ 45 | stand here           | 站在这里            | zhàn zài zhè lǐ    | quédate aquí       | fique aqui        
+ 46 | I stood up           | 我站起来            | wǒ zhàn qǐ lái     | Me levanté         | Eu me levantei    
+ 47 | stood there          | 站在那里            | zhàn zài nà lǐ     | se quedó allí      | fiquei lá         
+ 48 | open it              | 打开它             | dǎ kāi tā          | ábrelo             | abra              
+ 49 | open the door        | 开门              | kāi mén            | abre la puerta     | abra a porta      
+ 50 | close it             | 关闭它             | guān bì tā         | cerrarlo           | feche             
+ 51 | close the door       | 关上门             | guān shàng mén     | cierra la puerta   | feche a porta     
+ 52 | start now            | 现在开始            | xiàn zài kāi shǐ   | empezar ahora      | comece agora      
+ 53 | start over           | 重新开始            | chóng xīn kāi shǐ  | empezar de nuevo   | recomeçar         
+ 54 | stop it              | 停下来             | tíng xià lái       | basta              | pare com isso     
+ 55 | stop here            | 停在这里            | tíng zài zhè lǐ    | para aquí          | pare aqui         
+ 56 | wait here            | 在这里等一下          | zài zhè lǐ děng yí | espera aquí        | espere aqui       
+ 57 | wait for me          | 等等我             | děng děng wǒ       | espérame           | espere por mim    
+ 58 | lie down             | 躺下              | tǎng xià           | acostarse          | deitar            
+ 59 | don't lie            | 别说谎             | bié shuō huǎng     | no mientas         | não minta         
+ 60 | just relax           | 放松一下            | fàng sōng yī xià   | solo relájate      | apenas relaxe     
+ 61 | relax now            | 现在放松            | xiàn zài fàng sōng | relájate ahora     | relaxe agora      
