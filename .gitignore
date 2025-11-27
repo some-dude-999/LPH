@@ -1,2 +1,4 @@
 ChineseWords/ChineseWordsOverview_backup.csv
 BACKUP/
+__pycache__/
+*.pyc
