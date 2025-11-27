@@ -5,7 +5,7 @@ línea,line,线,xiàn,linha
 procesos,processes,进程,jìn chéng,processos
 proceso,process,进程,jìn chéng,processo
 calidad,quality,质量,zhì liàng,qualidade
-defecto,default,默认,mò rèn,padrão
+defecto,defect,缺陷,quē xiàn,defeito
 estándar,standard,标准,biāo zhǔn,padrão
 eficiencia,efficiency,效率,xiào lǜ,eficiência
 optimizar,optimize,优化,yōu huà,otimizar
@@ -39,13 +39,13 @@ hay que optimizar,you have to optimize,你必须优化,nǐ bì xū yōu huà,voc
 voy a optimizar,I'm going to optimize,我要优化,wǒ yào yōu huà,Vou otimizar
 la industria,the industry,行业,háng yè,a indústria
 una industria,an industry,一个行业,yí gè háng yè,uma indústria
-el ensamblaje,the assembly,大会,dà huì,a montagem
+el ensamblaje,the assembly,装配,zhuāng pèi,a montagem
 de ensamblaje,assembly,装配,zhuāng pèi,montagem
-el montaje,the assembly,大会,dà huì,a montagem
+el montaje,the assembly,装配,zhuāng pèi,a montagem
 de montaje,mounting,安装,ān zhuāng,montagem
 el componente,the component,组件,zǔ jiàn,o componente
 un componente,a component,一个组件,yí gè zǔ jiàn,um componente
-la pieza,the piece,这件作品,zhè jiàn zuò pǐn,a peça
+la pieza,the piece,这个零件,zhè gè líng jiàn,a peça
 una pieza,one piece,一件,yī jiàn,uma peça
 el repuesto,the spare,备用,bèi yòng,o sobressalente
 un repuesto,a spare,备用,bèi yòng,um sobressalente

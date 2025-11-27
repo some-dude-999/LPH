@@ -13,8 +13,8 @@ diesel,diesel,柴油,chái yóu,gasóleo
 taller,workshop,车间,chē jiān,oficina
 mecánico,mechanic,机械师,jī xiè shī,mecânico
 mecánica,mechanical,机械,jī xiè,mecânica
-revisar,review,评论,píng lùn,revisão
-aparcar,park,公园,gōng yuán,parque
+revisar,to inspect,检查,jiǎn chá,revisar
+aparcar,to park,停车,tíng chē,estacionar
 transmisión,transmission,传输,chuán shū,transmissão
 embrague,clutch,离合器,lí hé qì,embreagem
 radiador,radiator,散热器,sàn rè qì,radiador
@@ -41,8 +41,8 @@ la gasolina,gasoline,汽油,qì yóu,gasolina
 sin gasolina,without gasoline,没有汽油,méi yǒu qì yóu,sem gasolina
 el diesel,the diesel,柴油,chái yóu,o diesel
 con diesel,with diesel,用柴油,yòng chái yóu,com gasóleo
-el taller,the workshop,研讨会,yán tǎo huì,a oficina
-un taller,a workshop,研讨会,yán tǎo huì,uma oficina
+el taller,the repair shop,修理厂,xiū lǐ chǎng,a oficina
+un taller,a repair shop,修理厂,xiū lǐ chǎng,uma oficina
 el mecánico,the mechanic,机械师,jī xiè shī,o mecânico
 un mecánico,a mechanic,机械师,jī xiè shī,um mecânico
 la mecánica,the mechanics,机械师,jī xiè shī,a mecânica

@@ -8,7 +8,7 @@ compradora,buyer,买家,mǎi jiā,comprador
 mostrador,counter,柜台,guì tái,contador
 escaparate,showcase,展示,zhǎn shì,vitrine
 vitrina,showcase,展示,zhǎn shì,vitrine
-probador,tester,测试员,cè shì yuán,testador
+probador,fitting room,试衣间,shì yī jiān,provador
 ticket,ticket,票,piào,bilhete
 rebaja,discount,折扣,zhé kòu,desconto
 minorista,retailer,零售商,líng shòu shāng,varejista
@@ -36,8 +36,8 @@ el escaparate,the showcase,展示柜,zhǎn shì guì,a vitrine
 un escaparate,a showcase,展示柜,zhǎn shì guì,uma vitrine
 la vitrina,the showcase,展示柜,zhǎn shì guì,a vitrine
 una vitrina,a showcase,展示柜,zhǎn shì guì,uma vitrine
-el probador,the tester,测试仪,cè shì yí,o testador
-un probador,a tester,测试员,cè shì yuán,um testador
+el probador,the fitting room,试衣间,shì yī jiān,o provador
+un probador,a fitting room,试衣间,shì yī jiān,um provador
 el ticket,the ticket,票,piào,o ingresso
 un ticket,a ticket,一张票,yī zhāng piào,um ingresso
 la rebaja,the discount,折扣,zhé kòu,o desconto
@@ -48,9 +48,9 @@ el mayorista,the wholesaler,批发商,pī fā shāng,o atacadista
 un mayorista,a wholesaler,批发商,pī fā shāng,um atacadista
 el distribuidor,the distributor,经销商,jīng xiāo shāng,o distribuidor
 un distribuidor,a distributor,经销商,jīng xiāo shāng,um distribuidor
-las existencias,stocks,股票,gǔ piào,ações
+las existencias,the inventory,库存,kù cún,o estoque
 sin existencias,out of stock,缺货,quē huò,fora de estoque
-el stock,the stock,股票,gǔ piào,o estoque
+el stock,the stock,库存,kù cún,o estoque
 sin stock,out of stock,缺货,quē huò,fora de estoque
 el surtido,the assortment,品种,pǐn zhǒng,o sortimento
 buen surtido,good assortment,品种齐全,pǐn zhǒng qí quán,bom sortimento

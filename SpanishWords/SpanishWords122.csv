@@ -6,7 +6,7 @@ tornillo,screw,螺丝,luó sī,parafuso
 destornillador,screwdriver,螺丝刀,luó sī dāo,chave de fenda
 llave,key,关键,guān jiàn,chave
 tijeras,scissors,剪刀,jiǎn dāo,tesoura
-sierra,saw,看到,kàn dào,vi
+sierra,saw,锯,jù,serra
 taladro,drill,钻,zuān,perfurar
 escalera,ladder,梯子,tī zi,escada
 cinta,tape,胶带,jiāo dài,fita
@@ -18,7 +18,7 @@ reparar,repair,修复,xiū fù,reparar
 arreglar,fix,修复,xiū fù,consertar
 máquina,machine,机器,jī qì,máquina
 motor,engine,发动机,fā dòng jī,motor
-lijar,sand,沙子,shā zi,areia
+lijar,to sand,打磨,dǎ mó,lixar
 la herramienta,the tool,该工具,gāi gōng jù,a ferramenta
 una herramienta,a tool,一个工具,yí gè gōng jù,uma ferramenta
 el martillo,the hammer,锤子,chuí zi,o martelo
@@ -39,8 +39,8 @@ el taladro,the drill,钻头,zuàn tóu,a broca
 un taladro,a drill,钻头,zuàn tóu,uma broca
 la escalera,the ladder,梯子,tī zi,a escada
 una escalera,a ladder,梯子,tī zi,uma escada
-la cinta,the tape,磁带,cí dài,a fita
-una cinta,a tape,一盘磁带,yī pán cí dài,uma fita
+la cinta,the tape,胶带,jiāo dài,a fita
+una cinta,a tape,一卷胶带,yī juǎn jiāo dài,uma fita
 el pegamento,the glue,胶水,jiāo shuǐ,a cola
 con pegamento,with glue,用胶水,yòng jiāo shuǐ,com cola
 la cuerda,the rope,绳子,shéng zi,a corda
@@ -58,4 +58,4 @@ una máquina,a machine,一台机器,yī tái jī qì,uma máquina
 el motor,the engine,发动机,fā dòng jī,o motor
 un motor,an engine,发动机,fā dòng jī,um motor
 hay que lijar,you have to sand,你必须打磨,nǐ bì xū dǎ mó,você tem que lixar
-voy a lijar,I'm going to sand,我要去沙子,wǒ yào qù shā zi,vou lixar
+voy a lijar,I'm going to sand,我要打磨,wǒ yào dǎ mó,vou lixar
