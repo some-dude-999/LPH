@@ -1187,32 +1187,50 @@ SCORING SCALE:
   7  = Fair (several issues across translations)
   6 or below = Poor (significant issues, definitely needs work)
 
-=== STEP 3: OUTPUT THE COMPLETE SCORECARD ===
+=== STEP 3: UPDATE THE TRANSLATION ERRORS CSV ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚨 MANDATORY OUTPUT - ALL 107 ROWS - NO EXCEPTIONS 🚨           ║
+║  📝 EDIT: ChineseWords/ChineseWordsTranslationErrors.csv         ║
+║                                                                  ║
+║  This CSV tracks scores and issues for ALL 107 packs.           ║
+║  Your job: Fill in the Score and Issues columns for EVERY pack. ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-| Pack | Wordpack | Score | Issues Found |
-|------|----------|-------|--------------|
-| 1 | ChineseWords1.csv | X/10 | [specific issues or "None ✓"] |
-| 2 | ChineseWords2.csv | X/10 | [specific issues or "None ✓"] |
-| 3 | ChineseWords3.csv | X/10 | [specific issues or "None ✓"] |
-| 4 | ChineseWords4.csv | X/10 | [specific issues or "None ✓"] |
-| 5 | ChineseWords5.csv | X/10 | [specific issues or "None ✓"] |
-| 6 | ChineseWords6.csv | X/10 | [specific issues or "None ✓"] |
-| 7 | ChineseWords7.csv | X/10 | [specific issues or "None ✓"] |
-| 8 | ChineseWords8.csv | X/10 | [specific issues or "None ✓"] |
-| 9 | ChineseWords9.csv | X/10 | [specific issues or "None ✓"] |
-| 10 | ChineseWords10.csv | X/10 | [specific issues or "None ✓"] |
-| ... CONTINUE FOR EVERY SINGLE PACK ... |
-| 105 | ChineseWords105.csv | X/10 | [specific issues or "None ✓"] |
-| 106 | ChineseWords106.csv | X/10 | [specific issues or "None ✓"] |
-| 107 | ChineseWords107.csv | X/10 | [specific issues or "None ✓"] |
+The CSV has these columns:
+| Column | Description |
+|--------|-------------|
+| Pack_Number | Pack number (1-107) - DO NOT EDIT |
+| Pack_Title | Title of the pack - DO NOT EDIT |
+| Difficulty_Act | Act assignment - DO NOT EDIT |
+| Score | YOUR SCORE (1-10) - FILL THIS IN |
+| Issues | WHAT'S WRONG - FILL THIS IN |
 
-⛔ YOUR TABLE MUST HAVE EXACTLY 107 ROWS (1-107). NO "..." ALLOWED IN YOUR OUTPUT! ⛔
+FOR EACH PACK (1-107):
+1. Read the breakout CSV: ChineseWords/ChineseWords{N}.csv
+2. Evaluate all translations carefully
+3. Assign a score (1-10)
+4. Write specific issues (or "None" if perfect)
+5. Update the row in ChineseWordsTranslationErrors.csv
 
-=== STEP 4: SUMMARY COUNTS ===
+Example of filled-in rows:
+Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
+1,Greetings & Goodbyes,Act I: Foundation,9,Minor: Row 5 pinyin spacing
+2,Personal Pronouns,Act I: Foundation,10,None
+3,Demonstratives & Pointers,Act I: Foundation,7,Row 3 english awkward; Row 8 thai wrong; Row 12 empty portuguese
+4,Yes No & Responses,Act I: Foundation,6,Multiple empty cells; Row 5 has [brackets]
+
+⛔ EVERY ROW MUST HAVE A SCORE. NO EMPTY SCORES ALLOWED! ⛔
+
+=== STEP 4: COMMIT THE UPDATED CSV ===
+
+After filling in ALL 107 scores and issues:
+1. Save the ChineseWordsTranslationErrors.csv file
+2. Commit the changes
+3. PR to main
+
+=== STEP 5: DISPLAY SUMMARY ===
+
+After updating the CSV, display this summary:
 
 | Metric | Count |
 |--------|-------|
@@ -1223,27 +1241,13 @@ SCORING SCALE:
 | Packs scoring 6 or below | X |
 | TOTAL PACKS NEEDING FIXES (below 9) | X |
 
-=== STEP 5: IMPROVEMENT PLAN (for Stage 3B) ===
-
-List ALL packs scoring below 9, ordered by priority (worst scores first):
-
-| Priority | Pack | Score | Row | Column | Issue | Proposed Fix |
-|----------|------|-------|-----|--------|-------|--------------|
-| 1 | ChineseWords23.csv | 5/10 | 3 | pinyin | "nǐhǎo" no space | Add space: "nǐ hǎo" |
-| 1 | ChineseWords23.csv | 5/10 | 7 | english | awkward phrasing | Rewrite more naturally |
-| 2 | ChineseWords45.csv | 6/10 | 12 | thai | wrong translation | Correct to: "..." |
-| 3 | ChineseWords12.csv | 7/10 | 5 | spanish | missing accent | Add accent: "..." |
-| ... | ... | ... | ... | ... | ... | ... |
-
 === FINAL OUTPUT CHECKLIST ===
 | Requirement | Status |
 |-------------|--------|
-| All 107 packs scored individually | ✓/✗ |
-| No "overall score" given | ✓/✗ |
-| No packs skipped | ✓/✗ |
-| Summary counts provided | ✓/✗ |
-| Improvement plan for packs below 9 | ✓/✗ |
-| NO files edited (evaluation only) | ✓/✗ |
+| All 107 packs scored in CSV | ✓/✗ |
+| No empty Score cells | ✓/✗ |
+| Issues column filled for each pack | ✓/✗ |
+| CSV committed and PRed | ✓/✗ |
 
 === PINYIN RULE REFERENCE ===
 Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
@@ -1266,7 +1270,7 @@ Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
 | 11  | malay      | Translation                  |
 | 12  | filipino   | Translation                  |
 
-DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
+UPDATE THE CSV. COMMIT. PR TO MAIN.</div>
 
 <h3>Chinese - Stage 3B (Fixing Only)</h3>
 <div>Click to copy</div>
@@ -1314,16 +1318,25 @@ This shows:
 
 Then get the Stage 3A scorecard.
 
-=== STEP 2: GET THE SCORECARD ===
+=== STEP 2: READ THE TRANSLATION ERRORS CSV ===
 
-First, check if a Stage 3A scorecard exists. If not, run Stage 3A first.
+╔══════════════════════════════════════════════════════════════════╗
+║  📖 READ: ChineseWords/ChineseWordsTranslationErrors.csv         ║
+║                                                                  ║
+║  Stage 3A already evaluated all 107 packs and filled in the     ║
+║  Score and Issues columns. Your job: FIX every pack below 9.    ║
+╚══════════════════════════════════════════════════════════════════╝
 
-The scorecard should show ALL 107 packs with:
-- Individual scores (1-10)
-- Specific issues for each pack
-- Improvement plan with priorities
+Use the Read tool to open ChineseWordsTranslationErrors.csv
 
-=== STEP 2: FIX ALL PACKS SCORING BELOW 9 ===
+This CSV shows ALL 107 packs with:
+- Score column: 1-10 score for each pack
+- Issues column: Specific problems that need fixing
+
+Find ALL packs with Score < 9. These are your targets.
+Start with the LOWEST scores first (worst = highest priority).
+
+=== STEP 3: FIX ALL PACKS SCORING BELOW 9 ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🔥 FIX EVERY PACK WITH SCORE < 9. NO EXCEPTIONS. 🔥            ║
@@ -1478,22 +1491,39 @@ SCORING SCALE:
   7  = Fair (several issues across translations)
   6 or below = Poor (significant issues, definitely needs work)
 
-=== STEP 3: OUTPUT THE COMPLETE SCORECARD ===
+=== STEP 3: UPDATE THE TRANSLATION ERRORS CSV ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚨 MANDATORY OUTPUT - ALL 250 ROWS - NO EXCEPTIONS 🚨           ║
+║  📝 EDIT: SpanishWords/SpanishWordsTranslationErrors.csv         ║
+║                                                                  ║
+║  This CSV tracks scores and issues for ALL 250 packs.           ║
+║  Your job: Fill in the Score and Issues columns for EVERY pack. ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-| Pack | Wordpack | Score | Issues Found |
-|------|----------|-------|--------------|
-| 1 | SpanishWords1.csv | X/10 | [specific issues or "None ✓"] |
-| 2 | SpanishWords2.csv | X/10 | [specific issues or "None ✓"] |
-| 3 | SpanishWords3.csv | X/10 | [specific issues or "None ✓"] |
-| ... CONTINUE FOR EVERY SINGLE PACK ... |
-| 249 | SpanishWords249.csv | X/10 | [specific issues or "None ✓"] |
-| 250 | SpanishWords250.csv | X/10 | [specific issues or "None ✓"] |
+The CSV has these columns:
+| Column | Description |
+|--------|-------------|
+| Pack_Number | Pack number (1-250) - DO NOT EDIT |
+| Pack_Title | Title of the pack - DO NOT EDIT |
+| Difficulty_Act | Act assignment - DO NOT EDIT |
+| Score | YOUR SCORE (1-10) - FILL THIS IN |
+| Issues | WHAT'S WRONG - FILL THIS IN |
 
-⛔ YOUR TABLE MUST HAVE EXACTLY 250 ROWS (1-250). NO "..." ALLOWED IN YOUR OUTPUT! ⛔
+FOR EACH PACK (1-250):
+1. Read the breakout CSV: SpanishWords/SpanishWords{N}.csv
+2. Evaluate all translations carefully
+3. Assign a score (1-10)
+4. Write specific issues (or "None" if perfect)
+5. Update the row in SpanishWordsTranslationErrors.csv
+
+Example of filled-in rows:
+Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
+1,Greetings & Goodbyes,Act I: Foundation,9,Minor: Row 5 english awkward
+2,Yes No & Agreement,Act I: Foundation,10,None
+3,Numbers 0-10,Act I: Foundation,7,Row 3 chinese wrong; Row 8 portuguese empty
+4,Asking Questions,Act I: Foundation,6,Multiple empty cells; Row 5 has [brackets]
+
+⛔ EVERY ROW MUST HAVE A SCORE. NO EMPTY SCORES ALLOWED! ⛔
 
 === STEP 4: SUMMARY COUNTS ===
 
@@ -1584,16 +1614,23 @@ This shows:
 - Translations with [ or ] that need replacing
 - Empty cells that need manual translation
 
-Then get the Stage 3A scorecard.
+=== STEP 2: READ THE TRANSLATION ERRORS CSV ===
 
-=== STEP 2: GET THE SCORECARD ===
+╔══════════════════════════════════════════════════════════════════╗
+║  📖 READ: SpanishWords/SpanishWordsTranslationErrors.csv         ║
+║                                                                  ║
+║  Stage 3A already evaluated all 250 packs and filled in the     ║
+║  Score and Issues columns. Your job: FIX every pack below 9.    ║
+╚══════════════════════════════════════════════════════════════════╝
 
-First, check if a Stage 3A scorecard exists. If not, run Stage 3A first.
+Use the Read tool to open SpanishWordsTranslationErrors.csv
 
-The scorecard should show ALL 250 packs with:
-- Individual scores (1-10)
-- Specific issues for each pack
-- Improvement plan with priorities
+This CSV shows ALL 250 packs with:
+- Score column: 1-10 score for each pack
+- Issues column: Specific problems that need fixing
+
+Find ALL packs with Score < 9. These are your targets.
+Start with the LOWEST scores first (worst = highest priority).
 
 === STEP 3: FIX ALL PACKS SCORING BELOW 9 ===
 
@@ -1742,22 +1779,39 @@ SCORING SCALE:
   7  = Fair (several issues across translations)
   6 or below = Poor (significant issues, definitely needs work)
 
-=== STEP 3: OUTPUT THE COMPLETE SCORECARD ===
+=== STEP 3: UPDATE THE TRANSLATION ERRORS CSV ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚨 MANDATORY OUTPUT - ALL 160 ROWS - NO EXCEPTIONS 🚨           ║
+║  📝 EDIT: EnglishWords/EnglishWordsTranslationErrors.csv         ║
+║                                                                  ║
+║  This CSV tracks scores and issues for ALL 160 packs.           ║
+║  Your job: Fill in the Score and Issues columns for EVERY pack. ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-| Pack | Wordpack | Score | Issues Found |
-|------|----------|-------|--------------|
-| 1 | EnglishWords1.csv | X/10 | [specific issues or "None ✓"] |
-| 2 | EnglishWords2.csv | X/10 | [specific issues or "None ✓"] |
-| 3 | EnglishWords3.csv | X/10 | [specific issues or "None ✓"] |
-| ... CONTINUE FOR EVERY SINGLE PACK ... |
-| 159 | EnglishWords159.csv | X/10 | [specific issues or "None ✓"] |
-| 160 | EnglishWords160.csv | X/10 | [specific issues or "None ✓"] |
+The CSV has these columns:
+| Column | Description |
+|--------|-------------|
+| Pack_Number | Pack number (1-160) - DO NOT EDIT |
+| Pack_Title | Title of the pack - DO NOT EDIT |
+| Difficulty_Act | Act assignment - DO NOT EDIT |
+| Score | YOUR SCORE (1-10) - FILL THIS IN |
+| Issues | WHAT'S WRONG - FILL THIS IN |
 
-⛔ YOUR TABLE MUST HAVE EXACTLY 160 ROWS (1-160). NO "..." ALLOWED IN YOUR OUTPUT! ⛔
+FOR EACH PACK (1-160):
+1. Read the breakout CSV: EnglishWords/EnglishWords{N}.csv
+2. Evaluate all translations carefully
+3. Assign a score (1-10)
+4. Write specific issues (or "None" if perfect)
+5. Update the row in EnglishWordsTranslationErrors.csv
+
+Example of filled-in rows:
+Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
+1,Greetings & Basics,Act I: Foundation,9,Minor: Row 5 spanish awkward
+2,Numbers 1-20,Act I: Foundation,10,None
+3,Numbers & Counting,Act I: Foundation,7,Row 3 chinese wrong; Row 8 portuguese empty
+4,Articles & Determiners,Act I: Foundation,6,Multiple empty cells; Row 5 has [brackets]
+
+⛔ EVERY ROW MUST HAVE A SCORE. NO EMPTY SCORES ALLOWED! ⛔
 
 === STEP 4: SUMMARY COUNTS ===
 
@@ -1846,16 +1900,23 @@ This shows:
 - Translations with [ or ] that need replacing
 - Empty cells that need manual translation
 
-Then get the Stage 3A scorecard.
+=== STEP 2: READ THE TRANSLATION ERRORS CSV ===
 
-=== STEP 2: GET THE SCORECARD ===
+╔══════════════════════════════════════════════════════════════════╗
+║  📖 READ: EnglishWords/EnglishWordsTranslationErrors.csv         ║
+║                                                                  ║
+║  Stage 3A already evaluated all 160 packs and filled in the     ║
+║  Score and Issues columns. Your job: FIX every pack below 9.    ║
+╚══════════════════════════════════════════════════════════════════╝
 
-First, check if a Stage 3A scorecard exists. If not, run Stage 3A first.
+Use the Read tool to open EnglishWordsTranslationErrors.csv
 
-The scorecard should show ALL 160 packs with:
-- Individual scores (1-10)
-- Specific issues for each pack
-- Improvement plan with priorities
+This CSV shows ALL 160 packs with:
+- Score column: 1-10 score for each pack
+- Issues column: Specific problems that need fixing
+
+Find ALL packs with Score < 9. These are your targets.
+Start with the LOWEST scores first (worst = highest priority).
 
 === STEP 3: FIX ALL PACKS SCORING BELOW 9 ===
 
