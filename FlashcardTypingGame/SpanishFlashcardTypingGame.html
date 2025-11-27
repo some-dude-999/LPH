@@ -3047,8 +3047,9 @@
 
       // Completely reset pack as if starting new game in this mode
       // (Reset from original deck, not modified current deck)
+      // CRITICAL: Keep pedagogical ordering (base words first, then examples)
       if (originalDeck.length > 0) {
-        currentDeck = shuffleArray([...originalDeck]);
+        currentDeck = [...originalDeck]; // Copy without shuffling - preserve base→example order
         currentIndex = 0;
       }
 
@@ -4247,7 +4248,8 @@
       playButtonClickSound();
 
       // Completely reset as if we just started this pack in this mode
-      currentDeck = shuffleArray([...originalDeck]);
+      // CRITICAL: Keep pedagogical ordering (base words first, then examples)
+      currentDeck = [...originalDeck]; // Copy without shuffling - preserve base→example order
       currentIndex = 0;
 
       // Reset typing state for typing modes
