@@ -859,6 +859,47 @@ The validator (`validate_pinyin.py`) handles these cases automatically:
 2. Validates Latin blocks match exactly (case insensitive)
 3. Validates Chinese characters have matching syllable count
 
+### Rendering Latin Blocks in Games
+
+**CRITICAL**: The game rendering logic (`coupleChineseWithPinyin()` in DecoderTest.html and game files) MUST also understand Latin blocks!
+
+**How it works:**
+1. Parse Chinese text into sequences (Latin blocks vs Chinese characters)
+2. Parse pinyin based on Chinese structure
+3. Couple Latin blocks as single units (not letter-by-letter)
+4. Couple Chinese characters char-by-char
+
+**Example - CORRECT rendering:**
+```
+Chinese: "ATM机"     Pinyin: "ATM jī"
+
+Display:
+┌─────┬───┐
+│ ATM │ 机 │  ← Latin block stays together + Chinese char
+│ ATM │ jī │  ← Latin block underneath + pinyin syllable
+└─────┴───┘
+```
+
+**Example - WRONG rendering (old buggy behavior):**
+```
+Chinese: "ATM机"     Pinyin: "ATM jī"
+
+BAD Display:
+┌───┬───┬───┬───┐
+│ A │ T │ M │ 机 │  ← Latin split letter-by-letter (WRONG!)
+│ ATM│ jī│ ? │ ? │  ← Pinyin misaligned
+└───┴───┴───┴───┘
+```
+
+**The Fix:**
+The `coupleChineseWithPinyin()` function in all game files uses the same parsing logic as the validator:
+- `parseChineseSeqs()` - identifies Latin vs Chinese sequences
+- `parsePinyinSeqs()` - parses pinyin based on Chinese structure
+- Couples Latin blocks as single {char, pinyin} units
+- Renders as single block in the UI
+
+**Result**: "WhatsApp消息" displays as [WhatsApp][消][息] not [W][h][a][t][s][A][p][p][消][息]!
+
 ### This Principle is NON-NEGOTIABLE
 
 Chinese + Pinyin inseparability applies **regardless of which language is being learned**. This is an architectural decision that affects:
