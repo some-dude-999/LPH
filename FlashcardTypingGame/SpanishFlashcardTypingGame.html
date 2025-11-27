@@ -2056,6 +2056,11 @@
     let currentSpeed = 0.6; // Default to normal speed
     const VALID_SPEEDS = [0.3, 0.6, 0.9]; // Valid speed options (must match data-speed values in HTML)
 
+    // ============================================================
+    // DEBUG MODE: Show word type (Base Word / Example Word)
+    // ============================================================
+    const DEBUG_SHOW_WORD_TYPE = true; // Set to true to display word type on cards
+
     // Helper to get valid languages from loaded metadata (for validation)
     function getValidLanguages() {
       const translations = getTranslationsConfig();
@@ -3761,8 +3766,15 @@
         return card;
       });
 
-      // Shuffle the card OBJECTS - front and back stay linked because they're the same object
-      currentDeck = shuffleArray([...originalDeck]);
+      // ============================================================
+      // CRITICAL: DO NOT shuffle originalDeck here!
+      // Words are already ordered by combineAndShuffleWords():
+      //   1. Base words (shuffled internally)
+      //   2. Example words (shuffled internally)
+      // Shuffling here would mix base and example words together,
+      // breaking the pedagogical ordering!
+      // ============================================================
+      currentDeck = [...originalDeck]; // Copy without shuffling
       currentIndex = 0;
       updateDisplay();
     }
@@ -3771,7 +3783,8 @@
     function restartCurrentPack() {
       playButtonClickSound();
       if (originalDeck.length > 0) {
-        currentDeck = shuffleArray([...originalDeck]);
+        // Keep pedagogical ordering (base words first, then examples)
+        currentDeck = [...originalDeck]; // Copy without shuffling
         currentIndex = 0;
         if (currentMode === 'listening' || currentMode === 'writing') {
           initializeTypingDisplay();
@@ -3946,7 +3959,17 @@
 
       // Display counter (deck change indicator now shown as overlay stamp on card)
       let counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
-      cardCounter.textContent = counterText;
+
+      // ============================================================
+      // DEBUG MODE: Show word type (Base Word / Example Word)
+      // ============================================================
+      if (DEBUG_SHOW_WORD_TYPE && card.type) {
+        const typeColor = card.type === "Base Word" ? "#2563eb" : "#059669";
+        const typeWeight = card.type === "Base Word" ? "bold" : "normal";
+        counterText += ` | <span style="color: ${typeColor}; font-weight: ${typeWeight};">${card.type}</span>`;
+      }
+
+      cardCounter.innerHTML = counterText; // Use innerHTML to render HTML tags
 
       // Get indicator elements (positioned at card corners, not inside card-word)
       const wrongLettersFront = document.getElementById('wrong-letters-front');
