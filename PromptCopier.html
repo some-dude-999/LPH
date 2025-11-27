@@ -1243,6 +1243,30 @@ Comma placement must match for vertical alignment.
 RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
 NO space before comma in pinyin!
 
+⚠️⚠️⚠️ LATIN ABBREVIATIONS - EDGE CASES (NOT ERRORS!) ⚠️⚠️⚠️
+
+When Chinese text contains Latin abbreviations or brand names, pinyin validation works differently:
+
+SIMPLE RULE:
+- Latin sequences (ATM, DNA, WhatsApp) → same sequence in pinyin (case insensitive)
+- Chinese characters → pinyin syllables with spaces
+
+✅ THESE ARE CORRECT (NOT ERRORS):
+Chinese: ATM机      Pinyin: ATM jī       (Latin block + 1 char = Latin block + 1 syllable)
+Chinese: DNA测试     Pinyin: DNA cè shì   (Latin block + 2 chars = Latin block + 2 syllables)
+Chinese: WhatsApp消息 Pinyin: WhatsApp xiāo xī (Brand name + 2 chars = same name + 2 syllables)
+Chinese: T恤        Pinyin: T xù         (Single letter + 1 char = same letter + 1 syllable)
+Chinese: NFT        Pinyin: NFT          (Just Latin = same Latin)
+Chinese: la         Pinyin: la           (Spanish article = same article)
+
+WHY THESE ARE NOT ERRORS:
+- validate_pinyin.py parses Chinese to identify Latin blocks
+- Latin blocks match as single units (case insensitive)
+- Only Chinese characters need syllable matching
+- This is standard modern Chinese usage (ATM, DNA, brand names stay in Latin)
+
+DO NOT "FIX" THESE - THEY ARE CORRECT AS-IS!
+
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
 □ Did auto-translation pick the RIGHT definition of this word?
@@ -1759,6 +1783,31 @@ Comma placement must match for vertical alignment.
 RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
 NO space before comma in pinyin!
 
+⚠️⚠️⚠️ LATIN ABBREVIATIONS - EDGE CASES (NOT ERRORS!) ⚠️⚠️⚠️
+
+When Chinese text contains Latin abbreviations or brand names, pinyin validation works differently:
+
+SIMPLE RULE:
+- Latin sequences (ATM, DNA, WhatsApp, la, los) → same sequence in pinyin (case insensitive)
+- Chinese characters → pinyin syllables with spaces
+
+✅ THESE ARE CORRECT (NOT ERRORS) IN SPANISH CSVS:
+Chinese: ATM机      Pinyin: ATM jī       (Latin block + 1 char)
+Chinese: DNA测试     Pinyin: DNA cè shì   (Latin block + 2 chars)
+Chinese: WhatsApp消息 Pinyin: WhatsApp xiāo xī (Brand name + 2 chars)
+Chinese: T恤        Pinyin: T xù         (T-shirt uses Latin "T")
+Chinese: NFT        Pinyin: NFT          (Just Latin = same)
+Chinese: la         Pinyin: la           (Spanish article stays as-is)
+Chinese: los        Pinyin: los          (Spanish article stays as-is)
+
+WHY THESE ARE NOT ERRORS:
+- Column 3 (chinese) in Spanish CSVs may have Latin text (Spanish articles, abbreviations)
+- Column 4 (pinyin) matches these Latin blocks exactly
+- validate_pinyin.py handles this automatically (case insensitive)
+- This is standard modern Chinese usage
+
+DO NOT "FIX" THESE - THEY ARE CORRECT AS-IS!
+
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
 □ Did auto-translation pick the RIGHT definition of this word?
@@ -2266,6 +2315,29 @@ Comma placement must match for vertical alignment.
 
 RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
 NO space before comma in pinyin!
+
+⚠️⚠️⚠️ LATIN ABBREVIATIONS - EDGE CASES (NOT ERRORS!) ⚠️⚠️⚠️
+
+When Chinese text contains Latin abbreviations or brand names, pinyin validation works differently:
+
+SIMPLE RULE:
+- Latin sequences (ATM, DNA, WhatsApp, X-ray, GPS) → same sequence in pinyin (case insensitive)
+- Chinese characters → pinyin syllables with spaces
+
+✅ THESE ARE CORRECT (NOT ERRORS) IN ENGLISH CSVS:
+Chinese: ATM机      Pinyin: ATM jī       (Latin block + 1 char)
+Chinese: DNA测试     Pinyin: DNA cè shì   (Latin block + 2 chars)
+Chinese: X光        Pinyin: X guāng      (X-ray uses Latin "X")
+Chinese: GPS导航    Pinyin: GPS dǎo háng (GPS + 2 chars)
+Chinese: NFT        Pinyin: NFT          (Just Latin = same)
+
+WHY THESE ARE NOT ERRORS:
+- Column 2 (chinese) in English CSVs may have Latin abbreviations
+- Column 3 (pinyin) matches these Latin blocks exactly
+- validate_pinyin.py handles this automatically (case insensitive)
+- This is standard modern Chinese usage (ATM, DNA, GPS stay in Latin)
+
+DO NOT "FIX" THESE - THEY ARE CORRECT AS-IS!
 
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
