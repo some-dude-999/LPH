@@ -1204,7 +1204,7 @@
       └─────────────────────────────────────────────────────────────────────────┘
 
       INPUT: pack object with { baseWords: [...], exampleWords: [...] }
-      OUTPUT: Single combined array with baseWords first, both sections shuffled
+      OUTPUT: Array of objects with { word: [...], type: "Base Word" | "Example Word" }
 
       USAGE: Call this ONCE when loading a pack, store result as pack.words
     */
@@ -1229,10 +1229,19 @@
       }
 
       // ════════════════════════════════════════════════════════════════════════
-      // STEP 3: Shuffle each section independently
+      // STEP 3: Shuffle each section independently and TAG with type
       // ════════════════════════════════════════════════════════════════════════
-      const shuffledBase = shuffleArray(baseWords);
-      const shuffledExamples = shuffleArray(exampleWords);
+      // We wrap each word array with metadata indicating if it's base or example.
+      // This allows debugging to verify shuffling mechanism is working correctly.
+      const shuffledBase = shuffleArray(baseWords).map(word => ({
+        word: word,
+        type: "Base Word"
+      }));
+
+      const shuffledExamples = shuffleArray(exampleWords).map(word => ({
+        word: word,
+        type: "Example Word"
+      }));
 
       // ════════════════════════════════════════════════════════════════════════
       // STEP 4: Concatenate - BASE ALWAYS FIRST
@@ -2563,7 +2572,8 @@
         const words = combineAndShuffleWords(pack);
 
         // Loop through each word in this pack
-        words.forEach(word => {
+        words.forEach(wordObj => {
+          const word = wordObj.word;  // Extract word array from object
           const targetLanguageWord = word[0];  // Column 0 is always target language
 
           // Filter out the correct answer and normalized duplicates
@@ -2641,7 +2651,8 @@
         const words = combineAndShuffleWords(pack);
 
         // Loop through each word in this pack
-        words.forEach(word => {
+        words.forEach(wordObj => {
+          const word = wordObj.word;  // Extract word array from object
           const chineseText = word[0];  // Column 0 is Chinese characters
           const pinyinText = word[1];   // Column 1 is Pinyin
 
@@ -2888,7 +2899,7 @@
       tableBody.innerHTML = '';
 
       // Calculate colspan based on active modes
-      let totalColumns = 2;  // Base: target language + native language
+      let totalColumns = 3;  // Base: target language + native language + word type
       if (state.multipleChoiceMode) totalColumns += 4;  // Add 4 wrong answer columns
       if (state.typingMode) totalColumns += 3;  // Add typing input + wrong letters + wrong count
       if (state.pronunciationMode) totalColumns += 2;  // Add record button + percentage score
@@ -2946,6 +2957,9 @@
         headers.push(`<th>I am learning (${targetLanguage})</th>`);
         headers.push(`<th>I speak (${nativeLanguage})</th>`);
       }
+
+      // Word Type column (ALWAYS present - for debugging shuffling mechanism)
+      headers.push('<th>Word Type</th>');
 
       // Multiple choice columns (if enabled)
       if (state.multipleChoiceMode) {
@@ -3019,7 +3033,11 @@
       // ════════════════════════════════════════════════════════════════════════
       const words = combineAndShuffleWords(pack);
 
-      words.forEach((word, index) => {
+      words.forEach((wordObj, index) => {
+        // Extract word array and type from the combined object
+        const word = wordObj.word;      // Word array: ["spanish", "english", "chinese", ...]
+        const wordType = wordObj.type;  // Either "Base Word" or "Example Word"
+
         const row = document.createElement('tr');
 
         // ════════════════════════════════════════════════════════════════════════
@@ -3060,7 +3078,19 @@
         row.appendChild(cell2);
 
         // ════════════════════════════════════════════════════════════════════════
-        // COLUMNS 3-6: Wrong answers (only in multiple choice mode)
+        // COLUMN 3: Word Type (Base Word or Example Word)
+        // ════════════════════════════════════════════════════════════════════════
+        // For debugging purposes: Verify shuffling mechanism is working correctly
+        // Base words should appear first, followed by example words
+        // ════════════════════════════════════════════════════════════════════════
+        const cell3 = document.createElement('td');
+        cell3.textContent = wordType;
+        cell3.style.fontWeight = wordType === "Base Word" ? "bold" : "normal";
+        cell3.style.color = wordType === "Base Word" ? "#2563eb" : "#059669";  // Blue for base, green for examples
+        row.appendChild(cell3);
+
+        // ════════════════════════════════════════════════════════════════════════
+        // COLUMNS 4-7: Wrong answers (only in multiple choice mode)
         // ════════════════════════════════════════════════════════════════════════
         // CHINESE RENDERING: When learning Chinese, wrong answers need pinyin too
         // ════════════════════════════════════════════════════════════════════════
@@ -3415,7 +3445,9 @@
       // CHINESE ADDITION: Also store pinyin for Chinese text to enable
       // coupled rendering (characters + pinyin together).
       // ════════════════════════════════════════════════════════════════════════
-      state.flashcardDeck = words.map((word, index) => {
+      state.flashcardDeck = words.map((wordObj, index) => {
+        const word = wordObj.word;  // Extract word array from object
+
         const card = {
           id: `card-${index}`,           // Unique identifier for this card
           front: word[0],                 // Target language (column 0) - FRONT of card
