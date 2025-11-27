@@ -130,44 +130,133 @@ def count_pinyin_syllables(pinyin):
     return len(syllables)
 
 
+def tokenize_chinese_with_punct(text):
+    """
+    Tokenize Chinese text where each Chinese character gets its trailing punctuation attached.
+
+    Example:
+        "早上好，先生" → ["早", "上", "好，", "先", "生"]
+        "ATM机，很好" → ["ATM", "机，", "很", "好"]
+
+    Returns: List of tokens (Chinese char or Latin block, with optional trailing punctuation)
+    """
+    if not text:
+        return []
+
+    tokens = []
+    i = 0
+
+    while i < len(text):
+        char = text[i]
+
+        # Check if it's a Chinese character
+        if '\u4e00' <= char <= '\u9fff':
+            token = char
+            # Attach any following punctuation
+            j = i + 1
+            while j < len(text) and text[j] in '，。！？；：':
+                token += text[j]
+                j += 1
+            tokens.append(token)
+            i = j
+
+        # Check if it's Latin character (start of Latin block)
+        elif re.match(r'[A-Za-z]', char):
+            # Collect the entire Latin block
+            token = ''
+            j = i
+            while j < len(text) and re.match(r'[A-Za-z]', text[j]):
+                token += text[j]
+                j += 1
+            # Attach any following punctuation
+            while j < len(text) and text[j] in '，。！？；：':
+                token += text[j]
+                j += 1
+            tokens.append(token)
+            i = j
+
+        else:
+            # Skip standalone punctuation or other characters
+            i += 1
+
+    return tokens
+
+
+def tokenize_pinyin_with_punct(text):
+    """
+    Tokenize pinyin where punctuation attaches to the preceding syllable.
+
+    Example:
+        "zǎo shàng hǎo， xiān shēng" → ["zǎo", "shàng", "hǎo，", "xiān", "shēng"]
+        "ATM jī， hěn hǎo" → ["ATM", "jī，", "hěn", "hǎo"]
+
+    Returns: List of tokens (syllables or Latin blocks, with optional trailing punctuation)
+    """
+    if not text:
+        return []
+
+    # Split by spaces first
+    parts = text.split()
+    tokens = []
+
+    for part in parts:
+        # Each part is already a syllable or Latin block
+        # It may have trailing punctuation already attached
+        if part:  # Skip empty strings
+            tokens.append(part)
+
+    return tokens
+
+
 def validate_mixed_sequences(chinese, pinyin):
     """
-    Validate mixed Latin/Chinese text with pinyin.
+    Validate mixed Latin/Chinese text with pinyin using TOKEN-BASED matching.
+
+    NEW ARCHITECTURE (9/10):
+    - Tokenize Chinese: each char/Latin block + trailing punctuation = 1 token
+    - Tokenize Pinyin: each syllable/Latin block + trailing punctuation = 1 token
+    - Match token-for-token (count AND punctuation position)
+
+    This eliminates false positives from punctuation while maintaining precision!
 
     SIMPLE RULES:
-    1. Latin sequences: must match exactly (case insensitive)
-    2. Chinese sequences: character count must match syllable count
+    1. Chinese tokens = Pinyin tokens (count)
+    2. Latin blocks must match (case insensitive)
+    3. Punctuation must appear in same token positions
 
     Returns: (is_valid, error_message or None)
     """
-    # Parse Chinese to understand the structure
-    chinese_parts = parse_chinese_sequences(chinese)
+    # Tokenize both with punctuation attachment
+    chinese_tokens = tokenize_chinese_with_punct(chinese)
+    pinyin_tokens = tokenize_pinyin_with_punct(pinyin)
 
-    # Parse pinyin based on Chinese structure
-    pinyin_parts = parse_pinyin_for_chinese(pinyin, chinese_parts)
+    # Token count must match
+    if len(chinese_tokens) != len(pinyin_tokens):
+        return False, f"{len(chinese_tokens)} Chinese tokens but {len(pinyin_tokens)} pinyin tokens"
 
-    if len(chinese_parts) != len(pinyin_parts):
-        return False, f"Sequence count mismatch: {len(chinese_parts)} vs {len(pinyin_parts)}"
+    # Validate token-by-token
+    for i, (c_tok, p_tok) in enumerate(zip(chinese_tokens, pinyin_tokens)):
+        # Extract the content and punctuation from each token
+        c_punct = ''.join(c for c in c_tok if c in '，。！？；：')
+        p_punct = ''.join(c for c in p_tok if c in '，。！？；：')
 
-    for i, ((ch_seq, ch_type), (py_seq, py_type)) in enumerate(zip(chinese_parts, pinyin_parts)):
-        # Chinese Latin blocks must match pinyin Latin blocks
-        if ch_type == 'latin' and py_type == 'latin':
-            if not py_seq:  # Missing pinyin
-                return False, f"Missing pinyin for Latin block: '{ch_seq}'"
-            if ch_seq.lower() != py_seq.lower():
-                return False, f"Latin block mismatch: '{ch_seq}' vs '{py_seq}'"
+        # Punctuation must match at each token position
+        if c_punct != p_punct:
+            return False, f"Token {i+1} punct mismatch: '{c_tok}' vs '{p_tok}'"
 
-        # Chinese characters must match pinyin syllables
-        elif ch_type == 'chinese' and py_type == 'pinyin':
-            char_count = len(ch_seq)
-            syllable_count = len(py_seq.split()) if py_seq else 0
+        # Extract content (without punctuation)
+        c_content = ''.join(c for c in c_tok if c not in '，。！？；：')
+        p_content = ''.join(c for c in p_tok if c not in '，。！？；：')
 
-            if char_count != syllable_count:
-                return False, f"{char_count} Chinese chars but {syllable_count} pinyin syllables"
+        # Check if Chinese content is a Latin block (like "ATM", "NFT")
+        is_latin_block = bool(re.search(r'[A-Za-z]', c_content))
 
-        # Type mismatch (shouldn't happen with smart parsing, but check anyway)
-        else:
-            return False, f"Type mismatch at position {i}: {ch_type} vs {py_type}"
+        if is_latin_block:
+            # Chinese token is Latin block → pinyin must match exactly (case insensitive)
+            if c_content.lower() != p_content.lower():
+                return False, f"Token {i+1} Latin mismatch: '{c_content}' vs '{p_content}'"
+        # else: Chinese token is Chinese character → pinyin is romanization (always valid if token counts match)
+        # No additional validation needed because token count already ensures 1 char = 1 syllable
 
     return True, None
 
