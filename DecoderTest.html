@@ -130,7 +130,7 @@
     │                                                                        │
     └─────────────────────────────────────────────────────────────────────────┘
 
-    OBFUSCATED MODULE STRUCTURE:
+    OBFUSCATED MODULE STRUCTURE (NEW - with baseWords/exampleWords separation):
     Each .js module exports a dictionary of wordpacks:
 
     {
@@ -142,15 +142,48 @@
           "spanish": "Saludos y Despedidas", // Pack title in Spanish
           ... // Other language translations as supported
         },
-        "words": [
-          ["word1_col0", "word1_col1", "word1_col2", ...],  // Each word = array
-          ["word2_col0", "word2_col1", "word2_col2", ...],
-          ["word3_col0", "word3_col1", "word3_col2", ...]
+        "baseWords": [
+          ["base1_col0", "base1_col1", "base1_col2", ...],  // Core vocabulary
+          ["base2_col0", "base2_col1", "base2_col2", ...],
+          ["base3_col0", "base3_col1", "base3_col2", ...]
+        ],
+        "exampleWords": [
+          ["example1_col0", "example1_col1", "example1_col2", ...],  // Usage examples
+          ["example2_col0", "example2_col1", "example2_col2", ...],
+          ["example3_col0", "example3_col1", "example3_col2", ...]
         ]
       },
       "p{act}_{pack}_{name}": { ... },
       ...
     }
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │                    🎯 CRITICAL ARCHITECTURE DESIGN 🎯                    │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │                                                                          │
+    │  WHY WE SEPARATE baseWords AND exampleWords:                            │
+    │  ────────────────────────────────────────────────────────────────────── │
+    │                                                                          │
+    │  Learning Pedagogy: Core vocabulary (base words) should be learned      │
+    │  BEFORE contextual examples. This separation allows:                    │
+    │                                                                          │
+    │  1. BASE WORDS FIRST: Essential vocabulary without context              │
+    │     Example: ["hola", "adiós", "gracias"]                              │
+    │                                                                          │
+    │  2. EXAMPLES SECOND: Real-world usage with context                      │
+    │     Example: ["hola amigo", "adiós mi amor", "muchas gracias"]         │
+    │                                                                          │
+    │  3. CONTROLLED RANDOMIZATION:                                           │
+    │     - Shuffle baseWords internally → random order within base words    │
+    │     - Shuffle exampleWords internally → random order within examples   │
+    │     - Concatenate: [shuffled_base] + [shuffled_examples]               │
+    │     - Result: Base vocabulary ALWAYS appears before examples,           │
+    │       but both sections are randomized for variety                      │
+    │                                                                          │
+    │  This prevents learners from seeing "hola amigo" before learning "hola" │
+    │  while still providing randomization within each category.              │
+    │                                                                          │
+    └─────────────────────────────────────────────────────────────────────────┘
 
     CRITICAL: Column 0 is ALWAYS the target language being learned!
 
@@ -1129,6 +1162,90 @@
         console.error('Failed to decode module:', url, error);
         throw error;
       }
+    }
+
+    // ============================================================
+    // ============================================================
+    // 🎯 ARCHITECTURE: Combine and Shuffle Base/Example Words
+    // ============================================================
+    // ============================================================
+    /*
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │               🎯 CRITICAL LEARNING ARCHITECTURE 🎯                       │
+      │                                                                          │
+      │  PURPOSE: Combine baseWords and exampleWords with controlled shuffling  │
+      │                                                                          │
+      │  WHY THIS MATTERS:                                                       │
+      │  ────────────────────────────────────────────────────────────────────── │
+      │                                                                          │
+      │  Educational Psychology: Learners should encounter CORE VOCABULARY      │
+      │  before CONTEXTUAL EXAMPLES. This function ensures:                     │
+      │                                                                          │
+      │  1. BASE WORDS are shuffled internally (variety within basics)          │
+      │  2. EXAMPLE WORDS are shuffled internally (variety within examples)     │
+      │  3. BASE WORDS ALWAYS COME FIRST (pedagogical order preserved)          │
+      │                                                                          │
+      │  EXAMPLE OUTPUT:                                                         │
+      │  ────────────────────────────────────────────────────────────────────── │
+      │                                                                          │
+      │  Input baseWords:     ["hola", "adiós", "gracias"]                     │
+      │  Input exampleWords:  ["hola amigo", "adiós amigos", "muchas gracias"] │
+      │                                                                          │
+      │  After shuffling baseWords:    ["gracias", "hola", "adiós"]            │
+      │  After shuffling exampleWords: ["muchas gracias", "hola amigo", ...]   │
+      │                                                                          │
+      │  Final combined result:                                                  │
+      │    ["gracias", "hola", "adiós", "muchas gracias", "hola amigo", ...]   │
+      │     └────── base (shuffled) ─────┘ └───── examples (shuffled) ─────┘   │
+      │                                                                          │
+      │  RESULT: User learns "hola" before "hola amigo", but order within      │
+      │          each category is randomized for variety and engagement.        │
+      │                                                                          │
+      └─────────────────────────────────────────────────────────────────────────┘
+
+      INPUT: pack object with { baseWords: [...], exampleWords: [...] }
+      OUTPUT: Single combined array with baseWords first, both sections shuffled
+
+      USAGE: Call this ONCE when loading a pack, store result as pack.words
+    */
+    function combineAndShuffleWords(pack) {
+      // ════════════════════════════════════════════════════════════════════════
+      // STEP 1: Extract base and example words (handle missing data gracefully)
+      // ════════════════════════════════════════════════════════════════════════
+      const baseWords = pack.baseWords || [];
+      const exampleWords = pack.exampleWords || [];
+
+      // ════════════════════════════════════════════════════════════════════════
+      // STEP 2: Fisher-Yates Shuffle - used for BOTH base and example arrays
+      // ════════════════════════════════════════════════════════════════════════
+      // This ensures proper randomization while keeping arrays separate
+      function shuffleArray(array) {
+        const shuffled = [...array];  // Create copy to avoid mutating original
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+      }
+
+      // ════════════════════════════════════════════════════════════════════════
+      // STEP 3: Shuffle each section independently
+      // ════════════════════════════════════════════════════════════════════════
+      const shuffledBase = shuffleArray(baseWords);
+      const shuffledExamples = shuffleArray(exampleWords);
+
+      // ════════════════════════════════════════════════════════════════════════
+      // STEP 4: Concatenate - BASE ALWAYS FIRST
+      // ════════════════════════════════════════════════════════════════════════
+      // This is the CRITICAL step that preserves pedagogical order:
+      // - Learners see core vocabulary first
+      // - Then contextual examples build on that foundation
+      // - But within each section, order is randomized for variety
+      const combinedWords = [...shuffledBase, ...shuffledExamples];
+
+      console.log(`[Architecture] Combined ${shuffledBase.length} base + ${shuffledExamples.length} examples = ${combinedWords.length} total words`);
+
+      return combinedWords;
     }
 
     // ============================================================
@@ -2439,8 +2556,14 @@
       Object.keys(actData).forEach(packKey => {
         const pack = actData[packKey];
 
+        // ════════════════════════════════════════════════════════════════════════
+        // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
+        // This creates a single array with base words first, both sections shuffled
+        // ════════════════════════════════════════════════════════════════════════
+        const words = combineAndShuffleWords(pack);
+
         // Loop through each word in this pack
-        pack.words.forEach(word => {
+        words.forEach(word => {
           const targetLanguageWord = word[0];  // Column 0 is always target language
 
           // Filter out the correct answer and normalized duplicates
@@ -2511,8 +2634,14 @@
       Object.keys(actData).forEach(packKey => {
         const pack = actData[packKey];
 
+        // ════════════════════════════════════════════════════════════════════════
+        // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
+        // This creates a single array with base words first, both sections shuffled
+        // ════════════════════════════════════════════════════════════════════════
+        const words = combineAndShuffleWords(pack);
+
         // Loop through each word in this pack
-        pack.words.forEach(word => {
+        words.forEach(word => {
           const chineseText = word[0];  // Column 0 is Chinese characters
           const pinyinText = word[1];   // Column 1 is Pinyin
 
@@ -2882,7 +3011,15 @@
         }
       }
 
-      pack.words.forEach((word, index) => {
+      // ════════════════════════════════════════════════════════════════════════
+      // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
+      // ════════════════════════════════════════════════════════════════════════
+      // This creates a single array with base words first, both sections shuffled.
+      // Educational Psychology: Learners see core vocabulary before contextual examples.
+      // ════════════════════════════════════════════════════════════════════════
+      const words = combineAndShuffleWords(pack);
+
+      words.forEach((word, index) => {
         const row = document.createElement('tr');
 
         // ════════════════════════════════════════════════════════════════════════
@@ -3073,11 +3210,12 @@
       // Count total words in act for debug info
       let totalActWords = 0;
       Object.keys(actData).forEach(packKey => {
-        totalActWords += actData[packKey].words.length;
+        const packWords = combineAndShuffleWords(actData[packKey]);
+        totalActWords += packWords.length;
       });
 
       updateDebugInfo(`Displaying Pack ${pack.meta.wordpack}: ${pack.meta.english}\n` +
-                      `Words in this pack: ${pack.words.length}\n` +
+                      `Words in this pack: ${words.length}\n` +
                       `Total words in Act ${state.currentAct}: ${totalActWords}\n` +
                       `Mode: ${modeText}\n` +
                       `Total columns: ${totalColumns}\n` +
@@ -3234,7 +3372,14 @@
       const actData = state.loadedData[state.currentAct];
       if (!actData) return;
       const pack = actData[state.currentPack];
-      if (!pack || !pack.words) return;
+      if (!pack) return;
+
+      // ════════════════════════════════════════════════════════════════════════
+      // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
+      // This creates a single array with base words first, both sections shuffled
+      // ════════════════════════════════════════════════════════════════════════
+      const words = combineAndShuffleWords(pack);
+      if (words.length === 0) return;
 
       // Get native language column index
       const config = LANGUAGE_CONFIG[state.currentLanguage];
@@ -3270,7 +3415,7 @@
       // CHINESE ADDITION: Also store pinyin for Chinese text to enable
       // coupled rendering (characters + pinyin together).
       // ════════════════════════════════════════════════════════════════════════
-      state.flashcardDeck = pack.words.map((word, index) => {
+      state.flashcardDeck = words.map((word, index) => {
         const card = {
           id: `card-${index}`,           // Unique identifier for this card
           front: word[0],                 // Target language (column 0) - FRONT of card
