@@ -1168,30 +1168,44 @@ Location: ChineseWords/ChineseWords{N}.csv
 FOR EACH PACK, use Read tool: Read("ChineseWords/ChineseWords{N}.csv")
 
 Then check EVERY ROW, EVERY COLUMN:
-   - Column 1 (chinese): Does it match Overview? (READ ONLY - sacred)
+   - Column 1 (chinese): SACRED - Don't question this. It's the correct word for the theme.
    - Column 2 (pinyin): 1 syllable per character? Correct tones? Spaces between syllables?
-   - Column 3 (english): Accurate? Natural? Would a native speaker say this?
-   - Column 4 (spanish): Accurate? Natural? Common usage, not obscure?
-   - Column 5 (french): Accurate? Natural? Proper accents?
-   - Column 6 (portuguese): Accurate? Natural? Brazilian vs European?
-   - Column 7 (vietnamese): Accurate? Correct diacritics?
-   - Column 8 (thai): Accurate? Correct script?
-   - Column 9 (khmer): Accurate? Correct script?
-   - Column 10 (indonesian): Accurate? Natural?
-   - Column 11 (malay): Accurate? Natural? Different from Indonesian?
-   - Column 12 (filipino): Accurate? Natural?
+   - Column 3 (english): Does it match the INTENDED MEANING for this theme? Natural?
+   - Column 4 (spanish): Does it match the INTENDED MEANING for this theme? Natural?
+   - Column 5 (french): Does it match the INTENDED MEANING for this theme? Natural?
+   - Column 6 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
+   - Column 7 (vietnamese): Does it match the INTENDED MEANING for this theme?
+   - Column 8 (thai): Does it match the INTENDED MEANING for this theme?
+   - Column 9 (khmer): Does it match the INTENDED MEANING for this theme?
+   - Column 10 (indonesian): Does it match the INTENDED MEANING for this theme?
+   - Column 11 (malay): Does it match the INTENDED MEANING for this theme?
+   - Column 12 (filipino): Does it match the INTENDED MEANING for this theme?
+
+⚠️⚠️⚠️ THE CRITICAL ISSUE: WRONG MEANINGS FROM AUTO-TRANSLATION ⚠️⚠️⚠️
+
+Column 1 (chinese) is CORRECT for the pack theme. The problem is:
+TRANSLATIONS (columns 2-12) may have the WRONG MEANING because many words have
+multiple meanings depending on context!
+
+EXAMPLE:
+Pack: "Sports Equipment"
+Column 1: 球拍 (racket) ← CORRECT word for theme
+Column 3 (english): "noise" ← WRONG! Auto-translator chose "racket = noise"
+Column 3 SHOULD BE: "racket" (sports equipment) ← CORRECT meaning for theme!
+
+ANOTHER EXAMPLE:
+Pack: "Kitchen Utensils"
+Column 1: 叉子 (fork) ← CORRECT word for theme
+Column 4 (spanish): "bifurcación" ← WRONG! (fork in road)
+Column 4 SHOULD BE: "tenedor" ← CORRECT! (eating utensil)
 
 QUALITY CHECK FOR EACH TRANSLATION:
-□ Does it FIT THE PACK THEME? (Check Pack_Title - is this appropriate vocabulary for this theme?)
+□ Does the translation match the CORRECT MEANING for this pack's theme?
+□ Did auto-translation pick the RIGHT definition of this word?
 □ Is this the most COMMON way to say this? (not rare/formal)
 □ Would a NATIVE SPEAKER actually use this phrase?
 □ Is the grammar CORRECT?
 □ Are special characters/accents CORRECT?
-□ Does it MATCH the meaning of the Chinese word?
-
-⚠️ CRITICAL: Always check Pack_Title (visible in TranslationErrors CSV) to ensure
-   translations are thematically appropriate. A "Kitchen" pack shouldn't have
-   random greetings. A "Animals" pack should have animal-related vocabulary.
 
 SCORING SCALE:
   10 = Perfect (no issues at all - every translation is excellent)
@@ -1536,23 +1550,37 @@ Location: SpanishWords/SpanishWords{N}.csv
 FOR EACH PACK, use Read tool: Read("SpanishWords/SpanishWords{N}.csv")
 
 Then check EVERY ROW, EVERY COLUMN:
-   - Column 1 (spanish): Does it match Overview? (READ ONLY - sacred)
-   - Column 2 (english): Accurate? Natural? Would a native speaker say this?
-   - Column 3 (chinese): Accurate? Correct characters (simplified)?
+   - Column 1 (spanish): SACRED - Don't question this. It's the correct word for the theme.
+   - Column 2 (english): Does it match the INTENDED MEANING for this theme? Natural?
+   - Column 3 (chinese): Does it match the INTENDED MEANING for this theme? Simplified only?
    - Column 4 (pinyin): 1 syllable per character? Correct tones? Spaces?
-   - Column 5 (portuguese): Accurate? Natural? Brazilian vs European?
+   - Column 5 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
+
+⚠️⚠️⚠️ THE CRITICAL ISSUE: WRONG MEANINGS FROM AUTO-TRANSLATION ⚠️⚠️⚠️
+
+Column 1 (spanish) is CORRECT for the pack theme. The problem is:
+TRANSLATIONS (columns 2-5) may have the WRONG MEANING because many words have
+multiple meanings depending on context!
+
+EXAMPLE:
+Pack: "Musical Instruments"
+Column 1: "bajo" ← CORRECT word for theme (bass guitar)
+Column 2 (english): "short" or "under" ← WRONG! Wrong meaning of "bajo"
+Column 2 SHOULD BE: "bass" ← CORRECT! (the musical instrument)
+
+ANOTHER EXAMPLE:
+Pack: "Kitchen Utensils"
+Column 1: "copa" ← CORRECT word for theme (wine glass)
+Column 2 (english): "trophy" ← WRONG! (copa = trophy in sports context)
+Column 2 SHOULD BE: "wine glass" ← CORRECT! (drinking vessel)
 
 QUALITY CHECK FOR EACH TRANSLATION:
-□ Does it FIT THE PACK THEME? (Check Pack_Title - is this appropriate vocabulary for this theme?)
+□ Does the translation match the CORRECT MEANING for this pack's theme?
+□ Did auto-translation pick the RIGHT definition of this word?
 □ Is this the most COMMON way to say this? (not rare/formal)
 □ Would a NATIVE SPEAKER actually use this phrase?
 □ Is the grammar CORRECT?
 □ Are special characters/accents CORRECT? (á, é, í, ó, ú, ñ, ü)
-□ Does it MATCH the meaning of the Spanish word?
-
-⚠️ CRITICAL: Always check Pack_Title (visible in TranslationErrors CSV) to ensure
-   translations are thematically appropriate. A "Kitchen" pack shouldn't have
-   random greetings. A "Animals" pack should have animal-related vocabulary.
 
 SCORING SCALE:
   10 = Perfect (no issues at all - every translation is excellent)
@@ -1881,23 +1909,37 @@ Location: EnglishWords/EnglishWords{N}.csv
 FOR EACH PACK, use Read tool: Read("EnglishWords/EnglishWords{N}.csv")
 
 Then check EVERY ROW, EVERY COLUMN:
-   - Column 1 (english): Does it match Overview? (READ ONLY - sacred)
-   - Column 2 (chinese): Accurate? Correct characters (simplified)?
+   - Column 1 (english): SACRED - Don't question this. It's the correct word for the theme.
+   - Column 2 (chinese): Does it match the INTENDED MEANING for this theme? Simplified only?
    - Column 3 (pinyin): 1 syllable per character? Correct tones? Spaces?
-   - Column 4 (spanish): Accurate? Natural? Correct accents (á, é, í, ó, ú, ñ)?
-   - Column 5 (portuguese): Accurate? Natural? Brazilian vs European?
+   - Column 4 (spanish): Does it match the INTENDED MEANING for this theme? Natural?
+   - Column 5 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
+
+⚠️⚠️⚠️ THE CRITICAL ISSUE: WRONG MEANINGS FROM AUTO-TRANSLATION ⚠️⚠️⚠️
+
+Column 1 (english) is CORRECT for the pack theme. The problem is:
+TRANSLATIONS (columns 2-5) may have the WRONG MEANING because many words have
+multiple meanings depending on context!
+
+EXAMPLE:
+Pack: "Sports Equipment"
+Column 1: "bat" ← CORRECT word for theme (baseball bat)
+Column 2 (chinese): "蝙蝠" ← WRONG! (flying animal bat)
+Column 2 SHOULD BE: "球棒" ← CORRECT! (baseball bat)
+
+ANOTHER EXAMPLE:
+Pack: "Animals"
+Column 1: "bat" ← CORRECT word for theme (flying mammal)
+Column 2 (chinese): "球棒" ← WRONG! (sports equipment)
+Column 2 SHOULD BE: "蝙蝠" ← CORRECT! (the animal)
 
 QUALITY CHECK FOR EACH TRANSLATION:
-□ Does it FIT THE PACK THEME? (Check Pack_Title - is this appropriate vocabulary for this theme?)
+□ Does the translation match the CORRECT MEANING for this pack's theme?
+□ Did auto-translation pick the RIGHT definition of this word?
 □ Is this the most COMMON way to say this? (not rare/formal)
 □ Would a NATIVE SPEAKER actually use this phrase?
 □ Is the grammar CORRECT?
 □ Are special characters/accents CORRECT?
-□ Does it MATCH the meaning of the English word?
-
-⚠️ CRITICAL: Always check Pack_Title (visible in TranslationErrors CSV) to ensure
-   translations are thematically appropriate. A "Kitchen" pack shouldn't have
-   random greetings. A "Animals" pack should have animal-related vocabulary.
 
 SCORING SCALE:
   10 = Perfect (no issues at all - every translation is excellent)
