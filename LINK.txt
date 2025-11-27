@@ -6,6 +6,7 @@
 ██ HTML PAGES
 ═══════════════════════════════════════════════════════════════
 https://some-dude-999.github.io/LPH/CsvViewerForManuallyBuildingCSV.html - CSV parser, viewer, and downloader tool with auto-increment filename feature
+https://some-dude-999.github.io/LPH/DecoderTest-NoModules.html - Test version with invalid module paths to show UI when modules fail to load
 https://some-dude-999.github.io/LPH/DecoderTest.html - Test utility for verifying obfuscated JavaScript module decoding
 https://some-dude-999.github.io/LPH/FlashcardTypingGame/ChineseFlashcardTypingGame.html - Chinese vocabulary flashcard typing game with reading, listening, speaking, and writing modes
 https://some-dude-999.github.io/LPH/FlashcardTypingGame/EnglishFlashcardTypingGame.html - English vocabulary flashcard typing game with reading, listening, speaking, and writing modes
