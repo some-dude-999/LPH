@@ -2056,6 +2056,11 @@
     let currentSpeed = 0.6; // Default to normal speed
     const VALID_SPEEDS = [0.3, 0.6, 0.9]; // Valid speed options (must match data-speed values in HTML)
 
+    // ============================================================
+    // DEBUG MODE: Show word type (Base Word / Example Word)
+    // ============================================================
+    const DEBUG_SHOW_WORD_TYPE = true; // Set to true to display word type on cards
+
     // Helper to get valid languages from loaded metadata (for validation)
     function getValidLanguages() {
       const translations = getTranslationsConfig();
@@ -3042,8 +3047,9 @@
 
       // Completely reset pack as if starting new game in this mode
       // (Reset from original deck, not modified current deck)
+      // CRITICAL: Keep pedagogical ordering (base words first, then examples)
       if (originalDeck.length > 0) {
-        currentDeck = shuffleArray([...originalDeck]);
+        currentDeck = [...originalDeck]; // Copy without shuffling - preserve base→example order
         currentIndex = 0;
       }
 
@@ -3658,6 +3664,46 @@
     }
 
     // ============================================================
+    // ARCHITECTURE: Combine and Shuffle Base/Example Words
+    // ============================================================
+    /*
+      Combines baseWords and exampleWords with controlled shuffling.
+
+      Educational Psychology: Learners should encounter CORE VOCABULARY
+      before CONTEXTUAL EXAMPLES.
+
+      1. BASE WORDS are shuffled internally (variety within basics)
+      2. EXAMPLE WORDS are shuffled internally (variety within examples)
+      3. BASE WORDS ALWAYS COME FIRST (pedagogical order preserved)
+
+      INPUT: pack object with { baseWords: [...], exampleWords: [...] }
+      OUTPUT: Array of objects with { word: [...], type: "Base Word" | "Example Word" }
+    */
+    function combineAndShuffleWords(pack) {
+      const baseWords = pack.baseWords || [];
+      const exampleWords = pack.exampleWords || [];
+
+      // Shuffle and tag base words
+      const shuffledBase = shuffleArray(baseWords).map(word => ({
+        word: word,
+        type: "Base Word"
+      }));
+
+      // Shuffle and tag example words
+      const shuffledExamples = shuffleArray(exampleWords).map(word => ({
+        word: word,
+        type: "Example Word"
+      }));
+
+      // Concatenate - BASE ALWAYS FIRST (pedagogical order)
+      const combinedWords = [...shuffledBase, ...shuffledExamples];
+
+      console.log(`[Architecture] Combined ${shuffledBase.length} base + ${shuffledExamples.length} examples = ${combinedWords.length} total words`);
+
+      return combinedWords;
+    }
+
+    // ============================================================
     // KEY FEATURE: Deck Initialization with Linked Card Objects
     // Core Objective: Create shuffled deck where front/back are ALWAYS synced
     // Key Behaviors:
@@ -3686,6 +3732,11 @@
       const nativeIndex = langConfig ? langConfig.index : translations[getDefaultTranslation()].index;
 
       // ============================================================
+      // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
+      // ============================================================
+      const words = combineAndShuffleWords(pack);
+
+      // ============================================================
       // CHINESE PINYIN COUPLING
       // When nativeLanguage is 'chinese', we also store the pinyin
       // Spanish word array structure: [spanish, english, chinese, pinyin, portuguese]
@@ -3697,11 +3748,13 @@
       // CRITICAL: Each card object contains BOTH front (spanish) and back (translation)
       // These are NEVER stored separately - they are always linked as one object
       // When translation is Chinese, we also store pinyin for coupling
-      originalDeck = pack.words.map((word, idx) => {
+      originalDeck = words.map((wordObj, idx) => {
+        const word = wordObj.word;  // Extract word array from object
         const card = {
           id: `${packKey}-${idx}`,       // Unique ID for this card
           spanish: word[0],               // Front of card (Spanish word)
-          translation: word[nativeIndex]  // Back of card (translation) - LINKED to spanish
+          translation: word[nativeIndex], // Back of card (translation) - LINKED to spanish
+          type: wordObj.type              // Word type for debugging (Base Word / Example Word)
         };
 
         // Add pinyin when translating to Chinese
@@ -3714,8 +3767,15 @@
         return card;
       });
 
-      // Shuffle the card OBJECTS - front and back stay linked because they're the same object
-      currentDeck = shuffleArray([...originalDeck]);
+      // ============================================================
+      // CRITICAL: DO NOT shuffle originalDeck here!
+      // Words are already ordered by combineAndShuffleWords():
+      //   1. Base words (shuffled internally)
+      //   2. Example words (shuffled internally)
+      // Shuffling here would mix base and example words together,
+      // breaking the pedagogical ordering!
+      // ============================================================
+      currentDeck = [...originalDeck]; // Copy without shuffling
       currentIndex = 0;
       updateDisplay();
     }
@@ -3724,7 +3784,8 @@
     function restartCurrentPack() {
       playButtonClickSound();
       if (originalDeck.length > 0) {
-        currentDeck = shuffleArray([...originalDeck]);
+        // Keep pedagogical ordering (base words first, then examples)
+        currentDeck = [...originalDeck]; // Copy without shuffling
         currentIndex = 0;
         if (currentMode === 'listening' || currentMode === 'writing') {
           initializeTypingDisplay();
@@ -3899,7 +3960,17 @@
 
       // Display counter (deck change indicator now shown as overlay stamp on card)
       let counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
-      cardCounter.textContent = counterText;
+
+      // ============================================================
+      // DEBUG MODE: Show word type (Base Word / Example Word)
+      // ============================================================
+      if (DEBUG_SHOW_WORD_TYPE && card.type) {
+        const typeColor = card.type === "Base Word" ? "#2563eb" : "#059669";
+        const typeWeight = card.type === "Base Word" ? "bold" : "normal";
+        counterText += ` | <span style="color: ${typeColor}; font-weight: ${typeWeight};">${card.type}</span>`;
+      }
+
+      cardCounter.innerHTML = counterText; // Use innerHTML to render HTML tags
 
       // Get indicator elements (positioned at card corners, not inside card-word)
       const wrongLettersFront = document.getElementById('wrong-letters-front');
@@ -4177,7 +4248,8 @@
       playButtonClickSound();
 
       // Completely reset as if we just started this pack in this mode
-      currentDeck = shuffleArray([...originalDeck]);
+      // CRITICAL: Keep pedagogical ordering (base words first, then examples)
+      currentDeck = [...originalDeck]; // Copy without shuffling - preserve base→example order
       currentIndex = 0;
 
       // Reset typing state for typing modes

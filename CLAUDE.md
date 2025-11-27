@@ -618,49 +618,58 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act1-foundation-js
 3. Use Simplified Chinese input methods/references
 4. When in doubt, look up the Simplified form
 
-### Pinyin Comma Convention - CRITICAL!
-**In our language learning game, pinyin appears directly under Chinese characters.**
+### 📝 PINYIN PUNCTUATION CONVENTION - CRITICAL!
+**Pinyin MUST mirror the Chinese text structure, including punctuation placement.**
 
-**The Rule:** Commas in pinyin must align with commas in Chinese characters.
+This is how Chinese appears in our language learning game - pinyin directly underneath Chinese characters with matching punctuation.
 
-**Format:**
+#### The Rule
+- **Chinese punctuation (，。！？) appears in BOTH Chinese and pinyin columns**
+- **Punctuation is placed immediately after the corresponding pinyin syllable**
+- **No space before Chinese punctuation, space after it**
+
+#### ✅ CORRECT Examples
+
 ```
-Chinese: 是的，先生
-Pinyin:  shì de，xiān shēng
-```
-
-Notice: The comma appears AFTER "的" and AFTER "de" - they're in the same "block" together.
-
-**Why This Matters:**
-- Pinyin is displayed directly under Chinese characters in the game UI
-- Comma placement must match so they align vertically
-- Makes it easy for learners to see which pinyin goes with which character
-
-**Examples:**
-
-✅ CORRECT:
-```
-Chinese: 好的，谢谢你
-Pinyin:  hǎo de，xiè xiè nǐ
+CSV Row:
+spanish,english,chinese,pinyin,portuguese
+sí señor,yes sir,是的，先生,shì de， xiān shēng,"sim, senhor"
+                 └─┘└┘  └─┘└┘
+                 的，    de，  (comma right after "de", no space before comma)
 ```
 
-❌ WRONG:
+Visual alignment in game:
 ```
-Chinese: 好的，谢谢你
-Pinyin:  hǎo de, xiè xiè nǐ    ← Comma has space before it, won't align!
-```
-
-✅ CORRECT:
-```
-Chinese: 你好，我是学生
-Pinyin:  nǐ hǎo，wǒ shì xué shēng
+是的，先生
+shì de， xiān shēng
 ```
 
-**Rule Summary:**
-- Chinese character + comma together: `的，`
-- Pinyin syllable + comma together: `de，`
-- Comma is part of the character's "block" in both cases
-- No space before comma in pinyin
+More examples:
+| Chinese | Pinyin | Correct? |
+|---------|--------|----------|
+| `是的，先生` | `shì de， xiān shēng` | ✅ Comma after "de" |
+| `不，谢谢` | `bù， xiè xiè` | ✅ Comma after "bù" |
+| `好的，完美` | `hǎo de， wán měi` | ✅ Comma after "de" |
+| `没关系，谢谢` | `méi guān xì， xiè xiè` | ✅ Comma after "xì" |
+
+#### ❌ INCORRECT Examples
+
+| Chinese | Pinyin | Wrong Because |
+|---------|--------|---------------|
+| `是的，先生` | `shì de xiān shēng` | ❌ Missing comma - doesn't mirror Chinese |
+| `是的，先生` | `shì de ， xiān shēng` | ❌ Space before comma (should be `de，` not `de ，`) |
+| `是的，先生` | `shì de, xiān shēng` | ❌ Latin comma instead of Chinese comma |
+
+#### Why This Convention?
+1. **Visual alignment**: Pinyin appears directly under Chinese characters in the game
+2. **Structural mirroring**: Punctuation position helps learners understand sentence structure
+3. **Consistency**: Same punctuation rules across all Chinese content
+4. **Natural pairing**: Each Chinese character/phrase pairs with its pinyin equivalent, including punctuation
+
+#### Validation
+- Use `PythonHelpers/fix_pinyin_punctuation.py` for surgical fixes
+- The script applies the correct convention: comma immediately after pinyin, no space before
+- Always verify Chinese and pinyin have matching punctuation structure
 
 ---
 
