@@ -644,6 +644,11 @@
       <input type="checkbox" id="showEdgeCasesOnly">
       <strong>Show Edge Cases Only</strong> (Filter for Latin abbreviations: ATM, DNA, WhatsApp, etc.)
     </label>
+    <br>
+    <label style="margin-left: 20px;">
+      <input type="checkbox" id="showMismatchesOnly">
+      <strong>Show Mismatches Only</strong> (Only show words with "?" in pinyin - indicates CSV data errors)
+    </label>
   </p>
 
   <!--
@@ -1666,6 +1671,17 @@
       const edgeCaseCheckbox = document.getElementById('showEdgeCasesOnly');
       if (edgeCaseCheckbox) {
         edgeCaseCheckbox.addEventListener('change', () => {
+          // Just refresh the table display with the new filter
+          displayVocabulary();
+        });
+      }
+
+      // ════════════════════════════════════════════════════════════════════════
+      // MISMATCH FILTER: Event listener for "Show Mismatches Only" checkbox
+      // ════════════════════════════════════════════════════════════════════════
+      const mismatchCheckbox = document.getElementById('showMismatchesOnly');
+      if (mismatchCheckbox) {
+        mismatchCheckbox.addEventListener('change', () => {
           // Just refresh the table display with the new filter
           displayVocabulary();
         });
@@ -3346,6 +3362,30 @@
 
       // Sort by pack number
       edgeCaseWords.sort((a, b) => a.packNumber - b.packNumber);
+
+      // ════════════════════════════════════════════════════════════════════════
+      // MISMATCH FILTER: If "Show Mismatches Only" is checked, filter to only
+      // show words where pinyin coupling contains "?" (indicates CSV errors)
+      // ════════════════════════════════════════════════════════════════════════
+      const showMismatchesOnly = document.getElementById('showMismatchesOnly')?.checked;
+      if (showMismatchesOnly && nativeIsChinese && nativePinyinColumn !== null) {
+        edgeCaseWords = edgeCaseWords.filter(item => {
+          const chineseText = item.word[state.currentNativeLanguage];
+          const pinyinText = item.word[nativePinyinColumn];
+
+          // Check if coupling produces any "?" syllables
+          const coupled = coupleChineseWithPinyin(chineseText, pinyinText);
+          return coupled.some(pair => pair.pinyin === '?');
+        });
+
+        if (edgeCaseWords.length === 0) {
+          tableBody.innerHTML = '<tr><td colspan="6">No mismatches found (all edge cases have correct pinyin)</td></tr>';
+          return;
+        }
+
+        // Update title to indicate mismatch filter
+        packTitleEl.textContent = `Pinyin Mismatches - All Packs (${state.currentLanguage})`;
+      }
 
       // Render each edge case
       edgeCaseWords.forEach(item => {
