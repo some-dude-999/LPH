@@ -264,7 +264,9 @@ seen this wordpack before) rate the quality. This prevents:
         <option value="all">All Stages</option>
         <option value="1">Stage 1: Base Words</option>
         <option value="2">Stage 2: Example Words</option>
-        <option value="3">Stage 3: Breakout CSVs</option>
+        <option value="3">Stage 3: Breakout CSVs (All)</option>
+        <option value="3a">Stage 3A: Evaluation Only</option>
+        <option value="3b">Stage 3B: Fixing Only</option>
         <option value="4">Stage 4: JS Modules</option>
         <option value="rating">Quality Rating</option>
     </select>
@@ -1099,89 +1101,47 @@ Create your own branch, commit, and PR to main.</div>
     </table>
 </div>
 
-<h3>Chinese - Stage 3</h3>
+<h3>Chinese - Stage 3A (Evaluation Only)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)">TASK: Review and fix Chinese breakout CSVs - ONE PACK AT A TIME, ONE ACT AT A TIME
+<div onclick="copyPrompt(this)" data-stage="3a" data-lang="chinese">TASK: EVALUATE ALL 107 CHINESE BREAKOUT CSVs - PRODUCE SCORECARD ONLY (NO FIXING)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🔥🔥🔥 MANDATORY: IF YOU FIND AN ERROR, YOU MUST FIX IT 🔥🔥🔥  ║
+║  📊 THIS IS EVALUATION ONLY - DO NOT FIX ANYTHING                ║
 ║                                                                  ║
-║  Do NOT just report issues. Do NOT just make a list.             ║
-║  If a translation is WRONG or COULD BE BETTER:                   ║
-║                                                                  ║
-║  → FIX IT IMMEDIATELY using the Edit tool                        ║
-║  → COMMIT your changes                                           ║
-║  → PR TO MAIN                                                    ║
-║                                                                  ║
-║  No excuses. No "I'll fix it later." FIX IT NOW AND PR.          ║
+║  Your ONLY job: Score ALL 107 packs and output the scorecard.   ║
+║  DO NOT edit any files. DO NOT fix any issues.                  ║
+║  Just READ, EVALUATE, and OUTPUT the full scorecard.            ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
-║  🔒 NEVER EDIT COLUMN 1 (chinese) - IT'S SACRED                  ║
-║  ⛔ NEVER USE PYTHON TO FIX TRANSLATIONS (auto-fail)             ║
-║  ✅ ONLY edit Columns 2-12 (pinyin + translations)               ║
-║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
-╚══════════════════════════════════════════════════════════════════╝
-
-=== STEP 1: VALIDATE COLUMN 1 MATCHES OVERVIEW ===
-Run this first:
-python PythonHelpers/verify_words_integrity.py chinese
-
-This checks that Column 1 in each breakout CSV matches Combined_Words in Overview.
-If mismatch found: STOP and report. Column 1 is sacred - don't touch it.
-
-=== STEP 2: CHECK PINYIN ERRORS ===
-python PythonHelpers/validate_pinyin.py chinese
-
-Note any pinyin errors to fix.
-
-=== STEP 3: SCORE EVERY SINGLE PACK (1-10) - YOUR FIRST RESPONSE ===
-
-╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ TOTAL FAIL CONDITIONS - READ CAREFULLY ⛔⛔⛔              ║
+║  ⛔⛔⛔ TOTAL FAIL CONDITIONS ⛔⛔⛔                               ║
 ║                                                                  ║
 ║  YOUR TASK IS A COMPLETE FAILURE IF:                             ║
-║  ❌ You give an "overall score" instead of per-pack scores       ║
-║  ❌ Even ONE pack is missing from your scorecard                 ║
-║  ❌ You skip ANY pack (1-107) for ANY reason                     ║
-║  ❌ You say "Packs 1-50 reviewed" instead of listing each one   ║
-║  ❌ The full 107-pack scorecard is not in your FIRST response   ║
+║  ❌ You give an "overall score" (e.g., "9.6/10") instead of      ║
+║     individual per-pack scores                                   ║
+║  ❌ Even ONE pack is missing from your scorecard (1-107)         ║
+║  ❌ You say "Packs 1-50 reviewed" or "Act I reviewed"            ║
+║  ❌ You use "..." or skip any rows                               ║
+║  ❌ You try to fix anything (this is evaluation ONLY)            ║
+║  ❌ Your table has fewer than 107 rows                           ║
 ║                                                                  ║
-║  There are exactly 107 packs. Your table MUST have 107 rows.    ║
-║  NO SHORTCUTS. NO SUMMARIES. NO GROUPING. EACH PACK SCORED.     ║
+║  107 packs = 107 rows. NO EXCEPTIONS. NO SHORTCUTS.              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ✅ WHAT SUCCESS LOOKS LIKE:                                     ║
-║                                                                  ║
-║  Your FIRST response contains a table with ALL 107 rows:        ║
-║  | 1 | ChineseWords1.csv | 8/10 | Row 3: pinyin issue |         ║
-║  | 2 | ChineseWords2.csv | 10/10 | None ✓ |                     ║
-║  | 3 | ChineseWords3.csv | 7/10 | Row 5: english awkward |      ║
-║  ... (every single pack from 1 to 107) ...                      ║
-║  | 107 | ChineseWords107.csv | 9/10 | Minor ✓ |                 ║
-╚══════════════════════════════════════════════════════════════════╝
+=== STEP 1: RUN VALIDATION SCRIPTS ===
+python PythonHelpers/verify_words_integrity.py chinese
+python PythonHelpers/validate_pinyin.py chinese
 
-SCORING SCALE:
-  10 = Perfect (no issues)
-  9  = Excellent (trivial issues only, acceptable)
-  8  = Good (minor issues)
-  7  = Fair (several issues)
-  6 or below = Poor (significant issues, definitely needs work)
+Note any errors found by scripts.
 
-🎯 THRESHOLD: Only fix packs scoring BELOW 9
+=== STEP 2: READ AND SCORE EVERY PACK ===
 
-Chinese Acts (for reference only - YOU MUST SCORE EVERY PACK):
-- Act I (Foundation): Packs 1-14
-- Act II (Development): Packs 15-27
-- Act III (Expansion): Packs 28-57
-- Act IV (Mastery): Packs 58-85
-- Act V (Refinement): Packs 86-107
+Chinese Packs: ChineseWords1.csv through ChineseWords107.csv
+Location: ChineseWords/ChineseWords{N}.csv
 
-FOR EACH PACK, check EVERY ROW:
-   - Column 1 (chinese): READ ONLY - never touch
-   - Column 2 (pinyin): 1 syllable per character? Correct tones? Spaces?
+FOR EACH PACK (1-107), read the CSV and check EVERY ROW:
+   - Column 1 (chinese): Does it match Overview? (READ ONLY)
+   - Column 2 (pinyin): 1 syllable per character? Correct tones? Spaces between syllables?
    - Column 3 (english): Accurate? Natural? Common usage?
    - Column 4 (spanish): Accurate? Natural?
    - Column 5 (french): Accurate? Natural?
@@ -1193,72 +1153,163 @@ FOR EACH PACK, check EVERY ROW:
    - Column 11 (malay): Accurate? Natural?
    - Column 12 (filipino): Accurate? Natural?
 
+SCORING SCALE:
+  10 = Perfect (no issues at all)
+  9  = Excellent (trivial issues only, acceptable as-is)
+  8  = Good (minor issues that should be fixed)
+  7  = Fair (several issues)
+  6 or below = Poor (significant issues, definitely needs work)
+
+=== STEP 3: OUTPUT THE COMPLETE SCORECARD ===
+
 ╔══════════════════════════════════════════════════════════════════╗
-║  🚨 YOUR FIRST RESPONSE MUST CONTAIN THIS FULL TABLE 🚨          ║
-║                                                                  ║
-║  ⛔ "..." or "Packs 6-105" = TOTAL FAIL                          ║
-║  ⛔ Missing even 1 pack = TOTAL FAIL                             ║
-║  ✅ All 107 rows explicitly listed = SUCCESS                     ║
+║  🚨 MANDATORY OUTPUT - ALL 107 ROWS - NO EXCEPTIONS 🚨           ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 | Pack | Wordpack | Score | Issues Found |
 |------|----------|-------|--------------|
-| 1 | ChineseWords1.csv | ?/10 | [list issues or "None ✓"] |
-| 2 | ChineseWords2.csv | ?/10 | [list issues or "None ✓"] |
-| 3 | ChineseWords3.csv | ?/10 | [list issues or "None ✓"] |
-| 4 | ChineseWords4.csv | ?/10 | [list issues or "None ✓"] |
-| 5 | ChineseWords5.csv | ?/10 | [list issues or "None ✓"] |
-| 6 | ChineseWords6.csv | ?/10 | [list issues or "None ✓"] |
-| 7 | ChineseWords7.csv | ?/10 | [list issues or "None ✓"] |
-...YOU MUST LIST EVERY SINGLE ROW FROM 1 TO 107...
-| 105 | ChineseWords105.csv | ?/10 | [list issues or "None ✓"] |
-| 106 | ChineseWords106.csv | ?/10 | [list issues or "None ✓"] |
-| 107 | ChineseWords107.csv | ?/10 | [list issues or "None ✓"] |
+| 1 | ChineseWords1.csv | X/10 | [specific issues or "None ✓"] |
+| 2 | ChineseWords2.csv | X/10 | [specific issues or "None ✓"] |
+| 3 | ChineseWords3.csv | X/10 | [specific issues or "None ✓"] |
+| 4 | ChineseWords4.csv | X/10 | [specific issues or "None ✓"] |
+| 5 | ChineseWords5.csv | X/10 | [specific issues or "None ✓"] |
+| 6 | ChineseWords6.csv | X/10 | [specific issues or "None ✓"] |
+| 7 | ChineseWords7.csv | X/10 | [specific issues or "None ✓"] |
+| 8 | ChineseWords8.csv | X/10 | [specific issues or "None ✓"] |
+| 9 | ChineseWords9.csv | X/10 | [specific issues or "None ✓"] |
+| 10 | ChineseWords10.csv | X/10 | [specific issues or "None ✓"] |
+| ... CONTINUE FOR EVERY SINGLE PACK ... |
+| 105 | ChineseWords105.csv | X/10 | [specific issues or "None ✓"] |
+| 106 | ChineseWords106.csv | X/10 | [specific issues or "None ✓"] |
+| 107 | ChineseWords107.csv | X/10 | [specific issues or "None ✓"] |
 
-⛔ DO NOT USE "..." IN YOUR ACTUAL TABLE. LIST ALL 107 ROWS. ⛔
+⛔ YOUR TABLE MUST HAVE EXACTLY 107 ROWS (1-107). NO "..." ALLOWED IN YOUR OUTPUT! ⛔
 
-SUMMARY (required after scorecard):
+=== STEP 4: SUMMARY COUNTS ===
+
 | Metric | Count |
 |--------|-------|
 | Packs scoring 10/10 | X |
 | Packs scoring 9/10 | X |
-| Packs scoring below 9 | X (these need fixing) |
+| Packs scoring 8/10 | X |
+| Packs scoring 7/10 | X |
+| Packs scoring 6 or below | X |
+| TOTAL PACKS NEEDING FIXES (below 9) | X |
 
-=== IMPROVEMENT PLAN (required after summary) ===
-After the scorecard and summary, create an improvement plan:
+=== STEP 5: IMPROVEMENT PLAN (for Stage 3B) ===
 
-| Priority | Pack | Current Score | Main Issues | Proposed Fix |
-|----------|------|---------------|-------------|--------------|
-| 1 | ChineseWords23.csv | 5/10 | Multiple pinyin errors, english awkward | Fix pinyin spacing, rewrite english |
-| 2 | ChineseWords45.csv | 6/10 | Thai translation wrong | Correct thai column |
-| 3 | ChineseWords12.csv | 7/10 | Spanish accent missing | Add accents |
-| ... | ... | ... | ... | ... |
+List ALL packs scoring below 9, ordered by priority (worst scores first):
 
-List ALL packs scoring below 9, ordered by priority (worst first).
+| Priority | Pack | Score | Row | Column | Issue | Proposed Fix |
+|----------|------|-------|-----|--------|-------|--------------|
+| 1 | ChineseWords23.csv | 5/10 | 3 | pinyin | "nǐhǎo" no space | Add space: "nǐ hǎo" |
+| 1 | ChineseWords23.csv | 5/10 | 7 | english | awkward phrasing | Rewrite more naturally |
+| 2 | ChineseWords45.csv | 6/10 | 12 | thai | wrong translation | Correct to: "..." |
+| 3 | ChineseWords12.csv | 7/10 | 5 | spanish | missing accent | Add accent: "..." |
+| ... | ... | ... | ... | ... | ... | ... |
 
-=== STEP 4: FIX ALL PACKS SCORING BELOW 9 ===
+=== FINAL OUTPUT CHECKLIST ===
+| Requirement | Status |
+|-------------|--------|
+| All 107 packs scored individually | ✓/✗ |
+| No "overall score" given | ✓/✗ |
+| No packs skipped | ✓/✗ |
+| Summary counts provided | ✓/✗ |
+| Improvement plan for packs below 9 | ✓/✗ |
+| NO files edited (evaluation only) | ✓/✗ |
+
+=== PINYIN RULE REFERENCE ===
+Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
+✓ CORRECT: 猴子 → hóu zi (2 chars = 2 syllables with space)
+✗ WRONG: 猴子 → hóuzi (missing space!)
+
+=== BREAKOUT CSV COLUMNS (12 columns) ===
+| Col | Name       | Notes                        |
+|-----|------------|------------------------------|
+| 1   | chinese    | Must match Overview          |
+| 2   | pinyin     | 1 syllable per character     |
+| 3   | english    | Translation                  |
+| 4   | spanish    | Translation                  |
+| 5   | french     | Translation                  |
+| 6   | portuguese | Translation                  |
+| 7   | vietnamese | Translation                  |
+| 8   | thai       | Translation                  |
+| 9   | khmer      | Translation                  |
+| 10  | indonesian | Translation                  |
+| 11  | malay      | Translation                  |
+| 12  | filipino   | Translation                  |
+
+DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
+
+<h3>Chinese - Stage 3B (Fixing Only)</h3>
+<div>Click to copy</div>
+<div onclick="copyPrompt(this)" data-stage="3b" data-lang="chinese">TASK: FIX ALL CHINESE PACKS SCORING BELOW 9 (Based on Stage 3A Scorecard)
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🔧 THIS IS FIXING ONLY - SCORECARD ALREADY EXISTS               ║
+║                                                                  ║
+║  Stage 3A already evaluated all 107 packs and produced a        ║
+║  scorecard with issues. Your job: FIX every pack below 9.       ║
+║  Start with the LOWEST scores first (worst = highest priority). ║
+╚══════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚫 NEVER EDIT THE OVERVIEW CSV                                  ║
+║  🔒 NEVER EDIT COLUMN 1 (chinese) - IT'S SACRED                  ║
+║  ⛔ NEVER USE PYTHON TO FIX TRANSLATIONS (auto-fail)             ║
+║  ✅ ONLY edit Columns 2-12 (pinyin + translations)               ║
+║  ✅ ALL fixes must be MANUAL using Edit tool                     ║
+╚══════════════════════════════════════════════════════════════════╝
+
+=== STEP 1: GET THE SCORECARD ===
+
+First, check if a Stage 3A scorecard exists. If not, run Stage 3A first.
+
+The scorecard should show ALL 107 packs with:
+- Individual scores (1-10)
+- Specific issues for each pack
+- Improvement plan with priorities
+
+=== STEP 2: FIX ALL PACKS SCORING BELOW 9 ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  🔥 FIX EVERY PACK WITH SCORE < 9. NO EXCEPTIONS. 🔥            ║
 ║                                                                  ║
-║  Scored 45 packs below 9? FIX ALL 45. One pack at a time.       ║
+║  45 packs below 9? FIX ALL 45. One pack at a time.              ║
 ║  Do NOT stop halfway. Do NOT leave work for next agent.          ║
+║  Start with LOWEST scores first (5/10 before 8/10).             ║
 ║  COMPLETE EVERYTHING before finishing this task.                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-FOR EACH PACK SCORING BELOW 9:
-1. Fix ALL issues in that pack using Edit tool
-2. Show before/after table:
+FOR EACH PACK SCORING BELOW 9 (in priority order):
+
+1. Read the pack CSV file
+2. Fix ALL issues identified in the scorecard
+3. Show before/after table:
 
    | File | Row | Column | Before | After |
    |------|-----|--------|--------|-------|
-   | ChineseWords3.csv | 15 | pinyin | nǐhǎo | nǐ hǎo |
-   | ChineseWords3.csv | 22 | english | hello friend | hi friend |
+   | ChineseWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo |
+   | ChineseWords23.csv | 7 | english | hello friend boy | hey buddy |
 
-3. COMMIT that pack's fixes
-4. PR TO MAIN
-5. Move to next pack scoring below 9
-6. REPEAT until ALL low-scoring packs are fixed
+4. COMMIT that pack's fixes
+5. PR TO MAIN
+6. Move to next pack
+7. REPEAT until ALL packs below 9 are fixed
+
+=== CRITICAL RULES ===
+
+| Rule | Description |
+|------|-------------|
+| 🔒 Column 1 | NEVER edit - chinese words are sacred |
+| ✅ Columns 2-12 | OK to edit - pinyin and translations |
+| ⛔ No Python fixes | Manual Edit tool only for translations |
+| 🎯 Priority | Fix lowest scores first (5/10 → 6/10 → 7/10 → 8/10) |
+
+=== PINYIN RULE ===
+Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
+✓ CORRECT: 猴子 → hóu zi (2 chars = 2 syllables with space)
+✗ WRONG: 猴子 → hóuzi (missing space!)
 
 === BREAKOUT CSV COLUMNS (12 columns) ===
 | Col | Name       | Editable? | Notes                        |
@@ -1276,19 +1327,13 @@ FOR EACH PACK SCORING BELOW 9:
 | 11  | malay      | ✅ YES    | Translation                  |
 | 12  | filipino   | ✅ YES    | Translation                  |
 
-=== CRITICAL PINYIN RULE ===
-Each Chinese character MUST have exactly ONE pinyin syllable, separated by spaces.
-CORRECT: 猴子 → hóu zi (2 chars = 2 syllables)
-INCORRECT: 猴子 → hóuzi (WRONG - no space!)
-
 === FINAL OUTPUT (REQUIRED) ===
+
 | Metric                    | Value |
 |---------------------------|-------|
-| Total Packs Scored        | 107   |
-| Column 1 Valid            | YES/NO |
-| Packs Scoring 9-10        | X (no fix needed) |
-| Packs Scoring Below 9     | X (need fixing) |
-| Packs Fixed & PRed        | X     |
+| Packs Below 9 (from 3A)   | X     |
+| Packs Fixed               | X     |
+| Packs PRed to Main        | X     |
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ✅ SUCCESS CRITERIA: Packs Below 9 = Packs Fixed                ║
@@ -1299,7 +1344,7 @@ INCORRECT: 猴子 → hóuzi (WRONG - no space!)
 ╚══════════════════════════════════════════════════════════════════╝
 
 ⚠️ COMMIT AND PR AFTER EACH WORDPACK FIX!
-Don't just score - FIX ALL PACKS BELOW 9 AND PR!</div>
+Fix ALL packs below 9 - no exceptions!</div>
 
 <h3>Spanish - Stage 3</h3>
 <div>Click to copy</div>
@@ -1885,6 +1930,8 @@ The goal is quality, not politeness.</div>
             let stage = 'other';
             if (text.includes('stage 1')) stage = '1';
             else if (text.includes('stage 2')) stage = '2';
+            else if (text.includes('stage 3a')) stage = '3a';
+            else if (text.includes('stage 3b')) stage = '3b';
             else if (text.includes('stage 3')) stage = '3';
             else if (text.includes('stage 4')) stage = '4';
             else if (text.includes('rating')) stage = 'rating';
@@ -1896,7 +1943,10 @@ The goal is quality, not politeness.</div>
             else if (text.includes('english')) lang = 'english';
 
             // Check if this section should be visible
-            const stageMatch = (stageFilter === 'all' || stageFilter === stage);
+            // Stage 3 filter shows all Stage 3 variants (3, 3a, 3b)
+            const stageMatch = (stageFilter === 'all' ||
+                               stageFilter === stage ||
+                               (stageFilter === '3' && (stage === '3a' || stage === '3b')));
             const langMatch = (langFilter === 'all' || langFilter === lang);
 
             // Find all siblings until next h3 or h2
@@ -1927,7 +1977,11 @@ The goal is quality, not politeness.</div>
             else if (text.includes('stage 4')) stage = '4';
             else if (text.includes('rating')) stage = 'rating';
 
-            const stageMatch = (stageFilter === 'all' || stageFilter === stage);
+            // Stage 3 filter shows all Stage 3 variants (3, 3a, 3b)
+            const stageMatch = (stageFilter === 'all' ||
+                               stageFilter === stage ||
+                               (stageFilter === '3' && (stage === '3a' || stage === '3b')) ||
+                               ((stageFilter === '3a' || stageFilter === '3b') && stage === '3'));
 
             // Find section intro (siblings until next h3)
             let el = h2.parentElement;
