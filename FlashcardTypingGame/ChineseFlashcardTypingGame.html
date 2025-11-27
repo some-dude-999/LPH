@@ -1964,6 +1964,33 @@
       const translations = getTranslationsConfig();
       return translations ? Object.keys(translations) : [];
     }
+
+    // Helper to get TTS language code from loaded module metadata
+    // Derives from wordColumns[0] - the primary language of the deck
+    function getTtsLanguageCode() {
+      for (const actNum of Object.keys(loadedActMeta)) {
+        const meta = loadedActMeta[actNum];
+        if (meta && meta.wordColumns && meta.wordColumns[0]) {
+          const primaryLang = meta.wordColumns[0].toLowerCase();
+          // Map language names to TTS language codes
+          const langMap = {
+            'spanish': 'es',
+            'chinese': 'zh',
+            'english': 'en',
+            'portuguese': 'pt',
+            'french': 'fr',
+            'vietnamese': 'vi',
+            'thai': 'th',
+            'indonesian': 'id',
+            'malay': 'ms',
+            'filipino': 'fil'
+          };
+          return langMap[primaryLang] || null;
+        }
+      }
+      return null; // No modules loaded yet
+    }
+
     let currentDeck = [];
     let originalDeck = [];
     let currentIndex = 0;
@@ -2951,9 +2978,18 @@
       return !typingDisplay.includes('_');
     }
 
-    // Load Chinese voices
+    // Load voices based on TTS language code from loaded modules
+    // KEY FEATURE: Voices only load if modules are loaded - no module = no voices
     function loadVoices() {
-      chineseVoices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('zh'));
+      const ttsLangCode = getTtsLanguageCode();
+
+      // Only filter voices if we have a language code from loaded modules
+      if (!ttsLangCode) {
+        chineseVoices = []; // No modules loaded = no voices
+        return;
+      }
+
+      chineseVoices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(ttsLangCode));
 
       // Restore saved voice if we have a saved URI and voices are now available
       if (savedVoiceURI && chineseVoices.length > 0 && !currentVoice) {
@@ -3218,6 +3254,10 @@
 
         // Load first act data BEFORE rendering menu
         await loadAct(currentAct);
+
+        // Now that modules are loaded, load voices based on module metadata
+        // This ensures no voices are available if modules fail to load
+        loadVoices();
 
         // Remember which act we initially loaded
         const firstAct = currentAct;
