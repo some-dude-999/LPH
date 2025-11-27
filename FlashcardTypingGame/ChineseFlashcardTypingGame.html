@@ -2814,8 +2814,9 @@
     }
 
     // Initialize typing display for listening and writing modes
+    // Uses pinyin for typing (not Chinese characters) - normalized comparison ignores tone marks
     function initializeTypingDisplay() {
-      const word = currentDeck[currentIndex].chinese;
+      const word = currentDeck[currentIndex].pinyin;
       typingInput = '';
       // Store actual characters (not underscores) to preserve natural layout
       typingDisplay = word.split('');
@@ -2864,10 +2865,11 @@
     }
 
     // Handle typing input for listening and writing modes
+    // Uses pinyin for typing - tone marks are normalized (ǐ matches i, ā matches a, etc.)
     function handleTypingInput(key) {
       if ((currentMode !== 'listening' && currentMode !== 'writing') || currentDeck.length === 0) return;
 
-      const word = currentDeck[currentIndex].chinese;
+      const word = currentDeck[currentIndex].pinyin;
       const targetChars = word.split('');
 
       // Find next unfilled position (first position not in typedPositions)
@@ -3405,9 +3407,11 @@
 
       // CRITICAL: Each card object contains BOTH front (chinese) and back (translation)
       // These are NEVER stored separately - they are always linked as one object
+      // Pinyin is included for typing mode (users type pinyin, not Chinese characters)
       originalDeck = pack.words.map((word, idx) => ({
         id: `${packKey}-${idx}`,      // Unique ID for this card
         chinese: word[0],              // Front of card (Chinese characters)
+        pinyin: word[1],               // Pinyin for typing mode
         translation: word[nativeIndex] // Back of card (translation) - LINKED to chinese
       }));
 
