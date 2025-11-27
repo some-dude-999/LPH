@@ -1,6 +1,6 @@
 spanish,english,chinese,pinyin,portuguese
 farmacéutico,pharmacist,药剂师,yào jì shī,farmacêutico
-medicamento,medicine,医学,yī xué,medicina
+medicamento,medication,药物,yào wù,medicamento
 píldora,pill,丸,wán,pílula
 cápsula,capsule,胶囊,jiāo náng,cápsula
 jarabe,syrup,糖浆,táng jiāng,xarope
@@ -13,8 +13,8 @@ curar,cure,治愈,zhì yù,cura
 aliviar,relieve,缓解,huǎn jiě,aliviar
 genérico,generic,通用,tōng yòng,genérico
 patente,patent,专利,zhuān lì,patente
-prospecto,prospectus,招股说明书,zhāo gǔ shuō míng shū,prospecto
-posología,posology,姿势学,zī shì xué,posologia
+prospecto,leaflet,说明书,shuō míng shū,bula
+posología,dosage,用药说明,yòng yào shuō míng,posologia
 contraindicación,contraindication,禁忌症,jìn jì zhèng,contra-indicação
 interacción,interaction,互动,hù dòng,interação
 el farmacéutico,the pharmacist,药剂师,yào jì shī,o farmacêutico
@@ -45,7 +45,7 @@ el genérico,the generic,通用,tōng yòng,o genérico
 un genérico,a generic,通用,tōng yòng,um genérico
 la patente,the patent,专利,zhuān lì,a patente
 una patente,a patent,专利,zhuān lì,uma patente
-el prospecto,the prospectus,招股说明书,zhāo gǔ shuō míng shū,o prospecto
+el prospecto,the leaflet,说明书,shuō míng shū,a bula
 un prospecto,a prospect,前景,qián jǐng,um cliente em potencial
 la posología,the dosage,剂量,jì liàng,a dosagem
 una posología,a posology,剂量学,jì liàng xué,uma posologia

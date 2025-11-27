@@ -10,15 +10,15 @@ remitente,sender,发件人,fā jiàn rén,remetente
 paquete,package,包,bāo,pacote
 contenedor,container,集装箱,jí zhuāng xiāng,recipiente
 camión,truck,卡车,kǎ chē,caminhão
-rastrear,track,轨道,guǐ dào,acompanhar
+rastrear,to track,追踪,zhuī zōng,rastrear
 gestionar,manage,管理,guǎn lǐ,gerenciar
-coordinar,coordinate,坐标,zuò biāo,coordenar
+coordinar,to coordinate,协调,xié tiáo,coordenar
 flete,freight,货运,huò yùn,frete
 aduana,customs,海关,hǎi guān,costumes
 aranceles,tariffs,关税,guān shuì,tarifas
 tránsito,transit,过境,guò jìng,trânsito
-bodega,winery,酒庄,jiǔ zhuāng,vinícola
-depósito,deposit,存款,cún kuǎn,depósito
+bodega,cargo hold,货舱,huò cāng,porão
+depósito,warehouse,仓库,cāng kù,depósito
 la logística,logistics,物流,wù liú,logística
 de logística,logistics,物流,wù liú,logística
 el transporte,transportation,交通,jiāo tōng,transporte
@@ -55,7 +55,7 @@ los aranceles,tariffs,关税,guān shuì,tarifas
 sin aranceles,no tariffs,无关税,wú guān shuì,sem tarifas
 en tránsito,in transit,运输途中,yùn shū tú zhōng,em trânsito
 de tránsito,transit,过境,guò jìng,trânsito
-la bodega,the winery,酒庄,jiǔ zhuāng,a vinícola
-una bodega,a winery,一个酒厂,yí gè jiǔ chǎng,uma vinícola
-el depósito,the deposit,押金,yā jīn,o depósito
-un depósito,a deposit,押金,yā jīn,um depósito
+la bodega,the cargo hold,货舱,huò cāng,o porão
+una bodega,a cargo hold,货舱,huò cāng,um porão
+el depósito,the warehouse,仓库,cāng kù,o depósito
+un depósito,a warehouse,仓库,cāng kù,um depósito
