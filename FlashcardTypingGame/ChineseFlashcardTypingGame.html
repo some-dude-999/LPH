@@ -2814,8 +2814,11 @@
     }
 
     // Initialize typing display for listening and writing modes
+    // KEY FEATURE: Type PINYIN instead of Chinese characters
+    // - Ignore spaces (like Spanish/English typing modes)
+    // - Accept any variant of accented letters (ā, á, ǎ, à -> a)
     function initializeTypingDisplay() {
-      const word = currentDeck[currentIndex].chinese;
+      const word = currentDeck[currentIndex].pinyin;
       typingInput = '';
       // Store actual characters (not underscores) to preserve natural layout
       typingDisplay = word.split('');
@@ -2864,10 +2867,11 @@
     }
 
     // Handle typing input for listening and writing modes
+    // KEY FEATURE: Type PINYIN - accepts unaccented letters (ā, á, ǎ, à -> a)
     function handleTypingInput(key) {
       if ((currentMode !== 'listening' && currentMode !== 'writing') || currentDeck.length === 0) return;
 
-      const word = currentDeck[currentIndex].chinese;
+      const word = currentDeck[currentIndex].pinyin;
       const targetChars = word.split('');
 
       // Find next unfilled position (first position not in typedPositions)
@@ -3408,6 +3412,7 @@
       originalDeck = pack.words.map((word, idx) => ({
         id: `${packKey}-${idx}`,      // Unique ID for this card
         chinese: word[0],              // Front of card (Chinese characters)
+        pinyin: word[1],               // Pinyin pronunciation (used for typing mode)
         translation: word[nativeIndex] // Back of card (translation) - LINKED to chinese
       }));
 
