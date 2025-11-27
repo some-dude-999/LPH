@@ -1106,11 +1106,20 @@ Create your own branch, commit, and PR to main.</div>
 <div onclick="copyPrompt(this)" data-stage="3a" data-lang="chinese">TASK: EVALUATE ALL 107 CHINESE BREAKOUT CSVs - PRODUCE SCORECARD ONLY (NO FIXING)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📊 THIS IS EVALUATION ONLY - DO NOT FIX ANYTHING                ║
+║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
 ║                                                                  ║
-║  Your ONLY job: Score ALL 107 packs and output the scorecard.   ║
-║  DO NOT edit any files. DO NOT fix any issues.                  ║
-║  Just READ, EVALUATE, and OUTPUT the full scorecard.            ║
+║  The ONLY acceptable final output is FIXED BREAKOUT CSV FILES.  ║
+║                                                                  ║
+║  ❌ USELESS outputs (DO NOT stop here):                          ║
+║  ❌ Python scripts                                               ║
+║  ❌ CSV of issues/fix tables                                     ║
+║  ❌ Markdown files explaining issues                             ║
+║  ❌ Text files documenting problems                              ║
+║                                                                  ║
+║  ✅ REQUIRED final output:                                       ║
+║  ✅ ChineseWords1.csv through ChineseWords107.csv ACTUALLY FIXED ║
+║                                                                  ║
+║  The fix table is INTERMEDIATE. It's WORTHLESS without apply!   ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
@@ -1128,13 +1137,28 @@ Create your own branch, commit, and PR to main.</div>
 ║  107 packs = 107 rows. NO EXCEPTIONS. NO SHORTCUTS.              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: CLEAR ALL EXISTING SCORES (FRESH START) ===
+=== STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
+
+python PythonHelpers/generate_error_summary.py chinese 3a
+
+This generates ChineseWords/ChineseErrorsSummary3A.csv with pre-scanned errors.
+
+Open TranslationErrorReport.html in your browser to review:
+- Total issues per pack
+- Pinyin spacing errors
+- Bracket errors (failed translations)
+- Empty cells
+
+This gives you a clear view of ALL errors before starting the fix process.
+The error summary will guide your manual review and fix table creation.
+
+=== STEP 1: CLEAR ALL EXISTING SCORES (FRESH START) ===
 python PythonHelpers/clear_translation_scores.py chinese
 
 This clears ALL scores in ChineseWordsTranslationErrors.csv, ensuring a fresh evaluation.
 You will fill in every Score and Issues cell from scratch.
 
-=== STEP 1: RUN VALIDATION SCRIPTS ===
+=== STEP 2: RUN VALIDATION SCRIPTS ===
 python PythonHelpers/verify_words_integrity.py chinese
 python PythonHelpers/validate_pinyin.py chinese
 python PythonHelpers/check_translation_quality.py chinese
@@ -1145,7 +1169,7 @@ This last script checks for:
 
 Note all errors found. These will need manual fixes in Stage 3B.
 
-=== STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
+=== STEP 3: MANUALLY READ AND SCORE EVERY PACK ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  📖 READ EACH CSV FILE MANUALLY - BE EXTREMELY NITPICKY          ║
@@ -1235,7 +1259,7 @@ SCORING SCALE:
   7  = Fair (several issues across translations)
   6 or below = Poor (significant issues, definitely needs work)
 
-=== STEP 3: UPDATE THE TRANSLATION ERRORS CSV ===
+=== STEP 4: UPDATE THE TRANSLATION ERRORS CSV ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  📝 EDIT TWO FILES FOR EACH PACK:                                ║
@@ -1301,7 +1325,7 @@ chinese,4,5,english,[greeting],hello,Has brackets - failed auto-translation
 ⛔ EVERY PACK MUST HAVE Issue_Count filled in! ⛔
 ⛔ EVERY ISSUE MUST HAVE A FIX ROW IN ChineseFixTable.csv! ⛔
 
-=== STEP 4: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
+=== STEP 5: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
@@ -1336,7 +1360,7 @@ SURGICAL EDIT PRINCIPLE (CRITICAL!):
 - Can fix 500 rows at once, but EACH must be surgically specified
 - Even if the same error is in ALL rows of ALL packs, specify each one!
 
-=== STEP 5: DISPLAY SUMMARY ===
+=== STEP 6: DISPLAY SUMMARY ===
 
 After updating both CSVs, display this summary:
 
@@ -1390,6 +1414,23 @@ UPDATE THE CSV. COMMIT. PR TO MAIN.</div>
 <div onclick="copyPrompt(this)" data-stage="3b" data-lang="chinese">TASK: SCAN ALL CHINESE PACKS - RECORD FIXES IN MINIMAL FIX TABLE (Ultra-Efficient)
 
 ╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
+║                                                                  ║
+║  The ONLY acceptable final output is FIXED BREAKOUT CSV FILES.  ║
+║                                                                  ║
+║  ❌ USELESS outputs (DO NOT stop here):                          ║
+║  ❌ Python scripts                                               ║
+║  ❌ CSV of issues/fix tables                                     ║
+║  ❌ Markdown files explaining issues                             ║
+║  ❌ Text files documenting problems                              ║
+║                                                                  ║
+║  ✅ REQUIRED final output:                                       ║
+║  ✅ ChineseWords1.csv through ChineseWords107.csv ACTUALLY FIXED ║
+║                                                                  ║
+║  The fix table is INTERMEDIATE. It's WORTHLESS without apply!   ║
+╚══════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════╗
 ║  ⚡ ULTRA-EFFICIENT FIX RECORDING - MINIMAL DATA ONLY            ║
 ║                                                                  ║
 ║  Goal: Scan all 107 packs and record ONLY what needs fixing.    ║
@@ -1411,6 +1452,21 @@ UPDATE THE CSV. COMMIT. PR TO MAIN.</div>
 ║  NEVER suggest changing Column 1. ONLY fix translations.        ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+=== STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
+
+python PythonHelpers/generate_error_summary.py chinese 3b
+
+This generates ChineseWords/ChineseErrorsSummary3B.csv with pre-scanned errors.
+
+Open TranslationErrorReport.html in your browser to review:
+- Total issues per pack
+- Pinyin spacing errors
+- Bracket errors (failed translations)
+- Empty cells
+
+This gives you a clear view of ALL errors before starting the fix process.
+The error summary will guide your fix table creation.
+
 === STEP 1: READ TRANSLATION ERRORS CSV ===
 
 Use Read tool: ChineseWords/ChineseWordsTranslationErrors.csv
@@ -1421,7 +1477,7 @@ This shows:
 
 Focus on packs where Issue_Count > 0.
 
-=== STEP 2: SCAN PACKS AND RECORD FIXES ===
+=== STEP 3: SCAN PACKS AND RECORD FIXES ===
 
 For EACH pack with issues:
 
@@ -1479,7 +1535,7 @@ For EACH pack with issues:
 ║  ❌ WRONG:   de, xiān (space before comma - breaks alignment!)  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 3: APPLY ALL FIXES (MANDATORY - NOT OPTIONAL!) ===
+=== STEP 4: APPLY ALL FIXES (MANDATORY - NOT OPTIONAL!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
@@ -1514,7 +1570,7 @@ SURGICAL EDIT PRINCIPLE (CRITICAL!):
 - Can fix 500 rows at once, but EACH must be surgically specified
 - Even if the same error is in ALL rows of ALL packs, specify each one!
 
-=== STEP 4: COMMIT AND PUSH ===
+=== STEP 5: COMMIT AND PUSH ===
 
 git add .
 git commit -m "Stage 3B: Apply surgical fixes to Chinese packs"
@@ -1573,11 +1629,20 @@ git push -u origin <branch-name>
 <div onclick="copyPrompt(this)" data-stage="3a" data-lang="spanish">TASK: EVALUATE ALL 250 SPANISH BREAKOUT CSVs - PRODUCE SCORECARD ONLY (NO FIXING)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📊 THIS IS EVALUATION ONLY - DO NOT FIX ANYTHING                ║
+║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
 ║                                                                  ║
-║  Your ONLY job: Score ALL 250 packs and output the scorecard.   ║
-║  DO NOT edit any files. DO NOT fix any issues.                  ║
-║  Just READ, EVALUATE, and OUTPUT the full scorecard.            ║
+║  The ONLY acceptable final output is FIXED BREAKOUT CSV FILES.  ║
+║                                                                  ║
+║  ❌ USELESS outputs (DO NOT stop here):                          ║
+║  ❌ Python scripts                                               ║
+║  ❌ CSV of issues/fix tables                                     ║
+║  ❌ Markdown files explaining issues                             ║
+║  ❌ Text files documenting problems                              ║
+║                                                                  ║
+║  ✅ REQUIRED final output:                                       ║
+║  ✅ SpanishWords1.csv through SpanishWords250.csv ACTUALLY FIXED ║
+║                                                                  ║
+║  The fix table is INTERMEDIATE. It's WORTHLESS without apply!   ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
@@ -1595,13 +1660,28 @@ git push -u origin <branch-name>
 ║  250 packs = 250 rows. NO EXCEPTIONS. NO SHORTCUTS.              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: CLEAR ALL EXISTING SCORES (FRESH START) ===
+=== STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
+
+python PythonHelpers/generate_error_summary.py spanish 3a
+
+This generates SpanishWords/SpanishErrorsSummary3A.csv with pre-scanned errors.
+
+Open TranslationErrorReport.html in your browser to review:
+- Total issues per pack
+- Pinyin spacing errors
+- Bracket errors (failed translations)
+- Empty cells
+
+This gives you a clear view of ALL errors before starting the fix process.
+The error summary will guide your manual review and fix table creation.
+
+=== STEP 1: CLEAR ALL EXISTING SCORES (FRESH START) ===
 python PythonHelpers/clear_translation_scores.py spanish
 
 This clears ALL scores in SpanishWordsTranslationErrors.csv, ensuring a fresh evaluation.
 You will fill in every Score and Issues cell from scratch.
 
-=== STEP 1: RUN VALIDATION SCRIPTS ===
+=== STEP 2: RUN VALIDATION SCRIPTS ===
 python PythonHelpers/verify_words_integrity.py spanish
 python PythonHelpers/validate_pinyin.py spanish
 python PythonHelpers/check_translation_quality.py spanish
@@ -1612,7 +1692,7 @@ This last script checks for:
 
 Note all errors found. These will need manual fixes in Stage 3B.
 
-=== STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
+=== STEP 3: MANUALLY READ AND SCORE EVERY PACK ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  📖 READ EACH CSV FILE MANUALLY - BE EXTREMELY NITPICKY          ║
@@ -1695,7 +1775,7 @@ SCORING SCALE:
   7  = Fair (several issues across translations)
   6 or below = Poor (significant issues, definitely needs work)
 
-=== STEP 3: UPDATE THE TRANSLATION ERRORS CSV ===
+=== STEP 4: UPDATE THE TRANSLATION ERRORS CSV ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  📝 EDIT TWO FILES FOR EACH PACK:                                ║
@@ -1761,7 +1841,7 @@ spanish,4,5,pinyin,shí,shì,Wrong tone (shí → shì)
 ⛔ EVERY PACK MUST HAVE Issue_Count filled in! ⛔
 ⛔ EVERY ISSUE MUST HAVE A FIX ROW IN SpanishFixTable.csv! ⛔
 
-=== STEP 4: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
+=== STEP 5: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
@@ -1796,7 +1876,7 @@ SURGICAL EDIT PRINCIPLE (CRITICAL!):
 - Can fix 500 rows at once, but EACH must be surgically specified
 - Even if the same error is in ALL rows of ALL packs, specify each one!
 
-=== STEP 5: SUMMARY COUNTS ===
+=== STEP 6: SUMMARY COUNTS ===
 
 | Metric | Count |
 |--------|-------|
@@ -1849,6 +1929,23 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 <div onclick="copyPrompt(this)" data-stage="3b" data-lang="spanish">TASK: SCAN ALL SPANISH PACKS - RECORD FIXES IN MINIMAL FIX TABLE (Ultra-Efficient)
 
 ╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
+║                                                                  ║
+║  The ONLY acceptable final output is FIXED BREAKOUT CSV FILES.  ║
+║                                                                  ║
+║  ❌ USELESS outputs (DO NOT stop here):                          ║
+║  ❌ Python scripts                                               ║
+║  ❌ CSV of issues/fix tables                                     ║
+║  ❌ Markdown files explaining issues                             ║
+║  ❌ Text files documenting problems                              ║
+║                                                                  ║
+║  ✅ REQUIRED final output:                                       ║
+║  ✅ SpanishWords1.csv through SpanishWords250.csv ACTUALLY FIXED ║
+║                                                                  ║
+║  The fix table is INTERMEDIATE. It's WORTHLESS without apply!   ║
+╚══════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════╗
 ║  ⚡ ULTRA-EFFICIENT FIX RECORDING - MINIMAL DATA ONLY            ║
 ║                                                                  ║
 ║  Goal: Scan all 250 packs and record ONLY what needs fixing.    ║
@@ -1869,6 +1966,21 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 ║                                                                  ║
 ║  NEVER suggest changing Column 1. ONLY fix translations.        ║
 ╚══════════════════════════════════════════════════════════════════╝
+
+=== STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
+
+python PythonHelpers/generate_error_summary.py spanish 3b
+
+This generates SpanishWords/SpanishErrorsSummary3B.csv with pre-scanned errors.
+
+Open TranslationErrorReport.html in your browser to review:
+- Total issues per pack
+- Pinyin spacing errors
+- Bracket errors (failed translations)
+- Empty cells
+
+This gives you a clear view of ALL errors before starting the fix process.
+The error summary will guide your fix table creation.
 
 === STEP 1: READ TRANSLATION ERRORS CSV ===
 
@@ -1938,7 +2050,7 @@ For EACH pack with issues:
 ║  ❌ WRONG:   de, xiān (space before comma - breaks alignment!)  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 3: APPLY ALL FIXES (MANDATORY - NOT OPTIONAL!) ===
+=== STEP 4: APPLY ALL FIXES (MANDATORY - NOT OPTIONAL!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
@@ -1973,7 +2085,7 @@ SURGICAL EDIT PRINCIPLE (CRITICAL!):
 - Can fix 500 rows at once, but EACH must be surgically specified
 - Even if the same error is in ALL rows of ALL packs, specify each one!
 
-=== STEP 4: COMMIT AND PUSH ===
+=== STEP 5: COMMIT AND PUSH ===
 
 git add .
 git commit -m "Stage 3B: Apply surgical fixes to Spanish packs"
@@ -2025,11 +2137,20 @@ git push -u origin <branch-name>
 <div onclick="copyPrompt(this)" data-stage="3a" data-lang="english">TASK: EVALUATE ALL 160 ENGLISH BREAKOUT CSVs - PRODUCE SCORECARD ONLY (NO FIXING)
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📊 THIS IS EVALUATION ONLY - DO NOT FIX ANYTHING                ║
+║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
 ║                                                                  ║
-║  Your ONLY job: Score ALL 160 packs and output the scorecard.   ║
-║  DO NOT edit any files. DO NOT fix any issues.                  ║
-║  Just READ, EVALUATE, and OUTPUT the full scorecard.            ║
+║  The ONLY acceptable final output is FIXED BREAKOUT CSV FILES.  ║
+║                                                                  ║
+║  ❌ USELESS outputs (DO NOT stop here):                          ║
+║  ❌ Python scripts                                               ║
+║  ❌ CSV of issues/fix tables                                     ║
+║  ❌ Markdown files explaining issues                             ║
+║  ❌ Text files documenting problems                              ║
+║                                                                  ║
+║  ✅ REQUIRED final output:                                       ║
+║  ✅ EnglishWords1.csv through EnglishWords160.csv ACTUALLY FIXED ║
+║                                                                  ║
+║  The fix table is INTERMEDIATE. It's WORTHLESS without apply!   ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
@@ -2047,13 +2168,28 @@ git push -u origin <branch-name>
 ║  160 packs = 160 rows. NO EXCEPTIONS. NO SHORTCUTS.              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: CLEAR ALL EXISTING SCORES (FRESH START) ===
+=== STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
+
+python PythonHelpers/generate_error_summary.py english 3a
+
+This generates EnglishWords/EnglishErrorsSummary3A.csv with pre-scanned errors.
+
+Open TranslationErrorReport.html in your browser to review:
+- Total issues per pack
+- Pinyin spacing errors
+- Bracket errors (failed translations)
+- Empty cells
+
+This gives you a clear view of ALL errors before starting the fix process.
+The error summary will guide your manual review and fix table creation.
+
+=== STEP 1: CLEAR ALL EXISTING SCORES (FRESH START) ===
 python PythonHelpers/clear_translation_scores.py english
 
 This clears ALL scores in EnglishWordsTranslationErrors.csv, ensuring a fresh evaluation.
 You will fill in every Score and Issues cell from scratch.
 
-=== STEP 1: RUN VALIDATION SCRIPTS ===
+=== STEP 2: RUN VALIDATION SCRIPTS ===
 python PythonHelpers/verify_words_integrity.py english
 python PythonHelpers/validate_pinyin.py english
 python PythonHelpers/check_translation_quality.py english
@@ -2064,7 +2200,7 @@ This last script checks for:
 
 Note all errors found. These will need manual fixes in Stage 3B.
 
-=== STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
+=== STEP 3: MANUALLY READ AND SCORE EVERY PACK ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  📖 READ EACH CSV FILE MANUALLY - BE EXTREMELY NITPICKY          ║
@@ -2147,7 +2283,7 @@ SCORING SCALE:
   7  = Fair (several issues across translations)
   6 or below = Poor (significant issues, definitely needs work)
 
-=== STEP 3: UPDATE THE TRANSLATION ERRORS CSV ===
+=== STEP 4: UPDATE THE TRANSLATION ERRORS CSV ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  📝 EDIT TWO FILES FOR EACH PACK:                                ║
@@ -2213,7 +2349,7 @@ english,4,5,pinyin,shí,shì,Wrong tone (shí → shì)
 ⛔ EVERY PACK MUST HAVE Issue_Count filled in! ⛔
 ⛔ EVERY ISSUE MUST HAVE A FIX ROW IN EnglishFixTable.csv! ⛔
 
-=== STEP 4: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
+=== STEP 5: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
@@ -2248,7 +2384,7 @@ SURGICAL EDIT PRINCIPLE (CRITICAL!):
 - Can fix 500 rows at once, but EACH must be surgically specified
 - Even if the same error is in ALL rows of ALL packs, specify each one!
 
-=== STEP 5: SUMMARY COUNTS ===
+=== STEP 6: SUMMARY COUNTS ===
 
 | Metric | Count |
 |--------|-------|
@@ -2346,6 +2482,23 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 <div onclick="copyPrompt(this)" data-stage="3b" data-lang="english">TASK: SCAN ALL ENGLISH PACKS - RECORD FIXES IN MINIMAL FIX TABLE (Ultra-Efficient)
 
 ╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
+║                                                                  ║
+║  The ONLY acceptable final output is FIXED BREAKOUT CSV FILES.  ║
+║                                                                  ║
+║  ❌ USELESS outputs (DO NOT stop here):                          ║
+║  ❌ Python scripts                                               ║
+║  ❌ CSV of issues/fix tables                                     ║
+║  ❌ Markdown files explaining issues                             ║
+║  ❌ Text files documenting problems                              ║
+║                                                                  ║
+║  ✅ REQUIRED final output:                                       ║
+║  ✅ EnglishWords1.csv through EnglishWords160.csv ACTUALLY FIXED ║
+║                                                                  ║
+║  The fix table is INTERMEDIATE. It's WORTHLESS without apply!   ║
+╚══════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════╗
 ║  ⚡ ULTRA-EFFICIENT FIX RECORDING - MINIMAL DATA ONLY            ║
 ║                                                                  ║
 ║  Goal: Scan all 160 packs and record ONLY what needs fixing.    ║
@@ -2366,6 +2519,21 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 ║                                                                  ║
 ║  NEVER suggest changing Column 1. ONLY fix translations.        ║
 ╚══════════════════════════════════════════════════════════════════╝
+
+=== STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
+
+python PythonHelpers/generate_error_summary.py english 3b
+
+This generates EnglishWords/EnglishErrorsSummary3B.csv with pre-scanned errors.
+
+Open TranslationErrorReport.html in your browser to review:
+- Total issues per pack
+- Pinyin spacing errors
+- Bracket errors (failed translations)
+- Empty cells
+
+This gives you a clear view of ALL errors before starting the fix process.
+The error summary will guide your fix table creation.
 
 === STEP 1: READ TRANSLATION ERRORS CSV ===
 
@@ -2435,7 +2603,7 @@ For EACH pack with issues:
 ║  ❌ WRONG:   de, xiān (space before comma - breaks alignment!)  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 3: APPLY ALL FIXES (MANDATORY - NOT OPTIONAL!) ===
+=== STEP 4: APPLY ALL FIXES (MANDATORY - NOT OPTIONAL!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
@@ -2470,7 +2638,7 @@ SURGICAL EDIT PRINCIPLE (CRITICAL!):
 - Can fix 500 rows at once, but EACH must be surgically specified
 - Even if the same error is in ALL rows of ALL packs, specify each one!
 
-=== STEP 4: COMMIT AND PUSH ===
+=== STEP 5: COMMIT AND PUSH ===
 
 git add .
 git commit -m "Stage 3B: Apply surgical fixes to English packs"

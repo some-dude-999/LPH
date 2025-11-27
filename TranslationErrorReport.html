@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Error Report - Stage 3A/3B Audit</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #666;
+            margin-top: 30px;
+            background: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .controls {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        select, button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #4CAF50;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f0f0;
+        }
+
+        .error-cell {
+            background: #ffebee !important;
+            color: #c62828;
+            font-weight: bold;
+        }
+
+        .no-errors {
+            color: #2e7d32;
+        }
+
+        .summary {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .summary-stat {
+            display: inline-block;
+            margin-right: 30px;
+            padding: 10px 20px;
+            background: #e3f2fd;
+            border-radius: 5px;
+            border-left: 4px solid #2196F3;
+        }
+
+        .summary-stat strong {
+            font-size: 24px;
+            color: #1976D2;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 Translation Error Report - Stage 3A/3B Audit</h1>
+
+    <p><strong>Purpose:</strong> This report shows you exactly what the AI sees before it starts fixing translations.</p>
+    <p><strong>Usage:</strong> Review errors, then run Stage 3A or 3B prompts to fix them.</p>
+
+    <div class="controls">
+        <label for="language">Language:</label>
+        <select id="language">
+            <option value="chinese">Chinese (107 packs)</option>
+            <option value="spanish">Spanish (250 packs)</option>
+            <option value="english">English (160 packs)</option>
+        </select>
+
+        <label for="stage">Stage:</label>
+        <select id="stage">
+            <option value="3a">3A (with Reason)</option>
+            <option value="3b">3B (minimal)</option>
+        </select>
+
+        <button onclick="loadReport()">Load Report</button>
+        <button onclick="exportToCSV()">Export to CSV</button>
+    </div>
+
+    <div id="summary" class="summary" style="display:none;"></div>
+    <div id="report"></div>
+
+    <script>
+        let currentData = [];
+
+        async function loadReport() {
+            const language = document.getElementById('language').value;
+            const stage = document.getElementById('stage').value;
+
+            const reportDiv = document.getElementById('report');
+            const summaryDiv = document.getElementById('summary');
+
+            reportDiv.innerHTML = '<div class="loading">Loading...</div>';
+            summaryDiv.style.display = 'none';
+
+            const filename = `${language.charAt(0).toUpperCase() + language.slice(1)}Words/${language.charAt(0).toUpperCase() + language.slice(1)}ErrorsSummary${stage.toUpperCase()}.csv`;
+
+            try {
+                const response = await fetch(filename);
+
+                if (!response.ok) {
+                    throw new Error(`File not found: ${filename}. Run: python PythonHelpers/generate_error_summary.py ${language} ${stage}`);
+                }
+
+                const csvText = await response.text();
+                const rows = parseCSV(csvText);
+
+                currentData = rows;
+
+                displayReport(rows, language, stage);
+                displaySummary(rows);
+
+            } catch (error) {
+                reportDiv.innerHTML = `<div class="error-message">❌ ${error.message}</div>`;
+            }
+        }
+
+        function parseCSV(text) {
+            const lines = text.trim().split('\n');
+            const headers = lines[0].split(',').map(h => h.trim());
+            const rows = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                const values = parseCSVLine(lines[i]);
+                const row = {};
+
+                headers.forEach((header, index) => {
+                    row[header] = values[index] || '';
+                });
+
+                rows.push(row);
+            }
+
+            return rows;
+        }
+
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+
+            result.push(current.trim());
+            return result;
+        }
+
+        function displayReport(rows, language, stage) {
+            const reportDiv = document.getElementById('report');
+
+            let html = `<h2>${language.toUpperCase()} - Stage ${stage.toUpperCase()} Error Summary</h2>`;
+            html += '<table>';
+            html += '<thead><tr>';
+            html += '<th>Pack #</th>';
+            html += '<th>Pack Title</th>';
+            html += '<th>Difficulty/Act</th>';
+            html += '<th>Total Issues</th>';
+            html += '<th>Pinyin Errors</th>';
+            html += '<th>Bracket Errors</th>';
+            html += '<th>Empty Cells</th>';
+            html += '</tr></thead><tbody>';
+
+            rows.forEach(row => {
+                const hasErrors = parseInt(row.Total_Issues || 0) > 0;
+
+                html += '<tr>';
+                html += `<td>${row.Pack_Number}</td>`;
+                html += `<td>${row.Pack_Title}</td>`;
+                html += `<td>${row.Difficulty_Act}</td>`;
+                html += `<td class="${hasErrors ? 'error-cell' : 'no-errors'}">${row.Total_Issues || '0'}</td>`;
+                html += `<td class="${row.Pinyin_Errors ? 'error-cell' : ''}">${row.Pinyin_Errors || '-'}</td>`;
+                html += `<td class="${row.Bracket_Errors ? 'error-cell' : ''}">${row.Bracket_Errors || '-'}</td>`;
+                html += `<td class="${row.Empty_Cells ? 'error-cell' : ''}">${row.Empty_Cells || '-'}</td>`;
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            reportDiv.innerHTML = html;
+        }
+
+        function displaySummary(rows) {
+            const summaryDiv = document.getElementById('summary');
+
+            const totalPacks = rows.length;
+            const packsWithErrors = rows.filter(r => parseInt(r.Total_Issues || 0) > 0).length;
+            const totalIssues = rows.reduce((sum, r) => sum + parseInt(r.Total_Issues || 0), 0);
+            const cleanPacks = totalPacks - packsWithErrors;
+
+            let html = '<h3>Summary Statistics</h3>';
+            html += `<div class="summary-stat">Total Packs: <strong>${totalPacks}</strong></div>`;
+            html += `<div class="summary-stat">Clean Packs: <strong>${cleanPacks}</strong></div>`;
+            html += `<div class="summary-stat">Packs with Errors: <strong>${packsWithErrors}</strong></div>`;
+            html += `<div class="summary-stat">Total Issues: <strong>${totalIssues}</strong></div>`;
+
+            summaryDiv.innerHTML = html;
+            summaryDiv.style.display = 'block';
+        }
+
+        function exportToCSV() {
+            if (currentData.length === 0) {
+                alert('No data loaded. Please load a report first.');
+                return;
+            }
+
+            const headers = Object.keys(currentData[0]);
+            let csv = headers.join(',') + '\n';
+
+            currentData.forEach(row => {
+                const values = headers.map(header => {
+                    const value = row[header] || '';
+                    // Escape commas and quotes
+                    return value.includes(',') || value.includes('"') ? `"${value.replace(/"/g, '""')}"` : value;
+                });
+                csv += values.join(',') + '\n';
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `error_report_${document.getElementById('language').value}_${document.getElementById('stage').value}.csv`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Auto-load Chinese 3A on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadReport();
+        });
+    </script>
+</body>
+</html>
