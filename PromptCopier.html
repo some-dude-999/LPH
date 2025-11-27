@@ -1308,29 +1308,56 @@ Comma placement must match for vertical alignment.
 RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
 NO space before comma in pinyin!
 
-⚠️⚠️⚠️ LATIN ABBREVIATIONS - EDGE CASES (NOT ERRORS!) ⚠️⚠️⚠️
+⚠️⚠️⚠️ LATIN TEXT IN CHINESE COLUMN - CRITICAL EVALUATION! ⚠️⚠️⚠️
 
-When Chinese text contains Latin abbreviations or brand names, pinyin validation works differently:
+NOT ALL Latin text in Chinese columns is acceptable! You must distinguish between:
 
-SIMPLE RULE:
-- Latin sequences (ATM, DNA, WhatsApp) → same sequence in pinyin (case insensitive)
-- Chinese characters → pinyin syllables with spaces
+✅ LEGITIMATE LOANWORDS (Used in actual Chinese):
+   - Technology: DNA, ATM, GPS, NFT, USB, CD, DVD, WiFi, 5G, AI, VR
+   - Brands/Apps: WhatsApp, iPhone, iPad, Uber, Tesla
+   - Fashion: T恤 (T-shirt), T台 (runway), X光 (X-ray)
+   - Common: OK, bye, email, app, web
 
-✅ THESE ARE CORRECT (NOT ERRORS):
-Chinese: ATM机      Pinyin: ATM jī       (Latin block + 1 char = Latin block + 1 syllable)
-Chinese: DNA测试     Pinyin: DNA cè shì   (Latin block + 2 chars = Latin block + 2 syllables)
-Chinese: WhatsApp消息 Pinyin: WhatsApp xiāo xī (Brand name + 2 chars = same name + 2 syllables)
-Chinese: T恤        Pinyin: T xù         (Single letter + 1 char = same letter + 1 syllable)
-Chinese: NFT        Pinyin: NFT          (Just Latin = same Latin)
-Chinese: la         Pinyin: la           (Spanish article = same article)
+   Examples:
+   Chinese: ATM机      Pinyin: ATM jī       ✅ CORRECT (ATM is used in Chinese)
+   Chinese: DNA测试     Pinyin: DNA cè shì   ✅ CORRECT (DNA is used in Chinese)
+   Chinese: T恤        Pinyin: T xù         ✅ CORRECT (T is used in Chinese for T-shirt)
+   Chinese: NFT        Pinyin: NFT          ✅ CORRECT (NFT is used in Chinese)
 
-WHY THESE ARE NOT ERRORS:
-- validate_pinyin.py parses Chinese to identify Latin blocks
-- Latin blocks match as single units (case insensitive)
-- Only Chinese characters need syllable matching
-- This is standard modern Chinese usage (ATM, DNA, brand names stay in Latin)
+❌ TRANSLATION FAILURES (Must be fixed):
+   - Spanish articles: la, los, el, las, un, una
+   - Untranslated Spanish words that aren't Chinese loanwords
+   - Any Latin text NOT in the legitimate loanword list
 
-DO NOT "FIX" THESE - THEY ARE CORRECT AS-IS!
+   Examples:
+   Chinese: la         Pinyin: la           ❌ WRONG! (Spanish article, not Chinese)
+   Chinese: los        Pinyin: los          ❌ WRONG! (Spanish article, not Chinese)
+   Chinese: el         Pinyin: el           ❌ WRONG! (Spanish article, not Chinese)
+
+HOW TO CHECK:
+1. See Latin text in Chinese column? Ask: "Do Chinese speakers actually use this term?"
+2. If it's a Spanish article (la, los, el, las, un, una) → ❌ TRANSLATION FAILURE
+3. If it's NOT in the loanword list above → ❌ LIKELY TRANSLATION FAILURE
+4. If unsure → Run: python PythonHelpers/check_latin_in_chinese.py chinese
+
+⚠️⚠️⚠️ SPACING RULE FOR MIXED LATIN+CHINESE ⚠️⚠️⚠️
+
+When Chinese contains Latin + Chinese characters, pinyin MUST have space between:
+
+RULE: [Latin block] SPACE [pinyin syllables]
+
+✅ CORRECT SPACING:
+Chinese: T恤              Pinyin: T xù              (space between T and xù)
+Chinese: ATM机            Pinyin: ATM jī            (space between ATM and jī)
+Chinese: 在WhatsApp上     Pinyin: zài WhatsApp shàng (spaces around WhatsApp)
+Chinese: DNA测试          Pinyin: DNA cè shì        (space between DNA and cè)
+
+❌ WRONG SPACING (causes parser errors):
+Chinese: T恤              Pinyin: Txù               (no space → parser fails → "?")
+Chinese: ATM机            Pinyin: ATMjī             (no space → parser fails)
+Chinese: 在WhatsApp上     Pinyin: zàiWhatsAppshàng  (no spaces → parser fails)
+
+IF YOU SEE "?" IN COUPLED OUTPUT → PINYIN SPACING ERROR!
 
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
@@ -1606,6 +1633,17 @@ UPDATE THE CSV. COMMIT. PR TO MAIN.</div>
 ║  Not just "correct" - MOST NATURAL for native speakers.          ║
 ║  Not just "acceptable" - BEST CHOICE for this theme.             ║
 ╚══════════════════════════════════════════════════════════════════╝
+
+⚠️⚠️⚠️ CRITICAL: RUN PYTHON HELPER TO FIND TRANSLATION FAILURES ⚠️⚠️⚠️
+
+BEFORE starting manual review, run this script to catch Latin text issues:
+
+    python PythonHelpers/check_latin_in_chinese.py chinese
+
+This will flag:
+- 🚨 CRITICAL: Spanish articles (la, los, el) in Chinese column = translation failures
+- ⚠️  ERROR: Missing spaces in pinyin (Txù → should be "T xù")
+- ⚡ WARNING: Suspicious Latin text not in known loanword list
 
 === STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
 
@@ -1979,30 +2017,56 @@ Comma placement must match for vertical alignment.
 RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
 NO space before comma in pinyin!
 
-⚠️⚠️⚠️ LATIN ABBREVIATIONS - EDGE CASES (NOT ERRORS!) ⚠️⚠️⚠️
+⚠️⚠️⚠️ LATIN TEXT IN CHINESE COLUMN - CRITICAL EVALUATION! ⚠️⚠️⚠️
 
-When Chinese text contains Latin abbreviations or brand names, pinyin validation works differently:
+NOT ALL Latin text in Chinese columns is acceptable! You must distinguish between:
 
-SIMPLE RULE:
-- Latin sequences (ATM, DNA, WhatsApp, la, los) → same sequence in pinyin (case insensitive)
-- Chinese characters → pinyin syllables with spaces
+✅ LEGITIMATE LOANWORDS (Used in actual Chinese):
+   - Technology: DNA, ATM, GPS, NFT, USB, CD, DVD, WiFi, 5G, AI, VR
+   - Brands/Apps: WhatsApp, iPhone, iPad, Uber, Tesla
+   - Fashion: T恤 (T-shirt), T台 (runway), X光 (X-ray)
+   - Common: OK, bye, email, app, web
 
-✅ THESE ARE CORRECT (NOT ERRORS) IN SPANISH CSVS:
-Chinese: ATM机      Pinyin: ATM jī       (Latin block + 1 char)
-Chinese: DNA测试     Pinyin: DNA cè shì   (Latin block + 2 chars)
-Chinese: WhatsApp消息 Pinyin: WhatsApp xiāo xī (Brand name + 2 chars)
-Chinese: T恤        Pinyin: T xù         (T-shirt uses Latin "T")
-Chinese: NFT        Pinyin: NFT          (Just Latin = same)
-Chinese: la         Pinyin: la           (Spanish article stays as-is)
-Chinese: los        Pinyin: los          (Spanish article stays as-is)
+   Examples:
+   Chinese: ATM机      Pinyin: ATM jī       ✅ CORRECT (ATM is used in Chinese)
+   Chinese: DNA测试     Pinyin: DNA cè shì   ✅ CORRECT (DNA is used in Chinese)
+   Chinese: T恤        Pinyin: T xù         ✅ CORRECT (T is used in Chinese for T-shirt)
+   Chinese: NFT        Pinyin: NFT          ✅ CORRECT (NFT is used in Chinese)
 
-WHY THESE ARE NOT ERRORS:
-- Column 3 (chinese) in Spanish CSVs may have Latin text (Spanish articles, abbreviations)
-- Column 4 (pinyin) matches these Latin blocks exactly
-- validate_pinyin.py handles this automatically (case insensitive)
-- This is standard modern Chinese usage
+❌ TRANSLATION FAILURES (Must be fixed):
+   - Spanish articles: la, los, el, las, un, una
+   - Untranslated Spanish words that aren't Chinese loanwords
+   - Any Latin text NOT in the legitimate loanword list
 
-DO NOT "FIX" THESE - THEY ARE CORRECT AS-IS!
+   Examples:
+   Chinese: la         Pinyin: la           ❌ WRONG! (Spanish article, not Chinese)
+   Chinese: los        Pinyin: los          ❌ WRONG! (Spanish article, not Chinese)
+   Chinese: el         Pinyin: el           ❌ WRONG! (Spanish article, not Chinese)
+
+HOW TO CHECK:
+1. See Latin text in Chinese column? Ask: "Do Chinese speakers actually use this term?"
+2. If it's a Spanish article (la, los, el, las, un, una) → ❌ TRANSLATION FAILURE
+3. If it's NOT in the loanword list above → ❌ LIKELY TRANSLATION FAILURE
+4. If unsure → Run: python PythonHelpers/check_latin_in_chinese.py spanish
+
+⚠️⚠️⚠️ SPACING RULE FOR MIXED LATIN+CHINESE ⚠️⚠️⚠️
+
+When Chinese contains Latin + Chinese characters, pinyin MUST have space between:
+
+RULE: [Latin block] SPACE [pinyin syllables]
+
+✅ CORRECT SPACING:
+Chinese: T恤              Pinyin: T xù              (space between T and xù)
+Chinese: ATM机            Pinyin: ATM jī            (space between ATM and jī)
+Chinese: 在WhatsApp上     Pinyin: zài WhatsApp shàng (spaces around WhatsApp)
+Chinese: DNA测试          Pinyin: DNA cè shì        (space between DNA and cè)
+
+❌ WRONG SPACING (causes parser errors):
+Chinese: T恤              Pinyin: Txù               (no space → parser fails → "?")
+Chinese: ATM机            Pinyin: ATMjī             (no space → parser fails)
+Chinese: 在WhatsApp上     Pinyin: zàiWhatsAppshàng  (no spaces → parser fails)
+
+IF YOU SEE "?" IN COUPLED OUTPUT → PINYIN SPACING ERROR!
 
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
@@ -2277,6 +2341,17 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 ║  Not just "correct" - MOST NATURAL for native speakers.          ║
 ║  Not just "acceptable" - BEST CHOICE for this theme.             ║
 ╚══════════════════════════════════════════════════════════════════╝
+
+⚠️⚠️⚠️ CRITICAL: RUN PYTHON HELPER TO FIND TRANSLATION FAILURES ⚠️⚠️⚠️
+
+BEFORE starting manual review, run this script to catch Latin text issues:
+
+    python PythonHelpers/check_latin_in_chinese.py spanish
+
+This will flag:
+- 🚨 CRITICAL: Spanish articles (la, los, el) in Chinese column = translation failures
+- ⚠️  ERROR: Missing spaces in pinyin (Txù → should be "T xù")
+- ⚡ WARNING: Suspicious Latin text not in known loanword list
 
 === STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
 
@@ -2643,28 +2718,50 @@ Comma placement must match for vertical alignment.
 RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
 NO space before comma in pinyin!
 
-⚠️⚠️⚠️ LATIN ABBREVIATIONS - EDGE CASES (NOT ERRORS!) ⚠️⚠️⚠️
+⚠️⚠️⚠️ LATIN TEXT IN CHINESE COLUMN - CRITICAL EVALUATION! ⚠️⚠️⚠️
 
-When Chinese text contains Latin abbreviations or brand names, pinyin validation works differently:
+NOT ALL Latin text in Chinese columns is acceptable! You must distinguish between:
 
-SIMPLE RULE:
-- Latin sequences (ATM, DNA, WhatsApp, X-ray, GPS) → same sequence in pinyin (case insensitive)
-- Chinese characters → pinyin syllables with spaces
+✅ LEGITIMATE LOANWORDS (Used in actual Chinese):
+   - Technology: DNA, ATM, GPS, NFT, USB, CD, DVD, WiFi, 5G, AI, VR
+   - Brands/Apps: WhatsApp, iPhone, iPad, Uber, Tesla
+   - Fashion: T恤 (T-shirt), T台 (runway), X光 (X-ray)
+   - Common: OK, bye, email, app, web
 
-✅ THESE ARE CORRECT (NOT ERRORS) IN ENGLISH CSVS:
-Chinese: ATM机      Pinyin: ATM jī       (Latin block + 1 char)
-Chinese: DNA测试     Pinyin: DNA cè shì   (Latin block + 2 chars)
-Chinese: X光        Pinyin: X guāng      (X-ray uses Latin "X")
-Chinese: GPS导航    Pinyin: GPS dǎo háng (GPS + 2 chars)
-Chinese: NFT        Pinyin: NFT          (Just Latin = same)
+   Examples:
+   Chinese: ATM机      Pinyin: ATM jī       ✅ CORRECT (ATM is used in Chinese)
+   Chinese: DNA测试     Pinyin: DNA cè shì   ✅ CORRECT (DNA is used in Chinese)
+   Chinese: X光        Pinyin: X guāng      ✅ CORRECT (X is used in Chinese for X-ray)
+   Chinese: NFT        Pinyin: NFT          ✅ CORRECT (NFT is used in Chinese)
 
-WHY THESE ARE NOT ERRORS:
-- Column 2 (chinese) in English CSVs may have Latin abbreviations
-- Column 3 (pinyin) matches these Latin blocks exactly
-- validate_pinyin.py handles this automatically (case insensitive)
-- This is standard modern Chinese usage (ATM, DNA, GPS stay in Latin)
+❌ TRANSLATION FAILURES (Must be fixed):
+   - Untranslated English words that aren't Chinese loanwords
+   - Random English words copied into Chinese column
+   - Any Latin text NOT in the legitimate loanword list
 
-DO NOT "FIX" THESE - THEY ARE CORRECT AS-IS!
+HOW TO CHECK:
+1. See Latin text in Chinese column? Ask: "Do Chinese speakers actually use this term?"
+2. If it's NOT in the loanword list above → ❌ LIKELY TRANSLATION FAILURE
+3. If unsure → Run: python PythonHelpers/check_latin_in_chinese.py english
+
+⚠️⚠️⚠️ SPACING RULE FOR MIXED LATIN+CHINESE ⚠️⚠️⚠️
+
+When Chinese contains Latin + Chinese characters, pinyin MUST have space between:
+
+RULE: [Latin block] SPACE [pinyin syllables]
+
+✅ CORRECT SPACING:
+Chinese: T恤              Pinyin: T xù              (space between T and xù)
+Chinese: ATM机            Pinyin: ATM jī            (space between ATM and jī)
+Chinese: 在WhatsApp上     Pinyin: zài WhatsApp shàng (spaces around WhatsApp)
+Chinese: DNA测试          Pinyin: DNA cè shì        (space between DNA and cè)
+
+❌ WRONG SPACING (causes parser errors):
+Chinese: T恤              Pinyin: Txù               (no space → parser fails → "?")
+Chinese: ATM机            Pinyin: ATMjī             (no space → parser fails)
+Chinese: 在WhatsApp上     Pinyin: zàiWhatsAppshàng  (no spaces → parser fails)
+
+IF YOU SEE "?" IN COUPLED OUTPUT → PINYIN SPACING ERROR!
 
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
@@ -2973,6 +3070,17 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 ║  🎯 QUALITY BAR: MOST APPROPRIATE NATIVE TRANSLATION             ║
 ║  Not "correct" - MOST NATURAL. Not "acceptable" - BEST CHOICE.   ║
 ╚══════════════════════════════════════════════════════════════════╝
+
+⚠️⚠️⚠️ CRITICAL: RUN PYTHON HELPER TO FIND TRANSLATION FAILURES ⚠️⚠️⚠️
+
+BEFORE starting manual review, run this script to catch Latin text issues:
+
+    python PythonHelpers/check_latin_in_chinese.py english
+
+This will flag:
+- 🚨 CRITICAL: Untranslated words in Chinese column = translation failures
+- ⚠️  ERROR: Missing spaces in pinyin (Txù → should be "T xù")
+- ⚡ WARNING: Suspicious Latin text not in known loanword list
 
 === STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
 
