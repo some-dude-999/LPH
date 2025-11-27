@@ -331,6 +331,32 @@
       [3] = Spanish
       [4] = Portuguese
 
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ CRITICAL: CHINESE + PINYIN INSEPARABILITY                               │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ Notice that ALL three languages include Chinese AND Pinyin columns!    │
+    │                                                                        │
+    │ WHY: Chinese uses logograms (characters don't encode pronunciation)    │
+    │      → Pinyin MUST accompany Chinese whenever it appears               │
+    │                                                                        │
+    │ This applies whether Chinese is:                                       │
+    │   - The target language (ChineseWords CSVs)                           │
+    │   - A translation option (SpanishWords, EnglishWords CSVs)            │
+    │                                                                        │
+    │ EDGE CASE: Latin Abbreviations in Chinese Text                         │
+    │ When Chinese contains Latin (ATM, DNA, WhatsApp, etc.):               │
+    │   - Latin sequence → same in pinyin (case insensitive)                │
+    │   - Chinese characters → pinyin syllables (1:1 mapping)               │
+    │                                                                        │
+    │ Examples:                                                              │
+    │   Chinese: ATM机      → Pinyin: ATM jī                                │
+    │   Chinese: DNA测试     → Pinyin: DNA cè shì                            │
+    │   Chinese: WhatsApp消息 → Pinyin: WhatsApp xiāo xī                    │
+    │   Chinese: T恤        → Pinyin: T xù                                  │
+    │                                                                        │
+    │ Use "Show Edge Cases" checkbox below to filter for these examples.    │
+    └─────────────────────────────────────────────────────────────────────────┘
+
     ============================================================
     7. HOW TO USE THIS TEMPLATE
     ============================================================
@@ -592,6 +618,33 @@
       (Affects all Chinese text: table, flashcards, multiple choice)
     </span>
   </div>
+
+  <!--
+    ============================================================
+    EDGE CASES FILTER - Show Latin Abbreviation Examples
+    ============================================================
+    When enabled, filters the vocabulary table to show ONLY words
+    containing Latin abbreviations/brand names in Chinese text.
+
+    This demonstrates the edge case handling in validate_pinyin.py:
+    - ATM机 → ATM jī (Latin block + Chinese character)
+    - DNA测试 → DNA cè shì (abbreviation + Chinese)
+    - WhatsApp消息 → WhatsApp xiāo xī (brand name + Chinese)
+    - T恤 → T xù (single letter + Chinese)
+    - la, los → la, los (Spanish articles in Chinese column)
+
+    WHY THIS IS USEFUL:
+    - See real examples of edge cases in the actual data
+    - Verify these are NOT validation errors (they're correct!)
+    - Understand how Latin text mixes with Chinese in modern usage
+    - Test the validator's Latin block matching logic
+  -->
+  <p id="edgeCaseFilterContainer" style="display: none;">
+    <label>
+      <input type="checkbox" id="showEdgeCasesOnly">
+      <strong>Show Edge Cases Only</strong> (Filter for Latin abbreviations: ATM, DNA, WhatsApp, etc.)
+    </label>
+  </p>
 
   <!--
     ============================================================
@@ -1606,6 +1659,17 @@
           saveState();
         });
       });
+
+      // ════════════════════════════════════════════════════════════════════════
+      // EDGE CASE FILTER: Event listener for "Show Edge Cases Only" checkbox
+      // ════════════════════════════════════════════════════════════════════════
+      const edgeCaseCheckbox = document.getElementById('showEdgeCasesOnly');
+      if (edgeCaseCheckbox) {
+        edgeCaseCheckbox.addEventListener('change', () => {
+          // Just refresh the table display with the new filter
+          displayVocabulary();
+        });
+      }
     }
 
     // ============================================================
@@ -2287,6 +2351,12 @@
       }
 
       optionsDiv.style.display = showOptions ? 'block' : 'none';
+
+      // Also update edge case filter visibility (same condition)
+      const edgeFilterDiv = document.getElementById('edgeCaseFilterContainer');
+      if (edgeFilterDiv) {
+        edgeFilterDiv.style.display = showOptions ? 'block' : 'none';
+      }
     }
 
     // ============================================================
@@ -3033,10 +3103,33 @@
       // ════════════════════════════════════════════════════════════════════════
       const words = combineAndShuffleWords(pack);
 
+      // ════════════════════════════════════════════════════════════════════════
+      // EDGE CASE FILTERING: Show only words with Latin abbreviations
+      // ════════════════════════════════════════════════════════════════════════
+      const showEdgeCasesOnly = document.getElementById('showEdgeCasesOnly')?.checked || false;
+
+      // Helper: Check if word contains Latin characters (edge cases)
+      function hasLatinInChinese(wordArray) {
+        // Check all columns that might contain Chinese text
+        for (let i = 0; i < wordArray.length; i++) {
+          const text = wordArray[i] || '';
+          // Check if text contains Latin letters (A-Z, a-z)
+          if (/[A-Za-z]/.test(text)) {
+            return true;
+          }
+        }
+        return false;
+      }
+
       words.forEach((wordObj, index) => {
         // Extract word array and type from the combined object
         const word = wordObj.word;      // Word array: ["spanish", "english", "chinese", ...]
         const wordType = wordObj.type;  // Either "Base Word" or "Example Word"
+
+        // EDGE CASE FILTER: Skip words without Latin if filter is active
+        if (showEdgeCasesOnly && !hasLatinInChinese(word)) {
+          return;  // Skip this word
+        }
 
         const row = document.createElement('tr');
 
