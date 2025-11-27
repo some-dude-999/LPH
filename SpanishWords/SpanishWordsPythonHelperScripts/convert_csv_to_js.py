@@ -55,6 +55,31 @@ ACT_TO_NUMBER = {
     "Act VII: Mastery & Fluency": 7
 }
 
+# Act display names (what users see in UI)
+ACT_DISPLAY_NAMES = {
+    1: "Foundation",
+    2: "Building Blocks",
+    3: "Daily Life",
+    4: "Expanding Expression",
+    5: "Intermediate Mastery",
+    6: "Advanced Constructs",
+    7: "Mastery & Fluency"
+}
+
+# Word column structure for Spanish
+# This defines what each index in the word array means
+WORD_COLUMNS = ["spanish", "english", "chinese", "pinyin", "portuguese"]
+
+# Translation config - what "I speak" languages are available
+# index = column in word array, display = UI label
+TRANSLATIONS_CONFIG = {
+    "english": {"index": 1, "display": "English"},
+    "chinese": {"index": 2, "display": "中文"},
+    "portuguese": {"index": 4, "display": "Português"}
+}
+
+DEFAULT_TRANSLATION = "english"
+
 
 def sanitize_for_variable_name(name):
     """Convert 'Greetings & Goodbyes' to 'greetings__goodbyes'"""
@@ -122,11 +147,22 @@ def read_pack_csv(pack_number):
     return words
 
 
-def create_clean_js_file(act_name, packs_data):
+def create_clean_js_file(act_name, act_number, packs_data):
     """Create clean JavaScript file with all packs for an act"""
     output_lines = []
     output_lines.append("// Clean version for development")
     output_lines.append("// This file is readable and intended for LLM-assisted coding\n")
+
+    # Add __actMeta export first - contains all act-level configuration
+    act_display_name = ACT_DISPLAY_NAMES[act_number]
+    output_lines.append("// Act-level metadata - ALL configuration comes from here")
+    output_lines.append("export const __actMeta = {")
+    output_lines.append(f'  actNumber: {act_number},')
+    output_lines.append(f'  actName: "{act_display_name}",')
+    output_lines.append(f'  wordColumns: {json.dumps(WORD_COLUMNS)},')
+    output_lines.append(f'  translations: {json.dumps(TRANSLATIONS_CONFIG)},')
+    output_lines.append(f'  defaultTranslation: "{DEFAULT_TRANSLATION}"')
+    output_lines.append("};\n")
 
     for pack_var_name, pack_data in packs_data.items():
         # Export each pack as a const
@@ -166,10 +202,23 @@ def create_clean_js_file(act_name, packs_data):
     return filepath
 
 
-def create_obfuscated_js_file(act_name, packs_data):
+def create_obfuscated_js_file(act_name, act_number, packs_data):
     """Create obfuscated JavaScript file using zlib compression + base64 encoding"""
+    # Add __actMeta to the data structure
+    act_display_name = ACT_DISPLAY_NAMES[act_number]
+    data_with_meta = {
+        "__actMeta": {
+            "actNumber": act_number,
+            "actName": act_display_name,
+            "wordColumns": WORD_COLUMNS,
+            "translations": TRANSLATIONS_CONFIG,
+            "defaultTranslation": DEFAULT_TRANSLATION
+        },
+        **packs_data
+    }
+
     # Convert entire act data to JSON
-    json_str = json.dumps(packs_data, ensure_ascii=False, separators=(',', ':'))
+    json_str = json.dumps(data_with_meta, ensure_ascii=False, separators=(',', ':'))
 
     # Step 1: Reverse the string (salt - makes reversed JSON fail to parse)
     reversed_str = json_str[::-1]
@@ -272,7 +321,9 @@ def main():
     print("\n[5/6] Generating clean JavaScript files...")
     clean_files = []
     for act_name, packs_data in sorted(acts_data.items()):
-        filepath = create_clean_js_file(act_name, packs_data)
+        # Extract act number from act_name (e.g., "act1-foundation" -> 1)
+        act_number = int(act_name.split('-')[0].replace('act', ''))
+        filepath = create_clean_js_file(act_name, act_number, packs_data)
         size_kb = filepath.stat().st_size / 1024
         clean_files.append((filepath.name, size_kb))
         print(f"      Created: {filepath.name:40s} ({size_kb:7.2f} KB)")
@@ -281,7 +332,9 @@ def main():
     print("\n[6/6] Generating obfuscated JavaScript files...")
     obfuscated_files = []
     for act_name, packs_data in sorted(acts_data.items()):
-        filepath = create_obfuscated_js_file(act_name, packs_data)
+        # Extract act number from act_name (e.g., "act1-foundation" -> 1)
+        act_number = int(act_name.split('-')[0].replace('act', ''))
+        filepath = create_obfuscated_js_file(act_name, act_number, packs_data)
         size_kb = filepath.stat().st_size / 1024
         obfuscated_files.append((filepath.name, size_kb))
         print(f"      Created: {filepath.name:40s} ({size_kb:7.2f} KB)")

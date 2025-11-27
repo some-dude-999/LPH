@@ -380,48 +380,71 @@ if (savedState.speed !== undefined && savedState.speed !== null) {
 - ❌ Free-form values (voice URI, wordpack keys) - validate existence instead
 
 ### No Hardcoded Data in HTML - MANDATORY
-**CRITICAL: All dropdown options and display data MUST come from a centralized JavaScript config, NOT hardcoded HTML.**
+**CRITICAL: ALL game data MUST come from the external JS modules, NOT hardcoded in HTML.**
 
 **The Principle:**
-If you delete the external JS module URLs, NOTHING should load. There should be zero pre-populated data in HTML dropdowns.
+If the JS modules don't load, NOTHING about the game should load. The HTML only contains:
+- Module URLs (as a simple array)
+- Empty `<select>` elements (populated after modules load)
+- UI shell (CSS, layout, etc.)
 
-**What MUST be in config (not HTML):**
-- ✅ Act names and URLs (the module paths)
-- ✅ Available "I speak" languages with column indices
-- ✅ Language display labels (English, 中文, Español, etc.)
-- ✅ Default selections
+**What MUST come from JS modules (__actMeta):**
+- ✅ Act names (actName in __actMeta)
+- ✅ Available "I speak" languages with column indices (translations in __actMeta)
+- ✅ Language display labels (English, 中文, Português - in translations)
+- ✅ Default translation language (defaultTranslation in __actMeta)
+- ✅ Word column structure (wordColumns in __actMeta)
+- ✅ All word/pack data
 
 **What goes in HTML:**
-- ❌ NOT hardcoded `<option>` elements with data
-- ✅ Empty `<select></select>` - populated only after modules load
+- ✅ MODULE_URLS array (just URLs, no metadata)
+- ❌ NOT act names
+- ❌ NOT translation config
+- ❌ NOT hardcoded `<option>` elements
 
-**Implementation Pattern:**
+**Module Structure (__actMeta):**
+Each JS module exports `__actMeta` containing all configuration:
 ```javascript
-// LANGUAGE_MODULES is the SINGLE SOURCE OF TRUTH
-const LANGUAGE_MODULES = {
-  spanish: {
-    acts: [
-      { act: 1, name: 'Foundation', url: './SpanishWords/Jsmodules-js/act1-foundation-js.js' },
-      // ... more acts
-    ],
-    // Translation column mapping: language code -> {index, display}
-    translations: {
-      english: { index: 1, display: 'English' },
-      chinese: { index: 2, display: '中文' },
-      portuguese: { index: 4, display: 'Português' }
-    },
-    defaultTranslation: 'english'
-  }
+export const __actMeta = {
+  actNumber: 1,
+  actName: "Foundation",
+  wordColumns: ["spanish", "english", "chinese", "pinyin", "portuguese"],
+  translations: {
+    english: { index: 1, display: "English" },
+    chinese: { index: 2, display: "中文" },
+    portuguese: { index: 4, display: "Português" }
+  },
+  defaultTranslation: "english"
 };
+```
 
-// Helper functions
-function getLanguageConfig() { return LANGUAGE_MODULES[CURRENT_LANGUAGE]; }
-function getValidLanguages() { return Object.keys(getLanguageConfig().translations); }
+**HTML Implementation Pattern:**
+```javascript
+// HTML only has URLs - ALL other config comes from loaded modules
+const MODULE_URLS = [
+  '../SpanishWords/Jsmodules-js/act1-foundation-js.js',
+  '../SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
+  // ... more URLs
+];
 
-// Populate dropdown from config (NOT from hardcoded HTML)
+let loadedActMeta = {}; // Populated from __actMeta when modules load
+
+// Helper to get translations from loaded module metadata
+function getTranslationsConfig() {
+  for (const actNum of Object.keys(loadedActMeta)) {
+    if (loadedActMeta[actNum]?.translations) {
+      return loadedActMeta[actNum].translations;
+    }
+  }
+  return null; // No modules loaded yet
+}
+
+// Populate dropdown from LOADED MODULE DATA (not inline config)
 function populateLanguageSelector(selectElement) {
+  const translations = getTranslationsConfig();
+  if (!translations) return; // Can't populate without loaded modules
+
   selectElement.innerHTML = '';
-  const translations = getLanguageConfig().translations;
   Object.entries(translations).forEach(([code, config]) => {
     const option = document.createElement('option');
     option.value = code;
@@ -432,10 +455,10 @@ function populateLanguageSelector(selectElement) {
 ```
 
 **Why This Matters:**
-- **Single source of truth**: Change language options in ONE place, applies everywhere
-- **No sync issues**: HTML and JS can't get out of sync
-- **Module dependency**: Game literally cannot work without modules loaded
-- **Easy to extend**: Add new languages by updating config only
+- **True module dependency**: If modules fail to load, dropdowns stay empty - user knows something is wrong
+- **Single source of truth**: All config lives in modules, not duplicated in HTML
+- **No sync issues**: Change translations in module converter, regenerate, done
+- **Testable**: Can create test file with empty URLs to verify error handling
 
 ---
 
@@ -683,7 +706,26 @@ SpanishWords/Jsmodules/
 ```
 
 ### Data Structure (ALL Languages)
-Each language module exports multiple pack constants with **identical structure**:
+
+**Act-Level Metadata (__actMeta):**
+Each module exports `__actMeta` containing act configuration:
+
+```javascript
+export const __actMeta = {
+  actNumber: 1,                    // Act number (1-7)
+  actName: "Foundation",           // Display name for act selector
+  wordColumns: ["spanish", "english", "chinese", "pinyin", "portuguese"],
+  translations: {                  // "I speak" language options
+    english: { index: 1, display: "English" },
+    chinese: { index: 2, display: "中文" },
+    portuguese: { index: 4, display: "Português" }
+  },
+  defaultTranslation: "english"
+};
+```
+
+**Pack Data Structure:**
+Each module also exports multiple pack constants:
 
 ```javascript
 export const p{act}_{pack}_{name} = {
@@ -705,6 +747,8 @@ export const p{act}_{pack}_{name} = {
 ```
 
 **Key Points:**
+- ✅ `__actMeta` provides ALL configuration (act name, translations, columns)
+- ✅ HTML only has URLs - everything else comes from loaded __actMeta
 - ✅ Structure is **identical** across all languages (meta object + words array)
 - ✅ Each language has **different columns** based on supported translations
 - ✅ Spanish: 5 columns (spanish, english, chinese, pinyin, portuguese)
