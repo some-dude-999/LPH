@@ -4,13 +4,13 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 茶,chá,Tea,Té,Thé,Chá,Trà,ชา,តែ,Teh,TEA,TEA
 绿茶,lǜ chá,Green tea,Té verde,Thé vert,Chá verde,Trà xanh,ชาเขียว,តែបៃតង,Teh hijau,Teh Hijau,Green Tea
 红茶,hóng chá,Black tea,Té negro,Thé noir,Chá preto,Trà đen,ชาดำ,តែខ្មៅ,Teh hitam,Teh hitam,Itim na tsaa
-咖啡,kā fēi,Coffee,Café,Café,Café,Cà phê,กาแฟ,កាហ្វេ || ទឹកដោះ,Kopi,Kopi,Kape
-牛奶,niú nǎi,Milk,Leche,Lait,Leite,Sữa,นม,| តែទឹកដោះគោ,Susu,Susu,Gatas
-奶茶,nǎi chá,Milk tea,Té con leche,Thé au lait,Chá com leite,Trà sữa,ชานม,ទឹក,Teh susu,Susu Teh,Milk Tea
-果汁,guǒ zhī,Juice,Jugo,Jus,Suco,Nước ép,น้ำผลไม้,កូកាកូឡា,Jus,Jus,Juice
-可乐,kě lè,Coke,Coca-Cola,Coca,Coca,Than cốc,โค้ก,សូដា,minuman bersoda,Coke,Coke
-汽水,qì shuǐ,Soda,Refresco,Soda,Refrigerante,Nước ngọt,โซดา,ស្រាបៀរ,soda,Soda,Soda
-啤酒,pí jiǔ,Beer,Cerveza,Bière,Cerveja,Bia,เบียร์,ស្រា || ស្រាក្រហម,Bir,Beer,Beer
+咖啡,kā fēi,Coffee,Café,Café,Café,Cà phê,กาแฟ,កាហ្វេ,Kopi,Kopi,Kape
+牛奶,niú nǎi,Milk,Leche,Lait,Leite,Sữa,นม,ទឹកដោះគោ,Susu,Susu,Gatas
+奶茶,nǎi chá,Milk tea,Té con leche,Thé au lait,Chá com leite,Trà sữa,ชานม,តែទឹកដោះ,Teh susu,Teh susu,Milk tea
+果汁,guǒ zhī,Juice,Jugo,Jus,Suco,Nước ép,น้ำผลไม้,ទឹកផ្លែឈើ,Jus,Jus,Juice
+可乐,kě lè,Coke,Coca-Cola,Coca,Coca-Cola,Coca,โค้ก,កូកាកូឡា,Coke,Coke,Coke
+汽水,qì shuǐ,Soda,Refresco,Soda,Refrigerante,Nước ngọt,โซดา,សូដា,Soda,Soda,Soda
+啤酒,pí jiǔ,Beer,Cerveza,Bière,Cerveja,Bia,เบียร์,ស្រាបៀរ,Bir,Beer,Beer
 白酒,bái jiǔ,Liquor,Licor,Alcool,Licor,Rượu,สุรา,ភេសជ្ជៈ,Minuman keras,Liquor,Alak
 红酒,hóng jiǔ,Red wine,Vino tinto,Vin rouge,Vinho tinto,Rượu vang đỏ,ไวน์แดง,ទឹកដោះគោសណ្តែក,Anggur merah,Wain Merah,Red Wine
 饮料,yǐn liào,Beverages,Bebidas,Boissons,Bebidas,Đồ Uống,เครื่องดื่ม,ទឹករ៉ែ,Minuman,Minuman,Inumin
@@ -47,6 +47,6 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 饮料甜,yǐn liào tián,Sweet drink,Bebida dulce,Boisson sucrée,Bebida doce,Nước ngọt,น้ำหวาน,ទឹកដោះគោសណ្តែកក្រអូប,Minuman manis,Minuman manis,Matamis na inumin
 喝饮料,hē yǐn liào,Drink drink,Beber beber,Boire un verre,"Beba, beba",Uống uống,ดื่มเครื่องดื่ม,ផឹកទឹកដោះគោសណ្តែក,Minum minuman,Minuman minuman,Uminom ng inumin
 豆浆香,dòu jiāng xiāng,Soy milk fragrant,Leche de soja fragante,Lait de soja parfumé,Leite de soja perfumado,Sữa đậu nành thơm,นมถั่วเหลืองหอม,ទឹករ៉ែរ៉ែល្អ,Susu kedelai harum,Susu soya wangi,Soy Milk Fragrant
-喝豆浆,hē dòu jiāng,Drink soy milk,Beber leche de soja,Boire du lait de soja,Beba leite de soja,Uống sữa đậu nành,ดื่มนมถั่วเหลือง,| ផឹកទឹករ៉ែ,Minum susu kedelai,Minum susu soya,Uminom ng toyo ng gatas
-矿泉水好,kuàng quán shuǐ hǎo,Mineral water is good,El agua mineral es buena,L'eau minérale est bonne,Água mineral faz bem,Nước khoáng có tốt,น้ำแร่ก็ดี,[TRANSLATE_KM],Air mineral itu bagus,Air mineral baik,Ang tubig ng mineral ay mabuti
-喝矿泉水,hē kuàng quán shuǐ,Drink mineral water,Beber agua mineral,Boire de l'eau minérale,Beba água mineral,Uống nước khoáng,ดื่มน้ำแร่,[TRANSLATE_KM],Minumlah air mineral,Minum air mineral,Uminom ng mineral na tubig
+喝豆浆,hē dòu jiāng,Drink soy milk,Beber leche de soja,Boire du lait de soja,Beba leite de soja,Uống sữa đậu nành,ดื่มนมถั่วเหลือง,ផឹកទឹកសណ្តែក,Minum susu kedelai,Minum susu soya,Uminom ng soy milk
+矿泉水好,kuàng quán shuǐ hǎo,Mineral water is good,El agua mineral es buena,L'eau minérale est bonne,Água mineral faz bem,Nước khoáng tốt,น้ำแร่ดี,ទឹករ៉ែល្អ,Air mineral bagus,Air mineral baik,Magandang mineral water
+喝矿泉水,hē kuàng quán shuǐ,Drink mineral water,Beber agua mineral,Boire de l'eau minérale,Beba água mineral,Uống nước khoáng,ดื่มน้ำแร่,ផឹកទឹករ៉ែ,Minum air mineral,Minum air mineral,Uminom ng mineral na tubig

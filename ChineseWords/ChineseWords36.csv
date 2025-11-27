@@ -1,11 +1,11 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-房子,fáng zi,House,Casa,Maison,Casa,Nhà,บ้าน,ផ្ទះ || បន្ទប់ || ទ្វារ,Rumah,Rumah,Bahay
+房子,fáng zi,House,Casa,Maison,Casa,Nhà,บ้าน,ផ្ទះ,Rumah,Rumah,Bahay
 房间,fáng jiān,Room,Habitación,Chambre,Quarto,Phòng,ห้อง,វីនដូ,Kamar,Bilik,Silid
 门,mén,Door,Puerta,Porte,Porta,Cửa,ประตู,ជញ្ជាំង,Pintu,Pintu,Pinto
-窗户,chuāng hù,Windows,Ventanas,Fenêtres,Janelas,Cửa sổ,หน้าต่าง,ជាន់ || ពិដាន,jendela,Windows,Windows
+窗户,chuāng hù,Window,Ventana,Fenêtre,Janela,Cửa sổ,หน้าต่าง,បង្អួច,Jendela,Tingkap,Bintana
 墙,qiáng,Wall,Muro,Mur,Parede,Tường,กำแพง,បន្ទប់ទទួលភ្ញៀវ,Dinding,Dinding,Pader
 地板,dì bǎn,Floor,Piso,Sol,Piso,Tầng,ชั้น,បន្ទប់គេង,Lantai,Lantai,Sahig
-天花板,tiān huā bǎn,Ceiling,Techo,Plafond,Teto,Trần nhà,เพดาน,ផ្ទះបាយ || បន្ទប់ទឹក,Plafon,Siling,Kisame
+天花板,tiān huā bǎn,Ceiling,Techo,Plafond,Teto,Trần nhà,เพดาน,ពិដាន,Plafon,Siling,Kisame
 客厅,kè tīng,Living room,Sala de estar,Salon,Sala de estar,Phòng khách,ห้องนั่งเล่น,បន្ទប់ទឹក,Ruang tamu,Ruang tamu,Living Room
 卧室,wò shì,Bedroom,Dormitorio,Chambre,Quarto,Phòng ngủ,ห้องนอน,យ៉រ,Kamar tidur,Bilik tidur,Silid -tulugan
 厨房,chú fáng,Kitchen,Cocina,Cuisine,Cozinha,Nhà bếp,ห้องครัว,ជណ្តើរ,Dapur,Dapur,Kusina
@@ -46,7 +46,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 走楼梯,zǒu lóu tī,Take the stairs,Sube las escaleras,Prenez les escaliers,Suba as escadas,Đi cầu thang,ขึ้นบันได,នៅសួនច្បារ,Naik tangga,Ambil tangga,Kumuha ng hagdan
 坐电梯,zuò diàn tī,Take the elevator,Toma el ascensor,Prenez l'ascenseur,Pegue o elevador,Đi thang máy,ขึ้นลิฟต์,យានដ្ឋានធំ,Naik lift,Ambil lif,Kunin ang elevator
 等电梯,děng diàn tī,Wait for the elevator,Espera el ascensor,Attendez l'ascenseur,Espere o elevador,Đợi thang máy,รอลิฟต์,នៅក្នុងហ្គារ៉ាស,Tunggu liftnya,Tunggu lif,Maghintay para sa elevator
-小花园,xiǎo huā yuán,Small garden,Pequeño jardín,Petit jardin,Pequeno jardim,Khu vườn nhỏ,สวนเล็กๆ,[TRANSLATE_KM],Taman kecil,Taman Kecil,Maliit na hardin
-在花园,zài huā yuán,In the garden,En el jardín,Dans le jardin,No jardim,Trong vườn,ในสวน,[TRANSLATE_KM],Di taman,Di Taman,Sa hardin
-大车库,dà chē kù,Large garage,Amplio garaje,Grand garage,Grande garagem,Nhà để xe lớn,โรงจอดรถขนาดใหญ่,[TRANSLATE_KM],Garasi besar,Garaj besar,Malaking garahe
-在车库,zài chē kù,In the garage,en el garaje,Dans le garage,Na garagem,Trong gara,ในโรงรถ,[TRANSLATE_KM],Di garasi,Di garaj,Sa garahe
+小花园,xiǎo huā yuán,Small garden,Pequeño jardín,Petit jardin,Pequeno jardim,Khu vườn nhỏ,สวนเล็กๆ,សួនតូច,Taman kecil,Taman kecil,Maliit na hardin
+在花园,zài huā yuán,In the garden,En el jardín,Dans le jardin,No jardim,Trong vườn,ในสวน,នៅសួន,Di taman,Di taman,Sa hardin
+大车库,dà chē kù,Large garage,Amplio garaje,Grand garage,Grande garagem,Nhà để xe lớn,โรงจอดรถขนาดใหญ่,យានដ្ឋានធំ,Garasi besar,Garaj besar,Malaking garahe
+在车库,zài chē kù,In the garage,en el garaje,Dans le garage,Na garagem,Trong gara,ในโรงรถ,នៅក្នុងយានដ្ឋាន,Di garasi,Di garaj,Sa garahe
