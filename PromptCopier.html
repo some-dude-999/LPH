@@ -1128,6 +1128,12 @@ Create your own branch, commit, and PR to main.</div>
 ║  107 packs = 107 rows. NO EXCEPTIONS. NO SHORTCUTS.              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+=== STEP 0: CLEAR ALL EXISTING SCORES (FRESH START) ===
+python PythonHelpers/clear_translation_scores.py chinese
+
+This clears ALL scores in ChineseWordsTranslationErrors.csv, ensuring a fresh evaluation.
+You will fill in every Score and Issues cell from scratch.
+
 === STEP 1: RUN VALIDATION SCRIPTS ===
 python PythonHelpers/verify_words_integrity.py chinese
 python PythonHelpers/validate_pinyin.py chinese
@@ -1142,7 +1148,7 @@ Note all errors found. These will need manual fixes in Stage 3B.
 === STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📖 READ EACH CSV FILE MANUALLY - NO SHORTCUTS                   ║
+║  📖 READ EACH CSV FILE MANUALLY - BE EXTREMELY NITPICKY          ║
 ║                                                                  ║
 ║  For EACH wordpack (1-107):                                      ║
 ║  1. Use the Read tool to open the CSV file                       ║
@@ -1150,8 +1156,9 @@ Note all errors found. These will need manual fixes in Stage 3B.
 ║  3. Check EVERY translation across ALL languages                 ║
 ║  4. Ask yourself: "Is this the BEST translation possible?"       ║
 ║  5. Score based on translation quality across ALL columns        ║
+║  6. WRITE DOWN EVERY SINGLE ISSUE - be extremely detailed        ║
 ║                                                                  ║
-║  DO NOT SKIM. DO NOT RUSH. READ CAREFULLY.                       ║
+║  DO NOT SKIM. DO NOT RUSH. BE BRUTALLY HONEST. FIND ALL FLAWS.  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 Chinese Packs: ChineseWords1.csv through ChineseWords107.csv
@@ -1207,19 +1214,36 @@ The CSV has these columns:
 
 FOR EACH PACK (1-107):
 1. Read the breakout CSV: ChineseWords/ChineseWords{N}.csv
-2. Evaluate all translations carefully
+2. Evaluate all translations carefully - BE EXTREMELY NITPICKY
 3. Assign a score (1-10)
-4. Write specific issues (or "None" if perfect)
+4. Write EVERY SINGLE ISSUE you find - no matter how small
 5. Update the row in ChineseWordsTranslationErrors.csv
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️  BE BRUTALLY DETAILED IN THE ISSUES COLUMN                   ║
+║                                                                  ║
+║  For EACH issue you find, write:                                 ║
+║  - Exact row number                                              ║
+║  - Exact column name                                             ║
+║  - What's wrong                                                  ║
+║  - What it should be (if you know)                               ║
+║                                                                  ║
+║  Example: "Row 3 pinyin: missing space (应该 shì → yīng gāi)"    ║
+║  Example: "Row 7 english: awkward phrasing 'I go to home'"       ║
+║  Example: "Row 12 spanish: too formal - use informal version"    ║
+║                                                                  ║
+║  DO NOT just say "several issues" - LIST EVERY SINGLE ONE!       ║
+╚══════════════════════════════════════════════════════════════════╝
 
 Example of filled-in rows:
 Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
-1,Greetings & Goodbyes,Act I: Foundation,9,Minor: Row 5 pinyin spacing
+1,Greetings & Goodbyes,Act I: Foundation,9,"Row 5 pinyin: missing space after 好"
 2,Personal Pronouns,Act I: Foundation,10,None
-3,Demonstratives & Pointers,Act I: Foundation,7,Row 3 english awkward; Row 8 thai wrong; Row 12 empty portuguese
-4,Yes No & Responses,Act I: Foundation,6,Multiple empty cells; Row 5 has [brackets]
+3,Demonstratives & Pointers,Act I: Foundation,7,"Row 3 english: awkward 'this one here' → 'this'; Row 8 thai: wrong tone mark; Row 12 portuguese: empty cell needs translation"
+4,Yes No & Responses,Act I: Foundation,6,"Row 2 pinyin: wrong tone (shì → shí); Row 5 english: has [brackets]; Row 8 spanish: too formal; Row 9 french: missing accent on é; Row 11 vietnamese: wrong diacritic; Row 14 malay: empty cell"
 
 ⛔ EVERY ROW MUST HAVE A SCORE. NO EMPTY SCORES ALLOWED! ⛔
+⛔ EVERY ISSUE MUST BE DOCUMENTED IN DETAIL! ⛔
 
 === STEP 4: COMMIT THE UPDATED CSV ===
 
@@ -1347,21 +1371,48 @@ Start with the LOWEST scores first (worst = highest priority).
 ║  COMPLETE EVERYTHING before finishing this task.                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+╔══════════════════════════════════════════════════════════════════╗
+║  📋 YOUR ONLY JOB: FIX EVERY ISSUE IN THE ISSUES COLUMN          ║
+║                                                                  ║
+║  Stage 3A already scored and documented ALL issues.             ║
+║  You do NOT need to re-evaluate or re-score.                    ║
+║  Simply READ the Issues column and FIX everything listed.       ║
+║                                                                  ║
+║  NO scoring. NO evaluating. JUST FIX WHAT'S LISTED.             ║
+╚══════════════════════════════════════════════════════════════════╝
+
 FOR EACH PACK SCORING BELOW 9 (in priority order):
 
-1. Read the pack CSV file
-2. Fix ALL issues identified in the scorecard
-3. Show before/after table:
+1. Read the Issues column for this pack in ChineseWordsTranslationErrors.csv
+2. Read the pack CSV file: ChineseWords/ChineseWords{N}.csv
+3. Fix EVERY SINGLE ISSUE listed in the Issues column
+4. Show before/after table for ALL changes:
 
-   | File | Row | Column | Before | After |
-   |------|-----|--------|--------|-------|
-   | ChineseWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo |
-   | ChineseWords23.csv | 7 | english | hello friend boy | hey buddy |
+   | File | Row | Column | Before | After | Issue Fixed |
+   |------|-----|--------|--------|-------|-------------|
+   | ChineseWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo | Missing space |
+   | ChineseWords23.csv | 7 | english | hello friend boy | hey buddy | Awkward phrasing |
+   | ChineseWords23.csv | 12 | spanish | (empty) | hola amigo | Empty cell |
 
-4. COMMIT that pack's fixes
-5. PR TO MAIN
-6. Move to next pack
-7. REPEAT until ALL packs below 9 are fixed
+5. COMMIT that pack's fixes
+6. PR TO MAIN
+7. Move to next pack
+8. REPEAT until ALL issues from ALL packs below 9 are fixed
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️  CRITICAL: ADDRESS EVERY ISSUE FROM THE ISSUES COLUMN        ║
+║                                                                  ║
+║  If the Issues column says:                                      ║
+║  "Row 3 pinyin: missing space; Row 7 english: awkward; Row 12   ║
+║   spanish: too formal"                                           ║
+║                                                                  ║
+║  Then you MUST fix:                                              ║
+║  - Row 3 pinyin (add the space)                                  ║
+║  - Row 7 english (fix the awkward phrasing)                      ║
+║  - Row 12 spanish (make it less formal)                          ║
+║                                                                  ║
+║  Do NOT skip any issue. Do NOT leave anything for later.        ║
+╚══════════════════════════════════════════════════════════════════╝
 
 === CRITICAL RULES ===
 
@@ -1439,6 +1490,12 @@ Fix ALL packs below 9 - no exceptions!</div>
 ║  250 packs = 250 rows. NO EXCEPTIONS. NO SHORTCUTS.              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+=== STEP 0: CLEAR ALL EXISTING SCORES (FRESH START) ===
+python PythonHelpers/clear_translation_scores.py spanish
+
+This clears ALL scores in SpanishWordsTranslationErrors.csv, ensuring a fresh evaluation.
+You will fill in every Score and Issues cell from scratch.
+
 === STEP 1: RUN VALIDATION SCRIPTS ===
 python PythonHelpers/verify_words_integrity.py spanish
 python PythonHelpers/validate_pinyin.py spanish
@@ -1453,7 +1510,7 @@ Note all errors found. These will need manual fixes in Stage 3B.
 === STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📖 READ EACH CSV FILE MANUALLY - NO SHORTCUTS                   ║
+║  📖 READ EACH CSV FILE MANUALLY - BE EXTREMELY NITPICKY          ║
 ║                                                                  ║
 ║  For EACH wordpack (1-250):                                      ║
 ║  1. Use the Read tool to open the CSV file                       ║
@@ -1461,8 +1518,9 @@ Note all errors found. These will need manual fixes in Stage 3B.
 ║  3. Check EVERY translation across ALL languages                 ║
 ║  4. Ask yourself: "Is this the BEST translation possible?"       ║
 ║  5. Score based on translation quality across ALL columns        ║
+║  6. WRITE DOWN EVERY SINGLE ISSUE - be extremely detailed        ║
 ║                                                                  ║
-║  DO NOT SKIM. DO NOT RUSH. READ CAREFULLY.                       ║
+║  DO NOT SKIM. DO NOT RUSH. BE BRUTALLY HONEST. FIND ALL FLAWS.  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 Spanish Packs: SpanishWords1.csv through SpanishWords250.csv
@@ -1511,19 +1569,36 @@ The CSV has these columns:
 
 FOR EACH PACK (1-250):
 1. Read the breakout CSV: SpanishWords/SpanishWords{N}.csv
-2. Evaluate all translations carefully
+2. Evaluate all translations carefully - BE EXTREMELY NITPICKY
 3. Assign a score (1-10)
-4. Write specific issues (or "None" if perfect)
+4. Write EVERY SINGLE ISSUE you find - no matter how small
 5. Update the row in SpanishWordsTranslationErrors.csv
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️  BE BRUTALLY DETAILED IN THE ISSUES COLUMN                   ║
+║                                                                  ║
+║  For EACH issue you find, write:                                 ║
+║  - Exact row number                                              ║
+║  - Exact column name                                             ║
+║  - What's wrong                                                  ║
+║  - What it should be (if you know)                               ║
+║                                                                  ║
+║  Example: "Row 3 pinyin: missing space (你好 → nǐ hǎo)"          ║
+║  Example: "Row 7 english: awkward 'I go to home'"                ║
+║  Example: "Row 12 portuguese: missing accent (irmao → irmão)"    ║
+║                                                                  ║
+║  DO NOT just say "several issues" - LIST EVERY SINGLE ONE!       ║
+╚══════════════════════════════════════════════════════════════════╝
 
 Example of filled-in rows:
 Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
-1,Greetings & Goodbyes,Act I: Foundation,9,Minor: Row 5 english awkward
+1,Greetings & Goodbyes,Act I: Foundation,9,"Row 5 english: awkward 'hello how you do' → 'how are you'"
 2,Yes No & Agreement,Act I: Foundation,10,None
-3,Numbers 0-10,Act I: Foundation,7,Row 3 chinese wrong; Row 8 portuguese empty
-4,Asking Questions,Act I: Foundation,6,Multiple empty cells; Row 5 has [brackets]
+3,Numbers 0-10,Act I: Foundation,7,"Row 3 chinese: wrong character (一 → 壹); Row 8 portuguese: empty cell needs translation; Row 12 pinyin: missing space"
+4,Asking Questions,Act I: Foundation,6,"Row 2 english: has [brackets]; Row 5 pinyin: wrong tone; Row 7 portuguese: missing tilde; Row 9 chinese: traditional not simplified; Row 11 english: too formal"
 
 ⛔ EVERY ROW MUST HAVE A SCORE. NO EMPTY SCORES ALLOWED! ⛔
+⛔ EVERY ISSUE MUST BE DOCUMENTED IN DETAIL! ⛔
 
 === STEP 4: SUMMARY COUNTS ===
 
@@ -1643,21 +1718,48 @@ Start with the LOWEST scores first (worst = highest priority).
 ║  COMPLETE EVERYTHING before finishing this task.                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+╔══════════════════════════════════════════════════════════════════╗
+║  📋 YOUR ONLY JOB: FIX EVERY ISSUE IN THE ISSUES COLUMN          ║
+║                                                                  ║
+║  Stage 3A already scored and documented ALL issues.             ║
+║  You do NOT need to re-evaluate or re-score.                    ║
+║  Simply READ the Issues column and FIX everything listed.       ║
+║                                                                  ║
+║  NO scoring. NO evaluating. JUST FIX WHAT'S LISTED.             ║
+╚══════════════════════════════════════════════════════════════════╝
+
 FOR EACH PACK SCORING BELOW 9 (in priority order):
 
-1. Read the pack CSV file
-2. Fix ALL issues identified in the scorecard
-3. Show before/after table:
+1. Read the Issues column for this pack in SpanishWordsTranslationErrors.csv
+2. Read the pack CSV file: SpanishWords/SpanishWords{N}.csv
+3. Fix EVERY SINGLE ISSUE listed in the Issues column
+4. Show before/after table for ALL changes:
 
-   | File | Row | Column | Before | After |
-   |------|-----|--------|--------|-------|
-   | SpanishWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo |
-   | SpanishWords23.csv | 7 | english | hello friend boy | hey buddy |
+   | File | Row | Column | Before | After | Issue Fixed |
+   |------|-----|--------|--------|-------|-------------|
+   | SpanishWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo | Missing space |
+   | SpanishWords23.csv | 7 | english | hello friend boy | hey buddy | Awkward phrasing |
+   | SpanishWords23.csv | 12 | portuguese | (empty) | olá amigo | Empty cell |
 
-4. COMMIT that pack's fixes
-5. PR TO MAIN
-6. Move to next pack
-7. REPEAT until ALL packs below 9 are fixed
+5. COMMIT that pack's fixes
+6. PR TO MAIN
+7. Move to next pack
+8. REPEAT until ALL issues from ALL packs below 9 are fixed
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️  CRITICAL: ADDRESS EVERY ISSUE FROM THE ISSUES COLUMN        ║
+║                                                                  ║
+║  If the Issues column says:                                      ║
+║  "Row 3 pinyin: missing space; Row 7 english: awkward; Row 12   ║
+║   portuguese: missing accent"                                    ║
+║                                                                  ║
+║  Then you MUST fix:                                              ║
+║  - Row 3 pinyin (add the space)                                  ║
+║  - Row 7 english (fix the awkward phrasing)                      ║
+║  - Row 12 portuguese (add the missing accent)                    ║
+║                                                                  ║
+║  Do NOT skip any issue. Do NOT leave anything for later.        ║
+╚══════════════════════════════════════════════════════════════════╝
 
 === CRITICAL RULES ===
 
@@ -1727,6 +1829,12 @@ Fix ALL packs below 9 - no exceptions!</div>
 ║  160 packs = 160 rows. NO EXCEPTIONS. NO SHORTCUTS.              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+=== STEP 0: CLEAR ALL EXISTING SCORES (FRESH START) ===
+python PythonHelpers/clear_translation_scores.py english
+
+This clears ALL scores in EnglishWordsTranslationErrors.csv, ensuring a fresh evaluation.
+You will fill in every Score and Issues cell from scratch.
+
 === STEP 1: RUN VALIDATION SCRIPTS ===
 python PythonHelpers/verify_words_integrity.py english
 python PythonHelpers/validate_pinyin.py english
@@ -1741,7 +1849,7 @@ Note all errors found. These will need manual fixes in Stage 3B.
 === STEP 2: MANUALLY READ AND SCORE EVERY PACK ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📖 READ EACH CSV FILE MANUALLY - NO SHORTCUTS                   ║
+║  📖 READ EACH CSV FILE MANUALLY - BE EXTREMELY NITPICKY          ║
 ║                                                                  ║
 ║  For EACH wordpack (1-160):                                      ║
 ║  1. Use the Read tool to open the CSV file                       ║
@@ -1749,8 +1857,9 @@ Note all errors found. These will need manual fixes in Stage 3B.
 ║  3. Check EVERY translation across ALL languages                 ║
 ║  4. Ask yourself: "Is this the BEST translation possible?"       ║
 ║  5. Score based on translation quality across ALL columns        ║
+║  6. WRITE DOWN EVERY SINGLE ISSUE - be extremely detailed        ║
 ║                                                                  ║
-║  DO NOT SKIM. DO NOT RUSH. READ CAREFULLY.                       ║
+║  DO NOT SKIM. DO NOT RUSH. BE BRUTALLY HONEST. FIND ALL FLAWS.  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 English Packs: EnglishWords1.csv through EnglishWords160.csv
@@ -1799,19 +1908,36 @@ The CSV has these columns:
 
 FOR EACH PACK (1-160):
 1. Read the breakout CSV: EnglishWords/EnglishWords{N}.csv
-2. Evaluate all translations carefully
+2. Evaluate all translations carefully - BE EXTREMELY NITPICKY
 3. Assign a score (1-10)
-4. Write specific issues (or "None" if perfect)
+4. Write EVERY SINGLE ISSUE you find - no matter how small
 5. Update the row in EnglishWordsTranslationErrors.csv
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️  BE BRUTALLY DETAILED IN THE ISSUES COLUMN                   ║
+║                                                                  ║
+║  For EACH issue you find, write:                                 ║
+║  - Exact row number                                              ║
+║  - Exact column name                                             ║
+║  - What's wrong                                                  ║
+║  - What it should be (if you know)                               ║
+║                                                                  ║
+║  Example: "Row 3 pinyin: missing space (你好 → nǐ hǎo)"          ║
+║  Example: "Row 7 spanish: awkward 'yo voy a casa'"               ║
+║  Example: "Row 12 portuguese: missing tilde (nao → não)"         ║
+║                                                                  ║
+║  DO NOT just say "several issues" - LIST EVERY SINGLE ONE!       ║
+╚══════════════════════════════════════════════════════════════════╝
 
 Example of filled-in rows:
 Pack_Number,Pack_Title,Difficulty_Act,Score,Issues
-1,Greetings & Basics,Act I: Foundation,9,Minor: Row 5 spanish awkward
+1,Greetings & Basics,Act I: Foundation,9,"Row 5 spanish: awkward 'hola como tu estas' → 'hola cómo estás'"
 2,Numbers 1-20,Act I: Foundation,10,None
-3,Numbers & Counting,Act I: Foundation,7,Row 3 chinese wrong; Row 8 portuguese empty
-4,Articles & Determiners,Act I: Foundation,6,Multiple empty cells; Row 5 has [brackets]
+3,Numbers & Counting,Act I: Foundation,7,"Row 3 chinese: wrong character (二 → 贰); Row 8 portuguese: empty cell needs translation; Row 12 pinyin: missing space"
+4,Articles & Determiners,Act I: Foundation,6,"Row 2 pinyin: wrong tone (yī → yì); Row 5 chinese: has [brackets]; Row 7 spanish: missing accent; Row 9 portuguese: wrong word; Row 11 pinyin: no spaces"
 
 ⛔ EVERY ROW MUST HAVE A SCORE. NO EMPTY SCORES ALLOWED! ⛔
+⛔ EVERY ISSUE MUST BE DOCUMENTED IN DETAIL! ⛔
 
 === STEP 4: SUMMARY COUNTS ===
 
@@ -1929,21 +2055,48 @@ Start with the LOWEST scores first (worst = highest priority).
 ║  COMPLETE EVERYTHING before finishing this task.                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+╔══════════════════════════════════════════════════════════════════╗
+║  📋 YOUR ONLY JOB: FIX EVERY ISSUE IN THE ISSUES COLUMN          ║
+║                                                                  ║
+║  Stage 3A already scored and documented ALL issues.             ║
+║  You do NOT need to re-evaluate or re-score.                    ║
+║  Simply READ the Issues column and FIX everything listed.       ║
+║                                                                  ║
+║  NO scoring. NO evaluating. JUST FIX WHAT'S LISTED.             ║
+╚══════════════════════════════════════════════════════════════════╝
+
 FOR EACH PACK SCORING BELOW 9 (in priority order):
 
-1. Read the pack CSV file
-2. Fix ALL issues identified in the scorecard
-3. Show before/after table:
+1. Read the Issues column for this pack in EnglishWordsTranslationErrors.csv
+2. Read the pack CSV file: EnglishWords/EnglishWords{N}.csv
+3. Fix EVERY SINGLE ISSUE listed in the Issues column
+4. Show before/after table for ALL changes:
 
-   | File | Row | Column | Before | After |
-   |------|-----|--------|--------|-------|
-   | EnglishWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo |
-   | EnglishWords23.csv | 7 | spanish | hola amigo chico | hola amigo |
+   | File | Row | Column | Before | After | Issue Fixed |
+   |------|-----|--------|--------|-------|-------------|
+   | EnglishWords23.csv | 3 | pinyin | nǐhǎo | nǐ hǎo | Missing space |
+   | EnglishWords23.csv | 7 | spanish | hola tu | hola tú | Missing accent |
+   | EnglishWords23.csv | 12 | chinese | (empty) | 你好 | Empty cell |
 
-4. COMMIT that pack's fixes
-5. PR TO MAIN
-6. Move to next pack
-7. REPEAT until ALL packs below 9 are fixed
+5. COMMIT that pack's fixes
+6. PR TO MAIN
+7. Move to next pack
+8. REPEAT until ALL issues from ALL packs below 9 are fixed
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚠️  CRITICAL: ADDRESS EVERY ISSUE FROM THE ISSUES COLUMN        ║
+║                                                                  ║
+║  If the Issues column says:                                      ║
+║  "Row 3 pinyin: missing space; Row 7 spanish: missing accent;   ║
+║   Row 12 chinese: empty cell"                                    ║
+║                                                                  ║
+║  Then you MUST fix:                                              ║
+║  - Row 3 pinyin (add the space)                                  ║
+║  - Row 7 spanish (add the missing accent)                        ║
+║  - Row 12 chinese (fill the empty cell)                          ║
+║                                                                  ║
+║  Do NOT skip any issue. Do NOT leave anything for later.        ║
+╚══════════════════════════════════════════════════════════════════╝
 
 === CRITICAL RULES ===
 
