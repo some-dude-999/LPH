@@ -2194,13 +2194,18 @@
         const pySeq = pinyinSeqs[i] || {text: '', type: ''};
 
         if (chSeq.type === 'latin') {
-          // Latin block: couple as single unit
-          coupled.push({
-            char: chSeq.text,
-            pinyin: pySeq.text
+          // Latin: split letter-by-letter, each letter maps to itself
+          const chLetters = [...chSeq.text];
+          const pyLetters = [...pySeq.text];
+
+          chLetters.forEach((letter, j) => {
+            coupled.push({
+              char: letter,
+              pinyin: pyLetters[j] || letter  // Map to same letter, fallback to itself
+            });
           });
         } else if (chSeq.type === 'chinese') {
-          // Chinese chars: couple char-by-char
+          // Chinese chars: couple char-by-char with pinyin syllables
           const chars = [...chSeq.text];
           const syls = pySeq.text.split(/\s+/);
 
