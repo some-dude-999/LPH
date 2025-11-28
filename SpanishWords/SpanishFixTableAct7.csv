@@ -1,1 +1,197 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,221,Past Subjunctive Forms,4,english,out,were (subjunctive),Wrong meaning - fuera is past subjunctive not 'out'
+spanish,221,Past Subjunctive Forms,4,chinese,出,是,Correct subjunctive meaning
+spanish,221,Past Subjunctive Forms,4,pinyin,chū,shì,Match corrected Chinese
+spanish,221,Past Subjunctive Forms,7,english,did,did (subjunctive),Clarify subjunctive mood
+spanish,221,Past Subjunctive Forms,8,english,say,said (subjunctive),Past subjunctive not infinitive
+spanish,221,Past Subjunctive Forms,11,english,give,gave (subjunctive),Past subjunctive not infinitive
+spanish,221,Past Subjunctive Forms,14,english,will speak,spoke (subjunctive),Past subjunctive wrongly translated as future
+spanish,221,Past Subjunctive Forms,15,english,eat,ate (subjunctive),Past subjunctive not infinitive
+spanish,221,Past Subjunctive Forms,17,english,will work,worked (subjunctive),Past subjunctive wrongly translated as future
+spanish,221,Past Subjunctive Forms,18,english,will study,studied (subjunctive),Past subjunctive wrongly translated as future
+spanish,221,Past Subjunctive Forms,20,english,will wait,waited (subjunctive),Past subjunctive wrongly translated as future
+spanish,224,Robotics & AI Terms,5,chinese,加工,处理,Processing in tech context not manufacturing
+spanish,224,Robotics & AI Terms,5,pinyin,jiā gōng,chǔ lǐ,Match corrected Chinese
+spanish,224,Robotics & AI Terms,7,chinese,认可,识别,Recognition = pattern recognition not approval
+spanish,224,Robotics & AI Terms,7,pinyin,rèn kě,shí bié,Match corrected Chinese
+spanish,224,Robotics & AI Terms,8,english,schedule,program,In AI/robotics context programar means to code
+spanish,224,Robotics & AI Terms,8,chinese,时间表,编程,Program/code not schedule
+spanish,224,Robotics & AI Terms,8,pinyin,shí jiān biǎo,biān chéng,Match corrected Chinese
+spanish,224,Robotics & AI Terms,9,chinese,火车,训练,Train (teach) not train (vehicle)
+spanish,224,Robotics & AI Terms,9,pinyin,huǒ chē,xùn liàn,Match corrected Chinese
+spanish,224,Robotics & AI Terms,21,chinese,例行公事,例程,Routine in programming sense not formality
+spanish,224,Robotics & AI Terms,21,pinyin,lì xíng gōng shì,lì chéng,Match corrected Chinese
+spanish,224,Robotics & AI Terms,28,chinese,加工,数据处理,Processing in tech context
+spanish,224,Robotics & AI Terms,28,pinyin,jiā gōng,shù jù chǔ lǐ,Match corrected Chinese
+spanish,224,Robotics & AI Terms,29,chinese,加工,数据处理,Processing in tech context
+spanish,224,Robotics & AI Terms,29,pinyin,jiā gōng,shù jù chǔ lǐ,Match corrected Chinese
+spanish,224,Robotics & AI Terms,32,chinese,认可,模式识别,Recognition in AI context
+spanish,224,Robotics & AI Terms,32,pinyin,rèn kě,mó shì shí bié,Match corrected Chinese
+spanish,224,Robotics & AI Terms,33,chinese,认可,识别,Recognition in AI context
+spanish,224,Robotics & AI Terms,33,pinyin,rèn kě,shí bié,Match corrected Chinese
+spanish,224,Robotics & AI Terms,34,english,you have to program,you have to code,Programming in AI context means coding
+spanish,224,Robotics & AI Terms,34,chinese,你必须编程,你必须编程,Already correct but verify pinyin
+spanish,224,Robotics & AI Terms,35,english,I'm going to program,I'm going to code,Programming means coding here
+spanish,224,Robotics & AI Terms,35,chinese,我要编程,我要编程,Already correct
+spanish,224,Robotics & AI Terms,60,chinese,例行公事,程序,Routine in programming context
+spanish,224,Robotics & AI Terms,60,pinyin,lì xíng gōng shì,chéng xù,Match corrected Chinese
+spanish,224,Robotics & AI Terms,61,chinese,例行公事,例程,Routine in programming context
+spanish,224,Robotics & AI Terms,61,pinyin,lì xíng gōng shì,lì chéng,Match corrected Chinese
+spanish,225,Warming (calentar),2,english,heat,I heat,Verb form not noun
+spanish,225,Warming (calentar),11,chinese,磨砺,温和,Templado = lukewarm not tempered metal
+spanish,225,Warming (calentar),11,pinyin,mó lì,wēn hé,Match corrected Chinese
+spanish,225,Warming (calentar),31,chinese,非常温和,温暖适中,Very temperate/moderate temperature
+spanish,225,Warming (calentar),31,pinyin,fēi cháng wēn hé,wēn nuǎn shì zhōng,Match corrected Chinese
+spanish,226,Cooling (enfriar),2,english,cold,I cool,Verb not adjective
+spanish,226,Cooling (enfriar),31,chinese,非常冷淡,霜冻,Very frosty not emotionally cold
+spanish,226,Cooling (enfriar),31,pinyin,fēi cháng lěng dàn,shuāng dòng,Match corrected Chinese
+spanish,229,Revealing & Exposing (revelar),13,chinese,小编给你揭晓,我向你透露,Remove awkward 小编 (editor)
+spanish,229,Revealing & Exposing (revelar),13,pinyin,xiǎo biān gěi nǐ jiē xiǎo,wǒ xiàng nǐ tòu lù,Match corrected Chinese
+spanish,230,Virtual Reality Terms,3,english,increased,augmented,Augmented reality not increased
+spanish,230,Virtual Reality Terms,5,chinese,头像,化身,Avatar = virtual persona not profile pic
+spanish,230,Virtual Reality Terms,5,pinyin,tóu xiàng,huà shēn,Match corrected Chinese
+spanish,230,Virtual Reality Terms,8,english,viewer,headset,VR visor is device not person watching
+spanish,230,Virtual Reality Terms,8,chinese,观众,头戴显示器,Headset device not audience
+spanish,230,Virtual Reality Terms,8,pinyin,guān zhòng,tóu dài xiǎn shì qì,Match corrected Chinese
+spanish,230,Virtual Reality Terms,16,chinese,尺寸,维度,Dimension = spatial dimension not size
+spanish,230,Virtual Reality Terms,16,pinyin,chǐ cùn,wéi dù,Match corrected Chinese
+spanish,230,Virtual Reality Terms,33,chinese,观众,头戴显示器,Headset device not viewer person
+spanish,230,Virtual Reality Terms,33,pinyin,guān zhòng,tóu dài xiǎn shì qì,Match corrected Chinese
+spanish,230,Virtual Reality Terms,34,chinese,观众,头戴显示器,Headset device not viewer person
+spanish,230,Virtual Reality Terms,34,pinyin,guān zhòng,tóu dài xiǎn shì qì,Match corrected Chinese
+spanish,230,Virtual Reality Terms,49,chinese,尺寸,维度,Dimension not size
+spanish,230,Virtual Reality Terms,49,pinyin,chǐ cùn,wéi dù,Match corrected Chinese
+spanish,230,Virtual Reality Terms,50,chinese,另一个维度,另一个维度,Verify pinyin matches
+spanish,231,Measuring (medir),4,chinese,措施,测量,Measures (verb) not measures (steps)
+spanish,231,Measuring (medir),4,pinyin,cuò shī,cè liáng,Match corrected Chinese
+spanish,231,Measuring (medir),6,chinese,措施,测量,Measures (verb) not measures (steps)
+spanish,231,Measuring (medir),6,pinyin,cuò shī,cè liáng,Match corrected Chinese
+spanish,232,Weighing (pesar),3,chinese,权重,砝码,Weights = physical objects not statistical weight
+spanish,232,Weighing (pesar),3,pinyin,quán zhòng,fǎ mǎ,Match corrected Chinese
+spanish,232,Weighing (pesar),9,chinese,规模,秤,Scale = weighing device not scope
+spanish,232,Weighing (pesar),9,pinyin,guī mó,chèng,Match corrected Chinese
+spanish,232,Weighing (pesar),26,chinese,规模,秤,Scale = weighing scale not scope
+spanish,232,Weighing (pesar),26,pinyin,guī mó,chèng,Match corrected Chinese
+spanish,232,Weighing (pesar),27,chinese,规模,秤,Scale = weighing scale not scope
+spanish,232,Weighing (pesar),27,pinyin,guī mó,chèng,Match corrected Chinese
+spanish,234,Establishing & Founding (fundar),2,english,fund,I found,Theme is founding not fund money
+spanish,234,Establishing & Founding (fundar),2,chinese,基金,我创立,I found/establish not fund money
+spanish,234,Establishing & Founding (fundar),2,pinyin,jī jīn,wǒ chuàng lì,Match corrected Chinese
+spanish,234,Establishing & Founding (fundar),3,english,covers,you found,Theme is founding not covering
+spanish,234,Establishing & Founding (fundar),3,chinese,涵盖,你创立,You found/establish
+spanish,234,Establishing & Founding (fundar),3,pinyin,hán gài,nǐ chuàng lì,Match corrected Chinese
+spanish,234,Establishing & Founding (fundar),4,english,cover,founds,Theme is founding not covering
+spanish,234,Establishing & Founding (fundar),4,chinese,封面,创立,Founds/establishes
+spanish,234,Establishing & Founding (fundar),4,pinyin,fēng miàn,chuàng lì,Match corrected Chinese
+spanish,234,Establishing & Founding (fundar),14,english,you cover,you found,Theme is founding not covering
+spanish,234,Establishing & Founding (fundar),14,chinese,你覆盖,你创立,You found/establish
+spanish,234,Establishing & Founding (fundar),14,pinyin,nǐ fù gài,nǐ chuàng lì,Match corrected Chinese
+spanish,234,Establishing & Founding (fundar),26,chinese,基础,基金会,Foundation = organization not basis
+spanish,234,Establishing & Founding (fundar),26,pinyin,jī chǔ,jī jīn huì,Match corrected Chinese
+spanish,234,Establishing & Founding (fundar),27,chinese,基础,基金会,Foundation = organization not basis
+spanish,234,Establishing & Founding (fundar),27,pinyin,jī chǔ,jī jīn huì,Match corrected Chinese
+spanish,235,Concluding & Wrapping Up (concluir),9,chinese,关闭,闭幕,Closure = closing ceremony not shut down
+spanish,235,Concluding & Wrapping Up (concluir),9,pinyin,guān bì,bì mù,Match corrected Chinese
+spanish,235,Concluding & Wrapping Up (concluir),26,chinese,关闭,闭幕式,Closing ceremony
+spanish,235,Concluding & Wrapping Up (concluir),26,pinyin,guān bì,bì mù shì,Match corrected Chinese
+spanish,235,Concluding & Wrapping Up (concluir),27,chinese,一个闭包,一个闭幕式,Closing ceremony not closure (programming)
+spanish,235,Concluding & Wrapping Up (concluir),27,pinyin,yí gè bì bāo,yí gè bì mù shì,Match corrected Chinese
+spanish,236,Sustainable Living,5,english,feeding,diet,Alimentación = diet/food not feeding animals
+spanish,236,Sustainable Living,5,chinese,喂食,饮食,Diet/nutrition not feeding
+spanish,236,Sustainable Living,5,pinyin,wèi shí,yǐn shí,Match corrected Chinese
+spanish,236,Sustainable Living,26,chinese,食物,饮食,Diet/nutrition
+spanish,236,Sustainable Living,26,pinyin,shí wù,yǐn shí,Match corrected Chinese
+spanish,237,Pushing (empujar),9,english,push,shove,Noun form - a push/shove
+spanish,237,Pushing (empujar),9,chinese,推,推搡,A shove/push (noun)
+spanish,237,Pushing (empujar),9,pinyin,tuī,tuī sǎng,Match corrected Chinese
+spanish,238,Pulling (tirar),2,english,shot,I pull,Theme is pulling - tiro = I pull here
+spanish,238,Pulling (tirar),2,chinese,射击,我拉,I pull
+spanish,238,Pulling (tirar),2,pinyin,shè jī,wǒ lā,Match corrected Chinese
+spanish,238,Pulling (tirar),3,english,strips,you pull,Theme is pulling not strips
+spanish,238,Pulling (tirar),3,chinese,条,你拉,You pull
+spanish,238,Pulling (tirar),3,pinyin,tiáo,nǐ lā,Match corrected Chinese
+spanish,238,Pulling (tirar),4,english,strip,pulls,Theme is pulling not strip
+spanish,238,Pulling (tirar),4,chinese,条,拉,Pulls
+spanish,238,Pulling (tirar),4,pinyin,tiáo,lā,Match corrected Chinese
+spanish,240,Separating (separar),3,chinese,你们分开,你分开,Singular you not plural
+spanish,240,Separating (separar),3,pinyin,nǐ men fēn kāi,nǐ fēn kāi,Match corrected Chinese
+spanish,240,Separating (separar),6,chinese,你们分开,你分开,Singular you not plural
+spanish,240,Separating (separar),6,pinyin,nǐ men fēn kāi,nǐ fēn kāi,Match corrected Chinese
+spanish,240,Separating (separar),14,chinese,你们分开,你分开,Singular you not plural
+spanish,240,Separating (separar),14,pinyin,nǐ men fēn kāi,nǐ fēn kāi,Match corrected Chinese
+spanish,240,Separating (separar),20,chinese,你们分开,你分开,Singular you not plural (vosotros is different)
+spanish,240,Separating (separar),20,pinyin,nǐ men fēn kāi,nǐ fēn kāi,Match corrected Chinese
+spanish,242,Irregular Past Forms,9,english,did you,you did,Past tense not question
+spanish,242,Irregular Past Forms,9,chinese,你有吗,你做了,You did (past tense)
+spanish,242,Irregular Past Forms,9,pinyin,nǐ yǒu ma,nǐ zuò le,Match corrected Chinese
+spanish,243,Growing (crecer),11,english,outbreak,sprout,Growing theme - sprout not disease outbreak
+spanish,243,Growing (crecer),11,chinese,爆发,嫩芽,Sprout/bud
+spanish,243,Growing (crecer),11,pinyin,bào fā,nèn yá,Match corrected Chinese
+spanish,243,Growing (crecer),30,chinese,爆发,萌芽,Sprouting/budding
+spanish,243,Growing (crecer),30,pinyin,bào fā,méng yá,Match corrected Chinese
+spanish,243,Growing (crecer),31,chinese,一颗豆芽,一个嫩芽,A sprout (general not bean sprout)
+spanish,243,Growing (crecer),31,pinyin,yī kē dòu yá,yí gè nèn yá,Match corrected Chinese
+spanish,244,Aging (envejecer),11,chinese,老头,老年人,Old person (respectful) not old geezer
+spanish,244,Aging (envejecer),11,pinyin,lǎo tóu,lǎo nián rén,Match corrected Chinese
+spanish,244,Aging (envejecer),30,chinese,老头,老年人,Old person (respectful) not old geezer
+spanish,244,Aging (envejecer),30,pinyin,lǎo tóu,lǎo nián rén,Match corrected Chinese
+spanish,244,Aging (envejecer),31,chinese,一个老人,一个老年人,Consistent with row 30
+spanish,244,Aging (envejecer),31,pinyin,yí gè lǎo rén,yí gè lǎo nián rén,Match corrected Chinese
+spanish,245,Command Forms,11,english,baby,drink,Command form - drink not baby noun
+spanish,245,Command Forms,11,chinese,宝贝,喝,Drink (command)
+spanish,245,Command Forms,11,pinyin,bǎo bèi,hē,Match corrected Chinese
+spanish,245,Command Forms,15,english,part,stop,Command form párate = stop
+spanish,245,Command Forms,15,chinese,部分,停,Stop (command)
+spanish,245,Command Forms,15,pinyin,bù fèn,tíng,Match corrected Chinese
+spanish,245,Command Forms,48,english,go there,stop there,Párate = stop
+spanish,245,Command Forms,48,chinese,去那里,在那停下,Stop there
+spanish,245,Command Forms,48,pinyin,qù nà lǐ,zài nà tíng xià,Match corrected Chinese
+spanish,245,Command Forms,49,english,leave now,stop now,Párate = stop not leave
+spanish,245,Command Forms,49,chinese,现在离开,现在停下,Stop now
+spanish,245,Command Forms,49,pinyin,xiàn zài lí kāi,xiàn zài tíng xià,Match corrected Chinese
+spanish,246,Reflexive Pronouns,4,chinese,瑟,反身代词,Reflexive pronoun not musical note
+spanish,246,Reflexive Pronouns,4,pinyin,sè,fǎn shēn dài cí,Match corrected Chinese
+spanish,246,Reflexive Pronouns,26,english,you manage,you get ready,Reflexive - arreglarse = get ready
+spanish,246,Reflexive Pronouns,26,chinese,你管理,你们准备好,You get ready (plural)
+spanish,246,Reflexive Pronouns,26,pinyin,nǐ guǎn lǐ,nǐ men zhǔn bèi hǎo,Match corrected Chinese
+spanish,246,Reflexive Pronouns,46,english,we have to fix it,you have to get ready,Reflexive - get yourself ready
+spanish,246,Reflexive Pronouns,46,chinese,我们必须修复它,你必须准备好,You have to get ready
+spanish,246,Reflexive Pronouns,46,pinyin,wǒ men bì xū xiū fù tā,nǐ bì xū zhǔn bèi hǎo,Match corrected Chinese
+spanish,247,Gerund Forms,17,chinese,听力,听见,Hearing (gerund) not hearing ability
+spanish,247,Gerund Forms,17,pinyin,tīng lì,tīng jiàn,Match corrected Chinese
+spanish,250,Common Idioms,2,chinese,在云端,心不在焉,Daydreaming not literally in clouds
+spanish,250,Common Idioms,2,pinyin,zài yún duān,xīn bù zài yān,Match corrected Chinese
+spanish,250,Common Idioms,7,chinese,齐心协力,振作起来,Get motivated not work together
+spanish,250,Common Idioms,7,pinyin,qí xīn xié lì,zhèn zuò qǐ lái,Match corrected Chinese
+spanish,250,Common Idioms,14,english,speak out,talk a lot,Idiom means chatterbox
+spanish,250,Common Idioms,14,chinese,说出来,喋喋不休,Talk nonstop/chatterbox
+spanish,250,Common Idioms,14,pinyin,shuō chū lái,dié dié bù xiū,Match corrected Chinese
+spanish,250,Common Idioms,15,chinese,像山羊一样,疯疯癫癫,Crazy/nuts not like goat
+spanish,250,Common Idioms,15,pinyin,xiàng shān yáng yī yàng,fēng fēng diān diān,Match corrected Chinese
+spanish,250,Common Idioms,22,english,not give a single blow,not lift a finger,Idiom means lazy
+spanish,250,Common Idioms,22,chinese,不予一击,不干活,Be lazy/not work
+spanish,250,Common Idioms,22,pinyin,bù yǔ yī jī,bù gàn huó,Match corrected Chinese
+spanish,250,Common Idioms,23,chinese,永远在云端,总是心不在焉,Always daydreaming
+spanish,250,Common Idioms,23,pinyin,yǒng yuǎn zài yún duān,zǒng shì xīn bù zài yān,Match corrected Chinese
+spanish,250,Common Idioms,24,chinese,通常在云端,通常心不在焉,Usually daydreaming
+spanish,250,Common Idioms,24,pinyin,tōng cháng zài yún duān,tōng cháng xīn bù zài yān,Match corrected Chinese
+spanish,250,Common Idioms,33,chinese,你必须齐心协力,你必须振作起来,Get energized
+spanish,250,Common Idioms,33,pinyin,nǐ bì xū qí xīn xié lì,nǐ bì xū zhèn zuò qǐ lái,Match corrected Chinese
+spanish,250,Common Idioms,34,chinese,是时候行动起来了,是时候振作起来了,Get your act together
+spanish,250,Common Idioms,34,pinyin,shì shí hòu xíng dòng qǐ lái le,shì shí hòu zhèn zuò qǐ lái le,Match corrected Chinese
+spanish,250,Common Idioms,47,chinese,他通常大声说话,他通常喋喋不休,Talks nonstop
+spanish,250,Common Idioms,47,pinyin,tā tōng cháng dà shēng shuō huà,tā tōng cháng dié dié bù xiū,Match corrected Chinese
+spanish,250,Common Idioms,48,chinese,他喜欢大声说话,他喜欢喋喋不休,Likes to chatter
+spanish,250,Common Idioms,48,pinyin,tā xǐ huān dà shēng shuō huà,tā xǐ huān dié dié bù xiū,Match corrected Chinese
+spanish,250,Common Idioms,49,chinese,看起来就像一只山羊,看起来很疯狂,Seems crazy
+spanish,250,Common Idioms,49,pinyin,kàn qǐ lái jiù xiàng yī zhī shān yáng,kàn qǐ lái hěn fēng kuáng,Match corrected Chinese
+spanish,250,Common Idioms,50,chinese,他通常就像一只山羊,他通常很疯狂,Usually crazy
+spanish,250,Common Idioms,50,pinyin,tā tōng cháng jiù xiàng yī zhī shān yáng,tā tōng cháng hěn fēng kuáng,Match corrected Chinese
+spanish,250,Common Idioms,57,chinese,似乎是他的鼻子,似乎受够了,Seems fed up
+spanish,250,Common Idioms,57,pinyin,sì hū shì tā de bí zi,sì hū shòu gòu le,Match corrected Chinese
+spanish,250,Common Idioms,58,chinese,它通常取决于它的鼻子,通常很厌烦,Usually fed up
+spanish,250,Common Idioms,58,pinyin,tā tōng cháng qǔ jué yú tā de bí zi,tōng cháng hěn yàn fán,Match corrected Chinese
+spanish,250,Common Idioms,63,chinese,通常甚至不会击中,通常很懒,Usually lazy
+spanish,250,Common Idioms,63,pinyin,tōng cháng shèn zhì bú huì jī zhòng,tōng cháng hěn lǎn,Match corrected Chinese
+spanish,250,Common Idioms,64,chinese,往往不会击中,往往很懒惰,Tends to be lazy
+spanish,250,Common Idioms,64,pinyin,wǎng wǎng bú huì jī zhòng,wǎng wǎng hěn lǎn duò,Match corrected Chinese

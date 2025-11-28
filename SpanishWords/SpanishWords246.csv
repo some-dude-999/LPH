@@ -1,7 +1,7 @@
 spanish,english,chinese,pinyin,portuguese
 me,me,我,wǒ,eu
 te,you,你,nǐ,você
-se,se,瑟,sè,se
+se,se,反身代词,fǎn shēn dài cí,se
 nos,us,我们,wǒ men,nós
 os,you,你,nǐ,você
 lavarse,wash,洗,xǐ,lavar
@@ -23,7 +23,7 @@ se peina,combs hair,梳头发,shū tóu fà,penteia o cabelo
 se levanta,gets up,起床,qǐ chuáng,levanta
 nos vamos,we're leaving,我们要走了,wǒ men yào zǒu le,estamos indo embora
 nos gusta,we like,我们喜欢,wǒ men xǐ huān,nós gostamos
-os arregláis,you manage,你管理,nǐ guǎn lǐ,você gerencia
+os arregláis,you get ready,你们准备好,nǐ men zhǔn bèi hǎo,você gerencia
 os gusta,you like it,你喜欢,nǐ xǐ huān,você gostou
 hay que lavarse,you have to wash,你必须洗,nǐ bì xū xǐ,você tem que lavar
 antes de lavarse,before washing,洗涤前,xǐ dí qián,antes de lavar
@@ -43,7 +43,7 @@ hay que cepillarse,you have to brush,你得刷,nǐ dé shuā,você tem que escov
 antes de cepillarse,before brushing,刷牙前,shuā yá qián,antes de escovar
 hay que mirarse,you have to look at yourself,你必须审视自己,nǐ bì xū shěn shì zì jǐ,você tem que olhar para si mesmo
 al mirarse,when looking at each other,当彼此注视时,dāng bǐ cǐ zhù shì shí,ao olharmos um para o outro
-hay que arreglarse,we have to fix it,我们必须修复它,wǒ men bì xū xiū fù tā,temos que consertar isso
+hay que arreglarse,you have to get ready,你必须准备好,nǐ bì xū zhǔn bèi hǎo,temos que consertar isso
 antes de arreglarse,before getting ready,准备之前,zhǔn bèi zhī qián,antes de se preparar
 hay que prepararse,you have to prepare,你必须准备,nǐ bì xū zhǔn bèi,você tem que se preparar
 después de prepararse,after preparing,准备后,zhǔn bèi hòu,depois de preparar
