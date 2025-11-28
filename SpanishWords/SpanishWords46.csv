@@ -1,15 +1,15 @@
 spanish,english,chinese,pinyin,portuguese
 hora,time,时间,shí jiān,tempo
 minuto,minute,分钟,fēn zhōng,minuto
-segundo,second,第二,dì èr,segundo
+segundo,second,秒,miǎo,segundo
 mediodía,noon,中午,zhōng wǔ,meio-dia
 medianoche,midnight,午夜,wǔ yè,meia-noite
 madrugada,early morning,清晨,qīng chén,de manhã cedo
 noche,night,晚上,wǎn shàng,noite
 puntual,punctual,准时,zhǔn shí,pontual
-adelantado,advance,提前,tí qián,avançar
+adelantado,early,提前,tí qián,adiantado
 reloj,clock,时钟,shí zhōng,relógio
-cuarto,fourth,第四,dì sì,quarto
+cuarto,quarter,一刻钟,yī kè zhōng,quarto
 amanecer,dawn,黎明,lí míng,amanhecer
 atardecer,sunset,日落,rì luò,pôr do sol
 anochecer,dusk,黄昏,huáng hūn,crepúsculo
@@ -17,7 +17,7 @@ qué hora,what time,什么时间,shén me shí jiān,que horas
 a qué hora,what time,什么时间,shén me shí jiān,que horas
 un minuto,one minute,一分钟,yì fēn zhōng,um minuto
 en un minuto,in a minute,一分钟后,yì fēn zhōng hòu,em um minuto
-un segundo,a second,第二个,dì èr gè,um segundo
+un segundo,a second,一秒,yī miǎo,um segundo
 en un segundo,in a second,一秒钟,yī miǎo zhōng,em um segundo
 al mediodía,at noon,中午,zhōng wǔ,ao meio-dia
 a mediodía,at noon,中午,zhōng wǔ,ao meio-dia
@@ -30,11 +30,11 @@ esta noche,tonight,今晚,jīn wǎn,esta noite
 ser puntual,be punctual,准时,zhǔn shí,seja pontual
 muy puntual,very punctual,非常准时,fēi cháng zhǔn shí,muito pontual
 estar adelantado,be ahead,领先,lǐng xiān,esteja à frente
-muy adelantado,very advanced,非常先进,fēi cháng xiān jìn,muito avançado
+muy adelantado,very advanced,提前很多,tí qián hěn duō,muito avançado
 el reloj,the clock,时钟,shí zhōng,o relógio
 mi reloj,my watch,我的手表,wǒ de shǒu biǎo,meu relógio
-y cuarto,and fourth,第四个,dì sì gè,e quarto
-menos cuarto,minus quarter,减去四分之一,jiǎn qù sì fēn zhī yī,menos trimestre
+y cuarto,quarter past,一刻钟,yī kè zhōng,e quarto
+menos cuarto,quarter to,差一刻,chà yī kè,menos trimestre
 al amanecer,at dawn,黎明时分,lí míng shí fēn,de madrugada
 desde el amanecer,since dawn,从黎明起,cóng lí míng qǐ,desde o amanhecer
 al atardecer,at sunset,日落时,rì luò shí,ao pôr do sol

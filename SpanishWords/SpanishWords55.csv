@@ -2,22 +2,22 @@ spanish,english,chinese,pinyin,portuguese
 comprar,buy,购买,gòu mǎi,comprar
 vender,sell,卖,mài,vender
 pagar,pay,支付,zhī fù,pagar
-costar,cost,成本,chéng běn,custo
+costar,cost,花费,huā fèi,custo
 precio,price,价格,jià gé,preço
 barato,cheap,便宜,pián yi,barato
 caro,expensive,昂贵,áng guì,caro
-oferta,offer,报价,bào jià,oferta
+oferta,offer,优惠,yōu huì,oferta
 descuento,discount,折扣,zhé kòu,desconto
 factura,invoice,发票,fā piào,fatura
 tarjeta,card,卡,kǎ,cartão
 efectivo,cash,现金,xiàn jīn,dinheiro
-caja,box,盒子,hé zi,caixa
+caja,checkout,收银台,shōu yín tái,caixa
 cajero,cashier,收银员,shōu yín yuán,caixa
 moneda,currency,货币,huò bì,moeda
-billete,ticket,票,piào,bilhete
+billete,bill,纸币,zhǐ bì,nota
 carrito,cart,购物车,gòu wù chē,carrinho
-devolución,return,返回,fǎn huí,retornar
-garantía,guarantee,保证,bǎo zhèng,garantia
+devolución,return,退货,tuì huò,retornar
+garantía,guarantee,保修,bǎo xiū,garantia
 voy a comprar,I'm going to buy,我要买,wǒ yào mǎi,Vou comprar
 quiero comprar,I want to buy,我要买,wǒ yào mǎi,Quero comprar
 hay que vender,you have to sell,你必须卖,nǐ bì xū mài,você tem que vender
@@ -42,17 +42,17 @@ la tarjeta,the card,卡,kǎ,o cartão
 con tarjeta,with card,带卡,dài kǎ,com cartão
 en efectivo,in cash,现金,xiàn jīn,em dinheiro
 pagar en efectivo,pay in cash,现金支付,xiàn jīn zhī fù,pagar em dinheiro
-la caja,the box,盒子,hé zi,a caixa
-en la caja,in the box,在盒子里,zài hé zi lǐ,na caixa
+la caja,the checkout,收银台,shōu yín tái,a caixa
+en la caja,at the checkout,在收银台,zài shōu yín tái,na caixa
 el cajero,the cashier,收银员,shōu yín yuán,o caixa
 un cajero,a cashier,收银员,shōu yín yuán,um caixa
 la moneda,the coin,硬币,yìng bì,a moeda
 una moneda,a coin,一枚硬币,yī méi yìng bì,uma moeda
-el billete,the ticket,票,piào,o ingresso
-un billete,a ticket,一张票,yī zhāng piào,um ingresso
+el billete,the bill,纸币,zhǐ bì,a nota
+un billete,a bill,一张纸币,yī zhāng zhǐ bì,uma nota
 el carrito,the cart,购物车,gòu wù chē,o carrinho
 un carrito,a cart,一辆购物车,yī liàng gòu wù chē,um carrinho
-la devolución,the return,返回,fǎn huí,o retorno
-hacer devolución,make return,返回,fǎn huí,fazer retorno
+la devolución,the return,退货,tuì huò,o retorno
+hacer devolución,make return,退货,tuì huò,fazer retorno
 la garantía,the guarantee,保证,bǎo zhèng,a garantia
 con garantía,with guarantee,有保证,yǒu bǎo zhèng,com garantia

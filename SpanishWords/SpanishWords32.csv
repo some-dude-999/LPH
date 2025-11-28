@@ -1,7 +1,7 @@
 spanish,english,chinese,pinyin,portuguese
 tiempo,time,时间,shí jiān,tempo
 frío,cold,寒冷的,hán lěng de,frio
-calor,heat,热,rè,aquecer
+calor,hot,热,rè,aquecer
 sol,sun,太阳,tài yáng,sol
 viento,wind,风,fēng,vento
 lluvia,rain,雨,yǔ,chuva
@@ -12,9 +12,9 @@ tormenta,storm,风暴,fēng bào,tempestade
 clima,climate,气候,qì hòu,clima
 temperatura,temperature,温度,wēn dù,temperatura
 pronóstico,forecast,预报,yù bào,previsão
-húmedo,wet,湿的,shī de,molhado
+húmedo,humid,湿的,shī de,úmido
 hace buen tiempo,the weather is good,天气很好,tiān qì hěn hǎo,o tempo está bom
-el tiempo,the time,时间,shí jiān,a hora
+el tiempo,the time,天气,tiān qì,a hora
 hace frío,it's cold,是冷的,shì lěng de,Está frio
 mucho frío,very cold,很冷,hěn lěng,muito frio
 hace calor,it's hot,很热,hěn rè,Está quente
@@ -38,6 +38,6 @@ buen clima,good weather,好天气,hǎo tiān qì,bom tempo
 la temperatura,the temperature,温度,wēn dù,a temperatura
 alta temperatura,high temperature,高温,gāo wēn,alta temperatura
 el pronóstico,the forecast,预测,yù cè,a previsão
-mal pronóstico,bad prognosis,预后不良,yù hòu bù liáng,mau prognóstico
+mal pronóstico,bad forecast,不好的预测,bù hǎo de yù cè,previsão ruim
 muy húmedo,very humid,非常潮湿,fēi cháng cháo shī,muito úmido
 clima húmedo,humid climate,气候潮湿,qì hòu cháo shī,clima úmido

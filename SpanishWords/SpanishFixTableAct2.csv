@@ -1,1 +1,317 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,31,Liking Things (gustar),6,portuguese,matéria,importar,Wrong translation - matéria is subject/matter not the verb importar
+spanish,31,Liking Things (gustar),10,english,left over,be left over,Awkward - missing verb to be
+spanish,31,Liking Things (gustar),12,chinese,伤害,痛,Wrong sense - shāng hài means harm/injury not hurt/pain
+spanish,31,Liking Things (gustar),12,pinyin,shāng hài,tòng,Pinyin for corrected Chinese
+spanish,31,Liking Things (gustar),31,english,there may be time,there may be time left over,Missing nuance - sobrar means leftover
+spanish,31,Liking Things (gustar),34,chinese,它会伤害很多,会很痛,Wrong verb - should be pain not harm
+spanish,31,Liking Things (gustar),34,pinyin,tā huì shāng hài hěn duō,huì hěn tòng,Pinyin for corrected Chinese
+spanish,32,Weather Talk,4,english,heat,hot,Should be adjective hot not noun heat for weather
+spanish,32,Weather Talk,15,english,wet,humid,Wrong word - húmedo means humid not wet
+spanish,32,Weather Talk,15,portuguese,molhado,úmido,Wrong word - molhado means wet not humid
+spanish,32,Weather Talk,17,chinese,时间,天气,Wrong context - el tiempo here means weather not time
+spanish,32,Weather Talk,17,pinyin,shí jiān,tiān qì,Pinyin for corrected Chinese
+spanish,32,Weather Talk,41,english,bad prognosis,bad forecast,Medical terminology - should be forecast for weather
+spanish,32,Weather Talk,41,chinese,预后不良,不好的预测,Medical term - should be bad forecast
+spanish,32,Weather Talk,41,pinyin,yù hòu bù liáng,bù hǎo de yù cè,Pinyin for corrected Chinese
+spanish,32,Weather Talk,41,portuguese,mau prognóstico,previsão ruim,Medical term - should be forecast
+spanish,33,Can & Able (poder),3,english,can,you can,Too vague - should specify you
+spanish,33,Can & Able (poder),4,english,can,he/she can,Too vague - should specify subject
+spanish,33,Can & Able (poder),5,english,can,we can,Too vague - should specify we
+spanish,33,Can & Able (poder),8,english,can,to be able to,Infinitive needs to
+spanish,33,Can & Able (poder),14,english,can,you can,Should specify you for tú puedes
+spanish,33,Can & Able (poder),18,portuguese,pudermos,podemos,Wrong conjugation - should be nós podemos
+spanish,33,Can & Able (poder),21,chinese,你不能,你们不能,Singular - should be plural for vosotros
+spanish,33,Can & Able (poder),21,pinyin,nǐ bù néng,nǐ men bù néng,Pinyin for corrected Chinese
+spanish,33,Can & Able (poder),25,chinese,没有电源,无能为力,Wrong sense - diàn yuán means electrical power
+spanish,33,Can & Able (poder),25,pinyin,méi yǒu diàn yuán,wú néng wéi lì,Pinyin for corrected Chinese
+spanish,34,Want & Desire (querer),3,english,want,you want,Should specify you
+spanish,34,Want & Desire (querer),8,english,want,to want,Infinitive needs to
+spanish,34,Want & Desire (querer),10,english,want,to want,Infinitive should be to want or to desire
+spanish,34,Want & Desire (querer),17,english,what you want,what he wants,él quiere means he wants not you
+spanish,34,Want & Desire (querer),24,chinese,偶然,无意中,Wrong nuance - ǒu rán means by chance not accidentally
+spanish,34,Want & Desire (querer),24,pinyin,ǒu rán,wú yì zhōng,Pinyin for corrected Chinese
+spanish,35,School Supplies,20,chinese,课堂,教室,Wrong word - kè táng means class/lesson not classroom
+spanish,35,School Supplies,20,pinyin,kè táng,jiào shì,Pinyin for corrected Chinese
+spanish,36,Office & Work,6,english,buddy,coworker,Too informal - should be coworker for office context
+spanish,36,Office & Work,7,english,companion,coworker,Should be coworker for office context
+spanish,36,Office & Work,8,english,customer,client,Inconsistent - cliente should be client in business context
+spanish,36,Office & Work,56,english,the quote,the appointment,Wrong meaning - cita means appointment not quote
+spanish,36,Office & Work,56,chinese,报价,预约,Wrong word - bào jià means price quote
+spanish,36,Office & Work,56,pinyin,bào jià,yù yuē,Pinyin for corrected Chinese
+spanish,36,Office & Work,56,portuguese,a citação,o encontro,Wrong word - citação means quotation
+spanish,36,Office & Work,57,english,my date,my appointment,Wrong context - cita means appointment in office setting
+spanish,37,Animals,25,english,there is a cat trapped,something fishy is going on,Idiom - hay gato encerrado means something suspicious
+spanish,37,Animals,25,chinese,有一只猫被困,有蹊跷,Wrong - should translate idiomatic meaning
+spanish,37,Animals,25,pinyin,yǒu yī zhī māo bèi kùn,yǒu qī qiāo,Pinyin for corrected Chinese
+spanish,37,Animals,25,portuguese,há um gato preso,tem algo suspeito,Idiom - should convey suspicious meaning
+spanish,37,Animals,52,chinese,白熊,北极熊,Less specific - bái xióng means white bear not polar bear
+spanish,37,Animals,52,pinyin,bái xióng,běi jí xióng,Pinyin for corrected Chinese
+spanish,38,Thinking (pensar),3,chinese,您认为,你认为,Formal nín - should be informal nǐ for tú
+spanish,38,Thinking (pensar),3,pinyin,nín rèn wéi,nǐ rèn wéi,Pinyin for corrected Chinese
+spanish,38,Thinking (pensar),6,chinese,您认为,你认为,Formal - should be informal for vosotros
+spanish,38,Thinking (pensar),6,pinyin,nín rèn wéi,nǐ rèn wéi,Pinyin for corrected Chinese
+spanish,38,Thinking (pensar),14,chinese,您认为,你认为,Formal - should be informal
+spanish,38,Thinking (pensar),14,pinyin,nín rèn wéi,nǐ rèn wéi,Pinyin for corrected Chinese
+spanish,38,Thinking (pensar),20,chinese,您认为,你认为,Formal - should be informal
+spanish,38,Thinking (pensar),20,pinyin,nín rèn wéi,nǐ rèn wéi,Pinyin for corrected Chinese
+spanish,39,Feeling (sentir),4,portuguese,sinto,sentir,Wrong conjugation - sinto is I feel not infinitive
+spanish,39,Feeling (sentir),7,portuguese,sinto,sentir,Wrong - should be infinitive
+spanish,39,Feeling (sentir),8,portuguese,sinto,sentir,Wrong - should be infinitive
+spanish,39,Feeling (sentir),9,portuguese,sinto,sentir,Wrong - should be infinitive
+spanish,39,Feeling (sentir),11,portuguese,sentimento,sensação,Wrong word - sentimento is sentiment/emotion not sensation
+spanish,39,Feeling (sentir),28,chinese,时一种感觉,是一种感觉,Typo - shí should be shì
+spanish,39,Feeling (sentir),28,pinyin,shí yī zhǒng gǎn jué,shì yī zhǒng gǎn jué,Pinyin for corrected Chinese
+spanish,41,Drinks & Beverages,10,english,red,red wine,Context - tinto means red wine not color red
+spanish,41,Drinks & Beverages,10,chinese,红色,红葡萄酒,Wrong - hóng sè is the color not wine
+spanish,41,Drinks & Beverages,10,pinyin,hóng sè,hóng pú táo jiǔ,Pinyin for corrected Chinese
+spanish,41,Drinks & Beverages,11,english,pink,rosé wine,Context - rosado means rosé wine not color pink
+spanish,41,Drinks & Beverages,11,chinese,粉色,桃红葡萄酒,Wrong - fěn sè is the color not wine
+spanish,41,Drinks & Beverages,11,pinyin,fěn sè,táo hóng pú táo jiǔ,Pinyin for corrected Chinese
+spanish,41,Drinks & Beverages,30,portuguese,a bebida,o licor,Too generic - bebida means drink not liquor
+spanish,42,Vegetables,12,chinese,胡椒,甜椒,Wrong - hú jiāo is black pepper spice not bell pepper
+spanish,42,Vegetables,12,pinyin,hú jiāo,tián jiāo,Pinyin for corrected Chinese
+spanish,42,Vegetables,32,chinese,与玉米,配玉米,Awkward - yǔ should be pèi like row 44
+spanish,42,Vegetables,32,pinyin,yǔ yù mǐ,pèi yù mǐ,Pinyin for corrected Chinese
+spanish,42,Vegetables,34,chinese,与豌豆,配豌豆,Awkward - should use pèi
+spanish,42,Vegetables,34,pinyin,yǔ wān dòu,pèi wān dòu,Pinyin for corrected Chinese
+spanish,42,Vegetables,36,chinese,绿豆,四季豆,Wrong - lǜ dòu is mung beans not green beans
+spanish,42,Vegetables,36,pinyin,lǜ dòu,sì jì dòu,Pinyin for corrected Chinese
+spanish,42,Vegetables,37,chinese,辣椒,甜椒,Wrong - là jiāo is chili pepper not bell pepper
+spanish,42,Vegetables,37,pinyin,là jiāo,tián jiāo,Pinyin for corrected Chinese
+spanish,44,Need & Necessity (necesitar),4,portuguese,preciso,precisa,Wrong - preciso is I need not he/she needs
+spanish,44,Need & Necessity (necesitar),6,chinese,你需要,你们需要,Singular - should be plural for vosotros
+spanish,44,Need & Necessity (necesitar),6,pinyin,nǐ xū yào,nǐ men xū yào,Pinyin for corrected Chinese
+spanish,44,Need & Necessity (necesitar),7,portuguese,preciso,precisar,Wrong - should be infinitive
+spanish,44,Need & Necessity (necesitar),8,portuguese,preciso,precisar,Wrong - should be infinitive
+spanish,44,Need & Necessity (necesitar),9,portuguese,preciso,necessidade,Wrong - need as noun is necessidade
+spanish,44,Need & Necessity (necesitar),15,portuguese,preciso disso,precisa disso,Wrong - should be he/she needs it
+spanish,44,Need & Necessity (necesitar),18,portuguese,você precisa,vocês precisam,Singular - should be plural for vosotros
+spanish,44,Need & Necessity (necesitar),19,chinese,你需要什么,你们需要什么,Singular - should be plural for vosotros
+spanish,44,Need & Necessity (necesitar),19,pinyin,nǐ xū yào shén me,nǐ men xū yào shén me,Pinyin for corrected Chinese
+spanish,45,Looking For (buscar),3,chinese,您在寻找,你在寻找,Formal nín - should be informal nǐ
+spanish,45,Looking For (buscar),3,pinyin,nín zài xún zhǎo,nǐ zài xún zhǎo,Pinyin for corrected Chinese
+spanish,45,Looking For (buscar),4,portuguese,pesquisar,procurar,Wrong - pesquisar is research/search internet
+spanish,45,Looking For (buscar),6,chinese,你搜索,你们搜索,Singular - should be plural for vosotros
+spanish,45,Looking For (buscar),6,pinyin,nǐ sōu suǒ,nǐ men sōu suǒ,Pinyin for corrected Chinese
+spanish,45,Looking For (buscar),7,portuguese,pesquisar,procurar,Wrong - should be look for
+spanish,45,Looking For (buscar),8,portuguese,pesquisar,procurar,Wrong - should be look for
+spanish,45,Looking For (buscar),18,portuguese,você pesquisa,vocês pesquisam,Singular - should be plural for vosotros
+spanish,45,Looking For (buscar),19,chinese,你在找什么,你们在找什么,Singular - should be plural for vosotros
+spanish,45,Looking For (buscar),19,pinyin,nǐ zài zhǎo shén me,nǐ men zài zhǎo shén me,Pinyin for corrected Chinese
+spanish,46,Telling Time,4,chinese,第二,秒,Wrong - dì èr is ordinal second not time unit second
+spanish,46,Telling Time,4,pinyin,dì èr,miǎo,Pinyin for corrected Chinese
+spanish,46,Telling Time,10,english,advance,early,Should be adjective early/ahead not verb advance
+spanish,46,Telling Time,10,portuguese,avançar,adiantado,Wrong - avançar is verb should be adjective
+spanish,46,Telling Time,12,english,fourth,quarter,Wrong context - cuarto means quarter (15 min) in time
+spanish,46,Telling Time,12,chinese,第四,一刻钟,Wrong - dì sì is ordinal fourth not quarter hour
+spanish,46,Telling Time,12,pinyin,dì sì,yī kè zhōng,Pinyin for corrected Chinese
+spanish,46,Telling Time,20,chinese,第二个,一秒,Wrong - dì èr gè is the second one not a second (time)
+spanish,46,Telling Time,20,pinyin,dì èr gè,yī miǎo,Pinyin for corrected Chinese
+spanish,46,Telling Time,33,chinese,非常先进,提前很多,Wrong context - xiān jìn is technologically advanced
+spanish,46,Telling Time,33,pinyin,fēi cháng xiān jìn,tí qián hěn duō,Pinyin for corrected Chinese
+spanish,46,Telling Time,36,english,and fourth,quarter past,Wrong - y cuarto means quarter past the hour
+spanish,46,Telling Time,36,chinese,第四个,一刻钟,Wrong - should be quarter hour
+spanish,46,Telling Time,36,pinyin,dì sì gè,yī kè zhōng,Pinyin for corrected Chinese
+spanish,46,Telling Time,37,english,minus quarter,quarter to,Better phrasing - menos cuarto means quarter to
+spanish,46,Telling Time,37,chinese,减去四分之一,差一刻,Mathematical not time - should be quarter to
+spanish,46,Telling Time,37,pinyin,jiǎn qù sì fēn zhī yī,chà yī kè,Pinyin for corrected Chinese
+spanish,47,Directions & Position,44,chinese,回到那里,在后面那里,Wrong - huí dào means return to not back there
+spanish,47,Directions & Position,44,pinyin,huí dào nà lǐ,zài hòu miàn nà lǐ,Pinyin for corrected Chinese
+spanish,49,Comparing Things,4,chinese,所以,这么,Wrong - suǒ yǐ is therefore not so/such
+spanish,49,Comparing Things,4,pinyin,suǒ yǐ,zhè me,Pinyin for corrected Chinese
+spanish,49,Comparing Things,8,english,major,older,Wrong context - mayor means older/bigger in comparisons
+spanish,49,Comparing Things,8,chinese,主要,更大,Wrong - zhǔ yào means main/primary
+spanish,49,Comparing Things,8,pinyin,zhǔ yào,gèng dà,Pinyin for corrected Chinese
+spanish,49,Comparing Things,9,english,minor,younger,Wrong context - menor means younger/smaller
+spanish,49,Comparing Things,9,chinese,次要,更小,Wrong - cì yào means secondary
+spanish,49,Comparing Things,9,pinyin,cì yào,gèng xiǎo,Pinyin for corrected Chinese
+spanish,49,Comparing Things,15,english,top,superior,Wrong - superior means superior/better not top location
+spanish,49,Comparing Things,15,chinese,顶部,优越,Wrong - dǐng bù means top location
+spanish,49,Comparing Things,15,pinyin,dǐng bù,yōu yuè,Pinyin for corrected Chinese
+spanish,50,Physical Actions,7,portuguese,sente,sentar,Conjugated - should be infinitive
+spanish,50,Physical Actions,8,portuguese,deitar,deitar-se,Should be reflexive infinitive
+spanish,50,Physical Actions,9,portuguese,acorde,despertar,Imperative - should be infinitive
+spanish,50,Physical Actions,10,portuguese,respire,respirar,Imperative - should be infinitive
+spanish,50,Physical Actions,13,chinese,击中,打,Wrong nuance - jī zhòng means hit target successfully
+spanish,50,Physical Actions,13,pinyin,jī zhòng,dǎ,Pinyin for corrected Chinese
+spanish,50,Physical Actions,15,chinese,卷,滚动,Wrong - juǎn means roll up/coil not roll/rotate
+spanish,50,Physical Actions,15,pinyin,juǎn,gǔn dòng,Pinyin for corrected Chinese
+spanish,51,Names & Calling (llamar),3,english,flames,you call,COMPLETELY WRONG - llamas is you call not flames
+spanish,51,Names & Calling (llamar),3,chinese,火焰,你打电话,Wrong word - huǒ yàn is flames
+spanish,51,Names & Calling (llamar),3,pinyin,huǒ yàn,nǐ dǎ diàn huà,Pinyin for corrected Chinese
+spanish,51,Names & Calling (llamar),3,portuguese,chamas,você liga,Wrong word - chamas is flames
+spanish,51,Names & Calling (llamar),4,chinese,来电,呼叫,Wrong - lái diàn means incoming call not verb calls
+spanish,51,Names & Calling (llamar),4,pinyin,lái diàn,hū jiào,Pinyin for corrected Chinese
+spanish,51,Names & Calling (llamar),10,chinese,致电,电话,Wrong - zhì diàn is verb to call not noun call
+spanish,51,Names & Calling (llamar),10,pinyin,zhì diàn,diàn huà,Pinyin for corrected Chinese
+spanish,51,Names & Calling (llamar),20,chinese,你的名字是,你们的名字是,Singular - should be plural for vosotros
+spanish,51,Names & Calling (llamar),20,pinyin,nǐ de míng zì shì,nǐ men de míng zì shì,Pinyin for corrected Chinese
+spanish,51,Names & Calling (llamar),21,chinese,你叫什么名字,你们叫什么名字,Singular - should be plural
+spanish,51,Names & Calling (llamar),21,pinyin,nǐ jiào shén me míng zì,nǐ men jiào shén me míng zì,Pinyin for corrected Chinese
+spanish,52,Giving (dar),3,english,days,you give,COMPLETELY WRONG - das is you give not days
+spanish,52,Giving (dar),3,chinese,天,你给,Wrong word - tiān means days
+spanish,52,Giving (dar),3,pinyin,tiān,nǐ gěi,Pinyin for corrected Chinese
+spanish,52,Giving (dar),3,portuguese,dias,você dá,Wrong word - dias means days
+spanish,52,Giving (dar),6,english,dais,you give,Wrong - dais should be you give for vosotros not platform
+spanish,52,Giving (dar),6,chinese,讲台,你们给,Wrong - jiǎng tái means podium/platform
+spanish,52,Giving (dar),6,pinyin,jiǎng tái,nǐ men gěi,Pinyin for corrected Chinese
+spanish,52,Giving (dar),6,portuguese,estrado,vocês dão,Wrong word and form
+spanish,52,Giving (dar),11,chinese,提供,供品,Wrong - tí gōng is verb to offer not noun offering
+spanish,52,Giving (dar),11,pinyin,tí gōng,gòng pǐn,Pinyin for corrected Chinese
+spanish,53,Seeing & Watching (ver),2,chinese,我明白了,我看见,Wrong - wǒ míng bái le means I understand
+spanish,53,Seeing & Watching (ver),2,pinyin,wǒ míng bái le,wǒ kàn jiàn,Pinyin for corrected Chinese
+spanish,53,Seeing & Watching (ver),3,chinese,见,看见,Should have subject - jiàn alone is incomplete
+spanish,53,Seeing & Watching (ver),3,pinyin,jiàn,kàn jiàn,Pinyin for corrected Chinese
+spanish,53,Seeing & Watching (ver),4,english,go,he/she sees,COMPLETELY WRONG - ve means sees not go
+spanish,53,Seeing & Watching (ver),4,chinese,去,看见,Wrong - qù means go
+spanish,53,Seeing & Watching (ver),4,pinyin,qù,kàn jiàn,Pinyin for corrected Chinese
+spanish,53,Seeing & Watching (ver),4,portuguese,vai,vê,Wrong - vai means go/goes
+spanish,53,Seeing & Watching (ver),7,english,come,they see,WRONG - ven means they see not come
+spanish,53,Seeing & Watching (ver),7,chinese,来,看见,Wrong - lái means come
+spanish,53,Seeing & Watching (ver),7,pinyin,lái,kàn jiàn,Pinyin for corrected Chinese
+spanish,53,Seeing & Watching (ver),7,portuguese,venha,veem,Wrong - venha means come
+spanish,53,Seeing & Watching (ver),8,chinese,查看,视野,Wrong - chá kàn is verb to view not noun view
+spanish,53,Seeing & Watching (ver),8,pinyin,chá kàn,shì yě,Pinyin for corrected Chinese
+spanish,53,Seeing & Watching (ver),9,chinese,看看,看,Reduplication kàn kàn - should be simple kàn for infinitive
+spanish,53,Seeing & Watching (ver),9,pinyin,kàn kàn,kàn,Pinyin for corrected Chinese
+spanish,53,Seeing & Watching (ver),11,chinese,愿景,视力,Wrong - yuàn jǐng means vision (aspiration) not eyesight
+spanish,53,Seeing & Watching (ver),11,pinyin,yuàn jǐng,shì lì,Pinyin for corrected Chinese
+spanish,53,Seeing & Watching (ver),12,chinese,我明白了我明白了,我看见我看见,Wrong - should be I see I see (game phrase)
+spanish,53,Seeing & Watching (ver),12,pinyin,wǒ míng bái le wǒ míng bái le,wǒ kàn jiàn wǒ kàn jiàn,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,5,english,letter,menu,Wrong context - carta means menu in restaurant
+spanish,54,Restaurant Vocabulary,5,chinese,信,菜单,Wrong - xìn means letter
+spanish,54,Restaurant Vocabulary,5,pinyin,xìn,cài dān,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,6,chinese,板,盘子,Wrong - bǎn means board/plank not plate
+spanish,54,Restaurant Vocabulary,6,pinyin,bǎn,pán zi,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,7,chinese,玻璃,杯子,Wrong - bō lí is glass material not drinking glass
+spanish,54,Restaurant Vocabulary,7,pinyin,bō lí,bēi zi,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,7,portuguese,vidro,copo,Wrong - vidro is glass material
+spanish,54,Restaurant Vocabulary,13,english,command,order,Wrong context - comanda means order in restaurant
+spanish,54,Restaurant Vocabulary,13,chinese,命令,订单,Wrong - mìng lìng is military command
+spanish,54,Restaurant Vocabulary,13,pinyin,mìng lìng,dìng dān,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,14,english,tip,tip (gratuity),Context - propina means gratuity not hint
+spanish,54,Restaurant Vocabulary,14,chinese,提示,小费,Wrong - tí shì means hint/tip (advice)
+spanish,54,Restaurant Vocabulary,14,pinyin,tí shì,xiǎo fèi,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,14,portuguese,dica,gorjeta,Wrong - dica means hint/clue
+spanish,54,Restaurant Vocabulary,16,english,book,reserve,Wrong - book as verb means reserve
+spanish,54,Restaurant Vocabulary,16,chinese,书,预订,Wrong - shū is book (noun)
+spanish,54,Restaurant Vocabulary,16,pinyin,shū,yù dìng,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,16,portuguese,livro,reservar,Wrong - livro is book (noun)
+spanish,54,Restaurant Vocabulary,24,english,the letter,the menu,Wrong context - la carta means the menu
+spanish,54,Restaurant Vocabulary,24,chinese,这封信,菜单,Wrong word
+spanish,54,Restaurant Vocabulary,24,pinyin,zhè fēng xìn,cài dān,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,25,english,see the letter,see the menu,Wrong context
+spanish,54,Restaurant Vocabulary,25,chinese,见信,看菜单,Wrong word
+spanish,54,Restaurant Vocabulary,25,pinyin,jiàn xìn,kàn cài dān,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,40,english,the command,the order,Wrong context
+spanish,54,Restaurant Vocabulary,40,chinese,命令,订单,Wrong word
+spanish,54,Restaurant Vocabulary,40,pinyin,mìng lìng,dìng dān,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,41,english,take command,take the order,Wrong context
+spanish,54,Restaurant Vocabulary,41,chinese,接受命令,记下订单,Wrong word
+spanish,54,Restaurant Vocabulary,41,pinyin,jiē shòu mìng lìng,jì xià dìng dān,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,42,chinese,提示,小费,Wrong - should be gratuity
+spanish,54,Restaurant Vocabulary,42,pinyin,tí shì,xiǎo fèi,Pinyin for corrected Chinese
+spanish,54,Restaurant Vocabulary,43,chinese,提示,小费,Wrong - should be gratuity
+spanish,54,Restaurant Vocabulary,43,pinyin,tí shì,xiǎo fèi,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,5,chinese,成本,花费,Wrong - chéng běn is production cost not verb to cost
+spanish,55,Shopping & Buying,5,pinyin,chéng běn,huā fèi,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,9,chinese,报价,优惠,Wrong context - bào jià is quotation not sale offer
+spanish,55,Shopping & Buying,9,pinyin,bào jià,yōu huì,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,14,english,box,checkout,Wrong context - caja means checkout in shopping
+spanish,55,Shopping & Buying,14,chinese,盒子,收银台,Wrong - hé zi means box
+spanish,55,Shopping & Buying,14,pinyin,hé zi,shōu yín tái,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,17,english,ticket,bill,Wrong context - billete means banknote in shopping
+spanish,55,Shopping & Buying,17,chinese,票,纸币,Wrong - piào means ticket
+spanish,55,Shopping & Buying,17,pinyin,piào,zhǐ bì,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,17,portuguese,bilhete,nota,Wrong - bilhete means ticket
+spanish,55,Shopping & Buying,19,chinese,返回,退货,Wrong - fǎn huí means return (go back) not refund
+spanish,55,Shopping & Buying,19,pinyin,fǎn huí,tuì huò,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,20,chinese,保证,保修,Wrong - bǎo zhèng is abstract guarantee not warranty
+spanish,55,Shopping & Buying,20,pinyin,bǎo zhèng,bǎo xiū,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,45,english,the box,the checkout,Wrong context
+spanish,55,Shopping & Buying,45,chinese,盒子,收银台,Wrong word
+spanish,55,Shopping & Buying,45,pinyin,hé zi,shōu yín tái,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,46,english,in the box,at the checkout,Wrong context
+spanish,55,Shopping & Buying,46,chinese,在盒子里,在收银台,Wrong word
+spanish,55,Shopping & Buying,46,pinyin,zài hé zi lǐ,zài shōu yín tái,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,51,english,the ticket,the bill,Wrong context
+spanish,55,Shopping & Buying,51,chinese,票,纸币,Wrong word
+spanish,55,Shopping & Buying,51,pinyin,piào,zhǐ bì,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,51,portuguese,o ingresso,a nota,Wrong word
+spanish,55,Shopping & Buying,52,english,a ticket,a bill,Wrong context
+spanish,55,Shopping & Buying,52,chinese,一张票,一张纸币,Wrong word
+spanish,55,Shopping & Buying,52,pinyin,yī zhāng piào,yī zhāng zhǐ bì,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,52,portuguese,um ingresso,uma nota,Wrong word
+spanish,55,Shopping & Buying,55,chinese,返回,退货,Wrong word
+spanish,55,Shopping & Buying,55,pinyin,fǎn huí,tuì huò,Pinyin for corrected Chinese
+spanish,55,Shopping & Buying,56,chinese,返回,退货,Wrong word
+spanish,55,Shopping & Buying,56,pinyin,fǎn huí,tuì huò,Pinyin for corrected Chinese
+spanish,56,Beginning (empezar),6,chinese,你开始,你们开始,Singular - should be plural for vosotros
+spanish,56,Beginning (empezar),6,pinyin,nǐ kāi shǐ,nǐ men kāi shǐ,Pinyin for corrected Chinese
+spanish,56,Beginning (empezar),11,english,home,beginning,WRONG - inicio means beginning not home
+spanish,56,Beginning (empezar),11,chinese,首页,开始,Wrong - shǒu yè means homepage
+spanish,56,Beginning (empezar),11,pinyin,shǒu yè,kāi shǐ,Pinyin for corrected Chinese
+spanish,56,Beginning (empezar),11,portuguese,casa,início,Wrong - casa means home/house
+spanish,56,Beginning (empezar),20,chinese,你开始,你们开始,Singular - should be plural
+spanish,56,Beginning (empezar),20,pinyin,nǐ kāi shǐ,nǐ men kāi shǐ,Pinyin for corrected Chinese
+spanish,56,Beginning (empezar),20,portuguese,você começa,vocês começam,Singular - should be plural
+spanish,56,Beginning (empezar),21,chinese,你什么时候开始,你们什么时候开始,Singular - should be plural
+spanish,56,Beginning (empezar),21,pinyin,nǐ shén me shí hòu kāi shǐ,nǐ men shén me shí hòu kāi shǐ,Pinyin for corrected Chinese
+spanish,56,Beginning (empezar),21,portuguese,quando você começa,quando vocês começam,Singular - should be plural
+spanish,57,Continuing (seguir),4,english,follow,he/she continues,Wrong verb - sigue means continues in this pack
+spanish,57,Continuing (seguir),4,chinese,关注,继续,Wrong - guān zhù means follow (social media)
+spanish,57,Continuing (seguir),4,pinyin,guān zhù,jì xù,Pinyin for corrected Chinese
+spanish,57,Continuing (seguir),6,chinese,你继续,你们继续,Singular - should be plural for vosotros
+spanish,57,Continuing (seguir),6,pinyin,nǐ jì xù,nǐ men jì xù,Pinyin for corrected Chinese
+spanish,57,Continuing (seguir),7,english,follow,they continue,Wrong verb
+spanish,57,Continuing (seguir),7,chinese,关注,继续,Wrong verb sense
+spanish,57,Continuing (seguir),7,pinyin,guān zhù,jì xù,Pinyin for corrected Chinese
+spanish,57,Continuing (seguir),8,english,follow,to continue,Wrong verb
+spanish,57,Continuing (seguir),8,chinese,关注,继续,Wrong verb sense
+spanish,57,Continuing (seguir),8,pinyin,guān zhù,jì xù,Pinyin for corrected Chinese
+spanish,57,Continuing (seguir),11,chinese,提前,前进,Wrong - tí qián means ahead of schedule
+spanish,57,Continuing (seguir),11,pinyin,tí qián,qián jìn,Pinyin for corrected Chinese
+spanish,57,Continuing (seguir),20,chinese,你关注,你们继续,Wrong verb and number
+spanish,57,Continuing (seguir),20,pinyin,nǐ guān zhù,nǐ men jì xù,Pinyin for corrected Chinese
+spanish,57,Continuing (seguir),20,portuguese,você segue,vocês continuam,Singular and wrong verb
+spanish,58,Furniture & Objects,3,chinese,片材,床单,Wrong - piàn cái means sheet material
+spanish,58,Furniture & Objects,3,pinyin,piàn cái,chuáng dān,Pinyin for corrected Chinese
+spanish,58,Furniture & Objects,3,portuguese,folha,lençol,Wrong - folha means leaf/paper
+spanish,58,Furniture & Objects,48,chinese,放在洗衣机上,开洗衣机,Wrong - means place ON TOP not turn on
+spanish,58,Furniture & Objects,48,pinyin,fàng zài xǐ yī jī shàng,kāi xǐ yī jī,Pinyin for corrected Chinese
+spanish,59,Bathroom Items,4,portuguese,afundar,pia,Wrong - afundar means to sink (verb go down)
+spanish,59,Bathroom Items,15,chinese,奶油,面霜,Wrong - nǎi yóu means cream (dairy) not cosmetic
+spanish,59,Bathroom Items,15,pinyin,nǎi yóu,miàn shuāng,Pinyin for corrected Chinese
+spanish,59,Bathroom Items,33,chinese,画笔,刷子,Wrong - huà bǐ means paintbrush
+spanish,59,Bathroom Items,33,pinyin,huà bǐ,shuā zi,Pinyin for corrected Chinese
+spanish,59,Bathroom Items,43,chinese,奶油,面霜,Wrong - should be cosmetic cream
+spanish,59,Bathroom Items,43,pinyin,nǎi yóu,miàn shuāng,Pinyin for corrected Chinese
+spanish,60,Health & Medical,4,english,medical,female doctor,Wrong - médica is female doctor not adjective
+spanish,60,Health & Medical,4,chinese,医疗,女医生,Wrong - yī liáo means medical care
+spanish,60,Health & Medical,4,pinyin,yī liáo,nǚ yī shēng,Pinyin for corrected Chinese
+spanish,60,Health & Medical,8,chinese,医学,药物,Wrong - yī xué is medical science not medication
+spanish,60,Health & Medical,8,pinyin,yī xué,yào wù,Pinyin for corrected Chinese
+spanish,60,Health & Medical,10,english,recipe,prescription,Wrong context - receta means prescription in medical
+spanish,60,Health & Medical,10,chinese,食谱,处方,Wrong - shí pǔ means cooking recipe
+spanish,60,Health & Medical,10,pinyin,shí pǔ,chǔ fāng,Pinyin for corrected Chinese
+spanish,60,Health & Medical,14,chinese,冷,感冒,Wrong - lěng means cold temperature
+spanish,60,Health & Medical,14,pinyin,lěng,gǎn mào,Pinyin for corrected Chinese
+spanish,60,Health & Medical,17,english,query,consultation,Wrong context - consulta means appointment/consultation
+spanish,60,Health & Medical,17,chinese,查询,就诊,Wrong - chá xún means database query
+spanish,60,Health & Medical,17,pinyin,chá xún,jiù zhěn,Pinyin for corrected Chinese
+spanish,60,Health & Medical,23,chinese,您的健康,你的健康,Formal nín - should be informal nǐ for tu
+spanish,60,Health & Medical,23,pinyin,nín de jiàn kāng,nǐ de jiàn kāng,Pinyin for corrected Chinese
+spanish,60,Health & Medical,34,chinese,医学,药物,Wrong - should be medication
+spanish,60,Health & Medical,34,pinyin,yī xué,yào wù,Pinyin for corrected Chinese
+spanish,60,Health & Medical,38,english,the recipe,the prescription,Wrong context
+spanish,60,Health & Medical,38,chinese,食谱,处方,Wrong word
+spanish,60,Health & Medical,38,pinyin,shí pǔ,chǔ fāng,Pinyin for corrected Chinese
+spanish,60,Health & Medical,52,english,a query,an appointment,Wrong context
+spanish,60,Health & Medical,52,chinese,查询,就诊,Wrong word
+spanish,60,Health & Medical,52,pinyin,chá xún,jiù zhěn,Pinyin for corrected Chinese
+spanish,60,Health & Medical,53,english,the query,the appointment,Wrong context
+spanish,60,Health & Medical,53,chinese,查询,就诊,Wrong word
+spanish,60,Health & Medical,53,pinyin,chá xún,jiù zhěn,Pinyin for corrected Chinese
+spanish,60,Health & Medical,57,chinese,在紧急情况下,在急诊室,Wrong - general emergency vs emergency room
+spanish,60,Health & Medical,57,pinyin,zài jǐn jí qíng kuàng xià,zài jí zhěn shì,Pinyin for corrected Chinese
