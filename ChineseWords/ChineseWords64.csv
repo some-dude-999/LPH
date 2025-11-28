@@ -1,49 +1,49 @@
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-航班,háng bān,Flight,Vuelo,Vol,Voo,Chuyến bay,เที่ยวบิน,ការហោះហើរ,Penerbangan,Penerbangan,Flight
-登机,dēng jī,Boarding,Embarque,Embarquement,Embarque,Lên máy bay,ขึ้นเครื่อง,ការឡើងជិះ,Asrama,Boarding,Boarding
-登机口,dēng jī kǒu,Gate,Puerta,Porte,Portão,Cổng,ประตู,ខ្លោងទ្វារ អនុម័តឡើងជិះ,Gerbang,GATE,Gate
-登机牌,dēng jī pái,Boarding pass,Tarjeta de embarque,Carte d'embarquement,Cartão de embarque,Thẻ lên máy bay,บัตรผ่านขึ้นเครื่อง,បានធីក,Tiket masuk,Pas Boarding,Boarding pass
-托运,tuō yùn,Checked,Comprobado,Vérifié,Verificado,Đã kiểm tra,ตรวจสอบ,ឥវ៉ាន់,Diperiksa,Diperiksa,Naka -check
-行李,xíng lǐ,Baggage,Equipaje,Bagages,Bagagem,Hành lý,สัมภาระ,ពិនិត្យសុវត្ថិភាព,Bagasi,Bagasi,Baggage
-安检,ān jiǎn,Security check,Control de seguridad,Contrôle de sécurité,Verificação de segurança,Kiểm tra an ninh,ตรวจสอบความปลอดภัย,លិខិតឆ្លងដែន,Pemeriksaan keamanan,Pemeriksaan Keselamatan,Security Check
-护照,hù zhào,Passport,Pasaporte,Passeport,Passaporte,Hộ chiếu,หนังสือเดินทาง,ទិដ្ឋាការ,Paspor,Pasport,Passport
-签证,qiān zhèng,Visa,Visa,Visas,Visto,Thị thực,วีซ่า,ការពន្យាពេល,Visa,Visa,Visa
-延误,yán wù,Delay,Retraso,Retard,Atraso,Trì hoãn,ล่าช้า,ការពន្យារពេល,Penundaan,Kelewatan,Pagkaantala
-到达,dào dá,Arrival,Llegada,Arrivée,Chegada,Đến,มาถึง,ការមកដល់,Kedatangan,Ketibaan,Pagdating
-出发,chū fā,Departure,Salida,Départ,Partida,Khởi hành,ออกเดินทาง,ការចេញដំណើរ,Keberangkatan,Berlepas,Pag -alis
-国际,guó jì,International,Internacional,Internationale,Internacional,Quốc tế,นานาชาติ,អន្តរជាតិ,Internasional,Antarabangsa,International
-国内,guó nèi,Domestic,Nacional,Domestique,Doméstico,Nội địa,ในประเทศ,ក្នុងស្រុក,Domestik,Domestik,Domestic
-候机,hòu jī,Waiting,Esperando,En attente,Esperando,Chờ đợi,รอ,ការរង់ចាំ,Menunggu,Menunggu,Naghihintay
-廊桥,láng qiáo,Bridge,Puente,Pont,Ponte,Cầu,สะพาน,ស្ពាន ពិនិត្យការហោះហើរ,Jembatan,Jambatan,Tulay
-查航班,chá háng bān,Check flight,Consultar vuelo,Vérifier le vol,Verifique o voo,Kiểm tra chuyến bay,ตรวจสอบเที่ยวบิน,រង់ចាំការហោះហើរ,Periksa penerbangan,Semak penerbangan,Suriin ang flight
-等航班,děng háng bān,Waiting for flight,Esperando vuelo,En attente du vol,Esperando voo,Chờ chuyến bay,รอเที่ยวบิน,ចូលទៅកាន់ក្តារ,Menunggu penerbangan,Menunggu penerbangan,Naghihintay para sa paglipad
-去登机,qù dēng jī,Go to board,Ir al foro,Aller au tableau,Ir para o quadro,Lên bảng,ไปที่บอร์ด,ត្រៀមក្តារ,Pergi ke kapal,Pergi ke papan,Pumunta sa board
-准备登机,zhǔn bèi dēng jī,Prepare to board,Prepárese para abordar,Préparez-vous à embarquer,Prepare-se para embarcar,Chuẩn bị lên tàu,เตรียมขึ้นเครื่อง,ស្វែងរកខ្លោងទ្វារជិះជាន់ខ្ពស់,Bersiap untuk naik,Sediakan untuk papan,Maghanda sa board
-找登机口,zhǎo dēng jī kǒu,Find the boarding gate,Encuentra la puerta de embarque,Trouver la porte d'embarquement,Encontre o portão de embarque,Tìm cổng lên máy bay,ค้นหาประตูขึ้นเครื่อง,ទៅច្រកទ្វារជិះជាន់,Temukan gerbang keberangkatan,Cari pintu masuk,Hanapin ang boarding gate
-到登机口,dào dēng jī kǒu,Go to the boarding gate,Ir a la puerta de embarque,Rendez-vous à la porte d'embarquement,Vá até o portão de embarque,Đến cổng lên máy bay,ไปที่ประตูขึ้นเครื่อง,ទទួលបានការកើនឡើងនៃការឡើងភ្នំ,Pergi ke gerbang keberangkatan,Pergi ke pintu masuk,Pumunta sa boarding gate
-拿登机牌,ná dēng jī pái,Get boarding pass,Obtener tarjeta de embarque,Obtenir la carte d'embarquement,Obter cartão de embarque,Nhận thẻ lên máy bay,รับบอร์ดดิ้งพาส,ការបោះពុម្ភផ្សាយការចាក់ផ្សាយរបស់លោក ពិនិត្យចូល,Dapatkan boarding pass,Dapatkan pas masuk,Kumuha ng boarding pass
-打印登机牌,dǎ yìn dēng jī pái,Print boarding pass,Imprimir tarjeta de embarque,Imprimer la carte d'embarquement,Imprimir cartão de embarque,In thẻ lên máy bay,พิมพ์บอร์ดดิ้งพาส,ពិនិត្យចូល,Cetak boarding pass,Cetak pas masuk,I -print ang boarding pass
-办托运,bàn tuō yùn,Check in,Registrarse,Arrivée,Check-in,Đăng ký,เช็คอิน,ទទួលបានវ៉ាលី ទទួលបានវ៉ាលី ឆ្លងកាត់សន្តិសុខ,Lapor masuk,Daftar masuk,Mag -check in
-要托运,yào tuō yùn,Check in,Registrarse,Arrivée,Check-in,Đăng ký,เช็คอิน,ជួរសម្រាប់សុវត្ថិភាព,Lapor masuk,Daftar masuk,Mag -check in
-拿行李,ná xíng lǐ,Get luggage,Recoger equipaje,Récupérer vos bagages,Pegar bagagem,Nhận hành lý,รับสัมภาระ,នាំយកលិខិតឆ្លងដែន,Dapatkan bagasi,Dapatkan bagasi,Kumuha ng bagahe
-取行李,qǔ xíng lǐ,Get luggage,Recoger equipaje,Récupérer vos bagages,Pegar bagagem,Nhận hành lý,รับสัมภาระ,ពិនិត្យលិខិតឆ្លងដែន,Dapatkan bagasi,Dapatkan bagasi,Kumuha ng bagahe
-过安检,guò ān jiǎn,Go through security,Pasar por seguridad,Passer la sécurité,Passe pela segurança,Đi qua bảo mật,ผ่านการรักษาความปลอดภัย,ដាក់ពាក្យសុំទិដ្ឋាការ,Lewati keamanan,Pergi melalui Keselamatan,Dumaan sa seguridad
-排队安检,pái duì ān jiǎn,Queue for security,Cola por seguridad,File d'attente pour la sécurité,Fila para segurança,Xếp hàng chờ bảo mật,ต่อคิวเพื่อความปลอดภัย,មានទិដ្ឋាការ,Antrian untuk keamanan,Baris untuk Keselamatan,Pila para sa seguridad
-带护照,dài hù zhào,Bring passport,Traer pasaporte,Apportez votre passeport,Trazer passaporte,Mang theo hộ chiếu,นำหนังสือเดินทางมาด้วย,ការពន្យារពេលហោះហើរ,Bawa paspor,Bawa Pasport,Magdala ng Passport
-查护照,chá hù zhào,Check passport,Consultar pasaporte,Vérifier le passeport,Verifique o passaporte,Kiểm tra hộ chiếu,ตรวจหนังสือเดินทาง,ពន្យាពេល,Periksa paspor,Semak Pasport,Suriin ang Passport
-办签证,bàn qiān zhèng,Apply for visa,Solicitar visa,Demander un visa,Solicitar visto,Xin thị thực,ยื่นขอวีซ่า,មកដល់,Ajukan permohonan visa,Memohon Visa,Mag -apply para sa visa
-有签证,yǒu qiān zhèng,Have visa,Tener visa,Avoir un visa,Ter visto,Có thị thực,มีวีซ่า,ត្រៀមនឹងមកដល់,Punya visa,Mempunyai Visa,May visa
-航班延误,háng bān yán wù,Flight delay,Retraso del vuelo,Retard de vol,Atraso de voo,Trì hoãn chuyến bay,เที่ยวบินล่าช้า,ត្រៀមខ្លួនរួចជាស្រេចក្នុងការចាកចេញ,Keterlambatan penerbangan,Kelewatan Penerbangan,Pag -antala ng flight
-有延误,yǒu yán wù,Delayed,Retrasado,Retardé,Atrasado,Bị trì hoãn,ล่าช้า,បានចាកចេញ,Tertunda,Tertunda,Naantala
-已到达,yǐ dào dá,Arrive,Llegar,Arriver,Chegar,Đến,ถึงแล้ว,វាគឺជាការហោះហើរអន្តរជាតិមួយ,Tiba,Tiba,Dumating
-准备到达,zhǔn bèi dào dá,Prepare to arrive,Prepárate para llegar,Préparez-vous à arriver,Prepare-se para chegar,Chuẩn bị đến,เตรียมมาถึง,ការហោះហើរអន្តរជាតិ,Bersiaplah untuk tiba,Bersedia untuk tiba,Maghanda na dumating
-准备出发,zhǔn bèi chū fā,Ready to depart,Listo para partir,Prêt à partir,Pronto para partir,Sẵn sàng khởi hành,พร้อมออกเดินทาง,វាគឺជាការហោះហើរក្នុងស្រុកមួយ ការហោះហើរក្នុងស្រុក,Siap berangkat,Bersedia untuk Berangkat,Handa nang umalis
-已出发,yǐ chū fā,Departed,Partió,Parti,Partiu,Đã khởi hành,จากไป,ការរង់ចាំ,Berangkat,Berlepas,Umalis
-是国际航班,shì guó jì háng bān,It is an international flight,Es un vuelo internacional,Il s'agit d'un vol international,É um voo internacional,Đó là chuyến bay quốc tế,เป็นเที่ยวบินระหว่างประเทศ,នឹងរង់ចាំ,Ini adalah penerbangan internasional,Ia adalah penerbangan antarabangsa,Ito ay isang pang -internasyonal na paglipad
-飞国际,fēi guó jì,Flying internationally,Volar internacionalmente,Voler à l’international,Voando internacionalmente,Bay quốc tế,บินไปต่างประเทศ,ស្ពានតម្រុយសារ,Terbang internasional,Terbang di peringkat antarabangsa,Lumilipad sa buong mundo
-是国内航班,shì guó nèi háng bān,It is a domestic flight,Es un vuelo nacional,Il s'agit d'un vol intérieur,É um voo doméstico,Đó là chuyến bay nội địa,เป็นเที่ยวบินภายในประเทศ,តាមរយៈស្ពានច្រករបៀង,Ini adalah penerbangan domestik,Ia adalah penerbangan domestik,Ito ay isang domestic flight
-飞国内,fēi guó nèi,Flying domestic,Vuelos nacionales,Vol intérieur,Voo doméstico,Bay nội địa,บินภายในประเทศ,មកដល់,Terbang domestik,Terbang Domestik,Lumilipad na domestic
-在候机,zài hòu jī,Waiting,Esperando,En attente,Esperando,Chờ đợi,รอ,ចេញដំណើរ,Menunggu,Menunggu,Naghihintay
-去候机,qù hòu jī,Going to wait,Voy a esperar,Je vais attendre,Vou esperar,Đang chờ đợi,จะรอนะคะ,ជិះយន្តហោះអន្តរជាតិ,Akan menunggu,Akan menunggu,Maghihintay sa
-走廊桥,zǒu láng qiáo,Corridor bridge,Puente del corredor,Pont couloir,Ponte do corredor,Cầu hành lang,สะพานทางเดิน,ក្នុងស្រុក,Jembatan koridor,Jambatan Koridor,Corridor Bridge
-通过廊桥,tōng guò láng qiáo,Through the corridor bridge,A través del puente del corredor,À travers le pont du couloir,Através da ponte do corredor,Qua cầu hành lang,ผ่านสะพานทางเดิน,ក្រៅស្រុក,Melalui jembatan koridor,Melalui jambatan koridor,Sa pamamagitan ng tulay ng koridor
+chinese,pinyin,english,spanish,french,portuguese
+航班,háng bān,Flight,Vuelo,Vol,Voo
+登机,dēng jī,Boarding,Embarque,Embarquement,Embarque
+登机口,dēng jī kǒu,Gate,Puerta,Porte,Portão
+登机牌,dēng jī pái,Boarding pass,Tarjeta de embarque,Carte d'embarquement,Cartão de embarque
+托运,tuō yùn,Checked,Comprobado,Vérifié,Verificado
+行李,xíng lǐ,Baggage,Equipaje,Bagages,Bagagem
+安检,ān jiǎn,Security check,Control de seguridad,Contrôle de sécurité,Verificação de segurança
+护照,hù zhào,Passport,Pasaporte,Passeport,Passaporte
+签证,qiān zhèng,Visa,Visa,Visas,Visto
+延误,yán wù,Delay,Retraso,Retard,Atraso
+到达,dào dá,Arrival,Llegada,Arrivée,Chegada
+出发,chū fā,Departure,Salida,Départ,Partida
+国际,guó jì,International,Internacional,Internationale,Internacional
+国内,guó nèi,Domestic,Nacional,Domestique,Doméstico
+候机,hòu jī,Waiting,Esperando,En attente,Esperando
+廊桥,láng qiáo,Bridge,Puente,Pont,Ponte
+查航班,chá háng bān,Check flight,Consultar vuelo,Vérifier le vol,Verifique o voo
+等航班,děng háng bān,Waiting for flight,Esperando vuelo,En attente du vol,Esperando voo
+去登机,qù dēng jī,Go to board,Ir al foro,Aller au tableau,Ir para o quadro
+准备登机,zhǔn bèi dēng jī,Prepare to board,Prepárese para abordar,Préparez-vous à embarquer,Prepare-se para embarcar
+找登机口,zhǎo dēng jī kǒu,Find the boarding gate,Encuentra la puerta de embarque,Trouver la porte d'embarquement,Encontre o portão de embarque
+到登机口,dào dēng jī kǒu,Go to the boarding gate,Ir a la puerta de embarque,Rendez-vous à la porte d'embarquement,Vá até o portão de embarque
+拿登机牌,ná dēng jī pái,Get boarding pass,Obtener tarjeta de embarque,Obtenir la carte d'embarquement,Obter cartão de embarque
+打印登机牌,dǎ yìn dēng jī pái,Print boarding pass,Imprimir tarjeta de embarque,Imprimer la carte d'embarquement,Imprimir cartão de embarque
+办托运,bàn tuō yùn,Check in,Registrarse,Arrivée,Check-in
+要托运,yào tuō yùn,Check in,Registrarse,Arrivée,Check-in
+拿行李,ná xíng lǐ,Get luggage,Recoger equipaje,Récupérer vos bagages,Pegar bagagem
+取行李,qǔ xíng lǐ,Get luggage,Recoger equipaje,Récupérer vos bagages,Pegar bagagem
+过安检,guò ān jiǎn,Go through security,Pasar por seguridad,Passer la sécurité,Passe pela segurança
+排队安检,pái duì ān jiǎn,Queue for security,Cola por seguridad,File d'attente pour la sécurité,Fila para segurança
+带护照,dài hù zhào,Bring passport,Traer pasaporte,Apportez votre passeport,Trazer passaporte
+查护照,chá hù zhào,Check passport,Consultar pasaporte,Vérifier le passeport,Verifique o passaporte
+办签证,bàn qiān zhèng,Apply for visa,Solicitar visa,Demander un visa,Solicitar visto
+有签证,yǒu qiān zhèng,Have visa,Tener visa,Avoir un visa,Ter visto
+航班延误,háng bān yán wù,Flight delay,Retraso del vuelo,Retard de vol,Atraso de voo
+有延误,yǒu yán wù,Delayed,Retrasado,Retardé,Atrasado
+已到达,yǐ dào dá,Arrive,Llegar,Arriver,Chegar
+准备到达,zhǔn bèi dào dá,Prepare to arrive,Prepárate para llegar,Préparez-vous à arriver,Prepare-se para chegar
+准备出发,zhǔn bèi chū fā,Ready to depart,Listo para partir,Prêt à partir,Pronto para partir
+已出发,yǐ chū fā,Departed,Partió,Parti,Partiu
+是国际航班,shì guó jì háng bān,It is an international flight,Es un vuelo internacional,Il s'agit d'un vol international,É um voo internacional
+飞国际,fēi guó jì,Flying internationally,Volar internacionalmente,Voler à l’international,Voando internacionalmente
+是国内航班,shì guó nèi háng bān,It is a domestic flight,Es un vuelo nacional,Il s'agit d'un vol intérieur,É um voo doméstico
+飞国内,fēi guó nèi,Flying domestic,Vuelos nacionales,Vol intérieur,Voo doméstico
+在候机,zài hòu jī,Waiting,Esperando,En attente,Esperando
+去候机,qù hòu jī,Going to wait,Voy a esperar,Je vais attendre,Vou esperar
+走廊桥,zǒu láng qiáo,Corridor bridge,Puente del corredor,Pont couloir,Ponte do corredor
+通过廊桥,tōng guò láng qiáo,Through the corridor bridge,A través del puente del corredor,À travers le pont du couloir,Através da ponte do corredor

@@ -1,55 +1,55 @@
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-饿,è,Hungry,Hambriento,Affamé,Com fome,Đói,หิว,ឃ្លាន,Lapar,Lapar,Gutom
-饱,bǎo,Full,Lleno,Rassasié,Cheio,No,อิ่ม,ឆ្អែត,Kenyang,Kenyang,Busog
-渴,kě,Thirsty,Sediento,Assoiffé,Com sede,Khát,กระหาย,ស្រេកទឹក,Haus,Dahaga,Uhaw
-尝,cháng,Taste,Probar,Goûter,Provar,Nếm,ชิม,ភ្លក់,Cicipi,Rasa,Tikman
-好吃,hǎo chī,Delicious,Delicioso,Délicieux,Delicioso,Ngon,อร่อย,ឆ្ងាញ់,Enak,Sedap,Masarap
-难吃,nán chī,Bad tasting,Malo,Mauvais goût,Ruim,Dở,ไม่อร่อย,មិនឆ្ងាញ់,Tidak enak,Tidak sedap,Hindi masarap
-甜,tián,Sweet,Dulce,Sucré,Doce,Ngọt,หวาน,ផ្អែម,Manis,Manis,Matamis
-酸,suān,Sour,Ácido,Acide,Azedo,Chua,เปรี้ยว,ជូរ,Asam,Masam,Maasim
-辣,là,Spicy,Picante,Épicé,Picante,Cay,เผ็ด,ហឹរ,Pedas,Pedas,Maanghang
-咸,xián,Salty,Salado,Salé,Salgado,Mặn,เค็ม,ប្រៃ,Asin,Masin,Maalat
-苦,kǔ,Bitter,Amargo,Amer,Amargo,Đắng,ขม,ជូរចត់,Pahit,Pahit,Mapait
-淡,dàn,Bland,Insípido,Fade,Insosso,Nhạt,จืด,ស្រអាប់,Hambar,Tawar,Matabang
-香,xiāng,Fragrant,Fragante,Parfumé,Perfumado,Thơm,หอม,ក្រអូប,Harum,Wangi,Mabango
-臭,chòu,Smelly,Maloliente,Puant,Fedorento,Hôi,เหม็น,ស្អុយ,Bau,Busuk,Mabaho
-点餐,diǎn cān,Order food,Pedir comida,Commander,Pedir comida,Gọi món,สั่งอาหาร,កម្មង់អាហារ,Pesan makanan,Pesan makanan,Umorder ng pagkain
-用餐,yòng cān,Have a meal,Comer,Prendre un repas,Fazer refeição,Dùng bữa,รับประทานอาหาร,ទទួលទានអាហារ,Makan,Makan,Kumain
-加菜,jiā cài,Add dishes,Añadir platos,Ajouter des plats,Adicionar pratos,Thêm món,เพิ่มเมนู,បន្ថែមម្ហូប,Tambah menu,Tambah hidangan,Magdagdag ng ulam
-下单,xià dān,Place order,Hacer pedido,Passer commande,Fazer pedido,Đặt hàng,สั่งซื้อ,បញ្ជាទិញ,Pesan,Buat pesanan,Mag-order
-肚子饿,dù zi è,Stomach is hungry,Tengo hambre,J'ai faim,Estou com fome,Đói bụng,หิวข้าว,ឃ្លានពោះ,Perut lapar,Perut lapar,Nagugutom
-饿死了,è sǐ le,Starving,Muerto de hambre,Affamé,Morrendo de fome,Đói chết,หิวมาก,ឃ្លានណាស់,Sangat lapar,Lapar sangat,Gutom na gutom
-吃饱了,chī bǎo le,I'm full,Estoy lleno,Je suis rassasié,Estou cheio,No rồi,อิ่มแล้ว,ឆ្អែតហើយ,Sudah kenyang,Sudah kenyang,Busog na ako
-饱得很,bǎo dé hěn,Very full,Muy lleno,Très rassasié,Muito cheio,No lắm,อิ่มมาก,ឆ្អែតណាស់,Sangat kenyang,Sangat kenyang,Sobrang busog
-口渴了,kǒu kě le,I'm thirsty,Tengo sed,J'ai soif,Estou com sede,Khát nước rồi,หิวน้ำ,ស្រេកទឹកហើយ,Haus,Dahaga,Nauuhaw ako
-渴坏了,kě huài le,Very thirsty,Muy sediento,Très assoiffé,Muita sede,Khát quá,กระหายมาก,ស្រេកទឹកណាស់,Sangat haus,Sangat dahaga,Sobrang uhaw
-尝尝看,cháng cháng kàn,Try it,Pruébalo,Goûte,Experimente,Nếm thử xem,ลองชิม,ភ្លក់មើល,Coba,Cuba rasa,Tikman mo
-尝一口,cháng yī kǒu,Have a taste,Prueba un poco,Goûte un peu,Prove um pouco,Nếm một miếng,ลองชิมหน่อย,ភ្លក់មួយដុំ,Cicipi sedikit,Rasa sikit,Tikman mo
-真好吃,zhēn hǎo chī,Really delicious,Muy delicioso,Vraiment délicieux,Muito delicioso,Ngon thật,อร่อยจริงๆ,ឆ្ងាញ់ពិតៗ,Enak sekali,Sedap betul,Masarap talaga
-好吃极了,hǎo chī jí le,Extremely delicious,Deliciosísimo,Extrêmement délicieux,Extremamente delicioso,Ngon cực kỳ,อร่อยมาก,ឆ្ងាញ់បំផុត,Sangat enak,Sangat sedap,Napakasarap
-太难吃,tài nán chī,Too unpalatable,Muy malo,Très mauvais,Muito ruim,Dở quá,ไม่อร่อยเลย,មិនឆ្ងាញ់ពេក,Terlalu tidak enak,Terlalu tidak sedap,Sobrang hindi masarap
-难吃得很,nán chī dé hěn,Very unpalatable,Malísimo,Vraiment mauvais,Muito ruim,Dở lắm,ไม่อร่อยมาก,មិនឆ្ងាញ់ខ្លាំង,Sangat tidak enak,Sangat tidak sedap,Hindi talaga masarap
-甜甜的,tián tián de,Sweetish,Dulcito,Un peu sucré,Docinho,Ngọt ngọt,หวานๆ,ផ្អែមៗ,Agak manis,Manis-manis,Matamis-tamis
-太甜了,tài tián le,Too sweet,Demasiado dulce,Trop sucré,Doce demais,Ngọt quá,หวานเกินไป,ផ្អែមពេក,Terlalu manis,Terlalu manis,Sobrang tamis
-酸酸的,suān suān de,Sourish,Agridulce,Un peu acide,Azedinho,Chua chua,เปรี้ยวๆ,ជូរៗ,Agak asam,Masam-masam,Maasim-asim
-有点酸,yǒu diǎn suān,A bit sour,Un poco ácido,Un peu acide,Um pouco azedo,Hơi chua,เปรี้ยวนิดหน่อย,ជូរបន្តិច,Sedikit asam,Sedikit masam,Medyo maasim
-太辣了,tài là le,Too spicy,Demasiado picante,Trop épicé,Picante demais,Cay quá,เผ็ดเกินไป,ហឹរពេក,Terlalu pedas,Terlalu pedas,Sobrang anghang
-辣得够味,là dé gòu wèi,Spicy enough,Suficientemente picante,Assez épicé,Picante o suficiente,Cay vừa đủ,เผ็ดได้ที่,ហឹរល្មមល្អ,Cukup pedas,Cukup pedas,Sapat ang anghang
-有点咸,yǒu diǎn xián,A bit salty,Un poco salado,Un peu salé,Um pouco salgado,Hơi mặn,เค็มนิดหน่อย,ប្រៃបន្តិច,Sedikit asin,Sedikit masin,Medyo maalat
-咸了点,xián le diǎn,A bit too salty,Un poco salado,Un peu trop salé,Salgado demais,Mặn quá,เค็มไปหน่อย,ប្រៃពេក,Agak asin,Agak masin,Medyo maalat
-苦瓜苦,kǔ guā kǔ,Bitter melon is bitter,El melón amargo es amargo,La courge amère est amère,O melão amargo é amargo,Khổ qua đắng,มะระขม,ម្រះជូរចត់,Pare pahit,Peria pahit,Mapait ang ampalaya
-吃药苦,chī yào kǔ,Medicine tastes bitter,La medicina es amarga,Le médicament est amer,O remédio é amargo,Thuốc đắng,ยาขม,ថ្នាំជូរចត់,Obat pahit,Ubat pahit,Mapait ang gamot
-太淡了,tài dàn le,Too bland,Demasiado insípido,Trop fade,Insosso demais,Nhạt quá,จืดเกินไป,ស្រអាប់ពេក,Terlalu hambar,Terlalu tawar,Sobrang tabang
-味道淡,wèi dào dàn,Bland taste,Sabor insípido,Goût fade,Gosto insosso,Vị nhạt,รสจืด,រសជាតិស្រអាប់,Rasa hambar,Rasa tawar,Matabang ang lasa
-好香啊,hǎo xiāng a,Smells so good,Huele muy bien,Ça sent si bon,Cheira tão bem,Thơm quá,หอมจัง,ក្រអូបណាស់,Wangi sekali,Wangi betul,Ang bango
-闻着香,wén zhe xiāng,Smells fragrant,Huele fragante,Ça sent bon,Cheira bem,Ngửi thấy thơm,ได้กลิ่นหอม,ក្រអូប,Tercium harum,Berbau wangi,Mabango ang amoy
-好臭啊,hǎo chòu a,Smells so bad,Huele muy mal,Ça sent si mauvais,Cheira tão mal,Hôi quá,เหม็นจัง,ស្អុយណាស់,Bau sekali,Busuk betul,Ang baho
-臭死了,chòu sǐ le,Smells terrible,Huele fatal,Ça pue,Cheira horrivelmente,Hôi chết đi,เหม็นมาก,ស្អុយក្រៀម,Bau banget,Busuk sangat,Mabaho talaga
-扫码点餐,sǎo mǎ diǎn cān,Scan to order,Escanear para pedir,Scanner pour commander,Escanear para pedir,Quét mã đặt món,สแกนสั่งอาหาร,ស្កេនកម្មង់អាហារ,Scan untuk pesan,Imbas untuk pesan,Scan para umorder
-帮我点餐,bāng wǒ diǎn cān,Help me order,Ayúdame a pedir,Aide-moi à commander,Me ajude a pedir,Giúp tôi gọi món,ช่วยสั่งให้หน่อย,ជួយកម្មង់អាហារ,Tolong pesankan,Tolong pesankan,Tulungan mo akong umorder
-用餐时间,yòng cān shí jiān,Meal time,Hora de comer,Heure du repas,Hora da refeição,Giờ ăn,เวลาทานอาหาร,ពេលទទួលទានអាហារ,Waktu makan,Waktu makan,Oras ng pagkain
-请慢用餐,qǐng màn yòng cān,Please enjoy your meal,Buen provecho,Bon appétit,Bom apetite,Xin mời dùng bữa,เชิญรับประทาน,សូមរីករាយក្នុងការទទួលទាន,Selamat makan,Selamat menjamu selera,Masarap na pagkain
-再加菜,zài jiā cài,Add more dishes,Añadir más platos,Ajouter des plats,Adicionar mais pratos,Thêm món nữa,เพิ่มเมนูอีก,បន្ថែមម្ហូបទៀត,Tambah lagi,Tambah lagi,Magdagdag pa
-需要加菜吗,xū yào jiā cài ma,Need more dishes?,¿Necesita más platos?,Besoin de plus?,Precisa de mais?,Cần thêm món không?,ต้องการเพิ่มเมนูไหม,ត្រូវការម្ហូបបន្ថែមទេ,Perlu tambah?,Perlu tambah?,Kailangan pa?
-立即下单,lì jí xià dān,Order now,Pedir ahora,Commander maintenant,Pedir agora,Đặt hàng ngay,สั่งเลย,បញ្ជាទិញឥឡូវ,Pesan sekarang,Pesan sekarang,Umorder na
-手机下单,shǒu jī xià dān,Order via phone,Pedir por móvil,Commander via mobile,Pedir pelo celular,Đặt qua điện thoại,สั่งผ่านมือถือ,បញ្ជាទិញតាមទូរស័ព្ទ,Pesan via HP,Pesan via telefon,Order sa phone
+chinese,pinyin,english,spanish,french,portuguese
+饿,è,Hungry,Hambriento,Affamé,Com fome
+饱,bǎo,Full,Lleno,Rassasié,Cheio
+渴,kě,Thirsty,Sediento,Assoiffé,Com sede
+尝,cháng,Taste,Probar,Goûter,Provar
+好吃,hǎo chī,Delicious,Delicioso,Délicieux,Delicioso
+难吃,nán chī,Bad tasting,Malo,Mauvais goût,Ruim
+甜,tián,Sweet,Dulce,Sucré,Doce
+酸,suān,Sour,Ácido,Acide,Azedo
+辣,là,Spicy,Picante,Épicé,Picante
+咸,xián,Salty,Salado,Salé,Salgado
+苦,kǔ,Bitter,Amargo,Amer,Amargo
+淡,dàn,Bland,Insípido,Fade,Insosso
+香,xiāng,Fragrant,Fragante,Parfumé,Perfumado
+臭,chòu,Smelly,Maloliente,Puant,Fedorento
+点餐,diǎn cān,Order food,Pedir comida,Commander,Pedir comida
+用餐,yòng cān,Have a meal,Comer,Prendre un repas,Fazer refeição
+加菜,jiā cài,Add dishes,Añadir platos,Ajouter des plats,Adicionar pratos
+下单,xià dān,Place order,Hacer pedido,Passer commande,Fazer pedido
+肚子饿,dù zi è,Stomach is hungry,Tengo hambre,J'ai faim,Estou com fome
+饿死了,è sǐ le,Starving,Muerto de hambre,Affamé,Morrendo de fome
+吃饱了,chī bǎo le,I'm full,Estoy lleno,Je suis rassasié,Estou cheio
+饱得很,bǎo dé hěn,Very full,Muy lleno,Très rassasié,Muito cheio
+口渴了,kǒu kě le,I'm thirsty,Tengo sed,J'ai soif,Estou com sede
+渴坏了,kě huài le,Very thirsty,Muy sediento,Très assoiffé,Muita sede
+尝尝看,cháng cháng kàn,Try it,Pruébalo,Goûte,Experimente
+尝一口,cháng yī kǒu,Have a taste,Prueba un poco,Goûte un peu,Prove um pouco
+真好吃,zhēn hǎo chī,Really delicious,Muy delicioso,Vraiment délicieux,Muito delicioso
+好吃极了,hǎo chī jí le,Extremely delicious,Deliciosísimo,Extrêmement délicieux,Extremamente delicioso
+太难吃,tài nán chī,Too unpalatable,Muy malo,Très mauvais,Muito ruim
+难吃得很,nán chī dé hěn,Very unpalatable,Malísimo,Vraiment mauvais,Muito ruim
+甜甜的,tián tián de,Sweetish,Dulcito,Un peu sucré,Docinho
+太甜了,tài tián le,Too sweet,Demasiado dulce,Trop sucré,Doce demais
+酸酸的,suān suān de,Sourish,Agridulce,Un peu acide,Azedinho
+有点酸,yǒu diǎn suān,A bit sour,Un poco ácido,Un peu acide,Um pouco azedo
+太辣了,tài là le,Too spicy,Demasiado picante,Trop épicé,Picante demais
+辣得够味,là dé gòu wèi,Spicy enough,Suficientemente picante,Assez épicé,Picante o suficiente
+有点咸,yǒu diǎn xián,A bit salty,Un poco salado,Un peu salé,Um pouco salgado
+咸了点,xián le diǎn,A bit too salty,Un poco salado,Un peu trop salé,Salgado demais
+苦瓜苦,kǔ guā kǔ,Bitter melon is bitter,El melón amargo es amargo,La courge amère est amère,O melão amargo é amargo
+吃药苦,chī yào kǔ,Medicine tastes bitter,La medicina es amarga,Le médicament est amer,O remédio é amargo
+太淡了,tài dàn le,Too bland,Demasiado insípido,Trop fade,Insosso demais
+味道淡,wèi dào dàn,Bland taste,Sabor insípido,Goût fade,Gosto insosso
+好香啊,hǎo xiāng a,Smells so good,Huele muy bien,Ça sent si bon,Cheira tão bem
+闻着香,wén zhe xiāng,Smells fragrant,Huele fragante,Ça sent bon,Cheira bem
+好臭啊,hǎo chòu a,Smells so bad,Huele muy mal,Ça sent si mauvais,Cheira tão mal
+臭死了,chòu sǐ le,Smells terrible,Huele fatal,Ça pue,Cheira horrivelmente
+扫码点餐,sǎo mǎ diǎn cān,Scan to order,Escanear para pedir,Scanner pour commander,Escanear para pedir
+帮我点餐,bāng wǒ diǎn cān,Help me order,Ayúdame a pedir,Aide-moi à commander,Me ajude a pedir
+用餐时间,yòng cān shí jiān,Meal time,Hora de comer,Heure du repas,Hora da refeição
+请慢用餐,qǐng màn yòng cān,Please enjoy your meal,Buen provecho,Bon appétit,Bom apetite
+再加菜,zài jiā cài,Add more dishes,Añadir más platos,Ajouter des plats,Adicionar mais pratos
+需要加菜吗,xū yào jiā cài ma,Need more dishes?,¿Necesita más platos?,Besoin de plus?,Precisa de mais?
+立即下单,lì jí xià dān,Order now,Pedir ahora,Commander maintenant,Pedir agora
+手机下单,shǒu jī xià dān,Order via phone,Pedir por móvil,Commander via mobile,Pedir pelo celular

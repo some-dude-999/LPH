@@ -1,52 +1,52 @@
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-房子,fáng zi,House,Casa,Maison,Casa,Nhà,บ้าน,ផ្ទះ,Rumah,Rumah,Bahay
-房间,fáng jiān,Room,Habitación,Chambre,Quarto,Phòng,ห้อง,វីនដូ,Kamar,Bilik,Silid
-门,mén,Door,Puerta,Porte,Porta,Cửa,ประตู,ជញ្ជាំង,Pintu,Pintu,Pinto
-窗户,chuāng hù,Window,Ventana,Fenêtre,Janela,Cửa sổ,หน้าต่าง,បង្អួច,Jendela,Tingkap,Bintana
-墙,qiáng,Wall,Muro,Mur,Parede,Tường,กำแพง,បន្ទប់ទទួលភ្ញៀវ,Dinding,Dinding,Pader
-地板,dì bǎn,Floor,Piso,Sol,Piso,Tầng,ชั้น,បន្ទប់គេង,Lantai,Lantai,Sahig
-天花板,tiān huā bǎn,Ceiling,Techo,Plafond,Teto,Trần nhà,เพดาน,ពិដាន,Plafon,Siling,Kisame
-客厅,kè tīng,Living room,Sala de estar,Salon,Sala de estar,Phòng khách,ห้องนั่งเล่น,បន្ទប់ទឹក,Ruang tamu,Ruang tamu,Living Room
-卧室,wò shì,Bedroom,Dormitorio,Chambre,Quarto,Phòng ngủ,ห้องนอน,យ៉រ,Kamar tidur,Bilik tidur,Silid -tulugan
-厨房,chú fáng,Kitchen,Cocina,Cuisine,Cozinha,Nhà bếp,ห้องครัว,ជណ្តើរ,Dapur,Dapur,Kusina
-卫生间,wèi shēng jiān,Bathroom,Cuarto de baño,Salle de bain,Banheiro,Phòng tắm,ห้องน้ำ,ការកាត់បន្ថយ,Kamar mandi,Bilik mandi,Banyo
-浴室,yù shì,Bathroom,Cuarto de baño,Salle de bain,Banheiro,Phòng tắm,ห้องน้ำ,សួន,Kamar mandi,Bilik mandi,Banyo
-阳台,yáng tái,Balcony,Balcón,Balcon,Varanda,Ban công,ระเบียง,យានដ្ឋានកម្មវិធី,Balkon,Balkoni,BALCONY
-楼梯,lóu tī,Stairs,Escaleras,Escaliers,Escadas,Cầu thang,บันได,ផ្ទះធំ,Tangga,Tangga,Hagdan
-电梯,diàn tī,Elevator,Ascensor,Ascenseur,Elevador,Thang máy,ลิฟต์,ទិញផ្ទះមួយ,Lift,Lif,Elevator
-花园,huā yuán,Garden,Jardín,Jardin,Jardim,Vườn,สวน,បន្ទប់តូច,Taman,Taman,Hardin
-车库,chē kù,Garage,Garaje,Garage,Garagem,Gara,โรงรถ,ចូលបន្ទប់,Garasi,Garage,Garage
-大房子,dà fáng zi,Big house,Casa grande,Grande maison,Casa grande,Ngôi nhà lớn,บ้านหลังใหญ่,បើកទ្វារ,Rumah besar,Big House,Malaking bahay
-买房子,mǎi fáng zi,Buy a house,Comprar una casa,Acheter une maison,Comprar uma casa,Mua nhà,ซื้อบ้าน,បិទទ្វារ,Beli rumah,Beli Rumah,Bumili ng bahay
-小房间,xiǎo fáng jiān,Small room,Habitación pequeña,Petite chambre,Quarto pequeno,Phòng nhỏ,ห้องเล็ก,បើកបង្អួច,Kamar kecil,Bilik Kecil,Maliit na silid
-进房间,jìn fáng jiān,Enter the room,Entra a la habitación,Entrez dans la pièce,Entre na sala,Vào phòng,เข้าห้อง,បិទបង្អួច,Masuk ke ruangan,Masukkan bilik,Ipasok ang silid
-开门,kāi mén,Open the door,Abre la puerta,Ouvrez la porte,Abra a porta,Mở cửa,เปิดประตู,ជញ្ជាំងពណ៌ស,Buka pintunya,Buka Pintu,Buksan ang pinto
-关门,guān mén,Close the door,Cierra la puerta,Fermez la porte,Feche a porta,Đóng cửa,ปิดประตู,គូរជញ្ជាំង,Tutup pintunya,Tutup pintu,Isara ang pinto
-开窗户,kāi chuāng hù,Open the window,Abre la ventana,Ouvrez la fenêtre,Abra a janela,Mở cửa sổ,เปิดหน้าต่าง,ជាន់ឈើ,Buka jendela,Buka tetingkap,Buksan ang window
-关窗户,guān chuāng hù,Close the window,Cierra la ventana,Fermez la fenêtre,Feche a janela,Đóng cửa sổ,ปิดหน้าต่าง,លាងសម្អាតជាន់,Tutup jendela,Tutup tetingkap,Isara ang window
-白墙,bái qiáng,White wall,Pared blanca,Mur blanc,Parede branca,Bức tường trắng,ผนังสีขาว,ពិដានខ្ពស់,Tembok putih,Dinding Putih,Puting pader
-刷墙,shuā qiáng,Paint the wall,Pintar la pared,Peindre le mur,Pintar a parede,Sơn tường,ทาสีผนัง,សូមក្រឡេកមើលពិដាន,Cat tembok,Cat dinding,Kulayan ang pader
-木地板,mù dì bǎn,Wooden floor,Suelo de madera,Parquet,Piso de madeira,Sàn gỗ,พื้นไม้,បន្ទប់ទទួលភ្ញៀវធំ,Lantai kayu,Lantai kayu,Kahoy na sahig
-擦地板,cā dì bǎn,Clean the floor,Limpiar el suelo,Nettoyer le sol,Limpe o chão,Lau sàn nhà,ทำความสะอาดพื้น,នៅក្នុងបន្ទប់ទទួលភ្ញៀវ,Bersihkan lantai,Bersihkan lantai,Linisin ang sahig
-天花板高,tiān huā bǎn gāo,High ceiling,Techo alto,Haut plafond,Teto alto,Trần cao,เพดานสูง,បន្ទប់គេងធំ,Langit-langit tinggi,Siling tinggi,Mataas na kisame
-看天花板,kàn tiān huā bǎn,Look at the ceiling,Mira el techo,Regardez le plafond,Olha o teto,Nhìn lên trần nhà,ดูเพดาน,នៅក្នុងបន្ទប់គេង,Lihatlah langit-langit,Lihat siling,Tumingin sa kisame
-大客厅,dà kè tīng,Large living room,Amplio salón,Grand séjour,Sala ampla,Phòng khách lớn,ห้องนั่งเล่นขนาดใหญ่,ផ្ទះបាយតូច,Ruang tamu besar,Ruang tamu yang besar,Malaking Living Room
-在客厅,zài kè tīng,In the living room,En el salón,Dans le salon,Na sala,Trong phòng khách,ในห้องนั่งเล่น,នៅក្នុងផ្ទះបាយ,Di ruang tamu,Di ruang tamu,Sa sala
-大卧室,dà wò shì,Large bedroom,Dormitorio grande,Grande chambre,Quarto grande,Phòng ngủ lớn,ห้องนอนใหญ่,ទៅបន្ទប់ទឹក,Kamar tidur besar,Bilik Tidur Besar,Malaking silid -tulugan
-在卧室,zài wò shì,In the bedroom,En el dormitorio,Dans la chambre,No quarto,Trong phòng ngủ,ในห้องนอน,នៅក្នុងបន្ទប់ទឹក,Di kamar tidur,Di bilik tidur,Sa silid -tulugan
-小厨房,xiǎo chú fáng,Small kitchen,Cocina pequeña,Petite cuisine,Cozinha pequena,Căn bếp nhỏ,ครัวเล็กๆ,ទៅបន្ទប់ទឹក,Dapur kecil,Dapur Kecil,Maliit na kusina
-在厨房,zài chú fáng,In the kitchen,En la cocina,Dans la cuisine,Na cozinha,Vào bếp,ในครัว,នៅក្នុងបន្ទប់ទឹក,Di dapur,Di dapur,Sa kusina
-去卫生间,qù wèi shēng jiān,Go to the bathroom,Ir al baño,Aller aux toilettes,Vá ao banheiro,Đi vệ sinh,ไปเข้าห้องน้ำ,យ៉រតូច,Pergi ke kamar mandi,Pergi ke bilik mandi,Pumunta sa banyo
-在卫生间,zài wèi shēng jiān,In the bathroom,En el baño,Dans la salle de bain,No banheiro,Trong phòng tắm,ในห้องน้ำ,នៅលើយ៉រ,Di kamar mandi,Di bilik mandi,Sa banyo
-去浴室,qù yù shì,Go to the bathroom,Ir al baño,Aller aux toilettes,Vá ao banheiro,Đi vệ sinh,ไปเข้าห้องน้ำ,ឡើងជណ្តើរ,Pergi ke kamar mandi,Pergi ke bilik mandi,Pumunta sa banyo
-在浴室,zài yù shì,In the bathroom,En el baño,Dans la salle de bain,No banheiro,Trong phòng tắm,ในห้องน้ำ,ជិះជណ្តើរ,Di kamar mandi,Di bilik mandi,Sa banyo
-小阳台,xiǎo yáng tái,Small balcony,Balcón pequeño,Petit balcon,Varanda pequena,Ban công nhỏ,ระเบียงเล็กๆ,យកជណ្តើរយន្ត,Balkon kecil,Balkoni Kecil,Maliit na balkonahe
-在阳台,zài yáng tái,On the balcony,En el balcón,Sur le balcon,Na varanda,Trên ban công,บนระเบียง,រង់ចាំការកាត់បន្ថយ,Di balkon,Di balkoni,Sa balkonahe
-爬楼梯,pá lóu tī,Climb the stairs,Sube las escaleras,Montez les escaliers,Suba as escadas,Leo cầu thang,ขึ้นบันได,សួនច្បារតូច,Naiki tangga,Mendaki tangga,Umakyat sa hagdan
-走楼梯,zǒu lóu tī,Take the stairs,Sube las escaleras,Prenez les escaliers,Suba as escadas,Đi cầu thang,ขึ้นบันได,នៅសួនច្បារ,Naik tangga,Ambil tangga,Kumuha ng hagdan
-坐电梯,zuò diàn tī,Take the elevator,Toma el ascensor,Prenez l'ascenseur,Pegue o elevador,Đi thang máy,ขึ้นลิฟต์,យានដ្ឋានធំ,Naik lift,Ambil lif,Kunin ang elevator
-等电梯,děng diàn tī,Wait for the elevator,Espera el ascensor,Attendez l'ascenseur,Espere o elevador,Đợi thang máy,รอลิฟต์,នៅក្នុងហ្គារ៉ាស,Tunggu liftnya,Tunggu lif,Maghintay para sa elevator
-小花园,xiǎo huā yuán,Small garden,Pequeño jardín,Petit jardin,Pequeno jardim,Khu vườn nhỏ,สวนเล็กๆ,សួនតូច,Taman kecil,Taman kecil,Maliit na hardin
-在花园,zài huā yuán,In the garden,En el jardín,Dans le jardin,No jardim,Trong vườn,ในสวน,នៅសួន,Di taman,Di taman,Sa hardin
-大车库,dà chē kù,Large garage,Amplio garaje,Grand garage,Grande garagem,Nhà để xe lớn,โรงจอดรถขนาดใหญ่,យានដ្ឋានធំ,Garasi besar,Garaj besar,Malaking garahe
-在车库,zài chē kù,In the garage,en el garaje,Dans le garage,Na garagem,Trong gara,ในโรงรถ,នៅក្នុងយានដ្ឋាន,Di garasi,Di garaj,Sa garahe
+chinese,pinyin,english,spanish,french,portuguese
+房子,fáng zi,House,Casa,Maison,Casa
+房间,fáng jiān,Room,Habitación,Chambre,Quarto
+门,mén,Door,Puerta,Porte,Porta
+窗户,chuāng hù,Window,Ventana,Fenêtre,Janela
+墙,qiáng,Wall,Muro,Mur,Parede
+地板,dì bǎn,Floor,Piso,Sol,Piso
+天花板,tiān huā bǎn,Ceiling,Techo,Plafond,Teto
+客厅,kè tīng,Living room,Sala de estar,Salon,Sala de estar
+卧室,wò shì,Bedroom,Dormitorio,Chambre,Quarto
+厨房,chú fáng,Kitchen,Cocina,Cuisine,Cozinha
+卫生间,wèi shēng jiān,Bathroom,Cuarto de baño,Salle de bain,Banheiro
+浴室,yù shì,Bathroom,Cuarto de baño,Salle de bain,Banheiro
+阳台,yáng tái,Balcony,Balcón,Balcon,Varanda
+楼梯,lóu tī,Stairs,Escaleras,Escaliers,Escadas
+电梯,diàn tī,Elevator,Ascensor,Ascenseur,Elevador
+花园,huā yuán,Garden,Jardín,Jardin,Jardim
+车库,chē kù,Garage,Garaje,Garage,Garagem
+大房子,dà fáng zi,Big house,Casa grande,Grande maison,Casa grande
+买房子,mǎi fáng zi,Buy a house,Comprar una casa,Acheter une maison,Comprar uma casa
+小房间,xiǎo fáng jiān,Small room,Habitación pequeña,Petite chambre,Quarto pequeno
+进房间,jìn fáng jiān,Enter the room,Entra a la habitación,Entrez dans la pièce,Entre na sala
+开门,kāi mén,Open the door,Abre la puerta,Ouvrez la porte,Abra a porta
+关门,guān mén,Close the door,Cierra la puerta,Fermez la porte,Feche a porta
+开窗户,kāi chuāng hù,Open the window,Abre la ventana,Ouvrez la fenêtre,Abra a janela
+关窗户,guān chuāng hù,Close the window,Cierra la ventana,Fermez la fenêtre,Feche a janela
+白墙,bái qiáng,White wall,Pared blanca,Mur blanc,Parede branca
+刷墙,shuā qiáng,Paint the wall,Pintar la pared,Peindre le mur,Pintar a parede
+木地板,mù dì bǎn,Wooden floor,Suelo de madera,Parquet,Piso de madeira
+擦地板,cā dì bǎn,Clean the floor,Limpiar el suelo,Nettoyer le sol,Limpe o chão
+天花板高,tiān huā bǎn gāo,High ceiling,Techo alto,Haut plafond,Teto alto
+看天花板,kàn tiān huā bǎn,Look at the ceiling,Mira el techo,Regardez le plafond,Olha o teto
+大客厅,dà kè tīng,Large living room,Amplio salón,Grand séjour,Sala ampla
+在客厅,zài kè tīng,In the living room,En el salón,Dans le salon,Na sala
+大卧室,dà wò shì,Large bedroom,Dormitorio grande,Grande chambre,Quarto grande
+在卧室,zài wò shì,In the bedroom,En el dormitorio,Dans la chambre,No quarto
+小厨房,xiǎo chú fáng,Small kitchen,Cocina pequeña,Petite cuisine,Cozinha pequena
+在厨房,zài chú fáng,In the kitchen,En la cocina,Dans la cuisine,Na cozinha
+去卫生间,qù wèi shēng jiān,Go to the bathroom,Ir al baño,Aller aux toilettes,Vá ao banheiro
+在卫生间,zài wèi shēng jiān,In the bathroom,En el baño,Dans la salle de bain,No banheiro
+去浴室,qù yù shì,Go to the bathroom,Ir al baño,Aller aux toilettes,Vá ao banheiro
+在浴室,zài yù shì,In the bathroom,En el baño,Dans la salle de bain,No banheiro
+小阳台,xiǎo yáng tái,Small balcony,Balcón pequeño,Petit balcon,Varanda pequena
+在阳台,zài yáng tái,On the balcony,En el balcón,Sur le balcon,Na varanda
+爬楼梯,pá lóu tī,Climb the stairs,Sube las escaleras,Montez les escaliers,Suba as escadas
+走楼梯,zǒu lóu tī,Take the stairs,Sube las escaleras,Prenez les escaliers,Suba as escadas
+坐电梯,zuò diàn tī,Take the elevator,Toma el ascensor,Prenez l'ascenseur,Pegue o elevador
+等电梯,děng diàn tī,Wait for the elevator,Espera el ascensor,Attendez l'ascenseur,Espere o elevador
+小花园,xiǎo huā yuán,Small garden,Pequeño jardín,Petit jardin,Pequeno jardim
+在花园,zài huā yuán,In the garden,En el jardín,Dans le jardin,No jardim
+大车库,dà chē kù,Large garage,Amplio garaje,Grand garage,Grande garagem
+在车库,zài chē kù,In the garage,en el garaje,Dans le garage,Na garagem

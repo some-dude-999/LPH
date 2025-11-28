@@ -1,43 +1,43 @@
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-预约,yù yuē,Appointment,Cita,Rendez-vous,Nomeação,Cuộc hẹn,การนัดหมาย,ការតែងតាំង,Janji temu,Pelantikan,Appointment
-下周,xià zhōu,Next week,La próxima semana,La semaine prochaine,Semana que vem,Tuần tới,สัปดาห์หน้า,សប្តាហ៍ក្រោយ,Minggu depan,Minggu depan,Sa susunod na linggo
-改期,gǎi qī,Reschedule,Reprogramar,Reprogrammer,Reagendar,Đổi lịch,กำหนดเวลาใหม่,កំណត់ពេលវេលា,Jadwalkan ulang,Menjadualkan semula,Reschedule
-确认,què rèn,Confirm,Confirmar,Confirmer,Confirmar,Xác nhận,ยืนยัน,បញ្ជាក់,Konfirmasikan,Sahkan,Kumpirmahin
-等候,děng hòu,Waiting,Esperando,En attente,Esperando,Chờ đợi,รอ,ការរង់ចាំ,Menunggu,Menunggu,Naghihintay
-排队,pái duì,Queue,Cola,File d'attente,Fila,Xếp hàng,คิว,ជួរ លេខហៅ,Antrian,Baris,Queue
-叫号,jiào hào,Call number,Número de llamada,Numéro d'appel,Número de telefone,Gọi số,หมายเลขโทรศัพท์,លេខនៃការតែងតាំង,Nomor telepon,Nombor Panggilan,Numero ng tawag
-预约号,yù yuē hào,Appointment number,Número de cita,Numéro de rendez-vous,Número da consulta,Số hẹn,หมายเลขนัดหมาย,ការរង់ចាំ,Nomor janji temu,Nombor pelantikan,Numero ng appointment
-候诊,hòu zhěn,Waiting,Esperando,En attente,Esperando,Chờ đợi,รอ,ការព្យាបាលវេជ្ជសាស្រ្ត,Menunggu,Menunggu,Naghihintay
-就诊,jiù zhěn,Medical treatment,Tratamiento médico,Traitement médical,Tratamento médico,Điều trị y tế,การรักษาทางการแพทย์,ការពិគ្រោះយោបល់ លេខអ្នកជំនាញ,Perawatan medis,Rawatan Perubatan,Medikal na paggamot
-问诊,wèn zhěn,Consultation,Consulta,Consultations,Consulta,Tư vấn,การให้คำปรึกษา,ចំនួនធម្មតា,Konsultasi,Rundingan,Konsultasyon
-专家号,zhuān jiā hào,Expert number,Número de experto,Numéro d'expert,Número do especialista,Số chuyên gia,หมายเลขผู้เชี่ยวชาญ,លេខនៃការតែងតាំង,Nomor ahli,Nombor Pakar,Expert number
-普通号,pǔ tōng hào,Ordinary number,Número ordinario,Numéro ordinaire,Número normal,Số thường,เลขธรรมดา,ធ្វើការណាត់ជួប,Bilangan biasa,Nombor biasa,Ordinaryong numero
-约号,yuē hào,Appointment number,Número de cita,Numéro de rendez-vous,Número da consulta,Số hẹn,หมายเลขนัดหมาย,បានណាត់ជួបរួចហើយ,Nomor janji temu,Nombor pelantikan,Numero ng appointment
-要预约,yào yù yuē,Make an appointment,Concierte una cita,Prendre rendez-vous,Marque uma consulta,Đặt lịch hẹn,นัดหมาย,ជួបគ្នានៅសប្តាហ៍ក្រោយ រង់ចាំនៅសប្តាហ៍ក្រោយ,Buatlah janji,Buat temujanji,Gumawa ng isang appointment
-已预约,yǐ yù yuē,Already made an appointment,Ya concerté una cita,Déjà pris rendez-vous,Já marquei consulta,Đã hẹn rồi,นัดแล้ว,ចង់កំណត់ពេលវេលា,Sudah membuat janji,Sudah membuat temujanji,Gumawa na ng isang appointment
-下周见,xià zhōu jiàn,See you next week,Nos vemos la próxima semana,A la semaine prochaine,Até semana que vem,Hẹn gặp lại bạn vào tuần sau,เจอกันใหม่สัปดาห์หน้า,អាចកំណត់ពេលវេលាឡើងវិញ,Sampai jumpa minggu depan,Jumpa anda minggu depan,Makita ka sa susunod na linggo
-等下周,děng xià zhōu,Wait for next week,Espera a la próxima semana,Attendez la semaine prochaine,Aguarde até a próxima semana,Đợi tuần sau,รอสัปดาห์หน้า,បញ្ជាក់,Tunggu minggu depan,Tunggu minggu depan,Maghintay para sa susunod na linggo
-要改期,yào gǎi qī,Want to reschedule,Quiere reprogramar,Vous souhaitez reprogrammer,Quer reagendar,Muốn dời lịch,ต้องการกำหนดเวลาใหม่,សូមបញ្ជាក់,Ingin menjadwal ulang,Mahu menjadualkan semula,Nais na mag -reschedule
-能改期,néng gǎi qī,Can reschedule,Puede reprogramar,Peut reprogrammer,Pode reagendar,Có thể dời lịch,สามารถกำหนดเวลาใหม่ได้,ការរង់ចាំ,Dapat menjadwal ulang,Boleh menjadualkan semula,Maaaring mag -reschedule
-确认下,què rèn xià,Confirm,Confirmar,Confirmer,Confirmar,Xác nhận,ยืนยัน,សូមរង់ចាំ,Konfirmasikan,Sahkan,Kumpirmahin
-请确认,qǐng què rèn,Please confirm,Por favor confirme,Veuillez confirmer,Por favor confirme,Vui lòng xác nhận,โปรดยืนยัน,តម្រង់ជួរ,Mohon konfirmasi,Sila sahkan,Mangyaring kumpirmahin
-等候中,děng hòu zhōng,Waiting,Esperando,En attente,Esperando,Chờ đợi,รอ,ចូលទៅកាន់ជួរ,Menunggu,Menunggu,Naghihintay
-请等候,qǐng děng hòu,Please wait,Por favor espera,Veuillez patienter,Aguarde,Vui lòng đợi,กรุณารอสักครู่,ចំនួននេះត្រូវបានគេហៅថា,Harap tunggu,Sila tunggu,Mangyaring maghintay
-排队中,pái duì zhōng,Queuing,Cola,File d'attente,Na fila,Đang xếp hàng,กำลังเข้าคิว,រង់ចាំលេខ,Mengantri,Beratur,Queuing
-去排队,qù pái duì,Go to the queue,Ir a la cola,Aller à la file d'attente,Vá para a fila,Vào hàng đợi,ไปที่คิว,មានលេខប្រកាសមួយ,Pergi ke antrian,Pergi ke barisan,Pumunta sa pila
-叫号了,jiào hào le,The number has been called,El número ha sido llamado,Le numéro a été appelé,O número foi chamado,Số đã được gọi,หมายเลขที่ถูกเรียก,ទទួលបានលេខណាត់ជួប,Nomor tersebut telah dipanggil,Nombor itu telah dipanggil,Ang bilang ay tinawag na
-等叫号,děng jiào hào,Waiting for the number,Esperando el número,En attente du numéro,Esperando pelo número,Đang chờ số,รอเลข,ការរង់ចាំ,Menunggu nomor,Menunggu nombor,Naghihintay para sa numero
-有预约号,yǒu yù yuē hào,There is an appointment number,Hay un número de cita,Il y a un numéro de rendez-vous,Existe um número de agendamento,Có số hẹn,มีเลขที่นัดหมาย,រង់ចាំការព្យាបាល,Ada nomor janji temu,Terdapat nombor temu janji,Mayroong isang numero ng appointment
-拿预约号,ná yù yuē hào,Get the appointment number,Obtenga el número de cita,Obtenir le numéro de rendez-vous,Obtenha o número da consulta,Lấy số hẹn,รับหมายเลขนัดหมาย,ទៅព្យាបាលការព្យាបាល,Dapatkan nomor janji temu,Dapatkan Nombor Pelantikan,Kunin ang numero ng appointment
-候诊中,hòu zhěn zhōng,Waiting,Esperando,En attente,Esperando,Chờ đợi,รอ,រៀបចំសម្រាប់ការព្យាបាល,Menunggu,Menunggu,Naghihintay
-在候诊,zài hòu zhěn,Waiting for treatment,Esperando tratamiento,En attente d'un traitement,Aguardando tratamento,Đang chờ điều trị,รอการรักษา,ដោយពិគ្រោះយោបល់,Menunggu pengobatan,Menunggu rawatan,Naghihintay para sa Paggamot
-去就诊,qù jiù zhěn,Go for treatment,Ir a tratamiento,Optez pour un traitement,Vá fazer tratamento,Đi điều trị,ไปรักษา,ចាប់ផ្តើមការពិគ្រោះយោបល់,Pergi berobat,Pergi untuk rawatan,Pumunta para sa paggamot
-准备就诊,zhǔn bèi jiù zhěn,Prepare for treatment,Prepárese para el tratamiento,Préparez-vous au traitement,Prepare-se para o tratamento,Chuẩn bị điều trị,เตรียมตัวรับการรักษา,ធ្វើការណាត់ជួបជាមួយអ្នកជំនាញ,Mempersiapkan perawatan,Sediakan untuk rawatan,Maghanda para sa paggamot
-问诊中,wèn zhěn zhōng,In consultation,En consulta,En consultation,Em consulta,Đang được tư vấn,ในการปรึกษาหารือ,ធ្វើការណាត់ជួបជាមួយអ្នកជំនាញ,Dalam konsultasi,Dalam perundingan,Sa Konsultasyon
-开始问诊,kāi shǐ wèn zhěn,Start consultation,Iniciar consulta,Commencer la consultation,Iniciar consulta,Bắt đầu tư vấn,เริ่มให้คำปรึกษา,ធ្វើការណាត់ជួបជាមួយលេខធម្មតា,Mulai konsultasi,Mula Rundingan,Simulan ang Konsultasyon
-挂专家号,guà zhuān jiā hào,Make an appointment with an expert,Pide cita con un experto,Prendre rendez-vous avec un expert,Marque uma consulta com um especialista,Đặt lịch hẹn với chuyên gia,นัดหมายกับผู้เชี่ยวชาญ,ធ្វើការណាត់ជួបជាមួយលេខធម្មតា,Buatlah janji dengan ahlinya,Buat temujanji dengan pakar,Gumawa ng isang appointment sa isang dalubhasa
-约专家号,yuē zhuān jiā hào,Make an appointment with an expert,Pide cita con un experto,Prendre rendez-vous avec un expert,Marque uma consulta com um especialista,Đặt lịch hẹn với chuyên gia,นัดหมายกับผู้เชี่ยวชาญ,ចូលទៅកាន់លេខណាត់ជួប,Buatlah janji dengan ahlinya,Buat temujanji dengan pakar,Gumawa ng isang appointment sa isang dalubhasa
-挂普通号,guà pǔ tōng hào,Make an appointment with an ordinary number,Concertar cita con un número ordinario,Prendre rendez-vous avec un numéro ordinaire,Marque uma consulta com um número normal,Đặt lịch hẹn với số thường,นัดหมายด้วยหมายเลขธรรมดา,បានធ្វើការណាត់ជួបរួចហើយ,Buat janji temu dengan nomor biasa,Buat temujanji dengan nombor biasa,Gumawa ng isang appointment sa isang ordinaryong numero
-约普通号,yuē pǔ tōng hào,Make an appointment with an ordinary number,Concertar cita con un número ordinario,Prendre rendez-vous avec un numéro ordinaire,Marque uma consulta com um número normal,Đặt lịch hẹn với số thường,นัดหมายด้วยหมายเลขธรรมดา,កំណត់ការណាត់ជួប,Buat janji temu dengan nomor biasa,Buat temujanji dengan nombor biasa,Gumawa ng isang appointment sa isang ordinaryong numero
-去约号,qù yuē hào,Go to the appointment number,Ir al número de cita,Accédez au numéro de rendez-vous,Acesse o número do agendamento,Đến số hẹn,ไปที่หมายเลขนัดหมาย,បោះបង់ការណាត់ជួប,Pergi ke nomor janji temu,Pergi ke nombor pelantikan,Pumunta sa numero ng appointment
-已约号,yǐ yuē hào,Already made an appointment,Ya concerté una cita,Déjà pris rendez-vous,Já marquei uma consulta,Đã hẹn rồi,นัดกันแล้ว,អះអាងការណាត់ជួប,Sudah membuat janji,Sudah membuat temu janji,Gumawa na ng isang appointment
+chinese,pinyin,english,spanish,french,portuguese
+预约,yù yuē,Appointment,Cita,Rendez-vous,Nomeação
+下周,xià zhōu,Next week,La próxima semana,La semaine prochaine,Semana que vem
+改期,gǎi qī,Reschedule,Reprogramar,Reprogrammer,Reagendar
+确认,què rèn,Confirm,Confirmar,Confirmer,Confirmar
+等候,děng hòu,Waiting,Esperando,En attente,Esperando
+排队,pái duì,Queue,Cola,File d'attente,Fila
+叫号,jiào hào,Call number,Número de llamada,Numéro d'appel,Número de telefone
+预约号,yù yuē hào,Appointment number,Número de cita,Numéro de rendez-vous,Número da consulta
+候诊,hòu zhěn,Waiting,Esperando,En attente,Esperando
+就诊,jiù zhěn,Medical treatment,Tratamiento médico,Traitement médical,Tratamento médico
+问诊,wèn zhěn,Consultation,Consulta,Consultations,Consulta
+专家号,zhuān jiā hào,Expert number,Número de experto,Numéro d'expert,Número do especialista
+普通号,pǔ tōng hào,Ordinary number,Número ordinario,Numéro ordinaire,Número normal
+约号,yuē hào,Appointment number,Número de cita,Numéro de rendez-vous,Número da consulta
+要预约,yào yù yuē,Make an appointment,Concierte una cita,Prendre rendez-vous,Marque uma consulta
+已预约,yǐ yù yuē,Already made an appointment,Ya concerté una cita,Déjà pris rendez-vous,Já marquei consulta
+下周见,xià zhōu jiàn,See you next week,Nos vemos la próxima semana,A la semaine prochaine,Até semana que vem
+等下周,děng xià zhōu,Wait for next week,Espera a la próxima semana,Attendez la semaine prochaine,Aguarde até a próxima semana
+要改期,yào gǎi qī,Want to reschedule,Quiere reprogramar,Vous souhaitez reprogrammer,Quer reagendar
+能改期,néng gǎi qī,Can reschedule,Puede reprogramar,Peut reprogrammer,Pode reagendar
+确认下,què rèn xià,Confirm,Confirmar,Confirmer,Confirmar
+请确认,qǐng què rèn,Please confirm,Por favor confirme,Veuillez confirmer,Por favor confirme
+等候中,děng hòu zhōng,Waiting,Esperando,En attente,Esperando
+请等候,qǐng děng hòu,Please wait,Por favor espera,Veuillez patienter,Aguarde
+排队中,pái duì zhōng,Queuing,Cola,File d'attente,Na fila
+去排队,qù pái duì,Go to the queue,Ir a la cola,Aller à la file d'attente,Vá para a fila
+叫号了,jiào hào le,The number has been called,El número ha sido llamado,Le numéro a été appelé,O número foi chamado
+等叫号,děng jiào hào,Waiting for the number,Esperando el número,En attente du numéro,Esperando pelo número
+有预约号,yǒu yù yuē hào,There is an appointment number,Hay un número de cita,Il y a un numéro de rendez-vous,Existe um número de agendamento
+拿预约号,ná yù yuē hào,Get the appointment number,Obtenga el número de cita,Obtenir le numéro de rendez-vous,Obtenha o número da consulta
+候诊中,hòu zhěn zhōng,Waiting,Esperando,En attente,Esperando
+在候诊,zài hòu zhěn,Waiting for treatment,Esperando tratamiento,En attente d'un traitement,Aguardando tratamento
+去就诊,qù jiù zhěn,Go for treatment,Ir a tratamiento,Optez pour un traitement,Vá fazer tratamento
+准备就诊,zhǔn bèi jiù zhěn,Prepare for treatment,Prepárese para el tratamiento,Préparez-vous au traitement,Prepare-se para o tratamento
+问诊中,wèn zhěn zhōng,In consultation,En consulta,En consultation,Em consulta
+开始问诊,kāi shǐ wèn zhěn,Start consultation,Iniciar consulta,Commencer la consultation,Iniciar consulta
+挂专家号,guà zhuān jiā hào,Make an appointment with an expert,Pide cita con un experto,Prendre rendez-vous avec un expert,Marque uma consulta com um especialista
+约专家号,yuē zhuān jiā hào,Make an appointment with an expert,Pide cita con un experto,Prendre rendez-vous avec un expert,Marque uma consulta com um especialista
+挂普通号,guà pǔ tōng hào,Make an appointment with an ordinary number,Concertar cita con un número ordinario,Prendre rendez-vous avec un numéro ordinaire,Marque uma consulta com um número normal
+约普通号,yuē pǔ tōng hào,Make an appointment with an ordinary number,Concertar cita con un número ordinario,Prendre rendez-vous avec un numéro ordinaire,Marque uma consulta com um número normal
+去约号,qù yuē hào,Go to the appointment number,Ir al número de cita,Accédez au numéro de rendez-vous,Acesse o número do agendamento
+已约号,yǐ yuē hào,Already made an appointment,Ya concerté una cita,Déjà pris rendez-vous,Já marquei uma consulta
