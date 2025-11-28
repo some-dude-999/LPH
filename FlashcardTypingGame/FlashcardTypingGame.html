@@ -1867,6 +1867,41 @@
       font-size: 0.4em;
       color: #8B7355;
     }
+
+    /* Debug Module Selector - only visible when DEBUG_SHOW_WORD_TYPE is true */
+    .debug-module-selector {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      color: #fff;
+      z-index: 9999;
+      display: none; /* Hidden by default, shown via JS when debug mode is on */
+    }
+
+    .debug-module-selector.visible {
+      display: block;
+    }
+
+    .debug-module-selector label {
+      display: block;
+      margin: 3px 0;
+      cursor: pointer;
+    }
+
+    .debug-module-selector input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .debug-module-selector .debug-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #E8D498;
+    }
   </style>
 </head>
 <body>
@@ -2019,40 +2054,40 @@
     }
 
     // ============================================================
-    // MODULE URLS - Configure these for the language you want to learn
+    // MODULE URL SETS - Predefined module arrays for each language
     // ============================================================
-    // IMPORTANT: ALL modules MUST have the SAME wordColumns[0] value!
-    // The game detects the target language from wordColumns[0] in __actMeta.
-    // If modules don't agree on the target language, the game won't load.
-    //
-    // Examples:
-    // - Spanish: '../SpanishWords/Jsmodules-js/act1-foundation-js.js' (wordColumns[0] = "spanish")
-    // - Chinese: '../ChineseWords/Jsmodules-js/act1-foundation-js.js' (wordColumns[0] = "chinese")
-    // - English: '../EnglishWords/Jsmodules-js/act1-foundation-js.js' (wordColumns[0] = "english")
-    // ============================================================
-    const MODULE_URLS = [
-      // CONFIGURE YOUR MODULES HERE - all must have matching wordColumns[0]
-      // Spanish modules:
-      '../SpanishWords/Jsmodules-js/act1-foundation-js.js',
-      '../SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
-      '../SpanishWords/Jsmodules-js/act3-daily-life-js.js',
-      '../SpanishWords/Jsmodules-js/act4-expanding-expression-js.js',
-      '../SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js',
-      '../SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js',
-      '../SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js'
-      // Chinese modules (uncomment to use):
-      // '../ChineseWords/Jsmodules-js/act1-foundation-js.js',
-      // '../ChineseWords/Jsmodules-js/act2-development-js.js',
-      // '../ChineseWords/Jsmodules-js/act3-expansion-js.js',
-      // '../ChineseWords/Jsmodules-js/act4-mastery-js.js',
-      // '../ChineseWords/Jsmodules-js/act5-refinement-js.js'
-      // English modules (uncomment to use):
-      // '../EnglishWords/Jsmodules-js/act1-foundation-js.js',
-      // '../EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
-      // '../EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
-      // '../EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
-      // '../EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
-    ];
+    const MODULE_SETS = {
+      spanish: [
+        '../SpanishWords/Jsmodules-js/act1-foundation-js.js',
+        '../SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
+        '../SpanishWords/Jsmodules-js/act3-daily-life-js.js',
+        '../SpanishWords/Jsmodules-js/act4-expanding-expression-js.js',
+        '../SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js',
+        '../SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js',
+        '../SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js'
+      ],
+      chinese: [
+        '../ChineseWords/Jsmodules-js/act1-foundation-js.js',
+        '../ChineseWords/Jsmodules-js/act2-development-js.js',
+        '../ChineseWords/Jsmodules-js/act3-expansion-js.js',
+        '../ChineseWords/Jsmodules-js/act4-mastery-js.js',
+        '../ChineseWords/Jsmodules-js/act5-refinement-js.js'
+      ],
+      english: [
+        '../EnglishWords/Jsmodules-js/act1-foundation-js.js',
+        '../EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
+        '../EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
+        '../EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
+        '../EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
+      ],
+      none: []
+    };
+
+    // Current module set key (for debug selector) - persisted in localStorage
+    let currentModuleSet = localStorage.getItem('debug_module_set') || 'spanish';
+
+    // Active MODULE_URLS - set from MODULE_SETS based on selection
+    let MODULE_URLS = MODULE_SETS[currentModuleSet];
 
     let wordpacks = {}; // All loaded wordpacks
     let loadedActs = {}; // Track which acts have been loaded
@@ -4192,8 +4227,15 @@
       // CRITICAL: Get SINGLE card object - front (target word) and back (translation) are ALWAYS linked
       const card = currentDeck[currentIndex];
 
-      // Display counter (deck change indicator now shown as overlay stamp on card)
-      let counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
+      // Display counter - different format for auto-advance vs manual modes
+      // Flashcard mode: manual advance, shows "Card X of Y"
+      // Other modes: auto-advance on correct answer, shows "Y Cards Left"
+      let counterText;
+      if (currentMode === 'flashcard') {
+        counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
+      } else {
+        counterText = `${currentDeck.length} Cards Left`;
+      }
 
       // ============================================================
       // DEBUG MODE: Show word type (Base Word / Example Word)
@@ -5018,6 +5060,42 @@
 
     // Initialize
     initializeApp();
+
+    // ============================================================
+    // DEBUG: Module Set Selector (only visible when DEBUG_SHOW_WORD_TYPE is true)
+    // ============================================================
+    if (DEBUG_SHOW_WORD_TYPE) {
+      const debugSelector = document.getElementById('debug-module-selector');
+      if (debugSelector) {
+        debugSelector.classList.add('visible');
+
+        // Set initial checked state
+        const currentRadio = debugSelector.querySelector(`input[value="${currentModuleSet}"]`);
+        if (currentRadio) currentRadio.checked = true;
+
+        // Handle radio button changes
+        debugSelector.querySelectorAll('input[type="radio"]').forEach(radio => {
+          radio.addEventListener('change', (e) => {
+            const newSet = e.target.value;
+            if (newSet !== currentModuleSet) {
+              // Save to localStorage so it persists across reload
+              localStorage.setItem('debug_module_set', newSet);
+              // Reload the page to reinitialize with new modules
+              location.reload();
+            }
+          });
+        });
+      }
+    }
   </script>
+
+  <!-- Debug Module Selector (only visible when DEBUG_SHOW_WORD_TYPE is true) -->
+  <div id="debug-module-selector" class="debug-module-selector">
+    <div class="debug-title">Module Set:</div>
+    <label><input type="radio" name="debug-modules" value="spanish"> Spanish</label>
+    <label><input type="radio" name="debug-modules" value="chinese"> Chinese</label>
+    <label><input type="radio" name="debug-modules" value="english"> English</label>
+    <label><input type="radio" name="debug-modules" value="none"> None</label>
+  </div>
 </body>
 </html>
