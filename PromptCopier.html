@@ -1237,9 +1237,11 @@ Run ALL 6 validation scripts to catch mechanical errors:
    → Allows: "ATM", "DNA", "WiFi" (legitimate Chinese loanwords)
 
 5. python PythonHelpers/check_punctuation.py chinese
-   → Suspicious symbols in ANY column (|, [, ], etc.) - translation errors
+   → Flags ALL symbols/punctuation in ALL columns for manual review
+   → ERROR: |, [, ], {}, <> (likely translation failures)
+   → WARNING: ?, !, . (needs review)
+   → INFO: All other punctuation (commas, quotes, accents, etc.)
    → Chinese comma placement - MUST match pinyin character-by-character
-   → Other punctuation mismatches between Chinese/pinyin
    → Catches: Chinese "是的，先生" but pinyin "shì de xiān shēng" (missing comma)
 
 6. python PythonHelpers/verify_words_integrity.py chinese
@@ -2080,9 +2082,11 @@ Run ALL 6 validation scripts to catch mechanical errors:
    → Allows: "ATM", "DNA", "WiFi" (legitimate Chinese loanwords)
 
 5. python PythonHelpers/check_punctuation.py spanish
-   → Suspicious symbols in ANY column (|, [, ], etc.) - translation errors
+   → Flags ALL symbols/punctuation in ALL columns for manual review
+   → ERROR: |, [, ], {}, <> (likely translation failures)
+   → WARNING: ?, !, . (needs review)
+   → INFO: All other punctuation (commas, quotes, accents, etc.)
    → Chinese comma placement - MUST match pinyin character-by-character
-   → Other punctuation mismatches between Chinese/pinyin
    → Catches: Chinese "是的，先生" but pinyin "shì de xiān shēng" (missing comma)
 
 6. python PythonHelpers/verify_words_integrity.py spanish
@@ -2893,9 +2897,11 @@ Run ALL 6 validation scripts to catch mechanical errors:
    → Allows: "ATM", "DNA", "WiFi" (legitimate Chinese loanwords)
 
 5. python PythonHelpers/check_punctuation.py english
-   → Suspicious symbols in ANY column (|, [, ], etc.) - translation errors
+   → Flags ALL symbols/punctuation in ALL columns for manual review
+   → ERROR: |, [, ], {}, <> (likely translation failures)
+   → WARNING: ?, !, . (needs review)
+   → INFO: All other punctuation (commas, quotes, accents, etc.)
    → Chinese comma placement - MUST match pinyin character-by-character
-   → Other punctuation mismatches between Chinese/pinyin
    → Catches: Chinese "是的，先生" but pinyin "shì de xiān shēng" (missing comma)
 
 6. python PythonHelpers/verify_words_integrity.py english
