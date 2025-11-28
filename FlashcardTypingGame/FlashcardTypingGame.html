@@ -2040,43 +2040,48 @@
     }
 
     /* Difficulty Selector - appears under title */
-    .difficulty-selector {
-      position: fixed;
-      top: 115px; /* Below title */
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.85);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-family: var(--font-ui);
-      font-size: 0.85rem;
-      color: var(--color-text-light);
+    /* Wrapper for title and difficulty - centered in header */
+    .title-difficulty-wrapper {
       display: flex;
-      gap: 15px;
+      flex-direction: column;
       align-items: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      gap: 4px;
+    }
+
+    .difficulty-selector {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Show difficulty selector when game started or menu visible */
+    body.game-started .difficulty-selector,
+    body.showing-menu .difficulty-selector {
+      opacity: 0.7;
     }
 
     .difficulty-selector label {
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 5px;
-      transition: color 0.2s ease;
+      gap: 4px;
+      color: rgba(232, 196, 82, 0.8); /* Subtle gold to match title */
+      transition: all 0.2s ease;
+      font-weight: 500;
     }
 
     .difficulty-selector label:hover {
-      color: #E8D498;
+      color: #E8C252; /* Brighter gold on hover */
+      transform: scale(1.05);
     }
 
     .difficulty-selector input[type="radio"] {
       cursor: pointer;
-    }
-
-    .difficulty-selector strong {
-      color: #E8D498;
-      font-weight: 600;
+      accent-color: #D4AF37; /* Gold accent for radio buttons */
     }
   </style>
 </head>
@@ -2104,8 +2109,15 @@
       </span>
     </div>
 
-    <!-- Title - centered, subtle -->
-    <div class="wordpack-title" id="wordpack-title">Flashcard Typing Game</div>
+    <!-- Title and Difficulty - centered together -->
+    <div class="title-difficulty-wrapper">
+      <div class="wordpack-title" id="wordpack-title">Flashcard Typing Game</div>
+      <div class="difficulty-selector" id="difficulty-selector">
+        <label><input type="radio" name="difficulty" value="easy"> Easy</label>
+        <label><input type="radio" name="difficulty" value="medium"> Medium</label>
+        <label><input type="radio" name="difficulty" value="hard" checked> Hard</label>
+      </div>
+    </div>
 
     <!-- Top Buttons -->
     <div class="header-buttons">
@@ -2135,14 +2147,6 @@
       <input type="checkbox" id="showPinyin" checked>
       Show Pinyin (pīnyīn)
     </label>
-  </div>
-
-  <!-- Difficulty Selector - controls which word types to include -->
-  <div class="difficulty-selector" id="difficulty-selector">
-    <strong>Difficulty:</strong>
-    <label><input type="radio" name="difficulty" value="easy"> Easy (Base Only)</label>
-    <label><input type="radio" name="difficulty" value="medium"> Medium (Examples Only)</label>
-    <label><input type="radio" name="difficulty" value="hard" checked> Hard (All Words)</label>
   </div>
 
   <div class="flashcard-container">
@@ -3523,7 +3527,8 @@
     function handleTypingInput(key) {
       if ((currentMode !== 'spelling' && currentMode !== 'translation') || currentDeck.length === 0) return;
 
-      const word = currentDeck[currentIndex].spanish;
+      // Use typingTarget (pinyin for Chinese, spanish for others)
+      const word = currentDeck[currentIndex].typingTarget;
       const targetChars = word.split('');
 
       // Find next unfilled position (first position not in typedPositions)
@@ -5292,7 +5297,7 @@
 
       if (currentMode === 'spelling' || currentMode === 'translation') {
         // Typing mode: Auto-fill the entire word correctly
-        const word = currentDeck[currentIndex].spanish;
+        const word = currentDeck[currentIndex].typingTarget;
         const targetChars = word.split('');
 
         // Mark all non-space positions as typed
@@ -5366,7 +5371,7 @@
         ];
 
         // Auto-complete the word (but with 3 wrong attempts)
-        const word = currentDeck[currentIndex].spanish;
+        const word = currentDeck[currentIndex].typingTarget;
         const targetChars = word.split('');
         typedPositions.clear();
         for (let i = 0; i < targetChars.length; i++) {
