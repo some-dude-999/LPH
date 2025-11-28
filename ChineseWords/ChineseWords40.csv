@@ -1,7 +1,7 @@
 chinese,pinyin,english,spanish,french,portuguese
 健康,jiàn kāng,Health,Salud,Santé,Saúde
 生病,shēng bìng,Illness,Enfermedad,Maladie,Doença
-感冒,gǎn mào,Cold,Frío,Froid,Frio
+感冒,gǎn mào,Cold,Resfriado,Rhume,Resfriado
 发烧,fā shāo,Fever,Fiebre,Fièvre,Febre
 咳嗽,ké sòu,Cough,Tos,Toux,Tosse
 头疼,tóu téng,Headache,Dolor de cabeza,Maux de tête,Dor de cabeça
@@ -18,8 +18,8 @@ chinese,pinyin,english,spanish,french,portuguese
 很健康,hěn jiàn kāng,Very healthy,Muy saludable,Très sain,Muito saudável
 生病了,shēng bìng le,Sick,Enfermo,Malade,Doente
 容易生病,róng yì shēng bìng,Easily sick,Se enferma fácilmente,Facilement malade,Facilmente doente
-感冒了,gǎn mào le,Cold,Frío,Froid,Frio
-得感冒,dé gǎn mào,Getting a cold,Resfriarse,Attraper un rhume,Ficando resfriado
+感冒了,gǎn mào le,Cold,Resfriado,Rhume,Resfriado
+得感冒,dé gǎn mào,Getting a cold,Agarrar un resfriado,Avoir un rhume,Pegar um resfriado
 发烧了,fā shāo le,Fever,Fiebre,Fièvre,Febre
 在发烧,zài fā shāo,Still having a fever,Todavía tengo fiebre,J'ai toujours de la fièvre,Ainda estou com febre
 咳嗽了,ké sòu le,Coughing,Tos,Toux,Tosse
