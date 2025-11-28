@@ -2110,119 +2110,76 @@
       }
 
       // ════════════════════════════════════════════════════════════════════════
-      // EDGE CASE SUPPORT: Parse Latin blocks (ATM, DNA, WhatsApp, etc.)
+      // CHARACTER-BY-CHARACTER MAPPING (Simplified)
+      // ════════════════════════════════════════════════════════════════════════
+      // Example: "早上好，先生" → "zǎo shàng hǎo， xiān shēng"
+      //   早 → zǎo
+      //   上 → shàng
+      //   好 → hǎo
+      //   ， → ，
+      //   先 → xiān
+      //   生 → shēng
+      //
+      // Edge cases (Latin in Chinese): "ATM机" → "ATM jī"
+      //   A → A
+      //   T → T
+      //   M → M
+      //   机 → jī
       // ════════════════════════════════════════════════════════════════════════
 
-      // Helper: Parse Chinese into Latin and Chinese sequences
-      function parseChineseSeqs(text) {
-        if (!text) return [];
-        const seqs = [];
-        let curr = '';
-        let currType = null;
+      // Split pinyin by spaces
+      const pinyinTokens = pinyinStr.trim().split(/\s+/);
+      const result = [];
+      let tokenIndex = 0;
+      let latinLetterIndex = 0; // For consuming Latin tokens letter-by-letter
 
-        for (const ch of text) {
-          let chType;
-          if (/[A-Za-z]/.test(ch)) {
-            chType = 'latin';
-          } else if (/[\u4e00-\u9fff]/.test(ch)) {
-            chType = 'chinese';
+      for (const char of chineseStr) {
+        if (tokenIndex >= pinyinTokens.length) {
+          // Ran out of pinyin tokens - mark as mismatch
+          result.push({ char, pinyin: '?' });
+          continue;
+        }
+
+        const currentToken = pinyinTokens[tokenIndex];
+        // Strip Chinese punctuation to get clean syllable/word
+        const cleanToken = currentToken.replace(/[，。！？、；：""''（）《》【】…—]/g, '');
+
+        if (/[\u4e00-\u9fff]/.test(char)) {
+          // ═══════════════════════════════════════════════════════════
+          // CHINESE CHARACTER → consume one token
+          // ═══════════════════════════════════════════════════════════
+          result.push({ char, pinyin: cleanToken || '?' });
+          tokenIndex++;
+          latinLetterIndex = 0;
+        } else if (/[A-Za-z]/.test(char)) {
+          // ═══════════════════════════════════════════════════════════
+          // LATIN LETTER → handle edge cases (ATM, DNA, WhatsApp, etc.)
+          // ═══════════════════════════════════════════════════════════
+          if (/^[A-Za-z]+$/.test(cleanToken)) {
+            // Current token is all-Latin (like "ATM", "DNA", "WhatsApp")
+            // Consume letter-by-letter: A→A, T→T, M→M
+            const letter = cleanToken[latinLetterIndex] || char;
+            result.push({ char, pinyin: letter });
+            latinLetterIndex++;
+
+            if (latinLetterIndex >= cleanToken.length) {
+              // Finished consuming this Latin token
+              tokenIndex++;
+              latinLetterIndex = 0;
+            }
           } else {
-            // Punctuation - attach to current
-            if (currType) {
-              curr += ch;
-              continue;
-            } else {
-              chType = 'other';
-            }
+            // Token is not pure Latin → just map letter to itself
+            result.push({ char, pinyin: char });
           }
-
-          if (chType !== currType && curr) {
-            if (currType === 'latin' || currType === 'chinese') {
-              seqs.push({text: curr, type: currType});
-            }
-            curr = '';
-          }
-
-          if (chType === 'latin' || chType === 'chinese') {
-            curr += ch;
-            currType = chType;
-          }
-        }
-
-        if (curr && (currType === 'latin' || currType === 'chinese')) {
-          seqs.push({text: curr, type: currType});
-        }
-
-        return seqs;
-      }
-
-      // Helper: Parse pinyin based on Chinese structure
-      function parsePinyinSeqs(pyText, chSeqs) {
-        if (!pyText) return [];
-        const tokens = pyText.trim().split(/\s+/);
-        const result = [];
-        let idx = 0;
-
-        for (const {text: chText, type: chType} of chSeqs) {
-          if (chType === 'latin') {
-            // Expect matching Latin token
-            result.push({
-              text: (idx < tokens.length) ? tokens[idx] : '',
-              type: 'latin'
-            });
-            idx++;
-          } else if (chType === 'chinese') {
-            // Expect N syllables (N = char count)
-            const charCnt = [...chText].length;
-            const syls = [];
-            for (let i = 0; i < charCnt; i++) {
-              syls.push((idx < tokens.length) ? tokens[idx] : '?');
-              idx++;
-            }
-            result.push({text: syls.join(' '), type: 'pinyin'});
-          }
-        }
-
-        return result;
-      }
-
-      // Parse both Chinese and pinyin
-      const chineseSeqs = parseChineseSeqs(chineseStr);
-      const pinyinSeqs = parsePinyinSeqs(pinyinStr, chineseSeqs);
-
-      // Build coupled array
-      const coupled = [];
-
-      for (let i = 0; i < chineseSeqs.length; i++) {
-        const chSeq = chineseSeqs[i];
-        const pySeq = pinyinSeqs[i] || {text: '', type: ''};
-
-        if (chSeq.type === 'latin') {
-          // Latin: split letter-by-letter, each letter maps to itself
-          const chLetters = [...chSeq.text];
-          const pyLetters = [...pySeq.text];
-
-          chLetters.forEach((letter, j) => {
-            coupled.push({
-              char: letter,
-              pinyin: pyLetters[j] || letter  // Map to same letter, fallback to itself
-            });
-          });
-        } else if (chSeq.type === 'chinese') {
-          // Chinese chars: couple char-by-char with pinyin syllables
-          const chars = [...chSeq.text];
-          const syls = pySeq.text.split(/\s+/);
-
-          chars.forEach((ch, j) => {
-            coupled.push({
-              char: ch,
-              pinyin: syls[j] || '?'
-            });
-          });
+        } else {
+          // ═══════════════════════════════════════════════════════════
+          // PUNCTUATION → maps to itself
+          // ═══════════════════════════════════════════════════════════
+          result.push({ char, pinyin: char });
         }
       }
 
-      return coupled;
+      return result;
     }
 
     // ============================================================
@@ -2246,130 +2203,55 @@
         return debugOutput.join('\n');
       }
 
-      // Parse Chinese sequences
-      function parseChineseSeqs(text) {
-        if (!text) return [];
-        const seqs = [];
-        let curr = '';
-        let currType = null;
-
-        for (const ch of text) {
-          let chType;
-          if (/[A-Za-z]/.test(ch)) {
-            chType = 'latin';
-          } else if (/[\u4e00-\u9fff]/.test(ch)) {
-            chType = 'chinese';
-          } else {
-            if (currType) {
-              curr += ch;
-              continue;
-            } else {
-              chType = 'other';
-            }
-          }
-
-          if (chType !== currType && curr) {
-            if (currType === 'latin' || currType === 'chinese') {
-              seqs.push({text: curr, type: currType});
-            }
-            curr = '';
-          }
-
-          if (chType === 'latin' || chType === 'chinese') {
-            curr += ch;
-            currType = chType;
-          }
-        }
-
-        if (curr && (currType === 'latin' || currType === 'chinese')) {
-          seqs.push({text: curr, type: currType});
-        }
-
-        return seqs;
-      }
-
-      // Parse pinyin based on Chinese structure
-      function parsePinyinSeqs(pyText, chSeqs) {
-        if (!pyText) return [];
-        const tokens = pyText.trim().split(/\s+/);
-        const result = [];
-        let idx = 0;
-
-        for (const {text: chText, type: chType} of chSeqs) {
-          if (chType === 'latin') {
-            result.push({
-              text: (idx < tokens.length) ? tokens[idx] : '',
-              type: 'latin'
-            });
-            idx++;
-          } else if (chType === 'chinese') {
-            const charCnt = [...chText].length;
-            const syls = [];
-            for (let i = 0; i < charCnt; i++) {
-              syls.push((idx < tokens.length) ? tokens[idx] : '?');
-              idx++;
-            }
-            result.push({text: syls.join(' '), type: 'pinyin'});
-          }
-        }
-
-        return result;
-      }
-
-      const chineseSeqs = parseChineseSeqs(chineseStr);
-      const pinyinSeqs = parsePinyinSeqs(pinyinStr, chineseSeqs);
-
-      debugOutput.push(`<b>Parsed Chinese sequences:</b>`);
-      chineseSeqs.forEach((seq, i) => {
-        debugOutput.push(`  [${i}] "${seq.text}" (${seq.type})`);
-      });
+      // Split pinyin by spaces
+      const pinyinTokens = pinyinStr.trim().split(/\s+/);
+      debugOutput.push(`<b>Pinyin tokens:</b> [${pinyinTokens.join(', ')}]`);
       debugOutput.push(``);
 
-      debugOutput.push(`<b>Parsed Pinyin sequences:</b>`);
-      pinyinSeqs.forEach((seq, i) => {
-        debugOutput.push(`  [${i}] "${seq.text}" (${seq.type})`);
-      });
-      debugOutput.push(``);
-
-      debugOutput.push(`<b>Coupling process:</b>`);
       const coupled = [];
+      let tokenIndex = 0;
+      let latinLetterIndex = 0;
 
-      for (let i = 0; i < chineseSeqs.length; i++) {
-        const chSeq = chineseSeqs[i];
-        const pySeq = pinyinSeqs[i] || {text: '', type: ''};
+      debugOutput.push(`<b>Character-by-character mapping:</b>`);
 
-        if (chSeq.type === 'latin') {
-          const chLetters = [...chSeq.text];
-          const pyLetters = [...pySeq.text];
+      for (const char of chineseStr) {
+        if (tokenIndex >= pinyinTokens.length) {
+          coupled.push({ char, pinyin: '?' });
+          debugOutput.push(`  '${char}' → '?' (ran out of tokens)`);
+          continue;
+        }
 
-          debugOutput.push(`Seq ${i}: Latin "${chSeq.text}"`);
-          debugOutput.push(`  Chinese letters: [${chLetters.join(', ')}]`);
-          debugOutput.push(`  Pinyin letters: [${pyLetters.join(', ')}]`);
+        const currentToken = pinyinTokens[tokenIndex];
+        const cleanToken = currentToken.replace(/[，。！？、；：""''（）《》【】…—]/g, '');
 
-          chLetters.forEach((letter, j) => {
-            const pinyinLetter = pyLetters[j] || letter;
-            coupled.push({
-              char: letter,
-              pinyin: pinyinLetter
-            });
-            debugOutput.push(`    ${letter} → ${pinyinLetter}`);
-          });
-        } else if (chSeq.type === 'chinese') {
-          const chars = [...chSeq.text];
-          const syls = pySeq.text.split(/\s+/);
+        if (/[\u4e00-\u9fff]/.test(char)) {
+          // Chinese character
+          coupled.push({ char, pinyin: cleanToken || '?' });
+          debugOutput.push(`  '${char}' (Chinese) → '${cleanToken}' [token ${tokenIndex}]`);
+          tokenIndex++;
+          latinLetterIndex = 0;
+        } else if (/[A-Za-z]/.test(char)) {
+          // Latin letter
+          if (/^[A-Za-z]+$/.test(cleanToken)) {
+            // Token is all-Latin
+            const letter = cleanToken[latinLetterIndex] || char;
+            coupled.push({ char, pinyin: letter });
+            debugOutput.push(`  '${char}' (Latin) → '${letter}' [token ${tokenIndex}, letter ${latinLetterIndex}]`);
+            latinLetterIndex++;
 
-          debugOutput.push(`Seq ${i}: Chinese "${chSeq.text}"`);
-          debugOutput.push(`  Characters: [${chars.join(', ')}]`);
-          debugOutput.push(`  Syllables: [${syls.join(', ')}]`);
-
-          chars.forEach((ch, j) => {
-            const syllable = syls[j] || '?';
-            coupled.push({
-              char: ch,
-              pinyin: syllable
-            });
-            debugOutput.push(`    ${ch} → ${syllable}`);
-          });
+            if (latinLetterIndex >= cleanToken.length) {
+              tokenIndex++;
+              latinLetterIndex = 0;
+            }
+          } else {
+            // Not a Latin token
+            coupled.push({ char, pinyin: char });
+            debugOutput.push(`  '${char}' (Latin) → '${char}' (passthrough)`);
+          }
+        } else {
+          // Punctuation
+          coupled.push({ char, pinyin: char });
+          debugOutput.push(`  '${char}' (Punctuation) → '${char}'`);
         }
       }
 
