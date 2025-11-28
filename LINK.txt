@@ -8,10 +8,7 @@
 https://some-dude-999.github.io/LPH/CsvViewerForManuallyBuildingCSV.html - CSV parser, viewer, and downloader tool with auto-increment filename feature
 https://some-dude-999.github.io/LPH/DecoderTest-NoModules.html - Test version with invalid module paths to show UI when modules fail to load
 https://some-dude-999.github.io/LPH/DecoderTest.html - Test utility for verifying obfuscated JavaScript module decoding
-https://some-dude-999.github.io/LPH/FlashcardTypingGame/ChineseFlashcardTypingGame.html - Chinese vocabulary flashcard typing game with reading, listening, speaking, and writing modes
-https://some-dude-999.github.io/LPH/FlashcardTypingGame/EnglishFlashcardTypingGame.html - English vocabulary flashcard typing game with reading, listening, speaking, and writing modes
 https://some-dude-999.github.io/LPH/FlashcardTypingGame/FlashcardTypingGame.html - Unified flashcard typing game (auto-detects language from modules: Spanish/Chinese/English)
-https://some-dude-999.github.io/LPH/FlashcardTypingGame/SpanishFlashcardTypingGame.html - Spanish vocabulary flashcard typing game with Chinese+pinyin coupled translations
 https://some-dude-999.github.io/LPH/FlashcardTypingGame/SpanishFlashcardTypingGameMISSINGPACKTEST.html - [Add description for SpanishFlashcardTypingGameMISSINGPACKTEST.html]
 https://some-dude-999.github.io/LPH/PromptCopier.html - Prompt template tool for generating vocabulary content
 https://some-dude-999.github.io/LPH/SpanishWords/SpanishWordsViewer.html - Interactive Spanish vocabulary pack viewer with analytics, word count validation, and act progression tracking
