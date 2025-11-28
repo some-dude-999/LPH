@@ -1376,8 +1376,7 @@
       // STEP 4: Setup UI event listeners
       // ════════════════════════════════════════════════════════════════════════
       setupLanguageRadioButtons();
-      setupModeCheckboxes();  // ENCAPSULATED: Single function for all mode checkboxes
-      setupChineseDisplayOptions();  // Chinese character + pinyin toggle handlers
+      setupModeCheckboxes();  // ENCAPSULATED: Radio buttons for view modes
       populateActDropdown();
       populateNativeLanguageDropdown();
 
@@ -1589,41 +1588,48 @@
       Answer: 1 (this function)
     */
     function setupModeCheckboxes() {
-      // Configuration array: [checkboxId, stateKey, statesToClear, onChangeCallback]
-      // The onChangeCallback is optional - used for modes that need extra logic
-      const checkboxConfig = [
-        { id: 'multipleChoiceMode', stateKey: 'multipleChoiceMode', statesToClear: [] },
-        { id: 'typingMode', stateKey: 'typingMode', statesToClear: ['typingStates'] },
-        { id: 'pronunciationMode', stateKey: 'pronunciationMode', statesToClear: ['pronunciationStates'] },
-        { id: 'flashcardMode', stateKey: 'flashcardMode', statesToClear: [], onChangeCallback: handleFlashcardModeChange }
-      ];
+      // Mode radio buttons - only one mode can be active at a time
+      const modeRadios = document.querySelectorAll('input[name="viewMode"]');
 
-      checkboxConfig.forEach(({ id, stateKey, statesToClear, onChangeCallback }) => {
-        const checkbox = document.getElementById(id);
-        if (!checkbox) return;
+      modeRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          if (!e.target.checked) return; // Only process when selected
 
-        checkbox.addEventListener('change', (e) => {
-          // Update the state flag
-          state[stateKey] = e.target.checked;
+          const mode = e.target.value;
 
-          // Clear associated states if specified
-          statesToClear.forEach(stateMapKey => {
-            if (state[stateMapKey] && typeof state[stateMapKey].clear === 'function') {
-              state[stateMapKey].clear();
-            }
-          });
+          // Reset all mode states
+          state.multipleChoiceMode = false;
+          state.typingMode = false;
+          state.pronunciationMode = false;
+          state.flashcardMode = false;
 
-          // Call optional callback for modes that need extra logic
-          if (onChangeCallback) {
-            onChangeCallback(e.target.checked);
+          // Clear mode-specific states
+          if (state.typingStates) state.typingStates.clear();
+          if (state.pronunciationStates) state.pronunciationStates.clear();
+
+          // Set the selected mode
+          switch (mode) {
+            case 'multipleChoice':
+              state.multipleChoiceMode = true;
+              break;
+            case 'typing':
+              state.typingMode = true;
+              break;
+            case 'pronunciation':
+              state.pronunciationMode = true;
+              break;
+            case 'flashcard':
+              state.flashcardMode = true;
+              handleFlashcardModeChange(true);
+              break;
+            case 'table':
+            default:
+              // Table mode = all modes false (default)
+              break;
           }
 
-          // Refresh table with new mode
+          // Refresh display with new mode
           displayVocabulary();
-
-          // ════════════════════════════════════════════════════════════════════════
-          // SAVE STATE: Persist mode toggle to localStorage
-          // ════════════════════════════════════════════════════════════════════════
           saveState();
         });
       });
@@ -2376,36 +2382,8 @@
       CALLED FROM: initialize()
     */
     function setupChineseDisplayOptions() {
-      const charsCheckbox = document.getElementById('showChineseChars');
-      const pinyinCheckbox = document.getElementById('showPinyin');
-
-      if (charsCheckbox) {
-        charsCheckbox.addEventListener('change', (e) => {
-          state.showChineseChars = e.target.checked;
-          displayVocabulary();  // Refresh all displays
-
-          // Also refresh flashcard if visible
-          if (state.flashcardMode) {
-            updateFlashcardDisplay();
-          }
-
-          saveState();  // Persist preference
-        });
-      }
-
-      if (pinyinCheckbox) {
-        pinyinCheckbox.addEventListener('change', (e) => {
-          state.showPinyin = e.target.checked;
-          displayVocabulary();  // Refresh all displays
-
-          // Also refresh flashcard if visible
-          if (state.flashcardMode) {
-            updateFlashcardDisplay();
-          }
-
-          saveState();  // Persist preference
-        });
-      }
+      // Chinese characters and pinyin are always shown together (no toggle UI)
+      // Function kept for compatibility but does nothing
     }
 
     /*
@@ -2422,42 +2400,8 @@
       - initialize() on page load
     */
     function updateChineseOptionsVisibility() {
-      const optionsDiv = document.getElementById('chineseDisplayOptions');
-      if (!optionsDiv) return;
-
-      // Determine if Chinese is involved
-      let showOptions = false;
-
-      // Case 1: Learning Chinese
-      if (state.currentLanguage === 'Chinese') {
-        showOptions = true;
-      }
-
-      // Case 2: Native language is Chinese (translation column shows Chinese)
-      // Check if the selected native language index corresponds to Chinese
-      // For Spanish: column 2 is Chinese, column 3 is Pinyin
-      // For English: columns vary
-      const config = LANGUAGE_CONFIG[state.currentLanguage];
-      if (config && config.nativeLanguages) {
-        const nativeEntries = Object.entries(config.nativeLanguages);
-        for (const [name, colIndex] of nativeEntries) {
-          if (colIndex === state.currentNativeLanguage) {
-            // Check if this native language is Chinese-related
-            if (name.toLowerCase().includes('chinese') || name.toLowerCase().includes('pinyin')) {
-              showOptions = true;
-            }
-            break;
-          }
-        }
-      }
-
-      optionsDiv.style.display = showOptions ? 'block' : 'none';
-
-      // Also update edge case filter visibility (same condition)
-      const edgeFilterDiv = document.getElementById('edgeCaseFilterContainer');
-      if (edgeFilterDiv) {
-        edgeFilterDiv.style.display = showOptions ? 'block' : 'none';
-      }
+      // Chinese characters and pinyin are always shown together (no UI needed)
+      // Function kept for compatibility but does nothing
     }
 
     // ============================================================
