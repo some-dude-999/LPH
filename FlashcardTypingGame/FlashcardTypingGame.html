@@ -1791,35 +1791,6 @@
        Design: Yellow/gold warning-style box to draw attention
        Shows only when native language is Chinese
        ================================================================= */
-    .chinese-display-options {
-      display: none;  /* Hidden by default, shown via JS when nativeLanguage is chinese */
-      margin: 10px 0;
-      padding: 10px 15px;
-      background: rgba(255, 243, 205, 0.9);
-      border: 1px solid #ffc107;
-      border-radius: 5px;
-      color: var(--color-text-dark);
-      font-family: var(--font-ui);
-      font-size: 0.9rem;
-    }
-
-    .chinese-display-options strong {
-      color: var(--color-text-dark);
-      margin-right: 10px;
-    }
-
-    .chinese-display-options label {
-      margin-left: 15px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .chinese-display-options input[type="checkbox"] {
-      cursor: pointer;
-    }
-
     /* =================================================================
        CHINESE CHARACTER + PINYIN COUPLED DISPLAY
        Core Objective: Render each Chinese character with its pinyin directly below
@@ -2130,23 +2101,6 @@
   <!-- Fixed-height wrapper prevents card from shifting when stamp indicator appears -->
   <div class="card-counter-wrapper">
     <div class="card-counter" id="card-counter">Choose Wordpack to Begin Studying</div>
-  </div>
-
-  <!-- =================================================================
-       CHINESE DISPLAY OPTIONS
-       Shows only when nativeLanguage is 'chinese'
-       Controls whether to show characters, pinyin, or both
-       ================================================================= -->
-  <div class="chinese-display-options" id="chineseDisplayOptions">
-    <strong>Chinese Display:</strong>
-    <label>
-      <input type="checkbox" id="showChineseChars" checked>
-      Show Characters (汉字)
-    </label>
-    <label>
-      <input type="checkbox" id="showPinyin" checked>
-      Show Pinyin (pīnyīn)
-    </label>
   </div>
 
   <div class="flashcard-container">
@@ -2524,19 +2478,11 @@
 
     /**
      * Renders a coupled Chinese array as an HTML element with char on top, pinyin below
-     * Respects showChineseChars and showPinyin global settings
+     * Always shows both characters and pinyin (inseparable pair)
      * @param {Array<{char: string, pinyin: string}>} coupledArray - From coupleChineseWithPinyin()
      * @returns {HTMLElement} - Span element with flex-column groups for each character
      */
     function renderChineseWithPinyin(coupledArray) {
-      // If neither chars nor pinyin should be shown, return empty span
-      if (!showChineseChars && !showPinyin) {
-        const empty = document.createElement('span');
-        empty.textContent = '(hidden)';
-        empty.style.cssText = 'color: #999; font-style: italic;';
-        return empty;
-      }
-
       const container = document.createElement('span');
       container.className = 'chinese-coupled';
 
@@ -2545,20 +2491,16 @@
         charGroup.className = 'char-group';
 
         // Chinese character (on top)
-        if (showChineseChars) {
-          const charSpan = document.createElement('span');
-          charSpan.className = 'chinese-char';
-          charSpan.textContent = char;
-          charGroup.appendChild(charSpan);
-        }
+        const charSpan = document.createElement('span');
+        charSpan.className = 'chinese-char';
+        charSpan.textContent = char;
+        charGroup.appendChild(charSpan);
 
-        // Pinyin (below)
-        if (showPinyin) {
-          const pinyinSpan = document.createElement('span');
-          pinyinSpan.className = 'pinyin';
-          pinyinSpan.textContent = pinyin;
-          charGroup.appendChild(pinyinSpan);
-        }
+        // Pinyin (below) - always shown with characters
+        const pinyinSpan = document.createElement('span');
+        pinyinSpan.className = 'pinyin';
+        pinyinSpan.textContent = pinyin;
+        charGroup.appendChild(pinyinSpan);
 
         container.appendChild(charGroup);
       });
@@ -2588,41 +2530,7 @@
       return element.outerHTML;
     }
 
-    /**
-     * Updates visibility of Chinese display options based on current language
-     * Called when language changes or on page load
-     */
-    function updateChineseOptionsVisibility() {
-      const optionsDiv = document.getElementById('chineseDisplayOptions');
-      if (optionsDiv) {
-        // Show only when learning with Chinese translations
-        optionsDiv.style.display = (nativeLanguage === 'chinese') ? 'block' : 'none';
-      }
-    }
-
-    /**
-     * Sets up event listeners for Chinese display option checkboxes
-     */
-    function setupChineseDisplayOptions() {
-      const showCharsCheckbox = document.getElementById('showChineseChars');
-      const showPinyinCheckbox = document.getElementById('showPinyin');
-
-      if (showCharsCheckbox) {
-        showCharsCheckbox.addEventListener('change', () => {
-          showChineseChars = showCharsCheckbox.checked;
-          saveState();
-          updateDisplay();
-        });
-      }
-
-      if (showPinyinCheckbox) {
-        showPinyinCheckbox.addEventListener('change', () => {
-          showPinyin = showPinyinCheckbox.checked;
-          saveState();
-          updateDisplay();
-        });
-      }
-    }
+    // Chinese characters and pinyin are always shown together (no toggle UI needed)
 
     let nativeLanguage = 'english'; // Default, will be updated from loaded module metadata
     let gameStarted = false;
@@ -2659,8 +2567,7 @@
     // Controls how Chinese translations are rendered (character + pinyin coupling)
     // These settings affect ALL Chinese text display across the app
     // ===================================================================================
-    let showChineseChars = true;  // Show Chinese characters (汉字) - default ON
-    let showPinyin = true;        // Show pinyin under each character - default ON
+    // Chinese characters and pinyin are always shown together (inseparable pair)
 
     // ===================================================================================
     // LOCAL STORAGE - Save and restore user progress
@@ -2675,10 +2582,7 @@
           speed: currentSpeed,
           wordpackKey: currentWordpackKey,
           act: currentAct,
-          language: nativeLanguage,
-          // Chinese display options
-          showChineseChars: showChineseChars,
-          showPinyin: showPinyin
+          language: nativeLanguage
         };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       } catch (e) {
@@ -3293,8 +3197,6 @@
             playButtonClickSound();
             nativeLanguage = e.target.value;
             updateBackLabel();
-            // Update Chinese display options visibility
-            updateChineseOptionsVisibility();
             // Reinitialize deck to include/exclude pinyin based on new language
             if (currentWordpackKey) {
               initializeDeck(currentWordpackKey);
@@ -3909,9 +3811,6 @@
       // Initialize tooltips from single source of truth
       initializeTooltips();
 
-      // Setup Chinese display options checkboxes
-      setupChineseDisplayOptions();
-
       try {
         // First act is 1 (MODULE_URLS is 0-indexed, act numbers are 1-indexed)
         if (MODULE_URLS.length > 0) {
@@ -3956,9 +3855,6 @@
 
         // Restore any saved state (may change currentAct and currentWordpackKey)
         restoreSavedState();
-
-        // Update Chinese display options visibility based on restored language
-        updateChineseOptionsVisibility();
 
         // If saved act is different from the first act we loaded, load it
         if (currentAct !== firstAct) {
@@ -4045,19 +3941,7 @@
         savedVoiceURI = savedState.voiceURI;
       }
 
-      // Restore Chinese display options (default to true if not saved)
-      if (savedState.showChineseChars !== undefined) {
-        showChineseChars = savedState.showChineseChars;
-      }
-      if (savedState.showPinyin !== undefined) {
-        showPinyin = savedState.showPinyin;
-      }
-
-      // Update checkbox states in UI
-      const showCharsCheckbox = document.getElementById('showChineseChars');
-      const showPinyinCheckbox = document.getElementById('showPinyin');
-      if (showCharsCheckbox) showCharsCheckbox.checked = showChineseChars;
-      if (showPinyinCheckbox) showPinyinCheckbox.checked = showPinyin;
+      // Chinese characters and pinyin are always shown together (no user toggle)
     }
 
     function updateBackLabel() {

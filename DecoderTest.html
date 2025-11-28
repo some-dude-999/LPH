@@ -581,50 +581,6 @@
 
   <!--
     ============================================================
-    CHINESE DISPLAY OPTIONS - Global Controls (Show Char / Show Pinyin)
-    ============================================================
-    These checkboxes control how Chinese text is displayed EVERYWHERE:
-    - In the vocabulary table (column 0 when learning Chinese, or Chinese translation column)
-    - In flashcard front (when target language is Chinese)
-    - In multiple choice options (both correct and wrong answers when Chinese)
-    - In any context where Chinese needs to be displayed
-
-    WHY THIS MATTERS:
-    Chinese learners need to see BOTH characters AND pinyin together,
-    with pinyin positioned directly under each character. This allows
-    the brain to associate each character with its pronunciation.
-
-    ANTI-DECOUPLING APPLIED TO CHARACTERS:
-    Just as flashcard front/back must be stored together, each Chinese
-    character must be COUPLED with its pinyin syllable. We never store
-    characters and pinyin in separate arrays - they're paired at the
-    character level using the coupleChineseWithPinyin() function.
-
-    VISIBILITY LOGIC:
-    - This options panel is ONLY visible when Chinese is involved:
-      * Learning Chinese (state.currentLanguage === 'Chinese')
-      * OR native language includes Chinese/Pinyin translation
-    - Controlled by updateChineseOptionsVisibility() function
-
-    DEFAULT: Both checked (show characters AND pinyin)
-  -->
-  <div id="chineseDisplayOptions" style="display: none; margin: 10px 0; padding: 10px; background: #fff3cd; border: 1px solid #ffc107; border-radius: 5px;">
-    <strong>Chinese Display Options:</strong>
-    <label style="margin-left: 15px;">
-      <input type="checkbox" id="showChineseChars" checked>
-      Show Characters (汉字)
-    </label>
-    <label style="margin-left: 15px;">
-      <input type="checkbox" id="showPinyin" checked>
-      Show Pinyin (pīnyīn)
-    </label>
-    <span style="margin-left: 15px; color: #856404; font-size: 0.9em;">
-      (Affects all Chinese text: table, flashcards, multiple choice)
-    </span>
-  </div>
-
-  <!--
-    ============================================================
     EDGE CASES & MISMATCHES FILTER - Combined Filter
     ============================================================
     When enabled, filters the vocabulary table to show words with:
