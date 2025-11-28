@@ -30,12 +30,20 @@ ACT_INFO = {
     }
 }
 
-# Roman numerals for act numbers
-ROMAN = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII'}
+# Color coding for each act (background colors)
+ACT_COLORS = {
+    1: '#e3f2fd',  # Light blue
+    2: '#e8f5e9',  # Light green
+    3: '#fff9c4',  # Light yellow
+    4: '#ffe0b2',  # Light orange
+    5: '#f8bbd0',  # Light pink
+    6: '#e1bee7',  # Light purple (Spanish only)
+    7: '#d1c4e9'   # Light lavender (Spanish only)
+}
 
 # Shared prompt template (same for all acts, just variables change)
 PROMPT_TEMPLATE = """╔══════════════════════════════════════════════════════════════════╗
-║  🎯 {lang_upper} ACT {roman}: {act_name} - Packs {start}-{end} ({count} packs)  ║
+║  🎯 {lang_upper} ACT {act_display}: {act_name} - Packs {start}-{end} ({count} packs)  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 GOAL: Ensure the MOST COMMON, NATURAL translation consistent with the
@@ -151,7 +159,7 @@ Expected: 0 errors
 === STEP 5: COMMIT ===
 
 git add {lang_cap}Words/{lang_cap}Words{{1..{end}}}.csv {lang_cap}Words/{lang_cap}FixTableAct{act_num}.csv
-git commit -m "Act {roman} ({act_name}): Review and fix translations for packs {start}-{end}"
+git commit -m "Act {act_display} ({act_name}): Review and fix translations for packs {start}-{end}"
 git push -u origin <branch>
 
 === SUCCESS CHECKLIST ===
@@ -179,17 +187,18 @@ def generate_language_section(language):
 """
 
     for act_num, act_info in sorted(acts.items()):
-        roman = ROMAN[act_num]
         name = act_info['name']
         start = act_info['start']
         end = act_info['end']
         count = act_info['count']
+        act_display = f"{act_num}/{total_acts}"
+        bg_color = ACT_COLORS[act_num]
 
         prompt = PROMPT_TEMPLATE.format(
             language=language,
             lang_cap=lang_cap,
             lang_upper=lang_upper,
-            roman=roman,
+            act_display=act_display,
             act_num=act_num,
             act_name=name,
             start=start,
@@ -197,9 +206,9 @@ def generate_language_section(language):
             count=count
         )
 
-        html += f"""<h4>Act {roman}: {name} (Packs {start}-{end}, {count} packs)</h4>
+        html += f"""<h4>Act {act_display}: {name} (Packs {start}-{end}, {count} packs)</h4>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3" data-lang="{language}" data-act="{act_num}">{prompt}</div>
+<div onclick="copyPrompt(this)" data-stage="3" data-lang="{language}" data-act="{act_num}" style="background-color: {bg_color}; padding: 15px; border-radius: 5px; border: 2px solid #ddd;">{prompt}</div>
 
 """
 
