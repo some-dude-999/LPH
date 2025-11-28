@@ -1902,6 +1902,97 @@
       margin-bottom: 5px;
       color: #E8D498;
     }
+
+    /* Debug Vocabulary Table - only visible when DEBUG_SHOW_WORD_TYPE is true */
+    .debug-vocab-table {
+      position: fixed;
+      top: 80px;
+      right: 10px;
+      max-width: 500px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 12px;
+      border-radius: 6px;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      color: #fff;
+      z-index: 9998;
+      display: none; /* Hidden by default, shown via JS when debug mode is on */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .debug-vocab-table.visible {
+      display: block;
+    }
+
+    .debug-vocab-table .debug-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #E8D498;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(232, 212, 152, 0.3);
+      padding-bottom: 5px;
+    }
+
+    .debug-vocab-table table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.7rem;
+    }
+
+    .debug-vocab-table th {
+      background: rgba(232, 212, 152, 0.2);
+      color: #E8D498;
+      padding: 6px 8px;
+      text-align: left;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(232, 212, 152, 0.3);
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.95);
+    }
+
+    .debug-vocab-table td {
+      padding: 5px 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ddd;
+    }
+
+    .debug-vocab-table tr:hover {
+      background: rgba(232, 212, 152, 0.1);
+    }
+
+    /* Word type styling in debug table */
+    .debug-vocab-table .word-type-base {
+      color: #60a5fa;
+      font-weight: bold;
+    }
+
+    .debug-vocab-table .word-type-example {
+      color: #34d399;
+      font-weight: normal;
+    }
+
+    /* Chinese text rendering in debug table */
+    .debug-vocab-table .chinese-coupled {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 2px;
+    }
+
+    .debug-vocab-table .chinese-coupled .chinese-char {
+      font-family: var(--font-chinese);
+      font-weight: 700;
+      font-size: 1em;
+    }
+
+    .debug-vocab-table .chinese-coupled .pinyin {
+      font-size: 0.7em;
+      color: #aaa;
+      font-family: var(--font-answer);
+    }
   </style>
 </head>
 <body>
@@ -3993,7 +4084,8 @@
           targetWord: word[0],            // Front of card (target language word)
           spanish: word[0],               // BACKWARDS COMPAT: Alias for non-Chinese modes
           translation: word[nativeIndex], // Back of card (translation)
-          type: wordObj.type              // Word type for debugging (Base Word / Example Word)
+          type: wordObj.type,             // Word type for debugging (Base Word / Example Word)
+          rawWord: word                   // Store full word array for debug table access
         };
 
         // ============================================================
@@ -4030,6 +4122,11 @@
       currentDeck = [...originalDeck]; // Copy without shuffling
       currentIndex = 0;
       updateDisplay();
+
+      // Update debug table with new deck data (if debug mode is enabled)
+      if (typeof updateDebugTable === 'function') {
+        updateDebugTable();
+      }
     }
 
     // Restart current wordpack
@@ -4044,6 +4141,11 @@
         }
         updateDisplay();
         saveState();
+
+        // Update debug table to show full deck again
+        if (typeof updateDebugTable === 'function') {
+          updateDebugTable();
+        }
       }
     }
 
@@ -4455,6 +4557,11 @@
         currentDeck = [];
         updateDisplay();
         saveState();
+
+        // Update debug table
+        if (typeof updateDebugTable === 'function') {
+          updateDebugTable();
+        }
         return;
       }
 
@@ -4481,6 +4588,11 @@
         // Show next card
         updateDisplay();
         saveState();
+
+        // Update debug table to reflect removed card
+        if (typeof updateDebugTable === 'function') {
+          updateDebugTable();
+        }
       });
     }
 
@@ -5062,9 +5174,104 @@
     initializeApp();
 
     // ============================================================
+    // DEBUG: Update Vocabulary Table (only when DEBUG_SHOW_WORD_TYPE is true)
+    // ============================================================
+    function updateDebugTable() {
+      if (!DEBUG_SHOW_WORD_TYPE) return;
+
+      const debugTableBody = document.getElementById('debug-vocab-tbody');
+      const debugTableHeader = document.getElementById('debug-table-header-row');
+      if (!debugTableBody || !debugTableHeader) return;
+
+      // Update table headers based on current languages
+      const targetLang = getTargetLanguage() || 'target';
+      const nativeLang = nativeLanguage || 'native';
+      debugTableHeader.innerHTML = `
+        <th>I am learning (${targetLang})</th>
+        <th>I speak (${nativeLang})</th>
+        <th>Word Type</th>
+      `;
+
+      // Clear existing rows
+      debugTableBody.innerHTML = '';
+
+      // If no deck, show empty message
+      if (!currentDeck || currentDeck.length === 0) {
+        debugTableBody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #aaa;">No deck loaded</td></tr>';
+        return;
+      }
+
+      // Get translation column config
+      const translations = getTranslationsConfig();
+      const wordColumns = getWordColumns();
+      if (!translations || !wordColumns) return;
+
+      const nativeConfig = translations[nativeLanguage];
+      if (!nativeConfig) return;
+
+      const nativeColIndex = nativeConfig.index;
+      const targetColIndex = 0; // Always column 0
+
+      // Check if native language is Chinese (needs pinyin)
+      const nativeIsChinese = nativeLanguage === 'chinese';
+      let nativePinyinColIndex = null;
+      if (nativeIsChinese) {
+        // Find pinyin column (should be right after chinese column)
+        const pinyinIndex = wordColumns.indexOf('pinyin');
+        if (pinyinIndex !== -1) {
+          nativePinyinColIndex = pinyinIndex;
+        }
+      }
+
+      // Populate rows from currentDeck
+      currentDeck.forEach((card, index) => {
+        const row = document.createElement('tr');
+
+        // Column 1: Target language (what they're learning)
+        const targetCell = document.createElement('td');
+        targetCell.textContent = card.spanish || '';
+        row.appendChild(targetCell);
+
+        // Column 2: Native language (what they speak)
+        const nativeCell = document.createElement('td');
+        if (nativeIsChinese && nativePinyinColIndex !== null && card.rawWord) {
+          // Render Chinese with pinyin
+          const chineseText = card.rawWord[nativeColIndex] || '';
+          const pinyinText = card.rawWord[nativePinyinColIndex] || '';
+          if (chineseText) {
+            const coupled = coupleChineseWithPinyin(chineseText, pinyinText);
+            const coupledDiv = renderChineseWithPinyin(coupled);
+            nativeCell.appendChild(coupledDiv);
+          }
+        } else {
+          nativeCell.textContent = card.translation || '';
+        }
+        row.appendChild(nativeCell);
+
+        // Column 3: Word Type
+        const typeCell = document.createElement('td');
+        if (card.type) {
+          typeCell.textContent = card.type;
+          typeCell.className = card.type === 'Base Word' ? 'word-type-base' : 'word-type-example';
+        } else {
+          typeCell.textContent = '—';
+        }
+        row.appendChild(typeCell);
+
+        debugTableBody.appendChild(row);
+      });
+    }
+
+    // ============================================================
     // DEBUG: Module Set Selector (only visible when DEBUG_SHOW_WORD_TYPE is true)
     // ============================================================
     if (DEBUG_SHOW_WORD_TYPE) {
+      // Show debug vocabulary table
+      const debugVocabTable = document.getElementById('debug-vocab-table');
+      if (debugVocabTable) {
+        debugVocabTable.classList.add('visible');
+      }
+
       const debugSelector = document.getElementById('debug-module-selector');
       if (debugSelector) {
         debugSelector.classList.add('visible');
@@ -5096,6 +5303,25 @@
     <label><input type="radio" name="debug-modules" value="chinese"> Chinese</label>
     <label><input type="radio" name="debug-modules" value="english"> English</label>
     <label><input type="radio" name="debug-modules" value="none"> None</label>
+  </div>
+
+  <!-- Debug Vocabulary Table (only visible when DEBUG_SHOW_WORD_TYPE is true) -->
+  <div id="debug-vocab-table" class="debug-vocab-table">
+    <div class="debug-title">Current Deck Vocabulary</div>
+    <table>
+      <thead>
+        <tr id="debug-table-header-row">
+          <th>I am learning</th>
+          <th>I speak</th>
+          <th>Word Type</th>
+        </tr>
+      </thead>
+      <tbody id="debug-vocab-tbody">
+        <tr>
+          <td colspan="3" style="text-align: center; color: #aaa;">No deck loaded</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </body>
 </html>
