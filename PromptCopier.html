@@ -1105,7 +1105,7 @@ Create your own branch, commit, and PR to main.</div>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)" data-stage="3a" data-lang="chinese">TASK: COMPREHENSIVE REVIEW + FIXING OF ALL 107 CHINESE BREAKOUT CSVs (WITH SCORECARD)
 
-Python validation (5 scripts) + Manual review (ALL packs) + Create scorecard + Apply surgical fixes
+Python validation (trim + 6 scripts) + Manual review (ALL packs) + Create scorecard + Apply surgical fixes
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
@@ -1204,9 +1204,16 @@ Python validation (5 scripts) + Manual review (ALL packs) + Create scorecard + A
 ║  Not just "acceptable" - BEST CHOICE for this theme.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: PYTHON VALIDATION (5 SCRIPTS - MECHANICAL ERROR DETECTION) ===
+=== STEP 0A: TRIM SPACES (ALWAYS RUN FIRST!) ===
 
-Run ALL 5 validation scripts to catch mechanical errors:
+python PythonHelpers/trim_csv_spaces.py chinese
+   → Removes leading/trailing spaces from ALL cells
+   → Turns "some text   " into "some text"
+   → Run this BEFORE all other validation!
+
+=== STEP 0B: PYTHON VALIDATION (6 SCRIPTS - MECHANICAL ERROR DETECTION) ===
+
+Run ALL 6 validation scripts to catch mechanical errors:
 
 1. python PythonHelpers/validate_pinyin.py chinese
    → Character-by-character pinyin mapping
@@ -1229,7 +1236,15 @@ Run ALL 5 validation scripts to catch mechanical errors:
    → Catches: "la", "los", "el" (Spanish articles - NOT loanwords)
    → Allows: "ATM", "DNA", "WiFi" (legitimate Chinese loanwords)
 
-5. python PythonHelpers/verify_words_integrity.py chinese
+5. python PythonHelpers/check_punctuation.py chinese
+   → Flags ALL symbols/punctuation in ALL columns for manual review
+   → ERROR: |, [, ], {}, <> (likely translation failures)
+   → WARNING: ?, !, . (needs review)
+   → INFO: All other punctuation (commas, quotes, accents, etc.)
+   → Chinese comma placement - MUST match pinyin character-by-character
+   → Catches: Chinese "是的，先生" but pinyin "shì de xiān shēng" (missing comma)
+
+6. python PythonHelpers/verify_words_integrity.py chinese
    → Overview ↔ Breakout CSV sync
    → Row count mismatches
    → Accidentally added/deleted rows
@@ -1601,7 +1616,7 @@ UPDATE THE CSV. COMMIT. PR TO MAIN.</div>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)" data-stage="3b" data-lang="chinese">TASK: TARGETED FIXING OF CHINESE BREAKOUT CSVs (NO SCORECARD - JUST FIX)
 
-Python validation (5 scripts) + Targeted manual review + Apply surgical fixes (NO comprehensive scorecard)
+Python validation (trim + 6 scripts) + Targeted manual review + Apply surgical fixes (NO comprehensive scorecard)
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
@@ -1914,7 +1929,7 @@ git push -u origin <branch-name>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)" data-stage="3a" data-lang="spanish">TASK: COMPREHENSIVE REVIEW + FIXING OF ALL 250 SPANISH BREAKOUT CSVs (WITH SCORECARD)
 
-Python validation (5 scripts) + Manual review (ALL packs) + Create scorecard + Apply surgical fixes
+Python validation (trim + 6 scripts) + Manual review (ALL packs) + Create scorecard + Apply surgical fixes
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
@@ -2034,16 +2049,53 @@ python PythonHelpers/clear_translation_scores.py spanish
 This clears ALL scores in SpanishWordsTranslationErrors.csv, ensuring a fresh evaluation.
 You will fill in every Score and Issues cell from scratch.
 
-=== STEP 2: RUN VALIDATION SCRIPTS ===
-python PythonHelpers/verify_words_integrity.py spanish
-python PythonHelpers/validate_pinyin.py spanish
-python PythonHelpers/check_translation_quality.py spanish
+=== STEP 0A: TRIM SPACES (ALWAYS RUN FIRST!) ===
 
-This last script checks for:
-- Translations containing [ or ] (bad/failed translations - MUST BE FIXED)
-- Empty translation cells (gaps that need manual translation)
+python PythonHelpers/trim_csv_spaces.py spanish
+   → Removes leading/trailing spaces from ALL cells
+   → Turns "some text   " into "some text"
+   → Run this BEFORE all other validation!
 
-Note all errors found. These will need manual fixes in Stage 3B.
+=== STEP 0B: PYTHON VALIDATION (6 SCRIPTS - MECHANICAL ERROR DETECTION) ===
+
+Run ALL 6 validation scripts to catch mechanical errors:
+
+1. python PythonHelpers/validate_pinyin.py spanish
+   → Character-by-character pinyin mapping
+   → Prevents "?" appearing in DecoderTest.html
+   → Catches: nǐhǎo (wrong) vs nǐ hǎo (correct)
+   → Catches: hǎo ， (wrong) vs hǎo， (correct - punctuation attached)
+   → Catches: ATM jī (wrong) vs A T M jī (correct - letter-by-letter)
+
+2. python PythonHelpers/check_translation_quality.py spanish
+   → Brackets [  ] in cells (failed auto-translation)
+   → Empty translation cells
+
+3. python PythonHelpers/check_language_mismatch.py spanish
+   → Spanish text in Chinese column
+   → Chinese characters in Spanish column
+   → Wrong Unicode script in wrong column
+
+4. python PythonHelpers/check_latin_in_chinese.py spanish
+   → Illegitimate Latin in Chinese column
+   → Catches: "la", "los", "el" (Spanish articles - NOT loanwords)
+   → Allows: "ATM", "DNA", "WiFi" (legitimate Chinese loanwords)
+
+5. python PythonHelpers/check_punctuation.py spanish
+   → Flags ALL symbols/punctuation in ALL columns for manual review
+   → ERROR: |, [, ], {}, <> (likely translation failures)
+   → WARNING: ?, !, . (needs review)
+   → INFO: All other punctuation (commas, quotes, accents, etc.)
+   → Chinese comma placement - MUST match pinyin character-by-character
+   → Catches: Chinese "是的，先生" but pinyin "shì de xiān shēng" (missing comma)
+
+6. python PythonHelpers/verify_words_integrity.py spanish
+   → Overview ↔ Breakout CSV sync
+   → Row count mismatches
+   → Accidentally added/deleted rows
+
+⚠️ Python scripts flag mechanical errors. Note all flagged packs.
+⚠️ BUT: Zero Python errors ≠ Zero issues! Manual review still required!
 
 === STEP 3: MANUALLY READ AND FIX EVERY PACK ===
 
@@ -2386,7 +2438,7 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)" data-stage="3b" data-lang="spanish">TASK: TARGETED FIXING OF SPANISH BREAKOUT CSVs (NO SCORECARD - JUST FIX)
 
-Python validation (5 scripts) + Targeted manual review + Apply surgical fixes (NO comprehensive scorecard)
+Python validation (trim + 6 scripts) + Targeted manual review + Apply surgical fixes (NO comprehensive scorecard)
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
@@ -2692,7 +2744,7 @@ git push -u origin <branch-name>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)" data-stage="3a" data-lang="english">TASK: COMPREHENSIVE REVIEW + FIXING OF ALL 160 ENGLISH BREAKOUT CSVs (WITH SCORECARD)
 
-Python validation (5 scripts) + Manual review (ALL packs) + Create scorecard + Apply surgical fixes
+Python validation (trim + 6 scripts) + Manual review (ALL packs) + Create scorecard + Apply surgical fixes
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
@@ -2812,16 +2864,53 @@ python PythonHelpers/clear_translation_scores.py english
 This clears ALL scores in EnglishWordsTranslationErrors.csv, ensuring a fresh evaluation.
 You will fill in every Score and Issues cell from scratch.
 
-=== STEP 2: RUN VALIDATION SCRIPTS ===
-python PythonHelpers/verify_words_integrity.py english
-python PythonHelpers/validate_pinyin.py english
-python PythonHelpers/check_translation_quality.py english
+=== STEP 0A: TRIM SPACES (ALWAYS RUN FIRST!) ===
 
-This last script checks for:
-- Translations containing [ or ] (bad/failed translations - MUST BE FIXED)
-- Empty translation cells (gaps that need manual translation)
+python PythonHelpers/trim_csv_spaces.py english
+   → Removes leading/trailing spaces from ALL cells
+   → Turns "some text   " into "some text"
+   → Run this BEFORE all other validation!
 
-Note all errors found. These will need manual fixes in Stage 3B.
+=== STEP 0B: PYTHON VALIDATION (6 SCRIPTS - MECHANICAL ERROR DETECTION) ===
+
+Run ALL 6 validation scripts to catch mechanical errors:
+
+1. python PythonHelpers/validate_pinyin.py english
+   → Character-by-character pinyin mapping
+   → Prevents "?" appearing in DecoderTest.html
+   → Catches: nǐhǎo (wrong) vs nǐ hǎo (correct)
+   → Catches: hǎo ， (wrong) vs hǎo， (correct - punctuation attached)
+   → Catches: ATM jī (wrong) vs A T M jī (correct - letter-by-letter)
+
+2. python PythonHelpers/check_translation_quality.py english
+   → Brackets [  ] in cells (failed auto-translation)
+   → Empty translation cells
+
+3. python PythonHelpers/check_language_mismatch.py english
+   → Spanish text in Chinese column
+   → Chinese characters in Spanish column
+   → Wrong Unicode script in wrong column
+
+4. python PythonHelpers/check_latin_in_chinese.py english
+   → Illegitimate Latin in Chinese column
+   → Catches: "la", "los", "el" (Spanish articles - NOT loanwords)
+   → Allows: "ATM", "DNA", "WiFi" (legitimate Chinese loanwords)
+
+5. python PythonHelpers/check_punctuation.py english
+   → Flags ALL symbols/punctuation in ALL columns for manual review
+   → ERROR: |, [, ], {}, <> (likely translation failures)
+   → WARNING: ?, !, . (needs review)
+   → INFO: All other punctuation (commas, quotes, accents, etc.)
+   → Chinese comma placement - MUST match pinyin character-by-character
+   → Catches: Chinese "是的，先生" but pinyin "shì de xiān shēng" (missing comma)
+
+6. python PythonHelpers/verify_words_integrity.py english
+   → Overview ↔ Breakout CSV sync
+   → Row count mismatches
+   → Accidentally added/deleted rows
+
+⚠️ Python scripts flag mechanical errors. Note all flagged packs.
+⚠️ BUT: Zero Python errors ≠ Zero issues! Manual review still required!
 
 === STEP 3: MANUALLY READ AND FIX EVERY PACK ===
 
@@ -3203,7 +3292,7 @@ DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 <div>Click to copy</div>
 <div onclick="copyPrompt(this)" data-stage="3b" data-lang="english">TASK: TARGETED FIXING OF ENGLISH BREAKOUT CSVs (NO SCORECARD - JUST FIX)
 
-Python validation (5 scripts) + Targeted manual review + Apply surgical fixes (NO comprehensive scorecard)
+Python validation (trim + 6 scripts) + Targeted manual review + Apply surgical fixes (NO comprehensive scorecard)
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
