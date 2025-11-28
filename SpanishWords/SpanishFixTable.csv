@@ -1,13 +1,22 @@
-Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,5,34,chinese,他们也是,她们也是,ellas (feminine they) needs feminine Chinese 她们 not masculine 他们
-spanish,9,2,chinese,他,el,Spanish article 'el' should stay as 'el' in Chinese (like rows 3-4) not translate to 他 (he)
-spanish,13,8,pinyin,jiě jiě,jiě mèi,Chinese 姐妹 (sisters) needs pinyin 'jiě mèi' not 'jiě jiě' (older sister)
-spanish,26,4,pinyin,Txù,T xù,Latin letter T needs space before pinyin syllable: 'T xù'
-spanish,26,21,pinyin,wú xiù Txù,wú xiù T xù,Latin letter T needs space before pinyin syllable: 'wú xiù T xù'
-spanish,26,22,pinyin,yī jiàn xīn Txù,yī jiàn xīn T xù,Latin letter T needs space before pinyin syllable: 'yī jiàn xīn T xù'
-spanish,73,9,pinyin,yí qì,yuè qì,乐器 (musical instrument) needs pinyin 'yuè qì' not 'yí qì' (scientific instrument 仪器)
-spanish,73,15,pinyin,cí pán,chàng piàn,唱片 (record/album) needs pinyin 'chàng piàn' not 'cí pán' (magnetic disk 磁盘)
-spanish,73,35,pinyin,yí qì,yuè qì,乐器 (musical instrument) needs pinyin 'yuè qì' not 'yí qì' (scientific instrument 仪器)
-spanish,73,36,pinyin,yí qì,yuè qì,乐器 (musical instrument) needs pinyin 'yuè qì' not 'yí qì' (scientific instrument 仪器)
-spanish,73,47,pinyin,cí pán,chàng piàn,唱片 (record/album) needs pinyin 'chàng piàn' not 'cí pán' (magnetic disk 磁盘)
-spanish,73,48,pinyin,cí pán,chàng piàn,唱片 (record/album) needs pinyin 'chàng piàn' not 'cí pán' (magnetic disk 磁盘)
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,9,The & A Articles (el la un una),2,english,the,the (masculine),Clarify article gender for learners
+spanish,9,The & A Articles (el la un una),2,chinese,el,定冠词,Spanish article 'el' needs Chinese translation (definite article marker)
+spanish,9,The & A Articles (el la un una),2,pinyin,el,dìng guān cí,Pinyin for Chinese translation of definite article
+spanish,9,The & A Articles (el la un una),2,portuguese,ele,o,Portuguese article should be 'o' not pronoun 'ele'
+spanish,9,The & A Articles (el la un una),3,english,the,the (feminine),Clarify article gender for learners
+spanish,9,The & A Articles (el la un una),3,chinese,la,定冠词,Spanish article 'la' needs Chinese translation (definite article marker)
+spanish,9,The & A Articles (el la un una),3,pinyin,la,dìng guān cí,Pinyin for Chinese translation of definite article
+spanish,9,The & A Articles (el la un una),4,english,the,the (plural masculine),Clarify article number/gender for learners
+spanish,9,The & A Articles (el la un una),4,chinese,los,这些,Spanish article 'los' needs Chinese translation (these - plural)
+spanish,9,The & A Articles (el la un una),4,pinyin,los,zhè xiē,Pinyin for Chinese translation (these)
+spanish,9,The & A Articles (el la un una),5,english,the,the (plural feminine),Clarify article number/gender for learners
+spanish,9,The & A Articles (el la un una),5,chinese,这,这些,Incomplete translation - should be plural form
+spanish,9,The & A Articles (el la un una),5,pinyin,zhè,zhè xiē,Update pinyin to match plural form
+spanish,9,The & A Articles (el la un una),5,portuguese,o,as,Portuguese article should be 'as' (plural feminine) not 'o'
+spanish,182,Telecommunications,4,pinyin,WhatsApp,W h a t s A p p,Latin letters must be mapped letter-by-letter in pinyin
+spanish,182,Telecommunications,26,pinyin,tōng guò WhatsApp,tōng guò W h a t s A p p,Latin letters 'WhatsApp' must be mapped letter-by-letter
+spanish,182,Telecommunications,27,chinese,在 WhatsApp上,在WhatsApp上,Remove space before Latin text (should be attached to following char)
+spanish,182,Telecommunications,27,pinyin,zài WhatsApp shàng,zài W h a t s A p p shàng,Latin letters 'WhatsApp' must be mapped letter-by-letter
+spanish,233,Cryptocurrency Terms,19,pinyin,NFT,N F T,Latin letters must be mapped letter-by-letter in pinyin
+spanish,233,Cryptocurrency Terms,54,pinyin,NFT,N F T,Latin letters must be mapped letter-by-letter in pinyin
+spanish,233,Cryptocurrency Terms,55,pinyin,yí gè NFT,yí gè N F T,Latin letters 'NFT' must be mapped letter-by-letter
