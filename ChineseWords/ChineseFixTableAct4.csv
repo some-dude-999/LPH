@@ -1,1 +1,31 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,54,Opinions & Views,13,english,Argumentation,Reasoning,Too formal/academic - reasoning is more natural
+chinese,54,Opinions & Views,18,english,Appraisal,Assessment,Appraisal is too formal/technical - assessment is more everyday
+chinese,54,Opinions & Views,18,spanish,Tasación,Evaluación,Tasación is technical property appraisal - evaluación is more general
+chinese,56,Expressing Needs,33,english,Must go,Have requirements,有要求 means have requirements/demands not must go - wrong translation
+chinese,56,Expressing Needs,33,spanish,Debes ir,Tener requisitos,Should match Chinese meaning have requirements not must go
+chinese,56,Expressing Needs,33,french,Il faut y aller,Avoir des exigences,Should be have requirements not must go
+chinese,56,Expressing Needs,33,portuguese,Preciso ir,Ter requisitos,Should be have requirements not must go
+chinese,59,Describing Situations,9,english,Occurrence,Happening,Occurrence is formal - happening is more natural
+chinese,60,Talking About Problems,8,english,Crux,Core issue,Crux is formal/literary - core issue is more everyday
+chinese,60,Talking About Problems,8,spanish,Quid,Meollo,Quid is overly formal/Latin - meollo is more natural
+chinese,60,Talking About Problems,8,french,Point crucial,Nœud du problème,Nœud du problème is more idiomatic for the core issue
+chinese,60,Talking About Problems,8,portuguese,Cerne,Cerne do problema,Add context - cerne do problema is clearer
+chinese,61,Money & Payments,10,spanish,Cambiar,Cambio,零钱 means small change/coins (noun) not to change (verb)
+chinese,61,Money & Payments,10,french,Changer,Monnaie,Should be monnaie (coins/change) not changer (to change)
+chinese,61,Money & Payments,10,portuguese,Alterar,Troco,Should be troco (change/coins) not alterar (to modify)
+chinese,61,Money & Payments,10,english,Change,Small change,Clarify it's coins/small bills for better distinction from row 11
+chinese,61,Money & Payments,11,spanish,Cambiar,Dar cambio,找钱 means give change back not to change - need verb phrase
+chinese,61,Money & Payments,11,french,Changer,Rendre la monnaie,Should be rendre la monnaie (give change back) not changer
+chinese,61,Money & Payments,11,portuguese,Alterar,Dar troco,Should be dar troco (give change back) not alterar
+chinese,62,At the Restaurant,2,french,Menus,Menu,Should be singular Menu not plural Menus
+chinese,63,At the Hotel,2,spanish,Hoteles,Hotel,Should be singular Hotel not plural Hoteles
+chinese,63,At the Hotel,2,portuguese,Hotéis,Hotel,Should be singular Hotel not plural Hotéis
+chinese,67,Weather Conversations,18,english,Sultry,Hot and humid,Sultry is literary/formal - hot and humid is more everyday
+chinese,67,Weather Conversations,18,spanish,Sensual,Sofocante,MAJOR ERROR - Sensual means sexy not hot/humid! Should be sofocante
+chinese,67,Weather Conversations,18,french,Sensuelle,Étouffant,MAJOR ERROR - Sensuelle means sexy not hot/humid! False cognate
+chinese,67,Weather Conversations,18,portuguese,Sensual,Abafado,MAJOR ERROR - Sensual means sexy not hot/humid! Should be abafado
+chinese,67,Weather Conversations,52,english,Very sultry,Very hot and humid,Same as row 18 - sultry is too literary
+chinese,67,Weather Conversations,52,spanish,muy sensual,Muy sofocante,Same error as row 18 - wrong meaning (sexy vs hot/humid)
+chinese,67,Weather Conversations,52,french,Très sensuel,Très étouffant,Same error as row 18 - false cognate
+chinese,67,Weather Conversations,52,portuguese,Muito sensual,Muito abafado,Same error as row 18 - wrong meaning
