@@ -1868,7 +1868,7 @@
       color: #8B7355;
     }
 
-    /* Debug Module Selector - only visible when DEBUG_SHOW_WORD_TYPE is true */
+    /* Debug Module Selector - only visible when DEBUG_MODE is true */
     .debug-module-selector {
       position: fixed;
       bottom: 10px;
@@ -1903,7 +1903,7 @@
       color: #E8D498;
     }
 
-    /* Debug Vocabulary Table - only visible when DEBUG_SHOW_WORD_TYPE is true */
+    /* Debug Vocabulary Table - only visible when DEBUG_MODE is true */
     .debug-vocab-table {
       position: fixed;
       top: 80px;
@@ -2282,9 +2282,9 @@
     const VALID_SPEEDS = [0.3, 0.6, 0.9]; // Valid speed options (must match data-speed values in HTML)
 
     // ============================================================
-    // DEBUG MODE: Show word type (Base Word / Example Word)
+    // DEBUG MODE: Toggle debug features (word type, vocab table, module selector)
     // ============================================================
-    const DEBUG_SHOW_WORD_TYPE = true; // Set to true to display word type on cards
+    let DEBUG_MODE = localStorage.getItem('debug_mode') !== 'false'; // Default: true (persists across sessions)
 
     // Helper to get valid languages from loaded metadata (for validation)
     function getValidLanguages() {
@@ -4342,7 +4342,7 @@
       // ============================================================
       // DEBUG MODE: Show word type (Base Word / Example Word)
       // ============================================================
-      if (DEBUG_SHOW_WORD_TYPE && card.type) {
+      if (DEBUG_MODE && card.type) {
         const typeColor = card.type === "Base Word" ? "#2563eb" : "#059669";
         const typeWeight = card.type === "Base Word" ? "bold" : "normal";
         counterText += ` | <span style="color: ${typeColor}; font-weight: ${typeWeight};">${card.type}</span>`;
@@ -5174,10 +5174,10 @@
     initializeApp();
 
     // ============================================================
-    // DEBUG: Update Vocabulary Table (only when DEBUG_SHOW_WORD_TYPE is true)
+    // DEBUG: Update Vocabulary Table (only when DEBUG_MODE is true)
     // ============================================================
     function updateDebugTable() {
-      if (!DEBUG_SHOW_WORD_TYPE) return;
+      if (!DEBUG_MODE) return;
 
       const debugTableBody = document.getElementById('debug-vocab-tbody');
       const debugTableHeader = document.getElementById('debug-table-header-row');
@@ -5263,49 +5263,82 @@
     }
 
     // ============================================================
-    // DEBUG: Module Set Selector (only visible when DEBUG_SHOW_WORD_TYPE is true)
+    // DEBUG: Module Selector and Debug Mode Toggle
     // ============================================================
-    if (DEBUG_SHOW_WORD_TYPE) {
-      // Show debug vocabulary table
-      const debugVocabTable = document.getElementById('debug-vocab-table');
-      if (debugVocabTable) {
-        debugVocabTable.classList.add('visible');
-      }
+    const debugSelector = document.getElementById('debug-module-selector');
+    if (debugSelector) {
+      // Set initial state of debug mode toggle
+      const debugModeRadios = debugSelector.querySelectorAll('input[name="debug-mode"]');
+      debugModeRadios.forEach(radio => {
+        if ((DEBUG_MODE && radio.value === 'on') || (!DEBUG_MODE && radio.value === 'off')) {
+          radio.checked = true;
+        }
+      });
 
-      const debugSelector = document.getElementById('debug-module-selector');
-      if (debugSelector) {
-        debugSelector.classList.add('visible');
+      // Set initial state of module selector
+      const currentRadio = debugSelector.querySelector(`input[name="debug-modules"][value="${currentModuleSet}"]`);
+      if (currentRadio) currentRadio.checked = true;
 
-        // Set initial checked state
-        const currentRadio = debugSelector.querySelector(`input[value="${currentModuleSet}"]`);
-        if (currentRadio) currentRadio.checked = true;
+      // Handle debug mode on/off toggle
+      debugModeRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          const newDebugMode = e.target.value === 'on';
+          DEBUG_MODE = newDebugMode;
 
-        // Handle radio button changes
-        debugSelector.querySelectorAll('input[type="radio"]').forEach(radio => {
-          radio.addEventListener('change', (e) => {
-            const newSet = e.target.value;
-            if (newSet !== currentModuleSet) {
-              // Save to localStorage so it persists across reload
-              localStorage.setItem('debug_module_set', newSet);
-              // Reload the page to reinitialize with new modules
-              location.reload();
+          // Save to localStorage
+          localStorage.setItem('debug_mode', newDebugMode.toString());
+
+          // Toggle visibility of debug features
+          const debugVocabTable = document.getElementById('debug-vocab-table');
+          if (debugVocabTable) {
+            if (DEBUG_MODE) {
+              debugVocabTable.classList.add('visible');
+              updateDebugTable(); // Update table when turning debug on
+            } else {
+              debugVocabTable.classList.remove('visible');
             }
-          });
+          }
+
+          // Update card counter to show/hide word type
+          updateDisplay();
         });
-      }
+      });
+
+      // Handle module set changes
+      debugSelector.querySelectorAll('input[name="debug-modules"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          const newSet = e.target.value;
+          if (newSet !== currentModuleSet) {
+            // Save to localStorage so it persists across reload
+            localStorage.setItem('debug_module_set', newSet);
+            // Reload the page to reinitialize with new modules
+            location.reload();
+          }
+        });
+      });
+    }
+
+    // Show/hide debug features based on initial DEBUG_MODE state
+    const debugVocabTable = document.getElementById('debug-vocab-table');
+    if (debugVocabTable && DEBUG_MODE) {
+      debugVocabTable.classList.add('visible');
     }
   </script>
 
-  <!-- Debug Module Selector (only visible when DEBUG_SHOW_WORD_TYPE is true) -->
-  <div id="debug-module-selector" class="debug-module-selector">
-    <div class="debug-title">Module Set:</div>
+  <!-- Debug Module Selector (always visible, controls debug mode) -->
+  <div id="debug-module-selector" class="debug-module-selector visible">
+    <div class="debug-title">Debug Mode:</div>
+    <label><input type="radio" name="debug-mode" value="on"> On</label>
+    <label><input type="radio" name="debug-mode" value="off"> Off</label>
+
+    <div class="debug-title" style="margin-top: 10px;">Module Set:</div>
     <label><input type="radio" name="debug-modules" value="spanish"> Spanish</label>
     <label><input type="radio" name="debug-modules" value="chinese"> Chinese</label>
     <label><input type="radio" name="debug-modules" value="english"> English</label>
     <label><input type="radio" name="debug-modules" value="none"> None</label>
   </div>
 
-  <!-- Debug Vocabulary Table (only visible when DEBUG_SHOW_WORD_TYPE is true) -->
+  <!-- Debug Vocabulary Table (only visible when DEBUG_MODE is true) -->
   <div id="debug-vocab-table" class="debug-vocab-table">
     <div class="debug-title">Current Deck Vocabulary</div>
     <table>
