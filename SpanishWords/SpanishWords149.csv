@@ -1,7 +1,7 @@
 spanish,english,chinese,pinyin,portuguese
 ejército,army,军队,jūn duì,exército
 soldado,soldier,士兵,shì bīng,soldado
-oficial,official,官方,guān fāng,oficial
+oficial,officer,官方,guān fāng,oficial
 general,general,一般,yì bān,geral
 capitán,captain,队长,duì zhǎng,capitão
 capitana,captain,队长,duì zhǎng,capitão
@@ -10,8 +10,8 @@ fusil,rifle,步枪,bù qiāng,espingarda
 pistola,gun,枪,qiāng,arma
 bomba,bomb,炸弹,zhà dàn,bomba
 tanque,tank,坦克,tǎn kè,tanque
-luchar,fight,战斗,zhàn dòu,lutar
-marina,marine,海洋,hǎi yáng,marinho
+luchar,to fight,战斗,zhàn dòu,lutar
+marina,navy,海洋,hǎi yáng,marinho
 infantería,infantry,步兵,bù bīng,infantaria
 artillería,artillery,火炮,huǒ pào,artilharia
 coronel,colonel,上校,shàng xiào,coronel

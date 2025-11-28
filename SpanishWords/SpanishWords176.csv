@@ -8,9 +8,9 @@ luz,light,光,guāng,luz
 sombra,shadow,影子,yǐng zi,sombra
 contraste,contrast,对比,duì bǐ,contraste
 color,color,颜色,yán sè,cor
-capturar,capture,捕获,bǔ huò,capturar
-procesar,process,进程,jìn chéng,processo
-editar,edit,编辑,biān jí,editar
+capturar,to capture,捕获,bǔ huò,capturar
+procesar,to process,进程,jìn chéng,processo
+editar,to edit,编辑,biān jí,editar
 obturador,shutter,快门,kuài mén,obturador
 diafragma,diaphragm,隔膜,gé mó,diafragma
 zoom,zoom,缩放,suō fàng,ampliar
@@ -24,7 +24,7 @@ la imagen,the image,图像,tú xiàng,a imagem
 una imagen,an image,图像,tú xiàng,uma imagem
 el flash,the flash,闪光灯,shǎn guāng dēng,o flash
 con flash,with flash,带闪光灯,dài shǎn guāng dēng,com flash
-el enfoque,the approach,方法,fāng fǎ,a abordagem
+el enfoque,the focus,方法,fāng fǎ,a abordagem
 buen enfoque,good approach,好方法,hǎo fāng fǎ,boa abordagem
 la luz,the light,光,guāng,a luz
 con luz,with light,带灯,dài dēng,com luz
@@ -34,9 +34,9 @@ el contraste,the contrast,对比,duì bǐ,o contraste
 con contraste,with contrast,对比,duì bǐ,com contraste
 el color,the color,颜色,yán sè,a cor
 a color,in color,颜色,yán sè,em cores
-hay que capturar,must be captured,必须捕获,bì xū bǔ huò,deve ser capturado
+hay que capturar,you have to capture,必须捕获,bì xū bǔ huò,deve ser capturado
 voy a capturar,I will capture,我会捕捉,wǒ huì bǔ zhuō,Eu vou capturar
-hay que procesar,must be processed,必须处理,bì xū chǔ lǐ,deve ser processado
+hay que procesar,you have to process,必须处理,bì xū chǔ lǐ,deve ser processado
 voy a procesar,I will process,我会处理,wǒ huì chǔ lǐ,Vou processar
 hay que editar,need to edit,需要编辑,xū yào biān jí,preciso editar
 voy a editar,I'm going to edit,我要编辑,wǒ yào biān jí,Vou editar

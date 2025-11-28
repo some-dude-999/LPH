@@ -1,1 +1,186 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,141,Accepting (aceptar),4,english,accept,he/she accepts,Missing subject on 3rd person singular verb
+spanish,141,Accepting (aceptar),7,english,accept,they accept,Missing subject on 3rd person plural verb
+spanish,141,Accepting (aceptar),8,english,accept,to accept,Missing 'to' on infinitive
+spanish,141,Accepting (aceptar),17,english,accepts it,he/she accepts it,Missing subject on 3rd person verb
+spanish,142,Rejecting (rechazar),2,english,rejection,I reject,Wrong form - should be verb not noun
+spanish,142,Rejecting (rechazar),4,english,rejects,he/she rejects,Missing subject on 3rd person singular verb
+spanish,142,Rejecting (rechazar),7,english,reject,they reject,Missing subject on 3rd person plural verb
+spanish,142,Rejecting (rechazar),8,english,reject,to reject,Missing 'to' on infinitive
+spanish,142,Rejecting (rechazar),16,english,rejects it,he/she rejects it,Missing subject on 3rd person verb
+spanish,143,Space & Universe,8,english,ship,spacecraft,Context: space - should be spacecraft not generic ship
+spanish,143,Space & Universe,12,english,explore,to explore,Missing 'to' on infinitive
+spanish,143,Space & Universe,33,english,the ship,the spacecraft,Context: space - should be spacecraft
+spanish,143,Space & Universe,34,english,a ship,a spacecraft,Context: space - should be spacecraft
+spanish,144,Offering (ofrecer),4,english,offers,he/she offers,Missing subject on 3rd person singular verb
+spanish,144,Offering (ofrecer),7,english,offer,they offer,Missing subject on 3rd person plural verb
+spanish,144,Offering (ofrecer),8,english,offer,to offer,Missing 'to' on infinitive
+spanish,144,Offering (ofrecer),10,english,propose,to propose,Missing 'to' on infinitive
+spanish,144,Offering (ofrecer),28,english,must be proposed,you have to propose,Wrong passive voice on hay que phrase
+spanish,145,Promising (prometer),4,english,promises,he/she promises,Missing subject on 3rd person singular verb
+spanish,145,Promising (prometer),7,english,promise,they promise,Missing subject on 3rd person plural verb
+spanish,145,Promising (prometer),8,english,promise,to promise,Missing 'to' on infinitive
+spanish,145,Promising (prometer),11,english,swear,to swear,Missing 'to' on infinitive
+spanish,145,Promising (prometer),17,english,promises us,he/she promises us,Missing subject on 3rd person verb
+spanish,146,Chemistry Terms,3,english,chemical,chemist,Context: chemistry - químico as noun means chemist
+spanish,146,Chemistry Terms,10,chinese,基地,碱,Wrong Chinese - chemistry base is 碱 not 基地
+spanish,146,Chemistry Terms,10,pinyin,jī dì,jiǎn,Wrong pinyin for chemistry base
+spanish,146,Chemistry Terms,37,chinese,基地,碱,Wrong Chinese - chemistry base is 碱 not 基地
+spanish,146,Chemistry Terms,37,pinyin,jī dì,jiǎn,Wrong pinyin for chemistry base
+spanish,146,Chemistry Terms,38,chinese,一个基地,一个碱,Wrong Chinese - chemistry base is 碱 not 基地
+spanish,146,Chemistry Terms,38,pinyin,yí gè jī dì,yí gè jiǎn,Wrong pinyin for chemistry base
+spanish,146,Chemistry Terms,43,english,must be dissolved,you have to dissolve,Wrong passive voice on hay que phrase
+spanish,147,Moving (mover),4,english,moves,he/she moves,Missing subject on 3rd person singular verb
+spanish,147,Moving (mover),7,english,move,they move,Missing subject on 3rd person plural verb
+spanish,147,Moving (mover),8,english,move,to move,Missing 'to' on infinitive
+spanish,147,Moving (mover),11,english,transfer,to move,More natural translation of trasladar
+spanish,147,Moving (mover),17,english,moves it,he/she moves it,Missing subject on 3rd person verb
+spanish,147,Moving (mover),30,english,must be transferred,you have to move,Wrong passive voice on hay que phrase
+spanish,148,Stopping (detener),4,english,stops,he/she stops,Missing subject on 3rd person singular verb
+spanish,148,Stopping (detener),7,english,stop,they stop,Missing subject on 3rd person plural verb
+spanish,148,Stopping (detener),8,english,stop,to stop,Missing 'to' on infinitive
+spanish,148,Stopping (detener),10,english,brake,to brake,Missing 'to' on infinitive
+spanish,148,Stopping (detener),11,english,interrupt,to interrupt,Missing 'to' on infinitive
+spanish,148,Stopping (detener),17,english,stops it,he/she stops it,Missing subject on 3rd person verb
+spanish,148,Stopping (detener),23,english,they stop him,they stop it,Wrong pronoun - lo means it not him
+spanish,148,Stopping (detener),27,english,one stop,a stop,Wrong article - una means a not one
+spanish,149,Military Terms,4,english,official,officer,Context: military - oficial means officer not official
+spanish,149,Military Terms,13,english,fight,to fight,Missing 'to' on infinitive
+spanish,149,Military Terms,14,english,marine,navy,Context: marina means navy not marine (soldier)
+spanish,150,Continuing (continuar),4,english,continue,he/she continues,Missing subject on 3rd person singular verb
+spanish,150,Continuing (continuar),6,english,continue,you continue,Missing subject on vosotros form
+spanish,150,Continuing (continuar),7,english,continue,they continue,Missing subject on 3rd person plural verb
+spanish,150,Continuing (continuar),8,english,continue,to continue,Missing 'to' on infinitive
+spanish,150,Continuing (continuar),9,english,continued,continuation,Wrong form - should be noun not past participle
+spanish,150,Continuing (continuar),10,english,continue,to continue,Missing 'to' on infinitive
+spanish,150,Continuing (continuar),11,english,persist,to persist,Missing 'to' on infinitive
+spanish,150,Continuing (continuar),17,english,continues it,he/she continues it,Missing subject on 3rd person verb
+spanish,151,Finishing (terminar),4,english,ends,he/she finishes,Missing subject on 3rd person singular verb
+spanish,151,Finishing (terminar),7,english,end,they finish,Missing subject on 3rd person plural verb
+spanish,151,Finishing (terminar),8,english,finish,to finish,Missing 'to' on infinitive
+spanish,151,Finishing (terminar),10,english,finish,to finish,Missing 'to' on infinitive
+spanish,151,Finishing (terminar),17,english,finishes it,he/she finishes it,Missing subject on 3rd person verb
+spanish,152,Literature & Books,12,english,publish,to publish,Missing 'to' on infinitive
+spanish,152,Literature & Books,19,english,gender,genre,Context: literature - should be literary genre not biological gender
+spanish,152,Literature & Books,41,english,must be published,you have to publish,Wrong passive voice on hay que phrase
+spanish,153,Developing (desarrollar),4,english,develops,he/she develops,Missing subject on 3rd person singular verb
+spanish,153,Developing (desarrollar),7,english,develop,they develop,Missing subject on 3rd person plural verb
+spanish,153,Developing (desarrollar),8,english,develop,to develop,Missing 'to' on infinitive
+spanish,153,Developing (desarrollar),17,english,develops it,he/she develops it,Missing subject on 3rd person verb
+spanish,154,Producing (producir),4,english,produces,he/she produces,Missing subject on 3rd person singular verb
+spanish,154,Producing (producir),7,english,produce,they produce,Missing subject on 3rd person plural verb
+spanish,154,Producing (producir),9,english,manufacture,to manufacture,Missing 'to' on infinitive
+spanish,154,Producing (producir),15,english,produces it,he/she produces it,Missing subject on 3rd person verb
+spanish,154,Producing (producir),24,english,must be manufactured,you have to manufacture,Wrong passive voice on hay que phrase
+spanish,156,Directing (dirigir),4,english,directs,he/she directs,Missing subject on 3rd person singular verb
+spanish,156,Directing (dirigir),7,english,direct,they direct,Missing subject on 3rd person plural verb
+spanish,156,Directing (dirigir),8,english,direct,to direct,Missing 'to' on infinitive
+spanish,156,Directing (dirigir),10,english,guide,to guide,Missing 'to' on infinitive
+spanish,156,Directing (dirigir),11,english,guide,to guide,Missing 'to' on infinitive
+spanish,156,Directing (dirigir),17,english,directs it,he/she directs it,Missing subject on 3rd person verb
+spanish,157,Organizing (organizar),4,english,organizes,he/she organizes,Missing subject on 3rd person singular verb
+spanish,157,Organizing (organizar),7,english,organize,they organize,Missing subject on 3rd person plural verb
+spanish,157,Organizing (organizar),8,english,organize,to organize,Missing 'to' on infinitive
+spanish,157,Organizing (organizar),11,english,classify,to classify,Missing 'to' on infinitive
+spanish,157,Organizing (organizar),17,english,organizes it,he/she organizes it,Missing subject on 3rd person verb
+spanish,158,Theater & Acting,5,english,scenario,stage,Context: theater - escenario is stage not scenario
+spanish,158,Theater & Acting,10,english,act,to act,Missing 'to' on infinitive
+spanish,158,Theater & Acting,11,english,represent,to perform,Context: theater - representar means to perform not represent
+spanish,158,Theater & Acting,15,english,clap,to applaud,Missing 'to' on infinitive
+spanish,159,Traveling (viajar),4,english,travel,he/she travels,Missing subject on 3rd person singular verb
+spanish,159,Traveling (viajar),8,english,travel,to travel,Missing 'to' on infinitive
+spanish,159,Traveling (viajar),17,english,always travels,he/she always travels,Missing subject on 3rd person verb
+spanish,160,Resting (descansar),4,english,rest,he/she rests,Missing subject on 3rd person singular verb
+spanish,160,Resting (descansar),7,english,rest,they rest,Missing subject on 3rd person plural verb
+spanish,160,Resting (descansar),8,english,rest,to rest,Missing 'to' on infinitive
+spanish,160,Resting (descansar),10,english,relax,to relax,Missing 'to' on infinitive
+spanish,160,Resting (descansar),17,english,never rests,he/she never rests,Missing subject on 3rd person verb
+spanish,161,Philosophy Terms,13,english,reflect,to reflect,Missing 'to' on infinitive
+spanish,162,Practicing (practicar),4,english,practice,he/she practices,Missing subject on 3rd person singular verb
+spanish,162,Practicing (practicar),7,english,practice,they practice,Missing subject on 3rd person plural verb
+spanish,162,Practicing (practicar),8,english,practice,to practice,Missing 'to' on infinitive
+spanish,162,Practicing (practicar),16,english,always practice,he/she always practices,Missing subject on 3rd person verb
+spanish,163,Winning & Earning (ganar),4,english,win,he/she wins,Missing subject on 3rd person singular verb
+spanish,163,Winning & Earning (ganar),7,english,win,they win,Missing subject on 3rd person plural verb
+spanish,163,Winning & Earning (ganar),8,english,win,to win,Missing 'to' on infinitive
+spanish,163,Winning & Earning (ganar),16,english,always wins,he/she always wins,Missing subject on 3rd person verb
+spanish,164,Dance & Dancing,8,english,sauce,salsa,Context: dance - salsa is the dance style not condiment
+spanish,164,Dance & Dancing,12,english,spin,to spin,Missing 'to' on infinitive
+spanish,164,Dance & Dancing,13,english,clue,dance floor,Context: dance - pista means dance floor not clue
+spanish,164,Dance & Dancing,17,english,taping,footwork,Context: dance - zapateo is footwork not recording
+spanish,164,Dance & Dancing,18,english,compass,beat,Context: dance/music - compás is rhythm/beat not navigation tool
+spanish,164,Dance & Dancing,34,english,the sauce,the salsa,Context: dance - should be salsa dance
+spanish,164,Dance & Dancing,44,english,the track,the dance floor,Context: dance - should be dance floor
+spanish,164,Dance & Dancing,52,english,the tapping,the footwork,Context: dance - should be footwork
+spanish,164,Dance & Dancing,54,english,the compass,the beat,Context: dance/music - should be rhythm/beat
+spanish,165,Losing (perder),4,english,lose,he/she loses,Missing subject on 3rd person singular verb
+spanish,165,Losing (perder),7,english,lose,they lose,Missing subject on 3rd person plural verb
+spanish,165,Losing (perder),8,english,lose,to lose,Missing 'to' on infinitive
+spanish,165,Losing (perder),16,english,always loses,he/she always loses,Missing subject on 3rd person verb
+spanish,166,Forming (formar),3,english,shapes,you form,Wrong translation - should be verb form not noun shapes
+spanish,166,Forming (formar),4,english,shape,he/she forms,Missing subject on 3rd person singular verb
+spanish,166,Forming (formar),7,english,form,they form,Missing subject on 3rd person plural verb
+spanish,166,Forming (formar),8,english,form,to form,Missing 'to' on infinitive
+spanish,166,Forming (formar),16,english,it forms it,he/she forms it,Wrong subject - should be he/she not it
+spanish,168,Reaching (alcanzar),4,english,reaches,he/she reaches,Missing subject on 3rd person singular verb
+spanish,168,Reaching (alcanzar),7,english,reach,they reach,Missing subject on 3rd person plural verb
+spanish,168,Reaching (alcanzar),8,english,reach,to reach,Missing 'to' on infinitive
+spanish,168,Reaching (alcanzar),17,english,reaches it,he/she reaches it,Missing subject on 3rd person verb
+spanish,169,Maintaining (mantener),4,english,keeps,he/she keeps,Missing subject on 3rd person singular verb
+spanish,169,Maintaining (mantener),7,english,maintain,they maintain,Missing subject on 3rd person plural verb
+spanish,169,Maintaining (mantener),8,english,keep,to keep,Missing 'to' on infinitive
+spanish,169,Maintaining (mantener),17,english,keeps it,he/she keeps it,Missing subject on 3rd person verb
+spanish,170,Psychology Terms,12,english,analyze,to analyze,Missing 'to' on infinitive
+spanish,170,Psychology Terms,13,english,understand,to understand,Missing 'to' on infinitive
+spanish,170,Psychology Terms,15,english,heal,to heal,Missing 'to' on infinitive
+spanish,170,Psychology Terms,42,english,must be analyzed,you have to analyze,Wrong passive voice on hay que phrase
+spanish,171,Solving (resolver),8,english,solve,to solve,Missing 'to' on infinitive
+spanish,171,Solving (resolver),9,english,solve,to solve,Missing 'to' on infinitive
+spanish,171,Solving (resolver),10,english,clear,to clear,Missing 'to' on infinitive
+spanish,171,Solving (resolver),11,english,unravel,to unravel,Missing 'to' on infinitive
+spanish,171,Solving (resolver),26,english,resolve the conflict,to resolve the conflict,Missing 'to' on infinitive phrase
+spanish,171,Solving (resolver),27,english,the problem must be solved,you have to solve the problem,Wrong passive voice on hay que phrase
+spanish,171,Solving (resolver),28,english,clear up doubts,to clear up doubts,Missing 'to' on infinitive phrase
+spanish,171,Solving (resolver),29,english,the path must be cleared,you have to clear the path,Wrong passive voice on hay que phrase
+spanish,171,Solving (resolver),30,english,unravel the mystery,to unravel the mystery,Missing 'to' on infinitive phrase
+spanish,172,Avoiding (evitar),4,english,avoid,he/she avoids,Missing subject on 3rd person singular verb
+spanish,172,Avoiding (evitar),7,english,avoid,they avoid,Missing subject on 3rd person plural verb
+spanish,172,Avoiding (evitar),8,english,avoid,to avoid,Missing 'to' on infinitive
+spanish,172,Avoiding (evitar),9,english,prevent,to prevent,Missing 'to' on infinitive
+spanish,172,Avoiding (evitar),17,english,avoids it,he/she avoids it,Missing subject on 3rd person verb
+spanish,173,Journalism Terms,4,english,holder,headline,Context: journalism - titular is headline not holder
+spanish,173,Journalism Terms,6,english,writing,newsroom,Context: journalism - redacción is newsroom not writing
+spanish,173,Journalism Terms,14,english,sent,correspondent,Context: journalism - enviado is correspondent/envoy not sent
+spanish,173,Journalism Terms,24,english,the holder,the headline,Context: journalism - should be headline
+spanish,174,Supposing (suponer),4,english,supposes,he/she supposes,Missing subject on 3rd person singular verb
+spanish,174,Supposing (suponer),8,english,suppose,to suppose,Missing 'to' on infinitive
+spanish,174,Supposing (suponer),10,english,imagine,to imagine,Missing 'to' on infinitive
+spanish,174,Supposing (suponer),11,english,assume,to assume,Missing 'to' on infinitive
+spanish,174,Supposing (suponer),17,english,assumes it,he/she assumes it,Missing subject on 3rd person verb
+spanish,175,Meaning (significar),4,english,means,it means,Missing subject on 3rd person singular verb
+spanish,175,Meaning (significar),7,english,mean,they mean,Missing subject on 3rd person plural verb
+spanish,175,Meaning (significar),8,english,mean,to mean,Missing 'to' on infinitive
+spanish,176,Photography Terms,11,english,capture,to capture,Missing 'to' on infinitive
+spanish,176,Photography Terms,12,english,process,to process,Missing 'to' on infinitive
+spanish,176,Photography Terms,13,english,edit,to edit,Missing 'to' on infinitive
+spanish,176,Photography Terms,27,english,the approach,the focus,Context: photography - enfoque is focus not approach
+spanish,176,Photography Terms,37,english,must be captured,you have to capture,Wrong passive voice on hay que phrase
+spanish,176,Photography Terms,39,english,must be processed,you have to process,Wrong passive voice on hay que phrase
+spanish,177,Choosing (elegir),4,english,choose,he/she chooses,Missing subject on 3rd person singular verb
+spanish,177,Choosing (elegir),7,english,choose,they choose,Missing subject on 3rd person plural verb
+spanish,177,Choosing (elegir),8,english,choose,to choose,Missing 'to' on infinitive
+spanish,177,Choosing (elegir),9,english,choose,to choose,Missing 'to' on infinitive
+spanish,177,Choosing (elegir),10,english,select,to select,Missing 'to' on infinitive
+spanish,177,Choosing (elegir),17,english,choose it,he/she chooses it,Missing subject on 3rd person verb
+spanish,178,Deciding (decidir),4,english,decides,he/she decides,Missing subject on 3rd person singular verb
+spanish,178,Deciding (decidir),7,english,decide,they decide,Missing subject on 3rd person plural verb
+spanish,178,Deciding (decidir),8,english,decide,to decide,Missing 'to' on infinitive
+spanish,178,Deciding (decidir),17,english,decides it,he/she decides it,Missing subject on 3rd person verb
+spanish,179,Publicity Terms,10,english,promote,to promote,Missing 'to' on infinitive
+spanish,179,Publicity Terms,12,english,advertise,to advertise,Missing 'to' on infinitive
+spanish,180,Appearing (aparecer),4,english,appears,he/she appears,Missing subject on 3rd person singular verb
+spanish,180,Appearing (aparecer),7,english,appear,they appear,Missing subject on 3rd person plural verb
+spanish,180,Appearing (aparecer),8,english,appear,to appear,Missing 'to' on infinitive
+spanish,180,Appearing (aparecer),10,english,arise,to arise,Missing 'to' on infinitive
+spanish,180,Appearing (aparecer),11,english,manifest,to manifest,Missing 'to' on infinitive
+spanish,180,Appearing (aparecer),17,english,always appears,he/she always appears,Missing subject on 3rd person verb
