@@ -1,10 +1,53 @@
-Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,19,5,spanish,trimestre,cuarto de hora,Wrong meaning: trimestre = quarter year; should be quarter hour
-chinese,19,5,french,trimestre,quart d'heure,Wrong meaning: trimestre = quarter year; should be quarter hour
-chinese,19,5,portuguese,trimestre,quarto de hora,Wrong meaning: trimestre = quarter year; should be quarter hour
-chinese,19,9,spanish,ver,reloj,Wrong word type: ver = to see (verb); should be reloj = watch/wristwatch (noun)
-chinese,19,9,french,regarder,montre,Wrong word type: regarder = to watch (verb); should be montre = watch/wristwatch (noun)
-chinese,19,9,portuguese,assistir,relógio,Wrong word type: assistir = to attend (verb); should be relógio = watch/wristwatch (noun)
-chinese,19,9,vietnamese,xem,đồng hồ đeo tay,Wrong word type: xem = to watch (verb); should be wristwatch (noun)
-chinese,33,15,spanish,Empate,Corbata,Wrong meaning: Empate = tie/draw in sports; should be Corbata = necktie
-chinese,62,9,french,Commander,Payer l'addition,Wrong meaning: Commander = to order; should be to pay the bill
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,8,Core Measure Words,5,english,Zhang,piece (MW),CRITICAL: 张 is a measure word for flat objects like sheets/pieces - not a proper name
+chinese,8,Core Measure Words,5,spanish,Zhang,pieza (MW),CRITICAL: 张 is a measure word for flat objects - not a proper name
+chinese,8,Core Measure Words,5,french,Zhang,pièce (MW),CRITICAL: 张 is a measure word for flat objects - not a proper name
+chinese,8,Core Measure Words,5,portuguese,Zhang,peça (MW),CRITICAL: 张 is a measure word for flat objects - not a proper name
+chinese,8,Core Measure Words,5,vietnamese,Trương,tờ (MW),CRITICAL: 张 is a measure word for flat objects - Trương is a surname
+chinese,8,Core Measure Words,5,thai,จาง,แผ่น (MW),CRITICAL: 张 is a measure word for flat objects
+chinese,8,Core Measure Words,5,khmer,ដុំ,សន្លឹក (MW),CRITICAL: 张 is a measure word for flat objects
+chinese,8,Core Measure Words,5,indonesian,Zhang,lembar (MW),CRITICAL: 张 is a measure word for flat objects - not a proper name
+chinese,8,Core Measure Words,5,malay,Zhang,keping (MW),CRITICAL: 张 is a measure word for flat objects - not a proper name
+chinese,8,Core Measure Words,5,filipino,Zhang,piraso (MW),CRITICAL: 张 is a measure word for flat objects - not a proper name
+chinese,8,Core Measure Words,7,english,This,volume (MW),CRITICAL: 本 is a measure word for books/volumes - not a demonstrative pronoun
+chinese,8,Core Measure Words,7,spanish,Esto,tomo (MW),CRITICAL: 本 is a measure word for books/volumes - not a demonstrative pronoun
+chinese,8,Core Measure Words,7,french,Ce,tome (MW),CRITICAL: 本 is a measure word for books/volumes - not a demonstrative pronoun
+chinese,8,Core Measure Words,7,portuguese,Isso,volume (MW),CRITICAL: 本 is a measure word for books/volumes - not a demonstrative pronoun
+chinese,8,Core Measure Words,7,vietnamese,Cái này,quyển (MW),CRITICAL: 本 is a measure word for books/volumes - not a demonstrative pronoun
+chinese,8,Core Measure Words,7,thai,นี้,เล่ม (MW),CRITICAL: 本 is a measure word for books/volumes
+chinese,8,Core Measure Words,7,khmer,ពែង,ក្បាល (MW),CRITICAL: 本 is a measure word for books/volumes
+chinese,8,Core Measure Words,7,indonesian,Ini,jilid (MW),CRITICAL: 本 is a measure word for books/volumes - not a demonstrative pronoun
+chinese,8,Core Measure Words,7,malay,Ini,jilid (MW),CRITICAL: 本 is a measure word for books/volumes - not a demonstrative pronoun
+chinese,8,Core Measure Words,7,filipino,Ito,tomo (MW),CRITICAL: 本 is a measure word for books/volumes - not a demonstrative pronoun
+chinese,19,Telling Time,5,spanish,trimestre,cuarto de hora,Wrong meaning: trimestre = quarter year; should be quarter hour
+chinese,19,Telling Time,5,french,trimestre,quart d'heure,Wrong meaning: trimestre = quarter year; should be quarter hour
+chinese,19,Telling Time,5,portuguese,trimestre,quarto de hora,Wrong meaning: trimestre = quarter year; should be quarter hour
+chinese,19,Telling Time,9,spanish,ver,reloj,Wrong word type: ver = to see (verb); should be reloj = watch/wristwatch (noun)
+chinese,19,Telling Time,9,french,regarder,montre,Wrong word type: regarder = to watch (verb); should be montre = watch/wristwatch (noun)
+chinese,19,Telling Time,9,portuguese,assistir,relógio,Wrong word type: assistir = to attend (verb); should be relógio = watch/wristwatch (noun)
+chinese,19,Telling Time,9,vietnamese,xem,đồng hồ đeo tay,Wrong word type: xem = to watch (verb); should be wristwatch (noun)
+chinese,19,Telling Time,9,indonesian,tonton,jam tangan,CRITICAL: 手表 is wristwatch (noun) - tonton is a verb (to watch)
+chinese,19,Telling Time,9,malay,Watch,jam tangan,CRITICAL: 手表 is wristwatch (noun) - Watch is English verb
+chinese,19,Telling Time,9,filipino,Panoorin,relo,CRITICAL: 手表 is wristwatch (noun) - Panoorin is a verb (to watch)
+chinese,33,Clothing Items,15,spanish,Empate,Corbata,Wrong meaning: Empate = tie/draw in sports; should be Corbata = necktie
+chinese,56,Expressing Needs,32,english,High requirements || Must go,High requirements,Remove pipe symbol and incorrect concatenation
+chinese,56,Expressing Needs,32,spanish,Altos requisitos || Debes ir,Altos requisitos,Remove pipe symbol and incorrect concatenation
+chinese,56,Expressing Needs,32,french,Exigences élevées || Il faut y aller,Exigences élevées,Remove pipe symbol and incorrect concatenation
+chinese,56,Expressing Needs,32,portuguese,Requisitos elevados || Preciso ir,Requisitos elevados,Remove pipe symbol and incorrect concatenation
+chinese,56,Expressing Needs,32,vietnamese,Yêu cầu cao || Phải đi,Yêu cầu cao,Remove pipe symbol and incorrect concatenation
+chinese,56,Expressing Needs,32,thai,ข้อกำหนดสูง || ต้องไป,ข้อกำหนดสูง,Remove pipe symbol and incorrect concatenation
+chinese,56,Expressing Needs,32,khmer,តម្រូវការជាបន្ទាន់នៃដំណោះស្រាយ,តម្រូវការខ្ពស់,Correct translation for 'high requirements'
+chinese,56,Expressing Needs,32,indonesian,Persyaratan tinggi || Harus pergi,Persyaratan tinggi,Remove pipe symbol and incorrect concatenation
+chinese,56,Expressing Needs,32,malay,Keperluan Tinggi || Mesti pergi,Keperluan Tinggi,Remove pipe symbol and incorrect concatenation
+chinese,56,Expressing Needs,32,filipino,Mataas na kinakailangan || Dapat pumunta,Mataas na kinakailangan,Remove pipe symbol and incorrect concatenation
+chinese,62,At the Restaurant,9,french,Commander,Payer l'addition,Wrong meaning: Commander = to order; should be to pay the bill
+chinese,71,Agreeing & Disagreeing,36,english,It depends on the situation ||,It depends on the situation,Remove trailing pipe symbol (incomplete entry)
+chinese,71,Agreeing & Disagreeing,36,spanish,Depende de la situación ||,Depende de la situación,Remove trailing pipe symbol (incomplete entry)
+chinese,71,Agreeing & Disagreeing,36,french,Cela dépend de la situation ||,Cela dépend de la situation,Remove trailing pipe symbol (incomplete entry)
+chinese,71,Agreeing & Disagreeing,36,portuguese,Depende da situação ||,Depende da situação,Remove trailing pipe symbol (incomplete entry)
+chinese,71,Agreeing & Disagreeing,36,vietnamese,Nó phụ thuộc vào tình hình ||,Nó phụ thuộc vào tình hình,Remove trailing pipe symbol (incomplete entry)
+chinese,71,Agreeing & Disagreeing,36,thai,ขึ้นอยู่กับสถานการณ์||,ขึ้นอยู่กับสถานการณ์,Remove trailing pipe symbol (incomplete entry)
+chinese,71,Agreeing & Disagreeing,36,khmer,វាអាស្រ័យលើស្ថានភាព ||,វាអាស្រ័យលើស្ថានភាព,Remove trailing pipe symbol (incomplete entry)
+chinese,71,Agreeing & Disagreeing,36,indonesian,Tergantung situasinya ||,Tergantung situasinya,Remove trailing pipe symbol (incomplete entry)
+chinese,71,Agreeing & Disagreeing,36,malay,Ia bergantung pada keadaan ||,Ia bergantung pada keadaan,Remove trailing pipe symbol (incomplete entry)
+chinese,71,Agreeing & Disagreeing,36,filipino,Ito ay nakasalalay sa sitwasyon ||,Ito ay nakasalalay sa sitwasyon,Remove trailing pipe symbol (incomplete entry)
