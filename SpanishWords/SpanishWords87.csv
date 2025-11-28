@@ -5,24 +5,24 @@ mezclar,mix,混合,hùn hé,misturar
 hervir,boil,煮沸,zhǔ fèi,ferver
 freír,fry,炒,chǎo,fritar
 hornear,bake,烘烤,hōng kǎo,assar
-asar,roast,烤,kǎo,assado
+asar,roast,烤,kǎo,assar
 sartén,frying pan,煎锅,jiān guō,frigideira
 olla,pot,锅,guō,pote
-tabla,table,表,biǎo,mesa
-probar,try,尝试,cháng shì,tente
+tabla,table,砧板,zhēn bǎn,tábua
+probar,try,品尝,pǐn cháng,provar
 delicioso,delicious,美味,měi wèi,delicioso
-picar,chop,砍,kǎn,cortar
-rallar,grate,炉排,lú pái,grelha
-batir,beat,击败,jī bài,bater
+picar,chop,切碎,qiè suì,cortar
+rallar,grate,磨碎,mó suì,ralar
+batir,beat,搅拌,jiǎo bàn,bater
 amasar,knead,揉捏,róu niē,amassar
-saltear,skip,跳过,tiào guò,pular
-guisar,stew,炖菜,dùn cài,ensopado
+saltear,skip,快炒,kuài chǎo,refogar
+guisar,stew,炖,dùn,cozinhar
 marinar,marinate,腌制,yān zhì,marinar
-descongelar,defrost,除霜,chú shuāng,descongelar
+descongelar,defrost,解冻,jiě dòng,descongelar
 el ingrediente,the ingredient,成分,chéng fèn,o ingrediente
 un ingrediente,an ingredient,一种成分,yī zhǒng chéng fèn,um ingrediente
-hay que cortar,you have to cut,你必须剪,nǐ bì xū jiǎn,você tem que cortar
-voy a cortar,I'm going to cut,我要剪,wǒ yào jiǎn,Vou cortar
+hay que cortar,you have to cut,你必须切,nǐ bì xū qiè,você tem que cortar
+voy a cortar,I'm going to cut,我要切,wǒ yào qiè,Vou cortar
 hay que mezclar,you have to mix,你必须混合,nǐ bì xū hùn hé,você tem que misturar
 voy a mezclar,I'm going to mix,我要混合,wǒ yào hùn hé,Vou misturar
 hay que hervir,you have to boil,你必须煮沸,nǐ bì xū zhǔ fèi,você tem que ferver
@@ -37,22 +37,22 @@ la sartén,the frying pan,煎锅,jiān guō,a frigideira
 en la sartén,in the pan,在锅里,zài guō lǐ,na panela
 la olla,the pot,锅,guō,o pote
 en la olla,in the pot,锅里,guō lǐ,na panela
-la tabla,the table,表,biǎo,a mesa
-en la tabla,in the table,在表中,zài biǎo zhōng,na tabela
+la tabla,the table,砧板,zhēn bǎn,a tábua
+en la tabla,in the table,在砧板上,zài zhēn bǎn shàng,na tábua
 hay que probar,must try,必须尝试,bì xū cháng shì,preciso tentar
 voy a probar,I'm going to try,我要尝试,wǒ yào cháng shì,Vou tentar
 muy delicioso,very delicious,非常好吃,fēi cháng hǎo chī,muito gostoso
 está delicioso,It's delicious,真好吃,zhēn hǎo chī,É uma delícia
-hay que picar,you have to chop,你必须砍,nǐ bì xū kǎn,você tem que cortar
-voy a picar,I'm going to snack,我去吃零食,wǒ qù chī líng shí,Vou lanchar
+hay que picar,you have to chop,你必须切碎,nǐ bì xū qiè suì,você tem que cortar
+voy a picar,I'm going to snack,我要切碎,wǒ yào qiè suì,Vou lanchar
 hay que rallar,you have to grate,你必须磨碎,nǐ bì xū mó suì,você tem que ralar
 voy a rallar,I'm going to grate,我要磨碎,wǒ yào mó suì,Vou ralar
-hay que batir,you have to beat,你必须击败,nǐ bì xū jī bài,você tem que vencer
-voy a batir,I'm going to beat,我要打败,wǒ yào dǎ bài,Eu vou vencer
+hay que batir,you have to beat,你必须搅拌,nǐ bì xū jiǎo bàn,você tem que bater
+voy a batir,I'm going to beat,我要搅拌,wǒ yào jiǎo bàn,Vou bater
 hay que amasar,you have to knead,你必须揉捏,nǐ bì xū róu niē,você tem que amassar
 voy a amasar,I'm going to knead,我要揉捏,wǒ yào róu niē,Vou amassar
-hay que saltear,you have to skip,你必须跳过,nǐ bì xū tiào guò,você tem que pular
-voy a saltear,I'm going to skip,我要跳过,wǒ yào tiào guò,Vou pular
+hay que saltear,you have to skip,你必须快炒,nǐ bì xū kuài chǎo,você tem que refogar
+voy a saltear,I'm going to skip,我要快炒,wǒ yào kuài chǎo,Vou refogar
 hay que guisar,you have to cook,你必须做饭,nǐ bì xū zuò fàn,você tem que cozinhar
 voy a guisar,I'm going to cook,我去做饭,wǒ qù zuò fàn,Vou cozinhar
 hay que marinar,you have to marinate,你必须腌制,nǐ bì xū yān zhì,você tem que marinar

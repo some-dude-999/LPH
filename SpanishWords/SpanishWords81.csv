@@ -2,17 +2,17 @@ spanish,english,chinese,pinyin,portuguese
 dinero,money,钱,qián,dinheiro
 débito,debit,借方,jiè fāng,débito
 préstamo,loan,贷款,dài kuǎn,empréstimo
-interés,interest,兴趣,xìng qù,interesse
-ahorrar,save,保存,bǎo cún,salvar
+interés,interest,利息,lì xī,interesse
+ahorrar,save,储蓄,chǔ xù,salvar
 gastar,spend,花费,huā fèi,gastar
 depositar,deposit,存款,cún kuǎn,depósito
-retirar,withdraw,撤回,chè huí,retirar
+retirar,withdraw,取款,qǔ kuǎn,retirar
 transferir,transfer,转移,zhuǎn yí,transferir
-saldo,balance,平衡,píng héng,equilíbrio
+saldo,balance,余额,yú é,equilíbrio
 pago,payment,付款,fù kuǎn,pagamento
 euro,euro,欧元,ōu yuán,euro
-cheque,check,检查,jiǎn chá,verificar
-giro,turn,转,zhuǎn,virar
+cheque,check,支票,zhī piào,verificar
+giro,turn,转账,zhuǎn zhàng,transferência
 hipoteca,mortgage,抵押贷款,dǐ yā dài kuǎn,hipoteca
 finanzas,finances,财务,cái wù,finanças
 inversión,investment,投资,tóu zī,investimento
@@ -25,14 +25,14 @@ un préstamo,a loan,贷款,dài kuǎn,um empréstimo
 el préstamo,the loan,贷款,dài kuǎn,o empréstimo
 el interés,the interest,兴趣,xìng qù,o interesse
 con interés,with interest,有兴趣,yǒu xìng qù,com interesse
-hay que ahorrar,you have to save,你必须保存,nǐ bì xū bǎo cún,você tem que economizar
-quiero ahorrar,I want to save,我要保存,wǒ yào bǎo cún,Quero salvar
+hay que ahorrar,you have to save,你必须储蓄,nǐ bì xū chǔ xù,você tem que economizar
+quiero ahorrar,I want to save,我要储蓄,wǒ yào chǔ xù,Quero salvar
 hay que gastar,you have to spend,你必须花费,nǐ bì xū huā fèi,você tem que gastar
 sin gastar,without spending,无需花费,wú xū huā fèi,sem gastar
 hay que depositar,you have to deposit,你必须存入,nǐ bì xū cún rù,você tem que depositar
 voy a depositar,I'm going to deposit,我要存款,wǒ yào cún kuǎn,Vou depositar
-hay que retirar,must be removed,必须删除,bì xū shān chú,deve ser removido
-voy a retirar,I'm going to withdraw,我要退出,wǒ yào tuì chū,Vou retirar
+hay que retirar,must be removed,必须取款,bì xū qǔ kuǎn,deve ser removido
+voy a retirar,I'm going to withdraw,我要取款,wǒ yào qǔ kuǎn,Vou retirar
 hay que transferir,must be transferred,必须转移,bì xū zhuǎn yí,deve ser transferido
 voy a transferir,I'm going to transfer,我要转站,wǒ yào zhuǎn zhàn,Vou transferir
 el saldo,the balance,余额,yú é,o saldo
@@ -43,8 +43,8 @@ el euro,the euro,欧元,ōu yuán,o euro
 un euro,one euro,一欧元,yī ōu yuán,um euro
 el cheque,the check,支票,zhī piào,o cheque
 un cheque,a check,一张支票,yī zhāng zhī piào,um cheque
-el giro,the turn,转牌,zhuǎn pái,a vez
-un giro,a turn,转一圈,zhuǎn yī quān,uma volta
+el giro,the turn,转账,zhuǎn zhàng,a vez
+un giro,a turn,一次转账,yī cì zhuǎn zhàng,uma volta
 la hipoteca,the mortgage,抵押贷款,dǐ yā dài kuǎn,a hipoteca
 una hipoteca,a mortgage,抵押贷款,dǐ yā dài kuǎn,uma hipoteca
 las finanzas,finances,财务,cái wù,finanças

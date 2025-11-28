@@ -2,8 +2,8 @@ spanish,english,chinese,pinyin,portuguese
 compañía,company,公司,gōng sī,empresa
 gerente,manager,经理,jīng lǐ,gerente
 gerenta,manager,经理,jīng lǐ,gerente
-director,director,导演,dǎo yǎn,diretor
-directora,director,导演,dǎo yǎn,diretor
+director,director,总监,zǒng jiān,diretor
+directora,director,总监,zǒng jiān,diretor
 departamento,department,部门,bù mén,departamento
 presentación,presentation,演示,yǎn shì,apresentação
 informe,report,报告,bào gào,relatório
@@ -17,7 +17,7 @@ facturación,billing,计费,jì fèi,faturamento
 rentabilidad,profitability,盈利能力,yíng lì néng lì,rentabilidade
 expansión,expansion,扩展,kuò zhǎn,expansão
 sucursal,branch,分支,fēn zhī,filial
-matriz,array,数组,shù zǔ,matriz
+matriz,array,母公司,mǔ gōng sī,matriz
 dividendo,dividend,股息,gǔ xī,dividendo
 la compañía,the company,公司,gōng sī,a empresa
 una compañía,a company,一家公司,yī jiā gōng sī,uma empresa
@@ -25,10 +25,10 @@ el gerente,the manager,经理,jīng lǐ,o gerente
 un gerente,a manager,经理,jīng lǐ,um gerente
 la gerenta,the manager,经理,jīng lǐ,o gerente
 una gerenta,a manager,经理,jīng lǐ,um gerente
-el director,the director,导演,dǎo yǎn,o diretor
-un director,a director,导演,dǎo yǎn,um diretor
-la directora,the director,导演,dǎo yǎn,o diretor
-una directora,a director,导演,dǎo yǎn,um diretor
+el director,the director,总监,zǒng jiān,o diretor
+un director,a director,总监,zǒng jiān,um diretor
+la directora,the director,总监,zǒng jiān,o diretor
+una directora,a director,总监,zǒng jiān,um diretor
 el departamento,the department,该部门,gāi bù mén,o departamento
 un departamento,a department,一个部门,yí gè bù mén,um departamento
 la presentación,the presentation,演示,yǎn shì,a apresentação
@@ -53,9 +53,9 @@ la rentabilidad,profitability,盈利能力,yíng lì néng lì,rentabilidade
 buena rentabilidad,good profitability,良好的盈利能力,liáng hǎo de yíng lì néng lì,boa rentabilidade
 la expansión,the expansion,扩展,kuò zhǎn,a expansão
 en expansión,expanding,扩大,kuò dà,expandindo
-la sucursal,the branch,分支,fēn zhī,a filial
-una sucursal,a branch,一个分支,yí gè fēn zhī,uma filial
-la matriz,the matrix,矩阵,jǔ zhèn,a matriz
+la sucursal,the branch,分公司,fēn gōng sī,a filial
+una sucursal,a branch,一个分公司,yí gè fēn gōng sī,uma filial
+la matriz,the matrix,母公司,mǔ gōng sī,a matriz
 empresa matriz,parent company,母公司,mǔ gōng sī,empresa controladora
 el dividendo,the dividend,股息,gǔ xī,o dividendo
 un dividendo,a dividend,股息,gǔ xī,um dividendo

@@ -1,1 +1,190 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,63,Technology & Internet,5,portuguese,comprimido,tablet,"comprimido=pill, not computer tablet"
+spanish,63,Technology & Internet,7,chinese,留言,消息,"liú yán=leave message, xiāo xī=message"
+spanish,63,Technology & Internet,7,pinyin,liú yán,xiāo xī,Match chinese fix
+spanish,63,Technology & Internet,20,english,the mobile,the cell phone,More natural in English
+spanish,63,Technology & Internet,21,english,my mobile,my cell phone,More natural in English
+spanish,63,Technology & Internet,52,english,the wire,the cable,cable not wire
+spanish,63,Technology & Internet,53,english,a wire,a cable,cable not wire
+spanish,69,Sports,13,chinese,领带,打成平手,"lǐng dài=necktie, need tie/draw in sports"
+spanish,69,Sports,13,pinyin,lǐng dài,dǎ chéng píng shǒu,Match chinese fix
+spanish,69,Sports,14,chinese,目标,进球,"mù biāo=objective, jìn qiú=goal in sports"
+spanish,69,Sports,14,pinyin,mù biāo,jìn qiú,Match chinese fix
+spanish,69,Sports,44,chinese,让我们打成平手,我们会打成平手,More natural phrasing
+spanish,69,Sports,44,pinyin,ràng wǒ men dǎ chéng píng shǒu,wǒ men huì dǎ chéng píng shǒu,Match chinese fix
+spanish,69,Sports,45,chinese,可以领带,可以打成平手,Fix necktie error
+spanish,69,Sports,45,pinyin,kě yǐ lǐng dài,kě yǐ dǎ chéng píng shǒu,Match chinese fix
+spanish,69,Sports,45,portuguese,pode amarrar,pode empatar,"amarrar=tie up, empatar=tie/draw"
+spanish,69,Sports,46,chinese,一个目标,一个进球,Need goal in sports context
+spanish,69,Sports,46,pinyin,yí gè mù biāo,yí gè jìn qiú,Match chinese fix
+spanish,69,Sports,47,chinese,好目标,好球,Need goal in sports context
+spanish,69,Sports,47,pinyin,hǎo mù biāo,hǎo qiú,Match chinese fix
+spanish,69,Sports,54,portuguese,esquiar,esqui,"esquiar=verb to ski, esqui=noun"
+spanish,69,Sports,56,portuguese,surfando,surfe,"surfando=gerund, surfe=noun"
+spanish,69,Sports,57,portuguese,surfando,surfe,"surfando=gerund, surfe=noun"
+spanish,69,Sports,60,portuguese,patinando,patinação,"patinando=gerund, patinação=noun"
+spanish,80,Travel & Tourism,2,chinese,旅游,游客,"lǚ yóu=tourism activity, yóu kè=tourist person"
+spanish,80,Travel & Tourism,2,pinyin,lǚ yóu,yóu kè,Match chinese fix
+spanish,80,Travel & Tourism,7,portuguese,hotéis,hotel,"hotéis=plural, need singular"
+spanish,80,Travel & Tourism,13,chinese,一种方式,单程,"fāng shì=method, dān chéng=one-way ticket"
+spanish,80,Travel & Tourism,13,pinyin,yī zhǒng fāng shì,dān chéng,Match chinese fix
+spanish,80,Travel & Tourism,15,chinese,代理,旅行社,"dài lǐ=proxy, lǚ xíng shè=travel agency"
+spanish,80,Travel & Tourism,15,pinyin,dài lǐ,lǚ xíng shè,Match chinese fix
+spanish,80,Travel & Tourism,44,chinese,一种方式,单程,Same as row 13
+spanish,80,Travel & Tourism,44,pinyin,yī zhǒng fāng shì,dān chéng,Match chinese fix
+spanish,80,Travel & Tourism,48,chinese,该机构,旅行社,More specific for travel context
+spanish,80,Travel & Tourism,48,pinyin,gāi jī gòu,lǚ xíng shè,Match chinese fix
+spanish,80,Travel & Tourism,60,chinese,巡演,游览,"xún yǎn=concert tour, yóu lǎn=sightseeing tour"
+spanish,80,Travel & Tourism,60,pinyin,xún yǎn,yóu lǎn,Match chinese fix
+spanish,70,Hobbies & Interests,3,portuguese,ouça,ouvir,"ouça=imperative, ouvir=infinitive"
+spanish,70,Hobbies & Interests,4,chinese,油漆,绘画,"yóu qī=house paint, huì huà=artistic painting"
+spanish,70,Hobbies & Interests,4,pinyin,yóu qī,huì huà,Match chinese fix
+spanish,70,Hobbies & Interests,13,chinese,鱼,钓鱼,"yú=fish noun, diào yú=to fish verb"
+spanish,70,Hobbies & Interests,13,pinyin,yú,diào yú,Match chinese fix
+spanish,70,Hobbies & Interests,13,portuguese,peixe,pescar,"peixe=fish noun, pescar=to fish verb"
+spanish,76,School & Education,3,chinese,研究所,学院,"yán jiū suǒ=research institute, xué yuàn=school/college"
+spanish,76,School & Education,3,pinyin,yán jiū suǒ,xué yuàn,Match chinese fix
+spanish,76,School & Education,4,chinese,事,科目,"shì=matter/affair, kē mù=subject"
+spanish,76,School & Education,4,pinyin,shì,kē mù,Match chinese fix
+spanish,76,School & Education,4,portuguese,importa,matéria,"importa=verb it matters, matéria=noun subject"
+spanish,76,School & Education,5,chinese,主题,科目,"zhǔ tí=topic/theme, kē mù=academic subject"
+spanish,76,School & Education,5,pinyin,zhǔ tí,kē mù,Match chinese fix
+spanish,76,School & Education,5,portuguese,assunto,disciplina,"assunto=topic, disciplina=academic subject"
+spanish,76,School & Education,18,chinese,标题,学位,"biāo tí=title/heading, xué wèi=degree"
+spanish,76,School & Education,18,pinyin,biāo tí,xué wèi,Match chinese fix
+spanish,76,School & Education,20,chinese,师资,教师,"shī zī=teaching staff, jiào shī=faculty"
+spanish,76,School & Education,20,pinyin,shī zī,jiào shī,Match chinese fix
+spanish,76,School & Education,21,chinese,种族,专业,"zhǒng zú=race/ethnicity, zhuān yè=major/career"
+spanish,76,School & Education,21,pinyin,zhǒng zú,zhuān yè,Match chinese fix
+spanish,76,School & Education,21,portuguese,corrida,carreira,"corrida=race/run, carreira=career"
+spanish,76,School & Education,38,english,the story,history,"In education context, historia=history not story"
+spanish,76,School & Education,38,chinese,故事,历史,"gù shì=story, lì shǐ=history"
+spanish,76,School & Education,38,pinyin,gù shì,lì shǐ,Match chinese fix
+spanish,81,Banking & Money,5,chinese,兴趣,利息,"xìng qù=interest/curiosity, lì xī=financial interest"
+spanish,81,Banking & Money,5,pinyin,xìng qù,lì xī,Match chinese fix
+spanish,81,Banking & Money,6,chinese,保存,储蓄,"bǎo cún=save files, chǔ xù=save money"
+spanish,81,Banking & Money,6,pinyin,bǎo cún,chǔ xù,Match chinese fix
+spanish,81,Banking & Money,9,chinese,撤回,取款,"chè huí=retract, qǔ kuǎn=withdraw money"
+spanish,81,Banking & Money,9,pinyin,chè huí,qǔ kuǎn,Match chinese fix
+spanish,81,Banking & Money,11,chinese,平衡,余额,"píng héng=equilibrium, yú é=bank balance"
+spanish,81,Banking & Money,11,pinyin,píng héng,yú é,Match chinese fix
+spanish,81,Banking & Money,14,chinese,检查,支票,"jiǎn chá=check verb, zhī piào=cheque noun"
+spanish,81,Banking & Money,14,pinyin,jiǎn chá,zhī piào,Match chinese fix
+spanish,81,Banking & Money,15,chinese,转,转账,"zhuǎn=turn, zhuǎn zhàng=money transfer"
+spanish,81,Banking & Money,15,pinyin,zhuǎn,zhuǎn zhàng,Match chinese fix
+spanish,81,Banking & Money,15,portuguese,virar,transferência,"virar=turn, transferência=transfer"
+spanish,81,Banking & Money,28,chinese,你必须保存,你必须储蓄,Wrong save - need save money
+spanish,81,Banking & Money,28,pinyin,nǐ bì xū bǎo cún,nǐ bì xū chǔ xù,Match chinese fix
+spanish,81,Banking & Money,29,chinese,我要保存,我要储蓄,Wrong save - need save money
+spanish,81,Banking & Money,29,pinyin,wǒ yào bǎo cún,wǒ yào chǔ xù,Match chinese fix
+spanish,81,Banking & Money,34,chinese,必须删除,必须取款,"shān chú=delete, qǔ kuǎn=withdraw"
+spanish,81,Banking & Money,34,pinyin,bì xū shān chú,bì xū qǔ kuǎn,Match chinese fix
+spanish,81,Banking & Money,35,chinese,我要退出,我要取款,"tuì chū=exit, qǔ kuǎn=withdraw"
+spanish,81,Banking & Money,35,pinyin,wǒ yào tuì chū,wǒ yào qǔ kuǎn,Match chinese fix
+spanish,81,Banking & Money,46,chinese,转牌,转账,Wrong context - need money transfer
+spanish,81,Banking & Money,46,pinyin,zhuǎn pái,zhuǎn zhàng,Match chinese fix
+spanish,81,Banking & Money,47,chinese,转一圈,一次转账,Wrong context - need money transfer
+spanish,81,Banking & Money,47,pinyin,zhuǎn yī quān,yī cì zhuǎn zhàng,Match chinese fix
+spanish,84,Business Terms,5,chinese,导演,总监,"dǎo yǎn=film director, zǒng jiān=business director"
+spanish,84,Business Terms,5,pinyin,dǎo yǎn,zǒng jiān,Match chinese fix
+spanish,84,Business Terms,6,chinese,导演,总监,Same as row 5
+spanish,84,Business Terms,6,pinyin,dǎo yǎn,zǒng jiān,Match chinese fix
+spanish,84,Business Terms,20,chinese,数组,母公司,"shù zǔ=programming array, mǔ gōng sī=parent company"
+spanish,84,Business Terms,20,pinyin,shù zǔ,mǔ gōng sī,Match chinese fix
+spanish,84,Business Terms,28,chinese,导演,总监,Same - business context
+spanish,84,Business Terms,28,pinyin,dǎo yǎn,zǒng jiān,Match chinese fix
+spanish,84,Business Terms,29,chinese,导演,总监,Same - business context
+spanish,84,Business Terms,29,pinyin,dǎo yǎn,zǒng jiān,Match chinese fix
+spanish,84,Business Terms,30,chinese,导演,总监,Same - business context
+spanish,84,Business Terms,30,pinyin,dǎo yǎn,zǒng jiān,Match chinese fix
+spanish,84,Business Terms,31,chinese,导演,总监,Same - business context
+spanish,84,Business Terms,31,pinyin,dǎo yǎn,zǒng jiān,Match chinese fix
+spanish,84,Business Terms,56,chinese,分支,分公司,"fēn zhī=generic branch, fēn gōng sī=branch office"
+spanish,84,Business Terms,56,pinyin,fēn zhī,fēn gōng sī,Match chinese fix
+spanish,84,Business Terms,57,chinese,一个分支,一个分公司,Same - be specific
+spanish,84,Business Terms,57,pinyin,yí gè fēn zhī,yí gè fēn gōng sī,Match chinese fix
+spanish,84,Business Terms,58,chinese,矩阵,母公司,"jǔ zhèn=math matrix, mǔ gōng sī=parent company"
+spanish,84,Business Terms,58,pinyin,jǔ zhèn,mǔ gōng sī,Match chinese fix
+spanish,87,Cooking Verbs,8,portuguese,assado,assar,"assado=past participle, assar=infinitive"
+spanish,87,Cooking Verbs,11,chinese,表,砧板,"biǎo=table/chart, zhēn bǎn=cutting board"
+spanish,87,Cooking Verbs,11,pinyin,biǎo,zhēn bǎn,Match chinese fix
+spanish,87,Cooking Verbs,11,portuguese,mesa,tábua,"mesa=table furniture, tábua=cutting board"
+spanish,87,Cooking Verbs,12,chinese,尝试,品尝,"cháng shì=try/attempt, pǐn cháng=taste food"
+spanish,87,Cooking Verbs,12,pinyin,cháng shì,pǐn cháng,Match chinese fix
+spanish,87,Cooking Verbs,12,portuguese,tente,provar,"tente=imperative, provar=infinitive to taste"
+spanish,87,Cooking Verbs,14,chinese,砍,切碎,"kǎn=chop with axe, qiè suì=chop food"
+spanish,87,Cooking Verbs,14,pinyin,kǎn,qiè suì,Match chinese fix
+spanish,87,Cooking Verbs,15,chinese,炉排,磨碎,"lú pái=furnace grate, mó suì=to grate"
+spanish,87,Cooking Verbs,15,pinyin,lú pái,mó suì,Match chinese fix
+spanish,87,Cooking Verbs,15,portuguese,grelha,ralar,"grelha=grill noun, ralar=to grate verb"
+spanish,87,Cooking Verbs,16,chinese,击败,搅拌,"jī bài=defeat, jiǎo bàn=whisk/beat eggs"
+spanish,87,Cooking Verbs,16,pinyin,jī bài,jiǎo bàn,Match chinese fix
+spanish,87,Cooking Verbs,18,chinese,跳过,快炒,"tiào guò=skip, kuài chǎo=sauté"
+spanish,87,Cooking Verbs,18,pinyin,tiào guò,kuài chǎo,Match chinese fix
+spanish,87,Cooking Verbs,18,portuguese,pular,refogar,"pular=jump/skip, refogar=sauté"
+spanish,87,Cooking Verbs,19,chinese,炖菜,炖,"dùn cài=stew noun, dùn=to stew verb"
+spanish,87,Cooking Verbs,19,pinyin,dùn cài,dùn,Match chinese fix
+spanish,87,Cooking Verbs,19,portuguese,ensopado,cozinhar,"ensopado=stew noun, cozinhar=to cook"
+spanish,87,Cooking Verbs,21,chinese,除霜,解冻,"chú shuāng=defrost freezer, jiě dòng=thaw food"
+spanish,87,Cooking Verbs,21,pinyin,chú shuāng,jiě dòng,Match chinese fix
+spanish,87,Cooking Verbs,24,chinese,你必须剪,你必须切,"jiǎn=cut with scissors, qiè=cut with knife"
+spanish,87,Cooking Verbs,24,pinyin,nǐ bì xū jiǎn,nǐ bì xū qiè,Match chinese fix
+spanish,87,Cooking Verbs,25,chinese,我要剪,我要切,Same - use knife not scissors
+spanish,87,Cooking Verbs,25,pinyin,wǒ yào jiǎn,wǒ yào qiè,Match chinese fix
+spanish,87,Cooking Verbs,40,chinese,表,砧板,Same as row 11
+spanish,87,Cooking Verbs,40,pinyin,biǎo,zhēn bǎn,Match chinese fix
+spanish,87,Cooking Verbs,40,portuguese,a mesa,a tábua,Same as row 11
+spanish,87,Cooking Verbs,41,chinese,在表中,在砧板上,Same cutting board context
+spanish,87,Cooking Verbs,41,pinyin,zài biǎo zhōng,zài zhēn bǎn shàng,Match chinese fix
+spanish,87,Cooking Verbs,41,portuguese,na tabela,na tábua,Same as row 11
+spanish,87,Cooking Verbs,46,chinese,你必须砍,你必须切碎,Same as row 14
+spanish,87,Cooking Verbs,46,pinyin,nǐ bì xū kǎn,nǐ bì xū qiè suì,Match chinese fix
+spanish,87,Cooking Verbs,47,chinese,我去吃零食,我要切碎,Wrong translation - means eat snacks!
+spanish,87,Cooking Verbs,47,pinyin,wǒ qù chī líng shí,wǒ yào qiè suì,Match chinese fix
+spanish,87,Cooking Verbs,50,chinese,你必须击败,你必须搅拌,Same as row 16 - beat eggs not defeat
+spanish,87,Cooking Verbs,50,pinyin,nǐ bì xū jī bài,nǐ bì xū jiǎo bàn,Match chinese fix
+spanish,87,Cooking Verbs,50,portuguese,você tem que vencer,você tem que bater,"vencer=defeat, bater=beat/whisk"
+spanish,87,Cooking Verbs,51,chinese,我要打败,我要搅拌,Same - whisk not defeat
+spanish,87,Cooking Verbs,51,pinyin,wǒ yào dǎ bài,wǒ yào jiǎo bàn,Match chinese fix
+spanish,87,Cooking Verbs,51,portuguese,Eu vou vencer,Vou bater,Same - beat not defeat
+spanish,87,Cooking Verbs,54,chinese,你必须跳过,你必须快炒,Same as row 18
+spanish,87,Cooking Verbs,54,pinyin,nǐ bì xū tiào guò,nǐ bì xū kuài chǎo,Match chinese fix
+spanish,87,Cooking Verbs,54,portuguese,você tem que pular,você tem que refogar,Same as row 18
+spanish,87,Cooking Verbs,55,chinese,我要跳过,我要快炒,Same as row 18
+spanish,87,Cooking Verbs,55,pinyin,wǒ yào tiào guò,wǒ yào kuài chǎo,Match chinese fix
+spanish,87,Cooking Verbs,55,portuguese,Vou pular,Vou refogar,Same as row 18
+spanish,94,Internet & Web,15,chinese,当然,安全,"dāng rán=certainly, ān quán=safe/secure"
+spanish,94,Internet & Web,15,pinyin,dāng rán,ān quán,Match chinese fix
+spanish,94,Internet & Web,32,chinese,我要扬帆,我要浏览,"yáng fān=set sail ship, liú lǎn=browse web"
+spanish,94,Internet & Web,32,pinyin,wǒ yào yáng fān,wǒ yào liú lǎn,Match chinese fix
+spanish,94,Internet & Web,42,chinese,好兆头,好信号,"zhào tou=omen, xìn hào=signal"
+spanish,94,Internet & Web,42,pinyin,hǎo zhào tou,hǎo xìn hào,Match chinese fix
+spanish,95,Relationships,8,chinese,已知,熟人,"yǐ zhī=known fact, shú rén=acquaintance"
+spanish,95,Relationships,8,pinyin,yǐ zhī,shú rén,Match chinese fix
+spanish,95,Relationships,14,chinese,环,戒指,"huán=ring shape, jiè zhǐ=jewelry ring"
+spanish,95,Relationships,14,pinyin,huán,jiè zhǐ,Match chinese fix
+spanish,95,Relationships,15,portuguese,beijo,beijar,"beijo=kiss noun, beijar=to kiss verb"
+spanish,95,Relationships,16,portuguese,abraço,abraçar,"abraço=hug noun, abraçar=to hug verb"
+spanish,95,Relationships,17,portuguese,amor,amar,"amor=love noun, amar=to love verb"
+spanish,95,Relationships,21,chinese,自信,知己,"zì xìn=self-confident, zhī jǐ=confidant"
+spanish,95,Relationships,21,pinyin,zì xìn,zhī jǐ,Match chinese fix
+spanish,64,Asking For Things,2,chinese,我问,我要,"wèn=ask questions, yào=ask for/request"
+spanish,64,Asking For Things,2,pinyin,wǒ wèn,wǒ yào,Match chinese fix
+spanish,64,Asking For Things,3,chinese,你问,你要,Same - pedir=request not question
+spanish,64,Asking For Things,3,pinyin,nǐ wèn,nǐ yào,Match chinese fix
+spanish,64,Asking For Things,4,chinese,问,要,Same - request not question
+spanish,64,Asking For Things,4,pinyin,wèn,yào,Match chinese fix
+spanish,64,Asking For Things,5,chinese,我们问,我们要,Same - request not question
+spanish,64,Asking For Things,5,pinyin,wǒ men wèn,wǒ men yào,Match chinese fix
+spanish,64,Asking For Things,6,chinese,你问,你要,Same - request not question
+spanish,64,Asking For Things,6,pinyin,nǐ wèn,nǐ yào,Match chinese fix
+spanish,96,Reading,2,english,leo,I read,"leo=I read verb, not zodiac sign"
+spanish,96,Reading,2,chinese,狮子座,我读,"shī zi zuò=Leo zodiac, wǒ dú=I read"
+spanish,96,Reading,2,pinyin,shī zi zuò,wǒ dú,Match chinese fix
+spanish,96,Reading,2,portuguese,leão,leio,"leão=lion animal, leio=I read"
+spanish,96,Reading,3,chinese,你读过,你读,"dú guò=past tense, dú=present tense"
+spanish,96,Reading,3,pinyin,nǐ dú guò,nǐ dú,Match chinese fix
+spanish,96,Reading,3,portuguese,você leu,você lê,"leu=past tense, lê=present tense"
+spanish,96,Reading,6,chinese,你读过,你读,Same - use present tense
+spanish,96,Reading,6,pinyin,nǐ dú guò,nǐ dú,Match chinese fix
+spanish,96,Reading,6,portuguese,você leu,você lê,Same - use present tense
