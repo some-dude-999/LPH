@@ -207,8 +207,12 @@ def generate_language_section(language):
         )
 
         html += f"""<h4>Act {act_display}: {name} (Packs {start}-{end}, {count} packs)</h4>
-<div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3" data-lang="{language}" data-act="{act_num}" style="background-color: {bg_color}; padding: 15px; border-radius: 5px; border: 2px solid #ddd;">{prompt}</div>
+<div style="display: flex; gap: 10px; margin-bottom: 5px;">
+    <button onclick="navigatePrompt(this, 'prev')" style="padding: 5px 15px; cursor: pointer; background: #4CAF50; color: white; border: none; border-radius: 3px; font-weight: bold;">← Previous</button>
+    <div style="flex: 1; text-align: center; padding: 5px; font-style: italic;">Click prompt box below to copy</div>
+    <button onclick="navigatePrompt(this, 'next')" style="padding: 5px 15px; cursor: pointer; background: #2196F3; color: white; border: none; border-radius: 3px; font-weight: bold;">Next →</button>
+</div>
+<div onclick="copyPrompt(this)" data-stage="3" data-lang="{language}" data-act="{act_num}" class="stage3-prompt" style="background-color: {bg_color}; padding: 15px; border-radius: 5px; border: 2px solid #ddd; cursor: pointer;">{prompt}</div>
 
 """
 
