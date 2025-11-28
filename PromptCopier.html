@@ -276,6 +276,12 @@ seen this wordpack before) rate the quality. This prevents:
     </select>
 </div>
 
+<!-- STICKY QUICK COPY HEADER FOR STAGE 3 PROMPTS -->
+<div id="quickCopyHeader" style="position: sticky; top: 0; background: #f5f5f5; border-bottom: 3px solid #333; padding: 10px; z-index: 1000; display: none; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <div style="font-weight: bold; margin-bottom: 8px; font-size: 14px;">📋 Quick Copy Prompts (click to copy):</div>
+    <div id="quickCopyButtons" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+</div>
+
 <!-- ============================================================ -->
 <!-- STAGE 1: BASE WORDS REVIEW                                   -->
 <!-- ============================================================ -->
@@ -3724,7 +3730,97 @@ The goal is quality, not politeness.</div>
                 }
             });
         });
+
+        // Update quick copy header after filtering
+        updateQuickCopyHeader();
     }
+
+    // ============================================================
+    // QUICK COPY HEADER FUNCTIONALITY
+    // ============================================================
+    function updateQuickCopyHeader() {
+        const quickCopyHeader = document.getElementById('quickCopyHeader');
+        const quickCopyButtons = document.getElementById('quickCopyButtons');
+
+        // Get all visible Stage 3 prompt boxes
+        const allPrompts = Array.from(document.querySelectorAll('.stage3-prompt'));
+        const visiblePrompts = allPrompts.filter(prompt => {
+            return !prompt.classList.contains('hidden') &&
+                   prompt.offsetParent !== null;
+        });
+
+        // If no Stage 3 prompts visible, hide the header
+        if (visiblePrompts.length === 0) {
+            quickCopyHeader.style.display = 'none';
+            return;
+        }
+
+        // Show the header and populate buttons
+        quickCopyHeader.style.display = 'block';
+        quickCopyButtons.innerHTML = '';
+
+        visiblePrompts.forEach((prompt, index) => {
+            const lang = prompt.dataset.lang;
+            const actNum = prompt.dataset.act;
+            const bgColor = prompt.style.backgroundColor;
+
+            // Find the h4 header for this prompt to get act name
+            let h4 = prompt.previousElementSibling;
+            while (h4 && h4.tagName !== 'H4') {
+                h4 = h4.previousElementSibling;
+            }
+            const actName = h4 ? h4.textContent.trim() : `Act ${actNum}`;
+
+            // Create button
+            const button = document.createElement('button');
+            button.textContent = actName;
+            button.style.cssText = `
+                background-color: ${bgColor};
+                border: 2px solid #333;
+                padding: 8px 12px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 12px;
+                transition: transform 0.2s, box-shadow 0.2s;
+                white-space: nowrap;
+            `;
+            button.onmouseover = function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+            };
+            button.onmouseout = function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            };
+            button.onclick = function() {
+                // Copy the prompt
+                const text = prompt.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    // Flash green to indicate copy
+                    const originalBg = this.style.backgroundColor;
+                    this.style.backgroundColor = '#90EE90';
+                    this.textContent = '✓ Copied!';
+                    setTimeout(() => {
+                        this.style.backgroundColor = originalBg;
+                        this.textContent = actName;
+                    }, 800);
+
+                    // Also scroll to the prompt
+                    prompt.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    prompt.style.boxShadow = '0 0 20px 5px rgba(144, 238, 144, 0.6)';
+                    setTimeout(() => {
+                        prompt.style.boxShadow = '';
+                    }, 1000);
+                });
+            };
+
+            quickCopyButtons.appendChild(button);
+        });
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', updateQuickCopyHeader);
 </script>
 
 </body>
