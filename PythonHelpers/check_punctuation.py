@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Check for punctuation and symbols in CSV cells.
+Check for ANY punctuation/symbols in CSV cells.
 
 This script:
-1. Flags cells with suspicious symbols (|, [, ], etc.) - likely translation errors
+1. Flags cells with ANY symbols/punctuation - ALL need manual review
 2. For Chinese/pinyin pairs: Verifies comma placement matches character-by-character
-3. For other punctuation: Flags for manual review
+3. Reports ALL punctuation for manual checking (we don't decide what's suspicious)
 
 Output: Reports issues with severity levels (ERROR, WARNING, INFO)
 
@@ -43,10 +43,7 @@ LANGUAGE_CONFIG = {
     }
 }
 
-# Suspicious symbols that indicate translation errors
-SUSPICIOUS_SYMBOLS = ['|', '[', ']', '{', '}', '<', '>']
-
-# Chinese punctuation marks
+# Chinese punctuation marks (for parsing)
 CHINESE_PUNCTUATION = '，。！？、；：""''（）《》【】…—'
 
 
@@ -164,18 +161,23 @@ def check_comma_placement(chinese, pinyin):
     return True, None
 
 
-def check_suspicious_symbols(text, column_name):
-    """Check for suspicious symbols that indicate translation errors."""
-    found_symbols = []
+def find_all_symbols(text):
+    """
+    Find ALL symbols/punctuation in text (not just suspicious ones).
 
-    for symbol in SUSPICIOUS_SYMBOLS:
-        if symbol in text:
-            found_symbols.append(symbol)
+    Returns list of unique symbols found.
+    """
+    # Match any non-alphanumeric, non-space, non-basic-letter character
+    # This includes: punctuation, symbols, special characters, etc.
+    symbols = re.findall(r'[^\w\s]', text, re.UNICODE)
 
-    if found_symbols:
-        return True, f"Suspicious symbols found: {', '.join(found_symbols)}"
+    # Also check for specific problematic characters that \w might match
+    # Add checks for things like |, brackets, etc.
+    additional = re.findall(r'[|<>{}[\]\\]', text)
 
-    return False, None
+    symbols.extend(additional)
+
+    return list(set(symbols))  # Return unique symbols
 
 
 def check_csv_file(filepath, language):
@@ -191,21 +193,35 @@ def check_csv_file(filepath, language):
             reader = csv.DictReader(f)
 
             for row_num, row in enumerate(reader, start=2):  # Start at 2 (header is 1)
-                # Check all columns for suspicious symbols
+                # Check all columns for ANY symbols/punctuation
                 for col_name, value in row.items():
                     if not value:
                         continue
 
-                    # Check for suspicious symbols (ERROR level)
-                    has_suspicious, msg = check_suspicious_symbols(value, col_name)
-                    if has_suspicious:
+                    symbols = find_all_symbols(value)
+
+                    if symbols:
+                        # Determine severity based on symbol types
+                        severity = 'INFO'  # Default
+
+                        # High priority symbols (likely errors)
+                        high_priority = ['|', '[', ']', '{', '}', '<', '>']
+                        if any(s in high_priority for s in symbols):
+                            severity = 'ERROR'
+                        # Question marks, exclamation marks, periods (review needed)
+                        elif any(s in ['?', '!', '.', '¿', '¡'] for s in symbols):
+                            severity = 'WARNING'
+                        # Other punctuation (commas, quotes, etc.)
+                        else:
+                            severity = 'INFO'
+
                         issues.append({
                             'file': os.path.basename(filepath),
                             'row': row_num,
                             'column': col_name,
-                            'value': value,
-                            'severity': 'ERROR',
-                            'message': msg
+                            'value': value[:100],  # Truncate long values
+                            'severity': severity,
+                            'message': f"Contains symbols: {', '.join(sorted(set(symbols)))}"
                         })
 
                 # Check Chinese/pinyin comma placement (if applicable)
@@ -224,22 +240,6 @@ def check_csv_file(filepath, language):
                             'severity': 'ERROR',
                             'message': f"Comma placement mismatch: {error_msg}"
                         })
-
-                # Check for other Chinese punctuation (INFO level - for awareness)
-                if chinese:
-                    other_punct = [p for p in CHINESE_PUNCTUATION if p != '，' and p in chinese]
-                    if other_punct:
-                        # Verify it's also in pinyin
-                        has_in_pinyin = any(p in pinyin for p in other_punct)
-                        if not has_in_pinyin:
-                            issues.append({
-                                'file': os.path.basename(filepath),
-                                'row': row_num,
-                                'column': f"{config['chinese_col']}/{config['pinyin_col']}",
-                                'value': f"Chinese: {chinese} | Pinyin: {pinyin}",
-                                'severity': 'WARNING',
-                                'message': f"Chinese has punctuation {other_punct} but pinyin may not match"
-                            })
 
     except Exception as e:
         print(f"ERROR reading {filepath}: {e}")
@@ -273,18 +273,19 @@ def check_language(language):
     print(f"\n{'='*70}")
     print(f"RESULTS for {language.upper()}")
     print(f"{'='*70}")
-    print(f"  ERRORS:   {len(errors)} (suspicious symbols, comma misplacement)")
-    print(f"  WARNINGS: {len(warnings)} (other punctuation mismatches)")
-    print(f"  INFO:     {len(infos)}")
+    print(f"  ERRORS:   {len(errors)} (|, [, ], comma misplacement)")
+    print(f"  WARNINGS: {len(warnings)} (?, !, .)")
+    print(f"  INFO:     {len(infos)} (other punctuation)")
+    print(f"  TOTAL:    {len(all_issues)} cells with symbols/punctuation")
 
-    # Print errors
+    # Print errors (first 20)
     if errors:
         print(f"\n{'='*70}")
-        print("ERRORS (Must fix these!)")
+        print("ERRORS (High priority - likely translation failures)")
         print(f"{'='*70}")
-        for issue in errors[:20]:  # Show first 20
+        for issue in errors[:20]:
             print(f"\n  {issue['file']} - Row {issue['row']} - {issue['column']}")
-            print(f"    Value: {issue['value'][:80]}")
+            print(f"    Value: {issue['value']}")
             print(f"    Issue: {issue['message']}")
 
         if len(errors) > 20:
@@ -293,18 +294,25 @@ def check_language(language):
     # Print warnings (first 10)
     if warnings:
         print(f"\n{'='*70}")
-        print("WARNINGS (Review these)")
+        print("WARNINGS (Review these - question marks, exclamation, periods)")
         print(f"{'='*70}")
         for issue in warnings[:10]:
             print(f"\n  {issue['file']} - Row {issue['row']} - {issue['column']}")
-            print(f"    Value: {issue['value'][:80]}")
+            print(f"    Value: {issue['value']}")
             print(f"    Issue: {issue['message']}")
 
         if len(warnings) > 10:
             print(f"\n  ... and {len(warnings) - 10} more warnings")
 
-    if not errors and not warnings:
-        print("\n✅ No punctuation issues found!")
+    # Print summary of INFO items
+    if infos:
+        print(f"\n{'='*70}")
+        print(f"INFO ({len(infos)} cells with other punctuation)")
+        print(f"{'='*70}")
+        print("  (Run with full output to see all punctuation marks)")
+
+    if not all_issues:
+        print("\n✅ No punctuation or symbols found!")
 
     return all_issues
 
@@ -313,10 +321,12 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python check_punctuation.py [chinese|spanish|english|all]")
         print("")
-        print("This script checks for:")
-        print("  1. Suspicious symbols (|, [, ], etc.) - likely translation errors")
-        print("  2. Chinese comma placement - must match pinyin character-by-character")
-        print("  3. Other punctuation mismatches")
+        print("This script checks for ANY punctuation/symbols in cells:")
+        print("  - ERROR: |, [, ], {}, <>, comma misplacement")
+        print("  - WARNING: ?, !, .")
+        print("  - INFO: All other punctuation (commas, quotes, etc.)")
+        print("")
+        print("Everything gets flagged for manual review!")
         print("")
         print("Examples:")
         print("  python PythonHelpers/check_punctuation.py chinese")
@@ -336,8 +346,11 @@ def main():
         print(f"{'='*70}")
         errors = [i for i in all_issues_combined if i['severity'] == 'ERROR']
         warnings = [i for i in all_issues_combined if i['severity'] == 'WARNING']
+        infos = [i for i in all_issues_combined if i['severity'] == 'INFO']
         print(f"Total ERRORS:   {len(errors)}")
         print(f"Total WARNINGS: {len(warnings)}")
+        print(f"Total INFO:     {len(infos)}")
+        print(f"TOTAL:          {len(all_issues_combined)}")
 
     elif language in LANGUAGE_CONFIG:
         check_language(language)
