@@ -1,55 +1,55 @@
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-饭,fàn,Rice,Arroz,Riz,Arroz,Gạo,ข้าว,បាយ,Beras,Beras,Bigas
-米饭,mǐ fàn,Rice,Arroz,Riz,Arroz,Cơm,ข้าวสวย,បាយ,Nasi,Nasi,Kanin
-面,miàn,Noodles,Fideos,Nouilles,Macarrão,Mì,ก๋วยเตี๋ยว,មី,Mie,Mi,Noodles
-面条,miàn tiáo,Noodles,Fideos,Nouilles,Macarrão,Mì,ก๋วยเตี๋ยว,មី,Mie,Mi,Noodles
-馒头,mán tou,Steamed buns,Bollos al vapor,Petits pains cuits à la vapeur,Pãezinhos no vapor,Bánh bao hấp,ซาลาเปา,នំប៉ាវចំហុយ,Bakpao,Bakpau,Siopao
-包子,bāo zi,Buns,Bollos,Petits pains,Pãezinhos,Bánh bao,ซาลาเปา,នំប៉ាវ,Bakpao,Bakpau,Siopao
-饺子,jiǎo zi,Dumplings,Dumplings,Raviolis,Dumplings,Bánh bao,เกี๊ยว,នំប៉័ង,Pangsit,Ladu,Dumplings
-面包,miàn bāo,Bread,Pan,Pain,Pão,Bánh mì,ขนมปัง,នំប៉័ង,Roti,Roti,Tinapay
-鸡蛋,jī dàn,Eggs,Huevos,Oeufs,Ovos,Trứng,ไข่,ស៊ុត,Telur,Telur,Itlog
-肉,ròu,Meat,Carne,Viande,Carne,Thịt,เนื้อ,សាច់,Daging,Daging,Karne
-鸡肉,jī ròu,Chicken,Pollo,Poulet,Frango,Thịt gà,ไก่,សាច់មាន់,Ayam,Ayam,Manok
-猪肉,zhū ròu,Pork,Cerdo,Porc,Carne de porco,Thịt lợn,หมู,សាច់ជ្រូក,Babi,Daging babi,Baboy
-牛肉,niú ròu,Beef,Carne de res,Bœuf,Carne,Thịt bò,เนื้อวัว,សាច់គោ,Daging sapi,Daging lembu,Beef
-蔬菜,shū cài,Vegetables,Verduras,Légumes,Legumes,Rau,ผัก,បន្លែ,Sayuran,Sayur,Gulay
-水果,shuǐ guǒ,Fruit,Fruta,Fruits,Fruta,Trái cây,ผลไม้,ផ្លែឈើ,Buah,Buah,Prutas
-汤,tāng,Soup,Sopa,Soupe,Sopa,Súp,ซุป,ស៊ុប,Sup,Sup,Sopas
-羊肉,yáng ròu,Mutton,Cordero,Mouton,Carneiro,Thịt cừu,เนื้อแกะ,សាច់ចៀម,Daging kambing,Daging kambing,Mutton
-海鲜,hǎi xiān,Seafood,Mariscos,Fruits de mer,Frutos do mar,Hải sản,อาหารทะเล,អាហារសមុទ្រ,Makanan laut,Makanan laut,Seafood
-白饭,bái fàn,White rice,Arroz blanco,Riz blanc,Arroz branco,Cơm trắng,ข้าวขาว,បាយស,Nasi putih,Nasi putih,Puting kanin
-热饭,rè fàn,Hot rice,Arroz caliente,Riz chaud,Arroz quente,Cơm nóng,ข้าวร้อน,បាយក្តៅ,Nasi panas,Nasi panas,Mainit na kanin
-米饭香,mǐ fàn xiāng,Fragrant rice,Arroz fragante,Riz parfumé,Arroz perfumado,Cơm thơm,ข้าวหอม,បាយក្រអូប,Nasi harum,Nasi wangi,Mabangong kanin
-煮米饭,zhǔ mǐ fàn,Cook rice,Cocinar arroz,Cuire du riz,Cozinhar arroz,Nấu cơm,หุงข้าว,ស្លបាយ,Masak nasi,Masak nasi,Magluto ng kanin
-吃面,chī miàn,Eat noodles,Comer fideos,Manger des nouilles,Comer macarrão,Ăn mì,กินก๋วยเตี๋ยว,ញ៉ាំមី,Makan mie,Makan mi,Kumain ng noodles
-做面,zuò miàn,Make noodles,Hacer fideos,Faire des nouilles,Fazer macarrão,Làm mì,ทำก๋วยเตี๋ยว,ធ្វើមី,Buat mie,Buat mi,Gumawa ng noodles
-面条好,miàn tiáo hǎo,Noodles are good,Los fideos son buenos,Les nouilles sont bonnes,O macarrão é bom,Mì ngon,ก๋วยเตี๋ยวอร่อย,មីឆ្ងាញ់,Mie enak,Mi sedap,Masarap ang noodles
-煮面条,zhǔ miàn tiáo,Cook noodles,Cocinar fideos,Cuire des nouilles,Cozinhar macarrão,Nấu mì,ต้มก๋วยเตี๋ยว,ស្លមី,Masak mie,Masak mi,Magluto ng noodles
-馒头香,mán tou xiāng,Steamed buns are fragrant,Los bollos son fragantes,Les petits pains sont parfumés,Os pãezinhos são perfumados,Bánh bao thơm,ซาลาเปาหอม,នំប៉ាវចំហុយក្រអូប,Bakpao harum,Bakpau wangi,Mabango ang siopao
-蒸馒头,zhēng mán tou,Steam buns,Cocer al vapor bollos,Cuire à la vapeur des petits pains,Cozinhar no vapor pãezinhos,Hấp bánh bao,นึ่งซาลาเปา,ចំហុយនំប៉ាវ,Kukus bakpao,Kukus bakpau,Magluto ng siopao
-包子香,bāo zi xiāng,Buns are fragrant,Los bollos son fragantes,Les petits pains sont parfumés,Os pãezinhos são perfumados,Bánh bao thơm,ซาลาเปาหอม,នំប៉ាវក្រអូប,Bakpao harum,Bakpau wangi,Mabango ang siopao
-蒸包子,zhēng bāo zi,Steam buns,Cocer al vapor bollos,Cuire à la vapeur des petits pains,Cozinhar no vapor pãezinhos,Hấp bánh bao,นึ่งซาลาเปา,ចំហុយនំប៉ាវ,Kukus bakpao,Kukus bakpau,Magluto ng siopao
-饺子香,jiǎo zi xiāng,Dumplings are fragrant,Los dumplings son fragantes,Les raviolis sont parfumés,Os dumplings são perfumados,Bánh bao thơm,เกี๊ยวหอม,នំប៉័ងក្រអូប,Pangsit harum,Ladu wangi,Mabango ang dumplings
-包饺子,bāo jiǎo zi,Make dumplings,Hacer dumplings,Faire des raviolis,Fazer dumplings,Làm bánh bao,ห่อเกี๊ยว,ធ្វើនំប៉័ង,Buat pangsit,Buat ladu,Gumawa ng dumplings
-面包香,miàn bāo xiāng,Bread is fragrant,El pan es fragante,Le pain est parfumé,O pão é perfumado,Bánh mì thơm,ขนมปังหอม,នំប៉័ងក្រអូប,Roti harum,Roti wangi,Mabango ang tinapay
-烤面包,kǎo miàn bāo,Toast bread,Tostar pan,Griller du pain,Torrar pão,Nướng bánh mì,ปิ้งขนมปัง,អាំងនំប៉័ង,Panggang roti,Bakar roti,Mag-toast ng tinapay
-鸡蛋好,jī dàn hǎo,Eggs are good,Los huevos son buenos,Les oeufs sont bons,Os ovos são bons,Trứng ngon,ไข่อร่อย,ស៊ុតឆ្ងាញ់,Telur enak,Telur sedap,Masarap ang itlog
-煎鸡蛋,jiān jī dàn,Fry eggs,Freír huevos,Faire frire des oeufs,Fritar ovos,Chiên trứng,ทอดไข่,ចៀនស៊ុត,Goreng telur,Goreng telur,Mag-prito ng itlog
-吃肉,chī ròu,Eat meat,Comer carne,Manger de la viande,Comer carne,Ăn thịt,กินเนื้อ,ញ៉ាំសាច់,Makan daging,Makan daging,Kumain ng karne
-买肉,mǎi ròu,Buy meat,Comprar carne,Acheter de la viande,Comprar carne,Mua thịt,ซื้อเนื้อ,ទិញសាច់,Beli daging,Beli daging,Bumili ng karne
-鸡肉好,jī ròu hǎo,Chicken is good,El pollo es bueno,Le poulet est bon,O frango é bom,Gà ngon,ไก่อร่อย,សាច់មាន់ឆ្ងាញ់,Ayam enak,Ayam sedap,Masarap ang manok
-炒鸡肉,chǎo jī ròu,Stir-fry chicken,Saltear pollo,Faire sauter du poulet,Refogar frango,Xào gà,ผัดไก่,ឆាសាច់មាន់,Tumis ayam,Tumis ayam,Mag-prito ng manok
-猪肉香,zhū ròu xiāng,Pork is fragrant,El cerdo es fragante,Le porc est parfumé,A carne de porco é perfumada,Thịt lợn thơm,หมูหอม,សាច់ជ្រូកក្រអូប,Babi harum,Babi wangi,Mabango ang baboy
-炒猪肉,chǎo zhū ròu,Stir-fry pork,Saltear cerdo,Faire sauter du porc,Refogar carne de porco,Xào thịt lợn,ผัดหมู,ឆាសាច់ជ្រូក,Tumis babi,Tumis babi,Mag-prito ng baboy
-牛肉好,niú ròu hǎo,Beef is good,La carne es buena,Le boeuf est bon,A carne é boa,Thịt bò ngon,เนื้อวัวอร่อย,សាច់គោឆ្ងាញ់,Daging sapi enak,Daging lembu sedap,Masarap ang beef
-炒牛肉,chǎo niú ròu,Stir-fry beef,Saltear carne,Faire sauter du boeuf,Refogar carne,Xào thịt bò,ผัดเนื้อวัว,ឆាសាច់គោ,Tumis daging sapi,Tumis daging lembu,Mag-prito ng beef
-蔬菜新鲜,shū cài xīn xiān,Vegetables are fresh,Las verduras están frescas,Les légumes sont frais,Os legumes estão frescos,Rau tươi,ผักสด,បន្លែស្រស់,Sayuran segar,Sayur segar,Sariwang gulay
-吃蔬菜,chī shū cài,Eat vegetables,Comer verduras,Manger des légumes,Comer legumes,Ăn rau,กินผัก,ញ៉ាំបន្លែ,Makan sayur,Makan sayur,Kumain ng gulay
-水果甜,shuǐ guǒ tián,Fruit is sweet,La fruta es dulce,Les fruits sont sucrés,A fruta é doce,Trái cây ngọt,ผลไม้หวาน,ផ្លែឈើផ្អែម,Buah manis,Buah manis,Matamis ang prutas
-吃水果,chī shuǐ guǒ,Eat fruit,Comer fruta,Manger des fruits,Comer fruta,Ăn trái cây,กินผลไม้,ញ៉ាំផ្លែឈើ,Makan buah,Makan buah,Kumain ng prutas
-汤好喝,tāng hǎo hē,Soup is delicious,La sopa es deliciosa,La soupe est délicieuse,A sopa é deliciosa,Súp ngon,ซุปอร่อย,ស៊ុបឆ្ងាញ់,Sup enak,Sup sedap,Masarap ang sopas
-喝汤,hē tāng,Drink soup,Beber sopa,Boire de la soupe,Tomar sopa,Uống súp,ดื่มซุป,ផឹកស៊ុប,Minum sup,Minum sup,Uminom ng sopas
-羊肉香,yáng ròu xiāng,Lamb is fragrant,El cordero es fragante,L'agneau est parfumé,O cordeiro é perfumado,Thịt cừu thơm,เนื้อแกะหอม,សាច់ចៀមក្រអូប,Daging kambing harum,Daging kambing wangi,Mabango ang lamb
-涮羊肉,shuàn yáng ròu,Lamb hotpot,Cordero en olla caliente,Agneau à la marmite,Cordeiro na panela quente,Lẩu cừu,ชาบูเนื้อแกะ,ស្ងោរសាច់ចៀម,Shabu-shabu kambing,Shabu-shabu kambing,Lamb hotpot
-海鲜好,hǎi xiān hǎo,Seafood is good,El marisco es bueno,Les fruits de mer sont bons,Os frutos do mar são bons,Hải sản ngon,อาหารทะเลอร่อย,អាហារសមុទ្រឆ្ងាញ់,Makanan laut enak,Makanan laut sedap,Masarap ang seafood
-吃海鲜,chī hǎi xiān,Eat seafood,Comer mariscos,Manger des fruits de mer,Comer frutos do mar,Ăn hải sản,กินอาหารทะเล,ញ៉ាំអាហារសមុទ្រ,Makan makanan laut,Makan makanan laut,Kumain ng seafood
+chinese,pinyin,english,spanish,french,portuguese
+饭,fàn,Rice,Arroz,Riz,Arroz
+米饭,mǐ fàn,Rice,Arroz,Riz,Arroz
+面,miàn,Noodles,Fideos,Nouilles,Macarrão
+面条,miàn tiáo,Noodles,Fideos,Nouilles,Macarrão
+馒头,mán tou,Steamed buns,Bollos al vapor,Petits pains cuits à la vapeur,Pãezinhos no vapor
+包子,bāo zi,Buns,Bollos,Petits pains,Pãezinhos
+饺子,jiǎo zi,Dumplings,Dumplings,Raviolis,Dumplings
+面包,miàn bāo,Bread,Pan,Pain,Pão
+鸡蛋,jī dàn,Eggs,Huevos,Oeufs,Ovos
+肉,ròu,Meat,Carne,Viande,Carne
+鸡肉,jī ròu,Chicken,Pollo,Poulet,Frango
+猪肉,zhū ròu,Pork,Cerdo,Porc,Carne de porco
+牛肉,niú ròu,Beef,Carne de res,Bœuf,Carne
+蔬菜,shū cài,Vegetables,Verduras,Légumes,Legumes
+水果,shuǐ guǒ,Fruit,Fruta,Fruits,Fruta
+汤,tāng,Soup,Sopa,Soupe,Sopa
+羊肉,yáng ròu,Mutton,Cordero,Mouton,Carneiro
+海鲜,hǎi xiān,Seafood,Mariscos,Fruits de mer,Frutos do mar
+白饭,bái fàn,White rice,Arroz blanco,Riz blanc,Arroz branco
+热饭,rè fàn,Hot rice,Arroz caliente,Riz chaud,Arroz quente
+米饭香,mǐ fàn xiāng,Fragrant rice,Arroz fragante,Riz parfumé,Arroz perfumado
+煮米饭,zhǔ mǐ fàn,Cook rice,Cocinar arroz,Cuire du riz,Cozinhar arroz
+吃面,chī miàn,Eat noodles,Comer fideos,Manger des nouilles,Comer macarrão
+做面,zuò miàn,Make noodles,Hacer fideos,Faire des nouilles,Fazer macarrão
+面条好,miàn tiáo hǎo,Noodles are good,Los fideos son buenos,Les nouilles sont bonnes,O macarrão é bom
+煮面条,zhǔ miàn tiáo,Cook noodles,Cocinar fideos,Cuire des nouilles,Cozinhar macarrão
+馒头香,mán tou xiāng,Steamed buns are fragrant,Los bollos son fragantes,Les petits pains sont parfumés,Os pãezinhos são perfumados
+蒸馒头,zhēng mán tou,Steam buns,Cocer al vapor bollos,Cuire à la vapeur des petits pains,Cozinhar no vapor pãezinhos
+包子香,bāo zi xiāng,Buns are fragrant,Los bollos son fragantes,Les petits pains sont parfumés,Os pãezinhos são perfumados
+蒸包子,zhēng bāo zi,Steam buns,Cocer al vapor bollos,Cuire à la vapeur des petits pains,Cozinhar no vapor pãezinhos
+饺子香,jiǎo zi xiāng,Dumplings are fragrant,Los dumplings son fragantes,Les raviolis sont parfumés,Os dumplings são perfumados
+包饺子,bāo jiǎo zi,Make dumplings,Hacer dumplings,Faire des raviolis,Fazer dumplings
+面包香,miàn bāo xiāng,Bread is fragrant,El pan es fragante,Le pain est parfumé,O pão é perfumado
+烤面包,kǎo miàn bāo,Toast bread,Tostar pan,Griller du pain,Torrar pão
+鸡蛋好,jī dàn hǎo,Eggs are good,Los huevos son buenos,Les oeufs sont bons,Os ovos são bons
+煎鸡蛋,jiān jī dàn,Fry eggs,Freír huevos,Faire frire des oeufs,Fritar ovos
+吃肉,chī ròu,Eat meat,Comer carne,Manger de la viande,Comer carne
+买肉,mǎi ròu,Buy meat,Comprar carne,Acheter de la viande,Comprar carne
+鸡肉好,jī ròu hǎo,Chicken is good,El pollo es bueno,Le poulet est bon,O frango é bom
+炒鸡肉,chǎo jī ròu,Stir-fry chicken,Saltear pollo,Faire sauter du poulet,Refogar frango
+猪肉香,zhū ròu xiāng,Pork is fragrant,El cerdo es fragante,Le porc est parfumé,A carne de porco é perfumada
+炒猪肉,chǎo zhū ròu,Stir-fry pork,Saltear cerdo,Faire sauter du porc,Refogar carne de porco
+牛肉好,niú ròu hǎo,Beef is good,La carne es buena,Le boeuf est bon,A carne é boa
+炒牛肉,chǎo niú ròu,Stir-fry beef,Saltear carne,Faire sauter du boeuf,Refogar carne
+蔬菜新鲜,shū cài xīn xiān,Vegetables are fresh,Las verduras están frescas,Les légumes sont frais,Os legumes estão frescos
+吃蔬菜,chī shū cài,Eat vegetables,Comer verduras,Manger des légumes,Comer legumes
+水果甜,shuǐ guǒ tián,Fruit is sweet,La fruta es dulce,Les fruits sont sucrés,A fruta é doce
+吃水果,chī shuǐ guǒ,Eat fruit,Comer fruta,Manger des fruits,Comer fruta
+汤好喝,tāng hǎo hē,Soup is delicious,La sopa es deliciosa,La soupe est délicieuse,A sopa é deliciosa
+喝汤,hē tāng,Drink soup,Beber sopa,Boire de la soupe,Tomar sopa
+羊肉香,yáng ròu xiāng,Lamb is fragrant,El cordero es fragante,L'agneau est parfumé,O cordeiro é perfumado
+涮羊肉,shuàn yáng ròu,Lamb hotpot,Cordero en olla caliente,Agneau à la marmite,Cordeiro na panela quente
+海鲜好,hǎi xiān hǎo,Seafood is good,El marisco es bueno,Les fruits de mer sont bons,Os frutos do mar são bons
+吃海鲜,chī hǎi xiān,Eat seafood,Comer mariscos,Manger des fruits de mer,Comer frutos do mar

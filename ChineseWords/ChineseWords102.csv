@@ -1,49 +1,49 @@
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-过程,guò chéng,Process,Proceso,Processus,Processo,Quá trình,กระบวนการ,ដំណើរការ,Proses,Proses,Proseso
-流程,liú chéng,Process,Proceso,Processus,Processo,Quá trình,กระบวนการ,ដំណើរការ,Proses,Proses,Proseso
-程序,chéng xù,Program,Programa,Programme,Programa,Chương trình,โปรแกรม,កម្មវិធី,Program,Program,Program
-步骤,bù zhòu,Step,Paso,Étape,Etapa,Bước,ขั้นตอน,ជំហាន,Langkah,Langkah,Hakbang
-阶段,jiē duàn,Phase,Fase,Phases,Fase,Giai đoạn,เฟส,តំណាក់កាល,Fase,Fasa,Phase
-环节,huán jié,Link,Enlace,Lien,Ligação,Liên kết,ลิงค์,ទីមួយ,Tautan,Pautan,Link
-首先,shǒu xiān,First,Primero,Premier,Primeiro,Đầu tiên,ครั้งแรก,បន្ទាប់,Pertama,Pertama,Una
-其次,qí cì,Next,Siguiente,Suivant,Próximo,Tiếp theo,ถัดไป,បន្ទាប់មក,Selanjutnya,Seterusnya,Susunod
-然后,rán hòu,Then,Entonces,Puis,Então,Sau đó,แล้ว,បន្ទាប់មក,Lalu,Maka,Pagkatapos
-接着,jiē zhe,Then,Entonces,Puis,Então,Sau đó,แล้ว,ទីបំផុត,Lalu,Maka,Pagkatapos
-最后,zuì hòu,Finally,Finalmente,Enfin,Finalmente,Cuối cùng,ในที่สุด,ចុងក្រោយ,Akhirnya,Akhirnya,Panghuli
-最终,zuì zhōng,Final,Final,Finale,Final,Chung kết,สุดท้าย,ចុងក្រោយ,Akhir,Akhir,Pangwakas
-完成,wán chéng,Completion,Finalización,Achèvement,Conclusão,Hoàn thành,เสร็จสิ้น,វឌ្ឍនភាព,Penyelesaian,Penyelesaian,Pagkumpleto
-进展,jìn zhǎn,Progress,Progreso,Progrès,Progresso,Tiến độ,ความคืบหน้า,បញ្ចប់,Kemajuan,Kemajuan,Pag -unlad
-进度,jìn dù,Progress,Progreso,Progrès,Progresso,Tiến độ,ความคืบหน้า,វឌ្ឍនភាព,Kemajuan,Kemajuan,Pag -unlad
-终结,zhōng jié,End,Fin,Fin,Fim,Kết thúc,จบ,នៅក្នុងដំណើរការ,Akhir,Akhir,End
-整个过程,zhěng gè guò chéng,Whole process,Todo el proceso,Processus complet,Todo o processo,Toàn bộ quá trình,กระบวนการทั้งหมด,លំហូរការងារ,Seluruh proses,Keseluruhan proses,Buong proseso
-在过程中,zài guò chéng zhōng,In process,En proceso,En cours,Em processo,Đang trong quá trình,อยู่ระหว่างดำเนินการ,អនុវត្តតាមដំណើរការ,Sedang proses,Dalam proses,Sa proseso
-工作流程,gōng zuò liú chéng,Work flow,Flujo de trabajo,Flux de travail,Fluxo de trabalho,Luồng công việc,ขั้นตอนการทำงาน,នីតិវិធីប្រតិបត្តិការ,Alur kerja,Aliran Kerja,Daloy ng trabaho
-走流程,zǒu liú chéng,Follow the process,Sigue el proceso,Suivez le processus,Acompanhe o processo,Thực hiện theo quy trình,ทำตามขั้นตอน,តាមនីតិវិធី,Ikuti prosesnya,Ikuti proses,Sundin ang proseso
-操作程序,cāo zuò chéng xù,Operation procedure,Procedimiento de operación,Procédure de fonctionnement,Procedimento de operação,Quy trình vận hành,ขั้นตอนการดำเนินงาน,ជំហានប្រតិបត្តិការ,Prosedur pengoperasian,Prosedur Operasi,Pamamaraan sa Operasyon
-按程序,àn chéng xù,By procedure,Por procedimiento,Par procédure,Por procedimento,Theo thủ tục,ตามขั้นตอน,មួយជំហានម្តង ៗ,Sesuai prosedur,Dengan prosedur,Sa pamamagitan ng pamamaraan
-操作步骤,cāo zuò bù zhòu,Operation steps,Pasos de la operación,Étapes de fonctionnement,Etapas da operação,Các bước thao tác,ขั้นตอนการทำงาน,ដំណាក់កាលផ្សេងៗគ្នា,Langkah-langkah pengoperasian,Langkah Operasi,Mga Hakbang sa Operasyon
-分步骤,fēn bù zhòu,Step by step,Paso a paso,Pas à pas,Passo a passo,Từng bước,ทีละขั้นตอน,នៅដំណាក់កាលនេះ,Langkah demi langkah,Langkah demi Langkah,Hakbang sa Hakbang
-不同阶段,bù tóng jiē duàn,Different stages,Diferentes etapas,Différentes étapes,Diferentes etapas,Các giai đoạn khác nhau,ด่านต่างๆ,តំណភ្ជាប់សំខាន់ៗ,Tahapan yang berbeda,Peringkat yang berbeza,Iba't ibang yugto
-在这阶段,zài zhè jiē duàn,At this stage,En esta etapa,A ce stade,Nesta fase,Ở giai đoạn này,ณ จุดนี้,តំណនីមួយៗ,Pada tahap ini,Pada peringkat ini,Sa yugtong ito
-关键环节,guān jiàn huán jié,Key links,Enlaces clave,Liens clés,Links principais,Các liên kết chính,ลิงค์สำคัญ,ទីមួយ,Tautan kunci,Pautan Utama,Mga pangunahing link
-每个环节,měi gè huán jié,Each link,Cada enlace,Chaque lien,Cada link,Mỗi liên kết,แต่ละลิงค์,និយាយដំបូង,Setiap tautan,Setiap pautan,Bawat link
-首先是,shǒu xiān shì,First,Primero,Premier,Primeiro,Đầu tiên,ครั้งแรก,ទីពីរ,Pertama,Pertama,Una
-首先说,shǒu xiān shuō,First say,Primero di,Dites d’abord,Primeiro diga,Đầu tiên hãy nói,ก่อนอื่นให้พูด,ទីពីរ,Ucapkan dulu,Pertama katakan,Una sabihin
-其次是,qí cì shì,Secondly,En segundo lugar,Deuxièmement,Em segundo lugar,Thứ hai,ประการที่สอง,បន្ទាប់មក,Kedua,Kedua,Pangalawa
-其次说,qí cì shuō,Secondly,En segundo lugar,Deuxièmement,Em segundo lugar,Thứ hai,ประการที่สอง,បន្ទាប់មក,Kedua,Kedua,Pangalawa
-然后是,rán hòu shì,Then,Entonces,Puis,Então,Sau đó,แล้ว,បន្ទាប់មក,Lalu,Maka,Pagkatapos
-然后说,rán hòu shuō,Then,Entonces,Puis,Então,Sau đó,แล้ว,បន្ទាប់មកនិយាយ,Lalu,Maka,Pagkatapos
-接着是,jiē zhe shì,Then,Entonces,Puis,Então,Sau đó,แล้ว,ទីបំផុត,Lalu,Maka,Pagkatapos
-接着说,jiē zhe shuō,Then say,Entonces di,Alors dites,Então diga,Sau đó nói,แล้วพูดว่า,ទីបំផុតនិយាយ,Lalu ucapkan,Kemudian katakan,Pagkatapos sabihin
-最后是,zuì hòu shì,Finally,Finalmente,Enfin,Finalmente,Cuối cùng,ในที่สุด,ទីបំផុត,Akhirnya,Akhirnya,Panghuli
-最后说,zuì hòu shuō,Finally say,Finalmente di,Dites enfin,Finalmente diga,Cuối cùng nói,สุดท้ายก็พูดว่า,ទីបំផុតនឹង,Akhirnya ucapkan,Akhirnya katakan,Sa wakas sabihin
-最终是,zuì zhōng shì,Finally,Finalmente,Enfin,Finalmente,Cuối cùng,ในที่สุด,បានបញ្ចប់,Akhirnya,Akhirnya,Panghuli
-最终会,zuì zhōng huì,Finally will,Finalmente lo haré,"Finalement,",Finalmente irei,Cuối cùng sẽ,ในที่สุดก็จะ,បានបញ្ចប់,Akhirnya akan,Akhirnya akan,Sa wakas ay
-完成了,wán chéng le,Completed,Completado,Terminé,Concluído,Đã hoàn thành,เสร็จสมบูรณ์,មានការរីកចម្រើន,Selesai,Selesai,Nakumpleto
-已完成,yǐ wán chéng,Completed,Completado,Terminé,Concluído,Đã hoàn thành,เสร็จสมบูรณ์,សូមក្រឡេកមើលវឌ្ឍនភាព,Selesai,Selesai,Nakumpleto
-有进展,yǒu jìn zhǎn,There is progress,Hay avances,Il y a des progrès,Há progresso,Có tiến bộ,มีความคืบหน้า,សូមក្រឡេកមើលវឌ្ឍនភាព,Ada kemajuan,Terdapat kemajuan,Mayroong pag -unlad
-看进展,kàn jìn zhǎn,Look at the progress,Mira el progreso,Regardez les progrès,Veja o progresso,Nhìn vào sự tiến bộ,ดูความคืบหน้า,ចាប់យកវឌ្ឍនភាព,Lihatlah kemajuannya,Lihatlah kemajuan,Tumingin sa pag -unlad
-看进度,kàn jìn dù,Look at the progress,Mira el progreso,Regardez les progrès,Veja o progresso,Nhìn vào sự tiến bộ,ดูความคืบหน้า,វាចប់ហើយ,Lihatlah kemajuannya,Lihatlah kemajuan,Tumingin sa pag -unlad
-赶进度,gǎn jìn dù,Catch up on progress,Póngase al día con el progreso,Rattraper les progrès,Acompanhar o progresso,Bắt kịp tiến độ,ติดตามความคืบหน้า,ប្រមាញ់វឌ្ឍនភាព,Ikuti kemajuan,Tangkap Kemajuan,Makibalita sa pag -unlad
-终结了,zhōng jié le,It's over,Se acabó,C'est fini,Acabou,Hết rồi,จบแล้ว,ចប់ហើយ,Sudah berakhir,Ia lebih dari,Tapos na ito
-宣告终结,xuān gào zhōng jié,Declare the end,Declarar el fin,Déclarer la fin,Declare o fim,Tuyên bố kết thúc,แจ้งปิดท้ายครับ,ប្រកាសបញ្ចប់,Nyatakan akhirnya,Mengisytiharkan akhir,Ipahayag ang pagtatapos
+chinese,pinyin,english,spanish,french,portuguese
+过程,guò chéng,Process,Proceso,Processus,Processo
+流程,liú chéng,Process,Proceso,Processus,Processo
+程序,chéng xù,Program,Programa,Programme,Programa
+步骤,bù zhòu,Step,Paso,Étape,Etapa
+阶段,jiē duàn,Phase,Fase,Phases,Fase
+环节,huán jié,Link,Enlace,Lien,Ligação
+首先,shǒu xiān,First,Primero,Premier,Primeiro
+其次,qí cì,Next,Siguiente,Suivant,Próximo
+然后,rán hòu,Then,Entonces,Puis,Então
+接着,jiē zhe,Then,Entonces,Puis,Então
+最后,zuì hòu,Finally,Finalmente,Enfin,Finalmente
+最终,zuì zhōng,Final,Final,Finale,Final
+完成,wán chéng,Completion,Finalización,Achèvement,Conclusão
+进展,jìn zhǎn,Progress,Progreso,Progrès,Progresso
+进度,jìn dù,Progress,Progreso,Progrès,Progresso
+终结,zhōng jié,End,Fin,Fin,Fim
+整个过程,zhěng gè guò chéng,Whole process,Todo el proceso,Processus complet,Todo o processo
+在过程中,zài guò chéng zhōng,In process,En proceso,En cours,Em processo
+工作流程,gōng zuò liú chéng,Work flow,Flujo de trabajo,Flux de travail,Fluxo de trabalho
+走流程,zǒu liú chéng,Follow the process,Sigue el proceso,Suivez le processus,Acompanhe o processo
+操作程序,cāo zuò chéng xù,Operation procedure,Procedimiento de operación,Procédure de fonctionnement,Procedimento de operação
+按程序,àn chéng xù,By procedure,Por procedimiento,Par procédure,Por procedimento
+操作步骤,cāo zuò bù zhòu,Operation steps,Pasos de la operación,Étapes de fonctionnement,Etapas da operação
+分步骤,fēn bù zhòu,Step by step,Paso a paso,Pas à pas,Passo a passo
+不同阶段,bù tóng jiē duàn,Different stages,Diferentes etapas,Différentes étapes,Diferentes etapas
+在这阶段,zài zhè jiē duàn,At this stage,En esta etapa,A ce stade,Nesta fase
+关键环节,guān jiàn huán jié,Key links,Enlaces clave,Liens clés,Links principais
+每个环节,měi gè huán jié,Each link,Cada enlace,Chaque lien,Cada link
+首先是,shǒu xiān shì,First,Primero,Premier,Primeiro
+首先说,shǒu xiān shuō,First say,Primero di,Dites d’abord,Primeiro diga
+其次是,qí cì shì,Secondly,En segundo lugar,Deuxièmement,Em segundo lugar
+其次说,qí cì shuō,Secondly,En segundo lugar,Deuxièmement,Em segundo lugar
+然后是,rán hòu shì,Then,Entonces,Puis,Então
+然后说,rán hòu shuō,Then,Entonces,Puis,Então
+接着是,jiē zhe shì,Then,Entonces,Puis,Então
+接着说,jiē zhe shuō,Then say,Entonces di,Alors dites,Então diga
+最后是,zuì hòu shì,Finally,Finalmente,Enfin,Finalmente
+最后说,zuì hòu shuō,Finally say,Finalmente di,Dites enfin,Finalmente diga
+最终是,zuì zhōng shì,Finally,Finalmente,Enfin,Finalmente
+最终会,zuì zhōng huì,Finally will,Finalmente lo haré,"Finalement,",Finalmente irei
+完成了,wán chéng le,Completed,Completado,Terminé,Concluído
+已完成,yǐ wán chéng,Completed,Completado,Terminé,Concluído
+有进展,yǒu jìn zhǎn,There is progress,Hay avances,Il y a des progrès,Há progresso
+看进展,kàn jìn zhǎn,Look at the progress,Mira el progreso,Regardez les progrès,Veja o progresso
+看进度,kàn jìn dù,Look at the progress,Mira el progreso,Regardez les progrès,Veja o progresso
+赶进度,gǎn jìn dù,Catch up on progress,Póngase al día con el progreso,Rattraper les progrès,Acompanhar o progresso
+终结了,zhōng jié le,It's over,Se acabó,C'est fini,Acabou
+宣告终结,xuān gào zhōng jié,Declare the end,Declarar el fin,Déclarer la fin,Declare o fim

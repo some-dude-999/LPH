@@ -1,52 +1,52 @@
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-点,diǎn,o'clock,en punto,heures,horas,giờ,โมง,ម៉ោង,jam,O'Clock,O'Clock
-分,fēn,minutes,minutos,minutes,minutos,phút,นาที,នាទី,menit,minit,Minuto
-秒,miǎo,seconds,segundos,secondes,segundos,giây,วินาที,វិនាទី,detik,Seconds,segundo
-刻,kè,quarter,cuarto de hora,quart d'heure,quarto de hora,quý,ไตรมาส,ត្រីមាស ពាក់កណ្តាល ម៉ោង,seperempat,suku,Quarter
-半,bàn,half,la mitad,moitié,metade,một nửa,ครึ่ง,នាឡិកា មើល,setengah,separuh,kalahati
-小时,xiǎo shí,hour,hora,heure,hora,giờ,ชั่วโมง,ម៉ោងរោទិ៍ ម៉ោង,jam,Jam,Oras
-钟,zhōng,clock,reloj,horloge,relógio,đồng hồ,นาฬิกา,ទាន់ពេល,jam,Jam,orasan
-手表,shǒu biǎo,watch,reloj,montre,relógio,đồng hồ đeo tay,ดู,យឺត,jam tangan,jam tangan,relo
-闹钟,nào zhōng,alarm clock,despertador,réveil,despertador,đồng hồ báo thức,นาฬิกาปลุก,ដំបូង,jam alarm,Jam penggera,alarm clock
-时,shí,hour,hora,heure,hora,giờ,ชั่วโมง,ម៉ោង,jam,Jam,Oras
-准时,zhǔn shí,on time,a tiempo,à l'heure,na hora certa,đúng giờ,ตรงเวลา,ព្រឹក,tepat waktu,Pada masa,sa oras
-迟到,chí dào,late,tarde,en retard,atrasado,muộn,สาย,ម៉ោង,terlambat,Lewat,Late
-早到,zǎo dào,early,temprano,tôt,cedo,sớm,ต้น,យឺត,awal,Awal,Maaga
-整点,zhěng diǎn,hour,hora,heure,hora,giờ,ชั่วโมง,តើម៉ោងប៉ុន្មាន,jam,Jam,Oras
-上午,shàng wǔ,morning,mañana,matin,manhã,buổi sáng,เช้า,ម៉ោង 3,pagi,Pagi,Umaga
-时刻,shí kè,hour,hora,heure,hora,giờ,ชั่วโมง,ច្រើននាទី,jam,Jam,Oras
-晚点,wǎn diǎn,late,tarde,en retard,atrasado,muộn,สาย,ប្រាំនាទី,terlambat,Lewat,Late
-几点,jǐ diǎn,what time,a qué hora,à quelle heure,que horas,mấy giờ,กี่โมง,ពីរបីវិនាទី,jam berapa,Waktu berapa,Anong oras
-三点,sān diǎn,three o'clock,las tres en punto,trois heures,três horas,ba giờ,สามโมง,បីវិនាទី,jam tiga,Tiga jam,IKATLONG O'CLOCK
-几分,jǐ fēn,several minutes,varios minutos,plusieurs minutes,vários minutos,vài phút,หลายนาที,មួយភាគបួននៃមួយម៉ោង,beberapa menit,Beberapa minit,ilang minuto
-五分,wǔ fēn,five minutes,cinco minutos,cinq minutes,cinco minutos,năm phút,ห้านาที,បីភាគបួន,lima menit,lima minit,Limang minuto
-几秒,jǐ miǎo,a few seconds,unos segundos,quelques secondes,alguns segundos,vài giây,ไม่กี่วินาที,កន្លះម៉ោង,beberapa detik,beberapa saat,ilang segundo
-三秒,sān miǎo,Three seconds,Tres segundos,Trois secondes,Três segundos,Ba giây,สามวินาที,ម៉ោង 2 កន្លះ,Tiga detik,Tiga saat,Tatlong segundo
-一刻钟,yī kè zhōng,A quarter of an hour,Un cuarto de hora,Un quart d'heure,Um quarto de hora,Một phần tư giờ,หนึ่งในสี่ของชั่วโมง,មួយម៉ោង,Seperempat jam,Seperempat jam,Isang quarter ng isang oras
-三刻,sān kè,Three quarters,Tres cuartos,Trois quarts,Três quartos,Ba phần tư,สามในสี่,ពីរម៉ោង,Tiga perempat,Tiga suku,Tatlong quarters
-半小时,bàn xiǎo shí,Half an hour,Media hora,Une demi-heure,Meia hora,Nửa giờ,ครึ่งชั่วโมง,តើម៉ោងប៉ុន្មាន,Setengah jam,Setengah jam,Kalahating oras
-两点半,liǎng diǎn bàn,Half past two,Las dos y media,Deux heures et demie,Duas e meia,Hai giờ rưỡi,สองทุ่มครึ่ง,រោទិ៍នាឡិកា,Pukul setengah dua,Separuh masa lalu dua,Half Past Two
-一小时,yī xiǎo shí,One hour,Una hora,Une heure,Uma hora,Một giờ,หนึ่งชั่วโมง,សូមក្រឡេកមើលនាឡិកា,Satu jam,Satu Jam,Isang oras
-两小时,liǎng xiǎo shí,Two hours,Dos horas,Deux heures,Duas horas,Hai giờ,สองชั่วโมง,ពាក់នាឡិកា,Dua jam,Dua jam,Dalawang oras
-几点钟,jǐ diǎn zhōng,What time,¿A qué hora,À quelle heure,Que horas,Mấy giờ,กี่โมง,កំណត់ការជូនដំណឹង,Jam berapa,Waktu berapa,Anong oras
-敲钟,qiāo zhōng,Ring the clock,Toca el reloj,Sonnez l'horloge,Toque o relógio,Đổ chuông đồng hồ,กดกริ่งนาฬิกา,សំឡេងរោទិ៍,Deringkan jam,Cincin jam,I -ring ang orasan
-看手表,kàn shǒu biǎo,Look at the watch,Mira el reloj,Regardez la montre,Olha o relógio,Nhìn đồng hồ,ดูนาฬิกา,ក្នុងនាមជាកុមារ,Lihat jam tangan,Lihat jam tangan,Tumingin sa relo
-戴手表,dài shǒu biǎo,Wear a watch,Llevar reloj,Portez une montre,Use um relógio,Đeo đồng hồ,ใส่นาฬิกา,When,Pakai jam tangan,Pakai jam tangan,Magsuot ng relo
-设闹钟,shè nào zhōng,Set the alarm,Poner la alarma,Régler l'alarme,Defina o alarme,Đặt báo thức,ตั้งปลุก,មកដល់ទាន់ពេល,Setel alarm,Tetapkan penggera,Itakda ang alarma
-响闹钟,xiǎng nào zhōng,Sound the alarm,Haz sonar la alarma,Sonnez l'alarme,Soe o alarme,Âm thanh báo động,ส่งเสียงปลุก,pass pass ខ្លាំងណាស់,Bunyikan alarm,Bunyi penggera,Tunog ang alarma
-小时候,xiǎo shí hòu,As a child,Cuando era niño,En tant qu'enfant,Quando criança,Khi còn nhỏ,ในวัยเด็ก,យឺត,Sebagai seorang anak,Sebagai seorang kanak -kanak,Bilang isang bata
-何时,hé shí,When,Cuando,Quand,Quando,Khi,เมื่อ,កុំដើរយឺត,Kapan,Apabila,Kapag
-准时到,zhǔn shí dào,Arrive on time,Llegar a tiempo,Arriver à l'heure,Chegue na hora certa,Đến đúng giờ,มาถึงตรงเวลา,មកដល់ដំបូង,Tiba tepat waktu,Tiba pada masa,Dumating sa oras
-很准时,hěn zhǔn shí,Very punctual,Muy puntual,Très ponctuel,Muito pontual,Rất đúng giờ,ตรงต่อเวลามาก,មកដល់ដំបូង,Sangat tepat waktu,Sangat tepat waktu,Napaka punctual
-迟到了,chí dào le,Late,Tarde,En retard,Tarde,Muộn,สาย,នៅម៉ោង,Terlambat,Lewat,Late
-别迟到,bié chí dào,Don’t be late,No llegues tarde,Ne sois pas en retard,Não se atrase,Đừng đến muộn,อย่ารอช้า,រៀងរាល់ម៉ោង,Jangan terlambat,Jangan terlambat,Huwag maging huli
-早到了,zǎo dào le,Arrive early,Llegue temprano,Arrivez tôt,Chegue cedo,Đến sớm,มาถึงเร็ว,អរុណសួស្តី,Tiba lebih awal,Tiba awal,Dumating ng maaga
-提前早到,tí qián zǎo dào,Arrive early,Llegue temprano,Arrivez tôt,Chegue cedo,Đến sớm,มาถึงเร็ว,នៅពេលព្រឹក,Tiba lebih awal,Tiba awal,Dumating ng maaga
-整点报时,zhěng diǎn bào shí,On the hour,A la hora,À l'heure,Na hora,Đúng giờ,ในชั่วโมง,ការផ្សាយតាមកាលវិធានការ រាល់ពេល,Pada jam,Pada jam,Sa oras
-每整点,měi zhěng diǎn,Every hour,Cada hora,Toutes les heures,A cada hora,Mỗi giờ,ทุกชั่วโมง,យឺត,Setiap jam,Setiap jam,Bawat oras
-上午好,shàng wǔ hǎo,Good morning,Buenos días,Bonjour,Bom dia,Chào buổi sáng,สวัสดียามเช้า,ការហោះហើរត្រូវបានពន្យារពេល,Selamat pagi,Selamat pagi,Magandang umaga
-在上午,zài shàng wǔ,In the morning,Por la mañana,Le matin,De manhã,Buổi sáng,ในตอนเช้า,ក្នុងពេលព្រឹក,Di pagi hari,Pada waktu pagi,Sa umaga
-时刻表,shí kè biǎo,Timetable,Horario,Horaires,Cronograma,Thời khóa biểu,ตารางเวลา,តារាងពេលវេលា,Jadwal,Jadual waktu,Timetable
-每时刻,měi shí kè,Every time,Cada vez,À chaque fois,Toda vez,Mỗi lần,ทุกครั้ง,រាល់ពេល,Setiap saat,Setiap kali,Sa bawat oras
-晚点了,wǎn diǎn le,Late,Tarde,En retard,Tarde,Muộn,สาย,យឺត,Terlambat,Lewat,Late
-飞机晚点,fēi jī wǎn diǎn,The flight is delayed,El vuelo esta retrasado,Le vol est retardé,O vôo está atrasado,Chuyến bay bị trì hoãn,เที่ยวบินเกิดความล่าช้า,ការហោះហើរយឺត,Penerbangannya tertunda,Penerbangan ditangguhkan,Ang flight ay naantala
+chinese,pinyin,english,spanish,french,portuguese
+点,diǎn,o'clock,en punto,heures,horas
+分,fēn,minutes,minutos,minutes,minutos
+秒,miǎo,seconds,segundos,secondes,segundos
+刻,kè,quarter,cuarto de hora,quart d'heure,quarto de hora
+半,bàn,half,la mitad,moitié,metade
+小时,xiǎo shí,hour,hora,heure,hora
+钟,zhōng,clock,reloj,horloge,relógio
+手表,shǒu biǎo,watch,reloj,montre,relógio
+闹钟,nào zhōng,alarm clock,despertador,réveil,despertador
+时,shí,hour,hora,heure,hora
+准时,zhǔn shí,on time,a tiempo,à l'heure,na hora certa
+迟到,chí dào,late,tarde,en retard,atrasado
+早到,zǎo dào,early,temprano,tôt,cedo
+整点,zhěng diǎn,hour,hora,heure,hora
+上午,shàng wǔ,morning,mañana,matin,manhã
+时刻,shí kè,hour,hora,heure,hora
+晚点,wǎn diǎn,late,tarde,en retard,atrasado
+几点,jǐ diǎn,what time,a qué hora,à quelle heure,que horas
+三点,sān diǎn,three o'clock,las tres en punto,trois heures,três horas
+几分,jǐ fēn,several minutes,varios minutos,plusieurs minutes,vários minutos
+五分,wǔ fēn,five minutes,cinco minutos,cinq minutes,cinco minutos
+几秒,jǐ miǎo,a few seconds,unos segundos,quelques secondes,alguns segundos
+三秒,sān miǎo,Three seconds,Tres segundos,Trois secondes,Três segundos
+一刻钟,yī kè zhōng,A quarter of an hour,Un cuarto de hora,Un quart d'heure,Um quarto de hora
+三刻,sān kè,Three quarters,Tres cuartos,Trois quarts,Três quartos
+半小时,bàn xiǎo shí,Half an hour,Media hora,Une demi-heure,Meia hora
+两点半,liǎng diǎn bàn,Half past two,Las dos y media,Deux heures et demie,Duas e meia
+一小时,yī xiǎo shí,One hour,Una hora,Une heure,Uma hora
+两小时,liǎng xiǎo shí,Two hours,Dos horas,Deux heures,Duas horas
+几点钟,jǐ diǎn zhōng,What time,¿A qué hora,À quelle heure,Que horas
+敲钟,qiāo zhōng,Ring the clock,Toca el reloj,Sonnez l'horloge,Toque o relógio
+看手表,kàn shǒu biǎo,Look at the watch,Mira el reloj,Regardez la montre,Olha o relógio
+戴手表,dài shǒu biǎo,Wear a watch,Llevar reloj,Portez une montre,Use um relógio
+设闹钟,shè nào zhōng,Set the alarm,Poner la alarma,Régler l'alarme,Defina o alarme
+响闹钟,xiǎng nào zhōng,Sound the alarm,Haz sonar la alarma,Sonnez l'alarme,Soe o alarme
+小时候,xiǎo shí hòu,As a child,Cuando era niño,En tant qu'enfant,Quando criança
+何时,hé shí,When,Cuando,Quand,Quando
+准时到,zhǔn shí dào,Arrive on time,Llegar a tiempo,Arriver à l'heure,Chegue na hora certa
+很准时,hěn zhǔn shí,Very punctual,Muy puntual,Très ponctuel,Muito pontual
+迟到了,chí dào le,Late,Tarde,En retard,Tarde
+别迟到,bié chí dào,Don’t be late,No llegues tarde,Ne sois pas en retard,Não se atrase
+早到了,zǎo dào le,Arrive early,Llegue temprano,Arrivez tôt,Chegue cedo
+提前早到,tí qián zǎo dào,Arrive early,Llegue temprano,Arrivez tôt,Chegue cedo
+整点报时,zhěng diǎn bào shí,On the hour,A la hora,À l'heure,Na hora
+每整点,měi zhěng diǎn,Every hour,Cada hora,Toutes les heures,A cada hora
+上午好,shàng wǔ hǎo,Good morning,Buenos días,Bonjour,Bom dia
+在上午,zài shàng wǔ,In the morning,Por la mañana,Le matin,De manhã
+时刻表,shí kè biǎo,Timetable,Horario,Horaires,Cronograma
+每时刻,měi shí kè,Every time,Cada vez,À chaque fois,Toda vez
+晚点了,wǎn diǎn le,Late,Tarde,En retard,Tarde
+飞机晚点,fēi jī wǎn diǎn,The flight is delayed,El vuelo esta retrasado,Le vol est retardé,O vôo está atrasado

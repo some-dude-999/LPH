@@ -1,49 +1,49 @@
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-正品,zhèng pǐn,Authentic,Auténtico,Authentique,Autêntico,Hàng chính hãng,ของแท้,ពិតប្រាកដ,Asli,Asli,Tunay
-假货,jiǎ huò,Fake goods,Productos falsos,Faux produits,Produtos falsos,Hàng giả,ของปลอม,ទំនិញក្លែងក្លាយ,Barang palsu,Barang palsu,Pekeng produkto
-山寨,shān zhài,Knockoff,Imitación,Contrefaçon,Imitação,Hàng nhái,ของเลียนแบบ,ទំនិញចម្លង,Barang tiruan,Barang tiruan,Panggagaya
-劣质,liè zhì,Inferior quality,Calidad inferior,Qualité inférieure,Qualidade inferior,Chất lượng kém,คุณภาพต่ำ,គុណភាពអន់,Kualitas rendah,Kualiti rendah,Mababang kalidad
-一流,yì liú,First-rate,De primera,De premier ordre,De primeira linha,Hạng nhất,ชั้นหนึ่ง,ថ្នាក់ដំបូង,Kelas satu,Kelas pertama,Una-klase
-二流,èr liú,Second-rate,De segunda categoría,De second ordre,Segunda categoria,Hạng hai,ชั้นสอง,ថ្នាក់ទីពីរ,Kelas dua,Kelas kedua,Pangalawang-klase
-性价比,xìng jià bǐ,Value for money,Relación calidad-precio,Rapport qualité-prix,Custo-benefício,Giá trị đồng tiền,ความคุ้มค่า,សមាមាត្រតម្លៃ,Nilai uang,Nilai untuk wang,Sulit sa presyo
-值得,zhí de,Worth it,Vale la pena,Ça vaut le coup,Vale a pena,Đáng giá,คุ้มค่า,សមនឹង,Layak,Berbaloi,Sulit
-不值,bù zhí,Not worth it,No vale la pena,Ça ne vaut pas le coup,Não vale a pena,Không đáng,ไม่คุ้มค่า,មិនសមនឹង,Tidak layak,Tidak berbaloi,Hindi sulit
-耐用,nài yòng,Durable,Duradero,Durable,Durável,Bền bỉ,ทนทาน,ប្រើបានយូរ,Tahan lama,Tahan lama,Matibay
-牢固,láo gù,Sturdy,Resistente,Solide,Resistente,Chắc chắn,แข็งแรง,រឹងមាំ,Kokoh,Kukuh,Matatag
-上乘,shàng chéng,Superior quality,Calidad superior,Qualité supérieure,Qualidade superior,Chất lượng cao,คุณภาพดี,គុណភាពល្អ,Kualitas unggul,Kualiti unggul,Mahusay na kalidad
-低劣,dī liè,Inferior,Inferior,Inférieur,Inferior,Kém chất lượng,ด้อยคุณภาพ,ទាបកម្រិត,Rendah,Rendah,Mababa
-粗糙,cū cāo,Rough,Áspero,Rugueux,Áspero,Thô ráp,หยาบ,រដុប,Kasar,Kasar,Magaspang
-精致,jīng zhì,Exquisite,Exquisito,Raffiné,Requintado,Tinh tế,ประณีต,ស្អាត,Indah,Halus,Maarte
-精良,jīng liáng,Well-made,Bien hecho,Bien fait,Bem feito,Chất lượng tốt,คุณภาพดี,ធ្វើបានល្អ,Dibuat dengan baik,Dibuat dengan baik,Magandang gawa
-是正品,shì zhèng pǐn,It's authentic,Es auténtico,C'est authentique,É autêntico,Là hàng chính hãng,เป็นของแท้,ជាពិតប្រាកដ,Ini asli,Ini asli,Tunay ito
-买正品,mǎi zhèng pǐn,Buy authentic,Comprar auténtico,Acheter authentique,Comprar autêntico,Mua hàng chính hãng,ซื้อของแท้,ទិញពិតប្រាកដ,Beli asli,Beli asli,Bumili ng tunay
-是假货,shì jiǎ huò,It's fake,Es falso,C'est faux,É falso,Là hàng giả,เป็นของปลอม,ជាទំនិញក្លែងក្លាយ,Ini palsu,Ini palsu,Peke ito
-卖假货,mài jiǎ huò,Sell fake goods,Vender productos falsos,Vendre des faux produits,Vender produtos falsos,Bán hàng giả,ขายของปลอม,លក់ទំនិញក្លែងក្លាយ,Menjual barang palsu,Menjual barang palsu,Magbenta ng peke
-是山寨,shì shān zhài,It's a knockoff,Es una imitación,C'est une contrefaçon,É uma imitação,Là hàng nhái,เป็นของเลียนแบบ,ជាទំនិញចម្លង,Ini tiruan,Ini tiruan,Panggaya ito
-山寨货,shān zhài huò,Knockoff product,Producto de imitación,Produit contrefait,Produto de imitação,Hàng nhái,สินค้าเลียนแบบ,ទំនិញចម្លង,Barang tiruan,Barang tiruan,Produktong panggagaya
-很劣质,hěn liè zhì,Very inferior,Muy inferior,Très inférieur,Muito inferior,Rất kém chất lượng,คุณภาพต่ำมาก,គុណភាពអន់ណាស់,Sangat rendah,Sangat rendah,Napakababa ng kalidad
-是劣质,shì liè zhì,It's inferior quality,Es de calidad inferior,C'est de qualité inférieure,É de qualidade inferior,Là chất lượng kém,เป็นคุณภาพต่ำ,ជាគុណភាពអន់,Ini kualitas rendah,Ini kualiti rendah,Mababang kalidad ito
-一流的,yì liú de,First-rate,De primera clase,De premier ordre,De primeira classe,Hạng nhất,ชั้นหนึ่ง,ថ្នាក់ដំបូង,Kelas satu,Kelas pertama,Una-klase
-很一流,hěn yì liú,Very first-rate,Muy de primera,Très premier ordre,Muito de primeira,Rất hạng nhất,ชั้นหนึ่งมาก,ថ្នាក់ដំបូងណាស់,Sangat kelas satu,Sangat pertama,Napaka-unang-klase
-二流的,èr liú de,Second-rate,De segunda clase,De second ordre,De segunda classe,Hạng hai,ชั้นสอง,ថ្នាក់ទីពីរ,Kelas dua,Kelas kedua,Pangalawang-klase
-是二流,shì èr liú,It's second-rate,Es de segunda,C'est de second ordre,É de segunda,Là hạng hai,เป็นชั้นสอง,ជាថ្នាក់ទីពីរ,Ini kelas dua,Ini kelas kedua,Pangalawang-klase ito
-性价比高,xìng jià bǐ gāo,Good value for money,Buena relación calidad-precio,Bon rapport qualité-prix,Boa relação custo-benefício,Giá trị tốt,คุ้มค่ามาก,សមាមាត្រតម្លៃល្អ,Nilai uang bagus,Nilai untuk wang tinggi,Sulit sa presyo
-看性价比,kàn xìng jià bǐ,Look at value for money,Mira la relación calidad-precio,Regardez le rapport qualité-prix,Veja o custo-benefício,Xem giá trị,ดูความคุ้มค่า,មើលសមាមាត្រតម្លៃ,Lihat nilai uang,Lihat nilai untuk wang,Tingnan ang sulit
-很值得,hěn zhí de,Very worth it,Muy vale la pena,Très valable,Muito vale a pena,Rất đáng,คุ้มค่ามาก,សមនឹងណាស់,Sangat layak,Sangat berbaloi,Napaka sulit
-值得买,zhí de mǎi,Worth buying,Vale la pena comprar,Vaut le coup d'acheter,Vale a pena comprar,Đáng mua,คุ้มค่าซื้อ,សមនឹងទិញ,Layak dibeli,Berbaloi dibeli,Sulit bilhin
-不值得,bù zhí dé,Not worth it,No vale la pena,Ça ne vaut pas le coup,Não vale a pena,Không đáng,ไม่คุ้มค่า,មិនសមនឹង,Tidak layak,Tidak berbaloi,Hindi sulit
-不值这个价,bù zhí zhè ge jià,Not worth this price,No vale este precio,Ne vaut pas ce prix,Não vale este preço,Không đáng giá này,ไม่คุ้มราคานี้,មិនសមនឹងតម្លៃនេះ,Tidak sepadan harga ini,Tidak berbaloi dengan harga ini,Hindi sulit sa presyong ito
-很耐用,hěn nài yòng,Very durable,Muy duradero,Très durable,Muito durável,Rất bền,ทนทานมาก,ប្រើបានយូរណាស់,Sangat tahan lama,Sangat tahan lama,Napaka matibay
-特别耐用,tè bié nài yòng,Especially durable,Especialmente duradero,Particulièrement durable,Particularmente durável,Đặc biệt bền,ทนทานเป็นพิเศษ,ប្រើបានយូរជាពិសេស,Sangat tahan lama sekali,Sangat tahan lama,Sobrang matibay
-很牢固,hěn láo gù,Very sturdy,Muy resistente,Très solide,Muito resistente,Rất chắc chắn,แข็งแรงมาก,រឹងមាំណាស់,Sangat kokoh,Sangat kukuh,Napaka matatag
-特别牢固,tè bié láo gù,Especially sturdy,Especialmente resistente,Particulièrement solide,Particularmente resistente,Đặc biệt chắc chắn,แข็งแรงเป็นพิเศษ,រឹងមាំជាពិសេស,Sangat kokoh sekali,Sangat kukuh,Sobrang matatag
-上乘品质,shàng chéng pǐn zhì,Superior quality,Calidad superior,Qualité supérieure,Qualidade superior,Chất lượng cao cấp,คุณภาพดีเยี่ยม,គុណភាពខ្ពស់,Kualitas unggul,Kualiti unggul,Mahusay na kalidad
-品质上乘,pǐn zhì shàng chéng,Quality is superior,La calidad es superior,La qualité est supérieure,A qualidade é superior,Chất lượng tuyệt vời,คุณภาพดีเยี่ยม,គុណភាពល្អបំផុត,Kualitas unggul,Kualiti unggul,Mahusay ang kalidad
-很低劣,hěn dī liè,Very inferior,Muy inferior,Très inférieur,Muito inferior,Rất kém,ด้อยคุณภาพมาก,ទាបកម្រិតណាស់,Sangat rendah,Sangat rendah,Napakababa
-品质低劣,pǐn zhì dī liè,Quality is inferior,La calidad es inferior,La qualité est inférieure,A qualidade é inferior,Chất lượng kém,คุณภาพต่ำ,គុណភាពអន់,Kualitas rendah,Kualiti rendah,Mababa ang kalidad
-很粗糙,hěn cū cāo,Very rough,Muy áspero,Très rugueux,Muito áspero,Rất thô,หยาบมาก,រដុបខ្លាំង,Sangat kasar,Sangat kasar,Napaka magaspang
-做工粗糙,zuò gōng cū cāo,Rough workmanship,Mano de obra tosca,Travail grossier,Acabamento bruto,Tay nghề thô,ฝีมือหยาบ,ការងារស្រេចស្រួល,Pengerjaan kasar,Pengerjaan kasar,Magaspang na pagkakagawa
-很精致,hěn jīng zhì,Very exquisite,Muy exquisito,Très raffiné,Muito requintado,Rất tinh tế,ประณีตมาก,ស្អាតណាស់,Sangat indah,Sangat halus,Napaka maarte
-做工精致,zuò gōng jīng zhì,Exquisite workmanship,Mano de obra exquisita,Travail exquis,Acabamento requintado,Tay nghề tinh tế,ฝีมือประณีต,ការងារស្អាត,Pengerjaan indah,Pengerjaan halus,Magandang pagkakagawa
-很精良,hěn jīng liáng,Very well-made,Muy bien hecho,Très bien fait,Muito bem feito,Rất tốt,คุณภาพดีมาก,ធ្វើបានល្អណាស់,Sangat berkualitas,Sangat berkualiti,Napaka ganda ng gawa
-制作精良,zhì zuò jīng liáng,Well-crafted,Bien elaborado,Bien conçu,Bem elaborado,Được chế tác tốt,ผลิตอย่างดี,ផលិតល្អ,Dibuat dengan baik,Dibuat dengan baik,Mahusay na ginawa
+chinese,pinyin,english,spanish,french,portuguese
+正品,zhèng pǐn,Authentic,Auténtico,Authentique,Autêntico
+假货,jiǎ huò,Fake goods,Productos falsos,Faux produits,Produtos falsos
+山寨,shān zhài,Knockoff,Imitación,Contrefaçon,Imitação
+劣质,liè zhì,Inferior quality,Calidad inferior,Qualité inférieure,Qualidade inferior
+一流,yì liú,First-rate,De primera,De premier ordre,De primeira linha
+二流,èr liú,Second-rate,De segunda categoría,De second ordre,Segunda categoria
+性价比,xìng jià bǐ,Value for money,Relación calidad-precio,Rapport qualité-prix,Custo-benefício
+值得,zhí de,Worth it,Vale la pena,Ça vaut le coup,Vale a pena
+不值,bù zhí,Not worth it,No vale la pena,Ça ne vaut pas le coup,Não vale a pena
+耐用,nài yòng,Durable,Duradero,Durable,Durável
+牢固,láo gù,Sturdy,Resistente,Solide,Resistente
+上乘,shàng chéng,Superior quality,Calidad superior,Qualité supérieure,Qualidade superior
+低劣,dī liè,Inferior,Inferior,Inférieur,Inferior
+粗糙,cū cāo,Rough,Áspero,Rugueux,Áspero
+精致,jīng zhì,Exquisite,Exquisito,Raffiné,Requintado
+精良,jīng liáng,Well-made,Bien hecho,Bien fait,Bem feito
+是正品,shì zhèng pǐn,It's authentic,Es auténtico,C'est authentique,É autêntico
+买正品,mǎi zhèng pǐn,Buy authentic,Comprar auténtico,Acheter authentique,Comprar autêntico
+是假货,shì jiǎ huò,It's fake,Es falso,C'est faux,É falso
+卖假货,mài jiǎ huò,Sell fake goods,Vender productos falsos,Vendre des faux produits,Vender produtos falsos
+是山寨,shì shān zhài,It's a knockoff,Es una imitación,C'est une contrefaçon,É uma imitação
+山寨货,shān zhài huò,Knockoff product,Producto de imitación,Produit contrefait,Produto de imitação
+很劣质,hěn liè zhì,Very inferior,Muy inferior,Très inférieur,Muito inferior
+是劣质,shì liè zhì,It's inferior quality,Es de calidad inferior,C'est de qualité inférieure,É de qualidade inferior
+一流的,yì liú de,First-rate,De primera clase,De premier ordre,De primeira classe
+很一流,hěn yì liú,Very first-rate,Muy de primera,Très premier ordre,Muito de primeira
+二流的,èr liú de,Second-rate,De segunda clase,De second ordre,De segunda classe
+是二流,shì èr liú,It's second-rate,Es de segunda,C'est de second ordre,É de segunda
+性价比高,xìng jià bǐ gāo,Good value for money,Buena relación calidad-precio,Bon rapport qualité-prix,Boa relação custo-benefício
+看性价比,kàn xìng jià bǐ,Look at value for money,Mira la relación calidad-precio,Regardez le rapport qualité-prix,Veja o custo-benefício
+很值得,hěn zhí de,Very worth it,Muy vale la pena,Très valable,Muito vale a pena
+值得买,zhí de mǎi,Worth buying,Vale la pena comprar,Vaut le coup d'acheter,Vale a pena comprar
+不值得,bù zhí dé,Not worth it,No vale la pena,Ça ne vaut pas le coup,Não vale a pena
+不值这个价,bù zhí zhè ge jià,Not worth this price,No vale este precio,Ne vaut pas ce prix,Não vale este preço
+很耐用,hěn nài yòng,Very durable,Muy duradero,Très durable,Muito durável
+特别耐用,tè bié nài yòng,Especially durable,Especialmente duradero,Particulièrement durable,Particularmente durável
+很牢固,hěn láo gù,Very sturdy,Muy resistente,Très solide,Muito resistente
+特别牢固,tè bié láo gù,Especially sturdy,Especialmente resistente,Particulièrement solide,Particularmente resistente
+上乘品质,shàng chéng pǐn zhì,Superior quality,Calidad superior,Qualité supérieure,Qualidade superior
+品质上乘,pǐn zhì shàng chéng,Quality is superior,La calidad es superior,La qualité est supérieure,A qualidade é superior
+很低劣,hěn dī liè,Very inferior,Muy inferior,Très inférieur,Muito inferior
+品质低劣,pǐn zhì dī liè,Quality is inferior,La calidad es inferior,La qualité est inférieure,A qualidade é inferior
+很粗糙,hěn cū cāo,Very rough,Muy áspero,Très rugueux,Muito áspero
+做工粗糙,zuò gōng cū cāo,Rough workmanship,Mano de obra tosca,Travail grossier,Acabamento bruto
+很精致,hěn jīng zhì,Very exquisite,Muy exquisito,Très raffiné,Muito requintado
+做工精致,zuò gōng jīng zhì,Exquisite workmanship,Mano de obra exquisita,Travail exquis,Acabamento requintado
+很精良,hěn jīng liáng,Very well-made,Muy bien hecho,Très bien fait,Muito bem feito
+制作精良,zhì zuò jīng liáng,Well-crafted,Bien elaborado,Bien conçu,Bem elaborado

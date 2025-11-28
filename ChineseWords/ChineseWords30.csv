@@ -1,52 +1,52 @@
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-水,shuǐ,Water,Agua,Eau,Água,Nước,น้ำ,ទឹក,Air,Air,Tubig
-开水,kāi shuǐ,Boiled water,Agua hervida,Eau bouillie,Água fervida,Nước đun sôi,น้ำต้มสุก,ទឹកឆ្អិន,Air matang,Air rebus,Pinakuluang tubig
-茶,chá,Tea,Té,Thé,Chá,Trà,ชา,តែ,Teh,Teh,Tsaa
-绿茶,lǜ chá,Green tea,Té verde,Thé vert,Chá verde,Trà xanh,ชาเขียว,តែបៃតង,Teh hijau,Teh Hijau,Green Tea
-红茶,hóng chá,Black tea,Té negro,Thé noir,Chá preto,Trà đen,ชาดำ,តែខ្មៅ,Teh hitam,Teh hitam,Itim na tsaa
-咖啡,kā fēi,Coffee,Café,Café,Café,Cà phê,กาแฟ,កាហ្វេ,Kopi,Kopi,Kape
-牛奶,niú nǎi,Milk,Leche,Lait,Leite,Sữa,นม,ទឹកដោះគោ,Susu,Susu,Gatas
-奶茶,nǎi chá,Milk tea,Té con leche,Thé au lait,Chá com leite,Trà sữa,ชานม,តែទឹកដោះ,Teh susu,Teh susu,Milk tea
-果汁,guǒ zhī,Juice,Jugo,Jus,Suco,Nước ép,น้ำผลไม้,ទឹកផ្លែឈើ,Jus,Jus,Juice
-可乐,kě lè,Coke,Coca-Cola,Coca,Coca-Cola,Coca,โค้ก,កូកាកូឡា,Coke,Coke,Coke
-汽水,qì shuǐ,Soda,Refresco,Soda,Refrigerante,Nước ngọt,โซดา,សូដា,Soda,Soda,Soda
-啤酒,pí jiǔ,Beer,Cerveza,Bière,Cerveja,Bia,เบียร์,ស្រាបៀរ,Bir,Beer,Beer
-白酒,bái jiǔ,Liquor,Licor,Alcool,Licor,Rượu,สุรา,ភេសជ្ជៈ,Minuman keras,Liquor,Alak
-红酒,hóng jiǔ,Red wine,Vino tinto,Vin rouge,Vinho tinto,Rượu vang đỏ,ไวน์แดง,ទឹកដោះគោសណ្តែក,Anggur merah,Wain Merah,Red Wine
-饮料,yǐn liào,Beverages,Bebidas,Boissons,Bebidas,Đồ Uống,เครื่องดื่ม,ទឹករ៉ែ,Minuman,Minuman,Inumin
-豆浆,dòu jiāng,Soy milk,Leche de soja,Lait de soja,Leite de soja,Sữa đậu nành,นมถั่วเหลือง,ទឹកត្រជាក់,Susu kedelai,Susu soya,Soy Milk
-矿泉水,kuàng quán shuǐ,Mineral water,Agua mineral,Eau minérale,Água mineral,Nước khoáng,น้ำแร่,ចាក់ទឹក,Air mineral,Air Mineral,Mineral Water
-冷水,lěng shuǐ,Cold water,Agua fría,Eau froide,Água fria,Nước lạnh,น้ำเย็น,ទឹករំពុះ,Air dingin,Air sejuk,Malamig na tubig
-倒水,dào shuǐ,Pour water,Vierta agua,Verser de l'eau,Despeje água,Đổ nước,เทน้ำ,ទឹកដាំទឹក,Tuangkan air,Tuang air,Ibuhos ang tubig
-开水烫,kāi shuǐ tàng,Boiling water,Agua hirviendo,Eau bouillante,Água fervente,Nước sôi,น้ำเดือด,ផឹកតែ,Air mendidih,Air mendidih,Kumukulong tubig
-烧开水,shāo kāi shuǐ,Boil water,Hervir agua,Faire bouillir de l'eau,Ferva água,Đun sôi nước,ต้มน้ำ,ធ្វើតែ,Rebus air,Rebus air,Pakuluan ang tubig
-喝茶,hē chá,Drink tea,Beber té,Boire du thé,Beba chá,Uống trà,ดื่มชา,ក្លិនតែពណ៌បៃតង,Minum teh,Minum Teh,Uminom ng tsaa
-泡茶,pào chá,Make tea,Hacer té,Faire du thé,Faça chá,Pha trà,ชงชา,ធ្វើតែបៃតង,Membuat teh,Buat Teh,Gumawa ng tsaa
-绿茶香,lǜ chá xiāng,Green tea scent,Aroma a té verde,Parfum thé vert,Aroma de chá verde,Mùi trà xanh,กลิ่นชาเขียว,ក្លិនតែខ្មៅខ្មៅ,Aroma teh hijau,Aroma Teh Hijau,Green tea scent
-泡绿茶,pào lǜ chá,Make green tea,Hacer té verde,Faire du thé vert,Faça chá verde,Pha trà xanh,ทำชาเขียว,ធ្វើតែខ្មៅ,Membuat teh hijau,Buat Teh Hijau,Gumawa ng berdeng tsaa
-红茶香,hóng chá xiāng,Black tea scent,Aroma a té negro,Parfum thé noir,Aroma de chá preto,Mùi trà đen,กลิ่นชาดำ,ក្លិនកាហ្វេ,Aroma teh hitam,Bau Teh Hitam,Black tea scent
-泡红茶,pào hóng chá,Make black tea,Hacer té negro,Faire du thé noir,Faça chá preto,Pha trà đen,ทำชาดำ,ផឹកកាហ្វេ,Membuat teh hitam,Buat Teh Hitam,Gumawa ng itim na tsaa
-咖啡香,kā fēi xiāng,Coffee scent,Aroma a café,Parfum de café,Aroma de café,Mùi cà phê,กลิ่นกาแฟ,ទឹកដោះគោគឺល្អ,Aroma kopi,Aroma Kopi,Kape scent
-喝咖啡,hē kā fēi,Drink coffee,Beber café,Boire du café,Beber café,Uống cà phê,ดื่มกาแฟ,ផឹកទឹកដោះគោ,Minum kopi,Minum Kopi,Uminom ng kape
-牛奶好,niú nǎi hǎo,Milk is good,La leche es buena,Le lait est bon,Leite é bom,Sữa ngon,นมมันดี,ទឹកដោះគោគឺល្អ,Susu itu enak,Susu baik,Ang gatas ay mabuti
-喝牛奶,hē niú nǎi,Drink milk,Beber leche,Boire du lait,Beba leite,Uống sữa,ดื่มนม,ផឹកតែទឹកដោះ,Minum susu,Minum susu,Uminom ng gatas
-奶茶好,nǎi chá hǎo,Milk tea is good,El té con leche es bueno,Le thé au lait est bon,Chá com leite faz bem,Trà sữa ngon lắm,ชานมก็ดี,ទឹកផ្អែម,Teh susu itu enak,Teh susu baik,Ang tsaa ng gatas ay mabuti
-喝奶茶,hē nǎi chá,Drink milk tea,Beber té con leche,Boire du thé au lait,Beba chá com leite,Uống trà sữa,ดื่มชานม,ច្របាច់ទឹក,Minum teh susu,Minum teh susu,Uminom ng Milk Tea
-果汁甜,guǒ zhī tián,Sweet juice,Jugo dulce,Jus sucré,Suco doce,Nước ngọt,น้ำหวาน,កូកាកូឡាផ្អែម,Jus manis,Jus manis,Matamis na juice
-榨果汁,zhà guǒ zhī,Squeeze juice,Exprimir jugo,Presser le jus,Esprema o suco,Vắt nước trái cây,คั้นน้ำ,ផឹកកូកាកូឡា,Peras sarinya,Squeeze Juice,Pisilin ang juice
-可乐甜,kě lè tián,Coke sweet,Coca dulce,Coca sucré,Coca-Cola doce,Coca ngọt,โค้กหวาน,ទឹកសូដាគឺត្រជាក់ណាស់,Minuman bersoda manis,Coke Sweet,Coke sweet
-喝可乐,hē kě lè,Drink Coke,Beber Coca-Cola,Boire du Coca,Beber Coca-Cola,Uống Coca,ดื่มโค้ก,ផឹកសូដា,Minum Coke,Minum Coke,Uminom ng Coke
-汽水凉,qì shuǐ liáng,Soda water is cool,El agua con gas está fría,L'eau gazeuse est fraîche,Água com gás é legal,Nước soda mát lạnh,น้ำโซดา เจ๋ง,ស្រាបៀរត្រជាក់,Air soda itu keren,Air soda sejuk,Ang tubig ng soda ay cool
-喝汽水,hē qì shuǐ,Drink soda,Beber refresco,Boire du soda,Beba refrigerante,Uống soda,ดื่มโซดา,ផឹកស្រាបៀរ,Minum soda,Minum soda,Uminom ng soda
-啤酒凉,pí jiǔ liáng,Cool beer,Cerveza fría,Bière fraîche,Cerveja gelada,Bia mát,เบียร์เย็นๆ,ស្រាសខ្លាំង,Bir keren,Cool Beer,Cool na beer
-喝啤酒,hē pí jiǔ,Drink beer,Beber cerveza,Boire de la bière,Beber cerveja,Uống bia,ดื่มเบียร์,ផឹកស្រាស,Minum bir,Minum bir,Uminom ng beer
-白酒烈,bái jiǔ liè,Strong white wine,Vino blanco fuerte,Vin blanc fort,Vinho branco forte,Rượu trắng mạnh,ไวน์ขาวเข้มข้น,ស្រាក្រហមល្អណាស់,Anggur putih yang kuat,Wain putih yang kuat,Malakas na puting alak
-喝白酒,hē bái jiǔ,Drink white wine,Beber vino blanco,Boire du vin blanc,Beba vinho branco,Uống rượu trắng,ดื่มไวน์ขาว,ផឹកស្រាក្រហម,Minum anggur putih,Minum wain putih,Uminom ng puting alak
-红酒好,hóng jiǔ hǎo,Red wine is good,El vino tinto es bueno,Le vin rouge est bon,Vinho tinto é bom,Rượu vang đỏ ngon,ไวน์แดงคือดี,ភេសជ្ជៈផ្អែម,Anggur merah itu enak,Wain merah baik,Ang Red Wine ay mabuti
-喝红酒,hē hóng jiǔ,Drink red wine,Beber vino tinto,Boire du vin rouge,Beba vinho tinto,Uống rượu vang đỏ,ดื่มไวน์แดง,ភេសជ្ជៈផឹក,Minum anggur merah,Minum wain merah,Uminom ng Red Wine
-饮料甜,yǐn liào tián,Sweet drink,Bebida dulce,Boisson sucrée,Bebida doce,Nước ngọt,น้ำหวาน,ទឹកដោះគោសណ្តែកក្រអូប,Minuman manis,Minuman manis,Matamis na inumin
-喝饮料,hē yǐn liào,Drink drink,Beber beber,Boire un verre,"Beba, beba",Uống uống,ดื่มเครื่องดื่ม,ផឹកទឹកដោះគោសណ្តែក,Minum minuman,Minuman minuman,Uminom ng inumin
-豆浆香,dòu jiāng xiāng,Soy milk fragrant,Leche de soja fragante,Lait de soja parfumé,Leite de soja perfumado,Sữa đậu nành thơm,นมถั่วเหลืองหอม,ទឹករ៉ែរ៉ែល្អ,Susu kedelai harum,Susu soya wangi,Soy Milk Fragrant
-喝豆浆,hē dòu jiāng,Drink soy milk,Beber leche de soja,Boire du lait de soja,Beba leite de soja,Uống sữa đậu nành,ดื่มนมถั่วเหลือง,ផឹកទឹកសណ្តែក,Minum susu kedelai,Minum susu soya,Uminom ng soy milk
-矿泉水好,kuàng quán shuǐ hǎo,Mineral water is good,El agua mineral es buena,L'eau minérale est bonne,Água mineral faz bem,Nước khoáng tốt,น้ำแร่ดี,ទឹករ៉ែល្អ,Air mineral bagus,Air mineral baik,Magandang mineral water
-喝矿泉水,hē kuàng quán shuǐ,Drink mineral water,Beber agua mineral,Boire de l'eau minérale,Beba água mineral,Uống nước khoáng,ดื่มน้ำแร่,ផឹកទឹករ៉ែ,Minum air mineral,Minum air mineral,Uminom ng mineral na tubig
+chinese,pinyin,english,spanish,french,portuguese
+水,shuǐ,Water,Agua,Eau,Água
+开水,kāi shuǐ,Boiled water,Agua hervida,Eau bouillie,Água fervida
+茶,chá,Tea,Té,Thé,Chá
+绿茶,lǜ chá,Green tea,Té verde,Thé vert,Chá verde
+红茶,hóng chá,Black tea,Té negro,Thé noir,Chá preto
+咖啡,kā fēi,Coffee,Café,Café,Café
+牛奶,niú nǎi,Milk,Leche,Lait,Leite
+奶茶,nǎi chá,Milk tea,Té con leche,Thé au lait,Chá com leite
+果汁,guǒ zhī,Juice,Jugo,Jus,Suco
+可乐,kě lè,Coke,Coca-Cola,Coca,Coca-Cola
+汽水,qì shuǐ,Soda,Refresco,Soda,Refrigerante
+啤酒,pí jiǔ,Beer,Cerveza,Bière,Cerveja
+白酒,bái jiǔ,Liquor,Licor,Alcool,Licor
+红酒,hóng jiǔ,Red wine,Vino tinto,Vin rouge,Vinho tinto
+饮料,yǐn liào,Beverages,Bebidas,Boissons,Bebidas
+豆浆,dòu jiāng,Soy milk,Leche de soja,Lait de soja,Leite de soja
+矿泉水,kuàng quán shuǐ,Mineral water,Agua mineral,Eau minérale,Água mineral
+冷水,lěng shuǐ,Cold water,Agua fría,Eau froide,Água fria
+倒水,dào shuǐ,Pour water,Vierta agua,Verser de l'eau,Despeje água
+开水烫,kāi shuǐ tàng,Boiling water,Agua hirviendo,Eau bouillante,Água fervente
+烧开水,shāo kāi shuǐ,Boil water,Hervir agua,Faire bouillir de l'eau,Ferva água
+喝茶,hē chá,Drink tea,Beber té,Boire du thé,Beba chá
+泡茶,pào chá,Make tea,Hacer té,Faire du thé,Faça chá
+绿茶香,lǜ chá xiāng,Green tea scent,Aroma a té verde,Parfum thé vert,Aroma de chá verde
+泡绿茶,pào lǜ chá,Make green tea,Hacer té verde,Faire du thé vert,Faça chá verde
+红茶香,hóng chá xiāng,Black tea scent,Aroma a té negro,Parfum thé noir,Aroma de chá preto
+泡红茶,pào hóng chá,Make black tea,Hacer té negro,Faire du thé noir,Faça chá preto
+咖啡香,kā fēi xiāng,Coffee scent,Aroma a café,Parfum de café,Aroma de café
+喝咖啡,hē kā fēi,Drink coffee,Beber café,Boire du café,Beber café
+牛奶好,niú nǎi hǎo,Milk is good,La leche es buena,Le lait est bon,Leite é bom
+喝牛奶,hē niú nǎi,Drink milk,Beber leche,Boire du lait,Beba leite
+奶茶好,nǎi chá hǎo,Milk tea is good,El té con leche es bueno,Le thé au lait est bon,Chá com leite faz bem
+喝奶茶,hē nǎi chá,Drink milk tea,Beber té con leche,Boire du thé au lait,Beba chá com leite
+果汁甜,guǒ zhī tián,Sweet juice,Jugo dulce,Jus sucré,Suco doce
+榨果汁,zhà guǒ zhī,Squeeze juice,Exprimir jugo,Presser le jus,Esprema o suco
+可乐甜,kě lè tián,Coke sweet,Coca dulce,Coca sucré,Coca-Cola doce
+喝可乐,hē kě lè,Drink Coke,Beber Coca-Cola,Boire du Coca,Beber Coca-Cola
+汽水凉,qì shuǐ liáng,Soda water is cool,El agua con gas está fría,L'eau gazeuse est fraîche,Água com gás é legal
+喝汽水,hē qì shuǐ,Drink soda,Beber refresco,Boire du soda,Beba refrigerante
+啤酒凉,pí jiǔ liáng,Cool beer,Cerveza fría,Bière fraîche,Cerveja gelada
+喝啤酒,hē pí jiǔ,Drink beer,Beber cerveza,Boire de la bière,Beber cerveja
+白酒烈,bái jiǔ liè,Strong white wine,Vino blanco fuerte,Vin blanc fort,Vinho branco forte
+喝白酒,hē bái jiǔ,Drink white wine,Beber vino blanco,Boire du vin blanc,Beba vinho branco
+红酒好,hóng jiǔ hǎo,Red wine is good,El vino tinto es bueno,Le vin rouge est bon,Vinho tinto é bom
+喝红酒,hē hóng jiǔ,Drink red wine,Beber vino tinto,Boire du vin rouge,Beba vinho tinto
+饮料甜,yǐn liào tián,Sweet drink,Bebida dulce,Boisson sucrée,Bebida doce
+喝饮料,hē yǐn liào,Drink drink,Beber beber,Boire un verre,"Beba, beba"
+豆浆香,dòu jiāng xiāng,Soy milk fragrant,Leche de soja fragante,Lait de soja parfumé,Leite de soja perfumado
+喝豆浆,hē dòu jiāng,Drink soy milk,Beber leche de soja,Boire du lait de soja,Beba leite de soja
+矿泉水好,kuàng quán shuǐ hǎo,Mineral water is good,El agua mineral es buena,L'eau minérale est bonne,Água mineral faz bem
+喝矿泉水,hē kuàng quán shuǐ,Drink mineral water,Beber agua mineral,Boire de l'eau minérale,Beba água mineral

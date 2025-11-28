@@ -61,7 +61,7 @@ ACT_DISPLAY_NAMES = {
 
 # Word column structure for Chinese
 # This defines what each index in the word array means
-WORD_COLUMNS = ["chinese", "pinyin", "english", "spanish", "french", "portuguese", "vietnamese", "thai", "khmer", "indonesian", "malay", "filipino"]
+WORD_COLUMNS = ["chinese", "pinyin", "english", "spanish", "french", "portuguese"]
 
 # Translation config - what "I speak" languages are available
 # index = column in word array, display = UI label
@@ -69,13 +69,7 @@ TRANSLATIONS_CONFIG = {
     "english": {"index": 2, "display": "English"},
     "spanish": {"index": 3, "display": "Español"},
     "french": {"index": 4, "display": "Français"},
-    "portuguese": {"index": 5, "display": "Português"},
-    "vietnamese": {"index": 6, "display": "Tiếng Việt"},
-    "thai": {"index": 7, "display": "ไทย"},
-    "khmer": {"index": 8, "display": "ខ្មែរ"},
-    "indonesian": {"index": 9, "display": "Indonesia"},
-    "malay": {"index": 10, "display": "Melayu"},
-    "filipino": {"index": 11, "display": "Filipino"}
+    "portuguese": {"index": 5, "display": "Português"}
 }
 
 DEFAULT_TRANSLATION = "english"
@@ -157,9 +151,9 @@ def read_pack_csv(pack_number, base_count, example_count):
         next(reader)  # Skip header
 
         for row in reader:
-            if len(row) >= 12:
-                # Row format: [chinese, pinyin, english, spanish, french, portuguese, vietnamese, thai, khmer, indonesian, malay, filipino]
-                all_words.append(row[:12])
+            if len(row) >= 6:
+                # Row format: [chinese, pinyin, english, spanish, french, portuguese]
+                all_words.append(row[:6])
 
     # Split into base and example words
     base_words = all_words[:base_count]
@@ -407,13 +401,7 @@ def main():
             'english': pack_title,
             'spanish': pack_title,
             'french': pack_title,
-            'portuguese': pack_title,
-            'vietnamese': pack_title,
-            'thai': pack_title,
-            'khmer': pack_title,
-            'indonesian': pack_title,
-            'malay': pack_title,
-            'filipino': pack_title
+            'portuguese': pack_title
         }
 
         # Store pack data

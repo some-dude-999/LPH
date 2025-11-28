@@ -1,49 +1,49 @@
-chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-菜单,cài dān,Menu,Menú,Menus,Cardápio,Thực đơn,เมนู,Menu បញ្ជាទិញម្ហូប,Menu,Menu,Menu
-点菜,diǎn cài,Order food,Pedir comida,Commander de la nourriture,Pedir comida,Gọi món,สั่งอาหาร,អនុសាសន៍,Pesan makanan,Pesanan Makanan,Mag -order ng pagkain
-推荐,tuī jiàn,Recommendation,Recomendación,Recommandation,Recomendação,Khuyến nghị,คำแนะนำ,ចានហត្ថលេខា,Rekomendasi,Cadangan,Rekomendasyon
-招牌菜,zhāo pái cài,Signature dishes,Platos de autor,Plats signatures,Pratos de assinatura,Món ăn đặc trưng,เมนูซิกเนเจอร์,រសជាតិ,Hidangan khas,Hidangan tandatangan,Mga pinggan sa lagda
-味道,wèi dào,Taste,Sabor,Goût,Prove,Hương vị,ลิ้มรส,អ្នករត់តុ,Rasa,Rasa,Tikman
-服务员,fú wù yuán,Waiter,Camarero,Serveur,Garçom,Người phục vụ,พนักงานเสิร์ฟ,បង់វិក័យប័ត្រ,Pelayan,Waiter,Waiter
-买单,mǎi dān,Pay the bill,Pagar la factura,Payer la facture,Pague a conta,Thanh toán hóa đơn,จ่ายบิล,Checkout,Bayar tagihannya,Bayar Rang Undang -Undang,Bayaran ang bayarin
-结账,jié zhàng,Checkout,Pagar,Payer l'addition,Finalização da compra,Thanh toán,ชำระเงิน,វេចខ្ចប់,Pembayaran,Checkout,Checkout
-打包,dǎ bāo,Packing,Embalaje,Emballage,Embalagem,Đóng gói,การบรรจุ,ការយកចេញ,Pengepakan,Pembungkusan,Packing
-外卖,wài mài,Takeaway,Para llevar,À emporter,Para levar,Mang đi,ซื้อกลับบ้าน,Dine-in,Bawa pulang,Takeaway,Takeaway
-堂食,táng shí,Dine-in,Cenar en casa,Dîner sur place,Jantar no local,Dùng bữa tại,รับประทานอาหารในร้าน,បន្ទប់ឯកជន,Makan di tempat,Makan malam,Dine-in
-包间,bāo jiān,Private room,Habitación privada,Chambre privée,Quarto privado,Phòng riêng,ห้องส่วนตัว,cutlery,Kamar pribadi,Bilik Persendirian,Pribadong silid
-餐具,cān jù,Cutlery,Cubiertos,Couverts,Talheres,Dao kéo,ช้อนส้อม,chopsticks បម្រើ,Peralatan makan,Cutlery,Cutlery
-筷子,kuài zi,Chopsticks,Palillos,Baguettes,Pauzinhos,Đũa,ตะเกียบ,ការកក់,Sumpit,Penyepit,Chopsticks
-上菜,shàng cài,Serving,Sirviendo,Servir,Servindo,Phục vụ,ให้บริการ,មើលម៉ឺនុយ,Melayani,Berkhidmat,Paghahatid
-订座,dìng zuò,Reservation,Reserva,Réservation,Reserva,Đặt chỗ,สำรองห้องพัก,ទទួលបានមីនុយ បញ្ជាទិញ,Reservasi,Tempahan,Reservation
-看菜单,kàn cài dān,View menu,Ver menú,Afficher le menu,Ver menu,Xem thực đơn,ดูเมนู,មកបញ្ជាទិញ,Lihat menu,Lihat Menu,Tingnan ang menu
-拿菜单,ná cài dān,Get menu,Obtener menú,Obtenir le menu,Obter cardápio,Nhận thực đơn,รับเมนู,បានណែនាំ,Dapatkan menunya,Dapatkan Menu,Kumuha ng menu
-要点菜,yào diǎn cài,Order,Orden,Commande,Encomenda,Đặt hàng,สั่งซื้อ,សូមផ្តល់អនុសាសន៍,Pesan,Perintah,Order
-来点菜,lái diǎn cài,Come to order,Ven a ordenar,Venez commander,Venha fazer o pedido,Hãy đến đặt hàng,มาตำกันได้เลย,នេះគឺជាម្ហូបហត្ថលេខា,Ayo pesan,Datang ke pesanan,Halika sa order
-有推荐,yǒu tuī jiàn,Recommended,Recomendado,Recommandé,Recomendado,Được đề xuất,แนะนำ,បញ្ជាទិញម្ហូបហត្ថលេខា,Direkomendasikan,Disyorkan,Inirerekomenda
-请推荐,qǐng tuī jiàn,Please recommend,Por favor recomiende,Veuillez recommander,"Por favor, recomende",Hãy giới thiệu,กรุณาแนะนำ,រសជាតិឆ្ងាញ់,Mohon rekomendasikan,Sila cadangkan,Mangyaring magrekomenda
-这是招牌菜,zhè shì zhāo pái cài,This is a signature dish,Este es un plato estrella,C'est un plat signature,Este é um prato de assinatura,Đây là món ăn đặc trưng,จานนี้เป็นเมนูเด็ด,រសជាតិ,Ini adalah hidangan khas,Ini adalah hidangan tandatangan,Ito ay isang pirma ng pirma
-点招牌菜,diǎn zhāo pái cài,Order a signature dish,Pide un plato estrella,Commandez un plat signature,Peça um prato de assinatura,Đặt món ăn đặc trưng,สั่งอาหารจานเด่น,ហៅអ្នករត់តុ,Pesan hidangan khas,Pesan hidangan tandatangan,Mag -order ng isang pirma sa pirma
-味道好,wèi dào hǎo,Tastes good,Sabe bien,A bon goût,Tem um gosto bom,Vị ngon,อร่อยดี,ស្វែងរកអ្នករត់តុ,Rasanya enak,Rasa baik,Masarap mabuti
-尝味道,cháng wèi dào,Taste,Sabor,Goût,Prove,Hương vị,ลิ้มรส,ស្នើសុំច្បាប់ល្មើស,Rasa,Rasa,Tikman
-叫服务员,jiào fú wù yuán,Call the waiter,Llama al camarero,Appelez le serveur,Chama o garçom,Gọi người phục vụ,โทรหาบริกร,មកបង់ប្រាក់,Panggil pelayan,Hubungi pelayan,Tumawag sa waiter
-找服务员,zhǎo fú wù yuán,Find the waiter,Encuentra al camarero,Trouver le serveur,Encontre o garçom,Tìm người phục vụ,ค้นหาบริกร,សូមពិនិត្យមើល,Temukan pelayan,Cari pelayan,Hanapin ang waiter
-要买单,yào mǎi dān,Ask for the bill,Pide la factura,Demandez la facture,Peça a conta,Yêu cầu hóa đơn,ขอบิล,ទៅពិនិត្យមើល,Minta tagihannya,Minta Rang Undang -Undang,Hilingin sa Bill
-来买单,lái mǎi dān,Come to pay,Ven a pagar,Venez payer,Venha pagar,Đến trả tiền,มาจ่าย,ចង់វេចខ្ចប់,Datang untuk membayar,Datang untuk membayar,Halika upang magbayad
-要结账,yào jié zhàng,Check out,Echa un vistazo,Découvrez,Confira,Kiểm tra,ลองดู,ជួយខ្ញុំកញ្ចប់,Lihat,Lihat,Suriin ang
-去结账,qù jié zhàng,Go to check out,Ir a revisar,Allez voir,Vá conferir,Đi kiểm tra,ไปลองดู,ការបញ្ជាទិញបានចាត់វិធានការ,Pergi untuk memeriksa,Pergi untuk menyemak,Pumunta upang suriin
-要打包,yào dǎ bāo,Want to pack,Quiero empacar,Vous voulez emballer,Quer fazer as malas,Muốn đóng gói,อยากแพ็ค,ការដឹកជញ្ជូន,Mau berkemas,Mahu pek,Nais mag -pack
-帮我打包,bāng wǒ dǎ bāo,Help me pack,Ayúdame a empacar,Aide-moi à faire mes valises,Me ajude a fazer as malas,Giúp tôi đóng gói,ช่วยฉันแพ็ค,ជ្រើសរើសអាហារពេលល្ងាច in,Bantu aku berkemas,Bantu saya pek,Tulungan mo akong mag -pack
-点外卖,diǎn wài mài,Order takeout,Pedir comida para llevar,Commande à emporter,Encomendar comida,Đặt hàng mang về,สั่งซื้อกลับบ้าน,ចង់ទទួលទានអាហារពេលល្ងាច in,Pesan bawa pulang,Perintah Takeout,Order Takeout
-送外卖,sòng wài mài,Delivery,Entrega,Livraison,Entrega,Giao hàng,การจัดส่ง,កក់បន្ទប់ឯកជនមួយ,Pengiriman,Penghantaran,Paghahatid
-选堂食,xuǎn táng shí,Choose dine-in,Elija cenar en el restaurante,Choisissez un dîner sur place,Escolha jantar no local,Chọn dùng bữa tại,เลือกรับประทานอาหารที่ร้าน,មានបន្ទប់ឯកជន,Pilih makan di tempat,Pilih makan malam,Piliin ang Dine-in
-要堂食,yào táng shí,Want to dine in,Quiero cenar en,Envie de dîner à,Quer jantar em,Muốn dùng bữa ở,อยากรับประทานอาหารใน,ទទួលបាន cutlery,Ingin makan di,Mahu makan di,Nais na kumain sa
-订包间,dìng bāo jiān,Book a private room,Reserva una habitación privada,Réserver une chambre privée,Reserve um quarto privado,Đặt phòng riêng,จองห้องพักส่วนตัว,ប្រើ cutlery,Pesan kamar pribadi,Tempah bilik peribadi,Mag -book ng isang pribadong silid
-有包间,yǒu bāo jiān,There are private rooms,Hay habitaciones privadas,Il y a des chambres privées,Existem salas privadas,Có phòng riêng,มีห้องส่วนตัว,ទទួលបានចង្កឹះ,Ada kamar pribadi,Terdapat bilik peribadi,May mga pribadong silid
-拿餐具,ná cān jù,Get the cutlery,Consigue los cubiertos,Obtenez les couverts,Pegue os talheres,Lấy dao kéo,รับช้อนส้อม,ប្រើចង្កឹះ,Ambil peralatan makan,Dapatkan The Cutlery,Kunin ang Cutlery
-用餐具,yòng cān jù,Use the cutlery,Usa los cubiertos,Utilisez les couverts,Use os talheres,Sử dụng dao kéo,ใช้ช้อนส้อม,អាហារត្រូវបានបម្រើ,Gunakan alat makan,Gunakan The Cutlery,Gamitin ang cutlery
-拿筷子,ná kuài zi,Get the chopsticks,Coge los palillos,Obtenez les baguettes,Pegue os pauzinhos,Lấy đũa,รับตะเกียบ,អាហារនឹងត្រូវបានបម្រើការឆាប់ៗនេះ,Ambil sumpit,Dapatkan penyepit,Kunin ang mga chopstick
-用筷子,yòng kuài zi,Use the chopsticks,Usa los palillos,Utilisez les baguettes,Use os pauzinhos,Hãy dùng đũa,ใช้ตะเกียบ,ការកក់ទុកគឺត្រូវបានទាមទារ,Gunakan sumpit,Gunakan penyepit,Gamitin ang mga chopstick
-上菜了,shàng cài le,The food is served,La comida está servida,La nourriture est servie,A comida é servida,Thức ăn được phục vụ,อาหารถูกเสิร์ฟ,បានបម្រុងទុករួចហើយ,Makanan disajikan,Makanan dihidangkan,Naghahain ang pagkain
-快上菜,kuài shàng cài,The food will be served soon,La comida se servirá pronto,La nourriture sera bientôt servie,A comida será servida em breve,Đồ ăn sẽ được phục vụ sớm,อาหารจะเสิร์ฟเร็วๆ นี้,ជាស់លាស់,Makanan akan segera disajikan,Makanan akan dihidangkan tidak lama lagi,Ang pagkain ay ihahain sa lalong madaling panahon
-要订座,yào dìng zuò,Reservation is required,Se requiere reserva,La réservation est obligatoire,É necessária reserva,Cần phải đặt trước,ต้องจองล่วงหน้า,បង់ប្រាក់,Reservasi diperlukan,Tempahan diperlukan,Kinakailangan ang reserbasyon
-已订座,yǐ dìng zuò,Already reserved,Ya reservado,Déjà réservé,Já reservado,Đã đặt trước,จองไว้แล้ว,បង់ប្រាក់,Sudah dipesan,Sudah terpelihara,Nakareserba na
+chinese,pinyin,english,spanish,french,portuguese
+菜单,cài dān,Menu,Menú,Menus,Cardápio
+点菜,diǎn cài,Order food,Pedir comida,Commander de la nourriture,Pedir comida
+推荐,tuī jiàn,Recommendation,Recomendación,Recommandation,Recomendação
+招牌菜,zhāo pái cài,Signature dishes,Platos de autor,Plats signatures,Pratos de assinatura
+味道,wèi dào,Taste,Sabor,Goût,Prove
+服务员,fú wù yuán,Waiter,Camarero,Serveur,Garçom
+买单,mǎi dān,Pay the bill,Pagar la factura,Payer la facture,Pague a conta
+结账,jié zhàng,Checkout,Pagar,Payer l'addition,Finalização da compra
+打包,dǎ bāo,Packing,Embalaje,Emballage,Embalagem
+外卖,wài mài,Takeaway,Para llevar,À emporter,Para levar
+堂食,táng shí,Dine-in,Cenar en casa,Dîner sur place,Jantar no local
+包间,bāo jiān,Private room,Habitación privada,Chambre privée,Quarto privado
+餐具,cān jù,Cutlery,Cubiertos,Couverts,Talheres
+筷子,kuài zi,Chopsticks,Palillos,Baguettes,Pauzinhos
+上菜,shàng cài,Serving,Sirviendo,Servir,Servindo
+订座,dìng zuò,Reservation,Reserva,Réservation,Reserva
+看菜单,kàn cài dān,View menu,Ver menú,Afficher le menu,Ver menu
+拿菜单,ná cài dān,Get menu,Obtener menú,Obtenir le menu,Obter cardápio
+要点菜,yào diǎn cài,Order,Orden,Commande,Encomenda
+来点菜,lái diǎn cài,Come to order,Ven a ordenar,Venez commander,Venha fazer o pedido
+有推荐,yǒu tuī jiàn,Recommended,Recomendado,Recommandé,Recomendado
+请推荐,qǐng tuī jiàn,Please recommend,Por favor recomiende,Veuillez recommander,"Por favor, recomende"
+这是招牌菜,zhè shì zhāo pái cài,This is a signature dish,Este es un plato estrella,C'est un plat signature,Este é um prato de assinatura
+点招牌菜,diǎn zhāo pái cài,Order a signature dish,Pide un plato estrella,Commandez un plat signature,Peça um prato de assinatura
+味道好,wèi dào hǎo,Tastes good,Sabe bien,A bon goût,Tem um gosto bom
+尝味道,cháng wèi dào,Taste,Sabor,Goût,Prove
+叫服务员,jiào fú wù yuán,Call the waiter,Llama al camarero,Appelez le serveur,Chama o garçom
+找服务员,zhǎo fú wù yuán,Find the waiter,Encuentra al camarero,Trouver le serveur,Encontre o garçom
+要买单,yào mǎi dān,Ask for the bill,Pide la factura,Demandez la facture,Peça a conta
+来买单,lái mǎi dān,Come to pay,Ven a pagar,Venez payer,Venha pagar
+要结账,yào jié zhàng,Check out,Echa un vistazo,Découvrez,Confira
+去结账,qù jié zhàng,Go to check out,Ir a revisar,Allez voir,Vá conferir
+要打包,yào dǎ bāo,Want to pack,Quiero empacar,Vous voulez emballer,Quer fazer as malas
+帮我打包,bāng wǒ dǎ bāo,Help me pack,Ayúdame a empacar,Aide-moi à faire mes valises,Me ajude a fazer as malas
+点外卖,diǎn wài mài,Order takeout,Pedir comida para llevar,Commande à emporter,Encomendar comida
+送外卖,sòng wài mài,Delivery,Entrega,Livraison,Entrega
+选堂食,xuǎn táng shí,Choose dine-in,Elija cenar en el restaurante,Choisissez un dîner sur place,Escolha jantar no local
+要堂食,yào táng shí,Want to dine in,Quiero cenar en,Envie de dîner à,Quer jantar em
+订包间,dìng bāo jiān,Book a private room,Reserva una habitación privada,Réserver une chambre privée,Reserve um quarto privado
+有包间,yǒu bāo jiān,There are private rooms,Hay habitaciones privadas,Il y a des chambres privées,Existem salas privadas
+拿餐具,ná cān jù,Get the cutlery,Consigue los cubiertos,Obtenez les couverts,Pegue os talheres
+用餐具,yòng cān jù,Use the cutlery,Usa los cubiertos,Utilisez les couverts,Use os talheres
+拿筷子,ná kuài zi,Get the chopsticks,Coge los palillos,Obtenez les baguettes,Pegue os pauzinhos
+用筷子,yòng kuài zi,Use the chopsticks,Usa los palillos,Utilisez les baguettes,Use os pauzinhos
+上菜了,shàng cài le,The food is served,La comida está servida,La nourriture est servie,A comida é servida
+快上菜,kuài shàng cài,The food will be served soon,La comida se servirá pronto,La nourriture sera bientôt servie,A comida será servida em breve
+要订座,yào dìng zuò,Reservation is required,Se requiere reserva,La réservation est obligatoire,É necessária reserva
+已订座,yǐ dìng zuò,Already reserved,Ya reservado,Déjà réservé,Já reservado
