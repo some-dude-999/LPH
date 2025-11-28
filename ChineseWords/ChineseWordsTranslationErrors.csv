@@ -17,7 +17,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 16,Days of Week,Act II: Development,0,None - all translations present and valid
 17,Months & Seasons,Act II: Development,0,None - all translations present and valid
 18,Years & Calendar,Act II: Development,0,None - all translations present and valid
-19,Telling Time,Act II: Development,8,"Row 5: spanish/french/portuguese 'trimestre' (quarter year) should be 'cuarto de hora'; Row 9: spanish 'ver' (verb) should be 'reloj' (watch noun); similar verb/noun confusion in french/portuguese/vietnamese"
+19,Telling Time,Act II: Development,3,"Row 9: Indonesian/Malay/Filipino still have verb forms (tonton/Watch/Panoorin) instead of noun 'wristwatch' [FIXED: spanish/french/portuguese/vietnamese now correct]"
 20,Numbers 11-100,Act II: Development,0,None - all translations present and valid
 21,More Measure Words,Act II: Development,0,None - all translations present and valid
 22,More Action Verbs,Act II: Development,0,None - all translations present and valid
@@ -31,7 +31,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 30,Drinks & Beverages,Act III: Expansion,0,None - all translations present and valid
 31,Common Foods,Act III: Expansion,0,None - all translations present and valid
 32,Eating & Drinking,Act III: Expansion,0,None - all translations present and valid
-33,Clothing Items,Act III: Expansion,3,"Row 15: spanish 'Empate' (tie in sports) should be 'corbata' (necktie); Row 6/12: khmer translations mixed up (socks→hat, underwear→gloves)"
+33,Clothing Items,Act III: Expansion,2,"Row 6/12: Khmer translations appear mixed up - socks has 'មួក', underwear has 'ស្រោមដៃ' [FIXED: spanish necktie now correct]"
 34,Weather Words,Act III: Expansion,0,None - all translations present and valid
 35,Shopping Basics,Act III: Expansion,0,None - all translations present and valid
 36,Around the House,Act III: Expansion,0,None - all translations present and valid
@@ -60,7 +60,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 59,Describing Situations,Act IV: Mastery,0,None - all translations present and valid
 60,Talking About Problems,Act IV: Mastery,0,None - all translations present and valid
 61,Money & Payments,Act IV: Mastery,0,None - all translations present and valid
-62,At the Restaurant,Act IV: Mastery,3,"Row 9: french 'Commander' (to order) should be 'Payer/Régler'; Row 13/14: khmer 'private room'→cutlery, 'cutlery'→chopsticks (mixed up)"
+62,At the Restaurant,Act IV: Mastery,2,"Row 13/14: Khmer has Latin text 'cutlery'/'chopsticks' instead of proper Khmer translations [FIXED: french payment now correct]"
 63,At the Hotel,Act IV: Mastery,0,None - all translations present and valid
 64,At the Airport,Act IV: Mastery,0,None - all translations present and valid
 65,At the Doctor,Act IV: Mastery,0,None - all translations present and valid
