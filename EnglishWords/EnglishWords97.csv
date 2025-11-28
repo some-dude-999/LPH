@@ -1,16 +1,16 @@
 english,chinese,pinyin,spanish,portuguese
 cafe,咖啡馆,kā fēi guǎn,cafetería,café
-diner,晚餐,wǎn cān,cena,jantar
+diner,小餐馆,xiǎo cān guǎn,cena,jantar
 menu,菜单,cài dān,menú,cardápio
 reservation,预订,yù dìng,reserva,reserva
 waitress,女服务员,nǚ fú wù yuán,camarera,garçonete
-server,服务器,fú wù qì,servidor,servidor
+server,服务员,fú wù yuán,servidor,servidor
 appetizer,开胃菜,kāi wèi cài,aperitivo,aperitivo
 main course,主菜,zhǔ cài,plato principal,prato principal
 takeout,外卖,wài mài,comida para llevar,comida para viagem
-delivery,交货,jiāo huò,entrega,entrega
+delivery,外卖配送,wài mài pèi sòng,entrega,entrega
 buffet,自助餐,zì zhù cān,bufé,bufê
-specialty,专业,zhuān yè,especialidad,especialidade
+specialty,特色菜,tè sè cài,especialidad,especialidade
 vegetarian,素食,sù shí,vegetariano,vegetariano
 vegan,素食主义者,sù shí zhǔ yì zhě,vegano,vegano
 tapas,小吃,xiǎo chī,tapas,tapas
@@ -22,15 +22,15 @@ maître d',领班,lǐng bān,maître,maître d'
 street cafe,街边咖啡馆,jiē biān kā fēi guǎn,café callejero,café de rua
 cafe latte,拿铁咖啡,ná tiě kā fēi,café con leche,café com leite
 local diner,当地餐馆,dāng dì cān guǎn,restaurante local,lanchonete local
-diner food,晚餐食物,wǎn cān shí wù,comida del comedor,comida de jantar
+diner food,餐馆食物,cān guǎn shí wù,comida del comedor,comida de jantar
 read menu,阅读菜单,yuè dú cài dān,leer menú,ler cardápio
 menu item,菜单项,cài dān xiàng,elemento del menú,item de menu
 make reservation,预订,yù dìng,hacer reserva,fazer reserva
 reservation for two,两人预订,liǎng rén yù dìng,reserva para dos,reserva para dois
 friendly waitress,友好的女服务员,yǒu hǎo de nǚ fú wù yuán,camarera amable,garçonete simpática
 waitress came,女服务员来了,nǚ fú wù yuán lái le,vino la camarera,garçonete veio
-our server,我们的服务器,wǒ men de fú wù qì,nuestro servidor,nosso servidor
-server brought,服务器带来,fú wù qì dài lái,servidor traído,servidor trazido
+our server,我们的服务员,wǒ men de fú wù yuán,nuestro servidor,nosso servidor
+server brought,服务员带来,fú wù yuán dài lái,servidor traído,servidor trazido
 order appetizer,点开胃菜,diǎn kāi wèi cài,pedir aperitivo,pedir aperitivo
 appetizer menu,开胃菜菜单,kāi wèi cài cài dān,menú de aperitivos,cardápio de aperitivos
 main course dish,主菜,zhǔ cài,plato principal,prato principal
@@ -41,7 +41,7 @@ food delivery,食品配送,shí pǐn pèi sòng,entrega de comida,entrega de com
 delivery driver,送货司机,sòng huò sī jī,conductor de reparto,motorista de entrega
 breakfast buffet,自助早餐,zì zhù zǎo cān,desayuno buffet,buffet de café da manhã
 buffet style,自助餐风格,zì zhù cān fēng gé,estilo buffet,estilo buffet
-house specialty,房屋特产,fáng wū tè chǎn,especialidad de la casa,especialidade da casa
+house specialty,招牌菜,zhāo pái cài,especialidad de la casa,especialidade da casa
 specialty dish,特色菜,tè sè cài,plato especial,prato especial
 vegetarian option,素食选择,sù shí xuǎn zé,opción vegetariana,opção vegetariana
 vegetarian menu,素食菜单,sù shí cài dān,menú vegetariano,cardápio vegetariano

@@ -1,18 +1,18 @@
 english,chinese,pinyin,spanish,portuguese
 peel,剥皮,bāo pí,pelar,descascar
 cut,切,qiè,cortar,cortar
-dice,骰子,tóu zi,dados,dados
+dice,切丁,qiè dīng,dados,dados
 mince,切碎,qiè suì,picar,picar
-grate,炉排,lú pái,rejilla,grelha
+grate,刨丝器,páo sī qì,rejilla,grelha
 mash,捣碎,dǎo suì,puré,purê
 mix,混合,hùn hé,mezclar,misturar
 measure,测量,cè liáng,medida,medir
 combine,结合,jié hé,combinar,combinar
-spread,传播,chuán bō,difundir,espalhar
-stuff,东西,dōng xī,cosas,coisas
+spread,涂抹,tú mǒ,difundir,espalhar
+stuff,填充,tián chōng,cosas,coisas
 wrap,包裹,bāo guǒ,envolver,embrulhar
 garnish,装饰,zhuāng shì,decorar,enfeitar
-serve,服务,fú wù,servir,servir
+serve,上菜,shàng cài,servir,servir
 recipe,食谱,shí pǔ,receta,receita
 ingredient,成分,chéng fèn,ingrediente,ingrediente
 preparation,准备,zhǔn bèi,preparación,preparação
@@ -24,7 +24,7 @@ peel apple,苹果去皮,píng guǒ qù pí,pelar manzana,descascar maçã
 cut onion,切洋葱,qiè yáng cōng,cortar cebolla,cebola cortada
 cut into pieces,切成块,qiè chéng kuài,cortado en trozos,cortado em pedaços
 dice tomato,番茄切丁,fān qié qiè dīng,tomate en dados,dados de tomate
-dice small,骰子小,tóu zi xiǎo,dados pequeños,dados pequenos
+dice small,切小丁,qiè xiǎo dīng,dados pequeños,dados pequenos
 mince garlic,大蒜切末,dà suàn qiè mò,picar ajo,alho picado
 finely mince,切碎,qiè suì,picar finamente,picar finamente
 grate cheese,磨碎奶酪,mó suì nǎi lào,queso rallado,ralar queijo
@@ -39,12 +39,12 @@ combine ingredients,混合成分,hùn hé chéng fēn,combinar ingredientes,comb
 combine together,结合在一起,jié hé zài yì qǐ,combinar juntos,combinar
 spread butter,涂黄油,tú huáng yóu,untar mantequilla,barrar manteiga
 spread evenly,均匀分布,jūn yún fēn bù,distribuir uniformemente,espalhar uniformemente
-stuff turkey,火鸡东西,huǒ jī dōng xī,cosas de pavo,rechear peru
-stuff peppers,辣椒料,là jiāo liào,rellenar pimientos,rechear pimentões
+stuff turkey,填充火鸡,tián chōng huǒ jī,cosas de pavo,rechear peru
+stuff peppers,填充辣椒,tián chōng là jiāo,rellenar pimientos,rechear pimentões
 wrap gift,包装礼物,bāo zhuāng lǐ wù,envolver regalo,embrulhar presente
 wrap in foil,用箔纸包裹,yòng bó zhǐ bāo guǒ,envolver en papel de aluminio,embrulhe em papel alumínio
 garnish with,用,yòng,decorar con,decore com
-garnish nicely,装饰装饰精美,zhuāng shì zhuāng shì jīng měi,decorar muy bien,decore bem
+garnish nicely,装饰精美,zhuāng shì jīng měi,decorar muy bien,decore bem
 serve hot,趁热上桌,chèn rè shàng zhuō,servir caliente,sirva quente
 serve cold,冷食,lěng shí,servir frío,servir frio
 follow recipe,按照食谱,àn zhào shí pǔ,sigue la receta,segue receita
@@ -57,5 +57,5 @@ knead dough,揉面团,róu miàn tuán,amasar la masa,sove a massa
 knead well,揉匀,róu yún,amasar bien,amasse bem
 tenderize meat,使肉变嫩,shǐ ròu biàn nèn,ablandar la carne,amaciar a carne
 tenderize with,用,yòng,ablandar con,amaciar com
-julienne carrots,嫩化胡萝卜切丝,nèn huà hú luó bo qiè sī,zanahorias en juliana,cenouras juliana
+julienne carrots,胡萝卜切丝,hú luó bo qiè sī,zanahorias en juliana,cenouras juliana
 julienne cut,切丝,qiè sī,corte juliana,corte juliana
