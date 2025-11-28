@@ -6,7 +6,7 @@ vehículo,vehicle,车辆,chē liàng,veículo
 rueda,wheel,轮,lún,roda
 neumático,tire,轮胎,lún tāi,pneu
 freno,brake,刹车,shā chē,freio
-acelerador,accelerator,加速器,jiā sù qì,acelerador
+acelerador,accelerator,油门,yóu mén,acelerador
 volante,steering wheel,方向盘,fāng xiàng pán,volante
 gasolina,gasoline,汽油,qì yóu,gasolina
 diesel,diesel,柴油,chái yóu,gasóleo
@@ -15,7 +15,7 @@ mecánico,mechanic,机械师,jī xiè shī,mecânico
 mecánica,mechanical,机械,jī xiè,mecânica
 revisar,to inspect,检查,jiǎn chá,revisar
 aparcar,to park,停车,tíng chē,estacionar
-transmisión,transmission,传输,chuán shū,transmissão
+transmisión,transmission,变速器,biàn sù qì,transmissão
 embrague,clutch,离合器,lí hé qì,embreagem
 radiador,radiator,散热器,sàn rè qì,radiador
 alternador,alternator,交流发电机,jiāo liú fā diàn jī,alternador
@@ -33,8 +33,8 @@ el neumático,the tire,轮胎,lún tāi,o pneu
 un neumático,a tire,轮胎,lún tāi,um pneu
 el freno,the brake,刹车,shā chē,o freio
 un freno,a brake,刹车,shā chē,um freio
-el acelerador,the accelerator,加速器,jiā sù qì,o acelerador
-un acelerador,an accelerator,加速器,jiā sù qì,um acelerador
+el acelerador,the accelerator,油门,yóu mén,o acelerador
+un acelerador,an accelerator,油门,yóu mén,um acelerador
 el volante,the steering wheel,方向盘,fāng xiàng pán,o volante
 un volante,a steering wheel,方向盘,fāng xiàng pán,um volante
 la gasolina,gasoline,汽油,qì yóu,gasolina
@@ -51,8 +51,8 @@ hay que revisar,must be reviewed,必须审查,bì xū shěn chá,deve ser revist
 voy a revisar,I'll check,我会检查,wǒ huì jiǎn chá,Vou verificar
 hay que aparcar,you have to park,你必须停车,nǐ bì xū tíng chē,você tem que estacionar
 voy a aparcar,I'm going to park,我要去停车,wǒ yào qù tíng chē,Vou estacionar
-la transmisión,the transmission,传输,chuán shū,a transmissão
-una transmisión,a transmission,传输,chuán shū,uma transmissão
+la transmisión,the transmission,变速器,biàn sù qì,a transmissão
+una transmisión,a transmission,变速器,biàn sù qì,uma transmissão
 el embrague,the clutch,离合器,lí hé qì,a embreagem
 un embrague,a clutch,离合器,lí hé qì,uma embreagem
 el radiador,the radiator,散热器,sàn rè qì,o radiador

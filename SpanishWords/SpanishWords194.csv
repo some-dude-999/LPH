@@ -6,15 +6,15 @@ vendedora,saleswoman,女售货员,nǚ shòu huò yuán,vendedora
 comprador,buyer,买家,mǎi jiā,comprador
 compradora,buyer,买家,mǎi jiā,comprador
 mostrador,counter,柜台,guì tái,contador
-escaparate,showcase,展示,zhǎn shì,vitrine
-vitrina,showcase,展示,zhǎn shì,vitrine
+escaparate,showcase,橱窗,chú chuāng,vitrine
+vitrina,showcase,展示柜,zhǎn shì guì,vitrine
 probador,fitting room,试衣间,shì yī jiān,provador
 ticket,ticket,票,piào,bilhete
 rebaja,discount,折扣,zhé kòu,desconto
 minorista,retailer,零售商,líng shòu shāng,varejista
 mayorista,wholesaler,批发商,pī fā shāng,atacadista
 distribuidor,distributor,经销商,jīng xiāo shāng,distribuidor
-existencias,stocks,股票,gǔ piào,ações
+existencias,stocks,库存,kù cún,ações
 stock,stock,库存,kù cún,estoque
 surtido,assortment,品种,pǐn zhǒng,sortimento
 suministro,supply,供应,gōng yìng,fornecimento
@@ -31,7 +31,7 @@ un comprador,a buyer,买家,mǎi jiā,um comprador
 la compradora,the buyer,买家,mǎi jiā,o comprador
 una compradora,a buyer,买家,mǎi jiā,um comprador
 el mostrador,the counter,柜台,guì tái,o contador
-un mostrador,a counter,计数器,jì shù qì,um contador
+un mostrador,a counter,柜台,guì tái,um contador
 el escaparate,the showcase,展示柜,zhǎn shì guì,a vitrine
 un escaparate,a showcase,展示柜,zhǎn shì guì,uma vitrine
 la vitrina,the showcase,展示柜,zhǎn shì guì,a vitrine

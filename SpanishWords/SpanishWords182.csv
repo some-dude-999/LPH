@@ -9,7 +9,7 @@ router,router,路由器,lù yóu qì,roteador
 antena,antenna,天线,tiān xiàn,antena
 marcación,dialing,拨号,bō hào,discando
 tono,tone,语气,yǔ qì,tom
-buzón,mailbox,邮箱,yóu xiāng,caixa de correio
+buzón,mailbox,语音信箱,yǔ yīn xìn xiāng,caixa de correio
 extensión,extension,扩展,kuò zhǎn,extensão
 centralita,switchboard,总机,zǒng jī,central telefônica
 conferencia,conference,会议,huì yì,conferência
@@ -18,7 +18,7 @@ datos,data,数据,shù jù,dados
 ancho de banda,bandwidth,带宽,dài kuān,largura de banda
 fibra,fiber,光纤,guāng xiān,fibra
 operador,operator,运营商,yùn yíng shāng,operador
-proveedor,supplier,供应商,gōng yìng shāng,fornecedor
+proveedor,provider,供应商,gōng yìng shāng,fornecedor
 las telecomunicaciones,telecommunications,电信,diàn xìn,telecomunicações
 en telecomunicaciones,in telecommunications,在电信领域,zài diàn xìn lǐng yù,em telecomunicações
 un SMS,an SMS,一条短信,yī tiáo duǎn xìn,um SMS
@@ -36,7 +36,7 @@ un router,a router,路由器,lù yóu qì,um roteador
 la antena,the antenna,天线,tiān xiàn,a antena
 una antena,an antenna,天线,tiān xiàn,uma antena
 la marcación,dialing,拨号,bō hào,discando
-con marcación,with marking,带标记,dài biāo jì,com marcação
+con marcación,with dialing,带标记,dài biāo jì,com marcação
 el tono,the tone,语气,yǔ qì,o tom
 un tono,a tone,一个音调,yí gè yīn diào,um tom
 el buzón,the mailbox,邮箱,yóu xiāng,a caixa de correio

@@ -1,7 +1,7 @@
 spanish,english,chinese,pinyin,portuguese
 logística,logistics,物流,wù liú,logística
 transporte,transport,运输,yùn shū,transporte
-distribución,distribution,分布,fēn bù,distribuição
+distribución,distribution,配送,pèi sòng,distribuição
 almacén,warehouse,仓库,cāng kù,armazém
 mercancía,merchandise,商品,shāng pǐn,mercadoria
 entrega,delivery,交货,jiāo huò,entrega
@@ -14,7 +14,7 @@ rastrear,to track,追踪,zhuī zōng,rastrear
 gestionar,manage,管理,guǎn lǐ,gerenciar
 coordinar,to coordinate,协调,xié tiáo,coordenar
 flete,freight,货运,huò yùn,frete
-aduana,customs,海关,hǎi guān,costumes
+aduana,customs,海关,hǎi guān,alfândega
 aranceles,tariffs,关税,guān shuì,tarifas
 tránsito,transit,过境,guò jìng,trânsito
 bodega,cargo hold,货舱,huò cāng,porão
@@ -23,8 +23,8 @@ la logística,logistics,物流,wù liú,logística
 de logística,logistics,物流,wù liú,logística
 el transporte,transportation,交通,jiāo tōng,transporte
 un transporte,a transport,交通工具,jiāo tōng gōng jù,um transporte
-la distribución,the distribution,分布,fēn bù,a distribuição
-en distribución,in distribution,分布中,fēn bù zhōng,na distribuição
+la distribución,the distribution,配送,pèi sòng,a distribuição
+en distribución,in distribution,配送中,pèi sòng zhōng,na distribuição
 el almacén,the warehouse,仓库,cāng kù,o armazém
 un almacén,a warehouse,仓库,cāng kù,um armazém
 la mercancía,the merchandise,商品,shāng pǐn,a mercadoria
@@ -49,7 +49,7 @@ hay que coordinar,we have to coordinate,我们必须协调,wǒ men bì xū xié 
 voy a coordinar,I will coordinate,我来协调,wǒ lái xié tiáo,Eu coordenarei
 el flete,the freight,运费,yùn fèi,o frete
 un flete,a freight,运费,yùn fèi,um frete
-la aduana,customs,海关,hǎi guān,costumes
+la aduana,customs,海关,hǎi guān,a alfândega
 en aduana,at customs,在海关,zài hǎi guān,na alfândega
 los aranceles,tariffs,关税,guān shuì,tarifas
 sin aranceles,no tariffs,无关税,wú guān shuì,sem tarifas

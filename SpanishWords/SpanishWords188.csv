@@ -2,8 +2,8 @@ spanish,english,chinese,pinyin,portuguese
 fabricación,manufacturing,制造,zhì zào,fabricação
 fábrica,factory,工厂,gōng chǎng,fábrica
 línea,line,线,xiàn,linha
-procesos,processes,进程,jìn chéng,processos
-proceso,process,进程,jìn chéng,processo
+procesos,processes,工序,gōng xù,processos
+proceso,process,工序,gōng xù,processo
 calidad,quality,质量,zhì liàng,qualidade
 defecto,defect,缺陷,quē xiàn,defeito
 estándar,standard,标准,biāo zhǔn,padrão
@@ -13,7 +13,7 @@ industria,industry,行业,háng yè,indústria
 ensamblaje,assembly,装配,zhuāng pèi,montagem
 montaje,assembly,装配,zhuāng pèi,montagem
 componente,component,组件,zǔ jiàn,componente
-pieza,piece,一块,yī kuài,peça
+pieza,piece,零件,líng jiàn,peça
 repuesto,spare,备用,bèi yòng,sobressalente
 inventario,inventory,库存,kù cún,inventário
 almacenamiento,storage,存储,cún chǔ,armazenamento
@@ -23,10 +23,10 @@ la fábrica,the factory,工厂,gōng chǎng,a fábrica
 una fábrica,a factory,一家工厂,yī jiā gōng chǎng,uma fábrica
 la línea,the line,线,xiàn,a linha
 una línea,one line,一行,yī xíng,uma linha
-los procesos,the processes,进程,jìn chéng,os processos
-sin procesos,without processes,没有进程,méi yǒu jìn chéng,sem processos
+los procesos,the processes,工序,gōng xù,os processos
+sin procesos,without processes,没有工序,méi yǒu gōng xù,sem processos
 el proceso,the process,过程,guò chéng,o processo
-un proceso,a process,一个进程,yí gè jìn chéng,um processo
+un proceso,a process,一道工序,yī dào gōng xù,um processo
 la calidad,the quality,质量,zhì liàng,a qualidade
 con calidad,with quality,质量,zhì liàng,com qualidade
 el defecto,the defect,缺陷,quē xiàn,o defeito
