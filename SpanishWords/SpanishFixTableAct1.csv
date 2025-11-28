@@ -1,1 +1,26 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,1,Greetings & Goodbyes,17,english,"hi, friend",hi friend,Remove comma - more natural phrasing
+spanish,3,Numbers 0-10,26,english,six,six o'clock,Context indicates time (matches row 32)
+spanish,3,Numbers 0-10,30,english,eight,eight o'clock,Context indicates time (matches row 32)
+spanish,4,Asking Questions (qué cuándo dónde),24,english,how not,of course,Natural translation of Spanish idiom
+spanish,6,Being Permanent (ser),12,english,intelligent,smart,More common everyday word
+spanish,8,Having & Age (tener),41,english,justly,no wonder,Natural translation of Spanish idiom
+spanish,11,Days of the Week,26,english,daily,every day,Adverb phrase not adjective
+spanish,15,Colors,27,english,gray,gray color,Consistency with pattern (rows 17,21,etc)
+spanish,16,Describing Things (grande pequeño bueno),8,english,broad,wide,More common everyday word
+spanish,16,Describing Things (grande pequeño bueno),43,english,excellent,how good,Natural exclamation translation
+spanish,17,Basic Action Verbs,15,english,discuss,chat,Conversar means informal chatting
+spanish,18,Common Foods,2,english,meal,food,Comida means food in general
+spanish,18,Common Foods,28,english,milk,the milk,Consistency with article pattern
+spanish,19,House Rooms,6,english,lounge,living room,More common in American/British English
+spanish,19,House Rooms,39,english,the roof,the ceiling,Techo means ceiling indoors
+spanish,21,Going Places (ir),6,english,come on,let's go,Literal meaning of vamos
+spanish,21,Going Places (ir),10,english,address,direction,Theme context: going places/movement
+spanish,21,Going Places (ir),31,english,destiny,the destination,Theme context: going places/travel
+spanish,23,Extended Family,16,english,kinswoman,relative,Too formal/archaic
+spanish,25,Time Words (hoy ayer mañana),34,english,anymore,never again,Nunca más means never again
+spanish,27,Daily Activities,2,english,as,I eat,Como is conjugated verb not conjunction
+spanish,27,Daily Activities,4,english,early riser,I wake up early,Madrugo is verb not noun
+spanish,27,Daily Activities,10,english,I order,I organize,Ordeno means to organize/tidy
+spanish,27,Daily Activities,15,english,arrangement,I fix,Arreglo is verb not noun
+spanish,29,Transportation,9,english,ship,boat,More general/common term
