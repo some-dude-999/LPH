@@ -1,8 +1,8 @@
 spanish,english,chinese,pinyin,portuguese
 colegio,school,学校,xué xiào,escola
-instituto,institute,研究所,yán jiū suǒ,instituto
-materia,matter,事,shì,importa
-asignatura,subject,主题,zhǔ tí,assunto
+instituto,institute,学院,xué yuàn,instituto
+materia,matter,科目,kē mù,matéria
+asignatura,subject,科目,kē mù,disciplina
 matemáticas,mathematics,数学,shù xué,matemática
 ciencia,science,科学,kē xué,ciência
 historia,history,历史,lì shǐ,história
@@ -15,10 +15,10 @@ arte,art,艺术,yì shù,arte
 educación,education,教育,jiào yù,educação
 estudiar,study,学习,xué xí,estudar
 diploma,diploma,文凭,wén píng,diploma
-título,title,标题,biāo tí,título
+título,title,学位,xué wèi,título
 seminario,seminar,研讨会,yán tǎo huì,seminário
-facultad,faculty,师资,shī zī,corpo docente
-carrera,race,种族,zhǒng zú,corrida
+facultad,faculty,教师,jiào shī,corpo docente
+carrera,race,专业,zhuān yè,carreira
 beca,scholarship,奖学金,jiǎng xué jīn,bolsa de estudos
 cursillo,course,课程,kè chéng,curso
 posgrado,postgraduate,研究生,yán jiū shēng,pós-graduação
@@ -35,7 +35,7 @@ las matemáticas,mathematics,数学,shù xué,matemática
 estudiar matemáticas,study mathematics,学习数学,xué xí shù xué,estudar matemática
 la ciencia,science,科学,kē xué,ciência
 estudiar ciencia,study science,学习科学,xué xí kē xué,estudar ciências
-la historia,the story,故事,gù shì,a história
+la historia,history,历史,lì shǐ,a história
 estudiar historia,study history,研究历史,yán jiū lì shǐ,estudar história
 la geografía,geography,地理,dì lǐ,geografia
 estudiar geografía,study geography,学习地理,xué xí dì lǐ,estudar geografia

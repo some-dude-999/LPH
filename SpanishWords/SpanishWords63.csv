@@ -2,9 +2,9 @@ spanish,english,chinese,pinyin,portuguese
 móvil,mobile,移动,yí dòng,móvel
 celular,cell phone,手机,shǒu jī,celular
 portátil,laptop,笔记本电脑,bǐ jì běn diàn nǎo,portátil
-tableta,tablet,平板电脑,píng bǎn diàn nǎo,comprimido
+tableta,tablet,平板电脑,píng bǎn diàn nǎo,tablet
 internet,internet,互联网,hù lián wǎng,internet
-mensaje,message,留言,liú yán,mensagem
+mensaje,message,消息,xiāo xī,mensagem
 aplicación,application,应用,yìng yòng,aplicação
 contraseña,password,密码,mì mǎ,senha
 pantalla,screen,屏幕,píng mù,tela
@@ -17,8 +17,8 @@ cargar,load,加载,jiā zài,carregar
 procesador,processor,处理器,chǔ lǐ qì,processador
 cable,cable,电缆,diàn lǎn,cabo
 auriculares,headphones,耳机,ěr jī,fones de ouvido
-el móvil,the mobile,移动,yí dòng,o celular
-mi móvil,my mobile,我的手机,wǒ de shǒu jī,meu celular
+el móvil,the cell phone,移动,yí dòng,o celular
+mi móvil,my cell phone,我的手机,wǒ de shǒu jī,meu celular
 el celular,the cell phone,手机,shǒu jī,o celular
 tu celular,your cell phone,你的手机,nǐ de shǒu jī,seu celular
 el portátil,the laptop,笔记本电脑,bǐ jì běn diàn nǎo,o portátil
@@ -49,7 +49,7 @@ hay que cargar,must be loaded,必须加载,bì xū jiā zài,deve ser carregado
 voy a cargar,I'm going to load,我要加载,wǒ yào jiā zài,Vou carregar
 el procesador,the processor,处理器,chǔ lǐ qì,o processador
 un procesador,a processor,处理器,chǔ lǐ qì,um processador
-el cable,the wire,电线,diàn xiàn,o fio
-un cable,a wire,一根电线,yī gēn diàn xiàn,um fio
+el cable,the cable,电线,diàn xiàn,o fio
+un cable,a cable,一根电线,yī gēn diàn xiàn,um fio
 los auriculares,the headphones,耳机,ěr jī,os fones de ouvido
 mis auriculares,my headphones,我的耳机,wǒ de ěr jī,meus fones de ouvido

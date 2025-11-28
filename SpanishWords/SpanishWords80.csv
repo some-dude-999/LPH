@@ -1,18 +1,18 @@
 spanish,english,chinese,pinyin,portuguese
-turista,tourist,旅游,lǚ yóu,turista
+turista,tourist,游客,yóu kè,turista
 turismo,tourism,旅游,lǚ yóu,turismo
 pasaporte,passport,护照,hù zhào,passaporte
 maleta,suitcase,手提箱,shǒu tí xiāng,mala
 equipaje,luggage,行李,xíng lǐ,bagagem
-hotel,hotel,酒店,jiǔ diàn,hotéis
+hotel,hotel,酒店,jiǔ diàn,hotel
 reserva,reservation,预订,yù dìng,reserva
 vuelo,flight,航班,háng bān,vôo
 aeropuerto,airport,机场,jī chǎng,aeroporto
 estación,station,站,zhàn,estação
 boleto,ticket,票,piào,bilhete
-ida,one way,一种方式,yī zhǒng fāng shì,só de ida
+ida,one way,单程,dān chéng,só de ida
 vacaciones,vacation,假期,jià qī,férias
-agencia,agency,代理,dài lǐ,agência
+agencia,agency,旅行社,lǚ xíng shè,agência
 temporada,season,季节,jì jié,temporada
 aventura,adventure,冒险,mào xiǎn,aventura
 guía turístico,tour guide,导游,dǎo yóu,guia turístico
@@ -41,11 +41,11 @@ la estación,the station,车站,chē zhàn,a estação
 a la estación,to the station,到车站,dào chē zhàn,para a estação
 el boleto,the ticket,票,piào,o ingresso
 un boleto,a ticket,一张票,yī zhāng piào,um ingresso
-de ida,one way,一种方式,yī zhǒng fāng shì,só de ida
+de ida,one way,单程,dān chéng,só de ida
 ida y vuelta,round trip,往返,wǎng fǎn,ida e volta
 las vacaciones,the holidays,假期,jià qī,as férias
 de vacaciones,on vacation,度假中,dù jià zhōng,de férias
-la agencia,the agency,该机构,gāi jī gòu,a agência
+la agencia,the agency,旅行社,lǚ xíng shè,a agência
 una agencia,an agency,一个机构,yí gè jī gòu,uma agência
 la temporada,the season,这个季节,zhè ge jì jié,a temporada
 buena temporada,good season,好季节,hǎo jì jié,boa temporada
@@ -57,5 +57,5 @@ un souvenir,a souvenir,纪念品,jì niàn pǐn,uma lembrança
 comprar souvenir,buy souvenir,购买纪念品,gòu mǎi jì niàn pǐn,comprar lembrança
 una postal,a postcard,一张明信片,yī zhāng míng xìn piàn,um postal
 enviar postal,send postcard,寄明信片,jì míng xìn piàn,enviar postal
-la gira,the tour,巡演,xún yǎn,o passeio
+la gira,the tour,游览,yóu lǎn,o passeio
 una gira,a tour,一次旅行,yī cì lǚ xíng,um passeio
