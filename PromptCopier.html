@@ -185,10 +185,9 @@ OBFUSCATED VERSION (for production deployment):
 
 COLUMN STRUCTURE BY LANGUAGE:
 -----------------------------
-CHINESE (12 columns):
+CHINESE (6 columns):
     [0] chinese, [1] pinyin, [2] english, [3] spanish, [4] french,
-    [5] portuguese, [6] vietnamese, [7] thai, [8] khmer,
-    [9] indonesian, [10] malay, [11] filipino
+    [5] portuguese
 
 SPANISH (5 columns):
     [0] spanish, [1] english, [2] chinese, [3] pinyin, [4] portuguese
@@ -1078,11 +1077,11 @@ Create your own branch, commit, and PR to main.</div>
     </table>
 
     <h4>STAGE 3 OUTPUT - ChineseWords15.csv (Breakout CSV)</h4>
-    <p>OUTPUT: Individual CSV file with ALL translations (12 columns for Chinese)</p>
+    <p>OUTPUT: Individual CSV file with ALL translations (6 columns for Chinese)</p>
     <table>
-        <tr><th>chinese</th><th>pinyin</th><th>english</th><th>spanish</th><th>french</th><th>portuguese</th><th>vietnamese</th><th>thai</th><th>khmer</th><th>indonesian</th><th>malay</th><th>filipino</th></tr>
-        <tr><td>猫</td><td>māo</td><td>cat</td><td>gato</td><td>chat</td><td>gato</td><td>con mèo</td><td>แมว</td><td>ឆ្មា</td><td>kucing</td><td>kucing</td><td>pusa</td></tr>
-        <tr><td>小猫</td><td>xiǎo māo</td><td>kitten</td><td>gatito</td><td>chaton</td><td>gatinho</td><td>mèo con</td><td>ลูกแมว</td><td>កូនឆ្មា</td><td>anak kucing</td><td>anak kucing</td><td>kuting</td></tr>
+        <tr><th>chinese</th><th>pinyin</th><th>english</th><th>spanish</th><th>french</th><th>portuguese</th></tr>
+        <tr><td>猫</td><td>māo</td><td>cat</td><td>gato</td><td>chat</td><td>gato</td></tr>
+        <tr><td>小猫</td><td>xiǎo māo</td><td>kitten</td><td>gatito</td><td>chaton</td><td>gatinho</td></tr>
     </table>
     <p>CRITICAL: Character-by-character pinyin mapping with punctuation attached! 早上好， = "zǎo shàng hǎo，" (3 chars + comma → 3 syllables + comma)</p>
 
@@ -1148,9 +1147,9 @@ Python validation (trim + 6 scripts) + Manual review (ALL packs) + Create scorec
 ║  Column 2: english  (EVALUATE - check translation quality)       ║
 ║  Column 3: spanish  (EVALUATE - check translation quality)       ║
 ║  Column 4: french   (EVALUATE - check translation quality)       ║
-║  ...and so on through Column 11 (filipino)                       ║
+║  Column 5: portuguese (EVALUATE - check translation quality)     ║
 ║                                                                  ║
-║  YOUR CORE JOB: CRITIQUE existing translations in Columns 1-11.  ║
+║  YOUR CORE JOB: CRITIQUE existing translations in Columns 1-5.   ║
 ║  Column 0 is already correct. Your job is to evaluate if the     ║
 ║  TRANSLATIONS of Column 0 are natural, accurate, and appropriate ║
 ║  for the pack's theme.                                           ║
@@ -1165,7 +1164,7 @@ Python validation (trim + 6 scripts) + Manual review (ALL packs) + Create scorec
 ║  📖 FOR EACH ROW, ASK THESE QUESTIONS:                           ║
 ║  • Column 0 (chinese): [SKIP - this is correct from Overview]    ║
 ║  • Column 1 (pinyin): Syllable count correct? Commas aligned?    ║
-║  • Columns 2-11: Does translation match RIGHT MEANING for theme? ║
+║  • Columns 2-5: Does translation match RIGHT MEANING for theme?  ║
 ║  • Would NATIVE SPEAKER use this exact phrasing?                 ║
 ║  • Is this MOST COMMON/NATURAL way to express this?              ║
 ║  • Grammar, accents, tone marks all correct?                     ║
@@ -1193,7 +1192,7 @@ Python validation (trim + 6 scripts) + Manual review (ALL packs) + Create scorec
 ║  1. Read pack title → understand THEME                           ║
 ║  2. Read Column 0 → this is the word to translate                ║
 ║  3. Read Column 1 (pinyin) → check technical correctness         ║
-║  4. Read Columns 2-11 ONE BY ONE → critique each translation:    ║
+║  4. Read Columns 2-5 ONE BY ONE → critique each translation:     ║
 ║     - Right meaning for this theme?                              ║
 ║     - Natural phrasing for native speaker?                       ║
 ║     - Most common way to say this?                               ║
@@ -1334,17 +1333,11 @@ Then check EVERY ROW, EVERY COLUMN:
    - Column 3 (spanish): Does it match the INTENDED MEANING for this theme? Natural?
    - Column 4 (french): Does it match the INTENDED MEANING for this theme? Natural?
    - Column 5 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
-   - Column 6 (vietnamese): Does it match the INTENDED MEANING for this theme?
-   - Column 7 (thai): Does it match the INTENDED MEANING for this theme?
-   - Column 8 (khmer): Does it match the INTENDED MEANING for this theme?
-   - Column 9 (indonesian): Does it match the INTENDED MEANING for this theme?
-   - Column 10 (malay): Does it match the INTENDED MEANING for this theme?
-   - Column 11 (filipino): Does it match the INTENDED MEANING for this theme?
 
 ⚠️⚠️⚠️ THE CRITICAL ISSUE: WRONG MEANINGS FROM AUTO-TRANSLATION ⚠️⚠️⚠️
 
 Column 0 (chinese) is CORRECT - it came from Combined_Words validated in Stages 1-2.
-The problem is: TRANSLATIONS (columns 1-11) may have the WRONG MEANING because
+The problem is: TRANSLATIONS (columns 1-5) may have the WRONG MEANING because
 many words have multiple meanings depending on context!
 
 EXAMPLE:
@@ -1526,12 +1519,12 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 
 === EXAMPLE: ChineseFixTable.csv ===
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing spaces - should be character-by-character
-chinese,3,3,english,this one here,this,Awkward phrasing - use simpler form
-chinese,3,8,thai,ตัว,ตัว๊,Wrong tone mark
-chinese,3,12,portuguese,,tradução,Empty cell - needs translation
-chinese,4,2,pinyin,shí,shì,Wrong tone (shí → shì)
-chinese,4,5,english,[greeting],hello,Has brackets - failed auto-translation
+chinese,1,Greetings,5,pinyin,nǐhǎo,nǐ hǎo,Missing spaces - should be character-by-character
+chinese,3,Demonstratives,3,english,this one here,this,Awkward phrasing - use simpler form
+chinese,3,Demonstratives,8,french,cette,ce,Wrong gender/form for context
+chinese,3,Demonstratives,12,portuguese,,isto,Empty cell - needs translation
+chinese,4,Yes No & Responses,2,pinyin,shí,shì,Wrong tone (shí → shì)
+chinese,4,Yes No & Responses,5,english,[greeting],hello,Has brackets - failed auto-translation
 
 ⛔ EVERY PACK MUST HAVE Issue_Count filled in! ⛔
 ⛔ EVERY ISSUE MUST HAVE A FIX ROW IN ChineseFixTable.csv! ⛔
@@ -1615,7 +1608,7 @@ Each Chinese character (with trailing punctuation) = exactly ONE pinyin syllable
 ✓ CORRECT: 猴子 → hóu zi (2 chars = 2 syllables with space)
 ✗ WRONG: 猴子 → hóuzi (missing space!)
 
-=== BREAKOUT CSV COLUMNS (12 columns) ===
+=== BREAKOUT CSV COLUMNS (6 columns) ===
 | Col | Name       | Notes                        |
 |-----|------------|------------------------------|
 | 1   | chinese    | Must match Overview          |
@@ -1624,402 +1617,8 @@ Each Chinese character (with trailing punctuation) = exactly ONE pinyin syllable
 | 4   | spanish    | Translation                  |
 | 5   | french     | Translation                  |
 | 6   | portuguese | Translation                  |
-| 7   | vietnamese | Translation                  |
-| 8   | thai       | Translation                  |
-| 9   | khmer      | Translation                  |
-| 10  | indonesian | Translation                  |
-| 11  | malay      | Translation                  |
-| 12  | filipino   | Translation                  |
 
 UPDATE THE CSV. COMMIT. PR TO MAIN.</div>
-
-<h3>Chinese - Stage 3B (Targeted Fixing WITHOUT Scorecard)</h3>
-<div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3b" data-lang="chinese">TASK: TARGETED FIXING OF CHINESE BREAKOUT CSVs (NO SCORECARD - JUST FIX)
-
-Python validation (trim + 6 scripts) + Targeted manual review + Apply surgical fixes (NO comprehensive scorecard)
-
-╔══════════════════════════════════════════════════════════════════╗
-║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
-║                                                                  ║
-║  The ONLY acceptable final output is FIXED BREAKOUT CSV FILES.  ║
-║                                                                  ║
-║  ❌ USELESS outputs (DO NOT stop here):                          ║
-║  ❌ Python scripts                                               ║
-║  ❌ CSV of issues/fix tables                                     ║
-║  ❌ Markdown files explaining issues                             ║
-║  ❌ Text files documenting problems                              ║
-║                                                                  ║
-║  ✅ REQUIRED final output:                                       ║
-║  ✅ ChineseWords1.csv through ChineseWords107.csv ACTUALLY FIXED ║
-║                                                                  ║
-║  The fix table is INTERMEDIATE. It's WORTHLESS without apply!   ║
-╚══════════════════════════════════════════════════════════════════╝
-
-╔══════════════════════════════════════════════════════════════════╗
-║  ⚡ ULTRA-EFFICIENT FIX RECORDING - MINIMAL DATA ONLY            ║
-║                                                                  ║
-║  Goal: Scan all 107 packs and record ONLY what needs fixing.    ║
-║  Write the LEAST amount possible to identify each fix.          ║
-║  NO Reason column. NO verbose descriptions. JUST the data.      ║
-╚══════════════════════════════════════════════════════════════════╝
-
-╔══════════════════════════════════════════════════════════════════╗
-║  🔒 COLUMN 0 IS SACRED - NEVER QUESTION IT                       ║
-║                                                                  ║
-║  Column 0 (chinese) is ALWAYS CORRECT for the pack theme.       ║
-║  It came from Combined_Words, validated in Stages 1-2.          ║
-║  Problem: Auto-translation may pick WRONG MEANING of the word.  ║
-║                                                                  ║
-║  Example: Pack theme is "Sports Equipment"                      ║
-║  - Column 0 (chinese): 球拍 ✅ CORRECT (from Combined_Words)    ║
-║  - Column 2 (english): "noise" ❌ WRONG meaning!                ║
-║  - Should be: "racket" (sports equipment) ✅ RIGHT meaning      ║
-║                                                                  ║
-║  NEVER suggest changing Column 0. ONLY fix translations.        ║
-╚══════════════════════════════════════════════════════════════════╝
-
-╔══════════════════════════════════════════════════════════════════╗
-║  🎯 MANUAL TRANSLATION QUALITY CRITIQUE - NOT MECHANICAL CHECKS  ║
-║                                                                  ║
-║  CSV STRUCTURE (Chinese):                                        ║
-║  Column 0: chinese  (SACRED - from Combined_Words, validated)    ║
-║  Column 1: pinyin   (EVALUATE - check syllable count, commas)    ║
-║  Column 2: english  (EVALUATE - check translation quality)       ║
-║  Column 3: spanish  (EVALUATE - check translation quality)       ║
-║  Column 4: french   (EVALUATE - check translation quality)       ║
-║  ...and so on through Column 11 (filipino)                       ║
-║                                                                  ║
-║  YOUR CORE JOB: CRITIQUE existing translations in Columns 1-11.  ║
-║  Column 0 is already correct. Your job is to evaluate if the     ║
-║  TRANSLATIONS of Column 0 are natural, accurate, and appropriate ║
-║  for the pack's theme.                                           ║
-║                                                                  ║
-║  ⚠️  CRITICAL UNDERSTANDING:                                     ║
-║  • Translations already exist (may be auto-generated)            ║
-║  • You're EVALUATING quality, NOT creating from scratch          ║
-║  • Python finds TECHNICAL errors (empty, brackets, pinyin)       ║
-║  • YOU find SEMANTIC errors (wrong meaning, unnatural phrasing)  ║
-║  • Pack theme is CRITICAL context for evaluation                 ║
-║                                                                  ║
-║  📖 FOR EACH ROW, ASK THESE QUESTIONS:                           ║
-║  • Column 0 (chinese): [SKIP - this is correct from Overview]    ║
-║  • Column 1 (pinyin): Syllable count correct? Commas aligned?    ║
-║  • Columns 2-11: Does translation match RIGHT MEANING for theme? ║
-║  • Would NATIVE SPEAKER use this exact phrasing?                 ║
-║  • Is this MOST COMMON/NATURAL way to express this?              ║
-║  • Grammar, accents, tone marks all correct?                     ║
-║                                                                  ║
-║  🔍 THE REAL PROBLEM WE'RE SOLVING:                              ║
-║                                                                  ║
-║  Pack: "Sports Equipment" (theme context)                        ║
-║  Column 0 (chinese): 球拍 ← CORRECT (from Combined_Words)        ║
-║  Column 2 (english): "noise" ← ❌ WRONG MEANING!                 ║
-║                                                                  ║
-║  Why wrong? Auto-translator chose "racket = loud noise"          ║
-║  Should be: "racket" (sports equipment) for THIS theme           ║
-║                                                                  ║
-║  Python can't catch this - it only sees non-empty cell with      ║
-║  no brackets. Only YOU can catch wrong meanings by understanding ║
-║  the theme and thinking about what makes sense.                  ║
-║                                                                  ║
-║  ⛔ NOT ACCEPTABLE:                                               ║
-║  • Relying only on Python error reports (empty/brackets)         ║
-║  • Skimming rows without thinking about theme context            ║
-║  • Accepting "technically correct but awkward" translations      ║
-║  • Ignoring whether auto-translation picked right word sense     ║
-║                                                                  ║
-║  ✅ REQUIRED APPROACH:                                            ║
-║  1. Read pack title → understand THEME                           ║
-║  2. Read Column 0 → this is the word to translate                ║
-║  3. Read Column 1 (pinyin) → check technical correctness         ║
-║  4. Read Columns 2-11 ONE BY ONE → critique each translation:    ║
-║     - Right meaning for this theme?                              ║
-║     - Natural phrasing for native speaker?                       ║
-║     - Most common way to say this?                               ║
-║  5. If not perfect → record fix with BETTER translation          ║
-║                                                                  ║
-║  🎯 QUALITY BAR: MOST APPROPRIATE NATIVE TRANSLATION             ║
-║  Not just "correct" - MOST NATURAL for native speakers.          ║
-║  Not just "acceptable" - BEST CHOICE for this theme.             ║
-╚══════════════════════════════════════════════════════════════════╝
-
-⚠️⚠️⚠️ CRITICAL: RUN PYTHON HELPER TO FIND TRANSLATION FAILURES ⚠️⚠️⚠️
-
-BEFORE starting manual review, run this script to catch Latin text issues:
-
-    python PythonHelpers/check_latin_in_chinese.py chinese
-
-This will flag:
-- 🚨 CRITICAL: Spanish articles (la, los, el) in Chinese column = translation failures
-- ⚠️  ERROR: Missing spaces in pinyin (Txù → should be "T xù")
-- ⚡ WARNING: Suspicious Latin text not in known loanword list
-
-⛔⛔⛔ ABSOLUTELY NO CORNER-CUTTING OR SAMPLING ⛔⛔⛔
-
-╔══════════════════════════════════════════════════════════════════╗
-║  🚨 YOU MUST CHECK ALL 107 PACKS - NO EXCEPTIONS                 ║
-║                                                                  ║
-║  ❌ FORBIDDEN: "I'll check packs with Issue_Count > 0 only"      ║
-║  ❌ FORBIDDEN: "Let me review a few representative packs"        ║
-║  ❌ FORBIDDEN: Reading only high-error packs                     ║
-║  ❌ FORBIDDEN: Skipping packs that seem fine                     ║
-║                                                                  ║
-║  ✅ REQUIRED: Check ALL 107 packs (even if Issue_Count = 0)      ║
-║  ✅ REQUIRED: Read EVERY row in EVERY pack                       ║
-║  ✅ REQUIRED: At end, state "I checked all 107 packs"            ║
-║                                                                  ║
-║  The Python helper finds SOME errors, but YOU must find ALL.     ║
-║  Empty cells and brackets are easy. Wrong meanings are hard.     ║
-║  That's why YOU must check every pack manually.                  ║
-╚══════════════════════════════════════════════════════════════════╝
-
-=== STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
-
-python PythonHelpers/generate_error_summary.py chinese 3b
-
-This generates ChineseWords/ChineseErrorsSummary3B.csv with pre-scanned errors.
-
-Open TranslationErrorReport.html in your browser to review:
-- Total issues per pack
-- Pinyin spacing errors
-- Bracket errors (failed translations)
-- Empty cells
-
-This gives you a clear view of ALL errors before starting the fix process.
-The error summary will guide your fix table creation.
-
-=== STEP 1: READ TRANSLATION ERRORS CSV ===
-
-Use Read tool: ChineseWords/ChineseWordsTranslationErrors.csv
-
-This shows:
-- Issue_Count: Number of problems in each pack
-- Issues: Brief summary of what's wrong
-
-Focus on packs where Issue_Count > 0.
-
-=== STEP 3: SCAN PACKS AND RECORD FIXES ===
-
-╔══════════════════════════════════════════════════════════════════╗
-║  🎯 THEME CONTEXT IS CRITICAL - NEVER FIX WITHOUT IT!            ║
-║                                                                  ║
-║  Same word = different translations in different themes!        ║
-║                                                                  ║
-║  Example: Chinese "球拍" (qiú pāi)                               ║
-║  • Pack "Sports Equipment" → English "racket" ✅                 ║
-║  • Pack "Making Noise" → English "racket" (noise) ✅             ║
-║  • WITHOUT theme context → could pick wrong meaning ❌           ║
-║                                                                  ║
-║  MANDATORY: Every fix MUST include Pack_Title!                  ║
-║  MANDATORY: Check theme before deciding correct translation!    ║
-║  MANDATORY: Record Pack_Title in ALL internal reasoning!        ║
-║  MANDATORY: Mention Pack_Title in git commit messages!          ║
-║                                                                  ║
-║  ⛔ Fixing without theme context = GUARANTEED MISTAKES ⛔        ║
-╚══════════════════════════════════════════════════════════════════╝
-
-╔══════════════════════════════════════════════════════════════════╗
-║  📖 STRAIGHTFORWARD TRANSLATION RULES - NO GRAMMAR LESSONS!      ║
-║                                                                  ║
-║  These are VOCABULARY CARDS, not grammar textbooks!             ║
-║  Use SIMPLE, NATURAL, HELPFUL translations.                     ║
-║                                                                  ║
-║  ❌ WRONG APPROACH (Too formal, confusing):                      ║
-║  • "the" → "the (masculine)" ❌ Over-clarification               ║
-║  • "el" → "定冠词" (grammar term) ❌ This is NOT a translation!  ║
-║  • "los" → "这些" (these) ❌ Wrong word!                         ║
-║                                                                  ║
-║  ✅ CORRECT APPROACH (Simple, straightforward):                  ║
-║  • "the" → "the" ✅ No gender labels needed                      ║
-║  • "el" → "the" ✅ Just translate it!                            ║
-║  • "la" → "the" ✅ Same word in English                          ║
-║  • "los" → "the" ✅ Plural = still "the"                         ║
-║  • "las" → "the" ✅ Same                                         ║
-║                                                                  ║
-║  🔑 GOLDEN RULES:                                                ║
-║                                                                  ║
-║  1. Use MOST COMMON everyday translation                        ║
-║     NOT: "canine" ✅ YES: "dog"                                  ║
-║     NOT: "definite article" ✅ YES: "the"                        ║
-║                                                                  ║
-║  2. NO grammar terminology in translations                      ║
-║     ❌ "定冠词" (definite article)                               ║
-║     ❌ "阳性冠词" (masculine article)                            ║
-║     ✅ Just translate to natural equivalent                     ║
-║                                                                  ║
-║  3. NO clarifying labels in parentheses                         ║
-║     ❌ "the (masculine)"                                         ║
-║     ❌ "friend (male)"                                           ║
-║     ✅ Just "the", just "friend"                                 ║
-║                                                                  ║
-║  4. If word has multiple meanings, use MOST COMMON              ║
-║     Example: "set" → "set" (not "collection" or "group")        ║
-║     Context from Pack_Title determines which meaning            ║
-║                                                                  ║
-║  5. Chinese for Spanish articles:                               ║
-║     • el, la, los, las → Chinese equivalent of "the"            ║
-║     • NOT grammar terms!                                         ║
-║     • Think: "What would Chinese speaker naturally say?"        ║
-║     • Answer: 这个/那个 (this/that) or omit (Chinese often      ║
-║       doesn't need articles)                                     ║
-║                                                                  ║
-║  6. Keep it NATURAL and HELPFUL                                 ║
-║     Ask: "Would this help someone learn, or confuse them?"      ║
-║     Grammar lessons = confusing ❌                               ║
-║     Simple translation = helpful ✅                              ║
-║                                                                  ║
-║  ⚠️  Remember: Users are learning VOCABULARY, not grammar!      ║
-║  ⚠️  Formal/technical translations make learning HARDER!        ║
-║  ⚠️  Simple = better than "accurate but confusing"              ║
-╚══════════════════════════════════════════════════════════════════╝
-
-
-For EACH pack with issues:
-
-1. Read pack CSV: ChineseWords/ChineseWords{N}.csv
-2. Identify EVERY problem (pinyin errors, translation errors, empty cells, theme mismatches)
-3. Record fix in ChineseWords/ChineseFixTableB.csv with MINIMAL data:
-
-╔══════════════════════════════════════════════════════════════════╗
-║  📝 ChineseFixTableB.csv FORMAT (NO Reason column!)              ║
-║  CRITICAL: Pack_Title (theme) is MANDATORY even in minimal!     ║
-║  Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value║
-║                                                                  ║
-║  Example fixes:                                                  ║
-║  chinese,23,Greetings,3,pinyin,nǐhǎo,nǐ hǎo                               ║
-║  chinese,23,Greetings,7,english,hello friend boy,hey buddy                ║
-║  chinese,45,Time Expressions,12,spanish,,hola amigo                              ║
-║                                                                  ║
-║  That's it! Just 6 columns. Pack_Title provides critical theme context! No explanations needed.             ║
-╚══════════════════════════════════════════════════════════════════╝
-
-⚡ WRITE ONLY:
-- Language (pre-filled: "chinese")
-- Pack_Number (e.g., "23")
-- Pack_Title (e.g., "Greetings", "Sports Equipment" - CRITICAL for context!)
-- Row_Number (CSV row number - remember row 1 is header, data starts at row 2)
-- Column_Name (e.g., "pinyin", "english", "spanish")
-- Old_Value (current wrong value - can be empty string if cell is empty)
-- New_Value (what it should be)
-
-❌ DO NOT WRITE:
-- Reason/explanation (no such column!)
-- Comments about why it's wrong
-- Multiple values in one cell
-
-=== CRITICAL VALIDATION RULES ===
-
-| Check | Description |
-|-------|-------------|
-| 🔒 NEVER change Column 1 | chinese column is SACRED - only fix translations (columns 2-12) |
-| ⚠️ Pinyin mapping | Character-by-character with punctuation attached: 好，→ hǎo， |
-| ⚠️ Latin letters | Letter-by-letter mapping: ATM机 → A T M jī |
-| ⚠️ Theme matching | Check if TRANSLATION matches intended meaning for pack theme |
-| ⚠️ Empty cells | Record as empty Old_Value, provide New_Value |
-
-=== PINYIN COMMA CONVENTION (CRITICAL!) ===
-
-╔══════════════════════════════════════════════════════════════════╗
-║  ⚠️  PINYIN COMMAS MUST ALIGN WITH CHINESE CHARACTER COMMAS      ║
-║                                                                  ║
-║  Chinese: 是的，先生                                            ║
-║  Pinyin:  shì de，xiān shēng                                    ║
-║                                                                  ║
-║  Notice: Comma after "的" and after "de" - same block!          ║
-║                                                                  ║
-║  ✅ CORRECT: de，xiān (comma right after "de")                  ║
-║  ❌ WRONG:   de, xiān (space before comma - breaks alignment!)  ║
-╚══════════════════════════════════════════════════════════════════╝
-
-=== STEP 4: APPLY ALL FIXES (MANDATORY - NOT OPTIONAL!) ===
-
-╔══════════════════════════════════════════════════════════════════╗
-║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
-║                                                                  ║
-║  ChineseFixTableB.csv is ONLY an intermediate artifact.         ║
-║  TASK IS A TOTAL FAIL if you don't actually apply the fixes!    ║
-║                                                                  ║
-║  IMMEDIATELY after completing the fix table:                    ║
-║  1. Run apply_fixes.py                                          ║
-║  2. If errors occur → debug and rerun until SUCCESS             ║
-║  3. Final output = FIXED DATASET (actual CSV files changed)     ║
-║                                                                  ║
-║  DO NOT ask for review. DO NOT stop at the fix table.           ║
-║  The job is NOT done until the CSVs are actually fixed!         ║
-╚══════════════════════════════════════════════════════════════════╝
-
-APPLY WORKFLOW:
-1. Run: python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTableB.csv
-2. Check output for mismatches or errors
-3. If errors:
-   - Debug: Are Row_Numbers correct? (Header = row 1, data starts row 2)
-   - Debug: Do Old_Values match exactly what's in the CSV?
-   - Fix the fix table and rerun
-4. When apply succeeds with 0 mismatches → Validate and commit
-5. Run validation: python PythonHelpers/validate_pinyin.py chinese
-6. All good? Proceed to Step 4
-
-SURGICAL EDIT PRINCIPLE (CRITICAL!):
-- Edits target specific: Language, Pack_Number, Row_Number, Column_Name
-- NEVER blanket "replace A with B in all CSVs"
-- Each fix must specify exact location: which pack, which row, which column
-- Can fix 500 rows at once, but EACH must be surgically specified
-- Even if the same error is in ALL rows of ALL packs, specify each one!
-
-=== STEP 5: COMMIT AND PUSH ===
-
-git add .
-git commit -m "Stage 3B: Apply surgical fixes to Chinese packs"
-git push -u origin <branch-name>
-
-=== EXAMPLE WORKFLOW ===
-
-1. Read ChineseWordsTranslationErrors.csv → See Pack 23 has issues
-2. Read ChineseWords/ChineseWords23.csv → Find 3 problems:
-   - Row 3, pinyin: "nǐhǎo" (missing space)
-   - Row 7, english: "hello friend boy" (awkward)
-   - Row 12, spanish: "" (empty cell)
-
-3. Record in ChineseFixTableB.csv:
-   ```
-   chinese,23,3,pinyin,nǐhǎo,nǐ hǎo
-   chinese,23,7,english,hello friend boy,hey buddy
-   chinese,23,12,spanish,,hola amigo
-   ```
-
-4. Move to next pack, repeat
-
-5. After ALL packs scanned, run:
-   python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTableB.csv
-
-=== BREAKOUT CSV COLUMNS (12 columns) ===
-
-| Col | Name       | Editable? | Notes                        |
-|-----|------------|-----------|------------------------------|
-| 1   | chinese    | 🔒 NEVER  | Sacred - matches Overview    |
-| 2   | pinyin     | ✅ YES    | Char-by-char mapping (punctuation attached) |
-| 3   | english    | ✅ YES    | Translation                  |
-| 4   | spanish    | ✅ YES    | Translation                  |
-| 5   | french     | ✅ YES    | Translation                  |
-| 6   | portuguese | ✅ YES    | Translation                  |
-| 7   | vietnamese | ✅ YES    | Translation                  |
-| 8   | thai       | ✅ YES    | Translation                  |
-| 9   | khmer      | ✅ YES    | Translation                  |
-| 10  | indonesian | ✅ YES    | Translation                  |
-| 11  | malay      | ✅ YES    | Translation                  |
-| 12  | filipino   | ✅ YES    | Translation                  |
-
-=== SUCCESS CRITERIA (ALL REQUIRED!) ===
-
-✅ ChineseFixTableB.csv has entries for EVERY issue found
-✅ ⚠️ apply_fixes.py runs successfully with 0 mismatches (MANDATORY!)
-✅ ⚠️ Actual CSV files are CHANGED (fix table alone = FAIL!)
-✅ Validation passes (validate_pinyin.py chinese)
-✅ All changes committed and pushed
-✅ All 107 packs scanned (even if some have 0 issues)
-
-⚠️⚠️⚠️ If actual CSVs aren't fixed, you have FAILED THE TASK! ⚠️⚠️⚠️</div>
 
 <h3>Spanish - Stage 3A (Comprehensive Review WITH Scorecard + Fixing)</h3>
 <div>Click to copy</div>
@@ -3952,9 +3551,9 @@ git push
 
 === WHAT THE SCRIPTS PRODUCE ===
 
-CHINESE (107 packs → 5 acts, 12 columns):
+CHINESE (107 packs → 5 acts, 6 columns):
 - Jsmodules/act1-foundation.js ... act5-refinement.js
-- Columns: chinese, pinyin, english, spanish, french, portuguese, vietnamese, thai, khmer, indonesian, malay, filipino
+- Columns: chinese, pinyin, english, spanish, french, portuguese
 
 SPANISH (250 packs → 7 acts, 5 columns):
 - Jsmodules/act1-foundation.js ... act7-mastery-fluency.js
