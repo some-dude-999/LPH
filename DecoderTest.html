@@ -392,88 +392,153 @@
     This CDN script provides the pako.inflate() function for decompression.
   -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+
+  <style>
+    /* Fixed Header */
+    body {
+      margin: 0;
+      padding-top: 180px; /* Space for fixed header */
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .decoder-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, rgba(61, 46, 31, 0.95) 0%, rgba(61, 46, 31, 0.92) 100%);
+      padding: 15px 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      color: #fff;
+    }
+
+    .decoder-header h1 {
+      margin: 0 0 8px 0;
+      font-size: 1.4rem;
+      color: #E8C252;
+    }
+
+    .header-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .control-group label {
+      font-size: 0.75rem;
+      color: #D4AF37;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .control-group select {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid #666;
+      background: rgba(255,255,255,0.95);
+      font-size: 0.9rem;
+    }
+
+    .mode-selector {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .mode-selector label {
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: rgba(232,196,82,0.9);
+      transition: color 0.2s;
+    }
+
+    .mode-selector label:hover {
+      color: #E8C252;
+    }
+
+    .mode-selector input[type="radio"] {
+      accent-color: #D4AF37;
+    }
+
+    .content-container {
+      padding: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Wordpack Data Structure Debugger</h1>
-  <p>Technical reference for language learning game data architecture</p>
+  <!-- Fixed Header with All Controls -->
+  <div class="decoder-header">
+    <h1>Wordpack Data Structure Debugger</h1>
+    <div class="header-controls">
+      <!-- Language Selection -->
+      <div class="control-group">
+        <label>Target Language</label>
+        <div id="languageRadios" style="display: flex; gap: 10px; margin-top: 5px;">
+          <label style="font-size: 0.85rem; color: #fff; text-transform: none;">
+            <input type="radio" name="language" value="Spanish" checked> Spanish
+          </label>
+          <label style="font-size: 0.85rem; color: #fff; text-transform: none;">
+            <input type="radio" name="language" value="Chinese"> Chinese
+          </label>
+          <label style="font-size: 0.85rem; color: #fff; text-transform: none;">
+            <input type="radio" name="language" value="English"> English
+          </label>
+        </div>
+      </div>
 
-  <hr>
+      <!-- Act Selection -->
+      <div class="control-group">
+        <label for="actSelect">Act</label>
+        <select id="actSelect"></select>
+      </div>
 
-  <!--
-    ============================================================
-    LANGUAGE SELECTION - Radio Buttons
-    ============================================================
-    Choose which target language's wordpacks to load.
-    Default: Spanish
-  -->
-  <h2>1. Select Target Language</h2>
-  <p>Which language are you learning?</p>
-  <label>
-    <input type="radio" name="language" value="Spanish" checked>
-    Spanish
-  </label>
-  <label>
-    <input type="radio" name="language" value="Chinese">
-    Chinese
-  </label>
-  <label>
-    <input type="radio" name="language" value="English">
-    English
-  </label>
-  <label>
-    <input type="radio" name="language" value="None">
-    None (Empty MODULE_URLS)
-  </label>
+      <!-- Pack Selection -->
+      <div class="control-group">
+        <label for="packSelect">Wordpack</label>
+        <select id="packSelect"></select>
+      </div>
 
-  <hr>
+      <!-- Native Language -->
+      <div class="control-group">
+        <label for="nativeLanguageSelect">I Speak</label>
+        <select id="nativeLanguageSelect"></select>
+      </div>
+    </div>
 
-  <!--
-    ============================================================
-    ACT SELECTION - Dropdown
-    ============================================================
-    Acts are learning stages. Each language has different numbers of acts:
-    - Spanish: 7 acts
-    - Chinese: 5 acts
-    - English: 5 acts
-  -->
-  <h2>2. Select Act (Learning Stage)</h2>
-  <p>Acts are grouped learning stages containing multiple wordpacks.</p>
-  <select id="actSelect">
-  </select>
+    <!-- Mode Selector (Radio Buttons) -->
+    <div class="mode-selector">
+      <label><input type="radio" name="viewMode" value="table" checked> Table</label>
+      <label><input type="radio" name="viewMode" value="multipleChoice"> Multiple Choice</label>
+      <label><input type="radio" name="viewMode" value="typing"> Typing</label>
+      <label><input type="radio" name="viewMode" value="pronunciation"> Pronunciation</label>
+      <label><input type="radio" name="viewMode" value="flashcard"> Flashcard</label>
+    </div>
+  </div>
 
-  <hr>
+  <!-- Content Container -->
+  <div class="content-container">
 
-  <!--
-    ============================================================
-    WORDPACK SELECTION - Dropdown
-    ============================================================
-    Each act contains multiple wordpacks (vocabulary sets).
-    This dropdown populates based on the selected act.
-  -->
-  <h2>3. Select Wordpack</h2>
-  <p>Individual vocabulary set within the selected act.</p>
-  <select id="packSelect">
-  </select>
-
-  <hr>
-
-  <!--
-    ============================================================
-    NATIVE LANGUAGE SELECTION - "I Speak" Dropdown
-    ============================================================
-    This determines which column to display in the right column of the table.
-    Column 0 (left) is always the target language being learned.
-    Column N (right) is the native language the user speaks.
-
-    Available options depend on the target language's column structure.
-  -->
-  <h2>4. Select Your Native Language (I Speak)</h2>
-  <p>Which language do you speak? This determines the translation column shown.</p>
-  <select id="nativeLanguageSelect">
-  </select>
-
-  <hr>
+  <!-- Vocabulary Table Section -->
+  <h2>Vocabulary Table</h2>
+  <p><strong>Pack Title:</strong> <span id="packTitle">Select a wordpack to view</span></p>
 
   <!--
     ============================================================
@@ -514,70 +579,9 @@
 
     The algorithm works for ANY target language (Spanish, Chinese, English, etc.)
     and ANY future language packs we add to the system.
+
+    NOTE: Mode selection is now in the fixed header above (radio buttons).
   -->
-  <h2>5. Vocabulary Table</h2>
-  <p><strong>Pack Title:</strong> <span id="packTitle">Select a wordpack to view</span></p>
-
-  <!--
-    MULTIPLE CHOICE MODE CHECKBOX
-    When enabled, adds 4 columns of wrong answers randomly selected from
-    ALL wordpacks in the current act (~2,500 words). This shows how game
-    mechanics generate distractors with variety and duplicate filtering.
-  -->
-  <p>
-    <label>
-      <input type="checkbox" id="multipleChoiceMode">
-      Multiple Choice Mode (adds 4 wrong answer columns from entire act - game mechanics demo)
-    </label>
-  </p>
-
-  <!--
-    TYPING MODE CHECKBOX
-    When enabled, adds 3 columns for interactive typing practice:
-    - Column 3: Typing input box with masked placeholders (X for each letter)
-    - Column 4: Wrong letters attempted (crossed out display)
-    - Column 5: Wrong attempt count
-
-    This demonstrates the CORE TYPING MECHANIC used in language learning games
-    like SimpleFlashCards.html. The mechanic includes:
-    - Character-by-character input validation
-    - Accent-insensitive comparison (á = a, ñ = n, etc.)
-    - Case-insensitive matching
-    - Satisfying typing sound on every keypress (correct or wrong)
-    - Automatic space handling (spaces ignored, auto-advanced)
-    - Wrong letter tracking for feedback
-
-    IMPROVEMENTS OVER SimpleFlashCards.html:
-    - Simpler state management (per-row instead of global)
-    - More modular code structure (easier to copy to other games)
-    - Cleaner normalization logic
-    - Better commented for human/LLM understanding
-  -->
-  <p>
-    <label>
-      <input type="checkbox" id="typingMode">
-      Typing Mode (adds typing practice columns - game mechanics demo)
-    </label>
-  </p>
-
-  <!--
-    PRONUNCIATION MODE CHECKBOX
-    When enabled, adds 2 columns for speech recognition practice:
-    - Column 3: Record button (🎤) to capture user's pronunciation
-    - Column 4: Percentage correct (similarity score using Levenshtein distance)
-
-    CORE LOGIC:
-    - Web Speech API for speech recognition
-    - Levenshtein distance for fuzzy string matching
-    - Language-specific recognition (es-ES, zh-CN, en-US)
-    - Works best in Chrome/Edge browsers
-  -->
-  <p>
-    <label>
-      <input type="checkbox" id="pronunciationMode">
-      Pronunciation Mode (adds record button and accuracy percentage - speech recognition demo)
-    </label>
-  </p>
 
   <!--
     ============================================================
@@ -644,13 +648,9 @@
     └─────────────────────────────────────────────────────────────────────────┘
 
     This mode demonstrates the principle with a minimal, no-CSS implementation.
+
+    NOTE: Flashcard mode is now in the fixed header above (radio button).
   -->
-  <p>
-    <label>
-      <input type="checkbox" id="flashcardMode">
-      Flashcard Mode (demonstrates anti-decoupling principle - front/back always linked)
-    </label>
-  </p>
 
   <!--
     ============================================================
@@ -4173,6 +4173,8 @@ ${currentCard.backIsChinese ? `// backPinyin: "${currentCard.backPinyin}" (Chine
     window.addEventListener('DOMContentLoaded', initialize);
 
   </script>
+
+  </div> <!-- End content-container -->
 
 </body>
 </html>
