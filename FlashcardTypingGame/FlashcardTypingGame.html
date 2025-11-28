@@ -3243,41 +3243,15 @@
       saveState();
     }
 
-    // Initialize typing display for listening and translation modes
+    // Initialize typing display for spelling and translation modes
     function initializeTypingDisplay() {
-      // Defensive check
-      if (currentDeck.length === 0 || !currentDeck[currentIndex]) {
-        console.error('[initializeTypingDisplay] No current card');
-        return;
-      }
-
-      const card = currentDeck[currentIndex];
-
-      // Use typingTarget which is set in initializeDeck:
-      // - For Chinese: this is pinyin (letter-based typing)
-      // - For Spanish/English: this is the target word
-      const word = card.typingTarget;
-
-      if (!word) {
-        console.error('[initializeTypingDisplay] typingTarget is undefined!', card);
-        // Fallback to targetWord
-        const fallbackWord = card.targetWord || '';
-        typingInput = '';
-        typingDisplay = fallbackWord.split('');
-        typedPositions = new Set();
-        wrongAttempts = 0;
-        wrongPositions = [];
-        wrongLetters = [];
-        return;
-      }
-
+      const word = currentDeck[currentIndex].typingTarget;
       typingInput = '';
-      // Store actual characters (not underscores) to preserve natural layout
       typingDisplay = word.split('');
-      typedPositions = new Set(); // Reset typed positions (starts empty)
-      wrongAttempts = 0; // Reset wrong attempts counter
-      wrongPositions = []; // Reset wrong positions array
-      wrongLetters = []; // Reset wrong letters array
+      typedPositions = new Set();
+      wrongAttempts = 0;
+      wrongPositions = [];
+      wrongLetters = [];
     }
 
     // Add duplicate cards to current deck for extra practice
@@ -4167,15 +4141,10 @@
      * @returns {string} - HTML string for the target word
      */
     function renderTargetWord(card) {
-      if (!card || !card.targetWord) {
-        console.error('[renderTargetWord] No targetWord on card:', card);
-        return '';
-      }
       // If target language is Chinese, use coupled rendering
       if (isChineseMode() && card.pinyin) {
         return getChineseHtml(card.targetWord, card.pinyin);
       }
-      // Otherwise, plain text
       return card.targetWord;
     }
 
@@ -4547,25 +4516,13 @@
     function speakTargetWord() {
       if (currentDeck.length === 0) return;
 
-      const card = currentDeck[currentIndex];
-      if (!card || !card.targetWord) {
-        console.error('[speakTargetWord] No targetWord on card:', card);
-        return;
-      }
-
-      const utterance = new SpeechSynthesisUtterance(card.targetWord);
-
-      // Set language based on detected target language
-      const ttsCode = getTtsLanguageCode();
-      if (ttsCode) {
-        utterance.lang = ttsCode;
-      }
-
+      const utterance = new SpeechSynthesisUtterance(currentDeck[currentIndex].targetWord);
+      utterance.lang = getTtsLanguageCode();
       utterance.rate = currentSpeed;
       if (currentVoice) {
         utterance.voice = currentVoice;
       }
-      speechSynthesis.cancel(); // Stop any current speech
+      speechSynthesis.cancel();
       speechSynthesis.speak(utterance);
     }
 
