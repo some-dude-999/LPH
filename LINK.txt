@@ -45,6 +45,9 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act4-expanding-horizo
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act5-advanced-mastery.js - Act V Advanced Mastery vocabulary (packs 136-160) - readable development version
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/edge-cases.js - English edge cases (Latin in Chinese translations) - 9 words
 
+▓▓▓ OTHER ▓▓▓
+https://some-dude-999.github.io/LPH/wordpack-logic.js - Shared core logic for all wordpack-based games (loading, decoding, shuffling, typing validation, Chinese+Pinyin coupling)
+
 ═══════════════════════════════════════════════════════════════
 ██ JAVASCRIPT MODULES - OBFUSCATED (Production - Compressed)
 ═══════════════════════════════════════════════════════════════
