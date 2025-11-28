@@ -1,18 +1,18 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 漂亮,piào liàng,Beautiful,Hermosa,Magnifique,Lindo,Đẹp,สวย,ស្រស់ស្អាត,Cantik,Cantik,Maganda
 帅,shuài,Handsome,Guapo,Beau,Bonito,Đẹp trai,สุดหล่อ,សង្ហា,Tampan,Kacak,Gwapo
-可爱,kě ài,Cute,Lindo,Mignon,Fofo,Dễ thương,น่ารัก,| គួរឱ្យស្រលាញ់,Lucu,Comel,Cute
+可爱,kě ài,Cute,Lindo,Mignon,Fofo,Dễ thương,น่ารัก,,Lucu,Comel,Cute
 丑,chǒu,Ugly,Feo,Laid,Feio,Xấu xí,น่าเกลียด,អាក្រក់,Jelek,Ugly,Pangit
 年轻,nián qīng,Young,Joven,Jeune,Jovem,Trẻ,หนุ่ม,យុវជន,Muda,Young,Bata
 老,lǎo,Old,Viejo,Vieux,Antigo,Cũ,เก่า,of,Tua,Lama,Matanda
-聪明,cōng míng,Smart,Inteligente,Intelligent,Inteligente,Thông minh,สมาร์ท,ឆ្លាត || ល្ងង់,Cerdas,Pintar,Smart
+聪明,cōng míng,Smart,Inteligente,Intelligent,Inteligente,Thông minh,สมาร์ท,ឆ្លាត,Cerdas,Pintar,Smart
 笨,bèn,Stupid,Estúpido,Stupide,Estúpido,Ngu ngốc,โง่,ខិតខំធ្វើការ,Bodoh,Bodoh,Bobo
 勤快,qín kuài,Hard-working,Trabajador,Travailleur acharné,Trabalhador,Chăm chỉ,ทำงานหนัก,ខ្ជិល,Pekerja keras,Kerja keras,Masipag na
 懒,lǎn,Lazy,Perezoso,Paresseux,Preguiçoso,Lười biếng,ขี้เกียจ,ស្មោះត្រង់,Malas,Lazy,Tamad
-诚实,chéng shí,Honest,Honesto,Honnête,Honesto,Trung thực,ซื่อสัตย์,| ប្រភេទ,Jujur,Jujur,Matapat
-善良,shàn liáng,Kind,Amable,Genre,Tipo,Loại,ชนิด,adomain adom| មិត្តភាព,Baik,Kind,Mabait
-能干,néng gàn,Competent,Competente,Compétent,Competente,Có thẩm quyền,มีความสามารถ,| ក្លាហាន,Kompeten,Kompeten,Karampatang
-友好,yǒu hǎo,Friendly,Amistoso,Amical,Amigável,Thân thiện,เป็นมิตร,អាត្មានិយម || សប្បុរស,Ramah,Mesra,Friendly
+诚实,chéng shí,Honest,Honesto,Honnête,Honesto,Trung thực,ซื่อสัตย์,,Jujur,Jujur,Matapat
+善良,shàn liáng,Kind,Amable,Genre,Tipo,Loại,ชนิด,adomain adom,Baik,Kind,Mabait
+能干,néng gàn,Competent,Competente,Compétent,Competente,Có thẩm quyền,มีความสามารถ,,Kompeten,Kompeten,Karampatang
+友好,yǒu hǎo,Friendly,Amistoso,Amical,Amigável,Thân thiện,เป็นมิตร,អាត្មានិយម,Ramah,Mesra,Friendly
 勇敢,yǒng gǎn,Brave,Valiente,Courageux,Corajoso,Dũng cảm,ผู้กล้าหาญ,ស្រស់ស្អាតខ្លាំងណាស់,Berani,Berani,Matapang
 自私,zì sī,Selfish,Egoísta,Égoïste,Egoísta,Ích Kỷ,เห็นแก่ตัว,ធ្វើបានយ៉ាងល្អ,Egois,Mementingkan,Makasarili
 大方,dà fāng,Generous,Generoso,Généreux,Generoso,Hào phóng,ใจกว้าง,បុរសសង្ហា,Murah hati,Murah hati,Mapagbigay
@@ -37,14 +37,14 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 偷懒,tōu lǎn,Lazy,Perezoso,Paresseux,Preguiçoso,Lười biếng,ขี้เกียจ,មនុស្សស្មោះត្រង់,Malas,Lazy,Tamad
 真懒,zhēn lǎn,Really lazy,Realmente vago,Vraiment paresseux,Muito preguiçoso,Thực sự lười biếng,ขี้เกียจจริงๆ,ចិត្តល្អ,Malas banget,Benar -benar malas,Talagang tamad
 诚实守信,chéng shí shǒu xìn,Honest and trustworthy,Honesto y digno de confianza,Honnête et digne de confiance,Honesto e confiável,Trung thực và đáng tin cậy,ซื่อสัตย์และไว้วางใจได้,មនុស្សដែលមានចិត្តល្អ,Jujur dan dapat dipercaya,Jujur dan boleh dipercayai,Matapat at mapagkakatiwalaan
-为人诚实,wéi rén chéng shí,Honest people,Gente honesta,Des gens honnêtes,Pessoas honestas,Những người trung thực,คนซื่อสัตย์,| ឆ្លាតនិងមានសមត្ថភាព,Orang jujur ​​,Orang yang jujur ​​,Matapat na Tao
+为人诚实,wéi rén chéng shí,Honest people,Gente honesta,Des gens honnêtes,Pessoas honestas,Những người trung thực,คนซื่อสัตย์,,Orang jujur ​​,Orang yang jujur ​​,Matapat na Tao
 心地善良,xīn dì shàn liáng,Kind-hearted,De buen corazón,Bienveillant,De bom coração,Tốt bụng,ใจดี,មានសមត្ថភាពខ្លាំងណាស់,Baik hati,Baik hati,Mabait na puso
 善良的人,shàn liáng de rén,A kind person,Una persona amable,Une personne gentille,Uma pessoa gentil,Một người tốt bụng,คนใจดี,ទទួលបាននៅជាមួយគ្នាយ៉ាងល្អ,Orang yang baik hati,Orang yang baik,Isang mabait na tao
 精明能干,jīng míng néng gàn,Smart and capable,Inteligente y capaz,Intelligent et compétent,Inteligente e capaz,Thông minh và có năng lực,ฉลาดและมีความสามารถ,ទំនាក់ទំនងមិត្តភាព,Cerdas dan cakap,Pintar dan mampu,Matalino at may kakayahang
 很能干,hěn néng gàn,Very capable,Muy capaz,Très compétent,Muito capaz,Rất có khả năng,เก่งมาก,ប្រឈមមុខនឹងវាដោយក្លាហាន,Sangat mumpuni,Sangat mampu,Napaka may kakayahang
 友好相处,yǒu hǎo xiāng chǔ,Get along well with each other,Llevarse bien unos con otros,S'entendre bien les uns avec les autres,Se dão bem,Hãy hòa hợp với nhau,เข้ากันได้ดี,អ្នកក្លាហានម្នាក់,Rukun satu sama lain,Bersama -sama dengan satu sama lain,Makipagtulungan nang maayos sa bawat isa
-友好往来,yǒu hǎo wǎng lái,Friendly contacts,Contactos amistosos,Contacts amicaux,Contatos amigáveis ​​,Liên hệ thân thiện,ติดต่อที่เป็นมิตร,អាត្មានិយម || អាត្មានិយមពេក,Kontak ramah,Kenalan Mesra,Friendly contact
-勇敢面对,yǒng gǎn miàn duì,Face it bravely,Enfréntalo con valentía,Affrontez-le courageusement,Enfrente isso com coragem,Hãy dũng cảm đối mặt với nó,เผชิญหน้าอย่างกล้าหาญ,| ការឧបត្ថម្ភនិងសមរម្យ,Hadapi dengan berani,Hadapi dengan berani,Mukha itong matapang
+友好往来,yǒu hǎo wǎng lái,Friendly contacts,Contactos amistosos,Contacts amicaux,Contatos amigáveis ​​,Liên hệ thân thiện,ติดต่อที่เป็นมิตร,អាត្មានិយម,Kontak ramah,Kenalan Mesra,Friendly contact
+勇敢面对,yǒng gǎn miàn duì,Face it bravely,Enfréntalo con valentía,Affrontez-le courageusement,Enfrente isso com coragem,Hãy dũng cảm đối mặt với nó,เผชิญหน้าอย่างกล้าหาญ,,Hadapi dengan berani,Hadapi dengan berani,Mukha itong matapang
 勇敢的人,yǒng gǎn de rén,A brave person,Una persona valiente,Une personne courageuse,Uma pessoa corajosa,Một người dũng cảm,คนกล้า,ដេលមានចិត្ដសប្បុរស,Orang yang pemberani,Orang yang berani,Isang matapang na tao
 自私自利,zì sī zì lì,Selfish,Egoísta,Égoïste,Egoísta,Ích Kỷ,เห็นแก่ตัว,អាត្មានិយម,Egois,Mementingkan,Makasarili
 太自私,tài zì sī,Too selfish,Demasiado egoísta,Trop égoïste,Muito egoísta,Quá ích kỷ,เห็นแก่ตัวเกินไป,អាត្មានិយមពេក,Terlalu egois,Terlalu egois,Masyadong makasarili

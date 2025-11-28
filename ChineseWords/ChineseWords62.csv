@@ -1,32 +1,32 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-菜单,cài dān,Menu,Menú,Menus,Cardápio,Thực đơn,เมนู,Menu || បញ្ជាទិញម្ហូប,Menu,Menu,Menu
+菜单,cài dān,Menu,Menú,Menus,Cardápio,Thực đơn,เมนู,Menu,Menu,Menu,Menu
 点菜,diǎn cài,Order food,Pedir comida,Commander de la nourriture,Pedir comida,Gọi món,สั่งอาหาร,អនុសាសន៍,Pesan makanan,Pesanan Makanan,Mag -order ng pagkain
 推荐,tuī jiàn,Recommendation,Recomendación,Recommandation,Recomendação,Khuyến nghị,คำแนะนำ,ចានហត្ថលេខា,Rekomendasi,Cadangan,Rekomendasyon
 招牌菜,zhāo pái cài,Signature dishes,Platos de autor,Plats signatures,Pratos de assinatura,Món ăn đặc trưng,เมนูซิกเนเจอร์,រសជាតិ,Hidangan khas,Hidangan tandatangan,Mga pinggan sa lagda
-味道,wèi dào,Taste,Sabor,Goût,Prove,Hương vị,ลิ้มรส,| អ្នករត់តុ,Rasa,Rasa,Tikman
+味道,wèi dào,Taste,Sabor,Goût,Prove,Hương vị,ลิ้มรส,,Rasa,Rasa,Tikman
 服务员,fú wù yuán,Waiter,Camarero,Serveur,Garçom,Người phục vụ,พนักงานเสิร์ฟ,បង់វិក័យប័ត្រ,Pelayan,Waiter,Waiter
 买单,mǎi dān,Pay the bill,Pagar la factura,Payer la facture,Pague a conta,Thanh toán hóa đơn,จ่ายบิล,Checkout,Bayar tagihannya,Bayar Rang Undang -Undang,Bayaran ang bayarin
 结账,jié zhàng,Checkout,Pagar,Payer l'addition,Finalização da compra,Thanh toán,ชำระเงิน,វេចខ្ចប់,Pembayaran,Checkout,Checkout
 打包,dǎ bāo,Packing,Embalaje,Emballage,Embalagem,Đóng gói,การบรรจุ,ការយកចេញ,Pengepakan,Pembungkusan,Packing
-外卖,wài mài,Takeaway,Para llevar,À emporter,Para levar,Mang đi,ซื้อกลับบ้าน,| Dine-in,Bawa pulang,Takeaway,Takeaway
+外卖,wài mài,Takeaway,Para llevar,À emporter,Para levar,Mang đi,ซื้อกลับบ้าน,,Bawa pulang,Takeaway,Takeaway
 堂食,táng shí,Dine-in,Cenar en casa,Dîner sur place,Jantar no local,Dùng bữa tại,รับประทานอาหารในร้าน,បន្ទប់ឯកជន,Makan di tempat,Makan malam,Dine-in
 包间,bāo jiān,Private room,Habitación privada,Chambre privée,Quarto privado,Phòng riêng,ห้องส่วนตัว,cutlery,Kamar pribadi,Bilik Persendirian,Pribadong silid
-餐具,cān jù,Cutlery,Cubiertos,Couverts,Talheres,Dao kéo,ช้อนส้อม,chopsticks || បម្រើ,Peralatan makan,Cutlery,Cutlery
+餐具,cān jù,Cutlery,Cubiertos,Couverts,Talheres,Dao kéo,ช้อนส้อม,chopsticks,Peralatan makan,Cutlery,Cutlery
 筷子,kuài zi,Chopsticks,Palillos,Baguettes,Pauzinhos,Đũa,ตะเกียบ,ការកក់,Sumpit,Penyepit,Chopsticks
 上菜,shàng cài,Serving,Sirviendo,Servir,Servindo,Phục vụ,ให้บริการ,មើលម៉ឺនុយ,Melayani,Berkhidmat,Paghahatid
-订座,dìng zuò,Reservation,Reserva,Réservation,Reserva,Đặt chỗ,สำรองห้องพัก,ទទួលបានមីនុយ || បញ្ជាទិញ,Reservasi,Tempahan,Reservation
+订座,dìng zuò,Reservation,Reserva,Réservation,Reserva,Đặt chỗ,สำรองห้องพัก,ទទួលបានមីនុយ,Reservasi,Tempahan,Reservation
 看菜单,kàn cài dān,View menu,Ver menú,Afficher le menu,Ver menu,Xem thực đơn,ดูเมนู,មកបញ្ជាទិញ,Lihat menu,Lihat Menu,Tingnan ang menu
 拿菜单,ná cài dān,Get menu,Obtener menú,Obtenir le menu,Obter cardápio,Nhận thực đơn,รับเมนู,បានណែនាំ,Dapatkan menunya,Dapatkan Menu,Kumuha ng menu
-要点菜,yào diǎn cài,Order,Orden,Commande,Encomenda,Đặt hàng,สั่งซื้อ,| សូមផ្តល់អនុសាសន៍,Pesan,Perintah,Order
-来点菜,lái diǎn cài,Come to order,Ven a ordenar,Venez commander,Venha fazer o pedido,Hãy đến đặt hàng,มาตำกันได้เลย,| នេះគឺជាម្ហូបហត្ថលេខា,Ayo pesan,Datang ke pesanan,Halika sa order
+要点菜,yào diǎn cài,Order,Orden,Commande,Encomenda,Đặt hàng,สั่งซื้อ,,Pesan,Perintah,Order
+来点菜,lái diǎn cài,Come to order,Ven a ordenar,Venez commander,Venha fazer o pedido,Hãy đến đặt hàng,มาตำกันได้เลย,,Ayo pesan,Datang ke pesanan,Halika sa order
 有推荐,yǒu tuī jiàn,Recommended,Recomendado,Recommandé,Recomendado,Được đề xuất,แนะนำ,បញ្ជាទិញម្ហូបហត្ថលេខា,Direkomendasikan,Disyorkan,Inirerekomenda
 请推荐,qǐng tuī jiàn,Please recommend,Por favor recomiende,Veuillez recommander,"Por favor, recomende",Hãy giới thiệu,กรุณาแนะนำ,រសជាតិឆ្ងាញ់,Mohon rekomendasikan,Sila cadangkan,Mangyaring magrekomenda
 这是招牌菜,zhè shì zhāo pái cài,This is a signature dish,Este es un plato estrella,C'est un plat signature,Este é um prato de assinatura,Đây là món ăn đặc trưng,จานนี้เป็นเมนูเด็ด,រសជាតិ,Ini adalah hidangan khas,Ini adalah hidangan tandatangan,Ito ay isang pirma ng pirma
-点招牌菜,diǎn zhāo pái cài,Order a signature dish,Pide un plato estrella,Commandez un plat signature,Peça um prato de assinatura,Đặt món ăn đặc trưng,สั่งอาหารจานเด่น,| ហៅអ្នករត់តុ,Pesan hidangan khas,Pesan hidangan tandatangan,Mag -order ng isang pirma sa pirma
+点招牌菜,diǎn zhāo pái cài,Order a signature dish,Pide un plato estrella,Commandez un plat signature,Peça um prato de assinatura,Đặt món ăn đặc trưng,สั่งอาหารจานเด่น,,Pesan hidangan khas,Pesan hidangan tandatangan,Mag -order ng isang pirma sa pirma
 味道好,wèi dào hǎo,Tastes good,Sabe bien,A bon goût,Tem um gosto bom,Vị ngon,อร่อยดี,ស្វែងរកអ្នករត់តុ,Rasanya enak,Rasa baik,Masarap mabuti
 尝味道,cháng wèi dào,Taste,Sabor,Goût,Prove,Hương vị,ลิ้มรส,ស្នើសុំច្បាប់ល្មើស,Rasa,Rasa,Tikman
-叫服务员,jiào fú wù yuán,Call the waiter,Llama al camarero,Appelez le serveur,Chama o garçom,Gọi người phục vụ,โทรหาบริกร,| មកបង់ប្រាក់,Panggil pelayan,Hubungi pelayan,Tumawag sa waiter
-找服务员,zhǎo fú wù yuán,Find the waiter,Encuentra al camarero,Trouver le serveur,Encontre o garçom,Tìm người phục vụ,ค้นหาบริกร,| សូមពិនិត្យមើល,Temukan pelayan,Cari pelayan,Hanapin ang waiter
+叫服务员,jiào fú wù yuán,Call the waiter,Llama al camarero,Appelez le serveur,Chama o garçom,Gọi người phục vụ,โทรหาบริกร,,Panggil pelayan,Hubungi pelayan,Tumawag sa waiter
+找服务员,zhǎo fú wù yuán,Find the waiter,Encuentra al camarero,Trouver le serveur,Encontre o garçom,Tìm người phục vụ,ค้นหาบริกร,,Temukan pelayan,Cari pelayan,Hanapin ang waiter
 要买单,yào mǎi dān,Ask for the bill,Pide la factura,Demandez la facture,Peça a conta,Yêu cầu hóa đơn,ขอบิล,ទៅពិនិត្យមើល,Minta tagihannya,Minta Rang Undang -Undang,Hilingin sa Bill
 来买单,lái mǎi dān,Come to pay,Ven a pagar,Venez payer,Venha pagar,Đến trả tiền,มาจ่าย,ចង់វេចខ្ចប់,Datang untuk membayar,Datang untuk membayar,Halika upang magbayad
 要结账,yào jié zhàng,Check out,Echa un vistazo,Découvrez,Confira,Kiểm tra,ลองดู,ជួយខ្ញុំកញ្ចប់,Lihat,Lihat,Suriin ang

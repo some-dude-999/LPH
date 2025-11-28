@@ -12,14 +12,14 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 温度,wēn dù,Temperature,Temperatura,Température,Temperatura,Nhiệt độ,อุณหภูมิ,សីតុណ្ហាភាព,Suhu,Suhu,Temperatura
 预报,yù bào,Forecast,Pronóstico,Prévisions,Previsão,Dự báo,พยากรณ์,ការព្យាករណ៍,Ramalan,Ramalan,Pagtataya
 气温,qì wēn,Temperature,Temperatura,Température,Temperatura,Nhiệt độ,อุณหภูมิ,សីតុណ្ហាភាព,Suhu,Suhu,Temperatura
-霜,shuāng,Frost,Escarcha,Givre,Geada,Sương giá,ฟรอสต์,សាយសត្វ || គោរព,Embun beku,Frost,Frost
+霜,shuāng,Frost,Escarcha,Givre,Geada,Sương giá,ฟรอสต์,សាយសត្វ,Embun beku,Frost,Frost
 雹子,báo zi,Hail,Granizo,Grêle,Granizo,Mưa đá,ลูกเห็บ,ប្រឡាក់គ្រាប់ព្រិល,Hujan es,Hujan batu,Ulan ng yelo
 潮湿,cháo shī,Humid,Húmedo,Humide,Úmido,Ẩm ướt,ชื้น,អាកាសធាតុល្អ,Lembab,Lembap,Humid
 天气好,tiān qì hǎo,Good weather,Buen tiempo,Beau temps,Bom tempo,Thời tiết tốt,อากาศดี,ពិនិត្យមើលអាកាសធាតុ,Cuaca bagus,Cuaca yang baik,Magandang panahon
 看天气,kàn tiān qì,Check the weather,Consulta el tiempo,Consultez la météo,Verifique o tempo,Kiểm tra thời tiết,เช็คสภาพอากาศ,ថ្ងៃដែលមានពន្លឺថ្ងៃល្អ,Periksa cuaca,Periksa cuaca,Suriin ang panahon
 晴天好,qíng tiān hǎo,Good sunny day,Buen día soleado,Bonne journée ensoleillée,Bom dia de sol,Chúc một ngày nắng đẹp,สวัสดีวันสดใส,បាទមានពន្លឺថ្ងៃ,Selamat hari yang cerah,Hari cerah yang baik,Magandang maaraw na araw
 是晴天,shì qíng tiān,Yes sunny,Si soleado,Oui ensoleillé,Sim ensolarado,Ừ nắng,ใช่แล้ว ซันนี่,ពពកនិងត្រជាក់,Ya cerah,Ya Sunny,Oo Sunny
-阴天冷,yīn tiān lěng,Cloudy and cold,Nublado y frío,Nuageux et froid,Nublado e frio,Nhiều mây và lạnh,เมฆมาก และหนาว,| វាមានពពក,Berawan dan dingin,Mendung dan sejuk,Maulap at malamig
+阴天冷,yīn tiān lěng,Cloudy and cold,Nublado y frío,Nuageux et froid,Nublado e frio,Nhiều mây và lạnh,เมฆมาก และหนาว,,Berawan dan dingin,Mendung dan sejuk,Maulap at malamig
 是阴天,shì yīn tiān,It's cloudy,Está nublado,C'est nuageux,Está nublado,Trời nhiều mây,เมฆมาก,ថ្ងៃមានពពក,Mendung,Ia mendung,Maulap
 多云天,duō yún tiān,Cloudy day,Día nublado,Journée nuageuse,Dia nublado,Ngày nhiều mây,วันที่มีเมฆมาก,វាមានពពកនៅថ្ងៃនេះ,Hari berawan,Hari Mendung,Maulap na araw
 今天多云,jīn tiān duō yún,It's cloudy today,Hoy está nublado,Le temps est nuageux aujourd'hui,Está nublado hoje,Hôm nay trời nhiều mây,วันนี้มีเมฆมาก,វាកំពុងភ្លៀង,Hari ini mendung,Ini mendung hari ini,Maulap ngayon
@@ -27,20 +27,20 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 快下雨,kuài xià yǔ,It's going to rain,Va a llover,Il va pleuvoir,Vai chover,Trời sắp mưa,ฝนจะตก,វាកំពុងធ្លាក់ព្រិល,Akan turun hujan,Ia akan menjadi hujan,Pupunta sa ulan
 下雪了,xià xuě le,It's snowing,Está nevando,Il neige,Está nevando,Tuyết rơi,หิมะตก,វានឹងធ្លាក់ព្រិល,Sedang turun salju,Ia salji,Ito ay snowing
 快下雪,kuài xià xuě,It's going to snow,Va a nevar,Il va neiger,Vai nevar,Trời sắp có tuyết,หิมะจะตก,វាមានខ្យល់បក់,Akan turun salju,Ia akan menjadi salji,Pupunta ito sa niyebe
-刮风了,guā fēng le,It's windy,Hace viento,Il y a du vent,Está ventando,Trời có gió,ลมแรง,| វាមានខ្យល់បក់,Berangin,Ia berangin,Mahangin
-在刮风,zài guā fēng,It's windy,Hace viento,Il y a du vent,Está ventando,Trời có gió,ลมแรง,| ផ្គរលាន់,Berangin,Ia berangin,Mahangin
+刮风了,guā fēng le,It's windy,Hace viento,Il y a du vent,Está ventando,Trời có gió,ลมแรง,,Berangin,Ia berangin,Mahangin
+在刮风,zài guā fēng,It's windy,Hace viento,Il y a du vent,Está ventando,Trời có gió,ลมแรง,,Berangin,Ia berangin,Mahangin
 打雷了,dǎ léi le,Thunder,Trueno,Tonnerre,Trovão,Sấm sét,ฟ้าร้อง,Harage ផ្គរលាន់,Guntur,Thunder,Thunder
 听到打雷,tīng dào dǎ léi,Hear thunder,Escuchar truenos,Écoutez le tonnerre,Ouça trovões,Nghe thấy tiếng sấm,ได้ยินเสียงฟ้าร้อง,រន្ទះ Fligses,Dengarkan guntur,Dengar Thunder,Pakinggan ang kulog
-闪电亮,shǎn diàn liàng,Lightning flashes,Relámpagos,Des éclairs,Relâmpagos,Tia chớp,สายฟ้าแลบ,| សូមមើលផ្លេកបន្ទោរ,Kilatan petir,Kilat kilat,Lightning Flashes
+闪电亮,shǎn diàn liàng,Lightning flashes,Relámpagos,Des éclairs,Relâmpagos,Tia chớp,สายฟ้าแลบ,,Kilatan petir,Kilat kilat,Lightning Flashes
 看到闪电,kàn dào shǎn diàn,See lightning,Ver relámpago,Voir la foudre,Veja relâmpagos,Thấy tia sét,ดูฟ้าผ่า,ថ្ងៃអ័ព្ទអាប់,Lihat kilat,Lihat Lightning,Tingnan ang kidlat
 大雾天,dà wù tiān,Foggy day,Día de niebla,Jour brumeux,Dia de neblina,Ngày sương mù,วันที่หมอกหนา,អ័ព្ទធ្ងន់,Hari berkabut,Hari Foggy,Foggy Day
 起大雾,qǐ dà wù,Heavy fog,Niebla densa,Brouillard épais,Nevoeiro intenso,Sương mù dày đặc,หมอกหนามาก,សីតុណ្ហាភាពខ្ពស់,Kabut tebal,Kabut Berat,Malakas na Fog
-温度高,wēn dù gāo,High temperature,Alta temperatura,Haute température,Alta temperatura,Nhiệt độ cao,อุณหภูมิสูง,| ពិនិត្យសីតុណ្ហភាព,Suhu tinggi,Suhu Tinggi,Mataas na temperatura
-看温度,kàn wēn dù,Check the temperature,Comprobar la temperatura,Vérifiez la température,Verifique a temperatura,Kiểm tra nhiệt độ,เช็คอุณหภูมิ,| ការព្យាករណ៍អាកាសធាតុ,Periksa suhu,Semak suhu,Suriin ang temperatura
+温度高,wēn dù gāo,High temperature,Alta temperatura,Haute température,Alta temperatura,Nhiệt độ cao,อุณหภูมิสูง,,Suhu tinggi,Suhu Tinggi,Mataas na temperatura
+看温度,kàn wēn dù,Check the temperature,Comprobar la temperatura,Vérifiez la température,Verifique a temperatura,Kiểm tra nhiệt độ,เช็คอุณหภูมิ,,Periksa suhu,Semak suhu,Suriin ang temperatura
 天气预报,tiān qì yù bào,Weather forecast,Previsión del tiempo,Prévisions météo,Previsão do tempo,Dự báo thời tiết,พยากรณ์อากาศ,ពិនិត្យការព្យាករណ៍,Prakiraan cuaca,Ramalan Cuaca,Pagtataya ng panahon
 看预报,kàn yù bào,Check the forecast,Consulta la previsión,Consultez les prévisions,Confira a previsão,Kiểm tra dự báo,เช็คพยากรณ์,សីតុណ្ហាភាពទាប,Periksa ramalan cuaca,Semak ramalan,Suriin ang forecast
 气温低,qì wēn dī,Low temperature,Baja temperatura,Basse température,Baixa temperatura,Nhiệt độ thấp,อุณหภูมิต่ำ,ពិនិត្យសីតុណ្ហភាព,Suhu rendah,Suhu rendah,Mababang temperatura
-看气温,kàn qì wēn,Check the temperature,Comprobar la temperatura,Vérifiez la température,Verifique a temperatura,Kiểm tra nhiệt độ,เช็คอุณหภูมิ,| សាយសត្វ || សាយសត្វ || គោរព,Periksa suhu,Semak suhu,Suriin ang temperatura
+看气温,kàn qì wēn,Check the temperature,Comprobar la temperatura,Vérifiez la température,Verifique a temperatura,Kiểm tra nhiệt độ,เช็คอุณหภูมิ,| សាយសត្វ,Periksa suhu,Semak suhu,Suriin ang temperatura
 结霜了,jié shuāng le,Frost,Escarcha,Givre,Geada,Sương giá,ฟรอสต์,គោរព,Embun beku,Frost,Frost
 下霜,xià shuāng,Frost,Escarcha,Givre,Geada,Sương giá,ฟรอสต์,មានសើមណាស់,Embun beku,Frost,Frost
 下雹子,xià báo zi,Hailing,Granizando,Il grêle,Está granizando,Mưa đá,ลูกเห็บตก,ភ្លៀងគ្រាប់ព្រិល,Hujan es,Hujan batu,Umuulan ng yelo

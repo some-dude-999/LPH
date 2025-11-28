@@ -2,11 +2,11 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 点,diǎn,o'clock,en punto,heures,horas,giờ,โมง,ម៉ោង,jam,O'Clock,O'Clock
 分,fēn,minutes,minutos,minutes,minutos,phút,นาที,នាទី,menit,minit,Minuto
 秒,miǎo,seconds,segundos,secondes,segundos,giây,วินาที,វិនាទី,detik,Seconds,segundo
-刻,kè,quarter,cuarto de hora,quart d'heure,quarto de hora,quý,ไตรมาส,ត្រីមាស || ពាក់កណ្តាល || ម៉ោង,seperempat,suku,Quarter
-半,bàn,half,la mitad,moitié,metade,một nửa,ครึ่ง,នាឡិកា || មើល,setengah,separuh,kalahati
-小时,xiǎo shí,hour,hora,heure,hora,giờ,ชั่วโมง,ម៉ោងរោទិ៍ || ម៉ោង,jam,Jam,Oras
+刻,kè,quarter,cuarto de hora,quart d'heure,quarto de hora,quý,ไตรมาส,ត្រីមាស,seperempat,suku,Quarter
+半,bàn,half,la mitad,moitié,metade,một nửa,ครึ่ง,នាឡិកា,setengah,separuh,kalahati
+小时,xiǎo shí,hour,hora,heure,hora,giờ,ชั่วโมง,ម៉ោងរោទិ៍,jam,Jam,Oras
 钟,zhōng,clock,reloj,horloge,relógio,đồng hồ,นาฬิกา,ទាន់ពេល,jam,Jam,orasan
-手表,shǒu biǎo,watch,reloj,montre,relógio,đồng hồ đeo tay,ดู,យឺត,tonton,Watch,Panoorin
+手表,shǒu biǎo,watch,reloj,montre,relógio,đồng hồ đeo tay,ดู,យឺត,jam tangan,Jam tangan,Relo
 闹钟,nào zhōng,alarm clock,despertador,réveil,despertador,đồng hồ báo thức,นาฬิกาปลุก,ដំបូង,jam alarm,Jam penggera,alarm clock
 时,shí,hour,hora,heure,hora,giờ,ชั่วโมง,ម៉ោង,jam,Jam,Oras
 准时,zhǔn shí,on time,a tiempo,à l'heure,na hora certa,đúng giờ,ตรงเวลา,ព្រឹក,tepat waktu,Pada masa,sa oras
@@ -36,7 +36,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 响闹钟,xiǎng nào zhōng,Sound the alarm,Haz sonar la alarma,Sonnez l'alarme,Soe o alarme,Âm thanh báo động,ส่งเสียงปลุก,pass pass ខ្លាំងណាស់,Bunyikan alarm,Bunyi penggera,Tunog ang alarma
 小时候,xiǎo shí hòu,As a child,Cuando era niño,En tant qu'enfant,Quando criança,Khi còn nhỏ,ในวัยเด็ก,យឺត,Sebagai seorang anak,Sebagai seorang kanak -kanak,Bilang isang bata
 何时,hé shí,When,Cuando,Quand,Quando,Khi,เมื่อ,កុំដើរយឺត,Kapan,Apabila,Kapag
-准时到,zhǔn shí dào,Arrive on time,Llegar a tiempo,Arriver à l'heure,Chegue na hora certa,Đến đúng giờ,มาถึงตรงเวลา,| មកដល់ដំបូង,Tiba tepat waktu,Tiba pada masa,Dumating sa oras
+准时到,zhǔn shí dào,Arrive on time,Llegar a tiempo,Arriver à l'heure,Chegue na hora certa,Đến đúng giờ,มาถึงตรงเวลา,,Tiba tepat waktu,Tiba pada masa,Dumating sa oras
 很准时,hěn zhǔn shí,Very punctual,Muy puntual,Très ponctuel,Muito pontual,Rất đúng giờ,ตรงต่อเวลามาก,មកដល់ដំបូង,Sangat tepat waktu,Sangat tepat waktu,Napaka punctual
 迟到了,chí dào le,Late,Tarde,En retard,Tarde,Muộn,สาย,នៅម៉ោង,Terlambat,Lewat,Late
 别迟到,bié chí dào,Don’t be late,No llegues tarde,Ne sois pas en retard,Não se atrase,Đừng đến muộn,อย่ารอช้า,រៀងរាល់ម៉ោង,Jangan terlambat,Jangan terlambat,Huwag maging huli

@@ -12,7 +12,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 教,jiào,teach,enseñar,enseigner,ensinar,dạy,สอน,បង្រៀន,mengajar,mengajar,magturo
 学,xué,learn,aprender,apprendre,aprenda,học,เรียนรู้,រៀន,belajar,belajar,Alamin
 问,wèn,ask,preguntar,demander,pergunte,hỏi,ถาม,សួរ,bertanya,Tanya,Magtanong
-答,dá,answer,respuesta,réponse,responder,trả lời,ตอบ,| ចម្លើយ,jawaban,Jawapan,Sagot
+答,dá,answer,respuesta,réponse,responder,trả lời,ตอบ,,jawaban,Jawapan,Sagot
 告诉,gào sù,tell,decir,dire,contar,kể,บอก,ប្រាប់,beritahu,Beritahu,Sabihin
 认识,rèn shí,know,saber,savoir,sei,biết,รู้,ដឹង,tahu,tahu,alam
 记,jì,remember,recuerda,souviens-toi,lembre-se,nhớ,จำไว้,ចងចាំ,ingat,Ingat,Tandaan
@@ -27,14 +27,14 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 送走,sòng zǒu,Send away,Enviar lejos,Renvoyer,Manda embora,Gửi đi,ส่งไป,ផ្ញើចេញទៅ,Kirim,Hantar,Ipadala ang layo
 接人,jiē rén,Pick someone up,Recoger a alguien,Ramasser quelqu'un,Pegue alguém,Đón ai đó,เลือกใครสักคน,ជ្រើសរើសនរណាម្នាក់,Jemput seseorang,Pilih seseorang,Pumili ng isang tao
 接住,jiē zhù,Catch someone,Atrapar a alguien,Attraper quelqu'un,Pegar alguém,Bắt ai đó,จับใครสักคน,ចាប់នរណាម្នាក់,Tangkap seseorang,Tangkap seseorang,Makibalita sa isang tao
-找到,zhǎo dào,Find,Encontrar,Trouver,Encontrar,Tìm,ค้นหา,| ស្វែងរក,Temukan,Cari,Hanapin
+找到,zhǎo dào,Find,Encontrar,Trouver,Encontrar,Tìm,ค้นหา,,Temukan,Cari,Hanapin
 找人,zhǎo rén,Find someone,Encuentra a alguien,Trouver quelqu'un,Encontre alguém,Tìm ai đó,หาใครสักคน,ស្វែងរកនរណាម្នាក់,Temukan seseorang,Cari seseorang,Maghanap ng isang tao
-买东西,mǎi dōng xī,Buy something,Compra algo,Acheter quelque chose,Compre algo,Mua thứ gì đó,ซื้อของบางอย่าง,| ទិញអ្វីមួយ,Beli sesuatu,Beli sesuatu,Bumili ng isang bagay
+买东西,mǎi dōng xī,Buy something,Compra algo,Acheter quelque chose,Compre algo,Mua thứ gì đó,ซื้อของบางอย่าง,,Beli sesuatu,Beli sesuatu,Bumili ng isang bagay
 买菜,mǎi cài,Buy groceries,Comprar alimentos,Faire l'épicerie,Comprar mantimentos,Mua đồ tạp hóa,ซื้อของชำ,ទិញគ្រឿងទេស,Beli bahan makanan,Membeli barangan runcit,Bumili ng mga groceries
 卖东西,mài dōng xī,Sell something,Vender algo,Vendre quelque chose,Vender algo,Bán thứ gì đó,ขายของ,លក់អ្វីមួយ,Jual sesuatu,Jual Something,Magbenta ng isang bagay
 卖菜,mài cài,Sell groceries,Vender comestibles,Vendre des produits d'épicerie,Vender mantimentos,Bán hàng tạp hóa,ขายของชำ,លក់គ្រឿងទេស,Jual sembako,Menjual barangan runcit,Magbenta ng mga groceries
 租房,zū fáng,Rent a house,Alquilar una casa,Louer une maison,Alugue uma casa,Thuê nhà,เช่าบ้าน,ជួលផ្ទះមួយ,Sewa rumah,Sewa rumah,Magrenta ng bahay
-租车,zū chē,Rent a car,Alquilar un coche,Louer une voiture,Alugue um carro,Thuê xe,เช่ารถ,| ជួលឡាន,Sewa mobil,Sewa kereta,Magrenta ng kotse
+租车,zū chē,Rent a car,Alquilar un coche,Louer une voiture,Alugue um carro,Thuê xe,เช่ารถ,,Sewa mobil,Sewa kereta,Magrenta ng kotse
 借书,jiè shū,Borrow a book,Pedir prestado un libro,Emprunter un livre,Pegue um livro emprestado,Mượn sách,ยืมหนังสือ,ខ្ចីសៀវភៅ,Pinjam buku,Pinjam buku,Humiram ng isang libro
 借钱,jiè qián,Borrow money,Pedir dinero prestado,Emprunter de l'argent,Pedir dinheiro emprestado,Vay tiền,ยืมเงิน,ខ្ចីប្រាក់,Pinjam uang,Meminjam wang,Humiram ng pera
 还书,huán shū,Return a book,Devolver un libro,Retourner un livre,Devolver um livro,Trả sách,คืนหนังสือ,ត្រឡប់សៀវភៅមួយ,Kembalikan buku,Kembalikan buku,Bumalik ng isang libro
@@ -45,7 +45,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 学会,xué huì,Learn,Aprender,Apprendre,Aprenda,Tìm hiểu,เรียนรู้,រៀន,Pelajari,Belajar,Alamin
 发问,fā wèn,Ask a question,Haz una pregunta,Poser une question,Faça uma pergunta,Đặt câu hỏi,ถามคำถาม,សួរសំណួរ,Ajukan pertanyaan,Tanya soalan,Magtanong ng isang katanungan
 问人,wèn rén,Ask someone,Pregúntale a alguien,Demandez à quelqu'un,Pergunte a alguém,Hỏi ai đó,ถามใครสักคน,សួរនរណាម្នាក់,Tanya seseorang,Tanya seseorang,Magtanong sa isang tao
-回答,huí dá,Answer,Respuesta,Réponse,Resposta,Trả lời,ตอบ,| ចម្លើយ,Jawab,Jawapan,Sagot
+回答,huí dá,Answer,Respuesta,Réponse,Resposta,Trả lời,ตอบ,,Jawab,Jawapan,Sagot
 答案,dá àn,Answer,Respuesta,Réponse,Resposta,Trả lời,ตอบ,ចម្លើយ,Jawab,Jawapan,Sagot
 告诉你,gào sù nǐ,Tell you,Te cuento,Dites-vous,Te conto,Kể cho bạn nghe,บอกเลย,ប្រាប់អ្នក,Beritahu kamu,Beritahu anda,Sabihin sa iyo
 告诉我,gào sù wǒ,Tell me,Dime,Dis-moi,Me conte,Hãy kể cho tôi,บอกหน่อย,ប្រាប់ខ្ញុំ,Katakan padaku,Beritahu saya,Sabihin mo sa akin
@@ -55,7 +55,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 记得,jì de,Remember,Recuerda,Rappelez-vous,Lembre-se,Ghi nhớ,จำไว้,ចងចាំ,Ingat,Ingat,Tandaan
 忘记,wàng jì,Forget,Olvídate,Oublier,Esqueça,Quên,ลืม,ភ្លេច,Lupakan,Lupakan,Kalimutan
 忘了,wàng le,Forgot,Lo olvidé,J'ai oublié,Esqueci,Quên,ลืม,ភ្លេច,Lupa,Terlupa,Nakalimutan
-搬家,bān jiā,Move,Mover,Déplacer,Mover,Di chuyển,ย้าย,| ការផ្លាស់ប្តូរ,Pindahkan,Bergerak,Ilipat
+搬家,bān jiā,Move,Mover,Déplacer,Mover,Di chuyển,ย้าย,,Pindahkan,Bergerak,Ilipat
 搬走,bān zǒu,Move away,Alejarse,S'éloigner,Afaste-se,Di chuyển đi,ย้ายออกไป,ផ្លាស់ទីទៅឆ្ងាយ,Menjauh,Bergerak pergi,Lumayo
 挪开,nuó kāi,Move away,Alejarse,S'éloigner,Afaste-se,Di chuyển đi,ย้ายออกไป,ផ្លាស់ទីទៅឆ្ងាយ,Menjauh,Bergerak pergi,Lumayo
 挪动,nuó dòng,Move,Mover,Se déplacer,Mover,Di chuyển,เคลื่อนไหว,ធេវីចលនា,Bergerak,Bergerak,Ilipat

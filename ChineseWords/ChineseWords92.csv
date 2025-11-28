@@ -12,7 +12,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 尺寸,chǐ cùn,size,tamaño,taille,tamanho,kích thước,ขนาด,ទំហំ,ukuran,Saiz,Sukat
 长度,cháng dù,length,longitud,longueur,comprimento,chiều dài,ความยาว,ប្រវែង,panjang,panjang,Haba
 重量,zhòng liàng,weight,peso,poids,peso,cân nặng,น้ำหนัก,ទំងន់,berat,Berat,Timbang
-材料,cái liào,material,materiales,matériel,materiais,vật chất,วัสดุ,| សម្ភារៈ,bahan,Bahan,Materyal
+材料,cái liào,material,materiales,matériel,materiais,vật chất,วัสดุ,,bahan,Bahan,Materyal
 材质,cái zhì,material,materiales,matériel,materiais,vật chất,วัสดุ,សម្ភារៈ,bahan,Bahan,Materyal
 质地,zhì dì,texture,textura,textures,textura,kết cấu,พื้นผิว,វាយនភាព,tekstur,Tekstur,Texture
 有东西,yǒu dōng xī,something,algo,quelque chose,alguma coisa,cái gì đó,บางสิ่งบางอย่าง,អ្វីមួយ,sesuatu,sesuatu,isang bagay
@@ -24,7 +24,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 各种事物,gè zhǒng shì wù,Various things,Varias cosas,Diverses choses,Várias coisas,Nhiều thứ khác nhau,ต่างๆ,របស់ផ្សេងៗ,Berbagai hal,Pelbagai perkara,Iba't ibang mga bagay
 新事物,xīn shì wù,New things,Cosas nuevas,Des nouveautés,Coisas novas,Những điều mới mẻ,สิ่งใหม่ๆ,របស់ថ្មី,Hal baru,Perkara Baru,Mga bagong bagay
 什么类型,shén me lèi xíng,What type,Que tipo,Quel type,Que tipo,Loại gì,ประเภทไหน,ប្រភេទអ្វីដែល,Tipe apa,Jenis apa,Anong uri
-这种类型,zhè zhǒng lèi xíng,This type,Este tipo,Ce type,Este tipo,Loại này,ประเภทนี้,| ប្រភេទនេះ,Tipe ini,Jenis ini,Ang ganitong uri
+这种类型,zhè zhǒng lèi xíng,This type,Este tipo,Ce type,Este tipo,Loại này,ประเภทนี้,,Tipe ini,Jenis ini,Ang ganitong uri
 什么种类,shén me zhǒng lèi,What kind,Que tipo,Quel genre,Que tipo,Loại gì,แบบไหน,តើមានប្រភេទបែបណា,Jenis apa,Apa jenis,Anong uri
 各种种类,gè zhǒng zhǒng lèi,Various kinds,Varios tipos,Différents types,Vários tipos,Các loại,หลากหลายชนิด,ប្រភេទផ្សេងៗ,Berbagai macam,Pelbagai jenis,Iba't ibang uri
 什么样子,shén me yàng zi,What it looks like,Cómo se ve,À quoi ça ressemble,Como é,Nó trông như thế nào,ดูเหมือนว่า,អ្វីដែលវាមើលទៅដូចជា,Seperti apa,Apa yang kelihatan seperti,Ano ang hitsura nito
@@ -33,12 +33,12 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 圆形状,yuán xíng zhuàng,Round shape,Forma redonda,Forme ronde,Formato redondo,Hình tròn,ทรงกลม,រូបរាងមូល,Bentuk bulat,Bentuk bulat,Bilog na hugis
 外观好,wài guān hǎo,Good appearance,Buena apariencia,Bonne apparence,Boa aparência,Ngoại hình ưa nhìn,หน้าตาดี,រូបរាងល្អ,Penampilan bagus,Penampilan yang baik,Magandang hitsura
 看外观,kàn wài guān,Look at the appearance,Mira la apariencia,Regardez l'apparence,Olha a aparência,Nhìn vào ngoại hình,ดูจากรูปลักษณ์,រកមើលរូបរាង,Lihatlah penampakannya,Lihat penampilan,Tumingin sa hitsura
-大小合适,dà xiǎo hé shì,Suitable size,Tamaño adecuado,Taille appropriée,Tamanho adequado,Kích thước phù hợp,ขนาดที่เหมาะสม,| ទំហំសមស្រប,Ukuran yang sesuai,Saiz yang sesuai,Ang angkop na laki
+大小合适,dà xiǎo hé shì,Suitable size,Tamaño adecuado,Taille appropriée,Tamanho adequado,Kích thước phù hợp,ขนาดที่เหมาะสม,,Ukuran yang sesuai,Saiz yang sesuai,Ang angkop na laki
 什么大小,shén me dà xiǎo,What size,¿Qué talla,Quelle taille,Qual tamanho,Kích thước thế nào,ขนาดไหน,តើមានទំហំប៉ុនណា,Berapa ukuran,Apa saiz,Anong laki
 尺寸对,chǐ cùn duì,Size pair,Par de tallas,Paire de tailles,Tamanho par,Cặp kích thước,คู่ขนาด,គូទំហំ,Sepasang ukuran,Saiz pasangan,Laki ng pares
 量尺寸,liàng chǐ cùn,Measuring size,Tamaño de medición,Mesure de la taille,Medindo tamanho,Đo kích thước,ขนาดการวัด,ទំហំវាស់,Mengukur ukuran,Saiz mengukur,Pagsukat ng laki
 长度够,cháng dù gòu,Length is enough,La longitud es suficiente,La longueur est suffisante,O comprimento é suficiente,Chiều dài là đủ,ความยาวก็พอ,ប្រវែងគឺគ្រប់គ្រាន់ហើយ,Panjangnya cukup,Panjangnya cukup,Ang haba ay sapat na
-测长度,cè cháng dù,Measuring length,Longitud de medición,Longueur de mesure,Medição do comprimento,Đo chiều dài,ความยาวการวัด,| ប្រវែងវាស់,Mengukur panjang,Panjang mengukur,Pagsukat ng Haba
+测长度,cè cháng dù,Measuring length,Longitud de medición,Longueur de mesure,Medição do comprimento,Đo chiều dài,ความยาวการวัด,,Mengukur panjang,Panjang mengukur,Pagsukat ng Haba
 重量轻,zhòng liàng qīng,Light weight,Peso ligero,Poids léger,Peso leve,Trọng lượng nhẹ,น้ำหนักเบา,ទំងន់ស្រាល,Ringan,Berat ringan,Magaan na timbang
 称重量,chēng zhòng liàng,Weighing weight,Peso de pesaje,Pesée du poids,Pesagem,Cân trọng lượng,การชั่งน้ำหนัก,ទំងន់ទំងន់,Menimbang berat badan,Berat Badan,Timbang ng timbang
 材料好,cái liào hǎo,Good material,Buen material,Bon matériel,Bom material,Chất liệu tốt,วัสดุอย่างดี,សម្ភារៈល្អ,Bahan bagus,Bahan Baik,Magandang materyal

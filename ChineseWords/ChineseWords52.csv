@@ -3,11 +3,11 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 夜晚,yè wǎn,Night,Noche,Nuit,Noite,Đêm,กลางคืน,រាត្រី,Malam,Malam,Gabi
 凌晨,líng chén,Early morning,Temprano en la mañana,Tôt le matin,De manhã cedo,Sáng sớm,เช้าตรู่,ព្រឹកព្រលឹម,Dini hari,Pagi awal,Maagang umaga
 黎明,lí míng,Dawn,Amanecer,Aube,Amanhecer,Bình minh,รุ่งอรุณ,ព្រឹកព្រលឹម,Fajar,Dawn,Dawn
-傍晚,bàng wǎn,Evening,Tarde,Soirée,Noite,Buổi tối,ค่ำ,ល្ងាច || ព្រំ,Sore,Petang,Gabi
-黄昏,huáng hūn,Dusk,Anochecer,Crépuscule,Crepúsculo,Chạng vạng,พลบค่ำ,| ជាធម្មតា,Senja,Senja,Dusk
+傍晚,bàng wǎn,Evening,Tarde,Soirée,Noite,Buổi tối,ค่ำ,ល្ងាច,Sore,Petang,Gabi
+黄昏,huáng hūn,Dusk,Anochecer,Crépuscule,Crepúsculo,Chạng vạng,พลบค่ำ,,Senja,Senja,Dusk
 平时,píng shí,Usually,Generalmente,Habituellement,Normalmente,Thông thường,โดยปกติแล้ว,ជារៀងរហូត,Biasanya,Biasanya,Karaniwan
 永远,yǒng yuǎn,Forever,Para siempre,Pour toujours,Para sempre,Mãi mãi,ตลอดไป,ថ្មីៗនេះ,Selamanya,Selamanya,Magpakailanman
-最近,zuì jìn,Recently,Recientemente,Récemment,Recentemente,Gần đây,เมื่อเร็วๆ นี้,អនាគត || តែងតែ,Baru-baru ini,Baru -baru ini,Kamakailan
+最近,zuì jìn,Recently,Recientemente,Récemment,Recentemente,Gần đây,เมื่อเร็วๆ นี้,អនាគត,Baru-baru ini,Baru -baru ini,Kamakailan
 将来,jiāng lái,Future,Futuro,Avenir,Futuro,Tương lai,อนาคต,នាពេលអនាគត,Masa Depan,Masa Depan,Hinaharap
 始终,shǐ zhōng,Always,Siempre,Toujours,Sempre,Luôn luôn,เสมอ,លើកក្រោយ,Selalu,Sentiasa,Laging
 日后,rì hòu,In the future,En el futuro,Dans le futur,No futuro,Trong tương lai,ในอนาคต,ចាប់ពីពេលនេះតទៅ,Di masa depan,Pada masa akan datang,Sa hinaharap
@@ -22,10 +22,10 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 在夜晚,zài yè wǎn,At night,Por la noche,La nuit,À noite,Vào ban đêm,ตอนกลางคืน,ដល់ព្រឹកព្រលឹម,Di malam hari,Pada waktu malam,Sa gabi
 凌晨起,líng chén qǐ,Getting up in the early morning,Levantarse temprano en la mañana,Se lever tôt le matin,Levantar de manhã cedo,Sáng sớm dậy,ตื่นแต่เช้า,ព្រឹកព្រលឹម,Bangun pagi,Bangun pada awal pagi,Paggamot sa maagang umaga
 到凌晨,dào líng chén,To early morning,Hasta la madrugada,Au petit matin,Para madrugada,Đến sáng sớm,ถึงเช้า,រង់ចាំថ្ងៃរះ,Sampai dini hari,Hingga awal pagi,Hanggang maagang umaga
-黎明时分,lí míng shí fēn,Dawn,Amanecer,Aube,Amanhecer,Bình minh,รุ่งอรุณ,ល្ងាច || ចំពោះព្រលប់,Fajar,Dawn,Dawn
-等黎明,děng lí míng,Waiting for dawn,Esperando el amanecer,En attendant l'aube,Esperando o amanhecer,Đợi bình minh,รอรุ่งสาง,| ព្រំ,Menunggu fajar,Menunggu Dawn,Naghihintay para sa madaling araw
-傍晚时,bàng wǎn shí,Evening,Tarde,Soirée,Noite,Buổi tối,ค่ำ,| ក្រឡេកមើលព្រលប់,Sore,Petang,Gabi
-到傍晚,dào bàng wǎn,To dusk,Al anochecer,Au crépuscule,Ao anoitecer,Đến chạng vạng,ถึงค่ำ,| ជាធម្មតារវល់,Menjelang senja,Hingga senja,Sa hapon
+黎明时分,lí míng shí fēn,Dawn,Amanecer,Aube,Amanhecer,Bình minh,รุ่งอรุณ,ល្ងាច,Fajar,Dawn,Dawn
+等黎明,děng lí míng,Waiting for dawn,Esperando el amanecer,En attendant l'aube,Esperando o amanhecer,Đợi bình minh,รอรุ่งสาง,,Menunggu fajar,Menunggu Dawn,Naghihintay para sa madaling araw
+傍晚时,bàng wǎn shí,Evening,Tarde,Soirée,Noite,Buổi tối,ค่ำ,,Sore,Petang,Gabi
+到傍晚,dào bàng wǎn,To dusk,Al anochecer,Au crépuscule,Ao anoitecer,Đến chạng vạng,ถึงค่ำ,,Menjelang senja,Hingga senja,Sa hapon
 黄昏时,huáng hūn shí,Dusk,Anochecer,Crépuscule,Crepúsculo,Chạng vạng,พลบค่ำ,នៅគ្រាធម្មតា,Senja,Senja,Dusk
 看黄昏,kàn huáng hūn,Looking at dusk,Mirando el anochecer,En regardant le crépuscule,Olhando para o entardecer,Nhìn hoàng hôn,มองยามเย็น,ស្រឡាញ់អ្នកជារៀងរហូត,Melihat senja,Melihat senja,Tumitingin sa Dusk
 平时忙,píng shí máng,Normally busy,Normalmente ocupado,Normalement occupé,Normalmente ocupado,Bình thường bận,ปกติไม่ว่าง,នឹងតែងតែ,Biasanya sibuk,Biasanya sibuk,Karaniwan abala

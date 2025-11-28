@@ -1,5 +1,5 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-中,zhōng,middle,medio,milieu,meio,giữa,กลาง,កណ្តាល || || នៅខាងក្នុង,tengah,tengah,Gitnang
+中,zhōng,middle,medio,milieu,meio,giữa,กลาง,កណ្តាល,tengah,tengah,Gitnang
 内,nèi,inside,dentro,à l'intérieur,dentro,bên trong,ภายใน,នៅខាងក្រៅ,di dalam,Di dalam,Sa loob
 外,wài,outside,afuera,dehors,fora,bên ngoài,ภายนอก,កំពូល,di luar,di luar,sa labas
 上,shàng,top,arriba,haut,topo,hàng đầu,ด้านบน,បាត,atas,Atas,Nangungunang
@@ -9,7 +9,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 前,qián,front,frente,avant,frente,phía trước,ด้านหน้า,ត្រឡប់មកវិញ,depan,Depan,harap
 后,hòu,back,volver,retour,voltar,quay lại,กลับ,ចំហៀង,kembali,Kembali,Bumalik
 旁,páng,side,lado,côté,lado,bên,ด้านข้าง,នៅជុំវិញ,sisi,sampingan,Side
-周围,zhōu wéi,around,alrededor,autour de,por aí,xung quanh,รอบ ๆ,| គ្រប់ទីកន្លែង,sekitar,sekitar,sa paligid
+周围,zhōu wéi,around,alrededor,autour de,por aí,xung quanh,รอบ ๆ,,sekitar,sekitar,sa paligid
 到处,dào chù,everywhere,en todas partes,partout,em todos os lugares,khắp mọi nơi,ทุกที่,គ្រប់ទីកន្លែង,dimana-mana,di mana -mana,Kahit saan
 各地,gè dì,everywhere,en todas partes,partout,em todos os lugares,khắp mọi nơi,ทุกที่,ក្នុងស្រុក,dimana-mana,di mana -mana,Kahit saan
 本地,běn dì,local,locales,locale,locais,địa phương,ท้องถิ่น,ខាងកើត,lokal,Tempatan,Lokal
@@ -18,7 +18,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 西边,xī biān,west,oeste,ouest,oeste,hướng tây,ตะวันตก,ខាងជើង,barat,Barat,West
 北边,běi biān,north,norte,nord,norte,bắc,เหนือ,កំពូល,utara,Utara,Hilaga
 上边,shàng biān,top,arriba,haut,topo,hàng đầu,ด้านบน,បាត,atas,Atas,Nangungunang
-下边,xià biān,bottom,abajo,en bas,inferior,đáy,ด้านล่าง,កណ្តាល || || កន្លែងណា,bawah,bawah,Bottom
+下边,xià biān,bottom,abajo,en bas,inferior,đáy,ด้านล่าง,កណ្តាល,bawah,bawah,Bottom
 之中,zhī zhōng,middle,medio,milieu,meio,giữa,กลาง,នៅខាងក្នុង,tengah,tengah,Gitnang
 其中,qí zhōng,where,donde,où,onde,ở đâu,ที่ไหน,នៅខាងក្នុង,dimana,di mana,kung saan
 内部,nèi bù,inside,dentro,à l'intérieur,dentro,bên trong,ภายใน,នៅខាងក្រៅ,di dalam,Di dalam,Sa loob
@@ -38,19 +38,19 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 退后,tuì hòu,Back,Volver,Retour,Voltar,Quay lại,กลับ,ទៅចំហៀង,Kembali,Kembali,Bumalik
 在后,zài hòu,Behind,Detrás,Derrière,Atrás,Đằng sau,เบื้องหลัง,ទៅចំហៀង,Di belakang,Di belakang,Sa likod
 一旁,yī páng,To the side,Al lado,Sur le côté,Ao lado,Ở bên cạnh,ไปทางด้านข้าง,នៅជុំវិញ,Ke samping,Ke sisi,Sa gilid
-在旁,zài páng,To the side,Al lado,Sur le côté,Ao lado,Ở bên cạnh,ไปทางด้านข้าง,| នៅជុំវិញ,Ke samping,Ke sisi,Sa gilid
-周围的,zhōu wéi de,Around,Alrededor,Autour,Por aí,Xung quanh,ประมาณ,| ដើរជុំវិញ,Sekitar,Sekitar,Sa paligid
+在旁,zài páng,To the side,Al lado,Sur le côté,Ao lado,Ở bên cạnh,ไปทางด้านข้าง,,Ke samping,Ke sisi,Sa gilid
+周围的,zhōu wéi de,Around,Alrededor,Autour,Por aí,Xung quanh,ประมาณ,,Sekitar,Sekitar,Sa paligid
 在周围,zài zhōu wéi,Around,Alrededor,Autour,Por aí,Xung quanh,ประมาณ,រកមើលនៅគ្រប់ទីកន្លែង,Sekitar,Sekitar,Sa paligid
 到处走,dào chù zǒu,Walk around,Caminar,Se promener,Andar por aí,Dạo quanh,เดินไปรอบๆ,ពីគ្រប់ទិសទី,Berjalan-jalan,Berjalan di sekitar,Maglakad sa paligid
 到处看,dào chù kàn,Look everywhere,Mira por todas partes,Regardez partout,Procure em todos os lugares,Nhìn khắp nơi,มองไปทุกที่,ពីគ្រប់ទិសទី,Cari kemana-mana,Lihat di mana -mana,Tumingin sa lahat ng dako
 各地的,gè dì de,From all over,De todas partes,De partout,De todo,Từ khắp nơi,จากทั่วทุกมุม,អ្នកស្រុក,Dari seluruh,Dari seluruh,Mula sa buong
-来自各地,lái zì gè dì,From all over,De todas partes,De partout,De todo,Từ khắp nơi,จากทั่วทุกมุม,| ក្នុងស្រុក,Dari seluruh,Dari seluruh,Mula sa buong
+来自各地,lái zì gè dì,From all over,De todas partes,De partout,De todo,Từ khắp nơi,จากทั่วทุกมุม,,Dari seluruh,Dari seluruh,Mula sa buong
 本地人,běn dì rén,Locals,Locales,Les sections locales,Moradores,Người dân địa phương,คนในพื้นที่,នៅខាងកើត,Penduduk setempat,Penduduk tempatan,Mga lokal
 在本地,zài běn dì,Locally,Localmente,Localement,Localmente,Tại địa phương,ในพื้นที่,នៅភាគខាងកើត,Secara lokal,Secara tempatan,Lokal
-往东边,wǎng dōng biān,To the east,Al este,À l'est,Para o leste,Về phía đông,ไปทางทิศตะวันออก,| នៅភាគខាងត្បូង,Ke arah timur,Ke timur,Sa silangan
+往东边,wǎng dōng biān,To the east,Al este,À l'est,Para o leste,Về phía đông,ไปทางทิศตะวันออก,,Ke arah timur,Ke timur,Sa silangan
 在东边,zài dōng biān,In the east,En el este,À l'est,No leste,Ở phía đông,ในภาคตะวันออก,នៅភាគខាងត្បូង,Di timur,Di Timur,Sa Silangan
 往南边,wǎng nán biān,To the south,Al sur,Au sud,Ao sul,Về phía nam,ไปทางทิศใต้,នៅភាគខាងលិច,Ke selatan,Ke selatan,Sa timog
-在南边,zài nán biān,In the south,En el sur,Au sud,No sul,Ở phía Nam,ในภาคใต้,| នៅភាគខាងលិច,Di selatan,Di Selatan,Sa Timog
+在南边,zài nán biān,In the south,En el sur,Au sud,No sul,Ở phía Nam,ในภาคใต้,,Di selatan,Di Selatan,Sa Timog
 往西边,wǎng xī biān,To the west,Al oeste,À l'ouest,Para oeste,Về phía Tây,ไปทางทิศตะวันตก,ទៅភាគខាងជើង,Ke arah barat,Ke barat,Sa kanluran
 在西边,zài xī biān,In the west,En el oeste,A l'ouest,No oeste,Ở phía tây,ทางทิศตะวันตก,នៅភាគខាងជើង,Di barat,Di Barat,Sa kanluran
 往北边,wǎng běi biān,To the north,Al norte,Au nord,Ao norte,Về phía bắc,ไปทางทิศเหนือ,ក្រឡេកមើលខាងលើ,Ke utara,Ke utara,Sa hilaga

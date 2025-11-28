@@ -1,18 +1,18 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 职业,zhí yè,Career,Carrera,Carrière,Carreira,Sự nghiệp,อาชีพ,អាជីព,Karier,Kerjaya,Karera
-工作,gōng zuò,Job,Trabajo,Emploi,Trabalho,Việc làm,งาน,| ការងារ,Pekerjaan,Pekerjaan,Trabaho
+工作,gōng zuò,Job,Trabajo,Emploi,Trabalho,Việc làm,งาน,,Pekerjaan,Pekerjaan,Trabaho
 就业,jiù yè,Employment,Empleo,Emploi,Emprego,Việc làm,การจ้างงาน,ការងារ,Pekerjaan,Pekerjaan,Trabaho
 求职,qiú zhí,Job hunting,Búsqueda de empleo,Recherche d'emploi,Procura de emprego,Săn việc làm,หางาน,ការបរបាញ់ការងារ,Berburu pekerjaan,Pemburuan Kerja,Pangangaso ng trabaho
 找工作,zhǎo gōng zuò,Looking for a job,Buscando trabajo,À la recherche d'un emploi,Procurando emprego,Đang tìm việc làm,กำลังหางาน,កំពុងរកការងារធ្វើ,Mencari pekerjaan,Mencari pekerjaan,Naghahanap ng trabaho
 面试,miàn shì,Interview,Entrevista,Entretien,Entrevista,Phỏng vấn,สัมภาษณ์,សំភាសន៍,Wawancara,Wawancara,Panayam
-简历,jiǎn lì,Resume,Reanudar,Reprendre,Currículo,Tiếp tục,ดำเนินการต่อ,ប្រវត្តិរូបសង្ខេប || ការជ្រើសរើស,Lanjutkan,Resume,Ipagpatuloy
+简历,jiǎn lì,Resume,Reanudar,Reprendre,Currículo,Tiếp tục,ดำเนินการต่อ,ប្រវត្តិរូបសង្ខេប,Lanjutkan,Resume,Ipagpatuloy
 录用,lù yòng,Recruitment,Reclutamiento,Recrutement,Recrutamento,Tuyển dụng,รับสมัคร,នៅលើទូក,Rekrutmen,Pengambilan,Recruitment
 入职,rù zhí,Onboarding,Incorporación,Intégration,Integração,Giới thiệu,การเริ่มต้นใช้งาน,រយៈពេលសាកល្បង,Orientasi,Onboarding,Onboarding
 试用期,shì yòng qī,Probationary period,Período de prueba,Période probatoire,Período probatório,Thời gian thử việc,ช่วงทดลองงาน,ការធ្វើឱ្យការទៀងទាត់,Masa percobaan,Tempoh percubaan,Panahon ng Probationary
 转正,zhuǎn zhèng,Regularization,Regularización,Régularisation,Regularização,Chính quy hóa,การทำให้เป็นมาตรฐาน,ការផ្សព្វផ្សាយ,Regularisasi,Regularization,Regulalization
 升职,shēng zhí,Promotion,Promoción,Promotions,Promoção,Khuyến mãi,โปรโมชั่น,ការកើនឡើងប្រាក់ខែ,Promosi,Promosi,Promosyon
 加薪,jiā xīn,Salary increase,Aumento salarial,Augmentation de salaire,Aumento salarial,Tăng lương,การขึ้นเงินเดือน,ផ្ទេរ,Kenaikan gaji,Kenaikan gaji,Pagtaas ng suweldo
-调动,diào dòng,Transfer,Transferencia,Transfert,Transferência,Chuyển,โอน,| ការលាលែងពីតំណែង,Pemindahan,Pemindahan,Ilipat
+调动,diào dòng,Transfer,Transferencia,Transfert,Transferência,Chuyển,โอน,,Pemindahan,Pemindahan,Ilipat
 辞职,cí zhí,Resignation,Renuncia,Démission,Renúncia,Từ chức,ลาออก,ការងារលោត,Pengunduran diri,Peletakan jawatan,Pagbitiw
 跳槽,tiào cáo,Job hopping,Salto de trabajo,Changement d'emploi,Salto de empregos,Nhảy việc,กระโดดงาน,តើអាជីពអ្វី,Lompatan pekerjaan,Job Hopping,Job Hopping
 什么职业,shén me zhí yè,What career,Que carrera,Quelle carrière,Que carreira,Nghề nghiệp gì,อาชีพอะไร,ជ្រើសរើសអាជីព,Karier apa,Apa Kerjaya,Anong karera
@@ -25,7 +25,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 正在求职,zhèng zài qiú zhí,Looking for a job,Buscando trabajo,À la recherche d'un emploi,Procurando emprego,Đang tìm việc làm,กำลังหางาน,ពិបាករកការងារធ្វើ,Mencari pekerjaan,Mencari pekerjaan,Naghahanap ng trabaho
 找工作难,zhǎo gōng zuò nán,Difficult to find a job,Difícil encontrar trabajo,Difficile de trouver un emploi,Difícil encontrar emprego,Khó tìm việc làm,หางานยาก,ជំនួយរកការងារធ្វើ,Sulit mencari pekerjaan,Sukar untuk mencari pekerjaan,Mahirap maghanap ng trabaho
 帮找工作,bāng zhǎo gōng zuò,Help find a job,Ayuda a encontrar trabajo,Aide à trouver un emploi,Ajude a encontrar um emprego,Giúp tìm việc làm,ช่วยหางาน,ទៅសំភាសន៍,Membantu mencari pekerjaan,Bantu mencari pekerjaan,Tulungan Maghanap ng Trabaho
-去面试,qù miàn shì,Go for an interview,Ir a una entrevista,Aller à un entretien,Vá para uma entrevista,Đi phỏng vấn,ไปสัมภาษณ์,| រៀបចំសម្រាប់ការសំភាសន៍,Pergi untuk wawancara,Pergi untuk wawancara,Pumunta para sa isang pakikipanayam
+去面试,qù miàn shì,Go for an interview,Ir a una entrevista,Aller à un entretien,Vá para uma entrevista,Đi phỏng vấn,ไปสัมภาษณ์,,Pergi untuk wawancara,Pergi untuk wawancara,Pumunta para sa isang pakikipanayam
 准备面试,zhǔn bèi miàn shì,Prepare for an interview,Prepárese para una entrevista,Préparez-vous à un entretien,Prepare-se para uma entrevista,Chuẩn bị cho cuộc phỏng vấn,เตรียมสัมภาษณ์,សរសេរប្រវត្តិរូបសង្ខេប,Mempersiapkan wawancara,Sediakan untuk wawancara,Maghanda para sa isang pakikipanayam
 写简历,xiě jiǎn lì,Write a resume,Escribe un currículum,Rédiger un CV,Escreva um currículo,Viết sơ yếu lý lịch,เขียนเรซูเม่,ដាក់ប្រវត្តិរូបសង្ខេប,Tulis resume,Tulis resume,Sumulat ng isang resume
 投简历,tóu jiǎn lì,Submit a resume,Enviar un currículum,Soumettre un CV,Envie um currículo,Gửi sơ yếu lý lịch,ส่งเรซูเม่,ត្រូវបានជួល,Kirimkan resume,Hantar resume,Magsumite ng isang resume
@@ -38,11 +38,11 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 申请转正,shēn qǐng zhuǎn zhèng,Apply for full-time,Solicite tiempo completo,Postuler à temps plein,Inscreva-se em período integral,Đăng ký làm việc toàn thời gian,สมัครเต็มเวลา,ពេញម៉ោងរួចទៅហើយ,Lamar untuk penuh waktu,Memohon sepenuh masa,Mag-apply para sa full-time
 已转正,yǐ zhuǎn zhèng,Already full-time,Ya a tiempo completo,Déjà à temps plein,Já em tempo integral,Đã làm việc toàn thời gian,เต็มเวลาแล้ว,ដាក់ពាក្យសុំផ្សព្វផ្សាយ,Sudah penuh waktu,Sudah sepenuh masa,Full-time na
 申请升职,shēn qǐng shēng zhí,Apply for promotion,Solicitar promoción,Demander une promotion,Candidate-se à promoção,Đăng ký khuyến mãi,สมัครโปรโมชั่น,ទទួលបានការផ្សព្វផ្សាយមួយ,Ajukan permohonan promosi,Memohon Promosi,Mag -apply para sa promosyon
-获得升职,huò dé shēng zhí,Get a promotion,Consigue una promoción,Obtenez une promotion,Ganhe uma promoção,Nhận khuyến mãi,รับโปรโมชั่น,| ដាក់ពាក្យសុំការកើនឡើងប្រាក់ខែ,Dapatkan promosi,Dapatkan promosi,Kumuha ng isang promosyon
+获得升职,huò dé shēng zhí,Get a promotion,Consigue una promoción,Obtenez une promotion,Ganhe uma promoção,Nhận khuyến mãi,รับโปรโมชั่น,,Dapatkan promosi,Dapatkan promosi,Kumuha ng isang promosyon
 申请加薪,shēn qǐng jiā xīn,Apply for a salary increase,Solicitar un aumento salarial,Demander une augmentation de salaire,Candidatar-se a um aumento salarial,Nộp đơn xin tăng lương,สมัครขอขึ้นเงินเดือน,ទទួលបានការកើនឡើងប្រាក់ខែ,Ajukan permohonan kenaikan gaji,Memohon kenaikan gaji,Mag -apply para sa isang pagtaas ng suweldo
 获得加薪,huò dé jiā xīn,Get a salary increase,Obtener un aumento salarial,Obtenez une augmentation de salaire,Obter um aumento salarial,Được tăng lương,รับเงินเดือนเพิ่มขึ้น,ផ្ទេរការងារ,Dapat kenaikan gaji,Dapatkan kenaikan gaji,Kumuha ng isang pagtaas sa suweldo
 工作调动,gōng zuò diào dòng,Job transfer,Transferencia de trabajo,Transfert d'emploi,Transferência de emprego,Chuyển việc,การโอนย้ายงาน,ដាក់ពាក្យសុំផ្ទេរប្រាក់,Perpindahan pekerjaan,Pemindahan Kerja,Transfer Transfer
-申请调动,shēn qǐng diào dòng,Apply for a transfer,Solicitar una transferencia,Demander un transfert,Solicitar uma transferência,Xin chuyển khoản,สมัครเพื่อการโอน,| ចង់លាលែងពីតំណែង,Ajukan permohonan transfer,Memohon pemindahan,Mag -apply para sa isang paglipat
+申请调动,shēn qǐng diào dòng,Apply for a transfer,Solicitar una transferencia,Demander un transfert,Solicitar uma transferência,Xin chuyển khoản,สมัครเพื่อการโอน,,Ajukan permohonan transfer,Memohon pemindahan,Mag -apply para sa isang paglipat
 要辞职,yào cí zhí,Want to resign,Quiere dimitir,Vous voulez démissionner,Quer pedir demissão,Muốn từ chức,ต้องการลาออก,ដាក់ការលាលែងពីតំណែង,Ingin mengundurkan diri,Mahu meletakkan jawatan,Nais na magbitiw
 提交辞职,tí jiāo cí zhí,Submit resignation,Presentar renuncia,Présenter sa démission,Enviar demissão,Nộp đơn từ chức,ยื่นใบลาออก,ចង់ផ្លាស់ប្តូរការងារ,Ajukan pengunduran diri,Hantar peletakan jawatan,Magsumite ng pagbibitiw
 想跳槽,xiǎng tiào cáo,Want to change jobs,Quiere cambiar de trabajo,Envie de changer de métier,Quer mudar de emprego,Muốn thay đổi công việc,อยากเปลี่ยนงาน,រៀបចំផ្លាស់ប្តូរការងារ,Ingin berganti pekerjaan,Mahu menukar pekerjaan,Nais na baguhin ang mga trabaho

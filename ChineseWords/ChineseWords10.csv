@@ -1,13 +1,13 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 现在,xiàn zài,Now,Ahora,Maintenant,Agora,Bây giờ,ตอนนี้,ឥឡូវ,Sekarang,Sekarang,Ngayon
 今天,jīn tiān,Today,Hoy,Aujourd'hui,Hoje,Hôm nay,วันนี้,ថ្ងៃនេះ,Hari ini,Hari ini,Ngayon
-明天,míng tiān,Tomorrow,Mañana,Demain,Amanhã,Ngày mai,พรุ่งนี้,ថ្ងៃស្អែក || ម្សិលមិញ,Besok,Esok,Bukas
+明天,míng tiān,Tomorrow,Mañana,Demain,Amanhã,Ngày mai,พรุ่งนี้,ថ្ងៃស្អែក,Besok,Esok,Bukas
 昨天,zuó tiān,Yesterday,Ayer,Hier,Ontem,Hôm qua,เมื่อวานนี้,ថ្ងៃក្រោយ,Kemarin,Semalam,Kahapon
 后天,hòu tiān,The day after tomorrow,Pasado mañana,Après-demain,Depois de amanhã,Ngày kia,มะรืนนี้,ថ្ងៃមុនថ្ងៃម្សិលមិញ,Lusa,Sehari selepas esok,Ang araw pagkatapos bukas
 前天,qián tiān,The day before yesterday,Anteayer,Avant-hier,Anteontem,Ngày hôm kia,เมื่อวานซืน,ព្រឹក,Sehari sebelum kemarin,Sehari sebelum semalam,Ang araw bago kahapon
 早上,zǎo shàng,Morning,Mañana,Matin,Manhã,Buổi sáng,เช้า,ពេលថ្ងៃត្រង់,Pagi,Pagi,Umaga
 中午,zhōng wǔ,Noon,Mediodía,Midi,Meio-dia,Trưa,เที่ยง,រសៀល,Siang,Noon,Tanghali
-下午,xià wǔ,Afternoon,Tarde,Après-midi,Tarde,Chiều,ช่วงบ่าย,ល្ងាច || ម៉ោង,Sore,Petang,Hapon
+下午,xià wǔ,Afternoon,Tarde,Après-midi,Tarde,Chiều,ช่วงบ่าย,ល្ងាច,Sore,Petang,Hapon
 晚上,wǎn shàng,Evening,Tarde,Soirée,Noite,Buổi tối,ค่ำ,មុន,Sore,Petang,Gabi
 时间,shí jiān,Time,Hora,Heure,Tempo,Thời gian,เวลา,បន្ទាប់ពី,Waktu,Masa,Oras
 以前,yǐ qián,Before,Antes,Avant,Antes,Trước,ก่อน,រាល់ថ្ងៃ,Sebelumnya,Sebelum,Bago
@@ -36,7 +36,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 在下午,zài xià wǔ,In the afternoon,Por la tarde,L'après-midi,À tarde,Vào buổi chiều,ในช่วงบ่าย,នៅពេលល្ងាច,Sore hari,Pada sebelah petang,Sa hapon
 晚上好,wǎn shàng hǎo,Good evening,Buenas noches,Bonsoir,Boa noite,Chào buổi tối,สวัสดีตอนเย็น,ពេលវេលាបានកើនឡើង,Selamat malam,Selamat petang,Magandang gabi
 在晚上,zài wǎn shàng,In the evening,Por la tarde,Le soir,À noite,Vào buổi tối,ในตอนเย็น,គ្មានពេលូរៀនទេ ល្អមុន,Di malam hari,Pada waktu petang,Sa gabi
-时间到,shí jiān dào,Time is up,Se acabó el tiempo,Le temps est écoulé,O tempo acabou,Đã hết giờ,หมดเวลา,កាលពីអតីតកាល|| និយាយនាពេលអនាគត,Waktunya habis,Masa sudah habis,Ang oras ay up
+时间到,shí jiān dào,Time is up,Se acabó el tiempo,Le temps est écoulé,O tempo acabou,Đã hết giờ,หมดเวลา,កាលពីអតីតកាល,Waktunya habis,Masa sudah habis,Ang oras ay up
 没时间,méi shí jiān,No time,No hay tiempo,Pas le temps,Sem tempo,Không có thời gian,ไม่มีเวลา,នាពេលអនាគត,Tidak ada waktu,Tiada masa,Walang Oras
 以前好,yǐ qián hǎo,Good before,Bueno antes,Bon avant,Bom antes,Tốt trước,ดีไว้ก่อน,រាល់ថ្ងៃ,Bagus sebelumnya,Baik sebelum,Mabuti bago
 在以前,zài yǐ qián,In the past,En el pasado,Dans le passé,No passado,Trong quá khứ,ในอดีต,ការតស៊ូជារៀងរាល់ថ្ងៃ,Dulu,Pada masa lalu,Sa nakaraan

@@ -2,7 +2,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 随时,suí shí,Any time,En cualquier momento,À tout moment,A qualquer hora,Bất cứ lúc nào,เมื่อใดก็ได้,គ្រប់ពេល,Kapan saja,Bila -bila masa,Anumang oras
 及时,jí shí,Timely,Oportuno,En temps opportun,Oportuno,Kịp thời,ทันเวลา,ទាន់ពេលវេលា,Tepat waktu,Tepat pada masanya,Napapanahon
 按时,àn shí,On time,A tiempo,À l'heure,Na hora certa,Đúng giờ,ตรงเวลา,ទាន់ពេល,Tepat waktu,Pada masa,Sa oras
-暂时,zàn shí,Temporarily,Temporalmente,Temporairement,Temporariamente,Tạm thời,ชั่วคราว,ការ|,Untuk sementara,Sementara,Pansamantalang
+暂时,zàn shí,Temporarily,Temporalmente,Temporairement,Temporariamente,Tạm thời,ชั่วคราว,ការ,Untuk sementara,Sementara,Pansamantalang
 临时,lín shí,Temporary,Temporal,Temporaire,Temporário,Tạm thời,ชั่วคราว,បណ្តោះអាសន្ន,Sementara,Sementara,Pansamantalang
 当时,dāng shí,At that time,En ese momento,A cette époque,Naquela época,Lúc đó,ในขณะนั้น,នៅពេលនោះ,Saat itu,Pada masa itu,Sa oras na iyon
 那时,nà shí,At that time,En ese momento,A cette époque,Naquela época,Lúc đó,ในขณะนั้น,នៅពេលនោះ,Saat itu,Pada masa itu,Sa oras na iyon
@@ -19,7 +19,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 随时联系,suí shí lián xì,Contact at any time,Contactar en cualquier momento,Contacter à tout moment,Entre em contato a qualquer momento,Liên hệ bất cứ lúc nào,ติดต่อได้ตลอดเวลา,ទំនាក់ទំនងនៅពេលណាមួយ,Hubungi kapan saja,Hubungi pada bila -bila masa,Makipag -ugnay sa anumang oras
 及时处理,jí shí chǔ lǐ,Prompt processing,Procesamiento rápido,Traitement rapide,Processamento imediato,Xử lý kịp thời,การประมวลผลพร้อมท์,ដំណើរការជម្រុញ,Pemrosesan cepat,Pemprosesan segera,Prompt Processing
 要及时,yào jí shí,Be timely,Sea oportuno,Soyez ponctuel,Seja oportuno,Hãy kịp thời,ตรงต่อเวลา,ចូរមានពេលវេលា,Tepat waktu,Jadilah tepat pada masanya,Maging napapanahon
-按时到,àn shí dào,Arrive on time,Llegar a tiempo,Arriver à l'heure,Chegue na hora certa,Đến đúng giờ,มาถึงตรงเวลา,| មកដល់ទាន់ពេល,Tiba tepat waktu,Tiba pada masa,Dumating sa oras
+按时到,àn shí dào,Arrive on time,Llegar a tiempo,Arriver à l'heure,Chegue na hora certa,Đến đúng giờ,มาถึงตรงเวลา,,Tiba tepat waktu,Tiba pada masa,Dumating sa oras
 要按时,yào àn shí,Be on time,Llegar a tiempo,Soyez à l'heure,Chegue na hora certa,Hãy đến đúng giờ,ตรงต่อเวลา,ត្រូវបានទាន់ពេល,Tepat waktu,Jadilah masa,Maging sa oras
 暂时不,zàn shí bù,Not yet,Todavía no,Pas encore,Ainda não,Chưa,ยังไม่,មិនទាន់មានទេ,Belum,Belum,Hindi pa
 暂时的,zàn shí de,Temporary,Temporal,Temporaire,Temporário,Tạm thời,ชั่วคราว,បណ្តោះអាសន្ន,Sementara,Sementara,Pansamantalang
@@ -40,8 +40,8 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 片刻之后,piàn kè zhī hòu,A moment later,Un momento después,Un instant plus tard,Um momento depois,Một lúc sau,อีกสักครู่,មួយសន្ទុះក្រោយមក,Sesaat kemudian,Seketika kemudian,Isang sandali mamaya
 稍等片刻,shāo děng piàn kè,Wait a moment,Espera un momento,Attendez un instant,Espere um momento,Đợi một chút,รอสักครู่,រង់ចាំមួយភ្លែត,Tunggu sebentar,Tunggu sebentar,Maghintay ng isang sandali
 瞬间消失,shùn jiān xiāo shī,Disappear in an instant,Desaparece en un instante,Disparaître en un instant,Desaparece em um instante,Biến mất trong tích tắc,หายไปในทันที,បាត់ភ្លាមៗ,Menghilang dalam sekejap,Hilang dalam sekejap,Mawala sa isang instant
-就在瞬间,jiù zài shùn jiān,Just in an instant,Sólo en un instante,Juste en un instant,Num instante,Chỉ trong tích tắc,ทันที,| គ្រាន់តែភ្លាមៗ,Hanya dalam sekejap,Hanya dalam sekejap,Sa isang instant
-长期的,cháng qī de,Long-term,A largo plazo,À long terme,Longo prazo,Lâu dài,ระยะยาว,| រយៈពេលវែង,Jangka panjang,Jangka Panjang,Pangmatagalang
+就在瞬间,jiù zài shùn jiān,Just in an instant,Sólo en un instante,Juste en un instant,Num instante,Chỉ trong tích tắc,ทันที,,Hanya dalam sekejap,Hanya dalam sekejap,Sa isang instant
+长期的,cháng qī de,Long-term,A largo plazo,À long terme,Longo prazo,Lâu dài,ระยะยาว,,Jangka panjang,Jangka Panjang,Pangmatagalang
 做长期,zuò cháng qī,Do long-term,Hacer a largo plazo,Faire du long terme,Faça a longo prazo,Làm lâu dài,ทำระยะยาว,ធ្វើរយៈពេលវែង,Lakukan jangka panjang,Adakah jangka panjang,Gawin ang pangmatagalang
 短期的,duǎn qī de,Short-term,A corto plazo,Court terme,Curto prazo,Ngắn hạn,ระยะสั้น,រយៈពេលខ្លី,Jangka pendek,Jangka Pendek,Maikling-term
 做短期,zuò duǎn qī,Do short-term,Hacer a corto plazo,Faire du court terme,Faça curto prazo,Làm ngắn hạn,ทำระยะสั้น,ធ្វើរយៈពេលខ្លី,Lakukan jangka pendek,Adakah jangka pendek,Gawin ang panandaliang
