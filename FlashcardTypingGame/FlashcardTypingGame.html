@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1024">
-  <title>English Flashcard Typing Game</title>
+  <title>Flashcard Typing Game</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <!-- Chinese font - loaded but only applied when Chinese modules are used -->
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@700&display=swap" rel="stylesheet">
   <style>
     /* =================================================================
        DESIGN SYSTEM - Single source of truth for fonts, colors, textures
        ================================================================= */
     :root {
       /* ===========================================
-         FONTS - Only 3 fonts used in entire project
+         FONTS - Only 4 fonts used in entire project
          =========================================== */
-      /* 1. Handwriting font - main card text (English words) */
+      /* 1. Handwriting font - main card text (target words) */
       --font-card: 'IM Fell English', serif;
 
       /* 2. Monospace font - answer/back of card, tooltips */
@@ -22,6 +24,9 @@
 
       /* 3. UI font - buttons, titles, labels, everything else */
       --font-ui: 'Cinzel', serif;
+
+      /* 4. Chinese font - front card Chinese characters only */
+      --font-chinese: 'LXGW WenKai TC', serif;
 
       /* ===========================================
          COLORS - Only 3 text colors used
@@ -437,6 +442,13 @@
       word-break: normal;
       overflow-wrap: break-word;
       hyphens: none;
+    }
+
+    /* Chinese font for front card - LXGW WenKai TC Bold (only when in chinese-mode) */
+    body.chinese-mode .card-front .card-word {
+      font-family: var(--font-chinese);
+      font-weight: 700;
+      font-style: normal;
     }
 
     /* Sound Button (pronounce - bottom right) */
@@ -1773,6 +1785,88 @@
     }
 
     /* Arrow removed - using simple div style instead of speech bubble */
+
+    /* =================================================================
+       CHINESE DISPLAY OPTIONS - Character + Pinyin Coupling
+       Design: Yellow/gold warning-style box to draw attention
+       Shows only when native language is Chinese
+       ================================================================= */
+    .chinese-display-options {
+      display: none;  /* Hidden by default, shown via JS when nativeLanguage is chinese */
+      margin: 10px 0;
+      padding: 10px 15px;
+      background: rgba(255, 243, 205, 0.9);
+      border: 1px solid #ffc107;
+      border-radius: 5px;
+      color: var(--color-text-dark);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+    }
+
+    .chinese-display-options strong {
+      color: var(--color-text-dark);
+      margin-right: 10px;
+    }
+
+    .chinese-display-options label {
+      margin-left: 15px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .chinese-display-options input[type="checkbox"] {
+      cursor: pointer;
+    }
+
+    /* =================================================================
+       CHINESE CHARACTER + PINYIN COUPLED DISPLAY
+       Core Objective: Render each Chinese character with its pinyin directly below
+
+       Structure:
+         .chinese-coupled (flex container, horizontal)
+           └─ .char-group (flex column for each character)
+               ├─ .chinese-char (the character)
+               └─ .pinyin (pinyin syllable)
+
+       This ensures char/pinyin are NEVER separated during display
+       ================================================================= */
+    .chinese-coupled {
+      display: inline-flex;
+      gap: 4px;
+      align-items: flex-end;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .char-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .chinese-char {
+      font-size: 1em;
+      line-height: 1.2;
+    }
+
+    .pinyin {
+      font-size: 0.6em;
+      color: #666;
+      line-height: 1;
+      font-family: var(--font-answer);
+    }
+
+    /* Adjust for card display - larger characters */
+    .card-word .chinese-coupled .chinese-char {
+      font-size: 1em;
+    }
+
+    .card-word .chinese-coupled .pinyin {
+      font-size: 0.4em;
+      color: #8B7355;
+    }
   </style>
 </head>
 <body>
@@ -1790,7 +1884,7 @@
         <span class="tooltip" id="tooltip-listening"></span>
       </span>
       <span class="tooltip-container">
-        <button class="mode-btn" id="mode-pronunciation" data-mode="pronunciation">💬</button>
+        <button class="mode-btn" id="mode-pronunciation" data-mode="spelling">💬</button>
         <span class="tooltip" id="tooltip-speaking"></span>
       </span>
       <span class="tooltip-container">
@@ -1800,7 +1894,7 @@
     </div>
 
     <!-- Title - centered, subtle -->
-    <div class="wordpack-title" id="wordpack-title">English Flashcard Typing Game</div>
+    <div class="wordpack-title" id="wordpack-title">Flashcard Typing Game</div>
 
     <!-- Top Buttons -->
     <div class="header-buttons">
@@ -1813,6 +1907,23 @@
   <!-- Fixed-height wrapper prevents card from shifting when stamp indicator appears -->
   <div class="card-counter-wrapper">
     <div class="card-counter" id="card-counter">Choose Wordpack to Begin Studying</div>
+  </div>
+
+  <!-- =================================================================
+       CHINESE DISPLAY OPTIONS
+       Shows only when nativeLanguage is 'chinese'
+       Controls whether to show characters, pinyin, or both
+       ================================================================= -->
+  <div class="chinese-display-options" id="chineseDisplayOptions">
+    <strong>Chinese Display:</strong>
+    <label>
+      <input type="checkbox" id="showChineseChars" checked>
+      Show Characters (汉字)
+    </label>
+    <label>
+      <input type="checkbox" id="showPinyin" checked>
+      Show Pinyin (pīnyīn)
+    </label>
   </div>
 
   <div class="flashcard-container">
@@ -1874,7 +1985,7 @@
     // Key Behaviors:
     //   - Decoder function handles 3-layer deobfuscation (base64 + zlib + reversal)
     //   - Module configuration supports all languages (Chinese, Spanish, English)
-    //   - Currently loading English acts
+    //   - Currently only Spanish acts are loaded
     //   - Future: Can easily add other languages by uncommenting module URLs
     // ============================================================
 
@@ -1908,22 +2019,99 @@
     }
 
     // ============================================================
-    // MODULE URLS - Only URLs here, ALL other config comes from modules
+    // MODULE URLS - Configure these for the language you want to learn
     // ============================================================
-    // IMPORTANT: If these URLs don't load, NOTHING about the game loads.
-    // Act names, translations, word columns - all come from __actMeta in modules.
+    // IMPORTANT: ALL modules MUST have the SAME wordColumns[0] value!
+    // The game detects the target language from wordColumns[0] in __actMeta.
+    // If modules don't agree on the target language, the game won't load.
+    //
+    // Examples:
+    // - Spanish: '../SpanishWords/Jsmodules-js/act1-foundation-js.js' (wordColumns[0] = "spanish")
+    // - Chinese: '../ChineseWords/Jsmodules-js/act1-foundation-js.js' (wordColumns[0] = "chinese")
+    // - English: '../EnglishWords/Jsmodules-js/act1-foundation-js.js' (wordColumns[0] = "english")
     // ============================================================
     const MODULE_URLS = [
-      '../EnglishWords/Jsmodules-js/act1-foundation-js.js',
-      '../EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
-      '../EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
-      '../EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
-      '../EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
+      // CONFIGURE YOUR MODULES HERE - all must have matching wordColumns[0]
+      // Spanish modules:
+      '../SpanishWords/Jsmodules-js/act1-foundation-js.js',
+      '../SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
+      '../SpanishWords/Jsmodules-js/act3-daily-life-js.js',
+      '../SpanishWords/Jsmodules-js/act4-expanding-expression-js.js',
+      '../SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js',
+      '../SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js',
+      '../SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js'
+      // Chinese modules (uncomment to use):
+      // '../ChineseWords/Jsmodules-js/act1-foundation-js.js',
+      // '../ChineseWords/Jsmodules-js/act2-development-js.js',
+      // '../ChineseWords/Jsmodules-js/act3-expansion-js.js',
+      // '../ChineseWords/Jsmodules-js/act4-mastery-js.js',
+      // '../ChineseWords/Jsmodules-js/act5-refinement-js.js'
+      // English modules (uncomment to use):
+      // '../EnglishWords/Jsmodules-js/act1-foundation-js.js',
+      // '../EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
+      // '../EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
+      // '../EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
+      // '../EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
     ];
 
     let wordpacks = {}; // All loaded wordpacks
     let loadedActs = {}; // Track which acts have been loaded
     let loadedActMeta = {}; // Store __actMeta from each loaded act
+
+    // ============================================================
+    // TARGET LANGUAGE - Detected from loaded modules' wordColumns[0]
+    // ============================================================
+    let targetLanguage = null; // Will be set to 'spanish', 'chinese', 'english', etc.
+    let targetLanguageDisplay = null; // Title case version for UI: 'Spanish', 'Chinese', 'English'
+
+    // Helper to get the target language from loaded modules
+    function getTargetLanguage() {
+      for (const actNum of Object.keys(loadedActMeta)) {
+        const meta = loadedActMeta[actNum];
+        if (meta && meta.wordColumns && meta.wordColumns[0]) {
+          return meta.wordColumns[0].toLowerCase();
+        }
+      }
+      return null;
+    }
+
+    // Helper to get title case version of target language
+    function toTitleCase(str) {
+      if (!str) return '';
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
+
+    // Validate that all loaded modules have the same target language
+    function validateTargetLanguageConsistency() {
+      const languages = new Set();
+      for (const actNum of Object.keys(loadedActMeta)) {
+        const meta = loadedActMeta[actNum];
+        if (meta && meta.wordColumns && meta.wordColumns[0]) {
+          languages.add(meta.wordColumns[0].toLowerCase());
+        }
+      }
+      if (languages.size > 1) {
+        const langList = Array.from(languages).join(', ');
+        console.error(`[FATAL] Modules have inconsistent target languages: ${langList}`);
+        console.error('All modules must have the same wordColumns[0] value!');
+        return false;
+      }
+      return true;
+    }
+
+    // Check if the target language is Chinese (requires special handling)
+    function isChineseMode() {
+      return targetLanguage === 'chinese';
+    }
+
+    // Apply or remove Chinese mode CSS class
+    function updateChineseModeClass() {
+      if (isChineseMode()) {
+        document.body.classList.add('chinese-mode');
+      } else {
+        document.body.classList.remove('chinese-mode');
+      }
+    }
 
     // Helper to get translations config from first loaded act's __actMeta
     function getTranslationsConfig() {
@@ -1945,8 +2133,32 @@
           return meta.defaultTranslation;
         }
       }
-      return 'chinese'; // Fallback
+      return 'english'; // Fallback
     }
+
+    // Helper to get word columns from loaded metadata
+    function getWordColumns() {
+      for (const actNum of Object.keys(loadedActMeta)) {
+        const meta = loadedActMeta[actNum];
+        if (meta && meta.wordColumns) {
+          return meta.wordColumns;
+        }
+      }
+      return null;
+    }
+
+    let currentDeck = [];
+    let originalDeck = [];
+    let currentIndex = 0;
+    let isFlipped = false;
+    let holdTimeout = null;
+    let currentSpeed = 0.6; // Default to normal speed
+    const VALID_SPEEDS = [0.3, 0.6, 0.9]; // Valid speed options (must match data-speed values in HTML)
+
+    // ============================================================
+    // DEBUG MODE: Show word type (Base Word / Example Word)
+    // ============================================================
+    const DEBUG_SHOW_WORD_TYPE = true; // Set to true to display word type on cards
 
     // Helper to get valid languages from loaded metadata (for validation)
     function getValidLanguages() {
@@ -1995,7 +2207,6 @@
     //   - coupleChineseWithPinyin(chinese, pinyin) → array of {char, pinyin}
     //   - renderChineseWithPinyin(coupledArray) → HTML element with coupled display
     //   - renderChineseText(chinese, pinyin) → convenience function combining both
-    //   - getChineseHtml(chinese, pinyin) → returns HTML string for innerHTML
     // ===================================================================================
 
     /**
@@ -2003,6 +2214,9 @@
      * @param {string} chineseStr - Chinese characters (e.g., "小猫")
      * @param {string} pinyinStr - Space-separated pinyin syllables (e.g., "xiǎo māo")
      * @returns {Array<{char: string, pinyin: string}>} - Array of coupled char/pinyin objects
+     *
+     * Example: coupleChineseWithPinyin("小猫", "xiǎo māo")
+     *   → [{char: "小", pinyin: "xiǎo"}, {char: "猫", pinyin: "māo"}]
      */
     function coupleChineseWithPinyin(chineseStr, pinyinStr) {
       // Handle empty/null inputs gracefully
@@ -2152,36 +2366,47 @@
     }
 
     /**
-     * Returns the appropriate translation HTML based on whether it's Chinese or not
-     * @param {Object} card - Card object with translation and optionally translationPinyin
-     * @returns {string} - HTML string for translation display
+     * Updates visibility of Chinese display options based on current language
+     * Called when language changes or on page load
      */
-    function getTranslationHtml(card) {
-      if (card.translationIsChinese && card.translationPinyin) {
-        return getChineseHtml(card.translation, card.translationPinyin);
+    function updateChineseOptionsVisibility() {
+      const optionsDiv = document.getElementById('chineseDisplayOptions');
+      if (optionsDiv) {
+        // Show only when learning with Chinese translations
+        optionsDiv.style.display = (nativeLanguage === 'chinese') ? 'block' : 'none';
       }
-      return card.translation;
     }
 
-    let currentDeck = [];
-    let originalDeck = [];
-    let currentIndex = 0;
-    let isFlipped = false;
-    let holdTimeout = null;
-    let currentSpeed = 0.6; // Default to normal speed
-    const VALID_SPEEDS = [0.3, 0.6, 0.9]; // Valid speed options (must match data-speed values in HTML)
+    /**
+     * Sets up event listeners for Chinese display option checkboxes
+     */
+    function setupChineseDisplayOptions() {
+      const showCharsCheckbox = document.getElementById('showChineseChars');
+      const showPinyinCheckbox = document.getElementById('showPinyin');
 
-    // ============================================================
-    // DEBUG MODE: Show word type (Base Word / Example Word)
-    // ============================================================
-    const DEBUG_SHOW_WORD_TYPE = true; // Set to true to display word type on cards
+      if (showCharsCheckbox) {
+        showCharsCheckbox.addEventListener('change', () => {
+          showChineseChars = showCharsCheckbox.checked;
+          saveState();
+          updateDisplay();
+        });
+      }
 
-    let nativeLanguage = 'chinese'; // Default, will be updated from loaded module metadata
+      if (showPinyinCheckbox) {
+        showPinyinCheckbox.addEventListener('change', () => {
+          showPinyin = showPinyinCheckbox.checked;
+          saveState();
+          updateDisplay();
+        });
+      }
+    }
+
+    let nativeLanguage = 'english'; // Default, will be updated from loaded module metadata
     let gameStarted = false;
     let currentWordpackKey = '';
     let currentVoice = null;
     let savedVoiceURI = null; // Store saved voice URI until voices are loaded
-    let englishVoices = [];
+    let spanishVoices = [];
     let currentAct = 1; // Track currently selected act
 
     // Learning modes
@@ -2204,9 +2429,17 @@
     let keysPressed = {};
 
     // ===================================================================================
+    // CHINESE DISPLAY OPTIONS (Global state)
+    // Controls how Chinese translations are rendered (character + pinyin coupling)
+    // These settings affect ALL Chinese text display across the app
+    // ===================================================================================
+    let showChineseChars = true;  // Show Chinese characters (汉字) - default ON
+    let showPinyin = true;        // Show pinyin under each character - default ON
+
+    // ===================================================================================
     // LOCAL STORAGE - Save and restore user progress
     // ===================================================================================
-    const STORAGE_KEY = 'englishFlashcardState';
+    const STORAGE_KEY = 'spanishFlashcardState';
 
     function saveState() {
       try {
@@ -2216,7 +2449,10 @@
           speed: currentSpeed,
           wordpackKey: currentWordpackKey,
           act: currentAct,
-          language: nativeLanguage
+          language: nativeLanguage,
+          // Chinese display options
+          showChineseChars: showChineseChars,
+          showPinyin: showPinyin
         };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       } catch (e) {
@@ -2325,7 +2561,7 @@
 
     if (SpeechRecognition) {
       recognition = new SpeechRecognition();
-      recognition.lang = 'en-US';
+      recognition.lang = 'es-ES';
       recognition.continuous = false;
       recognition.interimResults = false;
       recognition.maxAlternatives = 5;
@@ -2642,8 +2878,11 @@
       flashcard.classList.add('showing-menu');
       document.body.classList.add('showing-menu');
 
-      // Update titles
-      wordpackTitle.textContent = 'English Flashcard Typing Game';
+      // Update titles (use detected target language)
+      const gameTitle = targetLanguageDisplay
+        ? `${targetLanguageDisplay} Flashcard Typing Game`
+        : 'Flashcard Typing Game';
+      wordpackTitle.textContent = gameTitle;
       cardCounter.textContent = 'Choose Lesson to Begin Studying';
 
       // Render menu card (looks identical to a flashcard)
@@ -2677,7 +2916,14 @@
 
     // Render the menu card (looks like a regular flashcard)
     function renderMenuCard() {
-      // Front: Menu/Settings (styled like front side)
+      // Get language name for UI text (use detected or fallback to generic)
+      const langName = targetLanguageDisplay || 'Target';
+      const voiceLabel = targetLanguageDisplay ? `${targetLanguageDisplay} Voice` : 'Voice';
+      // For Chinese, typing is pinyin-based
+      const typingDesc = isChineseMode() ? 'type pinyin' : 'type what you heard';
+      const translationTypingDesc = isChineseMode() ? 'type pinyin' : `type ${langName} translation`;
+
+      // Front: Menu/Settings (styled like target language side)
       spanishWord.innerHTML = `
         <div style="font-size: 1.1rem; text-align: left; max-width: 550px; margin: 0 auto; line-height: 1.8;">
           <!-- Row 1: Act and Wordpack -->
@@ -2713,7 +2959,7 @@
 
           <!-- Row 3: Voice -->
           <div class="menu-field" style="margin-bottom: 25px;">
-            <label>English Voice</label>
+            <label>${voiceLabel}</label>
             <select id="menu-voice">
               <option value="">Loading voices...</option>
             </select>
@@ -2726,25 +2972,25 @@
       `;
       spanishWord.className = 'card-word';
 
-      // Back: Help/Instructions (styled like English translation side)
+      // Back: Help/Instructions (styled like translation side)
       englishWord.innerHTML = `
         <div style="font-size: 2rem; font-weight: bold; margin-bottom: 20px;">❓ How to Use</div>
 
         <div style="font-size: 1.1rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 1.8;">
           <div style="margin-bottom: 15px;">
-            <strong>📖 Flashcard Mode:</strong> English word → flip to see translation
+            <strong>📖 Flashcard Mode:</strong> ${langName} word → flip to see translation
           </div>
 
           <div style="margin-bottom: 15px;">
-            <strong>👂 Spelling Mode:</strong> Hear English → type what you heard
+            <strong>👂 Spelling Mode:</strong> Hear ${langName} → ${typingDesc}
           </div>
 
           <div style="margin-bottom: 15px;">
-            <strong>💬 Pronunciation Mode:</strong> See English → say it out loud (Space to record)
+            <strong>💬 Pronunciation Mode:</strong> See ${langName} → say it out loud (Space to record)
           </div>
 
           <div style="margin-bottom: 15px;">
-            <strong>✏️ Translation Mode:</strong> See translation → type the English word
+            <strong>✏️ Translation Mode:</strong> See translation → ${translationTypingDesc}
           </div>
 
           <div style="margin-bottom: 15px;">
@@ -2821,15 +3067,21 @@
             playButtonClickSound();
             nativeLanguage = e.target.value;
             updateBackLabel();
+            // Update Chinese display options visibility
+            updateChineseOptionsVisibility();
+            // Reinitialize deck to include/exclude pinyin based on new language
+            if (currentWordpackKey) {
+              initializeDeck(currentWordpackKey);
+            }
             saveState();
           });
         }
 
         // Voice selector - use saved state (currentVoice or savedVoiceURI)
         // No "Default" placeholder - always show actual voice name
-        if (menuVoice && englishVoices.length > 0) {
+        if (menuVoice && spanishVoices.length > 0) {
           menuVoice.innerHTML = ''; // Clear - no placeholder
-          englishVoices.forEach((voice) => {
+          spanishVoices.forEach((voice) => {
             const option = document.createElement('option');
             option.value = voice.voiceURI;
             option.textContent = `${voice.name} (${voice.lang})`;
@@ -2838,15 +3090,15 @@
 
           // Use currentVoice if set, otherwise use savedVoiceURI from state, otherwise first voice
           const voiceURIToRestore = currentVoice ? currentVoice.voiceURI : savedVoiceURI;
-          if (voiceURIToRestore && englishVoices.find(v => v.voiceURI === voiceURIToRestore)) {
+          if (voiceURIToRestore && spanishVoices.find(v => v.voiceURI === voiceURIToRestore)) {
             menuVoice.value = voiceURIToRestore;
             // Also set currentVoice if we have the URI but not the voice object
             if (!currentVoice && savedVoiceURI) {
-              currentVoice = englishVoices.find(v => v.voiceURI === savedVoiceURI) || null;
+              currentVoice = spanishVoices.find(v => v.voiceURI === savedVoiceURI) || null;
             }
           } else {
             // No saved voice or saved voice not found - default to first voice
-            const firstVoice = englishVoices[0];
+            const firstVoice = spanishVoices[0];
             menuVoice.value = firstVoice.voiceURI;
             currentVoice = firstVoice;
             savedVoiceURI = firstVoice.voiceURI;
@@ -2855,12 +3107,12 @@
           menuVoice.addEventListener('change', (e) => {
             playButtonClickSound();
             const newVoiceURI = e.target.value;
-            currentVoice = englishVoices.find(v => v.voiceURI === newVoiceURI) || null;
+            currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
             savedVoiceURI = newVoiceURI; // Also update savedVoiceURI
             saveState();
             // Preview the new voice by speaking the current word
             if (currentDeck.length > 0) {
-              setTimeout(() => speakEnglish(), 100);
+              setTimeout(() => speakSpanish(), 100);
             }
           });
         }
@@ -2886,7 +3138,7 @@
             saveState();
             // Preview the new speed by speaking the current word
             if (currentDeck.length > 0) {
-              setTimeout(() => speakEnglish(), 100);
+              setTimeout(() => speakSpanish(), 100);
             }
           });
         });
@@ -2960,8 +3212,9 @@
 
       // Completely reset pack as if starting new game in this mode
       // (Reset from original deck, not modified current deck)
+      // CRITICAL: Keep pedagogical ordering (base words first, then examples)
       if (originalDeck.length > 0) {
-        currentDeck = shuffleArray([...originalDeck]);
+        currentDeck = [...originalDeck]; // Copy without shuffling - preserve base→example order
         currentIndex = 0;
       }
 
@@ -2981,9 +3234,9 @@
 
       updateDisplay();
 
-      // Auto-pronounce English in spelling mode only (not writing - user needs to translate)
+      // Auto-pronounce target word in spelling mode only (not writing - user needs to translate)
       if (newMode === 'spelling' && currentDeck.length > 0) {
-        setTimeout(() => speakEnglish(), 300);
+        setTimeout(() => speakSpanish(), 300);
       }
 
       // Save state (only saves speech rate and pack selection, not deck progress)
@@ -2992,7 +3245,10 @@
 
     // Initialize typing display for listening and translation modes
     function initializeTypingDisplay() {
-      const word = currentDeck[currentIndex].english;
+      // Use typingTarget which is set in initializeDeck:
+      // - For Chinese: this is pinyin (letter-based typing)
+      // - For Spanish/English: this is the target word
+      const word = currentDeck[currentIndex].typingTarget;
       typingInput = '';
       // Store actual characters (not underscores) to preserve natural layout
       typingDisplay = word.split('');
@@ -3044,7 +3300,7 @@
     function handleTypingInput(key) {
       if ((currentMode !== 'spelling' && currentMode !== 'translation') || currentDeck.length === 0) return;
 
-      const word = currentDeck[currentIndex].english;
+      const word = currentDeck[currentIndex].spanish;
       const targetChars = word.split('');
 
       // Find next unfilled position (first position not in typedPositions)
@@ -3117,7 +3373,7 @@
 
               // Auto-pronounce in spelling mode
               if (currentMode === 'spelling' && currentDeck.length > 0) {
-                setTimeout(() => speakEnglish(), 300);
+                setTimeout(() => speakSpanish(), 300);
               }
             });
           } else {
@@ -3162,15 +3418,15 @@
 
       // Only filter voices if we have a language code from loaded modules
       if (!ttsLangCode) {
-        englishVoices = []; // No modules loaded = no voices
+        spanishVoices = []; // No modules loaded = no voices
         return;
       }
 
-      englishVoices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(ttsLangCode));
+      spanishVoices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(ttsLangCode));
 
       // Restore saved voice if we have a saved URI and voices are now available
-      if (savedVoiceURI && englishVoices.length > 0 && !currentVoice) {
-        currentVoice = englishVoices.find(v => v.voiceURI === savedVoiceURI) || null;
+      if (savedVoiceURI && spanishVoices.length > 0 && !currentVoice) {
+        currentVoice = spanishVoices.find(v => v.voiceURI === savedVoiceURI) || null;
       }
       // Voice selector is now populated in renderMenuCard() when menu is created
     }
@@ -3425,6 +3681,9 @@
       // Initialize tooltips from single source of truth
       initializeTooltips();
 
+      // Setup Chinese display options checkboxes
+      setupChineseDisplayOptions();
+
       try {
         // First act is 1 (MODULE_URLS is 0-indexed, act numbers are 1-indexed)
         if (MODULE_URLS.length > 0) {
@@ -3437,6 +3696,29 @@
           await loadAct(actNum);
         }
 
+        // ============================================================
+        // VALIDATE AND DETECT TARGET LANGUAGE
+        // All modules must have the same wordColumns[0]
+        // ============================================================
+        if (!validateTargetLanguageConsistency()) {
+          throw new Error('Modules have inconsistent target languages');
+        }
+
+        // Set the target language from loaded modules
+        targetLanguage = getTargetLanguage();
+        targetLanguageDisplay = toTitleCase(targetLanguage);
+
+        // Apply Chinese mode CSS class if needed
+        updateChineseModeClass();
+
+        // Update page title based on detected language
+        if (targetLanguageDisplay) {
+          document.title = `${targetLanguageDisplay} Flashcard Typing Game`;
+          document.getElementById('wordpack-title').textContent = `${targetLanguageDisplay} Flashcard Typing Game`;
+        }
+
+        console.log(`[initializeApp] Detected target language: ${targetLanguage} (${targetLanguageDisplay})`);
+
         // Now that modules are loaded, load voices based on module metadata
         // This ensures no voices are available if modules fail to load
         loadVoices();
@@ -3446,6 +3728,9 @@
 
         // Restore any saved state (may change currentAct and currentWordpackKey)
         restoreSavedState();
+
+        // Update Chinese display options visibility based on restored language
+        updateChineseOptionsVisibility();
 
         // If saved act is different from the first act we loaded, load it
         if (currentAct !== firstAct) {
@@ -3531,6 +3816,20 @@
       if (savedState.voiceURI) {
         savedVoiceURI = savedState.voiceURI;
       }
+
+      // Restore Chinese display options (default to true if not saved)
+      if (savedState.showChineseChars !== undefined) {
+        showChineseChars = savedState.showChineseChars;
+      }
+      if (savedState.showPinyin !== undefined) {
+        showPinyin = savedState.showPinyin;
+      }
+
+      // Update checkbox states in UI
+      const showCharsCheckbox = document.getElementById('showChineseChars');
+      const showPinyinCheckbox = document.getElementById('showPinyin');
+      if (showCharsCheckbox) showCharsCheckbox.checked = showChineseChars;
+      if (showPinyinCheckbox) showPinyinCheckbox.checked = showPinyin;
     }
 
     function updateBackLabel() {
@@ -3599,7 +3898,7 @@
     // KEY FEATURE: Deck Initialization with Linked Card Objects
     // Core Objective: Create shuffled deck where front/back are ALWAYS synced
     // Key Behaviors:
-    //   - Each card is a SINGLE object with both english and translation
+    //   - Each card is a SINGLE object with both spanish and translation
     //   - Front and back of card are NEVER separate - they are properties
     //     of the same card object (currentDeck[currentIndex])
     //   - Shuffling reorders cards but NEVER breaks the front/back link
@@ -3628,33 +3927,74 @@
       // ============================================================
       const words = combineAndShuffleWords(pack);
 
-      // Determine if we need Chinese+pinyin coupling for translations
-      const isChinese = (nativeLanguage === 'chinese');
-      const pinyinIndex = 2; // Pinyin column in English word arrays: ["english", "chinese", "pinyin", ...]
+      // ============================================================
+      // DYNAMIC LANGUAGE HANDLING
+      // Card structure adapts based on target language:
+      // - targetWord: The word being learned (column 0)
+      // - pinyin: Pinyin for Chinese (column 1 if Chinese, or translation pinyin)
+      // - translation: The translation in native language
+      // - typingTarget: What user types (pinyin for Chinese, targetWord otherwise)
+      // ============================================================
+      const targetIsChinese = isChineseMode();
 
-      // CRITICAL: Each card object contains BOTH front (english) and back (translation)
+      // Get word columns from loaded metadata to find pinyin column
+      const wordColumns = getWordColumns();
+
+      // Find pinyin index - it follows 'chinese' column in the word array
+      let pinyinIndex = -1;
+      if (wordColumns) {
+        const chineseIdx = wordColumns.indexOf('chinese');
+        if (chineseIdx !== -1) {
+          // Pinyin typically follows chinese column
+          const pinyinIdx = wordColumns.indexOf('pinyin');
+          if (pinyinIdx !== -1) {
+            pinyinIndex = pinyinIdx;
+          }
+        }
+      }
+
+      // CRITICAL: Each card object contains BOTH front (target word) and back (translation)
       // These are NEVER stored separately - they are always linked as one object
       originalDeck = words.map((wordObj, idx) => {
         const word = wordObj.word;  // Extract word array from object
         const card = {
-          id: `${packKey}-${idx}`,      // Unique ID for this card
-          english: word[0],              // Front of card (English word)
-          translation: word[nativeIndex], // Back of card (translation) - LINKED to english
-          type: wordObj.type             // Word type for debugging (Base Word / Example Word)
+          id: `${packKey}-${idx}`,        // Unique ID for this card
+          targetWord: word[0],            // Front of card (target language word)
+          translation: word[nativeIndex], // Back of card (translation)
+          type: wordObj.type              // Word type for debugging (Base Word / Example Word)
         };
 
-        // Add pinyin when translating to Chinese
-        // This enables the character+pinyin coupled display
-        if (isChinese) {
-          card.translationPinyin = word[pinyinIndex] || '';
-          card.translationIsChinese = true;
+        // ============================================================
+        // CHINESE-SPECIFIC HANDLING
+        // ============================================================
+        if (targetIsChinese) {
+          // When learning Chinese: pinyin is at index 1 (directly after Chinese)
+          card.pinyin = word[1] || '';
+          // Typing target is pinyin (letter-based typing)
+          card.typingTarget = card.pinyin;
+        } else {
+          // When learning Spanish/English: typing target is the target word
+          card.typingTarget = card.targetWord;
+
+          // Add pinyin when TRANSLATION is Chinese (not target language)
+          if (nativeLanguage === 'chinese' && pinyinIndex !== -1) {
+            card.translationPinyin = word[pinyinIndex] || '';
+            card.translationIsChinese = true;
+          }
         }
 
         return card;
       });
 
-      // Shuffle the card OBJECTS - front and back stay linked because they're the same object
-      currentDeck = shuffleArray([...originalDeck]);
+      // ============================================================
+      // CRITICAL: DO NOT shuffle originalDeck here!
+      // Words are already ordered by combineAndShuffleWords():
+      //   1. Base words (shuffled internally)
+      //   2. Example words (shuffled internally)
+      // Shuffling here would mix base and example words together,
+      // breaking the pedagogical ordering!
+      // ============================================================
+      currentDeck = [...originalDeck]; // Copy without shuffling
       currentIndex = 0;
       updateDisplay();
     }
@@ -3663,7 +4003,8 @@
     function restartCurrentPack() {
       playButtonClickSound();
       if (originalDeck.length > 0) {
-        currentDeck = shuffleArray([...originalDeck]);
+        // Keep pedagogical ordering (base words first, then examples)
+        currentDeck = [...originalDeck]; // Copy without shuffling
         currentIndex = 0;
         if (currentMode === 'spelling' || currentMode === 'translation') {
           initializeTypingDisplay();
@@ -3787,10 +4128,43 @@
     // Core Objective: Display current card with guaranteed sync
     // Key Behaviors:
     //   - ALWAYS uses single card object: currentDeck[currentIndex]
-    //   - card.english = front of card
+    //   - card.targetWord = front of card (the word being learned)
+    //   - card.typingTarget = what user types (pinyin for Chinese, targetWord otherwise)
+    //   - card.pinyin = pinyin pronunciation (Chinese mode only)
     //   - card.translation = back of card
     //   - These are NEVER from different sources - always same object
     // ============================================================
+
+    /**
+     * Renders the target word (front of card) with proper formatting
+     * - For Chinese: renders with coupled Chinese characters + pinyin
+     * - For other languages: plain text
+     * @param {Object} card - Card object with targetWord and optionally pinyin
+     * @returns {string} - HTML string for the target word
+     */
+    function renderTargetWord(card) {
+      // If target language is Chinese, use coupled rendering
+      if (isChineseMode() && card.pinyin) {
+        return getChineseHtml(card.targetWord, card.pinyin);
+      }
+      // Otherwise, plain text
+      return card.targetWord;
+    }
+
+    /**
+     * Renders the translation text, using coupled Chinese+pinyin display when applicable
+     * @param {Object} card - Card object with translation and optionally translationPinyin
+     * @returns {string} - HTML string for the translation
+     */
+    function renderTranslation(card) {
+      // If translation is Chinese, use coupled rendering
+      if (card.translationIsChinese && card.translationPinyin) {
+        return getChineseHtml(card.translation, card.translationPinyin);
+      }
+      // Otherwise, plain text
+      return card.translation;
+    }
+
     function updateDisplay() {
       // Starting card is shown/hidden by showStartingCard/exitStartingCard
       // Don't update card content when on starting card
@@ -3818,7 +4192,7 @@
         return;
       }
 
-      // CRITICAL: Get SINGLE card object - front (english) and back (translation) are ALWAYS linked
+      // CRITICAL: Get SINGLE card object - front (target word) and back (translation) are ALWAYS linked
       const card = currentDeck[currentIndex];
 
       // Display counter (deck change indicator now shown as overlay stamp on card)
@@ -3841,18 +4215,20 @@
 
       // Mode-specific display
       if (currentMode === 'flashcard') {
-        // FLASHCARD MODE - Purpose: Learn to read English and understand meaning
-        // Front: English word | Back: Translation in native language
-        spanishWord.textContent = card.english;
+        // FLASHCARD MODE - Purpose: Learn to read target word and understand meaning
+        // Front: Target word | Back: Translation
+        // For Chinese: renderTargetWord() returns coupled char+pinyin HTML
+        // When translation is Chinese, renderTranslation() returns coupled char+pinyin HTML
+        spanishWord.innerHTML = renderTargetWord(card);
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${getTranslationHtml(card)}</div>`;
+        englishWord.innerHTML = `<div class="translation-text">${renderTranslation(card)}</div>`;
         englishWord.className = 'card-word';
         // Clear indicators
         wrongLettersFront.innerHTML = '';
         wrongCountFront.innerHTML = '';
       } else if (currentMode === 'spelling') {
-        // SPELLING MODE - Purpose: Learn to understand spoken English and spell it
-        // Front: Hear English audio + type what you hear | Back: English word + translation
+        // SPELLING MODE - Purpose: Learn to understand spoken target language and spell it
+        // Front: Hear audio + type what you hear | Back: Target word + translation
         // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
         // Show all wrong letters including repeats (user can see each wrong attempt)
         wrongLettersFront.innerHTML = wrongLetters.length > 0
@@ -3869,11 +4245,12 @@
         // Update card content (no indicators embedded here)
         spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `${card.english}<br><div class="translation-text">${getTranslationHtml(card)}</div>`;
+        // Back shows target word + translation (with Chinese coupling if applicable)
+        englishWord.innerHTML = `${renderTargetWord(card)}<br><div class="translation-text">${renderTranslation(card)}</div>`;
         englishWord.className = 'card-word';
       } else if (currentMode === 'translation') {
-        // TRANSLATION MODE - Purpose: Learn to write/spell English from native language
-        // Front: Translation + type English word | Back: Correct English word
+        // TRANSLATION MODE - Purpose: Learn to write/spell target word from translation
+        // Front: Translation + type target word | Back: Correct target word
         // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
         // Show all wrong letters including repeats (user can see each wrong attempt)
         wrongLettersFront.innerHTML = wrongLetters.length > 0
@@ -3888,16 +4265,19 @@
           ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
           : '';
         // Update card content (no indicators embedded here)
-        spanishWord.innerHTML = `<div class="translation-text">${getTranslationHtml(card)}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
+        // TRANSLATION MODE: Front shows translation (for user to translate FROM)
+        // When translation is Chinese, show with coupled char+pinyin
+        spanishWord.innerHTML = `<div class="translation-text">${renderTranslation(card)}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
-        englishWord.textContent = card.english;
+        // Back shows target word (with Chinese coupling if applicable)
+        englishWord.innerHTML = renderTargetWord(card);
         englishWord.className = 'card-word';
       } else if (currentMode === 'pronunciation') {
-        // PRONUNCIATION MODE - Purpose: Learn to pronounce English correctly
-        // Front: English word + microphone button | Back: Translation
-        spanishWord.textContent = card.english;
+        // PRONUNCIATION MODE - Purpose: Learn to pronounce target word correctly
+        // Front: Target word + microphone button | Back: Translation (with Chinese coupling if applicable)
+        spanishWord.innerHTML = renderTargetWord(card);
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${getTranslationHtml(card)}</div>`;
+        englishWord.innerHTML = `<div class="translation-text">${renderTranslation(card)}</div>`;
         englishWord.className = 'card-word';
         // Clear indicators
         wrongLettersFront.innerHTML = '';
@@ -3951,7 +4331,7 @@
     }
 
     // ============================================================
-    // KEY FEATURE: Auto-pronounce English word in spelling mode
+    // KEY FEATURE: Auto-pronounce target word in spelling mode
     // - On card navigation (prev/next): auto-pronounce
     // - Helps users learn pronunciation through repetition
     // ============================================================
@@ -3970,7 +4350,7 @@
 
       // Auto-read in spelling mode (helps learn pronunciation)
       if (currentMode === 'spelling') {
-        setTimeout(() => speakEnglish(), 300);
+        setTimeout(() => speakSpanish(), 300);
       }
     }
 
@@ -3988,7 +4368,7 @@
 
       // Auto-read in spelling mode (helps learn pronunciation)
       if (currentMode === 'spelling') {
-        setTimeout(() => speakEnglish(), 300);
+        setTimeout(() => speakSpanish(), 300);
       }
     }
 
@@ -4005,7 +4385,7 @@
 
       // Auto-read in spelling mode only (not writing - user needs to translate)
       if (currentMode === 'spelling') {
-        setTimeout(() => speakEnglish(), 300);
+        setTimeout(() => speakSpanish(), 300);
       }
     }
 
@@ -4107,7 +4487,8 @@
       playButtonClickSound();
 
       // Completely reset as if we just started this pack in this mode
-      currentDeck = shuffleArray([...originalDeck]);
+      // CRITICAL: Keep pedagogical ordering (base words first, then examples)
+      currentDeck = [...originalDeck]; // Copy without shuffling - preserve base→example order
       currentIndex = 0;
 
       // Reset typing state for typing modes
@@ -4128,24 +4509,36 @@
 
       // Auto-pronounce in spelling mode
       if (currentMode === 'spelling' && currentDeck.length > 0) {
-        setTimeout(() => speakEnglish(), 300);
+        setTimeout(() => speakSpanish(), 300);
       }
 
       saveState();
     }
 
-    // Speak the English word
-    function speakEnglish() {
+    // Speak the target word (uses TTS for the detected target language)
+    function speakTargetWord() {
       if (currentDeck.length === 0) return;
-      
-      const utterance = new SpeechSynthesisUtterance(currentDeck[currentIndex].english);
-      utterance.lang = 'en-US';
+
+      const card = currentDeck[currentIndex];
+      const utterance = new SpeechSynthesisUtterance(card.targetWord);
+
+      // Set language based on detected target language
+      const ttsCode = getTtsLanguageCode();
+      if (ttsCode) {
+        utterance.lang = ttsCode;
+      }
+
       utterance.rate = currentSpeed;
       if (currentVoice) {
         utterance.voice = currentVoice;
       }
       speechSynthesis.cancel(); // Stop any current speech
       speechSynthesis.speak(utterance);
+    }
+
+    // Alias for backwards compatibility - some places may still call speakSpanish
+    function speakSpanish() {
+      speakTargetWord();
     }
 
     // Set speech speed
@@ -4285,7 +4678,7 @@
         let bestMatch = results[0].transcript;
         let bestScore = 0;
 
-        const expected = currentDeck[currentIndex].english;
+        const expected = currentDeck[currentIndex].spanish;
 
         // Check all alternatives for best match
         for (let i = 0; i < results.length; i++) {
@@ -4419,7 +4812,7 @@
     // Pronounce button (no button click sound per user request)
     pronounceBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      speakEnglish();
+      speakSpanish();
     });
 
     // Peek button (hold to flip, release to unflip)
@@ -4462,7 +4855,7 @@
         setSpeed(speed, btn);
         // Play sample at new speed if game has started
         if (gameStarted && currentDeck.length > 0) {
-          speakEnglish();
+          speakSpanish();
         }
       });
     });
@@ -4573,7 +4966,7 @@
       } else if (e.key === 'ArrowUp') {
         // Up arrow: ALWAYS pronounce
         e.preventDefault();
-        speakEnglish();
+        speakSpanish();
       } else if (e.key === 'ArrowDown') {
         // Down arrow: Hold to see translation (flip on keydown, unflip on keyup)
         e.preventDefault();
@@ -4594,7 +4987,7 @@
         // Space: pronounce in flashcard mode, record in pronunciation mode, play sound in translation mode, ignore in listening
         if (currentMode === 'flashcard') {
           e.preventDefault();
-          speakEnglish();
+          speakSpanish();
         } else if (currentMode === 'pronunciation') {
           e.preventDefault();
           // Trigger mic button based on which side of card is showing
