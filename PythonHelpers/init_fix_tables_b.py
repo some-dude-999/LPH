@@ -3,13 +3,16 @@
 Initialize FixTableB files (minimal version - no Reason column).
 
 This creates ultra-efficient fix tables for Stage 3B with minimal columns:
-- Language, Pack_Number, Row_Number, Column_Name, Old_Value, New_Value
+- Language, Pack_Number, Pack_Title, Row_Number, Column_Name, Old_Value, New_Value
 
-Pre-populates Language and Pack_Number columns so LLMs only need to fill in:
+Pre-populates Language, Pack_Number, and Pack_Title so LLMs only need to fill in:
 - Row_Number
 - Column_Name
 - Old_Value
 - New_Value
+
+CRITICAL: Pack_Title (wordpack theme) is MANDATORY even in minimal version!
+Theme context is essential - same word means different things in different contexts.
 
 Usage:
     python PythonHelpers/init_fix_tables_b.py chinese
@@ -44,6 +47,7 @@ def init_fix_table_b(lang):
     packs_with_issues = []
     for row in rows:
         pack_num = row.get('Pack_Number', '').strip()
+        pack_title = row.get('Pack_Title', '').strip()
         issue_count = row.get('Issue_Count', '0').strip()
         issues = row.get('Issues', '').strip()
 
@@ -55,11 +59,14 @@ def init_fix_table_b(lang):
             has_issues = True
 
         if has_issues and pack_num:
-            packs_with_issues.append(pack_num)
+            packs_with_issues.append({
+                'pack_num': pack_num,
+                'pack_title': pack_title if pack_title else 'Unknown Theme'
+            })
 
-    print(f"\n{'='*60}")
+    print(f"\n{'='*70}")
     print(f"INITIALIZING MINIMAL FIX TABLE (B): {lang.upper()}")
-    print(f"{'='*60}")
+    print(f"{'='*70}")
     print(f"TranslationErrors CSV: {os.path.basename(errors_csv)}")
     print(f"Fix table: {os.path.basename(fix_table_csv)}")
     print(f"Packs with issues: {len(packs_with_issues)}")
@@ -67,19 +74,20 @@ def init_fix_table_b(lang):
     if not packs_with_issues:
         print(f"\n✅ No packs with issues found - creating empty fix table")
 
-    # Create minimal fix table with pre-populated Language,Pack_Number (NO Reason column)
+    # Create minimal fix table with pre-populated Language, Pack_Number, Pack_Title (NO Reason column)
     with open(fix_table_csv, 'w', encoding='utf-8', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=[
-            'Language', 'Pack_Number', 'Row_Number', 'Column_Name',
+            'Language', 'Pack_Number', 'Pack_Title', 'Row_Number', 'Column_Name',
             'Old_Value', 'New_Value'
         ])
         writer.writeheader()
 
         # Write one row per pack with issues
-        for pack_num in packs_with_issues:
+        for pack_info in packs_with_issues:
             writer.writerow({
                 'Language': lang,
-                'Pack_Number': pack_num,
+                'Pack_Number': pack_info['pack_num'],
+                'Pack_Title': pack_info['pack_title'],
                 'Row_Number': '',
                 'Column_Name': '',
                 'Old_Value': '',
@@ -87,16 +95,20 @@ def init_fix_table_b(lang):
             })
 
     print(f"\n✅ Created minimal fix table with {len(packs_with_issues)} pre-populated rows")
+    print(f"   Pre-filled: Language, Pack_Number, Pack_Title (theme context!)")
     print(f"   LLM fills: Row_Number, Column_Name, Old_Value, New_Value")
     print(f"   (No Reason column - ultra-efficient!)")
+    print(f"\n⚠️  Pack_Title provides CRITICAL theme context for correct translations!")
+    print(f"   Example: 'Sports Equipment' - 球拍 = 'racket' (not 'noise')")
 
 
 def main():
     if len(sys.argv) < 2:
         print("Usage: python init_fix_tables_b.py [chinese|spanish|english|all]")
         print("\nThis script initializes MINIMAL fix tables (FixTableB) from TranslationErrors CSVs.")
-        print("It pre-populates Language and Pack_Number for packs with issues.")
+        print("It pre-populates Language, Pack_Number, and Pack_Title (theme) for packs with issues.")
         print("NO Reason column - ultra-efficient for fast recording.")
+        print("\n⚠️  Pack_Title is CRITICAL - provides context for correct translations!")
         sys.exit(1)
 
     lang = sys.argv[1].lower()

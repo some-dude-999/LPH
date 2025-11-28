@@ -1504,7 +1504,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 4,Yes No & Responses,Act I: Foundation,6,"Multiple translation errors"
 
 === EXAMPLE: ChineseFixTable.csv ===
-Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
 chinese,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing spaces - should be character-by-character
 chinese,3,3,english,this one here,this,Awkward phrasing - use simpler form
 chinese,3,8,thai,ตัว,ตัว๊,Wrong tone mark
@@ -1780,6 +1780,25 @@ Focus on packs where Issue_Count > 0.
 
 === STEP 3: SCAN PACKS AND RECORD FIXES ===
 
+╔══════════════════════════════════════════════════════════════════╗
+║  🎯 THEME CONTEXT IS CRITICAL - NEVER FIX WITHOUT IT!            ║
+║                                                                  ║
+║  Same word = different translations in different themes!        ║
+║                                                                  ║
+║  Example: Chinese "球拍" (qiú pāi)                               ║
+║  • Pack "Sports Equipment" → English "racket" ✅                 ║
+║  • Pack "Making Noise" → English "racket" (noise) ✅             ║
+║  • WITHOUT theme context → could pick wrong meaning ❌           ║
+║                                                                  ║
+║  MANDATORY: Every fix MUST include Pack_Title!                  ║
+║  MANDATORY: Check theme before deciding correct translation!    ║
+║  MANDATORY: Record Pack_Title in ALL internal reasoning!        ║
+║  MANDATORY: Mention Pack_Title in git commit messages!          ║
+║                                                                  ║
+║  ⛔ Fixing without theme context = GUARANTEED MISTAKES ⛔        ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
 For EACH pack with issues:
 
 1. Read pack CSV: ChineseWords/ChineseWords{N}.csv
@@ -1788,20 +1807,21 @@ For EACH pack with issues:
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  📝 ChineseFixTableB.csv FORMAT (NO Reason column!)              ║
-║                                                                  ║
-║  Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value║
+║  CRITICAL: Pack_Title (theme) is MANDATORY even in minimal!     ║
+║  Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value║
 ║                                                                  ║
 ║  Example fixes:                                                  ║
-║  chinese,23,3,pinyin,nǐhǎo,nǐ hǎo                               ║
-║  chinese,23,7,english,hello friend boy,hey buddy                ║
-║  chinese,45,12,spanish,,hola amigo                              ║
+║  chinese,23,Greetings,3,pinyin,nǐhǎo,nǐ hǎo                               ║
+║  chinese,23,Greetings,7,english,hello friend boy,hey buddy                ║
+║  chinese,45,Time Expressions,12,spanish,,hola amigo                              ║
 ║                                                                  ║
-║  That's it! Just 6 columns. No explanations needed.             ║
+║  That's it! Just 6 columns. Pack_Title provides critical theme context! No explanations needed.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ⚡ WRITE ONLY:
 - Language (pre-filled: "chinese")
 - Pack_Number (e.g., "23")
+- Pack_Title (e.g., "Greetings", "Sports Equipment" - CRITICAL for context!)
 - Row_Number (CSV row number - remember row 1 is header, data starts at row 2)
 - Column_Name (e.g., "pinyin", "english", "spanish")
 - Old_Value (current wrong value - can be empty string if cell is empty)
@@ -2100,6 +2120,25 @@ Run ALL 6 validation scripts to catch mechanical errors:
 === STEP 3: MANUALLY READ AND FIX EVERY PACK ===
 
 ╔══════════════════════════════════════════════════════════════════╗
+║  🎯 THEME CONTEXT IS CRITICAL - NEVER FIX WITHOUT IT!            ║
+║                                                                  ║
+║  Same word = different translations in different themes!        ║
+║                                                                  ║
+║  Example: Chinese "球拍" (qiú pāi)                               ║
+║  • Pack "Sports Equipment" → English "racket" ✅                 ║
+║  • Pack "Making Noise" → English "racket" (noise) ✅             ║
+║  • WITHOUT theme context → could pick wrong meaning ❌           ║
+║                                                                  ║
+║  MANDATORY: Every fix MUST include Pack_Title!                  ║
+║  MANDATORY: Check theme before deciding correct translation!    ║
+║  MANDATORY: Record Pack_Title in ALL internal reasoning!        ║
+║  MANDATORY: Mention Pack_Title in git commit messages!          ║
+║                                                                  ║
+║  ⛔ Fixing without theme context = GUARANTEED MISTAKES ⛔        ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+╔══════════════════════════════════════════════════════════════════╗
 ║  📖 READ EACH CSV FILE MANUALLY - RECORD ALL FIXES NEEDED        ║
 ║                                                                  ║
 ║  For EACH wordpack (1-250):                                      ║
@@ -2340,7 +2379,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 4,Asking Questions,Act I: Foundation,6,"Multiple translation errors"
 
 === EXAMPLE: SpanishFixTable.csv ===
-Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
 spanish,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing spaces - should be character-by-character
 spanish,3,3,english,one (1),one,Remove parenthetical - unnecessary
 spanish,3,8,portuguese,,tradução,Empty cell - needs translation
@@ -2611,14 +2650,14 @@ For EACH pack with issues:
 ╔══════════════════════════════════════════════════════════════════╗
 ║  📝 SpanishFixTableB.csv FORMAT (NO Reason column!)              ║
 ║                                                                  ║
-║  Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value║
+║  Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value║
 ║                                                                  ║
 ║  Example fixes:                                                  ║
 ║  spanish,23,3,pinyin,nǐhǎo,nǐ hǎo                               ║
 ║  spanish,23,7,english,hello friend boy,hey buddy                ║
 ║  spanish,45,12,portuguese,,olá amigo                            ║
 ║                                                                  ║
-║  That's it! Just 6 columns. No explanations needed.             ║
+║  That's it! Just 6 columns. Pack_Title provides critical theme context! No explanations needed.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ⚡ WRITE ONLY:
@@ -2915,6 +2954,25 @@ Run ALL 6 validation scripts to catch mechanical errors:
 === STEP 3: MANUALLY READ AND FIX EVERY PACK ===
 
 ╔══════════════════════════════════════════════════════════════════╗
+║  🎯 THEME CONTEXT IS CRITICAL - NEVER FIX WITHOUT IT!            ║
+║                                                                  ║
+║  Same word = different translations in different themes!        ║
+║                                                                  ║
+║  Example: Chinese "球拍" (qiú pāi)                               ║
+║  • Pack "Sports Equipment" → English "racket" ✅                 ║
+║  • Pack "Making Noise" → English "racket" (noise) ✅             ║
+║  • WITHOUT theme context → could pick wrong meaning ❌           ║
+║                                                                  ║
+║  MANDATORY: Every fix MUST include Pack_Title!                  ║
+║  MANDATORY: Check theme before deciding correct translation!    ║
+║  MANDATORY: Record Pack_Title in ALL internal reasoning!        ║
+║  MANDATORY: Mention Pack_Title in git commit messages!          ║
+║                                                                  ║
+║  ⛔ Fixing without theme context = GUARANTEED MISTAKES ⛔        ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+╔══════════════════════════════════════════════════════════════════╗
 ║  📖 READ EACH CSV FILE MANUALLY - RECORD ALL FIXES NEEDED        ║
 ║                                                                  ║
 ║  For EACH wordpack (1-160):                                      ║
@@ -3149,7 +3207,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 4,Common Verbs,Act I: Foundation,5,"Multiple translation errors"
 
 === EXAMPLE: EnglishFixTable.csv ===
-Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
 english,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing spaces - should be character-by-character
 english,3,3,chinese,蝙蝠,球棒,Wrong meaning - sports equipment not animal
 english,3,8,spanish,,bate,Empty cell - needs translation
@@ -3454,14 +3512,14 @@ For EACH pack with issues:
 ╔══════════════════════════════════════════════════════════════════╗
 ║  📝 EnglishFixTableB.csv FORMAT (NO Reason column!)              ║
 ║                                                                  ║
-║  Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value║
+║  Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value║
 ║                                                                  ║
 ║  Example fixes:                                                  ║
 ║  english,23,3,pinyin,nǐhǎo,nǐ hǎo                               ║
 ║  english,23,7,spanish,hola tu,hola tú                           ║
 ║  english,45,12,chinese,,你好                                    ║
 ║                                                                  ║
-║  That's it! Just 6 columns. No explanations needed.             ║
+║  That's it! Just 6 columns. Pack_Title provides critical theme context! No explanations needed.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ⚡ WRITE ONLY:
