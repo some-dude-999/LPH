@@ -6,7 +6,7 @@ chinese,pinyin,english,spanish,french,portuguese
 长,zhǎng,long,largo,longue,longo
 短,duǎn,short,corto,court,curto
 高,gāo,tall,alto,grand,alto
-矮,ǎi,short,corto,court,curto
+矮,ǎi,short,bajo,court,curto
 坏,huài,bad,malo,mauvais,ruim
 新,xīn,new,nuevo,nouveau,novo
 旧,jiù,old,viejo,vieux,velho
@@ -31,7 +31,7 @@ chinese,pinyin,english,spanish,french,portuguese
 高大,gāo dà,Tall,Alto,Grand,Alto
 提高,tí gāo,Improvement,Mejora,Amélioration,Melhoria
 太矮,tài ǎi,Too short,Demasiado corto,Trop court,Muito curto
-矮小,ǎi xiǎo,Short,Corto,Court,Curto
+矮小,ǎi xiǎo,Short,Bajo,Court,Curto
 坏人,huài rén,Bad guy,Chico malo,Méchant gars,Cara mau
 损坏,sǔn huài,Damage,Daño,Dommages,Danos
 新人,xīn rén,New person,Nueva persona,Nouvelle personne,Nova pessoa
@@ -46,7 +46,7 @@ chinese,pinyin,english,spanish,french,portuguese
 远方,yuǎn fāng,Far away,Lejos,Loin,Longe
 近来,jìn lái,Recently,Recientemente,Récemment,Recentemente
 近旁,jìn páng,Nearby,Cerca,À proximité,Perto
-早日,zǎo rì,Early morning,Temprano en la mañana,Tôt le matin,De manhã cedo
+早日,zǎo rì,soon,pronto,bientôt,em breve
 趁早,chèn zǎo,As soon as possible,Lo antes posible,Le plus tôt possible,O mais cedo possível
 晚饭,wǎn fàn,Dinner,Cena,Dîner,Jantar
 晚会,wǎn huì,Evening party,Fiesta nocturna,Soirée,Festa noturna
