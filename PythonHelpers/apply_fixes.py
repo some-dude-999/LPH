@@ -2,17 +2,27 @@
 """
 Apply surgical fixes from fix tables to breakout CSVs.
 
+CRITICAL: Pack_Title (wordpack theme) is MANDATORY in every fix!
+Context matters - "ball" means different things in "Sports" vs "Dance Events"
+
 Works with both:
 - FixTable.csv (with Reason column - Stage 3A)
 - FixTableB.csv (without Reason column - Stage 3B, ultra-efficient)
+
+REQUIRED CSV COLUMNS:
+- Language: chinese, spanish, or english
+- Pack_Number: 1-250
+- Pack_Title: Theme/name of the wordpack (MANDATORY - provides context!)
+- Row_Number: CSV row number (header = 1, data starts at 2)
+- Column_Name: which column to fix
+- Old_Value: current (wrong) value
+- New_Value: corrected value appropriate for THIS THEME
+- Reason: why this fix is needed (optional in FixTableB)
 
 Usage:
     python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTable.csv
     python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTable.csv
     python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTable.csv
-    python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTableB.csv
-    python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTableB.csv
-    python PythonHelpers/apply_fixes.py EnglishWords/EnglishFixTableB.csv
 """
 
 import csv
@@ -31,11 +41,40 @@ def apply_fixes(fix_table_path):
         sys.exit(1)
 
     with open(fix_table_path, 'r', encoding='utf-8') as f:
-        fixes = list(csv.DictReader(f))
+        reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames
+        fixes = list(reader)
+
+    # Validate required columns
+    required_cols = ['Language', 'Pack_Number', 'Pack_Title', 'Row_Number', 'Column_Name', 'Old_Value', 'New_Value']
+    missing_cols = [col for col in required_cols if col not in fieldnames]
+
+    if missing_cols:
+        print(f"❌ CRITICAL ERROR: Missing required columns in fix table: {', '.join(missing_cols)}")
+        print(f"\nRequired columns:")
+        print(f"  - Language")
+        print(f"  - Pack_Number")
+        print(f"  - Pack_Title  ← MANDATORY! Provides theme context for translation")
+        print(f"  - Row_Number")
+        print(f"  - Column_Name")
+        print(f"  - Old_Value")
+        print(f"  - New_Value")
+        print(f"  - Reason (optional)")
+        print(f"\nWithout Pack_Title, we can't verify fixes are appropriate for the wordpack theme!")
+        sys.exit(1)
 
     if not fixes:
         print(f"✅ No fixes to apply (fix table is empty)")
         return
+
+    # Validate each fix has Pack_Title
+    for i, fix in enumerate(fixes, start=2):
+        if not fix.get('Pack_Title', '').strip():
+            print(f"❌ CRITICAL ERROR: Row {i} missing Pack_Title!")
+            print(f"   Pack {fix.get('Pack_Number', '?')}, Column {fix.get('Column_Name', '?')}")
+            print(f"\n   Pack_Title is MANDATORY - it provides theme context!")
+            print(f"   Example: 'Sports Equipment', 'Greetings', 'Time Expressions'")
+            sys.exit(1)
 
     # Group fixes by file
     fixes_by_file = defaultdict(list)
@@ -49,9 +88,9 @@ def apply_fixes(fix_table_path):
 
         fixes_by_file[file_path].append(fix)
 
-    print(f"\n{'='*60}")
+    print(f"\n{'='*70}")
     print(f"APPLYING FIXES FROM: {os.path.basename(fix_table_path)}")
-    print(f"{'='*60}")
+    print(f"{'='*70}")
     print(f"Total fixes to apply: {len(fixes)}")
     print(f"Files affected: {len(fixes_by_file)}")
     print()
@@ -65,9 +104,9 @@ def apply_fixes(fix_table_path):
         total_applied += applied
         total_mismatches += mismatches
 
-    print(f"\n{'='*60}")
+    print(f"\n{'='*70}")
     print(f"SUMMARY")
-    print(f"{'='*60}")
+    print(f"{'='*70}")
     print(f"Fixes applied: {total_applied}")
     print(f"Mismatches (not applied): {total_mismatches}")
 
@@ -97,7 +136,10 @@ def apply_fixes_to_file(file_path, fixes):
     changes_made = 0
     mismatches = 0
 
-    print(f"\n📝 {filename}:")
+    # Get pack title from first fix (all fixes in this file should have same pack title)
+    pack_title = fixes[0].get('Pack_Title', 'Unknown Theme').strip()
+
+    print(f"\n📦 {filename} - Theme: '{pack_title}'")
 
     for fix in fixes:
         row_num = int(fix['Row_Number'].strip())
@@ -106,6 +148,7 @@ def apply_fixes_to_file(file_path, fixes):
         old_val = fix['Old_Value'].strip()
         new_val = fix['New_Value'].strip()
         reason = fix.get('Reason', '').strip()
+        fix_pack_title = fix.get('Pack_Title', '').strip()
 
         if row_idx < 0 or row_idx >= len(rows):
             print(f"   ⚠️  Row {row_num}: Out of bounds (file has {len(rows)} data rows)")
@@ -122,11 +165,15 @@ def apply_fixes_to_file(file_path, fixes):
         if current_val == old_val:
             rows[row_idx][column] = new_val
             changes_made += 1
-            reason_str = f" ({reason})" if reason else ""
-            print(f"   ✓ Row {row_num}, {column}: '{old_val}' → '{new_val}'{reason_str}")
+
+            # Display fix with theme context
+            theme_note = f" [Theme: {fix_pack_title}]" if fix_pack_title else ""
+            reason_str = f" - {reason}" if reason else ""
+            print(f"   ✓ Row {row_num}, {column}{theme_note}")
+            print(f"      '{old_val}' → '{new_val}'{reason_str}")
         else:
             mismatches += 1
-            print(f"   ❌ Row {row_num}, {column}: MISMATCH")
+            print(f"   ❌ Row {row_num}, {column} [Theme: {fix_pack_title}]: MISMATCH")
             print(f"      Expected: '{old_val}'")
             print(f"      Found:    '{current_val}'")
 
@@ -144,6 +191,9 @@ def apply_fixes_to_file(file_path, fixes):
 def main():
     if len(sys.argv) < 2:
         print("Usage: python apply_fixes.py <fix_table.csv>")
+        print("\n⚠️  CRITICAL: Fix table MUST include Pack_Title column!")
+        print("   Pack_Title provides theme context - essential for correct translations.")
+        print("   Example: 'Sports Equipment' - 球拍 = 'racket' (not 'noise')")
         print("\nExamples (Stage 3A - with Reason column):")
         print("  python PythonHelpers/apply_fixes.py ChineseWords/ChineseFixTable.csv")
         print("  python PythonHelpers/apply_fixes.py SpanishWords/SpanishFixTable.csv")

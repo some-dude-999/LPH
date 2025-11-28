@@ -2,12 +2,15 @@
 """
 Initialize fix tables from TranslationErrors CSVs.
 
-Pre-populates Language and Pack_Number columns so LLMs only need to fill in:
+Pre-populates Language, Pack_Number, and Pack_Title columns so LLMs only need to fill in:
 - Row_Number
 - Column_Name
 - Old_Value
 - New_Value
 - Reason
+
+CRITICAL: Pack_Title (wordpack theme) is included for EVERY pack!
+Theme context is essential - same word means different things in different contexts.
 
 Usage:
     python PythonHelpers/init_fix_tables.py chinese
@@ -42,6 +45,7 @@ def init_fix_table(lang):
     packs_with_issues = []
     for row in rows:
         pack_num = row.get('Pack_Number', '').strip()
+        pack_title = row.get('Pack_Title', '').strip()
         issue_count = row.get('Issue_Count', '0').strip()
         issues = row.get('Issues', '').strip()
 
@@ -53,11 +57,14 @@ def init_fix_table(lang):
             has_issues = True
 
         if has_issues and pack_num:
-            packs_with_issues.append(pack_num)
+            packs_with_issues.append({
+                'pack_num': pack_num,
+                'pack_title': pack_title if pack_title else 'Unknown Theme'
+            })
 
-    print(f"\n{'='*60}")
+    print(f"\n{'='*70}")
     print(f"INITIALIZING FIX TABLE: {lang.upper()}")
-    print(f"{'='*60}")
+    print(f"{'='*70}")
     print(f"TranslationErrors CSV: {os.path.basename(errors_csv)}")
     print(f"Fix table: {os.path.basename(fix_table_csv)}")
     print(f"Packs with issues: {len(packs_with_issues)}")
@@ -65,19 +72,20 @@ def init_fix_table(lang):
     if not packs_with_issues:
         print(f"\n✅ No packs with issues found - creating empty fix table")
 
-    # Create fix table with pre-populated Language,Pack_Number
+    # Create fix table with pre-populated Language, Pack_Number, Pack_Title
     with open(fix_table_csv, 'w', encoding='utf-8', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=[
-            'Language', 'Pack_Number', 'Row_Number', 'Column_Name',
+            'Language', 'Pack_Number', 'Pack_Title', 'Row_Number', 'Column_Name',
             'Old_Value', 'New_Value', 'Reason'
         ])
         writer.writeheader()
 
         # Write one row per pack with issues
-        for pack_num in packs_with_issues:
+        for pack_info in packs_with_issues:
             writer.writerow({
                 'Language': lang,
-                'Pack_Number': pack_num,
+                'Pack_Number': pack_info['pack_num'],
+                'Pack_Title': pack_info['pack_title'],
                 'Row_Number': '',
                 'Column_Name': '',
                 'Old_Value': '',
@@ -86,14 +94,18 @@ def init_fix_table(lang):
             })
 
     print(f"\n✅ Created fix table with {len(packs_with_issues)} pre-populated rows")
-    print(f"   Next: LLM fills in Row_Number, Column_Name, Old_Value, New_Value, Reason")
+    print(f"   Pre-filled: Language, Pack_Number, Pack_Title (theme context!)")
+    print(f"   LLM fills: Row_Number, Column_Name, Old_Value, New_Value, Reason")
+    print(f"\n⚠️  Pack_Title provides CRITICAL theme context for correct translations!")
+    print(f"   Example: 'Sports Equipment' - 球拍 = 'racket' (not 'noise')")
 
 
 def main():
     if len(sys.argv) < 2:
         print("Usage: python init_fix_tables.py [chinese|spanish|english|all]")
         print("\nThis script initializes fix tables from TranslationErrors CSVs.")
-        print("It pre-populates Language and Pack_Number for packs with issues.")
+        print("It pre-populates Language, Pack_Number, and Pack_Title (theme) for packs with issues.")
+        print("\n⚠️  Pack_Title is CRITICAL - provides context for correct translations!")
         sys.exit(1)
 
     lang = sys.argv[1].lower()
