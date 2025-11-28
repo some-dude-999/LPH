@@ -926,6 +926,40 @@ Chinese + Pinyin inseparability applies **regardless of which language is being 
 
 **Chinese always travels with its pronunciation guide.**
 
+
+---
+
+## 🗑️ REMOVED LANGUAGES FROM CHINESE WORDPACKS
+
+**Date Removed**: 2025-11-28
+
+**Languages Removed** (due to insufficient translation quality):
+- Vietnamese (4/10 quality - limited vocabulary, uncertain on nuances)
+- Thai (3/10 quality - very limited, can recognize script but minimal vocabulary)
+- Khmer (2/10 quality - very limited, minimal translation capability)
+- Indonesian (5/10 quality - moderate, basic translation capability)
+- Malay (5/10 quality - moderate, similar to Indonesian)
+- Filipino (4/10 quality - limited, some vocabulary knowledge)
+
+**Retained Languages** (high quality translations):
+- Chinese (column 0 - target language)
+- Pinyin (column 1 - pronunciation guide)
+- English (column 2 - primary translation)
+- Spanish (column 3 - secondary translation)
+- French (column 4 - tertiary translation)
+- Portuguese (column 5 - quaternary translation)
+
+**Reason for Removal**:
+Low-quality translations make vocabulary cards confusing rather than helpful. Better to have 6 excellent translation languages than 12 with varying quality. Users learning Chinese benefit more from accurate, natural translations in fewer languages.
+
+**Impact**:
+- Chinese CSV files: 12 columns → 6 columns
+- JavaScript modules: Updated to reflect new structure
+- All validation scripts: Updated column references
+- PromptCopier.html: Updated Chinese-specific prompts
+
+---
+
 ---
 
 ## 📋 OVERVIEW WORDPACK DATA STRUCTURE (CRITICAL!)
@@ -1062,7 +1096,7 @@ export const p{act}_{pack}_{name} = {
 - ✅ Structure is **identical** across all languages (meta object + words array)
 - ✅ Each language has **different columns** based on supported translations
 - ✅ Spanish: 5 columns (spanish, english, chinese, pinyin, portuguese)
-- ✅ Chinese: 12 columns (chinese, pinyin, english, spanish, french, portuguese, vietnamese, thai, khmer, indonesian, malay, filipino)
+- ✅ Chinese: 6 columns (chinese, pinyin, english, spanish, french, portuguese)
 - ✅ English: 5 columns (english, chinese, pinyin, spanish, portuguese)
 - ✅ Words array is **always** an array of arrays of strings
 

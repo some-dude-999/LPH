@@ -187,8 +187,7 @@ COLUMN STRUCTURE BY LANGUAGE:
 -----------------------------
 CHINESE (12 columns):
     [0] chinese, [1] pinyin, [2] english, [3] spanish, [4] french,
-    [5] portuguese, [6] vietnamese, [7] thai, [8] khmer,
-    [9] indonesian, [10] malay, [11] filipino
+    [5] portuguese
 
 SPANISH (5 columns):
     [0] spanish, [1] english, [2] chinese, [3] pinyin, [4] portuguese
@@ -1080,7 +1079,7 @@ Create your own branch, commit, and PR to main.</div>
     <h4>STAGE 3 OUTPUT - ChineseWords15.csv (Breakout CSV)</h4>
     <p>OUTPUT: Individual CSV file with ALL translations (12 columns for Chinese)</p>
     <table>
-        <tr><th>chinese</th><th>pinyin</th><th>english</th><th>spanish</th><th>french</th><th>portuguese</th><th>vietnamese</th><th>thai</th><th>khmer</th><th>indonesian</th><th>malay</th><th>filipino</th></tr>
+        <tr><th>chinese</th><th>pinyin</th><th>english</th><th>spanish</th><th>french</th><th>portuguese</th></tr>
         <tr><td>猫</td><td>māo</td><td>cat</td><td>gato</td><td>chat</td><td>gato</td><td>con mèo</td><td>แมว</td><td>ឆ្មា</td><td>kucing</td><td>kucing</td><td>pusa</td></tr>
         <tr><td>小猫</td><td>xiǎo māo</td><td>kitten</td><td>gatito</td><td>chaton</td><td>gatinho</td><td>mèo con</td><td>ลูกแมว</td><td>កូនឆ្មា</td><td>anak kucing</td><td>anak kucing</td><td>kuting</td></tr>
     </table>
@@ -1148,7 +1147,7 @@ Python validation (trim + 6 scripts) + Manual review (ALL packs) + Create scorec
 ║  Column 2: english  (EVALUATE - check translation quality)       ║
 ║  Column 3: spanish  (EVALUATE - check translation quality)       ║
 ║  Column 4: french   (EVALUATE - check translation quality)       ║
-║  ...and so on through Column 11 (filipino)                       ║
+║  ...and so on through Column 5 (portuguese)                       ║
 ║                                                                  ║
 ║  YOUR CORE JOB: CRITIQUE existing translations in Columns 1-11.  ║
 ║  Column 0 is already correct. Your job is to evaluate if the     ║
@@ -1334,12 +1333,6 @@ Then check EVERY ROW, EVERY COLUMN:
    - Column 3 (spanish): Does it match the INTENDED MEANING for this theme? Natural?
    - Column 4 (french): Does it match the INTENDED MEANING for this theme? Natural?
    - Column 5 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
-   - Column 6 (vietnamese): Does it match the INTENDED MEANING for this theme?
-   - Column 7 (thai): Does it match the INTENDED MEANING for this theme?
-   - Column 8 (khmer): Does it match the INTENDED MEANING for this theme?
-   - Column 9 (indonesian): Does it match the INTENDED MEANING for this theme?
-   - Column 10 (malay): Does it match the INTENDED MEANING for this theme?
-   - Column 11 (filipino): Does it match the INTENDED MEANING for this theme?
 
 ⚠️⚠️⚠️ THE CRITICAL ISSUE: WRONG MEANINGS FROM AUTO-TRANSLATION ⚠️⚠️⚠️
 
@@ -1528,7 +1521,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
 chinese,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing spaces - should be character-by-character
 chinese,3,3,english,this one here,this,Awkward phrasing - use simpler form
-chinese,3,8,thai,ตัว,ตัว๊,Wrong tone mark
+chinese,23,Greetings,3,pinyin,nǐhǎo,nǐ hǎo,Add space between syllables
 chinese,3,12,portuguese,,tradução,Empty cell - needs translation
 chinese,4,2,pinyin,shí,shì,Wrong tone (shí → shì)
 chinese,4,5,english,[greeting],hello,Has brackets - failed auto-translation
@@ -1624,12 +1617,6 @@ Each Chinese character (with trailing punctuation) = exactly ONE pinyin syllable
 | 4   | spanish    | Translation                  |
 | 5   | french     | Translation                  |
 | 6   | portuguese | Translation                  |
-| 7   | vietnamese | Translation                  |
-| 8   | thai       | Translation                  |
-| 9   | khmer      | Translation                  |
-| 10  | indonesian | Translation                  |
-| 11  | malay      | Translation                  |
-| 12  | filipino   | Translation                  |
 
 UPDATE THE CSV. COMMIT. PR TO MAIN.</div>
 
@@ -1688,7 +1675,7 @@ Python validation (trim + 6 scripts) + Targeted manual review + Apply surgical f
 ║  Column 2: english  (EVALUATE - check translation quality)       ║
 ║  Column 3: spanish  (EVALUATE - check translation quality)       ║
 ║  Column 4: french   (EVALUATE - check translation quality)       ║
-║  ...and so on through Column 11 (filipino)                       ║
+║  ...and so on through Column 5 (portuguese)                       ║
 ║                                                                  ║
 ║  YOUR CORE JOB: CRITIQUE existing translations in Columns 1-11.  ║
 ║  Column 0 is already correct. Your job is to evaluate if the     ║
@@ -2003,12 +1990,6 @@ git push -u origin <branch-name>
 | 4   | spanish    | ✅ YES    | Translation                  |
 | 5   | french     | ✅ YES    | Translation                  |
 | 6   | portuguese | ✅ YES    | Translation                  |
-| 7   | vietnamese | ✅ YES    | Translation                  |
-| 8   | thai       | ✅ YES    | Translation                  |
-| 9   | khmer      | ✅ YES    | Translation                  |
-| 10  | indonesian | ✅ YES    | Translation                  |
-| 11  | malay      | ✅ YES    | Translation                  |
-| 12  | filipino   | ✅ YES    | Translation                  |
 
 === SUCCESS CRITERIA (ALL REQUIRED!) ===
 
@@ -3952,9 +3933,9 @@ git push
 
 === WHAT THE SCRIPTS PRODUCE ===
 
-CHINESE (107 packs → 5 acts, 12 columns):
+CHINESE (107 packs → 5 acts, 6 columns):
 - Jsmodules/act1-foundation.js ... act5-refinement.js
-- Columns: chinese, pinyin, english, spanish, french, portuguese, vietnamese, thai, khmer, indonesian, malay, filipino
+- Columns: chinese, pinyin, english, spanish, french, portuguese
 
 SPANISH (250 packs → 7 acts, 5 columns):
 - Jsmodules/act1-foundation.js ... act7-mastery-fluency.js
