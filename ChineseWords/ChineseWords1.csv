@@ -2,26 +2,26 @@ chinese,pinyin,english,spanish,french,portuguese
 你好,nǐ hǎo,Hello,Hola,Bonjour,Olá
 您好,nín hǎo,Hello,Hola,Bonjour,Olá
 早安,zǎo ān,Good morning,Buen día,Bonjour,Bom dia
-午安,wǔ ān,good afternoon,buenas tardes,bon après-midi,boa tarde
+午安,wǔ ān,Good afternoon,buenas tardes,bon après-midi,boa tarde
 晚安,wǎn ān,Good night,Buenas noches,Bonne nuit,Boa noite
 再见,zài jiàn,goodbye,adiós,au revoir,adeus
 拜拜,bài bài,Bye-Bye,Adiós,Au revoir,Bye Bye
 回头见,huí tóu jiàn,See you later,Hasta luego,À plus tard,Até mais
 谢谢,xiè xiè,Thanks,Gracias,Merci,Obrigado
 多谢,duō xiè,thank you,gracias,merci,obrigado
-不客气,bú kè qì,You're welcome,De nada,Vous êtes les bienvenus,De nada
+不客气,bú kè qì,You're welcome,De nada,De rien,De nada
 对不起,duì bù qǐ,sorry,Lo siento,Désolé,desculpe
 没关系,méi guān xì,It doesn't matter,No importa,Cela n'a pas d'importance,Não importa
 请,qǐng,please,por favor,s'il te plaît,por favor
 欢迎,huān yíng,welcome,bienvenido,accueillir,Bem-vindo
-好久不见,hǎo jiǔ bú jiàn,haven't seen you for a long time,hace mucho que no te veo,je ne t'ai pas vu depuis longtemps,não te vejo há muito tempo
+好久不见,hǎo jiǔ bú jiàn,long time no see,hace mucho que no te veo,je ne t'ai pas vu depuis longtemps,não te vejo há muito tempo
 再会,zài huì,Goodbye,Adiós,Au revoir,Adeus
 保重,bǎo zhòng,Take care of yourself,Cuídate,Prends soin de toi,Cuide-se
 慢走,màn zǒu,take care,cuídate,prends soin de toi,cuide-se
-你好吗,nǐ hǎo ma,Are you OK,Estás bien,Êtes-vous ok,Você está bem
+你好吗,nǐ hǎo ma,How are you?,Estás bien,Êtes-vous ok,Você está bem
 你好啊,nǐ hǎo a,hello,Hola,Bonjour,olá
 您好先生,nín hǎo xiān shēng,hello sir,hola señor,bonjour monsieur,olá senhor
-您好请问,nín hǎo qǐng wèn,hello please,hola por favor,bonjour s'il vous plaît,olá por favor
+您好请问,nín hǎo qǐng wèn,excuse me,disculpe,excusez-moi,com licença
 早安朋友,zǎo ān péng yǒu,Good morning friends,Buenos dias amigos,Bonjour les amis,Bom dia amigos
 说声早安,shuō shēng zǎo ān,say good morning,decir buenos dias,dis bonjour,diga bom dia
 午安各位,wǔ ān gè wèi,Good afternoon everyone,Buenas tardes a todos,Bonjour à tous,Boa tarde a todos
@@ -39,7 +39,7 @@ chinese,pinyin,english,spanish,french,portuguese
 多谢帮忙,duō xiè bāng máng,Thanks for the help,Gracias por la ayuda,Merci pour l'aide,Obrigado pela ajuda
 多谢关心,duō xiè guān xīn,Thank you for your concern,Gracias por tu preocupación,Merci pour votre inquiétude,Obrigado pela sua preocupação
 太不客气了,tài bú kè qì le,You're too kind,Eres muy amable,Vous êtes trop gentil,Você é muito gentil
-别不客气,bié bú kè qì,you're welcome,de nada,vous êtes les bienvenus,de nada
+别不客气,bié bú kè qì,you're welcome,de nada,de rien,de nada
 对不起我迟到了,duì bù qǐ wǒ chí dào le,sorry i'm late,"lo siento, llego tarde",désolé je suis en retard,"desculpe, estou atrasado"
 说声对不起,shuō shēng duì bù qǐ,say sorry,decir lo siento,dire désolé,peça desculpas
 没关系的,méi guān xì de,It's okay,Está bien,C'est bon,Tudo bem
@@ -54,5 +54,5 @@ chinese,pinyin,english,spanish,french,portuguese
 我们再会,wǒ men zài huì,we meet again,nos encontramos de nuevo,nous nous retrouvons,nos encontramos novamente
 保重身体,bǎo zhòng shēn tǐ,Take care of yourself,Cuídate,Prends soin de toi,Cuide-se
 请保重,qǐng bǎo zhòng,please take care,por favor cuídate,s'il te plaît prends soin de toi,por favor tome cuidado
-慢走啊,màn zǒu a,Walk slowly,camina despacio,Marchez lentement,Ande devagar
-请慢走,qǐng màn zǒu,Please walk slowly,Por favor camina despacio,"S'il te plaît, marche lentement",Por favor ande devagar
+慢走啊,màn zǒu a,Take care,cuídate,Prends soin de toi,Cuide-se
+请慢走,qǐng màn zǒu,Take care,Cuídate,Prends soin de toi,Cuide-se

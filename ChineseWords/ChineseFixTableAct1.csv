@@ -1,1 +1,70 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,1,Greetings & Goodbyes,5,english,good afternoon,Good afternoon,Capitalization consistency
+chinese,1,Greetings & Goodbyes,12,french,Vous êtes les bienvenus,De rien,Most common natural response for 'you're welcome'
+chinese,1,Greetings & Goodbyes,17,english,haven't seen you for a long time,long time no see,Most common natural English phrase
+chinese,1,Greetings & Goodbyes,21,english,Are you OK,How are you?,Standard greeting translation for 你好吗
+chinese,1,Greetings & Goodbyes,24,english,hello please,excuse me,Natural English for polite interruption 您好请问
+chinese,1,Greetings & Goodbyes,24,spanish,hola por favor,disculpe,Natural Spanish for polite interruption
+chinese,1,Greetings & Goodbyes,24,french,bonjour s'il vous plaît,excusez-moi,Natural French for polite interruption
+chinese,1,Greetings & Goodbyes,24,portuguese,olá por favor,com licença,Natural Portuguese for polite interruption
+chinese,1,Greetings & Goodbyes,42,french,vous êtes les bienvenus,de rien,Most common natural response for 'you're welcome'
+chinese,1,Greetings & Goodbyes,57,english,Walk slowly,Take care,Idiomatic farewell meaning
+chinese,1,Greetings & Goodbyes,57,spanish,camina despacio,cuídate,Idiomatic farewell meaning
+chinese,1,Greetings & Goodbyes,57,french,Marchez lentement,Prends soin de toi,Idiomatic farewell meaning
+chinese,1,Greetings & Goodbyes,57,portuguese,Ande devagar,Cuide-se,Idiomatic farewell meaning
+chinese,1,Greetings & Goodbyes,58,english,Please walk slowly,Take care,Idiomatic farewell meaning
+chinese,1,Greetings & Goodbyes,58,spanish,Por favor camina despacio,Cuídate,Idiomatic farewell meaning
+chinese,1,Greetings & Goodbyes,58,french,"S'il te plaît, marche lentement",Prends soin de toi,Idiomatic farewell meaning
+chinese,1,Greetings & Goodbyes,58,portuguese,Por favor ande devagar,Cuide-se,Idiomatic farewell meaning
+chinese,2,Personal Pronouns,7,spanish,él,eso,Correct pronoun for 'it' (neuter)
+chinese,2,Personal Pronouns,8,english,us,we,Subject pronoun not object
+chinese,2,Personal Pronouns,9,spanish,tú,vosotros,Plural form for 你们
+chinese,2,Personal Pronouns,9,french,toi,vous,Plural form for 你们
+chinese,2,Personal Pronouns,9,portuguese,você,vocês,Plural form for 你们
+chinese,2,Personal Pronouns,20,english,I do,I'm willing,General meaning not wedding-specific
+chinese,4,Yes No & Responses,18,portuguese,multar,bem,Wrong word - multar is 'to fine' not 'fine/ok'
+chinese,4,Yes No & Responses,29,english,rival,correct,Context meaning is 'right/correct' not 'rival'
+chinese,4,Yes No & Responses,29,spanish,rival,correcto,Context meaning is 'right/correct' not 'rival'
+chinese,4,Yes No & Responses,29,french,rival,correct,Context meaning is 'right/correct' not 'rival'
+chinese,4,Yes No & Responses,29,portuguese,rival,correto,Context meaning is 'right/correct' not 'rival'
+chinese,5,Essential Verbs I,8,portuguese,bebida,beber,Verb form needed not noun
+chinese,5,Essential Verbs I,17,spanish,pararse,estar de pie,More common for 'stand' verb
+chinese,5,Essential Verbs I,17,french,rester,se tenir debout,Correct verb for 'stand'
+chinese,7,Numbers 0-10,14,english,ordinal prefix,number marker,Simpler everyday term
+chinese,7,Numbers 0-10,14,spanish,prefijo ordinal,marcador de número,Simpler everyday term
+chinese,7,Numbers 0-10,14,french,préfixe ordinal,marqueur de nombre,Simpler everyday term
+chinese,7,Numbers 0-10,14,portuguese,prefixo ordinal,marcador de número,Simpler everyday term
+chinese,8,Core Measure Words,2,english,Individual,one,Simpler natural translation for general measure word
+chinese,8,Core Measure Words,3,english,Only,one,Measure word meaning not adverb
+chinese,10,Time Essentials,12,spanish,Hora,Tiempo,Tiempo for general time not clock hour
+chinese,10,Time Essentials,17,english,Right now,immediately,马上 means soon/immediately not right now
+chinese,10,Time Essentials,17,spanish,Ahora mismo,inmediatamente,马上 means soon/immediately not right now
+chinese,10,Time Essentials,17,french,En ce moment,immédiatement,马上 means soon/immediately not right now
+chinese,10,Time Essentials,17,portuguese,Agora,imediatamente,马上 means soon/immediately not right now
+chinese,11,Basic Adjectives I,9,spanish,corto,bajo,Bajo for short in height not length
+chinese,11,Basic Adjectives I,34,spanish,Corto,Bajo,Bajo for short in height not length
+chinese,11,Basic Adjectives I,49,english,Early morning,soon,早日 means 'soon' not 'early morning'
+chinese,11,Basic Adjectives I,49,spanish,Temprano en la mañana,pronto,早日 means 'soon' not 'early morning'
+chinese,11,Basic Adjectives I,49,french,Tôt le matin,bientôt,早日 means 'soon' not 'early morning'
+chinese,11,Basic Adjectives I,49,portuguese,De manhã cedo,em breve,早日 means 'soon' not 'early morning'
+chinese,12,Basic Adjectives II,8,spanish,grasa,gordo,Gordo for fat person not grease substance
+chinese,12,Basic Adjectives II,8,french,graisse,gros,Gros for fat person not grease substance
+chinese,12,Basic Adjectives II,8,portuguese,gordura,gordo,Gordo for fat person not fat substance
+chinese,12,Basic Adjectives II,32,spanish,Grasa,Gordo,Gordo for fat person not grease substance
+chinese,12,Basic Adjectives II,32,french,Graisse,Gros,Gros for fat person not grease substance
+chinese,12,Basic Adjectives II,32,portuguese,Gordura,Gordo,Gordo for fat person not fat substance
+chinese,12,Basic Adjectives II,33,spanish,Grasa,Gordo,Gordo for get fat not grease
+chinese,12,Basic Adjectives II,33,french,Graisse,Gros,Gros for get fat not grease
+chinese,12,Basic Adjectives II,33,portuguese,Gordura,Gordura,Context is gaining weight
+chinese,12,Basic Adjectives II,49,english,Portable,lightweight,轻便 means light and easy not portable
+chinese,12,Basic Adjectives II,49,spanish,Ligero,ligero,Keep ligero meaning light
+chinese,12,Basic Adjectives II,49,french,Léger,léger,Keep léger meaning light
+chinese,12,Basic Adjectives II,49,portuguese,Portátil,leve,Leve for lightweight
+chinese,14,Emergency & Survival,7,english,Fire,firefighting,消防 means firefighting not fire
+chinese,14,Emergency & Survival,7,spanish,Fuego,bomberos,消防 means firefighting not fire
+chinese,14,Emergency & Survival,7,french,Feu,pompiers,消防 means firefighting not fire
+chinese,14,Emergency & Survival,7,portuguese,Fogo,bombeiros,消防 means firefighting not fire
+chinese,14,Emergency & Survival,11,portuguese,Hospitalar,Hospital,Hospital is noun not adjective
+chinese,14,Emergency & Survival,14,spanish,Salir,Salida,Noun form for exit not verb
+chinese,14,Emergency & Survival,14,french,Quitter,Sortie,Noun form for exit not verb
+chinese,14,Emergency & Survival,14,portuguese,Sair,Saída,Noun form for exit not verb
