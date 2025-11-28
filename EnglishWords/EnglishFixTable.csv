@@ -1,49 +1,7 @@
 Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
-english,11,2,spanish,Enero,[NEEDS_REVIEW],Month should be lowercase: 'Enero' → 'enero'
-english,11,2,portuguese,Janeiro,[NEEDS_REVIEW],Month should be lowercase: 'Janeiro' → 'janeiro'
-english,11,3,spanish,Febrero,[NEEDS_REVIEW],Month should be lowercase: 'Febrero' → 'febrero'
-english,11,3,portuguese,Fevereiro,[NEEDS_REVIEW],Month should be lowercase: 'Fevereiro' → 'fevereiro'
-english,11,4,spanish,Marzo,[NEEDS_REVIEW],Month should be lowercase: 'Marzo' → 'marzo'
-english,11,4,portuguese,Março,[NEEDS_REVIEW],Month should be lowercase: 'Março' → 'março'
-english,11,5,spanish,Abril,[NEEDS_REVIEW],Month should be lowercase: 'Abril' → 'abril'
-english,11,6,spanish,Mayo,[NEEDS_REVIEW],Month should be lowercase: 'Mayo' → 'mayo'
-english,11,6,portuguese,Maio,[NEEDS_REVIEW],Month should be lowercase: 'Maio' → 'maio'
-english,11,7,spanish,Junio,[NEEDS_REVIEW],Month should be lowercase: 'Junio' → 'junio'
-english,11,7,portuguese,Junho,[NEEDS_REVIEW],Month should be lowercase: 'Junho' → 'junho'
-english,11,8,spanish,Julio,[NEEDS_REVIEW],Month should be lowercase: 'Julio' → 'julio'
-english,11,8,portuguese,Julho,[NEEDS_REVIEW],Month should be lowercase: 'Julho' → 'julho'
-english,11,9,spanish,Agosto,[NEEDS_REVIEW],Month should be lowercase: 'Agosto' → 'agosto'
-english,11,9,portuguese,Agosto,[NEEDS_REVIEW],Month should be lowercase: 'Agosto' → 'agosto'
-english,11,10,spanish,Septiembre,[NEEDS_REVIEW],Month should be lowercase: 'Septiembre' → 'septiembre'
-english,11,10,portuguese,Setembro,[NEEDS_REVIEW],Month should be lowercase: 'Setembro' → 'setembro'
-english,11,11,spanish,Octubre,[NEEDS_REVIEW],Month should be lowercase: 'Octubre' → 'octubre'
-english,11,12,spanish,Noviembre,[NEEDS_REVIEW],Month should be lowercase: 'Noviembre' → 'noviembre'
-english,11,13,spanish,Diciembre,[NEEDS_REVIEW],Month should be lowercase: 'Diciembre' → 'diciembre'
-english,11,31,spanish,En Mayo,[NEEDS_REVIEW],Month should be lowercase: 'Mayo' → 'mayo'
-english,11,42,portuguese,Novembro obrigado,[NEEDS_REVIEW],Month should be lowercase: 'Novembro' → 'novembro'
-english,44,22,pinyin,ó shì de,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,44,23,pinyin,shì de duì,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,44,24,pinyin,shì de dāng rán,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,44,25,pinyin,shì de yǒu xiào,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,44,26,pinyin,bù bú shì wǒ,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,44,27,pinyin,bù bào qiàn,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,45,23,pinyin,ó hǎo ba,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,45,39,pinyin,ó wǒ míng bái le,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,45,42,pinyin,ń hǎo ba,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,45,45,pinyin,ń yě xǔ,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,69,57,pinyin,chá zhǎo  ATM,chá zhǎo ATM,Contains multiple consecutive spaces
-english,107,40,pinyin,dāng rán ， zhū shén me shí hòu huì fēi,[NEEDS_COMMA_FIX],Space before Chinese comma (should be no space)
-english,132,30,pinyin,xiū gǎi háng wèi ​​,xiū gǎi háng wèi ,Contains Unicode whitespace characters (zero-width spaces)
-english,132,30,pinyin,xiū gǎi háng wèi ​​,[NEEDS_FIX],Syllable mismatch: 4 Chinese chars but 5 pinyin syllables
-english,143,55,pinyin,jí tǐ zhǔ yì  vs,jí tǐ zhǔ yì vs,Contains multiple consecutive spaces
-english,151,18,pinyin,qiú zài nǐ de qiú chǎng shàng suǒ yǐ jué dìng,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,151,34,pinyin,bù guò qǐng chí bǎo liú tài dù,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,151,44,pinyin,guī gēn jié dǐ tā,[NEEDS_COMMA_FIX],Chinese has comma but pinyin missing comma
-english,21,20,chinese,谎言,躺,Wrong meaning: 谎言=falsehood but context (daily actions) = lie down (躺)
-english,21,20,pinyin,huǎng yán,tǎng,Wrong meaning: matches falsehood not lie down (see row 58: lie down=躺下)
-english,21,20,spanish,mentira,acostarse,Wrong meaning: mentira=falsehood but context = lie down (see row 58)
-english,21,20,portuguese,mentira,deitar,Wrong meaning: mentira=falsehood but context = lie down (see row 58)
-english,50,21,chinese,礼篮,洗衣篮,Wrong meaning: 礼篮=gift basket but context (bathroom) = laundry basket (see row 60)
-english,50,21,pinyin,lǐ lán,xǐ yī lán,Wrong meaning: matches gift basket not laundry basket (see row 60: laundry hamper=洗衣篮)
-english,50,21,spanish,cesta,cesto de ropa sucia,Too generic: cesta=basket but context = laundry basket (see row 60)
-english,50,21,portuguese,dificultar,cesto de roupa suja,Wrong word class: dificultar=verb (to hinder) but hamper=noun (basket) (see row 60)
+english,69,56,pinyin,ATM jī,A T M jī,Latin letters need letter-by-letter spacing: ATM → A T M
+english,69,57,pinyin,chá zhǎo ATM,chá zhǎo A T M,Latin letters need letter-by-letter spacing: ATM → A T M
+english,117,24,pinyin,DNA cè shì,D N A cè shì,Latin letters need letter-by-letter spacing: DNA → D N A
+english,117,25,pinyin,DNA xù liè,D N A xù liè,Latin letters need letter-by-letter spacing: DNA → D N A
+english,139,42,pinyin,CT sǎo miáo,C T sǎo miáo,Latin letters need letter-by-letter spacing: CT → C T
+english,143,55,pinyin,jí tǐ zhǔ yì vs,jí tǐ zhǔ yì v s,Latin letters need letter-by-letter spacing: vs → v s

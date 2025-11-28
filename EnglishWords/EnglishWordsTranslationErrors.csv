@@ -19,7 +19,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 18,Essential Verbs: Be & Have,Act I: Foundation,,None
 19,Essential Verbs: Go & Come,Act I: Foundation,,None
 20,Essential Verbs: Common Actions,Act I: Foundation,,None
-21,Essential Verbs: Daily Actions,Act I: Foundation,1,"Row 20 chinese: wrong meaning (谎言=falsehood, should be 躺=lie down)"
+21,Essential Verbs: Daily Actions,Act I: Foundation,,"Row 20 chinese: wrong meaning (谎言=falsehood, should be 躺=lie down)"
 22,Essential Verbs: Communication,Act I: Foundation,,None
 23,Irregular Verbs 1,Act I: Foundation,,None
 24,Irregular Verbs 2,Act I: Foundation,,None
@@ -48,7 +48,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 47,More Transportation,Act II: Building Blocks,,None
 48,Furniture,Act II: Building Blocks,,None
 49,Kitchen Items,Act II: Building Blocks,,None
-50,Bathroom Items,Act II: Building Blocks,3,"Row 21: chinese 礼篮→洗衣篮 (gift basket→laundry basket); spanish cesta→cesto de ropa sucia (generic→specific); portuguese dificultar→cesto de roupa suja (verb→noun)"
+50,Bathroom Items,Act II: Building Blocks,,Row 21: chinese 礼篮→洗衣篮 (gift basket→laundry basket); spanish cesta→cesto de ropa sucia (generic→specific); portuguese dificultar→cesto de roupa suja (verb→noun)
 51,Household Chores,Act II: Building Blocks,,None
 52,More Food,Act II: Building Blocks,,None
 53,Fruits,Act II: Building Blocks,,None
@@ -67,7 +67,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 66,Personality,Act II: Building Blocks,,None
 67,Physical Appearance,Act II: Building Blocks,,None
 68,Shopping,Act II: Building Blocks,,None
-69,Money & Banking,Act II: Building Blocks,,Multiple spaces
+69,Money & Banking,Act II: Building Blocks,2,"Row 56: ATM letter-by-letter spacing (ATM jī → A T M jī); Row 57: ATM letter-by-letter spacing (chá zhǎo ATM → chá zhǎo A T M) - FIXED"
 70,Health,Act II: Building Blocks,,None
 71,Technology,Act II: Building Blocks,,None
 72,Verbs of Motion,Act II: Building Blocks,,None
@@ -104,8 +104,8 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 103,Opinions & Arguments,Act III: Everyday Life,,None
 104,Problems & Solutions,Act III: Everyday Life,,None
 105,Describing Trends,Act III: Everyday Life,,None
-106,Common Idioms 1,Act III: Everyday Life,0,"Structural: Missing 15 rows (45/60 present)"
-107,Common Idioms 2,Act III: Everyday Life,0,"Structural: Missing 15 rows (45/60 present); Pinyin comma issues"
+106,Common Idioms 1,Act III: Everyday Life,,Structural: Missing 15 rows (45/60 present)
+107,Common Idioms 2,Act III: Everyday Life,,Structural: Missing 15 rows (45/60 present); Pinyin comma issues
 108,Phrasal Verbs 3,Act III: Everyday Life,,None
 109,Phrasal Verbs 4,Act III: Everyday Life,,None
 110,Collocations - Make & Do,Act III: Everyday Life,,None
@@ -115,7 +115,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 114,Finance Basics,Act IV: Expanding Horizons,,None
 115,Marketing & Sales,Act IV: Expanding Horizons,,None
 116,Science Basics,Act IV: Expanding Horizons,,None
-117,Biology Basics,Act IV: Expanding Horizons,,None
+117,Biology Basics,Act IV: Expanding Horizons,2,"Row 24: DNA letter-by-letter spacing (DNA cè shì → D N A cè shì); Row 25: DNA letter-by-letter spacing (DNA xù liè → D N A xù liè) - FIXED"
 118,Basic Chemistry & Physics,Act IV: Expanding Horizons,,None
 119,Health & Wellness,Act IV: Expanding Horizons,,None
 120,Mental Health Basics,Act IV: Expanding Horizons,,None
@@ -137,11 +137,11 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 136,Academic Adjectives,Act V: Advanced Mastery,,None
 137,Academic Adjectives 2,Act V: Advanced Mastery,,None
 138,Everyday Legal,Act V: Advanced Mastery,,None
-139,Everyday Medical,Act V: Advanced Mastery,,None
+139,Everyday Medical,Act V: Advanced Mastery,1,"Row 42: CT letter-by-letter spacing (CT sǎo miáo → C T sǎo miáo) - FIXED"
 140,Everyday Finance,Act V: Advanced Mastery,,None
 141,Research & Statistics,Act V: Advanced Mastery,,None
 142,Psychology Basics,Act V: Advanced Mastery,,None
-143,Sociology Basics,Act V: Advanced Mastery,,Multiple spaces
+143,Sociology Basics,Act V: Advanced Mastery,1,"Row 55: vs letter-by-letter spacing (jí tǐ zhǔ yì vs → jí tǐ zhǔ yì v s) - FIXED"
 144,Critical Thinking,Act V: Advanced Mastery,,None
 145,Debate & Argument,Act V: Advanced Mastery,,None
 146,Negotiation,Act V: Advanced Mastery,,None
@@ -149,8 +149,8 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 148,Business Advanced,Act V: Advanced Mastery,,None
 149,Environmental Science,Act V: Advanced Mastery,,None
 150,Literary Devices,Act V: Advanced Mastery,,None
-151,Advanced Idioms,Act V: Advanced Mastery,0,"Structural: Missing 15 rows (45/60 present); Pinyin comma issues"
-152,Business Idioms,Act V: Advanced Mastery,0,"Structural: Missing 15 rows (45/60 present)"
+151,Advanced Idioms,Act V: Advanced Mastery,,Structural: Missing 15 rows (45/60 present); Pinyin comma issues
+152,Business Idioms,Act V: Advanced Mastery,,Structural: Missing 15 rows (45/60 present)
 153,Formal Connectors,Act V: Advanced Mastery,,None
 154,Advanced Verbs,Act V: Advanced Mastery,,None
 155,Nuanced Adjectives,Act V: Advanced Mastery,,None
