@@ -45,130 +45,125 @@ LANGUAGE_CONFIG = {
 }
 
 
-def parse_chinese_sequences(text):
+def parse_chinese_units(text):
     """
-    Parse Chinese text into Latin and Chinese sequences.
-    Returns list of {text, type} objects where type is 'latin' or 'chinese'.
+    Parse Chinese text into CHARACTER UNITS (char/block + attached punctuation).
 
-    Example:
-      "ATM机" → [{'text': 'ATM', 'type': 'latin'}, {'text': '机', 'type': 'chinese'}]
+    CRITICAL RULES:
+    1. Chinese character = 1 unit (can have attached punctuation)
+    2. Latin block (consecutive letters) = 1 unit (can have attached punctuation)
+    3. Punctuation (，。！？) attaches to the PRECEDING unit
+
+    Examples:
+      "早上好，先生" → ['早', '上', '好，', '先', '生'] (5 units)
+      "T恤" → ['T', '恤'] (2 units: Latin block + Chinese char)
+      "WhatsApp消息" → ['WhatsApp', '消', '息'] (3 units: Latin block + 2 Chinese)
+
+    Returns list of character units (strings).
     """
     if not text:
         return []
 
-    seqs = []
-    curr = ''
-    curr_type = None
+    units = []
+    i = 0
 
-    for ch in text:
-        if re.match(r'[A-Za-z]', ch):
-            ch_type = 'latin'
-        elif '\u4e00' <= ch <= '\u9fff':  # CJK Unified Ideographs
-            ch_type = 'chinese'
+    while i < len(text):
+        ch = text[i]
+
+        if '\u4e00' <= ch <= '\u9fff':
+            # Chinese character - 1 unit
+            unit = ch
+            i += 1
+
+            # Attach any following punctuation
+            while i < len(text) and not (('\u4e00' <= text[i] <= '\u9fff') or text[i].isalpha() or text[i].isspace()):
+                unit += text[i]
+                i += 1
+
+            units.append(unit)
+
+        elif ch.isalpha() and ord(ch) < 128:
+            # Latin block - group consecutive LATIN letters into 1 unit
+            # (ord < 128 ensures we only match ASCII Latin, not Chinese which also returns isalpha())
+            unit = ''
+            while i < len(text) and text[i].isalpha() and ord(text[i]) < 128:
+                unit += text[i]
+                i += 1
+
+            # Attach any following punctuation
+            while i < len(text) and not (('\u4e00' <= text[i] <= '\u9fff') or (text[i].isalpha() and ord(text[i]) < 128) or text[i].isspace()):
+                unit += text[i]
+                i += 1
+
+            units.append(unit)
+
+        elif ch.isspace():
+            # Skip spaces (they separate units but aren't units themselves)
+            i += 1
         else:
-            # Punctuation - attach to current sequence
-            if curr_type:
-                curr += ch
-                continue
-            else:
-                ch_type = 'other'
+            # Orphan punctuation (no preceding character) - skip it
+            i += 1
 
-        if ch_type != curr_type and curr:
-            if curr_type in ('latin', 'chinese'):
-                seqs.append({'text': curr, 'type': curr_type})
-            curr = ''
-
-        if ch_type in ('latin', 'chinese'):
-            curr += ch
-            curr_type = ch_type
-
-    if curr and curr_type in ('latin', 'chinese'):
-        seqs.append({'text': curr, 'type': curr_type})
-
-    return seqs
-
-
-def parse_pinyin_sequences(pinyin_text, chinese_seqs):
-    """
-    Parse pinyin based on Chinese structure.
-    Returns list of {text, type} objects.
-
-    For each Latin sequence in Chinese: expect 1 token in pinyin
-    For each Chinese sequence: expect N syllables (N = character count)
-
-    If not enough tokens, returns '?' for missing syllables.
-    """
-    if not pinyin_text:
-        return []
-
-    tokens = pinyin_text.strip().split()
-    result = []
-    idx = 0
-
-    for seq in chinese_seqs:
-        if seq['type'] == 'latin':
-            # Expect 1 token for Latin block
-            result.append({
-                'text': tokens[idx] if idx < len(tokens) else '?',
-                'type': 'latin'
-            })
-            idx += 1
-        elif seq['type'] == 'chinese':
-            # Expect N syllables (N = character count)
-            char_count = len(seq['text'])
-            syls = []
-            for _ in range(char_count):
-                syls.append(tokens[idx] if idx < len(tokens) else '?')
-                idx += 1
-            result.append({
-                'text': ' '.join(syls),
-                'type': 'pinyin'
-            })
-
-    return result
+    return units
 
 
 def check_for_question_marks(chinese_text, pinyin_text):
     """
     Check if coupling Chinese + pinyin would produce '?' syllables.
-    Returns (has_mismatch, expected_count, actual_count, missing_syllables).
 
-    A '?' indicates CSV data error - missing pinyin syllables.
+    ALGORITHM:
+    1. Parse Chinese into CHARACTER UNITS (char + attached punctuation)
+    2. Split pinyin into tokens (space-separated)
+    3. Each character unit MUST map to exactly 1 pinyin token
+    4. If not enough tokens → '?' would appear → CSV ERROR
+
+    Example:
+      Chinese: "早上好，先生"
+      Units: ['早', '上', '好，', '先', '生'] (5 units)
+      Pinyin: "zǎo shàng hǎo， xiān shēng" (5 tokens)
+      Result: MATCH ✅
+
+      Chinese: "早上好，先生"
+      Units: ['早', '上', '好，', '先', '生'] (5 units)
+      Pinyin: "zǎo shàng hǎo xiān shēng" (5 tokens, but comma missing!)
+      Result: MISMATCH ❌ (comma position wrong)
+
+    Returns (has_mismatch, expected_count, actual_count, details).
     """
     if not chinese_text or not pinyin_text:
-        return False, 0, 0, []
+        return False, 0, 0, "Empty input"
 
-    # Parse Chinese and pinyin
-    chinese_seqs = parse_chinese_sequences(chinese_text)
-    pinyin_seqs = parse_pinyin_sequences(pinyin_text, chinese_seqs)
+    # Parse Chinese into character units
+    chinese_units = parse_chinese_units(chinese_text)
 
-    # Count expected vs actual syllables
-    expected = 0
-    actual = 0
-    missing = []
-
-    for i, ch_seq in enumerate(chinese_seqs):
-        if ch_seq['type'] == 'latin':
-            expected += 1
-        elif ch_seq['type'] == 'chinese':
-            expected += len(ch_seq['text'])
-
-    # Count actual syllables and detect '?'
+    # Split pinyin into tokens
     pinyin_tokens = pinyin_text.strip().split()
+
+    expected = len(chinese_units)
     actual = len(pinyin_tokens)
 
-    # Check if any pinyin sequence contains '?'
-    has_question_mark = False
-    for py_seq in pinyin_seqs:
-        if '?' in py_seq['text']:
-            has_question_mark = True
-            # Find which syllables are missing
-            syls = py_seq['text'].split()
-            for j, syl in enumerate(syls):
-                if syl == '?':
-                    missing.append(f"syllable #{j+1}")
+    # Check if counts match
+    if expected != actual:
+        return True, expected, actual, f"Expected {expected} units, got {actual} tokens"
 
-    return has_question_mark, expected, actual, missing
+    # Counts match, but check token-by-token for content mismatches
+    # (e.g., comma in wrong position)
+    mismatches = []
+    for i, (unit, token) in enumerate(zip(chinese_units, pinyin_tokens)):
+        # Extract the base character (without punctuation)
+        base_char = unit[0] if unit else ''
+
+        # Check if both have punctuation or both don't
+        unit_has_punct = len(unit) > 1 and not unit[-1].isalnum()
+        token_has_punct = len(token) > 1 and not token[-1].isalnum()
+
+        if unit_has_punct != token_has_punct:
+            mismatches.append(f"Position {i+1}: '{unit}' vs '{token}' (punctuation mismatch)")
+
+    if mismatches:
+        return True, expected, actual, '; '.join(mismatches)
+
+    return False, expected, actual, "OK"
 
 
 def check_csv_file(filepath, config):
@@ -196,8 +191,8 @@ def check_csv_file(filepath, config):
         if not chinese_text or not pinyin_text:
             continue
 
-        # Check for mismatches (would produce '?')
-        has_mismatch, expected, actual, missing = check_for_question_marks(chinese_text, pinyin_text)
+        # Check for mismatches using character UNIT approach
+        has_mismatch, expected, actual, details = check_for_question_marks(chinese_text, pinyin_text)
 
         if has_mismatch:
             issues.append({
@@ -205,9 +200,9 @@ def check_csv_file(filepath, config):
                 'row': row_idx,
                 'chinese': chinese_text,
                 'pinyin': pinyin_text,
-                'expected_syllables': expected,
-                'actual_syllables': actual,
-                'missing': ', '.join(missing),
+                'expected_units': expected,
+                'actual_tokens': actual,
+                'details': details,
                 'severity': 'CRITICAL'
             })
 
@@ -241,16 +236,20 @@ def check_language(language):
     print(f"  Total mismatches: {len(all_issues)}")
 
     if all_issues:
-        print(f"\n🚨 CRITICAL - Pinyin/Character Count Mismatches:")
+        print(f"\n🚨 CRITICAL - Pinyin/Character Unit Mismatches:")
         print(f"   These indicate CSV data ERRORS that need manual fixing!")
         print()
 
         for issue in all_issues[:20]:  # Limit to 20
+            if 'error' in issue:
+                print(f"  {issue['file']}: {issue['error']}")
+                continue
+
             print(f"  {issue['file']}, Row {issue['row']}:")
             print(f"    Chinese: \"{issue['chinese']}\"")
             print(f"    Pinyin:  \"{issue['pinyin']}\"")
-            print(f"    Expected {issue['expected_syllables']} syllables, got {issue['actual_syllables']}")
-            print(f"    Missing: {issue['missing']}")
+            print(f"    Expected {issue['expected_units']} units, got {issue['actual_tokens']} tokens")
+            print(f"    Issue: {issue['details']}")
             print()
 
         if len(all_issues) > 20:
@@ -263,13 +262,17 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python check_pinyin_mismatch.py [chinese|spanish|english|all]")
         print("")
-        print("This script detects pinyin/character count mismatches that would")
-        print("produce '?' placeholders during character+pinyin coupling.")
+        print("This script detects pinyin/character UNIT mismatches using the")
+        print("character unit approach (not syllable-based).")
         print("")
-        print("A '?' means the CSV data has ERRORS:")
-        print("  - Missing pinyin syllables")
-        print("  - Extra pinyin syllables")
-        print("  - Incorrect pairing")
+        print("CHARACTER UNIT = character + attached punctuation")
+        print("  Example: '早上好，先生' → ['早', '上', '好，', '先', '生']")
+        print("  5 character units → MUST have 5 pinyin tokens")
+        print("")
+        print("Detects:")
+        print("  - Missing/extra pinyin tokens")
+        print("  - Punctuation in wrong position (好， vs 好)")
+        print("  - Incorrect character-to-token pairing")
         print("")
         print("Examples:")
         print("  python PythonHelpers/check_pinyin_mismatch.py spanish")
