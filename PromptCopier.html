@@ -84,7 +84,7 @@ Python validation scripts in PythonHelpers/:
 - check_base_word_duplicates.py    - Stage 1: No base word in multiple packs
 - check_combined_across_packs.py   - Stage 2+: Check combined array duplicates
 - check_combined_duplicates.py     - Stage 2: Within-pack duplicate check
-- validate_pinyin.py               - Stage 3+: 1 pinyin syllable per character
+- validate_pinyin.py               - Stage 3+: Character-by-character pinyin mapping
 - validate_overview_csvs.py        - General: CSV structure validation
 
 THE 4 STAGES:
@@ -105,7 +105,7 @@ Stage 3: BREAKOUT CSV CREATION
     - Input:  Combined_Words (Base + Example merged)
     - Output: Individual CSV files per pack (e.g., ChineseWords1.csv)
     - Goal:   Full translations in all target languages
-    - Check:  Pinyin syllable count matches Chinese character count
+    - Check:  Character-by-character pinyin mapping (punctuation attached)
 
 Stage 4: JAVASCRIPT MODULE GENERATION
     - Input:  Breakout CSVs (ChineseWords1.csv, etc.)
@@ -198,7 +198,7 @@ ENGLISH (5 columns):
 
 PINYIN CRITICAL RULE:
 ---------------------
-Each Chinese character must have exactly ONE pinyin syllable, separated by spaces.
+Each Chinese character (with trailing punctuation) must map to exactly ONE pinyin syllable (with same punctuation).
 This allows the game UI to display pinyin directly under each character.
 
     CORRECT:   猴子 → "hóu zi"    (2 chars = 2 syllables)
@@ -1084,7 +1084,7 @@ Create your own branch, commit, and PR to main.</div>
         <tr><td>猫</td><td>māo</td><td>cat</td><td>gato</td><td>chat</td><td>gato</td><td>con mèo</td><td>แมว</td><td>ឆ្មា</td><td>kucing</td><td>kucing</td><td>pusa</td></tr>
         <tr><td>小猫</td><td>xiǎo māo</td><td>kitten</td><td>gatito</td><td>chaton</td><td>gatinho</td><td>mèo con</td><td>ลูกแมว</td><td>កូនឆ្មា</td><td>anak kucing</td><td>anak kucing</td><td>kuting</td></tr>
     </table>
-    <p>CRITICAL: Pinyin must have 1 syllable per character with spaces! 小猫 = "xiǎo māo" (2 chars = 2 syllables)</p>
+    <p>CRITICAL: Character-by-character pinyin mapping with punctuation attached! 早上好， = "zǎo shàng hǎo，" (3 chars + comma → 3 syllables + comma)</p>
 
     <h4>STAGE 3 OUTPUT - SpanishWords8.csv (5 columns for Spanish)</h4>
     <table>
@@ -1290,7 +1290,7 @@ FOR EACH PACK, use Read tool: Read("ChineseWords/ChineseWords{N}.csv")
 
 Then check EVERY ROW, EVERY COLUMN:
    - Column 0 (chinese): SACRED - Skip this. It's correct from Combined_Words.
-   - Column 1 (pinyin): 1 syllable per character? Correct tones? Spaces between syllables? COMMA PLACEMENT CORRECT?
+   - Column 1 (pinyin): Character-by-character mapping? Correct tones? Punctuation attached correctly?
    - Column 2 (english): Does it match the INTENDED MEANING for this theme? Natural?
    - Column 3 (spanish): Does it match the INTENDED MEANING for this theme? Natural?
    - Column 4 (french): Does it match the INTENDED MEANING for this theme? Natural?
@@ -1320,25 +1320,37 @@ Column 0: 叉子 (fork) ← CORRECT word for theme (from Combined_Words)
 Column 3 (spanish): "bifurcación" ← WRONG! (fork in road)
 Column 3 SHOULD BE: "tenedor" ← CORRECT! (eating utensil)
 
-⚠️⚠️⚠️ PINYIN COMMA CONVENTION - CRITICAL! ⚠️⚠️⚠️
+⚠️⚠️⚠️ CHARACTER-BY-CHARACTER PINYIN MAPPING - CRITICAL! ⚠️⚠️⚠️
 
-Commas in pinyin MUST align with commas in Chinese characters!
+MAPPING RULE:
+Each Chinese character (with trailing punctuation) → one pinyin syllable (with same punctuation)
 
-✅ CORRECT:
-Chinese: 是的，先生
-Pinyin:  shì de，xiān shēng
-(Comma appears AFTER "的" and AFTER "de" - same block)
+✅ CORRECT EXAMPLE:
+Chinese: 早上好，先生
+Pinyin:  zǎo shàng hǎo， xiān shēng
 
-❌ WRONG:
-Chinese: 是的，先生
-Pinyin:  shì de, xiān shēng
-(Space before comma in pinyin - won't align!)
+Character-by-character breakdown:
+早   → zǎo
+上   → shàng
+好， → hǎo，   (punctuation attached!)
+先   → xiān
+生   → shēng
+
+❌ WRONG EXAMPLES:
+Chinese: 早上好，先生
+Pinyin:  zǎo shàng hǎo, xiān shēng  ❌ (Latin comma instead of Chinese comma)
+
+Chinese: 早上好，先生
+Pinyin:  zǎo shàng hǎo ， xiān shēng  ❌ (space before comma)
+
+Chinese: 早上好，先生
+Pinyin:  zǎoshànghǎo， xiān shēng  ❌ (missing spaces between syllables)
 
 WHY: Pinyin displays directly under Chinese characters in the game.
-Comma placement must match for vertical alignment.
+Each character must map to exactly one syllable with matching punctuation.
 
-RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
-NO space before comma in pinyin!
+RULE: Punctuation sticks to character → punctuation sticks to syllable
+`好，` → `hǎo，` (not `hǎo ，` or `hǎo,`)
 
 ⚠️⚠️⚠️ LATIN TEXT IN CHINESE COLUMN - CRITICAL EVALUATION! ⚠️⚠️⚠️
 
@@ -1372,24 +1384,34 @@ HOW TO CHECK:
 3. If it's NOT in the loanword list above → ❌ LIKELY TRANSLATION FAILURE
 4. If unsure → Run: python PythonHelpers/check_latin_in_chinese.py chinese
 
-⚠️⚠️⚠️ SPACING RULE FOR MIXED LATIN+CHINESE ⚠️⚠️⚠️
+⚠️⚠️⚠️ LATIN LETTERS IN CHINESE - CHARACTER-BY-CHARACTER! ⚠️⚠️⚠️
 
-When Chinese contains Latin + Chinese characters, pinyin MUST have space between:
+When Chinese contains Latin letters, each Latin LETTER maps to itself:
 
-RULE: [Latin block] SPACE [pinyin syllables]
+RULE: Latin letters map LETTER-BY-LETTER (A→A, T→T, M→M)
 
-✅ CORRECT SPACING:
-Chinese: T恤              Pinyin: T xù              (space between T and xù)
-Chinese: ATM机            Pinyin: ATM jī            (space between ATM and jī)
-Chinese: 在WhatsApp上     Pinyin: zài WhatsApp shàng (spaces around WhatsApp)
-Chinese: DNA测试          Pinyin: DNA cè shì        (space between DNA and cè)
+✅ CORRECT MAPPING:
+Chinese: ATM机
+Mapping: A → A,  T → T,  M → M,  机 → jī
+Pinyin:  A T M jī            (each letter separate with spaces!)
 
-❌ WRONG SPACING (causes parser errors):
-Chinese: T恤              Pinyin: Txù               (no space → parser fails → "?")
-Chinese: ATM机            Pinyin: ATMjī             (no space → parser fails)
-Chinese: 在WhatsApp上     Pinyin: zàiWhatsAppshàng  (no spaces → parser fails)
+Chinese: T恤
+Mapping: T → T,  恤 → xù
+Pinyin:  T xù                (letter T maps to itself)
 
-IF YOU SEE "?" IN COUPLED OUTPUT → PINYIN SPACING ERROR!
+Chinese: 在WhatsApp上
+Mapping: 在→zài,  W→W, h→h, a→a, t→t, s→s, A→A, p→p, p→p,  上→shàng
+Pinyin:  zài W h a t s A p p shàng   (each letter separate!)
+
+❌ WRONG MAPPING:
+Chinese: ATM机
+Pinyin:  ATM jī              ❌ (ATM should be "A T M" - letter-by-letter!)
+
+Chinese: 在WhatsApp上
+Pinyin:  zài WhatsApp shàng  ❌ (WhatsApp should be "W h a t s A p p")
+
+WHY: The game renders each character/letter in a separate block.
+Latin letters must have spaces between them just like Chinese syllables.
 
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
@@ -1398,7 +1420,7 @@ QUALITY CHECK FOR EACH TRANSLATION:
 □ Would a NATIVE SPEAKER actually use this phrase?
 □ Is the grammar CORRECT?
 □ Are special characters/accents CORRECT?
-□ Pinyin commas aligned with Chinese commas? (的，→ de，)
+□ Character-by-character pinyin mapping with punctuation attached? (好，→ hǎo，)
 
 SCORING SCALE:
   10 = Perfect (no issues at all - every translation is excellent)
@@ -1463,7 +1485,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 
 === EXAMPLE: ChineseFixTable.csv ===
 Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing space between syllables
+chinese,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing spaces - should be character-by-character
 chinese,3,3,english,this one here,this,Awkward phrasing - use simpler form
 chinese,3,8,thai,ตัว,ตัว๊,Wrong tone mark
 chinese,3,12,portuguese,,tradução,Empty cell - needs translation
@@ -1535,7 +1557,7 @@ After updating both CSVs, display this summary:
 ⚠️⚠️⚠️ If "Fixes APPLIED" is ✗, you have FAILED THE TASK! ⚠️⚠️⚠️
 
 === PINYIN RULE REFERENCE ===
-Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
+Each Chinese character (with trailing punctuation) = exactly ONE pinyin syllable (with same punctuation).
 ✓ CORRECT: 猴子 → hóu zi (2 chars = 2 syllables with space)
 ✗ WRONG: 猴子 → hóuzi (missing space!)
 
@@ -1543,7 +1565,7 @@ Each Chinese character = exactly ONE pinyin syllable, separated by spaces.
 | Col | Name       | Notes                        |
 |-----|------------|------------------------------|
 | 1   | chinese    | Must match Overview          |
-| 2   | pinyin     | 1 syllable per character     |
+| 2   | pinyin     | Char-by-char mapping (punctuation attached) |
 | 3   | english    | Translation                  |
 | 4   | spanish    | Translation                  |
 | 5   | french     | Translation                  |
@@ -1760,8 +1782,8 @@ For EACH pack with issues:
 | Check | Description |
 |-------|-------------|
 | 🔒 NEVER change Column 1 | chinese column is SACRED - only fix translations (columns 2-12) |
-| ⚠️ Pinyin comma rule | Commas align: 的，→ de，(no space before comma) |
-| ⚠️ Pinyin spacing | 1 Chinese char = 1 pinyin syllable with spaces: 你好 → nǐ hǎo |
+| ⚠️ Pinyin mapping | Character-by-character with punctuation attached: 好，→ hǎo， |
+| ⚠️ Latin letters | Letter-by-letter mapping: ATM机 → A T M jī |
 | ⚠️ Theme matching | Check if TRANSLATION matches intended meaning for pack theme |
 | ⚠️ Empty cells | Record as empty Old_Value, provide New_Value |
 
@@ -1845,7 +1867,7 @@ git push -u origin <branch-name>
 | Col | Name       | Editable? | Notes                        |
 |-----|------------|-----------|------------------------------|
 | 1   | chinese    | 🔒 NEVER  | Sacred - matches Overview    |
-| 2   | pinyin     | ✅ YES    | 1 syllable per character     |
+| 2   | pinyin     | ✅ YES    | Char-by-char mapping (punctuation attached) |
 | 3   | english    | ✅ YES    | Translation                  |
 | 4   | spanish    | ✅ YES    | Translation                  |
 | 5   | french     | ✅ YES    | Translation                  |
@@ -2059,7 +2081,7 @@ Then check EVERY ROW, EVERY COLUMN:
    - Column 0 (spanish): SACRED - Skip this. It's correct from Combined_Words.
    - Column 1 (english): Does it match the INTENDED MEANING for this theme? Natural?
    - Column 2 (chinese): Does it match the INTENDED MEANING for this theme? Simplified only?
-   - Column 3 (pinyin): 1 syllable per character? Correct tones? Spaces? COMMA PLACEMENT CORRECT?
+   - Column 3 (pinyin): Character-by-character mapping? Correct tones? Punctuation attached correctly?
    - Column 4 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
 
 ⚠️⚠️⚠️ THE CRITICAL ISSUE: WRONG MEANINGS FROM AUTO-TRANSLATION ⚠️⚠️⚠️
@@ -2080,25 +2102,37 @@ Column 0: "copa" ← CORRECT word for theme (wine glass, from Combined_Words)
 Column 1 (english): "trophy" ← WRONG! (copa = trophy in sports context)
 Column 1 SHOULD BE: "wine glass" ← CORRECT! (drinking vessel)
 
-⚠️⚠️⚠️ PINYIN COMMA CONVENTION - CRITICAL! ⚠️⚠️⚠️
+⚠️⚠️⚠️ CHARACTER-BY-CHARACTER PINYIN MAPPING - CRITICAL! ⚠️⚠️⚠️
 
-Commas in pinyin MUST align with commas in Chinese characters!
+MAPPING RULE:
+Each Chinese character (with trailing punctuation) → one pinyin syllable (with same punctuation)
 
-✅ CORRECT:
-Chinese: 是的，先生
-Pinyin:  shì de，xiān shēng
-(Comma appears AFTER "的" and AFTER "de" - same block)
+✅ CORRECT EXAMPLE:
+Chinese: 早上好，先生
+Pinyin:  zǎo shàng hǎo， xiān shēng
 
-❌ WRONG:
-Chinese: 是的，先生
-Pinyin:  shì de, xiān shēng
-(Space before comma in pinyin - won't align!)
+Character-by-character breakdown:
+早   → zǎo
+上   → shàng
+好， → hǎo，   (punctuation attached!)
+先   → xiān
+生   → shēng
+
+❌ WRONG EXAMPLES:
+Chinese: 早上好，先生
+Pinyin:  zǎo shàng hǎo, xiān shēng  ❌ (Latin comma instead of Chinese comma)
+
+Chinese: 早上好，先生
+Pinyin:  zǎo shàng hǎo ， xiān shēng  ❌ (space before comma)
+
+Chinese: 早上好，先生
+Pinyin:  zǎoshànghǎo， xiān shēng  ❌ (missing spaces between syllables)
 
 WHY: Pinyin displays directly under Chinese characters in the game.
-Comma placement must match for vertical alignment.
+Each character must map to exactly one syllable with matching punctuation.
 
-RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
-NO space before comma in pinyin!
+RULE: Punctuation sticks to character → punctuation sticks to syllable
+`好，` → `hǎo，` (not `hǎo ，` or `hǎo,`)
 
 ⚠️⚠️⚠️ LATIN TEXT IN CHINESE COLUMN - CRITICAL EVALUATION! ⚠️⚠️⚠️
 
@@ -2132,24 +2166,34 @@ HOW TO CHECK:
 3. If it's NOT in the loanword list above → ❌ LIKELY TRANSLATION FAILURE
 4. If unsure → Run: python PythonHelpers/check_latin_in_chinese.py spanish
 
-⚠️⚠️⚠️ SPACING RULE FOR MIXED LATIN+CHINESE ⚠️⚠️⚠️
+⚠️⚠️⚠️ LATIN LETTERS IN CHINESE - CHARACTER-BY-CHARACTER! ⚠️⚠️⚠️
 
-When Chinese contains Latin + Chinese characters, pinyin MUST have space between:
+When Chinese contains Latin letters, each Latin LETTER maps to itself:
 
-RULE: [Latin block] SPACE [pinyin syllables]
+RULE: Latin letters map LETTER-BY-LETTER (A→A, T→T, M→M)
 
-✅ CORRECT SPACING:
-Chinese: T恤              Pinyin: T xù              (space between T and xù)
-Chinese: ATM机            Pinyin: ATM jī            (space between ATM and jī)
-Chinese: 在WhatsApp上     Pinyin: zài WhatsApp shàng (spaces around WhatsApp)
-Chinese: DNA测试          Pinyin: DNA cè shì        (space between DNA and cè)
+✅ CORRECT MAPPING:
+Chinese: ATM机
+Mapping: A → A,  T → T,  M → M,  机 → jī
+Pinyin:  A T M jī            (each letter separate with spaces!)
 
-❌ WRONG SPACING (causes parser errors):
-Chinese: T恤              Pinyin: Txù               (no space → parser fails → "?")
-Chinese: ATM机            Pinyin: ATMjī             (no space → parser fails)
-Chinese: 在WhatsApp上     Pinyin: zàiWhatsAppshàng  (no spaces → parser fails)
+Chinese: T恤
+Mapping: T → T,  恤 → xù
+Pinyin:  T xù                (letter T maps to itself)
 
-IF YOU SEE "?" IN COUPLED OUTPUT → PINYIN SPACING ERROR!
+Chinese: 在WhatsApp上
+Mapping: 在→zài,  W→W, h→h, a→a, t→t, s→s, A→A, p→p, p→p,  上→shàng
+Pinyin:  zài W h a t s A p p shàng   (each letter separate!)
+
+❌ WRONG MAPPING:
+Chinese: ATM机
+Pinyin:  ATM jī              ❌ (ATM should be "A T M" - letter-by-letter!)
+
+Chinese: 在WhatsApp上
+Pinyin:  zài WhatsApp shàng  ❌ (WhatsApp should be "W h a t s A p p")
+
+WHY: The game renders each character/letter in a separate block.
+Latin letters must have spaces between them just like Chinese syllables.
 
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
@@ -2158,7 +2202,7 @@ QUALITY CHECK FOR EACH TRANSLATION:
 □ Would a NATIVE SPEAKER actually use this phrase?
 □ Is the grammar CORRECT?
 □ Are special characters/accents CORRECT? (á, é, í, ó, ú, ñ, ü)
-□ Pinyin commas aligned with Chinese commas? (的，→ de，)
+□ Character-by-character pinyin mapping with punctuation attached? (好，→ hǎo，)
 
 SCORING SCALE:
   10 = Perfect (no issues at all - every translation is excellent)
@@ -2223,7 +2267,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 
 === EXAMPLE: SpanishFixTable.csv ===
 Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing space between syllables
+spanish,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing spaces - should be character-by-character
 spanish,3,3,english,one (1),one,Remove parenthetical - unnecessary
 spanish,3,8,portuguese,,tradução,Empty cell - needs translation
 spanish,3,12,pinyin,yī èr sān,yī èr sān，,Missing comma after sān
@@ -2307,12 +2351,12 @@ Spanish Acts (250 packs total):
 | 1   | spanish    | Must match Overview          |
 | 2   | english    | Translation                  |
 | 3   | chinese    | Translation                  |
-| 4   | pinyin     | 1 syllable per character     |
+| 4   | pinyin     | Char-by-char mapping (punctuation attached) |
 | 5   | portuguese | Translation                  |
 
 === PINYIN RULE ===
-CORRECT: 你好 → nǐ hǎo (space between syllables)
-INCORRECT: 你好 → nǐhǎo (no space - WRONG)
+CORRECT: 你好 → nǐ hǎo (character-by-character: 你→nǐ, 好→hǎo)
+INCORRECT: 你好 → nǐhǎo (no spaces between syllables - WRONG)
 
 DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 
@@ -2519,8 +2563,8 @@ For EACH pack with issues:
 | Check | Description |
 |-------|-------------|
 | 🔒 NEVER change Column 1 | spanish column is SACRED - only fix translations (columns 2-5) |
-| ⚠️ Pinyin comma rule | Commas align: 的，→ de，(no space before comma) |
-| ⚠️ Pinyin spacing | 1 Chinese char = 1 pinyin syllable with spaces: 你好 → nǐ hǎo |
+| ⚠️ Pinyin mapping | Character-by-character with punctuation attached: 好，→ hǎo， |
+| ⚠️ Latin letters | Letter-by-letter mapping: ATM机 → A T M jī |
 | ⚠️ Theme matching | Check if TRANSLATION matches intended meaning for pack theme |
 | ⚠️ Empty cells | Record as empty Old_Value, provide New_Value |
 
@@ -2606,7 +2650,7 @@ git push -u origin <branch-name>
 | 1   | spanish    | 🔒 NEVER  | Sacred - matches Overview    |
 | 2   | english    | ✅ YES    | Translation                  |
 | 3   | chinese    | ✅ YES    | Translation                  |
-| 4   | pinyin     | ✅ YES    | 1 syllable per character     |
+| 4   | pinyin     | ✅ YES    | Char-by-char mapping (punctuation attached) |
 | 5   | portuguese | ✅ YES    | Translation                  |
 
 === SUCCESS CRITERIA (ALL REQUIRED!) ===
@@ -2810,7 +2854,7 @@ FOR EACH PACK, use Read tool: Read("EnglishWords/EnglishWords{N}.csv")
 Then check EVERY ROW, EVERY COLUMN:
    - Column 0 (english): SACRED - Skip this. It's the correct word for the theme (from Combined_Words).
    - Column 1 (chinese): Does it match the INTENDED MEANING for this theme? Simplified only?
-   - Column 2 (pinyin): 1 syllable per character? Correct tones? Spaces? COMMA PLACEMENT CORRECT?
+   - Column 2 (pinyin): Character-by-character mapping? Correct tones? Punctuation attached correctly?
    - Column 3 (spanish): Does it match the INTENDED MEANING for this theme? Natural?
    - Column 4 (portuguese): Does it match the INTENDED MEANING for this theme? Natural?
 
@@ -2832,25 +2876,37 @@ Column 0: "bat" ← CORRECT word for theme (flying mammal)
 Column 1 (chinese): "球棒" ← WRONG! (sports equipment)
 Column 1 SHOULD BE: "蝙蝠" ← CORRECT! (the animal)
 
-⚠️⚠️⚠️ PINYIN COMMA CONVENTION - CRITICAL! ⚠️⚠️⚠️
+⚠️⚠️⚠️ CHARACTER-BY-CHARACTER PINYIN MAPPING - CRITICAL! ⚠️⚠️⚠️
 
-Commas in pinyin MUST align with commas in Chinese characters!
+MAPPING RULE:
+Each Chinese character (with trailing punctuation) → one pinyin syllable (with same punctuation)
 
-✅ CORRECT:
-Chinese: 是的，先生
-Pinyin:  shì de，xiān shēng
-(Comma appears AFTER "的" and AFTER "de" - same block)
+✅ CORRECT EXAMPLE:
+Chinese: 早上好，先生
+Pinyin:  zǎo shàng hǎo， xiān shēng
 
-❌ WRONG:
-Chinese: 是的，先生
-Pinyin:  shì de, xiān shēng
-(Space before comma in pinyin - won't align!)
+Character-by-character breakdown:
+早   → zǎo
+上   → shàng
+好， → hǎo，   (punctuation attached!)
+先   → xiān
+生   → shēng
+
+❌ WRONG EXAMPLES:
+Chinese: 早上好，先生
+Pinyin:  zǎo shàng hǎo, xiān shēng  ❌ (Latin comma instead of Chinese comma)
+
+Chinese: 早上好，先生
+Pinyin:  zǎo shàng hǎo ， xiān shēng  ❌ (space before comma)
+
+Chinese: 早上好，先生
+Pinyin:  zǎoshànghǎo， xiān shēng  ❌ (missing spaces between syllables)
 
 WHY: Pinyin displays directly under Chinese characters in the game.
-Comma placement must match for vertical alignment.
+Each character must map to exactly one syllable with matching punctuation.
 
-RULE: Chinese char + comma = `的，` | Pinyin + comma = `de，`
-NO space before comma in pinyin!
+RULE: Punctuation sticks to character → punctuation sticks to syllable
+`好，` → `hǎo，` (not `hǎo ，` or `hǎo,`)
 
 ⚠️⚠️⚠️ LATIN TEXT IN CHINESE COLUMN - CRITICAL EVALUATION! ⚠️⚠️⚠️
 
@@ -2878,24 +2934,34 @@ HOW TO CHECK:
 2. If it's NOT in the loanword list above → ❌ LIKELY TRANSLATION FAILURE
 3. If unsure → Run: python PythonHelpers/check_latin_in_chinese.py english
 
-⚠️⚠️⚠️ SPACING RULE FOR MIXED LATIN+CHINESE ⚠️⚠️⚠️
+⚠️⚠️⚠️ LATIN LETTERS IN CHINESE - CHARACTER-BY-CHARACTER! ⚠️⚠️⚠️
 
-When Chinese contains Latin + Chinese characters, pinyin MUST have space between:
+When Chinese contains Latin letters, each Latin LETTER maps to itself:
 
-RULE: [Latin block] SPACE [pinyin syllables]
+RULE: Latin letters map LETTER-BY-LETTER (A→A, T→T, M→M)
 
-✅ CORRECT SPACING:
-Chinese: T恤              Pinyin: T xù              (space between T and xù)
-Chinese: ATM机            Pinyin: ATM jī            (space between ATM and jī)
-Chinese: 在WhatsApp上     Pinyin: zài WhatsApp shàng (spaces around WhatsApp)
-Chinese: DNA测试          Pinyin: DNA cè shì        (space between DNA and cè)
+✅ CORRECT MAPPING:
+Chinese: ATM机
+Mapping: A → A,  T → T,  M → M,  机 → jī
+Pinyin:  A T M jī            (each letter separate with spaces!)
 
-❌ WRONG SPACING (causes parser errors):
-Chinese: T恤              Pinyin: Txù               (no space → parser fails → "?")
-Chinese: ATM机            Pinyin: ATMjī             (no space → parser fails)
-Chinese: 在WhatsApp上     Pinyin: zàiWhatsAppshàng  (no spaces → parser fails)
+Chinese: T恤
+Mapping: T → T,  恤 → xù
+Pinyin:  T xù                (letter T maps to itself)
 
-IF YOU SEE "?" IN COUPLED OUTPUT → PINYIN SPACING ERROR!
+Chinese: 在WhatsApp上
+Mapping: 在→zài,  W→W, h→h, a→a, t→t, s→s, A→A, p→p, p→p,  上→shàng
+Pinyin:  zài W h a t s A p p shàng   (each letter separate!)
+
+❌ WRONG MAPPING:
+Chinese: ATM机
+Pinyin:  ATM jī              ❌ (ATM should be "A T M" - letter-by-letter!)
+
+Chinese: 在WhatsApp上
+Pinyin:  zài WhatsApp shàng  ❌ (WhatsApp should be "W h a t s A p p")
+
+WHY: The game renders each character/letter in a separate block.
+Latin letters must have spaces between them just like Chinese syllables.
 
 QUALITY CHECK FOR EACH TRANSLATION:
 □ Does the translation match the CORRECT MEANING for this pack's theme?
@@ -2904,7 +2970,7 @@ QUALITY CHECK FOR EACH TRANSLATION:
 □ Would a NATIVE SPEAKER actually use this phrase?
 □ Is the grammar CORRECT?
 □ Are special characters/accents CORRECT?
-□ Pinyin commas aligned with Chinese commas? (的，→ de，)
+□ Character-by-character pinyin mapping with punctuation attached? (好，→ hǎo，)
 
 SCORING SCALE:
   10 = Perfect (no issues at all - every translation is excellent)
@@ -2969,7 +3035,7 @@ Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
 
 === EXAMPLE: EnglishFixTable.csv ===
 Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
-english,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing space between syllables
+english,1,5,pinyin,nǐhǎo,nǐ hǎo,Missing spaces - should be character-by-character
 english,3,3,chinese,蝙蝠,球棒,Wrong meaning - sports equipment not animal
 english,3,8,spanish,,bate,Empty cell - needs translation
 english,3,12,pinyin,yī èr sān,yī èr sān，,Missing comma after sān
@@ -3081,7 +3147,7 @@ List ALL packs scoring below 9, ordered by priority (worst scores first):
 
 | Priority | Pack | Score | Row | Column | Issue | Proposed Fix |
 |----------|------|-------|-----|--------|-------|--------------|
-| 1 | EnglishWords23.csv | 5/10 | 3 | pinyin | "nǐhǎo" no space | Add space: "nǐ hǎo" |
+| 1 | EnglishWords23.csv | 5/10 | 3 | pinyin | "nǐhǎo" missing spaces | Fix to char-by-char: "nǐ hǎo" |
 | 2 | EnglishWords45.csv | 6/10 | 12 | spanish | awkward phrasing | Rewrite naturally |
 | ... | ... | ... | ... | ... | ... | ... |
 
@@ -3097,13 +3163,13 @@ English Acts (160 packs total):
 |-----|------------|------------------------------|
 | 0   | english    | Must match Overview          |
 | 1   | chinese    | Translation                  |
-| 2   | pinyin     | 1 syllable per character     |
+| 2   | pinyin     | Char-by-char mapping (punctuation attached) |
 | 3   | spanish    | Translation                  |
 | 4   | portuguese | Translation                  |
 
 === PINYIN RULE ===
-CORRECT: 你好 → nǐ hǎo (space between syllables)
-INCORRECT: 你好 → nǐhǎo (no space - WRONG)
+CORRECT: 你好 → nǐ hǎo (character-by-character: 你→nǐ, 好→hǎo)
+INCORRECT: 你好 → nǐhǎo (no spaces between syllables - WRONG)
 
 DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 
@@ -3299,8 +3365,8 @@ For EACH pack with issues:
 | Check | Description |
 |-------|-------------|
 | 🔒 NEVER change Column 0 | english column is SACRED - only fix translations (columns 1-4) |
-| ⚠️ Pinyin comma rule | Commas align: 的，→ de，(no space before comma) |
-| ⚠️ Pinyin spacing | 1 Chinese char = 1 pinyin syllable with spaces: 你好 → nǐ hǎo |
+| ⚠️ Pinyin mapping | Character-by-character with punctuation attached: 好，→ hǎo， |
+| ⚠️ Latin letters | Letter-by-letter mapping: ATM机 → A T M jī |
 | ⚠️ Theme matching | Check if TRANSLATION matches intended meaning for pack theme |
 | ⚠️ Empty cells | Record as empty Old_Value, provide New_Value |
 
@@ -3385,7 +3451,7 @@ git push -u origin <branch-name>
 |-----|------------|-----------|------------------------------|
 | 0   | english    | 🔒 NEVER  | Sacred - matches Overview    |
 | 1   | chinese    | ✅ YES    | Translation                  |
-| 2   | pinyin     | ✅ YES    | 1 syllable per character     |
+| 2   | pinyin     | ✅ YES    | Char-by-char mapping (punctuation attached) |
 | 3   | spanish    | ✅ YES    | Translation                  |
 | 4   | portuguese | ✅ YES    | Translation                  |
 
@@ -3558,7 +3624,7 @@ For EXAMPLE WORDS (Stage 2):
 
 For TRANSLATIONS (Stage 3):
 - Accuracy: Are translations correct?
-- Pinyin format: 1 syllable per character, spaces between?
+- Pinyin format: Character-by-character mapping, punctuation attached?
 - Simplified Chinese: No Traditional characters?
 - Consistency: Same quality across all rows?
 
