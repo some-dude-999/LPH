@@ -1,15 +1,33 @@
 #!/usr/bin/env python3
 """
-Validate that Chinese characters match pinyin syllable count.
+Validate that Chinese characters match pinyin syllables with CHARACTER-BY-CHARACTER mapping.
 
-SIMPLE RULE:
-- Chinese characters → 1 pinyin syllable per character
-- Latin sequences (ATM, DNA, WhatsApp) → same sequence in pinyin (case insensitive)
+MAPPING RULE:
+- Each Chinese character (with trailing punctuation) maps to one pinyin syllable (with same punctuation)
+- Latin letters map letter-by-letter to themselves
 
 Example:
-  你好 (2 chars) → nǐ hǎo (2 syllables) ✓
-  ATM机 (1 Latin block + 1 char) → ATM jī (1 block + 1 syllable) ✓
-  DNA测试 (1 Latin block + 2 chars) → DNA cè shì (1 block + 2 syllables) ✓
+  早上好，先生
+  ↓ ↓ ↓  ↓ ↓
+  zǎo shàng hǎo， xiān shēng
+
+  Character mapping:
+  早   → zǎo
+  上   → shàng
+  好， → hǎo，   (punctuation attached!)
+  先   → xiān
+  生   → shēng
+
+Latin example:
+  ATM机
+  ↓↓↓↓
+  A T M jī
+
+  Character mapping:
+  A  → A   (letter-by-letter)
+  T  → T
+  M  → M
+  机 → jī
 """
 
 import csv
@@ -19,157 +37,178 @@ import sys
 from glob import glob
 
 
-def parse_chinese_sequences(text):
+def parse_chinese_chars_with_punctuation(text):
     """
-    Parse Chinese text into Latin and Chinese sequences.
-    Returns list of (sequence, type) tuples.
+    Parse Chinese text into character units (with trailing punctuation attached).
 
-    Example: "ATM机DNA" → [('ATM', 'latin'), ('机', 'chinese'), ('DNA', 'latin')]
+    Returns list of (char, type) tuples where:
+    - type = 'chinese': Chinese character (possibly with trailing punctuation)
+    - type = 'latin': Single Latin letter
+    - type = 'punctuation': Standalone punctuation at start
+
+    Example: "早上好，先生" → [('早','chinese'), ('上','chinese'), ('好，','chinese'), ('先','chinese'), ('生','chinese')]
+    Example: "ATM机" → [('A','latin'), ('T','latin'), ('M','latin'), ('机','chinese')]
+    Example: "，你好" → [('，','punctuation'), ('你','chinese'), ('好','chinese')]
     """
     if not text:
         return []
 
-    sequences = []
-    current = ''
-    current_type = None
-
-    for char in text:
-        if re.match(r'[A-Za-z]', char):
-            char_type = 'latin'
-        elif re.match(r'[\u4e00-\u9fff]', char):
-            char_type = 'chinese'
-        else:
-            # Punctuation - treat as part of current sequence
-            if current_type:
-                current += char
-                continue
-            else:
-                char_type = 'other'
-
-        if char_type != current_type and current:
-            if current_type in ['latin', 'chinese']:
-                sequences.append((current, current_type))
-            current = ''
-
-        if char_type in ['latin', 'chinese']:
-            current += char
-            current_type = char_type
-
-    if current and current_type in ['latin', 'chinese']:
-        sequences.append((current, current_type))
-
-    return sequences
-
-
-def parse_pinyin_for_chinese(pinyin_text, chinese_parts):
-    """
-    Parse pinyin knowing what the Chinese sequence looks like.
-    This makes parsing unambiguous!
-
-    Args:
-        pinyin_text: The pinyin string (e.g., "ATM jī" or "atm jī")
-        chinese_parts: Parsed Chinese sequences from parse_chinese_sequences
-
-    Returns:
-        List of (sequence, type) matching the chinese_parts structure
-    """
-    if not pinyin_text:
-        return []
-
-    parts = pinyin_text.split()
     result = []
-    part_idx = 0
+    i = 0
 
-    for ch_seq, ch_type in chinese_parts:
-        if ch_type == 'latin':
-            # Expect next pinyin part to be Latin too
-            if part_idx < len(parts):
-                result.append((parts[part_idx], 'latin'))
-                part_idx += 1
-            else:
-                result.append(('', 'latin'))  # Missing!
+    while i < len(text):
+        char = text[i]
 
-        elif ch_type == 'chinese':
-            # Expect N pinyin syllables where N = number of Chinese characters
-            char_count = count_chinese_chars(ch_seq)  # Fixed: exclude punctuation
-            syllables = []
+        # Chinese character
+        if re.match(r'[\u4e00-\u9fff]', char):
+            unit = char
+            # Collect trailing punctuation
+            j = i + 1
+            while j < len(text) and re.match(r'[，。！？、；：""''（）《》【】…—]', text[j]):
+                unit += text[j]
+                j += 1
+            result.append((unit, 'chinese'))
+            i = j
 
-            for _ in range(char_count):
-                if part_idx < len(parts):
-                    syllables.append(parts[part_idx])
-                    part_idx += 1
+        # Latin letter
+        elif re.match(r'[A-Za-z]', char):
+            result.append((char, 'latin'))
+            i += 1
 
-            result.append((' '.join(syllables), 'pinyin'))
+        # Standalone punctuation (at start or after Latin)
+        elif re.match(r'[，。！？、；：""''（）《》【】…—]', char):
+            result.append((char, 'punctuation'))
+            i += 1
+
+        # Space or other characters - skip
+        else:
+            i += 1
 
     return result
 
 
-def count_chinese_chars(text):
-    """Count the number of Chinese characters in a string (excludes Latin)."""
-    chinese_chars = re.findall(r'[\u4e00-\u9fff]', text)
-    return len(chinese_chars)
-
-
-def count_pinyin_syllables(pinyin):
+def parse_pinyin_syllables_with_punctuation(pinyin_text):
     """
-    Count pinyin syllables by splitting on spaces.
-    Also handles edge cases like parenthetical notes.
-    """
-    if not pinyin:
-        return 0
+    Parse pinyin into syllable units (with trailing punctuation attached).
 
-    # Remove parenthetical notes like "(formal)" or "(masculine)"
-    pinyin_clean = re.sub(r'\([^)]*\)', '', pinyin).strip()
+    Split by spaces, but keep punctuation attached to syllables.
+
+    Example: "zǎo shàng hǎo， xiān shēng"
+         → [('zǎo','pinyin'), ('shàng','pinyin'), ('hǎo，','pinyin'), ('xiān','pinyin'), ('shēng','pinyin')]
+    Example: "A T M jī"
+         → [('A','latin'), ('T','latin'), ('M','latin'), ('jī','pinyin')]
+    Example: "， nǐ hǎo"
+         → [('，','punctuation'), ('nǐ','pinyin'), ('hǎo','pinyin')]
+    """
+    if not pinyin_text:
+        return []
 
     # Split by spaces
-    syllables = pinyin_clean.split()
+    parts = pinyin_text.split()
 
-    # Filter out empty strings
-    syllables = [s for s in syllables if s]
+    result = []
+    for part in parts:
+        part = part.strip()
+        if not part:
+            continue
 
-    return len(syllables)
+        # Remove punctuation for classification
+        core_part = re.sub(r'[，。！？、；：""''（）《》【】…—]+$', '', part)
+
+        # Check if it's ONLY ASCII letters (single letter = latin, multi = latin_block)
+        # Pinyin has diacritics (ā, ǎ, etc.) so won't match pure ASCII
+        if re.match(r'^[A-Za-z]+$', core_part):
+            # Pure ASCII letters (no diacritics)
+            if len(core_part) == 1:
+                # Single letter like "A", "T", "M"
+                result.append((part, 'latin'))
+            else:
+                # Multi-letter block like "ATM", "DNA", "WhatsApp"
+                result.append((part, 'latin_block'))
+
+        # Standalone punctuation
+        elif re.match(r'^[，。！？、；：""''（）《》【】…—]+$', part):
+            result.append((part, 'punctuation'))
+
+        # Pinyin syllable (contains diacritics or is not pure ASCII)
+        else:
+            result.append((part, 'pinyin'))
+
+    return result
 
 
-def validate_mixed_sequences(chinese, pinyin):
+def validate_character_mapping(chinese, pinyin):
     """
-    Validate mixed Latin/Chinese text with pinyin.
+    Validate 1:1 character-to-syllable mapping with punctuation attached.
 
-    SIMPLE RULES:
-    1. Latin sequences: must match exactly (case insensitive)
-    2. Chinese sequences: character count must match syllable count
+    RULES:
+    1. Each Chinese character (with trailing punctuation) maps to one pinyin syllable (with same punctuation)
+    2. Each Latin letter maps to itself
+    3. Standalone punctuation at start maps to standalone punctuation
 
     Returns: (is_valid, error_message or None)
     """
-    # Parse Chinese to understand the structure
-    chinese_parts = parse_chinese_sequences(chinese)
+    # Parse both sides
+    chinese_units = parse_chinese_chars_with_punctuation(chinese)
+    pinyin_units = parse_pinyin_syllables_with_punctuation(pinyin)
 
-    # Parse pinyin based on Chinese structure
-    pinyin_parts = parse_pinyin_for_chinese(pinyin, chinese_parts)
+    if len(chinese_units) != len(pinyin_units):
+        return False, f"Unit count mismatch: {len(chinese_units)} Chinese units vs {len(pinyin_units)} pinyin units"
 
-    if len(chinese_parts) != len(pinyin_parts):
-        return False, f"Sequence count mismatch: {len(chinese_parts)} vs {len(pinyin_parts)}"
+    # Compare unit-by-unit
+    for i, (ch_unit, py_unit) in enumerate(zip(chinese_units, pinyin_units)):
+        ch_text, ch_type = ch_unit
+        py_text, py_type = py_unit
 
-    for i, ((ch_seq, ch_type), (py_seq, py_type)) in enumerate(zip(chinese_parts, pinyin_parts)):
-        # Chinese Latin blocks must match pinyin Latin blocks
-        if ch_type == 'latin' and py_type == 'latin':
-            if not py_seq:  # Missing pinyin
-                return False, f"Missing pinyin for Latin block: '{ch_seq}'"
-            if ch_seq.lower() != py_seq.lower():
-                return False, f"Latin block mismatch: '{ch_seq}' vs '{py_seq}'"
+        # Chinese character should map to pinyin syllable (with same punctuation)
+        if ch_type == 'chinese':
+            # Allow pinyin, latin_block, or single latin letters (e.g., 啊 → a)
+            if py_type not in ['pinyin', 'latin_block', 'latin']:
+                return False, f"Position {i+1}: Chinese char '{ch_text}' mapped to non-pinyin '{py_text}' (type: {py_type})"
 
-        # Chinese characters must match pinyin syllables
-        elif ch_type == 'chinese' and py_type == 'pinyin':
-            char_count = count_chinese_chars(ch_seq)  # Fixed: exclude punctuation
-            syllable_count = len(py_seq.split()) if py_seq else 0
+            # Extract punctuation from both
+            ch_punct = extract_trailing_punctuation(ch_text)
+            py_punct = extract_trailing_punctuation(py_text)
 
-            if char_count != syllable_count:
-                return False, f"{char_count} Chinese chars but {syllable_count} pinyin syllables"
+            if ch_punct != py_punct:
+                return False, f"Position {i+1}: Punctuation mismatch - Chinese '{ch_text}' has '{ch_punct}' but pinyin '{py_text}' has '{py_punct}'"
 
-        # Type mismatch (shouldn't happen with smart parsing, but check anyway)
-        else:
-            return False, f"Type mismatch at position {i}: {ch_type} vs {py_type}"
+        # Latin letter should map to same Latin letter (case insensitive)
+        elif ch_type == 'latin':
+            if py_type != 'latin':
+                return False, f"Position {i+1}: Latin letter '{ch_text}' not mapped to Latin letter in pinyin (got '{py_text}', type: {py_type})"
+
+            # Compare core letters (ignore case, compare punctuation)
+            ch_letter = re.match(r'([A-Za-z])', ch_text)
+            py_letter = re.match(r'([A-Za-z])', py_text)
+
+            if not ch_letter or not py_letter:
+                return False, f"Position {i+1}: Failed to extract Latin letters from '{ch_text}' and '{py_text}'"
+
+            if ch_letter.group(1).lower() != py_letter.group(1).lower():
+                return False, f"Position {i+1}: Latin letter mismatch - '{ch_text}' vs '{py_text}'"
+
+            # Check punctuation
+            ch_punct = extract_trailing_punctuation(ch_text)
+            py_punct = extract_trailing_punctuation(py_text)
+
+            if ch_punct != py_punct:
+                return False, f"Position {i+1}: Punctuation mismatch on Latin - Chinese '{ch_text}' has '{ch_punct}' but pinyin '{py_text}' has '{py_punct}'"
+
+        # Standalone punctuation should match
+        elif ch_type == 'punctuation':
+            if py_type != 'punctuation':
+                return False, f"Position {i+1}: Standalone punctuation '{ch_text}' not matched in pinyin (got '{py_text}', type: {py_type})"
+            if ch_text != py_text:
+                return False, f"Position {i+1}: Punctuation mismatch - '{ch_text}' vs '{py_text}'"
 
     return True, None
+
+
+def extract_trailing_punctuation(text):
+    """Extract trailing Chinese punctuation from text."""
+    match = re.search(r'([，。！？、；：""''（）《》【】…—]+)$', text)
+    return match.group(1) if match else ''
 
 
 def validate_csv_file(filepath):
@@ -182,7 +221,7 @@ def validate_csv_file(filepath):
             reader = csv.DictReader(f)
 
             # Check if required columns exist
-            if 'chinese' not in reader.fieldnames and 'pinyin' not in reader.fieldnames:
+            if 'chinese' not in reader.fieldnames or 'pinyin' not in reader.fieldnames:
                 # Try alternate column names
                 has_chinese = any('chinese' in col.lower() for col in reader.fieldnames)
                 has_pinyin = any('pinyin' in col.lower() for col in reader.fieldnames)
@@ -190,15 +229,15 @@ def validate_csv_file(filepath):
                     return [], [f"Missing chinese/pinyin columns"]
 
             for row_num, row in enumerate(reader, start=2):  # Start at 2 (header is row 1)
-                # Get chinese and pinyin values
-                chinese = row.get('chinese', '')
-                pinyin = row.get('pinyin', '')
+                # Get chinese and pinyin values (trim leading/trailing spaces)
+                chinese = row.get('chinese', '').strip()
+                pinyin = row.get('pinyin', '').strip()
 
                 if not chinese or not pinyin:
                     continue
 
-                # Use new mixed sequence validation
-                is_valid, error_msg = validate_mixed_sequences(chinese, pinyin)
+                # Validate character-by-character mapping
+                is_valid, error_msg = validate_character_mapping(chinese, pinyin)
 
                 if not is_valid:
                     errors.append({
@@ -278,17 +317,17 @@ def validate_language(lang):
 def main():
     if len(sys.argv) < 2:
         print("Usage: python validate_pinyin.py [chinese|spanish|english|all]")
-        print("\nThis script validates Chinese characters and pinyin alignment.")
-        print("\nSIMPLE RULES:")
-        print("  1. Chinese characters → 1 pinyin syllable per character")
-        print("  2. Latin sequences (ATM, DNA, etc.) → same sequence in pinyin (case insensitive)")
+        print("\nThis script validates Chinese-pinyin character-by-character mapping.")
+        print("\nMAPPING RULE:")
+        print("  Each Chinese character (with trailing punctuation) → one pinyin syllable (with same punctuation)")
+        print("  Each Latin letter → same letter")
         print("\nExamples:")
-        print("  ✓ 你好 → nǐ hǎo (2 chars, 2 syllables)")
-        print("  ✗ 你好 → nǐhǎo (2 chars, 1 syllable - missing space)")
-        print("  ✓ ATM机 → ATM jī (Latin block + 1 char)")
-        print("  ✓ ATM机 → atm jī (case insensitive - also valid)")
-        print("  ✓ DNA测试 → DNA cè shì (Latin block + 2 chars)")
-        print("  ✗ ATM机 → XYZ jī (wrong Latin sequence)")
+        print("  ✓ 早上好，先生 → zǎo shàng hǎo， xiān shēng")
+        print("     早→zǎo, 上→shàng, 好，→hǎo，, 先→xiān, 生→shēng")
+        print("  ✗ 早上好，先生 → zǎo shàng hǎo, xiān shēng")
+        print("     好，→hǎo (missing comma in pinyin!)")
+        print("  ✓ ATM机 → A T M jī")
+        print("     A→A, T→T, M→M, 机→jī")
         sys.exit(1)
 
     lang = sys.argv[1].lower()
