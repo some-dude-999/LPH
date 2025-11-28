@@ -23,6 +23,18 @@ english,21,Essential Verbs: Daily Actions,20,chinese,谎言,躺,Wrong meaning: f
 english,21,Essential Verbs: Daily Actions,20,pinyin,huǎng yán,tǎng,Wrong meaning: matches falsehood not lie down
 english,21,Essential Verbs: Daily Actions,20,spanish,mentira,acostarse,Wrong meaning: falsehood vs lie down for Daily Actions theme
 english,21,Essential Verbs: Daily Actions,20,portuguese,mentira,deitar,Wrong meaning: falsehood vs lie down for Daily Actions theme
+english,24,Irregular Verbs 2,32,chinese,而战我奋战了,我奋力战斗了,Garbled text with extra 而战
+english,24,Irregular Verbs 2,32,pinyin,ér zhàn wǒ fèn zhàn le,wǒ fèn lì zhàn dòu le,Fix pinyin to match corrected Chinese
+english,37,Prepositions of Time & Other,12,chinese,内超越,超越,Extra 内 doesn't belong with beyond
+english,37,Prepositions of Time & Other,12,pinyin,nèi chāo yuè,chāo yuè,Fix pinyin to match corrected Chinese
+english,37,Prepositions of Time & Other,48,chinese,旁边在表面之下,在表面之下,Extra 旁边 doesn't belong
+english,37,Prepositions of Time & Other,48,pinyin,páng biān zài biǎo miàn zhī xià,zài biǎo miàn zhī xià,Fix pinyin to match corrected Chinese
+english,42,More Common Nouns,26,chinese,的一部分每一边,每一边,Extra 的一部分 doesn't belong
+english,42,More Common Nouns,26,pinyin,de yī bù fèn měi yī biān,měi yī biān,Fix pinyin to match corrected Chinese
+english,42,More Common Nouns,30,chinese,结束事实上,事实上,Extra 结束 doesn't belong
+english,42,More Common Nouns,30,pinyin,jié shù shì shí shàng,shì shí shàng,Fix pinyin to match corrected Chinese
+english,42,More Common Nouns,54,chinese,的类型主要话题,主要话题,Extra 的类型 doesn't belong
+english,42,More Common Nouns,54,pinyin,de lèi xíng zhǔ yào huà tí,zhǔ yào huà tí,Fix pinyin to match corrected Chinese
 english,44,Casual & Informal English,22,pinyin,ó shì de,ó， shì de,Chinese has comma after ó - pinyin needs matching comma
 english,44,Casual & Informal English,23,pinyin,shì de duì,shì de， duì,Chinese has comma - pinyin needs matching comma
 english,44,Casual & Informal English,24,pinyin,shì de dāng rán,shì de， dāng rán,Chinese has comma - pinyin needs matching comma
@@ -33,6 +45,8 @@ english,45,Filler Words & Reactions,23,pinyin,ó hǎo ba,ó， hǎo ba,Chinese h
 english,45,Filler Words & Reactions,39,pinyin,ó wǒ míng bái le,ó， wǒ míng bái le,Chinese has comma - pinyin needs matching comma
 english,45,Filler Words & Reactions,42,pinyin,ń hǎo ba,ń， hǎo ba,Chinese has comma - pinyin needs matching comma
 english,45,Filler Words & Reactions,45,pinyin,ń yě xǔ,ń， yě xǔ,Chinese has comma - pinyin needs matching comma
+english,46,Directions,40,chinese,对面一路走来,一路走来,Extra 对面 doesn't belong
+english,46,Directions,40,pinyin,duì miàn yī lù zǒu lái,yī lù zǒu lái,Fix pinyin to match corrected Chinese
 english,50,Bathroom Items,21,chinese,礼篮,洗衣篮,Wrong meaning: gift basket vs laundry basket for Bathroom theme
 english,50,Bathroom Items,21,pinyin,lǐ lán,xǐ yī lán,Wrong meaning: matches gift basket not laundry basket
 english,50,Bathroom Items,21,spanish,cesta,cesto de ropa sucia,Too generic for Bathroom theme - needs laundry basket
@@ -41,12 +55,188 @@ english,69,Money & Banking,13,chinese,兴趣,利息,Wrong meaning: curiosity vs 
 english,69,Money & Banking,13,pinyin,xìng qù,lì xī,Wrong meaning: curiosity vs financial interest
 english,69,Money & Banking,56,pinyin,ATM jī,A T M jī,Latin letters must map letter-by-letter
 english,69,Money & Banking,57,pinyin,chá zhǎo ATM,chá zhǎo A T M,Latin letters must map letter-by-letter
+english,81,Phrasal Verbs 2,32,chinese,相处摆脱它,摆脱它,Merged text from previous row
+english,81,Phrasal Verbs 2,32,pinyin,xiāng chǔ bǎi tuō tā,bǎi tuō tā,Fix pinyin to match corrected Chinese
+english,81,Phrasal Verbs 2,37,chinese,协调协调努力,协调努力,Duplicated word
+english,81,Phrasal Verbs 2,37,pinyin,xié tiáo xié tiáo nǔ lì,xié tiáo nǔ lì,Fix pinyin to match corrected Chinese
+english,81,Phrasal Verbs 2,41,chinese,化妆测试,补考,Wrong meaning - makeup exam not cosmetics test
+english,81,Phrasal Verbs 2,41,pinyin,huà zhuāng cè shì,bǔ kǎo,Fix pinyin to match corrected Chinese
+english,81,Phrasal Verbs 2,43,chinese,分手他们分手了,他们分手了,Duplicated phrase
+english,81,Phrasal Verbs 2,43,pinyin,fēn shǒu tā men fēn shǒu le,tā men fēn shǒu le,Fix pinyin to match corrected Chinese
+english,81,Phrasal Verbs 2,50,chinese,之间的联络正式协议,正式协议,Merged text from previous row
+english,81,Phrasal Verbs 2,50,pinyin,zhī jiān de lián luò zhèng shì xié yì,zhèng shì xié yì,Fix pinyin to match corrected Chinese
+english,81,Phrasal Verbs 2,58,chinese,一起出去玩立即查看,立即查看,Merged text from previous row
+english,81,Phrasal Verbs 2,58,pinyin,yì qǐ chū qù wán lì jí chá kàn,lì jí chá kàn,Fix pinyin to match corrected Chinese
+english,82,Travel,32,chinese,打包灯,轻装,Wrong meaning - pack light not pack lamp
+english,82,Travel,32,pinyin,dǎ bāo dēng,qīng zhuāng,Fix pinyin to match corrected Chinese
+english,83,Airport & Flying,21,chinese,开销,头顶行李舱,Wrong meaning - overhead bin not expenses
+english,83,Airport & Flying,21,pinyin,kāi xiāo,tóu dǐng xíng lǐ cāng,Fix pinyin to match corrected Chinese
+english,83,Airport & Flying,26,chinese,板飞机,登机,Wrong character - board plane not plank plane
+english,83,Airport & Flying,26,pinyin,bǎn fēi jī,dēng jī,Fix pinyin to match corrected Chinese
+english,86,Workplace Actions,3,chinese,火,解雇,Wrong meaning - fire employee not fire flames
+english,86,Workplace Actions,3,pinyin,huǒ,jiě gù,Fix pinyin to match corrected Chinese
+english,86,Workplace Actions,9,chinese,坐标,协调,Wrong meaning - coordinate action not x/y coordinates
+english,86,Workplace Actions,9,pinyin,zuò biāo,xié tiáo,Fix pinyin to match corrected Chinese
+english,86,Workplace Actions,12,chinese,完整,完成,Wrong meaning - complete verb not complete adjective
+english,86,Workplace Actions,12,pinyin,wán zhěng,wán chéng,Fix pinyin to match corrected Chinese
+english,86,Workplace Actions,37,chinese,协调协调努力,协调努力,Duplicated word
+english,86,Workplace Actions,37,pinyin,xié tiáo xié tiáo nǔ lì,xié tiáo nǔ lì,Fix pinyin to match corrected Chinese
+english,87,Business Communication,32,chinese,分享发表评论,发表评论,Merged text from previous row
+english,87,Business Communication,32,pinyin,fēn xiǎng fā biǎo píng lùn,fā biǎo píng lùn,Fix pinyin to match corrected Chinese
+english,87,Business Communication,42,chinese,对应,通信,Wrong meaning - correspond communicate not correspond match
+english,87,Business Communication,42,pinyin,duì yìng,tōng xìn,Fix pinyin to match corrected Chinese
+english,87,Business Communication,50,chinese,之间的联络正式协议,正式协议,Merged text from previous row
+english,87,Business Communication,50,pinyin,zhī jiān de lián luò zhèng shì xié yì,zhèng shì xié yì,Fix pinyin to match corrected Chinese
+english,88,Internet & Social Media,32,chinese,分享发表评论,发表评论,Merged text from previous row
+english,88,Internet & Social Media,32,pinyin,fēn xiǎng fā biǎo píng lùn,fā biǎo píng lùn,Fix pinyin to match corrected Chinese
+english,89,Relationships,29,chinese,男朋友材质,合适的男友,Wrong meaning - boyfriend material figurative not material substance
+english,89,Relationships,29,pinyin,nán péng yǒu cái zhì,hé shì de nán yǒu,Fix pinyin to match corrected Chinese
+english,89,Relationships,56,chinese,争论尊重自己,尊重自己,Merged text from previous row
+english,89,Relationships,56,pinyin,zhēng lùn zūn zhòng zì jǐ,zūn zhòng zì jǐ,Fix pinyin to match corrected Chinese
+english,90,Social Interactions,26,chinese,聊天传播八卦,传播八卦,Merged text from previous row
+english,90,Social Interactions,26,pinyin,liáo tiān chuán bō bā guà,chuán bō bā guà,Fix pinyin to match corrected Chinese
+english,90,Social Interactions,43,chinese,合作一起合作,一起合作,Duplicated word
+english,90,Social Interactions,43,pinyin,hé zuò yì qǐ hé zuò,yì qǐ hé zuò,Fix pinyin to match corrected Chinese
+english,90,Social Interactions,55,chinese,混在一起混在一起,混在一起,Duplicated phrase
+english,90,Social Interactions,55,pinyin,hùn zài yì qǐ hùn zài yì qǐ,hùn zài yì qǐ,Fix pinyin to match corrected Chinese
+english,90,Social Interactions,58,chinese,社交热烈欢迎,热烈欢迎,Merged text from previous row
+english,90,Social Interactions,58,pinyin,shè jiāo rè liè huān yíng,rè liè huān yíng,Fix pinyin to match corrected Chinese
+english,91,Life Events,28,chinese,的传统音乐节,头条标题,Wrong/merged text - should be headline
+english,91,Life Events,28,pinyin,de chuán tǒng yīn yuè jié,tóu tiáo biāo tí,Fix pinyin to match corrected Chinese
+english,91,Life Events,52,chinese,的传统音乐节,音乐节,Merged text from previous row
+english,91,Life Events,52,pinyin,de chuán tǒng yīn yuè jié,yīn yuè jié,Fix pinyin to match corrected Chinese
+english,92,Housing,3,chinese,楼主,房东,Wrong meaning - landlord not forum poster
+english,92,Housing,3,pinyin,lóu zhǔ,fáng dōng,Fix pinyin to match corrected Chinese
+english,92,Housing,36,chinese,不错的邻居,不错的社区,Wrong meaning - nice neighborhood not nice neighbor
+english,92,Housing,36,pinyin,bù cuò de lín jū,bù cuò de shè qū,Fix pinyin to match corrected Chinese
+english,93,News & Media,9,chinese,按,新闻界,Wrong meaning - press media not press button
+english,93,News & Media,9,pinyin,àn,xīn wén jiè,Fix pinyin to match corrected Chinese
+english,93,News & Media,15,chinese,打破,突发,Wrong meaning - breaking news not break/smash
+english,93,News & Media,15,pinyin,dǎ pò,tū fā,Fix pinyin to match corrected Chinese
+english,93,News & Media,21,chinese,锚,主播,Wrong meaning - news anchor not boat anchor
+english,93,News & Media,21,pinyin,máo,zhǔ bō,Fix pinyin to match corrected Chinese
+english,93,News & Media,28,chinese,的文章头条标题,头条标题,Merged text from previous row
+english,93,News & Media,28,pinyin,de wén zhāng tóu tiáo biāo tí,tóu tiáo biāo tí,Fix pinyin to match corrected Chinese
+english,95,Cooking Methods,20,chinese,偷猎,水煮,Wrong meaning - poach cook not poach hunt
+english,95,Cooking Methods,20,pinyin,tōu liè,shuǐ zhǔ,Fix pinyin to match corrected Chinese
+english,96,Food Preparation,4,chinese,骰子,切丁,Wrong meaning - dice cut not dice game
+english,96,Food Preparation,4,pinyin,tóu zi,qiè dīng,Fix pinyin to match corrected Chinese
+english,96,Food Preparation,6,chinese,炉排,刨丝器,Wrong meaning - grater tool not fireplace grate
+english,96,Food Preparation,6,pinyin,lú pái,páo sī qì,Fix pinyin to match corrected Chinese
+english,96,Food Preparation,11,chinese,传播,涂抹,Wrong meaning - spread butter not disseminate
+english,96,Food Preparation,11,pinyin,chuán bō,tú mǒ,Fix pinyin to match corrected Chinese
+english,96,Food Preparation,12,chinese,东西,填充,Wrong meaning - stuff food not things
+english,96,Food Preparation,12,pinyin,dōng xī,tián chōng,Fix pinyin to match corrected Chinese
+english,96,Food Preparation,15,chinese,服务,上菜,Wrong meaning - serve food not customer service
+english,96,Food Preparation,15,pinyin,fú wù,shàng cài,Fix pinyin to match corrected Chinese
+english,96,Food Preparation,27,chinese,骰子小,切小丁,Wrong meaning - dice small not game dice
+english,96,Food Preparation,27,pinyin,tóu zi xiǎo,qiè xiǎo dīng,Fix pinyin to match corrected Chinese
+english,96,Food Preparation,42,chinese,火鸡东西,填充火鸡,Wrong meaning - stuff turkey not turkey things
+english,96,Food Preparation,42,pinyin,huǒ jī dōng xī,tián chōng huǒ jī,Fix pinyin to match corrected Chinese
+english,96,Food Preparation,43,chinese,辣椒料,填充辣椒,Wrong meaning - stuff peppers not pepper ingredients
+english,96,Food Preparation,43,pinyin,là jiāo liào,tián chōng là jiāo,Fix pinyin to match corrected Chinese
+english,96,Food Preparation,47,chinese,装饰装饰精美,装饰精美,Duplicated word
+english,96,Food Preparation,47,pinyin,zhuāng shì zhuāng shì jīng měi,zhuāng shì jīng měi,Fix pinyin to match corrected Chinese
+english,96,Food Preparation,60,chinese,嫩化胡萝卜切丝,胡萝卜切丝,Merged text from previous row
+english,96,Food Preparation,60,pinyin,nèn huà hú luó bo qiè sī,hú luó bo qiè sī,Fix pinyin to match corrected Chinese
+english,97,Restaurant,3,chinese,晚餐,小餐馆,Wrong meaning - diner restaurant not dinner meal
+english,97,Restaurant,3,pinyin,wǎn cān,xiǎo cān guǎn,Fix pinyin to match corrected Chinese
+english,97,Restaurant,7,chinese,服务器,服务员,Wrong meaning - waiter not computer server
+english,97,Restaurant,7,pinyin,fú wù qì,fú wù yuán,Fix pinyin to match corrected Chinese
+english,97,Restaurant,11,chinese,交货,外卖配送,Wrong meaning - food delivery not goods shipment
+english,97,Restaurant,11,pinyin,jiāo huò,wài mài pèi sòng,Fix pinyin to match corrected Chinese
+english,97,Restaurant,13,chinese,专业,特色菜,Wrong meaning - restaurant specialty not professional field
+english,97,Restaurant,13,pinyin,zhuān yè,tè sè cài,Fix pinyin to match corrected Chinese
+english,97,Restaurant,25,chinese,晚餐食物,餐馆食物,Wrong meaning - diner food not dinner food
+english,97,Restaurant,25,pinyin,wǎn cān shí wù,cān guǎn shí wù,Fix pinyin to match corrected Chinese
+english,97,Restaurant,32,chinese,我们的服务器,我们的服务员,Wrong meaning - our waiter not our server computer
+english,97,Restaurant,32,pinyin,wǒ men de fú wù qì,wǒ men de fú wù yuán,Fix pinyin to match corrected Chinese
+english,97,Restaurant,33,chinese,服务器带来,服务员带来,Wrong meaning - waiter brought not server brought
+english,97,Restaurant,33,pinyin,fú wù qì dài lái,fú wù yuán dài lái,Fix pinyin to match corrected Chinese
+english,97,Restaurant,44,chinese,房屋特产,招牌菜,Wrong meaning - house specialty dish not house property
+english,97,Restaurant,44,pinyin,fáng wū tè chǎn,zhāo pái cài,Fix pinyin to match corrected Chinese
+english,99,Books & Reading,10,chinese,字符,角色,Wrong meaning - story character not text character
+english,99,Books & Reading,10,pinyin,zì fú,jué sè,Fix pinyin to match corrected Chinese
+english,99,Books & Reading,42,chinese,的流派当地书店,当地书店,Merged text from previous row
+english,99,Books & Reading,42,pinyin,de liú pài dāng dì shū diàn,dāng dì shū diàn,Fix pinyin to match corrected Chinese
+english,101,Basic Law & Rules,5,chinese,很好,罚款,Wrong meaning - fine penalty not fine good
+english,101,Basic Law & Rules,5,pinyin,hěn hǎo,fá kuǎn,Fix pinyin to match corrected Chinese
+english,101,Basic Law & Rules,11,chinese,法律,合法的,Wrong meaning - legal adjective not law noun
+english,101,Basic Law & Rules,11,pinyin,fǎ lǜ,hé fǎ de,Fix pinyin to match corrected Chinese
+english,102,Government & Citizenship,8,chinese,聚会,政党,Wrong meaning - political party not social gathering
+english,102,Government & Citizenship,8,pinyin,jù huì,zhèng dǎng,Fix pinyin to match corrected Chinese
+english,102,Government & Citizenship,15,chinese,标志,旗帜,Wrong meaning - national flag not marker/sign
+english,102,Government & Citizenship,15,pinyin,biāo zhì,qí zhì,Fix pinyin to match corrected Chinese
+english,103,Opinions & Arguments,4,chinese,查看,观点,Wrong meaning - opinion/view not look at
+english,103,Opinions & Arguments,4,pinyin,chá kàn,guān diǎn,Fix pinyin to match corrected Chinese
+english,103,Opinions & Arguments,8,chinese,索赔,声称,Wrong meaning - claim assert not insurance claim
+english,103,Opinions & Arguments,8,pinyin,suǒ péi,shēng chēng,Fix pinyin to match corrected Chinese
+english,103,Opinions & Arguments,10,chinese,竞争,主张,Wrong meaning - contend argue not compete
+english,103,Opinions & Arguments,10,pinyin,jìng zhēng,zhǔ zhāng,Fix pinyin to match corrected Chinese
+english,103,Opinions & Arguments,24,chinese,的意见强烈反对,强烈反对,Merged text from previous row
+english,103,Opinions & Arguments,24,pinyin,de yì jiàn qiáng liè fǎn duì,qiáng liè fǎn duì,Fix pinyin to match corrected Chinese
+english,103,Opinions & Arguments,32,chinese,的论据伟大的辩论,伟大的辩论,Merged text from previous row
+english,103,Opinions & Arguments,32,pinyin,de lùn jù wěi dà de biàn lùn,wěi dà de biàn lùn,Fix pinyin to match corrected Chinese
+english,103,Opinions & Arguments,44,chinese,的立场从我的角度来看,从我的角度来看,Merged text from previous row
+english,103,Opinions & Arguments,44,pinyin,de lì chǎng cóng wǒ de jiǎo dù lái kàn,cóng wǒ de jiǎo dù lái kàn,Fix pinyin to match corrected Chinese
+english,103,Opinions & Arguments,46,chinese,的立场不同观点,不同观点,Merged text from previous row
+english,103,Opinions & Arguments,46,pinyin,de lì chǎng bù tóng guān diǎn,bù tóng guān diǎn,Fix pinyin to match corrected Chinese
+english,103,Opinions & Arguments,48,chinese,的观点积极的前景,积极的前景,Merged text from previous row
+english,103,Opinions & Arguments,48,pinyin,de guān diǎn jī jí de qián jǐng,jī jí de qián jǐng,Fix pinyin to match corrected Chinese
+english,103,Opinions & Arguments,58,chinese,的情绪积极的态度,积极的态度,Merged text from previous row
+english,103,Opinions & Arguments,58,pinyin,de qíng xù jī jí de tài dù,jī jí de tài dù,Fix pinyin to match corrected Chinese
+english,103,Opinions & Arguments,60,chinese,的态度坚定的信念,坚定的信念,Merged text from previous row
+english,103,Opinions & Arguments,60,pinyin,de tài dù jiān dìng de xìn niàn,jiān dìng de xìn niàn,Fix pinyin to match corrected Chinese
+english,104,Problems & Solutions,24,chinese,的问题巨大的挑战,巨大的挑战,Merged text from previous row
+english,104,Problems & Solutions,24,pinyin,de wèn tí jù dà de tiǎo zhàn,jù dà de tiǎo zhàn,Fix pinyin to match corrected Chinese
+english,104,Problems & Solutions,34,chinese,的解决方案解决问题,解决问题,Merged text from previous row
+english,104,Problems & Solutions,34,pinyin,de jiě jué fāng àn jiě jué wèn tí,jiě jué wèn tí,Fix pinyin to match corrected Chinese
+english,104,Problems & Solutions,46,chinese,的程序别无选择,别无选择,Merged text from previous row
+english,104,Problems & Solutions,46,pinyin,de chéng xù bié wú xuǎn zé,bié wú xuǎn zé,Fix pinyin to match corrected Chinese
+english,104,Problems & Solutions,52,chinese,的可能性绝佳机会,绝佳机会,Merged text from previous row
+english,104,Problems & Solutions,52,pinyin,de kě néng xìng jué jiā jī huì,jué jiā jī huì,Fix pinyin to match corrected Chinese
+english,104,Problems & Solutions,54,chinese,的机会进展缓慢,进展缓慢,Merged text from previous row
+english,104,Problems & Solutions,54,pinyin,de jī huì jìn zhǎn huǎn màn,jìn zhǎn huǎn màn,Fix pinyin to match corrected Chinese
+english,104,Problems & Solutions,56,chinese,的进展巨大的成功,巨大的成功,Merged text from previous row
+english,104,Problems & Solutions,56,pinyin,de jìn zhǎn jù dà de chéng gōng,jù dà de chéng gōng,Fix pinyin to match corrected Chinese
+english,105,Describing Trends,8,chinese,穗,激增,Wrong meaning - spike data not grain ear
+english,105,Describing Trends,8,pinyin,suì,jī zēng,Fix pinyin to match corrected Chinese
+english,105,Describing Trends,20,chinese,拒绝,下降,Wrong meaning - decline decrease not refuse
+english,105,Describing Trends,20,pinyin,jù jué,xià jiàng,Fix pinyin to match corrected Chinese
+english,105,Describing Trends,60,chinese,下降增长停滞,增长停滞,Merged text from previous row
+english,105,Describing Trends,60,pinyin,xià jiàng zēng zhǎng tíng zhì,zēng zhǎng tíng zhì,Fix pinyin to match corrected Chinese
 english,107,Common Idioms 2,40,pinyin,dāng rán ， zhū shén me shí hòu huì fēi,dāng rán， zhū shén me shí hòu huì fēi,Space before Chinese comma should be removed
+english,115,Marketing & Sales,9,chinese,发射,推出,Wrong meaning - product launch not rocket launch
+english,115,Marketing & Sales,9,pinyin,fā shè,tuī chū,Fix pinyin to match corrected Chinese
+english,115,Marketing & Sales,21,chinese,段,市场细分,Wrong meaning - market segment not paragraph
+english,115,Marketing & Sales,21,pinyin,duàn,shì chǎng xì fēn,Fix pinyin to match corrected Chinese
 english,117,Biology Basics,24,pinyin,DNA cè shì,D N A cè shì,Latin letters must map letter-by-letter
 english,117,Biology Basics,25,pinyin,DNA xù liè,D N A xù liè,Latin letters must map letter-by-letter
+english,125,Cause & Effect,8,chinese,铅,导致,Wrong meaning - lead verb cause not lead metal
+english,125,Cause & Effect,8,pinyin,qiān,dǎo zhì,Fix pinyin to match corrected Chinese
+english,125,Cause & Effect,14,chinese,茎,源于,Wrong meaning - stem from not plant stem
+english,125,Cause & Effect,14,pinyin,jīng,yuán yú,Fix pinyin to match corrected Chinese
+english,125,Cause & Effect,21,chinese,火花,引发,Wrong meaning - spark trigger figurative not literal spark
+english,125,Cause & Effect,21,pinyin,huǒ huā,yǐn fā,Fix pinyin to match corrected Chinese
 english,132,Formal Vocabulary 2,30,pinyin,xiū gǎi háng wèi ​​,xiū gǎi háng wèi,Unicode whitespace at end (zero-width spaces)
 english,139,Everyday Medical,42,pinyin,CT sǎo miáo,C T sǎo miáo,Latin letters must map letter-by-letter
+english,140,Everyday Finance,4,chinese,保存,储蓄,Wrong meaning - save money not save files
+english,140,Everyday Finance,4,pinyin,bǎo cún,chǔ xù,Fix pinyin to match corrected Chinese
+english,140,Everyday Finance,13,chinese,高级,保费,Wrong meaning - insurance premium not high-quality
+english,140,Everyday Finance,13,pinyin,gāo jí,bǎo fèi,Fix pinyin to match corrected Chinese
 english,143,Sociology Basics,55,pinyin,jí tǐ zhǔ yì vs,jí tǐ zhǔ yì v s,Latin letters must map letter-by-letter
+english,145,Debate & Argument,8,chinese,争用,论点,Wrong meaning - argument point not resource contention
+english,145,Debate & Argument,8,pinyin,zhēng yòng,lùn diǎn,Fix pinyin to match corrected Chinese
 english,151,Advanced Idioms,18,pinyin,qiú zài nǐ de qiú chǎng shàng suǒ yǐ jué dìng,qiú zài nǐ de qiú chǎng shàng， suǒ yǐ jué dìng,Chinese has comma - pinyin needs matching comma
 english,151,Advanced Idioms,34,pinyin,bù guò qǐng chí bǎo liú tài dù,bù guò， qǐng chí bǎo liú tài dù,Chinese has comma - pinyin needs matching comma
 english,151,Advanced Idioms,44,pinyin,guī gēn jié dǐ tā,guī gēn jié dǐ， tā,Chinese has comma - pinyin needs matching comma
+english,155,Nuanced Adjectives,13,chinese,挥发性,易变的,Wrong meaning - volatile market not chemical volatility
+english,155,Nuanced Adjectives,13,pinyin,huī fā xìng,yì biàn de,Fix pinyin to match corrected Chinese
+english,155,Nuanced Adjectives,43,chinese,感到矛盾矛盾的感情,矛盾的感情,Duplicated word merged from previous row
+english,155,Nuanced Adjectives,43,pinyin,gǎn dào máo dùn máo dùn de gǎn qíng,máo dùn de gǎn qíng,Fix pinyin to match corrected Chinese
+english,160,Apology & Excuse Patterns,7,chinese,故障,过错,Wrong meaning - personal fault not machine malfunction
+english,160,Apology & Excuse Patterns,7,pinyin,gù zhàng,guò cuò,Fix pinyin to match corrected Chinese
+english,160,Apology & Excuse Patterns,21,chinese,修正,补偿,Wrong meaning - make amends not corrections
+english,160,Apology & Excuse Patterns,21,pinyin,xiū zhèng,bǔ cháng,Fix pinyin to match corrected Chinese
+english,160,Apology & Excuse Patterns,47,chinese,的责任开脱,开脱,Merged text from previous row
+english,160,Apology & Excuse Patterns,47,pinyin,de zé rèn kāi tuō,kāi tuō,Fix pinyin to match corrected Chinese
