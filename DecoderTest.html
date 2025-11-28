@@ -392,6 +392,8 @@
     This CDN script provides the pako.inflate() function for decompression.
   -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+  <!-- Shared wordpack logic (loading, decoding, shuffling, typing validation) -->
+  <script src="./wordpack-logic.js"></script>
 
   <style>
     /* Fixed Header */
@@ -2858,31 +2860,42 @@
       const typingState = state.typingStates.get(wordIndex);
       const chars = correctWord.split('');
 
-      // STEP 2: Find next unfilled position (skip already typed and spaces)
-      let nextPos = 0;
+      // STEP 2: Play sound for ANY keypress (instant feedback)
+      playTypingSound();
+
+      // STEP 3: Handle space key - ALWAYS ignore (play sound only)
+      if (key === ' ') {
+        return; // Space keys are ignored completely
+      }
+
+      // STEP 4: Find next unfilled position, skipping spaces automatically
+      let nextPos = -1;
       for (let i = 0; i < chars.length; i++) {
-        if (chars[i] === ' ') {
-          typingState.typed.add(i);  // Auto-mark spaces as typed
-          continue;
-        }
         if (!typingState.typed.has(i)) {
           nextPos = i;
           break;
         }
-        if (i === chars.length - 1) {
-          // Already completed
-          return;
-        }
       }
 
-      // STEP 3: Normalize characters for comparison (remove accents, lowercase)
+      if (nextPos === -1) {
+        return; // Already completed
+      }
+
+      // Skip spaces and mark them as typed
+      while (nextPos < chars.length && chars[nextPos] === ' ') {
+        typingState.typed.add(nextPos);
+        nextPos++;
+      }
+
+      if (nextPos >= chars.length) {
+        return; // Reached end after skipping spaces
+      }
+
+      // STEP 5: Normalize characters for comparison (remove accents, lowercase)
       const normalizedKey = normalizeCharForTyping(key);
       const normalizedTarget = normalizeCharForTyping(chars[nextPos]);
 
-      // STEP 4: Play sound for ANY keypress (instant feedback)
-      playTypingSound();
-
-      // STEP 5: Check if correct
+      // STEP 6: Check if correct
       if (normalizedKey === normalizedTarget) {
         // CORRECT! Mark position as typed
         typingState.typed.add(nextPos);
@@ -2892,7 +2905,7 @@
         typingState.wrongCount++;
       }
 
-      // STEP 6: Update display to show progress
+      // STEP 7: Update display to show progress
       updateTypingDisplay(wordIndex, correctWord, inputElement);
     }
 
