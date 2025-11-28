@@ -3,7 +3,7 @@ eléctrico,electric,电动,diàn dòng,elétrica
 renovable,renewable,可再生,kě zài shēng,renovável
 sostenible,sustainable,可持续,kě chí xù,sustentável
 carbón,coal,煤炭,méi tàn,carvão
-central,central,中央,zhōng yāng,centrais
+central,central,发电厂,fā diàn chǎng,centrais
 generar,generate,生成,shēng chéng,gerar
 consumir,consume,消耗,xiāo hào,consumir
 consumo,consumption,消费,xiāo fèi,consumo
@@ -14,7 +14,7 @@ geotérmica,geothermal,地热,dì rè,geotérmica
 biomasa,biomass,生物质,shēng wù zhì,biomassa
 voltaje,voltage,电压,diàn yā,tensão
 amperaje,amperage,安培数,ān péi shù,amperagem
-corriente,current,当前,dāng qián,atual
+corriente,current,电流,diàn liú,atual
 transformador,transformer,变压器,biàn yā qì,transformador
 generador,generator,发电机,fā diàn jī,gerador
 red eléctrica,electrical network,电力网络,diàn lì wǎng luò,rede elétrica
@@ -26,8 +26,8 @@ es sostenible,is sustainable,是可持续的,shì kě chí xù de,é sustentáve
 desarrollo sostenible,sustainable development,可持续发展,kě chí xù fā zhǎn,desenvolvimento sustentável
 el carbón,coal,煤炭,méi tàn,carvão
 de carbón,of coal,煤炭,méi tàn,de carvão
-la central,the central,中央,zhōng yāng,o central
-una central,a central,中央,zhōng yāng,uma central
+la central,the central,发电厂,fā diàn chǎng,o central
+una central,a central,发电厂,fā diàn chǎng,uma central
 hay que generar,you have to generate,你必须生成,nǐ bì xū shēng chéng,você tem que gerar
 voy a generar,I will generate,我将生成,wǒ jiāng shēng chéng,Vou gerar
 hay que consumir,you have to consume,你必须消费,nǐ bì xū xiāo fèi,você tem que consumir
@@ -48,8 +48,8 @@ el voltaje,the voltage,电压,diàn yā,a tensão
 alto voltaje,high voltage,高电压,gāo diàn yā,alta tensão
 el amperaje,the amperage,安培数,ān péi shù,a amperagem
 bajo amperaje,low amperage,低安培数,dī ān péi shù,baixa amperagem
-la corriente,the current,当前,dāng qián,o atual
-una corriente,a stream,一条流,yī tiáo liú,um fluxo
+la corriente,the current,电流,diàn liú,o atual
+una corriente,a stream,电流,diàn liú,um fluxo
 el transformador,the transformer,变压器,biàn yā qì,o transformador
 un transformador,a transformer,变压器,biàn yā qì,um transformador
 el generador,the generator,发电机,fā diàn jī,o gerador

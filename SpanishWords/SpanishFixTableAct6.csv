@@ -1,1 +1,158 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,182,Telecommunications,21,english,supplier,provider,More natural for telecom context
+spanish,182,Telecommunications,39,english,with marking,with dialing,Marcación means dialing in telecom
+spanish,182,Telecommunications,12,chinese,邮箱,语音信箱,Voicemail not general mailbox in telecom
+spanish,182,Telecommunications,12,pinyin,yóu xiāng,yǔ yīn xìn xiāng,Pinyin for voicemail
+spanish,184,Missing & Lacking,3,english,fouls,you lack,Wrong sense - should be lack verb not sports fouls
+spanish,185,Tourism Terms,7,chinese,指导,导游,Tour guide not guidance
+spanish,185,Tourism Terms,7,pinyin,zhǐ dǎo,dǎo yóu,Pinyin for tour guide
+spanish,185,Tourism Terms,8,chinese,访问,参观,Sightseeing visit not formal visit
+spanish,185,Tourism Terms,8,pinyin,fǎng wèn,cān guān,Pinyin for sightseeing visit
+spanish,185,Tourism Terms,31,chinese,指南,导游,Tour guide not guidebook
+spanish,185,Tourism Terms,31,pinyin,zhǐ nán,dǎo yóu,Pinyin for tour guide
+spanish,185,Tourism Terms,32,chinese,指南,导游,Tour guide not guidebook
+spanish,185,Tourism Terms,32,pinyin,zhǐ nán,dǎo yóu,Pinyin for tour guide
+spanish,185,Tourism Terms,37,chinese,巡演,游览,Sightseeing tour not concert tour
+spanish,185,Tourism Terms,37,pinyin,xún yǎn,yóu lǎn,Pinyin for sightseeing tour
+spanish,186,Noticing,3,english,notes,you notice,Wrong sense - verb not noun for noticing theme
+spanish,188,Manufacturing Terms,5,chinese,进程,工序,Manufacturing process not computing process
+spanish,188,Manufacturing Terms,5,pinyin,jìn chéng,gōng xù,Pinyin for manufacturing process
+spanish,188,Manufacturing Terms,6,chinese,进程,工序,Manufacturing process not computing process
+spanish,188,Manufacturing Terms,6,pinyin,jìn chéng,gōng xù,Pinyin for manufacturing process
+spanish,188,Manufacturing Terms,16,chinese,一块,零件,Component/part not generic piece
+spanish,188,Manufacturing Terms,16,pinyin,yī kuài,líng jiàn,Pinyin for component
+spanish,188,Manufacturing Terms,26,chinese,进程,工序,Manufacturing process
+spanish,188,Manufacturing Terms,26,pinyin,jìn chéng,gōng xù,Pinyin for manufacturing process
+spanish,188,Manufacturing Terms,27,chinese,没有进程,没有工序,Manufacturing process
+spanish,188,Manufacturing Terms,27,pinyin,méi yǒu jìn chéng,méi yǒu gōng xù,Pinyin for manufacturing process
+spanish,188,Manufacturing Terms,29,chinese,一个进程,一道工序,Manufacturing process
+spanish,188,Manufacturing Terms,29,pinyin,yí gè jìn chéng,yī dào gōng xù,Pinyin for manufacturing process
+spanish,190,Performing,3,english,do you do,you perform,Awkward phrasing
+spanish,190,Performing,12,chinese,我愿意,我执行,我愿意 means I am willing not I perform
+spanish,190,Performing,12,pinyin,wǒ yuàn yì,wǒ zhí xíng,Pinyin for I perform
+spanish,190,Performing,17,chinese,是吗,执行它,是吗 means is it? - completely wrong
+spanish,190,Performing,17,pinyin,shì ma,zhí xíng tā,Pinyin for performs it
+spanish,190,Performing,24,chinese,我要表演,我要执行,表演 is theatrical - use 执行 for perform task
+spanish,190,Performing,24,pinyin,wǒ yào biǎo yǎn,wǒ yào zhí xíng,Pinyin for want to perform
+spanish,190,Performing,25,chinese,我会表演,我会执行,表演 is theatrical - use 执行 for perform task
+spanish,190,Performing,25,pinyin,wǒ huì biǎo yǎn,wǒ huì zhí xíng,Pinyin for will perform
+spanish,192,Existing,10,chinese,存在,在场,Presence not existence
+spanish,192,Existing,10,pinyin,cún zài,zài chǎng,Pinyin for presence
+spanish,192,Existing,27,chinese,存在,在场,Presence not existence
+spanish,192,Existing,27,pinyin,cún zài,zài chǎng,Pinyin for presence
+spanish,192,Existing,28,chinese,存在,有在场,With presence
+spanish,192,Existing,28,pinyin,cún zài,yǒu zài chǎng,Pinyin for with presence
+spanish,193,Depending,2,chinese,我靠,我依赖,我靠 is slang expression
+spanish,193,Depending,2,pinyin,wǒ kào,wǒ yī lài,Pinyin for I depend
+spanish,193,Depending,12,chinese,我靠,我依赖,我靠 is slang expression
+spanish,193,Depending,12,pinyin,wǒ kào,wǒ yī lài,Pinyin for I depend
+spanish,194,Retail & Sales,9,chinese,展示,橱窗,Shop window/storefront display
+spanish,194,Retail & Sales,9,pinyin,zhǎn shì,chú chuāng,Pinyin for shop window
+spanish,194,Retail & Sales,10,chinese,展示,展示柜,Display case
+spanish,194,Retail & Sales,10,pinyin,zhǎn shì,zhǎn shì guì,Pinyin for display case
+spanish,194,Retail & Sales,17,chinese,股票,库存,Inventory not financial stocks
+spanish,194,Retail & Sales,17,pinyin,gǔ piào,kù cún,Pinyin for inventory
+spanish,194,Retail & Sales,34,chinese,计数器,柜台,Physical counter not digital counter
+spanish,194,Retail & Sales,34,pinyin,jì shù qì,guì tái,Pinyin for counter
+spanish,195,Belonging,9,english,membership,belonging,Pertenencia means belonging not membership
+spanish,196,Deserving,10,english,desert,merit,Desert here means what one deserves not Sahara
+spanish,196,Deserving,10,chinese,沙漠,应得,沙漠 is Sahara desert - wrong meaning entirely
+spanish,196,Deserving,10,pinyin,shā mò,yīng dé,Pinyin for what one deserves
+spanish,200,Real Estate Terms,40,chinese,我会珍惜,我会评估,Appraise not cherish in real estate
+spanish,200,Real Estate Terms,40,pinyin,wǒ huì zhēn xī,wǒ huì píng gū,Pinyin for will appraise
+spanish,201,Occurring,2,english,happens,I occur,Wrong person - ocurro is first person
+spanish,204,Protecting,28,english,the reservation,the safeguard,Resguardo means safeguard not hotel reservation
+spanish,204,Protecting,28,chinese,预订,保障,Safeguard not reservation
+spanish,204,Protecting,28,pinyin,yù dìng,bǎo zhàng,Pinyin for safeguard
+spanish,205,Defending,10,chinese,后卫,捍卫者,后卫 is sports defender only - use 捍卫者 for general
+spanish,205,Defending,10,pinyin,hòu wèi,hàn wèi zhě,Pinyin for defender
+spanish,205,Defending,29,chinese,后卫,捍卫者,后卫 is sports defender only
+spanish,205,Defending,29,pinyin,hòu wèi,hàn wèi zhě,Pinyin for defender
+spanish,206,Logistics & Shipping,4,chinese,分布,配送,Delivery distribution not spatial distribution
+spanish,206,Logistics & Shipping,4,pinyin,fēn bù,pèi sòng,Pinyin for distribution
+spanish,206,Logistics & Shipping,26,chinese,分布,配送,Delivery distribution
+spanish,206,Logistics & Shipping,26,pinyin,fēn bù,pèi sòng,Pinyin for distribution
+spanish,206,Logistics & Shipping,27,chinese,分布中,配送中,In distribution
+spanish,206,Logistics & Shipping,27,pinyin,fēn bù zhōng,pèi sòng zhōng,Pinyin for in distribution
+spanish,206,Logistics & Shipping,17,portuguese,costumes,alfândega,Costumes means traditions - alfândega means customs office
+spanish,206,Logistics & Shipping,52,portuguese,costumes,a alfândega,Costumes means traditions - alfândega means customs office
+spanish,207,Reducing,11,chinese,剪辑,削减,Budget cut not video editing
+spanish,207,Reducing,11,pinyin,jiǎn jí,xuē jiǎn,Pinyin for cut/reduction
+spanish,207,Reducing,30,chinese,剪切,削减,Budget cut not video editing
+spanish,207,Reducing,30,pinyin,jiǎn qiè,xuē jiǎn,Pinyin for cut/reduction
+spanish,209,Pharmaceutical Terms,4,chinese,丸,药丸,Medicine pill not generic ball
+spanish,209,Pharmaceutical Terms,4,pinyin,wán,yào wán,Pinyin for medicine pill
+spanish,209,Pharmaceutical Terms,19,chinese,互动,相互作用,Drug interaction not social interaction
+spanish,209,Pharmaceutical Terms,19,pinyin,hù dòng,xiāng hù zuò yòng,Pinyin for drug interaction
+spanish,209,Pharmaceutical Terms,42,chinese,必须松一口气,必须缓解,Relief from symptoms not sigh of relief
+spanish,209,Pharmaceutical Terms,42,pinyin,bì xū sōng yì kǒu qì,bì xū huǎn jiě,Pinyin for must relieve
+spanish,209,Pharmaceutical Terms,49,english,a prospect,a leaflet,Prospecto in pharma is package insert not prospect
+spanish,209,Pharmaceutical Terms,49,chinese,前景,说明书,Package insert not future outlook
+spanish,209,Pharmaceutical Terms,49,pinyin,qián jǐng,shuō míng shū,Pinyin for leaflet
+spanish,209,Pharmaceutical Terms,54,chinese,互动,相互作用,Drug interaction not social interaction
+spanish,209,Pharmaceutical Terms,54,pinyin,hù dòng,xiāng hù zuò yòng,Pinyin for drug interaction
+spanish,209,Pharmaceutical Terms,55,chinese,互动,相互作用,Drug interaction not social interaction
+spanish,209,Pharmaceutical Terms,55,pinyin,hù dòng,xiāng hù zuò yòng,Pinyin for drug interaction
+spanish,210,Demonstrating,10,english,evidence,show evidence,Evidenciar is verb not noun
+spanish,211,Checking,11,chinese,评论,检查,Inspection not review/comment
+spanish,211,Checking,11,pinyin,píng lùn,jiǎn chá,Pinyin for inspection
+spanish,211,Checking,27,chinese,一张支票,一次核验,Verification not bank cheque
+spanish,211,Checking,27,pinyin,yī zhāng zhī piào,yī cì hé yàn,Pinyin for verification
+spanish,211,Checking,30,chinese,评论,检查,Inspection not comment
+spanish,211,Checking,30,pinyin,píng lùn,jiǎn chá,Pinyin for inspection
+spanish,211,Checking,31,chinese,评论,检查,Inspection not comment
+spanish,211,Checking,31,pinyin,píng lùn,jiǎn chá,Pinyin for inspection
+spanish,212,Energy & Power,6,chinese,中央,发电厂,Power plant not central
+spanish,212,Energy & Power,6,pinyin,zhōng yāng,fā diàn chǎng,Pinyin for power plant
+spanish,212,Energy & Power,17,chinese,当前,电流,Electric current not present time
+spanish,212,Energy & Power,17,pinyin,dāng qián,diàn liú,Pinyin for electric current
+spanish,212,Energy & Power,29,chinese,中央,发电厂,Power plant not central
+spanish,212,Energy & Power,29,pinyin,zhōng yāng,fā diàn chǎng,Pinyin for power plant
+spanish,212,Energy & Power,30,chinese,中央,发电厂,Power plant not central
+spanish,212,Energy & Power,30,pinyin,zhōng yāng,fā diàn chǎng,Pinyin for power plant
+spanish,212,Energy & Power,51,chinese,当前,电流,Electric current not present time
+spanish,212,Energy & Power,51,pinyin,dāng qián,diàn liú,Pinyin for electric current
+spanish,212,Energy & Power,52,chinese,一条流,电流,Electric current not stream
+spanish,212,Energy & Power,52,pinyin,yī tiáo liú,diàn liú,Pinyin for electric current
+spanish,213,Thanking,2,chinese,我很欣赏,我很感激,Grateful not admire
+spanish,213,Thanking,2,pinyin,wǒ hěn xīn shǎng,wǒ hěn gǎn jī,Pinyin for grateful
+spanish,213,Thanking,5,chinese,我们很欣赏,我们很感激,Grateful not admire
+spanish,213,Thanking,5,pinyin,wǒ men hěn xīn shǎng,wǒ men hěn gǎn jī,Pinyin for grateful
+spanish,213,Thanking,11,chinese,认识,认可,Acknowledge not know/acquainted
+spanish,213,Thanking,11,pinyin,rèn shí,rèn kě,Pinyin for acknowledge
+spanish,213,Thanking,12,chinese,我很欣赏,我很感激,Grateful not admire
+spanish,213,Thanking,12,pinyin,wǒ hěn xīn shǎng,wǒ hěn gǎn jī,Pinyin for grateful
+spanish,213,Thanking,18,chinese,我们很欣赏,我们很感激,Grateful not admire
+spanish,213,Thanking,18,pinyin,wǒ men hěn xīn shǎng,wǒ men hěn gǎn jī,Pinyin for grateful
+spanish,214,Congratulating,2,english,congratulations,I congratulate,Verb form not noun - felicito is first person
+spanish,214,Congratulating,3,english,congratulations,you congratulate,Verb form not noun - felicitas is second person
+spanish,215,Automotive Terms,9,chinese,加速器,油门,Gas pedal not particle accelerator
+spanish,215,Automotive Terms,9,pinyin,jiā sù qì,yóu mén,Pinyin for gas pedal
+spanish,215,Automotive Terms,18,chinese,传输,变速器,Gearbox not data transmission
+spanish,215,Automotive Terms,18,pinyin,chuán shū,biàn sù qì,Pinyin for gearbox
+spanish,215,Automotive Terms,36,chinese,加速器,油门,Gas pedal not particle accelerator
+spanish,215,Automotive Terms,36,pinyin,jiā sù qì,yóu mén,Pinyin for gas pedal
+spanish,215,Automotive Terms,37,chinese,加速器,油门,Gas pedal not particle accelerator
+spanish,215,Automotive Terms,37,pinyin,jiā sù qì,yóu mén,Pinyin for gas pedal
+spanish,215,Automotive Terms,54,chinese,传输,变速器,Gearbox not data transmission
+spanish,215,Automotive Terms,54,pinyin,chuán shū,biàn sù qì,Pinyin for gearbox
+spanish,215,Automotive Terms,55,chinese,传输,变速器,Gearbox not data transmission
+spanish,215,Automotive Terms,55,pinyin,chuán shū,biàn sù qì,Pinyin for gearbox
+spanish,218,Subjunctive Triggers,8,chinese,需求,要求,Verb form demand not noun
+spanish,218,Subjunctive Triggers,8,pinyin,xū qiú,yāo qiú,Pinyin for demand verb
+spanish,218,Subjunctive Triggers,14,english,sort,command,Ordenar in subjunctive context means command
+spanish,218,Subjunctive Triggers,14,chinese,排序,命令,Command not sort
+spanish,218,Subjunctive Triggers,14,pinyin,pái xù,mìng lìng,Pinyin for command
+spanish,218,Subjunctive Triggers,18,chinese,太棒了,难以置信,Unbelievable not awesome
+spanish,218,Subjunctive Triggers,18,pinyin,tài bàng le,nán yǐ zhì xìn,Pinyin for unbelievable
+spanish,218,Subjunctive Triggers,43,english,you have to sort,you have to order,Command not sort
+spanish,218,Subjunctive Triggers,43,chinese,你必须排序,你必须命令,Command not sort
+spanish,218,Subjunctive Triggers,43,pinyin,nǐ bì xū pái xù,nǐ bì xū mìng lìng,Pinyin for command
+spanish,218,Subjunctive Triggers,44,english,I'm going to order,I'm going to command,Command not order food
+spanish,218,Subjunctive Triggers,44,chinese,我要订购,我要命令,Command not purchase order
+spanish,218,Subjunctive Triggers,44,pinyin,wǒ yào dìng gòu,wǒ yào mìng lìng,Pinyin for command
+spanish,218,Subjunctive Triggers,51,chinese,太棒了,难以置信,Unbelievable not awesome
+spanish,218,Subjunctive Triggers,51,pinyin,tài bàng le,nán yǐ zhì xìn,Pinyin for unbelievable
+spanish,220,Trusting,10,english,legit,to trust on credit,Fiar means to give credit/trust
+spanish,220,Trusting,10,chinese,合法,赊账,Trust/credit not legal
+spanish,220,Trusting,10,pinyin,hé fǎ,shē zhàng,Pinyin for trust on credit
