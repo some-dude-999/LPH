@@ -264,7 +264,7 @@
       pointer-events: auto;
     }
 
-    /* Show nav buttons when menu is visible (reading mode UI) */
+    /* Show nav buttons when menu is visible (flashcard mode UI) */
     body.showing-menu .nav-btn {
       opacity: 1;
       pointer-events: auto;
@@ -1793,19 +1793,19 @@
     <!-- Tooltips are populated dynamically via initializeTooltips() using TOOLTIP_MESSAGES -->
     <div class="mode-selector">
       <span class="tooltip-container">
-        <button class="mode-btn active" id="mode-reading" data-mode="reading">📖</button>
+        <button class="mode-btn active" id="mode-flashcard" data-mode="flashcard">📖</button>
         <span class="tooltip" id="tooltip-reading"></span>
       </span>
       <span class="tooltip-container">
-        <button class="mode-btn" id="mode-listening" data-mode="listening">👂</button>
+        <button class="mode-btn" id="mode-spelling" data-mode="spelling">👂</button>
         <span class="tooltip" id="tooltip-listening"></span>
       </span>
       <span class="tooltip-container">
-        <button class="mode-btn" id="mode-speaking" data-mode="speaking">💬</button>
+        <button class="mode-btn" id="mode-pronunciation" data-mode="pronunciation">💬</button>
         <span class="tooltip" id="tooltip-speaking"></span>
       </span>
       <span class="tooltip-container">
-        <button class="mode-btn" id="mode-writing" data-mode="writing">✏️</button>
+        <button class="mode-btn" id="mode-translation" data-mode="translation">✏️</button>
         <span class="tooltip" id="tooltip-writing"></span>
       </span>
     </div>
@@ -1867,10 +1867,10 @@
 
   <!-- Card Controls - Below the flashcard -->
   <div class="card-controls" id="card-controls">
-    <!-- Left group: Got It / Don't Got It (reading mode only) -->
+    <!-- Left group: Got It / Don't Got It (flashcard mode only) -->
     <button class="control-btn" id="got-it-btn" data-tooltip="">✓</button>
     <button class="control-btn" id="confused-btn" data-tooltip="">✗</button>
-    <!-- Mic button (speaking mode only) - before separator so divider shows in speaking mode -->
+    <!-- Mic button (pronunciation mode only) - before separator so divider shows in pronunciation mode -->
     <button class="control-btn" id="mic-btn-control" data-tooltip="" style="display: none;">🎤</button>
     <div class="control-separator" id="control-separator"></div>
     <!-- Right group: Pronounce / Peek (all modes) -->
@@ -2170,6 +2170,11 @@
     let currentSpeed = 0.6; // Default to normal speed
     const VALID_SPEEDS = [0.3, 0.6, 0.9]; // Valid speed options (must match data-speed values in HTML)
 
+    // ============================================================
+    // DEBUG MODE: Show word type (Base Word / Example Word)
+    // ============================================================
+    const DEBUG_SHOW_WORD_TYPE = true; // Set to true to display word type on cards
+
     let nativeLanguage = 'english'; // Default, will be updated from loaded module metadata
     let gameStarted = false;
     let currentWordpackKey = '';
@@ -2179,7 +2184,7 @@
     let currentAct = 1; // Track currently selected act
 
     // Learning modes
-    let currentMode = 'reading'; // 'reading', 'listening', 'speaking', 'writing'
+    let currentMode = 'flashcard'; // 'flashcard', 'spelling', 'pronunciation', 'translation'
     let typingInput = ''; // User's current typing input for typing modes
     let typingDisplay = []; // Array of actual characters (always contains real word, not underscores)
     let typedPositions = new Set(); // Track which positions have been successfully typed
@@ -2236,7 +2241,7 @@
     // Convention: CLICK (round cardboard button) or PRESS [rectangular key] to simple_action
     //
     // These SAME messages are displayed in TWO places:
-    //   1. Mode tooltips (hover over 📖 Reading Mode) - shows list of all actions
+    //   1. Mode tooltips (hover over 📖 Flashcard Mode) - shows list of all actions
     //   2. Button hover tooltips (hover over ✓ button) - shows that single action
     //
     // HTML classes used:
@@ -2286,10 +2291,10 @@
 
     // Mode selector elements
     const modeBtns = document.querySelectorAll('.mode-btn');
-    const modeReading = document.getElementById('mode-reading');
-    const modeListening = document.getElementById('mode-listening');
-    const modeSpeaking = document.getElementById('mode-speaking');
-    const modeWriting = document.getElementById('mode-writing');
+    const modeFlashcard = document.getElementById('mode-flashcard');
+    const modeSpelling = document.getElementById('mode-spelling');
+    const modePronunciation = document.getElementById('mode-pronunciation');
+    const modeTranslation = document.getElementById('mode-translation');
 
     // Menu button
     const menuBtn = document.getElementById('menu-btn');
@@ -2726,19 +2731,19 @@
 
         <div style="font-size: 1.1rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 1.8;">
           <div style="margin-bottom: 15px;">
-            <strong>📖 Reading Mode:</strong> Chinese word → flip to see translation
+            <strong>📖 Flashcard Mode:</strong> Chinese word → flip to see translation
           </div>
 
           <div style="margin-bottom: 15px;">
-            <strong>👂 Listening Mode:</strong> Hear Chinese → type pinyin
+            <strong>👂 Spelling Mode:</strong> Hear Chinese → type pinyin
           </div>
 
           <div style="margin-bottom: 15px;">
-            <strong>💬 Speaking Mode:</strong> See Chinese → say it out loud (Space to record)
+            <strong>💬 Pronunciation Mode:</strong> See Chinese → say it out loud (Space to record)
           </div>
 
           <div style="margin-bottom: 15px;">
-            <strong>✏️ Writing Mode:</strong> See translation → type the Chinese pinyin
+            <strong>✏️ Translation Mode:</strong> See translation → type the Chinese pinyin
           </div>
 
           <div style="margin-bottom: 15px;">
@@ -2746,7 +2751,7 @@
             • Click card or ↓ to flip<br>
             • ← → to navigate<br>
             • Space: Hear pronunciation (reading) / Record speech (speaking) / Type practice (listening/writing)<br>
-            • Type letters in listening/writing modes
+            • Type letters in listening/translation modes
           </div>
 
           <div style="margin-bottom: 15px;">
@@ -2947,10 +2952,10 @@
 
       // Update active button
       modeBtns.forEach(btn => btn.classList.remove('active'));
-      if (newMode === 'reading') modeReading.classList.add('active');
-      if (newMode === 'listening') modeListening.classList.add('active');
-      if (newMode === 'speaking') modeSpeaking.classList.add('active');
-      if (newMode === 'writing') modeWriting.classList.add('active');
+      if (newMode === 'flashcard') modeFlashcard.classList.add('active');
+      if (newMode === 'spelling') modeSpelling.classList.add('active');
+      if (newMode === 'pronunciation') modePronunciation.classList.add('active');
+      if (newMode === 'translation') modeTranslation.classList.add('active');
 
       // Completely reset pack as if starting new game in this mode
       // (Reset from original deck, not modified current deck)
@@ -2968,15 +2973,15 @@
       // Reset deck change indicator
       pendingDeckChange = 0;
 
-      // Initialize typing display for listening and writing modes
-      if ((newMode === 'listening' || newMode === 'writing') && currentDeck.length > 0) {
+      // Initialize typing display for listening and translation modes
+      if ((newMode === 'spelling' || newMode === 'translation') && currentDeck.length > 0) {
         initializeTypingDisplay();
       }
 
       updateDisplay();
 
-      // Auto-pronounce Chinese in listening mode only (not writing - user needs to translate)
-      if (newMode === 'listening' && currentDeck.length > 0) {
+      // Auto-pronounce Chinese in spelling mode only (not writing - user needs to translate)
+      if (newMode === 'spelling' && currentDeck.length > 0) {
         setTimeout(() => speakChinese(), 300);
       }
 
@@ -2984,7 +2989,7 @@
       saveState();
     }
 
-    // Initialize typing display for listening and writing modes
+    // Initialize typing display for listening and translation modes
     // KEY FEATURE: Type PINYIN instead of Chinese characters
     // - Ignore spaces (like Spanish/English typing modes)
     // - Accept any variant of accented letters (ā, á, ǎ, à -> a)
@@ -3037,10 +3042,10 @@
       });
     }
 
-    // Handle typing input for listening and writing modes
+    // Handle typing input for listening and translation modes
     // KEY FEATURE: Type PINYIN - accepts unaccented letters (ā, á, ǎ, à -> a)
     function handleTypingInput(key) {
-      if ((currentMode !== 'listening' && currentMode !== 'writing') || currentDeck.length === 0) return;
+      if ((currentMode !== 'spelling' && currentMode !== 'translation') || currentDeck.length === 0) return;
 
       const word = currentDeck[currentIndex].pinyin;
       const targetChars = word.split('');
@@ -3107,14 +3112,14 @@
               playCardFlipSound();
 
               // Re-initialize typing for next card
-              if (currentMode === 'listening' || currentMode === 'writing') {
+              if (currentMode === 'spelling' || currentMode === 'translation') {
                 initializeTypingDisplay();
               }
               updateDisplay();
               saveState();
 
-              // Auto-pronounce in listening mode
-              if (currentMode === 'listening' && currentDeck.length > 0) {
+              // Auto-pronounce in spelling mode
+              if (currentMode === 'spelling' && currentDeck.length > 0) {
                 setTimeout(() => speakChinese(), 300);
               }
             });
@@ -3124,7 +3129,7 @@
 
             // Auto-advance after stamp duration (1600ms > 1500ms stamp)
             setTimeout(() => {
-              if (currentMode === 'listening' || currentMode === 'writing') {
+              if (currentMode === 'spelling' || currentMode === 'translation') {
                 moveToNextCard();
               }
             }, 1600);
@@ -3148,7 +3153,7 @@
       }
     }
 
-    // Check if current word is complete in writing mode
+    // Check if current word is complete in translation mode
     function isWritingComplete() {
       return !typingDisplay.includes('_');
     }
@@ -3322,11 +3327,11 @@
       // MODE TOOLTIPS - Build instruction lists for each mode
       // ---------------------------------------------------------
 
-      // Reading Mode: gotIt, confused, prevCard, nextCard, pronounce, peek
+      // Flashcard Mode: gotIt, confused, prevCard, nextCard, pronounce, peek
       const readingTooltip = document.getElementById('tooltip-reading');
       if (readingTooltip) {
         readingTooltip.innerHTML = `
-          <strong>📖 Reading Mode</strong>
+          <strong>📖 Flashcard Mode</strong>
           <div class="tooltip-instructions">
             ${TOOLTIP_MESSAGES.gotIt}<br>
             ${TOOLTIP_MESSAGES.confused}<br>
@@ -3338,11 +3343,11 @@
         `;
       }
 
-      // Listening Mode: typeLetters, pronounce, peek
+      // Spelling Mode: typeLetters, pronounce, peek
       const listeningTooltip = document.getElementById('tooltip-listening');
       if (listeningTooltip) {
         listeningTooltip.innerHTML = `
-          <strong>👂 Listening Mode</strong>
+          <strong>👂 Spelling Mode</strong>
           <div class="tooltip-instructions">
             ${TOOLTIP_MESSAGES.typeLetters}<br>
             ${TOOLTIP_MESSAGES.pronounce}<br>
@@ -3351,11 +3356,11 @@
         `;
       }
 
-      // Speaking Mode: record, pronounce, peek
+      // Pronunciation Mode: record, pronounce, peek
       const speakingTooltip = document.getElementById('tooltip-speaking');
       if (speakingTooltip) {
         speakingTooltip.innerHTML = `
-          <strong>💬 Speaking Mode</strong>
+          <strong>💬 Pronunciation Mode</strong>
           <div class="tooltip-instructions">
             ${TOOLTIP_MESSAGES.record}<br>
             ${TOOLTIP_MESSAGES.pronounce}<br>
@@ -3364,11 +3369,11 @@
         `;
       }
 
-      // Writing Mode: typeLetters, pronounce, peek
+      // Translation Mode: typeLetters, pronounce, peek
       const writingTooltip = document.getElementById('tooltip-writing');
       if (writingTooltip) {
         writingTooltip.innerHTML = `
-          <strong>✏️ Writing Mode</strong>
+          <strong>✏️ Translation Mode</strong>
           <div class="tooltip-instructions">
             ${TOOLTIP_MESSAGES.typeLetters}<br>
             ${TOOLTIP_MESSAGES.pronounce}<br>
@@ -3648,7 +3653,7 @@
       if (originalDeck.length > 0) {
         currentDeck = shuffleArray([...originalDeck]);
         currentIndex = 0;
-        if (currentMode === 'listening' || currentMode === 'writing') {
+        if (currentMode === 'spelling' || currentMode === 'translation') {
           initializeTypingDisplay();
         }
         updateDisplay();
@@ -3806,15 +3811,25 @@
 
       // Display counter (deck change indicator now shown as overlay stamp on card)
       let counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
-      cardCounter.textContent = counterText;
+
+      // ============================================================
+      // DEBUG MODE: Show word type (Base Word / Example Word)
+      // ============================================================
+      if (DEBUG_SHOW_WORD_TYPE && card.type) {
+        const typeColor = card.type === "Base Word" ? "#2563eb" : "#059669";
+        const typeWeight = card.type === "Base Word" ? "bold" : "normal";
+        counterText += ` | <span style="color: ${typeColor}; font-weight: ${typeWeight};">${card.type}</span>`;
+      }
+
+      cardCounter.innerHTML = counterText; // Use innerHTML to render HTML tags
 
       // Get indicator elements (positioned at card corners, not inside card-word)
       const wrongLettersFront = document.getElementById('wrong-letters-front');
       const wrongCountFront = document.getElementById('wrong-count-front');
 
       // Mode-specific display
-      if (currentMode === 'reading') {
-        // READING MODE - Purpose: Learn to read Chinese and understand meaning
+      if (currentMode === 'flashcard') {
+        // FLASHCARD MODE - Purpose: Learn to read Chinese and understand meaning
         // Front: Chinese characters + pinyin | Back: Translation in native language
         spanishWord.innerHTML = getChineseHtml(card.chinese, card.pinyin);
         spanishWord.className = 'card-word';
@@ -3823,8 +3838,8 @@
         // Clear indicators
         wrongLettersFront.innerHTML = '';
         wrongCountFront.innerHTML = '';
-      } else if (currentMode === 'listening') {
-        // LISTENING MODE - Purpose: Learn to understand spoken Chinese and type pinyin
+      } else if (currentMode === 'spelling') {
+        // SPELLING MODE - Purpose: Learn to understand spoken Chinese and type pinyin
         // Front: Hear Chinese audio + type pinyin | Back: Chinese characters + translation
         // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
         // Show all wrong letters including repeats (user can see each wrong attempt)
@@ -3844,8 +3859,8 @@
         spanishWord.className = 'card-word';
         englishWord.innerHTML = `${getChineseHtml(card.chinese, card.pinyin)}<br><div class="translation-text">${card.translation}</div>`;
         englishWord.className = 'card-word';
-      } else if (currentMode === 'writing') {
-        // WRITING MODE - Purpose: Learn to write Chinese pinyin from translation
+      } else if (currentMode === 'translation') {
+        // TRANSLATION MODE - Purpose: Learn to write Chinese pinyin from translation
         // Front: Translation + type Chinese pinyin | Back: Correct Chinese characters
         // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
         // Show all wrong letters including repeats (user can see each wrong attempt)
@@ -3865,8 +3880,8 @@
         spanishWord.className = 'card-word';
         englishWord.innerHTML = getChineseHtml(card.chinese, card.pinyin);
         englishWord.className = 'card-word';
-      } else if (currentMode === 'speaking') {
-        // SPEAKING MODE - Purpose: Learn to pronounce Chinese correctly
+      } else if (currentMode === 'pronunciation') {
+        // PRONUNCIATION MODE - Purpose: Learn to pronounce Chinese correctly
         // Front: Chinese characters + pinyin + microphone button | Back: Translation
         spanishWord.innerHTML = getChineseHtml(card.chinese, card.pinyin);
         spanishWord.className = 'card-word';
@@ -3879,15 +3894,15 @@
 
       // Show/hide mic button based on mode (now in control bar, not on card)
       const micBtnControlEl = document.getElementById('mic-btn-control');
-      if (currentMode === 'speaking') {
+      if (currentMode === 'pronunciation') {
         micBtnControlEl.style.display = 'flex';
       } else {
         micBtnControlEl.style.display = 'none';
       }
 
       // Show/hide control bar buttons based on mode
-      // Got It and Confused buttons: only in reading mode
-      if (currentMode === 'reading') {
+      // Got It and Confused buttons: only in flashcard mode
+      if (currentMode === 'flashcard') {
         gotItBtn.style.display = 'flex';
         confusedBtn.style.display = 'flex';
       } else {
@@ -3895,17 +3910,17 @@
         confusedBtn.style.display = 'none';
       }
 
-      // Separator: show in reading mode (after ✓/✗) and speaking mode (after 🎤)
-      if (currentMode === 'reading' || currentMode === 'speaking') {
+      // Separator: show in flashcard mode (after ✓/✗) and pronunciation mode (after 🎤)
+      if (currentMode === 'flashcard' || currentMode === 'pronunciation') {
         controlSeparator.style.display = 'block';
       } else {
         controlSeparator.style.display = 'none';
       }
 
-      // Show/hide navigation arrows based on mode (only show in reading mode - others auto-advance)
+      // Show/hide navigation arrows based on mode (only show in flashcard mode - others auto-advance)
       const prevBtn = document.getElementById('prev-btn');
       const nextBtn = document.getElementById('next-btn');
-      if (currentMode === 'reading') {
+      if (currentMode === 'flashcard') {
         prevBtn.style.display = 'flex';
         nextBtn.style.display = 'flex';
       } else {
@@ -3924,7 +3939,7 @@
     }
 
     // ============================================================
-    // KEY FEATURE: Auto-pronounce Chinese word in listening mode
+    // KEY FEATURE: Auto-pronounce Chinese word in spelling mode
     // - On card navigation (prev/next): auto-pronounce
     // - Helps users learn pronunciation through repetition
     // ============================================================
@@ -3935,14 +3950,14 @@
       speechSynthesis.cancel(); // Stop speech on card navigation
       playCardFlipSound();
       currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
-      if (currentMode === 'listening' || currentMode === 'writing') {
+      if (currentMode === 'spelling' || currentMode === 'translation') {
         initializeTypingDisplay();
       }
       updateDisplay();
       saveState();
 
-      // Auto-read in listening mode (helps learn pronunciation)
-      if (currentMode === 'listening') {
+      // Auto-read in spelling mode (helps learn pronunciation)
+      if (currentMode === 'spelling') {
         setTimeout(() => speakChinese(), 300);
       }
     }
@@ -3953,14 +3968,14 @@
       speechSynthesis.cancel(); // Stop speech on card navigation
       playCardFlipSound();
       currentIndex = (currentIndex + 1) % currentDeck.length;
-      if (currentMode === 'listening' || currentMode === 'writing') {
+      if (currentMode === 'spelling' || currentMode === 'translation') {
         initializeTypingDisplay();
       }
       updateDisplay();
       saveState();
 
-      // Auto-read in listening mode (helps learn pronunciation)
-      if (currentMode === 'listening') {
+      // Auto-read in spelling mode (helps learn pronunciation)
+      if (currentMode === 'spelling') {
         setTimeout(() => speakChinese(), 300);
       }
     }
@@ -3970,14 +3985,14 @@
       if (currentDeck.length === 0) return;
       playCardFlipSound();
       currentIndex = (currentIndex + 1) % currentDeck.length;
-      if (currentMode === 'listening' || currentMode === 'writing') {
+      if (currentMode === 'spelling' || currentMode === 'translation') {
         initializeTypingDisplay();
       }
       updateDisplay();
       saveState();
 
-      // Auto-read in listening mode only (not writing - user needs to translate)
-      if (currentMode === 'listening') {
+      // Auto-read in spelling mode only (not writing - user needs to translate)
+      if (currentMode === 'spelling') {
         setTimeout(() => speakChinese(), 300);
       }
     }
@@ -4084,7 +4099,7 @@
       currentIndex = 0;
 
       // Reset typing state for typing modes
-      if (currentMode === 'listening' || currentMode === 'writing') {
+      if (currentMode === 'spelling' || currentMode === 'translation') {
         initializeTypingDisplay();
       }
 
@@ -4099,8 +4114,8 @@
 
       updateDisplay();
 
-      // Auto-pronounce in listening mode
-      if (currentMode === 'listening' && currentDeck.length > 0) {
+      // Auto-pronounce in spelling mode
+      if (currentMode === 'spelling' && currentDeck.length > 0) {
         setTimeout(() => speakChinese(), 300);
       }
 
@@ -4190,7 +4205,7 @@
       const heardEl = isFront ? heardFront : heardBack;
 
       // Speaking mode: Don't show overlay, auto-advance with stamps
-      if (currentMode === 'speaking') {
+      if (currentMode === 'pronunciation') {
         if (score >= 70) {
           // Pass! Remove card and advance
           pendingDeckChange = -1;
@@ -4224,7 +4239,7 @@
         return; // Don't show overlay
       }
 
-      // Non-speaking modes: show feedback overlay
+      // Non-pronunciation modes: show feedback overlay
       scoreEl.textContent = `${score}%`;
       scoreEl.className = `feedback-score ${getScoreClass(score)}`;
       messageEl.textContent = getFeedbackMessage(score);
@@ -4251,7 +4266,7 @@
 
       isListening = true;
       // Use control bar mic button for listening animation
-      micBtnControl.classList.add('listening');
+      micBtnControl.classList.add('spelling');
 
       recognition.onresult = (event) => {
         const results = event.results[0];
@@ -4276,7 +4291,7 @@
       recognition.onerror = (event) => {
         console.error('Speech recognition error:', event.error);
         isListening = false;
-        micBtnControl.classList.remove('listening');
+        micBtnControl.classList.remove('spelling');
 
         if (event.error === 'no-speech') {
           showFeedback(0, '(no speech detected)', isFront);
@@ -4287,7 +4302,7 @@
 
       recognition.onend = () => {
         isListening = false;
-        micBtnControl.classList.remove('listening');
+        micBtnControl.classList.remove('spelling');
       };
 
       recognition.start();
@@ -4440,7 +4455,7 @@
       });
     });
 
-    // Mic button in control bar (speaking mode)
+    // Mic button in control bar (pronunciation mode)
     micBtnControl.addEventListener('click', (e) => {
       e.stopPropagation();
       playButtonClickSound();
@@ -4517,14 +4532,14 @@
         return;
       }
 
-      // Handle typing in listening and writing modes (accept letters, numbers, symbols - not space)
-      if ((currentMode === 'listening' || currentMode === 'writing') && e.key.length === 1 && e.key !== ' ') {
+      // Handle typing in listening and translation modes (accept letters, numbers, symbols - not space)
+      if ((currentMode === 'spelling' || currentMode === 'translation') && e.key.length === 1 && e.key !== ' ') {
         e.preventDefault();
         handleTypingInput(e.key);
         return;
       }
 
-      // Enter key removed from listening/writing modes - user should use navigation buttons
+      // Enter key removed from listening/translation modes - user should use navigation buttons
 
       // Prevent repeated actions when holding key down
       if (keysPressed[e.key]) {
@@ -4534,13 +4549,13 @@
       keysPressed[e.key] = true;
 
       if (e.key === 'ArrowLeft') {
-        // Only allow left arrow in reading mode
-        if (currentMode === 'reading') {
+        // Only allow left arrow in flashcard mode
+        if (currentMode === 'flashcard') {
           goToPrevious();
         }
       } else if (e.key === 'ArrowRight') {
-        // Only allow right arrow in reading mode
-        if (currentMode === 'reading') {
+        // Only allow right arrow in flashcard mode
+        if (currentMode === 'flashcard') {
           goToNext();
         }
       } else if (e.key === 'ArrowUp') {
@@ -4552,32 +4567,32 @@
         e.preventDefault();
         flipCard();
       } else if (e.key === '1') {
-        // Key 1: Remove card (Got it!) - only in reading mode
-        if (currentMode === 'reading') {
+        // Key 1: Remove card (Got it!) - only in flashcard mode
+        if (currentMode === 'flashcard') {
           e.preventDefault();
           removeCurrentCard();
         }
       } else if (e.key === '2') {
-        // Key 2: Add practice cards (Confused) - only in reading mode
-        if (currentMode === 'reading') {
+        // Key 2: Add practice cards (Confused) - only in flashcard mode
+        if (currentMode === 'flashcard') {
           e.preventDefault();
           addConfusedCards();
         }
       } else if (e.key === ' ') {
-        // Space: pronounce in reading mode, record in speaking mode, play sound in writing mode, ignore in listening
-        if (currentMode === 'reading') {
+        // Space: pronounce in flashcard mode, record in pronunciation mode, play sound in translation mode, ignore in listening
+        if (currentMode === 'flashcard') {
           e.preventDefault();
           speakChinese();
-        } else if (currentMode === 'speaking') {
+        } else if (currentMode === 'pronunciation') {
           e.preventDefault();
           // Trigger mic button based on which side of card is showing
           const isFront = !isFlipped;
           startListening(isFront);
-        } else if (currentMode === 'writing') {
+        } else if (currentMode === 'translation') {
           e.preventDefault();
           playScribbleSound(); // Play scribble sound but don't register input
-        } else if (currentMode === 'listening') {
-          e.preventDefault(); // Ignore space in listening mode
+        } else if (currentMode === 'spelling') {
+          e.preventDefault(); // Ignore space in spelling mode
         }
       }
     });
