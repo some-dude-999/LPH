@@ -1,0 +1,31 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,1,Greetings & Goodbyes,12,malay,Anda dialu -alukan,Sama-sama,"Broken translation with weird hyphen - should be 'you're welcome' response"
+chinese,1,Greetings & Goodbyes,42,malay,Anda dialu -alukan,Sama-sama,"Broken translation with weird hyphen - should be 'you're welcome' response"
+chinese,1,Greetings & Goodbyes,12,filipino,Maligayang pagdating mo,Walang anuman,"Wrong context: this means 'welcome' (greeting) not 'you're welcome' (response to thanks)"
+chinese,1,Greetings & Goodbyes,42,filipino,Maligayang pagdating mo,Walang anuman,"Wrong context: this means 'welcome' (greeting) not 'you're welcome' (response to thanks)"
+chinese,4,Yes No & Responses,4,spanish,DE ACUERDO,De acuerdo,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,4,french,D'ACCORD,D'accord,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,4,vietnamese,ĐƯỢC RỒI,Được rồi,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,13,spanish,DE ACUERDO,De acuerdo,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,13,french,D'ACCORD,D'accord,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,13,vietnamese,ĐƯỢC RỒI,Được rồi,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,22,spanish,DE ACUERDO,De acuerdo,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,22,french,D'ACCORD,D'accord,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,22,vietnamese,ĐƯỢC RỒI,Được rồi,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,24,spanish,DE ACUERDO,De acuerdo,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,24,french,D'ACCORD,D'accord,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,24,vietnamese,ĐƯỢC RỒI,Được rồi,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,42,spanish,DE ACUERDO,De acuerdo,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,42,french,D'ACCORD,D'accord,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,42,vietnamese,ĐƯỢC RỒI,Được rồi,Remove ALL CAPS - should be normal capitalization
+chinese,4,Yes No & Responses,6,spanish,No,No,Correct - keep as is (verification)
+chinese,4,Yes No & Responses,6,thai,เลขที่,ไม่,"Wrong word: เลขที่ = 'number/No.' - should be ไม่ = 'no/not'"
+chinese,4,Yes No & Responses,7,thai,เลขที่,ไม่,"Wrong word: เลขที่ = 'number/No.' - should be ไม่ = 'no/not'"
+chinese,4,Yes No & Responses,8,thai,เลขที่,ไม่,"Wrong word: เลขที่ = 'number/No.' - should be ไม่ = 'no/not'"
+chinese,4,Yes No & Responses,9,thai,เลขที่,ไม่,"Wrong word: เลขที่ = 'number/No.' - should be ไม่ = 'no/not'"
+chinese,6,Essential Verbs II,30,spanish,DE ACUERDO,De acuerdo,Remove ALL CAPS - should be normal capitalization
+chinese,6,Essential Verbs II,30,french,D'ACCORD,D'accord,Remove ALL CAPS - should be normal capitalization
+chinese,6,Essential Verbs II,30,vietnamese,ĐƯỢC RỒI,Được rồi,Remove ALL CAPS - should be normal capitalization
+chinese,11,Basic Adjectives I,12,khmer,of,ចាស់,Wrong language: 'of' is English - should be khmer for 'old'
+chinese,30,Drinks & Beverages,4,malay,TEA,Teh,Remove ALL CAPS - should be normal capitalization
+chinese,30,Drinks & Beverages,4,filipino,TEA,Tsaa,Remove ALL CAPS - should be normal capitalization

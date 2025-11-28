@@ -1,16 +1,16 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 对,duì,right,correcto,correct,certo,Đúng,ถูกต้อง,ត្រឹមត្រូវ,benar,betul,tama
 好,hǎo,good,bien,bien,bom,Tốt,ดี,ល្អ,Bagus,baik,Mabuti
-行,xíng,OK,DE ACUERDO,D'ACCORD,OK,ĐƯỢC RỒI,ตกลง,យល់ព្រម,OKE,Ok,Ok
+行,xíng,OK,De acuerdo,D'accord,OK,Được rồi,ตกลง,យល់ព្រម,OKE,Ok,Ok
 没问题,méi wèn tí,no problem,ningún problema,aucun problème,sem problemas,Không vấn đề,ไม่มีปัญหา,គ្មានបញ្ហា,Tidak masalah,Tiada masalah,Walang problema
-不,bù,No,No,Non,Não,KHÔNG,เลขที่,ដេលក្ផាន,TIDAK,Tidak,Hindi
-没有,méi yǒu,No,No,Non,Não,KHÔNG,เลขที่,ដេលក្ផាន,TIDAK,Tidak,Hindi
-不是,bú shì,no,No,Non,não,KHÔNG,เลขที่,ដេលក្ផាន,TIDAK,tidak,hindi
-不行,bù xíng,no,No,Non,não,KHÔNG,เลขที่,ដេលក្ផាន,TIDAK,tidak,hindi
+不,bù,No,No,Non,Não,KHÔNG,ไม่,ដេលក្ផាន,TIDAK,Tidak,Hindi
+没有,méi yǒu,No,No,Non,Não,KHÔNG,ไม่,ដេលក្ផាន,TIDAK,Tidak,Hindi
+不是,bú shì,no,No,Non,não,KHÔNG,ไม่,ដេលក្ផាន,TIDAK,tidak,hindi
+不行,bù xíng,no,No,Non,não,KHÔNG,ไม่,ដេលក្ផាន,TIDAK,tidak,hindi
 不可以,bù kě yǐ,Can't,No poder,Ne peut pas,Não pode,không thể,ไม่สามารถ,មិនអាច,Tidak bisa,Tidak boleh,Hindi ba
 没,méi,without,sin,sans,sem,không có,ปราศจาก,ដោយក្ផាន,tanpa,tanpa,wala
 别,bié,Don't,No,Ne le faites pas,Não,Đừng,อย่า,មិនមេនទេ,Jangan,Jangan,Huwag
-好的,hǎo de,OK,DE ACUERDO,D'ACCORD,OK,ĐƯỢC RỒI,ตกลง,យល់ព្រម,OKE,Ok,Ok
+好的,hǎo de,OK,De acuerdo,D'accord,OK,Được rồi,ตกลง,យល់ព្រម,OKE,Ok,Ok
 是的,shì de,Yes,Sí,Oui,Sim,Đúng,ใช่,បាត,Ya,Ya,Oo
 对的,duì de,Yes,Sí,Oui,Sim,Đúng,ใช่,បាត,Ya,Ya,Oo
 对了,duì le,Right,Correcto,C'est exact,Certo,Đúng rồi,ถูกแล้ว,ត្រឹមត្រូវហើយ,Benar,Betul,Tama
@@ -19,9 +19,9 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 准确,zhǔn què,precise,preciso,précis,preciso,chính xác,แม่นยำ,ចាក់លាក់,tepat,tepat,tumpak
 答对了,dá duì le,Correct answer,respuesta correcta,Bonne réponse,Resposta correta,Câu trả lời đúng,คำตอบที่ถูกต้อง,ចម្លើយត្រឹមត្រូវ,Jawaban yang benar,Jawapan yang betul,Tamang sagot
 说得对,shuō dé duì,That's right,Así es,C'est exact,Isso mesmo,Đúng rồi,ถูกต้องแล้ว,ត្រឹមត្រូវហើយ,Itu benar,Betul,Tama yan
-好啊,hǎo a,OK,DE ACUERDO,D'ACCORD,OK,ĐƯỢC RỒI,ตกลง,យល់ព្រម,OKE,Ok,Ok
+好啊,hǎo a,OK,De acuerdo,D'accord,OK,Được rồi,ตกลง,យល់ព្រម,OKE,Ok,Ok
 很好,hěn hǎo,very good,muy bien,très bien,muito bom,rất tốt,ดีมาก,ល្អណាស់,sangat bagus,sangat bagus,napakahusay
-行啊,xíng a,OK,DE ACUERDO,D'ACCORD,OK,ĐƯỢC RỒI,ตกลง,យល់ព្រម,OKE,Ok,Ok
+行啊,xíng a,OK,De acuerdo,D'accord,OK,Được rồi,ตกลง,យល់ព្រម,OKE,Ok,Ok
 可行,kě xíng,feasible,factible,possible,viável,khả thi,เป็นไปได้,អាចធេវីបាន,bisa dilakukan,boleh dilaksanakan,magagawa
 没问题的,méi wèn tí de,no problem,ningún problema,aucun problème,sem problemas,Không vấn đề,ไม่มีปัญหา,គ្មានបញ្ហា,Tidak masalah,Tiada masalah,Walang problema
 绝对没问题,jué duì méi wèn tí,absolutely no problem,absolutamente ningún problema,absolument aucun problème,absolutamente nenhum problema,hoàn toàn không có vấn đề gì,ไม่มีปัญหาอย่างแน่นอน,ពិតជាគ្មានបញ្ហាទេ,sama sekali tidak ada masalah,sama sekali tidak ada masalah,Ganap na walang problema
@@ -39,7 +39,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 真没,zhēn méi,Really not,Realmente no,Vraiment pas,Realmente não,Thực sự không,ไม่จริงๆ,ពិតជាមិនមែនទេ,Sungguh tidak,Benar -benar tidak,Talagang hindi
 别走,bié zǒu,Don't go,no te vayas,Ne pars pas,Não vá,đừng đi,อย่าไป,កុំទៅ,Jangan pergi,Jangan pergi,Huwag kang umalis
 别说,bié shuō,Don't say,no digas,Ne dis pas,Não diga,Đừng nói,อย่าพูด,កុំនិយាយ,Jangan katakan,Jangan katakan,Huwag sabihin
-好的呢,hǎo de ne,OK,DE ACUERDO,D'ACCORD,OK,ĐƯỢC RỒI,ตกลง,យល់ព្រម,OKE,Ok,Ok
+好的呢,hǎo de ne,OK,De acuerdo,D'accord,OK,Được rồi,ตกลง,យល់ព្រម,OKE,Ok,Ok
 真的好的,zhēn de hǎo de,really good,realmente bueno,vraiment bien,muito bom,thực sự tốt,ดีจริงๆ,ពិតជាល្អណាស់,sangat bagus,betul -betul bagus,Mabuti talaga
 是的呢,shì de ne,Yes,Sí,Oui,Sim,Đúng,ใช่,បាត,Ya,Ya,Oo
 真是的,zhēn shì de,Really,En realidad,Vraiment,Realmente,Thật sự,จริงหรือ,ដោយបិតរបាកដ,Benar-benar,Betul,Talaga

@@ -1,5 +1,5 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-宾馆,bīn guǎn,Hotel,Hoteles,Hôtel,Hotéis,Khách sạn,โรงแรม,សណ្ឋាគារ || បន្ទប់តែមួយ,Hotel,Hotel,Hotel
+宾馆,bīn guǎn,Hotel,Hoteles,Hôtel,Hotéis,Khách sạn,โรงแรม,សណ្ឋាគារ បន្ទប់តែមួយ,Hotel,Hotel,Hotel
 单人间,dān rén jiān,Single room,Habitación individual,Chambre simple,Quarto individual,Phòng đơn,ห้องเดี่ยว,បន្ទប់គ្រែពីរ,Kamar tunggal,Bilik tunggal,Solong silid
 双人间,shuāng rén jiān,Double room,Habitación doble,Chambre double,Quarto duplo,Phòng đôi,ห้องเตียงคู่,ការកក់,Kamar ganda,Bilik Double,Double Room
 订房,dìng fáng,Reservation,Reserva,Réservation,Reserva,Đặt chỗ,สำรองห้องพัก,ការកក់,Reservasi,Tempahan,Reservation
@@ -38,7 +38,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 要服务,yào fú wù,Want service,Quiere servicio,Vous voulez du service,Quer atendimento,Muốn được phục vụ,ต้องการบริการ,ស្នាក់នៅក្នុងបន្ទប់មួយ,Ingin layanan,Mahu perkhidmatan,Gusto ng Serbisyo
 住客房,zhù kè fáng,Stay in a room,Quédate en una habitación,Séjourner dans une chambre,Fique em um quarto,Ở trong phòng,อยู่ในห้อง,សម្អាតបន្ទប់ភ្ញៀវ,Menginap di kamar,Tinggal di bilik,Manatili sa isang silid
 打扫客房,dǎ sǎo kè fáng,Clean the guest room,Limpiar la habitación de invitados,Nettoyer la chambre d'amis,Limpe o quarto de hóspedes,Dọn dẹp phòng khách,ทำความสะอาดห้องพัก,នៅតាមសាលប្រជុំ,Bersihkan kamar tamu,Bersihkan Bilik Tetamu,Linisin ang silid ng panauhin
-在前厅,zài qián tīng,In the front hall,En el vestíbulo,Dans le hall d'entrée,No hall de entrada,Ở sảnh trước,ณ ห้องโถงด้านหน้า,| តុបតែងសាលមុខ,Di aula depan,Di dewan depan,Sa front hall
+在前厅,zài qián tīng,In the front hall,En el vestíbulo,Dans le hall d'entrée,No hall de entrada,Ở sảnh trước,ณ ห้องโถงด้านหน้า,តុបតែងសាលមុខ,Di aula depan,Di dewan depan,Sa front hall
 装修前厅,zhuāng xiū qián tīng,Decorate the front hall,Decora el recibidor,Décorez le hall d'entrée,Decore o hall de entrada,Trang trí sảnh trước,ตกแต่งห้องโถงหน้า,តុទទួលភ្ញៀវ,Hiasi aula depan,Hiaskan dewan depan,Palamutihan ang front hall
 接待处,jiē dài chù,Reception desk,Mostrador de recepción,Réception,Balcão de recepção,Bàn tiếp tân,แผนกต้อนรับ,ទទួលខុសត្រូវចំពោះការទទួលភ្ញៀវ,Meja resepsionis,Meja Penerimaan,Reception Desk
 负责接待,fù zé jiē dài,Responsible for the reception,Responsable de la recepción,Responsable de l'accueil,Responsável pela recepção,Chịu trách nhiệm lễ tân,รับผิดชอบงานต้อนรับ,ស្វែងរកលោក Bellman,Bertanggung jawab atas resepsi,Bertanggungjawab untuk Penerimaan,May pananagutan sa pagtanggap

@@ -1,33 +1,33 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 喂,wèi,Hello,Hola,Bonjour,Olá,Xin chào,สวัสดี,សួស្តី,Halo,Helo,Kumusta
 请问,qǐng wèn,Excuse me,Disculpe,Excusez-moi,Com licença,Xin lỗi,ขออภัย,សូមអភ័យទោស,Permisi,Maafkan saya,Excuse me
-在吗,zài ma,Are you there,¿Estás ahí?,Êtes-vous là,Você está aí,Bạn có ở đó không,อยู่ไหม,តើអ្នកនៅទីនោះទេ ?|| មិនមែន,Apakah kamu di sana,Adakah anda di sana,Nariyan ka ba
+在吗,zài ma,Are you there,¿Estás ahí?,Êtes-vous là,Você está aí,Bạn có ở đó không,อยู่ไหม,តើអ្នកនៅទីនោះទេ ? មិនមែន,Apakah kamu di sana,Adakah anda di sana,Nariyan ka ba
 不在,bù zài,Not,No,Pas,Não,Không,ไม่ใช่,រង់ចាំ,Bukan,Bukan,Hindi
-稍等,shāo děng,Wait,Espera,Attendez,Espere,Đợi,รอ,| ការគាំទ្រ || សញ្ញា,Tunggu,Tunggu,Maghintay
+稍等,shāo děng,Wait,Espera,Attendez,Espere,Đợi,รอ,ការគាំទ្រ សញ្ញា,Tunggu,Tunggu,Maghintay
 方便,fāng biàn,Convenient,Conveniente,Pratique,Conveniente,Thuận tiện,สะดวก,ហៅត្រឡប់មកវិញ,Nyaman,Mudah,Maginhawa
 信号,xìn hào,Signal,Señal,Signaler,Sinal,Tín hiệu,สัญญาณ,ព្យួរ,Sinyal,Isyarat,Signal
-回电,huí diàn,Call back,Devolver la llamada,Rappel,Ligue de volta,Gọi lại,โทรกลับ,ឆ្លើយទូរស័ព្ទ || ទូរស័ព្ទ,Telepon kembali,Panggil kembali,Tumawag pabalik
-挂断,guà duàn,Hang up,Cuelga,Raccrocher,Desligue,Cúp máy,วางสาย,សារ || សំលេង,Tutup telepon,Hang up,Hang up
+回电,huí diàn,Call back,Devolver la llamada,Rappel,Ligue de volta,Gọi lại,โทรกลับ,ឆ្លើយទូរស័ព្ទ ទូរស័ព្ទ,Telepon kembali,Panggil kembali,Tumawag pabalik
+挂断,guà duàn,Hang up,Cuelga,Raccrocher,Desligue,Cúp máy,วางสาย,សារ សំលេង,Tutup telepon,Hang up,Hang up
 接电话,jiē diàn huà,Answer the phone,Contesta el teléfono,Répondre au téléphone,Atende o telefone,Trả lời điện thoại,รับโทรศัพท์,រវល់,Jawab teleponnya,Jawab telefon,Sagutin ang telepono
-打电话,dǎ diàn huà,Call,Llamar,Appeler,Ligue,Gọi,โทร,| ចុច,Telepon,Hubungi,Tumawag
+打电话,dǎ diàn huà,Call,Llamar,Appeler,Ligue,Gọi,โทร,ចុច,Telepon,Hubungi,Tumawag
 留言,liú yán,Message,Mensaje,Message,Mensagem,Tin nhắn,ข้อความ,បានភ្ជាប់,Pesan,Mesej,Mensahe
 语音,yǔ yīn,Voice,Voz,Voix,Voz,Giọng nói,เสียง,សួស្តី,Suara,Suara,Boses
 忙线,máng xiàn,Busy,Ocupado,Occupé,Ocupado,Bận,ไม่ว่าง,សួស្តី,Sibuk,Sibuk,Abala
 拨打,bō dǎ,Dial,Marcar,Composez,Disque,Quay số,กด,សូមអភ័យទោស,Tekan,Dial,Dial
 接通,jiē tōng,Connected,Conectado,Connecté,Conectado,Đã kết nối,เชื่อมต่อ,ខ្ញុំចង់សួរ,Terhubung,Disambungkan,Nakakonekta
-喂你好,wèi nǐ hǎo,Hello,Hola,Bonjour,Olá,Xin chào,สวัสดี,តើអ្នកនៅទីនោះទេ ?|| តើអ្នកនៅទីនោះទេ ?|| មិននៅផ្ទះ,Halo,Helo,Kumusta
-喂请问,wèi qǐng wèn,Hello,Hola,Bonjour,Olá,Xin chào,สวัสดี,| គ្មាននរណាម្នាក់នៅទីនេះទេ,Halo,Helo,Kumusta
+喂你好,wèi nǐ hǎo,Hello,Hola,Bonjour,Olá,Xin chào,สวัสดี,តើអ្នកនៅទីនោះទេ ? តើអ្នកនៅទីនោះទេ ? មិននៅផ្ទះ,Halo,Helo,Kumusta
+喂请问,wèi qǐng wèn,Hello,Hola,Bonjour,Olá,Xin chào,สวัสดี,គ្មាននរណាម្នាក់នៅទីនេះទេ,Halo,Helo,Kumusta
 请问一下,qǐng wèn yī xià,Excuse me,Disculpe,Excusez-moi,Com licença,Xin lỗi,ขออภัย,រង់ចាំមួយភ្លែត,Permisi,Maafkan saya,Excuse me
 我想请问,wǒ xiǎng qǐng wèn,I want to ask,Quiero preguntar,Je veux demander,Eu quero perguntar,Tôi muốn hỏi,อยากถาม,សូមរង់ចាំ,Saya ingin bertanya,Saya mahu bertanya,Gusto kong magtanong
 在吗你,zài ma nǐ,Are you there,¿Estás ahí?,Êtes-vous là,Você está aí,Bạn có ở đó không,อยู่ไหม,តើវាងាយស្រួលទេ ?,Apakah kamu di sana,Adakah anda di sana,Nariyan ka ba
 你在吗,nǐ zài ma,Are you there,¿Estás ahí?,Êtes-vous là,Você está aí,Bạn có ở đó không,อยู่ไหม,ការរអាក់រអួល,Apakah kamu di sana,Adakah anda di sana,Nariyan ka ba
-不在家,bù zài jiā,Not at home,No en casa,Pas à la maison,Não está em casa,Không có ở nhà,ไม่อยู่บ้าน,| សញ្ញាមិនល្អ,Tidak di rumah,Tidak di rumah,Wala sa bahay
+不在家,bù zài jiā,Not at home,No en casa,Pas à la maison,Não está em casa,Không có ở nhà,ไม่อยู่บ้าน,សញ្ញាមិនល្អ,Tidak di rumah,Tidak di rumah,Wala sa bahay
 人不在,rén bù zài,No one is here,No hay nadie aquí,Personne n'est ici,Ninguém está aqui,Không có ai ở đây,ไม่มีใครอยู่,គ្មានសញ្ញា,Tidak ada seorang pun di sini,Tidak ada yang ada di sini,Walang sinuman dito
 稍等下,shāo děng xià,Wait a moment,Espera un momento,Attendez un instant,Espere um momento,Đợi một chút,รอสักครู่,ហៅត្រឡប់មកវិញ,Tunggu sebentar,Tunggu sebentar,Maghintay ng isang sandali
 请稍等,qǐng shāo děng,Please wait,Por favor espera,Veuillez patienter,Aguarde,Vui lòng đợi,กรุณารอสักครู่,រង់ចាំការហៅត្រឡប់មកវិញ,Harap tunggu,Sila tunggu,Mangyaring maghintay
 方便吗,fāng biàn ma,Is it convenient,¿Es conveniente,Est-ce pratique,É conveniente,Có thuận tiện không,สะดวกไหม,ព្យួរ,Apakah nyaman,Adakah mudah,Maginhawa ba ito
 不方便,bù fāng biàn,Inconvenient,Inconveniente,Inconvénient,Inconveniente,Bất tiện,ไม่สะดวก,ព្យួរ,Tidak nyaman,Menyusahkan,Kagambala
-信号差,xìn hào chà,Poor signal,Mala señal,Mauvais signal,Sinal fraco,Tín hiệu kém,สัญญาณไม่ดี,ឆ្លើយទូរស័ព្ទ || ចម្លើយរហ័ស,Sinyal buruk,Isyarat miskin,Mahina signal
+信号差,xìn hào chà,Poor signal,Mala señal,Mauvais signal,Sinal fraco,Tín hiệu kém,สัญญาณไม่ดี,ឆ្លើយទូរស័ព្ទ ចម្លើយរហ័ស,Sinyal buruk,Isyarat miskin,Mahina signal
 没信号,méi xìn hào,No signal,Sin señal,Aucun signal,Sem sinal,Không có tín hiệu,ไม่มีสัญญาณ,ធ្វើការហៅមួយ,Tidak ada sinyal,Tiada isyarat,Walang signal
 回电话,huí diàn huà,Call back,Devolver la llamada,Rappel,Ligue de volta,Gọi lại,โทรกลับ,ធ្វើការហៅមួយ,Telepon kembali,Panggil kembali,Tumawag pabalik
 等回电,děng huí diàn,Waiting for a call back,Esperando una devolución de llamada,En attente d'un rappel,Aguardando uma ligação,Đang chờ cuộc gọi lại,รอการติดต่อกลับ,ក្រុមប្រឹក្សាសារ,Menunggu panggilan balik,Menunggu panggilan balik,Naghihintay para sa isang tawag pabalik
@@ -35,8 +35,8 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 被挂断,bèi guà duàn,Hang up,Cuelga,Raccrocher,Desligue,Cúp máy,วางสาย,ផ្ញើសំលេង,Tutup telepon,Hang up,Hang up
 接电话吧,jiē diàn huà ba,Answer the phone,Contesta el teléfono,Répondre au téléphone,Atende o telefone,Trả lời điện thoại,รับโทรศัพท์,ស្តាប់សំលេង,Jawab teleponnya,Jawab telefon,Sagutin ang telepono
 快接电话,kuài jiē diàn huà,Quick answer,Respuesta rápida,Réponse rapide,Resposta rápida,Trả lời nhanh,ตอบด่วน,រវល់,Jawaban cepat,Jawapan cepat,Mabilis na Sagot
-打电话吧,dǎ diàn huà ba,Make a call,Hacer una llamada,Passer un appel,Faça uma ligação,Thực hiện cuộc gọi,โทรออก,| ទូរស័ព្ទរវល់,Lakukan panggilan,Buat panggilan,Tumawag
-去打电话,qù dǎ diàn huà,Make a call,Hacer una llamada,Passer un appel,Faça uma ligação,Thực hiện cuộc gọi,โทรออก,| ធ្វើការហៅមួយ,Lakukan panggilan,Buat panggilan,Tumawag
+打电话吧,dǎ diàn huà ba,Make a call,Hacer una llamada,Passer un appel,Faça uma ligação,Thực hiện cuộc gọi,โทรออก,ទូរស័ព្ទរវល់,Lakukan panggilan,Buat panggilan,Tumawag
+去打电话,qù dǎ diàn huà,Make a call,Hacer una llamada,Passer un appel,Faça uma ligação,Thực hiện cuộc gọi,โทรออก,ធ្វើការហៅមួយ,Lakukan panggilan,Buat panggilan,Tumawag
 留言板,liú yán bǎn,Message board,Tablero de mensajes,Tableau de messages,Quadro de mensagens,Bảng tin,กระดานข้อความ,សូមចុច,Papan pesan,Papan Mesej,Message Board
 请留言,qǐng liú yán,Please leave a message,Por favor deja un mensaje,Veuillez laisser un message,Por favor deixe uma mensagem,Vui lòng để lại tin nhắn,กรุณาฝากข้อความ,បានភ្ជាប់,Silakan tinggalkan pesan,Sila tinggalkan mesej,Mangyaring mag -iwan ng mensahe
 发语音,fā yǔ yīn,Send voice,Enviar voz,Envoyer la voix,Enviar voz,Gửi giọng nói,ส่งเสียง,មិនអាចភ្ជាប់បានទេ,Kirim suara,Hantar suara,Magpadala ng boses

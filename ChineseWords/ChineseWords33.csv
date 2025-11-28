@@ -2,7 +2,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 衣服,yī fú,Clothes,Ropa,Vêtements,Roupas,Quần áo,เสื้อผ้า,សម្លៀកបំពាក់,Pakaian,Pakaian,Damit
 裤子,kù zi,Pants,Pantalones,Pantalon,Calças,Quần,กางเกง,ខោ,Celana,Seluar,Pantalon
 裙子,qún zi,Skirt,Falda,Jupe,Saia,Váy,กระโปรง,សំពត់,Rok,Skirt,Skirt
-鞋子,xié zi,Shoes,Zapatos,Chaussures,Sapatos,Giày,รองเท้า,ស្បែកជើង || ស្រោមជើង,Sepatu,Kasut,Sapatos
+鞋子,xié zi,Shoes,Zapatos,Chaussures,Sapatos,Giày,รองเท้า,ស្បែកជើង ស្រោមជើង,Sepatu,Kasut,Sapatos
 袜子,wà zi,Socks,Calcetines,Chaussettes,Meias,Tất,ถุงเท้า,មួក,kaus kaki,Kaus kaki,Medyas
 帽子,mào zi,Hat,Sombrero,Chapeau,Chapéu,Mũ,หมวก,អាវ,Topi,Hat,Sumbrero
 外套,wài tào,Jacket,Chaqueta,Veste,Jaqueta,Áo khoác,แจ็คเก็ต,ថ្នាំកូត,Jaket,Jaket,Jacket
@@ -12,7 +12,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 内衣,nèi yī,Underwear,Ropa interior,Sous-vêtements,Roupa íntima,Đồ lót,ชุดชั้นใน,ស្រោមដៃ,Pakaian dalam,Seluar,Underwear
 手套,shǒu tào,Gloves,Guantes,Gants,Luvas,Găng tay,ถุงมือ,ក្រម៉ា,Sarung tangan,Sarung tangan,Guwantes
 围巾,wéi jīn,Scarf,Bufanda,Écharpe,Lenço,Khăn choàng,ผ้าพันคอ,ក្រវ៉្ដ,Syal,Scarf,Scarf
-领带,lǐng dài,Tie,Corbata,Cravate,Gravata,Cà vạt,เสมอ,| វ៉ែនតា,Ikat,Tie,Itali
+领带,lǐng dài,Tie,Corbata,Cravate,Gravata,Cà vạt,เสมอ,វ៉ែនតា,Ikat,Tie,Itali
 眼镜,yǎn jìng,Glasses,Gafas,Lunettes,Óculos,Kính,แว่นตา,កាបូប,Kacamata,Gelas,Glasses
 包,bāo,Bag,Bolsa,Sac,Bolsa,Túi,กระเป๋า,ផ្លាស់ប្តូរសម្លៀកបំពាក់,tas,BAG,Bag
 换衣服,huàn yī fú,Change clothes,Cambiarse de ropa,Changer de vêtements,Trocar de roupa,Thay quần áo,เปลี่ยนเสื้อผ้า,សម្លៀកបំពាក់កខ្វក់,Ganti baju,Tukar pakaian,Baguhin ang mga damit
@@ -20,7 +20,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 牛仔裤子,niú zǎi kù zi,Jeans,Vaqueros,Jean,Jeans,Quần jean,ยีนส์,ខោវែងពេក,Jins,Jeans,Jeans
 裤子太长,kù zi tài zhǎng,Pants too long,Pantalones demasiado largos,Pantalon trop long,Calças muito compridas,Quần quá dài,กางเกงยาวเกินไป,សំលៀកបំពាក់,Celana terlalu panjang,Seluar terlalu lama,Pantalon masyadong mahaba
 连衣裙子,lián yī qún zi,Dress,Vestido,Robe,Vestido,Váy,เดรส,សំពត់ដ៏ស្រស់ស្អាត,Gaun,Pakaian,Bihisan
-裙子漂亮,qún zi piào liàng,Beautiful skirt,Hermosa falda,Belle jupe,Saia linda,Váy đẹp,กระโปรงสวยๆ,ស្បែកជើងស្បែក || ស្បែកជើងដែលសម,Rok cantik,Skirt cantik,Magandang palda
+裙子漂亮,qún zi piào liàng,Beautiful skirt,Hermosa falda,Belle jupe,Saia linda,Váy đẹp,กระโปรงสวยๆ,ស្បែកជើងស្បែក ស្បែកជើងដែលសម,Rok cantik,Skirt cantik,Magandang palda
 皮鞋子,pí xié zi,Leather shoes,Zapatos de cuero,Chaussures en cuir,Sapatos de couro,Giày da,รองเท้าหนัง,ស្រោមជើងកប្បាស,Sepatu kulit,Kasut Kulit,Mga sapatos na katad
 鞋子合脚,xié zi hé jiǎo,Shoes that fit,Zapatos que le quedan,Des chaussures qui s'ajustent,Sapatos que cabem,Giày vừa vặn,รองเท้าที่เหมาะกับ,ស្រោមជើងរហែក,Sepatu yang pas,Kasut yang sesuai,Sapatos na akma
 棉袜子,mián wà zi,Cotton socks,Calcetines de algodón,Chaussettes en coton,Meias de algodão,Tất cotton,ถุงเท้าผ้าฝ้าย,មួកចំបើង,Kaus kaki katun,Stoking kapas,Cotton Socks

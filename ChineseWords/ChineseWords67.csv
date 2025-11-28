@@ -1,9 +1,9 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 干燥,gān zào,Dry,Seco,Sec,Seco,Khô,แห้ง,ជាតិស្ងួត,Kering,Kering,Dry
-雨伞,yǔ sǎn,Umbrella,Paraguas,Parapluie,Guarda-chuva,Ô dù,ร่ม,ឆ័ត្រ || ឡេការពារកម្តៅថ្ងៃ,Payung,Umbrella,Umbrella
+雨伞,yǔ sǎn,Umbrella,Paraguas,Parapluie,Guarda-chuva,Ô dù,ร่ม,ឆ័ត្រ ឡេការពារកម្តៅថ្ងៃ,Payung,Umbrella,Umbrella
 防晒,fáng shài,Sunscreen,Protector solar,Crème solaire,Protetor solar,Kem chống nắng,ครีมกันแดด,ការផ្លាស់ប្តូរអាកាសធាតុ,Tabir surya,Sunscreen,Sunscreen
-变天,biàn tiān,Change of weather,Cambio de clima,Changement de temps,Mudança de clima,Thay đổi thời tiết,สภาพอากาศเปลี่ยนแปลง,ត្រជាក់ជាងនេះ| កក់ក្តៅ,Perubahan cuaca,Perubahan Cuaca,Pagbabago ng panahon
-转凉,zhuǎn liáng,Cooler,Enfriador,Refroidisseur,Mais frio,Mát hơn,คูลเลอร์,Plunge || ភាពកក់ក្តៅ,Lebih keren,Cooler,Cooler
+变天,biàn tiān,Change of weather,Cambio de clima,Changement de temps,Mudança de clima,Thay đổi thời tiết,สภาพอากาศเปลี่ยนแปลง,ត្រជាក់ជាងនេះ កក់ក្តៅ,Perubahan cuaca,Perubahan Cuaca,Pagbabago ng panahon
+转凉,zhuǎn liáng,Cooler,Enfriador,Refroidisseur,Mais frio,Mát hơn,คูลเลอร์,Plunge ភាពកក់ក្តៅ,Lebih keren,Cooler,Cooler
 转暖,zhuǎn nuǎn,Warmer,Más cálido,Plus chaud,Mais quente,Ấm hơn,อุ่นขึ้น,រដូវរងា,Lebih hangat,Lebih hangat,Mas mainit
 骤降,zhòu jiàng,Plunge,Zambullida,Plonger,Mergulhar,Lao vào,กระโดด,រដូវក្តៅ,Terjun,Plunge,Plunge
 回暖,huí nuǎn,Warmth,Calidez,Chaleur,Calor,Ấm áp,ความอบอุ่น,ភ្លៀង,Kehangatan,Kehangatan,Init
@@ -23,9 +23,9 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 要防晒,yào fáng shài,Need sun protection,Necesita protección solar,Besoin de protection solaire,Precisa de proteção solar,Cần chống nắng,ต้องการการปกป้องแสงแดด,អាកាសធាតុកំពុងផ្លាស់ប្តូរក្នុងពេលឆាប់ៗនេះ,Butuh perlindungan terhadap sinar matahari,Perlu perlindungan matahari,Kailangan ng proteksyon ng araw
 做防晒,zuò fáng shài,Apply sun protection,Aplicar protección solar,Appliquer une protection solaire,Aplique proteção solar,Thoa kem chống nắng,ทาครีมกันแดด,អាកាសធាតុកាន់តែត្រជាក់,Oleskan pelindung sinar matahari,Sapukan Perlindungan Sun,Mag -apply ng proteksyon sa araw
 要变天,yào biàn tiān,The weather is going to change,El clima va a cambiar,Le temps va changer,O tempo vai mudar,Thời tiết sắp thay đổi,อากาศกำลังจะเปลี่ยนแปลง,ចាប់ផ្តើមទទួលបានត្រជាក់ជាង,Cuaca akan berubah,Cuaca akan berubah,Magbabago ang panahon
-快变天,kuài biàn tiān,The weather is changing soon,El clima cambiará pronto,Le temps change bientôt,O tempo vai mudar em breve,Thời tiết sắp thay đổi,อากาศเปลี่ยนแปลงเร็วๆ นี้,| អាកាសធាតុកាន់តែកក់ក្តៅ,Cuaca akan segera berubah,Cuaca berubah tidak lama lagi,Ang panahon ay nagbabago sa lalong madaling panahon
+快变天,kuài biàn tiān,The weather is changing soon,El clima cambiará pronto,Le temps change bientôt,O tempo vai mudar em breve,Thời tiết sắp thay đổi,อากาศเปลี่ยนแปลงเร็วๆ นี้,អាកាសធាតុកាន់តែកក់ក្តៅ,Cuaca akan segera berubah,Cuaca berubah tidak lama lagi,Ang panahon ay nagbabago sa lalong madaling panahon
 天气转凉,tiān qì zhuǎn liáng,The weather is getting cooler,El clima se está volviendo más fresco,Le temps se rafraîchit,O tempo está esfriando,Thời tiết ngày càng mát mẻ,อากาศเริ่มเย็นลงแล้ว,ចាប់ផ្តើមមានភាពកក់ក្តៅ,Cuaca semakin sejuk,Cuaca semakin sejuk,Ang panahon ay nagiging mas cool
-开始转凉,kāi shǐ zhuǎn liáng,Starting to get cooler,Empezando a hacer más fresco,Il commence à faire plus frais,Começando a ficar mais legal,Bắt đầu mát mẻ hơn,เริ่มเย็นแล้ว,| ការធ្លាក់ចុះសីតុណ្ហភាព,Mulai menjadi lebih keren,Bermula untuk mendapatkan lebih sejuk,Simula upang makakuha ng cooler
+开始转凉,kāi shǐ zhuǎn liáng,Starting to get cooler,Empezando a hacer más fresco,Il commence à faire plus frais,Começando a ficar mais legal,Bắt đầu mát mẻ hơn,เริ่มเย็นแล้ว,ការធ្លាក់ចុះសីតុណ្ហភាព,Mulai menjadi lebih keren,Bermula untuk mendapatkan lebih sejuk,Simula upang makakuha ng cooler
 天气转暖,tiān qì zhuǎn nuǎn,The weather is getting warmer,El clima se está volviendo más cálido,Le temps se réchauffe,O tempo está esquentando,Thời tiết ngày càng ấm hơn,อากาศเริ่มอุ่นขึ้นแล้ว,ការធ្លាក់ចុះសីតុណ្ហាភាព,Cuaca semakin hangat,Cuaca semakin hangat,Ang panahon ay nagiging mas mainit
 开始转暖,kāi shǐ zhuǎn nuǎn,Starting to get warmer,Empieza a hacer más calor,Il commence à faire plus chaud,Começando a esquentar,Bắt đầu ấm dần,เริ่มอุ่นขึ้นแล้ว,អាកាសធាតុកាន់តែកក់ក្តៅ,Mulai menghangat,Bermula untuk mendapatkan lebih hangat,Simula upang makakuha ng mas mainit
 气温骤降,qì wēn zhòu jiàng,Temperature drops,Descensos de temperatura,Chutes de température,Quedas de temperatura,Nhiệt độ giảm,อุณหภูมิลดลง,ចាប់ផ្តើមកក់ក្តៅ,Suhu turun,TROPS Suhu,Bumaba ang temperatura
@@ -38,8 +38,8 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 快入夏,kuài rù xià,Summer is coming soon,El verano llegará pronto,L'été arrive bientôt,O verão está chegando,Mùa hè sắp đến,ฤดูร้อนกำลังจะมาเร็ว ๆ นี้,មានព្យុះទីហ្វុង,Musim panas akan segera tiba,Musim panas akan datang,Malapit na ang tag -init
 梅雨季,méi yǔ jì,Plum rainy season,Temporada de lluvias de ciruela,Saison des pluies des prunes,Época das chuvas da ameixa,Mận mùa mưa,พลัมฤดูฝน,មានព្យុះទីហ្វុង,Musim hujan plum,Plum Rainy Season,Plum Rainy Season
 下梅雨,xià méi yǔ,It rains,Llueve,Il pleut,Chove,Trời mưa,ฝนตก,មានខ្សាច់និងធូលី,Hujan,Ia hujan,Umuulan
-有台风,yǒu tái fēng,There is a typhoon,Hay un tifón,Il y a un typhon,Há um tufão,Có bão,มีพายุไต้ฝุ่น,| មានធូលី,Ada angin topan,Terdapat taufan,Mayroong isang bagyo
-刮台风,guā tái fēng,There is a typhoon,Hay un tifón,Il y a un typhon,Há um tufão,Có bão,มีพายุไต้ฝุ่น,| មានអ័ព្ទ,Ada angin topan,Terdapat taufan,Mayroong isang bagyo
+有台风,yǒu tái fēng,There is a typhoon,Hay un tifón,Il y a un typhon,Há um tufão,Có bão,มีพายุไต้ฝุ่น,មានធូលី,Ada angin topan,Terdapat taufan,Mayroong isang bagyo
+刮台风,guā tái fēng,There is a typhoon,Hay un tifón,Il y a un typhon,Há um tufão,Có bão,มีพายุไต้ฝุ่น,មានអ័ព្ទ,Ada angin topan,Terdapat taufan,Mayroong isang bagyo
 有沙尘,yǒu shā chén,There is sand and dust,Hay arena y polvo,Il y a du sable et de la poussière,Tem areia e poeira,Có cát và bụi,มีทั้งทรายและฝุ่น,មានអ័ព្ទ,Ada pasir dan debu,Terdapat pasir dan habuk,Mayroong buhangin at alikabok
 起沙尘,qǐ shā chén,There is dust,Hay polvo,Il y a de la poussière,Tem poeira,Có bụi,มีฝุ่น,អាកាសធាតុមានពន្លឺថ្ងៃ,Ada debu,Ada habuk,Mayroong alikabok
 有雾霾,yǒu wù mái,There is haze,Hay neblina,Il y a de la brume,Há neblina,Có sương mù,มีหมอก,មានពន្លឺថ្ងៃខ្លាំងណាស់,Ada kabut,Ada jerebu,Mayroong haze

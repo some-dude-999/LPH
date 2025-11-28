@@ -1,20 +1,20 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 老师,lǎo shī,Teacher,Profesor,Enseignant,Professor,Giáo viên,ครู,គ្រូ,Guru,Guru,Guro
-学生,xué shēng,Student,Estudiante,Étudiant,Aluno,Sinh viên,นักเรียน,និស្សិត || មិត្តរួមថ្នាក់,Pelajar,Pelajar,Mag -aaral
+学生,xué shēng,Student,Estudiante,Étudiant,Aluno,Sinh viên,นักเรียน,និស្សិត មិត្តរួមថ្នាក់,Pelajar,Pelajar,Mag -aaral
 同学,tóng xué,Classmate,Compañero de clase,Camarade de classe,Colega,Bạn cùng lớp,เพื่อนร่วมชั้น,ថ្នាក់រៀន,Teman sekelas,Kelas,Classmate
 教室,jiào shì,Classroom,Aula,Salle de classe,Sala de aula,Lớp học,ห้องเรียน,ថ្នាក់,Ruang Kelas,Kelas,Classroom
 课,kè,Class,Clase,Classe,Classe,Lớp,คลาส,ចេញពីថ្នាក់,Kelas,Kelas,Klase
 上课,shàng kè,Attend class,Asistir a clase,Aller en classe,Assistir à aula,Đi học,เข้าเรียน,ចូលរៀន,Masuk kelas,Masuk kelas,Pumasok sa klase
-下课,xià kè,After class,Después de clase,Après les cours,Depois da aula,Sau giờ học,หลังเลิกเรียน,កិច្ចការផ្ទះ || ការប្រឡង,Setelah kelas,Selepas kelas,Pagkatapos ng klase
+下课,xià kè,After class,Después de clase,Après les cours,Depois da aula,Sau giờ học,หลังเลิกเรียน,កិច្ចការផ្ទះ ការប្រឡង,Setelah kelas,Selepas kelas,Pagkatapos ng klase
 作业,zuò yè,Homework,Tarea,Devoirs,Trabalho de casa,Bài tập về nhà,การบ้าน,ពិន្ទុ,Pekerjaan rumah,Kerja rumah,Takdang -aralin
 考试,kǎo shì,Exam,Examen,Examen,Exame,Kỳ thi,สอบ,បញ្ចប់ការសិក្សា,Ujian,Peperiksaan,Exam
-成绩,chéng jì,Score,Puntuación,Score,Pontuação,Điểm,คะแนน,សៀវភៅ || សៀវភៅ || ប៊ិច,Skor,SCORE,Puntos
+成绩,chéng jì,Score,Puntuación,Score,Pontuação,Điểm,คะแนน,សៀវភៅ សៀវភៅ ប៊ិច,Skor,SCORE,Puntos
 毕业,bì yè,Graduation,Graduación,Remise des diplômes,Graduação,Tốt nghiệp,สำเร็จการศึกษา,កាបូបសាលារៀន,Wisuda,Pengijazahan,Graduation
-书,shū,Book,Libro,Livre,Livro,Sách,หนังสือ,សួនកុមារ || បរិវេន្នមញ្ញា || គ្រូល្អ,Buku,Buku,Book
+书,shū,Book,Libro,Livre,Livro,Sách,หนังสือ,សួនកុមារ បរិវេន្នមញ្ញា គ្រូល្អ,Buku,Buku,Book
 本子,běn zi,Book,Libro,Livre,Livro,Sách,หนังสือ,គ្រូរបស់ខ្ញុំ,Buku,Buku,Book
 笔,bǐ,Pen,Bolígrafo,Stylo,Caneta,Cây bút,ปากกา,និស្សិតល្អ,Pena,Pen,Panulat
 书包,shū bāo,School bag,Mochila escolar,Sac d'école,Mochila escolar,Cặp đi học,กระเป๋านักเรียน,ខ្ញុំជាសិស្ស,Tas sekolah,Beg Sekolah,Bag ng paaralan
-操场,cāo chǎng,Playground,Zona de juegos,Aire de jeux,Parque Infantil,Sân chơi,สนามเด็กเล่น,| មិត្តរួមថ្នាក់ល្អ,Taman bermain,Taman Permainan,Playground
+操场,cāo chǎng,Playground,Zona de juegos,Aire de jeux,Parque Infantil,Sân chơi,สนามเด็กเล่น,មិត្តរួមថ្នាក់ល្អ,Taman bermain,Taman Permainan,Playground
 校园,xiào yuán,Campus,Campus,Campus,Campus,Khuôn viên trường,วิทยาเขต,មិត្តរួមថ្នាក់របស់ខ្ញុំ,Kampus,Kampus,Campus
 好老师,hǎo lǎo shī,Good teacher,Buen maestro,Bon professeur,Bom professor,Thầy giỏi,ครูที่ดี,ថ្នាក់រៀនធំ,Guru yang baik,Guru yang baik,Magandang guro
 我老师,wǒ lǎo shī,My teacher,Mi maestra,Mon professeur,Minha professora,Thầy của tôi,ครูของฉัน,នៅក្នុងថ្នាក់រៀន,Guruku,Guru saya,Ang aking guro
@@ -30,15 +30,15 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 正在上课,zhèng zài shàng kè,Currently in class,Actualmente en clase,Actuellement en classe,Atualmente em aula,Đang học trong lớp,ขณะนี้อยู่ในชั้นเรียน,រៀបចំសម្រាប់ការប្រឡង,Saat ini di kelas,Saat ini di kelas,Kasalukuyan sa klase
 下课了,xià kè le,Class is over,La clase ha terminado,Le cours est terminé,A aula acabou,Hết giờ học rồi,เลิกเรียนแล้ว,ថ្នាក់បានបញ្ចប់,Kelas sudah selesai,Kelas sudah tamat,Tapos na ang klase
 准备下课,zhǔn bèi xià kè,Getting ready for dismissal,Preparándose para salir,Prêt pour la fin du cours,Preparando para sair,Chuẩn bị tan học,เตรียมเลิกเรียน,រៀបចំចេញពីថ្នាក់,Bersiap pulang,Bersedia pulang,Naghahanda na umuwi
-写作业,xiě zuò yè,Write homework,Escribir tarea,Écrire des devoirs,Escreva lição de casa,Viết bài tập về nhà,เขียนการบ้าน,| បញ្ចប់ការសិក្សា,Tulis pekerjaan rumah,Tulis kerja rumah,Sumulat ng takdang aralin
+写作业,xiě zuò yè,Write homework,Escribir tarea,Écrire des devoirs,Escreva lição de casa,Viết bài tập về nhà,เขียนการบ้าน,បញ្ចប់ការសិក្សា,Tulis pekerjaan rumah,Tulis kerja rumah,Sumulat ng takdang aralin
 交作业,jiāo zuò yè,Hand in homework,Entregar la tarea,Remettre les devoirs,Entregar o dever de casa,Nộp bài tập về nhà,ส่งการบ้าน,ការបញ្ចប់ការសិក្សាឆាប់ៗ,Serahkan pekerjaan rumah,Tangan dalam kerja rumah,Kamay sa takdang aralin
 考试了,kǎo shì le,Exam,Examen,Examen,Exame,Kỳ thi,สอบ,ការអាន,Ujian,Peperiksaan,Exam
 准备考试,zhǔn bèi kǎo shì,Prepare for exam,Prepárate para el examen,Se préparer à l'examen,Prepare-se para o exame,Chuẩn bị cho kỳ thi,เตรียมสอบ,ការងាកលើសៀវភៅ,Mempersiapkan ujian,Sediakan untuk peperiksaan,Maghanda para sa pagsusulit
-成绩好,chéng jì hǎo,Good grades,Buenas notas,Bonnes notes,Boas notas,Điểm tốt,เกรดดี,| ការសរសេរសៀវភៅកត់ត្រា,Nilai bagus,Gred yang baik,Magandang marka
+成绩好,chéng jì hǎo,Good grades,Buenas notas,Bonnes notes,Boas notas,Điểm tốt,เกรดดี,ការសរសេរសៀវភៅកត់ត្រា,Nilai bagus,Gred yang baik,Magandang marka
 看成绩,kàn chéng jì,Look at grades,Mira las calificaciones,Regardez les notes,Veja as notas,Nhìn vào điểm,ดูเกรด,ទទួលយកសៀវភៅកត់ត្រា,Lihatlah nilai,Lihat gred,Tumingin sa mga marka
 毕业了,bì yè le,Graduated,Graduado,Diplômé,Graduado,Đã tốt nghiệp,สำเร็จการศึกษา,ប្រើប៊ិច,Lulus,Lulus,Nagtapos
-快毕业,kuài bì yè,Graduation soon,Graduación pronto,Bientôt l'obtention du diplôme,Formatura em breve,Sắp tốt nghiệp,ใกล้จะสำเร็จการศึกษา,| ទទួលបានប៊ិច,Sebentar lagi wisuda,Pengijazahan tidak lama lagi,Graduation sa lalong madaling panahon
-念书,niàn shū,Reading,Leyendo,Lecture,Leitura,Đọc,การอ่าน,| អនុវត្តសាលារៀនមាតុភាព,Membaca,Membaca,Pagbasa
+快毕业,kuài bì yè,Graduation soon,Graduación pronto,Bientôt l'obtention du diplôme,Formatura em breve,Sắp tốt nghiệp,ใกล้จะสำเร็จการศึกษา,ទទួលបានប៊ិច,Sebentar lagi wisuda,Pengijazahan tidak lama lagi,Graduation sa lalong madaling panahon
+念书,niàn shū,Reading,Leyendo,Lecture,Leitura,Đọc,การอ่าน,អនុវត្តសាលារៀនមាតុភាព,Membaca,Membaca,Pagbasa
 翻书,fān shū,Turning over books,Voltear libros,Retourner des livres,Virando livros,Lật sách,พลิกหนังสือ,ទទួលបានសាលារៀនមួយ,Membalikkan buku,Menghidupkan buku,Pag -on ng mga libro
 写本子,xiě běn zi,Writing notebooks,Cuadernos de escritura,Carnets d'écriture,Escrevendo cadernos,Viết sổ tay,การเขียนสมุดบันทึก,ទៅសួនកុមារ,Menulis buku catatan,Menulis buku nota,Pagsulat ng Mga Notebook
 拿本子,ná běn zi,Get a notebook,Consigue un cuaderno,Obtenez un cahier,Pegue um caderno,Lấy một cuốn sổ tay,รับโน๊ตบุ๊ค,នៅក្នុងសួនកុមារ,Dapatkan buku catatan,Dapatkan Notebook,Kumuha ng isang Notebook

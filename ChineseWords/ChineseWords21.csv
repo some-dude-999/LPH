@@ -1,17 +1,17 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
-盒,hé,box,caja,boîte,caixa,hộp,กล่อง,ប្រអប់ || កាបូប,kotak,Kotak,Kahon
+盒,hé,box,caja,boîte,caixa,hộp,กล่อง,ប្រអប់ កាបូប,kotak,Kotak,Kahon
 袋,dài,bag,bolsa,sac,bolsa,túi,กระเป๋า,ចំណែក,tas,BAG,Bag
 份,fèn,portion,porción,partie,porção,phần,ส่วน,ហុច,porsi,bahagian,bahagi
 遍,biàn,pass,pasar,passer,passar,vượt qua,ผ่าน,ការធ្វើដំណើរ,lulus,lulus,Pass
 趟,tàng,trip,viaje,voyage,viagem,chuyến đi,ทริป,អាហារ,perjalanan,Perjalanan,Trip
 顿,dùn,meal,comida,repas,refeição,bữa ăn,มื้ออาหาร,ផ្នែក,makan,Makanan,pagkain
 节,jié,section,sección,rubrique,seção,phần,ส่วน,វាល,bagian,Seksyen,Seksyon
-场,chǎng,field,campo,champ,campo,trường,สนาม,តារាងកម្មវិធី || រថយន្ត,bidang,medan,patlang
+场,chǎng,field,campo,champ,campo,trường,สนาม,តារាងកម្មវិធី រថយន្ត,bidang,medan,patlang
 台,tái,table,mesa,tableau,mesa,bảng,ตาราง,កៅអី,meja,Jadual,Talahanayan
-辆,liàng,vehicle,vehículo,véhicule,veículo,xe,ยานพาหนะ,ស្រទាប់ || បន្ទប់ || មែកធាង,kendaraan,kenderaan,Sasakyan
-座,zuò,seat,asiento,siège,assento,chỗ ngồi,ที่นั่ง,ផ្កា || ខ្សែអក្សរ,kursi,tempat duduk,upuan
-层,céng,layer,capa,couche,camada,lớp,เลเยอร์,បណ្តា្ឆកា || គំនរ,lapisan,lapisan,Layer
-间,jiān,room,habitación,chambre,quarto,phòng,ห้อง,| ប្រអប់ស្ករមួយ,kamar,Bilik,silid
+辆,liàng,vehicle,vehículo,véhicule,veículo,xe,ยานพาหนะ,ស្រទាប់ បន្ទប់ មែកធាង,kendaraan,kenderaan,Sasakyan
+座,zuò,seat,asiento,siège,assento,chỗ ngồi,ที่นั่ง,ផ្កា ខ្សែអក្សរ,kursi,tempat duduk,upuan
+层,céng,layer,capa,couche,camada,lớp,เลเยอร์,បណ្តា្ឆកា គំនរ,lapisan,lapisan,Layer
+间,jiān,room,habitación,chambre,quarto,phòng,ห้อง,ប្រអប់ស្ករមួយ,kamar,Bilik,silid
 棵,kē,tree,árbol,arbre,árvore,cây,ต้นไม้,ប្រអប់ពីរបី,pohon,pokok,puno
 朵,duǒ,flower,flor,fleur,flor,hoa,ดอกไม้,កាបូបអង្ករមួយ កាបូបពីរបី,bunga,Bunga,Bulaklak
 串,chuàn,string,cadena,chaîne,cadeia de caracteres,chuỗi,สตริง,កាសែតមួយ,tali,String,String
@@ -19,14 +19,14 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 堆,duī,pile,pila,tas,pilha,đống,กอง,and ើកម្តងហើយម្តងទៀត,tumpukan,Pile,Pile
 一盒糖,yī hé táng,a box of sugar,una caja de azúcar,une boîte de sucre,uma caixa de açúcar,một hộp đường,น้ำตาลกล่อง,និយាយម្តងទៀត,sekotak gula,Kotak gula,isang kahon ng asukal
 几盒,jǐ hé,a few boxes,algunas cajas,quelques cartons,algumas caixas,vài hộp,ไม่กี่กล่อง,ការរត់,beberapa kotak,beberapa kotak,ilang mga kahon
-一袋米,yī dài mǐ,a bag of rice,una bolsa de arroz,un sac de riz,um saco de arroz,một bao gạo,ข้าวถุง,| ដំណើរពីរបី,sekantong beras,beg beras,isang bag ng bigas
-几袋,jǐ dài,a few bags,unas cuantas bolsas,quelques sacs,algumas sacolas,vài túi,ไม่กี่ถุง,| អាហារ,beberapa tas,beberapa beg,ilang mga bag
+一袋米,yī dài mǐ,a bag of rice,una bolsa de arroz,un sac de riz,um saco de arroz,một bao gạo,ข้าวถุง,ដំណើរពីរបី,sekantong beras,beg beras,isang bag ng bigas
+几袋,jǐ dài,a few bags,unas cuantas bolsas,quelques sacs,algumas sacolas,vài túi,ไม่กี่ถุง,អាហារ,beberapa tas,beberapa beg,ilang mga bag
 一份报,yī fèn bào,a newspaper,un periódico,un journal,um jornal,một tờ báo,หนังสือพิมพ์,អាហារពីរបី,sebuah koran,Akhbar,isang pahayagan
 几份,jǐ fèn,A few,Algunos,Quelques,Alguns,Một vài,บางส่วน,ថ្នាក់មួយ,Beberapa,Beberapa,Ilang
-一遍又一遍,yī biàn yòu yī biàn,Over and over,Una y otra vez,Encore et encore,Repetidamente,Hơn và hơn,ซ้ำแล้วซ้ำเล่า,| វគ្គពីរបី,Berkali-kali,Berulang kali,Paulit -ulit
+一遍又一遍,yī biàn yòu yī biàn,Over and over,Una y otra vez,Encore et encore,Repetidamente,Hơn và hơn,ซ้ำแล้วซ้ำเล่า,វគ្គពីរបី,Berkali-kali,Berulang kali,Paulit -ulit
 说一遍,shuō yī biàn,Say it again,Dilo de nuevo,Répétez-le,Diga de novo,Nói lại lần nữa,พูดอีกครั้ง,ល្បែងមួយ,Katakan lagi,Katakan sekali lagi,Sabihin mo ulit
 跑一趟,pǎo yī tàng,A run,Una carrera,Une course,Uma corrida,Một cuộc chạy,วิ่ง,ហ្គេមពីរបី,Lari,A Run,Isang run
-几趟,jǐ tàng,A few trips,Algunos viajes,Quelques voyages,Algumas viagens,Một vài chuyến đi,ไม่กี่ทริป,កុំព្យូទ័រ || ពីរបី,Beberapa perjalanan,Beberapa perjalanan,Ilang mga biyahe
+几趟,jǐ tàng,A few trips,Algunos viajes,Quelques voyages,Algumas viagens,Một vài chuyến đi,ไม่กี่ทริป,កុំព្យូទ័រ ពីរបី,Beberapa perjalanan,Beberapa perjalanan,Ilang mga biyahe
 一顿饭,yī dùn fàn,A meal,Una comida,Un repas,Uma refeição,Một bữa ăn,มื้อหนึ่ง,ឡានមួយ,Makan,Makanan,Isang pagkain
 几顿,jǐ dùn,A few meals,Algunas comidas,Quelques repas,Algumas refeições,Vài bữa,มื้อเล็กๆ,ពីរបី,Beberapa kali makan,Beberapa hidangan,Ilang pagkain
 一节课,yī jié kè,A class,Una clase,Une classe,Uma aula,Một lớp học,คลาส,ភ្នំមួយ,Sebuah kelas,Kelas,Isang klase
@@ -36,7 +36,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 一台电脑,yī tái diàn nǎo,A computer,Una computadora,Un ordinateur,Um computador,Một chiếc máy tính,คอมพิวเตอร์,បន្ទប់មួយ,Komputer,Komputer,Isang computer
 几台,jǐ tái,A few,Algunos,Quelques,Alguns,Một vài,บางส่วน,បន្ទប់ជាច្រើន,Beberapa,Beberapa,Ilang
 一辆车,yī liàng chē,A car,Un coche,Une voiture,Um carro,Một chiếc ô tô,รถยนต์,ដើមឈើមួយ,Sebuah mobil,Sebuah kereta,Isang kotse
-几辆,jǐ liàng,A few,Algunos,Quelques,Alguns,Một vài,บางส่วน,| ពីរបី,Beberapa,Beberapa,Ilang
+几辆,jǐ liàng,A few,Algunos,Quelques,Alguns,Một vài,บางส่วน,ពីរបី,Beberapa,Beberapa,Ilang
 一座山,yī zuò shān,A mountain,Una montaña,Une montagne,Uma montanha,Một ngọn núi,ภูเขา,ផ្កាមួយ,Sebuah gunung,Sebuah gunung,Isang bundok
 几座,jǐ zuò,A few,Algunos,Quelques,Alguns,Một vài,บางส่วน,ពីរបី,Beberapa,Beberapa,Ilang
 一层楼,yī céng lóu,A floor,Un piso,Un étage,Um chão,Một tầng,ชั้น,bunch នៃទំពាំងបាយជូរ,Lantai,A lantai,Isang sahig
