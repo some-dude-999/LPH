@@ -621,33 +621,31 @@
 
   <!--
     ============================================================
-    EDGE CASES FILTER - Show Latin Abbreviation Examples
+    EDGE CASES & MISMATCHES FILTER - Combined Filter
     ============================================================
-    When enabled, filters the vocabulary table to show ONLY words
-    containing Latin abbreviations/brand names in Chinese text.
+    When enabled, filters the vocabulary table to show words with:
 
-    This demonstrates the edge case handling in validate_pinyin.py:
-    - ATM机 → ATM jī (Latin block + Chinese character)
-    - DNA测试 → DNA cè shì (abbreviation + Chinese)
-    - WhatsApp消息 → WhatsApp xiāo xī (brand name + Chinese)
-    - T恤 → T xù (single letter + Chinese)
-    - la, los → la, los (Spanish articles in Chinese column)
+    1. EDGE CASES - Latin abbreviations/brand names in Chinese text:
+       - ATM机 → ATM jī (Latin block + Chinese character)
+       - DNA测试 → DNA cè shì (abbreviation + Chinese)
+       - WhatsApp消息 → WhatsApp xiāo xī (brand name + Chinese)
+       - T恤 → T xù (single letter + Chinese)
+       - la, los → la, los (Spanish articles in Chinese column)
+
+    2. PINYIN MISMATCHES - Words with "?" in pinyin (CSV data errors):
+       - Character count doesn't match syllable count
+       - Indicates validation failures that need fixing
 
     WHY THIS IS USEFUL:
     - See real examples of edge cases in the actual data
-    - Verify these are NOT validation errors (they're correct!)
+    - Identify pinyin errors that need surgical fixes
+    - Verify edge cases are NOT validation errors (they're correct!)
     - Understand how Latin text mixes with Chinese in modern usage
-    - Test the validator's Latin block matching logic
   -->
   <p id="edgeCaseFilterContainer" style="display: none;">
     <label>
       <input type="checkbox" id="showEdgeCasesOnly">
-      <strong>Show Edge Cases Only</strong> (Filter for Latin abbreviations: ATM, DNA, WhatsApp, etc.)
-    </label>
-    <br>
-    <label style="margin-left: 20px;">
-      <input type="checkbox" id="showMismatchesOnly">
-      <strong>Show Mismatches Only</strong> (Only show words with "?" in pinyin - indicates CSV data errors)
+      <strong>Show Edge Cases & Mismatches</strong> (Latin abbreviations + pinyin errors)
     </label>
   </p>
 
@@ -1666,22 +1664,12 @@
       });
 
       // ════════════════════════════════════════════════════════════════════════
-      // EDGE CASE FILTER: Event listener for "Show Edge Cases Only" checkbox
+      // EDGE CASE & MISMATCH FILTER: Combined checkbox for both types
+      // Shows: (1) Latin in Chinese column, (2) Pinyin errors with "?"
       // ════════════════════════════════════════════════════════════════════════
       const edgeCaseCheckbox = document.getElementById('showEdgeCasesOnly');
       if (edgeCaseCheckbox) {
         edgeCaseCheckbox.addEventListener('change', () => {
-          // Just refresh the table display with the new filter
-          displayVocabulary();
-        });
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // MISMATCH FILTER: Event listener for "Show Mismatches Only" checkbox
-      // ════════════════════════════════════════════════════════════════════════
-      const mismatchCheckbox = document.getElementById('showMismatchesOnly');
-      if (mismatchCheckbox) {
-        mismatchCheckbox.addEventListener('change', () => {
           // Just refresh the table display with the new filter
           displayVocabulary();
         });
@@ -3364,27 +3352,73 @@
       edgeCaseWords.sort((a, b) => a.packNumber - b.packNumber);
 
       // ════════════════════════════════════════════════════════════════════════
-      // MISMATCH FILTER: If "Show Mismatches Only" is checked, filter to only
-      // show words where pinyin coupling contains "?" (indicates CSV errors)
+      // MISMATCH COLLECTION: Also collect words with pinyin errors ("?" syllables)
+      // These are CSV data errors that need fixing
       // ════════════════════════════════════════════════════════════════════════
-      const showMismatchesOnly = document.getElementById('showMismatchesOnly')?.checked;
-      if (showMismatchesOnly && nativeIsChinese && nativePinyinColumn !== null) {
-        edgeCaseWords = edgeCaseWords.filter(item => {
-          const chineseText = item.word[state.currentNativeLanguage];
-          const pinyinText = item.word[nativePinyinColumn];
+      let mismatchWords = [];
+      if (nativeIsChinese && nativePinyinColumn !== null) {
+        // Iterate through all acts to find mismatch cases
+        for (const actKey in state.loadedData) {
+          const actData = state.loadedData[actKey];
 
-          // Check if coupling produces any "?" syllables
-          const coupled = coupleChineseWithPinyin(chineseText, pinyinText);
-          return coupled.some(pair => pair.pinyin === '?');
-        });
+          // Iterate through all packs in this act
+          for (const packKey in actData) {
+            const pack = actData[packKey];
 
-        if (edgeCaseWords.length === 0) {
-          tableBody.innerHTML = '<tr><td colspan="6">No mismatches found (all edge cases have correct pinyin)</td></tr>';
-          return;
+            // Combine base and example words
+            const allWords = [];
+            if (pack.baseWords) {
+              pack.baseWords.forEach(w => allWords.push({ word: w, type: 'Base' }));
+            }
+            if (pack.exampleWords) {
+              pack.exampleWords.forEach(w => allWords.push({ word: w, type: 'Example' }));
+            }
+
+            // Filter for mismatches (pinyin with "?" syllables)
+            allWords.forEach(wordObj => {
+              const chineseText = wordObj.word[state.currentNativeLanguage];
+              const pinyinText = wordObj.word[nativePinyinColumn];
+
+              // Check if coupling produces any "?" syllables
+              const coupled = coupleChineseWithPinyin(chineseText, pinyinText);
+              if (coupled.some(pair => pair.pinyin === '?')) {
+                mismatchWords.push({
+                  word: wordObj.word,
+                  type: wordObj.type,
+                  packNumber: pack.meta.wordpack,
+                  packTitle: pack.meta.english || pack.meta.chinese || 'Untitled'
+                });
+              }
+            });
+          }
         }
+      }
 
-        // Update title to indicate mismatch filter
-        packTitleEl.textContent = `Pinyin Mismatches - All Packs (${state.currentLanguage})`;
+      // ════════════════════════════════════════════════════════════════════════
+      // COMBINE: Merge edge cases and mismatches (union, removing duplicates)
+      // ════════════════════════════════════════════════════════════════════════
+      const combinedWords = [...edgeCaseWords];
+
+      // Add mismatches that aren't already in edge cases
+      mismatchWords.forEach(mismatchItem => {
+        const isDuplicate = edgeCaseWords.some(edgeItem =>
+          edgeItem.packNumber === mismatchItem.packNumber &&
+          edgeItem.word[0] === mismatchItem.word[0]
+        );
+        if (!isDuplicate) {
+          combinedWords.push(mismatchItem);
+        }
+      });
+
+      // Update the display array
+      edgeCaseWords = combinedWords;
+
+      // Update title to reflect combined display
+      packTitleEl.textContent = `Edge Cases & Pinyin Mismatches - All Packs (${state.currentLanguage})`;
+
+      if (edgeCaseWords.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="6">No edge cases or mismatches found</td></tr>';
+        return;
       }
 
       // Render each edge case
@@ -3521,12 +3555,14 @@
       tableBody.innerHTML = '';
 
       // ════════════════════════════════════════════════════════════════════════
-      // EDGE CASE MASTER TOGGLE: Show ALL edge cases from ALL packs
+      // EDGE CASE & MISMATCH TOGGLE: Show BOTH types from ALL packs
+      // (1) Edge cases: Latin in Chinese column (ATM, DNA, WhatsApp, etc.)
+      // (2) Mismatches: Pinyin with "?" syllables (CSV data errors)
       // ════════════════════════════════════════════════════════════════════════
       const showEdgeCasesOnly = document.getElementById('showEdgeCasesOnly')?.checked || false;
 
       if (showEdgeCasesOnly) {
-        // MASTER MODE: Collect all edge cases from all packs across all acts
+        // MASTER MODE: Collect all edge cases AND mismatches from all packs/acts
         displayAllEdgeCases();
         return;
       }
