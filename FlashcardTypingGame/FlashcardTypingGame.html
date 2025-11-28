@@ -4559,9 +4559,6 @@
       const ttsCode = getTtsLanguageCode();
       if (ttsCode) {
         utterance.lang = ttsCode;
-      } else {
-        // Fallback to Spanish if no TTS code detected
-        utterance.lang = 'es-ES';
       }
 
       utterance.rate = currentSpeed;
