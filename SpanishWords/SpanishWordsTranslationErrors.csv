@@ -1,251 +1,251 @@
 Pack_Number,Pack_Title,Difficulty_Act,Issue_Count,Issues
-1,Greetings & Goodbyes,Act I: Foundation,0,None
-2,Yes No & Agreement,Act I: Foundation,0,None
-3,Numbers 0-10,Act I: Foundation,0,None
-4,Asking Questions (qué cuándo dónde),Act I: Foundation,0,None
+1,Greetings & Goodbyes,Act I: Foundation,,None
+2,Yes No & Agreement,Act I: Foundation,,None
+3,Numbers 0-10,Act I: Foundation,,None
+4,Asking Questions (qué cuándo dónde),Act I: Foundation,,None
 5,Referring to People (yo tú él ella),Act I: Foundation,1,Row 12 portuguese: Feminine they (ellas) requires feminine Portuguese elas not 
 6,Being Permanent (ser),Act I: Foundation,1,Row 4 portuguese: eres (you are singular) requires singular és not plural são
 7,Being Temporary (estar),Act I: Foundation,1,Row 4 portuguese: estás (you are singular) requires singular estás not plural 
 8,Having & Age (tener),Act I: Foundation,3,Row 3 portuguese: tienes (you have) requires conjugated tens not infinitive te; Row 5 portuguese: tenemos (we have) requires conjugated temos not infinitive t; Row 7 portuguese: tienen (they have) requires conjugated têm not infinitive te
 9,The & A Articles (el la un una),Act I: Foundation,8,"Row 2 chinese: Spanish article el untranslated - use Chinese equivalent 这个 ; Row 2 pinyin: Match Chinese translation 这个; Row 2 portuguese: el is article ""the"" (o) not pronoun ""he"" (ele); ...and 5 more"
-10,Connecting Words (y pero porque),Act I: Foundation,0,None
-11,Days of the Week,Act I: Foundation,0,None
-12,Months of the Year,Act I: Foundation,0,None
-13,Family Members,Act I: Foundation,0,None
-14,Body Parts,Act I: Foundation,0,None
-15,Colors,Act I: Foundation,0,None
-16,Describing Things (grande pequeño bueno),Act I: Foundation,0,None
-17,Basic Action Verbs,Act I: Foundation,0,None
-18,Common Foods,Act I: Foundation,0,None
-19,House Rooms,Act I: Foundation,0,None
+10,Connecting Words (y pero porque),Act I: Foundation,,None
+11,Days of the Week,Act I: Foundation,,None
+12,Months of the Year,Act I: Foundation,,None
+13,Family Members,Act I: Foundation,,None
+14,Body Parts,Act I: Foundation,,None
+15,Colors,Act I: Foundation,,None
+16,Describing Things (grande pequeño bueno),Act I: Foundation,,None
+17,Basic Action Verbs,Act I: Foundation,1,Portuguese verb form error (row 14)
+18,Common Foods,Act I: Foundation,,None
+19,House Rooms,Act I: Foundation,,None
 20,Making & Doing (hacer),Act I: Foundation,2,Row 3 portuguese: hago (I do) requires conjugated faço not infinitive fazer; Row 8 portuguese: hacen (they do) requires conjugated fazem not infinitive faz
 21,Going Places (ir),Act I: Foundation,1,Row 3 portuguese: voy (I go) requires conjugated vou not infinitive ir
-22,Numbers 11-20,Act I: Foundation,0,None
-23,Extended Family,Act I: Foundation,0,None
-24,Emotions & Feelings,Act I: Foundation,0,None
-25,Time Words (hoy ayer mañana),Act I: Foundation,0,None
-26,Clothing,Act I: Foundation,0,None
-27,Daily Activities,Act I: Foundation,0,None
-28,City Places,Act I: Foundation,0,None
-29,Transportation,Act I: Foundation,0,None
-30,Numbers 21-100,Act I: Foundation,0,None
-31,Liking Things (gustar),Act II: Building Blocks,0,None
-32,Weather Talk,Act II: Building Blocks,0,None
-33,Can & Able (poder),Act II: Building Blocks,0,None
-34,Want & Desire (querer),Act II: Building Blocks,0,None
-35,School Supplies,Act II: Building Blocks,0,None
-36,Office & Work,Act II: Building Blocks,0,None
-37,Animals,Act II: Building Blocks,0,None
-38,Thinking (pensar),Act II: Building Blocks,0,None
-39,Feeling (sentir),Act II: Building Blocks,0,None
-40,Meals & Food Details,Act II: Building Blocks,0,None
-41,Drinks & Beverages,Act II: Building Blocks,0,None
-42,Vegetables,Act II: Building Blocks,0,None
-43,Fruits,Act II: Building Blocks,0,None
-44,Need & Necessity (necesitar),Act II: Building Blocks,0,None
-45,Looking For (buscar),Act II: Building Blocks,0,None
-46,Telling Time,Act II: Building Blocks,0,None
-47,Directions & Position,Act II: Building Blocks,0,None
-48,Prepositions (en con sin para),Act II: Building Blocks,0,None
-49,Comparing Things,Act II: Building Blocks,0,None
-50,Physical Actions,Act II: Building Blocks,0,None
-51,Names & Calling (llamar),Act II: Building Blocks,0,None
-52,Giving (dar),Act II: Building Blocks,0,None
-53,Seeing & Watching (ver),Act II: Building Blocks,0,None
-54,Restaurant Vocabulary,Act II: Building Blocks,0,None
-55,Shopping & Buying,Act II: Building Blocks,0,None
-56,Beginning (empezar),Act II: Building Blocks,0,None
-57,Continuing (seguir),Act II: Building Blocks,0,None
-58,Furniture & Objects,Act II: Building Blocks,0,None
-59,Bathroom Items,Act II: Building Blocks,0,None
-60,Health & Medical,Act II: Building Blocks,0,None
-61,Knowing Facts (saber),Act III: Daily Life,0,None
-62,Knowing People/Places (conocer),Act III: Daily Life,0,None
-63,Technology & Internet,Act III: Daily Life,0,None
-64,Asking For Things (pedir),Act III: Daily Life,0,None
-65,Asking Questions (preguntar),Act III: Daily Life,0,None
-66,Nature & Outdoors,Act III: Daily Life,0,None
-67,Sleeping (dormir),Act III: Daily Life,0,None
-68,Playing (jugar),Act III: Daily Life,0,None
-69,Sports,Act III: Daily Life,0,None
-70,Hobbies & Interests,Act III: Daily Life,0,None
-71,Leaving (salir),Act III: Daily Life,0,None
-72,Returning (volver),Act III: Daily Life,0,None
-73,Music & Songs,Act III: Daily Life,2,Row 3 portuguese: canción is song (canção) not music (música); Row 25 portuguese: el cantante is masculine singer (o cantor) not feminine (a c
-74,Wearing & Carrying (llevar),Act III: Daily Life,0,None
-75,Bringing (traer),Act III: Daily Life,0,None
-76,School & Education,Act III: Daily Life,0,None
-77,Deep Emotions,Act III: Daily Life,0,None
-78,Saying & Telling (decir),Act III: Daily Life,0,None
-79,Putting & Placing (poner),Act III: Daily Life,0,None
-80,Travel & Tourism,Act III: Daily Life,0,None
-81,Banking & Money,Act III: Daily Life,0,None
-82,Finding (encontrar),Act III: Daily Life,0,None
-83,Waiting & Hoping (esperar),Act III: Daily Life,0,None
-84,Business Terms,Act III: Daily Life,0,None
-85,Believing (creer),Act III: Daily Life,0,None
-86,Living (vivir),Act III: Daily Life,0,None
-87,Cooking Verbs,Act III: Daily Life,0,None
-88,Physical Appearance,Act III: Daily Life,0,None
-89,Receiving (recibir),Act III: Daily Life,0,None
-90,Sending (enviar),Act III: Daily Life,0,None
-91,Personal Qualities,Act III: Daily Life,0,None
-92,Opening (abrir),Act III: Daily Life,0,None
-93,Closing (cerrar),Act III: Daily Life,0,None
-94,Internet & Web,Act III: Daily Life,0,None
-95,Relationships,Act III: Daily Life,0,None
-96,Reading (leer),Act III: Daily Life,0,None
-97,Writing (escribir),Act III: Daily Life,0,None
-98,Government & Politics,Act III: Daily Life,0,None
-99,Showing (mostrar),Act III: Daily Life,0,None
-100,Explaining (explicar),Act III: Daily Life,0,None
-101,Law & Legal,Act IV: Expanding Expression,0,None
-102,Remembering (recordar),Act IV: Expanding Expression,0,None
-103,Forgetting (olvidar),Act IV: Expanding Expression,0,None
-104,Science Terms,Act IV: Expanding Expression,0,None
-105,Learning (aprender),Act IV: Expanding Expression,0,None
-106,Teaching (enseñar),Act IV: Expanding Expression,0,None
-107,Environment & Nature,Act IV: Expanding Expression,0,None
-108,Changing (cambiar),Act IV: Expanding Expression,0,None
-109,Improving (mejorar),Act IV: Expanding Expression,0,None
-110,Media & News,Act IV: Expanding Expression,0,None
-111,Trying (intentar),Act IV: Expanding Expression,0,None
-112,Getting & Achieving (conseguir),Act IV: Expanding Expression,0,None
-113,Geography,Act IV: Expanding Expression,0,None
-114,Seeming & Appearing (parecer),Act IV: Expanding Expression,0,None
-115,Staying & Meeting (quedar),Act IV: Expanding Expression,0,None
-116,Art & Culture,Act IV: Expanding Expression,0,None
-117,Arriving (llegar),Act IV: Expanding Expression,0,None
-118,Happening (pasar),Act IV: Expanding Expression,0,None
-119,Religion & Faith,Act IV: Expanding Expression,0,None
-120,Letting & Leaving (dejar),Act IV: Expanding Expression,0,None
-121,Using (usar),Act IV: Expanding Expression,0,None
-122,Tools & Building,Act IV: Expanding Expression,0,None
-123,Telling & Counting (contar),Act IV: Expanding Expression,0,None
-124,Creating (crear),Act IV: Expanding Expression,0,None
-125,Personality Types,Act IV: Expanding Expression,0,None
-126,Going Up (subir),Act IV: Expanding Expression,0,None
-127,Going Down (bajar),Act IV: Expanding Expression,0,None
-128,Emergency & Safety,Act IV: Expanding Expression,0,None
-129,Falling (caer),Act IV: Expanding Expression,0,None
-130,Lifting & Waking (levantar),Act IV: Expanding Expression,0,None
-131,Materials,Act IV: Expanding Expression,0,None
-132,Touching & Playing Music (tocar),Act IV: Expanding Expression,1,Row 8 portuguese: tocar is infinitive verb to touch (tocar) not noun touch (to
-133,Breaking (romper),Act IV: Expanding Expression,0,None
-134,Farming & Agriculture,Act IV: Expanding Expression,0,None
-135,Sharing (compartir),Act IV: Expanding Expression,0,None
-136,Participating (participar),Act IV: Expanding Expression,0,None
-137,Math Operations,Act IV: Expanding Expression,0,None
-138,Preparing (preparar),Act IV: Expanding Expression,0,None
-139,Cooking (cocinar),Act IV: Expanding Expression,0,None
-140,History Terms,Act IV: Expanding Expression,0,None
-141,Accepting (aceptar),Act V: Intermediate Mastery,0,None
-142,Rejecting (rechazar),Act V: Intermediate Mastery,0,None
-143,Space & Universe,Act V: Intermediate Mastery,0,None
-144,Offering (ofrecer),Act V: Intermediate Mastery,0,None
-145,Promising (prometer),Act V: Intermediate Mastery,0,None
-146,Chemistry Terms,Act V: Intermediate Mastery,0,None
-147,Moving (mover),Act V: Intermediate Mastery,0,None
-148,Stopping (detener),Act V: Intermediate Mastery,0,None
-149,Military Terms,Act V: Intermediate Mastery,0,None
-150,Continuing (continuar),Act V: Intermediate Mastery,0,None
-151,Finishing (terminar),Act V: Intermediate Mastery,0,None
-152,Literature & Books,Act V: Intermediate Mastery,0,None
-153,Developing (desarrollar),Act V: Intermediate Mastery,0,None
-154,Producing (producir),Act V: Intermediate Mastery,0,None
-155,Construction,Act V: Intermediate Mastery,0,None
-156,Directing (dirigir),Act V: Intermediate Mastery,0,None
-157,Organizing (organizar),Act V: Intermediate Mastery,0,None
-158,Theater & Acting,Act V: Intermediate Mastery,0,None
-159,Traveling (viajar),Act V: Intermediate Mastery,0,None
-160,Resting (descansar),Act V: Intermediate Mastery,0,None
-161,Philosophy Terms,Act V: Intermediate Mastery,0,None
-162,Practicing (practicar),Act V: Intermediate Mastery,0,None
-163,Winning & Earning (ganar),Act V: Intermediate Mastery,0,None
-164,Dance & Dancing,Act V: Intermediate Mastery,0,None
-165,Losing (perder),Act V: Intermediate Mastery,0,None
-166,Forming (formar),Act V: Intermediate Mastery,0,None
-167,Fashion & Style,Act V: Intermediate Mastery,0,None
-168,Reaching (alcanzar),Act V: Intermediate Mastery,0,None
-169,Maintaining (mantener),Act V: Intermediate Mastery,0,None
-170,Psychology Terms,Act V: Intermediate Mastery,0,None
-171,Solving (resolver),Act V: Intermediate Mastery,0,None
-172,Avoiding (evitar),Act V: Intermediate Mastery,0,None
-173,Journalism Terms,Act V: Intermediate Mastery,0,None
-174,Supposing (suponer),Act V: Intermediate Mastery,0,None
-175,Meaning (significar),Act V: Intermediate Mastery,0,None
-176,Photography Terms,Act V: Intermediate Mastery,0,None
-177,Choosing (elegir),Act V: Intermediate Mastery,0,None
-178,Deciding (decidir),Act V: Intermediate Mastery,0,None
-179,Marketing & Advertising,Act V: Intermediate Mastery,0,None
-180,Appearing (aparecer),Act V: Intermediate Mastery,0,None
-181,Disappearing (desaparecer),Act VI: Advanced Constructs,0,None
+22,Numbers 11-20,Act I: Foundation,,None
+23,Extended Family,Act I: Foundation,,None
+24,Emotions & Feelings,Act I: Foundation,,None
+25,Time Words (hoy ayer mañana),Act I: Foundation,,None
+26,Clothing,Act I: Foundation,,None
+27,Daily Activities,Act I: Foundation,,None
+28,City Places,Act I: Foundation,,None
+29,Transportation,Act I: Foundation,1,Portuguese translation error (row 9)
+30,Numbers 21-100,Act I: Foundation,,None
+31,Liking Things (gustar),Act II: Building Blocks,,None
+32,Weather Talk,Act II: Building Blocks,,None
+33,Can & Able (poder),Act II: Building Blocks,,None
+34,Want & Desire (querer),Act II: Building Blocks,,None
+35,School Supplies,Act II: Building Blocks,,None
+36,Office & Work,Act II: Building Blocks,3,"Context errors - appointment vs quote (row 56: chinese, pinyin, portuguese)"
+37,Animals,Act II: Building Blocks,,None
+38,Thinking (pensar),Act II: Building Blocks,,None
+39,Feeling (sentir),Act II: Building Blocks,,None
+40,Meals & Food Details,Act II: Building Blocks,,None
+41,Drinks & Beverages,Act II: Building Blocks,,None
+42,Vegetables,Act II: Building Blocks,,None
+43,Fruits,Act II: Building Blocks,,None
+44,Need & Necessity (necesitar),Act II: Building Blocks,,None
+45,Looking For (buscar),Act II: Building Blocks,,None
+46,Telling Time,Act II: Building Blocks,6,"Time terminology errors - second/quarter (rows 4,20,37: chinese/pinyin/portuguese)"
+47,Directions & Position,Act II: Building Blocks,,None
+48,Prepositions (en con sin para),Act II: Building Blocks,,None
+49,Comparing Things,Act II: Building Blocks,,None
+50,Physical Actions,Act II: Building Blocks,,None
+51,Names & Calling (llamar),Act II: Building Blocks,8,Verb conjugation errors (multiple rows)
+52,Giving (dar),Act II: Building Blocks,8,Verb conjugation and context errors
+53,Seeing & Watching (ver),Act II: Building Blocks,,None
+54,Restaurant Vocabulary,Act II: Building Blocks,24,Restaurant vocabulary context errors (multiple rows)
+55,Shopping & Buying,Act II: Building Blocks,12,Shopping context errors - cost/return/bill
+56,Beginning (empezar),Act II: Building Blocks,4,Translation errors
+57,Continuing (seguir),Act II: Building Blocks,2,Context errors
+58,Furniture & Objects,Act II: Building Blocks,3,Furniture translation errors
+59,Bathroom Items,Act II: Building Blocks,7,Bathroom items context errors
+60,Health & Medical,Act II: Building Blocks,12,"Medical context errors (prescription, cold, consultation)"
+61,Knowing Facts (saber),Act III: Daily Life,,None
+62,Knowing People/Places (conocer),Act III: Daily Life,2,Context errors
+63,Technology & Internet,Act III: Daily Life,6,Technology context errors
+64,Asking For Things (pedir),Act III: Daily Life,25,Ask vs request systematic errors
+65,Asking Questions (preguntar),Act III: Daily Life,1,Portuguese verb/noun error
+66,Nature & Outdoors,Act III: Daily Life,2,Nature vocabulary errors
+67,Sleeping (dormir),Act III: Daily Life,1,Portuguese verb/noun error
+68,Playing (jugar),Act III: Daily Life,5,Sports/games context errors
+69,Sports,Act III: Daily Life,13,"Sports terminology errors (tie, goal, coach)"
+70,Hobbies & Interests,Act III: Daily Life,3,Hobbies context errors
+71,Leaving (salir),Act III: Daily Life,6,Leaving/exit context errors
+72,Returning (volver),Act III: Daily Life,2,Portuguese verb/noun errors
+73,Music & Songs,Act III: Daily Life,1,Row 3 portuguese: canción is song (canção) not music (música); Row 25 portuguese: el cantante is masculine singer (o cantor) not feminine (a c
+74,Wearing & Carrying (llevar),Act III: Daily Life,4,Context errors
+75,Bringing (traer),Act III: Daily Life,2,Task/errand context errors
+76,School & Education,Act III: Daily Life,12,"Education context errors (high school, subject, career)"
+77,Deep Emotions,Act III: Daily Life,2,Emotion vocabulary errors
+78,Saying & Telling (decir),Act III: Daily Life,3,Context and verb errors
+79,Putting & Placing (poner),Act III: Daily Life,26,Systematic 'put' verb errors + order context
+80,Travel & Tourism,Act III: Daily Life,6,Travel context errors
+81,Banking & Money,Act III: Daily Life,24,Banking terminology systematic errors
+82,Finding (encontrar),Act III: Daily Life,,None
+83,Waiting & Hoping (esperar),Act III: Daily Life,,None
+84,Business Terms,Act III: Daily Life,14,"Business terminology errors (director, revenue)"
+85,Believing (creer),Act III: Daily Life,,None
+86,Living (vivir),Act III: Daily Life,8,Live/reside context errors
+87,Cooking Verbs,Act III: Daily Life,18,"Cooking verbs context errors (sauté, chop, grate)"
+88,Physical Appearance,Act III: Daily Life,9,"Physical appearance errors (thin, tabs/eyelashes)"
+89,Receiving (recibir),Act III: Daily Life,,None
+90,Sending (enviar),Act III: Daily Life,,None
+91,Personal Qualities,Act III: Daily Life,3,Personality trait errors
+92,Opening (abrir),Act III: Daily Life,3,Opener tool vs opening context
+93,Closing (cerrar),Act III: Daily Life,1,Portuguese verb/noun error
+94,Internet & Web,Act III: Daily Life,6,"Internet/web context errors (secure, navigate, signal)"
+95,Relationships,Act III: Daily Life,13,Relationship vocabulary errors (gender + ring/kiss/hug)
+96,Reading (leer),Act III: Daily Life,14,Reading verb tense and context errors
+97,Writing (escribir),Act III: Daily Life,2,Portuguese verb/noun errors
+98,Government & Politics,Act III: Daily Life,12,Government/politics context errors (election)
+99,Showing (mostrar),Act III: Daily Life,3,Context errors
+100,Explaining (explicar),Act III: Daily Life,1,Portuguese verb form error
+101,Law & Legal,Act IV: Expanding Expression,21,"Legal system context errors (court, fine, sentence, evidence, lawsuit)"
+102,Remembering (recordar),Act IV: Expanding Expression,2,Memory context errors (computer vs mental)
+103,Forgetting (olvidar),Act IV: Expanding Expression,1,Portuguese tense error
+104,Science Terms,Act IV: Expanding Expression,4,Science context errors
+105,Learning (aprender),Act IV: Expanding Expression,,None
+106,Teaching (enseñar),Act IV: Expanding Expression,3,Portuguese gender errors
+107,Environment & Nature,Act IV: Expanding Expression,3,Environment vocabulary errors
+108,Changing (cambiar),Act IV: Expanding Expression,,None
+109,Improving (mejorar),Act IV: Expanding Expression,,None
+110,Media & News,Act IV: Expanding Expression,6,"Media context errors (radio, press, presenter gender)"
+111,Trying (intentar),Act IV: Expanding Expression,,None
+112,Getting & Achieving (conseguir),Act IV: Expanding Expression,,None
+113,Geography,Act IV: Expanding Expression,11,"Geography context errors (capital, state, plain, pole)"
+114,Seeming & Appearing (parecer),Act IV: Expanding Expression,,None
+115,Staying & Meeting (quedar),Act IV: Expanding Expression,,None
+116,Art & Culture,Act IV: Expanding Expression,9,"Art context errors (painting, work of art, design)"
+117,Arriving (llegar),Act IV: Expanding Expression,1,Verb tense error
+118,Happening (pasar),Act IV: Expanding Expression,,None
+119,Religion & Faith,Act IV: Expanding Expression,12,"Religion context errors (priest, imam, prayer, saint)"
+120,Letting & Leaving (dejar),Act IV: Expanding Expression,,None
+121,Using (usar),Act IV: Expanding Expression,,None
+122,Tools & Building,Act IV: Expanding Expression,6,Tools context errors (wrench vs key)
+123,Telling & Counting (contar),Act IV: Expanding Expression,,None
+124,Creating (crear),Act IV: Expanding Expression,,None
+125,Personality Types,Act IV: Expanding Expression,3,Character/personality context errors
+126,Going Up (subir),Act IV: Expanding Expression,3,Ascent context error
+127,Going Down (bajar),Act IV: Expanding Expression,5,Descent context errors (systematic)
+128,Emergency & Safety,Act IV: Expanding Expression,,None
+129,Falling (caer),Act IV: Expanding Expression,3,Fall context errors (autumn vs fall verb)
+130,Lifting & Waking (levantar),Act IV: Expanding Expression,3,Lift context errors (elevator vs lift verb)
+131,Materials,Act IV: Expanding Expression,2,Materials vocabulary errors
+132,Touching & Playing Music (tocar),Act IV: Expanding Expression,2,Row 8 portuguese: tocar is infinitive verb to touch (tocar) not noun touch (to
+133,Breaking (romper),Act IV: Expanding Expression,2,Break context error
+134,Farming & Agriculture,Act IV: Expanding Expression,7,Agriculture gender and vocabulary errors
+135,Sharing (compartir),Act IV: Expanding Expression,,None
+136,Participating (participar),Act IV: Expanding Expression,,None
+137,Math Operations,Act IV: Expanding Expression,6,"Math context errors (division, power/exponent)"
+138,Preparing (preparar),Act IV: Expanding Expression,,None
+139,Cooking (cocinar),Act IV: Expanding Expression,2,Cooking vocabulary errors
+140,History Terms,Act IV: Expanding Expression,2,History error (heroína drug vs heroine)
+141,Accepting (aceptar),Act V: Intermediate Mastery,,None
+142,Rejecting (rechazar),Act V: Intermediate Mastery,,None
+143,Space & Universe,Act V: Intermediate Mastery,,None
+144,Offering (ofrecer),Act V: Intermediate Mastery,6,Offer context errors
+145,Promising (prometer),Act V: Intermediate Mastery,3,Portuguese verb/noun errors
+146,Chemistry Terms,Act V: Intermediate Mastery,3,Chemistry context errors (base)
+147,Moving (mover),Act V: Intermediate Mastery,,None
+148,Stopping (detener),Act V: Intermediate Mastery,,None
+149,Military Terms,Act V: Intermediate Mastery,1,Military context error (general)
+150,Continuing (continuar),Act V: Intermediate Mastery,,None
+151,Finishing (terminar),Act V: Intermediate Mastery,1,Portuguese verb error
+152,Literature & Books,Act V: Intermediate Mastery,8,Literature gender and context errors
+153,Developing (desarrollar),Act V: Intermediate Mastery,,None
+154,Producing (producir),Act V: Intermediate Mastery,,None
+155,Construction,Act V: Intermediate Mastery,8,"Construction vocabulary errors (architect, engineer, foundation, plan)"
+156,Directing (dirigir),Act V: Intermediate Mastery,2,Portuguese verb errors
+157,Organizing (organizar),Act V: Intermediate Mastery,,None
+158,Theater & Acting,Act V: Intermediate Mastery,3,Theater gender errors
+159,Traveling (viajar),Act V: Intermediate Mastery,,None
+160,Resting (descansar),Act V: Intermediate Mastery,6,Resting vocabulary errors
+161,Philosophy Terms,Act V: Intermediate Mastery,4,Philosophy vocabulary errors
+162,Practicing (practicar),Act V: Intermediate Mastery,3,Portuguese verb/noun errors
+163,Winning & Earning (ganar),Act V: Intermediate Mastery,2,Portuguese tense errors
+164,Dance & Dancing,Act V: Intermediate Mastery,9,"Dance vocabulary errors (dancer gender, salsa, floor, compass, bow)"
+165,Losing (perder),Act V: Intermediate Mastery,,None
+166,Forming (formar),Act V: Intermediate Mastery,3,Portuguese verb/noun errors
+167,Fashion & Style,Act V: Intermediate Mastery,2,Fashion gender errors
+168,Reaching (alcanzar),Act V: Intermediate Mastery,4,Context errors (goal vs meta)
+169,Maintaining (mantener),Act V: Intermediate Mastery,2,Portuguese verb errors
+170,Psychology Terms,Act V: Intermediate Mastery,4,Psychology vocabulary errors
+171,Solving (resolver),Act V: Intermediate Mastery,2,Portuguese verb errors
+172,Avoiding (evitar),Act V: Intermediate Mastery,2,Portuguese verb errors
+173,Journalism Terms,Act V: Intermediate Mastery,8,Journalism vocabulary errors
+174,Supposing (suponer),Act V: Intermediate Mastery,2,Portuguese verb form errors
+175,Meaning (significar),Act V: Intermediate Mastery,2,Portuguese verb errors
+176,Photography Terms,Act V: Intermediate Mastery,6,Photography vocabulary errors
+177,Choosing (elegir),Act V: Intermediate Mastery,5,Portuguese verb form errors
+178,Deciding (decidir),Act V: Intermediate Mastery,2,Context and resolution errors
+179,Marketing & Advertising,Act V: Intermediate Mastery,,None
+180,Appearing (aparecer),Act V: Intermediate Mastery,5,Portuguese verb errors
+181,Disappearing (desaparecer),Act VI: Advanced Constructs,1,Portuguese verb error
 182,Telecommunications,Act VI: Advanced Constructs,3,Row 4 pinyin: Latin letters must map letter-by-letter with spaces; Row 26 pinyin: Latin letters must map letter-by-letter with spaces; Row 27 pinyin: Latin letters must map letter-by-letter with spaces
-183,Birthdays & Fulfilling (cumplir),Act VI: Advanced Constructs,0,None
-184,Missing & Lacking (faltar),Act VI: Advanced Constructs,0,None
-185,Tourism Terms,Act VI: Advanced Constructs,0,None
-186,Noticing (notar),Act VI: Advanced Constructs,0,None
-187,Allowing (permitir),Act VI: Advanced Constructs,0,None
-188,Manufacturing Terms,Act VI: Advanced Constructs,0,None
-189,Achieving (lograr),Act VI: Advanced Constructs,0,None
-190,Performing (realizar),Act VI: Advanced Constructs,0,None
-191,Economics Terms,Act VI: Advanced Constructs,0,None
-192,Existing (existir),Act VI: Advanced Constructs,0,None
-193,Depending (depender),Act VI: Advanced Constructs,0,None
-194,Retail & Sales,Act VI: Advanced Constructs,0,None
-195,Belonging (pertenecer),Act VI: Advanced Constructs,0,None
-196,Deserving (merecer),Act VI: Advanced Constructs,0,None
-197,Insurance Terms,Act VI: Advanced Constructs,0,None
-198,Suffering (sufrir),Act VI: Advanced Constructs,0,None
-199,Enjoying (disfrutar),Act VI: Advanced Constructs,0,None
-200,Real Estate Terms,Act VI: Advanced Constructs,1,Row 5 portuguese: alquiler is noun rent payment (aluguel) not verb to rent (al
-201,Occurring (ocurrir),Act VI: Advanced Constructs,0,None
-202,Happening (suceder),Act VI: Advanced Constructs,0,None
-203,Aviation Terms,Act VI: Advanced Constructs,0,None
-204,Protecting (proteger),Act VI: Advanced Constructs,0,None
-205,Defending (defender),Act VI: Advanced Constructs,0,None
-206,Logistics & Shipping,Act VI: Advanced Constructs,0,None
-207,Reducing (reducir),Act VI: Advanced Constructs,0,None
-208,Increasing (aumentar),Act VI: Advanced Constructs,0,None
-209,Pharmaceutical Terms,Act VI: Advanced Constructs,0,None
-210,Demonstrating (demostrar),Act VI: Advanced Constructs,0,None
-211,Checking (comprobar),Act VI: Advanced Constructs,0,None
-212,Energy & Power,Act VI: Advanced Constructs,0,None
-213,Thanking (agradecer),Act VI: Advanced Constructs,0,None
-214,Congratulating (felicitar),Act VI: Advanced Constructs,0,None
-215,Automotive Terms,Act VI: Advanced Constructs,0,None
-216,Suggesting (sugerir),Act VI: Advanced Constructs,0,None
-217,Recommending (recomendar),Act VI: Advanced Constructs,0,None
-218,Subjunctive Triggers,Act VI: Advanced Constructs,0,None
-219,Convincing (convencer),Act VI: Advanced Constructs,0,None
-220,Trusting (confiar),Act VI: Advanced Constructs,0,None
-221,Past Subjunctive Forms,Act VII: Mastery & Fluency,0,None
-222,Dreaming (soñar),Act VII: Mastery & Fluency,0,None
-223,Agreeing (acordar),Act VII: Mastery & Fluency,0,None
-224,Robotics & AI Terms,Act VII: Mastery & Fluency,0,None
-225,Warming (calentar),Act VII: Mastery & Fluency,0,None
-226,Cooling (enfriar),Act VII: Mastery & Fluency,0,None
-227,Alternative Medicine,Act VII: Mastery & Fluency,0,None
-228,Hiding (esconder),Act VII: Mastery & Fluency,0,None
-229,Revealing & Exposing (revelar),Act VII: Mastery & Fluency,0,None
-230,Virtual Reality Terms,Act VII: Mastery & Fluency,0,None
-231,Measuring (medir),Act VII: Mastery & Fluency,0,None
-232,Weighing (pesar),Act VII: Mastery & Fluency,0,None
-233,Cryptocurrency Terms,Act VII: Mastery & Fluency,3,Row 19 pinyin: Latin letters must map letter-by-letter with spaces; Row 54 pinyin: Latin letters must map letter-by-letter with spaces; Row 55 pinyin: Latin letters must map letter-by-letter with spaces
-234,Establishing & Founding (fundar),Act VII: Mastery & Fluency,0,None
-235,Concluding & Wrapping Up (concluir),Act VII: Mastery & Fluency,0,None
-236,Sustainable Living,Act VII: Mastery & Fluency,0,None
-237,Pushing (empujar),Act VII: Mastery & Fluency,0,None
-238,Pulling (tirar),Act VII: Mastery & Fluency,0,None
-239,Combining (combinar),Act VII: Mastery & Fluency,0,None
-240,Separating (separar),Act VII: Mastery & Fluency,0,None
-241,Dying (morir),Act VII: Mastery & Fluency,0,None
-242,Irregular Past Forms,Act VII: Mastery & Fluency,0,None
-243,Growing (crecer),Act VII: Mastery & Fluency,0,None
-244,Aging (envejecer),Act VII: Mastery & Fluency,0,None
-245,Command Forms,Act VII: Mastery & Fluency,1,Row 2 portuguese: Command form haz (do!) requires Portuguese imperative faça n
-246,Reflexive Pronouns,Act VII: Mastery & Fluency,0,None
-247,Gerund Forms,Act VII: Mastery & Fluency,0,None
-248,Perfect Tenses,Act VII: Mastery & Fluency,0,None
-249,Future Forms,Act VII: Mastery & Fluency,0,None
-250,Common Idioms,Act VII: Mastery & Fluency,0,None
+183,Birthdays & Fulfilling (cumplir),Act VI: Advanced Constructs,,None
+184,Missing & Lacking (faltar),Act VI: Advanced Constructs,7,Missing/lacking vocabulary errors
+185,Tourism Terms,Act VI: Advanced Constructs,1,Portuguese verb form error
+186,Noticing (notar),Act VI: Advanced Constructs,2,Portuguese verb/noun errors
+187,Allowing (permitir),Act VI: Advanced Constructs,2,Portuguese verb errors
+188,Manufacturing Terms,Act VI: Advanced Constructs,,None
+189,Achieving (lograr),Act VI: Advanced Constructs,,None
+190,Performing (realizar),Act VI: Advanced Constructs,5,Performance context and verb errors
+191,Economics Terms,Act VI: Advanced Constructs,,None
+192,Existing (existir),Act VI: Advanced Constructs,2,Portuguese verb errors
+193,Depending (depender),Act VI: Advanced Constructs,6,Depending vocabulary errors
+194,Retail & Sales,Act VI: Advanced Constructs,4,Retail vocabulary errors
+195,Belonging (pertenecer),Act VI: Advanced Constructs,3,Belonging vocabulary errors
+196,Deserving (merecer),Act VI: Advanced Constructs,3,Deserving/merit context errors
+197,Insurance Terms,Act VI: Advanced Constructs,1,Insurance verb/noun error
+198,Suffering (sufrir),Act VI: Advanced Constructs,1,Portuguese verb error
+199,Enjoying (disfrutar),Act VI: Advanced Constructs,4,Portuguese verb/noun errors
+200,Real Estate Terms,Act VI: Advanced Constructs,8,Row 5 portuguese: alquiler is noun rent payment (aluguel) not verb to rent (al
+201,Occurring (ocurrir),Act VI: Advanced Constructs,,None
+202,Happening (suceder),Act VI: Advanced Constructs,1,Portuguese conjugation error
+203,Aviation Terms,Act VI: Advanced Constructs,2,Aviation gender errors
+204,Protecting (proteger),Act VI: Advanced Constructs,,None
+205,Defending (defender),Act VI: Advanced Constructs,,None
+206,Logistics & Shipping,Act VI: Advanced Constructs,2,Logistics context errors (customs)
+207,Reducing (reducir),Act VI: Advanced Constructs,,None
+208,Increasing (aumentar),Act VI: Advanced Constructs,4,Increase vocabulary errors
+209,Pharmaceutical Terms,Act VI: Advanced Constructs,2,Pharmacy context errors (syrup)
+210,Demonstrating (demostrar),Act VI: Advanced Constructs,,None
+211,Checking (comprobar),Act VI: Advanced Constructs,3,Check/verification vocabulary errors
+212,Energy & Power,Act VI: Advanced Constructs,6,Energy vocabulary errors (current)
+213,Thanking (agradecer),Act VI: Advanced Constructs,6,Thank verb conjugation errors
+214,Congratulating (felicitar),Act VI: Advanced Constructs,,None
+215,Automotive Terms,Act VI: Advanced Constructs,1,Automotive gender error
+216,Suggesting (sugerir),Act VI: Advanced Constructs,1,Portuguese number error
+217,Recommending (recomendar),Act VI: Advanced Constructs,3,Recommend vocabulary errors
+218,Subjunctive Triggers,Act VI: Advanced Constructs,4,Subjunctive verb form errors
+219,Convincing (convencer),Act VI: Advanced Constructs,,None
+220,Trusting (confiar),Act VI: Advanced Constructs,3,Trust vocabulary errors
+221,Past Subjunctive Forms,Act VII: Mastery & Fluency,5,Past subjunctive errors
+222,Dreaming (soñar),Act VII: Mastery & Fluency,2,Dream verb/noun errors
+223,Agreeing (acordar),Act VII: Mastery & Fluency,3,Agree vocabulary errors
+224,Robotics & AI Terms,Act VII: Mastery & Fluency,2,Robotics context errors
+225,Warming (calentar),Act VII: Mastery & Fluency,3,Heat vocabulary errors
+226,Cooling (enfriar),Act VII: Mastery & Fluency,1,Cool verb error
+227,Alternative Medicine,Act VII: Mastery & Fluency,3,Alternative medicine vocabulary errors
+228,Hiding (esconder),Act VII: Mastery & Fluency,,None
+229,Revealing & Exposing (revelar),Act VII: Mastery & Fluency,1,Reveal verb error
+230,Virtual Reality Terms,Act VII: Mastery & Fluency,8,"VR vocabulary errors (visor, dimension)"
+231,Measuring (medir),Act VII: Mastery & Fluency,5,Measure vocabulary errors
+232,Weighing (pesar),Act VII: Mastery & Fluency,3,Weigh context errors (scale)
+233,Cryptocurrency Terms,Act VII: Mastery & Fluency,11,Row 19 pinyin: Latin letters must map letter-by-letter with spaces; Row 54 pinyin: Latin letters must map letter-by-letter with spaces; Row 55 pinyin: Latin letters must map letter-by-letter with spaces
+234,Establishing & Founding (fundar),Act VII: Mastery & Fluency,3,Found gender errors
+235,Concluding & Wrapping Up (concluir),Act VII: Mastery & Fluency,,None
+236,Sustainable Living,Act VII: Mastery & Fluency,4,Sustainability vocabulary errors
+237,Pushing (empujar),Act VII: Mastery & Fluency,3,Push vocabulary errors
+238,Pulling (tirar),Act VII: Mastery & Fluency,2,Pull vocabulary errors
+239,Combining (combinar),Act VII: Mastery & Fluency,1,Combine verb/noun error
+240,Separating (separar),Act VII: Mastery & Fluency,,None
+241,Dying (morir),Act VII: Mastery & Fluency,,None
+242,Irregular Past Forms,Act VII: Mastery & Fluency,1,Preterite missing verb
+243,Growing (crecer),Act VII: Mastery & Fluency,1,Context error (sprout vs outbreak)
+244,Aging (envejecer),Act VII: Mastery & Fluency,,None
+245,Command Forms,Act VII: Mastery & Fluency,4,Row 2 portuguese: Command form haz (do!) requires Portuguese imperative faça n
+246,Reflexive Pronouns,Act VII: Mastery & Fluency,5,Reflexive verb errors
+247,Gerund Forms,Act VII: Mastery & Fluency,1,Gerund context error
+248,Perfect Tenses,Act VII: Mastery & Fluency,1,Perfect tense conjugation error
+249,Future Forms,Act VII: Mastery & Fluency,,None
+250,Common Idioms,Act VII: Mastery & Fluency,4,Idiom vocabulary errors
