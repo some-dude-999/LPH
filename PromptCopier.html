@@ -1100,9 +1100,210 @@ Create your own branch, commit, and PR to main.</div>
     </table>
 </div>
 
-<h3>Chinese - Stage 3A (Comprehensive Review WITH Scorecard + Fixing)</h3>
+<h3>Chinese - Stage 3A (Act-Based Parallel Translation Review)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3a" data-lang="chinese">TASK: COMPREHENSIVE REVIEW + FIXING OF ALL 107 CHINESE BREAKOUT CSVs (WITH SCORECARD)
+<div onclick="copyPrompt(this)" data-stage="3a" data-lang="chinese">╔══════════════════════════════════════════════════════════════════╗
+║  🚀 CHINESE STAGE 3A: ACT-BASED PARALLEL EXECUTION               ║
+║  Run 5 agents concurrently - one per act                         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+CRITICAL CHANGE: Stage 3A is now ACT-BASED for parallel execution!
+
+Instead of one massive 107-pack review, you now:
+✓ Run 5 SEPARATE agents in parallel
+✓ Each agent handles ONE act (14-28 packs)
+✓ Each agent uses its own fix table (ChineseFixTableAct{N}.csv)
+✓ All 5 agents can work simultaneously
+
+╔══════════════════════════════════════════════════════════════════╗
+║  📊 ACT DISTRIBUTION                                             ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Act I: Foundation    → Packs 1-14   (14 packs)
+Act II: Development  → Packs 15-27  (13 packs)
+Act III: Expansion   → Packs 28-53  (26 packs)
+Act IV: Mastery      → Packs 54-79  (26 packs)
+Act V: Refinement    → Packs 80-107 (28 packs)
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🔧 SETUP: GENERATE PROMPTS FOR EACH ACT                         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Run these 5 commands to generate act-specific prompts:
+
+python PythonHelpers/generate_act_prompt.py chinese 1 > act1_prompt.txt
+python PythonHelpers/generate_act_prompt.py chinese 2 > act2_prompt.txt
+python PythonHelpers/generate_act_prompt.py chinese 3 > act3_prompt.txt
+python PythonHelpers/generate_act_prompt.py chinese 4 > act4_prompt.txt
+python PythonHelpers/generate_act_prompt.py chinese 5 > act5_prompt.txt
+
+Each generated prompt contains:
+✓ Act-specific pack range
+✓ Complete workflow (validation → review → fix → apply)
+✓ Act-specific file paths
+✓ All rules and examples
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🚀 PARALLEL EXECUTION                                           ║
+╚══════════════════════════════════════════════════════════════════╝
+
+METHOD 1: Launch 5 separate Claude Code sessions
+- Session 1: Paste act1_prompt.txt
+- Session 2: Paste act2_prompt.txt
+- Session 3: Paste act3_prompt.txt
+- Session 4: Paste act4_prompt.txt
+- Session 5: Paste act5_prompt.txt
+
+All 5 agents work independently on their assigned packs.
+
+METHOD 2: Use Task tool with multiple agents (if supported)
+Launch 5 Task agents in parallel, each with one act's prompt.
+
+╔══════════════════════════════════════════════════════════════════╗
+║  📝 OUTPUT: ACT-SPECIFIC FIX TABLES                              ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Each agent produces its own fix table:
+- Act 1 → ChineseWords/ChineseFixTableAct1.csv
+- Act 2 → ChineseWords/ChineseFixTableAct2.csv
+- Act 3 → ChineseWords/ChineseFixTableAct3.csv
+- Act 4 → ChineseWords/ChineseFixTableAct4.csv
+- Act 5 → ChineseWords/ChineseFixTableAct5.csv
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ✅ APPLYING FIXES (PER ACT)                                     ║
+╚══════════════════════════════════════════════════════════════════╝
+
+After each agent completes, apply fixes:
+
+python PythonHelpers/apply_fixes_by_act.py chinese 1
+python PythonHelpers/apply_fixes_by_act.py chinese 2
+python PythonHelpers/apply_fixes_by_act.py chinese 3
+python PythonHelpers/apply_fixes_by_act.py chinese 4
+python PythonHelpers/apply_fixes_by_act.py chinese 5
+
+Each script:
+✓ Reads ChineseFixTableAct{N}.csv
+✓ Applies fixes surgically to individual pack CSVs
+✓ Reports successes/failures
+✓ Exits with error if any mismatch
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🎯 THE CORE MISSION (SAME FOR ALL ACTS)                         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+GOAL: Ensure the MOST COMMON, NATURAL translation consistent with
+the wordpack theme for EVERY target language.
+
+Column 0 (chinese) is SACRED - never touch it!
+Columns 1-5 (pinyin, english, spanish, french, portuguese) - evaluate quality.
+
+⚠️  PYTHON HELPERS ONLY SHOW OBVIOUS MISTAKES (5% of issues)
+    - Empty cells
+    - Bracketed text [like this]
+    - Pinyin spacing errors
+    - Spanish articles in Chinese column
+
+🎯 YOUR REAL JOB: Find the other 95% of issues
+    - Wrong word sense for the theme
+    - Awkward/unnatural phrasing
+    - Rare/formal instead of common/everyday
+    - Missing cultural nuance
+
+TRANSLATION QUALITY STANDARDS:
+✅ GOOD: Most common everyday word
+   "dog" (not "canine")
+   "the" (not "definite article")
+   "hello" (not "salutation")
+
+❌ BAD: Formal, rare, or overly technical
+   NO grammar terminology!
+   NO clarifying labels like "the (masculine)"!
+   Use words NATIVE SPEAKERS actually say!
+
+THEME CONTEXT IS EVERYTHING:
+Same Chinese word = different translations in different themes!
+
+Example: 球拍 (qiú pāi)
+• Pack "Sports Equipment" → "racket" (sports equipment) ✅
+• Pack "Making Noise" → "racket" (loud noise) ✅
+• WITHOUT theme context → might pick wrong meaning ❌
+
+Always check Pack_Title before deciding correct translation!
+
+╔══════════════════════════════════════════════════════════════════╗
+║  📋 WORKFLOW SUMMARY (FOR EACH ACT)                              ║
+╚══════════════════════════════════════════════════════════════════╝
+
+STEP 0: Run Python validation (quick mechanical checks)
+STEP 1: Manual review ALL packs in act (read every row, every column)
+STEP 2: Record fixes in ChineseFixTableAct{N}.csv
+STEP 3: Apply fixes with apply_fixes_by_act.py (MANDATORY!)
+STEP 4: Validate with validate_pinyin.py
+STEP 5: Commit and push
+
+⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️
+If actual CSVs aren't fixed, you FAILED!
+
+╔══════════════════════════════════════════════════════════════════╗
+║  🎓 EXAMPLE: HOW TO USE THIS SYSTEM                              ║
+╚══════════════════════════════════════════════════════════════════╝
+
+# 1. Generate all 5 prompts
+for act in 1 2 3 4 5; do
+  python PythonHelpers/generate_act_prompt.py chinese $act > act${act}_prompt.txt
+done
+
+# 2. Launch 5 Claude Code agents (in separate terminals/sessions)
+# Each agent gets one prompt file
+
+# 3. Each agent independently:
+#    - Reviews their assigned packs
+#    - Creates fix table (ChineseFixTableAct{N}.csv)
+#    - Applies fixes
+#    - Validates
+#    - Commits
+
+# 4. When all 5 done, merge/review all changes
+
+╔══════════════════════════════════════════════════════════════════╗
+║  ✅ SUCCESS CRITERIA (PER ACT)                                   ║
+╚══════════════════════════════════════════════════════════════════╝
+
+For each act, agent must:
+✅ Manually review ALL assigned packs (not just Python-flagged ones)
+✅ Record all fixes in ChineseFixTableAct{N}.csv
+✅ ⚠️  Run apply_fixes_by_act.py successfully (MANDATORY!)
+✅ Actual CSV files are CHANGED (not just fix table)
+✅ Validation passes (0 pinyin errors)
+✅ Committed and pushed
+
+⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️
+
+╔══════════════════════════════════════════════════════════════════╗
+║  📚 FILES CREATED BY THIS SYSTEM                                 ║
+╚══════════════════════════════════════════════════════════════════╝
+
+NEW FILES:
+✓ PythonHelpers/generate_act_prompt.py - Generates act-specific prompts
+✓ PythonHelpers/apply_fixes_by_act.py - Applies fixes by act
+✓ ChineseWords/ChineseFixTableAct1.csv - Fix table for Act I
+✓ ChineseWords/ChineseFixTableAct2.csv - Fix table for Act II
+✓ ChineseWords/ChineseFixTableAct3.csv - Fix table for Act III
+✓ ChineseWords/ChineseFixTableAct4.csv - Fix table for Act IV
+✓ ChineseWords/ChineseFixTableAct5.csv - Fix table for Act V
+
+MODIFIED FILES (after applying fixes):
+✓ ChineseWords/ChineseWords{1-107}.csv - Individual pack CSVs
+
+═══════════════════════════════════════════════════════════════════
+
+TO GET STARTED:
+1. Run: python PythonHelpers/generate_act_prompt.py chinese 1
+2. Copy the output and give it to a Claude agent
+3. Repeat for acts 2-5 (can run all 5 in parallel!)
+
+TASK: COMPREHENSIVE REVIEW + FIXING OF ALL 107 CHINESE BREAKOUT CSVs (WITH SCORECARD)
 
 Python validation (trim + 6 scripts) + Manual review (ALL packs) + Create scorecard + Apply surgical fixes
 
