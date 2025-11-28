@@ -1,13 +1,45 @@
 Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,5,34,chinese,他们也是,她们也是,ellas (feminine they) needs feminine Chinese 她们 not masculine 他们
-spanish,9,2,chinese,他,el,Spanish article 'el' should stay as 'el' in Chinese (like rows 3-4) not translate to 他 (he)
-spanish,13,8,pinyin,jiě jiě,jiě mèi,Chinese 姐妹 (sisters) needs pinyin 'jiě mèi' not 'jiě jiě' (older sister)
-spanish,26,4,pinyin,Txù,T xù,Latin letter T needs space before pinyin syllable: 'T xù'
-spanish,26,21,pinyin,wú xiù Txù,wú xiù T xù,Latin letter T needs space before pinyin syllable: 'wú xiù T xù'
-spanish,26,22,pinyin,yī jiàn xīn Txù,yī jiàn xīn T xù,Latin letter T needs space before pinyin syllable: 'yī jiàn xīn T xù'
-spanish,73,9,pinyin,yí qì,yuè qì,乐器 (musical instrument) needs pinyin 'yuè qì' not 'yí qì' (scientific instrument 仪器)
-spanish,73,15,pinyin,cí pán,chàng piàn,唱片 (record/album) needs pinyin 'chàng piàn' not 'cí pán' (magnetic disk 磁盘)
-spanish,73,35,pinyin,yí qì,yuè qì,乐器 (musical instrument) needs pinyin 'yuè qì' not 'yí qì' (scientific instrument 仪器)
-spanish,73,36,pinyin,yí qì,yuè qì,乐器 (musical instrument) needs pinyin 'yuè qì' not 'yí qì' (scientific instrument 仪器)
-spanish,73,47,pinyin,cí pán,chàng piàn,唱片 (record/album) needs pinyin 'chàng piàn' not 'cí pán' (magnetic disk 磁盘)
-spanish,73,48,pinyin,cí pán,chàng piàn,唱片 (record/album) needs pinyin 'chàng piàn' not 'cí pán' (magnetic disk 磁盘)
+spanish,9,2,chinese,el,这个,Spanish article left untranslated - should be Chinese demonstrative
+spanish,9,2,pinyin,el,zhè ge,Pinyin for Chinese translation
+spanish,9,3,chinese,la,这个,Spanish article left untranslated
+spanish,9,3,pinyin,la,zhè ge,Pinyin for Chinese translation
+spanish,9,4,chinese,los,这些,Spanish article left untranslated
+spanish,9,4,pinyin,los,zhè xiē,Pinyin for Chinese translation
+spanish,36,56,english,the quote,the appointment,"cita = appointment/meeting, not price quote"
+spanish,36,56,chinese,报价,预约,"报价 = price quote, should be 预约 = appointment"
+spanish,36,56,pinyin,bào jià,yù yuē,Pinyin for correct translation
+spanish,95,21,english,confident,confidant,"confidente = trusted friend, not self-assured"
+spanish,95,21,chinese,自信,知己,"自信 = self-confidence, should be 知己 = confidant"
+spanish,95,21,pinyin,zì xìn,zhī jǐ,Pinyin for correct translation
+spanish,110,3,english,radius,radio,"radio (media device), not mathematical radius"
+spanish,110,3,chinese,半径,收音机,"半径 = radius (math), should be 收音机 = radio device"
+spanish,110,3,pinyin,bàn jìng,shōu yīn jī,Pinyin for correct translation
+spanish,110,19,chinese,按,新闻界,"按 = press button, should be 新闻界 = the press/media"
+spanish,110,19,pinyin,àn,xīn wén jiè,Pinyin for correct translation
+spanish,130,4,chinese,电梯,举起,"电梯 = elevator (noun), should be 举起 = lift (verb)"
+spanish,130,4,pinyin,diàn tī,jǔ qǐ,Pinyin for correct translation
+spanish,130,7,chinese,电梯,举起,"电梯 = elevator, should be 举起 = lift verb"
+spanish,130,7,pinyin,diàn tī,jǔ qǐ,Pinyin for correct translation
+spanish,130,8,chinese,电梯,举起,"电梯 = elevator, should be 举起 = lift verb"
+spanish,130,8,pinyin,diàn tī,jǔ qǐ,Pinyin for correct translation
+spanish,140,17,english,heroin,heroine,"heroína = female hero, NOT the drug!"
+spanish,140,17,chinese,海洛因,女英雄,"海洛因 = heroin (drug), should be 女英雄 = female hero"
+spanish,140,17,pinyin,hǎi luò yīn,nǚ yīng xióng,Pinyin for correct translation
+spanish,155,14,chinese,基金会,地基,"基金会 = charity foundation, should be 地基 = building foundation"
+spanish,155,14,pinyin,jī jīn huì,dì jī,Pinyin for correct translation
+spanish,155,43,english,the plane,the plan,"plano in construction = plan/blueprint, not airplane"
+spanish,155,43,chinese,飞机,平面图,"飞机 = airplane, should be 平面图 = blueprint/plan"
+spanish,155,43,pinyin,fēi jī,píng miàn tú,Pinyin for correct translation
+spanish,155,44,english,a plane,a plan,plano in construction = plan/blueprint
+spanish,155,44,chinese,一架飞机,一份图纸,"一架飞机 = an airplane, should be 一份图纸 = a blueprint"
+spanish,155,44,pinyin,yī jià fēi jī,yī fèn tú zhǐ,Pinyin for correct translation
+spanish,170,8,chinese,情报,智力,"情报 = spy intelligence, should be 智力 = mental intelligence"
+spanish,170,8,pinyin,qíng bào,zhì lì,Pinyin for correct translation
+spanish,170,34,chinese,情报,智力,"情报 = spy intelligence, should be 智力 = mental intelligence"
+spanish,170,34,pinyin,qíng bào,zhì lì,Pinyin for correct translation
+spanish,182,4,pinyin,WhatsApp,W h a t s A p p,Latin letters must map letter-by-letter with spaces
+spanish,182,26,pinyin,tōng guò WhatsApp,tōng guò W h a t s A p p,WhatsApp letter-by-letter
+spanish,182,27,pinyin,zài WhatsApp shàng,zài W h a t s A p p shàng,WhatsApp letter-by-letter
+spanish,233,19,pinyin,NFT,N F T,Latin letters must map letter-by-letter with spaces
+spanish,233,54,pinyin,NFT,N F T,Latin letters must map letter-by-letter
+spanish,233,55,pinyin,yí gè NFT,yí gè N F T,NFT letter-by-letter
