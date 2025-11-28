@@ -5,17 +5,17 @@ bailarín,dancer,舞者,wǔ zhě,dançarina
 bailarina,dancer,舞者,wǔ zhě,dançarina
 vals,waltz,华尔兹,huá ěr zī,valsa
 tango,tango,探戈,tàn gē,tango
-salsa,sauce,酱,jiàng,molho
+salsa,salsa,酱,jiàng,molho
 flamenco,flamenco,弗拉门戈,fú lā mén gē,flamenco
 ballet,ballet,芭蕾,bā lěi,balé
 coreografía,choreography,编舞,biān wǔ,coreografia
-girar,spin,旋转,xuán zhuǎn,girar
-pista,clue,线索,xiàn suǒ,pista
+girar,to spin,旋转,xuán zhuǎn,girar
+pista,dance floor,线索,xiàn suǒ,pista
 discoteca,disco,迪斯科,dí sī kē,discoteca
 fiesta,party,聚会,jù huì,festa
 pirueta,pirouette,旋转,xuán zhuǎn,pirueta
-zapateo,taping,录音,lù yīn,gravação
-compás,compass,指南针,zhǐ nán zhēn,bússola
+zapateo,footwork,录音,lù yīn,gravação
+compás,beat,指南针,zhǐ nán zhēn,bússola
 desliz,slip,滑,huá,escorregar
 vuelta,turn,转,zhuǎn,virar
 reverencia,reverence,崇敬,chóng jìng,reverência
@@ -31,7 +31,7 @@ el vals,the waltz,华尔兹,huá ěr zī,a valsa
 un vals,a waltz,华尔兹,huá ěr zī,uma valsa
 el tango,the tango,探戈,tàn gē,o tango
 bailar tango,dance tango,探戈舞,tàn gē wǔ,dançar tango
-la salsa,the sauce,酱汁,jiàng zhī,o molho
+la salsa,the salsa,酱汁,jiàng zhī,o molho
 bailar salsa,dance salsa,萨尔萨舞,sà ěr sà wǔ,dançar salsa
 el flamenco,flamenco,弗拉门戈,fú lā mén gē,flamenco
 bailar flamenco,dance flamenco,弗拉门戈舞,fú lā mén gē wǔ,dança flamenca
@@ -41,7 +41,7 @@ la coreografía,the choreography,编舞,biān wǔ,a coreografia
 una coreografía,a choreography,编舞,biān wǔ,uma coreografia
 hay que girar,you have to turn,你必须转,nǐ bì xū zhuǎn,você tem que virar
 voy a girar,I'm going to turn,我要转,wǒ yào zhuǎn,Eu vou virar
-la pista,the track,轨道,guǐ dào,a pista
+la pista,the dance floor,轨道,guǐ dào,a pista
 en la pista,on the track,在轨道上,zài guǐ dào shàng,na pista
 la discoteca,the disco,迪斯科,dí sī kē,a discoteca
 en la discoteca,at the disco,在迪斯科,zài dí sī kē,na discoteca
@@ -49,9 +49,9 @@ la fiesta,the party,党,dǎng,a festa
 una fiesta,a party,聚会,jù huì,uma festa
 la pirueta,the pirouette,旋转,xuán zhuǎn,a pirueta
 una pirueta,a pirouette,旋转,xuán zhuǎn,uma pirueta
-el zapateo,the tapping,攻丝,gōng sī,a batida
+el zapateo,the footwork,攻丝,gōng sī,a batida
 con zapateo,with tapping,通过攻丝,tōng guò gōng sī,com toque
-el compás,the compass,指南针,zhǐ nán zhēn,a bússola
+el compás,the beat,指南针,zhǐ nán zhēn,a bússola
 con compás,with compass,带指南针,dài zhǐ nán zhēn,com bússola
 el desliz,the slip,纸条,zhǐ tiáo,o deslize
 un desliz,a slip,一个失误,yí gè shī wù,um deslize

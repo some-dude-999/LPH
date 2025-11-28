@@ -1,9 +1,9 @@
 spanish,english,chinese,pinyin,portuguese
 periodismo,journalism,新闻业,xīn wén yè,jornalismo
 columna,column,专栏,zhuān lán,coluna
-titular,holder,持有人,chí yǒu rén,titular
+titular,headline,持有人,chí yǒu rén,titular
 portada,cover,封面,fēng miàn,capa
-redacción,writing,写作,xiě zuò,escrevendo
+redacción,newsroom,写作,xiě zuò,escrevendo
 fuente,source,来源,lái yuán,fonte
 editor,editor,编辑,biān jí,editora
 editora,editor,编辑,biān jí,editora
@@ -11,7 +11,7 @@ edición,edition,版,bǎn,edição
 suplemento,supplement,补充,bǔ chōng,suplemento
 sección,section,部分,bù fèn,seção
 corresponsal,correspondent,通讯员,tōng xùn yuán,correspondente
-enviado,sent,已发送,yǐ fā sòng,enviado
+enviado,correspondent,已发送,yǐ fā sòng,enviado
 colaborador,collaborator,合作者,hé zuò zhě,colaborador
 crónica,chronicle,编年史,biān nián shǐ,crônica
 exclusiva,exclusive,独家,dú jiā,exclusivo
@@ -21,7 +21,7 @@ el periodismo,journalism,新闻业,xīn wén yè,jornalismo
 de periodismo,of journalism,新闻业,xīn wén yè,do jornalismo
 la columna,the column,专栏,zhuān lán,a coluna
 una columna,a column,一栏,yī lán,uma coluna
-el titular,the holder,持有人,chí yǒu rén,o titular
+el titular,the headline,持有人,chí yǒu rén,o titular
 un titular,a headline,标题,biāo tí,uma manchete
 la portada,the cover,封面,fēng miàn,a capa
 en portada,on cover,封面,fēng miàn,na capa
