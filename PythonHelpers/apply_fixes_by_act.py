@@ -24,6 +24,22 @@ ACT_INFO = {
         3: {'name': 'Expansion', 'start': 28, 'end': 53},
         4: {'name': 'Mastery', 'start': 54, 'end': 79},
         5: {'name': 'Refinement', 'start': 80, 'end': 107}
+    },
+    'spanish': {
+        1: {'name': 'Foundation', 'start': 1, 'end': 30},
+        2: {'name': 'Building Blocks', 'start': 31, 'end': 60},
+        3: {'name': 'Daily Life', 'start': 61, 'end': 100},
+        4: {'name': 'Expanding Expression', 'start': 101, 'end': 140},
+        5: {'name': 'Intermediate Mastery', 'start': 141, 'end': 180},
+        6: {'name': 'Advanced Constructs', 'start': 181, 'end': 220},
+        7: {'name': 'Mastery & Fluency', 'start': 221, 'end': 250}
+    },
+    'english': {
+        1: {'name': 'Foundation', 'start': 1, 'end': 45},
+        2: {'name': 'Building Blocks', 'start': 46, 'end': 81},
+        3: {'name': 'Everyday Life', 'start': 82, 'end': 112},
+        4: {'name': 'Expanding Horizons', 'start': 113, 'end': 130},
+        5: {'name': 'Advanced Mastery', 'start': 131, 'end': 160}
     }
 }
 

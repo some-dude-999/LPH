@@ -21,23 +21,33 @@ ACT_INFO = {
         5: {'name': 'Refinement', 'start': 80, 'end': 107, 'count': 28}
     },
     'spanish': {
-        # TODO: Add Spanish acts when needed
+        1: {'name': 'Foundation', 'start': 1, 'end': 30, 'count': 30},
+        2: {'name': 'Building Blocks', 'start': 31, 'end': 60, 'count': 30},
+        3: {'name': 'Daily Life', 'start': 61, 'end': 100, 'count': 40},
+        4: {'name': 'Expanding Expression', 'start': 101, 'end': 140, 'count': 40},
+        5: {'name': 'Intermediate Mastery', 'start': 141, 'end': 180, 'count': 40},
+        6: {'name': 'Advanced Constructs', 'start': 181, 'end': 220, 'count': 40},
+        7: {'name': 'Mastery & Fluency', 'start': 221, 'end': 250, 'count': 30}
     },
     'english': {
-        # TODO: Add English acts when needed
+        1: {'name': 'Foundation', 'start': 1, 'end': 45, 'count': 49},
+        2: {'name': 'Building Blocks', 'start': 46, 'end': 81, 'count': 37},
+        3: {'name': 'Everyday Life', 'start': 82, 'end': 112, 'count': 31},
+        4: {'name': 'Expanding Horizons', 'start': 113, 'end': 130, 'count': 18},
+        5: {'name': 'Advanced Mastery', 'start': 131, 'end': 160, 'count': 25}
     }
 }
 
 PROMPT_TEMPLATE = """╔══════════════════════════════════════════════════════════════════╗
-║  🎯 CHINESE ACT {act_num}: {act_name} - TRANSLATION QUALITY REVIEW  ║
+║  🎯 {lang_upper} ACT {act_num}: {act_name} - TRANSLATION QUALITY REVIEW  ║
 ║  Packs {pack_start}-{pack_end} ({pack_count} packs)                              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 GOAL: Ensure the MOST COMMON, NATURAL translation consistent with the
-wordpack theme for EVERY target language (english, spanish, french, portuguese).
+wordpack theme for EVERY target language.
 
-Column 0 (chinese) is SACRED - never touch it. It came from validated base words.
-Your job: Ensure Columns 1-5 have the BEST translations for native speakers.
+Column 0 ({language}) is SACRED - never touch it. It came from validated base words.
+Your job: Ensure the other columns have the BEST translations for native speakers.
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️  PYTHON HELPERS ONLY SHOW OBVIOUS MISTAKES - NOT THE GOAL!  ║
@@ -234,6 +244,8 @@ def main():
     act_info = ACT_INFO[language][act_num]
 
     prompt = PROMPT_TEMPLATE.format(
+        language=language,
+        lang_upper=language.upper(),
         act_num=act_num,
         act_name=act_info['name'],
         pack_start=act_info['start'],
