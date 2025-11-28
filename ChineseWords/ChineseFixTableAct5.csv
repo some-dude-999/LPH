@@ -1,1 +1,134 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,80,Personality Traits,4,english,Introvert,Introverted,Use adjective form for personality trait
+chinese,80,Personality Traits,5,english,Extrovert,Extroverted,Use adjective form for personality trait
+chinese,80,Personality Traits,9,english,Cold,Aloof,More natural for personality description
+chinese,80,Personality Traits,9,spanish,Frío,Distante,More appropriate for personality
+chinese,80,Personality Traits,9,french,Froid,Distant,More appropriate for personality
+chinese,80,Personality Traits,9,portuguese,Frio,Distante,More appropriate for personality
+chinese,81,Culture & Traditions,10,english,Traditional Chinese Painting,Chinese Painting,Too wordy - simpler is better
+chinese,83,Time Expressions Advanced,2,english,Any time,Anytime,Should be one word
+chinese,83,Time Expressions Advanced,24,english,Not yet,Not for now,Better translation for 暂时不
+chinese,83,Time Expressions Advanced,27,english,Yes temporary,It's temporary,More natural phrasing
+chinese,83,Time Expressions Advanced,27,spanish,Sí temporal,Es temporal,More natural phrasing
+chinese,83,Time Expressions Advanced,27,french,Oui temporaire,C'est temporaire,More natural phrasing
+chinese,83,Time Expressions Advanced,27,portuguese,Sim temporário,É temporário,More natural phrasing
+chinese,85,Comparison & Degree,9,english,Rare,Slightly,Wrong meaning - 稀微 means slightly
+chinese,85,Comparison & Degree,9,spanish,Raro,Ligeramente,Wrong meaning - 稀微 means slightly
+chinese,85,Comparison & Degree,9,french,Rares,Légèrement,Wrong meaning - 稀微 means slightly
+chinese,85,Comparison & Degree,9,portuguese,Raro,Ligeiramente,Wrong meaning - 稀微 means slightly
+chinese,86,Cause & Effect,2,english,cause,reason,Better for noun form
+chinese,86,Cause & Effect,5,english,cause,lead to,Verb form more natural
+chinese,86,Cause & Effect,6,english,cause,result in,Verb form more natural
+chinese,86,Cause & Effect,7,english,cause,trigger,Verb form more natural
+chinese,86,Cause & Effect,15,english,from,stem from,Too generic - need specific meaning
+chinese,86,Cause & Effect,15,spanish,de,provenir de,Too generic
+chinese,86,Cause & Effect,15,french,de,provenir de,Too generic
+chinese,86,Cause & Effect,15,portuguese,de,originar de,Too generic
+chinese,87,Conditions & Assumptions,6,english,if,in case,万一 implies what if or in case
+chinese,87,Conditions & Assumptions,6,spanish,si,en caso de que,Better nuance
+chinese,87,Conditions & Assumptions,6,french,si,au cas où,Better nuance
+chinese,87,Conditions & Assumptions,6,portuguese,se,caso,Better nuance
+chinese,87,Conditions & Assumptions,8,english,only,as long as,只要 means as long as
+chinese,87,Conditions & Assumptions,8,spanish,sólo,siempre que,Correct meaning
+chinese,87,Conditions & Assumptions,8,french,seulement,tant que,Correct meaning
+chinese,87,Conditions & Assumptions,8,portuguese,apenas,contanto que,Correct meaning
+chinese,87,Conditions & Assumptions,9,english,only,only if,只有 means only if or only when
+chinese,87,Conditions & Assumptions,9,spanish,sólo,solo si,Correct conditional meaning
+chinese,87,Conditions & Assumptions,9,french,seulement,seulement si,Correct conditional meaning
+chinese,87,Conditions & Assumptions,9,portuguese,apenas,somente se,Correct conditional meaning
+chinese,87,Conditions & Assumptions,15,english,even,even if,即使 is conjunction needing if
+chinese,87,Conditions & Assumptions,15,spanish,incluso,incluso si,Need conjunction
+chinese,87,Conditions & Assumptions,15,french,même,même si,Need conjunction
+chinese,87,Conditions & Assumptions,15,portuguese,mesmo,mesmo se,Need conjunction
+chinese,89,Modal Particles & Mood,2,english,(question particle),really,Remove grammar label - use functional translation
+chinese,89,Modal Particles & Mood,2,spanish,(partícula interrogativa),¿de verdad?,Remove grammar label
+chinese,89,Modal Particles & Mood,2,french,(particule interrogative),vraiment,Remove grammar label
+chinese,89,Modal Particles & Mood,2,portuguese,(partícula interrogativa),mesmo,Remove grammar label
+chinese,89,Modal Particles & Mood,3,english,(suggestion particle),let's,Remove grammar label - use functional translation
+chinese,89,Modal Particles & Mood,3,spanish,(partícula de sugerencia),vamos a,Remove grammar label
+chinese,89,Modal Particles & Mood,3,french,(particule de suggestion),allons,Remove grammar label
+chinese,89,Modal Particles & Mood,3,portuguese,(partícula de sugestão),vamos,Remove grammar label
+chinese,89,Modal Particles & Mood,4,english,(continuation particle),what about,Remove grammar label - use functional translation
+chinese,89,Modal Particles & Mood,4,spanish,(partícula de continuación),¿y qué tal?,Remove grammar label
+chinese,89,Modal Particles & Mood,4,french,(particule de continuation),et alors,Remove grammar label
+chinese,89,Modal Particles & Mood,4,portuguese,(partícula de continuação),e então,Remove grammar label
+chinese,90,Structural Particles,2,english,of,'s,Better representation of possessive marker
+chinese,90,Structural Particles,3,english,land,ground,Better single word translation
+chinese,90,Structural Particles,3,spanish,tierra,suelo,More natural
+chinese,90,Structural Particles,3,french,terrain,sol,More natural
+chinese,90,Structural Particles,3,portuguese,terreno,chão,More natural
+chinese,90,Structural Particles,4,english,got,can,Better representation of complement particle
+chinese,90,Structural Particles,4,spanish,tengo,poder,More natural
+chinese,90,Structural Particles,4,french,obtenu,pouvoir,More natural
+chinese,90,Structural Particles,4,portuguese,tenho,conseguir,More natural
+chinese,90,Structural Particles,5,english,out,done,Better for completed action marker
+chinese,90,Structural Particles,5,spanish,fuera,hecho,More natural
+chinese,90,Structural Particles,5,french,dehors,fait,More natural
+chinese,90,Structural Particles,5,portuguese,fora,feito,More natural
+chinese,90,Structural Particles,6,english,with,-ing,Better representation of progressive aspect
+chinese,90,Structural Particles,6,spanish,con,-ndo,Progressive marker
+chinese,90,Structural Particles,6,french,avec,-ant,Progressive marker
+chinese,90,Structural Particles,6,portuguese,com,-ndo,Progressive marker
+chinese,90,Structural Particles,7,english,over,before,Better for experience marker
+chinese,90,Structural Particles,7,spanish,terminado,antes,More natural
+chinese,90,Structural Particles,7,french,plus de,déjà,More natural
+chinese,90,Structural Particles,7,portuguese,acabou,já,More natural
+chinese,91,Common Sentence Patterns,2,english,(object marker),take,Remove grammar label - use functional word
+chinese,91,Common Sentence Patterns,2,spanish,(marcador de objeto),tomar,Remove grammar label
+chinese,91,Common Sentence Patterns,2,french,(marqueur d'objet),prendre,Remove grammar label
+chinese,91,Common Sentence Patterns,2,portuguese,(marcador de objeto),pegar,Remove grammar label
+chinese,91,Common Sentence Patterns,3,english,by (passive),by,Remove grammar label - just use by
+chinese,91,Common Sentence Patterns,3,spanish,por (pasivo),por,Remove grammar label
+chinese,91,Common Sentence Patterns,3,french,par (passif),par,Remove grammar label
+chinese,91,Common Sentence Patterns,3,portuguese,por (passivo),por,Remove grammar label
+chinese,93,Describing Things,7,english,kind,type,种类 is noun meaning type or category
+chinese,93,Describing Things,7,spanish,amable,tipo,Wrong word - amable means kind nice
+chinese,93,Describing Things,7,french,gentil,genre,Wrong word - gentil means kind nice
+chinese,93,Describing Things,7,portuguese,gentil,tipo,Wrong word - gentil means kind nice
+chinese,95,Extent & Degree,5,spanish,También,Demasiado,太 means too much not also
+chinese,95,Extent & Degree,5,portuguese,Também,Demais,太 means too much not also
+chinese,95,Extent & Degree,7,english,Most,The most,Better for superlative marker
+chinese,95,Extent & Degree,7,spanish,La mayoría,El más,Correct superlative meaning
+chinese,95,Extent & Degree,7,french,Les plus,Le plus,Correct superlative meaning
+chinese,95,Extent & Degree,7,portuguese,A maioria,O mais,Correct superlative meaning
+chinese,96,Emphasis & Intensifiers,6,english,Unfortunately,Stubbornly,偏偏 means contrarily or insistently
+chinese,96,Emphasis & Intensifiers,6,spanish,Desafortunadamente,Obstinadamente,Correct meaning
+chinese,96,Emphasis & Intensifiers,6,french,Malheureusement,Obstinément,Correct meaning
+chinese,96,Emphasis & Intensifiers,6,portuguese,Infelizmente,Teimosamente,Correct meaning
+chinese,96,Emphasis & Intensifiers,15,english,After all,In the end,Better translation for 究竟
+chinese,96,Emphasis & Intensifiers,15,spanish,Al fin y al cabo,Al final,More natural
+chinese,96,Emphasis & Intensifiers,15,french,Après tout,À la fin,More natural
+chinese,96,Emphasis & Intensifiers,15,portuguese,Afinal,No final,More natural
+chinese,97,Describing Problems,9,english,Failure,Malfunction,故障 is technical or mechanical failure
+chinese,97,Describing Problems,9,spanish,Fracaso,Mal funcionamiento,Technical term
+chinese,97,Describing Problems,9,french,Échec,Dysfonctionnement,Technical term
+chinese,97,Describing Problems,9,portuguese,Falha,Mau funcionamento,Technical term
+chinese,98,Solutions & Methods,6,english,Approach,Method,办法 is more about method or way
+chinese,98,Solutions & Methods,6,spanish,Enfoque,Método,More accurate
+chinese,98,Solutions & Methods,6,french,Approche,Méthode,More accurate
+chinese,98,Solutions & Methods,6,portuguese,Abordagem,Método,More accurate
+chinese,99,Education & Learning,7,english,Abilities,Ability,Singular more natural
+chinese,99,Education & Learning,7,spanish,Habilidades,Habilidad,Singular more natural
+chinese,99,Education & Learning,7,french,Capacités,Capacité,Singular more natural
+chinese,99,Education & Learning,7,portuguese,Habilidades,Habilidade,Singular more natural
+chinese,99,Education & Learning,14,english,Major,Specialization,More universal than major
+chinese,99,Education & Learning,14,spanish,Mayor,Especialidad,Mayor is wrong word
+chinese,99,Education & Learning,14,french,Majeur,Spécialité,Majeur is wrong word
+chinese,99,Education & Learning,14,portuguese,Maior,Especialização,Maior is wrong word
+chinese,100,Career Development,8,spanish,Reanudar,Currículum,Reanudar means to resume verb
+chinese,100,Career Development,8,french,Reprendre,CV,Reprendre means to resume verb
+chinese,103,Describing Processes,6,english,Phase,Stage,Better translation for 阶段
+chinese,104,Logical Relations,9,english,In short,In summary,Better for 总而言之
+chinese,104,Logical Relations,9,french,En bref,En résumé,More accurate
+chinese,104,Logical Relations,15,english,In short,In brief,Better for 简言之
+chinese,106,Evaluation & Assessment,4,english,Comment,Review,Better translation for 评论
+chinese,106,Evaluation & Assessment,4,spanish,Comentar,Comentario,Should be noun not verb
+chinese,106,Evaluation & Assessment,4,portuguese,Comente,Comentário,Should be noun not verb
+chinese,106,Evaluation & Assessment,5,spanish,Sentencia,Juicio,Sentencia means legal sentence
+chinese,106,Evaluation & Assessment,5,portuguese,Sentencia,Julgamento,Sentencia is Spanish
+chinese,106,Evaluation & Assessment,6,spanish,Sentencia,Juicio,Sentencia means legal sentence
+chinese,106,Evaluation & Assessment,6,portuguese,Sentencia,Julgamento,Sentencia is Spanish
+chinese,106,Evaluation & Assessment,11,english,Like,It looks like,好像 means seems or appears
+chinese,106,Evaluation & Assessment,11,spanish,Me gusta,Parece,Me gusta means I like
+chinese,106,Evaluation & Assessment,11,portuguese,Curtir,Parece,Curtir means to like
+chinese,107,Abstract Concepts,13,spanish,Goles,Objetivos,Goles means soccer goals
