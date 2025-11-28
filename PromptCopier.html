@@ -1101,9 +1101,11 @@ Create your own branch, commit, and PR to main.</div>
     </table>
 </div>
 
-<h3>Chinese - Stage 3A (Evaluation Only)</h3>
+<h3>Chinese - Stage 3A (Comprehensive Review WITH Scorecard + Fixing)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3a" data-lang="chinese">TASK: EVALUATE ALL 107 CHINESE BREAKOUT CSVs - PRODUCE SCORECARD ONLY (NO FIXING)
+<div onclick="copyPrompt(this)" data-stage="3a" data-lang="chinese">TASK: COMPREHENSIVE REVIEW + FIXING OF ALL 107 CHINESE BREAKOUT CSVs (WITH SCORECARD)
+
+Python validation (5 scripts) + Manual review (ALL packs) + Create scorecard + Apply surgical fixes
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
@@ -1123,18 +1125,18 @@ Create your own branch, commit, and PR to main.</div>
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  ⛔⛔⛔ TOTAL FAIL CONDITIONS ⛔⛔⛔                               ║
+║  🔑 KEY INSIGHT: ZERO PYTHON ERRORS ≠ ZERO ISSUES!               ║
 ║                                                                  ║
-║  YOUR TASK IS A COMPLETE FAILURE IF:                             ║
-║  ❌ You give an "overall score" (e.g., "9.6/10") instead of      ║
-║     individual per-pack scores                                   ║
-║  ❌ Even ONE pack is missing from your scorecard (1-107)         ║
-║  ❌ You say "Packs 1-50 reviewed" or "Act I reviewed"            ║
-║  ❌ You use "..." or skip any rows                               ║
-║  ❌ You try to fix anything (this is evaluation ONLY)            ║
-║  ❌ Your table has fewer than 107 rows                           ║
+║  Python catches:  Mechanical errors (brackets, empty cells,     ║
+║                   pinyin spacing, language mismatches)           ║
 ║                                                                  ║
-║  107 packs = 107 rows. NO EXCEPTIONS. NO SHORTCUTS.              ║
+║  YOU catch:       Semantic errors (wrong word sense, unnatural  ║
+║                   phrasing, cultural issues, better translations)║
+║                                                                  ║
+║  Even if Python shows 100% pass, you MUST manually review       ║
+║  EVERY pack for translation quality improvements!               ║
+║                                                                  ║
+║  107 packs = 107 rows in scorecard. NO EXCEPTIONS.              ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
@@ -1202,42 +1204,43 @@ Create your own branch, commit, and PR to main.</div>
 ║  Not just "acceptable" - BEST CHOICE for this theme.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: GENERATE ERROR SUMMARY (AUDIT BEFORE FIXING) ===
+=== STEP 0: PYTHON VALIDATION (5 SCRIPTS - MECHANICAL ERROR DETECTION) ===
 
-python PythonHelpers/generate_error_summary.py chinese 3a
+Run ALL 5 validation scripts to catch mechanical errors:
 
-This generates ChineseWords/ChineseErrorsSummary3A.csv with pre-scanned errors.
+1. python PythonHelpers/validate_pinyin.py chinese
+   → Character-by-character pinyin mapping
+   → Prevents "?" appearing in DecoderTest.html
+   → Catches: nǐhǎo (wrong) vs nǐ hǎo (correct)
+   → Catches: hǎo ， (wrong) vs hǎo， (correct - punctuation attached)
+   → Catches: ATM jī (wrong) vs A T M jī (correct - letter-by-letter)
 
-Open TranslationErrorReport.html in your browser to review:
-- Total issues per pack
-- Pinyin spacing errors
-- Bracket errors (failed translations)
-- Empty cells
+2. python PythonHelpers/check_translation_quality.py chinese
+   → Brackets [  ] in cells (failed auto-translation)
+   → Empty translation cells
 
-This gives you a clear view of ALL errors before starting the fix process.
-The error summary will guide your manual review and fix table creation.
+3. python PythonHelpers/check_language_mismatch.py chinese
+   → Spanish text in Chinese column
+   → Chinese characters in Spanish column
+   → Wrong Unicode script in wrong column
 
-=== STEP 1: CLEAR ALL EXISTING SCORES (FRESH START) ===
-python PythonHelpers/clear_translation_scores.py chinese
+4. python PythonHelpers/check_latin_in_chinese.py chinese
+   → Illegitimate Latin in Chinese column
+   → Catches: "la", "los", "el" (Spanish articles - NOT loanwords)
+   → Allows: "ATM", "DNA", "WiFi" (legitimate Chinese loanwords)
 
-This clears ALL scores in ChineseWordsTranslationErrors.csv, ensuring a fresh evaluation.
-You will fill in every Score and Issues cell from scratch.
+5. python PythonHelpers/verify_words_integrity.py chinese
+   → Overview ↔ Breakout CSV sync
+   → Row count mismatches
+   → Accidentally added/deleted rows
 
-=== STEP 2: RUN VALIDATION SCRIPTS ===
-python PythonHelpers/verify_words_integrity.py chinese
-python PythonHelpers/validate_pinyin.py chinese
-python PythonHelpers/check_translation_quality.py chinese
+⚠️ Python scripts flag mechanical errors. Note all flagged packs.
+⚠️ BUT: Zero Python errors ≠ Zero issues! Manual review still required!
 
-This last script checks for:
-- Translations containing [ or ] (bad/failed translations - MUST BE FIXED)
-- Empty translation cells (gaps that need manual translation)
-
-Note all errors found. These will need manual fixes in Stage 3B.
-
-=== STEP 3: MANUALLY READ AND FIX EVERY PACK ===
+=== STEP 1: MANUALLY REVIEW ALL 107 PACKS (EVEN IF PYTHON SHOWS 0 ERRORS) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📖 READ EACH CSV FILE MANUALLY - RECORD ALL FIXES NEEDED        ║
+║  📖 READ EACH CSV FILE - FIND SEMANTIC/STYLISTIC ISSUES          ║
 ║                                                                  ║
 ║  For EACH wordpack (1-107):                                      ║
 ║  1. Check Pack_Title in TranslationErrors CSV (know the theme!)  ║
@@ -1429,12 +1432,14 @@ SCORING SCALE:
   7  = Fair (several issues across translations)
   6 or below = Poor (significant issues, definitely needs work)
 
-=== STEP 4: UPDATE THE TRANSLATION ERRORS CSV ===
+=== STEP 2: UPDATE SCORECARD (TranslationErrors.csv) ===
+
+For EVERY pack (107 rows), update ChineseWordsTranslationErrors.csv:
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  📝 EDIT TWO FILES FOR EACH PACK:                                ║
-║  1. ChineseWords/ChineseWordsTranslationErrors.csv               ║
-║  2. ChineseWords/ChineseFixTable.csv                             ║
+║  📝 TWO FILES TO UPDATE:                                         ║
+║  1. ChineseWordsTranslationErrors.csv (scorecard with Issue_Count) ║
+║  2. ChineseFixTable.csv (surgical fixes for all issues)          ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 === FILE 1: TranslationErrors.csv ===
@@ -1495,7 +1500,7 @@ chinese,4,5,english,[greeting],hello,Has brackets - failed auto-translation
 ⛔ EVERY PACK MUST HAVE Issue_Count filled in! ⛔
 ⛔ EVERY ISSUE MUST HAVE A FIX ROW IN ChineseFixTable.csv! ⛔
 
-=== STEP 5: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
+=== STEP 3: APPLY FIXES (MANDATORY - NOT OPTIONAL!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ THE FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️  ║
@@ -1530,7 +1535,20 @@ SURGICAL EDIT PRINCIPLE (CRITICAL!):
 - Can fix 500 rows at once, but EACH must be surgically specified
 - Even if the same error is in ALL rows of ALL packs, specify each one!
 
-=== STEP 6: DISPLAY SUMMARY ===
+=== STEP 4: RE-VALIDATE + COMMIT ===
+
+After apply_fixes.py runs successfully:
+
+python PythonHelpers/validate_pinyin.py chinese
+
+Expected: 0 errors (all mechanical issues fixed)
+
+Then commit:
+git add .
+git commit -m "Stage 3A: Comprehensive review + fixes for Chinese packs 1-107"
+git push -u origin <branch-name>
+
+=== STEP 5: DISPLAY SUMMARY ===
 
 After updating both CSVs, display this summary:
 
@@ -1579,9 +1597,11 @@ Each Chinese character (with trailing punctuation) = exactly ONE pinyin syllable
 
 UPDATE THE CSV. COMMIT. PR TO MAIN.</div>
 
-<h3>Chinese - Stage 3B (Ultra-Efficient Fixing)</h3>
+<h3>Chinese - Stage 3B (Targeted Fixing WITHOUT Scorecard)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3b" data-lang="chinese">TASK: SCAN ALL CHINESE PACKS - RECORD FIXES IN MINIMAL FIX TABLE (Ultra-Efficient)
+<div onclick="copyPrompt(this)" data-stage="3b" data-lang="chinese">TASK: TARGETED FIXING OF CHINESE BREAKOUT CSVs (NO SCORECARD - JUST FIX)
+
+Python validation (5 scripts) + Targeted manual review + Apply surgical fixes (NO comprehensive scorecard)
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
@@ -1890,9 +1910,11 @@ git push -u origin <branch-name>
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you have FAILED THE TASK! ⚠️⚠️⚠️</div>
 
-<h3>Spanish - Stage 3A (Evaluation Only)</h3>
+<h3>Spanish - Stage 3A (Comprehensive Review WITH Scorecard + Fixing)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3a" data-lang="spanish">TASK: EVALUATE ALL 250 SPANISH BREAKOUT CSVs - PRODUCE SCORECARD ONLY (NO FIXING)
+<div onclick="copyPrompt(this)" data-stage="3a" data-lang="spanish">TASK: COMPREHENSIVE REVIEW + FIXING OF ALL 250 SPANISH BREAKOUT CSVs (WITH SCORECARD)
+
+Python validation (5 scripts) + Manual review (ALL packs) + Create scorecard + Apply surgical fixes
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
@@ -2360,9 +2382,11 @@ INCORRECT: 你好 → nǐhǎo (no spaces between syllables - WRONG)
 
 DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 
-<h3>Spanish - Stage 3B (Ultra-Efficient Fixing)</h3>
+<h3>Spanish - Stage 3B (Targeted Fixing WITHOUT Scorecard)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3b" data-lang="spanish">TASK: SCAN ALL SPANISH PACKS - RECORD FIXES IN MINIMAL FIX TABLE (Ultra-Efficient)
+<div onclick="copyPrompt(this)" data-stage="3b" data-lang="spanish">TASK: TARGETED FIXING OF SPANISH BREAKOUT CSVs (NO SCORECARD - JUST FIX)
+
+Python validation (5 scripts) + Targeted manual review + Apply surgical fixes (NO comprehensive scorecard)
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
@@ -2664,9 +2688,11 @@ git push -u origin <branch-name>
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you have FAILED THE TASK! ⚠️⚠️⚠️</div>
 
-<h3>English - Stage 3A (Evaluation Only)</h3>
+<h3>English - Stage 3A (Comprehensive Review WITH Scorecard + Fixing)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3a" data-lang="english">TASK: EVALUATE ALL 160 ENGLISH BREAKOUT CSVs - PRODUCE SCORECARD ONLY (NO FIXING)
+<div onclick="copyPrompt(this)" data-stage="3a" data-lang="english">TASK: COMPREHENSIVE REVIEW + FIXING OF ALL 160 ENGLISH BREAKOUT CSVs (WITH SCORECARD)
+
+Python validation (5 scripts) + Manual review (ALL packs) + Create scorecard + Apply surgical fixes
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
@@ -3173,9 +3199,11 @@ INCORRECT: 你好 → nǐhǎo (no spaces between syllables - WRONG)
 
 DO NOT FIX. JUST EVALUATE AND OUTPUT THE SCORECARD.</div>
 
-<h3>English - Stage 3B (Ultra-Efficient Fixing)</h3>
+<h3>English - Stage 3B (Targeted Fixing WITHOUT Scorecard)</h3>
 <div>Click to copy</div>
-<div onclick="copyPrompt(this)" data-stage="3b" data-lang="english">TASK: SCAN ALL ENGLISH PACKS - RECORD FIXES IN MINIMAL FIX TABLE (Ultra-Efficient)
+<div onclick="copyPrompt(this)" data-stage="3b" data-lang="english">TASK: TARGETED FIXING OF ENGLISH BREAKOUT CSVs (NO SCORECARD - JUST FIX)
+
+Python validation (5 scripts) + Targeted manual review + Apply surgical fixes (NO comprehensive scorecard)
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FINAL OUTPUT = FIXED BREAKOUT CSVs ⚠️⚠️⚠️                ║
