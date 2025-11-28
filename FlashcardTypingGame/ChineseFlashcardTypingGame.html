@@ -1991,6 +1991,177 @@
       return null; // No modules loaded yet
     }
 
+    // ===================================================================================
+    // CHINESE CHARACTER + PINYIN COUPLING SYSTEM
+    // Core Objective: Keep Chinese characters and their pinyin syllables coupled
+    //
+    // Anti-Decoupling Principle: Chinese characters and pinyin MUST stay together
+    // Example: "小猫" (xiǎo māo) → [{char:"小", pinyin:"xiǎo"}, {char:"猫", pinyin:"māo"}]
+    //
+    // This ensures when rendering Chinese, we can ALWAYS show:
+    //   小    猫      (characters on top)
+    //  xiǎo  māo     (pinyin below each character)
+    //
+    // Functions:
+    //   - coupleChineseWithPinyin(chinese, pinyin) → array of {char, pinyin}
+    //   - renderChineseWithPinyin(coupledArray) → HTML element with coupled display
+    //   - renderChineseText(chinese, pinyin) → convenience function combining both
+    //   - getChineseHtml(chinese, pinyin) → returns HTML string for innerHTML
+    // ===================================================================================
+
+    /**
+     * Couples each Chinese character with its corresponding pinyin syllable
+     * @param {string} chineseStr - Chinese characters (e.g., "小猫")
+     * @param {string} pinyinStr - Space-separated pinyin syllables (e.g., "xiǎo māo")
+     * @returns {Array<{char: string, pinyin: string}>} - Array of coupled char/pinyin objects
+     */
+    function coupleChineseWithPinyin(chineseStr, pinyinStr) {
+      // Handle empty/null inputs gracefully
+      if (!chineseStr) return [];
+      if (!pinyinStr) {
+        // No pinyin available - return chars with empty pinyin
+        return [...chineseStr].map(char => ({ char, pinyin: '' }));
+      }
+
+      // ════════════════════════════════════════════════════════════════════════
+      // CHARACTER-BY-CHARACTER MAPPING (Simplified)
+      // ════════════════════════════════════════════════════════════════════════
+      // Example: "早上好，先生" → "zǎo shàng hǎo， xiān shēng"
+      //   早 → zǎo
+      //   上 → shàng
+      //   好 → hǎo
+      //   ， → ，
+      //   先 → xiān
+      //   生 → shēng
+      //
+      // Edge cases (Latin in Chinese): "ATM机" → "ATM jī"
+      //   A → A
+      //   T → T
+      //   M → M
+      //   机 → jī
+      // ════════════════════════════════════════════════════════════════════════
+
+      // Split pinyin by spaces
+      const pinyinTokens = pinyinStr.trim().split(/\s+/);
+      const result = [];
+      let tokenIndex = 0;
+      let latinLetterIndex = 0; // For consuming Latin tokens letter-by-letter
+
+      for (const char of chineseStr) {
+        if (tokenIndex >= pinyinTokens.length) {
+          // Ran out of pinyin tokens - mark as mismatch
+          result.push({ char, pinyin: '?' });
+          continue;
+        }
+
+        const currentToken = pinyinTokens[tokenIndex];
+        // Strip Chinese punctuation to get clean syllable/word
+        const cleanToken = currentToken.replace(/[，。！？、；：""''（）《》【】…—]/g, '');
+
+        if (/[\u4e00-\u9fff]/.test(char)) {
+          // ═══════════════════════════════════════════════════════════
+          // CHINESE CHARACTER → consume one token
+          // ═══════════════════════════════════════════════════════════
+          result.push({ char, pinyin: cleanToken || '?' });
+          tokenIndex++;
+          latinLetterIndex = 0;
+        } else if (/[A-Za-z]/.test(char)) {
+          // ═══════════════════════════════════════════════════════════
+          // LATIN LETTER → handle edge cases (ATM, DNA, WhatsApp, etc.)
+          // ═══════════════════════════════════════════════════════════
+          if (/^[A-Za-z]+$/.test(cleanToken)) {
+            // Current token is all-Latin (like "ATM", "DNA", "WhatsApp")
+            // Consume letter-by-letter: A→A, T→T, M→M
+            const letter = cleanToken[latinLetterIndex] || char;
+            result.push({ char, pinyin: letter });
+            latinLetterIndex++;
+
+            if (latinLetterIndex >= cleanToken.length) {
+              // Finished consuming this Latin token
+              tokenIndex++;
+              latinLetterIndex = 0;
+            }
+          } else {
+            // Token is not pure Latin → just map letter to itself
+            result.push({ char, pinyin: char });
+          }
+        } else {
+          // ═══════════════════════════════════════════════════════════
+          // PUNCTUATION → maps to itself
+          // ═══════════════════════════════════════════════════════════
+          result.push({ char, pinyin: char });
+        }
+      }
+
+      return result;
+    }
+
+    /**
+     * Renders a coupled Chinese array as an HTML element with char on top, pinyin below
+     * Respects showChineseChars and showPinyin global settings
+     * @param {Array<{char: string, pinyin: string}>} coupledArray - From coupleChineseWithPinyin()
+     * @returns {HTMLElement} - Span element with flex-column groups for each character
+     */
+    function renderChineseWithPinyin(coupledArray) {
+      // If neither chars nor pinyin should be shown, return empty span
+      if (!showChineseChars && !showPinyin) {
+        const empty = document.createElement('span');
+        empty.textContent = '(hidden)';
+        empty.style.cssText = 'color: #999; font-style: italic;';
+        return empty;
+      }
+
+      const container = document.createElement('span');
+      container.className = 'chinese-coupled';
+
+      coupledArray.forEach(({ char, pinyin }) => {
+        const charGroup = document.createElement('span');
+        charGroup.className = 'char-group';
+
+        // Chinese character (on top)
+        if (showChineseChars) {
+          const charSpan = document.createElement('span');
+          charSpan.className = 'chinese-char';
+          charSpan.textContent = char;
+          charGroup.appendChild(charSpan);
+        }
+
+        // Pinyin (below)
+        if (showPinyin) {
+          const pinyinSpan = document.createElement('span');
+          pinyinSpan.className = 'pinyin';
+          pinyinSpan.textContent = pinyin;
+          charGroup.appendChild(pinyinSpan);
+        }
+
+        container.appendChild(charGroup);
+      });
+
+      return container;
+    }
+
+    /**
+     * Convenience function: Couples and renders Chinese text in one call
+     * @param {string} chinese - Chinese characters
+     * @param {string} pinyin - Space-separated pinyin
+     * @returns {HTMLElement} - Ready-to-append HTML element
+     */
+    function renderChineseText(chinese, pinyin) {
+      const coupled = coupleChineseWithPinyin(chinese, pinyin);
+      return renderChineseWithPinyin(coupled);
+    }
+
+    /**
+     * Returns HTML string for Chinese text (useful for innerHTML assignments)
+     * @param {string} chinese - Chinese characters
+     * @param {string} pinyin - Space-separated pinyin
+     * @returns {string} - HTML string
+     */
+    function getChineseHtml(chinese, pinyin) {
+      const element = renderChineseText(chinese, pinyin);
+      return element.outerHTML;
+    }
+
     let currentDeck = [];
     let originalDeck = [];
     let currentIndex = 0;
@@ -3644,8 +3815,8 @@
       // Mode-specific display
       if (currentMode === 'reading') {
         // READING MODE - Purpose: Learn to read Chinese and understand meaning
-        // Front: Chinese characters | Back: Translation in native language
-        spanishWord.textContent = card.chinese;
+        // Front: Chinese characters + pinyin | Back: Translation in native language
+        spanishWord.innerHTML = getChineseHtml(card.chinese, card.pinyin);
         spanishWord.className = 'card-word';
         englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
         englishWord.className = 'card-word';
@@ -3671,7 +3842,7 @@
         // Update card content (no indicators embedded here)
         spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `${card.chinese}<br><div class="translation-text">${card.translation}</div>`;
+        englishWord.innerHTML = `${getChineseHtml(card.chinese, card.pinyin)}<br><div class="translation-text">${card.translation}</div>`;
         englishWord.className = 'card-word';
       } else if (currentMode === 'writing') {
         // WRITING MODE - Purpose: Learn to write Chinese pinyin from translation
@@ -3692,12 +3863,12 @@
         // Update card content (no indicators embedded here)
         spanishWord.innerHTML = `<div class="translation-text">${card.translation}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
         spanishWord.className = 'card-word';
-        englishWord.textContent = card.chinese;
+        englishWord.innerHTML = getChineseHtml(card.chinese, card.pinyin);
         englishWord.className = 'card-word';
       } else if (currentMode === 'speaking') {
         // SPEAKING MODE - Purpose: Learn to pronounce Chinese correctly
-        // Front: Chinese characters + microphone button | Back: Translation
-        spanishWord.textContent = card.chinese;
+        // Front: Chinese characters + pinyin + microphone button | Back: Translation
+        spanishWord.innerHTML = getChineseHtml(card.chinese, card.pinyin);
         spanishWord.className = 'card-word';
         englishWord.innerHTML = `<div class="translation-text">${card.translation}</div>`;
         englishWord.className = 'card-word';
