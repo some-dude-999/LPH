@@ -1,6 +1,6 @@
 spanish,english,chinese,pinyin,portuguese
-número,number,数量,shù liàng,número
-sumar,add,添加,tiān jiā,adicionar
+número,number,数字,shù zì,número
+sumar,add,加,jiā,adicionar
 restar,subtract,减去,jiǎn qù,subtrair
 multiplicar,multiply,乘,chéng,multiplicar
 cálculo,calculation,计算,jì suàn,cálculo
@@ -9,12 +9,12 @@ solución,solution,解决方案,jiě jué fāng àn,solução
 suma,sum,总和,zǒng hé,soma
 resta,subtraction,减法,jiǎn fǎ,subtração
 multiplicación,multiplication,乘法,chéng fǎ,multiplicação
-división,division,师,shī,divisão
+división,division,除法,chú fǎ,divisão
 porcentaje,percentage,百分比,bǎi fēn bǐ,porcentagem
 fracción,fraction,分数,fēn shù,fração
 decimal,decimal,小数,xiǎo shù,decimal
 raíz,root,根,gēn,raiz
-potencia,power,电源,diàn yuán,poder
+potencia,power,幂,mì,poder
 exponente,exponent,指数,zhǐ shù,expoente
 logaritmo,logarithm,对数,duì shù,logaritmo
 geometría,geometry,几何,jǐ hé,geometria
