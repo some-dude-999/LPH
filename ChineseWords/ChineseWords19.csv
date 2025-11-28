@@ -12,10 +12,10 @@ chinese,pinyin,english,spanish,french,portuguese
 准时,zhǔn shí,on time,a tiempo,à l'heure,na hora certa
 迟到,chí dào,late,tarde,en retard,atrasado
 早到,zǎo dào,early,temprano,tôt,cedo
-整点,zhěng diǎn,hour,hora,heure,hora
+整点,zhěng diǎn,On the hour,en punto,heure,na hora exata
 上午,shàng wǔ,morning,mañana,matin,manhã
-时刻,shí kè,hour,hora,heure,hora
-晚点,wǎn diǎn,late,tarde,en retard,atrasado
+时刻,shí kè,Moment,momento,heure,momento
+晚点,wǎn diǎn,Delayed,retrasado,en retard,atrasado
 几点,jǐ diǎn,what time,a qué hora,à quelle heure,que horas
 三点,sān diǎn,three o'clock,las tres en punto,trois heures,três horas
 几分,jǐ fēn,several minutes,varios minutos,plusieurs minutes,vários minutos
@@ -29,7 +29,7 @@ chinese,pinyin,english,spanish,french,portuguese
 一小时,yī xiǎo shí,One hour,Una hora,Une heure,Uma hora
 两小时,liǎng xiǎo shí,Two hours,Dos horas,Deux heures,Duas horas
 几点钟,jǐ diǎn zhōng,What time,¿A qué hora,À quelle heure,Que horas
-敲钟,qiāo zhōng,Ring the clock,Toca el reloj,Sonnez l'horloge,Toque o relógio
+敲钟,qiāo zhōng,Ring the bell,Toca la campana,Sonnez la cloche,Toque o sino
 看手表,kàn shǒu biǎo,Look at the watch,Mira el reloj,Regardez la montre,Olha o relógio
 戴手表,dài shǒu biǎo,Wear a watch,Llevar reloj,Portez une montre,Use um relógio
 设闹钟,shè nào zhōng,Set the alarm,Poner la alarma,Régler l'alarme,Defina o alarme
