@@ -15,7 +15,7 @@ chinese,pinyin,english,spanish,french,portuguese
 雾霾,wù mái,Haze,Neblina,Brume,Neblina
 晴朗,qíng lǎng,Sunny,Soleado,Ensoleillé,Ensolarado
 阴沉,yīn chén,Overcast,Nublado,Couvert,Nublado
-闷热,mēn rè,Sultry,Sensual,Sensuelle,Sensual
+闷热,mēn rè,Hot and humid,Sofocante,Étouffant,Abafado
 很干燥,hěn gān zào,Very dry,Muy seco,Très sec,Muito seco
 天气干燥,tiān qì gān zào,Dry weather,Clima seco,Temps sec,Tempo seco
 带雨伞,dài yǔ sǎn,Bring an umbrella,Trae un paraguas,Apportez un parapluie,Traga um guarda-chuva
@@ -49,4 +49,4 @@ chinese,pinyin,english,spanish,french,portuguese
 天气阴沉,tiān qì yīn chén,The weather is gloomy,El clima está sombrío,Le temps est maussade,O tempo está sombrio
 很阴沉,hěn yīn chén,Very gloomy,Muy sombrío,Très sombre,Muito sombrio
 天气闷热,tiān qì mèn rè,The weather is sultry,El clima es bochornoso,Le temps est étouffant,O tempo está abafado
-很闷热,hěn mēn rè,Very sultry,muy sensual,Très sensuel,Muito sensual
+很闷热,hěn mēn rè,Very hot and humid,Muy sofocante,Très étouffant,Muito abafado
