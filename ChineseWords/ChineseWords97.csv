@@ -6,8 +6,8 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 办法,bàn fǎ,Approach,Enfoque,Approche,Abordagem,Tiếp cận,วิธีการ,វិធីសាស្រ្ត,Pendekatan,Pendekatan,Diskarte
 方法,fāng fǎ,Method,Método,Méthode,Método,Phương pháp,วิธีการ,វិធីសាស្រ្ត,Metode,Kaedah,Paraan
 措施,cuò shī,Measure,Medida,Mesurer,Medir,Đo,วัด,វិធានការ,Ukur,Ukur,Sukatin
-方案,fāng àn,Plan,Plano,Planifier,Planejar,Kế hoạch,แผน,| ផែនការ,Rencana,Rancangan,Plano
-对策,duì cè,Countermeasures,Contramedidas,Contre-mesures,Contramedidas,Biện pháp đối phó,มาตรการตอบโต้,វិធានការណ៍តបត || ការផ្តល់យោបល់,Penanggulangan,CounterMeasures,Mga countermeasures
+方案,fāng àn,Plan,Plano,Planifier,Planejar,Kế hoạch,แผน,ផែនការ,Rencana,Rancangan,Plano
+对策,duì cè,Countermeasures,Contramedidas,Contre-mesures,Contramedidas,Biện pháp đối phó,มาตรการตอบโต้,វិធានការណ៍តបត ការផ្តល់យោបល់,Penanggulangan,CounterMeasures,Mga countermeasures
 建议,jiàn yì,Suggestion,Sugerencia,Suggestions,Sugestão,Đề xuất,คำแนะนำ,កែលម្អ,Saran,Cadangan,Mungkahi
 改善,gǎi shàn,Improve,Mejorar,Améliorer,Melhorar,Cải thiện,ปรับปรุง,ធ្វើឱ្យប្រសើរឡើង,Tingkatkan,Memperbaiki,Pagbutihin
 改进,gǎi jìn,Improvement,Mejora,Amélioration,Melhoria,Cải tiến,การปรับปรุง,ការបង្កើនប្រសិទ្ធិភាព,Peningkatan,Peningkatan,Pagpapabuti
@@ -18,9 +18,9 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 提议,tí yì,Suggestion,Sugerencia,Suggestions,Sugestão,Đề xuất,คำแนะนำ,ដោះស្រាយបញ្ហា,Saran,Cadangan,Mungkahi
 解决问题,jiě jué wèn tí,Solve the problem,Resuelve el problema,Résoudre le problème,Resolva o problema,Giải quyết vấn đề,แก้ปัญหา,ដើម្បីដោះស្រាយ,Selesaikan masalahnya,Menyelesaikan masalah,Malutas ang problema
 去解决,qù jiě jué,To solve,Para resolver,Pour résoudre,Para resolver,Để giải quyết,วิธีแก้,ដោះស្រាយបានល្អ,Untuk menyelesaikan,Untuk menyelesaikan,Upang malutas
-处理好,chǔ lǐ hǎo,Handle well,Manejar bien,Bien manipuler,Manuseie bem,Xử lý tốt,จัดการให้ดี,| ដើម្បីដោះស្រាយជាមួយ,Tangani dengan baik,Mengendalikan dengan baik,Hawakan nang maayos
+处理好,chǔ lǐ hǎo,Handle well,Manejar bien,Bien manipuler,Manuseie bem,Xử lý tốt,จัดการให้ดี,ដើម្បីដោះស្រាយជាមួយ,Tangani dengan baik,Mengendalikan dengan baik,Hawakan nang maayos
 去处理,qù chù lǐ,To deal with,Para lidiar con,Pour faire face à,Para lidar com,Để đối phó với,เพื่อจัดการกับ,ស៊ូទ្រាំ,Untuk menangani,Untuk berurusan dengan,Upang makitungo sa
-应对好,yìng duì hǎo,Cope well,Sobrellevarlo bien,Bien faire face,Lide bem,Đối phó tốt,รับมือให้ดี,| ឆ្លើយតបយ៉ាងសកម្ម,Mengatasinya dengan baik,Cope Well,Makaya ng maayos
+应对好,yìng duì hǎo,Cope well,Sobrellevarlo bien,Bien faire face,Lide bem,Đối phó tốt,รับมือให้ดี,ឆ្លើយតបយ៉ាងសកម្ម,Mengatasinya dengan baik,Cope Well,Makaya ng maayos
 积极应对,jī jí yìng duì,Actively respond,Responder activamente,Répondre activement,Responder ativamente,Tích cực phản hồi,ตอบกลับอย่างแข็งขัน,ជំនះការលំបាក,Tanggapi secara aktif,Secara aktif bertindak balas,Aktibong tumugon
 战胜困难,zhàn shèng kùn nán,Overcome difficulties,Superar las dificultades,Surmonter les difficultés,Superar dificuldades,Vượt qua khó khăn,เอาชนะความยากลำบาก,ដើម្បីជំនះ,Mengatasi kesulitan,Mengatasi kesukaran,Pagtagumpayan ang mga paghihirap
 去克服,qù kè fú,To overcome,Para superar,Pour surmonter,Para superar,Để vượt qua,เพื่อเอาชนะ,មានវិធីជាច្រើនទៀត,Untuk mengatasi,Untuk mengatasi,Upang mapagtagumpayan
@@ -29,16 +29,16 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 有方法,yǒu fāng fǎ,There are ways,Hay maneras,Il existe des moyens,Existem maneiras,Có nhiều cách,มีหลายวิธี,រកវិធី,Ada cara,Ada cara,May mga paraan
 找方法,zhǎo fāng fǎ,Find ways,Encuentra maneras,Trouver des moyens,Encontre maneiras,Tìm cách,หาวิธี,ចាត់វិធានការ,Temukan cara,Cari cara,Maghanap ng mga paraan
 采取措施,cǎi qǔ cuò shī,Take measures,Tomar medidas,Prendre des mesures,Tomar medidas,Hãy có biện pháp,ใช้มาตรการ,មានវិធានការ,Ambil tindakan,Ambil langkah,Gumawa ng mga hakbang
-有措施,yǒu cuò shī,Have measures,Tener medidas,Avoir des mesures,Tem medidas,Có biện pháp,มีมาตรการ,| ធ្វើផែនការ,Miliki tindakan,Mempunyai langkah,May mga hakbang
+有措施,yǒu cuò shī,Have measures,Tener medidas,Avoir des mesures,Tem medidas,Có biện pháp,มีมาตรการ,ធ្វើផែនការ,Miliki tindakan,Mempunyai langkah,May mga hakbang
 制定方案,zhì dìng fāng àn,Make plans,Haz planes,Faire des projets,Faça planos,Lập kế hoạch,วางแผน,មានផែនការ,Buatlah rencana,Buat Rancangan,Gumawa ng mga plano
 有方案,yǒu fāng àn,Have plans,Tener planes,Avoir des projets,Tenha planos,Có kế hoạch,มีแผน,មានវិធានការណ៍ប្រឆាំង,Punya rencana,Mempunyai rancangan,May mga plano
-有对策,yǒu duì cè,Have countermeasures,Tener contramedidas,Avoir des contre-mesures,Tenha contramedidas,Có biện pháp đối phó,มีมาตรการตอบโต้,គិតអំពីវិធានការណ៍តបតវិញ| មានយោបល់,Memiliki tindakan penanggulangan,Mempunyai penangguhan,May mga countermeasures
+有对策,yǒu duì cè,Have countermeasures,Tener contramedidas,Avoir des contre-mesures,Tenha contramedidas,Có biện pháp đối phó,มีมาตรการตอบโต้,គិតអំពីវិធានការណ៍តបតវិញ មានយោបល់,Memiliki tindakan penanggulangan,Mempunyai penangguhan,May mga countermeasures
 想对策,xiǎng duì cè,Think of countermeasures,Piense en contramedidas,Pensez aux contre-mesures,Pense em contramedidas,Hãy nghĩ biện pháp đối phó,คิดถึงมาตรการรับมือ,ធ្វើឱ្យយោបល់,Pikirkan tindakan penanggulangan,Fikirkan Countermeasures,Mag -isip ng mga countermeasures
 有建议,yǒu jiàn yì,Have suggestions,Tener sugerencias,Avoir des suggestions,Tem sugestões,Có ý kiến ​​,มีข้อเสนอแนะ,ធ្វើឱ្យប្រសើរឡើងនូវស្ថានភាព,Punya saran,Mempunyai cadangan,May mga mungkahi
 提建议,tí jiàn yì,Make suggestions,Hacer sugerencias,Faire des suggestions,Faça sugestões,Đưa ra đề xuất,ให้คำแนะนำ,មានភាពប្រសើរឡើង,Berikan saran,Buat Cadangan,Gumawa ng mga mungkahi
-改善情况,gǎi shàn qíng kuàng,Improve the situation,Mejorar la situación,Améliorer la situation,Melhorar a situação,Cải thiện tình hình,ปรับปรุงสถานการณ์,| កែលម្អការងារ,Perbaiki situasi,Memperbaiki keadaan,Pagbutihin ang sitwasyon
+改善情况,gǎi shàn qíng kuàng,Improve the situation,Mejorar la situación,Améliorer la situation,Melhorar a situação,Cải thiện tình hình,ปรับปรุงสถานการณ์,កែលម្អការងារ,Perbaiki situasi,Memperbaiki keadaan,Pagbutihin ang sitwasyon
 有改善,yǒu gǎi shàn,Have improvements,Tener mejoras,Avoir des améliorations,Tem melhorias,Có những cải tiến,มีการปรับปรุง,មានភាពប្រសើរឡើង,Ada perbaikan,Mempunyai penambahbaikan,May mga pagpapabuti
-改进工作,gǎi jìn gōng zuò,Improve work,Mejorar el trabajo,Améliorer le travail,Melhorar o trabalho,Cải thiện công việc,ปรับปรุงการทำงาน,| ដំណើរការបង្កើនប្រសិទ្ធភាព,Tingkatkan pekerjaan,Meningkatkan kerja,Pagbutihin ang trabaho
+改进工作,gǎi jìn gōng zuò,Improve work,Mejorar el trabajo,Améliorer le travail,Melhorar o trabalho,Cải thiện công việc,ปรับปรุงการทำงาน,ដំណើរការបង្កើនប្រសិទ្ធភាព,Tingkatkan pekerjaan,Meningkatkan kerja,Pagbutihin ang trabaho
 有改进,yǒu gǎi jìn,Have improvements,Tener mejoras,Avoir des améliorations,Tem melhorias,Có những cải tiến,มีการปรับปรุง,ចូលទៅកាន់ការបង្កើនប្រសិទ្ធភាព,Ada perbaikan,Mempunyai penambahbaikan,May mga pagpapabuti
 优化流程,yōu huà liú chéng,Optimize processes,Optimizar procesos,Optimiser les processus,Otimizar processos,Tối ưu hóa quy trình,ปรับกระบวนการให้เหมาะสม,ធ្វើការកែតម្រូវ,Optimalkan proses,Mengoptimumkan Proses,I -optimize ang mga proseso
 去优化,qù yōu huà,Go to optimization,Ir a optimización,Aller à l'optimisation,Vá para otimização,Chuyển đến tối ưu hóa,ไปที่การเพิ่มประสิทธิภาพ,ធ្វើការកែតម្រូវ,Buka pengoptimalan,Pergi ke Pengoptimuman,Pumunta sa pag -optimize

@@ -2,7 +2,7 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 直走,zhí zǒu,Go straight,Siga recto,Allez tout droit,Siga em frente,Đi thẳng,ตรงไป,ទៅត្រង់,Langsung saja,Pergi lurus,Dumiretso
 左转,zuǒ zhuǎn,Turn left,Gira a la izquierda,Tourner à gauche,Vire à esquerda,Rẽ trái,เลี้ยวซ้าย,បត់ឆ្វេង,Belok kiri,Belok kiri,Lumiko pakaliwa
 右转,yòu zhuǎn,Turn right,Gira a la derecha,Tourner à droite,Vire à direita,Rẽ phải,เลี้ยวขวา,បត់ស្តាំ,Belok kanan,Belok kanan,Lumiko pakanan
-拐弯,guǎi wān,Turn,Girar,Tourner,Vire,Xoay,เลี้ยว,| បើក,Putar,Putar,Lumiko
+拐弯,guǎi wān,Turn,Girar,Tourner,Vire,Xoay,เลี้ยว,បើក,Putar,Putar,Lumiko
 路口,lù kǒu,Intersection,Intersección,Intersection,Interseção,Giao lộ,ทางแยก,ប្រសព្វ,Persimpangan,Persimpangan,Intersection
 十字路口,shí zì lù kǒu,Crossroads,Encrucijada,Carrefour,Encruzilhada,Ngã Tư,ทางแยก,ផ្លូវបំបែក,Persimpangan jalan,Crossroads,Crossroads
 红绿灯,hóng lǜ dēng,Traffic lights,Semáforos,Feux de circulation,Semáforos,Đèn giao thông,สัญญาณไฟจราจร,ភ្លើងចរាចរណ៍,Lampu lalu lintas,Lampu lalu lintas,Mga ilaw sa trapiko
@@ -20,18 +20,18 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 向左左转,xiàng zuǒ zuǒ zhuǎn,Turn left,Gira a la izquierda,Tourner à gauche,Vire à esquerda,Rẽ trái,เลี้ยวซ้าย,បត់ឆ្វេង,Belok kiri,Belok kiri,Lumiko pakaliwa
 请左转,qǐng zuǒ zhuǎn,Please turn left,Por favor gire a la izquierda,Veuillez tourner à gauche,"Por favor, vire à esquerda",Vui lòng rẽ trái,กรุณาเลี้ยวซ้าย,សូមមេត្តាបត់ឆ្វេង,Silakan belok kiri,Sila belok kiri,Mangyaring lumiko pakaliwa
 向右右转,xiàng yòu yòu zhuǎn,Turn right,Gira a la derecha,Tourner à droite,Vire à direita,Rẽ phải,เลี้ยวขวา,បត់ស្តាំ,Belok kanan,Belok kanan,Lumiko pakanan
-请右转,qǐng yòu zhuǎn,Please turn right,Por favor gira a la derecha,Veuillez tourner à droite,"Por favor, vire à direita",Vui lòng rẽ phải,กรุณาเลี้ยวขวา,| សូមបង្វែរស្តាំ,Silakan belok kanan,Sila belok kanan,Mangyaring lumiko pakanan
+请右转,qǐng yòu zhuǎn,Please turn right,Por favor gira a la derecha,Veuillez tourner à droite,"Por favor, vire à direita",Vui lòng rẽ phải,กรุณาเลี้ยวขวา,សូមបង្វែរស្តាំ,Silakan belok kanan,Sila belok kanan,Mangyaring lumiko pakanan
 在那拐弯,zài nà guǎi wān,Turn there,Gira allí,Tournez-y,Vira aí,Rẽ đó,เลี้ยวตรงนั้น,បើកនៅទីនោះ,Belok ke sana,Belok ke sana,Lumiko doon
 要拐弯,yào guǎi wān,To turn,Girar,Pour tourner,Para virar,Để quay,หากต้องการเปลี่ยน,ដើម្បីបើក,Untuk memutar,Untuk menghidupkan,Upang lumiko
 到路口,dào lù kǒu,To the intersection,A la intersección,Jusqu'au carrefour,Para o cruzamento,Đến ngã tư,ถึงสี่แยก,ទៅចំនុចប្រសព្វ,Ke persimpangan,Ke persimpangan,Sa intersection
 过路口,guò lù kǒu,Crossing,Cruce,Traversée,Cruzando,Vượt qua,ข้าม,ឆ្លងកាត់,Menyeberang,Menyeberang,Pagtawid
-到十字路口,dào shí zì lù kǒu,To the intersection,A la intersección,Jusqu'au carrefour,Para o cruzamento,Đến ngã tư,ถึงสี่แยก,|| ទៅចំនុចប្រសព្វ,Ke persimpangan,Ke persimpangan,Sa intersection
+到十字路口,dào shí zì lù kǒu,To the intersection,A la intersección,Jusqu'au carrefour,Para o cruzamento,Đến ngã tư,ถึงสี่แยก,ទៅចំនុចប្រសព្វ,Ke persimpangan,Ke persimpangan,Sa intersection
 过十字路口,guò shí zì lù kǒu,Cross the intersection,Cruzar la intersección,Traverser le carrefour,Atravesse o cruzamento,Băng qua ngã tư,ข้ามสี่แยก,ឆ្លងកាត់ចំនុចប្រសព្វ,Seberangi persimpangan,Menyeberangi persimpangan,Tumawid sa intersection
 看红绿灯,kàn hóng lǜ dēng,Look at the traffic light,Mira el semáforo,Regardez le feu de circulation,Olha o semáforo,Nhìn vào đèn giao thông,ดูสัญญาณไฟจราจร,សូមក្រឡេកមើលភ្លើងចរាចរណ៍,Lihatlah lampu lalu lintas,Lihat lampu isyarat,Tumingin sa ilaw ng trapiko
 等红绿灯,děng hóng lǜ dēng,Wait for the traffic light,Espera el semáforo,Attendez le feu tricolore,Espere o semáforo,Đợi đèn giao thông,รอสัญญาณไฟจราจร,រង់ចាំពន្លឺចរាចរណ៍,Tunggu lampu lalu lintas,Tunggu lampu lalu lintas,Maghintay para sa ilaw ng trapiko
 前方到达,qián fāng dào dá,Arrive ahead,Llegue adelante,Arrivez en avance,Chegue na frente,Đến trước,มาถึงข้างหน้า,មកដល់មុន,Tiba lebih dulu,Tiba di hadapan,Dumating sa unahan
 看前方,kàn qián fāng,Look ahead,Mirar hacia adelante,Regarder vers l'avenir,Olhe para frente,Nhìn về phía trước,มองไปข้างหน้า,មើលទៅមុខ,Lihat ke depan,Lihatlah,Tumingin sa unahan
-在右侧,zài yòu cè,On the right,A la derecha,À droite,À direita,Ở bên phải,ทางด้านขวา,| នៅខាងស្តាំ,Di sebelah kanan,Di sebelah kanan,Sa kanan
+在右侧,zài yòu cè,On the right,A la derecha,À droite,À direita,Ở bên phải,ทางด้านขวา,នៅខាងស្តាំ,Di sebelah kanan,Di sebelah kanan,Sa kanan
 看右侧,kàn yòu cè,Look on the right,Mira a la derecha,Regardez à droite,Olhe à direita,Nhìn bên phải,มองทางขวา,សូមក្រឡេកមើលខាងស្តាំ,Lihat di sebelah kanan,Lihat di sebelah kanan,Tumingin sa kanan
 在左侧,zài zuǒ cè,On the left,A la izquierda,A gauche,À esquerda,Ở bên trái,ทางซ้าย,នៅខាងឆ្វេង,Di sebelah kiri,Di sebelah kiri,Sa kaliwa
 看左侧,kàn zuǒ cè,Look on the left,Mira a la izquierda,Regardez à gauche,Olhe à esquerda,Nhìn bên trái,มองทางซ้าย,ក្រឡេកមើលខាងឆ្វេង,Lihat di sebelah kiri,Lihat di sebelah kiri,Tumingin sa kaliwa

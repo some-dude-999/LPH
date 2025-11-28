@@ -1,14 +1,14 @@
 chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesian,malay,filipino
 月,yuè,Month,Mes,Mois,Mês,Tháng,เดือน,ខែ,Bulan,Bulan,Buwan
-一月,yí yuè,January,enero,janvier,Janeiro,Tháng Giêng,มกราคม,ខែមករា || ខែកុម្ភៈ || || មីនា || ខែមេសា,Januari,Januari,Enero
+一月,yí yuè,January,enero,janvier,Janeiro,Tháng Giêng,มกราคม,ខែមករា ខែកុម្ភៈ មីនា ខែមេសា,Januari,Januari,Enero
 二月,èr yuè,February,febrero,Février,Fevereiro,Tháng Hai,กุมภาพันธ์,ឧសភា,Februari,Februari,Pebrero
-三月,sān yuè,March,marzo,Mars,Março,Tháng Ba,มีนาคม,ខែមិថុនា || ខែកក្កដា || ខែសីហា || ខែកញ្ញា,Maret,Mac,Marso
+三月,sān yuè,March,marzo,Mars,Março,Tháng Ba,มีนาคม,ខែមិថុនា ខែកក្កដា ខែសីហា ខែកញ្ញា,Maret,Mac,Marso
 四月,sì yuè,April,abril,avril,Abril,Tháng Tư,เมษายน,តុលា,April,April,Abril
 五月,wǔ yuè,May,Mayo,Mai,Maio,Tháng Năm,พฤษภาคม,ខែវិច្ឆិកា,Mei,Mei,Mayo
 六月,liù yuè,June,junio,juin,Junho,Tháng Sáu,มิถุนายน,ខែធ្នូ,Juni,Jun,Hunyo
 七月,qī yuè,July,julio,juillet,Julho,Tháng Bảy,กรกฎาคม,និទាឃរដូវ,Juli,Julai,Hulyo
 八月,bā yuè,August,agosto,Août,Agosto,Tháng Tám,สิงหาคม,រដូវក្តៅ,Agustus,Ogos,Agosto
-九月,jiǔ yuè,September,septiembre,Septembre,Setembro,Tháng Chín,กันยายน,រដូវស្លឹកឈើជ្រុះ || រដូវរងា,September,September,Setyembre
+九月,jiǔ yuè,September,septiembre,Septembre,Setembro,Tháng Chín,กันยายน,រដូវស្លឹកឈើជ្រុះ រដូវរងា,September,September,Setyembre
 十月,shí yuè,October,Octubre,octobre,Outubro,Tháng Mười,ตุลาคม,រដូវ,Oktober,Oktober,Oktubre
 十一月,shí yī yuè,November,noviembre,novembre,Novembro,Tháng Mười Một,พฤศจิกายน,ខែនេះ,November,November,Nobyembre
 十二月,shí èr yuè,December,diciembre,décembre,Dezembro,Tháng 12,ธันวาคม,បញ្ចប់នៃខែ,Desember,Disember,Disyembre
@@ -16,9 +16,9 @@ chinese,pinyin,english,spanish,french,portuguese,vietnamese,thai,khmer,indonesia
 夏天,xià tiān,Summer,Verano,Été,Verão,Mùa hè,ฤดูร้อน,ថ្ងៃឈប់សម្រាកខែមករា,Musim panas,Musim panas,Tag -init
 秋天,qiū tiān,Autumn,Otoño,Automne,Outono,Mùa thu,ฤดูใบไม้ร่วง,ថ្ងៃចូលឆ្នាំសកលក្នុងខែកុម្ភៈ,Musim gugur,Autumn,Taglagas
 冬天,dōng tiān,Winter,Invierno,Hiver,Inverno,Mùa đông,ฤดูหนาว,ខែកុម្ភៈគឺជាការខ្លីបំផុត,Musim dingin,Musim sejuk,Taglamig
-季节,jì jié,Season,Temporada,Saison,Temporada,Mùa,ฤดูกาล,| ខែមីនាចាប់ផ្តើមសាលារៀន,Musim,Musim,Panahon
+季节,jì jié,Season,Temporada,Saison,Temporada,Mùa,ฤดูกาล,ខែមីនាចាប់ផ្តើមសាលារៀន,Musim,Musim,Panahon
 这个月,zhè ge yuè,This month,Este mes,Ce mois-ci,Este mês,Tháng này,เดือนนี้,ការដាំដើមឈើនៅខែមីនា,Bulan ini,Bulan ini,Ngayong buwan
-月底,yuè dǐ,End of the month,Fin de mes,Fin du mois,Fim do mês,Cuối tháng,สิ้นเดือน,| ខែមេសា Qingming,Akhir bulan,Akhir bulan,Pagtatapos ng buwan
+月底,yuè dǐ,End of the month,Fin de mes,Fin du mois,Fim do mês,Cuối tháng,สิ้นเดือน,ខែមេសា Qingming,Akhir bulan,Akhir bulan,Pagtatapos ng buwan
 一月很冷,yí yuè hěn lěng,January is cold,Enero es frío,Janvier est froid,Janeiro está frio,Tháng giêng lạnh,มกราคม หนาว,ខែមេសាចេញ,Januari dingin,Januari sejuk,Ang Enero ay malamig
 一月放假,yí yuè fàng jià,January holiday,Vacaciones de enero,Vacances de janvier,Feriado de janeiro,Kỳ nghỉ tháng giêng,วันหยุดเดือนมกราคม,អាកាសធាតុល្អនៅខែឧសភា,Liburan Januari,Holiday Januari,Enero Holiday
 二月过年,èr yuè guò nián,New Year's Eve in February,Nochevieja en febrero,Réveillon du Nouvel An en février,Réveillon em fevereiro,Đêm giao thừa tháng 2,วันส่งท้ายปีเก่าในเดือนกุมภาพันธ์,ផ្ការីកដុះដាលនៅខែឧសភា,Malam Tahun Baru di bulan Februari,Malam Tahun Baru pada bulan Februari,Bisperas ng Bagong Taon noong Pebrero
