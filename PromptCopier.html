@@ -263,9 +263,7 @@ seen this wordpack before) rate the quality. This prevents:
         <option value="all">All Stages</option>
         <option value="1">Stage 1: Base Words</option>
         <option value="2">Stage 2: Example Words</option>
-        <option value="3">Stage 3: Breakout CSVs (All)</option>
-        <option value="3a">Stage 3A: Fixing with Reasons</option>
-        <option value="3b">Stage 3B: Fixing without Reasons</option>
+        <option value="3">Stage 3: Translation Review (Act-Based)</option>
         <option value="4">Stage 4: JS Modules</option>
         <option value="rating">Quality Rating</option>
     </select>
@@ -3539,8 +3537,6 @@ The goal is quality, not politeness.</div>
             let stage = 'other';
             if (text.includes('stage 1')) stage = '1';
             else if (text.includes('stage 2')) stage = '2';
-            else if (text.includes('stage 3a')) stage = '3a';
-            else if (text.includes('stage 3b')) stage = '3b';
             else if (text.includes('stage 3')) stage = '3';
             else if (text.includes('stage 4')) stage = '4';
             else if (text.includes('rating')) stage = 'rating';
@@ -3552,10 +3548,7 @@ The goal is quality, not politeness.</div>
             else if (text.includes('english')) lang = 'english';
 
             // Check if this section should be visible
-            // Stage 3 filter shows all Stage 3 variants (3, 3a, 3b)
-            const stageMatch = (stageFilter === 'all' ||
-                               stageFilter === stage ||
-                               (stageFilter === '3' && (stage === '3a' || stage === '3b')));
+            const stageMatch = (stageFilter === 'all' || stageFilter === stage);
             const langMatch = (langFilter === 'all' || langFilter === lang);
 
             // Find all siblings until next h3 or h2
@@ -3586,11 +3579,8 @@ The goal is quality, not politeness.</div>
             else if (text.includes('stage 4')) stage = '4';
             else if (text.includes('rating')) stage = 'rating';
 
-            // Stage 3 filter shows all Stage 3 variants (3, 3a, 3b)
-            const stageMatch = (stageFilter === 'all' ||
-                               stageFilter === stage ||
-                               (stageFilter === '3' && (stage === '3a' || stage === '3b')) ||
-                               ((stageFilter === '3a' || stageFilter === '3b') && stage === '3'));
+            // Check if h2 should be visible
+            const stageMatch = (stageFilter === 'all' || stageFilter === stage);
 
             // Find section intro (siblings until next h3)
             let el = h2.parentElement;
