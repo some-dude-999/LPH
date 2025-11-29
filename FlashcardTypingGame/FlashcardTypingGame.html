@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=1024">
   <title>Flashcard Typing Game</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
-  <!-- Shared wordpack logic (loading, decoding, shuffling, typing validation) -->
+  <!-- Shared wordpack logic (loading, decoding, shuffling, typing validation, debug tools) -->
   <script src="../wordpack-logic.js"></script>
+  <!-- Shared game sounds (ding, buzz, card flip, button click, typing sounds) -->
+  <script src="../game-sounds.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
   <!-- Chinese font - loaded but only applied when Chinese modules are used -->
   <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@700&display=swap" rel="stylesheet">
@@ -1841,176 +1843,9 @@
       color: #8B7355;
     }
 
-    /* Debug Module Selector - only visible when DEBUG_MODE is true */
-    .debug-module-selector {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-family: var(--font-ui);
-      font-size: 0.7rem;
-      color: #fff;
-      z-index: 9999;
-      display: none; /* Hidden by default, shown via JS when debug mode is on */
-    }
-
-    .debug-module-selector.visible {
-      display: block;
-    }
-
-    .debug-module-selector label {
-      display: block;
-      margin: 3px 0;
-      cursor: pointer;
-    }
-
-    .debug-module-selector input[type="radio"] {
-      margin-right: 5px;
-    }
-
-    .debug-module-selector .debug-title {
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #E8D498;
-    }
-
-    /* Debug simulate buttons - only visible in typing/pronunciation modes */
-    .debug-simulate-buttons {
-      margin-top: 10px;
-      display: none; /* Hidden by default, shown via JS based on mode */
-    }
-
-    .debug-simulate-buttons.visible {
-      display: block;
-    }
-
-    .debug-simulate-btn {
-      width: 100%;
-      padding: 6px 10px;
-      margin: 3px 0;
-      font-family: var(--font-ui);
-      font-size: 0.7rem;
-      font-weight: bold;
-      border: 2px solid;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .debug-simulate-correct {
-      background: rgba(34, 197, 94, 0.2);
-      border-color: #22c55e;
-      color: #22c55e;
-    }
-
-    .debug-simulate-correct:hover {
-      background: rgba(34, 197, 94, 0.4);
-    }
-
-    .debug-simulate-wrong {
-      background: rgba(239, 68, 68, 0.2);
-      border-color: #ef4444;
-      color: #ef4444;
-    }
-
-    .debug-simulate-wrong:hover {
-      background: rgba(239, 68, 68, 0.4);
-    }
-
-    /* Debug Vocabulary Table - only visible when DEBUG_MODE is true */
-    .debug-vocab-table {
-      position: fixed;
-      top: 80px;
-      right: 10px;
-      max-width: 500px;
-      max-height: calc(100vh - 100px);
-      overflow-y: auto;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 12px;
-      border-radius: 6px;
-      font-family: var(--font-ui);
-      font-size: 0.75rem;
-      color: #fff;
-      z-index: 9998;
-      display: none; /* Hidden by default, shown via JS when debug mode is on */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    }
-
-    .debug-vocab-table.visible {
-      display: block;
-    }
-
-    .debug-vocab-table .debug-title {
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #E8D498;
-      font-size: 0.9rem;
-      border-bottom: 1px solid rgba(232, 212, 152, 0.3);
-      padding-bottom: 5px;
-    }
-
-    .debug-vocab-table table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.7rem;
-    }
-
-    .debug-vocab-table th {
-      background: rgba(232, 212, 152, 0.2);
-      color: #E8D498;
-      padding: 6px 8px;
-      text-align: left;
-      font-weight: bold;
-      border-bottom: 1px solid rgba(232, 212, 152, 0.3);
-      position: sticky;
-      top: 0;
-      background: rgba(0, 0, 0, 0.95);
-    }
-
-    .debug-vocab-table td {
-      padding: 5px 8px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      color: #ddd;
-    }
-
-    .debug-vocab-table tr:hover {
-      background: rgba(232, 212, 152, 0.1);
-    }
-
-    /* Word type styling in debug table */
-    .debug-vocab-table .word-type-base {
-      color: #60a5fa;
-      font-weight: bold;
-    }
-
-    .debug-vocab-table .word-type-example {
-      color: #34d399;
-      font-weight: normal;
-    }
-
-    /* Chinese text rendering in debug table */
-    .debug-vocab-table .chinese-coupled {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 2px;
-    }
-
-    .debug-vocab-table .chinese-coupled .chinese-char {
-      font-family: var(--font-chinese);
-      font-weight: 700;
-      font-size: 1em;
-    }
-
-    .debug-vocab-table .chinese-coupled .pinyin {
-      font-size: 0.7em;
-      color: #aaa;
-      font-family: var(--font-answer);
-    }
+    /* Debug UI removed - now dynamically generated by wordpack-logic.js */
+    /* Debug table has no CSS styling - plain HTML only */
+    /* Toggle debug mode with: Ctrl + Shift + Alt + D + E + B + U + G */
 
     /* Difficulty Selector - appears under title */
     /* Wrapper for title and difficulty - centered in header */
@@ -2699,270 +2534,19 @@
       recognition.maxAlternatives = 5;
     }
 
-    // Audio context for sounds
-    let audioContext = null;
-    
-    function getAudioContext() {
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      return audioContext;
-    }
-    
     // ===================================================================================
-    // CARD FLIP SOUND - "Cloud Nine" (Ultra Soft 10)
-    // We worked REALLY hard on this sound. Tested dozens of variants to get this perfect.
-    // It's soft, muffled, satisfying - like floating on clouds.
-    // DO NOT DELETE THIS CODE EVER. SERIOUSLY. NEVER DELETE THIS.
+    // SOUND FUNCTIONS - Now in game-sounds.js (shared across all games)
     // ===================================================================================
-    function playCardFlipSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-      
-      const bufferSize = ctx.sampleRate * 0.23;
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-      
-      for (let i = 0; i < bufferSize; i++) {
-        const t = i / bufferSize;
-        const env = Math.sin(t * Math.PI) * Math.sin(t * Math.PI * 0.38) * 0.26;
-        data[i] = (Math.random() * 2 - 1) * env;
-      }
-      
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-      
-      const lp = ctx.createBiquadFilter();
-      lp.type = 'lowpass';
-      lp.frequency.value = 400;
-      
-      const lp2 = ctx.createBiquadFilter();
-      lp2.type = 'lowpass';
-      lp2.frequency.value = 580;
-      
-      const gain = ctx.createGain();
-      gain.gain.value = 2.5; // Page turn volume
-
-      source.connect(lp);
-      lp.connect(lp2);
-      lp2.connect(gain);
-      gain.connect(ctx.destination);
-      source.start();
-    }
-
-    // ===================================================================================
-    // DING SOUND - "Gentle Bell" - Soft bell with subtle harmonics
-    // C5, E5, G5 chord for achievements and correct answers
-    // ===================================================================================
-    function playDingSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-      const frequencies = [523.25, 659.25, 783.99]; // C5, E5, G5 chord
-
-      frequencies.forEach((freq, i) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        const filter = ctx.createBiquadFilter();
-
-        filter.type = 'lowpass';
-        filter.frequency.value = 1500;
-
-        osc.type = 'sine';
-        osc.frequency.value = freq;
-
-        // Volume decreases for each note in chord (0.2, 0.16, 0.12)
-        const vol = 0.2 - i * 0.04;
-        gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(vol, now + 0.01);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
-
-        osc.connect(filter);
-        filter.connect(gain);
-        gain.connect(ctx.destination);
-
-        osc.start(now + i * 0.03); // Stagger start times
-        osc.stop(now + 0.7);
-      });
-    }
-
-    // ===================================================================================
-    // BUZZ SOUND - "Warm Nope" - Gentle two-tone 'nope' sound
-    // D4 to A3 descending - friendly rejection sound for wrong answers
-    // ===================================================================================
-    function playBuzzSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-      const notes = [293.66, 220]; // D4, A3 - descending "nope"
-
-      notes.forEach((freq, i) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        const filter = ctx.createBiquadFilter();
-
-        filter.type = 'lowpass';
-        filter.frequency.value = 800;
-
-        osc.type = 'sine';
-        osc.frequency.value = freq;
-
-        const startTime = now + i * 0.12; // Stagger the two notes
-        gain.gain.setValueAtTime(0, startTime);
-        gain.gain.linearRampToValueAtTime(0.2, startTime + 0.01);
-        gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.15);
-
-        osc.connect(filter);
-        filter.connect(gain);
-        gain.connect(ctx.destination);
-
-        osc.start(startTime);
-        osc.stop(startTime + 0.15);
-      });
-    }
-
-    // ===================================================================================
-    // BUTTON CLICK SOUND - "Click Snap J - Satisfying"
-    // This is the perfect UI click sound. Balanced, satisfying snap with subtle low end.
-    // DO NOT DELETE THIS SOUND ASSET. NEVER. WE MEAN IT.
-    // ===================================================================================
-    function playButtonClickSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-      
-      const bufferSize = ctx.sampleRate * 0.03;
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-      
-      for (let i = 0; i < bufferSize; i++) {
-        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i/bufferSize, 4.5);
-      }
-      
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-
-      // More muffled - lower frequency lowpass filter instead of bandpass
-      const lp = ctx.createBiquadFilter();
-      lp.type = 'lowpass';
-      lp.frequency.value = 800; // Much lower for muffled sound (was 2800 bandpass)
-      lp.Q.value = 0.7;
-
-      // Add second lowpass for extra muffling
-      const lp2 = ctx.createBiquadFilter();
-      lp2.type = 'lowpass';
-      lp2.frequency.value = 1200;
-
-      // Subtle low end
-      const osc = ctx.createOscillator();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(120, now); // Lower frequency
-      osc.frequency.exponentialRampToValueAtTime(60, now + 0.025);
-
-      const oscGain = ctx.createGain();
-      oscGain.gain.setValueAtTime(0.05, now); // Quieter (was 0.1)
-      oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
-
-      const gain = ctx.createGain();
-      gain.gain.value = 0.75; // Much louder - increased from 0.45
-
-      source.connect(lp);
-      lp.connect(lp2);
-      lp2.connect(gain);
-      gain.connect(ctx.destination);
-      osc.connect(oscGain);
-      oscGain.connect(ctx.destination);
-
-      source.start();
-      osc.start();
-      osc.stop(now + 0.04);
-    }
-
-    // ===================================================================================
-    // MECHANICAL KEYBOARD SOUND - Satisfying tactile click (kept for future reference)
-    // ===================================================================================
-    function playKeyboardSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-
-      const bufferSize = ctx.sampleRate * 0.04;
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-
-      for (let i = 0; i < bufferSize; i++) {
-        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i/bufferSize, 5);
-      }
-
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-
-      const hp = ctx.createBiquadFilter();
-      hp.type = 'highpass';
-      hp.frequency.value = 2000;
-
-      const bp = ctx.createBiquadFilter();
-      bp.type = 'bandpass';
-      bp.frequency.value = 4500;
-      bp.Q.value = 2;
-
-      const gain = ctx.createGain();
-      gain.gain.value = 0.3;
-
-      source.connect(hp);
-      hp.connect(bp);
-      bp.connect(gain);
-      gain.connect(ctx.destination);
-      source.start();
-    }
-
-    // ===================================================================================
-    // MECHANICAL KEYBOARD TYPING SOUND - Satisfying clicky mechanical keyboard
-    // ===================================================================================
-    function playScribbleSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-
-      // Very short duration for crisp mechanical click (0.015-0.025 seconds)
-      const duration = 0.015 + Math.random() * 0.01;
-      const bufferSize = ctx.sampleRate * duration;
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-
-      // Generate sharp click noise
-      for (let i = 0; i < bufferSize; i++) {
-        const envelope = Math.pow(1 - i/bufferSize, 8); // Very sharp decay for crisp click
-        const noise = (Math.random() * 2 - 1);
-        data[i] = noise * envelope;
-      }
-
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-
-      // High frequency for mechanical click (2000-3500 Hz)
-      const bp1 = ctx.createBiquadFilter();
-      bp1.type = 'bandpass';
-      bp1.frequency.value = 2000 + Math.random() * 1500; // 2000-3500 Hz - clicky range
-      bp1.Q.value = 4.0; // Very high Q for sharp, defined click
-
-      // Mid frequency for body (1000-1500 Hz)
-      const bp2 = ctx.createBiquadFilter();
-      bp2.type = 'bandpass';
-      bp2.frequency.value = 1000 + Math.random() * 500; // 1000-1500 Hz - body
-      bp2.Q.value = 2.5;
-
-      // Remove low mud
-      const hp = ctx.createBiquadFilter();
-      hp.type = 'highpass';
-      hp.frequency.value = 400;
-
-      // Moderate volume for satisfying click
-      const gain = ctx.createGain();
-      gain.gain.value = 0.8; // Keyboard click volume
-
-      source.connect(hp);
-      hp.connect(bp1);
-      bp1.connect(bp2);
-      bp2.connect(gain);
-      gain.connect(ctx.destination);
-      source.start();
-    }
+    // All sound functions moved to ../game-sounds.js:
+    // - getAudioContext()
+    // - playCardFlipSound()
+    // - playDingSound()
+    // - playBuzzSound()
+    // - playButtonClickSound()
+    // - playKeyboardSound()
+    // - playScribbleSound()
+    //
+    // These are now globally available after importing game-sounds.js
 
     // ===================================================================================
     // KEY FEATURE: Stamp Display Functions (Encapsulated)
@@ -2994,10 +2578,7 @@
     // MODE SWITCHING AND DISPLAY FUNCTIONS
     // ===================================================================================
 
-    // Normalize character for comparison (remove accents, lowercase)
-    function normalizeChar(char) {
-      return char.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-    }
+    // NOTE: normalizeChar() is now in wordpack-logic.js (globally available)
 
     // Navigate to starting card (menu/help card)
     function showStartingCard(showBack = false) {
@@ -5176,10 +4757,24 @@
     initializeApp();
 
     // ============================================================
-    // DEBUG: Simulate Correct/Wrong Answer Functions
+    // DEBUG UI - Now handled by wordpack-logic.js
     // ============================================================
-    function simulateCorrectAnswer() {
-      if (!DEBUG_MODE || currentDeck.length === 0) return;
+    // Debug functionality moved to wordpack-logic.js:
+    // - DEBUG_MODE flag (toggled by hotkey: Ctrl+Shift+Alt+DEBUG)
+    // - updateDebugTable(options) function
+    // - initializeDebugUI() to create debug table
+    // - toggleDebugMode() for programmatic control
+    //
+    // Initialize debug UI (creates debug table in DOM if not exists)
+    initializeDebugUI();
+
+    // All debug functions removed - functionality now in wordpack-logic.js
+    // (See initializeDebugUI() call above)
+
+    // ============================================================
+    // Difficulty Selector Event Listeners
+    // ============================================================
+    const difficultySelector = document.getElementById('difficulty-selector');
 
       if (currentMode === 'spelling' || currentMode === 'translation') {
         // Typing mode: Auto-fill the entire word correctly
@@ -5557,49 +5152,7 @@
     }
   </script>
 
-  <!-- Debug Module Selector (always visible, controls debug mode) -->
-  <div id="debug-module-selector" class="debug-module-selector visible">
-    <div class="debug-title">Debug Mode:</div>
-    <label><input type="radio" name="debug-mode" value="on"> On</label>
-    <label><input type="radio" name="debug-mode" value="off"> Off</label>
-
-    <div class="debug-title" style="margin-top: 10px;">Module Set:</div>
-    <label><input type="radio" name="debug-modules" value="spanish"> Spanish</label>
-    <label><input type="radio" name="debug-modules" value="chinese"> Chinese</label>
-    <label><input type="radio" name="debug-modules" value="english"> English</label>
-    <label><input type="radio" name="debug-modules" value="none"> None</label>
-
-    <!-- Simulate buttons (only visible in typing/pronunciation modes) -->
-    <div id="debug-simulate-buttons" class="debug-simulate-buttons">
-      <div class="debug-title" style="margin-top: 10px;">Simulate Answer:</div>
-      <button id="debug-simulate-correct" class="debug-simulate-btn debug-simulate-correct">✓ Simulate Correct</button>
-      <button id="debug-simulate-wrong" class="debug-simulate-btn debug-simulate-wrong">✗ Simulate Wrong</button>
-    </div>
-
-    <!-- Simulate 1 Before Win button (always visible in debug mode) -->
-    <div style="margin-top: 10px;">
-      <div class="debug-title">Testing:</div>
-      <button id="debug-simulate-1-before-win" class="debug-simulate-btn" style="background: rgba(245, 158, 11, 0.2); border-color: #f59e0b; color: #f59e0b; width: 100%;">⚡ Simulate 1 Before Win</button>
-    </div>
-  </div>
-
-  <!-- Debug Vocabulary Table (only visible when DEBUG_MODE is true) -->
-  <div id="debug-vocab-table" class="debug-vocab-table">
-    <div class="debug-title">Current Deck Vocabulary</div>
-    <table>
-      <thead>
-        <tr id="debug-table-header-row">
-          <th>I am learning</th>
-          <th>I speak</th>
-          <th>Word Type</th>
-        </tr>
-      </thead>
-      <tbody id="debug-vocab-tbody">
-        <tr>
-          <td colspan="3" style="text-align: center; color: #aaa;">No deck loaded</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <!-- Debug UI is now generated dynamically by wordpack-logic.js via initializeDebugUI() -->
+  <!-- Toggle debug mode with hotkey: Ctrl + Shift + Alt + D + E + B + U + G -->
 </body>
 </html>

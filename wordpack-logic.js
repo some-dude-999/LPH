@@ -369,6 +369,262 @@ function renderChineseText(chinese, pinyin) {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// DEBUG MODE - Developer Tools for Testing and Debugging
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * DEBUG_MODE - Global flag for debug features
+ *
+ * Controlled by:
+ * - localStorage ('debug_mode' key)
+ * - Hotkey: Ctrl + Shift + Alt + D + E + B + U + G (all keys together)
+ *
+ * When enabled, shows:
+ * - Vocabulary table with all cards in current deck
+ * - Word type (Base Word / Example Word)
+ * - Simulate buttons for testing
+ */
+window.DEBUG_MODE = localStorage.getItem('debug_mode') === 'true'; // Default: false
+
+/**
+ * Toggles debug mode on/off
+ * - Updates localStorage
+ * - Toggles visibility of debug elements
+ * - Returns new state
+ */
+function toggleDebugMode() {
+  window.DEBUG_MODE = !window.DEBUG_MODE;
+  localStorage.setItem('debug_mode', window.DEBUG_MODE.toString());
+
+  // Toggle visibility of debug elements
+  const debugTable = document.getElementById('debug-vocab-table');
+  if (debugTable) {
+    if (window.DEBUG_MODE) {
+      debugTable.style.display = 'block';
+    } else {
+      debugTable.style.display = 'none';
+    }
+  }
+
+  console.log(`[Debug Mode] ${window.DEBUG_MODE ? 'ENABLED' : 'DISABLED'}`);
+  return window.DEBUG_MODE;
+}
+
+/**
+ * DEBUG HOTKEY: Ctrl + Shift + Alt + D + E + B + U + G
+ *
+ * Pressing Ctrl + Shift + Alt, then typing "debug" quickly toggles debug mode
+ *
+ * Implementation:
+ * - Track which keys are currently pressed
+ * - When Ctrl + Shift + Alt are held, track letter sequence
+ * - If "d", "e", "b", "u", "g" typed within 2 seconds, toggle debug
+ */
+(function setupDebugHotkey() {
+  const requiredKeys = ['d', 'e', 'b', 'u', 'g'];
+  let pressedSequence = [];
+  let sequenceTimer = null;
+
+  document.addEventListener('keydown', (e) => {
+    // Check if Ctrl + Shift + Alt are all pressed
+    const modifiersPressed = e.ctrlKey && e.shiftKey && e.altKey;
+
+    if (!modifiersPressed) {
+      // Reset sequence if modifiers not held
+      pressedSequence = [];
+      if (sequenceTimer) clearTimeout(sequenceTimer);
+      return;
+    }
+
+    // Only track letter keys
+    const key = e.key.toLowerCase();
+    if (!/^[a-z]$/.test(key)) return;
+
+    // Add to sequence
+    pressedSequence.push(key);
+
+    // Check if we've completed "debug"
+    const sequenceStr = pressedSequence.join('');
+    if (sequenceStr === 'debug') {
+      e.preventDefault();
+      toggleDebugMode();
+      pressedSequence = [];
+      if (sequenceTimer) clearTimeout(sequenceTimer);
+      return;
+    }
+
+    // Check if current sequence is still a valid prefix of "debug"
+    const targetStr = requiredKeys.join('');
+    if (!targetStr.startsWith(sequenceStr)) {
+      // Invalid sequence, reset
+      pressedSequence = [];
+      if (sequenceTimer) clearTimeout(sequenceTimer);
+      return;
+    }
+
+    // Reset sequence after 2 seconds of inactivity
+    if (sequenceTimer) clearTimeout(sequenceTimer);
+    sequenceTimer = setTimeout(() => {
+      pressedSequence = [];
+    }, 2000);
+  });
+})();
+
+/**
+ * Updates the debug vocabulary table with current deck data
+ *
+ * IMPORTANT: This function has NO CSS styling - table is plain HTML
+ * Each game can add their own styling if needed
+ *
+ * @param {Object} options - Configuration object
+ * @param {Array} options.deck - Current deck of cards
+ * @param {string} options.targetLang - Language being learned (e.g., 'spanish', 'chinese')
+ * @param {string} options.nativeLang - User's native language (e.g., 'english', 'chinese')
+ * @param {Array} options.wordColumns - Column names from __actMeta (e.g., ['spanish', 'english', 'chinese', 'pinyin'])
+ * @param {Object} options.translations - Translation config from __actMeta
+ *
+ * Example:
+ *   updateDebugTable({
+ *     deck: currentDeck,
+ *     targetLang: 'spanish',
+ *     nativeLang: 'english',
+ *     wordColumns: ['spanish', 'english', 'chinese', 'pinyin', 'portuguese'],
+ *     translations: { english: { index: 1, display: 'English' }, ... }
+ *   });
+ */
+function updateDebugTable(options) {
+  if (!window.DEBUG_MODE) return;
+
+  const {
+    deck = [],
+    targetLang = 'target',
+    nativeLang = 'native',
+    wordColumns = [],
+    translations = {}
+  } = options;
+
+  const debugTableBody = document.getElementById('debug-vocab-tbody');
+  const debugTableHeader = document.getElementById('debug-table-header-row');
+  if (!debugTableBody || !debugTableHeader) return;
+
+  // Update table headers (plain text, no styling)
+  debugTableHeader.innerHTML = `
+    <th>I am learning (${targetLang})</th>
+    <th>I speak (${nativeLang})</th>
+    <th>Word Type</th>
+  `;
+
+  // Clear existing rows
+  debugTableBody.innerHTML = '';
+
+  // If no deck, show empty message
+  if (!deck || deck.length === 0) {
+    debugTableBody.innerHTML = '<tr><td colspan="3">No deck loaded</td></tr>';
+    return;
+  }
+
+  // Get native language config
+  const nativeConfig = translations[nativeLang];
+  if (!nativeConfig) {
+    debugTableBody.innerHTML = '<tr><td colspan="3">Translation config not found</td></tr>';
+    return;
+  }
+
+  const nativeColIndex = nativeConfig.index;
+  const targetColIndex = 0; // Always column 0
+
+  // Check if native language is Chinese (needs pinyin)
+  const nativeIsChinese = nativeLang === 'chinese';
+  let nativePinyinColIndex = null;
+  if (nativeIsChinese) {
+    const pinyinIndex = wordColumns.indexOf('pinyin');
+    if (pinyinIndex !== -1) {
+      nativePinyinColIndex = pinyinIndex;
+    }
+  }
+
+  // Populate rows from deck (plain HTML, no CSS classes)
+  deck.forEach((card) => {
+    const row = document.createElement('tr');
+
+    // Column 1: Target language (what they're learning)
+    const targetCell = document.createElement('td');
+    targetCell.textContent = card.spanish || card.chinese || card.english || '';
+    row.appendChild(targetCell);
+
+    // Column 2: Native language (what they speak)
+    const nativeCell = document.createElement('td');
+    if (nativeIsChinese && nativePinyinColIndex !== null && card.rawWord) {
+      // Render Chinese with pinyin
+      const chineseText = card.rawWord[nativeColIndex] || '';
+      const pinyinText = card.rawWord[nativePinyinColIndex] || '';
+      if (chineseText) {
+        const coupled = coupleChineseWithPinyin(chineseText, pinyinText);
+        const coupledDiv = renderChineseWithPinyin(coupled);
+        nativeCell.appendChild(coupledDiv);
+      }
+    } else {
+      nativeCell.textContent = card.translation || '';
+    }
+    row.appendChild(nativeCell);
+
+    // Column 3: Word Type
+    const typeCell = document.createElement('td');
+    if (card.type) {
+      typeCell.textContent = card.type;
+    } else {
+      typeCell.textContent = '—';
+    }
+    row.appendChild(typeCell);
+
+    debugTableBody.appendChild(row);
+  });
+}
+
+/**
+ * Initializes debug UI elements in the DOM
+ * Call this once on page load to set up the debug table HTML
+ *
+ * Creates:
+ * - Debug vocabulary table (hidden by default)
+ *
+ * The table has NO CSS STYLING - just plain HTML
+ * Games can add their own styles if needed
+ */
+function initializeDebugUI() {
+  // Check if debug UI already exists
+  if (document.getElementById('debug-vocab-table')) return;
+
+  // Create debug vocabulary table container
+  const debugContainer = document.createElement('div');
+  debugContainer.id = 'debug-vocab-table';
+  debugContainer.style.display = window.DEBUG_MODE ? 'block' : 'none';
+
+  const title = document.createElement('div');
+  title.textContent = 'Debug: Current Deck Vocabulary';
+  debugContainer.appendChild(title);
+
+  const table = document.createElement('table');
+  table.style.width = '100%';
+  table.style.borderCollapse = 'collapse';
+
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  headerRow.id = 'debug-table-header-row';
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  tbody.id = 'debug-vocab-tbody';
+  table.appendChild(tbody);
+
+  debugContainer.appendChild(table);
+
+  // Append to body (games can move it elsewhere if needed)
+  document.body.appendChild(debugContainer);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // EXPORT FOR MODULE SYSTEMS (optional - currently using globals)
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -383,6 +639,9 @@ if (typeof module !== 'undefined' && module.exports) {
     isWordComplete,
     coupleChineseWithPinyin,
     renderChineseWithPinyin,
-    renderChineseText
+    renderChineseText,
+    toggleDebugMode,
+    updateDebugTable,
+    initializeDebugUI
   };
 }
