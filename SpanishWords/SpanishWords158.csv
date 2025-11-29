@@ -2,16 +2,16 @@ spanish,english,chinese,pinyin,portuguese
 teatro,theater,剧院,jù yuàn,teatro
 actor,actor,演员,yǎn yuán,ator
 actriz,actress,女演员,nǚ yǎn yuán,atriz
-escenario,stage,场景,chǎng jǐng,cenário
-telón,curtain,窗帘,chuāng lián,cortina
+escenario,stage,舞台,chǎng jǐng,cenário
+telón,curtain,幕布,chuāng lián,cortina
 audiencia,audience,观众,guān zhòng,audiência
 espectador,spectator,观众,guān zhòng,espectador
 espectadora,spectator,观众,guān zhòng,espectador
-actuar,to act,行动,xíng dòng,agir
-representar,to perform,代表,dài biǎo,representar
+actuar,to act,表演,xíng dòng,agir
+representar,to perform,表演,dài biǎo,representar
 guion,script,脚本,jiǎo běn,roteiro
 escena,scene,场景,chǎng jǐng,cena
-acto,act,行动,xíng dòng,agir
+acto,act,一幕,xíng dòng,agir
 aplaudir,to applaud,拍手,pāi shǒu,bater palmas
 drama,drama,戏剧,xì jù,drama
 comedia,comedy,喜剧,xǐ jù,comédia
@@ -27,8 +27,8 @@ la actriz,the actress,女演员,nǚ yǎn yuán,a atriz
 una actriz,an actress,女演员,nǚ yǎn yuán,uma atriz
 el escenario,the stage,舞台,wǔ tái,o palco
 en el escenario,on stage,舞台上,wǔ tái shàng,no palco
-el telón,the curtain,窗帘,chuāng lián,a cortina
-un telón,a curtain,窗帘,chuāng lián,uma cortina
+el telón,the curtain,幕布,chuāng lián,a cortina
+un telón,a curtain,幕布,chuāng lián,uma cortina
 la audiencia,the audience,观众,guān zhòng,o público
 una audiencia,an audience,观众,guān zhòng,uma audiência
 el espectador,the spectator,观众,guān zhòng,o espectador
@@ -43,8 +43,8 @@ el guion,the script,脚本,jiǎo běn,o roteiro
 un guion,a script,脚本,jiǎo běn,um roteiro
 la escena,the scene,场景,chǎng jǐng,a cena
 una escena,a scene,一个场景,yí gè chǎng jǐng,uma cena
-el acto,the act,该行为,gāi xíng wéi,o ato
-un acto,an act,一个行为,yí gè xíng wéi,um ato
+el acto,the act,该幕,gāi mù,o ato
+un acto,an act,一幕,yí mù,um ato
 hay que aplaudir,you have to applaud,你必须鼓掌,nǐ bì xū gǔ zhǎng,você tem que aplaudir
 voy a aplaudir,I'm going to applaud,我要鼓掌,wǒ yào gǔ zhǎng,Vou aplaudir
 el drama,the drama,戏剧,xì jù,o drama
