@@ -5,9 +5,9 @@ partner,伴侣,bàn lǚ,pareja,parceiro
 boyfriend,男朋友,nán péng yǒu,novio,namorado
 girlfriend,女朋友,nǚ péng yǒu,novia,namorada
 couple,情侣,qíng lǚ,pareja,casal
-date,约会,rì qī,cita,encontro
+date,约会,yuē huì,cita,encontro
 dating,约会,yuē huì,citas,namoro
-single,单,dān,soltero,solteiro
+single,单身,dān shēn,soltero,solteiro
 married,已婚,yǐ hūn,casado,casado
 divorced,离婚,lí hūn,divorciado,divorciado
 engaged,订婚,dìng hūn,comprometido,noivo
@@ -15,7 +15,7 @@ wedding,婚礼,hūn lǐ,boda,casamento
 anniversary,周年纪念,zhōu nián jì niàn,aniversario,aniversário
 trust,信任,xìn rèn,confianza,confiança
 support,支持,zhī chí,apoyo,apoio
-argue,争论,zhēng lùn,discutir,argumentar
+argue,争吵,zhēng lùn,discutir,argumentar
 respect,尊重,zūn zhòng,respeto,respeito
 commitment,承诺,chéng nuò,compromiso,compromisso
 bond,纽带,niǔ dài,vínculo,vínculo
@@ -39,7 +39,7 @@ still single,仍然单身,réng rán dān shēn,todavía soltero,ainda solteiro
 single life,单身生活,dān shēn shēng huó,vida de soltero,vida de solteiro
 happily married,婚姻幸福,hūn yīn xìng fú,felizmente casado,casado e feliz
 married couple,已婚夫妇,yǐ hūn fū fù,pareja casada,casal
-recently divorced,最近离婚,zuì jìn lí hūn,recientemente divorciada,recentemente divorciado
+recently divorced,最近离婚,zuì jìn lí hūn,recién divorciado,recentemente divorciado
 divorced parents,离婚父母,lí hūn fù mǔ,padres divorciados,pais divorciados
 newly engaged,新订婚,xīn dìng hūn,recién comprometido,recém-noivado
 engaged couple,订婚夫妇,dìng hūn fū fù,pareja comprometida,casal de noivos

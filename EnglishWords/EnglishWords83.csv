@@ -14,7 +14,7 @@ customs,海关,hǎi guān,aduanas,alfândega
 security,安全,ān quán,seguridad,segurança
 departure,出发,chū fā,salida,partida
 arrival,到达,dào dá,llegada,chegada
-delay,延迟,yán chí,retraso,atraso
+delay,延误,yán chí,retraso,atraso
 cancel,取消,qǔ xiāo,cancelar,cancelar
 turbulence,湍流,tuān liú,turbulencia,turbulência
 seatbelt,安全带,ān quán dài,cinturón de seguridad,cinto de segurança
@@ -25,7 +25,7 @@ book flight,预订航班,yù dìng háng bān,reservar vuelo,reservar voo
 flight number,航班号,háng bān hào,número de vuelo,número do voo
 board plane,登机,dēng jī,abordar el avión,embarcar no avião
 plane ticket,机票,jī piào,billete de avión,passagem de avião
-major airline,主要航空公司,zhǔ yào háng kōng gōng sī,importante aerolínea,grande companhia aérea
+major airline,主要航空公司,zhǔ yào háng kōng gōng sī,aerolínea importante,grande companhia aérea
 airline ticket,机票,jī piào,billete de avión,passagem aérea
 terminal building,航站楼,háng zhàn lóu,edificio terminal,edifício do terminal
 terminal gate,登机口,dēng jī kǒu,puerta de la terminal,portão do terminal
@@ -36,9 +36,9 @@ gate number,登机口号码,dēng jī kǒu hào mǎ,número de puerta,número do
 airport runway,机场跑道,jī chǎng pǎo dào,pista del aeropuerto,pista do aeroporto
 runway light,跑道灯,pǎo dào dēng,luz de pista,luz da pista
 carry-on luggage,随身行李,suí shēn xíng lǐ,equipaje de mano,bagagem de mão
-luggage claim,行李领取,xíng lǐ lǐng qǔ,reclamo de equipaje,retirada de bagagem
+luggage claim,行李领取,xíng lǐ lǐng qǔ,recogida de equipaje,retirada de bagagem
 baggage claim,行李领取,xíng lǐ lǐng qǔ,recogida de equipaje,retirada de bagagem
-baggage check,行李托运,xíng lǐ tuō yùn,control de equipaje,verificação de bagagem
+baggage check,行李托运,xíng lǐ tuō yùn,facturación de equipaje,despacho de bagagem
 valid passport,有效护照,yǒu xiào hù zhào,pasaporte válido,passaporte válido
 passport control,护照检查,hù zhào jiǎn chá,control de pasaportes,controle de passaporte
 go through customs,过海关,guò hǎi guān,pasar por la aduana,passar pela alfândega
@@ -46,16 +46,16 @@ customs declaration,报关,bào guān,declaración de aduana,declaração aduane
 airport security,机场安检,jī chǎng ān jiǎn,seguridad aeroportuaria,segurança aeroportuária
 security check,安全检查,ān quán jiǎn chá,control de seguridad,verificação de segurança
 departure time,出发时间,chū fā shí jiān,hora de salida,hora de partida
-departure lounge,出发休息室,chū fā xiū xī shì,sala de embarque,sala de embarque
+departure lounge,候机室,hòu jī shì,sala de embarque,sala de embarque
 arrival time,到达时间,dào dá shí jiān,hora de llegada,hora de chegada
 arrival gate,到达口,dào dá kǒu,puerta de llegada,portão de chegada
 flight delay,航班延误,háng bān yán wù,retraso del vuelo,atraso de voo
-delay notice,延迟通知,yán chí tōng zhī,aviso de retraso,aviso de atraso
+delay notice,延误通知,yán chí tōng zhī,aviso de retraso,aviso de atraso
 cancel flight,取消航班,qǔ xiāo háng bān,cancelar vuelo,cancelar voo
-flight cancel,航班取消,háng bān qǔ xiāo,cancelación de vuelo,voo cancelado
-experience turbulence,经历颠簸,jīng lì dòng dàng,experimentar turbulencias,passar por turbulência
-slight turbulence,轻微颠簸,qīng wēi tuān liú,ligera turbulencia,ligeira turbulência
+flight cancel,航班取消,háng bān qǔ xiāo,cancelación de vuelo,cancelamento de voo
+experience turbulence,经历颠簸,jīng lì diān bǒ,experimentar turbulencias,passar por turbulência
+slight turbulence,轻微颠簸,qīng wēi diān bǒ,ligera turbulencia,ligeira turbulência
 fasten seatbelt,系好安全带,jì hǎo ān quán dài,abrocharse el cinturón de seguridad,apertar cinto de segurança
 seatbelt sign,安全带标志,ān quán dài biāo zhì,señal de cinturón de seguridad,sinal de cinto de segurança
-overhead bin,舱顶行李箱,cāng dǐng xíng lǐ xiāng,compartimento superior,compartimento superior
+overhead bin,头顶行李舱,tóu dǐng xíng lǐ cāng,compartimento superior,compartimento superior
 overhead compartment,头顶行李舱,tóu dǐng xíng lǐ cāng,compartimento superior,compartimento superior

@@ -23,8 +23,8 @@ pay rent,支付租金,zhī fù zū jīn,pagar el alquiler,pagar aluguel
 rent increase,租金上涨,zū jīn shàng zhǎng,aumento del alquiler,aumento de aluguel
 sign lease,签订租约,qiān dìng zū yuē,firmar contrato de arrendamiento,assinar contrato de arrendamento
 lease agreement,租赁协议,zū lìn xié yì,contrato de arrendamiento,contrato de locação
-contact landlord,联系楼主,lián xì lóu zhǔ,contactar al propietario,contactar o senhorio
-landlord approval,楼主同意,lóu zhǔ tóng yì,aprobación del propietario,aprovação do senhorio
+contact landlord,联系房东,lián xì lóu zhǔ,contactar al propietario,contactar o senhorio
+landlord approval,房东同意,lóu zhǔ tóng yì,aprobación del propietario,aprovação do senhorio
 new tenant,新租户,xīn zū hù,nuevo inquilino,novo inquilino
 tenant rights,租户权利,zū hù quán lì,derechos del inquilino,direitos do inquilino
 studio apartment,单间公寓,dān jiān gōng yù,apartamento tipo estudio,apartamento estúdio
@@ -36,7 +36,7 @@ property value,财产价值,cái chǎn jià zhí,valor de la propiedad,valor da 
 nice neighborhood,不错的社区,bù cuò de shè qū,bonito barrio,bairro legal
 neighborhood watch,邻里守望,lín lǐ shǒu wàng,vigilancia vecinal,vigilância de bairro
 pay utilities,支付水电费,zhī fù shuǐ diàn fèi,pagar servicios públicos,pagar serviços públicos
-utilities included,包括实用程序,bāo kuò shí yòng chéng xù,servicios públicos incluidos,serviços incluídos
+utilities included,包含水电等费用,bāo hán shuǐ diàn děng fèi yòng,servicios públicos incluidos,serviços incluídos
 regular maintenance,定期保养,dìng qī bǎo yǎng,mantenimiento regular,manutenção regular
 maintenance fee,维护费,wéi hù fèi,cuota de mantenimiento,taxa de manutenção
 fully furnished,家具齐全,jiā jù qí quán,completamente amueblado,totalmente mobiliado
@@ -47,11 +47,11 @@ facing eviction,面临驱逐,miàn lín qū zhú,enfrentando el desalojo,enfrent
 eviction notice,驱逐通知,qū zhú tōng zhī,aviso de desalojo,aviso de despejo
 renovate house,装修房子,zhuāng xiū fáng zi,renovar casa,reformar casa
 renovate kitchen,装修厨房,zhuāng xiū chú fáng,renovar la cocina,renovar cozinha
-inspect property,检查财产,jiǎn chá cái chǎn,inspeccionar la propiedad,fiscalizar imóvel
-home inspect,上门检查,shàng mén jiǎn chá,inspeccionar la casa,inspeção residencial
+inspect property,检查房产,jiǎn chá fáng chǎn,inspeccionar la propiedad,fiscalizar imóvel
+home inspect,房屋检查,fáng wū jiǎn chá,inspeccionar la casa,inspeção residencial
 central heating,中央供暖,zhōng yāng gōng nuǎn,calefacción central,aquecimento central
 heating system,供暖系统,gōng nuǎn xì tǒng,sistema de calefacción,sistema de aquecimento
-air cooling,风冷,fēng lěng,refrigeración por aire,refrigeração a ar
+air cooling,制冷,fēng lěng,refrigeración por aire,refrigeração a ar
 cooling system,冷却系统,lěng què xì tǒng,sistema de refrigeración,sistema de refrigeração
 relocate to,搬迁至,bān qiān zhì,trasladarse a,mudar para
 relocate office,搬迁办公室,bān qiān bàn gōng shì,reubicar la oficina,mudar de escritório

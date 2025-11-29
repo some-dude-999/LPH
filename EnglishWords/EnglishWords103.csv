@@ -1,20 +1,20 @@
 english,chinese,pinyin,spanish,portuguese
 opinion,意见,yì jiàn,opinión,opinião
 oppose,反对,fǎn duì,oponerse,opor-se
-view,观点,guān diǎn,ver,ver
+view,观点,guān diǎn,punto de vista,visão
 perspective,观点,guān diǎn,perspectiva,perspectiva
 argument,论点,lùn diǎn,argumento,argumento
 debate,辩论,biàn lùn,debate,debate
-claim,声称,shēng chēng,reclamar,reivindicação
+claim,声称,shēng chēng,afirmar,afirmar
 assert,断言,duàn yán,afirmar,afirmar
-contend,主张,zhǔ zhāng,contender,contender
+contend,主张,zhǔ zhāng,sostener,sustentar
 maintain,维持,wéi chí,mantener,manter
 stance,立场,lì chǎng,postura,postura
 standpoint,立场,lì chǎng,punto de vista,ponto de vista
 viewpoint,观点,guān diǎn,punto de vista,ponto de vista
 outlook,展望,zhǎn wàng,perspectiva,perspectiva
 notion,概念,gài niàn,noción,noção
-judgment,判断,pàn duàn,sentencia,julgamento
+judgment,判断,pàn duàn,juicio,julgamento
 conviction,信念,xìn niàn,convicción,convicção
 sentiment,情绪,qíng xù,sentimiento,sentimento
 attitude,态度,tài dù,actitud,atitude
@@ -31,13 +31,13 @@ strong argument,强有力的论据,qiáng yǒu lì de lùn jù,argumento fuerte,
 argument against,反对,fǎn duì,argumento en contra,argumento contra
 great debate,伟大的辩论,wěi dà de biàn lùn,gran debate,grande debate
 debate about,辩论,biàn lùn,debate sobre,debate sobre
-make a claim,提出索赔,tí chū suǒ péi,hacer un reclamo,fazer uma reclamação
-claim that,声称,shēng chēng,afirmar que,afirmam que
+make a claim,提出主张,tí chū suǒ péi,hacer una afirmación,fazer uma afirmação
+claim that,声称,shēng chēng,afirmar que,afirmar que
 I assert,我断言,wǒ duàn yán,Afirmo,Eu afirmo
 assert that,断言,duàn yán,afirmar que,afirmar que
 I contend,我认为,wǒ rèn wéi,Yo sostengo,Eu afirmo
-contend that,认为,rèn wéi,sostiene que,afirmam que
-maintain that,坚持认为,jiān chí rèn wéi,mantener que,mantenha isso
+contend that,认为,rèn wéi,sostiene que,afirmar que
+maintain that,坚持认为,jiān chí rèn wéi,mantener que,manter que
 maintain position,维持立场,wéi chí lì chǎng,mantener la posición,manter posição
 firm stance,立场坚定,lì chǎng jiān dìng,postura firme,postura firme
 stance on,对,duì,postura sobre,posição sobre
@@ -50,7 +50,7 @@ outlook on,展望,zhǎn wàng,perspectivas sobre,perspectivas sobre
 general notion,一般概念,yì bān gài niàn,noción general,noção geral
 notion that,认为...的概念,rèn wéi... de gài niàn,noción de que,noção de que
 good judgment,良好的判断力,liáng hǎo de pàn duàn lì,buen juicio,bom senso
-judgment call,判断力,pàn duàn lì,decisión judicial,chamada de julgamento
+judgment call,判断力,pàn duàn lì,decisión subjetiva,decisão subjetiva
 strong conviction,坚定的信念,jiān dìng de xìn niàn,fuerte convicción,forte convicção
 conviction that,坚信,jiān xìn,convicción de que,convicção de que
 public sentiment,舆论,yú lùn,sentimiento público,sentimento público
