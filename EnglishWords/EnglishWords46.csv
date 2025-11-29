@@ -9,7 +9,7 @@ west,西,xī,oeste,oeste
 corner,角落,jiǎo luò,esquina,esquina
 across,跨越,kuà yuè,al otro lado,do outro lado
 along,沿着,yán zhe,a lo largo de,ao longo de
-toward,走向,zǒu xiàng,hacia,em direção
+toward,走向,zǒu xiàng,hacia,em direção a
 away,离开,lí kāi,lejos,longe
 distance,距离,jù lí,distancia,distância
 direction,方向,fāng xiàng,dirección,direção
@@ -40,7 +40,7 @@ across from,对面的,duì miàn de,frente a,em frente
 along the way,一路走来,yī lù zǒu lái,en el camino,ao longo do caminho
 walk along,一起走,yì qǐ zǒu,caminar por,caminhar por
 toward me,向着我,xiàng zhe wǒ,hacia mí,em minha direção
-toward the end,走向最后,zǒu xiàng zuì hòu,hacia el final,no final
+toward the end,走向最后,zǒu xiàng zuì hòu,hacia el final,em direção ao final
 go away,走开,zǒu kāi,vete,vá embora
 far away,远方,yuǎn fāng,muy lejos,longe
 short distance,短距离,duǎn jù lí,corta distancia,curta distância
@@ -49,7 +49,7 @@ wrong direction,方向错误,fāng xiàng cuò wù,dirección equivocada,direç�
 right direction,正确的方向,zhèng què de fāng xiàng,dirección correcta,direção certa
 use a map,使用地图,shǐ yòng dì tú,utilizar un mapa,use um mapa
 check the map,查看地图,chá kàn dì tú,consulta el mapa,confira o mapa
-next block,下一个街区,xià yí gè jiē qū,siguiente bloque,próximo bloco
+next block,下一个街区,xià yí gè jiē qū,siguiente bloque,próximo quarteirão
 around the block,街区附近,jiē qū fù jìn,alrededor de la cuadra,ao redor do quarteirão
 busy intersection,繁忙的十字路口,fán máng de shí zì lù kǒu,intersección muy transitada,cruzamento movimentado
 at the intersection,在十字路口,zài shí zì lù kǒu,en la intersección,no cruzamento

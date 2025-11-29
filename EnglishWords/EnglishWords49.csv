@@ -5,22 +5,22 @@ refrigerator,冰箱,bīng xiāng,refrigerador,geladeira
 fridge,冰箱,bīng xiāng,nevera,geladeira
 microwave,微波炉,wēi bō lú,microondas,microondas
 sink,水槽,shuǐ cáo,fregadero,pia
-counter,柜台,guì tái,contador,contador
+counter,柜台,guì tái,encimera,bancada
 knife,刀,dāo,cuchillo,faca
 fork,叉子,chā zi,tenedor,garfo
 spoon,勺子,sháo zi,cuchara,colher
-plate,盘子,pán zi,plato,placa
+plate,盘子,pán zi,plato,prato
 bowl,碗,wǎn,cuenco,tigela
 cup,杯子,bēi zi,taza,xícara
-glass,玻璃杯,bō lí bēi,vidrio,vidro
+glass,玻璃杯,bō lí bēi,vaso,copo
 pot,锅,guō,olla,pote
 pan,平底锅,píng dǐ guō,sartén,panela
 blender,搅拌机,jiǎo bàn jī,licuadora,liquidificador
 toaster,烤面包机,kǎo miàn bāo jī,tostadora,torradeira
 kettle,水壶,shuǐ hú,tetera,chaleira
-whisk,搅拌,jiǎo bàn,batir,batedor
+whisk,搅拌,jiǎo bàn,batidor,batedor
 gas stove,燃气灶,rán qì zào,estufa de gas,fogão a gás
-stove top,炉顶,lú dǐng,estufa,fogão
+stove top,炉顶,lú dǐng,superficie de la estufa,tampo do fogão
 bake in oven,烤箱烤,kǎo xiāng kǎo,hornear en el horno,assar no forno
 oven door,烤箱门,kǎo xiāng mén,puerta del horno,porta do forno
 in the refrigerator,在冰箱里,zài bīng xiāng lǐ,en el frigorífico,na geladeira
@@ -50,9 +50,9 @@ water glass,水杯,shuǐ bēi,vaso de agua,copo de água
 cooking pot,煮锅,zhǔ guō,olla para cocinar,panela
 pot lid,锅盖,guō gài,tapa de olla,tampa da panela
 frying pan,煎锅,jiān guō,sartén,frigideira
-pan fried,平底锅煎,píng dǐ guō jiān,frito,frigideira frita
+pan fried,煎,jiān,frito,frigideira frita
 kitchen blender,厨房搅拌机,chú fáng jiǎo bàn jī,batidora de cocina,liquidificador de cozinha
-blender bottle,搅拌瓶,jiǎo bàn píng,botella de licuadora,garrafa liquidificador
+blender bottle,搅拌瓶,jiǎo bàn píng,botella mezcladora,coqueteleira
 bread toaster,面包烤面包机,miàn bāo kǎo miàn bāo jī,tostadora de pan,torradeira de pão
 in the toaster,在烤面包机里,zài kǎo miàn bāo jī lǐ,en la tostadora,na torradeira
 tea kettle,茶壶,chá hú,tetera,chaleira

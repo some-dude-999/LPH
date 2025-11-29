@@ -1,12 +1,12 @@
 english,chinese,pinyin,spanish,portuguese
 wash,洗,xǐ,lavar,lavar
-dry,干,gān,seco,seco
+dry,干,gān,secar,secar
 sweep,扫一扫,sǎo yī sǎo,barrer,varrer
 mop,拖,tuō,fregona,esfregão
-vacuum,吸尘,xī chén,vacío,vácuo
+vacuum,吸尘,xī chén,aspirar,aspirar
 dust,除尘,chú chén,polvo,poeira
 wipe,擦拭,cā shì,limpiar,limpar
-scrub,磨砂,mó shā,fregar,esfregar
+scrub,擦洗,cā xǐ,fregar,esfregar
 polish,擦亮,cā liàng,pulir,polir
 fold,折叠,zhé dié,doblar,dobrar
 iron,熨烫,yùn tàng,planchar,passar
@@ -21,7 +21,7 @@ arrange,安排,ān pái,organizar,organizar
 discard,丢弃,diū qì,descartar,descartar
 wash dishes,洗碗,xǐ wǎn,lavar los platos,lavar louça
 wash clothes,洗衣服,xǐ yī fú,lavar la ropa,lavar roupas
-dry off,擦干燥,cā gān zào,secar,seque
+dry off,擦干,cā gān,secar,secar
 dry clean,干洗,gān xǐ,limpieza en seco,lavagem a seco
 sweep the floor,扫地,sǎo dì,barrer el piso,varrer o chão
 sweep up,扫起来,sǎo qǐ lái,barrer,varrer
@@ -35,14 +35,14 @@ wipe down,擦拭,cā shì,limpiar,limpar
 wipe clean,擦干净,cā gān jìng,limpiar con un paño,limpe
 scrub hard,用力擦洗,yòng lì cā xǐ,frotar fuerte,esfregue com força
 scrub the floor,擦地板,cā dì bǎn,fregar el piso,esfregar o chão
-polish shoes,擦亮鞋子,cā liàng xié zi,lustrar zapatos,sapatos polidos
+polish shoes,擦亮鞋子,cā liàng xié zi,lustrar zapatos,engraxar sapatos
 nail polish,指甲油,zhǐ jiǎ yóu,esmalte de uñas,esmalte
 fold clothes,叠衣服,dié yī fú,doblar la ropa,dobrar roupas
-fold up,折叠起来,zhé dié qǐ lái,doblar,dobre
-iron clothes,熨衣服,yùn yī fú,planchar la ropa,roupas de ferro
+fold up,折叠起来,zhé dié qǐ lái,doblar,dobrar
+iron clothes,熨衣服,yùn yī fú,planchar la ropa,passar roupa
 iron out,熨烫,yùn tàng,solucionar,resolver
 tidy up,整理,zhěng lǐ,ordenar,arrumar
-keep tidy,保持整洁,bǎo chí zhěng jié,mantener ordenado,mantenha-se arrumado
+keep tidy,保持整洁,bǎo chí zhěng jié,mantener ordenado,manter arrumado
 repair it,修复它,xiū fù tā,repararlo,consertá-lo
 home repair,上门维修,shàng mén wéi xiū,reparaciones del hogar,reparação doméstica
 pick apples,摘苹果,zhāi píng guǒ,recoger manzanas,colher maçãs
