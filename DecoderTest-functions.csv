@@ -1,0 +1,17 @@
+function,description,reusability
+saveState,Saves current UI selections and mode toggles to localStorage,6
+loadState,Loads saved selections from localStorage into memory,6
+restoreSavedState,Restores saved values and validates them against current options,6
+validateAndFixState,Ensures loaded state matches available options and resets invalid entries,7
+initialize,Main initialization flow that loads data and wires UI interactions,8
+syncUIToState,Updates UI controls to match the current in-memory state,7
+loadLanguageData,Loads and decodes all acts for the selected language into caches,9
+setupLanguageRadioButtons,Attaches change listeners for language toggles and reloads data,7
+setupModeCheckboxes,Config-driven handler for enabling/disabling gameplay modes,7
+resetListeningState,Resets pronunciation-recognition state for a row,8
+startListeningForPronunciation,Starts speech recognition and scores the result,8
+playTypingSound,Plays the shared typing/mechanical feedback sound on keypress,9
+handleTypingInput,Processes typing input and advances cursor for the decoder table,8
+updateTypingDisplay,Refreshes typing placeholders and error markers in the table,7
+displayVocabulary,Main render for the vocabulary table including debug info,6
+autoSelectFirstActAndPackFromLoaded,Selects the first available act/pack using shared helper and updates UI,8

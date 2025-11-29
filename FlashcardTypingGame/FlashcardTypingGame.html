@@ -2158,44 +2158,29 @@
   </div>
 
   <script type="module">
-    // ============================================================
-    // KEY FEATURE: Multi-language obfuscated module support
-    // Core Objective: Load compressed word data efficiently with act-based organization
-    // Key Behaviors:
-    //   - Decoder function handles 3-layer deobfuscation (base64 + zlib + reversal)
-    //   - Module configuration supports all languages (Chinese, Spanish, English)
-    //   - Currently only Spanish acts are loaded
-    //   - Future: Can easily add other languages by uncommenting module URLs
-    // ============================================================
-
-    // Decoder function for obfuscated modules (same as DecoderTest.html)
-    async function decodeObfuscatedModule(url) {
-      try {
-        // 1. Import the obfuscated module (contains base64 string in 'w' export)
-        const module = await import(url);
-        const compressedB64 = module.w;
-
-        // 2. Decode base64 to binary
-        const compressedBinary = Uint8Array.from(atob(compressedB64), c => c.charCodeAt(0));
-
-        // 3. Decompress with pako (zlib)
-        const decompressedBinary = pako.inflate(compressedBinary);
-
-        // 4. Convert binary to string
-        const reversedJson = new TextDecoder('utf-8').decode(decompressedBinary);
-
-        // 5. Reverse the string (undo the salt)
-        const jsonStr = reversedJson.split('').reverse().join('');
-
-        // 6. Parse JSON to get the original data
-        const data = JSON.parse(jsonStr);
-
-        return data;  // Returns object with all packs: { p1_1_name: {meta, words}, ... }
-      } catch (error) {
-        console.error('Failed to decode module:', error);
-        throw error;
-      }
-    }
+    const {
+      decodeObfuscatedModule,
+      loadAct: sharedLoadAct,
+      getTargetLanguage,
+      toTitleCase,
+      getTranslationsConfig,
+      getDefaultTranslation,
+      getWordColumns,
+      getValidLanguages,
+      getTtsLanguageCode,
+      coupleChineseWithPinyin,
+      renderChineseWithPinyin,
+      renderChineseText,
+      normalizeChar,
+      validateTargetLanguageConsistency,
+      playDingSound,
+      playBuzzSound,
+      playButtonClickSound,
+      playCardFlipSound,
+      playKeyboardSound,
+      playScribbleSound,
+      getAudioContext
+    } = window;
 
     // ============================================================
     // MODULE URL SETS - Predefined module arrays for each language
@@ -2243,41 +2228,6 @@
     let targetLanguage = null; // Will be set to 'spanish', 'chinese', 'english', etc.
     let targetLanguageDisplay = null; // Title case version for UI: 'Spanish', 'Chinese', 'English'
 
-    // Helper to get the target language from loaded modules
-    function getTargetLanguage() {
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.wordColumns && meta.wordColumns[0]) {
-          return meta.wordColumns[0].toLowerCase();
-        }
-      }
-      return null;
-    }
-
-    // Helper to get title case version of target language
-    function toTitleCase(str) {
-      if (!str) return '';
-      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-    }
-
-    // Validate that all loaded modules have the same target language
-    function validateTargetLanguageConsistency() {
-      const languages = new Set();
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.wordColumns && meta.wordColumns[0]) {
-          languages.add(meta.wordColumns[0].toLowerCase());
-        }
-      }
-      if (languages.size > 1) {
-        const langList = Array.from(languages).join(', ');
-        console.error(`[FATAL] Modules have inconsistent target languages: ${langList}`);
-        console.error('All modules must have the same wordColumns[0] value!');
-        return false;
-      }
-      return true;
-    }
-
     // Check if the target language is Chinese (requires special handling)
     function isChineseMode() {
       return targetLanguage === 'chinese';
@@ -2293,38 +2243,6 @@
     }
 
     // Helper to get translations config from first loaded act's __actMeta
-    function getTranslationsConfig() {
-      // Find first loaded act that has __actMeta
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.translations) {
-          return meta.translations;
-        }
-      }
-      return null; // No modules loaded yet
-    }
-
-    // Helper to get default translation from loaded metadata
-    function getDefaultTranslation() {
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.defaultTranslation) {
-          return meta.defaultTranslation;
-        }
-      }
-      return 'english'; // Fallback
-    }
-
-    // Helper to get word columns from loaded metadata
-    function getWordColumns() {
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.wordColumns) {
-          return meta.wordColumns;
-        }
-      }
-      return null;
-    }
 
     let currentDeck = [];
     let originalDeck = [];
@@ -2338,195 +2256,6 @@
     // DEBUG MODE: Toggle debug features (word type, vocab table, module selector)
     // ============================================================
     let DEBUG_MODE = localStorage.getItem('debug_mode') !== 'false'; // Default: true (persists across sessions)
-
-    // Helper to get valid languages from loaded metadata (for validation)
-    function getValidLanguages() {
-      const translations = getTranslationsConfig();
-      return translations ? Object.keys(translations) : [];
-    }
-
-    // Helper to get TTS language code from loaded module metadata
-    // Derives from wordColumns[0] - the primary language of the deck
-    function getTtsLanguageCode() {
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.wordColumns && meta.wordColumns[0]) {
-          const primaryLang = meta.wordColumns[0].toLowerCase();
-          // Map language names to TTS language codes (full locale for better voice matching)
-          const langMap = {
-            'spanish': 'es-ES',
-            'chinese': 'zh-CN',
-            'english': 'en-US',
-            'portuguese': 'pt-BR',
-            'french': 'fr-FR',
-            'vietnamese': 'vi-VN',
-            'thai': 'th-TH',
-            'indonesian': 'id-ID',
-            'malay': 'ms-MY',
-            'filipino': 'fil-PH'
-          };
-          return langMap[primaryLang] || null;
-        }
-      }
-      return null; // No modules loaded yet
-    }
-
-    // ===================================================================================
-    // CHINESE CHARACTER + PINYIN COUPLING SYSTEM
-    // Core Objective: Keep Chinese characters and their pinyin syllables coupled
-    //
-    // Anti-Decoupling Principle: Chinese characters and pinyin MUST stay together
-    // Example: "小猫" (xiǎo māo) → [{char:"小", pinyin:"xiǎo"}, {char:"猫", pinyin:"māo"}]
-    //
-    // This ensures when rendering Chinese, we can ALWAYS show:
-    //   小    猫      (characters on top)
-    //  xiǎo  māo     (pinyin below each character)
-    //
-    // Functions:
-    //   - coupleChineseWithPinyin(chinese, pinyin) → array of {char, pinyin}
-    //   - renderChineseWithPinyin(coupledArray) → HTML element with coupled display
-    //   - renderChineseText(chinese, pinyin) → convenience function combining both
-    // ===================================================================================
-
-    /**
-     * Couples each Chinese character with its corresponding pinyin syllable
-     * @param {string} chineseStr - Chinese characters (e.g., "小猫")
-     * @param {string} pinyinStr - Space-separated pinyin syllables (e.g., "xiǎo māo")
-     * @returns {Array<{char: string, pinyin: string}>} - Array of coupled char/pinyin objects
-     *
-     * Example: coupleChineseWithPinyin("小猫", "xiǎo māo")
-     *   → [{char: "小", pinyin: "xiǎo"}, {char: "猫", pinyin: "māo"}]
-     */
-    function coupleChineseWithPinyin(chineseStr, pinyinStr) {
-      // Handle empty/null inputs gracefully
-      if (!chineseStr) return [];
-      if (!pinyinStr) {
-        // No pinyin available - return chars with empty pinyin
-        return [...chineseStr].map(char => ({ char, pinyin: '' }));
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // CHARACTER-BY-CHARACTER MAPPING (Simplified)
-      // ════════════════════════════════════════════════════════════════════════
-      // Example: "早上好，先生" → "zǎo shàng hǎo， xiān shēng"
-      //   早 → zǎo
-      //   上 → shàng
-      //   好 → hǎo
-      //   ， → ，
-      //   先 → xiān
-      //   生 → shēng
-      //
-      // Edge cases (Latin in Chinese): "ATM机" → "ATM jī"
-      //   A → A
-      //   T → T
-      //   M → M
-      //   机 → jī
-      // ════════════════════════════════════════════════════════════════════════
-
-      // Split pinyin by spaces
-      const pinyinTokens = pinyinStr.trim().split(/\s+/);
-      const result = [];
-      let tokenIndex = 0;
-      let latinLetterIndex = 0; // For consuming Latin tokens letter-by-letter
-
-      for (const char of chineseStr) {
-        if (tokenIndex >= pinyinTokens.length) {
-          // Ran out of pinyin tokens - mark as mismatch
-          result.push({ char, pinyin: '?' });
-          continue;
-        }
-
-        const currentToken = pinyinTokens[tokenIndex];
-        // Strip Chinese punctuation to get clean syllable/word
-        const cleanToken = currentToken.replace(/[，。！？、；：""''（）《》【】…—]/g, '');
-
-        if (/[\u4e00-\u9fff]/.test(char)) {
-          // ═══════════════════════════════════════════════════════════
-          // CHINESE CHARACTER → consume one token
-          // ═══════════════════════════════════════════════════════════
-          result.push({ char, pinyin: cleanToken || '?' });
-          tokenIndex++;
-          latinLetterIndex = 0;
-        } else if (/[A-Za-z]/.test(char)) {
-          // ═══════════════════════════════════════════════════════════
-          // LATIN LETTER → handle edge cases (ATM, DNA, WhatsApp, etc.)
-          // ═══════════════════════════════════════════════════════════
-          if (/^[A-Za-z]+$/.test(cleanToken)) {
-            // Current token is all-Latin (like "ATM", "DNA", "WhatsApp")
-            // Consume letter-by-letter: A→A, T→T, M→M
-            const letter = cleanToken[latinLetterIndex] || char;
-            result.push({ char, pinyin: letter });
-            latinLetterIndex++;
-
-            if (latinLetterIndex >= cleanToken.length) {
-              // Finished consuming this Latin token
-              tokenIndex++;
-              latinLetterIndex = 0;
-            }
-          } else {
-            // Token is not pure Latin → just map letter to itself
-            result.push({ char, pinyin: char });
-          }
-        } else {
-          // ═══════════════════════════════════════════════════════════
-          // PUNCTUATION → maps to itself
-          // ═══════════════════════════════════════════════════════════
-          result.push({ char, pinyin: char });
-        }
-      }
-
-      return result;
-    }
-
-    /**
-     * Renders a coupled Chinese array as an HTML element with char on top, pinyin below
-     * Always shows both characters and pinyin (inseparable pair)
-     * @param {Array<{char: string, pinyin: string}>} coupledArray - From coupleChineseWithPinyin()
-     * @returns {HTMLElement} - Span element with flex-column groups for each character
-     */
-    function renderChineseWithPinyin(coupledArray) {
-      const container = document.createElement('span');
-      container.className = 'chinese-coupled';
-
-      coupledArray.forEach(({ char, pinyin }) => {
-        const charGroup = document.createElement('span');
-        charGroup.className = 'char-group';
-
-        // Chinese character (on top)
-        const charSpan = document.createElement('span');
-        charSpan.className = 'chinese-char';
-        charSpan.textContent = char;
-        charGroup.appendChild(charSpan);
-
-        // Pinyin (below) - always shown with characters
-        const pinyinSpan = document.createElement('span');
-        pinyinSpan.className = 'pinyin';
-        pinyinSpan.textContent = pinyin;
-        charGroup.appendChild(pinyinSpan);
-
-        container.appendChild(charGroup);
-      });
-
-      return container;
-    }
-
-    /**
-     * Convenience function: Couples and renders Chinese text in one call
-     * @param {string} chinese - Chinese characters
-     * @param {string} pinyin - Space-separated pinyin
-     * @returns {HTMLElement} - Ready-to-append HTML element
-     */
-    function renderChineseText(chinese, pinyin) {
-      const coupled = coupleChineseWithPinyin(chinese, pinyin);
-      return renderChineseWithPinyin(coupled);
-    }
-
-    /**
-     * Returns HTML string for Chinese text (useful for innerHTML assignments)
-     * @param {string} chinese - Chinese characters
-     * @param {string} pinyin - Space-separated pinyin
-     * @returns {string} - HTML string
-     */
     function getChineseHtml(chinese, pinyin) {
       const element = renderChineseText(chinese, pinyin);
       return element.outerHTML;
@@ -2699,270 +2428,6 @@
       recognition.maxAlternatives = 5;
     }
 
-    // Audio context for sounds
-    let audioContext = null;
-    
-    function getAudioContext() {
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      return audioContext;
-    }
-    
-    // ===================================================================================
-    // CARD FLIP SOUND - "Cloud Nine" (Ultra Soft 10)
-    // We worked REALLY hard on this sound. Tested dozens of variants to get this perfect.
-    // It's soft, muffled, satisfying - like floating on clouds.
-    // DO NOT DELETE THIS CODE EVER. SERIOUSLY. NEVER DELETE THIS.
-    // ===================================================================================
-    function playCardFlipSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-      
-      const bufferSize = ctx.sampleRate * 0.23;
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-      
-      for (let i = 0; i < bufferSize; i++) {
-        const t = i / bufferSize;
-        const env = Math.sin(t * Math.PI) * Math.sin(t * Math.PI * 0.38) * 0.26;
-        data[i] = (Math.random() * 2 - 1) * env;
-      }
-      
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-      
-      const lp = ctx.createBiquadFilter();
-      lp.type = 'lowpass';
-      lp.frequency.value = 400;
-      
-      const lp2 = ctx.createBiquadFilter();
-      lp2.type = 'lowpass';
-      lp2.frequency.value = 580;
-      
-      const gain = ctx.createGain();
-      gain.gain.value = 2.5; // Page turn volume
-
-      source.connect(lp);
-      lp.connect(lp2);
-      lp2.connect(gain);
-      gain.connect(ctx.destination);
-      source.start();
-    }
-
-    // ===================================================================================
-    // DING SOUND - "Gentle Bell" - Soft bell with subtle harmonics
-    // C5, E5, G5 chord for achievements and correct answers
-    // ===================================================================================
-    function playDingSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-      const frequencies = [523.25, 659.25, 783.99]; // C5, E5, G5 chord
-
-      frequencies.forEach((freq, i) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        const filter = ctx.createBiquadFilter();
-
-        filter.type = 'lowpass';
-        filter.frequency.value = 1500;
-
-        osc.type = 'sine';
-        osc.frequency.value = freq;
-
-        // Volume decreases for each note in chord (0.2, 0.16, 0.12)
-        const vol = 0.2 - i * 0.04;
-        gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(vol, now + 0.01);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
-
-        osc.connect(filter);
-        filter.connect(gain);
-        gain.connect(ctx.destination);
-
-        osc.start(now + i * 0.03); // Stagger start times
-        osc.stop(now + 0.7);
-      });
-    }
-
-    // ===================================================================================
-    // BUZZ SOUND - "Warm Nope" - Gentle two-tone 'nope' sound
-    // D4 to A3 descending - friendly rejection sound for wrong answers
-    // ===================================================================================
-    function playBuzzSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-      const notes = [293.66, 220]; // D4, A3 - descending "nope"
-
-      notes.forEach((freq, i) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        const filter = ctx.createBiquadFilter();
-
-        filter.type = 'lowpass';
-        filter.frequency.value = 800;
-
-        osc.type = 'sine';
-        osc.frequency.value = freq;
-
-        const startTime = now + i * 0.12; // Stagger the two notes
-        gain.gain.setValueAtTime(0, startTime);
-        gain.gain.linearRampToValueAtTime(0.2, startTime + 0.01);
-        gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.15);
-
-        osc.connect(filter);
-        filter.connect(gain);
-        gain.connect(ctx.destination);
-
-        osc.start(startTime);
-        osc.stop(startTime + 0.15);
-      });
-    }
-
-    // ===================================================================================
-    // BUTTON CLICK SOUND - "Click Snap J - Satisfying"
-    // This is the perfect UI click sound. Balanced, satisfying snap with subtle low end.
-    // DO NOT DELETE THIS SOUND ASSET. NEVER. WE MEAN IT.
-    // ===================================================================================
-    function playButtonClickSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-      
-      const bufferSize = ctx.sampleRate * 0.03;
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-      
-      for (let i = 0; i < bufferSize; i++) {
-        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i/bufferSize, 4.5);
-      }
-      
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-
-      // More muffled - lower frequency lowpass filter instead of bandpass
-      const lp = ctx.createBiquadFilter();
-      lp.type = 'lowpass';
-      lp.frequency.value = 800; // Much lower for muffled sound (was 2800 bandpass)
-      lp.Q.value = 0.7;
-
-      // Add second lowpass for extra muffling
-      const lp2 = ctx.createBiquadFilter();
-      lp2.type = 'lowpass';
-      lp2.frequency.value = 1200;
-
-      // Subtle low end
-      const osc = ctx.createOscillator();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(120, now); // Lower frequency
-      osc.frequency.exponentialRampToValueAtTime(60, now + 0.025);
-
-      const oscGain = ctx.createGain();
-      oscGain.gain.setValueAtTime(0.05, now); // Quieter (was 0.1)
-      oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
-
-      const gain = ctx.createGain();
-      gain.gain.value = 0.75; // Much louder - increased from 0.45
-
-      source.connect(lp);
-      lp.connect(lp2);
-      lp2.connect(gain);
-      gain.connect(ctx.destination);
-      osc.connect(oscGain);
-      oscGain.connect(ctx.destination);
-
-      source.start();
-      osc.start();
-      osc.stop(now + 0.04);
-    }
-
-    // ===================================================================================
-    // MECHANICAL KEYBOARD SOUND - Satisfying tactile click (kept for future reference)
-    // ===================================================================================
-    function playKeyboardSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-
-      const bufferSize = ctx.sampleRate * 0.04;
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-
-      for (let i = 0; i < bufferSize; i++) {
-        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i/bufferSize, 5);
-      }
-
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-
-      const hp = ctx.createBiquadFilter();
-      hp.type = 'highpass';
-      hp.frequency.value = 2000;
-
-      const bp = ctx.createBiquadFilter();
-      bp.type = 'bandpass';
-      bp.frequency.value = 4500;
-      bp.Q.value = 2;
-
-      const gain = ctx.createGain();
-      gain.gain.value = 0.3;
-
-      source.connect(hp);
-      hp.connect(bp);
-      bp.connect(gain);
-      gain.connect(ctx.destination);
-      source.start();
-    }
-
-    // ===================================================================================
-    // MECHANICAL KEYBOARD TYPING SOUND - Satisfying clicky mechanical keyboard
-    // ===================================================================================
-    function playScribbleSound() {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-
-      // Very short duration for crisp mechanical click (0.015-0.025 seconds)
-      const duration = 0.015 + Math.random() * 0.01;
-      const bufferSize = ctx.sampleRate * duration;
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-
-      // Generate sharp click noise
-      for (let i = 0; i < bufferSize; i++) {
-        const envelope = Math.pow(1 - i/bufferSize, 8); // Very sharp decay for crisp click
-        const noise = (Math.random() * 2 - 1);
-        data[i] = noise * envelope;
-      }
-
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-
-      // High frequency for mechanical click (2000-3500 Hz)
-      const bp1 = ctx.createBiquadFilter();
-      bp1.type = 'bandpass';
-      bp1.frequency.value = 2000 + Math.random() * 1500; // 2000-3500 Hz - clicky range
-      bp1.Q.value = 4.0; // Very high Q for sharp, defined click
-
-      // Mid frequency for body (1000-1500 Hz)
-      const bp2 = ctx.createBiquadFilter();
-      bp2.type = 'bandpass';
-      bp2.frequency.value = 1000 + Math.random() * 500; // 1000-1500 Hz - body
-      bp2.Q.value = 2.5;
-
-      // Remove low mud
-      const hp = ctx.createBiquadFilter();
-      hp.type = 'highpass';
-      hp.frequency.value = 400;
-
-      // Moderate volume for satisfying click
-      const gain = ctx.createGain();
-      gain.gain.value = 0.8; // Keyboard click volume
-
-      source.connect(hp);
-      hp.connect(bp1);
-      bp1.connect(bp2);
-      bp2.connect(gain);
-      gain.connect(ctx.destination);
-      source.start();
-    }
 
     // ===================================================================================
     // KEY FEATURE: Stamp Display Functions (Encapsulated)
@@ -2993,11 +2458,6 @@
     // ===================================================================================
     // MODE SWITCHING AND DISPLAY FUNCTIONS
     // ===================================================================================
-
-    // Normalize character for comparison (remove accents, lowercase)
-    function normalizeChar(char) {
-      return char.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-    }
 
     // Navigate to starting card (menu/help card)
     function showStartingCard(showBack = false) {
@@ -3586,33 +3046,23 @@
 
     // Load a specific act's data
     async function loadAct(actNumber) {
-      // Check if already loaded
       if (loadedActs[actNumber]) {
         return loadedActs[actNumber];
       }
 
-      // Get URL from MODULE_URLS array (actNumber is 1-indexed)
-      const url = MODULE_URLS[actNumber - 1];
-
-      if (!url) {
-        throw new Error(`Act ${actNumber} URL not found in MODULE_URLS`);
-      }
+      window.MODULE_URLS = MODULE_URLS;
 
       try {
         console.log(`Loading act ${actNumber}...`);
-        const actData = await decodeObfuscatedModule(url);
+        const { actMeta, packs } = await sharedLoadAct(actNumber);
 
-        // Extract and store __actMeta (contains actName, translations, etc.)
-        if (actData.__actMeta) {
-          loadedActMeta[actNumber] = actData.__actMeta;
-          console.log(`Act ${actNumber} metadata:`, actData.__actMeta.actName);
+        if (actMeta) {
+          loadedActMeta[actNumber] = actMeta;
         }
 
-        // Store only pack data (exclude __actMeta)
-        const packsOnly = { ...actData };
-        delete packsOnly.__actMeta;
-
+        const packsOnly = packs || {};
         loadedActs[actNumber] = packsOnly;
+        window.loadedActs[actNumber] = { ...packsOnly, actMeta };
         Object.assign(wordpacks, packsOnly);
 
         console.log(`Act ${actNumber} loaded successfully:`, Object.keys(packsOnly).length, 'packs');

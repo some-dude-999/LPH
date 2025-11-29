@@ -734,6 +734,33 @@
   -->
   <script type="module">
 
+    const {
+      decodeObfuscatedModule,
+      combineAndShuffleWords,
+      shuffleArray,
+      autoSelectFirstActAndPack,
+      normalizeChar: normalizeCharForTyping,
+      normalizeString,
+      coupleChineseWithPinyin,
+      renderChineseWithPinyin,
+      renderChineseText,
+      getAudioContext,
+      levenshteinDistance,
+      calculateSimilarity,
+      getFeedbackMessage,
+      getScoreClass,
+      playDingSound,
+      playBuzzSound,
+      playButtonClickSound,
+      validateTargetLanguageConsistency,
+      getTargetLanguage,
+      getTranslationsConfig,
+      getDefaultTranslation,
+      getWordColumns,
+      getValidLanguages,
+      getTtsLanguageCode
+    } = window;
+
     // ============================================================
     // KEY FEATURE: State Persistence (localStorage)
     // Core Objective: Save and restore ALL user settings across sessions
@@ -1154,37 +1181,6 @@
         ...
       }
     */
-    async function decodeObfuscatedModule(url) {
-      try {
-        // STEP 1: Import the obfuscated module
-        // The module exports a single variable 'w' containing the base64 string
-        const module = await import(url);
-        const compressedB64 = module.w;
-
-        // STEP 2: Decode base64 to binary
-        // atob() converts base64 string to binary string
-        // We then convert to Uint8Array for pako
-        const compressedBinary = Uint8Array.from(atob(compressedB64), c => c.charCodeAt(0));
-
-        // STEP 3: Decompress with pako (zlib decompression)
-        // This inflates the compressed data back to original size
-        const decompressedBinary = pako.inflate(compressedBinary);
-
-        // STEP 4: Convert binary to UTF-8 string
-        const reversedJson = new TextDecoder('utf-8').decode(decompressedBinary);
-
-        // STEP 5: Reverse the string (undo the salt)
-        // Original was reversed character-by-character
-        const jsonStr = reversedJson.split('').reverse().join('');
-
-        // STEP 6: Parse JSON to get the original JavaScript object
-        const data = JSON.parse(jsonStr);
-
-        return data;
-      } catch (error) {
-        console.error('Failed to decode module:', url, error);
-        throw error;
-      }
     }
 
     // ============================================================
@@ -1231,55 +1227,6 @@
 
       USAGE: Call this ONCE when loading a pack, store result as pack.words
     */
-    function combineAndShuffleWords(pack) {
-      // ════════════════════════════════════════════════════════════════════════
-      // STEP 1: Extract base and example words (handle missing data gracefully)
-      // ════════════════════════════════════════════════════════════════════════
-      const baseWords = pack.baseWords || [];
-      const exampleWords = pack.exampleWords || [];
-
-      // ════════════════════════════════════════════════════════════════════════
-      // STEP 2: Fisher-Yates Shuffle - used for BOTH base and example arrays
-      // ════════════════════════════════════════════════════════════════════════
-      // This ensures proper randomization while keeping arrays separate
-      function shuffleArray(array) {
-        const shuffled = [...array];  // Create copy to avoid mutating original
-        for (let i = shuffled.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
-        return shuffled;
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // STEP 3: Shuffle each section independently and TAG with type
-      // ════════════════════════════════════════════════════════════════════════
-      // We wrap each word array with metadata indicating if it's base or example.
-      // This allows debugging to verify shuffling mechanism is working correctly.
-      const shuffledBase = shuffleArray(baseWords).map(word => ({
-        word: word,
-        type: "Base Word"
-      }));
-
-      const shuffledExamples = shuffleArray(exampleWords).map(word => ({
-        word: word,
-        type: "Example Word"
-      }));
-
-      // ════════════════════════════════════════════════════════════════════════
-      // STEP 4: Concatenate - BASE ALWAYS FIRST
-      // ════════════════════════════════════════════════════════════════════════
-      // This is the CRITICAL step that preserves pedagogical order:
-      // - Learners see core vocabulary first
-      // - Then contextual examples build on that foundation
-      // - But within each section, order is randomized for variety
-      const combinedWords = [...shuffledBase, ...shuffledExamples];
-
-      console.log(`[Architecture] Combined ${shuffledBase.length} base + ${shuffledExamples.length} examples = ${combinedWords.length} total words`);
-
-      return combinedWords;
-    }
-
     // ============================================================
     // KEY FEATURE: Auto-Select First Act and Pack (DRY ENCAPSULATION)
     // Core Objective: Automatically select first available act/pack
@@ -1298,34 +1245,22 @@
       "If I needed to change this behavior, how many places would I need to update?"
       Answer: 1 (this function)
     */
-    function autoSelectFirstActAndPack() {
-      if (!state.loadedData || Object.keys(state.loadedData).length === 0) {
-        return;
-      }
+    function autoSelectFirstActAndPackFromLoaded() {
+      const selection = autoSelectFirstActAndPack(window.loadedActs || {});
+      if (!selection) return;
 
-      // Find first act numerically
-      const firstAct = Math.min(...Object.keys(state.loadedData).map(Number));
-      state.currentAct = firstAct;
-      document.getElementById('actSelect').value = firstAct;
+      state.currentAct = selection.actNumber;
+      state.currentPack = selection.packKey;
 
-      // Populate pack dropdown for first act
+      populateActDropdown();
       populatePackDropdown();
 
-      // Auto-select first pack
-      const firstActData = state.loadedData[firstAct];
-      if (firstActData) {
-        const firstPackKey = Object.keys(firstActData)[0];
-        state.currentPack = firstPackKey;
-        document.getElementById('packSelect').value = firstPackKey;
+      const actSelect = document.getElementById('actSelect');
+      const packSelect = document.getElementById('packSelect');
+      if (actSelect) actSelect.value = state.currentAct;
+      if (packSelect) packSelect.value = state.currentPack;
 
-        // Display vocabulary
-        displayVocabulary();
-
-        // ════════════════════════════════════════════════════════════════════════
-        // SAVE STATE: Persist auto-selected act/pack to localStorage
-        // ════════════════════════════════════════════════════════════════════════
-        saveState();
-      }
+      displayVocabulary();
     }
 
     // ============================================================
@@ -1399,7 +1334,7 @@
         displayVocabulary();
       } else {
         // No valid saved state - auto-select first act and pack (ENCAPSULATED - DRY)
-        autoSelectFirstActAndPack();
+        autoSelectFirstActAndPackFromLoaded();
       }
 
       updateDebugInfo('Initialization complete. Ready to use.');
@@ -1476,6 +1411,7 @@
       const config = LANGUAGE_CONFIG[languageName];
       state.loadedData = {};      // Clear previous data
       state.loadedActMeta = {};   // Clear previous metadata
+      window.loadedActs = {};     // Expose to shared helpers
 
       // Load each act module
       for (const moduleInfo of config.modules) {
@@ -1496,6 +1432,7 @@
           delete packsOnly.__actMeta;
 
           state.loadedData[moduleInfo.act] = packsOnly;
+          window.loadedActs[moduleInfo.act] = { ...packsOnly, actMeta: actData.__actMeta };
           updateDebugInfo(`✓ Act ${moduleInfo.act} loaded (${Object.keys(packsOnly).length} packs)`);
         } catch (error) {
           updateDebugInfo(`✗ Failed to load Act ${moduleInfo.act}: ${error.message}`);
@@ -1551,7 +1488,7 @@
 
           // Auto-select first act and pack (ENCAPSULATED - DRY)
           // Previously this was 15+ lines of duplicated code
-          autoSelectFirstActAndPack();
+          autoSelectFirstActAndPackFromLoaded();
 
           // ════════════════════════════════════════════════════════════════════════
           // SAVE STATE: Persist language change to localStorage
@@ -1788,14 +1725,6 @@
       Creates and returns the Web Audio API context for sound generation.
       This is used for the satisfying typing/scribble sound.
     */
-    let audioContext = null;
-
-    function getAudioContext() {
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      return audioContext;
-    }
 
     // ============================================================
     // TYPING SOUND: Mechanical Click (Improved from SimpleFlashCards)
@@ -1892,34 +1821,6 @@
       INPUT: Two strings to compare
       OUTPUT: Integer distance (0 = identical, higher = more different)
     */
-    function levenshteinDistance(str1, str2) {
-      const m = str1.length;
-      const n = str2.length;
-
-      // Create DP table
-      const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
-
-      // Initialize base cases
-      for (let i = 0; i <= m; i++) dp[i][0] = i;
-      for (let j = 0; j <= n; j++) dp[0][j] = j;
-
-      // Fill DP table
-      for (let i = 1; i <= m; i++) {
-        for (let j = 1; j <= n; j++) {
-          if (str1[i - 1] === str2[j - 1]) {
-            dp[i][j] = dp[i - 1][j - 1];  // No edit needed
-          } else {
-            dp[i][j] = 1 + Math.min(
-              dp[i - 1][j],     // Deletion
-              dp[i][j - 1],     // Insertion
-              dp[i - 1][j - 1]  // Substitution
-            );
-          }
-        }
-      }
-
-      return dp[m][n];
-    }
 
     // ============================================================
     // SIMILARITY PERCENTAGE: Convert Distance to Percentage
@@ -1944,19 +1845,6 @@
       INPUT: expected (correct answer), heard (speech recognition result)
       OUTPUT: Integer percentage 0-100
     */
-    function calculateSimilarity(expected, heard) {
-      const exp = expected.toLowerCase().trim();
-      const hrd = heard.toLowerCase().trim();
-
-      if (exp === hrd) return 100;
-      if (hrd.length === 0) return 0;
-
-      const distance = levenshteinDistance(exp, hrd);
-      const maxLen = Math.max(exp.length, hrd.length);
-      const similarity = Math.max(0, ((maxLen - distance) / maxLen) * 100);
-
-      return Math.round(similarity);
-    }
 
     // ============================================================
     // CHARACTER NORMALIZATION: For Typing Comparison
@@ -1986,12 +1874,6 @@
       INPUT: Single character string
       OUTPUT: Normalized single character (lowercase, no accents)
     */
-    function normalizeCharForTyping(char) {
-      return char
-        .normalize('NFD')                    // Decompose accents (á → a + ´)
-        .replace(/[\u0300-\u036f]/g, '')    // Remove accent marks
-        .toLowerCase();                      // Convert to lowercase
-    }
 
     // ╔══════════════════════════════════════════════════════════════════════════════╗
     // ║                                                                              ║
@@ -2074,87 +1956,6 @@
 
       UPDATED: Now handles Latin blocks (edge cases like ATM机, WhatsApp消息)
     */
-    function coupleChineseWithPinyin(chineseStr, pinyinStr) {
-      // Handle empty/null inputs gracefully
-      if (!chineseStr) return [];
-      if (!pinyinStr) {
-        // No pinyin available - return chars with empty pinyin
-        return [...chineseStr].map(char => ({ char, pinyin: '' }));
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // CHARACTER-BY-CHARACTER MAPPING (Simplified)
-      // ════════════════════════════════════════════════════════════════════════
-      // Example: "早上好，先生" → "zǎo shàng hǎo， xiān shēng"
-      //   早 → zǎo
-      //   上 → shàng
-      //   好 → hǎo
-      //   ， → ，
-      //   先 → xiān
-      //   生 → shēng
-      //
-      // Edge cases (Latin in Chinese): "ATM机" → "ATM jī"
-      //   A → A
-      //   T → T
-      //   M → M
-      //   机 → jī
-      // ════════════════════════════════════════════════════════════════════════
-
-      // Split pinyin by spaces
-      const pinyinTokens = pinyinStr.trim().split(/\s+/);
-      const result = [];
-      let tokenIndex = 0;
-      let latinLetterIndex = 0; // For consuming Latin tokens letter-by-letter
-
-      for (const char of chineseStr) {
-        if (tokenIndex >= pinyinTokens.length) {
-          // Ran out of pinyin tokens - mark as mismatch
-          result.push({ char, pinyin: '?' });
-          continue;
-        }
-
-        const currentToken = pinyinTokens[tokenIndex];
-        // Strip Chinese punctuation to get clean syllable/word
-        const cleanToken = currentToken.replace(/[，。！？、；：""''（）《》【】…—]/g, '');
-
-        if (/[\u4e00-\u9fff]/.test(char)) {
-          // ═══════════════════════════════════════════════════════════
-          // CHINESE CHARACTER → consume one token
-          // ═══════════════════════════════════════════════════════════
-          result.push({ char, pinyin: cleanToken || '?' });
-          tokenIndex++;
-          latinLetterIndex = 0;
-        } else if (/[A-Za-z]/.test(char)) {
-          // ═══════════════════════════════════════════════════════════
-          // LATIN LETTER → handle edge cases (ATM, DNA, WhatsApp, etc.)
-          // ═══════════════════════════════════════════════════════════
-          if (/^[A-Za-z]+$/.test(cleanToken)) {
-            // Current token is all-Latin (like "ATM", "DNA", "WhatsApp")
-            // Consume letter-by-letter: A→A, T→T, M→M
-            const letter = cleanToken[latinLetterIndex] || char;
-            result.push({ char, pinyin: letter });
-            latinLetterIndex++;
-
-            if (latinLetterIndex >= cleanToken.length) {
-              // Finished consuming this Latin token
-              tokenIndex++;
-              latinLetterIndex = 0;
-            }
-          } else {
-            // Token is not pure Latin → just map letter to itself
-            result.push({ char, pinyin: char });
-          }
-        } else {
-          // ═══════════════════════════════════════════════════════════
-          // PUNCTUATION → maps to itself
-          // ═══════════════════════════════════════════════════════════
-          result.push({ char, pinyin: char });
-        }
-      }
-
-      return result;
-    }
-
     // ============================================================
     // DEBUG VERSION: Returns detailed coupling information
     // ============================================================
@@ -2285,78 +2086,6 @@
 
       RETURNS: DOM element (span) ready to append to any container
     */
-    function renderChineseWithPinyin(coupledArray) {
-      // Create container for the whole word
-      const container = document.createElement('span');
-      container.className = 'chinese-coupled';
-      container.style.cssText = 'display: inline-flex; gap: 2px; align-items: flex-end;';
-
-      // Handle empty array
-      if (!coupledArray || coupledArray.length === 0) {
-        container.textContent = '';
-        return container;
-      }
-
-      // Create a character group for each char-pinyin pair
-      coupledArray.forEach(({ char, pinyin }) => {
-        const charGroup = document.createElement('span');
-        charGroup.className = 'char-group';
-        charGroup.style.cssText = 'display: flex; flex-direction: column; align-items: center;';
-
-        // Character element (top)
-        if (state.showChineseChars) {
-          const charSpan = document.createElement('span');
-          charSpan.className = 'chinese-char';
-          charSpan.style.cssText = 'font-size: 1.2em; line-height: 1.2;';
-          charSpan.textContent = char;
-          charGroup.appendChild(charSpan);
-        }
-
-        // Pinyin element (bottom)
-        if (state.showPinyin) {
-          const pinyinSpan = document.createElement('span');
-          pinyinSpan.className = 'pinyin';
-          pinyinSpan.style.cssText = 'font-size: 0.7em; color: #666; line-height: 1;';
-          pinyinSpan.textContent = pinyin;
-          charGroup.appendChild(pinyinSpan);
-        }
-
-        container.appendChild(charGroup);
-      });
-
-      return container;
-    }
-
-    /*
-      renderChineseText() - High-level function to render Chinese with pinyin
-
-      This is the MAIN ENTRY POINT for rendering Chinese text anywhere in the app.
-      It handles the full pipeline: couple → render.
-
-      WHEN TO USE:
-      - Displaying Chinese vocabulary in table (target language column)
-      - Displaying Chinese translations (native language column when Chinese)
-      - Flashcard front when learning Chinese
-      - Multiple choice options when answers are Chinese
-      - ANY place where Chinese text needs the char+pinyin display
-
-      IMPORTANT: This function checks if we're dealing with Chinese.
-      If not Chinese, it returns a simple text span (no coupling needed).
-
-      PARAMETERS:
-        - text: The Chinese text string (e.g., "小猫")
-        - pinyin: The pinyin string (e.g., "xiǎo māo")
-        - isChinese: Boolean flag - true if this is Chinese text
-
-      RETURNS: DOM element (span) with appropriate rendering
-    */
-    function renderChineseText(text, pinyin, isChinese) {
-      // If not Chinese, just return plain text
-      if (!isChinese) {
-        const span = document.createElement('span');
-        span.textContent = text;
-        return span;
-      }
 
       // Chinese: couple and render
       const coupled = coupleChineseWithPinyin(text, pinyin);
@@ -2603,11 +2332,6 @@
       INPUT: String to normalize
       OUTPUT: Normalized string (lowercase, no spaces, no symbols)
     */
-    function normalizeString(str) {
-      return str
-        .toLowerCase()
-        .replace(/[\s\.,!?;:'"()\[\]{}\-_]/g, '');  // Remove spaces and common symbols
-    }
 
     // ============================================================
     // KEY FEATURE: Multiple Choice Wrong Answers (Act-Wide Pool)
