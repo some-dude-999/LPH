@@ -4763,11 +4763,15 @@
     // DEBUG: Wrapper to update table with local scope data
     // ============================================================
     // The external updateDebugTable() can't access local variables, so we wrap it
+
+    // CRITICAL: Save reference to ORIGINAL function BEFORE overriding
+    const originalUpdateDebugTable = window.updateDebugTable || updateDebugTable;
+
     function updateDebugTableWrapper() {
       if (!window.DEBUG_MODE) return;
 
-      // Call external updateDebugTable() with data from local scope
-      updateDebugTable({
+      // Call the ORIGINAL function (not the wrapper!) with data from local scope
+      originalUpdateDebugTable({
         deck: currentDeck,
         targetLang: getTargetLanguage() || 'target',
         nativeLang: nativeLanguage || 'native',
