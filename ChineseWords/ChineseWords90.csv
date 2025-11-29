@@ -1,10 +1,10 @@
 chinese,pinyin,english,spanish,french,portuguese
-的,de,'s,de,de,de
-地,dì,ground,suelo,sol,chão
-得,dé,can,poder,pouvoir,conseguir
-了,le,done,hecho,fait,feito
-着,zhe,-ing,-ndo,-ant,-ndo
-过,guò,before,antes,déjà,já
+的,de,possessive particle,partícula posesiva,particule possessive,partícula possessiva
+地,dì,adverbial particle,partícula adverbial,particule adverbiale,partícula adverbial
+得,dé,complement particle,partícula complementaria,particule de complément,partícula de complemento
+了,le,completed action particle,partícula de acción terminada,particule d'accompli,partícula de conclusão
+着,zhe,continuous particle,partícula de acción continua,particule de durée,partícula de ação contínua
+过,guò,experiential particle,partícula de experiencia,particule expérientielle,partícula experiencial
 起来,qǐ lái,up,arriba,vers le haut,para cima
 下去,xià qù,down,abajo,vers le bas,para baixo
 出来,chū lái,out,fuera,dehors,fora
@@ -12,8 +12,8 @@ chinese,pinyin,english,spanish,french,portuguese
 上来,shàng lái,up,arriba,vers le haut,para cima
 下来,xià lái,down,abajo,vers le bas,para baixo
 回来,huí lái,back,volver,retour,voltar
-过来,guò lái,over,terminado,plus de,acabou
-过去,guò qù,past,pasado,passé,passado
+过来,guò lái,come over,venir para acá,venir ici,vir aqui
+过去,guò qù,go over there,ir para allá,aller là-bas,ir para lá
 开,kāi,open,abierto,ouvert,abrir
 我的,wǒ de,my,mi,mon,meu
 美的,měi de,beautiful,hermosa,magnifique,lindo
@@ -21,29 +21,29 @@ chinese,pinyin,english,spanish,french,portuguese
 快速地,kuài sù dì,fast,rápido,rapide,rápido
 跑得快,pǎo dé kuài,run fast,corre rápido,courir vite,corra rápido
 做得好,zuò dé hǎo,well done,bien hecho,bravo,muito bem
-走了,zǒu le,go,ir,aller,vai
-来了,lái le,Coming,Próximamente,À venir,Vindo
+走了,zǒu le,left,se fue,parti,foi embora
+来了,lái le,came,vino,est venu,veio
 看着,kàn zhe,Watching,Mirando,Regarder,Assistindo
 听着,tīng zhe,Listening,Escuchando,Écoute,Ouvindo
-去过,qù guò,Been,Estado,Été,Já esteve
-来过,lái guò,Come,Ven,Venez,Venha
+去过,qù guò,have been (to),he ido,déjà allé,já fui
+来过,lái guò,have been here,he venido,déjà venu,já veio
 站起来,zhàn qǐ lái,Stand up,Levántate,Debout,Levante-se
-跑起来,pǎo qǐ lái,Run,Ejecutar,Exécuter,Corre
+跑起来,pǎo qǐ lái,start running,ponerse a correr,se mettre à courir,começar a correr
 走下去,zǒu xià qù,Walk down,Bajar,Descendez,Desça
-说下去,shuō xià qù,Talk on,Hablar en,Parlez sur,Fale em
+说下去,shuō xià qù,keep talking,sigue hablando,continue à parler,continue falando
 拿出来,ná chū lái,Take it out,Sácalo,Sortez-le,Tire isso
 走出来,zǒu chū lái,Walk out,Salir,Sortez,Sair
 走进去,zǒu jìn qù,Walk in,Entrar,Entrez,Entre
-跑进去,pǎo jìn qù,Run in,Ejecutar,Exécuter dans,Execute
+跑进去,pǎo jìn qù,run inside,correr hacia dentro,courir à l'intérieur,correr para dentro
 爬上来,pá shàng lái,Climb up,Subir,Grimper,Suba
 走上来,zǒu shàng lái,Come up,Sube,Montez,Suba
 走下来,zǒu xià lái,Walk down,Bajar,Descendez,Desça
-跑下来,pǎo xià lái,Run down,Decaer,Délabré,Atropelar
+跑下来,pǎo xià lái,run down from above,bajar corriendo,descendre en courant,descer correndo
 走回来,zǒu huí lái,Walk back,Caminar de regreso,Revenir en arrière,Volte
 跑回来,pǎo huí lái,Run back,Corre de regreso,Reculez,Corre de volta
 走过来,zǒu guò lái,Come over,Ven,Venez,Venha
-跑过来,pǎo guò lái,Run over,Atropellado,Écrasé,Atropelamento
+跑过来,pǎo guò lái,run over here,correr hasta aquí,venir en courant ici,vir correndo aqui
 走过去,zǒu guò qù,Walk over,Caminar,Traversez,Vá até
-跑过去,pǎo guò qù,Run over,Atropellado,Écrasé,Atropelamento
+跑过去,pǎo guò qù,run over there,correr hasta allí,courir là-bas,correr até lá
 打开,dǎ kāi,Open,Abrir,Ouvrir,Abrir
 离开,lí kāi,Leave,Dejar,Partir,Deixar
