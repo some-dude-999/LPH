@@ -2,9 +2,9 @@
 
 ## Legend
 - ✅ = In wordpack-logic.js (shared)
-- 🔄 = Duplicated (should be moved to shared)
+- 🔄 = Duplicated (DELETE from game files)
 - 🎮 = Game-specific (keep in game file)
-- 🎯 = Candidate for shared logic
+- 🎯 = Candidate for future shared logic
 
 ---
 
@@ -12,8 +12,8 @@
 
 | Function | FlashcardTyping | DecoderTest | wordpack-logic.js | Status | Recommendation |
 |----------|----------------|-------------|-------------------|--------|----------------|
-| `decodeObfuscatedModule()` | ✅ | ✅ | ✅ | 🔄 Duplicated | ✅ Already shared - DELETE from both games |
-| `loadAct()` | ✅ | ❌ | ✅ | 🔄 Duplicated | ✅ Already shared - DELETE from FlashcardTyping |
+| `decodeObfuscatedModule()` | ✅ | ✅ | ✅ | 🔄 Duplicated | **DELETE from both games** |
+| `loadAct()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
 
 ---
 
@@ -21,8 +21,8 @@
 
 | Function | FlashcardTyping | DecoderTest | wordpack-logic.js | Status | Recommendation |
 |----------|----------------|-------------|-------------------|--------|----------------|
-| `shuffleArray()` | ✅ | ✅ | ✅ | 🔄 Duplicated | ✅ Already shared - DELETE from both games |
-| `combineAndShuffleWords()` | ✅ | ✅ | ❌ | 🔄 Duplicated | 🎯 **MOVE TO SHARED** - identical logic |
+| `shuffleArray()` | ✅ | ✅ | ✅ | 🔄 Duplicated | **DELETE from both games** |
+| `combineAndShuffleWords()` | ✅ | ✅ | ✅ | 🔄 Duplicated | **DELETE from both games** |
 
 ---
 
@@ -30,11 +30,12 @@
 
 | Function | FlashcardTyping | DecoderTest | wordpack-logic.js | Status | Recommendation |
 |----------|----------------|-------------|-------------------|--------|----------------|
-| `normalizeChar()` | ✅ | ❌ | ✅ | 🔄 Duplicated | ✅ Already shared - DELETE from FlashcardTyping |
-| `normalizeCharForTyping()` | ❌ | ✅ | ✅ (alias) | 🔄 Duplicated | ✅ Already shared - DELETE from DecoderTest |
-| `findNextTypingPosition()` | ❌ | ❌ | ✅ | ✅ | ✅ Already shared - games should use this |
-| `checkTypingKey()` | ❌ | ❌ | ✅ | ✅ | ✅ Already shared - games should use this |
-| `isWordComplete()` | ❌ | ❌ | ✅ | ✅ | ✅ Already shared - games should use this |
+| `normalizeChar()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `normalizeCharForTyping()` | ❌ | ✅ | ✅ (alias) | 🔄 Duplicated | **DELETE from DecoderTest** |
+| `normalizeString()` | ❌ | ✅ | ✅ | 🔄 Duplicated | **DELETE from DecoderTest** |
+| `findNextTypingPosition()` | ❌ | ❌ | ✅ | ✅ Shared | Already in shared library |
+| `checkTypingKey()` | ❌ | ❌ | ✅ | ✅ Shared | Already in shared library |
+| `isWordComplete()` | ❌ | ❌ | ✅ | ✅ Shared | Already in shared library |
 | `handleTypingInput()` | ✅ | ✅ | ❌ | 🎮 Game-specific | Keep in games (different UIs) |
 | `initializeTypingDisplay()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep in FlashcardTyping |
 | `renderTypingDisplay()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep in FlashcardTyping |
@@ -46,9 +47,9 @@
 
 | Function | FlashcardTyping | DecoderTest | wordpack-logic.js | Status | Recommendation |
 |----------|----------------|-------------|-------------------|--------|----------------|
-| `coupleChineseWithPinyin()` | ✅ | ✅ | ✅ | 🔄 Duplicated | ✅ Already shared - DELETE from both games |
-| `renderChineseWithPinyin()` | ✅ | ✅ | ✅ | 🔄 Duplicated | ✅ Already shared - DELETE from both games |
-| `renderChineseText()` | ✅ | ✅ | ✅ | 🔄 Duplicated | ✅ Already shared - DELETE from both games |
+| `coupleChineseWithPinyin()` | ✅ | ✅ | ✅ | 🔄 Duplicated | **DELETE from both games** |
+| `renderChineseWithPinyin()` | ✅ | ✅ | ✅ | 🔄 Duplicated | **DELETE from both games** |
+| `renderChineseText()` | ✅ | ✅ | ✅ | 🔄 Duplicated | **DELETE from both games** |
 | `getChineseHtml()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (just calls renderChineseText) |
 | `coupleChineseWithPinyinDebug()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep in DecoderTest (debug only) |
 
@@ -58,8 +59,8 @@
 
 | Function | FlashcardTyping | DecoderTest | wordpack-logic.js | Status | Recommendation |
 |----------|----------------|-------------|-------------------|--------|----------------|
-| `saveState()` | ✅ | ✅ | ❌ | 🔄 Duplicated | 🎯 **CONSIDER SHARED** - pattern is same |
-| `loadState()` | ✅ | ✅ | ❌ | 🔄 Duplicated | 🎯 **CONSIDER SHARED** - pattern is same |
+| `saveState()` | ✅ | ✅ | ❌ | 🎮 Game-specific | Keep (different state schemas) |
+| `loadState()` | ✅ | ✅ | ❌ | 🎮 Game-specific | Keep (different state schemas) |
 | `restoreSavedState()` | ✅ | ✅ | ❌ | 🎮 Game-specific | Keep (different state schemas) |
 | `validateAndFixState()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep in DecoderTest |
 
@@ -69,11 +70,11 @@
 
 | Function | FlashcardTyping | DecoderTest | wordpack-logic.js | Status | Recommendation |
 |----------|----------------|-------------|-------------------|--------|----------------|
-| `getAudioContext()` | ✅ | ✅ | ❌ | 🔄 Duplicated | 🎯 **MOVE TO SHARED** - identical |
-| `playCardFlipSound()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (or move to shared if others need) |
-| `playDingSound()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** (success sound) |
-| `playBuzzSound()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** (failure sound) |
-| `playButtonClickSound()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** (UI sound) |
+| `getAudioContext()` | ✅ | ✅ | ✅ | 🔄 Duplicated | **DELETE from both games** |
+| `playDingSound()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `playBuzzSound()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `playButtonClickSound()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `playCardFlipSound()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (unique to flashcards) |
 | `playKeyboardSound()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep |
 | `playScribbleSound()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep |
 | `playTypingSound()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep |
@@ -84,12 +85,13 @@
 
 | Function | FlashcardTyping | DecoderTest | wordpack-logic.js | Status | Recommendation |
 |----------|----------------|-------------|-------------------|--------|----------------|
-| `loadVoices()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - all games need TTS |
-| `populateVoiceSelector()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - common UI pattern |
-| `speakTargetWord()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - all games speak words |
+| `getTtsLanguageCode()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `loadVoices()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `speakWord()` | ❌ | ❌ | ✅ | ✅ Shared | Already in shared library |
+| `populateVoiceSelector()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
+| `speakTargetWord()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (calls speakWord) |
 | `speakSpanish()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (calls speakTargetWord) |
 | `setSpeed()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
-| `getTtsLanguageCode()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - language mapping |
 
 ---
 
@@ -97,13 +99,13 @@
 
 | Function | FlashcardTyping | DecoderTest | wordpack-logic.js | Status | Recommendation |
 |----------|----------------|-------------|-------------------|--------|----------------|
-| `levenshteinDistance()` | ✅ | ✅ | ❌ | 🔄 Duplicated | 🎯 **MOVE TO SHARED** - identical |
-| `calculateSimilarity()` | ✅ | ✅ | ❌ | 🔄 Duplicated | 🎯 **MOVE TO SHARED** - identical |
-| `startListening()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** (Web Speech API) |
-| `startListeningForPronunciation()` | ❌ | ✅ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** (Web Speech API) |
+| `levenshteinDistance()` | ✅ | ✅ | ✅ | 🔄 Duplicated | **DELETE from both games** |
+| `calculateSimilarity()` | ✅ | ✅ | ✅ | 🔄 Duplicated | **DELETE from both games** |
+| `getFeedbackMessage()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `getScoreClass()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `startListening()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (Web Speech API wrapper) |
+| `startListeningForPronunciation()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep (Web Speech API wrapper) |
 | `resetListeningState()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep |
-| `getFeedbackMessage()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - scoring logic |
-| `getScoreClass()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - scoring logic |
 | `showFeedback()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
 | `hideFeedback()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
 | `updatePronunciationDisplay()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
@@ -119,11 +121,11 @@
 | `exitStartingCard()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep |
 | `startGame()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep |
 | `populateWordpackSelectorOnCard()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (menu-specific) |
-| `populateActSelector()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** - common UI |
-| `populateLanguageSelector()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** - common UI |
-| `populateActDropdown()` | ❌ | ✅ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** - same as populateActSelector |
-| `populatePackDropdown()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep |
-| `populateNativeLanguageDropdown()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep |
+| `populateActSelector()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
+| `populateLanguageSelector()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
+| `populateActDropdown()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
+| `populatePackDropdown()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
+| `populateNativeLanguageDropdown()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
 
 ---
 
@@ -135,8 +137,8 @@
 | `resetDeck()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep |
 | `restartCurrentPack()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep |
 | `removeCurrentCard()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep |
-| `addDuplicateCards()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** - penalty logic |
-| `addConfusedCards()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** - penalty logic |
+| `addDuplicateCards()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (penalty logic) |
+| `addConfusedCards()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (penalty logic) |
 
 ---
 
@@ -169,15 +171,15 @@
 
 | Function | FlashcardTyping | DecoderTest | wordpack-logic.js | Status | Recommendation |
 |----------|----------------|-------------|-------------------|--------|----------------|
-| `getTargetLanguage()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - module metadata |
-| `getTranslationsConfig()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - module metadata |
-| `getDefaultTranslation()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - module metadata |
-| `getWordColumns()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - module metadata |
-| `getValidLanguages()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - module metadata |
+| `getTargetLanguage()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `getTranslationsConfig()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `getDefaultTranslation()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `getWordColumns()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `getValidLanguages()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `toTitleCase()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
+| `validateTargetLanguageConsistency()` | ✅ | ❌ | ✅ | 🔄 Duplicated | **DELETE from FlashcardTyping** |
 | `isChineseMode()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (game-state specific) |
 | `updateChineseModeClass()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep (UI-specific) |
-| `toTitleCase()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - utility |
-| `validateTargetLanguageConsistency()` | ✅ | ❌ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - validation |
 
 ---
 
@@ -189,7 +191,7 @@
 | `initialize()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep |
 | `initializeTooltips()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep |
 | `createButtonTooltip()` | ✅ | ❌ | ❌ | 🎮 Game-specific | Keep |
-| `autoSelectFirstActAndPack()` | ❌ | ✅ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - common pattern |
+| `autoSelectFirstActAndPack()` | ❌ | ✅ | ✅ | 🔄 Duplicated | **DELETE from DecoderTest** |
 | `syncUIToState()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep |
 | `loadLanguageData()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep |
 | `setupLanguageRadioButtons()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep |
@@ -213,9 +215,8 @@
 
 | Function | FlashcardTyping | DecoderTest | wordpack-logic.js | Status | Recommendation |
 |----------|----------------|-------------|-------------------|--------|----------------|
-| `normalizeString()` | ❌ | ✅ | ❌ | 🎮 Game-specific | 🎯 **MOVE TO SHARED** - utility |
-| `generateWrongAnswers()` | ❌ | ✅ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** - game mechanic |
-| `generateWrongAnswersWithPinyin()` | ❌ | ✅ | ❌ | 🎮 Game-specific | 🎯 **CONSIDER SHARED** - game mechanic |
+| `generateWrongAnswers()` | ❌ | ✅ | ✅ | 🔄 Duplicated | **DELETE from DecoderTest** |
+| `generateWrongAnswersWithPinyin()` | ❌ | ✅ | ❌ | 🎮 Game-specific | Keep (Chinese-specific) |
 
 ---
 
@@ -257,104 +258,115 @@
 
 ---
 
-# PRIORITY RECOMMENDATIONS FOR SHARED LOGIC
+# CLEANUP TASKS - DELETE DUPLICATES
 
-## 🔥 HIGH PRIORITY - Delete Duplicates (Already in wordpack-logic.js)
+## 🔥 DELETE from BOTH FlashcardTypingGame AND DecoderTest:
 
-These are EXACT duplicates that should be deleted from game files:
-
-1. **DELETE from both games:**
-   - `coupleChineseWithPinyin()`
-   - `renderChineseWithPinyin()`
-   - `renderChineseText()`
-   - `shuffleArray()`
-
-2. **DELETE from FlashcardTypingGame:**
-   - `decodeObfuscatedModule()`
-   - `loadAct()`
-   - `normalizeChar()`
-
-3. **DELETE from DecoderTest:**
-   - `normalizeCharForTyping()` (use normalizeChar from shared)
-
-## 🎯 MEDIUM PRIORITY - Move to Shared Logic
-
-### Sound Effects Module (sound-effects.js)
 ```javascript
-// All games need these sounds
-- getAudioContext()
-- playDingSound() // success
-- playBuzzSound() // failure
-- playButtonClickSound()
+// Module loading
+decodeObfuscatedModule()
+
+// Shuffle
+shuffleArray()
+combineAndShuffleWords()
+
+// Chinese + Pinyin
+coupleChineseWithPinyin()
+renderChineseWithPinyin()
+renderChineseText()
+
+// Audio
+getAudioContext()
+
+// Speech recognition
+levenshteinDistance()
+calculateSimilarity()
 ```
 
-### Speech Recognition Module (speech-recognition.js)
+## 🎯 DELETE from FlashcardTypingGame ONLY:
+
 ```javascript
-// Pronunciation practice is common
-- levenshteinDistance()
-- calculateSimilarity()
-- getFeedbackMessage()
-- getScoreClass()
-- getTtsLanguageCode()
+// Module loading
+loadAct()
+
+// Character normalization
+normalizeChar()
+
+// Sound effects
+playDingSound()
+playBuzzSound()
+playButtonClickSound()
+
+// TTS
+getTtsLanguageCode()
+loadVoices()
+
+// Speech recognition
+getFeedbackMessage()
+getScoreClass()
+
+// Metadata helpers
+getTargetLanguage()
+getTranslationsConfig()
+getDefaultTranslation()
+getWordColumns()
+getValidLanguages()
+toTitleCase()
+validateTargetLanguageConsistency()
 ```
 
-### Text-to-Speech Module (tts.js)
+## 📋 DELETE from DecoderTest ONLY:
+
 ```javascript
-// All games speak words
-- loadVoices()
-- populateVoiceSelector()
-- speakTargetWord()
+// Character normalization
+normalizeCharForTyping()  // Use normalizeChar from shared
+normalizeString()
+
+// Game mechanics
+autoSelectFirstActAndPack()
+generateWrongAnswers()
 ```
 
-### Module Metadata Helpers (module-metadata.js)
-```javascript
-// Working with __actMeta data
-- getTargetLanguage()
-- getTranslationsConfig()
-- getDefaultTranslation()
-- getWordColumns()
-- getValidLanguages()
-- validateTargetLanguageConsistency()
-```
+---
 
-### Game Mechanics (game-mechanics.js)
-```javascript
-// Common game patterns
-- combineAndShuffleWords()
-- addDuplicateCards() // penalty logic
-- autoSelectFirstActAndPack()
-- generateWrongAnswers()
-- generateWrongAnswersWithPinyin()
-```
+# SUMMARY
 
-### Utility Functions (utils.js)
-```javascript
-// Generic helpers
-- toTitleCase()
-- normalizeString()
-```
-
-## 📊 SUMMARY
-
-| Category | Total Functions | In Shared | Should Be Shared | Game-Specific |
-|----------|----------------|-----------|------------------|---------------|
-| **Module Loading** | 2 | 2 ✅ | 0 | 0 |
-| **Shuffle** | 2 | 1 ✅ | 1 🎯 | 0 |
-| **Character Normalization** | 3 | 2 ✅ | 0 | 1 |
-| **Typing Validation** | 6 | 3 ✅ | 0 | 3 |
-| **Chinese+Pinyin** | 6 | 3 ✅ | 0 | 3 |
-| **State Persistence** | 4 | 0 | 2 🎯 | 2 |
-| **Audio/Sound** | 8 | 0 | 4 🎯 | 4 |
-| **TTS** | 6 | 0 | 5 🎯 | 1 |
-| **Speech Recognition** | 10 | 0 | 5 🎯 | 5 |
-| **Metadata Helpers** | 10 | 0 | 7 🎯 | 3 |
-| **Game Mechanics** | 6 | 0 | 5 🎯 | 1 |
-| **UI/Menu** | 15 | 0 | 3 🎯 | 12 |
+| Category | Total Functions | In wordpack-logic.js | Duplicates to Delete | Game-Specific |
+|----------|----------------|----------------------|---------------------|---------------|
+| **Module Loading** | 2 | 2 ✅ | 2 🔄 | 0 |
+| **Shuffle** | 2 | 2 ✅ | 2 🔄 | 0 |
+| **Character Normalization** | 9 | 5 ✅ | 3 🔄 | 4 |
+| **Chinese+Pinyin** | 5 | 3 ✅ | 3 🔄 | 2 |
+| **Audio/Sound** | 8 | 4 ✅ | 4 🔄 | 4 |
+| **TTS** | 7 | 3 ✅ | 2 🔄 | 4 |
+| **Speech Recognition** | 10 | 4 ✅ | 4 🔄 | 6 |
+| **Metadata Helpers** | 9 | 7 ✅ | 7 🔄 | 2 |
+| **Game Mechanics** | 8 | 2 ✅ | 2 🔄 | 6 |
+| **Utilities** | 1 | 1 ✅ | 1 🔄 | 0 |
+| **UI/Menu** | 10 | 0 | 0 | 10 |
 | **Navigation** | 11 | 0 | 0 | 11 |
 | **Debug/Testing** | 11 | 0 | 0 | 11 |
-| **Misc** | ~30 | 0 | 2 🎯 | ~28 |
+| **Misc** | ~37 | 0 | 0 | ~37 |
 
 **Total Functions Analyzed:** ~130
-- **Currently Shared:** 11 (8%)
-- **Should Be Shared:** ~34 (26%)
-- **Game-Specific:** ~85 (65%)
+
+**In wordpack-logic.js:** 33 functions (25%)
+- Module loading & decoding: 2
+- Shuffle & arrays: 2
+- Character normalization: 5
+- Chinese + Pinyin: 3
+- Sound effects: 4
+- Speech recognition: 4
+- TTS: 3
+- Metadata helpers: 7
+- Game mechanics: 2
+- Utilities: 1
+
+**Duplicates to Delete:** ~30 functions (23%)
+- Games are currently copy-pasting these from wordpack-logic.js
+- MUST be deleted to establish single source of truth
+
+**Game-Specific (Keep):** ~67 functions (52%)
+- UI rendering, navigation, state management
+- Game-specific display logic
+- Debug/testing functions
