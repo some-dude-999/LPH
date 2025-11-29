@@ -1,321 +1,44 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,141,Accepting (aceptar),4,english,accept,he/she accepts,Missing subject on 3rd person singular verb
-spanish,141,Accepting (aceptar),7,english,accept,they accept,Missing subject on 3rd person plural verb
-spanish,141,Accepting (aceptar),8,english,accept,to accept,Missing 'to' on infinitive
-spanish,141,Accepting (aceptar),17,english,accepts it,he/she accepts it,Missing subject on 3rd person verb
-spanish,142,Rejecting (rechazar),2,english,rejection,I reject,Wrong form - should be verb not noun
-spanish,142,Rejecting (rechazar),4,english,rejects,he/she rejects,Missing subject on 3rd person singular verb
-spanish,142,Rejecting (rechazar),7,english,reject,they reject,Missing subject on 3rd person plural verb
-spanish,142,Rejecting (rechazar),8,english,reject,to reject,Missing 'to' on infinitive
-spanish,142,Rejecting (rechazar),16,english,rejects it,he/she rejects it,Missing subject on 3rd person verb
-spanish,143,Space & Universe,8,english,ship,spacecraft,Context: space - should be spacecraft not generic ship
-spanish,143,Space & Universe,8,chinese,船,飞船,Wrong word - "船" means boat/ship not spacecraft
-spanish,143,Space & Universe,12,english,explore,to explore,Missing 'to' on infinitive
-spanish,143,Space & Universe,33,english,the ship,the spacecraft,Context: space - should be spacecraft
-spanish,143,Space & Universe,33,chinese,船,飞船,Wrong word - "船" means boat/ship not spacecraft
-spanish,143,Space & Universe,34,english,a ship,a spacecraft,Context: space - should be spacecraft
-spanish,143,Space & Universe,34,chinese,一艘船,一艘飞船,Wrong word - should be spacecraft not boat
-spanish,144,Offering (ofrecer),4,english,offers,he/she offers,Missing subject on 3rd person singular verb
-spanish,144,Offering (ofrecer),4,chinese,优惠,提供,Wrong word - "优惠" is commercial discount not general offer
-spanish,144,Offering (ofrecer),7,english,offer,they offer,Missing subject on 3rd person plural verb
-spanish,144,Offering (ofrecer),7,chinese,报价,提供,Wrong word - "报价" means price quote not general offer
-spanish,144,Offering (ofrecer),8,english,offer,to offer,Missing 'to' on infinitive
-spanish,144,Offering (ofrecer),8,chinese,报价,提供,Wrong word - "报价" means price quote not to offer
-spanish,144,Offering (ofrecer),9,chinese,报价,提议,Wrong word - "报价" means price quote not offer (noun)
-spanish,144,Offering (ofrecer),10,english,propose,to propose,Missing 'to' on infinitive
-spanish,144,Offering (ofrecer),26,chinese,报价,提议,Wrong word - "报价" means price quote not the offer
-spanish,144,Offering (ofrecer),27,chinese,报价,提议,Wrong word - "报价" means price quote not an offer
-spanish,144,Offering (ofrecer),28,english,must be proposed,you have to propose,Wrong passive voice on hay que phrase
-spanish,145,Promising (prometer),4,english,promises,he/she promises,Missing subject on 3rd person singular verb
-spanish,145,Promising (prometer),7,english,promise,they promise,Missing subject on 3rd person plural verb
-spanish,145,Promising (prometer),8,english,promise,to promise,Missing 'to' on infinitive
-spanish,145,Promising (prometer),11,english,swear,to swear,Missing 'to' on infinitive
-spanish,145,Promising (prometer),17,english,promises us,he/she promises us,Missing subject on 3rd person verb
-spanish,146,Chemistry Terms,3,english,chemical,chemist,Context: chemistry - químico as noun means chemist
-spanish,146,Chemistry Terms,3,chinese,化学,化学家,Wrong word - "化学" means chemistry not chemist (person)
-spanish,146,Chemistry Terms,10,chinese,基地,碱,Wrong Chinese - chemistry base is 碱 not 基地
-spanish,146,Chemistry Terms,10,pinyin,jī dì,jiǎn,Wrong pinyin for chemistry base
-spanish,146,Chemistry Terms,24,chinese,化学,化学品,Wrong word - "化学" alone means chemistry not chemical product
-spanish,146,Chemistry Terms,37,chinese,基地,碱,Wrong Chinese - chemistry base is 碱 not 基地
-spanish,146,Chemistry Terms,37,pinyin,jī dì,jiǎn,Wrong pinyin for chemistry base
-spanish,146,Chemistry Terms,38,chinese,一个基地,一个碱,Wrong Chinese - chemistry base is 碱 not 基地
-spanish,146,Chemistry Terms,38,pinyin,yí gè jī dì,yí gè jiǎn,Wrong pinyin for chemistry base
-spanish,146,Chemistry Terms,43,english,must be dissolved,you have to dissolve,Wrong passive voice on hay que phrase
-spanish,146,Chemistry Terms,44,chinese,我会解散,我会溶解,Wrong word - "解散" means disband (organization) not dissolve (chemically)
-spanish,147,Moving (mover),2,chinese,我动了,我移动,Wrong tense - "了" implies past tense but Spanish is present
-spanish,147,Moving (mover),3,chinese,你动了,你移动,Wrong tense - "了" implies past tense but Spanish is present
-spanish,147,Moving (mover),4,english,moves,he/she moves,Missing subject on 3rd person singular verb
-spanish,147,Moving (mover),5,chinese,我们搬家,我们移动,Wrong word - "搬家" means move house/relocate too specific
-spanish,147,Moving (mover),6,chinese,你动了,你移动,Wrong tense - "了" implies past tense but Spanish is present
-spanish,147,Moving (mover),7,english,move,they move,Missing subject on 3rd person plural verb
-spanish,147,Moving (mover),8,english,move,to move,Missing 'to' on infinitive
-spanish,147,Moving (mover),11,english,transfer,to move,More natural translation of trasladar
-spanish,147,Moving (mover),12,chinese,我动了,我移动,Wrong tense - "了" implies past tense but Spanish is present
-spanish,147,Moving (mover),14,chinese,你动了,你移动,Wrong tense - "了" implies past tense but Spanish is present
-spanish,147,Moving (mover),16,chinese,他动了,他移动,Wrong tense - "了" implies past tense but Spanish is present
-spanish,147,Moving (mover),17,english,moves it,he/she moves it,Missing subject on 3rd person verb
-spanish,147,Moving (mover),18,chinese,我们搬家,我们移动,Wrong word - "搬家" means move house/relocate too specific
-spanish,147,Moving (mover),20,chinese,你动了,你移动,Wrong tense - "了" implies past tense but Spanish is present
-spanish,147,Moving (mover),24,chinese,我想搬家,我想移动,Wrong word - "搬家" means move house/relocate too specific
-spanish,147,Moving (mover),25,chinese,我要搬家,我要移动,Wrong word - "搬家" means move house/relocate too specific
-spanish,147,Moving (mover),30,english,must be transferred,you have to move,Wrong passive voice on hay que phrase
-spanish,148,Stopping (detener),4,english,stops,he/she stops,Missing subject on 3rd person singular verb
-spanish,148,Stopping (detener),7,english,stop,they stop,Missing subject on 3rd person plural verb
-spanish,148,Stopping (detener),8,english,stop,to stop,Missing 'to' on infinitive
-spanish,148,Stopping (detener),10,english,brake,to brake,Missing 'to' on infinitive
-spanish,148,Stopping (detener),11,english,interrupt,to interrupt,Missing 'to' on infinitive
-spanish,148,Stopping (detener),17,english,stops it,he/she stops it,Missing subject on 3rd person verb
-spanish,148,Stopping (detener),23,english,they stop him,they stop it,Wrong pronoun - lo means it not him
-spanish,148,Stopping (detener),27,english,one stop,a stop,Wrong article - una means a not one
-spanish,148,Stopping (detener),27,chinese,一站式,一个站,Wrong word - "一站式" means one-stop shop/service not a stop
-spanish,149,Military Terms,4,english,official,officer,Context: military - oficial means officer not official
-spanish,149,Military Terms,4,chinese,官方,军官,Wrong word - "官方" means official not military officer
-spanish,149,Military Terms,5,chinese,一般,将军,Wrong word - "一般" means generally/usually not military general
-spanish,149,Military Terms,10,english,gun,pistol,"pistola" specifically means pistol not generic gun
-spanish,149,Military Terms,13,english,fight,to fight,Missing 'to' on infinitive
-spanish,149,Military Terms,14,english,marine,navy,Context: marina means navy not marine (soldier)
-spanish,149,Military Terms,14,chinese,海洋,海军,Wrong word - "海洋" means ocean not navy
-spanish,149,Military Terms,25,chinese,一般,将军,Wrong word - "一般" means generally/usually not the general
-spanish,149,Military Terms,27,chinese,船长,上尉,Wrong context - "船长" means ship captain not military captain
-spanish,149,Military Terms,28,chinese,船长,上尉,Wrong context - "船长" means ship captain not military captain
-spanish,149,Military Terms,29,chinese,船长,上尉,Wrong context - "船长" means ship captain not military captain
-spanish,149,Military Terms,30,chinese,船长,上尉,Wrong context - "船长" means ship captain not military captain
-spanish,150,Continuing (continuar),4,english,continue,he/she continues,Missing subject on 3rd person singular verb
-spanish,150,Continuing (continuar),6,english,continue,you continue,Missing subject on vosotros form
-spanish,150,Continuing (continuar),7,english,continue,they continue,Missing subject on 3rd person plural verb
-spanish,150,Continuing (continuar),8,english,continue,to continue,Missing 'to' on infinitive
-spanish,150,Continuing (continuar),9,english,continued,continuation,Wrong form - should be noun not past participle
-spanish,150,Continuing (continuar),10,english,continue,to continue,Missing 'to' on infinitive
-spanish,150,Continuing (continuar),11,english,persist,to persist,Missing 'to' on infinitive
-spanish,150,Continuing (continuar),17,english,continues it,he/she continues it,Missing subject on 3rd person verb
-spanish,151,Finishing (terminar),4,english,ends,he/she finishes,Missing subject on 3rd person singular verb
-spanish,151,Finishing (terminar),7,english,end,they finish,Missing subject on 3rd person plural verb
-spanish,151,Finishing (terminar),8,english,finish,to finish,Missing 'to' on infinitive
-spanish,151,Finishing (terminar),10,english,finish,to finish,Missing 'to' on infinitive
-spanish,151,Finishing (terminar),17,english,finishes it,he/she finishes it,Missing subject on 3rd person verb
-spanish,152,Literature & Books,9,chinese,字符,角色,Wrong word - "字符" means character (letter) not character (person in story)
-spanish,152,Literature & Books,12,english,publish,to publish,Missing 'to' on infinitive
-spanish,152,Literature & Books,13,chinese,社论,出版社,Wrong word - "社论" means editorial (opinion piece) not publisher/editorial house
-spanish,152,Literature & Books,19,english,gender,genre,Context: literature - should be literary genre not biological gender
-spanish,152,Literature & Books,19,chinese,性别,体裁,Wrong context - "性别" means gender not genre (literature)
-spanish,152,Literature & Books,36,chinese,一个字符,一个角色,Wrong word - "字符" means character (letter) not character (person)
-spanish,152,Literature & Books,41,english,must be published,you have to publish,Wrong passive voice on hay que phrase
-spanish,152,Literature & Books,49,chinese,这节经文,这节诗句,Wrong context - "经文" means scripture verse not poetry verse
-spanish,152,Literature & Books,55,chinese,性别,体裁,Wrong context - "性别" means gender not genre (literature)
-spanish,153,Developing (desarrollar),4,english,develops,he/she develops,Missing subject on 3rd person singular verb
-spanish,153,Developing (desarrollar),7,english,develop,they develop,Missing subject on 3rd person plural verb
-spanish,153,Developing (desarrollar),8,english,develop,to develop,Missing 'to' on infinitive
-spanish,153,Developing (desarrollar),10,chinese,提前,进步,Wrong word - "提前" means in advance/ahead of time not advance (progress)
-spanish,153,Developing (desarrollar),11,chinese,预览,进步,Wrong context - "预览" means preview (software) not advance (progress)
-spanish,153,Developing (desarrollar),17,english,develops it,he/she develops it,Missing subject on 3rd person verb
-spanish,153,Developing (desarrollar),28,chinese,先进,进展,Wrong word - "先进" is adjective (advanced) not noun (the advance)
-spanish,153,Developing (desarrollar),30,chinese,先进,进步,Wrong word - "先进" is adjective (advanced) not noun (the advance)
-spanish,154,Producing (producir),3,english,produce,you produce,Missing subject - should be "you produce" not just "produce"
-spanish,154,Producing (producir),4,english,produces,he/she produces,Missing subject on 3rd person singular verb
-spanish,154,Producing (producir),7,english,produce,they produce,Missing subject on 3rd person plural verb
-spanish,154,Producing (producir),9,english,manufacture,to manufacture,Missing 'to' on infinitive
-spanish,154,Producing (producir),15,english,produces it,he/she produces it,Missing subject on 3rd person verb
-spanish,154,Producing (producir),24,english,must be manufactured,you have to manufacture,Wrong passive voice on hay que phrase
-spanish,155,Construction,13,english,flat,blueprint,"plano" in construction means blueprint/plan not flat
-spanish,155,Construction,14,chinese,基金会,地基,Wrong word - "基金会" means foundation (charity) not foundation (building)
-spanish,155,Construction,41,chinese,光束,梁,Wrong word - "光束" means light beam not structural beam
-spanish,155,Construction,43,chinese,飞机,平面图,Wrong translation - plano means blueprint not airplane
-spanish,155,Construction,44,chinese,一架飞机,一张平面图,Wrong translation - plano means blueprint not airplane
-spanish,156,Directing (dirigir),4,english,directs,he/she directs,Missing subject on 3rd person singular verb
-spanish,156,Directing (dirigir),7,english,direct,they direct,Missing subject on 3rd person plural verb
-spanish,156,Directing (dirigir),7,chinese,直接,指导,Wrong word - "直接" means direct (adjective) or directly (adverb) not direct (verb)
-spanish,156,Directing (dirigir),8,english,direct,to direct,Missing 'to' on infinitive
-spanish,156,Directing (dirigir),8,chinese,直接,指导,Wrong word - "直接" means direct (adjective) or directly (adverb) not to direct
-spanish,156,Directing (dirigir),10,english,guide,to guide,Missing 'to' on infinitive
-spanish,156,Directing (dirigir),11,english,guide,to guide,Missing 'to' on infinitive
-spanish,156,Directing (dirigir),17,english,directs it,he/she directs it,Missing subject on 3rd person verb
-spanish,157,Organizing (organizar),4,english,organizes,he/she organizes,Missing subject on 3rd person singular verb
-spanish,157,Organizing (organizar),7,english,organize,they organize,Missing subject on 3rd person plural verb
-spanish,157,Organizing (organizar),8,english,organize,to organize,Missing 'to' on infinitive
-spanish,157,Organizing (organizar),11,english,classify,to classify,Missing 'to' on infinitive
-spanish,157,Organizing (organizar),17,english,organizes it,he/she organizes it,Missing subject on 3rd person verb
-spanish,158,Theater & Acting,5,english,scenario,stage,Context: theater - escenario is stage not scenario
-spanish,158,Theater & Acting,5,chinese,场景,舞台,Wrong word - "场景" means scene/setting not stage (theater platform)
-spanish,158,Theater & Acting,6,chinese,窗帘,幕布,Wrong word - "窗帘" means window curtain not theater curtain
-spanish,158,Theater & Acting,10,english,act,to act,Missing 'to' on infinitive
-spanish,158,Theater & Acting,10,chinese,行动,表演,Wrong word - "行动" means take action not act/perform (theater)
-spanish,158,Theater & Acting,11,english,represent,to perform,Context: theater - representar means to perform not represent
-spanish,158,Theater & Acting,11,chinese,代表,表演,Wrong context - "代表" means represent/delegate not perform (theater)
-spanish,158,Theater & Acting,14,chinese,行动,一幕,Wrong context - "行动" means action not act (of a play)
-spanish,158,Theater & Acting,15,english,clap,to applaud,Missing 'to' on infinitive
-spanish,158,Theater & Acting,30,chinese,窗帘,幕布,Wrong word - "窗帘" means window curtain not theater curtain
-spanish,158,Theater & Acting,31,chinese,窗帘,幕布,Wrong word - "窗帘" means window curtain not theater curtain
-spanish,158,Theater & Acting,46,chinese,该行为,该幕,Wrong context - "行为" means behavior/action not act (of a play)
-spanish,158,Theater & Acting,47,chinese,一个行为,一幕,Wrong context - "行为" means behavior/action not act (of a play)
-spanish,159,Traveling (viajar),4,english,travel,he/she travels,Missing subject on 3rd person singular verb
-spanish,159,Traveling (viajar),8,english,travel,to travel,Missing 'to' on infinitive
-spanish,159,Traveling (viajar),17,english,always travels,he/she always travels,Missing subject on 3rd person verb
-spanish,160,Resting (descansar),4,english,rest,he/she rests,Missing subject on 3rd person singular verb
-spanish,160,Resting (descansar),7,english,rest,they rest,Missing subject on 3rd person plural verb
-spanish,160,Resting (descansar),8,english,rest,to rest,Missing 'to' on infinitive
-spanish,160,Resting (descansar),10,english,relax,to relax,Missing 'to' on infinitive
-spanish,160,Resting (descansar),17,english,never rests,he/she never rests,Missing subject on 3rd person verb
-spanish,160,Resting (descansar),29,spanish,quiero relajarse,quiero relajarme,Grammar error - reflexive verb should be relajarme not relajarse
-spanish,161,Philosophy Terms,13,english,reflect,to reflect,Missing 'to' on infinitive
-spanish,161,Philosophy Terms,13,chinese,反映,反思,Wrong word - "反映" means reflect (mirror/report) not reflect (think deeply)
-spanish,162,Practicing (practicar),4,english,practice,he/she practices,Missing subject on 3rd person singular verb
-spanish,162,Practicing (practicar),7,english,practice,they practice,Missing subject on 3rd person plural verb
-spanish,162,Practicing (practicar),8,english,practice,to practice,Missing 'to' on infinitive
-spanish,162,Practicing (practicar),16,english,always practice,he/she always practices,Missing subject on 3rd person verb
-spanish,163,Winning & Earning (ganar),2,chinese,我赢了,我赢,Wrong tense - "了" implies past tense but Spanish is present
-spanish,163,Winning & Earning (ganar),3,chinese,你赢了,你赢,Wrong tense - "了" implies past tense but Spanish is present
-spanish,163,Winning & Earning (ganar),4,english,win,he/she wins,Missing subject on 3rd person singular verb
-spanish,163,Winning & Earning (ganar),5,chinese,我们赢了,我们赢,Wrong tense - "了" implies past tense but Spanish is present
-spanish,163,Winning & Earning (ganar),6,chinese,你赢了,你赢,Wrong tense - "了" implies past tense but Spanish is present
-spanish,163,Winning & Earning (ganar),7,english,win,they win,Missing subject on 3rd person plural verb
-spanish,163,Winning & Earning (ganar),8,english,win,to win,Missing 'to' on infinitive
-spanish,163,Winning & Earning (ganar),11,chinese,我赢了,我赢,Wrong tense - "了" implies past tense but Spanish is present
-spanish,163,Winning & Earning (ganar),13,chinese,你赢了,你赢,Wrong tense - "了" implies past tense but Spanish is present
-spanish,163,Winning & Earning (ganar),15,chinese,他赢了,他赢,Wrong tense - "了" implies past tense but Spanish is present
-spanish,163,Winning & Earning (ganar),16,english,always wins,he/she always wins,Missing subject on 3rd person verb
-spanish,163,Winning & Earning (ganar),17,chinese,我们赢了,我们赢,Wrong tense - "了" implies past tense but Spanish is present
-spanish,163,Winning & Earning (ganar),19,chinese,你赢了,你赢,Wrong tense - "了" implies past tense but Spanish is present
-spanish,163,Winning & Earning (ganar),21,chinese,他们赢了,他们赢,Wrong tense - "了" implies past tense but Spanish is present
-spanish,164,Dance & Dancing,8,english,sauce,salsa,Context: dance - salsa is the dance style not condiment
-spanish,164,Dance & Dancing,8,chinese,酱,萨尔萨舞,Wrong word - "酱" means sauce not salsa dance
-spanish,164,Dance & Dancing,12,english,spin,to spin,Missing 'to' on infinitive
-spanish,164,Dance & Dancing,13,english,clue,dance floor,Context: dance - pista means dance floor not clue
-spanish,164,Dance & Dancing,13,chinese,线索,舞池,Wrong word - "线索" means clue/lead not dance floor
-spanish,164,Dance & Dancing,17,english,taping,footwork,Context: dance - zapateo is footwork not recording
-spanish,164,Dance & Dancing,17,chinese,录音,踢踏舞,Wrong word - "录音" means recording not footwork/tap dancing
-spanish,164,Dance & Dancing,18,english,compass,beat,Context: dance/music - compás is rhythm/beat not navigation tool
-spanish,164,Dance & Dancing,18,chinese,指南针,节拍,Wrong context - "指南针" means compass (navigation) not beat/rhythm
-spanish,164,Dance & Dancing,21,chinese,崇敬,鞠躬,Wrong context - "崇敬" means reverence (respect emotion) not bow (gesture)
-spanish,164,Dance & Dancing,34,english,the sauce,the salsa,Context: dance - should be salsa dance
-spanish,164,Dance & Dancing,34,chinese,酱汁,萨尔萨舞,Wrong word - "酱汁" means sauce not salsa dance
-spanish,164,Dance & Dancing,44,english,the track,the dance floor,Context: dance - should be dance floor
-spanish,164,Dance & Dancing,44,chinese,轨道,舞池,Wrong word - "轨道" means track/orbit not dance floor
-spanish,164,Dance & Dancing,48,chinese,党,派对,Wrong word - "党" means political party not party (celebration)
-spanish,164,Dance & Dancing,52,english,the tapping,the footwork,Context: dance - should be footwork
-spanish,164,Dance & Dancing,52,chinese,攻丝,踢踏舞,Wrong context - "攻丝" means tapping (threading/machining) not tap dancing
-spanish,164,Dance & Dancing,54,english,the compass,the beat,Context: dance/music - should be rhythm/beat
-spanish,164,Dance & Dancing,54,chinese,指南针,节拍,Wrong context - "指南针" means compass (navigation) not beat (music)
-spanish,164,Dance & Dancing,55,chinese,带指南针,有节拍,Wrong context - "指南针" means compass (navigation) not beat (music)
-spanish,164,Dance & Dancing,56,chinese,纸条,滑步,Wrong word - "纸条" means slip of paper not slip (dance move)
-spanish,164,Dance & Dancing,58,chinese,返回,转身,Wrong context - "返回" means return (go back) not turn (dance move)
-spanish,164,Dance & Dancing,61,chinese,一张弓,一个鞠躬,Wrong word - "弓" means bow (weapon/archery) not bow (gesture)
-spanish,165,Losing (perder),2,chinese,我输了,我输,Wrong tense - "了" implies past tense but Spanish is present
-spanish,165,Losing (perder),3,chinese,你输了,你输,Wrong tense - "了" implies past tense but Spanish is present
-spanish,165,Losing (perder),4,english,lose,he/she loses,Missing subject on 3rd person singular verb
-spanish,165,Losing (perder),5,chinese,我们输了,我们输,Wrong tense - "了" implies past tense but Spanish is present
-spanish,165,Losing (perder),6,chinese,你输了,你输,Wrong tense - "了" implies past tense but Spanish is present
-spanish,165,Losing (perder),7,english,lose,they lose,Missing subject on 3rd person plural verb
-spanish,165,Losing (perder),8,english,lose,to lose,Missing 'to' on infinitive
-spanish,165,Losing (perder),11,chinese,我输了,我输,Wrong tense - "了" implies past tense but Spanish is present
-spanish,165,Losing (perder),13,chinese,你输了,你输,Wrong tense - "了" implies past tense but Spanish is present
-spanish,165,Losing (perder),15,chinese,他输了,他输,Wrong tense - "了" implies past tense but Spanish is present
-spanish,165,Losing (perder),16,english,always loses,he/she always loses,Missing subject on 3rd person verb
-spanish,165,Losing (perder),17,chinese,我们输了,我们输,Wrong tense - "了" implies past tense but Spanish is present
-spanish,165,Losing (perder),19,chinese,你输了,你输,Wrong tense - "了" implies past tense but Spanish is present
-spanish,165,Losing (perder),21,chinese,他们输了,他们输,Wrong tense - "了" implies past tense but Spanish is present
-spanish,166,Forming (formar),2,chinese,形式,形成,Wrong word - "形式" means form (noun - shape) not form (verb - to create)
-spanish,166,Forming (formar),3,english,shapes,you form,Wrong translation - should be verb form not noun shapes
-spanish,166,Forming (formar),3,chinese,形状,形成,Wrong word - "形状" means form/shape (noun) not form (verb)
-spanish,166,Forming (formar),4,english,shape,he/she forms,Missing subject on 3rd person singular verb
-spanish,166,Forming (formar),4,chinese,形状,形成,Wrong word - "形状" means form/shape (noun) not form (verb)
-spanish,166,Forming (formar),7,english,form,they form,Missing subject on 3rd person plural verb
-spanish,166,Forming (formar),7,chinese,形式,形成,Wrong word - "形式" means form (noun - shape) not form (verb)
-spanish,166,Forming (formar),8,english,form,to form,Missing 'to' on infinitive
-spanish,166,Forming (formar),8,chinese,形式,形成,Wrong word - "形式" means form (noun - shape) not to form (verb)
-spanish,166,Forming (formar),16,english,it forms it,he/she forms it,Wrong subject - should be he/she not it
-spanish,167,Fashion & Style,23,chinese,模型,模特,Wrong context - "模型" means model (miniature/prototype) not model (person)
-spanish,167,Fashion & Style,24,chinese,模型,模特,Wrong context - "模型" means model (miniature/prototype) not model (person)
-spanish,168,Reaching (alcanzar),4,english,reaches,he/she reaches,Missing subject on 3rd person singular verb
-spanish,168,Reaching (alcanzar),7,english,reach,they reach,Missing subject on 3rd person plural verb
-spanish,168,Reaching (alcanzar),8,english,reach,to reach,Missing 'to' on infinitive
-spanish,168,Reaching (alcanzar),17,english,reaches it,he/she reaches it,Missing subject on 3rd person verb
-spanish,169,Maintaining (mantener),4,english,keeps,he/she keeps,Missing subject on 3rd person singular verb
-spanish,169,Maintaining (mantener),7,english,maintain,they maintain,Missing subject on 3rd person plural verb
-spanish,169,Maintaining (mantener),8,english,keep,to keep,Missing 'to' on infinitive
-spanish,169,Maintaining (mantener),17,english,keeps it,he/she keeps it,Missing subject on 3rd person verb
-spanish,170,Psychology Terms,8,chinese,情报,智力,Wrong context - "情报" means intelligence (information/espionage) not intelligence (mental capacity)
-spanish,170,Psychology Terms,12,english,analyze,to analyze,Missing 'to' on infinitive
-spanish,170,Psychology Terms,13,english,understand,to understand,Missing 'to' on infinitive
-spanish,170,Psychology Terms,14,chinese,会话,疗程,Wrong context - "会话" means conversation/dialogue not session (therapy)
-spanish,170,Psychology Terms,15,english,heal,to heal,Missing 'to' on infinitive
-spanish,170,Psychology Terms,34,chinese,情报,智力,Wrong context - "情报" means intelligence (information/espionage) not intelligence (mental capacity)
-spanish,170,Psychology Terms,42,english,must be analyzed,you have to analyze,Wrong passive voice on hay que phrase
-spanish,170,Psychology Terms,46,chinese,会议,疗程,Wrong context - "会议" means meeting not session (therapy)
-spanish,171,Solving (resolver),8,english,solve,to solve,Missing 'to' on infinitive
-spanish,171,Solving (resolver),9,english,solve,to solve,Missing 'to' on infinitive
-spanish,171,Solving (resolver),10,english,clear,to clear,Missing 'to' on infinitive
-spanish,171,Solving (resolver),11,english,unravel,to unravel,Missing 'to' on infinitive
-spanish,171,Solving (resolver),26,english,resolve the conflict,to resolve the conflict,Missing 'to' on infinitive phrase
-spanish,171,Solving (resolver),27,english,the problem must be solved,you have to solve the problem,Wrong passive voice on hay que phrase
-spanish,171,Solving (resolver),28,english,clear up doubts,to clear up doubts,Missing 'to' on infinitive phrase
-spanish,171,Solving (resolver),29,english,the path must be cleared,you have to clear the path,Wrong passive voice on hay que phrase
-spanish,171,Solving (resolver),30,english,unravel the mystery,to unravel the mystery,Missing 'to' on infinitive phrase
-spanish,172,Avoiding (evitar),4,english,avoid,he/she avoids,Missing subject on 3rd person singular verb
-spanish,172,Avoiding (evitar),7,english,avoid,they avoid,Missing subject on 3rd person plural verb
-spanish,172,Avoiding (evitar),8,english,avoid,to avoid,Missing 'to' on infinitive
-spanish,172,Avoiding (evitar),9,english,prevent,to prevent,Missing 'to' on infinitive
-spanish,172,Avoiding (evitar),17,english,avoids it,he/she avoids it,Missing subject on 3rd person verb
-spanish,173,Journalism Terms,4,english,holder,headline,Context: journalism - titular is headline not holder
-spanish,173,Journalism Terms,4,chinese,持有人,标题,Wrong word - "持有人" means holder (person) not headline
-spanish,173,Journalism Terms,6,english,writing,newsroom,Context: journalism - redacción is newsroom not writing
-spanish,173,Journalism Terms,6,chinese,写作,编辑部,Wrong word - "写作" means writing (activity) not newsroom/editorial staff
-spanish,173,Journalism Terms,14,english,sent,correspondent,Context: journalism - enviado is correspondent/envoy not sent
-spanish,173,Journalism Terms,14,chinese,已发送,特派员,Wrong word - "已发送" means already sent (past participle) not correspondent
-spanish,173,Journalism Terms,16,chinese,编年史,报道,Wrong context - "编年史" means chronology/annals not chronicle (journalism article)
-spanish,173,Journalism Terms,18,chinese,勺,独家新闻,Wrong word - "勺" means spoon/ladle not scoop (exclusive news)
-spanish,173,Journalism Terms,24,english,the holder,the headline,Context: journalism - should be headline
-spanish,173,Journalism Terms,24,chinese,持有人,标题,Wrong word - "持有人" means holder (person) not headline
-spanish,173,Journalism Terms,28,chinese,社论,编辑部,Wrong context - "社论" means editorial (opinion piece) not newsroom
-spanish,173,Journalism Terms,41,chinese,部分一个部分,一个部分,Duplicate text - should be just "一个部分"
-spanish,173,Journalism Terms,48,chinese,编年史,报道,Wrong context - "编年史" means chronology/annals not chronicle (article)
-spanish,173,Journalism Terms,53,chinese,第一个,一条独家新闻,Wrong context - "第一个" means first one (generic) not scoop/exclusive
-spanish,174,Supposing (suponer),4,english,supposes,he/she supposes,Missing subject on 3rd person singular verb
-spanish,174,Supposing (suponer),8,english,suppose,to suppose,Missing 'to' on infinitive
-spanish,174,Supposing (suponer),10,english,imagine,to imagine,Missing 'to' on infinitive
-spanish,174,Supposing (suponer),11,english,assume,to assume,Missing 'to' on infinitive
-spanish,174,Supposing (suponer),17,english,assumes it,he/she assumes it,Missing subject on 3rd person verb
-spanish,175,Meaning (significar),4,english,means,it means,Missing subject on 3rd person singular verb
-spanish,175,Meaning (significar),7,english,mean,they mean,Missing subject on 3rd person plural verb
-spanish,175,Meaning (significar),8,english,mean,to mean,Missing 'to' on infinitive
-spanish,175,Meaning (significar),10,chinese,感觉,意义,Wrong word - "感觉" means feeling/sensation not sense/meaning
-spanish,176,Photography Terms,11,english,capture,to capture,Missing 'to' on infinitive
-spanish,176,Photography Terms,12,english,process,to process,Missing 'to' on infinitive
-spanish,176,Photography Terms,12,chinese,进程,处理,Wrong word - "进程" means process (noun - procedure) not process (verb)
-spanish,176,Photography Terms,13,english,edit,to edit,Missing 'to' on infinitive
-spanish,176,Photography Terms,15,chinese,隔膜,光圈,Wrong context - "隔膜" means diaphragm (body part) not aperture (camera)
-spanish,176,Photography Terms,18,chinese,过滤,滤镜,Wrong word - "过滤" means to filter (verb) not filter (noun - lens)
-spanish,176,Photography Terms,27,english,the approach,the focus,Context: photography - enfoque is focus not approach
-spanish,176,Photography Terms,27,chinese,方法,对焦,Wrong context - "方法" means method/approach not focus (photography)
-spanish,176,Photography Terms,37,english,must be captured,you have to capture,Wrong passive voice on hay que phrase
-spanish,176,Photography Terms,39,english,must be processed,you have to process,Wrong passive voice on hay que phrase
-spanish,176,Photography Terms,45,chinese,隔膜,光圈,Wrong context - "隔膜" means diaphragm (body part) not aperture (camera)
-spanish,176,Photography Terms,51,chinese,过滤器,滤镜,Wrong context - "过滤器" means water/air filter not camera filter
-spanish,177,Choosing (elegir),4,english,choose,he/she chooses,Missing subject on 3rd person singular verb
-spanish,177,Choosing (elegir),7,english,choose,they choose,Missing subject on 3rd person plural verb
-spanish,177,Choosing (elegir),8,english,choose,to choose,Missing 'to' on infinitive
-spanish,177,Choosing (elegir),9,english,choose,to choose,Missing 'to' on infinitive
-spanish,177,Choosing (elegir),10,english,select,to select,Missing 'to' on infinitive
-spanish,177,Choosing (elegir),17,english,choose it,he/she chooses it,Missing subject on 3rd person verb
-spanish,178,Deciding (decidir),4,english,decides,he/she decides,Missing subject on 3rd person singular verb
-spanish,178,Deciding (decidir),5,english,we decided,we decide,Wrong tense - should be present tense not past
-spanish,178,Deciding (decidir),7,english,decide,they decide,Missing subject on 3rd person plural verb
-spanish,178,Deciding (decidir),8,english,decide,to decide,Missing 'to' on infinitive
-spanish,178,Deciding (decidir),11,chinese,分辨率,决议,Wrong context - "分辨率" means resolution (screen) not resolution (decision)
-spanish,178,Deciding (decidir),17,english,decides it,he/she decides it,Missing subject on 3rd person verb
-spanish,179,Publicity Terms,10,english,promote,to promote,Missing 'to' on infinitive
-spanish,179,Publicity Terms,12,english,advertise,to advertise,Missing 'to' on infinitive
-spanish,179,Marketing & Advertising,17,chinese,发射,发布,Wrong context - "发射" means launch (rocket/missile) not launch (product)
-spanish,179,Marketing & Advertising,24,chinese,公告,广告,Wrong word - "公告" means announcement/notice not advertisement
-spanish,179,Marketing & Advertising,46,chinese,段,细分市场,Wrong context - "段" means segment (piece) not segment (market segment)
-spanish,179,Marketing & Advertising,50,chinese,发射,发布,Wrong context - "发射" means launch (rocket/missile) not launch (product)
-spanish,180,Appearing (aparecer),4,english,appears,he/she appears,Missing subject on 3rd person singular verb
-spanish,180,Appearing (aparecer),7,english,appear,they appear,Missing subject on 3rd person plural verb
-spanish,180,Appearing (aparecer),8,english,appear,to appear,Missing 'to' on infinitive
-spanish,180,Appearing (aparecer),9,chinese,外观,出现,Wrong context - "外观" means appearance (how something looks) not appearance (act of appearing)
-spanish,180,Appearing (aparecer),10,english,arise,to arise,Missing 'to' on infinitive
-spanish,180,Appearing (aparecer),11,english,manifest,to manifest,Missing 'to' on infinitive
-spanish,180,Appearing (aparecer),11,chinese,明显,表现,Wrong word - "明显" is adjective (obvious) not verb (to manifest)
-spanish,180,Appearing (aparecer),17,english,always appears,he/she always appears,Missing subject on 3rd person verb
-spanish,180,Appearing (aparecer),26,chinese,外观,出现,Wrong context - "外观" means appearance (how something looks) not appearance (act)
-spanish,180,Appearing (aparecer),27,chinese,外观,出现,Wrong context - "外观" means appearance (how something looks) not an appearance
-spanish,180,Appearing (aparecer),30,chinese,你必须证明,你必须表明立场,Wrong context - "证明" means prove not demonstrate/manifest position
+spanish,141,Accepting (aceptar),4,portuguese,aceitar,ele/ela aceita,Use conjugated verb for third person singular.
+spanish,141,Accepting (aceptar),6,portuguese,você aceita,vocês aceitam,Use plural form for second person plural equivalent.
+spanish,141,Accepting (aceptar),7,portuguese,aceitar,eles aceitam,Use conjugated verb for third person plural.
+spanish,141,Accepting (aceptar),13,portuguese,Eu aceito,Eu aceito isso,Clarify object to match “I accept it”.
+spanish,141,Accepting (aceptar),15,portuguese,você aceita,você aceita isso,Include object to match “you accept it”.
+spanish,141,Accepting (aceptar),17,portuguese,aceita,ele/ela aceita isso,Conjugated form with object for “he/she accepts it”.
+spanish,141,Accepting (aceptar),20,portuguese,você aceita,vocês aceitam,Plural form for “you” (vosotros).
+spanish,141,Accepting (aceptar),21,portuguese,você aceita,vocês aceitam isso,Plural form and object for “you accept it”.
+spanish,141,Accepting (aceptar),25,portuguese,Eu aceitarei,Vou aceitar,Use natural near-future construction.
+spanish,142,Rejecting (rechazar),2,portuguese,rejeição,Eu rejeito,Use conjugated verb instead of noun.
+spanish,142,Rejecting (rechazar),6,portuguese,você rejeita,vocês rejeitam,Plural form for “vosotros”.
+spanish,142,Rejecting (rechazar),7,portuguese,rejeitar,eles rejeitam,Conjugated third person plural.
+spanish,142,Rejecting (rechazar),12,portuguese,Eu rejeito,Eu rejeito isso,Include object to match “I reject it”.
+spanish,142,Rejecting (rechazar),16,portuguese,rejeita,ele/ela rejeita isso,Add subject and object for clarity.
+spanish,142,Rejecting (rechazar),19,portuguese,você rejeita,vocês rejeitam,Plural form for “vosotros”.
+spanish,142,Rejecting (rechazar),20,portuguese,você rejeita,vocês rejeitam isso,Plural form with object for “you reject it”.
+spanish,143,Space & Universe,8,portuguese,navio,nave espacial,Use correct term for spacecraft.
+spanish,143,Space & Universe,33,portuguese,o navio,a nave espacial,Use proper feminine article with “nave espacial”.
+spanish,143,Space & Universe,34,portuguese,um navio,uma nave espacial,Use proper feminine noun for “a spacecraft”.
+spanish,144,Offering (ofrecer),4,pinyin,yōu huì,tí gōng,Correct pinyin for “tí gōng”.
+spanish,144,Offering (ofrecer),4,portuguese,ofertas,ele/ela oferece,Use conjugated verb for third person singular.
+spanish,144,Offering (ofrecer),6,portuguese,você oferece,vocês oferecem,Plural form for “vosotros”.
+spanish,144,Offering (ofrecer),7,pinyin,bào jià,tí gōng,Correct pinyin for “tí gōng”.
+spanish,144,Offering (ofrecer),7,portuguese,oferta,eles oferecem,Conjugate for third person plural.
+spanish,144,Offering (ofrecer),8,pinyin,bào jià,tí gōng,Correct pinyin for “to offer”.
+spanish,144,Offering (ofrecer),8,portuguese,oferta,oferecer,Use infinitive for verb entry.
+spanish,144,Offering (ofrecer),9,pinyin,bào jià,tí yì,Correct pinyin for 提议.
+spanish,144,Offering (ofrecer),20,portuguese,você oferece,vocês oferecem,Plural form for “vosotros”.
+spanish,144,Offering (ofrecer),21,portuguese,você oferece,vocês oferecem isso,Plural form with object for “you offer it”.
+spanish,144,Offering (ofrecer),28,portuguese,deve ser proposto,você tem que propor,More natural imperative/necessity phrasing.
+spanish,145,Promising (prometer),4,portuguese,promessas,ele/ela promete,Use conjugated verb for third person singular.
+spanish,145,Promising (prometer),7,portuguese,promessa,eles prometem,Use conjugated third person plural.
+spanish,145,Promising (prometer),8,portuguese,promessa,prometer,Use infinitive for verb entry.
+spanish,145,Promising (prometer),11,portuguese,juro,jurar,Use infinitive to match “to swear”.
+spanish,145,Promising (prometer),20,portuguese,você promete,vocês prometem,Plural form for “vosotros”.
+spanish,145,Promising (prometer),21,portuguese,você promete,vocês prometem,Plural form for “vosotros”.
+spanish,145,Promising (prometer),25,portuguese,Eu prometo,Vou prometer,Use natural near-future construction.
+spanish,150,Continuing (continuar),4,portuguese,continuar,ele/ela continua,Use conjugated third person singular.
+spanish,150,Continuing (continuar),6,portuguese,continuar,vocês continuam,Plural form for “vosotros”.
+spanish,150,Continuing (continuar),7,portuguese,continuar,eles continuam,Use conjugated third person plural.
+spanish,150,Continuing (continuar),17,portuguese,continua,ele/ela continua,Add subject clarity for third person.
+spanish,150,Continuing (continuar),20,portuguese,você continua,vocês continuam,Plural form for “vosotros”.
+spanish,150,Continuing (continuar),21,portuguese,você continua,vocês continuam,Plural form for “vosotros”.
