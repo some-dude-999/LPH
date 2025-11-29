@@ -1,0 +1,48 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+english,131,Formal Vocabulary 1,7,portuguese,constituem,constituir,Use infinitive for base verb
+english,131,Formal Vocabulary 1,16,spanish,fundamentales,fundamental,Use singular adjective
+english,131,Formal Vocabulary 1,16,portuguese,fundamentais,fundamental,Use singular form
+english,131,Formal Vocabulary 1,27,portuguese,verifique se,verificar se,Use infinitive phrase instead of imperative
+english,131,Formal Vocabulary 1,57,portuguese,indique que,indicar que,Use infinitive for neutral form
+english,132,Formal Vocabulary 2,12,spanish,director,principal,Use common adjective meaning main
+english,132,Formal Vocabulary 2,12,portuguese,principal,principal,Ensure adjective matches meaning main
+english,132,Formal Vocabulary 2,22,portuguese,toma posse como presidente,empossar o presidente,Use verb for inaugurating a president
+english,133,Formal Vocabulary 3,5,spanish,adjunto,por la presente,"Natural rendering of ""herewith"" in formal letters"
+english,133,Formal Vocabulary 3,5,portuguese,aqui,por meio desta,"Use proper formal phrase for ""herewith"""
+english,133,Formal Vocabulary 3,8,portuguese,confesso,confessar,Use infinitive form
+english,133,Formal Vocabulary 3,12,chinese,属性,归因于,"Use verb sense ""attribute to"""
+english,133,Formal Vocabulary 3,12,pinyin,shǔ xìng,guī yīn yú,Match updated Chinese wording
+english,133,Formal Vocabulary 3,12,spanish,atributo,atribuir,Use verb instead of noun
+english,133,Formal Vocabulary 3,12,portuguese,atributo,atribuir,Use verb instead of noun
+english,133,Formal Vocabulary 3,17,chinese,怀孕,构思,"Use sense ""form an idea"""
+english,133,Formal Vocabulary 3,17,pinyin,huái yùn,gòu sī,Match updated Chinese wording
+english,133,Formal Vocabulary 3,28,portuguese,anexa,em anexo,Natural phrase for enclosed items
+english,133,Formal Vocabulary 3,34,portuguese,confessar compromisso,declarar compromisso,Use appropriate verb for formal declaration
+english,133,Formal Vocabulary 3,35,portuguese,confesso intenção,declarar intenção,Use declarative infinitive
+english,133,Formal Vocabulary 3,36,chinese,管理测试,进行测试,Better verb for administering a test
+english,133,Formal Vocabulary 3,36,pinyin,guǎn lǐ cè shì,jìn xíng cè shì,Match updated Chinese wording
+english,133,Formal Vocabulary 3,37,chinese,服用药物,施用药物,"Administer medication as giving it, not taking"
+english,133,Formal Vocabulary 3,37,pinyin,fú yòng yào wù,shī yòng yào wù,Match updated Chinese wording
+english,133,Formal Vocabulary 3,40,spanish,teoría propuesta,proponer una teoría,"Use verb phrase for ""propound theory"""
+english,133,Formal Vocabulary 3,41,spanish,idea propuesta,proponer una idea,"Use verb phrase for ""propound idea"""
+english,133,Formal Vocabulary 3,42,chinese,属性成功,把成功归因于,"Use verb phrase ""attribute success to"""
+english,133,Formal Vocabulary 3,42,pinyin,shǔ xìng chéng gōng,bǎ chéng gōng guī yīn yú,Match updated Chinese wording
+english,133,Formal Vocabulary 3,42,spanish,éxito del atributo,atribuir el éxito,Correct verb-based translation
+english,133,Formal Vocabulary 3,42,portuguese,atributo sucesso,atribuir o sucesso,Use verb-based phrase
+english,134,Formal Vocabulary 4,4,chinese,导出,源自,"Use common verb meaning ""derive from"""
+english,134,Formal Vocabulary 4,4,pinyin,dǎo chū,yuán zì,Match updated Chinese wording
+english,134,Formal Vocabulary 4,8,chinese,域名,领域,"Use general sense ""field/area"""
+english,134,Formal Vocabulary 4,8,pinyin,yù míng,lǐng yù,Match updated Chinese wording
+english,134,Formal Vocabulary 4,46,portuguese,encontrar problemas,enfrentar problemas,More natural verb for encountering issues
+english,134,Formal Vocabulary 4,47,portuguese,encontram dificuldades,enfrentar dificuldades,"Use infinitive, not conjugated plural"
+english,137,Academic Adjectives 2,3,chinese,特遣队,取决于的,"Use adjective sense ""dependent on"""
+english,137,Academic Adjectives 2,3,pinyin,tè qiǎn duì,qǔ jué yú de,Match updated Chinese wording
+english,137,Academic Adjectives 2,7,chinese,积分,整体的,"Use adjective sense ""integral/essential"""
+english,137,Academic Adjectives 2,7,pinyin,jī fēn,zhěng tǐ de,Match updated Chinese wording
+english,137,Academic Adjectives 2,7,spanish,integrales,integral,Use singular adjective
+english,137,Academic Adjectives 2,7,portuguese,integrante,integral,Use common adjective form
+english,137,Academic Adjectives 2,21,portuguese,difundido,generalizado,"More natural for ""pervasive"""
+english,137,Academic Adjectives 2,59,chinese,与,与某事相关,"Complete phrase meaning ""pertinent to"""
+english,137,Academic Adjectives 2,59,pinyin,yǔ,yǔ mǒu shì xiāng guān,Match updated Chinese wording
+english,137,Academic Adjectives 2,60,chinese,有关普遍影响,广泛影响,Natural phrase for widespread influence
+english,137,Academic Adjectives 2,60,pinyin,yǒu guān pǔ biàn yǐng xiǎng,guǎng fàn yǐng xiǎng,Match updated Chinese wording
