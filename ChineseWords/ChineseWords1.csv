@@ -1,7 +1,7 @@
 chinese,pinyin,english,spanish,french,portuguese
 你好,nǐ hǎo,Hello,Hola,Bonjour,Olá
 您好,nín hǎo,Hello,Hola,Bonjour,Olá
-早安,zǎo ān,Good morning,Buen día,Bonjour,Bom dia
+早安,zǎo ān,Good morning,Buenos días,Bonjour,Bom dia
 午安,wǔ ān,Good afternoon,buenas tardes,bon après-midi,boa tarde
 晚安,wǎn ān,Good night,Buenas noches,Bonne nuit,Boa noite
 再见,zài jiàn,goodbye,adiós,au revoir,adeus
@@ -13,12 +13,12 @@ chinese,pinyin,english,spanish,french,portuguese
 对不起,duì bù qǐ,sorry,Lo siento,Désolé,desculpe
 没关系,méi guān xì,It doesn't matter,No importa,Cela n'a pas d'importance,Não importa
 请,qǐng,please,por favor,s'il te plaît,por favor
-欢迎,huān yíng,welcome,bienvenido,accueillir,Bem-vindo
+欢迎,huān yíng,welcome,bienvenido,bienvenue,Bem-vindo
 好久不见,hǎo jiǔ bú jiàn,long time no see,hace mucho que no te veo,je ne t'ai pas vu depuis longtemps,não te vejo há muito tempo
 再会,zài huì,Goodbye,Adiós,Au revoir,Adeus
 保重,bǎo zhòng,Take care of yourself,Cuídate,Prends soin de toi,Cuide-se
 慢走,màn zǒu,take care,cuídate,prends soin de toi,cuide-se
-你好吗,nǐ hǎo ma,How are you?,Estás bien,Êtes-vous ok,Você está bem
+你好吗,nǐ hǎo ma,How are you?,Estás bien,Ça va ?,Você está bem
 你好啊,nǐ hǎo a,hello,Hola,Bonjour,olá
 您好先生,nín hǎo xiān shēng,hello sir,hola señor,bonjour monsieur,olá senhor
 您好请问,nín hǎo qǐng wèn,excuse me,disculpe,excusez-moi,com licença
@@ -46,7 +46,7 @@ chinese,pinyin,english,spanish,french,portuguese
 真的没关系,zhēn de méi guān xì,It really doesn't matter,Realmente no importa,Cela n'a vraiment pas d'importance,Realmente não importa
 请坐,qǐng zuò,Please sit down,por favor siéntate,"S'il vous plaît, asseyez-vous","Por favor, sente-se"
 请进,qǐng jìn,Please come in,Por favor entra,"S'il vous plaît, entrez",Por favor entre
-欢迎光临,huān yíng guāng lín,welcome,bienvenido,accueillir,Bem-vindo
+欢迎光临,huān yíng guāng lín,welcome,bienvenido,bienvenue,Bem-vindo
 欢迎回来,huān yíng huí lái,welcome back,bienvenido de nuevo,content de te revoir,bem vindo de volta
 好久不见了,hǎo jiǔ bú jiàn le,long time no see,mucho tiempo sin verlo,cela fait longtemps qu'on ne s'est pas vu,muito tempo sem ver
 我们好久不见,wǒ men hǎo jiǔ bú jiàn,long time no see,mucho tiempo sin verlo,cela fait longtemps qu'on ne s'est pas vu,muito tempo sem ver
