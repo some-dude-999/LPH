@@ -1,1 +1,14 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+pinyin,113,Business Basics,32,pinyin,zhī jiān de jìng zhēng zhuàn qǔ lì rùn,zhuàn qǔ lì rùn,Update pinyin to match Chinese 赚取利润
+pinyin,114,Finance Basics,7,pinyin,zé rèn,fù zhài,Update pinyin to match Chinese 负债
+pinyin,114,Finance Basics,3,pinyin,kù cún,gǔ piào,Update pinyin to match Chinese 股票
+portuguese,114,Finance Basics,13,portuguese,capitais,capital,Should be singular not plural
+portuguese,114,Finance Basics,19,portuguese,cerca viva,cobertura,Wrong context - cerca viva is plant hedge not financial hedge
+portuguese,116,Science Basics,3,portuguese,experimentar,experimento,Wrong form - should be noun not verb
+spanish,117,Biology Basics,2,spanish,celda,célula,Wrong word - celda is prison cell not biological cell
+spanish,118,Basic Chemistry & Physics,12,spanish,ola,onda,Wrong word - ola is ocean wave not physics wave
+portuguese,120,Mental Health Basics,2,portuguese,mentais,mental,Should be singular adjective not plural
+spanish,125,Cause & Effect,8,spanish,plomo,conducir,Wrong word - plomo is the metal lead not the verb
+spanish,125,Cause & Effect,14,spanish,tallo,provenir,Wrong word - tallo is plant stem not the verb stem from
+pinyin,126,Certainty & Probability,50,pinyin,kě yǐ kàn chū jī hū bù kě bì miǎn,jī hū bù kě bì miǎn,Update pinyin to match Chinese 几乎不可避免
+portuguese,129,Literature,10,portuguese,configuração,cenário,Wrong context - configuração is device settings not story setting
