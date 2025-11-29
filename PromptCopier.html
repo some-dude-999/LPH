@@ -1101,32 +1101,6 @@ Create your own branch, commit, and PR to main.</div>
         <tr><th>Pack_Number</th><th>Pack_Title</th><th>Chinese_Combined_Words</th></tr>
         <tr><td>15</td><td>Animals</td><td>[猫,狗,鸟,小猫,猫咪,小狗,狗狗,小鸟,鸟儿]</td></tr>
     </table>
-
-    <h4>STAGE 3 OUTPUT - ChineseWords15.csv (Breakout CSV)</h4>
-    <p>OUTPUT: Individual CSV file with ALL translations (6 columns for Chinese)</p>
-    <table>
-        <tr><th>chinese</th><th>pinyin</th><th>english</th><th>spanish</th><th>french</th><th>portuguese</th></tr>
-        <tr><td>猫</td><td>māo</td><td>cat</td><td>gato</td><td>chat</td><td>gato</td></tr>
-        <tr><td>小猫</td><td>xiǎo māo</td><td>kitten</td><td>gatito</td><td>chaton</td><td>gatinho</td></tr>
-    </table>
-    <p>CRITICAL: Character-by-character pinyin mapping with punctuation attached! 早上好， = "zǎo shàng hǎo，" (3 chars + comma → 3 syllables + comma)</p>
-
-    <h4>STAGE 3 OUTPUT - SpanishWords8.csv (5 columns for Spanish)</h4>
-    <table>
-        <tr><th>spanish</th><th>english</th><th>chinese</th><th>pinyin</th><th>portuguese</th></tr>
-        <tr><td>pan</td><td>bread</td><td>面包</td><td>miàn bāo</td><td>pão</td></tr>
-        <tr><td>pan fresco</td><td>fresh bread</td><td>新鲜面包</td><td>xīn xiān miàn bāo</td><td>pão fresco</td></tr>
-    </table>
-
-    <h4>STAGE 3 OUTPUT - EnglishWords5.csv (5 columns for English)</h4>
-    <table>
-        <tr><th>english</th><th>chinese</th><th>pinyin</th><th>spanish</th><th>portuguese</th></tr>
-        <tr><td>red</td><td>红色</td><td>hóng sè</td><td>rojo</td><td>vermelho</td></tr>
-        <tr><td>red apple</td><td>红苹果</td><td>hóng píng guǒ</td><td>manzana roja</td><td>maçã vermelha</td></tr>
-    </table>
-</div>
-
-
 <h3>Chinese - Stage 3 (Translation Quality Review - 5 Acts, 107 Packs)</h3>
 <p><strong>Run 5 agents in parallel</strong> - one per act. Each act has its own fix table.</p>
 
@@ -1165,7 +1139,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py chinese 1
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py chinese
 python PythonHelpers/validate_pinyin.py chinese 1 14
@@ -1174,7 +1156,7 @@ python PythonHelpers/check_language_mismatch.py chinese 1 14
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (1 through 14):
 
@@ -1214,7 +1196,7 @@ For EACH pack (1 through 14):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 ChineseWords/ChineseFixTableAct1.csv
@@ -1229,7 +1211,7 @@ chinese,1,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -1244,13 +1226,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py chinese 1 14
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add ChineseWords/ChineseWords{1..14}.csv ChineseWords/ChineseFixTableAct1.csv
 git commit -m "Act 1/5 (Foundation): Review and fix translations for packs 1-14"
@@ -1302,7 +1284,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py chinese 2
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py chinese
 python PythonHelpers/validate_pinyin.py chinese 15 27
@@ -1311,7 +1301,7 @@ python PythonHelpers/check_language_mismatch.py chinese 15 27
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (15 through 27):
 
@@ -1351,7 +1341,7 @@ For EACH pack (15 through 27):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 ChineseWords/ChineseFixTableAct2.csv
@@ -1366,7 +1356,7 @@ chinese,15,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -1381,13 +1371,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py chinese 15 27
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add ChineseWords/ChineseWords{1..27}.csv ChineseWords/ChineseFixTableAct2.csv
 git commit -m "Act 2/5 (Development): Review and fix translations for packs 15-27"
@@ -1439,7 +1429,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py chinese 3
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py chinese
 python PythonHelpers/validate_pinyin.py chinese 28 53
@@ -1448,7 +1446,7 @@ python PythonHelpers/check_language_mismatch.py chinese 28 53
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (28 through 53):
 
@@ -1488,7 +1486,7 @@ For EACH pack (28 through 53):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 ChineseWords/ChineseFixTableAct3.csv
@@ -1503,7 +1501,7 @@ chinese,28,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -1518,13 +1516,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py chinese 28 53
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add ChineseWords/ChineseWords{1..53}.csv ChineseWords/ChineseFixTableAct3.csv
 git commit -m "Act 3/5 (Expansion): Review and fix translations for packs 28-53"
@@ -1576,7 +1574,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py chinese 4
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py chinese
 python PythonHelpers/validate_pinyin.py chinese 54 79
@@ -1585,7 +1591,7 @@ python PythonHelpers/check_language_mismatch.py chinese 54 79
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (54 through 79):
 
@@ -1625,7 +1631,7 @@ For EACH pack (54 through 79):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 ChineseWords/ChineseFixTableAct4.csv
@@ -1640,7 +1646,7 @@ chinese,54,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -1655,13 +1661,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py chinese 54 79
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add ChineseWords/ChineseWords{1..79}.csv ChineseWords/ChineseFixTableAct4.csv
 git commit -m "Act 4/5 (Mastery): Review and fix translations for packs 54-79"
@@ -1713,7 +1719,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py chinese 5
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py chinese
 python PythonHelpers/validate_pinyin.py chinese 80 107
@@ -1722,7 +1736,7 @@ python PythonHelpers/check_language_mismatch.py chinese 80 107
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (80 through 107):
 
@@ -1762,7 +1776,7 @@ For EACH pack (80 through 107):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 ChineseWords/ChineseFixTableAct5.csv
@@ -1777,7 +1791,7 @@ chinese,80,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -1792,13 +1806,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py chinese 80 107
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add ChineseWords/ChineseWords{1..107}.csv ChineseWords/ChineseFixTableAct5.csv
 git commit -m "Act 5/5 (Refinement): Review and fix translations for packs 80-107"
@@ -1854,7 +1868,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py spanish 1
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py spanish
 python PythonHelpers/validate_pinyin.py spanish 1 30
@@ -1863,7 +1885,7 @@ python PythonHelpers/check_language_mismatch.py spanish 1 30
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (1 through 30):
 
@@ -1903,7 +1925,7 @@ For EACH pack (1 through 30):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 SpanishWords/SpanishFixTableAct1.csv
@@ -1918,7 +1940,7 @@ spanish,1,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -1933,13 +1955,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 1 30
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add SpanishWords/SpanishWords{1..30}.csv SpanishWords/SpanishFixTableAct1.csv
 git commit -m "Act 1/7 (Foundation): Review and fix translations for packs 1-30"
@@ -1991,7 +2013,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py spanish 2
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py spanish
 python PythonHelpers/validate_pinyin.py spanish 31 60
@@ -2000,7 +2030,7 @@ python PythonHelpers/check_language_mismatch.py spanish 31 60
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (31 through 60):
 
@@ -2040,7 +2070,7 @@ For EACH pack (31 through 60):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 SpanishWords/SpanishFixTableAct2.csv
@@ -2055,7 +2085,7 @@ spanish,31,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -2070,13 +2100,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 31 60
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add SpanishWords/SpanishWords{1..60}.csv SpanishWords/SpanishFixTableAct2.csv
 git commit -m "Act 2/7 (Building Blocks): Review and fix translations for packs 31-60"
@@ -2128,7 +2158,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py spanish 3
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py spanish
 python PythonHelpers/validate_pinyin.py spanish 61 100
@@ -2137,7 +2175,7 @@ python PythonHelpers/check_language_mismatch.py spanish 61 100
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (61 through 100):
 
@@ -2177,7 +2215,7 @@ For EACH pack (61 through 100):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 SpanishWords/SpanishFixTableAct3.csv
@@ -2192,7 +2230,7 @@ spanish,61,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -2207,13 +2245,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 61 100
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add SpanishWords/SpanishWords{1..100}.csv SpanishWords/SpanishFixTableAct3.csv
 git commit -m "Act 3/7 (Daily Life): Review and fix translations for packs 61-100"
@@ -2265,7 +2303,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py spanish 4
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py spanish
 python PythonHelpers/validate_pinyin.py spanish 101 140
@@ -2274,7 +2320,7 @@ python PythonHelpers/check_language_mismatch.py spanish 101 140
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (101 through 140):
 
@@ -2314,7 +2360,7 @@ For EACH pack (101 through 140):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 SpanishWords/SpanishFixTableAct4.csv
@@ -2329,7 +2375,7 @@ spanish,101,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -2344,13 +2390,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 101 140
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add SpanishWords/SpanishWords{1..140}.csv SpanishWords/SpanishFixTableAct4.csv
 git commit -m "Act 4/7 (Expanding Expression): Review and fix translations for packs 101-140"
@@ -2402,7 +2448,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py spanish 5
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py spanish
 python PythonHelpers/validate_pinyin.py spanish 141 180
@@ -2411,7 +2465,7 @@ python PythonHelpers/check_language_mismatch.py spanish 141 180
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (141 through 180):
 
@@ -2451,7 +2505,7 @@ For EACH pack (141 through 180):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 SpanishWords/SpanishFixTableAct5.csv
@@ -2466,7 +2520,7 @@ spanish,141,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -2481,13 +2535,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 141 180
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add SpanishWords/SpanishWords{1..180}.csv SpanishWords/SpanishFixTableAct5.csv
 git commit -m "Act 5/7 (Intermediate Mastery): Review and fix translations for packs 141-180"
@@ -2539,7 +2593,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py spanish 6
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py spanish
 python PythonHelpers/validate_pinyin.py spanish 181 220
@@ -2548,7 +2610,7 @@ python PythonHelpers/check_language_mismatch.py spanish 181 220
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (181 through 220):
 
@@ -2588,7 +2650,7 @@ For EACH pack (181 through 220):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 SpanishWords/SpanishFixTableAct6.csv
@@ -2603,7 +2665,7 @@ spanish,181,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -2618,13 +2680,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 181 220
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add SpanishWords/SpanishWords{1..220}.csv SpanishWords/SpanishFixTableAct6.csv
 git commit -m "Act 6/7 (Advanced Constructs): Review and fix translations for packs 181-220"
@@ -2676,7 +2738,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py spanish 7
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py spanish
 python PythonHelpers/validate_pinyin.py spanish 221 250
@@ -2685,7 +2755,7 @@ python PythonHelpers/check_language_mismatch.py spanish 221 250
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (221 through 250):
 
@@ -2725,7 +2795,7 @@ For EACH pack (221 through 250):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 SpanishWords/SpanishFixTableAct7.csv
@@ -2740,7 +2810,7 @@ spanish,221,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -2755,13 +2825,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 221 250
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add SpanishWords/SpanishWords{1..250}.csv SpanishWords/SpanishFixTableAct7.csv
 git commit -m "Act 7/7 (Mastery & Fluency): Review and fix translations for packs 221-250"
@@ -2817,7 +2887,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py english 1
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py english
 python PythonHelpers/validate_pinyin.py english 1 45
@@ -2826,7 +2904,7 @@ python PythonHelpers/check_language_mismatch.py english 1 45
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (1 through 45):
 
@@ -2866,7 +2944,7 @@ For EACH pack (1 through 45):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 EnglishWords/EnglishFixTableAct1.csv
@@ -2881,7 +2959,7 @@ english,1,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -2896,13 +2974,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py english 1 45
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add EnglishWords/EnglishWords{1..45}.csv EnglishWords/EnglishFixTableAct1.csv
 git commit -m "Act 1/5 (Foundation): Review and fix translations for packs 1-45"
@@ -2954,7 +3032,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py english 2
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py english
 python PythonHelpers/validate_pinyin.py english 46 81
@@ -2963,7 +3049,7 @@ python PythonHelpers/check_language_mismatch.py english 46 81
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (46 through 81):
 
@@ -3003,7 +3089,7 @@ For EACH pack (46 through 81):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 EnglishWords/EnglishFixTableAct2.csv
@@ -3018,7 +3104,7 @@ english,46,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -3033,13 +3119,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py english 46 81
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add EnglishWords/EnglishWords{1..81}.csv EnglishWords/EnglishFixTableAct2.csv
 git commit -m "Act 2/5 (Building Blocks): Review and fix translations for packs 46-81"
@@ -3091,7 +3177,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py english 3
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py english
 python PythonHelpers/validate_pinyin.py english 82 112
@@ -3100,7 +3194,7 @@ python PythonHelpers/check_language_mismatch.py english 82 112
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (82 through 112):
 
@@ -3140,7 +3234,7 @@ For EACH pack (82 through 112):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 EnglishWords/EnglishFixTableAct3.csv
@@ -3155,7 +3249,7 @@ english,82,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -3170,13 +3264,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py english 82 112
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add EnglishWords/EnglishWords{1..112}.csv EnglishWords/EnglishFixTableAct3.csv
 git commit -m "Act 3/5 (Everyday Life): Review and fix translations for packs 82-112"
@@ -3228,7 +3322,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py english 4
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py english
 python PythonHelpers/validate_pinyin.py english 113 130
@@ -3237,7 +3339,7 @@ python PythonHelpers/check_language_mismatch.py english 113 130
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (113 through 130):
 
@@ -3277,7 +3379,7 @@ For EACH pack (113 through 130):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 EnglishWords/EnglishFixTableAct4.csv
@@ -3292,7 +3394,7 @@ english,113,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -3307,13 +3409,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py english 113 130
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add EnglishWords/EnglishWords{1..130}.csv EnglishWords/EnglishFixTableAct4.csv
 git commit -m "Act 4/5 (Expanding Horizons): Review and fix translations for packs 113-130"
@@ -3365,7 +3467,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py english 5
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py english
 python PythonHelpers/validate_pinyin.py english 131 160
@@ -3374,7 +3484,7 @@ python PythonHelpers/check_language_mismatch.py english 131 160
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack (131 through 160):
 
@@ -3414,7 +3524,7 @@ For EACH pack (131 through 160):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 EnglishWords/EnglishFixTableAct5.csv
@@ -3429,7 +3539,7 @@ english,131,Pack Title,3,english,salutation,hello,Too formal - use common word
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -3444,13 +3554,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py english 131 160
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add EnglishWords/EnglishWords{1..160}.csv EnglishWords/EnglishFixTableAct5.csv
 git commit -m "Act 5/5 (Advanced Mastery): Review and fix translations for packs 131-160"

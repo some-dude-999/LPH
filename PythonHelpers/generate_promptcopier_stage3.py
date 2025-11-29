@@ -71,7 +71,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ║  Python finds 5% of issues. YOU find the other 95%.             ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 0: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+╔══════════════════════════════════════════════════════════════════╗
+║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+python PythonHelpers/clear_fix_table.py {language} {act_num}
+
+This removes all old fixes from previous runs. You start with a clean slate!
+
+=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
 python PythonHelpers/trim_csv_spaces.py {language}
 python PythonHelpers/validate_pinyin.py {language} {start} {end}
@@ -80,7 +88,7 @@ python PythonHelpers/check_language_mismatch.py {language} {start} {end}
 
 Note any flagged packs, but don't stop there!
 
-=== STEP 1: MANUAL REVIEW (THE REAL WORK) ===
+=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
 For EACH pack ({start} through {end}):
 
@@ -120,7 +128,7 @@ For EACH pack ({start} through {end}):
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-=== STEP 2: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
+=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
 
 For EVERY issue found, add a row to:
 {lang_cap}Words/{lang_cap}FixTableAct{act_num}.csv
@@ -135,7 +143,7 @@ Example:
 ✓ Theme matching: Translation must fit the pack's theme
 ✓ Natural phrasing: Most common everyday translation
 
-=== STEP 3: APPLY FIXES (MANDATORY!) ===
+=== STEP 4: APPLY FIXES (MANDATORY!) ===
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
@@ -150,13 +158,13 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
-=== STEP 4: VALIDATE ===
+=== STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py {language} {start} {end}
 
 Expected: 0 errors
 
-=== STEP 5: COMMIT ===
+=== STEP 6: COMMIT ===
 
 git add {lang_cap}Words/{lang_cap}Words{{1..{end}}}.csv {lang_cap}Words/{lang_cap}FixTableAct{act_num}.csv
 git commit -m "Act {act_display} ({act_name}): Review and fix translations for packs {start}-{end}"
