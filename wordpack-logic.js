@@ -563,10 +563,8 @@ function updateDebugTable(options = {}) {
  * Call this once on page load to set up the debug table HTML
  *
  * Creates:
- * - Debug vocabulary table (hidden by default)
- *
- * The table has NO CSS STYLING - just plain HTML
- * Games can add their own styles if needed
+ * - Debug vocabulary table with CSS styling
+ * - Simulate buttons (Right, Wrong, Near Victory)
  */
 function initializeDebugUI() {
   // Check if debug UI already exists
@@ -575,29 +573,155 @@ function initializeDebugUI() {
   // Create debug vocabulary table container
   const debugContainer = document.createElement('div');
   debugContainer.id = 'debug-vocab-table';
-  debugContainer.style.display = window.DEBUG_MODE ? 'block' : 'none';
+  debugContainer.style.cssText = `
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    max-width: 600px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    z-index: 9998;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    display: ${window.DEBUG_MODE ? 'block' : 'none'};
+  `;
 
+  // Title
   const title = document.createElement('div');
   title.textContent = 'Debug: Current Deck Vocabulary';
+  title.style.cssText = `
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #E8D498;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(232, 212, 152, 0.3);
+    padding-bottom: 5px;
+  `;
   debugContainer.appendChild(title);
 
+  // Simulate buttons
+  const buttonsContainer = document.createElement('div');
+  buttonsContainer.style.cssText = `
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  `;
+
+  // Simulate Right button
+  const btnRight = document.createElement('button');
+  btnRight.id = 'debug-simulate-right';
+  btnRight.textContent = '✓ Right';
+  btnRight.style.cssText = `
+    flex: 1;
+    padding: 6px 10px;
+    background: rgba(34, 197, 94, 0.2);
+    border: 2px solid #22c55e;
+    color: #22c55e;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+  `;
+  btnRight.addEventListener('click', () => {
+    if (typeof simulateRight === 'function') simulateRight();
+  });
+  buttonsContainer.appendChild(btnRight);
+
+  // Simulate Wrong button
+  const btnWrong = document.createElement('button');
+  btnWrong.id = 'debug-simulate-wrong';
+  btnWrong.textContent = '✗ Wrong';
+  btnWrong.style.cssText = `
+    flex: 1;
+    padding: 6px 10px;
+    background: rgba(239, 68, 68, 0.2);
+    border: 2px solid #ef4444;
+    color: #ef4444;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+  `;
+  btnWrong.addEventListener('click', () => {
+    if (typeof simulateWrong === 'function') simulateWrong();
+  });
+  buttonsContainer.appendChild(btnWrong);
+
+  // Simulate Near Victory button
+  const btnNearVictory = document.createElement('button');
+  btnNearVictory.id = 'debug-simulate-near-victory';
+  btnNearVictory.textContent = '⚡ Near Victory';
+  btnNearVictory.style.cssText = `
+    flex: 1;
+    padding: 6px 10px;
+    background: rgba(245, 158, 11, 0.2);
+    border: 2px solid #f59e0b;
+    color: #f59e0b;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+  `;
+  btnNearVictory.addEventListener('click', () => {
+    if (typeof simulateNearVictory === 'function') simulateNearVictory();
+  });
+  buttonsContainer.appendChild(btnNearVictory);
+
+  debugContainer.appendChild(buttonsContainer);
+
+  // Table
   const table = document.createElement('table');
-  table.style.width = '100%';
-  table.style.borderCollapse = 'collapse';
+  table.style.cssText = `
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+  `;
 
   const thead = document.createElement('thead');
   const headerRow = document.createElement('tr');
   headerRow.id = 'debug-table-header-row';
+  headerRow.style.cssText = `
+    background: rgba(232, 212, 152, 0.2);
+    color: #E8D498;
+  `;
   thead.appendChild(headerRow);
   table.appendChild(thead);
 
   const tbody = document.createElement('tbody');
   tbody.id = 'debug-vocab-tbody';
+  tbody.style.cssText = `
+    color: #ddd;
+  `;
   table.appendChild(tbody);
 
   debugContainer.appendChild(table);
 
-  // Append to body (games can move it elsewhere if needed)
+  // Add CSS for table cells
+  const style = document.createElement('style');
+  style.textContent = `
+    #debug-vocab-table th {
+      padding: 6px 8px;
+      text-align: left;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(232, 212, 152, 0.3);
+    }
+    #debug-vocab-table td {
+      padding: 5px 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    #debug-vocab-table tr:hover {
+      background: rgba(232, 212, 152, 0.1);
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Append to body
   document.body.appendChild(debugContainer);
 }
 
