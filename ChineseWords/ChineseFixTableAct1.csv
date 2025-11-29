@@ -1,90 +1,57 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,1,Greetings & Goodbyes,5,english,good afternoon,Good afternoon,Capitalization consistency
-chinese,1,Greetings & Goodbyes,12,french,Vous êtes les bienvenus,De rien,Most common natural response for 'you're welcome'
-chinese,1,Greetings & Goodbyes,17,english,haven't seen you for a long time,long time no see,Most common natural English phrase
-chinese,1,Greetings & Goodbyes,21,english,Are you OK,How are you?,Standard greeting translation for 你好吗
-chinese,1,Greetings & Goodbyes,24,english,hello please,excuse me,Natural English for polite interruption 您好请问
-chinese,1,Greetings & Goodbyes,24,spanish,hola por favor,disculpe,Natural Spanish for polite interruption
-chinese,1,Greetings & Goodbyes,24,french,bonjour s'il vous plaît,excusez-moi,Natural French for polite interruption
-chinese,1,Greetings & Goodbyes,24,portuguese,olá por favor,com licença,Natural Portuguese for polite interruption
-chinese,1,Greetings & Goodbyes,42,french,vous êtes les bienvenus,de rien,Most common natural response for 'you're welcome'
-chinese,1,Greetings & Goodbyes,57,english,Walk slowly,Take care,Idiomatic farewell meaning
-chinese,1,Greetings & Goodbyes,57,spanish,camina despacio,cuídate,Idiomatic farewell meaning
-chinese,1,Greetings & Goodbyes,57,french,Marchez lentement,Prends soin de toi,Idiomatic farewell meaning
-chinese,1,Greetings & Goodbyes,57,portuguese,Ande devagar,Cuide-se,Idiomatic farewell meaning
-chinese,1,Greetings & Goodbyes,58,english,Please walk slowly,Take care,Idiomatic farewell meaning
-chinese,1,Greetings & Goodbyes,58,spanish,Por favor camina despacio,Cuídate,Idiomatic farewell meaning
-chinese,1,Greetings & Goodbyes,58,french,"S'il te plaît, marche lentement",Prends soin de toi,Idiomatic farewell meaning
-chinese,1,Greetings & Goodbyes,58,portuguese,Por favor ande devagar,Cuide-se,Idiomatic farewell meaning
-chinese,2,Personal Pronouns,7,spanish,él,eso,Correct pronoun for 'it' (neuter)
-chinese,2,Personal Pronouns,8,english,us,we,Subject pronoun not object
-chinese,2,Personal Pronouns,9,spanish,tú,vosotros,Plural form for 你们
-chinese,2,Personal Pronouns,9,french,toi,vous,Plural form for 你们
-chinese,2,Personal Pronouns,9,portuguese,você,vocês,Plural form for 你们
-chinese,2,Personal Pronouns,20,english,I do,I'm willing,General meaning not wedding-specific
-chinese,4,Yes No & Responses,18,portuguese,multar,bem,Wrong word - multar is 'to fine' not 'fine/ok'
-chinese,4,Yes No & Responses,29,english,rival,correct,Context meaning is 'right/correct' not 'rival'
-chinese,4,Yes No & Responses,29,spanish,rival,correcto,Context meaning is 'right/correct' not 'rival'
-chinese,4,Yes No & Responses,29,french,rival,correct,Context meaning is 'right/correct' not 'rival'
-chinese,4,Yes No & Responses,29,portuguese,rival,correto,Context meaning is 'right/correct' not 'rival'
-chinese,5,Essential Verbs I,8,portuguese,bebida,beber,Verb form needed not noun
-chinese,5,Essential Verbs I,17,spanish,pararse,estar de pie,More common for 'stand' verb
-chinese,5,Essential Verbs I,17,french,rester,se tenir debout,Correct verb for 'stand'
-chinese,7,Numbers 0-10,14,english,ordinal prefix,number marker,Simpler everyday term
-chinese,7,Numbers 0-10,14,spanish,prefijo ordinal,marcador de número,Simpler everyday term
-chinese,7,Numbers 0-10,14,french,préfixe ordinal,marqueur de nombre,Simpler everyday term
-chinese,7,Numbers 0-10,14,portuguese,prefixo ordinal,marcador de número,Simpler everyday term
-chinese,8,Core Measure Words,2,english,Individual,one,Simpler natural translation for general measure word
-chinese,8,Core Measure Words,3,english,Only,one,Measure word meaning not adverb
-chinese,10,Time Essentials,12,spanish,Hora,Tiempo,Tiempo for general time not clock hour
-chinese,10,Time Essentials,17,english,Right now,immediately,马上 means soon/immediately not right now
-chinese,10,Time Essentials,17,spanish,Ahora mismo,inmediatamente,马上 means soon/immediately not right now
-chinese,10,Time Essentials,17,french,En ce moment,immédiatement,马上 means soon/immediately not right now
-chinese,10,Time Essentials,17,portuguese,Agora,imediatamente,马上 means soon/immediately not right now
-chinese,11,Basic Adjectives I,9,spanish,corto,bajo,Bajo for short in height not length
-chinese,11,Basic Adjectives I,34,spanish,Corto,Bajo,Bajo for short in height not length
-chinese,11,Basic Adjectives I,49,english,Early morning,soon,早日 means 'soon' not 'early morning'
-chinese,11,Basic Adjectives I,49,spanish,Temprano en la mañana,pronto,早日 means 'soon' not 'early morning'
-chinese,11,Basic Adjectives I,49,french,Tôt le matin,bientôt,早日 means 'soon' not 'early morning'
-chinese,11,Basic Adjectives I,49,portuguese,De manhã cedo,em breve,早日 means 'soon' not 'early morning'
-chinese,12,Basic Adjectives II,8,spanish,grasa,gordo,Gordo for fat person not grease substance
-chinese,12,Basic Adjectives II,8,french,graisse,gros,Gros for fat person not grease substance
-chinese,12,Basic Adjectives II,8,portuguese,gordura,gordo,Gordo for fat person not fat substance
-chinese,12,Basic Adjectives II,32,spanish,Grasa,Gordo,Gordo for fat person not grease substance
-chinese,12,Basic Adjectives II,32,french,Graisse,Gros,Gros for fat person not grease substance
-chinese,12,Basic Adjectives II,32,portuguese,Gordura,Gordo,Gordo for fat person not fat substance
-chinese,12,Basic Adjectives II,33,spanish,Grasa,Gordo,Gordo for get fat not grease
-chinese,12,Basic Adjectives II,33,french,Graisse,Gros,Gros for get fat not grease
-chinese,12,Basic Adjectives II,33,portuguese,Gordura,Gordura,Context is gaining weight
-chinese,12,Basic Adjectives II,49,english,Portable,lightweight,轻便 means light and easy not portable
-chinese,12,Basic Adjectives II,49,spanish,Ligero,ligero,Keep ligero meaning light
-chinese,12,Basic Adjectives II,49,french,Léger,léger,Keep léger meaning light
-chinese,12,Basic Adjectives II,49,portuguese,Portátil,leve,Leve for lightweight
-chinese,14,Emergency & Survival,7,english,Fire,firefighting,消防 means firefighting not fire
-chinese,14,Emergency & Survival,7,spanish,Fuego,bomberos,消防 means firefighting not fire
-chinese,14,Emergency & Survival,7,french,Feu,pompiers,消防 means firefighting not fire
-chinese,14,Emergency & Survival,7,portuguese,Fogo,bombeiros,消防 means firefighting not fire
-chinese,14,Emergency & Survival,11,portuguese,Hospitalar,Hospital,Hospital is noun not adjective
-chinese,14,Emergency & Survival,14,spanish,Salir,Salida,Noun form for exit not verb
-chinese,14,Emergency & Survival,14,french,Quitter,Sortie,Noun form for exit not verb
-chinese,14,Emergency & Survival,14,portuguese,Sair,Saída,Noun form for exit not verb
-chinese,1,Greetings & Goodbyes,4,spanish,Buen día,Buenos días,Standard Spanish greeting with accent
-chinese,1,Greetings & Goodbyes,16,french,accueillir,bienvenue,Interjection not verb for 'welcome'
-chinese,1,Greetings & Goodbyes,21,french,Êtes-vous ok,Ça va ?,Natural French greeting for 'How are you?'
-chinese,1,Greetings & Goodbyes,49,french,accueillir,bienvenue,Interjection not verb for 'welcome'
-chinese,2,Personal Pronouns,8,spanish,a nosotros,nosotros,Subject pronoun not object with preposition
-chinese,2,Personal Pronouns,11,spanish,ellos,ellas,Feminine plural pronoun for 她们
-chinese,2,Personal Pronouns,20,spanish,sí,estoy dispuesto,Willing/disposed not just 'yes'
-chinese,2,Personal Pronouns,20,french,Je fais,Je veux bien,Willing/want not 'I do'
-chinese,2,Personal Pronouns,20,portuguese,Eu faço,Eu estou disposto,Willing/disposed not 'I do'
-chinese,3,Demonstratives & Pointers,5,french,que,cela,Demonstrative pronoun not relative pronoun
-chinese,3,Demonstratives & Pointers,5,portuguese,que,isso,Demonstrative pronoun not relative pronoun
-chinese,5,Essential Verbs I,2,english,yes,is,Verb 'to be' not affirmation
-chinese,5,Essential Verbs I,4,english,exist,at,Location marker not verb 'exist'
-chinese,8,Core Measure Words,2,spanish,Individual,uno,Simple translation for general measure word
-chinese,8,Core Measure Words,3,spanish,Sólo,uno,Measure word meaning not adverb
-chinese,8,Core Measure Words,51,spanish,Ida única,Una manera,Correct translation for 'one way/method'
-chinese,12,Basic Adjectives II,18,spanish,limpiar,limpio,Adjective not verb for 'clean'
-chinese,12,Basic Adjectives II,18,french,nettoyer,propre,Adjective not verb for 'clean'
-chinese,12,Basic Adjectives II,28,spanish,Saludos,¡Salud!,Common toast exclamation
-chinese,12,Basic Adjectives II,36,french,Genre,Gentil,Adjective meaning 'kind/nice' not 'type'
+chinese,1,Greetings & Goodbyes,21,spanish,Estás bien,¿Cómo estás?,Use common greeting question instead of asking if okay
+chinese,1,Greetings & Goodbyes,21,portuguese,Você está bem,Como você está?,Match natural greeting phrasing
+chinese,1,Greetings & Goodbyes,25,spanish,Buenos dias amigos,"Buenos días, amigos",Correct accenting and natural phrasing
+chinese,1,Greetings & Goodbyes,26,spanish,decir buenos dias,decir buenos días,Fix accent for natural Spanish
+chinese,1,Greetings & Goodbyes,29,spanish,buenas noches bebe,"Buenas noches, bebé",Add accent for natural phrase
+chinese,1,Greetings & Goodbyes,32,spanish,decir adios,decir adiós,Add accent to goodbye
+chinese,1,Greetings & Goodbyes,34,spanish,decir adios,decir adiós,Add accent to goodbye
+chinese,2,Personal Pronouns,4,spanish,tú,usted,Use formal pronoun for 您
+chinese,2,Personal Pronouns,4,french,toi,vous,Use formal second person for 您
+chinese,2,Personal Pronouns,21,spanish,usted es maravilloso,eres increíble,Use common informal praise phrasing
+chinese,2,Personal Pronouns,23,spanish,¿puedo preguntarte?,¿Puedo preguntarle?,Match formal address of 您
+chinese,2,Personal Pronouns,23,portuguese,posso te perguntar,Posso lhe perguntar?,Use polite pronoun for formal address
+chinese,2,Personal Pronouns,29,spanish,esta roto,está roto,Fix missing accent
+chinese,2,Personal Pronouns,31,english,together we,let's do it together,Natural English phrasing
+chinese,2,Personal Pronouns,31,spanish,juntos nosotros,hagámoslo juntos,Natural wording
+chinese,2,Personal Pronouns,31,french,ensemble nous,faisons-le ensemble,Natural imperative phrasing
+chinese,2,Personal Pronouns,31,portuguese,juntos nós,vamos juntos,Natural phrase order
+chinese,2,Personal Pronouns,33,spanish,tu vas primero,vayan primero,Plural instruction for 你们
+chinese,2,Personal Pronouns,33,french,Tu y vas en premier,Passez en premier,Use plural/polite form
+chinese,2,Personal Pronouns,33,portuguese,Você vai primeiro,Vocês vão primeiro,Plural form for 你们
+chinese,2,Personal Pronouns,34,spanish,Gracias por tu arduo trabajo,Gracias por su esfuerzo,Plural appreciative phrase
+chinese,2,Personal Pronouns,34,portuguese,Obrigado pelo seu trabalho duro,Obrigado pelo trabalho de vocês,Plural form for 你们
+chinese,2,Personal Pronouns,37,spanish,estan todos aqui,están todos aquí,Add accents for natural Spanish
+chinese,2,Personal Pronouns,38,spanish,espera por ellos,esperen a ellas,Use female plural for 她们 and correct verb form
+chinese,2,Personal Pronouns,38,portuguese,Espere por eles,Esperem por elas,Match female plural and plural imperative
+chinese,3,Demonstratives & Pointers,32,english,Good here,It's nice here,Natural expression for location quality
+chinese,3,Demonstratives & Pointers,32,spanish,Bien aquí,Aquí está bien,Natural wording
+chinese,3,Demonstratives & Pointers,32,french,Bien ici,C'est bien ici,Natural phrasing
+chinese,3,Demonstratives & Pointers,32,portuguese,Bom aqui,Está bom aqui,Natural phrasing
+chinese,3,Demonstratives & Pointers,34,english,That's far there,It's far away,Natural description of distance
+chinese,3,Demonstratives & Pointers,34,spanish,eso es muy lejos,está lejos,Natural Spanish phrasing
+chinese,3,Demonstratives & Pointers,34,french,C'est loin là,C'est loin,Simpler natural French
+chinese,3,Demonstratives & Pointers,34,portuguese,Isso é longe,É longe,Natural Portuguese phrasing
+chinese,3,Demonstratives & Pointers,36,english,Good here,It's nice here,Natural expression for location quality
+chinese,3,Demonstratives & Pointers,36,spanish,Bien aquí,Aquí está bien,Natural wording
+chinese,3,Demonstratives & Pointers,36,french,Bien ici,C'est bien ici,Natural phrasing
+chinese,3,Demonstratives & Pointers,36,portuguese,Bom aqui,Está bom aqui,Natural phrasing
+chinese,3,Demonstratives & Pointers,38,english,That's far,It's far away,More idiomatic distance description
+chinese,3,Demonstratives & Pointers,38,spanish,eso esta lejos,está lejos,Fix accent and natural phrasing
+chinese,3,Demonstratives & Pointers,38,french,C'est loin,C'est loin d'ici,More natural distance phrasing
+chinese,5,Essential Verbs I,2,spanish,Sí,es,Use verb form for “to be” instead of affirmative particle
+chinese,5,Essential Verbs I,2,french,Oui,est,Use verb translation for “to be”
+chinese,5,Essential Verbs I,2,portuguese,sim,é,Use verb form for “to be”
+chinese,5,Essential Verbs I,4,spanish,existir,estar,Proper everyday translation for 在
+chinese,5,Essential Verbs I,4,french,exister,être,Natural translation for “to be at”
+chinese,5,Essential Verbs I,4,portuguese,existir,estar,Natural translation for 在
+chinese,5,Essential Verbs I,19,english,rise,get up,Common everyday verb choice
+chinese,5,Essential Verbs I,19,spanish,elevar,levantarse,Natural reflexive verb for getting up
+chinese,5,Essential Verbs I,19,french,augmenter,se lever,Use common verb for getting up
+chinese,5,Essential Verbs I,19,portuguese,ascender,levantar-se,Natural verb for getting up
+chinese,14,Emergency & Survival,7,english,firefighting,fire department,Clearer everyday noun for 消防
+chinese,14,Emergency & Survival,13,spanish,Inodoro,Baño,Use common word for restroom
+chinese,14,Emergency & Survival,35,english,Please note,Please pay attention,Fit safety context
+chinese,14,Emergency & Survival,35,spanish,Tenga en cuenta,Por favor preste atención,Emphasize paying attention in emergency
+chinese,14,Emergency & Survival,35,french,Veuillez noter,Veuillez faire attention,Better match “be careful” context
+chinese,14,Emergency & Survival,35,portuguese,Observe,"Por favor, preste atenção",Natural safety phrasing
