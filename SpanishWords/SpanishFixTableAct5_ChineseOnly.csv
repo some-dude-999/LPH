@@ -1,0 +1,132 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,143,Space & Universe,8,chinese,船,飞船,Wrong word - "船" means boat/ship not spacecraft
+spanish,143,Space & Universe,33,chinese,船,飞船,Wrong word - "船" means boat/ship not spacecraft
+spanish,143,Space & Universe,34,chinese,一艘船,一艘飞船,Wrong word - should be spacecraft not boat
+spanish,144,Offering,4,chinese,优惠,提供,Wrong word - "优惠" is commercial discount not general offer
+spanish,144,Offering,7,chinese,报价,提供,Wrong word - "报价" means price quote not general offer
+spanish,144,Offering,8,chinese,报价,提供,Wrong word - "报价" means price quote not to offer
+spanish,144,Offering,9,chinese,报价,提议,Wrong word - "报价" means price quote not offer (noun)
+spanish,144,Offering,26,chinese,报价,提议,Wrong word - "报价" means price quote not the offer
+spanish,144,Offering,27,chinese,报价,提议,Wrong word - "报价" means price quote not an offer
+spanish,146,Chemistry Terms,3,chinese,化学,化学家,Wrong word - "化学" means chemistry not chemist (person)
+spanish,146,Chemistry Terms,24,chinese,化学,化学品,Wrong word - "化学" alone means chemistry not chemical product
+spanish,146,Chemistry Terms,44,chinese,我会解散,我会溶解,Wrong word - "解散" means disband (organization) not dissolve (chemically)
+spanish,147,Moving,2,chinese,我动了,我移动,Wrong tense - "了" implies past tense but Spanish is present
+spanish,147,Moving,3,chinese,你动了,你移动,Wrong tense - "了" implies past tense but Spanish is present
+spanish,147,Moving,5,chinese,我们搬家,我们移动,Wrong word - "搬家" means move house/relocate too specific
+spanish,147,Moving,6,chinese,你动了,你移动,Wrong tense - "了" implies past tense but Spanish is present
+spanish,147,Moving,12,chinese,我动了,我移动,Wrong tense - "了" implies past tense but Spanish is present
+spanish,147,Moving,14,chinese,你动了,你移动,Wrong tense - "了" implies past tense but Spanish is present
+spanish,147,Moving,16,chinese,他动了,他移动,Wrong tense - "了" implies past tense but Spanish is present
+spanish,147,Moving,18,chinese,我们搬家,我们移动,Wrong word - "搬家" means move house/relocate too specific
+spanish,147,Moving,20,chinese,你动了,你移动,Wrong tense - "了" implies past tense but Spanish is present
+spanish,147,Moving,24,chinese,我想搬家,我想移动,Wrong word - "搬家" means move house/relocate too specific
+spanish,147,Moving,25,chinese,我要搬家,我要移动,Wrong word - "搬家" means move house/relocate too specific
+spanish,148,Stopping,27,chinese,一站式,一个站,Wrong word - "一站式" means one-stop shop/service not a stop
+spanish,149,Military Terms,4,chinese,官方,军官,Wrong word - "官方" means official not military officer
+spanish,149,Military Terms,5,chinese,一般,将军,Wrong word - "一般" means generally/usually not military general
+spanish,149,Military Terms,14,chinese,海洋,海军,Wrong word - "海洋" means ocean not navy
+spanish,149,Military Terms,25,chinese,一般,将军,Wrong word - "一般" means generally/usually not the general
+spanish,149,Military Terms,27,chinese,船长,上尉,Wrong context - "船长" means ship captain not military captain
+spanish,149,Military Terms,28,chinese,船长,上尉,Wrong context - "船长" means ship captain not military captain
+spanish,149,Military Terms,29,chinese,船长,上尉,Wrong context - "船长" means ship captain not military captain
+spanish,149,Military Terms,30,chinese,船长,上尉,Wrong context - "船长" means ship captain not military captain
+spanish,152,Literature & Books,9,chinese,字符,角色,Wrong word - "字符" means character (letter) not character (person in story)
+spanish,152,Literature & Books,13,chinese,社论,出版社,Wrong word - "社论" means editorial (opinion piece) not publisher/editorial house
+spanish,152,Literature & Books,19,chinese,性别,体裁,Wrong context - "性别" means gender not genre (literature)
+spanish,152,Literature & Books,36,chinese,一个字符,一个角色,Wrong word - "字符" means character (letter) not character (person)
+spanish,152,Literature & Books,49,chinese,这节经文,这节诗句,Wrong context - "经文" means scripture verse not poetry verse
+spanish,152,Literature & Books,55,chinese,性别,体裁,Wrong context - "性别" means gender not genre (literature)
+spanish,153,Developing,10,chinese,提前,进步,Wrong word - "提前" means in advance/ahead of time not advance (progress)
+spanish,153,Developing,11,chinese,预览,进步,Wrong context - "预览" means preview (software) not advance (progress)
+spanish,153,Developing,28,chinese,先进,进展,Wrong word - "先进" is adjective (advanced) not noun (the advance)
+spanish,153,Developing,30,chinese,先进,进步,Wrong word - "先进" is adjective (advanced) not noun (the advance)
+spanish,155,Construction,14,chinese,基金会,地基,Wrong word - "基金会" means foundation (charity) not foundation (building)
+spanish,155,Construction,41,chinese,光束,梁,Wrong word - "光束" means light beam not structural beam
+spanish,155,Construction,43,chinese,飞机,平面图,Wrong translation - plano means blueprint not airplane
+spanish,155,Construction,44,chinese,一架飞机,一张平面图,Wrong translation - plano means blueprint not airplane
+spanish,156,Directing,7,chinese,直接,指导,Wrong word - "直接" means direct (adjective) or directly (adverb) not direct (verb)
+spanish,156,Directing,8,chinese,直接,指导,Wrong word - "直接" means direct (adjective) or directly (adverb) not to direct
+spanish,158,Theater & Acting,5,chinese,场景,舞台,Wrong word - "场景" means scene/setting not stage (theater platform)
+spanish,158,Theater & Acting,6,chinese,窗帘,幕布,Wrong word - "窗帘" means window curtain not theater curtain
+spanish,158,Theater & Acting,10,chinese,行动,表演,Wrong word - "行动" means take action not act/perform (theater)
+spanish,158,Theater & Acting,11,chinese,代表,表演,Wrong context - "代表" means represent/delegate not perform (theater)
+spanish,158,Theater & Acting,14,chinese,行动,一幕,Wrong context - "行动" means action not act (of a play)
+spanish,158,Theater & Acting,30,chinese,窗帘,幕布,Wrong word - "窗帘" means window curtain not theater curtain
+spanish,158,Theater & Acting,31,chinese,窗帘,幕布,Wrong word - "窗帘" means window curtain not theater curtain
+spanish,158,Theater & Acting,46,chinese,该行为,该幕,Wrong context - "行为" means behavior/action not act (of a play)
+spanish,158,Theater & Acting,47,chinese,一个行为,一幕,Wrong context - "行为" means behavior/action not act (of a play)
+spanish,160,Resting,29,spanish,quiero relajarse,quiero relajarme,Grammar error - reflexive verb should be relajarme not relajarse
+spanish,161,Philosophy Terms,13,chinese,反映,反思,Wrong word - "反映" means reflect (mirror/report) not reflect (think deeply)
+spanish,163,Winning & Earning,2,chinese,我赢了,我赢,Wrong tense - "了" implies past tense but Spanish is present
+spanish,163,Winning & Earning,3,chinese,你赢了,你赢,Wrong tense - "了" implies past tense but Spanish is present
+spanish,163,Winning & Earning,5,chinese,我们赢了,我们赢,Wrong tense - "了" implies past tense but Spanish is present
+spanish,163,Winning & Earning,6,chinese,你赢了,你赢,Wrong tense - "了" implies past tense but Spanish is present
+spanish,163,Winning & Earning,11,chinese,我赢了,我赢,Wrong tense - "了" implies past tense but Spanish is present
+spanish,163,Winning & Earning,13,chinese,你赢了,你赢,Wrong tense - "了" implies past tense but Spanish is present
+spanish,163,Winning & Earning,15,chinese,他赢了,他赢,Wrong tense - "了" implies past tense but Spanish is present
+spanish,163,Winning & Earning,17,chinese,我们赢了,我们赢,Wrong tense - "了" implies past tense but Spanish is present
+spanish,163,Winning & Earning,19,chinese,你赢了,你赢,Wrong tense - "了" implies past tense but Spanish is present
+spanish,163,Winning & Earning,21,chinese,他们赢了,他们赢,Wrong tense - "了" implies past tense but Spanish is present
+spanish,164,Dance & Dancing,8,chinese,酱,萨尔萨舞,Wrong word - "酱" means sauce not salsa dance
+spanish,164,Dance & Dancing,13,chinese,线索,舞池,Wrong word - "线索" means clue/lead not dance floor
+spanish,164,Dance & Dancing,17,chinese,录音,踢踏舞,Wrong word - "录音" means recording not footwork/tap dancing
+spanish,164,Dance & Dancing,18,chinese,指南针,节拍,Wrong context - "指南针" means compass (navigation) not beat/rhythm
+spanish,164,Dance & Dancing,21,chinese,崇敬,鞠躬,Wrong context - "崇敬" means reverence (respect emotion) not bow (gesture)
+spanish,164,Dance & Dancing,34,chinese,酱汁,萨尔萨舞,Wrong word - "酱汁" means sauce not salsa dance
+spanish,164,Dance & Dancing,44,chinese,轨道,舞池,Wrong word - "轨道" means track/orbit not dance floor
+spanish,164,Dance & Dancing,48,chinese,党,派对,Wrong word - "党" means political party not party (celebration)
+spanish,164,Dance & Dancing,52,chinese,攻丝,踢踏舞,Wrong context - "攻丝" means tapping (threading/machining) not tap dancing
+spanish,164,Dance & Dancing,54,chinese,指南针,节拍,Wrong context - "指南针" means compass (navigation) not beat (music)
+spanish,164,Dance & Dancing,55,chinese,带指南针,有节拍,Wrong context - "指南针" means compass (navigation) not beat (music)
+spanish,164,Dance & Dancing,56,chinese,纸条,滑步,Wrong word - "纸条" means slip of paper not slip (dance move)
+spanish,164,Dance & Dancing,58,chinese,返回,转身,Wrong context - "返回" means return (go back) not turn (dance move)
+spanish,164,Dance & Dancing,61,chinese,一张弓,一个鞠躬,Wrong word - "弓" means bow (weapon/archery) not bow (gesture)
+spanish,165,Losing,2,chinese,我输了,我输,Wrong tense - "了" implies past tense but Spanish is present
+spanish,165,Losing,3,chinese,你输了,你输,Wrong tense - "了" implies past tense but Spanish is present
+spanish,165,Losing,5,chinese,我们输了,我们输,Wrong tense - "了" implies past tense but Spanish is present
+spanish,165,Losing,6,chinese,你输了,你输,Wrong tense - "了" implies past tense but Spanish is present
+spanish,165,Losing,11,chinese,我输了,我输,Wrong tense - "了" implies past tense but Spanish is present
+spanish,165,Losing,13,chinese,你输了,你输,Wrong tense - "了" implies past tense but Spanish is present
+spanish,165,Losing,15,chinese,他输了,他输,Wrong tense - "了" implies past tense but Spanish is present
+spanish,165,Losing,17,chinese,我们输了,我们输,Wrong tense - "了" implies past tense but Spanish is present
+spanish,165,Losing,19,chinese,你输了,你输,Wrong tense - "了" implies past tense but Spanish is present
+spanish,165,Losing,21,chinese,他们输了,他们输,Wrong tense - "了" implies past tense but Spanish is present
+spanish,166,Forming,2,chinese,形式,形成,Wrong word - "形式" means form (noun - shape) not form (verb - to create)
+spanish,166,Forming,3,chinese,形状,形成,Wrong word - "形状" means form/shape (noun) not form (verb)
+spanish,166,Forming,4,chinese,形状,形成,Wrong word - "形状" means form/shape (noun) not form (verb)
+spanish,166,Forming,7,chinese,形式,形成,Wrong word - "形式" means form (noun - shape) not form (verb)
+spanish,166,Forming,8,chinese,形式,形成,Wrong word - "形式" means form (noun - shape) not to form (verb)
+spanish,167,Fashion & Style,23,chinese,模型,模特,Wrong context - "模型" means model (miniature/prototype) not model (person)
+spanish,167,Fashion & Style,24,chinese,模型,模特,Wrong context - "模型" means model (miniature/prototype) not model (person)
+spanish,170,Psychology Terms,8,chinese,情报,智力,Wrong context - "情报" means intelligence (information/espionage) not intelligence (mental capacity)
+spanish,170,Psychology Terms,14,chinese,会话,疗程,Wrong context - "会话" means conversation/dialogue not session (therapy)
+spanish,170,Psychology Terms,34,chinese,情报,智力,Wrong context - "情报" means intelligence (information/espionage) not intelligence (mental capacity)
+spanish,170,Psychology Terms,46,chinese,会议,疗程,Wrong context - "会议" means meeting not session (therapy)
+spanish,173,Journalism Terms,4,chinese,持有人,标题,Wrong word - "持有人" means holder (person) not headline
+spanish,173,Journalism Terms,6,chinese,写作,编辑部,Wrong word - "写作" means writing (activity) not newsroom/editorial staff
+spanish,173,Journalism Terms,14,chinese,已发送,特派员,Wrong word - "已发送" means already sent (past participle) not correspondent
+spanish,173,Journalism Terms,16,chinese,编年史,报道,Wrong context - "编年史" means chronology/annals not chronicle (journalism article)
+spanish,173,Journalism Terms,18,chinese,勺,独家新闻,Wrong word - "勺" means spoon/ladle not scoop (exclusive news)
+spanish,173,Journalism Terms,24,chinese,持有人,标题,Wrong word - "持有人" means holder (person) not headline
+spanish,173,Journalism Terms,28,chinese,社论,编辑部,Wrong context - "社论" means editorial (opinion piece) not newsroom
+spanish,173,Journalism Terms,41,chinese,部分一个部分,一个部分,Duplicate text - should be just "一个部分"
+spanish,173,Journalism Terms,48,chinese,编年史,报道,Wrong context - "编年史" means chronology/annals not chronicle (article)
+spanish,173,Journalism Terms,53,chinese,第一个,一条独家新闻,Wrong context - "第一个" means first one (generic) not scoop/exclusive
+spanish,175,Meaning,10,chinese,感觉,意义,Wrong word - "感觉" means feeling/sensation not sense/meaning
+spanish,176,Photography Terms,12,chinese,进程,处理,Wrong word - "进程" means process (noun - procedure) not process (verb)
+spanish,176,Photography Terms,15,chinese,隔膜,光圈,Wrong context - "隔膜" means diaphragm (body part) not aperture (camera)
+spanish,176,Photography Terms,18,chinese,过滤,滤镜,Wrong word - "过滤" means to filter (verb) not filter (noun - lens)
+spanish,176,Photography Terms,27,chinese,方法,对焦,Wrong context - "方法" means method/approach not focus (photography)
+spanish,176,Photography Terms,45,chinese,隔膜,光圈,Wrong context - "隔膜" means diaphragm (body part) not aperture (camera)
+spanish,176,Photography Terms,51,chinese,过滤器,滤镜,Wrong context - "过滤器" means water/air filter not camera filter
+spanish,178,Deciding,11,chinese,分辨率,决议,Wrong context - "分辨率" means resolution (screen) not resolution (decision)
+spanish,179,Marketing & Advertising,17,chinese,发射,发布,Wrong context - "发射" means launch (rocket/missile) not launch (product)
+spanish,179,Marketing & Advertising,24,chinese,公告,广告,Wrong word - "公告" means announcement/notice not advertisement
+spanish,179,Marketing & Advertising,46,chinese,段,细分市场,Wrong context - "段" means segment (piece) not segment (market segment)
+spanish,179,Marketing & Advertising,50,chinese,发射,发布,Wrong context - "发射" means launch (rocket/missile) not launch (product)
+spanish,180,Appearing,9,chinese,外观,出现,Wrong context - "外观" means appearance (how something looks) not appearance (act of appearing)
+spanish,180,Appearing,11,chinese,明显,表现,Wrong word - "明显" is adjective (obvious) not verb (to manifest)
+spanish,180,Appearing,26,chinese,外观,出现,Wrong context - "外观" means appearance (how something looks) not appearance (act)
+spanish,180,Appearing,27,chinese,外观,出现,Wrong context - "外观" means appearance (how something looks) not an appearance
+spanish,180,Appearing,30,chinese,你必须证明,你必须表明立场,Wrong context - "证明" means prove not demonstrate/manifest position

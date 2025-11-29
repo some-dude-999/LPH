@@ -1,17 +1,17 @@
 spanish,english,chinese,pinyin,portuguese
 ejército,army,军队,jūn duì,exército
 soldado,soldier,士兵,shì bīng,soldado
-oficial,officer,官方,guān fāng,oficial
-general,general,一般,yì bān,geral
+oficial,officer,军官,guān fāng,oficial
+general,general,将军,yì bān,geral
 capitán,captain,队长,duì zhǎng,capitão
 capitana,captain,队长,duì zhǎng,capitão
 arma,weapon,武器,wǔ qì,arma
 fusil,rifle,步枪,bù qiāng,espingarda
-pistola,gun,枪,qiāng,arma
+pistola,pistol,枪,qiāng,arma
 bomba,bomb,炸弹,zhà dàn,bomba
 tanque,tank,坦克,tǎn kè,tanque
 luchar,to fight,战斗,zhàn dòu,lutar
-marina,navy,海洋,hǎi yáng,marinho
+marina,navy,海军,hǎi yáng,marinho
 infantería,infantry,步兵,bù bīng,infantaria
 artillería,artillery,火炮,huǒ pào,artilharia
 coronel,colonel,上校,shàng xiào,coronel
@@ -22,12 +22,12 @@ el soldado,the soldier,士兵,shì bīng,o soldado
 un soldado,a soldier,一名士兵,yī míng shì bīng,um soldado
 el oficial,the officer,军官,jūn guān,o oficial
 un oficial,an officer,一名军官,yī míng jūn guān,um oficial
-el general,the general,一般,yì bān,o geral
+el general,the general,将军,yì bān,o geral
 un general,a general,将军,jiāng jūn,um geral
-el capitán,the captain,船长,chuán zhǎng,o capitão
-un capitán,a captain,船长,chuán zhǎng,um capitão
-la capitana,the captain,船长,chuán zhǎng,o capitão
-una capitana,a captain,船长,chuán zhǎng,um capitão
+el capitán,the captain,上尉,chuán zhǎng,o capitão
+un capitán,a captain,上尉,chuán zhǎng,um capitão
+la capitana,the captain,上尉,chuán zhǎng,o capitão
+una capitana,a captain,上尉,chuán zhǎng,um capitão
 el arma,the weapon,武器,wǔ qì,a arma
 un arma,a weapon,武器,wǔ qì,uma arma
 el fusil,the rifle,步枪,bù qiāng,a espingarda
