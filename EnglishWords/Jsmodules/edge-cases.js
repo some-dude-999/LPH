@@ -19,8 +19,8 @@ export const p2_69_money__banking = {
     portuguese: "Money & Banking"
   },
   words: [
-    ["ATM machine", "ATM机", "ATM jī", "Cajero automático", "Caixa eletrônico"],
-    ["find ATM", "查找 ATM", "chá zhǎo ATM", "encontrar cajero automático", "encontrar caixa eletrônico"]
+    ["ATM machine", "ATM机", "A T M jī", "Cajero automático", "Caixa eletrônico"],
+    ["find ATM", "查找 ATM", "chá zhǎo A T M", "encontrar cajero automático", "encontrar caixa eletrônico"]
   ]
 };
 
@@ -33,8 +33,8 @@ export const p4_117_biology__basics = {
     portuguese: "Biology Basics"
   },
   words: [
-    ["DNA test", "DNA测试", "DNA cè shì", "Prueba de ADN", "Teste de ADN"],
-    ["DNA sequence", "DNA序列", "DNA xù liè", "Secuencia de ADN", "Sequência de DNA"]
+    ["DNA test", "DNA测试", "D N A cè shì", "Prueba de ADN", "Teste de ADN"],
+    ["DNA sequence", "DNA序列", "D N A xù liè", "Secuencia de ADN", "Sequência de DNA"]
   ]
 };
 
@@ -47,10 +47,10 @@ export const p5_139_everyday__medical = {
     portuguese: "Everyday Medical"
   },
   words: [
-    ["x-ray", "X 射线", "shè xiàn", "radiografía", "raio-x"],
-    ["CT scan", "CT扫描", "sǎo miáo", "Tomografía computarizada", "Tomografia computadorizada"],
-    ["chest x-ray", "胸部X光检查", "xiōng bù guāng jiǎn chá", "radiografía de tórax", "radiografia de tórax"],
-    ["x-ray results", "X 射线结果", "shè xiàn jié guǒ", "resultados de radiografías", "resultados de raios X"]
+    ["x-ray", "X射线", "X shè xiàn", "radiografía", "raio-x"],
+    ["CT scan", "CT扫描", "C T sǎo miáo", "Tomografía computarizada", "Tomografia computadorizada"],
+    ["chest x-ray", "胸部X光检查", "xiōng bù X guāng jiǎn chá", "radiografía de tórax", "radiografia de tórax"],
+    ["x-ray results", "X射线结果", "X shè xiàn jié guǒ", "resultados de radiografías", "resultados de raios X"]
   ]
 };
 
@@ -63,6 +63,6 @@ export const p5_143_sociology__basics = {
     portuguese: "Sociology Basics"
   },
   words: [
-    ["collectivism vs", "集体主义 vs", "jí tǐ zhǔ yì vs", "colectivismo vs", "coletivismo vs"]
+    ["collectivism vs", "集体主义 vs", "jí tǐ zhǔ yì v s", "colectivismo vs", "coletivismo vs"]
   ]
 };
