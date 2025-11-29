@@ -5,7 +5,7 @@ algoritmo,algorithm,算法,suàn fǎ,algoritmo
 procesamiento,processing,处理,chǔ lǐ,processamento
 automatización,automation,自动化,zì dòng huà,automação
 reconocimiento,recognition,识别,shí bié,reconhecimento
-programar,program,编程,biān chéng,cronograma
+programar,program,编程,biān chéng,programar
 entrenar,train,训练,xùn liàn,treinar
 patrones,patterns,模式,mó shì,padrões
 predecir,predict,预测,yù cè,prever
@@ -15,7 +15,7 @@ sensor,sensor,传感器,chuán gǎn qì,sensor
 actuador,actuator,执行器,zhí xíng qì,atuador
 servo,servo,伺服,cì fú,servo
 código,code,代码,dài mǎ,código
-script,script,脚本,jiǎo běn,roteiro
+script,script,脚本,jiǎo běn,script
 interfaz,interface,接口,jiē kǒu,interface
 módulo,module,模块,mó kuài,módulo
 rutina,routine,例程,lì chéng,rotina
@@ -51,8 +51,8 @@ el servo,the servo,伺服,cì fú,o servo
 un servo,a servo,伺服系统,cì fú xì tǒng,um servo
 el código,the code,代码,dài mǎ,o código
 un código,a code,一个代码,yí gè dài mǎ,um código
-el script,the script,脚本,jiǎo běn,o roteiro
-un script,a script,脚本,jiǎo běn,um roteiro
+el script,the script,脚本,jiǎo běn,o script
+un script,a script,脚本,jiǎo běn,um script
 la interfaz,the interface,界面,jiè miàn,a interface
 una interfaz,an interface,一个接口,yí gè jiē kǒu,uma interface
 el módulo,the module,模块,mó kuài,o módulo
