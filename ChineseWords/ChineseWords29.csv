@@ -5,7 +5,7 @@ chinese,pinyin,english,spanish,french,portuguese
 面条,miàn tiáo,Noodles,Fideos,Nouilles,Macarrão
 馒头,mán tou,Steamed buns,Bollos al vapor,Petits pains cuits à la vapeur,Pãezinhos no vapor
 包子,bāo zi,Buns,Bollos,Petits pains,Pãezinhos
-饺子,jiǎo zi,Dumplings,Dumplings,Raviolis,Dumplings
+饺子,jiǎo zi,Dumplings,Empanadillas chinas,Raviolis,Guiozas
 面包,miàn bāo,Bread,Pan,Pain,Pão
 鸡蛋,jī dàn,Eggs,Huevos,Oeufs,Ovos
 肉,ròu,Meat,Carne,Viande,Carne
@@ -41,7 +41,7 @@ chinese,pinyin,english,spanish,french,portuguese
 炒鸡肉,chǎo jī ròu,Stir-fry chicken,Saltear pollo,Faire sauter du poulet,Refogar frango
 猪肉香,zhū ròu xiāng,Pork is fragrant,El cerdo es fragante,Le porc est parfumé,A carne de porco é perfumada
 炒猪肉,chǎo zhū ròu,Stir-fry pork,Saltear cerdo,Faire sauter du porc,Refogar carne de porco
-牛肉好,niú ròu hǎo,Beef is good,La carne es buena,Le boeuf est bon,A carne é boa
+牛肉好,niú ròu hǎo,Beef is good,La carne de res es buena,Le boeuf est bon,A carne bovina é boa
 炒牛肉,chǎo niú ròu,Stir-fry beef,Saltear carne,Faire sauter du boeuf,Refogar carne
 蔬菜新鲜,shū cài xīn xiān,Vegetables are fresh,Las verduras están frescas,Les légumes sont frais,Os legumes estão frescos
 吃蔬菜,chī shū cài,Eat vegetables,Comer verduras,Manger des légumes,Comer legumes
@@ -50,6 +50,6 @@ chinese,pinyin,english,spanish,french,portuguese
 汤好喝,tāng hǎo hē,Soup is delicious,La sopa es deliciosa,La soupe est délicieuse,A sopa é deliciosa
 喝汤,hē tāng,Drink soup,Beber sopa,Boire de la soupe,Tomar sopa
 羊肉香,yáng ròu xiāng,Lamb is fragrant,El cordero es fragante,L'agneau est parfumé,O cordeiro é perfumado
-涮羊肉,shuàn yáng ròu,Lamb hotpot,Cordero en olla caliente,Agneau à la marmite,Cordeiro na panela quente
+涮羊肉,shuàn yáng ròu,Lamb hotpot,Fondue de cordero,Fondue de mouton,Fondue de carneiro
 海鲜好,hǎi xiān hǎo,Seafood is good,El marisco es bueno,Les fruits de mer sont bons,Os frutos do mar são bons
 吃海鲜,chī hǎi xiān,Eat seafood,Comer mariscos,Manger des fruits de mer,Comer frutos do mar
