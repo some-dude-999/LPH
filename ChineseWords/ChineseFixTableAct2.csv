@@ -1,111 +1,19 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,15,Family Members,33,english,Daughter is married,Daughter gets married,Action (出嫁) not state - more natural
-chinese,15,Family Members,33,spanish,La hija está casada,La hija se casa,Action not state - 出嫁 means marrying out
-chinese,15,Family Members,33,portuguese,Filha é casada,Filha se casa,Action not state - more natural
-chinese,15,Family Members,37,english,Brother is married,Brother got married,Completed action (结婚了) - past tense with 了
-chinese,15,Family Members,37,spanish,El hermano está casado,El hermano se casó,Completed action - past tense more natural
-chinese,15,Family Members,37,portuguese,Irmão é casado,Irmão se casou,Completed action - past tense
-chinese,16,Days of Week,15,english,week,Every week,每周 means every week not just week
-chinese,16,Days of Week,15,spanish,semana,cada semana,Should be every week
-chinese,16,Days of Week,15,portuguese,semana,toda semana,Should be every week
-chinese,16,Days of Week,16,english,day of the week,What day is today,今天星期几 is a question - more natural
-chinese,16,Days of Week,16,spanish,día de la semana,¿Qué día es hoy?,Natural question form
-chinese,16,Days of Week,16,portuguese,dia da semana,Que dia é hoje,Natural question form
-chinese,16,Days of Week,18,english,Monday work,Work on Monday,More natural everyday phrasing
-chinese,16,Days of Week,18,spanish,Lunes trabajo,Trabajo el lunes,More natural phrasing
-chinese,16,Days of Week,18,portuguese,Trabalho de segunda-feira,Trabalho na segunda-feira,More natural phrasing
-chinese,16,Days of Week,19,english,Monday meeting,Meeting on Monday,More natural phrasing
-chinese,16,Days of Week,19,spanish,Reunión del lunes,Reunión el lunes,More natural
-chinese,16,Days of Week,19,portuguese,Reunião de segunda-feira,Reunião na segunda-feira,More natural
-chinese,16,Days of Week,20,english,Tuesday class,Class on Tuesday,More natural phrasing
-chinese,16,Days of Week,20,spanish,Clase del martes,Clase el martes,More natural
-chinese,16,Days of Week,20,portuguese,Aula de terça-feira,Aula na terça-feira,More natural
-chinese,16,Days of Week,21,english,Tuesday exam,Exam on Tuesday,More natural phrasing
-chinese,16,Days of Week,21,spanish,Examen del martes,Examen el martes,More natural
-chinese,16,Days of Week,21,portuguese,Exame de terça-feira,Exame na terça-feira,More natural
-chinese,16,Days of Week,25,english,Paycheck on Thursday,Get paid on Thursday,More common everyday phrase
-chinese,16,Days of Week,25,spanish,Cheque de sueldo el jueves,Me pagan el jueves,More natural
-chinese,16,Days of Week,25,portuguese,Contracheque de quinta-feira,Recebo na quinta-feira,More natural
-chinese,16,Days of Week,27,english,Friday party,Party on Friday,More natural phrasing
-chinese,16,Days of Week,27,spanish,Fiesta del viernes,Fiesta el viernes,More natural
-chinese,16,Days of Week,27,portuguese,Festa de sexta-feira,Festa na sexta-feira,More natural
-chinese,17,Months & Seasons,19,spanish,Temporada,Estación,Temporada=TV/sports season; weather season=estación
-chinese,17,Months & Seasons,19,portuguese,Temporada,Estação,Temporada=TV/sports season; weather season=estação
-chinese,17,Months & Seasons,24,english,New Year's Eve in February,Celebrate Chinese New Year in February,过年=celebrate Chinese New Year not New Year's Eve
-chinese,17,Months & Seasons,24,spanish,Nochevieja en febrero,Celebrar el Año Nuevo Chino en febrero,过年 is Chinese New Year celebration
-chinese,17,Months & Seasons,24,french,Réveillon du Nouvel An en février,Célébrer le Nouvel An chinois en février,过年 is Chinese New Year celebration
-chinese,17,Months & Seasons,24,portuguese,Réveillon em fevereiro,Comemorar o Ano Novo Chinês em fevereiro,过年 is Chinese New Year celebration
-chinese,17,Months & Seasons,48,english,Summer swimming,Swim in summer,More natural everyday phrasing
-chinese,17,Months & Seasons,48,spanish,Natación de verano,Nadar en verano,More natural
-chinese,17,Months & Seasons,48,portuguese,Natação de verão,Nadar no verão,More natural
-chinese,17,Months & Seasons,49,english,Summer eating watermelon,Eat watermelon in summer,More natural phrasing
-chinese,17,Months & Seasons,49,spanish,Comer sandía en verano,Comer sandía en el verano,More natural with article
-chinese,17,Months & Seasons,53,english,Winter eating hot pot,Eat hot pot in winter,More natural phrasing
-chinese,17,Months & Seasons,53,spanish,Comer estofado en invierno,Comer estofado en el invierno,More natural with article
-chinese,18,Years & Calendar,2,english,year,Year,Capitalize for consistency with other packs
-chinese,18,Years & Calendar,3,english,this year,This year,Capitalize for consistency
-chinese,18,Years & Calendar,4,english,next year,Next year,Capitalize for consistency
-chinese,18,Years & Calendar,5,english,last year,Last year,Capitalize for consistency
-chinese,18,Years & Calendar,6,english,the year before,Year before last,More natural common phrase
-chinese,18,Years & Calendar,6,spanish,el año anterior,hace dos años,More natural - el año anterior means previous year
-chinese,18,Years & Calendar,6,portuguese,no ano anterior,há dois anos,More natural - ano anterior means previous year
-chinese,18,Years & Calendar,7,english,the year after,Year after next,More natural common phrase
-chinese,18,Years & Calendar,7,spanish,el año siguiente,dentro de dos años,More natural - el año siguiente means following year
-chinese,18,Years & Calendar,7,portuguese,no ano seguinte,daqui a dois anos,More natural - ano seguinte means following year
-chinese,18,Years & Calendar,8,english,every year,Every year,Capitalize for consistency
-chinese,18,Years & Calendar,9,english,birthday,Birthday,Capitalize for consistency
-chinese,18,Years & Calendar,10,english,date,Date,Capitalize for consistency
-chinese,18,Years & Calendar,11,english,calendar,Calendar,Capitalize for consistency
-chinese,18,Years & Calendar,12,english,lunar calendar,Lunar calendar,Capitalize for consistency
-chinese,18,Years & Calendar,13,english,Solar calendar,Solar calendar,Lowercase for consistency with row 12
-chinese,18,Years & Calendar,14,english,Era/Decade,Era,Avoid slash - era is most common translation
-chinese,18,Years & Calendar,14,spanish,Época/Década,Época,Avoid slash - pick most common
-chinese,18,Years & Calendar,14,portuguese,Era/Década,Era,Avoid slash - pick most common
-chinese,19,Telling Time,15,english,hour,On the hour,整点 means exactly on the hour
-chinese,19,Telling Time,15,spanish,hora,en punto,On the hour
-chinese,19,Telling Time,15,portuguese,hora,na hora exata,On the hour
-chinese,19,Telling Time,17,english,hour,Moment,时刻 means moment/time not hour
-chinese,19,Telling Time,17,spanish,hora,momento,Moment not hour
-chinese,19,Telling Time,17,portuguese,hora,momento,Moment not hour
-chinese,19,Telling Time,18,english,late,Delayed,晚点 means delayed/running late
-chinese,19,Telling Time,18,spanish,tarde,retrasado,Delayed
-chinese,19,Telling Time,32,english,Ring the clock,Ring the bell,Clocks don't ring - bells do
-chinese,19,Telling Time,32,spanish,Toca el reloj,Toca la campana,Bell not clock
-chinese,19,Telling Time,32,french,Sonnez l'horloge,Sonnez la cloche,Bell not clock
-chinese,19,Telling Time,32,portuguese,Toque o relógio,Toque o sino,Bell not clock
-chinese,20,Numbers 11-100,19,english,number/digit,Number,Avoid slash - number is more common
-chinese,20,Numbers 11-100,19,spanish,número/dígito,número,Avoid slash
-chinese,20,Numbers 11-100,19,french,numéro/chiffre,numéro,Avoid slash
-chinese,20,Numbers 11-100,19,portuguese,número/dígito,número,Avoid slash
-chinese,20,Numbers 11-100,32,english,stand at thirty,Established at thirty,三十而立 is Confucian idiom - establish oneself
-chinese,20,Numbers 11-100,32,spanish,de pie a los treinta,establecido a los treinta,Cultural idiom meaning
-chinese,20,Numbers 11-100,32,french,debout à trente ans,établi à trente ans,Cultural idiom meaning
-chinese,20,Numbers 11-100,32,portuguese,de pé aos trinta,estabelecido aos trinta,Cultural idiom meaning
-chinese,20,Numbers 11-100,34,english,no doubts at forty,No confusion at forty,四十不惑 Confucian idiom - clarity/no confusion
-chinese,20,Numbers 11-100,34,spanish,sin dudas a los cuarenta,sin confusión a los cuarenta,Cultural idiom - clarity
-chinese,20,Numbers 11-100,34,french,sans doutes à quarante ans,sans confusion à quarante ans,Cultural idiom
-chinese,20,Numbers 11-100,34,portuguese,sem dúvidas aos quarenta,sem confusão aos quarenta,Cultural idiom
-chinese,21,More Measure Words,20,english,a box of sugar,a box of candy,糖 in this context means candy not sugar
-chinese,21,More Measure Words,20,spanish,una caja de azúcar,una caja de dulces,Candy not sugar
-chinese,21,More Measure Words,20,french,une boîte de sucre,une boîte de bonbons,Candy not sugar
-chinese,21,More Measure Words,20,portuguese,uma caixa de açúcar,uma caixa de doces,Candy not sugar
-chinese,21,More Measure Words,28,english,A run,Make a trip,跑一趟 means make a trip not a run
-chinese,21,More Measure Words,28,spanish,Una carrera,Hacer un viaje,Make a trip
-chinese,21,More Measure Words,28,french,Une course,Faire un voyage,Make a trip
-chinese,21,More Measure Words,28,portuguese,Uma corrida,Fazer uma viagem,Make a trip
-chinese,22,More Action Verbs,26,english,Give someone away,Give as a gift,送人 means give as gift - not abandon
-chinese,22,More Action Verbs,26,spanish,Regalar a alguien,Dar como regalo,Give as gift
-chinese,22,More Action Verbs,26,french,Donner quelqu'un,Offrir en cadeau,Give as gift
-chinese,22,More Action Verbs,26,portuguese,Entregar alguém,Dar de presente,Give as gift
-chinese,22,More Action Verbs,29,english,Catch someone,Catch it,接住 means catch (anything) not specifically someone
-chinese,22,More Action Verbs,29,spanish,Atrapar a alguien,Atrapar,Catch (general)
-chinese,22,More Action Verbs,29,french,Attraper quelqu'un,Attraper,Catch (general)
-chinese,22,More Action Verbs,29,portuguese,Pegar alguém,Pegar,Catch (general)
-chinese,24,Places & Locations,8,english,Hotel,Restaurant,饭店 primary meaning is restaurant
-chinese,24,Places & Locations,8,spanish,Hoteles,Restaurante,饭店=restaurant to distinguish from 酒店
-chinese,24,Places & Locations,8,french,Hôtel,Restaurant,饭店=restaurant
-chinese,24,Places & Locations,8,portuguese,Hotéis,Restaurante,饭店=restaurant
-chinese,24,Places & Locations,32,english,Book a hotel,Book a restaurant,订饭店 = book restaurant (饭店 here)
-chinese,24,Places & Locations,32,spanish,Reservar un hotel,Reservar un restaurante,订饭店 = book restaurant
-chinese,24,Places & Locations,32,french,Réserver un hôtel,Réserver un restaurant,订饭店 = book restaurant
-chinese,24,Places & Locations,32,portuguese,Reservar um hotel,Reservar um restaurante,订饭店 = book restaurant
+chinese,15,Family Members,10,english,Elder brother,Older brother,Too formal - use natural everyday term
+chinese,15,Family Members,11,english,Elder sister,Older sister,Too formal - use natural everyday term
+chinese,16,Days of Week,13,english,working day,weekday,More common everyday term
+chinese,16,Days of Week,23,english,Wednesday free,Free on Wednesday,Awkward phrasing - more natural word order
+chinese,19,Telling Time,21,english,several minutes,how many minutes,Wrong translation - 几 means how many not several
+chinese,20,Numbers 11-100,20,english,Double Eleven/Singles Day,Singles' Day,Most common name - remove slash
+chinese,20,Numbers 11-100,32,english,Established at thirty,At thirty established,More natural word order
+chinese,20,Numbers 11-100,34,english,No confusion at forty,At forty no confusion,More natural word order
+chinese,21,More Measure Words,9,english,field,event,Wrong word sense - 场 counts events not fields
+chinese,21,More Measure Words,10,english,table,machine,Wrong word sense - 台 counts machines not tables
+chinese,26,Basic Transportation,7,english,Taxi,Take a taxi,Wrong part of speech - 打车 is verb not noun
+chinese,27,Colors,29,english,Green environmental protection,Eco-friendly,Too awkward and literal - use natural term
+chinese,27,Colors,42,english,Brown Bear,Brown bear,Unnecessary capitalization
+chinese,27,Colors,43,english,Brown Hair,Brown hair,Unnecessary capitalization
+chinese,27,Colors,44,english,Golden Sunlight,Golden sunlight,Unnecessary capitalization
+chinese,27,Colors,45,english,Golden Sparkle,Golden sparkle,Unnecessary capitalization
+chinese,27,Colors,46,english,Silver Moonlight,Silver moonlight,Unnecessary capitalization
+chinese,27,Colors,47,english,Silver Shine,Silver shine,Unnecessary capitalization

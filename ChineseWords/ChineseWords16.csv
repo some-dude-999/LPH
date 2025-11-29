@@ -10,7 +10,7 @@ chinese,pinyin,english,spanish,french,portuguese
 周,zhōu,week,semana,semaine,semana
 周一,zhōu yī,Monday,Lunes,Lundi,Segunda-feira
 周末,zhōu mò,weekend,fin de semana,week-end,fim de semana
-工作日,gōng zuò rì,working day,jornada laboral,jour ouvrable,jornada de trabalho
+工作日,gōng zuò rì,weekday,jornada laboral,jour ouvrable,jornada de trabalho
 礼拜,lǐ bài,week,semana,semaine,semana
 每周,měi zhōu,Every week,cada semana,semaine,toda semana
 今天星期几,jīn tiān xīng qī jǐ,What day is today,¿Qué día es hoy?,jour de la semaine,Que dia é hoje
@@ -20,7 +20,7 @@ chinese,pinyin,english,spanish,french,portuguese
 星期二上课,xīng qī èr shàng kè,Class on Tuesday,Clase el martes,Cours du mardi,Aula na terça-feira
 星期二考试,xīng qī èr kǎo shì,Exam on Tuesday,Examen el martes,Examen du mardi,Exame na terça-feira
 星期三下午,xīng qī sān xià wǔ,Wednesday afternoon,Miércoles por la tarde,Mercredi après-midi,Quarta-feira à tarde
-星期三有空,xīng qī sān yǒu kòng,Wednesday free,Miércoles libre,Mercredi gratuit,Quarta-feira livre
+星期三有空,xīng qī sān yǒu kòng,Free on Wednesday,Miércoles libre,Mercredi gratuit,Quarta-feira livre
 星期四去医院,xīng qī sì qù yī yuàn,Go to the hospital on Thursday,Ir al hospital el jueves,Allez à l'hôpital jeudi,Vá para o hospital na quinta-feira
 星期四发工资,xīng qī sì fā gōng zī,Get paid on Thursday,Me pagan el jueves,Chèque de paie jeudi,Recebo na quinta-feira
 星期五晚上,xīng qī wǔ wǎn shàng,Friday night,Viernes por la noche,Vendredi soir,Sexta à noite
