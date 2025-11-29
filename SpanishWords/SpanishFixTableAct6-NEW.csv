@@ -1,0 +1,109 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,183,Birthdays & Fulfilling,14,chinese,你满足,你履行,Inconsistent - should match row 3 (履行 = fulfill)
+spanish,183,Birthdays & Fulfilling,14,pinyin,nǐ mǎn zú,nǐ lǚ xíng,Pinyin for you fulfill
+spanish,183,Birthdays & Fulfilling,15,english,today your birthday,today is your birthday,Awkward phrasing - missing verb
+spanish,183,Birthdays & Fulfilling,19,chinese,今天我们履行,我们今天过生日,Theme mismatch - about birthday not fulfilling
+spanish,183,Birthdays & Fulfilling,19,pinyin,jīn tiān wǒ men lǚ xíng,wǒ men jīn tiān guò shēng rì,Pinyin for birthday
+spanish,183,Birthdays & Fulfilling,24,chinese,我要满足,我要履行,Inconsistent - use 履行 (fulfill) not 满足 (satisfy)
+spanish,183,Birthdays & Fulfilling,24,pinyin,wǒ yào mǎn zú,wǒ yào lǚ xíng,Pinyin for want to fulfill
+spanish,184,Missing & Lacking,2,chinese,失踪,缺少,失踪 too specific (missing person) - need general lacking
+spanish,184,Missing & Lacking,2,pinyin,shī zōng,quē shǎo,Pinyin for lacking
+spanish,184,Missing & Lacking,3,chinese,犯规,你缺少,犯规 means foul (sports) - completely wrong
+spanish,184,Missing & Lacking,3,pinyin,fàn guī,nǐ quē shǎo,Pinyin for you lack
+spanish,184,Missing & Lacking,4,chinese,失踪,缺少,失踪 too specific (missing person) - need general lacking
+spanish,184,Missing & Lacking,4,pinyin,shī zōng,quē shǎo,Pinyin for lacking
+spanish,184,Missing & Lacking,7,chinese,失踪,缺少,失踪 too specific (missing person) - need general lacking
+spanish,184,Missing & Lacking,7,pinyin,shī zōng,quē shǎo,Pinyin for lacking
+spanish,184,Missing & Lacking,8,chinese,失踪,缺少,失踪 too specific (missing person) - need general lacking
+spanish,184,Missing & Lacking,8,pinyin,shī zōng,quē shǎo,Pinyin for lacking
+spanish,184,Missing & Lacking,11,chinese,我失踪了,我不在,失踪 too specific - use 不在 (absent)
+spanish,184,Missing & Lacking,11,pinyin,wǒ shī zōng le,wǒ bù zài,Pinyin for I'm absent
+spanish,184,Missing & Lacking,13,chinese,你失踪了,你不在,失踪 too specific - use 不在 (absent)
+spanish,184,Missing & Lacking,13,pinyin,nǐ shī zōng le,nǐ bù zài,Pinyin for you're absent
+spanish,184,Missing & Lacking,15,chinese,他失踪了,他不在,失踪 too specific - use 不在 (absent)
+spanish,184,Missing & Lacking,15,pinyin,tā shī zōng le,tā bù zài,Pinyin for he's absent
+spanish,184,Missing & Lacking,16,chinese,总是失踪,总是缺席,失踪 too specific - use 缺席 (absent)
+spanish,184,Missing & Lacking,16,pinyin,zǒng shì shī zōng,zǒng shì quē xí,Pinyin for always missing
+spanish,184,Missing & Lacking,17,chinese,我们失踪了,我们不在,失踪 too specific - use 不在 (absent)
+spanish,184,Missing & Lacking,17,pinyin,wǒ men shī zōng le,wǒ men bù zài,Pinyin for we're absent
+spanish,184,Missing & Lacking,18,chinese,我们永远不会失踪,我们从不缺席,失踪 too specific - use 缺席
+spanish,184,Missing & Lacking,18,pinyin,wǒ men yǒng yuǎn bú huì shī zōng,wǒ men cóng bù quē xí,Pinyin for we never miss
+spanish,184,Missing & Lacking,19,chinese,你失踪了,你不在,失踪 too specific - use 不在 (absent)
+spanish,184,Missing & Lacking,19,pinyin,nǐ shī zōng le,nǐ bù zài,Pinyin for you're absent
+spanish,184,Missing & Lacking,20,chinese,你永远不会失踪,你从不缺席,失踪 too specific - use 缺席
+spanish,184,Missing & Lacking,20,pinyin,nǐ yǒng yuǎn bú huì shī zōng,nǐ cóng bù quē xí,Pinyin for you never miss
+spanish,184,Missing & Lacking,21,chinese,他们失踪了,他们不在,失踪 too specific - use 不在 (absent)
+spanish,184,Missing & Lacking,21,pinyin,tā men shī zōng le,tā men bù zài,Pinyin for they're absent
+spanish,184,Missing & Lacking,22,chinese,他们总是失踪,他们总是缺席,失踪 too specific - use 缺席
+spanish,184,Missing & Lacking,22,pinyin,tā men zǒng shì shī zōng,tā men zǒng shì quē xí,Pinyin for they always miss
+spanish,185,Tourism Terms,4,chinese,宿舍,小旅馆,宿舍 = dormitory - hostal is small hotel
+spanish,185,Tourism Terms,4,pinyin,sù shè,xiǎo lǚ guǎn,Pinyin for small hotel
+spanish,185,Tourism Terms,6,chinese,宿舍,青年旅社,宿舍 = dormitory - albergue is youth hostel
+spanish,185,Tourism Terms,6,pinyin,sù shè,qīng nián lǚ shè,Pinyin for youth hostel
+spanish,185,Tourism Terms,19,chinese,野生动物园,野生动物观赏之旅,Safari is the trip not the park
+spanish,185,Tourism Terms,19,pinyin,yě shēng dòng wù yuán,yě shēng dòng wù guān shǎng zhī lǚ,Pinyin for safari trip
+spanish,185,Tourism Terms,20,chinese,巡航,邮轮,邮轮 = cruise ship - 巡航 is patrol
+spanish,185,Tourism Terms,20,pinyin,xún háng,yóu lún,Pinyin for cruise ship
+spanish,185,Tourism Terms,25,chinese,宿舍,小旅馆,宿舍 = dormitory - hostal is small hotel
+spanish,185,Tourism Terms,25,pinyin,sù shè,xiǎo lǚ guǎn,Pinyin for small hotel
+spanish,185,Tourism Terms,29,chinese,宿舍,青年旅社,宿舍 = dormitory - albergue is youth hostel
+spanish,185,Tourism Terms,29,pinyin,sù shè,qīng nián lǚ shè,Pinyin for youth hostel
+spanish,185,Tourism Terms,39,chinese,步行,徒步,步行 too casual - caminata is hike
+spanish,185,Tourism Terms,39,pinyin,bù xíng,tú bù,Pinyin for hike
+spanish,185,Tourism Terms,40,chinese,散步,徒步,散步 = stroll - caminata is hike
+spanish,185,Tourism Terms,40,pinyin,sàn bù,tú bù,Pinyin for hike
+spanish,185,Tourism Terms,55,chinese,野生动物园,野生动物观赏之旅,Safari is the trip not the park
+spanish,185,Tourism Terms,55,pinyin,yě shēng dòng wù yuán,yě shēng dòng wù guān shǎng zhī lǚ,Pinyin for safari trip
+spanish,185,Tourism Terms,56,chinese,旅行,野生动物观赏之旅,Too generic - safari is specific trip
+spanish,185,Tourism Terms,56,pinyin,lǚ xíng,yě shēng dòng wù guān shǎng zhī lǚ,Pinyin for safari trip
+spanish,186,Noticing,3,chinese,笔记,你注意到,笔记 = notebook - completely wrong
+spanish,186,Noticing,3,pinyin,bǐ jì,nǐ zhù yì dào,Pinyin for you notice
+spanish,193,Depending,30,chinese,你必须养活自己,你必须依靠别人,apoyarse = rely on others not support yourself
+spanish,193,Depending,30,pinyin,nǐ bì xū yǎng huó zì jǐ,nǐ bì xū yī kào bié rén,Pinyin for rely on others
+spanish,195,Belonging,9,chinese,会员资格,归属感,pertenencia = sense of belonging not membership
+spanish,195,Belonging,9,pinyin,huì yuán zī gé,guī shǔ gǎn,Pinyin for belonging
+spanish,200,Real Estate Terms,7,english,income,rent,renta in real estate = rent not income
+spanish,200,Real Estate Terms,7,chinese,收入,租金,租金 = rent - 收入 = income
+spanish,200,Real Estate Terms,7,pinyin,shōu rù,zū jīn,Pinyin for rent
+spanish,203,Aviation Terms,6,chinese,辅助,乘务员,auxiliar de vuelo = flight attendant
+spanish,203,Aviation Terms,6,pinyin,fǔ zhù,chéng wù yuán,Pinyin for flight attendant
+spanish,203,Aviation Terms,16,chinese,海拔,高度,altitud in aviation = altitude not elevation
+spanish,203,Aviation Terms,16,pinyin,hǎi bá,gāo dù,Pinyin for altitude
+spanish,203,Aviation Terms,18,chinese,塔,控制塔,torre in aviation = control tower
+spanish,203,Aviation Terms,18,pinyin,tǎ,kòng zhì tǎ,Pinyin for control tower
+spanish,204,Protecting,10,chinese,庇护所,保护,resguardo = protection not physical shelter
+spanish,204,Protecting,10,pinyin,bì hù suǒ,bǎo hù,Pinyin for protection
+spanish,207,Reducing,11,english,clipping,cut,recorte in economics = budget cut
+spanish,208,Increasing,11,chinese,繁荣,高峰,auge = peak/height - 繁荣 only means prosperity
+spanish,208,Increasing,11,pinyin,fán róng,gāo fēng,Pinyin for peak
+spanish,208,Increasing,28,chinese,崛起,上涨,alza = price rise - 崛起 too dramatic
+spanish,208,Increasing,28,pinyin,jué qǐ,shàng zhǎng,Pinyin for rise/increase
+spanish,209,Pharmaceutical Terms,11,chinese,次要,副作用,secundario in efecto secundario = side effect
+spanish,209,Pharmaceutical Terms,11,pinyin,cì yào,fù zuò yòng,Pinyin for side effect
+spanish,212,Energy & Power,9,chinese,消费,消耗,consumo in energy = resource consumption
+spanish,212,Energy & Power,9,pinyin,xiāo fèi,xiāo hào,Pinyin for consumption
+spanish,212,Energy & Power,35,chinese,消费,消耗,consumo = resource consumption not spending
+spanish,212,Energy & Power,35,pinyin,xiāo fèi,xiāo hào,Pinyin for consumption
+spanish,213,Thanking,3,english,thank you,you thank,Verb conjugation not interjection
+spanish,213,Thanking,4,english,thank you,he/she thanks,Verb conjugation not interjection
+spanish,213,Thanking,6,english,thank you,you thank,Verb conjugation (plural)
+spanish,213,Thanking,7,english,thank you,they thank,Verb conjugation not interjection
+spanish,213,Thanking,8,english,thank,to thank,Infinitive needs to
+spanish,213,Thanking,15,chinese,你很欣赏,你很感激,agradecer = be grateful not appreciate
+spanish,213,Thanking,15,pinyin,nǐ hěn xīn shǎng,nǐ hěn gǎn jī,Pinyin for grateful
+spanish,213,Thanking,17,chinese,欣赏它,感谢它,agradecer = thank not appreciate
+spanish,213,Thanking,17,pinyin,xīn shǎng tā,gǎn xiè tā,Pinyin for thank it
+spanish,213,Thanking,22,chinese,他们欣赏,他们感谢,agradecer = thank not appreciate
+spanish,213,Thanking,22,pinyin,tā men xīn shǎng,tā men gǎn xiè,Pinyin for they thank
+spanish,213,Thanking,23,chinese,他们很欣赏,他们很感激,agradecer = be grateful not admire
+spanish,213,Thanking,23,pinyin,tā men hěn xīn shǎng,tā men hěn gǎn jī,Pinyin for grateful
+spanish,213,Thanking,31,chinese,我会认出,我会认可,reconocer = acknowledge not identify
+spanish,213,Thanking,31,pinyin,wǒ huì rèn chū,wǒ huì rèn kě,Pinyin for acknowledge
+spanish,215,Automotive Terms,13,chinese,车间,修理厂,taller in automotive = repair shop
+spanish,215,Automotive Terms,13,pinyin,chē jiān,xiū lǐ chǎng,Pinyin for repair shop
+spanish,215,Automotive Terms,48,chinese,机械师,机械学,la mecánica = field/mechanics not person
+spanish,215,Automotive Terms,48,pinyin,jī xiè shī,jī xiè xué,Pinyin for mechanics field
+spanish,215,Automotive Terms,50,chinese,必须审查,必须检查,revisar in automotive = inspect/check
+spanish,215,Automotive Terms,50,pinyin,bì xū shěn chá,bì xū jiǎn chá,Pinyin for must inspect
+spanish,218,Subjunctive Triggers,23,chinese,你一定要幸福,你必须高兴,alegrarse = be glad - 高兴 not 幸福
+spanish,218,Subjunctive Triggers,23,pinyin,nǐ yí dìng yào xìng fú,nǐ bì xū gāo xìng,Pinyin for must be glad
