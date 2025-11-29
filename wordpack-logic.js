@@ -377,12 +377,14 @@ function renderChineseText(chinese, pinyin) {
  *
  * Controlled by:
  * - localStorage ('debug_mode' key)
- * - Hotkey: Ctrl + Shift + Alt + D + E + B + U + G (all keys together)
+ * - Hotkey: Ctrl + ` (backtick key, next to "1")
  *
  * When enabled, shows:
  * - Vocabulary table with all cards in current deck
  * - Word type (Base Word / Example Word)
  * - Simulate buttons for testing
+ *
+ * DEFAULT: OFF (false) - only enabled via hotkey
  */
 window.DEBUG_MODE = localStorage.getItem('debug_mode') === 'true'; // Default: false
 
@@ -411,62 +413,25 @@ function toggleDebugMode() {
 }
 
 /**
- * DEBUG HOTKEY: Ctrl + Shift + Alt + D + E + B + U + G
+ * DEBUG HOTKEY: Ctrl + ` (backtick)
  *
- * Pressing Ctrl + Shift + Alt, then typing "debug" quickly toggles debug mode
+ * Press Ctrl + ` to toggle debug mode on/off
  *
- * Implementation:
- * - Track which keys are currently pressed
- * - When Ctrl + Shift + Alt are held, track letter sequence
- * - If "d", "e", "b", "u", "g" typed within 2 seconds, toggle debug
+ * Why this hotkey:
+ * - Easy to press (just 2 keys)
+ * - Won't be accidentally pressed during gameplay
+ * - Familiar to developers (VSCode uses Ctrl+` for terminal)
+ * - Backtick key is next to "1" on US keyboards
  */
 (function setupDebugHotkey() {
-  const requiredKeys = ['d', 'e', 'b', 'u', 'g'];
-  let pressedSequence = [];
-  let sequenceTimer = null;
-
   document.addEventListener('keydown', (e) => {
-    // Check if Ctrl + Shift + Alt are all pressed
-    const modifiersPressed = e.ctrlKey && e.shiftKey && e.altKey;
-
-    if (!modifiersPressed) {
-      // Reset sequence if modifiers not held
-      pressedSequence = [];
-      if (sequenceTimer) clearTimeout(sequenceTimer);
-      return;
-    }
-
-    // Only track letter keys
-    const key = e.key.toLowerCase();
-    if (!/^[a-z]$/.test(key)) return;
-
-    // Add to sequence
-    pressedSequence.push(key);
-
-    // Check if we've completed "debug"
-    const sequenceStr = pressedSequence.join('');
-    if (sequenceStr === 'debug') {
+    // Check for Ctrl + ` (backtick)
+    // e.key can be '`' or 'Dead' (on some keyboards)
+    // e.code should be 'Backquote' consistently
+    if (e.ctrlKey && !e.shiftKey && !e.altKey && e.code === 'Backquote') {
       e.preventDefault();
       toggleDebugMode();
-      pressedSequence = [];
-      if (sequenceTimer) clearTimeout(sequenceTimer);
-      return;
     }
-
-    // Check if current sequence is still a valid prefix of "debug"
-    const targetStr = requiredKeys.join('');
-    if (!targetStr.startsWith(sequenceStr)) {
-      // Invalid sequence, reset
-      pressedSequence = [];
-      if (sequenceTimer) clearTimeout(sequenceTimer);
-      return;
-    }
-
-    // Reset sequence after 2 seconds of inactivity
-    if (sequenceTimer) clearTimeout(sequenceTimer);
-    sequenceTimer = setTimeout(() => {
-      pressedSequence = [];
-    }, 2000);
   });
 })();
 
