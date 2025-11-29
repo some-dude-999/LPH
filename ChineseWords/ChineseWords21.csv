@@ -2,12 +2,12 @@ chinese,pinyin,english,spanish,french,portuguese
 盒,hé,box,caja,boîte,caixa
 袋,dài,bag,bolsa,sac,bolsa
 份,fèn,portion,porción,partie,porção
-遍,biàn,time,vez,fois,vez
+遍,biàn,time (measure word),vez,fois,vez
 趟,tàng,trip,viaje,voyage,viagem
 顿,dùn,meal,comida,repas,refeição
-节,jié,section,sección,rubrique,seção
+节,jié,class period,clase (periodo),cours (séance),aula (período)
 场,chǎng,event,evento,événement,evento
-台,tái,machine,aparato,appareil,aparelho
+台,tái,machine (unit),unidad (aparatos),appareil (unité),aparelho (unidade)
 辆,liàng,vehicle,vehículo,véhicule,veículo
 座,zuò,building (mw),edificio (clas.),bâtiment (class.),prédio (class.)
 层,céng,floor,piso,étage,andar
@@ -22,7 +22,7 @@ chinese,pinyin,english,spanish,french,portuguese
 一袋米,yī dài mǐ,a bag of rice,una bolsa de arroz,un sac de riz,um saco de arroz
 几袋,jǐ dài,a few bags,unas cuantas bolsas,quelques sacs,algumas sacolas
 一份报,yī fèn bào,a newspaper,un periódico,un journal,um jornal
-几份,jǐ fèn,A few copies,Unas cuantas copias,Quelques exemplaires,Alguns exemplares
+几份,jǐ fèn,a few copies,unas cuantas copias,quelques exemplaires,alguns exemplares
 一遍又一遍,yī biàn yòu yī biàn,Over and over,Una y otra vez,Encore et encore,Repetidamente
 说一遍,shuō yī biàn,Say it again,Dilo de nuevo,Répétez-le,Diga de novo
 跑一趟,pǎo yī tàng,Make a trip,Hacer un viaje,Faire un voyage,Fazer uma viagem
@@ -50,6 +50,6 @@ chinese,pinyin,english,spanish,french,portuguese
 一串葡萄,yī chuàn pú táo,A bunch of grapes,Un racimo de uvas,Une grappe de raisin,Um cacho de uvas
 几串,jǐ chuàn,A few bunches,Algunos manojos,Quelques grappes,Alguns cachos
 一束花,yī shù huā,A bouquet of flowers,Un ramo de flores,Un bouquet de fleurs,Um buquê de flores
-几束,jǐ shù,Bouquet,Ramo,Bouquet,Ramalhete
+几束,jǐ shù,A few bouquets,Unos ramos,Quelques bouquets,Alguns buquês
 一堆东西,yī duī dōng xī,A pile of things,Un montón de cosas,Un tas de choses,Uma pilha de coisas
-几堆,jǐ duī,A few piles,algunas pilas,Quelques tas,Algumas pilhas
+几堆,jǐ duī,A few piles,unos cuantos montones,Quelques tas,Algumas pilhas
