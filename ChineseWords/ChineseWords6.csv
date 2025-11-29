@@ -8,10 +8,10 @@ chinese,pinyin,english,spanish,french,portuguese
 必须,bì xū,must,debe,doit,deve
 愿意,yuàn yì,willing,deseoso,disposé,disposto
 开始,kāi shǐ,start,comenzar,commencer,começar
-结束,jié shù,Finish,Finalizar,Finition,Terminar
+结束,jié shù,Finish,Finalizar,Finir,Terminar
 继续,jì xù,continue,continuar,continuer,continuar
-停止,tíng zhǐ,stop,detener,arrêt,parar
-等,děng,wait,esperar,attendez,espere
+停止,tíng zhǐ,stop,detener,arrêter,parar
+等,děng,wait,esperar,attendre,esperar
 帮,bāng,help,ayuda,aide,ajuda
 试,shì,try,intentar,essayer,tentar
 用,yòng,use,usar,utiliser,usar
@@ -24,14 +24,14 @@ chinese,pinyin,english,spanish,french,portuguese
 想去,xiǎng qù,Want to go,quiero ir,Je veux y aller,Quer ir
 能做,néng zuò,can do,puede hacer,peut faire,pode fazer
 能行,néng xíng,Can do it,puedo hacerlo,Je peux le faire,Posso fazer isso
-会做,huì zuò,will do,servirá,ça ira,vai fazer
-不会,bú huì,Won't,No,Ne le fera pas,Não vai
+会做,huì zuò,know how to do,sabe hacerlo,sait faire,sabe fazer
+不会,bú huì,Can't,No puede,Ne peut pas,Não pode
 可以吗,kě yǐ ma,May I,Puedo,Puis-je,Posso
 可以的,kě yǐ de,OK,De acuerdo,D'accord,OK
 应该去,yīng gāi qù,should go,debería ir,devrait y aller,deveria ir
 应该做,yīng gāi zuò,should do,debería hacer,devrait faire,deveria fazer
 必须做,bì xū zuò,must do,debe hacer,doit faire,deve fazer
-必须去,bì xū qù,Must go,debe ir,Il faut y aller,Devo ir
+必须去,bì xū qù,Must go,debe ir,Il faut y aller,Deve ir
 愿意帮,yuàn yì bāng,willing to help,dispuesto a ayudar,prêt à aider,disposto a ajudar
 很愿意,hěn yuàn yì,Very willing,muy dispuesto,Très disposé,Muito disposto
 开始了,kāi shǐ le,here we go,Aquí vamos,on y va,aqui vamos nós
@@ -52,7 +52,7 @@ chinese,pinyin,english,spanish,french,portuguese
 用这个,yòng zhè ge,use this,usa esto,utilise ça,use isso
 该走了,gāi zǒu le,It's time to go,es hora de ir,Il est temps d'y aller,É hora de ir
 该做,gāi zuò,should do,debería hacer,devrait faire,deveria fazer
-须知,xū zhī,Notice,Aviso,Avis,Perceber
-须要,xū yào,Need,Necesidad,Besoin,Precisar
+须知,xū zhī,Notice,Aviso,Avis,Aviso
+须要,xū yào,Need,Necesidad,Besoin,Necessidade
 肯干,kěn gàn,Willing to do it,dispuesto a hacerlo,Prêt à le faire,Disposto a fazer isso
 肯做,kěn zuò,Willing to do it,dispuesto a hacerlo,Prêt à le faire,Disposto a fazer isso

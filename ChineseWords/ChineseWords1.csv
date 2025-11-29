@@ -11,17 +11,17 @@ chinese,pinyin,english,spanish,french,portuguese
 多谢,duō xiè,thank you,gracias,merci,obrigado
 不客气,bú kè qì,You're welcome,De nada,De rien,De nada
 对不起,duì bù qǐ,sorry,Lo siento,Désolé,desculpe
-没关系,méi guān xì,It doesn't matter,No importa,Cela n'a pas d'importance,Não importa
+没关系,méi guān xì,No problem,No importa,Cela n'a pas d'importance,Não importa
 请,qǐng,please,por favor,s'il te plaît,por favor
 欢迎,huān yíng,welcome,bienvenido,bienvenue,Bem-vindo
 好久不见,hǎo jiǔ bú jiàn,long time no see,hace mucho que no te veo,je ne t'ai pas vu depuis longtemps,não te vejo há muito tempo
 再会,zài huì,Goodbye,Adiós,Au revoir,Adeus
-保重,bǎo zhòng,Take care of yourself,Cuídate,Prends soin de toi,Cuide-se
+保重,bǎo zhòng,Take care,Cuídate,Prends soin de toi,Cuide-se
 慢走,màn zǒu,take care,cuídate,prends soin de toi,cuide-se
 你好吗,nǐ hǎo ma,How are you?,¿Cómo estás?,Ça va ?,Como você está?
 你好啊,nǐ hǎo a,hello,Hola,Bonjour,olá
 您好先生,nín hǎo xiān shēng,hello sir,hola señor,bonjour monsieur,olá senhor
-您好请问,nín hǎo qǐng wèn,excuse me,disculpe,excusez-moi,com licença
+您好请问,nín hǎo qǐng wèn,"Hello, may I ask...","Hola, ¿puedo preguntar...?","Bonjour, puis-je demander...","Olá, posso perguntar...?"
 早安朋友,zǎo ān péng yǒu,Good morning friends,"Buenos días, amigos",Bonjour les amis,Bom dia amigos
 说声早安,shuō shēng zǎo ān,say good morning,decir buenos días,dis bonjour,diga bom dia
 午安各位,wǔ ān gè wèi,Good afternoon everyone,Buenas tardes a todos,Bonjour à tous,Boa tarde a todos
@@ -39,7 +39,7 @@ chinese,pinyin,english,spanish,french,portuguese
 多谢帮忙,duō xiè bāng máng,Thanks for the help,Gracias por la ayuda,Merci pour l'aide,Obrigado pela ajuda
 多谢关心,duō xiè guān xīn,Thank you for your concern,Gracias por tu preocupación,Merci pour votre inquiétude,Obrigado pela sua preocupação
 太不客气了,tài bú kè qì le,You're too kind,Eres muy amable,Vous êtes trop gentil,Você é muito gentil
-别不客气,bié bú kè qì,you're welcome,de nada,de rien,de nada
+别不客气,bié bú kè qì,Don't mention it,no hay de qué,de rien,de nada
 对不起我迟到了,duì bù qǐ wǒ chí dào le,sorry i'm late,"lo siento, llego tarde",désolé je suis en retard,"desculpe, estou atrasado"
 说声对不起,shuō shēng duì bù qǐ,say sorry,decir lo siento,dire désolé,peça desculpas
 没关系的,méi guān xì de,It's okay,Está bien,C'est bon,Tudo bem
@@ -47,7 +47,7 @@ chinese,pinyin,english,spanish,french,portuguese
 请坐,qǐng zuò,Please sit down,por favor siéntate,"S'il vous plaît, asseyez-vous","Por favor, sente-se"
 请进,qǐng jìn,Please come in,Por favor entra,"S'il vous plaît, entrez",Por favor entre
 欢迎光临,huān yíng guāng lín,welcome,bienvenido,bienvenue,Bem-vindo
-欢迎回来,huān yíng huí lái,welcome back,bienvenido de nuevo,content de te revoir,bem vindo de volta
+欢迎回来,huān yíng huí lái,welcome back,bienvenido de nuevo,content de te revoir,bem-vindo de volta
 好久不见了,hǎo jiǔ bú jiàn le,long time no see,mucho tiempo sin verlo,cela fait longtemps qu'on ne s'est pas vu,muito tempo sem ver
 我们好久不见,wǒ men hǎo jiǔ bú jiàn,long time no see,mucho tiempo sin verlo,cela fait longtemps qu'on ne s'est pas vu,muito tempo sem ver
 再会朋友,zài huì péng yǒu,Goodbye friends,Adiós amigos,Au revoir les amis,Tchau
