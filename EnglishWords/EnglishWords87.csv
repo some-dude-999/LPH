@@ -1,12 +1,12 @@
 english,chinese,pinyin,spanish,portuguese
-memo,备忘录,bèi wàng lù,nota,memorando
+memo,备忘录,bèi wàng lù,memorando,memorando
 letter,信,xìn,carta,carta
 voicemail,语音信箱,yǔ yīn xìn xiāng,correo de voz,correio de voz
 conference,会议,huì yì,conferencia,conferência
 agenda,议程,yì chéng,agenda,agenda
 proposal,提案,tí àn,propuesta,proposta
-feedback,反馈,fǎn kuì,retroalimentación,comentários
-brief,简介,jiǎn jiè,resumen breve,resumo
+feedback,反馈,fǎn kuì,comentarios,comentários
+brief,简介,jiǎn jiè,resumen,resumo
 notify,通知,tōng zhī,notificar,notificar
 circulate,传阅,chuán yuè,circular,circular
 correspond,通信,tōng xìn,corresponder,corresponder
@@ -39,8 +39,8 @@ notify me,通知我,tōng zhī wǒ,avísame,me avise
 notify in advance,提前通知,tí qián tōng zhī,notificar con antelación,avisar com antecedência
 circulate document,传阅文件,chuán yuè wén jiàn,circular documento,circular documento
 circulate information,传播信息,chuán bō xìn xī,circular información,circular informações
-correspond with,通信,tōng xìn,corresponder con,corresponde com
-correspond by email,通过电子邮件通讯,tōng guò diàn zi yóu jiàn tōng xùn,corresponder por correo electrónico,corresponder por e-mail
+correspond with,通信,tōng xìn,corresponderse con,corresponde com
+correspond by email,通过电子邮件通讯,tōng guò diàn zi yóu jiàn tōng xùn,comunicarse por correo electrónico,corresponder por e-mail
 consult with,向...咨询,xiàng... zī xún,consultar con,consultar com
 consult expert,请教专家,qǐng jiào zhuān jiā,consultar experto,consulte especialista
 collaborate on,合作,hé zuò,colaborar en,colaborar em

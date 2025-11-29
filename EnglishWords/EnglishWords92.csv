@@ -1,5 +1,5 @@
 english,chinese,pinyin,spanish,portuguese
-rent,租金,zū jīn,alquiler,alugar
+rent,租金,zū jīn,alquiler,aluguel
 lease,租赁,zū lìn,arrendamiento,arrendamento
 landlord,房东,fáng dōng,propietario,senhorio
 tenant,租户,zū hù,inquilino,inquilino
@@ -7,7 +7,7 @@ apartment,公寓,gōng yù,apartamento,apartamento
 mortgage,抵押贷款,dǐ yā dài kuǎn,hipoteca,hipoteca
 property,财产,cái chǎn,propiedad,propriedade
 neighborhood,邻里,lín lǐ,barrio,bairro
-utilities,公用事业,gōng yòng shì yè,utilidades,utilidades
+utilities,公用事业,gōng yòng shì yè,utilidades,serviços públicos
 maintenance,维护,wéi hù,mantenimiento,manutenção
 furnished,家具齐全,jiā jù qí quán,amueblado,mobiliado
 unfurnished,不带家具,bù dài jiā jù,sin muebles,sem mobília
@@ -36,7 +36,7 @@ property value,财产价值,cái chǎn jià zhí,valor de la propiedad,valor da 
 nice neighborhood,不错的社区,bù cuò de shè qū,bonito barrio,bairro legal
 neighborhood watch,邻里守望,lín lǐ shǒu wàng,vigilancia vecinal,vigilância de bairro
 pay utilities,支付水电费,zhī fù shuǐ diàn fèi,pagar servicios públicos,pagar serviços públicos
-utilities included,包括实用程序,bāo kuò shí yòng chéng xù,servicios públicos incluidos,utilidades incluídas
+utilities included,包括实用程序,bāo kuò shí yòng chéng xù,servicios públicos incluidos,serviços incluídos
 regular maintenance,定期保养,dìng qī bǎo yǎng,mantenimiento regular,manutenção regular
 maintenance fee,维护费,wéi hù fèi,cuota de mantenimiento,taxa de manutenção
 fully furnished,家具齐全,jiā jù qí quán,completamente amueblado,totalmente mobiliado

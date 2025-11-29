@@ -1,0 +1,52 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+english,82,Travel,3,portuguese,feriado,férias,Use common word for a vacation/holiday trip
+english,82,Travel,36,portuguese,passear,fazer turismo,More natural phrasing for sightseeing
+english,82,Travel,41,spanish,recomendación de la guía,recomendación de guía,More idiomatic without article
+english,82,Travel,41,portuguese,recomendação do guia,recomendação de guia,Clarify recommendation of a guidebook
+english,82,Travel,53,portuguese,vagar,se afastar,Natural way to say wander off/stray
+english,82,Travel,57,spanish,viaje a través,viaje a través de,Add needed preposition for natural phrasing
+english,82,Travel,57,portuguese,viagem através,viagem através de,Add required preposition for natural Portuguese
+english,83,Airport & Flying,56,portuguese,vivenciar turbulência,passar por turbulência,More natural expression for experiencing turbulence
+english,85,Work & Office,56,spanish,título del trabajo,título del puesto,Use usual phrasing for job title
+english,85,Work & Office,59,spanish,responsabilidades incluyen,las responsabilidades incluyen,Add article for natural Spanish
+english,86,Workplace Actions,4,spanish,dimitir,renunciar,Use common everyday verb for resign
+english,86,Workplace Actions,26,spanish,dimitir de,renunciar a,Use natural phrasing for resigning from something
+english,86,Workplace Actions,54,spanish,ejecutar plan,ejecutar el plan,Add article for natural Spanish
+english,87,Business Communication,2,spanish,nota,memorando,Use standard business term for memo
+english,87,Business Communication,8,spanish,retroalimentación,comentarios,Use common word for feedback
+english,87,Business Communication,9,spanish,resumen breve,resumen,Simplify to natural noun for brief overview
+english,87,Business Communication,42,spanish,corresponder con,corresponderse con,Use reflexive form for correspondence
+english,87,Business Communication,43,spanish,corresponder por correo electrónico,comunicarse por correo electrónico,Natural phrasing for corresponding by email
+english,88,Internet & Social Media,2,portuguese,ligação,link,Use common borrowing for web link
+english,88,Internet & Social Media,3,portuguese,mecanismo de busca,motor de busca,Use standard term for search engine
+english,88,Internet & Social Media,7,portuguese,comente,comentário,Use noun form for comment
+english,88,Internet & Social Media,8,portuguese,siga,seguir,Use infinitive to match base verb
+english,88,Internet & Social Media,20,spanish,suscríbete,suscribirse,Use infinitive for the base verb
+english,88,Internet & Social Media,20,portuguese,inscreva-se,inscrever-se,Use infinitive for the base verb
+english,88,Internet & Social Media,21,portuguese,tendências,em alta,Common phrase for trending items
+english,88,Internet & Social Media,29,spanish,actualización posterior,actualizar la publicación,Natural phrasing for updating a post
+english,88,Internet & Social Media,37,portuguese,deixar de seguir conta,deixar de seguir a conta,Add article for natural wording
+english,88,Internet & Social Media,44,portuguese,esqueci a senha,esquecer a senha,Use infinitive to match base verb
+english,88,Internet & Social Media,49,portuguese,enviar vídeo,carregar vídeo,Common verb for uploading video
+english,88,Internet & Social Media,59,spanish,suscríbete a,suscribirse a,Use infinitive for the base verb
+english,89,Relationships,4,chinese,合作伙伴,伴侣,Use relationship partner instead of business partner
+english,89,Relationships,4,spanish,socio,pareja,Use romantic partner term
+english,89,Relationships,8,chinese,日期,约会,Use word for romantic date
+english,89,Relationships,8,spanish,fecha,cita,Use romantic date term
+english,89,Relationships,8,portuguese,data,encontro,Use romantic date term
+english,89,Relationships,13,portuguese,engajado,noivo,Correct term for someone who is engaged to marry
+english,89,Relationships,17,portuguese,suporte,apoio,Common word for emotional support
+english,89,Relationships,33,portuguese,gols de casal,metas de casal,Natural phrasing for couple goals
+english,89,Relationships,35,portuguese,encontro noite,noite de encontro,Natural ordering in Portuguese
+english,89,Relationships,58,spanish,compromiso largo,compromiso a largo plazo,Common expression for long-term commitment
+english,89,Relationships,58,portuguese,compromisso longo,compromisso a longo prazo,Natural phrasing for long commitment
+english,90,Social Interactions,3,spanish,chatear,charlar,Use common verb for chatting
+english,90,Social Interactions,31,spanish,sentir traición,sentirse traicionado,Natural reflexive phrasing
+english,90,Social Interactions,31,portuguese,me sinto traído,sentir-se traído,Use infinitive/reflexive for feel betrayed
+english,90,Social Interactions,39,spanish,sentir insulto,sentirse insultado,Natural reflexive phrasing
+english,90,Social Interactions,39,portuguese,me sinto insultado,sentir-se insultado,Use infinitive/reflexive for feel insulted
+english,91,Life Events,9,portuguese,engajamento,noivado,Use standard term for marriage engagement
+english,92,Housing,2,portuguese,alugar,aluguel,Use noun for rent price
+english,92,Housing,10,portuguese,utilidades,serviços públicos,Common term for household utilities
+english,92,Housing,39,portuguese,utilidades incluídas,serviços incluídos,Natural phrasing for utilities included
+english,89,Relationships,4,pinyin,hé zuò huǒ bàn,bàn lǚ,Update pinyin to match new term
