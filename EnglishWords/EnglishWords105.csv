@@ -1,16 +1,16 @@
 english,chinese,pinyin,spanish,portuguese
 climb,爬,pá,subir,subir
-drop,下降,xià jiàng,soltar,cair
-surge,激增,jī zēng,oleada,aumento
-plunge,暴跌,bào diē,zambullirse,mergulhar
-soar,翱翔,áo xiáng,volar,voar alto
-dip,浸,jìn,inmersión,mergulho
+drop,下降,xià jiàng,bajar,cair
+surge,激增,jī zēng,aumento repentino,aumento
+plunge,暴跌,bào diē,desplomarse,despencar
+soar,翱翔,áo xiáng,dispararse,disparar
+dip,浸,jìn,bajada,queda leve
 spike,激增,jī zēng,pico,pico
 level,水平,shuǐ píng,nivel,nível
 plateau,高原,gāo yuán,meseta,planalto
 fluctuate,波动,bō dòng,fluctuar,flutuar
-skyrocket,飙升,biāo shēng,dispararse,disparou
-plummet,直线下降,zhí xiàn xià jiàng,caer en picado,despenca
+skyrocket,飙升,biāo shēng,dispararse,disparar
+plummet,直线下降,zhí xiàn xià jiàng,caer en picado,despencar
 stabilize,稳定,wěn dìng,estabilizar,estabilizar
 peak,峰值,fēng zhí,pico,pico
 double,双,shuāng,doble,duplo
@@ -26,15 +26,15 @@ drop sharply,急剧下降,jí jù xià jiàng,caer bruscamente,cai drasticamente
 sudden surge,突然激增,tū rán jī zēng,aumento repentino,aumento repentino
 surge in demand,需求激增,xū qiú jī zēng,aumento de la demanda,aumento da procura
 prices plunge,价格暴跌,jià gé bào diē,los precios caen,preços despencam
-plunge down,跳下去,tiào xià qù,caer,mergulhar
+plunge down,直线下跌,zhí xiàn xià diē,caer,mergulhar
 prices soar,价格飙升,jià gé biāo shēng,los precios se disparan,preços disparam
-soar high,展翅高飞,zhǎn chì gāo fēi,volar alto,voar alto
+soar high,大幅上升,dà fú shàng shēng,volar alto,voar alto
 slight dip,轻微下降,qīng wēi xià jiàng,ligera caída,ligeira queda
 dip in sales,销售额下降,xiāo shòu é xià jiàng,caída de las ventas,queda nas vendas
 sudden spike,突然飙升,tū rán biāo shēng,pico repentino,pico repentino
 spike in traffic,流量激增,liú liàng jī zēng,aumento del tráfico,aumento no tráfego
-level off,趋于平稳,qū yú píng wěn,nivelar,nivelar
-level out,拉平,lā píng,nivelar,nivelar
+level off,趋于平稳,qū yú píng wěn,estabilizarse,estabilizar
+level out,拉平,lā píng,estabilizarse,estabilizar
 reach plateau,达到高原,dá dào gāo yuán,alcanzar la meseta,atingir o platô
 plateau phase,平台期,píng tái qī,fase de meseta,fase de platô
 prices fluctuate,价格波动,jià gé bō dòng,los precios fluctúan,os preços flutuam
@@ -49,13 +49,13 @@ reach peak,达到顶峰,dá dào dǐng fēng,alcanzar el pico,atingir o pico
 peak performance,巅峰表现,diān fēng biǎo xiàn,máximo rendimiento,desempenho máximo
 double in size,双倍大小,shuāng bèi dà xiǎo,el doble de tamaño,dobrar de tamanho
 double the amount,双倍金额,shuāng bèi jīn é,duplicar la cantidad,dobrar o valor
-multiply rapidly,迅速繁殖,xùn sù fán zhí,multiplicarse rápidamente,multiplique rapidamente
+multiply rapidly,迅速倍增,xùn sù bèi zēng,multiplicarse rápidamente,multiplique rapidamente
 multiply by,乘以,chéng yǐ,multiplicar por,multiplique por
 current trend,当前趋势,dāng qián qū shì,tendencia actual,tendência atual
 trend analysis,趋势分析,qū shì fēn xī,análisis de tendencias,análise de tendências
 on the rise,正在上升,zhèng zài shàng shēng,en aumento,em ascensão
 rise sharply,大幅上涨,dà fú shàng zhǎng,aumentar bruscamente,subir acentuadamente
 steady decline,稳步下降,wěn bù xià jiàng,descenso constante,declínio constante
-decline in,下降于,xià jiàng yú,descenso en,declínio em
+decline in,下降,xià jiàng,descenso en,declínio em
 growth stagnate,增长停滞,zēng zhǎng tíng zhì,el crecimiento se estanca,estagnação do crescimento
 stagnate over time,随着时间的推移停滞不前,suí zhe shí jiān de tuī yí tíng zhì bù qián,estancarse en el tiempo,estagnar com o tempo

@@ -8,12 +8,12 @@ lobby,大堂,dà táng,vestíbulo,lobby
 front desk,前台,qián tái,recepción,recepção
 room service,客房服务,kè fáng fú wù,servicio de habitaciones,serviço de quarto
 housekeeping,客房服务,kè fáng fú wù,limpieza,limpeza
-concierge,礼宾服务,lǐ bīn fú wù,conserje,concierge
+concierge,礼宾员,lǐ bīn yuán,conserje,concierge
 suite,套房,tào fáng,suite,suíte
 single room,单人间,dān rén jiān,habitación individual,quarto individual
 double room,双人间,shuāng rén jiān,habitación doble,quarto duplo
 vacancy,空房,kōng fáng,vacante,vaga
-amenity,便利设施,biàn lì shè shī,servicio,comodidade
+amenity,便利设施,biàn lì shè shī,comodidad,comodidade
 checkout,退房,tuì fáng,hacer el check-out,check-out
 key card,钥匙卡,yào shi kǎ,tarjeta llave,cartão-chave
 minibar,迷你吧,mí nǐ ba,minibar,frigobar
@@ -38,14 +38,14 @@ room service menu,客房服务菜单,kè fáng fú wù cài dān,menú del servi
 daily housekeeping,每日客房清洁,měi rì kè fáng qīng jié,limpieza diaria,limpeza diária
 housekeeping service,客房清洁服务,kè fáng qīng jié fú wù,servicio de limpieza,serviço de limpeza
 hotel concierge,酒店礼宾部,jiǔ diàn lǐ bīn bù,conserje del hotel,portaria do hotel
-ask concierge,询问礼宾,xún wèn lǐ bīn,pregunte al conserje,pergunte ao concierge
+ask concierge,询问礼宾部,xún wèn lǐ bīn bù,pregunte al conserje,pergunte ao concierge
 presidential suite,总统套房,zǒng tǒng tào fáng,suite presidencial,suíte presidencial
 suite upgrade,套房升级,tào fáng shēng jí,actualización de suite,atualização de suíte
 book single room,预订单人间,yù dìng dān rén jiān,reservar habitación individual,reservar quarto individual
 single room rate,单间价格,dān jiān jià gé,tarifa de habitación individual,tarifa de quarto individual
 book double room,预订双人间,yù dìng shuāng rén jiān,reservar habitación doble,reservar quarto duplo
 double room rate,双人房价格,shuāng rén fáng jià gé,tarifa habitación doble,tarifa de quarto duplo
-no vacancy,没有空缺,méi yǒu kòng quē,no hay vacantes,sem vaga
+no vacancy,客满,kè mǎn,no hay vacantes,sem vaga
 vacancy available,有空房,yǒu kōng fáng,vacante disponible,vaga disponível
 hotel amenity,酒店设施,jiǔ diàn shè shī,amenidad del hotel,comodidade do hotel
 amenity fee,便利设施费,biàn lì shè shī fèi,tarifa de servicios,taxa de comodidade

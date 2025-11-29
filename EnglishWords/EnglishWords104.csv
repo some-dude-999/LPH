@@ -1,7 +1,7 @@
 english,chinese,pinyin,spanish,portuguese
 issue,问题,wèn tí,problema,questão
 challenge,挑战,tiǎo zhàn,desafío,desafio
-difficulty,难度,nán dù,dificultad,dificuldade
+difficulty,困难,nán dù,dificultad,dificuldade
 obstacle,障碍,zhàng ài,obstáculo,obstáculo
 crisis,危机,wēi jī,crisis,crise
 solution,解决方案,jiě jué fāng àn,solución,solução
@@ -30,19 +30,19 @@ obstacle course,障碍训练场,zhàng ài xùn liàn chǎng,carrera de obstácu
 major crisis,重大危机,zhòng dà wēi jī,crisis importante,grande crise
 crisis management,危机管理,wēi jī guǎn lǐ,gestión de crisis,gestão de crises
 find solution,寻找解决方案,xún zhǎo jiě jué fāng àn,encontrar solución,encontrar solução
-solution to,解决方案用于,jiě jué fāng àn yòng yú,solución a,solução para
+solution to,问题的解决方案,wèn tí de jiě jué fāng àn,solución a,solução para
 solve problem,解决问题,jiě jué wèn tí,resolver problema,resolver problema
-solve it,解决它,jiě jué tā,resolverlo,resolva
+solve it,解决它,jiě jué tā,resolverlo,resolver
 fix it,修复它,xiū fù tā,arreglarlo,consertar
 quick fix,快速修复,kuài sù xiū fù,solución rápida,solução rápida
 overcome fear,克服恐惧,kè fú kǒng jù,superar el miedo,superar o medo
 overcome obstacles,克服障碍,kè fú zhàng ài,superar obstáculos,superar obstáculos
 new approach,新方法,xīn fāng fǎ,nuevo enfoque,nova abordagem
-approach to,接近,jiē jìn,acercamiento a,abordagem para
+approach to,方法,jiē jìn,acercamiento a,abordagem para
 clever tactic,聪明的策略,cōng míng de cè lüè,táctica inteligente,tática inteligente
 tactic used,使用的策略,shǐ yòng de cè lüè,táctica utilizada,tática usada
 medical procedure,医疗程序,yī liáo chéng xù,procedimiento médico,procedimento médico
-procedure for,程序用于,chéng xù yòng yú,procedimiento para,procedimento para
+procedure for,相关程序,chéng xù yòng yú,procedimiento para,procedimento para
 no alternative,别无选择,bié wú xuǎn zé,no hay alternativa,nenhuma alternativa
 alternative option,替代选项,tì dài xuǎn xiàng,opción alternativa,opção alternativa
 only option,唯一的选择,wéi yī de xuǎn zé,única opción,única opção
@@ -56,6 +56,6 @@ progress on,进展于,jìn zhǎn yú,progreso en,progresso em
 great success,巨大的成功,jù dà de chéng gōng,gran éxito,grande sucesso
 success rate,成功率,chéng gōng lǜ,tasa de éxito,taxa de sucesso
 complete failure,彻底失败,chè dǐ shī bài,fracaso total,falha completa
-failure to,未能,wèi néng,no,falha em
+failure to,未能,wèi néng,no lograr,falha em
 home remedy,家庭疗法,jiā tíng liáo fǎ,remedio casero,remédio caseiro
 remedy for,补救措施,bǔ jiù cuò shī,remedio para,remédio para

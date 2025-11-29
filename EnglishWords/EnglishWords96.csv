@@ -1,15 +1,15 @@
 english,chinese,pinyin,spanish,portuguese
 peel,剥皮,bāo pí,pelar,descascar
 cut,切,qiè,cortar,cortar
-dice,切丁,qiè dīng,dados,dados
+dice,切丁,qiè dīng,cortar en cubos,cortar em cubos
 mince,切碎,qiè suì,picar,picar
-grate,磨碎,mó suì,rejilla,grelha
-mash,捣碎,dǎo suì,puré,purê
+grate,磨碎,mó suì,rallar,ralar
+mash,捣碎,dǎo suì,hacer puré,amassar
 mix,混合,hùn hé,mezclar,misturar
-measure,测量,cè liáng,medida,medir
+measure,测量,cè liáng,medir,medir
 combine,结合,jié hé,combinar,combinar
 spread,涂抹,tú mǒ,difundir,espalhar
-stuff,填充,tián chōng,cosas,coisas
+stuff,填充,tián chōng,rellenar,rechear
 wrap,包裹,bāo guǒ,envolver,embrulhar
 garnish,装饰,zhuāng shì,decorar,enfeitar
 serve,上菜,shàng cài,servir,servir
@@ -21,8 +21,8 @@ tenderize,嫩化,nèn huà,ablandar,amaciar
 julienne,切丝,qiè sī,juliana,juliana
 peel potato,土豆去皮,tǔ dòu qù pí,pelar patatas,descascar batata
 peel apple,苹果去皮,píng guǒ qù pí,pelar manzana,descascar maçã
-cut onion,切洋葱,qiè yáng cōng,cortar cebolla,cebola cortada
-cut into pieces,切成块,qiè chéng kuài,cortado en trozos,cortado em pedaços
+cut onion,切洋葱,qiè yáng cōng,cortar cebolla,cortar cebola
+cut into pieces,切成块,qiè chéng kuài,cortar en trozos,cortar em pedaços
 dice tomato,番茄切丁,fān qié qiè dīng,tomate en dados,dados de tomate
 dice small,切小丁,qiè xiǎo dīng,dados pequeños,dados pequenos
 mince garlic,大蒜切末,dà suàn qiè mò,picar ajo,alho picado
@@ -30,7 +30,7 @@ finely mince,切碎,qiè suì,picar finamente,picar finamente
 grate cheese,磨碎奶酪,mó suì nǎi lào,queso rallado,ralar queijo
 grate ginger,磨姜,mó jiāng,rallar jengibre,ralar gengibre
 mash potato,土豆泥,tǔ dòu ní,puré de patatas,purê de batata
-mash together,混在一起,hùn zài yì qǐ,triturar juntos,amasse
+mash together,混在一起,hùn zài yì qǐ,triturar juntos,amassar junto
 mix well,搅拌均匀,jiǎo bàn jūn yún,mezclar bien,misture bem
 mix ingredients,混合配料,hùn hé pèi liào,mezclar ingredientes,misture os ingredientes
 measure carefully,仔细测量,zǐ xì cè liáng,medir con cuidado,meça com cuidado
@@ -38,16 +38,16 @@ measure flour,测量面粉,cè liáng miàn fěn,medir la harina,medir farinha
 combine ingredients,混合成分,hùn hé chéng fēn,combinar ingredientes,combinar ingredientes
 combine together,结合在一起,jié hé zài yì qǐ,combinar juntos,combinar
 spread butter,涂黄油,tú huáng yóu,untar mantequilla,barrar manteiga
-spread evenly,均匀分布,jūn yún fēn bù,distribuir uniformemente,espalhar uniformemente
-stuff turkey,填充火鸡,tián chōng huǒ jī,cosas de pavo,rechear peru
+spread evenly,均匀涂抹,jūn yún fēn bù,distribuir uniformemente,espalhar uniformemente
+stuff turkey,填充火鸡,tián chōng huǒ jī,rellenar pavo,rechear peru
 stuff peppers,填充辣椒,tián chōng là jiāo,rellenar pimientos,rechear pimentões
 wrap gift,包装礼物,bāo zhuāng lǐ wù,envolver regalo,embrulhar presente
-wrap in foil,用箔纸包裹,yòng bó zhǐ bāo guǒ,envolver en papel de aluminio,embrulhe em papel alumínio
+wrap in foil,用箔纸包裹,yòng bó zhǐ bāo guǒ,envolver en papel de aluminio,embrulhar em papel alumínio
 garnish with,用...装饰,yòng... zhuāng shì,decorar con,decore com
 garnish nicely,装饰精美,zhuāng shì jīng měi,decorar muy bien,decore bem
-serve hot,趁热上桌,chèn rè shàng zhuō,servir caliente,sirva quente
+serve hot,趁热上桌,chèn rè shàng zhuō,servir caliente,servir quente
 serve cold,冷食,lěng shí,servir frío,servir frio
-follow recipe,按照食谱,àn zhào shí pǔ,sigue la receta,segue receita
+follow recipe,按照食谱,àn zhào shí pǔ,sigue la receta,seguir a receita
 recipe book,食谱书,shí pǔ shū,libro de recetas,livro de receitas
 fresh ingredient,新鲜食材,xīn xiān shí cái,ingrediente fresco,ingrediente fresco
 main ingredient,主要成分,zhǔ yào chéng fèn,ingrediente principal,ingrediente principal
