@@ -625,25 +625,34 @@ Run after ANY web file changes: `python PythonHelpers/link_manager.py`
 
 ---
 
-## 📚 EXTENSIVE DOCUMENTATION - MANDATORY FOR ALL CODE!
-**CRITICAL: ALL programs in ALL languages MUST have extensive commenting at the FlashcardTypingGame.html level.**
+## 📚 EXTENSIVE IN-CODE DOCUMENTATION - MANDATORY FOR ALL PROGRAMS!
+**CRITICAL: ALL programs in ALL languages MUST have extensive IN-CODE COMMENTS at the FlashcardTypingGame.html level.**
+
+### ⚠️ THIS IS ABOUT COMMENTS INSIDE THE CODE FILES - NOT EXTERNAL DOCS!
+
+**Documentation lives INSIDE the program files as comments, NOT in separate files.**
+- Python files: Use `#` comments and docstrings
+- JavaScript files: Use `//` and `/* */` comments
+- HTML files: Use `<!-- -->` comments
+- CSS files: Use `/* */` comments
 
 ### The Documentation Standard
-**EVERY program file (.py, .js, .html, .css, etc.) MUST start with detailed explanation:**
-- What the program is about
-- What it does
-- How it works
-- Key features and objectives
-- Usage instructions
 
-**EVERY function MUST have clear comments BEFORE the function:**
-- What the function does
-- Why it exists
-- What parameters it takes
-- What it returns
-- Any important side effects
+**EVERY program file (.py, .js, .html, .css, etc.) MUST start with detailed comment header:**
+- What the program is about (in comments at the top of file)
+- What it does (in comments)
+- How it works (in comments)
+- Key features and objectives (in comments)
+- Usage instructions (in comments)
 
-**The Goal: Make it stupidly easy for someone who can read code to reconstruct what is going on.**
+**EVERY function MUST have clear comments BEFORE the function definition:**
+- What the function does (comment block before function)
+- Why it exists (in comments)
+- What parameters it takes (in comments)
+- What it returns (in comments)
+- Any important side effects (in comments)
+
+**The Goal: Make it stupidly easy for someone who can read code to reconstruct what is going on by reading the COMMENTS INSIDE THE FILE.**
 
 ### Documentation Required For ALL File Types
 
