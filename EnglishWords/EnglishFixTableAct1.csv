@@ -1,1 +1,3 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,3,Numbers & Counting,42,spanish,primer tiempo,primera vez,Wrong word sense - primer tiempo means first half (sports) not first time - need everyday translation primera vez
+spanish,3,Numbers & Counting,60,spanish,último tiempo,última vez,Wrong word sense - último tiempo means last half (sports) not last time - need everyday translation última vez
