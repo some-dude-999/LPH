@@ -376,7 +376,6 @@ function renderChineseText(chinese, pinyin) {
  * DEBUG_MODE - Global flag for debug features
  *
  * Controlled by:
- * - localStorage ('debug_mode' key)
  * - Hotkey: Ctrl + ` (backtick key, next to "1")
  *
  * When enabled, shows:
@@ -384,19 +383,21 @@ function renderChineseText(chinese, pinyin) {
  * - Word type (Base Word / Example Word)
  * - Simulate buttons for testing
  *
- * DEFAULT: OFF (false) - only enabled via hotkey
+ * CRITICAL: This is NOT stored in localStorage
+ * - Always starts as OFF (false) on page load
+ * - Only enabled during current session when hotkey pressed
+ * - Resets to OFF when page reloads
  */
-window.DEBUG_MODE = localStorage.getItem('debug_mode') === 'true'; // Default: false
+window.DEBUG_MODE = false; // Always starts OFF
 
 /**
  * Toggles debug mode on/off
- * - Updates localStorage
+ * - Does NOT persist to localStorage (ephemeral - session only)
  * - Toggles visibility of debug elements
  * - Returns new state
  */
 function toggleDebugMode() {
   window.DEBUG_MODE = !window.DEBUG_MODE;
-  localStorage.setItem('debug_mode', window.DEBUG_MODE.toString());
 
   // Toggle visibility of debug elements
   const debugTable = document.getElementById('debug-vocab-table');
