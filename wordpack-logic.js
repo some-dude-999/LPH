@@ -1,62 +1,41 @@
 /**
  * ════════════════════════════════════════════════════════════════════════════
- * WORDPACK LOGIC - Shared Core Functions
+ * WORDPACK LOGIC - Complete Shared Library for Language Learning Games
  * ════════════════════════════════════════════════════════════════════════════
  *
  * This file contains ALL shared logic for wordpack-based language learning games.
+ * Games are just wrappers around this core functionality.
  *
- * CRITICAL PRINCIPLE: This is the SINGLE SOURCE OF TRUTH for:
- * - Module loading and decoding (obfuscated JS files)
- * - Shuffle algorithms
- * - Character normalization (accents, case)
- * - Typing validation (space handling, character matching)
- * - Chinese + Pinyin coupling and rendering
- * - Right vs Wrong scoring logic
+ * WHAT'S IN THIS FILE:
+ * - Module loading & decoding (obfuscated JS files)
+ * - Shuffle algorithms & deck management
+ * - Character normalization & typing validation
+ * - Chinese + Pinyin coupling
+ * - Sound effects (ding, buzz, click)
+ * - Speech recognition (pronunciation scoring)
+ * - Text-to-speech (TTS)
+ * - Module metadata helpers
+ * - Game mechanics (penalties, combining words)
+ * - Utility functions
  *
- * ANY game that uses wordpacks MUST import this file and use these functions.
- * DO NOT duplicate this logic in individual games.
- *
- * Usage:
- *   <script src="../wordpack-logic.js"></script>
- *   <script>
- *     // All functions are available globally
- *     const deck = shuffleArray(myArray);
- *     const normalized = normalizeChar('á');
- *   </script>
+ * USAGE:
+ *   <script src="./wordpack-logic.js"></script>
+ *   All functions are available globally
  */
 
 // ════════════════════════════════════════════════════════════════════════════
-// MODULE CONFIGURATION
+// GLOBAL STATE
 // ════════════════════════════════════════════════════════════════════════════
 
-/**
- * MODULE_URLS - URLs to obfuscated JavaScript modules
- *
- * IMPORTANT: This must be set by the game BEFORE calling loadAct()
- * Different games load different language sets.
- *
- * Example:
- *   window.MODULE_URLS = [
- *     './SpanishWords/Jsmodules-js/act1-foundation-js.js',
- *     './SpanishWords/Jsmodules-js/act2-building-blocks-js.js'
- *   ];
- */
 window.MODULE_URLS = window.MODULE_URLS || [];
+window.loadedActs = window.loadedActs || {}; // Cache loaded acts
+window.currentVoice = window.currentVoice || null;
+window.audioContext = window.audioContext || null;
 
 // ════════════════════════════════════════════════════════════════════════════
 // MODULE LOADING & DECODING
 // ════════════════════════════════════════════════════════════════════════════
 
-/**
- * Decodes an obfuscated module (3-layer: base64 + zlib + reversed JSON)
- *
- * @param {string} url - URL to the obfuscated JS module
- * @returns {Promise<Object>} - Decoded module data (packs + metadata)
- *
- * Example:
- *   const actData = await decodeObfuscatedModule('./act1-foundation-js.js');
- *   console.log(actData.p1_1_greetings.words); // Array of word arrays
- */
 async function decodeObfuscatedModule(url) {
   try {
     const module = await import(url);
@@ -73,56 +52,29 @@ async function decodeObfuscatedModule(url) {
   }
 }
 
-/**
- * Loads a specific act (1-indexed) and returns all its wordpacks
- *
- * @param {number} actNumber - Act number (1-7 for Spanish, 1-5 for Chinese/English)
- * @returns {Promise<Object>} - { actMeta: {...}, packs: {...} }
- *
- * Example:
- *   const act1 = await loadAct(1);
- *   console.log(act1.actMeta.actName); // "Foundation"
- *   console.log(act1.packs.p1_1_greetings); // Pack data
- */
 async function loadAct(actNumber) {
   if (!window.MODULE_URLS || window.MODULE_URLS.length === 0) {
-    throw new Error('MODULE_URLS not configured. Set window.MODULE_URLS before calling loadAct()');
+    throw new Error('MODULE_URLS not configured');
   }
 
   const moduleIndex = actNumber - 1;
   if (moduleIndex < 0 || moduleIndex >= window.MODULE_URLS.length) {
-    throw new Error(`Act ${actNumber} not found. Valid acts: 1-${window.MODULE_URLS.length}`);
+    throw new Error(`Act ${actNumber} not found`);
   }
 
   const url = window.MODULE_URLS[moduleIndex];
   const decodedData = await decodeObfuscatedModule(url);
 
-  // Extract __actMeta if it exists
   const actMeta = decodedData.__actMeta || null;
   delete decodedData.__actMeta;
 
-  return {
-    actMeta: actMeta,
-    packs: decodedData
-  };
+  return { actMeta, packs: decodedData };
 }
 
 // ════════════════════════════════════════════════════════════════════════════
-// SHUFFLE ALGORITHM (Fisher-Yates)
+// SHUFFLE & ARRAY MANIPULATION
 // ════════════════════════════════════════════════════════════════════════════
 
-/**
- * Shuffles an array using Fisher-Yates algorithm (does NOT modify original)
- *
- * @param {Array} array - Array to shuffle
- * @returns {Array} - New shuffled array
- *
- * Example:
- *   const original = [1, 2, 3, 4, 5];
- *   const shuffled = shuffleArray(original);
- *   console.log(original); // [1, 2, 3, 4, 5] - unchanged
- *   console.log(shuffled); // [3, 1, 5, 2, 4] - randomized
- */
 function shuffleArray(array) {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -132,63 +84,45 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-// ════════════════════════════════════════════════════════════════════════════
-// CHARACTER NORMALIZATION (Typing Validation)
-// ════════════════════════════════════════════════════════════════════════════
-
 /**
- * Normalizes a character for typing comparison (removes accents, lowercase)
- *
- * CRITICAL: This defines what counts as "correct" typing across ALL games.
- * - Accents removed: á → a, ñ → n, ü → u
- * - Case insensitive: A → a
- * - Spaces preserved (handled separately)
- *
- * @param {string} char - Single character to normalize
- * @returns {string} - Normalized character
- *
- * Examples:
- *   normalizeChar('á') // 'a'
- *   normalizeChar('Ñ') // 'n'
- *   normalizeChar('A') // 'a'
- *   normalizeChar(' ') // ' ' (spaces preserved)
+ * Combines base words and example words with controlled shuffling
+ * Educational psychology: learners encounter CORE VOCABULARY (base words) first
  */
-function normalizeChar(char) {
-  if (!char) return '';
-  return char
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, ''); // Remove diacritics
+function combineAndShuffleWords(pack) {
+  const baseWords = pack.baseWords || [];
+  const exampleWords = pack.exampleWords || [];
+
+  const shuffledBase = shuffleArray(baseWords).map(word => ({
+    word: word,
+    type: "Base Word"
+  }));
+
+  const shuffledExamples = shuffleArray(exampleWords).map(word => ({
+    word: word,
+    type: "Example Word"
+  }));
+
+  // Base words ALWAYS come before examples
+  return [...shuffledBase, ...shuffledExamples];
 }
 
-// Alias for compatibility with existing code
-window.normalizeCharForTyping = normalizeChar;
-
 // ════════════════════════════════════════════════════════════════════════════
-// TYPING VALIDATION - Space Handling (CRITICAL!)
+// CHARACTER NORMALIZATION & TYPING VALIDATION
 // ════════════════════════════════════════════════════════════════════════════
 
-/**
- * Finds the next valid typing position, skipping spaces automatically
- *
- * CRITICAL SPACE HANDLING LOGIC:
- * - Spaces are NOT typed by the user
- * - Spaces are automatically marked as "typed" and skipped
- * - User should never see a space as the "next character to type"
- *
- * @param {Array<string>} chars - Array of characters in the target word
- * @param {Set<number>} typedPositions - Set of already-typed positions
- * @returns {number} - Index of next position to type, or -1 if complete
- *
- * Example:
- *   const chars = ['h', 'o', 'l', 'a', ' ', 'a', 'm', 'i', 'g', 'o'];
- *   const typed = new Set([0, 1, 2, 3]); // "hola" typed
- *   const nextPos = findNextTypingPosition(chars, typed);
- *   // Returns 5 (index of 'a' in "amigo"), skipping space at index 4
- *   // typedPositions will now include 4 (space auto-marked)
- */
+function normalizeChar(char) {
+  if (!char) return '';
+  return char.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+window.normalizeCharForTyping = normalizeChar; // Alias
+
+function normalizeString(str) {
+  if (!str) return '';
+  return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
 function findNextTypingPosition(chars, typedPositions) {
-  // Find first unfilled position
   let nextPos = -1;
   for (let i = 0; i < chars.length; i++) {
     if (!typedPositions.has(i)) {
@@ -197,65 +131,24 @@ function findNextTypingPosition(chars, typedPositions) {
     }
   }
 
-  if (nextPos === -1) {
-    return -1; // All positions filled
-  }
+  if (nextPos === -1) return -1;
 
-  // Skip spaces and mark them as typed
+  // Skip spaces and mark as typed
   while (nextPos < chars.length && chars[nextPos] === ' ') {
     typedPositions.add(nextPos);
     nextPos++;
   }
 
-  if (nextPos >= chars.length) {
-    return -1; // Reached end
-  }
-
-  return nextPos;
+  return nextPos >= chars.length ? -1 : nextPos;
 }
 
-/**
- * Checks if user's keypress is correct for the next typing position
- *
- * HANDLES:
- * - Space key presses (ignored - play sound but don't mark right/wrong)
- * - Accent-insensitive matching (á = a)
- * - Case-insensitive matching (A = a)
- *
- * @param {string} key - Key pressed by user
- * @param {string} targetChar - Expected character at this position
- * @returns {string} - 'correct', 'wrong', or 'space' (ignored)
- *
- * Example:
- *   checkTypingKey('a', 'á') // 'correct' (accents ignored)
- *   checkTypingKey('A', 'a') // 'correct' (case ignored)
- *   checkTypingKey('x', 'a') // 'wrong'
- *   checkTypingKey(' ', 'a') // 'space' (should be ignored by caller)
- */
 function checkTypingKey(key, targetChar) {
-  // Space key is always ignored (not right or wrong)
-  if (key === ' ') {
-    return 'space';
-  }
-
+  if (key === ' ') return 'space';
   const normalizedKey = normalizeChar(key);
   const normalizedTarget = normalizeChar(targetChar);
-
   return normalizedKey === normalizedTarget ? 'correct' : 'wrong';
 }
 
-/**
- * Checks if a word is complete (all non-space characters typed)
- *
- * @param {Array<string>} chars - Array of characters in the word
- * @param {Set<number>} typedPositions - Set of typed positions
- * @returns {boolean} - True if word is complete
- *
- * Example:
- *   const chars = ['h', 'o', 'l', 'a', ' ', 'a', 'm', 'i', 'g', 'o'];
- *   const typed = new Set([0,1,2,3,4,5,6,7,8,9]);
- *   isWordComplete(chars, typed) // true
- */
 function isWordComplete(chars, typedPositions) {
   const totalNonSpaceChars = chars.filter(c => c !== ' ').length;
   return typedPositions.size >= totalNonSpaceChars;
@@ -265,25 +158,6 @@ function isWordComplete(chars, typedPositions) {
 // CHINESE + PINYIN COUPLING
 // ════════════════════════════════════════════════════════════════════════════
 
-/**
- * Couples Chinese characters with their pinyin syllables (1:1 pairing)
- *
- * HANDLES EDGE CASES:
- * - Latin letters (ATM, DNA, WhatsApp) - each letter maps to itself
- * - Chinese characters - each character gets a pinyin syllable
- *
- * @param {string} chinese - Chinese text (may include Latin letters)
- * @param {string} pinyin - Space-separated pinyin syllables
- * @returns {Array<{char: string, pinyin: string}>} - Coupled pairs
- *
- * Example:
- *   coupleChineseWithPinyin('你好', 'nǐ hǎo')
- *   // [{char: '你', pinyin: 'nǐ'}, {char: '好', pinyin: 'hǎo'}]
- *
- *   coupleChineseWithPinyin('ATM机', 'ATM jī')
- *   // [{char: 'A', pinyin: 'A'}, {char: 'T', pinyin: 'T'},
- *   //  {char: 'M', pinyin: 'M'}, {char: '机', pinyin: 'jī'}]
- */
 function coupleChineseWithPinyin(chinese, pinyin) {
   if (!chinese || !pinyin) return [];
 
@@ -293,15 +167,11 @@ function coupleChineseWithPinyin(chinese, pinyin) {
 
   for (let i = 0; i < chinese.length; i++) {
     const char = chinese[i];
-
-    // Check if Latin letter (ASCII 32-126)
     if (/[a-zA-Z]/.test(char)) {
-      // Latin letter maps to itself
-      result.push({ char: char, pinyin: char });
+      result.push({ char, pinyin: char });
     } else {
-      // Chinese character gets next pinyin syllable
       const pinyinSyllable = pinyinParts[pinyinIndex] || '?';
-      result.push({ char: char, pinyin: pinyinSyllable });
+      result.push({ char, pinyin: pinyinSyllable });
       pinyinIndex++;
     }
   }
@@ -309,27 +179,6 @@ function coupleChineseWithPinyin(chinese, pinyin) {
   return result;
 }
 
-/**
- * Renders coupled Chinese array as HTML element (char on top, pinyin below)
- *
- * ALWAYS shows both characters and pinyin (inseparable pair)
- *
- * @param {Array<{char: string, pinyin: string}>} coupledArray - From coupleChineseWithPinyin()
- * @returns {HTMLElement} - Span element with flex-column groups
- *
- * CSS Classes Used:
- * - .chinese-coupled (flex container)
- * - .char-group (flex column for each character)
- * - .chinese-char (character span)
- * - .pinyin (pinyin span below character)
- *
- * Example:
- *   const coupled = coupleChineseWithPinyin('你好', 'nǐ hǎo');
- *   const element = renderChineseWithPinyin(coupled);
- *   document.body.appendChild(element);
- *   // Renders: 你 好
- *   //         nǐ hǎo
- */
 function renderChineseWithPinyin(coupledArray) {
   const container = document.createElement('span');
   container.className = 'chinese-coupled';
@@ -338,13 +187,11 @@ function renderChineseWithPinyin(coupledArray) {
     const charGroup = document.createElement('span');
     charGroup.className = 'char-group';
 
-    // Chinese character (on top)
     const charSpan = document.createElement('span');
     charSpan.className = 'chinese-char';
     charSpan.textContent = char;
     charGroup.appendChild(charSpan);
 
-    // Pinyin (below) - always shown with characters
     const pinyinSpan = document.createElement('span');
     pinyinSpan.className = 'pinyin';
     pinyinSpan.textContent = pinyin;
@@ -356,33 +203,364 @@ function renderChineseWithPinyin(coupledArray) {
   return container;
 }
 
-/**
- * Convenience function: Couples and renders Chinese text in one call
- *
- * @param {string} chinese - Chinese characters
- * @param {string} pinyin - Space-separated pinyin
- * @returns {HTMLElement} - Ready-to-append HTML element
- */
 function renderChineseText(chinese, pinyin) {
   const coupled = coupleChineseWithPinyin(chinese, pinyin);
   return renderChineseWithPinyin(coupled);
 }
 
 // ════════════════════════════════════════════════════════════════════════════
-// EXPORT FOR MODULE SYSTEMS (optional - currently using globals)
+// SOUND EFFECTS (All games need audio feedback)
+// ════════════════════════════════════════════════════════════════════════════
+
+function getAudioContext() {
+  if (!window.audioContext) {
+    window.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  return window.audioContext;
+}
+
+function playDingSound() {
+  const ctx = getAudioContext();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  osc.frequency.setValueAtTime(800, ctx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
+
+  gain.gain.setValueAtTime(0.15, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+
+  osc.start(ctx.currentTime);
+  osc.stop(ctx.currentTime + 0.3);
+}
+
+function playBuzzSound() {
+  const ctx = getAudioContext();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  osc.type = 'sawtooth';
+  osc.frequency.setValueAtTime(150, ctx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 0.2);
+
+  gain.gain.setValueAtTime(0.1, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+
+  osc.start(ctx.currentTime);
+  osc.stop(ctx.currentTime + 0.2);
+}
+
+function playButtonClickSound() {
+  const ctx = getAudioContext();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  osc.frequency.setValueAtTime(600, ctx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + 0.05);
+
+  gain.gain.setValueAtTime(0.08, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.05);
+
+  osc.start(ctx.currentTime);
+  osc.stop(ctx.currentTime + 0.05);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SPEECH RECOGNITION (Pronunciation Practice)
+// ════════════════════════════════════════════════════════════════════════════
+
+function levenshteinDistance(str1, str2) {
+  const s1 = str1.toLowerCase();
+  const s2 = str2.toLowerCase();
+  const len1 = s1.length;
+  const len2 = s2.length;
+
+  const matrix = Array(len1 + 1).fill(null).map(() => Array(len2 + 1).fill(0));
+
+  for (let i = 0; i <= len1; i++) matrix[i][0] = i;
+  for (let j = 0; j <= len2; j++) matrix[0][j] = j;
+
+  for (let i = 1; i <= len1; i++) {
+    for (let j = 1; j <= len2; j++) {
+      const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
+      matrix[i][j] = Math.min(
+        matrix[i - 1][j] + 1,
+        matrix[i][j - 1] + 1,
+        matrix[i - 1][j - 1] + cost
+      );
+    }
+  }
+
+  return matrix[len1][len2];
+}
+
+function calculateSimilarity(expected, heard) {
+  if (!expected || !heard) return 0;
+
+  const exp = expected.toLowerCase().trim();
+  const hrd = heard.toLowerCase().trim();
+
+  if (exp === hrd) return 100;
+
+  const maxLen = Math.max(exp.length, hrd.length);
+  const distance = levenshteinDistance(exp, hrd);
+  const similarity = Math.round(((maxLen - distance) / maxLen) * 100);
+
+  return Math.max(0, Math.min(100, similarity));
+}
+
+function getFeedbackMessage(score) {
+  if (score >= 90) return "Perfect! 🎉";
+  if (score >= 75) return "Great! 👍";
+  if (score >= 60) return "Good!";
+  if (score >= 40) return "Not bad";
+  return "Keep trying";
+}
+
+function getScoreClass(score) {
+  if (score >= 75) return 'feedback-excellent';
+  if (score >= 50) return 'feedback-good';
+  return 'feedback-poor';
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// TEXT-TO-SPEECH (TTS)
+// ════════════════════════════════════════════════════════════════════════════
+
+function getTtsLanguageCode(targetLanguage) {
+  const langMap = {
+    'Spanish': 'es-ES',
+    'Chinese': 'zh-CN',
+    'English': 'en-US'
+  };
+  return langMap[targetLanguage] || 'es-ES';
+}
+
+async function loadVoices() {
+  return new Promise((resolve) => {
+    let voices = speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      resolve(voices);
+    } else {
+      speechSynthesis.onvoiceschanged = () => {
+        voices = speechSynthesis.getVoices();
+        resolve(voices);
+      };
+    }
+  });
+}
+
+function speakWord(text, voice = null, rate = 1.0) {
+  if (!text) return;
+  speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  if (voice) utterance.voice = voice;
+  if (window.currentVoice) utterance.voice = window.currentVoice;
+  utterance.rate = rate;
+  speechSynthesis.speak(utterance);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// MODULE METADATA HELPERS (Working with __actMeta)
+// ════════════════════════════════════════════════════════════════════════════
+
+function getTargetLanguage() {
+  for (const actNum of Object.keys(window.loadedActs || {})) {
+    const meta = window.loadedActs[actNum]?.actMeta;
+    if (meta?.wordColumns && meta.wordColumns.length > 0) {
+      return toTitleCase(meta.wordColumns[0]);
+    }
+  }
+  return 'Spanish';
+}
+
+function getTranslationsConfig() {
+  for (const actNum of Object.keys(window.loadedActs || {})) {
+    if (window.loadedActs[actNum]?.actMeta?.translations) {
+      return window.loadedActs[actNum].actMeta.translations;
+    }
+  }
+  return null;
+}
+
+function getDefaultTranslation() {
+  for (const actNum of Object.keys(window.loadedActs || {})) {
+    const meta = window.loadedActs[actNum]?.actMeta;
+    if (meta?.defaultTranslation) {
+      return meta.defaultTranslation;
+    }
+  }
+  return 'english';
+}
+
+function getWordColumns() {
+  for (const actNum of Object.keys(window.loadedActs || {})) {
+    const meta = window.loadedActs[actNum]?.actMeta;
+    if (meta?.wordColumns) {
+      return meta.wordColumns;
+    }
+  }
+  return ['spanish', 'english'];
+}
+
+function getValidLanguages() {
+  const seen = new Set();
+  for (const actNum of Object.keys(window.loadedActs || {})) {
+    const meta = window.loadedActs[actNum]?.actMeta;
+    if (meta?.wordColumns && meta.wordColumns.length > 0) {
+      seen.add(toTitleCase(meta.wordColumns[0]));
+    }
+  }
+  return Array.from(seen);
+}
+
+function toTitleCase(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// GAME MECHANICS (Reusable Game Logic)
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Auto-selects first available act and pack
+ * Common initialization pattern for all games
+ */
+function autoSelectFirstActAndPack(loadedActs) {
+  const actNumbers = Object.keys(loadedActs).map(Number).sort((a, b) => a - b);
+  if (actNumbers.length === 0) return null;
+
+  const firstAct = actNumbers[0];
+  const packs = loadedActs[firstAct] || {};
+  const packKeys = Object.keys(packs).filter(k => k !== 'actMeta');
+
+  if (packKeys.length === 0) return null;
+
+  return {
+    actNumber: firstAct,
+    packKey: packKeys[0]
+  };
+}
+
+/**
+ * Generates wrong answers for multiple choice (from entire act)
+ * Filters duplicates using normalized string comparison
+ */
+function generateWrongAnswers(actData, correctAnswer, count = 4, columnIndex = 0) {
+  const normalizedCorrect = normalizeString(correctAnswer);
+  const allWords = [];
+
+  // Collect all words from act
+  for (const packKey in actData) {
+    if (packKey === 'actMeta') continue;
+    const pack = actData[packKey];
+    if (pack.words) {
+      pack.words.forEach(wordArray => {
+        if (wordArray[columnIndex]) {
+          allWords.push(wordArray[columnIndex]);
+        }
+      });
+    }
+  }
+
+  // Filter out correct answer and duplicates
+  const filtered = allWords.filter(word => {
+    const normalized = normalizeString(word);
+    return normalized !== normalizedCorrect && normalized.length > 0;
+  });
+
+  // Remove duplicates by normalized form
+  const unique = [];
+  const seen = new Set();
+  for (const word of filtered) {
+    const normalized = normalizeString(word);
+    if (!seen.has(normalized)) {
+      seen.add(normalized);
+      unique.push(word);
+    }
+  }
+
+  // Shuffle and take count
+  const shuffled = shuffleArray(unique);
+  return shuffled.slice(0, count);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// UTILITY FUNCTIONS
+// ════════════════════════════════════════════════════════════════════════════
+
+function validateTargetLanguageConsistency() {
+  const languages = new Set();
+  for (const actNum of Object.keys(window.loadedActs || {})) {
+    const meta = window.loadedActs[actNum]?.actMeta;
+    if (meta?.wordColumns && meta.wordColumns.length > 0) {
+      languages.add(toTitleCase(meta.wordColumns[0]));
+    }
+  }
+  if (languages.size > 1) {
+    console.warn('Warning: Multiple target languages detected:', Array.from(languages));
+  }
+  return languages.size <= 1;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// EXPORTS (for module systems)
 // ════════════════════════════════════════════════════════════════════════════
 
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
+    // Module loading
     decodeObfuscatedModule,
     loadAct,
+    // Shuffle & arrays
     shuffleArray,
+    combineAndShuffleWords,
+    // Character normalization
     normalizeChar,
+    normalizeString,
+    // Typing validation
     findNextTypingPosition,
     checkTypingKey,
     isWordComplete,
+    // Chinese + Pinyin
     coupleChineseWithPinyin,
     renderChineseWithPinyin,
-    renderChineseText
+    renderChineseText,
+    // Sound effects
+    getAudioContext,
+    playDingSound,
+    playBuzzSound,
+    playButtonClickSound,
+    // Speech recognition
+    levenshteinDistance,
+    calculateSimilarity,
+    getFeedbackMessage,
+    getScoreClass,
+    // TTS
+    getTtsLanguageCode,
+    loadVoices,
+    speakWord,
+    // Module metadata
+    getTargetLanguage,
+    getTranslationsConfig,
+    getDefaultTranslation,
+    getWordColumns,
+    getValidLanguages,
+    toTitleCase,
+    // Game mechanics
+    autoSelectFirstActAndPack,
+    generateWrongAnswers,
+    // Utilities
+    validateTargetLanguageConsistency
   };
 }
