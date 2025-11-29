@@ -612,6 +612,111 @@ Run after ANY web file changes: `python PythonHelpers/link_manager.py`
 
 ---
 
+## 🐍 PYTHON ORGANIZATION & DOCUMENTATION - MANDATORY!
+**All Python helper scripts MUST be in PythonHelpers/ with extensive documentation.**
+
+### Python File Organization
+- ✅ **ALL general-purpose Python scripts go in `PythonHelpers/` folder**
+- ✅ **Language-specific scripts stay in their folders:**
+  - `ChineseWords/ChineseWordsPythonHelperScripts/`
+  - `SpanishWords/SpanishWordsPythonHelperScripts/`
+  - `EnglishWords/EnglishWordsPythonHelperScripts/`
+- ❌ **NEVER** leave Python files in the root directory
+
+### Extensive Documentation Required
+**ALL programs in ALL languages MUST have extensive commenting so anyone can easily reconstruct what is going on.**
+
+**Python Documentation Style:**
+```python
+#!/usr/bin/env python3
+# ============================================================
+# MODULE: [Module Name]
+# Core Purpose: [What this script does at a high level]
+# ============================================================
+#
+# WHAT THIS SCRIPT DOES:
+# -----------------------
+# 1. [Step 1]
+# 2. [Step 2]
+# 3. [Step 3]
+#
+# WHY THIS EXISTS:
+# ---------------
+# [Explanation of the problem this solves]
+#
+# USAGE:
+# ------
+#   python3 PythonHelpers/script_name.py
+#
+# IMPORTANT NOTES:
+# ---------------
+# - [Key point 1]
+# - [Key point 2]
+#
+# WORKFLOW:
+# ---------
+# 1. [First step in workflow]
+# 2. [Second step]
+# 3. [Final step]
+#
+# ============================================================
+
+import modules
+
+# ============================================================
+# SECTION NAME
+# ============================================================
+# [Explanation of what this section does]
+# ============================================================
+
+def function_name():
+    """
+    Clear description of what this function does.
+
+    Args:
+        param1: Description
+        param2: Description
+
+    Returns:
+        Description of return value
+    """
+    # Step-by-step comments explaining the logic
+    pass
+
+# ============================================================
+# MAIN EXECUTION
+# ============================================================
+# [Description of the execution flow]
+# ============================================================
+```
+
+**JavaScript/HTML Documentation Style:**
+```javascript
+// ============================================================
+// KEY FEATURE: [Feature Name]
+// Core Objective: [Why this exists - the user's goal]
+// Key Behaviors:
+//   - [Specific behavior that must be preserved]
+//   - [Another critical behavior]
+// ============================================================
+function doSomething() {
+  // Step-by-step comments explaining the logic
+}
+```
+
+### Why This Matters
+- **Reconstruction**: Anyone can understand and rebuild the code from scratch
+- **Maintenance**: Future developers (or AI) can modify without breaking things
+- **Learning**: Code serves as documentation for how the system works
+- **Debugging**: Clear comments make it easy to find and fix issues
+
+### Examples
+- ✅ FlashcardTypingGame/FlashcardTypingGame.html - Extensive KEY FEATURE comments
+- ✅ PythonHelpers/append_new_fixes.py - Module-level documentation
+- ✅ All major functions explained with purpose, workflow, and notes
+
+---
+
 ## 🔄 Git Rules
 **Not on main = didn't happen.** Always work on main. Commit & push immediately after changes.
 
