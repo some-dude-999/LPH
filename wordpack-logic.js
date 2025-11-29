@@ -404,6 +404,10 @@ function toggleDebugMode() {
   if (debugTable) {
     if (window.DEBUG_MODE) {
       debugTable.style.display = 'block';
+      // Update table when turning debug ON
+      if (typeof window.updateDebugTable === 'function') {
+        window.updateDebugTable();
+      }
     } else {
       debugTable.style.display = 'none';
     }
@@ -575,12 +579,12 @@ function initializeDebugUI() {
   debugContainer.id = 'debug-vocab-table';
   debugContainer.style.cssText = `
     position: fixed;
-    top: 80px;
-    right: 10px;
-    max-width: 600px;
-    max-height: calc(100vh - 100px);
+    bottom: 10px;
+    left: 10px;
+    max-width: 800px;
+    max-height: 400px;
     overflow-y: auto;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     padding: 15px;
     border-radius: 8px;
     color: #fff;
