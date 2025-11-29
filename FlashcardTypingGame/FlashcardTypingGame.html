@@ -1550,6 +1550,12 @@
       overflow-wrap: break-word;
     }
 
+    /* In Chinese mode, typing display uses Courier New (typing pinyin) */
+    .is-chinese .typing-display {
+      font-family: var(--font-answer);
+      font-style: normal;
+    }
+
     .typing-char {
       display: inline-block;
       min-width: 0.6em;
