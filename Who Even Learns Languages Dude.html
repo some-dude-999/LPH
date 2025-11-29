@@ -4,80 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who Even Learns Languages Dude</title>
+
+    <!-- ============================================================
+         PROGRAM: Language Learner Demographics Visualizer
+         Core Purpose: Show who learns Spanish, English, and Chinese using interactive charts
+         ============================================================
+
+         WHAT THIS PROGRAM DOES:
+         -----------------------
+         - Visualizes global distribution of native languages among language learners
+         - Displays data for three target languages: Spanish, English, Chinese
+         - Presents three data perspectives for each language:
+           * Duolingo Data: Native language breakdown from Duolingo user base
+           * Geographic Data: Country/region breakdown of learners
+           * Estimated Data: Combined estimates from multiple sources
+         - Uses interactive pie charts (Chart.js) to show percentages
+         - Shows contextual statistics and data sources for transparency
+         - Responsive tabbed interface for easy exploration
+
+         HOW IT WORKS:
+         -------------
+         - User selects main language tab (Spanish/English/Chinese)
+         - User selects data source sub-tab (Duolingo/Geographic/Estimated)
+         - Chart.js renders pie chart from hardcoded data arrays
+         - Statistics grid shows key facts and numbers
+         - Sources section lists data provenance for verification
+         - All charts pre-rendered on page load for instant switching
+         - Tab switching shows/hides content with CSS classes
+
+         KEY FEATURES:
+         -------------
+         1. Three-Tier Tab System: Main language tabs + sub-tabs for data sources
+         2. Nine Pre-Rendered Charts: All charts loaded at once for smooth UX
+         3. Multiple Data Perspectives: Compare Duolingo, geographic, and estimated distributions
+         4. Source Attribution: Every dataset includes sources for credibility
+         5. Color-Coded Stats: Spanish=red, English=blue, Chinese=orange for visual consistency
+         6. Responsive Design: Works on all screen sizes with flexible grid layout
+         7. Smooth Animations: Fade-in effect on page load
+
+         USAGE:
+         ------
+         1. Click main language tab (Spanish, English, or Chinese)
+         2. Click sub-tab to switch data source (Duolingo, Geographic, or Estimated)
+         3. Review pie chart showing native language distribution
+         4. Read statistics cards for key insights
+         5. Check sources section for data provenance
+         6. Compare across languages and data sources
+
+         DATA SOURCES:
+         -------------
+         This program aggregates data from:
+         - Duolingo Language Reports (official learner statistics)
+         - Babbel geographic analysis
+         - British Council, Keats School, CGTN (Chinese learners)
+         - Confucius Institute data
+         - Various educational research sources
+
+         DESIGN RATIONALE:
+         -----------------
+         Why three data perspectives?
+         - Duolingo data = self-reported native language (behavioral)
+         - Geographic data = where learners are located (regional)
+         - Estimated data = weighted combination adjusting for demographics
+
+         Example: Spanish learners
+         - Duolingo shows 42% English speakers (global platform)
+         - Geographic shows 45% USA (regional concentration)
+         - Estimated shows 50% English (accounting for USA = 85% English-speaking)
+
+         ============================================================ -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        /* ============================================================
+           DESIGN SYSTEM
+           ============================================================
+           Modern, vibrant UI with purple gradient background.
+           Design priorities:
+           - Visual hierarchy: Clear tabs, prominent charts, supporting stats
+           - Color coding: Red=Spanish, Blue=English, Orange=Chinese
+           - Smooth interactions: Tab switching, hover effects, animations
+           - Professional polish: Shadows, rounded corners, gradient accents
+           ============================================================ */
+
+        /* ============================================================
+           SECTION: Base Layout
+           ============================================================
+           Purple gradient background creates engaging, modern feel.
+           Flexbox centers white content card vertically and horizontally.
+           Full viewport height ensures content is always centered.
+           ============================================================ */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple gradient */
             margin: 0;
             padding: 20px;
-            min-height: 100vh;
+            min-height: 100vh; /* Full viewport height */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
         }
 
+        /* ============================================================
+           SECTION: Main Content Container
+           ============================================================
+           White card with rounded corners floats on gradient background.
+           Large shadow creates depth and visual separation.
+           Max-width ensures readable line lengths on large screens.
+           ============================================================ */
         .container {
             background: white;
-            border-radius: 20px;
+            border-radius: 20px; /* Soft rounded corners */
             padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); /* Deep shadow for depth */
             max-width: 950px;
             width: 100%;
             text-align: center;
         }
 
+        /* ============================================================
+           SECTION: Headers
+           ============================================================
+           Large h1 establishes visual hierarchy.
+           Subtitle provides context in muted gray.
+           ============================================================ */
         h1 {
-            color: #2c3e50;
+            color: #2c3e50; /* Dark gray for strong contrast */
             margin-bottom: 10px;
-            font-size: 2.5em;
+            font-size: 2.5em; /* Large for impact */
         }
 
         .subtitle {
-            color: #7f8c8d;
+            color: #7f8c8d; /* Muted gray for secondary text */
             margin-bottom: 25px;
             font-size: 1.1em;
         }
 
-        /* Main Language Tabs */
+        /* ============================================================
+           SECTION: Main Language Tabs (Spanish/English/Chinese)
+           ============================================================
+           Horizontal tab bar with bottom border indicators.
+           Active tab has purple underline matching gradient theme.
+           Smooth transitions on hover and click.
+           ============================================================ */
         .main-tabs {
             display: flex;
-            justify-content: center;
+            justify-content: center; /* Center tabs horizontally */
             gap: 10px;
             margin-bottom: 20px;
-            border-bottom: 2px solid #ecf0f1;
+            border-bottom: 2px solid #ecf0f1; /* Subtle divider */
         }
 
         .main-tab {
             padding: 15px 30px;
             cursor: pointer;
-            background: none;
+            background: none; /* Transparent background */
             border: none;
-            border-bottom: 3px solid transparent;
+            border-bottom: 3px solid transparent; /* Hidden by default */
             font-size: 1.1em;
             font-weight: 600;
-            color: #7f8c8d;
-            transition: all 0.3s ease;
+            color: #7f8c8d; /* Gray when inactive */
+            transition: all 0.3s ease; /* Smooth color/border change */
         }
 
         .main-tab:hover {
-            color: #667eea;
+            color: #667eea; /* Purple on hover */
         }
 
         .main-tab.active {
-            color: #667eea;
-            border-bottom-color: #667eea;
+            color: #667eea; /* Purple when active */
+            border-bottom-color: #667eea; /* Purple underline */
         }
 
-        /* Sub Data Source Tabs */
+        /* ============================================================
+           SECTION: Sub Data Source Tabs (Duolingo/Geographic/Estimated)
+           ============================================================
+           Secondary tab system for data source selection.
+           Pills with borders that fill with purple when active.
+           Background is light gray to separate from main tabs.
+           ============================================================ */
         .sub-tabs {
             display: flex;
             justify-content: center;
             gap: 8px;
             margin-bottom: 25px;
             padding: 10px 0;
-            background: #f8f9fa;
+            background: #f8f9fa; /* Light gray background */
             border-radius: 10px;
         }
 
@@ -85,8 +197,8 @@
             padding: 10px 20px;
             cursor: pointer;
             background: white;
-            border: 2px solid #ecf0f1;
-            border-radius: 8px;
+            border: 2px solid #ecf0f1; /* Light gray border */
+            border-radius: 8px; /* Pill shape */
             font-size: 0.95em;
             font-weight: 600;
             color: #7f8c8d;
@@ -94,105 +206,146 @@
         }
 
         .sub-tab:hover {
-            border-color: #667eea;
+            border-color: #667eea; /* Purple border on hover */
             color: #667eea;
         }
 
         .sub-tab.active {
-            background: #667eea;
+            background: #667eea; /* Filled purple when active */
             color: white;
             border-color: #667eea;
         }
 
+        /* ============================================================
+           SECTION: Content Visibility (Tab System Logic)
+           ============================================================
+           CSS-based tab switching using .active class.
+           Only one language-content and one data-content visible at a time.
+           JavaScript toggles .active class to show/hide panels.
+           ============================================================ */
         .language-content {
-            display: none;
+            display: none; /* Hidden by default */
         }
 
         .language-content.active {
-            display: block;
+            display: block; /* Shown when active */
         }
 
         .data-content {
-            display: none;
+            display: none; /* Hidden by default */
         }
 
         .data-content.active {
-            display: block;
+            display: block; /* Shown when active */
         }
 
+        /* ============================================================
+           SECTION: Chart Container
+           ============================================================
+           Fixed height container for Chart.js pie charts.
+           Relative positioning allows Chart.js to size properly.
+           Margin provides spacing above and below charts.
+           ============================================================ */
         .chart-container {
             position: relative;
-            height: 400px;
+            height: 400px; /* Fixed height for consistent chart sizing */
             margin: 30px auto;
         }
 
+        /* ============================================================
+           SECTION: Statistics Grid (KEY FEATURE)
+           ============================================================
+           Responsive grid displays key facts below each chart.
+           Auto-fit ensures cards wrap on smaller screens.
+           Color-coded accent bars match language identity:
+           - Spanish = Red (#e74c3c)
+           - English = Blue (#3498db)
+           - Chinese = Orange (#e67e22)
+           ============================================================ */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive wrapping */
             gap: 15px;
             margin-top: 30px;
         }
 
         .stat-item {
-            background: #f8f9fa;
+            background: #f8f9fa; /* Light gray background */
             padding: 15px;
             border-radius: 10px;
-            border-left: 4px solid #e74c3c;
+            border-left: 4px solid #e74c3c; /* Default to Spanish red */
         }
 
+        /* Color-coded left borders for language identity */
         .stat-item.spanish {
-            border-left-color: #e74c3c;
+            border-left-color: #e74c3c; /* Red */
         }
 
         .stat-item.english {
-            border-left-color: #3498db;
+            border-left-color: #3498db; /* Blue */
         }
 
         .stat-item.chinese {
-            border-left-color: #e67e22;
+            border-left-color: #e67e22; /* Orange */
         }
 
+        /* Large numbers draw attention to key metrics */
         .stat-number {
             font-size: 1.5em;
             font-weight: bold;
         }
 
+        /* Color-coded numbers match border colors */
         .stat-item.spanish .stat-number {
-            color: #e74c3c;
+            color: #e74c3c; /* Red */
         }
 
         .stat-item.english .stat-number {
-            color: #3498db;
+            color: #3498db; /* Blue */
         }
 
         .stat-item.chinese .stat-number {
-            color: #e67e22;
+            color: #e67e22; /* Orange */
         }
 
+        /* Muted label text for context */
         .stat-label {
             color: #7f8c8d;
             font-size: 0.9em;
         }
 
+        /* ============================================================
+           SECTION: Data Sources Section
+           ============================================================
+           Small gray text at bottom lists data provenance.
+           Left-aligned for easier reading of source citations.
+           Separated from stats by thin top border.
+           ============================================================ */
         .sources {
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid #ecf0f1;
-            font-size: 0.85em;
-            color: #95a5a6;
-            text-align: left;
+            border-top: 1px solid #ecf0f1; /* Divider line */
+            font-size: 0.85em; /* Smaller text for secondary info */
+            color: #95a5a6; /* Light gray for subtle appearance */
+            text-align: left; /* Left-align for readability */
         }
 
         .sources p {
-            margin: 5px 0;
+            margin: 5px 0; /* Tight spacing for source list */
         }
 
+        /* ============================================================
+           SECTION: Data Badge (Currently Unused)
+           ============================================================
+           Purple pill badge for future use (e.g., marking data freshness).
+           Matches purple gradient theme.
+           ============================================================ */
         .data-badge {
             display: inline-block;
             padding: 4px 12px;
-            background: #667eea;
+            background: #667eea; /* Purple to match theme */
             color: white;
-            border-radius: 12px;
+            border-radius: 12px; /* Pill shape */
             font-size: 0.75em;
             font-weight: 600;
             margin-left: 10px;
@@ -519,15 +672,50 @@
     </div>
 
     <script>
-        let charts = {};
-        let currentLanguage = 'spanish';
+        // ============================================================
+        // JAVASCRIPT OVERVIEW
+        // ============================================================
+        // Manages Chart.js pie chart visualizations and tab switching.
+        // Main workflow:
+        //   1. On page load → initAllCharts() creates all 9 charts
+        //   2. User clicks main tab → showLanguage() switches language
+        //   3. User clicks sub-tab → showDataSource() switches data view
+        //   4. Chart.js handles rendering, tooltips, legend
+        //   5. Fade-in animation on initial load
+        // ============================================================
+
+        // ============================================================
+        // GLOBAL STATE MANAGEMENT
+        // ============================================================
+        // charts: Stores Chart.js instances for all 9 charts (3 languages × 3 data sources)
+        // currentLanguage: Tracks which main tab is active (spanish/english/chinese)
+        // currentDataSource: Tracks which sub-tab is active for each language
+        // ============================================================
+        let charts = {}; // Chart.js instances keyed by canvasId
+        let currentLanguage = 'spanish'; // Default to Spanish tab
         let currentDataSource = {
+            // Each language remembers its last selected data source
             spanish: 'duolingo',
             english: 'duolingo',
             chinese: 'duolingo'
         };
 
-        // All chart data
+        // ============================================================
+        // DATA STRUCTURE: Chart Data for All Languages
+        // ============================================================
+        // Three-level nested object:
+        //   chartData[language][dataSource] = {labels, data, title}
+        //
+        // Each dataset contains:
+        //   - labels: Array of native language/country names
+        //   - data: Array of percentages (must sum to 100)
+        //   - title: Chart title displayed above pie chart
+        //
+        // Data sources explained:
+        //   - duolingo: Self-reported native language from Duolingo users
+        //   - geographic: Country/region where learners are located
+        //   - estimated: Weighted combination accounting for demographics
+        // ============================================================
         const chartData = {
             spanish: {
                 duolingo: {
@@ -582,32 +770,58 @@
             }
         };
 
+        // ============================================================
+        // COLOR PALETTE
+        // ============================================================
+        // Vibrant, distinct colors for pie chart slices.
+        // Provides strong visual contrast between segments.
+        // Array length supports up to 10 different segments.
+        // ============================================================
         const colors = [
-            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
-            '#FF9F40', '#C9CBCF', '#FF99CC', '#99CCFF', '#66FF99'
+            '#FF6384', // Pink/Red
+            '#36A2EB', // Blue
+            '#FFCE56', // Yellow
+            '#4BC0C0', // Teal
+            '#9966FF', // Purple
+            '#FF9F40', // Orange
+            '#C9CBCF', // Gray
+            '#FF99CC', // Light Pink
+            '#99CCFF', // Light Blue
+            '#66FF99'  // Mint Green
         ];
 
+        // ============================================================
+        // KEY FEATURE: Chart Creation Factory
+        // Core Objective: Create a Chart.js pie chart instance
+        // Key Behaviors:
+        //   - Accepts canvas ID, data array, labels array, and title
+        //   - Configures Chart.js with pie type and custom options
+        //   - Returns Chart instance for storage in charts object
+        //   - Sets up responsive sizing, legend, and tooltip formatting
+        // ============================================================
         function createChart(canvasId, data, labels, title) {
+            // Get canvas element by ID
             const ctx = document.getElementById(canvasId);
-            if (!ctx) return null;
+            if (!ctx) return null; // Canvas not found (shouldn't happen)
 
+            // Create Chart.js pie chart instance
             return new Chart(ctx.getContext('2d'), {
-                type: 'pie',
+                type: 'pie', // Pie chart type
                 data: {
-                    labels: labels,
+                    labels: labels, // Segment labels (native languages or countries)
                     datasets: [{
-                        data: data,
-                        backgroundColor: colors.slice(0, data.length),
-                        borderWidth: 3,
-                        borderColor: '#fff'
+                        data: data, // Percentage values
+                        backgroundColor: colors.slice(0, data.length), // Slice color array to match data length
+                        borderWidth: 3, // White border between slices
+                        borderColor: '#fff' // White borders for separation
                     }]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
+                    responsive: true, // Resize with container
+                    maintainAspectRatio: false, // Fill container height
                     plugins: {
                         legend: {
-                            position: 'right',
+                            position: 'right', // Legend on right side
                             labels: {
                                 padding: 15,
                                 font: {
@@ -618,7 +832,7 @@
                         },
                         title: {
                             display: true,
-                            text: title,
+                            text: title, // Chart title from data
                             font: {
                                 size: 15,
                                 weight: 'bold'
@@ -627,12 +841,13 @@
                         },
                         tooltip: {
                             callbacks: {
+                                // Format tooltip to show percentage
                                 label: function(context) {
                                     let label = context.label || '';
                                     if (label) {
                                         label += ': ';
                                     }
-                                    label += context.parsed + '%';
+                                    label += context.parsed + '%'; // Add % symbol
                                     return label;
                                 }
                             }
@@ -642,68 +857,112 @@
             });
         }
 
+        // ============================================================
+        // KEY FEATURE: Initialize All Charts on Page Load
+        // Core Objective: Pre-render all 9 charts for instant tab switching
+        // Key Behaviors:
+        //   - Loops through all languages and data sources
+        //   - Creates Chart.js instance for each combination
+        //   - Stores instances in charts object for later reference
+        //   - Charts remain in DOM but hidden/shown via CSS
+        // ============================================================
         function initAllCharts() {
-            // Initialize all 9 charts
+            // Initialize all 9 charts (3 languages × 3 data sources)
             Object.keys(chartData).forEach(lang => {
                 Object.keys(chartData[lang]).forEach(source => {
+                    // Build chart ID: spanishDuolingoChart, englishGeographicChart, etc.
                     const chartId = `${lang}${source.charAt(0).toUpperCase() + source.slice(1)}Chart`;
                     const data = chartData[lang][source];
+                    // Create and store chart instance
                     charts[chartId] = createChart(chartId, data.data, data.labels, data.title);
                 });
             });
         }
 
+        // ============================================================
+        // KEY FEATURE: Switch Main Language Tab
+        // Core Objective: Show selected language's content panel
+        // Key Behaviors:
+        //   - Updates active state on main tab buttons
+        //   - Hides all language content panels
+        //   - Shows selected language's content panel
+        //   - Updates currentLanguage state variable
+        // ============================================================
         function showLanguage(language) {
+            // Update state
             currentLanguage = language;
 
-            // Update main tabs
+            // Remove active class from all main tabs
             document.querySelectorAll('.main-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
+            // Add active class to clicked tab
             event.target.classList.add('active');
 
-            // Hide all language contents
+            // Hide all language content panels
             document.querySelectorAll('.language-content').forEach(content => {
                 content.classList.remove('active');
             });
 
-            // Show selected language
+            // Show selected language's content panel
             document.getElementById(language + '-lang').classList.add('active');
         }
 
+        // ============================================================
+        // KEY FEATURE: Switch Data Source Sub-Tab
+        // Core Objective: Show selected data source chart within current language
+        // Key Behaviors:
+        //   - Updates active state on sub-tab buttons (within language panel)
+        //   - Hides all data content panels within language
+        //   - Shows selected data source's content panel
+        //   - Updates currentDataSource state for this language
+        // ============================================================
         function showDataSource(language, source) {
+            // Update state for this language
             currentDataSource[language] = source;
 
-            // Get the parent language container
+            // Get the parent language container (scopes sub-tab search)
             const langContainer = document.getElementById(language + '-lang');
 
-            // Update sub tabs
+            // Remove active class from all sub-tabs within this language
             langContainer.querySelectorAll('.sub-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
+            // Add active class to clicked sub-tab
             event.target.classList.add('active');
 
-            // Hide all data contents within this language
+            // Hide all data content panels within this language
             langContainer.querySelectorAll('.data-content').forEach(content => {
                 content.classList.remove('active');
             });
 
-            // Show selected data source
+            // Show selected data source's content panel
             document.getElementById(language + '-' + source).classList.add('active');
         }
 
-        // Initialize on load
+        // ============================================================
+        // INITIALIZATION
+        // ============================================================
+        // Runs on page load to set up charts and animations.
+        // Workflow:
+        //   1. Initialize all 9 Chart.js instances
+        //   2. Set container to invisible (opacity 0, slightly down)
+        //   3. After 100ms, fade in with smooth transition
+        //   4. Creates polished entry animation
+        // ============================================================
         document.addEventListener('DOMContentLoaded', function() {
+            // Create all Chart.js instances
             initAllCharts();
 
-            // Add animation on load
+            // Prepare fade-in animation
             document.querySelector('.container').style.opacity = '0';
-            document.querySelector('.container').style.transform = 'translateY(20px)';
+            document.querySelector('.container').style.transform = 'translateY(20px)'; // Start 20px down
 
+            // Execute fade-in after brief delay
             setTimeout(() => {
                 document.querySelector('.container').style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                document.querySelector('.container').style.opacity = '1';
-                document.querySelector('.container').style.transform = 'translateY(0)';
+                document.querySelector('.container').style.opacity = '1'; // Fade to visible
+                document.querySelector('.container').style.transform = 'translateY(0)'; // Move to final position
             }, 100);
         });
     </script>
