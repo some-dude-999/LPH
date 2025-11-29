@@ -1,7 +1,7 @@
 spanish,english,chinese,pinyin,portuguese
-tiempo,weather,时间,shí jiān,tempo
+tiempo,weather,天气,tiān qì,tempo
 frío,cold,寒冷的,hán lěng de,frio
-calor,hot,热,rè,aquecer
+calor,heat,热,rè,calor
 sol,sun,太阳,tài yáng,sol
 viento,wind,风,fēng,vento
 lluvia,rain,雨,yǔ,chuva
@@ -14,7 +14,7 @@ temperatura,temperature,温度,wēn dù,temperatura
 pronóstico,forecast,预报,yù bào,previsão
 húmedo,humid,湿的,shī de,úmido
 hace buen tiempo,the weather is good,天气很好,tiān qì hěn hǎo,o tempo está bom
-el tiempo,the time,天气,tiān qì,a hora
+el tiempo,the weather,天气,tiān qì,o tempo
 hace frío,it's cold,是冷的,shì lěng de,Está frio
 mucho frío,very cold,很冷,hěn lěng,muito frio
 hace calor,it's hot,很热,hěn rè,Está quente
