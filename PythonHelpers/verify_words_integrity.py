@@ -1,11 +1,46 @@
 #!/usr/bin/env python3
-"""
-Verify Overview CSV matches individual breakout CSV files for all languages.
-Ensures no rows were accidentally added or deleted.
-
-Usage:
-    python verify_words_integrity.py [chinese|spanish|english|all]
-"""
+# ============================================================
+# MODULE: Overview-Breakout CSV Integrity Verifier
+# Core Purpose: Ensure Overview and breakout CSVs stay synchronized
+# ============================================================
+#
+# WHAT THIS SCRIPT DOES:
+# -----------------------
+# 1. Reads Overview CSV (source of truth for word lists)
+# 2. Reads each breakout CSV file (detailed word data)
+# 3. Compares word lists between Overview and breakout files
+# 4. Reports count mismatches and word-level differences
+#
+# WHY THIS EXISTS:
+# ---------------
+# The Overview CSV contains compressed word arrays, while breakout CSVs
+# have full row-by-row data. These MUST stay synchronized:
+#
+# - Overview: Pack 5 has ["hello", "goodbye", "thanks"]
+# - Breakout: ChineseWords5.csv must have exactly 3 rows with those words
+#
+# This validator catches accidental row additions/deletions.
+#
+# USAGE:
+# ------
+#   python PythonHelpers/verify_words_integrity.py [chinese|spanish|english|all]
+#
+# IMPORTANT NOTES:
+# ---------------
+# - Overview CSV = source of truth
+# - Breakout CSVs = must match Overview word counts and values
+# - Checks both count and content of words
+# - Reports first 5 mismatches per pack
+#
+# WORKFLOW:
+# ---------
+# 1. Read Overview CSV word arrays
+# 2. For each pack: read breakout CSV
+# 3. Compare counts (Overview vs breakout)
+# 4. Compare word values position-by-position
+# 5. Report any discrepancies
+#
+# ============================================================
 
 import csv
 import sys

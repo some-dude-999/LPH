@@ -1,9 +1,51 @@
 #!/usr/bin/env python3
-"""
-Link Manager for GitHub Pages URLs
-Automatically generates and maintains LINK.txt with proper GitHub Pages URLs
-for all web-accessible files (.html, .js, .json, .css) in the repository.
-"""
+# ============================================================
+# MODULE: GitHub Pages Link Manager
+# Core Purpose: Auto-generate and maintain LINK.txt with all web URLs
+# ============================================================
+#
+# WHAT THIS SCRIPT DOES:
+# -----------------------
+# 1. Extracts repository owner/name from git remote URL
+# 2. Finds all web-accessible files (.html, .js, .json, .css)
+# 3. Generates proper GitHub Pages URLs with URL encoding
+# 4. Organizes URLs by type and language in LINK.txt
+# 5. Preserves existing descriptions, adds placeholders for new files
+#
+# WHY THIS EXISTS:
+# ---------------
+# GitHub Pages hosts static files at predictable URLs. This script
+# automates tracking all web-accessible files so users can:
+#
+# - Find deployed URLs without manually constructing them
+# - Maintain organized list grouped by file type and language
+# - Preserve descriptions across regenerations
+#
+# Before this script: Manually updating LINK.txt was tedious and error-prone.
+#
+# USAGE:
+# ------
+#   python PythonHelpers/link_manager.py
+#
+# IMPORTANT NOTES:
+# ---------------
+# - Auto-detects repo from git remote (supports SSH, HTTPS, proxy formats)
+# - Excludes BACKUP/ folder (backups aren't deployable)
+# - Groups JS files by language (Chinese, Spanish, English, Other)
+# - Separates clean (.js) and obfuscated (-js.js) modules
+# - URL-encodes special characters (spaces → %20)
+# - Preserves existing descriptions from previous LINK.txt
+#
+# WORKFLOW:
+# ---------
+# 1. Get repo owner/name from git remote URL
+# 2. Scan for web files (.html, .js, .json, .css)
+# 3. Load existing LINK.txt descriptions
+# 4. Generate GitHub Pages URLs for all files
+# 5. Write organized LINK.txt with URLs and descriptions
+# 6. Report statistics (total files, new entries, preserved descriptions)
+#
+# ============================================================
 
 import os
 import subprocess

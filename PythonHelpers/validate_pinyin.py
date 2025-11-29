@@ -1,34 +1,58 @@
 #!/usr/bin/env python3
-"""
-Validate that Chinese characters match pinyin syllables with CHARACTER-BY-CHARACTER mapping.
-
-MAPPING RULE:
-- Each Chinese character (with trailing punctuation) maps to one pinyin syllable (with same punctuation)
-- Latin letters map letter-by-letter to themselves
-
-Example:
-  早上好，先生
-  ↓ ↓ ↓  ↓ ↓
-  zǎo shàng hǎo， xiān shēng
-
-  Character mapping:
-  早   → zǎo
-  上   → shàng
-  好， → hǎo，   (punctuation attached!)
-  先   → xiān
-  生   → shēng
-
-Latin example:
-  ATM机
-  ↓↓↓↓
-  A T M jī
-
-  Character mapping:
-  A  → A   (letter-by-letter)
-  T  → T
-  M  → M
-  机 → jī
-"""
+# ============================================================
+# MODULE: Chinese-Pinyin Character Mapping Validator
+# Core Purpose: Verify 1:1 character-to-syllable mapping
+# ============================================================
+#
+# WHAT THIS SCRIPT DOES:
+# -----------------------
+# 1. Reads CSV files containing Chinese characters and pinyin
+# 2. Validates that each Chinese character maps to exactly one pinyin syllable
+# 3. Validates that Latin letters map letter-by-letter to themselves
+# 4. Checks punctuation appears in both Chinese and pinyin
+# 5. Reports mismatches and errors
+#
+# WHY THIS EXISTS:
+# ---------------
+# Character-by-character mapping ensures the game can display Chinese
+# characters with their pronunciation aligned properly:
+#
+#   早上好，先生
+#   zǎo shàng hǎo， xiān shēng
+#
+# Each character MUST have its pinyin syllable, with punctuation preserved.
+# This validator catches mismatches that would break the game UI.
+#
+# USAGE:
+# ------
+#   python PythonHelpers/validate_pinyin.py [chinese|spanish|english|all]
+#
+# IMPORTANT NOTES:
+# ---------------
+# - Validates Chinese+Pinyin columns across all three language CSVs
+# - Chinese characters with trailing punctuation → pinyin with same punctuation
+# - Latin letters (ATM, DNA) → same letters in pinyin, letter-by-letter
+# - Reports first 5 errors per file, full count in summary
+#
+# MAPPING RULES:
+# --------------
+# 1. Chinese character → 1 pinyin syllable
+# 2. Punctuation attached to char → same punctuation in pinyin
+# 3. Latin letter → same letter (A→A, T→T, M→M)
+# 4. Standalone punctuation → same punctuation
+#
+# EXAMPLES:
+# ---------
+# ✓ 早上好，先生 → zǎo shàng hǎo， xiān shēng
+#   (早→zǎo, 上→shàng, 好，→hǎo，, 先→xiān, 生→shēng)
+#
+# ✗ 早上好，先生 → zǎo shàng hǎo xiān shēng
+#   (好，→hǎo - missing comma in pinyin!)
+#
+# ✓ ATM机 → A T M jī
+#   (A→A, T→T, M→M, 机→jī)
+#
+# ============================================================
 
 import csv
 import os
