@@ -4760,6 +4760,26 @@
     initializeDebugUI();
 
     // ============================================================
+    // DEBUG: Wrapper to update table with local scope data
+    // ============================================================
+    // The external updateDebugTable() can't access local variables, so we wrap it
+    function updateDebugTableWrapper() {
+      if (!window.DEBUG_MODE) return;
+
+      // Call external updateDebugTable() with data from local scope
+      updateDebugTable({
+        deck: currentDeck,
+        targetLang: getTargetLanguage() || 'target',
+        nativeLang: nativeLanguage || 'native',
+        wordColumns: getWordColumns() || [],
+        translations: getTranslationsConfig() || {}
+      });
+    }
+
+    // Override the global updateDebugTable to use our wrapper
+    window.updateDebugTable = updateDebugTableWrapper;
+
+    // ============================================================
     // DEBUG: Simulate Functions (called by buttons in debug table)
     // ============================================================
 
