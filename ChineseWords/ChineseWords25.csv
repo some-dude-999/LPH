@@ -15,11 +15,11 @@ chinese,pinyin,english,spanish,french,portuguese
 南,nán,south,sur,sud,sul
 西,xī,west,oeste,ouest,oeste
 北,běi,north,norte,nord,norte
-远处,yuǎn chù,far,lejos,loin,longe
+远处,yuǎn chù,far away,lejos,loin,longe
 近处,jìn chù,near,cerca,près de,perto
 前面走,qián miàn zǒu,walk ahead,camina adelante,avancer,siga em frente
 在前面,zài qián miàn,in front,al frente,devant,na frente
-后面看,hòu miàn kàn,look from behind,mirar desde atrás,regarder par derrière,olhar por trás
+后面看,hòu miàn kàn,Look behind you,Mira atrás,Regarde derrière toi,Olhe para trás
 在后面,zài hòu miàn,behind,detrás,derrière,atrás
 左边转,zuǒ biān zhuǎn,turn left,girar a la izquierda,tourner à gauche,vire à esquerda
 在左边,zài zuǒ biān,On the left,A la izquierda,A gauche,À esquerda
@@ -51,5 +51,5 @@ chinese,pinyin,english,spanish,french,portuguese
 往北,wǎng běi,Go north,Ve al norte,Allez vers le nord,Vá para o norte
 远处看,yuǎn chù kàn,Looking from a distance,Mirando desde la distancia,Regarder de loin,Olhando de longe
 在远处,zài yuǎn chù,In the distance,En la distancia,Au loin,Ao longe
-近处看,jìn chù kàn,Looking close,Mirando de cerca,En regardant de près,Olhando de perto
+近处看,jìn chù kàn,Look up close,Mira de cerca,Regarde de près,Olhe de perto
 在近处,zài jìn chù,Near,Cerca,Près,Perto
