@@ -1,49 +1,46 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,28,Body Parts,55,spanish,Volver,Espalda,Volver means to return (verb) not back (body part)
-chinese,28,Body Parts,55,french,Retour,Dos,Retour means return (noun/verb) not back (body part)
-chinese,28,Body Parts,55,portuguese,Voltar,Costas,Voltar means to return (verb) not back (body part)
-chinese,29,Food Basics,14,portuguese,Carne,Carne de vaca,Carne alone is too generic for beef; should specify type
-chinese,30,Drinks & Beverages,33,portuguese,Chá com leite faz bem,Chá com leite é bom,Faz bem implies health benefit; should be tastes good
-chinese,30,Drinks & Beverages,39,portuguese,Água com gás é legal,Água com gás é gelada,Legal is slang for cool; should be cold/fresh for temperature
-chinese,30,Drinks & Beverages,43,spanish,Vino blanco fuerte,Licor fuerte,白酒 is Chinese liquor/baijiu not white wine
-chinese,30,Drinks & Beverages,43,french,Vin blanc fort,Alcool fort,白酒 is Chinese liquor/baijiu not white wine
-chinese,30,Drinks & Beverages,43,portuguese,Vinho branco forte,Licor forte,白酒 is Chinese liquor/baijiu not white wine
-chinese,30,Drinks & Beverages,44,spanish,Beber vino blanco,Beber licor,白酒 is Chinese liquor/baijiu not white wine
-chinese,30,Drinks & Beverages,44,french,Boire du vin blanc,Boire de l'alcool,白酒 is Chinese liquor/baijiu not white wine
-chinese,30,Drinks & Beverages,44,portuguese,Beba vinho branco,Beba licor,白酒 is Chinese liquor/baijiu not white wine
-chinese,30,Drinks & Beverages,48,spanish,Beber beber,Beber bebidas,Redundant; should be drink beverages
-chinese,30,Drinks & Beverages,48,french,Boire un verre,Boire des boissons,Un verre is a glass; should be beverages
-chinese,30,Drinks & Beverages,48,portuguese,"Beba, beba",Beber bebidas,Repetitive; should be drink beverages
-chinese,30,Drinks & Beverages,51,portuguese,Água mineral faz bem,Água mineral é boa,Faz bem implies health benefit; should be is good/tastes good
-chinese,31,Common Foods,9,portuguese,Pimentão,Pimenta,Pimentão is bell pepper; 辣椒 is chili pepper
-chinese,31,Common Foods,32,portuguese,Pimenta picante,Pimenta,Already specified as chili; picante is redundant
-chinese,31,Common Foods,24,portuguese,Repolho faz bem,Repolho é bom,Faz bem implies health benefit; should be tastes good
-chinese,34,Weather Words,4,spanish,Nublado,Nublado y gris,阴天 is overcast/gloomy not just cloudy
-chinese,34,Weather Words,4,french,Nuageux,Couvert,阴天 is overcast not just cloudy
-chinese,34,Weather Words,4,portuguese,Nublado,Nublado e cinzento,阴天 is overcast/gloomy not just cloudy
-chinese,35,Shopping Basics,7,spanish,Volver,Devolver,Volver means to go back; should be return goods
-chinese,35,Shopping Basics,7,french,Retour,Retour de marchandise,Too vague; should specify return of goods
-chinese,35,Shopping Basics,7,portuguese,Retorno,Devolução,Retorno means coming back; should be return of goods
-chinese,35,Shopping Basics,14,spanish,Oferta,Regatear,Oferta is offer/sale; 砍价 means to bargain/haggle
-chinese,35,Shopping Basics,14,french,Bonne affaire,Négocier le prix,Bonne affaire is good deal; should be haggle/negotiate
-chinese,35,Shopping Basics,14,portuguese,Pechincha,Pechinchar,Pechincha is noun; should be verb to bargain
-chinese,38,Describing People,13,french,Genre,Gentil,Genre means type/gender; 善良 means kind
-chinese,38,Describing People,13,portuguese,Tipo,Bondoso,Tipo means type/guy; 善良 means kind
-chinese,40,Health & Sickness,4,spanish,Frío,Resfriado,Frío is cold weather; 感冒 is a cold (illness)
-chinese,40,Health & Sickness,4,french,Froid,Rhume,Froid is cold weather; 感冒 is a cold (illness)
-chinese,40,Health & Sickness,4,portuguese,Frio,Resfriado,Frio is cold weather; 感冒 is a cold (illness)
-chinese,40,Health & Sickness,21,spanish,Frío,Resfriado,Frío is cold weather; should be a cold (illness)
-chinese,40,Health & Sickness,21,french,Froid,Rhume,Froid is cold weather; should be a cold (illness)
-chinese,40,Health & Sickness,21,portuguese,Frio,Resfriado,Frio is cold weather; should be a cold (illness)
-chinese,40,Health & Sickness,22,spanish,Resfriarse,Agarrar un resfriado,More natural phrasing for getting a cold
-chinese,40,Health & Sickness,22,french,Attraper un rhume,Avoir un rhume,More natural phrasing for catching a cold
-chinese,40,Health & Sickness,22,portuguese,Ficando resfriado,Pegar um resfriado,More natural phrasing for getting a cold
-chinese,41,School Life,14,spanish,Libro,Cuaderno,本子 is notebook not book
-chinese,41,School Life,14,french,Livre,Cahier,本子 is notebook not book
-chinese,41,School Life,14,portuguese,Livro,Caderno,本子 is notebook not book
-chinese,53,Location Words,10,spanish,volver,atrás,volver is to return (verb); 后 as position is back/behind
-chinese,53,Location Words,10,french,retour,arrière,retour is return (noun); 后 as position is back/behind
-chinese,53,Location Words,10,portuguese,voltar,atrás,voltar is to return (verb); 后 as position is back/behind
-chinese,53,Location Words,12,portuguese,por aí,ao redor,por aí is too casual/slangy; should be around/surrounding
-chinese,53,Location Words,42,portuguese,Por aí,Ao redor,Por aí is too casual/slangy; should be around/surrounding
-chinese,53,Location Words,43,portuguese,Por aí,Ao redor,Por aí is too casual/slangy; should be around/surrounding
+chinese,28,Body Parts,27,english,High nose,Prominent nose,More natural description of a prominent nose
+chinese,28,Body Parts,27,spanish,Nariz alta,Nariz prominente,Use common phrasing for a prominent nose
+chinese,28,Body Parts,27,french,Nez haut,Nez proéminent,Natural way to describe a prominent nose
+chinese,28,Body Parts,27,portuguese,Nariz alto,Nariz proeminente,Common phrasing for a prominent nose
+chinese,30,Drinks & Beverages,37,english,Coke sweet,Coke is sweet,Add verb for natural sentence
+chinese,30,Drinks & Beverages,37,spanish,Coca dulce,La Coca-Cola es dulce,Natural way to state Coke is sweet
+chinese,30,Drinks & Beverages,37,french,Coca sucré,Le Coca est sucré,Add article for natural phrasing
+chinese,30,Drinks & Beverages,37,portuguese,Coca-Cola doce,A Coca-Cola é doce,Include verb for natural sentence
+chinese,30,Drinks & Beverages,43,english,Strong white wine,Strong liquor,Baijiu is distilled liquor not wine
+chinese,30,Drinks & Beverages,43,spanish,Licor fuerte,Aguardiente fuerte,Clarify baijiu as strong liquor
+chinese,30,Drinks & Beverages,43,french,Alcool fort,Alcool fort,Clarify baijiu as strong liquor
+chinese,30,Drinks & Beverages,43,portuguese,Licor forte,Aguardente forte,Clarify baijiu as strong liquor
+chinese,30,Drinks & Beverages,44,english,Drink white wine,Drink liquor,Match baijiu meaning as liquor
+chinese,30,Drinks & Beverages,44,spanish,Beber licor,Beber aguardiente,Use liquor/baijiu wording
+chinese,30,Drinks & Beverages,44,french,Boire de l'alcool,Boire de l'alcool fort,Specify strong liquor
+chinese,30,Drinks & Beverages,44,portuguese,Beba licor,Beber aguardente,Use liquor wording for baijiu
+chinese,30,Drinks & Beverages,48,english,Drink drink,Drink a beverage,Natural phrasing
+chinese,30,Drinks & Beverages,48,spanish,Beber bebidas,Beber una bebida,Use singular for natural phrasing
+chinese,30,Drinks & Beverages,48,french,Boire des boissons,Boire une boisson,Use singular for natural phrasing
+chinese,30,Drinks & Beverages,48,portuguese,Beber bebidas,Beber uma bebida,Use singular for natural phrasing
+chinese,31,Common Foods,29,spanish,Pepino golpeado,Pepino machacado,Natural wording for smashed cucumber
+chinese,31,Common Foods,32,portuguese,Pimenta,Pimenta picante,Include adjective to match meaning
+chinese,32,Eating & Drinking,34,spanish,Agridulce,Un poco ácido,Correct nuance: slightly sour
+chinese,34,Weather Words,21,english,Yes sunny,It's sunny,Natural sentence for weather
+chinese,34,Weather Words,21,spanish,Si soleado,Está soleado,Natural weather expression
+chinese,34,Weather Words,21,french,Oui ensoleillé,Il fait beau,Common way to say it's sunny
+chinese,34,Weather Words,21,portuguese,Sim ensolarado,Está ensolarado,Natural weather phrasing
+chinese,34,Weather Words,33,french,Écoutez le tonnerre,Entendre le tonnerre,Use infinitive rather than imperative
+chinese,34,Weather Words,33,portuguese,Ouça trovões,Ouvir trovões,Use infinitive instead of imperative
+chinese,34,Weather Words,33,spanish,Escuchar truenos,Oír truenos,Use standard verb form for hearing thunder
+chinese,47,Hobbies & Leisure,3,spanish,Leyendo,Lectura,Use noun for the hobby
+chinese,47,Hobbies & Leisure,4,spanish,Leyendo,Lectura,Use noun for the hobby
+chinese,47,Hobbies & Leisure,10,spanish,Cantando,Cantar,Use base verb to name the hobby
+chinese,47,Hobbies & Leisure,11,spanish,Bailando,Bailar,Use base verb to name the hobby
+chinese,48,Sports & Exercise,3,spanish,Corriendo,Correr,Use base verb for the sport
+chinese,48,Sports & Exercise,3,french,En cours d'exécution,Course à pied,Natural term for running as a sport
+chinese,48,Sports & Exercise,3,portuguese,Correndo,Correr,Use base verb for the sport
+chinese,48,Sports & Exercise,5,english,Playing,Play ball games,Clarify sport activity for 打球
+chinese,48,Sports & Exercise,5,spanish,Jugando,Jugar a la pelota,Match meaning of playing ball games
+chinese,48,Sports & Exercise,5,french,Jouer,Jouer au ballon,Clarify playing ball games
+chinese,48,Sports & Exercise,5,portuguese,Jogando,Jogar bola,Clarify playing ball games
+chinese,52,Time Words Advanced,2,portuguese,Diurno,Durante o dia,More natural expression for daytime
+chinese,52,Time Words Advanced,6,spanish,Tarde,Atardecer,Proper term for early evening
+chinese,53,Location Words,6,portuguese,inferior,embaixo,Use common word for “down/below”
+chinese,53,Location Words,8,portuguese,certo,direita,Correct direction term for “right”
