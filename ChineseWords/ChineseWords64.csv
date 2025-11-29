@@ -3,39 +3,39 @@ chinese,pinyin,english,spanish,french,portuguese
 登机,dēng jī,Boarding,Embarque,Embarquement,Embarque
 登机口,dēng jī kǒu,Gate,Puerta,Porte,Portão
 登机牌,dēng jī pái,Boarding pass,Tarjeta de embarque,Carte d'embarquement,Cartão de embarque
-托运,tuō yùn,Checked,Comprobado,Vérifié,Verificado
+托运,tuō yùn,Check luggage,Facturar equipaje,Enregistrer les bagages,Despachar bagagem
 行李,xíng lǐ,Baggage,Equipaje,Bagages,Bagagem
 安检,ān jiǎn,Security check,Control de seguridad,Contrôle de sécurité,Verificação de segurança
 护照,hù zhào,Passport,Pasaporte,Passeport,Passaporte
-签证,qiān zhèng,Visa,Visa,Visas,Visto
+签证,qiān zhèng,Visa,Visa,Visa,Visto
 延误,yán wù,Delay,Retraso,Retard,Atraso
 到达,dào dá,Arrival,Llegada,Arrivée,Chegada
 出发,chū fā,Departure,Salida,Départ,Partida
 国际,guó jì,International,Internacional,Internationale,Internacional
 国内,guó nèi,Domestic,Nacional,Domestique,Doméstico
-候机,hòu jī,Waiting,Esperando,En attente,Esperando
-廊桥,láng qiáo,Jet bridge,Puente,Pont,Ponte
+候机,hòu jī,Waiting to board,Esperando para embarcar,En attente d'embarquement,Esperando
+廊桥,láng qiáo,Jet bridge,Puente de embarque,Pont d'embarquement,Ponte de embarque
 查航班,chá háng bān,Check flight,Consultar vuelo,Vérifier le vol,Verifique o voo
 等航班,děng háng bān,Waiting for flight,Esperando vuelo,En attente du vol,Esperando voo
-去登机,qù dēng jī,Go to board,Ir al foro,Aller au tableau,Ir para o quadro
+去登机,qù dēng jī,Go to board,Ir a embarcar,Aller à l'embarquement,Ir para o embarque
 准备登机,zhǔn bèi dēng jī,Prepare to board,Prepárese para abordar,Préparez-vous à embarquer,Prepare-se para embarcar
 找登机口,zhǎo dēng jī kǒu,Find the boarding gate,Encuentra la puerta de embarque,Trouver la porte d'embarquement,Encontre o portão de embarque
 到登机口,dào dēng jī kǒu,Go to the boarding gate,Ir a la puerta de embarque,Rendez-vous à la porte d'embarquement,Vá até o portão de embarque
 拿登机牌,ná dēng jī pái,Get boarding pass,Obtener tarjeta de embarque,Obtenir la carte d'embarquement,Obter cartão de embarque
 打印登机牌,dǎ yìn dēng jī pái,Print boarding pass,Imprimir tarjeta de embarque,Imprimer la carte d'embarquement,Imprimir cartão de embarque
-办托运,bàn tuō yùn,Check in,Registrarse,Arrivée,Check-in
-要托运,yào tuō yùn,Check in,Registrarse,Arrivée,Check-in
+办托运,bàn tuō yùn,Check luggage,Facturar equipaje,Enregistrer les bagages,Despachar bagagem
+要托运,yào tuō yùn,Check luggage,Facturar equipaje,Enregistrer les bagages,Despachar bagagem
 拿行李,ná xíng lǐ,Get luggage,Recoger equipaje,Récupérer vos bagages,Pegar bagagem
 取行李,qǔ xíng lǐ,Get luggage,Recoger equipaje,Récupérer vos bagages,Pegar bagagem
 过安检,guò ān jiǎn,Go through security,Pasar por seguridad,Passer la sécurité,Passe pela segurança
-排队安检,pái duì ān jiǎn,Queue for security,Cola por seguridad,File d'attente pour la sécurité,Fila para segurança
+排队安检,pái duì ān jiǎn,Queue for security,Hacer fila para seguridad,Faire la queue pour la sécurité,Fila para segurança
 带护照,dài hù zhào,Bring passport,Traer pasaporte,Apportez votre passeport,Trazer passaporte
 查护照,chá hù zhào,Check passport,Consultar pasaporte,Vérifier le passeport,Verifique o passaporte
 办签证,bàn qiān zhèng,Apply for visa,Solicitar visa,Demander un visa,Solicitar visto
 有签证,yǒu qiān zhèng,Have visa,Tener visa,Avoir un visa,Ter visto
 航班延误,háng bān yán wù,Flight delay,Retraso del vuelo,Retard de vol,Atraso de voo
 有延误,yǒu yán wù,Delayed,Retrasado,Retardé,Atrasado
-已到达,yǐ dào dá,Arrive,Llegar,Arriver,Chegar
+已到达,yǐ dào dá,Arrived,Llegó,Arrivé,Chegou
 准备到达,zhǔn bèi dào dá,Prepare to arrive,Prepárate para llegar,Préparez-vous à arriver,Prepare-se para chegar
 准备出发,zhǔn bèi chū fā,Ready to depart,Listo para partir,Prêt à partir,Pronto para partir
 已出发,yǐ chū fā,Departed,Partió,Parti,Partiu
@@ -43,7 +43,7 @@ chinese,pinyin,english,spanish,french,portuguese
 飞国际,fēi guó jì,Flying internationally,Volar internacionalmente,Voler à l’international,Voando internacionalmente
 是国内航班,shì guó nèi háng bān,It is a domestic flight,Es un vuelo nacional,Il s'agit d'un vol intérieur,É um voo doméstico
 飞国内,fēi guó nèi,Flying domestic,Vuelos nacionales,Vol intérieur,Voo doméstico
-在候机,zài hòu jī,Waiting,Esperando,En attente,Esperando
-去候机,qù hòu jī,Going to wait,Voy a esperar,Je vais attendre,Vou esperar
-走廊桥,zǒu láng qiáo,Corridor bridge,Puente del corredor,Pont couloir,Ponte do corredor
-通过廊桥,tōng guò láng qiáo,Through the corridor bridge,A través del puente del corredor,À travers le pont du couloir,Através da ponte do corredor
+在候机,zài hòu jī,Waiting to board,Esperando para embarcar,En attente d'embarquement,Esperando
+去候机,qù hòu jī,Going to the waiting area,Ir a la sala de espera,Aller en salle d'attente,Ir para a sala de espera
+走廊桥,zǒu láng qiáo,Jet bridge,Puente de embarque,Finger (passerelle),Ponte de embarque
+通过廊桥,tōng guò láng qiáo,Board via the jet bridge,Subir por el puente de embarque,Embarquer par la passerelle,Embarcar pela ponte de embarque
