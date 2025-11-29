@@ -24,3 +24,43 @@ spanish,27,Daily Activities,4,english,early riser,I wake up early,Madrugo is ver
 spanish,27,Daily Activities,10,english,I order,I organize,Ordeno means to organize/tidy
 spanish,27,Daily Activities,15,english,arrangement,I fix,Arreglo is verb not noun
 spanish,29,Transportation,9,english,ship,boat,More general/common term
+spanish,3,Numbers 0-10,28,chinese,七人,七个,Consistent with pattern - just the number
+spanish,5,Referring to People (yo tú él ella),15,chinese,我,我自己,Missing reflexive (myself not just I)
+spanish,6,Being Permanent (ser),7,chinese,你是,你们是,Plural you (vosotros not tú)
+spanish,6,Being Permanent (ser),28,chinese,你很好,你们很好,Plural you are good
+spanish,7,Being Temporary (estar),7,chinese,你是,你们是,Plural you (estáis not estás)
+spanish,8,Having & Age (tener),6,chinese,你有,你们有,Plural you (tenéis not tienes)
+spanish,8,Having & Age (tener),35,english,a lot of sleep,very sleepy,Natural expression (tengo sueño)
+spanish,8,Having & Age (tener),41,chinese,公正地,难怪,Correct idiom meaning (no wonder)
+spanish,9,The & A Articles (el la un una),5,chinese,这,这些,Plural article (las = these not this)
+spanish,10,Connecting Words (y pero porque),11,chinese,两者都不,也不,Simpler/more common phrasing
+spanish,11,Days of the Week,26,chinese,日常的,每天,Adverb phrase not adjective
+spanish,16,Describing Things (grande pequeño bueno),28,chinese,很瘦,太瘦了,Demasiado = too (not just very)
+spanish,16,Describing Things (grande pequeño bueno),40,chinese,最古老的,最老的,For people not things
+spanish,17,Basic Action Verbs,15,chinese,讨论,聊天,Conversar = casual chat not formal discuss
+spanish,18,Common Foods,2,chinese,一顿饭,食物,Comida = food not one meal
+spanish,19,House Rooms,6,chinese,休息室,客厅,Salón = living room not lounge
+spanish,21,Going Places (ir),19,english,I'm coming,I'm going,Yo voy = I go/I'm going not coming
+spanish,21,Going Places (ir),31,chinese,命运,目的地,Theme context: destination not fate
+spanish,26,Clothing,6,portuguese,vestir,vestido,Vestido = dress (noun) not to dress (verb)
+spanish,27,Daily Activities,2,chinese,作为,我吃,Como = I eat not as/in capacity of
+spanish,27,Daily Activities,4,chinese,早起者,我早起,Madrugo = I wake early (verb not noun)
+spanish,27,Daily Activities,10,chinese,我订购,我整理,Ordeno = organize/tidy not purchase
+spanish,27,Daily Activities,32,english,Spanish study,I study Spanish,Verb conjugation not noun phrase
+spanish,27,Daily Activities,33,chinese,我订购,我整理,Ordeno = organize/tidy not purchase
+spanish,27,Daily Activities,38,english,late dinner,I have dinner late,Verb phrase not noun phrase
+spanish,27,Daily Activities,43,chinese,我修复,我整理,Arreglo = tidy/fix not repair (context)
+spanish,29,Transportation,9,portuguese,enviar,barco,Barco = boat not send
+spanish,5,Referring to People (yo tú él ella),15,pinyin,wǒ,wǒ zì jǐ,Match updated Chinese (我自己)
+spanish,6,Being Permanent (ser),7,pinyin,nǐ shì,nǐ men shì,Match updated Chinese (你们是)
+spanish,6,Being Permanent (ser),28,pinyin,nǐ hěn hǎo,nǐ men hěn hǎo,Match updated Chinese (你们很好)
+spanish,7,Being Temporary (estar),7,pinyin,nǐ shì,nǐ men shì,Match updated Chinese (你们是)
+spanish,8,Having & Age (tener),6,pinyin,nǐ yǒu,nǐ men yǒu,Match updated Chinese (你们有)
+spanish,8,Having & Age (tener),41,pinyin,gōng zhèng dì,nán guài,Match updated Chinese (难怪)
+spanish,9,The & A Articles (el la un una),5,pinyin,zhè,zhè xiē,Match updated Chinese (这些)
+spanish,10,Connecting Words (y pero porque),11,pinyin,liǎng zhě dōu bù,yě bù,Match updated Chinese (也不)
+spanish,11,Days of the Week,26,pinyin,rì cháng de,měi tiān,Match updated Chinese (每天)
+spanish,16,Describing Things (grande pequeño bueno),40,pinyin,zuì gǔ lǎo de,zuì lǎo de,Match updated Chinese (最老的)
+spanish,18,Common Foods,2,pinyin,yī dùn fàn,shí wù,Match updated Chinese (食物)
+spanish,19,House Rooms,6,pinyin,xiū xī shì,kè tīng,Match updated Chinese (客厅)
+spanish,21,Going Places (ir),31,pinyin,mìng yùn,mù dì dì,Match updated Chinese (目的地)
