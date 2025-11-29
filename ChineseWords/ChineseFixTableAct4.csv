@@ -1,31 +1,28 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,54,Opinions & Views,13,english,Argumentation,Reasoning,Too formal/academic - reasoning is more natural
-chinese,54,Opinions & Views,18,english,Appraisal,Assessment,Appraisal is too formal/technical - assessment is more everyday
-chinese,54,Opinions & Views,18,spanish,Tasación,Evaluación,Tasación is technical property appraisal - evaluación is more general
-chinese,56,Expressing Needs,33,english,Must go,Have requirements,有要求 means have requirements/demands not must go - wrong translation
-chinese,56,Expressing Needs,33,spanish,Debes ir,Tener requisitos,Should match Chinese meaning have requirements not must go
-chinese,56,Expressing Needs,33,french,Il faut y aller,Avoir des exigences,Should be have requirements not must go
-chinese,56,Expressing Needs,33,portuguese,Preciso ir,Ter requisitos,Should be have requirements not must go
-chinese,59,Describing Situations,9,english,Occurrence,Happening,Occurrence is formal - happening is more natural
-chinese,60,Talking About Problems,8,english,Crux,Core issue,Crux is formal/literary - core issue is more everyday
-chinese,60,Talking About Problems,8,spanish,Quid,Meollo,Quid is overly formal/Latin - meollo is more natural
-chinese,60,Talking About Problems,8,french,Point crucial,Nœud du problème,Nœud du problème is more idiomatic for the core issue
-chinese,60,Talking About Problems,8,portuguese,Cerne,Cerne do problema,Add context - cerne do problema is clearer
-chinese,61,Money & Payments,10,spanish,Cambiar,Cambio,零钱 means small change/coins (noun) not to change (verb)
-chinese,61,Money & Payments,10,french,Changer,Monnaie,Should be monnaie (coins/change) not changer (to change)
-chinese,61,Money & Payments,10,portuguese,Alterar,Troco,Should be troco (change/coins) not alterar (to modify)
-chinese,61,Money & Payments,10,english,Change,Small change,Clarify it's coins/small bills for better distinction from row 11
-chinese,61,Money & Payments,11,spanish,Cambiar,Dar cambio,找钱 means give change back not to change - need verb phrase
-chinese,61,Money & Payments,11,french,Changer,Rendre la monnaie,Should be rendre la monnaie (give change back) not changer
-chinese,61,Money & Payments,11,portuguese,Alterar,Dar troco,Should be dar troco (give change back) not alterar
-chinese,62,At the Restaurant,2,french,Menus,Menu,Should be singular Menu not plural Menus
-chinese,63,At the Hotel,2,spanish,Hoteles,Hotel,Should be singular Hotel not plural Hoteles
-chinese,63,At the Hotel,2,portuguese,Hotéis,Hotel,Should be singular Hotel not plural Hotéis
-chinese,67,Weather Conversations,18,english,Sultry,Hot and humid,Sultry is literary/formal - hot and humid is more everyday
-chinese,67,Weather Conversations,18,spanish,Sensual,Sofocante,MAJOR ERROR - Sensual means sexy not hot/humid! Should be sofocante
-chinese,67,Weather Conversations,18,french,Sensuelle,Étouffant,MAJOR ERROR - Sensuelle means sexy not hot/humid! False cognate
-chinese,67,Weather Conversations,18,portuguese,Sensual,Abafado,MAJOR ERROR - Sensual means sexy not hot/humid! Should be abafado
-chinese,67,Weather Conversations,52,english,Very sultry,Very hot and humid,Same as row 18 - sultry is too literary
-chinese,67,Weather Conversations,52,spanish,muy sensual,Muy sofocante,Same error as row 18 - wrong meaning (sexy vs hot/humid)
-chinese,67,Weather Conversations,52,french,Très sensuel,Très étouffant,Same error as row 18 - false cognate
-chinese,67,Weather Conversations,52,portuguese,Muito sensual,Muito abafado,Same error as row 18 - wrong meaning
+chinese,58,Giving Directions,13,french,Itinéraire,Direction,Wrong word - itinéraire means itinerary/route not direction
+chinese,61,Money & Payments,5,english,Offers,Discount,More natural - 优惠 specifically means discount in money context
+chinese,61,Money & Payments,34,english,Change change,Get change,Awkward repetition - more natural phrasing
+chinese,61,Money & Payments,36,english,No change required,Keep the change,More idiomatic English expression
+chinese,64,At the Airport,17,english,Bridge,Jet bridge,More specific for airport context - 廊桥 is boarding bridge
+chinese,66,Making Appointments,40,english,Make an appointment with an ordinary number,Register for regular appointment,Too literal and awkward - more natural phrasing
+chinese,66,Making Appointments,41,english,Make an appointment with an ordinary number,Register for regular appointment,Too literal and awkward - more natural phrasing
+chinese,67,Weather Conversations,6,english,Cooler,Getting cooler,Need verb phrase - cooler alone sounds like a device
+chinese,67,Weather Conversations,7,english,Warmer,Getting warmer,Need verb phrase for weather change
+chinese,67,Weather Conversations,8,english,Plunge,Sudden drop,More natural for temperature - plunge is too dramatic alone
+chinese,67,Weather Conversations,9,english,Warmth,Warming up,Should be verb phrase not noun - 回暖 means to warm up
+chinese,67,Weather Conversations,10,english,Winter,Enter winter,Should be verb phrase - 入冬 means entering winter
+chinese,67,Weather Conversations,11,english,Summer,Enter summer,Should be verb phrase - 入夏 means entering summer
+chinese,67,Weather Conversations,12,english,Rain,Rainy season,More specific - 梅雨 is a specific seasonal rain period
+chinese,67,Weather Conversations,14,english,Sand,Dust storm,More complete - 沙尘 refers to dust/sandstorm not just sand
+chinese,68,Phone Conversations,5,english,Not,Not here,Too vague - need context for 不在
+chinese,68,Phone Conversations,6,english,Wait,Wait a moment,More complete and natural phrase
+chinese,71,Agreeing & Disagreeing,32,english,No way,That's not right,No way is too strong/colloquial - more neutral tone
+chinese,73,Time Expressions,6,english,Being,Currently,Too vague - 正在 means currently doing something
+chinese,75,Describing Amounts,25,english,some people,Some people,Should be capitalized like other entries
+chinese,75,Describing Amounts,26,english,some,Some,Should be capitalized like other entries
+chinese,75,Describing Amounts,27,english,enough,Enough,Should be capitalized like other entries
+chinese,75,Describing Amounts,28,english,enough,Enough,Should be capitalized like other entries
+chinese,75,Describing Amounts,29,english,not enough,Not enough,Should be capitalized like other entries
+chinese,75,Describing Amounts,30,english,not enough,Not enough,Should be capitalized like other entries
+chinese,75,Describing Amounts,31,english,just enough,Just enough,Should be capitalized like other entries
+chinese,75,Describing Amounts,32,english,just,Just,Should be capitalized like other entries

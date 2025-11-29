@@ -2,7 +2,7 @@ chinese,pinyin,english,spanish,french,portuguese
 钱,qián,Money,Dinero,Argent,Dinheiro
 价格,jià gé,Price,Precio,Prix ​​,Preço
 费用,fèi yòng,Fees,Tarifas,Honoraires,Taxas
-优惠,yōu huì,Offers,Ofertas,Offres,Ofertas
+优惠,yōu huì,Discount,Ofertas,Offres,Ofertas
 现金,xiàn jīn,Cash,Efectivo,Espèces,Dinheiro
 刷卡,shuā kǎ,Card,Tarjeta,Carte,Cartão
 支付,zhī fù,Pay,Pagar,Payer,Pagar
@@ -31,9 +31,9 @@ chinese,pinyin,english,spanish,french,portuguese
 去付款,qù fù kuǎn,Go to pay,Ir a pagar,Allez payer,Vá pagar
 已付款,yǐ fù kuǎn,Already paid,Ya pagado,Déjà payé,Já pago
 有零钱,yǒu líng qián,Have change,Tener cambio,Avoir du changement,Tem troco
-换零钱,huàn líng qián,Change change,Cambiar cambio,Changer changement,Alterar mudança
+换零钱,huàn líng qián,Get change,Cambiar cambio,Changer changement,Alterar mudança
 找钱给你,zhǎo qián gěi nǐ,Change for you,Cambia para ti,Changez pour vous,Mude para você
-不用找钱,bù yòng zhǎo qián,No change required,No se requieren cambios,Aucun changement requis,Nenhuma alteração necessária
+不用找钱,bù yòng zhǎo qián,Keep the change,No se requieren cambios,Aucun changement requis,Nenhuma alteração necessária
 开发票,kāi fā piào,Invoice,Factura,Facture,Fatura
 要发票,yào fā piào,Request an invoice,Solicitar una factura,Demander une facture,Solicite uma fatura
 要收据,yào shōu jù,Request a receipt,Solicitar un recibo,Demander un reçu,Solicite um recibo
