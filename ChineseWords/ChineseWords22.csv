@@ -8,24 +8,24 @@ chinese,pinyin,english,spanish,french,portuguese
 卖,mài,sell,vender,vendre,vender
 租,zū,rent,alquiler,louer,alugar
 借,jiè,borrow,pedir prestado,emprunter,pedir emprestado
-还,hái,return,regresar,retour,retornar
+还,hái,return,devolver,rendre,devolver
 教,jiào,teach,enseñar,enseigner,ensinar
-学,xué,learn,aprender,apprendre,aprenda
-问,wèn,ask,preguntar,demander,pergunte
-答,dá,answer,respuesta,réponse,responder
+学,xué,learn,aprender,apprendre,aprender
+问,wèn,ask,preguntar,demander,perguntar
+答,dá,answer,responder,répondre,responder
 告诉,gào sù,tell,decir,dire,contar
-认识,rèn shí,know,saber,savoir,sei
-记,jì,remember,recuerda,souviens-toi,lembre-se
+认识,rèn shí,know,conocer,connaître,conhecer
+记,jì,remember,recordar,se souvenir,lembrar
 忘,wàng,forget,olvidar,oublier,esquecer
 搬,bān,move,mover,bouger,mover
 挪,nuó,move,mover,bouger,mover
-放下,fàng xià,put down,dejar,déposer,colocar para baixo
+放下,fàng xià,put down,dejar,déposer,abaixar
 放好,fàng hǎo,put away,guardar,ranger,guardar
-带走,dài zǒu,take away,para llevar,à emporter,tirar
+带走,dài zǒu,take away,para llevar,à emporter,levar embora
 带上,dài shàng,bring,traer,apporter,trazer
 送人,sòng rén,Give as a gift,Dar como regalo,Offrir en cadeau,Dar de presente
 送走,sòng zǒu,Send away,Enviar lejos,Renvoyer,Manda embora
-接人,jiē rén,Pick someone up,Recoger a alguien,Ramasser quelqu'un,Pegue alguém
+接人,jiē rén,Pick someone up,Recoger a alguien,Aller chercher quelqu'un,Buscar alguém
 接住,jiē zhù,Catch it,Atrapar,Attraper,Pegar
 找到,zhǎo dào,Find,Encontrar,Trouver,Encontrar
 找人,zhǎo rén,Find someone,Encuentra a alguien,Trouver quelqu'un,Encontre alguém
@@ -47,15 +47,15 @@ chinese,pinyin,english,spanish,french,portuguese
 问人,wèn rén,Ask someone,Pregúntale a alguien,Demandez à quelqu'un,Pergunte a alguém
 回答,huí dá,Answer,Respuesta,Réponse,Resposta
 答案,dá àn,Answer,Respuesta,Réponse,Resposta
-告诉你,gào sù nǐ,Tell you,Te cuento,Dites-vous,Te conto
+告诉你,gào sù nǐ,Tell you,Te cuento,Te dire,Te conto
 告诉我,gào sù wǒ,Tell me,Dime,Dis-moi,Me conte
 认识你,rèn shí nǐ,Know you,Te conozco,Je te connais,Te conheço
 认识人,rèn shí rén,Meet people,Conocer gente,Rencontrer des gens,Conheça pessoas
 记住,jì zhù,Remember,Recuerda,Rappelez-vous,Lembre-se
 记得,jì de,Remember,Recuerda,Rappelez-vous,Lembre-se
-忘记,wàng jì,Forget,Olvídate,Oublier,Esqueça
+忘记,wàng jì,Forget,Olvidar,Oublier,Esquecer
 忘了,wàng le,Forgot,Lo olvidé,J'ai oublié,Esqueci
-搬家,bān jiā,Move,Mover,Déplacer,Mover
+搬家,bān jiā,Move house,Mudarse,Déménager,Mudar de casa
 搬走,bān zǒu,Move away,Alejarse,S'éloigner,Afaste-se
-挪开,nuó kāi,Move away,Alejarse,S'éloigner,Afaste-se
+挪开,nuó kāi,Move away,Alejarse,S'éloigner,Afastar
 挪动,nuó dòng,Move,Mover,Se déplacer,Mover

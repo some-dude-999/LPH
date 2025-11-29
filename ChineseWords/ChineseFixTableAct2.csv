@@ -1,19 +1,177 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,15,Family Members,10,english,Elder brother,Older brother,Too formal - use natural everyday term
-chinese,15,Family Members,11,english,Elder sister,Older sister,Too formal - use natural everyday term
-chinese,16,Days of Week,13,english,working day,weekday,More common everyday term
-chinese,16,Days of Week,23,english,Wednesday free,Free on Wednesday,Awkward phrasing - more natural word order
-chinese,19,Telling Time,21,english,several minutes,how many minutes,Wrong translation - 几 means how many not several
-chinese,20,Numbers 11-100,20,english,Double Eleven/Singles Day,Singles' Day,Most common name - remove slash
-chinese,20,Numbers 11-100,32,english,Established at thirty,At thirty established,More natural word order
-chinese,20,Numbers 11-100,34,english,No confusion at forty,At forty no confusion,More natural word order
-chinese,21,More Measure Words,9,english,field,event,Wrong word sense - 场 counts events not fields
-chinese,21,More Measure Words,10,english,table,machine,Wrong word sense - 台 counts machines not tables
-chinese,26,Basic Transportation,7,english,Taxi,Take a taxi,Wrong part of speech - 打车 is verb not noun
-chinese,27,Colors,29,english,Green environmental protection,Eco-friendly,Too awkward and literal - use natural term
-chinese,27,Colors,42,english,Brown Bear,Brown bear,Unnecessary capitalization
-chinese,27,Colors,43,english,Brown Hair,Brown hair,Unnecessary capitalization
-chinese,27,Colors,44,english,Golden Sunlight,Golden sunlight,Unnecessary capitalization
-chinese,27,Colors,45,english,Golden Sparkle,Golden sparkle,Unnecessary capitalization
-chinese,27,Colors,46,english,Silver Moonlight,Silver moonlight,Unnecessary capitalization
-chinese,27,Colors,47,english,Silver Shine,Silver shine,Unnecessary capitalization
+chinese,15,Family Members,2,spanish,Inicio,Hogar,Use common word for home
+chinese,15,Family Members,2,french,Accueil,Maison,Use common everyday term for home
+chinese,15,Family Members,2,portuguese,Início,Casa,Use natural word for home
+chinese,15,Family Members,23,french,Regroupement familial,Réunion de famille,More natural phrase for family gathering
+chinese,15,Family Members,50,english,See maternal grandpa,Visit maternal grandpa,Use natural phrasing for visiting
+chinese,15,Family Members,50,spanish,Ver abuelo materno,Visitar al abuelo materno,Use natural phrasing for visiting
+chinese,15,Family Members,50,french,Voir grand-père maternel,Aller voir mon grand-père maternel,Natural expression for visiting grandparent
+chinese,15,Family Members,50,portuguese,Veja vovô materno,Visitar o vovô materno,Use natural phrasing for visiting
+chinese,15,Family Members,56,english,Love wife,Love my wife,Add possessive for natural phrasing
+chinese,15,Family Members,56,portuguese,Amo esposa,Amo minha esposa,Add possessive for natural phrasing
+chinese,15,Family Members,57,portuguese,Visitando parentes,Visitar parentes,Use infinitive instead of present participle
+chinese,16,Days of Week,15,french,semaine,chaque semaine,Add missing determiner for every week
+chinese,16,Days of Week,16,french,jour de la semaine,Quel jour sommes-nous ?,Use natural question for day of week
+chinese,16,Days of Week,18,french,Travail du lundi,Travailler lundi,Natural phrasing for working Monday
+chinese,16,Days of Week,19,french,Réunion du lundi,Réunion lundi,Natural phrasing for Monday meeting
+chinese,16,Days of Week,23,spanish,Miércoles libre,Libre el miércoles,Add article for natural phrasing
+chinese,16,Days of Week,23,french,Mercredi gratuit,Libre mercredi,Correct meaning to being free
+chinese,16,Days of Week,23,portuguese,Quarta-feira livre,Livre na quarta-feira,Use natural preposition
+chinese,16,Days of Week,24,french,Allez à l'hôpital jeudi,Aller à l'hôpital jeudi,Use neutral infinitive phrase
+chinese,16,Days of Week,25,french,Chèque de paie jeudi,Payé jeudi,Natural wording for payday
+chinese,16,Days of Week,39,pinyin,gōng zuò rì mò kōng,gōng zuò rì méi kòng,Correct pinyin for “no time on weekdays”
+chinese,16,Days of Week,39,french,Pas d'heure en semaine,Pas de temps en semaine,Accurate translation for lacking time
+chinese,16,Days of Week,39,portuguese,Não há horário durante a semana,Sem tempo durante a semana,More natural expression
+chinese,17,Months & Seasons,26,english,March starts school,School starts in March,Use natural word order
+chinese,17,Months & Seasons,26,spanish,Marzo inicia clases,Las clases empiezan en marzo,Natural phrasing for school start
+chinese,17,Months & Seasons,26,french,Mars commence l'école,L'école commence en mars,Natural phrasing for school start
+chinese,17,Months & Seasons,26,portuguese,Março inicia as aulas,As aulas começam em março,Natural phrasing for school start
+chinese,17,Months & Seasons,28,english,April Qingming,Qingming Festival in April,Clarify holiday reference
+chinese,17,Months & Seasons,28,spanish,Abril Qingming,Festival Qingming en abril,Clarify holiday reference
+chinese,17,Months & Seasons,28,french,Avril Qingming,Festival de Qingming en avril,Clarify holiday reference
+chinese,17,Months & Seasons,28,portuguese,Abril Qingming,Festival Qingming em abril,Clarify holiday reference
+chinese,17,Months & Seasons,29,english,April outing,Spring outing in April,Natural description of activity
+chinese,17,Months & Seasons,29,spanish,Salida de abril,Paseo primaveral en abril,Natural description of outing
+chinese,17,Months & Seasons,29,french,Sortie d'avril,Sortie printanière en avril,Natural description of outing
+chinese,17,Months & Seasons,29,portuguese,Passeio de abril,Passeio de primavera em abril,Natural description of outing
+chinese,17,Months & Seasons,34,english,July summer vacation,Summer vacation in July,Natural phrasing
+chinese,17,Months & Seasons,34,spanish,Vacaciones de verano de julio,Vacaciones de verano en julio,Natural phrasing
+chinese,17,Months & Seasons,34,french,Vacances d'été de juillet,Vacances d'été en juillet,Natural phrasing
+chinese,17,Months & Seasons,40,english,October National Day,National Day in October,Clarify time reference
+chinese,17,Months & Seasons,40,spanish,Día nacional de octubre,Día Nacional en octubre,Natural phrasing
+chinese,17,Months & Seasons,40,french,Fête nationale d'octobre,Fête nationale en octobre,Clarify timing
+chinese,17,Months & Seasons,40,portuguese,Dia nacional de outubro,Dia nacional em outubro,Clarify timing
+chinese,17,Months & Seasons,41,english,October Golden Autumn,Golden autumn in October,Natural phrasing
+chinese,17,Months & Seasons,41,spanish,Octubre otoño dorado,Otoño dorado en octubre,Natural phrasing
+chinese,17,Months & Seasons,41,french,Octobre automne doré,Automne doré en octobre,Natural phrasing
+chinese,17,Months & Seasons,41,portuguese,Outubro outono dourado,Outono dourado em outubro,Natural phrasing
+chinese,17,Months & Seasons,42,english,November enters winter,Winter begins in November,Use natural expression
+chinese,17,Months & Seasons,42,spanish,Noviembre entra en invierno,En noviembre llega el invierno,More natural phrasing
+chinese,17,Months & Seasons,42,french,Novembre entre en hiver,En novembre on entre dans l'hiver,More natural phrasing
+chinese,17,Months & Seasons,42,portuguese,Novembro entra no inverno,Em novembro começa o inverno,More natural phrasing
+chinese,17,Months & Seasons,45,english,December snows,It snows in December,Natural English phrasing
+chinese,17,Months & Seasons,45,spanish,Diciembre nieva,Nieva en diciembre,Natural phrasing
+chinese,17,Months & Seasons,45,portuguese,Dezembro neva,Neva em dezembro,Natural phrasing
+chinese,17,Months & Seasons,47,english,Spring sowing,Sow in spring,Use verb phrase for action
+chinese,17,Months & Seasons,47,spanish,Siembra de primavera,Sembrar en primavera,Use natural verb phrase
+chinese,17,Months & Seasons,47,french,Semis de printemps,Semer au printemps,Use natural verb phrase
+chinese,17,Months & Seasons,47,portuguese,Semeadura de primavera,Semear na primavera,Use natural verb phrase
+chinese,17,Months & Seasons,48,french,Natation d'été,Nager en été,Use common verb phrasing
+chinese,17,Months & Seasons,53,spanish,Comer estofado en el invierno,Comer hot pot en invierno,Use accurate food term
+chinese,17,Months & Seasons,53,portuguese,Comer panela quente no inverno,Comer hot pot no inverno,Use accurate food term
+chinese,18,Years & Calendar,6,french,l'année précédente,il y a deux ans,Correct meaning of year before last
+chinese,18,Years & Calendar,7,french,l'année d'après,dans deux ans,Use proper expression for year after next
+chinese,18,Years & Calendar,14,french,Époque/Décennie,Époque,Remove awkward slash and use common term
+chinese,18,Years & Calendar,30,english,Persist every year,Keep it up every year,More natural phrasing
+chinese,18,Years & Calendar,30,spanish,Persistir cada año,Mantenerlo cada año,More natural phrasing
+chinese,18,Years & Calendar,30,french,Persister chaque année,S'y tenir chaque année,More natural phrasing
+chinese,18,Years & Calendar,30,portuguese,Persistir todos os anos,Manter isso todos os anos,More natural phrasing
+chinese,19,Telling Time,15,french,heure,heure pile,Clarify meaning of on the hour
+chinese,19,Telling Time,21,spanish,varios minutos,¿Cuántos minutos?,Use correct question wording
+chinese,19,Telling Time,21,french,plusieurs minutes,Combien de minutes,Use correct question wording
+chinese,19,Telling Time,21,portuguese,vários minutos,Quantos minutos,Use correct question wording
+chinese,19,Telling Time,31,spanish,¿A qué hora,¿A qué hora?,Complete the question
+chinese,19,Telling Time,17,french,heure,moment,Use proper word for “moment”
+chinese,19,Telling Time,36,english,Sound the alarm,Alarm rings,Describe alarm sounding naturally
+chinese,19,Telling Time,36,spanish,Haz sonar la alarma,Suena la alarma,Natural description of alarm ringing
+chinese,19,Telling Time,36,french,Sonnez l'alarme,Le réveil sonne,Natural description of alarm ringing
+chinese,19,Telling Time,36,portuguese,Soe o alarme,O alarme toca,Natural description of alarm ringing
+chinese,19,Telling Time,44,english,Arrive early,Arrive ahead of time,Clarify arriving early
+chinese,19,Telling Time,44,spanish,Llegue temprano,Llegar con anticipación,Clarify arriving early
+chinese,19,Telling Time,44,french,Arrivez tôt,Arriver en avance,Clarify arriving early
+chinese,19,Telling Time,44,portuguese,Chegue cedo,Chegar adiantado,Clarify arriving early
+chinese,20,Numbers 11-100,32,english,At thirty established,Stand on your own at thirty,Use common saying meaning
+chinese,20,Numbers 11-100,32,spanish,establecido a los treinta,Sentar cabeza a los treinta,Natural rendering of idiom
+chinese,20,Numbers 11-100,32,french,établi à trente ans,Être établi à trente ans,Natural expression of idiom
+chinese,20,Numbers 11-100,32,portuguese,estabelecido aos trinta,Firmar-se aos trinta,Natural rendering of idiom
+chinese,20,Numbers 11-100,34,english,At forty no confusion,No more doubts at forty,Clearer idiom meaning
+chinese,20,Numbers 11-100,34,spanish,sin confusión a los cuarenta,Sin dudas a los cuarenta,Clearer idiom meaning
+chinese,20,Numbers 11-100,34,french,sans confusion à quarante ans,Sans doutes à quarante ans,Clearer idiom meaning
+chinese,20,Numbers 11-100,34,portuguese,sem confusão aos quarenta,Sem dúvidas aos quarenta,Clearer idiom meaning
+chinese,21,More Measure Words,5,english,pass,time,Use correct measure word meaning
+chinese,21,More Measure Words,5,spanish,pasar,vez,Use correct measure word meaning
+chinese,21,More Measure Words,5,french,passer,fois,Use correct measure word meaning
+chinese,21,More Measure Words,5,portuguese,passar,vez,Use correct measure word meaning
+chinese,21,More Measure Words,9,spanish,campo,evento,Correct meaning of measure word
+chinese,21,More Measure Words,9,french,champ,événement,Correct meaning of measure word
+chinese,21,More Measure Words,9,portuguese,campo,evento,Correct meaning of measure word
+chinese,21,More Measure Words,10,spanish,mesa,aparato,Use appropriate item for classifier
+chinese,21,More Measure Words,10,french,tableau,appareil,Use appropriate item for classifier
+chinese,21,More Measure Words,10,portuguese,mesa,aparelho,Use appropriate item for classifier
+chinese,21,More Measure Words,12,english,seat,building (mw),Use correct classifier meaning
+chinese,21,More Measure Words,12,spanish,asiento,edificio (clas.),Use correct classifier meaning
+chinese,21,More Measure Words,12,french,siège,bâtiment (class.),Use correct classifier meaning
+chinese,21,More Measure Words,12,portuguese,assento,prédio (class.),Use correct classifier meaning
+chinese,21,More Measure Words,13,english,layer,floor,Use common meaning in context
+chinese,21,More Measure Words,13,spanish,capa,piso,Use correct everyday term
+chinese,21,More Measure Words,13,french,couche,étage,Use correct everyday term
+chinese,21,More Measure Words,13,portuguese,camada,andar,Use correct everyday term
+chinese,21,More Measure Words,17,english,string,string/bunch,Clarify classifier meaning
+chinese,21,More Measure Words,17,spanish,cadena,racimo,Use common word for grouped items
+chinese,21,More Measure Words,17,french,chaîne,grappe,Use common word for grouped items
+chinese,21,More Measure Words,17,portuguese,cadeia de caracteres,cacho,Use common word for grouped items
+chinese,21,More Measure Words,18,spanish,grupo,ramo,Use natural term for a bunch of flowers
+chinese,21,More Measure Words,18,french,groupe,bouquet,Use natural term for a bunch of flowers
+chinese,21,More Measure Words,18,portuguese,bando,ramalhete,Use natural term for a bunch of flowers
+chinese,21,More Measure Words,42,portuguese,Um chão,Um andar,Use correct word for building floor
+chinese,22,More Action Verbs,11,spanish,regresar,devolver,Use correct verb for returning items
+chinese,22,More Action Verbs,11,french,retour,rendre,Use correct verb for returning items
+chinese,22,More Action Verbs,11,portuguese,retornar,devolver,Use correct verb for returning items
+chinese,22,More Action Verbs,13,portuguese,aprenda,aprender,Use infinitive instead of imperative
+chinese,22,More Action Verbs,14,portuguese,pergunte,perguntar,Use infinitive instead of imperative
+chinese,22,More Action Verbs,15,spanish,respuesta,responder,Use verb form not noun
+chinese,22,More Action Verbs,15,french,réponse,répondre,Use verb form not noun
+chinese,22,More Action Verbs,17,spanish,saber,conocer,Use proper verb for knowing people
+chinese,22,More Action Verbs,17,french,savoir,connaître,Use proper verb for knowing people
+chinese,22,More Action Verbs,17,portuguese,sei,conhecer,Use infinitive for knowing someone
+chinese,22,More Action Verbs,18,spanish,recuerda,recordar,Use infinitive instead of imperative
+chinese,22,More Action Verbs,18,french,souviens-toi,se souvenir,Use infinitive instead of imperative
+chinese,22,More Action Verbs,18,portuguese,lembre-se,lembrar,Use infinitive instead of imperative
+chinese,22,More Action Verbs,22,portuguese,colocar para baixo,abaixar,Use natural verb for putting down
+chinese,22,More Action Verbs,24,portuguese,tirar,levar embora,Use correct verb for taking away
+chinese,22,More Action Verbs,28,french,Ramasser quelqu'un,Aller chercher quelqu'un,Use natural phrase for picking someone up
+chinese,22,More Action Verbs,28,portuguese,Pegue alguém,Buscar alguém,Use natural phrase for picking someone up
+chinese,22,More Action Verbs,50,french,Dites-vous,Te dire,Use correct phrasing for “tell you”
+chinese,22,More Action Verbs,56,spanish,Olvídate,Olvidar,Use infinitive instead of imperative
+chinese,22,More Action Verbs,56,portuguese,Esqueça,Esquecer,Use infinitive instead of imperative
+chinese,22,More Action Verbs,58,english,Move,Move house,Clarify meaning of moving residence
+chinese,22,More Action Verbs,58,spanish,Mover,Mudarse,Use correct verb for moving house
+chinese,22,More Action Verbs,58,french,Déplacer,Déménager,Use correct verb for moving house
+chinese,22,More Action Verbs,58,portuguese,Mover,Mudar de casa,Use correct verb for moving house
+chinese,22,More Action Verbs,60,portuguese,Afaste-se,Afastar,Use infinitive instead of imperative
+chinese,23,Daily Actions,6,english,Shower,Take a shower,Use natural verb phrase
+chinese,23,Daily Actions,6,spanish,Ducha,Ducharse,Use verb instead of noun
+chinese,23,Daily Actions,6,french,Douche,Prendre une douche,Use verb phrase instead of noun
+chinese,23,Daily Actions,6,portuguese,Chuveiro,Tomar banho,Use natural verb phrase
+chinese,24,Places & Locations,9,spanish,Hoteles,Hotel,Use singular common form
+chinese,24,Places & Locations,9,portuguese,Hotéis,Hotel,Use singular common form
+chinese,25,Directions & Positions,41,portuguese,Oposto,Em frente,Use natural expression for “across from”
+chinese,26,Basic Transportation,4,english,Driving,Drive,Use base verb form
+chinese,26,Basic Transportation,4,french,Conduite,Conduire,Use verb instead of noun
+chinese,26,Basic Transportation,4,portuguese,Dirigindo,Dirigir,Use base verb form
+chinese,26,Basic Transportation,7,spanish,Taxi,Tomar un taxi,Use verb phrase for taking a taxi
+chinese,26,Basic Transportation,7,french,Taxis,Prendre un taxi,Use correct singular form
+chinese,26,Basic Transportation,8,french,Taxis,Taxi,Use correct singular noun
+chinese,26,Basic Transportation,24,spanish,Conducir,Irse conduciendo,Reflect driving away meaning
+chinese,26,Basic Transportation,24,french,Conduire,Partir en voiture,Reflect driving away meaning
+chinese,26,Basic Transportation,24,portuguese,Dirigir,Sair dirigindo,Reflect driving away meaning
+chinese,26,Basic Transportation,43,spanish,En avión,Tomar un avión,Use verb phrase for taking a plane
+chinese,26,Basic Transportation,45,spanish,En barco,Tomar un barco,Use verb phrase for taking a ship
+chinese,27,Colors,29,spanish,Protección ambiental verde,Ecológico,Use common adjective for eco-friendly
+chinese,27,Colors,29,french,Protection de l'environnement vert,Écologique,Use common adjective for eco-friendly
+chinese,27,Colors,29,portuguese,Proteção ambiental verde,Ecológico,Use common adjective for eco-friendly
+chinese,27,Colors,37,spanish,Romance morado,Romance púrpura,Use more natural color term
+chinese,27,Colors,38,english,Orange orange,Orange-colored orange,Avoid awkward repetition
+chinese,27,Colors,38,spanish,Naranja naranja,Naranja de color naranja,Clarify description naturally
+chinese,27,Colors,38,french,Orange orange,Orange de couleur orange,Clarify description naturally
+chinese,27,Colors,38,portuguese,Laranja laranja,Laranja de cor laranja,Clarify description naturally
+chinese,27,Colors,39,english,Orange warmth,Orange feels warm,Use natural phrasing
+chinese,27,Colors,39,spanish,Calidez naranja,El naranja es cálido,Use natural phrasing
+chinese,27,Colors,39,french,Chaleur orange,L'orange est chaleureux,Use natural phrasing
+chinese,27,Colors,39,portuguese,Calor laranja,O laranja é acolhedor,Use natural phrasing
+chinese,27,Colors,41,english,Pink cute,Pink is cute,Add verb for natural sentence
+chinese,27,Colors,41,spanish,Rosa lindo,El rosa es lindo,Add article and verb for natural sentence
+chinese,27,Colors,41,french,Rose mignon,Le rose est mignon,Add article and verb for natural sentence
+chinese,27,Colors,41,portuguese,Rosa fofo,O rosa é fofo,Add article and verb for natural sentence
+chinese,27,Colors,44,portuguese,Luz Solar Dourada,Luz solar dourada,Use natural capitalization
+chinese,27,Colors,43,portuguese,Cabelo Castanho,Cabelo castanho,Use standard capitalization

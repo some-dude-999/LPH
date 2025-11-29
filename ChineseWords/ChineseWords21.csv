@@ -2,20 +2,20 @@ chinese,pinyin,english,spanish,french,portuguese
 盒,hé,box,caja,boîte,caixa
 袋,dài,bag,bolsa,sac,bolsa
 份,fèn,portion,porción,partie,porção
-遍,biàn,pass,pasar,passer,passar
+遍,biàn,time,vez,fois,vez
 趟,tàng,trip,viaje,voyage,viagem
 顿,dùn,meal,comida,repas,refeição
 节,jié,section,sección,rubrique,seção
-场,chǎng,event,campo,champ,campo
-台,tái,machine,mesa,tableau,mesa
+场,chǎng,event,evento,événement,evento
+台,tái,machine,aparato,appareil,aparelho
 辆,liàng,vehicle,vehículo,véhicule,veículo
-座,zuò,seat,asiento,siège,assento
-层,céng,layer,capa,couche,camada
+座,zuò,building (mw),edificio (clas.),bâtiment (class.),prédio (class.)
+层,céng,floor,piso,étage,andar
 间,jiān,room,habitación,chambre,quarto
 棵,kē,tree,árbol,arbre,árvore
 朵,duǒ,flower,flor,fleur,flor
-串,chuàn,string,cadena,chaîne,cadeia de caracteres
-束,shù,bunch,grupo,groupe,bando
+串,chuàn,string/bunch,racimo,grappe,cacho
+束,shù,bunch,ramo,bouquet,ramalhete
 堆,duī,pile,pila,tas,pilha
 一盒糖,yī hé táng,a box of candy,una caja de dulces,une boîte de bonbons,uma caixa de doces
 几盒,jǐ hé,a few boxes,algunas cajas,quelques cartons,algumas caixas
@@ -39,7 +39,7 @@ chinese,pinyin,english,spanish,french,portuguese
 几辆,jǐ liàng,A few,Algunos,Quelques,Alguns
 一座山,yī zuò shān,A mountain,Una montaña,Une montagne,Uma montanha
 几座,jǐ zuò,A few,Algunos,Quelques,Alguns
-一层楼,yī céng lóu,A floor,Un piso,Un étage,Um chão
+一层楼,yī céng lóu,A floor,Un piso,Un étage,Um andar
 几层,jǐ céng,Several floors,Varios pisos,Plusieurs étages,Vários andares
 一间房,yī jiān fáng,A room,Una habitación,Une chambre,Um quarto
 几间,jǐ jiān,Several rooms,Varias habitaciones,Plusieurs pièces,Vários quartos
