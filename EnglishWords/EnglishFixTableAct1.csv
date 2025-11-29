@@ -1,3 +1,19 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,3,Numbers & Counting,42,spanish,primer tiempo,primera vez,Wrong word sense - primer tiempo means first half (sports) not first time - need everyday translation primera vez
-spanish,3,Numbers & Counting,60,spanish,último tiempo,última vez,Wrong word sense - último tiempo means last half (sports) not last time - need everyday translation última vez
+spanish,1,Greetings,6,spanish,buen día,buenos días,Use the standard greeting with plural for morning.
+spanish,1,Greetings,17,spanish,bueno,vale,Common conversational equivalent for “okay” in greetings.
+spanish,1,Greetings,27,spanish,decir adios,decir adiós,Add missing accent mark for the natural spelling.
+portuguese,1,Greetings,27,portuguese,diga adeus,dizer adeus,Use infinitive to match the English verb phrase.
+spanish,1,Greetings,30,spanish,buenos dias sol,buenos días sol,Add missing accent for natural spelling.
+spanish,1,Greetings,31,spanish,buenos dias para ti,buenos días para ti,Add missing accent for the usual greeting.
+spanish,2,Numbers 1-20,8,spanish,Siete,siete,Lowercase for standard noun form.
+portuguese,2,Numbers 1-20,8,portuguese,Sete,sete,Lowercase to match standard form.
+spanish,3,Numbers 21-1000,9,spanish,centenar,cien,Use the common word for “one hundred.”
+portuguese,3,Numbers 21-1000,9,portuguese,centenas,cem,Use the everyday term for “one hundred.”
+chinese,3,Numbers 21-1000,12,chinese,第一的,第一,Remove unnatural 的; ordinal form doesn’t take 的 here.
+spanish,3,Numbers 21-1000,22,spanish,treinta dias,treinta días,Add the accent on “días.”
+spanish,3,Numbers 21-1000,27,spanish,cincuenta dolares,cincuenta dólares,Correct missing accent for natural spelling.
+spanish,3,Numbers 21-1000,39,spanish,mil dolares,mil dólares,Add missing accent to match standard spelling.
+spanish,4,Articles & Demonstratives,6,spanish,eso,ese,Use the common demonstrative for “that” before a noun.
+portuguese,4,Articles & Demonstratives,6,portuguese,que,aquele,Use the correct demonstrative for “that.”
+portuguese,4,Articles & Demonstratives,10,portuguese,todo,cada,Use “cada” for “every” in this context.
+pinyin,3,Numbers 21-1000,12,pinyin,dì yī de,dì yī,Remove extra syllable after updating Chinese text.
