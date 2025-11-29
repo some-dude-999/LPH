@@ -1,24 +1,24 @@
 spanish,english,chinese,pinyin,portuguese
 olvido,I forget,遗忘,yí wàng,esquecimento
 olvidas,you forget,你忘记了,nǐ wàng jì le,você esquece
-olvida,forget,忘记,wàng jì,esquecer
+olvida,he/she forgets,忘记,wàng jì,esquece
 olvidamos,we forget,我们忘记了,wǒ men wàng jì le,esquecemos
-olvidáis,you forget,你忘记了,nǐ wàng jì le,você esquece
-olvidan,forget,忘记,wàng jì,esquecer
-olvidar,forget,忘记,wàng jì,esquecer
-olvidarse,forget,忘记,wàng jì,esquecer
+olvidáis,you (plural) forget,你们忘记了,nǐ men wàng jì le,vocês esquecem
+olvidan,they forget,忘记,wàng jì,esquecem
+olvidar,to forget,忘记,wàng jì,esquecer
+olvidarse,to forget,忘记,wàng jì,esquecer-se
 olvidadizo,forgetful,健忘,jiàn wàng,esquecido
 olvidos,forgetfulness,健忘,jiàn wàng,esquecimento
-yo olvido,I forget,我忘了,wǒ wàng le,Eu esqueci
+yo olvido,I forget,我忘了,wǒ wàng le,Eu esqueço
 no olvido,I don't forget,我没有忘记,wǒ méi yǒu wàng jì,Não esqueço
 tú olvidas,you forget,你忘记了,nǐ wàng jì le,você esquece
 lo olvidas,you forget,你忘记了,nǐ wàng jì le,você esquece
 él olvida,he forgets,他忘记了,tā wàng jì le,ele esquece
-lo olvida,forget it,算了,suàn le,esqueça
+lo olvida,he/she forgets it,他忘记它,tā wàng jì tā,ele esquece disso
 nosotros olvidamos,we forget,我们忘记了,wǒ men wàng jì le,esquecemos
 lo olvidamos,we forget,我们忘记了,wǒ men wàng jì le,esquecemos
-vosotros olvidáis,you forget,你忘记了,nǐ wàng jì le,você esquece
-lo olvidáis,you forget it,你忘记了,nǐ wàng jì le,você esquece
+vosotros olvidáis,you (plural) forget,你们忘记了,nǐ men wàng jì le,vocês esquecem
+lo olvidáis,you (plural) forget it,你们忘记了它,nǐ men wàng jì le tā,vocês esquecem isso
 ellos olvidan,they forget,他们忘记了,tā men wàng jì le,eles esquecem
 lo olvidan,they forget,他们忘记了,tā men wàng jì le,eles esquecem
 no hay que olvidar,not to forget,不要忘记,bú yào wàng jì,para não esquecer
@@ -28,4 +28,4 @@ sin olvidarse,without forgetting,不要忘记,bú yào wàng jì,sem esquecer
 muy olvidadizo,very forgetful,很健忘,hěn jiàn wàng,muito esquecido
 soy olvidadizo,I'm forgetful,我很健忘,wǒ hěn jiàn wàng,Estou esquecido
 los olvidos,the forgetfulness,健忘,jiàn wàng,o esquecimento
-muchos olvidos,many forgetfulness,许多健忘,xǔ duō jiàn wàng,muitos esquecimentos
+muchos olvidos,many lapses,许多健忘,xǔ duō jiàn wàng,muitos esquecimentos
