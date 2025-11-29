@@ -30,18 +30,76 @@
 // ════════════════════════════════════════════════════════════════════════════
 
 /**
- * MODULE_URLS - URLs to obfuscated JavaScript modules
+ * MODULE_SETS - Predefined module arrays for each language
  *
- * IMPORTANT: This must be set by the game BEFORE calling loadAct()
- * Different games load different language sets.
- *
- * Example:
- *   window.MODULE_URLS = [
- *     './SpanishWords/Jsmodules-js/act1-foundation-js.js',
- *     './SpanishWords/Jsmodules-js/act2-building-blocks-js.js'
- *   ];
+ * All three language module sets are defined here for easy switching.
+ * Games can switch between languages using the debug mode language selector.
  */
-window.MODULE_URLS = window.MODULE_URLS || [];
+window.MODULE_SETS = {
+  spanish: [
+    '../SpanishWords/Jsmodules-js/act1-foundation-js.js',
+    '../SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
+    '../SpanishWords/Jsmodules-js/act3-daily-life-js.js',
+    '../SpanishWords/Jsmodules-js/act4-expanding-expression-js.js',
+    '../SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js',
+    '../SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js',
+    '../SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js'
+  ],
+  chinese: [
+    '../ChineseWords/Jsmodules-js/act1-foundation-js.js',
+    '../ChineseWords/Jsmodules-js/act2-development-js.js',
+    '../ChineseWords/Jsmodules-js/act3-expansion-js.js',
+    '../ChineseWords/Jsmodules-js/act4-mastery-js.js',
+    '../ChineseWords/Jsmodules-js/act5-refinement-js.js'
+  ],
+  english: [
+    '../EnglishWords/Jsmodules-js/act1-foundation-js.js',
+    '../EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
+    '../EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
+    '../EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
+    '../EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
+  ],
+  none: []
+};
+
+/**
+ * Current language selection (persisted in localStorage)
+ * Can be changed via debug mode language selector
+ */
+window.currentLanguage = localStorage.getItem('selected_language') || 'chinese';
+
+/**
+ * MODULE_URLS - Active module URLs based on current language selection
+ *
+ * This array is automatically set from MODULE_SETS based on currentLanguage.
+ * Games should NOT override this - use switchLanguage() instead.
+ */
+window.MODULE_URLS = window.MODULE_SETS[window.currentLanguage];
+
+/**
+ * Switch language and reload modules
+ *
+ * @param {string} language - 'spanish', 'chinese', or 'english'
+ *
+ * This function switches the active language, saves preference to localStorage,
+ * and instructs the game to reload. Called from debug mode language selector.
+ */
+function switchLanguage(language) {
+  if (!window.MODULE_SETS[language]) {
+    console.error(`Invalid language: ${language}`);
+    return;
+  }
+
+  // Save preference
+  localStorage.setItem('selected_language', language);
+  window.currentLanguage = language;
+  window.MODULE_URLS = window.MODULE_SETS[language];
+
+  console.log(`[Language Switch] Switched to ${language}. Reloading page...`);
+
+  // Reload the page to reinitialize with new language modules
+  window.location.reload();
+}
 
 // ════════════════════════════════════════════════════════════════════════════
 // MODULE LOADING & DECODING
@@ -607,6 +665,65 @@ function initializeDebugUI() {
     padding-bottom: 5px;
   `;
   debugContainer.appendChild(title);
+
+  // Language Selector
+  const languageSelector = document.createElement('div');
+  languageSelector.style.cssText = `
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(232, 212, 152, 0.2);
+  `;
+
+  const languageLabel = document.createElement('div');
+  languageLabel.textContent = 'Language:';
+  languageLabel.style.cssText = `
+    color: #E8D498;
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+  `;
+  languageSelector.appendChild(languageLabel);
+
+  const languageRadios = document.createElement('div');
+  languageRadios.style.cssText = `
+    display: flex;
+    gap: 12px;
+  `;
+
+  // Create radio buttons for each language
+  ['chinese', 'spanish', 'english'].forEach(lang => {
+    const label = document.createElement('label');
+    label.style.cssText = `
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      color: #ddd;
+    `;
+
+    const radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = 'debug-language';
+    radio.value = lang;
+    radio.checked = window.currentLanguage === lang;
+    radio.style.cssText = `
+      cursor: pointer;
+    `;
+
+    radio.addEventListener('change', () => {
+      if (radio.checked) {
+        switchLanguage(lang);
+      }
+    });
+
+    const langName = lang.charAt(0).toUpperCase() + lang.slice(1);
+    label.appendChild(radio);
+    label.appendChild(document.createTextNode(langName));
+    languageRadios.appendChild(label);
+  });
+
+  languageSelector.appendChild(languageRadios);
+  debugContainer.appendChild(languageSelector);
 
   // Simulate buttons
   const buttonsContainer = document.createElement('div');

@@ -1478,6 +1478,133 @@ Use **DecoderTest.html** to verify all obfuscated files decode correctly:
 
 ---
 
+## 🔄 CODE REUSABILITY - CRITICAL ARCHITECTURAL PRINCIPLE
+**CRITICAL: Maximize code reuse across all language learning games. Minimize duplication.**
+
+### The Core Principle
+
+**ALL language learning games share 95% of the same logic.** The ONLY differences between games are:
+- **Visual rendering** (flashcards vs grids vs lists vs other layouts)
+- **CSS styling** (colors, fonts, animations specific to that game's theme)
+- **Game-specific interactions** (card flip vs tile click vs other mechanics)
+
+**Everything else is IDENTICAL and MUST be in shared modules.**
+
+### What MUST Be in Shared Modules
+
+#### **wordpack-logic.js** - Core Game Logic (THE BIGGEST FILE)
+**This file contains ALL logic that works across hundreds of games:**
+
+| Category | Functions/Features |
+|----------|-------------------|
+| **Module Loading** | `MODULE_SETS`, `switchLanguage()`, `loadAct()`, `decodeObfuscatedModule()` |
+| **Language Detection** | `getTargetLanguage()`, `isChineseMode()`, `getTtsLanguageCode()`, `getTranslationsConfig()` |
+| **Metadata Helpers** | `getWordColumns()`, `getValidLanguages()`, `getDefaultTranslation()` |
+| **Chinese + Pinyin** | `coupleChineseWithPinyin()`, `renderChineseWithPinyin()`, `renderChineseText()`, `getChineseHtml()` |
+| **Typing Mechanics** | `handleTypingInput()`, `initializeTypingDisplay()`, `isWritingComplete()`, `normalizeChar()`, `findNextTypingPosition()`, `checkTypingKey()`, `isWordComplete()` |
+| **Text-to-Speech (TTS)** | `loadVoices()`, `populateVoiceSelector()`, `speakTargetWord()`, `setSpeed()` |
+| **Speech Recognition** | `startListening()`, `levenshteinDistance()`, `calculateSimilarity()`, `showFeedback()`, `getFeedbackMessage()`, `getScoreClass()` |
+| **State Management** | `saveState()`, `loadState()`, `restoreSavedState()` |
+| **Deck Management** | `initializeDeck()`, `combineAndShuffleWords()`, `shuffleArray()`, `restartCurrentPack()`, `goToNextPack()` |
+| **Right/Wrong Behavior** | `removeCurrentCard()`, `addConfusedCards()`, `resetDeck()` |
+| **UI Population** | `populateActSelector()`, `populateLanguageSelector()`, `updateWordpackTitle()`, `updateBackLabel()` |
+| **Mode Switching** | `switchMode()`, `MODES` object |
+| **Rendering** | `renderTypingDisplay()`, `renderTargetWord()`, `renderTranslation()` |
+| **Tooltips** | `initializeTooltips()`, `createButtonTooltip()`, `TOOLTIP_MESSAGES` |
+| **Debug Mode** | `toggleDebugMode()`, `updateDebugTable()`, `initializeDebugUI()` (including language selector) |
+
+#### **game-sounds.js** - All Audio Assets
+**Every game uses the SAME sounds:**
+- `playCardFlipSound()` - Page turn sound
+- `playDingSound()` - Success bell
+- `playBuzzSound()` - Failure buzz
+- `playButtonClickSound()` - UI click
+- `playScribbleSound()` - Typing click
+- `getAudioContext()` - Singleton audio context
+
+### What STAYS in Individual Game Files
+
+**Only 3 things stay in game-specific HTML files:**
+
+1. **Visual Rendering Logic**
+   - How to display the deck (flashcard flip, grid layout, list view, etc.)
+   - Example flashcard-specific: `flipCard()`, `unflipCard()`, `generateWeathering()`
+
+2. **CSS Styling**
+   - All visual appearance (colors, fonts, animations, layouts)
+   - Game-specific themes and designs
+
+3. **Wrapper Functions for Scope Access**
+   - Example: `updateDebugTableWrapper()` that passes local variables to shared functions
+   - These are necessary because shared modules can't access game-local scope
+
+### The 1-10 Reusability Scale
+
+When deciding if something belongs in wordpack-logic.js, rate it:
+
+| Rating | Meaning | Action |
+|--------|---------|--------|
+| **10/10** | Used in EVERY game, core functionality | **MUST be in wordpack-logic.js** |
+| **7-9/10** | Used in most games, general concept | **Should be in wordpack-logic.js** |
+| **4-6/10** | Borderline, might vary per game | **Discuss and decide** |
+| **1-3/10** | Game-specific visual/interaction | **Keep in game file** |
+
+### Language Switching (Debug Mode)
+
+**ALL games support switching between Chinese, Spanish, and English** via debug mode:
+
+1. **Press Ctrl+`** to open debug mode
+2. **Select language** via radio buttons (Chinese, Spanish, English)
+3. **Page reloads** with new language modules
+4. **Preference persists** in localStorage (`selected_language`)
+
+**Implementation:**
+- `MODULE_SETS` object in wordpack-logic.js contains all 3 language module URLs
+- `switchLanguage()` function handles the switch and reload
+- Language selector is part of `initializeDebugUI()` in wordpack-logic.js
+
+### Examples of What to Move
+
+**❌ WRONG - Duplicate typing logic across games:**
+```javascript
+// FlashcardTypingGame.html
+function handleTypingInput(key) { /* typing logic */ }
+
+// GridMemoryGame.html
+function handleTypingInput(key) { /* SAME typing logic - DUPLICATION! */ }
+
+// ListQuizGame.html
+function handleTypingInput(key) { /* SAME typing logic - DUPLICATION! */ }
+```
+
+**✅ CORRECT - Shared typing logic:**
+```javascript
+// wordpack-logic.js (ONCE!)
+function handleTypingInput(key) { /* typing logic */ }
+
+// FlashcardTypingGame.html (imports wordpack-logic.js)
+// GridMemoryGame.html (imports wordpack-logic.js)
+// ListQuizGame.html (imports wordpack-logic.js)
+// All games use the SAME function from the shared module
+```
+
+### Enforcement Rules
+
+1. **NEVER copy-paste functions between game files** - Move to shared module instead
+2. **ALWAYS check wordpack-logic.js first** - Function might already exist
+3. **If you see the same function in 2+ games** - It belongs in wordpack-logic.js
+4. **Game files should be SMALL** - Mostly imports, CSS, and game-specific rendering
+
+### Why This Matters
+
+- **Single source of truth**: Fix a bug once, fixed in all games
+- **Consistency**: All games behave the same way (typing, TTS, speech recognition, etc.)
+- **Maintainability**: Easier to update features across all games
+- **Smaller game files**: Each game file is just a "skin" on top of core logic
+- **Faster development**: New games are mostly just CSS + rendering, logic already exists
+
+---
+
 ## ⚠️ Remember
 1. **Check for PythonHelpers/link_manager.py first - use it if it exists!**
 2. **Not on main = useless code**

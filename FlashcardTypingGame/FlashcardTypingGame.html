@@ -2003,70 +2003,14 @@
     //   - Future: Can easily add other languages by uncommenting module URLs
     // ============================================================
 
-    // Decoder function for obfuscated modules (same as DecoderTest.html)
-    async function decodeObfuscatedModule(url) {
-      try {
-        // 1. Import the obfuscated module (contains base64 string in 'w' export)
-        const module = await import(url);
-        const compressedB64 = module.w;
-
-        // 2. Decode base64 to binary
-        const compressedBinary = Uint8Array.from(atob(compressedB64), c => c.charCodeAt(0));
-
-        // 3. Decompress with pako (zlib)
-        const decompressedBinary = pako.inflate(compressedBinary);
-
-        // 4. Convert binary to string
-        const reversedJson = new TextDecoder('utf-8').decode(decompressedBinary);
-
-        // 5. Reverse the string (undo the salt)
-        const jsonStr = reversedJson.split('').reverse().join('');
-
-        // 6. Parse JSON to get the original data
-        const data = JSON.parse(jsonStr);
-
-        return data;  // Returns object with all packs: { p1_1_name: {meta, words}, ... }
-      } catch (error) {
-        console.error('Failed to decode module:', error);
-        throw error;
-      }
-    }
-
     // ============================================================
-    // MODULE URL SETS - Predefined module arrays for each language
+    // decodeObfuscatedModule() is now in wordpack-logic.js
     // ============================================================
-    const MODULE_SETS = {
-      spanish: [
-        '../SpanishWords/Jsmodules-js/act1-foundation-js.js',
-        '../SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
-        '../SpanishWords/Jsmodules-js/act3-daily-life-js.js',
-        '../SpanishWords/Jsmodules-js/act4-expanding-expression-js.js',
-        '../SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js',
-        '../SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js',
-        '../SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js'
-      ],
-      chinese: [
-        '../ChineseWords/Jsmodules-js/act1-foundation-js.js',
-        '../ChineseWords/Jsmodules-js/act2-development-js.js',
-        '../ChineseWords/Jsmodules-js/act3-expansion-js.js',
-        '../ChineseWords/Jsmodules-js/act4-mastery-js.js',
-        '../ChineseWords/Jsmodules-js/act5-refinement-js.js'
-      ],
-      english: [
-        '../EnglishWords/Jsmodules-js/act1-foundation-js.js',
-        '../EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
-        '../EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
-        '../EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
-        '../EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
-      ],
-      none: []
-    };
-
-    // Current module set key (for debug selector) - persisted in localStorage
-    let currentModuleSet = localStorage.getItem('debug_module_set') || 'spanish';
-
-    // Active MODULE_URLS - set from MODULE_SETS based on selection
-    let MODULE_URLS = MODULE_SETS[currentModuleSet];
+    // MODULE CONFIGURATION - Now in wordpack-logic.js
+    // ============================================================
+    // MODULE_SETS, currentLanguage, and MODULE_URLS are defined in wordpack-logic.js
+    // Language can be switched via debug mode (Ctrl+` then select language)
+    // Preference persists in localStorage as 'selected_language'
 
     let wordpacks = {}; // All loaded wordpacks
     let loadedActs = {}; // Track which acts have been loaded
