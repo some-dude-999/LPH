@@ -132,6 +132,30 @@ function shuffleArray(array) {
   return shuffled;
 }
 
+/**
+ * Combines base and example words while keeping pedagogical ordering
+ * (base words first) and shuffling within each section.
+ *
+ * @param {Object} pack - Wordpack with baseWords/exampleWords arrays
+ * @returns {Array<{word: Array, type: string}>} - Combined/shuffled list
+ */
+function combineAndShuffleWords(pack) {
+  const baseWords = pack?.baseWords || [];
+  const exampleWords = pack?.exampleWords || [];
+
+  const shuffledBase = shuffleArray(baseWords).map(word => ({
+    word,
+    type: 'Base Word'
+  }));
+
+  const shuffledExamples = shuffleArray(exampleWords).map(word => ({
+    word,
+    type: 'Example Word'
+  }));
+
+  return [...shuffledBase, ...shuffledExamples];
+}
+
 // ════════════════════════════════════════════════════════════════════════════
 // CHARACTER NORMALIZATION (Typing Validation)
 // ════════════════════════════════════════════════════════════════════════════
@@ -163,6 +187,21 @@ function normalizeChar(char) {
 
 // Alias for compatibility with existing code
 window.normalizeCharForTyping = normalizeChar;
+
+/**
+ * Normalizes an entire string for comparison (accent/case-insensitive).
+ *
+ * @param {string} str - Input string
+ * @returns {string} - Normalized string
+ */
+function normalizeString(str) {
+  if (!str) return '';
+  return normalizeChar(str)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+}
 
 // ════════════════════════════════════════════════════════════════════════════
 // TYPING VALIDATION - Space Handling (CRITICAL!)
@@ -369,6 +408,310 @@ function renderChineseText(chinese, pinyin) {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// SOUND EFFECTS (Web Audio API)
+// ════════════════════════════════════════════════════════════════════════════
+
+window.audioContext = window.audioContext || null;
+
+function getAudioContext() {
+  if (!window.audioContext) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    window.audioContext = new AudioContext();
+  }
+  return window.audioContext;
+}
+
+function playDingSound() {
+  const ctx = getAudioContext();
+  const now = ctx.currentTime;
+  const frequencies = [523.25, 659.25, 783.99]; // C5, E5, G5 chord
+
+  frequencies.forEach((freq, i) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+
+    filter.type = 'lowpass';
+    filter.frequency.value = 1500;
+
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+
+    const vol = 0.2 - i * 0.04;
+    gain.gain.setValueAtTime(0, now);
+    gain.gain.linearRampToValueAtTime(vol, now + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(now + i * 0.03);
+    osc.stop(now + 0.7);
+  });
+}
+
+function playBuzzSound() {
+  const ctx = getAudioContext();
+  const now = ctx.currentTime;
+  const notes = [293.66, 220]; // D4, A3
+
+  notes.forEach((freq, i) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+
+    filter.type = 'lowpass';
+    filter.frequency.value = 800;
+
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+
+    const startTime = now + i * 0.12;
+    gain.gain.setValueAtTime(0, startTime);
+    gain.gain.linearRampToValueAtTime(0.2, startTime + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.15);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(startTime);
+    osc.stop(startTime + 0.15);
+  });
+}
+
+function playButtonClickSound() {
+  const ctx = getAudioContext();
+  const now = ctx.currentTime;
+
+  const bufferSize = ctx.sampleRate * 0.03;
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  for (let i = 0; i < bufferSize; i++) {
+    data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 4.5);
+  }
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+
+  const lp = ctx.createBiquadFilter();
+  lp.type = 'lowpass';
+  lp.frequency.value = 800;
+  lp.Q.value = 0.7;
+
+  const lp2 = ctx.createBiquadFilter();
+  lp2.type = 'lowpass';
+  lp2.frequency.value = 1200;
+
+  const osc = ctx.createOscillator();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(120, now);
+  osc.frequency.exponentialRampToValueAtTime(60, now + 0.025);
+
+  const oscGain = ctx.createGain();
+  oscGain.gain.setValueAtTime(0.05, now);
+  oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
+
+  const gain = ctx.createGain();
+  gain.gain.value = 0.75;
+
+  source.connect(lp);
+  lp.connect(lp2);
+  lp2.connect(gain);
+  gain.connect(ctx.destination);
+  osc.connect(oscGain);
+  oscGain.connect(ctx.destination);
+
+  source.start();
+  osc.start();
+  osc.stop(now + 0.04);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SPEECH RECOGNITION HELPERS
+// ════════════════════════════════════════════════════════════════════════════
+
+function levenshteinDistance(str1, str2) {
+  const m = str1.length;
+  const n = str2.length;
+
+  const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
+
+  for (let i = 0; i <= m; i++) dp[i][0] = i;
+  for (let j = 0; j <= n; j++) dp[0][j] = j;
+
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (str1[i - 1] === str2[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1];
+      } else {
+        dp[i][j] = 1 + Math.min(
+          dp[i - 1][j],
+          dp[i][j - 1],
+          dp[i - 1][j - 1]
+        );
+      }
+    }
+  }
+
+  return dp[m][n];
+}
+
+function calculateSimilarity(expected, heard) {
+  if (!expected || !heard) return 0;
+  const exp = expected.trim().toLowerCase();
+  const hrd = heard.trim().toLowerCase();
+
+  const distance = levenshteinDistance(exp, hrd);
+  const maxLen = Math.max(exp.length, hrd.length, 1);
+
+  return ((maxLen - distance) / maxLen) * 100;
+}
+
+function getFeedbackMessage(score) {
+  if (score === 100) return 'Perfect! Great pronunciation!';
+  if (score >= 85) return 'Excellent! Very close!';
+  if (score >= 70) return 'Good job! Keep practicing!';
+  if (score >= 50) return 'Not bad! Try again.';
+  return 'Keep practicing! Listen and repeat.';
+}
+
+function getScoreClass(score) {
+  if (score === 100) return 'score-perfect';
+  if (score >= 85) return 'score-excellent';
+  if (score >= 70) return 'score-good';
+  if (score >= 50) return 'score-fair';
+  return 'score-try-again';
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// TEXT-TO-SPEECH HELPERS
+// ════════════════════════════════════════════════════════════════════════════
+
+function getTtsLanguageCode(actMetaMap = window.loadedActMeta || {}) {
+  for (const actNum of Object.keys(actMetaMap)) {
+    const meta = actMetaMap[actNum];
+    if (meta && meta.wordColumns && meta.wordColumns[0]) {
+      const primaryLang = meta.wordColumns[0].toLowerCase();
+      const langMap = {
+        spanish: 'es-ES',
+        chinese: 'zh-CN',
+        english: 'en-US',
+        portuguese: 'pt-BR',
+        french: 'fr-FR',
+        vietnamese: 'vi-VN',
+        thai: 'th-TH',
+        indonesian: 'id-ID',
+        malay: 'ms-MY',
+        filipino: 'fil-PH'
+      };
+      return langMap[primaryLang] || null;
+    }
+  }
+  return null;
+}
+
+async function loadVoices(actMetaMap = window.loadedActMeta || {}, savedVoiceURI = null) {
+  const ttsLangCode = getTtsLanguageCode(actMetaMap);
+  if (!ttsLangCode) return { voices: [], currentVoice: null };
+
+  const voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(ttsLangCode));
+  const currentVoice = savedVoiceURI
+    ? voices.find(v => v.voiceURI === savedVoiceURI) || null
+    : null;
+
+  return { voices, currentVoice };
+}
+
+function speakWord(text, voice = null, rate = 0.9, langCode = null) {
+  if (!('speechSynthesis' in window)) return;
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  if (voice) utterance.voice = voice;
+  if (langCode) utterance.lang = langCode;
+  utterance.rate = rate;
+  speechSynthesis.speak(utterance);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// GAME MECHANICS HELPERS
+// ════════════════════════════════════════════════════════════════════════════
+
+function autoSelectFirstActAndPack(loadedData) {
+  if (!loadedData || Object.keys(loadedData).length === 0) {
+    return null;
+  }
+
+  const firstAct = Math.min(...Object.keys(loadedData).map(Number));
+  const actData = loadedData[firstAct];
+  if (!actData) return null;
+
+  const firstPackKey = Object.keys(actData)[0];
+  return { act: firstAct, pack: firstPackKey };
+}
+
+function generateWrongAnswers(actData, correctAnswer, count = 4, columnIndex = 0) {
+  const normalizedCorrect = normalizeString(correctAnswer);
+  const allWords = [];
+
+  Object.keys(actData || {}).forEach(packKey => {
+    const pack = actData[packKey];
+    const words = combineAndShuffleWords(pack);
+
+    words.forEach(wordObj => {
+      const word = wordObj.word;
+      const target = word[columnIndex];
+
+      if (target !== correctAnswer) {
+        const normalizedWord = normalizeString(target);
+        if (normalizedWord !== normalizedCorrect) {
+          allWords.push(target);
+        }
+      }
+    });
+  });
+
+  for (let i = allWords.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allWords[i], allWords[j]] = [allWords[j], allWords[i]];
+  }
+
+  return allWords.slice(0, Math.min(count, allWords.length));
+}
+
+function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) {
+  const normalizedCorrect = normalizeString(correctAnswer);
+  const allWords = [];
+
+  Object.keys(actData || {}).forEach(packKey => {
+    const pack = actData[packKey];
+    const words = combineAndShuffleWords(pack);
+
+    words.forEach(wordObj => {
+      const word = wordObj.word;
+      const chineseText = word[0];
+      const pinyinText = word[1];
+
+      if (chineseText !== correctAnswer) {
+        const normalizedWord = normalizeString(chineseText);
+        if (normalizedWord !== normalizedCorrect) {
+          allWords.push({ text: chineseText, pinyin: pinyinText });
+        }
+      }
+    });
+  });
+
+  for (let i = allWords.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allWords[i], allWords[j]] = [allWords[j], allWords[i]];
+  }
+
+  return allWords.slice(0, Math.min(count, allWords.length));
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // EXPORT FOR MODULE SYSTEMS (optional - currently using globals)
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -377,12 +720,28 @@ if (typeof module !== 'undefined' && module.exports) {
     decodeObfuscatedModule,
     loadAct,
     shuffleArray,
+    combineAndShuffleWords,
     normalizeChar,
+    normalizeString,
     findNextTypingPosition,
     checkTypingKey,
     isWordComplete,
     coupleChineseWithPinyin,
     renderChineseWithPinyin,
-    renderChineseText
+    renderChineseText,
+    getAudioContext,
+    playDingSound,
+    playBuzzSound,
+    playButtonClickSound,
+    levenshteinDistance,
+    calculateSimilarity,
+    getFeedbackMessage,
+    getScoreClass,
+    getTtsLanguageCode,
+    loadVoices,
+    speakWord,
+    autoSelectFirstActAndPack,
+    generateWrongAnswers,
+    generateWrongAnswersWithPinyin
   };
 }
