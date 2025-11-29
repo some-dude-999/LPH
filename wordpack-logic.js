@@ -221,57 +221,216 @@ function getAudioContext() {
 
 function playDingSound() {
   const ctx = getAudioContext();
-  const osc = ctx.createOscillator();
-  const gain = ctx.createGain();
+  const now = ctx.currentTime;
+  const frequencies = [523.25, 659.25, 783.99];
 
-  osc.connect(gain);
-  gain.connect(ctx.destination);
+  frequencies.forEach((freq, i) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
 
-  osc.frequency.setValueAtTime(800, ctx.currentTime);
-  osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
+    filter.type = 'lowpass';
+    filter.frequency.value = 1500;
 
-  gain.gain.setValueAtTime(0.15, ctx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+    osc.type = 'sine';
+    osc.frequency.value = freq;
 
-  osc.start(ctx.currentTime);
-  osc.stop(ctx.currentTime + 0.3);
+    const vol = 0.2 - i * 0.04;
+    gain.gain.setValueAtTime(0, now);
+    gain.gain.linearRampToValueAtTime(vol, now + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(now + i * 0.03);
+    osc.stop(now + 0.7);
+  });
 }
 
 function playBuzzSound() {
   const ctx = getAudioContext();
-  const osc = ctx.createOscillator();
-  const gain = ctx.createGain();
+  const now = ctx.currentTime;
+  const notes = [293.66, 220];
 
-  osc.connect(gain);
-  gain.connect(ctx.destination);
+  notes.forEach((freq, i) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
 
-  osc.type = 'sawtooth';
-  osc.frequency.setValueAtTime(150, ctx.currentTime);
-  osc.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 0.2);
+    filter.type = 'lowpass';
+    filter.frequency.value = 800;
 
-  gain.gain.setValueAtTime(0.1, ctx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+    osc.type = 'sine';
+    osc.frequency.value = freq;
 
-  osc.start(ctx.currentTime);
-  osc.stop(ctx.currentTime + 0.2);
+    const startTime = now + i * 0.12;
+    gain.gain.setValueAtTime(0, startTime);
+    gain.gain.linearRampToValueAtTime(0.2, startTime + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.15);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(startTime);
+    osc.stop(startTime + 0.15);
+  });
 }
 
 function playButtonClickSound() {
   const ctx = getAudioContext();
+  const now = ctx.currentTime;
+
+  const bufferSize = ctx.sampleRate * 0.03;
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  for (let i = 0; i < bufferSize; i++) {
+    data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 4.5);
+  }
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+
+  const lp = ctx.createBiquadFilter();
+  lp.type = 'lowpass';
+  lp.frequency.value = 800;
+  lp.Q.value = 0.7;
+
+  const lp2 = ctx.createBiquadFilter();
+  lp2.type = 'lowpass';
+  lp2.frequency.value = 1200;
+
   const osc = ctx.createOscillator();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(120, now);
+  osc.frequency.exponentialRampToValueAtTime(60, now + 0.025);
+
+  const oscGain = ctx.createGain();
+  oscGain.gain.setValueAtTime(0.05, now);
+  oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
+
   const gain = ctx.createGain();
+  gain.gain.value = 0.75;
 
-  osc.connect(gain);
+  source.connect(lp);
+  lp.connect(lp2);
+  lp2.connect(gain);
   gain.connect(ctx.destination);
+  osc.connect(oscGain);
+  oscGain.connect(ctx.destination);
 
-  osc.frequency.setValueAtTime(600, ctx.currentTime);
-  osc.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + 0.05);
+  source.start();
+  osc.start();
+  osc.stop(now + 0.04);
+}
 
-  gain.gain.setValueAtTime(0.08, ctx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.05);
+function playCardFlipSound() {
+  const ctx = getAudioContext();
+  const bufferSize = ctx.sampleRate * 0.23;
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
 
-  osc.start(ctx.currentTime);
-  osc.stop(ctx.currentTime + 0.05);
+  for (let i = 0; i < bufferSize; i++) {
+    const t = i / bufferSize;
+    const env = Math.sin(t * Math.PI) * Math.sin(t * Math.PI * 0.38) * 0.26;
+    data[i] = (Math.random() * 2 - 1) * env;
+  }
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+
+  const lp = ctx.createBiquadFilter();
+  lp.type = 'lowpass';
+  lp.frequency.value = 400;
+
+  const lp2 = ctx.createBiquadFilter();
+  lp2.type = 'lowpass';
+  lp2.frequency.value = 580;
+
+  const gain = ctx.createGain();
+  gain.gain.value = 2.5;
+
+  source.connect(lp);
+  lp.connect(lp2);
+  lp2.connect(gain);
+  gain.connect(ctx.destination);
+  source.start();
+}
+
+function playKeyboardSound() {
+  const ctx = getAudioContext();
+  const bufferSize = ctx.sampleRate * 0.04;
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  for (let i = 0; i < bufferSize; i++) {
+    data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 5);
+  }
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+
+  const hp = ctx.createBiquadFilter();
+  hp.type = 'highpass';
+  hp.frequency.value = 2000;
+
+  const bp = ctx.createBiquadFilter();
+  bp.type = 'bandpass';
+  bp.frequency.value = 4500;
+  bp.Q.value = 2;
+
+  const gain = ctx.createGain();
+  gain.gain.value = 0.3;
+
+  source.connect(hp);
+  hp.connect(bp);
+  bp.connect(gain);
+  gain.connect(ctx.destination);
+  source.start();
+}
+
+function playScribbleSound() {
+  const ctx = getAudioContext();
+  const duration = 0.015 + Math.random() * 0.01;
+  const bufferSize = ctx.sampleRate * duration;
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  for (let i = 0; i < bufferSize; i++) {
+    const envelope = Math.pow(1 - i / bufferSize, 8);
+    const noise = (Math.random() * 2 - 1);
+    data[i] = noise * envelope;
+  }
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+
+  const bp1 = ctx.createBiquadFilter();
+  bp1.type = 'bandpass';
+  bp1.frequency.value = 2000 + Math.random() * 1500;
+  bp1.Q.value = 4.0;
+
+  const bp2 = ctx.createBiquadFilter();
+  bp2.type = 'bandpass';
+  bp2.frequency.value = 1000 + Math.random() * 500;
+  bp2.Q.value = 2.5;
+
+  const hp = ctx.createBiquadFilter();
+  hp.type = 'highpass';
+  hp.frequency.value = 400;
+
+  const gain = ctx.createGain();
+  gain.gain.value = 0.8;
+
+  source.connect(hp);
+  hp.connect(bp1);
+  bp1.connect(bp2);
+  bp2.connect(gain);
+  gain.connect(ctx.destination);
+  source.start();
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -541,6 +700,9 @@ if (typeof module !== 'undefined' && module.exports) {
     playDingSound,
     playBuzzSound,
     playButtonClickSound,
+    playCardFlipSound,
+    playKeyboardSound,
+    playScribbleSound,
     // Speech recognition
     levenshteinDistance,
     calculateSimilarity,
