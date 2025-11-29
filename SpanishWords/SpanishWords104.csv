@@ -1,6 +1,6 @@
 spanish,english,chinese,pinyin,portuguese
 científico,scientist,科学家,kē xué jiā,cientista
-científica,scientist,科学,kē xué,científico
+científica,scientist,科学家,kē xué jiā,cientista
 experimento,experiment,实验,shí yàn,experimento
 investigación,research,研究,yán jiū,pesquisa
 descubrimiento,discovery,发现,fā xiàn,descoberta
@@ -13,15 +13,15 @@ método,method,方法,fāng fǎ,método
 tecnología,technology,技术,jì shù,tecnologia
 innovación,innovation,创新,chuàng xīn,inovação
 invento,invention,发明,fā míng,invenção
-descubrir,discover,发现,fā xiàn,descubra
+descubrir,discover,发现,fā xiàn,descobrir
 investigar,investigate,调查,diào chá,investigar
 observación,observation,观察,guān chá,observação
 variable,variable,变量,biàn liàng,variável
 constante,constant,常数,cháng shù,constante
 el científico,the scientist,科学家,kē xué jiā,o cientista
 un científico,a scientist,科学家,kē xué jiā,um cientista
-la científica,the scientist,科学家,kē xué jiā,o cientista
-una científica,a scientist,科学家,kē xué jiā,um cientista
+la científica,the scientist,科学家,kē xué jiā,a cientista
+una científica,a scientist,科学家,kē xué jiā,uma cientista
 el experimento,the experiment,实验,shí yàn,o experimento
 un experimento,an experiment,一个实验,yí gè shí yàn,um experimento
 la investigación,research,研究,yán jiū,pesquisa
@@ -46,7 +46,7 @@ la innovación,innovation,创新,chuàng xīn,inovação
 una innovación,an innovation,一项创新,yī xiàng chuàng xīn,uma inovação
 el invento,the invention,发明,fā míng,a invenção
 un invento,an invention,一项发明,yī xiàng fā míng,uma invenção
-hay que descubrir,must be discovered,必须被发现,bì xū bèi fā xiàn,deve ser descoberto
+hay que descubrir,have to discover,必须发现,bì xū fā xiàn,é preciso descobrir
 voy a descubrir,I'm going to discover,我会发现,wǒ huì fā xiàn,Vou descobrir
 hay que investigar,we have to investigate,我们必须调查,wǒ men bì xū diào chá,temos que investigar
 voy a investigar,I'm going to investigate,我要调查一下,wǒ yào diào chá yī xià,Vou investigar

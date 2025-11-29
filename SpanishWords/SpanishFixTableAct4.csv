@@ -1,121 +1,109 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,101,Law & Legal,8,english,cut,court,Wrong context - legal court not cutting
-spanish,101,Law & Legal,8,portuguese,cortar,corte,Legal court not verb to cut
-spanish,101,Law & Legal,13,portuguese,tudo bem,multa,Tudo bem = all good not fine (penalty)
-spanish,101,Law & Legal,14,portuguese,frase,sentença,Legal sentence not grammar sentence
-spanish,101,Law & Legal,18,english,test,evidence,Legal evidence not test
-spanish,101,Law & Legal,18,portuguese,teste,prova,Legal evidence/proof not test
-spanish,101,Law & Legal,31,portuguese,um teste,um julgamento,Trial not test
-spanish,101,Law & Legal,46,portuguese,a frase,a sentença,Legal sentence/verdict not grammar
-spanish,101,Law & Legal,47,portuguese,uma frase,uma sentença,Legal sentence/verdict not grammar
-spanish,101,Law & Legal,54,portuguese,o teste,a prova,Legal evidence not test
-spanish,101,Law & Legal,55,portuguese,um teste,uma prova,Legal evidence not test
-spanish,103,Forgetting,2,english,oblivion,I forget,Too formal - use common everyday word
-spanish,104,Science Terms,3,english,scientific,scientist,Feminine noun not adjective
-spanish,104,Science Terms,4,portuguese,experimentar,experimento,Noun experiment not verb
-spanish,106,Teaching,10,portuguese,professora,professor,Wrong gender - maestro is masculine
-spanish,106,Teaching,28,portuguese,a professora,o professor,Wrong gender - el maestro is masculine
-spanish,106,Teaching,29,portuguese,uma professora,um professor,Wrong gender - un maestro is masculine
-spanish,107,Environment & Nature,10,portuguese,óleo,petróleo,Petroleum not generic oil
-spanish,107,Environment & Nature,13,portuguese,solares,solar,Singular not plural
-spanish,107,Environment & Nature,14,portuguese,vento,eólica,Wind energy adjective not noun wind
-spanish,107,Environment & Nature,16,portuguese,limpar,limpo,Adjective clean not verb to clean
-spanish,107,Environment & Nature,19,portuguese,cuidado,cuidar,Verb to care not noun care
-spanish,107,Environment & Nature,20,portuguese,manter,conservar,Conserve not just maintain
-spanish,107,Environment & Nature,29,portuguese,lixo,jogar lixo,Littering action not just trash noun
-spanish,108,Changing,2,portuguese,mudar,mudança,Noun change not verb
-spanish,108,Changing,4,portuguese,mudanças,muda,Verb he/she changes not noun changes
-spanish,109,Improving,3,portuguese,melhorias,você melhora,Verb you improve not noun improvements
-spanish,110,Media & News,3,english,radius,radio,Radio broadcasting not radius geometry
-spanish,110,Media & News,3,portuguese,raio,rádio,Radio broadcasting not radius
-spanish,110,Media & News,8,portuguese,relatório,reportagem,Journalism report/story not general report
-spanish,110,Media & News,19,portuguese,pressione,imprensa,Press media not push button
-spanish,112,Getting & Achieving,2,portuguese,Eu entendo,Eu consigo,I get/achieve not I understand
-spanish,112,Getting & Achieving,5,portuguese,nós temos,nós conseguimos,We get/achieve not we have
-spanish,112,Getting & Achieving,15,portuguese,ele entende tudo,ele consegue tudo,He gets/achieves not understands
-spanish,113,Geography,6,portuguese,capitais,capital,Singular not plural
-spanish,113,Geography,9,english,status,state,Geographic state not status condition
-spanish,113,Geography,16,portuguese,simples,planície,Plain landform not simple adjective
-spanish,113,Geography,20,portuguese,Equador,equador,Equator geography not Ecuador country
-spanish,113,Geography,61,portuguese,o poste,o polo,Geographic pole not street pole
-spanish,115,Staying & Meeting,10,portuguese,conhecer,reunir-se,To meet/gather not to know
-spanish,115,Staying & Meeting,11,portuguese,veja,ver-se,To see each other not command see
-spanish,115,Staying & Meeting,18,portuguese,nós somos,nós ficamos,We stay/meet not we are
-spanish,115,Staying & Meeting,28,portuguese,conhecer,reunir-se,To meet/gather not to know
-spanish,115,Staying & Meeting,30,portuguese,para ser visto,para se ver,To see each other not to be seen
-spanish,115,Staying & Meeting,31,portuguese,deve ser visto,deve se ver,Must see each other not be seen
-spanish,116,Art & Culture,4,english,box,painting,Painting artwork not box container
-spanish,116,Art & Culture,4,portuguese,caixa,quadro,Painting not box
-spanish,116,Art & Culture,8,portuguese,trabalho,obra,Work of art not general work/job
-spanish,116,Art & Culture,12,portuguese,projeto,desenhar,Verb to design not noun project
-spanish,116,Art & Culture,14,portuguese,culturais,cultural,Singular not plural
-spanish,116,Art & Culture,15,portuguese,artístico,artística,Match gender feminine
-spanish,117,Arriving,2,english,arrived,I arrive,Present tense not past
-spanish,118,Happening,3,english,raisins,you pass,Verb not raisins dried grapes
-spanish,118,Happening,19,portuguese,nós tivemos,nós passamos,We spent/passed not we had
-spanish,119,Religion & Faith,10,english,cure,priest,Priest not cure healing
-spanish,119,Religion & Faith,12,english,magnet,imam,Islamic imam not magnet
-spanish,119,Religion & Faith,12,portuguese,ímã,imã,Imam religious leader not magnet
-spanish,119,Religion & Faith,15,english,sentence,prayer,Religious prayer not grammar sentence
-spanish,119,Religion & Faith,15,portuguese,frase,oração,Religious prayer not sentence
-spanish,119,Religion & Faith,21,english,mercy,piety,Piety/devotion not mercy
-spanish,119,Religion & Faith,21,portuguese,misericórdia,piedade,Piety not mercy
-spanish,119,Religion & Faith,42,portuguese,o ímã,o imã,Imam not magnet
-spanish,119,Religion & Faith,43,portuguese,um ímã,um imã,Imam not magnet
-spanish,119,Religion & Faith,48,portuguese,a frase,a oração,Prayer not sentence
-spanish,119,Religion & Faith,49,portuguese,uma frase,uma oração,A prayer not sentence
-spanish,119,Religion & Faith,52,portuguese,o santo,a santa,Feminine saint not masculine
-spanish,119,Religion & Faith,53,portuguese,um santo,uma santa,Feminine saint not masculine
-spanish,119,Religion & Faith,60,english,mercy,piety,Piety/devotion not mercy
-spanish,119,Religion & Faith,60,portuguese,misericórdia,piedade,Piety not mercy
-spanish,119,Religion & Faith,61,english,with mercy,with piety,With piety not mercy
-spanish,119,Religion & Faith,61,portuguese,com misericórdia,com piedade,With piety not mercy
-spanish,120,Letting & Leaving,4,portuguese,vamos,deixa,He/she lets/leaves not let's go
-spanish,121,Using,2,portuguese,usar,uso,Noun use or I use not verb infinitive
-spanish,121,Using,26,portuguese,o utilitário,a utilidade,Usefulness not utility vehicle
-spanish,122,Tools & Building,10,portuguese,perfurar,furadeira,Drill tool not verb to drill
-spanish,123,Telling & Counting,3,english,accounts,you count,Verb you count not noun accounts
-spanish,124,Creating,2,english,you believe,you create,You create not believe
-spanish,124,Creating,2,portuguese,você acredita,você cria,You create not believe
-spanish,124,Creating,5,english,you believe,you create,You create not believe
-spanish,124,Creating,5,portuguese,você acredita,você cria,You create not believe
-spanish,124,Creating,11,portuguese,elaborado,elaborar,Verb to elaborate not adjective
-spanish,124,Creating,12,english,you believe,you create,You create not believe
-spanish,124,Creating,12,portuguese,você acredita,você cria,You create not believe
-spanish,124,Creating,13,english,what do you think,what do you create,What do you create not think
-spanish,124,Creating,13,portuguese,o que você acha,o que você cria,What create not think
-spanish,124,Creating,18,english,you believe,you create,You create not believe
-spanish,124,Creating,18,portuguese,você acredita,você cria,You create not believe
-spanish,124,Creating,19,english,believe it,you create it,Create it not believe
-spanish,124,Creating,19,portuguese,acredite,você cria,Create it not believe
-spanish,124,Creating,21,english,they believe it,they create it,Create not believe
-spanish,124,Creating,21,portuguese,eles acreditam,eles criam,Create not believe
-spanish,125,Personality Types,2,portuguese,personagem,caráter,Personality character not story character
-spanish,125,Personality Types,12,english,unsafe,insecure,Insecure lacking confidence not unsafe
-spanish,125,Personality Types,18,english,lonely,solitary,Solitary preference not lonely sad
-spanish,125,Personality Types,21,portuguese,astúcia,astuto,Adjective cunning not noun
-spanish,126,Going Up,8,english,upload,go up,Go up/climb not upload files
-spanish,126,Going Up,8,portuguese,carregar,subir,Go up/climb not upload/load
-spanish,126,Going Up,9,portuguese,subir,subida,Noun ascent not verb
-spanish,126,Going Up,10,english,promotion,ascent,Ascent/climb not job promotion
-spanish,126,Going Up,13,english,I upload it,I raise it up,Raise/lift up not upload
-spanish,126,Going Up,13,portuguese,Eu carrego,Eu subo,I raise it up not upload
-spanish,126,Going Up,15,english,you upload it,you raise it,Raise up not upload
-spanish,126,Going Up,15,portuguese,você carrega,você sobe,Raise up not upload
-spanish,126,Going Up,17,english,upload it,raise it,Raise up not upload
-spanish,126,Going Up,17,portuguese,carregue-o,suba,Raise up not upload
-spanish,126,Going Up,19,english,we upload it,we raise it,Raise up not upload
-spanish,126,Going Up,19,portuguese,nós carregamos,nós subimos,Raise up not upload
-spanish,126,Going Up,21,english,you upload it,you raise it,Raise up not upload
-spanish,126,Going Up,21,portuguese,você carrega,você sobe,Raise up not upload
-spanish,126,Going Up,23,english,they upload it,they raise it,Raise up not upload
-spanish,126,Going Up,23,portuguese,eles carregam,eles sobem,Raise up not upload
-spanish,127,Going Down,3,english,lows,you go down,Verb you go down not noun lows
-spanish,127,Going Down,3,portuguese,mínimos,você desce,You go down not minimums
-spanish,127,Going Down,12,english,low,I lower it,I lower it not adjective low
-spanish,137,Math Operations,17,portuguese,poder,potência,Mathematical power not political power
-spanish,139,Cooking,3,english,kitchens,you cook,Verb you cook not noun kitchens
-spanish,139,Cooking,4,english,kitchen,cooks,Verb he/she cooks not noun kitchen
-spanish,139,Cooking,9,portuguese,cozinhar,cozinheira,Noun female cook not verb to cook
-spanish,140,History Terms,17,english,heroin,heroine,Female hero not drug
-spanish,140,History Terms,39,portuguese,coroa imperador,coroar imperador,Verb to crown not noun crown
+spanish,101,Law & Legal,3,portuguese,advogado,advogada,Correct feminine form
+spanish,101,Law & Legal,6,english,judgment,trial,Use common legal meaning for juicio
+spanish,101,Law & Legal,9,portuguese,criminalidade,crime,Use common singular for crime
+spanish,101,Law & Legal,10,portuguese,criminalidade,crime,Use common singular for crime
+spanish,101,Law & Legal,20,english,demand,lawsuit,"Theme is legal actions, not requests"
+spanish,101,Law & Legal,20,portuguese,demanda,processo,Use Portuguese term for lawsuit
+spanish,101,Law & Legal,24,portuguese,o advogado,a advogada,Match feminine article
+spanish,101,Law & Legal,25,portuguese,um advogado,uma advogada,Match feminine article
+spanish,101,Law & Legal,28,portuguese,o juiz,a juíza,Correct feminine form for judge
+spanish,101,Law & Legal,29,portuguese,um juiz,uma juíza,Correct feminine article
+spanish,101,Law & Legal,46,chinese,这句话,判决,Use legal sense of sentence
+spanish,101,Law & Legal,47,chinese,一句话,判决,Use legal sense of sentence
+spanish,101,Law & Legal,54,english,the test,the evidence,Use legal meaning of prueba
+spanish,101,Law & Legal,54,chinese,测试,证据,Use legal meaning of prueba
+spanish,101,Law & Legal,54,pinyin,cè shì,zhèng jù,Match corrected Chinese term
+spanish,101,Law & Legal,55,english,a test,a piece of evidence,Use legal meaning of prueba
+spanish,101,Law & Legal,55,chinese,测试,证据,Use legal meaning of prueba
+spanish,101,Law & Legal,55,pinyin,cè shì,zhèng jù,Match corrected Chinese term
+spanish,102,Remembering (recordar),4,english,remember,he/she remembers,Use indicative meaning
+spanish,102,Remembering (recordar),4,chinese,记住,记得,Use neutral remember rather than imperative
+spanish,102,Remembering (recordar),4,pinyin,jì zhù,jì dé,Match corrected Chinese
+spanish,102,Remembering (recordar),4,portuguese,lembre-se,lembra,Use indicative present form
+spanish,102,Remembering (recordar),6,english,do you remember,you (plural) remember,Match vosotros form
+spanish,102,Remembering (recordar),6,chinese,你还记得,你们记得,Use plural you wording
+spanish,102,Remembering (recordar),6,portuguese,você se lembra,vocês se lembram,Use plural you form
+spanish,102,Remembering (recordar),7,english,remember,they remember,Use indicative meaning
+spanish,102,Remembering (recordar),7,chinese,记住,记得,Use neutral remember instead of imperative
+spanish,102,Remembering (recordar),7,pinyin,jì zhù,jì dé,Match corrected Chinese
+spanish,102,Remembering (recordar),7,portuguese,lembre-se,lembram,Use third-person plural present
+spanish,102,Remembering (recordar),8,english,remember,to remember,Use infinitive meaning
+spanish,102,Remembering (recordar),8,portuguese,lembre-se,lembrar,Use infinitive form
+spanish,102,Remembering (recordar),8,chinese,记住,记得,Use neutral remember
+spanish,102,Remembering (recordar),8,pinyin,jì zhù,jì dé,Match corrected Chinese
+spanish,102,Remembering (recordar),17,english,remember it,he/she remembers it,Use indicative meaning
+spanish,102,Remembering (recordar),17,chinese,记住它,他记得它,Use third-person phrasing
+spanish,102,Remembering (recordar),17,pinyin,jì zhù tā,tā jì de tā,Match corrected Chinese
+spanish,102,Remembering (recordar),17,portuguese,lembre-se disso,ele lembra disso,Use indicative third person
+spanish,102,Remembering (recordar),20,english,you remember,you (plural) remember,Match vosotros form
+spanish,102,Remembering (recordar),20,chinese,你还记得,你们记得,Use plural you wording
+spanish,102,Remembering (recordar),20,portuguese,você se lembra,vocês se lembram,Use plural you form
+spanish,102,Remembering (recordar),21,english,you remember,you (plural) remember it,Clarify plural direct object form
+spanish,102,Remembering (recordar),21,chinese,你还记得,你们记得它,Use plural you wording with object
+spanish,102,Remembering (recordar),21,portuguese,você se lembra,vocês se lembram disso,Use plural you form with object
+spanish,102,Remembering (recordar),22,english,they remember,they remember,
+spanish,102,Remembering (recordar),22,chinese,他们记得,他们记得,
+spanish,102,Remembering (recordar),22,portuguese,eles se lembram,eles se lembram,
+spanish,102,Remembering (recordar),30,chinese,内存,记忆,Use general word for memory not computer RAM
+spanish,102,Remembering (recordar),30,pinyin,nèi cún,jì yì,Match corrected Chinese term
+spanish,103,Forgetting (olvidar),4,english,forget,he/she forgets,Use indicative meaning
+spanish,103,Forgetting (olvidar),4,portuguese,esquecer,esquece,Use third-person present
+spanish,103,Forgetting (olvidar),6,english,you forget,you (plural) forget,Match vosotros form
+spanish,103,Forgetting (olvidar),6,chinese,你忘记了,你们忘记了,Use plural you wording
+spanish,103,Forgetting (olvidar),6,portuguese,você esquece,vocês esquecem,Use plural you form
+spanish,103,Forgetting (olvidar),7,english,forget,they forget,Use indicative meaning
+spanish,103,Forgetting (olvidar),7,portuguese,esquecer,esquecem,Use third-person plural present
+spanish,103,Forgetting (olvidar),8,english,forget,to forget,Use infinitive meaning
+spanish,103,Forgetting (olvidar),8,portuguese,esquecer,esquecer,Use infinitive instead of imperative
+spanish,103,Forgetting (olvidar),9,english,forget,to forget,Use reflexive infinitive meaning
+spanish,103,Forgetting (olvidar),9,portuguese,esquecer,esquecer-se,Use reflexive infinitive
+spanish,103,Forgetting (olvidar),12,portuguese,Eu esqueci,Eu esqueço,Use present tense to match Spanish
+spanish,103,Forgetting (olvidar),17,english,forget it,he/she forgets it,Use indicative meaning
+spanish,103,Forgetting (olvidar),17,chinese,算了,他忘记它,Use third-person forgets it
+spanish,103,Forgetting (olvidar),17,pinyin,suàn le,tā wàng jì tā,Match corrected Chinese
+spanish,103,Forgetting (olvidar),17,portuguese,esqueça,ele esquece disso,Use third-person present
+spanish,103,Forgetting (olvidar),20,english,you forget,you (plural) forget,Match vosotros form
+spanish,103,Forgetting (olvidar),20,chinese,你忘记了,你们忘记了,Use plural you wording
+spanish,103,Forgetting (olvidar),20,portuguese,você esquece,vocês esquecem,Use plural you form
+spanish,103,Forgetting (olvidar),21,english,you forget it,you (plural) forget it,Match plural form
+spanish,103,Forgetting (olvidar),21,chinese,你忘记了,你们忘记了它,Use plural you wording with object
+spanish,103,Forgetting (olvidar),21,portuguese,você esquece,vocês esquecem isso,Use plural you form with object
+spanish,103,Forgetting (olvidar),31,english,many forgetfulness,many lapses,Use natural phrase for repeated forgetting
+spanish,104,Science Terms,3,chinese,科学,科学家,Use feminine form meaning scientist
+spanish,104,Science Terms,3,pinyin,kē xué,kē xué jiā,Match corrected Chinese
+spanish,104,Science Terms,3,portuguese,científico,cientista,Use noun for female scientist
+spanish,104,Science Terms,16,portuguese,descubra,descobrir,Use infinitive form
+spanish,104,Science Terms,23,portuguese,o cientista,a cientista,Use feminine article
+spanish,104,Science Terms,24,portuguese,um cientista,uma cientista,Use feminine article
+spanish,104,Science Terms,49,english,must be discovered,have to discover,Use active obligation meaning
+spanish,104,Science Terms,49,chinese,必须被发现,必须发现,Use active voice for obligation
+spanish,104,Science Terms,49,pinyin,bì xū bèi fā xiàn,bì xū fā xiàn,Match corrected Chinese
+spanish,104,Science Terms,49,portuguese,deve ser descoberto,é preciso descobrir,Use active obligation phrasing
+spanish,105,Learning (aprender),4,english,learn,he/she learns,Use indicative meaning
+spanish,105,Learning (aprender),4,portuguese,aprenda,aprende,Use third-person present
+spanish,105,Learning (aprender),7,english,learn,they learn,Use indicative meaning
+spanish,105,Learning (aprender),7,portuguese,aprenda,aprendem,Use third-person plural present
+spanish,105,Learning (aprender),8,english,learn,to learn,Use infinitive meaning
+spanish,105,Learning (aprender),8,portuguese,aprenda,aprender,Use infinitive form
+spanish,105,Learning (aprender),11,portuguese,aprendendo,aprendizagem,Use noun for learning
+spanish,105,Learning (aprender),16,chinese,他学会了,他学习,Use ongoing present to match English
+spanish,105,Learning (aprender),17,portuguese,aprenda bem,aprende bem,Keep present tense instead of imperative
+spanish,105,Learning (aprender),20,portuguese,você aprende,vocês aprendem,Use plural you form
+spanish,105,Learning (aprender),21,portuguese,o que você aprende,o que vocês aprendem,Use plural you form
+spanish,105,Learning (aprender),30,portuguese,aprendendo,aprendizagem,Use noun for learning
+spanish,101,Law & Legal,46,pinyin,zhè jù huà,pàn jué,Update pinyin to match 判决
+spanish,101,Law & Legal,47,pinyin,yī jù huà,pàn jué,Update pinyin to match 判决
+spanish,102,Remembering (recordar),21,pinyin,nǐ hái jì de,nǐ men jì de tā,Match plural form and object
+spanish,103,Forgetting (olvidar),6,pinyin,nǐ wàng jì le,nǐ men wàng jì le,Match plural form
+spanish,103,Forgetting (olvidar),20,pinyin,nǐ wàng jì le,nǐ men wàng jì le,Match plural form
+spanish,103,Forgetting (olvidar),21,pinyin,nǐ wàng jì le,nǐ men wàng jì le tā,Match plural form with object
+spanish,105,Learning (aprender),16,pinyin,tā xué huì le,tā xué xí,Match corrected Chinese phrase
+spanish,101,Law & Legal,58,english,the demand,the lawsuit,Align with legal meaning
+spanish,101,Law & Legal,58,chinese,需求,诉讼,Use legal term
+spanish,101,Law & Legal,58,pinyin,xū qiú,sù sòng,Match legal term
+spanish,101,Law & Legal,58,portuguese,a demanda,o processo,Use common word for lawsuit
+spanish,101,Law & Legal,59,english,a demand,a lawsuit,Align with legal meaning
+spanish,101,Law & Legal,59,chinese,需求,诉讼,Use legal term
+spanish,101,Law & Legal,59,pinyin,xū qiú,sù sòng,Match legal term
+spanish,101,Law & Legal,59,portuguese,uma demanda,um processo,Use common word for lawsuit
