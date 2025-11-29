@@ -37,27 +37,27 @@
  */
 window.MODULE_SETS = {
   spanish: [
-    '../SpanishWords/Jsmodules-js/act1-foundation-js.js',
-    '../SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
-    '../SpanishWords/Jsmodules-js/act3-daily-life-js.js',
-    '../SpanishWords/Jsmodules-js/act4-expanding-expression-js.js',
-    '../SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js',
-    '../SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js',
-    '../SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js'
+    './SpanishWords/Jsmodules-js/act1-foundation-js.js',
+    './SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
+    './SpanishWords/Jsmodules-js/act3-daily-life-js.js',
+    './SpanishWords/Jsmodules-js/act4-expanding-expression-js.js',
+    './SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js',
+    './SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js',
+    './SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js'
   ],
   chinese: [
-    '../ChineseWords/Jsmodules-js/act1-foundation-js.js',
-    '../ChineseWords/Jsmodules-js/act2-development-js.js',
-    '../ChineseWords/Jsmodules-js/act3-expansion-js.js',
-    '../ChineseWords/Jsmodules-js/act4-mastery-js.js',
-    '../ChineseWords/Jsmodules-js/act5-refinement-js.js'
+    './ChineseWords/Jsmodules-js/act1-foundation-js.js',
+    './ChineseWords/Jsmodules-js/act2-development-js.js',
+    './ChineseWords/Jsmodules-js/act3-expansion-js.js',
+    './ChineseWords/Jsmodules-js/act4-mastery-js.js',
+    './ChineseWords/Jsmodules-js/act5-refinement-js.js'
   ],
   english: [
-    '../EnglishWords/Jsmodules-js/act1-foundation-js.js',
-    '../EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
-    '../EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
-    '../EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
-    '../EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
+    './EnglishWords/Jsmodules-js/act1-foundation-js.js',
+    './EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
+    './EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
+    './EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
+    './EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
   ],
   none: []
 };
