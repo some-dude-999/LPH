@@ -1,10 +1,10 @@
 english,chinese,pinyin,spanish,portuguese
 financial,金融,jīn róng,financiero,financeiro
-stock,股票,gǔ piào,valores,estoque
+stock,股票,gǔ piào,acción,ação
 index fund,指数基金,zhǐ shù jī jīn,fondo indexado,fundo de índice
 fund,基金,jī jīn,fondo,fundo
 asset,资产,zī chǎn,activo,ativo
-liability,负债,fù zhài,responsabilidad,responsabilidade
+liability,负债,fù zhài,pasivo,passivo
 equity,股权,gǔ quán,patrimonio,patrimônio líquido
 dividend,股息,gǔ xī,dividendo,dividendo
 portfolio,投资组合,tóu zī zǔ hé,cartera,portfólio
@@ -18,7 +18,7 @@ treasury,国库,guó kù,tesorería,tesouraria
 broker,经纪人,jīng jì rén,corredor,corretor
 hedge,对冲,duì chōng,cobertura,cobertura
 index,索引,suǒ yǐn,índice,índice
-yield,产量,chǎn liàng,rendimiento,rendimento
+yield,收益,chǎn liàng,rendimiento,rendimento
 financial advisor,财务顾问,cái wù gù wèn,asesor financiero,consultor financeiro
 financial planning,财务规划,cái wù guī huà,planificación financiera,planejamento financeiro
 stock market,股市,gǔ shì,mercado de valores,mercado de ações
@@ -57,5 +57,5 @@ hedge fund,对冲基金,duì chōng jī jīn,fondo de cobertura,fundo de hedge
 hedge against,对冲,duì chōng,protegerse contra,proteção contra
 stock index,股票指数,gǔ piào zhǐ shù,índice bursátil,índice de ações
 price index,价格指数,jià gé zhǐ shù,índice de precios,índice de preços
-high yield,高产,gāo chǎn,alto rendimiento,alto rendimento
-yield return,收益率回报,shōu yì lǜ huí bào,retorno de rendimiento,retorno de rendimento
+high yield,高收益,gāo shōu yì,alto rendimiento,alto rendimento
+yield return,投资回报率,shōu yì lǜ huí bào,rentabilidad,taxa de retorno

@@ -1,14 +1,77 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-pinyin,113,Business Basics,32,pinyin,zhī jiān de jìng zhēng zhuàn qǔ lì rùn,zhuàn qǔ lì rùn,Update pinyin to match Chinese 赚取利润
-pinyin,114,Finance Basics,7,pinyin,zé rèn,fù zhài,Update pinyin to match Chinese 负债
-pinyin,114,Finance Basics,3,pinyin,kù cún,gǔ piào,Update pinyin to match Chinese 股票
-portuguese,114,Finance Basics,13,portuguese,capitais,capital,Should be singular not plural
-portuguese,114,Finance Basics,19,portuguese,cerca viva,cobertura,Wrong context - cerca viva is plant hedge not financial hedge
-portuguese,116,Science Basics,3,portuguese,experimentar,experimento,Wrong form - should be noun not verb
-spanish,117,Biology Basics,2,spanish,celda,célula,Wrong word - celda is prison cell not biological cell
-spanish,118,Basic Chemistry & Physics,12,spanish,ola,onda,Wrong word - ola is ocean wave not physics wave
-portuguese,120,Mental Health Basics,2,portuguese,mentais,mental,Should be singular adjective not plural
-spanish,125,Cause & Effect,8,spanish,plomo,conducir,Wrong word - plomo is the metal lead not the verb
-spanish,125,Cause & Effect,14,spanish,tallo,provenir,Wrong word - tallo is plant stem not the verb stem from
-pinyin,126,Certainty & Probability,50,pinyin,kě yǐ kàn chū jī hū bù kě bì miǎn,jī hū bù kě bì miǎn,Update pinyin to match Chinese 几乎不可避免
-portuguese,129,Literature,10,portuguese,configuração,cenário,Wrong context - configuração is device settings not story setting
+chinese,113,Business Basics,3,chinese,导入,进口,More common term for importing goods
+chinese,113,Business Basics,3,pinyin,dǎo rù,jìn kǒu,Match corrected term
+spanish,113,Business Basics,26,spanish,productos de exportación,exportar productos,Use verb phrase matching English
+chinese,113,Business Basics,53,chinese,商家帐户,商家账户,Simpler modern term for merchant account
+spanish,114,Finance Basics,3,spanish,valores,acción,Use common word for stock share
+portuguese,114,Finance Basics,3,portuguese,estoque,ação,Correct financial sense of stock
+spanish,114,Finance Basics,7,spanish,responsabilidad,pasivo,Use financial term for liabilities
+portuguese,114,Finance Basics,7,portuguese,responsabilidade,passivo,Use financial term for liabilities
+chinese,114,Finance Basics,21,chinese,产量,收益,Use finance sense of yield
+chinese,114,Finance Basics,60,chinese,高产,高收益,Use financial term for high yield
+chinese,114,Finance Basics,61,chinese,收益率回报,投资回报率,More natural term for return/yield
+spanish,114,Finance Basics,61,spanish,retorno de rendimiento,rentabilidad,Simpler common term for investment return
+portuguese,114,Finance Basics,61,portuguese,retorno de rendimento,taxa de retorno,Natural phrase for investment return
+chinese,115,Marketing & Sales,6,chinese,观众,受众,Use marketing term for audience
+spanish,115,Marketing & Sales,9,spanish,lanzamiento,lanzar,Use verb to match English base form
+portuguese,115,Marketing & Sales,9,portuguese,lançamento,lançar,Use verb form to match English
+chinese,115,Marketing & Sales,20,chinese,转换,转化,Use marketing term for conversions
+spanish,116,Science Basics,15,spanish,variables,variable,Correct singular form
+portuguese,116,Science Basics,36,portuguese,observe com atenção,observar com atenção,Use infinitive form
+spanish,116,Science Basics,38,spanish,hipótesis de prueba,poner a prueba la hipótesis,Natural phrasing for testing a hypothesis
+portuguese,116,Science Basics,38,portuguese,hipótese de teste,testar a hipótese,Natural phrasing for testing a hypothesis
+portuguese,116,Science Basics,42,portuguese,corpo de prova,amostra de teste,Common term for a test specimen
+spanish,117,Biology Basics,6,spanish,especies,especie,Correct singular base term
+portuguese,117,Biology Basics,6,portuguese,espécies,espécie,Correct singular base term
+portuguese,117,Biology Basics,49,portuguese,adapte-se facilmente,adaptar-se facilmente,Use infinitive to match pattern
+spanish,118,Basic Chemistry & Physics,17,spanish,nucleares,nuclear,Correct singular adjective
+chinese,118,Basic Chemistry & Physics,32,chinese,体力,物理力,Use physics term for physical force
+chinese,118,Basic Chemistry & Physics,37,chinese,重力拉力,引力,More natural term for gravitational pull
+chinese,119,Health & Wellness,19,chinese,条件,状况,Use appropriate term for medical condition
+portuguese,119,Health & Wellness,41,portuguese,recuperar de uma doença,recuperar-se de uma doença,Use reflexive form for recovery
+spanish,120,Mental Health Basics,2,spanish,mentales,mental,Correct base adjective form
+portuguese,120,Mental Health Basics,53,portuguese,lidando com,lidar com,Use infinitive phrase for consistency
+spanish,121,Technology Advanced,5,spanish,robots,robot,Use singular base form
+spanish,121,Technology Advanced,16,spanish,grandes datos,big data,Use common loan term
+portuguese,121,Technology Advanced,16,portuguese,grandes dados,big data,Use standard term
+chinese,121,Technology Advanced,18,chinese,启动,初创公司,Use correct term for startup company
+chinese,121,Technology Advanced,18,pinyin,qǐ dòng,chū chuàng gōng sī,Match corrected Chinese term
+spanish,121,Technology Advanced,18,spanish,inicio,startup,Use common loanword for startup
+portuguese,121,Technology Advanced,18,portuguese,inicialização,startup,Use standard loanword for startup
+chinese,122,Academic Writing,31,chinese,摘要摘要,摘要概述,Remove repetition for abstract summary
+chinese,122,Academic Writing,46,chinese,正确解释,正确改述,Use correct term for paraphrasing
+portuguese,122,Academic Writing,46,portuguese,parafraseando corretamente,parafrasear corretamente,Use infinitive for consistency
+spanish,123,Philosophy & Ethics,5,spanish,moralidad,moral,Use correct adjective form
+portuguese,123,Philosophy & Ethics,5,portuguese,morais,moral,Use base singular adjective
+chinese,123,Philosophy & Ethics,13,chinese,值,价值,Use appropriate term for values in ethics
+spanish,124,Abstract Concepts,3,spanish,ideas,idea,Use singular base form
+spanish,124,Abstract Concepts,6,spanish,factores,factor,Use singular base form
+chinese,124,Abstract Concepts,20,chinese,尺寸,维度,Use correct term for dimension
+spanish,125,Cause & Effect,8,spanish,conducir,llevar,Use common verb for causing/leading to
+portuguese,125,Cause & Effect,8,portuguese,liderar,levar,Use verb meaning cause/lead to
+portuguese,125,Cause & Effect,14,portuguese,haste,originar-se,Correct verb for stemming from
+spanish,125,Cause & Effect,36,spanish,advertencia de activación,aviso de contenido sensible,Natural phrasing for trigger warning
+spanish,125,Cause & Effect,46,spanish,provienen de,proviene de,Use singular form to match base phrase
+spanish,125,Cause & Effect,48,spanish,proceden de,procede de,Use singular form to match base phrase
+spanish,125,Cause & Effect,49,spanish,se originan en,se origina en,Use singular form to match base phrase
+portuguese,125,Cause & Effect,17,portuguese,extrair,provocar,Use common verb for elicit
+portuguese,126,Certainty & Probability,3,portuguese,claro,certo,Use common adjective for being sure
+portuguese,126,Certainty & Probability,34,portuguese,provavelmente,mais provável,Use phrase matching "most likely"
+portuguese,126,Certainty & Probability,48,portuguese,evidente,evidente por si só,Clarify sense of self-evident
+spanish,127,Social Issues,3,spanish,sociales,social,Use singular base form
+portuguese,127,Social Issues,3,portuguese,sociais,social,Use base singular form
+chinese,129,Literature,10,chinese,设置,场景,Use narrative setting term
+spanish,129,Literature,10,spanish,ajuste,ambientación,Use literary term for setting
+chinese,129,Literature,16,chinese,图像,意象,Use literary term for imagery
+chinese,129,Literature,33,chinese,比喻比较,明喻比较,Clarify simile comparison phrase
+spanish,130,Art & Culture,3,spanish,culturales,cultural,Correct adjective form
+portuguese,130,Art & Culture,3,portuguese,culturais,cultural,Use singular base form
+chinese,130,Art & Culture,36,chinese,审美情趣,审美吸引力,More natural for aesthetic appeal
+chinese,130,Art & Culture,47,chinese,遗址,遗产地,Proper term for heritage site
+spanish,130,Art & Culture,60,spanish,musica barroca,música barroca,Add missing accent
+chinese,114,Finance Basics,60,pinyin,gāo chǎn,gāo shōu yì,Update pinyin to match corrected Chinese
+chinese,118,Basic Chemistry & Physics,32,pinyin,tǐ lì,wù lǐ lì,Pinyin must reflect updated term
+chinese,118,Basic Chemistry & Physics,37,pinyin,zhòng lì lā lì,yǐn lì,Align pinyin with new wording
+chinese,123,Philosophy & Ethics,13,pinyin,zhí,jià zhí,Pinyin should match corrected Chinese
+chinese,130,Art & Culture,36,pinyin,shěn měi qíng qù,shěn měi xī yǐn lì,Update pinyin for revised phrase
+chinese,130,Art & Culture,47,pinyin,yí zhǐ,yí chǎn dì,Pinyin must match corrected term
