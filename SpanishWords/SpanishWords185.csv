@@ -1,9 +1,9 @@
 spanish,english,chinese,pinyin,portuguese
 atracción,attraction,景点,jǐng diǎn,atração
 monumento,monument,纪念碑,jì niàn bēi,monumento
-hostal,hostel,宿舍,sù shè,albergue
+hostal,hostel,小旅馆,xiǎo lǚ guǎn,albergue
 pensión,guesthouse,民宿,mín sù,pensão
-albergue,hostel,宿舍,sù shè,albergue
+albergue,hostel,青年旅社,qīng nián lǚ shè,albergue
 guía,guide,导游,dǎo yóu,guia
 visitar,visit,参观,cān guān,visite
 itinerario,itinerary,行程,xíng chéng,itinerário
@@ -16,17 +16,17 @@ posada,inn,客栈,kè zhàn,pousada
 cabaña,cabin,小屋,xiǎo wū,cabana
 tienda de campaña,tent,帐篷,zhàng péng,barraca
 mochilero,backpacker,背包客,bēi bāo kè,mochileiro
-safari,safari,野生动物园,yě shēng dòng wù yuán,safári
-crucero,cruise,巡航,xún háng,cruzeiro
+safari,safari,野生动物观赏之旅,yě shēng dòng wù guān shǎng zhī lǚ,safári
+crucero,cruise,邮轮,yóu lún,cruzeiro
 la atracción,the attraction,景点,jǐng diǎn,a atração
 una atracción,an attraction,一个景点,yí gè jǐng diǎn,uma atração
 el monumento,the monument,纪念碑,jì niàn bēi,o monumento
 un monumento,a monument,一座纪念碑,yī zuò jì niàn bēi,um monumento
-el hostal,the hostel,宿舍,sù shè,o albergue
+el hostal,the hostel,小旅馆,xiǎo lǚ guǎn,o albergue
 un hostal,a hostel,旅馆,lǚ guǎn,um albergue
 la pensión,the guesthouse,民宿,mín sù,a pensão
 una pensión,a guesthouse,民宿,mín sù,uma pensão
-el albergue,the hostel,宿舍,sù shè,o albergue
+el albergue,the hostel,青年旅社,qīng nián lǚ shè,o albergue
 un albergue,a hostel,旅馆,lǚ guǎn,um albergue
 el guía,the guide,导游,dǎo yóu,o guia
 un guía,a guide,导游,dǎo yóu,um guia
@@ -36,8 +36,8 @@ el itinerario,the itinerary,行程,xíng chéng,o itinerário
 un itinerario,an itinerary,行程,xíng chéng,um itinerário
 el recorrido,the tour,游览,yóu lǎn,o passeio
 un recorrido,a tour,游览,yóu lǎn,um passeio
-la caminata,the walk,步行,bù xíng,a caminhada
-una caminata,a walk,散步,sàn bù,uma caminhada
+la caminata,the walk,徒步,tú bù,a caminhada
+una caminata,a walk,徒步,tú bù,uma caminhada
 el senderismo,hiking,徒步旅行,tú bù lǚ xíng,caminhadas
 de senderismo,hiking,徒步旅行,tú bù lǚ xíng,caminhadas
 el alojamiento,the accommodation,住宿,zhù sù,o alojamento
@@ -52,7 +52,7 @@ la tienda de campaña,the tent,帐篷,zhàng péng,a tenda
 una tienda de campaña,a tent,一个帐篷,yí gè zhàng péng,uma tenda
 el mochilero,the backpacker,背包客,bēi bāo kè,o mochileiro
 un mochilero,a backpacker,背包客,bēi bāo kè,um mochileiro
-el safari,the safari,野生动物园,yě shēng dòng wù yuán,o safári
-un safari,a safari,旅行,lǚ xíng,um safári
-el crucero,the cruise,游轮,yóu lún,o cruzeiro
+el safari,the safari,野生动物观赏之旅,yě shēng dòng wù guān shǎng zhī lǚ,o safári
+un safari,a safari,野生动物观赏之旅,yě shēng dòng wù guān shǎng zhī lǚ,um safári
+el crucero,the cruise,邮轮,yóu lún,o cruzeiro
 un crucero,a cruise,游轮,yóu lún,um cruzeiro
