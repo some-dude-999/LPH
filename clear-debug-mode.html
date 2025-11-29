@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clear Debug Mode</title>
+</head>
+<body>
+  <h1>Clear Debug Mode</h1>
+  <p>Click the button to clear debug mode from localStorage:</p>
+  <button onclick="clearDebugMode()">Clear Debug Mode</button>
+  <p id="status"></p>
+
+  <script>
+    function clearDebugMode() {
+      const wasSaved = localStorage.getItem('debug_mode');
+      localStorage.removeItem('debug_mode');
+      document.getElementById('status').textContent =
+        wasSaved
+          ? `✓ Cleared debug mode (was: ${wasSaved})`
+          : '✓ Debug mode was not set';
+    }
+
+    // Show current state
+    const current = localStorage.getItem('debug_mode');
+    document.getElementById('status').textContent =
+      current
+        ? `Current: debug_mode = ${current}`
+        : 'Debug mode is not set (default: OFF)';
+  </script>
+</body>
+</html>
