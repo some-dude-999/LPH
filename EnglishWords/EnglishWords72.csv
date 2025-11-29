@@ -1,23 +1,23 @@
 english,chinese,pinyin,spanish,portuguese
 jump,跳,tiào,saltar,pular
 leap,飞跃,fēi yuè,salto,salto
-lift,举起,jǔ qǐ,ascensor,levantar
+lift,举起,jǔ qǐ,levantar,levantar
 push,推,tuī,empujar,empurrar
 pull,拉,lā,tirar,puxar
 carry,携带,xié dài,llevar,carregar
 roll,卷,juǎn,rodar,rolar
 crawl,爬行,pá xíng,gatear,rastejar
-reach,到达,dào dá,alcance,alcance
+reach,到达,dào dá,alcanzar,alcançar
 bend,弯曲,wān qū,doblar,dobrar
-dash,冲刺,chōng cì,guión,traço
+dash,冲刺,chōng cì,correr,correr
 ascend,提升,tí shēng,ascender,ascender
 descend,下降,xià jiàng,descender,descer
 hover,悬停,xuán tíng,flotar,pairar
 glide,滑翔,huá xiáng,deslizarse,deslizar
-drift,漂移,piāo yí,deriva,deriva
+drift,漂移,piāo yí,derivar,derivar
 tumble,翻滚,fān gǔn,caer,tombo
 gallop,驰骋,chí chěng,galopar,galope
-sprint,冲刺,chōng cì,carrera de velocidad,corrida
+sprint,冲刺,chōng cì,esprintar,esprintar
 waddle,摇摇晃晃,yáo yáo huàng huǎng,contonearse,gingado
 jump up,跳起来,tiào qǐ lái,saltar,pular
 jump high,跳高,tiào gāo,saltar alto,pular alto
@@ -39,13 +39,13 @@ reach out,伸出手,shēn chū shǒu,llegar,entre em contato
 reach for,伸手去拿,shēn shǒu qù ná,alcanzar,alcançar
 bend over,弯腰,wān yāo,inclinarse,curvar-se
 bend down,弯下腰,wān xià yāo,agacharse,abaixe-se
-make a dash,破折号,pò zhé hào,haz una carrera,faça um traço
+make a dash,冲刺,chōng cì,haz una carrera,faça um traço
 dash away,冲走,chōng zǒu,huye,sair correndo
 ascend slowly,缓慢上升,huǎn màn shàng shēng,ascender lentamente,subir lentamente
 ascend the stairs,爬楼梯,pá lóu tī,subir las escaleras,subir as escadas
 descend quickly,快速下降,kuài sù xià jiàng,descender rápidamente,desça rapidamente
 descend the mountain,下山,xià shān,descender la montaña,descer a montanha
-hover over,将鼠标悬停在,jiāng shǔ biāo xuán tíng zài,pasa el cursor sobre,passe o mouse sobre
+hover over,悬停在...上方,xuán tíng zài... shàng fāng,pasa el cursor sobre,passe o mouse sobre
 hover around,上悬停在,shàng xuán tíng zài,flotar alrededor,passe o mouse
 glide through,周围滑过,zhōu wéi huá guò,deslizarse,deslizar
 glide across,滑过,huá guò,deslizarse,deslizar

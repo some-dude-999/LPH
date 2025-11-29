@@ -1,6 +1,6 @@
 english,chinese,pinyin,spanish,portuguese
 left,左,zuǒ,izquierda,esquerda
-right,对,duì,derecha,certo
+right,右,yòu,derecha,certo
 straight,直,zhí,recto,direto
 north,北,běi,norte,norte
 south,南,nán,sur,sul
@@ -14,7 +14,7 @@ away,离开,lí kāi,lejos,longe
 distance,距离,jù lí,distancia,distância
 direction,方向,fāng xiàng,dirección,direção
 map,地图,dì tú,mapa,mapa
-block,块,kuài,bloquear,bloquear
+block,街区,jiē qū,bloquear,bloquear
 intersection,交叉点,jiāo chā diǎn,intersección,interseção
 opposite,对面,duì miàn,opuesto,oposto
 navigate,导航,dǎo háng,navegar,navegar
@@ -49,7 +49,7 @@ wrong direction,方向错误,fāng xiàng cuò wù,dirección equivocada,direç�
 right direction,正确的方向,zhèng què de fāng xiàng,dirección correcta,direção certa
 use a map,使用地图,shǐ yòng dì tú,utilizar un mapa,use um mapa
 check the map,查看地图,chá kàn dì tú,consulta el mapa,confira o mapa
-next block,下一个块,xià yí gè kuài,siguiente bloque,próximo bloco
+next block,下一个街区,xià yí gè jiē qū,siguiente bloque,próximo bloco
 around the block,街区附近,jiē qū fù jìn,alrededor de la cuadra,ao redor do quarteirão
 busy intersection,繁忙的十字路口,fán máng de shí zì lù kǒu,intersección muy transitada,cruzamento movimentado
 at the intersection,在十字路口,zài shí zì lù kǒu,en la intersección,no cruzamento

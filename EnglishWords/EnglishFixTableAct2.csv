@@ -1,1 +1,204 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+english,46,Directions,3,chinese,对,右,Wrong word sense: "对" means "correct" but pack is Directions so need directional "right" (右)
+english,46,Directions,3,pinyin,duì,yòu,Pinyin update to match corrected Chinese
+english,46,Directions,17,chinese,块,街区,Wrong word sense: "块" means "piece" not city block → "街区"
+english,46,Directions,17,pinyin,kuài,jiē qū,Pinyin update to match corrected Chinese
+english,46,Directions,52,chinese,下一个块,下一个街区,Same "块" issue in compound phrase
+english,46,Directions,52,pinyin,xià yí gè kuài,xià yí gè jiē qū,Pinyin update for compound phrase
+english,47,More Transportation,13,chinese,气体,汽油,Wrong word sense: "气体" is gas (state of matter) not gasoline in Transportation context
+english,47,More Transportation,13,pinyin,qì tǐ,qì yóu,Pinyin update to match corrected Chinese
+english,47,More Transportation,45,chinese,没气了,没油了,Should be "out of gasoline" not "out of gas (substance)"
+english,47,More Transportation,45,pinyin,méi qì le,méi yóu le,Pinyin update to match corrected Chinese
+english,48,Furniture,2,chinese,表,桌子,"表" means form/watch not table → "桌子"
+english,48,Furniture,2,pinyin,biǎo,zhuō zi,Pinyin update to match corrected Chinese
+english,49,Kitchen Items,12,chinese,板,盘子,"板" means board not plate → "盘子"
+english,49,Kitchen Items,12,pinyin,bǎn,pán zi,Pinyin update to match corrected Chinese
+english,49,Kitchen Items,15,chinese,玻璃,玻璃杯,"玻璃" is glass material not drinking glass → "玻璃杯"
+english,49,Kitchen Items,15,pinyin,bō lí,bō lí bēi,Pinyin update to match corrected Chinese
+english,49,Kitchen Items,49,chinese,水玻璃,水杯,Should be water cup/glass for drinking
+english,49,Kitchen Items,49,pinyin,shuǐ bō lí,shuǐ bēi,Pinyin update to match corrected Chinese
+english,51,Household Chores,3,chinese,干燥,干,"干燥" is adjective dry not verb to dry → "干"
+english,51,Household Chores,3,pinyin,gān zào,gān,Pinyin update to match corrected Chinese
+english,51,Household Chores,5,chinese,拖把,拖,"拖把" is noun mop not verb to mop → "拖"
+english,51,Household Chores,5,pinyin,tuō bǎ,tuō,Pinyin update to match corrected Chinese
+english,51,Household Chores,6,chinese,真空,吸尘,"真空" means vacuum (empty space) not to vacuum → "吸尘"
+english,51,Household Chores,6,pinyin,zhēn kōng,xī chén,Pinyin update to match corrected Chinese
+english,51,Household Chores,7,chinese,灰尘,除尘,"灰尘" is noun dust not verb to dust → "除尘"
+english,51,Household Chores,7,pinyin,huī chén,chú chén,Pinyin update to match corrected Chinese
+english,51,Household Chores,10,spanish,polaco,pulir,"polaco" means Polish (nationality) not to polish → "pulir"
+english,51,Household Chores,10,portuguese,polonês,polir,"polonês" means Polish (nationality) not to polish → "polir"
+english,51,Household Chores,12,chinese,铁,熨烫,"铁" means iron (metal) not to iron clothes → "熨烫"
+english,51,Household Chores,12,pinyin,tiě,yùn tàng,Pinyin update to match corrected Chinese
+english,51,Household Chores,12,spanish,hierro,planchar,"hierro" means iron (metal) not to iron → "planchar"
+english,51,Household Chores,12,portuguese,ferro,passar,"ferro" means iron (metal) not to iron → "passar"
+english,51,Household Chores,15,chinese,选择,摘,"选择" means choose/select but pick in chores context means pick (fruit) → "摘"
+english,51,Household Chores,15,pinyin,xuǎn zé,zhāi,Pinyin update to match corrected Chinese
+english,51,Household Chores,19,chinese,堆栈,堆放,"堆栈" is computer stack data structure → "堆放"
+english,51,Household Chores,19,pinyin,duī zhàn,duī fàng,Pinyin update to match corrected Chinese
+english,51,Household Chores,42,chinese,铁衣服,熨衣服,Same iron issue in compound phrase
+english,51,Household Chores,42,pinyin,tiě yī fú,yùn yī fú,Pinyin update for compound phrase
+english,51,Household Chores,51,chinese,按,整理,"按" means press not sort through → "整理"
+english,51,Household Chores,51,pinyin,àn,zhěng lǐ,Pinyin update to match corrected Chinese
+english,51,Household Chores,52,chinese,排序冲洗掉,冲洗掉,Has incorrect "排序" (sort) → should be just "冲洗掉"
+english,51,Household Chores,52,pinyin,pái xù chōng xǐ diào,chōng xǐ diào,Pinyin update to match corrected Chinese
+english,51,Household Chores,54,chinese,悬挂晾干燥,悬挂晾干,"干燥" is redundant → "悬挂晾干"
+english,51,Household Chores,54,pinyin,xuán guà liàng gān zào,xuán guà liàng gān,Pinyin update to match corrected Chinese
+english,53,Fruits,53,chinese,冬瓜片,瓜片,"冬瓜" is winter melon (specific vegetable) not generic melon → "瓜片"
+english,53,Fruits,53,pinyin,dōng guā piàn,guā piàn,Pinyin update to match corrected Chinese
+english,54,Vegetables,30,chinese,绿豆,四季豆,"绿豆" is mung bean not green bean → "四季豆"
+english,54,Vegetables,30,pinyin,lǜ dòu,sì jì dòu,Pinyin update to match corrected Chinese
+english,57,Jobs 2,21,chinese,花店,花艺师,"花店" means flower shop not florist (person) → "花艺师"
+english,57,Jobs 2,21,pinyin,huā diàn,huā yì shī,Pinyin update to match corrected Chinese
+english,57,Jobs 2,25,chinese,写入块,写作障碍,"写入块" is computer term (write block) not writer's block → "写作障碍"
+english,57,Jobs 2,25,pinyin,xiě rù kuài,xiě zuò zhàng ài,Pinyin update to match corrected Chinese
+english,58,More Animals,17,chinese,飞,苍蝇,"飞" means to fly (verb) not fly (insect) → "苍蝇"
+english,58,More Animals,17,pinyin,fēi,cāng yíng,Pinyin update to match corrected Chinese
+english,58,More Animals,26,chinese,灰太狼,灰狼,"灰太狼" is cartoon character name → "灰狼"
+english,58,More Animals,26,pinyin,huī tài láng,huī láng,Pinyin update to match corrected Chinese
+english,60,Geography,6,chinese,山,小山,"山" means mountain not hill → "小山"
+english,60,Geography,6,pinyin,shān,xiǎo shān,Pinyin update to match corrected Chinese
+english,60,Geography,11,chinese,领域,田野,"领域" means domain/area of knowledge not field (land) → "田野"
+english,60,Geography,11,pinyin,lǐng yù,tián yě,Pinyin update to match corrected Chinese
+english,60,Geography,13,chinese,踪迹,小径,"踪迹" means trace/tracks not trail (path) → "小径"
+english,60,Geography,13,pinyin,zōng jì,xiǎo jìng,Pinyin update to match corrected Chinese
+english,60,Geography,20,chinese,边框,边界,"边框" means frame/border of picture not country border → "边界"
+english,60,Geography,20,pinyin,biān kuāng,biān jiè,Pinyin update to match corrected Chinese
+english,60,Geography,40,chinese,开放领域,开阔田野,Same "领域" issue in compound phrase
+english,60,Geography,40,pinyin,kāi fàng lǐng yù,kāi kuò tián yě,Pinyin update for compound phrase
+english,60,Geography,52,chinese,当地,当地地区,Incomplete translation → "当地地区"
+english,60,Geography,52,pinyin,dāng dì,dāng dì dì qū,Pinyin update to match corrected Chinese
+english,61,School & Education,7,chinese,等级,成绩,"等级" means rank/level not school grade (score) → "成绩"
+english,61,School & Education,7,pinyin,děng jí,chéng jì,Pinyin update to match corrected Chinese
+english,61,School & Education,8,chinese,主题,科目,"主题" means theme/topic not school subject → "科目"
+english,61,School & Education,8,pinyin,zhǔ tí,kē mù,Pinyin update to match corrected Chinese
+english,61,School & Education,9,chinese,教训,课,"教训" means lesson (moral warning) not lesson (class) → "课"
+english,61,School & Education,9,pinyin,jiào xùn,kè,Pinyin update to match corrected Chinese
+english,62,Sports,8,chinese,运行,跑步,"运行" means run (machines/programs) not running (sport) → "跑步"
+english,62,Sports,8,pinyin,yùn xíng,pǎo bù,Pinyin update to match corrected Chinese
+english,62,Sports,13,portuguese,combinar,partida,"combinar" means to combine/match not a sports match → "partida"
+english,63,More Sports,42,chinese,与,与...竞争,Incomplete translation → "与...竞争"
+english,63,More Sports,42,pinyin,yǔ,yǔ... jìng zhēng,Pinyin update to match corrected Chinese
+english,63,More Sports,43,chinese,竞争竞争,为...竞争,Duplicated word → "为...竞争"
+english,63,More Sports,43,pinyin,jìng zhēng jìng zhēng,wèi... jìng zhēng,Pinyin update to match corrected Chinese
+english,63,More Sports,56,chinese,去加班,进入加时赛,"去加班" means work overtime (at job) not sports overtime → "进入加时赛"
+english,63,More Sports,56,pinyin,qù jiā bān,jìn rù jiā shí sài,Pinyin update to match corrected Chinese
+english,64,Entertainment,14,spanish,etapa,escenario,"etapa" means stage (phase) not stage (platform) → "escenario"
+english,64,Entertainment,14,portuguese,estágio,palco,"estágio" means internship/stage (phase) not stage (platform) → "palco"
+english,64,Entertainment,15,spanish,ventilador,aficionado,"ventilador" means fan (cooling device) not fan (enthusiast) → "aficionado"
+english,64,Entertainment,21,chinese,筛选,放映,"筛选" means screening (selection/filtering) not screening (film showing) → "放映"
+english,64,Entertainment,21,pinyin,shāi xuǎn,fàng yìng,Pinyin update to match corrected Chinese
+english,64,Entertainment,48,chinese,大风扇,大粉丝,"大风扇" is cooling fan not big fan (enthusiast) → "大粉丝"
+english,64,Entertainment,48,pinyin,dà fēng shàn,dà fěn sī,Pinyin update to match corrected Chinese
+english,64,Entertainment,60,chinese,早期筛查,提前放映,"早期筛查" is medical screening not early film screening → "提前放映"
+english,64,Entertainment,60,pinyin,zǎo qī shāi chá,tí qián fàng yìng,Pinyin update to match corrected Chinese
+english,66,Personality,6,chinese,严重,严肃,"严重" means severe/serious (problem) not serious (personality) → "严肃"
+english,66,Personality,6,pinyin,yán zhòng,yán sù,Pinyin update to match corrected Chinese
+english,66,Personality,30,chinese,非常严重,非常严肃,Same issue in compound phrase
+english,66,Personality,30,pinyin,fēi cháng yán zhòng,fēi cháng yán sù,Pinyin update for compound phrase
+english,66,Personality,39,chinese,病人,对...有耐心,"病人" means patient (sick person) not patient with (tolerant) → "对...有耐心"
+english,66,Personality,39,pinyin,bìng rén,duì... yǒu nài xīn,Pinyin update to match corrected Chinese
+english,67,Physical Appearance,2,chinese,薄,瘦,"薄" means thin (objects/materials) not thin (person) → "瘦"
+english,67,Physical Appearance,2,pinyin,báo,shòu,Pinyin update to match corrected Chinese
+english,67,Physical Appearance,3,spanish,grasa,gordo,"grasa" means fat (substance) not fat (person) → "gordo"
+english,67,Physical Appearance,3,portuguese,gordura,gordo,"gordura" means fat (substance) not fat (person) → "gordo"
+english,67,Physical Appearance,6,spanish,encajar,en forma,"encajar" means to fit into not fit (in shape) → "en forma"
+english,67,Physical Appearance,6,portuguese,caber,em forma,"caber" means to fit into not fit (in shape) → "em forma"
+english,67,Physical Appearance,10,chinese,金发女郎,金发,"金发女郎" means blonde woman specifically → "金发" (blonde hair)
+english,67,Physical Appearance,10,pinyin,jīn fà nǚ láng,jīn fà,Pinyin update to match corrected Chinese
+english,67,Physical Appearance,22,chinese,太薄,太瘦,Same "薄" issue in compound phrase
+english,67,Physical Appearance,22,pinyin,tài báo,tài shòu,Pinyin update for compound phrase
+english,67,Physical Appearance,25,chinese,胖机会,机会渺茫,"胖机会" is literal translation - "fat chance" is idiom meaning unlikely → "机会渺茫"
+english,67,Physical Appearance,25,pinyin,pàng jī huì,jī huì miǎo máng,Pinyin update to match corrected Chinese
+english,67,Physical Appearance,39,chinese,金发女郎,染成金发,Same issue - should be "dye to blonde"
+english,67,Physical Appearance,39,pinyin,jīn fà nǚ láng,rǎn chéng jīn fà,Pinyin update to match corrected Chinese
+english,68,Shopping,19,chinese,标记,加价,"标记" means mark/label not markup (price increase) → "加价"
+english,68,Shopping,19,pinyin,biāo jì,jiā jià,Pinyin update to match corrected Chinese
+english,68,Shopping,20,chinese,清关,清仓,"清关" means customs clearance not clearance sale → "清仓"
+english,68,Shopping,20,pinyin,qīng guān,qīng cāng,Pinyin update to match corrected Chinese
+english,68,Shopping,29,chinese,味道贵,品味奢侈,"味道贵" means expensive flavor not expensive taste → "品味奢侈"
+english,68,Shopping,29,pinyin,wèi dào guì,pǐn wèi shē chǐ,Pinyin update to match corrected Chinese
+english,69,Money & Banking,14,portuguese,equilíbrio,saldo,"equilíbrio" means balance (equilibrium) not balance (account) → "saldo"
+english,69,Money & Banking,45,chinese,没有兴趣,无利息,"没有兴趣" means no interest (curiosity) not no interest (financial) → "无利息"
+english,69,Money & Banking,45,pinyin,méi yǒu xìng qù,wú lì xī,Pinyin update to match corrected Chinese
+english,70,Health,9,chinese,医学,药,"医学" means medicine (field/study) not medicine (drug) → "药"
+english,70,Health,9,pinyin,yī xué,yào,Pinyin update to match corrected Chinese
+english,70,Health,11,portuguese,nomeação,consulta,"nomeação" means appointment (to position) not appointment (meeting) → "consulta"
+english,72,Verbs of Motion,4,spanish,ascensor,levantar,"ascensor" means elevator not to lift → "levantar"
+english,72,Verbs of Motion,10,spanish,alcance,alcanzar,"alcance" is noun (reach/range) not verb → "alcanzar"
+english,72,Verbs of Motion,10,portuguese,alcance,alcançar,"alcance" is noun not verb → "alcançar"
+english,72,Verbs of Motion,12,spanish,guión,correr,"guión" means hyphen/script not dash → "correr"
+english,72,Verbs of Motion,12,portuguese,traço,correr,"traço" means line/dash (punctuation) not dash → "correr"
+english,72,Verbs of Motion,17,spanish,deriva,derivar,"deriva" is noun not verb → "derivar"
+english,72,Verbs of Motion,17,portuguese,deriva,derivar,"deriva" is noun not verb → "derivar"
+english,72,Verbs of Motion,20,spanish,carrera de velocidad,esprintar,"carrera de velocidad" is noun (a sprint) not verb → "esprintar"
+english,72,Verbs of Motion,20,portuguese,corrida,esprintar,"corrida" is noun not verb → "esprintar"
+english,72,Verbs of Motion,42,chinese,破折号,冲刺,"破折号" means dash (punctuation mark) → "冲刺"
+english,72,Verbs of Motion,42,pinyin,pò zhé hào,chōng cì,Pinyin update to match corrected Chinese
+english,72,Verbs of Motion,48,chinese,将鼠标悬停在,悬停在...上方,Too specific about mouse → "悬停在...上方"
+english,72,Verbs of Motion,48,pinyin,jiāng shǔ biāo xuán tíng zài,xuán tíng zài... shàng fāng,Pinyin update to match corrected Chinese
+english,73,Verbs of Change,17,spanish,turno,cambiar,"turno" is noun not verb → "cambiar"
+english,73,Verbs of Change,17,portuguese,mudança,mudar,"mudança" is noun not verb → "mudar"
+english,73,Verbs of Change,39,chinese,从,从...中删除,Incomplete translation → "从...中删除"
+english,73,Verbs of Change,39,pinyin,cóng,cóng... zhōng shān chú,Pinyin update to match corrected Chinese
+english,73,Verbs of Change,40,chinese,中删除替换为,替换为,Has extra "删除" (delete) → "替换为"
+english,73,Verbs of Change,40,pinyin,zhōng shān chú tì huàn wèi,tì huàn wéi,Pinyin update to match corrected Chinese
+english,73,Verbs of Change,49,chinese,从,从...转换,Incomplete translation → "从...转换"
+english,73,Verbs of Change,49,pinyin,cóng,cóng... zhuǎn huàn,Pinyin update to match corrected Chinese
+english,73,Verbs of Change,50,chinese,转换稍微改变,稍微改变,Has extra "转换" → "稍微改变"
+english,73,Verbs of Change,50,pinyin,zhuǎn huàn shāo wēi gǎi biàn,shāo wēi gǎi biàn,Pinyin update to match corrected Chinese
+english,74,Communication Verbs,4,spanish,de acuerdo,estar de acuerdo,Phrase not verb → "estar de acuerdo"
+english,74,Communication Verbs,4,portuguese,concordo,concordar,First person not infinitive → "concordar"
+english,74,Communication Verbs,5,spanish,en desacuerdo,estar en desacuerdo,Phrase not verb → "estar en desacuerdo"
+english,74,Communication Verbs,8,spanish,promesa,prometer,Noun not verb → "prometer"
+english,74,Communication Verbs,8,portuguese,promessa,prometer,Noun not verb → "prometer"
+english,74,Communication Verbs,18,portuguese,elaborado,elaborar,Adjective not verb → "elaborar"
+english,74,Communication Verbs,21,spanish,recuento,recontar,Noun not verb → "recontar"
+english,74,Communication Verbs,25,chinese,与,与...讨论,Incomplete translation → "与...讨论"
+english,74,Communication Verbs,25,pinyin,yǔ,yǔ... tǎo lùn,Pinyin update to match corrected Chinese
+english,74,Communication Verbs,26,chinese,讨论我同意,我同意,Has extra "讨论" → "我同意"
+english,74,Communication Verbs,26,pinyin,tǎo lùn wǒ tóng yì,wǒ tóng yì,Pinyin update to match corrected Chinese
+english,75,Mental Verbs,9,chinese,愿望,希望,Noun not verb → "希望"
+english,75,Mental Verbs,9,pinyin,yuàn wàng,xī wàng,Pinyin update to match corrected Chinese
+english,75,Mental Verbs,9,spanish,deseo,desear,Noun not verb → "desear"
+english,75,Mental Verbs,9,portuguese,desejo,desejar,Noun not verb → "desejar"
+english,75,Mental Verbs,10,spanish,duda,dudar,Noun not verb → "dudar"
+english,75,Mental Verbs,10,portuguese,dúvida,duvidar,Noun not verb → "duvidar"
+english,75,Mental Verbs,15,chinese,反映,反思,"反映" means reflect (light)/show not reflect (think) → "反思"
+english,75,Mental Verbs,15,pinyin,fǎn yìng,fǎn sī,Pinyin update to match corrected Chinese
+english,77,Adverbs of Degree,5,chinese,而是,相当,"而是" means but rather (conjunction) not rather (degree) → "相当"
+english,77,Adverbs of Degree,5,pinyin,ér shì,xiāng dāng,Pinyin update to match corrected Chinese
+english,77,Adverbs of Degree,5,portuguese,sim,bastante,"sim" means yes not rather → "bastante"
+english,77,Adverbs of Degree,6,chinese,也是,太,"也是" means also is - wrong for too (excessive) → "太"
+english,77,Adverbs of Degree,6,pinyin,yě shì,tài,Pinyin update to match corrected Chinese
+english,77,Adverbs of Degree,6,spanish,también,demasiado,"también" means also not too (excessive) → "demasiado"
+english,77,Adverbs of Degree,6,portuguese,também,demais,"também" means also not too (excessive) → "demais"
+english,77,Adverbs of Degree,7,portuguese,chega,suficiente,"chega" is imperative stop/enough not adverb → "suficiente"
+english,78,Conjunctions,17,chinese,一次,一旦,"一次" means one time not once (when/after) → "一旦"
+english,78,Conjunctions,17,pinyin,yī cì,yī dàn,Pinyin update to match corrected Chinese
+english,78,Conjunctions,18,chinese,提供,只要,"提供" means to provide - wrong for provided (that) → "只要"
+english,78,Conjunctions,18,pinyin,tí gōng,zhǐ yào,Pinyin update to match corrected Chinese
+english,78,Conjunctions,18,spanish,proporcionado,siempre que,Past participle not conjunction → "siempre que"
+english,78,Conjunctions,18,portuguese,fornecido,desde que,Past participle not conjunction → "desde que"
+english,80,Phrasal Verbs 1,2,spanish,despierta,despertar,Command not infinitive → "despertar"
+english,80,Phrasal Verbs 1,2,portuguese,acorde,acordar,Command not infinitive → "acordar"
+english,80,Phrasal Verbs 1,3,spanish,levántate,levantarse,Command not infinitive → "levantarse"
+english,80,Phrasal Verbs 1,3,portuguese,levante-se,levantar-se,Command not infinitive → "levantar-se"
+english,80,Phrasal Verbs 1,7,chinese,起飞,脱掉,"起飞" means take off (airplane) not take off (clothes) → "脱掉"
+english,80,Phrasal Verbs 1,7,pinyin,qǐ fēi,tuō diào,Pinyin update to match corrected Chinese
+english,80,Phrasal Verbs 1,18,portuguese,acabou,acabar,Past tense not infinitive → "acabar"
+english,80,Phrasal Verbs 1,21,chinese,分解,崩溃,"分解" means decompose not break down (malfunction/cry) → "崩溃"
+english,80,Phrasal Verbs 1,21,pinyin,fēn jiě,bēng kuì,Pinyin update to match corrected Chinese
+english,80,Phrasal Verbs 1,48,chinese,好好锻炼,进展顺利,"好好锻炼" means exercise well - wrong sense for work out (succeed) → "进展顺利"
+english,80,Phrasal Verbs 1,48,pinyin,hǎo hǎo duàn liàn,jìn zhǎn shùn lì,Pinyin update to match corrected Chinese
+english,81,Phrasal Verbs 2,2,spanish,mirar hacia arriba,buscar,"mirar hacia arriba" means look up (direction) not look up (search) → "buscar"
+english,81,Phrasal Verbs 2,2,portuguese,olhe para cima,procurar,"olhe para cima" means look up (direction) not look up (search) → "procurar"
+english,81,Phrasal Verbs 2,4,spanish,Esperamos con ansias,esperar con ansias,Plural not infinitive → "esperar con ansias"
+english,81,Phrasal Verbs 2,4,portuguese,ansiosos por,aguardar ansiosamente,Adjective not verb → "aguardar ansiosamente"
+english,81,Phrasal Verbs 2,31,chinese,与,与...相处,Incomplete translation → "与...相处"
+english,81,Phrasal Verbs 2,31,pinyin,yǔ,yǔ... xiāng chǔ,Pinyin update to match corrected Chinese
+english,81,Phrasal Verbs 2,41,spanish,prueba de maquillaje,examen de recuperación,"prueba de maquillaje" means makeup test (cosmetics) → "examen de recuperación"
+english,81,Phrasal Verbs 2,41,portuguese,teste de maquiagem,prova de recuperação,"teste de maquiagem" means makeup test (cosmetics) → "prova de recuperación"
+english,81,Phrasal Verbs 2,42,chinese,与,与...分手,Incomplete translation → "与...分手"
+english,81,Phrasal Verbs 2,42,pinyin,yǔ,yǔ... fēn shǒu,Pinyin update to match corrected Chinese
+english,81,Phrasal Verbs 2,57,chinese,和,和...出去玩,Incomplete translation → "和...出去玩"
+english,81,Phrasal Verbs 2,57,pinyin,hé,hé... chū qù wán,Pinyin update to match corrected Chinese

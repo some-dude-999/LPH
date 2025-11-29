@@ -11,7 +11,7 @@ expense,费用,fèi yòng,gastos,despesa
 withdraw,撤回,chè huí,retirar,retirar
 transfer,转移,zhuǎn yí,transferencia,transferir
 interest,利息,lì xī,interés,interesse
-balance,余额,yú é,saldo,equilíbrio
+balance,余额,yú é,saldo,saldo
 currency,货币,huò bì,moneda,moeda
 finance,金融,jīn róng,finanzas,finanças
 credit card,信用卡,xìn yòng kǎ,tarjeta de crédito,cartão de crédito
@@ -42,7 +42,7 @@ withdraw cash,提取现金,tí qǔ xiàn jīn,retirar efectivo,sacar dinheiro
 money transfer,汇款,huì kuǎn,transferencia de dinero,transferência de dinheiro
 bank transfer,银行转账,yín háng zhuǎn zhàng,transferencia bancaria,transferência bancária
 interest free,无息,wú xī,sin intereses,sem juros
-no interest,没有兴趣,méi yǒu xìng qù,sin interés,sem interesse
+no interest,无利息,wú lì xī,sin interés,sem interesse
 account balance,账户余额,zhàng hù yú é,saldo de cuenta,saldo da conta
 balance due,应付余额,yìng fù yú é,saldo adeudado,saldo devedor
 foreign currency,外币,wài bì,moneda extranjera,moeda estrangeira

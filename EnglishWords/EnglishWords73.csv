@@ -14,7 +14,7 @@ transform,变换,biàn huàn,transformar,transformar
 adjust,调整,tiáo zhěng,ajustar,ajustar
 convert,转换,zhuǎn huàn,convertir,converter
 alter,改变,gǎi biàn,alterar,alterar
-shift,转变,zhuǎn biàn,turno,mudança
+shift,转变,zhuǎn biàn,cambiar,mudar
 shrink,缩小,suō xiǎo,encoger,encolher
 morph,变形,biàn xíng,transformar,metamorfose
 mutate,变异,biàn yì,mutar,mutar
@@ -36,8 +36,8 @@ expand on,展开,zhǎn kāi,ampliar,expandir
 reduce cost,降低成本,jiàng dī chéng běn,reducir costos,reduzir custos
 reduce to,减少到,jiǎn shǎo dào,reducir a,reduzir para
 remove it,删除它,shān chú tā,eliminarlo,remova-o
-remove from,从,cóng,eliminar de,remover de
-replace with,中删除替换为,zhōng shān chú tì huàn wèi,reemplazar con,substitua por
+remove from,从...中删除,cóng... zhōng shān chú,eliminar de,remover de
+replace with,替换为,tì huàn wéi,reemplazar con,substitua por
 replace old,替换旧的,tì huàn jiù de,reemplazar el viejo,substituir o antigo
 destroy everything,摧毁一切,cuī huǐ yī qiè,destruir todo,destruir tudo
 destroy completely,彻底摧毁,chè dǐ cuī huǐ,destruir completamente,destruir completamente
@@ -46,8 +46,8 @@ transform completely,彻底转变,chè dǐ zhuǎn biàn,transformar completament
 adjust settings,调整设置,tiáo zhěng shè zhì,ajustar la configuración,ajustar configurações
 adjust to,调整为,tiáo zhěng wèi,ajustarse a,ajuste para
 convert to,转换为,zhuǎn huàn wèi,convertir a,converter para
-convert from,从,cóng,convertir de,converter de
-alter slightly,转换稍微改变,zhuǎn huàn shāo wēi gǎi biàn,alterar ligeramente,alterar ligeiramente
+convert from,从...转换,cóng... zhuǎn huàn,convertir de,converter de
+alter slightly,稍微改变,shāo wēi gǎi biàn,alterar ligeramente,alterar ligeiramente
 alter course,改变路线,gǎi biàn lù xiàn,alterar el rumbo,alterar curso
 shift focus,转移焦点,zhuǎn yí jiāo diǎn,cambiar de enfoque,mudar o foco
 shift to,转移到,zhuǎn yí dào,cambiar a,mude para

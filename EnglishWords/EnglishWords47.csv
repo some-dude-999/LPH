@@ -10,7 +10,7 @@ highway,高速公路,gāo sù gōng lù,autopista,rodovia
 bridge,桥,qiáo,puente,ponte
 tunnel,隧道,suì dào,túnel,túnel
 parking,停车,tíng chē,estacionamiento,estacionamento
-gas,气体,qì tǐ,gasolina,gás
+gas,汽油,qì yóu,gasolina,gás
 fuel,燃料,rán liào,combustible,combustível
 driver,司机,sī jī,conductor,motorista
 pilot,飞行员,fēi xíng yuán,piloto,piloto
@@ -42,7 +42,7 @@ tunnel entrance,隧道入口,suì dào rù kǒu,entrada del túnel,entrada do t�
 parking lot,停车场,tíng chē chǎng,estacionamiento,estacionamento
 parking space,停车位,tíng chē wèi,plaza de aparcamiento,vaga de estacionamento
 gas station,加油站,jiā yóu zhàn,gasolinera,posto de gasolina
-out of gas,没气了,méi qì le,sin gasolina,sem gás
+out of gas,没油了,méi yóu le,sin gasolina,sem gás
 fuel tank,油箱,yóu xiāng,tanque de combustible,tanque de combustível
 low fuel,低油耗,dī yóu hào,poco combustible,baixo combustível
 taxi driver,出租车司机,chū zū chē sī jī,taxista,taxista
