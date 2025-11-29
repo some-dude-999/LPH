@@ -75,7 +75,6 @@ export const p7_233_cryptocurrency__terms = {
     portuguese: "Termos de Criptomoeda"
   },
   words: [
-    ["nft", "nft", "NFT", "N F T", "nft"],
     ["el nft", "the nft", "NFT", "N F T", "o nft"],
     ["un nft", "an nft", "一个NFT", "yí gè N F T", "um NFT"]
   ]
