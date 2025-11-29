@@ -3922,16 +3922,7 @@
         counterText = `${currentDeck.length} Cards Left`;
       }
 
-      // ============================================================
-      // DEBUG MODE: Show word type (Base Word / Example Word)
-      // ============================================================
-      if (DEBUG_MODE && card.type) {
-        const typeColor = card.type === "Base Word" ? "#2563eb" : "#059669";
-        const typeWeight = card.type === "Base Word" ? "bold" : "normal";
-        counterText += ` | <span style="color: ${typeColor}; font-weight: ${typeWeight};">${card.type}</span>`;
-      }
-
-      cardCounter.innerHTML = counterText; // Use innerHTML to render HTML tags
+      cardCounter.textContent = counterText; // Plain text, no HTML
 
       // Get indicator elements (positioned at card corners, not inside card-word)
       const wrongLettersFront = document.getElementById('wrong-letters-front');
@@ -4768,8 +4759,86 @@
     // Initialize debug UI (creates debug table in DOM if not exists)
     initializeDebugUI();
 
-    // All debug functions removed - functionality now in wordpack-logic.js
-    // (See initializeDebugUI() call above)
+    // ============================================================
+    // DEBUG: Simulate Functions (called by buttons in debug table)
+    // ============================================================
+
+    // Simulate Right Answer - removes current card (correct answer behavior)
+    window.simulateRight = function() {
+      if (currentDeck.length === 0) return;
+
+      playDingSound();
+
+      // Remove current card
+      if (currentDeck.length <= 1) {
+        currentDeck = [];
+      } else {
+        currentDeck.splice(currentIndex, 1);
+        if (currentIndex >= currentDeck.length) {
+          currentIndex = 0;
+        }
+      }
+
+      // Reinitialize typing if needed
+      if (currentMode === 'spelling' || currentMode === 'translation') {
+        initializeTypingDisplay();
+      }
+
+      updateDisplay();
+      saveState();
+      updateDebugTable();
+
+      console.log('[Debug] Simulated RIGHT answer - card removed');
+    };
+
+    // Simulate Wrong Answer - adds 2 duplicate cards (wrong answer behavior)
+    window.simulateWrong = function() {
+      if (currentDeck.length === 0) return;
+
+      playBuzzSound();
+
+      // Add 2 duplicate cards
+      const currentCard = currentDeck[currentIndex];
+      currentDeck.push({ ...currentCard });
+      currentDeck.push({ ...currentCard });
+
+      // Move to next card
+      currentIndex = (currentIndex + 1) % currentDeck.length;
+
+      // Reinitialize typing if needed
+      if (currentMode === 'spelling' || currentMode === 'translation') {
+        initializeTypingDisplay();
+      }
+
+      updateDisplay();
+      saveState();
+      updateDebugTable();
+
+      console.log('[Debug] Simulated WRONG answer - added 2 duplicate cards');
+    };
+
+    // Simulate Near Victory - remove all cards except last one
+    window.simulateNearVictory = function() {
+      if (currentDeck.length === 0) return;
+
+      playButtonClickSound();
+
+      // Keep only the last card
+      const lastCard = currentDeck[currentDeck.length - 1];
+      currentDeck = [lastCard];
+      currentIndex = 0;
+
+      // Reinitialize typing if needed
+      if (currentMode === 'spelling' || currentMode === 'translation') {
+        initializeTypingDisplay();
+      }
+
+      updateDisplay();
+      saveState();
+      updateDebugTable();
+
+      console.log('[Debug] Simulated NEAR VICTORY - only last card remains');
+    };
 
     // ============================================================
     // Difficulty Selector Event Listeners
