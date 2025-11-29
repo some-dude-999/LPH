@@ -3,40 +3,40 @@ chinese,pinyin,english,spanish,french,portuguese
 点菜,diǎn cài,Order food,Pedir comida,Commander de la nourriture,Pedir comida
 推荐,tuī jiàn,Recommendation,Recomendación,Recommandation,Recomendação
 招牌菜,zhāo pái cài,Signature dishes,Platos de autor,Plats signatures,Pratos de assinatura
-味道,wèi dào,Taste,Sabor,Goût,Prove
+味道,wèi dào,Taste,Sabor,Goût,Sabor
 服务员,fú wù yuán,Waiter,Camarero,Serveur,Garçom
-买单,mǎi dān,Pay the bill,Pagar la factura,Payer la facture,Pague a conta
-结账,jié zhàng,Checkout,Pagar,Payer l'addition,Finalização da compra
-打包,dǎ bāo,Packing,Embalaje,Emballage,Embalagem
+买单,mǎi dān,Pay the bill,Pagar la cuenta,Payer l'addition,Pagar a conta
+结账,jié zhàng,Pay the bill,Pagar la cuenta,Payer l'addition,Pagar a conta
+打包,dǎ bāo,Pack to go,Para llevar,Emballer à emporter,Embalagem para levar
 外卖,wài mài,Takeaway,Para llevar,À emporter,Para levar
-堂食,táng shí,Dine-in,Cenar en casa,Dîner sur place,Jantar no local
+堂食,táng shí,Dine-in,Comer en el local,Dîner sur place,Comer no local
 包间,bāo jiān,Private room,Habitación privada,Chambre privée,Quarto privado
 餐具,cān jù,Cutlery,Cubiertos,Couverts,Talheres
 筷子,kuài zi,Chopsticks,Palillos,Baguettes,Pauzinhos
-上菜,shàng cài,Serving,Sirviendo,Servir,Servindo
-订座,dìng zuò,Reservation,Reserva,Réservation,Reserva
-看菜单,kàn cài dān,View menu,Ver menú,Afficher le menu,Ver menu
-拿菜单,ná cài dān,Get menu,Obtener menú,Obtenir le menu,Obter cardápio
-要点菜,yào diǎn cài,Order,Orden,Commande,Encomenda
-来点菜,lái diǎn cài,Come to order,Ven a ordenar,Venez commander,Venha fazer o pedido
-有推荐,yǒu tuī jiàn,Recommended,Recomendado,Recommandé,Recomendado
-请推荐,qǐng tuī jiàn,Please recommend,Por favor recomiende,Veuillez recommander,"Por favor, recomende"
+上菜,shàng cài,Serve dishes,Servir los platos,Servir les plats,Servir os pratos
+订座,dìng zuò,Book a table,Reservar mesa,Réserver une table,Reservar mesa
+看菜单,kàn cài dān,View menu,Ver menú,Voir le menu,Ver menu
+拿菜单,ná cài dān,Get menu,Coger el menú,Prendre le menu,Pegar o cardápio
+要点菜,yào diǎn cài,Order,Pedir platos,Commander,Fazer o pedido
+来点菜,lái diǎn cài,Let's order,Vamos a pedir,On commande,Vamos fazer o pedido
+有推荐,yǒu tuī jiàn,Any recommendations,¿Alguna recomendación?,Des recommandations ?,Alguma recomendação?
+请推荐,qǐng tuī jiàn,Please recommend,"Por favor, recomiende",Veuillez recommander,"Por favor, recomende"
 这是招牌菜,zhè shì zhāo pái cài,This is a signature dish,Este es un plato estrella,C'est un plat signature,Este é um prato de assinatura
 点招牌菜,diǎn zhāo pái cài,Order a signature dish,Pide un plato estrella,Commandez un plat signature,Peça um prato de assinatura
-味道好,wèi dào hǎo,Tastes good,Sabe bien,A bon goût,Tem um gosto bom
-尝味道,cháng wèi dào,Taste,Sabor,Goût,Prove
+味道好,wèi dào hǎo,Tastes good,Sabe bien,A bon goût,Está saboroso
+尝味道,cháng wèi dào,Try the flavor,Probar el sabor,Goûter,Provar
 叫服务员,jiào fú wù yuán,Call the waiter,Llama al camarero,Appelez le serveur,Chama o garçom
 找服务员,zhǎo fú wù yuán,Find the waiter,Encuentra al camarero,Trouver le serveur,Encontre o garçom
 要买单,yào mǎi dān,Ask for the bill,Pide la factura,Demandez la facture,Peça a conta
 来买单,lái mǎi dān,Come to pay,Ven a pagar,Venez payer,Venha pagar
-要结账,yào jié zhàng,Check out,Echa un vistazo,Découvrez,Confira
-去结账,qù jié zhàng,Go to check out,Ir a revisar,Allez voir,Vá conferir
-要打包,yào dǎ bāo,Want to pack,Quiero empacar,Vous voulez emballer,Quer fazer as malas
-帮我打包,bāng wǒ dǎ bāo,Help me pack,Ayúdame a empacar,Aide-moi à faire mes valises,Me ajude a fazer as malas
+要结账,yào jié zhàng,Ask for the bill,Pedir la cuenta,Demander l'addition,Pedir a conta
+去结账,qù jié zhàng,Go pay the bill,Ir a pagar la cuenta,Aller payer,Ir pagar a conta
+要打包,yào dǎ bāo,Want it to go,Quiero para llevar,Le vouloir à emporter,Quero para levar
+帮我打包,bāng wǒ dǎ bāo,Help me pack it to go,Ayúdame a empacarlo para llevar,Aide-moi à l'emballer à emporter,Ajude-me a embalar para levar
 点外卖,diǎn wài mài,Order takeout,Pedir comida para llevar,Commande à emporter,Encomendar comida
 送外卖,sòng wài mài,Delivery,Entrega,Livraison,Entrega
 选堂食,xuǎn táng shí,Choose dine-in,Elija cenar en el restaurante,Choisissez un dîner sur place,Escolha jantar no local
-要堂食,yào táng shí,Want to dine in,Quiero cenar en,Envie de dîner à,Quer jantar em
+要堂食,yào táng shí,Want to dine in,Quiero comer aquí,Je veux manger sur place,Quero comer aqui
 订包间,dìng bāo jiān,Book a private room,Reserva una habitación privada,Réserver une chambre privée,Reserve um quarto privado
 有包间,yǒu bāo jiān,There are private rooms,Hay habitaciones privadas,Il y a des chambres privées,Existem salas privadas
 拿餐具,ná cān jù,Get the cutlery,Consigue los cubiertos,Obtenez les couverts,Pegue os talheres
@@ -45,5 +45,5 @@ chinese,pinyin,english,spanish,french,portuguese
 用筷子,yòng kuài zi,Use the chopsticks,Usa los palillos,Utilisez les baguettes,Use os pauzinhos
 上菜了,shàng cài le,The food is served,La comida está servida,La nourriture est servie,A comida é servida
 快上菜,kuài shàng cài,The food will be served soon,La comida se servirá pronto,La nourriture sera bientôt servie,A comida será servida em breve
-要订座,yào dìng zuò,Reservation is required,Se requiere reserva,La réservation est obligatoire,É necessária reserva
+要订座,yào dìng zuò,Need to reserve a table,Hay que reservar mesa,Il faut réserver,Precisa de reserva
 已订座,yǐ dìng zuò,Already reserved,Ya reservado,Déjà réservé,Já reservado
