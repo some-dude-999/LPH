@@ -2,7 +2,7 @@ spanish,english,chinese,pinyin,portuguese
 comprar,buy,购买,gòu mǎi,comprar
 vender,sell,卖,mài,vender
 pagar,pay,支付,zhī fù,pagar
-costar,cost,花费,huā fèi,custo
+costar,cost,花费,huā fèi,custar
 precio,price,价格,jià gé,preço
 barato,cheap,便宜,pián yi,barato
 caro,expensive,昂贵,áng guì,caro
@@ -16,7 +16,7 @@ cajero,cashier,收银员,shōu yín yuán,caixa
 moneda,coin,货币,huò bì,moeda
 billete,bill,纸币,zhǐ bì,nota
 carrito,cart,购物车,gòu wù chē,carrinho
-devolución,return,退货,tuì huò,retornar
+devolución,return,退货,tuì huò,devolução
 garantía,guarantee,保修,bǎo xiū,garantia
 voy a comprar,I'm going to buy,我要买,wǒ yào mǎi,Vou comprar
 quiero comprar,I want to buy,我要买,wǒ yào mǎi,Quero comprar
@@ -32,7 +32,7 @@ muy barato,very cheap,很便宜,hěn pián yi,muito barato
 más barato,cheaper,更便宜,gèng pián yi,mais barato
 muy caro,very expensive,很贵,hěn guì,muito caro
 demasiado caro,too expensive,太贵了,tài guì le,muito caro
-en oferta,on sale,特价,tè jià,à venda
+en oferta,on sale,特价,tè jià,em promoção
 buena oferta,good offer,好报价,hǎo bào jià,boa oferta
 con descuento,with discount,有折扣,yǒu zhé kòu,com desconto
 buen descuento,good discount,好折扣,hǎo zhé kòu,bom desconto
@@ -52,7 +52,7 @@ el billete,the bill,纸币,zhǐ bì,a nota
 un billete,a bill,一张纸币,yī zhāng zhǐ bì,uma nota
 el carrito,the cart,购物车,gòu wù chē,o carrinho
 un carrito,a cart,一辆购物车,yī liàng gòu wù chē,um carrinho
-la devolución,the return,退货,tuì huò,o retorno
-hacer devolución,make return,退货,tuì huò,fazer retorno
+la devolución,the return,退货,tuì huò,a devolução
+hacer devolución,make return,退货,tuì huò,fazer devolução
 la garantía,the guarantee,保证,bǎo zhèng,a garantia
 con garantía,with guarantee,有保证,yǒu bǎo zhèng,com garantia

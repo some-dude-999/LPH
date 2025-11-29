@@ -3,14 +3,14 @@ camarero,waiter,服务员,fú wù yuán,garçom
 camarera,waitress,女服务员,nǚ fú wù yuán,garçonete
 menú,menu,菜单,cài dān,cardápio
 carta,menu,菜单,cài dān,carta
-plato,plate,盘子,pán zi,placa
+plato,plate,盘子,pán zi,prato
 vaso,glass,杯子,bēi zi,copo
-copa,wine glass,杯子,bēi zi,xícara
+copa,wine glass,杯子,bēi zi,taça
 cuchara,spoon,勺子,sháo zi,colher
 cuchillo,knife,刀,dāo,faca
 tenedor,fork,叉子,chā zi,garfo
 servilleta,napkin,餐巾,cān jīn,guardanapo
-comanda,order,订单,dìng dān,comando
+comanda,order,订单,dìng dān,pedido
 propina,tip (gratuity),小费,xiǎo fèi,gorjeta
 servir,serve,服务,fú wù,servir
 reservar,reserve,预订,yù dìng,reservar
@@ -23,12 +23,12 @@ el menú,the menu,菜单,cài dān,o cardápio
 ver el menú,see the menu,看菜单,kàn cài dān,veja o cardápio
 la carta,the menu,菜单,cài dān,a carta
 ver la carta,see the menu,看菜单,kàn cài dān,veja a carta
-el plato,the plate,盘子,pán zi,a placa
+el plato,the plate,盘子,pán zi,o prato
 un plato,a plate,一盘,yī pán,um prato
-el vaso,the glass,玻璃,bō lí,o vidro
+el vaso,the glass,玻璃,bō lí,o copo
 un vaso,a glass,一杯,yī bēi,um copo
-la copa,the wine glass,杯子,bēi zi,a xícara
-una copa,a drink,喝一杯,hē yī bēi,uma bebida
+la copa,the wine glass,杯子,bēi zi,a taça
+una copa,a drink,喝一杯,hē yī bēi,uma taça
 la cuchara,the spoon,勺子,sháo zi,a colher
 una cuchara,a spoon,勺子,sháo zi,uma colher
 el cuchillo,the knife,刀,dāo,a faca
@@ -37,10 +37,10 @@ el tenedor,the fork,叉子,chā zi,o garfo
 un tenedor,a fork,叉子,chā zi,um garfo
 la servilleta,the napkin,餐巾,cān jīn,o guardanapo
 una servilleta,a napkin,餐巾纸,cān jīn zhǐ,um guardanapo
-la comanda,the order,订单,dìng dān,o comando
-tomar la comanda,take the order,记下订单,jì xià dìng dān,assumir o comando
-la propina,the tip,小费,xiǎo fèi,a dica
-dejar propina,tip,小费,xiǎo fèi,dica
+la comanda,the order,订单,dìng dān,o pedido
+tomar la comanda,take the order,记下订单,jì xià dìng dān,anotar o pedido
+la propina,the tip,小费,xiǎo fèi,a gorjeta
+dejar propina,tip,小费,xiǎo fèi,deixar gorjeta
 voy a servir,I will serve,我将服务,wǒ jiāng fú wù,Eu servirei
 puede servir,can serve,可以服务,kě yǐ fú wù,pode servir
 voy a reservar,I'm going to reserve,我要预约,wǒ yào yù yuē,Vou reservar
