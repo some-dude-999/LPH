@@ -3,21 +3,21 @@ land,土地,tǔ dì,tierra,terreno
 sea,海,hǎi,mar,mar
 coast,海岸,hǎi àn,costa,costa
 shore,岸边,àn biān,orilla,costa
-hill,山,shān,colina,colina
+hill,小山,xiǎo shān,colina,colina
 cliff,悬崖,xuán yá,acantilado,penhasco
 cave,洞穴,dòng xué,cueva,caverna
 waterfall,瀑布,pù bù,cascada,cachoeira
 jungle,丛林,cóng lín,selva,selva
-field,领域,lǐng yù,campo,campo
+field,田野,tián yě,campo,campo
 farm,农场,nóng chǎng,granja,fazenda
-trail,踪迹,zōng jì,sendero,trilha
+trail,小径,xiǎo jìng,sendero,trilha
 pond,池塘,chí táng,estanque,lagoa
 bay,湾,wān,bahía,baía
 continent,大陆,dà lù,continente,continente
 region,地区,dì qū,región,região
 landscape,风景,fēng jǐng,paisaje,paisagem
 horizon,地平线,dì píng xiàn,horizonte,horizonte
-border,边框,biān kuāng,frontera,fronteira
+border,边界,biān jiè,frontera,fronteira
 terrain,地形,dì xíng,terreno,terreno
 dry land,旱地,hàn dì,tierra seca,terra seca
 land owner,土地所有者,tǔ dì suǒ yǒu zhě,propietario de la tierra,proprietário do terreno
@@ -37,7 +37,7 @@ big waterfall,大瀑布,dà pù bù,gran cascada,grande cachoeira
 waterfall view,瀑布景观,pù bù jǐng guān,vista de la cascada,vista da cachoeira
 dense jungle,茂密的丛林,mào mì de cóng lín,selva densa,selva densa
 jungle animal,丛林动物,cóng lín dòng wù,animal de la selva,animal da selva
-open field,开放领域,kāi fàng lǐng yù,campo abierto,campo aberto
+open field,开阔田野,kāi kuò tián yě,campo abierto,campo aberto
 field trip,实地考察,shí dì kǎo chá,excursión,visita de campo
 family farm,家庭农场,jiā tíng nóng chǎng,granja familiar,fazenda familiar
 farm land,农田,nóng tián,tierras agrícolas,terras agrícolas
@@ -49,7 +49,7 @@ calm bay,平静的海湾,píng jìng de hǎi wān,bahía tranquila,baía calma
 bay area,湾区,wān qū,zona de la bahía,área da baía
 large continent,大大陆,dà dà lù,gran continente,grande continente
 continent map,大陆地图,dà lù dì tú,mapa del continente,mapa do continente
-local region,当地,dāng dì,región local,região local
+local region,当地地区,dāng dì dì qū,región local,região local
 region wide,区域范围,qū yù fàn wéi,toda la región,em toda a região
 beautiful landscape,美丽的风景,měi lì de fēng jǐng,hermoso paisaje,bela paisagem
 landscape painting,山水画,shān shuǐ huà,pintura de paisaje,pintura de paisagem
