@@ -3,14 +3,14 @@ airport,机场,jī chǎng,aeropuerto,aeroporto
 flight,航班,háng bān,vuelo,vôo
 plane,飞机,fēi jī,avión,avião
 airline,航空公司,háng kōng gōng sī,aerolínea,companhia aérea
-terminal,终端,zhōng duān,terminales,terminal
+terminal,航站楼,háng zhàn lóu,terminales,terminal
 boarding,登机,dēng jī,embarque,embarque
 gate,门,mén,puerta,portão
 runway,跑道,pǎo dào,pista,pista
 luggage,行李,xíng lǐ,equipaje,bagagem
 baggage,行李,xíng lǐ,equipaje,bagagem
 passport,护照,hù zhào,pasaporte,passaporte
-customs,海关,hǎi guān,aduanas,costumes
+customs,海关,hǎi guān,aduanas,alfândega
 security,安全,ān quán,seguridad,segurança
 departure,出发,chū fā,salida,partida
 arrival,到达,dào dá,llegada,chegada
@@ -18,7 +18,7 @@ delay,延迟,yán chí,retraso,atraso
 cancel,取消,qǔ xiāo,cancelar,cancelar
 turbulence,湍流,tuān liú,turbulencia,turbulência
 seatbelt,安全带,ān quán dài,cinturón de seguridad,cinto de segurança
-overhead,头顶行李舱,tóu dǐng xíng lǐ cāng,gastos generales,sobrecarga
+overhead,头顶行李舱,tóu dǐng xíng lǐ cāng,compartimento superior,compartimento superior
 international airport,国际机场,guó jì jī chǎng,aeropuerto internacional,aeroporto internacional
 airport terminal,机场航站楼,jī chǎng háng zhàn lóu,terminal del aeropuerto,terminal do aeroporto
 book flight,预订航班,yù dìng háng bān,reservar vuelo,reservar voo

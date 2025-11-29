@@ -11,12 +11,12 @@ deadline,截止日期,jié zhǐ rì qī,fecha límite,prazo
 project,项目,xiàng mù,proyecto,projeto
 task,任务,rèn wù,tarea,tarefa
 schedule,时间表,shí jiān biǎo,horario,cronograma
-promotion,促销,cù xiāo,promoción,promoção
+promotion,晋升,jìn shēng,promoción,promoção
 salary,工资,gōng zī,salario,salário
-interview,采访,cǎi fǎng,entrevista,entrevista
+interview,面试,miàn shì,entrevista,entrevista
 resume,简历,jiǎn lì,currículum,currículo
 career,职业生涯,zhí yè shēng yá,carrera,carreira
-title,标题,biāo tí,título,título
+title,职位,zhí wèi,título,título
 responsibilities,职责,zhí zé,responsabilidades,responsabilidades
 office,办公室,bàn gōng shì,oficina,escritório
 big company,大公司,dà gōng sī,gran empresa,grande empresa
@@ -26,7 +26,7 @@ business meeting,商务会议,shāng wù huì yì,reunión de negocios,reunião 
 sales department,销售部,xiāo shòu bù,departamento de ventas,departamento de vendas
 department head,部门主管,bù mén zhǔ guǎn,jefe de departamento,chefe de departamento
 current employer,现任雇主,xiàn rèn gù zhǔ,empleador actual,empregador atual
-employer benefits,雇主福利,gù zhǔ fú lì,beneficios para el empleador,benefícios patronais
+employer benefits,员工福利,yuán gōng fú lì,beneficios para el empleador,benefícios patronais
 work colleague,工作同事,gōng zuò tóng shì,colega de trabajo,colega de trabalho
 colleague friend,同事朋友,tóng shì péng yǒu,amigo colega,colega amigo
 team meeting,团队会议,tuán duì huì yì,reunión de equipo,reunião de equipe
@@ -54,7 +54,7 @@ resume template,简历模板,jiǎn lì mú bǎn,plantilla de currículum,modelo 
 career path,职业道路,zhí yè dào lù,trayectoria profesional,plano de carreira
 career change,职业转变,zhí yè zhuǎn biàn,cambio de carrera,mudança de carreira
 job title,职位名称,zhí wèi míng chēng,título del trabajo,cargo
-title change,标题更改,biāo tí gēng gǎi,cambio de título,mudança de título
+title change,职位变更,zhí wèi biàn gēng,cambio de título,mudança de título
 job responsibilities,工作职责,gōng zuò zhí zé,responsabilidades laborales,responsabilidades profissionais
 responsibilities include,职责包括,zhí zé bāo kuò,responsabilidades incluyen,as responsabilidades incluem
 home office,家庭办公室,jiā tíng bàn gōng shì,oficina en casa,escritório em casa

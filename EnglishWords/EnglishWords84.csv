@@ -1,8 +1,8 @@
 english,chinese,pinyin,spanish,portuguese
 hotel,酒店,jiǔ diàn,hoteles,hotéis
 motel,汽车旅馆,qì chē lǚ guǎn,motel,motel
-hostel,宿舍,sù shè,albergue,albergue
-resort,度假村,dù jià cūn,complejo,recurso
+hostel,青年旅舍,qīng nián lǚ shè,albergue,albergue
+resort,度假村,dù jià cūn,complejo,resort
 reception,接待处,jiē dài chù,recepción,recepção
 lobby,大堂,dà táng,vestíbulo,lobby
 front desk,前台,qián tái,recepción,recepção
@@ -14,11 +14,11 @@ single room,单人间,dān rén jiān,habitación individual,quarto individual
 double room,双人间,shuāng rén jiān,habitación doble,quarto duplo
 vacancy,空缺,kòng quē,vacante,vaga
 amenity,便利设施,biàn lì shè shī,amenidad,comodidade
-checkout,结帐,jié zhàng,pagar,finalização da compra
+checkout,结帐,jié zhàng,pagar,check-out
 key card,钥匙卡,yào shi kǎ,tarjeta llave,cartão-chave
 minibar,迷你吧,mí nǐ ba,minibar,frigobar
 bellhop,服务生,fú wù shēng,botones,carregador
-tip,提示,tí shì,consejo,dica
+tip,小费,xiǎo fèi,consejo,dica
 luxury hotel,豪华酒店,háo huá jiǔ diàn,hotel de lujo,hotel de luxo
 hotel room,酒店房间,jiǔ diàn fáng jiān,habitación de hotel,quarto de hotel
 cheap motel,便宜的汽车旅馆,pián yi de qì chē lǚ guǎn,motel barato,motel barato

@@ -1,1 +1,90 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+english,82,Travel,32,spanish,paquete ligero,viajar ligero,"Theme: travel. ""Paquete ligero"" means light package not travel light. Natural phrase is ""viajar ligero"""
+english,82,Travel,32,portuguese,embalar luz,viajar leve,"Theme: travel. ""Embalar luz"" is unnatural (pack light-noun). Should be ""viajar leve"" (travel light-verb)"
+english,83,Airport & Flying,6,chinese,终端,航站楼,"Theme: airport. ""终端"" means computer terminal. Airport terminal is ""航站楼"""
+english,83,Airport & Flying,6,pinyin,zhōng duān,háng zhàn lóu,Pinyin must match corrected Chinese
+english,83,Airport & Flying,13,portuguese,costumes,alfândega,"Theme: airport. ""Costumes"" means customs/traditions. Airport customs (border control) is ""alfândega"""
+english,83,Airport & Flying,21,spanish,gastos generales,compartimento superior,"Theme: airplane. ""Gastos generales"" means overhead costs. Overhead bin/compartment is ""compartimento superior"""
+english,83,Airport & Flying,21,portuguese,sobrecarga,compartimento superior,"Theme: airplane. ""Sobrecarga"" means overload/overcharge. Should be overhead compartment"
+english,84,Hotel,4,chinese,宿舍,青年旅舍,"Theme: hotel. ""宿舍"" means dormitory/dorm room. Hostel is ""青年旅舍"""
+english,84,Hotel,4,pinyin,sù shè,qīng nián lǚ shè,Pinyin must match corrected Chinese
+english,84,Hotel,5,portuguese,recurso,resort,"Theme: hotel. ""Recurso"" means resource. Resort should be ""resort"" or ""estância turística"""
+english,84,Hotel,17,portuguese,finalização da compra,check-out,"Theme: hotel. ""Finalização da compra"" is shopping checkout. Hotel checkout is ""check-out"""
+english,84,Hotel,21,chinese,提示,小费,"Theme: hotel. ""提示"" means hint/tip as in advice. Gratuity tip is ""小费"""
+english,84,Hotel,21,pinyin,tí shì,xiǎo fèi,Pinyin must match corrected Chinese
+english,85,Work & Office,14,chinese,促销,晋升,"Theme: work/office. ""促销"" means sales promotion (discount). Job promotion is ""晋升"""
+english,85,Work & Office,14,pinyin,cù xiāo,jìn shēng,Pinyin must match corrected Chinese
+english,85,Work & Office,16,chinese,采访,面试,"Theme: work/office. ""采访"" means journalist interview. Job interview is ""面试"""
+english,85,Work & Office,16,pinyin,cǎi fǎng,miàn shì,Pinyin must match corrected Chinese
+english,85,Work & Office,19,chinese,标题,职位,"Theme: work/office. ""标题"" means heading/title of document. Job title is ""职位"""
+english,85,Work & Office,19,pinyin,biāo tí,zhí wèi,Pinyin must match corrected Chinese
+english,85,Work & Office,29,chinese,雇主福利,员工福利,"Theme: work/office. ""雇主福利"" means benefits TO employer. Should be employee benefits ""员工福利"""
+english,85,Work & Office,29,pinyin,gù zhǔ fú lì,yuán gōng fú lì,Pinyin must match corrected Chinese
+english,85,Work & Office,57,chinese,标题更改,职位变更,"Theme: work/office. ""标题更改"" means heading change. Job title change is ""职位变更"""
+english,85,Work & Office,57,pinyin,biāo tí gēng gǎi,zhí wèi biàn gēng,Pinyin must match corrected Chinese
+english,86,Workplace Actions,36,chinese,与,与...协调,"Missing verb. ""与"" alone means with/and. ""Coordinate with"" needs verb ""协调"""
+english,86,Workplace Actions,36,pinyin,yǔ,yǔ...xié tiáo,Pinyin must match corrected Chinese
+english,87,Business Communication,44,chinese,咨询,向...咨询,"Missing preposition. ""Consult with"" needs preposition ""向"""
+english,87,Business Communication,44,pinyin,zī xún,xiàng...zī xún,Pinyin must match corrected Chinese
+english,87,Business Communication,48,chinese,联络,与...联络,"Missing preposition. ""Liaise with"" needs preposition ""与"""
+english,87,Business Communication,48,pinyin,lián luò,yǔ...lián luò,Pinyin must match corrected Chinese
+english,88,Internet & Social Media,31,chinese,与,与...分享,"Missing verb. ""与"" alone is incomplete. ""Share with"" needs verb ""分享"""
+english,88,Internet & Social Media,31,pinyin,yǔ,yǔ...fēn xiǎng,Pinyin must match corrected Chinese
+english,89,Relationships,55,chinese,与,与...争论,"Missing verb. ""与"" alone is incomplete. ""Argue with"" needs verb ""争论"""
+english,89,Relationships,55,pinyin,yǔ,yǔ...zhēng lùn,Pinyin must match corrected Chinese
+english,90,Social Interactions,25,chinese,与,与...聊天,"Missing verb. ""与"" alone is incomplete. ""Chat with"" needs verb ""聊天"""
+english,90,Social Interactions,25,pinyin,yǔ,yǔ...liáo tiān,Pinyin must match corrected Chinese
+english,90,Social Interactions,42,chinese,与,与...合作,"Missing verb. ""与"" alone is incomplete. ""Cooperate with"" needs verb ""合作"""
+english,90,Social Interactions,42,pinyin,yǔ,yǔ...hé zuò,Pinyin must match corrected Chinese
+english,90,Social Interactions,52,chinese,同情,共情,"Wrong word sense. ""同情"" means sympathize. Empathize is ""共情"" (share feelings)"
+english,90,Social Interactions,52,pinyin,tóng qíng,gòng qíng,Pinyin must match corrected Chinese
+english,90,Social Interactions,54,chinese,与,与...交往,"Missing verb. ""与"" alone is incomplete. ""Mingle with"" needs verb ""交往"""
+english,90,Social Interactions,54,pinyin,yǔ,yǔ...jiāo wǎng,Pinyin must match corrected Chinese
+english,90,Social Interactions,57,chinese,与,与...社交,"Missing verb. ""与"" alone is incomplete. ""Socialize with"" needs verb ""社交"""
+english,90,Social Interactions,57,pinyin,yǔ,yǔ...shè jiāo,Pinyin must match corrected Chinese
+english,91,Life Events,17,spanish,fiesta,festival,"Theme: life events. ""Fiesta"" means party/celebration. Festival should be ""festival"""
+english,92,Housing,4,chinese,楼主,房东,"Theme: housing. ""楼主"" means original poster (internet term). Landlord is ""房东"""
+english,92,Housing,4,pinyin,lóu zhǔ,fáng dōng,Pinyin must match corrected Chinese
+english,95,Cooking Methods,7,chinese,蒸汽,蒸,"Theme: cooking. ""蒸汽"" is noun steam/vapor. Cooking verb steam is ""蒸"""
+english,95,Cooking Methods,7,pinyin,zhēng qì,zhēng,Pinyin must match corrected Chinese
+english,95,Cooking Methods,15,portuguese,empalidecer,escaldar,"Theme: cooking. ""Empalidecer"" means turn pale (face). Blanch vegetables is ""escaldar"""
+english,95,Cooking Methods,20,portuguese,caça furtiva,escalfar,"CRITICAL: ""Caça furtiva"" means illegal hunting. Poach eggs is ""escalfar"""
+english,96,Food Preparation,46,chinese,用,用...装饰,"Missing verb. ""用"" alone means use/with. ""Garnish with"" needs verb ""装饰"""
+english,96,Food Preparation,46,pinyin,yòng,yòng...zhuāng shì,Pinyin must match corrected Chinese
+english,96,Food Preparation,59,chinese,用,用...嫩化,"Missing verb. ""用"" alone is incomplete. ""Tenderize with"" needs verb ""嫩化"""
+english,96,Food Preparation,59,pinyin,yòng,yòng...nèn huà,Pinyin must match corrected Chinese
+english,98,Movies & TV,4,chinese,情节,集,"Theme: TV. ""情节"" means plot/storyline. TV episode is ""集"""
+english,98,Movies & TV,4,pinyin,qíng jié,jí,Pinyin must match corrected Chinese
+english,98,Movies & TV,5,chinese,季节,季,"Theme: TV. ""季节"" means season (spring/summer). TV season is ""季"""
+english,98,Movies & TV,5,pinyin,jì jié,jì,Pinyin must match corrected Chinese
+english,101,Basic Law & Rules,5,portuguese,tudo bem,multa,"CRITICAL: ""Tudo bem"" means okay/alright. Fine (penalty) is ""multa"""
+english,103,Opinions & Arguments,47,chinese,对,对...的立场,"Missing noun. ""对"" alone is incomplete. ""Stance on"" needs noun ""的立场"""
+english,103,Opinions & Arguments,47,pinyin,duì,duì...de lì chǎng,Pinyin must match corrected Chinese
+english,103,Opinions & Arguments,51,chinese,认为,认为...的概念,"Wrong word class. ""认为"" is verb think/believe. ""Notion that"" needs noun ""概念"""
+english,103,Opinions & Arguments,51,pinyin,rèn wéi,rèn wéi...de gài niàn,Pinyin must match corrected Chinese
+english,103,Opinions & Arguments,57,chinese,对,对...的情绪,"Missing noun. ""对"" alone is incomplete. ""Sentiment toward"" needs noun ""的情绪"""
+english,103,Opinions & Arguments,57,pinyin,duì,duì...de qíng xù,Pinyin must match corrected Chinese
+english,103,Opinions & Arguments,59,chinese,对,对...的态度,"Missing noun. ""对"" alone is incomplete. ""Attitude toward"" needs noun ""的态度"""
+english,103,Opinions & Arguments,59,pinyin,duì,duì...de tài dù,Pinyin must match corrected Chinese
+english,106,Common Idioms 2,5,chinese,天气不好,身体不适,"Idiom: under the weather. Too literal ""bad weather"". Idiom means feeling sick ""身体不适"""
+english,106,Common Idioms 2,5,pinyin,tiān qì bù hǎo,shēn tǐ bù shì,Pinyin must match corrected Chinese
+english,106,Common Idioms 2,10,chinese,错过了船,错失良机,"Idiom: miss the boat. Too literal. Idiom means miss opportunity ""错失良机"""
+english,106,Common Idioms 2,10,pinyin,cuò guò le chuán,cuò shī liáng jī,Pinyin must match corrected Chinese
+english,106,Common Idioms 2,15,chinese,摔断腿,祝你好运,"Idiom: break a leg. Too literal. Idiom means good luck ""祝你好运"""
+english,106,Common Idioms 2,15,pinyin,shuāi duàn tuǐ,zhù nǐ hǎo yùn,Pinyin must match corrected Chinese
+english,106,Common Idioms 2,16,chinese,花费了一条胳膊和一条腿,非常昂贵,"Idiom: cost arm and leg. Too literal. Idiom means very expensive ""非常昂贵"""
+english,106,Common Idioms 2,16,pinyin,huā fèi le yī tiáo gē bó hé yī tiáo tuǐ,fēi cháng áng guì,Pinyin must match corrected Chinese
+english,107,Common Idioms 2,14,chinese,下着猫狗雨,倾盆大雨,"Idiom: raining cats and dogs. Too literal. Chinese idiom for heavy rain is ""倾盆大雨"""
+english,107,Common Idioms 2,14,pinyin,xià zhe māo gǒu yǔ,qīng pén dà yǔ,Pinyin must match corrected Chinese
+english,110,Collocations - Make & Do,39,chinese,与,与...交朋友,"Missing verb. ""与"" alone is incomplete. ""Make friends with"" needs verb ""交朋友"""
+english,110,Collocations - Make & Do,39,pinyin,yǔ,yǔ...jiāo péng yǒu,Pinyin must match corrected Chinese
+english,110,Collocations - Make & Do,44,chinese,与,与...做生意,"Missing verb. ""与"" alone is incomplete. ""Do business with"" needs verb ""做生意"""
+english,110,Collocations - Make & Do,44,pinyin,yǔ,yǔ...zuò shēng yì,Pinyin must match corrected Chinese
+english,110,Collocations - Make & Do,56,chinese,对,对...造成损害,"Missing verb. ""对"" alone means to/toward. ""Do damage to"" needs verb ""造成损害"""
+english,110,Collocations - Make & Do,56,pinyin,duì,duì...zào chéng sǔn hài,Pinyin must match corrected Chinese
+english,111,Collocations - Have & Take,26,chinese,与,与...进行对话,"Missing verb phrase. ""与"" alone is incomplete. ""Have conversation with"" needs verb phrase"
+english,111,Collocations - Have & Take,26,pinyin,yǔ,yǔ...jìn xíng duì huà,Pinyin must match corrected Chinese
+english,111,Collocations - Have & Take,34,chinese,有问题于,对...有问题,"Unnatural phrasing. ""有问题于"" is awkward. ""Have problem with"" should be ""对...有问题"""
+english,111,Collocations - Have & Take,34,pinyin,yǒu wèn tí yú,duì...yǒu wèn tí,Pinyin must match corrected Chinese
+english,112,Collocations - Other,59,chinese,之间的区别你能看出区别吗,你能看出区别吗,"Duplicated/garbled text. Should just be the question ""can you tell the difference"""
+english,112,Collocations - Other,59,pinyin,zhī jiān de qū bié nǐ néng kàn chū qū bié ma,nǐ néng kàn chū qū bié ma,Pinyin must match corrected Chinese
