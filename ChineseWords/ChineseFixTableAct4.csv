@@ -1,28 +1,44 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,58,Giving Directions,13,french,Itinéraire,Direction,Wrong word - itinéraire means itinerary/route not direction
-chinese,61,Money & Payments,5,english,Offers,Discount,More natural - 优惠 specifically means discount in money context
-chinese,61,Money & Payments,34,english,Change change,Get change,Awkward repetition - more natural phrasing
-chinese,61,Money & Payments,36,english,No change required,Keep the change,More idiomatic English expression
-chinese,64,At the Airport,17,english,Bridge,Jet bridge,More specific for airport context - 廊桥 is boarding bridge
-chinese,66,Making Appointments,40,english,Make an appointment with an ordinary number,Register for regular appointment,Too literal and awkward - more natural phrasing
-chinese,66,Making Appointments,41,english,Make an appointment with an ordinary number,Register for regular appointment,Too literal and awkward - more natural phrasing
-chinese,67,Weather Conversations,6,english,Cooler,Getting cooler,Need verb phrase - cooler alone sounds like a device
-chinese,67,Weather Conversations,7,english,Warmer,Getting warmer,Need verb phrase for weather change
-chinese,67,Weather Conversations,8,english,Plunge,Sudden drop,More natural for temperature - plunge is too dramatic alone
-chinese,67,Weather Conversations,9,english,Warmth,Warming up,Should be verb phrase not noun - 回暖 means to warm up
-chinese,67,Weather Conversations,10,english,Winter,Enter winter,Should be verb phrase - 入冬 means entering winter
-chinese,67,Weather Conversations,11,english,Summer,Enter summer,Should be verb phrase - 入夏 means entering summer
-chinese,67,Weather Conversations,12,english,Rain,Rainy season,More specific - 梅雨 is a specific seasonal rain period
-chinese,67,Weather Conversations,14,english,Sand,Dust storm,More complete - 沙尘 refers to dust/sandstorm not just sand
-chinese,68,Phone Conversations,5,english,Not,Not here,Too vague - need context for 不在
-chinese,68,Phone Conversations,6,english,Wait,Wait a moment,More complete and natural phrase
-chinese,71,Agreeing & Disagreeing,32,english,No way,That's not right,No way is too strong/colloquial - more neutral tone
-chinese,73,Time Expressions,6,english,Being,Currently,Too vague - 正在 means currently doing something
-chinese,75,Describing Amounts,25,english,some people,Some people,Should be capitalized like other entries
-chinese,75,Describing Amounts,26,english,some,Some,Should be capitalized like other entries
-chinese,75,Describing Amounts,27,english,enough,Enough,Should be capitalized like other entries
-chinese,75,Describing Amounts,28,english,enough,Enough,Should be capitalized like other entries
-chinese,75,Describing Amounts,29,english,not enough,Not enough,Should be capitalized like other entries
-chinese,75,Describing Amounts,30,english,not enough,Not enough,Should be capitalized like other entries
-chinese,75,Describing Amounts,31,english,just enough,Just enough,Should be capitalized like other entries
-chinese,75,Describing Amounts,32,english,just,Just,Should be capitalized like other entries
+chinese,54,Opinions & Views,10,english,View,Consider,Use a more natural verb for how someone regards an issue.
+chinese,54,Opinions & Views,10,spanish,Ver,Considerar,Use the common verb for treating or regarding something.
+chinese,54,Opinions & Views,10,french,Voir,Considérer,Use the natural verb for how one regards an issue.
+chinese,54,Opinions & Views,10,portuguese,Ver,Considerar,Use the usual verb for considering something.
+chinese,54,Opinions & Views,31,english,Different angles,Different perspectives,Use a more natural phrasing for viewpoints.
+chinese,54,Opinions & Views,31,spanish,Diferentes ángulos,Perspectivas diferentes,Use the common wording for differing viewpoints.
+chinese,54,Opinions & Views,31,french,Différents angles,Perspectives différentes,Use the natural phrasing for differing viewpoints.
+chinese,54,Opinions & Views,31,portuguese,Ângulos diferentes,Perspectivas diferentes,Use the usual expression for differing viewpoints.
+chinese,54,Opinions & Views,36,english,How to view it,How do you see it,Make the question sound natural in everyday speech.
+chinese,54,Opinions & Views,36,spanish,Cómo verlo,Cómo lo ves,Use the common conversational question form.
+chinese,54,Opinions & Views,36,french,Comment le voir,Comment tu le vois,Rende la question plus naturelle à l'oral.
+chinese,54,Opinions & Views,36,portuguese,Como ver isso,Como você vê isso,Use the natural conversational phrasing.
+chinese,56,Expressing Needs,2,spanish,Necesidad,Necesitar,Use the verb form to match the base word.
+chinese,56,Expressing Needs,2,french,Besoin,Avoir besoin,Use the natural expression for needing something.
+chinese,56,Expressing Needs,2,portuguese,Precisa,Precisar,Use the infinitive form for the base verb.
+chinese,56,Expressing Needs,3,spanish,Quiero,Querer,Use the infinitive form instead of first person.
+chinese,56,Expressing Needs,3,french,Voulez,Vouloir,Use the base verb rather than a conjugated form.
+chinese,56,Expressing Needs,3,portuguese,Quer,Querer,Use the infinitive form instead of a conjugated verb.
+chinese,56,Expressing Needs,4,spanish,Esperanza,Esperar,Use the verb for "hope" instead of the noun.
+chinese,56,Expressing Needs,4,french,Espoir,Espérer,Use the common verb for hoping.
+chinese,56,Expressing Needs,4,portuguese,Esperança,Esperar,Use the verb form for hoping.
+chinese,56,Expressing Needs,6,english,Hope,Long for,Reflects the stronger sense of longing in the base word.
+chinese,56,Expressing Needs,6,spanish,Esperanza,Anhelar,Use a common verb expressing longing.
+chinese,56,Expressing Needs,6,french,Espoir,Espérer,Use the standard verb meaning "to long for/hope for".
+chinese,56,Expressing Needs,6,portuguese,Esperança,Ansiar,Use the usual verb expressing longing.
+chinese,56,Expressing Needs,7,english,Expectation,Anticipation,Use a more natural noun for looking forward to something.
+chinese,56,Expressing Needs,7,spanish,Expectativa,Esperar con ilusión,Use a common phrase for looking forward to something.
+chinese,56,Expressing Needs,7,french,Attente,Attendre avec impatience,Use the natural phrase for looking forward to something.
+chinese,56,Expressing Needs,7,portuguese,Expectativa,Aguardar ansiosamente,Use a natural phrase for looking forward to something.
+chinese,56,Expressing Needs,26,spanish,Esperamos con ansias,Esperando con ansias,Use the infinitive-style expression instead of first person plural.
+chinese,56,Expressing Needs,26,french,Dans l'attente de,Dans l'attente avec impatience,Use a phrasing that conveys eager anticipation naturally.
+chinese,56,Expressing Needs,26,portuguese,Ansiosa por,Esperando ansiosamente,Use a neutral anticipating phrase instead of gendered form.
+chinese,56,Expressing Needs,27,spanish,Esperamos con ansias,Esperando con ansias,Use a neutral anticipating phrase instead of first person plural.
+chinese,56,Expressing Needs,27,french,Dans l'attente de,Attendre avec impatience,Use a natural expression for looking forward to something.
+chinese,56,Expressing Needs,27,portuguese,Ansiosa por,Esperando ansiosamente,Use a neutral anticipating phrase instead of gendered form.
+chinese,56,Expressing Needs,28,english,Looking forward to you,Looking forward to seeing you,Use natural phrasing for anticipating a person.
+chinese,56,Expressing Needs,28,spanish,Te espero con ansias,Estoy deseando verte,Use a common conversational phrasing.
+chinese,56,Expressing Needs,28,french,Dans l'attente de vous,J'ai hâte de te voir,Use a natural way to say you're eager to see someone.
+chinese,56,Expressing Needs,28,portuguese,Aguardo você,Estou ansioso para te ver,Use the common way to express eagerness to see someone.
+chinese,56,Expressing Needs,29,english,Looking forward to,Really looking forward to,Make the emphasis on strong anticipation natural.
+chinese,56,Expressing Needs,29,spanish,Esperamos con ansias,Lo espero con muchas ganas,Use a natural phrasing for strong anticipation.
+chinese,56,Expressing Needs,29,french,Dans l'attente de,J'ai vraiment hâte,Use a natural phrasing for strong anticipation.
+chinese,56,Expressing Needs,29,portuguese,Ansiosa por,Estou ansioso,Use a neutral, natural way to convey eagerness.
