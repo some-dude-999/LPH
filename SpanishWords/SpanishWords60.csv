@@ -1,8 +1,8 @@
 spanish,english,chinese,pinyin,portuguese
 salud,health,健康,jiàn kāng,saúde
 médico,doctor,医生,yī shēng,médico
-médica,female doctor,女医生,nǚ yī shēng,médico
-enfermero,nurse,护士,hù shì,enfermeira
+médica,female doctor,女医生,nǚ yī shēng,médica
+enfermero,nurse,护士,hù shì,enfermeiro
 enfermera,nurse,护士,hù shì,enfermeira
 paciente,patient,病人,bìng rén,paciente
 medicina,medicine,药物,yào wù,medicina
@@ -11,22 +11,22 @@ receta,prescription,处方,chǔ fāng,receita
 dolor,pain,疼痛,téng tòng,dor
 fiebre,fever,发烧,fā shāo,febre
 tos,cough,咳嗽,ké sòu,tosse
-resfriado,cold,感冒,gǎn mào,frio
+resfriado,cold,感冒,gǎn mào,resfriado
 gripe,flu,流感,liú gǎn,gripe
 clínica,clinic,诊所,zhěn suǒ,clínica
 consulta,consultation,就诊,jiù zhěn,consulta
 enfermedad,illness,疾病,jí bìng,doença
 urgencias,emergencies,紧急情况,jǐn jí qíng kuàng,emergências
-sala,room,房间,fáng jiān,quarto
+sala,room,房间,fáng jiān,sala
 camilla,stretcher,担架,dān jià,maca
 buena salud,good health,身体健康,shēn tǐ jiàn kāng,boa saúde
 tu salud,your health,你的健康,nǐ de jiàn kāng,sua saúde
 el médico,the doctor,医生,yī shēng,o médico
 al médico,to the doctor,去看医生,qù kàn yī shēng,ao médico
-la médica,the doctor,医生,yī shēng,o médico
-una médica,a doctor,医生,yī shēng,um médico
-el enfermero,the nurse,护士,hù shì,a enfermeira
-un enfermero,a nurse,护士,hù shì,uma enfermeira
+la médica,the doctor,医生,yī shēng,a médica
+una médica,a doctor,医生,yī shēng,uma médica
+el enfermero,the nurse,护士,hù shì,o enfermeiro
+un enfermero,a nurse,护士,hù shì,um enfermeiro
 la enfermera,the nurse,护士,hù shì,a enfermeira
 una enfermera,a nurse,护士,hù shì,uma enfermeira
 el paciente,the patient,病人,bìng rén,o paciente
@@ -55,7 +55,7 @@ una enfermedad,a disease,一种疾病,yī zhǒng jí bìng,uma doença
 la enfermedad,the disease,这种疾病,zhè zhǒng jí bìng,a doença
 a urgencias,to the emergency room,去急诊室,qù jí zhěn shì,para o pronto-socorro
 en urgencias,in emergencies,在急诊室,zài jí zhěn shì,em emergências
-la sala,the room,房间,fáng jiān,o quarto
+la sala,the room,房间,fáng jiān,a sala
 en la sala,in the room,在房间里,zài fáng jiān lǐ,na sala
 una camilla,a stretcher,担架,dān jià,uma maca
 en la camilla,on the stretcher,在担架上,zài dān jià shàng,na maca
