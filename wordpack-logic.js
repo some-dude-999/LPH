@@ -492,16 +492,27 @@ function toggleDebugMode() {
  *     translations: { english: { index: 1, display: 'English' }, ... }
  *   });
  */
-function updateDebugTable(options) {
+function updateDebugTable(options = {}) {
   if (!window.DEBUG_MODE) return;
 
-  const {
-    deck = [],
-    targetLang = 'target',
-    nativeLang = 'native',
-    wordColumns = [],
-    translations = {}
-  } = options;
+  // Backwards compatibility: if no options provided, try to get values from global scope
+  let deck, targetLang, nativeLang, wordColumns, translations;
+
+  if (Object.keys(options).length === 0) {
+    // Try to get from global scope (FlashcardTypingGame.html compatibility)
+    deck = window.currentDeck || [];
+    targetLang = (typeof getTargetLanguage === 'function' ? getTargetLanguage() : null) || 'target';
+    nativeLang = window.nativeLanguage || 'native';
+    wordColumns = (typeof getWordColumns === 'function' ? getWordColumns() : null) || [];
+    translations = (typeof getTranslationsConfig === 'function' ? getTranslationsConfig() : null) || {};
+  } else {
+    // Use provided options
+    deck = options.deck || [];
+    targetLang = options.targetLang || 'target';
+    nativeLang = options.nativeLang || 'native';
+    wordColumns = options.wordColumns || [];
+    translations = options.translations || {};
+  }
 
   const debugTableBody = document.getElementById('debug-vocab-tbody');
   const debugTableHeader = document.getElementById('debug-table-header-row');
