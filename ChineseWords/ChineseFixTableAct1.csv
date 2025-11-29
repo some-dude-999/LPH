@@ -68,3 +68,23 @@ chinese,14,Emergency & Survival,11,portuguese,Hospitalar,Hospital,Hospital is no
 chinese,14,Emergency & Survival,14,spanish,Salir,Salida,Noun form for exit not verb
 chinese,14,Emergency & Survival,14,french,Quitter,Sortie,Noun form for exit not verb
 chinese,14,Emergency & Survival,14,portuguese,Sair,Saída,Noun form for exit not verb
+chinese,1,Greetings & Goodbyes,4,spanish,Buen día,Buenos días,Standard Spanish greeting with accent
+chinese,1,Greetings & Goodbyes,16,french,accueillir,bienvenue,Interjection not verb for 'welcome'
+chinese,1,Greetings & Goodbyes,21,french,Êtes-vous ok,Ça va ?,Natural French greeting for 'How are you?'
+chinese,1,Greetings & Goodbyes,49,french,accueillir,bienvenue,Interjection not verb for 'welcome'
+chinese,2,Personal Pronouns,8,spanish,a nosotros,nosotros,Subject pronoun not object with preposition
+chinese,2,Personal Pronouns,11,spanish,ellos,ellas,Feminine plural pronoun for 她们
+chinese,2,Personal Pronouns,20,spanish,sí,estoy dispuesto,Willing/disposed not just 'yes'
+chinese,2,Personal Pronouns,20,french,Je fais,Je veux bien,Willing/want not 'I do'
+chinese,2,Personal Pronouns,20,portuguese,Eu faço,Eu estou disposto,Willing/disposed not 'I do'
+chinese,3,Demonstratives & Pointers,5,french,que,cela,Demonstrative pronoun not relative pronoun
+chinese,3,Demonstratives & Pointers,5,portuguese,que,isso,Demonstrative pronoun not relative pronoun
+chinese,5,Essential Verbs I,2,english,yes,is,Verb 'to be' not affirmation
+chinese,5,Essential Verbs I,4,english,exist,at,Location marker not verb 'exist'
+chinese,8,Core Measure Words,2,spanish,Individual,uno,Simple translation for general measure word
+chinese,8,Core Measure Words,3,spanish,Sólo,uno,Measure word meaning not adverb
+chinese,8,Core Measure Words,51,spanish,Ida única,Una manera,Correct translation for 'one way/method'
+chinese,12,Basic Adjectives II,18,spanish,limpiar,limpio,Adjective not verb for 'clean'
+chinese,12,Basic Adjectives II,18,french,nettoyer,propre,Adjective not verb for 'clean'
+chinese,12,Basic Adjectives II,28,spanish,Saludos,¡Salud!,Common toast exclamation
+chinese,12,Basic Adjectives II,36,french,Genre,Gentil,Adjective meaning 'kind/nice' not 'type'
