@@ -10,21 +10,6 @@ export const __actMeta = {
   defaultTranslation: "english"
 };
 
-export const p1_9_the__a__articles__el__la__un__una = {
-  meta: {
-    wordpack: 9,
-    english: "The & A Articles",
-    chinese: "冠词",
-    pinyin: "Guàncí",
-    portuguese: "Artigos"
-  },
-  words: [
-    ["el", "the", "el", "el", "ele"],
-    ["la", "the", "la", "la", "a"],
-    ["los", "the", "los", "los", "os"]
-  ]
-};
-
 export const p1_26_clothing = {
   meta: {
     wordpack: 26,
@@ -75,9 +60,9 @@ export const p6_182_telecommunications = {
     portuguese: "Telecomunicações"
   },
   words: [
-    ["WhatsApp", "WhatsApp", "WhatsApp", "WhatsApp", "WhatsApp"],
-    ["por WhatsApp", "by WhatsApp", "通过 WhatsApp", "tōng guò WhatsApp", "por WhatsApp"],
-    ["en WhatsApp", "on WhatsApp", "在 WhatsApp上", "zài WhatsApp shàng", "no WhatsApp"]
+    ["WhatsApp", "WhatsApp", "WhatsApp应用", "W h a t s A p p yìng yòng", "WhatsApp"],
+    ["por WhatsApp", "by WhatsApp", "通过WhatsApp", "tōng guò W h a t s A p p", "por WhatsApp"],
+    ["en WhatsApp", "on WhatsApp", "在WhatsApp上", "zài W h a t s A p p shàng", "no WhatsApp"]
   ]
 };
 
@@ -90,8 +75,8 @@ export const p7_233_cryptocurrency__terms = {
     portuguese: "Termos de Criptomoeda"
   },
   words: [
-    ["nft", "nft", "NFT", "NFT", "nft"],
-    ["el nft", "the nft", "NFT", "NFT", "o nft"],
-    ["un nft", "an nft", "一个NFT", "yí gè NFT", "um NFT"]
+    ["nft", "nft", "NFT", "N F T", "nft"],
+    ["el nft", "the nft", "NFT", "N F T", "o nft"],
+    ["un nft", "an nft", "一个NFT", "yí gè N F T", "um NFT"]
   ]
 };
