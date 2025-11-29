@@ -623,8 +623,169 @@ Run after ANY web file changes: `python PythonHelpers/link_manager.py`
   - `EnglishWords/EnglishWordsPythonHelperScripts/`
 - ❌ **NEVER** leave Python files in the root directory
 
-### Extensive Documentation Required
-**ALL programs in ALL languages MUST have extensive commenting so anyone can easily reconstruct what is going on.**
+---
+
+## 📚 EXTENSIVE DOCUMENTATION - MANDATORY FOR ALL CODE!
+**CRITICAL: ALL programs in ALL languages MUST have extensive commenting at the FlashcardTypingGame.html level.**
+
+### The Documentation Standard
+**EVERY program file (.py, .js, .html, .css, etc.) MUST start with detailed explanation:**
+- What the program is about
+- What it does
+- How it works
+- Key features and objectives
+- Usage instructions
+
+**EVERY function MUST have clear comments BEFORE the function:**
+- What the function does
+- Why it exists
+- What parameters it takes
+- What it returns
+- Any important side effects
+
+**The Goal: Make it stupidly easy for someone who can read code to reconstruct what is going on.**
+
+### Documentation Required For ALL File Types
+
+**This applies to:**
+- ✅ Python files (.py)
+- ✅ JavaScript files (.js) - both standalone and modules
+- ✅ HTML files (.html)
+- ✅ CSS files (.css)
+- ✅ ANY other program/script files
+
+### Documentation Templates by File Type
+
+**HTML Files (.html) - Example: FlashcardTypingGame.html**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Program Name</title>
+
+  <!-- ============================================================
+       MODULE OVERVIEW
+       ============================================================
+       WHAT THIS PROGRAM DOES:
+       - [Main purpose of this HTML file]
+       - [Key features it provides]
+
+       HOW IT WORKS:
+       - [Overall architecture]
+       - [Main components]
+
+       KEY FEATURES:
+       - [Feature 1]
+       - [Feature 2]
+       ============================================================ -->
+</head>
+
+<style>
+  /* ============================================================
+     DESIGN SYSTEM
+     ============================================================
+     [Explanation of the styling approach, variables, etc.]
+     ============================================================ */
+
+  /* ============================================================
+     KEY FEATURE: [Feature Name]
+     Core Objective: [Why this styling exists]
+     Key Behaviors:
+       - [Specific styling behavior]
+       - [Another behavior]
+     ============================================================ */
+</style>
+
+<script>
+// ============================================================
+// KEY FEATURE: [Feature Name]
+// Core Objective: [Why this exists - the user's goal]
+// Key Behaviors:
+//   - [Specific behavior that must be preserved]
+//   - [Another critical behavior]
+// ============================================================
+function doSomething() {
+  // Step-by-step comments explaining the logic
+}
+</script>
+```
+
+**JavaScript Files (.js) - Both Standalone and Modules**
+```javascript
+// ============================================================
+// MODULE: [Module Name]
+// Core Purpose: [What this script does at a high level]
+// ============================================================
+//
+// WHAT THIS SCRIPT DOES:
+// -----------------------
+// 1. [Step 1]
+// 2. [Step 2]
+// 3. [Step 3]
+//
+// WHY THIS EXISTS:
+// ---------------
+// [Explanation of the problem this solves]
+//
+// USAGE:
+// ------
+//   import { function } from './module.js';
+//   OR
+//   <script src="script.js"></script>
+//
+// KEY FEATURES:
+// -------------
+// - [Feature 1]
+// - [Feature 2]
+//
+// ============================================================
+
+// ============================================================
+// KEY FEATURE: [Feature Name]
+// Core Objective: [Why this exists]
+// Key Behaviors:
+//   - [Behavior 1]
+//   - [Behavior 2]
+// ============================================================
+function doSomething(param1, param2) {
+  // Clear explanation of what this function does
+  // Step-by-step comments for complex logic
+
+  return result;
+}
+```
+
+**CSS Files (.css)**
+```css
+/* ============================================================
+   STYLESHEET: [Stylesheet Name]
+   Core Purpose: [What this CSS controls]
+   ============================================================
+
+   WHAT THIS STYLESHEET DOES:
+   ---------------------------
+   - [Styling responsibility 1]
+   - [Styling responsibility 2]
+
+   KEY DESIGN DECISIONS:
+   ---------------------
+   - [Design decision 1]
+   - [Design decision 2]
+
+   ============================================================ */
+
+/* ============================================================
+   SECTION: [Section Name]
+   ============================================================
+   [Explanation of what this section styles and why]
+   ============================================================ */
+
+.class-name {
+  /* Explanation of why these styles are needed */
+  property: value;
+}
+```
 
 **Python Documentation Style:**
 ```python
@@ -705,15 +866,33 @@ function doSomething() {
 ```
 
 ### Why This Matters
-- **Reconstruction**: Anyone can understand and rebuild the code from scratch
+- **Reconstruction**: Anyone can understand and rebuild the code from scratch by reading comments
 - **Maintenance**: Future developers (or AI) can modify without breaking things
 - **Learning**: Code serves as documentation for how the system works
 - **Debugging**: Clear comments make it easy to find and fix issues
+- **Onboarding**: New contributors can understand the codebase without asking questions
+- **Self-Documenting**: The code explains itself - no separate documentation needed
 
-### Examples
-- ✅ FlashcardTypingGame/FlashcardTypingGame.html - Extensive KEY FEATURE comments
-- ✅ PythonHelpers/append_new_fixes.py - Module-level documentation
+### The Gold Standard: FlashcardTypingGame.html
+**This file is the PERFECT example of how ALL code should be documented:**
+- ✅ Detailed module overview at the top
+- ✅ Design system explanation with reasoning
+- ✅ Every KEY FEATURE has a comment block explaining its purpose
+- ✅ Each function has clear comments
+- ✅ CSS sections are organized and explained
+- ✅ Anyone reading it can understand EXACTLY what it does and why
+
+### Examples of Well-Documented Files
+- ✅ **FlashcardTypingGame/FlashcardTypingGame.html** - The gold standard for documentation
+- ✅ **PythonHelpers/append_new_fixes.py** - Extensive module-level documentation
 - ✅ All major functions explained with purpose, workflow, and notes
+
+### Enforcement
+**Before committing ANY code file:**
+1. Does it have a detailed header explaining what it does?
+2. Does every function have a comment explaining its purpose?
+3. Can someone who reads code reconstruct what's happening?
+4. If the answer to ANY of these is NO → Add documentation before committing
 
 ---
 
