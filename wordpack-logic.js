@@ -685,6 +685,8 @@ function initializeDebugUI() {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.75rem;
+    border: 1px solid rgba(232, 212, 152, 0.3);
+    margin-top: 10px;
   `;
 
   const thead = document.createElement('thead');
@@ -694,6 +696,12 @@ function initializeDebugUI() {
     background: rgba(232, 212, 152, 0.2);
     color: #E8D498;
   `;
+  // Add initial placeholder headers (will be replaced by updateDebugTable)
+  headerRow.innerHTML = `
+    <th>I am learning</th>
+    <th>I speak</th>
+    <th>Word Type</th>
+  `;
   thead.appendChild(headerRow);
   table.appendChild(thead);
 
@@ -702,6 +710,8 @@ function initializeDebugUI() {
   tbody.style.cssText = `
     color: #ddd;
   `;
+  // Add initial placeholder row (will be replaced by updateDebugTable)
+  tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; padding: 15px; color: #888;">Loading deck data...</td></tr>';
   table.appendChild(tbody);
 
   debugContainer.appendChild(table);
