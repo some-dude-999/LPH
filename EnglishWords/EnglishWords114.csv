@@ -18,7 +18,7 @@ treasury,国库,guó kù,tesorería,tesouraria
 broker,经纪人,jīng jì rén,corredor,corretor
 hedge,对冲,duì chōng,cobertura,cobertura
 index,索引,suǒ yǐn,índice,índice
-yield,收益,chǎn liàng,rendimiento,rendimento
+yield,收益,shōu yì,rendimiento,rendimento
 financial advisor,财务顾问,cái wù gù wèn,asesor financiero,consultor financeiro
 financial planning,财务规划,cái wù guī huà,planificación financiera,planejamento financeiro
 stock market,股市,gǔ shì,mercado de valores,mercado de ações
@@ -29,7 +29,7 @@ mutual fund,共同基金,gòng tóng jī jīn,fondo mutuo,fundo mútuo
 fund manager,基金经理,jī jīn jīng lǐ,gestor de fondos,gestor de fundos
 asset allocation,资产配置,zī chǎn pèi zhì,asignación de activos,alocação de ativos
 liquid asset,流动资产,liú dòng zī chǎn,activo líquido,ativo líquido
-liability insurance,责任保险,zé rèn bǎo xiǎn,seguro de responsabilidad,seguro de responsabilidade civil
+liability insurance,责任保险,zé rèn bǎo xiǎn,seguro de responsabilidad civil,seguro de responsabilidade civil
 personal liability,个人责任,gè rén zé rèn,responsabilidad personal,responsabilidade pessoal
 home equity,房屋净值,fáng wū jìng zhí,valor líquido de la vivienda,valor da casa
 equity stake,股权,gǔ quán,participación accionaria,participação acionária
@@ -52,10 +52,10 @@ buy securities,购买证券,gòu mǎi zhèng quàn,comprar valores,comprar títu
 treasury bond,国债,guó zhài,bono del tesoro,títulos do tesouro
 treasury department,财务部,cái wù bù,departamento de tesorería,departamento de tesouraria
 stock broker,股票经纪人,gǔ piào jīng jì rén,corredor de bolsa,corretor da bolsa
-broker fee,经纪费,jīng jì fèi,honorarios del corredor,taxa de corretagem
+broker fee,经纪费,jīng jì fèi,comisión del corredor,taxa de corretagem
 hedge fund,对冲基金,duì chōng jī jīn,fondo de cobertura,fundo de hedge
 hedge against,对冲,duì chōng,protegerse contra,proteção contra
 stock index,股票指数,gǔ piào zhǐ shù,índice bursátil,índice de ações
 price index,价格指数,jià gé zhǐ shù,índice de precios,índice de preços
 high yield,高收益,gāo shōu yì,alto rendimiento,alto rendimento
-yield return,投资回报率,shōu yì lǜ huí bào,rentabilidad,taxa de retorno
+yield return,投资回报率,tóu zī huí bào lǜ,rentabilidad,taxa de retorno
