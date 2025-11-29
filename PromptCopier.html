@@ -256,44 +256,24 @@ seen this wordpack before) rate the quality. This prevents:
     <h4>Click any prompt box to copy it to clipboard.</h4>
 </div>
 
-<!-- FILTER BAR -->
-<div class="filter-bar">
-    <label>Stage:</label>
-    <select id="stageFilter" onchange="syncFilters('main-stage')">
-        <option value="all">All Stages</option>
-        <option value="1">Stage 1: Base Words</option>
-        <option value="2">Stage 2: Example Words</option>
-        <option value="3">Stage 3: Translation Review (Act-Based)</option>
-        <option value="4">Stage 4: JS Modules</option>
-        <option value="rating">Quality Rating</option>
-    </select>
-    <label>Language:</label>
-    <select id="langFilter" onchange="syncFilters('main-lang')">
-        <option value="all">All Languages</option>
-        <option value="chinese">Chinese</option>
-        <option value="spanish">Spanish</option>
-        <option value="english">English</option>
-    </select>
-</div>
-
-<!-- STICKY QUICK COPY HEADER FOR STAGE 3 PROMPTS -->
-<div id="quickCopyHeader" style="position: sticky; top: 0; background: #f5f5f5; border-bottom: 3px solid #333; padding: 10px; z-index: 1000; display: none; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<!-- STICKY FILTER HEADER -->
+<div id="filterHeader" style="position: sticky; top: 0; background: #f5f5f5; border-bottom: 3px solid #333; padding: 10px; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
-        <div style="font-weight: bold; font-size: 14px;">📋 Quick Copy:</div>
+        <div style="font-weight: bold; font-size: 16px;">🎯 Filters:</div>
         <div style="display: flex; gap: 10px; align-items: center;">
             <label style="font-weight: bold;">Stage:</label>
-            <select id="stickyStageFilter" onchange="syncFilters('stage')" style="padding: 4px 8px; border: 2px solid #333; border-radius: 3px; font-weight: bold;">
+            <select id="stageFilter" onchange="applyFilters()" style="padding: 6px 12px; border: 2px solid #333; border-radius: 3px; font-weight: bold; font-size: 14px;">
                 <option value="all">All Stages</option>
-                <option value="1">Stage 1</option>
-                <option value="2">Stage 2</option>
-                <option value="3" selected>Stage 3</option>
-                <option value="4">Stage 4</option>
-                <option value="rating">Rating</option>
+                <option value="1">Stage 1: Base Words</option>
+                <option value="2">Stage 2: Example Words</option>
+                <option value="3">Stage 3: Translation Review</option>
+                <option value="4">Stage 4: JS Modules</option>
+                <option value="rating">Quality Rating</option>
             </select>
         </div>
         <div style="display: flex; gap: 10px; align-items: center;">
             <label style="font-weight: bold;">Language:</label>
-            <select id="stickyLangFilter" onchange="syncFilters('lang')" style="padding: 4px 8px; border: 2px solid #333; border-radius: 3px; font-weight: bold;">
+            <select id="langFilter" onchange="applyFilters()" style="padding: 6px 12px; border: 2px solid #333; border-radius: 3px; font-weight: bold; font-size: 14px;">
                 <option value="all">All Languages</option>
                 <option value="chinese">Chinese</option>
                 <option value="spanish">Spanish</option>
@@ -301,7 +281,8 @@ seen this wordpack before) rate the quality. This prevents:
             </select>
         </div>
     </div>
-    <div id="quickCopyButtons" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+    <!-- Quick copy buttons (only show for Stage 3) -->
+    <div id="quickCopyButtons" style="display: none; flex-wrap: wrap; gap: 8px; padding-top: 5px; border-top: 2px solid #ddd; margin-top: 5px;"></div>
 </div>
 
 <!-- ============================================================ -->
@@ -3783,29 +3764,6 @@ The goal is quality, not politeness.</div>
     }
 
     // ============================================================
-    // FILTER SYNC FUNCTIONALITY
-    // ============================================================
-    function syncFilters(source) {
-        // Sync between main filter bar and sticky header filters
-        if (source === 'stage') {
-            const stickyValue = document.getElementById('stickyStageFilter').value;
-            document.getElementById('stageFilter').value = stickyValue;
-        } else if (source === 'lang') {
-            const stickyValue = document.getElementById('stickyLangFilter').value;
-            document.getElementById('langFilter').value = stickyValue;
-        } else if (source === 'main-stage') {
-            const mainValue = document.getElementById('stageFilter').value;
-            document.getElementById('stickyStageFilter').value = mainValue;
-        } else if (source === 'main-lang') {
-            const mainValue = document.getElementById('langFilter').value;
-            document.getElementById('stickyLangFilter').value = mainValue;
-        }
-
-        // Apply the filters
-        applyFilters();
-    }
-
-    // ============================================================
     // FILTER FUNCTIONALITY
     // ============================================================
     function applyFilters() {
@@ -3894,7 +3852,6 @@ The goal is quality, not politeness.</div>
     // QUICK COPY HEADER FUNCTIONALITY
     // ============================================================
     function updateQuickCopyHeader() {
-        const quickCopyHeader = document.getElementById('quickCopyHeader');
         const quickCopyButtons = document.getElementById('quickCopyButtons');
 
         // Get all visible Stage 3 prompt boxes
@@ -3904,14 +3861,14 @@ The goal is quality, not politeness.</div>
                    prompt.offsetParent !== null;
         });
 
-        // If no Stage 3 prompts visible, hide the header
+        // If no Stage 3 prompts visible, hide the buttons
         if (visiblePrompts.length === 0) {
-            quickCopyHeader.style.display = 'none';
+            quickCopyButtons.style.display = 'none';
             return;
         }
 
-        // Show the header and populate buttons
-        quickCopyHeader.style.display = 'block';
+        // Show the buttons and populate them
+        quickCopyButtons.style.display = 'flex';
         quickCopyButtons.innerHTML = '';
 
         visiblePrompts.forEach((prompt, index) => {
