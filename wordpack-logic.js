@@ -833,6 +833,37 @@ function initializeDebugUI() {
 
   debugContainer.appendChild(table);
 
+  // Pronunciation Debug Section (appears after table)
+  const pronunciationDebug = document.createElement('div');
+  pronunciationDebug.id = 'pronunciation-debug';
+  pronunciationDebug.style.cssText = `
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(232, 212, 152, 0.2);
+  `;
+
+  const pronunciationTitle = document.createElement('div');
+  pronunciationTitle.textContent = 'Pronunciation Debug:';
+  pronunciationTitle.style.cssText = `
+    color: #E8D498;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+  `;
+  pronunciationDebug.appendChild(pronunciationTitle);
+
+  const pronunciationInfo = document.createElement('div');
+  pronunciationInfo.id = 'pronunciation-debug-info';
+  pronunciationInfo.style.cssText = `
+    color: #ddd;
+    font-size: 0.7rem;
+    line-height: 1.6;
+  `;
+  pronunciationInfo.innerHTML = '<div style="color: #888;">Press 🎤 to see pronunciation debug info...</div>';
+  pronunciationDebug.appendChild(pronunciationInfo);
+
+  debugContainer.appendChild(pronunciationDebug);
+
   // Add CSS for table cells
   const style = document.createElement('style');
   style.textContent = `
@@ -854,6 +885,173 @@ function initializeDebugUI() {
 
   // Append to body
   document.body.appendChild(debugContainer);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// PRONUNCIATION / SPEECH RECOGNITION
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Normalize text for pronunciation comparison
+ * Handles all languages (Chinese, Spanish, English)
+ *
+ * @param {string} text - Text to normalize
+ * @param {string} language - 'chinese', 'spanish', 'english'
+ * @returns {string} - Normalized text
+ */
+function normalizePronunciationText(text, language) {
+  if (!text) return '';
+
+  let normalized = text.toLowerCase().trim();
+
+  // For Chinese: Remove spaces and tone marks from pinyin
+  if (language === 'chinese') {
+    // Remove all spaces
+    normalized = normalized.replace(/\s+/g, '');
+    // Remove tone marks (ā á ǎ à ē é ě è ī í ǐ ì ō ó ǒ ò ū ú ǔ ù ǖ ǘ ǚ ǜ ü)
+    normalized = normalized.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  return normalized;
+}
+
+/**
+ * Get dynamic similarity threshold based on word length
+ * Shorter words need lower thresholds (harder to match perfectly)
+ *
+ * @param {string} word - Word to check
+ * @returns {number} - Threshold between 0.0 and 1.0
+ */
+function getSimilarityThreshold(word) {
+  const len = word.length;
+  if (len <= 4) return 0.60;      // Short words like "yes" - 60%
+  if (len <= 8) return 0.70;      // Medium words - 70%
+  if (len <= 12) return 0.75;     // Longer words - 75%
+  return 0.80;                     // Very long phrases - 80%
+}
+
+/**
+ * Calculate Levenshtein distance between two strings
+ * (String edit distance algorithm)
+ *
+ * @param {string} str1 - First string
+ * @param {string} str2 - Second string
+ * @returns {number} - Edit distance
+ */
+function levenshteinDistance(str1, str2) {
+  const m = str1.length;
+  const n = str2.length;
+  const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
+
+  for (let i = 0; i <= m; i++) dp[i][0] = i;
+  for (let j = 0; j <= n; j++) dp[0][j] = j;
+
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (str1[i - 1] === str2[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1];
+      } else {
+        dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+      }
+    }
+  }
+  return dp[m][n];
+}
+
+/**
+ * Calculate similarity percentage between expected and heard text
+ * Uses normalization and Levenshtein distance
+ *
+ * @param {string} expected - Expected text
+ * @param {string} heard - What was heard by speech recognition
+ * @param {string} language - 'chinese', 'spanish', 'english'
+ * @returns {Object} - { score: number, normalizedExpected: string, normalizedHeard: string }
+ */
+function calculateSimilarity(expected, heard, language) {
+  const normalizedExpected = normalizePronunciationText(expected, language);
+  const normalizedHeard = normalizePronunciationText(heard, language);
+
+  if (normalizedExpected === normalizedHeard) {
+    return { score: 100, normalizedExpected, normalizedHeard };
+  }
+  if (normalizedHeard.length === 0) {
+    return { score: 0, normalizedExpected, normalizedHeard };
+  }
+
+  const distance = levenshteinDistance(normalizedExpected, normalizedHeard);
+  const maxLen = Math.max(normalizedExpected.length, normalizedHeard.length);
+  const similarity = Math.max(0, ((maxLen - distance) / maxLen) * 100);
+
+  return {
+    score: Math.round(similarity),
+    normalizedExpected,
+    normalizedHeard
+  };
+}
+
+/**
+ * Get feedback message based on score
+ * Multi-tier system (4 levels instead of binary pass/fail)
+ *
+ * @param {number} score - Similarity score (0-100)
+ * @returns {string} - Feedback message
+ */
+function getFeedbackMessage(score) {
+  if (score >= 90) return "Perfect!";
+  if (score >= 75) return "Great!";
+  if (score >= 60) return "Almost!";
+  return "Try again!";
+}
+
+/**
+ * Get CSS class for score coloring
+ *
+ * @param {number} score - Similarity score (0-100)
+ * @returns {string} - CSS class name
+ */
+function getScoreClass(score) {
+  if (score >= 90) return "excellent";
+  if (score >= 75) return "good";
+  if (score >= 60) return "okay";
+  return "poor";
+}
+
+/**
+ * Update pronunciation debug info in debug panel
+ * Shows all technical details for debugging pronunciation issues
+ *
+ * @param {Object} debugData - Debug information
+ */
+function updatePronunciationDebug(debugData) {
+  if (!window.DEBUG_MODE) return;
+
+  const debugInfo = document.getElementById('pronunciation-debug-info');
+  if (!debugInfo) return;
+
+  const {
+    languageCode,
+    expected,
+    heard,
+    normalizedExpected,
+    normalizedHeard,
+    score,
+    threshold,
+    passed
+  } = debugData;
+
+  debugInfo.innerHTML = `
+    <div><strong>Language Code:</strong> ${languageCode}</div>
+    <div><strong>Expected (raw):</strong> ${expected}</div>
+    <div><strong>Heard (raw):</strong> ${heard}</div>
+    <div><strong>Expected (normalized):</strong> ${normalizedExpected}</div>
+    <div><strong>Heard (normalized):</strong> ${normalizedHeard}</div>
+    <div><strong>Similarity Score:</strong> ${score}%</div>
+    <div><strong>Threshold:</strong> ${Math.round(threshold * 100)}%</div>
+    <div><strong>Result:</strong> <span style="color: ${passed ? '#22c55e' : '#ef4444'}">${passed ? 'PASS ✓' : 'FAIL ✗'}</span></div>
+  `;
+
+  // Also log to console
+  console.log('[Pronunciation Debug]', debugData);
 }
 
 // ════════════════════════════════════════════════════════════════════════════

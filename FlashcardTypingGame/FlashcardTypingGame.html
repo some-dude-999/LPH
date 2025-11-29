@@ -572,10 +572,11 @@
     }
 
     .feedback-heard {
-      font-size: 0.95rem;
+      font-size: 1.5rem;
       color: var(--color-text-gold);
       font-style: italic;
       margin-bottom: 15px;
+      font-weight: bold;
     }
 
     .feedback-close {
@@ -4217,69 +4218,33 @@
       saveState();
     }
 
-    // Levenshtein distance for string similarity
-    function levenshteinDistance(str1, str2) {
-      const m = str1.length;
-      const n = str2.length;
-      const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
-
-      for (let i = 0; i <= m; i++) dp[i][0] = i;
-      for (let j = 0; j <= n; j++) dp[0][j] = j;
-
-      for (let i = 1; i <= m; i++) {
-        for (let j = 1; j <= n; j++) {
-          if (str1[i - 1] === str2[j - 1]) {
-            dp[i][j] = dp[i - 1][j - 1];
-          } else {
-            dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
-          }
-        }
-      }
-      return dp[m][n];
-    }
-
-    // Calculate similarity percentage
-    function calculateSimilarity(expected, heard) {
-      const exp = expected.toLowerCase().trim();
-      const hrd = heard.toLowerCase().trim();
-      
-      if (exp === hrd) return 100;
-      if (hrd.length === 0) return 0;
-      
-      const distance = levenshteinDistance(exp, hrd);
-      const maxLen = Math.max(exp.length, hrd.length);
-      const similarity = Math.max(0, ((maxLen - distance) / maxLen) * 100);
-      
-      return Math.round(similarity);
-    }
-
-    // Get feedback message based on score
-    function getFeedbackMessage(score) {
-      if (score >= 90) return "¡Excelente! Perfect!";
-      if (score >= 75) return "¡Muy bien! Great job!";
-      if (score >= 50) return "¡Bien! Keep practicing!";
-      if (score >= 25) return "Getting there...";
-      return "Try again!";
-    }
-
-    // Get score class for coloring
-    function getScoreClass(score) {
-      if (score >= 90) return "excellent";
-      if (score >= 75) return "good";
-      if (score >= 50) return "okay";
-      return "poor";
-    }
+    // ============================================================
+    // PRONUNCIATION FUNCTIONS - Now in wordpack-logic.js
+    // ============================================================
+    // The following functions are now in wordpack-logic.js for reuse:
+    // - levenshteinDistance()
+    // - calculateSimilarity() - Now takes language parameter
+    // - getFeedbackMessage()
+    // - getScoreClass()
+    // - normalizePronunciationText()
+    // - getSimilarityThreshold()
+    // - updatePronunciationDebug()
+    // ============================================================
 
     // Show pronunciation feedback
-    function showFeedback(score, heard, isFront = true) {
+    function showFeedback(score, heard, expected, isFront = true) {
       const feedback = isFront ? feedbackFront : feedbackBack;
       const scoreEl = isFront ? scoreFront : scoreBack;
       const messageEl = isFront ? messageFront : messageBack;
       const heardEl = isFront ? heardFront : heardBack;
 
+      // Use dynamic threshold based on word length
+      const threshold = getSimilarityThreshold(expected);
+      const thresholdPercent = threshold * 100;
+
       // Speaking mode: Don't show overlay, auto-advance with stamps
       if (currentMode === 'pronunciation') {
-        if (score >= 70) {
+        if (score >= thresholdPercent) {
           // Pass! Remove card and advance
           pendingDeckChange = -1;
           updateDisplay();
@@ -4345,20 +4310,43 @@
         const results = event.results[0];
         let bestMatch = results[0].transcript;
         let bestScore = 0;
+        let bestNormalizedExpected = '';
+        let bestNormalizedHeard = '';
 
-        const expected = currentDeck[currentIndex].spanish;
+        // Get expected word based on current language
+        const card = currentDeck[currentIndex];
+        const targetLang = getTargetLanguage();
+        const expected = card[targetLang] || card.spanish || '';
+
+        // Get language code for speech recognition
+        const languageCode = getTtsLanguageCode() || 'en-US';
 
         // Check all alternatives for best match
         for (let i = 0; i < results.length; i++) {
           const transcript = results[i].transcript;
-          const score = calculateSimilarity(expected, transcript);
-          if (score > bestScore) {
-            bestScore = score;
+          const result = calculateSimilarity(expected, transcript, targetLang);
+          if (result.score > bestScore) {
+            bestScore = result.score;
             bestMatch = transcript;
+            bestNormalizedExpected = result.normalizedExpected;
+            bestNormalizedHeard = result.normalizedHeard;
           }
         }
 
-        showFeedback(bestScore, bestMatch, isFront);
+        // Update pronunciation debug panel
+        const threshold = getSimilarityThreshold(expected);
+        updatePronunciationDebug({
+          languageCode,
+          expected,
+          heard: bestMatch,
+          normalizedExpected: bestNormalizedExpected,
+          normalizedHeard: bestNormalizedHeard,
+          score: bestScore,
+          threshold,
+          passed: bestScore >= (threshold * 100)
+        });
+
+        showFeedback(bestScore, bestMatch, expected, isFront);
       };
 
       recognition.onerror = (event) => {
@@ -4367,7 +4355,10 @@
         micBtnControl.classList.remove('spelling');
 
         if (event.error === 'no-speech') {
-          showFeedback(0, '(no speech detected)', isFront);
+          const card = currentDeck[currentIndex];
+          const targetLang = getTargetLanguage();
+          const expected = card[targetLang] || card.spanish || '';
+          showFeedback(0, '(no speech detected)', expected, isFront);
         } else if (event.error === 'not-allowed') {
           alert('Microphone access denied. Please allow microphone access to use this feature.');
         }
