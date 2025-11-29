@@ -1,0 +1,32 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,1,Greetings & Basics,21,spanish,despedida,adiós,Use common farewell expression instead of noun form for natural greeting.
+spanish,1,Greetings & Basics,26,spanish,adiós por ahora,hasta luego,More natural way to say "goodbye for now."
+portuguese,1,Greetings & Basics,26,portuguese,adeus por enquanto,até logo,Common phrasing for "goodbye for now."
+spanish,1,Greetings & Basics,28,spanish,adiós por ahora,hasta luego,More natural phrasing for "bye for now."
+portuguese,1,Greetings & Basics,28,portuguese,Adeus por agora,até logo,Everyday way to say "bye for now."
+spanish,1,Greetings & Basics,52,spanish,esta bien entonces,está bien entonces,Add missing accent for correct spelling.
+portuguese,1,Greetings & Basics,54,portuguese,bem vindo ao lar,bem-vindo ao lar,Correct hyphenation for greeting.
+portuguese,1,Greetings & Basics,55,portuguese,bem vindo a bordo,bem-vindo a bordo,Correct hyphenation for greeting.
+spanish,1,Greetings & Basics,58,spanish,"saludos amigo","¡salud, amigo!",Use natural toast expression for "cheers".
+portuguese,1,Greetings & Basics,58,portuguese,"felicidades, companheiro","saúde, amigo",Use common toast expression instead of "felicidades".
+spanish,1,Greetings & Basics,59,spanish,saludos para ti,¡salud por ti!,Natural way to toast someone.
+portuguese,1,Greetings & Basics,59,portuguese,felicidades para você,saúde para você,Use natural toast wording instead of congratulatory phrase.
+portuguese,3,Numbers & Counting,46,portuguese,chance zero,nenhuma chance,Use common phrasing for "zero chance."
+spanish,3,Numbers & Counting,48,spanish,dos veces al dia,dos veces al día,Fix missing accent for natural spelling.
+spanish,3,Numbers & Counting,50,spanish,un cuarto y cuarto,y cuarto,Use standard way to say "a quarter past" when telling time.
+portuguese,3,Numbers & Counting,50,portuguese,um quarto depois,e quinze,Everyday expression for "a quarter past" in time telling.
+spanish,3,Numbers & Counting,54,spanish,mil millones de dolares,mil millones de dólares,Add accent for correct spelling of "dólares".
+spanish,4,Articles & Determiners,41,spanish,cada persona,cada uno,Most natural way to say "each one."
+spanish,4,Articles & Determiners,47,spanish,cada uno,cualquiera de los dos,Natural phrasing for "either one."
+spanish,4,Articles & Determiners,56,spanish,mio,mío,Add missing accent.
+spanish,4,Articles & Determiners,58,spanish,ex-presidente,expresidente,Standard single-word spelling in Spanish.
+spanish,4,Articles & Determiners,59,spanish,ex alumno,exalumno,Standard single-word spelling in Spanish.
+portuguese,5,Quantifiers,6,portuguese,alguns,poucos,Use correct word for "few" instead of "some."
+spanish,5,Quantifiers,7,spanish,pequeño,poco,Use quantity sense rather than size.
+portuguese,5,Quantifiers,7,portuguese,pequeno,pouco,Use quantity sense rather than size.
+spanish,5,Quantifiers,11,spanish,infinidad,de sobra,Natural way to express having plenty.
+spanish,5,Quantifiers,29,spanish,lo mas importante,lo más importante,Add missing accent.
+chinese,5,Quantifiers,48,chinese,十几个,一打,Use accurate term for "a dozen."
+pinyin,5,Quantifiers,48,pinyin,shí jǐ gè,yì dá,Pinyin must match corrected Chinese term for "a dozen."
+spanish,5,Quantifiers,30,spanish,bastantes pocos,muy pocos,More natural phrase for "quite few."
+spanish,5,Quantifiers,57,spanish,amplia oportunidad,mucha oportunidad,Use common phrasing for having ample opportunity.
