@@ -3,9 +3,9 @@ airport,机场,jī chǎng,aeropuerto,aeroporto
 flight,航班,háng bān,vuelo,vôo
 plane,飞机,fēi jī,avión,avião
 airline,航空公司,háng kōng gōng sī,aerolínea,companhia aérea
-terminal,航站楼,háng zhàn lóu,terminales,terminal
+terminal,航站楼,háng zhàn lóu,terminal,terminal
 boarding,登机,dēng jī,embarque,embarque
-gate,门,mén,puerta,portão
+gate,登机口,dēng jī kǒu,puerta,portão
 runway,跑道,pǎo dào,pista,pista
 luggage,行李,xíng lǐ,equipaje,bagagem
 baggage,行李,xíng lǐ,equipaje,bagagem
@@ -23,12 +23,12 @@ international airport,国际机场,guó jì jī chǎng,aeropuerto internacional,
 airport terminal,机场航站楼,jī chǎng háng zhàn lóu,terminal del aeropuerto,terminal do aeroporto
 book flight,预订航班,yù dìng háng bān,reservar vuelo,reservar voo
 flight number,航班号,háng bān hào,número de vuelo,número do voo
-board plane,登机,dēng jī,avión a bordo,avião a bordo
+board plane,登机,dēng jī,abordar el avión,embarcar no avião
 plane ticket,机票,jī piào,billete de avión,passagem de avião
 major airline,主要航空公司,zhǔ yào háng kōng gōng sī,importante aerolínea,grande companhia aérea
 airline ticket,机票,jī piào,billete de avión,passagem aérea
 terminal building,航站楼,háng zhàn lóu,edificio terminal,edifício do terminal
-terminal gate,航站楼门,háng zhàn lóu mén,puerta terminal,portão do terminal
+terminal gate,登机口,dēng jī kǒu,puerta de la terminal,portão do terminal
 boarding pass,登机牌,dēng jī pái,tarjeta de embarque,cartão de embarque
 boarding time,登机时间,dēng jī shí jiān,hora de embarque,horário de embarque
 departure gate,登机口,dēng jī kǒu,puerta de embarque,portão de embarque
@@ -53,8 +53,8 @@ flight delay,航班延误,háng bān yán wù,retraso del vuelo,atraso de voo
 delay notice,延迟通知,yán chí tōng zhī,aviso de retraso,aviso de atraso
 cancel flight,取消航班,qǔ xiāo háng bān,cancelar vuelo,cancelar voo
 flight cancel,航班取消,háng bān qǔ xiāo,cancelación de vuelo,voo cancelado
-experience turbulence,经历动荡,jīng lì dòng dàng,experimentar turbulencias,vivenciar turbulência
-slight turbulence,轻微湍流,qīng wēi tuān liú,ligera turbulencia,ligeira turbulência
+experience turbulence,经历颠簸,jīng lì dòng dàng,experimentar turbulencias,vivenciar turbulência
+slight turbulence,轻微颠簸,qīng wēi tuān liú,ligera turbulencia,ligeira turbulência
 fasten seatbelt,系好安全带,jì hǎo ān quán dài,abrocharse el cinturón de seguridad,apertar cinto de segurança
 seatbelt sign,安全带标志,ān quán dài biāo zhì,señal de cinturón de seguridad,sinal de cinto de segurança
 overhead bin,舱顶行李箱,cāng dǐng xíng lǐ xiāng,compartimento superior,compartimento superior

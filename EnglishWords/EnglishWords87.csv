@@ -6,24 +6,24 @@ conference,会议,huì yì,conferencia,conferência
 agenda,议程,yì chéng,agenda,agenda
 proposal,提案,tí àn,propuesta,proposta
 feedback,反馈,fǎn kuì,retroalimentación,comentários
-brief,简介,jiǎn jiè,breve,breve
+brief,简介,jiǎn jiè,resumen breve,resumo
 notify,通知,tōng zhī,notificar,notificar
-circulate,流通,liú tōng,circular,circular
-correspond,对应,duì yìng,corresponder,corresponder
-consult,咨询,zī xún,consultar,consulte
+circulate,传阅,chuán yuè,circular,circular
+correspond,通信,tōng xìn,corresponder,corresponder
+consult,咨询,zī xún,consultar,consultar
 collaborate,合作,hé zuò,colaborar,colaborar
-liaise,联络,lián luò,enlace,contato
-formalize,形式化,xíng shì huà,formalizar,formalizar
+liaise,联络,lián luò,mantener contacto,manter contato
+formalize,正式化,zhèng shì huà,formalizar,formalizar
 outline,大纲,dà gāng,esquema,esboço
 draft,草稿,cǎo gǎo,borrador,rascunho
 attach,附上,fù shàng,adjuntar,anexar
-forward,转发,zhuǎn fā,adelante,avançar
+forward,转发,zhuǎn fā,reenviar,encaminhar
 distribute,分发,fēn fā,distribuir,distribuir
-office memo,办公室备忘录,bàn gōng shì bèi wàng lù,nota de oficina,memorando de escritório
+office memo,办公室备忘录,bàn gōng shì bèi wàng lù,memorando de oficina,memorando de escritório
 memo to staff,给员工的备忘录,gěi yuán gōng de bèi wàng lù,memorando al personal,memorando para a equipe
 cover letter,求职信,qiú zhí xìn,carta de presentación,carta de apresentação
 letter of recommendation,推荐信,tuī jiàn xìn,carta de recomendación,carta de recomendação
-leave voicemail,留下语音信箱,liú xià yǔ yīn xìn xiāng,dejar mensaje de voz,deixar correio de voz
+leave voicemail,留下语音留言,liú xià yǔ yīn xìn xiāng,dejar mensaje de voz,deixar correio de voz
 check voicemail,检查语音信箱,jiǎn chá yǔ yīn xìn xiāng,revisar el correo de voz,verificar correio de voz
 video conference,视频会议,shì pín huì yì,videoconferencia,videoconferência
 conference call,电话会议,diàn huà huì yì,conferencia telefónica,teleconferência
@@ -31,7 +31,7 @@ meeting agenda,会议议程,huì yì yì chéng,agenda de la reunión,agenda da 
 agenda item,议程项目,yì chéng xiàng mù,punto del orden del día,item da agenda
 business proposal,商业提案,shāng yè tí àn,propuesta de negocio,proposta comercial
 proposal meeting,提案会议,tí àn huì yì,reunión de propuestas,reunião de proposta
-give feedback,提供反馈,tí gōng fǎn kuì,dar tu opinión,dar feedback
+give feedback,提供反馈,tí gōng fǎn kuì,dar retroalimentación,dar feedback
 receive feedback,接收反馈,jiē shōu fǎn kuì,recibir comentarios,receber feedback
 brief meeting,简短会议,jiǎn duǎn huì yì,breve reunión,breve reunião
 quick brief,快速简介,kuài sù jiǎn jiè,resumen rápido,resumo rápido
@@ -41,12 +41,12 @@ circulate document,传阅文件,chuán yuè wén jiàn,circular documento,circul
 circulate information,传播信息,chuán bō xìn xī,circular información,circular informações
 correspond with,通信,tōng xìn,corresponder con,corresponde com
 correspond by email,通过电子邮件通讯,tōng guò diàn zi yóu jiàn tōng xùn,corresponder por correo electrónico,corresponder por e-mail
-consult with,向...咨询,xiàng... zī xún,consultar con,consulte
+consult with,向...咨询,xiàng... zī xún,consultar con,consultar com
 consult expert,请教专家,qǐng jiào zhuān jiā,consultar experto,consulte especialista
 collaborate on,合作,hé zuò,colaborar en,colaborar em
 collaborate together,一起协作,yì qǐ xié zuò,colaborar juntos,colaborar juntos
-liaise with,与...联络,yǔ... lián luò,establecer enlace con,entre em contato com
-liaise between,之间联络,zhī jiān lián luò,enlace entre,ligação entre
+liaise with,与...联络,yǔ... lián luò,mantener contacto con,manter contato com
+liaise between,之间联络,zhī jiān lián luò,servir de enlace entre,fazer a ligação entre
 formalize agreement,正式协议,zhèng shì xié yì,formalizar acuerdo,formalizar acordo
 formalize process,正式化流程,zhèng shì huà liú chéng,formalizar proceso,formalizar processo
 outline plan,概要计划,gài yào jì huà,plan general,plano geral
@@ -58,4 +58,4 @@ please attach,请附上,qǐng fù shàng,por favor adjunte,anexe
 forward email,转发电子邮件,zhuǎn fā diàn zi yóu jiàn,reenviar correo electrónico,encaminhar e-mail
 forward to,转发至,zhuǎn fā zhì,reenviar a,encaminhar para
 distribute copies,分发副本,fēn fā fù běn,distribuir copias,distribuir cópias
-distribute evenly,均匀分布,jūn yún fēn bù,distribuir uniformemente,distribuir uniformemente
+distribute evenly,平均分配,píng jūn fēn pèi,distribuir uniformemente,distribuir uniformemente
