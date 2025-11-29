@@ -8,8 +8,8 @@ cobertura,coverage,覆盖范围,fù gài fàn wéi,cobertura
 router,router,路由器,lù yóu qì,roteador
 antena,antenna,天线,tiān xiàn,antena
 marcación,dialing,拨号,bō hào,discando
-tono,tone,语气,yǔ qì,tom
-buzón,mailbox,语音信箱,yǔ yīn xìn xiāng,caixa de correio
+tono,dial tone,语气,yǔ qì,tom de discagem
+buzón,voicemail,语音信箱,yǔ yīn xìn xiāng,correio de voz
 extensión,extension,扩展,kuò zhǎn,extensão
 centralita,switchboard,总机,zǒng jī,central telefônica
 conferencia,conference,会议,huì yì,conferência
@@ -37,10 +37,10 @@ la antena,the antenna,天线,tiān xiàn,a antena
 una antena,an antenna,天线,tiān xiàn,uma antena
 la marcación,dialing,拨号,bō hào,discando
 con marcación,with dialing,带标记,dài biāo jì,com marcação
-el tono,the tone,语气,yǔ qì,o tom
-un tono,a tone,一个音调,yí gè yīn diào,um tom
-el buzón,the mailbox,邮箱,yóu xiāng,a caixa de correio
-un buzón,a mailbox,一个邮箱,yí gè yóu xiāng,uma caixa de correio
+el tono,the dial tone,语气,yǔ qì,o tom de discagem
+un tono,a dial tone,一个音调,yí gè yīn diào,um tom de discagem
+el buzón,the voicemail,邮箱,yóu xiāng,o correio de voz
+un buzón,a voicemail,一个邮箱,yí gè yóu xiāng,um correio de voz
 la extensión,the extension,扩展名,kuò zhǎn míng,a extensão
 una extensión,an extension,扩展,kuò zhǎn,uma extensão
 la centralita,the switchboard,总机,zǒng jī,a central
