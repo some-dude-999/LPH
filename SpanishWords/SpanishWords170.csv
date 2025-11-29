@@ -1,17 +1,17 @@
 spanish,english,chinese,pinyin,portuguese
 psicología,psychology,心理学,xīn lǐ xué,psicologia
-psicólogo,psychologist,心理学家,xīn lǐ xué jiā,psicóloga
+psicólogo,psychologist,心理学家,xīn lǐ xué jiā,psicólogo
 psicóloga,psychologist,心理学家,xīn lǐ xué jiā,psicóloga
 cerebro,brain,大脑,dà nǎo,cérebro
 comportamiento,behavior,行为,xíng wéi,comportamento
 conducta,behavior,行为,xíng wéi,comportamento
-inteligencia,intelligence,智力,qíng bào,inteligência
+inteligencia,intelligence,智力,zhì lì,inteligência
 trauma,trauma,创伤,chuāng shāng,trauma
 terapia,therapy,治疗,zhì liáo,terapia
 tratamiento,treatment,治疗,zhì liáo,tratamento
 analizar,to analyze,分析,fēn xī,analisar
-comprender,to understand,了解,liǎo jiě,entenda
-sesión,session,疗程,huì huà,sessão
+comprender,to understand,了解,liǎo jiě,entender
+sesión,session,疗程,liáo chéng,sessão
 sanar,to heal,治愈,zhì yù,curar
 subconsciente,subconscious,潜意识,qián yì shí,subconsciente
 ansiedad,anxiety,焦虑,jiāo lǜ,ansiedade
@@ -21,8 +21,8 @@ psicosis,psychosis,精神病,jīng shén bìng,psicose
 fobia,phobia,恐惧症,kǒng jù zhèng,fobia
 la psicología,psychology,心理学,xīn lǐ xué,psicologia
 de psicología,of psychology,心理学,xīn lǐ xué,de psicologia
-el psicólogo,the psychologist,心理学家,xīn lǐ xué jiā,a psicóloga
-un psicólogo,a psychologist,心理学家,xīn lǐ xué jiā,uma psicóloga
+el psicólogo,the psychologist,心理学家,xīn lǐ xué jiā,o psicólogo
+un psicólogo,a psychologist,心理学家,xīn lǐ xué jiā,um psicólogo
 la psicóloga,the psychologist,心理学家,xīn lǐ xué jiā,a psicóloga
 una psicóloga,a psychologist,心理学家,xīn lǐ xué jiā,uma psicóloga
 el cerebro,the brain,大脑,dà nǎo,o cérebro
@@ -31,7 +31,7 @@ el comportamiento,the behavior,行为,xíng wéi,o comportamento
 un comportamiento,a behavior,一种行为,yī zhǒng xíng wéi,um comportamento
 la conducta,the behavior,行为,xíng wéi,o comportamento
 mala conducta,bad behavior,不良行为,bù liáng xíng wéi,mau comportamento
-la inteligencia,intelligence,智力,qíng bào,inteligência
+la inteligencia,intelligence,智力,zhì lì,inteligência
 con inteligencia,with intelligence,凭借智慧,píng jiè zhì huì,com inteligência
 el trauma,the trauma,创伤,chuāng shāng,o trauma
 un trauma,a trauma,创伤,chuāng shāng,um trauma
@@ -39,12 +39,12 @@ la terapia,therapy,治疗,zhì liáo,terapia
 en terapia,in therapy,治疗中,zhì liáo zhōng,em terapia
 el tratamiento,the treatment,治疗,zhì liáo,o tratamento
 un tratamiento,a treatment,治疗,zhì liáo,um tratamento
-hay que analizar,you have to analyze,必须分析,bì xū fēn xī,deve ser analisado
+hay que analizar,you have to analyze,必须分析,bì xū fēn xī,você tem que analisar
 voy a analizar,I'm going to analyze,我来分析,wǒ lái fēn xī,Vou analisar
 hay que comprender,you have to understand,你必须明白,nǐ bì xū míng bái,você tem que entender
 voy a comprender,I will understand,我会理解,wǒ huì lǐ jiě,Eu vou entender
-la sesión,the session,疗程,huì yì,a sessão
-una sesión,a session,一个会话,yí gè huì huà,uma sessão
+la sesión,the session,疗程,liáo chéng,a sessão
+una sesión,a session,一次疗程,yí cì liáo chéng,uma sessão
 hay que sanar,you have to heal,你必须治愈,nǐ bì xū zhì yù,você tem que curar
 voy a sanar,I will heal,我会治愈,wǒ huì zhì yù,Eu vou curar
 el subconsciente,the subconscious,潜意识,qián yì shí,o subconsciente

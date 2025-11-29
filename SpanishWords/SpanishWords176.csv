@@ -1,6 +1,6 @@
 spanish,english,chinese,pinyin,portuguese
 fotógrafo,photographer,摄影师,shè yǐng shī,fotógrafo
-fotógrafa,photographer,摄影师,shè yǐng shī,fotógrafo
+fotógrafa,photographer,摄影师,shè yǐng shī,fotógrafa
 imagen,image,图像,tú xiàng,imagem
 flash,flash,闪光,shǎn guāng,flash
 enfoque,focus,焦点,jiāo diǎn,foco
@@ -9,23 +9,23 @@ sombra,shadow,影子,yǐng zi,sombra
 contraste,contrast,对比,duì bǐ,contraste
 color,color,颜色,yán sè,cor
 capturar,to capture,捕获,bǔ huò,capturar
-procesar,to process,处理,jìn chéng,processo
+procesar,to process,处理,chǔ lǐ,processar
 editar,to edit,编辑,biān jí,editar
 obturador,shutter,快门,kuài mén,obturador
-diafragma,diaphragm,光圈,gé mó,diafragma
-zoom,zoom,缩放,suō fàng,ampliar
+diafragma,diaphragm,光圈,guāng quān,diafragma
+zoom,zoom,缩放,suō fàng,zoom
 trípode,tripod,三脚架,sān jiǎo jià,tripé
-filtro,filter,滤镜,guò lǜ,filtrar
+filtro,filter,滤镜,guò lǜ,filtro
 el fotógrafo,the photographer,摄影师,shè yǐng shī,o fotógrafo
 un fotógrafo,a photographer,摄影师,shè yǐng shī,um fotógrafo
-la fotógrafa,the photographer,摄影师,shè yǐng shī,o fotógrafo
-una fotógrafa,a photographer,摄影师,shè yǐng shī,um fotógrafo
+la fotógrafa,the photographer,摄影师,shè yǐng shī,a fotógrafa
+una fotógrafa,a photographer,摄影师,shè yǐng shī,uma fotógrafa
 la imagen,the image,图像,tú xiàng,a imagem
 una imagen,an image,图像,tú xiàng,uma imagem
 el flash,the flash,闪光灯,shǎn guāng dēng,o flash
 con flash,with flash,带闪光灯,dài shǎn guāng dēng,com flash
-el enfoque,the focus,对焦,fāng fǎ,a abordagem
-buen enfoque,good approach,好方法,hǎo fāng fǎ,boa abordagem
+el enfoque,the focus,对焦,duì jiāo,o foco
+buen enfoque,good focus,对焦良好,duì jiāo liáng hǎo,bom foco
 la luz,the light,光,guāng,a luz
 con luz,with light,带灯,dài dēng,com luz
 la sombra,the shadow,影子,yǐng zi,a sombra
@@ -34,16 +34,16 @@ el contraste,the contrast,对比,duì bǐ,o contraste
 con contraste,with contrast,对比,duì bǐ,com contraste
 el color,the color,颜色,yán sè,a cor
 a color,in color,颜色,yán sè,em cores
-hay que capturar,you have to capture,必须捕获,bì xū bǔ huò,deve ser capturado
+hay que capturar,you have to capture,必须捕获,bì xū bǔ huò,você tem que capturar
 voy a capturar,I will capture,我会捕捉,wǒ huì bǔ zhuō,Eu vou capturar
-hay que procesar,you have to process,必须处理,bì xū chǔ lǐ,deve ser processado
+hay que procesar,you have to process,必须处理,bì xū chǔ lǐ,você tem que processar
 voy a procesar,I will process,我会处理,wǒ huì chǔ lǐ,Vou processar
-hay que editar,need to edit,需要编辑,xū yào biān jí,preciso editar
+hay que editar,need to edit,需要编辑,xū yào biān jí,é preciso editar
 voy a editar,I'm going to edit,我要编辑,wǒ yào biān jí,Vou editar
-el obturador,the shutter,快门,kuài mén,a veneziana
-un obturador,a shutter,快门,kuài mén,uma veneziana
+el obturador,the shutter,快门,kuài mén,o obturador
+un obturador,a shutter,快门,kuài mén,um obturador
 el diafragma,the diaphragm,光圈,gé mó,o diafragma
-un diafragma,a diaphragm,隔膜,gé mó,um diafragma
+un diafragma,a diaphragm,光圈,guāng quān,um diafragma
 el zoom,the zoom,变焦,biàn jiāo,o zoom
 con zoom,zoomed,放大,fàng dà,ampliado
 el trípode,the tripod,三脚架,sān jiǎo jià,o tripé
