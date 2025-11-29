@@ -5,7 +5,7 @@ portátil,laptop,笔记本电脑,bǐ jì běn diàn nǎo,portátil
 tableta,tablet,平板电脑,píng bǎn diàn nǎo,tablet
 internet,internet,互联网,hù lián wǎng,internet
 mensaje,message,消息,xiāo xī,mensagem
-aplicación,application,应用,yìng yòng,aplicação
+aplicación,app,应用,yìng yòng,aplicativo
 contraseña,password,密码,mì mǎ,senha
 pantalla,screen,屏幕,píng mù,tela
 teclado,keyboard,键盘,jiàn pán,teclado
@@ -13,7 +13,7 @@ cámara,camera,相机,xiàng jī,câmera
 foto,photo,照片,zhào piān,foto
 video,video,视频,shì pín,vídeo
 descargar,download,下载,xià zài,baixar
-cargar,load,加载,jiā zài,carregar
+cargar,charge,充电,chōng diàn,carregar
 procesador,processor,处理器,chǔ lǐ qì,processador
 cable,cable,电缆,diàn lǎn,cabo
 auriculares,headphones,耳机,ěr jī,fones de ouvido
@@ -29,8 +29,8 @@ el internet,the internet,互联网,hù lián wǎng,a internet
 sin internet,without internet,没有互联网,méi yǒu hù lián wǎng,sem internet
 un mensaje,a message,一条消息,yī tiáo xiāo xī,uma mensagem
 el mensaje,the message,消息,xiāo xī,a mensagem
-una aplicación,an application,一个应用程序,yí gè yìng yòng chéng xù,um aplicativo
-la aplicación,the application,应用程序,yìng yòng chéng xù,o aplicativo
+una aplicación,an app,一个应用程序,yí gè yìng yòng chéng xù,um app
+la aplicación,the app,应用程序,yìng yòng chéng xù,o app
 la contraseña,the password,密码,mì mǎ,a senha
 mi contraseña,my password,我的密码,wǒ de mì mǎ,minha senha
 la pantalla,the screen,屏幕,píng mù,a tela
@@ -45,11 +45,11 @@ un video,a video,视频,shì pín,um vídeo
 el video,the video,视频,shì pín,o vídeo
 hay que descargar,you have to download,你必须下载,nǐ bì xū xià zài,você tem que baixar
 puedo descargar,can i download,我可以下载,wǒ kě yǐ xià zài,posso baixar
-hay que cargar,must be loaded,必须加载,bì xū jiā zài,deve ser carregado
-voy a cargar,I'm going to load,我要加载,wǒ yào jiā zài,Vou carregar
+hay que cargar,needs to be charged,需要充电,xū yào chōng diàn,deve ser carregado
+voy a cargar,I'm going to charge,我要充电,wǒ yào chōng diàn,vou carregar
 el procesador,the processor,处理器,chǔ lǐ qì,o processador
 un procesador,a processor,处理器,chǔ lǐ qì,um processador
-el cable,the cable,电线,diàn xiàn,o fio
-un cable,a cable,一根电线,yī gēn diàn xiàn,um fio
+el cable,the cable,电缆,diàn xiàn,o cabo
+un cable,a cable,一根电缆,yī gēn diàn xiàn,um cabo
 los auriculares,the headphones,耳机,ěr jī,os fones de ouvido
 mis auriculares,my headphones,我的耳机,wǒ de ěr jī,meus fones de ouvido
