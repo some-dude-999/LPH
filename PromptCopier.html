@@ -3844,8 +3844,8 @@ The goal is quality, not politeness.</div>
             });
         });
 
-        // Update quick copy header after filtering
-        updateQuickCopyHeader();
+        // Update quick copy header after filtering (with small delay for DOM update)
+        setTimeout(updateQuickCopyHeader, 10);
     }
 
     // ============================================================
@@ -3857,8 +3857,12 @@ The goal is quality, not politeness.</div>
         // Get all visible Stage 3 prompt boxes
         const allPrompts = Array.from(document.querySelectorAll('.stage3-prompt'));
         const visiblePrompts = allPrompts.filter(prompt => {
-            return !prompt.classList.contains('hidden') &&
-                   prompt.offsetParent !== null;
+            // Check if element is not hidden
+            const isHidden = prompt.classList.contains('hidden');
+            const isDisplayNone = window.getComputedStyle(prompt).display === 'none';
+            const hasParent = prompt.offsetParent !== null;
+
+            return !isHidden && !isDisplayNone && hasParent;
         });
 
         // If no Stage 3 prompts visible, hide the buttons
@@ -3932,7 +3936,10 @@ The goal is quality, not politeness.</div>
     }
 
     // Initialize on page load
-    window.addEventListener('DOMContentLoaded', updateQuickCopyHeader);
+    window.addEventListener('DOMContentLoaded', function() {
+        // Apply filters to initialize the view
+        applyFilters();
+    });
 </script>
 
 </body>
