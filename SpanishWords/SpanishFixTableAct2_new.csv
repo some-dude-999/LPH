@@ -1,0 +1,31 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,32,Weather Talk,2,english,time,weather,Wrong for theme - tiempo means weather in this context
+spanish,33,Can & Able (poder),26,english,is it possible,it is possible,Should be statement not question
+spanish,36,Office & Work,30,english,my partner,my coworker,More natural for office context - consistency with row 6
+spanish,36,Office & Work,31,english,a companion,a coworker,More natural for office context - consistency with row 6
+spanish,36,Office & Work,32,english,my partner,my coworker,More natural for office context - consistency with row 6
+spanish,36,Office & Work,33,english,a companion,a coworker,More natural for office context - consistency with row 6
+spanish,38,Thinking (pensar),29,english,Good idea,good idea,Lowercase to match style
+spanish,41,Drinks & Beverages,29,english,the shake,the smoothie,Consistency with row 8 batido=smoothie
+spanish,41,Drinks & Beverages,33,english,the red,the red wine,More complete and natural
+spanish,41,Drinks & Beverages,35,english,the pink,the rosé,More natural for wine context
+spanish,41,Drinks & Beverages,40,english,rum,the rum,Missing article - consistency
+spanish,41,Drinks & Beverages,42,english,vodka,the vodka,Missing article - consistency
+spanish,46,Telling Time,32,english,be ahead,be early,More natural for time context
+spanish,46,Telling Time,33,english,very advanced,very early,Wrong for time context - should refer to time not sophistication
+spanish,47,Directions & Position,14,english,opposite,in front,More common meaning for directions
+spanish,47,Directions & Position,16,english,front,in front,Should be adverb not noun
+spanish,49,Comparing Things,16,english,bottom,inferior,Correct meaning - inferior quality not physical bottom
+spanish,49,Comparing Things,31,english,the minor,the youngest,Correct for age comparison - consistency with row 32
+spanish,50,Physical Actions,27,english,suit well,sit well,Idiomatic meaning - was already corrected
+spanish,50,Physical Actions,28,english,not suit,sit badly,Idiomatic meaning - was already corrected
+spanish,51,Names & Calling (llamar),14,english,you are called,your name,Verb form - was already corrected
+spanish,51,Names & Calling (llamar),20,english,you are called,your name is,Plural form - was already corrected
+spanish,54,Restaurant Vocabulary,8,english,wine glass,cup,Copa is wine glass - was already corrected
+spanish,54,Restaurant Vocabulary,30,english,the wine glass,the cup,Copa is wine glass - was already corrected
+spanish,55,Shopping & Buying,16,english,coin,currency,More common everyday meaning - was already corrected
+spanish,57,Continuing (seguir),14,english,you continue,you follow,Pack theme is continuing - was already corrected
+spanish,57,Continuing (seguir),16,english,he continues,he follows,Pack theme is continuing - was already corrected
+spanish,57,Continuing (seguir),20,english,you continue,you follow,Pack theme is continuing - was already corrected
+spanish,57,Continuing (seguir),22,english,they continue,they follow,Pack theme is continuing - was already corrected
+spanish,58,Furniture & Objects,52,english,run the dishwasher,put the dishwasher,More natural - was already corrected
