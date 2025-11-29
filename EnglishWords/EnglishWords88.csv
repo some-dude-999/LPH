@@ -1,11 +1,11 @@
 english,chinese,pinyin,spanish,portuguese
-link,链接,liàn jiē,enlace,ligação
-search engine,搜索引擎,sōu suǒ yǐn qíng,motor de búsqueda,mecanismo de busca
+link,链接,liàn jiē,enlace,link
+search engine,搜索引擎,sōu suǒ yǐn qíng,motor de búsqueda,motor de busca
 social media,社交媒体,shè jiāo méi tǐ,redes sociales,mídias sociais
 post,发布,fā bù,publicar,postar
 share,分享,fēn xiǎng,compartir,compartilhar
-comment,评论,píng lùn,comentario,comente
-follow,关注,guān zhù,seguir,siga
+comment,评论,píng lùn,comentario,comentário
+follow,关注,guān zhù,seguir,seguir
 unfollow,取消关注,qǔ xiāo guān zhù,dejar de seguir,deixar de seguir
 profile,简介,jiǎn jiè,perfil,perfil
 login,登录,dēng lù,iniciar sesión,entrar
@@ -17,8 +17,8 @@ viral,病毒式,bìng dú shì,virales,virais
 hashtag,主题标签,zhǔ tí biāo qiān,hashtag,hashtag
 content,内容,nèi róng,contenido,conteúdo
 influencer,影响者,yǐng xiǎng zhě,influenciador,influenciador
-subscribe,订阅,dìng yuè,suscríbete,inscreva-se
-trending,趋势,qū shì,tendencia,tendências
+subscribe,订阅,dìng yuè,suscribirse,inscrever-se
+trending,趋势,qū shì,tendencia,em alta
 click the link,点击链接,diǎn jī liàn jiē,haga clic en el enlace,clique no link
 broken link,断开的链接,duàn kāi de liàn jiē,enlace roto,link quebrado
 use search engine,使用搜索引擎,shǐ yòng sōu suǒ yǐn qíng,utilizar el motor de búsqueda,usar mecanismo de busca
@@ -26,7 +26,7 @@ search engine results,搜索引擎结果,sōu suǒ yǐn qíng jié guǒ,resultad
 social media platform,社交媒体平台,shè jiāo méi tǐ píng tái,plataforma de redes sociales,plataforma de mídia social
 on social media,在社交媒体上,zài shè jiāo méi tǐ shàng,en las redes sociales,nas redes sociais
 new post,新帖子,xīn tiě zi,nueva publicación,nova postagem
-post update,更新后,gēng xīn hòu,actualización posterior,postar atualização
+post update,更新后,gēng xīn hòu,actualizar la publicación,postar atualização
 share this,分享这个,fēn xiǎng zhè ge,comparte esto,compartilhe isso
 share with,与...分享,yǔ... fēn xiǎng,compartir con,compartilhe com
 leave comment,发表评论,fā biǎo píng lùn,dejar comentario,deixe comentário
@@ -34,19 +34,19 @@ comment section,评论区,píng lùn qū,sección de comentarios,seção de come
 follow me,跟着我,gēn zhe wǒ,sígueme,siga-me
 follow account,关注帐号,guān zhù zhàng hào,seguir la cuenta,siga a conta
 unfollow someone,取消关注某人,qǔ xiāo guān zhù mǒu rén,dejar de seguir a alguien,deixar de seguir alguém
-unfollow account,取消关注帐户,qǔ xiāo guān zhù zhàng hù,dejar de seguir la cuenta,deixar de seguir conta
+unfollow account,取消关注帐户,qǔ xiāo guān zhù zhàng hù,dejar de seguir la cuenta,deixar de seguir a conta
 user profile,用户个人资料,yòng hù gè rén zī liào,perfil de usuario,perfil do usuário
 update profile,更新个人资料,gēng xīn gè rén zī liào,actualizar perfil,atualizar perfil
 login now,立即登录,lì jí dēng lù,iniciar sesión ahora,faça login agora
 login credentials,登录凭据,dēng lù píng jù,credenciales de inicio de sesión,credenciais de login
 logout now,立即注销,lì jí zhù xiāo,cerrar sesión ahora,saia agora
 logout button,注销按钮,zhù xiāo àn niǔ,botón cerrar sesión,botão de logout
-forget password,忘记密码,wàng jì mì mǎ,olvidar contraseña,esqueci a senha
+forget password,忘记密码,wàng jì mì mǎ,olvidar contraseña,esquecer a senha
 change password,更改密码,gēng gǎi mì mǎ,cambiar contraseña,alterar senha
 push notification,推送通知,tuī sòng tōng zhī,notificación automática,notificação push
 notification settings,通知设置,tōng zhī shè zhì,configuración de notificaciones,configurações de notificação
 upload photo,上传照片,shàng chuán zhào piān,subir foto,carregar foto
-upload video,上传视频,shàng chuán shì pín,subir vídeo,enviar vídeo
+upload video,上传视频,shàng chuán shì pín,subir vídeo,carregar vídeo
 go viral,病毒式传播,bìng dú shì chuán bō,volverse viral,viralizar
 viral content,病毒式内容,bìng dú shì nèi róng,contenido viral,conteúdo viral
 use hashtag,使用主题标签,shǐ yòng zhǔ tí biāo qiān,utilizar hashtag,usar hashtag
@@ -56,6 +56,6 @@ content creator,内容创建者,nèi róng chuàng jiàn zhě,creador de conteni
 social media influencer,社交媒体影响者,shè jiāo méi tǐ yǐng xiǎng zhě,influenciador de las redes sociales,influenciador de mídia social
 top influencer,顶级影响者,dǐng jí yǐng xiǎng zhě,principal influenciador,principal influenciador
 subscribe now,立即订阅,lì jí dìng yuè,suscríbete ahora,inscreva-se agora
-subscribe to,订阅,dìng yuè,suscríbete a,inscreva-se
+subscribe to,订阅,dìng yuè,suscribirse a,inscreva-se
 trending topic,热门话题,rè mén huà tí,tema de tendencia,tópico de tendência
 trending now,现在流行,xiàn zài liú xíng,tendencia ahora,tendência agora

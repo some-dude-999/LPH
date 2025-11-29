@@ -1,6 +1,6 @@
 english,chinese,pinyin,spanish,portuguese
 vacation,假期,jià qī,vacaciones,férias
-holiday,假期,jià qī,vacaciones,feriado
+holiday,假期,jià qī,vacaciones,férias
 tour,游览,yóu lǎn,recorrido,passeio
 destination,目的地,mù dì dì,destino,destino
 suitcase,手提箱,shǒu tí xiāng,maleta,mala
@@ -33,12 +33,12 @@ pack light,轻装,qīng zhuāng,viajar ligero,viajar leve
 pack everything,打包所有东西,dǎ bāo suǒ yǒu dōng xī,empacar todo,embalar tudo
 foreign tourist,外国游客,wài guó yóu kè,turista extranjero,turista estrangeiro
 tourist attraction,旅游胜地,lǚ yóu shèng dì,atracción turística,atração turística
-go sightseeing,去观光,qù guān guāng,hacer turismo,passear
+go sightseeing,去观光,qù guān guāng,hacer turismo,fazer turismo
 sightseeing tour,观光旅游,guān guāng lǚ yóu,visita turística,passeio turístico
 travel itinerary,旅游行程,lǚ yóu xíng chéng,itinerario de viaje,roteiro de viagem
 itinerary plan,行程计划,xíng chéng jì huà,plan de itinerario,plano de itinerário
 travel guidebook,旅游指南,lǚ yóu zhǐ nán,guía de viaje,guia de viagem
-guidebook recommendation,旅游指南推荐,lǚ yóu zhǐ nán tuī jiàn,recomendación de la guía,recomendação do guia
+guidebook recommendation,旅游指南推荐,lǚ yóu zhǐ nán tuī jiàn,recomendación de guía,recomendação de guia
 buy souvenir,购买纪念品,gòu mǎi jì niàn pǐn,comprar souvenir,comprar lembrança
 souvenir shop,纪念品店,jì niàn pǐn diàn,tienda de souvenirs,loja de souvenirs
 carry backpack,携带背包,xié dài bēi bāo,llevar mochila,carregar mochila
@@ -50,11 +50,11 @@ adventure travel,冒险旅行,mào xiǎn lǚ xíng,viajes de aventura,viagens de
 day excursion,一日游,yī rì yóu,excursión de un día,excursão de um dia
 excursion trip,短途旅行,duǎn tú lǚ xíng,viaje de excursión,viagem de excursão
 wander around,闲逛,xián guàng,pasear,passear
-wander off,溜走,liū zǒu,alejarse,vagar
+wander off,溜走,liū zǒu,alejarse,se afastar
 mountain trek,山地跋涉,shān dì bá shè,caminata de montaña,caminhada na montanha
 trek through,徒步穿越,tú bù chuān yuè,recorrer a pie,percorrer a pé
 long voyage,长途航行,cháng tú háng xíng,largo viaje,longa viagem
-voyage across,航行跨越,háng xíng kuà yuè,viaje a través,viagem através
+voyage across,航行跨越,háng xíng kuà yuè,viaje a través de,viagem através de
 ocean cruise,海洋巡游,hǎi yáng xún yóu,crucero por el océano,cruzeiro oceânico
 cruise ship,游轮,yóu lún,crucero,navio de cruzeiro
 polar expedition,极地探险,jí dì tàn xiǎn,expedición polar,expedição polar

@@ -1,7 +1,7 @@
 english,chinese,pinyin,spanish,portuguese
 hire,雇用,gù yòng,contratar,contratar
 fire,解雇,jiě gù,despedir,demitir
-resign,辞职,cí zhí,dimitir,renunciar
+resign,辞职,cí zhí,renunciar,renunciar
 retire,退休,tuì xiū,retirarse,aposentar
 apply,申请,shēn qǐng,solicitar,candidatar-se
 delegate,委派,wěi pài,delegar,delegar
@@ -23,7 +23,7 @@ hire someone,雇用某人,gù yòng mǒu rén,contratar a alguien,contratar algu
 hire new staff,雇用新员工,gù yòng xīn yuán gōng,contratar nuevo personal,contratar novos funcionários
 fire someone,解雇某人,jiě gù mǒu rén,despedir a alguien,demitir alguém
 get fired,被解雇,bèi jiě gù,ser despedido,ser demitido
-resign from,辞职,cí zhí,dimitir de,demitir-se de
+resign from,辞职,cí zhí,renunciar a,demitir-se de
 resign position,辞职,cí zhí,renunciar al cargo,renunciar ao cargo
 retire early,提前退休,tí qián tuì xiū,jubilarse anticipadamente,aposentar-se mais cedo
 retire soon,即将退休,jí jiāng tuì xiū,jubilarse pronto,aposentar logo
@@ -51,7 +51,7 @@ supervise work,监督工作,jiān dū gōng zuò,supervisar el trabajo,supervisi
 supervise team,监督团队,jiān dū tuán duì,supervisar el equipo,supervisionar equipe
 oversee project,监督项目,jiān dū xiàng mù,supervisar el proyecto,supervisionar projeto
 oversee operations,监督运营,jiān dū yùn yíng,supervisar las operaciones,supervisionar as operações
-execute plan,执行计划,zhí xíng jì huà,ejecutar plan,executar plano
+execute plan,执行计划,zhí xíng jì huà,ejecutar el plan,executar plano
 execute properly,正确执行,zhèng què zhí xíng,ejecutar correctamente,executar corretamente
 implement change,实施变革,shí shī biàn gé,implementar el cambio,implementar mudanças
 implement strategy,实施战略,shí shī zhàn lüè,implementar estrategia,implementar estratégia
