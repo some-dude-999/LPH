@@ -1,31 +1,31 @@
 english,chinese,pinyin,spanish,portuguese
-hotel,酒店,jiǔ diàn,hoteles,hotéis
+hotel,酒店,jiǔ diàn,hotel,hotel
 motel,汽车旅馆,qì chē lǚ guǎn,motel,motel
 hostel,青年旅舍,qīng nián lǚ shè,albergue,albergue
-resort,度假村,dù jià cūn,complejo,resort
+resort,度假村,dù jià cūn,resort,resort
 reception,接待处,jiē dài chù,recepción,recepção
 lobby,大堂,dà táng,vestíbulo,lobby
 front desk,前台,qián tái,recepción,recepção
 room service,客房服务,kè fáng fú wù,servicio de habitaciones,serviço de quarto
 housekeeping,客房服务,kè fáng fú wù,limpieza,limpeza
-concierge,礼宾服务,lǐ bīn fú wù,conserje,porteiro
+concierge,礼宾服务,lǐ bīn fú wù,conserje,concierge
 suite,套房,tào fáng,suite,suíte
 single room,单人间,dān rén jiān,habitación individual,quarto individual
 double room,双人间,shuāng rén jiān,habitación doble,quarto duplo
-vacancy,空缺,kòng quē,vacante,vaga
-amenity,便利设施,biàn lì shè shī,amenidad,comodidade
-checkout,结帐,jié zhàng,pagar,check-out
+vacancy,空房,kōng fáng,vacante,vaga
+amenity,便利设施,biàn lì shè shī,servicio,comodidade
+checkout,退房,tuì fáng,hacer el check-out,check-out
 key card,钥匙卡,yào shi kǎ,tarjeta llave,cartão-chave
 minibar,迷你吧,mí nǐ ba,minibar,frigobar
-bellhop,服务生,fú wù shēng,botones,carregador
-tip,小费,xiǎo fèi,consejo,dica
+bellhop,行李员,xíng lǐ yuán,botones,mensageiro
+tip,小费,xiǎo fèi,propina,gorjeta
 luxury hotel,豪华酒店,háo huá jiǔ diàn,hotel de lujo,hotel de luxo
 hotel room,酒店房间,jiǔ diàn fáng jiān,habitación de hotel,quarto de hotel
 cheap motel,便宜的汽车旅馆,pián yi de qì chē lǚ guǎn,motel barato,motel barato
 motel room,汽车旅馆房间,qì chē lǚ guǎn fáng jiān,habitación de motel,quarto de motel
 youth hostel,青年旅舍,qīng nián lǚ shè,albergue juvenil,albergue da juventude
-hostel stay,住宿旅馆,zhù sù lǚ guǎn,estancia en albergue,estadia em albergue
-beach resort,海滩度假村,hǎi tān dù jià cūn,complejo de playa,estância balnear
+hostel stay,入住旅舍,rù zhù lǚ shě,estancia en albergue,estadia em albergue
+beach resort,海滩度假村,hǎi tān dù jià cūn,complejo de playa,resort de praia
 resort spa,度假村水疗中心,dù jià cūn shuǐ liáo zhōng xīn,spa del complejo,spa resort
 hotel reception,酒店接待,jiǔ diàn jiē dài,recepción del hotel,recepção do hotel
 reception area,接待区,jiē dài qū,zona de recepción,área de recepção
@@ -36,9 +36,9 @@ check in at front desk,在前台办理入住,zài qián tái bàn lǐ rù zhù,r
 order room service,订购客房服务,dìng gòu kè fáng fú wù,solicitar servicio de habitaciones,solicitar serviço de quarto
 room service menu,客房服务菜单,kè fáng fú wù cài dān,menú del servicio de habitaciones,cardápio de serviço de quarto
 daily housekeeping,每日客房清洁,měi rì kè fáng qīng jié,limpieza diaria,limpeza diária
-housekeeping service,家政服务,jiā zhèng fú wù,servicio de limpieza,serviço de limpeza
+housekeeping service,客房清洁服务,kè fáng qīng jié fú wù,servicio de limpieza,serviço de limpeza
 hotel concierge,酒店礼宾部,jiǔ diàn lǐ bīn bù,conserje del hotel,portaria do hotel
-ask concierge,询问礼宾部,xún wèn lǐ bīn bù,pregunte al conserje,pergunte ao concierge
+ask concierge,询问礼宾,xún wèn lǐ bīn,pregunte al conserje,pergunte ao concierge
 presidential suite,总统套房,zǒng tǒng tào fáng,suite presidencial,suíte presidencial
 suite upgrade,套房升级,tào fáng shēng jí,actualización de suite,atualização de suíte
 book single room,预订单人间,yù dìng dān rén jiān,reservar habitación individual,reservar quarto individual
@@ -46,16 +46,16 @@ single room rate,单间价格,dān jiān jià gé,tarifa de habitación individu
 book double room,预订双人间,yù dìng shuāng rén jiān,reservar habitación doble,reservar quarto duplo
 double room rate,双人房价格,shuāng rén fáng jià gé,tarifa habitación doble,tarifa de quarto duplo
 no vacancy,没有空缺,méi yǒu kòng quē,no hay vacantes,sem vaga
-vacancy available,空缺职位,kòng quē zhí wèi,vacante disponible,vaga disponível
+vacancy available,有空房,yǒu kōng fáng,vacante disponible,vaga disponível
 hotel amenity,酒店设施,jiǔ diàn shè shī,amenidad del hotel,comodidade do hotel
 amenity fee,便利设施费,biàn lì shè shī fèi,tarifa de servicios,taxa de comodidade
 late checkout,延迟退房,yán chí tuì fáng,salida tardía,check-out tardio
 checkout time,结帐时间,jié zhàng shí jiān,hora de salida,horário de checkout
 hotel key card,酒店钥匙卡,jiǔ diàn yào shi kǎ,tarjeta llave del hotel,cartão-chave do hotel
-key card access,钥匙卡访问,yào shi kǎ fǎng wèn,acceso con tarjeta de acceso,acesso com cartão-chave
+key card access,钥匙卡访问,yào shi kǎ fǎng wèn,acceso con tarjeta,acesso com cartão-chave
 empty minibar,空迷你吧,kōng mí nǐ ba,minibar vacío,frigobar vazio
 minibar prices,迷你吧价格,mí nǐ ba jià gé,precios del minibar,preços do frigobar
 hotel bellhop,酒店服务生,jiǔ diàn fú wù shēng,botones del hotel,carregador do hotel
 bellhop service,行李员服务,xíng lǐ yuán fú wù,servicio de botones,serviço de carregador
-leave a tip,留下小费,liú xià xiǎo fèi,deja una propina,deixe uma dica
-tip generously,慷慨地给小费,kāng kǎi dì gěi xiǎo fèi,propina generosamente,gorjeta generosamente
+leave a tip,留下小费,liú xià xiǎo fèi,dejar una propina,deixar uma gorjeta
+tip generously,慷慨地给小费,kāng kǎi dì gěi xiǎo fèi,dar propina generosamente,dar gorjeta generosamente

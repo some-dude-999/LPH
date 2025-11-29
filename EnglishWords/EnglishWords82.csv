@@ -4,9 +4,9 @@ holiday,假期,jià qī,vacaciones,feriado
 tour,游览,yóu lǎn,recorrido,passeio
 destination,目的地,mù dì dì,destino,destino
 suitcase,手提箱,shǒu tí xiāng,maleta,mala
-pack,包,bāo,paquete,pacote
-tourist,旅游,lǚ yóu,turista,turista
-sightseeing,观光,guān guāng,turismo,passeios turísticos
+pack,打包,dǎ bāo,hacer la maleta,fazer a mala
+tourist,游客,yóu kè,turista,turista
+sightseeing,观光,guān guāng,turismo,turismo
 itinerary,行程,xíng chéng,itinerario,itinerário
 guidebook,指南,zhǐ nán,guía,guia
 souvenir,纪念品,jì niàn pǐn,recuerdo,lembrança
@@ -14,7 +14,7 @@ backpack,背包,bēi bāo,mochila,mochila
 explore,探索,tàn suǒ,explorar,explorar
 adventure,冒险,mào xiǎn,aventura,aventura
 excursion,游览,yóu lǎn,excursión,excursão
-wander,徘徊,pái huái,deambular,vagar
+wander,闲逛,xián guàng,vagar,vagar
 trek,跋涉,bá shè,caminata,caminhada
 voyage,航程,háng chéng,viaje,viagem
 cruise,巡航,xún háng,crucero,cruzeiro
@@ -52,7 +52,7 @@ excursion trip,短途旅行,duǎn tú lǚ xíng,viaje de excursión,viagem de ex
 wander around,闲逛,xián guàng,pasear,passear
 wander off,溜走,liū zǒu,alejarse,vagar
 mountain trek,山地跋涉,shān dì bá shè,caminata de montaña,caminhada na montanha
-trek through,徒步穿越,tú bù chuān yuè,caminata a través,percorrer
+trek through,徒步穿越,tú bù chuān yuè,recorrer a pie,percorrer a pé
 long voyage,长途航行,cháng tú háng xíng,largo viaje,longa viagem
 voyage across,航行跨越,háng xíng kuà yuè,viaje a través,viagem através
 ocean cruise,海洋巡游,hǎi yáng xún yóu,crucero por el océano,cruzeiro oceânico
