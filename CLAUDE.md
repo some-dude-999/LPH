@@ -613,7 +613,7 @@ Run after ANY web file changes: `python PythonHelpers/link_manager.py`
 ---
 
 ## 🐍 PYTHON ORGANIZATION & DOCUMENTATION - MANDATORY!
-**All Python helper scripts MUST be in PythonHelpers/ with extensive documentation.**
+**All Python helper scripts MUST follow extensive documentation standards REGARDLESS of location.**
 
 ### Python File Organization
 - ✅ **ALL general-purpose Python scripts go in `PythonHelpers/` folder**
@@ -622,6 +622,15 @@ Run after ANY web file changes: `python PythonHelpers/link_manager.py`
   - `SpanishWords/SpanishWordsPythonHelperScripts/`
   - `EnglishWords/EnglishWordsPythonHelperScripts/`
 - ❌ **NEVER** leave Python files in the root directory
+
+### ⚠️ CRITICAL: ALL Python Files MUST Follow Documentation Standards
+**Whether in `PythonHelpers/` OR language-specific folders, EVERY Python file must have:**
+- ✅ Extensive module-level documentation (see template below)
+- ✅ Detailed function docstrings with Args/Returns
+- ✅ Step-by-step comments explaining logic
+- ✅ Clear workflow documentation
+
+**NO EXCEPTIONS:** Language-specific scripts like `convert_csv_to_js.py` must be documented to the same standard as general scripts.
 
 ---
 
@@ -902,6 +911,18 @@ function doSomething() {
 2. Does every function have a comment explaining its purpose?
 3. Can someone who reads code reconstruct what's happening?
 4. If the answer to ANY of these is NO → Add documentation before committing
+
+### ⚠️ CRITICAL: Update Comments When Code Changes
+**When you modify ANY code, you MUST update the comments:**
+- ✅ If you change a function's behavior → Update the function's docstring
+- ✅ If you add parameters → Document them in Args section
+- ✅ If you change what's returned → Update Returns section
+- ✅ If you refactor logic → Update step-by-step comments
+- ✅ If you add a new feature → Add KEY FEATURE comment block
+- ✅ If you remove a feature → Remove its KEY FEATURE comment
+
+**Out-of-date comments are WORSE than no comments** - they mislead and confuse.
+Never commit code where comments don't match the actual implementation.
 
 ---
 
