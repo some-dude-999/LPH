@@ -1,12 +1,44 @@
 #!/usr/bin/env python3
-"""
-Check for duplicate words in Overview CSV files.
-1. Within-pack duplicates: same word appears multiple times in one pack
-2. Across-pack duplicates: same word appears in different packs
-
-Usage:
-    python check_duplicates.py [chinese|spanish|english|all]
-"""
+# ============================================================
+# MODULE: Wordpack Duplicate Detector
+# Core Purpose: Find duplicate words within and across wordpacks
+# ============================================================
+#
+# WHAT THIS SCRIPT DOES:
+# -----------------------
+# 1. Reads Overview CSV files for specified languages
+# 2. Checks for within-pack duplicates (same word multiple times in one pack)
+# 3. Checks for across-pack duplicates (same word in different packs)
+# 4. Reports detailed statistics and top duplicates
+#
+# WHY THIS EXISTS:
+# ---------------
+# Duplicate detection ensures vocabulary quality:
+#
+# - Within-pack duplicates = data entry error or copy-paste mistake
+# - Across-pack duplicates = intentional review or unintentional repetition
+#
+# This script helps maintain clean, non-redundant vocabulary data.
+#
+# USAGE:
+# ------
+#   python PythonHelpers/check_duplicates.py [chinese|spanish|english|all]
+#
+# IMPORTANT NOTES:
+# ---------------
+# - Reads Combined_Words arrays from Overview CSV
+# - Within-pack: Same word appears 2+ times in one pack's word list
+# - Across-pack: Same word appears in multiple packs (may be intentional)
+# - Shows top 50 most duplicated words
+#
+# WORKFLOW:
+# ---------
+# 1. Read Overview CSV and parse word arrays
+# 2. For each pack: count word occurrences (find within-pack duplicates)
+# 3. Build word→packs mapping (find across-pack duplicates)
+# 4. Display results with statistics
+#
+# ============================================================
 
 import csv
 import sys

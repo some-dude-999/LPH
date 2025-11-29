@@ -1,9 +1,63 @@
 #!/usr/bin/env python3
-"""Update English translation scores based on comprehensive evaluation"""
+# ============================================================
+# MODULE: English Translation Scores Updater
+# Core Purpose: Apply quality scores to English wordpack translations
+# ============================================================
+#
+# WHAT THIS SCRIPT DOES:
+# -----------------------
+# 1. Defines translation quality scores (0-10) for all 160 English wordpacks
+# 2. Documents specific translation issues found in each pack
+# 3. Updates EnglishWordsTranslationErrors.csv with scores and issues
+# 4. Provides audit trail of translation quality evaluation
+#
+# WHY THIS EXISTS:
+# ---------------
+# After comprehensive manual review of all English wordpacks, quality scores
+# and issue descriptions need to be recorded in the translation errors CSV.
+# This script applies the results of that evaluation automatically.
+#
+# Before this script, scores had to be manually edited in CSV - tedious and
+# error-prone for 160 packs. This automates the update process.
+#
+# USAGE:
+# ------
+#   python3 PythonHelpers/update_english_scores.py
+#
+# IMPORTANT NOTES:
+# ---------------
+# - Requires EnglishWords/EnglishWordsTranslationErrors.csv to exist
+# - Scores range from 7-10 (7=significant issues, 10=perfect)
+# - Issues include: capitalization, wrong meaning, missing translations
+# - Known issue: Many packs have "..." pinyin placeholders (expected)
+# - Updates CSV in-place (overwrites existing file)
+#
+# WORKFLOW:
+# ---------
+# 1. Load scores_data dictionary (hardcoded below)
+# 2. Read EnglishWordsTranslationErrors.csv
+# 3. For each row, lookup pack number in scores_data
+# 4. Update Score and Issues columns
+# 5. Write updated data back to CSV
+#
+# SCORING SYSTEM:
+# ---------------
+# 10 = Perfect translations, no issues
+#  9 = Minor nuances (minor capitalization, spacing)
+#  8 = 1-3 moderate issues (wrong meaning for specific context)
+#  7 = Multiple issues or significant problems
+#
+# ============================================================
 
 import csv
 
-# Comprehensive evaluation data from manual review
+# ============================================================
+# TRANSLATION QUALITY DATA
+# ============================================================
+# Comprehensive evaluation data from manual review of all 160 packs.
+# Format: pack_number: (score, "issue description")
+# ============================================================
+
 scores_data = {
     1: (9, 'Row 17: Portuguese "OK" should be lowercase "ok" or "tá bom" for naturalness'),
     2: (9, 'Row 8: Spanish "Siete" should be lowercase "siete"'),
@@ -179,25 +233,39 @@ scores_data = {
     160: (7, 'Rows 24, 34, 37-38, 44-46, 59, 61: Chinese has awkward accumulated/repeated text fragments'),
 }
 
-# Read the CSV
+# ============================================================
+# MAIN EXECUTION
+# ============================================================
+# Updates the translation errors CSV with scores and issue descriptions
+# ============================================================
+
+# Read the existing translation errors CSV
 csv_path = 'EnglishWords/EnglishWordsTranslationErrors.csv'
 rows = []
+
 with open(csv_path, 'r', encoding='utf-8') as f:
     reader = csv.DictReader(f)
+
+    # Process each row
     for row in reader:
         pack_num = int(row['Pack_Number'])
+
+        # Look up score and issues for this pack
         if pack_num in scores_data:
             score, issues = scores_data[pack_num]
+            # Update the row with score and issues
             row['Score'] = str(score)
             row['Issues'] = issues
+
         rows.append(row)
 
-# Write back
+# Write updated data back to CSV
 with open(csv_path, 'w', encoding='utf-8', newline='') as f:
     fieldnames = ['Pack_Number', 'Pack_Title', 'Difficulty_Act', 'Score', 'Issues']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(rows)
 
+# Display completion message
 print(f"✓ Updated {len(rows)} packs in {csv_path}")
 print(f"✓ All 160 packs now have scores and detailed issues")
