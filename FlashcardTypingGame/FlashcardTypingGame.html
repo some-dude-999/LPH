@@ -2228,6 +2228,25 @@
     let targetLanguage = null; // Will be set to 'spanish', 'chinese', 'english', etc.
     let targetLanguageDisplay = null; // Title case version for UI: 'Spanish', 'Chinese', 'English'
 
+
+    // Validate that all loaded modules have the same target language
+    function validateTargetLanguageConsistency() {
+      const languages = new Set();
+      for (const actNum of Object.keys(loadedActMeta)) {
+        const meta = loadedActMeta[actNum];
+        if (meta && meta.wordColumns && meta.wordColumns[0]) {
+          languages.add(meta.wordColumns[0].toLowerCase());
+        }
+      }
+      if (languages.size > 1) {
+        const langList = Array.from(languages).join(', ');
+        console.error(`[FATAL] Modules have inconsistent target languages: ${langList}`);
+        console.error('All modules must have the same wordColumns[0] value!');
+        return false;
+      }
+      return true;
+    }
+
     // Check if the target language is Chinese (requires special handling)
     function isChineseMode() {
       return targetLanguage === 'chinese';
