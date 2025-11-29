@@ -17,7 +17,7 @@ chinese,pinyin,english,spanish,french,portuguese
 住宾馆,zhù bīn guǎn,Stay in hotel,Estancia en hotel,Séjour à l'hôtel,Hospedagem em hotel
 找宾馆,zhǎo bīn guǎn,Find hotel,Encontrar hotel,Trouver un hôtel,Encontrar hotel
 要单人间,yào dān rén jiān,Request a single room,Solicitar una habitación individual,Demander une chambre individuelle,Solicitar quarto individual
-订单人间,dìng dān rén jiān,Order a room,Solicitar una habitación,Commander une chambre,Encomende um quarto
+订单人间,dìng dān rén jiān,Book a single room,Reservar una habitación individual,Réserver une chambre simple,Reservar um quarto individual
 要双人间,yào shuāng rén jiān,Request a double room,Solicitar habitación doble,Demander une chambre double,Solicite um quarto duplo
 订双人间,dìng shuāng rén jiān,Book a double room,Reserva una habitación doble,Réservez une chambre double,Reserve um quarto duplo
 要订房,yào dìng fáng,To book a room,Para reservar una habitación,Pour réserver une chambre,Para reservar um quarto
@@ -26,8 +26,8 @@ chinese,pinyin,english,spanish,french,portuguese
 要预订,yào yù dìng,To book,Para reservar,Pour réserver,Para reservar
 办入住,bàn rù zhù,Check in,Registrarse,Arrivée,Check-in
 已入住,yǐ rù zhù,Checked in,Registrado,Enregistré,Check-in
-要退房,yào tuì fáng,To check out,Para comprobar,À consulter,Para conferir
-办退房,bàn tuì fáng,Check out,Echa un vistazo,Découvrez,Confira
+要退房,yào tuì fáng,Need to check out,Para hacer el check-out,Pour faire le check-out,Para fazer o check-out
+办退房,bàn tuì fáng,Process check-out,Hacer el check-out,Faire le check-out,Fazer o check-out
 交押金,jiāo yā jīn,Pay deposit,Pagar depósito,Payer l'acompte,Pagar depósito
 退押金,tuì yā jīn,Return deposit,Depósito de devolución,Dépôt de retour,Depósito de devolução
 有热水,yǒu rè shuǐ,Hot water,Agua caliente,Eau chaude,Água quente
