@@ -1,4 +1,49 @@
 #!/usr/bin/env python3
+# ============================================================
+# MODULE: English Words CSV to JavaScript Converter
+# Core Purpose: Convert breakout CSVs into act-based JavaScript modules
+# ============================================================
+#
+# WHAT THIS SCRIPT DOES:
+# -----------------------
+# 1. Reads 160 breakout CSV files (EnglishWords1.csv through EnglishWords160.csv)
+# 2. Reads Overview CSV to map packs to acts
+# 3. Groups packs by act (Act I, II, III, etc.)
+# 4. Generates TWO versions of JavaScript modules per act:
+#    - Clean version: Readable, for development (Jsmodules/actN-name.js)
+#    - Obfuscated version: Compressed, for production (Jsmodules-js/actN-name-js.js)
+# 5. Obfuscation uses: reverse + zlib + base64 (60% size reduction)
+#
+# WHY THIS EXISTS:
+# ---------------
+# The flashcard games need JavaScript modules to load vocabulary data.
+# We can't load 100+ individual CSV files (too many HTTP requests).
+# Solution: Group CSVs by act into larger JS files that can be imported.
+#
+# USAGE:
+# ------
+#   cd EnglishWords/EnglishWordsPythonHelperScripts
+#   python3 convert_csv_to_js.py
+#
+# IMPORTANT NOTES:
+# ---------------
+# - Input: Breakout CSVs must exist (EnglishWords/EnglishWordsN.csv)
+# - Input: Overview CSV must have Difficulty_Act column
+# - Output: Creates/overwrites files in Jsmodules/ and Jsmodules-js/
+# - No arguments needed - runs based on CSV files in parent directory
+#
+# WORKFLOW:
+# ---------
+# 1. Read Overview CSV → Get pack-to-act mapping
+# 2. For each pack: Read CSV → Parse rows → Store in memory
+# 3. Group all packs by act
+# 4. For each act:
+#    a. Generate clean JS file (readable format)
+#    b. Generate obfuscated JS file (compressed format)
+# 5. Print summary of generated files
+#
+# ============================================================
+
 """
 English Words CSV to JavaScript Converter
 Converts 160 CSV word packs into 5 JavaScript act modules (clean + obfuscated versions)
@@ -18,6 +63,7 @@ Compression Method:
     - Results in ~60% file size reduction
     - JavaScript side uses pako.js for decompression
 """
+
 
 import csv
 import json
@@ -79,7 +125,22 @@ CHINESE_COLUMN_INDEX = 1
 
 
 def sanitize_for_variable_name(name):
-    """Convert 'Greetings & Goodbyes' to 'greetings__goodbyes'"""
+    """
+    Convert pack title to valid JavaScript variable name.
+    
+    Removes special characters, converts to lowercase, uses double underscores.
+    Example: 'Greetings & Goodbyes' → 'greetings__goodbyes'
+    
+    Args:
+        name (str): Pack title from CSV (e.g., "Family & Friends")
+    
+    Returns:
+        str: Sanitized variable name (e.g., "family__friends")
+    
+    Why:
+        JavaScript variable names can't have spaces or special chars.
+        Double underscores make it easy to read while being valid.
+    """
     import re
     # Remove special characters (keep letters, numbers, spaces)
     name = re.sub(r'[^a-zA-Z0-9\s]', '', name)
@@ -91,7 +152,22 @@ def sanitize_for_variable_name(name):
 
 
 def has_latin_in_chinese(word_row):
-    """Check if Chinese column contains Latin characters (edge case detection)"""
+    """
+    Detect if Chinese column contains Latin characters (edge case).
+    
+    Some Chinese phrases include Latin (ATM机, DNA测试, WiFi密码).
+    These need special handling in the game's rendering logic.
+    
+    Args:
+        word_row (list): Row from CSV (array of translation columns)
+    
+    Returns:
+        bool: True if Chinese column has Latin characters [A-Za-z]
+    
+    Why:
+        Chinese with Latin needs letter-by-letter coupling in games.
+        Regular Chinese uses character-by-character coupling.
+    """
     import re
     if len(word_row) <= CHINESE_COLUMN_INDEX:
         return False
@@ -123,7 +199,29 @@ def read_meta_csv():
 
 
 def read_overview_csv():
-    """Read overview CSV and return pack-to-act mapping + base/example word counts"""
+    """
+    Read Overview CSV and extract pack-to-act mapping + word counts.
+    
+    Overview CSV structure:
+    - Pack_Number: 1-160
+    - Pack_Title: "Greetings & Goodbyes"
+    - Difficulty_Act: "Act I: Foundation"
+    - Base_Words: [...array...]
+    - Example_Words: [...array...]
+    
+    Args:
+        None (reads from OVERVIEW_CSV global)
+    
+    Returns:
+        tuple: (pack_to_act, pack_titles, pack_word_counts)
+            - pack_to_act: {{1: "Act I: Foundation", 2: "Act I: Foundation", ...}}
+            - pack_titles: {{1: "Greetings", 2: "Pronouns", ...}}
+            - pack_word_counts: {{1: {{"base": 19, "example": 38}}, ...}}
+    
+    Why:
+        We need to know which act each pack belongs to for grouping.
+        Word counts verify CSV integrity (expected row count).
+    """
     pack_to_act = {}
     pack_titles = {}
     pack_word_counts = {}  # New: stores base/example word counts
@@ -161,7 +259,30 @@ def read_overview_csv():
 
 
 def read_pack_csv(pack_number, base_count, example_count):
-    """Read individual pack CSV and return baseWords and exampleWords arrays"""
+    """
+    Read individual pack CSV and return all word rows.
+    
+    Pack CSV structure:
+    - Header: chinese,pinyin,english,spanish,french,portuguese,...
+    - Rows: Translations for each word/phrase in the pack
+    
+    Args:
+        pack_number (int): Pack number (1-160)
+        base_count (int): Expected number of base words
+        example_count (int): Expected number of example phrases
+    
+    Returns:
+        list: All data rows from CSV (excluding header)
+              Each row is a list of strings
+    
+    Raises:
+        FileNotFoundError: If pack CSV doesn't exist
+        ValueError: If row count doesn't match expected total
+    
+    Why:
+        Validates data integrity before converting to JS.
+        Ensures we're not missing words or have extras.
+    """
     csv_file = CSV_DIR / f"EnglishWords{pack_number}.csv"
 
     if not csv_file.exists():
