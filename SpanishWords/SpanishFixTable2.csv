@@ -1,3 +1,0 @@
-Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,9,2,pinyin,tā,el,Spanish article 'el' stays as 'el' in pinyin too
-spanish,182,27,chinese,在 WhatsApp 上,在 WhatsApp上,Remove trailing space after WhatsApp

@@ -1,7 +1,0 @@
-Language,Pack_Number,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,167,4,pinyin,xíng hào,mó tè,模特 (fashion model) needs pinyin 'mó tè' not 'xíng hào' (型号 model number)
-spanish,200,5,pinyin,zū jīn,zū yòng,租用 (to rent verb) needs pinyin 'zū yòng' not 'zū jīn' (租金 rent noun)
-spanish,200,51,pinyin,jìn yùn,kòu yā,扣押 (seizure) needs pinyin 'kòu yā' not 'jìn yùn' (禁运 trade embargo)
-spanish,200,52,pinyin,jìn yùn,kòu yā,扣押 (seizure) needs pinyin 'kòu yā' not 'jìn yùn' (禁运 trade embargo)
-spanish,233,13,pinyin,wǒ de,wā kuàng,挖矿 (to mine crypto) needs pinyin 'wā kuàng' not 'wǒ de' (我的 possessive)
-spanish,233,43,pinyin,wǒ yào qù wǒ de,wǒ yào qù wā kuàng,挖矿 (to mine crypto) needs pinyin 'wā kuàng' not 'wǒ de' (possessive)
