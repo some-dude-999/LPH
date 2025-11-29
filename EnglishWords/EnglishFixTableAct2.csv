@@ -1,0 +1,48 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+portuguese,46,Directions,12,portuguese,em direção,em direção a,More natural phrase for "toward".
+portuguese,46,Directions,43,portuguese,no final,em direção ao final,Matches sense of moving toward the end.
+portuguese,46,Directions,52,portuguese,próximo bloco,próximo quarteirão,Uses common term for a city block.
+chinese,47,More Transportation,47,chinese,低油耗,油量低,Use correct phrase for low fuel level.
+pinyin,47,More Transportation,47,pinyin,dī yóu hào,yóu liàng dī,Align pinyin with corrected Chinese wording.
+spanish,47,More Transportation,61,spanish,paso elevado arriba,viaducto arriba,More natural way to indicate an overpass above.
+spanish,48,Furniture,33,spanish,adicto a la televisión,teleadicto,Common single-word term for couch potato.
+spanish,49,Kitchen Items,8,spanish,contador,encimera,Correct term for a kitchen counter.
+portuguese,49,Kitchen Items,8,portuguese,contador,bancada,Proper word for a counter surface.
+portuguese,49,Kitchen Items,12,portuguese,placa,prato,Use everyday word for a dinner plate.
+spanish,49,Kitchen Items,15,spanish,vidrio,vaso,Correct everyday term for a drinking glass.
+portuguese,49,Kitchen Items,15,portuguese,vidro,copo,Use common word for a glass to drink from.
+spanish,49,Kitchen Items,21,spanish,batir,batidor,Use noun "whisk" instead of verb.
+spanish,49,Kitchen Items,23,spanish,estufa,superficie de la estufa,Accurately names the stove top surface.
+portuguese,49,Kitchen Items,23,portuguese,fogão,tampo do fogão,Refers to the top surface of the stove.
+chinese,49,Kitchen Items,53,chinese,平底锅煎,煎,Simpler, natural way to express "pan fried".
+pinyin,49,Kitchen Items,53,pinyin,píng dǐ guō jiān,jiān,Align pinyin with corrected Chinese term.
+spanish,49,Kitchen Items,55,spanish,botella de licuadora,botella mezcladora,Common phrase for a blender/shaker bottle.
+portuguese,49,Kitchen Items,55,portuguese,garrafa liquidificador,coqueteleira,Natural term for a blender/shaker bottle.
+spanish,50,Bathroom Items,10,spanish,drenaje,desagüe,Use common noun for a drain.
+portuguese,50,Bathroom Items,10,portuguese,drenar,ralo,Proper noun for a drain opening.
+spanish,50,Bathroom Items,17,spanish,estera,tapete,More natural term for a floor mat.
+chinese,50,Bathroom Items,20,chinese,柱塞,马桶塞,Specific term for a toilet plunger.
+pinyin,50,Bathroom Items,20,pinyin,zhù sāi,mǎ tǒng sāi,Update pinyin for corrected Chinese term.
+spanish,50,Bathroom Items,20,spanish,émbolo,desatascador,Common word for a plunger.
+portuguese,50,Bathroom Items,20,portuguese,êmbolo,desentupidor,Proper Portuguese term for a plunger.
+chinese,50,Bathroom Items,48,chinese,毛刷,发刷,Use specific word for a hair brush.
+pinyin,50,Bathroom Items,48,pinyin,máo shuā,fǎ shuā,Update pinyin for corrected Chinese term.
+spanish,50,Bathroom Items,59,spanish,uso del émbolo,uso del desatascador,Matches corrected term for plunger use.
+portuguese,50,Bathroom Items,59,portuguese,uso do êmbolo,uso do desentupidor,Matches corrected plunger wording.
+spanish,51,Household Chores,3,spanish,seco,secar,Use verb form to match other actions.
+portuguese,51,Household Chores,3,portuguese,seco,secar,Use verb form to match other actions.
+spanish,51,Household Chores,6,spanish,vacío,aspirar,Correct verb for vacuuming.
+portuguese,51,Household Chores,6,portuguese,vácuo,aspirar,Use verb for vacuuming.
+chinese,51,Household Chores,9,chinese,磨砂,擦洗,More natural verb for scrubbing surfaces.
+pinyin,51,Household Chores,9,pinyin,mó shā,cā xǐ,Align pinyin with corrected Chinese term.
+chinese,51,Household Chores,24,chinese,擦干燥,擦干,Common phrasing for drying off.
+pinyin,51,Household Chores,24,pinyin,cā gān zào,cā gān,Update pinyin to match corrected phrase.
+portuguese,51,Household Chores,24,portuguese,seque,secar,Use infinitive to match list style.
+portuguese,51,Household Chores,38,portuguese,sapatos polidos,engraxar sapatos,Use verb phrase for polishing shoes.
+portuguese,51,Household Chores,41,portuguese,dobre,dobrar,Use infinitive like other items.
+portuguese,51,Household Chores,42,portuguese,roupas de ferro,passar roupa,Natural phrase for ironing clothes.
+portuguese,51,Household Chores,45,portuguese,mantenha-se arrumado,manter arrumado,Use infinitive for consistency.
+chinese,52,More Food,25,chinese,拉猪肉,手撕猪肉,Proper term for pulled pork.
+pinyin,52,More Food,25,pinyin,lā zhū ròu,shǒu sī zhū ròu,Align pinyin with corrected Chinese term.
+portuguese,52,More Food,33,portuguese,pão sanduíche,pão de sanduíche,More natural phrasing for sandwich bread.
+portuguese,52,More Food,60,portuguese,marisco fresco,frutos do mar frescos,Common expression for fresh seafood.

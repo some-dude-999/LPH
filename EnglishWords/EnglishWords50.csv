@@ -7,17 +7,17 @@ shampoo,洗发水,xǐ fà shuǐ,champú,xampu
 towel,毛巾,máo jīn,toalla,toalha
 mirror,镜子,jìng zi,espejo,espelho
 faucet,水龙头,shuǐ lóng tóu,grifo,torneira
-drain,排水,pái shuǐ,drenaje,drenar
+drain,排水,pái shuǐ,desagüe,ralo
 toothbrush,牙刷,yá shuā,cepillo de dientes,escova de dentes
 toothpaste,牙膏,yá gāo,pasta de dientes,pasta de dente
 razor,剃须刀,tì xū dāo,navaja de afeitar,navalha
 comb,梳子,shū zi,peine,pente
 brush,刷,shuā,cepillo,escova
 tile,瓷砖,cí zhuān,azulejo,azulejo
-mat,垫,diàn,estera,tapete
+mat,垫,diàn,tapete,tapete
 curtain,窗帘,chuāng lián,cortina,cortina
 lotion,乳液,rǔ yè,loción,loção
-plunger,柱塞,zhù sāi,émbolo,êmbolo
+plunger,马桶塞,mǎ tǒng sāi,desatascador,desentupidor
 hamper,洗衣篮,xǐ yī lán,cesto de ropa sucia,cesto de roupa suja
 flush the toilet,冲厕所,chōng cè suǒ,tirar la cadena del inodoro,dar descarga
 toilet paper,卫生纸,wèi shēng zhǐ,papel higiénico,papel higiênico
@@ -45,7 +45,7 @@ safety razor,安全剃须刀,ān quán tì xū dāo,maquinilla de afeitar,aparel
 razor blade,剃须刀刀片,tì xū dāo dāo piàn,hoja de afeitar,lâmina de barbear
 hair comb,发梳,fā shū,peine para el cabello,pente de cabelo
 comb through,梳理,shū lǐ,peinar,pentear
-hair brush,毛刷,máo shuā,cepillo de pelo,escova de cabelo
+hair brush,发刷,fǎ shuā,cepillo de pelo,escova de cabelo
 brush teeth,刷牙,shuā yá,cepillarse los dientes,escovar os dentes
 floor tile,地砖,dì zhuān,baldosas,ladrilho
 tile floor,瓷砖地板,cí zhuān dì bǎn,suelo de baldosas,piso de cerâmica
@@ -56,6 +56,6 @@ curtain rod,窗帘杆,chuāng lián gān,barra de cortina,haste de cortina
 body lotion,润肤露,rùn fū lù,loción corporal,loção corporal
 lotion bottle,乳液瓶,rǔ yè píng,botella de loción,frasco de loção
 toilet plunger,马桶柱塞,mǎ tǒng zhù sāi,desatascador de inodoro,desentupidor de vaso sanitário
-plunger use,柱塞使用,zhù sāi shǐ yòng,uso del émbolo,uso do êmbolo
+plunger use,柱塞使用,zhù sāi shǐ yòng,uso del desatascador,uso do desentupidor
 laundry hamper,洗衣篮,xǐ yī lán,cesto de ropa sucia,cesto de roupa suja
 dirty hamper,脏篮子,zàng lán zi,cesto sucio,cesto sujo
