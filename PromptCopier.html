@@ -1121,12 +1121,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py chinese 1
+python PythonHelpers/create_scoring_worksheet.py chinese 1
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. ChineseFixTableAct1.csv - For recording translation fixes
+2. ChineseScoringWorksheetAct1.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -1136,6 +1139,17 @@ python PythonHelpers/check_translation_quality.py chinese 1 14
 python PythonHelpers/check_language_mismatch.py chinese 1 14
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -1207,15 +1221,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py chinese 1 14
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add ChineseWords/ChineseWords{1..14}.csv ChineseWords/ChineseFixTableAct1.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py chinese 1
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add ChineseWords/ChineseWords{1..14}.csv
 git commit -m "Act 1/5 (Foundation): Review and fix translations for packs 1-14"
 git push -u origin <branch>
 
@@ -1223,9 +1266,12 @@ git push -u origin <branch>
 
 ✅ All 14 packs manually reviewed (not just Python-flagged ones)
 ✅ ChineseFixTableAct1.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -1266,12 +1312,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py chinese 2
+python PythonHelpers/create_scoring_worksheet.py chinese 2
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. ChineseFixTableAct2.csv - For recording translation fixes
+2. ChineseScoringWorksheetAct2.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -1281,6 +1330,17 @@ python PythonHelpers/check_translation_quality.py chinese 15 27
 python PythonHelpers/check_language_mismatch.py chinese 15 27
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -1352,15 +1412,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py chinese 15 27
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add ChineseWords/ChineseWords{1..27}.csv ChineseWords/ChineseFixTableAct2.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py chinese 2
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add ChineseWords/ChineseWords{1..27}.csv
 git commit -m "Act 2/5 (Development): Review and fix translations for packs 15-27"
 git push -u origin <branch>
 
@@ -1368,9 +1457,12 @@ git push -u origin <branch>
 
 ✅ All 13 packs manually reviewed (not just Python-flagged ones)
 ✅ ChineseFixTableAct2.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -1411,12 +1503,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py chinese 3
+python PythonHelpers/create_scoring_worksheet.py chinese 3
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. ChineseFixTableAct3.csv - For recording translation fixes
+2. ChineseScoringWorksheetAct3.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -1426,6 +1521,17 @@ python PythonHelpers/check_translation_quality.py chinese 28 53
 python PythonHelpers/check_language_mismatch.py chinese 28 53
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -1497,15 +1603,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py chinese 28 53
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add ChineseWords/ChineseWords{1..53}.csv ChineseWords/ChineseFixTableAct3.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py chinese 3
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add ChineseWords/ChineseWords{1..53}.csv
 git commit -m "Act 3/5 (Expansion): Review and fix translations for packs 28-53"
 git push -u origin <branch>
 
@@ -1513,9 +1648,12 @@ git push -u origin <branch>
 
 ✅ All 26 packs manually reviewed (not just Python-flagged ones)
 ✅ ChineseFixTableAct3.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -1556,12 +1694,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py chinese 4
+python PythonHelpers/create_scoring_worksheet.py chinese 4
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. ChineseFixTableAct4.csv - For recording translation fixes
+2. ChineseScoringWorksheetAct4.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -1571,6 +1712,17 @@ python PythonHelpers/check_translation_quality.py chinese 54 79
 python PythonHelpers/check_language_mismatch.py chinese 54 79
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -1642,15 +1794,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py chinese 54 79
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add ChineseWords/ChineseWords{1..79}.csv ChineseWords/ChineseFixTableAct4.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py chinese 4
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add ChineseWords/ChineseWords{1..79}.csv
 git commit -m "Act 4/5 (Mastery): Review and fix translations for packs 54-79"
 git push -u origin <branch>
 
@@ -1658,9 +1839,12 @@ git push -u origin <branch>
 
 ✅ All 26 packs manually reviewed (not just Python-flagged ones)
 ✅ ChineseFixTableAct4.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -1701,12 +1885,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py chinese 5
+python PythonHelpers/create_scoring_worksheet.py chinese 5
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. ChineseFixTableAct5.csv - For recording translation fixes
+2. ChineseScoringWorksheetAct5.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -1716,6 +1903,17 @@ python PythonHelpers/check_translation_quality.py chinese 80 107
 python PythonHelpers/check_language_mismatch.py chinese 80 107
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -1787,15 +1985,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py chinese 80 107
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add ChineseWords/ChineseWords{1..107}.csv ChineseWords/ChineseFixTableAct5.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py chinese 5
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add ChineseWords/ChineseWords{1..107}.csv
 git commit -m "Act 5/5 (Refinement): Review and fix translations for packs 80-107"
 git push -u origin <branch>
 
@@ -1803,9 +2030,12 @@ git push -u origin <branch>
 
 ✅ All 28 packs manually reviewed (not just Python-flagged ones)
 ✅ ChineseFixTableAct5.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -1850,12 +2080,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py spanish 1
+python PythonHelpers/create_scoring_worksheet.py spanish 1
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. SpanishFixTableAct1.csv - For recording translation fixes
+2. SpanishScoringWorksheetAct1.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -1865,6 +2098,17 @@ python PythonHelpers/check_translation_quality.py spanish 1 30
 python PythonHelpers/check_language_mismatch.py spanish 1 30
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -1936,15 +2180,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 1 30
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add SpanishWords/SpanishWords{1..30}.csv SpanishWords/SpanishFixTableAct1.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py spanish 1
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add SpanishWords/SpanishWords{1..30}.csv
 git commit -m "Act 1/7 (Foundation): Review and fix translations for packs 1-30"
 git push -u origin <branch>
 
@@ -1952,9 +2225,12 @@ git push -u origin <branch>
 
 ✅ All 30 packs manually reviewed (not just Python-flagged ones)
 ✅ SpanishFixTableAct1.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -1995,12 +2271,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py spanish 2
+python PythonHelpers/create_scoring_worksheet.py spanish 2
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. SpanishFixTableAct2.csv - For recording translation fixes
+2. SpanishScoringWorksheetAct2.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -2010,6 +2289,17 @@ python PythonHelpers/check_translation_quality.py spanish 31 60
 python PythonHelpers/check_language_mismatch.py spanish 31 60
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -2081,15 +2371,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 31 60
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add SpanishWords/SpanishWords{1..60}.csv SpanishWords/SpanishFixTableAct2.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py spanish 2
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add SpanishWords/SpanishWords{1..60}.csv
 git commit -m "Act 2/7 (Building Blocks): Review and fix translations for packs 31-60"
 git push -u origin <branch>
 
@@ -2097,9 +2416,12 @@ git push -u origin <branch>
 
 ✅ All 30 packs manually reviewed (not just Python-flagged ones)
 ✅ SpanishFixTableAct2.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -2140,12 +2462,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py spanish 3
+python PythonHelpers/create_scoring_worksheet.py spanish 3
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. SpanishFixTableAct3.csv - For recording translation fixes
+2. SpanishScoringWorksheetAct3.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -2155,6 +2480,17 @@ python PythonHelpers/check_translation_quality.py spanish 61 100
 python PythonHelpers/check_language_mismatch.py spanish 61 100
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -2226,15 +2562,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 61 100
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add SpanishWords/SpanishWords{1..100}.csv SpanishWords/SpanishFixTableAct3.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py spanish 3
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add SpanishWords/SpanishWords{1..100}.csv
 git commit -m "Act 3/7 (Daily Life): Review and fix translations for packs 61-100"
 git push -u origin <branch>
 
@@ -2242,9 +2607,12 @@ git push -u origin <branch>
 
 ✅ All 40 packs manually reviewed (not just Python-flagged ones)
 ✅ SpanishFixTableAct3.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -2285,12 +2653,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py spanish 4
+python PythonHelpers/create_scoring_worksheet.py spanish 4
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. SpanishFixTableAct4.csv - For recording translation fixes
+2. SpanishScoringWorksheetAct4.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -2300,6 +2671,17 @@ python PythonHelpers/check_translation_quality.py spanish 101 140
 python PythonHelpers/check_language_mismatch.py spanish 101 140
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -2371,15 +2753,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 101 140
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add SpanishWords/SpanishWords{1..140}.csv SpanishWords/SpanishFixTableAct4.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py spanish 4
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add SpanishWords/SpanishWords{1..140}.csv
 git commit -m "Act 4/7 (Expanding Expression): Review and fix translations for packs 101-140"
 git push -u origin <branch>
 
@@ -2387,9 +2798,12 @@ git push -u origin <branch>
 
 ✅ All 40 packs manually reviewed (not just Python-flagged ones)
 ✅ SpanishFixTableAct4.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -2430,12 +2844,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py spanish 5
+python PythonHelpers/create_scoring_worksheet.py spanish 5
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. SpanishFixTableAct5.csv - For recording translation fixes
+2. SpanishScoringWorksheetAct5.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -2445,6 +2862,17 @@ python PythonHelpers/check_translation_quality.py spanish 141 180
 python PythonHelpers/check_language_mismatch.py spanish 141 180
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -2516,15 +2944,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 141 180
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add SpanishWords/SpanishWords{1..180}.csv SpanishWords/SpanishFixTableAct5.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py spanish 5
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add SpanishWords/SpanishWords{1..180}.csv
 git commit -m "Act 5/7 (Intermediate Mastery): Review and fix translations for packs 141-180"
 git push -u origin <branch>
 
@@ -2532,9 +2989,12 @@ git push -u origin <branch>
 
 ✅ All 40 packs manually reviewed (not just Python-flagged ones)
 ✅ SpanishFixTableAct5.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -2575,12 +3035,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py spanish 6
+python PythonHelpers/create_scoring_worksheet.py spanish 6
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. SpanishFixTableAct6.csv - For recording translation fixes
+2. SpanishScoringWorksheetAct6.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -2590,6 +3053,17 @@ python PythonHelpers/check_translation_quality.py spanish 181 220
 python PythonHelpers/check_language_mismatch.py spanish 181 220
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -2661,15 +3135,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 181 220
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add SpanishWords/SpanishWords{1..220}.csv SpanishWords/SpanishFixTableAct6.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py spanish 6
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add SpanishWords/SpanishWords{1..220}.csv
 git commit -m "Act 6/7 (Advanced Constructs): Review and fix translations for packs 181-220"
 git push -u origin <branch>
 
@@ -2677,9 +3180,12 @@ git push -u origin <branch>
 
 ✅ All 40 packs manually reviewed (not just Python-flagged ones)
 ✅ SpanishFixTableAct6.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -2720,12 +3226,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py spanish 7
+python PythonHelpers/create_scoring_worksheet.py spanish 7
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. SpanishFixTableAct7.csv - For recording translation fixes
+2. SpanishScoringWorksheetAct7.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -2735,6 +3244,17 @@ python PythonHelpers/check_translation_quality.py spanish 221 250
 python PythonHelpers/check_language_mismatch.py spanish 221 250
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -2806,15 +3326,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py spanish 221 250
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add SpanishWords/SpanishWords{1..250}.csv SpanishWords/SpanishFixTableAct7.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py spanish 7
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add SpanishWords/SpanishWords{1..250}.csv
 git commit -m "Act 7/7 (Mastery & Fluency): Review and fix translations for packs 221-250"
 git push -u origin <branch>
 
@@ -2822,9 +3371,12 @@ git push -u origin <branch>
 
 ✅ All 30 packs manually reviewed (not just Python-flagged ones)
 ✅ SpanishFixTableAct7.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -2869,12 +3421,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py english 1
+python PythonHelpers/create_scoring_worksheet.py english 1
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. EnglishFixTableAct1.csv - For recording translation fixes
+2. EnglishScoringWorksheetAct1.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -2884,6 +3439,17 @@ python PythonHelpers/check_translation_quality.py english 1 45
 python PythonHelpers/check_language_mismatch.py english 1 45
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -2955,15 +3521,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py english 1 45
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add EnglishWords/EnglishWords{1..45}.csv EnglishWords/EnglishFixTableAct1.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py english 1
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add EnglishWords/EnglishWords{1..45}.csv
 git commit -m "Act 1/5 (Foundation): Review and fix translations for packs 1-45"
 git push -u origin <branch>
 
@@ -2971,9 +3566,12 @@ git push -u origin <branch>
 
 ✅ All 49 packs manually reviewed (not just Python-flagged ones)
 ✅ EnglishFixTableAct1.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -3014,12 +3612,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py english 2
+python PythonHelpers/create_scoring_worksheet.py english 2
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. EnglishFixTableAct2.csv - For recording translation fixes
+2. EnglishScoringWorksheetAct2.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -3029,6 +3630,17 @@ python PythonHelpers/check_translation_quality.py english 46 81
 python PythonHelpers/check_language_mismatch.py english 46 81
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -3100,15 +3712,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py english 46 81
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add EnglishWords/EnglishWords{1..81}.csv EnglishWords/EnglishFixTableAct2.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py english 2
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add EnglishWords/EnglishWords{1..81}.csv
 git commit -m "Act 2/5 (Building Blocks): Review and fix translations for packs 46-81"
 git push -u origin <branch>
 
@@ -3116,9 +3757,12 @@ git push -u origin <branch>
 
 ✅ All 37 packs manually reviewed (not just Python-flagged ones)
 ✅ EnglishFixTableAct2.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -3159,12 +3803,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py english 3
+python PythonHelpers/create_scoring_worksheet.py english 3
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. EnglishFixTableAct3.csv - For recording translation fixes
+2. EnglishScoringWorksheetAct3.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -3174,6 +3821,17 @@ python PythonHelpers/check_translation_quality.py english 82 112
 python PythonHelpers/check_language_mismatch.py english 82 112
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -3245,15 +3903,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py english 82 112
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add EnglishWords/EnglishWords{1..112}.csv EnglishWords/EnglishFixTableAct3.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py english 3
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add EnglishWords/EnglishWords{1..112}.csv
 git commit -m "Act 3/5 (Everyday Life): Review and fix translations for packs 82-112"
 git push -u origin <branch>
 
@@ -3261,9 +3948,12 @@ git push -u origin <branch>
 
 ✅ All 31 packs manually reviewed (not just Python-flagged ones)
 ✅ EnglishFixTableAct3.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -3304,12 +3994,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py english 4
+python PythonHelpers/create_scoring_worksheet.py english 4
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. EnglishFixTableAct4.csv - For recording translation fixes
+2. EnglishScoringWorksheetAct4.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -3319,6 +4012,17 @@ python PythonHelpers/check_translation_quality.py english 113 130
 python PythonHelpers/check_language_mismatch.py english 113 130
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -3390,15 +4094,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py english 113 130
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add EnglishWords/EnglishWords{1..130}.csv EnglishWords/EnglishFixTableAct4.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py english 4
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add EnglishWords/EnglishWords{1..130}.csv
 git commit -m "Act 4/5 (Expanding Horizons): Review and fix translations for packs 113-130"
 git push -u origin <branch>
 
@@ -3406,9 +4139,12 @@ git push -u origin <branch>
 
 ✅ All 18 packs manually reviewed (not just Python-flagged ones)
 ✅ EnglishFixTableAct4.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
@@ -3449,12 +4185,15 @@ Your job: Ensure the other columns have the BEST translations for native speaker
 ╚══════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
+║  📝 STEP 0: CREATE FIX TABLE & SCORING WORKSHEET                 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 python PythonHelpers/clear_fix_table.py english 5
+python PythonHelpers/create_scoring_worksheet.py english 5
 
-This removes all old fixes from previous runs. You start with a clean slate!
+This creates:
+1. EnglishFixTableAct5.csv - For recording translation fixes
+2. EnglishScoringWorksheetAct5.csv - For before/after quality scores (1-10)
 
 === STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
 
@@ -3464,6 +4203,17 @@ python PythonHelpers/check_translation_quality.py english 131 160
 python PythonHelpers/check_language_mismatch.py english 131 160
 
 Note any flagged packs, but don't stop there!
+
+=== STEP 1.5: SCORE PACKS (BEFORE REVIEW) ===
+
+Open the scoring worksheet and fill in Before_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Quickly scan the current translations
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Consider: naturalness, accuracy, theme fitness
+
+This is your BASELINE - you'll compare to After_Score later.
 
 === STEP 2: MANUAL REVIEW (THE REAL WORK) ===
 
@@ -3535,15 +4285,44 @@ If errors occur:
 - Check Old_Values match exactly what's in the CSV
 - Fix the fix table and rerun
 
+=== STEP 4.5: SCORE PACKS (AFTER FIXES) ===
+
+Re-open the scoring worksheet and fill in After_Score column (1-10 scale):
+
+For EACH pack in this act:
+1. Review the translations after your improvements
+2. Rate overall quality: 1 (terrible) to 10 (perfect)
+3. Compare to Before_Score - quality should improve!
+
 === STEP 5: VALIDATE ===
 
 python PythonHelpers/validate_pinyin.py english 131 160
 
 Expected: 0 errors
 
-=== STEP 6: COMMIT ===
+=== STEP 6: DISPLAY BEFORE/AFTER SCORES ===
 
-git add EnglishWords/EnglishWords{1..160}.csv EnglishWords/EnglishFixTableAct5.csv
+Read the scoring worksheet and display the complete table in your response:
+
+| Pack | Title | Before | After | Change |
+|------|-------|--------|-------|--------|
+| ...  | ...   | ...    | ...   | ...    |
+
+Show ALL packs with their before/after scores to demonstrate quality improvement!
+
+=== STEP 7: CLEANUP (DELETE INTERMEDIATE FILES) ===
+
+Delete the intermediate files now that fixes are applied and scores are displayed:
+
+python PythonHelpers/delete_fix_tables.py english 5
+
+This removes:
+- Fix table (already applied to CSVs)
+- Scoring worksheet (already displayed in response)
+
+=== STEP 8: COMMIT
+
+git add EnglishWords/EnglishWords{1..160}.csv
 git commit -m "Act 5/5 (Advanced Mastery): Review and fix translations for packs 131-160"
 git push -u origin <branch>
 
@@ -3551,9 +4330,12 @@ git push -u origin <branch>
 
 ✅ All 25 packs manually reviewed (not just Python-flagged ones)
 ✅ EnglishFixTableAct5.csv has all fixes recorded
+✅ Scoring worksheet filled (before AND after scores)
 ✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
 ✅ Actual CSV files are CHANGED (not just fix table)
 ✅ Validation passes
+✅ Before/after scoring table displayed in response
+✅ Intermediate files deleted (fix table, scoring worksheet)
 ✅ Committed and pushed
 
 ⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️</div>
