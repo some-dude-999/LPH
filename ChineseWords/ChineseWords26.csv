@@ -1,11 +1,11 @@
 chinese,pinyin,english,spanish,french,portuguese
 车,chē,Car,Coche,Voiture,Carro
 坐车,zuò chē,By car,En coche,En voiture,De carro
-开车,kāi chē,Driving,Conducir,Conduite,Dirigindo
+开车,kāi chē,Drive,Conducir,Conduire,Dirigir
 骑车,qí chē,Cycling,Ciclismo,Cyclisme,Ciclismo
 走路,zǒu lù,Walking,Caminando,Marcher,Caminhando
-打车,dǎ chē,Take a taxi,Taxi,Taxis,Táxi
-出租车,chū zū chē,Taxi,Taxi,Taxis,Táxi
+打车,dǎ chē,Take a taxi,Tomar un taxi,Prendre un taxi,Táxi
+出租车,chū zū chē,Taxi,Taxi,Taxi,Táxi
 公交车,gōng jiāo chē,Bus,Autobús,Autobus,Ônibus
 地铁,dì tiě,Subway,Metro,Métro,Metrô
 火车,huǒ chē,Train,Tren,Train,Trem
@@ -21,7 +21,7 @@ chinese,pinyin,english,spanish,french,portuguese
 买车,mǎi chē,Buy a car,Comprar un coche,Acheter une voiture,Comprar um carro
 坐车去,zuò chē qù,Go by car,Ir en coche,Prendre une voiture,Ir de carro
 喜欢坐车,xǐ huān zuò chē,Like to ride,Le gusta andar en auto,J'aime prendre la voiture,Gosto de andar de carro
-开车走,kāi chē zǒu,Drive away,Conducir,Conduire,Dirigir
+开车走,kāi chē zǒu,Drive away,Irse conduciendo,Partir en voiture,Sair dirigindo
 学开车,xué kāi chē,Learn to drive,Aprender a conducir,Apprendre à conduire,Aprender a dirigir
 骑车去,qí chē qù,Go by bike,Ir en bicicleta,Partir à vélo,Ir de bicicleta
 喜欢骑车,xǐ huān qí chē,Like to ride a bike,Le gusta andar en bicicleta,J'aime faire du vélo,Gosto de andar de bicicleta
@@ -40,9 +40,9 @@ chinese,pinyin,english,spanish,french,portuguese
 高铁站,gāo tiě zhàn,High-speed rail station,Estación de tren de alta velocidad,Gare TGV,Estação de trem de alta velocidade
 坐高铁,zuò gāo tiě,Take the high-speed rail,Tomar el tren de alta velocidad,Prendre le TGV,Pegar o trem de alta velocidade
 飞机场,fēi jī chǎng,Airport,Aeropuerto,Aéroport,Aeroporto
-坐飞机,zuò fēi jī,Take a plane,En avión,Prendre l'avion,Pegar o avião
+坐飞机,zuò fēi jī,Take a plane,Tomar un avión,Prendre l'avion,Pegar o avião
 轮船码头,lún chuán mǎ tóu,Ferry terminal,Terminal de ferry,Terminal de ferry,Terminal de ferry
-坐轮船,zuò lún chuán,Take a ship,En barco,Prendre le bateau,Pegar o navio
+坐轮船,zuò lún chuán,Take a ship,Tomar un barco,Prendre le bateau,Pegar o navio
 自行车道,zì xíng chē dào,Bike lane,Carril bici,Piste cyclable,Ciclovia
 骑自行车,qí zì xíng chē,Ride a bicycle,Montar en bicicleta,Faire du vélo,Andar de bicicleta
 上车吧,shàng chē ba,Get on,Súbete,Montez,Suba
