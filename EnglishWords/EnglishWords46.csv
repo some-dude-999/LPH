@@ -17,7 +17,7 @@ map,地图,dì tú,mapa,mapa
 block,街区,jiē qū,cuadra,quarteirão
 intersection,交叉点,jiāo chā diǎn,intersección,interseção
 opposite,对面,duì miàn,enfrente,em frente
-navigate,导航,dǎo háng,navegar,navegar
+navigate,导航,dǎo háng,orientarse,orientar-se
 detour,绕道,rào dào,desvío,desvio
 turn left,左转,zuǒ zhuǎn,girar a la izquierda,vire à esquerda
 on the left,在左边,zài zuǒ biān,a la izquierda,à esquerda
@@ -49,13 +49,13 @@ wrong direction,方向错误,fāng xiàng cuò wù,dirección equivocada,direç�
 right direction,正确的方向,zhèng què de fāng xiàng,dirección correcta,direção certa
 use a map,使用地图,shǐ yòng dì tú,utilizar un mapa,use um mapa
 check the map,查看地图,chá kàn dì tú,consulta el mapa,confira o mapa
-next block,下一个街区,xià yí gè jiē qū,siguiente bloque,próximo quarteirão
+next block,下一个街区,xià yí gè jiē qū,siguiente cuadra,próximo quarteirão
 around the block,街区附近,jiē qū fù jìn,alrededor de la cuadra,ao redor do quarteirão
 busy intersection,繁忙的十字路口,fán máng de shí zì lù kǒu,intersección muy transitada,cruzamento movimentado
 at the intersection,在十字路口,zài shí zì lù kǒu,en la intersección,no cruzamento
 opposite side,对面,duì miàn,lado opuesto,lado oposto
 quite opposite,恰恰相反,qià qià xiāng fǎn,todo lo contrario,bem o oposto
-navigate through,穿行,chuān xíng,navegar por,navegar por
-easy to navigate,易于导航,yì yú dǎo háng,fácil de navegar,fácil de navegar
+navigate through,穿行,chuān xíng,atravesar,percorrer
+easy to navigate,易于导航,yì yú dǎo háng,fácil de orientarse,fácil de se orientar
 take a detour,绕道走,rào dào zǒu,tomar un desvío,faça um desvio
 road detour,绕行道路,rào xíng dào lù,desvío del camino,desvio de estrada
