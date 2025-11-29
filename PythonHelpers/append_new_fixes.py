@@ -1,11 +1,69 @@
 #!/usr/bin/env python3
-"""
-Append new fixes found during Stage 3A review to EnglishFixTable.csv
-"""
+# ============================================================
+# MODULE: English Fix Table Appender
+# Core Purpose: Append new translation fixes to EnglishFixTable.csv
+#              after comprehensive review of English language packs
+# ============================================================
+#
+# WHAT THIS SCRIPT DOES:
+# -----------------------
+# 1. Contains a hardcoded list of new translation fixes discovered
+#    during Stage 3A review of English language packs
+# 2. Reads the existing EnglishFixTable.csv
+# 3. Appends all new fixes to the end of the file
+# 4. Displays count of added fixes
+#
+# WHY THIS EXISTS:
+# ---------------
+# When reviewing English packs for translation quality, we discover
+# errors that need to be fixed. Rather than manually editing the
+# FixTable CSV, this script lets us define fixes in Python (with
+# clear comments) and append them programmatically.
+#
+# USAGE:
+# ------
+#   python3 PythonHelpers/append_new_fixes.py
+#
+# IMPORTANT NOTES:
+# ---------------
+# - This script APPENDS to the existing file (doesn't overwrite)
+# - Each fix is a tuple: (language, pack_num, pack_name, row_num,
+#   column_name, old_value, new_value, reason)
+# - The fixes are surgically applied using apply_fixes.py (separate script)
+# - This is an INTERMEDIATE step - fixes don't take effect until
+#   apply_fixes.py is run
+#
+# ERROR TYPES FIXED:
+# -----------------
+# - Wrong characters (similar-looking but incorrect)
+# - Wrong meaning (homonyms - word sounds similar but wrong context)
+# - Wrong part of speech (noun vs verb, etc.)
+# - Duplications (same word/syllable repeated accidentally)
+# - Leftover text (from previous rows during editing)
+# - Missing words (incomplete translations)
+#
+# WORKFLOW:
+# ---------
+# 1. Review English packs → discover errors
+# 2. Add fixes to new_fixes list below (with clear comments)
+# 3. Run this script → appends to EnglishFixTable.csv
+# 4. Run apply_fixes.py → actually modifies the EnglishWords*.csv files
+# 5. Verify fixes worked correctly
+# 6. Commit changes
+#
+# ============================================================
 
 import csv
 
-# New fixes to add (from comprehensive review)
+# ============================================================
+# NEW FIXES TO APPEND
+# Organized by pack number for easy reference
+# ============================================================
+# Each tuple format:
+# (language, pack_number, pack_title, row_number, column_name,
+#  old_value, new_value, reason_for_fix)
+# ============================================================
+
 new_fixes = [
     # Pack 16 - Question Words
     ("english", 16, "Question Words", 44, "chinese", "现在是几奌", "现在是几点", "Wrong character: 奌 should be 点 (o'clock)"),
@@ -214,24 +272,35 @@ new_fixes = [
     ("english", 160, "Apology & Excuse Patterns", 54, "pinyin", "fā shēng chōng tū xìng gé chōng tū", "xìng gé chōng tū", "Fix pinyin to match corrected Chinese"),
 ]
 
-# Append to existing fix table
+# ============================================================
+# FILE PATHS
+# ============================================================
 input_file = "/home/user/LPH/EnglishWords/EnglishFixTable.csv"
 output_file = "/home/user/LPH/EnglishWords/EnglishFixTable.csv"
 
-# Read existing fixes
+# ============================================================
+# MAIN EXECUTION
+# ============================================================
+# Step 1: Read existing fixes from EnglishFixTable.csv
+# Step 2: Append new fixes to the end
+# Step 3: Report count of fixes added
+# ============================================================
+
+# Read existing fixes (keep all lines including header)
 with open(input_file, 'r', encoding='utf-8') as f:
     existing_lines = f.readlines()
 
-# Append new fixes
+# Append new fixes to the file
 with open(output_file, 'w', encoding='utf-8', newline='') as f:
-    # Write existing content
+    # Write existing content (includes header + all previous fixes)
     for line in existing_lines:
         f.write(line)
 
-    # Write new fixes
+    # Write new fixes as CSV rows
     writer = csv.writer(f)
     for fix in new_fixes:
         writer.writerow(fix)
 
+# Report success
 print(f"✓ Added {len(new_fixes)} new fixes to EnglishFixTable.csv")
 print(f"  Total fixes now: {len(existing_lines) - 1 + len(new_fixes)}")
