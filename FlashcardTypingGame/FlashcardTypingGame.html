@@ -3137,18 +3137,10 @@
       // ---------------------------------------------------------
     }
 
-    // Helper: Create a tooltip element for a button (allows HTML content)
-    function createButtonTooltip(button, htmlContent) {
-      // Remove any existing tooltip
-      const existing = button.querySelector('.btn-tooltip');
-      if (existing) existing.remove();
-
-      // Create tooltip element
-      const tooltip = document.createElement('span');
-      tooltip.className = 'btn-tooltip';
-      tooltip.innerHTML = htmlContent;
-      button.appendChild(tooltip);
-    }
+    // ============================================================
+    // NOTE: createButtonTooltip() removed - use shared version from wordpack-logic.js
+    // The function is available globally as window.createButtonTooltip()
+    // ============================================================
 
     // Initialize on page load
     // KEY FEATURE: Loads act data, preloads deck from saved state (or pack 1), then displays menu overlay
@@ -3515,47 +3507,10 @@
       return gradients.join(', ');
     }
 
-    // Render typing display with word grouping (keeps words together, wraps between words)
-    function renderTypingDisplay() {
-      let html = '';
-      let currentWord = [];
-      let currentWordStartIdx = 0;
-
-      for (let idx = 0; idx < typingDisplay.length; idx++) {
-        const actualChar = typingDisplay[idx]; // Always the real character
-
-        if (actualChar === ' ') {
-          // End of word - wrap accumulated chars in nowrap span
-          if (currentWord.length > 0) {
-            html += `<span style="white-space: nowrap;">${currentWord.join('')}</span>`;
-            currentWord = [];
-          }
-          // Add space between words (browser handles line breaks naturally without trailing/leading spaces)
-          html += ' ';
-          currentWordStartIdx = idx + 1;
-        } else {
-          // Always render actual character to preserve layout
-          // For untyped positions, show underscore overlay (character is invisible but takes space)
-          const isTyped = typedPositions.has(idx);
-          const wrongClass = wrongPositions.includes(idx) ? 'wrong' : '';
-
-          if (isTyped) {
-            // Typed: show actual character
-            currentWord.push(`<span class="typing-char ${wrongClass}">${actualChar}</span>`);
-          } else {
-            // Untyped: invisible character with underscore overlay (preserves natural spacing)
-            currentWord.push(`<span class="typing-char ${wrongClass}" style="position: relative; display: inline-block;"><span style="opacity: 0;">${actualChar}</span><span style="position: absolute; top: 0; left: 0;">_</span></span>`);
-          }
-        }
-      }
-
-      // Add remaining word
-      if (currentWord.length > 0) {
-        html += `<span style="white-space: nowrap;">${currentWord.join('')}</span>`;
-      }
-
-      return html;
-    }
+    // ============================================================
+    // NOTE: renderTypingDisplay() removed - use shared version from wordpack-logic.js
+    // Use: window.renderTypingDisplayHTML(typingDisplay, typedPositions, wrongPositions)
+    // ============================================================
 
     // ============================================================
     // KEY FEATURE: Card Display - Front and Back Always Linked
@@ -3569,34 +3524,15 @@
     //   - These are NEVER from different sources - always same object
     // ============================================================
 
-    /**
-     * Renders the target word (front of card) with proper formatting
-     * - For Chinese: renders with coupled Chinese characters + pinyin
-     * - For other languages: plain text
-     * @param {Object} card - Card object with targetWord and optionally pinyin
-     * @returns {string} - HTML string for the target word
-     */
-    function renderTargetWord(card) {
-      // If target language is Chinese, use coupled rendering
-      if (isChineseMode() && card.pinyin) {
-        return getChineseHtml(card.targetWord, card.pinyin);
-      }
-      return card.targetWord;
-    }
+    // ============================================================
+    // NOTE: renderTargetWord() removed - use shared version from wordpack-logic.js
+    // Use: window.renderTargetWordHTML(card, isChineseMode())
+    // ============================================================
 
-    /**
-     * Renders the translation text, using coupled Chinese+pinyin display when applicable
-     * @param {Object} card - Card object with translation and optionally translationPinyin
-     * @returns {string} - HTML string for the translation
-     */
-    function renderTranslation(card) {
-      // If translation is Chinese, use coupled rendering
-      if (card.translationIsChinese && card.translationPinyin) {
-        return getChineseHtml(card.translation, card.translationPinyin);
-      }
-      // Otherwise, plain text
-      return card.translation;
-    }
+    // ============================================================
+    // NOTE: renderTranslation() removed - use shared version from wordpack-logic.js
+    // Use: window.renderTranslationHTML(card)
+    // ============================================================
 
     function updateDisplay() {
       // Starting card is shown/hidden by showStartingCard/exitStartingCard
@@ -3648,11 +3584,11 @@
       if (currentMode === 'flashcard') {
         // FLASHCARD MODE - Purpose: Learn to read target word and understand meaning
         // Front: Target word | Back: Translation
-        // For Chinese: renderTargetWord() returns coupled char+pinyin HTML
-        // When translation is Chinese, renderTranslation() returns coupled char+pinyin HTML
-        spanishWord.innerHTML = renderTargetWord(card);
+        // For Chinese: renderTargetWordHTML() returns coupled char+pinyin HTML
+        // When translation is Chinese, renderTranslationHTML() returns coupled char+pinyin HTML
+        spanishWord.innerHTML = renderTargetWordHTML(card, isChineseMode());
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${renderTranslation(card)}</div>`;
+        englishWord.innerHTML = `<div class="translation-text">${renderTranslationHTML(card)}</div>`;
         englishWord.className = 'card-word';
         // Clear indicators
         wrongLettersFront.innerHTML = '';
@@ -3674,10 +3610,10 @@
           ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
           : '';
         // Update card content (no indicators embedded here)
-        spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplay()}</div>`;
+        spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplayHTML(typingDisplay, typedPositions, wrongPositions)}</div>`;
         spanishWord.className = 'card-word';
         // Back shows target word + translation (with Chinese coupling if applicable)
-        englishWord.innerHTML = `${renderTargetWord(card)}<br><div class="translation-text">${renderTranslation(card)}</div>`;
+        englishWord.innerHTML = `${renderTargetWordHTML(card, isChineseMode())}<br><div class="translation-text">${renderTranslationHTML(card)}</div>`;
         englishWord.className = 'card-word';
       } else if (currentMode === 'translation') {
         // TRANSLATION MODE - Purpose: Learn to write/spell target word from translation
@@ -3698,17 +3634,17 @@
         // Update card content (no indicators embedded here)
         // TRANSLATION MODE: Front shows translation (for user to translate FROM)
         // When translation is Chinese, show with coupled char+pinyin
-        spanishWord.innerHTML = `<div class="translation-text">${renderTranslation(card)}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplay()}</div>`;
+        spanishWord.innerHTML = `<div class="translation-text">${renderTranslationHTML(card)}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplayHTML(typingDisplay, typedPositions, wrongPositions)}</div>`;
         spanishWord.className = 'card-word';
         // Back shows target word (with Chinese coupling if applicable)
-        englishWord.innerHTML = renderTargetWord(card);
+        englishWord.innerHTML = renderTargetWordHTML(card, isChineseMode());
         englishWord.className = 'card-word';
       } else if (currentMode === 'pronunciation') {
         // PRONUNCIATION MODE - Purpose: Learn to pronounce target word correctly
         // Front: Target word + microphone button | Back: Translation (with Chinese coupling if applicable)
-        spanishWord.innerHTML = renderTargetWord(card);
+        spanishWord.innerHTML = renderTargetWordHTML(card, isChineseMode());
         spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${renderTranslation(card)}</div>`;
+        englishWord.innerHTML = `<div class="translation-text">${renderTranslationHTML(card)}</div>`;
         englishWord.className = 'card-word';
         // Clear indicators
         wrongLettersFront.innerHTML = '';
