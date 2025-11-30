@@ -2038,129 +2038,20 @@
     // ============================================================
     // CHINESE COUPLING: Character + Pinyin Pairing
     // ============================================================
-
-    /*
-      coupleChineseWithPinyin() - Creates anti-decoupled character-pinyin pairs
-
-      WHY THIS FUNCTION EXISTS:
-      Our CSV and JS modules store Chinese and Pinyin as separate strings:
-        - Chinese: "小猫" (column 0 for Chinese)
-        - Pinyin:  "xiǎo māo" (column 1 for Chinese)
-
-      This is fine for storage (human-readable), but DANGEROUS for display.
-      If we split them separately, they could get out of sync.
-
-      SOLUTION: Transform at load time into coupled objects.
-      Each character is paired with its pinyin syllable IN THE SAME OBJECT.
-
-      ALGORITHM:
-      1. Split Chinese string into individual characters (using [...str])
-      2. Split pinyin string by spaces into syllables
-      3. Validate: character count MUST equal syllable count
-      4. Zip together: char[i] pairs with syllable[i]
-      5. Return array of {char, pinyin} objects
-
-      ERROR HANDLING:
-      - If counts don't match, log warning and pad with '?'
-      - Never crash - always return something displayable
-      - Validation helps catch data errors early
-
-      EXAMPLE:
-      INPUT:  coupleChineseWithPinyin("小猫", "xiǎo māo")
-      OUTPUT: [{char: "小", pinyin: "xiǎo"}, {char: "猫", pinyin: "māo"}]
-
-      INPUT:  coupleChineseWithPinyin("你好世界", "nǐ hǎo shì jiè")
-      OUTPUT: [{char: "你", pinyin: "nǐ"}, {char: "好", pinyin: "hǎo"},
-               {char: "世", pinyin: "shì"}, {char: "界", pinyin: "jiè"}]
-
-      PARAMETERS:
-        - chineseStr: String of Chinese characters (e.g., "小猫")
-        - pinyinStr: Space-separated pinyin syllables (e.g., "xiǎo māo")
-
-      RETURNS: Array of {char, pinyin} objects
-
-      UPDATED: Now handles Latin blocks (edge cases like ATM机, WhatsApp消息)
-    */
-    function coupleChineseWithPinyin(chineseStr, pinyinStr) {
-      // Handle empty/null inputs gracefully
-      if (!chineseStr) return [];
-      if (!pinyinStr) {
-        // No pinyin available - return chars with empty pinyin
-        return [...chineseStr].map(char => ({ char, pinyin: '' }));
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // CHARACTER-BY-CHARACTER MAPPING (Simplified)
-      // ════════════════════════════════════════════════════════════════════════
-      // Example: "早上好，先生" → "zǎo shàng hǎo， xiān shēng"
-      //   早 → zǎo
-      //   上 → shàng
-      //   好 → hǎo
-      //   ， → ，
-      //   先 → xiān
-      //   生 → shēng
-      //
-      // Edge cases (Latin in Chinese): "ATM机" → "ATM jī"
-      //   A → A
-      //   T → T
-      //   M → M
-      //   机 → jī
-      // ════════════════════════════════════════════════════════════════════════
-
-      // Split pinyin by spaces
-      const pinyinTokens = pinyinStr.trim().split(/\s+/);
-      const result = [];
-      let tokenIndex = 0;
-      let latinLetterIndex = 0; // For consuming Latin tokens letter-by-letter
-
-      for (const char of chineseStr) {
-        if (tokenIndex >= pinyinTokens.length) {
-          // Ran out of pinyin tokens - mark as mismatch
-          result.push({ char, pinyin: '?' });
-          continue;
-        }
-
-        const currentToken = pinyinTokens[tokenIndex];
-        // Strip Chinese punctuation to get clean syllable/word
-        const cleanToken = currentToken.replace(/[，。！？、；：""''（）《》【】…—]/g, '');
-
-        if (/[\u4e00-\u9fff]/.test(char)) {
-          // ═══════════════════════════════════════════════════════════
-          // CHINESE CHARACTER → consume one token
-          // ═══════════════════════════════════════════════════════════
-          result.push({ char, pinyin: cleanToken || '?' });
-          tokenIndex++;
-          latinLetterIndex = 0;
-        } else if (/[A-Za-z]/.test(char)) {
-          // ═══════════════════════════════════════════════════════════
-          // LATIN LETTER → handle edge cases (ATM, DNA, WhatsApp, etc.)
-          // ═══════════════════════════════════════════════════════════
-          if (/^[A-Za-z]+$/.test(cleanToken)) {
-            // Current token is all-Latin (like "ATM", "DNA", "WhatsApp")
-            // Consume letter-by-letter: A→A, T→T, M→M
-            const letter = cleanToken[latinLetterIndex] || char;
-            result.push({ char, pinyin: letter });
-            latinLetterIndex++;
-
-            if (latinLetterIndex >= cleanToken.length) {
-              // Finished consuming this Latin token
-              tokenIndex++;
-              latinLetterIndex = 0;
-            }
-          } else {
-            // Token is not pure Latin → just map letter to itself
-            result.push({ char, pinyin: char });
-          }
-        } else {
-          // ═══════════════════════════════════════════════════════════
-          // PUNCTUATION → maps to itself
-          // ═══════════════════════════════════════════════════════════
-          result.push({ char, pinyin: char });
-        }
-      }
-
-      return result;
-    }
+    // ⚠️ MOVED TO wordpack-logic.js as coupleChineseWithPinyin()
+    //
+    // This function is now available globally from wordpack-logic.js
+    // Handles Latin blocks (ATM机, WhatsApp消息) and punctuation
+    // Returns array of {char, pinyin} objects for rendering
+    //
+    // Use cases in ANY language learning game:
+    //   - Flashcards with Chinese text
+    //   - Quiz games with Chinese options
+    //   - Typing games with Chinese target words
+    //   - Memory games with Chinese pairs
+    //
+    // See wordpack-logic.js for full documentation
+    // ============================================================
 
     // ============================================================
     // DEBUG VERSION: Returns detailed coupling information
@@ -2247,70 +2138,32 @@
     // ============================================================
     // CHINESE RENDERING: Display Characters with Pinyin
     // ============================================================
+    // ⚠️ Core functions MOVED TO wordpack-logic.js
+    //
+    // wordpack-logic.js provides:
+    //   - renderChineseWithPinyin(coupledArray) - always shows both char+pinyin
+    //   - renderChineseText(text, pinyin, isChinese) - wrapper for coupling+rendering
+    //
+    // DecoderTest-specific wrappers below handle state.showChineseChars / state.showPinyin
+    // ============================================================
 
-    /*
-      renderChineseWithPinyin() - Creates HTML element showing chars with pinyin
-
-      WHAT IT RENDERS:
-      For each character, creates a vertical stack:
-        ┌─────┐
-        │ 小  │  ← Chinese character (larger font)
-        │xiǎo │  ← Pinyin syllable (smaller font)
-        └─────┘
-
-      Multiple characters are displayed side-by-side:
-        ┌─────┬─────┐
-        │ 小  │ 猫  │
-        │xiǎo │ māo │
-        └─────┴─────┘
-
-      DISPLAY OPTIONS (controlled by state.showChineseChars & state.showPinyin):
-      - Both checked:     Show characters AND pinyin (default)
-      - Only chars:       Show characters only (no pinyin)
-      - Only pinyin:      Show pinyin only (no characters)
-      - Neither checked:  Show empty (edge case)
-
-      WHY USE HTML ELEMENTS INSTEAD OF TEXT?
-      - Text can't position pinyin under each specific character
-      - With elements, pinyin is vertically aligned under its character
-      - CSS flexbox handles the horizontal layout automatically
-
-      EXAMPLE OUTPUT HTML:
-      <span class="chinese-coupled" style="display: inline-flex; gap: 2px;">
-        <span class="char-group" style="display: flex; flex-direction: column; align-items: center;">
-          <span class="chinese-char" style="font-size: 1.2em;">小</span>
-          <span class="pinyin" style="font-size: 0.7em; color: #666;">xiǎo</span>
-        </span>
-        <span class="char-group" style="...">
-          <span class="chinese-char" style="...">猫</span>
-          <span class="pinyin" style="...">māo</span>
-        </span>
-      </span>
-
-      PARAMETERS:
-        - coupledArray: Array from coupleChineseWithPinyin() - [{char, pinyin}, ...]
-
-      RETURNS: DOM element (span) ready to append to any container
-    */
+    // DecoderTest-specific wrapper: respects showChineseChars/showPinyin state
     function renderChineseWithPinyin(coupledArray) {
-      // Create container for the whole word
       const container = document.createElement('span');
       container.className = 'chinese-coupled';
       container.style.cssText = 'display: inline-flex; gap: 2px; align-items: flex-end;';
 
-      // Handle empty array
       if (!coupledArray || coupledArray.length === 0) {
         container.textContent = '';
         return container;
       }
 
-      // Create a character group for each char-pinyin pair
       coupledArray.forEach(({ char, pinyin }) => {
         const charGroup = document.createElement('span');
         charGroup.className = 'char-group';
         charGroup.style.cssText = 'display: flex; flex-direction: column; align-items: center;';
 
-        // Character element (top)
+        // Character element (top) - conditional on state
         if (state.showChineseChars) {
           const charSpan = document.createElement('span');
           charSpan.className = 'chinese-char';
@@ -2319,7 +2172,7 @@
           charGroup.appendChild(charSpan);
         }
 
-        // Pinyin element (bottom)
+        // Pinyin element (bottom) - conditional on state
         if (state.showPinyin) {
           const pinyinSpan = document.createElement('span');
           pinyinSpan.className = 'pinyin';
@@ -2334,39 +2187,17 @@
       return container;
     }
 
-    /*
-      renderChineseText() - High-level function to render Chinese with pinyin
-
-      This is the MAIN ENTRY POINT for rendering Chinese text anywhere in the app.
-      It handles the full pipeline: couple → render.
-
-      WHEN TO USE:
-      - Displaying Chinese vocabulary in table (target language column)
-      - Displaying Chinese translations (native language column when Chinese)
-      - Flashcard front when learning Chinese
-      - Multiple choice options when answers are Chinese
-      - ANY place where Chinese text needs the char+pinyin display
-
-      IMPORTANT: This function checks if we're dealing with Chinese.
-      If not Chinese, it returns a simple text span (no coupling needed).
-
-      PARAMETERS:
-        - text: The Chinese text string (e.g., "小猫")
-        - pinyin: The pinyin string (e.g., "xiǎo māo")
-        - isChinese: Boolean flag - true if this is Chinese text
-
-      RETURNS: DOM element (span) with appropriate rendering
-    */
+    // DecoderTest-specific wrapper: couples + renders with state checks
     function renderChineseText(text, pinyin, isChinese) {
-      // If not Chinese, just return plain text
       if (!isChinese) {
         const span = document.createElement('span');
         span.textContent = text;
         return span;
       }
 
-      // Chinese: couple and render
+      // Use global coupling function (from wordpack-logic.js)
       const coupled = coupleChineseWithPinyin(text, pinyin);
+      // Use local rendering function (checks DecoderTest state)
       return renderChineseWithPinyin(coupled);
     }
 
