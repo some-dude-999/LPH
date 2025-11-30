@@ -2140,6 +2140,346 @@ function populateNativeLanguageSelector(selectElement, translations, currentValu
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// NAVIGATION & CONTROL FUNCTIONS (Reusability: 9/10)
+// ════════════════════════════════════════════════════════════════════════════
+// Core navigation logic reusable across all language learning games
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Navigate to previous card with wrap-around
+ * Reusability Score: 9/10 - Used by all deck-based games
+ *
+ * @param {Object} state - Game state object
+ * @param {Array} state.deck - Current deck array
+ * @param {number} state.currentIndex - Current card index
+ * @param {Function} callbacks.onNavigate - Callback when navigation occurs
+ * @param {Function} callbacks.onAutoSpeak - Optional callback for auto-speak
+ * @returns {number} New index after navigation
+ */
+function navigateToPrevious(state, callbacks = {}) {
+  if (!state.deck || state.deck.length === 0) return state.currentIndex || 0;
+
+  const newIndex = (state.currentIndex - 1 + state.deck.length) % state.deck.length;
+
+  if (callbacks.onNavigate) {
+    callbacks.onNavigate(newIndex);
+  }
+
+  if (callbacks.onAutoSpeak) {
+    setTimeout(() => callbacks.onAutoSpeak(), 300);
+  }
+
+  return newIndex;
+}
+
+/**
+ * Navigate to next card with wrap-around
+ * Reusability Score: 9/10 - Used by all deck-based games
+ *
+ * @param {Object} state - Game state object
+ * @param {Array} state.deck - Current deck array
+ * @param {number} state.currentIndex - Current card index
+ * @param {Function} callbacks.onNavigate - Callback when navigation occurs
+ * @param {Function} callbacks.onAutoSpeak - Optional callback for auto-speak
+ * @returns {number} New index after navigation
+ */
+function navigateToNext(state, callbacks = {}) {
+  if (!state.deck || state.deck.length === 0) return state.currentIndex || 0;
+
+  const newIndex = (state.currentIndex + 1) % state.deck.length;
+
+  if (callbacks.onNavigate) {
+    callbacks.onNavigate(newIndex);
+  }
+
+  if (callbacks.onAutoSpeak) {
+    setTimeout(() => callbacks.onAutoSpeak(), 300);
+  }
+
+  return newIndex;
+}
+
+/**
+ * Reset deck to original state
+ * Reusability Score: 9/10 - Used by all deck-based games
+ *
+ * @param {Array} originalDeck - The original deck to reset to
+ * @param {Function} callbacks.onReset - Callback when deck is reset
+ * @returns {Object} New state with reset deck
+ */
+function resetDeckToOriginal(originalDeck, callbacks = {}) {
+  if (!originalDeck || originalDeck.length === 0) {
+    return { deck: [], currentIndex: 0 };
+  }
+
+  const newDeck = [...originalDeck]; // Copy without shuffling - preserve pedagogical order
+
+  if (callbacks.onReset) {
+    callbacks.onReset(newDeck);
+  }
+
+  return {
+    deck: newDeck,
+    currentIndex: 0
+  };
+}
+
+/**
+ * Navigate to next wordpack in sequence
+ * Reusability Score: 9/10 - Used by most wordpack-based games
+ *
+ * @param {Object} wordpacks - All available wordpacks
+ * @param {string} currentPackKey - Current wordpack key
+ * @returns {string} Next wordpack key
+ */
+function navigateToNextPack(wordpacks, currentPackKey) {
+  const packs = Object.keys(wordpacks);
+  if (packs.length === 0) return currentPackKey;
+
+  const currentPackIndex = packs.indexOf(currentPackKey);
+  const nextPackIndex = (currentPackIndex + 1) % packs.length;
+
+  return packs[nextPackIndex];
+}
+
+/**
+ * Set TTS speech speed
+ * Reusability Score: 9/10 - Used by all games with TTS
+ *
+ * @param {number} speed - Speech rate (0.1 to 2.0)
+ * @param {Array} speedButtons - Array of button elements
+ * @returns {number} The set speed value
+ */
+function setTTSSpeed(speed, speedButtons = []) {
+  speedButtons.forEach(btn => btn.classList.remove('active'));
+
+  // Find and activate the button matching this speed
+  const matchingBtn = speedButtons.find(btn =>
+    parseFloat(btn.dataset.speed) === speed ||
+    parseFloat(btn.getAttribute('data-speed')) === speed
+  );
+
+  if (matchingBtn) {
+    matchingBtn.classList.add('active');
+  }
+
+  return speed;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// RENDERING FUNCTIONS (Reusability: 9/10)
+// ════════════════════════════════════════════════════════════════════════════
+// Rendering logic reusable across different game UIs
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Render typing display with word grouping (preserves spaces between words)
+ * Reusability Score: 9/10 - Used by all typing-based games
+ *
+ * @param {Array} typingDisplay - Array of characters
+ * @param {Set} typedPositions - Set of typed position indices
+ * @param {Array} wrongPositions - Array of wrong position indices
+ * @returns {string} HTML string for typing display
+ */
+function renderTypingDisplayHTML(typingDisplay, typedPositions, wrongPositions = []) {
+  let html = '';
+  let currentWord = [];
+
+  for (let idx = 0; idx < typingDisplay.length; idx++) {
+    const actualChar = typingDisplay[idx];
+
+    if (actualChar === ' ') {
+      // End of word - wrap accumulated chars
+      if (currentWord.length > 0) {
+        html += `<span style="white-space: nowrap;">${currentWord.join('')}</span>`;
+        currentWord = [];
+      }
+      html += ' '; // Space between words
+    } else {
+      const isTyped = typedPositions.has(idx);
+      const wrongClass = wrongPositions.includes(idx) ? 'wrong' : '';
+
+      if (isTyped) {
+        currentWord.push(`<span class="typing-char ${wrongClass}">${actualChar}</span>`);
+      } else {
+        // Untyped: invisible character with underscore overlay
+        currentWord.push(`<span class="typing-char ${wrongClass}" style="position: relative; display: inline-block;"><span style="opacity: 0;">${actualChar}</span><span style="position: absolute; top: 0; left: 0;">_</span></span>`);
+      }
+    }
+  }
+
+  // Add remaining word
+  if (currentWord.length > 0) {
+    html += `<span style="white-space: nowrap;">${currentWord.join('')}</span>`;
+  }
+
+  return html;
+}
+
+/**
+ * Render target word with Chinese+pinyin if applicable
+ * Reusability Score: 9/10 - Used by all games showing target words
+ *
+ * @param {Object} card - Card object
+ * @param {boolean} isChineseTarget - Whether target language is Chinese
+ * @returns {string} HTML or plain text for target word
+ */
+function renderTargetWordHTML(card, isChineseTarget) {
+  if (isChineseTarget && card.pinyin) {
+    return getChineseHtml(card.targetWord, card.pinyin);
+  }
+  return card.targetWord || '';
+}
+
+/**
+ * Render translation with Chinese+pinyin if applicable
+ * Reusability Score: 9/10 - Used by all games showing translations
+ *
+ * @param {Object} card - Card object
+ * @returns {string} HTML or plain text for translation
+ */
+function renderTranslationHTML(card) {
+  if (card.translationIsChinese && card.translationPinyin) {
+    return getChineseHtml(card.translation, card.translationPinyin);
+  }
+  return card.translation || '';
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// UI HELPER FUNCTIONS (Reusability: 10/10)
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Create a tooltip element for a button
+ * Reusability Score: 10/10 - Used by all games with tooltips
+ *
+ * @param {HTMLElement} button - Button element to attach tooltip to
+ * @param {string} htmlContent - HTML content for tooltip
+ */
+function createButtonTooltip(button, htmlContent) {
+  if (!button) return;
+
+  // Remove any existing tooltip
+  const existing = button.querySelector('.btn-tooltip');
+  if (existing) existing.remove();
+
+  // Create tooltip element
+  const tooltip = document.createElement('span');
+  tooltip.className = 'btn-tooltip';
+  tooltip.innerHTML = htmlContent;
+  button.appendChild(tooltip);
+}
+
+/**
+ * Update wordpack title display from pack metadata
+ * Reusability Score: 8/10 - Used by most games with wordpack titles
+ *
+ * @param {HTMLElement} titleElement - Element to update
+ * @param {string} packKey - Current wordpack key
+ * @param {Object} wordpacks - All wordpacks
+ */
+function updateWordpackTitleDisplay(titleElement, packKey, wordpacks) {
+  if (!titleElement) return;
+
+  if (packKey && wordpacks[packKey]) {
+    const pack = wordpacks[packKey];
+    const packNum = pack.meta.wordpack || '?';
+    const packTitle = pack.meta.english || 'Untitled';
+    titleElement.textContent = `Lesson ${packNum}. ${packTitle}`;
+  } else {
+    titleElement.textContent = '';
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// DEBUG SIMULATION FUNCTIONS (Reusability: 9/10)
+// ════════════════════════════════════════════════════════════════════════════
+// Debug helpers for testing game logic - reusable across all games
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Simulate correct answer for debugging
+ * Reusability Score: 9/10 - Useful for all deck-based games
+ *
+ * @param {Array} deck - Current deck
+ * @param {number} currentIndex - Current card index
+ * @param {Function} onSuccess - Callback on successful removal
+ * @returns {Object} New state { deck, currentIndex }
+ */
+function simulateCorrectAnswer(deck, currentIndex, onSuccess) {
+  if (!deck || deck.length === 0) {
+    return { deck: [], currentIndex: 0 };
+  }
+
+  const newDeck = [...deck];
+
+  if (newDeck.length <= 1) {
+    if (onSuccess) onSuccess();
+    return { deck: [], currentIndex: 0 };
+  }
+
+  newDeck.splice(currentIndex, 1);
+  let newIndex = currentIndex;
+  if (newIndex >= newDeck.length) {
+    newIndex = 0;
+  }
+
+  if (onSuccess) onSuccess();
+
+  return { deck: newDeck, currentIndex: newIndex };
+}
+
+/**
+ * Simulate wrong answer for debugging
+ * Reusability Score: 9/10 - Useful for all deck-based games
+ *
+ * @param {Array} deck - Current deck
+ * @param {number} currentIndex - Current card index
+ * @param {number} duplicateCount - Number of duplicates to add (default 2)
+ * @param {Function} onFailure - Callback on failure
+ * @returns {Object} New state { deck, currentIndex }
+ */
+function simulateWrongAnswer(deck, currentIndex, duplicateCount = 2, onFailure) {
+  if (!deck || deck.length === 0) {
+    return { deck: [], currentIndex: 0 };
+  }
+
+  const newDeck = [...deck];
+  const currentCard = newDeck[currentIndex];
+
+  for (let i = 0; i < duplicateCount; i++) {
+    newDeck.push({ ...currentCard });
+  }
+
+  const newIndex = (currentIndex + 1) % newDeck.length;
+
+  if (onFailure) onFailure();
+
+  return { deck: newDeck, currentIndex: newIndex };
+}
+
+/**
+ * Simulate near victory state for debugging
+ * Reusability Score: 9/10 - Useful for all deck-based games
+ *
+ * @param {Array} deck - Current deck
+ * @param {Function} onSimulate - Callback when simulated
+ * @returns {Object} New state { deck, currentIndex }
+ */
+function simulateNearVictory(deck, onSimulate) {
+  if (!deck || deck.length === 0) {
+    return { deck: [], currentIndex: 0 };
+  }
+
+  const lastCard = deck[deck.length - 1];
+  const newDeck = [lastCard];
+
+  if (onSimulate) onSimulate();
+
+  return { deck: newDeck, currentIndex: 0 };
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // EXPORT FOR MODULE SYSTEMS (optional - currently using globals)
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -2181,6 +2521,23 @@ if (typeof module !== 'undefined' && module.exports) {
     // UI population
     populateActSelector,
     populatePackSelector,
-    populateNativeLanguageSelector
+    populateNativeLanguageSelector,
+    // Navigation functions
+    navigateToPrevious,
+    navigateToNext,
+    resetDeckToOriginal,
+    navigateToNextPack,
+    setTTSSpeed,
+    // Rendering functions
+    renderTypingDisplayHTML,
+    renderTargetWordHTML,
+    renderTranslationHTML,
+    // UI helpers
+    createButtonTooltip,
+    updateWordpackTitleDisplay,
+    // Debug simulation
+    simulateCorrectAnswer,
+    simulateWrongAnswer,
+    simulateNearVictory
   };
 }
