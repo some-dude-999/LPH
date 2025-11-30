@@ -1,47 +1,53 @@
-Function Name,What It Does,Reusability Score (1-10)
-saveState,Wrapper that builds state object from local variables and calls shared saveState function,8
-loadState,Wrapper that calls shared window.loadState to retrieve state from localStorage,8
-showSuccessStamp,Shows green Card Removed stamp plays ding sound hides after 1.5s executes callback,10
-showFailureStamp,Shows red Extra Practice stamp plays buzz sound hides after 1.5s executes callback,10
-showStartingCard,Navigate to menu card overlay sets CSS classes saves position updates titles,2
-exitStartingCard,Return from menu to saved position removes CSS classes restores deck position,2
-renderMenuCard,Renders complete menu with act/wordpack/language/voice/speed selectors with highly specific HTML,1
-populateWordpackSelectorOnCard,Populates wordpack dropdown from loaded acts filters packs sorts by number handles state,7
-switchMode,Switch between flashcard/spelling/pronunciation/translation modes resets deck updates UI,10
-initializeTypingDisplay,Set up typing state empty input split chars clear typed positions/wrong attempts,10
-addDuplicateCards,Add practice copies of current card to random positions used for Confused and wrong typing,9
-handleTypingInput,Main typing logic normalize find position check correctness handle completion add penalty cards,10
-isWritingComplete,Check if typing complete by testing for underscores in typingDisplay,9
-loadVoices,Load TTS voices from speechSynthesis API filter by language code from modules,10
-populateVoiceSelector,DEPRECATED empty stub kept for compatibility voice selector now in renderMenuCard,1
-populateActSelector,Populate act dropdown from loadedActMeta uses loaded data no hardcoding,8
-populateLanguageSelector,Populate language dropdown from loaded module translations validates before restoring,8
-initializeTooltips,Set up mode tooltip content from TOOLTIP_MESSAGES now in wordpack-logic.js,7
-createButtonTooltip,Create/update tooltip element on button removes existing creates span with HTML content,7
-restoreSavedState,Restores user settings with validation against valid options speed act pack language voice,9
-updateBackLabel,Update I speak language display label mostly no-op kept for compatibility,3
-initializeDeck,Initialize deck get pack combine base+example create cards with front/back map translations couple Chinese,9
-restartCurrentPack,Reset pack to original shuffled state copies originalDeck without shuffling,9
-goToNextPack,Navigate to next wordpack updates selector initializes new pack saves state,8
-generateWeathering,Generate random card aging effect using seeded PRNG gradients for sun-fading color tints,1
-renderTypingDisplay,Render typing with underscores for untyped wrong letters highlighted preserves spacing,6
-renderTargetWord,Render front with optional Chinese+pinyin coupling using getChineseHtml,5
-renderTranslation,Render back with optional Chinese+pinyin coupling checks translationIsChinese flag,5
-updateDisplay,Main display update render card based on mode update counter show/hide controls handle indicators,2
-goToPrevious,Navigate to previous card with wrap-around stops TTS plays sound re-init typing auto-pronounce,8
-goToNext,Navigate to next card with wrap-around similar to goToPrevious,8
-moveToNextCard,Move to next card used by auto-advance in typing stops TTS re-initializes typing,8
-flipCard,Flip card to back view by adding flipped CSS class,2
-unflipCard,Unflip card to front by removing flipped CSS class,2
-removeCurrentCard,Remove current card from deck Got it button shows success stamp auto-advances,9
-addConfusedCards,Add 2 duplicate cards for extra practice Confused button inserts random shows failure stamp,9
-resetDeck,Reset to original deck copies without shuffling re-initializes typing clears flip state,9
-speakTargetWord,TTS for current card's target word uses detected language current speed selected voice,10
-speakSpanish,Alias for backwards compatibility that calls speakTargetWord,10
-setSpeed,Set TTS speech rate update UI button state save state,10
-showFeedback,Show pronunciation feedback overlay uses dynamic threshold auto-advance with stamps,10
-hideFeedback,Hide feedback overlay by removing visible class,10
-startListening,Start speech recognition record audio get best match compare show feedback update debug,10
-updateWordpackTitle,Update wordpack title display in game UI gets pack number and English name,6
-startGame,Start or resume game exits menu initializes deck or resumes sets CSS classes,6
-updateDebugTableWrapper,Wrapper to call shared updateDebugTable with local scope data deck languages columns,7
+Function_Name,Description,Reusability_Score
+saveState,Builds state object from local variables and calls shared saveState function,7
+loadState,Calls shared loadState function from wordpack-logic.js,10
+showSuccessStamp,Wrapper for shared stamp function providing flashcard-specific element references,3
+showFailureStamp,Wrapper for shared stamp function providing flashcard-specific element references,3
+showStartingCard,Navigate to menu/help card - sets flashcard classes and renders menu,2
+exitStartingCard,Return from starting card to saved position - flashcard state management,2
+renderMenuCard,Render the menu card with settings (looks like a flashcard) - heavy DOM manipulation,1
+populateWordpackSelectorOnCard,Populate wordpack selector on the menu card,5
+switchMode,Switch between learning modes (flashcard/spelling/pronunciation/translation),8
+initializeTypingDisplay,Initialize typing display arrays for typing modes - splits word into characters,9
+addDuplicateCards,Add duplicate cards to deck for extra practice - inserts at random positions,9
+handleTypingInput,Handle typing input validation - checks keys against target word with normalization,9
+isWritingComplete,Check if typing is complete (no underscores remaining),9
+loadVoices,Load TTS voices based on language code from loaded modules,10
+populateVoiceSelector,DEPRECATED - voice selector now populated in renderMenuCard,1
+loadAct,Load and decode obfuscated module data for a specific act,10
+populateActSelector,Populate act selector dropdown from loaded module metadata,10
+populateLanguageSelector,Populate native language selector from loaded module translations config,10
+initializeTooltips,Initialize tooltips for mode buttons and control buttons from TOOLTIP_MESSAGES,5
+createButtonTooltip,Create a tooltip element for a button - general helper,10
+initializeApp,Initialize app on page load - loads acts and restores state,7
+restoreSavedState,Restore saved state from localStorage - validates and applies saved settings,8
+updateBackLabel,Update back label text based on native language - flashcard label management,3
+initializeDeck,Create deck from wordpack with linked card objects (front/back always synced),9
+restartCurrentPack,Restart current wordpack - resets deck to original state,9
+goToNextPack,Navigate to next wordpack in sequence,9
+generateWeathering,Generate random weathering CSS gradients for card aging effect,1
+renderTypingDisplay,Render typing display with underscores and typed characters - word grouping logic,9
+renderTargetWord,Render target word with Chinese+pinyin coupling if applicable,9
+renderTranslation,Render translation text with Chinese+pinyin coupling if applicable,9
+updateDisplay,Update flashcard DOM elements based on current mode and card - flashcard-specific,1
+goToPrevious,Navigate to previous card with wrap-around,9
+goToNext,Navigate to next card with wrap-around,9
+moveToNextCard,Move to next card for typing mode auto-advance,9
+flipCard,Add 'flipped' class to flashcard - flip animation trigger,1
+unflipCard,Remove 'flipped' class from flashcard - unflip animation trigger,1
+removeCurrentCard,Remove current card from deck - got it button behavior,9
+addConfusedCards,Add 2 copies of current card to random positions - confused button behavior,9
+resetDeck,Reset deck to original shuffled state - fresh start in current mode,9
+speakTargetWord,Speak the target word using TTS with configured voice and speed,10
+speakSpanish,Backwards compatibility alias for speakTargetWord,10
+setSpeed,Set TTS speech speed and update UI button states,9
+showFeedback,Show pronunciation feedback with score and transcript comparison,8
+hideFeedback,Hide pronunciation feedback overlays,9
+startListening,Start speech recognition for pronunciation practice,9
+updateWordpackTitle,Update wordpack title display from current pack metadata,8
+startGame,Start or resume practice session - exits menu and initializes/resumes deck,7
+updateDebugTableWrapper,Wrapper providing local scope data to shared updateDebugTable function,10
+random,Seeded random number generator helper inside generateWeathering,10
+simulateRight,Debug function to simulate correct answer - removes current card,9
+simulateWrong,Debug function to simulate wrong answer - adds 2 duplicate cards,9
+simulateNearVictory,Debug function to simulate near victory - keeps only last card,9
