@@ -41,7 +41,7 @@ export const p4_113_business__basics = {
     ["commerce", "商业", "shāng yè", "comercio", "comércio"]
   ],
   exampleWords: [
-    ["free trade", "自由贸易", "zì yóu mào yì", "libre comercio", "livre comércio"],
+    ["free trade", "自由贸易", "zì yóu mào yì", "libre comercio", "comércio livre"],
     ["trade agreement", "贸易协定", "mào yì xié dìng", "acuerdo comercial", "acordo comercial"],
     ["import goods", "进口货物", "jìn kǒu huò wù", "importar bienes", "importar mercadorias"],
     ["import tax", "进口税", "jìn kǒu shuì", "impuesto de importación", "imposto de importação"],
@@ -111,7 +111,7 @@ export const p4_114_finance__basics = {
     ["treasury", "国库", "guó kù", "tesorería", "tesouraria"],
     ["broker", "经纪人", "jīng jì rén", "corredor", "corretor"],
     ["hedge", "对冲", "duì chōng", "cobertura", "cobertura"],
-    ["index", "索引", "suǒ yǐn", "índice", "índice"],
+    ["index", "指数", "zhǐ shù", "índice", "índice"],
     ["yield", "收益", "shōu yì", "rendimiento", "rendimento"]
   ],
   exampleWords: [
@@ -146,7 +146,7 @@ export const p4_114_finance__basics = {
     ["securities trading", "证券交易", "zhèng quàn jiāo yì", "negociación de valores", "negociação de valores mobiliários"],
     ["buy securities", "购买证券", "gòu mǎi zhèng quàn", "comprar valores", "comprar títulos"],
     ["treasury bond", "国债", "guó zhài", "bono del tesoro", "títulos do tesouro"],
-    ["treasury department", "财务部", "cái wù bù", "departamento de tesorería", "departamento de tesouraria"],
+    ["treasury department", "财政部", "cái wù bù", "Departamento del Tesoro", "Departamento do Tesouro"],
     ["stock broker", "股票经纪人", "gǔ piào jīng jì rén", "corredor de bolsa", "corretor da bolsa"],
     ["broker fee", "经纪费", "jīng jì fèi", "comisión del corredor", "taxa de corretagem"],
     ["hedge fund", "对冲基金", "duì chōng jī jīn", "fondo de cobertura", "fundo de hedge"],
@@ -171,7 +171,7 @@ export const p4_115_marketing__sales = {
     ["campaign", "活动", "huó dòng", "campaña", "campanha"],
     ["brand", "品牌", "pǐn pái", "marca", "marca"],
     ["logo", "标志", "biāo zhì", "logotipo", "logotipo"],
-    ["audience", "受众", "guān zhòng", "audiencia", "audiência"],
+    ["audience", "受众", "shòu zhòng", "audiencia", "audiência"],
     ["strategy", "策略", "cè lüè", "estrategia", "estratégia"],
     ["promote", "推广", "tuī guǎng", "promover", "promover"],
     ["launch", "推出", "tuī chū", "lanzar", "lançar"],
