@@ -2748,45 +2748,11 @@
       wrongLetters = [];
     }
 
-    // Add duplicate cards to current deck for extra practice
-    function addDuplicateCards(count) {
-      if (currentDeck.length === 0 || count === 0) return;
-
-      const currentCard = currentDeck[currentIndex];
-
-      // Insert cards randomly in the remaining deck, skipping next 2 cards if possible
-      for (let i = 0; i < count; i++) {
-        const duplicate = { ...currentCard };
-
-        // Calculate remaining cards after current card
-        const remainingCards = currentDeck.length - (currentIndex + 1);
-
-        if (remainingCards > 2) {
-          // If more than 2 cards remaining, insert randomly after the next 2 cards
-          const randomOffset = Math.floor(Math.random() * (remainingCards - 2)) + 3;
-          currentDeck.splice(currentIndex + randomOffset, 0, duplicate);
-        } else if (remainingCards > 0) {
-          // If 1-2 cards remaining, insert right after current card
-          currentDeck.splice(currentIndex + 1, 0, duplicate);
-        } else {
-          // If no cards remaining, add to end
-          currentDeck.push(duplicate);
-        }
-      }
-
-      // Track deck change for visual indicator
-      pendingDeckChange += count;
-
-      // Update display to show indicator while stamp is visible
-      updateDisplay();
-
-      // Show "Extra Practice" stamp with buzz sound (encapsulated)
-      showFailureStamp(() => {
-        pendingDeckChange = 0; // Clear indicator after stamp
-      });
-    }
+    // NOTE: addDuplicateCards() has been moved to wordpack-logic.js as a pure function.
+    // All calls now use: addDuplicateCards(deck, card, count) which returns {deck, newIndex}.
 
     // Handle typing input for listening and translation modes
+    // NOTE: Uses shared helper functions from wordpack-logic.js for validation
     function handleTypingInput(key) {
       if ((currentMode !== 'spelling' && currentMode !== 'translation') || currentDeck.length === 0) return;
 
@@ -2794,40 +2760,25 @@
       const word = currentDeck[currentIndex].typingTarget;
       const targetChars = word.split('');
 
-      // Find next unfilled position (first position not in typedPositions)
-      let nextPos = 0;
-      for (let i = 0; i < typingDisplay.length; i++) {
-        if (!typedPositions.has(i) && typingDisplay[i] !== ' ') {
-          nextPos = i;
-          break;
-        }
-        if (i === typingDisplay.length - 1) {
-          // Already completed
-          return;
-        }
+      // Find next typing position using shared helper (handles spaces automatically)
+      const nextPos = findNextTypingPosition(targetChars, typedPositions);
+
+      if (nextPos === -1) {
+        // Already completed
+        return;
       }
 
-      // Skip spaces and mark them as typed
-      while (nextPos < targetChars.length && targetChars[nextPos] === ' ') {
-        typedPositions.add(nextPos);
-        nextPos++;
-      }
+      // Check if key matches using shared helper (handles normalization)
+      const keyCheck = checkTypingKey(key, targetChars[nextPos]);
 
-      if (nextPos >= targetChars.length) return;
-
-      // Check if key matches (case and accent insensitive)
-      const normalizedKey = normalizeChar(key);
-      const normalizedTarget = normalizeChar(targetChars[nextPos]);
-
-      if (normalizedKey === normalizedTarget) {
+      if (keyCheck === 'correct') {
         // Correct! Mark position as typed
         typedPositions.add(nextPos);
         playScribbleSound(); // Felt pen writing sound
         updateDisplay();
 
-        // Check if word is complete (all non-space positions typed)
-        const totalNonSpaceChars = targetChars.filter(c => c !== ' ').length;
-        if (typedPositions.size >= totalNonSpaceChars) {
+        // Check if word is complete using shared helper
+        if (isWordComplete(targetChars, typedPositions)) {
           // Word completed!
           // 0-1 wrong = correct (show green stamp and remove card)
           // 2+ wrong = always +2 penalty cards
@@ -2868,8 +2819,10 @@
               }
             });
           } else {
-            // Wrong - always add 2 penalty cards
-            addDuplicateCards(2);
+            // Wrong - always add 2 penalty cards (using shared function from wordpack-logic.js)
+            const result = addDuplicateCards(currentDeck, currentDeck[currentIndex], 2);
+            currentDeck = result.deck;
+            currentIndex = result.newIndex;
 
             // Auto-advance after stamp duration (1600ms > 1500ms stamp)
             setTimeout(() => {
@@ -3421,39 +3374,49 @@
     }
 
     // Restart current wordpack
+    // ============================================================
+    // NOTE: Now uses shared resetDeckToOriginal() from wordpack-logic.js (same as resetDeck)
+    // ============================================================
     function restartCurrentPack() {
       playButtonClickSound();
-      if (originalDeck.length > 0) {
-        // Keep pedagogical ordering (base words first, then examples)
-        currentDeck = [...originalDeck]; // Copy without shuffling
-        currentIndex = 0;
-        if (currentMode === 'spelling' || currentMode === 'translation') {
-          initializeTypingDisplay();
-        }
-        updateDisplay();
-        saveState();
 
-        // Update debug table to show full deck again
-        if (typeof updateDebugTable === 'function') {
-          updateDebugTable();
-        }
+      if (originalDeck.length > 0) {
+        const result = resetDeckToOriginal(originalDeck, {
+          onReset: (newDeck) => {
+            currentDeck = newDeck;
+            currentIndex = 0;
+            if (currentMode === 'spelling' || currentMode === 'translation') {
+              initializeTypingDisplay();
+            }
+            updateDisplay();
+            saveState();
+
+            // Update debug table to show full deck again
+            if (typeof updateDebugTable === 'function') {
+              updateDebugTable();
+            }
+          }
+        });
+
+        currentDeck = result.deck;
+        currentIndex = result.currentIndex;
       }
     }
 
     // Go to next wordpack
+    // ============================================================
+    // NOTE: Now uses shared navigateToNextPack() from wordpack-logic.js
+    // ============================================================
     function goToNextPack() {
       playButtonClickSound();
-      const packs = Object.keys(wordpacks);
-      if (packs.length === 0) return;
 
-      const currentPackIndex = packs.indexOf(currentWordpackKey);
-      const nextPackIndex = (currentPackIndex + 1) % packs.length;
-      const nextPackKey = packs[nextPackIndex];
-
+      const nextPackKey = navigateToNextPack(wordpacks, currentWordpackKey);
       currentWordpackKey = nextPackKey;
+
       // Update menu selector if visible
       const menuWordpack = document.getElementById('menu-wordpack');
       if (menuWordpack) menuWordpack.value = nextPackKey;
+
       initializeDeck(nextPackKey);
       updateWordpackTitle();
       saveState();
@@ -3704,56 +3667,77 @@
     // ============================================================
 
     // Navigate to previous card (with wrap-around)
+    // ============================================================
+    // NOTE: Now uses shared navigateToPrevious() from wordpack-logic.js
+    // ============================================================
     function goToPrevious() {
       if (currentDeck.length === 0) return;
-      speechSynthesis.cancel(); // Stop speech on card navigation
-      playCardFlipSound();
-      currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
-      if (currentMode === 'spelling' || currentMode === 'translation') {
-        initializeTypingDisplay();
-      }
-      updateDisplay();
-      saveState();
 
-      // Auto-read in spelling mode (helps learn pronunciation)
-      if (currentMode === 'spelling') {
-        setTimeout(() => speakSpanish(), 300);
-      }
+      navigateToPrevious(
+        { deck: currentDeck, currentIndex },
+        {
+          onNavigate: (newIndex) => {
+            speechSynthesis.cancel();
+            playCardFlipSound();
+            currentIndex = newIndex;
+            if (currentMode === 'spelling' || currentMode === 'translation') {
+              initializeTypingDisplay();
+            }
+            updateDisplay();
+            saveState();
+          },
+          onAutoSpeak: currentMode === 'spelling' ? speakSpanish : null
+        }
+      );
     }
 
     // Navigate to next card (with wrap-around)
+    // ============================================================
+    // NOTE: Now uses shared navigateToNext() from wordpack-logic.js
+    // ============================================================
     function goToNext() {
       if (currentDeck.length === 0) return;
-      speechSynthesis.cancel(); // Stop speech on card navigation
-      playCardFlipSound();
-      currentIndex = (currentIndex + 1) % currentDeck.length;
-      if (currentMode === 'spelling' || currentMode === 'translation') {
-        initializeTypingDisplay();
-      }
-      updateDisplay();
-      saveState();
 
-      // Auto-read in spelling mode (helps learn pronunciation)
-      if (currentMode === 'spelling') {
-        setTimeout(() => speakSpanish(), 300);
-      }
+      navigateToNext(
+        { deck: currentDeck, currentIndex },
+        {
+          onNavigate: (newIndex) => {
+            speechSynthesis.cancel();
+            playCardFlipSound();
+            currentIndex = newIndex;
+            if (currentMode === 'spelling' || currentMode === 'translation') {
+              initializeTypingDisplay();
+            }
+            updateDisplay();
+            saveState();
+          },
+          onAutoSpeak: currentMode === 'spelling' ? speakSpanish : null
+        }
+      );
     }
 
     // Move to next card (for typing mode completion)
+    // ============================================================
+    // NOTE: Now uses shared navigateToNext() from wordpack-logic.js (same as goToNext but no speech.cancel)
+    // ============================================================
     function moveToNextCard() {
       if (currentDeck.length === 0) return;
-      playCardFlipSound();
-      currentIndex = (currentIndex + 1) % currentDeck.length;
-      if (currentMode === 'spelling' || currentMode === 'translation') {
-        initializeTypingDisplay();
-      }
-      updateDisplay();
-      saveState();
 
-      // Auto-read in spelling mode only (not writing - user needs to translate)
-      if (currentMode === 'spelling') {
-        setTimeout(() => speakSpanish(), 300);
-      }
+      navigateToNext(
+        { deck: currentDeck, currentIndex },
+        {
+          onNavigate: (newIndex) => {
+            playCardFlipSound();
+            currentIndex = newIndex;
+            if (currentMode === 'spelling' || currentMode === 'translation') {
+              initializeTypingDisplay();
+            }
+            updateDisplay();
+            saveState();
+          },
+          onAutoSpeak: currentMode === 'spelling' ? speakSpanish : null
+        }
+      );
     }
 
     // ============================================================
@@ -3778,13 +3762,15 @@
     }
 
     // Remove current card (Got it!)
+    // ============================================================
+    // NOTE: Now uses shared removeCard() from wordpack-logic.js
+    // ============================================================
     function removeCurrentCard() {
       if (currentDeck.length <= 1) {
         currentDeck = [];
         updateDisplay();
         saveState();
 
-        // Update debug table
         if (typeof updateDebugTable === 'function') {
           updateDebugTable();
         }
@@ -3793,29 +3779,25 @@
 
       // Track deck change for visual indicator
       pendingDeckChange = -1;
-
-      // Update display to show indicator while stamp is visible
       updateDisplay();
 
-      // Show success stamp with ding sound (encapsulated)
+      // Show success stamp with ding sound
       showSuccessStamp(() => {
-        // Remove card from deck
-        currentDeck.splice(currentIndex, 1);
-        if (currentIndex >= currentDeck.length) {
-          currentIndex = 0;
-        }
+        const result = removeCard(currentDeck, currentIndex);
+        currentDeck = result.deck;
+        currentIndex = result.newIndex;
 
-        // Clear pending change and show next card with updated count
+        // Clear pending change
         pendingDeckChange = 0;
 
-        // Play sound on page change (consistent timing)
+        // Play sound on page change
         playCardFlipSound();
 
         // Show next card
         updateDisplay();
         saveState();
 
-        // Update debug table to reflect removed card
+        // Update debug table
         if (typeof updateDebugTable === 'function') {
           updateDebugTable();
         }
@@ -3823,6 +3805,9 @@
     }
 
     // Add extra copies of current card (Confused)
+    // ============================================================
+    // NOTE: Now uses shared addDuplicateCards() from wordpack-logic.js
+    // ============================================================
     function addConfusedCards() {
       if (currentDeck.length === 0) return;
 
@@ -3830,20 +3815,11 @@
       pendingDeckChange += 2;
       updateDisplay();
 
-      // Show failure stamp with buzz sound (encapsulated)
+      // Show failure stamp with buzz sound
       showFailureStamp(() => {
-        // Add 2 copies to random positions in deck
-        const card = { ...currentDeck[currentIndex] };
-
-        for (let n = 0; n < 2; n++) {
-          const randomPos = Math.floor(Math.random() * (currentDeck.length + 1));
-          currentDeck.splice(randomPos, 0, { ...card, id: `${card.id}-copy-${Date.now()}-${n}` });
-
-          // Adjust current index if we inserted before it
-          if (randomPos <= currentIndex) {
-            currentIndex++;
-          }
-        }
+        const result = addDuplicateCards(currentDeck, currentDeck[currentIndex], 2);
+        currentDeck = result.deck;
+        currentIndex = result.newIndex;
 
         // Clear pending change indicator
         pendingDeckChange = 0;
@@ -3851,7 +3827,7 @@
         // Play sound on page change
         playCardFlipSound();
 
-        // Move to next card and update display
+        // Move to next card (already done by addDuplicateCards, but we want wrap-around)
         currentIndex = (currentIndex + 1) % currentDeck.length;
         updateDisplay();
         saveState();
@@ -3859,37 +3835,45 @@
     }
 
     // Reset deck to original shuffled state (fresh start in current mode)
+    // ============================================================
+    // NOTE: Now uses shared resetDeckToOriginal() from wordpack-logic.js
+    // ============================================================
     function resetDeck() {
       if (originalDeck.length === 0) return;
       playButtonClickSound();
 
-      // Completely reset as if we just started this pack in this mode
-      // CRITICAL: Keep pedagogical ordering (base words first, then examples)
-      currentDeck = [...originalDeck]; // Copy without shuffling - preserve base→example order
-      currentIndex = 0;
+      const result = resetDeckToOriginal(originalDeck, {
+        onReset: (newDeck) => {
+          currentDeck = newDeck;
+          currentIndex = 0;
 
-      // Reset typing state for typing modes
-      if (currentMode === 'spelling' || currentMode === 'translation') {
-        initializeTypingDisplay();
-      }
+          // Reset typing state for typing modes
+          if (currentMode === 'spelling' || currentMode === 'translation') {
+            initializeTypingDisplay();
+          }
 
-      // Reset flip state
-      if (isFlipped) {
-        flashcard.classList.remove('flipped');
-        isFlipped = false;
-      }
+          // Reset flip state
+          if (isFlipped) {
+            flashcard.classList.remove('flipped');
+            isFlipped = false;
+          }
 
-      // Reset deck change indicator
-      pendingDeckChange = 0;
+          // Reset deck change indicator
+          pendingDeckChange = 0;
 
-      updateDisplay();
+          updateDisplay();
 
-      // Auto-pronounce in spelling mode
-      if (currentMode === 'spelling' && currentDeck.length > 0) {
-        setTimeout(() => speakSpanish(), 300);
-      }
+          // Auto-pronounce in spelling mode
+          if (currentMode === 'spelling' && currentDeck.length > 0) {
+            setTimeout(() => speakSpanish(), 300);
+          }
 
-      saveState();
+          saveState();
+        }
+      });
+
+      currentDeck = result.deck;
+      currentIndex = result.currentIndex;
     }
 
     // Speak the target word (uses TTS for the detected target language)
@@ -3910,10 +3894,12 @@
     }
 
     // Set speech speed
+    // ============================================================
+    // NOTE: setSpeed() removed - use shared version from wordpack-logic.js
+    // Use: currentSpeed = setTTSSpeed(speed, speedBtns); saveState();
+    // ============================================================
     function setSpeed(speed, btn) {
-      currentSpeed = speed;
-      speedBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      currentSpeed = setTTSSpeed(speed, Array.from(speedBtns));
       saveState();
     }
 
@@ -3966,8 +3952,10 @@
             saveState();
           });
         } else {
-          // Below 70% - add 2 penalty cards and advance
-          addDuplicateCards(2);
+          // Below 70% - add 2 penalty cards and advance (using shared function from wordpack-logic.js)
+          const result = addDuplicateCards(currentDeck, currentDeck[currentIndex], 2);
+          currentDeck = result.deck;
+          currentIndex = result.newIndex;
 
           setTimeout(() => {
             moveToNextCard();
@@ -3986,9 +3974,9 @@
     }
 
     // Hide feedback
+    // NOTE: Now uses shared hideFeedback() from wordpack-logic.js
     function hideFeedback() {
-      feedbackFront.classList.remove('visible');
-      feedbackBack.classList.remove('visible');
+      window.hideFeedback([feedbackFront, feedbackBack]);
     }
 
     // Start listening for pronunciation
@@ -4072,13 +4060,12 @@
     }
 
     // Update wordpack title display
+    // ============================================================
+    // NOTE: updateWordpackTitle() removed - use shared version from wordpack-logic.js
+    // Use: updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
+    // ============================================================
     function updateWordpackTitle() {
-      if (currentWordpackKey && wordpacks[currentWordpackKey]) {
-        const pack = wordpacks[currentWordpackKey];
-        wordpackTitle.textContent = `Lesson ${pack.meta.wordpack}. ${pack.meta.english}`;
-      } else {
-        wordpackTitle.textContent = '';
-      }
+      updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
     }
 
     // Start the game
@@ -4427,81 +4414,73 @@
     // DEBUG: Simulate Functions (called by buttons in debug table)
     // ============================================================
 
+    // ============================================================
+    // NOTE: Debug simulation now uses shared simulateCorrectAnswer() from wordpack-logic.js
+    // ============================================================
     // Simulate Right Answer - removes current card (correct answer behavior)
     window.simulateRight = function() {
       if (currentDeck.length === 0) return;
 
       playDingSound();
 
-      // Remove current card
-      if (currentDeck.length <= 1) {
-        currentDeck = [];
-      } else {
-        currentDeck.splice(currentIndex, 1);
-        if (currentIndex >= currentDeck.length) {
-          currentIndex = 0;
+      const result = simulateCorrectAnswer(currentDeck, currentIndex, () => {
+        if (currentMode === 'spelling' || currentMode === 'translation') {
+          initializeTypingDisplay();
         }
-      }
+        updateDisplay();
+        saveState();
+        updateDebugTable();
+        console.log('[Debug] Simulated RIGHT answer - card removed');
+      });
 
-      // Reinitialize typing if needed
-      if (currentMode === 'spelling' || currentMode === 'translation') {
-        initializeTypingDisplay();
-      }
-
-      updateDisplay();
-      saveState();
-      updateDebugTable();
-
-      console.log('[Debug] Simulated RIGHT answer - card removed');
+      currentDeck = result.deck;
+      currentIndex = result.currentIndex;
     };
 
+    // ============================================================
+    // NOTE: Debug simulation now uses shared simulateWrongAnswer() from wordpack-logic.js
+    // ============================================================
     // Simulate Wrong Answer - adds 2 duplicate cards (wrong answer behavior)
     window.simulateWrong = function() {
       if (currentDeck.length === 0) return;
 
       playBuzzSound();
 
-      // Add 2 duplicate cards
-      const currentCard = currentDeck[currentIndex];
-      currentDeck.push({ ...currentCard });
-      currentDeck.push({ ...currentCard });
+      const result = simulateWrongAnswer(currentDeck, currentIndex, 2, () => {
+        if (currentMode === 'spelling' || currentMode === 'translation') {
+          initializeTypingDisplay();
+        }
+        updateDisplay();
+        saveState();
+        updateDebugTable();
+        console.log('[Debug] Simulated WRONG answer - added 2 duplicate cards');
+      });
 
-      // Move to next card
-      currentIndex = (currentIndex + 1) % currentDeck.length;
-
-      // Reinitialize typing if needed
-      if (currentMode === 'spelling' || currentMode === 'translation') {
-        initializeTypingDisplay();
-      }
-
-      updateDisplay();
-      saveState();
-      updateDebugTable();
-
-      console.log('[Debug] Simulated WRONG answer - added 2 duplicate cards');
+      currentDeck = result.deck;
+      currentIndex = result.currentIndex;
     };
 
+    // ============================================================
+    // NOTE: Debug simulation now uses shared simulateNearVictory() from wordpack-logic.js
+    // ============================================================
     // Simulate Near Victory - remove all cards except last one
     window.simulateNearVictory = function() {
       if (currentDeck.length === 0) return;
 
       playButtonClickSound();
 
-      // Keep only the last card
-      const lastCard = currentDeck[currentDeck.length - 1];
-      currentDeck = [lastCard];
-      currentIndex = 0;
+      const result = simulateNearVictory(currentDeck, () => {
+        if (currentMode === 'spelling' || currentMode === 'translation') {
+          initializeTypingDisplay();
+        }
+        updateDisplay();
+        saveState();
+        updateDebugTable();
+        console.log('[Debug] Simulated NEAR VICTORY - only last card remains');
+      });
 
-      // Reinitialize typing if needed
-      if (currentMode === 'spelling' || currentMode === 'translation') {
-        initializeTypingDisplay();
-      }
-
-      updateDisplay();
-      saveState();
-      updateDebugTable();
-
-      console.log('[Debug] Simulated NEAR VICTORY - only last card remains');
+      currentDeck = result.deck;
+      currentIndex = result.currentIndex;
     };
 
     // ============================================================

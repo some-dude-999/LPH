@@ -1413,6 +1413,23 @@ function updatePronunciationDebug(debugData) {
   console.log('[Pronunciation Debug]', debugData);
 }
 
+/**
+ * Hide pronunciation feedback overlays
+ * Makes feedback hiding reusable across all games with pronunciation modes
+ *
+ * @param {Array<HTMLElement>} feedbackElements - Array of feedback elements to hide
+ *
+ * Example:
+ *   hideFeedback([feedbackFront, feedbackBack]);
+ *
+ * Reusability: 9/10 - Used in all games with pronunciation practice
+ */
+function hideFeedback(feedbackElements) {
+  feedbackElements.forEach(el => {
+    if (el) el.classList.remove('visible');
+  });
+}
+
 // ════════════════════════════════════════════════════════════════════════════
 // STRING NORMALIZATION & COMPARISON
 // ════════════════════════════════════════════════════════════════════════════
