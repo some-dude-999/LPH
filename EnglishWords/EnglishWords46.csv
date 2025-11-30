@@ -7,7 +7,7 @@ south,南,nán,sur,sul
 east,东,dōng,este,leste
 west,西,xī,oeste,oeste
 corner,角落,jiǎo luò,esquina,esquina
-across,跨越,kuà yuè,al otro lado,do outro lado
+across,穿过,chuān guò,al otro lado,do outro lado
 along,沿着,yán zhe,a lo largo de,ao longo de
 toward,走向,zǒu xiàng,hacia,em direção a
 away,离开,lí kāi,lejos,longe
@@ -37,10 +37,10 @@ street corner,街角,jiē jiǎo,esquina de la calle,esquina
 around the corner,就在拐角处,jiù zài guǎi jiǎo chù,a la vuelta de la esquina,ao virar da esquina
 across the street,马路对面,mǎ lù duì miàn,al otro lado de la calle,do outro lado da rua
 across from,对面的,duì miàn de,frente a,em frente
-along the way,一路走来,yī lù zǒu lái,en el camino,ao longo do caminho
-walk along,一起走,yì qǐ zǒu,caminar por,caminhar por
+along the way,沿途,yán tú,en el camino,ao longo do caminho
+walk along,沿着走,yán zhe zǒu,caminar por,caminhar por
 toward me,向着我,xiàng zhe wǒ,hacia mí,em minha direção
-toward the end,走向最后,zǒu xiàng zuì hòu,hacia el final,em direção ao final
+toward the end,快到尽头,kuài dào jìn tóu,hacia el final,em direção ao final
 go away,走开,zǒu kāi,vete,vá embora
 far away,远方,yuǎn fāng,muy lejos,longe
 short distance,短距离,duǎn jù lí,corta distancia,curta distância
@@ -50,7 +50,7 @@ right direction,正确的方向,zhèng què de fāng xiàng,dirección correcta,
 use a map,使用地图,shǐ yòng dì tú,utilizar un mapa,use um mapa
 check the map,查看地图,chá kàn dì tú,consulta el mapa,confira o mapa
 next block,下一个街区,xià yí gè jiē qū,siguiente cuadra,próximo quarteirão
-around the block,街区附近,jiē qū fù jìn,alrededor de la cuadra,ao redor do quarteirão
+around the block,绕着街区,rào zhe jiē qū,alrededor de la cuadra,ao redor do quarteirão
 busy intersection,繁忙的十字路口,fán máng de shí zì lù kǒu,intersección muy transitada,cruzamento movimentado
 at the intersection,在十字路口,zài shí zì lù kǒu,en la intersección,no cruzamento
 opposite side,对面,duì miàn,lado opuesto,lado oposto
