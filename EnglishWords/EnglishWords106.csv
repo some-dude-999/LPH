@@ -1,19 +1,19 @@
 english,chinese,pinyin,spanish,portuguese
-piece of cake,小菜一碟,xiǎo cài yī dié,pan comido,pedaço de bolo
+piece of cake,小菜一碟,xiǎo cài yī dié,pan comido,moleza
 break the ice,打破僵局,dǎ pò jiāng jú,romper el hielo,quebrar o gelo
 hit the nail on the head,一语中的,yī yǔ zhòng dì,da en el clavo,acertou em cheio
 under the weather,身体不适,shēn tǐ bù shì,indispuesto,indisposto
-beat around the bush,拐弯抹角,guǎi wān mò jiǎo,andar por las ramas,rodeios
-call it a day,今天就到此为止,jīn tiān jiù dào cǐ wéi zhǐ,llámalo un día,encerrar o dia
+beat around the bush,拐弯抹角,guǎi wān mò jiǎo,andar por las ramas,ficar enrolando
+call it a day,今天就到此为止,jīn tiān jiù dào cǐ wéi zhǐ,dejémoslo por hoy,encerrar o dia
 out of hand,失控,shī kòng,fuera de control,fora de controle
 in the same boat,在同一条船上,zài tóng yī tiáo chuán shàng,en el mismo barco,no mesmo barco
 miss the boat,错失良机,cuò shī liáng jī,perder la oportunidad,perder a oportunidade
 spill the beans,泄露秘密,xiè lòu mì mì,revelar el secreto,contar o segredo
-last straw,最后一根稻草,zuì hòu yī gēn dào cǎo,el colmo,última gota
+last straw,最后一根稻草,zuì hòu yī gēn dào cǎo,el colmo,gota d'água
 once in a blue moon,千载难逢,qiān zǎi nán féng,muy de vez en cuando,muito raramente
 on the same page,在同一页,zài tóng yī yè,en la misma página,na mesma página
 break a leg,祝你好运,zhù nǐ hǎo yùn,mucha suerte,boa sorte
-cost an arm and a leg,非常昂贵,fēi cháng áng guì,cuesta un brazo y una pierna,custa um braço e uma perna
+cost an arm and a leg,非常昂贵,fēi cháng áng guì,cuesta un ojo de la cara,custa um braço e uma perna
 it was a piece of cake,这是小菜一碟,zhè shì xiǎo cài yī dié,fue pan comido,foi moleza
 this is a piece of cake,这是小菜一碟,zhè shì xiǎo cài yī dié,esto es pan comido,isso é moleza
 let's break the ice,让我们打破僵局,ràng wǒ men dǎ pò jiāng jú,rompamos el hielo,vamos quebrar o gelo
@@ -22,7 +22,7 @@ you hit the nail on the head,你说得一中要害,nǐ shuō dé yī zhōng yào
 hit the nail on the head exactly,一语中的,yī yǔ zhòng dì,da en el clavo exactamente,acertou em cheio na cabeça
 I feel under the weather,我感觉不舒服,wǒ gǎn jué bù shū fú,Me siento mal,Me sinto indisposto
 feeling under the weather,感觉不舒服,gǎn jué bù shū fú,sentirse mal,sentindo-se indisposto
-you beat around the bush too much,你拐弯抹角太多了,nǐ guǎi wān mò jiǎo tài duō le,te andas con rodeos demasiado,você fez rodeios demais
+you beat around the bush too much,你拐弯抹角太多了,nǐ guǎi wān mò jiǎo tài duō le,te andas con rodeos demasiado,você enrola demais
 don't beat around the bush,不要拐弯抹角,bú yào guǎi wān mò jiǎo,no te andes con rodeos,não faça rodeios
 let's call it a day,让我们今天就到此为止吧,ràng wǒ men jīn tiān jiù dào cǐ wéi zhǐ ba,terminemos el día,vamos encerrar o dia
 time to call it a day,是时候到此为止了,shì shí hòu dào cǐ wéi zhǐ le,es hora de terminar el día,hora de encerrar o dia
@@ -30,10 +30,10 @@ things got out of hand,事情失去了控制,shì qíng shī qù le kòng zhì,l
 situation out of hand,局势失控,jú shì shī kòng,situación fuera de control,situação fora de controle
 we're in the same boat,我们在同一条船上,wǒ men zài tóng yī tiáo chuán shàng,estamos en el mismo barco,estamos no mesmo barco
 all in the same boat,都在同一条船上,dōu zài tóng yī tiáo chuán shàng,todos en el mismo barco,todos no mesmo barco
-don't miss the boat,不要错过船,bú yào cuò guò chuán,no pierdas el barco,não perca o barco
-we miss the boat often,我们经常错过船,wǒ men jīng cháng cuò guò chuán,perdemos el tren a menudo,muitas vezes perdemos o barco
+don't miss the boat,不要错过船,bú yào cuò guò chuán,no pierdas la oportunidad,não perca a oportunidade
+we miss the boat often,我们经常错过船,wǒ men jīng cháng cuò guò chuán,perdemos la oportunidad a menudo,muitas vezes perdemos a chance
 don't spill the beans,不要泄露秘密,bú yào xiè lòu mì mì,no reveles el secreto,não conte o segredo
-you spill the beans easily,你很容易泄露秘密,nǐ hěn róng yì xiè lòu mì mì,derramas los frijoles fácilmente,você derrama o feijão facilmente
+you spill the beans easily,你很容易泄露秘密,nǐ hěn róng yì xiè lòu mì mì,revelas los secretos con facilidad,você conta o segredo com facilidade
 that was the last straw,那是最后一根稻草,nà shì zuì hòu yī gēn dào cǎo,esa fue la gota que colmó el vaso,essa foi a gota d'água
 the last straw for me,压垮我的最后一根稻草,yā kuǎ wǒ de zuì hòu yī gēn dào cǎo,el colmo para mí,a gota d'água para mim
 once in a blue moon happens,千载难逢,qiān zǎi nán féng,ocurre muy de vez en cuando,acontece muito raramente
