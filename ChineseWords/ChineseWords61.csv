@@ -2,20 +2,20 @@ chinese,pinyin,english,spanish,french,portuguese
 钱,qián,Money,Dinero,Argent,Dinheiro
 价格,jià gé,Price,Precio,Prix ​​,Preço
 费用,fèi yòng,Fees,Tarifas,Honoraires,Taxas
-优惠,yōu huì,Discount,Ofertas,Offres,Ofertas
+优惠,yōu huì,Discount,Descuento,Réduction,Desconto
 现金,xiàn jīn,Cash,Efectivo,Espèces,Dinheiro
-刷卡,shuā kǎ,Card,Tarjeta,Carte,Cartão
+刷卡,shuā kǎ,Pay by card,Pagar con tarjeta,Payer par carte,Pagar com cartão
 支付,zhī fù,Pay,Pagar,Payer,Pagar
 付款,fù kuǎn,Payment,Pago,Paiement,Pagamento
 零钱,líng qián,Small change,Cambio,Monnaie,Troco
 找钱,zhǎo qián,Change,Dar cambio,Rendre la monnaie,Dar troco
 发票,fā piào,Invoice,Factura,Facture,Fatura
 收据,shōu jù,Receipt,Recibo,Reçu,Recibo
-消费,xiāo fèi,Consumption,Consumo,Consommation,Consumo
+消费,xiāo fèi,Spending,Gasto,Dépenses,Gasto
 花费,huā fèi,Expenditure,Gasto,Dépenses,Despesas
-开销,kāi xiāo,Expenditure,Gasto,Dépenses,Despesas
+开销,kāi xiāo,Expenses,Gastos,Dépenses,Despesas
 多少钱,duō shǎo qián,How much,¿Cuánto,Combien,Quanto
-给钱,gěi qián,Give money,Dar dinero,Donner de l'argent,Dê dinheiro
+给钱,gěi qián,Pay,Pagar,Payer,Pagar
 价格高,jià gé gāo,High price,Precio alto,Prix ​​élevé,Preço alto
 看价格,kàn jià gé,Look at the price,Mira el precio,Regardez le prix,Olha o preço
 费用多,fèi yòng duō,High fee,Tarifa alta,Frais élevés,Taxa elevada
@@ -24,23 +24,23 @@ chinese,pinyin,english,spanish,french,portuguese
 给优惠,gěi yōu huì,Give a discount,Dar un descuento,Offrez une réduction,Dê um desconto
 付现金,fù xiàn jīn,Pay cash,Pagar en efectivo,Payer en espèces,Pagar em dinheiro
 用现金,yòng xiàn jīn,Use cash,Utilice efectivo,Utiliser de l'argent liquide,Usar dinheiro
-可以刷卡,kě yǐ shuā kǎ,You can swipe a card,Puedes deslizar una tarjeta,Vous pouvez glisser une carte,Você pode passar um cartão
-用刷卡,yòng shuā kǎ,Use a swipe card,Utilice una tarjeta magnética,Utilisez une carte magnétique,Use um cartão magnético
+可以刷卡,kě yǐ shuā kǎ,You can pay by card,Puedes pagar con tarjeta,Vous pouvez payer par carte,Você pode pagar com cartão
+用刷卡,yòng shuā kǎ,Use a card,Use una tarjeta,Utilisez une carte,Use um cartão
 支付宝,zhī fù bǎo,Alipay,Alipay,Alipay,Alipay
 去支付,qù zhī fù,Go to pay,Ir a pagar,Allez payer,Vá pagar
 去付款,qù fù kuǎn,Go to pay,Ir a pagar,Allez payer,Vá pagar
 已付款,yǐ fù kuǎn,Already paid,Ya pagado,Déjà payé,Já pago
 有零钱,yǒu líng qián,Have change,Tener cambio,Avoir du changement,Tem troco
-换零钱,huàn líng qián,Get change,Cambiar cambio,Changer changement,Alterar mudança
-找钱给你,zhǎo qián gěi nǐ,Change for you,Cambia para ti,Changez pour vous,Mude para você
-不用找钱,bù yòng zhǎo qián,Keep the change,No se requieren cambios,Aucun changement requis,Nenhuma alteração necessária
-开发票,kāi fā piào,Invoice,Factura,Facture,Fatura
+换零钱,huàn líng qián,Get change,Cambiar monedas,Faire de la monnaie,Trocar dinheiro
+找钱给你,zhǎo qián gěi nǐ,Give you change,Te doy cambio,Je te rends la monnaie,Dou-lhe troco
+不用找钱,bù yòng zhǎo qián,Keep the change,No hace falta cambio,Gardez la monnaie,Fique com o troco
+开发票,kāi fā piào,Issue an invoice,Emitir factura,Émettre une facture,Emitir fatura
 要发票,yào fā piào,Request an invoice,Solicitar una factura,Demander une facture,Solicite uma fatura
 要收据,yào shōu jù,Request a receipt,Solicitar un recibo,Demander un reçu,Solicite um recibo
 给收据,gěi shōu jù,Give a receipt,Dar un recibo,Donner un reçu,Dê um recibo
-消费高,xiāo fèi gāo,High consumption,Alto consumo,Consommation élevée,Alto consumo
+消费高,xiāo fèi gāo,High spending,Mucho gasto,Dépenses élevées,Gasto alto
 去消费,qù xiāo fèi,Go to spend,Ir a gastar,Allez dépenser,Vá gastar
 花费大,huā fèi dà,High cost,Alto costo,Coût élevé,Custo elevado
-有花费,yǒu huā fèi,Expenditure,Gasto,Dépenses,Despesas
+有花费,yǒu huā fèi,There are costs,Hay gastos,Il y a des frais,Há custos
 开销大,kāi xiāo dà,High cost,Alto costo,Coût élevé,Custo elevado
 减少开销,jiǎn shǎo kāi xiāo,Reduce cost,Reducir costos,Réduire les coûts,Reduzir custos
