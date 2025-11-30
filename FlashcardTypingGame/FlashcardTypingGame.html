@@ -2027,7 +2027,7 @@
 
     let wordpacks = {}; // All loaded wordpacks
     let loadedActs = {}; // Track which acts have been loaded
-    let loadedActMeta = {}; // Store __actMeta from each loaded act
+    window.loadedActMeta = {}; // Store __actMeta from each loaded act (CRITICAL: Global for shared functions)
 
     // ============================================================
     // TARGET LANGUAGE - Detected from loaded modules' wordColumns[0]
@@ -2064,38 +2064,6 @@
     // DEBUG MODE: Toggle debug features (word type, vocab table, module selector)
     // ============================================================
     let DEBUG_MODE = localStorage.getItem('debug_mode') !== 'false'; // Default: true (persists across sessions)
-
-    // Helper to get valid languages from loaded metadata (for validation)
-    function getValidLanguages() {
-      const translations = getTranslationsConfig();
-      return translations ? Object.keys(translations) : [];
-    }
-
-    // Helper to get TTS language code from loaded module metadata
-    // Derives from wordColumns[0] - the primary language of the deck
-    function getTtsLanguageCode() {
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.wordColumns && meta.wordColumns[0]) {
-          const primaryLang = meta.wordColumns[0].toLowerCase();
-          // Map language names to TTS language codes (full locale for better voice matching)
-          const langMap = {
-            'spanish': 'es-ES',
-            'chinese': 'zh-CN',
-            'english': 'en-US',
-            'portuguese': 'pt-BR',
-            'french': 'fr-FR',
-            'vietnamese': 'vi-VN',
-            'thai': 'th-TH',
-            'indonesian': 'id-ID',
-            'malay': 'ms-MY',
-            'filipino': 'fil-PH'
-          };
-          return langMap[primaryLang] || null;
-        }
-      }
-      return null; // No modules loaded yet
-    }
 
     // ============================================================
     // CHINESE CHARACTER + PINYIN COUPLING - Now in wordpack-logic.js
