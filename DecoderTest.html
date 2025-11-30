@@ -1291,97 +1291,34 @@
     }
 
     // ============================================================
-    // ============================================================
     // 🎯 ARCHITECTURE: Combine and Shuffle Base/Example Words
     // ============================================================
+    // ⚠️ MOVED TO wordpack-logic.js as combineAndShuffleWords(pack, difficulty)
+    //
+    // This function is now available globally from wordpack-logic.js
+    //
+    // PEDAGOGICAL ARCHITECTURE:
+    //   - Base words shuffled and shown FIRST (core vocabulary)
+    //   - Example words shuffled and shown SECOND (contextual usage)
+    //   - Preserves learning order while adding variety
+    //
+    // DIFFICULTY LEVELS (optional 2nd parameter):
+    //   - 'easy': base words only
+    //   - 'medium': example words only
+    //   - 'hard': all words (DEFAULT - what DecoderTest uses)
+    //
+    // DecoderTest calls: combineAndShuffleWords(pack)
+    //   → No difficulty param → defaults to 'hard' → returns all words
+    //
+    // Use cases in ANY language learning game:
+    //   - Flashcard decks (progressive difficulty)
+    //   - Quiz games (easy/medium/hard modes)
+    //   - Memory games (controlled word sets)
+    //   - Typing games (adaptive difficulty)
+    //   - ANY game with base+example word structure
+    //
+    // See wordpack-logic.js:420 for full documentation
     // ============================================================
-    /*
-      ┌─────────────────────────────────────────────────────────────────────────┐
-      │               🎯 CRITICAL LEARNING ARCHITECTURE 🎯                       │
-      │                                                                          │
-      │  PURPOSE: Combine baseWords and exampleWords with controlled shuffling  │
-      │                                                                          │
-      │  WHY THIS MATTERS:                                                       │
-      │  ────────────────────────────────────────────────────────────────────── │
-      │                                                                          │
-      │  Educational Psychology: Learners should encounter CORE VOCABULARY      │
-      │  before CONTEXTUAL EXAMPLES. This function ensures:                     │
-      │                                                                          │
-      │  1. BASE WORDS are shuffled internally (variety within basics)          │
-      │  2. EXAMPLE WORDS are shuffled internally (variety within examples)     │
-      │  3. BASE WORDS ALWAYS COME FIRST (pedagogical order preserved)          │
-      │                                                                          │
-      │  EXAMPLE OUTPUT:                                                         │
-      │  ────────────────────────────────────────────────────────────────────── │
-      │                                                                          │
-      │  Input baseWords:     ["hola", "adiós", "gracias"]                     │
-      │  Input exampleWords:  ["hola amigo", "adiós amigos", "muchas gracias"] │
-      │                                                                          │
-      │  After shuffling baseWords:    ["gracias", "hola", "adiós"]            │
-      │  After shuffling exampleWords: ["muchas gracias", "hola amigo", ...]   │
-      │                                                                          │
-      │  Final combined result:                                                  │
-      │    ["gracias", "hola", "adiós", "muchas gracias", "hola amigo", ...]   │
-      │     └────── base (shuffled) ─────┘ └───── examples (shuffled) ─────┘   │
-      │                                                                          │
-      │  RESULT: User learns "hola" before "hola amigo", but order within      │
-      │          each category is randomized for variety and engagement.        │
-      │                                                                          │
-      └─────────────────────────────────────────────────────────────────────────┘
-
-      INPUT: pack object with { baseWords: [...], exampleWords: [...] }
-      OUTPUT: Array of objects with { word: [...], type: "Base Word" | "Example Word" }
-
-      USAGE: Call this ONCE when loading a pack, store result as pack.words
-    */
-    function combineAndShuffleWords(pack) {
-      // ════════════════════════════════════════════════════════════════════════
-      // STEP 1: Extract base and example words (handle missing data gracefully)
-      // ════════════════════════════════════════════════════════════════════════
-      const baseWords = pack.baseWords || [];
-      const exampleWords = pack.exampleWords || [];
-
-      // ════════════════════════════════════════════════════════════════════════
-      // STEP 2: Fisher-Yates Shuffle - used for BOTH base and example arrays
-      // ════════════════════════════════════════════════════════════════════════
-      // This ensures proper randomization while keeping arrays separate
-      function shuffleArray(array) {
-        const shuffled = [...array];  // Create copy to avoid mutating original
-        for (let i = shuffled.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
-        return shuffled;
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // STEP 3: Shuffle each section independently and TAG with type
-      // ════════════════════════════════════════════════════════════════════════
-      // We wrap each word array with metadata indicating if it's base or example.
-      // This allows debugging to verify shuffling mechanism is working correctly.
-      const shuffledBase = shuffleArray(baseWords).map(word => ({
-        word: word,
-        type: "Base Word"
-      }));
-
-      const shuffledExamples = shuffleArray(exampleWords).map(word => ({
-        word: word,
-        type: "Example Word"
-      }));
-
-      // ════════════════════════════════════════════════════════════════════════
-      // STEP 4: Concatenate - BASE ALWAYS FIRST
-      // ════════════════════════════════════════════════════════════════════════
-      // This is the CRITICAL step that preserves pedagogical order:
-      // - Learners see core vocabulary first
-      // - Then contextual examples build on that foundation
-      // - But within each section, order is randomized for variety
-      const combinedWords = [...shuffledBase, ...shuffledExamples];
-
-      console.log(`[Architecture] Combined ${shuffledBase.length} base + ${shuffledExamples.length} examples = ${combinedWords.length} total words`);
-
-      return combinedWords;
-    }
 
     // ============================================================
     // KEY FEATURE: Auto-Select First Act and Pack (DRY ENCAPSULATION)
