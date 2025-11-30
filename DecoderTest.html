@@ -1974,127 +1974,31 @@
     }
 
     // ============================================================
-    // LEVENSHTEIN DISTANCE: For Pronunciation Similarity
+    // PRONUNCIATION SIMILARITY & LEVENSHTEIN DISTANCE
     // ============================================================
-
-    /*
-      Calculates the Levenshtein (edit) distance between two strings.
-      This is the minimum number of single-character edits (insertions,
-      deletions, or substitutions) required to change one string into another.
-
-      ALGORITHM: Dynamic Programming approach
-      - Time complexity: O(m * n) where m and n are string lengths
-      - Space complexity: O(m * n) for the DP table
-
-      EXAMPLE:
-      - "hola" vs "hola" = 0 (identical)
-      - "hola" vs "hole" = 1 (one substitution)
-      - "hola" vs "hol" = 1 (one deletion)
-      - "hola" vs "holaa" = 1 (one insertion)
-
-      INPUT: Two strings to compare
-      OUTPUT: Integer distance (0 = identical, higher = more different)
-    */
-    function levenshteinDistance(str1, str2) {
-      const m = str1.length;
-      const n = str2.length;
-
-      // Create DP table
-      const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
-
-      // Initialize base cases
-      for (let i = 0; i <= m; i++) dp[i][0] = i;
-      for (let j = 0; j <= n; j++) dp[0][j] = j;
-
-      // Fill DP table
-      for (let i = 1; i <= m; i++) {
-        for (let j = 1; j <= n; j++) {
-          if (str1[i - 1] === str2[j - 1]) {
-            dp[i][j] = dp[i - 1][j - 1];  // No edit needed
-          } else {
-            dp[i][j] = 1 + Math.min(
-              dp[i - 1][j],     // Deletion
-              dp[i][j - 1],     // Insertion
-              dp[i - 1][j - 1]  // Substitution
-            );
-          }
-        }
-      }
-
-      return dp[m][n];
-    }
-
+    // ⚠️ MOVED TO wordpack-logic.js
+    //
+    // The following functions are now available globally from wordpack-logic.js:
+    //   - levenshteinDistance(str1, str2)
+    //   - calculateSimilarity(expected, heard, language)
+    //   - normalizePronunciationText(text, language)
+    //   - getSimilarityThreshold(word)
+    //
+    // These functions work for pronunciation scoring in ANY language learning game:
+    //   - Speaking practice games
+    //   - Pronunciation drills
+    //   - Voice-controlled games
+    //
+    // See wordpack-logic.js for full documentation and usage examples.
     // ============================================================
-    // SIMILARITY PERCENTAGE: Convert Distance to Percentage
-    // ============================================================
-
-    /*
-      Converts Levenshtein distance to a percentage similarity score.
-
-      FORMULA: ((maxLen - distance) / maxLen) * 100
-      - Perfect match = 100%
-      - Completely different = 0%
-
-      NORMALIZATION:
-      - Both strings are lowercased for comparison
-      - Trimmed of whitespace
-
-      EXAMPLES:
-      - "hola" vs "hola" = 100%
-      - "hola" vs "hole" = 75% (3 of 4 chars match concept)
-      - "hello" vs "hola" = 40% (2 edits on length 5)
-
-      INPUT: expected (correct answer), heard (speech recognition result)
-      OUTPUT: Integer percentage 0-100
-    */
-    function calculateSimilarity(expected, heard) {
-      const exp = expected.toLowerCase().trim();
-      const hrd = heard.toLowerCase().trim();
-
-      if (exp === hrd) return 100;
-      if (hrd.length === 0) return 0;
-
-      const distance = levenshteinDistance(exp, hrd);
-      const maxLen = Math.max(exp.length, hrd.length);
-      const similarity = Math.max(0, ((maxLen - distance) / maxLen) * 100);
-
-      return Math.round(similarity);
-    }
 
     // ============================================================
     // CHARACTER NORMALIZATION: For Typing Comparison
     // ============================================================
-
-    /*
-      Normalizes a character for typing comparison.
-
-      NORMALIZATION RULES:
-      1. Convert to lowercase
-      2. Remove accents/diacritics (á → a, ñ → n, ü → u, etc.)
-
-      EXAMPLES:
-      - 'Á' → 'a'
-      - 'ñ' → 'n'
-      - 'Ü' → 'u'
-      - 'É' → 'e'
-
-      WHY THIS MATTERS FOR GAMES:
-      Most English keyboards don't have accent keys, so learners type
-      'hola' instead of 'hóla'. We want to accept their answer as correct.
-
-      IMPROVEMENT OVER SimpleFlashCards.html:
-      - Same logic, but more clearly documented
-      - Explains the "why" for future game developers
-
-      INPUT: Single character string
-      OUTPUT: Normalized single character (lowercase, no accents)
-    */
-    function normalizeCharForTyping(char) {
-      return char
-        .normalize('NFD')                    // Decompose accents (á → a + ´)
-        .replace(/[\u0300-\u036f]/g, '')    // Remove accent marks
-        .toLowerCase();                      // Convert to lowercase
-    }
+    // ⚠️ MOVED TO wordpack-logic.js as normalizeChar()
+    // Use normalizeChar() instead of normalizeCharForTyping()
+    // This function is available globally after loading wordpack-logic.js
+    // ============================================================
 
     // ╔══════════════════════════════════════════════════════════════════════════════╗
     // ║                                                                              ║
@@ -2682,227 +2586,23 @@
     }
 
     // ============================================================
-    // STRING NORMALIZATION: For Duplicate Detection
+    // STRING NORMALIZATION & MULTIPLE CHOICE GENERATION
     // ============================================================
-
-    /*
-      Normalizes strings for comparison to detect duplicates across wordpacks.
-
-      NORMALIZATION PROCESS:
-      1. Convert to lowercase
-      2. Remove all spaces
-      3. Remove all symbols/punctuation
-
-      EXAMPLES:
-      - "Hola Amigo" → "holaamigo"
-      - "hello, friend!" → "hellofriend"
-      - "你好 朋友" → "你好朋友"
-
-      This catches duplicates that may appear with slight variations:
-      - "hola" and "Hola" (case difference)
-      - "hello friend" and "hellofriend" (spacing difference)
-      - "hello!" and "hello" (punctuation difference)
-
-      INPUT: String to normalize
-      OUTPUT: Normalized string (lowercase, no spaces, no symbols)
-    */
-    function normalizeString(str) {
-      return str
-        .toLowerCase()
-        .replace(/[\s\.,!?;:'"()\[\]{}\-_]/g, '');  // Remove spaces and common symbols
-    }
-
+    // ⚠️ ALL MOVED TO wordpack-logic.js
+    //
+    // The following functions are now available globally from wordpack-logic.js:
+    //   - normalizeString(str)
+    //   - generateWrongAnswers(actData, correctAnswer, count=4)
+    //   - generateWrongAnswersWithPinyin(actData, correctAnswer, count=4)
+    //
+    // These functions work for ANY language learning game:
+    //   - Quiz games (4-option multiple choice)
+    //   - Temple Run (3-lane choice)
+    //   - Memory games (matching pairs)
+    //   - Typing race games (autocomplete suggestions)
+    //
+    // See wordpack-logic.js for full documentation and usage examples.
     // ============================================================
-    // KEY FEATURE: Multiple Choice Wrong Answers (Act-Wide Pool)
-    // Core Objective: Generate diverse, non-duplicate wrong answers
-    // Key Behaviors:
-    //   - Pulls from ENTIRE ACT (~2,500 words) not just current pack
-    //   - Filters duplicates via normalized string comparison
-    //   - Uses Fisher-Yates shuffle for uniform randomness
-    //   - Works for ANY language (Spanish, Chinese, English)
-    // ============================================================
-
-    /*
-      Generates random wrong answers for multiple choice mode.
-
-      UPDATED ALGORITHM (Act-Wide Selection):
-      Instead of pulling from just the current wordpack (50 words),
-      we now pull from the ENTIRE ACT (all wordpacks, ~2,500 words).
-
-      BENEFITS:
-      ✓ More variety (2,500 options vs 50)
-      ✓ Less predictable for players
-      ✓ Better for advanced learners
-      ✓ No additional performance cost (data already in memory)
-
-      PROCESS:
-      1. Collect all words from all packs in the current act
-      2. Filter out the correct answer (exact match)
-      3. Filter out normalized duplicates (case/space/symbol variations)
-      4. Shuffle remaining pool using Fisher-Yates
-      5. Take first K words as wrong answers (K=4 in this demo)
-
-      EXAMPLE:
-      - Act 1 has 50 packs with 50 words each = 2,500 total words
-      - Current correct answer: "hola amigo"
-      - Normalized: "holaamigo"
-      - Filter out: "hola amigo", "Hola Amigo", "hola-amigo" (all normalize to same)
-      - Remaining pool: ~2,499 words
-      - Randomly select 4 from this pool
-
-      DUPLICATE DETECTION:
-      We use normalized string comparison to avoid showing essentially
-      the same word with minor variations:
-      - "hello" vs "Hello" (different case)
-      - "hello friend" vs "hellofriend" (different spacing)
-      - "hello!" vs "hello" (different punctuation)
-
-      GAME USAGE:
-      Different games need different numbers of wrong answers:
-      - Temple Run (3-lane runner): Need 2 wrong answers (3 total choices)
-      - Quiz game (4 options): Need 3 wrong answers (4 total choices)
-      - This demo: 4 wrong answers to show extensibility
-
-      This algorithm works for ANY language (Spanish, Chinese, English, etc.)
-      because it always uses column 0 (target language) from the words array.
-
-      INPUT:
-        - actData: Dictionary of all wordpacks in the current act
-        - correctAnswer: The correct answer string (to filter out)
-        - count: Number of wrong answers to generate (default 4)
-
-      OUTPUT:
-        - Array of wrong answer strings from column 0 (target language)
-    */
-    function generateWrongAnswers(actData, correctAnswer, count = 4) {
-      // STEP 1: Normalize the correct answer for comparison
-      const normalizedCorrect = normalizeString(correctAnswer);
-
-      // STEP 2: Collect all words from all packs in the act
-      const allWords = [];
-
-      // Loop through each pack in the act
-      Object.keys(actData).forEach(packKey => {
-        const pack = actData[packKey];
-
-        // ════════════════════════════════════════════════════════════════════════
-        // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
-        // This creates a single array with base words first, both sections shuffled
-        // ════════════════════════════════════════════════════════════════════════
-        const words = combineAndShuffleWords(pack);
-
-        // Loop through each word in this pack
-        words.forEach(wordObj => {
-          const word = wordObj.word;  // Extract word array from object
-          const targetLanguageWord = word[0];  // Column 0 is always target language
-
-          // Filter out the correct answer and normalized duplicates
-          if (targetLanguageWord !== correctAnswer) {
-            const normalizedWord = normalizeString(targetLanguageWord);
-
-            // Only add if normalized version is different from correct answer
-            if (normalizedWord !== normalizedCorrect) {
-              allWords.push(targetLanguageWord);
-            }
-          }
-        });
-      });
-
-      // STEP 3: Shuffle using Fisher-Yates algorithm for uniform randomness
-      for (let i = allWords.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [allWords[i], allWords[j]] = [allWords[j], allWords[i]];
-      }
-
-      // STEP 4: Take first 'count' words (or fewer if pool is small)
-      const wrongAnswers = allWords.slice(0, Math.min(count, allWords.length));
-
-      return wrongAnswers;
-    }
-
-    // ============================================================
-    // CHINESE WRONG ANSWERS: Include Pinyin for Coupled Display
-    // ============================================================
-
-    /*
-      generateWrongAnswersWithPinyin() - Generate wrong answers for Chinese with pinyin
-
-      SAME ALGORITHM as generateWrongAnswers(), but returns objects with BOTH
-      the Chinese text AND the pinyin. This enables proper coupled rendering.
-
-      WHY A SEPARATE FUNCTION?
-      - generateWrongAnswers() returns simple strings (for Spanish, English)
-      - Chinese needs BOTH text AND pinyin for each wrong answer
-      - We could modify the original, but keeping separate maintains clarity
-      - DRY is preserved: this function uses same filtering/shuffling logic
-
-      INPUT:
-        - actData: Dictionary of all wordpacks in the current act
-        - correctAnswer: The correct answer string (Chinese characters, to filter out)
-        - count: Number of wrong answers to generate (default 4)
-
-      OUTPUT:
-        - Array of objects: [{ text: "小猫", pinyin: "xiǎo māo" }, ...]
-        - Each object has both the Chinese text and its pinyin coupled together
-        - This enables renderChineseText() to display with pinyin underneath
-
-      EXAMPLE:
-      INPUT:  generateWrongAnswersWithPinyin(actData, "大狗", 2)
-      OUTPUT: [
-        { text: "小猫", pinyin: "xiǎo māo" },
-        { text: "老虎", pinyin: "lǎo hǔ" }
-      ]
-    */
-    function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) {
-      // STEP 1: Normalize the correct answer for comparison
-      const normalizedCorrect = normalizeString(correctAnswer);
-
-      // STEP 2: Collect all words WITH PINYIN from all packs in the act
-      const allWords = [];
-
-      // Loop through each pack in the act
-      Object.keys(actData).forEach(packKey => {
-        const pack = actData[packKey];
-
-        // ════════════════════════════════════════════════════════════════════════
-        // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
-        // This creates a single array with base words first, both sections shuffled
-        // ════════════════════════════════════════════════════════════════════════
-        const words = combineAndShuffleWords(pack);
-
-        // Loop through each word in this pack
-        words.forEach(wordObj => {
-          const word = wordObj.word;  // Extract word array from object
-          const chineseText = word[0];  // Column 0 is Chinese characters
-          const pinyinText = word[1];   // Column 1 is Pinyin
-
-          // Filter out the correct answer and normalized duplicates
-          if (chineseText !== correctAnswer) {
-            const normalizedWord = normalizeString(chineseText);
-
-            // Only add if normalized version is different from correct answer
-            if (normalizedWord !== normalizedCorrect) {
-              // Store BOTH text and pinyin as coupled object
-              allWords.push({
-                text: chineseText,
-                pinyin: pinyinText
-              });
-            }
-          }
-        });
-      });
-
-      // STEP 3: Shuffle using Fisher-Yates algorithm for uniform randomness
-      for (let i = allWords.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [allWords[i], allWords[j]] = [allWords[j], allWords[i]];
-      }
-
-      // STEP 4: Take first 'count' words (or fewer if pool is small)
-      const wrongAnswers = allWords.slice(0, Math.min(count, allWords.length));
-
-      return wrongAnswers;
-    }
 
     // ============================================================
     // KEY FEATURE: Typing Practice (Character-by-Character Input)
@@ -2995,8 +2695,8 @@
       }
 
       // STEP 5: Normalize characters for comparison (remove accents, lowercase)
-      const normalizedKey = normalizeCharForTyping(key);
-      const normalizedTarget = normalizeCharForTyping(chars[nextPos]);
+      const normalizedKey = normalizeChar(key);
+      const normalizedTarget = normalizeChar(chars[nextPos]);
 
       // STEP 6: Check if correct
       if (normalizedKey === normalizedTarget) {
