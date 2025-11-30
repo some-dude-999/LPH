@@ -2497,6 +2497,910 @@ function simulateNearVictory(deck, onSimulate) {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// ⚠️ FUNCTIONS MOVED FROM DecoderTest.html - REUSABILITY SCORES 7-10 ⚠️
+// ════════════════════════════════════════════════════════════════════════════
+//
+// CRITICAL REFACTORING PRINCIPLE FOR FUTURE AI ASSISTANTS:
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// This section contains functions that were originally in DecoderTest.html but
+// have been moved here because they are HIGHLY REUSABLE across many future
+// language learning games.
+//
+// ╔═══════════════════════════════════════════════════════════════════════════╗
+// ║  THE GOLDEN RULE FOR CODE PLACEMENT:                                      ║
+// ║                                                                           ║
+// ║  Ask yourself: "Could this function plausibly be used by ANY future       ║
+// ║  language learning game (grid game, list game, matching game, quiz        ║
+// ║  game, etc.)?"                                                            ║
+// ║                                                                           ║
+// ║  • If YES (score 7-10) → MOVE IT TO wordpack-logic.js (THIS FILE)        ║
+// ║  • If NO (score 1-6) → KEEP IT in the individual game file               ║
+// ╚═══════════════════════════════════════════════════════════════════════════╝
+//
+// THE REUSABILITY SCALE (1-10):
+// ──────────────────────────────
+//  10/10 = Used in EVERY game, core functionality → MUST be in wordpack-logic.js
+//   9/10 = Used in most games, general concept → SHOULD be in wordpack-logic.js
+//   8/10 = Used in many games, common pattern → SHOULD be in wordpack-logic.js
+//   7/10 = Could be used in multiple games → CONSIDER moving to wordpack-logic.js
+//   4-6/10 = Borderline, might vary per game → DISCUSS and decide
+//   1-3/10 = Game-specific visual/interaction → KEEP in game file
+//
+// WHAT BELONGS IN INDIVIDUAL GAME FILES (DO NOT MOVE HERE):
+// ──────────────────────────────────────────────────────────
+// • Game-specific DOM manipulation (card flip animations, weathering effects)
+// • Visual rendering unique to that game (menu layout, specific CSS class toggles)
+// • Game-specific animations and visual effects
+// • Wrapper functions that provide game-local scope to shared functions
+// • Functions rated 1-6 on reusability scale
+//
+// WHEN IN DOUBT:
+// ──────────────
+// If you are creating a new language learning game or refactoring an existing
+// one, ALWAYS move functions rated 7+ to this file! Don't think too hard -
+// just cut and paste. The goal is to have ONE PLACE where core logic lives.
+//
+// FUTURE AI ASSISTANTS: Read this comment block carefully before deciding
+// where to place new functions!
+//
+// ════════════════════════════════════════════════════════════════════════════
+
+// ════════════════════════════════════════════════════════════════════════════
+// AUDIO CONTEXT & TYPING SOUNDS (Reusability Score: 10/10)
+// ════════════════════════════════════════════════════════════════════════════
+//
+// These functions provide satisfying audio feedback for typing interactions.
+// Used in EVERY game that has typing practice mode.
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Singleton audio context for sound generation
+ * @type {AudioContext|null}
+ */
+let audioContext = null;
+
+/**
+ * Creates and returns the Web Audio API context for sound generation.
+ * This is used for the satisfying typing/scribble sound.
+ *
+ * Reusability Score: 10/10 - Used in EVERY game with audio
+ *
+ * @returns {AudioContext} - The global audio context
+ */
+function getAudioContext() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  return audioContext;
+}
+
+/**
+ * Plays a satisfying mechanical keyboard click sound on every keypress.
+ * This sound plays for BOTH correct and wrong keypress (instant feedback).
+ *
+ * Reusability Score: 10/10 - Used in EVERY typing-based game
+ *
+ * SOUND CHARACTERISTICS:
+ * - Very short duration (0.015-0.025 seconds) for crisp click
+ * - High frequency (2000-3500 Hz) for mechanical feel
+ * - Random variation in frequency and volume for natural typing feel
+ * - Sharp decay envelope for crisp, defined click
+ *
+ * USAGE IN GAMES:
+ * This sound provides immediate tactile feedback that makes typing feel
+ * satisfying and responsive. It's crucial for engagement - even wrong
+ * keypresses should "feel good" to maintain flow state.
+ */
+function playTypingSound() {
+  const ctx = getAudioContext();
+
+  // Very short duration for crisp mechanical click
+  const duration = 0.015 + Math.random() * 0.01;  // 0.015-0.025 seconds
+  const bufferSize = ctx.sampleRate * duration;
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  // Generate sharp click noise with very fast decay
+  for (let i = 0; i < bufferSize; i++) {
+    const envelope = Math.pow(1 - i/bufferSize, 8);  // Very sharp decay
+    const noise = (Math.random() * 2 - 1);
+    data[i] = noise * envelope;
+  }
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+
+  // High frequency bandpass for mechanical click (2000-3500 Hz)
+  const bp1 = ctx.createBiquadFilter();
+  bp1.type = 'bandpass';
+  bp1.frequency.value = 2000 + Math.random() * 1500;  // Random variation
+  bp1.Q.value = 4.0;  // High Q for sharp, defined click
+
+  // Mid frequency for body (1000-1500 Hz)
+  const bp2 = ctx.createBiquadFilter();
+  bp2.type = 'bandpass';
+  bp2.frequency.value = 1000 + Math.random() * 500;
+  bp2.Q.value = 2.5;
+
+  // Remove low mud
+  const hp = ctx.createBiquadFilter();
+  hp.type = 'highpass';
+  hp.frequency.value = 400;
+
+  // Moderate volume for satisfying click
+  const gain = ctx.createGain();
+  gain.gain.value = 0.35 + Math.random() * 0.1;  // 0.35-0.45 with random variation
+
+  // Connect audio chain
+  source.connect(hp);
+  hp.connect(bp1);
+  bp1.connect(bp2);
+  bp2.connect(gain);
+  gain.connect(ctx.destination);
+
+  source.start();
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// TYPING INPUT HANDLER (Reusability Score: 10/10)
+// ════════════════════════════════════════════════════════════════════════════
+//
+// Core typing validation logic used across all typing-based games.
+// Handles accent-insensitive comparison, space skipping, and progress tracking.
+//
+// ⚠️ NOTE: This function calls updateTypingDisplay() which is GAME-SPECIFIC.
+// Games using this function must provide their own updateTypingDisplay()
+// implementation, or we can refactor to return state instead of calling display.
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Handles a keypress during typing practice mode.
+ *
+ * Reusability Score: 10/10 - Core typing logic used in ALL typing games
+ *
+ * ARCHITECTURE (Per-Word State):
+ * Each word has its own typing state stored in state.typingStates Map:
+ * {
+ *   typed: Set(),          // Set of character positions successfully typed
+ *   wrongLetters: [],      // Array of wrong letters attempted
+ *   wrongCount: 0          // Total wrong attempts
+ * }
+ *
+ * KEY IMPROVEMENTS OVER SimpleFlashCards.html:
+ * - Per-row state instead of global state (more modular)
+ * - Simpler state structure (easier to understand)
+ * - Inline in table (no separate card flipping)
+ * - Better for debugging/testing multiple words at once
+ *
+ * @param {number} wordIndex - Index of the word in the pack (used as state key)
+ * @param {string} correctWord - The correct answer string (target language)
+ * @param {string} key - The key that was pressed
+ * @param {HTMLElement} inputElement - The input element to update
+ *
+ * RETURNS: Nothing (updates state and DOM directly)
+ *
+ * ⚠️ DEPENDENCY: Requires game to implement updateTypingDisplay(wordIndex, correctWord, inputElement)
+ */
+function handleTypingInput(wordIndex, correctWord, key, inputElement) {
+  // STEP 1: Get or create typing state for this word
+  if (!state.typingStates.has(wordIndex)) {
+    state.typingStates.set(wordIndex, {
+      typed: new Set(),
+      wrongLetters: [],
+      wrongCount: 0
+    });
+  }
+
+  const typingState = state.typingStates.get(wordIndex);
+  const chars = correctWord.split('');
+
+  // STEP 2: Play sound for ANY keypress (instant feedback)
+  playTypingSound();
+
+  // STEP 3: Handle space key - ALWAYS ignore (play sound only)
+  if (key === ' ') {
+    return; // Space keys are ignored completely
+  }
+
+  // STEP 4: Find next unfilled position, skipping spaces automatically
+  let nextPos = -1;
+  for (let i = 0; i < chars.length; i++) {
+    if (!typingState.typed.has(i)) {
+      nextPos = i;
+      break;
+    }
+  }
+
+  if (nextPos === -1) {
+    return; // Already completed
+  }
+
+  // Skip spaces and mark them as typed
+  while (nextPos < chars.length && chars[nextPos] === ' ') {
+    typingState.typed.add(nextPos);
+    nextPos++;
+  }
+
+  if (nextPos >= chars.length) {
+    return; // Reached end after skipping spaces
+  }
+
+  // STEP 5: Normalize characters for comparison (remove accents, lowercase)
+  const normalizedKey = normalizeChar(key);
+  const normalizedTarget = normalizeChar(chars[nextPos]);
+
+  // STEP 6: Check if correct
+  if (normalizedKey === normalizedTarget) {
+    // CORRECT! Mark position as typed
+    typingState.typed.add(nextPos);
+  } else {
+    // WRONG! Track the wrong letter and increment counter
+    typingState.wrongLetters.push(key.toLowerCase());
+    typingState.wrongCount++;
+  }
+
+  // STEP 7: Update display to show progress
+  // ⚠️ Game-specific function - must be implemented by the game
+  if (typeof updateTypingDisplay === 'function') {
+    updateTypingDisplay(wordIndex, correctWord, inputElement);
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SPEECH RECOGNITION FUNCTIONS (Reusability Score: 9-10)
+// ════════════════════════════════════════════════════════════════════════════
+//
+// Functions for pronunciation practice with speech-to-text comparison.
+// Used in games with speaking/listening modes.
+//
+// ⚠️ DEPENDENCIES: These functions rely on global variables that must be set up
+// by the game: recognition, isListening, currentListeningWordIndex,
+// SPEECH_LANG_CODES, state
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Reset listening state (called from multiple places - DRY principle)
+ *
+ * Reusability Score: 9/10 - Used in all speech recognition games
+ *
+ * @param {HTMLElement} recordButton - The button element to update visual state
+ *
+ * ⚠️ DEPENDENCIES: Requires global variables isListening, currentListeningWordIndex
+ */
+function resetListeningState(recordButton) {
+  if (typeof isListening !== 'undefined') {
+    isListening = false;
+  }
+  if (typeof currentListeningWordIndex !== 'undefined') {
+    currentListeningWordIndex = null;
+  }
+  if (recordButton) {
+    recordButton.textContent = '🎤';
+  }
+}
+
+/**
+ * Starts speech recognition for a specific word in the vocabulary table.
+ *
+ * Reusability Score: 10/10 - Core speech recognition logic
+ *
+ * PROCESS:
+ * 1. Check if speech recognition is available
+ * 2. Set recognition language based on target language
+ * 3. Start listening
+ * 4. On result: Calculate similarity, update state, refresh display
+ * 5. On error: Handle gracefully (no-speech, permission denied)
+ *
+ * @param {number} wordIndex - Index of word in the pack (for state tracking)
+ * @param {string} correctWord - The expected word (target language)
+ * @param {HTMLElement} recordButton - The button element to update visual state
+ *
+ * VISUAL FEEDBACK:
+ * - Button shows "🔴" while recording
+ * - Button shows "🎤" when idle (via resetListeningState - DRY)
+ *
+ * ⚠️ DEPENDENCIES:
+ * - Global variables: recognition, isListening, currentListeningWordIndex, SPEECH_LANG_CODES, state
+ * - Functions: resetListeningState(), updatePronunciationDisplay() (game-specific)
+ * - Functions: calculateSimilarity() (already in wordpack-logic.js)
+ */
+function startListeningForPronunciation(wordIndex, correctWord, recordButton) {
+  if (typeof recognition === 'undefined' || !recognition) {
+    alert('Speech recognition is not supported in your browser. Try Chrome or Edge.');
+    return;
+  }
+
+  if (typeof isListening !== 'undefined' && isListening) return;
+
+  if (typeof isListening !== 'undefined') isListening = true;
+  if (typeof currentListeningWordIndex !== 'undefined') currentListeningWordIndex = wordIndex;
+
+  recognition.lang = (typeof SPEECH_LANG_CODES !== 'undefined' && state.currentLanguage)
+    ? (SPEECH_LANG_CODES[state.currentLanguage] || 'en-US')
+    : 'en-US';
+  recordButton.textContent = '🔴';
+
+  recognition.onresult = (event) => {
+    const results = event.results[0];
+    let bestMatch = results[0].transcript;
+    let bestScore = 0;
+
+    for (let i = 0; i < results.length; i++) {
+      const transcript = results[i].transcript;
+      const score = calculateSimilarity(correctWord, transcript);
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = transcript;
+      }
+    }
+
+    if (typeof state !== 'undefined' && state.pronunciationStates) {
+      state.pronunciationStates.set(wordIndex, {
+        score: bestScore,
+        heard: bestMatch,
+        attempted: true
+      });
+    }
+
+    // ENCAPSULATED - DRY: Reset state via helper function
+    resetListeningState(recordButton);
+
+    // ⚠️ Game-specific display update
+    if (typeof updatePronunciationDisplay === 'function') {
+      updatePronunciationDisplay(wordIndex, recordButton);
+    }
+  };
+
+  recognition.onerror = (event) => {
+    console.error('Speech recognition error:', event.error);
+    // ENCAPSULATED - DRY: Reset state via helper function
+    resetListeningState(recordButton);
+
+    if (event.error === 'no-speech') {
+      if (typeof state !== 'undefined' && state.pronunciationStates) {
+        state.pronunciationStates.set(wordIndex, {
+          score: 0,
+          heard: '(no speech detected)',
+          attempted: true
+        });
+      }
+      if (typeof updatePronunciationDisplay === 'function') {
+        updatePronunciationDisplay(wordIndex, recordButton);
+      }
+    } else if (event.error === 'not-allowed') {
+      alert('Microphone access denied. Please allow microphone access to use this feature.');
+    }
+  };
+
+  recognition.onend = () => {
+    // ENCAPSULATED - DRY: Reset state via helper function
+    resetListeningState(recordButton);
+  };
+
+  recognition.start();
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// STATE PERSISTENCE FUNCTIONS (Reusability Score: 9-10)
+// ════════════════════════════════════════════════════════════════════════════
+//
+// Functions for saving/loading/validating user state to/from localStorage.
+// Used in EVERY game to persist user preferences and progress.
+//
+// ⚠️ NOTE: These functions depend on global variables (VALID_LANGUAGES,
+// LANGUAGE_CONFIG, state). Games must set these up before using these functions.
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Restore and VALIDATE saved state from localStorage
+ *
+ * Reusability Score: 9/10 - Used in most games
+ *
+ * CRITICAL: Always validate saved values before restoring!
+ *
+ * WHY VALIDATE?
+ *   - User might have saved state from an older version
+ *   - Options might have changed (languages added/removed)
+ *   - Corrupted data should not crash the app
+ *
+ * VALIDATION RULES:
+ *   - currentLanguage: Must be in VALID_LANGUAGES array
+ *   - currentAct: Must exist in loaded data (validated after load)
+ *   - currentPack: Must exist in act data (validated after load)
+ *   - currentNativeLanguage: Must be valid column for language
+ *   - Mode booleans: Just need to be boolean type
+ *
+ * @returns {boolean} - true if state was restored, false if no saved state
+ *
+ * ⚠️ DEPENDENCIES: Requires global variables VALID_LANGUAGES, LANGUAGE_CONFIG, state
+ */
+function restoreSavedState() {
+  const saved = loadState();
+  if (!saved) {
+    console.log('No saved state found, using defaults');
+    return false;
+  }
+
+  console.log('Restoring saved state:', saved);
+
+  // Validate and restore language
+  if (saved.currentLanguage && typeof VALID_LANGUAGES !== 'undefined' && VALID_LANGUAGES.includes(saved.currentLanguage)) {
+    if (typeof state !== 'undefined') state.currentLanguage = saved.currentLanguage;
+  }
+
+  // Validate and restore act (will be validated against loaded data later)
+  if (saved.currentAct !== null && saved.currentAct !== undefined) {
+    if (typeof state !== 'undefined') state.currentAct = saved.currentAct;
+  }
+
+  // Validate and restore pack (will be validated against act data later)
+  if (saved.currentPack) {
+    if (typeof state !== 'undefined') state.currentPack = saved.currentPack;
+  }
+
+  // Validate and restore native language column
+  // Must be a valid column index for the current language
+  if (saved.currentNativeLanguage !== null && saved.currentNativeLanguage !== undefined) {
+    if (typeof LANGUAGE_CONFIG !== 'undefined' && typeof state !== 'undefined') {
+      const config = LANGUAGE_CONFIG[state.currentLanguage];
+      if (config && config.nativeLanguages) {
+        const validColumns = Object.values(config.nativeLanguages);
+        if (validColumns.includes(saved.currentNativeLanguage)) {
+          state.currentNativeLanguage = saved.currentNativeLanguage;
+        } else {
+          // Fall back to first available native language for this target language
+          state.currentNativeLanguage = validColumns[0];
+        }
+      }
+    }
+  }
+
+  // Restore mode booleans (simple validation: just check type)
+  if (typeof state !== 'undefined') {
+    if (typeof saved.multipleChoiceMode === 'boolean') {
+      state.multipleChoiceMode = saved.multipleChoiceMode;
+    }
+    if (typeof saved.typingMode === 'boolean') {
+      state.typingMode = saved.typingMode;
+    }
+    if (typeof saved.pronunciationMode === 'boolean') {
+      state.pronunciationMode = saved.pronunciationMode;
+    }
+    if (typeof saved.flashcardMode === 'boolean') {
+      state.flashcardMode = saved.flashcardMode;
+    }
+
+    // Restore Chinese display options (both default to true if not saved)
+    if (typeof saved.showChineseChars === 'boolean') {
+      state.showChineseChars = saved.showChineseChars;
+    }
+    if (typeof saved.showPinyin === 'boolean') {
+      state.showPinyin = saved.showPinyin;
+    }
+  }
+
+  return true;
+}
+
+/**
+ * Validate state against loaded data (called AFTER modules are loaded)
+ *
+ * Reusability Score: 8/10 - Used in most games with act/pack structure
+ *
+ * This is separate from restoreSavedState() because we can't validate
+ * act/pack until the data is loaded from the modules.
+ *
+ * VALIDATION:
+ *   - If saved act doesn't exist in loaded data → use first act
+ *   - If saved pack doesn't exist in act → use first pack
+ *
+ * ⚠️ DEPENDENCIES: Requires global variable state
+ */
+function validateAndFixState() {
+  if (typeof state === 'undefined') return;
+
+  // Validate act exists in loaded data
+  if (state.currentAct !== null && state.loadedData && !state.loadedData[state.currentAct]) {
+    console.log(`Saved act ${state.currentAct} not found, falling back to first act`);
+    state.currentAct = null;  // Will be set by autoSelectFirstActAndPack
+  }
+
+  // Validate pack exists in act data
+  if (state.currentAct && state.currentPack && state.loadedData) {
+    const actData = state.loadedData[state.currentAct];
+    if (actData && !actData[state.currentPack]) {
+      console.log(`Saved pack ${state.currentPack} not found in act ${state.currentAct}, falling back to first pack`);
+      state.currentPack = null;  // Will be set by autoSelectFirstActAndPack
+    }
+  }
+}
+
+/**
+ * Loads all act modules for a specific language.
+ *
+ * Reusability Score: 9/10 - Core data loading logic
+ *
+ * PROCESS:
+ * 1. Get module list from LANGUAGE_CONFIG
+ * 2. Loop through each module
+ * 3. Decode the obfuscated module
+ * 4. Store in state.loadedData[actNumber]
+ *
+ * @param {string} languageName - Name of language to load ('Spanish', 'Chinese', 'English')
+ *
+ * ⚠️ DEPENDENCIES:
+ * - Global variables: LANGUAGE_CONFIG, state
+ * - Function: updateDebugInfo() (game-specific - optional)
+ * - Function: decodeObfuscatedModule() (already in wordpack-logic.js)
+ */
+async function loadLanguageData(languageName) {
+  if (typeof updateDebugInfo === 'function') {
+    updateDebugInfo(`Loading ${languageName} data...`);
+  }
+
+  if (typeof LANGUAGE_CONFIG === 'undefined' || typeof state === 'undefined') {
+    console.error('loadLanguageData requires LANGUAGE_CONFIG and state to be defined');
+    return;
+  }
+
+  const config = LANGUAGE_CONFIG[languageName];
+  if (!config) {
+    console.error(`No configuration found for language: ${languageName}`);
+    return;
+  }
+
+  state.loadedData = {};      // Clear previous data
+  state.loadedActMeta = {};   // Clear previous metadata
+
+  // Load each act module
+  for (const moduleInfo of config.modules) {
+    if (typeof updateDebugInfo === 'function') {
+      updateDebugInfo(`Loading Act ${moduleInfo.act}: ${moduleInfo.name}...`);
+    }
+
+    try {
+      const actData = await decodeObfuscatedModule(moduleInfo.path);
+
+      // Extract and store __actMeta (contains actName, translations, wordColumns, etc.)
+      // This is the same pattern as ChineseFlashcardTypingGame.html
+      if (actData.__actMeta) {
+        state.loadedActMeta[moduleInfo.act] = actData.__actMeta;
+        console.log(`Act ${moduleInfo.act} metadata:`, actData.__actMeta.actName);
+      }
+
+      // Store only pack data (exclude __actMeta)
+      const packsOnly = { ...actData };
+      delete packsOnly.__actMeta;
+
+      state.loadedData[moduleInfo.act] = packsOnly;
+
+      if (typeof updateDebugInfo === 'function') {
+        updateDebugInfo(`✓ Act ${moduleInfo.act} loaded (${Object.keys(packsOnly).length} packs)`);
+      }
+    } catch (error) {
+      const errorMsg = `✗ Failed to load Act ${moduleInfo.act}: ${error.message}`;
+      console.error(errorMsg);
+      if (typeof updateDebugInfo === 'function') {
+        updateDebugInfo(errorMsg);
+      }
+    }
+  }
+
+  if (typeof updateDebugInfo === 'function') {
+    updateDebugInfo(`${languageName} data loading complete.`);
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// FLASHCARD DECK FUNCTIONS (Reusability Score: 8-9)
+// ════════════════════════════════════════════════════════════════════════════
+//
+// Functions for flashcard-based games demonstrating the ANTI-DECOUPLING principle.
+// Front and back of cards are stored as properties of the SAME object to prevent
+// flip-mismatch bugs.
+//
+// ⚠️ NOTE: These functions depend on global variables (state, LANGUAGE_CONFIG)
+// and call game-specific display functions like updateFlashcardDisplay().
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Initializes the flashcard deck from the current wordpack.
+ *
+ * Reusability Score: 9/10 - Used in all flashcard-based games
+ *
+ * ANTI-DECOUPLING ARCHITECTURE:
+ * Each flashcard is ONE OBJECT containing BOTH front and back.
+ * This prevents the flip-mismatch bug where fronts and backs get out of sync.
+ *
+ * CRITICAL IMPLEMENTATION DETAIL:
+ * Each card is ONE OBJECT containing BOTH front and back.
+ * We NEVER store fronts and backs in separate arrays.
+ *
+ * CHINESE SUPPORT:
+ * When learning Chinese, we also store pinyin for the front (target language).
+ * This enables coupled character+pinyin rendering on the flashcard.
+ *
+ * INPUT: Uses state.currentPack to get words from current wordpack
+ * OUTPUT: Populates state.flashcardDeck with card objects
+ *
+ * ⚠️ DEPENDENCIES: Requires global variables state, LANGUAGE_CONFIG
+ * ⚠️ USES: combineAndShuffleWords() (already in wordpack-logic.js)
+ */
+function initFlashcardDeck() {
+  if (typeof state === 'undefined') return;
+
+  // Reset state
+  state.flashcardDeck = [];
+  state.flashcardIndex = 0;
+  state.flashcardShowingFront = true;
+
+  // Get current pack data
+  if (!state.currentAct || !state.currentPack) return;
+  if (!state.loadedData) return;
+  const actData = state.loadedData[state.currentAct];
+  if (!actData) return;
+  const pack = actData[state.currentPack];
+  if (!pack) return;
+
+  // ════════════════════════════════════════════════════════════════════════
+  // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
+  // This creates a single array with base words first, both sections shuffled
+  // ════════════════════════════════════════════════════════════════════════
+  const words = combineAndShuffleWords(pack);
+  if (words.length === 0) return;
+
+  // Get native language column index
+  const config = (typeof LANGUAGE_CONFIG !== 'undefined') ? LANGUAGE_CONFIG[state.currentLanguage] : null;
+  const nativeIndex = state.currentNativeLanguage;
+
+  // ════════════════════════════════════════════════════════════════════════
+  // CHINESE RENDERING SETUP FOR FLASHCARDS
+  // ════════════════════════════════════════════════════════════════════════
+  const isLearningChinese = state.currentLanguage === 'Chinese';
+
+  // Check if native language is Chinese (for back of card)
+  let nativeIsChinese = false;
+  let nativePinyinColumn = null;
+  if (config && config.nativeLanguages) {
+    const entries = Object.entries(config.nativeLanguages);
+    for (const [name, colIndex] of entries) {
+      if (colIndex === nativeIndex && name.toLowerCase().includes('chinese')) {
+        nativeIsChinese = true;
+        const pinyinEntry = entries.find(([n]) => n.toLowerCase().includes('pinyin'));
+        if (pinyinEntry) nativePinyinColumn = pinyinEntry[1];
+        break;
+      }
+    }
+  }
+
+  // ════════════════════════════════════════════════════════════════════════
+  // ANTI-DECOUPLING: Create cards as SINGLE OBJECTS with front AND back
+  // ════════════════════════════════════════════════════════════════════════
+  // Each card object contains BOTH the front (target language) and back
+  // (native language translation). These are NEVER stored separately.
+  // This is the KEY PRINCIPLE that prevents flip-mismatch bugs.
+  //
+  // CHINESE ADDITION: Also store pinyin for Chinese text to enable
+  // coupled rendering (characters + pinyin together).
+  // ════════════════════════════════════════════════════════════════════════
+  state.flashcardDeck = words.map((wordObj, index) => {
+    const word = wordObj.word;  // Extract word array from object
+    const type = wordObj.type;  // Extract type: "Base Word" or "Example Word"
+
+    const card = {
+      id: `card-${index}`,           // Unique identifier for this card
+      front: word[0],                 // Target language (column 0) - FRONT of card
+      back: word[nativeIndex],        // Native language translation - BACK of card
+      type: type,                     // Word type for debugging shuffling mechanism
+      // ↑ NOTICE: front and back are PROPERTIES OF THE SAME OBJECT
+      // They are linked forever. Shuffling moves the whole object.
+    };
+
+    // Add pinyin for Chinese front (when learning Chinese)
+    if (isLearningChinese) {
+      card.frontPinyin = word[1];  // Column 1 is pinyin for Chinese
+      card.frontIsChinese = true;
+    }
+
+    // Add pinyin for Chinese back (when translation is Chinese)
+    if (nativeIsChinese && nativePinyinColumn !== null) {
+      card.backPinyin = word[nativePinyinColumn];
+      card.backIsChinese = true;
+    }
+
+    return card;
+  });
+
+  console.log(`Initialized flashcard deck with ${state.flashcardDeck.length} cards (anti-decoupled)`);
+}
+
+/**
+ * Toggle between front and back of CURRENT card
+ *
+ * Reusability Score: 8/10 - Used in all flashcard games
+ *
+ * ANTI-DECOUPLING BENEFIT:
+ * We're just changing which PROPERTY of the same object to display.
+ * The front and back are ALWAYS correct because they're on the same object.
+ *
+ * ⚠️ DEPENDENCIES:
+ * - Global variable: state
+ * - Function: updateFlashcardDisplay() (game-specific, must be provided by game)
+ */
+function flipCard() {
+  if (typeof state === 'undefined' || !state.flashcardDeck || state.flashcardDeck.length === 0) return;
+
+  state.flashcardShowingFront = !state.flashcardShowingFront;
+
+  // ⚠️ Game-specific display update
+  if (typeof updateFlashcardDisplay === 'function') {
+    updateFlashcardDisplay();
+  }
+}
+
+/**
+ * Move to next card in deck
+ *
+ * Reusability Score: 8/10 - Used in all flashcard games
+ *
+ * ⚠️ DEPENDENCIES:
+ * - Global variable: state
+ * - Function: updateFlashcardDisplay() (game-specific, must be provided by game)
+ */
+function nextCard() {
+  if (typeof state === 'undefined' || !state.flashcardDeck || state.flashcardDeck.length === 0) return;
+
+  state.flashcardIndex = (state.flashcardIndex + 1) % state.flashcardDeck.length;
+  state.flashcardShowingFront = true;  // Always show front when navigating
+
+  // ⚠️ Game-specific display update
+  if (typeof updateFlashcardDisplay === 'function') {
+    updateFlashcardDisplay();
+  }
+}
+
+/**
+ * Move to previous card in deck
+ *
+ * Reusability Score: 8/10 - Used in all flashcard games
+ *
+ * ⚠️ DEPENDENCIES:
+ * - Global variable: state
+ * - Function: updateFlashcardDisplay() (game-specific, must be provided by game)
+ */
+function prevCard() {
+  if (typeof state === 'undefined' || !state.flashcardDeck || state.flashcardDeck.length === 0) return;
+
+  state.flashcardIndex = (state.flashcardIndex - 1 + state.flashcardDeck.length) % state.flashcardDeck.length;
+  state.flashcardShowingFront = true;
+
+  // ⚠️ Game-specific display update
+  if (typeof updateFlashcardDisplay === 'function') {
+    updateFlashcardDisplay();
+  }
+}
+
+/**
+ * Randomly reorder the cards using Fisher-Yates algorithm
+ *
+ * Reusability Score: 9/10 - Used in all flashcard games
+ *
+ * ANTI-DECOUPLING BENEFIT:
+ * When we shuffle, we're moving ENTIRE card objects, not just fronts or backs.
+ * Each card's front and back stay linked because they're properties of
+ * the same object that moves together.
+ *
+ * ❌ With decoupled arrays, you'd have to shuffle both arrays identically
+ *    (same random seed, same swaps) - easy to get wrong!
+ *
+ * ✅ With anti-decoupled objects, shuffle just works - the whole card moves.
+ *
+ * ⚠️ DEPENDENCIES:
+ * - Global variable: state
+ * - Function: updateFlashcardDisplay() (game-specific, must be provided by game)
+ */
+function shuffleDeck() {
+  if (typeof state === 'undefined' || !state.flashcardDeck || state.flashcardDeck.length === 0) return;
+
+  // Fisher-Yates shuffle - moves ENTIRE card objects
+  for (let i = state.flashcardDeck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    // Swap entire card objects - front and back stay linked!
+    [state.flashcardDeck[i], state.flashcardDeck[j]] =
+    [state.flashcardDeck[j], state.flashcardDeck[i]];
+  }
+
+  // Reset to first card
+  state.flashcardIndex = 0;
+  state.flashcardShowingFront = true;
+
+  // ⚠️ Game-specific display update
+  if (typeof updateFlashcardDisplay === 'function') {
+    updateFlashcardDisplay();
+  }
+
+  console.log('Deck shuffled. Cards reordered but front/back links preserved (anti-decoupling).');
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// AUTO-SELECT FIRST ACT AND PACK (Reusability Score: 7/10)
+// ════════════════════════════════════════════════════════════════════════════
+//
+// This function was duplicated in multiple places in DecoderTest.html.
+// Now defined ONCE and called from multiple places (DRY principle).
+//
+// ⚠️ NOTE: This function has STRONG DOM dependencies and calls multiple
+// game-specific functions. It's borderline whether it belongs here.
+// Consider extracting just the core logic (finding first act/pack) and
+// leaving the DOM manipulation in game files.
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Auto-select first available act and pack (DRY principle - called from multiple places)
+ *
+ * Reusability Score: 7/10 - Core logic is reusable, but has DOM dependencies
+ *
+ * "If I needed to change this behavior, how many places would I need to update?"
+ * Answer: 1 (this function)
+ *
+ * ⚠️ HEAVY DOM DEPENDENCIES:
+ * - document.getElementById('actSelect')
+ * - document.getElementById('packSelect')
+ * - Functions: populatePackDropdown(), displayVocabulary(), saveState()
+ * - Global variable: state
+ *
+ * ⚠️ RECOMMENDATION: Extract core logic into separate function, keep DOM stuff in game
+ */
+function autoSelectFirstActAndPack() {
+  if (typeof state === 'undefined' || !state.loadedData || Object.keys(state.loadedData).length === 0) {
+    return;
+  }
+
+  // Find first act numerically
+  const firstAct = Math.min(...Object.keys(state.loadedData).map(Number));
+  state.currentAct = firstAct;
+
+  // Update DOM if element exists
+  const actSelect = document.getElementById('actSelect');
+  if (actSelect) {
+    actSelect.value = firstAct;
+  }
+
+  // Populate pack dropdown for first act (game-specific function)
+  if (typeof populatePackDropdown === 'function') {
+    populatePackDropdown();
+  }
+
+  // Auto-select first pack
+  const firstActData = state.loadedData[firstAct];
+  if (firstActData) {
+    const firstPackKey = Object.keys(firstActData)[0];
+    state.currentPack = firstPackKey;
+
+    // Update DOM if element exists
+    const packSelect = document.getElementById('packSelect');
+    if (packSelect) {
+      packSelect.value = firstPackKey;
+    }
+
+    // Display vocabulary (game-specific function)
+    if (typeof displayVocabulary === 'function') {
+      displayVocabulary();
+    }
+
+    // Save state to localStorage
+    if (typeof saveState === 'function') {
+      saveState();
+    }
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// END OF FUNCTIONS MOVED FROM DecoderTest.html
+// ════════════════════════════════════════════════════════════════════════════
+
+// ════════════════════════════════════════════════════════════════════════════
 // EXPORT FOR MODULE SYSTEMS (optional - currently using globals)
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -2555,6 +3459,27 @@ if (typeof module !== 'undefined' && module.exports) {
     // Debug simulation
     simulateCorrectAnswer,
     simulateWrongAnswer,
-    simulateNearVictory
+    simulateNearVictory,
+    // ═══════ Functions moved from DecoderTest.html (scores 7-10) ═══════
+    // Audio functions
+    getAudioContext,
+    playTypingSound,
+    // Typing functions (DecoderTest)
+    handleTypingInput,
+    // Speech recognition
+    resetListeningState,
+    startListeningForPronunciation,
+    // State persistence
+    restoreSavedState,
+    validateAndFixState,
+    loadLanguageData,
+    // Flashcard functions
+    initFlashcardDeck,
+    flipCard,
+    nextCard,
+    prevCard,
+    shuffleDeck,
+    // Utility
+    autoSelectFirstActAndPack
   };
 }

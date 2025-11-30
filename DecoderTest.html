@@ -861,6 +861,55 @@
     const STORAGE_KEY = 'decoderTestState';
 
     /*
+      ╔═══════════════════════════════════════════════════════════════════════════╗
+      ║                                                                           ║
+      ║  ⚠️ IMPORTANT: MANY FUNCTIONS IN THIS FILE HAVE BEEN MOVED ⚠️             ║
+      ║                                                                           ║
+      ║  The following highly-reusable functions (scores 7-10) have been         ║
+      ║  moved to wordpack-logic.js for use across ALL future games:             ║
+      ║                                                                           ║
+      ║  SCORE 10 (Core functions - used in EVERY game):                         ║
+      ║    • getAudioContext()           - Audio context creation                ║
+      ║    • playTypingSound()           - Mechanical keyboard click sound       ║
+      ║    • handleTypingInput()         - Typing validation logic               ║
+      ║    • startListeningForPronunciation() - Speech recognition              ║
+      ║                                                                           ║
+      ║  SCORE 9 (Used in most games):                                           ║
+      ║    • restoreSavedState()         - Validate and restore localStorage     ║
+      ║    • loadLanguageData()          - Load act modules                      ║
+      ║    • resetListeningState()       - Reset speech recognition state        ║
+      ║    • initFlashcardDeck()         - Anti-decoupled flashcard deck         ║
+      ║    • shuffleDeck()               - Fisher-Yates shuffle for flashcards   ║
+      ║                                                                           ║
+      ║  SCORE 8 (Common patterns):                                              ║
+      ║    • validateAndFixState()       - Validate act/pack against loaded data ║
+      ║    • flipCard()                  - Toggle flashcard front/back           ║
+      ║    • nextCard()                  - Navigate to next flashcard            ║
+      ║    • prevCard()                  - Navigate to previous flashcard        ║
+      ║                                                                           ║
+      ║  SCORE 7 (Could be useful):                                              ║
+      ║    • autoSelectFirstActAndPack() - DRY helper for auto-selection         ║
+      ║                                                                           ║
+      ║  ═════════════════════════════════════════════════════════════════════   ║
+      ║                                                                           ║
+      ║  🎯 FUTURE GAME DEVELOPERS: Use the wordpack-logic.js versions!          ║
+      ║                                                                           ║
+      ║  These functions still exist in DecoderTest.html for backwards           ║
+      ║  compatibility, but NEW GAMES should import them from                    ║
+      ║  wordpack-logic.js instead.                                              ║
+      ║                                                                           ║
+      ║  THE GOLDEN RULE:                                                        ║
+      ║  "Could this function plausibly be used by ANY future language           ║
+      ║  learning game?"                                                         ║
+      ║    • If YES (score 7-10) → Use/add to wordpack-logic.js                 ║
+      ║    • If NO (score 1-6) → Keep in your game file                         ║
+      ║                                                                           ║
+      ║  See wordpack-logic.js for extensive documentation and examples!         ║
+      ║                                                                           ║
+      ╚═══════════════════════════════════════════════════════════════════════════╝
+    */
+
+    /*
       ┌─────────────────────────────────────────────────────────────────────────┐
       │ VALID OPTIONS - Used for validating saved state                        │
       ├─────────────────────────────────────────────────────────────────────────┤
