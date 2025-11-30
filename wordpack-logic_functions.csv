@@ -1,53 +1,54 @@
-Function Name,What It Does,Reusability Score (1-10)
-switchLanguage,Switches active language between Chinese/Spanish/English saves to localStorage and reloads page,10
-getTargetLanguage,Gets target language from loaded module metadata wordColumns[0] works for all languages,10
-toTitleCase,Converts string to title case utility function for display formatting,10
-validateTargetLanguageConsistency,Validates all loaded modules have same target language prevents mixed language modules,9
-isChineseMode,Checks if current target language is Chinese determines if special handling needed,10
-updateChineseModeClass,Adds/removes chinese-mode CSS class on body based on language for conditional styling,9
-getTranslationsConfig,Gets available translation languages and their column indices from metadata,10
-getDefaultTranslation,Gets default translation language from metadata fallback when no saved preference,10
-getWordColumns,Gets word columns array from metadata defines structure of word data,10
-getValidLanguages,Gets valid I speak languages from metadata array of language codes,10
-getTtsLanguageCode,Maps language names to locale codes for TTS e.g. spanish to es-ES chinese to zh-CN,10
-decodeObfuscatedModule,Decodes obfuscated JS module base64 + zlib + reversed JSON 3-layer protection,10
-loadAct,Loads specific act by number and returns all wordpacks in that act with metadata,10
-shuffleArray,Fisher-Yates shuffle algorithm does not modify original array returns new shuffled copy,10
-combineAndShuffleWords,Combines base words and example words with difficulty-based filtering easy/medium/hard modes,10
-normalizeChar,Normalizes character for typing comparison removes accents lowercase preserves spaces,10
-findNextTypingPosition,Finds next valid typing position skipping spaces automatically marks spaces as typed,10
-checkTypingKey,Checks if user keypress matches target character accent/case insensitive returns correct/wrong/space,10
-isWordComplete,Checks if word is complete all non-space characters typed,10
-coupleChineseWithPinyin,Couples Chinese characters with pinyin syllables 1:1 handles Latin letters ATM DNA WhatsApp,10
-renderChineseWithPinyin,Renders coupled Chinese array as HTML element char on top pinyin below flex-column groups,10
-renderChineseText,Convenience function couples and renders Chinese in one call simplifies common operation,10
-getChineseHtml,Returns HTML string for Chinese text useful for innerHTML assignments,10
-saveState,Saves game state to localStorage voiceURI speed wordpack act language,10
-loadState,Loads game state from localStorage returns parsed object or null,10
-toggleDebugMode,Toggles debug mode on/off shows/hides debug table ephemeral not persisted,10
-updateDebugTable,Updates debug vocabulary table with current deck data language-aware rendering,10
-initializeDebugUI,Initializes debug UI elements in DOM table simulate buttons language selector,10
-normalizePronunciationText,Normalizes text for pronunciation comparison handles Chinese/Spanish/English differently,10
-getSimilarityThreshold,Gets dynamic similarity threshold based on word length shorter=lower threshold,10
-levenshteinDistance,Calculates Levenshtein edit distance between two strings string similarity algorithm,10
-calculateSimilarity,Calculates similarity percentage using normalization and Levenshtein distance returns score object,10
-getFeedbackMessage,Gets feedback message based on similarity score Perfect/Great/Almost/Try again,10
-getScoreClass,Gets CSS class name for score coloring excellent/good/okay/poor,10
-updatePronunciationDebug,Updates pronunciation debug info in debug panel shows all technical details,10
-normalizeString,Normalizes string for comparison removes spaces symbols lowercase for multiple choice,10
-generateWrongAnswers,Generates random wrong answers for multiple choice from entire act pool uses column 0,10
-generateWrongAnswersWithPinyin,Generates wrong answers for Chinese with pinyin returns objects with text and pinyin properties,10
-showStamp,Generic stamp display function - shows any stamp element with sound and auto-hide callback,10
-showSuccessStamp,Shows success stamp (green Card Removed) with ding sound - wrapper around showStamp,10
-showFailureStamp,Shows failure stamp (red Extra Practice) with buzz sound - wrapper around showStamp,10
-loadVoicesForLanguage,Load TTS voices for a specific language code filters voices by language,10
-speakWord,Speak text using TTS with configurable language voice and speed,10
-findVoiceByURI,Find voice by URI in voice array used for restoring saved voice from localStorage,10
-initializeTypingState,Initialize typing state for a target word returns state object with chars positions display,10
-getTypingDisplay,Update typing display based on progress returns string with underscores for untyped,10
-removeCard,Remove current card from deck returns new deck and adjusted index,9
-addDuplicateCards,Add duplicate cards to random positions for extra practice Confused button and wrong typing,9
-createDeckFromPack,Initialize deck from pack data combines base and example words creates card objects,9
-populateActSelector,Populate act selector dropdown from loaded metadata uses __actMeta no hardcoded data,9
-populatePackSelector,Populate wordpack selector from act data sorts by number shows title,9
-populateNativeLanguageSelector,Populate native language I speak dropdown from metadata translations config,9
+Function_Name,Description,Reusability_Score
+switchLanguage,Switches active language and reloads page with new modules,10
+getTargetLanguage,Returns target language being learned from loaded modules,10
+toTitleCase,Converts string to title case,9
+validateTargetLanguageConsistency,Validates all loaded modules have same target language,10
+isChineseMode,Checks if current target language is Chinese,10
+updateChineseModeClass,Applies or removes chinese-mode CSS class on body,10
+getTranslationsConfig,Returns available I speak languages from loaded metadata,10
+getDefaultTranslation,Returns default translation language from metadata,10
+getWordColumns,Returns word columns array from loaded metadata,10
+getValidLanguages,Returns array of valid I speak language codes,10
+getTtsLanguageCode,Maps language names to full locale codes for TTS,10
+decodeObfuscatedModule,Decodes obfuscated module using 3-layer protection,10
+loadAct,Loads specific act and returns all wordpacks,10
+shuffleArray,Shuffles array using Fisher-Yates algorithm,10
+combineAndShuffleWords,Combines and shuffles base words and examples by difficulty,10
+normalizeChar,Normalizes character for typing comparison (removes accents),10
+findNextTypingPosition,Finds next valid typing position skipping spaces,10
+checkTypingKey,Checks if user keypress is correct for next position,10
+isWordComplete,Checks if word is complete (all non-space chars typed),10
+coupleChineseWithPinyin,Couples Chinese characters with pinyin syllables 1:1,10
+renderChineseWithPinyin,Renders coupled Chinese array as HTML element,10
+renderChineseText,Couples and renders Chinese text in one call,10
+getChineseHtml,Returns HTML string for Chinese text rendering,10
+saveState,Saves game state to localStorage,10
+loadState,Loads game state from localStorage,10
+toggleDebugMode,Toggles debug mode on/off,9
+updateDebugTable,Updates debug vocabulary table with current deck data,9
+initializeDebugUI,Initializes debug UI elements in DOM,9
+normalizePronunciationText,Normalizes text for pronunciation comparison,10
+getSimilarityThreshold,Returns dynamic similarity threshold based on word length,10
+levenshteinDistance,Calculates Levenshtein edit distance between strings,10
+calculateSimilarity,Calculates similarity percentage using normalization,10
+getFeedbackMessage,Returns feedback message based on score,10
+getScoreClass,Returns CSS class name for score coloring,10
+updatePronunciationDebug,Updates pronunciation debug info in debug panel,9
+normalizeString,Normalizes string for comparison (removes spaces/symbols),10
+generateWrongAnswers,Generates random wrong answers for multiple choice,10
+generateWrongAnswersWithPinyin,Generates wrong answers for Chinese with pinyin,10
+showStamp,Shows stamp overlay with sound and auto-hide,10
+showSuccessStamp,Shows success stamp (green Card Removed),10
+showFailureStamp,Shows failure stamp (red Extra Practice),10
+loadVoicesForLanguage,Loads TTS voices filtered by language code,10
+speakWord,Speaks word using TTS with configuration,10
+findVoiceByURI,Finds voice by URI in voice array,10
+initializeTypingState,Initializes typing state for target word,10
+getTypingDisplay,Updates typing display based on current progress,10
+removeCard,Removes current card from deck and adjusts index,10
+addDuplicateCards,Adds duplicate cards to random positions for practice,10
+createDeckFromPack,Creates deck from pack data with card objects,10
+populateActSelector,Populates act selector dropdown from metadata,10
+populatePackSelector,Populates wordpack selector from act data,10
+populateNativeLanguageSelector,Populates I speak language dropdown from metadata,10
+setupDebugHotkey,Sets up Ctrl+backtick hotkey for debug mode,9
