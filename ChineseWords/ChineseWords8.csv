@@ -1,23 +1,23 @@
 chinese,pinyin,english,spanish,french,portuguese
-个,gè,one,uno,Individuel,Individual
-只,zhǐ,one,uno,Seulement,Somente
-条,tiáo,strip (MW),tira,bande,tira
-张,zhāng,piece (MW),pieza (MW),pièce (MW),peça (MW)
-件,jiàn,Piece,Pieza,Pièce,Peça
-本,běn,volume (MW),tomo (MW),tome (MW),volume (MW)
-杯,bēi,Cup,Copa,Coupe,Copa
-瓶,píng,Bottle,Botella,Bouteille,Garrafa
-块,kuài,piece (MW),pedazo,morceau,pedaço
+个,gè,classifier (general),clasificador general,classificateur général,classificador geral
+只,zhǐ,classifier (animals),clasificador (animales),classificateur (animaux),classificador (animais)
+条,tiáo,classifier (long items),clasificador (cosas largas),classificateur (objets longs),classificador (itens longos)
+张,zhāng,classifier (flat items),clasificador (objetos planos),classificateur (objets plats),classificador (itens planos)
+件,jiàn,classifier (items/clothes),clasificador (prendas),classificateur (vêtements),classificador (roupas)
+本,běn,classifier (books),clasificador (libros),classificateur (livres),classificador (livros)
+杯,bēi,cup (measure),taza (medida),tasse (mesure),copo (medida)
+瓶,píng,bottle (measure),botella (medida),bouteille (mesure),garrafa (medida)
+块,kuài,piece (measure),pedazo (medida),morceau (mesure),pedaço (medida)
 些,xiē,Some,Algunos,Certains,Alguns
-次,cì,time (MW),vez,fois,vez
-位,wèi,person (MW),persona,personne,pessoa
-双,shuāng,pair (MW),par,paire,par
-口,kǒu,Mouth,Boca,Bouche,Boca
-套,tào,set (MW),conjunto,ensemble,conjunto
-种,zhǒng,kind (MW),tipo,type,tipo
-排,pái,Row,Fila,Ligne,Linha
-群,qún,Group,Grupo,Groupe,Grupo
-副,fù,pair (MW),par,paire,par
+次,cì,time (occasion),vez,fois,vez
+位,wèi,person (polite),persona (cortesía),personne (politesse),pessoa (cortesia)
+双,shuāng,pair (measure),par,paire,par
+口,kǒu,mouth (measure),boca (medida),Bouche (mesure),Boca (medida)
+套,tào,set (measure),conjunto,ensemble,conjunto
+种,zhǒng,kind (measure),tipo,type,tipo
+排,pái,row (measure),fila (medida),ligne (mesure),linha (medida)
+群,qún,group (measure),Grupo,Groupe,Grupo
+副,fù,pair (measure),par,paire,par
 一个人,yí gè rén,One person,Una persona,Une personne,Uma pessoa
 首个,shǒu gè,First,Primero,Premier,Primeiro
 一只猫,yī zhī māo,One cat,Un gato,Un chat,Um gato
