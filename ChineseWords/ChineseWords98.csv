@@ -7,12 +7,12 @@ chinese,pinyin,english,spanish,french,portuguese
 知识,zhī shí,Knowledge,Conocimiento,Connaissance,Conhecimento
 能力,néng lì,Abilities,Habilidades,Capacités,Habilidades
 技能,jì néng,Skills,Habilidades,Compétences,Habilidades
-学历,xué lì,Education,Educación,Éducation,Educação
-文凭,wén píng,Diploma,Diplomado,Diplôme,Diploma
+学历,xué lì,Educational background,Formación académica,Niveau d’études,Escolaridade
+文凭,wén píng,Diploma,Diploma,Diplôme,Diploma
 学位,xué wèi,Degree,Grado,Diplôme,Grau
 课程,kè chéng,Courses,Cursos,Cours,Cursos
-专业,zhuān yè,Major,Mayor,Majeur,Maior
-科目,kē mù,Subjects,Materias,Sujets,Assuntos
+专业,zhuān yè,Major,Especialidad,Spécialité,Especialidade
+科目,kē mù,Subjects,Materias,Matières,Disciplinas
 进修,jìn xiū,Continuing education,Educación continua,Formation continue,Educação continuada
 自学,zì xué,Self-study,Autoestudio,Auto-apprentissage,Autoestudo
 教育好,jiào yù hǎo,Good education,Buena educación,Bonne éducation,Boa educação
@@ -22,7 +22,7 @@ chinese,pinyin,english,spanish,french,portuguese
 参加培训,cān jiā péi xùn,Participate in training,Participar en la formación,Participer à une formation,Participe na formação
 做培训,zuò péi xùn,Do training,Hacer entrenamiento,Faire une formation,Faça treinamento
 做研究,zuò yán jiū,Do research,Investigar,Faites des recherches,Faça pesquisas
-研究下,yán jiū xià,Study,Estudio,Étude,Estude
+研究下,yán jiū xià,Research,Investigar,Étudier,Pesquisar
 有学问,yǒu xué wèn,Be knowledgeable,Sea informado,Soyez bien informé,Tenha conhecimento
 做学问,zuò xué wèn,Be knowledgeable,Sea informado,Soyez bien informé,Tenha conhecimento
 有知识,yǒu zhī shí,Have knowledge,Tener conocimientos,Avoir des connaissances,Tenha conhecimento
@@ -41,8 +41,8 @@ chinese,pinyin,english,spanish,french,portuguese
 选课程,xuǎn kè chéng,Choose a course,Elige un curso,Choisissez un cours,Escolha um curso
 学专业,xué zhuān yè,Learn a major,Aprende una especialidad,Apprendre une majeure,Aprenda uma especialização
 选专业,xuǎn zhuān yè,Choose a major,Elige una especialidad,Choisissez une majeure,Escolha uma especialização
-考科目,kǎo kē mù,Test subjects,Sujetos de prueba,Sujets de test,Cobaias
-选科目,xuǎn kē mù,Select subjects,Seleccionar materias,Sélectionnez des sujets,Selecione os assuntos
+考科目,kǎo kē mù,Take subject exams,Exámenes de asignaturas,Passer les examens des matières,Fazer provas das disciplinas
+选科目,xuǎn kē mù,Select subjects,Seleccionar materias,Choisir les matières,Selecionar as disciplinas
 去进修,qù jìn xiū,Go to study,Ir a estudiar,Aller étudier,Vá estudar
 继续进修,jì xù jìn xiū,Continue to study,Continuar estudiando,Continuer à étudier,Continuar estudando
 靠自学,kào zì xué,Rely on self-study,Depender del autoestudio,S'appuyer sur l'auto-apprentissage,Confie no auto-estudo
