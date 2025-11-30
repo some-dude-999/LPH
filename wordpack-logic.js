@@ -1537,6 +1537,561 @@ function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// VISUAL FEEDBACK - STAMP FUNCTIONS
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Shows a stamp overlay with sound and auto-hide
+ * Generic function that can show any stamp (success, failure, etc.)
+ *
+ * @param {HTMLElement} stampElement - DOM element to show (e.g., removedStamp, addedStamp)
+ * @param {Function} soundFunction - Sound to play (e.g., playDingSound, playBuzzSound)
+ * @param {Function} onComplete - Callback to execute after stamp hides (optional)
+ * @param {number} duration - How long to show stamp in ms (default 1500)
+ *
+ * Example:
+ *   showStamp(removedStamp, playDingSound, () => console.log('Done'), 1500);
+ */
+function showStamp(stampElement, soundFunction, onComplete, duration = 1500) {
+  if (!stampElement) {
+    console.warn('[showStamp] No stamp element provided');
+    if (onComplete) onComplete();
+    return;
+  }
+
+  stampElement.classList.add('visible');
+  if (soundFunction) soundFunction();
+
+  setTimeout(() => {
+    stampElement.classList.remove('visible');
+    if (onComplete) onComplete();
+  }, duration);
+}
+
+/**
+ * Shows success stamp (green "Card Removed")
+ * Convenience wrapper around showStamp()
+ *
+ * @param {HTMLElement} stampElement - Success stamp element
+ * @param {Function} onComplete - Callback after animation (optional)
+ *
+ * Requires:
+ * - playDingSound() function available globally (from game-sounds.js)
+ * - stampElement with .visible CSS class support
+ */
+function showSuccessStamp(stampElement, onComplete) {
+  showStamp(stampElement, typeof playDingSound === 'function' ? playDingSound : null, onComplete);
+}
+
+/**
+ * Shows failure stamp (red "Extra Practice")
+ * Convenience wrapper around showStamp()
+ *
+ * @param {HTMLElement} stampElement - Failure stamp element
+ * @param {Function} onComplete - Callback after animation (optional)
+ *
+ * Requires:
+ * - playBuzzSound() function available globally (from game-sounds.js)
+ * - stampElement with .visible CSS class support
+ */
+function showFailureStamp(stampElement, onComplete) {
+  showStamp(stampElement, typeof playBuzzSound === 'function' ? playBuzzSound : null, onComplete);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// TEXT-TO-SPEECH (TTS) FUNCTIONS
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Load TTS voices for a specific language
+ * Filters available voices by language code
+ *
+ * @param {string} languageCode - TTS language code (e.g., 'es-ES', 'zh-CN', 'en-US')
+ * @returns {Array} - Array of available voices for that language
+ *
+ * Example:
+ *   const spanishVoices = loadVoicesForLanguage('es-ES');
+ *   console.log(`Found ${spanishVoices.length} Spanish voices`);
+ */
+function loadVoicesForLanguage(languageCode) {
+  if (!languageCode) return [];
+
+  const voices = speechSynthesis.getVoices();
+  return voices.filter(v => v.lang.startsWith(languageCode));
+}
+
+/**
+ * Speak a word using TTS
+ * Handles all TTS configuration (language, voice, speed)
+ *
+ * @param {string} text - Text to speak
+ * @param {Object} options - TTS options
+ * @param {string} options.languageCode - Language code (e.g., 'es-ES')
+ * @param {SpeechSynthesisVoice} options.voice - Selected voice (optional)
+ * @param {number} options.speed - Speech rate (default 1.0)
+ *
+ * Example:
+ *   speakWord('hola amigo', {
+ *     languageCode: 'es-ES',
+ *     voice: spanishVoices[0],
+ *     speed: 0.6
+ *   });
+ */
+function speakWord(text, options = {}) {
+  if (!text) return;
+
+  const {
+    languageCode = 'en-US',
+    voice = null,
+    speed = 1.0
+  } = options;
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = languageCode;
+  utterance.rate = speed;
+
+  if (voice) {
+    utterance.voice = voice;
+  }
+
+  speechSynthesis.cancel();
+  speechSynthesis.speak(utterance);
+}
+
+/**
+ * Find voice by URI in voice array
+ * Used for restoring saved voice from localStorage
+ *
+ * @param {string} voiceURI - Voice URI to find
+ * @param {Array} voices - Array of voices to search
+ * @returns {SpeechSynthesisVoice|null} - Found voice or null
+ */
+function findVoiceByURI(voiceURI, voices) {
+  if (!voiceURI || !voices || voices.length === 0) return null;
+  return voices.find(v => v.voiceURI === voiceURI) || null;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// TYPING DISPLAY FUNCTIONS
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Initialize typing state for a target word
+ * Returns a state object that can be used to track typing progress
+ *
+ * @param {string} targetWord - Word to type
+ * @returns {Object} - Typing state object
+ *   {
+ *     chars: Array<string>,           // Array of characters
+ *     typedPositions: Set<number>,    // Set of typed positions
+ *     wrongPositions: Array<number>,  // Array of wrong attempts
+ *     wrongAttempts: number,          // Total wrong attempts
+ *     wrongLetters: Array<Object>,    // Wrong letters with styling
+ *     typingDisplay: string           // Display string with underscores
+ *   }
+ *
+ * Example:
+ *   const state = initializeTypingState('hola amigo');
+ *   console.log(state.typingDisplay); // "_ _ _ _   _ _ _ _ _"
+ */
+function initializeTypingState(targetWord) {
+  if (!targetWord) {
+    return {
+      chars: [],
+      typedPositions: new Set(),
+      wrongPositions: [],
+      wrongAttempts: 0,
+      wrongLetters: [],
+      typingDisplay: ''
+    };
+  }
+
+  const chars = targetWord.split('');
+
+  // Initialize display with underscores for non-space characters
+  const typingDisplay = chars.map(c => c === ' ' ? ' ' : '_').join(' ');
+
+  return {
+    chars: chars,
+    typedPositions: new Set(),
+    wrongPositions: [],
+    wrongAttempts: 0,
+    wrongLetters: [],
+    typingDisplay: typingDisplay
+  };
+}
+
+/**
+ * Update typing display based on current progress
+ * Returns updated display string with underscores for untyped, letters for typed
+ *
+ * @param {Array<string>} chars - Array of characters
+ * @param {Set<number>} typedPositions - Set of typed positions
+ * @returns {string} - Display string (e.g., "h o l a   _ _ _ _ _")
+ *
+ * Example:
+ *   const chars = ['h', 'o', 'l', 'a', ' ', 'a', 'm', 'i', 'g', 'o'];
+ *   const typed = new Set([0, 1, 2, 3, 4]); // "hola " typed
+ *   const display = getTypingDisplay(chars, typed);
+ *   // Returns: "h o l a   _ _ _ _ _"
+ */
+function getTypingDisplay(chars, typedPositions) {
+  return chars
+    .map((char, i) => {
+      if (typedPositions.has(i)) {
+        return char; // Typed - show actual character
+      } else if (char === ' ') {
+        return ' '; // Space - always show space
+      } else {
+        return '_'; // Untyped - show underscore
+      }
+    })
+    .join(' '); // Join with spaces for readability
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// DECK MANIPULATION FUNCTIONS
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Remove current card from deck
+ * Returns new deck and adjusted index
+ *
+ * @param {Array} deck - Current deck
+ * @param {number} currentIndex - Current card index
+ * @returns {Object} - { deck: Array, index: number }
+ *
+ * Example:
+ *   const result = removeCard(currentDeck, 5);
+ *   currentDeck = result.deck;
+ *   currentIndex = result.index;
+ */
+function removeCard(deck, currentIndex) {
+  if (!deck || deck.length === 0) {
+    return { deck: [], index: 0 };
+  }
+
+  if (deck.length === 1) {
+    // Last card - return empty deck
+    return { deck: [], index: 0 };
+  }
+
+  // Remove card at current index
+  const newDeck = [...deck];
+  newDeck.splice(currentIndex, 1);
+
+  // Adjust index if we're now past the end
+  let newIndex = currentIndex;
+  if (newIndex >= newDeck.length) {
+    newIndex = 0;
+  }
+
+  return { deck: newDeck, index: newIndex };
+}
+
+/**
+ * Add duplicate cards to random positions in deck
+ * Used for "Confused" button and wrong typing - adds extra practice
+ *
+ * @param {Array} deck - Current deck
+ * @param {Object} card - Card to duplicate
+ * @param {number} count - Number of duplicates to add (default 2)
+ * @returns {Array} - New deck with duplicates inserted
+ *
+ * Example:
+ *   const newDeck = addDuplicateCards(currentDeck, currentDeck[5], 2);
+ *   // Adds 2 copies of card at index 5 to random positions
+ */
+function addDuplicateCards(deck, card, count = 2) {
+  if (!deck || !card) {
+    return deck || [];
+  }
+
+  const newDeck = [...deck];
+
+  for (let i = 0; i < count; i++) {
+    // Insert at random position (not at the very end to avoid immediate re-encounter)
+    const maxInsertPos = Math.max(1, newDeck.length - 3);
+    const randomPos = Math.floor(Math.random() * maxInsertPos) + 1;
+
+    // Create a copy of the card
+    const duplicate = { ...card };
+
+    newDeck.splice(randomPos, 0, duplicate);
+  }
+
+  return newDeck;
+}
+
+/**
+ * Initialize deck from pack data
+ * Combines base words and example words, creates card objects
+ *
+ * @param {Object} pack - Pack object with baseWords and exampleWords
+ * @param {Object} options - Configuration options
+ * @param {string} options.targetLang - Target language code (e.g., 'spanish')
+ * @param {string} options.nativeLang - Native language code (e.g., 'english')
+ * @param {Array} options.wordColumns - Column names from __actMeta
+ * @param {Object} options.translations - Translation config from __actMeta
+ * @param {string} options.difficulty - Difficulty level ('easy', 'medium', 'hard')
+ * @returns {Array} - Array of card objects with front/back/type
+ *
+ * Example:
+ *   const deck = createDeckFromPack(pack, {
+ *     targetLang: 'spanish',
+ *     nativeLang: 'english',
+ *     wordColumns: ['spanish', 'english', 'chinese', 'pinyin'],
+ *     translations: { english: { index: 1, display: 'English' } },
+ *     difficulty: 'hard'
+ *   });
+ */
+function createDeckFromPack(pack, options = {}) {
+  const {
+    targetLang = 'spanish',
+    nativeLang = 'english',
+    wordColumns = [],
+    translations = {},
+    difficulty = 'hard'
+  } = options;
+
+  if (!pack || !pack.baseWords) {
+    console.warn('[createDeckFromPack] Invalid pack data');
+    return [];
+  }
+
+  // Combine and shuffle words based on difficulty
+  const combinedWords = combineAndShuffleWords(pack, difficulty);
+
+  if (combinedWords.length === 0) {
+    console.warn('[createDeckFromPack] No words in pack');
+    return [];
+  }
+
+  // Get column indices
+  const targetColIndex = wordColumns.indexOf(targetLang);
+  const nativeConfig = translations[nativeLang];
+
+  if (targetColIndex === -1 || !nativeConfig) {
+    console.error('[createDeckFromPack] Invalid language configuration');
+    return [];
+  }
+
+  const nativeColIndex = nativeConfig.index;
+
+  // Check if target or native language is Chinese (needs pinyin)
+  const targetIsChinese = targetLang === 'chinese';
+  const nativeIsChinese = nativeLang === 'chinese';
+  const pinyinColIndex = wordColumns.indexOf('pinyin');
+
+  // Build deck
+  const deck = combinedWords.map((item, index) => {
+    const word = item.word;
+    const type = item.type;
+
+    const card = {
+      id: `card-${index}`,
+      rawWord: word,
+      type: type
+    };
+
+    // Front (target language)
+    if (targetIsChinese && pinyinColIndex !== -1) {
+      card.chinese = word[targetColIndex] || '';
+      card.pinyin = word[pinyinColIndex] || '';
+      card.targetWord = card.chinese; // For TTS
+    } else {
+      card[targetLang] = word[targetColIndex] || '';
+      card.targetWord = word[targetColIndex] || '';
+    }
+
+    // Back (native language)
+    if (nativeIsChinese && pinyinColIndex !== -1) {
+      card.translationChinese = word[nativeColIndex] || '';
+      card.translationPinyin = word[pinyinColIndex] || '';
+      card.translation = card.translationChinese;
+      card.translationIsChinese = true;
+    } else {
+      card.translation = word[nativeColIndex] || '';
+      card.translationIsChinese = false;
+    }
+
+    return card;
+  });
+
+  return deck;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// UI POPULATION FUNCTIONS
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Populate act selector dropdown from loaded metadata
+ * Uses __actMeta from modules (no hardcoded data)
+ *
+ * @param {HTMLSelectElement} selectElement - Act dropdown element
+ * @param {Object} loadedActMeta - Loaded __actMeta object from modules
+ * @param {Function} onChange - Callback when act changes (receives actNumber)
+ *
+ * Example:
+ *   populateActSelector(actSelect, window.loadedActMeta, (actNum) => {
+ *     console.log(`Switched to Act ${actNum}`);
+ *     loadAct(actNum);
+ *   });
+ */
+function populateActSelector(selectElement, loadedActMeta, onChange) {
+  if (!selectElement) {
+    console.warn('[populateActSelector] No select element provided');
+    return;
+  }
+
+  selectElement.innerHTML = '';
+
+  if (!loadedActMeta || Object.keys(loadedActMeta).length === 0) {
+    console.warn('[populateActSelector] No act metadata loaded');
+    return;
+  }
+
+  // Get act numbers and sort
+  const actNumbers = Object.keys(loadedActMeta)
+    .map(Number)
+    .filter(n => !isNaN(n))
+    .sort((a, b) => a - b);
+
+  // Create options
+  actNumbers.forEach(actNum => {
+    const meta = loadedActMeta[actNum];
+    const actName = meta && meta.actName ? meta.actName : `Act ${actNum}`;
+
+    const option = document.createElement('option');
+    option.value = actNum;
+    option.textContent = `Act ${actNum}: ${actName}`;
+    selectElement.appendChild(option);
+  });
+
+  // Add change listener if provided
+  if (onChange && typeof onChange === 'function') {
+    selectElement.addEventListener('change', (e) => {
+      const actNum = parseInt(e.target.value);
+      onChange(actNum);
+    });
+  }
+}
+
+/**
+ * Populate wordpack selector dropdown from act data
+ * Sorts packs by number and shows title
+ *
+ * @param {HTMLSelectElement} selectElement - Pack dropdown element
+ * @param {Object} actData - Act data object (all packs in the act)
+ * @param {Function} onChange - Callback when pack changes (receives packKey)
+ *
+ * Example:
+ *   populatePackSelector(packSelect, act1Data, (packKey) => {
+ *     console.log(`Selected pack: ${packKey}`);
+ *     initializeDeck(packKey);
+ *   });
+ */
+function populatePackSelector(selectElement, actData, onChange) {
+  if (!selectElement) {
+    console.warn('[populatePackSelector] No select element provided');
+    return;
+  }
+
+  selectElement.innerHTML = '';
+
+  if (!actData || Object.keys(actData).length === 0) {
+    console.warn('[populatePackSelector] No act data provided');
+    return;
+  }
+
+  // Get pack keys and sort by wordpack number
+  const packKeys = Object.keys(actData)
+    .filter(key => key !== '__actMeta') // Exclude metadata
+    .filter(key => actData[key] && actData[key].meta); // Must have meta
+
+  packKeys.sort((a, b) => {
+    const numA = actData[a].meta.wordpack || 0;
+    const numB = actData[b].meta.wordpack || 0;
+    return numA - numB;
+  });
+
+  // Create options
+  packKeys.forEach(packKey => {
+    const pack = actData[packKey];
+    const packNum = pack.meta.wordpack || '?';
+    const packTitle = pack.meta.english || packKey;
+
+    const option = document.createElement('option');
+    option.value = packKey;
+    option.textContent = `Pack ${packNum}: ${packTitle}`;
+    selectElement.appendChild(option);
+  });
+
+  // Add change listener if provided
+  if (onChange && typeof onChange === 'function') {
+    selectElement.addEventListener('change', (e) => {
+      const packKey = e.target.value;
+      onChange(packKey);
+    });
+  }
+}
+
+/**
+ * Populate native language ("I speak") dropdown from metadata
+ * Uses translations from __actMeta (no hardcoded data)
+ *
+ * @param {HTMLSelectElement} selectElement - Language dropdown element
+ * @param {Object} translations - Translations config from __actMeta
+ * @param {string} currentValue - Currently selected language code (optional)
+ * @param {Function} onChange - Callback when language changes (receives languageCode)
+ *
+ * Example:
+ *   const translations = {
+ *     english: { index: 1, display: 'English' },
+ *     chinese: { index: 2, display: '中文' }
+ *   };
+ *   populateNativeLanguageSelector(select, translations, 'english', (lang) => {
+ *     console.log(`Switched to: ${lang}`);
+ *   });
+ */
+function populateNativeLanguageSelector(selectElement, translations, currentValue, onChange) {
+  if (!selectElement) {
+    console.warn('[populateNativeLanguageSelector] No select element provided');
+    return;
+  }
+
+  selectElement.innerHTML = '';
+
+  if (!translations || Object.keys(translations).length === 0) {
+    console.warn('[populateNativeLanguageSelector] No translations provided - dropdown empty');
+    return;
+  }
+
+  // Create options from translations config
+  Object.entries(translations).forEach(([code, config]) => {
+    const option = document.createElement('option');
+    option.value = code;
+    option.textContent = config.display || code;
+
+    // Set selected if it matches current value
+    if (code === currentValue) {
+      option.selected = true;
+    }
+
+    selectElement.appendChild(option);
+  });
+
+  // Add change listener if provided
+  if (onChange && typeof onChange === 'function') {
+    selectElement.addEventListener('change', (e) => {
+      const languageCode = e.target.value;
+      onChange(languageCode);
+    });
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // EXPORT FOR MODULE SYSTEMS (optional - currently using globals)
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -1558,6 +2113,26 @@ if (typeof module !== 'undefined' && module.exports) {
     generateWrongAnswersWithPinyin,
     toggleDebugMode,
     updateDebugTable,
-    initializeDebugUI
+    initializeDebugUI,
+    combineAndShuffleWords,
+    // Visual feedback
+    showStamp,
+    showSuccessStamp,
+    showFailureStamp,
+    // TTS functions
+    loadVoicesForLanguage,
+    speakWord,
+    findVoiceByURI,
+    // Typing functions
+    initializeTypingState,
+    getTypingDisplay,
+    // Deck manipulation
+    removeCard,
+    addDuplicateCards,
+    createDeckFromPack,
+    // UI population
+    populateActSelector,
+    populatePackSelector,
+    populateNativeLanguageSelector
   };
 }
