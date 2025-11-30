@@ -1,39 +1,39 @@
 Function Name,What It Does,Reusability Score (1-10)
 switchLanguage,Switches active language between Chinese/Spanish/English saves to localStorage and reloads page,10
-getTargetLanguage,Gets target language from loaded module metadata (wordColumns[0]),10
-toTitleCase,Converts string to title case (utility function),10
-validateTargetLanguageConsistency,Validates all loaded modules have same target language,10
-isChineseMode,Checks if current target language is Chinese (needs special handling),10
-updateChineseModeClass,Adds/removes chinese-mode CSS class on body based on language,9
+getTargetLanguage,Gets target language from loaded module metadata wordColumns[0] works for all languages,10
+toTitleCase,Converts string to title case utility function for display formatting,10
+validateTargetLanguageConsistency,Validates all loaded modules have same target language prevents mixed language modules,9
+isChineseMode,Checks if current target language is Chinese determines if special handling needed,10
+updateChineseModeClass,Adds/removes chinese-mode CSS class on body based on language for conditional styling,9
 getTranslationsConfig,Gets available translation languages and their column indices from metadata,10
-getDefaultTranslation,Gets default translation language from metadata,10
-getWordColumns,Gets word columns array from metadata (e.g. ['spanish' 'english' 'chinese' 'pinyin']),10
-getValidLanguages,Gets valid I speak languages from metadata,10
-getTtsLanguageCode,Maps language names to locale codes for TTS (e.g. 'es-ES' 'zh-CN'),10
-decodeObfuscatedModule,Decodes obfuscated JS module (base64 + zlib + reversed JSON),10
-loadAct,Loads specific act by number and returns all wordpacks in that act,10
-shuffleArray,Fisher-Yates shuffle algorithm (does not modify original array),10
-combineAndShuffleWords,Combines base words and example words with difficulty-based filtering,10
-normalizeChar,Normalizes character for typing comparison (removes accents lowercase),10
-findNextTypingPosition,Finds next valid typing position skipping spaces automatically,10
-checkTypingKey,Checks if user's keypress matches target character (accent/case insensitive),10
-isWordComplete,Checks if word is complete (all non-space characters typed),10
-coupleChineseWithPinyin,Couples Chinese characters with pinyin syllables 1:1 (handles Latin letters),10
-renderChineseWithPinyin,Renders coupled Chinese array as HTML element (char on top pinyin below),10
-renderChineseText,Convenience function that couples and renders Chinese in one call,10
-getChineseHtml,Returns HTML string for Chinese text (useful for innerHTML),10
-saveState,Saves game state to localStorage (voiceURI speed wordpack act language),10
-loadState,Loads game state from localStorage,10
-toggleDebugMode,Toggles debug mode on/off (shows/hides debug table),10
-updateDebugTable,Updates debug vocabulary table with current deck data,10
-initializeDebugUI,Initializes debug UI elements in DOM (table simulate buttons language selector),10
-normalizePronunciationText,Normalizes text for pronunciation comparison (handles Chinese/Spanish/English),10
-getSimilarityThreshold,Gets dynamic similarity threshold based on word length,10
-levenshteinDistance,Calculates Levenshtein edit distance between two strings,10
-calculateSimilarity,Calculates similarity percentage using normalization and Levenshtein distance,10
-getFeedbackMessage,Gets feedback message based on similarity score (Perfect/Great/Almost/Try again),10
-getScoreClass,Gets CSS class name for score coloring (excellent/good/okay/poor),10
-updatePronunciationDebug,Updates pronunciation debug info in debug panel,10
-normalizeString,Normalizes string for comparison (removes spaces symbols lowercase),10
-generateWrongAnswers,Generates random wrong answers for multiple choice from entire act pool,10
-generateWrongAnswersWithPinyin,Generates wrong answers for Chinese with pinyin (returns objects with text and pinyin),10
+getDefaultTranslation,Gets default translation language from metadata fallback when no saved preference,10
+getWordColumns,Gets word columns array from metadata defines structure of word data,10
+getValidLanguages,Gets valid I speak languages from metadata array of language codes,10
+getTtsLanguageCode,Maps language names to locale codes for TTS e.g. spanish to es-ES chinese to zh-CN,10
+decodeObfuscatedModule,Decodes obfuscated JS module base64 + zlib + reversed JSON 3-layer protection,10
+loadAct,Loads specific act by number and returns all wordpacks in that act with metadata,10
+shuffleArray,Fisher-Yates shuffle algorithm does not modify original array returns new shuffled copy,10
+combineAndShuffleWords,Combines base words and example words with difficulty-based filtering easy/medium/hard modes,10
+normalizeChar,Normalizes character for typing comparison removes accents lowercase preserves spaces,10
+findNextTypingPosition,Finds next valid typing position skipping spaces automatically marks spaces as typed,10
+checkTypingKey,Checks if user keypress matches target character accent/case insensitive returns correct/wrong/space,10
+isWordComplete,Checks if word is complete all non-space characters typed,10
+coupleChineseWithPinyin,Couples Chinese characters with pinyin syllables 1:1 handles Latin letters ATM DNA WhatsApp,10
+renderChineseWithPinyin,Renders coupled Chinese array as HTML element char on top pinyin below flex-column groups,10
+renderChineseText,Convenience function couples and renders Chinese in one call simplifies common operation,10
+getChineseHtml,Returns HTML string for Chinese text useful for innerHTML assignments,10
+saveState,Saves game state to localStorage voiceURI speed wordpack act language,10
+loadState,Loads game state from localStorage returns parsed object or null,10
+toggleDebugMode,Toggles debug mode on/off shows/hides debug table ephemeral not persisted,10
+updateDebugTable,Updates debug vocabulary table with current deck data language-aware rendering,10
+initializeDebugUI,Initializes debug UI elements in DOM table simulate buttons language selector,10
+normalizePronunciationText,Normalizes text for pronunciation comparison handles Chinese/Spanish/English differently,10
+getSimilarityThreshold,Gets dynamic similarity threshold based on word length shorter=lower threshold,10
+levenshteinDistance,Calculates Levenshtein edit distance between two strings string similarity algorithm,10
+calculateSimilarity,Calculates similarity percentage using normalization and Levenshtein distance returns score object,10
+getFeedbackMessage,Gets feedback message based on similarity score Perfect/Great/Almost/Try again,10
+getScoreClass,Gets CSS class name for score coloring excellent/good/okay/poor,10
+updatePronunciationDebug,Updates pronunciation debug info in debug panel shows all technical details,10
+normalizeString,Normalizes string for comparison removes spaces symbols lowercase for multiple choice,10
+generateWrongAnswers,Generates random wrong answers for multiple choice from entire act pool uses column 0,10
+generateWrongAnswersWithPinyin,Generates wrong answers for Chinese with pinyin returns objects with text and pinyin properties,10
