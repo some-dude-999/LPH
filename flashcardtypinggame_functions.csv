@@ -1,0 +1,47 @@
+Function Name,What It Does,Reusability Score (1-10)
+saveState,Wrapper that builds game-specific state object and calls shared saveState,8
+loadState,Wrapper that calls shared loadState function,8
+showSuccessStamp,Shows green 'Card Removed' stamp with ding sound for 1.5s then executes callback,3
+showFailureStamp,Shows red 'Extra Practice' stamp with buzz sound for 1.5s then executes callback,3
+showStartingCard,Navigates to starting/menu card (saves current position shows menu),2
+exitStartingCard,Returns from starting card to saved position in deck,2
+renderMenuCard,Renders the menu card with all settings dropdowns (looks like flashcard),2
+populateWordpackSelectorOnCard,Populates wordpack dropdown on menu card for selected act,4
+switchMode,Switches between game modes (flashcard/spelling/pronunciation/translation),9
+initializeTypingDisplay,Initializes typing state for spelling and translation modes,10
+addDuplicateCards,Adds duplicate cards to deck for extra practice (inserts randomly after current),9
+handleTypingInput,Handles typing input validation for spelling/translation modes,10
+isWritingComplete,Checks if current word is complete in translation mode,10
+loadVoices,Loads TTS voices filtered by language code from loaded modules,10
+populateVoiceSelector,DEPRECATED - Voice selector now populated in renderMenuCard,1
+populateActSelector,Populates act dropdown from loaded module metadata,9
+populateLanguageSelector,Populates 'I speak' language dropdown from module translations config,9
+initializeTooltips,Initializes all tooltips for mode buttons and control buttons,8
+createButtonTooltip,Creates individual button tooltip with HTML content,8
+restoreSavedState,Restores all saved state from localStorage (act pack language voice speed),9
+updateBackLabel,Updates back label text based on selected native language,5
+initializeDeck,Initializes deck from wordpack (combines base+example words shuffles creates card objects),10
+restartCurrentPack,Restarts current pack by reinitializing deck from current wordpack key,9
+goToNextPack,Advances to next pack in sequence (wraps to first if at end),9
+generateWeathering,Generates random weathering patterns for flashcard distressing effect,1
+renderTypingDisplay,Renders typing progress display with correct/wrong/unfilled characters,7
+renderTargetWord,Renders target word on flashcard front (handles Chinese with pinyin),6
+renderTranslation,Renders translation on flashcard back (handles Chinese with pinyin),6
+updateDisplay,Main display update function - updates all card elements based on current state,3
+goToPrevious,Navigates to previous card in deck,4
+goToNext,Navigates to next card in deck,4
+moveToNextCard,Moves to next card (handles edge cases and auto-initialization),4
+flipCard,Flips flashcard to show back side (adds CSS class plays sound),2
+unflipCard,Unflips flashcard to show front side (removes CSS class),2
+removeCurrentCard,Removes current card from deck (marks as mastered),9
+addConfusedCards,Adds 2 duplicate cards for extra practice when user marks confused,9
+resetDeck,Resets deck to original state (reloads wordpack),9
+speakTargetWord,Speaks target word using TTS (generic name for any language),10
+speakSpanish,Speaks Spanish word using TTS (legacy name kept for compatibility),10
+setSpeed,Sets TTS speech speed and updates active speed button styling,9
+showFeedback,Shows pronunciation feedback with score and comparison,8
+hideFeedback,Hides pronunciation feedback overlay,8
+startListening,Starts speech recognition for pronunciation mode,10
+updateWordpackTitle,Updates wordpack title display from current pack metadata,5
+startGame,Starts game by exiting menu card and initializing first wordpack,3
+updateDebugTableWrapper,Wrapper function that passes local variables to shared updateDebugTable,2
