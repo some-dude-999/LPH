@@ -5,8 +5,8 @@ chinese,pinyin,english,spanish,french,portuguese
 求职,qiú zhí,Job hunting,Búsqueda de empleo,Recherche d'emploi,Procura de emprego
 找工作,zhǎo gōng zuò,Looking for a job,Buscando trabajo,À la recherche d'un emploi,Procurando emprego
 面试,miàn shì,Interview,Entrevista,Entretien,Entrevista
-简历,jiǎn lì,Resume,Reanudar,Reprendre,Currículo
-录用,lù yòng,Recruitment,Reclutamiento,Recrutement,Recrutamento
+简历,jiǎn lì,Resume,Currículum,CV,Currículo
+录用,lù yòng,Hire,Contratación,Embauche,Contratação
 入职,rù zhí,Onboarding,Incorporación,Intégration,Integração
 试用期,shì yòng qī,Probationary period,Período de prueba,Période probatoire,Período probatório
 转正,zhuǎn zhèng,Regularization,Regularización,Régularisation,Regularização
@@ -14,14 +14,14 @@ chinese,pinyin,english,spanish,french,portuguese
 加薪,jiā xīn,Salary increase,Aumento salarial,Augmentation de salaire,Aumento salarial
 调动,diào dòng,Transfer,Transferencia,Transfert,Transferência
 辞职,cí zhí,Resignation,Renuncia,Démission,Renúncia
-跳槽,tiào cáo,Job hopping,Salto de trabajo,Changement d'emploi,Salto de empregos
+跳槽,tiào cáo,Job hopping,Cambiar de trabajo,Changement d'emploi,Mudar de emprego
 什么职业,shén me zhí yè,What career,Que carrera,Quelle carrière,Que carreira
 选职业,xuǎn zhí yè,Choose a career,Elige una carrera,Choisissez une carrière,Escolha uma carreira
 工作忙,gōng zuò máng,Busy at work,Ocupado en el trabajo,Occupé au travail,Ocupado no trabalho
 有工作,yǒu gōng zuò,Have a job,Tener un trabajo,Avoir un travail,Ter um emprego
 就业率,jiù yè lǜ,Employment rate,Tasa de empleo,Taux d'emploi,Taxa de emprego
 促进就业,cù jìn jiù yè,Promote employment,Promover el empleo,Promouvoir l'emploi,Promover o emprego
-去求职,qù qiú zhí,Go for a job,Ir a buscar trabajo,Cherchez un emploi,Arrume um emprego
+去求职,qù qiú zhí,Go job hunting,Ir a buscar trabajo,Cherchez un emploi,Procurar emprego
 正在求职,zhèng zài qiú zhí,Looking for a job,Buscando trabajo,À la recherche d'un emploi,Procurando emprego
 找工作难,zhǎo gōng zuò nán,Difficult to find a job,Difícil encontrar trabajo,Difficile de trouver un emploi,Difícil encontrar emprego
 帮找工作,bāng zhǎo gōng zuò,Help find a job,Ayuda a encontrar trabajo,Aide à trouver un emploi,Ajude a encontrar um emprego
@@ -35,7 +35,7 @@ chinese,pinyin,english,spanish,french,portuguese
 刚入职,gāng rù zhí,Newly hired,Recién contratado,Nouvellement embauché,Recém-contratado
 试用期内,shì yòng qī nèi,Within the probationary period,Dentro del período de prueba,Pendant la période probatoire,Durante o período probatório
 过试用期,guò shì yòng qī,Passed the probationary period,Pasó el período de prueba,Réussite de la période probatoire,Passou no período probatório
-申请转正,shēn qǐng zhuǎn zhèng,Apply for full-time,Solicite tiempo completo,Postuler à temps plein,Inscreva-se em período integral
+申请转正,shēn qǐng zhuǎn zhèng,Apply for a permanent position,Solicitar puesto fijo,Demander une titularisation,Pedir efetivação
 已转正,yǐ zhuǎn zhèng,Already full-time,Ya a tiempo completo,Déjà à temps plein,Já em tempo integral
 申请升职,shēn qǐng shēng zhí,Apply for promotion,Solicitar promoción,Demander une promotion,Candidate-se à promoção
 获得升职,huò dé shēng zhí,Get a promotion,Consigue una promoción,Obtenez une promotion,Ganhe uma promoção

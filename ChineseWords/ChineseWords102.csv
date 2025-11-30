@@ -1,10 +1,10 @@
 chinese,pinyin,english,spanish,french,portuguese
 过程,guò chéng,Process,Proceso,Processus,Processo
 流程,liú chéng,Process,Proceso,Processus,Processo
-程序,chéng xù,Program,Programa,Programme,Programa
+程序,chéng xù,Procedure,Procedimiento,Procédure,Procedimento
 步骤,bù zhòu,Step,Paso,Étape,Etapa
 阶段,jiē duàn,Phase,Fase,Phases,Fase
-环节,huán jié,Link,Enlace,Lien,Ligação
+环节,huán jié,Stage,Etapa,Étape,Etapa
 首先,shǒu xiān,First,Primero,Premier,Primeiro
 其次,qí cì,Next,Siguiente,Suivant,Próximo
 然后,rán hòu,Then,Entonces,Puis,Então
@@ -17,16 +17,16 @@ chinese,pinyin,english,spanish,french,portuguese
 终结,zhōng jié,End,Fin,Fin,Fim
 整个过程,zhěng gè guò chéng,Whole process,Todo el proceso,Processus complet,Todo o processo
 在过程中,zài guò chéng zhōng,In process,En proceso,En cours,Em processo
-工作流程,gōng zuò liú chéng,Work flow,Flujo de trabajo,Flux de travail,Fluxo de trabalho
+工作流程,gōng zuò liú chéng,Workflow,Flujo de trabajo,Flux de travail,Fluxo de trabalho
 走流程,zǒu liú chéng,Follow the process,Sigue el proceso,Suivez le processus,Acompanhe o processo
 操作程序,cāo zuò chéng xù,Operation procedure,Procedimiento de operación,Procédure de fonctionnement,Procedimento de operação
-按程序,àn chéng xù,By procedure,Por procedimiento,Par procédure,Por procedimento
+按程序,àn chéng xù,According to procedure,Según el procedimiento,Selon la procédure,Conforme o procedimento
 操作步骤,cāo zuò bù zhòu,Operation steps,Pasos de la operación,Étapes de fonctionnement,Etapas da operação
 分步骤,fēn bù zhòu,Step by step,Paso a paso,Pas à pas,Passo a passo
 不同阶段,bù tóng jiē duàn,Different stages,Diferentes etapas,Différentes étapes,Diferentes etapas
 在这阶段,zài zhè jiē duàn,At this stage,En esta etapa,A ce stade,Nesta fase
-关键环节,guān jiàn huán jié,Key links,Enlaces clave,Liens clés,Links principais
-每个环节,měi gè huán jié,Each link,Cada enlace,Chaque lien,Cada link
+关键环节,guān jiàn huán jié,Key stages,Etapas clave,Étapes clés,Etapas principais
+每个环节,měi gè huán jié,Each stage,Cada etapa,Chaque étape,Cada etapa
 首先是,shǒu xiān shì,First,Primero,Premier,Primeiro
 首先说,shǒu xiān shuō,First say,Primero di,Dites d’abord,Primeiro diga
 其次是,qí cì shì,Secondly,En segundo lugar,Deuxièmement,Em segundo lugar
@@ -38,12 +38,12 @@ chinese,pinyin,english,spanish,french,portuguese
 最后是,zuì hòu shì,Finally,Finalmente,Enfin,Finalmente
 最后说,zuì hòu shuō,Finally say,Finalmente di,Dites enfin,Finalmente diga
 最终是,zuì zhōng shì,Finally,Finalmente,Enfin,Finalmente
-最终会,zuì zhōng huì,Finally will,Finalmente lo haré,"Finalement,",Finalmente irei
+最终会,zuì zhōng huì,Will eventually,Al final terminará,Finira par,Acabará por
 完成了,wán chéng le,Completed,Completado,Terminé,Concluído
 已完成,yǐ wán chéng,Completed,Completado,Terminé,Concluído
 有进展,yǒu jìn zhǎn,There is progress,Hay avances,Il y a des progrès,Há progresso
 看进展,kàn jìn zhǎn,Look at the progress,Mira el progreso,Regardez les progrès,Veja o progresso
 看进度,kàn jìn dù,Look at the progress,Mira el progreso,Regardez les progrès,Veja o progresso
-赶进度,gǎn jìn dù,Catch up on progress,Póngase al día con el progreso,Rattraper les progrès,Acompanhar o progresso
+赶进度,gǎn jìn dù,Speed up progress,Acelerar el progreso,Accélérer l’avancement,Acelerar o andamento
 终结了,zhōng jié le,It's over,Se acabó,C'est fini,Acabou
 宣告终结,xuān gào zhōng jié,Declare the end,Declarar el fin,Déclarer la fin,Declare o fim
