@@ -2036,87 +2036,21 @@
     let targetLanguageDisplay = null; // Title case version for UI: 'Spanish', 'Chinese', 'English'
 
     // Helper to get the target language from loaded modules
-    function getTargetLanguage() {
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.wordColumns && meta.wordColumns[0]) {
-          return meta.wordColumns[0].toLowerCase();
-        }
-      }
-      return null;
-    }
-
-    // Helper to get title case version of target language
-    function toTitleCase(str) {
-      if (!str) return '';
-      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-    }
-
-    // Validate that all loaded modules have the same target language
-    function validateTargetLanguageConsistency() {
-      const languages = new Set();
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.wordColumns && meta.wordColumns[0]) {
-          languages.add(meta.wordColumns[0].toLowerCase());
-        }
-      }
-      if (languages.size > 1) {
-        const langList = Array.from(languages).join(', ');
-        console.error(`[FATAL] Modules have inconsistent target languages: ${langList}`);
-        console.error('All modules must have the same wordColumns[0] value!');
-        return false;
-      }
-      return true;
-    }
-
-    // Check if the target language is Chinese (requires special handling)
-    function isChineseMode() {
-      return targetLanguage === 'chinese';
-    }
-
-    // Apply or remove Chinese mode CSS class
-    function updateChineseModeClass() {
-      if (isChineseMode()) {
-        document.body.classList.add('chinese-mode');
-      } else {
-        document.body.classList.remove('chinese-mode');
-      }
-    }
-
-    // Helper to get translations config from first loaded act's __actMeta
-    function getTranslationsConfig() {
-      // Find first loaded act that has __actMeta
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.translations) {
-          return meta.translations;
-        }
-      }
-      return null; // No modules loaded yet
-    }
-
-    // Helper to get default translation from loaded metadata
-    function getDefaultTranslation() {
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.defaultTranslation) {
-          return meta.defaultTranslation;
-        }
-      }
-      return 'english'; // Fallback
-    }
-
-    // Helper to get word columns from loaded metadata
-    function getWordColumns() {
-      for (const actNum of Object.keys(loadedActMeta)) {
-        const meta = loadedActMeta[actNum];
-        if (meta && meta.wordColumns) {
-          return meta.wordColumns;
-        }
-      }
-      return null;
-    }
+    // ============================================================
+    // LANGUAGE DETECTION & METADATA - Now in wordpack-logic.js
+    // ============================================================
+    // All these functions moved to wordpack-logic.js for reuse:
+    // - getTargetLanguage()
+    // - toTitleCase()
+    // - validateTargetLanguageConsistency()
+    // - isChineseMode()
+    // - updateChineseModeClass()
+    // - getTranslationsConfig()
+    // - getDefaultTranslation()
+    // - getWordColumns()
+    // - getValidLanguages()
+    // - getTtsLanguageCode()
+    // ============================================================
 
     let currentDeck = [];
     let originalDeck = [];
@@ -2163,168 +2097,17 @@
       return null; // No modules loaded yet
     }
 
-    // ===================================================================================
-    // CHINESE CHARACTER + PINYIN COUPLING SYSTEM
-    // Core Objective: Keep Chinese characters and their pinyin syllables coupled
+    // ============================================================
+    // CHINESE CHARACTER + PINYIN COUPLING - Now in wordpack-logic.js
+    // ============================================================
+    // All Chinese rendering functions moved to wordpack-logic.js for reuse across all games:
+    // - coupleChineseWithPinyin(chinese, pinyin) → couples chars with pinyin syllables
+    // - renderChineseWithPinyin(coupledArray) → renders HTML element
+    // - renderChineseText(chinese, pinyin) → convenience function combining both
+    // - getChineseHtml(chinese, pinyin) → returns HTML string
     //
-    // Anti-Decoupling Principle: Chinese characters and pinyin MUST stay together
-    // Example: "小猫" (xiǎo māo) → [{char:"小", pinyin:"xiǎo"}, {char:"猫", pinyin:"māo"}]
-    //
-    // This ensures when rendering Chinese, we can ALWAYS show:
-    //   小    猫      (characters on top)
-    //  xiǎo  māo     (pinyin below each character)
-    //
-    // Functions:
-    //   - coupleChineseWithPinyin(chinese, pinyin) → array of {char, pinyin}
-    //   - renderChineseWithPinyin(coupledArray) → HTML element with coupled display
-    //   - renderChineseText(chinese, pinyin) → convenience function combining both
-    // ===================================================================================
-
-    /**
-     * Couples each Chinese character with its corresponding pinyin syllable
-     * @param {string} chineseStr - Chinese characters (e.g., "小猫")
-     * @param {string} pinyinStr - Space-separated pinyin syllables (e.g., "xiǎo māo")
-     * @returns {Array<{char: string, pinyin: string}>} - Array of coupled char/pinyin objects
-     *
-     * Example: coupleChineseWithPinyin("小猫", "xiǎo māo")
-     *   → [{char: "小", pinyin: "xiǎo"}, {char: "猫", pinyin: "māo"}]
-     */
-    function coupleChineseWithPinyin(chineseStr, pinyinStr) {
-      // Handle empty/null inputs gracefully
-      if (!chineseStr) return [];
-      if (!pinyinStr) {
-        // No pinyin available - return chars with empty pinyin
-        return [...chineseStr].map(char => ({ char, pinyin: '' }));
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // CHARACTER-BY-CHARACTER MAPPING (Simplified)
-      // ════════════════════════════════════════════════════════════════════════
-      // Example: "早上好，先生" → "zǎo shàng hǎo， xiān shēng"
-      //   早 → zǎo
-      //   上 → shàng
-      //   好 → hǎo
-      //   ， → ，
-      //   先 → xiān
-      //   生 → shēng
-      //
-      // Edge cases (Latin in Chinese): "ATM机" → "ATM jī"
-      //   A → A
-      //   T → T
-      //   M → M
-      //   机 → jī
-      // ════════════════════════════════════════════════════════════════════════
-
-      // Split pinyin by spaces
-      const pinyinTokens = pinyinStr.trim().split(/\s+/);
-      const result = [];
-      let tokenIndex = 0;
-      let latinLetterIndex = 0; // For consuming Latin tokens letter-by-letter
-
-      for (const char of chineseStr) {
-        if (tokenIndex >= pinyinTokens.length) {
-          // Ran out of pinyin tokens - mark as mismatch
-          result.push({ char, pinyin: '?' });
-          continue;
-        }
-
-        const currentToken = pinyinTokens[tokenIndex];
-        // Strip Chinese punctuation to get clean syllable/word
-        const cleanToken = currentToken.replace(/[，。！？、；：""''（）《》【】…—]/g, '');
-
-        if (/[\u4e00-\u9fff]/.test(char)) {
-          // ═══════════════════════════════════════════════════════════
-          // CHINESE CHARACTER → consume one token
-          // ═══════════════════════════════════════════════════════════
-          result.push({ char, pinyin: cleanToken || '?' });
-          tokenIndex++;
-          latinLetterIndex = 0;
-        } else if (/[A-Za-z]/.test(char)) {
-          // ═══════════════════════════════════════════════════════════
-          // LATIN LETTER → handle edge cases (ATM, DNA, WhatsApp, etc.)
-          // ═══════════════════════════════════════════════════════════
-          if (/^[A-Za-z]+$/.test(cleanToken)) {
-            // Current token is all-Latin (like "ATM", "DNA", "WhatsApp")
-            // Consume letter-by-letter: A→A, T→T, M→M
-            const letter = cleanToken[latinLetterIndex] || char;
-            result.push({ char, pinyin: letter });
-            latinLetterIndex++;
-
-            if (latinLetterIndex >= cleanToken.length) {
-              // Finished consuming this Latin token
-              tokenIndex++;
-              latinLetterIndex = 0;
-            }
-          } else {
-            // Token is not pure Latin → just map letter to itself
-            result.push({ char, pinyin: char });
-          }
-        } else {
-          // ═══════════════════════════════════════════════════════════
-          // PUNCTUATION → maps to itself
-          // ═══════════════════════════════════════════════════════════
-          result.push({ char, pinyin: char });
-        }
-      }
-
-      return result;
-    }
-
-    /**
-     * Renders a coupled Chinese array as an HTML element with char on top, pinyin below
-     * Always shows both characters and pinyin (inseparable pair)
-     * @param {Array<{char: string, pinyin: string}>} coupledArray - From coupleChineseWithPinyin()
-     * @returns {HTMLElement} - Span element with flex-column groups for each character
-     */
-    function renderChineseWithPinyin(coupledArray) {
-      const container = document.createElement('span');
-      container.className = 'chinese-coupled';
-
-      coupledArray.forEach(({ char, pinyin }) => {
-        const charGroup = document.createElement('span');
-        charGroup.className = 'char-group';
-
-        // Chinese character (on top)
-        const charSpan = document.createElement('span');
-        charSpan.className = 'chinese-char';
-        charSpan.textContent = char;
-        charGroup.appendChild(charSpan);
-
-        // Pinyin (below) - always shown with characters
-        const pinyinSpan = document.createElement('span');
-        pinyinSpan.className = 'pinyin';
-        pinyinSpan.textContent = pinyin;
-        charGroup.appendChild(pinyinSpan);
-
-        container.appendChild(charGroup);
-      });
-
-      return container;
-    }
-
-    /**
-     * Convenience function: Couples and renders Chinese text in one call
-     * @param {string} chinese - Chinese characters
-     * @param {string} pinyin - Space-separated pinyin
-     * @returns {HTMLElement} - Ready-to-append HTML element
-     */
-    function renderChineseText(chinese, pinyin) {
-      const coupled = coupleChineseWithPinyin(chinese, pinyin);
-      return renderChineseWithPinyin(coupled);
-    }
-
-    /**
-     * Returns HTML string for Chinese text (useful for innerHTML assignments)
-     * @param {string} chinese - Chinese characters
-     * @param {string} pinyin - Space-separated pinyin
-     * @returns {string} - HTML string
-     */
-    function getChineseHtml(chinese, pinyin) {
-      const element = renderChineseText(chinese, pinyin);
-      return element.outerHTML;
-    }
-
-    // Chinese characters and pinyin are always shown together (no toggle UI needed)
+    // These are 10/10 reusable functions used by ALL language games when displaying Chinese.
+    // ============================================================
 
     let nativeLanguage = 'english'; // Default, will be updated from loaded module metadata
     let gameStarted = false;
@@ -2363,69 +2146,36 @@
     // ===================================================================================
     // Chinese characters and pinyin are always shown together (inseparable pair)
 
-    // ===================================================================================
-    // LOCAL STORAGE - Save and restore user progress
-    // ===================================================================================
-    const STORAGE_KEY = 'spanishFlashcardState';
+    // ============================================================
+    // STATE MANAGEMENT WRAPPERS - Call shared functions in wordpack-logic.js
+    // ============================================================
+    // Core saveState() and loadState() functions are now in wordpack-logic.js.
+    // These wrapper functions provide game-specific state object construction.
+    // ============================================================
 
     function saveState() {
-      try {
-        // Save user settings and last selected pack/act (NOT deck progress)
-        const state = {
-          voiceURI: currentVoice ? currentVoice.voiceURI : null,
-          speed: currentSpeed,
-          wordpackKey: currentWordpackKey,
-          act: currentAct,
-          language: nativeLanguage
-        };
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      } catch (e) {
-        console.warn('Could not save state:', e);
-      }
+      // Build state object from game's local variables
+      const state = {
+        voiceURI: currentVoice ? currentVoice.voiceURI : null,
+        speed: currentSpeed,
+        wordpackKey: currentWordpackKey,
+        act: currentAct,
+        language: nativeLanguage
+      };
+      // Call shared function (defined in wordpack-logic.js)
+      window.saveState(state);
     }
 
     function loadState() {
-      try {
-        const stored = localStorage.getItem(STORAGE_KEY);
-        if (stored) {
-          return JSON.parse(stored);
-        }
-      } catch (e) {
-        console.warn('Could not load state:', e);
-      }
-      return null;
+      // Call shared function (defined in wordpack-logic.js)
+      return window.loadState();
     }
 
     // ============================================================
-    // TOOLTIP MESSAGES - Single source of truth for ALL tooltip text
+    // TOOLTIP_MESSAGES - Now in wordpack-logic.js
     // ============================================================
-    // Convention: CLICK (round cardboard button) or PRESS [rectangular key] to simple_action
-    //
-    // These SAME messages are displayed in TWO places:
-    //   1. Mode tooltips (hover over 📖 Flashcard Mode) - shows list of all actions
-    //   2. Button hover tooltips (hover over ✓ button) - shows that single action
-    //
-    // HTML classes used:
-    //   .tooltip-btn  = round cardboard circle for clickable buttons
-    //   .tooltip-key  = rectangular cardboard key for keyboard keys
+    // All tooltip text definitions moved to shared module for reuse across all games
     // ============================================================
-    const TOOLTIP_MESSAGES = {
-      // Reading mode actions - action words (CLICK, PRESS, TYPE) are bolded
-      gotIt: '<b>CLICK</b> <span class="tooltip-btn">✓</span> or <b>PRESS</b> <span class="tooltip-key">1</span> to Remove Card',
-      confused: '<b>CLICK</b> <span class="tooltip-btn">✗</span> or <b>PRESS</b> <span class="tooltip-key">2</span> to Add Extra Practice',
-      prevCard: '<b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> to Previous Card',
-      nextCard: '<b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> to Next Card',
-
-      // All modes actions
-      pronounce: '<b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> to Hear Pronunciation',
-      peek: '<b>CLICK</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> to See Translation',
-
-      // Speaking mode
-      record: '<b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> to Record',
-
-      // Typing modes (listening/writing)
-      typeLetters: '<b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word'
-    };
 
     // DOM Elements - menu elements are created dynamically in renderMenuCard()
     // and accessed via document.getElementById('menu-act'), etc.
@@ -3496,65 +3246,18 @@
       backLabel.textContent = langConfig ? langConfig.display : translations[getDefaultTranslation()].display;
     }
 
-    // Shuffle array (Fisher-Yates algorithm)
-    function shuffleArray(array) {
-      const shuffled = [...array];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      return shuffled;
-    }
+    // ============================================================
+    // shuffleArray() - Now in wordpack-logic.js
+    // ============================================================
+    // Fisher-Yates shuffle algorithm moved to shared module for reuse
+    // ============================================================
 
     // ============================================================
-    // ARCHITECTURE: Combine and Shuffle Base/Example Words
+    // combineAndShuffleWords() - Now in wordpack-logic.js
     // ============================================================
-    /*
-      Combines baseWords and exampleWords with controlled shuffling.
-
-      Educational Psychology: Learners should encounter CORE VOCABULARY
-      before CONTEXTUAL EXAMPLES.
-
-      1. BASE WORDS are shuffled internally (variety within basics)
-      2. EXAMPLE WORDS are shuffled internally (variety within examples)
-      3. BASE WORDS ALWAYS COME FIRST (pedagogical order preserved)
-
-      INPUT: pack object with { baseWords: [...], exampleWords: [...] }
-      OUTPUT: Array of objects with { word: [...], type: "Base Word" | "Example Word" }
-    */
-    function combineAndShuffleWords(pack) {
-      const baseWords = pack.baseWords || [];
-      const exampleWords = pack.exampleWords || [];
-
-      // Shuffle and tag base words
-      const shuffledBase = shuffleArray(baseWords).map(word => ({
-        word: word,
-        type: "Base Word"
-      }));
-
-      // Shuffle and tag example words
-      const shuffledExamples = shuffleArray(exampleWords).map(word => ({
-        word: word,
-        type: "Example Word"
-      }));
-
-      // Filter based on difficulty level
-      let combinedWords;
-      if (currentDifficulty === 'easy') {
-        // Easy: Base words only
-        combinedWords = shuffledBase;
-      } else if (currentDifficulty === 'medium') {
-        // Medium: Example words only
-        combinedWords = shuffledExamples;
-      } else {
-        // Hard: All words (base first, then examples)
-        combinedWords = [...shuffledBase, ...shuffledExamples];
-      }
-
-      console.log(`[Architecture] Difficulty: ${currentDifficulty} | ${shuffledBase.length} base + ${shuffledExamples.length} examples → ${combinedWords.length} selected`);
-
-      return combinedWords;
-    }
+    // Educational word combining logic moved to shared module
+    // Takes difficulty parameter: 'easy' (base only), 'medium' (examples only), 'hard' (all)
+    // ============================================================
 
     // ============================================================
     // KEY FEATURE: Deck Initialization with Linked Card Objects
@@ -3587,7 +3290,7 @@
       // ============================================================
       // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
       // ============================================================
-      const words = combineAndShuffleWords(pack);
+      const words = combineAndShuffleWords(pack, currentDifficulty);
 
       // ============================================================
       // DYNAMIC LANGUAGE HANDLING

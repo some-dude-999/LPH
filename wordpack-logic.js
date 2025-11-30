@@ -102,6 +102,211 @@ function switchLanguage(language) {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// TOOLTIP MESSAGES - Single source of truth for ALL tooltip text
+// ════════════════════════════════════════════════════════════════════════════
+// Convention: CLICK (round cardboard button) or PRESS [rectangular key] to simple_action
+//
+// These SAME messages are displayed in TWO places:
+//   1. Mode tooltips (hover over 📖 Flashcard Mode) - shows list of all actions
+//   2. Button hover tooltips (hover over ✓ button) - shows that single action
+//
+// HTML classes used:
+//   .tooltip-btn  = round cardboard circle for clickable buttons
+//   .tooltip-key  = rectangular cardboard key for keyboard keys
+// ════════════════════════════════════════════════════════════════════════════
+const TOOLTIP_MESSAGES = {
+  // Reading mode actions - action words (CLICK, PRESS, TYPE) are bolded
+  gotIt: '<b>CLICK</b> <span class="tooltip-btn">✓</span> or <b>PRESS</b> <span class="tooltip-key">1</span> to Remove Card',
+  confused: '<b>CLICK</b> <span class="tooltip-btn">✗</span> or <b>PRESS</b> <span class="tooltip-key">2</span> to Add Extra Practice',
+  prevCard: '<b>CLICK</b> <span class="tooltip-btn">‹</span> or <b>PRESS</b> <span class="tooltip-key">←</span> to Previous Card',
+  nextCard: '<b>CLICK</b> <span class="tooltip-btn">›</span> or <b>PRESS</b> <span class="tooltip-key">→</span> to Next Card',
+
+  // All modes actions
+  pronounce: '<b>CLICK</b> <span class="tooltip-btn">🗣️</span> or <b>PRESS</b> <span class="tooltip-key">↑</span> to Hear Pronunciation',
+  peek: '<b>CLICK</b> <span class="tooltip-btn">❓</span> or <b>HOLD</b> <span class="tooltip-key">↓</span> to See Translation',
+
+  // Speaking mode
+  record: '<b>CLICK</b> <span class="tooltip-btn">🎤</span> or <b>PRESS</b> <span class="tooltip-key">Space</span> to Record',
+
+  // Typing modes (listening/writing)
+  typeLetters: '<b>TYPE</b> <span class="tooltip-key">Letters</span> to Spell Word'
+};
+
+// ════════════════════════════════════════════════════════════════════════════
+// LANGUAGE DETECTION & METADATA HELPERS
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Get target language from loaded modules
+ * Target language is wordColumns[0] from __actMeta
+ *
+ * @returns {string|null} - 'chinese', 'spanish', 'english', etc.
+ */
+function getTargetLanguage() {
+  if (!window.loadedActMeta) return null;
+
+  for (const actNum of Object.keys(window.loadedActMeta)) {
+    const meta = window.loadedActMeta[actNum];
+    if (meta && meta.wordColumns && meta.wordColumns[0]) {
+      return meta.wordColumns[0].toLowerCase();
+    }
+  }
+  return null;
+}
+
+/**
+ * Convert string to title case
+ *
+ * @param {string} str - String to convert
+ * @returns {string} - Title cased string
+ */
+function toTitleCase(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+/**
+ * Validate that all loaded modules have the same target language
+ *
+ * @returns {boolean} - True if consistent, false if mismatched
+ */
+function validateTargetLanguageConsistency() {
+  if (!window.loadedActMeta) return true;
+
+  const languages = new Set();
+  for (const actNum of Object.keys(window.loadedActMeta)) {
+    const meta = window.loadedActMeta[actNum];
+    if (meta && meta.wordColumns && meta.wordColumns[0]) {
+      languages.add(meta.wordColumns[0].toLowerCase());
+    }
+  }
+  if (languages.size > 1) {
+    const langList = Array.from(languages).join(', ');
+    console.error(`[FATAL] Modules have inconsistent target languages: ${langList}`);
+    console.error('All modules must have the same wordColumns[0] value!');
+    return false;
+  }
+  return true;
+}
+
+/**
+ * Check if current target language is Chinese
+ * Chinese requires special handling (pinyin, rendering, etc.)
+ *
+ * @returns {boolean} - True if Chinese mode
+ */
+function isChineseMode() {
+  return getTargetLanguage() === 'chinese';
+}
+
+/**
+ * Apply or remove chinese-mode CSS class on body
+ * Call this after loading modules
+ */
+function updateChineseModeClass() {
+  if (isChineseMode()) {
+    document.body.classList.add('chinese-mode');
+  } else {
+    document.body.classList.remove('chinese-mode');
+  }
+}
+
+/**
+ * Get translations config from loaded metadata
+ * Contains available "I speak" languages and their column indices
+ *
+ * @returns {Object|null} - Translations config or null
+ */
+function getTranslationsConfig() {
+  if (!window.loadedActMeta) return null;
+
+  for (const actNum of Object.keys(window.loadedActMeta)) {
+    const meta = window.loadedActMeta[actNum];
+    if (meta && meta.translations) {
+      return meta.translations;
+    }
+  }
+  return null;
+}
+
+/**
+ * Get default translation language from loaded metadata
+ *
+ * @returns {string} - Default language code (e.g., 'english')
+ */
+function getDefaultTranslation() {
+  if (!window.loadedActMeta) return 'english';
+
+  for (const actNum of Object.keys(window.loadedActMeta)) {
+    const meta = window.loadedActMeta[actNum];
+    if (meta && meta.defaultTranslation) {
+      return meta.defaultTranslation;
+    }
+  }
+  return 'english';
+}
+
+/**
+ * Get word columns array from loaded metadata
+ * e.g., ['spanish', 'english', 'chinese', 'pinyin', 'portuguese']
+ *
+ * @returns {Array|null} - Word columns or null
+ */
+function getWordColumns() {
+  if (!window.loadedActMeta) return null;
+
+  for (const actNum of Object.keys(window.loadedActMeta)) {
+    const meta = window.loadedActMeta[actNum];
+    if (meta && meta.wordColumns) {
+      return meta.wordColumns;
+    }
+  }
+  return null;
+}
+
+/**
+ * Get valid "I speak" languages from loaded metadata
+ *
+ * @returns {Array} - Array of language codes
+ */
+function getValidLanguages() {
+  const translations = getTranslationsConfig();
+  return translations ? Object.keys(translations) : [];
+}
+
+/**
+ * Get TTS language code based on target language
+ * Maps language names to full locale codes for better voice matching
+ *
+ * @returns {string|null} - Language code (e.g., 'es-ES', 'zh-CN')
+ */
+function getTtsLanguageCode() {
+  if (!window.loadedActMeta) return null;
+
+  for (const actNum of Object.keys(window.loadedActMeta)) {
+    const meta = window.loadedActMeta[actNum];
+    if (meta && meta.wordColumns && meta.wordColumns[0]) {
+      const primaryLang = meta.wordColumns[0].toLowerCase();
+      const langMap = {
+        'spanish': 'es-ES',
+        'chinese': 'zh-CN',
+        'english': 'en-US',
+        'portuguese': 'pt-BR',
+        'french': 'fr-FR',
+        'vietnamese': 'vi-VN',
+        'thai': 'th-TH',
+        'khmer': 'km-KH',
+        'indonesian': 'id-ID',
+        'malay': 'ms-MY',
+        'filipino': 'fil-PH'
+      };
+      return langMap[primaryLang] || null;
+    }
+  }
+  return null;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // MODULE LOADING & DECODING
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -188,6 +393,62 @@ function shuffleArray(array) {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
   return shuffled;
+}
+
+/**
+ * Combines baseWords and exampleWords with controlled shuffling based on difficulty
+ *
+ * Educational Psychology: Learners should encounter CORE VOCABULARY
+ * before CONTEXTUAL EXAMPLES.
+ *
+ * 1. BASE WORDS are shuffled internally (variety within basics)
+ * 2. EXAMPLE WORDS are shuffled internally (variety within examples)
+ * 3. BASE WORDS ALWAYS COME FIRST (pedagogical order preserved)
+ *
+ * @param {Object} pack - Pack object with baseWords and exampleWords arrays
+ * @param {string} difficulty - Difficulty level ('easy', 'medium', 'hard')
+ * @returns {Array} Array of objects with { word: [...], type: "Base Word" | "Example Word" }
+ *
+ * Example:
+ *   const pack = {
+ *     baseWords: [["hola", "hello"], ["adiós", "goodbye"]],
+ *     exampleWords: [["hola amigo", "hello friend"], ["adiós amigo", "goodbye friend"]]
+ *   };
+ *   const words = combineAndShuffleWords(pack, 'hard');
+ *   // Returns all words (base shuffled + examples shuffled)
+ */
+function combineAndShuffleWords(pack, difficulty = 'hard') {
+  const baseWords = pack.baseWords || [];
+  const exampleWords = pack.exampleWords || [];
+
+  // Shuffle and tag base words
+  const shuffledBase = shuffleArray(baseWords).map(word => ({
+    word: word,
+    type: "Base Word"
+  }));
+
+  // Shuffle and tag example words
+  const shuffledExamples = shuffleArray(exampleWords).map(word => ({
+    word: word,
+    type: "Example Word"
+  }));
+
+  // Filter based on difficulty level
+  let combinedWords;
+  if (difficulty === 'easy') {
+    // Easy: Base words only
+    combinedWords = shuffledBase;
+  } else if (difficulty === 'medium') {
+    // Medium: Example words only
+    combinedWords = shuffledExamples;
+  } else {
+    // Hard: All words (base first, then examples)
+    combinedWords = [...shuffledBase, ...shuffledExamples];
+  }
+
+  console.log(`[combineAndShuffleWords] Difficulty: ${difficulty} | ${shuffledBase.length} base + ${shuffledExamples.length} examples → ${combinedWords.length} selected`);
+
+  return combinedWords;
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -424,6 +685,56 @@ function renderChineseWithPinyin(coupledArray) {
 function renderChineseText(chinese, pinyin) {
   const coupled = coupleChineseWithPinyin(chinese, pinyin);
   return renderChineseWithPinyin(coupled);
+}
+
+/**
+ * Returns HTML string for Chinese text (useful for innerHTML assignments)
+ * @param {string} chinese - Chinese characters
+ * @param {string} pinyin - Space-separated pinyin
+ * @returns {string} - HTML string
+ */
+function getChineseHtml(chinese, pinyin) {
+  const element = renderChineseText(chinese, pinyin);
+  return element.outerHTML;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// STATE MANAGEMENT - Save and restore user progress
+// ════════════════════════════════════════════════════════════════════════════
+
+const STORAGE_KEY = 'flashcardGameState'; // Shared across all language games
+
+/**
+ * Save game state to localStorage
+ * @param {Object} stateObj - State object containing user settings
+ * @param {string} stateObj.voiceURI - Selected voice URI
+ * @param {number} stateObj.speed - Speech speed
+ * @param {string} stateObj.wordpackKey - Current wordpack key
+ * @param {number} stateObj.act - Current act number
+ * @param {string} stateObj.language - Native language selection
+ */
+function saveState(stateObj) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(stateObj));
+  } catch (e) {
+    console.warn('Could not save state:', e);
+  }
+}
+
+/**
+ * Load game state from localStorage
+ * @returns {Object|null} - Saved state object or null if none exists
+ */
+function loadState() {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (e) {
+    console.warn('Could not load state:', e);
+  }
+  return null;
 }
 
 // ════════════════════════════════════════════════════════════════════════════
