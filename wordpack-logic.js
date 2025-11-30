@@ -1366,6 +1366,177 @@ function updatePronunciationDebug(debugData) {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
+// STRING NORMALIZATION & COMPARISON
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Normalizes a string for comparison (removes spaces, symbols, lowercase)
+ *
+ * Used for comparing user input to correct answers in multiple choice games.
+ * Handles variations like:
+ * - Case differences: "Hello" vs "hello"
+ * - Spacing differences: "hello friend" vs "hellofriend"
+ * - Punctuation differences: "hello!" vs "hello"
+ *
+ * @param {string} str - String to normalize
+ * @returns {string} - Normalized string (lowercase, no spaces/symbols)
+ *
+ * Example:
+ *   normalizeString("Hello, Friend!") // "hellofriend"
+ *   normalizeString("café-au-lait") // "cafeaulait"
+ */
+function normalizeString(str) {
+  if (!str) return '';
+  return str
+    .toLowerCase()
+    .replace(/[\s\.,!?;:'"()\[\]{}\-_]/g, ''); // Remove spaces and common symbols
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// MULTIPLE CHOICE - WRONG ANSWER GENERATION
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Generates random wrong answers for multiple choice games
+ *
+ * ALGORITHM:
+ * 1. Collects all words from entire act (all packs combined)
+ * 2. Filters out correct answer and normalized duplicates
+ * 3. Shuffles remaining pool using Fisher-Yates
+ * 4. Returns first N words as wrong answers
+ *
+ * BENEFITS:
+ * - Large pool (2,500+ words per act vs 50 per pack)
+ * - More variety and less predictable
+ * - Better for advanced learners
+ * - Works for ANY language (always uses column 0)
+ *
+ * @param {Object} actData - All wordpacks in current act
+ * @param {string} correctAnswer - Correct answer to filter out
+ * @param {number} count - Number of wrong answers to generate (default 4)
+ * @returns {Array<string>} - Array of wrong answer strings
+ *
+ * Example:
+ *   const wrongs = generateWrongAnswers(actData, "hola amigo", 3);
+ *   // Returns 3 random words from act that aren't "hola amigo"
+ */
+function generateWrongAnswers(actData, correctAnswer, count = 4) {
+  // Normalize correct answer for comparison
+  const normalizedCorrect = normalizeString(correctAnswer);
+
+  // Collect all words from all packs in the act
+  const allWords = [];
+
+  Object.keys(actData).forEach(packKey => {
+    // Skip __actMeta
+    if (packKey === '__actMeta') return;
+
+    const pack = actData[packKey];
+    if (!pack || !pack.words) return;
+
+    // Loop through each word in this pack
+    pack.words.forEach(wordArray => {
+      const targetLanguageWord = wordArray[0]; // Column 0 is always target language
+
+      // Filter out correct answer and normalized duplicates
+      if (targetLanguageWord !== correctAnswer) {
+        const normalizedWord = normalizeString(targetLanguageWord);
+
+        // Only add if normalized version is different from correct answer
+        if (normalizedWord !== normalizedCorrect) {
+          allWords.push(targetLanguageWord);
+        }
+      }
+    });
+  });
+
+  // Shuffle using Fisher-Yates algorithm
+  for (let i = allWords.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allWords[i], allWords[j]] = [allWords[j], allWords[i]];
+  }
+
+  // Take first 'count' words (or fewer if pool is small)
+  return allWords.slice(0, Math.min(count, allWords.length));
+}
+
+/**
+ * Generates wrong answers for Chinese with pinyin
+ *
+ * Same as generateWrongAnswers() but returns objects with BOTH Chinese text
+ * and pinyin. This enables proper coupled rendering for Chinese.
+ *
+ * @param {Object} actData - All wordpacks in current act
+ * @param {string} correctAnswer - Correct answer (Chinese characters) to filter out
+ * @param {number} count - Number of wrong answers to generate (default 4)
+ * @returns {Array<{text: string, pinyin: string}>} - Array of wrong answer objects
+ *
+ * Example:
+ *   const wrongs = generateWrongAnswersWithPinyin(actData, "大狗", 2);
+ *   // Returns: [
+ *   //   { text: "小猫", pinyin: "xiǎo māo" },
+ *   //   { text: "老虎", pinyin: "lǎo hǔ" }
+ *   // ]
+ */
+function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) {
+  // Normalize correct answer for comparison
+  const normalizedCorrect = normalizeString(correctAnswer);
+
+  // Collect all words WITH PINYIN from all packs in the act
+  const allWords = [];
+
+  // Get word columns to find pinyin index
+  const wordColumns = getWordColumns() || [];
+  const pinyinIndex = wordColumns.indexOf('pinyin');
+
+  if (pinyinIndex === -1) {
+    // No pinyin column found - fall back to simple version
+    console.warn('[generateWrongAnswersWithPinyin] No pinyin column found, falling back to text-only');
+    return generateWrongAnswers(actData, correctAnswer, count).map(text => ({
+      text: text,
+      pinyin: ''
+    }));
+  }
+
+  Object.keys(actData).forEach(packKey => {
+    // Skip __actMeta
+    if (packKey === '__actMeta') return;
+
+    const pack = actData[packKey];
+    if (!pack || !pack.words) return;
+
+    // Loop through each word in this pack
+    pack.words.forEach(wordArray => {
+      const chineseText = wordArray[0]; // Column 0 is Chinese characters
+      const pinyinText = wordArray[pinyinIndex]; // Pinyin column
+
+      // Filter out correct answer and normalized duplicates
+      if (chineseText !== correctAnswer) {
+        const normalizedWord = normalizeString(chineseText);
+
+        // Only add if normalized version is different from correct answer
+        if (normalizedWord !== normalizedCorrect) {
+          // Store BOTH text and pinyin as coupled object
+          allWords.push({
+            text: chineseText,
+            pinyin: pinyinText || ''
+          });
+        }
+      }
+    });
+  });
+
+  // Shuffle using Fisher-Yates algorithm
+  for (let i = allWords.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allWords[i], allWords[j]] = [allWords[j], allWords[i]];
+  }
+
+  // Take first 'count' words (or fewer if pool is small)
+  return allWords.slice(0, Math.min(count, allWords.length));
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // EXPORT FOR MODULE SYSTEMS (optional - currently using globals)
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -1375,12 +1546,16 @@ if (typeof module !== 'undefined' && module.exports) {
     loadAct,
     shuffleArray,
     normalizeChar,
+    normalizeString,
     findNextTypingPosition,
     checkTypingKey,
     isWordComplete,
     coupleChineseWithPinyin,
     renderChineseWithPinyin,
     renderChineseText,
+    getChineseHtml,
+    generateWrongAnswers,
+    generateWrongAnswersWithPinyin,
     toggleDebugMode,
     updateDebugTable,
     initializeDebugUI

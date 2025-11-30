@@ -2006,6 +2006,115 @@
   </div>
 
   <script type="module">
+
+    // ╔══════════════════════════════════════════════════════════════════════════════╗
+    // ║                                                                              ║
+    // ║  ⚠️  CRITICAL WARNING TO FUTURE LLMs: CODE REUSABILITY REQUIREMENTS  ⚠️     ║
+    // ║                                                                              ║
+    // ╠══════════════════════════════════════════════════════════════════════════════╣
+    // ║                                                                              ║
+    // ║  📋 PRIMARY RULE: MOVE ALL REUSABLE CODE TO wordpack-logic.js               ║
+    // ║                                                                              ║
+    // ║  ONLY keep code in this file if you are 1000% CERTAIN it:                   ║
+    // ║    1. Is specific to FlashcardTypingGame's unique UI/layout                  ║
+    // ║    2. Cannot POSSIBLY be reused by ANY future language learning game         ║
+    // ║    3. Directly manipulates Flashcard-specific DOM elements (card flip, etc.)║
+    // ║                                                                              ║
+    // ║  🚫 DO NOT KEEP IN THIS FILE:                                                ║
+    // ║    ❌ Shuffle algorithms (use shuffleArray from wordpack-logic.js)           ║
+    // ║    ❌ Character normalization (use normalizeChar from wordpack-logic.js)     ║
+    // ║    ❌ Levenshtein distance (use levenshteinDistance from wordpack-logic.js)  ║
+    // ║    ❌ Chinese+Pinyin coupling (use coupleChineseWithPinyin from w-p-l.js)    ║
+    // ║    ❌ String comparison (use normalizeString from wordpack-logic.js)         ║
+    // ║    ❌ Multiple choice generation (use generateWrongAnswers from w-p-l.js)    ║
+    // ║    ❌ State save/load (use saveState/loadState from wordpack-logic.js)       ║
+    // ║    ❌ Module loading/decoding (use loadAct/decodeObfuscatedModule)           ║
+    // ║    ❌ Typing validation (use findNextTypingPosition/checkTypingKey)          ║
+    // ║    ❌ Deck management (initializeDeck, restartPack, removeCard, etc.)        ║
+    // ║    ❌ TTS/Speech functions (speakTargetWord, setSpeed, etc.)                 ║
+    // ║    ❌ ANY function that could be used in multiple games                      ║
+    // ║                                                                              ║
+    // ║  ✅ OK TO KEEP IN THIS FILE:                                                 ║
+    // ║    ✓ flipCard() - card flip animation (flashcard-specific)                  ║
+    // ║    ✓ unflipCard() - reverse flip animation                                  ║
+    // ║    ✓ generateWeathering() - card distressing effect (visual only)           ║
+    // ║    ✓ renderMenuCard() - menu displayed as flashcard                         ║
+    // ║    ✓ showStartingCard()/exitStartingCard() - menu navigation                ║
+    // ║    ✓ updateDisplay() - updates flashcard DOM elements                       ║
+    // ║    ✓ Event handlers for flashcard-specific interactions                     ║
+    // ║                                                                              ║
+    // ║  🎯 THE GOAL: HUNDREDS OF FUTURE LANGUAGE LEARNING GAMES                     ║
+    // ║                                                                              ║
+    // ║  We are building wordpack-logic.js to contain ALL core logic that can be    ║
+    // ║  reused across hundreds of future games. These games will have different:   ║
+    // ║    - Visual layouts (flashcards, grids, runner games, puzzle games, etc.)   ║
+    // ║    - UI interactions (click, swipe, drag, voice, typing, etc.)              ║
+    // ║    - Game mechanics (timed, scored, lives, multiplayer, etc.)               ║
+    // ║                                                                              ║
+    // ║  But they ALL share the SAME core logic:                                    ║
+    // ║    - Loading/decoding wordpack modules                                      ║
+    // ║    - Shuffling arrays                                                       ║
+    // ║    - Typing validation (accent-insensitive, space-handling)                 ║
+    // ║    - Chinese character + pinyin coupling                                    ║
+    // ║    - Multiple choice answer generation                                      ║
+    // ║    - Pronunciation scoring (Levenshtein distance)                           ║
+    // ║    - State persistence (save/load to localStorage)                          ║
+    // ║    - Deck management (initialize, restart, remove cards, add duplicates)    ║
+    // ║                                                                              ║
+    // ║  🔍 BEFORE WRITING ANY FUNCTION, ASK YOURSELF:                               ║
+    // ║                                                                              ║
+    // ║  "Could a Temple Run language game use this?"                               ║
+    // ║  "Could a grid memory game use this?"                                       ║
+    // ║  "Could a multiple choice quiz use this?"                                   ║
+    // ║  "Could DecoderTest use this?"                                              ║
+    // ║                                                                              ║
+    // ║  If YES to ANY → MOVE IT TO wordpack-logic.js IMMEDIATELY!                   ║
+    // ║  If NO to ALL → Check if it's flashcard flip/animation specific             ║
+    // ║    - If YES: Keep it here                                                   ║
+    // ║    - If NO: You're wrong, move it to wordpack-logic.js anyway               ║
+    // ║                                                                              ║
+    // ║  📖 EXAMPLE DECISION TREE:                                                   ║
+    // ║                                                                              ║
+    // ║  Function: removeCurrentCard()                                              ║
+    // ║  Question: Could other games remove cards from a deck?                      ║
+    // ║  Answer: YES (any card-based game, memory games, etc.)                      ║
+    // ║  Decision: ➡️  SHOULD BE in wordpack-logic.js                                ║
+    // ║                                                                              ║
+    // ║  Function: flipCard()                                                       ║
+    // ║  Question: Do other games flip physical flashcards?                         ║
+    // ║  Answer: NO (only flashcard games flip cards, others use different UIs)     ║
+    // ║  Decision: ➡️  KEEP in FlashcardTypingGame.html                              ║
+    // ║                                                                              ║
+    // ║  Function: shuffleArray()                                                   ║
+    // ║  Question: Do other games need to shuffle arrays?                           ║
+    // ║  Answer: YES (literally every game with random ordering)                    ║
+    // ║  Decision: ➡️  ALREADY in wordpack-logic.js                                  ║
+    // ║  Action: ➡️  DELETE from this file if duplicated                             ║
+    // ║                                                                              ║
+    // ║  ⚡ PERFORMANCE NOTE:                                                         ║
+    // ║  Shared functions in wordpack-logic.js are loaded ONCE and cached by the    ║
+    // ║  browser. This is MORE efficient than duplicating code in each game.        ║
+    // ║                                                                              ║
+    // ║  🔧 REFACTORING CHECKLIST:                                                   ║
+    // ║                                                                              ║
+    // ║  Before committing changes to this file:                                    ║
+    // ║  □  Searched for duplicate functions between this and other games           ║
+    // ║  □  Checked if any function could be reused (10/10 reusability score)       ║
+    // ║  □  Moved all 10/10 functions to wordpack-logic.js                          ║
+    // ║  □  Updated wordpack-logic.js module.exports to include new functions       ║
+    // ║  □  Verified no duplicate implementations (shuffle, normalize, etc.)        ║
+    // ║  □  Tested game still works after refactoring                               ║
+    // ║                                                                              ║
+    // ║  📚 DOCUMENTATION REQUIREMENT:                                               ║
+    // ║  If you ADD a function to wordpack-logic.js, you MUST add documentation:    ║
+    // ║    - JSDoc comment explaining what it does                                  ║
+    // ║    - Parameters with types                                                  ║
+    // ║    - Return value with type                                                 ║
+    // ║    - Example usage                                                          ║
+    // ║  See existing functions in wordpack-logic.js for the standard.              ║
+    // ║                                                                              ║
+    // ╚══════════════════════════════════════════════════════════════════════════════╝
+
     // ============================================================
     // KEY FEATURE: Multi-language obfuscated module support
     // Core Objective: Load compressed word data efficiently with act-based organization
