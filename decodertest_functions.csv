@@ -1,37 +1,34 @@
 Function Name,What It Does,Reusability Score (1-10)
-saveState,Saves game state (language act pack modes) to localStorage as JSON,10
-loadState,Retrieves saved state from localStorage with error handling,10
-restoreSavedState,Validates and restores saved state with fallbacks for invalid values,10
-validateAndFixState,Ensures restored act/pack still exist in loaded data,9
-decodeObfuscatedModule,Decodes 3-layer obfuscated modules (base64 + zlib + reverse),10
-loadLanguageData,Loads all acts for a language by decoding modules,9
-initialize,Main initialization - restores state loads data sets up UI,10
-autoSelectFirstActAndPack,Auto-selects first available act/pack (DRY encapsulation),9
-syncUIToState,Updates all UI elements to match current state,9
-setupLanguageRadioButtons,Attaches change listeners to language selection radio buttons,8
-setupModeCheckboxes,Config-driven setup for mode toggles (multiple choice typing pronunciation),8
-populateActDropdown,Populates act dropdown from loaded __actMeta data,9
-populatePackDropdown,Populates pack dropdown based on selected act,9
-populateNativeLanguageDropdown,Populates I speak dropdown from loaded module metadata (NO HARDCODING),9
-coupleChineseWithPinyinDebug,DEBUG version - couples Chinese with pinyin returns detailed debug info,3
-renderChineseWithPinyin,Wrapper - uses global coupling then renders with state-based toggle visibility,8
-renderChineseText,Wrapper - couples Chinese+pinyin then renders with state-based visibility,8
-setupChineseDisplayOptions,Setup function for Chinese display checkboxes (currently stub),2
-updateChineseOptionsVisibility,Show/hide Chinese display options based on language (currently stub),2
-handleTypingInput,Core typing mechanic - validates input tracks progress plays sound,10
-updateTypingDisplay,Updates input box with progress (X for untyped actual char for typed),9
-playTypingSound,Generates mechanical keyboard click sound on every keypress,8
-startListeningForPronunciation,Records speech using Web Speech API calculates similarity score,10
-updatePronunciationDisplay,Updates score column after pronunciation attempt,9
-resetListeningState,DRY helper - resets listening state (used by onresult onerror onend),8
-getAudioContext,Creates/returns Web Audio API context singleton,10
-displayVocabulary,Main display - renders table with dynamic columns based on active modes,9
-displayAllEdgeCases,Shows ALL edge cases (Latin in Chinese) and pinyin mismatches - debugging only,3
-handleFlashcardModeChange,Shows/hides flashcard area and initializes deck when mode enabled,9
-initFlashcardDeck,Creates anti-decoupled card array with front/back as single object properties,10
-updateFlashcardDisplay,Updates card display (front/back Chinese rendering counter),9
-flipCard,Toggles between front and back of current card,10
-nextCard,Advances to next card resets to showing front,10
-prevCard,Moves to previous card resets to showing front,10
-shuffleDeck,Fisher-Yates shuffle of card array while preserving front/back links,9
-updateDebugInfo,Displays technical state localStorage status system capabilities - debugging only,2
+saveState,Saves game state language act pack modes to localStorage as JSON,10
+loadState,Retrieves saved state from localStorage with error handling returns null on failure,10
+restoreSavedState,Validates and restores saved state with fallbacks for invalid values updates UI,10
+validateAndFixState,Ensures restored act/pack still exist in loaded data resets to defaults if missing,9
+autoSelectFirstActAndPack,Auto-selects first available act and pack DRY encapsulation of default selection logic,9
+syncUIToState,Updates all UI elements dropdowns checkboxes to match current state,9
+setupLanguageRadioButtons,Attaches change listeners to language selection radio buttons handles reload on change,8
+setupModeCheckboxes,Config-driven setup for mode toggle checkboxes multiple choice typing pronunciation,9
+resetListeningState,DRY helper resets listening state and mic button used by speech recognition callbacks,8
+startListeningForPronunciation,Records speech using Web Speech API calculates similarity score updates display,10
+updatePronunciationDisplay,Updates score column in vocabulary table after pronunciation attempt,8
+getAudioContext,Creates/returns Web Audio API context singleton for sound generation,10
+playTypingSound,Generates mechanical keyboard click sound on every keypress using Web Audio API,9
+coupleChineseWithPinyinDebug,DEBUG version couples Chinese with pinyin returns detailed debug info for edge case testing,3
+renderChineseWithPinyin,Wrapper uses global coupling then renders with state-based toggle for char/pinyin visibility,8
+renderChineseText,Wrapper couples Chinese+pinyin then renders with state-based visibility options,8
+setupChineseDisplayOptions,Setup function for Chinese display checkboxes currently stub for future expansion,2
+updateChineseOptionsVisibility,Show/hide Chinese display options based on selected language currently stub,2
+populateActDropdown,Populates act dropdown from loaded __actMeta data no hardcoded values,9
+populatePackDropdown,Populates pack dropdown based on selected act filters sorts packs,9
+populateNativeLanguageDropdown,Populates I speak dropdown from loaded module metadata NO HARDCODING validates language,9
+handleTypingInput,Core typing mechanic validates input tracks progress plays sound updates display,10
+updateTypingDisplay,Updates input box with progress X for untyped actual character for typed shows completion,9
+displayAllEdgeCases,Shows ALL edge cases Latin in Chinese and pinyin mismatches debugging only,2
+displayVocabulary,Main display renders table with dynamic columns based on active modes shows all vocab,8
+handleFlashcardModeChange,Shows/hides flashcard area and initializes deck when flashcard mode checkbox toggled,8
+initFlashcardDeck,Creates anti-decoupled card array with front/back as single object properties,9
+updateFlashcardDisplay,Updates card display front/back Chinese rendering counter based on current index,8
+flipCard,Toggles between front and back of current flashcard updates display,10
+nextCard,Advances to next card with wrap-around resets to showing front,10
+prevCard,Moves to previous card with wrap-around resets to showing front,10
+shuffleDeck,Fisher-Yates shuffle of card array while preserving front/back property links,10
+updateDebugInfo,Displays technical state localStorage status system capabilities debugging only,2
