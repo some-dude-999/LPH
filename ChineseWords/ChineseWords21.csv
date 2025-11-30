@@ -7,7 +7,7 @@ chinese,pinyin,english,spanish,french,portuguese
 顿,dùn,meal,comida,repas,refeição
 节,jié,class period,clase (periodo),cours (séance),aula (período)
 场,chǎng,event,evento,événement,evento
-台,tái,machine (unit),unidad (aparatos),appareil (unité),aparelho (unidade)
+台,tái,machine (classifier),aparato (clas.),appareil (class.),aparelho (class.)
 辆,liàng,vehicle,vehículo,véhicule,veículo
 座,zuò,building (mw),edificio (clas.),bâtiment (class.),prédio (class.)
 层,céng,floor,piso,étage,andar
@@ -31,10 +31,10 @@ chinese,pinyin,english,spanish,french,portuguese
 几顿,jǐ dùn,A few meals,Algunas comidas,Quelques repas,Algumas refeições
 一节课,yī jié kè,A class,Una clase,Une classe,Uma aula
 几节,jǐ jié,A few sessions,Algunas sesiones,Quelques séances,Algumas sessões
-一场比赛,yī cháng bǐ sài,A game,Un juego,Un jeu,Um jogo
-几场,jǐ chǎng,A few games,Algunos juegos,Quelques jeux,Alguns jogos
+一场比赛,yī cháng bǐ sài,A game,Un partido,Un match,Um jogo
+几场,jǐ chǎng,A few games,Varios partidos,Quelques matchs,Alguns jogos
 一台电脑,yī tái diàn nǎo,A computer,Una computadora,Un ordinateur,Um computador
-几台,jǐ tái,A few,Algunos,Quelques,Alguns
+几台,jǐ tái,A few,Algunas unidades,Quelques,Alguns aparelhos
 一辆车,yī liàng chē,A car,Un coche,Une voiture,Um carro
 几辆,jǐ liàng,A few,Algunos,Quelques,Alguns
 一座山,yī zuò shān,A mountain,Una montaña,Une montagne,Uma montanha
