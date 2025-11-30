@@ -9,7 +9,7 @@ helicopter,直升机,zhí shēng jī,helicóptero,helicóptero
 highway,高速公路,gāo sù gōng lù,autopista,rodovia
 bridge,桥,qiáo,puente,ponte
 tunnel,隧道,suì dào,túnel,túnel
-parking,停车,tíng chē,estacionamiento,estacionamento
+parking,停车场,tíng chē chǎng,estacionamiento,estacionamento
 gas,汽油,qì yóu,gasolina,gasolina
 fuel,燃料,rán liào,combustible,combustível
 driver,司机,sī jī,conductor,motorista
@@ -26,7 +26,7 @@ metro line,地铁线,dì tiě xiàn,línea de metro,linha do metrô
 big truck,大卡车,dà kǎ chē,camión grande,caminhão grande
 truck driver,卡车司机,kǎ chē sī jī,conductor de camión,caminhoneiro
 cargo van,货车,huò chē,furgoneta de carga,furgão de carga
-mini van,小型面包车,xiǎo xíng miàn bāo chē,mini furgoneta,minivan
+mini van,小型面包车,xiǎo xíng miàn bāo chē,miniván,minivan
 ride a motorcycle,骑摩托车,qí mó tuō chē,andar en motocicleta,andar de moto
 motorcycle helmet,摩托车头盔,mó tuō chē tóu kuī,casco de moto,capacete de moto
 ship anchor,船锚,chuán máo,ancla de barco,âncora do navio
@@ -36,7 +36,7 @@ helicopter ride,乘坐直升机,chéng zuò zhí shēng jī,paseo en helicópter
 on the highway,在高速公路上,zài gāo sù gōng lù shàng,en la carretera,na rodovia
 highway exit,高速公路出口,gāo sù gōng lù chū kǒu,salida de la autopista,saída da rodovia
 cross the bridge,过桥,guò qiáo,cruzar el puente,atravessar a ponte
-bridge over,桥,qiáo,puente sobre,ponte sobre
+bridge over,跨桥,kuà qiáo,puente elevado,ponte sobre
 through the tunnel,穿过隧道,chuān guò suì dào,a través del túnel,pelo túnel
 tunnel entrance,隧道入口,suì dào rù kǒu,entrada del túnel,entrada do túnel
 parking lot,停车场,tíng chē chǎng,estacionamiento,estacionamento
