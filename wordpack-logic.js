@@ -26,6 +26,54 @@
  */
 
 // ════════════════════════════════════════════════════════════════════════════
+// CODE REUSABILITY ARCHITECTURE - CRITICAL!
+// ════════════════════════════════════════════════════════════════════════════
+//
+// This file (wordpack-logic.js) contains ALL core logic that can be
+// reused across hundreds of future language learning games.
+//
+// WHAT BELONGS HERE (reusability score 7-10):
+// ─────────────────────────────────────────────
+// - Module loading & decoding (obfuscated files)
+// - Typing validation and mechanics
+// - Deck management (shuffle, remove, add, navigate)
+// - TTS (text-to-speech) functions
+// - Speech recognition
+// - State management (localStorage)
+// - Chinese+pinyin coupling and rendering
+// - Mode switching logic
+// - Multiple choice generation
+// - Navigation (next/prev/move)
+// - Debug functions
+// - UI population (dropdowns, selectors)
+// - Card/deck manipulation (remove, add duplicates, reset)
+//
+// WHAT STAYS IN GAME FILES (reusability score 1-6):
+// ──────────────────────────────────────────────────
+// - Game-specific DOM manipulation (flashcard flip, card weathering)
+// - Visual rendering unique to that game (menu cards, specific layouts)
+// - Game-specific animations and CSS class toggles
+// - Wrapper functions that provide game-local scope to shared functions
+//
+// THE RULE:
+// ─────────
+// If a function could plausibly be used by ANY future language learning
+// game (grid game, list game, matching game, quiz game, etc.), it belongs
+// HERE in wordpack-logic.js, NOT in the individual game file.
+//
+// Future AI Assistants: When creating new games or refactoring existing ones,
+// ALWAYS move functions rated 7+ in reusability to this shared module!
+//
+// The 1-10 Reusability Scale:
+// ───────────────────────────
+// 10/10 = Used in EVERY game, core functionality → MUST be here
+//  7-9/10 = Used in most games, general concept → Should be here
+//  4-6/10 = Borderline, might vary per game → Discuss and decide
+//  1-3/10 = Game-specific visual/interaction → Keep in game file
+//
+// ════════════════════════════════════════════════════════════════════════════
+
+// ════════════════════════════════════════════════════════════════════════════
 // MODULE CONFIGURATION
 // ════════════════════════════════════════════════════════════════════════════
 
