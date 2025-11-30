@@ -37,3 +37,17 @@ updatePronunciationDebug,Updates pronunciation debug info in debug panel shows a
 normalizeString,Normalizes string for comparison removes spaces symbols lowercase for multiple choice,10
 generateWrongAnswers,Generates random wrong answers for multiple choice from entire act pool uses column 0,10
 generateWrongAnswersWithPinyin,Generates wrong answers for Chinese with pinyin returns objects with text and pinyin properties,10
+showStamp,Generic stamp display function - shows any stamp element with sound and auto-hide callback,10
+showSuccessStamp,Shows success stamp (green Card Removed) with ding sound - wrapper around showStamp,10
+showFailureStamp,Shows failure stamp (red Extra Practice) with buzz sound - wrapper around showStamp,10
+loadVoicesForLanguage,Load TTS voices for a specific language code filters voices by language,10
+speakWord,Speak text using TTS with configurable language voice and speed,10
+findVoiceByURI,Find voice by URI in voice array used for restoring saved voice from localStorage,10
+initializeTypingState,Initialize typing state for a target word returns state object with chars positions display,10
+getTypingDisplay,Update typing display based on progress returns string with underscores for untyped,10
+removeCard,Remove current card from deck returns new deck and adjusted index,9
+addDuplicateCards,Add duplicate cards to random positions for extra practice Confused button and wrong typing,9
+createDeckFromPack,Initialize deck from pack data combines base and example words creates card objects,9
+populateActSelector,Populate act selector dropdown from loaded metadata uses __actMeta no hardcoded data,9
+populatePackSelector,Populate wordpack selector from act data sorts by number shows title,9
+populateNativeLanguageSelector,Populate native language I speak dropdown from metadata translations config,9
