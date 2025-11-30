@@ -2333,29 +2333,23 @@
     // These are now globally available after importing game-sounds.js
 
     // ===================================================================================
-    // KEY FEATURE: Stamp Display Functions (Encapsulated)
-    // Core Objective: Visual feedback for correct/wrong answers - define ONCE, use everywhere
+    // KEY FEATURE: Stamp Display Functions (Wrappers for Shared Logic)
+    // Core Objective: Visual feedback for correct/wrong answers - use shared functions
     // Key Behaviors:
     //   - showSuccessStamp: green "Card Removed" stamp + ding sound
     //   - showFailureStamp: red "Extra Practice" stamp + buzz sound
     //   - Both hide after 1.5 seconds and execute callback
     // ===================================================================================
+    // NOTE: Core stamp logic is now in wordpack-logic.js (window.showSuccessStamp, window.showFailureStamp)
+    // These wrappers provide game-specific element references (removedStamp, addedStamp)
     function showSuccessStamp(onComplete) {
-      removedStamp.classList.add('visible');
-      playDingSound();
-      setTimeout(() => {
-        removedStamp.classList.remove('visible');
-        if (onComplete) onComplete();
-      }, 1500);
+      // Call shared function from wordpack-logic.js (use window. to access global function)
+      window.showSuccessStamp(removedStamp, onComplete);
     }
 
     function showFailureStamp(onComplete) {
-      addedStamp.classList.add('visible');
-      playBuzzSound();
-      setTimeout(() => {
-        addedStamp.classList.remove('visible');
-        if (onComplete) onComplete();
-      }, 1500);
+      // Call shared function from wordpack-logic.js (use window. to access global function)
+      window.showFailureStamp(addedStamp, onComplete);
     }
 
     // ===================================================================================
@@ -2919,11 +2913,13 @@
         return;
       }
 
-      spanishVoices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(ttsLangCode));
+      // Use shared function from wordpack-logic.js to load voices
+      spanishVoices = window.loadVoicesForLanguage(ttsLangCode);
 
       // Restore saved voice if we have a saved URI and voices are now available
       if (savedVoiceURI && spanishVoices.length > 0 && !currentVoice) {
-        currentVoice = spanishVoices.find(v => v.voiceURI === savedVoiceURI) || null;
+        // Use shared function from wordpack-logic.js to find voice by URI
+        currentVoice = window.findVoiceByURI(savedVoiceURI, spanishVoices) || null;
       }
       // Voice selector is now populated in renderMenuCard() when menu is created
     }
@@ -2998,23 +2994,12 @@
         return;
       }
 
-      selectElement.innerHTML = '';
+      // Use shared function from wordpack-logic.js to populate the selector
+      // Note: onChange handler not needed here as we handle it separately in event listeners
+      window.populateActSelector(selectElement, loadedActMeta, null);
 
-      // Get act numbers from loadedActMeta (populated when modules are loaded)
+      // Game-specific: Set saved value and handle defaults
       const actNumbers = Object.keys(loadedActMeta).map(Number).sort((a, b) => a - b);
-
-      if (actNumbers.length === 0) {
-        console.warn('[populateActSelector] No acts loaded yet');
-        return;
-      }
-
-      actNumbers.forEach(actNum => {
-        const meta = loadedActMeta[actNum];
-        const option = document.createElement('option');
-        option.value = actNum;
-        option.textContent = `Act ${actNum}: ${meta.actName}`;
-        selectElement.appendChild(option);
-      });
 
       // Use saved act if valid, otherwise default to first act
       if (currentAct && actNumbers.includes(currentAct)) {
@@ -3037,7 +3022,6 @@
         return;
       }
 
-      selectElement.innerHTML = '';
       const translations = getTranslationsConfig();
 
       if (!translations) {
@@ -3045,18 +3029,13 @@
         return;
       }
 
-      Object.entries(translations).forEach(([langCode, langConfig]) => {
-        const option = document.createElement('option');
-        option.value = langCode;
-        option.textContent = langConfig.display;
-        selectElement.appendChild(option);
-      });
+      // Use shared function from wordpack-logic.js to populate the selector
+      // Note: onChange handler not needed here as we handle it separately in event listeners
+      window.populateNativeLanguageSelector(selectElement, translations, nativeLanguage, null);
 
-      // Use saved language if valid, otherwise default
+      // Game-specific: Validate and set default if needed
       const validLanguages = Object.keys(translations);
-      if (nativeLanguage && validLanguages.includes(nativeLanguage)) {
-        selectElement.value = nativeLanguage;
-      } else {
+      if (!nativeLanguage || !validLanguages.includes(nativeLanguage)) {
         // Invalid or no saved language - use default from loaded metadata
         nativeLanguage = getDefaultTranslation();
         selectElement.value = nativeLanguage;
@@ -3981,14 +3960,12 @@
     function speakTargetWord() {
       if (currentDeck.length === 0) return;
 
-      const utterance = new SpeechSynthesisUtterance(currentDeck[currentIndex].targetWord);
-      utterance.lang = getTtsLanguageCode();
-      utterance.rate = currentSpeed;
-      if (currentVoice) {
-        utterance.voice = currentVoice;
-      }
-      speechSynthesis.cancel();
-      speechSynthesis.speak(utterance);
+      // Use shared function from wordpack-logic.js
+      window.speakWord(currentDeck[currentIndex].targetWord, {
+        languageCode: getTtsLanguageCode(),
+        voice: currentVoice,
+        speed: currentSpeed
+      });
     }
 
     // Alias for backwards compatibility - some places may still call speakSpanish
