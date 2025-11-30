@@ -1,5 +1,5 @@
 Function Name,What It Does,Reusability Score (1-10)
-switchLanguage,Switches active language between Chinese/Spanish/English and reloads page,10
+switchLanguage,Switches active language between Chinese/Spanish/English saves to localStorage and reloads page,10
 getTargetLanguage,Gets target language from loaded module metadata (wordColumns[0]),10
 toTitleCase,Converts string to title case (utility function),10
 validateTargetLanguageConsistency,Validates all loaded modules have same target language,10
@@ -8,7 +8,7 @@ updateChineseModeClass,Adds/removes chinese-mode CSS class on body based on lang
 getTranslationsConfig,Gets available translation languages and their column indices from metadata,10
 getDefaultTranslation,Gets default translation language from metadata,10
 getWordColumns,Gets word columns array from metadata (e.g. ['spanish' 'english' 'chinese' 'pinyin']),10
-getValidLanguages,Gets valid 'I speak' languages from metadata,10
+getValidLanguages,Gets valid I speak languages from metadata,10
 getTtsLanguageCode,Maps language names to locale codes for TTS (e.g. 'es-ES' 'zh-CN'),10
 decodeObfuscatedModule,Decodes obfuscated JS module (base64 + zlib + reversed JSON),10
 loadAct,Loads specific act by number and returns all wordpacks in that act,10
@@ -34,3 +34,6 @@ calculateSimilarity,Calculates similarity percentage using normalization and Lev
 getFeedbackMessage,Gets feedback message based on similarity score (Perfect/Great/Almost/Try again),10
 getScoreClass,Gets CSS class name for score coloring (excellent/good/okay/poor),10
 updatePronunciationDebug,Updates pronunciation debug info in debug panel,10
+normalizeString,Normalizes string for comparison (removes spaces symbols lowercase),10
+generateWrongAnswers,Generates random wrong answers for multiple choice from entire act pool,10
+generateWrongAnswersWithPinyin,Generates wrong answers for Chinese with pinyin (returns objects with text and pinyin),10
