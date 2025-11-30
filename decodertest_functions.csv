@@ -1,0 +1,43 @@
+Function Name,What It Does,Reusability Score (1-10)
+saveState,Saves current UI state to localStorage (act pack language mode settings),10
+loadState,Loads saved state from localStorage,10
+restoreSavedState,Restores saved state to UI elements (validates against valid options),9
+validateAndFixState,Validates saved state values against current valid options and fixes if needed,9
+combineAndShuffleWords,Combines base words and example words from pack (no filtering),10
+shuffleArray,Fisher-Yates shuffle (internal function - should use shared version),10
+autoSelectFirstActAndPack,Auto-selects first act and pack if none selected,8
+syncUIToState,Syncs all UI controls to current state object,7
+setupLanguageRadioButtons,Sets up radio buttons for 'I speak' language selection,8
+setupModeCheckboxes,Sets up checkboxes for mode selection (reading/listening/speaking/writing),8
+resetListeningState,Resets listening mode state (stops recording updates UI),7
+startListeningForPronunciation,Starts speech recognition for pronunciation practice with scoring,10
+updatePronunciationDisplay,Updates pronunciation display with heard text and score,7
+getAudioContext,Gets singleton audio context for web audio API,10
+playTypingSound,Plays typewriter click sound effect,10
+levenshteinDistance,Calculates Levenshtein edit distance (should use shared version),10
+calculateSimilarity,Calculates pronunciation similarity score (should use shared version),10
+normalizeCharForTyping,Normalizes character for typing comparison (should use shared version),10
+coupleChineseWithPinyin,Couples Chinese characters with pinyin syllables (should use shared version),10
+coupleChineseWithPinyinDebug,Debug version of couple function with detailed logging,5
+renderChineseWithPinyin,Renders Chinese+pinyin as HTML flex layout (should use shared version),10
+renderChineseText,Convenience function for rendering Chinese text (should use shared version),10
+setupChineseDisplayOptions,Sets up checkbox options for Chinese display (show/hide pinyin/chinese),6
+updateChineseOptionsVisibility,Shows/hides Chinese display options based on target language,6
+populateActDropdown,Populates act dropdown from loaded modules,9
+populatePackDropdown,Populates pack dropdown for selected act,9
+populateNativeLanguageDropdown,Populates 'I speak' language dropdown from translations config,9
+normalizeString,Normalizes string for comparison (lowercase trim remove accents),10
+generateWrongAnswers,Generates wrong answer choices for multiple choice (non-Chinese),10
+generateWrongAnswersWithPinyin,Generates wrong answer choices for Chinese (includes pinyin),10
+handleTypingInput,Handles typing input and validation for writing mode,10
+updateTypingDisplay,Updates typing progress display with correct/wrong characters,10
+displayAllEdgeCases,Displays all edge case words in vocabulary table (Latin chars in Chinese),3
+displayVocabulary,Main function to display vocabulary in table based on selected modes,3
+updateDebugInfo,Updates debug info display in UI,4
+handleFlashcardModeChange,Handles flashcard mode checkbox toggle,6
+initFlashcardDeck,Initializes flashcard deck from vocabulary table,6
+updateFlashcardDisplay,Updates flashcard display with current card,3
+flipCard,Flips flashcard to show answer,2
+nextCard,Advances to next flashcard,4
+prevCard,Goes back to previous flashcard,4
+shuffleDeck,Shuffles flashcard deck order,10
