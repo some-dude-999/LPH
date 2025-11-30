@@ -65,17 +65,3 @@ export const p6_182_telecommunications = {
     ["en WhatsApp", "on WhatsApp", "在WhatsApp上", "zài W h a t s A p p shàng", "no WhatsApp"]
   ]
 };
-
-export const p7_233_cryptocurrency__terms = {
-  meta: {
-    wordpack: 233,
-    english: "Cryptocurrency Terms",
-    chinese: "加密货币术语",
-    pinyin: "Jiāmì Huòbì Shùyǔ",
-    portuguese: "Termos de Criptomoeda"
-  },
-  words: [
-    ["el nft", "the nft", "NFT", "N F T", "o nft"],
-    ["un nft", "an nft", "一个NFT", "yí gè N F T", "um NFT"]
-  ]
-};

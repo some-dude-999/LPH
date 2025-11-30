@@ -48,7 +48,7 @@ export const p7_221_past__subjunctive__forms = {
     ["si fuera", "if it were", "如果是", "rú guǒ shì", "se fosse"],
     ["ojalá fuera", "I wish it were", "我希望是", "wǒ xī wàng shì", "Eu queria que fosse"],
     ["si estuviera", "if I were", "如果我是", "rú guǒ wǒ shì", "se eu estivesse"],
-    ["ojalá estuviera", "I wish I was", "我希望我是", "wǒ xī wàng wǒ shì", "Eu queria estar"],
+    ["ojalá estuviera", "I wish I were", "我希望我是", "wǒ xī wàng wǒ shì", "Eu queria estar"],
     ["si hubiera", "if there was", "如果有", "rú guǒ yǒu", "se houvesse"],
     ["ojalá hubiera", "I wish I had", "我希望我有", "wǒ xī wàng wǒ yǒu", "Eu gostaria de ter"],
     ["si hiciera", "if I did", "如果我这样做", "rú guǒ wǒ zhè yàng zuò", "se eu fizesse"],
@@ -56,11 +56,11 @@ export const p7_221_past__subjunctive__forms = {
     ["si dijera", "if I said", "如果我说", "rú guǒ wǒ shuō", "se eu dissesse"],
     ["ojalá dijera", "I wish I said", "我希望我说", "wǒ xī wàng wǒ shuō", "Eu gostaria de ter dito"],
     ["si viniera", "if it came", "如果它来了", "rú guǒ tā lái le", "se viesse"],
-    ["ojalá viniera", "I wish I would come", "我希望我能来", "wǒ xī wàng wǒ néng lái", "Eu gostaria de ir"],
+    ["ojalá viniera", "I wish I could come", "我希望我能来", "wǒ xī wàng wǒ néng lái", "Eu gostaria de ir"],
     ["si supiera", "if I knew", "如果我知道", "rú guǒ wǒ zhī dào", "se eu soubesse"],
     ["ojalá supiera", "I wish I knew", "我希望我知道", "wǒ xī wàng wǒ zhī dào", "Eu gostaria de saber"],
     ["si diera", "if it gave", "如果它给了", "rú guǒ tā gěi le", "se desse"],
-    ["ojalá diera", "I wish I gave", "我希望我给予", "wǒ xī wàng wǒ jǐ yǔ", "Eu queria ter dado"],
+    ["ojalá diera", "I wish I could give", "我希望我给予", "wǒ xī wàng wǒ jǐ yǔ", "Eu queria ter dado"],
     ["si viera", "if I saw", "如果我看到", "rú guǒ wǒ kàn dào", "se eu visse"],
     ["ojalá viera", "I wish I could see", "我希望我能看到", "wǒ xī wàng wǒ néng kàn dào", "Eu gostaria de poder ver"],
     ["si pensara", "if I thought", "如果我想", "rú guǒ wǒ xiǎng", "se eu pensasse"],
@@ -68,7 +68,7 @@ export const p7_221_past__subjunctive__forms = {
     ["si hablara", "if he spoke", "如果他说话", "rú guǒ tā shuō huà", "se ele falasse"],
     ["ojalá hablara", "I wish I spoke", "我希望我能说话", "wǒ xī wàng wǒ néng shuō huà", "Eu queria ter falado"],
     ["si comiera", "if I ate", "如果我吃了", "rú guǒ wǒ chī le", "se eu comesse"],
-    ["ojalá comiera", "I wish I ate", "我希望我吃了", "wǒ xī wàng wǒ chī le", "Eu queria comer"],
+    ["ojalá comiera", "I wish I could eat", "我希望我吃了", "wǒ xī wàng wǒ chī le", "Eu queria comer"],
     ["si viviera", "if he lived", "如果他还活着", "rú guǒ tā hái huó zhe", "se ele vivesse"],
     ["ojalá viviera", "I wish I lived", "我希望我还活着", "wǒ xī wàng wǒ hái huó zhe", "Eu queria viver"],
     ["si trabajara", "if I worked", "如果我工作", "rú guǒ wǒ gōng zuò", "se eu trabalhasse"],
@@ -80,7 +80,7 @@ export const p7_221_past__subjunctive__forms = {
     ["si esperara", "if I waited", "如果我等待", "rú guǒ wǒ děng dài", "se eu esperasse"],
     ["ojalá esperara", "I wish I would wait", "我希望我会等待", "wǒ xī wàng wǒ huì děng dài", "Eu gostaria de esperar"],
     ["si quisiera", "if I wanted", "如果我想要", "rú guǒ wǒ xiǎng yào", "se eu quisesse"],
-    ["ojalá quisiera", "I wish I would", "我希望我会", "wǒ xī wàng wǒ huì", "Eu gostaria de poder"]
+    ["ojalá quisiera", "I wish I wanted to", "我希望我会", "wǒ xī wàng wǒ huì", "Eu gostaria de poder"]
   ]
 };
 
@@ -522,7 +522,7 @@ export const p7_230_virtual__reality__terms = {
   exampleWords: [
     ["es virtual", "is virtual", "是虚拟的", "shì xū nǐ de", "é virtual"],
     ["realidad virtual", "virtual reality", "虚拟现实", "xū nǐ xiàn shí", "realidade virtual"],
-    ["es aumentada", "is increased", "增加", "zēng jiā", "é aumentada"],
+    ["es aumentada", "is augmented", "增加", "zēng jiā", "é aumentada"],
     ["realidad aumentada", "augmented reality", "增强现实", "zēng qiáng xiàn shí", "realidade aumentada"],
     ["es mixta", "is mixed", "是混合的", "shì hùn hé de", "é mista"],
     ["realidad mixta", "mixed reality", "混合现实", "hùn hé xiàn shí", "realidade mista"],
@@ -665,9 +665,9 @@ export const p7_233_cryptocurrency__terms = {
     ["transacción", "transaction", "交易", "jiāo yì", "transação"],
     ["exchange", "exchange", "交易所", "jiāo yì suǒ", "corretora"],
     ["clave", "key", "密钥", "guān jiàn", "chave"],
-    ["hash", "hashes", "哈希值", "hā xī zhí", "hash"],
+    ["hash", "hash", "哈希值", "hā xī zhí", "hash"],
     ["minar", "mine", "挖矿", "wā kuàng", "minerar"],
-    ["bull", "bull", "公牛", "gōng niú", "touro"],
+    ["bull", "bullish", "看涨", "kàn zhǎng", "altista"],
     ["descentralización", "decentralization", "权力下放", "quán lì xià fàng", "descentralização"],
     ["altcoin", "altcoin", "山寨币", "shān zhài bì", "altcoin"],
     ["staking", "staking", "质押", "zhì yā", "staking"],
@@ -681,7 +681,7 @@ export const p7_233_cryptocurrency__terms = {
     ["con bitcoin", "with bitcoin", "与比特币", "yǔ bǐ tè bì", "com bitcoin"],
     ["el ethereum", "ethereum", "以太坊", "yǐ tài fāng", "ethereum"],
     ["con ethereum", "with ethereum", "与以太坊", "yǔ yǐ tài fāng", "com ethereum"],
-    ["el blockchain", "the blockchain", "区块链", "qū kuài liàn", "a blockchain"],
+    ["el blockchain", "the blockchain", "区块链", "qū kuài liàn", "o blockchain"],
     ["en blockchain", "on blockchain", "在区块链上", "zài qū kuài liàn shàng", "em blockchain"],
     ["el token", "the token", "令牌", "lìng pái", "o token"],
     ["un token", "a token", "一个令牌", "yí gè lìng pái", "um token"],
@@ -699,7 +699,7 @@ export const p7_233_cryptocurrency__terms = {
     ["un hash", "a hash", "哈希", "hā xī", "um hash"],
     ["hay que minar", "you have to mine", "你必须开采", "nǐ bì xū kāi cǎi", "você tem que minerar"],
     ["voy a minar", "I'm going to mine", "我要去挖矿", "wǒ yào qù wā kuàng", "Vou minerar"],
-    ["el bull", "the bull", "公牛", "gōng niú", "o touro"],
+    ["el bull", "the bull market", "牛市", "niú shì", "o mercado altista"],
     ["mercado bull", "bull market", "牛市", "niú shì", "mercado altista"],
     ["la descentralización", "decentralization", "权力下放", "quán lì xià fàng", "descentralização"],
     ["con descentralización", "with decentralization", "去中心化", "qù zhōng xīn huà", "com descentralização"],
@@ -709,8 +709,8 @@ export const p7_233_cryptocurrency__terms = {
     ["con staking", "with staking", "与质押", "yǔ zhì yā", "com staking"],
     ["el defi", "the defi", "去中心化金融", "qù zhōng xīn huà jīn róng", "o DeFi"],
     ["de defi", "defi", "去中心化金融", "qù zhōng xīn huà jīn róng", "DeFi"],
-    ["el nft", "the nft", "NFT", "N F T", "o nft"],
-    ["un nft", "an nft", "一个NFT", "yí gè N F T", "um NFT"]
+    ["el nft", "the nft", "非同质化代币", "fēi tóng zhì huà dài bì", "o nft"],
+    ["un nft", "an nft", "非同质化代币", "fēi tóng zhì huà dài bì", "um NFT"]
   ]
 };
 
@@ -811,19 +811,19 @@ export const p7_236_sustainable__living = {
     portuguese: "Vida Sustentável"
   },
   baseWords: [
-    ["reutilización", "reuse", "重用", "zhòng yòng", "reutilizar"],
+    ["reutilización", "reuse", "重用", "zhòng yòng", "reutilização"],
     ["compostaje", "composting", "堆肥", "duī féi", "compostagem"],
     ["productos", "products", "产品", "chǎn pǐn", "produtos"],
     ["alimentación", "diet", "饮食", "yǐn shí", "alimentação"],
     ["reutilizar", "reuse", "重用", "zhòng yòng", "reutilizar"],
     ["reciclar", "recycle", "回收", "huí shōu", "reciclar"],
-    ["compostar", "compost", "堆肥", "duī féi", "composto"],
+    ["compostar", "to compost", "堆肥", "duī féi", "compostar"],
     ["permacultura", "permaculture", "永续农业", "yǒng xù nóng yè", "permacultura"],
     ["ecológico", "ecological", "生态", "shēng tài", "ecológico"],
     ["orgánico", "organic", "有机", "yǒu jī", "orgânico"],
     ["biodegradable", "biodegradable", "可生物降解", "kě shēng wù jiàng jiě", "biodegradável"],
     ["huella", "footprint", "足迹", "zú jì", "pegada"],
-    ["local", "local", "本地", "běn dì", "locais"],
+    ["local", "local", "本地", "běn dì", "local"],
     ["consciente", "conscious", "有意识", "yǒu yì shí", "consciente"],
     ["minimalismo", "minimalism", "极简主义", "jí jiǎn zhǔ yì", "minimalismo"],
     ["estacional", "seasonal", "季节性", "jì jié xìng", "sazonal"],
@@ -831,7 +831,7 @@ export const p7_236_sustainable__living = {
     ["duradero", "durable", "耐用", "nài yòng", "durável"]
   ],
   exampleWords: [
-    ["la reutilización", "reuse", "重用", "zhòng yòng", "reutilizar"],
+    ["la reutilización", "reuse", "重用", "zhòng yòng", "reutilização"],
     ["con reutilización", "with reuse", "重复使用", "chóng fù shǐ yòng", "com reutilização"],
     ["el compostaje", "composting", "堆肥", "duī féi", "compostagem"],
     ["con compostaje", "with composting", "与堆肥", "yǔ duī féi", "com compostagem"],
@@ -857,8 +857,8 @@ export const p7_236_sustainable__living = {
     ["mi huella", "my footprint", "我的足迹", "wǒ de zú jì", "minha pegada"],
     ["es local", "is local", "是本地的", "shì běn dì de", "é local"],
     ["producto local", "local product", "本地产品", "běn dì chǎn pǐn", "produto local"],
-    ["es consciente", "is aware", "知道", "zhī dào", "está ciente"],
-    ["muy consciente", "very aware", "非常清楚", "fēi cháng qīng chǔ", "muito consciente"],
+    ["es consciente", "is conscious", "知道", "zhī dào", "é consciente"],
+    ["muy consciente", "very conscious", "非常清楚", "fēi cháng qīng chǔ", "muito consciente"],
     ["el minimalismo", "minimalism", "极简主义", "jí jiǎn zhǔ yì", "minimalismo"],
     ["con minimalismo", "with minimalism", "极简主义", "jí jiǎn zhǔ yì", "com minimalismo"],
     ["es estacional", "is seasonal", "是季节性的", "shì jì jié xìng de", "é sazonal"],
