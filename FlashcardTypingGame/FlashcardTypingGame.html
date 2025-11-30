@@ -2401,7 +2401,7 @@
       document.body.classList.remove('showing-menu');
 
       currentIndex = savedIndex;
-      updateWordpackTitle(); // Restore wordpack title
+      updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks); // Restore wordpack title
       updateDisplay();
     }
 
@@ -2512,9 +2512,17 @@
 
         // Populate act selector
         if (menuAct) {
-          populateActSelector(menuAct);
-          if (currentAct) {
+          // Use shared function from wordpack-logic.js
+          window.populateActSelector(menuAct, loadedActMeta, null);
+
+          // Game-specific: Set saved value and handle defaults
+          const actNumbers = Object.keys(loadedActMeta).map(Number).sort((a, b) => a - b);
+          if (currentAct && actNumbers.includes(currentAct)) {
             menuAct.value = currentAct;
+          } else if (actNumbers.length > 0) {
+            menuAct.value = actNumbers[0];
+            currentAct = actNumbers[0];
+            saveState();
           }
 
           menuAct.addEventListener('change', async (e) => {
@@ -2552,7 +2560,19 @@
 
         // Language selector - populated from config, not hardcoded HTML
         if (menuLanguage) {
-          populateLanguageSelector(menuLanguage);
+          // Use shared function from wordpack-logic.js
+          const translations = getTranslationsConfig();
+          if (translations) {
+            window.populateNativeLanguageSelector(menuLanguage, translations, nativeLanguage, null);
+
+            // Game-specific: Validate and set default if needed
+            const validLanguages = Object.keys(translations);
+            if (!nativeLanguage || !validLanguages.includes(nativeLanguage)) {
+              nativeLanguage = getDefaultTranslation();
+              menuLanguage.value = nativeLanguage;
+              saveState();
+            }
+          }
 
           menuLanguage.addEventListener('change', (e) => {
             playButtonClickSound();
@@ -2601,7 +2621,7 @@
             saveState();
             // Preview the new voice by speaking the current word
             if (currentDeck.length > 0) {
-              setTimeout(() => speakSpanish(), 100);
+              setTimeout(() => speakTargetWord(), 100);
             }
           });
         }
@@ -2627,7 +2647,7 @@
             saveState();
             // Preview the new speed by speaking the current word
             if (currentDeck.length > 0) {
-              setTimeout(() => speakSpanish(), 100);
+              setTimeout(() => speakTargetWord(), 100);
             }
           });
         });
@@ -2725,7 +2745,7 @@
 
       // Auto-pronounce target word in spelling mode only (not writing - user needs to translate)
       if (newMode === 'spelling' && currentDeck.length > 0) {
-        setTimeout(() => speakSpanish(), 300);
+        setTimeout(() => speakTargetWord(), 300);
       }
 
       // Update debug simulate button visibility based on new mode
@@ -2815,7 +2835,7 @@
 
               // Auto-pronounce in spelling mode
               if (currentMode === 'spelling' && currentDeck.length > 0) {
-                setTimeout(() => speakSpanish(), 300);
+                setTimeout(() => speakTargetWord(), 300);
               }
             });
           } else {
@@ -2850,10 +2870,10 @@
       }
     }
 
-    // Check if current word is complete in translation mode
-    function isWritingComplete() {
-      return !typingDisplay.includes('_');
-    }
+    // ============================================================
+    // NOTE: isWritingComplete() removed - use isWordComplete() from wordpack-logic.js
+    // Usage: isWordComplete(typingDisplay, typedPositions)
+    // ============================================================
 
     // Load voices based on TTS language code from loaded modules
     // KEY FEATURE: Voices only load if modules are loaded - no module = no voices
@@ -2898,103 +2918,17 @@
     //   - Populate wordpack selector with packs from selected act
     // ============================================================
 
-    // Load a specific act's data
-    async function loadAct(actNumber) {
-      // Check if already loaded
-      if (loadedActs[actNumber]) {
-        return loadedActs[actNumber];
-      }
+    // ============================================================
+    // NOTE: loadAct() removed - use window.loadAct() from wordpack-logic.js
+    // This function handles loading obfuscated modules, extracting metadata,
+    // and caching loaded acts for reuse.
+    // ============================================================
 
-      // Get URL from MODULE_URLS array (actNumber is 1-indexed)
-      const url = MODULE_URLS[actNumber - 1];
-
-      if (!url) {
-        throw new Error(`Act ${actNumber} URL not found in MODULE_URLS`);
-      }
-
-      try {
-        console.log(`Loading act ${actNumber}...`);
-        const actData = await decodeObfuscatedModule(url);
-
-        // Extract and store __actMeta (contains actName, translations, etc.)
-        if (actData.__actMeta) {
-          loadedActMeta[actNumber] = actData.__actMeta;
-          console.log(`Act ${actNumber} metadata:`, actData.__actMeta.actName);
-        }
-
-        // Store only pack data (exclude __actMeta)
-        const packsOnly = { ...actData };
-        delete packsOnly.__actMeta;
-
-        loadedActs[actNumber] = packsOnly;
-        Object.assign(wordpacks, packsOnly);
-
-        console.log(`Act ${actNumber} loaded successfully:`, Object.keys(packsOnly).length, 'packs');
-        return packsOnly;
-      } catch (error) {
-        console.error(`Failed to load act ${actNumber}:`, error);
-        throw error;
-      }
-    }
-
-    // Populate act selector dropdown
-    // KEY FEATURE: Act names come from loaded module __actMeta, not inline config
-    function populateActSelector(targetElement = null) {
-      // Use provided element or find menu-act element
-      const selectElement = targetElement || document.getElementById('menu-act');
-      if (!selectElement) {
-        console.warn('[populateActSelector] No target element found');
-        return;
-      }
-
-      // Use shared function from wordpack-logic.js to populate the selector
-      // Note: onChange handler not needed here as we handle it separately in event listeners
-      window.populateActSelector(selectElement, loadedActMeta, null);
-
-      // Game-specific: Set saved value and handle defaults
-      const actNumbers = Object.keys(loadedActMeta).map(Number).sort((a, b) => a - b);
-
-      // Use saved act if valid, otherwise default to first act
-      if (currentAct && actNumbers.includes(currentAct)) {
-        // Saved act is valid - use it
-        selectElement.value = currentAct;
-      } else if (actNumbers.length > 0) {
-        // No saved act or invalid - default to first
-        selectElement.value = actNumbers[0];
-        currentAct = actNumbers[0];
-        saveState(); // Save the default
-      }
-    }
-
-    // Populate "I speak" language selector from loaded module metadata
-    // KEY FEATURE: Languages come from __actMeta.translations in loaded modules
-    function populateLanguageSelector(targetElement = null) {
-      const selectElement = targetElement || document.getElementById('menu-language');
-      if (!selectElement) {
-        console.warn('[populateLanguageSelector] No target element found');
-        return;
-      }
-
-      const translations = getTranslationsConfig();
-
-      if (!translations) {
-        console.warn('[populateLanguageSelector] No translations loaded yet');
-        return;
-      }
-
-      // Use shared function from wordpack-logic.js to populate the selector
-      // Note: onChange handler not needed here as we handle it separately in event listeners
-      window.populateNativeLanguageSelector(selectElement, translations, nativeLanguage, null);
-
-      // Game-specific: Validate and set default if needed
-      const validLanguages = Object.keys(translations);
-      if (!nativeLanguage || !validLanguages.includes(nativeLanguage)) {
-        // Invalid or no saved language - use default from loaded metadata
-        nativeLanguage = getDefaultTranslation();
-        selectElement.value = nativeLanguage;
-        saveState();
-      }
-    }
+    // ============================================================
+    // NOTE: populateActSelector() removed - use window.populateActSelector() from wordpack-logic.js
+    // NOTE: populateLanguageSelector() removed - use window.populateNativeLanguageSelector() from wordpack-logic.js
+    // These functions populate dropdowns with act names and language options from loaded module metadata.
+    // ============================================================
 
     // ============================================================
     // Initialize tooltips from TOOLTIP_MESSAGES (single source of truth)
@@ -3164,7 +3098,7 @@
         // Initialize the deck silently (content will be under the menu)
         if (currentWordpackKey && wordpacks[currentWordpackKey]) {
           initializeDeck(currentWordpackKey);
-          updateWordpackTitle();
+          updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
           updateBackLabel();
 
           // Set game-started state so card content is visible under menu
@@ -3373,9 +3307,14 @@
       }
     }
 
-    // Restart current wordpack
     // ============================================================
-    // NOTE: Now uses shared resetDeckToOriginal() from wordpack-logic.js (same as resetDeck)
+    // GAME-SPECIFIC WRAPPER: Restart current wordpack
+    // ============================================================
+    // WHY THIS EXISTS: Wraps shared resetDeckToOriginal() with game-specific:
+    //   - Access to local variables (originalDeck, currentDeck, currentIndex)
+    //   - Game-specific callbacks (initializeTypingDisplay, updateDisplay, saveState)
+    //   - Flash-card specific sound effects (playButtonClickSound)
+    // REUSABILITY: 2/10 - Other games need different callbacks/context
     // ============================================================
     function restartCurrentPack() {
       playButtonClickSound();
@@ -3418,7 +3357,7 @@
       if (menuWordpack) menuWordpack.value = nextPackKey;
 
       initializeDeck(nextPackKey);
-      updateWordpackTitle();
+      updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
       saveState();
     }
 
@@ -3666,9 +3605,14 @@
     // - Helps users learn pronunciation through repetition
     // ============================================================
 
-    // Navigate to previous card (with wrap-around)
     // ============================================================
-    // NOTE: Now uses shared navigateToPrevious() from wordpack-logic.js
+    // GAME-SPECIFIC WRAPPER: Navigate to previous card
+    // ============================================================
+    // WHY THIS EXISTS: Wraps shared navigateToPrevious() with game-specific:
+    //   - Access to local variables (currentDeck, currentIndex, currentMode)
+    //   - Game-specific callbacks (initializeTypingDisplay, updateDisplay, saveState)
+    //   - Game-specific sound (playCardFlipSound) and speech control
+    // REUSABILITY: 2/10 - Other games need different navigation behavior
     // ============================================================
     function goToPrevious() {
       if (currentDeck.length === 0) return;
@@ -3691,9 +3635,14 @@
       );
     }
 
-    // Navigate to next card (with wrap-around)
     // ============================================================
-    // NOTE: Now uses shared navigateToNext() from wordpack-logic.js
+    // GAME-SPECIFIC WRAPPER: Navigate to next card
+    // ============================================================
+    // WHY THIS EXISTS: Wraps shared navigateToNext() with game-specific:
+    //   - Access to local variables (currentDeck, currentIndex, currentMode)
+    //   - Game-specific callbacks (initializeTypingDisplay, updateDisplay, saveState)
+    //   - Game-specific sound (playCardFlipSound) and speech control
+    // REUSABILITY: 2/10 - Other games need different navigation behavior
     // ============================================================
     function goToNext() {
       if (currentDeck.length === 0) return;
@@ -3834,9 +3783,14 @@
       });
     }
 
-    // Reset deck to original shuffled state (fresh start in current mode)
     // ============================================================
-    // NOTE: Now uses shared resetDeckToOriginal() from wordpack-logic.js
+    // GAME-SPECIFIC WRAPPER: Reset deck to original state
+    // ============================================================
+    // WHY THIS EXISTS: Wraps shared resetDeckToOriginal() with game-specific:
+    //   - Access to local variables (originalDeck, isFlipped, pendingDeckChange)
+    //   - Game-specific callbacks (initializeTypingDisplay, updateDisplay, saveState)
+    //   - Flash-card specific behaviors (reset flip state, auto-pronounce)
+    // REUSABILITY: 2/10 - Other games need different reset behaviors
     // ============================================================
     function resetDeck() {
       if (originalDeck.length === 0) return;
@@ -3865,7 +3819,7 @@
 
           // Auto-pronounce in spelling mode
           if (currentMode === 'spelling' && currentDeck.length > 0) {
-            setTimeout(() => speakSpanish(), 300);
+            setTimeout(() => speakTargetWord(), 300);
           }
 
           saveState();
@@ -3876,7 +3830,15 @@
       currentIndex = result.currentIndex;
     }
 
-    // Speak the target word (uses TTS for the detected target language)
+    // ============================================================
+    // GAME-SPECIFIC WRAPPER: Speak the target word
+    // ============================================================
+    // WHY THIS EXISTS: Wraps shared speakWord() with game-specific:
+    //   - Access to local variables (currentDeck, currentIndex, currentVoice, currentSpeed)
+    //   - Gets current card's targetWord from deck
+    //   - Uses game's TTS settings
+    // REUSABILITY: 3/10 - Similar pattern across games but needs local context
+    // ============================================================
     function speakTargetWord() {
       if (currentDeck.length === 0) return;
 
@@ -3889,14 +3851,21 @@
     }
 
     // Alias for backwards compatibility - some places may still call speakSpanish
-    function speakSpanish() {
-      speakTargetWord();
-    }
-
-    // Set speech speed
     // ============================================================
-    // NOTE: setSpeed() removed - use shared version from wordpack-logic.js
-    // Use: currentSpeed = setTTSSpeed(speed, speedBtns); saveState();
+    // NOTE: speakTargetWord() DELETED - unnecessary wrapper
+    // ============================================================
+    // This function was just calling speakTargetWord() - no added value.
+    // All calls updated to use speakTargetWord() directly.
+    // ============================================================
+
+    // ============================================================
+    // GAME-SPECIFIC WRAPPER: Set speech speed
+    // ============================================================
+    // WHY THIS EXISTS: Wraps shared setTTSSpeed() with game-specific:
+    //   - Access to local variable (speedBtns)
+    //   - Updates local currentSpeed variable
+    //   - Calls game's saveState()
+    // REUSABILITY: 3/10 - Similar pattern but needs local context
     // ============================================================
     function setSpeed(speed, btn) {
       currentSpeed = setTTSSpeed(speed, Array.from(speedBtns));
@@ -3973,11 +3942,10 @@
       feedback.classList.add('visible');
     }
 
-    // Hide feedback
-    // NOTE: Now uses shared hideFeedback() from wordpack-logic.js
-    function hideFeedback() {
-      window.hideFeedback([feedbackFront, feedbackBack]);
-    }
+    // ============================================================
+    // NOTE: hideFeedback() removed - use window.hideFeedback() from wordpack-logic.js
+    // Usage: window.hideFeedback([feedbackFront, feedbackBack]);
+    // ============================================================
 
     // Start listening for pronunciation
     function startListening(isFront = true) {
@@ -4059,14 +4027,10 @@
       recognition.start();
     }
 
-    // Update wordpack title display
     // ============================================================
-    // NOTE: updateWordpackTitle() removed - use shared version from wordpack-logic.js
-    // Use: updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
+    // NOTE: updateWordpackTitle() removed - use updateWordpackTitleDisplay() from wordpack-logic.js
+    // Usage: updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
     // ============================================================
-    function updateWordpackTitle() {
-      updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
-    }
 
     // Start the game
     // ============================================================
@@ -4085,7 +4049,7 @@
       updateBackLabel();
 
       // Update wordpack title
-      updateWordpackTitle();
+      updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
 
       // Exit starting card state if we're on it
       isOnStartingCard = false;
@@ -4157,7 +4121,7 @@
     // Pronounce button (no button click sound per user request)
     pronounceBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      speakSpanish();
+      speakTargetWord();
     });
 
     // Peek button (hold to flip, release to unflip)
@@ -4200,7 +4164,7 @@
         setSpeed(speed, btn);
         // Play sample at new speed if game has started
         if (gameStarted && currentDeck.length > 0) {
-          speakSpanish();
+          speakTargetWord();
         }
       });
     });
@@ -4217,12 +4181,12 @@
     closeFront.addEventListener('click', (e) => {
       e.stopPropagation();
       playButtonClickSound();
-      hideFeedback();
+      window.hideFeedback([feedbackFront, feedbackBack]);
     });
     closeBack.addEventListener('click', (e) => {
       e.stopPropagation();
       playButtonClickSound();
-      hideFeedback();
+      window.hideFeedback([feedbackFront, feedbackBack]);
     });
 
     // Menu button - toggle menu on/off
@@ -4311,7 +4275,7 @@
       } else if (e.key === 'ArrowUp') {
         // Up arrow: ALWAYS pronounce
         e.preventDefault();
-        speakSpanish();
+        speakTargetWord();
       } else if (e.key === 'ArrowDown') {
         // Down arrow: Hold to see translation (flip on keydown, unflip on keyup)
         e.preventDefault();
@@ -4332,7 +4296,7 @@
         // Space: pronounce in flashcard mode, record in pronunciation mode, play sound in translation mode, ignore in listening
         if (currentMode === 'flashcard') {
           e.preventDefault();
-          speakSpanish();
+          speakTargetWord();
         } else if (currentMode === 'pronunciation') {
           e.preventDefault();
           // Trigger mic button based on which side of card is showing
@@ -4509,7 +4473,7 @@
           // Reinitialize deck with new difficulty
           if (currentWordpackKey && wordpacks[currentWordpackKey]) {
             initializeDeck(currentWordpackKey);
-            updateWordpackTitle();
+            updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
             updateDisplay();
             saveState();
 
