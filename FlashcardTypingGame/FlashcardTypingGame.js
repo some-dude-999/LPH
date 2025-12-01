@@ -370,310 +370,75 @@
 
     // NOTE: normalizeChar() is now in wordpack-logic.js (globally available)
 
-    // Navigate to starting card (menu/help card)
+    // ============================================================
+    // showStartingCard() - Wrapper for shared function in wordpack-logic.js
+    // ============================================================
     function showStartingCard(showBack = false) {
-      if (!isOnStartingCard && currentDeck.length > 0) {
-        savedIndex = currentIndex;
-      }
-      isOnStartingCard = true;
-
-      // Add showing-menu class so menu content and UI elements are visible
-      flashcard.classList.add('showing-menu');
-      document.body.classList.add('showing-menu');
-
-      // Update titles (use detected target language)
-      const gameTitle = targetLanguageDisplay
-        ? `${targetLanguageDisplay} Flashcard Typing Game`
-        : 'Flashcard Typing Game';
-      wordpackTitle.textContent = gameTitle;
-      cardCounter.textContent = 'Choose Lesson to Begin Studying';
-
-      // Render menu card (looks identical to a flashcard)
-      renderMenuCard();
-
-      // Unflip card face if currently flipped
-      if (isFlipped) {
-        flashcard.classList.remove('flipped');
-        isFlipped = false;
-      }
-
-      // Flip to back if help was requested
-      if (showBack) {
-        setTimeout(() => flipCard(), 100);
-      }
+      const context = window.showStartingCard({
+        isOnStartingCard,
+        currentDeck,
+        currentIndex,
+        savedIndex,
+        flashcard,
+        wordpackTitle,
+        cardCounter,
+        targetLanguageDisplay,
+        gameTitle: 'Flashcard Typing Game',
+        isFlipped,
+        renderMenuCard,
+        flipCard
+      }, showBack);
+      // Update local state from returned context
+      isOnStartingCard = context.isOnStartingCard;
+      savedIndex = context.savedIndex;
+      isFlipped = context.isFlipped;
     }
 
-    // Return from starting card to saved position
+    // ============================================================
+    // exitStartingCard() - Wrapper for shared function in wordpack-logic.js
+    // ============================================================
     function exitStartingCard() {
-      if (!isOnStartingCard) return;
-      isOnStartingCard = false;
-
-      // Remove showing-menu class
-      flashcard.classList.remove('showing-menu');
-      document.body.classList.remove('showing-menu');
-
-      currentIndex = savedIndex;
-      updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks); // Restore wordpack title
-      updateDisplay();
+      const context = window.exitStartingCard({
+        isOnStartingCard,
+        flashcard,
+        savedIndex,
+        currentIndex,
+        wordpackTitle,
+        currentWordpackKey,
+        wordpacks,
+        updateDisplay
+      });
+      // Update local state from returned context
+      isOnStartingCard = context.isOnStartingCard;
+      currentIndex = context.currentIndex;
     }
 
-    // Render the menu card (looks like a regular flashcard)
+    // ============================================================
+    // renderMenuCard() - Wrapper for shared function in wordpack-logic.js
+    // ============================================================
     function renderMenuCard() {
-      // Get language name for UI text (use detected or fallback to generic)
-      const langName = targetLanguageDisplay || 'Target';
-      const voiceLabel = targetLanguageDisplay ? `${targetLanguageDisplay} Voice` : 'Voice';
-      // For Chinese, typing is pinyin-based
-      const typingDesc = isChineseMode() ? 'type pinyin' : 'type what you heard';
-      const translationTypingDesc = isChineseMode() ? 'type pinyin' : `type ${langName} translation`;
-
-      // Front: Menu/Settings (styled like target language side)
-      spanishWord.innerHTML = `
-        <div style="font-size: 1.1rem; text-align: left; max-width: 550px; margin: 0 auto; line-height: 1.8;">
-          <!-- Row 1: Act and Wordpack -->
-          <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-            <div class="menu-field" style="flex: 1; margin-bottom: 0;">
-              <label>Choose Act</label>
-              <select id="menu-act">
-              </select>
-            </div>
-            <div class="menu-field" style="flex: 1; margin-bottom: 0;">
-              <label>Choose Wordpack</label>
-              <select id="menu-wordpack">
-              </select>
-            </div>
-          </div>
-
-          <!-- Row 2: Language and Speed -->
-          <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-            <div class="menu-field" style="flex: 1; margin-bottom: 0;">
-              <label>I speak</label>
-              <select id="menu-language">
-              </select>
-            </div>
-            <div class="menu-field" style="flex: 1; margin-bottom: 0;">
-              <label>Pronunciation Speed</label>
-              <div style="display: flex; gap: 8px; justify-content: center;">
-                <button class="menu-speed-btn" data-speed="0.3">🐢</button>
-                <button class="menu-speed-btn" data-speed="0.6">🚶</button>
-                <button class="menu-speed-btn" data-speed="0.9">🐇</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 3: Voice -->
-          <div class="menu-field" style="margin-bottom: 25px;">
-            <label>${voiceLabel}</label>
-            <select id="menu-voice">
-              <option value="">Loading voices...</option>
-            </select>
-          </div>
-
-          <button id="start-practice-btn" class="setup-start-btn" style="width: 100%;">
-            ▶ Start Game
-          </button>
-        </div>
-      `;
-      spanishWord.className = 'card-word';
-
-      // Back: Help/Instructions (styled like translation side)
-      englishWord.innerHTML = `
-        <div style="font-size: 2rem; font-weight: bold; margin-bottom: 20px;">❓ How to Use</div>
-
-        <div style="font-size: 1.1rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 1.8;">
-          <div style="margin-bottom: 15px;">
-            <strong>📖 Flashcard Mode:</strong> ${langName} word → flip to see translation
-          </div>
-
-          <div style="margin-bottom: 15px;">
-            <strong>👂 Spelling Mode:</strong> Hear ${langName} → ${typingDesc}
-          </div>
-
-          <div style="margin-bottom: 15px;">
-            <strong>💬 Pronunciation Mode:</strong> See ${langName} → say it out loud (Space to record)
-          </div>
-
-          <div style="margin-bottom: 15px;">
-            <strong>✏️ Translation Mode:</strong> See translation → ${translationTypingDesc}
-          </div>
-
-          <div style="margin-bottom: 15px;">
-            <strong>Controls:</strong><br>
-            • Click card or ↓ to flip<br>
-            • ← → to navigate<br>
-            • Space: Hear pronunciation (reading) / Record speech (speaking) / Type practice (listening/writing)<br>
-            • Type letters in listening/translation modes
-          </div>
-
-          <div style="margin-bottom: 15px;">
-            <strong>Buttons:</strong><br>
-            • 👌 Remove mastered card<br>
-            • 😕 Add 2 practice copies<br>
-            • ↺ Reset all cards
-          </div>
-        </div>
-      `;
-      englishWord.className = 'card-word';
-
-      // Populate selectors after render
-      setTimeout(() => {
-        const menuAct = document.getElementById('menu-act');
-        const menuWordpack = document.getElementById('menu-wordpack');
-        const menuLanguage = document.getElementById('menu-language');
-        const menuVoice = document.getElementById('menu-voice');
-        const startPracticeBtn = document.getElementById('start-practice-btn');
-
-        // Populate act selector
-        if (menuAct) {
-          // Use shared function from wordpack-logic.js
-          window.populateActSelector(menuAct, loadedActMeta, null);
-
-          // Game-specific: Set saved value and handle defaults
-          const actNumbers = Object.keys(loadedActMeta).map(Number).sort((a, b) => a - b);
-          if (currentAct && actNumbers.includes(currentAct)) {
-            menuAct.value = currentAct;
-          } else if (actNumbers.length > 0) {
-            menuAct.value = actNumbers[0];
-            currentAct = actNumbers[0];
-            saveState();
-          }
-
-          menuAct.addEventListener('change', async (e) => {
-            playButtonClickSound();
-            const selectedAct = parseInt(e.target.value);
-            currentAct = selectedAct;
-            menuWordpack.innerHTML = '';
-            menuWordpack.disabled = true;
-
-            try {
-              await loadAct(selectedAct);
-              populateWordpackSelectorOnCard(selectedAct);
-              menuWordpack.disabled = false;
-            } catch (error) {
-              console.error('Failed to load act:', error);
-              menuWordpack.innerHTML = '<option value="">Failed to load act</option>';
-            }
-          });
-        }
-
-        // Populate wordpack selector
-        if (menuWordpack) {
-          populateWordpackSelectorOnCard(currentAct);
-          // Restore saved wordpack selection if available
-          if (currentWordpackKey && loadedActs[currentAct] && loadedActs[currentAct][currentWordpackKey]) {
-            menuWordpack.value = currentWordpackKey;
-          }
-
-          menuWordpack.addEventListener('change', (e) => {
-            playButtonClickSound();
-            currentWordpackKey = e.target.value;
-            saveState();
-          });
-        }
-
-        // Language selector - populated from config, not hardcoded HTML
-        if (menuLanguage) {
-          // Use shared function from wordpack-logic.js
-          const translations = getTranslationsConfig();
-          if (translations) {
-            window.populateNativeLanguageSelector(menuLanguage, translations, nativeLanguage, null);
-
-            // Game-specific: Validate and set default if needed
-            const validLanguages = Object.keys(translations);
-            if (!nativeLanguage || !validLanguages.includes(nativeLanguage)) {
-              nativeLanguage = getDefaultTranslation();
-              menuLanguage.value = nativeLanguage;
-              saveState();
-            }
-          }
-
-          menuLanguage.addEventListener('change', (e) => {
-            playButtonClickSound();
-            nativeLanguage = e.target.value;
-            updateBackLabel();
-            // Reinitialize deck to include/exclude pinyin based on new language
-            if (currentWordpackKey) {
-              initializeDeck(currentWordpackKey);
-            }
-            saveState();
-          });
-        }
-
-        // Voice selector - use saved state (currentVoice or savedVoiceURI)
-        // No "Default" placeholder - always show actual voice name
-        if (menuVoice && spanishVoices.length > 0) {
-          menuVoice.innerHTML = ''; // Clear - no placeholder
-          spanishVoices.forEach((voice) => {
-            const option = document.createElement('option');
-            option.value = voice.voiceURI;
-            option.textContent = `${voice.name} (${voice.lang})`;
-            menuVoice.appendChild(option);
-          });
-
-          // Use currentVoice if set, otherwise use savedVoiceURI from state, otherwise first voice
-          const voiceURIToRestore = currentVoice ? currentVoice.voiceURI : savedVoiceURI;
-          if (voiceURIToRestore && spanishVoices.find(v => v.voiceURI === voiceURIToRestore)) {
-            menuVoice.value = voiceURIToRestore;
-            // Also set currentVoice if we have the URI but not the voice object
-            if (!currentVoice && savedVoiceURI) {
-              currentVoice = spanishVoices.find(v => v.voiceURI === savedVoiceURI) || null;
-            }
-          } else {
-            // No saved voice or saved voice not found - default to first voice
-            const firstVoice = spanishVoices[0];
-            menuVoice.value = firstVoice.voiceURI;
-            currentVoice = firstVoice;
-            savedVoiceURI = firstVoice.voiceURI;
-          }
-
-          menuVoice.addEventListener('change', (e) => {
-            playButtonClickSound();
-            const newVoiceURI = e.target.value;
-            currentVoice = spanishVoices.find(v => v.voiceURI === newVoiceURI) || null;
-            savedVoiceURI = newVoiceURI; // Also update savedVoiceURI
-            saveState();
-            // Preview the new voice by speaking the current word
-            if (currentDeck.length > 0) {
-              setTimeout(() => speakTargetWord(), 100);
-            }
-          });
-        }
-
-        // Speed buttons - use CSS classes for cardboard styling
-        const speedBtns = document.querySelectorAll('.menu-speed-btn');
-        // First reset ALL buttons to default state (remove active class)
-        speedBtns.forEach(b => {
-          b.classList.remove('active');
-        });
-        // Then highlight the one matching saved currentSpeed
-        speedBtns.forEach(btn => {
-          if (parseFloat(btn.dataset.speed) === currentSpeed) {
-            btn.classList.add('active');
-          }
-          btn.addEventListener('click', () => {
-            playButtonClickSound();
-            currentSpeed = parseFloat(btn.dataset.speed);
-            speedBtns.forEach(b => {
-              b.classList.remove('active');
-            });
-            btn.classList.add('active');
-            saveState();
-            // Preview the new speed by speaking the current word
-            if (currentDeck.length > 0) {
-              setTimeout(() => speakTargetWord(), 100);
-            }
-          });
-        });
-
-        // Start Practice button
-        if (startPracticeBtn) {
-          startPracticeBtn.addEventListener('click', () => {
-            playButtonClickSound(); // Always play sound for feedback
-            if (currentWordpackKey && nativeLanguage) {
-              startGame();
-            }
-          });
-        }
-      }, 0);
+      window.renderMenuCard({
+        spanishWord,
+        englishWord,
+        targetLanguageDisplay,
+        loadedActMeta,
+        currentAct,
+        currentWordpackKey,
+        loadedActs,
+        nativeLanguage,
+        currentSpeed,
+        currentVoice,
+        savedVoiceURI,
+        voices: spanishVoices,
+        currentDeck,
+        saveState,
+        loadAct,
+        populateWordpackSelectorOnCard,
+        initializeDeck,
+        startGame,
+        speakTargetWord,
+        updateBackLabel
+      });
     }
 
     // ============================================================
@@ -996,187 +761,35 @@
     // ============================================================
 
     // ============================================================
-    // KEY FEATURE: Card Display - Front and Back Always Linked
-    // Core Objective: Display current card with guaranteed sync
-    // Key Behaviors:
-    //   - ALWAYS uses single card object: currentDeck[currentIndex]
-    //   - card.targetWord = front of card (the word being learned)
-    //   - card.typingTarget = what user types (pinyin for Chinese, targetWord otherwise)
-    //   - card.pinyin = pinyin pronunciation (Chinese mode only)
-    //   - card.translation = back of card
-    //   - These are NEVER from different sources - always same object
+    // updateDisplay() - Wrapper for shared function in wordpack-logic.js
     // ============================================================
-
-    // ============================================================
-    // NOTE: renderTargetWord() removed - use shared version from wordpack-logic.js
-    // Use: window.renderTargetWordHTML(card, isChineseMode())
-    // ============================================================
-
-    // ============================================================
-    // NOTE: renderTranslation() removed - use shared version from wordpack-logic.js
-    // Use: window.renderTranslationHTML(card)
-    // ============================================================
-
     function updateDisplay() {
-      // Starting card is shown/hidden by showStartingCard/exitStartingCard
-      // Don't update card content when on starting card
-      if (isOnStartingCard) {
-        return;
-      }
-
-      if (currentDeck.length === 0) {
-        // Show completion screen
-        cardCounter.textContent = 'Pack Complete!';
-        spanishWord.innerHTML = `
-          <div style="font-size: 3rem; margin-bottom: 30px;">🎉 Good Job! 🎉</div>
-          <div style="font-size: 1.5rem; margin-bottom: 40px;">You've completed this wordpack!</div>
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <button onclick="restartCurrentPack()" style="padding: 15px 30px; font-size: 1.3rem; background: #8B7355; color: var(--color-text-light); border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
-              ↺ Study Again
-            </button>
-            <button onclick="goToNextPack()" style="padding: 15px 30px; font-size: 1.3rem; background: #7A6347; color: var(--color-text-light); border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
-              → Next Pack
-            </button>
-          </div>
-        `;
-        spanishWord.className = 'card-word';
-        englishWord.textContent = '';
-        return;
-      }
-
-      // CRITICAL: Get SINGLE card object - front (target word) and back (translation) are ALWAYS linked
-      const card = currentDeck[currentIndex];
-
-      // Display counter - different format for auto-advance vs manual modes
-      // Flashcard mode: manual advance, shows "Card X of Y"
-      // Other modes: auto-advance on correct answer, shows "Y Cards Left"
-      let counterText;
-      if (currentMode === 'flashcard') {
-        counterText = `Card ${currentIndex + 1} of ${currentDeck.length}`;
-      } else {
-        counterText = `${currentDeck.length} Cards Left`;
-      }
-
-      cardCounter.textContent = counterText; // Plain text, no HTML
-
-      // Get indicator elements (positioned at card corners, not inside card-word)
-      const wrongLettersFront = document.getElementById('wrong-letters-front');
-      const wrongCountFront = document.getElementById('wrong-count-front');
-
-      // Mode-specific display
-      if (currentMode === 'flashcard') {
-        // FLASHCARD MODE - Purpose: Learn to read target word and understand meaning
-        // Front: Target word | Back: Translation
-        // For Chinese: renderTargetWordHTML() returns coupled char+pinyin HTML
-        // When translation is Chinese, renderTranslationHTML() returns coupled char+pinyin HTML
-        spanishWord.innerHTML = renderTargetWordHTML(card, isChineseMode());
-        spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${renderTranslationHTML(card)}</div>`;
-        englishWord.className = 'card-word';
-        // Clear indicators
-        wrongLettersFront.innerHTML = '';
-        wrongCountFront.innerHTML = '';
-      } else if (currentMode === 'spelling') {
-        // SPELLING MODE - Purpose: Learn to understand spoken target language and spell it
-        // Front: Hear audio + type what you hear | Back: Target word + translation
-        // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
-        // Show all wrong letters including repeats (user can see each wrong attempt)
-        wrongLettersFront.innerHTML = wrongLetters.length > 0
-          ? wrongLetters.map(item => {
-              // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
-              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: var(--color-text-dark);">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
-            }).join('')
-          : '';
-        const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
-        const countScale = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-        wrongCountFront.innerHTML = wrongAttempts > 0
-          ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
-          : '';
-        // Update card content (no indicators embedded here)
-        spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplayHTML(typingDisplay, typedPositions, wrongPositions)}</div>`;
-        spanishWord.className = 'card-word';
-        // Back shows target word + translation (with Chinese coupling if applicable)
-        englishWord.innerHTML = `${renderTargetWordHTML(card, isChineseMode())}<br><div class="translation-text">${renderTranslationHTML(card)}</div>`;
-        englishWord.className = 'card-word';
-      } else if (currentMode === 'translation') {
-        // TRANSLATION MODE - Purpose: Learn to write/spell target word from translation
-        // Front: Translation + type target word | Back: Correct target word
-        // Update wrong indicators (positioned at card corners) - use stored variations (don't recalc)
-        // Show all wrong letters including repeats (user can see each wrong attempt)
-        wrongLettersFront.innerHTML = wrongLetters.length > 0
-          ? wrongLetters.map(item => {
-              // Use stored rotation/scale values - never recalculate (real writing doesn't move!)
-              return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: var(--color-text-dark);">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
-            }).join('')
-          : '';
-        const countRotate = -2 + Math.random() * 4; // -2deg to +2deg
-        const countScale = 0.95 + Math.random() * 0.1; // 0.95 to 1.05
-        wrongCountFront.innerHTML = wrongAttempts > 0
-          ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${wrongAttempts}</span>`
-          : '';
-        // Update card content (no indicators embedded here)
-        // TRANSLATION MODE: Front shows translation (for user to translate FROM)
-        // When translation is Chinese, show with coupled char+pinyin
-        spanishWord.innerHTML = `<div class="translation-text">${renderTranslationHTML(card)}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplayHTML(typingDisplay, typedPositions, wrongPositions)}</div>`;
-        spanishWord.className = 'card-word';
-        // Back shows target word (with Chinese coupling if applicable)
-        englishWord.innerHTML = renderTargetWordHTML(card, isChineseMode());
-        englishWord.className = 'card-word';
-      } else if (currentMode === 'pronunciation') {
-        // PRONUNCIATION MODE - Purpose: Learn to pronounce target word correctly
-        // Front: Target word + microphone button | Back: Translation (with Chinese coupling if applicable)
-        spanishWord.innerHTML = renderTargetWordHTML(card, isChineseMode());
-        spanishWord.className = 'card-word';
-        englishWord.innerHTML = `<div class="translation-text">${renderTranslationHTML(card)}</div>`;
-        englishWord.className = 'card-word';
-        // Clear indicators
-        wrongLettersFront.innerHTML = '';
-        wrongCountFront.innerHTML = '';
-      }
-
-      // Show/hide mic button based on mode (now in control bar, not on card)
-      const micBtnControlEl = document.getElementById('mic-btn-control');
-      if (currentMode === 'pronunciation') {
-        micBtnControlEl.style.display = 'flex';
-      } else {
-        micBtnControlEl.style.display = 'none';
-      }
-
-      // Show/hide control bar buttons based on mode
-      // Got It and Confused buttons: only in flashcard mode
-      if (currentMode === 'flashcard') {
-        gotItBtn.style.display = 'flex';
-        confusedBtn.style.display = 'flex';
-      } else {
-        gotItBtn.style.display = 'none';
-        confusedBtn.style.display = 'none';
-      }
-
-      // Separator: show in flashcard mode (after ✓/✗) and pronunciation mode (after 🎤)
-      if (currentMode === 'flashcard' || currentMode === 'pronunciation') {
-        controlSeparator.style.display = 'block';
-      } else {
-        controlSeparator.style.display = 'none';
-      }
-
-      // Show/hide navigation arrows based on mode (only show in flashcard mode - others auto-advance)
-      const prevBtn = document.getElementById('prev-btn');
-      const nextBtn = document.getElementById('next-btn');
-      if (currentMode === 'flashcard') {
-        prevBtn.style.display = 'flex';
-        nextBtn.style.display = 'flex';
-      } else {
-        prevBtn.style.display = 'none';
-        nextBtn.style.display = 'none';
-      }
-
-      // Apply random weathering based on card ID
-      const seed = card.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-      weatheringFront.style.background = generateWeathering(seed);
-      weatheringBack.style.background = generateWeathering(seed + 1000);
-
-      // Reset flip state
-      flashcard.classList.remove('flipped');
+      window.updateDisplay({
+        isOnStartingCard,
+        currentDeck,
+        currentIndex,
+        currentMode,
+        cardCounter,
+        spanishWord,
+        englishWord,
+        flashcard,
+        weatheringFront,
+        weatheringBack,
+        gotItBtn,
+        confusedBtn,
+        controlSeparator,
+        prevBtn,
+        nextBtn,
+        typingDisplay,
+        typedPositions,
+        wrongPositions,
+        wrongLetters,
+        wrongAttempts,
+        generateWeathering,
+        restartCurrentPack,
+        goToNextPack
+      });
+      // Update local flip state (shared function sets it to false)
       isFlipped = false;
     }
 
