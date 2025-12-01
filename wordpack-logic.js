@@ -4882,6 +4882,498 @@ function flipCardWithState(flashcard, state) {
 // ════════════════════════════════════════════════════════════════════════════
 
 // ════════════════════════════════════════════════════════════════════════════
+// MODE SWITCHING (Reusability: 10/10)
+// ════════════════════════════════════════════════════════════════════════════
+// Generic mode switching logic for all language learning games.
+// Handles: flashcard, spelling, pronunciation, translation modes.
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Switch between learning modes (flashcard/spelling/pronunciation/translation)
+ * Reusability: 10/10 - Used by ALL multi-mode language learning games
+ *
+ * @param {string} newMode - Target mode ('flashcard', 'spelling', 'pronunciation', 'translation')
+ * @param {Object} context - Game context with required state and callbacks
+ * @param {string} context.currentMode - Current mode
+ * @param {NodeList|Array} context.modeBtns - Mode button elements
+ * @param {HTMLElement} context.flashcard - Flashcard element
+ * @param {boolean} context.isFlipped - Current flip state
+ * @param {Array} context.currentDeck - Current deck
+ * @param {Function} context.initializeTypingDisplay - Callback to init typing state
+ * @param {Function} context.updateDisplay - Callback to update display
+ * @param {Function} context.speakTargetWord - Callback for TTS (optional)
+ * @returns {Object} - { currentMode, isFlipped }
+ *
+ * Example:
+ *   const result = switchModeShared('spelling', {
+ *     currentMode: gameState.currentMode,
+ *     modeBtns: document.querySelectorAll('.mode-btn'),
+ *     flashcard: document.getElementById('flashcard'),
+ *     isFlipped: gameState.isFlipped,
+ *     currentDeck: gameState.deck,
+ *     initializeTypingDisplay: () => initTyping(),
+ *     updateDisplay: () => render(),
+ *     speakTargetWord: () => tts.speak()
+ *   });
+ *   gameState.currentMode = result.currentMode;
+ */
+function switchModeShared(newMode, context) {
+  if (newMode === context.currentMode) {
+    return { currentMode: context.currentMode, isFlipped: context.isFlipped };
+  }
+
+  // Update mode buttons
+  if (context.modeBtns) {
+    context.modeBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.mode === newMode);
+    });
+  }
+
+  // Initialize typing display for typing-based modes
+  if ((newMode === 'spelling' || newMode === 'translation') && context.initializeTypingDisplay) {
+    context.initializeTypingDisplay();
+  }
+
+  // Unflip card when switching modes
+  let isFlipped = context.isFlipped;
+  if (isFlipped && context.flashcard) {
+    context.flashcard.classList.remove('flipped');
+    isFlipped = false;
+  }
+
+  // Update display
+  if (context.updateDisplay) {
+    context.updateDisplay();
+  }
+
+  // Auto-speak in spelling mode
+  if (newMode === 'spelling' && context.currentDeck && context.currentDeck.length > 0 && context.speakTargetWord) {
+    setTimeout(() => context.speakTargetWord(), 300);
+  }
+
+  return { currentMode: newMode, isFlipped: isFlipped };
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// UNFLIP CARD (Reusability: 8/10)
+// ════════════════════════════════════════════════════════════════════════════
+// Unflip without stopping speech - for peek/hold behavior.
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Unflip card without stopping speech (for peek behavior)
+ * Reusability: 8/10 - Used by all flashcard games with peek feature
+ *
+ * Unlike flipCard which may stop speech, this intentionally does NOT
+ * cancel speech - allows pronunciation to continue while viewing front.
+ *
+ * @param {HTMLElement} flashcard - Flashcard element
+ * @param {boolean} isFlipped - Current flip state
+ * @param {Function} playSound - Optional sound callback
+ * @returns {boolean} - New flip state (always false)
+ *
+ * Example:
+ *   gameState.isFlipped = unflipCardShared(flashcardEl, gameState.isFlipped, playCardFlipSound);
+ */
+function unflipCardShared(flashcard, isFlipped, playSound) {
+  if (isFlipped && flashcard) {
+    flashcard.classList.remove('flipped');
+    if (playSound) playSound();
+  }
+  return false;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// START GAME (Reusability: 10/10)
+// ════════════════════════════════════════════════════════════════════════════
+// Generic game start logic for all wordpack-based games.
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Start or resume a practice session
+ * Reusability: 10/10 - Used by ALL wordpack-based games
+ *
+ * @param {Object} context - Game context
+ * @param {string} context.currentWordpackKey - Selected wordpack key
+ * @param {Object} context.wordpacks - All loaded wordpacks
+ * @param {string} context.currentMode - Current game mode
+ * @param {HTMLElement} context.wordpackTitle - Title element
+ * @param {Function} context.initializeDeck - Callback to initialize deck
+ * @param {Function} context.exitStartingCard - Callback to exit menu
+ * @param {Function} context.updateDisplay - Callback to update display
+ * @param {Function} context.saveState - Callback to save state
+ * @param {Function} context.speakTargetWord - Optional TTS callback
+ * @returns {boolean} - True if game started successfully
+ *
+ * Example:
+ *   const started = startGameShared({
+ *     currentWordpackKey: 'p1_1_greetings',
+ *     wordpacks: loadedPacks,
+ *     currentMode: 'flashcard',
+ *     wordpackTitle: titleEl,
+ *     initializeDeck: (key) => buildDeck(key),
+ *     exitStartingCard: () => hideMenu(),
+ *     updateDisplay: () => render(),
+ *     saveState: () => persist()
+ *   });
+ */
+function startGameShared(context) {
+  if (!context.currentWordpackKey) return false;
+
+  // Initialize deck
+  if (context.initializeDeck) {
+    context.initializeDeck(context.currentWordpackKey);
+  }
+
+  // Update title display
+  if (context.wordpackTitle && context.wordpacks) {
+    updateWordpackTitleDisplay(context.wordpackTitle, context.currentWordpackKey, context.wordpacks);
+  }
+
+  // Exit menu
+  if (context.exitStartingCard) {
+    context.exitStartingCard();
+  }
+
+  // Update display
+  if (context.updateDisplay) {
+    context.updateDisplay();
+  }
+
+  // Save state
+  if (context.saveState) {
+    context.saveState();
+  }
+
+  // Auto-speak in spelling mode
+  if (context.currentMode === 'spelling' && context.speakTargetWord) {
+    setTimeout(() => context.speakTargetWord(), 500);
+  }
+
+  return true;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SHOW FEEDBACK (Reusability: 7/10)
+// ════════════════════════════════════════════════════════════════════════════
+// Pronunciation feedback with optional auto-advance for pronunciation mode.
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Display pronunciation feedback with auto-advance logic
+ * Reusability: 7/10 - Used by games with pronunciation practice
+ *
+ * In pronunciation mode:
+ * - Passing score (>= threshold): Removes card, shows success stamp
+ * - Failing score (< threshold): Adds penalty cards, auto-advances
+ *
+ * In other modes:
+ * - Simply shows feedback overlay for manual dismissal
+ *
+ * @param {Object} options - Feedback options
+ * @param {number} options.score - Similarity score (0-100)
+ * @param {string} options.heard - What speech recognition detected
+ * @param {string} options.expected - Expected word
+ * @param {string} options.currentMode - Current game mode
+ * @param {Object} options.feedbackElements - DOM elements for feedback display
+ * @param {Object} options.deckState - Deck state { currentDeck, currentIndex }
+ * @param {Object} options.stamps - Stamp elements { success, failure }
+ * @param {Object} options.callbacks - Callback functions
+ * @returns {Object} - { passed: boolean, deckState }
+ */
+function showFeedbackShared(options) {
+  const {
+    score,
+    heard,
+    expected,
+    currentMode,
+    feedbackElements,
+    deckState,
+    stamps,
+    callbacks
+  } = options;
+
+  const threshold = getSimilarityThreshold(expected);
+  const thresholdPercent = threshold * 100;
+  const passed = score >= thresholdPercent;
+
+  // Pronunciation mode: auto-advance behavior
+  if (currentMode === 'pronunciation') {
+    if (passed) {
+      // Success: remove card
+      if (callbacks.onPendingDeckChange) callbacks.onPendingDeckChange(-1);
+      if (callbacks.updateDisplay) callbacks.updateDisplay();
+
+      showSuccessStamp(stamps.success, () => {
+        let { currentDeck, currentIndex } = deckState;
+
+        if (currentDeck.length <= 1) {
+          currentDeck = [];
+        } else {
+          currentDeck.splice(currentIndex, 1);
+          if (currentIndex >= currentDeck.length) currentIndex = 0;
+        }
+
+        if (callbacks.onPendingDeckChange) callbacks.onPendingDeckChange(0);
+        if (callbacks.playCardFlipSound) callbacks.playCardFlipSound();
+        if (callbacks.updateDisplay) callbacks.updateDisplay();
+        if (callbacks.saveState) callbacks.saveState();
+        if (callbacks.onDeckUpdate) callbacks.onDeckUpdate(currentDeck, currentIndex);
+      });
+    } else {
+      // Failure: add penalty cards and advance
+      let { currentDeck, currentIndex } = deckState;
+      currentDeck = addDuplicateCards(currentDeck, currentDeck[currentIndex], 2);
+      if (callbacks.onDeckUpdate) callbacks.onDeckUpdate(currentDeck, currentIndex);
+
+      setTimeout(() => {
+        if (callbacks.moveToNextCard) callbacks.moveToNextCard();
+      }, 1600);
+    }
+
+    return { passed, deckState };
+  }
+
+  // Other modes: show feedback overlay
+  if (feedbackElements) {
+    const { scoreEl, messageEl, heardEl, feedback } = feedbackElements;
+    if (scoreEl) {
+      scoreEl.textContent = `${score}%`;
+      scoreEl.className = `feedback-score ${getScoreClass(score)}`;
+    }
+    if (messageEl) messageEl.textContent = getFeedbackMessage(score);
+    if (heardEl) heardEl.textContent = `Heard: "${heard}"`;
+    if (feedback) feedback.classList.add('visible');
+  }
+
+  return { passed, deckState };
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// HANDLE TYPING INPUT (Reusability: 10/10)
+// ════════════════════════════════════════════════════════════════════════════
+// Core typing input handler for spelling and translation modes.
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Handle typing input for spelling/translation modes
+ * Reusability: 10/10 - Used by ALL typing-based language games
+ *
+ * @param {Object} context - Typing context
+ * @param {string} context.key - Key pressed
+ * @param {Array} context.typingDisplay - Array of target characters
+ * @param {Set} context.typedPositions - Set of typed positions
+ * @param {number} context.wrongAttempts - Current wrong attempt count
+ * @param {Array} context.wrongPositions - Array of wrong position indices
+ * @param {Array} context.wrongLetters - Array of wrong letter objects
+ * @param {Object} context.card - Current card object
+ * @param {Object} context.deckState - { currentDeck, currentIndex }
+ * @param {string} context.currentMode - Current game mode
+ * @param {Object} context.stamps - { success, failure } stamp elements
+ * @param {Object} context.callbacks - Callback functions
+ * @returns {Object} - Updated typing state
+ */
+function handleTypingInputShared(context) {
+  const {
+    key,
+    typingDisplay,
+    typedPositions,
+    wrongAttempts: initWrongAttempts,
+    wrongPositions,
+    wrongLetters,
+    card,
+    deckState,
+    currentMode,
+    stamps,
+    callbacks
+  } = context;
+
+  let wrongAttempts = initWrongAttempts;
+
+  // Play keyboard sound on every keypress
+  if (callbacks.playKeyboardSound) callbacks.playKeyboardSound();
+
+  // Find next typing position
+  const nextPos = findNextTypingPosition(typingDisplay, typedPositions);
+  if (nextPos === -1) {
+    return { typedPositions, wrongAttempts, wrongPositions, wrongLetters, complete: true };
+  }
+
+  // Check the key
+  const result = checkTypingKey(key, typingDisplay[nextPos]);
+  if (result === 'space') {
+    return { typedPositions, wrongAttempts, wrongPositions, wrongLetters, complete: false };
+  }
+
+  if (result === 'correct') {
+    typedPositions.add(nextPos);
+    if (callbacks.updateDisplay) callbacks.updateDisplay();
+
+    // Check if word is complete
+    if (isWordComplete(typingDisplay, typedPositions)) {
+      if (wrongAttempts === 0) {
+        // Perfect: remove card
+        if (callbacks.onPendingDeckChange) callbacks.onPendingDeckChange(-1);
+        if (callbacks.updateDisplay) callbacks.updateDisplay();
+
+        showSuccessStamp(stamps.success, () => {
+          let { currentDeck, currentIndex } = deckState;
+          if (currentDeck.length <= 1) {
+            currentDeck = [];
+          } else {
+            currentDeck.splice(currentIndex, 1);
+            if (currentIndex >= currentDeck.length) currentIndex = 0;
+          }
+          if (callbacks.onPendingDeckChange) callbacks.onPendingDeckChange(0);
+          if (callbacks.playCardFlipSound) callbacks.playCardFlipSound();
+          if (callbacks.initializeTypingDisplay) callbacks.initializeTypingDisplay();
+          if (callbacks.updateDisplay) callbacks.updateDisplay();
+          if (currentMode === 'spelling' && callbacks.speakTargetWord) {
+            setTimeout(() => callbacks.speakTargetWord(), 300);
+          }
+          if (callbacks.saveState) callbacks.saveState();
+          if (callbacks.onDeckUpdate) callbacks.onDeckUpdate(currentDeck, currentIndex);
+        });
+      } else {
+        // Had mistakes: add penalty cards
+        if (callbacks.onPendingDeckChange) callbacks.onPendingDeckChange(2);
+        if (callbacks.updateDisplay) callbacks.updateDisplay();
+
+        showFailureStamp(stamps.failure, () => {
+          let { currentDeck, currentIndex } = deckState;
+          currentDeck = addDuplicateCards(currentDeck, card, 2);
+          currentIndex = (currentIndex + 1) % currentDeck.length;
+          if (callbacks.onPendingDeckChange) callbacks.onPendingDeckChange(0);
+          if (callbacks.playCardFlipSound) callbacks.playCardFlipSound();
+          if (callbacks.initializeTypingDisplay) callbacks.initializeTypingDisplay();
+          if (callbacks.updateDisplay) callbacks.updateDisplay();
+          if (currentMode === 'spelling' && callbacks.speakTargetWord) {
+            setTimeout(() => callbacks.speakTargetWord(), 300);
+          }
+          if (callbacks.saveState) callbacks.saveState();
+          if (callbacks.onDeckUpdate) callbacks.onDeckUpdate(currentDeck, currentIndex);
+        });
+      }
+      return { typedPositions, wrongAttempts, wrongPositions, wrongLetters, complete: true };
+    }
+  } else {
+    // Wrong key
+    wrongAttempts++;
+    if (!wrongPositions.includes(nextPos)) wrongPositions.push(nextPos);
+    wrongLetters.push({
+      letter: key.toUpperCase(),
+      rotation: -3 + Math.random() * 6,
+      scale: 0.9 + Math.random() * 0.2,
+      xRotation: -15 + Math.random() * 30
+    });
+    if (callbacks.playScribbleSound) callbacks.playScribbleSound();
+    if (callbacks.updateDisplay) callbacks.updateDisplay();
+  }
+
+  return { typedPositions, wrongAttempts, wrongPositions, wrongLetters, complete: false };
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// INITIALIZE TOOLTIPS (Reusability: 9/10)
+// ════════════════════════════════════════════════════════════════════════════
+// Tooltip initialization for mode buttons and control buttons.
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Initialize tooltips for mode buttons and control buttons
+ * Reusability: 9/10 - Used by all games with mode switching UI
+ *
+ * Populates tooltip content from TOOLTIP_MESSAGES constant.
+ * Handles both mode selector tooltips (instruction lists) and
+ * button tooltips (hover text).
+ *
+ * @param {Object} elements - DOM elements for tooltips
+ * @param {HTMLElement} elements.reading - Reading mode tooltip
+ * @param {HTMLElement} elements.listening - Listening mode tooltip
+ * @param {HTMLElement} elements.speaking - Speaking mode tooltip
+ * @param {HTMLElement} elements.writing - Writing mode tooltip
+ * @param {HTMLElement} elements.gotIt - Got it button
+ * @param {HTMLElement} elements.confused - Confused button
+ * @param {HTMLElement} elements.pronounce - Pronounce button
+ * @param {HTMLElement} elements.peek - Peek button
+ * @param {HTMLElement} elements.mic - Microphone button
+ */
+function initializeTooltipsShared(elements) {
+  // Mode selector tooltips (instruction lists)
+  if (elements.reading) {
+    elements.reading.innerHTML = `
+      <div style="font-weight: bold; margin-bottom: 8px;">📖 Flashcard Mode</div>
+      <div class="tooltip-instructions">
+        ${TOOLTIP_MESSAGES.gotIt}<br>
+        ${TOOLTIP_MESSAGES.confused}<br>
+        ${TOOLTIP_MESSAGES.prevCard}<br>
+        ${TOOLTIP_MESSAGES.nextCard}<br>
+        ${TOOLTIP_MESSAGES.pronounce}<br>
+        ${TOOLTIP_MESSAGES.peek}
+      </div>
+    `;
+  }
+
+  if (elements.listening) {
+    elements.listening.innerHTML = `
+      <div style="font-weight: bold; margin-bottom: 8px;">👂 Spelling Mode</div>
+      <div class="tooltip-instructions">
+        ${TOOLTIP_MESSAGES.typeLetters}<br>
+        ${TOOLTIP_MESSAGES.pronounce}<br>
+        ${TOOLTIP_MESSAGES.peek}
+      </div>
+    `;
+  }
+
+  if (elements.speaking) {
+    elements.speaking.innerHTML = `
+      <div style="font-weight: bold; margin-bottom: 8px;">💬 Pronunciation Mode</div>
+      <div class="tooltip-instructions">
+        ${TOOLTIP_MESSAGES.record}<br>
+        ${TOOLTIP_MESSAGES.pronounce}<br>
+        ${TOOLTIP_MESSAGES.peek}
+      </div>
+    `;
+  }
+
+  if (elements.writing) {
+    elements.writing.innerHTML = `
+      <div style="font-weight: bold; margin-bottom: 8px;">✏️ Translation Mode</div>
+      <div class="tooltip-instructions">
+        ${TOOLTIP_MESSAGES.typeLetters}<br>
+        ${TOOLTIP_MESSAGES.pronounce}<br>
+        ${TOOLTIP_MESSAGES.peek}
+      </div>
+    `;
+  }
+
+  // Button hover tooltips
+  if (elements.gotIt) {
+    elements.gotIt.innerHTML = '✓';
+    elements.gotIt.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.gotIt);
+  }
+  if (elements.confused) {
+    elements.confused.innerHTML = '✗';
+    elements.confused.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.confused);
+  }
+  if (elements.pronounce) {
+    elements.pronounce.innerHTML = '🗣️';
+    elements.pronounce.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.pronounce);
+  }
+  if (elements.peek) {
+    elements.peek.innerHTML = '❓';
+    elements.peek.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.peek);
+  }
+  if (elements.mic) {
+    elements.mic.innerHTML = '🎤';
+    elements.mic.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.record);
+  }
+}
+
+// Alias for backwards compatibility
+window.initializeTooltips = initializeTooltipsShared;
+
+// ════════════════════════════════════════════════════════════════════════════
 // WINDOW EXPORTS - Make functions available globally for game files
 // ════════════════════════════════════════════════════════════════════════════
 window.showStartingCard = showStartingCard;
@@ -4889,4 +5381,12 @@ window.exitStartingCard = exitStartingCard;
 window.renderMenuCard = renderMenuCard;
 window.updateDisplay = updateDisplay;
 window.flipCardWithState = flipCardWithState;
+
+// New shared functions (refactored from FlashcardTypingGame.js)
+window.switchModeShared = switchModeShared;
+window.unflipCardShared = unflipCardShared;
+window.startGameShared = startGameShared;
+window.showFeedbackShared = showFeedbackShared;
+window.handleTypingInputShared = handleTypingInputShared;
+window.initializeTooltipsShared = initializeTooltipsShared;
 

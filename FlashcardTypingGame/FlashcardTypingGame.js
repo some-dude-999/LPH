@@ -325,22 +325,19 @@
     }
 
     function switchMode(newMode) {
-      if (newMode === currentMode) return;
-      currentMode = newMode;
-      modeBtns.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.mode === newMode);
+      // Delegate to shared function with game-specific context
+      const result = switchModeShared(newMode, {
+        currentMode: currentMode,
+        modeBtns: modeBtns,
+        flashcard: flashcard,
+        isFlipped: isFlipped,
+        currentDeck: currentDeck,
+        initializeTypingDisplay: initializeTypingDisplay,
+        updateDisplay: updateDisplay,
+        speakTargetWord: speakTargetWord
       });
-      if (currentMode === 'spelling' || currentMode === 'translation') {
-        initializeTypingDisplay();
-      }
-      if (isFlipped) {
-        flashcard.classList.remove('flipped');
-        isFlipped = false;
-      }
-      updateDisplay();
-      if (currentMode === 'spelling' && currentDeck.length > 0) {
-        setTimeout(() => speakTargetWord(), 300);
-      }
+      currentMode = result.currentMode;
+      isFlipped = result.isFlipped;
     }
 
     function initializeTypingDisplay() {
@@ -704,11 +701,8 @@
     }
 
     function unflipCard() {
-      if (isFlipped) {
-        flashcard.classList.remove('flipped');
-        isFlipped = false;
-        playCardFlipSound();
-      }
+      // Delegate to shared function
+      isFlipped = unflipCardShared(flashcard, isFlipped, playCardFlipSound);
     }
 
     function removeCurrentCard() {
@@ -859,14 +853,19 @@
     }
 
     function startGame() {
-      if (!currentWordpackKey) return;
-      initializeDeck(currentWordpackKey);
-      updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
-      gameStarted = true;
-      exitStartingCard();
-      updateDisplay();
-      saveState();
-      if (currentMode === 'spelling') setTimeout(() => speakTargetWord(), 500);
+      // Delegate to shared function with game-specific context
+      const started = startGameShared({
+        currentWordpackKey: currentWordpackKey,
+        wordpacks: wordpacks,
+        currentMode: currentMode,
+        wordpackTitle: wordpackTitle,
+        initializeDeck: initializeDeck,
+        exitStartingCard: exitStartingCard,
+        updateDisplay: updateDisplay,
+        saveState: saveState,
+        speakTargetWord: speakTargetWord
+      });
+      if (started) gameStarted = true;
     }
 
     // Event Listeners
