@@ -1,0 +1,86 @@
+/* Fixed Header */
+body {
+  margin: 0;
+  padding-top: 180px; /* Space for fixed header */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.decoder-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(61, 46, 31, 0.95) 0%, rgba(61, 46, 31, 0.92) 100%);
+  padding: 15px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+.decoder-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+  color: #E8C252;
+}
+
+.header-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.control-group label {
+  font-size: 0.75rem;
+  color: #D4AF37;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.control-group select {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #666;
+  background: rgba(255,255,255,0.95);
+  font-size: 0.9rem;
+}
+
+.mode-selector {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.mode-selector label {
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(232,196,82,0.9);
+  transition: color 0.2s;
+}
+
+.mode-selector label:hover {
+  color: #E8C252;
+}
+
+.mode-selector input[type="radio"] {
+  accent-color: #D4AF37;
+}
+
+.content-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
