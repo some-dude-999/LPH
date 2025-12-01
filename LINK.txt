@@ -80,3 +80,4 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/edge-cases-js.js -
 ██ CSS STYLESHEETS
 ═══════════════════════════════════════════════════════════════
 https://some-dude-999.github.io/LPH/DecoderTest/DecoderTest.css - Styles for DecoderTest debugger interface
+https://some-dude-999.github.io/LPH/FlashcardTypingGame/FlashcardTypingGame.css - [Add description for FlashcardTypingGame.css]

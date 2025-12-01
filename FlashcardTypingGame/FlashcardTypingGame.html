@@ -5,21 +5,14 @@
   <meta name="viewport" content="width=1024">
   <title>Flashcard Typing Game</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
-  <!-- Shared wordpack logic (loading, decoding, shuffling, typing validation, debug tools) -->
   <script src="../wordpack-logic.js"></script>
-  <!-- Shared game sounds (ding, buzz, card flip, button click, typing sounds) -->
   <script src="../game-sounds.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-  <!-- Chinese font - loaded but only applied when Chinese modules are used -->
   <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@700&display=swap" rel="stylesheet">
-  <!-- External CSS file -->
   <link rel="stylesheet" href="FlashcardTypingGame.css">
 </head>
 <body>
-  <!-- Fixed Page Header: Mode selector (left) + Title (center) + UI buttons (right) -->
   <div class="page-header">
-    <!-- Mode Selector -->
-    <!-- Tooltips are populated dynamically via initializeTooltips() using TOOLTIP_MESSAGES -->
     <div class="mode-selector">
       <span class="tooltip-container">
         <button class="mode-btn active" id="mode-flashcard" data-mode="flashcard">📖</button>
@@ -38,8 +31,6 @@
         <span class="tooltip" id="tooltip-writing"></span>
       </span>
     </div>
-
-    <!-- Title and Difficulty - centered together -->
     <div class="title-difficulty-wrapper">
       <div class="wordpack-title" id="wordpack-title">Flashcard Typing Game</div>
       <div class="difficulty-selector" id="difficulty-selector">
@@ -48,8 +39,6 @@
         <label><input type="radio" name="difficulty" value="hard" checked> Hard</label>
       </div>
     </div>
-
-    <!-- Top Buttons -->
     <div class="header-buttons">
       <button class="top-btn reset-top-btn" id="reset-btn" aria-label="Reset deck">↺</button>
       <button class="top-btn fullscreen-btn" id="fullscreen-btn" aria-label="Toggle fullscreen">⛶</button>
@@ -57,18 +46,15 @@
     </div>
   </div>
 
-  <!-- Fixed-height wrapper prevents card from shifting when stamp indicator appears -->
   <div class="card-counter-wrapper">
     <div class="card-counter" id="card-counter">Choose Wordpack to Begin Studying</div>
   </div>
 
   <div class="flashcard-container">
     <button class="nav-btn" id="prev-btn" aria-label="Previous card">‹</button>
-
     <div class="flashcard" id="flashcard">
       <div class="card-face card-front">
         <div class="card-weathering" id="weathering-front"></div>
-        <!-- Wrong answer indicators (positioned at card corners) -->
         <div id="wrong-letters-front" style="position: absolute; top: 12px; left: 12px; font-size: 2em; font-family: var(--font-card); font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20; max-width: 550px; line-height: 0.9; text-align: left;"></div>
         <div id="wrong-count-front" style="position: absolute; top: 12px; right: 12px; font-size: 2em; font-family: var(--font-card); font-style: italic; font-weight: bold; color: #D32F2F; z-index: 20;"></div>
         <span class="card-word" id="spanish-word"></span>
@@ -92,31 +78,21 @@
           <button class="feedback-close" id="close-back">Got it</button>
         </div>
       </div>
-
-      <!-- Stamp overlays for visual feedback -->
       <div class="stamp-base card-stamp removed-stamp" id="removed-stamp">Great Job!<br>Card Removed</div>
       <div class="stamp-base card-stamp added-stamp" id="added-stamp">Keep Learning!<br>Practice Added</div>
     </div>
-
     <button class="nav-btn" id="next-btn" aria-label="Next card">›</button>
   </div>
 
-  <!-- Card Controls - Below the flashcard -->
   <div class="card-controls" id="card-controls">
-    <!-- Left group: Got It / Don't Got It (flashcard mode only) -->
     <button class="control-btn" id="got-it-btn" data-tooltip="">✓</button>
     <button class="control-btn" id="confused-btn" data-tooltip="">✗</button>
-    <!-- Mic button (pronunciation mode only) - before separator so divider shows in pronunciation mode -->
     <button class="control-btn" id="mic-btn-control" data-tooltip="" style="display: none;">🎤</button>
     <div class="control-separator" id="control-separator"></div>
-    <!-- Right group: Pronounce / Peek (all modes) -->
     <button class="control-btn" id="pronounce-btn" data-tooltip="">🗣️</button>
     <button class="control-btn" id="peek-btn" data-tooltip="">❓</button>
   </div>
 
   <script type="module" src="FlashcardTypingGame.js"></script>
-
-  <!-- Debug UI is now generated dynamically by wordpack-logic.js via initializeDebugUI() -->
-  <!-- Toggle debug mode with hotkey: Ctrl + ` (backtick key, next to "1") -->
 </body>
 </html>
