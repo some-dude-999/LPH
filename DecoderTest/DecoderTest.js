@@ -25,18 +25,10 @@ let state = {
   showPinyin: true
 };
 
-// Speech Recognition Setup - uses SPEECH_LANG_CODES from wordpack-logic.js
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-let recognition = null;
+// Speech Recognition Setup - uses initializeSpeechRecognition() from wordpack-logic.js
+let recognition = initializeSpeechRecognition();
 let isListening = false;
 let currentListeningWordIndex = null;
-
-if (SpeechRecognition) {
-  recognition = new SpeechRecognition();
-  recognition.continuous = false;
-  recognition.interimResults = false;
-  recognition.maxAlternatives = 5;
-}
 
 // ════════════════════════════════════════════════════════════════════════════
 // STATE PERSISTENCE - Local wrappers for this game
@@ -142,86 +134,66 @@ function syncUI() {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
-// DROPDOWN POPULATION
+// DROPDOWN POPULATION - Uses shared functions from wordpack-logic.js
 // ════════════════════════════════════════════════════════════════════════════
 
 function populateActDropdown() {
-  const select = document.getElementById('actSelect');
-  select.innerHTML = '';
-
-  const actNumbers = Object.keys(state.loadedData).map(Number).sort((a, b) => a - b);
-  actNumbers.forEach(actNum => {
-    const meta = state.loadedActMeta[actNum];
-    const actName = meta?.actName || `Act ${actNum}`;
-    const option = document.createElement('option');
-    option.value = actNum;
-    option.textContent = `Act ${actNum}: ${actName}`;
-    select.appendChild(option);
-  });
-
-  select.addEventListener('change', (e) => {
-    state.currentAct = parseInt(e.target.value);
-    state.currentPack = null;
-    populatePackDropdown();
-    if (!state.currentPack) autoSelectFirstPackLocal();
-    displayVocabulary();
-    saveStateLocal();
-  });
+  populateActSelector(
+    document.getElementById('actSelect'),
+    state.loadedActMeta,
+    (actNum) => {
+      state.currentAct = actNum;
+      state.currentPack = null;
+      populatePackDropdown();
+      if (!state.currentPack) autoSelectFirstPackLocal();
+      displayVocabulary();
+      saveStateLocal();
+    }
+  );
 }
 
 function populatePackDropdown() {
-  const select = document.getElementById('packSelect');
-  select.innerHTML = '';
-
   if (!state.currentAct || !state.loadedData[state.currentAct]) return;
 
-  const actData = state.loadedData[state.currentAct];
-  const packKeys = Object.keys(actData).filter(k => k !== '__actMeta' && actData[k]?.meta);
-  packKeys.sort((a, b) => (actData[a].meta.wordpack || 0) - (actData[b].meta.wordpack || 0));
-
-  packKeys.forEach(packKey => {
-    const pack = actData[packKey];
-    const option = document.createElement('option');
-    option.value = packKey;
-    option.textContent = `Pack ${pack.meta.wordpack}: ${pack.meta.english || packKey}`;
-    select.appendChild(option);
-  });
-
-  select.addEventListener('change', (e) => {
-    state.currentPack = e.target.value;
-    displayVocabulary();
-    if (state.flashcardMode) {
-      initFlashcardDeckLocal();
-      updateFlashcardDisplayLocal();
+  populatePackSelector(
+    document.getElementById('packSelect'),
+    state.loadedData[state.currentAct],
+    (packKey) => {
+      state.currentPack = packKey;
+      displayVocabulary();
+      if (state.flashcardMode) {
+        initFlashcardDeckLocal();
+        updateFlashcardDisplayLocal();
+      }
+      saveStateLocal();
     }
-    saveStateLocal();
-  });
+  );
 }
 
 function populateNativeLanguageDropdown() {
-  const select = document.getElementById('nativeLanguageSelect');
-  select.innerHTML = '';
-
   const config = LANGUAGE_CONFIG[state.currentLanguage];
   if (!config) return;
 
+  // Convert nativeLanguages object to translations format for shared function
+  const translations = {};
   Object.entries(config.nativeLanguages).forEach(([lang, index]) => {
-    const option = document.createElement('option');
-    option.value = index;
-    option.textContent = lang;
-    if (index === state.currentNativeLanguage) option.selected = true;
-    select.appendChild(option);
+    translations[index] = { display: lang };
   });
 
-  select.addEventListener('change', (e) => {
-    state.currentNativeLanguage = parseInt(e.target.value);
-    displayVocabulary();
-    if (state.flashcardMode) {
-      initFlashcardDeckLocal();
-      updateFlashcardDisplayLocal();
+  populateNativeLanguageSelector(
+    document.getElementById('nativeLanguageSelect'),
+    translations,
+    state.currentNativeLanguage,
+    (langCode) => {
+      state.currentNativeLanguage = parseInt(langCode);
+      displayVocabulary();
+      if (state.flashcardMode) {
+        initFlashcardDeckLocal();
+        updateFlashcardDisplayLocal();
+      }
+      saveStateLocal();
     }
-    saveStateLocal();
-  });
+  );
 }
 
 // ════════════════════════════════════════════════════════════════════════════
