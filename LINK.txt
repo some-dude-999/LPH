@@ -5,7 +5,7 @@
 ═══════════════════════════════════════════════════════════════
 ██ HTML PAGES
 ═══════════════════════════════════════════════════════════════
-https://some-dude-999.github.io/LPH/DecoderTest.html - [Add description for DecoderTest.html]
+https://some-dude-999.github.io/LPH/DecoderTest/DecoderTest.html - Wordpack Data Structure Debugger - tests module loading, displays vocabulary in multiple modes
 https://some-dude-999.github.io/LPH/FlashcardTypingGame/FlashcardTypingGame.html - [Add description for FlashcardTypingGame.html]
 https://some-dude-999.github.io/LPH/LanguageGameIdeas/LanguageGameIdeas.html - [Add description for LanguageGameIdeas.html]
 https://some-dude-999.github.io/LPH/PromptCopier.html - [Add description for PromptCopier.html]
@@ -42,6 +42,7 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act5-advanced-mastery
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/edge-cases.js - [Add description for edge-cases.js]
 
 ▓▓▓ OTHER ▓▓▓
+https://some-dude-999.github.io/LPH/DecoderTest/DecoderTest.js - DecoderTest application logic - handles module decoding and vocabulary display
 https://some-dude-999.github.io/LPH/FlashcardTypingGame/FlashcardTypingGame.js - Flashcard Typing Game logic (extracted from HTML for better code organization)
 https://some-dude-999.github.io/LPH/game-sounds.js - [Add description for game-sounds.js]
 https://some-dude-999.github.io/LPH/wordpack-logic.js - [Add description for wordpack-logic.js]
@@ -74,3 +75,8 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act3-everyday-life
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js - [Add description for act4-expanding-horizons-js.js]
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js - [Add description for act5-advanced-mastery-js.js]
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules-js/edge-cases-js.js - [Add description for edge-cases-js.js]
+
+═══════════════════════════════════════════════════════════════
+██ CSS STYLESHEETS
+═══════════════════════════════════════════════════════════════
+https://some-dude-999.github.io/LPH/DecoderTest/DecoderTest.css - Styles for DecoderTest debugger interface
