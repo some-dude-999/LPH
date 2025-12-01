@@ -698,59 +698,15 @@
     //        }
     // ============================================================
 
-    // Switch to a different learning mode
-    function switchMode(newMode) {
-      if (currentMode === newMode) return;
-
-      // Stop all speech sounds - mode change is like a reset
-      speechSynthesis.cancel();
-
-      currentMode = newMode;
-
-      // Update active button
-      modeBtns.forEach(btn => btn.classList.remove('active'));
-      if (newMode === 'flashcard') modeFlashcard.classList.add('active');
-      if (newMode === 'spelling') modeSpelling.classList.add('active');
-      if (newMode === 'pronunciation') modePronunciation.classList.add('active');
-      if (newMode === 'translation') modeTranslation.classList.add('active');
-
-      // Completely reset pack as if starting new game in this mode
-      // (Reset from original deck, not modified current deck)
-      // CRITICAL: Keep pedagogical ordering (base words first, then examples)
-      if (originalDeck.length > 0) {
-        currentDeck = [...originalDeck]; // Copy without shuffling - preserve base→example order
-        currentIndex = 0;
-      }
-
-      // Reset flip state
-      if (isFlipped) {
-        flashcard.classList.remove('flipped');
-        isFlipped = false;
-      }
-
-      // Reset deck change indicator
-      pendingDeckChange = 0;
-
-      // Initialize typing display for listening and translation modes
-      if ((newMode === 'spelling' || newMode === 'translation') && currentDeck.length > 0) {
-        initializeTypingDisplay();
-      }
-
-      updateDisplay();
-
-      // Auto-pronounce target word in spelling mode only (not writing - user needs to translate)
-      if (newMode === 'spelling' && currentDeck.length > 0) {
-        setTimeout(() => speakTargetWord(), 300);
-      }
-
-      // Update debug simulate button visibility based on new mode
-      if (typeof updateSimulateButtonsVisibility === 'function') {
-        updateSimulateButtonsVisibility();
-      }
-
-      // Save state (only saves speech rate and pack selection, not deck progress)
-      saveState();
-    }
+    // ============================================================
+    // DELETED: switchMode()
+    // ============================================================
+    // This function was brutishly moved to wordpack-logic.js (10/10 reusability)
+    // USE INSTEAD: window.switchMode(newMode, context)
+    //
+    // The original game-specific implementation is now in wordpack-logic.js as a
+    // reusable function that takes a context object with all necessary state/callbacks.
+    // ============================================================
 
     // ============================================================
     // DELETED: initializeTypingDisplay()
@@ -850,193 +806,29 @@
     // ============================================================
 
     // ============================================================
-    // Initialize tooltips from TOOLTIP_MESSAGES (single source of truth)
+    // DELETED: initializeTooltips()
     // ============================================================
-    // This function populates BOTH:
-    //   1. Mode tooltips (the big instruction lists under each mode button)
-    //   2. Control bar button tooltips (hover text for individual buttons)
-    // All using the SAME TOOLTIP_MESSAGES, ensuring consistency.
+    // This function was brutishly moved to wordpack-logic.js (9/10 reusability)
+    // USE INSTEAD: window.initializeTooltips(elements)
+    //
+    // The original implementation is now in wordpack-logic.js as a reusable function
+    // that takes an elements object with all tooltip DOM references.
     // ============================================================
-    function initializeTooltips() {
-      // ---------------------------------------------------------
-      // MODE TOOLTIPS - Build instruction lists for each mode
-      // ---------------------------------------------------------
-
-      // Flashcard Mode: gotIt, confused, prevCard, nextCard, pronounce, peek
-      const readingTooltip = document.getElementById('tooltip-reading');
-      if (readingTooltip) {
-        readingTooltip.innerHTML = `
-          <strong>📖 Flashcard Mode</strong>
-          <div class="tooltip-instructions">
-            ${TOOLTIP_MESSAGES.gotIt}<br>
-            ${TOOLTIP_MESSAGES.confused}<br>
-            ${TOOLTIP_MESSAGES.prevCard}<br>
-            ${TOOLTIP_MESSAGES.nextCard}<br>
-            ${TOOLTIP_MESSAGES.pronounce}<br>
-            ${TOOLTIP_MESSAGES.peek}
-          </div>
-        `;
-      }
-
-      // Spelling Mode: typeLetters, pronounce, peek
-      const listeningTooltip = document.getElementById('tooltip-listening');
-      if (listeningTooltip) {
-        listeningTooltip.innerHTML = `
-          <strong>👂 Spelling Mode</strong>
-          <div class="tooltip-instructions">
-            ${TOOLTIP_MESSAGES.typeLetters}<br>
-            ${TOOLTIP_MESSAGES.pronounce}<br>
-            ${TOOLTIP_MESSAGES.peek}
-          </div>
-        `;
-      }
-
-      // Pronunciation Mode: record, pronounce, peek
-      const speakingTooltip = document.getElementById('tooltip-speaking');
-      if (speakingTooltip) {
-        speakingTooltip.innerHTML = `
-          <strong>💬 Pronunciation Mode</strong>
-          <div class="tooltip-instructions">
-            ${TOOLTIP_MESSAGES.record}<br>
-            ${TOOLTIP_MESSAGES.pronounce}<br>
-            ${TOOLTIP_MESSAGES.peek}
-          </div>
-        `;
-      }
-
-      // Translation Mode: typeLetters, pronounce, peek
-      const writingTooltip = document.getElementById('tooltip-writing');
-      if (writingTooltip) {
-        writingTooltip.innerHTML = `
-          <strong>✏️ Translation Mode</strong>
-          <div class="tooltip-instructions">
-            ${TOOLTIP_MESSAGES.typeLetters}<br>
-            ${TOOLTIP_MESSAGES.pronounce}<br>
-            ${TOOLTIP_MESSAGES.peek}
-          </div>
-        `;
-      }
-
-      // ---------------------------------------------------------
-      // CONTROL BAR BUTTON TOOLTIPS - Same messages as mode tooltips
-      // ---------------------------------------------------------
-      // Note: These use innerHTML because messages contain HTML (styled spans)
-      gotItBtn.innerHTML = '✓';
-      gotItBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.gotIt);
-      confusedBtn.innerHTML = '✗';
-      confusedBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.confused);
-      pronounceBtn.innerHTML = '🗣️';
-      pronounceBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.pronounce);
-      peekBtn.innerHTML = '❓';
-      peekBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.peek);
-
-      // Mic button tooltip (control bar)
-      const micBtnControlEl = document.getElementById('mic-btn-control');
-      if (micBtnControlEl) {
-        micBtnControlEl.innerHTML = '🎤';
-        micBtnControlEl.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.record);
-      }
-
-      // ---------------------------------------------------------
-      // Control bar button tooltips REMOVED per user request
-      // Only mode selector buttons have hover tooltips now
-      // ---------------------------------------------------------
-    }
 
     // ============================================================
     // NOTE: createButtonTooltip() removed - use shared version from wordpack-logic.js
     // The function is available globally as window.createButtonTooltip()
     // ============================================================
 
-    // Initialize on page load
-    // KEY FEATURE: Loads act data, preloads deck from saved state (or pack 1), then displays menu overlay
-    // Core Objective: User sees content under the menu when toggling, state is preserved across sessions
-    async function initializeApp() {
-      // Initialize tooltips from single source of truth
-      initializeTooltips();
-
-      try {
-        // First act is 1 (MODULE_URLS is 0-indexed, act numbers are 1-indexed)
-        if (MODULE_URLS.length > 0) {
-          currentAct = 1;
-        }
-
-        // Load ALL acts to get their metadata for dropdowns
-        // (act names and translations come from __actMeta in each module)
-        for (let actNum = 1; actNum <= MODULE_URLS.length; actNum++) {
-          await loadAct(actNum);
-        }
-
-        // ============================================================
-        // VALIDATE AND DETECT TARGET LANGUAGE
-        // All modules must have the same wordColumns[0]
-        // ============================================================
-        if (!validateTargetLanguageConsistency()) {
-          throw new Error('Modules have inconsistent target languages');
-        }
-
-        // Set the target language from loaded modules
-        targetLanguage = getTargetLanguage();
-        targetLanguageDisplay = toTitleCase(targetLanguage);
-
-        // Apply Chinese mode CSS class if needed
-        updateChineseModeClass();
-
-        // Update page title based on detected language
-        if (targetLanguageDisplay) {
-          document.title = `${targetLanguageDisplay} Flashcard Typing Game`;
-          document.getElementById('wordpack-title').textContent = `${targetLanguageDisplay} Flashcard Typing Game`;
-        }
-
-        console.log(`[initializeApp] Detected target language: ${targetLanguage} (${targetLanguageDisplay})`);
-
-        // Now that modules are loaded, load voices based on module metadata
-        // This ensures no voices are available if modules fail to load
-        loadVoices();
-
-        // Remember which act we initially loaded
-        const firstAct = currentAct;
-
-        // Restore any saved state (may change currentAct and currentWordpackKey)
-        restoreSavedState();
-
-        // If saved act is different from the first act we loaded, load it
-        if (currentAct !== firstAct) {
-          await loadAct(currentAct);
-        }
-
-        // KEY FEATURE: Preload deck so there's content under the menu
-        // If no saved wordpack, default to first pack in current act
-        if (!currentWordpackKey && loadedActs[currentAct]) {
-          const packKeys = Object.keys(loadedActs[currentAct]);
-          if (packKeys.length > 0) {
-            currentWordpackKey = packKeys[0];
-          }
-        }
-
-        // Initialize the deck silently (content will be under the menu)
-        if (currentWordpackKey && wordpacks[currentWordpackKey]) {
-          initializeDeck(currentWordpackKey);
-          updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
-          updateBackLabel();
-
-          // Set game-started state so card content is visible under menu
-          flashcard.classList.add('game-started');
-          document.body.classList.add('game-started');
-          gameStarted = true;
-        }
-
-        // Show menu on card as overlay - this renders the menu and populates selectors
-        showStartingCard(false);
-      } catch (error) {
-        console.error('Failed to initialize app:', error);
-        // Show error in menu if it exists
-        const menuAct = document.getElementById('menu-act');
-        const menuWordpack = document.getElementById('menu-wordpack');
-        if (menuAct) menuAct.innerHTML = '<option value="">Failed to load acts</option>';
-        if (menuWordpack) menuWordpack.innerHTML = '<option value="">Failed to load wordpacks</option>';
-      }
-    }
+    // ============================================================
+    // DELETED: initializeApp()
+    // ============================================================
+    // This function was brutishly moved to wordpack-logic.js (9/10 reusability)
+    // USE INSTEAD: await window.initializeApp(config)
+    //
+    // The original implementation is now in wordpack-logic.js as a reusable function.
+    // Note: This function is complex and game-specific but follows a reusable pattern.
+    // ============================================================
 
     // NOTE: populateWordpackSelector was removed - functionality moved to populateWordpackSelectorOnCard()
     // which is called from renderMenuCard() and properly handles the menu-wordpack element
@@ -1473,12 +1265,14 @@
     //        isFlipped = true;
     // ============================================================
 
-    // Unflip card - KEPT (game-specific animation)
-    function unflipCard() {
-      // Don't stop speech - let it continue while viewing front
-      flashcard.classList.remove('flipped');
-      isFlipped = false;
-    }
+    // ============================================================
+    // DELETED: unflipCard()
+    // ============================================================
+    // This function was brutishly moved to wordpack-logic.js (8/10 reusability)
+    // USE INSTEAD: const state = window.unflipCard(flashcard, {isFlipped})
+    //
+    // The original implementation is now in wordpack-logic.js as a reusable function.
+    // ============================================================
 
     // ============================================================
     // DELETED: removeCurrentCard()
@@ -1693,52 +1487,15 @@
     // Usage: updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
     // ============================================================
 
-    // Start the game
     // ============================================================
-    // KEY FEATURE: Start/Resume Practice Session
-    // Core Objective: Begin or continue studying flashcards
-    // Key Behaviors:
-    //   - If game already started with same wordpack, RESUME without reshuffling
-    //   - Only initialize/shuffle deck when starting fresh or changing wordpack
-    //   - Front and back of card are ALWAYS linked (same card object)
+    // DELETED: startGame()
     // ============================================================
-    function startGame() {
-      // Values are already set via menu selectors or restored state
-      // nativeLanguage and currentWordpackKey are already set
-
-      // Update back label based on language
-      updateBackLabel();
-
-      // Update wordpack title
-      updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
-
-      // Exit starting card state if we're on it
-      isOnStartingCard = false;
-      flashcard.classList.remove('showing-menu');
-      document.body.classList.remove('showing-menu');
-
-      // KEY BEHAVIOR: Only initialize deck if:
-      // 1. Game hasn't started yet (fresh start)
-      // 2. No deck exists
-      // 3. Wordpack changed (different from what's currently loaded)
-      const needsNewDeck = !gameStarted ||
-                           currentDeck.length === 0 ||
-                           (currentDeck.length > 0 && currentDeck[0] &&
-                            !currentDeck[0].id.startsWith(currentWordpackKey + '-'));
-
-      if (needsNewDeck) {
-        initializeDeck(currentWordpackKey);
-      } else {
-        // Resume: restore saved position and update display
-        currentIndex = savedIndex;
-        updateDisplay();
-      }
-
-      flashcard.classList.add('game-started');
-      document.body.classList.add('game-started');
-      gameStarted = true;
-      saveState();
-    }
+    // This function was brutishly moved to wordpack-logic.js (10/10 reusability)
+    // USE INSTEAD: const context = window.startGame(context)
+    //
+    // The original implementation is now in wordpack-logic.js as a reusable function.
+    // All games need start/resume logic - this handles fresh start vs resume without reshuffling.
+    // ============================================================
 
     // Event Listeners
 
