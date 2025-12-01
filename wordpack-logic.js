@@ -3837,6 +3837,562 @@ function startGame(context) {
   return context;
 }
 
+// ════════════════════════════════════════════════════════════════════════════
+// FLASHCARD UI FUNCTIONS - Shared across all flashcard-style games
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Navigate to starting/menu card
+ * Reusability: 7/10 - Used by all flashcard games that have a menu overlay
+ *
+ * @param {Object} context - Game context
+ * @param {boolean} context.isOnStartingCard - Current menu state
+ * @param {Array} context.currentDeck - Current deck
+ * @param {number} context.currentIndex - Current card index
+ * @param {number} context.savedIndex - Will store currentIndex for restore
+ * @param {HTMLElement} context.flashcard - Flashcard element
+ * @param {HTMLElement} context.wordpackTitle - Title element
+ * @param {HTMLElement} context.cardCounter - Counter element
+ * @param {string} context.targetLanguageDisplay - Display name of target language
+ * @param {string} context.gameTitle - Base game title (e.g., 'Flashcard Typing Game')
+ * @param {boolean} context.isFlipped - Current flip state
+ * @param {Function} context.renderMenuCard - Function to render menu content
+ * @param {Function} context.flipCard - Function to flip card
+ * @param {boolean} showBack - Whether to flip to back (help) side
+ * @returns {Object} - Updated context with new state
+ */
+function showStartingCard(context, showBack = false) {
+  // Save current position if we have cards and aren't already on menu
+  if (!context.isOnStartingCard && context.currentDeck.length > 0) {
+    context.savedIndex = context.currentIndex;
+  }
+  context.isOnStartingCard = true;
+
+  // Add showing-menu class so menu content and UI elements are visible
+  context.flashcard.classList.add('showing-menu');
+  document.body.classList.add('showing-menu');
+
+  // Update titles (use detected target language)
+  const gameTitle = context.targetLanguageDisplay
+    ? `${context.targetLanguageDisplay} ${context.gameTitle}`
+    : context.gameTitle;
+  context.wordpackTitle.textContent = gameTitle;
+  context.cardCounter.textContent = 'Choose Lesson to Begin Studying';
+
+  // Render menu card (looks identical to a flashcard)
+  context.renderMenuCard();
+
+  // Unflip card face if currently flipped
+  if (context.isFlipped) {
+    context.flashcard.classList.remove('flipped');
+    context.isFlipped = false;
+  }
+
+  // Flip to back if help was requested
+  if (showBack) {
+    setTimeout(() => context.flipCard(), 100);
+  }
+
+  return context;
+}
+
+/**
+ * Return from starting card to saved position
+ * Reusability: 7/10 - Used by all flashcard games that have a menu overlay
+ *
+ * @param {Object} context - Game context
+ * @param {boolean} context.isOnStartingCard - Current menu state
+ * @param {HTMLElement} context.flashcard - Flashcard element
+ * @param {number} context.savedIndex - Saved card index
+ * @param {number} context.currentIndex - Will be restored from savedIndex
+ * @param {HTMLElement} context.wordpackTitle - Title element
+ * @param {string} context.currentWordpackKey - Current pack key
+ * @param {Object} context.wordpacks - Wordpacks data
+ * @param {Function} context.updateDisplay - Function to update card display
+ * @returns {Object} - Updated context with new state
+ */
+function exitStartingCard(context) {
+  if (!context.isOnStartingCard) return context;
+  context.isOnStartingCard = false;
+
+  // Remove showing-menu class
+  context.flashcard.classList.remove('showing-menu');
+  document.body.classList.remove('showing-menu');
+
+  context.currentIndex = context.savedIndex;
+  updateWordpackTitleDisplay(context.wordpackTitle, context.currentWordpackKey, context.wordpacks);
+  context.updateDisplay();
+
+  return context;
+}
+
+/**
+ * Render menu card HTML (front: settings, back: help)
+ * Reusability: 6/10 - Menu structure is common but content varies by game
+ *
+ * @param {Object} context - Game context with all needed state and DOM elements
+ * @param {HTMLElement} context.spanishWord - Front card word element
+ * @param {HTMLElement} context.englishWord - Back card word element
+ * @param {string} context.targetLanguageDisplay - Display name of target language
+ * @param {Object} context.loadedActMeta - Loaded act metadata
+ * @param {number} context.currentAct - Current act number
+ * @param {string} context.currentWordpackKey - Current wordpack key
+ * @param {Object} context.loadedActs - Loaded acts data
+ * @param {string} context.nativeLanguage - Native language code
+ * @param {number} context.currentSpeed - Current TTS speed
+ * @param {Object} context.currentVoice - Current TTS voice
+ * @param {string} context.savedVoiceURI - Saved voice URI
+ * @param {Array} context.voices - Available TTS voices
+ * @param {Array} context.currentDeck - Current deck
+ * @param {Function} context.saveState - Save state function
+ * @param {Function} context.loadAct - Load act function
+ * @param {Function} context.populateWordpackSelectorOnCard - Populate wordpack selector
+ * @param {Function} context.initializeDeck - Initialize deck function
+ * @param {Function} context.startGame - Start game function
+ * @param {Function} context.speakTargetWord - Speak word function
+ * @param {Function} context.updateBackLabel - Update back label function
+ */
+function renderMenuCard(context) {
+  // Get language name for UI text (use detected or fallback to generic)
+  const langName = context.targetLanguageDisplay || 'Target';
+  const voiceLabel = context.targetLanguageDisplay ? `${context.targetLanguageDisplay} Voice` : 'Voice';
+  // For Chinese, typing is pinyin-based
+  const typingDesc = isChineseMode() ? 'type pinyin' : 'type what you heard';
+  const translationTypingDesc = isChineseMode() ? 'type pinyin' : `type ${langName} translation`;
+
+  // Front: Menu/Settings (styled like target language side)
+  context.spanishWord.innerHTML = `
+    <div style="font-size: 1.1rem; text-align: left; max-width: 550px; margin: 0 auto; line-height: 1.8;">
+      <!-- Row 1: Act and Wordpack -->
+      <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+        <div class="menu-field" style="flex: 1; margin-bottom: 0;">
+          <label>Choose Act</label>
+          <select id="menu-act">
+          </select>
+        </div>
+        <div class="menu-field" style="flex: 1; margin-bottom: 0;">
+          <label>Choose Wordpack</label>
+          <select id="menu-wordpack">
+          </select>
+        </div>
+      </div>
+
+      <!-- Row 2: Language and Speed -->
+      <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+        <div class="menu-field" style="flex: 1; margin-bottom: 0;">
+          <label>I speak</label>
+          <select id="menu-language">
+          </select>
+        </div>
+        <div class="menu-field" style="flex: 1; margin-bottom: 0;">
+          <label>Pronunciation Speed</label>
+          <div style="display: flex; gap: 8px; justify-content: center;">
+            <button class="menu-speed-btn" data-speed="0.3">🐢</button>
+            <button class="menu-speed-btn" data-speed="0.6">🚶</button>
+            <button class="menu-speed-btn" data-speed="0.9">🐇</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Voice -->
+      <div class="menu-field" style="margin-bottom: 25px;">
+        <label>${voiceLabel}</label>
+        <select id="menu-voice">
+          <option value="">Loading voices...</option>
+        </select>
+      </div>
+
+      <button id="start-practice-btn" class="setup-start-btn" style="width: 100%;">
+        ▶ Start Game
+      </button>
+    </div>
+  `;
+  context.spanishWord.className = 'card-word';
+
+  // Back: Help/Instructions (styled like translation side)
+  context.englishWord.innerHTML = `
+    <div style="font-size: 2rem; font-weight: bold; margin-bottom: 20px;">❓ How to Use</div>
+
+    <div style="font-size: 1.1rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 1.8;">
+      <div style="margin-bottom: 15px;">
+        <strong>📖 Flashcard Mode:</strong> ${langName} word → flip to see translation
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <strong>👂 Spelling Mode:</strong> Hear ${langName} → ${typingDesc}
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <strong>💬 Pronunciation Mode:</strong> See ${langName} → say it out loud (Space to record)
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <strong>✏️ Translation Mode:</strong> See translation → ${translationTypingDesc}
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <strong>Controls:</strong><br>
+        • Click card or ↓ to flip<br>
+        • ← → to navigate<br>
+        • Space: Hear pronunciation (reading) / Record speech (speaking) / Type practice (listening/writing)<br>
+        • Type letters in listening/translation modes
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <strong>Buttons:</strong><br>
+        • 👌 Remove mastered card<br>
+        • 😕 Add 2 practice copies<br>
+        • ↺ Reset all cards
+      </div>
+    </div>
+  `;
+  context.englishWord.className = 'card-word';
+
+  // Populate selectors after render
+  setTimeout(() => {
+    const menuAct = document.getElementById('menu-act');
+    const menuWordpack = document.getElementById('menu-wordpack');
+    const menuLanguage = document.getElementById('menu-language');
+    const menuVoice = document.getElementById('menu-voice');
+    const startPracticeBtn = document.getElementById('start-practice-btn');
+
+    // Populate act selector
+    if (menuAct) {
+      populateActSelector(menuAct, context.loadedActMeta, null);
+
+      // Set saved value and handle defaults
+      const actNumbers = Object.keys(context.loadedActMeta).map(Number).sort((a, b) => a - b);
+      if (context.currentAct && actNumbers.includes(context.currentAct)) {
+        menuAct.value = context.currentAct;
+      } else if (actNumbers.length > 0) {
+        menuAct.value = actNumbers[0];
+        context.currentAct = actNumbers[0];
+        context.saveState();
+      }
+
+      menuAct.addEventListener('change', async (e) => {
+        playButtonClickSound();
+        const selectedAct = parseInt(e.target.value);
+        context.currentAct = selectedAct;
+        menuWordpack.innerHTML = '';
+        menuWordpack.disabled = true;
+
+        try {
+          await context.loadAct(selectedAct);
+          context.populateWordpackSelectorOnCard(selectedAct);
+          menuWordpack.disabled = false;
+        } catch (error) {
+          console.error('Failed to load act:', error);
+          menuWordpack.innerHTML = '<option value="">Failed to load act</option>';
+        }
+      });
+    }
+
+    // Populate wordpack selector
+    if (menuWordpack) {
+      context.populateWordpackSelectorOnCard(context.currentAct);
+      // Restore saved wordpack selection if available
+      if (context.currentWordpackKey && context.loadedActs[context.currentAct] && context.loadedActs[context.currentAct][context.currentWordpackKey]) {
+        menuWordpack.value = context.currentWordpackKey;
+      }
+
+      menuWordpack.addEventListener('change', (e) => {
+        playButtonClickSound();
+        context.currentWordpackKey = e.target.value;
+        context.saveState();
+      });
+    }
+
+    // Language selector - populated from config
+    if (menuLanguage) {
+      const translations = getTranslationsConfig();
+      if (translations) {
+        populateNativeLanguageSelector(menuLanguage, translations, context.nativeLanguage, null);
+
+        // Validate and set default if needed
+        const validLanguages = Object.keys(translations);
+        if (!context.nativeLanguage || !validLanguages.includes(context.nativeLanguage)) {
+          context.nativeLanguage = getDefaultTranslation();
+          menuLanguage.value = context.nativeLanguage;
+          context.saveState();
+        }
+      }
+
+      menuLanguage.addEventListener('change', (e) => {
+        playButtonClickSound();
+        context.nativeLanguage = e.target.value;
+        context.updateBackLabel();
+        // Reinitialize deck to include/exclude pinyin based on new language
+        if (context.currentWordpackKey) {
+          context.initializeDeck(context.currentWordpackKey);
+        }
+        context.saveState();
+      });
+    }
+
+    // Voice selector
+    if (menuVoice && context.voices.length > 0) {
+      menuVoice.innerHTML = '';
+      context.voices.forEach((voice) => {
+        const option = document.createElement('option');
+        option.value = voice.voiceURI;
+        option.textContent = `${voice.name} (${voice.lang})`;
+        menuVoice.appendChild(option);
+      });
+
+      // Use currentVoice if set, otherwise use savedVoiceURI from state, otherwise first voice
+      const voiceURIToRestore = context.currentVoice ? context.currentVoice.voiceURI : context.savedVoiceURI;
+      if (voiceURIToRestore && context.voices.find(v => v.voiceURI === voiceURIToRestore)) {
+        menuVoice.value = voiceURIToRestore;
+        // Also set currentVoice if we have the URI but not the voice object
+        if (!context.currentVoice && context.savedVoiceURI) {
+          context.currentVoice = context.voices.find(v => v.voiceURI === context.savedVoiceURI) || null;
+        }
+      } else {
+        // No saved voice or saved voice not found - default to first voice
+        const firstVoice = context.voices[0];
+        menuVoice.value = firstVoice.voiceURI;
+        context.currentVoice = firstVoice;
+        context.savedVoiceURI = firstVoice.voiceURI;
+      }
+
+      menuVoice.addEventListener('change', (e) => {
+        playButtonClickSound();
+        const newVoiceURI = e.target.value;
+        context.currentVoice = context.voices.find(v => v.voiceURI === newVoiceURI) || null;
+        context.savedVoiceURI = newVoiceURI;
+        context.saveState();
+        // Preview the new voice
+        if (context.currentDeck.length > 0) {
+          setTimeout(() => context.speakTargetWord(), 100);
+        }
+      });
+    }
+
+    // Speed buttons
+    const speedBtns = document.querySelectorAll('.menu-speed-btn');
+    speedBtns.forEach(b => b.classList.remove('active'));
+    speedBtns.forEach(btn => {
+      if (parseFloat(btn.dataset.speed) === context.currentSpeed) {
+        btn.classList.add('active');
+      }
+      btn.addEventListener('click', () => {
+        playButtonClickSound();
+        context.currentSpeed = parseFloat(btn.dataset.speed);
+        speedBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        context.saveState();
+        // Preview the new speed
+        if (context.currentDeck.length > 0) {
+          setTimeout(() => context.speakTargetWord(), 100);
+        }
+      });
+    });
+
+    // Start Practice button
+    if (startPracticeBtn) {
+      startPracticeBtn.addEventListener('click', () => {
+        playButtonClickSound();
+        if (context.currentWordpackKey && context.nativeLanguage) {
+          context.startGame();
+        }
+      });
+    }
+  }, 0);
+}
+
+/**
+ * Update flashcard display based on current mode
+ * Reusability: 6/10 - Core display logic is common but mode-specific rendering varies
+ *
+ * @param {Object} context - Game context with all needed state and DOM elements
+ * @param {boolean} context.isOnStartingCard - Is on menu card
+ * @param {Array} context.currentDeck - Current deck
+ * @param {number} context.currentIndex - Current card index
+ * @param {string} context.currentMode - Current mode (flashcard/spelling/pronunciation/translation)
+ * @param {HTMLElement} context.cardCounter - Counter element
+ * @param {HTMLElement} context.spanishWord - Front card word element
+ * @param {HTMLElement} context.englishWord - Back card word element
+ * @param {HTMLElement} context.flashcard - Flashcard element
+ * @param {HTMLElement} context.weatheringFront - Front weathering element
+ * @param {HTMLElement} context.weatheringBack - Back weathering element
+ * @param {HTMLElement} context.gotItBtn - Got it button
+ * @param {HTMLElement} context.confusedBtn - Confused button
+ * @param {HTMLElement} context.controlSeparator - Control separator element
+ * @param {HTMLElement} context.prevBtn - Previous button
+ * @param {HTMLElement} context.nextBtn - Next button
+ * @param {Array} context.typingDisplay - Typing display array
+ * @param {Set} context.typedPositions - Typed positions set
+ * @param {Array} context.wrongPositions - Wrong positions array
+ * @param {Array} context.wrongLetters - Wrong letters array
+ * @param {number} context.wrongAttempts - Wrong attempts count
+ * @param {Function} context.generateWeathering - Generate weathering function
+ * @param {Function} context.restartCurrentPack - Restart pack function
+ * @param {Function} context.goToNextPack - Go to next pack function
+ */
+function updateDisplay(context) {
+  // Don't update card content when on starting card
+  if (context.isOnStartingCard) {
+    return;
+  }
+
+  if (context.currentDeck.length === 0) {
+    // Show completion screen
+    context.cardCounter.textContent = 'Pack Complete!';
+    context.spanishWord.innerHTML = `
+      <div style="font-size: 3rem; margin-bottom: 30px;">🎉 Good Job! 🎉</div>
+      <div style="font-size: 1.5rem; margin-bottom: 40px;">You've completed this wordpack!</div>
+      <div style="display: flex; gap: 20px; justify-content: center;">
+        <button onclick="restartCurrentPack()" style="padding: 15px 30px; font-size: 1.3rem; background: #8B7355; color: var(--color-text-light); border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+          ↺ Study Again
+        </button>
+        <button onclick="goToNextPack()" style="padding: 15px 30px; font-size: 1.3rem; background: #7A6347; color: var(--color-text-light); border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+          → Next Pack
+        </button>
+      </div>
+    `;
+    context.spanishWord.className = 'card-word';
+    context.englishWord.textContent = '';
+    return;
+  }
+
+  // CRITICAL: Get SINGLE card object - front and back are ALWAYS linked
+  const card = context.currentDeck[context.currentIndex];
+
+  // Display counter - different format for auto-advance vs manual modes
+  let counterText;
+  if (context.currentMode === 'flashcard') {
+    counterText = `Card ${context.currentIndex + 1} of ${context.currentDeck.length}`;
+  } else {
+    counterText = `${context.currentDeck.length} Cards Left`;
+  }
+  context.cardCounter.textContent = counterText;
+
+  // Get indicator elements
+  const wrongLettersFront = document.getElementById('wrong-letters-front');
+  const wrongCountFront = document.getElementById('wrong-count-front');
+
+  // Mode-specific display
+  if (context.currentMode === 'flashcard') {
+    // FLASHCARD MODE - Target word front, translation back
+    context.spanishWord.innerHTML = renderTargetWordHTML(card, isChineseMode());
+    context.spanishWord.className = 'card-word';
+    context.englishWord.innerHTML = `<div class="translation-text">${renderTranslationHTML(card)}</div>`;
+    context.englishWord.className = 'card-word';
+    if (wrongLettersFront) wrongLettersFront.innerHTML = '';
+    if (wrongCountFront) wrongCountFront.innerHTML = '';
+  } else if (context.currentMode === 'spelling') {
+    // SPELLING MODE - Hear audio + type
+    if (wrongLettersFront) {
+      wrongLettersFront.innerHTML = context.wrongLetters.length > 0
+        ? context.wrongLetters.map(item => {
+            return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: var(--color-text-dark);">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+          }).join('')
+        : '';
+    }
+    if (wrongCountFront) {
+      const countRotate = -2 + Math.random() * 4;
+      const countScale = 0.95 + Math.random() * 0.1;
+      wrongCountFront.innerHTML = context.wrongAttempts > 0
+        ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${context.wrongAttempts}</span>`
+        : '';
+    }
+    context.spanishWord.innerHTML = `<div class="typing-display">${renderTypingDisplayHTML(context.typingDisplay, context.typedPositions, context.wrongPositions)}</div>`;
+    context.spanishWord.className = 'card-word';
+    context.englishWord.innerHTML = `${renderTargetWordHTML(card, isChineseMode())}<br><div class="translation-text">${renderTranslationHTML(card)}</div>`;
+    context.englishWord.className = 'card-word';
+  } else if (context.currentMode === 'translation') {
+    // TRANSLATION MODE - Translation front + type target word
+    if (wrongLettersFront) {
+      wrongLettersFront.innerHTML = context.wrongLetters.length > 0
+        ? context.wrongLetters.map(item => {
+            return `<span style="position: relative; display: inline-block; margin-right: 15px; transform: scale(${item.scale}) rotate(${item.rotation}deg);"><span style="color: var(--color-text-dark);">${item.letter}</span><span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(${item.xRotation}deg); color: #D32F2F; font-size: 0.7em; font-weight: bold; opacity: 0.7;">✗</span></span>`;
+          }).join('')
+        : '';
+    }
+    if (wrongCountFront) {
+      const countRotate = -2 + Math.random() * 4;
+      const countScale = 0.95 + Math.random() * 0.1;
+      wrongCountFront.innerHTML = context.wrongAttempts > 0
+        ? `<span style="display: inline-block; transform: scale(${countScale}) rotate(${countRotate}deg);">-${context.wrongAttempts}</span>`
+        : '';
+    }
+    context.spanishWord.innerHTML = `<div class="translation-text">${renderTranslationHTML(card)}</div><div style="margin: 10px 0;"></div><div class="typing-display">${renderTypingDisplayHTML(context.typingDisplay, context.typedPositions, context.wrongPositions)}</div>`;
+    context.spanishWord.className = 'card-word';
+    context.englishWord.innerHTML = renderTargetWordHTML(card, isChineseMode());
+    context.englishWord.className = 'card-word';
+  } else if (context.currentMode === 'pronunciation') {
+    // PRONUNCIATION MODE - Target word front, translation back
+    context.spanishWord.innerHTML = renderTargetWordHTML(card, isChineseMode());
+    context.spanishWord.className = 'card-word';
+    context.englishWord.innerHTML = `<div class="translation-text">${renderTranslationHTML(card)}</div>`;
+    context.englishWord.className = 'card-word';
+    if (wrongLettersFront) wrongLettersFront.innerHTML = '';
+    if (wrongCountFront) wrongCountFront.innerHTML = '';
+  }
+
+  // Show/hide mic button based on mode
+  const micBtnControlEl = document.getElementById('mic-btn-control');
+  if (micBtnControlEl) {
+    micBtnControlEl.style.display = context.currentMode === 'pronunciation' ? 'flex' : 'none';
+  }
+
+  // Show/hide control bar buttons based on mode
+  if (context.gotItBtn) {
+    context.gotItBtn.style.display = context.currentMode === 'flashcard' ? 'flex' : 'none';
+  }
+  if (context.confusedBtn) {
+    context.confusedBtn.style.display = context.currentMode === 'flashcard' ? 'flex' : 'none';
+  }
+
+  // Separator: show in flashcard mode and pronunciation mode
+  if (context.controlSeparator) {
+    context.controlSeparator.style.display = (context.currentMode === 'flashcard' || context.currentMode === 'pronunciation') ? 'block' : 'none';
+  }
+
+  // Show/hide navigation arrows (only in flashcard mode)
+  if (context.prevBtn) {
+    context.prevBtn.style.display = context.currentMode === 'flashcard' ? 'flex' : 'none';
+  }
+  if (context.nextBtn) {
+    context.nextBtn.style.display = context.currentMode === 'flashcard' ? 'flex' : 'none';
+  }
+
+  // Apply random weathering based on card ID
+  if (context.generateWeathering && context.weatheringFront && context.weatheringBack) {
+    const seed = card.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    context.weatheringFront.style.background = context.generateWeathering(seed);
+    context.weatheringBack.style.background = context.generateWeathering(seed + 1000);
+  }
+
+  // Reset flip state
+  context.flashcard.classList.remove('flipped');
+  context.isFlipped = false;
+}
+
+/**
+ * Flip card to show back side
+ * Reusability: 8/10 - Used by all flashcard games
+ *
+ * @param {HTMLElement} flashcard - Flashcard element
+ * @param {Object} state - State object with isFlipped property
+ * @returns {Object} - Updated state
+ */
+function flipCardWithState(flashcard, state) {
+  flashcard.classList.add('flipped');
+  state.isFlipped = true;
+  return state;
+}
+
 // END OF FUNCTIONS BRUTISHLY MOVED FROM FlashcardTypingGame.js
 // ════════════════════════════════════════════════════════════════════════════
+
+// ════════════════════════════════════════════════════════════════════════════
+// WINDOW EXPORTS - Make functions available globally for game files
+// ════════════════════════════════════════════════════════════════════════════
+window.showStartingCard = showStartingCard;
+window.exitStartingCard = exitStartingCard;
+window.renderMenuCard = renderMenuCard;
+window.updateDisplay = updateDisplay;
+window.flipCardWithState = flipCardWithState;
 
