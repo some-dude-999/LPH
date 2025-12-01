@@ -1,0 +1,81 @@
+Function Name,Description,Category
+switchLanguage,"Switches active language (chinese/spanish/english), saves to localStorage, and reloads page",Language & Module Management
+decodeObfuscatedModule,"Decodes obfuscated JS modules (base64 + zlib + reversed JSON) to extract wordpack data",Language & Module Management
+loadAct,"Loads a specific act module from MODULE_URLS, decodes it, and stores in loadedActMeta",Language & Module Management
+loadLanguageData,"Loads all language data for a specific language (chinese/spanish/english) by loading all acts",Language & Module Management
+getTargetLanguage,"Returns target language being learned (first column in wordColumns from __actMeta)",Language Detection & Metadata
+toTitleCase,"Converts string to title case (first letter uppercase, rest lowercase)",Language Detection & Metadata
+validateTargetLanguageConsistency,"Validates all loaded modules have same target language (wordColumns[0])",Language Detection & Metadata
+isChineseMode,"Returns true if current target language is Chinese",Language Detection & Metadata
+updateChineseModeClass,"Adds/removes 'chinese-mode' class to body element based on target language",Language Detection & Metadata
+getTranslationsConfig,"Returns translations config from loaded __actMeta (available 'I speak' languages)",Language Detection & Metadata
+getDefaultTranslation,"Returns default translation language from loaded __actMeta",Language Detection & Metadata
+getWordColumns,"Returns wordColumns array from loaded __actMeta (column structure)",Language Detection & Metadata
+getValidLanguages,"Returns array of valid translation language codes from loaded __actMeta",Language Detection & Metadata
+getTtsLanguageCode,"Maps language name to BCP-47 language code for text-to-speech (es-ES, zh-CN, etc.)",Language Detection & Metadata
+coupleChineseWithPinyin,"Couples Chinese characters with pinyin syllables into array of {char, pinyin} objects",Chinese + Pinyin Rendering
+renderChineseWithPinyin,"Renders coupled Chinese array as HTML element with characters on top and pinyin below",Chinese + Pinyin Rendering
+renderChineseText,"Convenience function that couples and renders Chinese text in one call",Chinese + Pinyin Rendering
+getChineseHtml,"Returns HTML string for Chinese text (useful for innerHTML assignments)",Chinese + Pinyin Rendering
+normalizeChar,"Normalizes character for typing comparison (handles accents, case, special chars)",Typing Mode Logic
+findNextTypingPosition,"Finds next untyped position in character array for typing mode",Typing Mode Logic
+checkTypingKey,"Checks if typed key matches target character (handles spaces, accents, case)",Typing Mode Logic
+isWordComplete,"Returns true if all characters in word have been typed",Typing Mode Logic
+initializeTypingState,"Initializes typing state object for a target word (chars, typed positions, wrong positions)",Typing Mode Logic
+getTypingDisplay,"Generates typing display array showing typed/untyped/wrong characters",Typing Mode Logic
+handleTypingInput,"Core typing input handler - validates key, updates state, returns result object",Typing Mode Logic
+renderTypingDisplayHTML,"Renders typing display as HTML with color coding (typed=green, untyped=gray, wrong=red)",Typing Mode Logic
+normalizePronunciationText,"Normalizes text for pronunciation comparison (removes spaces, tone marks for Chinese)",Speech Recognition & Pronunciation
+getSimilarityThreshold,"Returns dynamic similarity threshold based on word length (shorter = lower threshold)",Speech Recognition & Pronunciation
+levenshteinDistance,"Calculates Levenshtein edit distance between two strings",Speech Recognition & Pronunciation
+calculateSimilarity,"Calculates pronunciation similarity score (0.0-1.0) between expected and heard text",Speech Recognition & Pronunciation
+getFeedbackMessage,"Returns feedback message based on pronunciation similarity score",Speech Recognition & Pronunciation
+getScoreClass,"Returns CSS class name based on pronunciation score (excellent/good/ok/poor)",Speech Recognition & Pronunciation
+updatePronunciationDebug,"Updates pronunciation debug info display with score and comparison data",Speech Recognition & Pronunciation
+hideFeedback,"Hides pronunciation feedback elements after delay",Speech Recognition & Pronunciation
+loadVoicesForLanguage,"Loads available TTS voices for a specific language code",Speech Recognition & Pronunciation
+speakWord,"Speaks text using Web Speech API with configurable voice, rate, pitch",Speech Recognition & Pronunciation
+findVoiceByURI,"Finds voice object by voiceURI from available voices array",Speech Recognition & Pronunciation
+startListeningForPronunciation,"Starts speech recognition, listens for pronunciation, calculates similarity score",Speech Recognition & Pronunciation
+resetListeningState,"Resets record button to initial state after speech recognition",Speech Recognition & Pronunciation
+shuffleArray,"Fisher-Yates shuffle algorithm - randomly shuffles array in place",Deck Management
+combineAndShuffleWords,"Combines words array into single deck and shuffles (supports 'hard'/'easy' difficulty)",Deck Management
+createDeckFromPack,"Creates shuffled deck from a wordpack with options for difficulty and duplicate handling",Deck Management
+initFlashcardDeck,"Initializes flashcard deck from a specific wordpack (loads pack, creates deck, updates UI)",Deck Management
+removeCard,"Removes current card from deck (correct answer behavior)",Card Navigation & Control
+addDuplicateCards,"Adds duplicate cards to deck for extra practice (wrong answer behavior)",Card Navigation & Control
+navigateToPrevious,"Navigates to previous card with wraparound and optional callbacks",Card Navigation & Control
+navigateToNext,"Navigates to next card with wraparound and optional callbacks",Card Navigation & Control
+nextCard,"Game-specific wrapper for navigateToNext with flashcard flip logic",Card Navigation & Control
+prevCard,"Game-specific wrapper for navigateToPrevious with flashcard flip logic",Card Navigation & Control
+flipCard,"Flips flashcard to show back (translation side)",Card Navigation & Control
+resetDeckToOriginal,"Resets current deck to original shuffled deck",Card Navigation & Control
+navigateToNextPack,"Navigates to next wordpack in sequence (wraps to first pack)",Card Navigation & Control
+shuffleDeck,"Reshuffles current deck and returns to first card",Card Navigation & Control
+saveState,"Saves state object to localStorage with specified STORAGE_KEY",State Management
+loadState,"Loads state object from localStorage (returns null if not found)",State Management
+restoreSavedState,"Restores saved game state from localStorage (act, pack, language, voice, speed)",State Management
+validateAndFixState,"Validates saved state against valid options and fixes invalid values",State Management
+toggleDebugMode,"Toggles debug mode on/off (Ctrl+` hotkey) and shows/hides debug UI",Debug Mode
+updateDebugTable,"Updates debug vocabulary table with current deck data and highlights current card",Debug Mode
+initializeDebugUI,"Initializes debug mode UI (vocabulary table, pronunciation debug, language selector)",Debug Mode
+populateActSelector,"Populates act dropdown selector from loaded __actMeta",UI Population & Selectors
+populatePackSelector,"Populates wordpack dropdown selector from act data",UI Population & Selectors
+populateNativeLanguageSelector,"Populates 'I speak' language dropdown from translations config",UI Population & Selectors
+updateWordpackTitleDisplay,"Updates wordpack title display element with current pack's title",UI Population & Selectors
+renderTargetWordHTML,"Renders target word as HTML (handles Chinese with pinyin or regular text)",UI Population & Selectors
+renderTranslationHTML,"Renders translation as HTML (handles Chinese with pinyin or regular text)",UI Population & Selectors
+showStamp,"Generic function to show stamp element with sound, then hide after duration",Feedback & Stamps
+showSuccessStamp,"Shows success stamp with ding sound for correct answers",Feedback & Stamps
+showFailureStamp,"Shows failure stamp with buzz sound for wrong answers",Feedback & Stamps
+createButtonTooltip,"Creates and attaches tooltip to button with HTML content",UI Tooltips
+normalizeString,"Normalizes string for comparison (lowercase, removes extra spaces, removes punctuation)",Utility Functions
+generateWrongAnswers,"Generates wrong answer options for multiple choice (avoids duplicates)",Wrong Answer Generation
+generateWrongAnswersWithPinyin,"Generates wrong answers for Chinese mode (includes pinyin with each option)",Wrong Answer Generation
+getAudioContext,"Returns singleton AudioContext instance for playing sounds",Audio & Sound Effects
+playTypingSound,"Plays typing click sound (scribble sound)",Audio & Sound Effects
+setTTSSpeed,"Sets TTS speed and updates speed button UI states",Text-to-Speech (TTS)
+autoSelectFirstActAndPack,"Auto-selects first available act and pack on initial load",UI Initialization
+simulateCorrectAnswer,"Debug function: Simulates correct answer (removes card from deck)",Simulation & Testing
+simulateWrongAnswer,"Debug function: Simulates wrong answer (adds duplicate cards to deck)",Simulation & Testing
+simulateNearVictory,"Debug function: Simulates near-victory state (only 3 cards left in deck)",Simulation & Testing
