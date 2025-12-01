@@ -3480,6 +3480,363 @@ if (typeof module !== 'undefined' && module.exports) {
     prevCard,
     shuffleDeck,
     // Utility
-    autoSelectFirstActAndPack
+    autoSelectFirstActAndPack,
+    // ═══════ Functions brutishly moved from FlashcardTypingGame.js (scores 8-10) ═══════
+    switchMode,
+    initializeTooltips,
+    initializeApp,
+    unflipCard,
+    startGame
   };
 }
+
+// ════════════════════════════════════════════════════════════════════════════
+// FUNCTIONS BRUTISHLY MOVED FROM FlashcardTypingGame.js (scores 8-10)
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Switch between learning modes
+ * Reusability: 10/10 - ALL games need mode switching
+ * 
+ * @param {string} newMode - Mode to switch to ('flashcard', 'spelling', 'pronunciation', 'translation')
+ * @param {Object} context - Game context
+ * @param {string} context.currentMode - Current mode
+ * @param {Array} context.modeBtns - Mode button elements
+ * @param {Object} context.modeElements - Object with mode button references
+ * @param {Array} context.originalDeck - Original deck to reset from
+ * @param {Array} context.currentDeck - Current deck state
+ * @param {number} context.currentIndex - Current card index
+ * @param {boolean} context.isFlipped - Is card flipped
+ * @param {HTMLElement} context.flashcard - Flashcard element
+ * @param {number} context.pendingDeckChange - Pending deck change indicator
+ * @param {Function} context.initializeTypingDisplay - Function to initialize typing
+ * @param {Function} context.updateDisplay - Function to update display
+ * @param {Function} context.speakTargetWord - Function to speak word
+ * @param {Function} context.updateSimulateButtonsVisibility - Function to update debug buttons
+ * @param {Function} context.saveState - Function to save state
+ * @returns {Object} - Updated context with new mode, deck, and index
+ */
+function switchMode(newMode, context) {
+  if (context.currentMode === newMode) return context;
+
+  // Stop all speech sounds
+  speechSynthesis.cancel();
+
+  context.currentMode = newMode;
+
+  // Update active button
+  context.modeBtns.forEach(btn => btn.classList.remove('active'));
+  if (newMode === 'flashcard') context.modeElements.flashcard.classList.add('active');
+  if (newMode === 'spelling') context.modeElements.spelling.classList.add('active');
+  if (newMode === 'pronunciation') context.modeElements.pronunciation.classList.add('active');
+  if (newMode === 'translation') context.modeElements.translation.classList.add('active');
+
+  // Reset deck from original (preserve pedagogical ordering)
+  if (context.originalDeck.length > 0) {
+    context.currentDeck = [...context.originalDeck];
+    context.currentIndex = 0;
+  }
+
+  // Reset flip state
+  if (context.isFlipped) {
+    context.flashcard.classList.remove('flipped');
+    context.isFlipped = false;
+  }
+
+  // Reset deck change indicator
+  context.pendingDeckChange = 0;
+
+  // Initialize typing for typing modes
+  if ((newMode === 'spelling' || newMode === 'translation') && context.currentDeck.length > 0) {
+    context.initializeTypingDisplay();
+  }
+
+  context.updateDisplay();
+
+  // Auto-pronounce in spelling mode
+  if (newMode === 'spelling' && context.currentDeck.length > 0) {
+    setTimeout(() => context.speakTargetWord(), 300);
+  }
+
+  // Update debug buttons visibility
+  if (context.updateSimulateButtonsVisibility) {
+    context.updateSimulateButtonsVisibility();
+  }
+
+  context.saveState();
+
+  return context;
+}
+
+/**
+ * Initialize tooltips from TOOLTIP_MESSAGES
+ * Reusability: 9/10 - Most games use tooltips
+ * 
+ * @param {Object} elements - Tooltip elements
+ * @param {HTMLElement} elements.readingTooltip - Reading mode tooltip
+ * @param {HTMLElement} elements.listeningTooltip - Listening mode tooltip
+ * @param {HTMLElement} elements.speakingTooltip - Speaking mode tooltip
+ * @param {HTMLElement} elements.writingTooltip - Writing mode tooltip
+ * @param {HTMLElement} elements.gotItBtn - Got it button
+ * @param {HTMLElement} elements.confusedBtn - Confused button
+ * @param {HTMLElement} elements.pronounceBtn - Pronounce button
+ * @param {HTMLElement} elements.peekBtn - Peek button
+ * @param {HTMLElement} elements.micBtnControl - Mic button
+ */
+function initializeTooltips(elements) {
+  // Mode tooltips
+  if (elements.readingTooltip) {
+    elements.readingTooltip.innerHTML = `
+      <strong>📖 Flashcard Mode</strong>
+      <div class="tooltip-instructions">
+        ${TOOLTIP_MESSAGES.gotIt}<br>
+        ${TOOLTIP_MESSAGES.confused}<br>
+        ${TOOLTIP_MESSAGES.prevCard}<br>
+        ${TOOLTIP_MESSAGES.nextCard}<br>
+        ${TOOLTIP_MESSAGES.pronounce}<br>
+        ${TOOLTIP_MESSAGES.peek}
+      </div>
+    `;
+  }
+
+  if (elements.listeningTooltip) {
+    elements.listeningTooltip.innerHTML = `
+      <strong>👂 Spelling Mode</strong>
+      <div class="tooltip-instructions">
+        ${TOOLTIP_MESSAGES.typeLetters}<br>
+        ${TOOLTIP_MESSAGES.pronounce}<br>
+        ${TOOLTIP_MESSAGES.peek}
+      </div>
+    `;
+  }
+
+  if (elements.speakingTooltip) {
+    elements.speakingTooltip.innerHTML = `
+      <strong>💬 Pronunciation Mode</strong>
+      <div class="tooltip-instructions">
+        ${TOOLTIP_MESSAGES.record}<br>
+        ${TOOLTIP_MESSAGES.pronounce}<br>
+        ${TOOLTIP_MESSAGES.peek}
+      </div>
+    `;
+  }
+
+  if (elements.writingTooltip) {
+    elements.writingTooltip.innerHTML = `
+      <strong>✏️ Translation Mode</strong>
+      <div class="tooltip-instructions">
+        ${TOOLTIP_MESSAGES.typeLetters}<br>
+        ${TOOLTIP_MESSAGES.pronounce}<br>
+        ${TOOLTIP_MESSAGES.peek}
+      </div>
+    `;
+  }
+
+  // Control button tooltips
+  if (elements.gotItBtn) {
+    elements.gotItBtn.innerHTML = '✓';
+    elements.gotItBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.gotIt);
+  }
+  if (elements.confusedBtn) {
+    elements.confusedBtn.innerHTML = '✗';
+    elements.confusedBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.confused);
+  }
+  if (elements.pronounceBtn) {
+    elements.pronounceBtn.innerHTML = '🗣️';
+    elements.pronounceBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.pronounce);
+  }
+  if (elements.peekBtn) {
+    elements.peekBtn.innerHTML = '❓';
+    elements.peekBtn.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.peek);
+  }
+  if (elements.micBtnControl) {
+    elements.micBtnControl.innerHTML = '🎤';
+    elements.micBtnControl.setAttribute('data-tooltip-html', TOOLTIP_MESSAGES.record);
+  }
+}
+
+/**
+ * Main application initialization
+ * Reusability: 9/10 - Most games follow similar init pattern
+ * NOTE: This is a complex function that requires significant refactoring for true reusability
+ * Current version is game-specific but follows a reusable pattern
+ * 
+ * @param {Object} config - Initialization configuration
+ * @param {Function} config.initializeTooltips - Tooltip init function
+ * @param {Array} config.MODULE_URLS - Module URLs to load
+ * @param {Function} config.loadAct - Load act function
+ * @param {Function} config.validateTargetLanguageConsistency - Validation function
+ * @param {Function} config.getTargetLanguage - Get target language function
+ * @param {Function} config.toTitleCase - Title case conversion function
+ * @param {Function} config.updateChineseModeClass - Update Chinese mode CSS
+ * @param {Function} config.loadVoices - Load TTS voices
+ * @param {Function} config.restoreSavedState - Restore saved state
+ * @param {Function} config.initializeDeck - Initialize deck function
+ * @param {Function} config.updateWordpackTitleDisplay - Update title function
+ * @param {Function} config.updateBackLabel - Update back label function
+ * @param {Function} config.showStartingCard - Show menu card function
+ * @param {HTMLElement} config.flashcard - Flashcard element
+ * @param {Object} config.document - Document object
+ * @param {Object} config.loadedActs - Loaded acts storage
+ * @returns {Promise<Object>} - Initialization result
+ */
+async function initializeApp(config) {
+  config.initializeTooltips();
+
+  try {
+    // Load all acts for metadata
+    if (config.MODULE_URLS.length > 0) {
+      config.currentAct = 1;
+    }
+
+    for (let actNum = 1; actNum <= config.MODULE_URLS.length; actNum++) {
+      await config.loadAct(actNum);
+    }
+
+    // Validate target language consistency
+    if (!config.validateTargetLanguageConsistency()) {
+      throw new Error('Modules have inconsistent target languages');
+    }
+
+    // Detect target language
+    config.targetLanguage = config.getTargetLanguage();
+    config.targetLanguageDisplay = config.toTitleCase(config.targetLanguage);
+
+    // Apply Chinese mode CSS if needed
+    config.updateChineseModeClass();
+
+    // Update page title
+    if (config.targetLanguageDisplay) {
+      config.document.title = `${config.targetLanguageDisplay} Flashcard Typing Game`;
+      config.document.getElementById('wordpack-title').textContent = `${config.targetLanguageDisplay} Flashcard Typing Game`;
+    }
+
+    console.log(`[initializeApp] Detected target language: ${config.targetLanguage} (${config.targetLanguageDisplay})`);
+
+    // Load voices
+    config.loadVoices();
+
+    const firstAct = config.currentAct;
+
+    // Restore saved state
+    config.restoreSavedState();
+
+    // Load saved act if different
+    if (config.currentAct !== firstAct) {
+      await config.loadAct(config.currentAct);
+    }
+
+    // Preload deck with content under menu
+    if (!config.currentWordpackKey && config.loadedActs[config.currentAct]) {
+      const packKeys = Object.keys(config.loadedActs[config.currentAct]);
+      if (packKeys.length > 0) {
+        config.currentWordpackKey = packKeys[0];
+      }
+    }
+
+    // Initialize deck
+    if (config.currentWordpackKey && config.wordpacks[config.currentWordpackKey]) {
+      config.initializeDeck(config.currentWordpackKey);
+      config.updateWordpackTitleDisplay(config.wordpackTitle, config.currentWordpackKey, config.wordpacks);
+      config.updateBackLabel();
+
+      // Set game-started state
+      config.flashcard.classList.add('game-started');
+      config.document.body.classList.add('game-started');
+      config.gameStarted = true;
+    }
+
+    // Show menu overlay
+    config.showStartingCard(false);
+
+    return {
+      success: true,
+      targetLanguage: config.targetLanguage,
+      targetLanguageDisplay: config.targetLanguageDisplay
+    };
+  } catch (error) {
+    console.error('Failed to initialize app:', error);
+    
+    // Show error in menu
+    const menuAct = config.document.getElementById('menu-act');
+    const menuWordpack = config.document.getElementById('menu-wordpack');
+    if (menuAct) menuAct.innerHTML = '<option value="">Failed to load acts</option>';
+    if (menuWordpack) menuWordpack.innerHTML = '<option value="">Failed to load wordpacks</option>';
+    
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+}
+
+/**
+ * Unflip card to show front
+ * Reusability: 8/10 - Many games use card flipping
+ * NOTE: Does NOT stop speech - allows audio to continue
+ * 
+ * @param {HTMLElement} flashcard - Flashcard element
+ * @param {Object} state - Flip state object
+ * @returns {Object} - Updated state
+ */
+function unflipCard(flashcard, state) {
+  flashcard.classList.remove('flipped');
+  state.isFlipped = false;
+  return state;
+}
+
+/**
+ * Start or resume game/practice session
+ * Reusability: 10/10 - ALL games need start/resume logic
+ * 
+ * @param {Object} context - Game context
+ * @param {Function} context.updateBackLabel - Update back label function
+ * @param {Function} context.updateWordpackTitleDisplay - Update title function
+ * @param {boolean} context.isOnStartingCard - Is on menu card
+ * @param {HTMLElement} context.flashcard - Flashcard element
+ * @param {HTMLElement} context.document - Document object
+ * @param {boolean} context.gameStarted - Has game started
+ * @param {Array} context.currentDeck - Current deck
+ * @param {string} context.currentWordpackKey - Current wordpack key
+ * @param {Function} context.initializeDeck - Initialize deck function
+ * @param {number} context.savedIndex - Saved card index
+ * @param {Function} context.updateDisplay - Update display function
+ * @param {Function} context.saveState - Save state function
+ * @returns {Object} - Updated context
+ */
+function startGame(context) {
+  // Update UI labels
+  context.updateBackLabel();
+  context.updateWordpackTitleDisplay(context.wordpackTitle, context.currentWordpackKey, context.wordpacks);
+
+  // Exit menu mode
+  context.isOnStartingCard = false;
+  context.flashcard.classList.remove('showing-menu');
+  context.document.body.classList.remove('showing-menu');
+
+  // Determine if new deck is needed
+  const needsNewDeck = !context.gameStarted ||
+                       context.currentDeck.length === 0 ||
+                       (context.currentDeck.length > 0 && context.currentDeck[0] &&
+                        !context.currentDeck[0].id.startsWith(context.currentWordpackKey + '-'));
+
+  if (needsNewDeck) {
+    context.initializeDeck(context.currentWordpackKey);
+  } else {
+    // Resume from saved position
+    context.currentIndex = context.savedIndex;
+    context.updateDisplay();
+  }
+
+  // Set game-started state
+  context.flashcard.classList.add('game-started');
+  context.document.body.classList.add('game-started');
+  context.gameStarted = true;
+  context.saveState();
+
+  return context;
+}
+
+// END OF FUNCTIONS BRUTISHLY MOVED FROM FlashcardTypingGame.js
+// ════════════════════════════════════════════════════════════════════════════
+
