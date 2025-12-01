@@ -4,406 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wordpack Data Structure Debugger</title>
-
-  <!--
-    ╔══════════════════════════════════════════════════════════════════════════════╗
-    ║                                                                              ║
-    ║   🎮 LANGUAGE LEARNING GAME - REFERENCE TEMPLATE IMPLEMENTATION 🎮           ║
-    ║                                                                              ║
-    ║   This file serves as the CANONICAL REFERENCE for all language learning     ║
-    ║   games in this project. It demonstrates 100% compliance with our design    ║
-    ║   principles and should be used as a template for building new games.       ║
-    ║                                                                              ║
-    ╚══════════════════════════════════════════════════════════════════════════════╝
-
-    ============================================================
-    TABLE OF CONTENTS
-    ============================================================
-    1. DESIGN PRINCIPLES OVERVIEW
-    2. DATA STRUCTURE ARCHITECTURE
-    3. STATE PERSISTENCE (localStorage)
-    4. DRY (Don't Repeat Yourself) PATTERNS
-    5. KEY FEATURES DOCUMENTATION
-    6. COLUMN MAPPING BY LANGUAGE
-    7. HOW TO USE THIS TEMPLATE
-
-    ============================================================
-    1. DESIGN PRINCIPLES OVERVIEW
-    ============================================================
-
-    This project follows strict design principles to ensure maintainability,
-    consistency, and ease of development. ALL games must follow these rules:
-
-    ┌─────────────────────────────────────────────────────────────────────────┐
-    │ PRINCIPLE 1: KEY FEATURES ARE SACRED                                   │
-    ├─────────────────────────────────────────────────────────────────────────┤
-    │ - Every important feature MUST have a KEY FEATURE comment block        │
-    │ - KEY FEATURES document: Core Objective + Key Behaviors                │
-    │ - KEY FEATURES can NEVER be removed without explicit user request      │
-    │ - Code can change, but the FEATURE must be preserved                   │
-    │                                                                        │
-    │ FORMAT:                                                                │
-    │   // ============================================================     │
-    │   // KEY FEATURE: [High-level description]                            │
-    │   // Core Objective: [Why this feature exists]                        │
-    │   // Key Behaviors:                                                   │
-    │   //   - [Behavior 1 that must be preserved]                          │
-    │   //   - [Behavior 2 that must be preserved]                          │
-    │   // ============================================================     │
-    └─────────────────────────────────────────────────────────────────────────┘
-
-    ┌─────────────────────────────────────────────────────────────────────────┐
-    │ PRINCIPLE 2: DRY (Don't Repeat Yourself) - ENCAPSULATION               │
-    ├─────────────────────────────────────────────────────────────────────────┤
-    │ - NEVER copy-paste the same code in multiple places                    │
-    │ - If something happens together, put it in ONE function                │
-    │ - Ask: "If I needed to change this, how many places would I update?"   │
-    │ - If answer > 1, you need to encapsulate                               │
-    │                                                                        │
-    │ EXAMPLES IN THIS FILE:                                                 │
-    │   - autoSelectFirstActAndPack(): Called from 2 places                  │
-    │   - setupModeCheckboxes(): Config-driven, not 3 separate functions     │
-    │   - resetListeningState(): Used in 3 event handlers                    │
-    │   - normalizeCharForTyping(): Single function for accent removal       │
-    └─────────────────────────────────────────────────────────────────────────┘
-
-    ┌─────────────────────────────────────────────────────────────────────────┐
-    │ PRINCIPLE 3: STATE PERSISTENCE (localStorage) - MANDATORY              │
-    ├─────────────────────────────────────────────────────────────────────────┤
-    │ - ALL user-configurable settings MUST be saved to localStorage         │
-    │ - On page load, restore saved state (or use sensible defaults)         │
-    │ - User should return to EXACTLY where they left off                    │
-    │ - Validate saved values against current valid options                  │
-    │                                                                        │
-    │ WHAT MUST BE SAVED:                                                    │
-    │   - Language selection (Spanish, Chinese, English)                     │
-    │   - Act selection                                                      │
-    │   - Pack selection                                                     │
-    │   - Native language ("I speak") selection                              │
-    │   - Mode toggles (multiple choice, typing, pronunciation)              │
-    │   - Any other user preference                                          │
-    │                                                                        │
-    │ WHEN TO SAVE:                                                          │
-    │   - On ANY menu/setting change                                         │
-    │   - Call saveState() immediately after state change                    │
-    │                                                                        │
-    │ VALIDATION RULE:                                                       │
-    │   - Always validate saved values against current valid options         │
-    │   - If saved value is invalid, fall back to default                    │
-    │   - This prevents bugs when options change between versions            │
-    └─────────────────────────────────────────────────────────────────────────┘
-
-    ┌─────────────────────────────────────────────────────────────────────────┐
-    │ PRINCIPLE 4: SINGLE SOURCE OF TRUTH (Configuration Objects)            │
-    ├─────────────────────────────────────────────────────────────────────────┤
-    │ - All configuration lives in JavaScript objects, NOT hardcoded HTML    │
-    │ - Dropdowns are EMPTY in HTML, populated from config                   │
-    │ - If you delete the config, NOTHING should work                        │
-    │                                                                        │
-    │ IN THIS FILE:                                                          │
-    │   - LANGUAGE_CONFIG: All module paths, columns, native languages       │
-    │   - VALID_MODES: List of valid mode options for validation             │
-    │   - HTML dropdowns: Empty <select></select> elements                   │
-    └─────────────────────────────────────────────────────────────────────────┘
-
-    ============================================================
-    2. DATA STRUCTURE ARCHITECTURE
-    ============================================================
-
-    Our language learning data follows a hierarchical structure:
-
-    ┌─────────────────────────────────────────────────────────────────────────┐
-    │                         DATA HIERARCHY                                  │
-    ├─────────────────────────────────────────────────────────────────────────┤
-    │                                                                        │
-    │   LANGUAGE (Spanish, Chinese, English)                                 │
-    │       │                                                                │
-    │       └── ACT (Learning Stage - e.g., "Foundation", "Daily Life")      │
-    │             │                                                          │
-    │             └── WORDPACK (Vocabulary Set - e.g., "Greetings")          │
-    │                   │                                                    │
-    │                   ├── META (Pack metadata: number, titles)             │
-    │                   │                                                    │
-    │                   └── WORDS (Array of word arrays)                     │
-    │                         │                                              │
-    │                         └── WORD (Array of translations by column)     │
-    │                                                                        │
-    └─────────────────────────────────────────────────────────────────────────┘
-
-    OBFUSCATED MODULE STRUCTURE (NEW - with baseWords/exampleWords separation):
-    Each .js module exports a dictionary of wordpacks:
-
-    {
-      "p{act}_{pack}_{name}": {
-        "meta": {
-          "wordpack": 1,                    // Pack number (integer)
-          "english": "Greetings & Goodbyes", // Pack title in English
-          "chinese": "问候语",                // Pack title in Chinese
-          "spanish": "Saludos y Despedidas", // Pack title in Spanish
-          ... // Other language translations as supported
-        },
-        "baseWords": [
-          ["base1_col0", "base1_col1", "base1_col2", ...],  // Core vocabulary
-          ["base2_col0", "base2_col1", "base2_col2", ...],
-          ["base3_col0", "base3_col1", "base3_col2", ...]
-        ],
-        "exampleWords": [
-          ["example1_col0", "example1_col1", "example1_col2", ...],  // Usage examples
-          ["example2_col0", "example2_col1", "example2_col2", ...],
-          ["example3_col0", "example3_col1", "example3_col2", ...]
-        ]
-      },
-      "p{act}_{pack}_{name}": { ... },
-      ...
-    }
-
-    ┌─────────────────────────────────────────────────────────────────────────┐
-    │                    🎯 CRITICAL ARCHITECTURE DESIGN 🎯                    │
-    ├─────────────────────────────────────────────────────────────────────────┤
-    │                                                                          │
-    │  WHY WE SEPARATE baseWords AND exampleWords:                            │
-    │  ────────────────────────────────────────────────────────────────────── │
-    │                                                                          │
-    │  Learning Pedagogy: Core vocabulary (base words) should be learned      │
-    │  BEFORE contextual examples. This separation allows:                    │
-    │                                                                          │
-    │  1. BASE WORDS FIRST: Essential vocabulary without context              │
-    │     Example: ["hola", "adiós", "gracias"]                              │
-    │                                                                          │
-    │  2. EXAMPLES SECOND: Real-world usage with context                      │
-    │     Example: ["hola amigo", "adiós mi amor", "muchas gracias"]         │
-    │                                                                          │
-    │  3. CONTROLLED RANDOMIZATION:                                           │
-    │     - Shuffle baseWords internally → random order within base words    │
-    │     - Shuffle exampleWords internally → random order within examples   │
-    │     - Concatenate: [shuffled_base] + [shuffled_examples]               │
-    │     - Result: Base vocabulary ALWAYS appears before examples,           │
-    │       but both sections are randomized for variety                      │
-    │                                                                          │
-    │  This prevents learners from seeing "hola amigo" before learning "hola" │
-    │  while still providing randomization within each category.              │
-    │                                                                          │
-    └─────────────────────────────────────────────────────────────────────────┘
-
-    CRITICAL: Column 0 is ALWAYS the target language being learned!
-
-    ============================================================
-    3. STATE PERSISTENCE (localStorage) - IMPLEMENTATION
-    ============================================================
-
-    Every game MUST implement these functions:
-
-    const STORAGE_KEY = 'uniqueGameNameState';  // Unique per game
-
-    function saveState() {
-      const stateToSave = {
-        language: state.currentLanguage,
-        act: state.currentAct,
-        pack: state.currentPack,
-        nativeLanguage: state.currentNativeLanguage,
-        // ... all other user settings
-      };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(stateToSave));
-    }
-
-    function loadState() {
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        return saved ? JSON.parse(saved) : null;
-      } catch (e) {
-        console.error('Failed to load state:', e);
-        return null;
-      }
-    }
-
-    function restoreSavedState() {
-      const saved = loadState();
-      if (!saved) return;
-
-      // ALWAYS validate before restoring!
-      if (saved.language && VALID_LANGUAGES.includes(saved.language)) {
-        state.currentLanguage = saved.language;
-      }
-      // ... validate and restore other settings
-    }
-
-    ============================================================
-    4. DRY PATTERNS - EXAMPLES IN THIS FILE
-    ============================================================
-
-    PATTERN 1: Encapsulated Helper Functions
-    ─────────────────────────────────────────
-    PROBLEM: Same 5 lines of code in 2+ places
-    SOLUTION: Extract to named function, call from both places
-
-    Example: autoSelectFirstActAndPack()
-    - Used in: initialize(), setupLanguageRadioButtons()
-    - Benefit: Change logic in ONE place
-
-    PATTERN 2: Configuration-Driven Loops
-    ─────────────────────────────────────────
-    PROBLEM: 3 separate functions doing almost the same thing
-    SOLUTION: One function with config array
-
-    Example: setupModeCheckboxes()
-    - Config: [{ id, stateKey, statesToClear }, ...]
-    - One loop handles all checkboxes identically
-    - Add new checkbox = add to config array
-
-    PATTERN 3: Callback Parameters
-    ─────────────────────────────────────────
-    PROBLEM: Same action with different follow-up
-    SOLUTION: Function takes callback parameter
-
-    Example: showSuccessStamp(onComplete)
-    - Stamp + sound + delay always happen together
-    - What happens AFTER varies
-    - Pass the variation as callback
-
-    ============================================================
-    5. KEY FEATURES IN THIS FILE
-    ============================================================
-
-    Search for "KEY FEATURE:" to find all documented features:
-
-    1. Global State Management - Single source of truth for UI state
-    2. State Persistence (localStorage) - Save/restore user settings
-    3. Module Decoding - 3-layer obfuscation (base64 + zlib + reverse)
-    4. Auto-Select First Act/Pack - DRY encapsulated function
-    5. Language Selection - Switch between target languages
-    6. Mode Checkboxes - DRY config-driven setup
-    7. Speech Recognition - Pronunciation practice with scoring
-    8. Multiple Choice Generation - Act-wide pool, duplicate filtering
-    9. Typing Practice - Character-by-character with accent tolerance
-    10. Vocabulary Table Display - Multi-mode rendering
-    11. Flashcard Mode - ANTI-DECOUPLING DEMONSTRATION (front/back always linked)
-
-    ┌─────────────────────────────────────────────────────────────────────────┐
-    │ PRINCIPLE 5: ANTI-DECOUPLING (Critical for Flashcard Games)            │
-    ├─────────────────────────────────────────────────────────────────────────┤
-    │ Related data must be stored as properties of the SAME object,          │
-    │ never in separate arrays that could get out of sync.                   │
-    │                                                                        │
-    │ ❌ WRONG (Decoupled - leads to bugs):                                  │
-    │    const fronts = ["hola", "adiós"];                                   │
-    │    const backs = ["hello", "goodbye"];                                 │
-    │    // Problem: Arrays can get out of sync!                             │
-    │                                                                        │
-    │ ✅ RIGHT (Anti-decoupled - always safe):                               │
-    │    const cards = [                                                     │
-    │      { front: "hola", back: "hello" },                                 │
-    │      { front: "adiós", back: "goodbye" }                               │
-    │    ];                                                                  │
-    │    // Benefit: front and back are ALWAYS linked!                       │
-    │                                                                        │
-    │ See "Flashcard Mode" for a live demonstration.                         │
-    └─────────────────────────────────────────────────────────────────────────┘
-
-    ============================================================
-    6. COLUMN MAPPING BY LANGUAGE
-    ============================================================
-
-    SPANISH (5 columns):
-      [0] = Spanish (TARGET - language being learned)
-      [1] = English
-      [2] = Chinese
-      [3] = Pinyin
-      [4] = Portuguese
-
-    CHINESE (12 columns):
-      [0] = Chinese (TARGET - language being learned)
-      [1] = Pinyin
-      [2] = English
-      [3] = Spanish
-      [4] = French
-      [5] = Portuguese
-      [6] = Vietnamese
-      [7] = Thai
-      [8] = Khmer
-      [9] = Indonesian
-      [10] = Malay
-      [11] = Filipino
-
-    ENGLISH (5 columns):
-      [0] = English (TARGET - language being learned)
-      [1] = Chinese
-      [2] = Pinyin
-      [3] = Spanish
-      [4] = Portuguese
-
-    ┌─────────────────────────────────────────────────────────────────────────┐
-    │ CRITICAL: CHINESE + PINYIN INSEPARABILITY                               │
-    ├─────────────────────────────────────────────────────────────────────────┤
-    │ Notice that ALL three languages include Chinese AND Pinyin columns!    │
-    │                                                                        │
-    │ WHY: Chinese uses logograms (characters don't encode pronunciation)    │
-    │      → Pinyin MUST accompany Chinese whenever it appears               │
-    │                                                                        │
-    │ This applies whether Chinese is:                                       │
-    │   - The target language (ChineseWords CSVs)                           │
-    │   - A translation option (SpanishWords, EnglishWords CSVs)            │
-    │                                                                        │
-    │ EDGE CASE: Latin Abbreviations in Chinese Text                         │
-    │ When Chinese contains Latin (ATM, DNA, WhatsApp, etc.):               │
-    │   - Latin sequence → same in pinyin (case insensitive)                │
-    │   - Chinese characters → pinyin syllables (1:1 mapping)               │
-    │                                                                        │
-    │ Examples:                                                              │
-    │   Chinese: ATM机      → Pinyin: ATM jī                                │
-    │   Chinese: DNA测试     → Pinyin: DNA cè shì                            │
-    │   Chinese: WhatsApp消息 → Pinyin: WhatsApp xiāo xī                    │
-    │   Chinese: T恤        → Pinyin: T xù                                  │
-    │                                                                        │
-    │ Use "Show Edge Cases" checkbox below to filter for these examples.    │
-    └─────────────────────────────────────────────────────────────────────────┘
-
-    ============================================================
-    7. HOW TO USE THIS TEMPLATE
-    ============================================================
-
-    To create a new game based on this template:
-
-    1. Copy this file as your starting point
-    2. Change STORAGE_KEY to unique value for your game
-    3. Keep all KEY FEATURE implementations
-    4. Keep all DRY helper functions
-    5. Keep localStorage save/restore pattern
-    6. Add your game-specific features with KEY FEATURE comments
-    7. Follow the same documentation style
-
-    CHECKLIST FOR NEW GAMES:
-    □ Unique STORAGE_KEY defined
-    □ saveState() called on every setting change
-    □ loadState() called during initialization
-    □ Saved values validated against valid options
-    □ All KEY FEATURES documented with comment blocks
-    □ No copy-pasted code (use encapsulated functions)
-    □ Configuration objects as single source of truth
-    □ Empty HTML dropdowns, populated from JS config
-
-    ============================================================
-  -->
-
-  <!--
-    ============================================================
-    PAKO.JS DEPENDENCY - Required for decompressing obfuscated modules
-    ============================================================
-    Our obfuscated modules use zlib compression (via pako library).
-    This CDN script provides the pako.inflate() function for decompression.
-  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
-  <!-- Shared wordpack logic (loading, decoding, shuffling, typing validation) -->
   <script src="../wordpack-logic.js"></script>
-
   <link rel="stylesheet" href="./DecoderTest.css">
 </head>
 <body>
 
-  <!-- Fixed Header with All Controls -->
   <div class="decoder-header">
     <h1>Wordpack Data Structure Debugger</h1>
     <div class="header-controls">
-      <!-- Language Selection -->
       <div class="control-group">
         <label>Target Language</label>
         <div id="languageRadios" style="display: flex; gap: 10px; margin-top: 5px;">
@@ -419,26 +28,22 @@
         </div>
       </div>
 
-      <!-- Act Selection -->
       <div class="control-group">
         <label for="actSelect">Act</label>
         <select id="actSelect"></select>
       </div>
 
-      <!-- Pack Selection -->
       <div class="control-group">
         <label for="packSelect">Wordpack</label>
         <select id="packSelect"></select>
       </div>
 
-      <!-- Native Language -->
       <div class="control-group">
         <label for="nativeLanguageSelect">I Speak</label>
         <select id="nativeLanguageSelect"></select>
       </div>
     </div>
 
-    <!-- Mode Selector (Radio Buttons) -->
     <div class="mode-selector">
       <label><input type="radio" name="viewMode" value="table" checked> Table</label>
       <label><input type="radio" name="viewMode" value="multipleChoice"> Multiple Choice</label>
@@ -448,207 +53,65 @@
     </div>
   </div>
 
-  <!-- Content Container -->
   <div class="content-container">
+    <h2>Vocabulary Table</h2>
+    <p><strong>Pack Title:</strong> <span id="packTitle">Select a wordpack to view</span></p>
 
-  <!-- Vocabulary Table Section -->
-  <h2>Vocabulary Table</h2>
-  <p><strong>Pack Title:</strong> <span id="packTitle">Select a wordpack to view</span></p>
+    <p id="edgeCaseFilterContainer" style="display: none;">
+      <label>
+        <input type="checkbox" id="showEdgeCasesOnly">
+        <strong>Show Edge Cases & Mismatches</strong> (Latin abbreviations + pinyin errors)
+      </label>
+    </p>
 
-  <!--
-    ============================================================
-    VOCABULARY TABLE - With Optional Multiple Choice Mode
-    ============================================================
-    Displays the selected wordpack's vocabulary.
+    <div id="flashcardArea" style="display: none; margin: 20px 0; padding: 20px; border: 2px solid #333; background: #f9f9f9;">
+      <h3>Flashcard Demo (Anti-Decoupling Principle)</h3>
+      <p><em>Front and back are properties of the SAME card object - they can never get out of sync.</em></p>
 
-    BASIC MODE (Default):
-    - 2 columns: Target language (column 0) and Native language (selected)
+      <div id="flashcardDisplay" style="border: 3px solid #666; padding: 40px; margin: 20px 0; text-align: center; min-height: 150px; background: white; cursor: pointer;" onclick="window.flipCard()">
+        <div id="flashcardContent" style="font-size: 24px;">Click to start</div>
+        <div id="flashcardSide" style="font-size: 12px; color: #999; margin-top: 10px;">(click card to flip)</div>
+      </div>
 
-    MULTIPLE CHOICE MODE (Checkbox enabled):
-    - 6 columns total:
-      1. Target language (correct answer, column 0)
-      2. Native language translation (column N)
-      3-6. Four wrong answers (randomly selected from ENTIRE ACT, ~2,500 words)
+      <div style="text-align: center;">
+        <button onclick="window.prevCard()" style="padding: 10px 20px; margin: 5px;">← Previous</button>
+        <button onclick="window.flipCard()" style="padding: 10px 20px; margin: 5px;">Flip Card</button>
+        <button onclick="window.nextCard()" style="padding: 10px 20px; margin: 5px;">Next →</button>
+        <button onclick="window.shuffleDeck()" style="padding: 10px 20px; margin: 5px;">🔀 Shuffle</button>
+      </div>
 
-    WRONG ANSWER POOL:
-    Wrong answers are now pulled from ALL wordpacks in the current act,
-    not just the current wordpack. This provides:
-    - Greater variety (2,500 options vs 50)
-    - Less predictable patterns
-    - Better simulation of real game mechanics
-    - Zero performance cost (all data already loaded in memory)
+      <p id="flashcardCounter" style="text-align: center; margin-top: 10px;">Card 0 of 0</p>
 
-    DUPLICATE FILTERING:
-    Uses normalized string comparison (lowercase, no spaces/symbols)
-    to avoid showing essentially identical words:
-    - "hola" vs "Hola" (case difference) - filtered
-    - "hello friend" vs "hellofriend" (spacing) - filtered
-    - "hello!" vs "hello" (punctuation) - filtered
-
-    This demonstrates the CORE LOGIC for generating multiple choice questions
-    used in language learning games. Different game mechanics require different
-    numbers of choices:
-    - Temple Run style: 3 choices (1 correct + 2 wrong)
-    - Quiz games: 4 choices (1 correct + 3 wrong)
-    - This demo: 6 choices (1 correct + 4 wrong) to show extensibility
-
-    The algorithm works for ANY target language (Spanish, Chinese, English, etc.)
-    and ANY future language packs we add to the system.
-
-    NOTE: Mode selection is now in the fixed header above (radio buttons).
-  -->
-
-  <!--
-    ============================================================
-    EDGE CASES & MISMATCHES FILTER - Combined Filter
-    ============================================================
-    When enabled, filters the vocabulary table to show words with:
-
-    1. EDGE CASES - Latin abbreviations/brand names in Chinese text:
-       - ATM机 → ATM jī (Latin block + Chinese character)
-       - DNA测试 → DNA cè shì (abbreviation + Chinese)
-       - WhatsApp消息 → WhatsApp xiāo xī (brand name + Chinese)
-       - T恤 → T xù (single letter + Chinese)
-       - la, los → la, los (Spanish articles in Chinese column)
-
-    2. PINYIN MISMATCHES - Words with "?" in pinyin (CSV data errors):
-       - Character count doesn't match syllable count
-       - Indicates validation failures that need fixing
-
-    WHY THIS IS USEFUL:
-    - See real examples of edge cases in the actual data
-    - Identify pinyin errors that need surgical fixes
-    - Verify edge cases are NOT validation errors (they're correct!)
-    - Understand how Latin text mixes with Chinese in modern usage
-  -->
-  <p id="edgeCaseFilterContainer" style="display: none;">
-    <label>
-      <input type="checkbox" id="showEdgeCasesOnly">
-      <strong>Show Edge Cases & Mismatches</strong> (Latin abbreviations + pinyin errors)
-    </label>
-  </p>
-
-  <!--
-    ============================================================
-    FLASHCARD MODE CHECKBOX
-    ============================================================
-    When enabled, shows a simple flashcard interface demonstrating
-    the CRITICAL anti-decoupling principle:
-
-    ┌─────────────────────────────────────────────────────────────────────────┐
-    │ ANTI-DECOUPLING PRINCIPLE (CRITICAL FOR FLASHCARD GAMES)               │
-    ├─────────────────────────────────────────────────────────────────────────┤
-    │                                                                        │
-    │ ❌ WRONG WAY (Decoupled - leads to bugs):                              │
-    │    const fronts = ["hola", "adiós", "gracias"];                        │
-    │    const backs  = ["hello", "goodbye", "thank you"];                   │
-    │    // Problem: If arrays get out of sync, flipping shows WRONG answer  │
-    │    // Bug: fronts[2] might display backs[1] if something shifts        │
-    │                                                                        │
-    │ ✅ RIGHT WAY (Anti-decoupled - front/back ALWAYS linked):              │
-    │    const cards = [                                                     │
-    │      { front: "hola",    back: "hello" },      // Card 0               │
-    │      { front: "adiós",   back: "goodbye" },    // Card 1               │
-    │      { front: "gracias", back: "thank you" }   // Card 2               │
-    │    ];                                                                  │
-    │    // Benefit: cards[i].front and cards[i].back are ALWAYS paired      │
-    │    // Shuffling reorders cards but NEVER breaks the link               │
-    │                                                                        │
-    │ WHY THIS MATTERS:                                                      │
-    │   - Flipping a card ALWAYS shows the correct translation               │
-    │   - Shuffling the deck doesn't break anything                          │
-    │   - Adding/removing cards can't cause misalignment                     │
-    │   - The card is ONE OBJECT, not two separate arrays                    │
-    │                                                                        │
-    └─────────────────────────────────────────────────────────────────────────┘
-
-    This mode demonstrates the principle with a minimal, no-CSS implementation.
-
-    NOTE: Flashcard mode is now in the fixed header above (radio button).
-  -->
-
-  <!--
-    ============================================================
-    FLASHCARD DISPLAY AREA (Simple, No CSS)
-    ============================================================
-    This is intentionally unstyled to focus on the DATA STRUCTURE,
-    not the visual presentation. The key teaching point is HOW
-    front and back are stored as ONE object, not two arrays.
-  -->
-  <div id="flashcardArea" style="display: none; margin: 20px 0; padding: 20px; border: 2px solid #333; background: #f9f9f9;">
-    <h3>Flashcard Demo (Anti-Decoupling Principle)</h3>
-    <p><em>Front and back are properties of the SAME card object - they can never get out of sync.</em></p>
-
-    <!-- Card display - simple border box -->
-    <div id="flashcardDisplay" style="border: 3px solid #666; padding: 40px; margin: 20px 0; text-align: center; min-height: 150px; background: white; cursor: pointer;" onclick="window.flipCard()">
-      <div id="flashcardContent" style="font-size: 24px;">Click to start</div>
-      <div id="flashcardSide" style="font-size: 12px; color: #999; margin-top: 10px;">(click card to flip)</div>
+      <details style="margin-top: 20px;">
+        <summary style="cursor: pointer; font-weight: bold;">🔍 View Current Card Object (Anti-Decoupling Proof)</summary>
+        <pre id="flashcardDebug" style="background: #eee; padding: 10px; overflow-x: auto; font-size: 12px;">// No card loaded yet</pre>
+        <p style="font-size: 12px; color: #666;">
+          ↑ Notice: <code>front</code> and <code>back</code> are properties of the SAME object.
+        </p>
+      </details>
     </div>
 
-    <!-- Navigation buttons - plain HTML buttons -->
-    <div style="text-align: center;">
-      <button onclick="window.prevCard()" style="padding: 10px 20px; margin: 5px;">← Previous</button>
-      <button onclick="window.flipCard()" style="padding: 10px 20px; margin: 5px;">Flip Card</button>
-      <button onclick="window.nextCard()" style="padding: 10px 20px; margin: 5px;">Next →</button>
-      <button onclick="window.shuffleDeck()" style="padding: 10px 20px; margin: 5px;">🔀 Shuffle</button>
-    </div>
+    <table border="1" cellpadding="8" cellspacing="0">
+      <thead>
+        <tr id="tableHeaderRow">
+          <th id="col1Header">I am learning</th>
+          <th id="col2Header">I speak</th>
+        </tr>
+      </thead>
+      <tbody id="vocabularyTable">
+        <tr>
+          <td colspan="2">Loading data...</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <!-- Card counter -->
-    <p id="flashcardCounter" style="text-align: center; margin-top: 10px;">Card 0 of 0</p>
+    <hr>
 
-    <!-- Debug: Show current card object structure -->
-    <details style="margin-top: 20px;">
-      <summary style="cursor: pointer; font-weight: bold;">🔍 View Current Card Object (Anti-Decoupling Proof)</summary>
-      <pre id="flashcardDebug" style="background: #eee; padding: 10px; overflow-x: auto; font-size: 12px;">
-// No card loaded yet
-      </pre>
-      <p style="font-size: 12px; color: #666;">
-        ↑ Notice: <code>front</code> and <code>back</code> are properties of the SAME object.<br>
-        They cannot get out of sync because they're not stored in separate arrays.
-      </p>
-    </details>
+    <h2>6. Debug Information</h2>
+    <pre id="debugInfo">Initializing...</pre>
+
+    <script type="module" src="./DecoderTest.js"></script>
   </div>
-
-  <table border="1" cellpadding="8" cellspacing="0">
-    <thead>
-      <tr id="tableHeaderRow">
-        <th id="col1Header">I am learning</th>
-        <th id="col2Header">I speak</th>
-      </tr>
-    </thead>
-    <tbody id="vocabularyTable">
-      <tr>
-        <td colspan="2">Loading data...</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <hr>
-
-  <!--
-    ============================================================
-    DEBUG INFORMATION
-    ============================================================
-    Shows technical details about loaded data for debugging purposes.
-  -->
-  <h2>6. Debug Information</h2>
-  <pre id="debugInfo">Initializing...</pre>
-
-  <!--
-    ============================================================
-    JAVASCRIPT MODULE - Main Logic
-    ============================================================
-    All JavaScript logic has been moved to DecoderTest.js
-    This includes:
-    1. Decoding obfuscated modules (3-layer: base64 + zlib + string reversal)
-    2. Loading language data automatically on page load
-    3. Populating dropdowns dynamically
-    4. Displaying vocabulary in 2-column table
-    5. Handling user interactions (language/act/pack/native language changes)
-  -->
-  <script type="module" src="./DecoderTest.js"></script>
-
-  </div> <!-- End content-container -->
 
 </body>
 </html>
