@@ -326,42 +326,30 @@ function populateWordpackSelectorOnCard(actNumber) {
 
 function handleTypingInput(key) {
   if (currentDeck.length === 0) return;
-  const card = currentDeck[currentIndex];
-  playKeyboardSound();
-  const nextPos = findNextTypingPosition(typingDisplay, typedPositions);
-  if (nextPos === -1) return;
-  const result = checkTypingKey(key, typingDisplay[nextPos]);
-  if (result === 'space') return;
-  if (result === 'correct') {
-    typedPositions.add(nextPos);
-    updateDisplay();
-    if (isWordComplete(typingDisplay, typedPositions)) {
-      if (wrongAttempts === 0) {
-        pendingDeckChange = -1; updateDisplay();
-        showSuccessStamp(removedStamp, () => {
-          if (currentDeck.length <= 1) currentDeck = [];
-          else { currentDeck.splice(currentIndex, 1); if (currentIndex >= currentDeck.length) currentIndex = 0; }
-          pendingDeckChange = 0; playCardFlipSound(); initializeTypingDisplay(); updateDisplay();
-          if (currentMode === 'spelling') setTimeout(() => speakTargetWord(), 300);
-          saveState();
-        });
-      } else {
-        pendingDeckChange = 2; updateDisplay();
-        showFailureStamp(addedStamp, () => {
-          currentDeck = addDuplicateCards(currentDeck, card, 2);
-          currentIndex = (currentIndex + 1) % currentDeck.length;
-          pendingDeckChange = 0; playCardFlipSound(); initializeTypingDisplay(); updateDisplay();
-          if (currentMode === 'spelling') setTimeout(() => speakTargetWord(), 300);
-          saveState();
-        });
-      }
+  const result = handleTypingInputShared({
+    key,
+    typingDisplay,
+    typedPositions,
+    wrongAttempts,
+    wrongPositions,
+    wrongLetters,
+    card: currentDeck[currentIndex],
+    deckState: { currentDeck, currentIndex },
+    currentMode,
+    stamps: { success: removedStamp, failure: addedStamp },
+    callbacks: {
+      playKeyboardSound,
+      playCardFlipSound,
+      playScribbleSound,
+      updateDisplay,
+      initializeTypingDisplay,
+      speakTargetWord,
+      saveState,
+      onPendingDeckChange: (val) => { pendingDeckChange = val; },
+      onDeckUpdate: (deck, index) => { currentDeck = deck; currentIndex = index; }
     }
-  } else {
-    wrongAttempts++;
-    if (!wrongPositions.includes(nextPos)) wrongPositions.push(nextPos);
-    wrongLetters.push({ letter: key.toUpperCase(), rotation: -3 + Math.random() * 6, scale: 0.9 + Math.random() * 0.2, xRotation: -15 + Math.random() * 30 });
-    playScribbleSound(); updateDisplay();
-  }
+  });
+  wrongAttempts = result.wrongAttempts;
 }
 
 function goToPrevious() { if (currentDeck.length === 0) return; speechSynthesis.cancel(); playCardFlipSound(); currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length; initializeTypingDisplay(); updateDisplay(); if (currentMode === 'spelling') setTimeout(() => speakTargetWord(), 300); }
@@ -375,18 +363,28 @@ function goToNextPack() { playButtonClickSound(); currentWordpackKey = navigateT
 
 function showFeedback(score, heard, expected, isFront = true) {
   const feedback = isFront ? feedbackFront : feedbackBack;
-  const scoreEl = isFront ? scoreFront : scoreBack;
-  const messageEl = isFront ? messageFront : messageBack;
-  const heardEl = isFront ? heardFront : heardBack;
-  const thresholdPercent = getSimilarityThreshold(expected) * 100;
-  if (currentMode === 'pronunciation') {
-    if (score >= thresholdPercent) {
-      pendingDeckChange = -1; updateDisplay();
-      showSuccessStamp(removedStamp, () => { if (currentDeck.length <= 1) currentDeck = []; else { currentDeck.splice(currentIndex, 1); if (currentIndex >= currentDeck.length) currentIndex = 0; } pendingDeckChange = 0; playCardFlipSound(); updateDisplay(); saveState(); });
-    } else { currentDeck = addDuplicateCards(currentDeck, currentDeck[currentIndex], 2); setTimeout(() => moveToNextCard(), 1600); }
-    return;
-  }
-  scoreEl.textContent = `${score}%`; scoreEl.className = `feedback-score ${getScoreClass(score)}`; messageEl.textContent = getFeedbackMessage(score); heardEl.textContent = `Heard: "${heard}"`; feedback.classList.add('visible');
+  const result = showFeedbackShared({
+    score,
+    heard,
+    expected,
+    currentMode,
+    feedbackElements: {
+      scoreEl: isFront ? scoreFront : scoreBack,
+      messageEl: isFront ? messageFront : messageBack,
+      heardEl: isFront ? heardFront : heardBack,
+      feedback
+    },
+    deckState: { currentDeck, currentIndex },
+    stamps: { success: removedStamp, failure: addedStamp },
+    callbacks: {
+      updateDisplay,
+      playCardFlipSound,
+      saveState,
+      moveToNextCard,
+      onPendingDeckChange: (val) => { pendingDeckChange = val; },
+      onDeckUpdate: (deck, index) => { currentDeck = deck; currentIndex = index; }
+    }
+  });
 }
 
 function startListening(isFront = true) {
