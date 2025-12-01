@@ -1,37 +1,5 @@
-Function_Name,Description,Reusability_Score
-saveState,Saves all user settings to localStorage,10
-loadState,Loads saved state from localStorage,10
-restoreSavedState,Restores and validates saved state from localStorage,9
-validateAndFixState,Validates state against loaded data after modules load,8
-decodeObfuscatedModule,Decodes obfuscated modules (base64 + zlib + reverse),10
-autoSelectFirstActAndPack,Auto-selects first available act and pack,7
-initialize,Main initialization function for DecoderTest,3
-syncUIToState,Syncs UI elements to match current state,2
-loadLanguageData,Loads all act modules for specified language,9
-setupLanguageRadioButtons,Sets up language radio button event listeners,6
-setupModeCheckboxes,Sets up mode radio button event listeners,6
-resetListeningState,Resets speech recognition listening state,9
-startListeningForPronunciation,Starts speech recognition for pronunciation practice,10
-updatePronunciationDisplay,Updates score column in table for pronunciation,2
-getAudioContext,Creates and returns Web Audio API context,10
-playTypingSound,Plays mechanical keyboard click sound,10
-coupleChineseWithPinyinDebug,Debug version of Chinese+pinyin coupling with output,3
-renderChineseWithPinyin,Renders Chinese with pinyin (DecoderTest wrapper with state checks),4
-renderChineseText,Couples and renders Chinese text (DecoderTest wrapper),4
-setupChineseDisplayOptions,Sets up Chinese display option checkboxes,2
-updateChineseOptionsVisibility,Shows/hides Chinese options panel based on context,2
-populateActDropdown,Populates act dropdown with loaded acts,3
-populatePackDropdown,Populates pack dropdown based on selected act,3
-populateNativeLanguageDropdown,Populates native language dropdown from module metadata,4
-handleTypingInput,Handles typing input with accent-insensitive comparison,10
-updateTypingDisplay,Updates typing input display showing progress,5
-displayAllEdgeCases,Displays all edge cases and mismatches from all packs,1
-displayVocabulary,Main function displaying vocabulary table with multiple modes,2
-updateDebugInfo,Updates debug information section with state details,1
-handleFlashcardModeChange,Toggles flashcard area visibility and initializes deck,3
-initFlashcardDeck,Creates anti-decoupled flashcard deck from wordpack,9
-updateFlashcardDisplay,Updates flashcard UI with current card,2
-flipCard,Toggles between front and back of current flashcard,8
-nextCard,Navigates to next flashcard in deck,8
-prevCard,Navigates to previous flashcard in deck,8
-shuffleDeck,Shuffles flashcard deck using Fisher-Yates algorithm,9
+Function Name,What It Does,Reusability Score (1-10)
+saveState,"Saves all user-configurable settings to localStorage (DELETED - now in wordpack-logic.js)",10
+loadState,"Loads saved state from localStorage with error handling (DELETED - now in wordpack-logic.js)",10
+restoreSavedState,"Restores saved state and validates values against current valid options (DELETED - now in wordpack-logic.js)",9
+initialize,"Main initialization that restores state, loads language data, validates state, sets up UI, and displays vocabulary",6

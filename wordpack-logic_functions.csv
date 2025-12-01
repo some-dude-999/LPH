@@ -1,81 +1,81 @@
 Function Name,What It Does,Reusability Score (1-10)
-switchLanguage,"Switches active language (Chinese/Spanish/English), saves preference to localStorage as 'selected_language', updates MODULE_SETS to new language, reloads page to apply changes",9
-getTargetLanguage,"Extracts target language name from loaded module metadata by reading wordColumns[0] from __actMeta - the first column is always the language being learned",10
-toTitleCase,"Converts string to title case (first letter uppercase, rest lowercase) - utility function for display formatting",7
-validateTargetLanguageConsistency,"Validates that all loaded modules have the same target language in wordColumns[0] to prevent mixed-language bugs - returns true if consistent, false otherwise",9
-isChineseMode,"Checks if current target language is 'chinese' - returns boolean, used to determine if special Chinese handling (pinyin coupling, rendering) is needed",10
-updateChineseModeClass,"Adds or removes 'chinese-mode' CSS class on body element based on whether target language is Chinese - allows CSS to adapt layout for Chinese+pinyin",9
-getTranslationsConfig,"Extracts available translation languages configuration from loaded __actMeta.translations - returns object with language codes, indices, and display labels for 'I speak' dropdown",10
-getDefaultTranslation,"Gets default translation language from first loaded __actMeta.defaultTranslation - returns language code to use when no saved preference exists",10
-getWordColumns,"Gets word column names array from loaded __actMeta.wordColumns - returns array like ['spanish', 'english', 'chinese', 'pinyin', 'portuguese']",10
-getValidLanguages,"Returns array of valid 'I speak' language codes from translations config - used for validation when restoring saved state",10
-getTtsLanguageCode,"Maps target language name to full TTS locale code for speech synthesis - 'spanish'→'es-ES', 'chinese'→'zh-CN', 'english'→'en-US', 'portuguese'→'pt-PT', 'french'→'fr-FR', etc",10
-decodeObfuscatedModule,"Decodes 3-layer obfuscated JavaScript module (base64 encoding + zlib compression + string reversal) using pako library, returns original data structure with packs and __actMeta",10
-loadAct,"Loads specific act by number, fetches and decodes obfuscated module, extracts __actMeta for act configuration, separates and returns pack data",10
-shuffleArray,"Shuffles array using Fisher-Yates algorithm without modifying original - returns new shuffled copy, used for randomizing decks and choices",10
-combineAndShuffleWords,"Combines base words and example words from pack with difficulty-based filtering (easy=base only, medium=examples only, hard=all words), preserves pedagogical order by keeping base words before their examples",10
-normalizeChar,"Normalizes character for typing comparison - removes accents (á→a, é→e, ñ→n, ü→u), converts to lowercase - handles Spanish/Portuguese special characters",10
-findNextTypingPosition,"Finds next valid typing position in character array, automatically skips spaces and marks them as typed - returns -1 if word is complete",10
-checkTypingKey,"Checks if user's keypress matches expected character using accent-insensitive and case-insensitive comparison - returns 'correct', 'wrong', or 'space' (auto-skip)",10
-isWordComplete,"Checks if all non-space characters in word have been typed by comparing typed positions count to total non-space character count - returns boolean",10
-coupleChineseWithPinyin,"Creates 1-to-1 pairing of Chinese characters with pinyin syllables, handles Latin letter sequences (ATM, DNA, etc) with letter-by-letter mapping - returns array of {char, pinyin} objects",10
-renderChineseWithPinyin,"Renders coupled Chinese+pinyin array as HTML with vertical flex layout - each character on top with its pinyin syllable below in inline-flex containers",10
-renderChineseText,"Convenience function that couples Chinese text with pinyin and renders in one call - returns ready-to-append HTML element with character+pinyin pairs",10
-getChineseHtml,"Returns HTML string for Chinese text with pinyin coupling instead of DOM element - useful for innerHTML assignments rather than appendChild",10
-saveState,"Saves game state object to localStorage with error handling for quota exceeded or disabled storage scenarios - generic function for any game's state",9
-loadState,"Loads and parses game state from localStorage, returns null if not found or JSON parse fails - generic function for any game's state retrieval",9
-toggleDebugMode,"Toggles debug mode on/off (ephemeral session-only state, not persisted to localStorage), shows/hides debug table, updates display - activated by Ctrl+` keyboard shortcut",10
-updateDebugTable,"Updates debug vocabulary table with current deck data, displays target language, native language, word types, and current card index - uses plain HTML with no CSS styling",9
-initializeDebugUI,"Creates complete debug UI with vocabulary table, language selector radio buttons (Chinese/Spanish/English), simulate buttons (correct/wrong/near victory), and pronunciation debug section",9
-normalizePronunciationText,"Normalizes text for pronunciation comparison - handles all languages: removes spaces and tone marks for Chinese pinyin, lowercase and trim for other languages",10
-getSimilarityThreshold,"Returns dynamic similarity threshold (0.6-0.8) based on word length - shorter words have lower thresholds to account for higher proportional error impact",10
-levenshteinDistance,"Calculates edit distance between two strings using dynamic programming algorithm - measures minimum number of insertions, deletions, substitutions needed to transform one string to another",10
-calculateSimilarity,"Calculates pronunciation similarity percentage between expected and heard text using text normalization and Levenshtein distance algorithm - returns 0-1 score",10
-getFeedbackMessage,"Returns multi-tier feedback message based on pronunciation similarity score - 'Perfect!' (0.9+), 'Great job!' (0.75+), 'Almost there!' (0.6+), 'Try again' (below 0.6)",10
-getScoreClass,"Returns CSS class name based on pronunciation similarity score for color coding - 'score-excellent' (0.9+), 'score-good' (0.75+), 'score-okay' (0.6+), 'score-poor' (below 0.6)",9
-updatePronunciationDebug,"Updates debug panel with pronunciation details (expected, heard, normalized versions, score, threshold, pass/fail) when debug mode is active - helps troubleshoot speech recognition",9
-hideFeedback,"Hides pronunciation feedback overlays by removing 'visible' class from array of feedback elements - used after showing pronunciation results",9
-normalizeString,"Normalizes string for comparison - removes all spaces, punctuation, converts to lowercase - used for multiple choice answer validation",10
-generateWrongAnswers,"Generates random wrong answer choices for multiple choice by collecting all target words from entire act, filtering out correct answer and duplicates, shuffling, and returning requested count",10
-generateWrongAnswersWithPinyin,"Same as generateWrongAnswers but preserves pinyin along with Chinese characters for Chinese language games - returns array of {targetWord, pinyin} objects",10
-showStamp,"Shows success or failure stamp element with animation, plays sound function, executes onComplete callback after duration - generic stamp display function",9
-showSuccessStamp,"Convenience wrapper for showStamp that plays ding sound for correct answer feedback - shows green 'Card Removed' stamp",9
-showFailureStamp,"Convenience wrapper for showStamp that plays buzz sound for wrong answer feedback - shows red 'Extra Practice' stamp",9
-loadVoicesForLanguage,"Filters available TTS voices by language code (e.g., 'es-ES', 'zh-CN') and returns matching voices array - handles browser voice API",10
-speakWord,"Speaks text using TTS SpeechSynthesis API with configurable language code, voice object, and speed rate - creates utterance and speaks it",10
-findVoiceByURI,"Finds voice object in voices array by voiceURI string - used for restoring saved voice preference from localStorage",10
-initializeTypingState,"Creates initial typing state object for a word with empty typed positions set, wrong attempts counter at 0, wrong positions array, wrong letters array, and underscore display",10
-getTypingDisplay,"Returns display string with typed characters shown and untyped positions shown as underscores - preserves spaces in original positions",10
-removeCard,"Removes card at current index from deck, returns new deck and adjusted index (wraps to 0 if past end of deck) - pure function, doesn't modify original deck",10
-addDuplicateCards,"Inserts specified number of duplicate copies of card at random deck positions (not at very end to prevent predictable placement) for extra practice after wrong answers",10
-createDeckFromPack,"Creates complete deck from pack data with difficulty filtering, handles target and native language column selection, includes Chinese pinyin if applicable, builds card objects with targetWord, typingTarget, pinyin, translation, and unique ID",10
-populateActSelector,"Populates act dropdown from loaded __actMeta, sorts acts by number, sets current value if provided, attaches onChange event handler",9
-populatePackSelector,"Populates pack dropdown from act data, filters out __actMeta, sorts packs by wordpack number, sets current value if provided, attaches onChange handler",9
-populateNativeLanguageSelector,"Populates 'I speak' language dropdown from translations config in __actMeta with display labels (English, 中文, Português, etc), sets current value, attaches onChange handler",9
-navigateToPrevious,"Navigates to previous item in deck with wraparound (from 0 to last), calls onNavigate callback with new index, optionally calls onAutoSpeak callback after navigation",9
-navigateToNext,"Navigates to next item in deck with wraparound (from last to 0), calls onNavigate callback with new index, optionally calls onAutoSpeak callback after navigation",9
-resetDeckToOriginal,"Resets deck to original state without shuffling to preserve pedagogical order (base words first, then examples), resets index to 0, calls onReset callback",9
-navigateToNextPack,"Returns next wordpack key in numerical sequence with wraparound (from last pack back to first) - used for 'Next Pack' button functionality",9
-setTTSSpeed,"Sets TTS speech rate to specified value and updates active state on speed buttons by adding 'active' class to matching data-speed button, removing from others",9
-renderTypingDisplayHTML,"Renders typing display as HTML with word grouping by spaces, preserves spaces between words, shows typed characters in black and underscores for untyped positions, highlights wrong positions in red",9
-renderTargetWordHTML,"Renders target word as HTML - if target is Chinese uses coupled Chinese+pinyin rendering with renderChineseText, otherwise returns plain text in div",9
-renderTranslationHTML,"Renders translation as HTML - if translation is Chinese uses coupled Chinese+pinyin rendering with renderChineseText, otherwise returns plain text",9
-createButtonTooltip,"Creates and attaches tooltip element to button with HTML content for hover display - positions tooltip above button, shows on mouseenter, hides on mouseleave",10
-updateWordpackTitleDisplay,"Updates wordpack title element text with current pack number and title from pack metadata - format: 'Pack N: Title'",8
-simulateCorrectAnswer,"Debug simulation of correct answer - removes card from deck using removeCard, calls onSuccess callback with removal result, returns new deck and index state",9
-simulateWrongAnswer,"Debug simulation of wrong answer - adds specified number of duplicate cards to deck using addDuplicateCards, calls onFailure callback with addition result, returns new deck and index",9
-simulateNearVictory,"Debug simulation of near victory state - reduces deck to last card only by setting deck to single element array, resets index to 0, calls onSimulate callback",9
-getAudioContext,"Creates and returns singleton Web Audio API AudioContext - ensures only one context exists globally to avoid resource issues and maintain state",10
-playTypingSound,"Generates satisfying mechanical keyboard click sound using Web Audio API oscillator with random frequency (800-1200Hz) and volume (0.03-0.07) variation for natural typing feel",10
-handleTypingInput,"Core typing validation logic for word-by-word input - checks if keypress is correct using checkTypingKey, updates typing state, plays scribble sound, auto-skips spaces, tracks wrong attempts and positions, handles word completion, calls onCorrect/onWrong callbacks",10
-resetListeningState,"Resets speech recognition state variables (isListening flag, currentListeningWordIndex) and updates record button visual state to inactive - used after speech recognition completes or errors",9
-startListeningForPronunciation,"Starts speech recognition for word pronunciation practice, processes results through calculateSimilarity, updates pronunciation state, shows feedback, handles errors, resets listening state - full pronunciation validation flow",10
-restoreSavedState,"Restores and validates saved state from localStorage, checks all values against valid options before applying to prevent invalid state from old versions or changed configs - returns boolean success",9
-validateAndFixState,"Validates restored state against loaded module data (checks acts and packs exist in loadedData), falls back to defaults if saved values are invalid or missing - ensures state is always valid",8
-loadLanguageData,"Loads all act modules for a specific language (Chinese/Spanish/English), decodes obfuscated modules in parallel, extracts metadata and pack data, stores in state.loadedData with structure {acts, actMeta}",9
-initFlashcardDeck,"Creates flashcard deck from current wordpack using anti-decoupled architecture where front (targetWord) and back (translation) are properties of same card object, handles Chinese pinyin coupling, initializes with first card showing front",9
-flipCard,"Toggles flashcard between front and back by changing state.flashcardShowingFront boolean flag and calling game-specific updateFlashcardDisplay function",8
-nextCard,"Advances to next card in flashcard deck with wraparound, resets to front side, calls game-specific updateFlashcardDisplay - used for flashcard navigation",8
-prevCard,"Goes to previous card in flashcard deck with wraparound, resets to front side, calls game-specific updateFlashcardDisplay - used for flashcard navigation",8
-shuffleDeck,"Shuffles flashcard deck using Fisher-Yates algorithm (entire card objects move together preserving front/back property links), resets to first card, updates display",9
-autoSelectFirstActAndPack,"Auto-selects first available act and pack numerically, updates act and pack dropdowns, populates pack selector with selected act data, triggers vocabulary display, saves state - has heavy DOM dependencies specific to test page",7
+switchLanguage,"Switches between target languages (Chinese, Spanish, English) by reloading page with new language in localStorage",9
+getTargetLanguage,"Returns the current target language being learned based on loaded modules",9
+toTitleCase,"Converts a string to title case (first letter capitalized)",10
+validateTargetLanguageConsistency,"Validates that all loaded acts are for the same target language",8
+isChineseMode,"Returns true if current target language is Chinese",10
+updateChineseModeClass,"Adds/removes 'chinese-mode' CSS class on body element based on target language",8
+getTranslationsConfig,"Returns translations config from loaded act metadata (__actMeta.translations)",9
+getDefaultTranslation,"Returns default translation language from loaded act metadata",9
+getWordColumns,"Returns word column structure from loaded act metadata",9
+getValidLanguages,"Returns list of valid native language options from translations config",9
+getTtsLanguageCode,"Returns language code for text-to-speech based on target language (es-ES, zh-CN, en-US)",10
+decodeObfuscatedModule,"Decodes obfuscated modules using 3-layer deobfuscation (base64 + zlib + string reversal)",10
+loadAct,"Loads and decodes an act module, extracts metadata, caches it in loadedActs and loadedActMeta",10
+shuffleArray,"Fisher-Yates shuffle algorithm for randomizing arrays",10
+combineAndShuffleWords,"Combines base and example words with controlled shuffling (base first, examples second)",10
+normalizeChar,"Normalizes characters for typing comparison (removes accents, converts to lowercase)",10
+findNextTypingPosition,"Finds the next untyped position in a word for typing validation",10
+checkTypingKey,"Checks if a typed key matches the target character (accent-insensitive)",10
+isWordComplete,"Checks if all positions in a word have been typed correctly",10
+coupleChineseWithPinyin,"Couples Chinese characters with pinyin syllables into {char, pinyin} objects, handles Latin blocks",10
+renderChineseWithPinyin,"Renders coupled Chinese+pinyin array as HTML with characters above pinyin",10
+renderChineseText,"Convenience function that couples and renders Chinese text with pinyin",10
+getChineseHtml,"Returns HTML string for Chinese text with pinyin (non-DOM version of renderChineseText)",10
+saveState,"Saves state object to localStorage with the given storage key",10
+loadState,"Loads and parses state from localStorage with error handling",10
+toggleDebugMode,"Toggles debug mode visibility when Ctrl+` is pressed",8
+updateDebugTable,"Updates debug table with current deck state, can show confused cards or full deck",7
+initializeDebugUI,"Initializes debug UI with language switcher and deck state visualization",8
+normalizePronunciationText,"Normalizes text for pronunciation comparison (lowercase, removes spaces/punctuation)",10
+getSimilarityThreshold,"Returns similarity threshold percentage based on word length",10
+levenshteinDistance,"Calculates edit distance between two strings for fuzzy matching",10
+calculateSimilarity,"Calculates pronunciation similarity percentage using Levenshtein distance",10
+getFeedbackMessage,"Returns feedback message based on pronunciation score (Excellent/Good/Fair/Keep Trying)",10
+getScoreClass,"Returns CSS class name based on pronunciation score (excellent/good/fair/poor)",10
+updatePronunciationDebug,"Updates debug panel with pronunciation attempt details",7
+hideFeedback,"Hides pronunciation feedback elements",7
+normalizeString,"Normalizes strings for duplicate detection (lowercase, removes spaces/symbols)",10
+generateWrongAnswers,"Generates N wrong answers for multiple choice from act-wide word pool with duplicate filtering",10
+generateWrongAnswersWithPinyin,"Generates wrong answers with pinyin for multiple choice (Chinese-specific)",10
+showStamp,"Shows stamp element with sound, waits duration, then calls callback",9
+showSuccessStamp,"Shows success stamp with ding sound for 1.5 seconds",9
+showFailureStamp,"Shows failure stamp with buzz sound for 1.5 seconds",9
+loadVoicesForLanguage,"Loads and filters TTS voices for a specific language code",10
+speakWord,"Speaks text using text-to-speech with configurable voice, speed, volume",10
+findVoiceByURI,"Finds a TTS voice object by its voiceURI from available voices array",10
+initializeTypingState,"Initializes typing state for a word (positions, display, wrong tracking)",10
+getTypingDisplay,"Returns typing display string showing typed letters and X for untyped positions",10
+removeCard,"Removes card at current index from deck and returns new deck and index",10
+addDuplicateCards,"Adds N duplicate copies of a card to deck after current position",10
+createDeckFromPack,"Creates a game deck from a wordpack with translation and typing target fields",10
+populateActSelector,"Populates act dropdown with act names from loaded metadata and attaches change handler",9
+populatePackSelector,"Populates pack dropdown with pack titles from act data and attaches change handler",9
+populateNativeLanguageSelector,"Populates native language dropdown from translations config and attaches change handler",9
+navigateToPrevious,"Navigates to previous card in deck with wraparound and callbacks",9
+navigateToNext,"Navigates to next card in deck with wraparound and callbacks",9
+resetDeckToOriginal,"Resets current deck to original deck state and triggers callbacks",9
+navigateToNextPack,"Finds and returns the next wordpack key in sequence",9
+setTTSSpeed,"Sets TTS speed and updates active button styling",8
+renderTypingDisplayHTML,"Renders typing display as HTML with color coding for typed/untyped/wrong letters",10
+renderTargetWordHTML,"Renders target word as HTML, handles Chinese with pinyin coupling",10
+renderTranslationHTML,"Renders translation text as HTML, handles Chinese translations with pinyin",10
+createButtonTooltip,"Creates and attaches a tooltip to a button with HTML content and hover behavior",9
+updateWordpackTitleDisplay,"Updates wordpack title display element with pack title from wordpacks dictionary",8
+simulateCorrectAnswer,"Debug function to simulate correct answer and remove card from deck",7
+simulateWrongAnswer,"Debug function to simulate wrong answer and add penalty duplicate cards",7
+simulateNearVictory,"Debug function to simulate near-victory state with only 1 card remaining",7
+getAudioContext,"Creates and returns singleton AudioContext for Web Audio API",10
+playTypingSound,"Plays mechanical keyboard typing click sound using Web Audio API",10
+handleTypingInput,"Handles typing input validation, updates state, returns status (correct/wrong/incomplete)",10
+resetListeningState,"Resets speech recognition state and button styling",9
+startListeningForPronunciation,"Starts speech recognition for pronunciation practice and scores the attempt",10
+restoreSavedState,"Restores saved state from localStorage with validation against valid options",9
+validateAndFixState,"Validates restored state against loaded data (ensures act and pack exist)",9
+loadLanguageData,"Loads all act modules for a language and populates loadedActs and loadedActMeta",10
+initFlashcardDeck,"Initializes flashcard deck with anti-decoupled front/back card objects",9
+flipCard,"Toggles flashcard between front and back",9
+nextCard,"Advances to next flashcard with wraparound",9
+prevCard,"Goes to previous flashcard with wraparound",9
+shuffleDeck,"Shuffles flashcard deck using Fisher-Yates algorithm",9
+autoSelectFirstActAndPack,"DRY helper that auto-selects first available act and pack",8
