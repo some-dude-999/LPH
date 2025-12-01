@@ -3401,6 +3401,454 @@ function autoSelectFirstActAndPack() {
 // ════════════════════════════════════════════════════════════════════════════
 
 // ════════════════════════════════════════════════════════════════════════════
+// LANGUAGE CONFIGURATION - Shared across all language learning games
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * LANGUAGE_CONFIG - Complete configuration for each target language
+ * Contains module paths, column definitions, and native language mappings
+ *
+ * Reusability: 10/10 - Used by ALL games that support multiple languages
+ *
+ * @property {Array} modules - Array of {act, name, path} for each act module
+ * @property {Array} columns - Column names in word arrays (index 0 = target language)
+ * @property {Object} nativeLanguages - Map of native language name to column index
+ */
+const LANGUAGE_CONFIG = {
+  'Spanish': {
+    modules: [
+      { act: 1, name: 'Foundation', path: './SpanishWords/Jsmodules-js/act1-foundation-js.js' },
+      { act: 2, name: 'Building Blocks', path: './SpanishWords/Jsmodules-js/act2-building-blocks-js.js' },
+      { act: 3, name: 'Daily Life', path: './SpanishWords/Jsmodules-js/act3-daily-life-js.js' },
+      { act: 4, name: 'Expanding Expression', path: './SpanishWords/Jsmodules-js/act4-expanding-expression-js.js' },
+      { act: 5, name: 'Intermediate Mastery', path: './SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js' },
+      { act: 6, name: 'Advanced Constructs', path: './SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js' },
+      { act: 7, name: 'Mastery Fluency', path: './SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js' }
+    ],
+    columns: ['Spanish', 'English', 'Chinese', 'Pinyin', 'Portuguese'],
+    nativeLanguages: { 'English': 1, 'Chinese': 2, 'Pinyin': 3, 'Portuguese': 4 }
+  },
+  'Chinese': {
+    modules: [
+      { act: 1, name: 'Foundation', path: './ChineseWords/Jsmodules-js/act1-foundation-js.js' },
+      { act: 2, name: 'Development', path: './ChineseWords/Jsmodules-js/act2-development-js.js' },
+      { act: 3, name: 'Expansion', path: './ChineseWords/Jsmodules-js/act3-expansion-js.js' },
+      { act: 4, name: 'Mastery', path: './ChineseWords/Jsmodules-js/act4-mastery-js.js' },
+      { act: 5, name: 'Refinement', path: './ChineseWords/Jsmodules-js/act5-refinement-js.js' }
+    ],
+    columns: ['Chinese', 'Pinyin', 'English', 'Spanish', 'French', 'Portuguese', 'Vietnamese', 'Thai', 'Khmer', 'Indonesian', 'Malay', 'Filipino'],
+    nativeLanguages: { 'English': 2, 'Spanish': 3, 'French': 4, 'Portuguese': 5, 'Vietnamese': 6, 'Thai': 7, 'Khmer': 8, 'Indonesian': 9, 'Malay': 10, 'Filipino': 11 }
+  },
+  'English': {
+    modules: [
+      { act: 1, name: 'Foundation', path: './EnglishWords/Jsmodules-js/act1-foundation-js.js' },
+      { act: 2, name: 'Building Blocks', path: './EnglishWords/Jsmodules-js/act2-building-blocks-js.js' },
+      { act: 3, name: 'Everyday Life', path: './EnglishWords/Jsmodules-js/act3-everyday-life-js.js' },
+      { act: 4, name: 'Expanding Horizons', path: './EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js' },
+      { act: 5, name: 'Advanced Mastery', path: './EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js' }
+    ],
+    columns: ['English', 'Chinese', 'Pinyin', 'Spanish', 'Portuguese'],
+    nativeLanguages: { 'Chinese': 1, 'Pinyin': 2, 'Spanish': 3, 'Portuguese': 4 }
+  },
+  'None': { modules: [], columns: [], nativeLanguages: {} }
+};
+
+/**
+ * SPEECH_LANG_CODES - TTS/Speech Recognition language codes
+ * Maps target language names to BCP 47 language tags
+ *
+ * Reusability: 9/10 - Used by all games with speech features
+ */
+const SPEECH_LANG_CODES = {
+  'Spanish': 'es-ES',
+  'Chinese': 'zh-CN',
+  'English': 'en-US'
+};
+
+// ════════════════════════════════════════════════════════════════════════════
+// LANGUAGE DATA LOADING
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Load all modules for a specific language
+ * Uses decodeObfuscatedModule for each act module
+ *
+ * Reusability: 9/10 - Used by all multi-language games
+ *
+ * @param {string} language - Language to load ('Spanish', 'Chinese', 'English')
+ * @param {Object} state - Game state object to populate
+ * @param {Object} state.loadedData - Object to store loaded act data
+ * @param {Object} state.loadedActMeta - Object to store act metadata
+ * @returns {Promise<void>}
+ *
+ * Example:
+ *   await loadLanguageData('Spanish', state);
+ *   console.log(state.loadedData[1]); // Act 1 data
+ */
+async function loadLanguageData(language, state) {
+  const config = LANGUAGE_CONFIG[language];
+  if (!config || config.modules.length === 0) return;
+
+  state.loadedData = {};
+  state.loadedActMeta = {};
+
+  for (const moduleInfo of config.modules) {
+    try {
+      const result = await decodeObfuscatedModule(moduleInfo.path);
+      if (result.__actMeta) {
+        state.loadedActMeta[moduleInfo.act] = result.__actMeta;
+        delete result.__actMeta;
+      }
+      state.loadedData[moduleInfo.act] = result;
+    } catch (error) {
+      console.error(`Failed to load ${moduleInfo.path}:`, error);
+    }
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// UI SETUP FUNCTIONS - Wire up UI controls to state
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Setup language radio buttons with state binding
+ * Wires up change events to update state and reload data
+ *
+ * Reusability: 8/10 - Used by games with language selection
+ *
+ * @param {Object} options - Configuration options
+ * @param {Object} options.state - Game state object
+ * @param {string} options.radioName - Name attribute of radio buttons (default: 'language')
+ * @param {Array} options.validLanguages - Array of valid language names
+ * @param {Function} options.onLanguageChange - Callback after language change
+ * @param {Function} options.saveState - Function to save state
+ *
+ * Example:
+ *   setupLanguageRadioButtons({
+ *     state: state,
+ *     validLanguages: ['Spanish', 'Chinese', 'English'],
+ *     onLanguageChange: async () => {
+ *       await loadLanguageData(state.currentLanguage, state);
+ *       populateDropdowns();
+ *     },
+ *     saveState: saveStateLocal
+ *   });
+ */
+function setupLanguageRadioButtons(options) {
+  const {
+    state,
+    radioName = 'language',
+    validLanguages = ['Spanish', 'Chinese', 'English'],
+    onLanguageChange,
+    saveState
+  } = options;
+
+  const radios = document.querySelectorAll(`input[name="${radioName}"]`);
+  radios.forEach(radio => {
+    radio.checked = radio.value === state.currentLanguage;
+    radio.addEventListener('change', async (e) => {
+      if (!validLanguages.includes(e.target.value)) return;
+
+      state.currentLanguage = e.target.value;
+      state.currentAct = null;
+      state.currentPack = null;
+
+      if (onLanguageChange) {
+        await onLanguageChange();
+      }
+
+      if (saveState) {
+        saveState();
+      }
+    });
+  });
+}
+
+/**
+ * Setup mode checkbox/radio buttons with state binding
+ * Wires up change events to toggle mode flags
+ *
+ * Reusability: 8/10 - Used by games with multiple view modes
+ *
+ * @param {Object} options - Configuration options
+ * @param {Object} options.state - Game state object
+ * @param {string} options.radioName - Name attribute of radio buttons (default: 'viewMode')
+ * @param {Function} options.onModeChange - Callback after mode change
+ * @param {Function} options.saveState - Function to save state
+ *
+ * Example:
+ *   setupModeCheckboxes({
+ *     state: state,
+ *     onModeChange: () => {
+ *       handleModeToggle();
+ *       displayVocabulary();
+ *     },
+ *     saveState: saveStateLocal
+ *   });
+ */
+function setupModeCheckboxes(options) {
+  const {
+    state,
+    radioName = 'viewMode',
+    onModeChange,
+    saveState
+  } = options;
+
+  const radios = document.querySelectorAll(`input[name="${radioName}"]`);
+  radios.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      state.multipleChoiceMode = e.target.value === 'multipleChoice';
+      state.typingMode = e.target.value === 'typing';
+      state.pronunciationMode = e.target.value === 'pronunciation';
+      state.flashcardMode = e.target.value === 'flashcard';
+
+      if (state.typingMode && state.typingStates) state.typingStates.clear();
+      if (state.pronunciationMode && state.pronunciationStates) state.pronunciationStates.clear();
+
+      if (onModeChange) {
+        onModeChange();
+      }
+
+      if (saveState) {
+        saveState();
+      }
+    });
+  });
+}
+
+/**
+ * Sync UI controls to match current state
+ * Updates radio buttons and checkboxes to reflect state values
+ *
+ * Reusability: 8/10 - Used after state restoration
+ *
+ * @param {Object} options - Configuration options
+ * @param {Object} options.state - Game state object
+ * @param {string} options.languageRadioName - Name of language radios (default: 'language')
+ * @param {string} options.modeRadioName - Name of mode radios (default: 'viewMode')
+ *
+ * Example:
+ *   syncUIToState({ state: state });
+ */
+function syncUIToState(options) {
+  const {
+    state,
+    languageRadioName = 'language',
+    modeRadioName = 'viewMode'
+  } = options;
+
+  // Sync language radio
+  const langRadio = document.querySelector(`input[name="${languageRadioName}"][value="${state.currentLanguage}"]`);
+  if (langRadio) langRadio.checked = true;
+
+  // Determine current mode
+  let modeValue = 'table';
+  if (state.multipleChoiceMode) modeValue = 'multipleChoice';
+  if (state.typingMode) modeValue = 'typing';
+  if (state.pronunciationMode) modeValue = 'pronunciation';
+  if (state.flashcardMode) modeValue = 'flashcard';
+
+  // Sync mode radio
+  const modeRadio = document.querySelector(`input[name="${modeRadioName}"][value="${modeValue}"]`);
+  if (modeRadio) modeRadio.checked = true;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// AUTO-SELECTION HELPERS
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Auto-select first available pack in current act
+ * Sets state.currentPack and updates pack dropdown
+ *
+ * Reusability: 8/10 - Used by all games with pack selection
+ *
+ * @param {Object} options - Configuration options
+ * @param {Object} options.state - Game state object
+ * @param {string} options.packSelectId - ID of pack dropdown (default: 'packSelect')
+ *
+ * Example:
+ *   autoSelectFirstPack({ state: state });
+ */
+function autoSelectFirstPack(options) {
+  const {
+    state,
+    packSelectId = 'packSelect'
+  } = options;
+
+  if (!state.currentAct || !state.loadedData[state.currentAct]) return;
+
+  const actData = state.loadedData[state.currentAct];
+  const packKeys = Object.keys(actData).filter(k => k !== '__actMeta' && actData[k]?.meta);
+  packKeys.sort((a, b) => (actData[a].meta.wordpack || 0) - (actData[b].meta.wordpack || 0));
+
+  if (packKeys.length > 0) {
+    state.currentPack = packKeys[0];
+    const packSelect = document.getElementById(packSelectId);
+    if (packSelect) packSelect.value = state.currentPack;
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// FLASHCARD MODE FUNCTIONS
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Handle flashcard mode toggle - show/hide flashcard area and table
+ *
+ * Reusability: 8/10 - Used by games with flashcard mode
+ *
+ * @param {Object} options - Configuration options
+ * @param {Object} options.state - Game state object
+ * @param {string} options.flashcardAreaId - ID of flashcard area (default: 'flashcardArea')
+ * @param {string} options.tableSelector - Selector for vocab table (default: 'table')
+ * @param {Function} options.initDeck - Function to initialize flashcard deck
+ * @param {Function} options.updateDisplay - Function to update flashcard display
+ *
+ * Example:
+ *   handleFlashcardModeChange({
+ *     state: state,
+ *     initDeck: () => initFlashcardDeck({ state }),
+ *     updateDisplay: () => updateFlashcardDisplay({ state })
+ *   });
+ */
+function handleFlashcardModeChange(options) {
+  const {
+    state,
+    flashcardAreaId = 'flashcardArea',
+    tableSelector = 'table',
+    initDeck,
+    updateDisplay
+  } = options;
+
+  const flashcardArea = document.getElementById(flashcardAreaId);
+  const vocabTable = document.querySelector(tableSelector);
+
+  if (state.flashcardMode) {
+    if (flashcardArea) flashcardArea.style.display = 'block';
+    if (vocabTable) vocabTable.style.display = 'none';
+    if (initDeck) initDeck();
+    if (updateDisplay) updateDisplay();
+  } else {
+    if (flashcardArea) flashcardArea.style.display = 'none';
+    if (vocabTable) vocabTable.style.display = 'table';
+  }
+}
+
+/**
+ * Update flashcard display with current card data
+ * Renders front/back based on flip state, handles Chinese with pinyin
+ *
+ * Reusability: 8/10 - Used by all flashcard games
+ *
+ * @param {Object} options - Configuration options
+ * @param {Object} options.state - Game state object with flashcardDeck, flashcardIndex, flashcardShowingFront
+ * @param {Object} options.elements - DOM element IDs
+ * @param {string} options.elements.contentId - ID of content element (default: 'flashcardContent')
+ * @param {string} options.elements.sideId - ID of side indicator (default: 'flashcardSide')
+ * @param {string} options.elements.counterId - ID of counter element (default: 'flashcardCounter')
+ * @param {string} options.elements.debugId - ID of debug element (default: 'flashcardDebug')
+ *
+ * Example:
+ *   updateFlashcardDisplay({ state: state });
+ */
+function updateFlashcardDisplay(options) {
+  const {
+    state,
+    elements = {}
+  } = options;
+
+  const {
+    contentId = 'flashcardContent',
+    sideId = 'flashcardSide',
+    counterId = 'flashcardCounter',
+    debugId = 'flashcardDebug'
+  } = elements;
+
+  const content = document.getElementById(contentId);
+  const side = document.getElementById(sideId);
+  const counter = document.getElementById(counterId);
+  const debug = document.getElementById(debugId);
+
+  if (!state.flashcardDeck || state.flashcardDeck.length === 0) {
+    if (content) content.textContent = 'No cards loaded';
+    return;
+  }
+
+  const card = state.flashcardDeck[state.flashcardIndex];
+
+  if (state.flashcardShowingFront) {
+    if (content) {
+      if (state.currentLanguage === 'Chinese' && card.pinyin) {
+        content.innerHTML = getChineseHtml(card.front, card.pinyin);
+      } else {
+        content.textContent = card.front;
+      }
+    }
+    if (side) side.textContent = '(FRONT - click to flip)';
+  } else {
+    if (content) content.textContent = card.back;
+    if (side) side.textContent = '(BACK - click to flip)';
+  }
+
+  if (counter) counter.textContent = `Card ${state.flashcardIndex + 1} of ${state.flashcardDeck.length}`;
+  if (debug) debug.textContent = JSON.stringify(card, null, 2);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// TYPING DISPLAY FUNCTIONS (DecoderTest-specific)
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Update typing display for a specific word in a table row
+ * Shows typed characters and tracks wrong letters
+ *
+ * Reusability: 7/10 - Used by table-based typing games
+ *
+ * @param {Object} options - Configuration options
+ * @param {number} options.wordIndex - Index of word being typed
+ * @param {string} options.correctWord - The correct word to type
+ * @param {HTMLInputElement} options.inputElement - The input field element
+ * @param {Object} options.state - Game state with typingStates Map
+ *
+ * Example:
+ *   updateTypingDisplayInRow({
+ *     wordIndex: 0,
+ *     correctWord: 'hola',
+ *     inputElement: inputEl,
+ *     state: state
+ *   });
+ */
+function updateTypingDisplayInRow(options) {
+  const {
+    wordIndex,
+    correctWord,
+    inputElement,
+    state
+  } = options;
+
+  const typingState = state.typingStates.get(wordIndex);
+  if (!typingState) return;
+
+  const chars = correctWord.split('');
+  const display = chars.map((char, i) => {
+    if (typingState.typed.has(i)) return char;
+    if (char === ' ') return ' ';
+    return '_';
+  }).join('');
+
+  inputElement.value = display;
+
+  const row = inputElement.closest('tr');
+  if (row) {
+    const wrongCell = row.querySelector('.wrong-letters');
+    const countCell = row.querySelector('.wrong-count');
+    if (wrongCell) wrongCell.textContent = typingState.wrongLetters.join(', ');
+    if (countCell) countCell.textContent = typingState.wrongCount;
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
 // EXPORT FOR MODULE SYSTEMS (optional - currently using globals)
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -3481,6 +3929,21 @@ if (typeof module !== 'undefined' && module.exports) {
     shuffleDeck,
     // Utility
     autoSelectFirstActAndPack,
+    // ═══════ Additional shared functions ═══════
+    // Language configuration
+    LANGUAGE_CONFIG,
+    SPEECH_LANG_CODES,
+    // UI setup functions
+    setupLanguageRadioButtons,
+    setupModeCheckboxes,
+    syncUIToState,
+    // Auto-selection
+    autoSelectFirstPack,
+    // Flashcard mode
+    handleFlashcardModeChange,
+    updateFlashcardDisplay,
+    // Typing display
+    updateTypingDisplayInRow,
     // ═══════ Functions brutishly moved from FlashcardTypingGame.js (scores 8-10) ═══════
     switchMode,
     initializeTooltips,
