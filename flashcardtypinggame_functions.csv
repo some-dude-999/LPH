@@ -1,14 +1,18 @@
-Function Name,What It Does,How Does It Work,Reusability Score (1-10)
-showStartingCard,"Navigates to the menu/help card with game settings and instructions","Saves current card index, sets isOnStartingCard flag, adds 'showing-menu' CSS class to flashcard and body, updates title text, calls renderMenuCard() to populate menu HTML, unflips card if flipped, optionally flips to back (help side) after 100ms delay",3
-exitStartingCard,"Returns from menu card to the previously viewed game card","Checks if on starting card, sets isOnStartingCard to false, removes 'showing-menu' CSS classes, restores currentIndex from savedIndex, updates wordpack title display, calls updateDisplay() to render game card",3
-renderMenuCard,"Creates the HTML for the menu card with dropdowns for act, wordpack, language, speed, and voice selection","Builds HTML template string with two divs (front = menu, back = help), uses language-aware labels (detects Chinese for pinyin-specific instructions), injects HTML into spanishWord and englishWord elements, then uses setTimeout to populate dropdowns after DOM render, attaches event listeners to all selectors and buttons for state changes",2
-switchMode,"Switches between learning modes (flashcard, spelling, pronunciation, translation) and resets deck state","Checks if already in mode (early return), cancels any active speech, sets currentMode variable, updates active button CSS classes, resets deck to originalDeck copy (preserves base→example order), resets flip state, clears pendingDeckChange counter, initializes typing display if spelling/translation mode, calls updateDisplay(), auto-pronounces word if spelling mode after 300ms delay, updates debug UI, saves state",7
-populateVoiceSelector,"Deprecated compatibility function that does nothing (voice selector now populated in renderMenuCard)","Empty function body with comment - kept for backwards compatibility but does nothing",1
-initializeTooltips,"Populates tooltip content for mode buttons and control bar buttons using TOOLTIP_MESSAGES","Builds HTML strings from TOOLTIP_MESSAGES constant for each mode tooltip area (reading, listening, speaking, writing), injects them into tooltip divs, then calls window.createButtonTooltip() from wordpack-logic.js for each control button, passing the button element and corresponding message HTML",4
-initializeApp,"Main initialization function that loads saved state, sets up the game, populates UI elements, and starts the app","Loads state with loadState(), validates it, loads module acts for detected language, populates act selector, attaches event listeners to act dropdown (loads new act on change), populates wordpack dropdown for current act, populates native language dropdown, populates voice dropdown, sets up speed buttons with active state, initializes tooltips, calls updateChineseModeClass() to apply CSS, if valid wordpack exists calls initializeDeck() to create cards, otherwise auto-selects first act/pack",6
-updateBackLabel,"Deprecated function that did nothing (card labels have been removed)","Empty function body with comment - kept for backwards compatibility but does nothing",1
-generateWeathering,"Generates CSS gradients for random sun-faded weathering effects on flashcards using seed-based randomization","Uses card ID as seed with Math.sin() for deterministic pseudo-random values, generates 4 edge fade percentages (15-25%), 3 RGB tint values (brownish sepia), edge intensity (0.18-0.30), overall intensity (0.03-0.07), 3 random splotch positions (20-80%), creates 7 CSS gradient strings (3 radial ellipses for splotches + 4 linear gradients for edges), joins them with commas and returns as single CSS background-image value",2
-updateDisplay,"Main display function that renders the current card content based on mode (flashcard, spelling, pronunciation, translation)","Early return if on starting card, checks if deck empty (shows completion screen), gets current card object from currentDeck[currentIndex], sets counter text (different format for flashcard vs other modes), branches on currentMode: flashcard=shows target word front + translation back using render functions, spelling=shows typing display with wrong letters/count indicators front + target word+translation back, translation=shows translation+typing display front + target word back, pronunciation=shows target word front + translation back with mic UI, all modes use renderTargetWordHTML() and renderTranslationHTML() from wordpack-logic.js which handle Chinese coupling automatically",5
-unflipCard,"Removes the 'flipped' CSS class to show the front of the flashcard","Removes 'flipped' class from flashcard element, sets isFlipped flag to false, does NOT stop speech (lets it continue)",4
-showFeedback,"Shows pronunciation feedback with score, what was heard vs expected, and handles penalties for low scores","Gets feedback elements based on isFront parameter, calculates dynamic threshold using getSimilarityThreshold(), checks if pronunciation mode: if yes and score >= threshold removes card with success stamp, if score < threshold adds 2 duplicate penalty cards and advances after 1600ms, if not pronunciation mode shows feedback overlay with score percentage, color-coded CSS class from getScoreClass(), message from getFeedbackMessage(), and heard text",6
-startGame,"Initializes the game with a selected wordpack, creates deck, and starts playing","Checks if wordpack exists, calls initializeDeck() with selected wordpack key to create card objects, sets gameStarted flag, exits starting card view, resets current index to 0, calls updateDisplay() to show first card, saves state to localStorage",5
+Function Name,What It Does,How Does It Work,Reusability (1-10)
+exitStartingCard,,,
+generateWeathering,,,
+initializeApp,,,
+initializeTooltips,,,
+populateVoiceSelector,,,
+random,,,
+renderMenuCard,,,
+showFeedback,,,
+showStartingCard,,,
+simulateNearVictory,,,
+simulateRight,,,
+simulateWrong,,,
+startGame,,,
+switchMode,,,
+unflipCard,,,
+updateBackLabel,,,
+updateDisplay,,,
