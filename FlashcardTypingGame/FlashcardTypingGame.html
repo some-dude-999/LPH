@@ -2230,23 +2230,33 @@
     // These wrapper functions provide game-specific state object construction.
     // ============================================================
 
-    function saveState() {
-      // Build state object from game's local variables
-      const state = {
-        voiceURI: currentVoice ? currentVoice.voiceURI : null,
-        speed: currentSpeed,
-        wordpackKey: currentWordpackKey,
-        act: currentAct,
-        language: nativeLanguage
-      };
-      // Call shared function (defined in wordpack-logic.js)
-      window.saveState(state);
-    }
+    // ============================================================
+    // DELETED: saveState()
+    // ============================================================
+    // This was a wrapper around window.saveState() from wordpack-logic.js
+    // USE INSTEAD: window.saveState({ voiceURI, speed, wordpackKey, act, language })
+    //
+    // Replace all calls:
+    //   OLD: saveState()
+    //   NEW: window.saveState({
+    //          voiceURI: currentVoice?.voiceURI,
+    //          speed: currentSpeed,
+    //          wordpackKey: currentWordpackKey,
+    //          act: currentAct,
+    //          language: nativeLanguage
+    //        })
+    // ============================================================
 
-    function loadState() {
-      // Call shared function (defined in wordpack-logic.js)
-      return window.loadState();
-    }
+    // ============================================================
+    // DELETED: loadState()
+    // ============================================================
+    // This was a wrapper around window.loadState() from wordpack-logic.js
+    // USE INSTEAD: window.loadState()
+    //
+    // Replace all calls:
+    //   OLD: loadState()
+    //   NEW: window.loadState()
+    // ============================================================
 
     // ============================================================
     // TOOLTIP_MESSAGES - Now in wordpack-logic.js
@@ -2340,17 +2350,27 @@
     //   - showFailureStamp: red "Extra Practice" stamp + buzz sound
     //   - Both hide after 1.5 seconds and execute callback
     // ===================================================================================
-    // NOTE: Core stamp logic is now in wordpack-logic.js (window.showSuccessStamp, window.showFailureStamp)
-    // These wrappers provide game-specific element references (removedStamp, addedStamp)
-    function showSuccessStamp(onComplete) {
-      // Call shared function from wordpack-logic.js (use window. to access global function)
-      window.showSuccessStamp(removedStamp, onComplete);
-    }
+    // ============================================================
+    // DELETED: showSuccessStamp()
+    // ============================================================
+    // This was a wrapper around window.showSuccessStamp() from wordpack-logic.js
+    // USE INSTEAD: window.showSuccessStamp(removedStamp, callback)
+    //
+    // Replace all calls:
+    //   OLD: showSuccessStamp(() => { ... })
+    //   NEW: window.showSuccessStamp(removedStamp, () => { ... })
+    // ============================================================
 
-    function showFailureStamp(onComplete) {
-      // Call shared function from wordpack-logic.js (use window. to access global function)
-      window.showFailureStamp(addedStamp, onComplete);
-    }
+    // ============================================================
+    // DELETED: showFailureStamp()
+    // ============================================================
+    // This was a wrapper around window.showFailureStamp() from wordpack-logic.js
+    // USE INSTEAD: window.showFailureStamp(addedStamp, callback)
+    //
+    // Replace all calls:
+    //   OLD: showFailureStamp(() => { ... })
+    //   NEW: window.showFailureStamp(addedStamp, () => { ... })
+    // ============================================================
 
     // ===================================================================================
     // MODE SWITCHING AND DISPLAY FUNCTIONS
@@ -2664,44 +2684,27 @@
       }, 0);
     }
 
-    // Helper function to populate wordpack selector on card
-    // KEY FEATURE: Uses saved state first, only defaults to first pack if no saved state
-    function populateWordpackSelectorOnCard(actNumber) {
-      const menuWordpack = document.getElementById('menu-wordpack');
-      if (!menuWordpack || !actNumber) return;
-
-      menuWordpack.innerHTML = ''; // Clear existing options - no placeholder
-
-      const actData = loadedActs[actNumber];
-      if (!actData) return;
-
-      // Filter out __actMeta - only get actual pack keys
-      const packKeys = Object.keys(actData).filter(key => key !== '__actMeta');
-      packKeys.sort((a, b) => {
-        const numA = actData[a].meta.wordpack;
-        const numB = actData[b].meta.wordpack;
-        return numA - numB;
-      });
-
-      packKeys.forEach(packKey => {
-        const pack = actData[packKey];
-        const option = document.createElement('option');
-        option.value = packKey;
-        option.textContent = `${pack.meta.wordpack}. ${pack.meta.english}`;
-        menuWordpack.appendChild(option);
-      });
-
-      // Use saved wordpack if valid for this act, otherwise default to first pack
-      if (currentWordpackKey && actData[currentWordpackKey]) {
-        // Saved wordpack exists in this act - use it
-        menuWordpack.value = currentWordpackKey;
-      } else if (packKeys.length > 0) {
-        // No saved wordpack or not valid for this act - default to first
-        menuWordpack.value = packKeys[0];
-        currentWordpackKey = packKeys[0];
-        saveState(); // Save the default
-      }
-    }
+    // ============================================================
+    // DELETED: populateWordpackSelectorOnCard()
+    // ============================================================
+    // This was similar to window.populatePackSelector() from wordpack-logic.js
+    // USE INSTEAD: window.populatePackSelector(selectElement, actData, currentPackKey, saveCallback)
+    //
+    // Replace all calls:
+    //   OLD: populateWordpackSelectorOnCard(actNumber)
+    //   NEW: const menuWordpack = document.getElementById('menu-wordpack');
+    //        if (menuWordpack) {
+    //          window.populatePackSelector(
+    //            menuWordpack,
+    //            loadedActs[actNumber],
+    //            currentWordpackKey,
+    //            (newPackKey) => {
+    //              currentWordpackKey = newPackKey;
+    //              window.saveState({...state});
+    //            }
+    //          );
+    //        }
+    // ============================================================
 
     // Switch to a different learning mode
     function switchMode(newMode) {
@@ -2757,145 +2760,69 @@
       saveState();
     }
 
-    // Initialize typing display for spelling and translation modes
-    function initializeTypingDisplay() {
-      const word = currentDeck[currentIndex].typingTarget;
-      typingInput = '';
-      typingDisplay = word.split('');
-      typedPositions = new Set();
-      wrongAttempts = 0;
-      wrongPositions = [];
-      wrongLetters = [];
-    }
+    // ============================================================
+    // DELETED: initializeTypingDisplay()
+    // ============================================================
+    // This was a duplicate of window.initializeTypingState() from wordpack-logic.js
+    // USE INSTEAD: window.initializeTypingState(word)
+    //
+    // Replace all calls:
+    //   OLD: initializeTypingDisplay()
+    //   NEW: const typingState = window.initializeTypingState(currentDeck[currentIndex].typingTarget);
+    //        typingInput = typingState.typingInput;
+    //        typingDisplay = typingState.typingDisplay;
+    //        typedPositions = typingState.typedPositions;
+    //        wrongAttempts = typingState.wrongAttempts;
+    //        wrongPositions = typingState.wrongPositions;
+    //        wrongLetters = typingState.wrongLetters;
+    // ============================================================
 
     // NOTE: addDuplicateCards() has been moved to wordpack-logic.js as a pure function.
     // All calls now use: addDuplicateCards(deck, card, count) which returns {deck, newIndex}.
 
-    // Handle typing input for listening and translation modes
-    // NOTE: Uses shared helper functions from wordpack-logic.js for validation
-    function handleTypingInput(key) {
-      if ((currentMode !== 'spelling' && currentMode !== 'translation') || currentDeck.length === 0) return;
-
-      // Use typingTarget (pinyin for Chinese, spanish for others)
-      const word = currentDeck[currentIndex].typingTarget;
-      const targetChars = word.split('');
-
-      // Find next typing position using shared helper (handles spaces automatically)
-      const nextPos = findNextTypingPosition(targetChars, typedPositions);
-
-      if (nextPos === -1) {
-        // Already completed
-        return;
-      }
-
-      // Check if key matches using shared helper (handles normalization)
-      const keyCheck = checkTypingKey(key, targetChars[nextPos]);
-
-      if (keyCheck === 'correct') {
-        // Correct! Mark position as typed
-        typedPositions.add(nextPos);
-        playScribbleSound(); // Felt pen writing sound
-        updateDisplay();
-
-        // Check if word is complete using shared helper
-        if (isWordComplete(targetChars, typedPositions)) {
-          // Word completed!
-          // 0-1 wrong = correct (show green stamp and remove card)
-          // 2+ wrong = always +2 penalty cards
-
-          if (wrongAttempts <= 1) {
-            // Correct! Show green stamp and remove card automatically
-            pendingDeckChange = -1; // Track deck change for visual indicator
-            updateDisplay(); // Show indicator while stamp is visible
-
-            // Show success stamp with ding sound (encapsulated)
-            showSuccessStamp(() => {
-              // Remove card from deck
-              if (currentDeck.length <= 1) {
-                currentDeck = [];
-              } else {
-                currentDeck.splice(currentIndex, 1);
-                if (currentIndex >= currentDeck.length) {
-                  currentIndex = 0;
-                }
-              }
-
-              // Clear pending change
-              pendingDeckChange = 0;
-
-              // Play sound on page change (consistent timing)
-              playCardFlipSound();
-
-              // Re-initialize typing for next card (only if deck is not empty)
-              if ((currentMode === 'spelling' || currentMode === 'translation') && currentDeck.length > 0) {
-                initializeTypingDisplay();
-              }
-              updateDisplay();
-              saveState();
-
-              // Auto-pronounce in spelling mode
-              if (currentMode === 'spelling' && currentDeck.length > 0) {
-                setTimeout(() => speakTargetWord(), 300);
-              }
-            });
-          } else {
-            // Wrong - always add 2 penalty cards (using shared function from wordpack-logic.js)
-            const result = addDuplicateCards(currentDeck, currentDeck[currentIndex], 2);
-            currentDeck = result.deck;
-            currentIndex = result.newIndex;
-
-            // Auto-advance after stamp duration (1600ms > 1500ms stamp)
-            setTimeout(() => {
-              if (currentMode === 'spelling' || currentMode === 'translation') {
-                moveToNextCard();
-              }
-            }, 1600);
-          }
-        }
-      } else {
-        // Wrong key pressed - mark position as wrong, increment counter, and track wrong letter
-        playScribbleSound(); // Play scribble sound for any key press
-        if (!wrongPositions.includes(nextPos)) {
-          wrongPositions.push(nextPos);
-        }
-        wrongAttempts++;
-        // Store wrong letter with its style (lowercase, random rotation/scale - set once, never changes)
-        wrongLetters.push({
-          letter: key.toLowerCase(), // Case-insensitive
-          rotation: -8 + Math.random() * 16, // -8deg to +8deg
-          scale: 0.95 + Math.random() * 0.1, // 0.95 to 1.05
-          xRotation: -5 + Math.random() * 10 // -5deg to +5deg for X mark
-        });
-        updateDisplay(); // Update to show red color and wrong indicators
-      }
-    }
+    // ============================================================
+    // DELETED: handleTypingInput()
+    // ============================================================
+    // This was a game-specific wrapper around typing logic from wordpack-logic.js
+    // USE INSTEAD: window.handleTypingInput() with proper state management
+    //
+    // This function had complex game-specific deck manipulation logic.
+    // To replace it:
+    // 1. Use window.handleTypingInput(key, word, typingState) for validation
+    // 2. Handle success/failure with stamps and deck updates
+    // 3. Use window.showSuccessStamp() / window.showFailureStamp()
+    // 4. Use addDuplicateCards() for penalties
+    //
+    // Example pattern:
+    //   const result = window.handleTypingInput(key, word, {
+    //     typingInput, typingDisplay, typedPositions,
+    //     wrongAttempts, wrongPositions, wrongLetters
+    //   });
+    //   // Update state with result
+    //   // Handle completion with stamps
+    // ============================================================
 
     // ============================================================
     // NOTE: isWritingComplete() removed - use isWordComplete() from wordpack-logic.js
     // Usage: isWordComplete(typingDisplay, typedPositions)
     // ============================================================
 
-    // Load voices based on TTS language code from loaded modules
-    // KEY FEATURE: Voices only load if modules are loaded - no module = no voices
-    function loadVoices() {
-      const ttsLangCode = getTtsLanguageCode();
-
-      // Only filter voices if we have a language code from loaded modules
-      if (!ttsLangCode) {
-        spanishVoices = []; // No modules loaded = no voices
-        return;
-      }
-
-      // Use shared function from wordpack-logic.js to load voices
-      spanishVoices = window.loadVoicesForLanguage(ttsLangCode);
-
-      // Restore saved voice if we have a saved URI and voices are now available
-      if (savedVoiceURI && spanishVoices.length > 0 && !currentVoice) {
-        // Use shared function from wordpack-logic.js to find voice by URI
-        currentVoice = window.findVoiceByURI(savedVoiceURI, spanishVoices) || null;
-      }
-      // Voice selector is now populated in renderMenuCard() when menu is created
-    }
+    // ============================================================
+    // DELETED: loadVoices()
+    // ============================================================
+    // This was a wrapper around window.loadVoicesForLanguage() from wordpack-logic.js
+    // USE INSTEAD: window.loadVoicesForLanguage(languageCode)
+    //
+    // Replace all calls:
+    //   OLD: loadVoices()
+    //   NEW: const ttsLangCode = getTtsLanguageCode();
+    //        if (ttsLangCode) {
+    //          spanishVoices = window.loadVoicesForLanguage(ttsLangCode);
+    //          if (savedVoiceURI && spanishVoices.length > 0) {
+    //            currentVoice = window.findVoiceByURI(savedVoiceURI, spanishVoices);
+    //          }
+    //        }
+    // ============================================================
 
     function populateVoiceSelector() {
       // DEPRECATED: Voice selector is now populated inside renderMenuCard()
@@ -3122,52 +3049,30 @@
     // NOTE: populateWordpackSelector was removed - functionality moved to populateWordpackSelectorOnCard()
     // which is called from renderMenuCard() and properly handles the menu-wordpack element
 
-    // Restore saved state from localStorage
-    // KEY FEATURE: Restores user's last session settings (speed, wordpack, act, language, voice)
-    // If no saved state exists, creates one with current defaults
-    function restoreSavedState() {
-      const savedState = loadState();
-
-      // If no saved state, save current defaults and return
-      if (!savedState) {
-        saveState(); // Save defaults so they persist
-        return;
-      }
-
-      // Restore speech rate (validate against valid options)
-      if (savedState.speed !== undefined && savedState.speed !== null) {
-        // Only restore if it's a valid speed option, otherwise keep default
-        if (VALID_SPEEDS.includes(savedState.speed)) {
-          currentSpeed = savedState.speed;
-        }
-        // Speed buttons UI will be updated when menu renders
-      }
-
-      // Restore last selected act
-      if (savedState.act) {
-        currentAct = savedState.act;
-      }
-
-      // Restore last selected wordpack (value only - UI updated when menu renders)
-      if (savedState.wordpackKey) {
-        currentWordpackKey = savedState.wordpackKey;
-      }
-
-      // Restore native language (validate against valid options)
-      if (savedState.language) {
-        // Only restore if it's a valid language option, otherwise keep default
-        if (getValidLanguages().includes(savedState.language)) {
-          nativeLanguage = savedState.language;
-        }
-      }
-
-      // Store saved voice URI - will be applied when voices are loaded
-      if (savedState.voiceURI) {
-        savedVoiceURI = savedState.voiceURI;
-      }
-
-      // Chinese characters and pinyin are always shown together (no user toggle)
-    }
+    // ============================================================
+    // DELETED: restoreSavedState()
+    // ============================================================
+    // This was a game-specific wrapper around state restoration logic
+    // USE INSTEAD: window.restoreSavedState() with proper state management
+    //
+    // Replace all calls:
+    //   OLD: restoreSavedState()
+    //   NEW: const savedState = window.loadState();
+    //        if (savedState) {
+    //          // Validate and restore each field
+    //          if (savedState.speed && VALID_SPEEDS.includes(savedState.speed)) {
+    //            currentSpeed = savedState.speed;
+    //          }
+    //          if (savedState.act) currentAct = savedState.act;
+    //          if (savedState.wordpackKey) currentWordpackKey = savedState.wordpackKey;
+    //          if (savedState.language && getValidLanguages().includes(savedState.language)) {
+    //            nativeLanguage = savedState.language;
+    //          }
+    //          if (savedState.voiceURI) savedVoiceURI = savedState.voiceURI;
+    //        } else {
+    //          window.saveState({...defaultState});
+    //        }
+    // ============================================================
 
     function updateBackLabel() {
       // Card labels have been removed, this function is no longer needed
@@ -3195,171 +3100,63 @@
     // ============================================================
 
     // ============================================================
-    // KEY FEATURE: Deck Initialization with Linked Card Objects
-    // Core Objective: Create shuffled deck where front/back are ALWAYS synced
-    // Key Behaviors:
-    //   - Each card is a SINGLE object with both spanish and translation
-    //   - Front and back of card are NEVER separate - they are properties
-    //     of the same card object (currentDeck[currentIndex])
-    //   - Shuffling reorders cards but NEVER breaks the front/back link
-    //   - This function is ONLY called when starting fresh or changing wordpack
+    // DELETED: initializeDeck()
     // ============================================================
-    function initializeDeck(packKey) {
-      if (!packKey || !wordpacks[packKey]) {
-        currentDeck = [];
-        originalDeck = [];
-        updateDisplay();
-        return;
-      }
-
-      const pack = wordpacks[packKey];
-      // Get translation column index from loaded module metadata
-      const translations = getTranslationsConfig();
-      if (!translations) {
-        console.error('[initializeDeck] No translations loaded');
-        return;
-      }
-      const langConfig = translations[nativeLanguage];
-      const nativeIndex = langConfig ? langConfig.index : translations[getDefaultTranslation()].index;
-
-      // ============================================================
-      // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
-      // ============================================================
-      const words = combineAndShuffleWords(pack, currentDifficulty);
-
-      // ============================================================
-      // DYNAMIC LANGUAGE HANDLING
-      // Card structure adapts based on target language:
-      // - targetWord: The word being learned (column 0)
-      // - pinyin: Pinyin for Chinese (column 1 if Chinese, or translation pinyin)
-      // - translation: The translation in native language
-      // - typingTarget: What user types (pinyin for Chinese, targetWord otherwise)
-      // ============================================================
-      const targetIsChinese = isChineseMode();
-
-      // Get word columns from loaded metadata to find pinyin column
-      const wordColumns = getWordColumns();
-
-      // Find pinyin index - it follows 'chinese' column in the word array
-      let pinyinIndex = -1;
-      if (wordColumns) {
-        const chineseIdx = wordColumns.indexOf('chinese');
-        if (chineseIdx !== -1) {
-          // Pinyin typically follows chinese column
-          const pinyinIdx = wordColumns.indexOf('pinyin');
-          if (pinyinIdx !== -1) {
-            pinyinIndex = pinyinIdx;
-          }
-        }
-      }
-
-      // CRITICAL: Each card object contains BOTH front (target word) and back (translation)
-      // These are NEVER stored separately - they are always linked as one object
-      originalDeck = words.map((wordObj, idx) => {
-        const word = wordObj.word;  // Extract word array from object
-        const card = {
-          id: `${packKey}-${idx}`,        // Unique ID for this card
-          targetWord: word[0],            // Front of card (target language word)
-          spanish: word[0],               // BACKWARDS COMPAT: Alias for non-Chinese modes
-          translation: word[nativeIndex], // Back of card (translation)
-          type: wordObj.type,             // Word type for debugging (Base Word / Example Word)
-          rawWord: word                   // Store full word array for debug table access
-        };
-
-        // ============================================================
-        // CHINESE-SPECIFIC HANDLING
-        // ============================================================
-        if (targetIsChinese) {
-          // When learning Chinese: pinyin is at index 1 (directly after Chinese)
-          card.pinyin = word[1] || '';
-          card.chinese = word[0];         // Alias for Chinese mode
-          // Typing target is pinyin (letter-based typing)
-          card.typingTarget = card.pinyin;
-        } else {
-          // When learning Spanish/English: typing target is the target word
-          card.typingTarget = card.targetWord;
-
-          // Add pinyin when TRANSLATION is Chinese (not target language)
-          if (nativeLanguage === 'chinese' && pinyinIndex !== -1) {
-            card.translationPinyin = word[pinyinIndex] || '';
-            card.translationIsChinese = true;
-          }
-        }
-
-        return card;
-      });
-
-      // ============================================================
-      // CRITICAL: DO NOT shuffle originalDeck here!
-      // Words are already ordered by combineAndShuffleWords():
-      //   1. Base words (shuffled internally)
-      //   2. Example words (shuffled internally)
-      // Shuffling here would mix base and example words together,
-      // breaking the pedagogical ordering!
-      // ============================================================
-      currentDeck = [...originalDeck]; // Copy without shuffling
-      currentIndex = 0;
-      updateDisplay();
-
-      // Update debug table with new deck data (if debug mode is enabled)
-      if (typeof updateDebugTable === 'function') {
-        updateDebugTable();
-      }
-    }
+    // This was a game-specific wrapper around deck creation logic
+    // USE INSTEAD: window.createDeckFromPack() with proper callbacks
+    //
+    // This function had complex card structure creation and Chinese handling.
+    // To replace it:
+    // 1. Use window.createDeckFromPack(pack, options) for deck creation
+    // 2. Pass game-specific options (nativeLanguage, difficulty, etc.)
+    // 3. Handle deck updates (currentDeck, originalDeck, currentIndex)
+    //
+    // Example pattern:
+    //   const result = window.createDeckFromPack(wordpacks[packKey], {
+    //     nativeLanguage,
+    //     difficulty: currentDifficulty,
+    //     wordColumns: getWordColumns(),
+    //     translations: getTranslationsConfig()
+    //   });
+    //   originalDeck = result.deck;
+    //   currentDeck = [...originalDeck];
+    //   currentIndex = 0;
+    //   updateDisplay();
+    // ============================================================
 
     // ============================================================
-    // GAME-SPECIFIC WRAPPER: Restart current wordpack
+    // DELETED: restartCurrentPack()
     // ============================================================
-    // WHY THIS EXISTS: Wraps shared resetDeckToOriginal() with game-specific:
-    //   - Access to local variables (originalDeck, currentDeck, currentIndex)
-    //   - Game-specific callbacks (initializeTypingDisplay, updateDisplay, saveState)
-    //   - Flash-card specific sound effects (playButtonClickSound)
-    // REUSABILITY: 2/10 - Other games need different callbacks/context
+    // This was a wrapper around window.resetDeckToOriginal() from wordpack-logic.js
+    // USE INSTEAD: window.resetDeckToOriginal(originalDeck, callbacks)
+    //
+    // Replace all calls:
+    //   OLD: restartCurrentPack()
+    //   NEW: playButtonClickSound();
+    //        if (originalDeck.length > 0) {
+    //          const result = window.resetDeckToOriginal(originalDeck, {
+    //            onReset: (newDeck) => {
+    //              currentDeck = newDeck;
+    //              currentIndex = 0;
+    //              // Re-initialize typing state, update display, save
+    //            }
+    //          });
+    //        }
     // ============================================================
-    function restartCurrentPack() {
-      playButtonClickSound();
 
-      if (originalDeck.length > 0) {
-        const result = resetDeckToOriginal(originalDeck, {
-          onReset: (newDeck) => {
-            currentDeck = newDeck;
-            currentIndex = 0;
-            if (currentMode === 'spelling' || currentMode === 'translation') {
-              initializeTypingDisplay();
-            }
-            updateDisplay();
-            saveState();
-
-            // Update debug table to show full deck again
-            if (typeof updateDebugTable === 'function') {
-              updateDebugTable();
-            }
-          }
-        });
-
-        currentDeck = result.deck;
-        currentIndex = result.currentIndex;
-      }
-    }
-
-    // Go to next wordpack
     // ============================================================
-    // NOTE: Now uses shared navigateToNextPack() from wordpack-logic.js
+    // DELETED: goToNextPack()
     // ============================================================
-    function goToNextPack() {
-      playButtonClickSound();
-
-      const nextPackKey = navigateToNextPack(wordpacks, currentWordpackKey);
-      currentWordpackKey = nextPackKey;
-
-      // Update menu selector if visible
-      const menuWordpack = document.getElementById('menu-wordpack');
-      if (menuWordpack) menuWordpack.value = nextPackKey;
-
-      initializeDeck(nextPackKey);
-      updateWordpackTitleDisplay(wordpackTitle, currentWordpackKey, wordpacks);
-      saveState();
-    }
+    // This was a wrapper around window.navigateToNextPack() from wordpack-logic.js
+    // USE INSTEAD: window.navigateToNextPack(wordpacks, currentPackKey)
+    //
+    // Replace all calls:
+    //   OLD: goToNextPack()
+    //   NEW: playButtonClickSound();
+    //        const nextPackKey = window.navigateToNextPack(wordpacks, currentWordpackKey);
+    //        currentWordpackKey = nextPackKey;
+    //        // Update UI, initialize deck, save state
+    // ============================================================
 
     // Generate random weathering pattern for a card
     function generateWeathering(seed) {
@@ -3606,249 +3403,173 @@
     // ============================================================
 
     // ============================================================
-    // GAME-SPECIFIC WRAPPER: Navigate to previous card
+    // DELETED: goToPrevious()
     // ============================================================
-    // WHY THIS EXISTS: Wraps shared navigateToPrevious() with game-specific:
-    //   - Access to local variables (currentDeck, currentIndex, currentMode)
-    //   - Game-specific callbacks (initializeTypingDisplay, updateDisplay, saveState)
-    //   - Game-specific sound (playCardFlipSound) and speech control
-    // REUSABILITY: 2/10 - Other games need different navigation behavior
+    // This was a wrapper around window.navigateToPrevious() from wordpack-logic.js
+    // USE INSTEAD: window.navigateToPrevious(deckState, callbacks)
+    //
+    // Replace all calls:
+    //   OLD: goToPrevious()
+    //   NEW: window.navigateToPrevious(
+    //          { deck: currentDeck, currentIndex },
+    //          {
+    //            onNavigate: (newIndex) => {
+    //              speechSynthesis.cancel();
+    //              playCardFlipSound();
+    //              currentIndex = newIndex;
+    //              // Re-initialize typing, update display, save
+    //            }
+    //          }
+    //        );
     // ============================================================
-    function goToPrevious() {
-      if (currentDeck.length === 0) return;
-
-      navigateToPrevious(
-        { deck: currentDeck, currentIndex },
-        {
-          onNavigate: (newIndex) => {
-            speechSynthesis.cancel();
-            playCardFlipSound();
-            currentIndex = newIndex;
-            if (currentMode === 'spelling' || currentMode === 'translation') {
-              initializeTypingDisplay();
-            }
-            updateDisplay();
-            saveState();
-          },
-          onAutoSpeak: currentMode === 'spelling' ? speakSpanish : null
-        }
-      );
-    }
 
     // ============================================================
-    // GAME-SPECIFIC WRAPPER: Navigate to next card
+    // DELETED: goToNext()
     // ============================================================
-    // WHY THIS EXISTS: Wraps shared navigateToNext() with game-specific:
-    //   - Access to local variables (currentDeck, currentIndex, currentMode)
-    //   - Game-specific callbacks (initializeTypingDisplay, updateDisplay, saveState)
-    //   - Game-specific sound (playCardFlipSound) and speech control
-    // REUSABILITY: 2/10 - Other games need different navigation behavior
+    // This was a wrapper around window.navigateToNext() from wordpack-logic.js
+    // USE INSTEAD: window.navigateToNext(deckState, callbacks)
+    //
+    // Replace all calls:
+    //   OLD: goToNext()
+    //   NEW: window.navigateToNext(
+    //          { deck: currentDeck, currentIndex },
+    //          {
+    //            onNavigate: (newIndex) => {
+    //              speechSynthesis.cancel();
+    //              playCardFlipSound();
+    //              currentIndex = newIndex;
+    //              // Re-initialize typing, update display, save
+    //            }
+    //          }
+    //        );
     // ============================================================
-    function goToNext() {
-      if (currentDeck.length === 0) return;
 
-      navigateToNext(
-        { deck: currentDeck, currentIndex },
-        {
-          onNavigate: (newIndex) => {
-            speechSynthesis.cancel();
-            playCardFlipSound();
-            currentIndex = newIndex;
-            if (currentMode === 'spelling' || currentMode === 'translation') {
-              initializeTypingDisplay();
-            }
-            updateDisplay();
-            saveState();
-          },
-          onAutoSpeak: currentMode === 'spelling' ? speakSpanish : null
-        }
-      );
-    }
-
-    // Move to next card (for typing mode completion)
     // ============================================================
-    // NOTE: Now uses shared navigateToNext() from wordpack-logic.js (same as goToNext but no speech.cancel)
+    // DELETED: moveToNextCard()
     // ============================================================
-    function moveToNextCard() {
-      if (currentDeck.length === 0) return;
-
-      navigateToNext(
-        { deck: currentDeck, currentIndex },
-        {
-          onNavigate: (newIndex) => {
-            playCardFlipSound();
-            currentIndex = newIndex;
-            if (currentMode === 'spelling' || currentMode === 'translation') {
-              initializeTypingDisplay();
-            }
-            updateDisplay();
-            saveState();
-          },
-          onAutoSpeak: currentMode === 'spelling' ? speakSpanish : null
-        }
-      );
-    }
+    // This was a wrapper around window.navigateToNext() from wordpack-logic.js
+    // USE INSTEAD: window.navigateToNext(deckState, callbacks)
+    //
+    // Replace all calls:
+    //   OLD: moveToNextCard()
+    //   NEW: window.navigateToNext(
+    //          { deck: currentDeck, currentIndex },
+    //          {
+    //            onNavigate: (newIndex) => {
+    //              playCardFlipSound();
+    //              currentIndex = newIndex;
+    //              // Re-initialize typing, update display, save
+    //            }
+    //          }
+    //        );
+    // ============================================================
 
     // ============================================================
     // REMOVED FEATURE: Auto-pronounce on peek/flip removed per user request
     // User prefers manual control via pronounce button
     // ============================================================
 
-    // Flip card
-    function flipCard() {
-      // Don't stop speech - let it continue while viewing back
-      flashcard.classList.add('flipped');
-      isFlipped = true;
+    // ============================================================
+    // DELETED: flipCard()
+    // ============================================================
+    // This was game-specific card flip animation logic
+    // USE INSTEAD: Direct DOM manipulation or window.flipCard() if available
+    //
+    // Replace all calls:
+    //   OLD: flipCard()
+    //   NEW: flashcard.classList.add('flipped');
+    //        isFlipped = true;
+    // ============================================================
 
-      // Auto-pronounce removed - users can manually click pronounce button if needed
-    }
-
-    // Unflip card
+    // Unflip card - KEPT (game-specific animation)
     function unflipCard() {
       // Don't stop speech - let it continue while viewing front
       flashcard.classList.remove('flipped');
       isFlipped = false;
     }
 
-    // Remove current card (Got it!)
     // ============================================================
-    // NOTE: Now uses shared removeCard() from wordpack-logic.js
+    // DELETED: removeCurrentCard()
     // ============================================================
-    function removeCurrentCard() {
-      if (currentDeck.length <= 1) {
-        currentDeck = [];
-        updateDisplay();
-        saveState();
-
-        if (typeof updateDebugTable === 'function') {
-          updateDebugTable();
-        }
-        return;
-      }
-
-      // Track deck change for visual indicator
-      pendingDeckChange = -1;
-      updateDisplay();
-
-      // Show success stamp with ding sound
-      showSuccessStamp(() => {
-        const result = removeCard(currentDeck, currentIndex);
-        currentDeck = result.deck;
-        currentIndex = result.newIndex;
-
-        // Clear pending change
-        pendingDeckChange = 0;
-
-        // Play sound on page change
-        playCardFlipSound();
-
-        // Show next card
-        updateDisplay();
-        saveState();
-
-        // Update debug table
-        if (typeof updateDebugTable === 'function') {
-          updateDebugTable();
-        }
-      });
-    }
-
-    // Add extra copies of current card (Confused)
+    // This was a wrapper around window.removeCard() from wordpack-logic.js
+    // USE INSTEAD: window.removeCard(deck, index) with stamp logic
+    //
+    // Replace all calls:
+    //   OLD: removeCurrentCard()
+    //   NEW: if (currentDeck.length <= 1) {
+    //          currentDeck = [];
+    //          updateDisplay();
+    //          return;
+    //        }
+    //        pendingDeckChange = -1;
+    //        updateDisplay();
+    //        window.showSuccessStamp(removedStamp, () => {
+    //          const result = window.removeCard(currentDeck, currentIndex);
+    //          currentDeck = result.deck;
+    //          currentIndex = result.newIndex;
+    //          pendingDeckChange = 0;
+    //          playCardFlipSound();
+    //          updateDisplay();
+    //        });
     // ============================================================
-    // NOTE: Now uses shared addDuplicateCards() from wordpack-logic.js
-    // ============================================================
-    function addConfusedCards() {
-      if (currentDeck.length === 0) return;
-
-      // Track deck change for visual indicator (+2 cards)
-      pendingDeckChange += 2;
-      updateDisplay();
-
-      // Show failure stamp with buzz sound
-      showFailureStamp(() => {
-        const result = addDuplicateCards(currentDeck, currentDeck[currentIndex], 2);
-        currentDeck = result.deck;
-        currentIndex = result.newIndex;
-
-        // Clear pending change indicator
-        pendingDeckChange = 0;
-
-        // Play sound on page change
-        playCardFlipSound();
-
-        // Move to next card (already done by addDuplicateCards, but we want wrap-around)
-        currentIndex = (currentIndex + 1) % currentDeck.length;
-        updateDisplay();
-        saveState();
-      });
-    }
 
     // ============================================================
-    // GAME-SPECIFIC WRAPPER: Reset deck to original state
+    // DELETED: addConfusedCards()
     // ============================================================
-    // WHY THIS EXISTS: Wraps shared resetDeckToOriginal() with game-specific:
-    //   - Access to local variables (originalDeck, isFlipped, pendingDeckChange)
-    //   - Game-specific callbacks (initializeTypingDisplay, updateDisplay, saveState)
-    //   - Flash-card specific behaviors (reset flip state, auto-pronounce)
-    // REUSABILITY: 2/10 - Other games need different reset behaviors
+    // This was a wrapper around window.addDuplicateCards() from wordpack-logic.js
+    // USE INSTEAD: window.addDuplicateCards(deck, card, count) with stamp logic
+    //
+    // Replace all calls:
+    //   OLD: addConfusedCards()
+    //   NEW: if (currentDeck.length === 0) return;
+    //        pendingDeckChange += 2;
+    //        updateDisplay();
+    //        window.showFailureStamp(addedStamp, () => {
+    //          const result = window.addDuplicateCards(currentDeck, currentDeck[currentIndex], 2);
+    //          currentDeck = result.deck;
+    //          currentIndex = result.newIndex;
+    //          pendingDeckChange = 0;
+    //          playCardFlipSound();
+    //          currentIndex = (currentIndex + 1) % currentDeck.length;
+    //          updateDisplay();
+    //        });
     // ============================================================
-    function resetDeck() {
-      if (originalDeck.length === 0) return;
-      playButtonClickSound();
-
-      const result = resetDeckToOriginal(originalDeck, {
-        onReset: (newDeck) => {
-          currentDeck = newDeck;
-          currentIndex = 0;
-
-          // Reset typing state for typing modes
-          if (currentMode === 'spelling' || currentMode === 'translation') {
-            initializeTypingDisplay();
-          }
-
-          // Reset flip state
-          if (isFlipped) {
-            flashcard.classList.remove('flipped');
-            isFlipped = false;
-          }
-
-          // Reset deck change indicator
-          pendingDeckChange = 0;
-
-          updateDisplay();
-
-          // Auto-pronounce in spelling mode
-          if (currentMode === 'spelling' && currentDeck.length > 0) {
-            setTimeout(() => speakTargetWord(), 300);
-          }
-
-          saveState();
-        }
-      });
-
-      currentDeck = result.deck;
-      currentIndex = result.currentIndex;
-    }
 
     // ============================================================
-    // GAME-SPECIFIC WRAPPER: Speak the target word
+    // DELETED: resetDeck()
     // ============================================================
-    // WHY THIS EXISTS: Wraps shared speakWord() with game-specific:
-    //   - Access to local variables (currentDeck, currentIndex, currentVoice, currentSpeed)
-    //   - Gets current card's targetWord from deck
-    //   - Uses game's TTS settings
-    // REUSABILITY: 3/10 - Similar pattern across games but needs local context
+    // This was a wrapper around window.resetDeckToOriginal() from wordpack-logic.js
+    // USE INSTEAD: window.resetDeckToOriginal(originalDeck, callbacks)
+    //
+    // Replace all calls:
+    //   OLD: resetDeck()
+    //   NEW: if (originalDeck.length === 0) return;
+    //        playButtonClickSound();
+    //        const result = window.resetDeckToOriginal(originalDeck, {
+    //          onReset: (newDeck) => {
+    //            currentDeck = newDeck;
+    //            currentIndex = 0;
+    //            // Reset typing state, flip state, update display, save
+    //          }
+    //        });
     // ============================================================
-    function speakTargetWord() {
-      if (currentDeck.length === 0) return;
 
-      // Use shared function from wordpack-logic.js
-      window.speakWord(currentDeck[currentIndex].targetWord, {
-        languageCode: getTtsLanguageCode(),
-        voice: currentVoice,
-        speed: currentSpeed
-      });
-    }
+    // ============================================================
+    // DELETED: speakTargetWord()
+    // ============================================================
+    // This was a wrapper around window.speakWord() from wordpack-logic.js
+    // USE INSTEAD: window.speakWord(word, options)
+    //
+    // Replace all calls:
+    //   OLD: speakTargetWord()
+    //   NEW: if (currentDeck.length > 0) {
+    //          window.speakWord(currentDeck[currentIndex].targetWord, {
+    //            languageCode: getTtsLanguageCode(),
+    //            voice: currentVoice,
+    //            speed: currentSpeed
+    //          });
+    //        }
+    // ============================================================
 
     // Alias for backwards compatibility - some places may still call speakSpanish
     // ============================================================
@@ -3859,18 +3580,22 @@
     // ============================================================
 
     // ============================================================
-    // GAME-SPECIFIC WRAPPER: Set speech speed
+    // DELETED: setSpeed()
     // ============================================================
-    // WHY THIS EXISTS: Wraps shared setTTSSpeed() with game-specific:
-    //   - Access to local variable (speedBtns)
-    //   - Updates local currentSpeed variable
-    //   - Calls game's saveState()
-    // REUSABILITY: 3/10 - Similar pattern but needs local context
+    // This was a wrapper around window.setTTSSpeed() from wordpack-logic.js
+    // USE INSTEAD: window.setTTSSpeed(speed, buttons)
+    //
+    // Replace all calls:
+    //   OLD: setSpeed(speed, btn)
+    //   NEW: currentSpeed = window.setTTSSpeed(speed, Array.from(speedBtns));
+    //        window.saveState({
+    //          voiceURI: currentVoice?.voiceURI,
+    //          speed: currentSpeed,
+    //          wordpackKey: currentWordpackKey,
+    //          act: currentAct,
+    //          language: nativeLanguage
+    //        });
     // ============================================================
-    function setSpeed(speed, btn) {
-      currentSpeed = setTTSSpeed(speed, Array.from(speedBtns));
-      saveState();
-    }
 
     // ============================================================
     // PRONUNCIATION FUNCTIONS - Now in wordpack-logic.js
@@ -3947,85 +3672,29 @@
     // Usage: window.hideFeedback([feedbackFront, feedbackBack]);
     // ============================================================
 
-    // Start listening for pronunciation
-    function startListening(isFront = true) {
-      if (!recognition) {
-        alert('Speech recognition is not supported in your browser. Try Chrome or Edge.');
-        return;
-      }
-
-      if (currentDeck.length === 0) return;
-      if (isListening) return;
-
-      isListening = true;
-      // Use control bar mic button for listening animation
-      micBtnControl.classList.add('spelling');
-
-      recognition.onresult = (event) => {
-        const results = event.results[0];
-        let bestMatch = results[0].transcript;
-        let bestScore = 0;
-        let bestNormalizedExpected = '';
-        let bestNormalizedHeard = '';
-
-        // Get expected word based on current language
-        const card = currentDeck[currentIndex];
-        const targetLang = getTargetLanguage();
-        const expected = card[targetLang] || card.spanish || '';
-
-        // Get language code for speech recognition
-        const languageCode = getTtsLanguageCode() || 'en-US';
-
-        // Check all alternatives for best match
-        for (let i = 0; i < results.length; i++) {
-          const transcript = results[i].transcript;
-          const result = calculateSimilarity(expected, transcript, targetLang);
-          if (result.score > bestScore) {
-            bestScore = result.score;
-            bestMatch = transcript;
-            bestNormalizedExpected = result.normalizedExpected;
-            bestNormalizedHeard = result.normalizedHeard;
-          }
-        }
-
-        // Update pronunciation debug panel
-        const threshold = getSimilarityThreshold(expected);
-        updatePronunciationDebug({
-          languageCode,
-          expected,
-          heard: bestMatch,
-          normalizedExpected: bestNormalizedExpected,
-          normalizedHeard: bestNormalizedHeard,
-          score: bestScore,
-          threshold,
-          passed: bestScore >= (threshold * 100)
-        });
-
-        showFeedback(bestScore, bestMatch, expected, isFront);
-      };
-
-      recognition.onerror = (event) => {
-        console.error('Speech recognition error:', event.error);
-        isListening = false;
-        micBtnControl.classList.remove('spelling');
-
-        if (event.error === 'no-speech') {
-          const card = currentDeck[currentIndex];
-          const targetLang = getTargetLanguage();
-          const expected = card[targetLang] || card.spanish || '';
-          showFeedback(0, '(no speech detected)', expected, isFront);
-        } else if (event.error === 'not-allowed') {
-          alert('Microphone access denied. Please allow microphone access to use this feature.');
-        }
-      };
-
-      recognition.onend = () => {
-        isListening = false;
-        micBtnControl.classList.remove('spelling');
-      };
-
-      recognition.start();
-    }
+    // ============================================================
+    // DELETED: startListening()
+    // ============================================================
+    // This was a game-specific wrapper around speech recognition logic
+    // USE INSTEAD: window.startListeningForPronunciation() with proper callbacks
+    //
+    // This function had complex speech recognition setup with game-specific deck access.
+    // To replace it:
+    // 1. Use window.startListeningForPronunciation(options) for speech recognition
+    // 2. Pass game-specific options (expected word, callbacks, error handlers)
+    // 3. Handle feedback display with showFeedback()
+    //
+    // Example pattern:
+    //   window.startListeningForPronunciation({
+    //     recognition,
+    //     expectedWord: currentDeck[currentIndex].targetWord,
+    //     languageCode: getTtsLanguageCode(),
+    //     onResult: (score, heard, expected) => {
+    //       showFeedback(score, heard, expected, isFront);
+    //     },
+    //     onError: (error) => { /* handle error */ }
+    //   });
+    // ============================================================
 
     // ============================================================
     // NOTE: updateWordpackTitle() removed - use updateWordpackTitleDisplay() from wordpack-logic.js
@@ -4355,24 +4024,26 @@
     // ============================================================
     // The external updateDebugTable() can't access local variables, so we wrap it
 
-    // CRITICAL: Save reference to ORIGINAL function BEFORE overriding
-    const originalUpdateDebugTable = window.updateDebugTable || updateDebugTable;
-
-    function updateDebugTableWrapper() {
-      if (!window.DEBUG_MODE) return;
-
-      // Call the ORIGINAL function (not the wrapper!) with data from local scope
-      originalUpdateDebugTable({
-        deck: currentDeck,
-        targetLang: getTargetLanguage() || 'target',
-        nativeLang: nativeLanguage || 'native',
-        wordColumns: getWordColumns() || [],
-        translations: getTranslationsConfig() || {}
-      });
-    }
-
-    // Override the global updateDebugTable to use our wrapper
-    window.updateDebugTable = updateDebugTableWrapper;
+    // ============================================================
+    // DELETED: updateDebugTableWrapper()
+    // ============================================================
+    // This was a wrapper around window.updateDebugTable() from wordpack-logic.js
+    // USE INSTEAD: window.updateDebugTable(data) directly
+    //
+    // Replace all calls:
+    //   OLD: updateDebugTableWrapper()
+    //   NEW: if (window.DEBUG_MODE && window.updateDebugTable) {
+    //          window.updateDebugTable({
+    //            deck: currentDeck,
+    //            targetLang: getTargetLanguage() || 'target',
+    //            nativeLang: nativeLanguage || 'native',
+    //            wordColumns: getWordColumns() || [],
+    //            translations: getTranslationsConfig() || {}
+    //          });
+    //        }
+    //
+    // NOTE: The global override has been removed. Call updateDebugTable directly.
+    // ============================================================
 
     // ============================================================
     // DEBUG: Simulate Functions (called by buttons in debug table)
