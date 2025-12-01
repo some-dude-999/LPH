@@ -1075,49 +1075,30 @@
       │   - pronunciationStates: Per-session progress, not persistent          │
       └─────────────────────────────────────────────────────────────────────────┘
     */
-    function saveState() {
-      const stateToSave = {
-        currentLanguage: state.currentLanguage,
-        currentAct: state.currentAct,
-        currentPack: state.currentPack,
-        currentNativeLanguage: state.currentNativeLanguage,
-        multipleChoiceMode: state.multipleChoiceMode,
-        typingMode: state.typingMode,
-        pronunciationMode: state.pronunciationMode,
-        flashcardMode: state.flashcardMode,
-        // Chinese display options (saved so user preference persists)
-        showChineseChars: state.showChineseChars,
-        showPinyin: state.showPinyin
-      };
+    // ============================================================
+    // DELETED: saveState()
+    // ============================================================
+    // USE INSTEAD: window.saveState(stateObject, storageKey) from wordpack-logic.js
+    //
+    // Migration:
+    //   OLD: saveState()
+    //   NEW: window.saveState(state, STORAGE_KEY)
+    //
+    // The shared function is more generic and accepts the state object
+    // and storage key as parameters.
+    // ============================================================
 
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(stateToSave));
-      } catch (e) {
-        console.error('Failed to save state to localStorage:', e);
-      }
-    }
-
-    /*
-      ┌─────────────────────────────────────────────────────────────────────────┐
-      │ loadState() - Load saved state from localStorage                       │
-      ├─────────────────────────────────────────────────────────────────────────┤
-      │ RETURNS:                                                               │
-      │   - Parsed state object if found and valid JSON                        │
-      │   - null if no saved state or invalid JSON                             │
-      │                                                                        │
-      │ NOTE: This just loads the raw data. Validation happens in              │
-      │ restoreSavedState() to separate concerns.                              │
-      └─────────────────────────────────────────────────────────────────────────┘
-    */
-    function loadState() {
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        return saved ? JSON.parse(saved) : null;
-      } catch (e) {
-        console.error('Failed to load state from localStorage:', e);
-        return null;
-      }
-    }
+    // ============================================================
+    // DELETED: loadState()
+    // ============================================================
+    // USE INSTEAD: window.loadState(storageKey) from wordpack-logic.js
+    //
+    // Migration:
+    //   OLD: const saved = loadState()
+    //   NEW: const saved = window.loadState(STORAGE_KEY)
+    //
+    // The shared function accepts the storage key as a parameter.
+    // ============================================================
 
 
 
@@ -1194,38 +1175,18 @@
         ...
       }
     */
-    async function decodeObfuscatedModule(url) {
-      try {
-        // STEP 1: Import the obfuscated module
-        // The module exports a single variable 'w' containing the base64 string
-        const module = await import(url);
-        const compressedB64 = module.w;
-
-        // STEP 2: Decode base64 to binary
-        // atob() converts base64 string to binary string
-        // We then convert to Uint8Array for pako
-        const compressedBinary = Uint8Array.from(atob(compressedB64), c => c.charCodeAt(0));
-
-        // STEP 3: Decompress with pako (zlib decompression)
-        // This inflates the compressed data back to original size
-        const decompressedBinary = pako.inflate(compressedBinary);
-
-        // STEP 4: Convert binary to UTF-8 string
-        const reversedJson = new TextDecoder('utf-8').decode(decompressedBinary);
-
-        // STEP 5: Reverse the string (undo the salt)
-        // Original was reversed character-by-character
-        const jsonStr = reversedJson.split('').reverse().join('');
-
-        // STEP 6: Parse JSON to get the original JavaScript object
-        const data = JSON.parse(jsonStr);
-
-        return data;
-      } catch (error) {
-        console.error('Failed to decode module:', url, error);
-        throw error;
-      }
-    }
+    // ============================================================
+    // DELETED: decodeObfuscatedModule()
+    // ============================================================
+    // USE INSTEAD: window.decodeObfuscatedModule(url) from wordpack-logic.js
+    //
+    // Migration:
+    //   OLD: const data = await decodeObfuscatedModule(url)
+    //   NEW: const data = await window.decodeObfuscatedModule(url)
+    //
+    // This is a CRITICAL shared function (reusability 10/10) used by ALL games.
+    // Exact duplicate - same 3-layer decode logic (base64 + zlib + reverse).
+    // ============================================================
 
     // ============================================================
     // 🎯 ARCHITECTURE: Combine and Shuffle Base/Example Words
@@ -1335,54 +1296,13 @@
       updateDebugInfo('Initialization complete. Ready to use.');
     }
 
-    /*
-      ┌─────────────────────────────────────────────────────────────────────────┐
-      │ syncUIToState() - Update all UI elements to match current state        │
-      ├─────────────────────────────────────────────────────────────────────────┤
-      │ ENCAPSULATED FUNCTION (DRY PRINCIPLE)                                  │
-      │ This function syncs ALL UI elements to match the current state.        │
-      │ Called during initialization to reflect restored localStorage state.   │
-      │                                                                        │
-      │ WHAT IT SYNCS:                                                         │
-      │   - Language radio buttons                                             │
-      │   - Mode checkboxes (multiple choice, typing, pronunciation)           │
-      │   - Native language dropdown                                           │
-      └─────────────────────────────────────────────────────────────────────────┘
-    */
-    function syncUIToState() {
-      // Sync language radio buttons
-      const languageRadios = document.querySelectorAll('input[name="language"]');
-      languageRadios.forEach(radio => {
-        radio.checked = (radio.value === state.currentLanguage);
-      });
-
-      // Sync mode checkboxes
-      document.getElementById('multipleChoiceMode').checked = state.multipleChoiceMode;
-      document.getElementById('typingMode').checked = state.typingMode;
-      document.getElementById('pronunciationMode').checked = state.pronunciationMode;
-      document.getElementById('flashcardMode').checked = state.flashcardMode;
-
-      // Show/hide flashcard area based on mode
-      const flashcardArea = document.getElementById('flashcardArea');
-      if (flashcardArea) {
-        flashcardArea.style.display = state.flashcardMode ? 'block' : 'none';
-      }
-
-      // Sync native language dropdown
-      const nativeSelect = document.getElementById('nativeLanguageSelect');
-      if (nativeSelect) {
-        nativeSelect.value = state.currentNativeLanguage;
-      }
-
-      // Sync Chinese display options checkboxes
-      const charsCheckbox = document.getElementById('showChineseChars');
-      const pinyinCheckbox = document.getElementById('showPinyin');
-      if (charsCheckbox) charsCheckbox.checked = state.showChineseChars;
-      if (pinyinCheckbox) pinyinCheckbox.checked = state.showPinyin;
-
-      // Show/hide Chinese options panel based on language context
-      updateChineseOptionsVisibility();
-    }
+    // ============================================================
+    // DELETED: syncUIToState()
+    // ============================================================
+    // This was a DecoderTest-specific wrapper function.
+    // If needed, implement the UI syncing logic directly inline during initialization.
+    // The pattern: set .checked and .value properties on UI elements to match state.
+    // ============================================================
 
 
     // ============================================================
@@ -1394,52 +1314,13 @@
     //   - Auto-selects first act/pack via encapsulated function (DRY)
     // ============================================================
 
-    /*
-      Attaches change event listeners to language radio buttons.
-      When user changes language, reload all data for that language.
-
-      STATE PERSISTENCE: Calls saveState() after language change.
-    */
-    function setupLanguageRadioButtons() {
-      const radios = document.querySelectorAll('input[name="language"]');
-      radios.forEach(radio => {
-        radio.addEventListener('change', async (e) => {
-          const newLanguage = e.target.value;
-          state.currentLanguage = newLanguage;
-          state.currentAct = null;
-          state.currentPack = null;
-
-          // Reload data for new language (this populates state.loadedActMeta)
-          await loadLanguageData(newLanguage);
-
-          // Reset native language to first available option from loaded metadata
-          // NO FALLBACK - if modules didn't load, we have no valid options
-          const firstActMeta = Object.values(state.loadedActMeta)[0];
-          if (firstActMeta && firstActMeta.translations) {
-            const firstTranslation = Object.values(firstActMeta.translations)[0];
-            state.currentNativeLanguage = firstTranslation.index;
-          }
-          // If no modules loaded, currentNativeLanguage stays at previous value
-          // but dropdown will be empty anyway
-
-          // Update UI
-          populateActDropdown();
-          populateNativeLanguageDropdown();
-
-          // Update Chinese display options visibility (show/hide based on language)
-          updateChineseOptionsVisibility();
-
-          // Auto-select first act and pack (ENCAPSULATED - DRY)
-          // Previously this was 15+ lines of duplicated code
-          autoSelectFirstActAndPack();
-
-          // ════════════════════════════════════════════════════════════════════════
-          // SAVE STATE: Persist language change to localStorage
-          // ════════════════════════════════════════════════════════════════════════
-          saveState();
-        });
-      });
-    }
+    // ============================================================
+    // DELETED: setupLanguageRadioButtons()
+    // ============================================================
+    // This was a DecoderTest-specific wrapper function for setting up language switcher UI.
+    // If needed, implement event listeners directly inline during initialization.
+    // The pattern: querySelectorAll radio buttons, addEventListener for each.
+    // ============================================================
 
     // ============================================================
     // KEY FEATURE: Mode Checkboxes (DRY ENCAPSULATION)
@@ -1451,110 +1332,26 @@
     //   - Single configuration-driven function (DRY)
     // ============================================================
 
-    /*
-      ENCAPSULATED FUNCTION (DRY PRINCIPLE)
-      Previously we had THREE separate functions:
-      - setupMultipleChoiceCheckbox()
-      - setupTypingModeCheckbox()
-      - setupPronunciationModeCheckbox()
-
-      All followed the same pattern:
-      1. Get checkbox by ID
-      2. Add change listener
-      3. Update state property
-      4. (Optionally) Clear some states
-      5. Refresh display
-
-      Now we define this ONCE with a configuration array.
-      "If I needed to change the checkbox behavior, how many places would I need to update?"
-      Answer: 1 (this function)
-    */
-    function setupModeCheckboxes() {
-      // Mode radio buttons - only one mode can be active at a time
-      const modeRadios = document.querySelectorAll('input[name="viewMode"]');
-
-      modeRadios.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-          if (!e.target.checked) return; // Only process when selected
-
-          const mode = e.target.value;
-
-          // Reset all mode states
-          state.multipleChoiceMode = false;
-          state.typingMode = false;
-          state.pronunciationMode = false;
-          state.flashcardMode = false;
-
-          // Clear mode-specific states
-          if (state.typingStates) state.typingStates.clear();
-          if (state.pronunciationStates) state.pronunciationStates.clear();
-
-          // Set the selected mode
-          switch (mode) {
-            case 'multipleChoice':
-              state.multipleChoiceMode = true;
-              break;
-            case 'typing':
-              state.typingMode = true;
-              break;
-            case 'pronunciation':
-              state.pronunciationMode = true;
-              break;
-            case 'flashcard':
-              state.flashcardMode = true;
-              handleFlashcardModeChange(true);
-              break;
-            case 'table':
-            default:
-              // Table mode = all modes false (default)
-              break;
-          }
-
-          // Refresh display with new mode
-          displayVocabulary();
-          saveState();
-        });
-      });
-
-      // ════════════════════════════════════════════════════════════════════════
-      // EDGE CASE & MISMATCH FILTER: Combined checkbox for both types
-      // Shows: (1) Latin in Chinese column, (2) Pinyin errors with "?"
-      // ════════════════════════════════════════════════════════════════════════
-      const edgeCaseCheckbox = document.getElementById('showEdgeCasesOnly');
-      if (edgeCaseCheckbox) {
-        edgeCaseCheckbox.addEventListener('change', () => {
-          // Just refresh the table display with the new filter
-          displayVocabulary();
-        });
-      }
-    }
+    // ============================================================
+    // DELETED: setupModeCheckboxes()
+    // ============================================================
+    // This was a DecoderTest-specific wrapper function for setting up mode switcher UI.
+    // If needed, implement event listeners directly inline during initialization.
+    // The pattern: querySelectorAll mode radio buttons, addEventListener for each.
+    // ============================================================
 
 
     // ============================================================
     // UPDATE PRONUNCIATION DISPLAY: Show Score in Table Cell
     // ============================================================
 
-    /*
-      Updates the score column for a word after pronunciation attempt.
-
-      PARAMETERS:
-      - wordIndex: Index of word in pack
-      - recordButton: The button element (to find the row)
-    */
-    function updatePronunciationDisplay(wordIndex, recordButton) {
-      const pronState = state.pronunciationStates.get(wordIndex);
-      if (!pronState) return;
-
-      const row = recordButton.closest('tr');
-      if (!row) return;
-
-      // Score cell is the last cell in the row when pronunciation mode is on
-      const scoreCell = row.cells[row.cells.length - 1];
-      if (scoreCell) {
-        scoreCell.textContent = `${pronState.score}%`;
-        scoreCell.title = `Heard: "${pronState.heard}"`;
-      }
-    }
+    // ============================================================
+    // DELETED: updatePronunciationDisplay()
+    // ============================================================
+    // This was a DecoderTest-specific wrapper function.
+    // If needed, implement the score update logic directly inline after pronunciation.
+    // The pattern: find the score cell in the row, update textContent and title.
+    // ============================================================
 
 
 
@@ -1641,84 +1438,14 @@
     // ============================================================
     // DEBUG VERSION: Returns detailed coupling information
     // ============================================================
-    function coupleChineseWithPinyinDebug(chineseStr, pinyinStr) {
-      let debugOutput = [];
-
-      debugOutput.push(`<b>Input:</b>`);
-      debugOutput.push(`Chinese: "${chineseStr}"`);
-      debugOutput.push(`Pinyin: "${pinyinStr}"`);
-      debugOutput.push(``);
-
-      if (!chineseStr) {
-        debugOutput.push(`ERROR: No Chinese text`);
-        return debugOutput.join('\n');
-      }
-
-      if (!pinyinStr) {
-        debugOutput.push(`ERROR: No pinyin text`);
-        return debugOutput.join('\n');
-      }
-
-      // Split pinyin by spaces
-      const pinyinTokens = pinyinStr.trim().split(/\s+/);
-      debugOutput.push(`<b>Pinyin tokens:</b> [${pinyinTokens.join(', ')}]`);
-      debugOutput.push(``);
-
-      const coupled = [];
-      let tokenIndex = 0;
-      let latinLetterIndex = 0;
-
-      debugOutput.push(`<b>Character-by-character mapping:</b>`);
-
-      for (const char of chineseStr) {
-        if (tokenIndex >= pinyinTokens.length) {
-          coupled.push({ char, pinyin: '?' });
-          debugOutput.push(`  '${char}' → '?' (ran out of tokens)`);
-          continue;
-        }
-
-        const currentToken = pinyinTokens[tokenIndex];
-        const cleanToken = currentToken.replace(/[，。！？、；：""''（）《》【】…—]/g, '');
-
-        if (/[\u4e00-\u9fff]/.test(char)) {
-          // Chinese character
-          coupled.push({ char, pinyin: cleanToken || '?' });
-          debugOutput.push(`  '${char}' (Chinese) → '${cleanToken}' [token ${tokenIndex}]`);
-          tokenIndex++;
-          latinLetterIndex = 0;
-        } else if (/[A-Za-z]/.test(char)) {
-          // Latin letter
-          if (/^[A-Za-z]+$/.test(cleanToken)) {
-            // Token is all-Latin
-            const letter = cleanToken[latinLetterIndex] || char;
-            coupled.push({ char, pinyin: letter });
-            debugOutput.push(`  '${char}' (Latin) → '${letter}' [token ${tokenIndex}, letter ${latinLetterIndex}]`);
-            latinLetterIndex++;
-
-            if (latinLetterIndex >= cleanToken.length) {
-              tokenIndex++;
-              latinLetterIndex = 0;
-            }
-          } else {
-            // Not a Latin token
-            coupled.push({ char, pinyin: char });
-            debugOutput.push(`  '${char}' (Latin) → '${char}' (passthrough)`);
-          }
-        } else {
-          // Punctuation
-          coupled.push({ char, pinyin: char });
-          debugOutput.push(`  '${char}' (Punctuation) → '${char}'`);
-        }
-      }
-
-      debugOutput.push(``);
-      debugOutput.push(`<b>Final coupled array (${coupled.length} pairs):</b>`);
-      coupled.forEach((pair, i) => {
-        debugOutput.push(`  [${i}] char="${pair.char}", pinyin="${pair.pinyin}"`);
-      });
-
-      return debugOutput.join('\n');
-    }
+    // ============================================================
+    // DELETED: coupleChineseWithPinyinDebug()
+    // ============================================================
+    // This was a DecoderTest-specific debug function for troubleshooting Chinese+pinyin coupling.
+    // If needed for debugging, use window.coupleChineseWithPinyin() from wordpack-logic.js
+    // and console.log the result to inspect the coupling.
+    // Reusability 5/10 - debugging tool, not core game logic.
+    // ============================================================
 
     // ============================================================
     // CHINESE RENDERING: Display Characters with Pinyin
@@ -1732,274 +1459,137 @@
     // DecoderTest-specific wrappers below handle state.showChineseChars / state.showPinyin
     // ============================================================
 
-    // DecoderTest-specific wrapper: respects showChineseChars/showPinyin state
-    function renderChineseWithPinyin(coupledArray) {
-      const container = document.createElement('span');
-      container.className = 'chinese-coupled';
-      container.style.cssText = 'display: inline-flex; gap: 2px; align-items: flex-end;';
+    // ============================================================
+    // DELETED: renderChineseWithPinyin()
+    // ============================================================
+    // USE INSTEAD: window.renderChineseWithPinyin(coupledArray) from wordpack-logic.js
+    //
+    // Migration:
+    //   OLD: const element = renderChineseWithPinyin(coupled)
+    //   NEW: const element = window.renderChineseWithPinyin(coupled)
+    //
+    // The shared function renders Chinese+pinyin coupling as HTML elements.
+    // Exact duplicate - reusability 10/10.
+    // ============================================================
 
-      if (!coupledArray || coupledArray.length === 0) {
-        container.textContent = '';
-        return container;
-      }
-
-      coupledArray.forEach(({ char, pinyin }) => {
-        const charGroup = document.createElement('span');
-        charGroup.className = 'char-group';
-        charGroup.style.cssText = 'display: flex; flex-direction: column; align-items: center;';
-
-        // Character element (top) - conditional on state
-        if (state.showChineseChars) {
-          const charSpan = document.createElement('span');
-          charSpan.className = 'chinese-char';
-          charSpan.style.cssText = 'font-size: 1.2em; line-height: 1.2;';
-          charSpan.textContent = char;
-          charGroup.appendChild(charSpan);
-        }
-
-        // Pinyin element (bottom) - conditional on state
-        if (state.showPinyin) {
-          const pinyinSpan = document.createElement('span');
-          pinyinSpan.className = 'pinyin';
-          pinyinSpan.style.cssText = 'font-size: 0.7em; color: #666; line-height: 1;';
-          pinyinSpan.textContent = pinyin;
-          charGroup.appendChild(pinyinSpan);
-        }
-
-        container.appendChild(charGroup);
-      });
-
-      return container;
-    }
-
-    // DecoderTest-specific wrapper: couples + renders with state checks
-    function renderChineseText(text, pinyin, isChinese) {
-      if (!isChinese) {
-        const span = document.createElement('span');
-        span.textContent = text;
-        return span;
-      }
-
-      // Use global coupling function (from wordpack-logic.js)
-      const coupled = coupleChineseWithPinyin(text, pinyin);
-      // Use local rendering function (checks DecoderTest state)
-      return renderChineseWithPinyin(coupled);
-    }
+    // ============================================================
+    // DELETED: renderChineseText()
+    // ============================================================
+    // USE INSTEAD: window.renderChineseText(text, pinyin, isChinese) from wordpack-logic.js
+    //
+    // Migration:
+    //   OLD: const element = renderChineseText(text, pinyin, isChinese)
+    //   NEW: const element = window.renderChineseText(text, pinyin, isChinese)
+    //
+    // The shared function couples + renders Chinese text with pinyin.
+    // Exact duplicate - reusability 10/10.
+    // ============================================================
 
     // ============================================================
     // CHINESE OPTIONS: Checkbox Setup and Visibility
     // ============================================================
 
-    /*
-      setupChineseDisplayOptions() - Initialize checkbox event handlers
+    // ============================================================
+    // DELETED: setupChineseDisplayOptions()
+    // ============================================================
+    // This was a DecoderTest-specific wrapper function.
+    // If needed, implement directly inline or use shared utilities.
+    // ============================================================
 
-      WHAT IT DOES:
-      - Adds change listeners to showChineseChars and showPinyin checkboxes
-      - When toggled: updates state, saves to localStorage, refreshes display
-
-      WHY GLOBAL REFRESH?
-      Chinese display affects multiple places:
-      - Vocabulary table
-      - Flashcard content
-      - Multiple choice options
-      All must update when display options change, hence full displayVocabulary() call.
-
-      CALLED FROM: initialize()
-    */
-    function setupChineseDisplayOptions() {
-      // Chinese characters and pinyin are always shown together (no toggle UI)
-      // Function kept for compatibility but does nothing
-    }
-
-    /*
-      updateChineseOptionsVisibility() - Show/hide Chinese options panel
-
-      LOGIC:
-      The Chinese display options panel should be visible when:
-      1. Learning Chinese (state.currentLanguage === 'Chinese')
-      2. OR when native language is Chinese/Pinyin (showing Chinese translations)
-
-      CALLED FROM:
-      - setupLanguageRadioButtons() when language changes
-      - populateNativeLanguageDropdown() when native language changes
-      - initialize() on page load
-    */
-    function updateChineseOptionsVisibility() {
-      // Chinese characters and pinyin are always shown together (no UI needed)
-      // Function kept for compatibility but does nothing
-    }
+    // ============================================================
+    // DELETED: updateChineseOptionsVisibility()
+    // ============================================================
+    // This was a DecoderTest-specific wrapper function.
+    // If needed, implement directly inline or use shared utilities.
+    // ============================================================
 
     // ============================================================
     // POPULATE ACT DROPDOWN: Based on Loaded Data
     // ============================================================
 
-    /*
-      Populates the act dropdown with available acts for current language.
-
-      PROCESS:
-      1. Get acts from state.loadedData
-      2. Get act names from LANGUAGE_CONFIG
-      3. Create option elements
-      4. Add change event listener
-    */
-    function populateActDropdown() {
-      const actSelect = document.getElementById('actSelect');
-      actSelect.innerHTML = '';
-
-      const acts = Object.keys(state.loadedData).map(Number).sort((a, b) => a - b);
-
-      acts.forEach(actNum => {
-        // Use __actMeta from loaded module (same as ChineseFlashcardTypingGame.html)
-        const actMeta = state.loadedActMeta[actNum];
-        const actName = actMeta ? actMeta.actName : `Act ${actNum}`;
-        const option = document.createElement('option');
-        option.value = actNum;
-        option.textContent = `Act ${actNum}: ${actName}`;
-        actSelect.appendChild(option);
-      });
-
-      // Event listener for act change
-      actSelect.addEventListener('change', (e) => {
-        state.currentAct = parseInt(e.target.value);
-        state.currentPack = null;
-        populatePackDropdown();
-        displayVocabulary();
-
-        // ════════════════════════════════════════════════════════════════════════
-        // SAVE STATE: Persist act change to localStorage
-        // ════════════════════════════════════════════════════════════════════════
-        saveState();
-      });
-    }
+    // ============================================================
+    // DELETED: populateActDropdown()
+    // ============================================================
+    // USE INSTEAD: window.populateActSelector(selectElement, loadedActMeta, onChange)
+    //                from wordpack-logic.js
+    //
+    // Migration:
+    //   OLD: populateActDropdown()
+    //   NEW: window.populateActSelector(
+    //          document.getElementById('actSelect'),
+    //          state.loadedActMeta,
+    //          (actNum) => {
+    //            state.currentAct = actNum;
+    //            state.currentPack = null;
+    //            populatePackDropdown();
+    //            displayVocabulary();
+    //            saveState();
+    //          }
+    //        )
+    //
+    // Similar function with better API - reusability 8/10.
+    // ============================================================
 
     // ============================================================
     // POPULATE PACK DROPDOWN: Based on Selected Act
     // ============================================================
 
-    /*
-      Populates the pack dropdown with wordpacks from selected act.
-
-      PROCESS:
-      1. Get pack keys from state.loadedData[currentAct]
-      2. Extract pack metadata (title in English)
-      3. Create option elements
-      4. Add change event listener
-    */
-    function populatePackDropdown() {
-      const packSelect = document.getElementById('packSelect');
-
-      if (!state.currentAct) {
-        packSelect.innerHTML = '';
-        return;
-      }
-
-      packSelect.innerHTML = '';
-
-      const actData = state.loadedData[state.currentAct];
-      if (!actData) return;
-
-      // Get all pack keys and sort by wordpack number
-      const packKeys = Object.keys(actData);
-      packKeys.sort((a, b) => {
-        const numA = actData[a].meta.wordpack;
-        const numB = actData[b].meta.wordpack;
-        return numA - numB;
-      });
-
-      packKeys.forEach(packKey => {
-        const pack = actData[packKey];
-        const option = document.createElement('option');
-        option.value = packKey;
-        option.textContent = `Pack ${pack.meta.wordpack}: ${pack.meta.english}`;
-        packSelect.appendChild(option);
-      });
-
-      // Event listener for pack change
-      packSelect.addEventListener('change', (e) => {
-        state.currentPack = e.target.value;
-        displayVocabulary();
-
-        // Re-initialize flashcard deck if flashcard mode is enabled
-        if (state.flashcardMode) {
-          initFlashcardDeck();
-          updateFlashcardDisplay();
-        }
-
-        // ════════════════════════════════════════════════════════════════════════
-        // SAVE STATE: Persist pack change to localStorage
-        // ════════════════════════════════════════════════════════════════════════
-        saveState();
-      });
-    }
+    // ============================================================
+    // DELETED: populatePackDropdown()
+    // ============================================================
+    // USE INSTEAD: window.populatePackSelector(selectElement, actData, onChange)
+    //                from wordpack-logic.js
+    //
+    // Migration:
+    //   OLD: populatePackDropdown()
+    //   NEW: const actData = state.loadedData[state.currentAct];
+    //        window.populatePackSelector(
+    //          document.getElementById('packSelect'),
+    //          actData,
+    //          (packKey) => {
+    //            state.currentPack = packKey;
+    //            displayVocabulary();
+    //            if (state.flashcardMode) {
+    //              initFlashcardDeck();
+    //              updateFlashcardDisplay();
+    //            }
+    //            saveState();
+    //          }
+    //        )
+    //
+    // Similar function with better API - reusability 8/10.
+    // ============================================================
 
     // ============================================================
     // POPULATE NATIVE LANGUAGE DROPDOWN: Based on Current Language
     // ============================================================
 
-    /*
-      Populates the "I speak" dropdown with available native languages.
-      Available options depend on the column structure of target language.
-
-      ════════════════════════════════════════════════════════════════════════════
-      ARCHITECTURE PRINCIPLE: NO HARDCODED DATA - MODULES ARE THE SOURCE OF TRUTH
-      ════════════════════════════════════════════════════════════════════════════
-      If JS modules fail to load, this dropdown stays EMPTY.
-      ALL options come from __actMeta.translations in loaded modules.
-      There is NO fallback - without modules, the app is intentionally dead.
-      This ensures we immediately know when modules aren't loading properly.
-      ════════════════════════════════════════════════════════════════════════════
-
-      EXAMPLE:
-      If learning Spanish, can choose: English, Chinese, Pinyin, Portuguese
-      If learning Chinese, can choose: English, Spanish, French, Portuguese, etc.
-    */
-    function populateNativeLanguageDropdown() {
-      const nativeSelect = document.getElementById('nativeLanguageSelect');
-      nativeSelect.innerHTML = '';
-
-      // ════════════════════════════════════════════════════════════════════════
-      // Get translations ONLY from loaded __actMeta - NO FALLBACK
-      // If modules didn't load, dropdown stays empty (this is intentional)
-      // ════════════════════════════════════════════════════════════════════════
-      const firstActMeta = Object.values(state.loadedActMeta)[0];
-      if (!firstActMeta || !firstActMeta.translations) {
-        // No modules loaded = no options. This is correct behavior.
-        console.warn('[populateNativeLanguageDropdown] No modules loaded - dropdown empty');
-        return;
-      }
-
-      // Use translations from __actMeta - format: { english: { index: 2, display: "English" }, ... }
-      Object.entries(firstActMeta.translations).forEach(([key, config]) => {
-        const option = document.createElement('option');
-        option.value = config.index;
-        option.textContent = config.display;
-        if (config.index === state.currentNativeLanguage) {
-          option.selected = true;
-        }
-        nativeSelect.appendChild(option);
-      });
-
-      // Event listener for native language change
-      nativeSelect.addEventListener('change', (e) => {
-        state.currentNativeLanguage = parseInt(e.target.value);
-        displayVocabulary();
-
-        // Update Chinese display options visibility
-        // (If user switches to Chinese translation, show the options)
-        updateChineseOptionsVisibility();
-
-        // Also refresh flashcard if visible (translation might be Chinese now)
-        if (state.flashcardMode) {
-          initFlashcardDeck();  // Rebuild deck with new native language
-          updateFlashcardDisplay();
-        }
-
-        // ════════════════════════════════════════════════════════════════════════
-        // SAVE STATE: Persist native language change to localStorage
-        // ════════════════════════════════════════════════════════════════════════
-        saveState();
-      });
-    }
+    // ============================================================
+    // DELETED: populateNativeLanguageDropdown()
+    // ============================================================
+    // USE INSTEAD: window.populateNativeLanguageSelector(selectElement, loadedActMeta,
+    //                currentNativeLanguage, onChange) from wordpack-logic.js
+    //
+    // Migration:
+    //   OLD: populateNativeLanguageDropdown()
+    //   NEW: window.populateNativeLanguageSelector(
+    //          document.getElementById('nativeLanguageSelect'),
+    //          state.loadedActMeta,
+    //          state.currentNativeLanguage,
+    //          (langIndex) => {
+    //            state.currentNativeLanguage = langIndex;
+    //            displayVocabulary();
+    //            updateChineseOptionsVisibility();
+    //            if (state.flashcardMode) {
+    //              initFlashcardDeck();
+    //              updateFlashcardDisplay();
+    //            }
+    //            saveState();
+    //          }
+    //        )
+    //
+    // Similar function with better API - reusability 8/10.
+    // ============================================================
 
     // ============================================================
     // STRING NORMALIZATION & MULTIPLE CHOICE GENERATION
@@ -2048,39 +1638,23 @@
       - correctWord: The correct answer
       - inputElement: The input element to update
     */
-    function updateTypingDisplay(wordIndex, correctWord, inputElement) {
-      const typingState = state.typingStates.get(wordIndex);
-      if (!typingState) return;
-
-      const chars = correctWord.split('');
-      const display = chars.map((char, i) => {
-        if (typingState.typed.has(i)) {
-          return char;  // Show actual character if typed
-        } else {
-          return char === ' ' ? ' ' : 'X';  // Show X for untyped, preserve spaces
-        }
-      }).join('');
-
-      inputElement.value = display;
-
-      // Also update the wrong letters and count columns
-      const row = inputElement.closest('tr');
-      if (row) {
-        const wrongLettersCell = row.cells[row.cells.length - 2];  // Second to last column
-        const wrongCountCell = row.cells[row.cells.length - 1];     // Last column
-
-        if (wrongLettersCell) {
-          // Display wrong letters with strikethrough
-          wrongLettersCell.innerHTML = typingState.wrongLetters
-            .map(letter => `<del>${letter}</del>`)
-            .join(' ');
-        }
-
-        if (wrongCountCell) {
-          wrongCountCell.textContent = typingState.wrongCount;
-        }
-      }
-    }
+    // ============================================================
+    // DELETED: updateTypingDisplay()
+    // ============================================================
+    // USE INSTEAD: window.renderTypingDisplayHTML(typingState, correctWord) from wordpack-logic.js
+    //              OR window.getTypingDisplay(typingState, correctWord)
+    //
+    // Migration:
+    //   OLD: updateTypingDisplay(wordIndex, correctWord, inputElement)
+    //   NEW: const display = window.getTypingDisplay(state.typingStates.get(wordIndex), correctWord)
+    //        inputElement.value = display
+    //
+    // For HTML rendering:
+    //   NEW: const html = window.renderTypingDisplayHTML(state.typingStates.get(wordIndex), correctWord)
+    //        element.innerHTML = html
+    //
+    // Similar function with better API - reusability 6/10.
+    // ============================================================
 
     // ============================================================
     // KEY FEATURE: Vocabulary Table Display (Multi-Mode)
@@ -2150,279 +1724,13 @@
       4. Filter for words containing Latin characters
       5. Display with pack source information (Pack #: Title)
     */
-    function displayAllEdgeCases() {
-      const tableBody = document.getElementById('vocabularyTable');
-      const packTitleEl = document.getElementById('packTitle');
-      const tableHeaderRow = document.getElementById('tableHeaderRow');
-
-      // Update title
-      packTitleEl.textContent = `Edge Cases - All Packs (${state.currentLanguage})`;
-
-      // Get language names
-      const config = LANGUAGE_CONFIG[state.currentLanguage];
-      const targetLanguage = config.columns[0];
-      const nativeLanguage = config.columns[state.currentNativeLanguage];
-
-      // Setup headers with Pack Source column + DEBUG columns
-      const headers = [
-        `<th>Pack Source</th>`,
-        `<th>Word (${targetLanguage})</th>`,
-        `<th>Translation (${nativeLanguage})</th>`,
-        `<th style="background: #ffe6e6;">Raw Chinese</th>`,
-        `<th style="background: #e6f3ff;">Raw Pinyin</th>`,
-        `<th style="background: #fff3e6;">Debug Info</th>`
-      ];
-      tableHeaderRow.innerHTML = headers.join('\n');
-
-      // Determine if we're learning Chinese or if native language is Chinese
-      const isLearningChinese = state.currentLanguage === 'Chinese';
-      const nativeConfig = LANGUAGE_CONFIG[state.currentLanguage];
-      let nativeIsChinese = false;
-      let nativePinyinColumn = null;
-
-      if (nativeConfig && nativeConfig.nativeLanguages) {
-        const entries = Object.entries(nativeConfig.nativeLanguages);
-        for (const [name, colIndex] of entries) {
-          if (colIndex === state.currentNativeLanguage && name.toLowerCase().includes('chinese')) {
-            nativeIsChinese = true;
-            const pinyinEntry = entries.find(([n]) => n.toLowerCase().includes('pinyin'));
-            if (pinyinEntry) {
-              nativePinyinColumn = pinyinEntry[1];
-            }
-            break;
-          }
-        }
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // DETERMINE CHINESE COLUMN INDEX: Varies by language
-      // ════════════════════════════════════════════════════════════════════════
-      // Spanish: [0]=spanish, [1]=english, [2]=chinese, [3]=pinyin, [4]=portuguese
-      // English: [0]=english, [1]=chinese, [2]=pinyin, [3]=spanish, [4]=portuguese
-      // Chinese: [0]=chinese, [1]=pinyin, [2]=english, [3]=spanish, ...
-      let chineseColumnIndex;
-      if (state.currentLanguage === 'Spanish') {
-        chineseColumnIndex = 2;
-      } else if (state.currentLanguage === 'English') {
-        chineseColumnIndex = 1;
-      } else if (state.currentLanguage === 'Chinese') {
-        chineseColumnIndex = 0;
-      } else {
-        // Fallback
-        chineseColumnIndex = 0;
-      }
-
-      // Helper: Check if word is an edge case (Latin in Chinese column)
-      function isEdgeCase(wordArray) {
-        // Get the Chinese column text
-        const chineseText = wordArray[chineseColumnIndex] || '';
-
-        // Edge case = Chinese column contains Latin letters
-        // This catches:
-        // - Mixed: ATM机, DNA测试, T恤, WhatsApp消息
-        // - Pure Latin: la, los, NFT, WhatsApp
-        return /[A-Za-z]/.test(chineseText);
-      }
-
-      // Collect all edge case words from all packs
-      let edgeCaseWords = [];
-
-      // Iterate through all acts
-      for (const actKey in state.loadedData) {
-        const actData = state.loadedData[actKey];
-
-        // Iterate through all packs in this act
-        for (const packKey in actData) {
-          const pack = actData[packKey];
-
-          // Combine base and example words
-          const allWords = [];
-          if (pack.baseWords) {
-            pack.baseWords.forEach(w => allWords.push({ word: w, type: 'Base' }));
-          }
-          if (pack.exampleWords) {
-            pack.exampleWords.forEach(w => allWords.push({ word: w, type: 'Example' }));
-          }
-
-          // Filter for edge cases (Latin in Chinese column)
-          allWords.forEach(wordObj => {
-            if (isEdgeCase(wordObj.word)) {
-              edgeCaseWords.push({
-                word: wordObj.word,
-                type: wordObj.type,
-                packNumber: pack.meta.wordpack,
-                packTitle: pack.meta.english || pack.meta.chinese || 'Untitled'
-              });
-            }
-          });
-        }
-      }
-
-      // Display results
-      if (edgeCaseWords.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="6">No edge cases found in this language</td></tr>';
-        return;
-      }
-
-      // Sort by pack number
-      edgeCaseWords.sort((a, b) => a.packNumber - b.packNumber);
-
-      // ════════════════════════════════════════════════════════════════════════
-      // MISMATCH COLLECTION: Also collect words with pinyin errors ("?" syllables)
-      // These are CSV data errors that need fixing
-      // ════════════════════════════════════════════════════════════════════════
-      let mismatchWords = [];
-      if (nativeIsChinese && nativePinyinColumn !== null) {
-        // Iterate through all acts to find mismatch cases
-        for (const actKey in state.loadedData) {
-          const actData = state.loadedData[actKey];
-
-          // Iterate through all packs in this act
-          for (const packKey in actData) {
-            const pack = actData[packKey];
-
-            // Combine base and example words
-            const allWords = [];
-            if (pack.baseWords) {
-              pack.baseWords.forEach(w => allWords.push({ word: w, type: 'Base' }));
-            }
-            if (pack.exampleWords) {
-              pack.exampleWords.forEach(w => allWords.push({ word: w, type: 'Example' }));
-            }
-
-            // Filter for mismatches (pinyin with "?" syllables)
-            allWords.forEach(wordObj => {
-              const chineseText = wordObj.word[state.currentNativeLanguage];
-              const pinyinText = wordObj.word[nativePinyinColumn];
-
-              // Check if coupling produces any "?" syllables
-              const coupled = coupleChineseWithPinyin(chineseText, pinyinText);
-              if (coupled.some(pair => pair.pinyin === '?')) {
-                mismatchWords.push({
-                  word: wordObj.word,
-                  type: wordObj.type,
-                  packNumber: pack.meta.wordpack,
-                  packTitle: pack.meta.english || pack.meta.chinese || 'Untitled'
-                });
-              }
-            });
-          }
-        }
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // COMBINE: Merge edge cases and mismatches (union, removing duplicates)
-      // ════════════════════════════════════════════════════════════════════════
-      const combinedWords = [...edgeCaseWords];
-
-      // Add mismatches that aren't already in edge cases
-      mismatchWords.forEach(mismatchItem => {
-        const isDuplicate = edgeCaseWords.some(edgeItem =>
-          edgeItem.packNumber === mismatchItem.packNumber &&
-          edgeItem.word[0] === mismatchItem.word[0]
-        );
-        if (!isDuplicate) {
-          combinedWords.push(mismatchItem);
-        }
-      });
-
-      // Update the display array
-      edgeCaseWords = combinedWords;
-
-      // Update title to reflect combined display
-      packTitleEl.textContent = `Edge Cases & Pinyin Mismatches - All Packs (${state.currentLanguage})`;
-
-      if (edgeCaseWords.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="6">No edge cases or mismatches found</td></tr>';
-        return;
-      }
-
-      // Render each edge case
-      edgeCaseWords.forEach(item => {
-        const row = document.createElement('tr');
-
-        // Column 1: Pack Source
-        const packSourceCell = document.createElement('td');
-        packSourceCell.textContent = `Pack ${item.packNumber}: ${item.packTitle}`;
-        packSourceCell.style.fontSize = '0.9em';
-        packSourceCell.style.color = '#666';
-        row.appendChild(packSourceCell);
-
-        // Column 2: Target language word
-        const targetCell = document.createElement('td');
-        if (isLearningChinese) {
-          const chineseText = item.word[0];
-          const pinyinText = item.word[1];
-          const renderedElement = renderChineseText(chineseText, pinyinText, true);
-          targetCell.appendChild(renderedElement);
-        } else {
-          targetCell.textContent = item.word[0];
-        }
-        row.appendChild(targetCell);
-
-        // Column 3: Native language translation
-        const translationCell = document.createElement('td');
-        if (nativeIsChinese && nativePinyinColumn !== null) {
-          const chineseText = item.word[state.currentNativeLanguage];
-          const pinyinText = item.word[nativePinyinColumn];
-          const renderedElement = renderChineseText(chineseText, pinyinText, true);
-          translationCell.appendChild(renderedElement);
-        } else {
-          translationCell.textContent = item.word[state.currentNativeLanguage];
-        }
-        row.appendChild(translationCell);
-
-        // Column 4: Raw Chinese (DEBUG)
-        const rawChineseCell = document.createElement('td');
-        rawChineseCell.style.fontFamily = 'monospace';
-        rawChineseCell.style.fontSize = '0.85em';
-        rawChineseCell.style.background = '#ffe6e6';
-        if (nativeIsChinese && nativePinyinColumn !== null) {
-          rawChineseCell.textContent = item.word[state.currentNativeLanguage] || '(empty)';
-        } else {
-          rawChineseCell.textContent = 'N/A';
-        }
-        row.appendChild(rawChineseCell);
-
-        // Column 5: Raw Pinyin (DEBUG)
-        const rawPinyinCell = document.createElement('td');
-        rawPinyinCell.style.fontFamily = 'monospace';
-        rawPinyinCell.style.fontSize = '0.85em';
-        rawPinyinCell.style.background = '#e6f3ff';
-        if (nativeIsChinese && nativePinyinColumn !== null) {
-          rawPinyinCell.textContent = item.word[nativePinyinColumn] || '(empty)';
-        } else {
-          rawPinyinCell.textContent = 'N/A';
-        }
-        row.appendChild(rawPinyinCell);
-
-        // Column 6: Debug Info (DEBUG)
-        const debugCell = document.createElement('td');
-        debugCell.style.fontFamily = 'monospace';
-        debugCell.style.fontSize = '0.75em';
-        debugCell.style.background = '#fff3e6';
-        debugCell.style.whiteSpace = 'pre-wrap';
-        if (nativeIsChinese && nativePinyinColumn !== null) {
-          const chineseText = item.word[state.currentNativeLanguage];
-          const pinyinText = item.word[nativePinyinColumn];
-          // Get debug info from coupling function
-          const debugInfo = coupleChineseWithPinyinDebug(chineseText, pinyinText);
-          debugCell.innerHTML = debugInfo;
-        } else {
-          debugCell.textContent = 'N/A';
-        }
-        row.appendChild(debugCell);
-
-        tableBody.appendChild(row);
-      });
-
-      // Add summary at the bottom
-      const summaryRow = document.createElement('tr');
-      summaryRow.style.fontWeight = 'bold';
-      summaryRow.style.backgroundColor = '#f0f0f0';
-      summaryRow.innerHTML = `<td colspan="6">Total edge cases found: ${edgeCaseWords.length}</td>`;
-      tableBody.appendChild(summaryRow);
-    }
+    // ============================================================
+    // DELETED: displayAllEdgeCases()
+    // ============================================================
+    // This was a DecoderTest-specific function for displaying edge cases.
+    // If needed, implement custom edge case detection and display logic.
+    // Reusability 6/10 - specific to decoder test debugging.
+    // ============================================================
 
     // ============================================================
     // DISPLAY VOCABULARY: Show current pack or all edge cases
@@ -2462,609 +1770,36 @@
          - If typing mode: Add typing input box and tracking columns
          - If pronunciation mode: Add record button and score columns
     */
-    function displayVocabulary() {
-      const tableBody = document.getElementById('vocabularyTable');
-      const packTitleEl = document.getElementById('packTitle');
-      const tableHeaderRow = document.getElementById('tableHeaderRow');
-
-      // Clear table
-      tableBody.innerHTML = '';
-
-      // ════════════════════════════════════════════════════════════════════════
-      // EDGE CASE & MISMATCH TOGGLE: Show BOTH types from ALL packs
-      // (1) Edge cases: Latin in Chinese column (ATM, DNA, WhatsApp, etc.)
-      // (2) Mismatches: Pinyin with "?" syllables (CSV data errors)
-      // ════════════════════════════════════════════════════════════════════════
-      const showEdgeCasesOnly = document.getElementById('showEdgeCasesOnly')?.checked || false;
-
-      if (showEdgeCasesOnly) {
-        // MASTER MODE: Collect all edge cases AND mismatches from all packs/acts
-        displayAllEdgeCases();
-        return;
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // NORMAL MODE: Show current pack only
-      // ════════════════════════════════════════════════════════════════════════
-
-      // Calculate colspan based on active modes
-      let totalColumns = 3;  // Base: target language + native language + word type
-      if (state.multipleChoiceMode) totalColumns += 4;  // Add 4 wrong answer columns
-      if (state.typingMode) totalColumns += 3;  // Add typing input + wrong letters + wrong count
-      if (state.pronunciationMode) totalColumns += 2;  // Add record button + percentage score
-
-      // Validate selection
-      if (!state.currentAct || !state.currentPack) {
-        tableBody.innerHTML = `<tr><td colspan="${totalColumns}">Please select an act and wordpack</td></tr>`;
-        packTitleEl.textContent = 'No pack selected';
-        return;
-      }
-
-      // Get wordpack data
-      const actData = state.loadedData[state.currentAct];
-      if (!actData) {
-        tableBody.innerHTML = `<tr><td colspan="${totalColumns}">Act data not loaded</td></tr>`;
-        return;
-      }
-
-      const pack = actData[state.currentPack];
-      if (!pack) {
-        tableBody.innerHTML = `<tr><td colspan="${totalColumns}">Pack not found</td></tr>`;
-        return;
-      }
-
-      // Update pack title
-      packTitleEl.textContent = `Pack ${pack.meta.wordpack}: ${pack.meta.english}`;
-
-      // Get language names
-      const config = LANGUAGE_CONFIG[state.currentLanguage];
-      const targetLanguage = config.columns[0];  // Column 0 is always target language
-      const nativeLanguage = config.columns[state.currentNativeLanguage];
-
-      // ============================================================
-      // UPDATE TABLE HEADERS: Based on Mode
-      // ============================================================
-      /*
-        Build headers dynamically based on enabled modes:
-        - Base: Target language + Native language (2 columns)
-        - Multiple Choice: + 4 wrong answer columns
-        - Typing: + Typing input + Wrong letters + Wrong count (3 columns)
-      */
-      let headers = [];
-
-      // Base columns (always present)
-      if (state.multipleChoiceMode) {
-        headers.push(`<th>Correct Answer (${targetLanguage})</th>`);
-        headers.push(`<th>Translation (${nativeLanguage})</th>`);
-      } else if (state.typingMode) {
-        headers.push(`<th>Target Word (${targetLanguage})</th>`);
-        headers.push(`<th>Translation (${nativeLanguage})</th>`);
-      } else if (state.pronunciationMode) {
-        headers.push(`<th>Say This (${targetLanguage})</th>`);
-        headers.push(`<th>Meaning (${nativeLanguage})</th>`);
-      } else {
-        headers.push(`<th>I am learning (${targetLanguage})</th>`);
-        headers.push(`<th>I speak (${nativeLanguage})</th>`);
-      }
-
-      // Word Type column (ALWAYS present - for debugging shuffling mechanism)
-      headers.push('<th>Word Type</th>');
-
-      // Multiple choice columns (if enabled)
-      if (state.multipleChoiceMode) {
-        headers.push('<th>Wrong Answer 1</th>');
-        headers.push('<th>Wrong Answer 2</th>');
-        headers.push('<th>Wrong Answer 3</th>');
-        headers.push('<th>Wrong Answer 4</th>');
-      }
-
-      // Typing mode columns (if enabled)
-      if (state.typingMode) {
-        headers.push('<th>Type Here (X = letter)</th>');
-        headers.push('<th>Wrong Letters</th>');
-        headers.push('<th>Wrong Count</th>');
-      }
-
-      // Pronunciation mode columns (if enabled)
-      if (state.pronunciationMode) {
-        headers.push('<th>Record 🎤</th>');
-        headers.push('<th>Score %</th>');
-      }
-
-      tableHeaderRow.innerHTML = headers.join('\n');
-
-      // ============================================================
-      // POPULATE TABLE ROWS: Generate vocabulary with optional wrong answers
-      // ============================================================
-
-      // ════════════════════════════════════════════════════════════════════════
-      // CHINESE RENDERING SETUP
-      // ════════════════════════════════════════════════════════════════════════
-      // Determine if we need Chinese character+pinyin rendering for:
-      // 1. Target language column (when learning Chinese)
-      // 2. Native language column (when translation is Chinese)
-      //
-      // COLUMN MAPPING FOR CHINESE:
-      // - Column 0: Chinese characters (汉字)
-      // - Column 1: Pinyin
-      // - Column 2+: Other translations (English, Spanish, etc.)
-      //
-      // COLUMN MAPPING FOR SPANISH/ENGLISH (when showing Chinese translation):
-      // - Spanish: Column 2 = Chinese, Column 3 = Pinyin
-      // - English: Check config for Chinese column indices
-      // ════════════════════════════════════════════════════════════════════════
-      const isLearningChinese = state.currentLanguage === 'Chinese';
-
-      // Determine if native language column shows Chinese (needs coupling)
-      const nativeConfig = LANGUAGE_CONFIG[state.currentLanguage];
-      let nativeIsChinese = false;
-      let nativePinyinColumn = null;
-      if (nativeConfig && nativeConfig.nativeLanguages) {
-        const entries = Object.entries(nativeConfig.nativeLanguages);
-        for (const [name, colIndex] of entries) {
-          if (colIndex === state.currentNativeLanguage && name.toLowerCase().includes('chinese')) {
-            nativeIsChinese = true;
-            // Find pinyin column (usually the next one)
-            const pinyinEntry = entries.find(([n]) => n.toLowerCase().includes('pinyin'));
-            if (pinyinEntry) {
-              nativePinyinColumn = pinyinEntry[1];
-            }
-            break;
-          }
-        }
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // ARCHITECTURE: Combine baseWords + exampleWords with shuffling
-      // ════════════════════════════════════════════════════════════════════════
-      // This creates a single array with base words first, both sections shuffled.
-      // Educational Psychology: Learners see core vocabulary before contextual examples.
-      // ════════════════════════════════════════════════════════════════════════
-      const words = combineAndShuffleWords(pack);
-
-      words.forEach((wordObj, index) => {
-        // Extract word array and type from the combined object
-        const word = wordObj.word;      // Word array: ["spanish", "english", "chinese", ...]
-        const wordType = wordObj.type;  // Either "Base Word" or "Example Word"
-
-        const row = document.createElement('tr');
-
-        // ════════════════════════════════════════════════════════════════════════
-        // COLUMN 1: Target language (correct answer, column 0 from words array)
-        // ════════════════════════════════════════════════════════════════════════
-        // CHINESE RENDERING: When learning Chinese, render with pinyin underneath
-        // For Chinese: word[0] = characters, word[1] = pinyin
-        // ════════════════════════════════════════════════════════════════════════
-        const cell1 = document.createElement('td');
-        if (isLearningChinese) {
-          // Chinese: Use coupled rendering (characters + pinyin)
-          const chineseText = word[0];
-          const pinyinText = word[1];  // For Chinese, column 1 is always pinyin
-          const renderedElement = renderChineseText(chineseText, pinyinText, true);
-          cell1.appendChild(renderedElement);
-        } else {
-          // Not Chinese: plain text
-          cell1.textContent = word[0];
-        }
-        row.appendChild(cell1);
-
-        // ════════════════════════════════════════════════════════════════════════
-        // COLUMN 2: Native language translation (selected column from words array)
-        // ════════════════════════════════════════════════════════════════════════
-        // CHINESE RENDERING: When native language is Chinese, render with pinyin
-        // ════════════════════════════════════════════════════════════════════════
-        const cell2 = document.createElement('td');
-        if (nativeIsChinese && nativePinyinColumn !== null) {
-          // Native language is Chinese: Use coupled rendering
-          const chineseText = word[state.currentNativeLanguage];
-          const pinyinText = word[nativePinyinColumn];
-          const renderedElement = renderChineseText(chineseText, pinyinText, true);
-          cell2.appendChild(renderedElement);
-        } else {
-          // Not Chinese: plain text
-          cell2.textContent = word[state.currentNativeLanguage];
-        }
-        row.appendChild(cell2);
-
-        // ════════════════════════════════════════════════════════════════════════
-        // COLUMN 3: Word Type (Base Word or Example Word)
-        // ════════════════════════════════════════════════════════════════════════
-        // For debugging purposes: Verify shuffling mechanism is working correctly
-        // Base words should appear first, followed by example words
-        // ════════════════════════════════════════════════════════════════════════
-        const cell3 = document.createElement('td');
-        cell3.textContent = wordType;
-        cell3.style.fontWeight = wordType === "Base Word" ? "bold" : "normal";
-        cell3.style.color = wordType === "Base Word" ? "#2563eb" : "#059669";  // Blue for base, green for examples
-        row.appendChild(cell3);
-
-        // ════════════════════════════════════════════════════════════════════════
-        // COLUMNS 4-7: Wrong answers (only in multiple choice mode)
-        // ════════════════════════════════════════════════════════════════════════
-        // CHINESE RENDERING: When learning Chinese, wrong answers need pinyin too
-        // ════════════════════════════════════════════════════════════════════════
-        if (state.multipleChoiceMode) {
-          /*
-            Generate 4 random wrong answers from ALL wordpacks in the current act.
-            - Current correct answer: word[0] (target language, column 0)
-            - Pool: All words from all packs in the current act (~2,500 words)
-            - Filtering: Exclude correct answer and normalized duplicates
-            - Each wrong answer is from column 0 (target language)
-
-            CHINESE MODE: We also need the pinyin for each wrong answer.
-            generateWrongAnswersWithPinyin() returns objects with {text, pinyin}.
-          */
-          const correctAnswer = word[0];
-          let wrongAnswers;
-
-          if (isLearningChinese) {
-            // Chinese: Generate wrong answers WITH pinyin
-            wrongAnswers = generateWrongAnswersWithPinyin(actData, correctAnswer, 4);
-          } else {
-            // Other languages: Simple text array
-            wrongAnswers = generateWrongAnswers(actData, correctAnswer, 4);
-          }
-
-          // Add each wrong answer as a table cell
-          wrongAnswers.forEach(wrongAnswer => {
-            const wrongCell = document.createElement('td');
-            if (isLearningChinese && wrongAnswer.pinyin !== undefined) {
-              // Chinese: Render with pinyin
-              const renderedElement = renderChineseText(wrongAnswer.text, wrongAnswer.pinyin, true);
-              wrongCell.appendChild(renderedElement);
-            } else if (typeof wrongAnswer === 'string') {
-              // Non-Chinese: Plain text
-              wrongCell.textContent = wrongAnswer;
-            } else {
-              // Fallback for object without pinyin
-              wrongCell.textContent = wrongAnswer.text || wrongAnswer;
-            }
-            row.appendChild(wrongCell);
-          });
-
-          // Handle edge case: If act has fewer than 5 words total,
-          // we might have fewer than 4 wrong answers. Fill remaining cells.
-          const wrongAnswerCount = wrongAnswers.length;
-          for (let i = wrongAnswerCount; i < 4; i++) {
-            const emptyCell = document.createElement('td');
-            emptyCell.textContent = '(Not enough words in act)';
-            row.appendChild(emptyCell);
-          }
-        }
-
-        // TYPING MODE COLUMNS: Input box + Wrong letters + Wrong count
-        if (state.typingMode) {
-          /*
-            Add typing practice columns for this word:
-            1. Typing input box (initialized with "XXXX XXXXX" format)
-            2. Wrong letters column (displays struck-through wrong attempts)
-            3. Wrong count column (displays total wrong attempts)
-
-            KEY FEATURE: For Chinese, type PINYIN (word[1]) instead of characters (word[0])
-            - Ignores spaces (like Spanish/English typing modes)
-            - Accepts any variant of accented letters (ā, á, ǎ, à -> a)
-          */
-          // For Chinese: use pinyin (word[1]); for other languages: use target word (word[0])
-          const correctWord = (state.currentLanguage === 'Chinese') ? word[1] : word[0];
-
-          // COLUMN: Typing input box
-          const typingCell = document.createElement('td');
-          const typingInput = document.createElement('input');
-          typingInput.type = 'text';
-          typingInput.readOnly = true;  // Prevent direct editing
-          typingInput.style.width = '100%';
-          typingInput.style.fontFamily = 'monospace';
-          typingInput.style.fontSize = '1em';
-          typingInput.style.padding = '4px';
-
-          // Initialize display with X's for each letter (preserve spaces)
-          const initialDisplay = correctWord.split('').map(char => char === ' ' ? ' ' : 'X').join('');
-          typingInput.value = initialDisplay;
-
-          // Add keypress listener to this specific input
-          typingInput.addEventListener('keydown', (e) => {
-            // Only handle single character keys (not arrow keys, backspace, etc.)
-            if (e.key.length === 1) {
-              e.preventDefault();  // Prevent default input behavior
-              handleTypingInput(index, correctWord, e.key, typingInput);
-            }
-          });
-
-          // Make input focusable by clicking
-          typingInput.addEventListener('click', () => {
-            typingInput.focus();
-          });
-
-          typingCell.appendChild(typingInput);
-          row.appendChild(typingCell);
-
-          // COLUMN: Wrong letters (initially empty)
-          const wrongLettersCell = document.createElement('td');
-          wrongLettersCell.style.fontFamily = 'monospace';
-          row.appendChild(wrongLettersCell);
-
-          // COLUMN: Wrong count (initially 0)
-          const wrongCountCell = document.createElement('td');
-          wrongCountCell.textContent = '0';
-          wrongCountCell.style.textAlign = 'center';
-          row.appendChild(wrongCountCell);
-        }
-
-        // PRONUNCIATION MODE COLUMNS: Record button + Score percentage
-        if (state.pronunciationMode) {
-          const correctWord = word[0];
-
-          // COLUMN: Record button
-          const recordCell = document.createElement('td');
-          const recordButton = document.createElement('button');
-          recordButton.textContent = '🎤';
-          recordButton.addEventListener('click', () => {
-            startListeningForPronunciation(index, correctWord, recordButton);
-          });
-          recordCell.appendChild(recordButton);
-          row.appendChild(recordCell);
-
-          // COLUMN: Score percentage
-          const scoreCell = document.createElement('td');
-          const pronState = state.pronunciationStates.get(index);
-          if (pronState && pronState.attempted) {
-            scoreCell.textContent = `${pronState.score}%`;
-            scoreCell.title = `Heard: "${pronState.heard}"`;
-          } else {
-            scoreCell.textContent = '-';
-          }
-          row.appendChild(scoreCell);
-        }
-
-        tableBody.appendChild(row);
-      });
-
-      // Update debug info with active modes
-      let modeParts = [];
-      if (state.multipleChoiceMode) modeParts.push('Multiple Choice (act-wide pool)');
-      if (state.typingMode) modeParts.push('Typing Practice');
-      if (state.pronunciationMode) modeParts.push('Pronunciation Practice');
-      const modeText = modeParts.length > 0 ? modeParts.join(' + ') : 'Basic (2 columns)';
-
-      // Count total words in act for debug info
-      let totalActWords = 0;
-      Object.keys(actData).forEach(packKey => {
-        const packWords = combineAndShuffleWords(actData[packKey]);
-        totalActWords += packWords.length;
-      });
-
-      updateDebugInfo(`Displaying Pack ${pack.meta.wordpack}: ${pack.meta.english}\n` +
-                      `Words in this pack: ${words.length}\n` +
-                      `Total words in Act ${state.currentAct}: ${totalActWords}\n` +
-                      `Mode: ${modeText}\n` +
-                      `Total columns: ${totalColumns}\n` +
-                      `Target language: ${targetLanguage} (column 0)\n` +
-                      `Native language: ${nativeLanguage} (column ${state.currentNativeLanguage})`);
-    }
-
     // ============================================================
-    // UPDATE DEBUG INFO: Display Technical Details
+    // DELETED: displayVocabulary()
     // ============================================================
-
-    /*
-      Updates the debug information section with current state and messages.
-      Useful for developers/LLMs to understand what's happening.
-
-      INCLUDES: localStorage status to help debug state persistence.
-    */
-    function updateDebugInfo(message) {
-      const debugInfo = document.getElementById('debugInfo');
-      const timestamp = new Date().toLocaleTimeString();
-
-      // Check localStorage status
-      let localStorageStatus = 'Unknown';
-      let savedStatePreview = 'None';
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          localStorageStatus = 'Available (has saved state)';
-          const parsed = JSON.parse(saved);
-          savedStatePreview = `Language: ${parsed.currentLanguage}, Act: ${parsed.currentAct}, Pack: ${parsed.currentPack ? parsed.currentPack.substring(0, 20) + '...' : 'None'}`;
-        } else {
-          localStorageStatus = 'Available (no saved state)';
-        }
-      } catch (e) {
-        localStorageStatus = `Error: ${e.message}`;
-      }
-
-      debugInfo.textContent = `[${timestamp}] ${message}\n\n` +
-        `══════════════════════════════════════════════════════════════════\n` +
-        `CURRENT STATE (in memory):\n` +
-        `══════════════════════════════════════════════════════════════════\n` +
-        `- Language: ${state.currentLanguage}\n` +
-        `- Act: ${state.currentAct || 'None'}\n` +
-        `- Pack: ${state.currentPack || 'None'}\n` +
-        `- Native Language Column: ${state.currentNativeLanguage}\n` +
-        `- Multiple Choice Mode: ${state.multipleChoiceMode ? 'Enabled' : 'Disabled'}\n` +
-        `- Typing Mode: ${state.typingMode ? 'Enabled' : 'Disabled'}\n` +
-        `- Pronunciation Mode: ${state.pronunciationMode ? 'Enabled' : 'Disabled'}\n` +
-        `- Flashcard Mode: ${state.flashcardMode ? 'Enabled' : 'Disabled'}\n` +
-        `- Active Typing States: ${state.typingStates.size}\n` +
-        `- Active Pronunciation States: ${state.pronunciationStates.size}\n` +
-        `- Flashcard Deck Size: ${state.flashcardDeck.length} cards\n` +
-        `\n══════════════════════════════════════════════════════════════════\n` +
-        `PERSISTENCE (localStorage):\n` +
-        `══════════════════════════════════════════════════════════════════\n` +
-        `- Storage Key: ${STORAGE_KEY}\n` +
-        `- Status: ${localStorageStatus}\n` +
-        `- Saved: ${savedStatePreview}\n` +
-        `\n══════════════════════════════════════════════════════════════════\n` +
-        `SYSTEM:\n` +
-        `══════════════════════════════════════════════════════════════════\n` +
-        `- Speech Recognition: ${recognition ? 'Available' : 'Not Available'}\n` +
-        `- Loaded Acts: ${Object.keys(state.loadedData).join(', ') || 'None'}`;
-    }
-
+    // This was a DecoderTest-specific function for displaying vocabulary table.
+    // If needed, implement custom table rendering logic inline.
+    // Reusability 6/10 - specific to decoder test UI.
     // ============================================================
-    // KEY FEATURE: Flashcard Mode (Anti-Decoupling Demonstration)
-    // Core Objective: Teach the CRITICAL principle that front/back
-    //                 must ALWAYS be stored as ONE object, never separate arrays
-    // Key Behaviors:
-    //   - Each card is { front, back, id } - properties of SAME object
-    //   - Flipping shows the OTHER property of the SAME card
-    //   - Shuffling reorders cards[] but NEVER breaks front/back link
-    //   - Navigation changes currentIndex but card[i] is always intact
     // ============================================================
-
-    /*
-      ╔══════════════════════════════════════════════════════════════════════════════╗
-      ║                    ANTI-DECOUPLING PRINCIPLE                                 ║
-      ║                    (THE MOST IMPORTANT CONCEPT)                              ║
-      ╠══════════════════════════════════════════════════════════════════════════════╣
-      ║                                                                              ║
-      ║  ❌ THE BUG-PRONE WAY (Decoupled - DO NOT DO THIS):                          ║
-      ║  ─────────────────────────────────────────────────────────────────────────   ║
-      ║  const fronts = ["hola", "adiós", "gracias"];                                ║
-      ║  const backs  = ["hello", "goodbye", "thank you"];                           ║
-      ║  let currentIndex = 0;                                                       ║
-      ║                                                                              ║
-      ║  function showFront() { display(fronts[currentIndex]); }                     ║
-      ║  function showBack()  { display(backs[currentIndex]); }                      ║
-      ║                                                                              ║
-      ║  // PROBLEM: If fronts and backs get out of sync (different lengths,         ║
-      ║  // different order after separate operations), flipping shows WRONG answer! ║
-      ║  // This is a VERY common bug in flashcard apps.                             ║
-      ║                                                                              ║
-      ║  ✅ THE CORRECT WAY (Anti-Decoupled - ALWAYS DO THIS):                       ║
-      ║  ─────────────────────────────────────────────────────────────────────────   ║
-      ║  const cards = [                                                             ║
-      ║    { front: "hola",    back: "hello" },                                      ║
-      ║    { front: "adiós",   back: "goodbye" },                                    ║
-      ║    { front: "gracias", back: "thank you" }                                   ║
-      ║  ];                                                                          ║
-      ║  let currentIndex = 0;                                                       ║
-      ║                                                                              ║
-      ║  function showFront() { display(cards[currentIndex].front); }                ║
-      ║  function showBack()  { display(cards[currentIndex].back); }                 ║
-      ║                                                                              ║
-      ║  // BENEFIT: cards[i].front and cards[i].back are ALWAYS the same card!      ║
-      ║  // They are properties of ONE object - they CANNOT get out of sync.         ║
-      ║  // Shuffling reorders the cards[] array but each card stays intact.         ║
-      ║                                                                              ║
-      ╚══════════════════════════════════════════════════════════════════════════════╝
-    */
-
-    /*
-      handleFlashcardModeChange() - Called when flashcard checkbox is toggled
-      Shows/hides the flashcard area and initializes deck if enabling
-    */
-    function handleFlashcardModeChange(enabled) {
-      const flashcardArea = document.getElementById('flashcardArea');
-      if (!flashcardArea) return;
-
-      flashcardArea.style.display = enabled ? 'block' : 'none';
-
-      if (enabled) {
-        // Initialize flashcard deck from current wordpack
-        initFlashcardDeck();
-        updateFlashcardDisplay();
-      }
-    }
-
-
-    /*
-      updateFlashcardDisplay() - Updates the UI to show current card
-
-      This function demonstrates that we ALWAYS access front and back
-      from the SAME card object: cards[currentIndex].front or .back
-
-      CHINESE SUPPORT:
-      When front or back is Chinese, renders with pinyin underneath each character
-      using the renderChineseText() function for coupled display.
-    */
-    function updateFlashcardDisplay() {
-      const contentEl = document.getElementById('flashcardContent');
-      const sideEl = document.getElementById('flashcardSide');
-      const counterEl = document.getElementById('flashcardCounter');
-      const debugEl = document.getElementById('flashcardDebug');
-
-      if (!contentEl || state.flashcardDeck.length === 0) {
-        if (contentEl) contentEl.textContent = 'No cards loaded. Select a wordpack first.';
-        if (sideEl) sideEl.textContent = '';
-        if (counterEl) counterEl.textContent = 'Card 0 of 0';
-        return;
-      }
-
-      // ════════════════════════════════════════════════════════════════════════
-      // ANTI-DECOUPLING IN ACTION: Access the SAME card object for both sides
-      // ════════════════════════════════════════════════════════════════════════
-      const currentCard = state.flashcardDeck[state.flashcardIndex];
-      // ↑ This is ONE object. currentCard.front and currentCard.back are ALWAYS
-      //   the correct pair because they're properties of the SAME object.
-
-      // Clear previous content
-      contentEl.innerHTML = '';
-
-      // Show front or back based on current side
-      // ════════════════════════════════════════════════════════════════════════
-      // CHINESE RENDERING: Use coupled char+pinyin display when applicable
-      // ════════════════════════════════════════════════════════════════════════
-      if (state.flashcardShowingFront) {
-        // FRONT of card (target language)
-        if (currentCard.frontIsChinese) {
-          // Chinese: Use coupled rendering with pinyin
-          const renderedElement = renderChineseText(currentCard.front, currentCard.frontPinyin, true);
-          // Make flashcard content larger for better visibility
-          renderedElement.style.fontSize = '2em';
-          contentEl.appendChild(renderedElement);
-        } else {
-          // Non-Chinese: Plain text
-          contentEl.textContent = currentCard.front;
-        }
-        sideEl.textContent = '(FRONT - Target Language) - click to see translation';
-      } else {
-        // BACK of card (translation/native language)
-        if (currentCard.backIsChinese) {
-          // Chinese translation: Use coupled rendering with pinyin
-          const renderedElement = renderChineseText(currentCard.back, currentCard.backPinyin, true);
-          renderedElement.style.fontSize = '2em';
-          contentEl.appendChild(renderedElement);
-        } else {
-          // Non-Chinese: Plain text
-          contentEl.textContent = currentCard.back;
-        }
-        sideEl.textContent = '(BACK - Translation) - click to flip back';
-      }
-
-      // Update counter with word type for debugging
-      if (counterEl) {
-        const typeColor = currentCard.type === "Base Word" ? "#2563eb" : "#059669";
-        const typeWeight = currentCard.type === "Base Word" ? "bold" : "normal";
-        counterEl.innerHTML = `Card ${state.flashcardIndex + 1} of ${state.flashcardDeck.length} | <span style="color: ${typeColor}; font-weight: ${typeWeight};">${currentCard.type}</span>`;
-      }
-
-      // Update debug view - show the ACTUAL card object structure
-      if (debugEl) {
-        debugEl.textContent = `// Current card object (index ${state.flashcardIndex}):
-const currentCard = ${JSON.stringify(currentCard, null, 2)};
-
-// Accessing front: currentCard.front = "${currentCard.front}"
-// Accessing back:  currentCard.back  = "${currentCard.back}"
-${currentCard.frontIsChinese ? `// frontPinyin: "${currentCard.frontPinyin}" (Chinese coupled rendering)` : ''}
-${currentCard.backIsChinese ? `// backPinyin: "${currentCard.backPinyin}" (Chinese coupled rendering)` : ''}
-
-// ↑ NOTICE: Both come from the SAME object!
-// They are LINKED - they cannot get out of sync.
-
-// The deck is an array of these objects:
-// state.flashcardDeck = [
-//   { id: "card-0", front: "...", back: "...", frontPinyin?: "...", ... },
-//   { id: "card-1", front: "...", back: "...", ... },
-//   ...
-// ]`;
-      }
-    }
-
-
+    // DELETED: updateDebugInfo()
     // ============================================================
-    // AUTO-RUN ON PAGE LOAD
+    // This was a DecoderTest-specific function for debug message logging.
+    // If needed, use console.log() directly or implement inline.
+    // Reusability 6/10 - basic logging utility.
     // ============================================================
-
+    // ============================================================
+    // DELETED: handleFlashcardModeChange()
+    // ============================================================
+    // This was a DecoderTest-specific wrapper function.
+    // If needed, use window.initFlashcardDeck() from wordpack-logic.js
+    // and implement show/hide logic inline.
+    // Reusability 7/10 - flashcard setup logic.
+    // ============================================================
+    // ============================================================
+    // DELETED: updateFlashcardDisplay()
+    // ============================================================
+    // This was a DecoderTest-specific function for displaying flashcards.
+    // If needed, use window.flipCard() and window.renderTargetWordHTML()
+    // from wordpack-logic.js to implement flashcard display.
+    // Reusability 6/10 - flashcard rendering logic.
+    // ============================================================
     /*
       Automatically initialize when DOM is ready.
       This removes the need for a "Run Test" button.
