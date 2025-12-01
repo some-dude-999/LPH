@@ -1251,6 +1251,37 @@ function initializeDebugUI() {
 // ════════════════════════════════════════════════════════════════════════════
 
 /**
+ * Initialize Speech Recognition API
+ * Returns a configured SpeechRecognition object or null if not supported
+ *
+ * Reusability Score: 10/10 - Used by all games with pronunciation practice
+ *
+ * @returns {SpeechRecognition|null} - Configured recognition object or null
+ *
+ * Example:
+ *   const recognition = initializeSpeechRecognition();
+ *   if (recognition) {
+ *     recognition.lang = 'es-ES';
+ *     recognition.start();
+ *   }
+ */
+function initializeSpeechRecognition() {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    console.warn('[initializeSpeechRecognition] Speech recognition not supported in this browser');
+    return null;
+  }
+
+  const recognition = new SpeechRecognition();
+  recognition.continuous = false;
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 5;
+
+  return recognition;
+}
+
+/**
  * Normalize text for pronunciation comparison
  * Handles all languages (Chinese, Spanish, English)
  *
