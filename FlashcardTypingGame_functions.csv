@@ -1,36 +1,36 @@
 Function Name,What It Does,Reusability Score (1-10),Duplicate in wordpack-logic.js
-saveState,"Wrapper that builds state object from game's local variables (voiceURI, speed, wordpackKey, act, language) and calls window.saveState()",2,"Yes - saveState()"
-loadState,Wrapper that calls window.loadState() to retrieve game state from localStorage,2,"Yes - loadState()"
-showSuccessStamp,"Wrapper that calls window.showSuccessStamp() with game-specific element (removedStamp), plays ding and shows green stamp",2,"Yes - showSuccessStamp()"
-showFailureStamp,"Wrapper that calls window.showFailureStamp() with game-specific element (addedStamp), plays buzz and shows red stamp",2,"Yes - showFailureStamp()"
+saveState,DELETED - Was wrapper around window.saveState(),2,DELETED ✓
+loadState,DELETED - Was wrapper around window.loadState(),2,DELETED ✓
+showSuccessStamp,DELETED - Was wrapper around window.showSuccessStamp(),2,DELETED ✓
+showFailureStamp,DELETED - Was wrapper around window.showFailureStamp(),2,DELETED ✓
 showStartingCard,"Navigates to starting card (menu/help), adds showing-menu class, updates titles, renders menu card, optionally flips to back for help",1,No - Game-specific menu navigation
 exitStartingCard,"Returns from starting card to saved position, removes showing-menu class, restores wordpack title and updates display",1,No - Game-specific menu navigation
 renderMenuCard,"Renders menu card that looks like flashcard with Act/Pack/Language/Voice/Speed dropdowns on front and help instructions on back",1,No - Game-specific menu rendering
-populateWordpackSelectorOnCard,"Populates wordpack dropdown on menu card with packs from selected act, uses saved wordpack if valid otherwise defaults to first",2,"Similar - populatePackSelector()"
+populateWordpackSelectorOnCard,DELETED - Was similar to window.populatePackSelector(),2,DELETED ✓
 switchMode,"Switches between learning modes (flashcard/spelling/pronunciation/translation), resets deck to original order, updates UI, auto-pronounces in spelling",4,No - Game-specific mode switching UI
-initializeTypingDisplay,"Initializes typing state variables (typingInput, typingDisplay, typedPositions, wrongAttempts, wrongPositions, wrongLetters) from current word",7,"Yes - initializeTypingState()"
-handleTypingInput,"Handles typing input in spelling/translation modes, validates keypress using shared helpers, updates display, shows stamps, handles completion logic",3,"Yes - handleTypingInput() but game-specific wrapper"
-loadVoices,"Loads TTS voices based on language code from loaded modules using window.loadVoicesForLanguage(), restores saved voice if available",3,"Yes - loadVoicesForLanguage()"
+initializeTypingDisplay,DELETED - Was duplicate of window.initializeTypingState(),7,DELETED ✓
+handleTypingInput,DELETED - Was game-specific wrapper around typing logic,3,DELETED ✓
+loadVoices,DELETED - Was wrapper around window.loadVoicesForLanguage(),3,DELETED ✓
 populateVoiceSelector,"DEPRECATED function kept for compatibility - voice selector now populated inside renderMenuCard()",1,No - Deprecated
 initializeTooltips,"Initializes tooltips from TOOLTIP_MESSAGES, builds mode instruction lists (flashcard/spelling/pronunciation/translation), attaches button tooltips",2,No - Game-specific tooltip configuration
-restoreSavedState,"Restores saved state from localStorage, validates speed against VALID_SPEEDS, restores act/wordpack/language, validates voice URI",3,"Yes - restoreSavedState()"
+restoreSavedState,DELETED - Was wrapper around state restoration logic,3,DELETED ✓
 updateBackLabel,"Updates back label text based on native language selection, changes label to show which language appears on card back",1,No - Game-specific UI label update
-initializeDeck,"Creates deck from selected wordpack using window.createDeckFromPack(), handles Chinese pinyin mode, sets originalDeck and currentDeck, resets index",3,"Yes - createDeckFromPack()"
-restartCurrentPack,"Resets current pack by copying originalDeck to currentDeck, resets index to 0, calls updateDisplay() and saveState()",3,"Yes - resetDeckToOriginal()"
-goToNextPack,"Navigates to next wordpack using window.navigateToNextPack(), initializes new deck with initializeDeck(), updates title, saves state",3,"Yes - navigateToNextPack()"
+initializeDeck,DELETED - Was wrapper around window.createDeckFromPack(),3,DELETED ✓
+restartCurrentPack,DELETED - Was wrapper around window.resetDeckToOriginal(),3,DELETED ✓
+goToNextPack,DELETED - Was wrapper around window.navigateToNextPack(),3,DELETED ✓
 generateWeathering,"Generates random weathering pattern for flashcard using seed-based randomization - creates sun-faded edges, color tints, splotches for vintage appearance",1,No - Flashcard-specific visual effect
 updateDisplay,"Core display function - shows current card with mode-specific rendering (flashcard/spelling/pronunciation/translation), handles Chinese coupling, applies weathering",1,No - Flashcard-specific DOM updates
-goToPrevious,"Navigates to previous card using window.navigateToPrevious(), cancels speech, plays flip sound, reinitializes typing in spelling/translation modes",3,"Yes - navigateToPrevious()"
-goToNext,"Navigates to next card using window.navigateToNext(), cancels speech, plays flip sound, reinitializes typing in spelling/translation modes",3,"Yes - navigateToNext()"
-moveToNextCard,"Moves to next card after typing completion (auto-advance), plays flip sound, reinitializes typing display, updates display, auto-pronounces in spelling",4,"Similar - navigateToNext()"
-flipCard,"Toggles flashcard between front and back with CSS animation, updates isFlipped flag, auto-pronounces target word in spelling mode when flipping to back",2,"Yes - flipCard() but different implementation"
+goToPrevious,DELETED - Was wrapper around window.navigateToPrevious(),3,DELETED ✓
+goToNext,DELETED - Was wrapper around window.navigateToNext(),3,DELETED ✓
+moveToNextCard,DELETED - Was wrapper around window.navigateToNext(),4,DELETED ✓
+flipCard,DELETED - Was game-specific card flip animation,2,DELETED ✓
 unflipCard,"Forces flashcard to show front side without playing flip sound - used for card navigation to ensure consistent card face",1,No - Flashcard-specific animation
-removeCurrentCard,"Removes current card from deck (correct answer), plays success sound, shows green stamp, checks for pack completion",3,"Yes - removeCard()"
-addConfusedCards,"Adds 2 duplicate copies of current card to deck for extra practice (wrong answer/confused), plays failure sound, shows red stamp",3,"Yes - addDuplicateCards()"
-resetDeck,"Resets deck to original state without shuffling using window.resetDeckToOriginal(), preserves pedagogical ordering, updates display",3,"Yes - resetDeckToOriginal()"
-speakTargetWord,"Speaks target word at current index using window.speakWord() with selected voice, speed, and language-specific TTS code",3,"Yes - speakWord()"
-setSpeed,"Sets TTS speed using window.setTTSSpeed(), updates currentSpeed variable, calls saveState()",3,"Yes - setTTSSpeed()"
+removeCurrentCard,DELETED - Was wrapper around window.removeCard(),3,DELETED ✓
+addConfusedCards,DELETED - Was wrapper around window.addDuplicateCards(),3,DELETED ✓
+resetDeck,DELETED - Was wrapper around window.resetDeckToOriginal(),3,DELETED ✓
+speakTargetWord,DELETED - Was wrapper around window.speakWord(),3,DELETED ✓
+setSpeed,DELETED - Was wrapper around window.setTTSSpeed(),3,DELETED ✓
 showFeedback,"Shows pronunciation feedback overlay with score/heard/expected text on front or back of card, handles pronunciation mode auto-advance with stamps",4,No - Game-specific feedback display with deck logic
-startListening,"Starts speech recognition using window.startListeningForPronunciation(), handles front or back of card, updates mic button state",3,"Yes - startListeningForPronunciation()"
+startListening,DELETED - Was wrapper around speech recognition logic,3,DELETED ✓
 startGame,"Exits starting card to begin game, initializes deck with selected wordpack, updates title and back label, sets game-started state, cancels speech",1,No - Game-specific initialization flow
-updateDebugTableWrapper,"Wrapper that calls window.updateDebugTable() with game-specific local scope variables (currentDeck, currentIndex, nativeLanguage, wordpacks, currentWordpackKey)",2,"Yes - updateDebugTable()"
+updateDebugTableWrapper,DELETED - Was wrapper around window.updateDebugTable(),2,DELETED ✓
