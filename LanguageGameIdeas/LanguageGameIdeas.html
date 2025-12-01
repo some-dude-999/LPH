@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Game Ideas - Addiction Science Applied to Learning</title>
+
+  <!-- ============================================================
+       MODULE OVERVIEW
+       ============================================================
+       WHAT THIS PAGE DOES:
+       - Displays 92 language learning game concepts in a filterable table
+       - Explains the psychological triggers that make games addictive
+       - Allows filtering by core mechanic (Multiple Choice, Typing, Pronunciation)
+       - Supports sorting by addiction score (click column headers)
+
+       CORE PURPOSE:
+       Apply addiction science to language learning to create a more
+       interconnected world through irresistibly engaging education.
+
+       DATA SOURCE:
+       - LanguageGameIdeas.csv (same folder)
+       - Each game has unique addiction score (1-92)
+       - All games wrap around 3 core mechanics from wordpack-logic.js
+       ============================================================ -->
+
+  <style>
+    /* ============================================================
+       DESIGN SYSTEM
+       ============================================================
+       Dark theme with accent colors for different mechanics:
+       - Multiple Choice: Blue (#4a9eff)
+       - Typing: Green (#4ade80)
+       - Pronunciation: Purple (#c084fc)
+       - All Three: Gold (#fbbf24)
+       ============================================================ */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #e4e4e7;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* ============================================================
+       HEADER & MISSION
+       ============================================================ */
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #4a9eff, #c084fc, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .mission {
+      font-size: 1.2rem;
+      color: #a1a1aa;
+      font-style: italic;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       PSYCHOLOGY SECTION
+       ============================================================ */
+    .psychology-section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .psychology-section h2 {
+      color: #fbbf24;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .psychology-section h2::before {
+      content: "🧠";
+    }
+
+    .psychology-intro {
+      color: #a1a1aa;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .triggers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .trigger-card {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      border-left: 4px solid;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .trigger-card:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .trigger-card.dopamine { border-color: #f43f5e; }
+    .trigger-card.variable { border-color: #8b5cf6; }
+    .trigger-card.loss { border-color: #ef4444; }
+    .trigger-card.progression { border-color: #22c55e; }
+    .trigger-card.social { border-color: #3b82f6; }
+    .trigger-card.fomo { border-color: #f97316; }
+    .trigger-card.sunk { border-color: #eab308; }
+    .trigger-card.flow { border-color: #06b6d4; }
+    .trigger-card.collection { border-color: #ec4899; }
+    .trigger-card.feedback { border-color: #10b981; }
+
+    .trigger-card h3 {
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trigger-card p {
+      font-size: 0.85rem;
+      color: #a1a1aa;
+    }
+
+    /* ============================================================
+       FILTERS
+       ============================================================ */
+    .filters-section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .filters-section h2 {
+      color: #4ade80;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+      user-select: none;
+    }
+
+    .filter-group:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .filter-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: #4ade80;
+    }
+
+    .filter-group label {
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .filter-group.mc label { color: #4a9eff; }
+    .filter-group.typing label { color: #4ade80; }
+    .filter-group.pronunciation label { color: #c084fc; }
+    .filter-group.all-three label { color: #fbbf24; }
+
+    .filter-count {
+      font-size: 0.85rem;
+      color: #a1a1aa;
+      margin-left: auto;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .filter-count strong {
+      color: #fbbf24;
+    }
+
+    /* ============================================================
+       TABLE
+       ============================================================ */
+    .table-container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: rgba(0, 0, 0, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    th:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    th.sortable::after {
+      content: " ↕";
+      opacity: 0.5;
+    }
+
+    th.sorted-asc::after {
+      content: " ↑";
+      opacity: 1;
+      color: #4ade80;
+    }
+
+    th.sorted-desc::after {
+      content: " ↓";
+      opacity: 1;
+      color: #4ade80;
+    }
+
+    td {
+      padding: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    tr:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    /* Score column styling */
+    .score-cell {
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .score-high { color: #f43f5e; }
+    .score-mid-high { color: #f97316; }
+    .score-mid { color: #fbbf24; }
+    .score-mid-low { color: #4ade80; }
+    .score-low { color: #4a9eff; }
+
+    /* Game name styling */
+    .game-name {
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* Description styling */
+    .description-cell {
+      font-size: 0.9rem;
+      color: #a1a1aa;
+      max-width: 500px;
+    }
+
+    /* Core logic tags */
+    .logic-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .logic-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .logic-tag.mc {
+      background: rgba(74, 158, 255, 0.2);
+      color: #4a9eff;
+    }
+
+    .logic-tag.typing {
+      background: rgba(74, 222, 128, 0.2);
+      color: #4ade80;
+    }
+
+    .logic-tag.pronunciation {
+      background: rgba(192, 132, 252, 0.2);
+      color: #c084fc;
+    }
+
+    /* Row number */
+    .row-num {
+      color: #71717a;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    /* Empty state */
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: #71717a;
+      font-size: 1.1rem;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .triggers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .filter-count {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      td, th {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.85rem;
+      }
+
+      .description-cell {
+        display: none;
+      }
+    }
+
+    /* ============================================================
+       SOURCES FOOTER
+       ============================================================ */
+    .sources {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      font-size: 0.85rem;
+      color: #71717a;
+    }
+
+    .sources h3 {
+      color: #a1a1aa;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .sources a {
+      color: #4a9eff;
+      text-decoration: none;
+    }
+
+    .sources a:hover {
+      text-decoration: underline;
+    }
+
+    .sources ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header>
+      <h1>Language Game Ideas</h1>
+      <p class="mission">
+        Making language learning as addictive as possible to create a more interconnected world.
+        This mission is noble and warrants the application of behavioral science.
+      </p>
+    </header>
+
+    <!-- ============================================================
+         PSYCHOLOGY SECTION - THE SCIENCE OF ADDICTION
+         ============================================================ -->
+    <section class="psychology-section">
+      <h2>The Psychology of Game Addiction</h2>
+      <p class="psychology-intro">
+        These are the psychological triggers that make games irresistible. Games with higher addiction scores
+        employ more of these mechanisms. Our goal: harness these forces for good—making education as engaging as gambling.
+      </p>
+
+      <div class="triggers-grid">
+        <!-- Trigger 1: Dopamine Loops -->
+        <div class="trigger-card dopamine">
+          <h3>Dopamine Anticipation Loops</h3>
+          <p>The brain releases more dopamine during <strong>anticipation</strong> of reward than the reward itself.
+          Games create anticipation → action → reward → repeat cycles that hijack the reward system.</p>
+        </div>
+
+        <!-- Trigger 2: Variable Rewards -->
+        <div class="trigger-card variable">
+          <h3>Variable Reward Schedules</h3>
+          <p>Unpredictable rewards (like slot machines) are far more addictive than consistent ones.
+          The uncertainty creates excitement—you never know if the next pull brings the jackpot.</p>
+        </div>
+
+        <!-- Trigger 3: Loss Aversion -->
+        <div class="trigger-card loss">
+          <h3>Loss Aversion</h3>
+          <p>The pain of losing is <strong>2x stronger</strong> than the pleasure of gaining.
+          Games exploit this by making players fear losing progress, streaks, or virtual possessions.</p>
+        </div>
+
+        <!-- Trigger 4: Progression Systems -->
+        <div class="trigger-card progression">
+          <h3>Progression Systems</h3>
+          <p>Levels, XP bars, achievements, and unlocks tap into our innate desire for growth.
+          Visible progress creates motivation to continue—"just one more level."</p>
+        </div>
+
+        <!-- Trigger 5: Social Competition -->
+        <div class="trigger-card social">
+          <h3>Social Competition & Belonging</h3>
+          <p>Leaderboards, rankings, and multiplayer create social pressure.
+          Guilds and teams add belonging—quitting means letting down your tribe.</p>
+        </div>
+
+        <!-- Trigger 6: FOMO -->
+        <div class="trigger-card fomo">
+          <h3>FOMO (Fear of Missing Out)</h3>
+          <p>Limited-time events, daily rewards, and exclusive items create urgency.
+          Miss today's login? Lose your streak. Miss the event? Never get that item again.</p>
+        </div>
+
+        <!-- Trigger 7: Sunk Cost Fallacy -->
+        <div class="trigger-card sunk">
+          <h3>Sunk Cost Fallacy</h3>
+          <p>The more time/money invested, the harder it is to quit.
+          "I can't stop now—I've already put 200 hours into this character."</p>
+        </div>
+
+        <!-- Trigger 8: Flow State -->
+        <div class="trigger-card flow">
+          <h3>Flow State (Optimal Challenge)</h3>
+          <p>Games calibrate difficulty to keep you in the "flow zone"—not too easy (boring), not too hard (frustrating).
+          Time disappears when you're in flow.</p>
+        </div>
+
+        <!-- Trigger 9: Collection Drive -->
+        <div class="trigger-card collection">
+          <h3>Collection & Completion Drive</h3>
+          <p>Humans have an urge to complete sets and collect things.
+          "Gotta catch 'em all" exploits this—98% complete feels worse than 0%.</p>
+        </div>
+
+        <!-- Trigger 10: Quick Feedback -->
+        <div class="trigger-card feedback">
+          <h3>Immediate Feedback Loops</h3>
+          <p>Every action gets instant response—sounds, animations, score changes.
+          This tight feedback loop creates a sense of control and mastery.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FILTERS
+         ============================================================ -->
+    <section class="filters-section">
+      <h2>Filter by Core Mechanic</h2>
+      <div class="filter-row">
+        <div class="filter-group mc">
+          <input type="checkbox" id="filter-mc" checked>
+          <label for="filter-mc">Multiple Choice</label>
+        </div>
+        <div class="filter-group typing">
+          <input type="checkbox" id="filter-typing" checked>
+          <label for="filter-typing">Typing</label>
+        </div>
+        <div class="filter-group pronunciation">
+          <input type="checkbox" id="filter-pronunciation" checked>
+          <label for="filter-pronunciation">Pronunciation</label>
+        </div>
+        <div class="filter-group all-three">
+          <input type="checkbox" id="filter-all">
+          <label for="filter-all">All Three (Combined)</label>
+        </div>
+        <div class="filter-count">
+          Showing <strong id="visible-count">92</strong> of <strong>92</strong> games
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TABLE
+         ============================================================ -->
+    <div class="table-container">
+      <table id="games-table">
+        <thead>
+          <tr>
+            <th class="sortable" data-sort="rank">#</th>
+            <th class="sortable sorted-desc" data-sort="score">Score</th>
+            <th class="sortable" data-sort="name">Game Name</th>
+            <th>Description</th>
+            <th class="sortable" data-sort="logic">Core Logic</th>
+          </tr>
+        </thead>
+        <tbody id="games-tbody">
+          <!-- Populated by JavaScript -->
+        </tbody>
+      </table>
+      <div class="no-results" id="no-results" style="display: none;">
+        No games match the selected filters.
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SOURCES
+         ============================================================ -->
+    <footer class="sources">
+      <h3>Research Sources</h3>
+      <ul>
+        <li><a href="https://sdlccorp.com/post/the-psychology-behind-mobile-game-addiction/" target="_blank">SDLC Corp - Psychology of Mobile Game Addiction</a></li>
+        <li><a href="https://medium.com/@luc_chaoui/understanding-game-design-the-psychology-of-addiction-41128565305f" target="_blank">Medium - Understanding Game Design Psychology</a></li>
+        <li><a href="https://gamequitters.com/how-the-sunk-cost-fallacy-keeps-you-playing-games/" target="_blank">Game Quitters - Sunk Cost Fallacy</a></li>
+        <li><a href="https://www.entheosweb.com/how-to-retain-players-through-fomo-in-game-design/" target="_blank">EntheosWeb - FOMO in Game Design</a></li>
+        <li><a href="https://medium.com/@Zaid-Khalid/the-psychology-of-loot-boxes-how-game-developers-exploit-human-behavior-for-profit-5e7afcc6d861" target="_blank">Medium - Psychology of Loot Boxes</a></li>
+        <li><a href="https://moldstud.com/articles/p-designing-addictive-gameplay-psychological-techniques-and-player-retention" target="_blank">MoldStud - Designing Addictive Gameplay</a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT - TABLE LOGIC
+       ============================================================ -->
+  <script>
+    // ============================================================
+    // KEY FEATURE: CSV Data Loading & Parsing
+    // Core Objective: Load game ideas from CSV and render as table
+    // Key Behaviors:
+    //   - Fetch CSV from same directory
+    //   - Parse into array of objects
+    //   - Render with proper formatting
+    // ============================================================
+
+    let gamesData = [];
+    let currentSort = { column: 'score', direction: 'desc' };
+
+    // Parse CSV text into array of objects
+    function parseCSV(csvText) {
+      const lines = csvText.trim().split('\n');
+      const headers = parseCSVLine(lines[0]);
+      const data = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        const values = parseCSVLine(lines[i]);
+        const row = {};
+        headers.forEach((header, index) => {
+          row[header] = values[index] || '';
+        });
+        data.push(row);
+      }
+
+      return data;
+    }
+
+    // Parse a single CSV line (handles quoted fields with commas)
+    function parseCSVLine(line) {
+      const result = [];
+      let current = '';
+      let inQuotes = false;
+
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+
+        if (char === '"') {
+          inQuotes = !inQuotes;
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim());
+          current = '';
+        } else {
+          current += char;
+        }
+      }
+
+      result.push(current.trim());
+      return result;
+    }
+
+    // ============================================================
+    // KEY FEATURE: Table Rendering
+    // Core Objective: Display games with proper formatting and colors
+    // Key Behaviors:
+    //   - Color-code scores by tier
+    //   - Show logic tags with distinct colors
+    //   - Apply current sort order
+    // ============================================================
+
+    function getScoreClass(score) {
+      if (score >= 75) return 'score-high';
+      if (score >= 55) return 'score-mid-high';
+      if (score >= 35) return 'score-mid';
+      if (score >= 15) return 'score-mid-low';
+      return 'score-low';
+    }
+
+    function renderLogicTags(logic) {
+      const parts = logic.split(',').map(p => p.trim());
+      return parts.map(part => {
+        let className = '';
+        if (part === 'Multiple Choice') className = 'mc';
+        else if (part === 'Typing') className = 'typing';
+        else if (part === 'Pronunciation') className = 'pronunciation';
+        return `<span class="logic-tag ${className}">${part}</span>`;
+      }).join('');
+    }
+
+    function renderTable(data) {
+      const tbody = document.getElementById('games-tbody');
+      const noResults = document.getElementById('no-results');
+
+      if (data.length === 0) {
+        tbody.innerHTML = '';
+        noResults.style.display = 'block';
+        return;
+      }
+
+      noResults.style.display = 'none';
+
+      tbody.innerHTML = data.map((game, index) => {
+        const score = parseInt(game.Addiction_Score);
+        return `
+          <tr>
+            <td class="row-num">${index + 1}</td>
+            <td class="score-cell ${getScoreClass(score)}">${score}</td>
+            <td class="game-name">${game.Game_Name}</td>
+            <td class="description-cell">${game.Description}</td>
+            <td class="logic-tags">${renderLogicTags(game.Core_Logic)}</td>
+          </tr>
+        `;
+      }).join('');
+
+      document.getElementById('visible-count').textContent = data.length;
+    }
+
+    // ============================================================
+    // KEY FEATURE: Filtering
+    // Core Objective: Filter games by core mechanic type
+    // Key Behaviors:
+    //   - Multiple Choice, Typing, Pronunciation checkboxes
+    //   - "All Three" shows only games with all 3 mechanics
+    //   - Update count display
+    // ============================================================
+
+    function getFilteredData() {
+      const mcChecked = document.getElementById('filter-mc').checked;
+      const typingChecked = document.getElementById('filter-typing').checked;
+      const pronChecked = document.getElementById('filter-pronunciation').checked;
+      const allThreeChecked = document.getElementById('filter-all').checked;
+
+      return gamesData.filter(game => {
+        const logic = game.Core_Logic;
+        const hasMC = logic.includes('Multiple Choice');
+        const hasTyping = logic.includes('Typing');
+        const hasPron = logic.includes('Pronunciation');
+        const hasAllThree = hasMC && hasTyping && hasPron;
+
+        // If "All Three" is checked, only show games with all 3
+        if (allThreeChecked) {
+          return hasAllThree;
+        }
+
+        // Otherwise, show if game has ANY of the checked mechanics
+        if (!mcChecked && !typingChecked && !pronChecked) {
+          return true; // No filters = show all
+        }
+
+        return (mcChecked && hasMC) ||
+               (typingChecked && hasTyping) ||
+               (pronChecked && hasPron);
+      });
+    }
+
+    function applyFiltersAndSort() {
+      let data = getFilteredData();
+      data = sortData(data);
+      renderTable(data);
+    }
+
+    // ============================================================
+    // KEY FEATURE: Sorting
+    // Core Objective: Sort table by clicking column headers
+    // Key Behaviors:
+    //   - Toggle between ascending and descending
+    //   - Default sort by score descending
+    //   - Visual indicators on headers
+    // ============================================================
+
+    function sortData(data) {
+      const { column, direction } = currentSort;
+
+      return [...data].sort((a, b) => {
+        let aVal, bVal;
+
+        switch (column) {
+          case 'score':
+            aVal = parseInt(a.Addiction_Score);
+            bVal = parseInt(b.Addiction_Score);
+            break;
+          case 'name':
+            aVal = a.Game_Name.toLowerCase();
+            bVal = b.Game_Name.toLowerCase();
+            break;
+          case 'logic':
+            aVal = a.Core_Logic;
+            bVal = b.Core_Logic;
+            break;
+          default:
+            return 0;
+        }
+
+        if (typeof aVal === 'number') {
+          return direction === 'asc' ? aVal - bVal : bVal - aVal;
+        }
+
+        return direction === 'asc'
+          ? aVal.localeCompare(bVal)
+          : bVal.localeCompare(aVal);
+      });
+    }
+
+    function updateSortIndicators() {
+      document.querySelectorAll('th.sortable').forEach(th => {
+        th.classList.remove('sorted-asc', 'sorted-desc');
+        if (th.dataset.sort === currentSort.column) {
+          th.classList.add(currentSort.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
+        }
+      });
+    }
+
+    // ============================================================
+    // EVENT LISTENERS
+    // ============================================================
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Load CSV data
+      try {
+        const response = await fetch('LanguageGameIdeas.csv');
+        const csvText = await response.text();
+        gamesData = parseCSV(csvText);
+        applyFiltersAndSort();
+      } catch (error) {
+        console.error('Failed to load CSV:', error);
+        document.getElementById('games-tbody').innerHTML = `
+          <tr>
+            <td colspan="5" style="text-align: center; color: #f43f5e;">
+              Failed to load game data. Make sure LanguageGameIdeas.csv is in the same folder.
+            </td>
+          </tr>
+        `;
+      }
+
+      // Filter checkboxes
+      ['filter-mc', 'filter-typing', 'filter-pronunciation', 'filter-all'].forEach(id => {
+        document.getElementById(id).addEventListener('change', () => {
+          // If "All Three" is checked, uncheck others for clarity
+          if (id === 'filter-all' && document.getElementById(id).checked) {
+            document.getElementById('filter-mc').checked = false;
+            document.getElementById('filter-typing').checked = false;
+            document.getElementById('filter-pronunciation').checked = false;
+          }
+          // If any other filter is checked, uncheck "All Three"
+          if (id !== 'filter-all' && document.getElementById(id).checked) {
+            document.getElementById('filter-all').checked = false;
+          }
+          applyFiltersAndSort();
+        });
+      });
+
+      // Sortable headers
+      document.querySelectorAll('th.sortable').forEach(th => {
+        th.addEventListener('click', () => {
+          const column = th.dataset.sort;
+          if (currentSort.column === column) {
+            currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+          } else {
+            currentSort.column = column;
+            currentSort.direction = column === 'score' ? 'desc' : 'asc';
+          }
+          updateSortIndicators();
+          applyFiltersAndSort();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
