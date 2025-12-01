@@ -7,6 +7,7 @@
 ═══════════════════════════════════════════════════════════════
 https://some-dude-999.github.io/LPH/DecoderTest.html - [Add description for DecoderTest.html]
 https://some-dude-999.github.io/LPH/FlashcardTypingGame/FlashcardTypingGame.html - [Add description for FlashcardTypingGame.html]
+https://some-dude-999.github.io/LPH/LanguageGameIdeas/LanguageGameIdeas.html - [Add description for LanguageGameIdeas.html]
 https://some-dude-999.github.io/LPH/PromptCopier.html - [Add description for PromptCopier.html]
 https://some-dude-999.github.io/LPH/TranslationErrorReport.html - [Add description for TranslationErrorReport.html]
 https://some-dude-999.github.io/LPH/Who%20Even%20Learns%20Languages%20Dude.html - [Add description for Who Even Learns Languages Dude.html]
@@ -41,6 +42,7 @@ https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/act5-advanced-mastery
 https://some-dude-999.github.io/LPH/EnglishWords/Jsmodules/edge-cases.js - [Add description for edge-cases.js]
 
 ▓▓▓ OTHER ▓▓▓
+https://some-dude-999.github.io/LPH/FlashcardTypingGame/FlashcardTypingGame.js - Flashcard Typing Game logic (extracted from HTML for better code organization)
 https://some-dude-999.github.io/LPH/game-sounds.js - [Add description for game-sounds.js]
 https://some-dude-999.github.io/LPH/wordpack-logic.js - [Add description for wordpack-logic.js]
 
