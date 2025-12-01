@@ -1,53 +1,14 @@
-Function_Name,Description,Reusability_Score
-saveState,Builds state object from local variables and calls shared saveState function,7
-loadState,Calls shared loadState function from wordpack-logic.js,10
-showSuccessStamp,Wrapper for shared stamp function providing flashcard-specific element references,3
-showFailureStamp,Wrapper for shared stamp function providing flashcard-specific element references,3
-showStartingCard,Navigate to menu/help card - sets flashcard classes and renders menu,2
-exitStartingCard,Return from starting card to saved position - flashcard state management,2
-renderMenuCard,Render the menu card with settings (looks like a flashcard) - heavy DOM manipulation,1
-populateWordpackSelectorOnCard,Populate wordpack selector on the menu card,5
-switchMode,Switch between learning modes (flashcard/spelling/pronunciation/translation),8
-initializeTypingDisplay,Initialize typing display arrays for typing modes - splits word into characters,9
-addDuplicateCards,Add duplicate cards to deck for extra practice - inserts at random positions,9
-handleTypingInput,Handle typing input validation - checks keys against target word with normalization,9
-isWritingComplete,Check if typing is complete (no underscores remaining),9
-loadVoices,Load TTS voices based on language code from loaded modules,10
-populateVoiceSelector,DEPRECATED - voice selector now populated in renderMenuCard,1
-loadAct,Load and decode obfuscated module data for a specific act,10
-populateActSelector,Populate act selector dropdown from loaded module metadata,10
-populateLanguageSelector,Populate native language selector from loaded module translations config,10
-initializeTooltips,Initialize tooltips for mode buttons and control buttons from TOOLTIP_MESSAGES,5
-createButtonTooltip,Create a tooltip element for a button - general helper,10
-initializeApp,Initialize app on page load - loads acts and restores state,7
-restoreSavedState,Restore saved state from localStorage - validates and applies saved settings,8
-updateBackLabel,Update back label text based on native language - flashcard label management,3
-initializeDeck,Create deck from wordpack with linked card objects (front/back always synced),9
-restartCurrentPack,Restart current wordpack - resets deck to original state,9
-goToNextPack,Navigate to next wordpack in sequence,9
-generateWeathering,Generate random weathering CSS gradients for card aging effect,1
-renderTypingDisplay,Render typing display with underscores and typed characters - word grouping logic,9
-renderTargetWord,Render target word with Chinese+pinyin coupling if applicable,9
-renderTranslation,Render translation text with Chinese+pinyin coupling if applicable,9
-updateDisplay,Update flashcard DOM elements based on current mode and card - flashcard-specific,1
-goToPrevious,Navigate to previous card with wrap-around,9
-goToNext,Navigate to next card with wrap-around,9
-moveToNextCard,Move to next card for typing mode auto-advance,9
-flipCard,Add 'flipped' class to flashcard - flip animation trigger,1
-unflipCard,Remove 'flipped' class from flashcard - unflip animation trigger,1
-removeCurrentCard,Remove current card from deck - got it button behavior,9
-addConfusedCards,Add 2 copies of current card to random positions - confused button behavior,9
-resetDeck,Reset deck to original shuffled state - fresh start in current mode,9
-speakTargetWord,Speak the target word using TTS with configured voice and speed,10
-speakSpanish,Backwards compatibility alias for speakTargetWord,10
-setSpeed,Set TTS speech speed and update UI button states,9
-showFeedback,Show pronunciation feedback with score and transcript comparison,8
-hideFeedback,Hide pronunciation feedback overlays,9
-startListening,Start speech recognition for pronunciation practice,9
-updateWordpackTitle,Update wordpack title display from current pack metadata,8
-startGame,Start or resume practice session - exits menu and initializes/resumes deck,7
-updateDebugTableWrapper,Wrapper providing local scope data to shared updateDebugTable function,10
-random,Seeded random number generator helper inside generateWeathering,10
-simulateRight,Debug function to simulate correct answer - removes current card,9
-simulateWrong,Debug function to simulate wrong answer - adds 2 duplicate cards,9
-simulateNearVictory,Debug function to simulate near victory - keeps only last card,9
+Function Name,What It Does,Reusability Score (1-10)
+showStartingCard,"Navigates to the menu/help card with game settings and instructions",3
+exitStartingCard,"Returns from menu card to the previously viewed game card",3
+renderMenuCard,"Creates the HTML for the menu card with dropdowns for act, wordpack, language, speed, and voice selection",2
+switchMode,"Switches between learning modes (flashcard, spelling, pronunciation, translation) and resets deck state",7
+populateVoiceSelector,"Deprecated compatibility function that does nothing (voice selector now populated in renderMenuCard)",1
+initializeTooltips,"Populates tooltip content for mode buttons and control bar buttons using TOOLTIP_MESSAGES",4
+initializeApp,"Main initialization function that loads saved state, sets up the game, populates UI elements, and starts the app",6
+updateBackLabel,"Deprecated function that did nothing (card labels have been removed)",1
+generateWeathering,"Generates CSS gradients for random sun-faded weathering effects on flashcards using seed-based randomization",2
+updateDisplay,"Main display function that renders the current card content based on mode (flashcard, spelling, pronunciation, translation)",5
+unflipCard,"Removes the 'flipped' CSS class to show the front of the flashcard",4
+showFeedback,"Shows pronunciation feedback with score, what was heard vs expected, and handles penalties for low scores",6
+startGame,"Initializes the game with a selected wordpack, creates deck, and starts playing",5
