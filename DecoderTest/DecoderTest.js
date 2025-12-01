@@ -162,8 +162,8 @@ function populatePackDropdown() {
       state.currentPack = packKey;
       displayVocabulary();
       if (state.flashcardMode) {
-        initFlashcardDeckLocal();
-        updateFlashcardDisplayLocal();
+        initFlashcardDeck();      // Uses shared function from wordpack-logic.js
+        updateFlashcardDisplay(); // Uses local function that calls game-specific DOM elements
       }
       saveStateLocal();
     }
@@ -188,8 +188,8 @@ function populateNativeLanguageDropdown() {
       state.currentNativeLanguage = parseInt(langCode);
       displayVocabulary();
       if (state.flashcardMode) {
-        initFlashcardDeckLocal();
-        updateFlashcardDisplayLocal();
+        initFlashcardDeck();      // Uses shared function from wordpack-logic.js
+        updateFlashcardDisplay(); // Uses local function that calls game-specific DOM elements
       }
       saveStateLocal();
     }
@@ -236,67 +236,49 @@ function handleFlashcardModeLocal() {
     state: state,
     flashcardAreaId: 'flashcardArea',
     tableSelector: 'table',
-    initDeck: initFlashcardDeckLocal,
-    updateDisplay: updateFlashcardDisplayLocal
+    initDeck: initFlashcardDeck,      // Uses shared function from wordpack-logic.js
+    updateDisplay: updateFlashcardDisplay  // Uses shared function from wordpack-logic.js
   });
 }
 
-function initFlashcardDeckLocal() {
-  if (!state.currentAct || !state.currentPack) return;
+// NOTE: initFlashcardDeck() is now in wordpack-logic.js (shared)
+// NOTE: flipCard(), nextCard(), prevCard(), shuffleDeck() are now in wordpack-logic.js (shared)
+// They call updateFlashcardDisplay() which is defined below
 
-  const pack = state.loadedData[state.currentAct][state.currentPack];
-  if (!pack) return;
+/**
+ * Updates flashcard display - called by shared flashcard functions in wordpack-logic.js
+ * Game-specific DOM element IDs are used directly
+ */
+function updateFlashcardDisplay() {
+  const content = document.getElementById('flashcardContent');
+  const side = document.getElementById('flashcardSide');
+  const counter = document.getElementById('flashcardCounter');
+  const debug = document.getElementById('flashcardDebug');
 
-  const words = combineAndShuffleWords(pack);
-  state.flashcardDeck = words.map((item, i) => ({
-    id: i,
-    front: item.word[0],
-    back: item.word[state.currentNativeLanguage] || '',
-    pinyin: item.word[1] || '',
-    type: item.type
-  }));
-  state.flashcardIndex = 0;
-  state.flashcardShowingFront = true;
-}
+  if (!state.flashcardDeck || state.flashcardDeck.length === 0) {
+    if (content) content.textContent = 'No cards loaded';
+    return;
+  }
 
-function updateFlashcardDisplayLocal() {
-  updateFlashcardDisplay({
-    state: state,
-    elements: {
-      contentId: 'flashcardContent',
-      sideId: 'flashcardSide',
-      counterId: 'flashcardCounter',
-      debugId: 'flashcardDebug'
+  const card = state.flashcardDeck[state.flashcardIndex];
+
+  if (state.flashcardShowingFront) {
+    if (content) {
+      if (state.currentLanguage === 'Chinese' && card.pinyin) {
+        content.innerHTML = getChineseHtml(card.front, card.pinyin);
+      } else {
+        content.textContent = card.front;
+      }
     }
-  });
+    if (side) side.textContent = '(FRONT - click to flip)';
+  } else {
+    if (content) content.textContent = card.back;
+    if (side) side.textContent = '(BACK - click to flip)';
+  }
+
+  if (counter) counter.textContent = `Card ${state.flashcardIndex + 1} of ${state.flashcardDeck.length}`;
+  if (debug) debug.textContent = JSON.stringify(card, null, 2);
 }
-
-// Window-exposed flashcard controls
-window.flipCard = function() {
-  state.flashcardShowingFront = !state.flashcardShowingFront;
-  updateFlashcardDisplayLocal();
-};
-
-window.nextCard = function() {
-  if (state.flashcardDeck.length === 0) return;
-  state.flashcardIndex = (state.flashcardIndex + 1) % state.flashcardDeck.length;
-  state.flashcardShowingFront = true;
-  updateFlashcardDisplayLocal();
-};
-
-window.prevCard = function() {
-  if (state.flashcardDeck.length === 0) return;
-  state.flashcardIndex = (state.flashcardIndex - 1 + state.flashcardDeck.length) % state.flashcardDeck.length;
-  state.flashcardShowingFront = true;
-  updateFlashcardDisplayLocal();
-};
-
-window.shuffleDeck = function() {
-  state.flashcardDeck = shuffleArray(state.flashcardDeck);
-  state.flashcardIndex = 0;
-  state.flashcardShowingFront = true;
-  updateFlashcardDisplayLocal();
-};
 
 // ════════════════════════════════════════════════════════════════════════════
 // VOCABULARY DISPLAY
@@ -402,7 +384,7 @@ function displayVocabulary() {
       const recordCell = document.createElement('td');
       const recordBtn = document.createElement('button');
       recordBtn.textContent = '🎤';
-      recordBtn.onclick = () => startListeningForPronunciationLocal(index, word[0], recordBtn);
+      recordBtn.onclick = () => startListeningForPronunciation(index, word[0], recordBtn); // Uses shared function from wordpack-logic.js
       recordCell.appendChild(recordBtn);
       row.appendChild(recordCell);
 
@@ -430,55 +412,25 @@ function updateTypingDisplayLocal(wordIndex, correctWord, inputElement) {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
-// SPEECH RECOGNITION - Local implementation using shared SPEECH_LANG_CODES
+// SPEECH RECOGNITION - Uses shared functions from wordpack-logic.js
 // ════════════════════════════════════════════════════════════════════════════
+// NOTE: startListeningForPronunciation() and resetListeningState() are now in wordpack-logic.js (shared)
+// The shared function calls updatePronunciationDisplay() which is defined below
 
-function startListeningForPronunciationLocal(wordIndex, correctWord, recordButton) {
-  if (!recognition) {
-    alert('Speech recognition not supported');
-    return;
+/**
+ * Updates pronunciation score display - called by shared speech recognition function
+ * Game-specific DOM element lookup for the score cell
+ */
+function updatePronunciationDisplay(wordIndex, recordButton) {
+  const pronunciationState = state.pronunciationStates.get(wordIndex);
+  if (!pronunciationState) return;
+
+  const row = recordButton.closest('tr');
+  const scoreCell = row?.querySelector('.pronunciation-score');
+  if (scoreCell) {
+    scoreCell.textContent = `${pronunciationState.score}%`;
+    scoreCell.title = `Heard: "${pronunciationState.heard}"`;
   }
-
-  if (isListening) {
-    recognition.stop();
-    resetListeningStateLocal(recordButton);
-    return;
-  }
-
-  recognition.lang = SPEECH_LANG_CODES[state.currentLanguage] || 'en-US';
-  isListening = true;
-  currentListeningWordIndex = wordIndex;
-  recordButton.textContent = '⏹️';
-
-  recognition.onresult = (event) => {
-    const heard = event.results[0][0].transcript;
-    const result = calculateSimilarity(correctWord, heard, state.currentLanguage.toLowerCase());
-
-    state.pronunciationStates.set(wordIndex, {
-      score: result.score,
-      heard: heard,
-      attempted: true
-    });
-
-    const row = recordButton.closest('tr');
-    const scoreCell = row?.querySelector('.pronunciation-score');
-    if (scoreCell) {
-      scoreCell.textContent = `${result.score}%`;
-      scoreCell.title = `Heard: "${heard}"`;
-    }
-
-    resetListeningStateLocal(recordButton);
-  };
-
-  recognition.onerror = () => resetListeningStateLocal(recordButton);
-  recognition.onend = () => resetListeningStateLocal(recordButton);
-  recognition.start();
-}
-
-function resetListeningStateLocal(recordButton) {
-  isListening = false;
-  currentListeningWordIndex = null;
-  if (recordButton) recordButton.textContent = '🎤';
 }
 
 // ════════════════════════════════════════════════════════════════════════════
