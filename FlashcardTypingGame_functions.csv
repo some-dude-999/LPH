@@ -1,44 +1,36 @@
-Function Name,What It Does,Reusability Score (1-10)
-saveState,"Wrapper function that builds state object from game's local variables (voiceURI, speed, wordpackKey, act, language) and calls shared saveState from wordpack-logic.js",3
-loadState,Wrapper function that calls shared loadState from wordpack-logic.js to retrieve saved game state from localStorage,3
-showSuccessStamp,"Wrapper that calls shared showSuccessStamp from wordpack-logic.js with game-specific element (removedStamp), plays ding sound and shows green stamp",3
-showFailureStamp,"Wrapper that calls shared showFailureStamp from wordpack-logic.js with game-specific element (addedStamp), plays buzz sound and shows red stamp",3
-showStartingCard,"Navigates to starting card (menu/help card), adds showing-menu class, updates titles based on target language, renders menu card, optionally flips to back for help",2
-exitStartingCard,"Returns from starting card to saved position, removes showing-menu class, restores wordpack title and displays saved card",2
-renderMenuCard,"Renders the menu card that looks like a regular flashcard with dropdowns for Act/Pack/Language/Voice/Speed on front, and help instructions on back",1
-populateWordpackSelectorOnCard,"Populates wordpack dropdown on menu card with packs from selected act, uses saved wordpack if valid for act otherwise defaults to first pack",3
-switchMode,"Switches between learning modes (flashcard/spelling/pronunciation/translation), resets deck to original pedagogical order, updates UI, auto-pronounces in spelling mode",8
-initializeTypingDisplay,"Initializes typing state variables for spelling and translation modes - sets up typingInput, typingDisplay, typedPositions, wrongAttempts, wrongPositions, wrongLetters",8
-handleTypingInput,"Handles typing input in spelling/translation modes using shared helpers from wordpack-logic.js, validates keypress, updates display, shows stamps, handles correct/wrong completion logic",9
-isWritingComplete,Checks if current word is complete in translation mode by verifying typingDisplay contains no underscores,7
-loadVoices,"Loads TTS voices based on language code from loaded modules using shared loadVoicesForLanguage, restores saved voice if available, only works if modules are loaded",8
-populateVoiceSelector,DEPRECATED function kept for compatibility - voice selector is now populated inside renderMenuCard instead,1
-loadAct,"Loads specific act's data by number, decodes obfuscated module, extracts __actMeta, stores pack data in loadedActs and wordpacks objects",9
-populateActSelector,"Populates act selector dropdown from loaded __actMeta using shared function from wordpack-logic.js, sets saved value or defaults to first act",7
-populateLanguageSelector,"Populates 'I speak' language selector dropdown from loaded __actMeta.translations using shared function from wordpack-logic.js, validates saved language or defaults",7
-initializeTooltips,"Initializes tooltips from TOOLTIP_MESSAGES - builds mode instruction lists (flashcard/spelling/pronunciation/translation) and attaches button tooltips using shared data source",7
-initializeApp,"Main initialization - loads all acts to get metadata, validates target language consistency, detects language, loads voices, restores saved state, preloads deck, shows menu overlay",5
-restoreSavedState,"Restores saved state from localStorage, validates speed against VALID_SPEEDS, restores act/wordpack/language, validates voice URI, saves defaults if no saved state",8
-updateBackLabel,Updates the back label based on native language selection - changes text to show which language will appear on card back,6
-initializeDeck,"Creates deck from selected wordpack using shared createDeckFromPack from wordpack-logic.js, handles Chinese pinyin mode, sets originalDeck and currentDeck, resets index",9
-restartCurrentPack,"Resets current pack by copying originalDeck to currentDeck, resets index to 0, updates display, saves state - preserves pedagogical order without shuffling",8
-goToNextPack,"Navigates to next wordpack in sequence using shared navigateToNextPack from wordpack-logic.js, initializes new deck, updates title, saves state",8
-generateWeathering,"Generates random weathering pattern for flashcard using seed-based randomization - creates sun-faded edges, color tints, splotches for vintage appearance",2
-updateDisplay,"Core display function - shows current card with mode-specific rendering (flashcard/spelling/pronunciation/translation), handles Chinese coupling, applies weathering, manages button visibility",4
-goToPrevious,"Navigates to previous card with wraparound using shared navigateToPrevious from wordpack-logic.js, cancels speech, plays flip sound, reinitializes typing in spelling/translation modes",8
-goToNext,"Navigates to next card with wraparound using shared navigateToNext from wordpack-logic.js, cancels speech, plays flip sound, reinitializes typing in spelling/translation modes",8
-moveToNextCard,"Moves to next card after typing completion (used in spelling/translation auto-advance), plays flip sound, reinitializes typing display, updates display, auto-pronounces in spelling mode",7
-flipCard,"Toggles flashcard between front and back with CSS animation, updates isFlipped flag, auto-pronounces target word in spelling mode when flipping to back",3
-unflipCard,Forces flashcard to show front side without playing flip sound - used for card navigation to ensure consistent card face,2
-removeCurrentCard,"Removes current card from deck (correct answer), plays success sound, shows green stamp, checks for pack completion, uses shared removeCard from wordpack-logic.js",9
-addConfusedCards,"Adds 2 duplicate copies of current card to deck for extra practice (wrong answer/confused), plays failure sound, shows red stamp, uses shared addDuplicateCards",9
-resetDeck,"Resets deck to original state without shuffling using shared resetDeckToOriginal from wordpack-logic.js, preserves pedagogical ordering, resets index, updates display",8
-speakTargetWord,"Speaks the target word (Chinese/Spanish/English) using shared speakWord from wordpack-logic.js with selected voice, speed, and language-specific TTS code",9
-speakSpanish,"Convenience wrapper that speaks target word at current index using speakTargetWord - used for pronunciation practice and auto-speak in spelling mode",7
-setSpeed,"Sets TTS speed and updates active state on speed buttons using shared setTTSSpeed from wordpack-logic.js, takes speed value and button element",8
-showFeedback,"Shows pronunciation feedback overlay with score, heard text, expected text on front or back of card, displays colored feedback based on similarity score",9
-hideFeedback,Hides pronunciation feedback overlay by removing visible class from feedback elements,8
-startListening,"Starts speech recognition for pronunciation practice using shared startListeningForPronunciation from wordpack-logic.js, handles front or back of card, updates mic button state",9
-updateWordpackTitle,"Updates wordpack title display using shared updateWordpackTitleDisplay from wordpack-logic.js with current pack key and wordpacks data",7
-startGame,"Exits starting card to begin game, initializes deck with selected wordpack, updates title and back label, sets game-started state, updates display, cancels any playing speech",5
-updateDebugTableWrapper,"Wrapper function that calls shared updateDebugTable from wordpack-logic.js with game-specific local scope variables (currentDeck, currentIndex, nativeLanguage, wordpacks, currentWordpackKey)",3
+Function Name,What It Does,Reusability Score (1-10),Duplicate in wordpack-logic.js
+saveState,"Wrapper that builds state object from game's local variables (voiceURI, speed, wordpackKey, act, language) and calls window.saveState()",2,"Yes - saveState()"
+loadState,Wrapper that calls window.loadState() to retrieve game state from localStorage,2,"Yes - loadState()"
+showSuccessStamp,"Wrapper that calls window.showSuccessStamp() with game-specific element (removedStamp), plays ding and shows green stamp",2,"Yes - showSuccessStamp()"
+showFailureStamp,"Wrapper that calls window.showFailureStamp() with game-specific element (addedStamp), plays buzz and shows red stamp",2,"Yes - showFailureStamp()"
+showStartingCard,"Navigates to starting card (menu/help), adds showing-menu class, updates titles, renders menu card, optionally flips to back for help",1,No - Game-specific menu navigation
+exitStartingCard,"Returns from starting card to saved position, removes showing-menu class, restores wordpack title and updates display",1,No - Game-specific menu navigation
+renderMenuCard,"Renders menu card that looks like flashcard with Act/Pack/Language/Voice/Speed dropdowns on front and help instructions on back",1,No - Game-specific menu rendering
+populateWordpackSelectorOnCard,"Populates wordpack dropdown on menu card with packs from selected act, uses saved wordpack if valid otherwise defaults to first",2,"Similar - populatePackSelector()"
+switchMode,"Switches between learning modes (flashcard/spelling/pronunciation/translation), resets deck to original order, updates UI, auto-pronounces in spelling",4,No - Game-specific mode switching UI
+initializeTypingDisplay,"Initializes typing state variables (typingInput, typingDisplay, typedPositions, wrongAttempts, wrongPositions, wrongLetters) from current word",7,"Yes - initializeTypingState()"
+handleTypingInput,"Handles typing input in spelling/translation modes, validates keypress using shared helpers, updates display, shows stamps, handles completion logic",3,"Yes - handleTypingInput() but game-specific wrapper"
+loadVoices,"Loads TTS voices based on language code from loaded modules using window.loadVoicesForLanguage(), restores saved voice if available",3,"Yes - loadVoicesForLanguage()"
+populateVoiceSelector,"DEPRECATED function kept for compatibility - voice selector now populated inside renderMenuCard()",1,No - Deprecated
+initializeTooltips,"Initializes tooltips from TOOLTIP_MESSAGES, builds mode instruction lists (flashcard/spelling/pronunciation/translation), attaches button tooltips",2,No - Game-specific tooltip configuration
+restoreSavedState,"Restores saved state from localStorage, validates speed against VALID_SPEEDS, restores act/wordpack/language, validates voice URI",3,"Yes - restoreSavedState()"
+updateBackLabel,"Updates back label text based on native language selection, changes label to show which language appears on card back",1,No - Game-specific UI label update
+initializeDeck,"Creates deck from selected wordpack using window.createDeckFromPack(), handles Chinese pinyin mode, sets originalDeck and currentDeck, resets index",3,"Yes - createDeckFromPack()"
+restartCurrentPack,"Resets current pack by copying originalDeck to currentDeck, resets index to 0, calls updateDisplay() and saveState()",3,"Yes - resetDeckToOriginal()"
+goToNextPack,"Navigates to next wordpack using window.navigateToNextPack(), initializes new deck with initializeDeck(), updates title, saves state",3,"Yes - navigateToNextPack()"
+generateWeathering,"Generates random weathering pattern for flashcard using seed-based randomization - creates sun-faded edges, color tints, splotches for vintage appearance",1,No - Flashcard-specific visual effect
+updateDisplay,"Core display function - shows current card with mode-specific rendering (flashcard/spelling/pronunciation/translation), handles Chinese coupling, applies weathering",1,No - Flashcard-specific DOM updates
+goToPrevious,"Navigates to previous card using window.navigateToPrevious(), cancels speech, plays flip sound, reinitializes typing in spelling/translation modes",3,"Yes - navigateToPrevious()"
+goToNext,"Navigates to next card using window.navigateToNext(), cancels speech, plays flip sound, reinitializes typing in spelling/translation modes",3,"Yes - navigateToNext()"
+moveToNextCard,"Moves to next card after typing completion (auto-advance), plays flip sound, reinitializes typing display, updates display, auto-pronounces in spelling",4,"Similar - navigateToNext()"
+flipCard,"Toggles flashcard between front and back with CSS animation, updates isFlipped flag, auto-pronounces target word in spelling mode when flipping to back",2,"Yes - flipCard() but different implementation"
+unflipCard,"Forces flashcard to show front side without playing flip sound - used for card navigation to ensure consistent card face",1,No - Flashcard-specific animation
+removeCurrentCard,"Removes current card from deck (correct answer), plays success sound, shows green stamp, checks for pack completion",3,"Yes - removeCard()"
+addConfusedCards,"Adds 2 duplicate copies of current card to deck for extra practice (wrong answer/confused), plays failure sound, shows red stamp",3,"Yes - addDuplicateCards()"
+resetDeck,"Resets deck to original state without shuffling using window.resetDeckToOriginal(), preserves pedagogical ordering, updates display",3,"Yes - resetDeckToOriginal()"
+speakTargetWord,"Speaks target word at current index using window.speakWord() with selected voice, speed, and language-specific TTS code",3,"Yes - speakWord()"
+setSpeed,"Sets TTS speed using window.setTTSSpeed(), updates currentSpeed variable, calls saveState()",3,"Yes - setTTSSpeed()"
+showFeedback,"Shows pronunciation feedback overlay with score/heard/expected text on front or back of card, handles pronunciation mode auto-advance with stamps",4,No - Game-specific feedback display with deck logic
+startListening,"Starts speech recognition using window.startListeningForPronunciation(), handles front or back of card, updates mic button state",3,"Yes - startListeningForPronunciation()"
+startGame,"Exits starting card to begin game, initializes deck with selected wordpack, updates title and back label, sets game-started state, cancels speech",1,No - Game-specific initialization flow
+updateDebugTableWrapper,"Wrapper that calls window.updateDebugTable() with game-specific local scope variables (currentDeck, currentIndex, nativeLanguage, wordpacks, currentWordpackKey)",2,"Yes - updateDebugTable()"
