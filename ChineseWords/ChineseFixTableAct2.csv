@@ -1,0 +1,5 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,15,Family Members,20,french,Parents,Proches,Parents commonly means mom and dad in French; Proches better conveys relatives
+chinese,17,Months & Seasons,53,french,Manger de la fondue en hiver,Manger du hot pot en hiver,Fondue refers to cheese fondue in French; hot pot is the common term for Chinese hot pot
+chinese,22,More Action Verbs,11,pinyin,hái,huán,When 还 means return the correct pronunciation is huán not hái
+chinese,23,Daily Actions,29,english,Hand sanitizer,Liquid hand soap,洗手液 means liquid hand soap not hand sanitizer
