@@ -1,0 +1,4 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+english,114,Finance Basics,53,pinyin,cái wù bù,cái zhèng bù,Corrected pinyin for 财政部 (zhèng not wù)
+english,121,Technology Advanced,34,chinese,虚拟现实耳机,虚拟现实头盔,VR headset should be 头盔 (helmet) not 耳机 (earphones)
+english,121,Technology Advanced,34,pinyin,xū nǐ xiàn shí ěr jī,xū nǐ xiàn shí tóu kuī,Updated pinyin to match corrected Chinese translation
