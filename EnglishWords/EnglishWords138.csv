@@ -1,7 +1,7 @@
 english,chinese,pinyin,spanish,portuguese
 agreement,协议,xié yì,acuerdo,acordo
 advice,建议,jiàn yì,consejo,conselhos
-testimony,见证,jiàn zhèng,testimonio,testemunho
+testimony,证词,zhèng cí,testimonio,testemunho
 evidence,证据,zhèng jù,evidencia,evidências
 dispute,争议,zhēng yì,disputa,disputa
 allegation,指控,zhǐ kòng,alegación,alegação
@@ -14,7 +14,7 @@ prosecution,起诉,qǐ sù,procesamiento,acusação
 appeal,上诉,shàng sù,apelación,recurso
 acquittal,无罪释放,wú zuì shì fàng,absolución,absolvição
 injunction,禁令,jìn lìng,orden judicial,liminar
-deposition,沉积,chén jī,deposición,deposição
+deposition,证词陈述,zhèng cí chén shù,deposición,deposição
 litigation,诉讼,sù sòng,litigio,litígio
 arbitration,仲裁,zhòng cái,arbitraje,arbitragem
 tort,侵权,qīn quán,agravio,ato ilícito
@@ -49,8 +49,8 @@ jury acquittal,陪审团无罪释放,péi shěn tuán wú zuì shì fàng,absolu
 acquittal of,的无罪释放,de wú zuì shì fàng,absolución de,absolvição de
 court injunction,法院禁令,fǎ yuàn jìn lìng,orden judicial,liminar
 injunction against,针对某人的禁令,zhēn duì mǒu rén de jìn lìng,orden judicial contra,liminar contra
-legal deposition,法律作证,fǎ lǜ zuò zhèng,deposición legal,depoimento judicial
-deposition testimony,证词作证,zhèng cí zuò zhèng,testimonio de deposición,depoimento de depoimento
+legal deposition,法律证词,fǎ lǜ zhèng cí,deposición legal,depoimento judicial
+deposition testimony,证词陈述,zhèng cí chén shù,testimonio de deposición,depoimento de depoimento
 ongoing litigation,正在进行的诉讼,zhèng zài jìn xíng de sù sòng,litigio en curso,litígio em curso
 litigation costs,诉讼费用,sù sòng fèi yòng,costas del litigio,custos de litígio
 binding arbitration,具有约束力的仲裁,jù yǒu yuē shù lì de zhòng cái,arbitraje vinculante,arbitragem vinculativa
