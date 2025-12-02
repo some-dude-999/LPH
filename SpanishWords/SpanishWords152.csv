@@ -6,7 +6,7 @@ novela,novel,小说,xiǎo shuō,novela
 poesía,poetry,诗,shī,poesia
 poema,poem,诗,shī,poema
 poeta,poet,诗人,shī rén,poeta
-personaje,character,角色,zì fú,personagem
+personaje,character,角色,jué sè,personagem
 trama,plot,情节,qíng jié,enredo
 capítulo,chapter,章,zhāng,capítulo
 publicar,to publish,发布,fā bù,publicar
@@ -16,7 +16,7 @@ prosa,prose,散文,sǎn wén,prosa
 verso,verse,诗句,shī jù,verso
 estrofa,stanza,节,jié,estrofe
 rima,rhyme,韵,yùn,rima
-género,genre,体裁,xìng bié,gênero
+género,genre,体裁,tǐ cái,gênero
 ensayo,essay,论文,lùn wén,ensaio
 la escritora,the writer,作者,zuò zhě,o escritor
 una escritora,a writer,作家,zuò jiā,um escritor
@@ -33,7 +33,7 @@ un poema,a poem,一首诗,yī shǒu shī,um poema
 el poeta,the poet,诗人,shī rén,o poeta
 un poeta,a poet,诗人,shī rén,um poeta
 el personaje,the character,角色,jué sè,o personagem
-un personaje,a character,一个角色,yí gè zì fú,um personagem
+un personaje,a character,一个角色,yí gè jué sè,um personagem
 la trama,the plot,情节,qíng jié,o enredo
 una trama,a plot,情节,qíng jié,um enredo
 el capítulo,the chapter,章节,zhāng jié,o capítulo
@@ -46,13 +46,13 @@ la narrativa,the narrative,叙述,xù shù,a narrativa
 con narrativa,with narrative,带有叙述性,dài yǒu xù shù xìng,com narrativa
 la prosa,the prose,散文,sǎn wén,a prosa
 en prosa,in prose,散文,sǎn wén,em prosa
-el verso,the verse,这节诗句,zhè jié jīng wén,o versículo
+el verso,the verse,诗句,shī jù,o versículo
 un verso,a verse,一首诗,yī shǒu shī,um verso
 la estrofa,the stanza,节,jié,a estrofe
 una estrofa,a stanza,一节,yī jié,uma estrofe
 la rima,the rhyme,韵律,yùn lǜ,a rima
 con rima,with rhyme,押韵,yā yùn,com rima
-el género,the gender,体裁,xìng bié,o gênero
+el género,the genre,体裁,xìng bié,o gênero
 un género,a genre,一种类型,yī zhǒng lèi xíng,um gênero
 el ensayo,the essay,文章,wén zhāng,a redação
 un ensayo,an essay,一篇文章,yì piān wén zhāng,um ensaio
