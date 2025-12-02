@@ -5,10 +5,10 @@ chinese,pinyin,english,spanish,french,portuguese
 正常,zhèng cháng,Normal,Normal,Normale,Normal
 异常,yì cháng,Abnormal,Anormal,Anormal,Anormal
 简单,jiǎn dān,Simple,Sencillo,Simple,Simples
-进行,jìn xíng,In progress,Progreso,Progrès,Progresso
-发生,fā shēng,Happen,Ocurrencia,Occurrence,Ocorrência
-出现,chū xiàn,Appear,Aparecer,Apparaissent,Aparecer
-存在,cún zài,Exist,Existen,Existe,Existe
+进行,jìn xíng,In progress,En progreso,En cours,Progresso
+发生,fā shēng,Happen,Ocurrir,Se produire,Ocorrência
+出现,chū xiàn,Appear,Aparecer,Apparaître,Aparecer
+存在,cún zài,Exist,Existir,Existe,Existe
 变化,biàn huà,Change,Cambiar,Changer,Alterar
 改变,gǎi biàn,Change,Cambiar,Changer,Alterar
 转变,zhuǎn biàn,Change,Cambiar,Changer,Alterar
@@ -30,7 +30,7 @@ chinese,pinyin,english,spanish,french,portuguese
 发生了,fā shēng le,Happened,Sucedió,C'est arrivé,Aconteceu
 刚发生,gāng fā shēng,Just happened,Acaba de suceder,Cela vient d'arriver,Acabou de acontecer
 出现了,chū xiàn le,Appeared,Apareció,Apparu,Apareceu
-刚出现,gāng chū xiàn,Just appeared,Acaba de aparecer,Je viens de paraître,Acabou de aparecer
+刚出现,gāng chū xiàn,Just appeared,Acaba de aparecer,Vient d'apparaître,Acabou de aparecer
 存在问题,cún zài wèn tí,There is a problem,Hay un problema,Il y a un problème,Há um problema
 还存在,hái cún zài,Still exists,Todavía existe,Existe toujours,Ainda existe
 有变化,yǒu biàn huà,There is a change,Hay un cambio,Il y a un changement,Há uma mudança

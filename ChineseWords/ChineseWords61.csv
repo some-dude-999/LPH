@@ -1,9 +1,9 @@
 chinese,pinyin,english,spanish,french,portuguese
 钱,qián,Money,Dinero,Argent,Dinheiro
 价格,jià gé,Price,Precio,Prix,Preço
-费用,fèi yòng,Fees,Tarifas,Honoraires,Taxas
+费用,fèi yòng,Fees,Tarifas,Frais,Taxas
 优惠,yōu huì,Discount,Descuento,Réduction,Desconto
-现金,xiàn jīn,Cash,Efectivo,Espèces,Dinheiro
+现金,xiàn jīn,Cash,Efectivo,Espèces,Dinheiro vivo
 刷卡,shuā kǎ,Pay by card,Pagar con tarjeta,Payer par carte,Pagar com cartão
 支付,zhī fù,Pay,Pagar,Payer,Pagar
 付款,fù kuǎn,Payment,Pago,Paiement,Pagamento
@@ -30,7 +30,7 @@ chinese,pinyin,english,spanish,french,portuguese
 去支付,qù zhī fù,Go to pay,Ir a pagar,Allez payer,Vá pagar
 去付款,qù fù kuǎn,Go to pay,Ir a pagar,Allez payer,Vá pagar
 已付款,yǐ fù kuǎn,Already paid,Ya pagado,Déjà payé,Já pago
-有零钱,yǒu líng qián,Have change,Tener cambio,Avoir du changement,Tem troco
+有零钱,yǒu líng qián,Have change,Tener cambio,Avoir de la monnaie,Tem troco
 换零钱,huàn líng qián,Get change,Cambiar monedas,Faire de la monnaie,Trocar dinheiro
 找钱给你,zhǎo qián gěi nǐ,Give you change,Te doy cambio,Je te rends la monnaie,Dou-lhe troco
 不用找钱,bù yòng zhǎo qián,Keep the change,No hace falta cambio,Gardez la monnaie,Fique com o troco
