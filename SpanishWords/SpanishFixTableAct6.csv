@@ -1,0 +1,13 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,194,Retail & Sales,7,english,buyer,buyer (feminine),Gender annotation for feminine noun compradora
+spanish,194,Retail & Sales,31,english,the buyer,the buyer (feminine),Gender annotation for feminine noun la compradora
+spanish,194,Retail & Sales,32,english,a buyer,a buyer (feminine),Gender annotation for feminine noun una compradora
+spanish,200,Real Estate Terms,9,english,owner,owner (feminine),Gender annotation for feminine noun propietaria
+spanish,200,Real Estate Terms,11,english,tenant,tenant (feminine),Gender annotation for feminine noun inquilina
+spanish,200,Real Estate Terms,33,english,the owner,the owner (feminine),Gender annotation for feminine noun la propietaria
+spanish,200,Real Estate Terms,34,english,an owner,an owner (feminine),Gender annotation for feminine noun una propietaria
+spanish,200,Real Estate Terms,37,english,the tenant,the tenant (feminine),Gender annotation for feminine noun la inquilina
+spanish,200,Real Estate Terms,38,english,a tenant,a tenant (feminine),Gender annotation for feminine noun una inquilina
+spanish,203,Aviation Terms,11,english,passenger,passenger (feminine),Gender annotation for feminine noun pasajera
+spanish,203,Aviation Terms,38,english,the passenger,the passenger (feminine),Gender annotation for feminine noun la pasajera
+spanish,203,Aviation Terms,39,english,a passenger,a passenger (feminine),Gender annotation for feminine noun una pasajera
