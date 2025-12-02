@@ -4,7 +4,7 @@ student,学生,xué shēng,estudiante,estudante
 homework,作业,zuò yè,tarea,lição de casa
 exam,考试,kǎo shì,examen,exame
 test,测试,cè shì,prueba,teste
-grade,成绩,chéng jì,grado,nota
+grade,成绩,chéng jì,nota,nota
 subject,科目,kē mù,tema,assunto
 lesson,课,kè,lección,lição
 study,学习,xué xí,estudiar,estudar
@@ -14,14 +14,14 @@ notebook,笔记本,bǐ jì běn,cuaderno,caderno
 textbook,教科书,jiào kē shū,libro de texto,livro didático
 blackboard,黑板,hēi bǎn,pizarra,quadro negro
 semester,学期,xué qī,semestre,semestre
-tutor,导师,dǎo shī,profesor,tutora
+tutor,导师,dǎo shī,tutor,tutor
 assignment,作业,zuò yè,tarea,tarefa
 curriculum,课程,kè chéng,plan de estudios,currículo
 lecture,讲座,jiǎng zuò,conferencia,palestra
 recess,课间休息,kè jiān xiū xī,recreo,recesso
 empty classroom,空荡荡的教室,kōng dàng dàng de jiào shì,aula vacía,sala de aula vazia
 classroom rules,课堂规则,kè táng guī zé,reglas del salón de clases,regras da sala de aula
-new student,新学生,xīn xué shēng,nuevo estudiante,nova aluna
+new student,新学生,xīn xué shēng,nuevo estudiante,novo aluno
 student body,学生团体,xué shēng tuán tǐ,alumnado,corpo discente
 finish homework,完成作业,wán chéng zuò yè,terminar la tarea,terminar o dever de casa
 homework help,作业帮助,zuò yè bāng zhù,ayuda con la tarea,ajuda com lição de casa
