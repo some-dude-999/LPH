@@ -397,11 +397,6 @@ function renderTypingDisplayHTML(typingDisplay, typedPositions, wrongPositions =
   return html;
 }
 
-function renderWordHTML(word, pinyin, isChinese) {
-  if (isChinese && pinyin) return renderChineseWithPinyin(coupleChineseWithPinyin(word, pinyin)).outerHTML;
-  return word || '';
-}
-
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 9: PRONUNCIATION MODE
 // ════════════════════════════════════════════════════════════════════════════
@@ -788,7 +783,7 @@ if (typeof module !== 'undefined' && module.exports) {
     shuffleArray, combineAndShuffleWords, createDeckFromPack, coupleChineseWithPinyin, renderChineseWithPinyin,
     speakWord, switchModeLogic, updateModeButtonsVisual, updateControlVisibilityForMode,
     normalize, collectFilteredWords, generateWrongAnswers,
-    findNextTypingPosition, checkTypingKey, isWordComplete, initializeTypingState, renderTypingDisplayHTML, renderWordHTML,
+    findNextTypingPosition, checkTypingKey, isWordComplete, initializeTypingState, renderTypingDisplayHTML,
     initializeSpeechRecognition, getSimilarityThreshold, levenshteinDistance, calculateSimilarity, getScoreFeedback, updatePronunciationDebug,
     determineOutcome, showStamp, removeCard, addDuplicateCards, navigateToNextPack, getWordpackTitleData, getSelectorOptions,
     populateSelector, createButtonTooltip, initializeTooltips,
@@ -803,7 +798,7 @@ if (typeof module !== 'undefined' && module.exports) {
 
 Object.assign(window, {
   renderChineseWithPinyin, updateModeButtonsVisual, updateControlVisibilityForMode,
-  renderTypingDisplayHTML, renderWordHTML, getScoreFeedback, updatePronunciationDebug,
+  renderTypingDisplayHTML, getScoreFeedback, updatePronunciationDebug,
   showStamp, populateSelector, createButtonTooltip, initializeTooltips,
   updateChineseModeClass, toggleDebugMode, updateDebugTable, initializeDebugUI,
   getActMetaProperty, coupleChineseWithPinyin,
