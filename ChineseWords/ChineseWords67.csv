@@ -12,7 +12,7 @@ chinese,pinyin,english,spanish,french,portuguese
 梅雨,méi yǔ,Rainy season,Temporada de lluvias,Saison des pluies,Estação chuvosa
 台风,tái fēng,Typhoon,Tifón,Typhon,Tufão
 沙尘,shā chén,Dust storm,Tormenta de arena,Tempête de sable,Tempestade de areia
-雾霾,wù mái,Haze,Neblina,Brume,Neblina
+雾霾,wù mái,Haze,Neblina,Brume,Poluição atmosférica
 晴朗,qíng lǎng,Sunny,Soleado,Ensoleillé,Ensolarado
 阴沉,yīn chén,Overcast,Nublado,Couvert,Nublado
 闷热,mēn rè,Hot and humid,Sofocante,Étouffant,Abafado
@@ -42,8 +42,8 @@ chinese,pinyin,english,spanish,french,portuguese
 刮台风,guā tái fēng,There is a typhoon,Hay un tifón,Il y a un typhon,Há um tufão
 有沙尘,yǒu shā chén,There is sand and dust,Hay arena y polvo,Il y a du sable et de la poussière,Tem areia e poeira
 起沙尘,qǐ shā chén,There is dust,Hay polvo,Il y a de la poussière,Tem poeira
-有雾霾,yǒu wù mái,There is haze,Hay neblina,Il y a de la brume,Há neblina
-出现雾霾,chū xiàn wù mái,There is haze,Hay neblina,Il y a de la brume,Há neblina
+有雾霾,yǒu wù mái,There is haze,Hay neblina,Il y a de la brume,Há poluição atmosférica
+出现雾霾,chū xiàn wù mái,There is haze,Hay neblina,Il y a de la brume,Há poluição atmosférica
 天气晴朗,tiān qì qíng lǎng,The weather is sunny,El tiempo está soleado,Le temps est ensoleillé,O tempo está ensolarado
 很晴朗,hěn qíng lǎng,Very sunny,Muy soleado,Très ensoleillé,Muito ensolarado
 天气阴沉,tiān qì yīn chén,The weather is gloomy,El clima está sombrío,Le temps est maussade,O tempo está sombrio

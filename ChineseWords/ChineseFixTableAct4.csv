@@ -1,0 +1,24 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,56,Expressing Needs,20,french,Vous voulez acheter,Je veux acheter,Should be first person (I want) not second person (You want)
+chinese,58,Giving Directions,10,english,Right,Right side,右侧 means right side not just right
+chinese,58,Giving Directions,11,english,Left,Left side,左侧 means left side not just left
+chinese,59,Describing Situations,8,spanish,Progreso,En progreso,Need full phrase for in progress
+chinese,59,Describing Situations,9,spanish,Ocurrencia,Ocurrir,Should be verb infinitive not noun
+chinese,59,Describing Situations,11,spanish,Existen,Existir,Should be infinitive not conjugated form
+chinese,61,Money & Payments,33,french,Avoir du changement,Avoir de la monnaie,Changement means alteration - monnaie is correct for coins/change
+chinese,67,Weather Conversations,15,portuguese,Neblina,Poluição atmosférica,雾霾 is smog/pollution not fog/mist
+chinese,67,Weather Conversations,45,portuguese,Há neblina,Há poluição atmosférica,雾霾 is smog/pollution not fog/mist
+chinese,67,Weather Conversations,46,portuguese,Há neblina,Há poluição atmosférica,雾霾 is smog/pollution not fog/mist
+chinese,68,Phone Conversations,34,english,Hang up,Hung up,了 indicates past tense - action completed
+chinese,68,Phone Conversations,35,english,Hang up,Was hung up on,被 indicates passive voice
+chinese,68,Phone Conversations,34,spanish,Cuelga,Colgó,了 indicates past tense
+chinese,68,Phone Conversations,35,spanish,Cuelga,Fue colgado,被 indicates passive voice
+chinese,68,Phone Conversations,34,french,Raccrocher,A raccroché,了 indicates past tense
+chinese,68,Phone Conversations,35,french,Raccrocher,A été raccroché,被 indicates passive voice
+chinese,68,Phone Conversations,34,portuguese,Desligue,Desligou,了 indicates past tense
+chinese,68,Phone Conversations,35,portuguese,Desligue,Foi desligado,被 indicates passive voice
+chinese,73,Time Expressions,2,spanish,Sólo,Recién,Sólo means only - recién means just now
+chinese,75,Describing Amounts,9,spanish,Sólo,Justo,Sólo means only - justo means just right/exactly
+chinese,75,Describing Amounts,32,spanish,solo,justo,solo means only - justo means just/exactly
+chinese,78,Expressing Preferences,3,spanish,Amor,Amar,Should be verb infinitive (to love) not noun (love)
+chinese,78,Expressing Preferences,3,french,Amour,Aimer,Should be verb infinitive (to love) not noun (love)
