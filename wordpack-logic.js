@@ -882,15 +882,16 @@ function normalizeString(str) {
 }
 
 /**
- * Generates random wrong answers for multiple choice games
+ * Collects filtered and transformed words from all packs in act data
+ * Shared helper to avoid duplicate iteration logic in wrong answer generators
  * @param {Object} actData - All wordpacks in current act
  * @param {string} correctAnswer - Correct answer to filter out
- * @param {number} count - Number of wrong answers to generate
- * @returns {Array<string>} - Array of wrong answer strings
+ * @param {Function} transformFn - Transform function (wordArray) => result
+ * @returns {Array} - Array of transformed results
  */
-function generateWrongAnswers(actData, correctAnswer, count = 4) {
+function collectFilteredWords(actData, correctAnswer, transformFn) {
   const normalizedCorrect = normalizeString(correctAnswer);
-  const allWords = [];
+  const results = [];
 
   Object.keys(actData).forEach(packKey => {
     if (packKey === '__actMeta') return;
@@ -899,20 +900,29 @@ function generateWrongAnswers(actData, correctAnswer, count = 4) {
     if (!pack || !pack.words) return;
 
     pack.words.forEach(wordArray => {
-      const targetLanguageWord = wordArray[0];
-
-      if (targetLanguageWord !== correctAnswer) {
-        const normalizedWord = normalizeString(targetLanguageWord);
+      const targetWord = wordArray[0];
+      if (targetWord !== correctAnswer) {
+        const normalizedWord = normalizeString(targetWord);
         if (normalizedWord !== normalizedCorrect) {
-          allWords.push(targetLanguageWord);
+          results.push(transformFn(wordArray));
         }
       }
     });
   });
 
-  // Shuffle using shared function
-  const shuffledWords = shuffleArray(allWords);
+  return results;
+}
 
+/**
+ * Generates random wrong answers for multiple choice games
+ * @param {Object} actData - All wordpacks in current act
+ * @param {string} correctAnswer - Correct answer to filter out
+ * @param {number} count - Number of wrong answers to generate
+ * @returns {Array<string>} - Array of wrong answer strings
+ */
+function generateWrongAnswers(actData, correctAnswer, count = 4) {
+  const allWords = collectFilteredWords(actData, correctAnswer, wordArray => wordArray[0]);
+  const shuffledWords = shuffleArray(allWords);
   return shuffledWords.slice(0, Math.min(count, shuffledWords.length));
 }
 
@@ -924,8 +934,6 @@ function generateWrongAnswers(actData, correctAnswer, count = 4) {
  * @returns {Array<{text: string, pinyin: string}>} - Array of wrong answer objects
  */
 function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) {
-  const normalizedCorrect = normalizeString(correctAnswer);
-  const allWords = [];
   const wordColumns = getWordColumns() || [];
   const pinyinIndex = wordColumns.indexOf('pinyin');
 
@@ -936,31 +944,11 @@ function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) {
     }));
   }
 
-  Object.keys(actData).forEach(packKey => {
-    if (packKey === '__actMeta') return;
-
-    const pack = actData[packKey];
-    if (!pack || !pack.words) return;
-
-    pack.words.forEach(wordArray => {
-      const chineseText = wordArray[0];
-      const pinyinText = wordArray[pinyinIndex];
-
-      if (chineseText !== correctAnswer) {
-        const normalizedWord = normalizeString(chineseText);
-        if (normalizedWord !== normalizedCorrect) {
-          allWords.push({
-            text: chineseText,
-            pinyin: pinyinText || ''
-          });
-        }
-      }
-    });
-  });
-
-  // Shuffle using shared function
+  const allWords = collectFilteredWords(actData, correctAnswer, wordArray => ({
+    text: wordArray[0],
+    pinyin: wordArray[pinyinIndex] || ''
+  }));
   const shuffledWords = shuffleArray(allWords);
-
   return shuffledWords.slice(0, Math.min(count, shuffledWords.length));
 }
 
@@ -2425,6 +2413,7 @@ if (typeof module !== 'undefined' && module.exports) {
 
     // Section 7: Multiple Choice Mode
     normalizeString,
+    collectFilteredWords,
     generateWrongAnswers,
     generateWrongAnswersWithPinyin,
 
