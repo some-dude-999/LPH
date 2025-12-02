@@ -11,13 +11,13 @@ moda,fashion,时尚,shí shàng,moda
 peinado,hairstyle,发型,fà xíng,penteado
 barba,beard,胡子,hú zi,barba
 bigote,mustache,小胡子,xiǎo hú zi,bigode
-delgado,thin,薄,báo,fino
-gordo,fat,脂肪,zhī fáng,gordura
+delgado,thin,瘦,báo,fino
+gordo,fat,胖,pàng,gordo
 musculoso,muscular,肌肉发达,jī ròu fā dá,musculoso
 calvo,bald,秃头,tū tóu,careca
 cabello,hair,头发,tóu fà,cabelo
 cejas,eyebrows,眉毛,méi máo,sobrancelhas
-pestañas,tabs,选项卡,xuǎn xiàng kǎ,abas
+pestañas,eyelashes,睫毛,jié máo,cílios
 el aspecto,the aspect,方面,fāng miàn,o aspecto
 buen aspecto,good looking,好看,hǎo kàn,bonito
 muy guapo,very handsome,很帅,hěn shuài,muito lindo
@@ -42,8 +42,8 @@ la barba,the beard,胡子,hú zi,a barba
 con barba,with beard,有胡子,yǒu hú zi,com barba
 el bigote,the mustache,小胡子,xiǎo hú zi,o bigode
 con bigote,with mustache,留着小胡子,liú zhe xiǎo hú zi,com bigode
-muy delgado,very thin,很薄,hěn báo,muito fino
-es delgado,is thin,很薄,hěn báo,é magro
+muy delgado,very thin,很瘦,hěn báo,muito fino
+es delgado,is thin,很瘦,hěn báo,é magro
 muy gordo,very fat,很胖,hěn pàng,muito gordo
 es gordo,is fat,胖了,pàng le,é gordo
 muy musculoso,very muscular,非常肌肉,fēi cháng jī ròu,muito musculoso
@@ -54,5 +54,5 @@ el cabello,hair,头发,tóu fà,cabelo
 su cabello,her hair,她的头发,tā de tóu fà,o cabelo dela
 las cejas,eyebrows,眉毛,méi máo,sobrancelhas
 sus cejas,his eyebrows,他的眉毛,tā de méi máo,as sobrancelhas dele
-las pestañas,the tabs,选项卡,xuǎn xiàng kǎ,as abas
+las pestañas,the eyelashes,睫毛,jié máo,os cílios
 sus pestañas,your eyelashes,你的睫毛,nǐ de jié máo,seus cílios
