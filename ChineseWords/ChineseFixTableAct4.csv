@@ -1,24 +1,34 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,56,Expressing Needs,20,french,Vous voulez acheter,Je veux acheter,Should be first person (I want) not second person (You want)
-chinese,58,Giving Directions,10,english,Right,Right side,右侧 means right side not just right
-chinese,58,Giving Directions,11,english,Left,Left side,左侧 means left side not just left
-chinese,59,Describing Situations,8,spanish,Progreso,En progreso,Need full phrase for in progress
-chinese,59,Describing Situations,9,spanish,Ocurrencia,Ocurrir,Should be verb infinitive not noun
-chinese,59,Describing Situations,11,spanish,Existen,Existir,Should be infinitive not conjugated form
-chinese,61,Money & Payments,33,french,Avoir du changement,Avoir de la monnaie,Changement means alteration - monnaie is correct for coins/change
-chinese,67,Weather Conversations,15,portuguese,Neblina,Poluição atmosférica,雾霾 is smog/pollution not fog/mist
-chinese,67,Weather Conversations,45,portuguese,Há neblina,Há poluição atmosférica,雾霾 is smog/pollution not fog/mist
-chinese,67,Weather Conversations,46,portuguese,Há neblina,Há poluição atmosférica,雾霾 is smog/pollution not fog/mist
-chinese,68,Phone Conversations,34,english,Hang up,Hung up,了 indicates past tense - action completed
-chinese,68,Phone Conversations,35,english,Hang up,Was hung up on,被 indicates passive voice
-chinese,68,Phone Conversations,34,spanish,Cuelga,Colgó,了 indicates past tense
-chinese,68,Phone Conversations,35,spanish,Cuelga,Fue colgado,被 indicates passive voice
-chinese,68,Phone Conversations,34,french,Raccrocher,A raccroché,了 indicates past tense
-chinese,68,Phone Conversations,35,french,Raccrocher,A été raccroché,被 indicates passive voice
-chinese,68,Phone Conversations,34,portuguese,Desligue,Desligou,了 indicates past tense
-chinese,68,Phone Conversations,35,portuguese,Desligue,Foi desligado,被 indicates passive voice
-chinese,73,Time Expressions,2,spanish,Sólo,Recién,Sólo means only - recién means just now
-chinese,75,Describing Amounts,9,spanish,Sólo,Justo,Sólo means only - justo means just right/exactly
-chinese,75,Describing Amounts,32,spanish,solo,justo,solo means only - justo means just/exactly
-chinese,78,Expressing Preferences,3,spanish,Amor,Amar,Should be verb infinitive (to love) not noun (love)
-chinese,78,Expressing Preferences,3,french,Amour,Aimer,Should be verb infinitive (to love) not noun (love)
+chinese,56,Expressing Needs,7,english,Expectation,Anticipation,More natural noun form for everyday speech
+chinese,56,Expressing Needs,7,spanish,Esperar con ilusión,Anticipación,More natural noun form matching English
+chinese,56,Expressing Needs,7,french,Attendre avec impatience,Anticipation,More natural noun form matching English
+chinese,56,Expressing Needs,7,portuguese,Aguardar ansiosamente,Antecipação,More natural noun form matching English
+chinese,61,Money & Payments,15,english,Expenditure,Expense,Less formal - more everyday usage
+chinese,61,Money & Payments,15,spanish,Gasto,Gasto,Keeping natural (already good)
+chinese,61,Money & Payments,15,french,Dépenses,Dépense,Singular to match simplified meaning
+chinese,61,Money & Payments,15,portuguese,Despesas,Despesa,Singular to match simplified meaning
+chinese,62,At the Restaurant,5,english,Signature dishes,Signature dish,Singular to match Chinese singular form
+chinese,62,At the Restaurant,5,spanish,Platos de autor,Plato de autor,Singular to match Chinese
+chinese,62,At the Restaurant,5,french,Plats signatures,Plat signature,Singular to match Chinese
+chinese,62,At the Restaurant,5,portuguese,Pratos de assinatura,Prato de assinatura,Singular to match Chinese
+chinese,65,At the Doctor,10,english,Discomfort,Unwell,More natural everyday word for not feeling well
+chinese,65,At the Doctor,10,spanish,Malestar,Indispuesto,More natural everyday term
+chinese,65,At the Doctor,10,french,Inconfort,Indisposé,More natural everyday term
+chinese,65,At the Doctor,10,portuguese,Desconforto,Indisposto,More natural everyday term
+chinese,65,At the Doctor,16,english,Outpatient service,Outpatient,Simpler - more natural
+chinese,65,At the Doctor,16,spanish,Servicio ambulatorio,Ambulatorio,Simpler - more natural
+chinese,65,At the Doctor,16,french,Service ambulatoire,Ambulatoire,Simpler - more natural
+chinese,65,At the Doctor,16,portuguese,Atendimento ambulatorial,Ambulatório,Simpler - more natural
+chinese,66,Making Appointments,11,english,Medical treatment,Treatment,Simpler - avoid redundant 'medical'
+chinese,66,Making Appointments,13,english,Expert number,Specialist appointment,More natural - 'number' is awkward
+chinese,66,Making Appointments,13,spanish,Cita con especialista,Cita con especialista,Already natural (keeping)
+chinese,66,Making Appointments,13,french,Numéro d'expert,Rendez-vous avec spécialiste,More natural phrasing
+chinese,66,Making Appointments,13,portuguese,Número do especialista,Consulta com especialista,More natural phrasing
+chinese,66,Making Appointments,14,english,Ordinary number,Regular appointment,More natural - 'number' is awkward
+chinese,66,Making Appointments,14,spanish,Cita general,Cita regular,More consistent terminology
+chinese,66,Making Appointments,14,french,Numéro ordinaire,Rendez-vous régulier,More natural phrasing
+chinese,66,Making Appointments,14,portuguese,Número normal,Consulta regular,More natural phrasing
+chinese,67,Weather Conversations,15,english,Haze,Smog,More accurate for modern air pollution context
+chinese,67,Weather Conversations,15,spanish,Neblina,Smog,More accurate for air pollution
+chinese,67,Weather Conversations,15,french,Brume,Smog,More accurate for air pollution
+chinese,67,Weather Conversations,15,portuguese,Poluição atmosférica,Smog,Simpler while keeping pollution meaning

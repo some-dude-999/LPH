@@ -8,10 +8,10 @@ chinese,pinyin,english,spanish,french,portuguese
 叫号,jiào hào,Call number,Llamar el turno,Numéro d'appel,Chamada de número
 预约号,yù yuē hào,Appointment number,Número de cita,Numéro de rendez-vous,Número da consulta
 候诊,hòu zhěn,Waiting,Esperando,En attente,Esperando
-就诊,jiù zhěn,Medical treatment,Tratamiento médico,Traitement médical,Tratamento médico
+就诊,jiù zhěn,Treatment,Tratamiento médico,Traitement médical,Tratamento médico
 问诊,wèn zhěn,Consultation,Consulta,Consultations,Consulta
-专家号,zhuān jiā hào,Expert number,Cita con especialista,Numéro d'expert,Número do especialista
-普通号,pǔ tōng hào,Ordinary number,Cita general,Numéro ordinaire,Número normal
+专家号,zhuān jiā hào,Specialist appointment,Cita con especialista,Rendez-vous avec spécialiste,Consulta com especialista
+普通号,pǔ tōng hào,Regular appointment,Cita regular,Rendez-vous régulier,Consulta regular
 约号,yuē hào,Appointment number,Número de cita,Numéro de rendez-vous,Número da consulta
 要预约,yào yù yuē,Make an appointment,Concierte una cita,Prendre rendez-vous,Marque uma consulta
 已预约,yǐ yù yuē,Already made an appointment,Ya concerté una cita,Déjà pris rendez-vous,Já marquei consulta
