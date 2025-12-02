@@ -982,13 +982,10 @@ function generateWrongAnswers(actData, correctAnswer, count = 4) {
     });
   });
 
-  // Fisher-Yates shuffle
-  for (let i = allWords.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [allWords[i], allWords[j]] = [allWords[j], allWords[i]];
-  }
+  // Shuffle using shared function
+  const shuffledWords = shuffleArray(allWords);
 
-  return allWords.slice(0, Math.min(count, allWords.length));
+  return shuffledWords.slice(0, Math.min(count, shuffledWords.length));
 }
 
 /**
@@ -1033,13 +1030,10 @@ function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) {
     });
   });
 
-  // Fisher-Yates shuffle
-  for (let i = allWords.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [allWords[i], allWords[j]] = [allWords[j], allWords[i]];
-  }
+  // Shuffle using shared function
+  const shuffledWords = shuffleArray(allWords);
 
-  return allWords.slice(0, Math.min(count, allWords.length));
+  return shuffledWords.slice(0, Math.min(count, shuffledWords.length));
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -1617,10 +1611,8 @@ function getFirstAvailableAct(loadedData) {
  * @returns {string|null} - First pack key or null
  */
 function getFirstAvailablePack(actData) {
-  if (!actData) return null;
-  const packKeys = Object.keys(actData).filter(k => k !== '__actMeta' && actData[k]?.meta);
-  packKeys.sort((a, b) => (actData[a].meta.wordpack || 0) - (actData[b].meta.wordpack || 0));
-  return packKeys.length > 0 ? packKeys[0] : null;
+  const sortedKeys = getSortedPackKeys(actData);
+  return sortedKeys.length > 0 ? sortedKeys[0] : null;
 }
 
 /**
@@ -1713,19 +1705,7 @@ function getActSelectorOptions(loadedActMeta) {
  * @returns {Array} - Array of { value, text } for options
  */
 function getPackSelectorOptions(actData) {
-  if (!actData || Object.keys(actData).length === 0) {
-    return [];
-  }
-
-  const packKeys = Object.keys(actData)
-    .filter(key => key !== '__actMeta')
-    .filter(key => actData[key] && actData[key].meta);
-
-  packKeys.sort((a, b) => {
-    const numA = actData[a].meta.wordpack || 0;
-    const numB = actData[b].meta.wordpack || 0;
-    return numA - numB;
-  });
+  const packKeys = getSortedPackKeys(actData);
 
   return packKeys.map(packKey => {
     const pack = actData[packKey];
@@ -2047,29 +2027,14 @@ function toggleDebugModeState() {
 }
 
 /**
- * Simulate correct answer for debugging
+ * Simulate correct answer for debugging (delegates to removeCard)
  * @param {Array} deck - Current deck
  * @param {number} currentIndex - Current card index
  * @returns {Object} - { deck, currentIndex }
  */
 function simulateCorrectAnswer(deck, currentIndex) {
-  if (!deck || deck.length === 0) {
-    return { deck: [], currentIndex: 0 };
-  }
-
-  const newDeck = [...deck];
-
-  if (newDeck.length <= 1) {
-    return { deck: [], currentIndex: 0 };
-  }
-
-  newDeck.splice(currentIndex, 1);
-  let newIndex = currentIndex;
-  if (newIndex >= newDeck.length) {
-    newIndex = 0;
-  }
-
-  return { deck: newDeck, currentIndex: newIndex };
+  const result = removeCard(deck, currentIndex);
+  return { deck: result.deck, currentIndex: result.index };
 }
 
 /**
