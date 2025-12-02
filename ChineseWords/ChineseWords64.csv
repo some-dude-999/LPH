@@ -13,7 +13,7 @@ chinese,pinyin,english,spanish,french,portuguese
 出发,chū fā,Departure,Salida,Départ,Partida
 国际,guó jì,International,Internacional,Internationale,Internacional
 国内,guó nèi,Domestic,Nacional,Domestique,Doméstico
-候机,hòu jī,Waiting to board,Esperando para embarcar,En attente d'embarquement,Esperando
+候机,hòu jī,Waiting to board,Esperando para embarcar,En attente d'embarquement,Aguardando embarque
 廊桥,láng qiáo,Jet bridge,Puente de embarque,Pont d'embarquement,Ponte de embarque
 查航班,chá háng bān,Check flight,Consultar vuelo,Vérifier le vol,Verifique o voo
 等航班,děng háng bān,Waiting for flight,Esperando vuelo,En attente du vol,Esperando voo
@@ -43,7 +43,7 @@ chinese,pinyin,english,spanish,french,portuguese
 飞国际,fēi guó jì,Flying internationally,Volar internacionalmente,Voler à l’international,Voando internacionalmente
 是国内航班,shì guó nèi háng bān,It is a domestic flight,Es un vuelo nacional,Il s'agit d'un vol intérieur,É um voo doméstico
 飞国内,fēi guó nèi,Flying domestic,Vuelos nacionales,Vol intérieur,Voo doméstico
-在候机,zài hòu jī,Waiting to board,Esperando para embarcar,En attente d'embarquement,Esperando
+在候机,zài hòu jī,Waiting to board,Esperando para embarcar,En attente d'embarquement,Aguardando embarque
 去候机,qù hòu jī,Going to the waiting area,Ir a la sala de espera,Aller en salle d'attente,Ir para a sala de espera
 走廊桥,zǒu láng qiáo,Jet bridge,Puente de embarque,Finger (passerelle),Ponte de embarque
 通过廊桥,tōng guò láng qiáo,Board via the jet bridge,Subir por el puente de embarque,Embarquer par la passerelle,Embarcar pela ponte de embarque

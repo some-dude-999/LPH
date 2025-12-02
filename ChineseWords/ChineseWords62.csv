@@ -10,7 +10,7 @@ chinese,pinyin,english,spanish,french,portuguese
 打包,dǎ bāo,Pack to go,Para llevar,Emballer à emporter,Embalagem para levar
 外卖,wài mài,Takeaway,Para llevar,À emporter,Para levar
 堂食,táng shí,Dine-in,Comer en el local,Dîner sur place,Comer no local
-包间,bāo jiān,Private room,Habitación privada,Chambre privée,Quarto privado
+包间,bāo jiān,Private room,Habitación privada,Salon privé,Quarto privado
 餐具,cān jù,Cutlery,Cubiertos,Couverts,Talheres
 筷子,kuài zi,Chopsticks,Palillos,Baguettes,Pauzinhos
 上菜,shàng cài,Serve dishes,Servir los platos,Servir les plats,Servir os pratos
@@ -37,8 +37,8 @@ chinese,pinyin,english,spanish,french,portuguese
 送外卖,sòng wài mài,Delivery,Entrega,Livraison,Entrega
 选堂食,xuǎn táng shí,Choose dine-in,Elija cenar en el restaurante,Choisissez un dîner sur place,Escolha jantar no local
 要堂食,yào táng shí,Want to dine in,Quiero comer aquí,Je veux manger sur place,Quero comer aqui
-订包间,dìng bāo jiān,Book a private room,Reserva una habitación privada,Réserver une chambre privée,Reserve um quarto privado
-有包间,yǒu bāo jiān,There are private rooms,Hay habitaciones privadas,Il y a des chambres privées,Existem salas privadas
+订包间,dìng bāo jiān,Book a private room,Reserva una habitación privada,Réserver un salon privé,Reserve um quarto privado
+有包间,yǒu bāo jiān,There are private rooms,Hay habitaciones privadas,Il y a des salons privés,Existem salas privadas
 拿餐具,ná cān jù,Get the cutlery,Consigue los cubiertos,Obtenez les couverts,Pegue os talheres
 用餐具,yòng cān jù,Use the cutlery,Usa los cubiertos,Utilisez les couverts,Use os talheres
 拿筷子,ná kuài zi,Get the chopsticks,Coge los palillos,Obtenez les baguettes,Pegue os pauzinhos
