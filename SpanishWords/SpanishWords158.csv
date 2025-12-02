@@ -2,12 +2,12 @@ spanish,english,chinese,pinyin,portuguese
 teatro,theater,剧院,jù yuàn,teatro
 actor,actor,演员,yǎn yuán,ator
 actriz,actress,女演员,nǚ yǎn yuán,atriz
-escenario,stage,舞台,wǔ tái,cenário
+escenario,stage,舞台,wǔ tái,palco
 telón,curtain,幕布,mù bù,cortina
 audiencia,audience,观众,guān zhòng,audiência
 espectador,spectator,观众,guān zhòng,espectador
 espectadora,spectator,观众,guān zhòng,espectadora
-actuar,to perform,表演,biǎo yǎn,agir
+actuar,to perform,表演,biǎo yǎn,atuar
 representar,to perform,表演,biǎo yǎn,representar
 guion,script,脚本,jiǎo běn,roteiro
 escena,scene,场景,chǎng jǐng,cena
@@ -18,7 +18,7 @@ comedia,comedy,喜剧,xǐ jù,comédia
 tragedia,tragedy,悲剧,bēi jù,tragédia
 monólogo,monologue,独白,dú bái,monólogo
 dramaturgo,playwright,剧作家,jù zuò jiā,dramaturgo
-libreto,libretto,歌词,gē cí,libreto
+libreto,libretto,剧本,gē cí,libreto
 el teatro,the theater,剧院,jù yuàn,o teatro
 en el teatro,in the theater,在剧院,zài jù yuàn,no teatro
 el actor,the actor,演员,yǎn yuán,o ator
@@ -27,18 +27,18 @@ la actriz,the actress,女演员,nǚ yǎn yuán,a atriz
 una actriz,an actress,女演员,nǚ yǎn yuán,uma atriz
 el escenario,the stage,舞台,wǔ tái,o palco
 en el escenario,on stage,舞台上,wǔ tái shàng,no palco
-el telón,the curtain,幕布,chuāng lián,a cortina
-un telón,a curtain,幕布,chuāng lián,uma cortina
+el telón,the curtain,幕布,mù bù,a cortina
+un telón,a curtain,幕布,mù bù,uma cortina
 la audiencia,the audience,观众,guān zhòng,o público
 una audiencia,an audience,观众,guān zhòng,uma audiência
 el espectador,the spectator,观众,guān zhòng,o espectador
 un espectador,a spectator,一个旁观者,yí gè páng guān zhě,um espectador
 la espectadora,the spectator,观众,guān zhòng,a espectadora
 una espectadora,a spectator,一个旁观者,yí gè páng guān zhě,uma espectadora
-hay que actuar,we must perform,我们必须行动,wǒ men bì xū biǎo yǎn,devemos agir
-voy a actuar,I'm going to perform,我要行动,wǒ yào biǎo yǎn,Eu vou agir
-hay que representar,must perform,必须代表,bì xū biǎo yǎn,deve representar
-voy a representar,I will perform,我将代表,wǒ jiāng biǎo yǎn,Eu representarei
+hay que actuar,we must perform,我们必须表演,wǒ men bì xū biǎo yǎn,devemos agir
+voy a actuar,I'm going to perform,我要表演,wǒ yào biǎo yǎn,Eu vou agir
+hay que representar,must perform,必须表演,bì xū biǎo yǎn,deve representar
+voy a representar,I will perform,我将表演,wǒ jiāng biǎo yǎn,Eu representarei
 el guion,the script,脚本,jiǎo běn,o roteiro
 un guion,a script,脚本,jiǎo běn,um roteiro
 la escena,the scene,场景,chǎng jǐng,a cena
