@@ -1,6 +1,6 @@
 spanish,english,chinese,pinyin,portuguese
-camarero,waiter,服务员,fú wù yuán,garçom
-camarera,waitress,女服务员,nǚ fú wù yuán,garçonete
+camarero,waiter (masculine),服务员,fú wù yuán,garçom
+camarera,server (feminine),女服务员,nǚ fú wù yuán,garçonete
 menú,menu,菜单,cài dān,cardápio
 carta,menu,菜单,cài dān,carta
 plato,plate,盘子,pán zi,prato
@@ -15,9 +15,9 @@ propina,tip (gratuity),小费,xiǎo fèi,gorjeta
 servir,serve,服务,fú wù,servir
 reservar,reserve,预订,yù dìng,reservar
 taza,cup,杯子,bēi zi,xícara
-el camarero,the waiter,服务员,fú wù yuán,o garçom
+el camarero,the waiter (masculine),服务员,fú wù yuán,o garçom
 un camarero,a waiter,服务员,fú wù yuán,um garçom
-la camarera,the waitress,女服务员,nǚ fú wù yuán,a garçonete
+la camarera,the server (feminine),女服务员,nǚ fú wù yuán,a garçonete
 una camarera,a waitress,女服务员,nǚ fú wù yuán,uma garçonete
 el menú,the menu,菜单,cài dān,o cardápio
 ver el menú,see the menu,看菜单,kàn cài dān,veja o cardápio

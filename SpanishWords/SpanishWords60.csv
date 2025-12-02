@@ -1,9 +1,9 @@
 spanish,english,chinese,pinyin,portuguese
 salud,health,健康,jiàn kāng,saúde
-médico,doctor,医生,yī shēng,médico
-médica,female doctor,女医生,nǚ yī shēng,médica
-enfermero,nurse,护士,hù shì,enfermeiro
-enfermera,nurse,护士,hù shì,enfermeira
+médico,doctor (masculine),医生,yī shēng,médico
+médica,doctor (feminine),女医生,nǚ yī shēng,médica
+enfermero,nurse (masculine),护士,hù shì,enfermeiro
+enfermera,nurse (feminine),护士,hù shì,enfermeira
 paciente,patient,病人,bìng rén,paciente
 medicina,medicine,药物,yào wù,medicina
 pastilla,pill,丸,wán,pílula
@@ -21,13 +21,13 @@ sala,room,房间,fáng jiān,sala
 camilla,stretcher,担架,dān jià,maca
 buena salud,good health,身体健康,shēn tǐ jiàn kāng,boa saúde
 tu salud,your health,你的健康,nǐ de jiàn kāng,sua saúde
-el médico,the doctor,医生,yī shēng,o médico
+el médico,the doctor (masculine),医生,yī shēng,o médico
 al médico,to the doctor,去看医生,qù kàn yī shēng,ao médico
-la médica,the doctor,医生,yī shēng,a médica
+la médica,the doctor (feminine),医生,yī shēng,a médica
 una médica,a doctor,医生,yī shēng,uma médica
-el enfermero,the nurse,护士,hù shì,o enfermeiro
+el enfermero,the nurse (masculine),护士,hù shì,o enfermeiro
 un enfermero,a nurse,护士,hù shì,um enfermeiro
-la enfermera,the nurse,护士,hù shì,a enfermeira
+la enfermera,the nurse (feminine),护士,hù shì,a enfermeira
 una enfermera,a nurse,护士,hù shì,uma enfermeira
 el paciente,the patient,病人,bìng rén,o paciente
 un paciente,a patient,一个病人,yí gè bìng rén,um paciente
