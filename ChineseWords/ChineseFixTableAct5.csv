@@ -1,0 +1,14 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,84,Frequency & Duration,14,spanish,Una vez,Momentáneo,Wrong meaning - una vez means once but 一时 means momentarily
+chinese,84,Frequency & Duration,14,french,Une fois,Momentané,Wrong meaning - une fois means once but 一时 means momentarily
+chinese,84,Frequency & Duration,14,portuguese,Uma vez,Momentâneo,Wrong meaning - uma vez means once but 一时 means momentarily
+chinese,85,Comparison & Degree,11,spanish,Un poco,Casi,Wrong meaning - un poco means a little but 差一点 means almost
+chinese,85,Comparison & Degree,11,french,Un peu,Presque,Wrong meaning - un peu means a little but 差一点 means almost
+chinese,85,Comparison & Degree,11,portuguese,Um pouco,Quase,Wrong meaning - um pouco means a little but 差一点 means almost
+chinese,92,Describing Things,38,english,Size pair,Right size,Wrong translation - 尺寸对 means correct/right size not pair
+chinese,92,Describing Things,38,spanish,Par de tallas,Tamaño correcto,Wrong translation - 对 means correct not pair
+chinese,92,Describing Things,38,french,Paire de tailles,Bonne taille,Wrong translation - 对 means correct not pair
+chinese,92,Describing Things,38,portuguese,Tamanho par,Tamanho correto,Wrong translation - 对 means correct not pair
+chinese,94,Extent & Degree,7,spanish,La mayoría,Más,Wrong meaning - la mayoría means majority but 最 is superlative most
+chinese,94,Extent & Degree,7,portuguese,A maioria,Mais,Wrong meaning - a maioria means majority but 最 is superlative most
+chinese,106,Abstract Concepts,13,spanish,Goles,Metas,Wrong word - goles means sports goals but 目标 means life goals/targets
