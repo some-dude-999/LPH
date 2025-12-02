@@ -1,7 +1,93 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,34,Want & Desire (querer),25,english,on purpose,for wanting,Accurate translation of 'por querer' (for wanting)
-spanish,34,Want & Desire (querer),25,portuguese,de propósito,por querer,Match Spanish construction 'por querer'
-spanish,35,School Supplies,16,portuguese,professor,professora,Feminine form needed for female teacher 'profesora'
-spanish,35,School Supplies,50,portuguese,o professor,a professora,Feminine form needed for 'la profesora'
-spanish,35,School Supplies,51,portuguese,meu professor,minha professora,Feminine form needed for 'mi profesora'
-spanish,49,Comparing Things,31,pinyin,wèi chéng nián rén,zuì nián qīng de,Pinyin must match Chinese 最年轻的 (the youngest)
+spanish,33,Can & Able (poder),3,english,you can,you can (informal),Informal tú form needs annotation
+spanish,33,Can & Able (poder),6,english,you can,you can (informal plural),Informal vosotros form needs annotation
+spanish,33,Can & Able (poder),14,english,you can,you can (informal),Informal tú form needs annotation
+spanish,33,Can & Able (poder),20,english,you can,you can (informal plural),Informal vosotros form needs annotation
+spanish,34,Want & Desire (querer),3,english,you want,you want (informal),Informal tú form needs annotation
+spanish,34,Want & Desire (querer),6,english,you want,you want (informal plural),Informal vosotros form needs annotation
+spanish,34,Want & Desire (querer),14,english,you want,you want (informal),Informal tú form needs annotation
+spanish,34,Want & Desire (querer),20,english,you want,you want (informal plural),Informal vosotros form needs annotation
+spanish,35,School Supplies,15,english,teacher,teacher (masculine),Gender annotation for profesor
+spanish,35,School Supplies,16,english,teacher,teacher (feminine),Gender annotation for profesora
+spanish,35,School Supplies,48,english,the teacher,the teacher (masculine),Gender annotation for el profesor
+spanish,35,School Supplies,50,english,the teacher,the teacher (feminine),Gender annotation for la profesora
+spanish,36,Office & Work,2,english,boss,boss (masculine),Gender annotation for jefe
+spanish,36,Office & Work,3,english,boss,boss (feminine),Gender annotation for jefa
+spanish,36,Office & Work,4,english,employee,employee (masculine),Gender annotation for empleado
+spanish,36,Office & Work,5,english,employee,employee (feminine),Gender annotation for empleada
+spanish,36,Office & Work,6,english,coworker,coworker (masculine),Gender annotation for compañero
+spanish,36,Office & Work,7,english,coworker,coworker (feminine),Gender annotation for compañera
+spanish,36,Office & Work,7,chinese,伴侣,伙伴,伴侣 means spouse/partner not coworker
+spanish,36,Office & Work,7,pinyin,bàn lǚ,huǒ bàn,Pinyin must match corrected Chinese
+spanish,36,Office & Work,8,english,client,client (masculine),Gender annotation for cliente
+spanish,36,Office & Work,9,english,client,client (feminine),Gender annotation for clienta
+spanish,36,Office & Work,22,english,the boss,the boss (masculine),Gender annotation for el jefe
+spanish,36,Office & Work,24,english,the boss,the boss (feminine),Gender annotation for la jefa
+spanish,36,Office & Work,25,portuguese,meu chefe,minha chefe,Feminine form needed for mi jefa
+spanish,36,Office & Work,26,english,the employee,the employee (masculine),Gender annotation for el empleado
+spanish,36,Office & Work,28,english,the employee,the employee (feminine),Gender annotation for la empleada
+spanish,36,Office & Work,34,english,the client,the client (masculine),Gender annotation for el cliente
+spanish,36,Office & Work,36,english,the client,the client (feminine),Gender annotation for la clienta
+spanish,37,Animals,50,chinese,蝮,毒蛇,蝮 only means viper - need 毒蛇 for venomous snake
+spanish,37,Animals,50,pinyin,fù,dú shé,Pinyin must match corrected Chinese
+spanish,38,Thinking (pensar),3,english,you think,you think (informal),Informal tú form needs annotation
+spanish,38,Thinking (pensar),6,english,you think,you think (informal plural),Informal vosotros form needs annotation
+spanish,38,Thinking (pensar),14,english,you think,you think (informal),Informal tú form needs annotation
+spanish,38,Thinking (pensar),20,english,you think,you think (informal plural),Informal vosotros form needs annotation
+spanish,39,Feeling (sentir),3,english,you feel,you feel (informal),Informal tú form needs annotation
+spanish,39,Feeling (sentir),6,english,you feel,you feel (informal plural),Informal vosotros form needs annotation
+spanish,39,Feeling (sentir),20,english,you feel,you feel (informal plural),Informal vosotros form needs annotation
+spanish,42,Vegetables,38,chinese,一个辣椒,一个甜椒,辣椒 is hot pepper - 甜椒 is bell pepper
+spanish,42,Vegetables,38,pinyin,yí gè là jiāo,yí gè tián jiāo,Pinyin must match corrected Chinese
+spanish,44,Need & Necessity (necesitar),3,english,you need,you need (informal),Informal tú form needs annotation
+spanish,44,Need & Necessity (necesitar),6,english,you need,you need (informal plural),Informal vosotros form needs annotation
+spanish,44,Need & Necessity (necesitar),6,portuguese,você precisa,vocês precisam,Plural form needed for vosotros
+spanish,44,Need & Necessity (necesitar),12,english,you need,you need (informal),Informal tú form needs annotation
+spanish,44,Need & Necessity (necesitar),18,english,you need,you need (informal plural),Informal vosotros form needs annotation
+spanish,44,Need & Necessity (necesitar),19,portuguese,o que você precisa,o que vocês precisam,Plural form needed for vosotros
+spanish,45,Looking For (buscar),3,english,are you looking for,you look for (informal),Informal tú form needs annotation
+spanish,45,Looking For (buscar),6,english,you search,you search (informal plural),Informal vosotros form needs annotation
+spanish,45,Looking For (buscar),6,portuguese,você pesquisa,vocês pesquisam,Plural form needed for vosotros
+spanish,45,Looking For (buscar),12,english,you search,you search (informal),Informal tú form needs annotation
+spanish,45,Looking For (buscar),18,english,you search,you search (informal plural),Informal vosotros form needs annotation
+spanish,45,Looking For (buscar),19,portuguese,o que você está procurando,o que vocês estão procurando,Plural form needed for vosotros
+spanish,51,Names & Calling (llamar),3,english,you call,you call (informal),Informal tú form needs annotation
+spanish,51,Names & Calling (llamar),6,english,you call,you call (informal plural),Informal vosotros form needs annotation
+spanish,51,Names & Calling (llamar),6,portuguese,você liga,vocês ligam,Plural form needed for vosotros
+spanish,51,Names & Calling (llamar),20,portuguese,seu nome é,vocês são chamados,Plural form needed for os llamáis
+spanish,52,Giving (dar),3,english,you give,you give (informal),Informal tú form needs annotation
+spanish,52,Giving (dar),6,english,you give,you give (informal plural),Informal vosotros form needs annotation
+spanish,52,Giving (dar),15,chinese,不要给,一事无成,不要给 means dont give - need idiom for cant get anything right
+spanish,52,Giving (dar),15,pinyin,bú yào gěi,yī shì wú chéng,Pinyin must match corrected Chinese
+spanish,53,Seeing & Watching (ver),3,english,see,you see (informal),Informal tú form needs annotation
+spanish,53,Seeing & Watching (ver),6,english,you see,you see (informal plural),Informal vosotros form needs annotation
+spanish,54,Restaurant Vocabulary,2,english,waiter,waiter (masculine),Gender annotation for camarero
+spanish,54,Restaurant Vocabulary,3,english,waitress,server (feminine),Gender annotation for camarera
+spanish,54,Restaurant Vocabulary,18,english,the waiter,the waiter (masculine),Gender annotation for el camarero
+spanish,54,Restaurant Vocabulary,20,english,the waitress,the server (feminine),Gender annotation for la camarera
+spanish,55,Shopping & Buying,16,chinese,货币,硬币,货币 means currency - 硬币 means coin
+spanish,55,Shopping & Buying,16,pinyin,huò bì,yìng bì,Pinyin must match corrected Chinese
+spanish,56,Beginning (empezar),3,english,you start,you start (informal),Informal tú form needs annotation
+spanish,56,Beginning (empezar),6,english,you start,you start (informal plural),Informal vosotros form needs annotation
+spanish,56,Beginning (empezar),6,portuguese,você começa,vocês começam,Plural form needed for vosotros
+spanish,56,Beginning (empezar),14,english,you start,you start (informal),Informal tú form needs annotation
+spanish,56,Beginning (empezar),20,english,you start,you start (informal plural),Informal vosotros form needs annotation
+spanish,57,Continuing (seguir),3,english,you continue,you continue (informal),Informal tú form needs annotation
+spanish,57,Continuing (seguir),6,english,you continue,you continue (informal plural),Informal vosotros form needs annotation
+spanish,57,Continuing (seguir),6,portuguese,você continua,vocês continuam,Plural form needed for vosotros
+spanish,57,Continuing (seguir),14,chinese,你关注,你继续,关注 means pay attention - 继续 means continue
+spanish,57,Continuing (seguir),14,pinyin,nǐ guān zhù,nǐ jì xù,Pinyin must match corrected Chinese
+spanish,57,Continuing (seguir),14,english,you continue,you continue (informal),Informal tú form needs annotation
+spanish,57,Continuing (seguir),16,chinese,他跟随,他继续,跟随 means follow - 继续 means continue
+spanish,57,Continuing (seguir),16,pinyin,tā gēn suí,tā jì xù,Pinyin must match corrected Chinese
+spanish,57,Continuing (seguir),20,english,you continue,you continue (informal plural),Informal vosotros form needs annotation
+spanish,57,Continuing (seguir),22,chinese,他们跟随,他们继续,跟随 means follow - 继续 means continue
+spanish,57,Continuing (seguir),22,pinyin,tā men gēn suí,tā men jì xù,Pinyin must match corrected Chinese
+spanish,60,Health & Medical,3,english,doctor,doctor (masculine),Gender annotation for médico
+spanish,60,Health & Medical,4,english,female doctor,doctor (feminine),More natural gender annotation for médica
+spanish,60,Health & Medical,5,english,nurse,nurse (masculine),Gender annotation for enfermero
+spanish,60,Health & Medical,6,english,nurse,nurse (feminine),Gender annotation for enfermera
+spanish,60,Health & Medical,24,english,the doctor,the doctor (masculine),Gender annotation for el médico
+spanish,60,Health & Medical,26,english,the doctor,the doctor (feminine),Gender annotation for la médica
+spanish,60,Health & Medical,28,english,the nurse,the nurse (masculine),Gender annotation for el enfermero
+spanish,60,Health & Medical,30,english,the nurse,the nurse (feminine),Gender annotation for la enfermera
