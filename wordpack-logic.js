@@ -6,33 +6,6 @@
 // SECTION 1: CONFIG & LOCAL STORAGE
 // ════════════════════════════════════════════════════════════════════════════
 
-window.MODULE_SETS = {
-  spanish: [
-    './SpanishWords/Jsmodules-js/act1-foundation-js.js',
-    './SpanishWords/Jsmodules-js/act2-building-blocks-js.js',
-    './SpanishWords/Jsmodules-js/act3-daily-life-js.js',
-    './SpanishWords/Jsmodules-js/act4-expanding-expression-js.js',
-    './SpanishWords/Jsmodules-js/act5-intermediate-mastery-js.js',
-    './SpanishWords/Jsmodules-js/act6-advanced-constructs-js.js',
-    './SpanishWords/Jsmodules-js/act7-mastery-fluency-js.js'
-  ],
-  chinese: [
-    './ChineseWords/Jsmodules-js/act1-foundation-js.js',
-    './ChineseWords/Jsmodules-js/act2-development-js.js',
-    './ChineseWords/Jsmodules-js/act3-expansion-js.js',
-    './ChineseWords/Jsmodules-js/act4-mastery-js.js',
-    './ChineseWords/Jsmodules-js/act5-refinement-js.js'
-  ],
-  english: [
-    './EnglishWords/Jsmodules-js/act1-foundation-js.js',
-    './EnglishWords/Jsmodules-js/act2-building-blocks-js.js',
-    './EnglishWords/Jsmodules-js/act3-everyday-life-js.js',
-    './EnglishWords/Jsmodules-js/act4-expanding-horizons-js.js',
-    './EnglishWords/Jsmodules-js/act5-advanced-mastery-js.js'
-  ],
-  none: []
-};
-
 const LANGUAGE_CONFIG = {
   'Spanish': {
     modules: [
@@ -71,6 +44,8 @@ const LANGUAGE_CONFIG = {
   },
   'None': { modules: [], columns: [], nativeLanguages: {} }
 };
+
+window.MODULE_SETS = Object.fromEntries(Object.entries(LANGUAGE_CONFIG).map(([k, v]) => [k.toLowerCase(), v.modules.map(m => m.path)]));
 
 const TTS_LANG_MAP = {
   'spanish': 'es-ES', 'chinese': 'zh-CN', 'english': 'en-US', 'portuguese': 'pt-BR',
@@ -190,11 +165,6 @@ function getActMetaProperty(propertyName, defaultValue = null) {
   return defaultValue;
 }
 
-// Get target language from wordColumns[0]
-function getTargetLanguage() {
-  const wordColumns = getActMetaProperty('wordColumns');
-  return wordColumns && wordColumns[0] ? wordColumns[0].toLowerCase() : null;
-}
 
 function validateTargetLanguageConsistency() {
   if (!window.loadedActMeta) return true;
@@ -303,11 +273,6 @@ function renderChineseWithPinyin(coupledArray) {
 // SECTION 4: TEXT-TO-SPEECH
 // ════════════════════════════════════════════════════════════════════════════
 
-function loadVoicesForLanguage(languageCode) {
-  if (!languageCode) return [];
-  return speechSynthesis.getVoices().filter(v => v.lang.startsWith(languageCode));
-}
-
 function speakWord(text, options = {}) {
   if (!text) return;
   const { languageCode = 'en-US', voice = null, speed = 1.0 } = options;
@@ -413,10 +378,6 @@ function initializeTypingState(targetWord) {
   return { chars, typedPositions: new Set(), wrongPositions: [], wrongAttempts: 0, wrongLetters: [], typingDisplay: chars.map(c => c === ' ' ? ' ' : '_').join(' ') };
 }
 
-function getTypingDisplay(chars, typedPositions) {
-  return chars.map((char, i) => typedPositions.has(i) ? char : (char === ' ' ? ' ' : '_')).join(' ');
-}
-
 function renderTypingDisplayHTML(typingDisplay, typedPositions, wrongPositions = []) {
   let html = '';
   let currentWord = [];
@@ -436,14 +397,9 @@ function renderTypingDisplayHTML(typingDisplay, typedPositions, wrongPositions =
   return html;
 }
 
-function renderTargetWordHTML(card, isChineseTarget) {
-  if (isChineseTarget && card.pinyin) return renderChineseWithPinyin(coupleChineseWithPinyin(card.targetWord, card.pinyin)).outerHTML;
-  return card.targetWord || '';
-}
-
-function renderTranslationHTML(card) {
-  if (card.translationIsChinese && card.translationPinyin) return renderChineseWithPinyin(coupleChineseWithPinyin(card.translation, card.translationPinyin)).outerHTML;
-  return card.translation || '';
+function renderWordHTML(word, pinyin, isChinese) {
+  if (isChinese && pinyin) return renderChineseWithPinyin(coupleChineseWithPinyin(word, pinyin)).outerHTML;
+  return word || '';
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -652,7 +608,8 @@ function canStartGame(state) {
 }
 
 function updateChineseModeClass() {
-  document.body.classList.toggle('chinese-mode', getTargetLanguage() === 'chinese');
+  const wc = getActMetaProperty('wordColumns');
+  document.body.classList.toggle('chinese-mode', wc && wc[0] && wc[0].toLowerCase() === 'chinese');
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -674,9 +631,7 @@ function toggleDebugMode() {
 
 function simulateWrongAnswer(deck, currentIndex, duplicateCount = 2) {
   if (!deck || deck.length === 0) return { deck: [], currentIndex: 0 };
-  const newDeck = [...deck];
-  const currentCard = newDeck[currentIndex];
-  for (let i = 0; i < duplicateCount; i++) newDeck.push({ ...currentCard });
+  const newDeck = addDuplicateCards(deck, deck[currentIndex], duplicateCount);
   return { deck: newDeck, currentIndex: (currentIndex + 1) % newDeck.length };
 }
 
@@ -710,9 +665,9 @@ function updateDebugTable(options = {}) {
   let deck, targetLang, nativeLang, wordColumns, translations;
   if (Object.keys(options).length === 0) {
     deck = window.currentDeck || [];
-    targetLang = getTargetLanguage() || 'target';
-    nativeLang = window.nativeLanguage || 'native';
     wordColumns = getActMetaProperty('wordColumns') || [];
+    targetLang = (wordColumns[0] || '').toLowerCase() || 'target';
+    nativeLang = window.nativeLanguage || 'native';
     translations = getActMetaProperty('translations') || {};
   } else {
     deck = options.deck || []; targetLang = options.targetLang || 'target'; nativeLang = options.nativeLang || 'native';
@@ -857,11 +812,11 @@ function playTypingSound() {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     LANGUAGE_CONFIG, TTS_LANG_MAP, TOOLTIP_MESSAGES, saveState, loadState, switchLanguage, restoreSavedState, validateAndFixState,
-    decodeObfuscatedModule, loadAct, loadLanguageData, getActMetaProperty, getTargetLanguage, validateTargetLanguageConsistency,
+    decodeObfuscatedModule, loadAct, loadLanguageData, getActMetaProperty, validateTargetLanguageConsistency,
     shuffleArray, combineAndShuffleWords, createDeckFromPack, coupleChineseWithPinyin, renderChineseWithPinyin,
-    loadVoicesForLanguage, speakWord, switchModeLogic, updateModeButtonsVisual, updateControlVisibilityForMode,
+    speakWord, switchModeLogic, updateModeButtonsVisual, updateControlVisibilityForMode,
     normalize, collectFilteredWords, generateWrongAnswers,
-    findNextTypingPosition, checkTypingKey, isWordComplete, initializeTypingState, getTypingDisplay, renderTypingDisplayHTML, renderTargetWordHTML, renderTranslationHTML,
+    findNextTypingPosition, checkTypingKey, isWordComplete, initializeTypingState, renderTypingDisplayHTML, renderWordHTML,
     initializeSpeechRecognition, getSimilarityThreshold, levenshteinDistance, calculateSimilarity, getScoreFeedback, updatePronunciationDebug,
     determineOutcome, showStamp, removeCard, addDuplicateCards, navigateToNextPack, getWordpackTitleData, getSelectorOptions,
     populateSelector, createButtonTooltip, initializeTooltips,
@@ -877,9 +832,9 @@ if (typeof module !== 'undefined' && module.exports) {
 
 Object.assign(window, {
   renderChineseWithPinyin, updateModeButtonsVisual, updateControlVisibilityForMode,
-  renderTypingDisplayHTML, renderTargetWordHTML, renderTranslationHTML, getScoreFeedback, updatePronunciationDebug,
+  renderTypingDisplayHTML, renderWordHTML, getScoreFeedback, updatePronunciationDebug,
   showStamp, populateSelector, createButtonTooltip, initializeTooltips,
   updateChineseModeClass, toggleDebugMode, updateDebugTable, initializeDebugUI,
-  getActMetaProperty, getTargetLanguage, coupleChineseWithPinyin,
+  getActMetaProperty, coupleChineseWithPinyin,
   normalize, getSelectorOptions, determineOutcome, getWordpackTitleData
 });
