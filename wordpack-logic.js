@@ -778,34 +778,6 @@ function initializeDebugUI() {
 })();
 
 // ════════════════════════════════════════════════════════════════════════════
-// AUDIO CONTEXT & TYPING SOUNDS
-// ════════════════════════════════════════════════════════════════════════════
-
-let audioContext = null;
-
-function getAudioContext() {
-  if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  return audioContext;
-}
-
-function playTypingSound() {
-  const ctx = getAudioContext();
-  const duration = 0.015 + Math.random() * 0.01;
-  const bufferSize = ctx.sampleRate * duration;
-  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-  const data = buffer.getChannelData(0);
-  for (let i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i/bufferSize, 8);
-  const source = ctx.createBufferSource();
-  source.buffer = buffer;
-  const bp1 = ctx.createBiquadFilter(); bp1.type = 'bandpass'; bp1.frequency.value = 2000 + Math.random() * 1500; bp1.Q.value = 4.0;
-  const bp2 = ctx.createBiquadFilter(); bp2.type = 'bandpass'; bp2.frequency.value = 1000 + Math.random() * 500; bp2.Q.value = 2.5;
-  const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 400;
-  const gain = ctx.createGain(); gain.gain.value = 0.35 + Math.random() * 0.1;
-  source.connect(hp); hp.connect(bp1); bp1.connect(bp2); bp2.connect(gain); gain.connect(ctx.destination);
-  source.start();
-}
-
-// ════════════════════════════════════════════════════════════════════════════
 // MODULE EXPORTS
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -821,8 +793,7 @@ if (typeof module !== 'undefined' && module.exports) {
     determineOutcome, showStamp, removeCard, addDuplicateCards, navigateToNextPack, getWordpackTitleData, getSelectorOptions,
     populateSelector, createButtonTooltip, initializeTooltips,
     createInitialGameState, canStartGame, updateChineseModeClass,
-    toggleDebugMode, simulateWrongAnswer, simulateNearVictory, getDebugTableData, updateDebugTable, initializeDebugUI,
-    getAudioContext, playTypingSound
+    toggleDebugMode, simulateWrongAnswer, simulateNearVictory, getDebugTableData, updateDebugTable, initializeDebugUI
   };
 }
 

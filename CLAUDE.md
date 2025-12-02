@@ -101,11 +101,22 @@ Test with: `DecoderTest.html`
 
 ## 🔄 CODE REUSABILITY & ARCHITECTURE
 
-### Core Principle: Shared Code in wordpack-logic.js
-- **`wordpack-logic.js`** = ALL shared logic + DOM functions (reusable across games)
+### Core Principle: Separation of Concerns
+- **`wordpack-logic.js`** = ALL shared logic + DOM functions (reusable across games) - NO SOUND CODE
+- **`game-sounds.js`** = ALL audio (audio context, typing sounds, ding/buzz, card flip, button clicks)
 - **Game files (e.g., `FlashcardTypingGame.js`)** = Game-specific DOM elements + event wiring only
-- **`game-sounds.js`** = All audio
 - Never copy-paste between game files
+
+### game-sounds.js - Audio Single Source of Truth
+ALL sound-related code MUST live in `game-sounds.js`. This includes:
+- Audio context management (`getAudioContext()`)
+- Card flip sounds (`playCardFlipSound()`)
+- Success/failure sounds (`playDingSound()`, `playBuzzSound()`)
+- UI sounds (`playButtonClickSound()`)
+- Typing sounds (`playScribbleSound()`)
+- Any future sound effects
+
+**NEVER** add sound functions to wordpack-logic.js or game files - always add to game-sounds.js
 
 ### wordpack-logic.js Section Flow (15 Sections)
 Each section has Logic (.1) + DOM (.2) subsections where applicable:
@@ -170,14 +181,14 @@ Each section has Logic (.1) + DOM (.2) subsections where applicable:
 ```
 
 ### What Goes Where
-| wordpack-logic.js (Shared) | Game JS (Game-Specific) |
-|----------------------------|-------------------------|
-| All logic functions | DOM element references |
-| All shared DOM functions | Event listener wiring |
-| Stamp animations | Game-specific callbacks |
-| Chinese+Pinyin rendering | Custom game behavior |
-| Menu overlays | Weathering generation |
-| Debug UI | Game initialization |
+| wordpack-logic.js (Shared) | game-sounds.js (Audio) | Game JS (Game-Specific) |
+|----------------------------|------------------------|-------------------------|
+| All logic functions | Audio context | DOM element references |
+| All shared DOM functions | Typing sounds | Event listener wiring |
+| Stamp animations | Ding/buzz sounds | Game-specific callbacks |
+| Chinese+Pinyin rendering | Card flip sounds | Custom game behavior |
+| Menu overlays | Button click sounds | Weathering generation |
+| Debug UI | All future sounds | Game initialization |
 
 ## ⚠️ Quick Reference
 1. Backup → Edit → Before/After table
