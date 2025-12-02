@@ -1,12 +1,12 @@
 chinese,pinyin,english,spanish,french,portuguese
 我,wǒ,I,yo,je,eu
 你,nǐ,you,tú,tu,você
-您,nín,you (formal),usted,vous,o senhor
+您,nín,you (formal),usted (formal),vous,o senhor (formal)
 他,tā,he,él,il,ele
 她,tā,she,ella,elle,ela
-它,tā,it,eso,il,ele
+它,tā,it,eso,il,isso
 我们,wǒ men,we,nosotros,nous,nós
-你们,nǐ men,you,ustedes,vous,vocês
+你们,nǐ men,you (plural),ustedes,vous,vocês
 他们,tā men,they,ellos,ils,eles
 她们,tā men,they,ellas,elles,elas
 咱们,zán men,we,nosotros,nous,nós
@@ -26,7 +26,7 @@ chinese,pinyin,english,spanish,french,portuguese
 找他去,zhǎo tā qù,go to him,ve con el,va vers lui,vá até ele
 她很漂亮,tā hěn piào liàng,she is beautiful,ella es hermosa,elle est belle,ela é linda
 认识她,rèn shí tā,know her,conocerla,je la connais,conheço ela
-它坏了,tā huài le,it's broken,está roto,c'est cassé,está quebrado
+它坏了,tā huài le,it's broken,está roto,c'est cassé,está quebrado (it)
 喂它吃,wèi tā chī,feed it,alimentarlo,nourrissez-le,alimente-o
 我们一起,wǒ men yì qǐ,let's do it together,hagámoslo juntos,faisons-le ensemble,vamos juntos
 我们的家,wǒ men de jiā,our home,nuestra casa,notre maison,nossa casa

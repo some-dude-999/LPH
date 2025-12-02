@@ -1,23 +1,23 @@
 chinese,pinyin,english,spanish,french,portuguese
-个,gè,classifier (general),clasificador general,classificateur général,classificador geral
-只,zhǐ,classifier (animals),clasificador (animales),classificateur (animaux),classificador (animais)
-条,tiáo,classifier (long items),clasificador (cosas largas),classificateur (objets longs),classificador (itens longos)
-张,zhāng,classifier (flat items),clasificador (objetos planos),classificateur (objets plats),classificador (itens planos)
-件,jiàn,classifier (items/clothes),clasificador (prendas),classificateur (vêtements),classificador (roupas)
-本,běn,classifier (books),clasificador (libros),classificateur (livres),classificador (livros)
-杯,bēi,cup (measure),taza (medida),tasse (mesure),copo (medida)
-瓶,píng,bottle (measure),botella (medida),bouteille (mesure),garrafa (medida)
-块,kuài,piece (measure),pedazo (medida),morceau (mesure),pedaço (medida)
+个,gè,(general),(general),(général),(geral)
+只,zhǐ,(for animals),(para animales),(pour animaux),(para animais)
+条,tiáo,(for long things),(para cosas largas),(pour objets longs),(para itens longos)
+张,zhāng,(for flat things),(para objetos planos),(pour objets plats),(para itens planos)
+件,jiàn,(for things/clothes),(para prendas),(pour vêtements),(para roupas)
+本,běn,(for books),(para libros),(pour livres),(para livros)
+杯,bēi,cup/glass,taza/vaso,tasse/verre,copo
+瓶,píng,bottle,botella,bouteille,garrafa
+块,kuài,piece,pedazo,morceau,pedaço
 些,xiē,Some,Algunos,Certains,Alguns
-次,cì,time (occasion),vez,fois,vez
-位,wèi,person (polite),persona (cortesía),personne (politesse),pessoa (cortesia)
-双,shuāng,pair (measure),par,paire,par
-口,kǒu,mouth (measure),boca (medida),Bouche (mesure),Boca (medida)
-套,tào,set (measure),conjunto,ensemble,conjunto
-种,zhǒng,kind (measure),tipo,type,tipo
-排,pái,row (measure),fila (medida),ligne (mesure),linha (medida)
-群,qún,group (measure),Grupo,Groupe,Grupo
-副,fù,pair (measure),par,paire,par
+次,cì,time/occasion,vez,fois,vez
+位,wèi,(polite for person),(cortés para persona),(poli pour personne),(cortês para pessoa)
+双,shuāng,pair,par,paire,par
+口,kǒu,mouthful,bocado,bouchée,bocado
+套,tào,set,conjunto,ensemble,conjunto
+种,zhǒng,kind/type,tipo,type,tipo
+排,pái,row,fila,rangée,fila
+群,qún,group,Grupo,Groupe,Grupo
+副,fù,pair,par,paire,par
 一个人,yí gè rén,One person,Una persona,Une personne,Uma pessoa
 首个,shǒu gè,First,Primero,Premier,Primeiro
 一只猫,yī zhī māo,One cat,Un gato,Un chat,Um gato

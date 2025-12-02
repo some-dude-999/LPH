@@ -13,9 +13,9 @@ chinese,pinyin,english,spanish,french,portuguese
 多久,duō jiǔ,How long,¿Cuánto tiempo?,Combien de temps,Quanto tempo
 多远,duō yuǎn,How far,¿Qué tan lejos?,Jusqu'où,Quão longe
 多大,duō dà,How big,¿Qué tan grande?,Quelle taille,Quão grande
-多高,duō gāo,How high,¿Qué tan alto,À quelle hauteur,Quão alto
-什么事,shén me shì,What,¿Qué,Quoi,O que
-是什么,shì shén me,What,¿Qué,Quoi,O que
+多高,duō gāo,How high,¿Qué tan alto?,À quelle hauteur,Quão alto
+什么事,shén me shì,What,¿Qué?,Quoi,O que
+是什么,shì shén me,What,¿Qué?,Quoi,O que
 谁来了,shuí lái le,Who is here,¿Quién está aquí?,Qui est ici,Quem está aqui
 是谁,shì shuí,Who,Quién,Qui,Quem
 哪位,nǎ wèi,Which one,Cuál,Lequel,Qual
@@ -24,7 +24,7 @@ chinese,pinyin,english,spanish,french,portuguese
 选哪个,xuǎn nǎ ge,Which one to choose,Cuál elegir,Lequel choisir,Qual escolher
 哪里人,nǎ lǐ rén,Where from,¿De dónde?,D'où,De onde
 在哪里,zài nǎ lǐ,Where,Dónde,Où,Onde
-哪儿好,nǎ ér hǎo,Where is good,¿Dónde está bien,Où est le bien,Onde é bom
+哪儿好,nǎ ér hǎo,Where is good,¿Dónde está bien?,Où c'est bien,Onde é bom?
 去哪儿,qù nǎ ér,Where to go,Adónde ir,Où aller,Para onde ir
 怎么办,zěn me bàn,What to do,Qué hacer,Que faire,O que fazer
 怎么做,zěn me zuò,How to do,Cómo hacerlo,Comment faire,Como fazer
@@ -33,14 +33,14 @@ chinese,pinyin,english,spanish,french,portuguese
 为什么呢,wèi shén me ne,Why,Por qué,Pourquoi,Por que
 问为什么,wèn wèi shén me,Ask why,Pregunta por qué,Demandez pourquoi,Pergunte por que
 多少人,duō shǎo rén,How many people,Cuantas personas,Combien de personnes,Quantas pessoas
-有多少,yǒu duō shǎo,How many,¿Cuántos,Combien de,Quantos
+有多少,yǒu duō shǎo,How many,¿Cuántos?,Combien de,Quantos
 几天,jǐ tiān,How many days,Cuantos dias,Combien de jours,Quantos dias
 几个,jǐ gè,Several,Varios,Plusieurs,Vários
-多久了,duō jiǔ le,How long,¿Cuánto tiempo,Combien de temps,Quanto tempo
-要多久,yào duō jiǔ,How long,¿Cuánto tiempo,Combien de temps,Quanto tempo
-多远啊,duō yuǎn a,How far,¿Qué tan lejos,Jusqu'où,Quão longe
-有多远,yǒu duō yuǎn,How far,¿Qué tan lejos,Jusqu'où,Quão longe
-多大了,duō dà le,How big,Que grande,Quelle taille,Quão grande
-有多大,yǒu duō dà,How big,Que grande,Quelle taille,Quão grande
-多高啊,duō gāo a,How tall,¿Qué tan alto,Quelle taille,Qual a altura
-有多高,yǒu duō gāo,how high,qué tan alto,à quelle hauteur,quão alto
+多久了,duō jiǔ le,How long,¿Cuánto tiempo?,Combien de temps,Quanto tempo
+要多久,yào duō jiǔ,How long,¿Cuánto tiempo?,Combien de temps,Quanto tempo
+多远啊,duō yuǎn a,How far,¿Qué tan lejos?,Jusqu'où,Quão longe
+有多远,yǒu duō yuǎn,How far,¿Qué tan lejos?,Jusqu'où,Quão longe
+多大了,duō dà le,How big,¿Qué tan grande?,Quelle taille,Quão grande
+有多大,yǒu duō dà,How big,¿Qué tan grande?,Quelle taille,Quão grande
+多高啊,duō gāo a,How tall,¿Qué tan alto?,Quelle taille,Qual a altura
+有多高,yǒu duō gāo,How high,¿Qué tan alto?,À quelle hauteur,Quão alto
