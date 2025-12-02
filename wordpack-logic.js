@@ -611,11 +611,6 @@ function populateSelector(el, options, onChange, opts = {}) {
   if (onChange) el.addEventListener('change', e => onChange(opts.parseValue ? opts.parseValue(e.target.value) : e.target.value));
 }
 
-function updateWordpackTitleDisplay(titleElement, packKey, wordpacks) {
-  if (!titleElement) return;
-  titleElement.textContent = getWordpackTitleData(packKey, wordpacks).displayText;
-}
-
 function createButtonTooltip(button, htmlContent) {
   if (!button) return;
   const existing = button.querySelector('.btn-tooltip');
@@ -856,37 +851,6 @@ function playTypingSound() {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
-// COMPATIBILITY WRAPPERS - For external code that calls old function names
-// ════════════════════════════════════════════════════════════════════════════
-
-const isChineseMode = () => getTargetLanguage() === 'chinese';
-const getChineseHtml = (chinese, pinyin) => renderChineseWithPinyin(coupleChineseWithPinyin(chinese, pinyin)).outerHTML;
-const getTranslationsConfig = () => getActMetaProperty('translations');
-const getDefaultTranslation = () => getActMetaProperty('defaultTranslation', 'english');
-const getWordColumns = () => getActMetaProperty('wordColumns');
-const getValidLanguages = () => Object.keys(getActMetaProperty('translations') || {});
-const getTtsLanguageCode = () => { const t = getTargetLanguage(); return t ? (TTS_LANG_MAP[t] || null) : null; };
-const toTitleCase = str => str ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : '';
-const findVoiceByURI = (uri, voices) => (!uri || !voices || voices.length === 0) ? null : voices.find(v => v.voiceURI === uri) || null;
-const getFirstAvailableAct = loadedData => (!loadedData || Object.keys(loadedData).length === 0) ? null : Math.min(...Object.keys(loadedData).map(Number));
-const getSortedPackKeys = actData => { if (!actData) return []; const k = Object.keys(actData).filter(k => k !== '__actMeta' && actData[k]?.meta); k.sort((a, b) => (actData[a].meta.wordpack || 0) - (actData[b].meta.wordpack || 0)); return k; };
-const setCardFlipped = (el, flipped) => { if (el) el.classList.toggle('flipped', flipped); };
-const setMenuOverlay = (el, show) => { if (el) el.classList.toggle('showing-menu', show); document.body.classList.toggle('showing-menu', show); };
-const setGameStartedVisual = flashcardEl => { if (flashcardEl) flashcardEl.classList.add('game-started'); document.body.classList.add('game-started'); };
-const hideFeedback = feedbackElements => feedbackElements.forEach(el => { if (el) el.classList.remove('visible'); });
-const navigateDeck = (idx, len, dir) => len === 0 ? 0 : (idx + dir + len) % len;
-const resetDeckToOriginal = originalDeck => (!originalDeck || originalDeck.length === 0) ? { deck: [], currentIndex: 0 } : { deck: [...originalDeck], currentIndex: 0 };
-const normalizeString = str => normalize(str, { removeSpaces: true });
-const normalizeChar = char => normalize(char, { removeAccents: true });
-const normalizePronunciationText = (text, language) => normalize(text, { chinese: language === 'chinese' });
-const determineTypingOutcome = wrongAttempts => determineOutcome(wrongAttempts, '', 'typing');
-const determinePronunciationOutcome = (score, expected) => determineOutcome(score, expected, 'pronunciation');
-const getActSelectorOptions = loadedActMeta => getSelectorOptions(loadedActMeta, 'act');
-const getPackSelectorOptions = actData => getSelectorOptions(actData, 'pack');
-const getLanguageSelectorOptions = translations => getSelectorOptions(translations, 'language');
-const toggleDebugModeState = () => { window.DEBUG_MODE = !window.DEBUG_MODE; return window.DEBUG_MODE; };
-
-// ════════════════════════════════════════════════════════════════════════════
 // MODULE EXPORTS
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -894,19 +858,15 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     LANGUAGE_CONFIG, TTS_LANG_MAP, TOOLTIP_MESSAGES, saveState, loadState, switchLanguage, restoreSavedState, validateAndFixState,
     decodeObfuscatedModule, loadAct, loadLanguageData, getActMetaProperty, getTargetLanguage, validateTargetLanguageConsistency,
-    isChineseMode, getTranslationsConfig, getDefaultTranslation, getWordColumns, getValidLanguages, getTtsLanguageCode, toTitleCase,
-    shuffleArray, combineAndShuffleWords, createDeckFromPack, coupleChineseWithPinyin, renderChineseWithPinyin, getChineseHtml,
-    loadVoicesForLanguage, speakWord, findVoiceByURI, switchModeLogic, updateModeButtonsVisual, updateControlVisibilityForMode, setCardFlipped,
-    normalize, normalizeString, normalizeChar, normalizePronunciationText, collectFilteredWords, generateWrongAnswers,
+    shuffleArray, combineAndShuffleWords, createDeckFromPack, coupleChineseWithPinyin, renderChineseWithPinyin,
+    loadVoicesForLanguage, speakWord, switchModeLogic, updateModeButtonsVisual, updateControlVisibilityForMode,
+    normalize, collectFilteredWords, generateWrongAnswers,
     findNextTypingPosition, checkTypingKey, isWordComplete, initializeTypingState, getTypingDisplay, renderTypingDisplayHTML, renderTargetWordHTML, renderTranslationHTML,
-    initializeSpeechRecognition, getSimilarityThreshold, levenshteinDistance, calculateSimilarity, getScoreFeedback, hideFeedback, updatePronunciationDebug,
-    determineOutcome, determineTypingOutcome, determinePronunciationOutcome, showStamp,
-    removeCard, addDuplicateCards, navigateDeck, resetDeckToOriginal, navigateToNextPack,
-    getFirstAvailableAct, getSortedPackKeys, setMenuOverlay, getWordpackTitleData, getSelectorOptions,
-    getActSelectorOptions, getPackSelectorOptions, getLanguageSelectorOptions,
-    populateSelector, updateWordpackTitleDisplay, createButtonTooltip, initializeTooltips,
-    createInitialGameState, canStartGame, setGameStartedVisual, updateChineseModeClass,
-    toggleDebugModeState, toggleDebugMode, simulateWrongAnswer, simulateNearVictory, getDebugTableData, updateDebugTable, initializeDebugUI,
+    initializeSpeechRecognition, getSimilarityThreshold, levenshteinDistance, calculateSimilarity, getScoreFeedback, updatePronunciationDebug,
+    determineOutcome, showStamp, removeCard, addDuplicateCards, navigateToNextPack, getWordpackTitleData, getSelectorOptions,
+    populateSelector, createButtonTooltip, initializeTooltips,
+    createInitialGameState, canStartGame, updateChineseModeClass,
+    toggleDebugMode, simulateWrongAnswer, simulateNearVictory, getDebugTableData, updateDebugTable, initializeDebugUI,
     getAudioContext, playTypingSound
   };
 }
@@ -916,12 +876,10 @@ if (typeof module !== 'undefined' && module.exports) {
 // ════════════════════════════════════════════════════════════════════════════
 
 Object.assign(window, {
-  renderChineseWithPinyin, getChineseHtml, updateModeButtonsVisual, updateControlVisibilityForMode, setCardFlipped,
-  renderTypingDisplayHTML, renderTargetWordHTML, renderTranslationHTML, getScoreFeedback, hideFeedback, updatePronunciationDebug,
-  showStamp, navigateDeck, setMenuOverlay, populateSelector, updateWordpackTitleDisplay, createButtonTooltip, initializeTooltips,
-  setGameStartedVisual, updateChineseModeClass, toggleDebugMode, updateDebugTable, initializeDebugUI,
-  isChineseMode, getChineseHtml, getTranslationsConfig, getDefaultTranslation, getWordColumns, getValidLanguages,
-  getTtsLanguageCode, toTitleCase, findVoiceByURI, getFirstAvailableAct, getSortedPackKeys, resetDeckToOriginal,
-  normalizeString, normalizeChar, normalizePronunciationText, determineTypingOutcome, determinePronunciationOutcome,
-  getActSelectorOptions, getPackSelectorOptions, getLanguageSelectorOptions, toggleDebugModeState, normalize, getSelectorOptions, determineOutcome
+  renderChineseWithPinyin, updateModeButtonsVisual, updateControlVisibilityForMode,
+  renderTypingDisplayHTML, renderTargetWordHTML, renderTranslationHTML, getScoreFeedback, updatePronunciationDebug,
+  showStamp, populateSelector, createButtonTooltip, initializeTooltips,
+  updateChineseModeClass, toggleDebugMode, updateDebugTable, initializeDebugUI,
+  getActMetaProperty, getTargetLanguage, coupleChineseWithPinyin,
+  normalize, getSelectorOptions, determineOutcome, getWordpackTitleData
 });
