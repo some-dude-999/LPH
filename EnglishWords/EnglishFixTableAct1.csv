@@ -1,0 +1,3 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+english,31,Home & Rooms,2,spanish,inicio,hogar,inicio means beginning/start (like home page) not dwelling - hogar is the correct word for home as a place
+english,43,Places in Town,4,portuguese,fazer compras,loja,fazer compras means to go shopping (verb) - loja is the noun for shop/store which fits Places in Town theme
