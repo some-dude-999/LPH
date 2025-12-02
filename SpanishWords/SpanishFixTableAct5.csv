@@ -1,0 +1,31 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,149,Military Terms,5,portuguese,geral,general,geral means general (adjective) not military rank
+spanish,149,Military Terms,7,portuguese,capitão,capitã,feminine form needed for capitana
+spanish,149,Military Terms,25,portuguese,o geral,o general,geral means general (adjective) not military rank
+spanish,149,Military Terms,26,portuguese,um geral,um general,geral means general (adjective) not military rank
+spanish,149,Military Terms,29,portuguese,o capitão,a capitã,feminine form needed for la capitana
+spanish,149,Military Terms,30,portuguese,um capitão,uma capitã,feminine form needed for una capitana
+spanish,152,Literature & Books,2,portuguese,escritor,escritora,feminine form needed for escritora
+spanish,152,Literature & Books,4,portuguese,autor,autora,feminine form needed for autora
+spanish,152,Literature & Books,21,portuguese,o escritor,a escritora,feminine form needed for la escritora
+spanish,152,Literature & Books,22,portuguese,um escritor,uma escritora,feminine form needed for una escritora
+spanish,152,Literature & Books,25,portuguese,o autor,a autora,feminine form needed for la autora
+spanish,152,Literature & Books,26,portuguese,um autor,uma autora,feminine form needed for una autora
+spanish,153,Developing (desarrollar),11,portuguese,pré-visualização,adiantamento,adelanto means advancement not preview
+spanish,153,Developing (desarrollar),31,portuguese,uma prévia,um adiantamento,un adelanto means an advance not a preview
+spanish,156,Directing (dirigir),7,portuguese,direto,dirigem,wrong conjugation - direto means direct (adjective)
+spanish,158,Theater & Acting,9,portuguese,espectador,espectadora,feminine form needed for espectadora
+spanish,158,Theater & Acting,14,portuguese,agir,ato,acto is noun (act) not verb (to act)
+spanish,158,Theater & Acting,36,portuguese,o espectador,a espectadora,feminine form needed for la espectadora
+spanish,158,Theater & Acting,37,portuguese,um espectador,uma espectadora,feminine form needed for una espectadora
+spanish,162,Practicing (practicar),9,portuguese,praticar,prática,práctica is noun (practice) not verb (to practice)
+spanish,168,Reaching (alcanzar),7,portuguese,alcance,alcançam,wrong conjugation - alcance is noun/imperative
+spanish,168,Reaching (alcanzar),8,portuguese,alcance,alcançar,wrong form - alcance is noun not infinitive
+spanish,168,Reaching (alcanzar),29,portuguese,um gol,uma meta,meta means goal/target not sports goal
+spanish,168,Reaching (alcanzar),31,portuguese,um gol,um objetivo,objetivo means goal/target not sports goal
+spanish,177,Choosing (elegir),4,portuguese,escolha,escolhe,wrong conjugation - escolha is imperative/noun
+spanish,177,Choosing (elegir),7,portuguese,escolha,escolhem,wrong conjugation - escolha is imperative/noun
+spanish,177,Choosing (elegir),8,portuguese,escolha,escolher,wrong form - escolha is not infinitive
+spanish,177,Choosing (elegir),9,portuguese,escolha,escolher,wrong form - escolha is not infinitive
+spanish,177,Choosing (elegir),10,portuguese,selecione,selecionar,wrong form - selecione is imperative not infinitive
+spanish,177,Choosing (elegir),17,portuguese,escolha,escolhe,wrong conjugation - escolha is imperative/noun
