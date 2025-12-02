@@ -1,0 +1,16 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,1,Greetings & Goodbyes,15,english,welcome,welcome (masculine),Indicates bienvenido is used when addressing males
+spanish,1,Greetings & Goodbyes,16,english,welcome,welcome (feminine),Indicates bienvenida is used when addressing females
+spanish,5,Referring to People,6,english,you,you (formal),Distinguishes usted from informal tú
+spanish,9,The & A Articles,7,portuguese,um,uma,Feminine article required to match una
+spanish,9,The & A Articles,25,portuguese,alguns amigos,algumas amigas,Feminine form required to match unas amigas
+spanish,13,Family Members,13,english,cousin,cousin (masculine),Clarifies primo refers to male cousin
+spanish,13,Family Members,14,english,cousin,cousin (feminine),Clarifies prima refers to female cousin
+spanish,17,Basic Action Verbs,15,portuguese,discutir,conversar,Discutir means argue/discuss not chat
+spanish,23,Extended Family,9,english,adult,adult (masculine),Clarifies adulto refers to male adult
+spanish,23,Extended Family,10,english,adult,adult (feminine),Clarifies adulta refers to female adult
+spanish,23,Extended Family,15,english,relative,relative (masculine),Clarifies pariente refers to male relative
+spanish,23,Extended Family,16,english,relative,relative (feminine),Clarifies parienta refers to female relative
+spanish,23,Extended Family,45,portuguese,um parente,uma parenta,Feminine form required for parienta
+spanish,23,Extended Family,46,portuguese,meu parente,minha parenta,Feminine form required for mi parienta
+spanish,27,Daily Activities,4,portuguese,madrugador,eu madrugo,Verb form needed not adjective/noun
