@@ -16,14 +16,25 @@ spanish,223,Agreeing (acordar),6,english,do you agree,you agree,Not a question -
 spanish,223,Agreeing (acordar),7,english,agree,they agree,3rd person plural needs subject
 spanish,223,Agreeing (acordar),14,english,do you remember,you remember,Not a question - statement form
 spanish,223,Agreeing (acordar),20,english,do you remember,you remember,Not a question - statement form
+spanish,225,Warming (calentar),7,english,warm up,they warm up,3rd person plural needs subject
+spanish,228,Hiding (esconder),4,english,hide,hides,3rd person singular needs -s
+spanish,228,Hiding (esconder),7,english,hide,they hide,3rd person plural needs subject
+spanish,229,Revealing & Exposing (revelar),7,english,reveal,they reveal,3rd person plural needs subject
 spanish,230,Virtual Reality Terms,33,english,the viewer,the headset,Consistent with row 8 visor=headset
 spanish,230,Virtual Reality Terms,34,english,a viewer,a headset,Consistent with row 8 visor=headset
 spanish,231,Measuring (medir),6,english,measures,you measure,Vosotros form requires 2nd person translation
 spanish,234,Establishing & Founding (fundar),11,english,founder,founder (feminine),Distinguish from masculine fundador
 spanish,234,Establishing & Founding (fundar),30,english,the founder,the founder (feminine),Distinguish from masculine fundador
 spanish,234,Establishing & Founding (fundar),31,english,a founder,a founder (feminine),Distinguish from masculine fundador
+spanish,237,Pushing (empujar),4,english,push,pushes,3rd person singular needs -s
+spanish,237,Pushing (empujar),7,english,push,they push,3rd person plural needs subject
+spanish,239,Combining (combinar),4,english,combine,combines,3rd person singular needs -s
+spanish,239,Combining (combinar),7,english,combine,they combine,3rd person plural needs subject
+spanish,240,Separating (separar),7,english,separate,they separate,3rd person plural needs subject
 spanish,241,Dying (morir),4,english,die,dies,3rd person singular needs -s
 spanish,241,Dying (morir),7,english,die,they die,3rd person plural needs subject
+spanish,243,Growing (crecer),7,english,grow,they grow,3rd person plural needs subject
+spanish,244,Aging (envejecer),7,english,grow old,they grow old,3rd person plural needs subject
 spanish,245,Command Forms,9,english,speaks,speak,Imperative form not 3rd person
 spanish,246,Reflexive Pronouns,4,english,se,oneself,Clarify reflexive pronoun meaning
 spanish,246,Reflexive Pronouns,6,english,you,yourselves,Vosotros reflexive pronoun not just you
