@@ -2328,15 +2328,16 @@ The goal is quality, not politeness.</div>
             button.onclick = function() {
                 // Copy the prompt
                 const text = prompt.innerText;
+                const btn = this;
                 navigator.clipboard.writeText(text).then(() => {
-                    // Flash green to indicate copy
-                    const originalBg = this.style.backgroundColor;
-                    this.style.backgroundColor = '#90EE90';
-                    this.textContent = '✓ Copied!';
+                    // Flash green then disappear
+                    btn.style.backgroundColor = '#90EE90';
+                    btn.textContent = '✓ Copied!';
                     setTimeout(() => {
-                        this.style.backgroundColor = originalBg;
-                        this.textContent = actName;
-                    }, 800);
+                        btn.style.transition = 'opacity 0.3s';
+                        btn.style.opacity = '0';
+                        setTimeout(() => btn.remove(), 300);
+                    }, 500);
 
                     // Also scroll to the prompt
                     prompt.scrollIntoView({ behavior: 'smooth', block: 'center' });
