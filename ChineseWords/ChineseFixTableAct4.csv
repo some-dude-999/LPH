@@ -1,44 +1,14 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,54,Opinions & Views,2,spanish,Vista,Opinión,Vista means visual view - opinión is opinion
-chinese,54,Opinions & Views,12,spanish,Perspicacia,Opinión,Perspicacia means shrewdness not insight/opinion
-chinese,54,Opinions & Views,39,spanish,Tener perspicacia,Tener opinión,Perspicacia means shrewdness not insight
-chinese,54,Opinions & Views,40,spanish,Perspicacia única,Opinión única,Perspicacia means shrewdness not insight
-chinese,56,Expressing Needs,5,english,Desire,Wish,愿望 means wish - 渴望 means desire/yearn
-chinese,56,Expressing Needs,7,english,Anticipation,Expectation,期待 means expectation or looking forward to
-chinese,56,Expressing Needs,20,portuguese,Quer comprar,Quero comprar,Should be first person I want not third person
-chinese,57,Asking for Help,6,spanish,Soporte,Apoyo,Soporte is technical support - apoyo is help/support
+chinese,56,Expressing Needs,20,french,Vous voulez acheter,Je veux acheter,Should be first person (I want) not second person (You want)
 chinese,58,Giving Directions,10,english,Right,Right side,右侧 means right side not just right
 chinese,58,Giving Directions,11,english,Left,Left side,左侧 means left side not just left
 chinese,59,Describing Situations,8,spanish,Progreso,En progreso,Need full phrase for in progress
-chinese,59,Describing Situations,8,french,Progrès,En cours,Progrès is just progress noun - need in progress
 chinese,59,Describing Situations,9,spanish,Ocurrencia,Ocurrir,Should be verb infinitive not noun
-chinese,59,Describing Situations,9,french,Occurrence,Se produire,Occurrence is noun - need verb to happen
-chinese,59,Describing Situations,10,french,Apparaissent,Apparaître,Third person plural should be infinitive
 chinese,59,Describing Situations,11,spanish,Existen,Existir,Should be infinitive not conjugated form
-chinese,59,Describing Situations,33,french,Je viens de paraître,Vient d'apparaître,First person should be third person
-chinese,60,Talking About Problems,3,french,Ennui,Souci,Ennui means boredom - souci means trouble/worry
-chinese,61,Money & Payments,4,french,Honoraires,Frais,Honoraires is professional fees - frais is general fees
-chinese,61,Money & Payments,6,portuguese,Dinheiro,Dinheiro vivo,Dinheiro is just money - dinheiro vivo is cash
-chinese,61,Money & Payments,33,french,Avoir du changement,Avoir de la monnaie,Changement means alteration - monnaie is coins/change
-chinese,62,At the Restaurant,13,french,Chambre privée,Salon privé,Chambre is bedroom - salon is room for dining
-chinese,62,At the Restaurant,40,french,Réserver une chambre privée,Réserver un salon privé,Chambre is bedroom - salon is dining room
-chinese,62,At the Restaurant,41,french,Il y a des chambres privées,Il y a des salons privés,Chambre is bedroom - salon is dining room
-chinese,63,At the Hotel,14,spanish,Oficina principal,Vestíbulo,Oficina principal is main office - vestíbulo is lobby
-chinese,63,At the Hotel,16,french,Bellman,Bagagiste,Bellman is English - bagagiste is French for bellhop
-chinese,63,At the Hotel,32,spanish,Depósito de devolución,Devolver el depósito,Need verb form to return deposit
-chinese,63,At the Hotel,32,french,Dépôt de retour,Rembourser la caution,Need verb form to return deposit
-chinese,63,At the Hotel,32,portuguese,Depósito de devolução,Devolver o depósito,Need verb form to return deposit
-chinese,63,At the Hotel,45,french,Trouvez le chasseur,Trouvez le bagagiste,Chasseur is hunter - bagagiste is bellhop
-chinese,63,At the Hotel,46,french,Appelez le chasseur,Appelez le bagagiste,Chasseur is hunter - bagagiste is bellhop
-chinese,64,At the Airport,16,portuguese,Esperando,Aguardando embarque,Too generic - need waiting for boarding
-chinese,64,At the Airport,46,portuguese,Esperando,Aguardando embarque,Too generic - need waiting for boarding
-chinese,65,At the Doctor,8,french,Tester,Analyse,Verb should be noun to match pattern
-chinese,66,Making Appointments,8,spanish,Número de llamada,Llamar el turno,Too literal - turno is ticket number called
-chinese,66,Making Appointments,13,spanish,Número de experto,Cita con especialista,Too literal - cita is appointment with specialist
-chinese,66,Making Appointments,14,spanish,Número ordinario,Cita general,Too literal - cita general is regular appointment
-chinese,67,Weather Conversations,15,portuguese,Neblina,Poluição,雾霾 is smog/pollution not fog/mist
-chinese,67,Weather Conversations,45,portuguese,Há neblina,Há poluição,雾霾 is smog/pollution not fog/mist
-chinese,67,Weather Conversations,46,portuguese,Há neblina,Há poluição,雾霾 is smog/pollution not fog/mist
+chinese,61,Money & Payments,33,french,Avoir du changement,Avoir de la monnaie,Changement means alteration - monnaie is correct for coins/change
+chinese,67,Weather Conversations,15,portuguese,Neblina,Poluição atmosférica,雾霾 is smog/pollution not fog/mist
+chinese,67,Weather Conversations,45,portuguese,Há neblina,Há poluição atmosférica,雾霾 is smog/pollution not fog/mist
+chinese,67,Weather Conversations,46,portuguese,Há neblina,Há poluição atmosférica,雾霾 is smog/pollution not fog/mist
 chinese,68,Phone Conversations,34,english,Hang up,Hung up,了 indicates past tense - action completed
 chinese,68,Phone Conversations,35,english,Hang up,Was hung up on,被 indicates passive voice
 chinese,68,Phone Conversations,34,spanish,Cuelga,Colgó,了 indicates past tense
@@ -47,38 +17,8 @@ chinese,68,Phone Conversations,34,french,Raccrocher,A raccroché,了 indicates p
 chinese,68,Phone Conversations,35,french,Raccrocher,A été raccroché,被 indicates passive voice
 chinese,68,Phone Conversations,34,portuguese,Desligue,Desligou,了 indicates past tense
 chinese,68,Phone Conversations,35,portuguese,Desligue,Foi desligado,被 indicates passive voice
-chinese,69,Social Situations,5,french,Fête,Réunion,Fête is party/celebration - réunion is gathering
-chinese,70,Invitations & Offers,9,english,Promise,Agree,答应 in invitation context means agree not promise
-chinese,70,Invitations & Offers,9,spanish,Prometer,Aceptar,答应 in invitation context means accept
-chinese,70,Invitations & Offers,9,french,Promettre,Accepter,答应 in invitation context means accept
-chinese,70,Invitations & Offers,9,portuguese,Prometer,Aceitar,答应 in invitation context means accept
-chinese,70,Invitations & Offers,34,english,Promise you,Agree with you,答应 means agree in this context
-chinese,70,Invitations & Offers,34,spanish,Te lo prometo,Acepto,答应 means accept/agree
-chinese,70,Invitations & Offers,34,french,Je te promets,J'accepte,答应 means accept/agree
-chinese,70,Invitations & Offers,34,portuguese,Prometo a você,Eu aceito,答应 means accept/agree
-chinese,70,Invitations & Offers,35,english,Already promised,Already agreed,答应 means agreed
-chinese,70,Invitations & Offers,35,spanish,Ya prometí,Ya acepté,答应 means accepted
-chinese,70,Invitations & Offers,35,french,Déjà promis,Déjà accepté,答应 means accepted
-chinese,70,Invitations & Offers,35,portuguese,Já prometi,Já aceitei,答应 means accepted
-chinese,71,Agreeing & Disagreeing,4,spanish,Soporte,Apoyo,Soporte is technical - apoyo is support
-chinese,71,Agreeing & Disagreeing,21,spanish,Soporte expreso,Expresar apoyo,Wrong translation - express support
-chinese,71,Agreeing & Disagreeing,21,french,Assistance expresse,Exprimer son soutien,Wrong translation - express support
-chinese,71,Agreeing & Disagreeing,21,portuguese,Apoio expresso,Expressar apoio,Wrong translation - express support
 chinese,73,Time Expressions,2,spanish,Sólo,Recién,Sólo means only - recién means just now
-chinese,74,Frequency Expressions,12,english,Always,Ever,从来 is used with negatives - ever not always
-chinese,74,Frequency Expressions,17,portuguese,Diariamente,Diário,Adverb should be adjective to match pattern
-chinese,74,Frequency Expressions,18,french,À tous les jours,Tous les jours,Unnatural French - remove à
 chinese,75,Describing Amounts,9,spanish,Sólo,Justo,Sólo means only - justo means just right/exactly
 chinese,75,Describing Amounts,32,spanish,solo,justo,solo means only - justo means just/exactly
-chinese,77,Making Comparisons,2,french,Comparez,Comparer,Imperative should be infinitive
-chinese,77,Making Comparisons,19,french,Comparez,Comparer,Imperative should be infinitive
-chinese,77,Making Comparisons,25,english,All the same,They are all the same,都一样 means they are all the same
-chinese,77,Making Comparisons,25,spanish,De todos modos,Son iguales,De todos modos means anyway
-chinese,77,Making Comparisons,25,french,Tout de même,Tous pareils,Tout de même means nevertheless
-chinese,77,Making Comparisons,25,portuguese,Mesmo assim,São iguais,Mesmo assim means even so
-chinese,77,Making Comparisons,42,english,Comparative,By comparison,Comparative is grammar term - need phrase
-chinese,77,Making Comparisons,42,spanish,Comparativo,En comparación,Comparativo is grammar term
-chinese,77,Making Comparisons,42,french,Comparatif,En comparaison,Comparatif is grammar term
-chinese,77,Making Comparisons,42,portuguese,Comparativo,Em comparação,Comparativo is grammar term
-chinese,78,Expressing Preferences,3,spanish,Amor,Amar,Should be verb infinitive not noun
-chinese,78,Expressing Preferences,3,french,Amour,Aimer,Should be verb infinitive not noun
+chinese,78,Expressing Preferences,3,spanish,Amor,Amar,Should be verb infinitive (to love) not noun (love)
+chinese,78,Expressing Preferences,3,french,Amour,Aimer,Should be verb infinitive (to love) not noun (love)

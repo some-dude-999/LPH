@@ -1,0 +1,6 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,113,Geography,32,portuguese,uma maiúscula,uma capital,Wrong Portuguese - maiúscula means uppercase letter not capital city
+spanish,113,Geography,32,pinyin,dà xiě zì mǔ,yī zuò shǒu dū,Wrong pinyin - was uppercase letter pinyin instead of capital city pinyin
+spanish,122,Tools & Building,32,pinyin,guān jiàn,yào shi,Wrong pinyin - guān jiàn means crucial/key (abstract) not physical key
+spanish,127,Going Down (bajar),12,chinese,低,我把它降低,Wrong Chinese - was just adjective low instead of verb I lower it
+spanish,127,Going Down (bajar),12,pinyin,dī,wǒ bǎ tā jiàng dī,Wrong pinyin - needs to match verb form I lower it

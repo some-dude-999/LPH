@@ -2,9 +2,9 @@ spanish,english,chinese,pinyin,portuguese
 ejército,army,军队,jūn duì,exército
 soldado,soldier,士兵,shì bīng,soldado
 oficial,officer,军官,jūn guān,oficial
-general,general,将军,jiāng jūn,geral
-capitán,captain,队长,duì zhǎng,capitão
-capitana,captain,队长,duì zhǎng,capitão
+general,general,将军,jiāng jūn,general
+capitán,captain,上尉,duì zhǎng,capitão
+capitana,captain,上尉,duì zhǎng,capitã
 arma,weapon,武器,wǔ qì,arma
 fusil,rifle,步枪,bù qiāng,espingarda
 pistola,pistol,枪,qiāng,arma
@@ -22,12 +22,12 @@ el soldado,the soldier,士兵,shì bīng,o soldado
 un soldado,a soldier,一名士兵,yī míng shì bīng,um soldado
 el oficial,the officer,军官,jūn guān,o oficial
 un oficial,an officer,一名军官,yī míng jūn guān,um oficial
-el general,the general,将军,jiāng jūn,o geral
-un general,a general,将军,jiāng jūn,um geral
-el capitán,the captain,上尉,chuán zhǎng,o capitão
-un capitán,a captain,上尉,chuán zhǎng,um capitão
-la capitana,the captain,上尉,chuán zhǎng,o capitão
-una capitana,a captain,上尉,chuán zhǎng,um capitão
+el general,the general,将军,jiāng jūn,o general
+un general,a general,将军,jiāng jūn,um general
+el capitán,the captain,上尉,shàng wèi,o capitão
+un capitán,a captain,上尉,shàng wèi,um capitão
+la capitana,the captain,上尉,shàng wèi,a capitã
+una capitana,a captain,上尉,shàng wèi,uma capitã
 el arma,the weapon,武器,wǔ qì,a arma
 un arma,a weapon,武器,wǔ qì,uma arma
 el fusil,the rifle,步枪,bù qiāng,a espingarda

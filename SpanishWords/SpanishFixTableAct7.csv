@@ -1,0 +1,26 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,221,Past Subjunctive Forms,4,english,were (subjunctive),were,Remove grammatical terminology - not natural for learners
+spanish,221,Past Subjunctive Forms,7,english,did (subjunctive),did,Remove grammatical terminology
+spanish,221,Past Subjunctive Forms,8,english,said (subjunctive),said,Remove grammatical terminology
+spanish,221,Past Subjunctive Forms,11,english,gave (subjunctive),gave,Remove grammatical terminology
+spanish,221,Past Subjunctive Forms,14,english,spoke (subjunctive),spoke,Remove grammatical terminology
+spanish,221,Past Subjunctive Forms,15,english,ate (subjunctive),ate,Remove grammatical terminology
+spanish,221,Past Subjunctive Forms,17,english,worked (subjunctive),worked,Remove grammatical terminology
+spanish,221,Past Subjunctive Forms,18,english,studied (subjunctive),studied,Remove grammatical terminology
+spanish,221,Past Subjunctive Forms,20,english,waited (subjunctive),waited,Remove grammatical terminology
+spanish,230,Virtual Reality Terms,33,english,the viewer,the headset,Consistent with row 8 visor=headset
+spanish,230,Virtual Reality Terms,34,english,a viewer,a headset,Consistent with row 8 visor=headset
+spanish,231,Measuring (medir),6,english,measures,you measure,Vosotros form requires 2nd person translation
+spanish,234,Establishing & Founding (fundar),11,english,founder,founder (feminine),Distinguish from masculine fundador
+spanish,234,Establishing & Founding (fundar),30,english,the founder,the founder (feminine),Distinguish from masculine fundador
+spanish,234,Establishing & Founding (fundar),31,english,a founder,a founder (feminine),Distinguish from masculine fundador
+spanish,245,Command Forms,9,english,speaks,speak,Imperative form not 3rd person
+spanish,246,Reflexive Pronouns,4,english,se,oneself,Clarify reflexive pronoun meaning
+spanish,250,Common Idioms,47,english,he usually speaks out loud,he usually talks a lot,Idiom means talks excessively not loudly
+spanish,250,Common Idioms,48,english,he likes to talk out loud,he likes to talk a lot,Idiom means talks excessively not loudly
+spanish,250,Common Idioms,49,english,seems to be like a goat,seems to be crazy,Literal translation loses idiom meaning
+spanish,250,Common Idioms,50,english,he is usually like a goat,he's usually crazy,Literal translation loses idiom meaning
+spanish,250,Common Idioms,57,english,seems to be up to his nose,seems to be fed up,Literal translation loses idiom meaning
+spanish,250,Common Idioms,58,english,it's usually up to its nose,is usually fed up,Literal translation loses idiom meaning
+spanish,250,Common Idioms,63,english,usually doesn't even hit,usually doesn't lift a finger,Literal translation loses idiom meaning
+spanish,250,Common Idioms,64,english,tends not to hit,tends not to lift a finger,Literal translation loses idiom meaning

@@ -1,0 +1,37 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,149,Military Terms,6,chinese,队长,上尉,队长 is team captain not military captain rank
+spanish,149,Military Terms,7,chinese,队长,上尉,队长 is team captain not military captain rank
+spanish,149,Military Terms,27,pinyin,chuán zhǎng,shàng wèi,chuán zhǎng means ship captain not military captain
+spanish,149,Military Terms,28,pinyin,chuán zhǎng,shàng wèi,chuán zhǎng means ship captain not military captain
+spanish,149,Military Terms,29,pinyin,chuán zhǎng,shàng wèi,chuán zhǎng means ship captain not military captain
+spanish,149,Military Terms,30,pinyin,chuán zhǎng,shàng wèi,chuán zhǎng means ship captain not military captain
+spanish,150,Continuing (continuar),26,english,below,next,a continuación means next/following not below
+spanish,152,Literature & Books,13,english,editorial,publishing house,editorial in Spanish means publishing house not editorial
+spanish,152,Literature & Books,43,english,the publisher,the publishing house,consistent with row 13
+spanish,152,Literature & Books,49,portuguese,o versículo,o verso,versículo is biblical verse - verso is poetry verse
+spanish,152,Literature & Books,55,pinyin,xìng bié,tǐ cái,xìng bié means gender not genre
+spanish,152,Literature & Books,57,portuguese,a redação,o ensaio,redação is composition - ensayo is literary essay
+spanish,154,Producing (producir),3,portuguese,produzir,você produz,need conjugated form not infinitive
+spanish,154,Producing (producir),7,portuguese,produzir,produzem,need conjugated form not infinitive
+spanish,158,Theater & Acting,5,portuguese,cenário,palco,cenário is scenery - palco is stage
+spanish,158,Theater & Acting,10,portuguese,agir,atuar,agir is to act/take action - atuar is to perform
+spanish,158,Theater & Acting,21,chinese,歌词,剧本,歌词 is song lyrics - libreto is opera/theater script
+spanish,158,Theater & Acting,30,pinyin,chuāng lián,mù bù,chuāng lián is window curtain not theater curtain
+spanish,158,Theater & Acting,31,pinyin,chuāng lián,mù bù,chuāng lián is window curtain not theater curtain
+spanish,158,Theater & Acting,38,chinese,我们必须行动,我们必须表演,行动 is take action - 表演 is perform
+spanish,158,Theater & Acting,39,chinese,我要行动,我要表演,行动 is take action - 表演 is perform
+spanish,158,Theater & Acting,40,chinese,必须代表,必须表演,代表 is represent someone - 表演 is perform
+spanish,158,Theater & Acting,41,chinese,我将代表,我将表演,代表 is represent someone - 表演 is perform
+spanish,160,Resting (descansar),2,portuguese,descansar,Eu descanso,need I rest not infinitive to rest
+spanish,160,Resting (descansar),4,portuguese,descansar,descansa,need he/she rests not infinitive
+spanish,160,Resting (descansar),7,portuguese,descansar,descansam,need they rest not infinitive
+spanish,160,Resting (descansar),10,portuguese,relaxe,relaxar,relaxe is imperative - need infinitive relaxar
+spanish,160,Resting (descansar),26,portuguese,descansar,o repouso,need noun rest not verb to rest
+spanish,164,Dance & Dancing,21,english,reverence,bow,in dance context reverencia means bow not reverence
+spanish,164,Dance & Dancing,60,chinese,崇敬,鞠躬,崇敬 is reverence/respect - 鞠躬 is bow (dance move)
+spanish,173,Journalism Terms,17,portuguese,exclusivo,exclusiva,need feminine form for la exclusiva
+spanish,173,Journalism Terms,28,english,the editorial,the newsroom,la redacción is newsroom not editorial
+spanish,173,Journalism Terms,44,chinese,发送的,特派员,发送的 means sent - enviado is correspondent
+spanish,179,Marketing & Advertising,24,english,the announcement,the advertisement,in marketing anuncio is advertisement
+spanish,180,Appearing (aparecer),7,portuguese,aparecer,aparecem,need they appear not infinitive
+spanish,180,Appearing (aparecer),11,pinyin,míng xiǎn,biǎo xiàn,míng xiǎn means obvious not manifest

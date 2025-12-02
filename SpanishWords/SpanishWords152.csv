@@ -1,7 +1,7 @@
 spanish,english,chinese,pinyin,portuguese
-escritora,writer,作家,zuò jiā,escritor
+escritora,writer,作家,zuò jiā,escritora
 autor,author,作者,zuò zhě,autor
-autora,author,作者,zuò zhě,autor
+autora,author,作者,zuò zhě,autora
 novela,novel,小说,xiǎo shuō,novela
 poesía,poetry,诗,shī,poesia
 poema,poem,诗,shī,poema
@@ -10,7 +10,7 @@ personaje,character,角色,jué sè,personagem
 trama,plot,情节,qíng jié,enredo
 capítulo,chapter,章,zhāng,capítulo
 publicar,to publish,发布,fā bù,publicar
-editorial,editorial,出版社,chū bǎn shè,editorial
+editorial,publishing house,出版社,chū bǎn shè,editorial
 narrativa,narrative,叙述,xù shù,narrativa
 prosa,prose,散文,sǎn wén,prosa
 verso,verse,诗句,shī jù,verso
@@ -18,12 +18,12 @@ estrofa,stanza,节,jié,estrofe
 rima,rhyme,韵,yùn,rima
 género,genre,体裁,tǐ cái,gênero
 ensayo,essay,论文,lùn wén,ensaio
-la escritora,the writer,作者,zuò zhě,o escritor
-una escritora,a writer,作家,zuò jiā,um escritor
+la escritora,the writer,作者,zuò zhě,a escritora
+una escritora,a writer,作家,zuò jiā,uma escritora
 el autor,the author,作者,zuò zhě,o autor
 un autor,an author,作者,zuò zhě,um autor
-la autora,the author,作者,zuò zhě,o autor
-una autora,an author,作者,zuò zhě,um autor
+la autora,the author,作者,zuò zhě,a autora
+una autora,an author,作者,zuò zhě,uma autora
 la novela,the novel,小说,xiǎo shuō,o romance
 una novela,a novel,一本小说,yī běn xiǎo shuō,um romance
 la poesía,poetry,诗,shī,poesia
@@ -40,19 +40,19 @@ el capítulo,the chapter,章节,zhāng jié,o capítulo
 un capítulo,a chapter,一章,yī zhāng,um capítulo
 hay que publicar,you have to publish,必须发表,bì xū fà biǎo,deve ser publicado
 voy a publicar,I will publish,我会发布,wǒ huì fā bù,Vou publicar
-la editorial,the publisher,出版商,chū bǎn shāng,a editora
+la editorial,the publishing house,出版商,chū bǎn shāng,a editora
 una editorial,a publishing house,一家出版社,yī jiā chū bǎn shè,uma editora
 la narrativa,the narrative,叙述,xù shù,a narrativa
 con narrativa,with narrative,带有叙述性,dài yǒu xù shù xìng,com narrativa
 la prosa,the prose,散文,sǎn wén,a prosa
 en prosa,in prose,散文,sǎn wén,em prosa
-el verso,the verse,诗句,shī jù,o versículo
+el verso,the verse,诗句,shī jù,o verso
 un verso,a verse,一首诗,yī shǒu shī,um verso
 la estrofa,the stanza,节,jié,a estrofe
 una estrofa,a stanza,一节,yī jié,uma estrofe
 la rima,the rhyme,韵律,yùn lǜ,a rima
 con rima,with rhyme,押韵,yā yùn,com rima
-el género,the genre,体裁,xìng bié,o gênero
+el género,the genre,体裁,tǐ cái,o gênero
 un género,a genre,一种类型,yī zhǒng lèi xíng,um gênero
-el ensayo,the essay,文章,wén zhāng,a redação
+el ensayo,the essay,文章,wén zhāng,o ensaio
 un ensayo,an essay,一篇文章,yì piān wén zhāng,um ensaio

@@ -2,10 +2,10 @@ english,chinese,pinyin,spanish,portuguese
 bake,烘烤,hōng kǎo,hornear,assar
 fry,炒,chǎo,freír,fritar
 boil,煮沸,zhǔ fèi,hervir,ferver
-grill,烧烤,shāo kǎo,asar a la parrilla,grelha
+grill,烧烤,shāo kǎo,asar a la parrilla,grelhar
 roast,烤,kǎo,asar,assar
 steam,蒸,zhēng,cocinar al vapor,cozinhar no vapor
-sauté,炒,chǎo,saltear,refogue
+sauté,炒,chǎo,saltear,refogar
 simmer,煨,wēi,cocinar a fuego lento,cozinhar em fogo baixo
 broil,烤,kǎo,asar,grelhar
 barbecue,烧烤,shāo kǎo,barbacoa,churrasco
@@ -13,7 +13,7 @@ reheat,再加热,zài jiā rè,recalentar,reaquecer
 defrost,除霜,chú shuāng,descongelar,descongelar
 marinate,腌制,yān zhì,marinar,marinar
 blanch,焯水,chāo shuǐ,blanquear,escaldar
-stir,搅拌,jiǎo bàn,revolver,mexa
+stir,搅拌,jiǎo bàn,revolver,mexer
 chop,切碎,qiē suì,picar,cortar
 slice,切片,qiē piàn,rebanar,fatiar
 braise,焖,mèn,estofar,guisar
@@ -21,7 +21,7 @@ poach,水煮,shuǐ zhǔ,escalfar,escalfar
 caramelize,焦糖化,jiāo táng huà,caramelizar,caramelizar
 bake cookies,烤饼干,kǎo bǐng gān,hornear galletas,assar biscoitos
 bake a cake,烤蛋糕,kǎo dàn gāo,hornear un pastel,fazer um bolo
-fry chicken,炸鸡,zhà jī,freír pollo,frango frito
+fry chicken,炸鸡,zhà jī,freír pollo,fritar frango
 fry an egg,煎鸡蛋,jiān jī dàn,freír un huevo,fritar um ovo
 boil water,烧开水,shāo kāi shuǐ,hervir agua,ferver água
 boil eggs,煮鸡蛋,zhǔ jī dàn,hervir huevos,ferver ovos
@@ -51,8 +51,8 @@ stir constantly,不断搅拌,bù duàn jiǎo bàn,revuelva constantemente,mexa c
 stir well,搅拌均匀,jiǎo bàn jūn yún,revuelva bien,mexa bem
 chop onions,切洋葱,qiè yáng cōng,picar cebollas,picar cebola
 chop vegetables,切蔬菜,qiè shū cài,picar verduras,picar legumes
-slice bread,切片面包,qiē piàn miàn bāo,rebanada de pan,fatia de pão
-slice thin,切成薄片,qiè chéng báo piàn,rebanada fina,fatia fina
+slice bread,切片面包,qiē piàn miàn bāo,rebanar el pan,fatiar o pão
+slice thin,切成薄片,qiè chéng báo piàn,rebanar fino,fatiar fino
 braise beef,红烧牛肉,hóng shāo niú ròu,estofar ternera,cozinhar carne ao molho
 braise slowly,慢炖,màn dùn,estofar lentamente,cozinhe lentamente
 poach eggs,荷包蛋,hé bāo dàn,huevos escalfados,ovos escalfados

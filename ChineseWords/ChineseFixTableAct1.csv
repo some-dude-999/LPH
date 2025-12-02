@@ -1,0 +1,51 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,1,Greetings & Goodbyes,7,english,goodbye,Goodbye,Capitalization consistency
+chinese,1,Greetings & Goodbyes,11,english,thank you,Thank you,Capitalization consistency
+chinese,1,Greetings & Goodbyes,13,english,sorry,Sorry,Capitalization consistency
+chinese,1,Greetings & Goodbyes,5,spanish,buenas tardes,Buenas tardes,Capitalization consistency
+chinese,1,Greetings & Goodbyes,5,french,bon après-midi,Bon après-midi,Capitalization consistency
+chinese,1,Greetings & Goodbyes,5,portuguese,boa tarde,Boa tarde,Capitalization consistency
+chinese,1,Greetings & Goodbyes,20,english,take care,Walk slowly,Differentiate from 保重 - 慢走 literally means walk slowly as farewell
+chinese,1,Greetings & Goodbyes,20,spanish,cuídate,Ve despacio,Differentiate from 保重 - 慢走 means walk slowly
+chinese,1,Greetings & Goodbyes,20,french,prends soin de toi,Marche doucement,Differentiate from 保重 - 慢走 means walk slowly
+chinese,1,Greetings & Goodbyes,20,portuguese,cuide-se,Vá devagar,Differentiate from 保重 - 慢走 means walk slowly
+chinese,1,Greetings & Goodbyes,57,english,Take care,Walk slowly,Consistent with base word 慢走
+chinese,1,Greetings & Goodbyes,57,spanish,cuídate,Ve despacio,Consistent with base word 慢走
+chinese,1,Greetings & Goodbyes,57,french,Prends soin de toi,Marche doucement,Consistent with base word 慢走
+chinese,1,Greetings & Goodbyes,57,portuguese,Cuide-se,Vá devagar,Consistent with base word 慢走
+chinese,1,Greetings & Goodbyes,58,english,Take care,Please walk slowly,Consistent with base word 慢走
+chinese,1,Greetings & Goodbyes,58,spanish,Cuídate,Por favor ve despacio,Consistent with base word 慢走
+chinese,1,Greetings & Goodbyes,58,french,Prends soin de toi,S'il te plaît marche doucement,Consistent with base word 慢走
+chinese,1,Greetings & Goodbyes,58,portuguese,Cuide-se,Por favor vá devagar,Consistent with base word 慢走
+chinese,2,Personal Pronouns,11,portuguese,eles,elas,她们 is feminine they - use feminine form elas
+chinese,2,Personal Pronouns,37,portuguese,Eles estão todos aqui,Elas estão todas aqui,她们 is feminine they - use feminine form
+chinese,5,Essential Verbs I,35,french,bon,beau,好看 means good-looking not just good
+chinese,5,Essential Verbs I,39,spanish,decir,hablar,说话 means to talk/speak not to say
+chinese,9,Basic Question Words,2,spanish,¿Qué,¿Qué?,Add closing question mark
+chinese,9,Basic Question Words,11,spanish,¿Cuánto,¿Cuánto?,Add closing question mark
+chinese,9,Basic Question Words,12,spanish,¿Cuántos,¿Cuántos?,Add closing question mark
+chinese,9,Basic Question Words,13,spanish,¿Cuánto tiempo,¿Cuánto tiempo?,Add closing question mark
+chinese,9,Basic Question Words,14,spanish,¿Qué tan lejos,¿Qué tan lejos?,Add closing question mark
+chinese,9,Basic Question Words,22,spanish,¿Qué día,¿Qué día?,Add closing question mark
+chinese,9,Basic Question Words,25,english,Where,Where from,哪里人 asks about origin not just location
+chinese,9,Basic Question Words,25,spanish,Dónde,¿De dónde?,哪里人 asks about origin
+chinese,9,Basic Question Words,25,french,Où,D'où,哪里人 asks about origin
+chinese,9,Basic Question Words,25,portuguese,Onde,De onde,哪里人 asks about origin
+chinese,10,Time Essentials,25,portuguese,Vá ontem,Foi ontem,Use past tense not imperative
+chinese,12,Basic Adjectives II,4,portuguese,quente,morno,暖和 means warm not hot - quente is hot
+chinese,14,Emergency & Survival,16,english,Lost,Lost (item),Differentiate from 迷路 - 丢失 is for lost objects
+chinese,14,Emergency & Survival,16,spanish,Perdido,Perdido (objeto),Differentiate - 丢失 is for lost objects
+chinese,14,Emergency & Survival,16,french,Perdu,Perdu (objet),Differentiate - 丢失 is for lost objects
+chinese,14,Emergency & Survival,16,portuguese,Perdido,Perdido (objeto),Differentiate - 丢失 is for lost objects
+chinese,14,Emergency & Survival,17,english,Lost,Lost (way),Differentiate from 丢失 - 迷路 means lost direction
+chinese,14,Emergency & Survival,17,spanish,Perdido,Perdido (camino),Differentiate - 迷路 means lost direction
+chinese,14,Emergency & Survival,17,french,Perdu,Perdu (chemin),Differentiate - 迷路 means lost direction
+chinese,14,Emergency & Survival,17,portuguese,Perdido,Perdido (caminho),Differentiate - 迷路 means lost direction
+chinese,14,Emergency & Survival,48,english,Lost,Lost (item),Consistent with 丢失
+chinese,14,Emergency & Survival,48,spanish,Perdido,Perdido (objeto),Consistent with 丢失
+chinese,14,Emergency & Survival,48,french,Perdu,Perdu (objet),Consistent with 丢失
+chinese,14,Emergency & Survival,48,portuguese,Perdido,Perdido (objeto),Consistent with 丢失
+chinese,14,Emergency & Survival,50,english,Lost,Lost (way),Consistent with 迷路
+chinese,14,Emergency & Survival,50,spanish,Perdido,Perdido (camino),Consistent with 迷路
+chinese,14,Emergency & Survival,50,french,Perdu,Perdu (chemin),Consistent with 迷路
+chinese,14,Emergency & Survival,50,portuguese,Perdido,Perdido (caminho),Consistent with 迷路

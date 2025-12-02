@@ -1,0 +1,30 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+chinese,36,Around the House,52,spanish,en el garaje,En el garaje,Capitalize for consistency with other entries
+chinese,38,Describing People,32,english,Intelligent people,Intelligence and talent,聪明才智 means wisdom/talent as attributes not people
+chinese,38,Describing People,32,spanish,Personas inteligentes,Inteligencia y talento,Match corrected English meaning
+chinese,38,Describing People,32,french,Des gens intelligents,Intelligence et talent,Match corrected English meaning
+chinese,38,Describing People,32,portuguese,Pessoas inteligentes,Inteligência e talento,Match corrected English meaning
+chinese,51,Numbers & Math,4,english,Multiplication,Multiply,Should be verb to match Add/Subtract pattern
+chinese,51,Numbers & Math,4,spanish,Multiplicación,Multiplicar,Should be verb to match pattern
+chinese,51,Numbers & Math,4,french,Multiplication,Multiplier,Should be verb to match pattern
+chinese,51,Numbers & Math,4,portuguese,Multiplicação,Multiplicar,Should be verb to match pattern
+chinese,53,Location Words,2,english,middle,Middle,Capitalize for consistency with other packs
+chinese,53,Location Words,3,english,inside,Inside,Capitalize for consistency with other packs
+chinese,53,Location Words,4,english,outside,Outside,Capitalize for consistency with other packs
+chinese,53,Location Words,5,english,top,Top,Capitalize for consistency with other packs
+chinese,53,Location Words,6,english,bottom,Bottom,Capitalize for consistency with other packs
+chinese,53,Location Words,7,english,left,Left,Capitalize for consistency with other packs
+chinese,53,Location Words,8,english,right,Right,Capitalize for consistency with other packs
+chinese,53,Location Words,9,english,front,Front,Capitalize for consistency with other packs
+chinese,53,Location Words,10,english,back,Back,Capitalize for consistency with other packs
+chinese,53,Location Words,11,english,side,Side,Capitalize for consistency with other packs
+chinese,53,Location Words,12,english,around,Around,Capitalize for consistency with other packs
+chinese,53,Location Words,13,english,everywhere,Everywhere,Capitalize for consistency with other packs
+chinese,53,Location Words,14,english,everywhere,Everywhere,Capitalize for consistency with other packs
+chinese,53,Location Words,15,english,local,Local,Capitalize for consistency with other packs
+chinese,53,Location Words,16,english,east,East,Capitalize for consistency with other packs
+chinese,53,Location Words,17,english,south,South,Capitalize for consistency with other packs
+chinese,53,Location Words,18,english,west,West,Capitalize for consistency with other packs
+chinese,53,Location Words,19,english,north,North,Capitalize for consistency with other packs
+chinese,53,Location Words,20,english,top,Top,Capitalize for consistency with other packs
+chinese,53,Location Words,21,english,bottom,Bottom,Capitalize for consistency with other packs

@@ -6,9 +6,9 @@ alquilar,rent,租用,zū yòng,alugar
 alquiler,rent,租金,zū jīn,aluguel
 renta,rent,租金,zū jīn,renda
 propietario,owner,业主,yè zhǔ,proprietário
-propietaria,owner,业主,yè zhǔ,proprietário
+propietaria,owner (feminine),业主,yè zhǔ,proprietário
 inquilino,tenant,租户,zū hù,inquilino
-inquilina,tenant,租户,zū hù,inquilino
+inquilina,tenant (feminine),租户,zū hù,inquilino
 valorar,to appraise,评估,píng gū,avaliar
 inmobiliaria,real estate,房地产,fáng dì chǎn,imobiliário
 lote,plot,地块,dì kuài,lote
@@ -26,16 +26,16 @@ hay que alquilar,you have to rent,你必须租,nǐ bì xū zū,você tem que alu
 voy a alquilar,I'm going to rent,我要租,wǒ yào zū,Vou alugar
 el alquiler,the rent,租金,zū jīn,o aluguel
 un alquiler,a rental,出租,chū zū,um aluguel
-la renta,the income,收入,shōu rù,a renda
-una renta,an income,收入,shōu rù,uma renda
+la renta,the rent,收入,shōu rù,a renda
+una renta,a rent,收入,shōu rù,uma renda
 el propietario,the owner,业主,yè zhǔ,o dono
 un propietario,an owner,业主,yè zhǔ,um proprietário
-la propietaria,the owner,业主,yè zhǔ,o dono
-una propietaria,an owner,业主,yè zhǔ,um proprietário
+la propietaria,the owner (feminine),业主,yè zhǔ,o dono
+una propietaria,an owner (feminine),业主,yè zhǔ,um proprietário
 el inquilino,the tenant,租户,zū hù,o inquilino
 un inquilino,a tenant,租户,zū hù,um inquilino
-la inquilina,the tenant,租户,zū hù,o inquilino
-una inquilina,a tenant,租户,zū hù,um inquilino
+la inquilina,the tenant (feminine),租户,zū hù,o inquilino
+una inquilina,a tenant (feminine),租户,zū hù,um inquilino
 hay que valorar,must be valued,必须评估,bì xū píng gū,deve ser valorizado
 voy a valorar,I will value,我会评估,wǒ huì píng gū,Vou valorizar
 la inmobiliaria,the real estate,房地产,fáng dì chǎn,o imobiliário
