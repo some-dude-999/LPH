@@ -2,16 +2,16 @@ spanish,english,chinese,pinyin,portuguese
 teatro,theater,剧院,jù yuàn,teatro
 actor,actor,演员,yǎn yuán,ator
 actriz,actress,女演员,nǚ yǎn yuán,atriz
-escenario,stage,舞台,chǎng jǐng,cenário
-telón,curtain,幕布,chuāng lián,cortina
+escenario,stage,舞台,wǔ tái,cenário
+telón,curtain,幕布,mù bù,cortina
 audiencia,audience,观众,guān zhòng,audiência
 espectador,spectator,观众,guān zhòng,espectador
 espectadora,spectator,观众,guān zhòng,espectador
-actuar,to act,表演,xíng dòng,agir
-representar,to perform,表演,dài biǎo,representar
+actuar,to perform,表演,biǎo yǎn,agir
+representar,to perform,表演,biǎo yǎn,representar
 guion,script,脚本,jiǎo běn,roteiro
 escena,scene,场景,chǎng jǐng,cena
-acto,act,一幕,xíng dòng,agir
+acto,act (theater),一幕,yí mù,agir
 aplaudir,to applaud,拍手,pāi shǒu,bater palmas
 drama,drama,戏剧,xì jù,drama
 comedia,comedy,喜剧,xǐ jù,comédia
@@ -35,10 +35,10 @@ el espectador,the spectator,观众,guān zhòng,o espectador
 un espectador,a spectator,一个旁观者,yí gè páng guān zhě,um espectador
 la espectadora,the spectator,观众,guān zhòng,o espectador
 una espectadora,a spectator,一个旁观者,yí gè páng guān zhě,um espectador
-hay que actuar,we must act,我们必须行动,wǒ men bì xū xíng dòng,devemos agir
-voy a actuar,I'm going to act,我要行动,wǒ yào xíng dòng,Eu vou agir
-hay que representar,must represent,必须代表,bì xū dài biǎo,deve representar
-voy a representar,I will represent,我将代表,wǒ jiāng dài biǎo,Eu representarei
+hay que actuar,we must perform,我们必须行动,wǒ men bì xū biǎo yǎn,devemos agir
+voy a actuar,I'm going to perform,我要行动,wǒ yào biǎo yǎn,Eu vou agir
+hay que representar,must perform,必须代表,bì xū biǎo yǎn,deve representar
+voy a representar,I will perform,我将代表,wǒ jiāng biǎo yǎn,Eu representarei
 el guion,the script,脚本,jiǎo běn,o roteiro
 un guion,a script,脚本,jiǎo běn,um roteiro
 la escena,the scene,场景,chǎng jǐng,a cena

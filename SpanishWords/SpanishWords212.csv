@@ -14,7 +14,7 @@ geotérmica,geothermal,地热,dì rè,geotérmica
 biomasa,biomass,生物质,shēng wù zhì,biomassa
 voltaje,voltage,电压,diàn yā,tensão
 amperaje,amperage,安培数,ān péi shù,amperagem
-corriente,current,电流,diàn liú,atual
+corriente,current,电流,diàn liú,corrente
 transformador,transformer,变压器,biàn yā qì,transformador
 generador,generator,发电机,fā diàn jī,gerador
 red eléctrica,electrical network,电力网络,diàn lì wǎng luò,rede elétrica
@@ -48,8 +48,8 @@ el voltaje,the voltage,电压,diàn yā,a tensão
 alto voltaje,high voltage,高电压,gāo diàn yā,alta tensão
 el amperaje,the amperage,安培数,ān péi shù,a amperagem
 bajo amperaje,low amperage,低安培数,dī ān péi shù,baixa amperagem
-la corriente,the current,电流,diàn liú,o atual
-una corriente,a stream,电流,diàn liú,um fluxo
+la corriente,the current,电流,diàn liú,a corrente
+una corriente,a stream,电流,diàn liú,uma corrente
 el transformador,the transformer,变压器,biàn yā qì,o transformador
 un transformador,a transformer,变压器,biàn yā qì,um transformador
 el generador,the generator,发电机,fā diàn jī,o gerador

@@ -5,16 +5,16 @@ vendedor,seller,卖家,mài jiā,vendedor
 vendedora,saleswoman,女售货员,nǚ shòu huò yuán,vendedora
 comprador,buyer,买家,mǎi jiā,comprador
 compradora,buyer,买家,mǎi jiā,comprador
-mostrador,counter,柜台,guì tái,contador
+mostrador,counter,柜台,guì tái,balcão
 escaparate,showcase,橱窗,chú chuāng,vitrine
 vitrina,showcase,展示柜,zhǎn shì guì,vitrine
 probador,fitting room,试衣间,shì yī jiān,provador
-ticket,ticket,票,piào,bilhete
+ticket,ticket,票,piào,recibo
 rebaja,discount,折扣,zhé kòu,desconto
 minorista,retailer,零售商,líng shòu shāng,varejista
 mayorista,wholesaler,批发商,pī fā shāng,atacadista
 distribuidor,distributor,经销商,jīng xiāo shāng,distribuidor
-existencias,stocks,库存,kù cún,ações
+existencias,stocks,库存,kù cún,estoque
 stock,stock,库存,kù cún,estoque
 surtido,assortment,品种,pǐn zhǒng,sortimento
 suministro,supply,供应,gōng yìng,fornecimento
@@ -30,16 +30,16 @@ el comprador,the buyer,买家,mǎi jiā,o comprador
 un comprador,a buyer,买家,mǎi jiā,um comprador
 la compradora,the buyer,买家,mǎi jiā,o comprador
 una compradora,a buyer,买家,mǎi jiā,um comprador
-el mostrador,the counter,柜台,guì tái,o contador
-un mostrador,a counter,柜台,guì tái,um contador
+el mostrador,the counter,柜台,guì tái,o balcão
+un mostrador,a counter,柜台,guì tái,um balcão
 el escaparate,the showcase,橱窗,chú chuāng,a vitrine
 un escaparate,a showcase,展示柜,zhǎn shì guì,uma vitrine
 la vitrina,the showcase,展示柜,zhǎn shì guì,a vitrine
 una vitrina,a showcase,展示柜,zhǎn shì guì,uma vitrine
 el probador,the fitting room,试衣间,shì yī jiān,o provador
 un probador,a fitting room,试衣间,shì yī jiān,um provador
-el ticket,the ticket,票,piào,o ingresso
-un ticket,a ticket,一张票,yī zhāng piào,um ingresso
+el ticket,the ticket,票,piào,o recibo
+un ticket,a ticket,一张票,yī zhāng piào,um recibo
 la rebaja,the discount,折扣,zhé kòu,o desconto
 en rebaja,on sale,特价,tè jià,à venda
 el minorista,the retailer,零售商,líng shòu shāng,o varejista
