@@ -8,14 +8,56 @@ spanish,221,Past Subjunctive Forms,15,english,ate (subjunctive),ate,Remove gramm
 spanish,221,Past Subjunctive Forms,17,english,worked (subjunctive),worked,Remove grammatical terminology
 spanish,221,Past Subjunctive Forms,18,english,studied (subjunctive),studied,Remove grammatical terminology
 spanish,221,Past Subjunctive Forms,20,english,waited (subjunctive),waited,Remove grammatical terminology
+spanish,222,Dreaming (soñar),3,english,dream,dreams,3rd person singular needs -s
+spanish,222,Dreaming (soñar),15,english,always dream,always dreams,3rd person singular needs -s
+spanish,222,Dreaming (soñar),21,english,always dream,they always dream,3rd person plural needs subject
+spanish,223,Agreeing (acordar),4,english,agree,agrees,3rd person singular needs -s
+spanish,223,Agreeing (acordar),6,english,do you agree,you agree,Not a question - statement form
+spanish,223,Agreeing (acordar),7,english,agree,they agree,3rd person plural needs subject
+spanish,223,Agreeing (acordar),14,english,do you remember,you remember,Not a question - statement form
+spanish,223,Agreeing (acordar),20,english,do you remember,you remember,Not a question - statement form
+spanish,225,Warming (calentar),7,english,warm up,they warm up,3rd person plural needs subject
+spanish,228,Hiding (esconder),4,english,hide,hides,3rd person singular needs -s
+spanish,228,Hiding (esconder),7,english,hide,they hide,3rd person plural needs subject
+spanish,229,Revealing & Exposing (revelar),7,english,reveal,they reveal,3rd person plural needs subject
 spanish,230,Virtual Reality Terms,33,english,the viewer,the headset,Consistent with row 8 visor=headset
 spanish,230,Virtual Reality Terms,34,english,a viewer,a headset,Consistent with row 8 visor=headset
 spanish,231,Measuring (medir),6,english,measures,you measure,Vosotros form requires 2nd person translation
 spanish,234,Establishing & Founding (fundar),11,english,founder,founder (feminine),Distinguish from masculine fundador
 spanish,234,Establishing & Founding (fundar),30,english,the founder,the founder (feminine),Distinguish from masculine fundador
 spanish,234,Establishing & Founding (fundar),31,english,a founder,a founder (feminine),Distinguish from masculine fundador
+spanish,237,Pushing (empujar),4,english,push,pushes,3rd person singular needs -s
+spanish,237,Pushing (empujar),7,english,push,they push,3rd person plural needs subject
+spanish,239,Combining (combinar),4,english,combine,combines,3rd person singular needs -s
+spanish,239,Combining (combinar),7,english,combine,they combine,3rd person plural needs subject
+spanish,240,Separating (separar),7,english,separate,they separate,3rd person plural needs subject
+spanish,241,Dying (morir),4,english,die,dies,3rd person singular needs -s
+spanish,241,Dying (morir),7,english,die,they die,3rd person plural needs subject
+spanish,243,Growing (crecer),7,english,grow,they grow,3rd person plural needs subject
+spanish,244,Aging (envejecer),7,english,grow old,they grow old,3rd person plural needs subject
 spanish,245,Command Forms,9,english,speaks,speak,Imperative form not 3rd person
 spanish,246,Reflexive Pronouns,4,english,se,oneself,Clarify reflexive pronoun meaning
+spanish,246,Reflexive Pronouns,6,english,you,yourselves,Vosotros reflexive pronoun not just you
+spanish,246,Reflexive Pronouns,12,english,make up,put on makeup,Natural phrasing for maquillarse
+spanish,247,Gerund Forms,44,english,I'm dating,I'm leaving,Primary meaning of estoy saliendo
+spanish,248,Perfect Tenses,3,english,have you,you have,Not a question - statement form
+spanish,248,Perfect Tenses,6,english,have you,you have,Not a question - statement form
+spanish,248,Perfect Tenses,8,english,there was,had,Auxiliary verb for perfect tense not existential
+spanish,248,Perfect Tenses,13,english,there will be,I will have,1st person future auxiliary not existential
+spanish,248,Perfect Tenses,15,english,there will be,will have,3rd person future auxiliary
+spanish,248,Perfect Tenses,17,english,there will be,you will have,Vosotros future auxiliary not existential
+spanish,248,Perfect Tenses,18,english,there will be,they will have,3rd person plural future auxiliary
+spanish,248,Perfect Tenses,23,english,have you done,you have done,Not a question - statement form
+spanish,248,Perfect Tenses,46,english,he will be,he will have,Future of haber not ser
+spanish,249,Future Forms,8,english,I will,I will do,Incomplete - haré means I will do/make
+spanish,249,Future Forms,10,english,will,will do,Incomplete - hará means will do/make
+spanish,249,Future Forms,11,english,we will,we will do,Incomplete - haremos means we will do
+spanish,249,Future Forms,13,english,they will,they will do,Incomplete - harán means they will do
+spanish,249,Future Forms,32,english,I will,I will do,Incomplete - yo haré means I will do
+spanish,249,Future Forms,35,english,will you do that,you will do that,Not a question - statement form
+spanish,249,Future Forms,36,english,he will,he will do,Incomplete - él hará means he will do
+spanish,249,Future Forms,38,english,we will,we will do,Incomplete - nosotros haremos
+spanish,249,Future Forms,42,english,they will,they will do,Incomplete - ellos harán
 spanish,250,Common Idioms,47,english,he usually speaks out loud,he usually talks a lot,Idiom means talks excessively not loudly
 spanish,250,Common Idioms,48,english,he likes to talk out loud,he likes to talk a lot,Idiom means talks excessively not loudly
 spanish,250,Common Idioms,49,english,seems to be like a goat,seems to be crazy,Literal translation loses idiom meaning
