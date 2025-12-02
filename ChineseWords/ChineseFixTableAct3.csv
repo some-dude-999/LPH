@@ -1,30 +1,32 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,36,Around the House,52,spanish,en el garaje,En el garaje,Capitalize for consistency with other entries
-chinese,38,Describing People,32,english,Intelligent people,Intelligence and talent,聪明才智 means wisdom/talent as attributes not people
-chinese,38,Describing People,32,spanish,Personas inteligentes,Inteligencia y talento,Match corrected English meaning
-chinese,38,Describing People,32,french,Des gens intelligents,Intelligence et talent,Match corrected English meaning
-chinese,38,Describing People,32,portuguese,Pessoas inteligentes,Inteligência e talento,Match corrected English meaning
-chinese,51,Numbers & Math,4,english,Multiplication,Multiply,Should be verb to match Add/Subtract pattern
-chinese,51,Numbers & Math,4,spanish,Multiplicación,Multiplicar,Should be verb to match pattern
-chinese,51,Numbers & Math,4,french,Multiplication,Multiplier,Should be verb to match pattern
-chinese,51,Numbers & Math,4,portuguese,Multiplicação,Multiplicar,Should be verb to match pattern
-chinese,53,Location Words,2,english,middle,Middle,Capitalize for consistency with other packs
-chinese,53,Location Words,3,english,inside,Inside,Capitalize for consistency with other packs
-chinese,53,Location Words,4,english,outside,Outside,Capitalize for consistency with other packs
-chinese,53,Location Words,5,english,top,Top,Capitalize for consistency with other packs
-chinese,53,Location Words,6,english,bottom,Bottom,Capitalize for consistency with other packs
-chinese,53,Location Words,7,english,left,Left,Capitalize for consistency with other packs
-chinese,53,Location Words,8,english,right,Right,Capitalize for consistency with other packs
-chinese,53,Location Words,9,english,front,Front,Capitalize for consistency with other packs
-chinese,53,Location Words,10,english,back,Back,Capitalize for consistency with other packs
-chinese,53,Location Words,11,english,side,Side,Capitalize for consistency with other packs
-chinese,53,Location Words,12,english,around,Around,Capitalize for consistency with other packs
-chinese,53,Location Words,13,english,everywhere,Everywhere,Capitalize for consistency with other packs
-chinese,53,Location Words,14,english,everywhere,Everywhere,Capitalize for consistency with other packs
-chinese,53,Location Words,15,english,local,Local,Capitalize for consistency with other packs
-chinese,53,Location Words,16,english,east,East,Capitalize for consistency with other packs
-chinese,53,Location Words,17,english,south,South,Capitalize for consistency with other packs
-chinese,53,Location Words,18,english,west,West,Capitalize for consistency with other packs
-chinese,53,Location Words,19,english,north,North,Capitalize for consistency with other packs
-chinese,53,Location Words,20,english,top,Top,Capitalize for consistency with other packs
-chinese,53,Location Words,21,english,bottom,Bottom,Capitalize for consistency with other packs
+chinese,28,Body Parts,18,spanish,Vientre,Barriga,Vientre is formal/medical - native speakers say Barriga
+chinese,28,Body Parts,53,spanish,Tocar el vientre,Tocar la barriga,Vientre is formal - use Barriga
+chinese,28,Body Parts,54,spanish,Dar palmaditas en el vientre,Dar palmaditas en la barriga,Vientre is formal - use Barriga
+chinese,31,Common Foods,28,english,Cucumber crisp,Crispy cucumber,Adjective should come before noun in English
+chinese,31,Common Foods,28,spanish,Crujiente de pepino,Pepino crujiente,More natural word order in Spanish
+chinese,31,Common Foods,28,portuguese,Crocante de pepino,Pepino crocante,More natural word order in Portuguese
+chinese,34,Weather Words,4,english,Cloudy,Overcast,阴天 means overcast/grey sky - 多云 is cloudy
+chinese,34,Weather Words,4,spanish,Nublado y gris,Gris,Overly descriptive - Gris matches overcast meaning
+chinese,34,Weather Words,4,portuguese,Nublado e cinzento,Cinzento,Overly descriptive - Cinzento matches overcast meaning
+chinese,41,School Life,17,english,Playground,Sports field,操场 is athletic field not playground
+chinese,41,School Life,17,spanish,Zona de juegos,Campo deportivo,操场 is sports field not playground
+chinese,41,School Life,17,french,Aire de jeux,Terrain de sport,操场 is sports field not playground
+chinese,41,School Life,17,portuguese,Parque Infantil,Campo esportivo,操场 is sports field not playground
+chinese,41,School Life,49,english,Go to the playground,Go to the sports field,操场 is sports field
+chinese,41,School Life,49,spanish,Ir al patio de recreo,Ir al campo deportivo,操场 is sports field
+chinese,41,School Life,49,french,Aller au terrain de jeux,Aller au terrain de sport,操场 is sports field
+chinese,41,School Life,49,portuguese,Vá para o parquinho,Vá para o campo esportivo,操场 is sports field
+chinese,41,School Life,50,english,In the playground,On the sports field,操场 is sports field
+chinese,41,School Life,50,spanish,En el patio de recreo,En el campo deportivo,操场 is sports field
+chinese,41,School Life,50,french,Dans la cour de récréation,Sur le terrain de sport,操场 is sports field
+chinese,41,School Life,50,portuguese,No parquinho,No campo esportivo,操场 is sports field
+chinese,48,Sports & Exercise,41,english,Play Tai Chi,Practice Tai Chi,You practice Tai Chi not play it
+chinese,48,Sports & Exercise,41,spanish,Jugar Tai Chi,Practicar Tai Chi,You practice Tai Chi not play it
+chinese,48,Sports & Exercise,41,french,Jouer au Tai Chi,Pratiquer le Tai Chi,You practice Tai Chi not play it
+chinese,53,Location Words,22,english,middle,Middle,Capitalize for consistency
+chinese,53,Location Words,24,english,inside,Inside,Capitalize for consistency
+chinese,53,Location Words,38,english,Back,Step back,退后 means step back/move back not just back
+chinese,53,Location Words,38,spanish,Volver,Retroceder,退后 means step back not return
+chinese,53,Location Words,38,french,Retour,Reculer,退后 means step back not return
+chinese,53,Location Words,38,portuguese,Voltar,Recuar,退后 means step back not return
+chinese,53,Location Words,48,french,Les sections locales,Les locaux,Wrong translation - should be locals/local people
