@@ -70,6 +70,21 @@ Run after web file changes: `python PythonHelpers/link_manager.py`
 - Chinese + Pinyin are inseparable (atomic unit)
 - Validate: `python PythonHelpers/validate_pinyin.py all`
 
+## 🏷️ TRANSLATION ANNOTATION RULES
+When translations need disambiguation, use parenthetical annotations:
+- **(masculine)** / **(feminine)** - for gendered words (Spanish articles, adjectives)
+- **(formal)** / **(informal)** - for register differences (usted vs tú)
+- **(plural)** / **(singular)** - when number matters for meaning
+
+**Guidelines:**
+- **TRANSLATIONS ONLY** - annotations apply to ALL translation columns, NEVER Column 0 (native language)
+- Column 0 is sacred source data - no annotations needed there
+- Only add annotations when the distinction is **meaningful for learners**
+- Keep annotations lowercase in parentheses: `el (masculine)` not `el (MASCULINE)`
+- Spanish gendered articles: `el (masculine)`, `la (feminine)`
+- Formal/informal pronouns: `usted (formal)`, `tú (informal)`
+- Don't over-annotate obvious cases - use judgment
+
 ## 📋 WORDPACK DATA STRUCTURE
 - Each base word has exactly 3 variants (divisible by 3)
 - No duplicates within packs OR across packs
