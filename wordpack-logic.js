@@ -688,19 +688,8 @@ function renderChineseWithPinyin(coupledArray) {
   return container;
 }
 
-/**
- * Convenience function: Couples and renders Chinese text in one call
- * @param {string} chinese - Chinese characters
- * @param {string} pinyin - Space-separated pinyin
- * @returns {HTMLElement} - Ready-to-append HTML element
- */
-function renderChineseText(chinese, pinyin) {
-  const coupled = coupleChineseWithPinyin(chinese, pinyin);
-  return renderChineseWithPinyin(coupled);
-}
-
-/** Returns HTML string for Chinese text */
-function getChineseHtml(chinese, pinyin) { return renderChineseText(chinese, pinyin).outerHTML; }
+/** Returns HTML string for Chinese text - couples chars with pinyin and renders */
+function getChineseHtml(chinese, pinyin) { return renderChineseWithPinyin(coupleChineseWithPinyin(chinese, pinyin)).outerHTML; }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 4: TEXT-TO-SPEECH
@@ -822,23 +811,12 @@ function updateControlVisibilityForMode(currentMode, elements) {
 // Flashcard-specific logic - flip state.
 // ════════════════════════════════════════════════════════════════════════════
 
-/** Toggle flashcard flip state - callers can also inline !isFlipped */
-function toggleFlipState(isFlipped) { return !isFlipped; }
-
 // ────────────────────────────────────────────────────────────────────────────
 // SECTION 6.2: FLASHCARD MODE - DOM FUNCTIONS
 // ────────────────────────────────────────────────────────────────────────────
 
-/**
- * Set card flipped state
- * @param {HTMLElement} el - Flashcard element
- * @param {boolean} flipped - Whether card should be flipped
- */
-function setCardFlipped(el, flipped) {
-  if (el) el.classList.toggle('flipped', flipped);
-}
-function flipCardVisual(el) { setCardFlipped(el, true); }
-function unflipCardVisual(el) { setCardFlipped(el, false); }
+/** Set card flipped state */
+function setCardFlipped(el, flipped) { if (el) el.classList.toggle('flipped', flipped); }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 7: MULTIPLE CHOICE MODE
@@ -905,7 +883,6 @@ function generateWrongAnswers(actData, correctAnswer, count = 4, withPinyin = fa
   const words = shuffleArray(collectFilteredWords(actData, correctAnswer, transform));
   return words.slice(0, Math.min(count, words.length));
 }
-function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) { return generateWrongAnswers(actData, correctAnswer, count, true); }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 8: TYPING MODE
@@ -913,21 +890,8 @@ function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) { ret
 // Character validation and typing state management.
 // ════════════════════════════════════════════════════════════════════════════
 
-/**
- * Normalizes a character for typing comparison (removes accents, lowercase)
- * @param {string} char - Single character to normalize
- * @returns {string} - Normalized character
- */
-function normalizeChar(char) {
-  if (!char) return '';
-  return char
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '');
-}
-
-// Alias for compatibility
-window.normalizeCharForTyping = normalizeChar;
+/** Normalizes a character for typing comparison (removes accents, lowercase) */
+function normalizeChar(char) { return char ? char.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') : ''; }
 
 /**
  * Finds the next valid typing position, skipping spaces automatically
@@ -1209,33 +1173,20 @@ function calculateSimilarity(expected, heard, language) {
   };
 }
 
-/**
- * Get score feedback (message and CSS class) based on score
- * @param {number} score - Similarity score (0-100)
- * @returns {{message: string, cssClass: string}}
- */
+/** Get score feedback (message and CSS class) based on score */
 function getScoreFeedback(score) {
   if (score >= 90) return {message: "Perfect!", cssClass: "excellent"};
   if (score >= 75) return {message: "Great!", cssClass: "good"};
   if (score >= 60) return {message: "Almost!", cssClass: "okay"};
   return {message: "Try again!", cssClass: "poor"};
 }
-function getFeedbackMessage(score) { return getScoreFeedback(score).message; }
-function getScoreClass(score) { return getScoreFeedback(score).cssClass; }
 
 // ────────────────────────────────────────────────────────────────────────────
 // SECTION 9.2: PRONUNCIATION MODE - DOM FUNCTIONS
 // ────────────────────────────────────────────────────────────────────────────
 
-/**
- * Hide pronunciation feedback overlays
- * @param {Array<HTMLElement>} feedbackElements - Array of feedback elements to hide
- */
-function hideFeedback(feedbackElements) {
-  feedbackElements.forEach(el => {
-    if (el) el.classList.remove('visible');
-  });
-}
+/** Hide pronunciation feedback overlays */
+function hideFeedback(feedbackElements) { feedbackElements.forEach(el => { if (el) el.classList.remove('visible'); }); }
 
 /**
  * Update pronunciation debug info in debug panel
@@ -1301,41 +1252,19 @@ function determinePronunciationOutcome(score, expected) {
 // SECTION 10.2: WIN/LOSE STATE - DOM FUNCTIONS
 // ────────────────────────────────────────────────────────────────────────────
 
-/**
- * Shows a stamp overlay with sound and auto-hide
- * @param {HTMLElement} stampElement - DOM element to show
- * @param {Function} soundFunction - Sound to play
- * @param {Function} onComplete - Callback after stamp hides
- * @param {number} duration - How long to show stamp in ms
- */
-function showStamp(stampElement, soundFunction, onComplete, duration = 1500) {
-  if (!stampElement) {
-    console.warn('[showStamp] No stamp element provided');
-    if (onComplete) onComplete();
-    return;
+/** Shows stamp overlay with sound and auto-hide. Pass success=true/false for automatic sound selection, or soundFunction for custom sound */
+function showStamp(el, soundOrSuccess, onComplete, duration = 1500) {
+  if (!el) { if (onComplete) onComplete(); return; }
+  let soundFn = null;
+  if (typeof soundOrSuccess === 'boolean') {
+    soundFn = soundOrSuccess ? (typeof playDingSound === 'function' ? playDingSound : null) : (typeof playBuzzSound === 'function' ? playBuzzSound : null);
+  } else if (typeof soundOrSuccess === 'function') {
+    soundFn = soundOrSuccess;
   }
-
-  stampElement.classList.add('visible');
-  if (soundFunction) soundFunction();
-
-  setTimeout(() => {
-    stampElement.classList.remove('visible');
-    if (onComplete) onComplete();
-  }, duration);
+  el.classList.add('visible');
+  if (soundFn) soundFn();
+  setTimeout(() => { el.classList.remove('visible'); if (onComplete) onComplete(); }, duration);
 }
-
-/**
- * Shows stamp by type (success or failure)
- * @param {HTMLElement} el - Stamp element
- * @param {boolean} success - True for success, false for failure
- * @param {Function} onComplete - Callback after stamp hides
- */
-function showStampByType(el, success, onComplete) {
-  const sound = success ? (typeof playDingSound === 'function' ? playDingSound : null) : (typeof playBuzzSound === 'function' ? playBuzzSound : null);
-  showStamp(el, sound, onComplete);
-}
-function showSuccessStamp(el, onComplete) { showStampByType(el, true, onComplete); }
-function showFailureStamp(el, onComplete) { showStampByType(el, false, onComplete); }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 11: MUTATE DECK
@@ -1393,35 +1322,11 @@ function addDuplicateCards(deck, card, count = 2) {
   return newDeck;
 }
 
-/**
- * Navigate deck with wrap-around
- * @param {number} idx - Current card index
- * @param {number} len - Length of deck
- * @param {number} dir - Direction: -1 for previous, 1 for next
- * @returns {number} - New index
- */
-function navigateDeck(idx, len, dir) {
-  if (len === 0) return 0;
-  return (idx + dir + len) % len;
-}
-function navigateToPrevious(idx, len) { return navigateDeck(idx, len, -1); }
-function navigateToNext(idx, len) { return navigateDeck(idx, len, 1); }
+/** Navigate deck with wrap-around. dir: -1 for previous, 1 for next */
+function navigateDeck(idx, len, dir) { return len === 0 ? 0 : (idx + dir + len) % len; }
 
-/**
- * Reset deck to original state
- * @param {Array} originalDeck - The original deck to reset to
- * @returns {Object} - { deck: Array, currentIndex: number }
- */
-function resetDeckToOriginal(originalDeck) {
-  if (!originalDeck || originalDeck.length === 0) {
-    return { deck: [], currentIndex: 0 };
-  }
-
-  return {
-    deck: [...originalDeck],
-    currentIndex: 0
-  };
-}
+/** Reset deck to original state */
+function resetDeckToOriginal(originalDeck) { return !originalDeck || originalDeck.length === 0 ? { deck: [], currentIndex: 0 } : { deck: [...originalDeck], currentIndex: 0 }; }
 
 /**
  * Navigate to next wordpack in sequence
@@ -1445,33 +1350,10 @@ function navigateToNextPack(wordpacks, currentPackKey) {
 // Menu state logic - settings selection (data preparation, no DOM).
 // ════════════════════════════════════════════════════════════════════════════
 
-/**
- * Get first available act from loaded data
- * @param {Object} loadedData - Loaded act data
- * @returns {number|null} - First act number or null
- */
-function getFirstAvailableAct(loadedData) {
-  if (!loadedData || Object.keys(loadedData).length === 0) {
-    return null;
-  }
-  return Math.min(...Object.keys(loadedData).map(Number));
-}
+/** Get first available act from loaded data */
+function getFirstAvailableAct(loadedData) { return !loadedData || Object.keys(loadedData).length === 0 ? null : Math.min(...Object.keys(loadedData).map(Number)); }
 
-/**
- * Get first available pack from act data
- * @param {Object} actData - Data for a specific act
- * @returns {string|null} - First pack key or null
- */
-function getFirstAvailablePack(actData) {
-  const sortedKeys = getSortedPackKeys(actData);
-  return sortedKeys.length > 0 ? sortedKeys[0] : null;
-}
-
-/**
- * Get sorted pack keys from act data
- * @param {Object} actData - Data for a specific act
- * @returns {Array} - Sorted array of pack keys
- */
+/** Get sorted pack keys from act data */
 function getSortedPackKeys(actData) {
   if (!actData) return [];
   const packKeys = Object.keys(actData).filter(k => k !== '__actMeta' && actData[k]?.meta);
@@ -1483,17 +1365,8 @@ function getSortedPackKeys(actData) {
 // SECTION 12.2: MENU - DOM FUNCTIONS
 // ────────────────────────────────────────────────────────────────────────────
 
-/**
- * Set menu overlay visibility
- * @param {HTMLElement} el - Flashcard element
- * @param {boolean} show - Whether to show overlay
- */
-function setMenuOverlay(el, show) {
-  if (el) el.classList.toggle('showing-menu', show);
-  document.body.classList.toggle('showing-menu', show);
-}
-function showMenuOverlay(el) { setMenuOverlay(el, true); }
-function hideMenuOverlay(el) { setMenuOverlay(el, false); }
+/** Set menu overlay visibility */
+function setMenuOverlay(el, show) { if (el) el.classList.toggle('showing-menu', show); document.body.classList.toggle('showing-menu', show); }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 13: UI HELPERS
@@ -1584,28 +1457,13 @@ function getLanguageSelectorOptions(translations) {
 // SECTION 13.2: UI HELPERS - DOM FUNCTIONS
 // ────────────────────────────────────────────────────────────────────────────
 
-/**
- * Generic selector populator
- * @param {HTMLSelectElement} el - Select element
- * @param {Array} options - Array of {value, text} options
- * @param {Function} onChange - Callback on change
- * @param {Object} opts - Optional: {parseValue: fn, currentValue: string}
- */
+/** Generic selector populator */
 function populateSelector(el, options, onChange, opts = {}) {
   if (!el) return;
   el.innerHTML = '';
-  options.forEach(opt => {
-    const o = document.createElement('option');
-    o.value = opt.value;
-    o.textContent = opt.text;
-    if (opts.currentValue !== undefined && opt.value === opts.currentValue) o.selected = true;
-    el.appendChild(o);
-  });
+  options.forEach(opt => { const o = document.createElement('option'); o.value = opt.value; o.textContent = opt.text; if (opts.currentValue !== undefined && String(opt.value) === String(opts.currentValue)) o.selected = true; el.appendChild(o); });
   if (onChange) el.addEventListener('change', e => onChange(opts.parseValue ? opts.parseValue(e.target.value) : e.target.value));
 }
-function populateActSelector(el, meta, onChange) { populateSelector(el, getActSelectorOptions(meta), onChange, {parseValue: v => parseInt(v)}); }
-function populatePackSelector(el, data, onChange) { populateSelector(el, getPackSelectorOptions(data), onChange); }
-function populateNativeLanguageSelector(el, trans, cur, onChange) { populateSelector(el, getLanguageSelectorOptions(trans), onChange, {currentValue: cur}); }
 
 /**
  * Update wordpack title display from pack metadata
@@ -2222,199 +2080,41 @@ function playTypingSound() {
 
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
-    // Section 1: Config & Local Storage
-    LANGUAGE_CONFIG,
-    SPEECH_LANG_CODES,
-    TOOLTIP_MESSAGES,
-    saveState,
-    loadState,
-    switchLanguage,
-    restoreSavedState,
-    validateAndFixState,
-
-    // Section 2: Load Wordpacks
-    decodeObfuscatedModule,
-    loadAct,
-    loadLanguageData,
-    getTargetLanguage,
-    validateTargetLanguageConsistency,
-    isChineseMode,
-    getTranslationsConfig,
-    getDefaultTranslation,
-    getWordColumns,
-    getValidLanguages,
-    getTtsLanguageCode,
-    toTitleCase,
-
-    // Section 3: Build Word Arrays (Logic + DOM)
-    shuffleArray,
-    combineAndShuffleWords,
-    createDeckFromPack,
-    coupleChineseWithPinyin,
-    renderChineseWithPinyin,
-    renderChineseText,
-    getChineseHtml,
-
-    // Section 4: Text-to-Speech
-    loadVoicesForLanguage,
-    speakWord,
-    findVoiceByURI,
-
-    // Section 5: Set Game Mode (Logic + DOM)
-    switchModeLogic,
-    updateModeButtonsVisual,
-    updateControlVisibilityForMode,
-
-    // Section 6: Flashcard Mode (Logic + DOM)
-    toggleFlipState,
-    setCardFlipped,
-    flipCardVisual,
-    unflipCardVisual,
-
-    // Section 7: Multiple Choice Mode
-    normalizeString,
-    collectFilteredWords,
-    generateWrongAnswers,
-    generateWrongAnswersWithPinyin,
-
-    // Section 8: Typing Mode (Logic + DOM)
-    normalizeChar,
-    findNextTypingPosition,
-    checkTypingKey,
-    isWordComplete,
-    initializeTypingState,
-    getTypingDisplay,
-    renderTypingDisplayHTML,
-    renderTargetWordHTML,
-    renderTranslationHTML,
-
-    // Section 9: Pronunciation Mode (Logic + DOM)
-    initializeSpeechRecognition,
-    normalizePronunciationText,
-    getSimilarityThreshold,
-    levenshteinDistance,
-    calculateSimilarity,
-    getScoreFeedback,
-    getFeedbackMessage,
-    getScoreClass,
-    hideFeedback,
-    updatePronunciationDebug,
-
-    // Section 10: Win/Lose State (Logic + DOM)
-    determineTypingOutcome,
-    determinePronunciationOutcome,
-    showStamp,
-    showStampByType,
-    showSuccessStamp,
-    showFailureStamp,
-
-    // Section 11: Mutate Deck
-    removeCard,
-    addDuplicateCards,
-    navigateDeck,
-    navigateToPrevious,
-    navigateToNext,
-    resetDeckToOriginal,
-    navigateToNextPack,
-
-    // Section 12: Menu (Logic + DOM)
-    getFirstAvailableAct,
-    getFirstAvailablePack,
-    getSortedPackKeys,
-    setMenuOverlay,
-    showMenuOverlay,
-    hideMenuOverlay,
-
-    // Section 13: UI Helpers (Logic + DOM)
-    getWordpackTitleData,
-    getActSelectorOptions,
-    getPackSelectorOptions,
-    getLanguageSelectorOptions,
-    populateSelector,
-    populateActSelector,
-    populatePackSelector,
-    populateNativeLanguageSelector,
-    updateWordpackTitleDisplay,
-    createButtonTooltip,
-    initializeTooltips,
-
-    // Section 14: Game Lifecycle (Logic + DOM)
-    createInitialGameState,
-    canStartGame,
-    setGameStartedVisual,
-    updateChineseModeClass,
-
-    // Section 15: Debug Mode (Logic + DOM)
-    toggleDebugModeState,
-    simulateWrongAnswer,
-    simulateNearVictory,
-    getDebugTableData,
-    toggleDebugMode,
-    updateDebugTable,
-    initializeDebugUI,
-
-    // Audio
-    getAudioContext,
-    playTypingSound
+    LANGUAGE_CONFIG, SPEECH_LANG_CODES, TOOLTIP_MESSAGES, saveState, loadState, switchLanguage, restoreSavedState, validateAndFixState,
+    decodeObfuscatedModule, loadAct, loadLanguageData, getTargetLanguage, validateTargetLanguageConsistency, isChineseMode, getTranslationsConfig, getDefaultTranslation, getWordColumns, getValidLanguages, getTtsLanguageCode, toTitleCase,
+    shuffleArray, combineAndShuffleWords, createDeckFromPack, coupleChineseWithPinyin, renderChineseWithPinyin, getChineseHtml,
+    loadVoicesForLanguage, speakWord, findVoiceByURI, switchModeLogic, updateModeButtonsVisual, updateControlVisibilityForMode, setCardFlipped,
+    normalizeString, collectFilteredWords, generateWrongAnswers, normalizeChar, findNextTypingPosition, checkTypingKey, isWordComplete, initializeTypingState, getTypingDisplay, renderTypingDisplayHTML, renderTargetWordHTML, renderTranslationHTML,
+    initializeSpeechRecognition, normalizePronunciationText, getSimilarityThreshold, levenshteinDistance, calculateSimilarity, getScoreFeedback, hideFeedback, updatePronunciationDebug,
+    determineTypingOutcome, determinePronunciationOutcome, showStamp, removeCard, addDuplicateCards, navigateDeck, resetDeckToOriginal, navigateToNextPack,
+    getFirstAvailableAct, getSortedPackKeys, setMenuOverlay, getWordpackTitleData, getActSelectorOptions, getPackSelectorOptions, getLanguageSelectorOptions, populateSelector, updateWordpackTitleDisplay, createButtonTooltip, initializeTooltips,
+    createInitialGameState, canStartGame, setGameStartedVisual, updateChineseModeClass, toggleDebugModeState, simulateWrongAnswer, simulateNearVictory, getDebugTableData, toggleDebugMode, updateDebugTable, initializeDebugUI, getAudioContext, playTypingSound
   };
 }
 
 // ════════════════════════════════════════════════════════════════════════════
 // WINDOW EXPORTS - Make all functions available globally
 // ════════════════════════════════════════════════════════════════════════════
-
-// Section 3: Chinese+Pinyin DOM
 window.renderChineseWithPinyin = renderChineseWithPinyin;
-window.renderChineseText = renderChineseText;
 window.getChineseHtml = getChineseHtml;
-
-// Section 5: Mode switching DOM
 window.updateModeButtonsVisual = updateModeButtonsVisual;
 window.updateControlVisibilityForMode = updateControlVisibilityForMode;
-
-// Section 6: Flashcard DOM
 window.setCardFlipped = setCardFlipped;
-window.flipCardVisual = flipCardVisual;
-window.unflipCardVisual = unflipCardVisual;
-
-// Section 8: Typing DOM
 window.renderTypingDisplayHTML = renderTypingDisplayHTML;
 window.renderTargetWordHTML = renderTargetWordHTML;
 window.renderTranslationHTML = renderTranslationHTML;
-
-// Section 9: Pronunciation DOM
 window.getScoreFeedback = getScoreFeedback;
 window.hideFeedback = hideFeedback;
 window.updatePronunciationDebug = updatePronunciationDebug;
-
-// Section 10: Stamp DOM
 window.showStamp = showStamp;
-window.showStampByType = showStampByType;
-window.showSuccessStamp = showSuccessStamp;
-window.showFailureStamp = showFailureStamp;
-
-// Section 11: Deck Navigation
 window.navigateDeck = navigateDeck;
-
-// Section 12: Menu DOM
 window.setMenuOverlay = setMenuOverlay;
-window.showMenuOverlay = showMenuOverlay;
-window.hideMenuOverlay = hideMenuOverlay;
-
-// Section 13: UI Helpers DOM
 window.populateSelector = populateSelector;
-window.populateActSelector = populateActSelector;
-window.populatePackSelector = populatePackSelector;
-window.populateNativeLanguageSelector = populateNativeLanguageSelector;
 window.updateWordpackTitleDisplay = updateWordpackTitleDisplay;
 window.createButtonTooltip = createButtonTooltip;
 window.initializeTooltips = initializeTooltips;
-
-// Section 14: Game Lifecycle DOM
 window.setGameStartedVisual = setGameStartedVisual;
 window.updateChineseModeClass = updateChineseModeClass;
-
-// Section 15: Debug DOM
 window.toggleDebugMode = toggleDebugMode;
 window.updateDebugTable = updateDebugTable;
 window.initializeDebugUI = initializeDebugUI;
