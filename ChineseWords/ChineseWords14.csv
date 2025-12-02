@@ -13,8 +13,8 @@ chinese,pinyin,english,spanish,french,portuguese
 厕所,cè suǒ,Toilet,Baño,Toilettes,Banheiro
 出口,chū kǒu,Exit,Salida,Sortie,Saída
 入口,rù kǒu,Entrance,Entrada,Entrée,Entrada
-丢失,diū shī,Lost,Perdido,Perdu,Perdido
-迷路,mí lù,Lost,Perdido,Perdu,Perdido
+丢失,diū shī,Lost (item),Perdido (objeto),Perdu (objet),Perdido (objeto)
+迷路,mí lù,Lost (way),Perdido (camino),Perdu (chemin),Perdido (caminho)
 安全,ān quán,Safety,Seguridad,Sécurité,Segurança
 求助,qiú zhù,Help,Ayuda,Aide,Ajuda
 救命啊,jiù mìng a,Help,Ayuda,Aide,Ajuda
@@ -45,9 +45,9 @@ chinese,pinyin,english,spanish,french,portuguese
 找出口,zhǎo chū kǒu,Find the exit,Encuentra la salida,Trouver la sortie,Encontre a saída
 入口在哪,rù kǒu zài nǎ,Where is the entrance,¿Dónde está la entrada,Où est l'entrée,Onde fica a entrada
 找入口,zhǎo rù kǒu,Find the entrance,Encuentra la entrada,Trouver l'entrée,Encontre a entrada
-丢失了,diū shī le,Lost,Perdido,Perdu,Perdido
+丢失了,diū shī le,Lost (item),Perdido (objeto),Perdu (objet),Perdido (objeto)
 东西丢失,dōng xī diū shī,Something is lost,Algo se pierde,Quelque chose est perdu,Algo está perdido
-迷路了,mí lù le,Lost,Perdido,Perdu,Perdido
+迷路了,mí lù le,Lost (way),Perdido (camino),Perdu (chemin),Perdido (caminho)
 我迷路,wǒ mí lù,I'm lost,Estoy perdido,Je suis perdu,Estou perdido
 安全第一,ān quán dì yī,Safety first,La seguridad es lo primero,La sécurité avant tout,Segurança em primeiro lugar
 很安全,hěn ān quán,Very safe,Muy seguro,Très sûr,Muito seguro

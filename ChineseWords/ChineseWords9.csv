@@ -1,5 +1,5 @@
 chinese,pinyin,english,spanish,french,portuguese
-什么,shén me,What,¿Qué,Quoi,O que
+什么,shén me,What,¿Qué?,Quoi,O que
 谁,shuí,Who,Quién,Qui,Quem
 哪,nǎ,Which,Cuál,Lequel,Qual
 哪个,nǎ ge,Which,Cuál,Lequel,Qual
@@ -8,10 +8,10 @@ chinese,pinyin,english,spanish,french,portuguese
 怎么,zěn me,How,Cómo,Comment,Como
 怎样,zěn yàng,How,Cómo,Comment,Como
 为什么,wèi shén me,Why,Por qué,Pourquoi,Por que
-多少,duō shǎo,How much,¿Cuánto,Combien,Quanto
-几,jǐ,How many,¿Cuántos,Combien de,Quantos
-多久,duō jiǔ,How long,¿Cuánto tiempo,Combien de temps,Quanto tempo
-多远,duō yuǎn,How far,¿Qué tan lejos,Jusqu'où,Quão longe
+多少,duō shǎo,How much,¿Cuánto?,Combien,Quanto
+几,jǐ,How many,¿Cuántos?,Combien de,Quantos
+多久,duō jiǔ,How long,¿Cuánto tiempo?,Combien de temps,Quanto tempo
+多远,duō yuǎn,How far,¿Qué tan lejos?,Jusqu'où,Quão longe
 多大,duō dà,How big,¿Qué tan grande?,Quelle taille,Quão grande
 多高,duō gāo,How high,¿Qué tan alto,À quelle hauteur,Quão alto
 什么事,shén me shì,What,¿Qué,Quoi,O que
@@ -19,10 +19,10 @@ chinese,pinyin,english,spanish,french,portuguese
 谁来了,shuí lái le,Who is here,¿Quién está aquí?,Qui est ici,Quem está aqui
 是谁,shì shuí,Who,Quién,Qui,Quem
 哪位,nǎ wèi,Which one,Cuál,Lequel,Qual
-哪天,nǎ tiān,Which day,¿Qué día,Quel jour,Que dia
+哪天,nǎ tiān,Which day,¿Qué día?,Quel jour,Que dia
 哪个好,nǎ ge hǎo,Which one is better,Cual es mejor,Lequel est le meilleur,Qual é melhor
 选哪个,xuǎn nǎ ge,Which one to choose,Cuál elegir,Lequel choisir,Qual escolher
-哪里人,nǎ lǐ rén,Where,Dónde,Où,Onde
+哪里人,nǎ lǐ rén,Where from,¿De dónde?,D'où,De onde
 在哪里,zài nǎ lǐ,Where,Dónde,Où,Onde
 哪儿好,nǎ ér hǎo,Where is good,¿Dónde está bien,Où est le bien,Onde é bom
 去哪儿,qù nǎ ér,Where to go,Adónde ir,Où aller,Para onde ir
