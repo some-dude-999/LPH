@@ -1,0 +1,17 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+english,57,Jobs 2,5,portuguese,desenhista,designer,desenhista means draftsman/illustrator not designer - designer is commonly used in Portuguese
+english,60,Geography,45,portuguese,mistura de trilhas,mix de castanhas,trail mix is a snack (nuts/dried fruit) not related to trails - literal translation is wrong sense
+english,62,Sports,21,spanish,ayudar,asistencia,sports assist is a noun (the pass leading to score) not verb to help
+english,62,Sports,21,portuguese,ajudar,assistência,sports assist is a noun (the pass leading to score) not verb to help
+english,63,More Sports,21,portuguese,relé,revezamento,relé is electrical relay - revezamento is correct for relay race context
+english,64,Entertainment,13,spanish,rendimiento,actuación,rendimiento means performance metrics - actuación means stage performance
+english,64,Entertainment,13,portuguese,desempenho,atuação,desempenho means performance metrics - atuação means stage performance
+english,64,Entertainment,54,spanish,reloj compulsivo,maratón,reloj compulsivo literally means compulsive clock - maratón is correct for binge watching
+english,67,Physical Appearance,2,portuguese,fino,magro,fino describes thin objects - magro describes thin people
+english,72,Actions,3,spanish,salto,saltar,salto is noun - need verb form saltar to match other action verbs
+english,72,Actions,3,portuguese,salto,saltar,salto is noun - need verb form saltar to match other action verbs
+english,72,Actions,18,portuguese,tombo,tombar,tombo is noun (the fall) - tombar is verb (to tumble)
+english,72,Actions,19,portuguese,galope,galopar,galope is noun - galopar is verb form
+english,72,Actions,21,portuguese,gingado,gingar,gingado is noun - gingar is verb form to waddle
+english,75,Mental Verbs,8,spanish,esperanza,esperar,esperanza is noun (hope) - esperar is verb (to hope) matching other mental verbs
+english,75,Mental Verbs,8,portuguese,esperança,esperar,esperança is noun (hope) - esperar is verb (to hope) matching other mental verbs
