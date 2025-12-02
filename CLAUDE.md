@@ -86,63 +86,83 @@ Test with: `DecoderTest.html`
 
 ## 🔄 CODE REUSABILITY & ARCHITECTURE
 
-### Core Principle: Logic vs Visuals
-- **`wordpack-logic.js`** = Internal logic & state ONLY (no CSS, no DOM manipulation)
-- **Game files (e.g., `FlashcardTypingGame.js`)** = All visuals (CSS, DOM, animations, stamps)
+### Core Principle: Shared Code in wordpack-logic.js
+- **`wordpack-logic.js`** = ALL shared logic + DOM functions (reusable across games)
+- **Game files (e.g., `FlashcardTypingGame.js`)** = Game-specific DOM elements + event wiring only
 - **`game-sounds.js`** = All audio
 - Never copy-paste between game files
 
 ### wordpack-logic.js Section Flow (15 Sections)
+Each section has Logic (.1) + DOM (.2) subsections where applicable:
 ```
- 1. CONFIG & LOCAL STORAGE     (constants + persist/restore)
- 2. LOAD WORDPACKS             (fetch, decode, detect language)
- 3. BUILD WORD ARRAYS          (shuffle, filter, create deck)
- 4. TEXT-TO-SPEECH             (foundational feature for all modes)
- 5. SET GAME MODE              (mode switching, init state)
-          ↓
- 6-9. PLAY MODES
-     ├── 6. Flashcard          (flip logic)
-     ├── 7. Multiple Choice    (generate wrong answers)
-     ├── 8. Typing             (character validation)
-     └── 9. Pronunciation      (speech recognition + scoring)
-          ↓
-10. WIN/LOSE STATE             (determine outcome, return state changes)
-11. MUTATE DECK                (remove/add/reset/navigate)
-          ↓
-12. MENU                       (settings overlay logic)
-13. UI HELPERS                 (tooltips, titles, wiring)
-14. GAME LIFECYCLE             (init, start, display)
-15. DEBUG MODE                 (testing tools)
-```
+ 1. CONFIG & LOCAL STORAGE
+    ├── 1.1 Constants & defaults
+    └── 1.2 Persist/restore functions
 
-### Architecture Examples
-```javascript
-// CORE (wordpack-logic.js) - returns state, no visuals
-function checkCorrectAnswer(wrongAttempts) {
-  if (wrongAttempts === 0) {
-    return { outcome: 'perfect', action: 'remove', deckChange: -1 };
-  }
-  return { outcome: 'with_errors', action: 'duplicate', count: 2 };
-}
+ 2. LOAD WORDPACKS
+    ├── 2.1 Fetch & decode logic
+    └── 2.2 Language detection
 
-// GAME FILE - handles visuals based on state
-const result = checkCorrectAnswer(wrongAttempts);
-if (result.action === 'remove') {
-  showSuccessStamp(removedStamp, () => {  // Game-specific visual
-    currentDeck = removeCard(currentDeck, currentIndex);
-  });
-}
+ 3. BUILD WORD ARRAYS
+    ├── 3.1 Shuffle & filter logic
+    ├── 3.2 Chinese+Pinyin coupling (data transform)
+    └── 3.3 DOM: renderChineseWithPinyin(), getChineseHtml()
+
+ 4. TEXT-TO-SPEECH (pure logic - no DOM needed)
+
+ 5. SET GAME MODE
+    ├── 5.1 Mode switching logic
+    └── 5.2 DOM: updateModeButtonsVisual(), updateControlVisibilityForMode()
+
+ 6. FLASHCARD MODE
+    ├── 6.1 Flip state logic
+    └── 6.2 DOM: flipCardVisual(), unflipCardVisual()
+
+ 7. MULTIPLE CHOICE MODE
+    ├── 7.1 Generate wrong answers logic
+    └── 7.2 DOM: (future renderChoiceButtons)
+
+ 8. TYPING MODE
+    ├── 8.1 Character validation logic
+    └── 8.2 DOM: renderTypingDisplayHTML(), renderTargetWordHTML()
+
+ 9. PRONUNCIATION MODE
+    ├── 9.1 Speech recognition logic
+    └── 9.2 DOM: hideFeedback(), updatePronunciationDebug()
+
+10. WIN/LOSE STATE
+    ├── 10.1 Determine outcome logic
+    └── 10.2 DOM: showStamp(), showSuccessStamp(), showFailureStamp()
+
+11. MUTATE DECK (pure logic - no DOM needed)
+
+12. MENU
+    ├── 12.1 Settings state logic
+    └── 12.2 DOM: showMenuOverlay(), hideMenuOverlay()
+
+13. UI HELPERS
+    ├── 13.1 Data preparation (getActSelectorOptions, etc.)
+    └── 13.2 DOM: populateActSelector(), populatePackSelector(),
+              populateNativeLanguageSelector(), initializeTooltips()
+
+14. GAME LIFECYCLE
+    ├── 14.1 Init & start logic
+    └── 14.2 DOM: setGameStartedVisual(), updateChineseModeClass()
+
+15. DEBUG MODE
+    ├── 15.1 Debug state logic
+    └── 15.2 DOM: toggleDebugMode(), updateDebugTable(), initializeDebugUI()
 ```
 
 ### What Goes Where
-| wordpack-logic.js (Logic) | Game JS (Visuals) |
-|---------------------------|-------------------|
-| Deck shuffling/building | CSS class toggles |
-| Win/lose determination | Stamp animations |
-| Character validation | DOM element updates |
-| Score calculation | Color/style changes |
-| State transitions | Event listeners |
-| TTS voice selection | Button handlers |
+| wordpack-logic.js (Shared) | Game JS (Game-Specific) |
+|----------------------------|-------------------------|
+| All logic functions | DOM element references |
+| All shared DOM functions | Event listener wiring |
+| Stamp animations | Game-specific callbacks |
+| Chinese+Pinyin rendering | Custom game behavior |
+| Menu overlays | Weathering generation |
+| Debug UI | Game initialization |
 
 ## ⚠️ Quick Reference
 1. Backup → Edit → Before/After table
