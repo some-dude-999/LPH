@@ -370,20 +370,32 @@ async function loadLanguageData(language, state) {
 }
 
 /**
+ * Helper function to get a property from the first available act metadata
+ * Consolidates the common pattern of iterating through loadedActMeta
+ * @param {string} propertyName - Name of property to get from actMeta
+ * @param {*} defaultValue - Value to return if property not found
+ * @returns {*} - The property value or default
+ */
+function getActMetaProperty(propertyName, defaultValue = null) {
+  if (!window.loadedActMeta) return defaultValue;
+
+  for (const actNum of Object.keys(window.loadedActMeta)) {
+    const meta = window.loadedActMeta[actNum];
+    if (meta && meta[propertyName] !== undefined) {
+      return meta[propertyName];
+    }
+  }
+  return defaultValue;
+}
+
+/**
  * Get target language from loaded modules
  * Target language is wordColumns[0] from __actMeta
  * @returns {string|null} - 'chinese', 'spanish', 'english', etc.
  */
 function getTargetLanguage() {
-  if (!window.loadedActMeta) return null;
-
-  for (const actNum of Object.keys(window.loadedActMeta)) {
-    const meta = window.loadedActMeta[actNum];
-    if (meta && meta.wordColumns && meta.wordColumns[0]) {
-      return meta.wordColumns[0].toLowerCase();
-    }
-  }
-  return null;
+  const wordColumns = getActMetaProperty('wordColumns');
+  return wordColumns && wordColumns[0] ? wordColumns[0].toLowerCase() : null;
 }
 
 /**
@@ -420,15 +432,7 @@ function isChineseMode() {
  * @returns {Object|null} - Translations config or null
  */
 function getTranslationsConfig() {
-  if (!window.loadedActMeta) return null;
-
-  for (const actNum of Object.keys(window.loadedActMeta)) {
-    const meta = window.loadedActMeta[actNum];
-    if (meta && meta.translations) {
-      return meta.translations;
-    }
-  }
-  return null;
+  return getActMetaProperty('translations');
 }
 
 /**
@@ -436,15 +440,7 @@ function getTranslationsConfig() {
  * @returns {string} - Default language code
  */
 function getDefaultTranslation() {
-  if (!window.loadedActMeta) return 'english';
-
-  for (const actNum of Object.keys(window.loadedActMeta)) {
-    const meta = window.loadedActMeta[actNum];
-    if (meta && meta.defaultTranslation) {
-      return meta.defaultTranslation;
-    }
-  }
-  return 'english';
+  return getActMetaProperty('defaultTranslation', 'english');
 }
 
 /**
@@ -452,15 +448,7 @@ function getDefaultTranslation() {
  * @returns {Array|null} - Word columns or null
  */
 function getWordColumns() {
-  if (!window.loadedActMeta) return null;
-
-  for (const actNum of Object.keys(window.loadedActMeta)) {
-    const meta = window.loadedActMeta[actNum];
-    if (meta && meta.wordColumns) {
-      return meta.wordColumns;
-    }
-  }
-  return null;
+  return getActMetaProperty('wordColumns');
 }
 
 /**
@@ -473,33 +461,30 @@ function getValidLanguages() {
 }
 
 /**
+ * TTS_LANG_MAP - Maps language names to BCP 47 TTS codes
+ * Single source of truth for TTS language mapping
+ */
+const TTS_LANG_MAP = {
+  'spanish': 'es-ES',
+  'chinese': 'zh-CN',
+  'english': 'en-US',
+  'portuguese': 'pt-BR',
+  'french': 'fr-FR',
+  'vietnamese': 'vi-VN',
+  'thai': 'th-TH',
+  'khmer': 'km-KH',
+  'indonesian': 'id-ID',
+  'malay': 'ms-MY',
+  'filipino': 'fil-PH'
+};
+
+/**
  * Get TTS language code based on target language
  * @returns {string|null} - Language code (e.g., 'es-ES', 'zh-CN')
  */
 function getTtsLanguageCode() {
-  if (!window.loadedActMeta) return null;
-
-  for (const actNum of Object.keys(window.loadedActMeta)) {
-    const meta = window.loadedActMeta[actNum];
-    if (meta && meta.wordColumns && meta.wordColumns[0]) {
-      const primaryLang = meta.wordColumns[0].toLowerCase();
-      const langMap = {
-        'spanish': 'es-ES',
-        'chinese': 'zh-CN',
-        'english': 'en-US',
-        'portuguese': 'pt-BR',
-        'french': 'fr-FR',
-        'vietnamese': 'vi-VN',
-        'thai': 'th-TH',
-        'khmer': 'km-KH',
-        'indonesian': 'id-ID',
-        'malay': 'ms-MY',
-        'filipino': 'fil-PH'
-      };
-      return langMap[primaryLang] || null;
-    }
-  }
-  return null;
+  const targetLang = getTargetLanguage();
+  return targetLang ? (TTS_LANG_MAP[targetLang] || null) : null;
 }
 
 /**
@@ -852,63 +837,6 @@ function updateControlVisibilityForMode(currentMode, elements) {
  */
 function toggleFlipState(isFlipped) {
   return !isFlipped;
-}
-
-/**
- * Initializes the flashcard deck from a wordpack
- * @param {Object} pack - Wordpack with baseWords/exampleWords
- * @param {Object} config - Language configuration
- * @param {number} nativeIndex - Native language column index
- * @returns {Array} - Array of card objects with front/back properties
- */
-function initFlashcardDeck(pack, config, nativeIndex) {
-  if (!pack) return [];
-
-  const words = combineAndShuffleWords(pack);
-  if (words.length === 0) return [];
-
-  const isLearningChinese = config && config.columns && config.columns[0] === 'Chinese';
-
-  let nativeIsChinese = false;
-  let nativePinyinColumn = null;
-  if (config && config.nativeLanguages) {
-    const entries = Object.entries(config.nativeLanguages);
-    for (const [name, colIndex] of entries) {
-      if (colIndex === nativeIndex && name.toLowerCase().includes('chinese')) {
-        nativeIsChinese = true;
-        const pinyinEntry = entries.find(([n]) => n.toLowerCase().includes('pinyin'));
-        if (pinyinEntry) nativePinyinColumn = pinyinEntry[1];
-        break;
-      }
-    }
-  }
-
-  const deck = words.map((wordObj, index) => {
-    const word = wordObj.word;
-    const type = wordObj.type;
-
-    const card = {
-      id: `card-${index}`,
-      front: word[0],
-      back: word[nativeIndex],
-      type: type
-    };
-
-    if (isLearningChinese) {
-      card.frontPinyin = word[1];
-      card.frontIsChinese = true;
-    }
-
-    if (nativeIsChinese && nativePinyinColumn !== null) {
-      card.backPinyin = word[nativePinyinColumn];
-      card.backIsChinese = true;
-    }
-
-    return card;
-  });
-
-  console.log(`Initialized flashcard deck with ${deck.length} cards`);
-  return deck;
 }
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -2027,17 +1955,6 @@ function toggleDebugModeState() {
 }
 
 /**
- * Simulate correct answer for debugging (delegates to removeCard)
- * @param {Array} deck - Current deck
- * @param {number} currentIndex - Current card index
- * @returns {Object} - { deck, currentIndex }
- */
-function simulateCorrectAnswer(deck, currentIndex) {
-  const result = removeCard(deck, currentIndex);
-  return { deck: result.deck, currentIndex: result.index };
-}
-
-/**
  * Simulate wrong answer for debugging
  * @param {Array} deck - Current deck
  * @param {number} currentIndex - Current card index
@@ -2503,7 +2420,6 @@ if (typeof module !== 'undefined' && module.exports) {
 
     // Section 6: Flashcard Mode (Logic + DOM)
     toggleFlipState,
-    initFlashcardDeck,
     flipCardVisual,
     unflipCardVisual,
 
@@ -2576,7 +2492,6 @@ if (typeof module !== 'undefined' && module.exports) {
 
     // Section 15: Debug Mode (Logic + DOM)
     toggleDebugModeState,
-    simulateCorrectAnswer,
     simulateWrongAnswer,
     simulateNearVictory,
     getDebugTableData,
