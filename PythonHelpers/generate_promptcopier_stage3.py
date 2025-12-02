@@ -42,148 +42,52 @@ ACT_COLORS = {
 }
 
 # Shared prompt template (same for all acts, just variables change)
-PROMPT_TEMPLATE = """╔══════════════════════════════════════════════════════════════════╗
-║  🎯 {lang_upper} ACT {act_display}: {act_name} - Packs {start}-{end} ({count} packs)  ║
-╚══════════════════════════════════════════════════════════════════╝
+# Uses D&D-style buff/debuff notation for conciseness
+PROMPT_TEMPLATE = """🎯 {lang_upper} ACT {act_display}: {act_name} | Packs {start}-{end} ({count})
 
-GOAL: Ensure the MOST COMMON, NATURAL translation consistent with the
-wordpack theme for EVERY target language.
+COL 0 ({language}): 🔒 SACRED - NEVER EDIT
+OTHER COLS: Find BEST translation for native speakers
 
-Column 0 ({language}) is SACRED - never touch it. It came from validated base words.
-Your job: Ensure the other columns have the BEST translations for native speakers.
+━━━ BUFFS (+) ━━━━━━━━━━━━━━━━━━━━━━━━━━━
++Theme    Check Pack_Title FIRST (same word = different translation per theme)
++Natural  Everyday words > formal ("dog" not "canine")
++Native   What speakers actually say
++Annotate OK in translations: (masculine)/(feminine)/(formal)
 
-╔══════════════════════════════════════════════════════════════════╗
-║  ⚠️  PYTHON HELPERS ONLY SHOW OBVIOUS MISTAKES - NOT THE GOAL!  ║
-║                                                                  ║
-║  Python scripts catch:                                           ║
-║  ✓ Empty cells                                                   ║
-║  ✓ Bracketed text [like this] (failed auto-translation)         ║
-║  ✓ Pinyin spacing errors (Chinese only)                         ║
-║  ✓ Wrong language in wrong column                               ║
-║                                                                  ║
-║  YOUR REAL JOB (the important work):                            ║
-║  🎯 Find translations that are TECHNICALLY CORRECT but...        ║
-║     - Wrong word sense for the theme                            ║
-║     - Awkward/unnatural phrasing                                ║
-║     - Rare/formal instead of common/everyday                    ║
-║     - Missing cultural nuance                                    ║
-║                                                                  ║
-║  Python finds 5% of issues. YOU find the other 95%.             ║
-╚══════════════════════════════════════════════════════════════════╝
+━━━ DEBUFFS (-) ━━━━━━━━━━━━━━━━━━━━━━━━━
+-Formal   Technical/rare words
+-Grammar  No terminology ("definite article" → "the")
+-Wrong sense  Must match pack theme
 
-╔══════════════════════════════════════════════════════════════════╗
-║  🗑️  STEP 0: CLEAR FIX TABLE (FRESH START)                       ║
-╚══════════════════════════════════════════════════════════════════╝
+━━━ STEPS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+0. CLEAR: python PythonHelpers/clear_fix_table.py {language} {act_num}
 
-python PythonHelpers/clear_fix_table.py {language} {act_num}
+1. SCAN:
+   python PythonHelpers/trim_csv_spaces.py {language}
+   python PythonHelpers/validate_pinyin.py {language} {start} {end}
+   python PythonHelpers/check_translation_quality.py {language} {start} {end}
+   python PythonHelpers/check_language_mismatch.py {language} {start} {end}
+   (Python finds 5% of issues - YOU find the other 95%)
 
-This removes all old fixes from previous runs. You start with a clean slate!
+2. REVIEW: ALL {count} packs manually
+   • {lang_cap}WordsOverview.csv → get theme
+   • {lang_cap}Words/{lang_cap}Words{{N}}.csv → check every row
+   • Ask: Most common? Native speaker approved? Natural?
 
-=== STEP 1: RUN PYTHON VALIDATION (QUICK MECHANICAL CHECKS) ===
+3. RECORD: {lang_cap}Words/{lang_cap}FixTableAct{act_num}.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
 
-python PythonHelpers/trim_csv_spaces.py {language}
-python PythonHelpers/validate_pinyin.py {language} {start} {end}
-python PythonHelpers/check_translation_quality.py {language} {start} {end}
-python PythonHelpers/check_language_mismatch.py {language} {start} {end}
+4. ⚠️ APPLY (MANDATORY - task FAILS without this!):
+   python PythonHelpers/apply_fixes_by_act.py {language} {act_num}
 
-Note any flagged packs, but don't stop there!
+5. VALIDATE: python PythonHelpers/validate_pinyin.py {language} {start} {end}
 
-=== STEP 2: MANUAL REVIEW (THE REAL WORK) ===
+6. COMMIT:
+   git add {lang_cap}Words/{lang_cap}Words{{1..{end}}}.csv {lang_cap}Words/{lang_cap}FixTableAct{act_num}.csv
+   git commit -m "Act {act_display} ({act_name}): Review and fix translations for packs {start}-{end}"
+   git push -u origin <branch>
 
-For EACH pack ({start} through {end}):
-
-1. Check pack title in {lang_cap}WordsOverview.csv → understand THEME
-2. Read {lang_cap}Words/{lang_cap}Words{{N}}.csv → ALL rows
-3. For EACH row, ask:
-   - Is this the MOST COMMON translation for THIS theme?
-   - Would a NATIVE SPEAKER use this exact phrasing?
-   - Is this NATURAL everyday language (not formal/technical)?
-
-4. If translation is not the BEST → Record fix in {lang_cap}FixTableAct{act_num}.csv
-
-╔══════════════════════════════════════════════════════════════════╗
-║  🎯 THEME CONTEXT IS EVERYTHING                                  ║
-║                                                                  ║
-║  Same word = different translations in different themes!        ║
-║                                                                  ║
-║  Example: "racket"                                               ║
-║  • Pack "Sports Equipment" → "racket" (tennis equipment) ✅      ║
-║  • Pack "Making Noise" → "racket" (loud noise) ✅                ║
-║  • WITHOUT theme → might pick wrong meaning ❌                   ║
-║                                                                  ║
-║  ALWAYS check Pack_Title before deciding correct translation!   ║
-╚══════════════════════════════════════════════════════════════════╝
-
-╔══════════════════════════════════════════════════════════════════╗
-║  🔑 TRANSLATION QUALITY STANDARDS                                ║
-║                                                                  ║
-║  ✅ GOOD: Most common everyday word                              ║
-║     "dog" (not "canine")                                         ║
-║     "the" (not "definite article")                               ║
-║     "hello" (not "salutation")                                   ║
-║                                                                  ║
-║  ❌ BAD: Formal, rare, or overly technical                       ║
-║     NO grammar terminology!                                      ║
-║     Use words NATIVE SPEAKERS actually say!                      ║
-║                                                                  ║
-║  ✅ ANNOTATIONS ALLOWED (TRANSLATIONS ONLY, not Column 0):       ║
-║     "el (masculine)" / "la (feminine)" - gendered articles       ║
-║     "usted (formal)" / "tú (informal)" - register differences    ║
-║     Applies to ALL translation columns. Column 0 stays clean!    ║
-╚══════════════════════════════════════════════════════════════════╝
-
-=== STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===
-
-For EVERY issue found, add a row to:
-{lang_cap}Words/{lang_cap}FixTableAct{act_num}.csv
-
-Format:
-Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-
-Example:
-{language},{start},Pack Title,3,english,salutation,hello,Too formal - use common word
-
-🔒 NEVER edit Column 0 ({language}) - it's sacred!
-✓ Theme matching: Translation must fit the pack's theme
-✓ Natural phrasing: Most common everyday translation
-
-=== STEP 4: APPLY FIXES (MANDATORY!) ===
-
-╔══════════════════════════════════════════════════════════════════╗
-║  ⚠️⚠️⚠️ FIX TABLE IS USELESS WITHOUT RUNNING APPLY! ⚠️⚠️⚠️      ║
-║                                                                  ║
-║  The fix table is INTERMEDIATE. Task FAILS if not applied!      ║
-╚══════════════════════════════════════════════════════════════════╝
-
-python PythonHelpers/apply_fixes_by_act.py {language} {act_num}
-
-If errors occur:
-- Check Row_Numbers (header = row 1, data starts row 2)
-- Check Old_Values match exactly what's in the CSV
-- Fix the fix table and rerun
-
-=== STEP 5: VALIDATE ===
-
-python PythonHelpers/validate_pinyin.py {language} {start} {end}
-
-Expected: 0 errors
-
-=== STEP 6: COMMIT ===
-
-git add {lang_cap}Words/{lang_cap}Words{{1..{end}}}.csv {lang_cap}Words/{lang_cap}FixTableAct{act_num}.csv
-git commit -m "Act {act_display} ({act_name}): Review and fix translations for packs {start}-{end}"
-git push -u origin <branch>
-
-=== SUCCESS CHECKLIST ===
-
-✅ All {count} packs manually reviewed (not just Python-flagged ones)
-✅ {lang_cap}FixTableAct{act_num}.csv has all fixes recorded
-✅ ⚠️  apply_fixes_by_act.py ran successfully (MANDATORY!)
-✅ Actual CSV files are CHANGED (not just fix table)
-✅ Validation passes
-✅ Committed and pushed
-
-⚠️⚠️⚠️ If actual CSVs aren't fixed, you FAILED! ⚠️⚠️⚠️"""
+✅ {count} packs reviewed | ✅ Fixes applied | ✅ CSVs changed | ✅ Pushed"""
 
 def generate_language_section(language):
     """Generate HTML for one language's Stage 3 section."""
