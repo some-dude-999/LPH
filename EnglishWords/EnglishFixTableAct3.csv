@@ -1,0 +1,12 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+english,82,Travel,53,chinese,走开,溜走,Chinese didn't match pinyin liū zǒu; 溜走 (slip away) is better for wander off
+english,83,Airport & Flying,17,pinyin,yán chí,yán wù,Pinyin didn't match Chinese 延误; correct pronunciation is yán wù
+english,89,Relationships,18,pinyin,zhēng lùn,zhēng chǎo,Pinyin didn't match Chinese 争吵; correct pronunciation is zhēng chǎo
+english,90,Social Interactions,14,chinese,中断,打断,中断 means disconnect; 打断 is more natural for interrupt in conversation
+english,90,Social Interactions,14,pinyin,zhōng duàn,dǎ duàn,Updated pinyin to match corrected Chinese 打断
+english,90,Social Interactions,41,pinyin,tiáo hé chā yì,tiáo jiě fēn qí,Pinyin didn't match Chinese 调解分歧
+english,90,Social Interactions,46,pinyin,bú yào dǎ rǎo,bú yào dǎ duàn,Pinyin didn't match Chinese 不要打断; dǎ rǎo would be 打扰 (disturb)
+english,105,Describing Trends,7,chinese,浸,下跌,浸 (soak) is wrong for trend context; 下跌 (dip/drop) is correct
+english,105,Describing Trends,7,pinyin,jìn,xià diē,Updated pinyin to match corrected Chinese 下跌
+english,111,Collocations - Have & Take,59,chinese,的责任必须承担责任,必须承担责任,Malformed Chinese text; removed redundant prefix
+english,111,Collocations - Have & Take,59,pinyin,de zé rèn bì xū chéng dān zé rèn,bì xū chéng dān zé rèn,Updated pinyin to match corrected Chinese
