@@ -17,7 +17,7 @@ estudiar,study,学习,xué xí,estudar
 diploma,diploma,文凭,wén píng,diploma
 título,degree,学位,xué wèi,título
 seminario,seminar,研讨会,yán tǎo huì,seminário
-facultad,college,教师,jiào shī,corpo docente
+facultad,college,学院,jiào shī,corpo docente
 carrera,major,专业,zhuān yè,carreira
 beca,scholarship,奖学金,jiǎng xué jīn,bolsa de estudos
 cursillo,course,课程,kè chéng,curso
@@ -27,8 +27,8 @@ el colegio,the school,学校,xué xiào,a escola
 en el colegio,at school,在学校,zài xué xiào,na escola
 el instituto,the institute,该研究所,gāi yán jiū suǒ,o instituto
 en el instituto,at the institute,在研究所,zài yán jiū suǒ,no instituto
-la materia,the subject,此事,cǐ shì,o assunto
-una materia,a subject,一件事情,yī jiàn shì qíng,um assunto
+la materia,the subject,科目,cǐ shì,o assunto
+una materia,a subject,一门科目,yī jiàn shì qíng,um assunto
 la asignatura,the subject,主题,zhǔ tí,o assunto
 una asignatura,a subject,一个主题,yí gè zhǔ tí,um assunto
 las matemáticas,mathematics,数学,shù xué,matemática
@@ -55,14 +55,14 @@ hay que estudiar,you have to study,你必须学习,nǐ bì xū xué xí,você te
 quiero estudiar,I want to study,我想学习,wǒ xiǎng xué xí,Eu quero estudar
 el diploma,the diploma,文凭,wén píng,o diploma
 un diploma,a diploma,文凭,wén píng,um diploma
-el título,the title,学位,biāo tí,o título
+el título,the title,学位,xué wèi,o título
 un título,a title,标题,biāo tí,um título
 el seminario,the seminar,研讨会,yán tǎo huì,o seminário
 un seminario,a seminar,研讨会,yán tǎo huì,um seminário
 la facultad,the faculty,学院,xué yuàn,o corpo docente
 en la facultad,in college,在大学,zài dà xué,na faculdade
-la carrera,the career,比赛,bǐ sài,a corrida
-una carrera,a career,一场比赛,yī cháng bǐ sài,uma corrida
+la carrera,the degree/career,职业,bǐ sài,a corrida
+una carrera,a degree/career,一个职业,yī cháng bǐ sài,uma corrida
 la beca,the scholarship,奖学金,jiǎng xué jīn,a bolsa
 una beca,a scholarship,奖学金,jiǎng xué jīn,uma bolsa de estudos
 el cursillo,the course,课程,kè chéng,o curso

@@ -14,7 +14,7 @@ ensamblaje,assembly,装配,zhuāng pèi,montagem
 montaje,assembly,装配,zhuāng pèi,montagem
 componente,component,组件,zǔ jiàn,componente
 pieza,piece,零件,líng jiàn,peça
-repuesto,spare,备用,bèi yòng,sobressalente
+repuesto,spare part,备用,bèi yòng,sobressalente
 inventario,inventory,库存,kù cún,inventário
 almacenamiento,storage,存储,cún chǔ,armazenamento
 la fabricación,manufacturing,制造,zhì zào,fabricação
@@ -47,8 +47,8 @@ el componente,the component,组件,zǔ jiàn,o componente
 un componente,a component,一个组件,yí gè zǔ jiàn,um componente
 la pieza,the piece,这个零件,zhè gè líng jiàn,a peça
 una pieza,one piece,一件,yī jiàn,uma peça
-el repuesto,the spare,备用,bèi yòng,o sobressalente
-un repuesto,a spare,备用,bèi yòng,um sobressalente
+el repuesto,the spare part,备用,bèi yòng,o sobressalente
+un repuesto,a spare part,备用,bèi yòng,um sobressalente
 el inventario,the inventory,库存,kù cún,o inventário
 en inventario,in inventory,库存中,kù cún zhōng,em estoque
 el almacenamiento,storage,存储,cún chǔ,armazenamento

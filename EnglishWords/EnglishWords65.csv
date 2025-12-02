@@ -2,7 +2,7 @@ english,chinese,pinyin,spanish,portuguese
 frustrated,沮丧,jǔ sàng,frustrado,frustrado
 disappointed,失望,shī wàng,decepcionado,desapontado
 embarrassed,尴尬,gān gà,avergonzado,envergonhado
-jealous,嫉妒,jí dù,celoso,ciúmes
+jealous,嫉妒,jí dù,celoso,ciumento
 stressed,有压力,yǒu yā lì,estresado,estressado
 relaxed,放松,fàng sōng,relajado,relaxado
 hopeful,充满希望,chōng mǎn xī wàng,esperanzado,esperançoso
@@ -10,7 +10,7 @@ annoyed,生气,shēng qì,molesto,irritado
 amazed,惊讶,jīng yà,asombrado,maravilhado
 shocked,震惊,zhèn jīng,sorprendido,chocado
 terrified,害怕,hài pà,aterrorizado,apavorado
-delighted,很高兴,hěn gāo xìng,encantada,encantado
+delighted,很高兴,hěn gāo xìng,encantado,encantado
 miserable,悲惨,bēi cǎn,miserable,miserável
 cheerful,开朗,kāi lǎng,alegre,alegre
 relieved,松了口气,sōng le kǒu qì,aliviado,aliviado
@@ -26,7 +26,7 @@ disappointed in,失望,shī wàng,decepcionado,decepcionado com
 feel embarrassed,感到尴尬,gǎn dào gān gà,sentirse avergonzado,sinto vergonha
 embarrassed about,尴尬,gān gà,avergonzado por,envergonhado com
 feel jealous,感到嫉妒,gǎn dào jí dù,sentir celos,sinto ciúmes
-jealous of,嫉妒,jí dù,celoso de,ciúmes de
+jealous of,嫉妒,jí dù,celoso de,ciumento de
 feel stressed,感到压力,gǎn dào yā lì,sentirse estresado,me sinto estressado
 stressed out,压力重重,yā lì chóng chóng,estresado,estressado
 feel relaxed,感觉轻松,gǎn jué qīng sōng,sentirse relajado,sinta-se relaxado
@@ -42,7 +42,7 @@ shocked by,震惊,zhèn jīng,sorprendido por,chocado com
 feel terrified,感到害怕,gǎn dào hài pà,sentirse aterrorizado,sinto medo
 terrified of,害怕,hài pà,aterrorizado de,com medo de
 feel delighted,感到高兴,gǎn dào gāo xìng,siéntete encantado,sinta-se encantado
-absolutely delighted,绝对高兴,jué duì gāo xìng,absolutamente encantado,absolutamente encantada
+absolutely delighted,绝对高兴,jué duì gāo xìng,absolutamente encantado,absolutamente encantado
 feel miserable,感觉很痛苦,gǎn jué hěn tòng kǔ,sentirme miserable,me sinto infeliz
 look miserable,看起来很惨,kàn qǐ lái hěn cǎn,luce miserable,parece miserável
 feel cheerful,心情愉悦,xīn qíng yú yuè,sentirme alegre,sinta-se alegre

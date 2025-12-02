@@ -8,7 +8,7 @@ despegue,takeoff,起飞,qǐ fēi,decolagem
 aterrizaje,landing,着陆,zhuó lù,pouso
 turbulencia,turbulence,湍流,tuān liú,turbulência
 pasajero,passenger,乘客,chéng kè,passageiro
-pasajera,passenger,乘客,chéng kè,passageiro
+pasajera,passenger (feminine),乘客,chéng kè,passageiro
 facturar,to check in,托运,tuō yùn,despachar
 embarcar,to board,登机,dēng jī,embarcar
 cabina,cabin,机舱,jī cāng,cabine
@@ -35,8 +35,8 @@ la turbulencia,turbulence,湍流,tuān liú,turbulência
 con turbulencia,with turbulence,有湍流,yǒu tuān liú,com turbulência
 el pasajero,the passenger,乘客,chéng kè,o passageiro
 un pasajero,a passenger,乘客,chéng kè,um passageiro
-la pasajera,the passenger,乘客,chéng kè,o passageiro
-una pasajera,a passenger,乘客,chéng kè,um passageiro
+la pasajera,the passenger (feminine),乘客,chéng kè,o passageiro
+una pasajera,a passenger (feminine),乘客,chéng kè,um passageiro
 hay que facturar,must check in,必须托运,bì xū tuō yùn,deve despachar
 voy a facturar,I will check in,我要托运,wǒ yào tuō yùn,Vou despachar
 hay que embarcar,you have to board,你必须登机,nǐ bì xū dēng jī,você tem que embarcar

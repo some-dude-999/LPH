@@ -1,7 +1,7 @@
 spanish,english,chinese,pinyin,portuguese
 asegurar,ensure,确保,què bǎo,garantir
 póliza,policy,保单,bǎo dān,apólice
-siniestro,accident,事故,shì gù,sinistro
+siniestro,claim,事故,shì gù,sinistro
 indemnización,compensation,补偿,bǔ cháng,compensação
 beneficiario,beneficiary,受益人,shòu yì rén,beneficiário
 aseguradora,insurer,保险公司,bǎo xiǎn gōng sī,seguradora
@@ -15,15 +15,15 @@ renovar,renew,更新,gēng xīn,renovar
 asegurado,insured,受保,shòu bǎo,segurado
 beneficio,benefit,好处,hǎo chù,benefício
 contingencia,contingency,意外事件,yì wài shì jiàn,contingência
-siniestralidad,accident rate,事故率,shì gù lǜ,taxa de acidentes
+siniestralidad,claims rate,事故率,shì gù lǜ,taxa de acidentes
 franquicia,deductible,免赔额,miǎn péi é,franquia
 exclusión,exclusion,排除,pái chú,exclusão
 hay que asegurar,must be ensured,必须保证,bì xū bǎo zhèng,deve ser garantido
 voy a asegurar,I will ensure,我会保证,wǒ huì bǎo zhèng,Eu garantirei
 la póliza,the policy,保单,bǎo dān,a apólice
 una póliza,a policy,保单,bǎo dān,uma apólice
-el siniestro,the accident,事故,shì gù,o acidente
-un siniestro,an accident,事故,shì gù,um sinistro
+el siniestro,the claim,事故,shì gù,o acidente
+un siniestro,a claim,事故,shì gù,um sinistro
 la indemnización,compensation,补偿,bǔ cháng,compensação
 una indemnización,compensation,补偿,bǔ cháng,compensação
 el beneficiario,the beneficiary,受益人,shòu yì rén,o beneficiário
@@ -50,8 +50,8 @@ el beneficio,the benefit,好处,hǎo chù,o benefício
 un beneficio,a benefit,一个好处,yí gè hǎo chù,um benefício
 la contingencia,the contingency,意外事件,yì wài shì jiàn,a contingência
 una contingencia,a contingency,意外事件,yì wài shì jiàn,uma contingência
-la siniestralidad,the accident rate,事故率,shì gù lǜ,a taxa de acidentes
-sin siniestralidad,without accidents,无意外,wú yì wài,sem acidentes
+la siniestralidad,the claims rate,事故率,shì gù lǜ,a taxa de acidentes
+sin siniestralidad,without claims,无意外,wú yì wài,sem acidentes
 la franquicia,the deductible,免赔额,miǎn péi é,a franquia
 una franquicia,a deductible,免赔额,miǎn péi é,uma franquia
 la exclusión,exclusion,排除,pái chú,exclusão

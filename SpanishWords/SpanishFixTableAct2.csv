@@ -1,0 +1,7 @@
+Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+spanish,34,Want & Desire (querer),25,english,on purpose,for wanting,Accurate translation of 'por querer' (for wanting)
+spanish,34,Want & Desire (querer),25,portuguese,de propósito,por querer,Match Spanish construction 'por querer'
+spanish,35,School Supplies,16,portuguese,professor,professora,Feminine form needed for female teacher 'profesora'
+spanish,35,School Supplies,50,portuguese,o professor,a professora,Feminine form needed for 'la profesora'
+spanish,35,School Supplies,51,portuguese,meu professor,minha professora,Feminine form needed for 'mi profesora'
+spanish,49,Comparing Things,31,pinyin,wèi chéng nián rén,zuì nián qīng de,Pinyin must match Chinese 最年轻的 (the youngest)

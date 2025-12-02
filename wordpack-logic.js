@@ -699,16 +699,8 @@ function renderChineseText(chinese, pinyin) {
   return renderChineseWithPinyin(coupled);
 }
 
-/**
- * Returns HTML string for Chinese text (useful for innerHTML assignments)
- * @param {string} chinese - Chinese characters
- * @param {string} pinyin - Space-separated pinyin
- * @returns {string} - HTML string
- */
-function getChineseHtml(chinese, pinyin) {
-  const element = renderChineseText(chinese, pinyin);
-  return element.outerHTML;
-}
+/** Returns HTML string for Chinese text */
+function getChineseHtml(chinese, pinyin) { return renderChineseText(chinese, pinyin).outerHTML; }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 4: TEXT-TO-SPEECH
@@ -830,38 +822,23 @@ function updateControlVisibilityForMode(currentMode, elements) {
 // Flashcard-specific logic - flip state.
 // ════════════════════════════════════════════════════════════════════════════
 
-/**
- * Toggle flashcard flip state (returns new state, no DOM)
- * @param {boolean} isFlipped - Current flip state
- * @returns {boolean} - New flip state
- */
-function toggleFlipState(isFlipped) {
-  return !isFlipped;
-}
+/** Toggle flashcard flip state - callers can also inline !isFlipped */
+function toggleFlipState(isFlipped) { return !isFlipped; }
 
 // ────────────────────────────────────────────────────────────────────────────
 // SECTION 6.2: FLASHCARD MODE - DOM FUNCTIONS
 // ────────────────────────────────────────────────────────────────────────────
 
 /**
- * Flip card to show back (add CSS class)
- * @param {HTMLElement} flashcardEl - Flashcard element
+ * Set card flipped state
+ * @param {HTMLElement} el - Flashcard element
+ * @param {boolean} flipped - Whether card should be flipped
  */
-function flipCardVisual(flashcardEl) {
-  if (flashcardEl) {
-    flashcardEl.classList.add('flipped');
-  }
+function setCardFlipped(el, flipped) {
+  if (el) el.classList.toggle('flipped', flipped);
 }
-
-/**
- * Unflip card to show front (remove CSS class)
- * @param {HTMLElement} flashcardEl - Flashcard element
- */
-function unflipCardVisual(flashcardEl) {
-  if (flashcardEl) {
-    flashcardEl.classList.remove('flipped');
-  }
-}
+function flipCardVisual(el) { setCardFlipped(el, true); }
+function unflipCardVisual(el) { setCardFlipped(el, false); }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 7: MULTIPLE CHOICE MODE
@@ -882,15 +859,16 @@ function normalizeString(str) {
 }
 
 /**
- * Generates random wrong answers for multiple choice games
+ * Collects filtered and transformed words from all packs in act data
+ * Shared helper to avoid duplicate iteration logic in wrong answer generators
  * @param {Object} actData - All wordpacks in current act
  * @param {string} correctAnswer - Correct answer to filter out
- * @param {number} count - Number of wrong answers to generate
- * @returns {Array<string>} - Array of wrong answer strings
+ * @param {Function} transformFn - Transform function (wordArray) => result
+ * @returns {Array} - Array of transformed results
  */
-function generateWrongAnswers(actData, correctAnswer, count = 4) {
+function collectFilteredWords(actData, correctAnswer, transformFn) {
   const normalizedCorrect = normalizeString(correctAnswer);
-  const allWords = [];
+  const results = [];
 
   Object.keys(actData).forEach(packKey => {
     if (packKey === '__actMeta') return;
@@ -899,70 +877,35 @@ function generateWrongAnswers(actData, correctAnswer, count = 4) {
     if (!pack || !pack.words) return;
 
     pack.words.forEach(wordArray => {
-      const targetLanguageWord = wordArray[0];
-
-      if (targetLanguageWord !== correctAnswer) {
-        const normalizedWord = normalizeString(targetLanguageWord);
+      const targetWord = wordArray[0];
+      if (targetWord !== correctAnswer) {
+        const normalizedWord = normalizeString(targetWord);
         if (normalizedWord !== normalizedCorrect) {
-          allWords.push(targetLanguageWord);
+          results.push(transformFn(wordArray));
         }
       }
     });
   });
 
-  // Shuffle using shared function
-  const shuffledWords = shuffleArray(allWords);
-
-  return shuffledWords.slice(0, Math.min(count, shuffledWords.length));
+  return results;
 }
 
 /**
- * Generates wrong answers for Chinese with pinyin
+ * Generates wrong answers for multiple choice games
  * @param {Object} actData - All wordpacks in current act
  * @param {string} correctAnswer - Correct answer to filter out
  * @param {number} count - Number of wrong answers
- * @returns {Array<{text: string, pinyin: string}>} - Array of wrong answer objects
+ * @param {boolean} withPinyin - Whether to include pinyin
+ * @returns {Array} - Array of strings or {text, pinyin} objects
  */
-function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) {
-  const normalizedCorrect = normalizeString(correctAnswer);
-  const allWords = [];
+function generateWrongAnswers(actData, correctAnswer, count = 4, withPinyin = false) {
   const wordColumns = getWordColumns() || [];
-  const pinyinIndex = wordColumns.indexOf('pinyin');
-
-  if (pinyinIndex === -1) {
-    return generateWrongAnswers(actData, correctAnswer, count).map(text => ({
-      text: text,
-      pinyin: ''
-    }));
-  }
-
-  Object.keys(actData).forEach(packKey => {
-    if (packKey === '__actMeta') return;
-
-    const pack = actData[packKey];
-    if (!pack || !pack.words) return;
-
-    pack.words.forEach(wordArray => {
-      const chineseText = wordArray[0];
-      const pinyinText = wordArray[pinyinIndex];
-
-      if (chineseText !== correctAnswer) {
-        const normalizedWord = normalizeString(chineseText);
-        if (normalizedWord !== normalizedCorrect) {
-          allWords.push({
-            text: chineseText,
-            pinyin: pinyinText || ''
-          });
-        }
-      }
-    });
-  });
-
-  // Shuffle using shared function
-  const shuffledWords = shuffleArray(allWords);
-
-  return shuffledWords.slice(0, Math.min(count, shuffledWords.length));
+  const pinyinIndex = withPinyin ? wordColumns.indexOf('pinyin') : -1;
+  const transform = pinyinIndex !== -1 ? w => ({text: w[0], pinyin: w[pinyinIndex] || ''}) : w => (withPinyin ? {text: w[0], pinyin: ''} : w[0]);
+  const words = shuffleArray(collectFilteredWords(actData, correctAnswer, transform));
+  return words.slice(0, Math.min(count, words.length));
 }
+function generateWrongAnswersWithPinyin(actData, correctAnswer, count = 4) { return generateWrongAnswers(actData, correctAnswer, count, true); }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 8: TYPING MODE
@@ -1267,28 +1210,18 @@ function calculateSimilarity(expected, heard, language) {
 }
 
 /**
- * Get feedback message based on score
+ * Get score feedback (message and CSS class) based on score
  * @param {number} score - Similarity score (0-100)
- * @returns {string} - Feedback message
+ * @returns {{message: string, cssClass: string}}
  */
-function getFeedbackMessage(score) {
-  if (score >= 90) return "Perfect!";
-  if (score >= 75) return "Great!";
-  if (score >= 60) return "Almost!";
-  return "Try again!";
+function getScoreFeedback(score) {
+  if (score >= 90) return {message: "Perfect!", cssClass: "excellent"};
+  if (score >= 75) return {message: "Great!", cssClass: "good"};
+  if (score >= 60) return {message: "Almost!", cssClass: "okay"};
+  return {message: "Try again!", cssClass: "poor"};
 }
-
-/**
- * Get CSS class for score coloring
- * @param {number} score - Similarity score (0-100)
- * @returns {string} - CSS class name
- */
-function getScoreClass(score) {
-  if (score >= 90) return "excellent";
-  if (score >= 75) return "good";
-  if (score >= 60) return "okay";
-  return "poor";
-}
+function getFeedbackMessage(score) { return getScoreFeedback(score).message; }
+function getScoreClass(score) { return getScoreFeedback(score).cssClass; }
 
 // ────────────────────────────────────────────────────────────────────────────
 // SECTION 9.2: PRONUNCIATION MODE - DOM FUNCTIONS
@@ -1392,18 +1325,17 @@ function showStamp(stampElement, soundFunction, onComplete, duration = 1500) {
 }
 
 /**
- * Shows success stamp (green "Card Removed")
+ * Shows stamp by type (success or failure)
+ * @param {HTMLElement} el - Stamp element
+ * @param {boolean} success - True for success, false for failure
+ * @param {Function} onComplete - Callback after stamp hides
  */
-function showSuccessStamp(stampElement, onComplete) {
-  showStamp(stampElement, typeof playDingSound === 'function' ? playDingSound : null, onComplete);
+function showStampByType(el, success, onComplete) {
+  const sound = success ? (typeof playDingSound === 'function' ? playDingSound : null) : (typeof playBuzzSound === 'function' ? playBuzzSound : null);
+  showStamp(el, sound, onComplete);
 }
-
-/**
- * Shows failure stamp (red "Extra Practice")
- */
-function showFailureStamp(stampElement, onComplete) {
-  showStamp(stampElement, typeof playBuzzSound === 'function' ? playBuzzSound : null, onComplete);
-}
+function showSuccessStamp(el, onComplete) { showStampByType(el, true, onComplete); }
+function showFailureStamp(el, onComplete) { showStampByType(el, false, onComplete); }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 11: MUTATE DECK
@@ -1462,26 +1394,18 @@ function addDuplicateCards(deck, card, count = 2) {
 }
 
 /**
- * Navigate to previous card with wrap-around
- * @param {number} currentIndex - Current card index
- * @param {number} deckLength - Length of deck
+ * Navigate deck with wrap-around
+ * @param {number} idx - Current card index
+ * @param {number} len - Length of deck
+ * @param {number} dir - Direction: -1 for previous, 1 for next
  * @returns {number} - New index
  */
-function navigateToPrevious(currentIndex, deckLength) {
-  if (deckLength === 0) return 0;
-  return (currentIndex - 1 + deckLength) % deckLength;
+function navigateDeck(idx, len, dir) {
+  if (len === 0) return 0;
+  return (idx + dir + len) % len;
 }
-
-/**
- * Navigate to next card with wrap-around
- * @param {number} currentIndex - Current card index
- * @param {number} deckLength - Length of deck
- * @returns {number} - New index
- */
-function navigateToNext(currentIndex, deckLength) {
-  if (deckLength === 0) return 0;
-  return (currentIndex + 1) % deckLength;
-}
+function navigateToPrevious(idx, len) { return navigateDeck(idx, len, -1); }
+function navigateToNext(idx, len) { return navigateDeck(idx, len, 1); }
 
 /**
  * Reset deck to original state
@@ -1560,22 +1484,16 @@ function getSortedPackKeys(actData) {
 // ────────────────────────────────────────────────────────────────────────────
 
 /**
- * Show menu overlay
- * @param {HTMLElement} flashcardEl - Flashcard element
+ * Set menu overlay visibility
+ * @param {HTMLElement} el - Flashcard element
+ * @param {boolean} show - Whether to show overlay
  */
-function showMenuOverlay(flashcardEl) {
-  if (flashcardEl) flashcardEl.classList.add('showing-menu');
-  document.body.classList.add('showing-menu');
+function setMenuOverlay(el, show) {
+  if (el) el.classList.toggle('showing-menu', show);
+  document.body.classList.toggle('showing-menu', show);
 }
-
-/**
- * Hide menu overlay
- * @param {HTMLElement} flashcardEl - Flashcard element
- */
-function hideMenuOverlay(flashcardEl) {
-  if (flashcardEl) flashcardEl.classList.remove('showing-menu');
-  document.body.classList.remove('showing-menu');
-}
+function showMenuOverlay(el) { setMenuOverlay(el, true); }
+function hideMenuOverlay(el) { setMenuOverlay(el, false); }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SECTION 13: UI HELPERS
@@ -1667,98 +1585,27 @@ function getLanguageSelectorOptions(translations) {
 // ────────────────────────────────────────────────────────────────────────────
 
 /**
- * Populate act selector dropdown from loaded metadata
- * @param {HTMLSelectElement} selectElement - Act dropdown element
- * @param {Object} loadedActMeta - Loaded __actMeta object from modules
- * @param {Function} onChange - Callback when act changes
+ * Generic selector populator
+ * @param {HTMLSelectElement} el - Select element
+ * @param {Array} options - Array of {value, text} options
+ * @param {Function} onChange - Callback on change
+ * @param {Object} opts - Optional: {parseValue: fn, currentValue: string}
  */
-function populateActSelector(selectElement, loadedActMeta, onChange) {
-  if (!selectElement) {
-    console.warn('[populateActSelector] No select element provided');
-    return;
-  }
-
-  selectElement.innerHTML = '';
-
-  const options = getActSelectorOptions(loadedActMeta);
+function populateSelector(el, options, onChange, opts = {}) {
+  if (!el) return;
+  el.innerHTML = '';
   options.forEach(opt => {
-    const option = document.createElement('option');
-    option.value = opt.value;
-    option.textContent = opt.text;
-    selectElement.appendChild(option);
+    const o = document.createElement('option');
+    o.value = opt.value;
+    o.textContent = opt.text;
+    if (opts.currentValue !== undefined && opt.value === opts.currentValue) o.selected = true;
+    el.appendChild(o);
   });
-
-  if (onChange && typeof onChange === 'function') {
-    selectElement.addEventListener('change', (e) => {
-      const actNum = parseInt(e.target.value);
-      onChange(actNum);
-    });
-  }
+  if (onChange) el.addEventListener('change', e => onChange(opts.parseValue ? opts.parseValue(e.target.value) : e.target.value));
 }
-
-/**
- * Populate wordpack selector dropdown from act data
- * @param {HTMLSelectElement} selectElement - Pack dropdown element
- * @param {Object} actData - Act data object
- * @param {Function} onChange - Callback when pack changes
- */
-function populatePackSelector(selectElement, actData, onChange) {
-  if (!selectElement) {
-    console.warn('[populatePackSelector] No select element provided');
-    return;
-  }
-
-  selectElement.innerHTML = '';
-
-  const options = getPackSelectorOptions(actData);
-  options.forEach(opt => {
-    const option = document.createElement('option');
-    option.value = opt.value;
-    option.textContent = opt.text;
-    selectElement.appendChild(option);
-  });
-
-  if (onChange && typeof onChange === 'function') {
-    selectElement.addEventListener('change', (e) => {
-      const packKey = e.target.value;
-      onChange(packKey);
-    });
-  }
-}
-
-/**
- * Populate native language ("I speak") dropdown from metadata
- * @param {HTMLSelectElement} selectElement - Language dropdown element
- * @param {Object} translations - Translations config from __actMeta
- * @param {string} currentValue - Currently selected language code
- * @param {Function} onChange - Callback when language changes
- */
-function populateNativeLanguageSelector(selectElement, translations, currentValue, onChange) {
-  if (!selectElement) {
-    console.warn('[populateNativeLanguageSelector] No select element provided');
-    return;
-  }
-
-  selectElement.innerHTML = '';
-
-  const options = getLanguageSelectorOptions(translations);
-  options.forEach(opt => {
-    const option = document.createElement('option');
-    option.value = opt.value;
-    option.textContent = opt.text;
-    if (opt.value === currentValue) {
-      option.selected = true;
-    }
-    selectElement.appendChild(option);
-  });
-
-  if (onChange && typeof onChange === 'function') {
-    selectElement.addEventListener('change', (e) => {
-      const languageCode = e.target.value;
-      onChange(languageCode);
-    });
-  }
-}
+function populateActSelector(el, meta, onChange) { populateSelector(el, getActSelectorOptions(meta), onChange, {parseValue: v => parseInt(v)}); }
+function populatePackSelector(el, data, onChange) { populateSelector(el, getPackSelectorOptions(data), onChange); }
+function populateNativeLanguageSelector(el, trans, cur, onChange) { populateSelector(el, getLanguageSelectorOptions(trans), onChange, {currentValue: cur}); }
 
 /**
  * Update wordpack title display from pack metadata
@@ -2420,11 +2267,13 @@ if (typeof module !== 'undefined' && module.exports) {
 
     // Section 6: Flashcard Mode (Logic + DOM)
     toggleFlipState,
+    setCardFlipped,
     flipCardVisual,
     unflipCardVisual,
 
     // Section 7: Multiple Choice Mode
     normalizeString,
+    collectFilteredWords,
     generateWrongAnswers,
     generateWrongAnswersWithPinyin,
 
@@ -2445,6 +2294,7 @@ if (typeof module !== 'undefined' && module.exports) {
     getSimilarityThreshold,
     levenshteinDistance,
     calculateSimilarity,
+    getScoreFeedback,
     getFeedbackMessage,
     getScoreClass,
     hideFeedback,
@@ -2454,12 +2304,14 @@ if (typeof module !== 'undefined' && module.exports) {
     determineTypingOutcome,
     determinePronunciationOutcome,
     showStamp,
+    showStampByType,
     showSuccessStamp,
     showFailureStamp,
 
     // Section 11: Mutate Deck
     removeCard,
     addDuplicateCards,
+    navigateDeck,
     navigateToPrevious,
     navigateToNext,
     resetDeckToOriginal,
@@ -2469,6 +2321,7 @@ if (typeof module !== 'undefined' && module.exports) {
     getFirstAvailableAct,
     getFirstAvailablePack,
     getSortedPackKeys,
+    setMenuOverlay,
     showMenuOverlay,
     hideMenuOverlay,
 
@@ -2477,6 +2330,7 @@ if (typeof module !== 'undefined' && module.exports) {
     getActSelectorOptions,
     getPackSelectorOptions,
     getLanguageSelectorOptions,
+    populateSelector,
     populateActSelector,
     populatePackSelector,
     populateNativeLanguageSelector,
@@ -2519,6 +2373,7 @@ window.updateModeButtonsVisual = updateModeButtonsVisual;
 window.updateControlVisibilityForMode = updateControlVisibilityForMode;
 
 // Section 6: Flashcard DOM
+window.setCardFlipped = setCardFlipped;
 window.flipCardVisual = flipCardVisual;
 window.unflipCardVisual = unflipCardVisual;
 
@@ -2528,19 +2383,26 @@ window.renderTargetWordHTML = renderTargetWordHTML;
 window.renderTranslationHTML = renderTranslationHTML;
 
 // Section 9: Pronunciation DOM
+window.getScoreFeedback = getScoreFeedback;
 window.hideFeedback = hideFeedback;
 window.updatePronunciationDebug = updatePronunciationDebug;
 
 // Section 10: Stamp DOM
 window.showStamp = showStamp;
+window.showStampByType = showStampByType;
 window.showSuccessStamp = showSuccessStamp;
 window.showFailureStamp = showFailureStamp;
 
+// Section 11: Deck Navigation
+window.navigateDeck = navigateDeck;
+
 // Section 12: Menu DOM
+window.setMenuOverlay = setMenuOverlay;
 window.showMenuOverlay = showMenuOverlay;
 window.hideMenuOverlay = hideMenuOverlay;
 
 // Section 13: UI Helpers DOM
+window.populateSelector = populateSelector;
 window.populateActSelector = populateActSelector;
 window.populatePackSelector = populatePackSelector;
 window.populateNativeLanguageSelector = populateNativeLanguageSelector;

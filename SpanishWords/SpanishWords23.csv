@@ -6,14 +6,14 @@ mujer,woman,女人,nǚ rén,mulher
 bebé,baby,婴儿,yīng ér,bebê
 niño,child,孩子,hái zi,criança
 niña,little girl,小女孩,xiǎo nǚ hái,garotinha
-adulto,adult,成人,chéng rén,adulto
-adulta,adult,成人,chéng rén,adulto
+adulto,adult (masculine),成人,chéng rén,adulto
+adulta,adult (feminine),成人,chéng rén,adulto
 padres,parents,父母,fù mǔ,pais
 hijos,children,孩子们,hái zi men,crianças
 abuelos,grandparents,祖父母,zǔ fù mǔ,avós
 nietos,grandchildren,孙子,sūn zi,netos
-pariente,relative,亲戚,qīn qī,parente
-parienta,relative,亲戚女人,qīn qī nǚ rén,parenta
+pariente,relative (masculine),亲戚,qīn qī,parente
+parienta,relative (feminine),亲戚女人,qīn qī nǚ rén,parenta
 mi novio,my boyfriend,我的男朋友,wǒ de nán péng yǒu,meu namorado
 su novio,her boyfriend,她的男朋友,tā de nán péng yǒu,o namorado dela
 mi novia,my girlfriend,我的女友,wǒ de nǚ yǒu,minha namorada
@@ -42,5 +42,5 @@ mis nietos,my grandchildren,我的孙子们,wǒ de sūn zi men,meus netos
 los nietos,the grandchildren,孙子们,sūn zi men,os netos
 un pariente,a relative,一个亲戚,yí gè qīn qī,um parente
 mi pariente,my relative,我的亲戚,wǒ de qīn qī,meu parente
-una parienta,a relative,一个亲戚,yí gè qīn qī,um parente
-mi parienta,my relative,我的亲戚,wǒ de qīn qī,meu parente
+una parienta,a relative,一个亲戚,yí gè qīn qī,uma parenta
+mi parienta,my relative,我的亲戚,wǒ de qīn qī,minha parenta
