@@ -126,10 +126,10 @@ For EACH pack ({start} through {end}):
 ║     NO grammar terminology!                                      ║
 ║     Use words NATIVE SPEAKERS actually say!                      ║
 ║                                                                  ║
-║  ✅ ANNOTATIONS ALLOWED (when helpful for learners):             ║
+║  ✅ ANNOTATIONS ALLOWED (TRANSLATIONS ONLY, not Column 0):       ║
 ║     "el (masculine)" / "la (feminine)" - gendered articles       ║
 ║     "usted (formal)" / "tú (informal)" - register differences    ║
-║     Only annotate when distinction matters for learning!         ║
+║     Applies to ALL translation columns. Column 0 stays clean!    ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 === STEP 3: RECORD FIXES IN ACT-SPECIFIC FIX TABLE ===

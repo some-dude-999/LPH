@@ -77,6 +77,8 @@ When translations need disambiguation, use parenthetical annotations:
 - **(plural)** / **(singular)** - when number matters for meaning
 
 **Guidelines:**
+- **TRANSLATIONS ONLY** - annotations apply to ALL translation columns, NEVER Column 0 (native language)
+- Column 0 is sacred source data - no annotations needed there
 - Only add annotations when the distinction is **meaningful for learners**
 - Keep annotations lowercase in parentheses: `el (masculine)` not `el (MASCULINE)`
 - Spanish gendered articles: `el (masculine)`, `la (feminine)`
