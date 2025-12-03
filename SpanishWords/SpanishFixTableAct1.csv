@@ -1,25 +1,9 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,1,Greetings & Goodbyes,15,english,welcome,welcome (masculine),Indicates bienvenido is used when addressing males
-spanish,1,Greetings & Goodbyes,16,english,welcome,welcome (feminine),Indicates bienvenida is used when addressing females
-spanish,4,Asking Questions,10,english,how much,how much (feminine),Cuánta is feminine form of cuánto
-spanish,4,Asking Questions,12,english,how many,how many (feminine),Cuántas is feminine form of cuántos
-spanish,5,Referring to People,3,english,you,you (informal),Distinguishes tú from formal usted
-spanish,5,Referring to People,6,english,you,you (formal),Distinguishes usted from informal tú
-spanish,5,Referring to People,7,english,us,we,Nosotros is subject pronoun (we) not object (us)
-spanish,5,Referring to People,8,english,us,we (feminine),Nosotras is subject pronoun (we) not object (us)
-spanish,5,Referring to People,9,english,you,you (plural),Vosotros is plural informal you
-spanish,5,Referring to People,10,english,you,you (feminine plural),Vosotras is feminine plural you
-spanish,5,Referring to People,12,english,they,they (feminine),Ellas is feminine form of ellos
-spanish,5,Referring to People,13,english,you,you (plural),Ustedes is plural you
-spanish,9,The & A Articles,7,portuguese,um,uma,Feminine article required to match una
-spanish,9,The & A Articles,25,portuguese,alguns amigos,algumas amigas,Feminine form required to match unas amigas
-spanish,13,Family Members,13,english,cousin,cousin (masculine),Clarifies primo refers to male cousin
-spanish,13,Family Members,14,english,cousin,cousin (feminine),Clarifies prima refers to female cousin
-spanish,17,Basic Action Verbs,15,portuguese,discutir,conversar,Discutir means argue/discuss not chat
-spanish,23,Extended Family,9,english,adult,adult (masculine),Clarifies adulto refers to male adult
-spanish,23,Extended Family,10,english,adult,adult (feminine),Clarifies adulta refers to female adult
-spanish,23,Extended Family,15,english,relative,relative (masculine),Clarifies pariente refers to male relative
-spanish,23,Extended Family,16,english,relative,relative (feminine),Clarifies parienta refers to female relative
-spanish,23,Extended Family,45,portuguese,um parente,uma parenta,Feminine form required for parienta
-spanish,23,Extended Family,46,portuguese,meu parente,minha parenta,Feminine form required for mi parienta
-spanish,27,Daily Activities,4,portuguese,madrugador,eu madrugo,Verb form needed not adjective/noun
+spanish,8,Having & Age (tener),12,english,fear,fear (noun),Clarify it's the noun not verb
+spanish,10,Connecting Words (y pero porque),11,english,neither,neither/nor,More natural translation for tampoco
+spanish,21,Going Places (ir),10,english,direction,address,dirección means address in this context
+spanish,21,Going Places (ir),13,english,walk,stroll,paseo better translated as stroll
+spanish,23,Extended Family,16,english,relative (feminine),female relative,More natural English
+spanish,27,Daily Activities,15,english,I fix,I arrange,arreglo in daily context means arrange not fix
+spanish,27,Daily Activities,43,english,I fix,I arrange,arreglo in daily context means arrange
+spanish,27,Daily Activities,44,english,I fix everything,I arrange everything,arreglo in daily context means arrange

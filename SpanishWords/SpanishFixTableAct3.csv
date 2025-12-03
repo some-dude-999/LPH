@@ -1,57 +1,8 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,65,Asking Questions (preguntar),4,english,question,he/she asks,Verb pack: 3rd person singular should show conjugated form not noun
-spanish,67,Sleeping (dormir),4,english,sleep,he/she sleeps,Verb pack: 3rd person singular should show conjugated form
-spanish,68,Playing (jugar),4,english,play,he/she plays,Verb pack: 3rd person singular should show conjugated form
-spanish,68,Playing (jugar),7,english,play,they play,Verb pack: 3rd person plural should show conjugated form
-spanish,71,Leaving (salir),4,english,comes out,he/she leaves,Verb pack: more natural 3rd person translation for leaving
-spanish,71,Leaving (salir),7,english,come out,they leave,Verb pack: 3rd person plural should match pack theme
-spanish,71,Leaving (salir),8,chinese,退出,离开,Wrong Chinese: 退出 means quit/exit program but salir means to leave
-spanish,71,Leaving (salir),9,chinese,输出,出口,Wrong Chinese: 输出 means output but salida means exit
-spanish,71,Leaving (salir),28,english,the game,the departure,Wrong sense: partida in Leaving pack means departure not game
-spanish,71,Leaving (salir),28,chinese,游戏,出发,Wrong Chinese: partida here means departure not game
-spanish,76,School & Education,20,chinese,教师,学院,Wrong Chinese: 教师 means teacher not faculty/college
-spanish,76,School & Education,30,chinese,此事,科目,Wrong Chinese: 此事 means this matter not subject
-spanish,76,School & Education,31,chinese,一件事情,一门科目,Wrong Chinese: 一件事情 means a thing not a subject
-spanish,76,School & Education,58,pinyin,biāo tí,xué wèi,Pinyin mismatch: Chinese 学位 should be xué wèi not biāo tí
-spanish,76,School & Education,64,chinese,比赛,职业,Wrong Chinese: 比赛 means race/competition but carrera here means career
-spanish,76,School & Education,64,english,the career,the degree/career,More natural translation for carrera in education context
-spanish,76,School & Education,65,chinese,一场比赛,一个职业,Wrong Chinese: carrera here means career not race
-spanish,76,School & Education,65,english,a career,a degree/career,More natural translation for carrera in education context
-spanish,79,Putting & Placing (poner),11,pinyin,dìng dān,shùn xù,Pinyin mismatch: Chinese 顺序 should be shùn xù not dìng dān
-spanish,81,Banking & Money,26,pinyin,xìng qù,lì xī,Pinyin mismatch: Chinese 利息 should be lì xī not xìng qù (interest as hobby)
-spanish,81,Banking & Money,27,pinyin,yǒu xìng qù,yǒu lì xī,Pinyin mismatch: 有利息 should be yǒu lì xī not yǒu xìng qù
-spanish,82,Finding (encontrar),4,english,find,he/she finds,Verb pack: 3rd person singular should show conjugated form
-spanish,82,Finding (encontrar),7,english,find,they find,Verb pack: 3rd person plural should show conjugated form
-spanish,83,Waiting & Hoping (esperar),4,english,wait,he/she waits,Verb pack: 3rd person singular should show conjugated form
-spanish,83,Waiting & Hoping (esperar),7,english,wait,they wait,Verb pack: 3rd person plural should show conjugated form
-spanish,85,Believing (creer),4,english,believe,he/she believes,Verb pack: 3rd person singular should show conjugated form
-spanish,85,Believing (creer),7,english,believe,they believe,Verb pack: 3rd person plural should show conjugated form
-spanish,86,Living (vivir),8,pinyin,zhí bō,shēng huó,Pinyin mismatch: Chinese 生活 should be shēng huó not zhí bō (live stream)
-spanish,88,Physical Appearance,14,pinyin,báo,shòu,Pinyin mismatch: 瘦 (thin for people) is shòu not báo (thin for objects)
-spanish,88,Physical Appearance,45,pinyin,hěn báo,hěn shòu,Pinyin mismatch: 很瘦 should be hěn shòu not hěn báo
-spanish,88,Physical Appearance,46,pinyin,hěn báo,hěn shòu,Pinyin mismatch: 很瘦 should be hěn shòu not hěn báo
-spanish,89,Receiving (recibir),7,english,receive,they receive,Verb pack: 3rd person plural should show conjugated form
-spanish,90,Sending (enviar),4,english,send,he/she sends,Verb pack: 3rd person singular should show conjugated form
-spanish,90,Sending (enviar),7,english,send,they send,Verb pack: 3rd person plural should show conjugated form
-spanish,91,Personal Qualities,19,pinyin,tú láo,xū róng,Pinyin mismatch: Chinese 虚荣 should be xū róng not tú láo (futile)
-spanish,92,Opening (abrir),10,chinese,开瓶器,开启器,Wrong pinyin reference: abridor means opener - using consistent translation
-spanish,92,Opening (abrir),10,pinyin,kāi chǎng bái,kāi qǐ qì,Pinyin mismatch: should match the Chinese for opener
-spanish,92,Opening (abrir),28,chinese,揭幕战,开启器,Wrong Chinese: 揭幕战 means opening game not opener tool
-spanish,92,Opening (abrir),28,pinyin,jiē mù zhàn,kāi qǐ qì,Pinyin mismatch: should match opener tool translation
-spanish,92,Opening (abrir),29,chinese,开场白,开启器,Wrong Chinese: 开场白 means opening remarks not opener tool
-spanish,92,Opening (abrir),29,pinyin,kāi chǎng bái,kāi qǐ qì,Pinyin mismatch: should match opener tool translation
-spanish,96,Reading (leer),4,english,read,he/she reads,Verb pack: 3rd person singular should show conjugated form
-spanish,96,Reading (leer),7,english,read,they read,Verb pack: 3rd person plural should show conjugated form
-spanish,98,Government & Politics,9,chinese,选择,选举,Wrong Chinese: elección in politics context means election not choice
-spanish,98,Government & Politics,9,pinyin,xuǎn zé,xuǎn jǔ,Pinyin mismatch: 选举 should be xuǎn jǔ not xuǎn zé
-spanish,98,Government & Politics,9,portuguese,escolha,eleição,Wrong Portuguese: elección means election not choice
-spanish,98,Government & Politics,36,chinese,选择,选举,Wrong Chinese: la elección means the election not the choice
-spanish,98,Government & Politics,36,pinyin,xuǎn zé,xuǎn jǔ,Pinyin mismatch: 选举 should be xuǎn jǔ not xuǎn zé
-spanish,98,Government & Politics,36,portuguese,a escolha,a eleição,Wrong Portuguese: la elección means the election not the choice
-spanish,98,Government & Politics,37,chinese,一个选择,一次选举,Wrong Chinese: una elección means an election not a choice
-spanish,98,Government & Politics,37,pinyin,yí gè xuǎn zé,yī cì xuǎn jǔ,Pinyin mismatch: 一次选举 should be yī cì xuǎn jǔ
-spanish,98,Government & Politics,37,portuguese,uma escolha,uma eleição,Wrong Portuguese: una elección means an election not a choice
-spanish,99,Showing (mostrar),4,pinyin,yàng běn,zhǎn shì,Pinyin mismatch: Chinese 展示 should be zhǎn shì not yàng běn (sample)
-spanish,99,Showing (mostrar),9,pinyin,xiàn zài,chéng xiàn,Pinyin mismatch: presentar pinyin should not be xiàn zài (now)
-spanish,99,Showing (mostrar),13,pinyin,wǒ gào sù nǐ,wǒ gěi nǐ kàn,Pinyin mismatch: Chinese 我给你看 should be wǒ gěi nǐ kàn not wǒ gào sù nǐ
-spanish,99,Showing (mostrar),15,pinyin,gào sù wǒ,gěi wǒ kàn,Pinyin mismatch: Chinese 给我看 should be gěi wǒ kàn not gào sù wǒ
+spanish,62,To Know (conocer),2,english,I know,I know (am familiar with),Distinguish conocer from saber
+spanish,62,To Know (conocer),3,english,you know,you know (are familiar with),Distinguish conocer from saber
+spanish,62,To Know (conocer),4,english,he/she knows,he/she knows (is familiar with),Distinguish conocer from saber
+spanish,62,To Know (conocer),5,english,we know,we know (are familiar with),Distinguish conocer from saber
+spanish,62,To Know (conocer),6,english,you (plural) know,you (plural) know (are familiar with),Distinguish conocer from saber
+spanish,62,To Know (conocer),7,english,they know,they know (are familiar with),Distinguish conocer from saber
+spanish,69,Sports,22,english,football,soccer,American English term for fútbol

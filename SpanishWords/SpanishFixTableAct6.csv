@@ -1,18 +1,1 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,185,Tourism Terms,31,english,the guide,the guide (masculine),Gender annotation - el guía refers to male guide
-spanish,185,Tourism Terms,32,english,a guide,a guide (masculine),Gender annotation - un guía refers to male guide
-spanish,188,Manufacturing Terms,17,english,spare,spare part,More complete translation for repuesto
-spanish,188,Manufacturing Terms,50,english,the spare,the spare part,More complete translation for el repuesto
-spanish,188,Manufacturing Terms,51,english,a spare,a spare part,More complete translation for un repuesto
-spanish,194,Retail & Sales,12,english,ticket,receipt,In Spanish retail context ticket means receipt
-spanish,194,Retail & Sales,41,english,the ticket,the receipt,In Spanish retail context ticket means receipt
-spanish,194,Retail & Sales,42,english,a ticket,a receipt,In Spanish retail context ticket means receipt
-spanish,197,Insurance Terms,4,english,accident,claim,Insurance siniestro means claim/loss not accident
-spanish,197,Insurance Terms,18,english,accident rate,claims rate,Insurance siniestralidad means claims rate
-spanish,197,Insurance Terms,25,english,the accident,the claim,Insurance siniestro means claim/loss
-spanish,197,Insurance Terms,26,english,an accident,a claim,Insurance siniestro means claim/loss
-spanish,197,Insurance Terms,53,english,the accident rate,the claims rate,Insurance siniestralidad means claims rate
-spanish,197,Insurance Terms,54,english,without accidents,without claims,Insurance siniestralidad context
-spanish,200,Real Estate Terms,29,english,the income,the rent,Real estate context - renta means rent not income
-spanish,200,Real Estate Terms,30,english,an income,a rent,Real estate context - renta means rent not income
-spanish,215,Automotive Terms,49,english,a mechanic,a mechanic (feminine),Gender annotation - una mecánica is female mechanic
