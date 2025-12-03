@@ -133,16 +133,16 @@ def main():
 
         csv_path = f"{lang_cap}Words/{lang_cap}Words{pack_num}.csv"
 
-        print(f"[{i}/{len(fixes)}] Pack {pack_num}, Row {row_num}, {col_name}: '{old_value}' → '{new_value}'")
+        print(f"[{i}/{len(fixes)}] Pack {pack_num}, Row {row_num}, {col_name}: '{old_value}' -> '{new_value}'")
 
         success, message = apply_fix(csv_path, row_num, col_name, old_value, new_value)
 
         if success:
             successes += 1
-            print(f"  ✓ {message}")
+            print(f"  [OK] {message}")
         else:
             failures += 1
-            print(f"  ✗ {message}")
+            print(f"  [FAIL] {message}")
             errors.append({
                 'fix_num': i,
                 'pack': pack_num,
@@ -158,7 +158,7 @@ def main():
     print("="*70)
 
     if failures > 0:
-        print("\n⚠️  ERRORS DETECTED:")
+        print("\n[WARN] ERRORS DETECTED:")
         for err in errors:
             print(f"  Fix #{err['fix_num']}: Pack {err['pack']}, Row {err['row']}, {err['col']}")
             print(f"    {err['error']}")
@@ -166,7 +166,7 @@ def main():
         print("Fix the errors in the fix table and rerun this script.")
         sys.exit(1)
     else:
-        print("\n✅ All fixes applied successfully!")
+        print("\n[OK] All fixes applied successfully!")
         print(f"   Run validation: python PythonHelpers/validate_pinyin.py {language}")
         sys.exit(0)
 

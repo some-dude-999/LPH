@@ -311,17 +311,17 @@ def validate_language(lang):
 
         if errors or warnings:
             files_with_errors += 1
-            print(f"\n❌ {filename}: {len(errors)} mismatches")
+            print(f"\n[FAIL] {filename}: {len(errors)} mismatches")
 
             for err in errors[:5]:  # Show first 5 errors
-                print(f"   Row {err['row']}: '{err['chinese']}' → '{err['pinyin']}'")
+                print(f"   Row {err['row']}: '{err['chinese']}' -> '{err['pinyin']}'")
                 print(f"           Error: {err['error']}")
 
             if len(errors) > 5:
                 print(f"   ... and {len(errors) - 5} more errors")
 
             for warn in warnings:
-                print(f"   ⚠️  {warn}")
+                print(f"   [WARN] {warn}")
 
             total_errors += len(errors)
 
@@ -333,9 +333,9 @@ def validate_language(lang):
     print(f"Total mismatches: {total_errors}")
 
     if total_errors == 0:
-        print(f"\n✅ All files pass pinyin validation!")
+        print(f"\n[OK] All files pass pinyin validation!")
     else:
-        print(f"\n❌ {total_errors} total char-pinyin mismatches found")
+        print(f"\n[FAIL] {total_errors} total char-pinyin mismatches found")
 
 
 def main():
@@ -343,15 +343,14 @@ def main():
         print("Usage: python validate_pinyin.py [chinese|spanish|english|all]")
         print("\nThis script validates Chinese-pinyin character-by-character mapping.")
         print("\nMAPPING RULE:")
-        print("  Each Chinese character (with trailing punctuation) → one pinyin syllable (with same punctuation)")
-        print("  Each Latin letter → same letter")
+        print("  Each Chinese character (with trailing punctuation) -> one pinyin syllable (with same punctuation)")
+        print("  Each Latin letter -> same letter")
         print("\nExamples:")
-        print("  ✓ 早上好，先生 → zǎo shàng hǎo， xiān shēng")
-        print("     早→zǎo, 上→shàng, 好，→hǎo，, 先→xiān, 生→shēng")
-        print("  ✗ 早上好，先生 → zǎo shàng hǎo, xiān shēng")
-        print("     好，→hǎo (missing comma in pinyin!)")
-        print("  ✓ ATM机 → A T M jī")
-        print("     A→A, T→T, M→M, 机→jī")
+        print("  [OK] Good: 'early morning good, sir' -> 'zao shang hao, xian sheng'")
+        print("     Each character maps to one pinyin syllable, punctuation preserved")
+        print("  [FAIL] Bad: Comma missing in pinyin")
+        print("  [OK] Good: ATM ji -> A T M ji")
+        print("     A->A, T->T, M->M, ji->ji")
         sys.exit(1)
 
     lang = sys.argv[1].lower()

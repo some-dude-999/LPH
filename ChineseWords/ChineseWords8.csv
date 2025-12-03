@@ -1,16 +1,16 @@
 chinese,pinyin,english,spanish,french,portuguese
-个,gè,(general),(general),(général),(geral)
-只,zhǐ,(for animals),(para animales),(pour animaux),(para animais)
-条,tiáo,(for long things),(para cosas largas),(pour objets longs),(para itens longos)
-张,zhāng,(for flat things),(para objetos planos),(pour objets plats),(para itens planos)
-件,jiàn,(for things/clothes),(para prendas),(pour vêtements),(para roupas)
-本,běn,(for books),(para libros),(pour livres),(para livros)
+个,gè,general measure word,clasificador general,classificateur général,classificador geral
+只,zhǐ,animal measure word,clasificador de animales,classificateur d'animaux,classificador de animais
+条,tiáo,long object measure word,clasificador de objetos largos,classificateur d'objets longs,classificador de itens longos
+张,zhāng,flat object measure word,clasificador de objetos planos,classificateur d'objets plats,clasificador de itens planos
+件,jiàn,clothing measure word,clasificador de prendas,classificateur de vêtements,classificador de roupas
+本,běn,book measure word,clasificador de libros,classificateur de livres,classificador de livros
 杯,bēi,cup/glass,taza/vaso,tasse/verre,copo
 瓶,píng,bottle,botella,bouteille,garrafa
 块,kuài,piece,pedazo,morceau,pedaço
 些,xiē,Some,Algunos,Certains,Alguns
 次,cì,time/occasion,vez,fois,vez
-位,wèi,(polite for person),(cortés para persona),(poli pour personne),(cortês para pessoa)
+位,wèi,polite person measure word,clasificador cortés de persona,classificateur poli de personne,classificador cortês de pessoa
 双,shuāng,pair,par,paire,par
 口,kǒu,mouthful,bocado,bouchée,bocado
 套,tào,set,conjunto,ensemble,conjunto
