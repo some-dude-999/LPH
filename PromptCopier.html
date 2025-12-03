@@ -1084,6 +1084,71 @@ Create your own branch, commit, and PR to main.</div>
     </table>
 <h3>Chinese - Stage 3 (Translation Quality Review - 5 Acts, 107 Packs)</h3>
 <p><strong>Run 5 agents in parallel</strong> - one per act. Each act has its own fix table.</p>
+<p><em>Or use the ALL-IN-ONE prompt below to review all 107 packs in a single session.</em></p>
+
+<h4>ALL-IN-ONE: All 107 Packs (Full Language Review)</h4>
+<div style="display: flex; gap: 10px; margin-bottom: 5px;">
+    <div style="flex: 1; text-align: center; padding: 5px; font-style: italic;">Click prompt box below to copy - Reviews ALL Chinese packs in one go</div>
+</div>
+<div onclick="copyPrompt(this)" data-stage="3" data-lang="chinese" data-act="all" class="stage3-prompt stage3-all-in-one" style="background-color: #b39ddb; padding: 15px; border-radius: 5px; border: 3px solid #7e57c2; cursor: pointer;">🎯 CHINESE ALL-IN-ONE: All 5 Acts | Packs 1-107 (107 total)
+
+COL 0 (chinese): 🔒 SACRED - NEVER EDIT
+OTHER COLS: Find BEST translation for native speakers
+
+━━━ BUFFS (+) ━━━━━━━━━━━━━━━━━━━━━━━━━━━
++Theme    Check Pack_Title FIRST (same word = different translation per theme)
++Natural  Everyday words > formal ("dog" not "canine")
++Native   What speakers actually say
++Annotate OK in translations: (masculine)/(feminine)/(formal)
+
+━━━ DEBUFFS (-) ━━━━━━━━━━━━━━━━━━━━━━━━━
+-Formal   Technical/rare words
+-Grammar  No terminology ("definite article" → "the")
+-Wrong sense  Must match pack theme
+
+━━━ STEPS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+0. CLEAR ALL FIX TABLES:
+   python PythonHelpers/clear_fix_table.py chinese 1
+   python PythonHelpers/clear_fix_table.py chinese 2
+   python PythonHelpers/clear_fix_table.py chinese 3
+   python PythonHelpers/clear_fix_table.py chinese 4
+   python PythonHelpers/clear_fix_table.py chinese 5
+
+1. SCAN ALL PACKS:
+   python PythonHelpers/trim_csv_spaces.py chinese
+   python PythonHelpers/validate_pinyin.py chinese 1 107
+   python PythonHelpers/check_translation_quality.py chinese 1 107
+   python PythonHelpers/check_language_mismatch.py chinese 1 107
+   (Python finds 5% of issues - YOU find the other 95%)
+
+2. REVIEW: ALL 107 packs manually
+   • ChineseWordsOverview.csv → get theme for each pack
+   • ChineseWords/ChineseWords{1-107}.csv → check every row
+   • Ask: Most common? Native speaker approved? Natural?
+
+3. RECORD FIXES BY ACT:
+   - Act 1 (Packs 1-14): ChineseWords/ChineseFixTableAct1.csv
+   - Act 2 (Packs 15-27): ChineseWords/ChineseFixTableAct2.csv
+   - Act 3 (Packs 28-53): ChineseWords/ChineseFixTableAct3.csv
+   - Act 4 (Packs 54-79): ChineseWords/ChineseFixTableAct4.csv
+   - Act 5 (Packs 80-107): ChineseWords/ChineseFixTableAct5.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+
+4. ⚠️ APPLY ALL (MANDATORY - task FAILS without this!):
+   python PythonHelpers/apply_fixes_by_act.py chinese 1
+   python PythonHelpers/apply_fixes_by_act.py chinese 2
+   python PythonHelpers/apply_fixes_by_act.py chinese 3
+   python PythonHelpers/apply_fixes_by_act.py chinese 4
+   python PythonHelpers/apply_fixes_by_act.py chinese 5
+
+5. VALIDATE ALL: python PythonHelpers/validate_pinyin.py chinese 1 107
+
+6. COMMIT:
+   git add ChineseWords/ChineseWords*.csv ChineseWords/ChineseFixTableAct*.csv
+   git commit -m "Chinese Stage 3: Review and fix translations for all 107 packs"
+   git push -u origin <branch>
+
+✅ 107 packs reviewed | ✅ Fixes applied | ✅ CSVs changed | ✅ Pushed</div>
 
 <h4>Act 1/5: Foundation (Packs 1-14, 14 packs)</h4>
 <div style="display: flex; gap: 10px; margin-bottom: 5px;">
@@ -1347,6 +1412,77 @@ OTHER COLS: Find BEST translation for native speakers
 
 <h3>Spanish - Stage 3 (Translation Quality Review - 7 Acts, 250 Packs)</h3>
 <p><strong>Run 7 agents in parallel</strong> - one per act. Each act has its own fix table.</p>
+<p><em>Or use the ALL-IN-ONE prompt below to review all 250 packs in a single session.</em></p>
+
+<h4>ALL-IN-ONE: All 250 Packs (Full Language Review)</h4>
+<div style="display: flex; gap: 10px; margin-bottom: 5px;">
+    <div style="flex: 1; text-align: center; padding: 5px; font-style: italic;">Click prompt box below to copy - Reviews ALL Spanish packs in one go</div>
+</div>
+<div onclick="copyPrompt(this)" data-stage="3" data-lang="spanish" data-act="all" class="stage3-prompt stage3-all-in-one" style="background-color: #b39ddb; padding: 15px; border-radius: 5px; border: 3px solid #7e57c2; cursor: pointer;">🎯 SPANISH ALL-IN-ONE: All 7 Acts | Packs 1-250 (250 total)
+
+COL 0 (spanish): 🔒 SACRED - NEVER EDIT
+OTHER COLS: Find BEST translation for native speakers
+
+━━━ BUFFS (+) ━━━━━━━━━━━━━━━━━━━━━━━━━━━
++Theme    Check Pack_Title FIRST (same word = different translation per theme)
++Natural  Everyday words > formal ("dog" not "canine")
++Native   What speakers actually say
++Annotate OK in translations: (masculine)/(feminine)/(formal)
+
+━━━ DEBUFFS (-) ━━━━━━━━━━━━━━━━━━━━━━━━━
+-Formal   Technical/rare words
+-Grammar  No terminology ("definite article" → "the")
+-Wrong sense  Must match pack theme
+
+━━━ STEPS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+0. CLEAR ALL FIX TABLES:
+   python PythonHelpers/clear_fix_table.py spanish 1
+   python PythonHelpers/clear_fix_table.py spanish 2
+   python PythonHelpers/clear_fix_table.py spanish 3
+   python PythonHelpers/clear_fix_table.py spanish 4
+   python PythonHelpers/clear_fix_table.py spanish 5
+   python PythonHelpers/clear_fix_table.py spanish 6
+   python PythonHelpers/clear_fix_table.py spanish 7
+
+1. SCAN ALL PACKS:
+   python PythonHelpers/trim_csv_spaces.py spanish
+   python PythonHelpers/validate_pinyin.py spanish 1 250
+   python PythonHelpers/check_translation_quality.py spanish 1 250
+   python PythonHelpers/check_language_mismatch.py spanish 1 250
+   (Python finds 5% of issues - YOU find the other 95%)
+
+2. REVIEW: ALL 250 packs manually
+   • SpanishWordsOverview.csv → get theme for each pack
+   • SpanishWords/SpanishWords{1-250}.csv → check every row
+   • Ask: Most common? Native speaker approved? Natural?
+
+3. RECORD FIXES BY ACT:
+   - Act 1 (Packs 1-30): SpanishWords/SpanishFixTableAct1.csv
+   - Act 2 (Packs 31-60): SpanishWords/SpanishFixTableAct2.csv
+   - Act 3 (Packs 61-100): SpanishWords/SpanishFixTableAct3.csv
+   - Act 4 (Packs 101-140): SpanishWords/SpanishFixTableAct4.csv
+   - Act 5 (Packs 141-180): SpanishWords/SpanishFixTableAct5.csv
+   - Act 6 (Packs 181-220): SpanishWords/SpanishFixTableAct6.csv
+   - Act 7 (Packs 221-250): SpanishWords/SpanishFixTableAct7.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+
+4. ⚠️ APPLY ALL (MANDATORY - task FAILS without this!):
+   python PythonHelpers/apply_fixes_by_act.py spanish 1
+   python PythonHelpers/apply_fixes_by_act.py spanish 2
+   python PythonHelpers/apply_fixes_by_act.py spanish 3
+   python PythonHelpers/apply_fixes_by_act.py spanish 4
+   python PythonHelpers/apply_fixes_by_act.py spanish 5
+   python PythonHelpers/apply_fixes_by_act.py spanish 6
+   python PythonHelpers/apply_fixes_by_act.py spanish 7
+
+5. VALIDATE ALL: python PythonHelpers/validate_pinyin.py spanish 1 250
+
+6. COMMIT:
+   git add SpanishWords/SpanishWords*.csv SpanishWords/SpanishFixTableAct*.csv
+   git commit -m "Spanish Stage 3: Review and fix translations for all 250 packs"
+   git push -u origin <branch>
+
+✅ 250 packs reviewed | ✅ Fixes applied | ✅ CSVs changed | ✅ Pushed</div>
 
 <h4>Act 1/7: Foundation (Packs 1-30, 30 packs)</h4>
 <div style="display: flex; gap: 10px; margin-bottom: 5px;">
@@ -1714,6 +1850,71 @@ OTHER COLS: Find BEST translation for native speakers
 
 <h3>English - Stage 3 (Translation Quality Review - 5 Acts, 160 Packs)</h3>
 <p><strong>Run 5 agents in parallel</strong> - one per act. Each act has its own fix table.</p>
+<p><em>Or use the ALL-IN-ONE prompt below to review all 160 packs in a single session.</em></p>
+
+<h4>ALL-IN-ONE: All 160 Packs (Full Language Review)</h4>
+<div style="display: flex; gap: 10px; margin-bottom: 5px;">
+    <div style="flex: 1; text-align: center; padding: 5px; font-style: italic;">Click prompt box below to copy - Reviews ALL English packs in one go</div>
+</div>
+<div onclick="copyPrompt(this)" data-stage="3" data-lang="english" data-act="all" class="stage3-prompt stage3-all-in-one" style="background-color: #b39ddb; padding: 15px; border-radius: 5px; border: 3px solid #7e57c2; cursor: pointer;">🎯 ENGLISH ALL-IN-ONE: All 5 Acts | Packs 1-160 (160 total)
+
+COL 0 (english): 🔒 SACRED - NEVER EDIT
+OTHER COLS: Find BEST translation for native speakers
+
+━━━ BUFFS (+) ━━━━━━━━━━━━━━━━━━━━━━━━━━━
++Theme    Check Pack_Title FIRST (same word = different translation per theme)
++Natural  Everyday words > formal ("dog" not "canine")
++Native   What speakers actually say
++Annotate OK in translations: (masculine)/(feminine)/(formal)
+
+━━━ DEBUFFS (-) ━━━━━━━━━━━━━━━━━━━━━━━━━
+-Formal   Technical/rare words
+-Grammar  No terminology ("definite article" → "the")
+-Wrong sense  Must match pack theme
+
+━━━ STEPS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+0. CLEAR ALL FIX TABLES:
+   python PythonHelpers/clear_fix_table.py english 1
+   python PythonHelpers/clear_fix_table.py english 2
+   python PythonHelpers/clear_fix_table.py english 3
+   python PythonHelpers/clear_fix_table.py english 4
+   python PythonHelpers/clear_fix_table.py english 5
+
+1. SCAN ALL PACKS:
+   python PythonHelpers/trim_csv_spaces.py english
+   python PythonHelpers/validate_pinyin.py english 1 160
+   python PythonHelpers/check_translation_quality.py english 1 160
+   python PythonHelpers/check_language_mismatch.py english 1 160
+   (Python finds 5% of issues - YOU find the other 95%)
+
+2. REVIEW: ALL 160 packs manually
+   • EnglishWordsOverview.csv → get theme for each pack
+   • EnglishWords/EnglishWords{1-160}.csv → check every row
+   • Ask: Most common? Native speaker approved? Natural?
+
+3. RECORD FIXES BY ACT:
+   - Act 1 (Packs 1-45): EnglishWords/EnglishFixTableAct1.csv
+   - Act 2 (Packs 46-81): EnglishWords/EnglishFixTableAct2.csv
+   - Act 3 (Packs 82-112): EnglishWords/EnglishFixTableAct3.csv
+   - Act 4 (Packs 113-130): EnglishWords/EnglishFixTableAct4.csv
+   - Act 5 (Packs 131-160): EnglishWords/EnglishFixTableAct5.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+
+4. ⚠️ APPLY ALL (MANDATORY - task FAILS without this!):
+   python PythonHelpers/apply_fixes_by_act.py english 1
+   python PythonHelpers/apply_fixes_by_act.py english 2
+   python PythonHelpers/apply_fixes_by_act.py english 3
+   python PythonHelpers/apply_fixes_by_act.py english 4
+   python PythonHelpers/apply_fixes_by_act.py english 5
+
+5. VALIDATE ALL: python PythonHelpers/validate_pinyin.py english 1 160
+
+6. COMMIT:
+   git add EnglishWords/EnglishWords*.csv EnglishWords/EnglishFixTableAct*.csv
+   git commit -m "English Stage 3: Review and fix translations for all 160 packs"
+   git push -u origin <branch>
+
+✅ 160 packs reviewed | ✅ Fixes applied | ✅ CSVs changed | ✅ Pushed</div>
 
 <h4>Act 1/5: Foundation (Packs 1-45, 49 packs)</h4>
 <div style="display: flex; gap: 10px; margin-bottom: 5px;">

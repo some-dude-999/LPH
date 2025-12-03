@@ -55,11 +55,6 @@ ALL files need extensive comments (not external docs):
 
 ## 🔄 Git Rules
 - Commit & push after changes
-- **End EVERY response with PR link:**
-```
-**Create PR to main:**
-https://github.com/[owner]/[repo]/compare/main...[branch]
-```
 
 ## 🔗 LINK MANAGEMENT
 Run after web file changes: `python PythonHelpers/link_manager.py`
@@ -194,4 +189,4 @@ Each section has Logic (.1) + DOM (.2) subsections where applicable:
 1. Backup → Edit → Before/After table
 2. Run `python PythonHelpers/link_manager.py` after web changes
 3. Document features in code comments
-4. End response with PR link
+4. Commit & push after changes
