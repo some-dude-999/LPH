@@ -19,7 +19,7 @@ def clear_fix_table(language, act_num):
 
     # Check if file exists
     if not os.path.exists(fix_table_path):
-        print(f"⚠️  Fix table does not exist: {fix_table_path}")
+        print(f"[WARN] Fix table does not exist: {fix_table_path}")
         print(f"Creating new empty fix table...")
 
     # Write header row only
@@ -28,8 +28,8 @@ def clear_fix_table(language, act_num):
     with open(fix_table_path, 'w', encoding='utf-8') as f:
         f.write(header)
 
-    print(f"✅ Cleared fix table: {fix_table_path}")
-    print(f"   Ready for new fixes (header row only)")
+    print(f"[OK] Cleared fix table: {fix_table_path}")
+    print(f"     Ready for new fixes (header row only)")
 
 def main():
     if len(sys.argv) != 3:

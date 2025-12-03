@@ -1,12 +1,1 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-chinese,15,Family Members,20,french,Parents,Proches,Parents commonly means mom and dad in French; Proches better conveys relatives
-chinese,15,Family Members,57,french,Visiter des parents,Rendre visite à la famille,Parents is confusing - use famille for relatives
-chinese,15,Family Members,58,french,Parents et amis,Famille et amis,Parents is confusing - use famille for relatives
-chinese,17,Months & Seasons,53,french,Manger de la fondue en hiver,Manger du hot pot en hiver,Fondue refers to cheese fondue in French; hot pot is the common term for Chinese hot pot
-chinese,21,More Measure Words,21,french,quelques cartons,quelques boîtes,Cartons means cardboard boxes; boîtes is consistent with row 20 une boîte
-chinese,22,More Action Verbs,11,pinyin,hái,huán,When 还 means return the correct pronunciation is huán not hái
-chinese,22,More Action Verbs,48,spanish,Respuesta,Responder,Action verb pack needs verb form not noun; Respuesta is noun Responder is verb
-chinese,22,More Action Verbs,48,french,Réponse,Répondre,Action verb pack needs verb form not noun; Réponse is noun Répondre is verb
-chinese,22,More Action Verbs,48,portuguese,Resposta,Responder,Action verb pack needs verb form not noun; Resposta is noun Responder is verb
-chinese,23,Daily Actions,29,english,Hand sanitizer,Liquid hand soap,洗手液 means liquid hand soap not hand sanitizer
-chinese,27,Colors,10,spanish,Púrpura,Morado,Púrpura is formal/literary; Morado is the everyday word for purple
