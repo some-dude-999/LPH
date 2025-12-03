@@ -71,7 +71,26 @@ Run after web file changes: `python PythonHelpers/link_manager.py`
 - Chinese + Pinyin are inseparable (atomic unit)
 - Validate: `python PythonHelpers/validate_pinyin.py all`
 
-## 🏷️ TRANSLATION ANNOTATION RULES
+## 🌐 TRANSLATION RULES
+
+### Core Principle: ACTUAL TRANSLATIONS, NOT DESCRIPTIONS
+Translations must be what you'd actually SAY in that language - not grammar labels or descriptions.
+
+**WRONG:** 个 (gè) → "general measure word" (this is a grammar description)
+**RIGHT:** 个 (gè) → "each" or "a/an" (this is what it actually means)
+
+**WRONG:** 的 (de) → "possessive particle" (grammar label)
+**RIGHT:** 的 (de) → "'s" or "of" (actual translation)
+
+**WRONG:** 吗 (ma) → "question particle" (grammar label)
+**RIGHT:** 吗 (ma) → "?" (what it functionally means)
+
+### Translation Priority
+1. **Functional meaning** - What does this word DO in a sentence?
+2. **Natural equivalent** - What would a native speaker say?
+3. **Context from pack theme** - Same word can have different translations based on theme
+
+### Annotation Rules
 When translations need disambiguation, use parenthetical annotations:
 - **(masculine)** / **(feminine)** - for gendered words (Spanish articles, adjectives)
 - **(formal)** / **(informal)** - for register differences (usted vs tú)
@@ -85,6 +104,11 @@ When translations need disambiguation, use parenthetical annotations:
 - Spanish gendered articles: `el (masculine)`, `la (feminine)`
 - Formal/informal pronouns: `usted (formal)`, `tú (informal)`
 - Don't over-annotate obvious cases - use judgment
+
+### NEVER Do This
+- Grammar terminology as translation ("definite article", "measure word", "classifier")
+- Parenthetical notes as the entire translation: "(general)", "(for animals)"
+- Descriptions instead of translations: "word used for counting flat objects"
 
 ## 📋 WORDPACK DATA STRUCTURE
 - Each base word has exactly 3 variants (divisible by 3)

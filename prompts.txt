@@ -1,0 +1,206 @@
+================================================================================
+STAGE 3: TRANSLATION QUALITY REVIEW
+================================================================================
+
+WHAT THIS STAGE DOES:
+Review breakout CSVs and fix bad translations.
+
+THE #1 RULE - ACTUAL TRANSLATIONS, NOT DESCRIPTIONS:
+----------------------------------------------------
+Translations must be what you'd actually SAY in that language.
+NOT grammar labels. NOT descriptions. NOT parenthetical notes.
+
+WRONG: 个 (gè) → "general measure word" (grammar description)
+RIGHT: 个 (gè) → "each" or "a/an" (actual translation)
+
+WRONG: 的 (de) → "possessive particle" (grammar label)
+RIGHT: 的 (de) → "'s" or "of" (actual translation)
+
+WRONG: 只 (zhī) → "(for animals)" (parenthetical note)
+RIGHT: 只 (zhī) → "one" (what you'd actually say)
+
+WRONG: 条 (tiáo) → "long object measure word"
+RIGHT: 条 (tiáo) → "a" or "one" (functional equivalent)
+
+Ask yourself: "Would a native speaker ever say this word?"
+If the answer is no, it's not a translation - it's a description.
+
+TRANSLATION PRIORITY:
+1. Functional meaning - What does this word DO in a sentence?
+2. Natural equivalent - What would a native speaker say?
+3. Pack theme context - Same word can translate differently per theme
+
+GOOD vs BAD EXAMPLES:
+---------------------
+Pack: "Core Measure Words"
+  BAD:  个 → "general measure word"
+  GOOD: 个 → "each" (because that's what 个 functionally means)
+
+Pack: "Animals"
+  BAD:  只 → "(for animals)"
+  GOOD: 只 → "one" (as in "one cat" = 一只猫)
+
+Pack: "Books"
+  BAD:  本 → "(for books)"
+  GOOD: 本 → "a/one" (as in "a book" = 一本书)
+
+WHEN ANNOTATIONS ARE OK:
+------------------------
+Annotations disambiguate, they don't replace translations:
+  OK: "the (masculine)" for Spanish "el"
+  OK: "you (formal)" for Spanish "usted"
+  NOT OK: "(general)" as the entire translation
+
+================================================================================
+CHINESE STAGE 3 PROMPT (ALL 107 PACKS)
+================================================================================
+
+COL 0 (chinese): SACRED - NEVER EDIT
+OTHER COLS: Find ACTUAL translations (not descriptions!)
+
+THE RULE: Would a native speaker say this word?
+  NO grammar labels ("measure word", "classifier", "particle")
+  NO parenthetical notes as translations ("(general)", "(for animals)")
+  YES functional equivalents ("each", "a/an", "one", "'s")
+
+EXAMPLES:
+  WRONG: 个 → "general measure word"  |  RIGHT: 个 → "each"
+  WRONG: 只 → "(for animals)"         |  RIGHT: 只 → "one"
+  WRONG: 的 → "possessive particle"   |  RIGHT: 的 → "'s" or "of"
+
+CHECKLIST:
+[+] Theme - Check Pack_Title, same word = different translation per theme
+[+] Natural - Everyday words, not formal/technical
+[+] Native - What speakers actually say
+[+] Annotations OK for disambiguation: (masculine)/(feminine)/(formal)
+[-] Grammar labels as translations
+[-] Descriptions instead of translations
+[-] Parenthetical notes as entire translation
+
+STEPS:
+0. CLEAR FIX TABLES:
+   python PythonHelpers/clear_fix_table.py chinese 1
+   python PythonHelpers/clear_fix_table.py chinese 2
+   python PythonHelpers/clear_fix_table.py chinese 3
+   python PythonHelpers/clear_fix_table.py chinese 4
+   python PythonHelpers/clear_fix_table.py chinese 5
+
+1. SCAN:
+   python PythonHelpers/trim_csv_spaces.py chinese
+   python PythonHelpers/validate_pinyin.py chinese
+
+2. REVIEW ALL 107 PACKS:
+   - ChineseWordsOverview.csv for pack themes
+   - ChineseWords/ChineseWords{1-107}.csv
+   - For EVERY translation ask: "Is this what a native speaker would say?"
+
+3. RECORD FIXES BY ACT:
+   Act 1 (Packs 1-14): ChineseWords/ChineseFixTableAct1.csv
+   Act 2 (Packs 15-27): ChineseWords/ChineseFixTableAct2.csv
+   Act 3 (Packs 28-53): ChineseWords/ChineseFixTableAct3.csv
+   Act 4 (Packs 54-79): ChineseWords/ChineseFixTableAct4.csv
+   Act 5 (Packs 80-107): ChineseWords/ChineseFixTableAct5.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+
+4. APPLY:
+   python PythonHelpers/apply_fixes_by_act.py chinese 1
+   python PythonHelpers/apply_fixes_by_act.py chinese 2
+   python PythonHelpers/apply_fixes_by_act.py chinese 3
+   python PythonHelpers/apply_fixes_by_act.py chinese 4
+   python PythonHelpers/apply_fixes_by_act.py chinese 5
+
+5. VALIDATE:
+   python PythonHelpers/validate_pinyin.py chinese
+
+6. COMMIT:
+   git add ChineseWords/
+   git commit -m "Chinese Stage 3: Translation quality review"
+   git push
+
+================================================================================
+SPANISH STAGE 3 PROMPT (ALL 250 PACKS)
+================================================================================
+
+COL 0 (spanish): SACRED - NEVER EDIT
+OTHER COLS: Find ACTUAL translations (not descriptions!)
+
+THE RULE: Would a native speaker say this word?
+  NO grammar labels ("definite article", "subjunctive marker")
+  NO parenthetical notes as translations
+  YES functional equivalents
+
+CHECKLIST:
+[+] Theme - Check Pack_Title, same word = different translation per theme
+[+] Natural - Everyday words, not formal/technical
+[+] Native - What speakers actually say
+[+] Annotations OK: (masculine)/(feminine)/(formal)/(informal)
+[-] Grammar labels as translations
+[-] Descriptions instead of translations
+
+STEPS:
+0. CLEAR FIX TABLES:
+   python PythonHelpers/clear_fix_table.py spanish 1
+   ... (repeat for all 7 acts)
+
+1. SCAN:
+   python PythonHelpers/trim_csv_spaces.py spanish
+
+2. REVIEW ALL 250 PACKS:
+   - SpanishWordsOverview.csv for pack themes
+   - SpanishWords/SpanishWords{1-250}.csv
+
+3. RECORD FIXES BY ACT:
+   Act 1 (Packs 1-30): SpanishWords/SpanishFixTableAct1.csv
+   Act 2 (Packs 31-60): SpanishWords/SpanishFixTableAct2.csv
+   Act 3 (Packs 61-100): SpanishWords/SpanishFixTableAct3.csv
+   Act 4 (Packs 101-140): SpanishWords/SpanishFixTableAct4.csv
+   Act 5 (Packs 141-180): SpanishWords/SpanishFixTableAct5.csv
+   Act 6 (Packs 181-220): SpanishWords/SpanishFixTableAct6.csv
+   Act 7 (Packs 221-250): SpanishWords/SpanishFixTableAct7.csv
+
+4. APPLY:
+   python PythonHelpers/apply_fixes_by_act.py spanish 1
+   ... (repeat for all 7 acts)
+
+5. COMMIT:
+   git add SpanishWords/
+   git commit -m "Spanish Stage 3: Translation quality review"
+   git push
+
+================================================================================
+ENGLISH STAGE 3 PROMPT (ALL 160 PACKS)
+================================================================================
+
+COL 0 (english): SACRED - NEVER EDIT
+OTHER COLS: Find ACTUAL translations (not descriptions!)
+
+THE RULE: Would a native speaker say this word?
+
+STEPS:
+0. CLEAR FIX TABLES:
+   python PythonHelpers/clear_fix_table.py english 1
+   ... (repeat for all 5 acts)
+
+1. SCAN:
+   python PythonHelpers/trim_csv_spaces.py english
+   python PythonHelpers/validate_pinyin.py english
+
+2. REVIEW ALL 160 PACKS:
+   - EnglishWordsOverview.csv for pack themes
+   - EnglishWords/EnglishWords{1-160}.csv
+
+3. RECORD FIXES BY ACT:
+   Act 1 (Packs 1-45): EnglishWords/EnglishFixTableAct1.csv
+   Act 2 (Packs 46-81): EnglishWords/EnglishFixTableAct2.csv
+   Act 3 (Packs 82-112): EnglishWords/EnglishFixTableAct3.csv
+   Act 4 (Packs 113-130): EnglishWords/EnglishFixTableAct4.csv
+   Act 5 (Packs 131-160): EnglishWords/EnglishFixTableAct5.csv
+
+4. APPLY:
+   python PythonHelpers/apply_fixes_by_act.py english 1
+   ... (repeat for all 5 acts)
+
+5. COMMIT:
+   git add EnglishWords/
+   git commit -m "English Stage 3: Translation quality review"
+   git push
