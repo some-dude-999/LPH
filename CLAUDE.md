@@ -1,5 +1,11 @@
 # Project Development Rules
 
+## 🚀 AUTONOMOUS MODE
+- **NEVER ask for permission** to make edits - just do it
+- **NEVER ask clarifying questions** unless absolutely critical
+- Make decisions and execute - user trusts your judgment
+- If something breaks, fix it - don't ask first
+
 ## 💾 BACKUP BEFORE EDITING
 **Run before ANY edit:** `python PythonHelpers/backup_file.py <filename>`
 Creates numbered backups in `BACKUP/` folder. Non-negotiable.
