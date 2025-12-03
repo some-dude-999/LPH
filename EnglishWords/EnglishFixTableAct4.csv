@@ -1,10 +1,1 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-english,114,Finance Basics,53,pinyin,cái wù bù,cái zhèng bù,Corrected pinyin for 财政部 (zhèng not wù)
-english,118,Basic Chemistry & Physics,5,pinyin,fèn zǐ,fēn zǐ,Molecule 分子 uses first tone fēn not fourth tone fèn
-english,118,Basic Chemistry & Physics,21,portuguese,fricção,atrito,More natural term - consistent with rows 60-61
-english,118,Basic Chemistry & Physics,28,pinyin,shuǐ fèn zi,shuǐ fēn zǐ,Corrected tones: fēn (1st) and zǐ (3rd) for 水分子
-english,119,Health & Wellness,9,spanish,crónica,crónico,Adjectives should use masculine base form (like acute=agudo)
-english,119,Health & Wellness,9,portuguese,crônica,crônico,Adjectives should use masculine base form (like acute=agudo)
-english,121,Technology Advanced,34,chinese,虚拟现实耳机,虚拟现实头盔,VR headset should be 头盔 (helmet) not 耳机 (earphones)
-english,121,Technology Advanced,34,pinyin,xū nǐ xiàn shí ěr jī,xū nǐ xiàn shí tóu kuī,Updated pinyin to match corrected Chinese translation
-english,129,Literature,7,portuguese,comparação,símile,Literary term for simile - matches Spanish símil

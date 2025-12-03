@@ -1,13 +1,1 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-english,4,Articles & Determiners,2,spanish,a,un (masculine),Spanish 'a' is a preposition meaning 'to' - the indefinite article 'a' should be 'un'
-english,4,Articles & Determiners,4,spanish,el,el (masculine),Spanish definite article needs gender annotation - can be el/la depending on noun
-english,17,Modal Verbs,4,spanish,voluntad,ir a,voluntad means willpower (noun) - modal 'will' for future should be 'ir a' (going to)
-english,17,Modal Verbs,6,portuguese,podemos,deverá,podemos means 'we can' - shall for obligation/future should be deverá
-english,17,Modal Verbs,11,spanish,atrevimiento,atreverse,atrevimiento is noun (audacity) - dare as verb should be atreverse (infinitive)
-english,1,Greetings & Basics,11,portuguese,obrigado,obrigado (masculine),Gender annotation needed - female speakers say obrigada
-english,1,Greetings & Basics,18,spanish,bienvenido,bienvenido (masculine),Gender annotation needed - feminine form is bienvenida
-english,1,Greetings & Basics,18,portuguese,Bem-vindo,bem-vindo (masculine),Gender annotation needed - feminine form is bem-vinda
-english,12,Family,14,spanish,primo,primo (masculine),Gender annotation needed - cousin is gender-neutral in English but primo is masculine
-english,12,Family,14,portuguese,primo,primo (masculine),Gender annotation needed - cousin is gender-neutral in English but primo is masculine
-english,12,Family,46,spanish,mi prima,mi primo (masculine),Inconsistent with Chinese (male cousin) and Portuguese - should all be masculine for consistency
-english,14,Personal Pronouns,47,spanish,ayudar a sí mismo,sírvete (informal),Literal translation - native speakers say sírvete/sírvase when offering something
