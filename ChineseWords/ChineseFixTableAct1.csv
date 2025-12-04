@@ -1,1 +1,33 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+Chinese,7,Numbers 0-10,14,english,(ordinal),-th,Actual translation - ordinal suffix like first/second/third
+Chinese,7,Numbers 0-10,14,spanish,(ordinal),-o/-a,Actual translation - ordinal suffix in Spanish
+Chinese,7,Numbers 0-10,14,french,(ordinal),-ième,Actual translation - ordinal suffix in French
+Chinese,7,Numbers 0-10,14,portuguese,(ordinal),-o/-a,Actual translation - ordinal suffix in Portuguese
+Chinese,8,Core Measure Words,2,english,(general),a,Actual translation not grammar label
+Chinese,8,Core Measure Words,2,spanish,(general),un/una,Actual translation not grammar label
+Chinese,8,Core Measure Words,2,french,(général),un/une,Actual translation not grammar label
+Chinese,8,Core Measure Words,2,portuguese,(geral),um/uma,Actual translation not grammar label
+Chinese,8,Core Measure Words,3,english,(for animals),one,Actual translation not grammar label
+Chinese,8,Core Measure Words,3,spanish,(para animales),uno/una,Actual translation not grammar label
+Chinese,8,Core Measure Words,3,french,(pour animaux),un/une,Actual translation not grammar label
+Chinese,8,Core Measure Words,3,portuguese,(para animais),um/uma,Actual translation not grammar label
+Chinese,8,Core Measure Words,4,english,(for long things),a,Actual translation not grammar label
+Chinese,8,Core Measure Words,4,spanish,(para cosas largas),un/una,Actual translation not grammar label
+Chinese,8,Core Measure Words,4,french,(pour objets longs),un/une,Actual translation not grammar label
+Chinese,8,Core Measure Words,4,portuguese,(para itens longos),um/uma,Actual translation not grammar label
+Chinese,8,Core Measure Words,5,english,(for flat things),a,Actual translation not grammar label
+Chinese,8,Core Measure Words,5,spanish,(para objetos planos),un/una,Actual translation not grammar label
+Chinese,8,Core Measure Words,5,french,(pour objets plats),un/une,Actual translation not grammar label
+Chinese,8,Core Measure Words,5,portuguese,(para itens planos),um/uma,Actual translation not grammar label
+Chinese,8,Core Measure Words,6,english,(for things/clothes),a,Actual translation not grammar label
+Chinese,8,Core Measure Words,6,spanish,(para prendas),un/una,Actual translation not grammar label
+Chinese,8,Core Measure Words,6,french,(pour vêtements),un/une,Actual translation not grammar label
+Chinese,8,Core Measure Words,6,portuguese,(para roupas),um/uma,Actual translation not grammar label
+Chinese,8,Core Measure Words,7,english,(for books),a,Actual translation not grammar label
+Chinese,8,Core Measure Words,7,spanish,(para libros),un/una,Actual translation not grammar label
+Chinese,8,Core Measure Words,7,french,(pour livres),un/une,Actual translation not grammar label
+Chinese,8,Core Measure Words,7,portuguese,(para livros),um/uma,Actual translation not grammar label
+Chinese,8,Core Measure Words,13,english,(polite for person),a,Actual translation not grammar label
+Chinese,8,Core Measure Words,13,spanish,(cortés para persona),un/una,Actual translation not grammar label
+Chinese,8,Core Measure Words,13,french,(poli pour personne),un/une,Actual translation not grammar label
+Chinese,8,Core Measure Words,13,portuguese,(cortês para pessoa),um/uma,Actual translation not grammar label
