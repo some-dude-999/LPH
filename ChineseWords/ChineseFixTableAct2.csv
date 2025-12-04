@@ -1,1 +1,4 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+Chinese,21,Additional Measure Words,5,english,time (measure word),time,Remove grammar label - just the actual meaning
+Chinese,21,Additional Measure Words,10,english,machine (classifier),unit,Remove grammar label - functional translation
+Chinese,21,Additional Measure Words,12,english,building (mw),structure,Remove grammar label abbreviation - structure is more accurate
