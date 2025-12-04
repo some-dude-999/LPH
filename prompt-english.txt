@@ -1,0 +1,62 @@
+ENGLISH STAGE 3: TRANSLATION QUALITY REVIEW (160 PACKS)
+
+THE #1 RULE: ACTUAL TRANSLATIONS, NOT DESCRIPTIONS
+---------------------------------------------------
+Translations must be what you'd actually SAY in that language.
+NOT grammar labels. NOT descriptions. NOT parenthetical notes.
+
+Ask yourself: "Would a native speaker ever say this word?"
+If no, it's not a translation - it's a description.
+
+COLUMN 0 (english): SACRED - NEVER EDIT
+OTHER COLUMNS: Find ACTUAL translations
+
+CHECKLIST:
+[+] Theme - Check Pack_Title, same word = different translation per theme
+[+] Natural - Everyday words, not formal/technical
+[+] Native - What speakers actually say
+[+] Annotations OK for disambiguation: (masculine)/(feminine)/(formal)
+[-] NO grammar labels as translations
+[-] NO descriptions instead of translations
+[-] NO parenthetical notes as entire translation
+
+STEPS:
+
+1. CLEAR ALL FIX TABLES:
+   python PythonHelpers/clear_fix_table.py english 1
+   python PythonHelpers/clear_fix_table.py english 2
+   python PythonHelpers/clear_fix_table.py english 3
+   python PythonHelpers/clear_fix_table.py english 4
+   python PythonHelpers/clear_fix_table.py english 5
+
+2. SCAN:
+   python PythonHelpers/trim_csv_spaces.py english
+   python PythonHelpers/validate_pinyin.py english
+
+3. REVIEW ALL 160 PACKS:
+   - EnglishWordsOverview.csv for pack themes
+   - EnglishWords/EnglishWords{1-160}.csv
+   - For EVERY translation ask: "Is this what a native speaker would say?"
+
+4. RECORD FIXES BY ACT:
+   Act 1 (Packs 1-45): EnglishWords/EnglishFixTableAct1.csv
+   Act 2 (Packs 46-81): EnglishWords/EnglishFixTableAct2.csv
+   Act 3 (Packs 82-112): EnglishWords/EnglishFixTableAct3.csv
+   Act 4 (Packs 113-130): EnglishWords/EnglishFixTableAct4.csv
+   Act 5 (Packs 131-160): EnglishWords/EnglishFixTableAct5.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+
+5. APPLY ALL FIXES:
+   python PythonHelpers/apply_fixes_by_act.py english 1
+   python PythonHelpers/apply_fixes_by_act.py english 2
+   python PythonHelpers/apply_fixes_by_act.py english 3
+   python PythonHelpers/apply_fixes_by_act.py english 4
+   python PythonHelpers/apply_fixes_by_act.py english 5
+
+6. VALIDATE:
+   python PythonHelpers/validate_pinyin.py english
+
+7. COMMIT:
+   git add EnglishWords/
+   git commit -m "English Stage 3: Translation quality review - actual translations not descriptions"
+   git push

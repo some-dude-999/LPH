@@ -1,0 +1,74 @@
+CHINESE STAGE 3: TRANSLATION QUALITY REVIEW (107 PACKS)
+
+THE #1 RULE: ACTUAL TRANSLATIONS, NOT DESCRIPTIONS
+---------------------------------------------------
+Translations must be what you'd actually SAY in that language.
+NOT grammar labels. NOT descriptions. NOT parenthetical notes.
+
+WRONG: 个 (gè) -> "general measure word" (grammar description)
+RIGHT: 个 (gè) -> "each" or "a/an" (actual translation)
+
+WRONG: 的 (de) -> "possessive particle" (grammar label)
+RIGHT: 的 (de) -> "'s" or "of" (actual translation)
+
+WRONG: 只 (zhī) -> "(for animals)" (parenthetical note)
+RIGHT: 只 (zhī) -> "one" (what you'd actually say)
+
+WRONG: 条 (tiáo) -> "long object measure word"
+RIGHT: 条 (tiáo) -> "a" or "one" (functional equivalent)
+
+Ask yourself: "Would a native speaker ever say this word?"
+If no, it's not a translation - it's a description.
+
+COLUMN 0 (chinese): SACRED - NEVER EDIT
+OTHER COLUMNS: Find ACTUAL translations
+
+CHECKLIST:
+[+] Theme - Check Pack_Title, same word = different translation per theme
+[+] Natural - Everyday words, not formal/technical
+[+] Native - What speakers actually say
+[+] Annotations OK for disambiguation: (masculine)/(feminine)/(formal)
+[-] NO grammar labels as translations
+[-] NO descriptions instead of translations
+[-] NO parenthetical notes as entire translation
+
+STEPS:
+
+1. CLEAR ALL FIX TABLES:
+   python PythonHelpers/clear_fix_table.py chinese 1
+   python PythonHelpers/clear_fix_table.py chinese 2
+   python PythonHelpers/clear_fix_table.py chinese 3
+   python PythonHelpers/clear_fix_table.py chinese 4
+   python PythonHelpers/clear_fix_table.py chinese 5
+
+2. SCAN:
+   python PythonHelpers/trim_csv_spaces.py chinese
+   python PythonHelpers/validate_pinyin.py chinese
+
+3. REVIEW ALL 107 PACKS:
+   - ChineseWordsOverview.csv for pack themes
+   - ChineseWords/ChineseWords{1-107}.csv
+   - For EVERY translation ask: "Is this what a native speaker would say?"
+
+4. RECORD FIXES BY ACT:
+   Act 1 (Packs 1-14): ChineseWords/ChineseFixTableAct1.csv
+   Act 2 (Packs 15-27): ChineseWords/ChineseFixTableAct2.csv
+   Act 3 (Packs 28-53): ChineseWords/ChineseFixTableAct3.csv
+   Act 4 (Packs 54-79): ChineseWords/ChineseFixTableAct4.csv
+   Act 5 (Packs 80-107): ChineseWords/ChineseFixTableAct5.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+
+5. APPLY ALL FIXES:
+   python PythonHelpers/apply_fixes_by_act.py chinese 1
+   python PythonHelpers/apply_fixes_by_act.py chinese 2
+   python PythonHelpers/apply_fixes_by_act.py chinese 3
+   python PythonHelpers/apply_fixes_by_act.py chinese 4
+   python PythonHelpers/apply_fixes_by_act.py chinese 5
+
+6. VALIDATE:
+   python PythonHelpers/validate_pinyin.py chinese
+
+7. COMMIT:
+   git add ChineseWords/
+   git commit -m "Chinese Stage 3: Translation quality review - actual translations not descriptions"
+   git push

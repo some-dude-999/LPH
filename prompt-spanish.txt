@@ -1,0 +1,70 @@
+SPANISH STAGE 3: TRANSLATION QUALITY REVIEW (250 PACKS)
+
+THE #1 RULE: ACTUAL TRANSLATIONS, NOT DESCRIPTIONS
+---------------------------------------------------
+Translations must be what you'd actually SAY in that language.
+NOT grammar labels. NOT descriptions. NOT parenthetical notes.
+
+WRONG: "definite article" (grammar label)
+RIGHT: "the" (actual translation)
+
+WRONG: "(formal you)" (parenthetical note)
+RIGHT: "you (formal)" (translation with annotation)
+
+Ask yourself: "Would a native speaker ever say this word?"
+If no, it's not a translation - it's a description.
+
+COLUMN 0 (spanish): SACRED - NEVER EDIT
+OTHER COLUMNS: Find ACTUAL translations
+
+CHECKLIST:
+[+] Theme - Check Pack_Title, same word = different translation per theme
+[+] Natural - Everyday words, not formal/technical
+[+] Native - What speakers actually say
+[+] Annotations OK for disambiguation: (masculine)/(feminine)/(formal)/(informal)
+[-] NO grammar labels as translations
+[-] NO descriptions instead of translations
+[-] NO parenthetical notes as entire translation
+
+STEPS:
+
+1. CLEAR ALL FIX TABLES:
+   python PythonHelpers/clear_fix_table.py spanish 1
+   python PythonHelpers/clear_fix_table.py spanish 2
+   python PythonHelpers/clear_fix_table.py spanish 3
+   python PythonHelpers/clear_fix_table.py spanish 4
+   python PythonHelpers/clear_fix_table.py spanish 5
+   python PythonHelpers/clear_fix_table.py spanish 6
+   python PythonHelpers/clear_fix_table.py spanish 7
+
+2. SCAN:
+   python PythonHelpers/trim_csv_spaces.py spanish
+
+3. REVIEW ALL 250 PACKS:
+   - SpanishWordsOverview.csv for pack themes
+   - SpanishWords/SpanishWords{1-250}.csv
+   - For EVERY translation ask: "Is this what a native speaker would say?"
+
+4. RECORD FIXES BY ACT:
+   Act 1 (Packs 1-30): SpanishWords/SpanishFixTableAct1.csv
+   Act 2 (Packs 31-60): SpanishWords/SpanishFixTableAct2.csv
+   Act 3 (Packs 61-100): SpanishWords/SpanishFixTableAct3.csv
+   Act 4 (Packs 101-140): SpanishWords/SpanishFixTableAct4.csv
+   Act 5 (Packs 141-180): SpanishWords/SpanishFixTableAct5.csv
+   Act 6 (Packs 181-220): SpanishWords/SpanishFixTableAct6.csv
+   Act 7 (Packs 221-250): SpanishWords/SpanishFixTableAct7.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+
+5. APPLY ALL FIXES:
+   python PythonHelpers/apply_fixes_by_act.py spanish 1
+   python PythonHelpers/apply_fixes_by_act.py spanish 2
+   python PythonHelpers/apply_fixes_by_act.py spanish 3
+   python PythonHelpers/apply_fixes_by_act.py spanish 4
+   python PythonHelpers/apply_fixes_by_act.py spanish 5
+   python PythonHelpers/apply_fixes_by_act.py spanish 6
+   python PythonHelpers/apply_fixes_by_act.py spanish 7
+
+6. COMMIT:
+   git add SpanishWords/
+   git commit -m "Spanish Stage 3: Translation quality review - actual translations not descriptions"
+   git push
