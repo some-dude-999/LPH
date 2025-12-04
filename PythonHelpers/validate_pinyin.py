@@ -4,6 +4,11 @@
 # Core Purpose: Verify 1:1 character-to-syllable mapping
 # ============================================================
 #
+import sys
+import io
+# Force UTF-8 output on Windows
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+#
 # WHAT THIS SCRIPT DOES:
 # -----------------------
 # 1. Reads CSV files containing Chinese characters and pinyin

@@ -15,6 +15,10 @@ to the individual ChineseWords{pack}.csv files.
 import csv
 import sys
 import os
+import io
+
+# Force UTF-8 output on Windows
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 # Act metadata
 ACT_INFO = {
