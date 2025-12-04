@@ -1,1 +1,5 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+Spanish,162,Practicing (practicar),2,chinese,实用,我练习,Critical error - shí yòng means practical/useful NOT I practice
+Spanish,162,Practicing (practicar),2,pinyin,shí yòng,wǒ liàn xí,Pinyin must match corrected Chinese translation
+Spanish,162,Practicing (practicar),3,chinese,实践,你练习,Wrong meaning - shí jiàn means practice (noun/concept) NOT you practice (verb)
+Spanish,162,Practicing (practicar),3,pinyin,shí jiàn,nǐ liàn xí,Pinyin must match corrected Chinese translation

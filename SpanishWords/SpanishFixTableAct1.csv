@@ -1,9 +1,10 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,8,Having & Age (tener),12,english,fear,fear (noun),Clarify it's the noun not verb
-spanish,10,Connecting Words (y pero porque),11,english,neither,neither/nor,More natural translation for tampoco
-spanish,21,Going Places (ir),10,english,direction,address,dirección means address in this context
-spanish,21,Going Places (ir),13,english,walk,stroll,paseo better translated as stroll
-spanish,23,Extended Family,16,english,relative (feminine),female relative,More natural English
-spanish,27,Daily Activities,15,english,I fix,I arrange,arreglo in daily context means arrange not fix
-spanish,27,Daily Activities,43,english,I fix,I arrange,arreglo in daily context means arrange
-spanish,27,Daily Activities,44,english,I fix everything,I arrange everything,arreglo in daily context means arrange
+Spanish,3,Numbers (1-10),28,pinyin,qī rén,qī gè,Wrong pinyin - should be qī gè (seven items) not qī rén (seven people)
+Spanish,8,Tener (to have),35,chinese,大量睡眠,很困,Wrong meaning - dà liàng shuì mián means large amount of sleep not very sleepy
+Spanish,8,Tener (to have),35,pinyin,dà liàng shuì mián,hěn kùn,Pinyin must match corrected Chinese translation
+Spanish,19,House,39,chinese,屋顶,天花板,Inconsistent - should be tiān huā bǎn (ceiling) to match row 13
+Spanish,19,House,39,pinyin,wū dǐng,tiān huā bǎn,Pinyin must match corrected Chinese translation
+Spanish,19,House,40,chinese,在屋顶上,在天花板上,Must match row 39 correction - on the ceiling
+Spanish,19,House,40,pinyin,zài wū dǐng shàng,zài tiān huā bǎn shàng,Pinyin must match corrected Chinese translation
+Spanish,21,Ir (to go),6,chinese,快点,走吧,Wrong meaning - kuài diǎn means hurry up not lets go
+Spanish,21,Ir (to go),6,pinyin,kuài diǎn,zǒu ba,Pinyin must match corrected Chinese translation

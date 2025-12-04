@@ -1,1 +1,7 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+Spanish,111,Trying (intentar),2,portuguese,tente,tento,Wrong mood - imperative tente should be indicative tento (I try)
+Spanish,111,Trying (intentar),4,portuguese,tente,tenta,Wrong mood - imperative tente should be indicative tenta (he/she tries)
+Spanish,111,Trying (intentar),7,portuguese,tente,tentar,Wrong mood - imperative tente should be infinitive tentar (to try)
+Spanish,111,Trying (intentar),8,portuguese,tente,tentar,Wrong mood - imperative tente should be infinitive tentar (to try)
+Spanish,127,Going down (bajar),3,chinese,低谷,你下去,Wrong meaning - dī gǔ means low valley/trough not you go down
+Spanish,127,Going down (bajar),3,pinyin,dī gǔ,nǐ xià qù,Pinyin must match corrected Chinese translation

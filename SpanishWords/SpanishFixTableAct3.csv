@@ -1,8 +1,10 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,62,To Know (conocer),2,english,I know,I know (am familiar with),Distinguish conocer from saber
-spanish,62,To Know (conocer),3,english,you know,you know (are familiar with),Distinguish conocer from saber
-spanish,62,To Know (conocer),4,english,he/she knows,he/she knows (is familiar with),Distinguish conocer from saber
-spanish,62,To Know (conocer),5,english,we know,we know (are familiar with),Distinguish conocer from saber
-spanish,62,To Know (conocer),6,english,you (plural) know,you (plural) know (are familiar with),Distinguish conocer from saber
-spanish,62,To Know (conocer),7,english,they know,they know (are familiar with),Distinguish conocer from saber
-spanish,69,Sports,22,english,football,soccer,American English term for fútbol
+Spanish,86,Living (vivir),8,portuguese,ao vivo,viver,Wrong meaning - ao vivo means live broadcast not to live
+Spanish,86,Living (vivir),3,chinese,你活着,你住,Wrong meaning - nǐ huó zhe means you are alive not you live/reside
+Spanish,86,Living (vivir),3,pinyin,nǐ huó zhe,nǐ zhù,Pinyin must match corrected Chinese translation
+Spanish,86,Living (vivir),14,chinese,你活着,你住,Wrong meaning - should be you live/reside not you are alive
+Spanish,86,Living (vivir),14,pinyin,nǐ huó zhe,nǐ zhù,Pinyin must match corrected Chinese translation
+Spanish,86,Living (vivir),16,chinese,他活着,他住,Wrong meaning - should be he lives/resides not he is alive
+Spanish,86,Living (vivir),16,pinyin,tā huó zhe,tā zhù,Pinyin must match corrected Chinese translation
+Spanish,86,Living (vivir),20,chinese,你活着,你住,Wrong meaning - should be you live/reside not you are alive
+Spanish,86,Living (vivir),20,pinyin,nǐ huó zhe,nǐ zhù,Pinyin must match corrected Chinese translation

@@ -1,4 +1,1 @@
 Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
-spanish,37,Animals,22,english,hot dog,hot dog (food),Clarify it's the food not the animal
-spanish,54,Restaurant,2,english,waiter (masculine),waiter,Remove redundant annotation for masculine default
-spanish,54,Restaurant,3,english,server (feminine),waitress,More common English term
