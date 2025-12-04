@@ -1,0 +1,108 @@
+SPANISH STAGE 3: TRANSLATION QUALITY REVIEW (BY ACT)
+
+THE #1 RULE: ACTUAL TRANSLATIONS, NOT DESCRIPTIONS
+---------------------------------------------------
+Translations must be what you'd actually SAY in that language.
+NOT grammar labels. NOT descriptions. NOT parenthetical notes.
+
+Ask yourself: "Would a native speaker ever say this word?"
+If no, it's not a translation - it's a description.
+
+COLUMN 0 (spanish): SACRED - NEVER EDIT
+OTHER COLUMNS: Find ACTUAL translations
+
+CHECKLIST:
+[+] Natural everyday words, not formal/technical
+[+] What native speakers actually say
+[+] Annotations OK: (masculine)/(feminine)/(formal)/(informal)
+[-] NO grammar labels as translations
+[-] NO descriptions instead of translations
+[-] NO parenthetical notes as entire translation
+
+---
+
+WORK ACT BY ACT. After each act, report findings and ask to proceed.
+
+ACT 1: FOUNDATION (Packs 1-30)
+------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py spanish 1
+2. Review: SpanishWords/SpanishWords{1-30}.csv
+3. Record fixes: SpanishWords/SpanishFixTableAct1.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+4. Apply: python PythonHelpers/apply_fixes_by_act.py spanish 1
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 2?"
+
+---
+
+ACT 2: BUILDING BLOCKS (Packs 31-60)
+------------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py spanish 2
+2. Review: SpanishWords/SpanishWords{31-60}.csv
+3. Record fixes: SpanishWords/SpanishFixTableAct2.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py spanish 2
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 3?"
+
+---
+
+ACT 3: DAILY LIFE (Packs 61-100)
+--------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py spanish 3
+2. Review: SpanishWords/SpanishWords{61-100}.csv
+3. Record fixes: SpanishWords/SpanishFixTableAct3.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py spanish 3
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 4?"
+
+---
+
+ACT 4: EXPANDING EXPRESSION (Packs 101-140)
+-------------------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py spanish 4
+2. Review: SpanishWords/SpanishWords{101-140}.csv
+3. Record fixes: SpanishWords/SpanishFixTableAct4.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py spanish 4
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 5?"
+
+---
+
+ACT 5: INTERMEDIATE MASTERY (Packs 141-180)
+-------------------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py spanish 5
+2. Review: SpanishWords/SpanishWords{141-180}.csv
+3. Record fixes: SpanishWords/SpanishFixTableAct5.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py spanish 5
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 6?"
+
+---
+
+ACT 6: ADVANCED CONSTRUCTS (Packs 181-220)
+------------------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py spanish 6
+2. Review: SpanishWords/SpanishWords{181-220}.csv
+3. Record fixes: SpanishWords/SpanishFixTableAct6.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py spanish 6
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 7?"
+
+---
+
+ACT 7: MASTERY & FLUENCY (Packs 221-250)
+----------------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py spanish 7
+2. Review: SpanishWords/SpanishWords{221-250}.csv
+3. Record fixes: SpanishWords/SpanishFixTableAct7.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py spanish 7
+
+STOP. Report what you found and fixed.
+
+---
+
+FINAL STEPS (after all acts approved):
+1. Commit:
+   git add SpanishWords/
+   git commit -m "Spanish Stage 3: Translation quality review"
+   git push

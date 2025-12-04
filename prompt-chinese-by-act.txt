@@ -1,0 +1,96 @@
+CHINESE STAGE 3: TRANSLATION QUALITY REVIEW (BY ACT)
+
+THE #1 RULE: ACTUAL TRANSLATIONS, NOT DESCRIPTIONS
+---------------------------------------------------
+Translations must be what you'd actually SAY in that language.
+NOT grammar labels. NOT descriptions. NOT parenthetical notes.
+
+WRONG: 个 (gè) -> "general measure word" (grammar description)
+RIGHT: 个 (gè) -> "each" or "a/an" (actual translation)
+
+WRONG: 的 (de) -> "possessive particle" (grammar label)
+RIGHT: 的 (de) -> "'s" or "of" (actual translation)
+
+WRONG: 只 (zhī) -> "(for animals)" (parenthetical note)
+RIGHT: 只 (zhī) -> "one" (what you'd actually say)
+
+Ask yourself: "Would a native speaker ever say this word?"
+If no, it's not a translation - it's a description.
+
+COLUMN 0 (chinese): SACRED - NEVER EDIT
+OTHER COLUMNS: Find ACTUAL translations
+
+CHECKLIST:
+[+] Natural everyday words, not formal/technical
+[+] What native speakers actually say
+[+] Annotations OK: (masculine)/(feminine)/(formal)
+[-] NO grammar labels as translations
+[-] NO descriptions instead of translations
+[-] NO parenthetical notes as entire translation
+
+---
+
+WORK ACT BY ACT. After each act, report findings and ask to proceed.
+
+ACT 1: FOUNDATION (Packs 1-14)
+------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py chinese 1
+2. Review: ChineseWords/ChineseWords{1-14}.csv
+3. Record fixes: ChineseWords/ChineseFixTableAct1.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+4. Apply: python PythonHelpers/apply_fixes_by_act.py chinese 1
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 2?"
+
+---
+
+ACT 2: DEVELOPMENT (Packs 15-27)
+--------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py chinese 2
+2. Review: ChineseWords/ChineseWords{15-27}.csv
+3. Record fixes: ChineseWords/ChineseFixTableAct2.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py chinese 2
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 3?"
+
+---
+
+ACT 3: EXPANSION (Packs 28-53)
+------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py chinese 3
+2. Review: ChineseWords/ChineseWords{28-53}.csv
+3. Record fixes: ChineseWords/ChineseFixTableAct3.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py chinese 3
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 4?"
+
+---
+
+ACT 4: MASTERY (Packs 54-79)
+----------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py chinese 4
+2. Review: ChineseWords/ChineseWords{54-79}.csv
+3. Record fixes: ChineseWords/ChineseFixTableAct4.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py chinese 4
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 5?"
+
+---
+
+ACT 5: REFINEMENT (Packs 80-107)
+--------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py chinese 5
+2. Review: ChineseWords/ChineseWords{80-107}.csv
+3. Record fixes: ChineseWords/ChineseFixTableAct5.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py chinese 5
+
+STOP. Report what you found and fixed.
+
+---
+
+FINAL STEPS (after all acts approved):
+1. Validate: python PythonHelpers/validate_pinyin.py chinese
+2. Commit:
+   git add ChineseWords/
+   git commit -m "Chinese Stage 3: Translation quality review"
+   git push

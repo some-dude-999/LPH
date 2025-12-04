@@ -1,0 +1,87 @@
+ENGLISH STAGE 3: TRANSLATION QUALITY REVIEW (BY ACT)
+
+THE #1 RULE: ACTUAL TRANSLATIONS, NOT DESCRIPTIONS
+---------------------------------------------------
+Translations must be what you'd actually SAY in that language.
+NOT grammar labels. NOT descriptions. NOT parenthetical notes.
+
+Ask yourself: "Would a native speaker ever say this word?"
+If no, it's not a translation - it's a description.
+
+COLUMN 0 (english): SACRED - NEVER EDIT
+OTHER COLUMNS: Find ACTUAL translations
+
+CHECKLIST:
+[+] Natural everyday words, not formal/technical
+[+] What native speakers actually say
+[+] Annotations OK: (masculine)/(feminine)/(formal)
+[-] NO grammar labels as translations
+[-] NO descriptions instead of translations
+[-] NO parenthetical notes as entire translation
+
+---
+
+WORK ACT BY ACT. After each act, report findings and ask to proceed.
+
+ACT 1: FOUNDATION (Packs 1-45)
+------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py english 1
+2. Review: EnglishWords/EnglishWords{1-45}.csv
+3. Record fixes: EnglishWords/EnglishFixTableAct1.csv
+   Format: Language,Pack_Number,Pack_Title,Row_Number,Column_Name,Old_Value,New_Value,Reason
+4. Apply: python PythonHelpers/apply_fixes_by_act.py english 1
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 2?"
+
+---
+
+ACT 2: BUILDING BLOCKS (Packs 46-81)
+------------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py english 2
+2. Review: EnglishWords/EnglishWords{46-81}.csv
+3. Record fixes: EnglishWords/EnglishFixTableAct2.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py english 2
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 3?"
+
+---
+
+ACT 3: EVERYDAY LIFE (Packs 82-112)
+-----------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py english 3
+2. Review: EnglishWords/EnglishWords{82-112}.csv
+3. Record fixes: EnglishWords/EnglishFixTableAct3.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py english 3
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 4?"
+
+---
+
+ACT 4: EXPANDING HORIZONS (Packs 113-130)
+-----------------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py english 4
+2. Review: EnglishWords/EnglishWords{113-130}.csv
+3. Record fixes: EnglishWords/EnglishFixTableAct4.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py english 4
+
+STOP. Report what you found and fixed. Ask: "Proceed to Act 5?"
+
+---
+
+ACT 5: ADVANCED MASTERY (Packs 131-160)
+---------------------------------------
+1. Clear: python PythonHelpers/clear_fix_table.py english 5
+2. Review: EnglishWords/EnglishWords{131-160}.csv
+3. Record fixes: EnglishWords/EnglishFixTableAct5.csv
+4. Apply: python PythonHelpers/apply_fixes_by_act.py english 5
+
+STOP. Report what you found and fixed.
+
+---
+
+FINAL STEPS (after all acts approved):
+1. Validate: python PythonHelpers/validate_pinyin.py english
+2. Commit:
+   git add EnglishWords/
+   git commit -m "English Stage 3: Translation quality review"
+   git push
